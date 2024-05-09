@@ -1,0 +1,1503 @@
+{
+  "id": "defibrillator",
+  "name": {
+    "en": "Defibrillators",
+    "ca": "Desfibril·ladors",
+    "es": "Desfibriladores",
+    "fr": "Défibrillateurs",
+    "nl": "Defibrillatoren",
+    "de": "Defibrillatoren",
+    "it": "Defibrillatori",
+    "ru": "Дефибрилляторы",
+    "sl": "Defibrilatorji",
+    "da": "Hjertestartere",
+    "cs": "Defibrilátory"
+  },
+  "description": {
+    "en": "A layer showing defibrillators which can be used in case of emergency. This contains public defibrillators, but also defibrillators which might need staff to fetch the actual device",
+    "nl": "Een laag die defibrillatoren toont die je kan gebruiken bij noodgevallen. Dit omvat zowel publiek beschikbare toestellen als defibrillatoren waarvoor het toestel enkel door personeel aangeboden kan worden",
+    "sl": "Sloj prikazuje defibrilatorje, ki jih je možno uporabiti v primeru sile. Sloj poleg javno dostopnih defibrilatorjev vsebuje tudi tiste, ki za dostop morda potrebujejo pomoč osebja",
+    "de": "Eine Ebene mit Defibrillatoren, die in Notfällen eingesetzt werden können. Diese Ebene enthält öffentliche Defibrillatoren, aber auch Defibrillatoren, bei denen möglicherweise Personal benötigt wird, um das Gerät zu holen",
+    "es": "Una capa que muestra desfibriladores que se pueden utilizar en caso de emergencia. Contiene desfibriladores públicos, pero también desfibriladores para los que se puede necesitar que el personal vaya a buscar el dispositivo",
+    "ca": "Una capa que mostra desfibril·ladors que es poden utilitzar en cas d'emergència. Conté desfibril·ladors públics, però també desfibril·ladors que poden necessitar de personal per agafar el dispositiu",
+    "he": "שכבה המציגה דפיברילטורים שניתן להשתמש בהם במקרה חירום. זה מכיל דפיברילטורים ציבוריים, אך גם דפיברילטורים שעשויים להזדקק לצוות כדי להביא את המכשיר בפועל",
+    "cs": "Vrstva zobrazující defibrilátory, které lze použít v případě nouze. To zahrnuje veřejné defibrilátory, ale také defibrilátory, které mohou vyžadovat personál, aby přinesl skutečné zařízení"
+  },
+  "source": {
+    "osmTags": {
+      "and": [
+        "emergency=defibrillator"
+      ]
+    }
+  },
+  "calculatedTags": [
+    "_days_since_last_survey=Math.floor((new Date() - new Date(feat.properties['survey:date']))/(1000*60*60*24))",
+    "_recently_surveyed=Number(feat.properties._days_since_last_survey) <= 90"
+  ],
+  "minzoom": 12,
+  "title": {
+    "render": {
+      "en": "Defibrillator",
+      "ca": "Desfibril·lador",
+      "es": "Desfibrilador",
+      "fr": "Défibrillateur",
+      "nl": "Defibrillator",
+      "de": "Defibrillator",
+      "it": "Defibrillatore",
+      "ru": "Дефибриллятор",
+      "sl": "Defibrilator",
+      "pl": "Defibrylator",
+      "cs": "Defibrilátor"
+    }
+  },
+  "pointRendering": [
+    {
+      "marker": [
+        {
+          "icon": {
+            "render": "square",
+            "id": "square"
+          },
+          "color": {
+            "render": "#008754",
+            "mappings": [
+              {
+                "if": "_recently_surveyed=true",
+                "then": "#28ba3d"
+              }
+            ]
+          }
+        },
+        {
+          "icon": {
+            "render": "./assets/layers/defibrillator/defibrillator.svg",
+            "id": "assetslayersdefibrillatordefibrillatorsvg"
+          }
+        }
+      ],
+      "location": [
+        "point"
+      ],
+      "iconBadges": [
+        {
+          "if": "_favourite=yes",
+          "then": "circle:white;heart:red"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#0000ff"
+    }
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "a defibrillator",
+        "ca": "un desfibril·lador",
+        "es": "un desfibrilador",
+        "fr": "une défibrillateur",
+        "nl": "een defibrillator",
+        "de": "einen Defibrillator",
+        "it": "una defibrillatore",
+        "ru": "Дефибриллятор",
+        "sl": "Defibrilator",
+        "da": "en hjertestarter",
+        "pl": "defibrylator",
+        "cs": "defibrilátor"
+      },
+      "tags": [
+        "emergency=defibrillator"
+      ]
+    },
+    {
+      "title": {
+        "en": "a defibrillator mounted on a wall",
+        "nl": "een defibrillator die aan een muur hangt",
+        "sl": "defibrilator je pritrjen na steno",
+        "da": "en hjertestarter monteret på en væg",
+        "de": "einen wandseitig befestigten Defibrillator",
+        "es": "un desfibrilador montado en una pared",
+        "ca": "un desfibril·lador muntat en la paret",
+        "pl": "defibrylator na ścianie",
+        "cs": "defibrilátor namontovaný na stěně"
+      },
+      "tags": [
+        "emergency=defibrillator"
+      ],
+      "snapToLayer": [
+        "walls_and_buildings"
+      ],
+      "maxSnapDistance": 5
+    }
+  ],
+  "tagRenderings": [
+    {
+      "id": "just_created",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "This element shows a 'thank you' that the contributor has recently created this element",
+      "classes": "rounded-xl thanks",
+      "mappings": [
+        {
+          "if": "id~*",
+          "icon": "./assets/svg/party.svg",
+          "then": {
+            "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+            "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+            "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+            "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+            "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+            "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+          }
+        }
+      ],
+      "condition": {
+        "and": [
+          "_backend~*",
+          "_last_edit:passed_time<300",
+          {
+            "or": [
+              "_version_number=",
+              "_version_number=1"
+            ]
+          }
+        ]
+      },
+      "metacondition": {
+        "and": [
+          {
+            "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+            "or": [
+              "_last_edit:contributor:uid:={_uid}",
+              "_last_edit:contributor:uid="
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "images",
+      "description": "This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images",
+      "render": {
+        "*": "{image_carousel()}{image_upload()}{nearby_images():my-4}"
+      },
+      "classes": "my-4"
+    },
+    {
+      "id": "defibrillator-indoors",
+      "question": {
+        "en": "Is this defibrillator located indoors?",
+        "ca": "Està el desfibril·lador a l'interior?",
+        "es": "¿Esté el desfibrilador en interior?",
+        "fr": "Ce défibrillateur est-il disposé en intérieur ?",
+        "nl": "Hangt deze defibrillator binnen of buiten?",
+        "de": "Befindet sich der Defibrillator in einem Gebäude?",
+        "it": "Questo defibrillatore si trova all’interno?",
+        "sl": "Ali se ta defibrilator nahaja znotraj?",
+        "pl": "Czy ten defibrylator znajduje się wewnątrz budynku?",
+        "cs": "Je tento defibrilátor umístěn uvnitř?"
+      },
+      "mappings": [
+        {
+          "if": "indoor=yes",
+          "then": {
+            "en": "This defibrillator is located indoors",
+            "ca": "Aquest desfibril·lador està a l'interior",
+            "es": "Este desfibrilador está en interior",
+            "fr": "Ce défibrillateur est en intérieur (dans un batiment)",
+            "nl": "Deze defibrillator bevindt zich in een gebouw",
+            "de": "Der Defibrillator befindet sich in einem Gebäude",
+            "it": "Questo defibrillatore si trova all’interno",
+            "sl": "Defibrilator se nahaja znotraj",
+            "pl": "Ten defibrylator jest wewnątrz budynku",
+            "cs": "Tento defibrilátor je umístěn v interiéru"
+          }
+        },
+        {
+          "if": "indoor=no",
+          "then": {
+            "en": "This defibrillator is located outdoors",
+            "ca": "Aquest desfibril·lador està a l'exterior",
+            "es": "Este desfibrilador está en exterior",
+            "fr": "Ce défibrillateur est situé en extérieur",
+            "nl": "Deze defibrillator hangt buiten",
+            "de": "Der Defibrillator befindet sich im Freien",
+            "it": "Questo defibrillatore si trova all’esterno",
+            "sl": "Defibrilator se nahaja zunaj",
+            "pl": "Ten defibrylator jest na dworze",
+            "cs": "Tento defibrilátor je umístěn venku"
+          }
+        }
+      ]
+    },
+    {
+      "question": {
+        "en": "Is this defibrillator freely accessible?",
+        "ca": "Està el desfibril·lador accessible lliurement?",
+        "es": "¿Está el desfibrilador accesible libremente?",
+        "fr": "Ce défibrillateur est-il librement accessible ?",
+        "nl": "Is deze defibrillator vrij toegankelijk?",
+        "de": "Ist der Defibrillator frei zugänglich?",
+        "it": "Questo defibrillatore è liberamente accessibile?",
+        "sl": "Ali je ta defibrilator prosto dostopen?",
+        "da": "Er denne hjertestarter frit tilgængelig?",
+        "pl": "Czy ten defibrylator jest swobodnie dostępny?",
+        "cs": "Je tento defibrilátor volně přístupný?"
+      },
+      "render": {
+        "en": "Access is {access}",
+        "ca": "L'accés és {access}",
+        "es": "El acceso es {access}",
+        "fr": "{access} accessible",
+        "nl": "Toegankelijkheid is {access}",
+        "de": "Zugang ist {access}",
+        "it": "Accesso è {access}",
+        "sl": "Dostop je {access}",
+        "cs": "Přístup je {access}"
+      },
+      "freeform": {
+        "key": "access",
+        "addExtraTags": [
+          "fixme=Freeform field used for access - doublecheck the value"
+        ],
+        "inline": true
+      },
+      "mappings": [
+        {
+          "if": "access=yes",
+          "then": {
+            "en": "Publicly accessible",
+            "ca": "Accés lliure",
+            "es": "Acceso libre",
+            "fr": "Librement accessible",
+            "nl": "Publiek toegankelijk",
+            "de": "Der Defibrillator ist öffentlich zugänglich",
+            "it": "Pubblicamente accessibile",
+            "ru": "Общедоступный",
+            "sl": "Javno dostopen",
+            "da": "Offentligt tilgængelig",
+            "pl": "Dostępny publicznie",
+            "cs": "Veřejně přístupné"
+          }
+        },
+        {
+          "if": "access=public",
+          "then": {
+            "en": "Publicly accessible",
+            "ca": "Publicament accessible",
+            "es": "Publicament accesible",
+            "fr": "Librement accessible",
+            "nl": "Publiek toegankelijk",
+            "de": "Öffentlich zugänglich",
+            "it": "Pubblicamente accessibile",
+            "ru": "Общедоступный",
+            "sl": "Javno dostopen",
+            "da": "Offentligt tilgængelig",
+            "pl": "Dostępny publicznie",
+            "cs": "Veřejně přístupné"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "access=customers",
+          "then": {
+            "en": "Only accessible to customers",
+            "ca": "Només accessible a clients",
+            "es": "Sólo accesible a clientes",
+            "fr": "Réservé aux clients du lieu",
+            "nl": "Enkel toegankelijk voor klanten",
+            "de": "Der Defibrillator ist nur für Kunden zugänglich",
+            "it": "Accessibile solo ai clienti",
+            "ru": "Доступно только для клиентов",
+            "sl": "Dostopen samo strankam",
+            "pl": "Dostępny tylko dla klientów",
+            "cs": "Přístupné pouze zákazníkům"
+          }
+        },
+        {
+          "if": "access=private",
+          "then": {
+            "en": "Not accessible to the general public (e.g. only accesible to staff, the owners, …)",
+            "ca": "No accessible al públic en general (ex. només accesible a treballadors, propietaris, ...)",
+            "es": "No accesible al público en general (por ejemplo, sólo accesible para el personal, los propietarios, ...)",
+            "fr": "Non accessible au public (par exemple réservé au personnel, au propriétaire…)",
+            "nl": "Niet toegankelijk voor het publiek (bv. enkel voor personeel, de eigenaar, …)",
+            "de": "Der Defibrillator ist nicht öffentlich zugänglich (z.B. nur für Personal, Eigentümer, …)",
+            "it": "Non accessibile al pubblico (ad esempio riservato al personale, ai proprietari, etc.)",
+            "sl": "Ni dostopen splošni javnosti (npr. samo za osebje, za lastnike, ...)",
+            "pl": "Niedostępny publicznie (np. dostępny tylko dla personelu, właścicieli, ...)",
+            "cs": "Nepřístupné široké veřejnosti (např. přístupné pouze zaměstnancům, majitelům, …)"
+          }
+        },
+        {
+          "if": "access=no",
+          "then": {
+            "en": "Not accessible, possibly only for professional use",
+            "nl": "Niet toegankelijk, mogelijk enkel voor professionals",
+            "fr": "Pas accessible, peut-être uniquement à usage professionnel",
+            "it": "Non accessibile, potrebbe essere solo per uso professionale",
+            "de": "Der Defibrillator ist nicht zugänglich, möglicherweise nur für betriebliche Nutzung",
+            "sl": "Ni dostopen, morda samo za profesionalno rabo",
+            "es": "No accesible, posiblemente solo para el uso profesional",
+            "ca": "No accessible, posiblemente només d'ús profesional",
+            "pl": "Niedostępny, być może tylko do profesjonalnego użytku",
+            "cs": "Nepřístupné, případně pouze pro profesionální použití"
+          }
+        }
+      ],
+      "id": "defibrillator-access"
+    },
+    {
+      "question": {
+        "en": "Is this a a regular automatic defibrillator or a manual defibrillator for professionals only?",
+        "nl": "Is dit een gewone automatische defibrillator of een manueel toestel enkel voor professionals?",
+        "fr": "Est-ce un défibrillateur automatique normal ou un défibrillateur manuel à usage professionnel uniquement ?",
+        "it": "Si tratta di un normale defibrillatore automatico o un defibrillatore manuale riservato ai professionisti?",
+        "de": "Ist dies ein normaler automatischer Defibrillator oder ein manueller Defibrillator nur für Profis?",
+        "sl": "Ali je to navaden avtomatski defibrilator ali ročni defibrilator namenjen poklicnim reševalcem?",
+        "es": "¿Este es un desfibrilador automático normal o un desfibrilador manual solo para profesionales?",
+        "ca": "És un desfibril·lador automàtic normal o un desfibril·lador manual només per a professionals?",
+        "pl": "Czy to jest zwykły automatyczny defibrylator czy ręczny defibrylator tylko dla profesjonalistów?",
+        "cs": "Jedná se o běžný automatický defibrilátor nebo manuální defibrilátor pouze pro profesionály?"
+      },
+      "condition": {
+        "and": [
+          "access=no"
+        ]
+      },
+      "mappings": [
+        {
+          "if": "defibrillator=",
+          "then": {
+            "en": "There is no info about the type of device",
+            "nl": "Er is geen info over het soort toestel",
+            "fr": "Il n'y a pas d'information sur le type de dispositif",
+            "it": "Non vi sono informazioni riguardanti il tipo di questo dispositivo",
+            "de": "Es gibt keine Informationen über den Gerätetyp",
+            "sl": "Ni informacij o vrsti naprave",
+            "es": "No hay información sobre el tipo de dispositivo",
+            "ca": "No hi ha informació sobre el tipus de dispositiu",
+            "pl": "Nie ma informacji o rodzaju urządzenia",
+            "cs": "Neexistují žádné informace o typu zařízení"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "defibrillator=manual",
+          "then": {
+            "en": "This is a manual defibrillator for professionals",
+            "nl": "Dit is een manueel toestel enkel voor professionals",
+            "fr": "C'est un défibrillateur manuel pour professionnel",
+            "it": "Questo è un defibrillatore manuale per professionisti",
+            "de": "Dies ist ein manueller Defibrillator für den professionellen Einsatz",
+            "sl": "To je ročni defibrilator za poklicne reševalce",
+            "da": "Dette er en manuel hjertestarter til professionelle",
+            "es": "Este es un desfibrilador manual para profesionales",
+            "ca": "Aquest és un desfibril·lador manual per a professionals",
+            "pl": "To jest ręczny defibrylator dla profesjonalistów",
+            "cs": "Jedná se o ruční defibrilátor pro profesionály"
+          }
+        },
+        {
+          "if": "defibrillator=automatic",
+          "then": {
+            "en": "This is a normal automatic defibrillator",
+            "nl": "Dit is een gewone automatische defibrillator",
+            "fr": "C'est un défibrillateur automatique manuel",
+            "it": "È un normale defibrillatore automatico",
+            "ru": "Это обычный автоматический дефибриллятор",
+            "de": "Dies ist ein normaler automatischer Defibrillator",
+            "sl": "To je normalen avtomatski defibrilator",
+            "da": "Dette er en normal automatisk hjertestarter",
+            "es": "Este es un desfibrilador automático normal",
+            "ca": "Aquest és un desfibril·lador automàtic normal",
+            "pl": "To jest zwykły automatyczny defibrylator",
+            "cs": "Jedná se o běžný automatický defibrilátor"
+          }
+        },
+        {
+          "if": "defibrillator~*",
+          "then": {
+            "en": "This is a special type of defibrillator: {defibrillator}",
+            "nl": "Dit is een speciaal type defibrillator: {defibrillator}",
+            "sl": "To je posebna vrsta defibrilatorja: {defibrillator}",
+            "da": "Dette er en særlig type hjertestarter: {defibrillator}",
+            "de": "Dies ist eine besondere Art von Defibrillator: {defibrillator}",
+            "es": "Este es un tipo de desfibrilador especial: {defibrillator}",
+            "ca": "Aquest és un tipus especial de desfibril·lador: {defibrillator}",
+            "pl": "To jest specjalny rodzaj defibrylatora: {defibrillator}",
+            "cs": "Toto je speciální typ defibrilátoru: {defibrillator}"
+          },
+          "hideInAnswer": true
+        }
+      ],
+      "id": "defibrillator-defibrillator"
+    },
+    {
+      "question": {
+        "en": "On which floor is this defibrillator located?",
+        "ca": "A quina planta està el ubicat el desfibril·lador?",
+        "es": "¿En qué planta se encuentra el defibrilador localizado?",
+        "fr": "À quel étage est situé ce défibrillateur ?",
+        "nl": "Op welke verdieping bevindt deze defibrillator zich?",
+        "de": "Auf welcher Etage befindet sich der Defibrillator?",
+        "it": "A che piano si trova questo defibrillatore?",
+        "sl": "V katerem nadstropju je defibrilator?",
+        "pl": "Na którym piętrze jest ten defibrylator?",
+        "cs": "Ve kterém patře je tento defibrilátor umístěn?"
+      },
+      "condition": {
+        "and": [
+          "indoor=yes"
+        ]
+      },
+      "freeform": {
+        "key": "level",
+        "type": "int",
+        "inline": true
+      },
+      "render": {
+        "en": "This defibrillator is on floor {level}",
+        "ca": "Aquest desfibril·lador és a la planta {level}",
+        "es": "El desfibrilador se encuentra en la planta {level}",
+        "fr": "Ce défibrillateur est à l'étage {level}",
+        "nl": "De defibrillator bevindt zicht op verdieping {level}",
+        "de": "Dieser Defibrallator befindet sich im {level}. Stockwerk",
+        "it": "Questo defibrillatore è al piano {level}",
+        "sl": "Ta defibrilator je v {level}. nadstropju",
+        "pl": "Ten defibrylator jest na piętrze {level}",
+        "cs": "Tento defibrilátor je na {level} patře"
+      },
+      "mappings": [
+        {
+          "if": "level=0",
+          "then": {
+            "en": "This defibrillator is on the <b>ground floor</b>",
+            "nl": "Deze defibrillator bevindt zich <b>gelijkvloers</b>",
+            "fr": "Ce défibrillateur est au <b>rez-de-chaussée</b>",
+            "it": "Questo defibrillatore è al <b>pian terreno</b>",
+            "de": "Der Defibrillator befindet sich im <b>Erdgeschoss</b>",
+            "sl": "Ta defibrilator je v <b>pritličju</b>",
+            "es": "Este desfibrilador se encuentra en la <b>planta baja</b>",
+            "ca": "Aquest desfribil·lador està a la <b>planta baixa</b>",
+            "pl": "Ten defibrylator jest na <b>parterze</b>",
+            "cs": "Tento defibrilátor se nachází v <b>přízemí</b>"
+          }
+        },
+        {
+          "if": "level=1",
+          "then": {
+            "en": "This defibrillator is on the <b>first floor</b>",
+            "nl": "Deze defibrillator is op de <b>eerste verdieping</b>",
+            "fr": "Ce défibrillateur est au <b>premier étage</b>",
+            "it": "Questo defibrillatore è al <b>primo piano</b>",
+            "de": "Der Defibrillator befindet sich in der <b>ersten Etage</b>",
+            "sl": "Ta defibrilator je v <b>prvem nadstropju</b>",
+            "es": "Este desfibrilador se encuentra en la <b>primera planta</b>",
+            "ca": "Aquest desfribil·lador està a la <b>primera planta</b>",
+            "pl": "Ten defibrylator jest na <b>pierwszym piętrze</b>",
+            "cs": "Tento defibrilátor je v <b>prvním patře</b>"
+          }
+        }
+      ],
+      "id": "defibrillator-level"
+    },
+    {
+      "render": {
+        "nl": "<i>Meer informatie over de locatie (in de lokale taal):</i><br/>{defibrillator:location}",
+        "en": "<i>Extra information about the location (in the local language):</i><br/>{defibrillator:location}",
+        "fr": "<i>Informations supplémentaires à propos de l'emplacement (dans la langue locale) :</i><br/>{defibrillator:location}",
+        "it": "<i>Informazioni supplementari circa la posizione (in lingua locale):</i><br/>{defibrillator:location}",
+        "de": "<i>Zusätzliche Informationen über den Standort (in der Landessprache):</i><br/>{defibrillator:location}",
+        "sl": "<i>Dodatne informacije o lokaciji (v lokalnem jeziku):</i><br/>{defibrillator:location}",
+        "es": "<i>Información adicional sobre la ubicación (en el idioma local):</i><br/>{defibrillator:location}",
+        "ca": "<i>Informació extra sobre la localització (en la llengua local):</i><br/> {defibrillator:location}",
+        "pl": "<i>Dodatkowe informacje o lokalizacji (w lokalnym języku):</i><br/>{defibrillator:location}",
+        "cs": "<i>Další informace o místě (v místním jazyce):</i><br/>{defibrillator:location}"
+      },
+      "question": {
+        "en": "Please give some explanation on where the defibrillator can be found (in the local language)",
+        "ca": "Dóna detalls d'on es pot trobar el desfibril·lador",
+        "es": "Da detalles de dónde se puede encontrar el desfibrilador (en el idioma local)",
+        "fr": "Veuillez indiquez plus précisément où se situe le défibrillateur (dans la langue local)",
+        "nl": "Gelieve meer informatie te geven over de exacte locatie van de defibrillator (in de plaatselijke taal)",
+        "de": "Bitte geben Sie einen Hinweis, wo genau der Defibrillator zu finden ist (in lokaler Sprache)",
+        "it": "Indica più precisamente dove si trova il defibrillatore (in lingua locale)",
+        "sl": "Prosimo, opišite kje se nahaja defibrilator (v lokalnem jeziku)",
+        "pl": "Proszę podaj opis gdzie znajduje się defibrylator (w lokalnym języku)",
+        "cs": "Uveďte prosím nějaké vysvětlení, kde lze defibrilátor nalézt (v místním jazyce)"
+      },
+      "freeform": {
+        "type": "text",
+        "key": "defibrillator:location",
+        "inline": true
+      },
+      "id": "defibrillator-defibrillator:location"
+    },
+    {
+      "render": {
+        "nl": "<i>Meer informatie over de locatie (in het Engels):</i><br/>{defibrillator:location:en}",
+        "en": "<i>Extra information about the location (in English):</i><br/>{defibrillator:location:en}",
+        "fr": "<i>Informations supplémentaires à propos de l'emplacement (en anglais) :</i><br/>{defibrillator:location:en}",
+        "it": "<i>Informazioni supplementari circa la posizione (in inglese):</i><br/>{defibrillator:location:en}",
+        "de": "<i>Zusätzliche Informationen über den Standort (auf Englisch):</i><br/>{defibrillator:location:en}",
+        "sl": "<i>Dodatne informacije o lokaciji (v Angleščini):</i><br/>{defibrillator:location:en}",
+        "es": "<i>Información a mayores sobre la localización (en Inglés):</i><br/>{defibrillator:location:en}",
+        "ca": "<i>Informació addicional sobre la ubicació (en anglès):</i><br/>{defibrillator:location:en}",
+        "pl": "<i>Dodatkowe informacje o lokalizacji (po angielsku):</i><br/>{defibrillator:location:en}",
+        "cs": "<i>Další informace o místě (v angličtině):</i><br/>{defibrillator:location:en}"
+      },
+      "question": {
+        "en": "Please give some explanation on where the defibrillator can be found (in English)",
+        "ca": "Dona detalls d'on es pot trobar el desfibril·lador (en anglès)",
+        "es": "Da detalles de dónde se puede encontrar el desfibrilador (en ingles)",
+        "fr": "Veuillez indiquez plus précisément où se situe le défibrillateur (en englais)",
+        "nl": "Gelieve meer informatie te geven over de exacte locatie van de defibrillator (in het Engels)",
+        "de": "Bitte geben Sie einen Hinweis, wo der Defibrillator zu finden ist (auf Englisch)",
+        "it": "Indica più precisamente dove si trova il defibrillatore (in inglese)",
+        "sl": "Prosimo, opišite kje se nahaja defibrilator (v Angleščini)",
+        "pl": "Proszę podaj opis gdzie znajduje się defibrylator (po angielsku)",
+        "cs": "Uveďte prosím nějaké vysvětlení, kde lze defibrilátor nalézt (v angličtině)"
+      },
+      "freeform": {
+        "type": "text",
+        "key": "defibrillator:location:en",
+        "inline": true
+      },
+      "id": "defibrillator-defibrillator:location:en"
+    },
+    {
+      "render": {
+        "nl": "<i>Meer informatie over de locatie (in het Frans):</i><br/>{defibrillator:location:fr}",
+        "en": "<i>Extra information about the location (in French):</i><br/>{defibrillator:location:fr}",
+        "fr": "<i>Informations supplémentaires à propos de l'emplacement (en Français) :</i><br/>{defibrillator:location:fr}",
+        "it": "<i>Informazioni supplementari circa la posizione (in francese):</i><br/>{defibrillator:location:fr}",
+        "de": "<i>Zusätzliche Informationen zum Standort (auf Französisch):</i><br/>{defibrillator:location:fr}",
+        "sl": "<i>Dodatne informacije o lokaciji (v Francoščini):</i><br/>{defibrillator:location:fr}",
+        "es": "<i>Información a mayores sobre la localización (en Francés):</i><br/>{defibrillator:location:fr}",
+        "ca": "<i>Informació addicional sobre la ubicació (en francès):</i><br/>{defibrillator:location:fr}",
+        "pl": "<i>Dodatkowe informacje o lokalizacji (po francusku):</i><br/>{defibrillator:location:fr}",
+        "cs": "<i>Další informace o místě (ve francouzštině):</i><br/>{defibrillator:location:fr}"
+      },
+      "question": {
+        "en": "Please give some explanation on where the defibrillator can be found (in French)",
+        "ca": "Dóna detalls d'on es pot trobar el desfibril·lador (en francés)",
+        "es": "Da detalles de dónde se puede encontrar el desfibrilador (en frances)",
+        "fr": "Veuillez indiquez plus précisément où se situe le défibrillateur (en français)",
+        "nl": "Gelieve meer informatie te geven over de exacte locatie van de defibrillator (in het Frans)",
+        "de": "Bitte geben Sie einige Erläuterungen dazu, wo der Defibrillator zu finden ist (auf Französisch)",
+        "it": "Indica più precisamente dove si trova il defibrillatore (in francese)",
+        "sl": "Prosimo, opišite kje se nahaja defibrilator (v Francoščini)",
+        "pl": "Proszę podaj opis gdzie znajduje się defibrylator (po francusku)",
+        "cs": "Uveďte prosím nějaké vysvětlení, kde lze defibrilátor nalézt (ve francouzštině)"
+      },
+      "freeform": {
+        "type": "text",
+        "key": "defibrillator:location:fr",
+        "inline": true
+      },
+      "id": "defibrillator-defibrillator:location:fr"
+    },
+    {
+      "id": "wheelchair-access",
+      "question": {
+        "nl": "Is deze plaats rolstoeltoegankelijk?",
+        "en": "Is this place accessible with a wheelchair?",
+        "pt": "Este lugar é acessível a utilizadores de cadeiras de rodas?",
+        "pt_BR": "Este lugar é acessível com uma cadeira de rodas?",
+        "de": "Ist der Ort rollstuhlzugänglich?",
+        "fr": "Est-ce que cet endroit est accessible en chaise roulante ?",
+        "hu": "Akadálymentes-e ez a hely?",
+        "it": "Questo luogo è accessibile con una sedia a rotelle?",
+        "nb_NO": "Er dette stedet tilgjengelig for rullestoler?",
+        "ca": "Aquest lloc és accessible amb cadira de rodes?",
+        "sv": "Är det här stället tillgängligt med en rullstol?",
+        "zh_Hant": "這個地方可以坐輪椅到達嗎？",
+        "pl": "Czy to miejsce jest dostępne dla osób na wózkach inwalidzkich?",
+        "ja": "車いすでのアクセスは可能ですか？",
+        "fil": "Kaya bang abutin ang lugar na ito ng naka-wheelchair?",
+        "es": "¿Este lugar es accesible con una silla de ruedas?",
+        "da": "Er stedet tilgængeligt med en kørestol?",
+        "id": "Apakah tempat ini dapat diakses dengan kursi roda?",
+        "cs": "Je toto místo přístupné pro vozíčkáře?"
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "wheelchair=designated"
+            ]
+          },
+          "then": {
+            "nl": "Deze plaats is speciaal aangepast voor gebruikers van een rolstoel",
+            "en": "This place is specially adapted for wheelchair users",
+            "pt": "Este lugar está especialmente adaptado para utilizadores de cadeira de rodas",
+            "pt_BR": "Este lugar é especialmente adaptado para usuários de cadeira de rodas",
+            "de": "Der Ort ist speziell für Rollstuhlfahrer gestaltet",
+            "hu": "Ez a hely kifejezetten kerekesszékeseknek lett kialakítva",
+            "it": "Questo luogo è stato adattato per favorire le persone in sedia a rotelle",
+            "nb_NO": "Dette stedet er spesielt tilpasset rullestolsbrukere",
+            "fr": "Cet endroit est spécialement adapté pour les usagers de fauteuils roulants",
+            "ca": "Aquest lloc està especialment adaptat per a les cadires de rodes",
+            "sv": "Det här stället är speciellt anpassat för rullstolsburna användare",
+            "zh_Hant": "這個地方有特別設計給輪椅使用者",
+            "ru": "Это место подходит для людей на инвалидной коляске",
+            "pl": "W tym miejscu zainstalowane zostały udogodnienia dla osób na wózkach inwalidzkich",
+            "ja": "この場所は、車椅子の方のための特別仕様になっています",
+            "fil": "Ang lugar na ito ay angkop sa mga gumagamit ng wheelchair",
+            "es": "Este lugar está especialmente adaptado para usuarios en sillas de ruedas",
+            "da": "Dette sted er specielt indrettet til kørestolsbrugere",
+            "id": "Tempat ini dirancang khusus untuk pengguna kursi roda",
+            "cs": "Toto místo je speciálně upraveno pro vozíčkáře"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "wheelchair=yes"
+            ]
+          },
+          "then": {
+            "nl": "Deze plaats is vlot bereikbaar met een rolstoel",
+            "en": "This place is easily reachable with a wheelchair",
+            "pt": "Este lugar é de fácil acesso com uma cadeira de rodas",
+            "pt_BR": "Este lugar é facilmente acessível com uma cadeira de rodas",
+            "de": "Der Ort ist rollstuhlzugänglich gestaltet",
+            "hu": "Ez a hely könnyedén elérhető kerekesszékkel",
+            "it": "Questo luogo è facilmente raggiungibile con una sedia a rotelle",
+            "nb_NO": "Dette stedet kan enkelt besøkes med rullestol",
+            "fr": "Cet endroit est facilement accessible avec un fauteuil roulant",
+            "ca": "És facilment arribable amb cadira de rodes",
+            "sv": "Denna plats är lätt att nå med rullstol",
+            "zh_Hant": "這個地方坐輪椅很容易到達",
+            "ru": "До этого места легко добраться на инвалидной коляске",
+            "pl": "To miejsce jest łatwo dostępne dla osób na wózkach inwalidzkich",
+            "ja": "この場所は、車いすで簡単に行くことができます",
+            "fil": "Ang lugar na ito ay kayang abutin ng mga naka-wheelchair",
+            "es": "Este lugar es fácilmente accesible con una silla de ruedas",
+            "da": "Dette sted er let tilgængeligt med en kørestol",
+            "id": "Tempat ini mudah dijangkau dengan kursi roda",
+            "cs": "Toto místo je snadno dosažitelné s invalidním vozíkem"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "wheelchair=limited"
+            ]
+          },
+          "then": {
+            "nl": "Deze plaats is bereikbaar met een rolstoel, maar het is niet makkelijk",
+            "en": "It is possible to reach this place in a wheelchair, but it is not easy",
+            "pt": "É possível chegar a este local em cadeira de rodas, mas não é fácil",
+            "pt_BR": "É possível chegar a esse local em uma cadeira de rodas, mas não é fácil",
+            "de": "Der Ort ist nur eingeschränkt rollstuhlzugänglich",
+            "fr": "Il est possible d'accéder à cet endroit en chaise roulante, mais ce n'est pas facile",
+            "hu": "Ez a hely ugyan elérhető kerekesszékkel, de nehezen",
+            "it": "È possibile raggiungere questo luogo con una sedia a rotella ma non è semplice",
+            "nb_NO": "Det er mulig å besøke dette stedet i rullestol, men det er ikke lett",
+            "ca": "És possible fer servir cadira de rodes a aquest lloc però no és fàcil",
+            "sv": "Det är möjligt att nå den här platsen i en rullstol, men det är inte lätt",
+            "zh_Hant": "這個地方可以坐輪椅到達，但並不容易",
+            "ru": "До этого места можно добраться, но не просто",
+            "pl": "To miejsce jest dostępne dla osób na wózkach inwalidzkich, ale z pewnymi trudnościami",
+            "ja": "車いすでこの場所まで行くことは可能ですが、簡単ではありません",
+            "fil": "Kayang abutin ang lugar na ito ng mga naka-wheelchair, pero hindi madali",
+            "es": "Es posible llegar a este lugar con una silla de ruedas, pero no es fácil",
+            "da": "Det er muligt at komme til dette sted med en kørestol, men det er ikke let",
+            "id": "Dimungkinkan untuk mencapai tempat ini dengan kursi roda, tetapi tidak mudah",
+            "cs": "Na toto místo je možné se dostat na invalidním vozíku, ale není to snadné"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "wheelchair=no"
+            ]
+          },
+          "then": {
+            "nl": "Niet rolstoeltoegankelijk",
+            "en": "This place is not reachable with a wheelchair",
+            "pt": "Este lugar não é acessível com uma cadeira de rodas",
+            "pt_BR": "Este lugar não é alcançável com uma cadeira de rodas",
+            "de": "Der Ort ist nicht rollstuhlzugänglich",
+            "fr": "Cet endroit n'est pas accessible en chaise roulante",
+            "hu": "Ez a hely kerekesszékkel elérhetetlen",
+            "it": "Questo luogo non è accessibile con una sedia a rotelle",
+            "nb_NO": "Dette stedet er ikke tilgjengelig for besøk med rullestol",
+            "ca": "Aquest lloc no és accessible amb cadira de rodes",
+            "sv": "Den här platsen kan inte nås med en rullstol",
+            "zh_Hant": "輪椅無法到達這個地方",
+            "pl": "To miejsce jest niedostępne dla osób na wózkach inwalidzkich",
+            "ja": "この場所は車いすでは行けません",
+            "fil": "Ang lugar na ito ay hindi kayang abutin ng naka-wheelchair",
+            "es": "No es posible llegar a este lugar con una silla de ruedas",
+            "da": "Dette sted er ikke tilgængeligt med kørestol",
+            "id": "Tempat ini tidak bisa dijangkau dengan kursi roda",
+            "cs": "Na toto místo se nelze dostat s invalidním vozíkem"
+          }
+        }
+      ]
+    },
+    {
+      "render": {
+        "nl": "Officieel identificatienummer van het toestel: <i>{ref}</i>",
+        "en": "Official identification number of the device: <i>{ref}</i>",
+        "fr": "Numéro d'identification officiel de ce dispositif : <i>{ref}</i>",
+        "it": "Numero identificativo ufficiale di questo dispositivo:<i>{ref}</i>",
+        "de": "Offizielle Identifikationsnummer des Geräts: <i>{ref}</i>",
+        "sl": "Uradna identifikacijska številka te naprave: <i>{ref}</i>",
+        "es": "Número de identificación oficial del dispositivo: <i>{ref}</i>",
+        "ca": "Número d'identificació oficial del dispositiu: <i>{ref}</i>",
+        "pl": "Oficjalny numer identyfikacyjny urządzenia: <i>{ref}</i>",
+        "cs": "Oficiální identifikační číslo zařízení: <i>{ref}</i>"
+      },
+      "question": {
+        "en": "What is the official identification number of the device? (if visible on device)",
+        "nl": "Wat is het officieel identificatienummer van het toestel? (indien zichtbaar op toestel)",
+        "fr": "Quel est le numéro d'identification officiel de ce dispositif ? (si il est visible sur le dispositif)",
+        "it": "Qual è il numero identificativo ufficiale di questo dispositivo? (se visibile sul dispositivo)",
+        "de": "Wie lautet die offizielle Identifikationsnummer des Geräts? (falls am Gerät sichtbar)",
+        "sl": "Kakšna je uradna identifikacijska številka te naprave? (če je vidna na napravi)",
+        "es": "¿Cual es el número de identificación oficial de este dispositivo? (si está visible en el dispositivo)",
+        "ca": "Quin és el número d'identificació oficial del dispositiu? (si està visible al dispositiu)",
+        "cs": "Jaké je oficiální identifikační číslo zařízení? (pokud je na zařízení vidět)"
+      },
+      "freeform": {
+        "type": "text",
+        "key": "ref",
+        "inline": true
+      },
+      "id": "defibrillator-ref"
+    },
+    {
+      "render": {
+        "en": "Email for questions about this defibrillator: <a href='mailto:{email}'>{email}</a>",
+        "nl": "Email voor vragen over deze defibrillator: <a href='mailto:{email}'>{email}</a>",
+        "fr": "Adresse électronique pour des questions à propos de ce défibrillateur : <a href='mailto:{email}'>{email}</a>",
+        "it": "Indirizzo email per le domande su questo defibrillatore:<a href='mailto:{email}'>{email}</a>",
+        "de": "E-Mail für Fragen zu diesem Defibrillator: <a href='mailto:{email}'>{email}</a>",
+        "sl": "Email naslov za vprašanja o tem defibrilatorju: <a href='mailto:{email}'>{email}</a>",
+        "es": "Correo electrónico para preguntas sobre este desfibrilador: <a href='mailto:{email}'>{email}</a>",
+        "ca": "Correu electrònic per a preguntes sobre aquest desfibrilador: <a href='mailto:{email}'>{email}</a>",
+        "cs": "E-mail pro dotazy týkající se tohoto defibrilátoru: <a href='mailto:{email}'>{email}</a>"
+      },
+      "question": {
+        "en": "What is the email for questions about this defibrillator?",
+        "nl": "Wat is het email-adres voor vragen over deze defibrillator",
+        "fr": "Quelle est l'adresse électronique pour des questions à propos de ce défibrillateur ?",
+        "it": "Qual è l’indirizzo email per le domande riguardanti questo defibrillatore?",
+        "de": "Wie lautet die E-Mail für Fragen zu diesem Defibrillator?",
+        "sl": "Kakšen je email naslov za vprašanja o tem defibrilatorju?",
+        "es": "¿Cual es el correo electrónico para preguntas sobre este desfibrilador?",
+        "ca": "Quin és el correu electrònic on preguntar sobre aquest desfibril·lador?",
+        "cs": "Jaký je e-mail pro dotazy týkající se tohoto defibrilátoru?"
+      },
+      "freeform": {
+        "key": "email",
+        "type": "email"
+      },
+      "id": "defibrillator-email"
+    },
+    {
+      "render": {
+        "en": "Telephone for questions about this defibrillator: <a href='tel:{phone}'>{phone}</a>",
+        "fr": "Numéro de téléphone pour questions sur le défibrillateur : <a href='tel:{phone}'>{phone}</a>",
+        "nl": "Telefoonnummer voor vragen over deze defibrillator: <a href='tel:{phone}'>{phone}</a>",
+        "it": "Numero di telefono per le domande su questo defibrillatore:<a href='tel:{phone}'>{phone}</a>",
+        "de": "Telefonnummer für Fragen zu diesem Defibrillator: <a href='tel:{phone}'>{phone}</a>",
+        "sl": "Telefonska številka za vprašanja o tem defibrilatorju: <a href='tel:{phone}'>{phone}</a>",
+        "ca": "Telèfon per a dubtes sobre aquest desfibril·lador: <a href='tel:{phone}'>{phone}</a>",
+        "cs": "Telefon pro dotazy ohledně tohoto defibrilátoru: <a href='tel:{phone}'>{phone}</a>"
+      },
+      "question": {
+        "en": "What is the phone number for questions about this defibrillator?",
+        "fr": "Quel est le numéro de téléphone pour questions sur le défibrillateur ?",
+        "nl": "Wat is het telefoonnummer voor vragen over deze defibrillator",
+        "it": "Qual è il numero di telefono per le domande riguardanti questo defibrillatore?",
+        "de": "Wie lautet die Telefonnummer für Fragen zu diesem Defibrillator?",
+        "sl": "Kakšna je telefonska številka za vprašanja o tem defibrilatorju?",
+        "es": "¿Cual es el número de teléfono para preguntas sobre este desfibrilador?",
+        "ca": "Quin és el número de telèfon on preguntar sobre aquest desfibril·lador?",
+        "cs": "Jaké je telefonní číslo pro dotazy k tomuto defibrilátoru?"
+      },
+      "freeform": {
+        "key": "phone",
+        "type": "phone"
+      },
+      "id": "defibrillator-phone"
+    },
+    {
+      "id": "opening_hours_24_7",
+      "question": {
+        "en": "At what times is this defibrillator available?",
+        "fr": "À quels horaires ce défibrillateur est-il accessible ?",
+        "de": "Zu welchen Zeiten ist der Defibrillator verfügbar?",
+        "nl": "Wanneer is deze defibrillator beschikbaar?",
+        "nb_NO": "Hva er åpningstidene for {title()})",
+        "ru": "В какое время доступен этот дефибриллятор?",
+        "zh_Hant": "{title()} 的開放時間是什麼？",
+        "it": "In quali orari è disponibile questo defibrillatore?",
+        "pt_BR": "Qual o horário de funcionamento de {title()}?",
+        "pl": "W jakich godzinach dostępny jest ten defibrylator?",
+        "sv": "Vilka är öppettiderna för {title()}?",
+        "pt": "Qual é o horário de funcionamento de {title()}?",
+        "hu": "Mikor van nyitva ez: {title()}?",
+        "ca": "En quins horaris està disponible aquest desfibril·lador?",
+        "ja": "{title()}の営業時間は？",
+        "sl": "Ob katerih urah je ta defibrilator na voljo?",
+        "fil": "Anong oras nagbubukas ang {title()}?",
+        "es": "¿A qué horas está disponible este desfibrilador?",
+        "zh_Hans": "{title()} 的开放时间为何？",
+        "da": "Hvad er åbningstiderne for {title()}?",
+        "id": "Kapan jam buka {title()}?",
+        "cs": "V jakých hodinách je tento defibrilátor k dispozici?"
+      },
+      "render": {
+        "de": "<h3>Öffnungszeiten</h3>{opening_hours_table(opening_hours)}",
+        "fr": "<h3>Horaires d'ouverture</h3>{opening_hours_table(opening_hours)}",
+        "en": "<h3>Opening hours</h3>{opening_hours_table(opening_hours)}",
+        "nl": "<h3>Openingstijden</h3>{opening_hours_table(opening_hours)}",
+        "nb_NO": "<h3>Åpningstider</h3>{opening_hours_table(opening_hours)}",
+        "ru": "<h3>Часы работы</h3>{opening_hours_table(opening_hours)}",
+        "zh_Hant": "<h3>開放時間</h3>{opening_hours_table(opening_hours)}",
+        "it": "<h3>Orari di apertura</h3>{opening_hours_table(opening_hours)}",
+        "pl": "<h3> Godziny otwarcia</h3>{opening_hours_table(opening_hours)}",
+        "pt_BR": "<h3>Horário de funcionamento</h3>{opening_hours_table(opening_hours)}",
+        "sv": "<h3>Öppettider</h3> {opening_hours_table(opening_hours)}",
+        "pt": "<h3>Horário de funcionamento</h3>{opening_hours_table(opening_hours)}",
+        "eo": "<h3>Malfermitaj horoj</h3>{opening_hours_table(opening_hours)}",
+        "hu": "<h3>Nyitva tartás</h3>{opening_hours_table(opening_hours)}",
+        "ca": "<h3>Horari d'obertura</h3>{opening_hours_table(opening_hours)}",
+        "ja": "<h3>営業時間</h3>{opening_hours_table(opening_hours)}",
+        "sl": "<h3>Odpiralni čas</h3>{opening_hours_table(opening_hours)}",
+        "fil": "<h3>Mga oras na bukas</h3>{opening_hours_table(opening_hours)}",
+        "es": "<h3>Horas de apertura</h3>{opening_hours_table(opening_hours)}",
+        "zh_Hans": "<h3>开放时间</h3> {opening_hours_table(opening_hours)}",
+        "da": "<h3> Åbningstider</h3>{opening_hours_table(opening_hours)}",
+        "id": "<h3>Jam buka</h3>{opening_hours_table(opening_hours)}",
+        "pa_PK": "<h3>کھُلھے گھنٹے</h3>{opening_hours_table(opening_hours)}",
+        "cs": "<h3>Otevírací hodiny</h3>{opening_hours_table(opening_hours)}"
+      },
+      "freeform": {
+        "key": "opening_hours",
+        "type": "opening_hours",
+        "inline": false
+      },
+      "mappings": [
+        {
+          "if": "opening_hours=24/7",
+          "icon": "./assets/layers/questions/open24_7.svg",
+          "then": {
+            "en": "24/7 opened (including holidays)",
+            "de": "durchgehend geöffnet (auch an Feiertagen)",
+            "zh_Hant": "24/7 開放 (包括假日)",
+            "id": "Buka 24 jam (termasuk hari libur)",
+            "hu": "Éjjel-nappal nyitva (munkaszüneti napokon is)",
+            "es": "Abierta 24/7 (incluyendo festivos)",
+            "nl": "24/7 open (ook tijdens feestdagen)",
+            "fr": "Ouvert 24h/24 (jours fériés compris)",
+            "nb_NO": "Døgnåpent (inkludert helligdager)",
+            "cs": "Otevřeno 24/7 (včetně svátků)",
+            "ca": "Obert 24/7 (incloent-hi festius)",
+            "pl": "Otwarte 24/7 (również w święta)"
+          }
+        },
+        {
+          "#": "Just here to be able to handle those ~5000 incorrect 'opening_hours=closed' elements.",
+          "if": "opening_hours=closed",
+          "then": {
+            "en": "Marked as closed for an unspecified time",
+            "nl": "Gesloten voor onbepaalde duur",
+            "de": "Als geschlossen für eine unbestimmte Zeit markiert"
+          },
+          "hideInAnswer": true
+        }
+      ]
+    },
+    {
+      "render": {
+        "en": "Additional information: {description}",
+        "nl": "Aanvullende info: {description}",
+        "fr": "Informations supplémentaires : {description}",
+        "it": "Informazioni supplementari: {description}",
+        "ru": "Дополнительная информация: {description}",
+        "de": "Zusätzliche Informationen: {description}",
+        "id": "Informasi tambahan: {description}",
+        "sl": "Dodatne informacije: {description}",
+        "es": "Información adicional: {description}",
+        "ca": "Informació addicional: {description}",
+        "pl": "Dodatkowe informacje: {description}",
+        "cs": "Další informace: {description}"
+      },
+      "question": {
+        "en": "Is there any useful information for users that you haven't been able to describe above? (leave blank if no)",
+        "nl": "Is er nog iets bijzonder aan deze defibrillator dat je nog niet hebt kunnen meegeven? (laat leeg indien niet)",
+        "fr": "Y a-t-il des informations utiles pour les utilisateurs que vous n'avez pas pu décrire ci-dessus ? (laisser vide sinon)",
+        "it": "Vi sono altre informazioni utili agli utenti che non è stato possibile aggiungere prima? (lasciare vuoto in caso negativo)",
+        "de": "Gibt es nützliche Informationen für Benutzer, die Sie oben nicht beschreiben konnten? (leer lassen, wenn nein)",
+        "sl": "Ali imate še kakšne uporabne informacije za uporabnike, ki jih niste mogli podati zgoraj? (pustite prazno če jih nimate)",
+        "es": "¿Hay alguna información útil para los usuarios que no hayas podido describir arriba? (dejar en blanco si no)",
+        "ca": "Hi ha informació útil per als usuaris que no hagis pogut descriure més amunt? (deixeu en blanc si no)",
+        "cs": "Existují nějaké užitečné informace pro uživatele, které jste nebyli schopni výše popsat? (nechte prázdné, pokud ne)"
+      },
+      "freeform": {
+        "key": "description",
+        "type": "text",
+        "inline": true
+      },
+      "id": "defibrillator-description"
+    },
+    {
+      "question": {
+        "en": "When was this defibrillator last surveyed?",
+        "nl": "Wanneer is deze defibrillator het laatst gecontroleerd in OpenStreetMap?",
+        "fr": "Quand le défibrillateur a-t-il été vérifié pour la dernière fois ?",
+        "it": "Quando è stato verificato per l’ultima volta questo defibrillatore?",
+        "de": "Wann wurde der Defibrillator zuletzt überprüft?",
+        "sl": "Kdaj je bil ta defibrilator nazadnje opažen?",
+        "es": "¿Cuándo se sondeó por última vez este desfibrilador?",
+        "ca": "Quan es va explorar per última vegada aquest desfibril·lador?",
+        "cs": "Kdy byl tento defibrilátor naposledy zkoumán?"
+      },
+      "render": {
+        "en": "This defibrillator was last surveyed on {survey:date}",
+        "nl": "Deze defibrillator is nagekeken in OSM op {survey:date}",
+        "fr": "Ce défibrillateur a été vérifié pour la dernière fois le {survey:date}",
+        "it": "Questo defibrillatore è stato verificato per l‘ultima volta in data {survey:date}",
+        "de": "Dieser Defibrillator wurde zuletzt am {survey:date} überprüft",
+        "sl": "Ta defibrilator je bil nazadnje opažen {survey:date}",
+        "es": "Este desfibrilador se sondeó por última vez el {survey:date}",
+        "ca": "El desfibrilador és va sondejar per ultima vegada el {survey:date}",
+        "cs": "Tento defibrilátor byl naposledy zkoumán dne {survey:date}"
+      },
+      "freeform": {
+        "key": "survey:date",
+        "type": "date",
+        "inline": true
+      },
+      "mappings": [
+        {
+          "if": "survey:date:={_now:date}",
+          "then": {
+            "en": "Checked today!",
+            "nl": "Vandaag nagekeken!",
+            "fr": "Vérifié aujourd'hui !",
+            "it": "Verificato oggi!",
+            "ru": "Проверено сегодня!",
+            "de": "Heute überprüft!",
+            "sl": "Preverjeno danes!",
+            "ca": "Comprovat avui!",
+            "es": "¡Comprobado hoy!",
+            "pl": "Sprawdzone dzisiaj!",
+            "cs": "Dnes zkontrolováno!"
+          }
+        }
+      ],
+      "id": "defibrillator-survey:date"
+    },
+    {
+      "render": {
+        "en": "Extra information for OpenStreetMap experts: {fixme}",
+        "nl": "Extra informatie voor OpenStreetMap experts: {fixme}",
+        "fr": "Informations supplémentaires pour les experts d'OpenStreetMap : {fixme}",
+        "it": "Informazioni supplementari per gli esperti di OpenStreetMap: {fixme}",
+        "de": "Zusätzliche Informationen für OpenStreetMap-Experten: {fixme}",
+        "ru": "Дополнительная информация для экспертов OpenStreetMap: {fixme}",
+        "sl": "Dodatne informacije za OpenStreetMap strokovnjake: {fixme}",
+        "es": "Información extra para expertos en OpenStreetMap: {fixme}",
+        "ca": "Informació addicional per als experts en OpenStreetMap: {fixme}",
+        "pl": "Więcej informacji dla doświadczonych użytkowników OpenStreetMap: {fixme}",
+        "cs": "Další informace pro experty OpenStreetMap: {fixme}"
+      },
+      "question": {
+        "en": "Is there something wrong with how this is mapped, that you weren't able to fix here? (leave a note to OpenStreetMap experts)",
+        "nl": "Is er iets mis met de informatie over deze defibrillator dat je hier niet opgelost kreeg? (laat hier een berichtje achter voor OpenStreetMap experts)",
+        "fr": "Y a-t-il quelque chose qui ne va pas dans la manière dont ça a été cartographié, et que vous n'avez pas pu réparer ici ? (laisser une note pour les experts d'OpenStreetMap)",
+        "it": "C’è qualcosa di sbagliato riguardante come è stato mappato, che non si è potuto correggere qua? (lascia una nota agli esperti di OpenStreetMap)",
+        "de": "Gibt es einen Fehler in der Kartierung, den Sie hier nicht beheben konnten? (hinterlasse eine Notiz für OpenStreetMap-Experten)",
+        "sl": "Ali je kaj narobe s tem vnosom na zemljevid, in tega niste mogli sami popraviti tu? (pustite opombo OpenStreetMap strokovnjakom)",
+        "es": "¿Hay algo mal con como esta mapeado, que no pudiste arreglar aquí? (deja una nota para los expertos de OpenStreetMap)",
+        "ca": "Hi ha alguna cosa malament en la manera de com està mapejat això, que no heu pogut solucionar aquí? (deixeu una nota als experts d'OpenStreetMap)",
+        "cs": "Je na tom, jak je to zmapováno, něco v nepořádku, co jste zde nedokázali opravit? (zanechte poznámku odborníkům na OpenStreetMap)"
+      },
+      "freeform": {
+        "key": "fixme",
+        "type": "text",
+        "inline": true
+      },
+      "id": "defibrillator-fixme"
+    },
+    {
+      "id": "leftover-questions",
+      "render": {
+        "*": "{questions( ,)}"
+      }
+    },
+    {
+      "id": "lod",
+      "labels": [
+        "added_by_default"
+      ],
+      "render": {
+        "*": "{linked_data_from_website()}"
+      }
+    },
+    {
+      "id": "minimap",
+      "description": "Shows a small map with the feature. Added by default to every popup",
+      "render": {
+        "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+      }
+    },
+    {
+      "id": "move-button",
+      "render": {
+        "*": "{move_button()}"
+      }
+    },
+    {
+      "id": "delete-button",
+      "render": {
+        "*": "{delete_button()}"
+      }
+    },
+    {
+      "id": "last_edit",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+      "condition": {
+        "and": [
+          "_last_edit:contributor~*",
+          "_last_edit:changeset~*"
+        ]
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsTesting=true",
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_debug=yes",
+          "_csCount>=10"
+        ]
+      },
+      "render": {
+        "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+      }
+    },
+    {
+      "id": "favourite_status",
+      "render": {
+        "*": "{favourite_status()}"
+      }
+    },
+    {
+      "id": "qr_code",
+      "labels": [
+        "added_by_default"
+      ],
+      "classes": "flex items-center gap-x-2",
+      "render": {
+        "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+        "en": "{qr_code()}Scan this code to open this location on another device",
+        "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+        "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+      }
+    },
+    {
+      "id": "share",
+      "labels": [
+        "added_by_default"
+      ],
+      "metacondition": "_supports_sharing=yes",
+      "render": {
+        "de": "{share_link(,Standort teilen)}",
+        "en": "{share_link(,Share this location)}",
+        "nl": "{share_link(,Deel deze locatie)}"
+      }
+    },
+    {
+      "id": "all-tags",
+      "render": {
+        "*": "{all_tags()}"
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_tags=full",
+          "mapcomplete-show_debug=yes"
+        ]
+      }
+    }
+  ],
+  "filter": [
+    {
+      "id": "has_image",
+      "options": [
+        {
+          "question": {
+            "en": "With and without images",
+            "nl": "Met en zonder afbeelding",
+            "de": "Mit und ohne Bild",
+            "pl": "Z oraz bez zdjęć",
+            "ca": "Amb i sense imatges",
+            "cs": "S obrázky i bez nich"
+          }
+        },
+        {
+          "question": {
+            "en": "Has at least one image",
+            "de": "Hat mindestens ein Bild",
+            "nl": "Heeft minstens één afbeelding",
+            "pl": "Ma co najmniej jedno zdjęcie",
+            "ca": "Té com a mínim una imatge",
+            "cs": "Má alespoň jeden obrázek"
+          },
+          "osmTags": {
+            "or": [
+              "image~*",
+              "image:0~*",
+              "image:1~*",
+              "image:2~*",
+              "image:3~*",
+              "mapillary~*"
+            ]
+          }
+        },
+        {
+          "question": {
+            "en": "Probably does not have an image",
+            "de": "Hat wahrscheinlich kein Bild",
+            "nl": "Heeft waarschijnlijk geen afbeelding",
+            "pl": "Prawdopodobnie nie ma zdjęcia",
+            "ca": "Probablement no té una imatge",
+            "cs": "Pravděpodobně nemá obrázek"
+          },
+          "osmTags": {
+            "and": [
+              "image=",
+              "image:0=",
+              "image:1=",
+              "image:2=",
+              "image:3=",
+              "mapillary="
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "open_now",
+      "options": [
+        {
+          "question": {
+            "en": "Open now",
+            "nl": "Nu open",
+            "de": "Jetzt geöffnet",
+            "ca": "Obert ara",
+            "es": "Abierto",
+            "fr": "Ouvert maintenant",
+            "hu": "Most nyitva van",
+            "da": "Åbent nu",
+            "zh_Hant": "目前開放",
+            "id": "Saat ini buka",
+            "it": "Aperto ora",
+            "pl": "Otwarte teraz",
+            "cs": "Nyní otevřeno"
+          },
+          "osmTags": "_isOpen=yes"
+        }
+      ]
+    }
+  ],
+  "deletion": {
+    "softDeletionTags": {
+      "and": [
+        "disused:emergency:=defibrillator",
+        "emergency="
+      ]
+    },
+    "neededChangesets": 5
+  },
+  "allowMove": {
+    "enableRelocation": false,
+    "enableImproveAccuracy": true
+  },
+  "titleIcons": [
+    {
+      "id": "wikipedialink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+      "condition": {
+        "or": [
+          "wikipedia~*",
+          "wikidata~*"
+        ]
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "wikipedia=",
+          "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "open_until",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "#": "Titleicon showing e.g. 'open until 17:00'",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{opening_hours_state()}",
+      "condition": {
+        "or": [
+          "opening_hours~*",
+          {
+            "or": [
+              {
+                "and": [
+                  "seasonal~.*winter.*",
+                  "_now:date~....-(12|01|02)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*spring.*",
+                  "_now:date~....-(03|04|05)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*summer.*",
+                  "_now:date~....-(06|07|08)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*autumn.*",
+                  "_now:date~....-(09|10|11)-.."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "phonelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": {
+        "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+        "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+        "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+        "_context": "layers:icons.tagRenderings.phonelink.render"
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:phone~*",
+          "then": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+          }
+        }
+      ],
+      "condition": {
+        "or": [
+          "phone~*",
+          "contact:phone~*"
+        ]
+      }
+    },
+    {
+      "id": "emaillink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:email~*",
+          "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:email~*",
+          "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        }
+      ],
+      "condition": {
+        "or": [
+          "email~*",
+          "contact:email~*",
+          "operator:email~*"
+        ]
+      }
+    },
+    {
+      "id": "websitelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "website~*",
+          "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:website~*",
+          "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "context:website~*",
+          "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "smokingicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=no",
+          "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=yes",
+          "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+        }
+      ]
+    },
+    {
+      "id": "dogicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "if": "dog=no",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+        },
+        {
+          "if": "dog=leashed",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+        },
+        {
+          "if": {
+            "or": [
+              "dog=yes",
+              "dog=unleashed"
+            ]
+          },
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+        }
+      ]
+    },
+    {
+      "id": "sharelink",
+      "labels": [
+        "defaults"
+      ],
+      "render": "{share_link()}",
+      "metacondition": "_supports_sharing=yes"
+    },
+    {
+      "id": "favourite_title_icon",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "*": "{favourite_icon()}"
+      },
+      "metacondition": "_loggedIn=true"
+    },
+    {
+      "id": "osmlink",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+        "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+        "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+        "_context": "layers:icons.tagRenderings.osmlink.render"
+      },
+      "mappings": [
+        {
+          "if": "id~.*/-.*",
+          "then": ""
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "_backend~*",
+          "then": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+          }
+        }
+      ],
+      "condition": "id~(node|way|relation)/[0-9]*"
+    },
+    {
+      "id": "direction",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "{direction_indicator()}"
+    },
+    {
+      "id": "rating",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{rating()}"
+    }
+  ],
+  "_layerIcon": [
+    {
+      "icon": "square",
+      "color": "#008754"
+    },
+    {
+      "icon": "./assets/layers/defibrillator/defibrillator.svg"
+    }
+  ]
+}

@@ -1,0 +1,1429 @@
+{
+  "id": "icecream",
+  "title": {
+    "en": "Icecream",
+    "de": "Eiscreme",
+    "cs": "Zmrzlina",
+    "ca": "Gelat",
+    "es": "Helado",
+    "_context": "themes:icecream.title"
+  },
+  "description": {
+    "en": "A map showing ice cream parlors and ice cream vending machines",
+    "de": "Eine Karte, die Eisdielen und Eisautomaten zeigt",
+    "cs": "Mapa zobrazující prodej zmrzliny a automaty na zmrzlinu",
+    "ca": "Un mapa que mostra les gelateries i les màquines expenedores de gelats",
+    "es": "Mapa de heladerías y máquinas expendedoras de helados",
+    "_context": "themes:icecream.description"
+  },
+  "icon": "./assets/layers/ice_cream/ice_cream.svg",
+  "layers": [
+    {
+      "id": "ice_cream",
+      "name": {
+        "en": "Ice cream parlors",
+        "de": "Eisdielen"
+      },
+      "description": {
+        "en": "A place where ice cream is sold over the counter",
+        "de": "Ein Ort, an dem Eiscreme an der Theke verkauft wird"
+      },
+      "source": {
+        "osmTags": {
+          "and": [
+            "amenity=ice_cream"
+          ]
+        }
+      },
+      "minzoom": 14,
+      "title": {
+        "render": {
+          "en": "Ice cream parlor",
+          "de": "Eisdiele"
+        },
+        "mappings": [
+          {
+            "if": "name~*",
+            "then": {
+              "en": "{name}",
+              "de": "{name}"
+            }
+          }
+        ]
+      },
+      "pointRendering": [
+        {
+          "location": [
+            "point",
+            "centroid"
+          ],
+          "marker": [
+            {
+              "icon": {
+                "render": "circle",
+                "id": "circle"
+              },
+              "color": "white"
+            },
+            {
+              "icon": {
+                "render": "./assets/layers/ice_cream/ice_cream.svg",
+                "id": "assetslayersicecreamicecreamsvg"
+              }
+            }
+          ],
+          "iconBadges": [
+            {
+              "if": "_favourite=yes",
+              "then": {
+                "render": "circle:white;heart:red",
+                "id": "circlewhiteheartred"
+              }
+            }
+          ]
+        }
+      ],
+      "lineRendering": [
+        {
+          "width": 1,
+          "color": "blue"
+        }
+      ],
+      "presets": [
+        {
+          "title": {
+            "en": "an ice cream parlor",
+            "de": "eine Eisdiele",
+            "fr": "un glacier"
+          },
+          "tags": [
+            "amenity=ice_cream"
+          ],
+          "description": {
+            "en": "A shop where one can buy only icecream and related items. Ice cream is normally hand-scooped.",
+            "de": "Ein Geschäft, in dem man nur Eiscreme und damit verbundene Artikel kaufen kann. Normalerweise wird das Eis mit der Hand portioniert."
+          }
+        }
+      ],
+      "tagRenderings": [
+        {
+          "id": "just_created",
+          "labels": [
+            "added_by_default"
+          ],
+          "description": "This element shows a 'thank you' that the contributor has recently created this element",
+          "classes": "rounded-xl thanks",
+          "mappings": [
+            {
+              "if": "id~*",
+              "icon": "./assets/svg/party.svg",
+              "then": {
+                "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+                "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+                "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+                "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+                "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+                "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+              }
+            }
+          ],
+          "condition": {
+            "and": [
+              "_backend~*",
+              "_last_edit:passed_time<300",
+              {
+                "or": [
+                  "_version_number=",
+                  "_version_number=1"
+                ]
+              }
+            ]
+          },
+          "metacondition": {
+            "and": [
+              {
+                "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+                "or": [
+                  "_last_edit:contributor:uid:={_uid}",
+                  "_last_edit:contributor:uid="
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "images",
+          "description": "This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images",
+          "render": {
+            "*": "{image_carousel()}{image_upload()}{nearby_images():my-4}"
+          },
+          "classes": "my-4"
+        },
+        {
+          "id": "reviews",
+          "description": "Shows the reviews module (including the possibility to leave a review)",
+          "render": {
+            "*": "{create_review()}{list_reviews()}"
+          }
+        },
+        {
+          "question": {
+            "en": "What is the name of this ice cream parlor?",
+            "nl": "Wat is de naam van dit ijssalon?",
+            "de": "Wie heißt diese Eisdiele?"
+          },
+          "id": "1",
+          "freeform": {
+            "key": "name",
+            "inline": true
+          },
+          "render": {
+            "en": "This ice cream parlor is named <b>{name}</b>",
+            "nl": "Dit ijssalon heet <b>{name}</b>",
+            "de": "Diese Eisdiele heißt <b>{name}</b>"
+          }
+        },
+        {
+          "id": "opening_hours",
+          "question": {
+            "en": "What are the opening hours of {title()}?",
+            "fr": "Quelles sont les horaires d'ouverture de {title()} ?",
+            "de": "Wie lauten die Öffnungszeiten von {title()}?",
+            "nl": "Wat zijn de openingstijden van {title()}?",
+            "nb_NO": "Hva er åpningstidene for {title()})",
+            "ru": "Какое время работы у {title()}?",
+            "zh_Hant": "{title()} 的開放時間是什麼？",
+            "it": "Quali sono gli orari di apertura di {title()}?",
+            "pt_BR": "Qual o horário de funcionamento de {title()}?",
+            "pl": "Jakie są godziny otwarcia {title()}?",
+            "sv": "Vilka är öppettiderna för {title()}?",
+            "pt": "Qual é o horário de funcionamento de {title()}?",
+            "hu": "Mikor van nyitva ez: {title()}?",
+            "ca": "Quin és l'horari d'obertura de {title()}?",
+            "ja": "{title()}の営業時間は？",
+            "sl": "Kakšen odpiralni čas ima {title()}?",
+            "fil": "Anong oras nagbubukas ang {title()}?",
+            "es": "¿Cuales son las horas de apertura de {title()}?",
+            "zh_Hans": "{title()} 的开放时间为何？",
+            "da": "Hvad er åbningstiderne for {title()}?",
+            "id": "Kapan jam buka {title()}?",
+            "cs": "Jaká je otevírací doba {title()}?"
+          },
+          "render": {
+            "de": "<h3>Öffnungszeiten</h3>{opening_hours_table(opening_hours)}",
+            "fr": "<h3>Horaires d'ouverture</h3>{opening_hours_table(opening_hours)}",
+            "en": "<h3>Opening hours</h3>{opening_hours_table(opening_hours)}",
+            "nl": "<h3>Openingstijden</h3>{opening_hours_table(opening_hours)}",
+            "nb_NO": "<h3>Åpningstider</h3>{opening_hours_table(opening_hours)}",
+            "ru": "<h3>Часы работы</h3>{opening_hours_table(opening_hours)}",
+            "zh_Hant": "<h3>開放時間</h3>{opening_hours_table(opening_hours)}",
+            "it": "<h3>Orari di apertura</h3>{opening_hours_table(opening_hours)}",
+            "pl": "<h3> Godziny otwarcia</h3>{opening_hours_table(opening_hours)}",
+            "pt_BR": "<h3>Horário de funcionamento</h3>{opening_hours_table(opening_hours)}",
+            "sv": "<h3>Öppettider</h3> {opening_hours_table(opening_hours)}",
+            "pt": "<h3>Horário de funcionamento</h3>{opening_hours_table(opening_hours)}",
+            "eo": "<h3>Malfermitaj horoj</h3>{opening_hours_table(opening_hours)}",
+            "hu": "<h3>Nyitva tartás</h3>{opening_hours_table(opening_hours)}",
+            "ca": "<h3>Horari d'obertura</h3>{opening_hours_table(opening_hours)}",
+            "ja": "<h3>営業時間</h3>{opening_hours_table(opening_hours)}",
+            "sl": "<h3>Odpiralni čas</h3>{opening_hours_table(opening_hours)}",
+            "fil": "<h3>Mga oras na bukas</h3>{opening_hours_table(opening_hours)}",
+            "es": "<h3>Horas de apertura</h3>{opening_hours_table(opening_hours)}",
+            "zh_Hans": "<h3>开放时间</h3> {opening_hours_table(opening_hours)}",
+            "da": "<h3> Åbningstider</h3>{opening_hours_table(opening_hours)}",
+            "id": "<h3>Jam buka</h3>{opening_hours_table(opening_hours)}",
+            "pa_PK": "<h3>کھُلھے گھنٹے</h3>{opening_hours_table(opening_hours)}",
+            "cs": "<h3>Otevírací hodiny</h3>{opening_hours_table(opening_hours)}"
+          },
+          "freeform": {
+            "key": "opening_hours",
+            "type": "opening_hours",
+            "inline": false
+          },
+          "mappings": [
+            {
+              "#": "Just here to be able to handle those ~5000 incorrect 'opening_hours=closed' elements.",
+              "if": "opening_hours=closed",
+              "then": {
+                "en": "Marked as closed for an unspecified time",
+                "nl": "Gesloten voor onbepaalde duur",
+                "de": "Als geschlossen für eine unbestimmte Zeit markiert"
+              },
+              "hideInAnswer": true
+            }
+          ]
+        },
+        {
+          "id": "phone",
+          "labels": [
+            "contact"
+          ],
+          "question": {
+            "en": "What is the phone number of {title()}?",
+            "nl": "Wat is het telefoonnummer van {title()}?",
+            "fr": "Quel est le numéro de téléphone de {title()} ?",
+            "de": "Wie lautet die Telefonnummer von {title()}?",
+            "nb_NO": "Hva er telefonnummeret til {title()}?",
+            "ru": "Какой номер телефона у {title()}?",
+            "sv": "Vad är telefonnumret till {title()}?",
+            "zh_Hant": "{title()} 的電話號碼是什麼？",
+            "it": "Qual è il numero di telefono di {title()}?",
+            "pt_BR": "Qual o número de telefone de {title()}?",
+            "id": "Berapa nomor telepon dari {title()}?",
+            "pl": "Jaki jest numer telefonu do {title()}?",
+            "pt": "Qual é o número de telefone de {title()}?",
+            "eo": "Kio estas la telefonnumero de {title()}?",
+            "hu": "Mi a telefonszáma ennek: {title()}?",
+            "ca": "Quin és el telèfon de {title()}?",
+            "ja": "{title()}の電話番号は？",
+            "sl": "Kakšno telefonsko številko ima {title()}?",
+            "fil": "Ano ang telepono ng {title()}?",
+            "es": "¿Cuál es el número de teléfono de {title()}?",
+            "zh_Hans": "{title()} 的电话号码为何？",
+            "da": "Hvad er telefonnummeret til {title()}?",
+            "cs": "Jaké je telefonní číslo {title()}?"
+          },
+          "render": {
+            "*": "<a href='tel:{phone}'>{phone}</a>"
+          },
+          "icon": "./assets/layers/questions/phone.svg",
+          "mappings": [
+            {
+              "if": "contact:phone~*",
+              "then": "<a href='tel:{contact:phone}'>{contact:phone}</a>",
+              "hideInAnswer": true,
+              "icon": "./assets/layers/questions/phone.svg"
+            }
+          ],
+          "freeform": {
+            "key": "phone",
+            "type": "phone",
+            "addExtraTags": [
+              "contact:phone="
+            ]
+          },
+          "editButtonAriaLabel": {
+            "en": "Edit phone number",
+            "nl": "Pas telefoonnummer aan",
+            "de": "Telefonnummer bearbeiten"
+          }
+        },
+        {
+          "id": "email",
+          "render": {
+            "*": "<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>"
+          },
+          "icon": "./assets/svg/envelope.svg",
+          "labels": [
+            "contact"
+          ],
+          "question": {
+            "nl": "Wat is het e-mailadres van {title()}?",
+            "fr": "Quelle est l'adresse courriel de {title()} ?",
+            "en": "What is the email address of {title()}?",
+            "nb_NO": "Hva er e-postadressen til {title()}?",
+            "ru": "Какой адрес электронной почты у {title()}?",
+            "id": "Apa alamat surel dari {title()}?",
+            "zh_Hant": "{title()} 的電子郵件地址是什麼？",
+            "it": "Qual è l'indirizzo email di {title()}?",
+            "de": "Wie lautet die Mail-Adresse von {title()}?",
+            "pt_BR": "Qual o endereço de e-mail de {title()}?",
+            "pl": "Jaki jest adres e-mail do {title()}?",
+            "sv": "Vad är e-postadressen till {title()}?",
+            "pt": "Qual é o endereço de e-mail de {title()}?",
+            "eo": "Kio estas la retpoŝta adreso de {title()}?",
+            "hu": "Mi a(z) {title()} e-mail címe?",
+            "ca": "Quina és l'adreça de correu electrònic de {title()}?",
+            "ja": "{title()}のEメールアドレスは何ですか？",
+            "sl": "Kakšen naslov elektronske pošte ima {title()}?",
+            "fil": "Ano ang email address ng {title()}?",
+            "es": "¿Cuál es la dirección de correo electrónico de {title()}?",
+            "zh_Hans": "{title()} 的电子邮箱地址为何？",
+            "da": "Hvad er mailadressen på {title()}?",
+            "cs": "Jaká je e-mailová adresa {title()}?"
+          },
+          "mappings": [
+            {
+              "if": "contact:email~*",
+              "icon": "./assets/svg/envelope.svg",
+              "then": "<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>",
+              "hideInAnswer": true
+            },
+            {
+              "if": "operator:email~*",
+              "icon": "./assets/svg/envelope.svg",
+              "then": "<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>",
+              "hideInAnswer": true
+            }
+          ],
+          "freeform": {
+            "key": "email",
+            "type": "email",
+            "addExtraTags": [
+              "contact:email="
+            ]
+          },
+          "editButtonAriaLabel": {
+            "en": "Edit email address",
+            "nl": "Pas emailadres aan",
+            "de": "E-Mail Adresse bearbeiten"
+          }
+        },
+        {
+          "id": "website",
+          "labels": [
+            "contact"
+          ],
+          "icon": "./assets/layers/icons/website.svg",
+          "question": {
+            "en": "What is the website of {title()}?",
+            "nl": "Wat is de website van {title()}?",
+            "fr": "Quel est le site web de {title()} ?",
+            "gl": "Cal é a páxina web de {title()}?",
+            "nb_NO": "Hva er nettsiden til {title()}?",
+            "ru": "Какой сайт у {title()}?",
+            "id": "Apa situs web dari {title()}?",
+            "zh_Hant": "{title()} 網址是什麼？",
+            "it": "Qual è il sito web di {title()}?",
+            "de": "Wie lautet die Webseite von {title()}?",
+            "pt_BR": "Qual o site de {title()}?",
+            "pl": "Jaka jest strona internetowa {title()}?",
+            "sv": "Vad är webbplatsen för {title()}?",
+            "pt": "Qual é o sítio web de {title()}?",
+            "eo": "Kie estas la retejo de {title()}?",
+            "hu": "Mi a weboldala ennek: {title()}?",
+            "ca": "Quina és la web de {title()}?",
+            "ja": "{title()}のウェブサイトは？",
+            "fil": "Ano ang website ng {title()}?",
+            "es": "¿Cual es el sitio web de {title()}?",
+            "zh_Hans": "{title()} 的网站为何？",
+            "da": "Hvad er webstedet for {title()}?",
+            "cs": "Jaká je webová stránka {title()}?"
+          },
+          "render": {
+            "*": "<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>"
+          },
+          "freeform": {
+            "key": "website",
+            "type": "url",
+            "addExtraTags": [
+              "contact:website="
+            ]
+          },
+          "mappings": [
+            {
+              "if": "contact:website~*",
+              "then": "<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>",
+              "hideInAnswer": true,
+              "icon": "./assets/layers/icons/website.svg"
+            }
+          ],
+          "editButtonAriaLabel": {
+            "en": "Edit website",
+            "nl": "Pas website aan",
+            "de": "Webseite bearbeiten"
+          }
+        },
+        {
+          "id": "sugar_free",
+          "labels": [
+            "diets"
+          ],
+          "question": {
+            "en": "Does this shop have a sugar free offering?",
+            "de": "Verkauft das Geschäft zuckerfreie Produkte?",
+            "cs": "Nabízí tento obchod nabídku bez cukru?"
+          },
+          "questionHint": {
+            "en": "This is important for people following a sugar-free diet, such as people with Diabetes",
+            "de": "Dies ist wichtig für Menschen, die eine zuckerfreie Diät einhalten, z. B. für Menschen mit Diabetes",
+            "cs": "To je důležité pro lidi, kteří dodržují dietu bez cukru, jako jsou lidé s diabetem"
+          },
+          "mappings": [
+            {
+              "if": "diet:sugar_free=only",
+              "then": {
+                "en": "This shop <b>only sells sugar free</b> products",
+                "de": "Das Geschäft verkauft <b>ausschließlich</b> zuckerfreie Produkte",
+                "cs": "Tento obchod <b>prodává pouze produkty bez cukru</b>"
+              }
+            },
+            {
+              "if": "diet:sugar_free=yes",
+              "then": {
+                "en": "This shop has a big sugar free offering",
+                "de": "Das Geschäft verkauft <b>viele<b> zuckerfreie Produkte",
+                "cs": "Tento obchod má velkou nabídku bez cukru"
+              }
+            },
+            {
+              "if": "diet:sugar_free=limited",
+              "then": {
+                "en": "This shop has a <b>limited sugar free</b> offering",
+                "de": "Das Geschäft verkauft <b>wenige</b> zuckerfreie Produkte",
+                "cs": "Tento obchod má <b>omezenou nabídku bez cukru</b>"
+              }
+            },
+            {
+              "if": "diet:sugar_free=no",
+              "then": {
+                "en": "This shop has no sugar free offering",
+                "de": "Das Geschäft verkauft <b>keine<b> zuckerfreie Produkte",
+                "cs": "Tento obchod nemá žádnou nabídku bez cukru"
+              }
+            }
+          ]
+        },
+        {
+          "id": "lactose_free",
+          "labels": [
+            "diets"
+          ],
+          "question": {
+            "en": "Does {title()} have a lactose-free offering?",
+            "de": "Verkauft {title()} laktosefreie Produkte?",
+            "cs": "Má {title()} nabídku bez laktózy?"
+          },
+          "mappings": [
+            {
+              "if": "diet:lactose_free=only",
+              "then": {
+                "en": "<b>Only sells lactose free</b> products",
+                "de": "<b>Ausschließlich</b> laktosefreie Produkte",
+                "cs": "<b>Prodává pouze výrobky bez laktózy</b>"
+              }
+            },
+            {
+              "if": "diet:lactose_free=yes",
+              "then": {
+                "en": "Big lactose free offering",
+                "de": "Viele laktosefreie Produkte",
+                "cs": "Velká nabídka bez laktózy"
+              }
+            },
+            {
+              "if": "diet:lactose_free=limited",
+              "then": {
+                "en": "<b>Limited lactose free</b> offering",
+                "de": "<b>Wenige</b> laktosefreie Produkte",
+                "cs": "<b>Omezená nabídka bez laktózy</b>"
+              }
+            },
+            {
+              "if": "diet:lactose_free=no",
+              "then": {
+                "en": "No lactose free offering",
+                "de": "Keine laktosefreie Produkte",
+                "cs": "Žádná nabídka bez laktózy"
+              }
+            }
+          ]
+        },
+        {
+          "id": "gluten_free",
+          "labels": [
+            "diets"
+          ],
+          "question": {
+            "en": "Does this shop have a gluten free offering?",
+            "de": "Verkauft das Geschäft glutenfreie Produkte?",
+            "cs": "Má tento obchod bezlepkovou nabídku?"
+          },
+          "mappings": [
+            {
+              "if": "diet:gluten_free=only",
+              "then": {
+                "en": "This shop <b>only sells gluten free</b> products",
+                "de": "Das Geschäft verkauft <b>ausschließlich glutenfreie</b> Produkte",
+                "cs": "Tento obchod <b>prodává pouze bezlepkové</b> produkty"
+              }
+            },
+            {
+              "if": "diet:gluten_free=yes",
+              "then": {
+                "en": "This shop has a big gluten free offering",
+                "de": "Das Geschäft verkauft viele glutenfreie Produkte",
+                "cs": "Tento obchod má velkou bezlepkovou nabídku"
+              }
+            },
+            {
+              "if": "diet:gluten_free=limited",
+              "then": {
+                "en": "This shop has a <b>limited gluten free</b> offering",
+                "de": "Das Geschäft verkauft <b>wenige glutenfreie</b> Produkte",
+                "cs": "Tento obchod má <b>omezenou nabídku bezlepkových produktů</b>"
+              }
+            },
+            {
+              "if": "diet:gluten_free=no",
+              "then": {
+                "en": "This shop has no gluten free offering",
+                "de": "Das Geschäft verkauft keine glutenfreie Produkte",
+                "cs": "Tento obchod nemá bezlepkovou nabídku"
+              }
+            }
+          ]
+        },
+        {
+          "id": "vegan",
+          "labels": [
+            "diets"
+          ],
+          "question": {
+            "en": "Does this place offer a vegan option?",
+            "de": "Bietet dieser Ort eine vegane Option an?"
+          },
+          "mappings": [
+            {
+              "if": "diet:vegan=only",
+              "then": {
+                "en": "This place <b>only sells vegan</b> products",
+                "de": "Dieser Ort verkauft <b>nur vegane</b> Produkte"
+              }
+            },
+            {
+              "if": "diet:vegan=yes",
+              "then": {
+                "en": "This shop has a big vegan offering",
+                "de": "Dieser Laden hat ein großes veganes Angebot"
+              }
+            },
+            {
+              "if": "diet:vegan=limited",
+              "then": {
+                "en": "This shop has a <b>limited vegan</b> offering",
+                "de": "Dieser Laden hat ein <b>begrenztes veganes</b> Angebot"
+              }
+            },
+            {
+              "if": "diet:vegan=no",
+              "then": {
+                "en": "This shop has no vegan offering",
+                "de": "Dieser Laden bietet keine veganen Produkte an"
+              }
+            }
+          ]
+        },
+        {
+          "id": "payment-options",
+          "question": {
+            "en": "Which methods of payment are accepted here?",
+            "nl": "Welke betaalmiddelen worden hier geaccepteerd?",
+            "pt": "Que métodos de pagamento são aceites aqui?",
+            "pt_BR": "Quais métodos de pagamento são aceitos aqui?",
+            "id": "Metode pembayaran manakah yang di terima disini?",
+            "de": "Welche Zahlungsmethoden werden hier akzeptiert?",
+            "fr": "Quelles sont les méthodes de paiement acceptées ici ?",
+            "hu": "Milyen fizetési módokat fogadnak el itt?",
+            "it": "Quali metodi di pagamento sono accettati qui?",
+            "nb_NO": "Hvilke betalingsmetoder godtas her?",
+            "ca": "Quins mètodes de pagament s'accepten aquí?",
+            "sv": "Vilka betalningsmetoder accepteras här?",
+            "zh_Hant": "這邊接受那種付款方式？",
+            "pl": "Jakie metody płatności są tutaj dostępne?",
+            "ru": "Какие способы оплаты здесь принимают?",
+            "ja": "どのような支払い方法が可能ですか？",
+            "sl": "Kateri načini plačila so možni tu?",
+            "fil": "Anong mga paraang pambayad ang tinatanggap dito?",
+            "es": "¿Qué métodos de pago se aceptan aquí?",
+            "zh_Hans": "这里支持哪些支付方式？",
+            "da": "Hvilke betalingsmetoder accepteres her?",
+            "cs": "Jaké platební metody jsou zde přijímány?"
+          },
+          "multiAnswer": true,
+          "mappings": [
+            {
+              "if": "payment:cash=yes",
+              "ifnot": "payment:cash=no",
+              "icon": "./assets/layers/questions/cash.svg",
+              "then": {
+                "en": "Cash is accepted here",
+                "nl": "Cash geld wordt hier aanvaard",
+                "pt": "Aceitam pagamento com dinheiro aqui",
+                "pt_BR": "Dinheiro é aceito aqui",
+                "id": "Pembayaran tunai diterima di sini",
+                "de": "Hier wird Bargeld akzeptiert",
+                "fr": "Paiement en liquide accepté",
+                "hu": "Itt készpénzzel is lehet fizetni",
+                "it": "I contanti sono accettati",
+                "nb_NO": "Kontanter godtas her",
+                "ca": "S'accepten diners",
+                "sv": "Pengar accepteras här",
+                "zh_Hant": "這邊接受現金",
+                "pl": "Płatność gotówkowa jest tutaj dostępna",
+                "ru": "Здесь принимают наличными",
+                "ja": "現金利用可能",
+                "sl": "Tu sprejemajo gotovino",
+                "fil": "Tinatanggap ang salapi rito",
+                "es": "Aquí se acepta el pago en efectivo",
+                "zh_Hans": "可用现金",
+                "da": "Her modtages kontanter",
+                "cs": "Přijímá se zde hotovost"
+              }
+            },
+            {
+              "if": "payment:cards=yes",
+              "ifnot": "payment:cards=no",
+              "icon": "./assets/layers/questions/payment_card.svg",
+              "then": {
+                "en": "Payment cards are accepted here",
+                "nl": "Betalen met bankkaarten kan hier",
+                "pt": "Aceitam pagamento com cartões bancários aqui",
+                "pt_BR": "Cartões de pagamento são aceitos aqui",
+                "id": "Kartu pembayaran diterima di sini",
+                "de": "Hier wird Kartenzahlung akzeptiert",
+                "fr": "Paiement par carte accepté",
+                "hu": "Itt fizetőkártyákkal is lehet fizetni",
+                "it": "I pagamenti con la carta sono accettati",
+                "nb_NO": "Betalingskort godtas her",
+                "ca": "S'accepten targetes de crèdit",
+                "sv": "Betalningskort accepteras här",
+                "zh_Hant": "這邊接受現金卡",
+                "pl": "Płatność kartą jest tutaj dostępna",
+                "ru": "Здесь принимают банковские карты",
+                "ja": "お支払いはこちらで承ります",
+                "sl": "Tukaj sprejemajo plačilne kartice",
+                "fil": "Tinatanggap ang mga tarhetang pambayad dito",
+                "es": "Aquí se acepta el pago por tarjeta",
+                "zh_Hans": "可用信用卡",
+                "da": "Betalingskort accepteres her",
+                "cs": "Jsou zde přijímány platební karty"
+              }
+            },
+            {
+              "if": "payment:qr_code=yes",
+              "ifnot": "payment:qr_code=no",
+              "icon": "./assets/layers/questions/qrcode.svg",
+              "then": {
+                "en": "Payment by QR-code is possible here",
+                "nl": "Betalen via een QR-code is hier mogelijk",
+                "de": "Die Bezahlung per QR-Code ist hier möglich",
+                "es": "Aquí se puede pagar con código QR",
+                "ca": "Aquí es pot pagar amb codi QR",
+                "cs": "Platba QR kódem je zde možná"
+              }
+            }
+          ]
+        },
+        {
+          "id": "wheelchair-access",
+          "question": {
+            "nl": "Is deze plaats rolstoeltoegankelijk?",
+            "en": "Is this place accessible with a wheelchair?",
+            "pt": "Este lugar é acessível a utilizadores de cadeiras de rodas?",
+            "pt_BR": "Este lugar é acessível com uma cadeira de rodas?",
+            "de": "Ist der Ort rollstuhlzugänglich?",
+            "fr": "Est-ce que cet endroit est accessible en chaise roulante ?",
+            "hu": "Akadálymentes-e ez a hely?",
+            "it": "Questo luogo è accessibile con una sedia a rotelle?",
+            "nb_NO": "Er dette stedet tilgjengelig for rullestoler?",
+            "ca": "Aquest lloc és accessible amb cadira de rodes?",
+            "sv": "Är det här stället tillgängligt med en rullstol?",
+            "zh_Hant": "這個地方可以坐輪椅到達嗎？",
+            "pl": "Czy to miejsce jest dostępne dla osób na wózkach inwalidzkich?",
+            "ja": "車いすでのアクセスは可能ですか？",
+            "fil": "Kaya bang abutin ang lugar na ito ng naka-wheelchair?",
+            "es": "¿Este lugar es accesible con una silla de ruedas?",
+            "da": "Er stedet tilgængeligt med en kørestol?",
+            "id": "Apakah tempat ini dapat diakses dengan kursi roda?",
+            "cs": "Je toto místo přístupné pro vozíčkáře?"
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "wheelchair=designated"
+                ]
+              },
+              "then": {
+                "nl": "Deze plaats is speciaal aangepast voor gebruikers van een rolstoel",
+                "en": "This place is specially adapted for wheelchair users",
+                "pt": "Este lugar está especialmente adaptado para utilizadores de cadeira de rodas",
+                "pt_BR": "Este lugar é especialmente adaptado para usuários de cadeira de rodas",
+                "de": "Der Ort ist speziell für Rollstuhlfahrer gestaltet",
+                "hu": "Ez a hely kifejezetten kerekesszékeseknek lett kialakítva",
+                "it": "Questo luogo è stato adattato per favorire le persone in sedia a rotelle",
+                "nb_NO": "Dette stedet er spesielt tilpasset rullestolsbrukere",
+                "fr": "Cet endroit est spécialement adapté pour les usagers de fauteuils roulants",
+                "ca": "Aquest lloc està especialment adaptat per a les cadires de rodes",
+                "sv": "Det här stället är speciellt anpassat för rullstolsburna användare",
+                "zh_Hant": "這個地方有特別設計給輪椅使用者",
+                "ru": "Это место подходит для людей на инвалидной коляске",
+                "pl": "W tym miejscu zainstalowane zostały udogodnienia dla osób na wózkach inwalidzkich",
+                "ja": "この場所は、車椅子の方のための特別仕様になっています",
+                "fil": "Ang lugar na ito ay angkop sa mga gumagamit ng wheelchair",
+                "es": "Este lugar está especialmente adaptado para usuarios en sillas de ruedas",
+                "da": "Dette sted er specielt indrettet til kørestolsbrugere",
+                "id": "Tempat ini dirancang khusus untuk pengguna kursi roda",
+                "cs": "Toto místo je speciálně upraveno pro vozíčkáře"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "wheelchair=yes"
+                ]
+              },
+              "then": {
+                "nl": "Deze plaats is vlot bereikbaar met een rolstoel",
+                "en": "This place is easily reachable with a wheelchair",
+                "pt": "Este lugar é de fácil acesso com uma cadeira de rodas",
+                "pt_BR": "Este lugar é facilmente acessível com uma cadeira de rodas",
+                "de": "Der Ort ist rollstuhlzugänglich gestaltet",
+                "hu": "Ez a hely könnyedén elérhető kerekesszékkel",
+                "it": "Questo luogo è facilmente raggiungibile con una sedia a rotelle",
+                "nb_NO": "Dette stedet kan enkelt besøkes med rullestol",
+                "fr": "Cet endroit est facilement accessible avec un fauteuil roulant",
+                "ca": "És facilment arribable amb cadira de rodes",
+                "sv": "Denna plats är lätt att nå med rullstol",
+                "zh_Hant": "這個地方坐輪椅很容易到達",
+                "ru": "До этого места легко добраться на инвалидной коляске",
+                "pl": "To miejsce jest łatwo dostępne dla osób na wózkach inwalidzkich",
+                "ja": "この場所は、車いすで簡単に行くことができます",
+                "fil": "Ang lugar na ito ay kayang abutin ng mga naka-wheelchair",
+                "es": "Este lugar es fácilmente accesible con una silla de ruedas",
+                "da": "Dette sted er let tilgængeligt med en kørestol",
+                "id": "Tempat ini mudah dijangkau dengan kursi roda",
+                "cs": "Toto místo je snadno dosažitelné s invalidním vozíkem"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "wheelchair=limited"
+                ]
+              },
+              "then": {
+                "nl": "Deze plaats is bereikbaar met een rolstoel, maar het is niet makkelijk",
+                "en": "It is possible to reach this place in a wheelchair, but it is not easy",
+                "pt": "É possível chegar a este local em cadeira de rodas, mas não é fácil",
+                "pt_BR": "É possível chegar a esse local em uma cadeira de rodas, mas não é fácil",
+                "de": "Der Ort ist nur eingeschränkt rollstuhlzugänglich",
+                "fr": "Il est possible d'accéder à cet endroit en chaise roulante, mais ce n'est pas facile",
+                "hu": "Ez a hely ugyan elérhető kerekesszékkel, de nehezen",
+                "it": "È possibile raggiungere questo luogo con una sedia a rotella ma non è semplice",
+                "nb_NO": "Det er mulig å besøke dette stedet i rullestol, men det er ikke lett",
+                "ca": "És possible fer servir cadira de rodes a aquest lloc però no és fàcil",
+                "sv": "Det är möjligt att nå den här platsen i en rullstol, men det är inte lätt",
+                "zh_Hant": "這個地方可以坐輪椅到達，但並不容易",
+                "ru": "До этого места можно добраться, но не просто",
+                "pl": "To miejsce jest dostępne dla osób na wózkach inwalidzkich, ale z pewnymi trudnościami",
+                "ja": "車いすでこの場所まで行くことは可能ですが、簡単ではありません",
+                "fil": "Kayang abutin ang lugar na ito ng mga naka-wheelchair, pero hindi madali",
+                "es": "Es posible llegar a este lugar con una silla de ruedas, pero no es fácil",
+                "da": "Det er muligt at komme til dette sted med en kørestol, men det er ikke let",
+                "id": "Dimungkinkan untuk mencapai tempat ini dengan kursi roda, tetapi tidak mudah",
+                "cs": "Na toto místo je možné se dostat na invalidním vozíku, ale není to snadné"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "wheelchair=no"
+                ]
+              },
+              "then": {
+                "nl": "Niet rolstoeltoegankelijk",
+                "en": "This place is not reachable with a wheelchair",
+                "pt": "Este lugar não é acessível com uma cadeira de rodas",
+                "pt_BR": "Este lugar não é alcançável com uma cadeira de rodas",
+                "de": "Der Ort ist nicht rollstuhlzugänglich",
+                "fr": "Cet endroit n'est pas accessible en chaise roulante",
+                "hu": "Ez a hely kerekesszékkel elérhetetlen",
+                "it": "Questo luogo non è accessibile con una sedia a rotelle",
+                "nb_NO": "Dette stedet er ikke tilgjengelig for besøk med rullestol",
+                "ca": "Aquest lloc no és accessible amb cadira de rodes",
+                "sv": "Den här platsen kan inte nås med en rullstol",
+                "zh_Hant": "輪椅無法到達這個地方",
+                "pl": "To miejsce jest niedostępne dla osób na wózkach inwalidzkich",
+                "ja": "この場所は車いすでは行けません",
+                "fil": "Ang lugar na ito ay hindi kayang abutin ng naka-wheelchair",
+                "es": "No es posible llegar a este lugar con una silla de ruedas",
+                "da": "Dette sted er ikke tilgængeligt med kørestol",
+                "id": "Tempat ini tidak bisa dijangkau dengan kursi roda",
+                "cs": "Na toto místo se nelze dostat s invalidním vozíkem"
+              }
+            }
+          ]
+        },
+        {
+          "id": "leftover-questions",
+          "render": {
+            "*": "{questions( ,)}"
+          }
+        },
+        {
+          "id": "lod",
+          "labels": [
+            "added_by_default"
+          ],
+          "render": {
+            "*": "{linked_data_from_website()}"
+          }
+        },
+        {
+          "id": "minimap",
+          "description": "Shows a small map with the feature. Added by default to every popup",
+          "render": {
+            "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+          }
+        },
+        {
+          "id": "last_edit",
+          "labels": [
+            "added_by_default"
+          ],
+          "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+          "condition": {
+            "and": [
+              "_last_edit:contributor~*",
+              "_last_edit:changeset~*"
+            ]
+          },
+          "metacondition": {
+            "or": [
+              "__featureSwitchIsTesting=true",
+              "__featureSwitchIsDebugging=true",
+              "mapcomplete-show_debug=yes",
+              "_csCount>=10"
+            ]
+          },
+          "render": {
+            "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+          }
+        },
+        {
+          "id": "favourite_status",
+          "render": {
+            "*": "{favourite_status()}"
+          }
+        },
+        {
+          "id": "qr_code",
+          "labels": [
+            "added_by_default"
+          ],
+          "classes": "flex items-center gap-x-2",
+          "render": {
+            "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+            "en": "{qr_code()}Scan this code to open this location on another device",
+            "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+            "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+          }
+        },
+        {
+          "id": "share",
+          "labels": [
+            "added_by_default"
+          ],
+          "metacondition": "_supports_sharing=yes",
+          "render": {
+            "de": "{share_link(,Standort teilen)}",
+            "en": "{share_link(,Share this location)}",
+            "nl": "{share_link(,Deel deze locatie)}"
+          }
+        },
+        {
+          "id": "all-tags",
+          "render": {
+            "*": "{all_tags()}"
+          },
+          "metacondition": {
+            "or": [
+              "__featureSwitchIsDebugging=true",
+              "mapcomplete-show_tags=full",
+              "mapcomplete-show_debug=yes"
+            ]
+          }
+        }
+      ],
+      "credits": [
+        "Pieter Vander Vennet"
+      ],
+      "titleIcons": [
+        {
+          "id": "wikipedialink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+          "condition": {
+            "or": [
+              "wikipedia~*",
+              "wikidata~*"
+            ]
+          },
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "wikipedia=",
+              "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+            }
+          ]
+        },
+        {
+          "id": "open_until",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "#": "Titleicon showing e.g. 'open until 17:00'",
+          "icon": {
+            "class": "w-20 mx-1 flex items-center"
+          },
+          "render": "{opening_hours_state()}",
+          "condition": {
+            "or": [
+              "opening_hours~*",
+              {
+                "or": [
+                  {
+                    "and": [
+                      "seasonal~.*winter.*",
+                      "_now:date~....-(12|01|02)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*spring.*",
+                      "_now:date~....-(03|04|05)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*summer.*",
+                      "_now:date~....-(06|07|08)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*autumn.*",
+                      "_now:date~....-(09|10|11)-.."
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "phonelink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.render"
+          },
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "contact:phone~*",
+              "then": {
+                "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+                "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+                "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+                "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+              }
+            }
+          ],
+          "condition": {
+            "or": [
+              "phone~*",
+              "contact:phone~*"
+            ]
+          }
+        },
+        {
+          "id": "emaillink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "contact:email~*",
+              "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "operator:email~*",
+              "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+            }
+          ],
+          "condition": {
+            "or": [
+              "email~*",
+              "contact:email~*",
+              "operator:email~*"
+            ]
+          }
+        },
+        {
+          "id": "websitelink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "website~*",
+              "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "operator:website~*",
+              "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "context:website~*",
+              "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            }
+          ]
+        },
+        {
+          "id": "smokingicon",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "smoking=no",
+              "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "smoking=yes",
+              "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+            }
+          ]
+        },
+        {
+          "id": "dogicon",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "if": "dog=no",
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+            },
+            {
+              "if": "dog=leashed",
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+            },
+            {
+              "if": {
+                "or": [
+                  "dog=yes",
+                  "dog=unleashed"
+                ]
+              },
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+            }
+          ]
+        },
+        {
+          "id": "sharelink",
+          "labels": [
+            "defaults"
+          ],
+          "render": "{share_link()}",
+          "metacondition": "_supports_sharing=yes"
+        },
+        {
+          "id": "favourite_title_icon",
+          "labels": [
+            "defaults"
+          ],
+          "render": {
+            "*": "{favourite_icon()}"
+          },
+          "metacondition": "_loggedIn=true"
+        },
+        {
+          "id": "osmlink",
+          "labels": [
+            "defaults"
+          ],
+          "render": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.render"
+          },
+          "mappings": [
+            {
+              "if": "id~.*/-.*",
+              "then": ""
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "_backend~*",
+              "then": {
+                "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+                "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+                "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+                "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+              }
+            }
+          ],
+          "condition": "id~(node|way|relation)/[0-9]*"
+        },
+        {
+          "id": "direction",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "{direction_indicator()}"
+        },
+        {
+          "id": "rating",
+          "icon": {
+            "class": "w-20 mx-1 flex items-center"
+          },
+          "render": "{rating()}"
+        }
+      ],
+      "_layerIcon": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/ice_cream/ice_cream.svg"
+        }
+      ]
+    },
+    {
+      "id": "note_import_ice_cream",
+      "description": {
+        "ca": "Una capa que importa entrades per a Ice cream parlor",
+        "cs": "Vrstva, která importuje položky pro Ice cream parlor",
+        "da": "Et lag som importerer poster for Ice cream parlor",
+        "de": "Eine Ebene, die Einträge für Eisdiele importiert",
+        "en": "A layer which imports entries for Ice cream parlor",
+        "es": "Una capa que importar entradas para Ice cream parlor",
+        "nl": "Deze laag toont kaart-nota's die wijzen op een Ice cream parlor",
+        "pl": "Warstwa importująca wpisy dla Ice cream parlor",
+        "zh_Hant": "能夠為 Ice cream parlor 匯入項目的圖層",
+        "_context": "core:importLayer.description"
+      },
+      "source": {
+        "osmTags": {
+          "and": [
+            "id~[0-9]+",
+            "comment_url~.*notes/[0-9]*/comment.json"
+          ]
+        },
+        "geoJson": "https://api.openstreetmap.org/api/0.6/notes.json?limit=10000&closed=0&bbox={x_min},{y_min},{x_max},{y_max}",
+        "geoJsonZoomLevel": 10
+      },
+      "passAllFeatures": true,
+      "minzoom": 12,
+      "title": {
+        "render": {
+          "ca": "Pot ser que hi hagi an ice cream parlor aquí",
+          "cs": "Zde by mohl být an ice cream parlor",
+          "da": "Mulig an ice cream parlor",
+          "de": "Möglicherweise gibt es hier eine Eisdiele",
+          "en": "There might be an ice cream parlor here",
+          "es": "Puede haber an ice cream parlor aquí",
+          "fi": "Tässä on ehkä an ice cream parlor",
+          "nb_NO": "Det kan være an ice cream parlor her",
+          "nl": "Is hier an ice cream parlor?",
+          "pl": "Tutaj może znajdować się an ice cream parlor",
+          "zh_Hant": "這裡可能有 an ice cream parlor",
+          "_context": "core:importLayer.popupTitle"
+        }
+      },
+      "calculatedTags": [
+        "_first_comment=get(feat)('comments')[0].text.toLowerCase()",
+        "_trigger_index=(() => {const lines = feat.properties['_first_comment'].split('\\n'); const matchesMapCompleteURL = lines.map(l => l.match(\".*https://mapcomplete.\\(org|osm.be\\)/\\([a-zA-Z_-]+\\)\\(.html\\)?.*#import\")); const matchedIndexes = matchesMapCompleteURL.map((doesMatch, i) => [doesMatch !== null, i]).filter(v => v[0]).map(v => v[1]); return matchedIndexes[0] })()",
+        "_comments_count=get(feat)('comments').length",
+        "_intro=(() => {const lines = get(feat)('comments')[0].text.split('\\n'); lines.splice(get(feat)('_trigger_index')-1, lines.length); return lines.filter(l => l !== '').join('<br/>');})()",
+        "_tags=(() => {let lines = get(feat)('comments')[0].text.split('\\n').map(l => l.trim()); lines.splice(0, get(feat)('_trigger_index') + 1); lines = lines.filter(l => l != ''); return lines.join(';');})()"
+      ],
+      "isShown": {
+        "and": [
+          "_trigger_index~*",
+          {
+            "or": [
+              {
+                "and": [
+                  "_tags~(^|.*;)amenity=ice_cream($|;.*)"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "titleIcons": [
+        {
+          "render": "<a href='https://openstreetmap.org/note/{id}' target='_blank'><img src='./assets/svg/osm-logo-us.svg'></a>"
+        }
+      ],
+      "tagRenderings": [
+        {
+          "id": "Intro",
+          "render": "{_intro}"
+        },
+        {
+          "id": "conversation",
+          "render": "{visualize_note_comments(comments,1)}",
+          "condition": "_comments_count>1"
+        },
+        {
+          "id": "import",
+          "render": {
+            "ca": "{import_button(ice_cream, _tags, he trobat un an ice cream parlor aquí; afegeix-lo al mapa,./assets/svg/addSmall.svg,,,id)}",
+            "cs": "{import_button(ice_cream, _tags, Našel jsem an ice cream parlor zde - přidejte ji do mapy,./assets/svg/addSmall.svg,,,id)}",
+            "da": "{import_button(ice_cream, _tags, Jeg har fundet en an ice cream parlor her - tilføj den til kortet,./assets/svg/addSmall.svg,,,id)}",
+            "de": "{import_button(ice_cream, _tags, Ich habe hier ein(en) eine Eisdiele gefunden - Zur Karte hinzufügen,./assets/svg/addSmall.svg,,,id)}",
+            "en": "{import_button(ice_cream, _tags, I have found a an ice cream parlor here - add it to the map,./assets/svg/addSmall.svg,,,id)}",
+            "es": "{import_button(ice_cream,_tags, He encontrado un(a) an ice cream parlor aquí - añádelo al mapa,./assets/svg/addSmall.svg,,,id)}",
+            "nl": "{import_button(ice_cream, _tags, Ik heb hier een an ice cream parlor gevonden - voeg deze toe aan de kaart...,./assets/svg/addSmall.svg,,,id)}",
+            "pl": "{import_button(ice_cream, _tags, odnalazłem tutaj an ice cream parlor - dodaj go do mapy,./assets/svg/addSmall.svg,,,id)}",
+            "zh_Hant": "{import_button(ice_cream, _tags, 我在這邊發現 an ice cream parlor - 新增到地圖,./assets/svg/addSmall.svg,,,id)}",
+            "_context": "core:importLayer.importButton"
+          },
+          "condition": "closed_at="
+        },
+        {
+          "id": "close_note_",
+          "render": {
+            "ca": "{close_note(No he pogut trobar an ice cream parlor: esborra-ho, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "cs": "{close_note(Nepodařilo se mi najít an ice cream parlor - odstraňte jej, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "da": "{close_note(Jeg kunne ikke finde an ice cream parlor - fjern det, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "de": "{close_note(Ich konnte eine Eisdiele nicht finden - entferne es, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "en": "{close_note(I could not find an ice cream parlor - remove it, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "es": "{close_note(No he podido encontrar an ice cream parlor - eliminarlo, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "nl": "{close_note(Ik kon hier geen an ice cream parlor vinden - verwijder deze van de kaart, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "pl": "{close_note(Nie mogłem odnaleźć an ice cream parlor – usuń go, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "zh_Hant": "{close_note(我無法找到 an ice cream parlor - 移除吧, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "_context": "core:importLayer.notFound"
+          },
+          "condition": "closed_at="
+        },
+        {
+          "id": "close_note_mapped",
+          "render": {
+            "ca": "{close_note(Ja hi ha un an ice cream parlor al mapa - aquest punt és un duplicat, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "cs": "{close_note(Na mapě se již nachází an ice cream parlor - tento bod je duplicitní, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "da": "{close_note(Der er allerede en anden an ice cream parlor på kortet - dette punkt er en dublet, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "de": "{close_note(Es gibt bereits einen eine Eisdiele auf der Karte - dieser Punkt ist ein Duplikat, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "en": "{close_note(There already is an ice cream parlor on the map - this point is a duplicate, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "es": "{close_note(an ice cream parlor ya está en el mapa - este punto es un duplicado, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "nl": "{close_note(Er staat hier reeds an ice cream parlor op de kaart; dit punt is een duplicaat. Verwijder deze van de kaart, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "pl": "{close_note(Na mapie znajduje się już an ice cream parlor - ten punkt jest duplikatem, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "zh_Hant": "{close_note(an ice cream parlor 已經在地圖上了 - 這個點重覆了, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "_context": "core:importLayer.alreadyMapped"
+          },
+          "condition": "closed_at="
+        },
+        {
+          "id": "handled",
+          "render": {
+            "ca": "<div class=\"thanks\">Aquesta funció s'ha gestionat. Gràcies pel teu esforç.</div>",
+            "cs": "<div class='thanks'>Tato funkce byla zpracována! Děkujeme za vaši snahu</div>",
+            "da": "<div class=\"thanks\">Dette element er blevet håndteret! Tak for din indsats</div>",
+            "de": "<div class=\"thanks\">Dieses Objekt wurde verarbeitet! Vielen Dank für Ihre Bemühungen</div>",
+            "en": "<div class='thanks'>This feature has been handled! Thanks for your effort</div>",
+            "nb_NO": "<div class='thanks'>Denne funksjonen har blitt håndtert. Takk for din innsats.</div>",
+            "nl": "<div class='thanks'>Dit object is afgehandeld. Bedankt om mee te helpen!</div>",
+            "pl": "<div class='thanks'>Ta funkcja została obsłużona! Dziękujemy za Twój wysiłek</div>",
+            "zh_Hant": "<div class='thanks'>這個圖徵已經處理了！謝謝你的辛勞</div>",
+            "_context": "core:importLayer.importHandled"
+          },
+          "condition": "closed_at~*"
+        },
+        {
+          "id": "comment",
+          "render": "{add_note_comment()}"
+        },
+        {
+          "id": "add_image",
+          "render": "{add_image_to_note()}"
+        },
+        {
+          "id": "nearby_images",
+          "render": {
+            "ca": "<h3>Imatges properes</h3>Les imatges següents són imatges geoetiquetades properes de diversos serveis en línia. Us poden ajudar a resoldre aquesta nota.{nearby_images(open)}",
+            "cs": "<h3>Obrázky z okolí</h3>Následující obrázky jsou geograficky označené obrázky z různých online služeb. Mohly by vám pomoci při řešení této poznámky.{nearby_images(open)}",
+            "da": "<h3>Billeder i nærheden</h3>De følgende billeder er geotaggede billeder i nærheden fra forskellige onlinetjenester. De kan måske hjælpe dig med at løse denne note.{nearby_images(open)}",
+            "de": "<h3>Bilder in der Nähe</h3>Die folgenden Bilder sind mit Geotags versehene Bilder aus verschiedenen Online-Diensten in der Nähe. Sie können helfen, diesen Hinweis zu lösen.{nearby_images(open)}",
+            "en": "<h3>Nearby pictures</h3>The following pictures are nearby geotagged pictures from various online services. They might help you to resolve this note.{nearby_images(open)}",
+            "es": "<h3>Imágenes cercanas</h3> Las siguientes imágenes son imágenes geoetiquetadas cerca de varios servicios en línea. Pueden ayudarte a resolver esta nota. {nearby_images(open)}",
+            "nl": "<h3>Afbeeldingen in de buurt</h3>De volgende afbeeldingen zijn in de buurt gemaakt en kunnen mogelijks helpen. {nearby_images(open)}",
+            "pl": "<h3>Zdjęcia w pobliżu</h3>Poniższe zdjęcia to zdjęcia pobliskich obiektów z geotagami z różnych usług internetowych. Mogą pomóc Ci rozwiązać tę uwagę.{nearby_images(open)}",
+            "zh_Hant": "<h3>附近圖片</h3>接下來的圖片是多個第三方線上服務附近有地理標籤的圖片，也許能協助你解決這個註解。{nearby_images(open)}",
+            "_context": "core:importLayer.nearbyImagesIntro"
+          }
+        },
+        {
+          "id": "all_tags",
+          "render": "{all_tags()}",
+          "metacondition": {
+            "or": [
+              "__featureSwitchIsDebugging=true",
+              "mapcomplete-show_tags=full",
+              "mapcomplete-show_debug=yes"
+            ]
+          }
+        }
+      ],
+      "pointRendering": [
+        {
+          "location": [
+            "point"
+          ],
+          "marker": [
+            {
+              "icon": "circle",
+              "color": "#fff"
+            },
+            {
+              "icon": {
+                "render": "help",
+                "mappings": [
+                  {
+                    "if": {
+                      "or": [
+                        "closed_at~*",
+                        "_imported=yes"
+                      ]
+                    },
+                    "then": "checkmark"
+                  }
+                ]
+              },
+              "color": "#00"
+            }
+          ],
+          "iconSize": "40,40",
+          "anchor": "center"
+        }
+      ]
+    }
+  ],
+  "socialImage": "assets/SocialImage.png"
+}

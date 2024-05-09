@@ -1,0 +1,880 @@
+{
+  "id": "kerbs",
+  "name": {
+    "en": "Kerbs",
+    "nl": "Stoepranden",
+    "de": "Bordsteine",
+    "fr": "Bordures",
+    "pa_PK": "کرب",
+    "ru": "Бордюры",
+    "pl": "Krawężniki",
+    "ca": "Vroades",
+    "cs": "Obrubníky"
+  },
+  "description": {
+    "en": "A layer showing kerbs.",
+    "nl": "Een laag met stoepranden.",
+    "de": "Eine Ebene, die Bordsteine zeigt.",
+    "fr": "Un calque montrant les bordures.",
+    "ru": "Слой, изображающий бордюры.",
+    "pl": "Warstwa pokazująca krawężniki.",
+    "ca": "Una capa que mostra les vorades.",
+    "cs": "Vrstva zobrazující obrubníky."
+  },
+  "source": {
+    "osmTags": {
+      "and": [
+        "barrier=kerb"
+      ]
+    }
+  },
+  "minzoom": 13,
+  "title": {
+    "render": {
+      "en": "Kerb",
+      "nl": "Stoeprand",
+      "de": "Bordstein",
+      "fr": "Bordure",
+      "pa_PK": "کرب",
+      "ru": "Бордюр",
+      "pl": "Krawężnik",
+      "ca": "Vorada",
+      "cs": "Obrubník"
+    }
+  },
+  "pointRendering": [
+    {
+      "location": [
+        "point"
+      ],
+      "marker": [
+        {
+          "icon": {
+            "render": "./assets/layers/kerbs/KerbIcon.svg",
+            "mappings": [
+              {
+                "if": "kerb=raised",
+                "then": "./assets/layers/kerbs/raised.svg"
+              },
+              {
+                "if": "kerb=lowered",
+                "then": "./assets/layers/kerbs/lowered.svg"
+              },
+              {
+                "if": "kerb=flush",
+                "then": "./assets/layers/kerbs/flush.svg"
+              },
+              {
+                "if": "kerb=no",
+                "then": "./assets/layers/kerbs/no.svg"
+              }
+            ]
+          }
+        }
+      ],
+      "iconBadges": [
+        {
+          "if": "_favourite=yes",
+          "then": "circle:white;heart:red"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#f44e42",
+      "fill": "no",
+      "width": "8"
+    }
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "a kerb",
+        "nl": "een stoeprand",
+        "de": "einen Bordstein",
+        "fr": "une bordure",
+        "ru": "бордюр",
+        "pl": "krawężnik",
+        "ca": "una vorada",
+        "cs": "obrubník"
+      },
+      "tags": [
+        "barrier=kerb"
+      ],
+      "description": {
+        "en": "Kerb in a footway",
+        "nl": "Stoeprand in een voetpad",
+        "de": "Bordstein in einem Fußweg",
+        "fr": "Bordure dans un trottoir",
+        "cs": "Obrubník na chodníku"
+      },
+      "snapToLayer": [
+        "cycleways_and_roads",
+        "kerbs"
+      ],
+      "maxSnapDistance": 10
+    }
+  ],
+  "tagRenderings": [
+    {
+      "id": "just_created",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "This element shows a 'thank you' that the contributor has recently created this element",
+      "classes": "rounded-xl thanks",
+      "mappings": [
+        {
+          "if": "id~*",
+          "icon": "./assets/svg/party.svg",
+          "then": {
+            "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+            "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+            "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+            "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+            "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+            "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+          }
+        }
+      ],
+      "condition": {
+        "and": [
+          "_backend~*",
+          "_last_edit:passed_time<300",
+          {
+            "or": [
+              "_version_number=",
+              "_version_number=1"
+            ]
+          }
+        ]
+      },
+      "metacondition": {
+        "and": [
+          {
+            "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+            "or": [
+              "_last_edit:contributor:uid:={_uid}",
+              "_last_edit:contributor:uid="
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "images",
+      "description": "This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images",
+      "render": {
+        "*": "{image_carousel()}{image_upload()}{nearby_images():my-4}"
+      },
+      "classes": "my-4"
+    },
+    {
+      "id": "kerb-type",
+      "question": {
+        "en": "What is the height of this kerb?",
+        "nl": "Hoe hoog is deze stoeprand?",
+        "de": "Wie hoch ist der Bordstein?",
+        "fr": "Quelle est la hauteur de ce trottoir ?",
+        "ca": "Quina és l'altura d'aquest gual?",
+        "ru": "Какая высота у этого бордюра?",
+        "pl": "Jaka jest wysokość tego krawężnika?",
+        "cs": "Jaká je výška tohoto obrubníku?"
+      },
+      "mappings": [
+        {
+          "if": "kerb=raised",
+          "then": {
+            "en": "This kerb is raised (>3 cm)",
+            "nl": "Deze stoeprand is hoog (>3 cm)",
+            "de": "Der Bordstein ist erhöht (>3 cm)",
+            "fr": "Cette bordure est surélevée (>3 cm)",
+            "ca": "Aquest gual està elevat (>3cm)",
+            "pl": "Ten krawężnik jest wyniesiony (>3 cm)",
+            "cs": "Tento obrubník je zvýšený (>3 cm)"
+          },
+          "icon": {
+            "path": "./assets/layers/kerbs/raised.svg",
+            "class": "small"
+          }
+        },
+        {
+          "if": "kerb=lowered",
+          "then": {
+            "en": "This kerb is lowered (~3 cm)",
+            "nl": "Deze stoeprand is verlaagd (~3 cm)",
+            "de": "Der Bordstein ist abgesenkt (~3 cm)",
+            "fr": "Cette bordure est abaissée (~3 cm)",
+            "ca": "Aquest gual està rebaixat (~3 cm)",
+            "ru": "Это пониженный бордюр (~3 см)",
+            "pl": "Ten krawężnik jest obniżony (~3 cm)",
+            "cs": "Tento obrubník je snížený (~3 cm)"
+          },
+          "icon": {
+            "path": "./assets/layers/kerbs/lowered.svg",
+            "class": "small"
+          }
+        },
+        {
+          "if": "kerb=flush",
+          "then": {
+            "en": "This kerb is flush (~0cm)",
+            "nl": "Deze stoeprand is vlak (~0cm)",
+            "de": "Der Bordstein ist bündig (~0cm)",
+            "fr": "Cette bordure est affleurante (~0cm)",
+            "ca": "Aquest gual està a ras (~0cm)",
+            "ru": "Этот бордюр вровень с дорогой (~0 см)",
+            "cs": "Tento obrubník je v jedné rovině (~0 cm)"
+          },
+          "icon": {
+            "path": "./assets/layers/kerbs/flush.svg",
+            "class": "small"
+          }
+        },
+        {
+          "if": "kerb=no",
+          "then": {
+            "en": "There is no kerb here",
+            "nl": "Er is hier geen stoeprand",
+            "de": "Hier gibt es keinen Bordstein",
+            "fr": "Il n'y a pas de bordure ici",
+            "ru": "Здесь нет бордюра",
+            "pl": "Nie ma tutaj krawężnika",
+            "ca": "Aquí no hi ha vorada",
+            "cs": "Není zde obrubník"
+          },
+          "hideInAnswer": true,
+          "icon": {
+            "path": "./assets/layers/kerbs/no.svg",
+            "class": "small"
+          }
+        },
+        {
+          "if": "kerb=yes",
+          "then": {
+            "en": "There is a kerb of unknown height",
+            "nl": "Er is een stoeprand met onbekende hoogte",
+            "de": "Es gibt einen Bordstein mit unbekannter Höhe",
+            "fr": "Il y a un trottoir de hauteur inconnue",
+            "pl": "Jest krawężnik o nieznanej wysokości",
+            "ca": "Hi ha una vorada d'altura desconeguda",
+            "cs": "Obrubník neznámé výšky"
+          },
+          "hideInAnswer": true
+        }
+      ],
+      "condition": "_geometry:type=Point"
+    },
+    {
+      "id": "tactile-paving",
+      "question": {
+        "en": "Is there tactile paving at this kerb?",
+        "de": "Gibt es am Bordstein ein taktiles Pflaster?",
+        "fr": "Y a-t-il un revêtement tactile sur cette bordure ?",
+        "nl": "Is er voelbare bestrating bij deze stoeprand?",
+        "ca": "Hi ha una superfície podotàctil a aquest gual?",
+        "ru": "Есть ли тактильная плитка у этого бордюра?",
+        "pl": "Czy na tym krawężniku są wypustki dla niewidomych?",
+        "cs": "Je na tomto obrubníku hmatová dlažba?"
+      },
+      "mappings": [
+        {
+          "if": "tactile_paving=yes",
+          "then": {
+            "en": "This kerb has tactile paving.",
+            "de": "Der Bordstein hat ein taktiles Pflaster.",
+            "fr": "Cette bordure a un revêtement podotactile.",
+            "nl": "Deze stoeprand heeft voelbare bestrating.",
+            "ca": "Aquest gual té superfície podotàctil.",
+            "ru": "У этого бордюра есть тактильная плитка.",
+            "pl": "Ten krawężnik ma wypustki dla niewidomych.",
+            "cs": "Tento obrubník má hmatovou dlažbu."
+          }
+        },
+        {
+          "if": "tactile_paving=no",
+          "then": {
+            "en": "This kerb does not have tactile paving.",
+            "de": "Der Bordstein hat kein taktiles Pflaster.",
+            "fr": "Cette bordure n'a pas de revêtement podotactile.",
+            "nl": "Deze stoeprand heeft geen voelbare bestrating.",
+            "ca": "Aquest gual no té superfície podotàctil.",
+            "ru": "У этого бордюра нет тактильной плитки.",
+            "pl": "Ten krawężnik nie ma wypustek dla niewidomych.",
+            "cs": "Tento obrubník nemá hmatovou dlažbu."
+          }
+        },
+        {
+          "if": "tactile_paving=incorrect",
+          "then": {
+            "en": "This kerb has tactile paving, but it is incorrect.",
+            "de": "Der Bordstein hat ein taktiles Pflaster, das aber falsch ist.",
+            "fr": "Cette bordure a un pavage tactile, mais il est incorrect.",
+            "nl": "Deze stoeprand heeft voelbare bestrating, maar deze is incorrect.",
+            "ca": "La vorera té superfície podotàctil, però és incorrecte.",
+            "ru": "У этого бордюра неверно выложенная тактильная плитка.",
+            "pl": "Ten krawężnik ma wypustki dla niewidomych, ale nieprawidłowe.",
+            "cs": "Tento obrubník má hmatovou dlažbu, ale je nesprávný."
+          },
+          "hideInAnswer": true
+        }
+      ],
+      "condition": "_geometry:type=Point"
+    },
+    {
+      "id": "kerb-height",
+      "question": {
+        "en": "What is the height of this kerb?",
+        "nl": "Hoe hoog is deze stoeprand?",
+        "de": "Wie hoch ist der Bordstein?",
+        "fr": "Quelle est la hauteur de ce trottoir ?",
+        "ca": "Quina és l'altura d'aquest gual?",
+        "ru": "Какая высота у этого бордюра?",
+        "pl": "Jaka jest wysokość tego krawężnika?",
+        "cs": "Jaká je výška tohoto obrubníku?"
+      },
+      "render": {
+        "en": "Kerb height: {kerb:height}",
+        "nl": "Stoeprandhoogte: {kerb:height}",
+        "de": "Bordsteinhöhe: {kerb:height}",
+        "fr": "Hauteur du trottoir : {kerb:height}",
+        "ru": "Высота бордюра: {kerb:height}",
+        "pl": "Wysokość krawężnika: {kerb:height}",
+        "ca": "Altura de la vorada {kerb:height}",
+        "cs": "Výška obrubníku: {kerb:height}"
+      },
+      "freeform": {
+        "key": "kerb:height",
+        "placeholder": {
+          "en": "Height of the kerb",
+          "nl": "Hoogte van de stoeprand",
+          "de": "Höhe des Bordsteins",
+          "fr": "Hauteur de la bordure",
+          "ru": "Высота бордюра",
+          "pl": "Wysokość krawężnika",
+          "ca": "Altura de la vorada",
+          "cs": "Výška obrubníku"
+        },
+        "type": "pnat",
+        "inline": true
+      },
+      "mappings": [
+        {
+          "if": "kerb:height=0",
+          "then": {
+            "en": "This kerb is flush and is lower than 1cm.",
+            "de": "Der Bordstein ist bündig und niedriger als 1 cm.",
+            "ca": "Aquest gual està rebaixat i és més baix que 1cm.",
+            "nl": "Deze stoeprand is vlak en lager als 1 cm.",
+            "cs": "Tento obrubník je v jedné rovině a je nižší než 1 cm."
+          }
+        }
+      ]
+    },
+    {
+      "id": "leftover-questions",
+      "render": {
+        "*": "{questions( ,)}"
+      }
+    },
+    {
+      "id": "lod",
+      "labels": [
+        "added_by_default"
+      ],
+      "render": {
+        "*": "{linked_data_from_website()}"
+      }
+    },
+    {
+      "id": "minimap",
+      "description": "Shows a small map with the feature. Added by default to every popup",
+      "render": {
+        "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+      }
+    },
+    {
+      "id": "last_edit",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+      "condition": {
+        "and": [
+          "_last_edit:contributor~*",
+          "_last_edit:changeset~*"
+        ]
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsTesting=true",
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_debug=yes",
+          "_csCount>=10"
+        ]
+      },
+      "render": {
+        "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+      }
+    },
+    {
+      "id": "favourite_status",
+      "render": {
+        "*": "{favourite_status()}"
+      }
+    },
+    {
+      "id": "qr_code",
+      "labels": [
+        "added_by_default"
+      ],
+      "classes": "flex items-center gap-x-2",
+      "render": {
+        "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+        "en": "{qr_code()}Scan this code to open this location on another device",
+        "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+        "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+      }
+    },
+    {
+      "id": "share",
+      "labels": [
+        "added_by_default"
+      ],
+      "metacondition": "_supports_sharing=yes",
+      "render": {
+        "de": "{share_link(,Standort teilen)}",
+        "en": "{share_link(,Share this location)}",
+        "nl": "{share_link(,Deel deze locatie)}"
+      }
+    },
+    {
+      "id": "all-tags",
+      "render": {
+        "*": "{all_tags()}"
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_tags=full",
+          "mapcomplete-show_debug=yes"
+        ]
+      }
+    }
+  ],
+  "filter": [
+    {
+      "id": "kerb-type",
+      "options": [
+        {
+          "question": {
+            "en": "All types of kerbs",
+            "nl": "Alle typen stoepranden",
+            "de": "Alle Bordsteine",
+            "fr": "Tous types de bordures",
+            "ru": "Все виды бордюров",
+            "pl": "Wszystkie rodzaje krawężników",
+            "ca": "Tots els tipus de vorades",
+            "cs": "Všechny typy obrubníků"
+          }
+        },
+        {
+          "osmTags": "kerb=raised",
+          "question": {
+            "en": "Raised kerb (>3 cm)",
+            "nl": "Hoge stoeprand (>3 cm)",
+            "de": "Erhöhte Bordsteine (>3 cm)",
+            "fr": "Bordure surélevée (>3 cm)",
+            "pl": "Podniesiony krawężnik (>3 cm)",
+            "ca": "Vorada elevada (>3 cm)",
+            "cs": "Zvýšený obrubník (>3 cm)"
+          }
+        },
+        {
+          "osmTags": "kerb=lowered",
+          "question": {
+            "en": "Lowered kerb (~3 cm)",
+            "nl": "Verlaagde stoeprand (~3 cm)",
+            "de": "Abgesenkte Bordsteine (~3 cm)",
+            "fr": "Bordure abaissée (~3 cm)",
+            "ru": "Пониженный бордюр (~3 см)",
+            "pl": "Obniżony krawężnik (~3 cm)",
+            "ca": "Vorada rebaixada (~3 cm)",
+            "cs": "Snížený obrubník (~3 cm)"
+          }
+        },
+        {
+          "osmTags": "kerb=flush",
+          "question": {
+            "en": "Flush kerb (~0cm)",
+            "nl": "Vlakke stoeprand (~0cm)",
+            "de": "Bündige Bordsteine (~0 cm)",
+            "fr": "Bordure affleurante (~0cm)",
+            "ru": "Вровень с дорогой (~0 см)",
+            "ca": "Vorada a ras (~0 cm)",
+            "cs": "Zapuštěný obrubník (~0 cm)"
+          }
+        },
+        {
+          "osmTags": "kerb=no",
+          "question": {
+            "en": "No kerb",
+            "nl": "Geen stoeprand",
+            "de": "Kein Bordstein",
+            "fr": "Pas de trottoir",
+            "ru": "Нет бордюра",
+            "pl": "Brak krawężnika",
+            "ca": "Sense vorada",
+            "cs": "Bez obrubníku"
+          }
+        },
+        {
+          "osmTags": "kerb=",
+          "question": {
+            "en": "Kerb with unknown height",
+            "nl": "Stoeprand met onbekende hoogte",
+            "de": "Bordsteine unbekannter Höhe",
+            "fr": "Bordure de hauteur inconnue",
+            "pl": "Krawężnik z nieznaną wysokością",
+            "ca": "Vorada sense altura coneguda",
+            "cs": "Obrubník s neznámou výškou"
+          }
+        }
+      ]
+    },
+    {
+      "id": "tactile_paving_advanced",
+      "#": "ignore-possible-duplicate",
+      "options": [
+        {
+          "question": {
+            "en": "With or without tactile paving",
+            "de": "Mit oder ohne taktiles Pflaster",
+            "fr": "Avec ou sans revêtement podotactile",
+            "nl": "Met of zonder voelbare bestrating",
+            "pl": "Z lub bez wypustek dla niewidomych",
+            "ca": "Amb o sense superfícies podotàctils",
+            "cs": "S nebo bez hmatové dlažby"
+          }
+        },
+        {
+          "question": {
+            "en": "With tactile paving",
+            "de": "Mit taktilem Pflaster",
+            "fr": "Avec revêtement podotactile",
+            "nl": "Met voelbare bestrating",
+            "pl": "Z wypustkami dla niewidomych",
+            "ca": "Amb paviments superfícies podotàctils",
+            "cs": "S hmatovou dlažbou"
+          },
+          "osmTags": "tactile_paving=yes"
+        },
+        {
+          "question": {
+            "en": "Without tactile paving",
+            "de": "Ohne taktiles Pflaster",
+            "fr": "Sans revêtement podotactile",
+            "nl": "Zonder voelbare bestrating",
+            "pl": "Bez wypustek dla niewidomych",
+            "ca": "Sense superfície podotàctil",
+            "cs": "Bez hmatové dlažby"
+          },
+          "osmTags": "tactile_paving=no"
+        },
+        {
+          "osmTags": "tactile_paving=",
+          "question": {
+            "en": "No information about tactile paving",
+            "de": "Keine Informationen über taktiles Pflaster",
+            "fr": "Sans information sur le revêtement podotactile",
+            "nl": "Geen informatie over voelbare bestrating",
+            "pl": "Brak informacji o wypustkach dla niewidomych",
+            "ca": "No hi ha informació sobre superfícies podotàctils",
+            "cs": "Žádné informace o hmatové dlažbě"
+          }
+        }
+      ]
+    }
+  ],
+  "units": [
+    {
+      "kerb:height": {
+        "quantity": "distance",
+        "denominations": [
+          "cm",
+          "m"
+        ]
+      }
+    }
+  ],
+  "titleIcons": [
+    {
+      "id": "wikipedialink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+      "condition": {
+        "or": [
+          "wikipedia~*",
+          "wikidata~*"
+        ]
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "wikipedia=",
+          "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "open_until",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "#": "Titleicon showing e.g. 'open until 17:00'",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{opening_hours_state()}",
+      "condition": {
+        "or": [
+          "opening_hours~*",
+          {
+            "or": [
+              {
+                "and": [
+                  "seasonal~.*winter.*",
+                  "_now:date~....-(12|01|02)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*spring.*",
+                  "_now:date~....-(03|04|05)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*summer.*",
+                  "_now:date~....-(06|07|08)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*autumn.*",
+                  "_now:date~....-(09|10|11)-.."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "phonelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": {
+        "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+        "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+        "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+        "_context": "layers:icons.tagRenderings.phonelink.render"
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:phone~*",
+          "then": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+          }
+        }
+      ],
+      "condition": {
+        "or": [
+          "phone~*",
+          "contact:phone~*"
+        ]
+      }
+    },
+    {
+      "id": "emaillink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:email~*",
+          "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:email~*",
+          "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        }
+      ],
+      "condition": {
+        "or": [
+          "email~*",
+          "contact:email~*",
+          "operator:email~*"
+        ]
+      }
+    },
+    {
+      "id": "websitelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "website~*",
+          "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:website~*",
+          "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "context:website~*",
+          "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "smokingicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=no",
+          "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=yes",
+          "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+        }
+      ]
+    },
+    {
+      "id": "dogicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "if": "dog=no",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+        },
+        {
+          "if": "dog=leashed",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+        },
+        {
+          "if": {
+            "or": [
+              "dog=yes",
+              "dog=unleashed"
+            ]
+          },
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+        }
+      ]
+    },
+    {
+      "id": "sharelink",
+      "labels": [
+        "defaults"
+      ],
+      "render": "{share_link()}",
+      "metacondition": "_supports_sharing=yes"
+    },
+    {
+      "id": "favourite_title_icon",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "*": "{favourite_icon()}"
+      },
+      "metacondition": "_loggedIn=true"
+    },
+    {
+      "id": "osmlink",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+        "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+        "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+        "_context": "layers:icons.tagRenderings.osmlink.render"
+      },
+      "mappings": [
+        {
+          "if": "id~.*/-.*",
+          "then": ""
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "_backend~*",
+          "then": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+          }
+        }
+      ],
+      "condition": "id~(node|way|relation)/[0-9]*"
+    },
+    {
+      "id": "direction",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "{direction_indicator()}"
+    },
+    {
+      "id": "rating",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{rating()}"
+    }
+  ],
+  "_layerIcon": [
+    {
+      "icon": "./assets/layers/kerbs/KerbIcon.svg"
+    }
+  ]
+}

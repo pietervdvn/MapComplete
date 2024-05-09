@@ -1,0 +1,882 @@
+{
+  "id": "ambulancestation",
+  "name": {
+    "en": "Map of ambulance stations",
+    "ja": "救急ステーションの地図",
+    "ru": "Карта станций скорой помощи",
+    "fr": "Couche des ambulances",
+    "de": "Rettungswachen",
+    "it": "Carta delle stazioni delle ambulanze",
+    "hu": "Mentőállomás-térkép",
+    "nl": "Kaart van ambulancestations",
+    "zh_Hans": "救护车站地图",
+    "id": "Peta stasiun ambulans",
+    "es": "Mapa de estaciones de ambulancias",
+    "da": "Kort over ambulancestationer",
+    "cs": "Mapa stanic rychlé záchranné služby",
+    "ca": "Mapa d'estacions d'ambulàncies",
+    "nb_NO": "Kart over ambulansestasjoner",
+    "he": "מפת תחנות אמבולנסים",
+    "pl": "Mapa stacji pogotowia ratunkowego",
+    "pt_BR": "Mapa de estações de ambulância",
+    "pt": "Mapa de estações de ambulância"
+  },
+  "description": {
+    "en": "An ambulance station is an area for storage of ambulance vehicles, medical equipment, personal protective equipment, and other medical supplies.",
+    "ja": "救急ステーションは、救急車、医療機器、個人用保護具、およびその他の医療用品を保管する場所です。",
+    "fr": "Une station d’ambulance est un lieu où sont stockés les véhicules d’urgence ainsi que de l’équipement médical.",
+    "de": "Eine Rettungswache ist ein Ort, an dem Rettungsfahrzeuge, medizinische Ausrüstung, persönliche Schutzausrüstung und anderes medizinisches Material untergebracht sind.",
+    "it": "La stazione delle ambulanze è un’area per lo stoccaggio delle ambulanze, dell’equipaggiamento medico, dei dispositivi di protezione individuale e di altre forniture medicali.",
+    "hu": "A mentőállomás olyan terület, ahol mentőautókat, orvosi felszereléseket, egyéni védőfelszereléseket és egyéb orvosi felszereléseket tárolnak.",
+    "ru": "Станция скорой помощи это полигон для хранения транспорта, медицинского оборудования, средств индивидуальной защиты и других медицинских принадлежностей.",
+    "nl": "Een ambulancestation is een plaats waar ambulances, medisch materiaal, persoonlijk beschermingsmateriaal en aanverwanten worden bewaard.",
+    "es": "Una estación de ambulancias es una zona para almacenar vehículos de ambulancia, equipamiento médico, equipos de protección personal y otros suministros médicos.",
+    "da": "En ambulancestation er et område til opbevaring af ambulancekøretøjer, medicinsk udstyr, personlige værnemidler og andre medicinske forsyninger.",
+    "cs": "Stanice záchranné služby je prostor pro umístění sanitních vozidel, zdravotnického vybavení, osobních ochranných prostředků a dalšího zdravotnického materiálu.",
+    "ca": "Una estició d'abulàncies és una àrea per a emmagatzemar ambulàncies, equipament mèdic, equips de protecció personal i altres subministraments mèdics.",
+    "he": "תחנת אמבולנס היא אזור לאחסון רכבי אמבולנס, ציוד רפואי, ציוד מגן אישי וציוד רפואי אחר.",
+    "pl": "Stacja pogotowia ratunkowego to miejsce przechowywania pojazdów ambulansów, sprzętu medycznego, środków ochrony osobistej i innych artykułów medycznych.",
+    "pt_BR": "Uma estação de ambulância é uma área de armazenamento de veículos de ambulância, equipamentos médicos, equipamentos de proteção pessoal e outros suprimentos médicos.",
+    "zh_Hans": "救护站是存放救护车、医疗设备、个人防护设备和其他医疗用品的区域。",
+    "pt": "Uma estação de ambulância é uma área de armazenamento de veículos de ambulância, equipamentos médicos, equipamentos de proteção pessoal e outros suprimentos médicos."
+  },
+  "source": {
+    "osmTags": {
+      "and": [
+        "emergency=ambulance_station"
+      ]
+    }
+  },
+  "minzoom": 12,
+  "title": {
+    "render": {
+      "en": "Ambulance Station",
+      "ru": "Станция скорой помощи",
+      "ja": "救急ステーション",
+      "fr": "Station d’ambulances",
+      "de": "Rettungswache",
+      "it": "Stazione delle ambulanze",
+      "hu": "Mentőállomás",
+      "nl": "Ambulancestation",
+      "es": "Estación de Ambulancias",
+      "da": "Ambulancestation",
+      "cs": "Stanice rychlé záchranné služby",
+      "ca": "Estació d'Ambulàncies",
+      "nb_NO": "Ambulansestasjon",
+      "he": "תחנת אמבולנס",
+      "pl": "Stacja pogotowia ratunkowego",
+      "pt_BR": "Estação de Ambulância",
+      "zh_Hans": "救护站",
+      "pt": "Estação de Ambulância"
+    }
+  },
+  "pointRendering": [
+    {
+      "iconSize": "35,35",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": {
+            "render": "./assets/themes/hailhydrant/Twemoji_1f691.svg",
+            "id": "assetsthemeshailhydrantTwemoji1f691svg"
+          }
+        }
+      ],
+      "iconBadges": [
+        {
+          "if": "_favourite=yes",
+          "then": "circle:white;heart:red"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#00f",
+      "width": "1"
+    }
+  ],
+  "presets": [
+    {
+      "tags": [
+        "emergency=ambulance_station"
+      ],
+      "title": {
+        "en": "an ambulance station",
+        "ru": "Станция скорой помощи",
+        "ja": "救急ステーション(消防署)",
+        "fr": "une station d’ambulances",
+        "de": "eine Rettungswache",
+        "it": "una stazione delle ambulanze",
+        "hu": "Mentőállomás",
+        "nl": "een ambulancestation",
+        "zh_Hans": "救护车站",
+        "id": "Stasiun ambulans",
+        "es": "una estación de ambulancias",
+        "nb_NO": "en ambulansestasjon",
+        "da": "en ambulancestation",
+        "cs": "stanice rychlé záchranné služby",
+        "ca": "una estació d'ambulàncies",
+        "pl": "stacja pogotowia ratunkowego",
+        "pt_BR": "uma estação de ambulância",
+        "pt": "uma estação de ambulância"
+      },
+      "description": {
+        "en": "Add an ambulance station to the map",
+        "ja": "救急ステーション(消防署)をマップに追加する",
+        "ru": "Добавить станцию скорой помощи на карту",
+        "fr": "Ajouter une station d’ambulances à la carte",
+        "de": "Eine Rettungsstation der Karte hinzufügen",
+        "it": "Aggiungi una stazione delle ambulanza alla mappa",
+        "hu": "Mentőállomás hozzáadása a térképhez",
+        "nl": "Voeg een ambulancestation toe aan de kaart",
+        "zh_Hans": "向地图中添加一个救护车站",
+        "id": "Tambahkan stasiun ambulans ke peta",
+        "es": "Añadir una estación de ambulancias al mapa",
+        "nb_NO": "Legg til en ambulansestasjon på kartet",
+        "da": "Tilføj en ambulancestation til kortet",
+        "cs": "Přidat na mapu stanici záchranné služby",
+        "ca": "Afegeix una estació d'ambulàncies al mapa",
+        "he": "הוספת תחנת אמבולנס למפה",
+        "pl": "Dodaj stację pogotowia ratunkowego do mapy",
+        "pt_BR": "Adicionar uma estação de ambulância ao mapa",
+        "pt": "Adicionar uma estação de ambulância ao mapa"
+      }
+    }
+  ],
+  "tagRenderings": [
+    {
+      "id": "just_created",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "This element shows a 'thank you' that the contributor has recently created this element",
+      "classes": "rounded-xl thanks",
+      "mappings": [
+        {
+          "if": "id~*",
+          "icon": "./assets/svg/party.svg",
+          "then": {
+            "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+            "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+            "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+            "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+            "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+            "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+          }
+        }
+      ],
+      "condition": {
+        "and": [
+          "_backend~*",
+          "_last_edit:passed_time<300",
+          {
+            "or": [
+              "_version_number=",
+              "_version_number=1"
+            ]
+          }
+        ]
+      },
+      "metacondition": {
+        "and": [
+          {
+            "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+            "or": [
+              "_last_edit:contributor:uid:={_uid}",
+              "_last_edit:contributor:uid="
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "ambulance-name",
+      "freeform": {
+        "key": "name",
+        "inline": true
+      },
+      "question": {
+        "en": "What is the name of this ambulance station?",
+        "ja": "この救急ステーションの名前は何ですか?",
+        "ru": "Как называется эта станция скорой помощи?",
+        "fr": "Quel est le nom de cette station ?",
+        "it": "Qual è il nome di questa stazione delle ambulanze?",
+        "de": "Wie heißt die Rettungswache?",
+        "hu": "Mi a neve ennek a menőtállomásnak?",
+        "nl": "Hoe heet dit ambulancestation?",
+        "es": "¿Cual es el nombre de esta estación de ambulancias?",
+        "nb_NO": "Hva er navnet på denne ambulansestasjonen?",
+        "da": "Hvad hedder denne ambulancestation?",
+        "cs": "Jak se jmenuje tato stanice záchranné služby?",
+        "ca": "Quin és el nom d'aquesta estació d'ambulàncies?",
+        "zh_Hans": "这个救护车站叫什么名字？",
+        "he": "איך קוראים לתחנת האמבולנס הזו?",
+        "pl": "Jak nazywa się ta stacja pogotowia ratunkowego?",
+        "pt_BR": "Qual o nome dessa estação de ambulância?",
+        "pt": "Qual o nome desta estação de ambulância?"
+      },
+      "render": {
+        "en": "This station is called {name}.",
+        "ja": "このステーションの名前は{name}です。",
+        "ru": "Эта станция называется {name}.",
+        "fr": "Cette station s’appelle {name}.",
+        "it": "Questa stazione è chiamata {name}.",
+        "de": "Diese Rettungswache heißt {name}.",
+        "hu": "A mentőállomás neve: {name}.",
+        "nl": "Dit station heet {name}.",
+        "es": "Esta estación se llama {name}.",
+        "nb_NO": "Denne stasjonen heter {name}.",
+        "da": "Denne station hedder {name}.",
+        "cs": "Tato stanice se jmenuje {name}.",
+        "ca": "Aquesta estació es diu {name}.",
+        "zh_Hans": "这个站点名为 {name}.",
+        "he": "תחנה זו נקראת {name}.",
+        "pl": "Ta stacja nazywa się {name}.",
+        "pt_BR": "Esta estação é chamada de {name}.",
+        "pt": "Esta estação é chamada de {name}."
+      }
+    },
+    {
+      "id": "ambulance-street",
+      "freeform": {
+        "key": "addr:street",
+        "inline": true
+      },
+      "question": {
+        "en": "What is the street name where the station located?",
+        "ja": " 救急ステーションの所在地はどこですか?",
+        "ru": " По какому адресу расположена эта станция?",
+        "fr": "Quel est le nom de la rue où la station se situe ?",
+        "it": " Come si chiama la strada in cui si trova questa stazione?",
+        "de": "In welcher Straße liegt die Rettungswache?",
+        "hu": "Mi a neve annak az utcának, amelyben az állomás található?",
+        "nl": "In welke straat ligt dit station?",
+        "es": "¿Cual es el nombre de la calle en la que se encuentra la estación?",
+        "da": "Hvad er vejnavnet, hvor stationen ligger?",
+        "cs": "Jak se jmenuje ulice, kde se stanice nachází?",
+        "ca": "Quin és el nom del carrer on es troba l'estació?",
+        "he": "מה שם הרחוב שבו נמצאת התחנה?",
+        "pl": "Jak nazywa się ulica, przy której znajduje się stacja?",
+        "pt_BR": "Como é o nome da rua em que a estação está localizada?",
+        "zh_Hans": "车站所在的街道名称是什么？",
+        "pt": "Como é o nome da rua em que a estação está localizada?"
+      },
+      "render": {
+        "en": "This station is along a highway called {addr:street}.",
+        "ja": "{addr:street} 沿いにあります。",
+        "ru": "Эта станция расположена вдоль шоссе {addr:street}.",
+        "fr": "La station fait partie de {addr:street}.",
+        "it": "Questa stazione si trova in {addr:street}.",
+        "de": "Dieser Bahnhof liegt an der Straße {addr:street}.",
+        "hu": "Ez az állomás a következő utcában van: {addr:street}.",
+        "nl": "Straat waar dit station ligt: {addr:street}",
+        "es": "Esta estación se encuentra al lado de una via llamada {addr:street}.",
+        "da": "Denne station ligger langs en vej, der hedder {addr:street}.",
+        "cs": "Tato stanice se nachází podél dálnice s názvem {addr:street}.",
+        "ca": "Aquesta estació es troba al costat d'una via anomenada {addr:street}.",
+        "he": "תחנה זו נמצאת לאורך כביש מהיר בשם {addr:street}.",
+        "pt_BR": "Essa estação está em uma via chamada {addr:street}.",
+        "zh_Hans": "该站位于一条名为 {addr:street} 的公路沿线。",
+        "pt": "Esta estação está numa autoestrada chamada {addr:street}."
+      }
+    },
+    {
+      "id": "ambulance-place",
+      "question": {
+        "en": "Where is the station located? (e.g. name of neighborhood, villlage, or town)",
+        "ja": "このステーションの住所は?(例: 地区、村、または町の名称)",
+        "ru": "Где расположена станция? (напр., название населённого пункта)",
+        "fr": "Dans quelle localité la station est-elle située (p.ex. nom du quartier, village ou villa) ?",
+        "it": "Dove si trova la stazione? (ad es. quartiere, paese o città)",
+        "de": "Wo befindet sich die Rettungswache? (z. B. Name von Stadtviertel, Dorf oder Stadt)",
+        "hu": "Hol található az állomás? (Pl. a falu, kisváros vagy városrész neve.)",
+        "nl": "Waar ligt het station? (v.b. naam van de buurt, dorp of stad)",
+        "es": "¿Dónde se encuentra la estación? (ej. nombre del barrio, pueblo o ciudad)",
+        "da": "Hvor ligger stationen? (f.eks. navn på kvarter, landsby eller by)",
+        "cs": "Kde se stanice nachází? (např. název čtvrti, obce nebo města)",
+        "ca": "On es troba aquesta estació? (p.e. nom del barri, poble o ciutat)",
+        "he": "היכן ממוקמת התחנה? (למשל שם השכונה, הכפר או העיירה)",
+        "pt_BR": "Onde está localizada a estação? (por exemplo, nome do bairro, vila ou cidade)",
+        "zh_Hans": "车站位于哪里？ （例如邻里、村庄或城镇的名称）",
+        "pt": "Onde está a estação localizada ? (por exemplo, nome do bairro, vila ou cidade)"
+      },
+      "freeform": {
+        "key": "addr:place",
+        "inline": true
+      },
+      "render": {
+        "en": "This station is found within {addr:place}.",
+        "ja": "このステーションは{addr:place}にあります。",
+        "fr": "La station fait partie de {addr:place}.",
+        "it": "La stazione si trova a {addr:place}.",
+        "de": "Diese Rettungswache befindet sich in {addr:place}.",
+        "hu": "Ez az állomás itt található: {addr:place}.",
+        "nl": "Dit station ligt in {addr:place}.",
+        "es": "Esta estación se encuentra en {addr:place}.",
+        "da": "Denne station findes i {addr:place}.",
+        "cs": "Tato stanice se nachází v rámci {addr:place}.",
+        "ca": "Aquesta estació es troba a {addr:place}.",
+        "he": "תחנה זו נמצאת בתוך {addr:place}.",
+        "pt_BR": "Essa estação está localizada em {addr:place}.",
+        "zh_Hans": "该站位于{addr:place}内。",
+        "pt": "Esta estação está localizada em {addr:place}."
+      }
+    },
+    {
+      "id": "ambulance-agency",
+      "question": {
+        "en": "What agency operates this station?",
+        "ja": "このステーションを運営しているのはどこですか?",
+        "fr": "Quel est l’exploitant de la station ?",
+        "it": "Quale agenzia gestisce questa stazione?",
+        "de": "Wer betreibt die Rettungswache?",
+        "hu": "Milyen szervezet működteti ezt az állomást?",
+        "ru": "Какая организация управляет этой станцией?",
+        "nl": "Welke organisatie beheert dit station?",
+        "es": "¿Qué agencia opera esta estación?",
+        "da": "Hvilket agentur driver denne station?",
+        "cs": "Jaká organizace tuto stanici provozuje?",
+        "ca": "Quina agència opera aquesta estació?",
+        "zh_Hans": "哪家机构运营这个站点？",
+        "he": "איזו סוכנות מפעילה את התחנה הזו?",
+        "pl": "Jaka agencja obsługuje tę stację?",
+        "pt_BR": "Qual agência opera essa estação?",
+        "pt": "Qual agência opera esta estação?"
+      },
+      "render": {
+        "en": "This station is operated by {operator}.",
+        "ja": "このステーションは{operator}によって運営されています。",
+        "fr": "Cette station est opérée par {operator}.",
+        "it": "Questa stazione è gestita da {operator}.",
+        "de": "Die Rettungswache wird betrieben von {operator}.",
+        "hu": "Az állomás üzemeltetője: {operator}.",
+        "ru": "Эта станция управляется {operator}.",
+        "nl": "Dit station wordt beheerd door {operator}.",
+        "es": "Esta estación la opera {operator}.",
+        "da": "Denne station drives af {operator}.",
+        "cs": "Tuto stanici provozuje společnost {operator}.",
+        "ca": "Aquesta estació l'opera {operator}.",
+        "zh_Hans": "这个站点由 {operator}运营",
+        "he": "תחנה זו מופעלת על ידי {operator}.",
+        "pl": "Ta stacja jest obsługiwana przez {operator}.",
+        "pt_BR": "Essa estação é operada pelo(a) {operator}.",
+        "pt": "Esta estação é operada pelo(a) {operator}."
+      },
+      "freeform": {
+        "key": "operator",
+        "inline": true
+      },
+      "mappings": []
+    },
+    {
+      "id": "ambulance-operator-type",
+      "question": {
+        "en": "How is the station operator classified?",
+        "ja": "ステーションの運営の分類は?",
+        "fr": "Quel est le type d’exploitant ?",
+        "it": "Com’è classificato il gestore della stazione?",
+        "de": "Wie kann der Betreiber der Rettungswache eingestuft werden?",
+        "hu": "Hogyan sorolható be az állomás üzemeltetője?",
+        "nl": "Wat voor een organisatie is de beheerder van dit station?",
+        "es": "¿Como está clasificada la operadora de la estación?",
+        "da": "Hvordan klassificeres stationsoperatøren?",
+        "cs": "Jak je klasifikován provozovatel stanice?",
+        "ca": "Com es classifica l'operador de l'estació?",
+        "he": "כיצד מסווג מפעיל התחנה?",
+        "pl": "Jak klasyfikowany jest operator stacji?",
+        "pt_BR": "Como essa estação é classificada?",
+        "zh_Hans": "车站运营商如何分类？",
+        "pt": "Como esta estação é classificada?"
+      },
+      "render": {
+        "en": "The operator is a(n) {operator:type} entity.",
+        "ja": "運営者は、{operator:type} です。",
+        "fr": "L’exploitant est de type {operator:type}.",
+        "it": "L’operatore è un ente {operator:type}.",
+        "de": "Der Betreiber ist eine {operator:type}.",
+        "hu": "Az üzemeltető egy {operator:type} jellegű szervezet.",
+        "nl": "De beheerder is van het type {operator:type}.",
+        "es": "La operadora es una entidad de tipo {operator:type}.",
+        "da": "Operatøren er en (n) {operator:type} enhed.",
+        "cs": "Operátor je {operator:type} entita.",
+        "ca": "L'operadora és una entitat del tipus {operator:type}.",
+        "pt_BR": "O operador é uma entidade {operator:type}.",
+        "zh_Hans": "运营者是一个 {operator:type} 实体。",
+        "pt": "O operador é uma entidade {operator:type}."
+      },
+      "freeform": {
+        "key": "operator:type",
+        "inline": true
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "operator:type=government"
+            ]
+          },
+          "then": {
+            "en": "The station is operated by the government.",
+            "ja": "ステーションは自治体が運営する。",
+            "fr": "La station est opérée par le gouvernement.",
+            "it": "La stazione è gestita dal governo.",
+            "de": "Die Rettungswache wird von einer Behörde betrieben.",
+            "hu": "A mentőállomást a kormány üzemelteti.",
+            "ru": "Станция управляется правительством.",
+            "nl": "Dit station wordt beheerd door de overheid.",
+            "es": "La estación la opera el govierno.",
+            "da": "Stationen drives af staten.",
+            "cs": "Provozovatelem stanice je vláda.",
+            "ca": "El govern opera aquesta estació.",
+            "zh_Hans": "这个站点由政府运营。",
+            "he": "התחנה מופעלת על ידי הממשלה.",
+            "pl": "Stacja jest zarządzana przez rząd.",
+            "pt_BR": "A estação é operada pelo governo.",
+            "pt": "A estação é operada pelo governo."
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "operator:type=community"
+            ]
+          },
+          "then": {
+            "en": "The station is operated by a community-based, or informal organization.",
+            "ja": "任意団体やコミュニティが運営しているステーションである。",
+            "fr": "La station est opérée par une organisation informelle.",
+            "it": "La stazione è gestita dalla comunità o un’organizzazione non ufficiale.",
+            "de": "Die Rettungswache wird von einer gemeinnützigen Organisation betrieben.",
+            "hu": "Mentőállomást egy közösségi vagy nem hivatalos szervezet működteti.",
+            "ru": "Станция управляется волонтёрами или частной организацией.",
+            "nl": "Dit station wordt beheerd door een informele of community organisatie.",
+            "es": "La estación la opera una organización basada en la comunidad o informal.",
+            "da": "Stationen drives af en samfundsbaseret eller uformel organisation.",
+            "cs": "Provozovatelem stanice je komunitní nebo neformální organizace.",
+            "ca": "Aquesta estació l'opera una comunitat o organització informal.",
+            "he": "התחנה מופעלת על ידי ארגון קהילתי, או לא רשמי.",
+            "pl": "Stacja jest obsługiwana przez organizację społeczną lub nieformalną.",
+            "pt_BR": "A estação é operada por uma organização comunitária ou informal.",
+            "zh_Hans": "该站由社区或非正式组织运营。",
+            "pt": "A estação é operada por uma organização comunitária ou informal."
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "operator:type=ngo"
+            ]
+          },
+          "then": {
+            "en": "The station is operated by a formal group of volunteers.",
+            "ja": "公益団体が運営しているステーションである。",
+            "fr": "La station est opérée par un groupe officiel de bénévoles.",
+            "it": "La stazione è gestita da un gruppo ufficiale di volontari.",
+            "de": "Die Rettungswache wird von einer Freiwilligenorganisation betrieben.",
+            "hu": "A mentőállomást egy önkéntesekből álló hivatalos csoport működteti.",
+            "nl": "Dit station wordt beheerd door een formele groep vrijwilligers.",
+            "es": "La estación la opera un grupo formal de voluntarios.",
+            "da": "Stationen drives af en formel gruppe af frivillige.",
+            "cs": "Stanice je provozována formální skupinou dobrovolníků.",
+            "ca": "Aquesta estació l'opera un grup formal de voluntaris.",
+            "he": "התחנה מופעלת על ידי קבוצה רשמית של מתנדבים.",
+            "pl": "Stacja obsługiwana jest przez formalną grupę wolontariuszy.",
+            "pt_BR": "A estação é operada por um grupo formal de voluntários.",
+            "zh_Hans": "该站由一群正式的志愿者运营。",
+            "pt": "A estação é operada por um grupo formal de voluntários."
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "operator:type=private"
+            ]
+          },
+          "then": {
+            "en": "The station is privately operated.",
+            "ja": "個人が運営しているステーションである。",
+            "fr": "La station est opérée par un groupe privé.",
+            "it": "La stazione è gestita da un privato.",
+            "de": "Die Rettungswache wird von einer privaten Organisation betrieben.",
+            "hu": "Az állomást egy magánkézben lévő szervezet működteti.",
+            "nl": "Dit station wordt beheerd door een privé-organisatie.",
+            "es": "La estación se opera privadamente.",
+            "da": "Stationen er privatdrevet.",
+            "cs": "Stanice je provozována soukromým subjektem.",
+            "ca": "Aquesta estació l'opera una entitat privada.",
+            "he": "‍התחנה מופעלת באופן פרטי.",
+            "pl": "Stacja jest własnością prywatną.",
+            "pt_BR": "A estação é operada de forma privada.",
+            "zh_Hans": "该站是私人经营的。",
+            "pt": "A estação é operada de forma privada."
+          }
+        }
+      ]
+    },
+    {
+      "id": "images",
+      "description": "This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images",
+      "render": {
+        "*": "{image_carousel()}{image_upload()}{nearby_images():my-4}"
+      },
+      "classes": "my-4"
+    },
+    {
+      "id": "leftover-questions",
+      "render": {
+        "*": "{questions( ,)}"
+      }
+    },
+    {
+      "id": "lod",
+      "labels": [
+        "added_by_default"
+      ],
+      "render": {
+        "*": "{linked_data_from_website()}"
+      }
+    },
+    {
+      "id": "minimap",
+      "description": "Shows a small map with the feature. Added by default to every popup",
+      "render": {
+        "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+      }
+    },
+    {
+      "id": "last_edit",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+      "condition": {
+        "and": [
+          "_last_edit:contributor~*",
+          "_last_edit:changeset~*"
+        ]
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsTesting=true",
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_debug=yes",
+          "_csCount>=10"
+        ]
+      },
+      "render": {
+        "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+      }
+    },
+    {
+      "id": "favourite_status",
+      "render": {
+        "*": "{favourite_status()}"
+      }
+    },
+    {
+      "id": "qr_code",
+      "labels": [
+        "added_by_default"
+      ],
+      "classes": "flex items-center gap-x-2",
+      "render": {
+        "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+        "en": "{qr_code()}Scan this code to open this location on another device",
+        "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+        "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+      }
+    },
+    {
+      "id": "share",
+      "labels": [
+        "added_by_default"
+      ],
+      "metacondition": "_supports_sharing=yes",
+      "render": {
+        "de": "{share_link(,Standort teilen)}",
+        "en": "{share_link(,Share this location)}",
+        "nl": "{share_link(,Deel deze locatie)}"
+      }
+    },
+    {
+      "id": "all-tags",
+      "render": {
+        "*": "{all_tags()}"
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_tags=full",
+          "mapcomplete-show_debug=yes"
+        ]
+      }
+    }
+  ],
+  "titleIcons": [
+    {
+      "id": "wikipedialink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+      "condition": {
+        "or": [
+          "wikipedia~*",
+          "wikidata~*"
+        ]
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "wikipedia=",
+          "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "open_until",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "#": "Titleicon showing e.g. 'open until 17:00'",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{opening_hours_state()}",
+      "condition": {
+        "or": [
+          "opening_hours~*",
+          {
+            "or": [
+              {
+                "and": [
+                  "seasonal~.*winter.*",
+                  "_now:date~....-(12|01|02)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*spring.*",
+                  "_now:date~....-(03|04|05)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*summer.*",
+                  "_now:date~....-(06|07|08)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*autumn.*",
+                  "_now:date~....-(09|10|11)-.."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "phonelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": {
+        "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+        "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+        "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+        "_context": "layers:icons.tagRenderings.phonelink.render"
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:phone~*",
+          "then": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+          }
+        }
+      ],
+      "condition": {
+        "or": [
+          "phone~*",
+          "contact:phone~*"
+        ]
+      }
+    },
+    {
+      "id": "emaillink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:email~*",
+          "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:email~*",
+          "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        }
+      ],
+      "condition": {
+        "or": [
+          "email~*",
+          "contact:email~*",
+          "operator:email~*"
+        ]
+      }
+    },
+    {
+      "id": "websitelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "website~*",
+          "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:website~*",
+          "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "context:website~*",
+          "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "smokingicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=no",
+          "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=yes",
+          "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+        }
+      ]
+    },
+    {
+      "id": "dogicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "if": "dog=no",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+        },
+        {
+          "if": "dog=leashed",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+        },
+        {
+          "if": {
+            "or": [
+              "dog=yes",
+              "dog=unleashed"
+            ]
+          },
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+        }
+      ]
+    },
+    {
+      "id": "sharelink",
+      "labels": [
+        "defaults"
+      ],
+      "render": "{share_link()}",
+      "metacondition": "_supports_sharing=yes"
+    },
+    {
+      "id": "favourite_title_icon",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "*": "{favourite_icon()}"
+      },
+      "metacondition": "_loggedIn=true"
+    },
+    {
+      "id": "osmlink",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+        "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+        "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+        "_context": "layers:icons.tagRenderings.osmlink.render"
+      },
+      "mappings": [
+        {
+          "if": "id~.*/-.*",
+          "then": ""
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "_backend~*",
+          "then": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+          }
+        }
+      ],
+      "condition": "id~(node|way|relation)/[0-9]*"
+    },
+    {
+      "id": "direction",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "{direction_indicator()}"
+    }
+  ],
+  "_layerIcon": [
+    {
+      "icon": "./assets/themes/hailhydrant/Twemoji_1f691.svg"
+    }
+  ]
+}

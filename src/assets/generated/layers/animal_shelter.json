@@ -1,0 +1,908 @@
+{
+  "id": "animal_shelter",
+  "name": {
+    "en": "Animal shelters",
+    "de": "Tierheime",
+    "es": "Centros de acogida de animales",
+    "zh_Hans": "动物收容所",
+    "pt": "Abrigo para animais",
+    "ca": "Refugis d'animals"
+  },
+  "description": {
+    "en": "An animal shelter is a facility where animals in trouble are brought and facility's staff (volunteers or not) feeds them and cares of them, rehabilitating and healing them if necessary. This definition includes kennels for abandoned dogs, catteries for abandoned cats, shelters for other abandoned pets and wildlife recovery centres. ",
+    "es": "Un refugio de animales es una instalación donde se llevan animales con problemas y el personal de la instalación (voluntario o no) los alimenta y cuida, rehabilitándolos y curándolos si es necesario. Esta definición incluye las perreras para perros abandonados, los criaderos para gatos abandonados, los refugios para otros animales de compañía abandonados y los centros de recuperación de la fauna salvaje. ",
+    "zh_Hans": "动物收容所是一个设施，将遇到麻烦的动物带到这里，设施的工作人员（志愿者或非志愿者）喂养并照顾它们，并在必要时使它们康复和治愈。该定义包括被遗弃的狗的狗舍、被遗弃的猫的猫舍、其他被遗弃的宠物的庇护所和野生动物恢复中心。 ",
+    "de": "Ein Tierheim ist eine Einrichtung, in die notleidende Tiere gebracht werden und wo das Personal (ob freiwillig oder nicht) sie füttert und pflegt, sie rehabilitiert und bei Bedarf heilt. Diese Definition umfasst Zwinger für ausgesetzte Hunde, Katzenheime für ausgesetzte Katzen, Unterkünfte für andere ausgesetzte Haustiere und Wildtier-Auffangstationen. "
+  },
+  "source": {
+    "osmTags": {
+      "and": [
+        "amenity=animal_shelter"
+      ]
+    }
+  },
+  "title": {
+    "render": {
+      "en": "Animal shelter",
+      "de": "Tierheim",
+      "es": "Centro de acogida de animales",
+      "zh_Hans": "动物收容所",
+      "pt": "Abrigo para animais",
+      "ca": "Refugi d'animals"
+    },
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": {
+          "en": "{name}",
+          "de": "{name}",
+          "es": "{name}",
+          "zh_Hans": "{name}",
+          "ca": "{name}"
+        }
+      }
+    ]
+  },
+  "pointRendering": [
+    {
+      "location": [
+        "centroid",
+        "point"
+      ],
+      "marker": [
+        {
+          "icon": {
+            "render": "circle",
+            "id": "circle"
+          },
+          "color": "#ffffff"
+        },
+        {
+          "icon": {
+            "render": "./assets/layers/animal_shelter/animal_shelter.svg",
+            "id": "assetslayersanimalshelteranimalsheltersvg"
+          }
+        }
+      ],
+      "iconBadges": [
+        {
+          "if": "_favourite=yes",
+          "then": "circle:white;heart:red"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "width": "1",
+      "lineCap": "square",
+      "color": "#b5835a"
+    }
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "an animal shelter",
+        "de": "ein Tierheim",
+        "es": "una protectora de animales",
+        "zh_Hans": "动物收容所",
+        "pt": "um abrigo para animais",
+        "ca": "un refugi d'animals"
+      },
+      "tags": [
+        "amenity=animal_shelter"
+      ]
+    }
+  ],
+  "tagRenderings": [
+    {
+      "id": "just_created",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "This element shows a 'thank you' that the contributor has recently created this element",
+      "classes": "rounded-xl thanks",
+      "mappings": [
+        {
+          "if": "id~*",
+          "icon": "./assets/svg/party.svg",
+          "then": {
+            "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+            "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+            "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+            "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+            "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+            "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+          }
+        }
+      ],
+      "condition": {
+        "and": [
+          "_backend~*",
+          "_last_edit:passed_time<300",
+          {
+            "or": [
+              "_version_number=",
+              "_version_number=1"
+            ]
+          }
+        ]
+      },
+      "metacondition": {
+        "and": [
+          {
+            "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+            "or": [
+              "_last_edit:contributor:uid:={_uid}",
+              "_last_edit:contributor:uid="
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "images",
+      "description": "This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images",
+      "render": {
+        "*": "{image_carousel()}{image_upload()}{nearby_images():my-4}"
+      },
+      "classes": "my-4"
+    },
+    {
+      "id": "reviews",
+      "description": "Shows the reviews module (including the possibility to leave a review)",
+      "render": {
+        "*": "{create_review()}{list_reviews()}"
+      }
+    },
+    {
+      "id": "2",
+      "freeform": {
+        "key": "name",
+        "inline": true
+      },
+      "question": {
+        "en": "What is the name of this animal shelter?",
+        "de": "Wie lautet der Name des Tierheims?",
+        "es": "¿Cómo se llama este refugio de animales?",
+        "zh_Hans": "这个动物收容所叫什么名字？",
+        "ca": "Quin nom té aquest refugi d'animals?"
+      },
+      "render": {
+        "en": "This animal shelter is named <b>{name}</b>",
+        "de": "Der Name des Tierheims lautet <b>{name}</b>",
+        "es": "Este refugio de animales se llama <b>{name}</b>",
+        "zh_Hans": "这个动物收容所叫 <b>{name}</b>"
+      }
+    },
+    {
+      "id": "website",
+      "labels": [
+        "contact"
+      ],
+      "icon": "./assets/layers/icons/website.svg",
+      "question": {
+        "en": "What is the website of {title()}?",
+        "nl": "Wat is de website van {title()}?",
+        "fr": "Quel est le site web de {title()} ?",
+        "gl": "Cal é a páxina web de {title()}?",
+        "nb_NO": "Hva er nettsiden til {title()}?",
+        "ru": "Какой сайт у {title()}?",
+        "id": "Apa situs web dari {title()}?",
+        "zh_Hant": "{title()} 網址是什麼？",
+        "it": "Qual è il sito web di {title()}?",
+        "de": "Wie lautet die Webseite von {title()}?",
+        "pt_BR": "Qual o site de {title()}?",
+        "pl": "Jaka jest strona internetowa {title()}?",
+        "sv": "Vad är webbplatsen för {title()}?",
+        "pt": "Qual é o sítio web de {title()}?",
+        "eo": "Kie estas la retejo de {title()}?",
+        "hu": "Mi a weboldala ennek: {title()}?",
+        "ca": "Quina és la web de {title()}?",
+        "ja": "{title()}のウェブサイトは？",
+        "fil": "Ano ang website ng {title()}?",
+        "es": "¿Cual es el sitio web de {title()}?",
+        "zh_Hans": "{title()} 的网站为何？",
+        "da": "Hvad er webstedet for {title()}?",
+        "cs": "Jaká je webová stránka {title()}?"
+      },
+      "render": {
+        "*": "<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>"
+      },
+      "freeform": {
+        "key": "website",
+        "type": "url",
+        "addExtraTags": [
+          "contact:website="
+        ]
+      },
+      "mappings": [
+        {
+          "if": "contact:website~*",
+          "then": "<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>",
+          "hideInAnswer": true,
+          "icon": "./assets/layers/icons/website.svg"
+        }
+      ],
+      "editButtonAriaLabel": {
+        "en": "Edit website",
+        "nl": "Pas website aan",
+        "de": "Webseite bearbeiten"
+      }
+    },
+    {
+      "id": "phone",
+      "labels": [
+        "contact"
+      ],
+      "question": {
+        "en": "What is the phone number of {title()}?",
+        "nl": "Wat is het telefoonnummer van {title()}?",
+        "fr": "Quel est le numéro de téléphone de {title()} ?",
+        "de": "Wie lautet die Telefonnummer von {title()}?",
+        "nb_NO": "Hva er telefonnummeret til {title()}?",
+        "ru": "Какой номер телефона у {title()}?",
+        "sv": "Vad är telefonnumret till {title()}?",
+        "zh_Hant": "{title()} 的電話號碼是什麼？",
+        "it": "Qual è il numero di telefono di {title()}?",
+        "pt_BR": "Qual o número de telefone de {title()}?",
+        "id": "Berapa nomor telepon dari {title()}?",
+        "pl": "Jaki jest numer telefonu do {title()}?",
+        "pt": "Qual é o número de telefone de {title()}?",
+        "eo": "Kio estas la telefonnumero de {title()}?",
+        "hu": "Mi a telefonszáma ennek: {title()}?",
+        "ca": "Quin és el telèfon de {title()}?",
+        "ja": "{title()}の電話番号は？",
+        "sl": "Kakšno telefonsko številko ima {title()}?",
+        "fil": "Ano ang telepono ng {title()}?",
+        "es": "¿Cuál es el número de teléfono de {title()}?",
+        "zh_Hans": "{title()} 的电话号码为何？",
+        "da": "Hvad er telefonnummeret til {title()}?",
+        "cs": "Jaké je telefonní číslo {title()}?"
+      },
+      "render": {
+        "*": "<a href='tel:{phone}'>{phone}</a>"
+      },
+      "icon": "./assets/layers/questions/phone.svg",
+      "mappings": [
+        {
+          "if": "contact:phone~*",
+          "then": "<a href='tel:{contact:phone}'>{contact:phone}</a>",
+          "hideInAnswer": true,
+          "icon": "./assets/layers/questions/phone.svg"
+        }
+      ],
+      "freeform": {
+        "key": "phone",
+        "type": "phone",
+        "addExtraTags": [
+          "contact:phone="
+        ]
+      },
+      "editButtonAriaLabel": {
+        "en": "Edit phone number",
+        "nl": "Pas telefoonnummer aan",
+        "de": "Telefonnummer bearbeiten"
+      }
+    },
+    {
+      "id": "email",
+      "render": {
+        "*": "<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>"
+      },
+      "icon": "./assets/svg/envelope.svg",
+      "labels": [
+        "contact"
+      ],
+      "question": {
+        "nl": "Wat is het e-mailadres van {title()}?",
+        "fr": "Quelle est l'adresse courriel de {title()} ?",
+        "en": "What is the email address of {title()}?",
+        "nb_NO": "Hva er e-postadressen til {title()}?",
+        "ru": "Какой адрес электронной почты у {title()}?",
+        "id": "Apa alamat surel dari {title()}?",
+        "zh_Hant": "{title()} 的電子郵件地址是什麼？",
+        "it": "Qual è l'indirizzo email di {title()}?",
+        "de": "Wie lautet die Mail-Adresse von {title()}?",
+        "pt_BR": "Qual o endereço de e-mail de {title()}?",
+        "pl": "Jaki jest adres e-mail do {title()}?",
+        "sv": "Vad är e-postadressen till {title()}?",
+        "pt": "Qual é o endereço de e-mail de {title()}?",
+        "eo": "Kio estas la retpoŝta adreso de {title()}?",
+        "hu": "Mi a(z) {title()} e-mail címe?",
+        "ca": "Quina és l'adreça de correu electrònic de {title()}?",
+        "ja": "{title()}のEメールアドレスは何ですか？",
+        "sl": "Kakšen naslov elektronske pošte ima {title()}?",
+        "fil": "Ano ang email address ng {title()}?",
+        "es": "¿Cuál es la dirección de correo electrónico de {title()}?",
+        "zh_Hans": "{title()} 的电子邮箱地址为何？",
+        "da": "Hvad er mailadressen på {title()}?",
+        "cs": "Jaká je e-mailová adresa {title()}?"
+      },
+      "mappings": [
+        {
+          "if": "contact:email~*",
+          "icon": "./assets/svg/envelope.svg",
+          "then": "<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>",
+          "hideInAnswer": true
+        },
+        {
+          "if": "operator:email~*",
+          "icon": "./assets/svg/envelope.svg",
+          "then": "<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>",
+          "hideInAnswer": true
+        }
+      ],
+      "freeform": {
+        "key": "email",
+        "type": "email",
+        "addExtraTags": [
+          "contact:email="
+        ]
+      },
+      "editButtonAriaLabel": {
+        "en": "Edit email address",
+        "nl": "Pas emailadres aan",
+        "de": "E-Mail Adresse bearbeiten"
+      }
+    },
+    {
+      "id": "6",
+      "question": {
+        "en": "What is the purpose of the animal shelter?",
+        "de": "Was ist der Zweck des Tierheims?",
+        "es": "¿Cuál es la finalidad del refugio de animales?",
+        "zh_Hans": "动物收容所的目的是什么？",
+        "ca": "Quina és la finalitat del refugi d'animals?"
+      },
+      "mappings": [
+        {
+          "then": {
+            "en": "Animals are kept here until adopted by a new owner",
+            "de": "Tiere werden hier bis zur Abgabe an einen neuen Besitzer untergebracht",
+            "es": "Los animales permanecen aquí hasta que son adoptados por un nuevo propietario",
+            "zh_Hans": "动物被饲养在这里直到被新主人收养",
+            "ca": "Els animals romanen ací fins que son adoptats per un nou propietari"
+          },
+          "if": "purpose=adoption"
+        },
+        {
+          "then": {
+            "en": "Animals are taken care of for the rest of their lives",
+            "de": "Tiere werden hier bis zum Ende Ihres Lebens untergebracht",
+            "es": "Los animales reciben cuidados para el resto de su vida",
+            "zh_Hans": "动物的余生都得到照顾",
+            "ca": "Els animals reben cures per a la resta de la seva vida"
+          },
+          "if": "purpose=sanctuary"
+        },
+        {
+          "then": {
+            "en": "Injured animals are rehabilitated here until they can be released in nature again ",
+            "de": "Tiere werden hier untergebracht und gepflegt bis sie wieder in freier Natur ausgesetzt werden können ",
+            "es": "Los animales heridos se rehabilitan aquí hasta que pueden ser liberados de nuevo en la naturaleza ",
+            "zh_Hans": "受伤的动物在这里康复，直到它们可以再次被释放到大自然中 ",
+            "ca": "Els animals ferits es rehabiliten aquí fins que puguen ser alliberats de nou a la natura "
+          },
+          "if": "purpose=release"
+        }
+      ],
+      "multiAnswer": true
+    },
+    {
+      "id": "opening_hours_by_appointment",
+      "question": {
+        "en": "What are the opening hours of {title()}?",
+        "fr": "Quelles sont les horaires d'ouverture de {title()} ?",
+        "de": "Wie lauten die Öffnungszeiten von {title()}?",
+        "nl": "Wat zijn de openingstijden van {title()}?",
+        "nb_NO": "Hva er åpningstidene for {title()})",
+        "ru": "Какое время работы у {title()}?",
+        "zh_Hant": "{title()} 的開放時間是什麼？",
+        "it": "Quali sono gli orari di apertura di {title()}?",
+        "pt_BR": "Qual o horário de funcionamento de {title()}?",
+        "pl": "Jakie są godziny otwarcia {title()}?",
+        "sv": "Vilka är öppettiderna för {title()}?",
+        "pt": "Qual é o horário de funcionamento de {title()}?",
+        "hu": "Mikor van nyitva ez: {title()}?",
+        "ca": "Quin és l'horari d'obertura de {title()}?",
+        "ja": "{title()}の営業時間は？",
+        "sl": "Kakšen odpiralni čas ima {title()}?",
+        "fil": "Anong oras nagbubukas ang {title()}?",
+        "es": "¿Cuales son las horas de apertura de {title()}?",
+        "zh_Hans": "{title()} 的开放时间为何？",
+        "da": "Hvad er åbningstiderne for {title()}?",
+        "id": "Kapan jam buka {title()}?",
+        "cs": "Jaká je otevírací doba {title()}?"
+      },
+      "render": {
+        "de": "<h3>Öffnungszeiten</h3>{opening_hours_table(opening_hours)}",
+        "fr": "<h3>Horaires d'ouverture</h3>{opening_hours_table(opening_hours)}",
+        "en": "<h3>Opening hours</h3>{opening_hours_table(opening_hours)}",
+        "nl": "<h3>Openingstijden</h3>{opening_hours_table(opening_hours)}",
+        "nb_NO": "<h3>Åpningstider</h3>{opening_hours_table(opening_hours)}",
+        "ru": "<h3>Часы работы</h3>{opening_hours_table(opening_hours)}",
+        "zh_Hant": "<h3>開放時間</h3>{opening_hours_table(opening_hours)}",
+        "it": "<h3>Orari di apertura</h3>{opening_hours_table(opening_hours)}",
+        "pl": "<h3> Godziny otwarcia</h3>{opening_hours_table(opening_hours)}",
+        "pt_BR": "<h3>Horário de funcionamento</h3>{opening_hours_table(opening_hours)}",
+        "sv": "<h3>Öppettider</h3> {opening_hours_table(opening_hours)}",
+        "pt": "<h3>Horário de funcionamento</h3>{opening_hours_table(opening_hours)}",
+        "eo": "<h3>Malfermitaj horoj</h3>{opening_hours_table(opening_hours)}",
+        "hu": "<h3>Nyitva tartás</h3>{opening_hours_table(opening_hours)}",
+        "ca": "<h3>Horari d'obertura</h3>{opening_hours_table(opening_hours)}",
+        "ja": "<h3>営業時間</h3>{opening_hours_table(opening_hours)}",
+        "sl": "<h3>Odpiralni čas</h3>{opening_hours_table(opening_hours)}",
+        "fil": "<h3>Mga oras na bukas</h3>{opening_hours_table(opening_hours)}",
+        "es": "<h3>Horas de apertura</h3>{opening_hours_table(opening_hours)}",
+        "zh_Hans": "<h3>开放时间</h3> {opening_hours_table(opening_hours)}",
+        "da": "<h3> Åbningstider</h3>{opening_hours_table(opening_hours)}",
+        "id": "<h3>Jam buka</h3>{opening_hours_table(opening_hours)}",
+        "pa_PK": "<h3>کھُلھے گھنٹے</h3>{opening_hours_table(opening_hours)}",
+        "cs": "<h3>Otevírací hodiny</h3>{opening_hours_table(opening_hours)}"
+      },
+      "freeform": {
+        "key": "opening_hours",
+        "type": "opening_hours",
+        "inline": false
+      },
+      "mappings": [
+        {
+          "#": "Just here to be able to handle those ~5000 incorrect 'opening_hours=closed' elements.",
+          "if": "opening_hours=\"by appointment\"",
+          "then": {
+            "en": "Only by appointment",
+            "nl": "Alleen op afspraak",
+            "de": "Nur nach Vereinbarung",
+            "fr": "Uniquement sur rendez-vous",
+            "ca": "Sols amb cita prèvia",
+            "es": "Sólo con cita previa",
+            "nb_NO": "Kun ved avtale",
+            "pl": "Tylko po wcześniejszym umówieniu się",
+            "cs": "Pouze po domluvě"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "opening_hours~i~\"by appointment\"|by appointment",
+          "then": {
+            "en": "Only by appointment",
+            "de": "Nur nach Vereinbarung",
+            "nl": "Alleen op afspraak",
+            "fr": "Uniquement sur rendez-vous",
+            "ca": "Sols amb cita prèvia",
+            "es": "Sólo con cita previa",
+            "nb_NO": "Kun ved avtale",
+            "pl": "Tylko po wcześniejszym umówieniu się",
+            "cs": "Pouze po domluvě"
+          },
+          "hideInAnswer": true
+        }
+      ]
+    },
+    {
+      "question": {
+        "en": "Which animals are accepted here?"
+      },
+      "id": "boarded_animals",
+      "mappings": [
+        {
+          "if": "animal_shelter=dog",
+          "then": {
+            "en": "Dogs are kept here"
+          }
+        },
+        {
+          "if": "animal_shelter=cat",
+          "then": {
+            "en": "Cats are kept here"
+          }
+        },
+        {
+          "if": "animal_shelter=horse",
+          "then": {
+            "en": "Horses are kept here"
+          }
+        },
+        {
+          "if": "animal_shelter=bird",
+          "then": {
+            "en": "Birds are kept here"
+          }
+        },
+        {
+          "if": "animal_shelter=wildlife",
+          "then": {
+            "en": "Wild animals are kept here"
+          }
+        }
+      ],
+      "render": {
+        "en": "{animal_shelter} is kept here"
+      },
+      "freeform": {
+        "key": "animal_shelter",
+        "inline": true
+      },
+      "multiAnswer": true
+    },
+    {
+      "id": "leftover-questions",
+      "render": {
+        "*": "{questions( ,)}"
+      }
+    },
+    {
+      "id": "lod",
+      "labels": [
+        "added_by_default"
+      ],
+      "render": {
+        "*": "{linked_data_from_website()}"
+      }
+    },
+    {
+      "id": "minimap",
+      "description": "Shows a small map with the feature. Added by default to every popup",
+      "render": {
+        "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+      }
+    },
+    {
+      "id": "move-button",
+      "render": {
+        "*": "{move_button()}"
+      }
+    },
+    {
+      "id": "delete-button",
+      "render": {
+        "*": "{delete_button()}"
+      }
+    },
+    {
+      "id": "last_edit",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+      "condition": {
+        "and": [
+          "_last_edit:contributor~*",
+          "_last_edit:changeset~*"
+        ]
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsTesting=true",
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_debug=yes",
+          "_csCount>=10"
+        ]
+      },
+      "render": {
+        "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+      }
+    },
+    {
+      "id": "favourite_status",
+      "render": {
+        "*": "{favourite_status()}"
+      }
+    },
+    {
+      "id": "qr_code",
+      "labels": [
+        "added_by_default"
+      ],
+      "classes": "flex items-center gap-x-2",
+      "render": {
+        "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+        "en": "{qr_code()}Scan this code to open this location on another device",
+        "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+        "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+      }
+    },
+    {
+      "id": "share",
+      "labels": [
+        "added_by_default"
+      ],
+      "metacondition": "_supports_sharing=yes",
+      "render": {
+        "de": "{share_link(,Standort teilen)}",
+        "en": "{share_link(,Share this location)}",
+        "nl": "{share_link(,Deel deze locatie)}"
+      }
+    },
+    {
+      "id": "all-tags",
+      "render": {
+        "*": "{all_tags()}"
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_tags=full",
+          "mapcomplete-show_debug=yes"
+        ]
+      }
+    }
+  ],
+  "deletion": {},
+  "allowMove": true,
+  "credits": "Pieter Vander Vennet",
+  "titleIcons": [
+    {
+      "id": "wikipedialink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+      "condition": {
+        "or": [
+          "wikipedia~*",
+          "wikidata~*"
+        ]
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "wikipedia=",
+          "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "open_until",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "#": "Titleicon showing e.g. 'open until 17:00'",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{opening_hours_state()}",
+      "condition": {
+        "or": [
+          "opening_hours~*",
+          {
+            "or": [
+              {
+                "and": [
+                  "seasonal~.*winter.*",
+                  "_now:date~....-(12|01|02)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*spring.*",
+                  "_now:date~....-(03|04|05)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*summer.*",
+                  "_now:date~....-(06|07|08)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*autumn.*",
+                  "_now:date~....-(09|10|11)-.."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "phonelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": {
+        "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+        "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+        "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+        "_context": "layers:icons.tagRenderings.phonelink.render"
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:phone~*",
+          "then": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+          }
+        }
+      ],
+      "condition": {
+        "or": [
+          "phone~*",
+          "contact:phone~*"
+        ]
+      }
+    },
+    {
+      "id": "emaillink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:email~*",
+          "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:email~*",
+          "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        }
+      ],
+      "condition": {
+        "or": [
+          "email~*",
+          "contact:email~*",
+          "operator:email~*"
+        ]
+      }
+    },
+    {
+      "id": "websitelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "website~*",
+          "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:website~*",
+          "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "context:website~*",
+          "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "smokingicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=no",
+          "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=yes",
+          "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+        }
+      ]
+    },
+    {
+      "id": "dogicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "if": "dog=no",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+        },
+        {
+          "if": "dog=leashed",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+        },
+        {
+          "if": {
+            "or": [
+              "dog=yes",
+              "dog=unleashed"
+            ]
+          },
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+        }
+      ]
+    },
+    {
+      "id": "sharelink",
+      "labels": [
+        "defaults"
+      ],
+      "render": "{share_link()}",
+      "metacondition": "_supports_sharing=yes"
+    },
+    {
+      "id": "favourite_title_icon",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "*": "{favourite_icon()}"
+      },
+      "metacondition": "_loggedIn=true"
+    },
+    {
+      "id": "osmlink",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+        "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+        "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+        "_context": "layers:icons.tagRenderings.osmlink.render"
+      },
+      "mappings": [
+        {
+          "if": "id~.*/-.*",
+          "then": ""
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "_backend~*",
+          "then": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+          }
+        }
+      ],
+      "condition": "id~(node|way|relation)/[0-9]*"
+    },
+    {
+      "id": "direction",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "{direction_indicator()}"
+    },
+    {
+      "id": "rating",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{rating()}"
+    }
+  ],
+  "_layerIcon": [
+    {
+      "icon": "circle",
+      "color": "#ffffff"
+    },
+    {
+      "icon": "./assets/layers/animal_shelter/animal_shelter.svg"
+    }
+  ]
+}

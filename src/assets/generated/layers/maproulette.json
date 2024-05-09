@@ -1,0 +1,533 @@
+{
+  "id": "maproulette",
+  "name": {
+    "en": "MapRoulette Tasks",
+    "de": "MapRoulette-Aufgaben",
+    "nl": "MapRoulette Taken",
+    "pl": "Zadania MapRoulette",
+    "ca": "Tasques de MapRoulette",
+    "cs": "Úkoly MapRoulette"
+  },
+  "description": {
+    "en": "Layer showing all tasks in MapRoulette",
+    "de": "Ebene, die alle MapRoulette-Aufgaben zeigt",
+    "nl": "Laag met alle taken uit MapRoulette",
+    "ca": "Capa que mostra totes les tasques de MapRoulette",
+    "pl": "Warstwa pokazująca wszystkie zadania w MapRoulette",
+    "cs": "Vrstva zobrazující všechny úlohy v MapRoulette",
+    "es": "Capa mostrando todas las tareas en MapRoulette"
+  },
+  "source": {
+    "geoJson": "https://maproulette.org/api/v2/tasks/box/{x_min}/{y_min}/{x_max}/{y_max}",
+    "geoJsonZoomLevel": 16,
+    "osmTags": {
+      "and": [
+        "title~*"
+      ]
+    }
+  },
+  "minzoom": 15,
+  "title": {
+    "render": {
+      "en": "MapRoulette Item: {parentName}",
+      "de": "MapRoulette-Element: {parentName}",
+      "nl": "MapRoulette Item: {parentName}",
+      "pl": "Obiekt MapRoulette: {parentName}",
+      "cs": "Položka MapRoulette: {parentName}"
+    }
+  },
+  "titleIcons": [
+    {
+      "id": "maproulette",
+      "render": "<a href='https://maproulette.org/challenge/{parentId}/task/{id}' target='_blank'><img src='./assets/layers/maproulette/logomark.svg'/></a>"
+    }
+  ],
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": {
+            "render": "pin",
+            "id": "pin"
+          },
+          "color": {
+            "render": "#00",
+            "mappings": [
+              {
+                "if": "status=0",
+                "then": "#959DFF"
+              },
+              {
+                "if": "status=1",
+                "then": "#65D2DA"
+              },
+              {
+                "if": "status=2",
+                "then": "#F7BB59"
+              },
+              {
+                "if": "status=3",
+                "then": "#F7BB59"
+              },
+              {
+                "if": "status=4",
+                "then": "#737373"
+              },
+              {
+                "if": "status=5",
+                "then": "#CCB186"
+              },
+              {
+                "if": "status=6",
+                "then": "#FF5E63"
+              },
+              {
+                "if": "status=9",
+                "then": "#FF349C"
+              }
+            ]
+          }
+        }
+      ],
+      "iconSize": "40,40",
+      "anchor": "bottom",
+      "iconBadges": [
+        {
+          "if": "_favourite=yes",
+          "then": "circle:white;heart:red"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [],
+  "tagRenderings": [
+    {
+      "id": "just_created",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "This element shows a 'thank you' that the contributor has recently created this element",
+      "classes": "rounded-xl thanks",
+      "mappings": [
+        {
+          "if": "id~*",
+          "icon": "./assets/svg/party.svg",
+          "then": {
+            "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+            "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+            "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+            "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+            "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+            "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+          }
+        }
+      ],
+      "condition": {
+        "and": [
+          "_backend~*",
+          "_last_edit:passed_time<300",
+          {
+            "or": [
+              "_version_number=",
+              "_version_number=1"
+            ]
+          }
+        ]
+      },
+      "metacondition": {
+        "and": [
+          {
+            "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+            "or": [
+              "_last_edit:contributor:uid:={_uid}",
+              "_last_edit:contributor:uid="
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "status",
+      "mappings": [
+        {
+          "if": "status=0",
+          "then": {
+            "en": "Task is created",
+            "de": "Aufgabe wurde erstellt",
+            "nl": "Taak werd gecreëerd",
+            "ca": "Es crea la tasca",
+            "pl": "Zadanie jest stworzone",
+            "cs": "Úkol je vytvořen"
+          }
+        },
+        {
+          "if": "status=1",
+          "then": {
+            "en": "Task is fixed",
+            "de": "Aufgabe wurde erledigt",
+            "nl": "Taak werd opgelost",
+            "pl": "Zadanie jest naprawione",
+            "ca": "La tasca està arreglada",
+            "cs": "Úkol je opraven"
+          }
+        },
+        {
+          "if": "status=2",
+          "then": {
+            "en": "Task is a false positive",
+            "de": "Aufgabe ist ein falsches Positiv",
+            "nl": "Taak was vals positief",
+            "pl": "Zadanie jest fałszywie pozytywne",
+            "ca": "La tasca és un fals positiu",
+            "cs": "Úkol je falešně pozitivní"
+          }
+        },
+        {
+          "if": "status=3",
+          "then": {
+            "en": "Task is skipped",
+            "de": "Aufgabe wurde übersprungen",
+            "nl": "Taak werd overgeslagen",
+            "pl": "Zadanie jest pominięte",
+            "ca": "La tasca s'ha botat",
+            "cs": "Úkol je přeskočen"
+          }
+        },
+        {
+          "if": "status=4",
+          "then": {
+            "en": "Task is deleted",
+            "de": "Aufgabe wurde gelöscht",
+            "nl": "Taak werd verwijderd",
+            "pl": "Zadania jest usunięte",
+            "ca": "La tasca s'ha eliminat",
+            "cs": "Úkol je odstraněn"
+          }
+        },
+        {
+          "if": "status=5",
+          "then": {
+            "en": "Task is already fixed",
+            "de": "Aufgabe wurde bereits erledigt",
+            "nl": "Taak was al opgelost",
+            "pl": "Zadania jest już wykonane",
+            "ca": "La tasca ja està arreglada",
+            "cs": "Úkol je již opraveno"
+          }
+        },
+        {
+          "if": "status=6",
+          "then": {
+            "en": "Task is marked as too hard",
+            "de": "Aufgabe wurde als zu schwer markiert",
+            "nl": "Taak werd als te moeilijk ervaren",
+            "pl": "Zadanie jest oznaczone jako zbyt trudne",
+            "ca": "La tasca s'ha marcat com a molt difícil",
+            "cs": "Úkol je označen jako příliš těžký"
+          }
+        },
+        {
+          "if": "status=9",
+          "then": {
+            "en": "Task is disabled",
+            "de": "Aufgabe wurde deaktiviert",
+            "nl": "Taak is uitgeschakeld",
+            "pl": "Zadanie jest wyłączone",
+            "ca": "La tasca està deshabilitada",
+            "cs": "Úloha je zakázána"
+          }
+        }
+      ]
+    },
+    {
+      "labels": [
+        "controls"
+      ],
+      "id": "mark_fixed",
+      "render": {
+        "ca": "{maproulette_set_status(Marca com a solucionat,,,,,)}",
+        "cs": "{maproulette_set_status(Označit jako opravené,,,,,)}",
+        "de": "{maproulette_set_status(Als behoben markieren,,,,,)}",
+        "en": "{maproulette_set_status(Mark as fixed,,,,,)}",
+        "pl": "{maproulette_set_status(Oznacz jako naprawione,,,,,)}"
+      }
+    },
+    {
+      "id": "mark_duplicate",
+      "labels": [
+        "controls"
+      ],
+      "render": {
+        "ca": "{maproulette_set_status(Marca com a no trobat o com a fals positiu,close,,2,,)}",
+        "cs": "{maproulette_set_status(Označit jako nenalezeno nebo falešně pozitivní,close,,2,,)}",
+        "de": "{maproulette_set_status(Als nicht gefunden oder Falschmeldung markieren,close,,2,,)}",
+        "en": "{maproulette_set_status(Mark as not found or false positive,close,,2,,)}",
+        "pl": "{maproulette_set_status(Oznacz jako nieznalezione lub fałszywie pozytywne,close,,2,,)}"
+      }
+    },
+    {
+      "id": "mark_too_hard",
+      "labels": [
+        "controls"
+      ],
+      "render": {
+        "ca": "{maproulette_set_status(Marca com a massa complicat,./assets/svg/not_found.svg,,6,,)}",
+        "cs": "{maproulette_set_status(Označit jako příliš těžké,./assets/svg/not_found.svg,,6,,)}",
+        "de": "{maproulette_set_status(Als zu schwer markieren,./assets/svg/not_found.svg,,6,,)}",
+        "en": "{maproulette_set_status(Mark as too hard,./assets/svg/not_found.svg,,6,,)}",
+        "pl": "{maproulette_set_status(Oznacz jako zbyt trudne,./assets/svg/not_found.svg,,6,,)}"
+      }
+    },
+    {
+      "id": "leftover-questions",
+      "render": {
+        "*": "{questions( ,)}"
+      }
+    },
+    {
+      "id": "lod",
+      "labels": [
+        "added_by_default"
+      ],
+      "render": {
+        "*": "{linked_data_from_website()}"
+      }
+    },
+    {
+      "id": "minimap",
+      "description": "Shows a small map with the feature. Added by default to every popup",
+      "render": {
+        "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+      }
+    },
+    {
+      "id": "last_edit",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+      "condition": {
+        "and": [
+          "_last_edit:contributor~*",
+          "_last_edit:changeset~*"
+        ]
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsTesting=true",
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_debug=yes",
+          "_csCount>=10"
+        ]
+      },
+      "render": {
+        "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+      }
+    },
+    {
+      "id": "favourite_status",
+      "render": {
+        "*": "{favourite_status()}"
+      }
+    },
+    {
+      "id": "qr_code",
+      "labels": [
+        "added_by_default"
+      ],
+      "classes": "flex items-center gap-x-2",
+      "render": {
+        "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+        "en": "{qr_code()}Scan this code to open this location on another device",
+        "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+        "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+      }
+    },
+    {
+      "id": "share",
+      "labels": [
+        "added_by_default"
+      ],
+      "metacondition": "_supports_sharing=yes",
+      "render": {
+        "de": "{share_link(,Standort teilen)}",
+        "en": "{share_link(,Share this location)}",
+        "nl": "{share_link(,Deel deze locatie)}"
+      }
+    },
+    {
+      "id": "all-tags",
+      "render": {
+        "*": "{all_tags()}"
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_tags=full",
+          "mapcomplete-show_debug=yes"
+        ]
+      }
+    }
+  ],
+  "filter": [
+    {
+      "id": "status",
+      "options": [
+        {
+          "question": {
+            "en": "Show tasks with all statuses",
+            "de": "Aufgaben mit allen Status anzeigen",
+            "nl": "Toon taken met alle statussen",
+            "pl": "Pokaż zadania z wszystkimi statusami",
+            "ca": "Mostra les tasques amb tots els estats",
+            "cs": "Zobrazit úkoly se všemi stavy"
+          }
+        },
+        {
+          "question": {
+            "en": "Show tasks that are created",
+            "de": "Aufgaben anzeigen, die erstellt wurden",
+            "nl": "Toon aangemaakte taken",
+            "pl": "Pokaż zadania, które zostały stworzone",
+            "ca": "Mostra les tasques que es creen",
+            "cs": "Zobrazit vytvořené úlohy"
+          },
+          "osmTags": "status=0"
+        },
+        {
+          "question": {
+            "en": "Show tasks that are fixed",
+            "de": "Aufgaben anzeigen, die erledigt wurden",
+            "nl": "Toon opgeloste taken",
+            "ca": "Mostra les tasques que estan arreglades",
+            "cs": "Zobrazit úkoly, které jsou opravené",
+            "pl": "Pokaż zadania, które zostały naprawione"
+          },
+          "osmTags": "status=1"
+        },
+        {
+          "question": {
+            "en": "Show tasks that are false positives",
+            "de": "Aufgaben anzeigen, die falsch positiv sind",
+            "nl": "Toon vals-positieve taken",
+            "ca": "Mostra tasques que són falsos positius",
+            "cs": "Ukažte úkoly, které jsou falešně pozitivní",
+            "pl": "Pokaż zadania, które dały fałszywie pozytywne wyniki"
+          },
+          "osmTags": "status=2"
+        },
+        {
+          "question": {
+            "en": "Show tasks that are skipped",
+            "de": "Aufgaben anzeigen, die übersprungen wurden",
+            "nl": "Toon overgeslagen taken",
+            "ca": "Mostra les tasques que s'han omès",
+            "cs": "Zobrazit úkoly, které byly přeskočeny",
+            "pl": "Pokaż pominięte zadania"
+          },
+          "osmTags": "status=3"
+        },
+        {
+          "question": {
+            "en": "Show tasks that are deleted",
+            "de": "Aufgaben anzeigen, die gelöscht wurden",
+            "nl": "Toon verwijderde taken",
+            "ca": "Mostra les tasques que s'han suprimit",
+            "cs": "Zobrazit úkoly, které byly odstraněny",
+            "pl": "Pokaż zadania, które zostały usunięte"
+          },
+          "osmTags": "status=4"
+        },
+        {
+          "question": {
+            "en": "Show tasks that are already fixed",
+            "de": "Aufgaben anzeigen, die bereits erledigt wurden",
+            "nl": "Toon al opgeloste taken",
+            "pl": "Pokaż zadania, które zostały już naprawione",
+            "ca": "Mostra les tasques que ja estan arreglades",
+            "cs": "Zobrazit úkoly, které jsou již opraveny"
+          },
+          "osmTags": "status=5"
+        },
+        {
+          "question": {
+            "en": "Show tasks that are marked as too hard",
+            "de": "Aufgaben anzeigen, die als zu schwierig markiert wurden",
+            "nl": "Toon taken die als te lastig gemarkeerd zijn",
+            "pl": "Pokaż zadania oznaczone jako zbyt trudne",
+            "ca": "Mostra les tasques marcades com a massa difícils",
+            "cs": "Zobrazit úkoly, které jsou označeny jako příliš těžké"
+          },
+          "osmTags": "status=6"
+        },
+        {
+          "question": {
+            "en": "Show tasks that are disabled",
+            "de": "Aufgaben anzeigen, die deaktiviert wurden",
+            "nl": "Toon uitgeschakelde taken",
+            "pl": "Pokaż zadania, które są wyłączone",
+            "ca": "Mostra les tasques que estan desactivades",
+            "cs": "Zobrazit úkoly, které jsou zakázány"
+          },
+          "osmTags": "status=9"
+        }
+      ]
+    },
+    {
+      "id": "parent-name",
+      "options": [
+        {
+          "osmTags": "parentName~i~.*{search}.*",
+          "fields": [
+            {
+              "name": "search"
+            }
+          ],
+          "question": {
+            "en": "Challenge name contains {search}",
+            "de": "Name der Kampagne enthält {search}",
+            "nl": "Naam uitdaging bevat {search}",
+            "pl": "Nazwa wyzwania zawiera {search}",
+            "ca": "El nom del repte conté {search}",
+            "cs": "Název výzvy obsahuje {search}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "parent-id",
+      "options": [
+        {
+          "osmTags": "parentId={search}",
+          "fields": [
+            {
+              "name": "search"
+            }
+          ],
+          "question": {
+            "en": "Challenge ID matches {search}",
+            "de": "Kampagnen ID stimmt mit {search} überein",
+            "nl": "ID uitdaging is {search}",
+            "pl": "ID wyzwania pasuje do {search}",
+            "ca": "L'identificador de desafiament coincideix amb {search}",
+            "cs": "ID výzvy odpovídá {search}"
+          }
+        }
+      ]
+    }
+  ],
+  "_layerIcon": [
+    {
+      "icon": "pin",
+      "color": "#00"
+    }
+  ]
+}

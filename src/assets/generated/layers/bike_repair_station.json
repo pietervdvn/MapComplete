@@ -1,0 +1,1815 @@
+{
+  "id": "bike_repair_station",
+  "name": {
+    "en": "Bicycle pump and repair",
+    "nl": "Fietspomp en fietsherstel",
+    "fr": "Station velo (réparation, pompe à vélo)",
+    "gl": "Estación de bicicletas (arranxo, bomba de ar ou ambos)",
+    "de": "Fahrradstationen (Reparatur, Pumpe oder beides)",
+    "it": "Stazioni bici (riparazione, gonfiaggio o entrambi)",
+    "pt_BR": "Estações de bicicletas (reparo, bomba ou ambos)",
+    "ru": "Велостанции (ремонт, накачка шин или сразу всё)",
+    "es": "Bomba y reparación de bicicletas",
+    "da": "Cykelpumpe og reparation",
+    "cs": "Vzduchový kompresor a opravy jízdních kol",
+    "ca": "Manxa i reparació de bicicletes",
+    "pt": "Estações de bicicletas (reparo, bomba ou ambos)"
+  },
+  "description": {
+    "en": "A layer showing bicycle pumps and bicycle repair tool stands",
+    "nl": "Deze laag toont fietspompen en herstelpunten voor fietsen",
+    "de": "Eine Ebene mit Fahrradpumpen und Werkzeugständern für die Fahrradreparatur",
+    "es": "Una capa que muestra bombas de bicicletas y puestos de herramientas de reparación de bicicletas",
+    "da": "Et lag med cykelpumper og cykelreværktøjsstativer",
+    "fr": "Une couche montrant les pompes à vélo et les centres de réparation",
+    "cs": "Vrstva zobrazující vzduchové kompresory na jízdní kola a stojany na nářadí pro opravu jízdních kol",
+    "ca": "Una capa que mostra bombes de bicicletes i suports d'eines de reparació de bicicletes",
+    "pt_BR": "Uma camada que mostra bombas de ar para bicicletas e suportes com ferramentas de reparo para bicicletas",
+    "pt": "Uma camada que mostra bombas de ar para bicicletas e suportes com ferramentas de reparo para bicicletas"
+  },
+  "source": {
+    "osmTags": {
+      "and": [
+        "amenity=bicycle_repair_station"
+      ]
+    }
+  },
+  "minzoom": 13,
+  "title": {
+    "render": {
+      "en": "Bike station (pump & repair)",
+      "nl": "Herstelpunt met pomp",
+      "fr": "Point station velo avec pompe",
+      "gl": "Estación de bicicletas (arranxo e bomba de ar)",
+      "de": "Fahrradstation (Pumpe & Reparatur)",
+      "it": "Stazione bici (gonfiaggio & riparazione)",
+      "pt_BR": "Estação de bicicletas (bomba e reparo)",
+      "ru": "Велостанция (накачка шин и ремонт)",
+      "es": "Estación de bicis (bomba y reparación)",
+      "da": "Cykelstation (pumpe og reparation)",
+      "ca": "Estació de bicicletes (bomba i reparació)",
+      "cs": "Cyklistická stanice (pumpa a opravna)",
+      "pt": "Estação de bicicletas (bomba e reparo)"
+    },
+    "mappings": [
+      {
+        "if": {
+          "or": [
+            "service:bicycle:pump=no",
+            "service:bicycle:pump:operational_status=broken"
+          ]
+        },
+        "then": {
+          "en": "Bike repair station",
+          "nl": "Herstelpunt",
+          "fr": "Point de réparation velo",
+          "gl": "Estación de arranxo de bicicletas",
+          "de": "Fahrrad-Reparaturstation",
+          "it": "Stazione riparazione bici",
+          "pt_BR": "Estação de reparo de bicicletas",
+          "pt": "Estação de reparo de bicicletas",
+          "ru": "Станция обслуживания велосипедов",
+          "es": "Estación de reparación de bicis",
+          "da": "Cykelreparationsstation",
+          "cs": "Stanice na opravu kol",
+          "ca": "Estació de reparació de bicicletes",
+          "pl": "Stacja naprawy rowerów"
+        }
+      },
+      {
+        "if": {
+          "and": [
+            "service:bicycle:pump=yes",
+            "service:bicycle:tools=yes"
+          ]
+        },
+        "then": {
+          "en": "Bike repair station",
+          "nl": "Herstelpunt",
+          "fr": "Point de réparation",
+          "gl": "Estación de arranxo de bicicletas",
+          "de": "Fahrrad-Reparaturstation",
+          "it": "Stazione riparazione bici",
+          "pt_BR": "Estação de reparo de bicicletas",
+          "pt": "Estação de reparo de bicicletas",
+          "ru": "Станция обслуживания велосипедов",
+          "es": "Estación de reparación de bicis",
+          "da": "Cykelreparationsstation",
+          "cs": "Stanice na opravu kol",
+          "ca": "Estació de reparació de bicicletes",
+          "pl": "Stacja naprawy rowerów"
+        }
+      },
+      {
+        "if": {
+          "and": [
+            "service:bicycle:pump:operational_status=broken",
+            {
+              "or": [
+                "service:bicycle:tools=no",
+                "service:bicycle:tools="
+              ]
+            }
+          ]
+        },
+        "then": {
+          "en": "Broken pump",
+          "nl": "Kapotte fietspomp",
+          "fr": "Pompe cassée",
+          "gl": "Bomba de ar estragada",
+          "de": "Kaputte Pumpe",
+          "it": "Pompa rotta",
+          "ru": "Насос сломан",
+          "pt_BR": "Bomba quebrada",
+          "ca": "Bomba trencada",
+          "es": "Bomba rota",
+          "da": "Defekt pumpe",
+          "cs": "Rozbitý vzduchový kompresor",
+          "pl": "Zepsuta pompka",
+          "pt": "Bomba quebrada"
+        }
+      },
+      {
+        "if": {
+          "and": [
+            "service:bicycle:pump=yes",
+            "service:bicycle:tools=no",
+            "name~*"
+          ]
+        },
+        "then": {
+          "en": "Bicycle pump <i>{name}</i>",
+          "nl": "Fietspomp <i>{name}</i>",
+          "fr": "Pompe de vélo <i>{name}</i>",
+          "gl": "Bomba de ar <i>{name}</i>",
+          "de": "Fahrradpumpe <i>{name}</i>",
+          "it": "Pompa per bici <i>{name}</i>",
+          "ru": "Велосипедный насос <i>{name}</i>",
+          "pt_BR": "Bomba de bicicleta <i>{name}</i>",
+          "es": "Bomba de bicicletas <i>{name}</i>",
+          "da": "Cykelpumpe <i>{name}</i>",
+          "cs": "Vzduchový kompresor <i>{name}</i>",
+          "ca": "Bomba per a bicicletes <i>{name}</i>",
+          "pl": "Pompka do rowerów <i>{name}</i>",
+          "pt": "Bomba de bicicleta <i>{name}</i>"
+        }
+      },
+      {
+        "if": {
+          "and": [
+            "service:bicycle:pump=yes",
+            "service:bicycle:tools=no"
+          ]
+        },
+        "then": {
+          "en": "Bicycle pump",
+          "nl": "Fietspomp",
+          "fr": "Pompe de vélo",
+          "gl": "Bomba de ar",
+          "de": "Fahrradpumpe",
+          "it": "Pompa per bici",
+          "ru": "Велосипедный насос",
+          "pt_BR": "Bomba de bicicleta",
+          "ca": "Bomba de bicicleta",
+          "es": "Bomba para bicicletas",
+          "da": "Cykelpumpe",
+          "cs": "Vzduchový kompresor",
+          "pl": "Pompka do rowerów",
+          "pt": "Bomba de bicicleta"
+        }
+      }
+    ]
+  },
+  "titleIcons": [
+    {
+      "render": "<a href='https://fietsambassade.gent.be/' target='_blank'><img src='./assets/themes/cyclofix/fietsambassade_gent_logo_small.svg'/></a>",
+      "condition": "operator=De Fietsambassade Gent"
+    },
+    {
+      "id": "wikipedialink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+      "condition": {
+        "or": [
+          "wikipedia~*",
+          "wikidata~*"
+        ]
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "wikipedia=",
+          "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "open_until",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "#": "Titleicon showing e.g. 'open until 17:00'",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{opening_hours_state()}",
+      "condition": {
+        "or": [
+          "opening_hours~*",
+          {
+            "or": [
+              {
+                "and": [
+                  "seasonal~.*winter.*",
+                  "_now:date~....-(12|01|02)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*spring.*",
+                  "_now:date~....-(03|04|05)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*summer.*",
+                  "_now:date~....-(06|07|08)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*autumn.*",
+                  "_now:date~....-(09|10|11)-.."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "phonelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": {
+        "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+        "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+        "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+        "_context": "layers:icons.tagRenderings.phonelink.render"
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:phone~*",
+          "then": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+          }
+        }
+      ],
+      "condition": {
+        "or": [
+          "phone~*",
+          "contact:phone~*"
+        ]
+      }
+    },
+    {
+      "id": "emaillink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:email~*",
+          "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:email~*",
+          "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        }
+      ],
+      "condition": {
+        "or": [
+          "email~*",
+          "contact:email~*",
+          "operator:email~*"
+        ]
+      }
+    },
+    {
+      "id": "websitelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "website~*",
+          "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:website~*",
+          "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "context:website~*",
+          "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "smokingicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=no",
+          "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=yes",
+          "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+        }
+      ]
+    },
+    {
+      "id": "dogicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "if": "dog=no",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+        },
+        {
+          "if": "dog=leashed",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+        },
+        {
+          "if": {
+            "or": [
+              "dog=yes",
+              "dog=unleashed"
+            ]
+          },
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+        }
+      ]
+    },
+    {
+      "id": "sharelink",
+      "labels": [
+        "defaults"
+      ],
+      "render": "{share_link()}",
+      "metacondition": "_supports_sharing=yes"
+    },
+    {
+      "id": "favourite_title_icon",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "*": "{favourite_icon()}"
+      },
+      "metacondition": "_loggedIn=true"
+    },
+    {
+      "id": "osmlink",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+        "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+        "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+        "_context": "layers:icons.tagRenderings.osmlink.render"
+      },
+      "mappings": [
+        {
+          "if": "id~.*/-.*",
+          "then": ""
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "_backend~*",
+          "then": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+          }
+        }
+      ],
+      "condition": "id~(node|way|relation)/[0-9]*"
+    },
+    {
+      "id": "direction",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "{direction_indicator()}"
+    }
+  ],
+  "pointRendering": [
+    {
+      "marker": [
+        {
+          "icon": {
+            "render": "pin",
+            "id": "pin"
+          },
+          "color": {
+            "render": "#88d32c",
+            "mappings": [
+              {
+                "if": {
+                  "and": [
+                    "service:bicycle:pump=yes",
+                    "service:bicycle:tools=yes",
+                    "service:bicycle:pump:operational_status=broken"
+                  ]
+                },
+                "then": "#88d32c"
+              },
+              {
+                "if": {
+                  "and": [
+                    "service:bicycle:pump=yes",
+                    "service:bicycle:tools=yes"
+                  ]
+                },
+                "then": "#30abf0"
+              },
+              {
+                "if": {
+                  "and": [
+                    "service:bicycle:pump:operational_status=broken",
+                    "service:bicycle:tools=no"
+                  ]
+                },
+                "then": "black"
+              },
+              {
+                "if": {
+                  "and": [
+                    "service:bicycle:pump=yes",
+                    {
+                      "or": [
+                        "service:bicycle:tools=no",
+                        "service:bicycle:tools="
+                      ]
+                    }
+                  ]
+                },
+                "then": "#e1783a"
+              }
+            ]
+          }
+        },
+        {
+          "icon": {
+            "render": "./assets/layers/bike_repair_station/repair_station.svg",
+            "mappings": [
+              {
+                "if": {
+                  "and": [
+                    "service:bicycle:pump=yes",
+                    "service:bicycle:tools=yes",
+                    "service:bicycle:pump:operational_status=broken"
+                  ]
+                },
+                "then": "./assets/layers/bike_repair_station/repair_station_broken_pump.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "service:bicycle:pump=yes",
+                    "service:bicycle:tools=yes"
+                  ]
+                },
+                "then": "./assets/layers/bike_repair_station/repair_station_pump.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "service:bicycle:pump:operational_status=broken",
+                    "service:bicycle:tools=no"
+                  ]
+                },
+                "then": "./assets/layers/bike_repair_station/broken_pump.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "service:bicycle:pump=yes",
+                    {
+                      "or": [
+                        "service:bicycle:tools=no",
+                        "service:bicycle:tools="
+                      ]
+                    }
+                  ]
+                },
+                "then": "./assets/layers/bike_repair_station/pump.svg"
+              }
+            ]
+          }
+        }
+      ],
+      "iconBadges": [
+        {
+          "if": "operator=De Fietsambassade Gent",
+          "then": {
+            "render": "./assets/themes/cyclofix/fietsambassade_gent_logo_small.svg",
+            "id": "assetsthemescyclofixfietsambassadegentlogosmallsvg"
+          }
+        },
+        {
+          "if": {
+            "or": [
+              "access=no",
+              "access=private"
+            ]
+          },
+          "then": {
+            "render": "invalid",
+            "id": "invalid"
+          }
+        },
+        {
+          "if": "_favourite=yes",
+          "then": "circle:white;heart:red"
+        }
+      ],
+      "iconSize": "50,50",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "bottom"
+    }
+  ],
+  "lineRendering": [],
+  "presets": [
+    {
+      "title": {
+        "en": "a bike pump",
+        "nl": "een fietspomp",
+        "fr": "une pompe à vélo",
+        "gl": "bomba de ar",
+        "de": "eine Fahrradpumpe",
+        "it": "una pompa per bici",
+        "ru": "bелосипедный насос",
+        "fi": "pyöräpumppu",
+        "pl": "pompka do roweru",
+        "pt_BR": "uma bomba de bicicleta",
+        "es": "una bomba de bicicletas",
+        "da": "en cykelpumpe",
+        "cs": "pumpa na kolo",
+        "ca": "una manxa per a bicicletes",
+        "pt": "uma bomba de bicicleta"
+      },
+      "tags": [
+        "amenity=bicycle_repair_station",
+        "service:bicycle:tools=no",
+        "service:bicycle:pump=yes"
+      ],
+      "description": {
+        "en": "A device to inflate your tires on a fixed location in the public space.",
+        "nl": "Een fietspomp in de publieke ruimte zonder extra gereedschap. De fietspomp in je kelder telt dus niet.",
+        "it": "Un dispositivo per gonfiare le proprie gomme in un luogo fisso pubblicamente accessibile.",
+        "fr": "Un dispositif pour gonfler vos pneus sur un emplacement fixe dans l'espace public.",
+        "de": "Ein Gerät zum Aufpumpen von Reifen an einem festen Standort im öffentlichen Raum.",
+        "pl": "Urządzenie do pompowania opon w stałym miejscu w przestrzeni publicznej.",
+        "pt_BR": "Um dispositivo para encher seus pneus em um local fixa no espaço público.",
+        "pt": "Um aparelho para encher os seus pneus num local fixa no espaço público.",
+        "es": "Un dispositivo para inflar tus ruedas en una posición fija en el espacio público.",
+        "da": "En anordning til at fylde dine dæk op på et fast sted i det offentlige rum.",
+        "cs": "Zařízení pro huštění pneumatik na pevném místě na veřejném místě.",
+        "ca": "Un dispositiu per a unflar les teues rodes en una posició fixa a l'espai públic."
+      },
+      "exampleImages": [
+        "./assets/layers/bike_repair_station/pump_example_round.jpg",
+        "./assets/layers/bike_repair_station/pump_example.png",
+        "./assets/layers/bike_repair_station/pump_example_manual.jpg"
+      ]
+    },
+    {
+      "title": {
+        "en": "a bike repair station and pump",
+        "nl": "een herstelpunt en pomp",
+        "fr": "une point de réparation vélo avec pompe",
+        "gl": "estación de arranxo de bicicletas con bomba de ar",
+        "de": "eine Fahrrad-Reparaturstation mit Pumpe",
+        "it": "una stazione di riparazione bici e pompa",
+        "pl": "stacja naprawy rowerów i pompka",
+        "es": "En estación de reparación de bicicletas y bomba",
+        "da": "en cykelreparationsstation og pumpe",
+        "cs": "opravna kol a vzduchový kompresor",
+        "ca": "una estació de reparació de bicicletes i una bomba"
+      },
+      "tags": [
+        "amenity=bicycle_repair_station",
+        "service:bicycle:tools=yes",
+        "service:bicycle:pump=yes"
+      ],
+      "description": {
+        "en": "A bicycle pump and tools to repair your bike in the public space. The tools are often secured with chains against theft.",
+        "nl": "Een fietspomp en gereedschap om je fiets te herstellen in de publieke ruimte. Deze zijn op een vastgemaakt, bijvoorbeeld aan een paal.",
+        "fr": "Un dispositif avec des outils pour réparer votre vélo combiné à une pompe a un emplacement fixe. Les outils sont souvent attachés par une chaîne pour empêcher le vol.",
+        "it": "Un dispositivo con attrezzi per riparare la tua bici e una pompa in un luogo fisso. Gli attrezzi sono spesso attaccati ad una catena per prevenire il furto.",
+        "de": "Ein Gerät mit Werkzeugen zur Reparatur von Fahrrädern kombiniert mit einer Pumpe an einem festen Standort. Die Werkzeuge sind oft mit Ketten gegen Diebstahl gesichert.",
+        "es": "Una bomba de bicicletas y herramientas para reparar tu bicicleta en el espacio público. Las herramientas habitualmente están aseguradas con cadenas contra el robo.",
+        "da": "En cykelpumpe og værktøj til at reparere din cykel i det offentlige rum. Værktøjet er ofte sikret med kæder mod tyveri.",
+        "cs": "Vzduchový kompresor na kolo a nářadí na opravu kola na veřejném místě. Nářadí je často zajištěno řetězy proti krádeži.",
+        "ca": "Una bomba per a bicicletes i eines per a reparar la teva bicicleta a l'espai públic. Les eines sovint estan assegurades amb cadenes contra robatoris.",
+        "pt_BR": "Uma bomba de ar para bicicletas e ferramentas para reparar sua bicicleta em espaço público. As ferramentas geralmente são protegidas com correntes contra furtos.",
+        "pt": "Uma bomba de ar para bicicletas e ferramentas para reparar a sua bicicleta em espaço público. As ferramentas geralmente são protegidas com correntes contra furtos."
+      },
+      "exampleImages": [
+        "./assets/layers/bike_repair_station/repair_station_example_2.jpg",
+        "./assets/layers/bike_repair_station/repair_station_example_3.jpg"
+      ]
+    },
+    {
+      "title": {
+        "en": "a bike repair station without pump",
+        "nl": "een herstelpunt zonder pomp",
+        "fr": "une point de réparation vélo sans pompe",
+        "gl": "estación de arranxo de bicicletas sin bomba de ar",
+        "de": "eine Fahrrad-Reparaturstation ohne Pumpe",
+        "it": "una stazione di riparazione bici senza pompa",
+        "ru": "Станция обслуживания велосипедов без накачки (насоса)",
+        "es": "una estación de reparación de bicicletas sin bomba",
+        "da": "en cykelreparationsstation uden pumpe",
+        "cs": "opravna kol bez vzduchového kompresoru",
+        "ca": "una estació de reparació de bicicletes sense bomba"
+      },
+      "tags": [
+        "amenity=bicycle_repair_station",
+        "service:bicycle:tools=yes",
+        "service:bicycle:pump=no"
+      ],
+      "description": {
+        "en": "Tools to repair your bike in the public space (without pump). The tools are secured against theft.",
+        "nl": "Gereedschap om je fiets te herstellen in de publieke ruimte (zonder pomp). Deze zijn op een vastgemaakt, bijvoorbeeld aan een paal.",
+        "de": "Werkzeug, um Ihr Fahrrad im öffentlichen Raum zu reparieren (ohne Pumpe). Die Werkzeuge sind gegen Diebstahl gesichert.",
+        "es": "Herramientas para reparar tu bici en el espacio público (sin bomba).Las herramientas están aseguradas contra el robo.",
+        "da": "Værktøj til at reparere din cykel i det offentlige rum (uden pumpe). Værktøjet er sikret mod tyveri.",
+        "fr": "Des outils pour réparer les vélos dans l’espace public (sans pompe). Les outils sont sécurisés contre le vol.",
+        "cs": "nářadí pro opravu kola na veřejném místě (bez vzduchového kompresoru) Nářadí je zabezpečeno proti krádeži.",
+        "ca": "Eines per reparar la teva bicicleta a l'espai públic (sense bomba). Les eines estan assegurades contra robatoris."
+      }
+    }
+  ],
+  "tagRenderings": [
+    {
+      "id": "just_created",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "This element shows a 'thank you' that the contributor has recently created this element",
+      "classes": "rounded-xl thanks",
+      "mappings": [
+        {
+          "if": "id~*",
+          "icon": "./assets/svg/party.svg",
+          "then": {
+            "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+            "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+            "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+            "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+            "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+            "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+          }
+        }
+      ],
+      "condition": {
+        "and": [
+          "_backend~*",
+          "_last_edit:passed_time<300",
+          {
+            "or": [
+              "_version_number=",
+              "_version_number=1"
+            ]
+          }
+        ]
+      },
+      "metacondition": {
+        "and": [
+          {
+            "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+            "or": [
+              "_last_edit:contributor:uid:={_uid}",
+              "_last_edit:contributor:uid="
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "images",
+      "description": "This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images",
+      "render": {
+        "*": "{image_carousel()}{image_upload()}{nearby_images():my-4}"
+      },
+      "classes": "my-4"
+    },
+    {
+      "id": "bike_repair_station-available-services",
+      "question": {
+        "en": "Which services are available at this location?",
+        "nl": "Welke functies biedt locatie?",
+        "fr": "Quels services sont valables à cette station vélo ?",
+        "gl": "Que servizos están dispoñíbeis nesta estación de bicicletas?",
+        "de": "Welche Geräte sind hier vorhanden?",
+        "it": "Quali servizi sono disponibili in questa stazione per bici?",
+        "pt_BR": "Quais serviços estão disponíveis nesta estação de bicicletas?",
+        "pt": "Quais serviços estão disponíveis nesta estação de bicicletas?",
+        "es": "¿Qué servicios están disponibles en esta localización?",
+        "da": "Hvilke tjenester er tilgængelige på dette sted?",
+        "cs": "Jaké služby jsou na tomto místě k dispozici?",
+        "ca": "Quins serveis hi ha disponibles en aquesta ubicació?"
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "service:bicycle:tools=no",
+              "service:bicycle:pump=yes"
+            ]
+          },
+          "then": {
+            "en": "There is only a pump present",
+            "nl": "Er is enkel een pomp aanwezig",
+            "fr": "Il y a seulement une pompe",
+            "gl": "Só hai unha bomba de ar presente",
+            "de": "Nur eine Pumpe ist vorhanden",
+            "it": "C’è solamente una pompa presente",
+            "pt_BR": "Há somente uma bomba presente",
+            "pt": "Há somente uma bomba presente",
+            "es": "Solo hay una bomba presente",
+            "da": "Der er kun en pumpe",
+            "cs": "K dispozici je pouze vzduchový kompresor",
+            "ca": "Només hi ha una bomba present"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "service:bicycle:tools=yes",
+              "service:bicycle:pump=no"
+            ]
+          },
+          "then": {
+            "en": "There are only tools (screwdrivers, pliers, …) present",
+            "nl": "Er is enkel gereedschap aanwezig (schroevendraaier, tang...)",
+            "fr": "Il y a seulement des outils (tournevis, pinces…)",
+            "gl": "Só hai ferramentas (desaparafusadores, alicates...) presentes",
+            "de": "Nur Werkzeug (Schraubenzieher, Zangen, …) ist vorhanden",
+            "it": "Ci sono solo degli attrezzi (cacciaviti, pinze…) presenti",
+            "pt_BR": "Há somente ferramentas (chaves de fenda, alicates...) presentes",
+            "pt": "Há somente ferramentas (chaves de fenda, alicates...) presentes",
+            "es": "Solo hay herramientas (destornilladores, pinzas...) presentes",
+            "da": "Der er kun værktøj (skruetrækkere, tænger, ...) til stede",
+            "cs": "K dispozici je pouze nářadí (šroubováky, kleště, …)",
+            "ca": "Només hi ha present ferramentes (tornavísos, pinces, …)"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "service:bicycle:tools=yes",
+              "service:bicycle:pump=yes"
+            ]
+          },
+          "then": {
+            "en": "There are both tools and a pump present",
+            "nl": "Er is zowel een pomp als gereedschap aanwezig",
+            "fr": "Il y a des outils et une pompe",
+            "gl": "Hai ferramentas e unha bomba de ar presentes",
+            "de": "Werkzeug und Pumpe sind vorhanden",
+            "it": "Ci sono sia attrezzi che pompa presenti",
+            "pt_BR": "Há tanto ferramentas e uma bomba presente",
+            "pt": "Há tanto ferramentas e uma bomba presente",
+            "es": "Hay tanto herramientas como bombas",
+            "da": "Der er både værktøj og pumpe",
+            "cs": "K dispozici jsou nástroje i vzduchový kompresor",
+            "ca": "Hi ha tant eines com una bomba"
+          }
+        }
+      ]
+    },
+    {
+      "question": {
+        "en": "Is the bike pump still operational?",
+        "nl": "Werkt de fietspomp nog?",
+        "fr": "La pompe à vélo fonctionne-t-elle toujours ?",
+        "gl": "Segue a funcionar a bomba de ar?",
+        "de": "Ist die Fahrradpumpe noch funktionstüchtig?",
+        "it": "La pompa per bici è sempre funzionante?",
+        "ru": "Велосипедный насос все еще работает?",
+        "pl": "Czy pompka rowerowa jest nadal sprawna?",
+        "es": "¿Todavía está operativa la bomba para bicicletas?",
+        "da": "Fungerer cykelpumpen stadig?",
+        "cs": "Je vzduchový kompresor na kolo stále funkční?",
+        "ca": "La bomba per a la bicicleta encara funciona?"
+      },
+      "condition": "service:bicycle:pump=yes",
+      "mappings": [
+        {
+          "if": "service:bicycle:pump:operational_status=broken",
+          "then": {
+            "en": "The bike pump is broken",
+            "nl": "De fietspomp is kapot",
+            "fr": "La pompe à vélo est cassée",
+            "gl": "A bomba de ar está estragada",
+            "de": "Die Fahrradpumpe ist kaputt",
+            "it": "La pompa per bici è guasta",
+            "ru": "Велосипедный насос сломан",
+            "pl": "Pompka rowerowa jest zepsuta",
+            "es": "La bomba para bicicletas está rota",
+            "da": "Cykelpumpen er i stykker",
+            "cs": "Vzduchový kompresor na kolo je rozbitý",
+            "ca": "La bomba per a bicicletes està trencada"
+          }
+        },
+        {
+          "if": "service:bicycle:pump:operational_status=operational",
+          "then": {
+            "en": "The bike pump is operational",
+            "nl": "De fietspomp werkt nog",
+            "fr": "La pompe est opérationnelle",
+            "gl": "A bomba de ar está operativa",
+            "de": "Die Fahrradpumpe ist betriebsbereit",
+            "it": "La pompa per bici funziona",
+            "ru": "Велосипедный насос работает",
+            "pl": "Pompka rowerowa jest sprawna",
+            "es": "La bomba para bicicletas está operativa",
+            "da": "Cykelpumpen er i drift",
+            "cs": "Vzduchový kompresor na kolo je v provozu",
+            "ca": "La bomba per a la bicicleta està operativa"
+          }
+        }
+      ],
+      "id": "Operational status"
+    },
+    {
+      "id": "opening_hours_24_7",
+      "question": {
+        "en": "When is this bicycle repair point open?",
+        "fr": "Quand ce point de réparation de vélo est-il ouvert ?",
+        "de": "Wann ist die Fahrradreparaturstation geöffnet?",
+        "nl": "Wanneer is dit fietsherstelpunt open?",
+        "nb_NO": "Hva er åpningstidene for {title()})",
+        "ru": "Когда работает эта точка обслуживания велосипедов?",
+        "zh_Hant": "{title()} 的開放時間是什麼？",
+        "it": "Quando è aperto questo punto riparazione bici?",
+        "pt_BR": "Qual o horário de funcionamento de {title()}?",
+        "pl": "Jakie są godziny otwarcia {title()}?",
+        "sv": "Vilka är öppettiderna för {title()}?",
+        "pt": "Qual é o horário de funcionamento de {title()}?",
+        "hu": "Mikor van nyitva ez: {title()}?",
+        "ca": "Quan està obert aquest punt de reparació de bicicletes?",
+        "ja": "{title()}の営業時間は？",
+        "sl": "Kakšen odpiralni čas ima {title()}?",
+        "fil": "Anong oras nagbubukas ang {title()}?",
+        "es": "¿Cuándo está abierto este punto de reparación de bicicletas?",
+        "zh_Hans": "{title()} 的开放时间为何？",
+        "da": "Hvornår er dette cykelreparationssted åbent?",
+        "id": "Kapan jam buka {title()}?",
+        "cs": "Kdy je toto místo pro opravu jízdních kol otevřeno?"
+      },
+      "render": {
+        "de": "<h3>Öffnungszeiten</h3>{opening_hours_table(opening_hours)}",
+        "fr": "<h3>Horaires d'ouverture</h3>{opening_hours_table(opening_hours)}",
+        "en": "<h3>Opening hours</h3>{opening_hours_table(opening_hours)}",
+        "nl": "<h3>Openingstijden</h3>{opening_hours_table(opening_hours)}",
+        "nb_NO": "<h3>Åpningstider</h3>{opening_hours_table(opening_hours)}",
+        "ru": "<h3>Часы работы</h3>{opening_hours_table(opening_hours)}",
+        "zh_Hant": "<h3>開放時間</h3>{opening_hours_table(opening_hours)}",
+        "it": "<h3>Orari di apertura</h3>{opening_hours_table(opening_hours)}",
+        "pl": "<h3> Godziny otwarcia</h3>{opening_hours_table(opening_hours)}",
+        "pt_BR": "<h3>Horário de funcionamento</h3>{opening_hours_table(opening_hours)}",
+        "sv": "<h3>Öppettider</h3> {opening_hours_table(opening_hours)}",
+        "pt": "<h3>Horário de funcionamento</h3>{opening_hours_table(opening_hours)}",
+        "eo": "<h3>Malfermitaj horoj</h3>{opening_hours_table(opening_hours)}",
+        "hu": "<h3>Nyitva tartás</h3>{opening_hours_table(opening_hours)}",
+        "ca": "<h3>Horari d'obertura</h3>{opening_hours_table(opening_hours)}",
+        "ja": "<h3>営業時間</h3>{opening_hours_table(opening_hours)}",
+        "sl": "<h3>Odpiralni čas</h3>{opening_hours_table(opening_hours)}",
+        "fil": "<h3>Mga oras na bukas</h3>{opening_hours_table(opening_hours)}",
+        "es": "<h3>Horas de apertura</h3>{opening_hours_table(opening_hours)}",
+        "zh_Hans": "<h3>开放时间</h3> {opening_hours_table(opening_hours)}",
+        "da": "<h3> Åbningstider</h3>{opening_hours_table(opening_hours)}",
+        "id": "<h3>Jam buka</h3>{opening_hours_table(opening_hours)}",
+        "pa_PK": "<h3>کھُلھے گھنٹے</h3>{opening_hours_table(opening_hours)}",
+        "cs": "<h3>Otevírací hodiny</h3>{opening_hours_table(opening_hours)}"
+      },
+      "freeform": {
+        "key": "opening_hours",
+        "type": "opening_hours",
+        "inline": false
+      },
+      "mappings": [
+        {
+          "if": "opening_hours=24/7",
+          "icon": "./assets/layers/questions/open24_7.svg",
+          "then": {
+            "en": "24/7 opened (including holidays)",
+            "de": "durchgehend geöffnet (auch an Feiertagen)",
+            "zh_Hant": "24/7 開放 (包括假日)",
+            "id": "Buka 24 jam (termasuk hari libur)",
+            "hu": "Éjjel-nappal nyitva (munkaszüneti napokon is)",
+            "es": "Abierta 24/7 (incluyendo festivos)",
+            "nl": "24/7 open (ook tijdens feestdagen)",
+            "fr": "Ouvert 24h/24 (jours fériés compris)",
+            "nb_NO": "Døgnåpent (inkludert helligdager)",
+            "cs": "Otevřeno 24/7 (včetně svátků)",
+            "ca": "Obert 24/7 (incloent-hi festius)",
+            "pl": "Otwarte 24/7 (również w święta)"
+          }
+        },
+        {
+          "#": "Just here to be able to handle those ~5000 incorrect 'opening_hours=closed' elements.",
+          "if": "opening_hours=closed",
+          "then": {
+            "en": "Marked as closed for an unspecified time",
+            "nl": "Gesloten voor onbepaalde duur",
+            "de": "Als geschlossen für eine unbestimmte Zeit markiert"
+          },
+          "hideInAnswer": true
+        }
+      ]
+    },
+    {
+      "id": "access",
+      "question": {
+        "en": "Who is allowed to use this repair station?",
+        "nl": "Wie kan dit herstelpunt gebruiken?",
+        "de": "Wer darf die Reparaturstation nutzen?",
+        "es": "¿A quién se le permite utilizar esta estación de reparación?",
+        "da": "Hvem må bruge denne reparationsstation?",
+        "fr": "Qui est autorisé à utiliser ce centre de réparation ?",
+        "cs": "Kdo smí tuto opravnu používat?",
+        "ca": "Qui pot utilitzar aquesta estació de reparació?"
+      },
+      "mappings": [
+        {
+          "if": "access=yes",
+          "then": {
+            "en": "Publicly accessible",
+            "nl": "Publiek toegankelijk",
+            "de": "Die Reparaturstation darf öffentlich genutzt werden",
+            "es": "Accesible públicamente",
+            "da": "Offentligt tilgængelig",
+            "fr": "Accessible au public",
+            "cs": "Veřejně přístupné",
+            "ca": "Accessible al públic"
+          }
+        },
+        {
+          "if": "access=public",
+          "then": {
+            "en": "Publicly accessible",
+            "nl": "Publiek toegankelijk",
+            "de": "Öffentlich zugänglich",
+            "es": "Accesible públicamente",
+            "da": "Offentligt tilgængelig",
+            "fr": "Accessible au public",
+            "cs": "Veřejně přístupné",
+            "ca": "Accessible al públic",
+            "pl": "Dostępne publicznie"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "access=customers",
+          "then": {
+            "en": "Only for customers",
+            "nl": "Enkel voor klanten van de bijhorende zaak",
+            "de": "Die Reparaturstation darf nur von Kunden genutzt werden",
+            "es": "Solo para clientes",
+            "da": "Kun for kunder",
+            "fr": "Réservé aux clients",
+            "cs": "Pouze pro zákazníky",
+            "ca": "Només per a clients",
+            "pl": "Tylko dla klientów"
+          }
+        },
+        {
+          "if": "access=private",
+          "then": {
+            "en": "Not accessible to the general public",
+            "nl": "Niet publiek toegankelijk",
+            "de": "Die Reparaturstation darf nicht öffentlich genutzt werden",
+            "es": "No accesible para el público general",
+            "da": "Ikke tilgængelig for offentligheden",
+            "fr": "Pas accessible au public",
+            "cs": "Nepřístupné pro veřejnost",
+            "ca": "No accessible per al públic general"
+          },
+          "icon": "./assets/svg/invalid.svg"
+        },
+        {
+          "if": "access=no",
+          "then": {
+            "en": "Not accessible to the general public",
+            "nl": "Niet publiek toegankelijk",
+            "de": "Nicht für die Allgemeinheit zugänglich",
+            "es": "No accesible para el público general",
+            "da": "Ikke tilgængelig for offentligheden",
+            "fr": "Pas accessible au public",
+            "cs": "Nepřístupné pro veřejnost",
+            "ca": "No accessible per al públic general"
+          },
+          "icon": "./assets/svg/invalid.svg",
+          "hideInAnswer": true
+        }
+      ]
+    },
+    {
+      "labels": [
+        "operator-info"
+      ],
+      "question": {
+        "en": "Who maintains this cycle pump?",
+        "nl": "Wie beheert deze fietspomp?",
+        "fr": "Qui maintient cette pompe à vélo ?",
+        "it": "Chi gestisce questa pompa per bici?",
+        "de": "Wer betreibt die Reparaturstation?",
+        "pt_BR": "Quem faz a manutenção desta bomba de ciclo?",
+        "pt": "Quem faz a manutenção desta bomba de ciclo?",
+        "es": "¿Quién mantiene esta bomba para bicicletas?",
+        "da": "Hvem vedligeholder denne cykluspumpe?",
+        "cs": "Kdo udržuje tento vzduchový kompresor?",
+        "ca": "Qui fa el manteniment d'aquesta bomba de cicle?"
+      },
+      "render": {
+        "nl": "Beheer door {operator}",
+        "en": "Maintained by {operator}",
+        "fr": "Maintenue par {operator}",
+        "it": "Manutenuta da {operator}",
+        "de": "Betrieben von {operator}",
+        "pt_BR": "Mantida por {operator}",
+        "pt": "Mantida por {operator}",
+        "es": "Mantenido por {operator}",
+        "da": "Vedligeholdt af {operator}",
+        "cs": "Udržováno od {operator}",
+        "ca": "Mantés per {operator}"
+      },
+      "freeform": {
+        "key": "operator",
+        "inline": true
+      },
+      "id": "bike_repair_station-operator"
+    },
+    {
+      "labels": [
+        "operator-info"
+      ],
+      "question": {
+        "en": "What is the email address of the maintainer?",
+        "nl": "Wat is het email-adres van de beheerder?",
+        "de": "Wie lautet die E-Mail-Adresse des Betreibers?",
+        "fr": "Quelle est l'adresse email du service de maintenance ?",
+        "es": "¿Es esta la dirección de correo electrónico del mantenedor?",
+        "da": "Hvad er e-mailadressen på vedligeholderen?",
+        "cs": "Jaká je e-mailová adresa správce?",
+        "ca": "Quina és l'adreça de correu electrònic del responsable del manteniment?"
+      },
+      "freeform": {
+        "key": "email",
+        "type": "email"
+      },
+      "render": "<a href='mailto:{email}'>{email}</a>",
+      "id": "bike_repair_station-email"
+    },
+    {
+      "labels": [
+        "operator-info"
+      ],
+      "question": {
+        "en": "What is the phone number of the maintainer?",
+        "nl": "Wat is het telefoonnummer van de beheerder?",
+        "de": "Wie lautet die Telefonnummer des Betreibers?",
+        "fr": "Quel est le numéro de téléphone du service de maintenance ?",
+        "es": "¿Cual es el número de teléfono del mantenedor?",
+        "da": "Hvad er telefonnummeret på vedligeholderen?",
+        "cs": "Jaké je telefonní číslo správce?",
+        "ca": "Quin és el número de telèfon del responsable?"
+      },
+      "freeform": {
+        "key": "phone",
+        "type": "phone"
+      },
+      "render": "<a href='tel:{phone}'>{phone}</a>",
+      "id": "bike_repair_station-phone"
+    },
+    {
+      "id": "bike_repair_station-bike-chain-tool",
+      "question": {
+        "en": "Does this bike repair station have a special tool to repair your bike chain?",
+        "nl": "Heeft dit herstelpunt een speciale reparatieset voor je ketting?",
+        "fr": "Est-ce que cette station vélo a un outil specifique pour réparer la chaîne du vélo ?",
+        "gl": "Esta estación de arranxo de bicicletas ten unha ferramenta especial para arranxar a cadea da túa bicicleta?",
+        "de": "Verfügt diese Fahrrad-Reparaturstation über Spezialwerkzeug zur Reparatur von Fahrradketten?",
+        "it": "Questa stazione di riparazione bici ha un attrezzo speciale per riparare la catena della bici?",
+        "es": "¿Esta estación de reparación tiene una herramienta especial para reparar la cadena de tu bici?",
+        "da": "Har denne cykelreparationsstation et specialværktøj til at reparere cykelkæder?",
+        "cs": "Má tato opravna kol speciální nástroj na opravu řetězu?",
+        "ca": "Aquesta estació de reparació de bicicletes té una eina especial per reparar la vostra cadena de la biciclete?"
+      },
+      "condition": "service:bicycle:tools=yes",
+      "mappings": [
+        {
+          "if": "service:bicycle:chain_tool=yes",
+          "then": {
+            "en": "There is a chain tool",
+            "nl": "Er is een reparatieset voor je ketting",
+            "fr": "Il y a un outil pour réparer la chaine",
+            "gl": "Hai unha ferramenta para a cadea",
+            "de": "Es gibt ein Kettenwerkzeug",
+            "it": "È presente un utensile per riparare la catena",
+            "pt_BR": "Há uma ferramenta de corrente",
+            "pt": "Há uma ferramenta de corrente",
+            "es": "Hay una herramienta para cadenas",
+            "da": "Der er et kædeværktøj",
+            "cs": "K dispozici je nástroj na řetěz",
+            "ca": "Hi ha ferramentes per a la cadena"
+          }
+        },
+        {
+          "if": "service:bicycle:chain_tool=no",
+          "then": {
+            "en": "There is no chain tool",
+            "nl": "Er is geen reparatieset voor je ketting",
+            "fr": "Il n'y a pas d'outil pour réparer la chaine",
+            "gl": "Non hai unha ferramenta para a cadea",
+            "de": "Es gibt kein Kettenwerkzeug",
+            "it": "Non è presente un utensile per riparare la catena",
+            "pt_BR": "Não há uma ferramenta de corrente",
+            "pt": "Não há uma ferramenta de corrente",
+            "es": "No hay herramienta de cadenas",
+            "da": "Der er ikke noget kædeværktøj",
+            "cs": "Není k dispozici žádný nástroj na řetěz",
+            "ca": "No hi ha ferramentes per a la cadena"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bike_repair_station-bike-stand",
+      "question": {
+        "en": "Does this bike station have a hook to hang your bike on or a stand to raise it?",
+        "nl": "Heeft dit herstelpunt een haak of standaard om je fiets op te hangen/zetten?",
+        "fr": "Est-ce que cette station vélo à un crochet pour suspendre son vélo ou une accroche pour l'élevé ?",
+        "gl": "Esta estación de bicicletas ten un guindastre para pendurar a túa bicicleta ou un soporte para elevala?",
+        "de": "Hat diese Fahrradstation einen Haken, an dem Sie Ihr Fahrrad aufhängen können, oder einen Ständer, um es anzuheben?",
+        "it": "Questa stazione bici ha un gancio per tenere sospesa la bici o un supporto per alzarla?",
+        "es": "¿Esta estación tiene un gancho para colgar tu bici o un soporte para elevarla?",
+        "da": "Har denne cykelstation en krog til at hænge din cykel på eller et stativ til at hæve den?",
+        "cs": "Má tato cyklistická stanice hák na zavěšení kola nebo stojan na jeho zvednutí?",
+        "ca": "Aquesta estació de bicicletes té un ganxo per penjar la bicicleta o un suport per aixecar-la?"
+      },
+      "condition": "service:bicycle:tools=yes",
+      "mappings": [
+        {
+          "if": "service:bicycle:stand=yes",
+          "then": {
+            "en": "There is a hook or stand",
+            "nl": "Er is een haak of standaard",
+            "fr": "Il y a un crochet ou une accroche",
+            "gl": "Hai un guindastre ou soporte",
+            "de": "Es gibt einen Haken oder Ständer",
+            "it": "C’è un gancio o un supporto",
+            "pt_BR": "Há um gancho ou um suporte",
+            "pt": "Há um gancho ou um suporte",
+            "es": "Hay un gancho o soporte",
+            "da": "Der er en krog eller et stativ",
+            "cs": "K dispozici je závěsný hák nebo stojan",
+            "ca": "Hi ha un ganxo o suport"
+          }
+        },
+        {
+          "if": "service:bicycle:stand=no",
+          "then": {
+            "en": "There is no hook or stand",
+            "nl": "Er is geen haak of standaard",
+            "fr": "Il n'y pas de crochet ou d'accroche",
+            "gl": "Non hai un guindastre ou soporte",
+            "de": "Es gibt keinen Haken oder Ständer",
+            "it": "Non c’è né un gancio né un supporto",
+            "pt_BR": "Não há um gancho ou um suporte",
+            "pt": "Não há um gancho ou um suporte",
+            "es": "No hay ningún gancho o soporte",
+            "da": "Der er ingen krog eller stativ",
+            "cs": "Není zde žádný závěsný hák ani stojan",
+            "ca": "No hi ha ganxo ni suport"
+          }
+        }
+      ]
+    },
+    {
+      "condition": {
+        "and": [
+          "email~*",
+          "service:bicycle:pump:operational_status=broken"
+        ]
+      },
+      "render": {
+        "ca": "{send_email(&LBRACEemail&RBRACE,Bomba de bicicleta trencada,Hola&COMMA\n\nAmb aquest correu electrònic&COMMA m'agradaria informar-vos que la bomba de bicicleta situada a https://mapcomplete.org/cyclofix?lat=&LBRACE_lat&RBRACE&lon=&LBRACE_lon&RBRACE&z=18#&LBRACEid&RBRACE està trencada.\n\nSalutacions cordials,Informar aquesta bomba de bicicleta com a trencada)}",
+        "cs": "{send_email(&LBRACEemail&RBRACE,Rozbitý vzduchový kompresor,Dobrý den&COMMA\n\ntímto e-mailem bych Vás chtěl informovat&COMMA že vzduchový kompresor na kolo umístěný na adrese https://mapcomplete.org/cyclofix?lat=&LBRACE_lat&RBRACE&lon=&LBRACE_lon&RBRACE&z=18#&LBRACEid&RBRACE je rozbitý.\n\n S pozdravem,Nahlásit tento vzduchový kompresor na kolo jako rozbitý)}",
+        "da": "{send_email(&LBRACEemail&RBRACE,Cykelpumpe i stykker,Hej&COMMA\n\nMed denne e-mail vil jeg gerne oplyse&COMMA at cykelpumpen&COMMA der befinder sig på https://mapcomplete.org/cyclofix?lat=&LBRACE_lat&RBRACE&lon=&LBRACE_lon&RBRACE&z=18#&LBRACEid&RBRACE er i stykker.\n\n Med venlig hilse,Anmeld denne cykelpumpe som værende i stykker)}",
+        "de": "{send_email(&LBRACEemail&RBRACE,Fahrradpumpe kaputt,Hallo&COMMA\n\nMit dieser E-Mail möchte ich Ihnen mitteilen&COMMA dass die Fahrradpumpe&COMMA die sich unter https://mapcomplete.org/cyclofix?lat=&LBRACE_lat&RBRACE&lon=&LBRACE_lon&RBRACE&z=18#&LBRACEid&RBRACE befindet&COMMA kaputt ist.\n\nMit freundlichen Grüßen,Melde diese Fahrradpumpe als kaputt)}",
+        "en": "{send_email(&LBRACEemail&RBRACE,Broken bicycle pump,Hello&COMMA\n\nWith this email&COMMA I'd like to inform you that the bicycle pump located at https://mapcomplete.org/cyclofix?lat=&LBRACE_lat&RBRACE&lon=&LBRACE_lon&RBRACE&z=18#&LBRACEid&RBRACE is broken.\n\n Kind regards,Report this bicycle pump as broken)}",
+        "es": "{send_email(&LBRACEemail&RBRACE,Bomba para bicicletas rota,Hola&COMMA\n\nCon este correo&COMMA me gustaría informar de que esta bomba para bicicletas situada en https://mapcomplete.org/cyclofix?lat=&LBRACE_lat&RBRACE&lon=&LBRACE_lon&RBRACE&z=18#&LBRACEid&RBRACE está rota.\n\nUn saludo,Reportar esta bomba para bicicletas como rota)}",
+        "fr": "{send_email(&LBRACEemail&RBRACE,Pompe à vélo cassée,Bonjour&COMMA\n\nCe mail pour vous informer que la pompe à vélo située à https://mapcomplete.org/cyclofix?lat=&LBRACE_lat&RBRACE&lon=&LBRACE_lon&RBRACE&z=18#&LBRACEid&RBRACE est cassée.\n\nBien à vous.,Signaler cette pompe à vélo cassée)}",
+        "nl": "{send_email(&LBRACEemail&RBRACE,Kapotte fietspomp,Geachte\n\nGraag had ik u gemeld dat een fietspomp defect is. De fietspomp bevindt zich hier: https://mapcomplete.org/cyclofix?lat=&LBRACE_lat&RBRACE&lon=&LBRACE_lon&RBRACE&z=18#&LBRACEid&RBRACE.\n\nMet vriendelijke groeten.,Rapporteer deze fietspomp als kapot)}",
+        "pl": "{send_email(&LBRACEemail&RBRACE,Zepsuta pompka rowerowa,Hello&COMMA\n\nWith this email&COMMA I'd like to inform you that the bicycle pump located at https://mapcomplete.org/cyclofix?lat=&LBRACE_lat&RBRACE&lon=&LBRACE_lon&RBRACE&z=18#&LBRACEid&RBRACE is broken.\n\n Kind regards,Zgłoś&COMMA że ta pompka rowerowa jest zepsuta)}"
+      },
+      "id": "send_email_about_broken_pump"
+    },
+    {
+      "question": {
+        "en": "What valves are supported?",
+        "nl": "Welke ventielen werken er met de pomp?",
+        "fr": "Quelles valves sont compatibles ?",
+        "gl": "Que válvulas son compatíbeis?",
+        "de": "Welche Ventile werden unterstützt?",
+        "it": "Quali valvole sono supportate?",
+        "pl": "Jakie zawory są obsługiwane?",
+        "es": "¿Que válvulas se soportan?",
+        "da": "Hvilke ventiler understøttes?",
+        "cs": "Jaké ventily jsou podporovány?",
+        "ca": "Quines vàlvules són compatibles?"
+      },
+      "render": {
+        "en": "This pump supports the following valves: {valves}",
+        "nl": "Deze pomp werkt met de volgende ventielen: {valves}",
+        "fr": "Cette pompe est compatible avec les valves suivantes : {valves}",
+        "gl": "Esta bomba de ar admite as seguintes válvulas: {valves}",
+        "de": "Diese Pumpe unterstützt die folgenden Ventile: {valves}",
+        "it": "Questa pompa è compatibile con le seguenti valvole: {valves}",
+        "ru": "Этот насос поддерживает следующие клапаны: {valves}",
+        "pl": "Ta pompka obsługuje następujące zawory: {valves}",
+        "es": "Esta bomba soporta las siguiente válvulas: {valves}",
+        "da": "Denne pumpe understøtter følgende ventiler: {valves}",
+        "cs": "Tento vzduchový kompresor podporuje následující ventily: {valves}",
+        "ca": "Aquesta bomba admet les vàlvules següents: {valves}"
+      },
+      "freeform": {
+        "#addExtraTags": [
+          "fixme=Freeform 'valves'-tag used: possibly a wrong value"
+        ],
+        "key": "valves",
+        "inline": true
+      },
+      "multiAnswer": true,
+      "mappings": [
+        {
+          "if": "valves=sclaverand",
+          "then": {
+            "en": "Sclaverand/Presta (narrow-width bike tires)",
+            "nl": "Sclaverand/Presta (dunne fietsbanden)",
+            "fr": "Sclaverand/Presta (pneus de vélos à faible largeur)",
+            "gl": "Sclaverand (tamén coñecido como Presta)",
+            "de": "Sclaverand-/Presta-Ventile (für Rennräder)",
+            "it": "Sclaverand (detta anche Presta)",
+            "ru": "Клапан Presta (также известный как французский клапан)",
+            "da": "Sclaverand/Presta (cykeldæk med smal bredde)",
+            "es": "Sclaverand/Presta (neumáticos de bicicleta estrechos)",
+            "cs": "Sclaverand/Presta (úzké cyklistické pláště)",
+            "ca": "Sclaverand/Presta (pneumàtics per a bicis estrets)"
+          }
+        },
+        {
+          "if": "valves=dunlop",
+          "then": {
+            "en": "Dunlop",
+            "nl": "Dunlop",
+            "fr": "Dunlop",
+            "gl": "Dunlop",
+            "de": "Dunlopventile",
+            "it": "Dunlop",
+            "ru": "Клапан Dunlop",
+            "da": "Dunlop",
+            "es": "Dunlop",
+            "cs": "Dunlop",
+            "ca": "Dunlop",
+            "eu": "Dunlop"
+          }
+        },
+        {
+          "if": "valves=schrader",
+          "then": {
+            "en": "Schrader (cars and mountainbikes)",
+            "nl": "Schrader (auto's en mountainbikes)",
+            "fr": "Schrader (voitures et vélos de montagne)",
+            "gl": "Schrader (para automóbiles)",
+            "de": "Schrader-Ventile (für Autos und Mountainbikes)",
+            "it": "Schrader (valvola delle auto)",
+            "da": "Schrader (biler og mountainbikes)",
+            "es": "Schrader (coches y bicicletas de montaña)",
+            "cs": "Schrader (automobily a horská kola)",
+            "ca": "Schrader (cotxes i bicicletes de muntanya)"
+          }
+        }
+      ],
+      "id": "bike_repair_station-valves"
+    },
+    {
+      "id": "bike_repair_station-electrical_pump",
+      "question": {
+        "en": "Is this an electric bike pump?",
+        "nl": "Is dit een elektrische fietspomp?",
+        "fr": "Est-ce que cette pompe est électrique ?",
+        "gl": "Esta é unha bomba de ar eléctrica?",
+        "de": "Ist dies eine elektrische Fahrradpumpe?",
+        "it": "Questa pompa per bici è elettrica?",
+        "ru": "Это электрический велосипедный насос?",
+        "pl": "Czy jest to elektryczna pompka do roweru?",
+        "es": "¿Es una bomba eléctrica para bicis?",
+        "da": "Er dette en elektrisk cykelpumpe?",
+        "cs": "Je to elektrická pumpa na kolo?",
+        "ca": "És una bomba per a bicicletes elèctrica?"
+      },
+      "condition": "service:bicycle:pump=yes",
+      "mappings": [
+        {
+          "if": "manual=yes",
+          "then": {
+            "en": "Manual pump",
+            "nl": "Manuele pomp",
+            "fr": "Pompe manuelle",
+            "gl": "Bomba de ar manual",
+            "de": "Manuelle Pumpe",
+            "it": "Pompa manuale",
+            "ru": "Ручной насос",
+            "pl": "Pompa ręczna",
+            "pt_BR": "Bomba manual",
+            "pt": "Bomba manual",
+            "ca": "Bomba manual",
+            "es": "Bomba manual",
+            "da": "Manuel pumpe",
+            "cs": "Ruční pumpa"
+          }
+        },
+        {
+          "if": "manual=no",
+          "then": {
+            "en": "Electrical pump",
+            "nl": "Elektrische pomp",
+            "fr": "Pompe électrique",
+            "gl": "Bomba de ar eléctrica",
+            "de": "Elektrische Pumpe",
+            "it": "Pompa elettrica",
+            "ru": "Электрический насос",
+            "pl": "Pompka elektryczna",
+            "pt_BR": "Bomba elétrica",
+            "pt": "Bomba elétrica",
+            "ca": "Bomba elèctrica",
+            "es": "Bomba eléctrica",
+            "da": "Elektrisk pumpe",
+            "cs": "Elektrická pumpa"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bike_repair_station-manometer",
+      "question": {
+        "en": "Does the pump have a pressure indicator or manometer?",
+        "nl": "Heeft deze pomp een luchtdrukmeter?",
+        "fr": "Est-ce que la pompe à un manomètre integré ?",
+        "gl": "Ten a bomba de ar un indicador de presión ou un manómetro?",
+        "de": "Verfügt die Pumpe über einen Druckanzeiger oder ein Manometer?",
+        "it": "Questa pompa ha l’indicatore della pressione o il manometro?",
+        "pl": "Czy pompka posiada wskaźnik ciśnienia lub manometr?",
+        "es": "¿La bomba tiene un indicador de presión o manómetro?",
+        "da": "Har pumpen trykindikator eller manometer?",
+        "cs": "Má vzduchový kompresor ukazatel tlaku nebo manometr?",
+        "ca": "La bomba té un indicador de pressió o un manòmetre?"
+      },
+      "condition": "service:bicycle:pump=yes",
+      "mappings": [
+        {
+          "if": "manometer=yes",
+          "then": {
+            "en": "There is a manometer",
+            "nl": "Er is een luchtdrukmeter",
+            "fr": "Il y a un manomètre",
+            "gl": "Hai manómetro",
+            "de": "Es gibt ein Manometer",
+            "it": "C’è un manometro",
+            "ru": "Есть манометр",
+            "pl": "Jest manometr",
+            "pt_BR": "Há um manômetro",
+            "pt": "Há um manômetro",
+            "es": "Hay un manómetro",
+            "da": "Der er et manometer",
+            "cs": "K dispozici je manometr",
+            "ca": "Hi ha un manòmetre"
+          }
+        },
+        {
+          "if": "manometer=no",
+          "then": {
+            "en": "There is no manometer",
+            "nl": "Er is geen luchtdrukmeter",
+            "fr": "Il n'y a pas de manomètre",
+            "gl": "Non hai manómetro",
+            "de": "Es gibt kein Manometer",
+            "it": "Non c’è un manometro",
+            "ru": "Нет манометра",
+            "pl": "Nie ma manometru",
+            "pt_BR": "Não há um manômetro",
+            "pt": "Não há um manômetro",
+            "es": "No hay ningún manometro",
+            "da": "Der er ikke noget manometer",
+            "cs": "Není zde žádný manometr",
+            "ca": "No hi ha manòmetre"
+          }
+        },
+        {
+          "if": "manometer=broken",
+          "then": {
+            "en": "There is manometer but it is broken",
+            "nl": "Er is een luchtdrukmeter maar die is momenteel defect",
+            "fr": "Il y a un manomètre mais il est cassé",
+            "gl": "Hai manómetro pero está estragado",
+            "de": "Es gibt ein Manometer, aber es ist kaputt",
+            "it": "C’è un manometro ma è rotto",
+            "ru": "Есть манометр, но он сломан",
+            "pl": "Jest manometr, ale jest uszkodzony",
+            "pt_BR": "Há um manômetro mas está quebrado",
+            "pt": "Há um manômetro mas está quebrado",
+            "es": "Hay un manómetro pero está roto",
+            "da": "Der er et manometer, men det er i stykker",
+            "cs": "Je zde manometr, ale je rozbitý",
+            "ca": "Hi ha manòmetre però està trencat"
+          }
+        }
+      ]
+    },
+    {
+      "id": "repeated",
+      "labels": [
+        "level"
+      ],
+      "condition": "repeat_on~*",
+      "render": {
+        "en": "Multiple, identical objects can be found on floors {repeat_on}.",
+        "nl": "Er zijn verschillende, identieke objecten op verdiepingen {repeat_on}.",
+        "de": "Mehrere identische Objekte können in Geschossen {repeat_on} gefunden werden.",
+        "cs": "V patrech {repeat_on} lze nalézt více identických objektů."
+      }
+    },
+    {
+      "id": "single_level",
+      "labels": [
+        "level"
+      ],
+      "condition": "repeat_on=",
+      "question": {
+        "nl": "Op welke verdieping bevindt dit punt zich?",
+        "en": "On what level is this feature located?",
+        "de": "Auf welcher Ebene befindet sich das Objekt?",
+        "zh_Hant": "此圖徽位於哪個樓層／層級？",
+        "fr": "À quel étage se situe l’élément ?",
+        "pl": "Na jakim poziomie znajduje się ta funkcja?",
+        "pt_BR": "Em que nível esse recurso está localizado?",
+        "ru": "На каком этаже находится этот объект?",
+        "pt": "Em que nível se encontra este elemento?",
+        "id": "Pada tingkat apa fitur ini diletakkan?",
+        "hu": "Melyik szinten található ez a létesítmény?",
+        "it": "A quale piano si trova questo elemento?",
+        "ca": "A quina planta està situat aquest element?",
+        "sv": "På vilken nivå finns den här funktionen?",
+        "ja": "この機能は何階にあるのでしょうか？",
+        "fil": "Anong palapag matatagpuan ang tampók?",
+        "es": "¿En qué nivel se encuentra esta característica?",
+        "nb_NO": "Hvilken etasje befinner funksjonen seg i?",
+        "da": "På hvilket niveau er denne funktion placeret?",
+        "cs": "V jaké úrovni se tento prvek nachází?"
+      },
+      "render": {
+        "en": "Located on the {level}th floor",
+        "nl": "Bevindt zich op de {level}de verdieping",
+        "de": "Das Objekt befindet sich im {level}. Geschoss",
+        "pt_BR": "Localizado no {level}o andar",
+        "ru": "Расположено на {level}ом этаже",
+        "zh_Hant": "位於 {level} 樓",
+        "fr": "Étage {level}",
+        "pl": "Znajduje się na {level} piętrze",
+        "sv": "Ligger på {level}:e våningen",
+        "pt": "Está no {level}º andar",
+        "eo": "En la {level}a etaĝo",
+        "hu": "A(z) {level}. emeleten",
+        "it": "Si trova al piano numero {level}",
+        "ca": "Situat a la planta {level}",
+        "ja": "{level}階にあります",
+        "sl": "Nahaja se v {level}. nadstropju",
+        "fil": "Natagpuan sa ika-{level} na palapag",
+        "es": "Localizada en la {level}° planta",
+        "da": "Beliggende på {level}. etage",
+        "nb_NO": "Ligger i {level} etasje",
+        "id": "Terletak di lantai {level}",
+        "cs": "Nachází se v {level}. patře"
+      },
+      "freeform": {
+        "key": "level",
+        "type": "float",
+        "inline": true
+      },
+      "mappings": [
+        {
+          "if": "location=underground",
+          "then": {
+            "en": "Located underground",
+            "nl": "Bevindt zich ondergronds",
+            "pt_BR": "Localizado no subsolo",
+            "ru": "Расположено под землей",
+            "zh_Hant": "位於地下",
+            "fr": "En sous-sol",
+            "pl": "Znajduje się pod ziemią",
+            "sv": "Ligger under jorden",
+            "pt": "Está no subsolo",
+            "de": "Das Objekt befindet sich unter der Erde",
+            "hu": "A föld alatt",
+            "it": "Si trova sotto il livello stradale",
+            "nb_NO": "Under bakken",
+            "ca": "Situat a planta subterrani",
+            "ja": "地下にあります",
+            "id": "Terletak di bawah tanah",
+            "sl": "Nahaja se pod zemljo",
+            "fil": "Nasa ilalim ng lupa",
+            "es": "Localizado bajo tierra",
+            "da": "Placeret under jorden",
+            "cs": "Nachází se v podzemí"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "level=0",
+          "then": {
+            "en": "Located on the ground floor",
+            "nl": "Bevindt zich op de begane grond",
+            "de": "Das Objekt befindet sich im Erdgeschoss",
+            "pt_BR": "Localizado no térreo",
+            "ru": "Расположено на первом этаже",
+            "zh_Hant": "位於 1 樓",
+            "fr": "Rez-de-chaussée",
+            "pl": "Znajduje się na parterze",
+            "sv": "Ligger på bottenvåningen",
+            "pt": "Está ao nível do rés-do-chão",
+            "eo": "En la teretaĝo",
+            "hu": "A földszinten",
+            "it": "Si trova al pianoterra",
+            "nb_NO": "På gateplan",
+            "ca": "Situat a planta zero",
+            "ja": "1階にあります",
+            "id": "Terletak di lantai dasar",
+            "sl": "Nahaja se v pritličju",
+            "fil": "Nasa unang palapag",
+            "es": "Localizado en la planta baja",
+            "da": "Beliggende i stueetagen",
+            "cs": "Nachází se v přízemí"
+          }
+        },
+        {
+          "if": "level=",
+          "hideInAnswer": true,
+          "then": {
+            "en": "Located on the ground floor",
+            "nl": "Bevindt zich gelijkvloers",
+            "de": "Das Objekt befindet sich im Erdgeschoss",
+            "pt_BR": "Localizado no térreo",
+            "ru": "Расположено на первом этаже",
+            "zh_Hant": "位於 1 樓",
+            "fr": "Rez-de-chaussée",
+            "pl": "Znajduje się na parterze",
+            "sv": "Ligger på bottenvåningen",
+            "pt": "Está ao nível do rés-do-chão",
+            "eo": "En la teretaĝo",
+            "hu": "A földszinten",
+            "it": "Si trova al pianoterra",
+            "nb_NO": "På gateplan",
+            "ca": "Situat a la planta zero",
+            "ja": "1階にあります",
+            "id": "Terletak di lantai dasar",
+            "sl": "Nahaja se v pritličju",
+            "fil": "Nasa unang palapag",
+            "es": "Localizado en la planta baja",
+            "da": "Beliggende i stueetagen",
+            "cs": "Nachází se v přízemí"
+          }
+        },
+        {
+          "if": "level=1",
+          "then": {
+            "en": "Located on the first floor",
+            "nl": "Bevindt zich op de eerste verdieping",
+            "de": "Das Objekt befindet sich im 1. Obergeschoss",
+            "pt_BR": "Localizado no primeiro andar",
+            "ru": "Расположено на первом этаже",
+            "zh_Hant": "位於 2 樓",
+            "fr": "Premier étage",
+            "pl": "Znajduje się na pierwszym piętrze",
+            "sv": "Ligger på första våningen",
+            "pt": "Está no primeiro andar",
+            "id": "Berlokasi di lantai pertama",
+            "eo": "En la unua etaĝo",
+            "hu": "Az első emeleten",
+            "it": "Si trova al primo piano",
+            "nb_NO": "I andre etasje",
+            "ca": "Situat a primera planta",
+            "ja": "1階にあります",
+            "sl": "Nahaja se v prvem nadstropju",
+            "fil": "Nasa unang palapag",
+            "es": "Localizado en la primera planta",
+            "da": "Beliggende på første sal",
+            "cs": "Nachází se v prvním patře"
+          }
+        },
+        {
+          "if": "level=-1",
+          "then": {
+            "en": "Located on the first basement level",
+            "nl": "Bevindt zich in de eerste kelderverdieping",
+            "zh_Hant": "位於地下一樓",
+            "de": "Das Objekt befindet sich im 1. Untergeschoss",
+            "hu": "Az első alagsori szinten",
+            "id": "Terletak di lantai basement pertama",
+            "fr": "Sous-sol",
+            "sl": "Nahaja se v prvi kletni etaži",
+            "ca": "Localitzat a la planta base",
+            "fil": "Nasa silong",
+            "es": "Localizada en el primer sótano",
+            "nb_NO": "Er å finne på første kjellernivå",
+            "pt": "Localizado no primeiro nível da cave",
+            "da": "Beliggende på første kælderetage",
+            "cs": "Nachází se v prvním suterénu",
+            "pl": "Położone na pierwszym poziomie piwnicy"
+          }
+        }
+      ]
+    },
+    {
+      "id": "leftover-questions",
+      "render": {
+        "*": "{questions( ,)}"
+      }
+    },
+    {
+      "id": "lod",
+      "labels": [
+        "added_by_default"
+      ],
+      "render": {
+        "*": "{linked_data_from_website()}"
+      }
+    },
+    {
+      "id": "minimap",
+      "description": "Shows a small map with the feature. Added by default to every popup",
+      "render": {
+        "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+      }
+    },
+    {
+      "id": "move-button",
+      "render": {
+        "*": "{move_button()}"
+      }
+    },
+    {
+      "id": "delete-button",
+      "render": {
+        "*": "{delete_button()}"
+      }
+    },
+    {
+      "id": "last_edit",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+      "condition": {
+        "and": [
+          "_last_edit:contributor~*",
+          "_last_edit:changeset~*"
+        ]
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsTesting=true",
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_debug=yes",
+          "_csCount>=10"
+        ]
+      },
+      "render": {
+        "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+      }
+    },
+    {
+      "id": "favourite_status",
+      "render": {
+        "*": "{favourite_status()}"
+      }
+    },
+    {
+      "id": "qr_code",
+      "labels": [
+        "added_by_default"
+      ],
+      "classes": "flex items-center gap-x-2",
+      "render": {
+        "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+        "en": "{qr_code()}Scan this code to open this location on another device",
+        "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+        "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+      }
+    },
+    {
+      "id": "share",
+      "labels": [
+        "added_by_default"
+      ],
+      "metacondition": "_supports_sharing=yes",
+      "render": {
+        "de": "{share_link(,Standort teilen)}",
+        "en": "{share_link(,Share this location)}",
+        "nl": "{share_link(,Deel deze locatie)}"
+      }
+    },
+    {
+      "id": "all-tags",
+      "render": {
+        "*": "{all_tags()}"
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_tags=full",
+          "mapcomplete-show_debug=yes"
+        ]
+      }
+    }
+  ],
+  "deletion": {
+    "softDeletionTags": {
+      "and": [
+        "disused:amenity:={amenity}",
+        "amenity="
+      ]
+    },
+    "neededChangesets": 1
+  },
+  "allowMove": {
+    "enableRelocation": false,
+    "enableImproveAccuracy": true
+  },
+  "_layerIcon": [
+    {
+      "icon": "pin",
+      "color": "#88d32c"
+    },
+    {
+      "icon": "./assets/layers/bike_repair_station/repair_station.svg"
+    }
+  ]
+}

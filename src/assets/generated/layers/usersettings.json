@@ -1,0 +1,1075 @@
+{
+  "id": "usersettings",
+  "description": {
+    "en": "A special layer which is not meant to be shown on a map, but which is used to set user settings",
+    "de": "Eine spezielle Ebene, die nicht für die Darstellung auf einer Karte gedacht ist, sondern für die Festlegung von Benutzereinstellungen verwendet wird",
+    "nl": "Een speciale lag die niet getoond wordt op de kaart, maar die de instellingen van de gebruiker weergeeft",
+    "pt": "Uma camada especial que não deve ser mostrada em um mapa, mas que é usada para definir as configurações do usuário",
+    "ca": "Una capa especial que no està pensada per mostrar-se en un mapa, però que s'utilitza per configurar la configuració de l'usuari",
+    "cs": "Speciální vrstva, která není určena k zobrazení na mapě, ale slouží k nastavení uživatelských nastavení"
+  },
+  "source": "special",
+  "calculatedTags": [
+    "_mastodon_candidate_md=feat.properties._description.match(/\\[[^\\]]*\\]\\((.*(mastodon|en.osm.town).*)\\).*/)?.at(1)",
+    "_d=feat.properties._description?.replace(/&lt;/g,'<')?.replace(/&gt;/g,'>') ?? ''",
+    "_mastodon_candidate_a=(feat => {const e = document.createElement('div');e.innerHTML = feat.properties._d;return Array.from(e.getElementsByTagName(\"a\")).filter(a => a.href.match(/mastodon|en.osm.town/) !== null)[0]?.href   }) (feat) ",
+    "_mastodon_link=(feat => {const e = document.createElement('div');e.innerHTML = feat.properties._d;return Array.from(e.getElementsByTagName(\"a\")).filter(a => a.getAttribute(\"rel\")?.indexOf('me') >= 0)[0]?.href})(feat) ",
+    "_mastodon_candidate=feat.properties._mastodon_candidate_md ?? feat.properties._mastodon_candidate_a",
+    "__current_background:='initial_value'"
+  ],
+  "title": {
+    "render": {
+      "en": "Settings",
+      "nl": "Instellingen",
+      "de": "Einstellungen",
+      "fr": "Paramètres",
+      "da": "Indstillinger",
+      "ca": "Configuració",
+      "cs": "Nastavení",
+      "fi": "Asetukset",
+      "zh_Hant": "設定"
+    }
+  },
+  "pointRendering": null,
+  "lineRendering": null,
+  "tagRenderings": [
+    {
+      "id": "profile",
+      "render": {
+        "*": "{user_profile()}"
+      }
+    },
+    {
+      "id": "language_picker",
+      "render": {
+        "*": "{language_picker()}"
+      },
+      "mappings": [
+        {
+          "if": "__url_parameter_initialized:language=yes",
+          "icon": "./assets/layers/usersettings/translate_disabled.svg",
+          "then": {
+            "en": "The language was set via an URL-parameter and cannot be set by the user.",
+            "de": "Die Sprache wurde über einen URL-Parameter gesetzt und kann nicht vom Benutzer eingestellt werden.",
+            "ca": "L'idioma es va establir mitjançant un paràmetre d'URL i l'usuari no pot definir-lo.",
+            "cs": "Jazyk byl nastaven pomocí parametru URL a uživatel jej nemůže nastavit.²",
+            "nl": "De taal werd ingesteld via een URL-parameter en kan niet manueel ingesteld worden."
+          }
+        }
+      ]
+    },
+    {
+      "id": "inbox",
+      "mappings": [
+        {
+          "if": "_unreadMessages=0",
+          "then": {
+            "ca": "{link(Obre la teva safata d'entrada,&LBRACE_backend&RBRACE/messages/inbox,,,)}",
+            "cs": "{link(Otevřít schránku,&LBRACE_backend&RBRACE/messages/inbox,,,)}",
+            "de": "{link(Deinen Posteingang öffnen,&LBRACE_backend&RBRACE/messages/inbox,,,)}",
+            "en": "{link(Open your inbox,&LBRACE_backend&RBRACE/messages/inbox,,,)}",
+            "nl": "{link(Ga naar je inbox,&LBRACE_backend&RBRACE/messages/inbox,,,)}"
+          }
+        },
+        {
+          "if": "_unreadMessages>0",
+          "then": {
+            "ca": "{link(<b class='alert'>Tens &LBRACE_unreadMessages&RBRACE missatges </b><br/>Obri la safata d'entrada,&LBRACE_backend&RBRACE/messages/inbox,,,)}",
+            "cs": "{link(<b class='alert'>Máte &LBRACE_unreadMessages&RBRACE</b><br/>Otevřít schránku,&LBRACE_backend&RBRACE/messages/inbox,,,)}",
+            "de": "{link(<b class='alert'>Sie haben &LBRACE_unreadMessages&RBRACE Nachrichten</b><br/>Posteingang öffnen,&LBRACE_backend&RBRACE/messages/inbox,,,)}",
+            "en": "{link(<b class='alert'>You have &LBRACE_unreadMessages&RBRACE messages</b><br/>Open your inbox,&LBRACE_backend&RBRACE/messages/inbox,,,)}",
+            "nl": "{link(<b class='alert'>Je hebt &LBRACE_unreadMessages&RBRACE ongelezen berichten</b><br/>Ga naar je inbox,&LBRACE_backend&RBRACE/messages/inbox,,,)}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "settings-link",
+      "render": {
+        "ca": "{link(Obriu la vostra configuració a OpenStreetMap.org,&LBRACE_backend&RBRACE/account/edit,,,)}",
+        "cs": "{link(Otevřít vaše nastavení na OpenStreetMap.org,&LBRACE_backend&RBRACE/account/edit,,,)}",
+        "de": "{link(Öffne Deine Einstellungen auf OpenStreetMap.org,&LBRACE_backend&RBRACE/account/edit,,,)}",
+        "en": "{link(Open your settings on OpenStreetMap.org,&LBRACE_backend&RBRACE/account/edit,,,)}",
+        "nl": "{link(Open je instellingen op OpenStreetMap.org,&LBRACE_backend&RBRACE/account/edit,,,)}"
+      }
+    },
+    {
+      "id": "logout",
+      "render": {
+        "*": "{logout()}"
+      }
+    },
+    {
+      "id": "a11y-features",
+      "question": {
+        "en": "What accessibility features should be applied?",
+        "nl": "Wanneer moet de toegankelijkheidsmode ingeschakeld worden?",
+        "de": "Welche Barrierefrei-Funktionen sollen angewendet werden?"
+      },
+      "mappings": [
+        {
+          "if": "mapcomplete-a11y=default",
+          "alsoShowIf": "mapcomplete-a11y=",
+          "then": {
+            "en": "Enable accessibility features when arrow keys are used to navigate the map",
+            "ca": "Activar les funcions d'accessibilitat quan s'utilitzen les tecles de fletxa per navegar pel mapa",
+            "nl": "Schakel toegankelijkheidsmode aan wanneer op de pijltjestoetsen wordt geduwd om de kaart te bewegen",
+            "de": "Barrierefrei-Modus aktivieren, wenn Pfeiltasten zum Navigieren in der Karte verwendet werden"
+          }
+        },
+        {
+          "if": "mapcomplete-a11y=always",
+          "then": {
+            "en": "Always enable accessibility features",
+            "ca": "Sempre habilita les característiques d'accessibilitat",
+            "nl": "Schakel de toegankelijkheidsmode altijd aan",
+            "de": "Barrierefrei-Modus immer aktivieren"
+          }
+        },
+        {
+          "if": "mapcomplete-a11y=never",
+          "then": {
+            "en": "Never enable accessibility features",
+            "nl": "Gebruik geen toegankelijkheidsmode",
+            "de": "Barrierefrei-Modus niemals aktivieren"
+          }
+        }
+      ]
+    },
+    {
+      "id": "background-layer-readonly",
+      "condition": {
+        "and": [
+          "_theme:backgroundLayer~*",
+          "mapcomplete-preferred-background-layer~*",
+          "_theme:backgroundLayer!:={mapcomplete-preferred-background-layer}"
+        ]
+      },
+      "render": {
+        "en": "This thematic map has a predefined background layer set. Your default theme setting does not apply",
+        "ca": "Aquest mapa temàtic té un conjunt de capes de fons predefinides. La configuració predeterminada del tema no s'aplica",
+        "de": "Diese thematische Karte hat einen vordefinierten Hintergrund. Ihr Standardhintergrund wird nicht angewendet",
+        "cs": "Tato tematická mapa má předdefinovanou sadu podkladových vrstev. Vaše výchozí nastavení tématu se nepoužije",
+        "nl": "Deze kaart heeft een achtegrondlaag instgesteld. Je instellingen worden niet gebruikt"
+      }
+    },
+    {
+      "id": "background-layer",
+      "question": {
+        "en": "What background layer should be shown by default?",
+        "ca": "Quina capa de fons s'ha de mostrar per defecte?",
+        "de": "Welche Hintergrundebene soll als Standard verwendet werden?",
+        "cs": "Jaká vrstva pozadí by se měla zobrazovat ve výchozím nastavení?",
+        "nl": "Welke achtergrondlaag moet altijd gebruikt worden?"
+      },
+      "condition": "_theme:backgroundLayer=",
+      "mappings": [
+        {
+          "if": "mapcomplete-preferred-background-layer=default",
+          "alsoShowIf": "mapcomplete-preferred-background-layer=",
+          "then": {
+            "en": "Use the default background layer",
+            "ca": "Utilitzeu la capa de fons predeterminada",
+            "de": "Standardhintergrund verwenden",
+            "cs": "Použití výchozí vrstvu pozadí",
+            "nl": "Gebruik de standaard achtergrondlaag"
+          }
+        },
+        {
+          "if": "mapcomplete-preferred-background-layer=osm",
+          "then": {
+            "en": "Use OpenStreetMap-carto as default layer",
+            "ca": "Utilitzeu OpenStreetMap-carto com a capa predeterminada",
+            "de": "OpenStreetMap-carto als Standardhintergrund verwenden",
+            "cs": "Použít OpenStreetMap-carto jako výchozí vrstvu",
+            "nl": "Gebruik OpenStreetMap-carto altijd als achtergrondlaag"
+          }
+        },
+        {
+          "if": "mapcomplete-preferred-background-layer=photo",
+          "then": {
+            "en": "Use aerial imagery as default background",
+            "ca": "Utilitzeu imatges aèries com a fons predeterminat",
+            "de": "Satellitenbilder als Standardhintergrund verwenden",
+            "cs": "Použít letecké snímky jako výchozí pozadí",
+            "nl": "Gebruik luchtfoto's als standaard achtergrondlaag"
+          }
+        },
+        {
+          "if": "mapcomplete-preferred-background-layer=map",
+          "then": {
+            "en": "Use a non-openstreetmap based map as default background",
+            "ca": "Utilitzeu un mapa que no sigui openstreetmap com a fons predeterminat",
+            "de": "Eine eigene Karte als Standardhintergrund verwenden",
+            "cs": "Použití mapy, která není založena na mapě openstreetmap, jako výchozího pozadí",
+            "nl": "Gebruik altijd een kaart di niet op OpenStreetMap gebaseerd is als achtergrond"
+          }
+        },
+        {
+          "if": "mapcomplete-preferred-background-layer:={__current_background}",
+          "then": {
+            "en": "Use the current background layer (<span class='code'>{__current_background}</span>) as default background",
+            "ca": "Utilitzeu la capa de fons actual (<span class='code'>{__current_background}</span>) com a fons predeterminat",
+            "de": "Aktuelle Hintergrundebene (<span class='code'>{__current_background}</span>) als Standardhintergrund verwenden",
+            "cs": "Použít aktuální vrstvu pozadí (<span class='code'>{__current_background}</span>) jako výchozí pozadí",
+            "nl": "Gebruik altijd <span class='code'>{__current_background}</span> als achtergrondlaag. Dit is de huidige achtergrond."
+          },
+          "hideInAnswer": {
+            "or": [
+              "__current_background=",
+              "__current_background=osm",
+              "__current_background=initial_value"
+            ]
+          }
+        },
+        {
+          "if": "mapcomplete-preferred-background-layer~*",
+          "then": {
+            "en": "Use background layer <span class='code'>{mapcomplete-preferred-background-layer}</span> as default background",
+            "ca": "Utilitza la capa de fons <span class='code'>{mapcomplete-preferred-background-layer}</span> com a fons predeterminat",
+            "de": "Hintergrundebene <span class='code'>{mapcomplete-preferred-background-layer}</span> als Standardhintergrund verwenden",
+            "cs": "Použít vrstvu pozadí <span class='code'>{mapcomplete-preferred-background-layer}</span> jako výchozí pozadí",
+            "nl": "Gebruik <span class='code'>{mapcomplete-preferred-background-layer}</span> altijd als achtergrondlaag"
+          },
+          "hideInAnswer": true
+        }
+      ]
+    },
+    {
+      "id": "picture-license",
+      "description": "This question is not meant to be placed on an OpenStreetMap-element; however it is used in the user information panel to ask which license the user wants",
+      "question": {
+        "en": "Under what license do you want to publish your pictures?",
+        "de": "Unter welcher Lizenz möchten Sie Ihre Bilder veröffentlichen?",
+        "nl": "Met welke licentie wil je je afbeeldingen toevoegen?",
+        "ca": "Sota quina llicència vols publicar les teves fotos?",
+        "pt": "Sob que licença você deseja publicar suas fotos?",
+        "cs": "Pod jakou licencí chcete své fotografie zveřejnit?"
+      },
+      "mappings": [
+        {
+          "if": "mapcomplete-pictures-license=",
+          "then": {
+            "en": "Pictures you take will be licensed with <b>CC0</b> and added to the public domain. This means that everyone can use your pictures for any purpose. <span class='subtle'>This is the default choice.</span>",
+            "de": "Die von Ihnen aufgenommenen Bilder werden mit <b>CC0</b> lizenziert und der Public Domain hinzugefügt. Das bedeutet, dass jeder Ihre Bilder für jeden Zweck verwenden kann. <span class='subtle'>Dies ist die Standardeinstellung.</span>",
+            "nl": "Afbeeldingen die je toevoegt zullen gepubliceerd worden met de <b>CC0</b>-licentie en dus aan het publieke domein toegevoegd worden. Dit betekent dat iedereen je afbeeldingen kan gebruiken voor elk mogelijks gebruik. <span class='subtle'>Dit is de standaard-instelling</span>",
+            "cs": "Pořízené fotografie budou licencovány pod <b>CC0</b> a přidány do veřejné domény. To znamená, že kdokoli může vaše snímky použít k jakémukoli účelu. <span class='subtle'>Toto je výchozí volba.</span>",
+            "ca": "Les imatges que feu tindran llicència <b>CC0</b> i s'afegiran al domini públic. Això vol dir que tothom pot utilitzar les vostres imatges per a qualsevol propòsit. <span class='subtle'>Aquesta és l'opció predeterminada. </span>",
+            "pt": "As fotos que você tirar serão licenciadas com <b>CC0</b> e adicionadas ao domínio público. Isso significa que todos podem usar suas fotos para qualquer finalidade. <span class='subtle'>Esta é a escolha padrão.</span>"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "mapcomplete-pictures-license=CC0",
+          "then": {
+            "en": "Pictures you take will be licensed with <b>CC0</b> and added to the public domain. This means that everyone can use your pictures for any purpose.",
+            "de": "Ihre aufgenommenen Bilder werden mit <b>CC0</b> lizenziert und der Public Domain hinzugefügt. Das bedeutet, dass jeder Ihre Bilder für jeden Zweck verwenden kann.",
+            "nl": "Afbeeldingen die je toevoegt zullen gepubliceerd worden met de <b>CC0</b>-licentie en dus aan het publieke domein toegevoegd worden. Dit betekent dat iedereen je afbeeldingen kan gebruiken voor elk mogelijks gebruik.",
+            "ru": "Изображения будут опубликованы под лицензией <b>CC0</b> и перейдут в общественное достояние. Это значит, что кто угодно имеет право использовать их без ограничений.",
+            "cs": "Pořízené fotografie budou licencovány pod <b>CC0</b> a přidány do veřejné domény. To znamená, že kdokoli může vaše snímky použít k jakémukoli účelu.",
+            "ca": "Les imatges que feu tindran llicència <b>CC0</b> i s'afegiran al domini públic. Això vol dir que tothom pot utilitzar les vostres imatges per a qualsevol propòsit.",
+            "es": "Las fotografías que tome tendrán una licencia con <b>CC0</b> y se agregarán al dominio público. Esto significa que todos pueden usar sus imágenes para cualquier propósito.",
+            "pt": "As fotos que você tirar serão licenciadas com <b>CC0</b> e adicionadas ao domínio público. Isso significa que todos podem usar suas fotos para qualquer finalidade.",
+            "da": "Billeder, som du har taget, vil blive udgivet under <b>CC0</b>-licensen og lagt ud i fælleseje. Det betyder, at alle kan bruge dine billeder til ethvert formål."
+          }
+        },
+        {
+          "if": "mapcomplete-pictures-license=CC-BY 4.0",
+          "then": {
+            "en": "Pictures you take will be licensed with <b>CC-BY 4.0</b> which requires everyone using your picture that they have to attribute you",
+            "ca": "Les fotografies que facis es publicaran sota <b>CC-BY 4.0</b> que requereix que qualsevol que utilitzi la vostra imatge us ha de donar crèdits",
+            "de": "Die von Ihnen aufgenommenen Bilder werden mit <b>CC-BY 4.0</b> lizenziert, was bedeutet, dass jeder, der Ihr Bild verwendet, Sie als Urheber nennen muss",
+            "nl": "Afbeeldingen die je toevoegt zullen gepubliceerd worden met de <b>CC-BY 4.0</b>-licentie. Dit betekent dat iedereen je afbeelding mag gebruiken voor elke toepassing mits het vermelden van je naam",
+            "cs": "Pořízené fotografie budou licencovány pod <b>CC-BY 4.0</b>, což vyžaduje, aby vás uvedl každý, kdo použije vaší fotku",
+            "pt": "As fotos que você tirar serão licenciadas com <b>CC-BY 4.0</b>, que exige que todos que usam sua foto atribuam a você"
+          }
+        },
+        {
+          "if": "mapcomplete-pictures-license=CC-BY-SA 4.0",
+          "then": {
+            "en": "Pictures you take will be licensed with <b>CC-BY-SA 4.0</b> which means that everyone using your picture must attribute you and that derivatives of your picture must be reshared with the same license.",
+            "de": "Die von Ihnen aufgenommenen Bilder werden mit <b>CC-BY-SA 4.0</b> lizenziert, was bedeutet, dass jeder, der Ihr Bild verwendet, Sie als Urheber nennen muss und dass Ableitungen Ihres Bildes mit der gleichen Lizenz weitergegeben werden müssen.",
+            "nl": "Afbeeldingen die je toevoegt zullen gepubliceerd worden met de <b>CC-BY-SA 4.0</b>-licentie. Dit betekent dat iedereen je afbeelding mag gebruiken voor elke toepassing mits het vermelden van je naam en dat afgeleide werken van je afbeelding ook ondere deze licentie moeten gepubliceerd worden.",
+            "cs": "Pořízené fotografie budou licencovány pod <b>CC-BY-SA 4.0</b>, což vyžaduje, aby vás uvedl každý, kdo použije vaší fotku a že odvozené fotky musí být dále sdíleny se stejnou licencí.",
+            "ca": "Les imatges que feu tindran una llicència amb <b>CC-BY-SA 4.0</b> el que significa que tothom que utilitzi la vostra imatge us ha d'atribuir i que els derivats de la vostra imatge s'han de tornar a compartir amb la mateixa llicència.",
+            "fr": "Les photos que vous prenez seront sous la licence <b>CC-BY-SA 4.0</b> ce qui signifie que quiconque utilisant votre photo doit vous créditer et que les modifications apportées à votre photo doivent être repartagées avec la même licence.",
+            "pt": "As fotos que você tirar serão licenciadas com <b>CC-BY-SA 4.0</b>, o que significa que todos que usarem sua foto devem atribuí-lo e que os derivados de sua foto devem ser compartilhados novamente com a mesma licença."
+          }
+        }
+      ]
+    },
+    {
+      "id": "show_tags",
+      "question": {
+        "en": "Show the raw OpenStreetMap-tags?",
+        "de": "Rohe OpenStreetMap-Tags anzeigen?",
+        "fr": "Afficher les attributs OpenStreetMap bruts ?",
+        "ca": "Mostra les etiquetes d'OpenStreetMap en brut?",
+        "cs": "Zobrazit nezpracované/raw tagy OpenStreetMap?",
+        "nl": "Moeten de data-attributen getoond worden?"
+      },
+      "questionHint": {
+        "en": "<b>Tags</b> are attributes that every element has. This is the technical data that is stored in the database. You don't need this information to edit with MapComplete, but advanced users might want to use this as reference.",
+        "de": "<b>Tags</b> sind die Eigenschaften, die jedes Objekt hat. Das sind die technischen Daten, die in der Datenbank gespeichert werden. Du brauchst diese Informationen nicht, um mit MapComplete Änderungen zu machen, aber fortgeschrittenen Nutzer*innen kann es als Referenz dienen.",
+        "ca": "Les <b>etiquetes</b> són atributs que té cada element. Aquestes són les dades tècniques que s'emmagatzemen a la base de dades. No necessiteu aquesta informació per editar amb MapComplete, però és possible que els usuaris avançats la vulguin fer servir com a referència.",
+        "cs": "<b>Tagy</b> jsou atributy, které má každý element. Jedná se o technické údaje, které jsou uloženy v databázi. K úpravám pomocí MapComplete tyto informace nepotřebujete, ale pokročilí uživatelé by je mohli chtít použít jako referenci.",
+        "nl": "<b>Data-attributen</b> zijn stukjes data die elk element in OpenStreetMap heeft. Dit is technische data die in de databank komt. Je hoeft deze informatie niet te kennen om aanpassingen te maken met MapComplete, maar geavanceerde gebruikers kunnen dit als referentie gebruiken."
+      },
+      "mappings": [
+        {
+          "if": "mapcomplete-show_tags=no",
+          "then": {
+            "en": "Never show the tags.",
+            "de": "Tags nie anzeigen.",
+            "ca": "No mostris mai les etiquetes.",
+            "cs": "Nikdy nezobrazovat tagy.",
+            "nl": "Verberg data-attributen"
+          }
+        },
+        {
+          "if": "mapcomplete-show_tags=",
+          "then": {
+            "en": "Show the tags that will be applied once I have made {__userjourney_tagsVisibleAt} changesets",
+            "de": "Tags anzeigen sobald ich {__userjourney_tagsVisibleAt} Changesets erstellt habe",
+            "ca": "Mostra les etiquetes que s'aplicaran un cop hagi fet {__userjourney_tagsVisibleAt} conjunts de canvis",
+            "cs": "Zobrazit tagy, které budou použity, jakmile provedu {__userjourney_tagsVisibleAt} sady změn",
+            "nl": "Toon data-attributen bij wijzigingen indien je meer dan {__userjourney_tagsVisibleAt} changesets hebt gemaakt"
+          }
+        },
+        {
+          "if": "mapcomplete-show_tags=yes",
+          "then": {
+            "en": "Show the tags that will be applied when making a change",
+            "de": "Tags anzeigen, die bei der Änderung hinzugefügt werden",
+            "ca": "Mostra les etiquetes que s'aplicaran en fer un canvi",
+            "cs": "Zobrazení tagů, které budou použity při provádění změny",
+            "nl": "Toon de data-attributen die toegepast zullen worden bij wijzigingen"
+          }
+        },
+        {
+          "if": "mapcomplete-show_tags=full",
+          "then": {
+            "en": "Show the tags that will be applied when making a change and show the tags table on every feature",
+            "de": "Tags anzeigen, die bei der Änderung hinzugefügt werden, und Tag-Tabelle bei jedem Objekt anzeigen",
+            "ca": "Mostra les etiquetes que s'aplicaran a l'hora de fer un canvi i mostra la taula d'etiquetes a cada element",
+            "cs": "Zobrazení tagů, které se použijí při provádění změny, a zobrazení tabulky tagů u každé funkce",
+            "nl": "Toon de data-attributen die toegepast zullen worden bij wijzigingen en toon een tabel met alle data-attributen bij elk object."
+          }
+        }
+      ]
+    },
+    {
+      "id": "all-questions-at-once",
+      "question": {
+        "en": "Should questions for unknown data fields appear one-by-one or together?",
+        "de": "Sollen Fragen für unbekannte Datenfelder einzeln oder zusammen angezeigt werden?",
+        "fr": "Est-ce que les questions pour les champs sans donnée doivent apparaître une à une ou toutes ensembles ?",
+        "pt": "As perguntas para campos de dados desconhecidos devem aparecer uma a uma ou juntas?",
+        "ca": "Les preguntes amb camps de dades desconeguts haurien d'aparèixer una per una o juntes?",
+        "nl": "Moeten onbeantwoorde vragen om beurt of allemaal samen getoond worden?",
+        "cs": "Mají se otázky pro neznámá datová pole zobrazovat jednotlivě, nebo společně?"
+      },
+      "mappings": [
+        {
+          "if": "mapcomplete-show-all-questions=true",
+          "then": {
+            "en": "Show all questions in the infobox together",
+            "de": "Alle Fragen in der Infobox zusammen anzeigen",
+            "ca": "Mostra totes les preguntes al quadre d'informació",
+            "fr": "Afficher toutes les question en même temps dans l'infobox",
+            "pt": "Mostrar todas as perguntas na caixa de informações juntas",
+            "nl": "Toon alle onbeantwoorde vragen",
+            "cs": "Zobrazit všechny otázky v infoboxu dohromady"
+          }
+        },
+        {
+          "if": "mapcomplete-show-all-questions=false",
+          "then": {
+            "en": "Show questions one-by-one",
+            "de": "Fragen der Reihe nach anzeigen",
+            "ca": "Mostra les preguntes una per una",
+            "fr": "Afficher les questions une à une",
+            "pt": "Mostrar perguntas uma a uma",
+            "nl": "Toon de vragen één per één",
+            "cs": "Zobrazit otázky jednu po druhé"
+          }
+        }
+      ]
+    },
+    {
+      "id": "show_crosshair",
+      "question": {
+        "en": "Should a crosshair be shown in the center of the display?",
+        "cs": "Měl by se uprostřed displeje zobrazovat kříž?",
+        "de": "Soll ein Fadenkreuz in der Mitte des Bildschirms angezeigt werden?",
+        "nl": "Moet er een kruisje getoond worden in het centrum van je display?"
+      },
+      "questionHint": {
+        "en": "This can help to accurately position a new element",
+        "cs": "To může pomoci přesněji umístit nový prvek",
+        "de": "Dies kann dazu beitragen, ein neues Element genau zu positionieren",
+        "nl": "Dit kan helpen om nieuwe elementen accuraat te plaatsen",
+        "ca": "Això pot ajudar a posicionar amb precisió un nou element"
+      },
+      "mappings": [
+        {
+          "if": "mapcomplete-show_crosshair=yes",
+          "then": "Show a crosshair in the center of the map when zoomed in above level 17"
+        },
+        {
+          "if": "mapcomplete-show_crosshair=no",
+          "then": "Do not show a crosshair in the center of the map"
+        },
+        {
+          "if": "mapcomplete-show_crosshair=",
+          "then": "Do not show a crosshair in the center of the map",
+          "hideInAnswer": true
+        },
+        {
+          "if": "mapcomplete-show_crosshair=always",
+          "then": "Always show a crosshair in the center of the map"
+        }
+      ]
+    },
+    {
+      "id": "fixate-north",
+      "question": {
+        "en": "Should north always be up?",
+        "de": "Soll Norden immer oben sein?",
+        "ca": "El nord hauria d'estar sempre amunt?",
+        "cs": "Měl by být sever vždy nahoře?",
+        "nl": "Moet het noorden altijd naar boven getoond worden?"
+      },
+      "mappings": [
+        {
+          "if": "mapcomplete-fixate-north=",
+          "then": {
+            "en": "Allow to rotate the map",
+            "de": "Drehen der Karte zulassen",
+            "ca": "Permet girar el mapa",
+            "fr": "Autoriser la rotation de la carte",
+            "da": "Tillad rotation af kortet",
+            "cs": "Umožnit otáčení mapy",
+            "nl": "Sta kaartrotatie toe"
+          }
+        },
+        {
+          "if": "mapcomplete-fixate-north=yes",
+          "then": {
+            "en": "Always keep north pointing up",
+            "de": "Norden immer nach oben zeigen lassen",
+            "fr": "Toujours garder le nord en haut",
+            "ca": "Mantingueu sempre el nord apuntant cap amunt",
+            "cs": "Sever vždy směřujte nahoru",
+            "nl": "Hou het noorden altijd naar boven"
+          }
+        }
+      ]
+    },
+    {
+      "id": "more_privacy_theme_override",
+      "mappings": [
+        {
+          "if": "__featureSwitchMorePrivacy=true",
+          "then": {
+            "en": "This theme is sensitive. Making changes will not indicate if you were nearby explicitly."
+          }
+        }
+      ]
+    },
+    {
+      "id": "more_privacy",
+      "question": {
+        "en": "When making changes, should a rough indication be given how far away you were from the object?"
+      },
+      "questionHint": {
+        "en": "If you make a change to one or more objects and you enabled your location, a rough indication of where you made will be saved: it is indicated if you were closer then 25m, 500m, 5km or further away then 5km. This helps mappers understand your context when making changes, but gives an indication of where you were at this time. "
+      },
+      "mappings": [
+        {
+          "if": "mapcomplete-more_privacy=yes",
+          "then": {
+            "en": "When making changes to OpenStreetMap, do not indicate how far away you were from the changed objects."
+          }
+        },
+        {
+          "if": "mapcomplete-more_privacy=no",
+          "then": {
+            "en": "When making changes to OpenStreetMap, roughly indicate how far away you were from the changed objects. This helps other contributors to understand how you made the change"
+          }
+        }
+      ]
+    },
+    {
+      "id": "mangrove-keys",
+      "render": {
+        "ca": "{link(Baixeu la clau privada del vostre compte de Mangrove,data:application/json&COMMA&LBRACEmangroveidentity&RBRACE,,mangrove_private_key_&LBRACE_name&RBRACE,)}Qualsevol persona que tingui aquest fitxer pot fer ressenyes amb la vostra identitat",
+        "cs": "{link(Stáhnout soukromý klíč pro Mangrove účet,data:application/json&COMMA&LBRACEmangroveidentity&RBRACE,,mangrove_private_key_&LBRACE_name&RBRACE,)}Kdokoli, kdo má tento soubor, může provádět recenze s vaší identitou",
+        "da": "{link(Hent den private nøgle til din Mangrove-konto,data:application/json&COMMA&LBRACEmangroveidentity&RBRACE,,mangrove_private_key_&LBRACE_name&RBRACE,)}Enhver, der har denne fil, kan lave ændringer med din identitet",
+        "de": "{link(Laden Sie den privaten Schlüssel für Ihr Mangrove-Konto herunter,data:application/json&COMMA&LBRACEmangroveidentity&RBRACE,,mangrove_private_key_&LBRACE_name&RBRACE,)}Jeder, der diese Datei besitzt, kann mit Ihrer Identität Rezensionen vornehmen",
+        "en": "{link(Download the private key for your Mangrove Account,data:application/json&COMMA&LBRACEmangroveidentity&RBRACE,,mangrove_private_key_&LBRACE_name&RBRACE,)}Anyone possessing this file can make reviews with your identity",
+        "nl": "{link(Download de private sleutel van je Mangrove-account,data:application/json&COMMA&LBRACEmangroveidentity&RBRACE,,mangrove_private_key_&LBRACE_name&RBRACE,)}Iedereen die dit bestand bezit, kan met jouw identiteit wijzigingen maken"
+      }
+    },
+    {
+      "id": "mangrove-key-import",
+      "render": {
+        "de": "{import_mangrove_key(Privaten Mangrove-Schlüssel aus Backup importieren)}Wenn du einen privaten Schlüssel hochlädst, wird dein aktueller privater Schlüssel gelöscht. Wenn du damit Rezensionen geschrieben hast, lade zuerst deinen aktuellen privaten Schlüssel hoch",
+        "en": "{import_mangrove_key(Import a mangrove private key from backup)}Uploading a private key erases your current private key. If you made reviews with it, download your current private key first",
+        "nl": "{import_mangrove_key(Herstel een Mangrove Private sleutel van backup)}Uploading a private key erases your current private key. If you made reviews with it, download your current private key first"
+      }
+    },
+    {
+      "id": "translations-title",
+      "label": [
+        "translations"
+      ],
+      "render": "<h3>Translating MapComplete</h3>"
+    },
+    {
+      "label": [
+        "translations"
+      ],
+      "id": "translation-mode",
+      "question": {
+        "en": "Do you want to help translating MapComplete?",
+        "de": "Möchten Sie bei der Übersetzung von MapComplete helfen?",
+        "cs": "Chcete pomoci s překladem MapComplete?",
+        "ca": "Vols ajudar a traduir MapComplete?",
+        "fr": "Voulez-vous aider à traduire MapComplete ?",
+        "pt": "Quer ajudar na tradução do MapComplete?",
+        "nl": "Wil je MapComplete helpen vertalen?"
+      },
+      "mappings": [
+        {
+          "if": "mapcomplete-translation-mode=false",
+          "icon": "./assets/layers/usersettings/translate_disabled.svg",
+          "then": {
+            "en": "Don't show a button to quickly change translations",
+            "de": "Keine Schaltfläche zum schnellen Wechseln von Übersetzungen anzeigen",
+            "ca": "No mostris cap botó per a canviar ràpidament les traduccions",
+            "fr": "Ne pas afficher de bouton pour modifier les traductions rapidement",
+            "pt": "Não mostrar um botão para alterar as traduções rapidamente",
+            "cs": "Nezobrazovat tlačítko pro rychlou změnu překladů",
+            "nl": "Verberg de knoppen om een vertaling in te voeren."
+          }
+        },
+        {
+          "if": "mapcomplete-translation-mode=true",
+          "icon": "./assets/svg/translate.svg",
+          "then": {
+            "en": "Show a button to quickly open translations when using MapComplete on a big screen",
+            "de": "Schaltfläche anzeigen zum schnellen Öffnen von Übersetzungen beim Verwenden von MapComplete auf einem großen Bildschirm",
+            "fr": "Afficher un bouton pour ouvrir rapidement les traductions lorsque vous utilisez MapComplete sur un grand écran",
+            "ca": "Mostra un botó per a obrir ràpidament les traduccions quan utilitzes MapComplet en una pantalla gran",
+            "pt": "Mostrar um botão para abrir traduções rapidamente ao usar o MapComplete em uma tela grande",
+            "da": "Vis en knap for hurtigt at åbne oversættelser, når du bruger MapComplete på en stor skærm",
+            "cs": "Zobrazit tlačítko pro rychlé otevření překladů při použití MapComplete na velké obrazovce",
+            "nl": "Toon een knopje om snel vertalingen te maken indien MapComplete op een groot scherm is geopend"
+          }
+        },
+        {
+          "if": "mapcomplete-translation-mode=mobile",
+          "icon": "./assets/layers/usersettings/translate_mobile.svg",
+          "then": {
+            "en": "Always show the translation buttons, including on mobile",
+            "de": "Übersetzungsschaltflächen immer anzeigen, auch auf dem Handy",
+            "ca": "Mostra sempre els botons de traducció, fins i tot al mòbil",
+            "fr": "Toujours afficher les boutons de traduction, même sur mobile",
+            "pt": "Mostrar sempre os botões de tradução, inclusive no celular",
+            "cs": "Vždy zobrazovat tlačítka překladu, a to i na mobilu",
+            "nl": "Toon een knopje om snel vertalingen te maken op mobiel en op grote schermen"
+          }
+        }
+      ]
+    },
+    {
+      "label": [
+        "translations"
+      ],
+      "id": "translation-help",
+      "mappings": [
+        {
+          "if": {
+            "or": [
+              "mapcomplete-translation-mode=yes",
+              "mapcomplete-translation-mode=true",
+              "mapcomplete-translation-mode=mobile"
+            ]
+          },
+          "then": {
+            "ca": "Fes clic a la icona 'tradueix' al costat d'una cadena per introduir o actualitzar un fragment de text. Necessites un compte de Weblate per a això. Crea'n un amb el teu nom d'usuari OSM per desbloquejar automàticament el mode de traducció.",
+            "da": "Klik på 'oversæt'-ikonet ved siden af en streng for at indtaste eller opdatere et stykke tekst. Du skal have en Weblate-konto for at kunne gøre dette. Opret en med dit OSM-brugernavn for automatisk at låse oversættelsestilstanden op.",
+            "de": "Klicken Sie auf das Übersetzungssymbol neben einer Zeichenfolge, um den Übersetzungstext einzugeben oder zu aktualisieren. Dazu benötigen Sie ein Weblate-Konto. Erstellen Sie eines mit Ihrem OSM-Benutzernamen, um den Übersetzungsmodus automatisch freizuschalten.",
+            "en": "Click the 'translate'-icon next to a string to enter or update a piece of text. You need a Weblate-account for this. Create one with your OSM-username to automatically unlock translation mode.",
+            "es": "Haz clic en el icono 'traducir' al lado de una cadena para introducir o actualizar un texto. Necesitas una cuenta de Weblate para esto. Crea una con tu usuario de OSM para desbloquear el modo de traducción automáticamente.",
+            "fr": "Cliquez sur l'icône \"traduire\" à côté d'une chaîne de caractères pour saisir ou mettre à jour la chaine de texte. Vous aurez besoin d'un compte Weblate pour cela. Créez-en un avec votre nom d'utilisateur OSM pour déverrouiller automatiquement le mode traduction.",
+            "nl": "Klik op het 'vertaal'-icoontje die naast een stukje tekst staat om deze tekst te vertalen of aan te passen. Hiervoor heb je een (gratis) Weblate-account nodig. Indien je jouw account maakt met dezelfde naam als je OSM-gebruikersnaam, dan zullen de vertaalknoppen automatisch verschijnen.",
+            "zh_Hant": "點字串旁邊的 'translate'-icon 來輸入或是更新一段文字。你需要 Weblate 帳號。用你 OSM 帳號名稱來創建帳號，並且自動解鎖翻譯模式。",
+            "cs": "Chcete-li zadat nebo aktualizovat část textu, klikněte na ikonu „přeložit“ vedle řetězce. K tomu potřebujete účet Weblate. Vytvořte si jej s vaším uživatelským jménem OSM, abyste automaticky odemkli režim překladu."
+          },
+          "icon": "./assets/svg/translate.svg"
+        }
+      ]
+    },
+    {
+      "label": [
+        "translations"
+      ],
+      "id": "translation-completeness",
+      "render": {
+        "ca": "Les traduccions de {_theme} en {_language} tenen un {_translation_percentage}%: {_translation_translated_count} cadenes de {_translation_total} estan traduïdes",
+        "da": "Oversættelser for {_theme} i {_language} er på {_translation_percentage}%: {_translation_translated_count} strenge ud af {_translation_total} er oversat",
+        "de": "Die Übersetzung für {_theme} in {_language} ist zu {_translation_percentage}% vollständig: {_translation_translated_count} Zeichenfolgen von {_translation_total} sind übersetzt",
+        "en": "Translations for {_theme} in {_language} are at {_translation_percentage}%: {_translation_translated_count} strings out of {_translation_total} are translated",
+        "es": "Las traducciones para {_theme} en {_language} están al {_translation_percentage}%: {_translation_translated_count} cadenas de {_translation_total} están traducidas",
+        "id": "Terjemahan untuk {_theme} dalam {_language} masih {_translation_percentage}%: {_translation_translated_count} string dari {_translation_total} diterjemahkan",
+        "nb_NO": "Oversettelsen for {_theme} i {_language} har {_translation_percentage}% dekning: {_translation_translated_count} strenger av {_translation_total} har blitt oversatt",
+        "nl": "Vertalingen voor {_theme} in {_language} zijn momenteel op {_translation_percentage}%: van {_translation_total} teksten zijn er reeds {_translation_translated_count} vertaald",
+        "zh_Hant": "{_theme} 的 {_language} 翻譯目前是 {_translation_percentage}%：{_translation_total} 中的 {_translation_translated_count} 已經翻譯了",
+        "fr": "Les traductions pour {_theme} en {_language} sont à {_translation_percentage} % : {_translation_translated_count} chaînes traduites sur {_translation_total}",
+        "cs": "Překlady pro {_theme} v {_language} jsou na úrovni {_translation_percentage}%: {_translation_translated_count} z {_translation_total} je přeloženo"
+      },
+      "condition": {
+        "or": [
+          "mapcomplete-translation-mode=yes",
+          "mapcomplete-translation-mode=true",
+          "mapcomplete-translation-mode=mobile"
+        ]
+      },
+      "mappings": [
+        {
+          "if": "_translation_percentage=100",
+          "icon": "confirm",
+          "then": {
+            "en": "Completely translated",
+            "nl": "Volledig vertaald",
+            "de": "Vollständig übersetzt",
+            "ca": "Completament traduït",
+            "pt": "Traduzido completamente",
+            "cs": "Kompletně přeloženo"
+          }
+        }
+      ]
+    },
+    {
+      "id": "translation-links",
+      "label": [
+        "translations"
+      ],
+      "condition": {
+        "and": [
+          "_translation_links~*",
+          {
+            "or": [
+              "mapcomplete-translation-mode=true",
+              "mapcomplete-translation-mode=mobile"
+            ]
+          }
+        ]
+      },
+      "render": {
+        "*": "{multi(_translation_links,<a href='&LBRACElink&RBRACE' target='_blank' rel='noopener'>Translate entries of &LBRACEid&RBRACE</a>,)}"
+      }
+    },
+    {
+      "id": "verified-mastodon",
+      "mappings": [
+        {
+          "if": "_mastodon_link~*",
+          "then": {
+            "en": "A link to your Mastodon-profile has been been found: <a href='{_mastodon_link}' target='_blank' rel='noopener'>{_mastodon_link}</a>",
+            "de": "Es wurde ein Link zu deinem Mastodon-Profil gefunden: <a href='{_mastodon_link}' target='_blank' rel='noopener'>{_mastodon_link}</a>",
+            "nl": "Een link naar je Mastodon-profiel werd gevonden: <a href='{_mastodon_link}' target='_blank' rel='noopener'>{_mastodon_link}</a>",
+            "fr": "Un lien vers votre profil Mastodon a été trouvé : <a href='{_mastodon_link}' target='_blank' rel='noopener'>{_mastodon_link}</a>",
+            "ca": "S'ha trobat un enllaç al vostre perfil de Mastodon: <a href='{_mastodon_link}' target='_blank' rel='noopener'>{_mastodon_link}</a>",
+            "cs": "Byl nalezen odkaz na váš profil Mastodon: <a href='{_mastodon_link}' target='_blank' rel='noopener'>{_mastodon_link}</a>"
+          },
+          "icon": "mastodon"
+        },
+        {
+          "if": "_mastodon_candidate~*",
+          "then": {
+            "en": "We found a link to what looks to be a mastodon account, but it is unverified. <a href='https://www.openstreetmap.org/profile/edit' target='_blank' rel='noopener'>Edit your profile description</a> and place the following there: <span class='code'>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt",
+            "de": "Wir haben einen Link gefunden, der aussieht wie ein Mastodon-Konto, aber nicht verifiziert ist. <a href='https://www.openstreetmap.org/profile/edit' target='_blank' rel='noopener'>Bearbeiten Sie Ihre Profilbeschreibung</a> und fügen Sie dort Folgendes ein: <span class='code'>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt",
+            "nl": "Je profielbeschrijving bevat een link die vermoedelijk naar je Mastodon gaat, maar deze link is niet verifieerdbaar voor Mastodon.<a href='https://www.openstreetmap.org/profile/edit' target='_blank' rel='noopener'>Pas je profielbeschrijving aan</a> en plaats er de volgende code: <span class='code'>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt",
+            "ca": "Hem trobat un enllaç al que sembla ser un compte de mastodon, però no està verificat. <a href='https://www.openstreetmap.org/profile/edit' target='_blank' rel='noopener'>Editeu la descripció del vostre perfil</a> i col·loqueu-hi el següent: <span class='code '>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt",
+            "cs": "Našli jsme odkaz na to, co vypadá jako účet mastodon, ale je neověřený. <a href='https://www.openstreetmap.org/profile/edit' target='_blank' rel='noopener'>Upravte popis svého profilu</a> a umístěte tam následující: <span class='code '>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt"
+          },
+          "icon": "invalid"
+        }
+      ]
+    },
+    {
+      "id": "cscount-thanks",
+      "mappings": [
+        {
+          "if": "_csCount>0",
+          "then": {
+            "en": "You have made changes on {_csCount} different occasions! That is awesome!",
+            "de": "Sie haben bei {_csCount} verschiedenen Gelegenheiten Änderungen vorgenommen! Das ist großartig!",
+            "ca": "Has fet {_csCount} en diferents ocasions! Això és sorprenent!",
+            "fr": "Vous avez fait {_csCount} modifications ! C'est génial !",
+            "pt": "Você fez alterações em {_csCount} ocasiões diferentes! Isso é incrível!",
+            "nl": "Je hebt {_csCount} verschillende keren bijgedragen! Dat is indrukwekkend!",
+            "da": "Du har lavet ændringer ved {_csCount} forskellige begivenheder! Det er fantastisk!",
+            "es": "Has hecho cambios en {_csCount} ocasiones diferentes. ¡Es alucinante!",
+            "cs": "Změny jste provedli při {_csCount} různých příležitostech! To je úžasné!"
+          },
+          "icon": "party"
+        }
+      ]
+    },
+    {
+      "id": "translation-thanks",
+      "mappings": [
+        {
+          "if": "_translation_contributions>0",
+          "then": {
+            "en": "You have contributed to translating MapComplete with {_translation_contributions} commits! That's awesome!",
+            "nl": "Je hebt MapComplete helpen vertalen met {_translation_contributions} commits! Dat is fantastisch! Bedankt hiervoor!",
+            "de": "Du hast mit {_translation_contributions} Änderungen zur Übersetzung von MapComplete beigetragen! Das ist großartig!"
+          },
+          "icon": "party"
+        }
+      ]
+    },
+    {
+      "id": "contributor-thanks",
+      "mappings": [
+        {
+          "if": "_code_contributions>0",
+          "then": {
+            "en": "You have contributed code to MapComplete with {_code_contributions} commits! That's awesome!",
+            "de": "Sie haben Code zu MapComplete mit {_code_contributions} Commits beigetragen! Das ist großartig!",
+            "nl": "Je hebt mee geprogrammeerd aan MapComplete met {_code_contributions} commits! Das supercool van je! Bedankt hiervoor!",
+            "ca": "Heu aportat codi a MapComplete amb {_code_contributions} commits! Això és increïble!",
+            "cs": "Přispěli jste do MapComplete kódem s {_code_contributions} revizemi! To je úžasné!"
+          },
+          "icon": "party",
+          "hideInAnswer": true
+        }
+      ]
+    },
+    {
+      "id": "show_debug",
+      "question": {
+        "en": "Show user settings debug info?",
+        "de": "Debug-Informationen zu den Benutzereinstellungen anzeigen?",
+        "cs": "Zobrazit informace o ladění v nastavení?",
+        "ca": "Vols mostrar la informació de depuració de la configuració de l'usuari?",
+        "pt": "Mostrar informações de depuração das configurações do usuário?",
+        "nl": "Moet debug-informatie getoond worden?"
+      },
+      "mappings": [
+        {
+          "if": "mapcomplete-show_debug=yes",
+          "icon": "./assets/svg/bug.svg",
+          "then": {
+            "en": "Show debug info",
+            "de": "Debug-Informationen anzeigen",
+            "cs": "Zobrazit informace o ladění",
+            "ca": "Mostra la informació de depuració",
+            "pt": "Mostrar informações de depuração",
+            "nl": "Toon debug-informatie"
+          }
+        },
+        {
+          "if": "mapcomplete-show_debug=no",
+          "then": {
+            "en": "Don't show debug info",
+            "de": "Keine Debug-Informationen anzeigen",
+            "cs": "Nezobrazovat informace o ladění",
+            "ca": "No mostris informació de depuració",
+            "pt": "Não mostrar informações de depuração",
+            "nl": "Verberg debug-informatie"
+          }
+        },
+        {
+          "if": "mapcomplete-show_debug=",
+          "then": {
+            "en": "Don't show debug info",
+            "de": "Keine Debug-Informationen anzeigen",
+            "cs": "Nezobrazovat informace o ladění",
+            "pt": "Não mostrar informações de depuração",
+            "da": "Vis ikke debug-informationer",
+            "ca": "No mostris informació de depuració",
+            "nl": "Verberg debug-informatie"
+          },
+          "hideInAnswer": true
+        }
+      ]
+    },
+    {
+      "id": "debug-gps",
+      "condition": "mapcomplete-show_debug=yes",
+      "render": "{gps_all_tags()}"
+    },
+    {
+      "id": "debug",
+      "condition": "mapcomplete-show_debug=yes",
+      "render": "{all_tags()}"
+    }
+  ],
+  "titleIcons": [
+    {
+      "id": "wikipedialink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+      "condition": {
+        "or": [
+          "wikipedia~*",
+          "wikidata~*"
+        ]
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "wikipedia=",
+          "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "open_until",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "#": "Titleicon showing e.g. 'open until 17:00'",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{opening_hours_state()}",
+      "condition": {
+        "or": [
+          "opening_hours~*",
+          {
+            "or": [
+              {
+                "and": [
+                  "seasonal~.*winter.*",
+                  "_now:date~....-(12|01|02)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*spring.*",
+                  "_now:date~....-(03|04|05)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*summer.*",
+                  "_now:date~....-(06|07|08)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*autumn.*",
+                  "_now:date~....-(09|10|11)-.."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "phonelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": {
+        "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+        "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+        "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+        "_context": "layers:icons.tagRenderings.phonelink.render"
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:phone~*",
+          "then": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+          }
+        }
+      ],
+      "condition": {
+        "or": [
+          "phone~*",
+          "contact:phone~*"
+        ]
+      }
+    },
+    {
+      "id": "emaillink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:email~*",
+          "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:email~*",
+          "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        }
+      ],
+      "condition": {
+        "or": [
+          "email~*",
+          "contact:email~*",
+          "operator:email~*"
+        ]
+      }
+    },
+    {
+      "id": "websitelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "website~*",
+          "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:website~*",
+          "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "context:website~*",
+          "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "smokingicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=no",
+          "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=yes",
+          "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+        }
+      ]
+    },
+    {
+      "id": "dogicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "if": "dog=no",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+        },
+        {
+          "if": "dog=leashed",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+        },
+        {
+          "if": {
+            "or": [
+              "dog=yes",
+              "dog=unleashed"
+            ]
+          },
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+        }
+      ]
+    },
+    {
+      "id": "sharelink",
+      "labels": [
+        "defaults"
+      ],
+      "render": "{share_link()}",
+      "metacondition": "_supports_sharing=yes"
+    },
+    {
+      "id": "favourite_title_icon",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "*": "{favourite_icon()}"
+      },
+      "metacondition": "_loggedIn=true"
+    },
+    {
+      "id": "osmlink",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+        "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+        "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+        "_context": "layers:icons.tagRenderings.osmlink.render"
+      },
+      "mappings": [
+        {
+          "if": "id~.*/-.*",
+          "then": ""
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "_backend~*",
+          "then": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+          }
+        }
+      ],
+      "condition": "id~(node|way|relation)/[0-9]*"
+    },
+    {
+      "id": "direction",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "{direction_indicator()}"
+    },
+    {
+      "id": "rating",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{rating()}"
+    }
+  ],
+  "_layerIcon": []
+}

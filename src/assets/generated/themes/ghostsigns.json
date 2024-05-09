@@ -1,0 +1,3056 @@
+{
+  "id": "ghostsigns",
+  "title": {
+    "en": "Ghost Signs",
+    "de": "Geisterzeichen",
+    "_context": "themes:ghostsigns.title"
+  },
+  "description": {
+    "en": "A map showing disused signs on buildings",
+    "de": "Eine Karte, die ungenutzte Zeichen auf Gebäuden zeigt",
+    "es": "Un mapa que muestra los rótulos en desuso de los edificios",
+    "_context": "themes:ghostsigns.description"
+  },
+  "icon": "./assets/themes/advertising/wall_painting.svg",
+  "layers": [
+    {
+      "id": "ghostsigns",
+      "title": {
+        "render": {
+          "en": "Ghost Sign",
+          "de": "Geisterzeichen",
+          "_context": "themes:ghostsigns.layers.ghostsigns.title.render"
+        }
+      },
+      "description": {
+        "en": "Layer showing disused signs on buildings",
+        "de": "Ebene, die ungenutzte Zeichen auf Gebäuden zeigt",
+        "es": "Capa que muestra carteles en desuso en edificios",
+        "_context": "themes:ghostsigns.layers.ghostsigns.description"
+      },
+      "name": {
+        "en": "Ghost Signs",
+        "de": "Geisterzeichen",
+        "es": "Señales fantasma",
+        "_context": "themes:ghostsigns.layers.ghostsigns.name"
+      },
+      "source": {
+        "osmTags": {
+          "and": [
+            "historic~*",
+            "advertising=wall_painting"
+          ]
+        }
+      },
+      "minzoom": 10,
+      "#allowMove": "Normally, a ghost sign is snapped to a wall, so moving won't be possible in most cases",
+      "allowMove": false,
+      "tagRenderings": [
+        {
+          "id": "just_created",
+          "labels": [
+            "added_by_default"
+          ],
+          "description": "This element shows a 'thank you' that the contributor has recently created this element",
+          "classes": "rounded-xl thanks",
+          "mappings": [
+            {
+              "if": "id~*",
+              "icon": "./assets/svg/party.svg",
+              "then": {
+                "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+                "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+                "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+                "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+                "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+                "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+              }
+            }
+          ],
+          "condition": {
+            "and": [
+              "_backend~*",
+              "_last_edit:passed_time<300",
+              {
+                "or": [
+                  "_version_number=",
+                  "_version_number=1"
+                ]
+              }
+            ]
+          },
+          "metacondition": {
+            "and": [
+              {
+                "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+                "or": [
+                  "_last_edit:contributor:uid:={_uid}",
+                  "_last_edit:contributor:uid="
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "historic",
+          "question": {
+            "en": "Is this a ghost sign?",
+            "de": "Ist das ein Geisterzeichen?",
+            "_context": "themes:ghostsigns.layers.ghostsigns.tagRenderings.historic.question"
+          },
+          "questionHint": {
+            "en": "Is this sign for a business that no longer exists or no longer being maintained?",
+            "de": "Ist dieses Schild für ein Geschäft, das nicht mehr existiert oder nicht mehr gepflegt wird?",
+            "_context": "themes:ghostsigns.layers.ghostsigns.tagRenderings.historic.questionHint"
+          },
+          "mappings": [
+            {
+              "if": "historic=advertising",
+              "then": {
+                "en": "This is a ghost sign",
+                "de": "Das ist ein Geisterzeichen",
+                "_context": "themes:ghostsigns.layers.ghostsigns.tagRenderings.historic.mappings.0.then"
+              },
+              "alsoShowIf": "historic=yes"
+            },
+            {
+              "if": "historic=",
+              "then": {
+                "en": "This is not a ghost sign, answering this will hide the sign from the map",
+                "de": "Dies ist kein Geisterzeichen, die Antwort darauf wird das Schild von der Karte verstecken",
+                "_context": "themes:ghostsigns.layers.ghostsigns.tagRenderings.historic.mappings.1.then"
+              }
+            }
+          ]
+        },
+        {
+          "id": "images",
+          "description": "This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images",
+          "render": {
+            "*": "{image_carousel()}{image_upload()}{nearby_images():my-4}"
+          },
+          "classes": "my-4"
+        },
+        {
+          "id": "name",
+          "condition": "name~*",
+          "render": {
+            "*": "{name}"
+          }
+        },
+        {
+          "id": "inscription",
+          "question": {
+            "en": "What is the text on the sign?",
+            "de": "Was ist der Text auf dem Schild?",
+            "_context": "themes:ghostsigns.layers.ghostsigns.tagRenderings.inscription.question"
+          },
+          "freeform": {
+            "key": "inscription",
+            "type": "string",
+            "placeholder": {
+              "en": "Text on the sign",
+              "de": "Text auf dem Schild",
+              "_context": "themes:ghostsigns.layers.ghostsigns.tagRenderings.inscription.freeform.placeholder"
+            },
+            "inline": true
+          },
+          "render": {
+            "en": "The text on the sign is: {inscription}",
+            "de": "Der Text auf dem Schild ist: {inscription}",
+            "_context": "themes:ghostsigns.layers.ghostsigns.tagRenderings.inscription.render"
+          }
+        },
+        {
+          "id": "brand",
+          "question": {
+            "en": "For what business was this sign made?",
+            "de": "Für welches Unternehmen wurde dieses Schild angefertigt?",
+            "es": "¿Para qué negocio se hizo este cartel?",
+            "_context": "themes:ghostsigns.layers.ghostsigns.tagRenderings.brand.question"
+          },
+          "freeform": {
+            "key": "brand",
+            "type": "string",
+            "placeholder": {
+              "en": "Business name",
+              "de": "Unternehmensname",
+              "es": "Nombre comercial",
+              "_context": "themes:ghostsigns.layers.ghostsigns.tagRenderings.brand.freeform.placeholder"
+            },
+            "inline": true
+          },
+          "render": {
+            "en": "This sign was made for: {brand}",
+            "de": "Dieses Schild wurde gemacht für: {brand}",
+            "es": "Este cartel se hizo para: {brand}",
+            "_context": "themes:ghostsigns.layers.ghostsigns.tagRenderings.brand.render"
+          }
+        },
+        {
+          "id": "leftover-questions",
+          "render": {
+            "*": "{questions( ,)}"
+          }
+        },
+        {
+          "id": "lod",
+          "labels": [
+            "added_by_default"
+          ],
+          "render": {
+            "*": "{linked_data_from_website()}"
+          }
+        },
+        {
+          "id": "minimap",
+          "description": "Shows a small map with the feature. Added by default to every popup",
+          "render": {
+            "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+          }
+        },
+        {
+          "id": "last_edit",
+          "labels": [
+            "added_by_default"
+          ],
+          "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+          "condition": {
+            "and": [
+              "_last_edit:contributor~*",
+              "_last_edit:changeset~*"
+            ]
+          },
+          "metacondition": {
+            "or": [
+              "__featureSwitchIsTesting=true",
+              "__featureSwitchIsDebugging=true",
+              "mapcomplete-show_debug=yes",
+              "_csCount>=10"
+            ]
+          },
+          "render": {
+            "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+          }
+        },
+        {
+          "id": "favourite_status",
+          "render": {
+            "*": "{favourite_status()}"
+          }
+        },
+        {
+          "id": "qr_code",
+          "labels": [
+            "added_by_default"
+          ],
+          "classes": "flex items-center gap-x-2",
+          "render": {
+            "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+            "en": "{qr_code()}Scan this code to open this location on another device",
+            "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+            "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+          }
+        },
+        {
+          "id": "share",
+          "labels": [
+            "added_by_default"
+          ],
+          "metacondition": "_supports_sharing=yes",
+          "render": {
+            "de": "{share_link(,Standort teilen)}",
+            "en": "{share_link(,Share this location)}",
+            "nl": "{share_link(,Deel deze locatie)}"
+          }
+        },
+        {
+          "id": "all-tags",
+          "render": {
+            "*": "{all_tags()}"
+          },
+          "metacondition": {
+            "or": [
+              "__featureSwitchIsDebugging=true",
+              "mapcomplete-show_tags=full",
+              "mapcomplete-show_debug=yes"
+            ]
+          }
+        }
+      ],
+      "lineRendering": [
+        {
+          "color": "blue",
+          "width": 2
+        }
+      ],
+      "pointRendering": [
+        {
+          "location": [
+            "point",
+            "centroid"
+          ],
+          "marker": [
+            {
+              "icon": {
+                "render": "./assets/themes/advertising/wall_painting.svg",
+                "id": "assetsthemesadvertisingwallpaintingsvg"
+              }
+            }
+          ],
+          "iconBadges": [
+            {
+              "if": "_favourite=yes",
+              "then": {
+                "render": "circle:white;heart:red",
+                "id": "circlewhiteheartred"
+              }
+            }
+          ]
+        }
+      ],
+      "presets": [
+        {
+          "tags": [
+            "historic=advertising",
+            "advertising=wall_painting"
+          ],
+          "title": {
+            "en": "a ghost sign",
+            "de": "ein Geisterzeichen",
+            "es": "una señal fantasma",
+            "_context": "themes:ghostsigns.layers.ghostsigns.presets.0.title"
+          },
+          "snapToLayer": [
+            "walls_and_buildings"
+          ],
+          "maxSnapDistance": 5
+        }
+      ],
+      "titleIcons": [
+        {
+          "id": "wikipedialink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+          "condition": {
+            "or": [
+              "wikipedia~*",
+              "wikidata~*"
+            ]
+          },
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "wikipedia=",
+              "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+            }
+          ]
+        },
+        {
+          "id": "open_until",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "#": "Titleicon showing e.g. 'open until 17:00'",
+          "icon": {
+            "class": "w-20 mx-1 flex items-center"
+          },
+          "render": "{opening_hours_state()}",
+          "condition": {
+            "or": [
+              "opening_hours~*",
+              {
+                "or": [
+                  {
+                    "and": [
+                      "seasonal~.*winter.*",
+                      "_now:date~....-(12|01|02)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*spring.*",
+                      "_now:date~....-(03|04|05)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*summer.*",
+                      "_now:date~....-(06|07|08)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*autumn.*",
+                      "_now:date~....-(09|10|11)-.."
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "phonelink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.render"
+          },
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "contact:phone~*",
+              "then": {
+                "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+                "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+                "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+                "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+              }
+            }
+          ],
+          "condition": {
+            "or": [
+              "phone~*",
+              "contact:phone~*"
+            ]
+          }
+        },
+        {
+          "id": "emaillink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "contact:email~*",
+              "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "operator:email~*",
+              "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+            }
+          ],
+          "condition": {
+            "or": [
+              "email~*",
+              "contact:email~*",
+              "operator:email~*"
+            ]
+          }
+        },
+        {
+          "id": "websitelink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "website~*",
+              "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "operator:website~*",
+              "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "context:website~*",
+              "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            }
+          ]
+        },
+        {
+          "id": "smokingicon",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "smoking=no",
+              "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "smoking=yes",
+              "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+            }
+          ]
+        },
+        {
+          "id": "dogicon",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "if": "dog=no",
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+            },
+            {
+              "if": "dog=leashed",
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+            },
+            {
+              "if": {
+                "or": [
+                  "dog=yes",
+                  "dog=unleashed"
+                ]
+              },
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+            }
+          ]
+        },
+        {
+          "id": "sharelink",
+          "labels": [
+            "defaults"
+          ],
+          "render": "{share_link()}",
+          "metacondition": "_supports_sharing=yes"
+        },
+        {
+          "id": "favourite_title_icon",
+          "labels": [
+            "defaults"
+          ],
+          "render": {
+            "*": "{favourite_icon()}"
+          },
+          "metacondition": "_loggedIn=true"
+        },
+        {
+          "id": "osmlink",
+          "labels": [
+            "defaults"
+          ],
+          "render": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.render"
+          },
+          "mappings": [
+            {
+              "if": "id~.*/-.*",
+              "then": ""
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "_backend~*",
+              "then": {
+                "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+                "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+                "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+                "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+              }
+            }
+          ],
+          "condition": "id~(node|way|relation)/[0-9]*"
+        },
+        {
+          "id": "direction",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "{direction_indicator()}"
+        }
+      ]
+    },
+    {
+      "id": "advertising_wall_paintings",
+      "name": {
+        "ca": "Publicitat",
+        "es": "Publicidad",
+        "en": "All advertentie wall paintings",
+        "de": "Alle Werbe-Wandbilder",
+        "cs": "Reklama",
+        "nl": "Alle adverterende muurschilderingen",
+        "pt": "Anunciar",
+        "he": "פרסומת",
+        "eu": "Iragarri",
+        "pl": "Reklama",
+        "pt_BR": "Anunciar",
+        "zh_Hans": "广告",
+        "it": "Pubblicità",
+        "zh_Hant": "廣告",
+        "_context": "themes:ghostsigns.layers.1.override.name"
+      },
+      "description": {
+        "ca": "Completarem les dades dels elements publicitaris amb referència, operador i il·luminació",
+        "es": "Completaremos los datos de los elementos publicitarios con referencia, operador y iluminación",
+        "en": "We will complete data from advertising features with reference, operator and lit",
+        "de": "Wir vervollständigen Daten von Werbeanlagen mit Referenz-, Betreiber- und Beleuchtungsdaten",
+        "cs": "Doplníme údaje z reklamních prvků s referencemi, provozovatelem a osvětlením",
+        "pt": "Iremos completar os dados das funcionalidades publicitárias com referência, operador e iluminado",
+        "eu": "Publizitate-ezaugarrien datuak osatuko ditugu erreferentziarekin, operadorearekin eta argiztatuarekin.",
+        "pl": "Uzupełnimy dane z obiektów reklamowych o referencję, operatora i oświetlenie",
+        "pt_BR": "Completaremos os dados das características de publicidade com referência, operador e iluminação",
+        "it": "Completeremo i dati da caratteristiche pubblicitarie, con referenza, operatore e illuminazione"
+      },
+      "enableMorePrivacy": true,
+      "source": {
+        "osmTags": "advertising=wall_painting"
+      },
+      "minzoom": 18,
+      "title": {
+        "render": {
+          "*": "{advertising}"
+        },
+        "mappings": [
+          {
+            "if": {
+              "and": [
+                "advertising=billboard"
+              ]
+            },
+            "then": {
+              "ca": "Tanca publicitària",
+              "es": "Valla publicitaria",
+              "en": "Billboard",
+              "de": "Werbetafel",
+              "cs": "Billboard",
+              "he": "שלט חוצות",
+              "pl": "Bilbord",
+              "pt_BR": "Outdoor",
+              "zh_Hans": "广告牌",
+              "pt": "Outdoor"
+            }
+          },
+          {
+            "if": {
+              "and": [
+                "advertising=board"
+              ]
+            },
+            "then": {
+              "ca": "Tauló d'anuncis",
+              "es": "Tablon de anuncios",
+              "en": "Board",
+              "de": "Brett",
+              "cs": "Deska",
+              "fr": "Petit panneau",
+              "pl": "Tablica",
+              "pt_BR": "Quadro",
+              "zh_Hans": "木板",
+              "pt": "Quadro"
+            }
+          },
+          {
+            "if": {
+              "and": [
+                "advertising=poster_box"
+              ]
+            },
+            "then": {
+              "ca": "Mupi",
+              "es": "Mupi",
+              "en": "Poster Box",
+              "de": "Posterbox",
+              "cs": "Skříň na plakáty",
+              "pl": "Pudełko plakatowe",
+              "pt_BR": "Caixa de pôster",
+              "zh_Hans": "海报盒",
+              "pt": "Caixa de pôster"
+            }
+          },
+          {
+            "if": {
+              "and": [
+                "advertising=column"
+              ]
+            },
+            "then": {
+              "ca": "Columna",
+              "es": "Columna",
+              "en": "Column",
+              "de": "Litfaßsäule",
+              "cs": "Sloup",
+              "nl": "Aanplakzuil",
+              "fr": "Colonne",
+              "eu": "Zutabea",
+              "pl": "Kolumna",
+              "pt_BR": "Coluna",
+              "zh_Hans": "专栏",
+              "pt": "Coluna"
+            }
+          },
+          {
+            "if": {
+              "and": [
+                "advertising=flag"
+              ]
+            },
+            "then": {
+              "ca": "Bandera",
+              "es": "Bandera",
+              "en": "Flag",
+              "de": "Flagge",
+              "cs": "Vlajka",
+              "nl": "Vlag",
+              "fr": "Drapeau",
+              "eu": "Ikurrina",
+              "pl": "Flaga",
+              "pt_BR": "Bandeira",
+              "zh_Hans": "旗帜",
+              "pt": "Bandeira"
+            }
+          },
+          {
+            "if": {
+              "and": [
+                "advertising=screen"
+              ]
+            },
+            "then": {
+              "ca": "Pantalla",
+              "es": "Pantalla",
+              "en": "Screen",
+              "de": "Bildschirm",
+              "cs": "Obrazovka",
+              "nl": "Scherm",
+              "fr": "Écran",
+              "eu": "Pantaila",
+              "pl": "Ekran",
+              "pt_BR": "Tela",
+              "zh_Hans": "屏幕",
+              "pt": "Ecrã"
+            }
+          },
+          {
+            "if": {
+              "and": [
+                "advertising=sculpture"
+              ]
+            },
+            "then": {
+              "ca": "Esculptura",
+              "es": "Escultura",
+              "en": "Sculpture",
+              "de": "Skulptur",
+              "cs": "Socha",
+              "nl": "Sculptuur",
+              "fr": "Sculpture",
+              "eu": "Eskultura",
+              "pl": "Rzeźba",
+              "pt_BR": "Escultura",
+              "zh_Hans": "雕像",
+              "pt": "Escultura"
+            }
+          },
+          {
+            "if": {
+              "and": [
+                "advertising=sign"
+              ]
+            },
+            "then": {
+              "ca": "Cartell",
+              "es": "Cartel",
+              "en": "Sign",
+              "de": "Schild",
+              "cs": "Cedule",
+              "fr": "Enseigne",
+              "pt_BR": "Placa",
+              "eu": "Kartela",
+              "pl": "Znak",
+              "zh_Hans": "标志",
+              "pt": "Placa"
+            }
+          },
+          {
+            "if": {
+              "and": [
+                "advertising=tarp"
+              ]
+            },
+            "then": {
+              "ca": "Lona",
+              "es": "Lona",
+              "en": "Tarp",
+              "de": "Plane",
+              "cs": "Plachta",
+              "nl": "Spandoek",
+              "fr": "Bâche",
+              "eu": "Olana",
+              "pl": "Brezent",
+              "pt_BR": "Lona",
+              "pt": "Lona"
+            }
+          },
+          {
+            "if": {
+              "and": [
+                "advertising=totem"
+              ]
+            },
+            "then": {
+              "ca": "Tòtem",
+              "es": "Tótem",
+              "en": "Totem",
+              "de": "Totem",
+              "cs": "Totem",
+              "nl": "Aanplakzuil",
+              "fr": "Totem",
+              "eu": "Totem",
+              "pl": "Totem",
+              "pt_BR": "Totem",
+              "zh_Hans": "图腾",
+              "pt": "Totem"
+            }
+          },
+          {
+            "if": {
+              "and": [
+                "advertising=wall_painting"
+              ]
+            },
+            "then": {
+              "ca": "Paret Pintada",
+              "es": "Pared Pintada",
+              "en": "Wall painting",
+              "de": "Wandmalerei",
+              "cs": "Nástěnná malba",
+              "nl": "Muurschildering",
+              "fr": "Peinture murale",
+              "pl": "Mural ścienny",
+              "pt_BR": "Pintura mural",
+              "zh_Hans": "墙上的画",
+              "pt": "Pintura mural"
+            }
+          }
+        ]
+      },
+      "pointRendering": [
+        {
+          "location": [
+            "point",
+            "centroid"
+          ],
+          "marker": [
+            {
+              "icon": {
+                "mappings": [
+                  {
+                    "if": "_referencing_ways=[\"way/-1\"]",
+                    "then": "brick_wall_square"
+                  }
+                ]
+              }
+            },
+            {
+              "icon": {
+                "render": "./assets/themes/advertising/sign.svg",
+                "mappings": [
+                  {
+                    "if": {
+                      "or": [
+                        "advertising=billboard"
+                      ]
+                    },
+                    "then": "./assets/themes/advertising/billboard.svg"
+                  },
+                  {
+                    "if": "advertising=board",
+                    "then": "./assets/themes/advertising/board.svg"
+                  },
+                  {
+                    "if": "advertising=column",
+                    "then": "./assets/themes/advertising/column.svg"
+                  },
+                  {
+                    "if": "advertising=flag",
+                    "then": "./assets/themes/advertising/flag.svg"
+                  },
+                  {
+                    "if": {
+                      "and": [
+                        "advertising=poster_box",
+                        "_referencing_ways~*"
+                      ]
+                    },
+                    "then": "./assets/themes/advertising/poster_box_no_support.svg"
+                  },
+                  {
+                    "if": {
+                      "and": [
+                        "advertising=poster_box",
+                        {
+                          "or": [
+                            "shelter=yes",
+                            "amenity=shelter",
+                            "building=shelter",
+                            "support=street_furniture:transit_shelter"
+                          ]
+                        },
+                        {
+                          "or": [
+                            "public_transport=platform",
+                            "highway=bus_stop",
+                            "support=street_furniture:transit_shelter"
+                          ]
+                        }
+                      ]
+                    },
+                    "then": "./assets/themes/advertising/poster_box_transit_shelter.svg"
+                  },
+                  {
+                    "if": "advertising=poster_box",
+                    "then": "./assets/themes/advertising/poster_box.svg"
+                  },
+                  {
+                    "if": {
+                      "and": [
+                        "advertising=screen",
+                        "_referencing_ways~*"
+                      ]
+                    },
+                    "then": "./assets/themes/advertising/screen_no_support.svg"
+                  },
+                  {
+                    "if": "advertising=screen",
+                    "then": "./assets/themes/advertising/screen.svg"
+                  },
+                  {
+                    "if": "advertising=sculpture",
+                    "then": "./assets/themes/advertising/sculpture.svg"
+                  },
+                  {
+                    "if": "advertising=sign",
+                    "then": "./assets/themes/advertising/sign.svg"
+                  },
+                  {
+                    "if": "advertising=tarp",
+                    "then": "./assets/themes/advertising/tarp.svg"
+                  },
+                  {
+                    "if": "advertising=totem",
+                    "then": "./assets/themes/advertising/totem.svg"
+                  },
+                  {
+                    "if": "advertising=wall_painting",
+                    "then": "./assets/themes/advertising/wall_painting.svg"
+                  }
+                ]
+              }
+            }
+          ],
+          "iconSize": "20,20",
+          "anchor": {
+            "render": "bottom",
+            "mappings": [
+              {
+                "if": "_referencing_ways~*",
+                "then": "center"
+              }
+            ]
+          },
+          "iconBadges": [
+            {
+              "if": "_favourite=yes",
+              "then": {
+                "render": "circle:white;heart:red",
+                "id": "circlewhiteheartred"
+              }
+            }
+          ]
+        }
+      ],
+      "lineRendering": [
+        {
+          "width": "8",
+          "color": "#00f"
+        }
+      ],
+      "presets": [],
+      "tagRenderings": [
+        {
+          "id": "historic",
+          "question": {
+            "en": "Is this a ghost sign?",
+            "de": "Ist das ein Geisterzeichen?",
+            "_context": "themes:ghostsigns.layers.1.override.+tagRenderings.historic.question"
+          },
+          "questionHint": {
+            "en": "Is this sign for a business that no longer exists or no longer being maintained?",
+            "de": "Ist dieses Schild für ein Geschäft, das nicht mehr existiert oder nicht mehr gepflegt wird?",
+            "_context": "themes:ghostsigns.layers.1.override.+tagRenderings.historic.questionHint"
+          },
+          "mappings": [
+            {
+              "if": "historic=advertising",
+              "then": {
+                "en": "This is a ghost sign",
+                "de": "Das ist ein Geisterzeichen",
+                "_context": "themes:ghostsigns.layers.1.override.+tagRenderings.historic.mappings.0.then"
+              },
+              "alsoShowIf": "historic=yes"
+            },
+            {
+              "if": "historic=",
+              "then": {
+                "en": "This is not a ghost sign",
+                "de": "Das ist kein Geisterzeichen",
+                "_context": "themes:ghostsigns.layers.1.override.+tagRenderings.historic.mappings.1.then"
+              }
+            }
+          ]
+        },
+        {
+          "id": "just_created",
+          "labels": [
+            "added_by_default"
+          ],
+          "description": "This element shows a 'thank you' that the contributor has recently created this element",
+          "classes": "rounded-xl thanks",
+          "mappings": [
+            {
+              "if": "id~*",
+              "icon": "./assets/svg/party.svg",
+              "then": {
+                "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+                "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+                "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+                "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+                "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+                "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+              }
+            }
+          ],
+          "condition": {
+            "and": [
+              "_backend~*",
+              "_last_edit:passed_time<300",
+              {
+                "or": [
+                  "_version_number=",
+                  "_version_number=1"
+                ]
+              }
+            ]
+          },
+          "metacondition": {
+            "and": [
+              {
+                "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+                "or": [
+                  "_last_edit:contributor:uid:={_uid}",
+                  "_last_edit:contributor:uid="
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "images",
+          "description": "This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images",
+          "render": {
+            "*": "{image_carousel()}{image_upload()}{nearby_images():my-4}"
+          },
+          "classes": "my-4"
+        },
+        {
+          "id": "type",
+          "render": {
+            "ca": "Açò és un {advertising}",
+            "es": "Esto es un {advertising}",
+            "en": "This is a {advertising}",
+            "de": "Das ist ein/e {advertising}",
+            "cs": "Toto je {advertising}",
+            "nl": "Dit is een {advertising}",
+            "he": "זהו {advertising}",
+            "pl": "To jest {advertising}",
+            "pt_BR": "Isso é uma {advertising}",
+            "zh_Hans": "这是一个{advertising}",
+            "pt": "Isto é uma {advertising}"
+          },
+          "question": {
+            "ca": "Quin tipus d'element publicitari és aquest?",
+            "es": "¿Qué tipo de elemento publicitario es?",
+            "en": "Which type of advertising feature is this?",
+            "de": "Welche Art von Werbung ist das?",
+            "cs": "O jaký typ reklamního prvku se jedná?",
+            "fr": "De quel type de dispositif publicitaire s'agit-il ?",
+            "pl": "Jakiego rodzaju jest to obiekt reklamowy?",
+            "pt_BR": "Que tipo de recurso de publicitário é este?",
+            "zh_Hans": "这是哪种类型的广告功能？",
+            "pt": "Que tipo de recurso de publicitário é este?"
+          },
+          "freeform": {
+            "key": "advertising",
+            "inline": true
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "advertising=billboard"
+                ]
+              },
+              "then": {
+                "ca": "Açò és una tanca publicitària",
+                "es": "Esto es una valla publicitaria",
+                "en": "This is a billboard",
+                "de": "Dies ist eine Werbetafel",
+                "cs": "Toto je billboard",
+                "fr": "C'est un grand panneau",
+                "pt": "Isso é um outdoor",
+                "he": "זה שלט חוצות",
+                "pl": "To jest bilbord",
+                "pt_BR": "Isso é um outdoor",
+                "zh_Hans": "这是一个广告牌"
+              },
+              "icon": {
+                "path": "./assets/themes/advertising/billboard.svg",
+                "class": "medium"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "advertising=board"
+                ]
+              },
+              "then": {
+                "ca": "Açò és un tauló d'anunis",
+                "es": "Esto es un tablón de anuncios",
+                "en": "This is a board",
+                "de": "Dies ist ein Brett",
+                "cs": "Toto je deska",
+                "fr": "C'est un petit panneau",
+                "pt": "Isso é uma placa",
+                "pl": "To jest tablica",
+                "pt_BR": "Isso é uma placa",
+                "zh_Hans": "这是一块板"
+              },
+              "icon": {
+                "path": "./assets/themes/advertising/board.svg",
+                "class": "medium"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "advertising=column"
+                ]
+              },
+              "then": {
+                "ca": "Açò és una columna",
+                "es": "Esto es una columna",
+                "en": "This is a column",
+                "de": "Dies ist eine Litfaßsäule",
+                "cs": "Toto je sloup",
+                "fr": "C'est une colonne",
+                "nl": "Dit is een aanplakzuil",
+                "pt_BR": "Isto é uma coluna",
+                "pl": "To jest kolumna",
+                "zh_Hans": "这是一个专栏",
+                "pt": "Isto é uma coluna"
+              },
+              "icon": {
+                "path": "./assets/themes/advertising/column.svg",
+                "class": "medium"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "advertising=flag"
+                ]
+              },
+              "then": {
+                "ca": "Açò és una bandera",
+                "es": "Esto es una bndera",
+                "en": "This is a flag",
+                "de": "Dies ist eine Flagge",
+                "cs": "Toto je vlajka",
+                "fr": "C'est un drapeau",
+                "nl": "Dit is een vlag",
+                "pt_BR": "Isto é uma bandeira",
+                "he": "זה דגל",
+                "pl": "To jest flaga",
+                "zh_Hans": "这是一面旗帜",
+                "pt": "Isto é uma bandeira"
+              },
+              "icon": {
+                "path": "./assets/themes/advertising/flag.svg",
+                "class": "medium"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "advertising=poster_box"
+                ]
+              },
+              "then": {
+                "ca": "Açò és un mupi",
+                "es": "Esto es un mupi",
+                "en": "This is a poster Box",
+                "de": "Dies ist eine Posterbox",
+                "cs": "Toto je skříň na plakáty",
+                "fr": "C'est une sucette (panneau avec affiches)",
+                "pl": "To jest pudełko plakatowe",
+                "pt_BR": "Isso é um quadro de pôster",
+                "zh_Hans": "这是海报盒",
+                "pt": "Isto é um quadro de pôster"
+              },
+              "icon": {
+                "path": "./assets/themes/advertising/poster_box.svg",
+                "class": "medium"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "advertising=screen"
+                ]
+              },
+              "then": {
+                "ca": "Açò és una pantalla",
+                "es": "Esto es una pantalla",
+                "en": "This is a screen",
+                "de": "Dies ist ein Bildschirm",
+                "cs": "Toto je obrazovka",
+                "fr": "C'est un écran",
+                "pl": "To jest ekran",
+                "pt_BR": "Isso é uma tela",
+                "zh_Hans": "这是一个屏幕",
+                "pt": "Isto é um ecrã"
+              },
+              "icon": {
+                "path": "./assets/themes/advertising/screen.svg",
+                "class": "medium"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "advertising=sculpture"
+                ]
+              },
+              "then": {
+                "ca": "Açò és una esculptura",
+                "es": "Esto es una escultura",
+                "en": "This is a sculpture",
+                "de": "Dies ist eine Skulptur",
+                "cs": "Toto je socha",
+                "fr": "C'est une sculpture",
+                "pl": "To jest rzeźba",
+                "pt_BR": "Isso é uma escultura",
+                "zh_Hans": "这是一个雕塑",
+                "pt": "Isto é uma escultura"
+              },
+              "icon": {
+                "path": "./assets/themes/advertising/sculpture.svg",
+                "class": "medium"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "advertising=sign"
+                ]
+              },
+              "then": {
+                "ca": "Açò és un cartell",
+                "es": "Esto es un cartel",
+                "en": "This is a sign",
+                "de": "Dies ist ein Schild",
+                "cs": "Toto je cedule",
+                "fr": "C'est une enseigne (indique le nom du lieu/magasin)",
+                "pt_BR": "Isto é uma placa",
+                "pl": "To jest znak",
+                "zh_Hans": "这是一个标志",
+                "pt": "Isto é uma placa"
+              },
+              "icon": {
+                "path": "./assets/themes/advertising/sign.svg",
+                "class": "medium"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "advertising=tarp"
+                ]
+              },
+              "then": {
+                "ca": "Açò és una lona (una peça de tèxtil impermeable amb un missatge publicitari)",
+                "es": "Esto es una lona (una pieza de tela resistente a la intemperie con un mensaje publicitario)",
+                "en": "This is a tarp (a weatherproof piece of textile with an advertising message)",
+                "de": "Dies ist eine Plane (ein wetterfestes Textilstück mit einer Werbebotschaft)",
+                "cs": "Toto je plachta (kus textilu s reklamním sdělením odolný proti povětrnostním vlivům)",
+                "fr": "C'est une bâche (un morceau de textile résistant aux intempéries avec un message publicitaire)",
+                "pl": "To jest plandeka (odporny na warunki atmosferyczne kawałek materiału tekstylnego z przekazem reklamowym)",
+                "pt_BR": "Isso é uma lona (uma peça de tecido à prova de intempéries com uma mensagem publicitária)",
+                "zh_Hans": "这是防水布（带有广告信息的防风雨纺织品）",
+                "pt": "Isto é uma lona (uma peça de tecido à prova de intempéries com uma mensagem publicitária)"
+              },
+              "icon": {
+                "path": "./assets/themes/advertising/tarp.svg",
+                "class": "medium"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "advertising=totem"
+                ]
+              },
+              "then": {
+                "ca": "Açò és un tòtem",
+                "es": "Esto es un tótem",
+                "en": "This is a totem",
+                "de": "Dies ist ein Totem",
+                "cs": "Toto je totem",
+                "fr": "C'est un totem",
+                "pl": "To jest totem",
+                "pt_BR": "Isso é um totem",
+                "zh_Hans": "这是一个图腾",
+                "pt": "Isto é um totem"
+              },
+              "icon": {
+                "path": "./assets/themes/advertising/totem.svg",
+                "class": "medium"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "advertising=wall_painting"
+                ]
+              },
+              "then": {
+                "ca": "Açò és una paret pintada",
+                "es": "Esto es una pared pintada",
+                "en": "This is a wall painting",
+                "de": "Dies ist eine Wandmalerei",
+                "cs": "Toto je nástěnná malba",
+                "fr": "C'est une peinture murale",
+                "pl": "To jest mural ścienny",
+                "pt_BR": "Isso é uma pintura mural",
+                "zh_Hans": "这是一幅壁画",
+                "pt": "Isto é uma pintura mural"
+              },
+              "icon": {
+                "path": "./assets/themes/advertising/wall_painting.svg",
+                "class": "medium"
+              }
+            }
+          ]
+        },
+        {
+          "id": "animated",
+          "question": {
+            "ca": "Com canvien els anuncis d'aquest element?",
+            "es": "¿Como cambian los anuncios de este elemento?",
+            "en": "Does this advertisement cycle through multiple messages?",
+            "de": "Werden mehrere Werbungen abwechselnd angezeigt?",
+            "cs": "Zobrazuje tato reklama cyklicky několik zpráv?",
+            "fr": "Est-ce que cette publicité fait défiler différent messages ?",
+            "pt": "Este anúncio percorre várias mensagens?",
+            "pl": "Czy ta reklama przechodzi przez wiele różnych wiadomości?",
+            "pt_BR": "Este anúncio passa por várias mensagens em sequência?",
+            "zh_Hans": "该广告是否会在多条消息中循环播放？"
+          },
+          "condition": {
+            "#": "Screens are _always_ animated; flags, tarps, and wall_paintings cannot be animated; signs can be anything so we don't make guesses",
+            "and": [
+              "advertising!=screen",
+              "advertising!=flag",
+              "advertising!=tarp",
+              "advertising!=wall_painting",
+              "advertising!=sign",
+              "advertising!=board"
+            ]
+          },
+          "mappings": [
+            {
+              "if": "animated=no",
+              "then": {
+                "ca": "<b>Estàtic</b>, sempre mostra el mateix missatge",
+                "es": "<b>Estático</b>, siempre muestra el mismo mensaje",
+                "en": "<b>Static</b>, always shows the same message",
+                "de": "<b>Statische Anzeige</b>, zeigt immer die gleiche Werbung",
+                "cs": "<b>Statická reklama</b>, která stále zobrazuje stejnou zprávu",
+                "fr": "<b>Statique</b>, affiche toujours le même message",
+                "pt": "<b> Static</b>, mostra sempre a mesma mensagem",
+                "pl": "<b>Statyczne</b>, zawsze pokazuje tą samą wiadomość",
+                "pt_BR": "<b>Estático</b>, mostra sempre a mesma mensagem",
+                "zh_Hans": "<b>静态</b>，始终显示相同的消息"
+              }
+            },
+            {
+              "if": "animated=digital_display",
+              "then": {
+                "en": "This object has a built-in <b>digital display</b> to show prices or some other message",
+                "ca": "Aquest objecte té una <b>pantalla digital</b> integrada per a mostrar els preus o algun altre missatge",
+                "es": "Este objeto tiene una <b>pantalla digital</b> incorporada para mostrar precios o algún otro mensaje",
+                "de": "<b>Digitale Anzeige</b>, zeigt Preise oder anderen Mitteilungen",
+                "cs": "Tento objekt má vestavěný <b>digitální displej</b> pro zobrazení cen nebo jiné zprávy",
+                "fr": "Cet objet inclut un <b>affichage digital</b> pour indiquer des prix ou d'autres messages",
+                "pt": "Este objeto possui um <b>digital display</b> embutido para mostrar preços ou alguma outra mensagem",
+                "pl": "Ten obiekt ma wbudowany <b>cyfrowy wyświetlacz</b> do pokazywania cen lub innych informacji",
+                "pt_BR": "Este objeto possui um <b>display digital</b> incorporado para mostrar preços ou alguma outra mensagem",
+                "zh_Hans": "该对象有一个内置的<b>数字显示器</b>来显示价格或其他一些消息"
+              },
+              "hideInAnswer": {
+                "and": [
+                  "advertising!=billboard",
+                  "advertising!=poster_box",
+                  "advertising!=totem",
+                  "advertising!=column"
+                ]
+              }
+            },
+            {
+              "if": "animated=trivision_blades",
+              "then": {
+                "ca": "<b>Trivision</b> - la tanca publicitària consta de molts prismes triangulars que giren regularment",
+                "es": "<b>Trivision</b> - la valla publicitaria consta de muchos prismas triangulares que giran regularmente",
+                "en": "<b>Trivision</b> - the billboard consists of many triangular prisms which regularly rotate",
+                "de": "<b>Trivision Anzeige</b>, zeigt Werbung auf dreieckigen Prismen, die sich regelmäßig drehen",
+                "cs": "<b>Trivision</b> - billboard se skládá z několika trojúhelníkových hranolů, které se pravidelně otáčejí",
+                "fr": "<b>Trivision</b> - le panneau est constitué de lames triangulaires qui tournent régulièrement",
+                "pt": "<b>Trivision</b> - o outdoor consiste em muitos prismas triangulares que giram regularmente",
+                "pt_BR": "<b>Trivision</b> - o outdoor consiste em muitos prismas triangulares que giram regularmente",
+                "zh_Hans": "<b>Trivision</b> - 广告牌由许多有规律旋转的三棱柱组成"
+              },
+              "icon": {
+                "class": "large",
+                "path": "./assets/themes/advertising/trivision.svg"
+              },
+              "#": "Only applicable to billboards",
+              "hideInAnswer": "advertising!=billboard"
+            },
+            {
+              "if": "animated=winding_posters",
+              "then": {
+                "ca": "Cartells <b>Rotatius</b>",
+                "es": "Cartells <b>Rotatius</b>",
+                "en": "<b>Scrolling</b> posters",
+                "de": "<b>Rollierende Anzeige</b>, zeigt abwechselnd durchlaufende Werbeplakate",
+                "cs": "<b>Rolující</b> plakáty",
+                "fr": "Affiches <b>défilantes</b>",
+                "pt": "Pôsteres de <b>rolagem</b>",
+                "pt_BR": "Pôsteres <b>deslizantes</b>",
+                "zh_Hans": "<b>滚动</b>海报"
+              },
+              "hideInAnswer": {
+                "and": [
+                  "advertising!=poster_box",
+                  "advertising!=column",
+                  "advertising!=billboard"
+                ]
+              }
+            },
+            {
+              "if": "animated=revolving",
+              "then": {
+                "ca": "<b>Rota</b> sobre si mateix",
+                "es": "<b>Rota</b> sobre si mismo",
+                "en": "<b>Rotates</b> on itself",
+                "de": "<b>Drehende Anzeige</b>, die um die eigene Achse rotiert",
+                "cs": "Sám se <b>otáčí</b>",
+                "fr": "<b>Tourne</b> sur elle-même",
+                "pt": "<b>Gira</b> sobre si mesmo",
+                "pt_BR": "<b>Gira</b> sobre si mesmo",
+                "zh_Hans": "<b>自行旋转</b>"
+              },
+              "hideInAnswer": {
+                "and": [
+                  "advertising!=totem",
+                  "advertising!=column",
+                  "advertising!=poster_box"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "luminous_or_lit_advertising",
+          "question": {
+            "en": "Is this object lit or does it emit light?",
+            "ca": "Aquest objecte està il·luminat o emet llum?",
+            "cs": "Je tento objekt osvětlený nebo vyzařuje světlo?",
+            "de": "Wird das Objekt beleuchtet oder leuchtet es selbst?",
+            "es": "¿Está este objeto iluminado o emite luz?",
+            "fr": "Cet objet est-il éclairé ou émet-il de la lumière ?",
+            "pl": "Czy ten obiekt jest oświetlony lub emituje światło?"
+          },
+          "mappings": [
+            {
+              "if": "luminous=neon",
+              "then": {
+                "en": "This is a neon-tube light",
+                "ca": "Aquesta és una llum de tub de neó",
+                "es": "Esta es una luz de tubo de neón",
+                "de": "Dies ist eine Neonröhrenleuchte",
+                "cs": "Jedná se o neonové světlo",
+                "nl": "Dit is een neonlamp",
+                "pt": "Esta é uma luz de tubo de néon",
+                "fr": "C'est une lampe à tube néon",
+                "he": "זהו תאורת ניאון",
+                "pl": "To jest lampa neonowa",
+                "pt_BR": "Isso é uma luz de neon",
+                "zh_Hans": "这是霓虹灯管"
+              },
+              "hideInAnswer": "advertising!=sign",
+              "addExtraTags": [
+                "lit=no"
+              ]
+            },
+            {
+              "if": {
+                "and": [
+                  "lit=yes",
+                  "luminous=yes"
+                ]
+              },
+              "then": {
+                "en": "This object both emits light and is lighted by an external light source",
+                "ca": "Aquest objecte emet llum i també està il·luminat externament",
+                "cs": "Tento objekt vyzařuje světlo a je osvětlen vnějším zdrojem světla",
+                "de": "Das Objekt leuchtet selbst und wird von außen beleuchtet",
+                "es": "Este objeto emite luz y es también iluminado por una fuente de luz externa",
+                "fr": "Cet objet émet de la lumière et est éclairé par l'extérieur",
+                "pl": "Ten obiekt zarówno emituje światło, jak i jest oświetlany przez zewnętrzne źródło światła"
+              }
+            },
+            {
+              "if": "luminous=yes",
+              "then": {
+                "en": "This object emits light",
+                "ca": "Aquest objecte emet llum",
+                "cs": "Tento objekt vyzařuje světlo",
+                "de": "Das Objekt leuchtet selbst",
+                "es": "Este objeto emite luz",
+                "fr": "Cet objet émet de la lumière",
+                "pl": "Ten obiekt emituje światło"
+              },
+              "addExtraTags": [
+                "lit=no"
+              ]
+            },
+            {
+              "if": "lit=yes",
+              "then": {
+                "en": "This object is lit externally, e.g. by a spotlight or other lights",
+                "ca": "Aquest objecte està il·luminat externament, p.e. amb un focus o altres llums",
+                "cs": "Tento objekt je osvětlen zvenčí, např. pomocí reflektoru nebo jiných světel",
+                "de": "Das Objekt wird von außen beleuchtet, z. B. durch Scheinwerfer oder andere Lichter",
+                "es": "Este objeto recibe iluminación, por ejemplo por un foco u otras luces",
+                "fr": "Cet objet est éclairé par l'extérieur, par ex. par un projecteur ou d'autres lumières",
+                "pl": "Ten obiekt jest oświetlony zewnętrznie, np. przez reflektor lub inne światła"
+              },
+              "addExtraTags": [
+                "luminous=no"
+              ]
+            },
+            {
+              "if": {
+                "and": [
+                  "lit=no",
+                  "luminous=no"
+                ]
+              },
+              "then": {
+                "en": "This object does not emit light and is not lighted by externally",
+                "ca": "Aquest objecte no emet llum i no està il·luminat externament",
+                "cs": "Tento objekt nevyzařuje světlo a není osvětlen zvenčí",
+                "de": "Das Objekt wird weder von außen beleuchtet, noch leuchtet es selbst",
+                "es": "Este objeto ni emite luz ni es iluminado",
+                "fr": "Cet objet n'émet pas de lumière et n'est pas éclairé par l'extérieur",
+                "pl": "Obiekt ten nie emituje światła i nie jest oświetlany z zewnątrz"
+              }
+            }
+          ],
+          "condition": {
+            "#": "A screen is always luminous",
+            "and": [
+              "advertising!=screen"
+            ]
+          }
+        },
+        {
+          "id": "operator",
+          "render": {
+            "ca": "L'operador és {operator}",
+            "es": "El operador es {operator}",
+            "en": "Operated by {operator}",
+            "de": "Betrieben von {operator}",
+            "cs": "Provozuje {operator}",
+            "fr": "Exploité par {operator}",
+            "nl": "Uitgebaat door {operator}",
+            "pt": "Operado por {operator}",
+            "pt_BR": "Operado por {operator}",
+            "he": "מופעל על ידי {operator}",
+            "pl": "Obsługiwane przez {operator}",
+            "zh_Hans": "由{operator}运营"
+          },
+          "question": {
+            "ca": "Qui opera aquest element?",
+            "es": "¿Quien opera este elemento?",
+            "en": "Who operates this feature?",
+            "de": "Wer betreibt dieses Objekt?",
+            "cs": "Kdo tento objekt provozuje?",
+            "fr": "Qui exploite ce dispositif ?",
+            "nl": "Wie baat dit object uit?",
+            "pt": "Quem opera esse elemento?",
+            "he": "מי מפעיל את התכונה הזו?",
+            "pl": "Kto obsługuje ten obiekt?",
+            "pt_BR": "Quem opera este recurso?",
+            "zh_Hans": "谁操作此物件？"
+          },
+          "freeform": {
+            "addExtraTags": [],
+            "key": "operator",
+            "inline": true
+          }
+        },
+        {
+          "id": "message_type",
+          "question": {
+            "ca": "Quin tipus de missatge es mostra?",
+            "es": "Que tipo de mensaje se muestra?",
+            "en": "What kind of message is shown?",
+            "de": "Welche Art von Nachricht wird angezeigt?",
+            "cs": "Jaký typ zprávy je zobrazen?",
+            "nl": "Wat voor boodschap wordt hier getoond?",
+            "fr": "Quel est le type de message affiché ?",
+            "pt": "Que tipo de mensagem é mostrada?",
+            "he": "איזה סוג הודעה מוצגת?",
+            "pl": "Jaki rodzaj wiadomości jest pokazany?",
+            "pt_BR": "Que tipo de mensagem é exibido?",
+            "zh_Hans": "显示什么样的消息？"
+          },
+          "mappings": [
+            {
+              "if": "message=commercial",
+              "ifnot": "message=",
+              "then": {
+                "ca": "Missatge comercial",
+                "es": "Mensaje comercial",
+                "en": "Commercial message",
+                "de": "Werbebotschaft",
+                "cs": "Komerční sdělení",
+                "fr": "Message commercial",
+                "pt": "Mensagem comercial",
+                "pt_BR": "Mensagem comercial",
+                "he": "מסר מסחרי",
+                "nl": "Commerciële boodschap",
+                "pl": "Wiadomość komercyjna",
+                "zh_Hans": "商业留言"
+              }
+            },
+            {
+              "if": "message=local",
+              "ifnot": "message=",
+              "then": {
+                "ca": "Informació municipal",
+                "es": "Información municipal",
+                "en": "Local information",
+                "de": "Lokale Informationen",
+                "cs": "Místní informace",
+                "fr": "Informations locales",
+                "pt": "Informação local",
+                "he": "מידע מקומי",
+                "nl": "Lokale informatie",
+                "pl": "Informacja lokalna",
+                "pt_BR": "Informações locais",
+                "zh_Hans": "本地信息"
+              }
+            },
+            {
+              "if": "message=safety",
+              "ifnot": "message=",
+              "then": {
+                "ca": "Informació de seguretat",
+                "es": "Información de seguridad",
+                "en": "Security information",
+                "de": "Sicherheitsinformationen",
+                "cs": "Bezpečnostní informace",
+                "fr": "Information de sécurité",
+                "pt": "Informação segura",
+                "he": "מידע אבטחה",
+                "pl": "Informacje dotyczące bezpieczeństwa",
+                "pt_BR": "Informações de segurança",
+                "zh_Hans": "安全信息"
+              },
+              "hideInAnswer": {
+                "and": [
+                  "advertising=flag"
+                ]
+              }
+            },
+            {
+              "if": "message=political",
+              "ifnot": "message=",
+              "then": {
+                "ca": "Publicitat electoral",
+                "es": "Publicidad electoral",
+                "en": "Electoral advertising",
+                "de": "Wahlwerbung",
+                "cs": "Volební reklama",
+                "fr": "Propagande électorale",
+                "pt": "Propaganda eleitoral",
+                "he": "פרסום בחירות",
+                "pl": "Reklamy wyborcze",
+                "pt_BR": "Propaganda eleitoral",
+                "zh_Hans": "选举广告"
+              }
+            },
+            {
+              "if": "message=showbiz",
+              "ifnot": "message=",
+              "then": {
+                "ca": "Informació sobre teatres, concerts, …",
+                "es": "Información sobre teatros, conciertos, …",
+                "en": "Information related to theatre, concerts, …",
+                "de": "Informationen über Theater, Konzerte, …",
+                "cs": "Informace týkající se divadla, koncertů, …",
+                "fr": "Informations liées au théâtre, à des concerts, …",
+                "nl": "Informatie over cultuurevenementen zoals theaters, optredens, …",
+                "pt": "Informações relacionadas com teatro, concertos, ...",
+                "he": "מידע הקשור לתיאטרון, קונצרטים,…",
+                "eu": "Antzerkiari, kontzertuei eta abarri buruzko informazioa",
+                "pl": "Informacje dotyczące teatru, koncertów, …",
+                "pt_BR": "Informações relacionadas a teatro, concertos, …",
+                "zh_Hans": "与戏剧、音乐会等相关的信息……"
+              },
+              "hideInAnswer": {
+                "and": [
+                  "advertising=flag"
+                ]
+              }
+            },
+            {
+              "if": "message=non_profit",
+              "ifnot": "message=",
+              "then": {
+                "ca": "Missatge d'organitzacions sense ànim de lucre",
+                "es": "Mensaje de organizaciones sin ánimo de lucro",
+                "en": "Message from non-profit organizations",
+                "de": "Nachricht von gemeinnützigen Organisationen",
+                "cs": "Zpráva od neziskových organizací",
+                "fr": "Message d'organisations sans but lucratif",
+                "nl": "Boodschap van NGO-organisaties",
+                "pt": "Mensagem de organizações sem fins lucrativos",
+                "pl": "Wiadomość od organizacji non-profit",
+                "pt_BR": "Mensagens de organizações sem fins lucrativos",
+                "zh_Hans": "来自非营利组织的消息"
+              }
+            },
+            {
+              "if": "message=opinion",
+              "ifnot": "message=",
+              "then": {
+                "ca": "Per a expressar la teua opinió",
+                "es": "Exprese su opinión",
+                "en": "To express your opinion",
+                "de": "Um Ihre Meinung zu äußern",
+                "cs": "Pro vyjádření vašeho názoru",
+                "fr": "Expression d'opinion",
+                "pt": "Para expressar sua opinião",
+                "pl": "Żeby wyrazić swoją opinię",
+                "pt_BR": "Para expressar sua opinião",
+                "zh_Hans": "表达您的意见"
+              },
+              "hideInAnswer": {
+                "or": [
+                  "advertising=flag",
+                  "advertising=screen"
+                ]
+              }
+            },
+            {
+              "if": "message=religion",
+              "ifnot": "message=",
+              "then": {
+                "ca": "Missatge religiós",
+                "es": "Mensaje religioso",
+                "en": "Religious message",
+                "de": "Religiöse Botschaft",
+                "cs": "Náboženská zpráva",
+                "fr": "Message religieux",
+                "nl": "Religieuze boodschap",
+                "pt": "Mensagem religiosa",
+                "pt_BR": "Mensagem religiosa",
+                "he": "מסר דתי",
+                "pl": "Przekaz religijny",
+                "zh_Hans": "宗教讯息"
+              }
+            },
+            {
+              "if": "message=funding",
+              "ifnot": "message=",
+              "then": {
+                "ca": "Cartell de financiació",
+                "es": "Cartel de financiación",
+                "en": "Funding sign",
+                "de": "Finanzierungsschild",
+                "cs": "Cedule pro financování",
+                "pt": "sinal de financiamento",
+                "pl": "Znak finansowania",
+                "pt_BR": "Placa de financiamento",
+                "zh_Hans": "资助标志"
+              },
+              "hideInAnswer": {
+                "or": [
+                  "advertising=flag",
+                  "advertising=column"
+                ]
+              }
+            },
+            {
+              "if": "information=map",
+              "ifnot": "information=",
+              "then": {
+                "en": "A map",
+                "ca": "Un mapa",
+                "es": "Un mapa",
+                "de": "eine Karte",
+                "cs": "Mapa",
+                "fr": "Une carte",
+                "nl": "Een kaart",
+                "pt": "Um mapa",
+                "pt_BR": "Um mapa",
+                "pl": "Mapa",
+                "zh_Hans": "地图"
+              }
+            }
+          ],
+          "multiAnswer": true
+        },
+        {
+          "id": "Sides",
+          "condition": {
+            "and": [
+              "_referencing_ways=",
+              {
+                "or": [
+                  "advertising=poster_box",
+                  "advertising=screen",
+                  "advertising=billboard"
+                ]
+              }
+            ]
+          },
+          "question": {
+            "ca": "Per quants costats pots veure publicitat?",
+            "es": "¿Por cuantos lados puedes ver publicidad?",
+            "en": "From how many sides you can watch advertisments?",
+            "de": "Auf wie vielen Seiten wird Werbung angezeigt?",
+            "cs": "Z kolika stran můžete vidět reklamy?",
+            "fr": "Sur combien de côtés peut-on voir de la publicité ?",
+            "pt": "De quantos lados você pode assistir a anúncios?",
+            "eu": "Zenbat aldetatik ikus dezakezu publizitatea?",
+            "pl": "Z ilu stron można oglądać reklamy?",
+            "pt_BR": "De quantos lados você consegue visualizar os anúncios?",
+            "zh_Hans": "您可以从几个侧面观看广告？"
+          },
+          "mappings": [
+            {
+              "if": "sides=1",
+              "then": {
+                "en": "This object has advertisements on a single side",
+                "ca": "Aquest mupi té publicitat a un únic costat",
+                "es": "Este mupi tiene publicidad en un único lado",
+                "de": "Werbung wird nur auf einer Seite angezeigt",
+                "cs": "Tento objekt má reklamy na jedné straně",
+                "fr": "Cet objet a de la publicité sur un seul côté",
+                "pt": "Este objeto tem anúncios em um único lado",
+                "eu": "Objektu honek iragarkiak ditu alde bakar batean",
+                "pl": "Ten obiekt ma reklamy po jednej stronie",
+                "pt_BR": "Este objeto tem anúncios em um único lado",
+                "zh_Hans": "该物体单面有广告",
+                "it": "Questo oggetto ha la pubblicità solo da un lato"
+              }
+            },
+            {
+              "if": "sides=2",
+              "then": {
+                "en": "This object has advertisements on both sides",
+                "ca": "Aquest mupi té publicitat pels dos costas",
+                "es": "Este objeto tiene publicidad por los dos lados",
+                "de": "Werbung wird auf beiden Seiten angezeigt",
+                "cs": "Tento objekt má reklamy na obou stranách",
+                "fr": "Cet objet a de la publicité des deux côtés",
+                "pt": "Este objeto tem anúncios em ambos os lados",
+                "eu": "Objektu honek iragarkiak ditu bi aldeetan",
+                "pl": "Ten obiekt ma reklamy po dwóch stronach",
+                "pt_BR": "Este objeto tem anúncios em ambos os lados",
+                "zh_Hans": "该物体双面有广告"
+              }
+            }
+          ]
+        },
+        {
+          "id": "ref",
+          "render": {
+            "ca": "El número de referència és {ref}",
+            "es": "El número de referencia es {ref}",
+            "en": "Reference number is {ref}",
+            "de": "Die Referenznummer lautet {ref}",
+            "cs": "Referenční číslo je {ref}",
+            "fr": "Le numéro de référence est {ref}",
+            "nl": "Het referentienummer is {ref}",
+            "pt": "O número de referência é {ref}",
+            "pt_BR": "O número de referência é {ref}",
+            "pl": "Numer referencyjny to {ref}",
+            "zh_Hans": "编号是{ref}"
+          },
+          "question": {
+            "ca": "Quin és el número de refèrencia?",
+            "es": "¿Cual es el número de referencia?",
+            "en": "Wich is the reference number?",
+            "de": "Wie lautet die Referenznummer?",
+            "cs": "Jaké je referenční číslo?",
+            "fr": "Quel est le numéro de référence ?",
+            "nl": "Wat is het referentienummer?",
+            "pt": "Qual é o número de referência?",
+            "pl": "Jaki jest numer referencyjny?",
+            "pt_BR": "Qual é o número de referência?",
+            "zh_Hans": "编号是多少？"
+          },
+          "freeform": {
+            "key": "ref",
+            "inline": true
+          },
+          "condition": {
+            "and": [
+              "advertising!=sign"
+            ]
+          }
+        },
+        {
+          "id": "leftover-questions",
+          "render": {
+            "*": "{questions( ,)}"
+          }
+        },
+        {
+          "id": "lod",
+          "labels": [
+            "added_by_default"
+          ],
+          "render": {
+            "*": "{linked_data_from_website()}"
+          }
+        },
+        {
+          "id": "minimap",
+          "description": "Shows a small map with the feature. Added by default to every popup",
+          "render": {
+            "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+          }
+        },
+        {
+          "id": "move-button",
+          "render": {
+            "*": "{move_button()}"
+          }
+        },
+        {
+          "id": "delete-button",
+          "render": {
+            "*": "{delete_button()}"
+          }
+        },
+        {
+          "id": "last_edit",
+          "labels": [
+            "added_by_default"
+          ],
+          "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+          "condition": {
+            "and": [
+              "_last_edit:contributor~*",
+              "_last_edit:changeset~*"
+            ]
+          },
+          "metacondition": {
+            "or": [
+              "__featureSwitchIsTesting=true",
+              "__featureSwitchIsDebugging=true",
+              "mapcomplete-show_debug=yes",
+              "_csCount>=10"
+            ]
+          },
+          "render": {
+            "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+          }
+        },
+        {
+          "id": "favourite_status",
+          "render": {
+            "*": "{favourite_status()}"
+          }
+        },
+        {
+          "id": "qr_code",
+          "labels": [
+            "added_by_default"
+          ],
+          "classes": "flex items-center gap-x-2",
+          "render": {
+            "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+            "en": "{qr_code()}Scan this code to open this location on another device",
+            "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+            "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+          }
+        },
+        {
+          "id": "share",
+          "labels": [
+            "added_by_default"
+          ],
+          "metacondition": "_supports_sharing=yes",
+          "render": {
+            "de": "{share_link(,Standort teilen)}",
+            "en": "{share_link(,Share this location)}",
+            "nl": "{share_link(,Deel deze locatie)}"
+          }
+        },
+        {
+          "id": "all-tags",
+          "render": {
+            "*": "{all_tags()}"
+          },
+          "metacondition": {
+            "or": [
+              "__featureSwitchIsDebugging=true",
+              "mapcomplete-show_tags=full",
+              "mapcomplete-show_debug=yes"
+            ]
+          }
+        }
+      ],
+      "deletion": {},
+      "allowMove": {
+        "enableImproveAccuracy": true,
+        "enableRelocation": false
+      },
+      "titleIcons": [
+        {
+          "id": "wikipedialink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+          "condition": {
+            "or": [
+              "wikipedia~*",
+              "wikidata~*"
+            ]
+          },
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "wikipedia=",
+              "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+            }
+          ]
+        },
+        {
+          "id": "open_until",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "#": "Titleicon showing e.g. 'open until 17:00'",
+          "icon": {
+            "class": "w-20 mx-1 flex items-center"
+          },
+          "render": "{opening_hours_state()}",
+          "condition": {
+            "or": [
+              "opening_hours~*",
+              {
+                "or": [
+                  {
+                    "and": [
+                      "seasonal~.*winter.*",
+                      "_now:date~....-(12|01|02)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*spring.*",
+                      "_now:date~....-(03|04|05)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*summer.*",
+                      "_now:date~....-(06|07|08)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*autumn.*",
+                      "_now:date~....-(09|10|11)-.."
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "phonelink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.render"
+          },
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "contact:phone~*",
+              "then": {
+                "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+                "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+                "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+                "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+              }
+            }
+          ],
+          "condition": {
+            "or": [
+              "phone~*",
+              "contact:phone~*"
+            ]
+          }
+        },
+        {
+          "id": "emaillink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "contact:email~*",
+              "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "operator:email~*",
+              "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+            }
+          ],
+          "condition": {
+            "or": [
+              "email~*",
+              "contact:email~*",
+              "operator:email~*"
+            ]
+          }
+        },
+        {
+          "id": "websitelink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "website~*",
+              "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "operator:website~*",
+              "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "context:website~*",
+              "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            }
+          ]
+        },
+        {
+          "id": "smokingicon",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "smoking=no",
+              "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "smoking=yes",
+              "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+            }
+          ]
+        },
+        {
+          "id": "dogicon",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "if": "dog=no",
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+            },
+            {
+              "if": "dog=leashed",
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+            },
+            {
+              "if": {
+                "or": [
+                  "dog=yes",
+                  "dog=unleashed"
+                ]
+              },
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+            }
+          ]
+        },
+        {
+          "id": "sharelink",
+          "labels": [
+            "defaults"
+          ],
+          "render": "{share_link()}",
+          "metacondition": "_supports_sharing=yes"
+        },
+        {
+          "id": "favourite_title_icon",
+          "labels": [
+            "defaults"
+          ],
+          "render": {
+            "*": "{favourite_icon()}"
+          },
+          "metacondition": "_loggedIn=true"
+        },
+        {
+          "id": "osmlink",
+          "labels": [
+            "defaults"
+          ],
+          "render": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.render"
+          },
+          "mappings": [
+            {
+              "if": "id~.*/-.*",
+              "then": ""
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "_backend~*",
+              "then": {
+                "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+                "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+                "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+                "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+              }
+            }
+          ],
+          "condition": "id~(node|way|relation)/[0-9]*"
+        },
+        {
+          "id": "direction",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "{direction_indicator()}"
+        }
+      ],
+      "_layerIcon": [
+        {
+          "icon": "./assets/themes/advertising/sign.svg"
+        }
+      ],
+      "_basedOn": "advertising",
+      "isCounted": false
+    },
+    {
+      "id": "walls_and_buildings",
+      "description": "This layer is needed by ghostsigns because a preset snaps to this layer (at presets[0])",
+      "source": {
+        "osmTags": {
+          "and": [
+            {
+              "or": [
+                "barrier=wall",
+                "building~*"
+              ]
+            }
+          ]
+        }
+      },
+      "calculatedTags": [
+        "_entrance_properties=overlapWith(feat)('entrance')?.map(e => e.feat.properties)?.filter(p => p !== undefined && p.indoor !== 'door')",
+        "_entrance_properties_with_width=get(feat)('_entrance_properties')?.filter(p => p['width'] !== undefined)",
+        "_entrances_count=get(feat)('_entrance_properties').length",
+        "_entrances_count_without_width_count= get(feat)('_entrances_count') - get(feat)('_entrance_properties_with_width').length",
+        "_biggest_width= Math.max( get(feat)('_entrance_properties').map(p => p.width))",
+        "_biggest_width_properties= /* Can be a list! */ get(feat)('_entrance_properties').filter(p => p.width === get(feat)('_biggest_width'))",
+        "_biggest_width_id=get(feat)('_biggest_width_properties').id"
+      ],
+      "isCounted": false,
+      "minzoom": 18,
+      "shownByDefault": false,
+      "title": {
+        "render": {
+          "en": "Wall or building",
+          "nl": "Muur of gebouw",
+          "de": "Wand oder Gebäude",
+          "es": "Pared o edificio",
+          "fr": "Mur ou bâtiment",
+          "da": "Mur eller bygning",
+          "ca": "Paret o edifici",
+          "cs": "Zeď nebo budova"
+        }
+      },
+      "pointRendering": null,
+      "lineRendering": [
+        {
+          "color": "#fff",
+          "fill": "no",
+          "width": "3"
+        },
+        {
+          "color": "#333",
+          "fill": "no",
+          "width": "2"
+        }
+      ],
+      "passAllFeatures": true,
+      "tagRenderings": [
+        {
+          "id": "just_created",
+          "labels": [
+            "added_by_default"
+          ],
+          "description": "This element shows a 'thank you' that the contributor has recently created this element",
+          "classes": "rounded-xl thanks",
+          "mappings": [
+            {
+              "if": "id~*",
+              "icon": "./assets/svg/party.svg",
+              "then": {
+                "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+                "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+                "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+                "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+                "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+                "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+              }
+            }
+          ],
+          "condition": {
+            "and": [
+              "_backend~*",
+              "_last_edit:passed_time<300",
+              {
+                "or": [
+                  "_version_number=",
+                  "_version_number=1"
+                ]
+              }
+            ]
+          },
+          "metacondition": {
+            "and": [
+              {
+                "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+                "or": [
+                  "_last_edit:contributor:uid:={_uid}",
+                  "_last_edit:contributor:uid="
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "entrance_info",
+          "render": {
+            "ca": "<h3>Entrades</h3>Aquest edifici té {_entrances_count} entrades:{multi(_entrance_properties_with_width,Una <a href='#&LBRACEid&RBRACE'>entrada </a> de &LBRACEcanonical&LPARENSwidth&RPARENS&RBRACE,)}{_entrances_count_without_width_count} entrades encara no tenen informació d'amplada",
+            "cs": "<h3>Vchody</h3>Tato budova má {_entrances_count} vchodů:{multi(_entrance_properties_with_width,<a href='#&LBRACEid&RBRACE'>vchod</a> &LBRACEcanonical&LPARENSwidth&RPARENS&RBRACE,)}{_entrances_count_without_width_count} vchody zatím nemají informace o šířce",
+            "da": "<h3>Indgange</h3>Denne bygning har {_entrances_count} indgange:{multi(_entrance_properties_with_width,En <a href='#&LBRACEid&RBRACE'>indgang</a> på &LBRACEcanonical&LPARENSwidth&RPARENS&RBRACE,)}{_entrances_count_without_width_count} indgange har endnu ikke oplysninger om bredde",
+            "de": "<h3>Eingänge</h3>Das Gebäude hat {_entrances_count} Eingänge:{multi(_entrance_properties_with_width,Ein <a href='#&LBRACEid&RBRACE'>Eingang</a> von &LBRACEcanonical&LPARENSwidth&RPARENS&RBRACE,)}{_entrances_count_without_width_count} Eingänge haben keine Angaben zur Breite",
+            "en": "<h3>Entrances</h3>This building has {_entrances_count} entrances:{multi(_entrance_properties_with_width,An <a href='#&LBRACEid&RBRACE'>entrance</a> of &LBRACEcanonical&LPARENSwidth&RPARENS&RBRACE,)}{_entrances_count_without_width_count} entrances don't have width information yet",
+            "nl": "<h3>Ingangen</h3>Dit gebouw heeft {_entrances_count} ingangen:{multi(_entrance_properties_with_width,Een <a href='#&LBRACEid&RBRACE'>ingang</a> van &LBRACEcanonical&LPARENSwidth&RPARENS&RBRACE,)}{_entrances_count_without_width_count} ingangen hebben nog geen informatie over de breedte"
+          },
+          "mappings": [
+            {
+              "if": "_entrances_count=0",
+              "then": {
+                "en": "No entrance has been marked",
+                "de": "Es wurde kein Eingang markiert",
+                "da": "Der er ikke markeret nogen indgang",
+                "nl": "Geen ingang is gemarkeerd",
+                "ca": "No s'ha senyalitzat cap entrada",
+                "cs": "Nebyl označen žádný vchod"
+              }
+            },
+            {
+              "if": "_entrances_count_without_width:=_entrances_count",
+              "then": {
+                "en": "None of the {_entrance_count} entrances have width information yet",
+                "de": "Keiner der {_entrance_count} Eingänge hat bisher Angaben zur Breite",
+                "da": "Ingen af {_entrance_count}-indgangene har oplysninger om bredde endnu",
+                "nl": "Geen van de {_entrance_count} ingangen hebben al informatie over de breedte",
+                "ca": "Cap de les {_entrance_count} entrades té informació d'amplada encara",
+                "cs": "Žádný z {_entrance_count} vchodů zatím nemá informace o šířce"
+              }
+            }
+          ]
+        },
+        {
+          "id": "biggest_width",
+          "render": "The <a href='#{_biggest_width_id}'>entrance with the biggest width</a> is {canonical(_biggest_width)} wide",
+          "condition": "_biggest_width_id~*"
+        },
+        {
+          "id": "leftover-questions",
+          "render": {
+            "*": "{questions( ,)}"
+          }
+        },
+        {
+          "id": "lod",
+          "labels": [
+            "added_by_default"
+          ],
+          "render": {
+            "*": "{linked_data_from_website()}"
+          }
+        },
+        {
+          "id": "minimap",
+          "description": "Shows a small map with the feature. Added by default to every popup",
+          "render": {
+            "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+          }
+        },
+        {
+          "id": "last_edit",
+          "labels": [
+            "added_by_default"
+          ],
+          "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+          "condition": {
+            "and": [
+              "_last_edit:contributor~*",
+              "_last_edit:changeset~*"
+            ]
+          },
+          "metacondition": {
+            "or": [
+              "__featureSwitchIsTesting=true",
+              "__featureSwitchIsDebugging=true",
+              "mapcomplete-show_debug=yes",
+              "_csCount>=10"
+            ]
+          },
+          "render": {
+            "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+          }
+        },
+        {
+          "id": "favourite_status",
+          "render": {
+            "*": "{favourite_status()}"
+          }
+        },
+        {
+          "id": "qr_code",
+          "labels": [
+            "added_by_default"
+          ],
+          "classes": "flex items-center gap-x-2",
+          "render": {
+            "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+            "en": "{qr_code()}Scan this code to open this location on another device",
+            "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+            "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+          }
+        },
+        {
+          "id": "share",
+          "labels": [
+            "added_by_default"
+          ],
+          "metacondition": "_supports_sharing=yes",
+          "render": {
+            "de": "{share_link(,Standort teilen)}",
+            "en": "{share_link(,Share this location)}",
+            "nl": "{share_link(,Deel deze locatie)}"
+          }
+        },
+        {
+          "id": "all-tags",
+          "render": {
+            "*": "{all_tags()}"
+          },
+          "metacondition": {
+            "or": [
+              "__featureSwitchIsDebugging=true",
+              "mapcomplete-show_tags=full",
+              "mapcomplete-show_debug=yes"
+            ]
+          }
+        }
+      ],
+      "units": [
+        {
+          "width": {
+            "quantity": "distance",
+            "denominations": [
+              "m",
+              "cm"
+            ]
+          },
+          "_biggest_width": {
+            "quantity": "distance",
+            "denominations": [
+              "m",
+              "cm"
+            ]
+          }
+        }
+      ],
+      "titleIcons": [
+        {
+          "id": "wikipedialink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+          "condition": {
+            "or": [
+              "wikipedia~*",
+              "wikidata~*"
+            ]
+          },
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "wikipedia=",
+              "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+            }
+          ]
+        },
+        {
+          "id": "open_until",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "#": "Titleicon showing e.g. 'open until 17:00'",
+          "icon": {
+            "class": "w-20 mx-1 flex items-center"
+          },
+          "render": "{opening_hours_state()}",
+          "condition": {
+            "or": [
+              "opening_hours~*",
+              {
+                "or": [
+                  {
+                    "and": [
+                      "seasonal~.*winter.*",
+                      "_now:date~....-(12|01|02)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*spring.*",
+                      "_now:date~....-(03|04|05)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*summer.*",
+                      "_now:date~....-(06|07|08)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*autumn.*",
+                      "_now:date~....-(09|10|11)-.."
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "phonelink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.render"
+          },
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "contact:phone~*",
+              "then": {
+                "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+                "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+                "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+                "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+              }
+            }
+          ],
+          "condition": {
+            "or": [
+              "phone~*",
+              "contact:phone~*"
+            ]
+          }
+        },
+        {
+          "id": "emaillink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "contact:email~*",
+              "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "operator:email~*",
+              "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+            }
+          ],
+          "condition": {
+            "or": [
+              "email~*",
+              "contact:email~*",
+              "operator:email~*"
+            ]
+          }
+        },
+        {
+          "id": "websitelink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "website~*",
+              "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "operator:website~*",
+              "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "context:website~*",
+              "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            }
+          ]
+        },
+        {
+          "id": "smokingicon",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "smoking=no",
+              "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "smoking=yes",
+              "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+            }
+          ]
+        },
+        {
+          "id": "dogicon",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "if": "dog=no",
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+            },
+            {
+              "if": "dog=leashed",
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+            },
+            {
+              "if": {
+                "or": [
+                  "dog=yes",
+                  "dog=unleashed"
+                ]
+              },
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+            }
+          ]
+        },
+        {
+          "id": "sharelink",
+          "labels": [
+            "defaults"
+          ],
+          "render": "{share_link()}",
+          "metacondition": "_supports_sharing=yes"
+        },
+        {
+          "id": "favourite_title_icon",
+          "labels": [
+            "defaults"
+          ],
+          "render": {
+            "*": "{favourite_icon()}"
+          },
+          "metacondition": "_loggedIn=true"
+        },
+        {
+          "id": "osmlink",
+          "labels": [
+            "defaults"
+          ],
+          "render": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.render"
+          },
+          "mappings": [
+            {
+              "if": "id~.*/-.*",
+              "then": ""
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "_backend~*",
+              "then": {
+                "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+                "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+                "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+                "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+              }
+            }
+          ],
+          "condition": "id~(node|way|relation)/[0-9]*"
+        },
+        {
+          "id": "direction",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "{direction_indicator()}"
+        },
+        {
+          "id": "rating",
+          "icon": {
+            "class": "w-20 mx-1 flex items-center"
+          },
+          "render": "{rating()}"
+        }
+      ],
+      "_layerIcon": [],
+      "forceLoad": true
+    },
+    {
+      "id": "note_import_ghostsigns",
+      "description": {
+        "ca": "Una capa que importa entrades per a Ghost Sign",
+        "cs": "Vrstva, která importuje položky pro Ghost Sign",
+        "da": "Et lag som importerer poster for Ghost Sign",
+        "de": "Eine Ebene, die Einträge für Geisterzeichen importiert",
+        "en": "A layer which imports entries for Ghost Sign",
+        "es": "Una capa que importar entradas para Ghost Sign",
+        "nl": "Deze laag toont kaart-nota's die wijzen op een Ghost Sign",
+        "pl": "Warstwa importująca wpisy dla Ghost Sign",
+        "zh_Hant": "能夠為 Ghost Sign 匯入項目的圖層",
+        "_context": "core:importLayer.description"
+      },
+      "source": {
+        "osmTags": {
+          "and": [
+            "id~[0-9]+",
+            "comment_url~.*notes/[0-9]*/comment.json"
+          ]
+        },
+        "geoJson": "https://api.openstreetmap.org/api/0.6/notes.json?limit=10000&closed=0&bbox={x_min},{y_min},{x_max},{y_max}",
+        "geoJsonZoomLevel": 10
+      },
+      "passAllFeatures": true,
+      "minzoom": 8,
+      "title": {
+        "render": {
+          "ca": "Pot ser que hi hagi a ghost sign aquí",
+          "cs": "Zde by mohl být a ghost sign",
+          "da": "Mulig a ghost sign",
+          "de": "Möglicherweise gibt es hier ein Geisterzeichen",
+          "en": "There might be a ghost sign here",
+          "es": "Puede haber una señal fantasma aquí",
+          "fi": "Tässä on ehkä a ghost sign",
+          "nb_NO": "Det kan være a ghost sign her",
+          "nl": "Is hier a ghost sign?",
+          "pl": "Tutaj może znajdować się a ghost sign",
+          "zh_Hant": "這裡可能有 a ghost sign",
+          "_context": "core:importLayer.popupTitle"
+        }
+      },
+      "calculatedTags": [
+        "_first_comment=get(feat)('comments')[0].text.toLowerCase()",
+        "_trigger_index=(() => {const lines = feat.properties['_first_comment'].split('\\n'); const matchesMapCompleteURL = lines.map(l => l.match(\".*https://mapcomplete.\\(org|osm.be\\)/\\([a-zA-Z_-]+\\)\\(.html\\)?.*#import\")); const matchedIndexes = matchesMapCompleteURL.map((doesMatch, i) => [doesMatch !== null, i]).filter(v => v[0]).map(v => v[1]); return matchedIndexes[0] })()",
+        "_comments_count=get(feat)('comments').length",
+        "_intro=(() => {const lines = get(feat)('comments')[0].text.split('\\n'); lines.splice(get(feat)('_trigger_index')-1, lines.length); return lines.filter(l => l !== '').join('<br/>');})()",
+        "_tags=(() => {let lines = get(feat)('comments')[0].text.split('\\n').map(l => l.trim()); lines.splice(0, get(feat)('_trigger_index') + 1); lines = lines.filter(l => l != ''); return lines.join(';');})()"
+      ],
+      "isShown": {
+        "and": [
+          "_trigger_index~*",
+          {
+            "or": [
+              {
+                "and": [
+                  "_tags~(^|.*;)historic=advertising($|;.*)",
+                  "_tags~(^|.*;)advertising=wall_painting($|;.*)"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "titleIcons": [
+        {
+          "render": "<a href='https://openstreetmap.org/note/{id}' target='_blank'><img src='./assets/svg/osm-logo-us.svg'></a>"
+        }
+      ],
+      "tagRenderings": [
+        {
+          "id": "Intro",
+          "render": "{_intro}"
+        },
+        {
+          "id": "conversation",
+          "render": "{visualize_note_comments(comments,1)}",
+          "condition": "_comments_count>1"
+        },
+        {
+          "id": "import",
+          "render": {
+            "ca": "{import_button(ghostsigns, _tags, he trobat un a ghost sign aquí; afegeix-lo al mapa,./assets/svg/addSmall.svg,,,id)}",
+            "cs": "{import_button(ghostsigns, _tags, Našel jsem a ghost sign zde - přidejte ji do mapy,./assets/svg/addSmall.svg,,,id)}",
+            "da": "{import_button(ghostsigns, _tags, Jeg har fundet en a ghost sign her - tilføj den til kortet,./assets/svg/addSmall.svg,,,id)}",
+            "de": "{import_button(ghostsigns, _tags, Ich habe hier ein(en) ein Geisterzeichen gefunden - Zur Karte hinzufügen,./assets/svg/addSmall.svg,,,id)}",
+            "en": "{import_button(ghostsigns, _tags, I have found a a ghost sign here - add it to the map,./assets/svg/addSmall.svg,,,id)}",
+            "es": "{import_button(ghostsigns,_tags, He encontrado un(a) una señal fantasma aquí - añádelo al mapa,./assets/svg/addSmall.svg,,,id)}",
+            "nl": "{import_button(ghostsigns, _tags, Ik heb hier een a ghost sign gevonden - voeg deze toe aan de kaart...,./assets/svg/addSmall.svg,,,id)}",
+            "pl": "{import_button(ghostsigns, _tags, odnalazłem tutaj a ghost sign - dodaj go do mapy,./assets/svg/addSmall.svg,,,id)}",
+            "zh_Hant": "{import_button(ghostsigns, _tags, 我在這邊發現 a ghost sign - 新增到地圖,./assets/svg/addSmall.svg,,,id)}",
+            "_context": "core:importLayer.importButton"
+          },
+          "condition": "closed_at="
+        },
+        {
+          "id": "close_note_",
+          "render": {
+            "ca": "{close_note(No he pogut trobar a ghost sign: esborra-ho, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "cs": "{close_note(Nepodařilo se mi najít a ghost sign - odstraňte jej, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "da": "{close_note(Jeg kunne ikke finde a ghost sign - fjern det, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "de": "{close_note(Ich konnte ein Geisterzeichen nicht finden - entferne es, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "en": "{close_note(I could not find a ghost sign - remove it, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "es": "{close_note(No he podido encontrar una señal fantasma - eliminarlo, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "nl": "{close_note(Ik kon hier geen a ghost sign vinden - verwijder deze van de kaart, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "pl": "{close_note(Nie mogłem odnaleźć a ghost sign – usuń go, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "zh_Hant": "{close_note(我無法找到 a ghost sign - 移除吧, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "_context": "core:importLayer.notFound"
+          },
+          "condition": "closed_at="
+        },
+        {
+          "id": "close_note_mapped",
+          "render": {
+            "ca": "{close_note(Ja hi ha un a ghost sign al mapa - aquest punt és un duplicat, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "cs": "{close_note(Na mapě se již nachází a ghost sign - tento bod je duplicitní, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "da": "{close_note(Der er allerede en anden a ghost sign på kortet - dette punkt er en dublet, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "de": "{close_note(Es gibt bereits einen ein Geisterzeichen auf der Karte - dieser Punkt ist ein Duplikat, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "en": "{close_note(There already is a ghost sign on the map - this point is a duplicate, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "es": "{close_note(una señal fantasma ya está en el mapa - este punto es un duplicado, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "nl": "{close_note(Er staat hier reeds a ghost sign op de kaart; dit punt is een duplicaat. Verwijder deze van de kaart, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "pl": "{close_note(Na mapie znajduje się już a ghost sign - ten punkt jest duplikatem, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "zh_Hant": "{close_note(a ghost sign 已經在地圖上了 - 這個點重覆了, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "_context": "core:importLayer.alreadyMapped"
+          },
+          "condition": "closed_at="
+        },
+        {
+          "id": "handled",
+          "render": {
+            "ca": "<div class=\"thanks\">Aquesta funció s'ha gestionat. Gràcies pel teu esforç.</div>",
+            "cs": "<div class='thanks'>Tato funkce byla zpracována! Děkujeme za vaši snahu</div>",
+            "da": "<div class=\"thanks\">Dette element er blevet håndteret! Tak for din indsats</div>",
+            "de": "<div class=\"thanks\">Dieses Objekt wurde verarbeitet! Vielen Dank für Ihre Bemühungen</div>",
+            "en": "<div class='thanks'>This feature has been handled! Thanks for your effort</div>",
+            "nb_NO": "<div class='thanks'>Denne funksjonen har blitt håndtert. Takk for din innsats.</div>",
+            "nl": "<div class='thanks'>Dit object is afgehandeld. Bedankt om mee te helpen!</div>",
+            "pl": "<div class='thanks'>Ta funkcja została obsłużona! Dziękujemy za Twój wysiłek</div>",
+            "zh_Hant": "<div class='thanks'>這個圖徵已經處理了！謝謝你的辛勞</div>",
+            "_context": "core:importLayer.importHandled"
+          },
+          "condition": "closed_at~*"
+        },
+        {
+          "id": "comment",
+          "render": "{add_note_comment()}"
+        },
+        {
+          "id": "add_image",
+          "render": "{add_image_to_note()}"
+        },
+        {
+          "id": "nearby_images",
+          "render": {
+            "ca": "<h3>Imatges properes</h3>Les imatges següents són imatges geoetiquetades properes de diversos serveis en línia. Us poden ajudar a resoldre aquesta nota.{nearby_images(open)}",
+            "cs": "<h3>Obrázky z okolí</h3>Následující obrázky jsou geograficky označené obrázky z různých online služeb. Mohly by vám pomoci při řešení této poznámky.{nearby_images(open)}",
+            "da": "<h3>Billeder i nærheden</h3>De følgende billeder er geotaggede billeder i nærheden fra forskellige onlinetjenester. De kan måske hjælpe dig med at løse denne note.{nearby_images(open)}",
+            "de": "<h3>Bilder in der Nähe</h3>Die folgenden Bilder sind mit Geotags versehene Bilder aus verschiedenen Online-Diensten in der Nähe. Sie können helfen, diesen Hinweis zu lösen.{nearby_images(open)}",
+            "en": "<h3>Nearby pictures</h3>The following pictures are nearby geotagged pictures from various online services. They might help you to resolve this note.{nearby_images(open)}",
+            "es": "<h3>Imágenes cercanas</h3> Las siguientes imágenes son imágenes geoetiquetadas cerca de varios servicios en línea. Pueden ayudarte a resolver esta nota. {nearby_images(open)}",
+            "nl": "<h3>Afbeeldingen in de buurt</h3>De volgende afbeeldingen zijn in de buurt gemaakt en kunnen mogelijks helpen. {nearby_images(open)}",
+            "pl": "<h3>Zdjęcia w pobliżu</h3>Poniższe zdjęcia to zdjęcia pobliskich obiektów z geotagami z różnych usług internetowych. Mogą pomóc Ci rozwiązać tę uwagę.{nearby_images(open)}",
+            "zh_Hant": "<h3>附近圖片</h3>接下來的圖片是多個第三方線上服務附近有地理標籤的圖片，也許能協助你解決這個註解。{nearby_images(open)}",
+            "_context": "core:importLayer.nearbyImagesIntro"
+          }
+        },
+        {
+          "id": "all_tags",
+          "render": "{all_tags()}",
+          "metacondition": {
+            "or": [
+              "__featureSwitchIsDebugging=true",
+              "mapcomplete-show_tags=full",
+              "mapcomplete-show_debug=yes"
+            ]
+          }
+        }
+      ],
+      "pointRendering": [
+        {
+          "location": [
+            "point"
+          ],
+          "marker": [
+            {
+              "icon": "circle",
+              "color": "#fff"
+            },
+            {
+              "icon": {
+                "render": "help",
+                "mappings": [
+                  {
+                    "if": {
+                      "or": [
+                        "closed_at~*",
+                        "_imported=yes"
+                      ]
+                    },
+                    "then": "checkmark"
+                  }
+                ]
+              },
+              "color": "#00"
+            }
+          ],
+          "iconSize": "40,40",
+          "anchor": "center"
+        }
+      ]
+    }
+  ],
+  "socialImage": "assets/SocialImage.png"
+}

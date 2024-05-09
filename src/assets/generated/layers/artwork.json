@@ -1,0 +1,2771 @@
+{
+  "id": "artwork",
+  "name": {
+    "en": "Artworks",
+    "nl": "Kunstwerken",
+    "fr": "Œuvres d'art",
+    "de": "Kunstwerke",
+    "id": "Karya seni",
+    "it": "Opere d’arte",
+    "ru": "Произведения искусства",
+    "es": "Obras de arte",
+    "ja": "美術品",
+    "zh_Hant": "藝術品",
+    "nb_NO": "Kunstverk",
+    "pt": "Obras de arte",
+    "hu": "Műalkotások",
+    "pl": "Dzieła sztuki",
+    "ca": "Obres d'art",
+    "da": "Kunstværker",
+    "cs": "Umělecká díla",
+    "pa_PK": "کلاکاری",
+    "he": "יצירות אמנות",
+    "eu": "Artelanak",
+    "pt_BR": "Obras de arte",
+    "zh_Hans": "艺术品"
+  },
+  "description": {
+    "en": "An open map of statues, busts, graffitis and other artwork all over the world",
+    "nl": "Een vrije kaart met standbeelden, bustes, graffiti en andere kunstwerken van over de hele wereld",
+    "fr": "Une carte ouverte de statues, bustes, graffitis et autres œuvres d'art de par le monde",
+    "de": "Eine freie Karte mit Statuen, Büsten, Graffitis und anderen Kunstwerken auf der ganzen Welt",
+    "it": "Diverse opere d’arte",
+    "ru": "Разнообразные произведения искусства",
+    "es": "Un mapa abierto de Estatuas, bustos, Graffitis y otras Obras de Arte en todo el mundo",
+    "ja": "多様な作品",
+    "zh_Hant": "顯示全世界的雕像、半身像、塗鴉以及其他類型的藝術品的地圖",
+    "id": "Peta terbuka patung, grafiti, dan karya seni lainnya di seluruh dunia",
+    "pt": "Um mapa aberto de estátuas, bustos, grafites e outras obras de arte em todo o mundo",
+    "hu": "Szobrok, mellszobrok, graffitik és egyéb műalkotások nyílt világtérképe",
+    "da": "Et åbent kort over statuer, buster, graffitis og andre kunstværker over hele verden",
+    "ca": "Un mapa obert d'estàtues, busts, grafitis i altres obres d'art del tot el món",
+    "cs": "Otevřená mapa soch, bust, graffiti a dalších uměleckých děl po celém světě",
+    "zh_Hans": "一个雕塑、半身像、涂鸦和其他全球艺术品的地图",
+    "nb_NO": "Statuer, byster, graffiti, og andre kunstverk verden over",
+    "zgh": "ⵢⴰⵜ ⵜⴽⴰⵕⴹⴰ ⵉⵕⵥⵎⵏ ⵅⴼ ⵉⵙⴼⵔⵉⵙⵏ, ⵉⵖⵔⴰⵙⵏ ⴷ ⵜⵡⵓⵔⵉⵡⵉⵏ ⵜⵉⵏⴰⵥⵓⵕⵉⵏ ⵢⴰⴹⵏⵉⵏ ⴳ ⵓⵎⴰⴹⴰⵍ",
+    "eu": "Estatuen, bustoen, graffitien eta mundu osoko beste artelan batzuen mapa irekia",
+    "pl": "Otwarta mapa posągów, popiersi, graffiti i innych dzieł sztuki z całego świata",
+    "pt_BR": "Um mapa aberto de estátuas, bustos, grafites e outras obras de arte em todo o mundo"
+  },
+  "source": {
+    "osmTags": {
+      "and": [
+        "tourism=artwork"
+      ]
+    }
+  },
+  "calculatedTags": [
+    "website:=feat.properties.website ?? feat.properties.url"
+  ],
+  "minzoom": 12,
+  "title": {
+    "render": {
+      "en": "Artwork",
+      "nl": "Kunstwerk",
+      "fr": "Œuvre d'art",
+      "de": "Kunstwerk",
+      "id": "Karya Seni",
+      "it": "Opera d’arte",
+      "ru": "Художественная работа",
+      "es": "Obra de arte",
+      "ja": "アートワーク",
+      "zh_Hant": "藝術品",
+      "nb_NO": "Kunstverk",
+      "fi": "Taideteos",
+      "gl": "Obra de arte",
+      "hu": "Műalkotás",
+      "pl": "Dzieło sztuki",
+      "pt": "Obra de arte",
+      "pt_BR": "Obra de arte",
+      "sv": "Konstverk",
+      "ca": "Obra d'art",
+      "da": "Kunstværk",
+      "cs": "Umělecké dílo",
+      "pa_PK": "کلاکاری",
+      "he": "יצירת אומנות",
+      "eu": "Artelana"
+    },
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": {
+          "en": "Artwork <i>{name}</i>",
+          "nl": "Kunstwerk <i>{name}</i>",
+          "fr": "Œuvre d'art <i>{name}</i>",
+          "de": "Kunstwerk <i>{name}</i>",
+          "id": "Karya Seni <i>{name}</i>",
+          "it": "Opera <i>{name}</i>",
+          "ru": "Художественная работа <i>{name}</i>",
+          "es": "Obra de arte <i>{name}</i>",
+          "ja": "アートワーク <i>{name}</i>",
+          "zh_Hant": "藝術品<i>{name}</i>",
+          "fi": "Taideteos <i>{name}</i>",
+          "gl": "Obra de arte <i>{name}</i>",
+          "hu": "Műalkotás <i>{name}</i>",
+          "nb_NO": "Kunstverk <i>{name}</i>",
+          "pl": "Dzieło sztuki <i>{name}</i>",
+          "pt": "Obra de arte <i>{name}</i>",
+          "pt_BR": "Obra de arte <i>{name}</i>",
+          "sv": "Konstverk <i>{name}</i>",
+          "da": "Kunstværk <i>{name}</i>",
+          "cs": "Umělecké dílo <i>{name}</i>",
+          "ca": "Obra d'art <i>{name}</i>",
+          "he": "יצירת אומנות <i>{name}</i>"
+        }
+      }
+    ]
+  },
+  "pointRendering": [
+    {
+      "marker": [
+        {
+          "icon": {
+            "render": "circle",
+            "id": "circle"
+          },
+          "color": "white"
+        },
+        {
+          "icon": {
+            "render": "./assets/themes/artwork/artwork.svg",
+            "id": "assetsthemesartworkartworksvg"
+          }
+        }
+      ],
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "iconBadges": [
+        {
+          "if": "_favourite=yes",
+          "then": "circle:white;heart:red"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#0000ff",
+      "width": "10"
+    }
+  ],
+  "presets": [
+    {
+      "tags": [
+        "tourism=artwork"
+      ],
+      "title": {
+        "en": "an artwork",
+        "nl": "een kunstwerk",
+        "fr": "une œuvre d'art",
+        "de": "ein Kunstwerk",
+        "it": "una opera d’arte",
+        "ru": "Художественная работа",
+        "es": "una obra de arte",
+        "ja": "アートワーク",
+        "zh_Hant": "藝術品",
+        "nb_NO": "en kunstverk",
+        "fi": "Taideteos",
+        "gl": "Obra de arte",
+        "hu": "Műalkotás",
+        "id": "Karya Seni",
+        "pl": "dzieło sztuki",
+        "pt": "uma obra de arte",
+        "pt_BR": "uma obra de arte",
+        "sv": "Konstverk",
+        "da": "et kunstværk",
+        "cs": "umělecké dílo",
+        "ca": "una obra d'art",
+        "zh_Hans": "一个艺术品"
+      }
+    },
+    {
+      "tags": [
+        "tourism=artwork"
+      ],
+      "title": {
+        "en": "an artwork on a wall",
+        "nl": "een kunstwerk op een muur",
+        "ca": "una obra d'art en una paret",
+        "de": "ein Kunstwerk an einer Wand",
+        "cs": "umělecké dílo na zdi",
+        "es": "Una obra de arte en la pared",
+        "fr": "une œuvre sur un mur",
+        "pl": "Dzieło sztuki na ścianie",
+        "pt_BR": "uma obra de arte em uma parede",
+        "zh_Hans": "一个墙上的艺术品",
+        "pt": "uma obra de arte numa parede"
+      },
+      "snapToLayer": [
+        "walls_and_buildings"
+      ]
+    }
+  ],
+  "tagRenderings": [
+    {
+      "id": "just_created",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "This element shows a 'thank you' that the contributor has recently created this element",
+      "classes": "rounded-xl thanks",
+      "mappings": [
+        {
+          "if": "id~*",
+          "icon": "./assets/svg/party.svg",
+          "then": {
+            "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+            "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+            "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+            "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+            "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+            "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+          }
+        }
+      ],
+      "condition": {
+        "and": [
+          "_backend~*",
+          "_last_edit:passed_time<300",
+          {
+            "or": [
+              "_version_number=",
+              "_version_number=1"
+            ]
+          }
+        ]
+      },
+      "metacondition": {
+        "and": [
+          {
+            "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+            "or": [
+              "_last_edit:contributor:uid:={_uid}",
+              "_last_edit:contributor:uid="
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "images",
+      "description": "This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images",
+      "render": {
+        "*": "{image_carousel()}{image_upload()}{nearby_images():my-4}"
+      },
+      "classes": "my-4"
+    },
+    {
+      "labels": [
+        "artwork-question"
+      ],
+      "render": {
+        "en": "This is a {artwork_type}",
+        "nl": "Dit is een {artwork_type}",
+        "fr": "Type d'œuvre : {artwork_type}",
+        "de": "Dies ist ein {artwork_type}",
+        "it": "Si tratta di un {artwork_type}",
+        "ru": "Это {artwork_type}",
+        "es": "Esta es un {artwork_type}",
+        "ja": "これは{artwork_type}です",
+        "zh_Hant": "這是 {artwork_type}",
+        "nb_NO": "Dette er et kunstverk av typen {artwork_type}",
+        "id": "Ini adalah {artwork_type}",
+        "pt": "Isto é um(a) {artwork_type}",
+        "hu": "Ez egy {artwork_type}",
+        "pl": "Jest to {artwork_type}",
+        "da": "Dette er en {artwork_type}",
+        "cs": "Toto je {artwork_type}",
+        "ca": "Aquesta és un {artwork_type}",
+        "he": "זהו {artwork_type}",
+        "pt_BR": "Isso é um(a) {artwork_type}"
+      },
+      "question": {
+        "en": "What is the type of this artwork?",
+        "nl": "Wat voor soort kunstwerk is dit?",
+        "fr": "Quel est le type de cette œuvre d'art ?",
+        "de": "Um welche Art Kunstwerk handelt es sich?",
+        "it": "Che tipo di opera d’arte è questo?",
+        "ru": "К какому типу относится эта работа?",
+        "es": "¿Qué tipo de obra es esta pieza?",
+        "ja": "この作品の種類は何ですか?",
+        "zh_Hant": "這是什麼類型的藝術品？",
+        "nb_NO": "Hvilken type kunstverk er dette?",
+        "id": "Apa jenis karya seni ini?",
+        "pt": "Qual é o tipo desta obra de arte?",
+        "hu": "Milyen fajta műalkotás ez?",
+        "pl": "Jakiego rodzaju jest to dzieło sztuki?",
+        "da": "Hvilken slags kunstværk er det?",
+        "cs": "Jaký je typ tohoto uměleckého díla?",
+        "ca": "Quin tipus d'obra és aquesta peça?",
+        "he": "מהו סוג היצירה הזו?",
+        "pt_BR": "Qual é o tipo dessa obra de arte?"
+      },
+      "freeform": {
+        "key": "artwork_type",
+        "addExtraTags": [
+          "fixme=Freeform field used for artwork type - doublecheck the value"
+        ],
+        "inline": true
+      },
+      "mappings": [
+        {
+          "if": "artwork_type=architecture",
+          "then": {
+            "en": "Architecture",
+            "nl": "Architectuur",
+            "fr": "Architecture",
+            "de": "Architektur",
+            "it": "Architettura",
+            "ru": "Архитектура",
+            "ja": "建物",
+            "zh_Hant": "建築物",
+            "nb_NO": "Arkitektur",
+            "id": "Arsitektur",
+            "pt": "Arquitetura",
+            "hu": "Építészet",
+            "pl": "Architektura",
+            "es": "Arquitectura",
+            "ca": "Arquitectura",
+            "da": "Arkitektur",
+            "cs": "Architektura",
+            "pt_BR": "Arquitetura",
+            "he": "אדריכלות",
+            "eu": "Arkitektura",
+            "zh_Hans": "建筑"
+          }
+        },
+        {
+          "if": "artwork_type=mural",
+          "then": {
+            "en": "Mural",
+            "nl": "Muurschildering",
+            "fr": "Peinture murale",
+            "de": "Wandbild",
+            "it": "Murale",
+            "ru": "Фреска",
+            "ja": "壁画",
+            "zh_Hant": "壁畫",
+            "nb_NO": "Veggmaleri",
+            "id": "Mural",
+            "pt": "Mural",
+            "hu": "Falfestmény",
+            "pl": "Mural",
+            "es": "Mural",
+            "ca": "Mural",
+            "da": "Vægmaleri",
+            "cs": "Nástěnná malba",
+            "pa_PK": "کندھ چتر",
+            "pt_BR": "Mural",
+            "he": "ציור קיר",
+            "eu": "Murala",
+            "zh_Hans": "壁画"
+          }
+        },
+        {
+          "if": "artwork_type=painting",
+          "then": {
+            "en": "Painting",
+            "nl": "Schilderij",
+            "fr": "Peinture",
+            "de": "Malerei",
+            "it": "Dipinto",
+            "ru": "Живопись",
+            "ja": "絵画",
+            "zh_Hant": "繪畫",
+            "nb_NO": "Maleri",
+            "id": "Lukisan",
+            "pt": "Pintura",
+            "hu": "Festmény",
+            "pl": "Obraz",
+            "es": "Pintura",
+            "ca": "Pintura",
+            "da": "Maleri",
+            "cs": "Malba",
+            "he": "ציור",
+            "eu": "Margolana",
+            "pt_BR": "Pintura",
+            "zh_Hans": "喷绘"
+          }
+        },
+        {
+          "if": "artwork_type=sculpture",
+          "then": {
+            "en": "Sculpture",
+            "nl": "Beeldhouwwerk",
+            "fr": "Sculpture",
+            "de": "Skulptur",
+            "it": "Scultura",
+            "ru": "Скульптура",
+            "ja": "彫刻",
+            "zh_Hant": "雕塑",
+            "nb_NO": "Skulptur",
+            "id": "Patung",
+            "pt": "Escultura",
+            "hu": "Absztrakt szobor",
+            "pl": "Rzeźba",
+            "es": "Escultura",
+            "ca": "Escultura",
+            "da": "Skulptur",
+            "cs": "Plastika",
+            "pa_PK": "مورتی",
+            "pt_BR": "Escultura",
+            "he": "פיסול",
+            "eu": "Eskultura",
+            "zh_Hans": "雕塑"
+          }
+        },
+        {
+          "if": "artwork_type=statue",
+          "then": {
+            "en": "Statue",
+            "nl": "Standbeeld",
+            "fr": "Statue",
+            "de": "Statue",
+            "it": "Statua",
+            "ru": "Статуя",
+            "ja": "彫像",
+            "zh_Hant": "雕像",
+            "nb_NO": "Statue",
+            "pt": "Estátua",
+            "hu": "Szobor",
+            "pl": "Posąg",
+            "es": "Estatua",
+            "ca": "Estàtua",
+            "da": "Statue",
+            "cs": "Socha",
+            "pt_BR": "Estátua",
+            "he": "פסל",
+            "eu": "Estatua",
+            "zh_Hans": "雕像"
+          }
+        },
+        {
+          "if": "artwork_type=bust",
+          "then": {
+            "en": "Bust",
+            "nl": "Buste",
+            "fr": "Buste",
+            "de": "Büste",
+            "it": "Busto",
+            "ru": "Бюст",
+            "ja": "胸像",
+            "zh_Hant": "半身像",
+            "nb_NO": "Byste",
+            "pt": "Busto",
+            "hu": "Mellszobor",
+            "pl": "Popiersie",
+            "es": "Busto",
+            "ca": "Bust",
+            "da": "Buste",
+            "cs": "Busta",
+            "pt_BR": "Busto",
+            "eu": "Bustoa",
+            "zh_Hans": "半身像"
+          }
+        },
+        {
+          "if": "artwork_type=stone",
+          "then": {
+            "en": "Stone",
+            "nl": "Steen",
+            "fr": "Rocher",
+            "de": "Stein",
+            "it": "Masso",
+            "ru": "Камень",
+            "ja": "石",
+            "zh_Hant": "石頭",
+            "nb_NO": "Stein",
+            "id": "Batu",
+            "pt": "Pedra",
+            "hu": "Kő",
+            "pl": "Skała",
+            "ca": "Pedra",
+            "es": "Piedra",
+            "da": "Sten",
+            "pa_PK": "پتھر",
+            "cs": "Kámen",
+            "pt_BR": "Pedra",
+            "he": "אבן",
+            "eu": "Harria",
+            "zh_Hans": "石头"
+          }
+        },
+        {
+          "if": "artwork_type=installation",
+          "then": {
+            "en": "Installation",
+            "nl": "Installatie",
+            "fr": "Installation",
+            "de": "Installation",
+            "it": "Istallazione",
+            "ru": "Инсталляция",
+            "ja": "インスタレーション",
+            "zh_Hant": "安裝",
+            "nb_NO": "Installasjon",
+            "id": "Instalasi",
+            "pt": "Instalação",
+            "hu": "Installáció",
+            "pl": "Instalacja artystyczna",
+            "es": "Instalación",
+            "ca": "Instal·lació",
+            "da": "Installation",
+            "cs": "Instalace",
+            "pt_BR": "Instalação",
+            "eu": "Instalazioa",
+            "zh_Hans": "设施"
+          }
+        },
+        {
+          "if": "artwork_type=graffiti",
+          "then": {
+            "en": "Graffiti",
+            "nl": "Graffiti",
+            "fr": "Graffiti",
+            "de": "Graffiti",
+            "it": "Graffiti",
+            "ru": "Граффити",
+            "ja": "落書き",
+            "zh_Hant": "塗鴨",
+            "nb_NO": "Graffiti",
+            "id": "Graffiti",
+            "pt": "Grafite",
+            "hu": "Graffiti",
+            "pl": "Graffiti",
+            "es": "Grafiti",
+            "ca": "Grafiti",
+            "da": "Graffiti",
+            "cs": "Grafiti",
+            "eu": "Graffitia",
+            "pt_BR": "Grafite",
+            "zh_Hans": "涂鸦/粗糙雕刻"
+          }
+        },
+        {
+          "if": "artwork_type=relief",
+          "then": {
+            "en": "Relief",
+            "nl": "Reliëf",
+            "fr": "Relief",
+            "de": "Relief",
+            "it": "Rilievo",
+            "ru": "Рельеф",
+            "ja": "レリーフ",
+            "zh_Hant": "寬慰",
+            "nb_NO": "Relieff",
+            "id": "Relief",
+            "pt": "Relevo",
+            "hu": "Dombormű",
+            "pl": "Płaskorzeźba",
+            "ca": "Relleu",
+            "es": "Relieve",
+            "da": "Relief",
+            "cs": "Reliéf",
+            "eu": "Erliebea",
+            "pt_BR": "Relevo"
+          }
+        },
+        {
+          "if": "artwork_type=azulejo",
+          "then": {
+            "en": "Azulejo (Spanish decorative tilework)",
+            "nl": "Azulejo (Spaanse siertegels)",
+            "fr": "Azulejo (faïence latine)",
+            "de": "Azulejo (spanische dekorative Fliesenarbeit)",
+            "it": "Azulejo (ornamento decorativo piastrellato spagnolo)",
+            "ru": "Азуле́жу (испанская роспись глазурованной керамической плитки)",
+            "ja": "Azulejo (スペインの装飾タイル)",
+            "zh_Hant": "Azulejo (西班牙雕塑作品名稱)",
+            "nb_NO": "Azulejo (Spansk dekorativt flisverk)",
+            "id": "Azulejo (ubin dekoratif Spanyol)",
+            "pt": "Azulejo (azulejo decorativo espanhol e português)",
+            "hu": "Azulejo (portugál vagy spanyol dekoratív csempe)",
+            "pl": "Azulejo (hiszpańskie płytka dekoracyjna)",
+            "es": "Azulejo (Baldosas decorativas Españolas y Portuguesas)",
+            "da": "Azulejo (spansk dekorativt flisebeklædning)",
+            "cs": "Azulejo (španělské dekorativní dlaždice)",
+            "ca": "Azulejo (Rajoles decoratives espanyoles i portugueses)",
+            "pt_BR": "Azulejo (Revestimento de azulejos decorativos espanhóis)",
+            "zh_Hans": "Azulejo（西班牙装饰瓷砖）"
+          }
+        },
+        {
+          "if": "artwork_type=tilework",
+          "then": {
+            "en": "Tilework",
+            "nl": "Tegelwerk",
+            "fr": "Carrelage",
+            "de": "Fliesenarbeit",
+            "it": "Mosaico di piastrelle",
+            "ru": "Плитка (мозаика)",
+            "ja": "タイルワーク",
+            "zh_Hant": "瓷磚",
+            "nb_NO": "Flisarbeid",
+            "pt": "Ladrilhos",
+            "hu": "Csempe",
+            "pl": "Płyta ceramiczna (fliza)",
+            "ca": "Enrajolat",
+            "es": "Cerámica",
+            "da": "flisebeklædning",
+            "cs": "Obklady a dlažba",
+            "he": "יצירת פסיפס",
+            "eu": "Keramika",
+            "pt_BR": "Azulejaria"
+          }
+        },
+        {
+          "if": "artwork_type=woodcarving",
+          "then": {
+            "nl": "Houtsculptuur",
+            "en": "Woodcarving",
+            "de": "Holzschnitzerei",
+            "cs": "Dřevořezba",
+            "pt": "Entalhe em madeira",
+            "fr": "Sculpture sur bois",
+            "nb_NO": "Treskjæring",
+            "ca": "Tallat a la fusta",
+            "es": "Tallado en madera",
+            "he": "גילוף בעץ",
+            "eu": "Egur taila",
+            "pl": "Rzeźbienie w drewnie",
+            "pt_BR": "Entalhe",
+            "it": "Scultura in legno"
+          }
+        }
+      ],
+      "id": "artwork-artwork_type"
+    },
+    {
+      "id": "artwork-artist-wikidata",
+      "labels": [
+        "artwork-question"
+      ],
+      "render": {
+        "en": "This artwork was made by {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}",
+        "de": "Dieses Kunstwerk wurde geschaffen von {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}",
+        "nl": "Dit kunstwerk is gemaakt door {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}",
+        "cs": "Toto dílo vytvořil {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}",
+        "pt": "Esta obra de arte foi feita por {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}",
+        "es": "Esta obra de arte la creó {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}",
+        "ca": "Aquesta obra d'art la va crear {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}",
+        "fr": "Cette oeuvre a été crée par {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}",
+        "pl": "To dzieło sztuki zostało zrobione przez {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}",
+        "pt_BR": "Essa obra de arte foi feita por {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}",
+        "zh_Hans": "此艺术作品由 {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)} 创建"
+      },
+      "question": {
+        "en": "Who made this artwork?",
+        "de": "Wer hat dieses Kunstwerk geschaffen?",
+        "nl": "Wie heeft dit kunstwerk gemaakt?",
+        "cs": "Kdo je autorem tohoto díla?",
+        "pt": "Quem fez essa obra de arte?",
+        "es": "¿Quién creó esta obra de arte?",
+        "fr": "Qui a fait cette oeuvre d'art ?",
+        "ca": "Qui va crear aquesta obra d'art?",
+        "nb_NO": "Hvem laget dette kunstverket?",
+        "he": "מי יצר את היצירה הזו?",
+        "pl": "Kto stworzył to dzieło sztuki?",
+        "pt_BR": "Quem fez essa obra de arte?",
+        "zh_Hans": "这件艺术品是谁创作的？"
+      },
+      "freeform": {
+        "key": "artist:wikidata",
+        "type": "wikidata",
+        "helperArgs": [
+          "artist_name",
+          {
+            "instanceOf": [
+              "Q5"
+            ]
+          }
+        ],
+        "inline": false
+      }
+    },
+    {
+      "question": {
+        "en": "Which artist created this?",
+        "nl": "Welke kunstenaar creëerde dit kunstwerk?",
+        "fr": "Quel artiste a créé cette œuvre ?",
+        "de": "Wer hat das Kunstwerk erschaffen?",
+        "it": "Quale artista ha creato quest’opera?",
+        "ru": "Какой художник создал это?",
+        "ja": "どのアーティストが作ったんですか?",
+        "zh_Hant": "創造這個的藝術家是誰？",
+        "nb_NO": "Hvilken artist lagde dette?",
+        "id": "Seniman mana yang menciptakan ini?",
+        "pt": "Que artista criou isto?",
+        "hu": "Melyik művész alkotása ezt?",
+        "pl": "Który artysta to stworzył?",
+        "es": "¿Que artista creó esto?",
+        "da": "Hvilken kunstner har lavet dette?",
+        "cs": "Který umělec to vytvořil?",
+        "ca": "Quin artista va crear açò?",
+        "pt_BR": "Que artista criou isto?",
+        "he": "איזה אמן יצר את זה?",
+        "zh_Hans": "这是哪位艺术家创作的？"
+      },
+      "render": {
+        "en": "Created by {artist_name}",
+        "nl": "Gecreëerd door {artist_name}",
+        "fr": "Créé par {artist_name}",
+        "de": "Erstellt von {artist_name}",
+        "it": "Creato da {artist_name}",
+        "ru": "Создано {artist_name}",
+        "ja": "作成者:{artist_name}",
+        "zh_Hant": "{artist_name} 創作",
+        "nb_NO": "Laget av {artist_name}",
+        "id": "Dibuat oleh {artist_name}",
+        "pt": "Criado por {artist_name}",
+        "hu": "Alkotó: {artist_name}",
+        "pl": "Stworzone przez {artist_name}",
+        "es": "Creado por {artist_name}",
+        "da": "Lavet af {artist_name}",
+        "cs": "Vytvořil {artist_name}",
+        "ca": "Creat per {artist_name}",
+        "he": "נוצר על ידי {artist_name}",
+        "pt_BR": "Criado por {artist_name}",
+        "zh_Hans": "由{artist_name}创建"
+      },
+      "freeform": {
+        "key": "artist_name",
+        "inline": true
+      },
+      "condition": {
+        "and": [
+          "artist:wikidata="
+        ]
+      },
+      "id": "artwork-artist_name",
+      "labels": [
+        "artwork-question"
+      ]
+    },
+    {
+      "question": {
+        "en": "Is there a website with more information about this artwork?",
+        "nl": "Is er een website met meer informatie over dit kunstwerk?",
+        "fr": "Existe-t-il un site web où trouver plus d'informations sur cette œuvre d'art ?",
+        "de": "Auf welcher Webseite gibt es weitere Informationen zum Kunstwerk?",
+        "it": "Esiste un sito web con maggiori informazioni su quest’opera?",
+        "ru": "Есть ли сайт с более подробной информацией об этой работе?",
+        "ja": "この作品についての詳しい情報はどのウェブサイトにありますか?",
+        "zh_Hant": "在那個網站能夠找到更多藝術品的資訊？",
+        "nb_NO": "Finnes det en nettside med mer info om dette kunstverket?",
+        "id": "Adakah situs web mengenai informasi lebih lanjut tentang karya seni ini?",
+        "pt": "Existe um site com mais informações sobre esta obra de arte?",
+        "hu": "Van-e olyan honlap, amely további információkat tartalmaz erről a műalkotásról?",
+        "pl": "Gdzie znajdę więcej informacji na temat tego dzieła sztuki?",
+        "es": "¿Hay un sitio web con más información sobre esta obra de arte?",
+        "da": "Er der et websted med mere information om dette kunstværk?",
+        "cs": "Existuje webová stránka s dalšími informacemi o tomto uměleckém díle?",
+        "ca": "Hi ha un lloc web amb més informació sobre aquesta obra d'art?",
+        "he": "האם יש אתר אינטרנט עם מידע נוסף על היצירה הזו?",
+        "pt_BR": "Há um website com mais informações sobre essa arte?"
+      },
+      "render": {
+        "ca": "{link(Més informació a aquesta pàgina web,&LBRACEwebsite&RBRACE,,,)}",
+        "cs": "{link(Více informací na této webové stránce,&LBRACEwebsite&RBRACE,,,)}",
+        "da": "{link(Yderligere oplysninger på  dette websted,&LBRACEwebsite&RBRACE,,,)}",
+        "de": "{link(Weitere Informationen auf dieser Webseite,&LBRACEwebsite&RBRACE,,,)}",
+        "en": "{link(More information on this website,&LBRACEwebsite&RBRACE,,,)}",
+        "es": "{link(Más información en este sitio web,&LBRACEwebsite&RBRACE,,,)}",
+        "fr": "{link(Plus d'info sûr ce site web,&LBRACEwebsite&RBRACE,,,)}",
+        "hu": "{link(További információ ezen a weboldalon,&LBRACEwebsite&RBRACE,,,)}",
+        "id": "{link(Info lanjut tersedia di laman web ini,&LBRACEwebsite&RBRACE,,,)}",
+        "it": "{link(Ulteriori informazioni su questo sito web,&LBRACEwebsite&RBRACE,,,)}",
+        "ja": "{link(Webサイトに詳細情報がある,&LBRACEwebsite&RBRACE,,,)}",
+        "nb_NO": "{link(Mer info er å finne på denne nettsiden,&LBRACEwebsite&RBRACE,,,)}",
+        "nl": "{link(Meer informatie op deze website,&LBRACEwebsite&RBRACE,,,)}",
+        "pl": "{link(Więcej informacji na tej stronie,&LBRACEwebsite&RBRACE,,,)}",
+        "pt": "{link(Mais informações neste site,&LBRACEwebsite&RBRACE,,,)}",
+        "pt_BR": "{link(Mais informações nesse website,&LBRACEwebsite&RBRACE,,,)}",
+        "ru": "{link(Больше информации на этом сайте,&LBRACEwebsite&RBRACE,,,)}",
+        "zh_Hant": "{link(這個網站有更多資訊,&LBRACEwebsite&RBRACE,,,)}"
+      },
+      "freeform": {
+        "key": "website",
+        "type": "url",
+        "addExtraTags": [
+          "url="
+        ],
+        "inline": true
+      },
+      "id": "artwork-website",
+      "labels": [
+        "artwork-question"
+      ],
+      "pl": {
+        "mappings": {
+          "0": {
+            "then": "To dzieło sztuki pełni również funkcję ławki"
+          },
+          "1": {
+            "then": "To dzieło sztuki nie pełni funkcji ławki"
+          },
+          "2": {
+            "then": "To dzieło sztuki nie pełni funkcji ławki"
+          }
+        },
+        "question": "Czy to dzieło sztuki pełni funkcję ławki?"
+      }
+    },
+    {
+      "id": "wikipedia",
+      "description": "Shows a wikipedia box with the corresponding wikipedia article; the wikidata-item link can be changed by a contributor",
+      "render": {
+        "*": "{wikipedia():max-height:25rem}"
+      },
+      "question": {
+        "en": "What is the corresponding Wikidata entity?",
+        "nl": "Welk Wikidata-item komt overeen met dit object?",
+        "de": "Wie lautet das zugehörige Wikidata Element?",
+        "pt": "Qual é a entidade Wikidata correspondente?",
+        "hu": "Mi a megfelelő Wikidata-elem?",
+        "it": "Qual è l’elemento Wikidata corrispondente?",
+        "nb_NO": "Hva er respektivt Wikipedia-element?",
+        "fr": "Quelle est l'entité Wikidata correspondante ?",
+        "ca": "Quina és la correspondent entitat a Wikidata?",
+        "sv": "Vad är den motsvarande Wikidata-enheten?",
+        "zh_Hant": "對應的維基資料項目是？",
+        "pl": "Jaki jest powiązany obiekt Wikidata?",
+        "ja": "対応するウィキデータのエンティティは何ですか？",
+        "fil": "Ano ang nau-ukol na entidad sa Wikidata?",
+        "es": "¿Cual es la entidad de Wikidata que se corresponde?",
+        "zh_Hans": "在Wikidata上对应的实体是什么？",
+        "da": "Hvad er den tilsvarende Wikidata-enhed?",
+        "id": "Apa entitas Wikidata yang sesuai?",
+        "cs": "Jaká je odpovídající entita Wikidata?"
+      },
+      "mappings": [
+        {
+          "if": "wikipedia~*",
+          "then": {
+            "*": "{wikipedia():max-height:25rem}",
+            "ca": "No hi ha cap enllaça a Viquipèdia encara",
+            "da": "Der er endnu ikke linket til nogen Wikipedia-side",
+            "de": "Es wurde noch keine Wikipedia-Seite verlinkt",
+            "en": "No Wikipedia page has been linked yet",
+            "es": "Todavía no se ha enlazado una página de wikipedia",
+            "fil": "Wala pang kawing ng Wikipedia page",
+            "fr": "Pas encore de lien vers une page Wikipedia",
+            "hu": "Még nincs Wikipédia-oldal belinkelve",
+            "it": "Nessuna pagina Wikipedia è ancora stata collegata",
+            "ja": "ウィキペディアのページはまだリンクされていません",
+            "nb_NO": "Ingen Wikipedia-side lenket enda",
+            "nl": "Er werd nog geen Wikipedia-pagina gekoppeld",
+            "pl": "Link do strony Wikipedii nie został jeszcze określony",
+            "pt": "Ainda não foi vinculada nenhuma página da Wikipédia",
+            "ru": "Никакой страницы на Википедии не было прикреплено",
+            "sv": "Ingen Wikipedia-sida har länkats än",
+            "zh_Hans": "尚未有连接到的维基百科页面",
+            "zh_Hant": "還沒有連結到維基百科頁面",
+            "id": "Belum ada halaman Wikipedia yang ditautkan",
+            "cs": "Žádná stránka na Wikipedii zatím nebyla propojena"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "wikidata=",
+          "then": {
+            "en": "No Wikipedia page has been linked yet",
+            "nl": "Er werd nog geen Wikipedia-pagina gekoppeld",
+            "de": "Es wurde noch keine Wikipedia-Seite verlinkt",
+            "pt": "Ainda não foi vinculada nenhuma página da Wikipédia",
+            "hu": "Még nincs Wikipédia-oldal belinkelve",
+            "it": "Nessuna pagina Wikipedia è ancora stata collegata",
+            "nb_NO": "Ingen Wikipedia-side lenket enda",
+            "fr": "Pas encore de lien vers une page Wikipedia",
+            "ca": "No hi ha cap enllaça a Viquipèdia encara",
+            "sv": "Ingen Wikipedia-sida har länkats än",
+            "zh_Hant": "還沒有連結到維基百科頁面",
+            "ru": "Никакой страницы на Википедии не было прикреплено",
+            "pl": "Link do strony Wikipedii nie został jeszcze określony",
+            "ja": "ウィキペディアのページはまだリンクされていません",
+            "fil": "Wala pang kawing ng Wikipedia page",
+            "es": "Todavía no se ha enlazado una página de wikipedia",
+            "zh_Hans": "尚未有连接到的维基百科页面",
+            "da": "Der er endnu ikke linket til nogen Wikipedia-side",
+            "id": "Belum ada halaman Wikipedia yang ditautkan",
+            "cs": "Žádná stránka na Wikipedii zatím nebyla propojena"
+          },
+          "hideInAnswer": true
+        }
+      ],
+      "freeform": {
+        "key": "wikidata",
+        "type": "wikidata",
+        "inline": true
+      }
+    },
+    {
+      "id": "artwork_subject",
+      "condition": {
+        "and": [
+          "subject:wikidata~*"
+        ]
+      },
+      "question": {
+        "en": "What does this artwork depict?",
+        "de": "Was zeigt dieses Kunstwerk?",
+        "nl": "Wat beeldt dit kunstwerk af?",
+        "cs": "Co zobrazuje toto umělecké dílo?",
+        "pt": "O que esta obra de arte representa?",
+        "es": "¿Qué representa esta obra de arte?",
+        "fr": "Que représente cette oeuvre d'art ?",
+        "ca": "Què representa aquesta obra d'art?",
+        "he": "מה מתארת היצירה הזו?",
+        "pl": "Co przedstawia to dzieło sztuki?",
+        "pt_BR": "O que esta obra de arte representa?",
+        "it": "Che cosa rappresenta quest'opera d'arte?"
+      },
+      "freeform": {
+        "key": "subject:wikidata",
+        "type": "wikidata",
+        "inline": false
+      },
+      "render": {
+        "en": "This artwork depicts {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}",
+        "de": "Das Kunstwerk zeigt {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}",
+        "nl": "Dit kunstwerk beeldt {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)} af",
+        "cs": "Toto dílo zobrazuje {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}",
+        "pt": "A obra de arte representa {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}",
+        "es": "Esta obra de arte representa {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}",
+        "nb_NO": "Dette kunstverket viser {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}",
+        "ca": "Aquesta obra d'art representa {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}",
+        "fr": "Cette œuvre dépeint {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}",
+        "pl": "To dzieło sztuki przedstawia {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}",
+        "pt_BR": "Essa arte representa {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}",
+        "it": "Quest'opera d'arte rappresenta {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}"
+      },
+      "labels": [
+        "artwork-question"
+      ]
+    },
+    {
+      "id": "doubles_as_bench",
+      "question": {
+        "en": "Does this artwork serve as a bench?",
+        "de": "Dient dieses Kunstwerk auch als Sitzbank?",
+        "fr": "Cette oeuvre d'art sert-elle de banc ?",
+        "nl": "Is dit kunstwerk ook een zitbank?",
+        "nb_NO": "Tjener dette kunstverket funksjonen som benk?",
+        "ca": "Aquesta obra d'art serveix com a un banc?",
+        "cs": "Slouží toto umělecké dílo jako lavička?",
+        "he": "האם היצירה הזו משמשת כספסל?",
+        "pl": "Czy to dzieło sztuki pełni funkcję ławki?",
+        "pt_BR": "Essa obra de arte serve como banco?",
+        "es": "¿Sirve esta obra de arte como banco?",
+        "pt": "Esta obra de arte serve como banco?",
+        "it": "Quest'opera d'arte funge da panchina?"
+      },
+      "mappings": [
+        {
+          "if": "amenity=bench",
+          "then": {
+            "en": "This artwork also serves as a bench",
+            "de": "Dieses Kunstwerk dient auch als Sitzbank",
+            "fr": "Cette oeuvre d'art sert aussi de banc",
+            "nl": "Dit kunstwerk doet ook dienst als zitbank",
+            "ca": "Aquesta obra d'art també serveix com a banc",
+            "cs": "Toto umělecké dílo slouží také jako lavička",
+            "he": "יצירה זו משמשת גם כספסל",
+            "pl": "To dzieło sztuki pełni również funkcję ławki",
+            "pt_BR": "Essa obra de arte também serve como banco",
+            "es": "Esta obra de arte también sirve de banco",
+            "pt": "Esta obra de arte também serve como banco",
+            "it": "Quest'opera d'arte funge anche da panchina"
+          }
+        },
+        {
+          "if": "amenity=",
+          "then": {
+            "en": "This artwork does not serve as a bench",
+            "de": "Dieses Kunstwerk dient nicht als Sitzbank",
+            "fr": "Cette oeuvre d'art ne sert pas de banc",
+            "nl": "Dit kunstwerk doet geen dienst als zitbank",
+            "nb_NO": "Dette kunstverket tjener ikke funksjonen som benk",
+            "ca": "Aquesta obra d'art no serveix com a banc",
+            "cs": "Toto umělecké dílo neslouží jako lavička",
+            "he": "יצירה זו אינה משמשת כספסל",
+            "pl": "To dzieło sztuki nie pełni funkcji ławki",
+            "pt_BR": "Essa obra de arte não serve como banco",
+            "es": "Esta obra no sirve de banco",
+            "pt": "Esta obra de arte não serve como banco",
+            "it": "Quest'opera d'arte non funge anche da panchina"
+          }
+        },
+        {
+          "if": "amenity!=bench",
+          "then": {
+            "en": "This artwork does not serve as a bench",
+            "de": "Dieses Kunstwerk dient nicht als Sitzbank",
+            "fr": "Cette oeuvre d'art ne sert pas de banc",
+            "nl": "Dit kunstwerk doet geen dienst als zitbank",
+            "nb_NO": "Dette kunstverket tjener ikke den hensikten å være en benk",
+            "ca": "Aquesta obra d'art no serveix com a un banc",
+            "cs": "Toto umělecké dílo neslouží jako lavička",
+            "he": "יצירה זו אינה משמשת כספסל",
+            "pl": "To dzieło sztuki nie pełni funkcji ławki",
+            "pt_BR": "Essa obra de arte não serve como banco",
+            "es": "Esta obra no sirve de banco",
+            "pt": "Esta obra de arte não serve como banco",
+            "it": "Quest'opera d'arte non funge anche da panchina"
+          },
+          "hideInAnswer": true
+        }
+      ]
+    },
+    {
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "backrest=yes",
+              "two_sided=yes"
+            ]
+          },
+          "then": {
+            "en": "This bench is two-sided and shares the backrest",
+            "nl": "Dit is een dubbele bank waarbij de rugleuning gedeeld wordt",
+            "de": "Diese Bank ist zweiseitig und teilt sich die Rückenlehne",
+            "ca": "Aquest banc té dues cares i comparteix el respatller",
+            "cs": "Tato lavička je oboustranná a má společné opěradlo",
+            "es": "Este banco tiene dos caras y comparte el respaldo",
+            "he": "ספסל זה דו צדדי וחולק את משענת הגב",
+            "fr": "Ce banc a deux côtés avec un dossier partagé",
+            "pl": "Ta ławka jest dwustronna ze wspólnym oparciem",
+            "pt_BR": "Esse banco é de dois lados e compartilha o encosto",
+            "pt": "Esse banco é de dois lados e partilha o encosto",
+            "_context": "layers:bench.tagRenderings.bench-backrest.mappings.0.then"
+          },
+          "icon": {
+            "path": "./assets/layers/bench/two_sided.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "backrest=yes",
+          "then": {
+            "en": "This bench does have a backrest",
+            "de": "Diese Sitzbank hat eine Rückenlehne",
+            "fr": "Dossier : Oui",
+            "nl": "Heeft een rugleuning",
+            "es": "Tiene respaldo",
+            "hu": "Van háttámlája",
+            "id": "Sandaran: Ya",
+            "it": "Schienale: Sì",
+            "ru": "Со спинкой",
+            "zh_Hans": "有靠背",
+            "zh_Hant": "靠背：有",
+            "nb_NO": "Rygglene: Ja",
+            "fi": "Selkänoja: kyllä",
+            "pl": "Oparcie: Tak",
+            "pt_BR": "Tem encosto",
+            "pt": "Encosto: Sim",
+            "ca": "Té espatller",
+            "da": "Har et ryglæn",
+            "cs": "Má opěradlo",
+            "he": "יש משענת גב",
+            "_context": "layers:bench.tagRenderings.bench-backrest.mappings.1.then"
+          },
+          "addExtraTags": [
+            "two_sided=no"
+          ]
+        },
+        {
+          "if": "backrest=no",
+          "addExtraTags": [
+            "two_sided="
+          ],
+          "then": {
+            "en": "This bench does <b>not</b> have a backrest",
+            "de": "Diese Sitzbank hat <b>keine</b> Rückenlehne",
+            "fr": "Dossier : Non",
+            "nl": "Heeft <b>geen</b> rugleuning",
+            "es": "<b>No</b> tiene respaldo",
+            "hu": "<b>Nincs</b> háttámlája",
+            "id": "Sandaran: Tidak",
+            "it": "Schienale: No",
+            "ru": "Без спинки",
+            "zh_Hans": "<b>没有</b>靠背",
+            "zh_Hant": "靠背：無",
+            "nb_NO": "Rygglene: Nei",
+            "fi": "Selkänoja: ei",
+            "pl": "<b>Nie</b> posiada oparcia",
+            "pt_BR": "<b>Não</b> tem encosto",
+            "pt": "Não <b>not</b> tem um encosto",
+            "ca": "<b>No</b> té espatller",
+            "da": "Har <b>ikke</b> et ryglæn",
+            "cs": "<b>nemá</b> opěradlo",
+            "_context": "layers:bench.tagRenderings.bench-backrest.mappings.2.then"
+          }
+        }
+      ],
+      "question": {
+        "en": "Does this bench have a backrest?",
+        "de": "Hat diese Sitzbank eine Rückenlehne?",
+        "fr": "Ce banc dispose-t-il d'un dossier ?",
+        "nl": "Heeft deze zitbank een rugleuning?",
+        "es": "¿Este banco tiene respaldo?",
+        "hu": "Van-e háttámlája ennek a padnak?",
+        "id": "Apakah bangku ini memiliki sandaran?",
+        "it": "Questa panchina ha lo schienale?",
+        "ru": "Есть ли у этой скамейки спинка?",
+        "zh_Hans": "这个长椅有靠背吗？",
+        "zh_Hant": "這個長椅是否有靠背？",
+        "nb_NO": "Har denne beken et rygglene?",
+        "pl": "Czy ta ławka ma oparcie?",
+        "pt_BR": "Esse banco tem um encosto?",
+        "pt": "Este assento tem um escosto?",
+        "da": "Har denne bænk et ryglæn?",
+        "cs": "Má tato lavička opěradlo?",
+        "ca": "Aquest banc té respatller?",
+        "he": "האם לספסל הזה יש משענת?",
+        "_context": "layers:bench.tagRenderings.bench-backrest.question"
+      },
+      "id": "bench-backrest",
+      "labels": [
+        "bench-questions"
+      ],
+      "condition": {
+        "and": [
+          "amenity=bench"
+        ]
+      }
+    },
+    {
+      "render": {
+        "en": "This bench has {seats} seats",
+        "de": "Diese Sitzbank hat {seats} Sitzplätze",
+        "fr": "{seats} places",
+        "nl": "{seats} zitplaatsen",
+        "es": "{seats} asientos",
+        "hu": "{seats} ülőhely",
+        "id": "{seats} kursi",
+        "it": "{seats} posti",
+        "ru": "{seats} мест",
+        "zh_Hant": "{seats} 座位數",
+        "nb_NO": "{seats} seter",
+        "pl": "{seats} siedzeń",
+        "pt_BR": "{seats} assentos",
+        "pt": "{seats} lugares",
+        "ca": "{seats} seients",
+        "da": "{seats} pladser",
+        "cs": "{seats} míst k sezení",
+        "zh_Hans": "{seats}座",
+        "he": "{seats} מושבים",
+        "_context": "layers:bench.tagRenderings.bench-seats.render"
+      },
+      "freeform": {
+        "key": "seats",
+        "type": "nat",
+        "addExtraTags": [
+          "seats:separated="
+        ],
+        "inline": true
+      },
+      "question": {
+        "en": "How many seats does this bench have?",
+        "de": "Wie viele Sitzplätze hat diese Bank?",
+        "fr": "De combien de places dispose ce banc ?",
+        "nl": "Hoeveel zitplaatsen heeft deze bank?",
+        "es": "¿Cuántos asientos tiene este banco?",
+        "hu": "Hány ülőhely van ezen a padon?",
+        "it": "Quanti posti ha questa panchina?",
+        "ru": "Сколько мест на этой скамейке?",
+        "zh_Hans": "这个长椅有几个座位？",
+        "zh_Hant": "這個長椅有幾個位子？",
+        "nb_NO": "Hvor mange sitteplasser har denne benken?",
+        "pl": "Ile siedzeń ma ta ławka?",
+        "pt_BR": "Quantos assentos este banco tem?",
+        "pt": "Quantos lugares este banco tem?",
+        "da": "Hvor mange pladser har denne bænk?",
+        "cs": "Kolik má tato lavice míst k sezení?",
+        "ca": "Quants seients té aquest banc?",
+        "he": "כמה מושבים יש לספסל הזה?",
+        "_context": "layers:bench.tagRenderings.bench-seats.question"
+      },
+      "id": "bench-seats",
+      "labels": [
+        "bench-questions"
+      ],
+      "mappings": [
+        {
+          "if": "seats:separated=no",
+          "addExtraTags": [
+            "seats="
+          ],
+          "then": {
+            "en": "This bench does not have separated seats",
+            "nl": "Deze bank is niet ingedeeld in aparte zitplaatsen",
+            "de": "Diese Bank hat keine getrennten Sitze",
+            "fr": "Ce banc n'a pas de sièges séparés",
+            "es": "Este banco no tiene asientos separados",
+            "ca": "Aquest banc no té els seients separats",
+            "cs": "Tato lavička nemá oddělená sedadla",
+            "pt": "Este banco não tem assentos separados",
+            "pt_BR": "Esse banco não tem assentos separados",
+            "_context": "layers:bench.tagRenderings.bench-seats.mappings.0.then"
+          }
+        }
+      ],
+      "condition": {
+        "and": [
+          "amenity=bench"
+        ]
+      }
+    },
+    {
+      "render": {
+        "en": "Material: {material}",
+        "de": "Material: {material}",
+        "fr": "Matériau : {material}",
+        "nl": "Gemaakt van {material}",
+        "es": "Material: {material}",
+        "hu": "Anyag: {material}",
+        "it": "Materiale: {material}",
+        "ru": "Материал: {material}",
+        "zh_Hant": "材質：{material}",
+        "nb_NO": "Materiale: {material}",
+        "fi": "Materiaali: {material}",
+        "zh_Hans": "材质: {material}",
+        "pl": "Materiał: {material}",
+        "pt_BR": "Material: {material}",
+        "pt": "Material: {material}",
+        "eo": "Materialo: {material}",
+        "ca": "Material: {material}",
+        "da": "Materiale: {material}",
+        "cs": "Materiál: {material}",
+        "he": "חומר: {material}",
+        "_context": "layers:bench.tagRenderings.bench-material.render"
+      },
+      "freeform": {
+        "key": "material",
+        "inline": true
+      },
+      "mappings": [
+        {
+          "if": "material=wood",
+          "then": {
+            "en": "The seating is made from wood",
+            "de": "Die Sitzfläche ist aus Holz",
+            "fr": "L'assise est en bois",
+            "nl": "Gemaakt uit hout",
+            "es": "El asiento está hecho de madera",
+            "hu": "Ülőfelület: fa",
+            "it": "Materiale: legno",
+            "ru": "Материал: дерево",
+            "zh_Hans": "座椅是木制的",
+            "nb_NO": "Materiale: tre",
+            "zh_Hant": "材質：木頭",
+            "pt_BR": "Material: madeira",
+            "fi": "Materiaali: puu",
+            "pl": "Siedzisko wykonane jest z drewna",
+            "pt": "Material: madeira",
+            "eo": "Materialo: ligna",
+            "ca": "El seient està fet de fusta",
+            "da": "Siddepladserne er lavet af træ",
+            "cs": "Sedací část je vyrobena ze dřeva",
+            "he": "מקום הישיבה עשוי מעץ",
+            "_context": "layers:bench.tagRenderings.bench-material.mappings.0.then"
+          }
+        },
+        {
+          "if": "material=metal",
+          "then": {
+            "en": "The seating is made from metal",
+            "de": "Die Sitzfläche ist aus Metall",
+            "fr": "L'assise est en métal",
+            "nl": "Gemaakt uit metaal",
+            "es": "El asiento está hecho de metal",
+            "hu": "Ülőfelület: fém",
+            "it": "Materiale: metallo",
+            "ru": "Материал: металл",
+            "zh_Hans": "座椅是金属制的",
+            "nb_NO": "Materiale: metall",
+            "zh_Hant": "材質：金屬",
+            "pl": "Siedzisko wykonane jest z metalu",
+            "pt_BR": "Material: metal",
+            "pt": "Material: metal",
+            "eo": "Materialo: metala",
+            "ca": "El seient està fet de metall",
+            "da": "Sædet er lavet af metal",
+            "cs": "Sedací část je vyrobena z kovu",
+            "he": "מקום הישיבה עשוי מתכת",
+            "_context": "layers:bench.tagRenderings.bench-material.mappings.1.then"
+          }
+        },
+        {
+          "if": "material=stone",
+          "then": {
+            "en": "The seating is made from stone",
+            "de": "Die Sitzfläche ist aus Stein",
+            "fr": "L'assise est en pierre",
+            "nl": "Het zitgedeelte is gemaakt uit steen",
+            "es": "El asiento está hecho de piedra",
+            "hu": "Ülőfelület: kő",
+            "it": "Materiale: pietra",
+            "ru": "Материал: камень",
+            "zh_Hans": "座椅是石制的",
+            "nb_NO": "Materiale: stein",
+            "zh_Hant": "材質：石頭",
+            "pt_BR": "Material: pedra",
+            "fi": "Materiaali: kivi",
+            "pl": "Siedzisko wykonane jest z kamienia",
+            "pt": "Material: pedra",
+            "eo": "Materialo: ŝtona",
+            "ca": "El seient està fet de pedra",
+            "da": "Siddepladserne er lavet af sten",
+            "cs": "Sedací část je vyrobena z kamene",
+            "he": "מקום הישיבה עשוי אבן",
+            "_context": "layers:bench.tagRenderings.bench-material.mappings.2.then"
+          }
+        },
+        {
+          "if": "material=concrete",
+          "then": {
+            "en": "The seating is made from concrete",
+            "de": "Die Sitzfläche ist aus Beton",
+            "fr": "Matériau du siège : béton",
+            "nl": "Het zitgedeelte is gemaakt uit beton",
+            "es": "El asiento está hecho de hormigón",
+            "hu": "Ülőfelület: beton",
+            "it": "Materiale: cemento",
+            "ru": "Материал: бетон",
+            "zh_Hans": "座椅是混凝土制的",
+            "nb_NO": "Materiale: betong",
+            "zh_Hant": "材質：水泥",
+            "pt_BR": "Material: concreto",
+            "fi": "Materiaali: betoni",
+            "pl": "Siedzisko wykonane jest z betonu",
+            "pt": "Material: concreto",
+            "eo": "Materialo: betona",
+            "ca": "El seient està fet de ciment",
+            "da": "Siddepladserne er lavet af beton",
+            "cs": "Sedací část je vyrobena z betonu",
+            "he": "מקום הישיבה עשוי בטון",
+            "_context": "layers:bench.tagRenderings.bench-material.mappings.3.then"
+          }
+        },
+        {
+          "if": "material=plastic",
+          "then": {
+            "en": "The seating is made from plastic",
+            "de": "Die Sitzfläche ist aus Kunststoff",
+            "fr": "L'assise est en plastique",
+            "nl": "Het zitgedeelte is gemaakt uit plastiek",
+            "es": "El asiento está hecho de plástico",
+            "hu": "Ülőfelület: műanyag",
+            "it": "Materiale: plastica",
+            "ru": "Материал: пластик",
+            "zh_Hans": "座椅是塑料制的",
+            "nb_NO": "Materiale: plastikk",
+            "zh_Hant": "材質：塑膠",
+            "pt_BR": "Material: plástico",
+            "fi": "Materiaali: muovi",
+            "pl": "Siedzisko wykonane jest z tworzywa sztucznego",
+            "pt": "Material: plástico",
+            "eo": "Materialo: plasta",
+            "ca": "El seient està fet de plàstic",
+            "da": "Sædet er lavet af plastik",
+            "cs": "Sedací část je vyrobena z plastu",
+            "he": "מקום הישיבה עשוי פלסטיק",
+            "_context": "layers:bench.tagRenderings.bench-material.mappings.4.then"
+          }
+        },
+        {
+          "if": "material=steel",
+          "then": {
+            "en": "The seating is made from steel",
+            "de": "Die Sitzfläche ist aus Stahl",
+            "fr": "L'assise est en acier",
+            "nl": "Het zitgedeelte is gemaakt uit staal",
+            "es": "El asiento está hecho de acero",
+            "hu": "Ülőfelület: acél",
+            "it": "Materiale: acciaio",
+            "ru": "Материал: сталь",
+            "zh_Hans": "座椅是不锈钢制的",
+            "nb_NO": "Materiale: stål",
+            "zh_Hant": "材質：鋼鐵",
+            "pt_BR": "Material: aço",
+            "fi": "Materiaali: teräs",
+            "pl": "Siedzisko wykonane jest ze stali",
+            "pt": "Material: aço",
+            "eo": "Materialo: ŝtala",
+            "ca": "El seient està fet d'acer",
+            "da": "Siddepladserne er lavet af stål",
+            "cs": "Sedací část je vyrobena z oceli",
+            "he": "מקום הישיבה עשוי פלדה",
+            "_context": "layers:bench.tagRenderings.bench-material.mappings.5.then"
+          }
+        }
+      ],
+      "question": {
+        "en": "What is the bench (seating) made from?",
+        "de": "Aus welchem Material ist die Sitzfläche der Bank?",
+        "fr": "De quel matériau ce banc est-il fait ?",
+        "nl": "Uit welk materiaal is het zitgedeelte van deze zitbank gemaakt?",
+        "hu": "Miből van a pad (ülőfelülete)?",
+        "it": "Di che materiale è fatta questa panchina?",
+        "zh_Hans": "这个长椅（或座椅）是用什么材料做的？",
+        "ru": "Из какого материала сделана скамейка?",
+        "zh_Hant": "這個長椅 (座位) 是什麼做的？",
+        "pt_BR": "De que é feito o banco (assento)?",
+        "pl": "Z czego wykonana jest ławka (siedzisko)?",
+        "pt": "De que é feito o banco (assento)?",
+        "es": "¿De que está hecho el banco (asiento)?",
+        "da": "Hvad er bænken (sædet) lavet af?",
+        "cs": "Z čeho je vyrobena lavice (sedadlo)?",
+        "ca": "De què està fent el banc (seient)?",
+        "he": "ממה עשוי הספסל (המושב)?",
+        "_context": "layers:bench.tagRenderings.bench-material.question"
+      },
+      "id": "bench-material",
+      "labels": [
+        "bench-questions"
+      ],
+      "condition": {
+        "and": [
+          "amenity=bench"
+        ]
+      }
+    },
+    {
+      "question": {
+        "en": "In which direction are you looking when sitting on the bench?",
+        "de": "In welche Richtung schaut man, wenn man auf der Bank sitzt?",
+        "nl": "In welke richting kijk je wanneer je op deze zitbank zit?",
+        "fr": "Dans quelle direction regardez-vous quand vous êtes assis sur le banc ?",
+        "hu": "Milyen irányba néz a pad?",
+        "it": "In che direzione si guarda quando si è seduti su questa panchina?",
+        "ru": "В каком направлении вы смотрите, когда сидите на скамейке?",
+        "zh_Hans": "坐在长椅上的时候你目视的方向是哪边？",
+        "zh_Hant": "坐在長椅時是面對那個方向？",
+        "pt_BR": "Em que direção você olha quando está sentado no banco?",
+        "pl": "W jakim kierunku patrzysz siedząc na ławce?",
+        "pt": "Em que direção olha quando está sentado no banco?",
+        "es": "¿En qué dirección miras sentado en el banco?",
+        "da": "I hvilken retning kigger du, når du sidder på bænken?",
+        "cs": "Kterým směrem se díváte, když sedíte na lavičce?",
+        "ca": "En quina direcció mires asseguts al banc?",
+        "_context": "layers:bench.tagRenderings.bench-direction.question"
+      },
+      "render": {
+        "en": "When sitting on the bench, one looks towards {direction}°.",
+        "de": "Wenn man auf der Bank sitzt, schaut man in Richtung {direction}°.",
+        "nl": "Wanneer je op deze bank zit, dan kijk je in {direction}°.",
+        "fr": "Assis sur le banc, on regarde vers {direction}°.",
+        "hu": "A pad {direction}° felé néz.",
+        "it": "Quando si è seduti su questa panchina, si guarda verso {direction}°.",
+        "zh_Hans": "坐在长椅上的时候目视方向为 {direction}°方位。",
+        "ru": "Сидя на скамейке, вы смотрите в сторону {direction}°.",
+        "zh_Hant": "當坐在長椅時，那個人朝向 {direction}°。",
+        "pl": "Siedząc na ławce, patrzy się w kierunku {direction}°.",
+        "pt_BR": "Ao sentar-se no banco, olha-se para {direction} °.",
+        "pt": "Ao sentar-se no banco, olha-se para {direction} °.",
+        "es": "Cuando se está sentado en el banco, se mira hacia a {direction}º.",
+        "da": "Når man sidder på bænken, kigger man i retningen {direction}°.",
+        "cs": "Když sedíte na lavičce, díváte se směrem v úhlu {direction}°.",
+        "ca": "Quan s'està assegut al banc, es mira cap a {direction}º.",
+        "_context": "layers:bench.tagRenderings.bench-direction.render"
+      },
+      "freeform": {
+        "key": "direction",
+        "type": "direction",
+        "inline": true
+      },
+      "labels": [
+        "bench-questions"
+      ],
+      "id": "bench-direction",
+      "condition": {
+        "and": [
+          "amenity=bench"
+        ]
+      }
+    },
+    {
+      "render": {
+        "en": "Colour: {colour}",
+        "de": "Farbe: {colour}",
+        "fr": "Couleur : {colour}",
+        "nl": "Kleur: {colour}",
+        "hu": "Szín: {colour}",
+        "it": "Colore: {colour}",
+        "ru": "Цвет: {colour}",
+        "id": "Warna: {colour}",
+        "zh_Hans": "颜色： {colour}",
+        "zh_Hant": "顏色：{colour}",
+        "nb_NO": "Farge: {colour}",
+        "pt_BR": "Cor: {colour}",
+        "fi": "Väri: {colour}",
+        "pl": "Kolor: {colour}",
+        "pt": "Cor: {colour}",
+        "eo": "Koloro: {colour}",
+        "es": "Color: {colour}",
+        "ca": "Color: {colour}",
+        "da": "Farve: {colour}",
+        "cs": "Barva: {colour}",
+        "he": "צבע: {colour}",
+        "_context": "layers:bench.tagRenderings.bench-colour.render"
+      },
+      "question": {
+        "en": "Which colour does this bench have?",
+        "de": "Welche Farbe hat diese Sitzbank?",
+        "fr": "Quelle est la couleur de ce banc ?",
+        "nl": "Welke kleur heeft deze zitbank?",
+        "hu": "Milyen színű ez a pad?",
+        "it": "Di che colore è questa panchina?",
+        "ru": "Какого цвета скамейка?",
+        "zh_Hans": "这个长椅是什么颜色的？",
+        "zh_Hant": "這個長椅是什麼顏色的？",
+        "pt_BR": "Qual a cor dessa bancada?",
+        "pl": "Jaki kolor ma ta ławka?",
+        "pt": "Qual a cor dessa bancada?",
+        "es": "¿De qué color es este banco?",
+        "da": "Hvilken farve har denne bænk?",
+        "cs": "Jakou barvu má tato lavička?",
+        "ca": "De quin color és aquest banc?",
+        "he": "איזה צבע יש לספסל הזה?",
+        "_context": "layers:bench.tagRenderings.bench-colour.question"
+      },
+      "freeform": {
+        "key": "colour",
+        "type": "color",
+        "inline": true
+      },
+      "mappings": [
+        {
+          "if": "colour=brown",
+          "then": {
+            "en": "Colour: brown",
+            "de": "Farbe: braun",
+            "fr": "Couleur : marron",
+            "nl": "De kleur is bruin",
+            "hu": "Szín: barna",
+            "it": "Colore: marrone",
+            "ru": "Цвет: коричневый",
+            "zh_Hans": "颜色：棕",
+            "zh_Hant": "顏色：棕色",
+            "nb_NO": "Farge: brun",
+            "pt_BR": "Cor: marrom",
+            "fi": "Väri: ruskea",
+            "pl": "Kolor: brązowy",
+            "pt": "Cor: castanho",
+            "eo": "Koloro: bruna",
+            "ca": "Color: marró",
+            "es": "Color: marrón",
+            "da": "Farve: brun",
+            "cs": "Barva: hnědá",
+            "he": "צבע: חום",
+            "_context": "layers:bench.tagRenderings.bench-colour.mappings.0.then"
+          }
+        },
+        {
+          "if": "colour=green",
+          "then": {
+            "en": "Colour: green",
+            "de": "Farbe: grün",
+            "fr": "Couleur : verte",
+            "nl": "De kleur is groen",
+            "hu": "Szín: zöld",
+            "it": "Colore: verde",
+            "ru": "Цвет: зеленый",
+            "zh_Hans": "颜色：绿",
+            "zh_Hant": "顏色：綠色",
+            "nb_NO": "Farge: grønn",
+            "pt_BR": "Cor: verde",
+            "fi": "Väri: vihreä",
+            "pl": "Kolor: zielony",
+            "pt": "Cor: verde",
+            "eo": "Koloro: verda",
+            "es": "Color: verde",
+            "ca": "Color: verd",
+            "da": "Farve: grøn",
+            "cs": "Barva: zelená",
+            "he": "צבע: ירוק",
+            "_context": "layers:bench.tagRenderings.bench-colour.mappings.1.then"
+          }
+        },
+        {
+          "if": "colour=gray",
+          "then": {
+            "en": "Colour: gray",
+            "de": "Farbe: grau",
+            "fr": "Couleur : gris",
+            "nl": "De kleur is grijs",
+            "hu": "Szín: szürke",
+            "it": "Colore: grigio",
+            "ru": "Цвет: серый",
+            "zh_Hans": "颜色：灰",
+            "zh_Hant": "顏色：灰色",
+            "nb_NO": "Farge: grå",
+            "pt_BR": "Cor: cinza",
+            "fi": "Väri: harmaa",
+            "pl": "Kolor: szary",
+            "pt": "Cor: cinzento",
+            "eo": "Koloro: griza",
+            "es": "Color: gris",
+            "ca": "Color: gris",
+            "da": "Farve: grå",
+            "cs": "Barva: šedá",
+            "he": "צבע: אפור",
+            "_context": "layers:bench.tagRenderings.bench-colour.mappings.2.then"
+          }
+        },
+        {
+          "if": "colour=white",
+          "then": {
+            "en": "Colour: white",
+            "de": "Farbe: weiß",
+            "fr": "Couleur : blanc",
+            "nl": "De kleur is wit",
+            "hu": "Szín: fehér",
+            "it": "Colore: bianco",
+            "ru": "Цвет: белый",
+            "zh_Hans": "颜色：白",
+            "zh_Hant": "顏色：白色",
+            "nb_NO": "Farge: hvit",
+            "pt_BR": "Cor: branco",
+            "fi": "Väri: valkoinen",
+            "pl": "Kolor: biały",
+            "pt": "Cor: branco",
+            "eo": "Koloro: blanka",
+            "es": "Color: blanco",
+            "ca": "Color: blanc",
+            "da": "Farve: hvid",
+            "cs": "Barva: bílá",
+            "he": "צבע: לבן",
+            "_context": "layers:bench.tagRenderings.bench-colour.mappings.3.then"
+          }
+        },
+        {
+          "if": "colour=red",
+          "then": {
+            "en": "Colour: red",
+            "de": "Farbe: rot",
+            "fr": "Couleur : rouge",
+            "nl": "De kleur is rood",
+            "hu": "Szín: piros",
+            "it": "Colore: rosso",
+            "ru": "Цвет: красный",
+            "zh_Hans": "颜色：红",
+            "zh_Hant": "顏色：紅色",
+            "nb_NO": "Farge: rød",
+            "pt_BR": "Cor: vermelho",
+            "fi": "Väri: punainen",
+            "pl": "Kolor: czerwony",
+            "pt": "Cor: vermelho",
+            "eo": "Koloro: ruĝa",
+            "es": "Color: rojo",
+            "ca": "Color: vermell",
+            "da": "Farve: rød",
+            "cs": "Barva: červená",
+            "he": "צבע: אדום",
+            "_context": "layers:bench.tagRenderings.bench-colour.mappings.4.then"
+          }
+        },
+        {
+          "if": "colour=black",
+          "then": {
+            "en": "Colour: black",
+            "de": "Farbe: schwarz",
+            "fr": "Couleur : noire",
+            "nl": "De kleur is zwart",
+            "hu": "Szín: fekete",
+            "it": "Colore: nero",
+            "ru": "Цвет: чёрный",
+            "zh_Hans": "颜色：黑",
+            "zh_Hant": "顏色：黑色",
+            "nb_NO": "Farge: svart",
+            "pt_BR": "Cor: preto",
+            "fi": "Väri: musta",
+            "pl": "Kolor: czarny",
+            "pt": "Cor: preto",
+            "eo": "Koloro: nigra",
+            "es": "Color: negro",
+            "ca": "Color: negre",
+            "da": "Farve: sort",
+            "cs": "Barva: černá",
+            "he": "צבע: שחור",
+            "_context": "layers:bench.tagRenderings.bench-colour.mappings.5.then"
+          }
+        },
+        {
+          "if": "colour=blue",
+          "then": {
+            "en": "Colour: blue",
+            "de": "Farbe: blau",
+            "fr": "Couleur : bleu",
+            "nl": "De kleur is blauw",
+            "hu": "Szín: kék",
+            "it": "Colore: blu",
+            "ru": "Цвет: синий",
+            "zh_Hans": "颜色：蓝",
+            "zh_Hant": "顏色：藍色",
+            "nb_NO": "Farge: blå",
+            "pt_BR": "Cor: azul",
+            "fi": "Väri: sininen",
+            "pl": "Kolor: niebieski",
+            "pt": "Cor: azul",
+            "eo": "Koloro: blua",
+            "es": "Color: azul",
+            "ca": "Color: blau",
+            "da": "Farve: blå",
+            "cs": "Barva: modrá",
+            "he": "צבע: כחול",
+            "_context": "layers:bench.tagRenderings.bench-colour.mappings.6.then"
+          }
+        },
+        {
+          "if": "colour=yellow",
+          "then": {
+            "en": "Colour: yellow",
+            "de": "Farbe: gelb",
+            "fr": "Couleur : jaune",
+            "nl": "De kleur is geel",
+            "hu": "Szín: sárga",
+            "it": "Colore: giallo",
+            "ru": "Цвет: желтый",
+            "zh_Hans": "颜色：黄",
+            "zh_Hant": "顏色：黃色",
+            "nb_NO": "Farge: gul",
+            "pt_BR": "Cor: amarelo",
+            "fi": "Väri: keltainen",
+            "pl": "Kolor: żółty",
+            "pt": "Cor: amarelo",
+            "eo": "Koloro: flava",
+            "es": "Color: amarillo",
+            "ca": "Color: groc",
+            "da": "Farve: gul",
+            "cs": "Barva: žlutá",
+            "he": "צבע: צהוב",
+            "_context": "layers:bench.tagRenderings.bench-colour.mappings.7.then"
+          }
+        }
+      ],
+      "labels": [
+        "bench-questions"
+      ],
+      "id": "bench-colour",
+      "condition": {
+        "and": [
+          "amenity=bench"
+        ]
+      }
+    },
+    {
+      "question": {
+        "en": "When was this bench last surveyed?",
+        "nl": "Wanneer is deze laatste bank laatst gesurveyed?",
+        "fr": "Quand ce banc a-t-il été contrôlé pour la dernière fois ?",
+        "it": "Quando è stata verificata l’ultima volta questa panchina?",
+        "zh_Hans": "上次对这个长椅实地调查是什么时候？",
+        "de": "Wann wurde diese Bank zuletzt überprüft?",
+        "ru": "Когда последний раз обследовали эту скамейку?",
+        "zh_Hant": "上一次探察長椅是什麼時候？",
+        "pt_BR": "Quando esta bancada foi pesquisada pela última vez?",
+        "pl": "Kiedy ostatnio badano tę ławkę?",
+        "pt": "Quando esta bancada foi pesquisada pela última vez?",
+        "es": "¿Cuándo fue la última vez que se inspeccionó este banco?",
+        "da": "Hvornår blev denne bænk sidst kortlagt?",
+        "cs": "Kdy byla tato lavička naposledy kontrolována?",
+        "ca": "Quan va ser l'últim cop que s'ha inspeccionat aquest banc?",
+        "he": "מתי הספסל הזה נבדק לאחרונה?",
+        "_context": "layers:bench.tagRenderings.bench-survey:date.question"
+      },
+      "render": {
+        "en": "This bench was last surveyed on {survey:date}",
+        "nl": "Deze bank is laatst gesurveyd op {survey:date}",
+        "fr": "Ce banc a été contrôlé pour la dernière fois le {survey:date}",
+        "it": "Questa panchina è stata controllata l’ultima volta in data {survey:date}",
+        "zh_Hans": "这个长椅于 {survey:date}最后一次实地调查",
+        "de": "Diese Bank wurde zuletzt überprüft am {survey:date}",
+        "ru": "Последний раз обследование этой скамейки проводилось {survey:date}",
+        "zh_Hant": "這個長椅最後是在 {survey:date} 探查的",
+        "pt_BR": "Esta bancada foi pesquisada pela última vez em {survey:date}",
+        "pl": "Ławka ta była ostatnio badana w dniu {survey:date}",
+        "pt": "Esta bancada foi pesquisada pela última vez em {survey:date}",
+        "es": "Este banco se inspeccionó por última vez el {survey:date}",
+        "da": "Denne bænk blev sidst kortlagt den {survey:date}",
+        "cs": "Tato lavička byla naposledy zkontrolována dne {survey:date}",
+        "ca": "Aquest banc s'ha inspeccionat per últim com el {survey:date}",
+        "he": "ספסל זה נבדק לאחרונה ב {survey:date}",
+        "_context": "layers:bench.tagRenderings.bench-survey:date.render"
+      },
+      "freeform": {
+        "key": "survey:date",
+        "type": "date",
+        "inline": true
+      },
+      "mappings": [
+        {
+          "if": "survey:date:={_now:date}",
+          "then": {
+            "en": "Surveyed today!",
+            "nl": "Vandaag nagekeken!",
+            "de": "Heute geprüft!",
+            "fr": "Vérifié sur le terrain aujourd'hui !",
+            "ca": "Inspeccionat avui!",
+            "cs": "Zjištěno dnes!",
+            "pt": "Pesquisado hoje!",
+            "he": "נבדק היום!",
+            "pt_BR": "Pesquisado hoje!",
+            "es": "¡Encuestado hoy!",
+            "_context": "layers:bench.tagRenderings.bench-survey:date.mappings.0.then"
+          }
+        }
+      ],
+      "labels": [
+        "bench-questions"
+      ],
+      "id": "bench-survey:date",
+      "condition": {
+        "and": [
+          "amenity=bench"
+        ]
+      }
+    },
+    {
+      "id": "bench-inscription",
+      "labels": [
+        "bench-questions"
+      ],
+      "render": {
+        "en": "This bench has the following inscription:<br/><p><i>{inscription}</i></p>",
+        "nl": "Deze bank heeft een inscriptie: <br/><p><i>{inscription}</i></p>",
+        "de": "Diese Bank hat folgende Inschrift:<br/><p><i>{inscription}</i></p>",
+        "fr": "Ce banc a l'inscription suivante :<br/><p><i>{inscription}</i></p>",
+        "ca": "Aquest banc té la següent inscripció:<br/><p><i>{inscription}</i></p>",
+        "cs": "Tato lavice má následující nápis:<br/><p><i>{inscription}</i></p>",
+        "pt": "Este banco tem a seguinte inscrição:<br/><p><i>{inscription}</i></p>",
+        "pt_BR": "Esse banco tem a seguinte inscrição: <br/><p><i>{inscription}</i></p>",
+        "es": "Este banco tiene la siguiente inscripción:<br/><p><i>{inscription}</i></p>",
+        "_context": "layers:bench.tagRenderings.bench-inscription.render"
+      },
+      "question": {
+        "en": "Does this bench have an inscription?",
+        "nl": "Heeft deze bank een inscriptie?",
+        "de": "Hat diese Bank eine Inschrift?",
+        "fr": "Est-ce que ce banc possède une inscription ?",
+        "ca": "Aquest banc té una inscripció?",
+        "cs": "Má tato lavička nápis?",
+        "pt": "Esse banco tem inscrição?",
+        "pt_BR": "Esse banco tem uma inscrição?",
+        "es": "¿Este banco tiene una inscripción?",
+        "_context": "layers:bench.tagRenderings.bench-inscription.question"
+      },
+      "freeform": {
+        "key": "inscription",
+        "type": "text",
+        "addExtraTags": [
+          "not:inscription="
+        ],
+        "inline": true
+      },
+      "mappings": [
+        {
+          "if": "not:inscription=yes",
+          "then": {
+            "en": "This bench does not have an inscription",
+            "nl": "Deze bank heeft geen inscriptie",
+            "de": "Diese Bank hat keine Inschrift",
+            "fr": "Ce banc n'a pas d'inscription",
+            "ca": "Aquest banc no té cap inscripció",
+            "cs": "Tato lavička nemá nápis",
+            "pt": "Este banco não tem inscrição",
+            "pt_BR": "Esse banco não tem uma inscrição",
+            "es": "Este banco no tiene inscripción",
+            "_context": "layers:bench.tagRenderings.bench-inscription.mappings.0.then"
+          },
+          "addExtraTags": [
+            "inscription="
+          ]
+        },
+        {
+          "if": "inscription=",
+          "then": {
+            "en": "This bench <span class='subtle'>(probably)</span> does not not have an inscription",
+            "nl": "Deze bank heeft <span class='subtle'>(waarschijnlijk)</span> geen inscriptie",
+            "de": "Diese Bank hat <span class='subtle'>(wahrscheinlich)</span> keine Inschrift",
+            "fr": "Ce banc n'a <span class='subtle'>(probablement)</span> pas d'inscription",
+            "es": "Este banco <span class='subtle'>(probablemente)</span> no tiene inscripción",
+            "ca": "Aquest banc <span class='subtle'>(probablement)</span> no té cap inscripció",
+            "cs": "Tato lavička <span class='subtle'>(pravděpodobně)</span> nemá nápis",
+            "pt_BR": "Esse banco <span class='subtle'>provavelmente</span> não tem uma inscrição",
+            "pt": "Esse banco <span class='subtle'>provavelmente</span> não tem uma inscrição",
+            "_context": "layers:bench.tagRenderings.bench-inscription.mappings.1.then"
+          },
+          "hideInAnswer": true
+        }
+      ],
+      "questionHint": {
+        "en": "E.g. on a mounted plaque, in the backrest, …",
+        "nl": "Bijvoorbeeld op een aangebracht plakkaat, ingesneden in de rugleuning, …",
+        "de": "Z.B. auf einer angebrachten Plakette, in der Rückenlehne, …",
+        "fr": "Par exemple, sur une plaque accrochée, sur le dossier, …",
+        "ca": "P. ex. en una placa, al respatller, …",
+        "cs": "Např. na připevněné desce, v opěradle, …",
+        "pt": "Por exemplo: em placa montada, no encosto, ...",
+        "pt_BR": "P. ex. em uma placa montada, no encosto, …",
+        "es": "Por ejemplo, en una placa montada, en el respaldo, …",
+        "_context": "layers:bench.tagRenderings.bench-inscription.questionHint"
+      },
+      "condition": {
+        "and": [
+          "amenity=bench"
+        ]
+      }
+    },
+    {
+      "id": "bench-memorial",
+      "labels": [
+        "bench-questions"
+      ],
+      "condition": {
+        "and": [
+          "amenity=bench"
+        ]
+      },
+      "question": {
+        "en": "Does this bench act as memorial for someone or something?",
+        "nl": "Is deze bank een gedenkteken voor iemand of iets?",
+        "de": "Dient diese Bank als Denkmal für jemanden oder etwas?",
+        "fr": "Ce banc sert-il de mémorial pour quelqu'un ou quelque chose ?",
+        "ca": "Aquest banc actua com a memorial per a algú o algo?",
+        "cs": "Slouží tato lavička jako památník někoho nebo něčeho?",
+        "pt": "Este banco serve como memorial para alguém ou algo?",
+        "pl": "Czy ta ławka służy jako pomnik upamiętniający kogoś lub coś?",
+        "pt_BR": "Esse banco serve como memorial para alguém ou alguma coisa?",
+        "es": "¿Actúa este banco como monumento conmemorativo de alguien o algo?",
+        "_context": "layers:bench.tagRenderings.bench-memorial.question"
+      },
+      "mappings": [
+        {
+          "if": "historic=memorial",
+          "then": {
+            "en": "This bench is a memorial for someone or something",
+            "nl": "Deze bank is een gedenkteken aan iemand of iets",
+            "de": "Diese Bank ist ein Denkmal für jemanden oder etwas",
+            "fr": "Ce banc est un mémorial pour quelqu'un ou quelque chose",
+            "ca": "Aquest banc és un memorial per a algú o alguna cosa",
+            "cs": "Tato lavička je pomníkem pro někoho nebo něco",
+            "pt": "Este banco é um memorial para alguém ou algo",
+            "pl": "Ta ławka jest pomnikiem upamiętniającym kogoś lub coś",
+            "pt_BR": "Esse banco é um memorial para alguém ou alguma coisa",
+            "es": "Este banco es un memorial para alguien o algo",
+            "_context": "layers:bench.tagRenderings.bench-memorial.mappings.0.then"
+          },
+          "addExtraTags": [
+            "memorial=bench",
+            "not:historic="
+          ]
+        },
+        {
+          "if": {
+            "and": [
+              "historic=",
+              "not:historic=memorial"
+            ]
+          },
+          "then": {
+            "en": "This bench is a <b>not</b> a memorial for someone or something",
+            "nl": "Deze bank is <b>geen</b> gedenkteken aan iemand of iets",
+            "de": "Diese Bank ist <b>kein</b> Denkmal für jemanden oder etwas",
+            "fr": "Ce banc n'est <b>pas</b> un mémorial pour quelqu'un ou quelque chose",
+            "ca": "Aquest banc <b>no</b> és un memorial per a algú o alguna cosa",
+            "cs": "Tato lavička <b>není</b> pro někoho nebo něco památníkem",
+            "pt": "Este banco <b>não é</b> um memorial para alguém ou algo",
+            "pl": "Ta ławka <b>nie</b> jest pomnikiem upamiętniającym kogoś lub coś",
+            "pt_BR": "Esse banco <b>não</b> é um memorial para alguém ou alguma coisa",
+            "es": "Este banco es un <b>no</b> memorial para alguien o algo",
+            "_context": "layers:bench.tagRenderings.bench-memorial.mappings.1.then"
+          },
+          "addExtraTags": [
+            "memorial="
+          ]
+        }
+      ]
+    },
+    {
+      "id": "leftover-questions",
+      "render": {
+        "*": "{questions( ,)}"
+      }
+    },
+    {
+      "id": "lod",
+      "labels": [
+        "added_by_default"
+      ],
+      "render": {
+        "*": "{linked_data_from_website()}"
+      }
+    },
+    {
+      "id": "minimap",
+      "description": "Shows a small map with the feature. Added by default to every popup",
+      "render": {
+        "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+      }
+    },
+    {
+      "id": "move-button",
+      "render": {
+        "*": "{move_button()}"
+      }
+    },
+    {
+      "id": "delete-button",
+      "render": {
+        "*": "{delete_button()}"
+      }
+    },
+    {
+      "id": "last_edit",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+      "condition": {
+        "and": [
+          "_last_edit:contributor~*",
+          "_last_edit:changeset~*"
+        ]
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsTesting=true",
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_debug=yes",
+          "_csCount>=10"
+        ]
+      },
+      "render": {
+        "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+      }
+    },
+    {
+      "id": "favourite_status",
+      "render": {
+        "*": "{favourite_status()}"
+      }
+    },
+    {
+      "id": "qr_code",
+      "labels": [
+        "added_by_default"
+      ],
+      "classes": "flex items-center gap-x-2",
+      "render": {
+        "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+        "en": "{qr_code()}Scan this code to open this location on another device",
+        "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+        "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+      }
+    },
+    {
+      "id": "share",
+      "labels": [
+        "added_by_default"
+      ],
+      "metacondition": "_supports_sharing=yes",
+      "render": {
+        "de": "{share_link(,Standort teilen)}",
+        "en": "{share_link(,Share this location)}",
+        "nl": "{share_link(,Deel deze locatie)}"
+      }
+    },
+    {
+      "id": "all-tags",
+      "render": {
+        "*": "{all_tags()}"
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_tags=full",
+          "mapcomplete-show_debug=yes"
+        ]
+      }
+    }
+  ],
+  "filter": [
+    {
+      "id": "has_image",
+      "options": [
+        {
+          "question": {
+            "en": "With and without images",
+            "nl": "Met en zonder afbeelding",
+            "de": "Mit und ohne Bild",
+            "pl": "Z oraz bez zdjęć",
+            "ca": "Amb i sense imatges",
+            "cs": "S obrázky i bez nich"
+          }
+        },
+        {
+          "question": {
+            "en": "Has at least one image",
+            "de": "Hat mindestens ein Bild",
+            "nl": "Heeft minstens één afbeelding",
+            "pl": "Ma co najmniej jedno zdjęcie",
+            "ca": "Té com a mínim una imatge",
+            "cs": "Má alespoň jeden obrázek"
+          },
+          "osmTags": {
+            "or": [
+              "image~*",
+              "image:0~*",
+              "image:1~*",
+              "image:2~*",
+              "image:3~*",
+              "mapillary~*"
+            ]
+          }
+        },
+        {
+          "question": {
+            "en": "Probably does not have an image",
+            "de": "Hat wahrscheinlich kein Bild",
+            "nl": "Heeft waarschijnlijk geen afbeelding",
+            "pl": "Prawdopodobnie nie ma zdjęcia",
+            "ca": "Probablement no té una imatge",
+            "cs": "Pravděpodobně nemá obrázek"
+          },
+          "osmTags": {
+            "and": [
+              "image=",
+              "image:0=",
+              "image:1=",
+              "image:2=",
+              "image:3=",
+              "mapillary="
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "artwork-artwork_type",
+      "options": [
+        {
+          "question": {
+            "en": "All types"
+          }
+        },
+        {
+          "question": {
+            "en": "Architecture",
+            "nl": "Architectuur",
+            "fr": "Architecture",
+            "de": "Architektur",
+            "it": "Architettura",
+            "ru": "Архитектура",
+            "ja": "建物",
+            "zh_Hant": "建築物",
+            "nb_NO": "Arkitektur",
+            "id": "Arsitektur",
+            "pt": "Arquitetura",
+            "hu": "Építészet",
+            "pl": "Architektura",
+            "es": "Arquitectura",
+            "ca": "Arquitectura",
+            "da": "Arkitektur",
+            "cs": "Architektura",
+            "pt_BR": "Arquitetura",
+            "he": "אדריכלות",
+            "eu": "Arkitektura",
+            "zh_Hans": "建筑"
+          },
+          "osmTags": "artwork_type=architecture"
+        },
+        {
+          "question": {
+            "en": "Mural",
+            "nl": "Muurschildering",
+            "fr": "Peinture murale",
+            "de": "Wandbild",
+            "it": "Murale",
+            "ru": "Фреска",
+            "ja": "壁画",
+            "zh_Hant": "壁畫",
+            "nb_NO": "Veggmaleri",
+            "id": "Mural",
+            "pt": "Mural",
+            "hu": "Falfestmény",
+            "pl": "Mural",
+            "es": "Mural",
+            "ca": "Mural",
+            "da": "Vægmaleri",
+            "cs": "Nástěnná malba",
+            "pa_PK": "کندھ چتر",
+            "pt_BR": "Mural",
+            "he": "ציור קיר",
+            "eu": "Murala",
+            "zh_Hans": "壁画"
+          },
+          "osmTags": "artwork_type=mural"
+        },
+        {
+          "question": {
+            "en": "Painting",
+            "nl": "Schilderij",
+            "fr": "Peinture",
+            "de": "Malerei",
+            "it": "Dipinto",
+            "ru": "Живопись",
+            "ja": "絵画",
+            "zh_Hant": "繪畫",
+            "nb_NO": "Maleri",
+            "id": "Lukisan",
+            "pt": "Pintura",
+            "hu": "Festmény",
+            "pl": "Obraz",
+            "es": "Pintura",
+            "ca": "Pintura",
+            "da": "Maleri",
+            "cs": "Malba",
+            "he": "ציור",
+            "eu": "Margolana",
+            "pt_BR": "Pintura",
+            "zh_Hans": "喷绘"
+          },
+          "osmTags": "artwork_type=painting"
+        },
+        {
+          "question": {
+            "en": "Sculpture",
+            "nl": "Beeldhouwwerk",
+            "fr": "Sculpture",
+            "de": "Skulptur",
+            "it": "Scultura",
+            "ru": "Скульптура",
+            "ja": "彫刻",
+            "zh_Hant": "雕塑",
+            "nb_NO": "Skulptur",
+            "id": "Patung",
+            "pt": "Escultura",
+            "hu": "Absztrakt szobor",
+            "pl": "Rzeźba",
+            "es": "Escultura",
+            "ca": "Escultura",
+            "da": "Skulptur",
+            "cs": "Plastika",
+            "pa_PK": "مورتی",
+            "pt_BR": "Escultura",
+            "he": "פיסול",
+            "eu": "Eskultura",
+            "zh_Hans": "雕塑"
+          },
+          "osmTags": "artwork_type=sculpture"
+        },
+        {
+          "question": {
+            "en": "Statue",
+            "nl": "Standbeeld",
+            "fr": "Statue",
+            "de": "Statue",
+            "it": "Statua",
+            "ru": "Статуя",
+            "ja": "彫像",
+            "zh_Hant": "雕像",
+            "nb_NO": "Statue",
+            "pt": "Estátua",
+            "hu": "Szobor",
+            "pl": "Posąg",
+            "es": "Estatua",
+            "ca": "Estàtua",
+            "da": "Statue",
+            "cs": "Socha",
+            "pt_BR": "Estátua",
+            "he": "פסל",
+            "eu": "Estatua",
+            "zh_Hans": "雕像"
+          },
+          "osmTags": "artwork_type=statue"
+        },
+        {
+          "question": {
+            "en": "Bust",
+            "nl": "Buste",
+            "fr": "Buste",
+            "de": "Büste",
+            "it": "Busto",
+            "ru": "Бюст",
+            "ja": "胸像",
+            "zh_Hant": "半身像",
+            "nb_NO": "Byste",
+            "pt": "Busto",
+            "hu": "Mellszobor",
+            "pl": "Popiersie",
+            "es": "Busto",
+            "ca": "Bust",
+            "da": "Buste",
+            "cs": "Busta",
+            "pt_BR": "Busto",
+            "eu": "Bustoa",
+            "zh_Hans": "半身像"
+          },
+          "osmTags": "artwork_type=bust"
+        },
+        {
+          "question": {
+            "en": "Stone",
+            "nl": "Steen",
+            "fr": "Rocher",
+            "de": "Stein",
+            "it": "Masso",
+            "ru": "Камень",
+            "ja": "石",
+            "zh_Hant": "石頭",
+            "nb_NO": "Stein",
+            "id": "Batu",
+            "pt": "Pedra",
+            "hu": "Kő",
+            "pl": "Skała",
+            "ca": "Pedra",
+            "es": "Piedra",
+            "da": "Sten",
+            "pa_PK": "پتھر",
+            "cs": "Kámen",
+            "pt_BR": "Pedra",
+            "he": "אבן",
+            "eu": "Harria",
+            "zh_Hans": "石头"
+          },
+          "osmTags": "artwork_type=stone"
+        },
+        {
+          "question": {
+            "en": "Installation",
+            "nl": "Installatie",
+            "fr": "Installation",
+            "de": "Installation",
+            "it": "Istallazione",
+            "ru": "Инсталляция",
+            "ja": "インスタレーション",
+            "zh_Hant": "安裝",
+            "nb_NO": "Installasjon",
+            "id": "Instalasi",
+            "pt": "Instalação",
+            "hu": "Installáció",
+            "pl": "Instalacja artystyczna",
+            "es": "Instalación",
+            "ca": "Instal·lació",
+            "da": "Installation",
+            "cs": "Instalace",
+            "pt_BR": "Instalação",
+            "eu": "Instalazioa",
+            "zh_Hans": "设施"
+          },
+          "osmTags": "artwork_type=installation"
+        },
+        {
+          "question": {
+            "en": "Graffiti",
+            "nl": "Graffiti",
+            "fr": "Graffiti",
+            "de": "Graffiti",
+            "it": "Graffiti",
+            "ru": "Граффити",
+            "ja": "落書き",
+            "zh_Hant": "塗鴨",
+            "nb_NO": "Graffiti",
+            "id": "Graffiti",
+            "pt": "Grafite",
+            "hu": "Graffiti",
+            "pl": "Graffiti",
+            "es": "Grafiti",
+            "ca": "Grafiti",
+            "da": "Graffiti",
+            "cs": "Grafiti",
+            "eu": "Graffitia",
+            "pt_BR": "Grafite",
+            "zh_Hans": "涂鸦/粗糙雕刻"
+          },
+          "osmTags": "artwork_type=graffiti"
+        },
+        {
+          "question": {
+            "en": "Relief",
+            "nl": "Reliëf",
+            "fr": "Relief",
+            "de": "Relief",
+            "it": "Rilievo",
+            "ru": "Рельеф",
+            "ja": "レリーフ",
+            "zh_Hant": "寬慰",
+            "nb_NO": "Relieff",
+            "id": "Relief",
+            "pt": "Relevo",
+            "hu": "Dombormű",
+            "pl": "Płaskorzeźba",
+            "ca": "Relleu",
+            "es": "Relieve",
+            "da": "Relief",
+            "cs": "Reliéf",
+            "eu": "Erliebea",
+            "pt_BR": "Relevo"
+          },
+          "osmTags": "artwork_type=relief"
+        },
+        {
+          "question": {
+            "en": "Azulejo (Spanish decorative tilework)",
+            "nl": "Azulejo (Spaanse siertegels)",
+            "fr": "Azulejo (faïence latine)",
+            "de": "Azulejo (spanische dekorative Fliesenarbeit)",
+            "it": "Azulejo (ornamento decorativo piastrellato spagnolo)",
+            "ru": "Азуле́жу (испанская роспись глазурованной керамической плитки)",
+            "ja": "Azulejo (スペインの装飾タイル)",
+            "zh_Hant": "Azulejo (西班牙雕塑作品名稱)",
+            "nb_NO": "Azulejo (Spansk dekorativt flisverk)",
+            "id": "Azulejo (ubin dekoratif Spanyol)",
+            "pt": "Azulejo (azulejo decorativo espanhol e português)",
+            "hu": "Azulejo (portugál vagy spanyol dekoratív csempe)",
+            "pl": "Azulejo (hiszpańskie płytka dekoracyjna)",
+            "es": "Azulejo (Baldosas decorativas Españolas y Portuguesas)",
+            "da": "Azulejo (spansk dekorativt flisebeklædning)",
+            "cs": "Azulejo (španělské dekorativní dlaždice)",
+            "ca": "Azulejo (Rajoles decoratives espanyoles i portugueses)",
+            "pt_BR": "Azulejo (Revestimento de azulejos decorativos espanhóis)",
+            "zh_Hans": "Azulejo（西班牙装饰瓷砖）"
+          },
+          "osmTags": "artwork_type=azulejo"
+        },
+        {
+          "question": {
+            "en": "Tilework",
+            "nl": "Tegelwerk",
+            "fr": "Carrelage",
+            "de": "Fliesenarbeit",
+            "it": "Mosaico di piastrelle",
+            "ru": "Плитка (мозаика)",
+            "ja": "タイルワーク",
+            "zh_Hant": "瓷磚",
+            "nb_NO": "Flisarbeid",
+            "pt": "Ladrilhos",
+            "hu": "Csempe",
+            "pl": "Płyta ceramiczna (fliza)",
+            "ca": "Enrajolat",
+            "es": "Cerámica",
+            "da": "flisebeklædning",
+            "cs": "Obklady a dlažba",
+            "he": "יצירת פסיפס",
+            "eu": "Keramika",
+            "pt_BR": "Azulejaria"
+          },
+          "osmTags": "artwork_type=tilework"
+        },
+        {
+          "question": {
+            "nl": "Houtsculptuur",
+            "en": "Woodcarving",
+            "de": "Holzschnitzerei",
+            "cs": "Dřevořezba",
+            "pt": "Entalhe em madeira",
+            "fr": "Sculpture sur bois",
+            "nb_NO": "Treskjæring",
+            "ca": "Tallat a la fusta",
+            "es": "Tallado en madera",
+            "he": "גילוף בעץ",
+            "eu": "Egur taila",
+            "pl": "Rzeźbienie w drewnie",
+            "pt_BR": "Entalhe",
+            "it": "Scultura in legno"
+          },
+          "osmTags": "artwork_type=woodcarving"
+        }
+      ]
+    }
+  ],
+  "deletion": {
+    "softDeletionTags": {
+      "and": [
+        "razed:tourism=artwork",
+        "tourism="
+      ]
+    },
+    "neededChangesets": 5
+  },
+  "allowMove": {
+    "enableRelocation": false,
+    "enableImproveAccuracy": true
+  },
+  "titleIcons": [
+    {
+      "id": "wikipedialink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+      "condition": {
+        "or": [
+          "wikipedia~*",
+          "wikidata~*"
+        ]
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "wikipedia=",
+          "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "open_until",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "#": "Titleicon showing e.g. 'open until 17:00'",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{opening_hours_state()}",
+      "condition": {
+        "or": [
+          "opening_hours~*",
+          {
+            "or": [
+              {
+                "and": [
+                  "seasonal~.*winter.*",
+                  "_now:date~....-(12|01|02)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*spring.*",
+                  "_now:date~....-(03|04|05)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*summer.*",
+                  "_now:date~....-(06|07|08)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*autumn.*",
+                  "_now:date~....-(09|10|11)-.."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "phonelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": {
+        "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+        "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+        "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+        "_context": "layers:icons.tagRenderings.phonelink.render"
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:phone~*",
+          "then": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+          }
+        }
+      ],
+      "condition": {
+        "or": [
+          "phone~*",
+          "contact:phone~*"
+        ]
+      }
+    },
+    {
+      "id": "emaillink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:email~*",
+          "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:email~*",
+          "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        }
+      ],
+      "condition": {
+        "or": [
+          "email~*",
+          "contact:email~*",
+          "operator:email~*"
+        ]
+      }
+    },
+    {
+      "id": "websitelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "website~*",
+          "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:website~*",
+          "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "context:website~*",
+          "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "smokingicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=no",
+          "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=yes",
+          "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+        }
+      ]
+    },
+    {
+      "id": "dogicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "if": "dog=no",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+        },
+        {
+          "if": "dog=leashed",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+        },
+        {
+          "if": {
+            "or": [
+              "dog=yes",
+              "dog=unleashed"
+            ]
+          },
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+        }
+      ]
+    },
+    {
+      "id": "sharelink",
+      "labels": [
+        "defaults"
+      ],
+      "render": "{share_link()}",
+      "metacondition": "_supports_sharing=yes"
+    },
+    {
+      "id": "favourite_title_icon",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "*": "{favourite_icon()}"
+      },
+      "metacondition": "_loggedIn=true"
+    },
+    {
+      "id": "osmlink",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+        "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+        "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+        "_context": "layers:icons.tagRenderings.osmlink.render"
+      },
+      "mappings": [
+        {
+          "if": "id~.*/-.*",
+          "then": ""
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "_backend~*",
+          "then": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+          }
+        }
+      ],
+      "condition": "id~(node|way|relation)/[0-9]*"
+    },
+    {
+      "id": "direction",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "{direction_indicator()}"
+    },
+    {
+      "id": "rating",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{rating()}"
+    }
+  ],
+  "_layerIcon": [
+    {
+      "icon": "circle",
+      "color": "white"
+    },
+    {
+      "icon": "./assets/themes/artwork/artwork.svg"
+    }
+  ]
+}

@@ -904,33 +904,6 @@
     "onwheels": {
         "description": "On this map, publicly weelchair accessible places are shown and can be easily added",
         "layers": {
-            "19": {
-                "override": {
-                    "=title": {
-                        "render": "Statistics"
-                    }
-                }
-            },
-            "20": {
-                "override": {
-                    "+tagRenderings": {
-                        "0": {
-                            "render": {
-                                "special": {
-                                    "text": "Import"
-                                }
-                            }
-                        },
-                        "1": {
-                            "render": {
-                                "special": {
-                                    "message": "Add all the suggested tags"
-                                }
-                            }
-                        }
-                    }
-                }
-            },
             "4": {
                 "override": {
                     "filter": {
@@ -972,6 +945,33 @@
             "8": {
                 "override": {
                     "name": "Disabled parking spaces"
+                }
+            },
+            "19": {
+                "override": {
+                    "=title": {
+                        "render": "Statistics"
+                    }
+                }
+            },
+            "20": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "Import"
+                                }
+                            }
+                        },
+                        "1": {
+                            "render": {
+                                "special": {
+                                    "message": "Add all the suggested tags"
+                                }
+                            }
+                        }
+                    }
                 }
             }
         },
@@ -1133,6 +1133,10 @@
     "stations": {
         "description": "View, edit and add details to a train station",
         "layers": {
+            "3": {
+                "description": "Layer showing train stations",
+                "name": "Train Stations"
+            },
             "16": {
                 "description": "Displays showing the trains that will leave from this station",
                 "name": "Departures boards",
@@ -1164,10 +1168,6 @@
                 "title": {
                     "render": "Departures board"
                 }
-            },
-            "3": {
-                "description": "Layer showing train stations",
-                "name": "Train Stations"
             }
         },
         "title": "Train Stations"

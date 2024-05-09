@@ -1,0 +1,1123 @@
+{
+  "id": "barrier",
+  "name": {
+    "en": "Barriers",
+    "nl": "Barrières",
+    "de": "Hindernisse",
+    "ru": "Препятствия",
+    "hu": "Akadályok",
+    "fr": "Barrières",
+    "es": "Barreras",
+    "ca": "Barreres",
+    "da": "Barrierer",
+    "cs": "Překážky",
+    "pa_PK": "رُکاوٹاں",
+    "nb_NO": "Barrièrer",
+    "he": "מחסומים",
+    "eu": "Barrerak",
+    "pl": "Barierki",
+    "pt_BR": "Barreiras",
+    "pt": "Barreiras"
+  },
+  "description": {
+    "en": "Obstacles while cycling, such as bollards and cycle barriers",
+    "nl": "Hindernissen tijdens het fietsen, zoals paaltjes en fietshekjes",
+    "de": "Hindernisse beim Fahrradfahren, wie zum Beispiel Poller und Fahrrad Barrieren",
+    "hu": "Kerékpározás közbeni akadályok, például terelőoszlopok és kerékpárakadályok",
+    "fr": "Obstacles à vélo, tels que des potelets ou des barrières",
+    "es": "Obstáculos durante el uso de la bicicleta, como bolardos y barreras para bicicletas",
+    "da": "Forhindringer under cykling, f.eks. pæle og cykelbarrierer",
+    "cs": "Překážky při jízdě na kole, jako jsou patníky a zábrany pro cyklisty",
+    "nb_NO": "Hindringer for sykling, som f.eks. pullerter og sykkelbarrièrer",
+    "ca": "Obstacles a l'hora d'utilitzar la bicicleta com bol·lards i barreres per a bicicletes",
+    "pt_BR": "Obstáculos ao pedalar, como pilares e barreiras para ciclistas",
+    "pt": "Obstáculos ao pedalar, como pilares e barreiras para ciclistas"
+  },
+  "source": {
+    "osmTags": {
+      "and": [
+        {
+          "or": [
+            "barrier=bollard",
+            "barrier=cycle_barrier"
+          ]
+        }
+      ]
+    }
+  },
+  "minzoom": 17,
+  "title": {
+    "render": {
+      "en": "Barrier",
+      "nl": "Barrière",
+      "de": "Hindernis",
+      "ru": "Препятствие",
+      "fr": "Barrière",
+      "es": "Barrera",
+      "ca": "Barrera",
+      "da": "Barriere",
+      "cs": "Bariéra",
+      "pa_PK": "رُکاوٹ",
+      "he": "מחסום",
+      "eu": "Barrera",
+      "pt_BR": "Barreira",
+      "pt": "Barreira"
+    },
+    "mappings": [
+      {
+        "if": "barrier=bollard",
+        "then": {
+          "en": "Bollard",
+          "nl": "Paaltje",
+          "de": "Poller",
+          "ru": "Прикол",
+          "fr": "Bollard",
+          "es": "Bolardo",
+          "ca": "Pilona",
+          "da": "Pullert",
+          "cs": "Sloupek",
+          "pa_PK": "بولارڈ",
+          "eu": "Bolardoa",
+          "pt_BR": "Pilar",
+          "pt": "Pilar"
+        }
+      },
+      {
+        "if": "barrier=cycle_barrier",
+        "then": {
+          "en": "Cycling Barrier",
+          "nl": "Fietshekjes",
+          "de": "Barriere für Radfahrer",
+          "fr": "Barrière cyclable",
+          "ca": "Barrera ciclista",
+          "es": "Barrera Ciclista",
+          "da": "Cykelbarriere",
+          "cs": "Cyklistická bariéra",
+          "pt_BR": "Barreira para ciclistas",
+          "pt": "Barreira para ciclistas"
+        }
+      }
+    ]
+  },
+  "pointRendering": [
+    {
+      "marker": [
+        {
+          "icon": {
+            "render": "./assets/layers/barrier/barrier.svg",
+            "id": "assetslayersbarrierbarriersvg"
+          }
+        }
+      ],
+      "location": [
+        "point"
+      ],
+      "iconBadges": [
+        {
+          "if": "_favourite=yes",
+          "then": "circle:white;heart:red"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "width": "5"
+    }
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "a bollard",
+        "nl": "een paaltje",
+        "de": "einen Poller",
+        "ru": "Прикол",
+        "fr": "une bollard",
+        "hu": "Terelőoszlop",
+        "es": "una bolardo",
+        "ca": "una pilona",
+        "da": "en pullert",
+        "cs": "sloupek",
+        "pt_BR": "um pilar",
+        "pt": "um pilar"
+      },
+      "tags": [
+        "barrier=bollard"
+      ],
+      "description": {
+        "en": "A bollard in the road",
+        "nl": "Een paaltje in de weg",
+        "de": "Ein Poller auf der Straße",
+        "hu": "Terelőoszlop az úton",
+        "fr": "Un potelet sur le chemin",
+        "es": "Un bolardo en la carretera",
+        "da": "En pullert på vejen",
+        "cs": "Sloupek na silnici",
+        "nb_NO": "En pullert i veien",
+        "ca": "Un bol·lard a la carretera",
+        "pt_BR": "Um pilar na rua",
+        "pt": "Um pilar na rua"
+      },
+      "snapToLayer": [
+        "cycleways_and_roads"
+      ],
+      "maxSnapDistance": 25
+    },
+    {
+      "title": {
+        "en": "a cycle barrier",
+        "nl": "een fietsbarrière",
+        "de": "ein Fahrradhindernis",
+        "hu": "Kerékpárakadály",
+        "fr": "une barrière cyclable",
+        "da": "en stibom",
+        "es": "una barrera ciclista",
+        "cs": "cyklistická bariéra",
+        "nb_NO": "en sykkelbarrière",
+        "ca": "una barrera ciclista",
+        "pt_BR": "um barreira para ciclistas",
+        "pt": "um barreira para ciclistas"
+      },
+      "tags": [
+        "barrier=cycle_barrier"
+      ],
+      "description": {
+        "en": "Cycle barrier, slowing down cyclists",
+        "nl": "Fietshekjes, voor het afremmen van fietsers",
+        "de": "Fahrradhindernis, das Radfahrer abbremst",
+        "hu": "A kerékpáros sebességét csökkentő kerékpárakadály",
+        "fr": "Barrières cyclables, ralentissant les cyclistes",
+        "da": "Stibomme, der fartdæmper cyklister",
+        "es": "Una barrera ciclista, que ralentiza a los ciclistas",
+        "cs": "Bariéra pro cyklisty, která zpomaluje cyklisty",
+        "nb_NO": "Sykkelbarrièrer, for å dempe farten",
+        "ca": "Una barrera ciclista que relanteix als ciclistes",
+        "pt_BR": "Barreira para ciclistas, que reduz a velocidade dos ciclistas",
+        "pt": "Barreira para ciclistas, que reduz a velocidade dos ciclistas"
+      },
+      "snapToLayer": [
+        "cycleways_and_roads"
+      ],
+      "maxSnapDistance": 25
+    }
+  ],
+  "tagRenderings": [
+    {
+      "id": "just_created",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "This element shows a 'thank you' that the contributor has recently created this element",
+      "classes": "rounded-xl thanks",
+      "mappings": [
+        {
+          "if": "id~*",
+          "icon": "./assets/svg/party.svg",
+          "then": {
+            "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+            "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+            "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+            "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+            "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+            "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+          }
+        }
+      ],
+      "condition": {
+        "and": [
+          "_backend~*",
+          "_last_edit:passed_time<300",
+          {
+            "or": [
+              "_version_number=",
+              "_version_number=1"
+            ]
+          }
+        ]
+      },
+      "metacondition": {
+        "and": [
+          {
+            "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+            "or": [
+              "_last_edit:contributor:uid:={_uid}",
+              "_last_edit:contributor:uid="
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "images",
+      "description": "This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images",
+      "render": {
+        "*": "{image_carousel()}{image_upload()}{nearby_images():my-4}"
+      },
+      "classes": "my-4"
+    },
+    {
+      "condition": "_referencing_ways~*",
+      "question": {
+        "en": "Can a bicycle go past this barrier?",
+        "nl": "Kan een fietser langs deze barrière?",
+        "de": "Kann ein Radfahrer das Hindernis passieren?",
+        "hu": "Át lehet-e menni rajta kerékpárral?",
+        "fr": "Est-ce qu'un vélo peut franchir cette barrière ?",
+        "es": "¿Una bicicleta puede pasar esta barrera?",
+        "da": "Kan en cykel køre forbi denne barriere?",
+        "cs": "Může tuto bariéru překonat jízdní kolo?",
+        "ca": "Una bicicleta pot passar aquesta barrera?",
+        "pt_BR": "Uma bicicleta pode passar por essa barreira?",
+        "pt": "Uma bicicleta pode passar por esta barreira?"
+      },
+      "mappings": [
+        {
+          "if": "bicycle=yes",
+          "then": {
+            "en": "A cyclist can go past this.",
+            "nl": "Een fietser kan hier langs.",
+            "de": "Ein Radfahrer kann hindurchfahren.",
+            "fr": "Un cycliste peut franchir ceci.",
+            "hu": "Kerékpárral át lehet hajtani.",
+            "da": "En cyklist kan cykle forbi denne.",
+            "es": "Un ciclista puede pasar esto.",
+            "cs": "Cyklista ji může projet.",
+            "ca": "Un ciclista pot passar-hi.",
+            "pt_BR": "Um ciclista pode passar por isso.",
+            "pt": "Um ciclista pode passar por isto.",
+            "zh_Hant": "單車騎士能夠穿越。"
+          }
+        },
+        {
+          "if": "bicycle=no",
+          "then": {
+            "en": "A cyclist can not go past this.",
+            "nl": "Een fietser kan hier niet langs.",
+            "de": "Ein Radfahrer kann nicht hindurchfahren.",
+            "fr": "Un cycliste ne peut pas franchir ceci.",
+            "hu": "Kerékpárral nem lehet áthajtani.",
+            "da": "En cyklist kan ikke cykle forbi denne.",
+            "es": "Un ciclista no puede pasar esto.",
+            "cs": "Cyklista tudy nemůže projet.",
+            "ca": "Un ciclista no pot passar-hi.",
+            "pt_BR": "Um ciclista não pode passar por isso.",
+            "pt": "Um ciclista não pode passar por isst.",
+            "zh_Hant": "單車騎士無法穿越。"
+          }
+        }
+      ],
+      "id": "bicycle=yes/no"
+    },
+    {
+      "id": "barrier_type",
+      "mappings": [
+        {
+          "if": "barrier=bollard",
+          "then": {
+            "en": "This is a single bollard in the road",
+            "hu": "Ez egyetlen oszlop az úton",
+            "nl": "Dit is een enkel paaltje in de weg",
+            "fr": "C'est un plot unique sur la route",
+            "de": "Dies ist ein einzelner Poller auf der Straße",
+            "es": "Este es un único bolardo en la carretera",
+            "da": "Dette er en enkelt pullert på vejen",
+            "cs": "Jedná se o jeden sloupek na silnici",
+            "ca": "Aquest és un únic piló a la carretera",
+            "pt_BR": "Esse é um único pilar na estrada",
+            "pt": "Esse é um único pilar na estrada"
+          }
+        },
+        {
+          "if": "barrier=cycle_barrier",
+          "then": {
+            "en": "This is a cycle barrier slowing down cyclists",
+            "nl": "Dit zijn fietshekjes die fietsers afremmen",
+            "hu": "Ez egy kerékpárakadály, amely lelassítja a kerékpárosokat",
+            "fr": "C'est une barrière visant à ralentir les vélos",
+            "de": "Dies ist eine Fahrradbarriere, die Radfahrer abbremst",
+            "es": "Esta es una barrera ciclista que ralentiza a los ciclistas",
+            "da": "Dette er en cykelbarriere, der bremser cyklisterne",
+            "cs": "Jedná se o cyklistickou bariéru, která zpomaluje cyklisty",
+            "ca": "Açò és una barrera ciclista que relantitza als ciclistes",
+            "pt_BR": "Isso é uma barreira para ciclistas que reduz a velocidade dos ciclistas",
+            "pt": "Isto é uma barreira para ciclistas que reduz a velocidade dos ciclistas"
+          }
+        }
+      ]
+    },
+    {
+      "question": {
+        "en": "What kind of bollard is this?",
+        "nl": "Wat voor soort paal is dit?",
+        "de": "Um was für einen Poller handelt es sich?",
+        "fr": "Quel est le type de bollard (borne) ?",
+        "hu": "Milyen fajta terelőoszlop ez?",
+        "es": "¿Qué tipo de bolardo es este?",
+        "da": "Hvilken slags pullert er dette?",
+        "cs": "Co je to za sloupek?",
+        "nb_NO": "Hva slags pullert er dette?",
+        "ca": "Quin tipus de bol·lard és aquest?",
+        "pt_BR": "Que tipo de pilar é esse?",
+        "pt": "Que tipo de pilar é esse?"
+      },
+      "condition": "barrier=bollard",
+      "mappings": [
+        {
+          "if": "bollard=removable",
+          "then": {
+            "en": "Removable bollard",
+            "nl": "Verwijderbare paal",
+            "de": "Entfernbarer Poller",
+            "fr": "Bollard amovible",
+            "hu": "Eltávolítható terelőoszlop",
+            "ca": "Pilona desmuntable",
+            "da": "Aftagelig pullert",
+            "es": "Bolardo extraíble",
+            "cs": "Odnímatelný sloupek",
+            "nb_NO": "Senk- eller fjernbar pullert",
+            "pt_BR": "Pilar removível",
+            "pt": "Pilar removível"
+          }
+        },
+        {
+          "if": "bollard=fixed",
+          "then": {
+            "en": "Fixed bollard",
+            "nl": "Vaste paal",
+            "de": "Feststehender Poller",
+            "fr": "Bollard fixe",
+            "hu": "Rögzített terelőoszlop",
+            "es": "Bolardo fijo",
+            "ca": "Pilona fixa",
+            "da": "Fast pullert",
+            "cs": "Pevný sloupek",
+            "nb_NO": "Fast pullert",
+            "pt_BR": "Pilar fixo",
+            "pt": "Pilar fixo"
+          }
+        },
+        {
+          "if": "bollard=foldable",
+          "then": {
+            "en": "Bollard that can be folded down",
+            "nl": "Paal die platgevouwen kan worden",
+            "de": "Umlegbarer Poller",
+            "fr": "Bollard qui peut être couché",
+            "hu": "Lehajtható terelőoszlop",
+            "da": "Pullert, der kan klappes ned",
+            "es": "Bolardo retráctil",
+            "cs": "Sklopný sloupek",
+            "ca": "Piló retràctil",
+            "nb_NO": "Pullert som kan klappes ned",
+            "pt_BR": "Pilar retrátil",
+            "pt": "Pilar retrátil"
+          }
+        },
+        {
+          "if": "bollard=flexible",
+          "then": {
+            "en": "Flexible bollard, usually plastic",
+            "nl": "Flexibele paal, meestal plastic",
+            "de": "Flexibler Poller, meist aus Kunststoff",
+            "fr": "Bollard flexible, généralement en plastique",
+            "hu": "Rugalmas (általában műanyag) terelőoszlop",
+            "es": "Bolardo flexible, normalmente plástico",
+            "da": "Fleksibel pullert, normalt plast",
+            "cs": "Pružný sloupek, obvykle plastový",
+            "ca": "Piló flexible, normalment de plàstic",
+            "nb_NO": "Fleksibel pullert, vanligvis plastikk",
+            "pt_BR": "Pilar flexível, geralmente plástico",
+            "pt": "Pilar flexível, geralmente plástico"
+          }
+        },
+        {
+          "if": "bollard=rising",
+          "then": {
+            "en": "Rising bollard",
+            "nl": "Verzonken poller",
+            "de": "Ausfahrender Poller",
+            "fr": "Bollard rétractable",
+            "hu": "Felemelkedő terelőoszlop",
+            "es": "Bolardo levadizo",
+            "ca": "Pilona retràctil",
+            "da": "Opstigende pullert",
+            "cs": "Vyjíždějící sloupek",
+            "nb_NO": "Oppstigende pullert",
+            "pt_BR": "Pilar elevatório",
+            "pt": "Pilar elevatório"
+          }
+        }
+      ],
+      "id": "Bollard type"
+    },
+    {
+      "question": {
+        "en": "What kind of cycling barrier is this?",
+        "nl": "Wat voor fietshekjes zijn dit?",
+        "de": "Um welche Art Fahrradhindernis handelt es sich?",
+        "hu": "Milyen fajta kerékpárakadály ez?",
+        "fr": "Quel est ce type de barrière cyclable ?",
+        "es": "¿Qué tipo de barrera ciclista es esta?",
+        "da": "Hvad er det for en cykelbarriere?",
+        "cs": "O jakou cyklistickou bariéru se jedná?",
+        "nb_NO": "Hva slags sykkelbarrière er dette?",
+        "ca": "Quin tipus de barrera ciclista és aquesta?",
+        "pt_BR": "Que tipo de barreira para ciclistas é essa?",
+        "pt": "Que tipo de barreira para ciclistas é esta?"
+      },
+      "condition": "barrier=cycle_barrier",
+      "mappings": [
+        {
+          "if": "cycle_barrier=single",
+          "then": {
+            "en": "Single, just two barriers with a space inbetween",
+            "nl": "Enkelvoudig, slechts twee hekjes met ruimte ertussen",
+            "de": "Einfach, nur zwei Barrieren mit einem Zwischenraum",
+            "hu": "Egyszeres: csak két korlát, közöttük térköz",
+            "fr": "Simple, deux barrières côte à côte",
+            "es": "Simple, simplemente dos barreras con un espacio en el medio",
+            "da": "Enkelt, kun to barrierer med et mellemrum",
+            "cs": "Jednoduchý, jen dvě překážky s mezerou mezi nimi",
+            "ca": "Simple, simplement dos barreres amb un espai al mig",
+            "pt_BR": "Simples, apenas duas barreiras com um espaço no meio",
+            "pt": "Simples, apenas duas barreiras com um espaço no meio"
+          },
+          "icon": {
+            "path": "./assets/themes/cycle_infra/Cycle_barrier_single.png",
+            "class": "large"
+          }
+        },
+        {
+          "if": "cycle_barrier=double",
+          "then": {
+            "en": "Double, two barriers behind each other",
+            "nl": "Dubbel, twee hekjes achter elkaar",
+            "de": "Doppelt, zwei Barrieren hintereinander",
+            "hu": "Kétszeres: két, egymáshoz képest eltolt korlát egymás után",
+            "fr": "Double, deux barrières successives",
+            "es": "Doble, dos barreras una detrás de otra",
+            "da": "Dobbelt, to barrierer bag hinanden",
+            "cs": "Dvojitý, dvě bariéry za sebou",
+            "nb_NO": "Dobbel, to barrièrer etter hverandre",
+            "ca": "Doble, dues barreres una darrere l'altra",
+            "pt_BR": "Duplo, duas barreiras uma atrás da outra",
+            "pt": "Duplo, duas barreiras uma atrás da outra"
+          },
+          "icon": {
+            "path": "./assets/themes/cycle_infra/Cycle_barrier_double.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "cycle_barrier=triple",
+          "then": {
+            "en": "Triple, three barriers behind each other",
+            "nl": "Drievoudig, drie hekjes achter elkaar",
+            "de": "Dreifach, drei Barrieren hintereinander",
+            "hu": "Háromszoros: három, egymáshoz képest eltolt korlát egymás után",
+            "fr": "Triple, trois barrières successives",
+            "es": "Triple, tres barreras una detrás de otra",
+            "da": "Tredobbelt, tre barrierer bag hinanden",
+            "cs": "Trojitá, tři bariéry za sebou",
+            "nb_NO": "Trippel, tre barrièrer etter hverandre",
+            "ca": "Triple, tres barreres una darrere l'altra",
+            "pt_BR": "Triplo, três barreiras uma atrás da outra",
+            "pt": "Triplo, três barreiras uma atrás da outra"
+          },
+          "icon": {
+            "path": "./assets/themes/cycle_infra/Cycle_barrier_triple.png",
+            "class": "large"
+          }
+        },
+        {
+          "if": "cycle_barrier=squeeze",
+          "then": {
+            "en": "Squeeze gate, gap is smaller at top, than at the bottom",
+            "nl": "Knijppoort, ruimte is smaller aan de top, dan aan de bodem",
+            "de": "Eine Durchfahrtsbeschränkung, Durchfahrtsbreite ist oben kleiner als unten",
+            "hu": "Szűkítőkapu: a rés felül keskenyebb, mint alul",
+            "fr": "Poire, l’espace en hauteur est plus faible qu’au sol",
+            "es": "Barrera de seguridad, el espacio es menor en la parte superior que en la inferior",
+            "da": "Squeeze gate, mellemrummet er mindre i toppen end i bunden",
+            "ca": "Barrera de seguretat, l'espai és menor a la part superior que a l'inferior",
+            "cs": "Zúžená brána, mezera nahoře je menší než dole",
+            "pt_BR": "Portão estreito, a abertura é menor na parte superior do que na parte inferior",
+            "pt": "Portão estreito, a abertura é menor na parte superior do que na parte inferior"
+          },
+          "icon": {
+            "path": "./assets/themes/cycle_infra/Cycle_barrier_squeeze.png",
+            "class": "large"
+          }
+        }
+      ],
+      "id": "Cycle barrier type"
+    },
+    {
+      "render": {
+        "en": "Maximum width: {maxwidth:physical} m",
+        "nl": "Maximumbreedte: {maxwidth:physical} m",
+        "de": "Maximale Durchfahrtsbreite: {maxwidth:physical} m",
+        "fr": "Largeur maximale : {maxwidth:physical} m",
+        "hu": "Legnagyobb szélesség: {maxwidth:physical} m",
+        "es": "Anchura máxima: {maxwidth:physical} m",
+        "da": "Maksimal bredde: {maxwidth:physical} m",
+        "cs": "Maximální šířka: {maxwidth:physical} m",
+        "pt": "Largura máxima: {maxwidth:physical} m",
+        "nb_NO": "Maksimal bredde: {maxwidth:physical} m",
+        "ca": "Amplada màxima: {maxwidth:physical} m",
+        "pt_BR": "Largura máxima: {maxwidth:physical} m"
+      },
+      "question": {
+        "en": "How wide is the gap left over besides the barrier?",
+        "nl": "Hoe breed is de ruimte naast de barrière?",
+        "de": "Welche Durchfahrtsbreite hat das Hindernis?",
+        "hu": "Milyen széles az akadályon az a rés, amelyen át lehet haladni?",
+        "fr": "Quelle est la largeur du passage ?",
+        "es": "¿Cómo de ancho es el hueco dejado fuera de la barrera?",
+        "da": "Hvor stort er mellemrummet udover barrieren?",
+        "cs": "Jak široká je mezera, která zbývá vedle bariéry?",
+        "ca": "Com d'ample és el buit que queda als costats de la barrera?",
+        "pt_BR": "Qual é a largura da abertura deixada ao lado da barreira?",
+        "pt": "Qual é a largura da abertura deixada ao lado da barreira?"
+      },
+      "condition": {
+        "and": [
+          "cycle_barrier!=double",
+          "cycle_barrier!=triple",
+          "_referencing_ways~*"
+        ]
+      },
+      "freeform": {
+        "key": "maxwidth:physical",
+        "type": "distance",
+        "helperArgs": [
+          "20",
+          "map"
+        ],
+        "inline": true
+      },
+      "id": "MaxWidth"
+    },
+    {
+      "render": {
+        "en": "Space between barriers (along the length of the road): {width:separation} m",
+        "nl": "Ruimte tussen barrières (langs de lengte van de weg): {width:separation} m",
+        "de": "Abstand zwischen den Barrieren (entlang der Straße): {width:separation} m",
+        "hu": "A korlátok közötti távolság (az út irányában): {width:separation} m",
+        "fr": "Espace entre deux barrières successives : {width:separation} m",
+        "es": "Espacio entre barreras (a lo largo de la longitud de la carretera): {width:separation} m",
+        "da": "Plads mellem barrierer (langs vejens længde): {width:separation} m",
+        "cs": "Prostor mezi svodidly (po celé délce silnice): {width:separation} m",
+        "ca": "Espai entre barreres (al llarg de la longitud de la carretera): {width:separation} m",
+        "pt_BR": "Espaço entre as barreiras (ao longo do comprimento da estrada): {width:separation} m",
+        "pt": "Espaço entre as barreiras (ao longo do comprimento da estrada): {width:separation} m"
+      },
+      "question": {
+        "en": "How much space is there between the barriers (along the length of the road)?",
+        "nl": "Hoeveel ruimte is er tussen de barrières (langs de lengte van de weg)?",
+        "de": "Wie groß ist der Abstand zwischen den Barrieren (entlang der Straße)?",
+        "hu": "Mekkora távolság van a korlátok között (az út irányában)?",
+        "fr": "Combien d’espace sépare deux barrières successives ?",
+        "es": "¿Cuánto espacio hay entre las barreras (a lo largo de la longitud de la carretera)?",
+        "da": "Hvor meget plads er der mellem bommene (på langs af vejen)?",
+        "cs": "Jak velký je prostor mezi svodidly (po celé délce silnice)?",
+        "ca": "Quant espai hi ha entre les barreres (al llarg de la longitud de la carretera)?",
+        "pt_BR": "Quanto espaço há entre as barreiras (ao longo do comprimento da estrada)?",
+        "pt": "Quanto espaço há entre as barreiras (ao longo do comprimento da estrada)?"
+      },
+      "condition": {
+        "or": [
+          "cycle_barrier=double",
+          "cycle_barrier=triple"
+        ]
+      },
+      "freeform": {
+        "key": "width:separation",
+        "type": "distance",
+        "helperArgs": [
+          "21",
+          "map"
+        ],
+        "inline": true
+      },
+      "id": "Space between barrier (cyclebarrier)"
+    },
+    {
+      "render": {
+        "en": "Width of opening: {width:opening} m",
+        "nl": "Breedte van de opening: {width:opening} m",
+        "de": "Breite der Öffnung: {width:opening} m",
+        "fr": "Largeur de l'ouverture : {width:opening} m",
+        "hu": "Nyílás szélessége: {width:opening} m",
+        "es": "Anchura de la apertura: {width:opening} m",
+        "da": "Bredde af åbning: {width:opening} m",
+        "cs": "Šířka otvoru: {width:opening} m",
+        "ca": "Amplada de l'apertura: {width:opening} m",
+        "pt_BR": "Largura da abertura: {width:opening} m",
+        "pt": "Largura da abertura: {width:opening} m"
+      },
+      "question": {
+        "en": "How wide is the smallest opening next to the barriers?",
+        "nl": "Hoe breed is de smalste opening naast de barrières?",
+        "de": "Wie breit ist die kleinste Öffnung neben den Barrieren?",
+        "hu": "Milyen széles a korlátok melletti legkisebb nyílás?",
+        "fr": "Quelle est la largeur d'ouverture après la plus petite près de la barrière ?",
+        "es": "¿Que amplitud tiene la apertura más pequeña al lado de las barreras?",
+        "da": "Hvor bred er den mindste åbning ved siden af barriererne?",
+        "cs": "Jak široký je nejmenší otvor vedle bariér?",
+        "ca": "Quina amplitud té l'obertura més petita al costat de les barreres?",
+        "pt_BR": "Qual é a largura da menor abertura ao lado das barreiras?",
+        "pt": "Qual é a largura da menor abertura ao lado das barreiras?"
+      },
+      "condition": {
+        "or": [
+          "cycle_barrier=double",
+          "cycle_barrier=triple"
+        ]
+      },
+      "freeform": {
+        "key": "width:opening",
+        "type": "distance",
+        "helperArgs": [
+          "21",
+          "map"
+        ],
+        "inline": true
+      },
+      "id": "Width of opening (cyclebarrier)"
+    },
+    {
+      "render": {
+        "en": "Overlap: {overlap} m",
+        "de": "Überschneidung: {overlap} m",
+        "hu": "Átfedés: {overlap} m",
+        "fr": "Chevauchement : {overlap} m",
+        "nl": "Overlap: {overlap} m",
+        "es": "Solapado: {overlap} m",
+        "da": "Overlapning: {overlap} m",
+        "cs": "Překrývání: {overlap} m",
+        "ca": "Solapat: {overlap} m",
+        "pt_BR": "Sobreposição: {overlap} m",
+        "pt": "Sobreposição: {overlap} m"
+      },
+      "question": {
+        "en": "How much overlap do the barriers have?",
+        "nl": "Hoeveel overlappen de barrières?",
+        "de": "Wie stark überschneiden sich die Barrieren?",
+        "hu": "Mekkora a korlátok átfedése?",
+        "fr": "Quel est le chevauchement des barrières ?",
+        "es": "¿Cuánto se solapan las barreras?",
+        "da": "Hvor meget overlap har barriererne?",
+        "cs": "Jak moc se bariéry překrývají?",
+        "ca": "Quant es solapen les barreres?",
+        "pt_BR": "Quanto as barreiras se sobrepõem?",
+        "pt": "Quanto as barreiras se sobrepõem?"
+      },
+      "condition": {
+        "or": [
+          "cycle_barrier=double",
+          "cycle_barrier=triple"
+        ]
+      },
+      "freeform": {
+        "key": "overlap",
+        "type": "distance",
+        "helperArgs": [
+          "21",
+          "map"
+        ],
+        "inline": true
+      },
+      "id": "Overlap (cyclebarrier)"
+    },
+    {
+      "id": "leftover-questions",
+      "render": {
+        "*": "{questions( ,)}"
+      }
+    },
+    {
+      "id": "lod",
+      "labels": [
+        "added_by_default"
+      ],
+      "render": {
+        "*": "{linked_data_from_website()}"
+      }
+    },
+    {
+      "id": "minimap",
+      "description": "Shows a small map with the feature. Added by default to every popup",
+      "render": {
+        "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+      }
+    },
+    {
+      "id": "delete-button",
+      "render": {
+        "*": "{delete_button()}"
+      }
+    },
+    {
+      "id": "last_edit",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+      "condition": {
+        "and": [
+          "_last_edit:contributor~*",
+          "_last_edit:changeset~*"
+        ]
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsTesting=true",
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_debug=yes",
+          "_csCount>=10"
+        ]
+      },
+      "render": {
+        "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+      }
+    },
+    {
+      "id": "favourite_status",
+      "render": {
+        "*": "{favourite_status()}"
+      }
+    },
+    {
+      "id": "qr_code",
+      "labels": [
+        "added_by_default"
+      ],
+      "classes": "flex items-center gap-x-2",
+      "render": {
+        "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+        "en": "{qr_code()}Scan this code to open this location on another device",
+        "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+        "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+      }
+    },
+    {
+      "id": "share",
+      "labels": [
+        "added_by_default"
+      ],
+      "metacondition": "_supports_sharing=yes",
+      "render": {
+        "de": "{share_link(,Standort teilen)}",
+        "en": "{share_link(,Share this location)}",
+        "nl": "{share_link(,Deel deze locatie)}"
+      }
+    },
+    {
+      "id": "all-tags",
+      "render": {
+        "*": "{all_tags()}"
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_tags=full",
+          "mapcomplete-show_debug=yes"
+        ]
+      }
+    }
+  ],
+  "deletion": {
+    "softDeletionTags": {
+      "and": [
+        "barrier=",
+        "bicycle=",
+        "foot=",
+        "motor_vehicle=",
+        "vehicle=",
+        "inline_skate=",
+        "inline_skates=",
+        "mofa=",
+        "moped=",
+        "moped_a=",
+        "moped_b=",
+        "bollard=",
+        "cycle_barrier=",
+        "maxwidth:physical=",
+        "width:separation=",
+        "width:opening=",
+        "overlap=",
+        "fixme="
+      ]
+    }
+  },
+  "titleIcons": [
+    {
+      "id": "wikipedialink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+      "condition": {
+        "or": [
+          "wikipedia~*",
+          "wikidata~*"
+        ]
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "wikipedia=",
+          "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "open_until",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "#": "Titleicon showing e.g. 'open until 17:00'",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{opening_hours_state()}",
+      "condition": {
+        "or": [
+          "opening_hours~*",
+          {
+            "or": [
+              {
+                "and": [
+                  "seasonal~.*winter.*",
+                  "_now:date~....-(12|01|02)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*spring.*",
+                  "_now:date~....-(03|04|05)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*summer.*",
+                  "_now:date~....-(06|07|08)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*autumn.*",
+                  "_now:date~....-(09|10|11)-.."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "phonelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": {
+        "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+        "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+        "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+        "_context": "layers:icons.tagRenderings.phonelink.render"
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:phone~*",
+          "then": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+          }
+        }
+      ],
+      "condition": {
+        "or": [
+          "phone~*",
+          "contact:phone~*"
+        ]
+      }
+    },
+    {
+      "id": "emaillink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:email~*",
+          "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:email~*",
+          "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        }
+      ],
+      "condition": {
+        "or": [
+          "email~*",
+          "contact:email~*",
+          "operator:email~*"
+        ]
+      }
+    },
+    {
+      "id": "websitelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "website~*",
+          "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:website~*",
+          "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "context:website~*",
+          "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "smokingicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=no",
+          "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=yes",
+          "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+        }
+      ]
+    },
+    {
+      "id": "dogicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "if": "dog=no",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+        },
+        {
+          "if": "dog=leashed",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+        },
+        {
+          "if": {
+            "or": [
+              "dog=yes",
+              "dog=unleashed"
+            ]
+          },
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+        }
+      ]
+    },
+    {
+      "id": "sharelink",
+      "labels": [
+        "defaults"
+      ],
+      "render": "{share_link()}",
+      "metacondition": "_supports_sharing=yes"
+    },
+    {
+      "id": "favourite_title_icon",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "*": "{favourite_icon()}"
+      },
+      "metacondition": "_loggedIn=true"
+    },
+    {
+      "id": "osmlink",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+        "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+        "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+        "_context": "layers:icons.tagRenderings.osmlink.render"
+      },
+      "mappings": [
+        {
+          "if": "id~.*/-.*",
+          "then": ""
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "_backend~*",
+          "then": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+          }
+        }
+      ],
+      "condition": "id~(node|way|relation)/[0-9]*"
+    },
+    {
+      "id": "direction",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "{direction_indicator()}"
+    },
+    {
+      "id": "rating",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{rating()}"
+    }
+  ],
+  "_layerIcon": [
+    {
+      "icon": "./assets/layers/barrier/barrier.svg"
+    }
+  ]
+}

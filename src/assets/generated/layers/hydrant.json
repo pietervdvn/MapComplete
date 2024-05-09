@@ -1,0 +1,996 @@
+{
+  "id": "hydrant",
+  "name": {
+    "en": "Map of hydrants",
+    "ja": "消火栓の地図",
+    "zh_Hant": "消防栓地圖",
+    "nb_NO": "Kart over brannhydranter",
+    "ru": "Карта пожарных гидрантов",
+    "fr": "Carte des bornes incendie",
+    "de": "Hydranten",
+    "it": "Mappa degli idranti",
+    "nl": "Kaart van brandkranen",
+    "es": "Mapa de bocas de incendios",
+    "ca": "Mapa d'hidrants",
+    "cs": "Mapa hydrantů"
+  },
+  "description": {
+    "en": "Map layer to show fire hydrants.",
+    "ja": "消火栓を表示するマップレイヤ。",
+    "zh_Hant": "顯示消防栓的地圖圖層。",
+    "nb_NO": "Kartlag for å vise brannhydranter.",
+    "ru": "Слой карты, отображающий пожарные гидранты.",
+    "fr": "Couche des bornes incendie.",
+    "de": "Kartenebene zur Anzeige von Hydranten.",
+    "it": "Livello della mappa che mostra gli idranti antincendio.",
+    "nl": "Kaartlaag met brandkranen.",
+    "es": "Un mapa que muestra bocas de incendios.",
+    "ca": "Una capa que mostra hidrants.",
+    "cs": "Mapová vrstva zobrazující požární hydranty."
+  },
+  "source": {
+    "osmTags": {
+      "and": [
+        "emergency=fire_hydrant"
+      ]
+    }
+  },
+  "minzoom": 14,
+  "title": {
+    "render": {
+      "en": "Hydrant",
+      "ru": "Гидрант",
+      "ja": "消火栓",
+      "nb_NO": "Brannhydrant",
+      "fr": "Bornes incendie",
+      "de": "Hydrant",
+      "it": "Idrante",
+      "nl": "Brandkraan",
+      "ca": "Hidrant",
+      "es": "Boca de incendios",
+      "pa_PK": "ہائڈرنٹ",
+      "cs": "Hydrant"
+    }
+  },
+  "pointRendering": [
+    {
+      "iconSize": "20,20",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": {
+            "render": "./assets/themes/hailhydrant/hydrant.svg",
+            "id": "assetsthemeshailhydranthydrantsvg"
+          }
+        }
+      ],
+      "iconBadges": [
+        {
+          "if": "_favourite=yes",
+          "then": "circle:white;heart:red"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#00f",
+      "width": "8"
+    }
+  ],
+  "presets": [
+    {
+      "tags": [
+        "emergency=fire_hydrant"
+      ],
+      "title": {
+        "en": "a fire hydrant",
+        "ru": "Пожарный гидрант",
+        "ja": "消火栓",
+        "nb_NO": "en brannhydrant",
+        "fr": "une borne incendie",
+        "de": "einen Hydranten",
+        "it": "una idrante antincendio",
+        "nl": "een brandkraan",
+        "es": "una boca de incendios",
+        "ca": "un hidrant",
+        "cs": "požární hydrant"
+      },
+      "description": {
+        "en": "A hydrant is a connection point where firefighters can tap water. It might be located underground.",
+        "ja": "消火栓は消防士が水を汲み上げることができる接続点です。地下にあるかもしれません。",
+        "fr": "Une borne incendie est un point où les pompiers peuvent s’alimenter en eau. Elle peut être enterrée.",
+        "de": "Ein Hydrant ist ein Anschlusspunkt, an dem die Feuerwehr Wasser zapfen kann. Er kann sich unterirdisch befinden.",
+        "it": "Un idrante è un punto di collegamento dove i pompieri possono estrarre acqua. Potrebbe trovarsi sottoterra.",
+        "nl": "Een brandkraan is een kraan waar brandweerlieden een brandslang kunnen aansluiten. Soms zit deze ondergronds.",
+        "es": "Una boca de incendios es un punto de conexión en el que los bomberos pueden conseguir agua. Puede situarse bajo tierra.",
+        "ca": "Un hidrant és un punt de connexió on els bombers poden aconseguir aigua. Pot estar baix terra.",
+        "ru": "Гидрант – приспособление, с помощью которого пожарные могут подключаться к водопроводу. Гидранты могут быть под землёй.",
+        "cs": "Hydrant je přípojné místo, odkud mohou hasiči čerpat vodu. Může být umístěn pod zemí."
+      }
+    }
+  ],
+  "tagRenderings": [
+    {
+      "id": "just_created",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "This element shows a 'thank you' that the contributor has recently created this element",
+      "classes": "rounded-xl thanks",
+      "mappings": [
+        {
+          "if": "id~*",
+          "icon": "./assets/svg/party.svg",
+          "then": {
+            "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+            "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+            "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+            "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+            "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+            "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+          }
+        }
+      ],
+      "condition": {
+        "and": [
+          "_backend~*",
+          "_last_edit:passed_time<300",
+          {
+            "or": [
+              "_version_number=",
+              "_version_number=1"
+            ]
+          }
+        ]
+      },
+      "metacondition": {
+        "and": [
+          {
+            "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+            "or": [
+              "_last_edit:contributor:uid:={_uid}",
+              "_last_edit:contributor:uid="
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "hydrant-color",
+      "question": {
+        "en": "What color is the hydrant?",
+        "ja": "消火栓の色は何色ですか?",
+        "nb_NO": "Hvilken farge har brannhydranten?",
+        "ru": "Какого цвета гидрант?",
+        "fr": "Quelle est la couleur de la borne ?",
+        "de": "Welche Farbe hat der Hydrant?",
+        "it": "Qual è il colore dell’idrante?",
+        "nl": "Welke kleur heeft de brandkraan?",
+        "es": "¿De que color es la boca de incendios?",
+        "ca": "De quin color es l'hidrant?",
+        "cs": "Jakou barvu má hydrant?"
+      },
+      "render": {
+        "en": "The hydrant color is {colour}",
+        "ja": "消火栓の色は{colour}です",
+        "nb_NO": "Brannhydranter er {colour}",
+        "ru": "Цвет гидранта {colour}",
+        "fr": "La borne est {colour}",
+        "de": "Der Hydrant hat die Farbe {colour}",
+        "it": "Il colore dell’idrante è {colour}",
+        "nl": "De brandkraan is {colour}",
+        "es": "La boca de incendios es de color {colour}",
+        "ca": "L'hidrant és de color {colour}",
+        "cs": "Barva hydrantu je {colour}"
+      },
+      "freeform": {
+        "key": "colour",
+        "inline": true
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "colour=yellow"
+            ]
+          },
+          "then": {
+            "en": "The hydrant color is yellow.",
+            "ja": "消火栓の色は黄色です。",
+            "ru": "Гидрант жёлтого цвета.",
+            "fr": "La borne est jaune.",
+            "de": "Die Farbe des Hydranten ist gelb.",
+            "it": "Il colore dell’idrante è giallo.",
+            "nl": "De brandkraan is geel.",
+            "es": "La boca de incendios es amarilla.",
+            "ca": "L'hidrant és de color groc.",
+            "cs": "Barva hydrantu je žlutá."
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "colour=red"
+            ]
+          },
+          "then": {
+            "en": "The hydrant color is red.",
+            "ja": "消火栓の色は赤です。",
+            "it": "L'idrante è rosso.",
+            "ru": "Гидрант красного цвета.",
+            "fr": "La borne est rouge.",
+            "de": "Die Farbe des Hydranten ist rot.",
+            "nl": "De brandkraan is rood.",
+            "ca": "L'hidrant és de color roig.",
+            "es": "La boca de incendios es roja.",
+            "cs": "Barva hydrantu je červená."
+          }
+        }
+      ]
+    },
+    {
+      "id": "hydrant-type",
+      "question": {
+        "en": "What type of hydrant is it?",
+        "ja": "どんな消火栓なんですか?",
+        "it": "Di che tipo è questo idrante?",
+        "ru": "Какого вида этот гидрант?",
+        "fr": "De quel type de borne s’agit-il ?",
+        "de": "Welche Bauform hat der Hydrant?",
+        "nl": "Wat voor soort brandkraan is dit?",
+        "es": "¿De qué tipo es esta boca de incendios?",
+        "ca": "Quin tipus d'hidrant és?",
+        "cs": "O jaký typ hydrantu se jedná?"
+      },
+      "freeform": {
+        "key": "fire_hydrant:type",
+        "inline": true
+      },
+      "render": {
+        "en": " Hydrant type: {fire_hydrant:type}",
+        "ru": " Вид гидранта: {fire_hydrant:type}",
+        "ja": " 消火栓のタイプ:{fire_hydrant:type}",
+        "it": " Tipo di idrante: {fire_hydrant:type}",
+        "fr": " Type de borne : {fire_hydrant:type}",
+        "de": " Hydranten-Typ: {fire_hydrant:type}",
+        "nl": " Het type brandkraan is {fire_hydrant:type}",
+        "es": " Tipo de boca de incendios: {fire_hydrant:type}",
+        "ca": " Tipus d'hidrants: {fire_hydrant:type}",
+        "cs": " Typ hydrantu: {fire_hydrant:type}"
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "fire_hydrant:type=pillar"
+            ]
+          },
+          "then": {
+            "en": "Pillar type.",
+            "ja": "ピラー型。",
+            "fr": "Pilier.",
+            "de": "Überflurhydrant.",
+            "it": "Soprasuolo.",
+            "nl": "Pillaar type.",
+            "es": "De pilar.",
+            "ca": "De pilar.",
+            "ru": "Наземный.",
+            "cs": "Typ sloupek."
+          },
+          "icon": {
+            "path": "./assets/themes/hailhydrant/hydrant_pillar.svg",
+            "class": "small"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "fire_hydrant:type=pipe"
+            ]
+          },
+          "then": {
+            "en": "Pipe type.",
+            "ja": "パイプ型。",
+            "fr": "Tuyau.",
+            "de": "Druckloses Rohr.",
+            "it": "Tubo.",
+            "nl": "Buis type.",
+            "es": "De tubería.",
+            "ca": "De tuberia.",
+            "ru": "Труба.",
+            "cs": "Typ potrubí."
+          },
+          "icon": {
+            "path": "./assets/themes/hailhydrant/hydrant_unknown.svg",
+            "class": "small"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "fire_hydrant:type=wall"
+            ]
+          },
+          "then": {
+            "en": "Wall type.",
+            "id": "Jenis dinding.",
+            "ru": "Настенный.",
+            "ja": "壁型。",
+            "fr": "Mural.",
+            "de": "Wandhydrant.",
+            "it": "A muro.",
+            "nl": "Muur type.",
+            "es": "De pared.",
+            "ca": "De paret.",
+            "cs": "Nástěnný typ."
+          },
+          "icon": {
+            "path": "./assets/themes/hailhydrant/hydrant_unknown.svg",
+            "class": "small"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "fire_hydrant:type=underground"
+            ]
+          },
+          "then": {
+            "en": "Underground type.",
+            "ja": "地下式。",
+            "fr": "Enterré.",
+            "de": "Unterflurhydrant.",
+            "it": "Sottosuolo.",
+            "nl": "Ondergronds type.",
+            "ca": "Subterrani.",
+            "es": "Bajo tierra.",
+            "ru": "Подземный.",
+            "cs": "Podzemní typ."
+          },
+          "icon": {
+            "path": "./assets/themes/hailhydrant/hydrant_underground.svg",
+            "class": "small"
+          }
+        }
+      ]
+    },
+    {
+      "id": "hydrant-state",
+      "question": {
+        "en": "Is this hydrant still working?",
+        "ja": "消火栓のライフサイクルステータスを更新します。",
+        "fr": "Cette borne incendie est-elle toujours en bon état de fonctionnement ?",
+        "de": "Ist dieser Hydrant noch in Betrieb?",
+        "it": "Aggiorna lo stato di funzionamento dell’idrante.",
+        "nl": "Werkt deze brandkraan nog?",
+        "es": "¿Todavía funciona esta boca de incendios?",
+        "ca": "Encara funciona aquest hidrant?",
+        "ru": "Этот гидрант в рабочем состоянии?",
+        "cs": "Je tento hydrant stále funkční?"
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "emergency=fire_hydrant"
+            ]
+          },
+          "then": {
+            "en": "The hydrant is (fully or partially) working",
+            "ja": "消火栓は(完全にまたは部分的に)機能しています。",
+            "ru": "Гидрант (полностью или частично) в рабочем состоянии",
+            "fr": "La borne est en état (ou partiellement en état) de fonctionner",
+            "de": "Der Hydrant ist (ganz oder teilweise) in Betrieb",
+            "it": "L’idrante è (parzialmente o completamente) funzionante.",
+            "nl": "De brandkraan werkt (minstens gedeeltelijk)",
+            "es": "La boca de incendios funciona (total o parcialmente)",
+            "ca": "L'hidrant funciona (total o parcialment)",
+            "cs": "Hydrant je (plně nebo částečně) funkční"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "disused:emergency=fire_hydrant",
+              "emergency="
+            ]
+          },
+          "then": {
+            "en": "The hydrant is unavailable",
+            "ja": "消火栓は使用できません。",
+            "fr": "La borne est hors-service",
+            "de": "Der Hydrant ist nicht mehr in Betrieb",
+            "it": "L’idrante è fuori servizio.",
+            "nl": "De brandkraan is niet beschikbaar",
+            "es": "La boca de incendios no está disponible",
+            "ca": "L'hidrant no està disponible",
+            "ru": "К гидранту нет доступа",
+            "cs": "Hydrant je nedostupný"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "removed:emergency=fire_hydrant",
+              "emergency="
+            ]
+          },
+          "then": {
+            "en": "The hydrant has been removed",
+            "ja": "消火栓が撤去されました。",
+            "ru": "Гидрант демонтирован",
+            "fr": "La borne a été retirée",
+            "de": "Der Hydrant wurde entfernt",
+            "it": "L’idrante è stato rimosso.",
+            "nl": "Deze brandkraan is verwijderd",
+            "es": "La boca de incendios se ha retirado",
+            "ca": "L'hidrant s'ha retirat",
+            "cs": "Hydrant byl odstraněn"
+          }
+        }
+      ]
+    },
+    {
+      "id": "hydrant-diameter",
+      "question": {
+        "en": "What is the pipe diameter of this hydrant?",
+        "de": "Was ist der Rohrdurchmesser dieses Hydranten?",
+        "nl": "Wat is de pijpdiameter van deze hydrant?",
+        "ca": "Quin és el diàmetre d'aquest hidrant?",
+        "ru": "Какой диаметр трубы у этого гидранта?",
+        "fr": "Quel est le diamètre du tuyau de cette bouche d'incendie ?",
+        "cs": "Jaký je průměr trubky tohoto hydrantu?"
+      },
+      "freeform": {
+        "key": "fire_hydrant:diameter",
+        "placeholder": {
+          "en": "Pipe diameter",
+          "de": "Rohrdurchmesser",
+          "nl": "Pijpdiameter",
+          "ru": "Диаметр трубы",
+          "ca": "Diàmetre de la canonada",
+          "cs": "Průměr trubky"
+        },
+        "type": "int",
+        "inline": false
+      },
+      "render": {
+        "en": "Pipe diameter: {canonical(fire_hydrant:diameter)}",
+        "de": "Rohrdurchmesser: {canonical(fire_hydrant:diameter)}",
+        "nl": "Pijpdiameter:{canonical(fire_hydrant:diameter)}",
+        "ru": "Диаметр трубы: {canonical(fire_hydrant:diameter)}",
+        "ca": "Diàmetre de la canonada: {canonical(fire_hydrant:diameter)}",
+        "cs": "Průměr trubky: {canonical(fire_hydrant:diameter)}"
+      }
+    },
+    {
+      "id": "hydrant-number-of-couplings",
+      "question": {
+        "en": "How many couplings does this fire hydrant have?",
+        "de": "Wie viele Kupplungen hat dieser Hydrant?",
+        "nl": "Hoe veel koppelingen bezit deze brandkraan?",
+        "ca": "Quants acoblaments té aquest hidrant?",
+        "fr": "Combien de raccords a cette bouche d'incendie ?",
+        "cs": "Kolik spojek má tento požární hydrant?"
+      },
+      "freeform": {
+        "key": "couplings",
+        "placeholder": {
+          "en": "Number of couplings",
+          "de": "Anzahl der Kupplungen",
+          "nl": "Aantal koppelingen",
+          "ca": "Nombre d'acoblaments",
+          "cs": "Počet spojek"
+        },
+        "type": "int",
+        "inline": true
+      },
+      "render": {
+        "en": "Number of couplings: {couplings}",
+        "de": "Anzahl der Kupplungen: {couplings}",
+        "nl": "Aantal koppelingen: {couplings}",
+        "ca": "Nombre d'acoblaments: {couplings}",
+        "cs": "Počet spojek: {couplings}"
+      }
+    },
+    {
+      "id": "hydrant-couplings",
+      "question": {
+        "en": "What kind of couplings does this hydrant have?",
+        "de": "Welche Art von Kupplungen hat dieser Hydrant?",
+        "nl": "Welke soort koppeling heeft deze hydrant?",
+        "ca": "Quin tipus d‘acoblament té aquest hidrant?",
+        "ru": "Какого вида соединительные головки у этого гидранта?",
+        "cs": "Jaký typ spojky má tento hydrant?"
+      },
+      "freeform": {
+        "key": "couplings:type",
+        "placeholder": {
+          "en": "Coupling type",
+          "de": "Art der Kupplung",
+          "nl": "Soort koppeling",
+          "ru": "Тип соединительной головки",
+          "ca": "Tipus d'acoblament",
+          "cs": "Typ spoje"
+        },
+        "type": "string",
+        "inline": true
+      },
+      "mappings": [
+        {
+          "if": "couplings:type=Storz",
+          "then": {
+            "en": "Storz coupling",
+            "de": "Storz-Kupplung",
+            "nl": "Storz-koppeling",
+            "ca": "Acoblament Storz",
+            "ru": "Головка типа Storz",
+            "cs": "Spojka Storz"
+          },
+          "icon": {
+            "path": "./assets/layers/hydrant/storz.jpg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "couplings:type=UNI",
+          "then": {
+            "en": "UNI coupling",
+            "de": "UNI-Kupplung",
+            "nl": "UNI-koppeling",
+            "ca": "Acoblament UNI",
+            "ru": "Головка типа UNI",
+            "cs": "Spojka UNI"
+          }
+        },
+        {
+          "if": "couplings:type=Barcelona",
+          "then": {
+            "en": "Barcelona coupling",
+            "de": "Barcelona-Kupplung",
+            "nl": "Barcelona-koppeling",
+            "ca": "Acoblament Barcelona",
+            "ru": "Головка типа Barcelona",
+            "cs": "Spojka Barcelona"
+          },
+          "icon": {
+            "path": "./assets/layers/hydrant/barcelona.jpg",
+            "class": "large"
+          }
+        }
+      ],
+      "multiAnswer": true,
+      "render": {
+        "en": "Couplings: {couplings:type}",
+        "de": "Kupplungen: {couplings:type}",
+        "nl": "Koppelingen:{couplings:type}",
+        "ru": "Соединительные головки: {couplings:type}",
+        "ca": "Acoblaments: {couplings:type}",
+        "cs": "Spojky: {couplings:type}"
+      }
+    },
+    {
+      "id": "hydrant-couplings-diameters",
+      "question": {
+        "en": "What diameter are the couplings of this hydrant?",
+        "de": "Welchen Durchmesser haben die Kupplungen dieses Hydranten?",
+        "nl": "Welke diameter hebben de koppelingen van deze hydrant?",
+        "ca": "Quin és el diàmetre dels acoblaments d'aquest hidrant?",
+        "ru": "Какой диаметр соединительных головок у этого гидранта?",
+        "cs": "Jaký průměr mají spojky tohoto hydrantu?"
+      },
+      "freeform": {
+        "key": "couplings:diameters",
+        "placeholder": {
+          "en": "Coupling diameters",
+          "de": "Kupplungsdurchmesser",
+          "nl": "Koppeldiameters",
+          "ru": "Диаметры соединительных головок",
+          "ca": "Diàmetres d'acoblament",
+          "cs": "Průměr spojek"
+        },
+        "inline": true
+      },
+      "render": {
+        "en": "Coupling diameters: {couplings:diameters}",
+        "de": "Kupplungsdurchmesser: {couplings:diameters}",
+        "nl": "Koppelingdiameters:{couplings:diameters}",
+        "ru": "Диаметр соединительных головок: {couplings:diameters}",
+        "ca": "Diàmetres d'acoblament: {couplings:diameters}",
+        "cs": "Průměry spojek: {couplings:diameters}"
+      }
+    },
+    {
+      "id": "images",
+      "description": "This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images",
+      "render": {
+        "*": "{image_carousel()}{image_upload()}{nearby_images():my-4}"
+      },
+      "classes": "my-4"
+    },
+    {
+      "id": "leftover-questions",
+      "render": {
+        "*": "{questions( ,)}"
+      }
+    },
+    {
+      "id": "lod",
+      "labels": [
+        "added_by_default"
+      ],
+      "render": {
+        "*": "{linked_data_from_website()}"
+      }
+    },
+    {
+      "id": "minimap",
+      "description": "Shows a small map with the feature. Added by default to every popup",
+      "render": {
+        "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+      }
+    },
+    {
+      "id": "move-button",
+      "render": {
+        "*": "{move_button()}"
+      }
+    },
+    {
+      "id": "last_edit",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+      "condition": {
+        "and": [
+          "_last_edit:contributor~*",
+          "_last_edit:changeset~*"
+        ]
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsTesting=true",
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_debug=yes",
+          "_csCount>=10"
+        ]
+      },
+      "render": {
+        "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+      }
+    },
+    {
+      "id": "favourite_status",
+      "render": {
+        "*": "{favourite_status()}"
+      }
+    },
+    {
+      "id": "qr_code",
+      "labels": [
+        "added_by_default"
+      ],
+      "classes": "flex items-center gap-x-2",
+      "render": {
+        "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+        "en": "{qr_code()}Scan this code to open this location on another device",
+        "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+        "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+      }
+    },
+    {
+      "id": "share",
+      "labels": [
+        "added_by_default"
+      ],
+      "metacondition": "_supports_sharing=yes",
+      "render": {
+        "de": "{share_link(,Standort teilen)}",
+        "en": "{share_link(,Share this location)}",
+        "nl": "{share_link(,Deel deze locatie)}"
+      }
+    },
+    {
+      "id": "all-tags",
+      "render": {
+        "*": "{all_tags()}"
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_tags=full",
+          "mapcomplete-show_debug=yes"
+        ]
+      }
+    }
+  ],
+  "allowMove": {
+    "enableRelocation": false,
+    "enableImproveAccuracy": true
+  },
+  "units": [
+    {
+      "fire_hydrant:diameter": {
+        "quantity": "distance",
+        "denominations": [
+          "mm"
+        ]
+      }
+    }
+  ],
+  "titleIcons": [
+    {
+      "id": "wikipedialink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+      "condition": {
+        "or": [
+          "wikipedia~*",
+          "wikidata~*"
+        ]
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "wikipedia=",
+          "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "open_until",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "#": "Titleicon showing e.g. 'open until 17:00'",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{opening_hours_state()}",
+      "condition": {
+        "or": [
+          "opening_hours~*",
+          {
+            "or": [
+              {
+                "and": [
+                  "seasonal~.*winter.*",
+                  "_now:date~....-(12|01|02)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*spring.*",
+                  "_now:date~....-(03|04|05)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*summer.*",
+                  "_now:date~....-(06|07|08)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*autumn.*",
+                  "_now:date~....-(09|10|11)-.."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "phonelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": {
+        "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+        "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+        "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+        "_context": "layers:icons.tagRenderings.phonelink.render"
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:phone~*",
+          "then": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+          }
+        }
+      ],
+      "condition": {
+        "or": [
+          "phone~*",
+          "contact:phone~*"
+        ]
+      }
+    },
+    {
+      "id": "emaillink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:email~*",
+          "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:email~*",
+          "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        }
+      ],
+      "condition": {
+        "or": [
+          "email~*",
+          "contact:email~*",
+          "operator:email~*"
+        ]
+      }
+    },
+    {
+      "id": "websitelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "website~*",
+          "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:website~*",
+          "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "context:website~*",
+          "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "smokingicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=no",
+          "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=yes",
+          "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+        }
+      ]
+    },
+    {
+      "id": "dogicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "if": "dog=no",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+        },
+        {
+          "if": "dog=leashed",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+        },
+        {
+          "if": {
+            "or": [
+              "dog=yes",
+              "dog=unleashed"
+            ]
+          },
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+        }
+      ]
+    },
+    {
+      "id": "sharelink",
+      "labels": [
+        "defaults"
+      ],
+      "render": "{share_link()}",
+      "metacondition": "_supports_sharing=yes"
+    },
+    {
+      "id": "favourite_title_icon",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "*": "{favourite_icon()}"
+      },
+      "metacondition": "_loggedIn=true"
+    },
+    {
+      "id": "osmlink",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+        "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+        "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+        "_context": "layers:icons.tagRenderings.osmlink.render"
+      },
+      "mappings": [
+        {
+          "if": "id~.*/-.*",
+          "then": ""
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "_backend~*",
+          "then": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+          }
+        }
+      ],
+      "condition": "id~(node|way|relation)/[0-9]*"
+    },
+    {
+      "id": "direction",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "{direction_indicator()}"
+    },
+    {
+      "id": "rating",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{rating()}"
+    }
+  ],
+  "_layerIcon": [
+    {
+      "icon": "./assets/themes/hailhydrant/hydrant.svg"
+    }
+  ]
+}

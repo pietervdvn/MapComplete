@@ -1,0 +1,1167 @@
+{
+  "id": "nature_reserve",
+  "name": {
+    "en": "Nature reserve",
+    "nl": "Natuurgebied",
+    "de": "Naturschutzgebiete",
+    "es": "Reserva Natural",
+    "ca": "Reserva Natural",
+    "cs": "Přírodní rezervace"
+  },
+  "description": {
+    "en": "A nature reserve is an area where nature can take its course",
+    "nl": "Een natuurgebied is een gebied waar actief ruimte gemaakt word voor de natuur. Typisch zijn deze in beheer van Natuurpunt of het Agentschap Natuur en Bos of zijn deze erkend door de overheid.",
+    "de": "Ein Naturschutzgebiet ist ein Gebiet, das der Natur überlassen wurde",
+    "ca": "Una reserva natural és una zona on la natura pot seguir el seu curs",
+    "cs": "Přírodní rezervace je území, kde se příroda může rozvíjet",
+    "es": "Una reserva natural es una zona donde la naturaleza puede seguir su curso"
+  },
+  "source": {
+    "osmTags": {
+      "and": [
+        {
+          "or": [
+            "leisure=nature_reserve",
+            {
+              "and": [
+                "protect_class!=98",
+                "boundary=protected_area"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "minzoom": 12,
+  "title": {
+    "render": {
+      "nl": "Natuurgebied",
+      "en": "Nature reserve",
+      "de": "Naturschutzgebiet",
+      "ca": "Reserva Natural",
+      "cs": "Přírodní rezervace"
+    },
+    "mappings": [
+      {
+        "if": {
+          "and": [
+            "name~*"
+          ]
+        },
+        "then": {
+          "*": "{name}",
+          "nl": "{name}"
+        }
+      }
+    ]
+  },
+  "pointRendering": [
+    {
+      "iconSize": "50,50",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": {
+            "render": "./assets/layers/nature_reserve/nature_reserve.svg",
+            "id": "assetslayersnaturereservenaturereservesvg"
+          }
+        }
+      ],
+      "iconBadges": [
+        {
+          "if": "_favourite=yes",
+          "then": "circle:white;heart:red"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#3c3",
+      "width": "1"
+    }
+  ],
+  "presets": [
+    {
+      "tags": [
+        "leisure=nature_reserve",
+        "fixme=Toegevoegd met MapComplete, geometry nog uit te tekenen"
+      ],
+      "title": {
+        "en": "a nature reserve",
+        "nl": "een natuurreservaat",
+        "de": "ein Schutzgebiet",
+        "ca": "una reserva natural",
+        "cs": "přírodní rezervace"
+      },
+      "description": {
+        "en": "Add a missing nature reserve",
+        "nl": "Voeg een ontbrekend, erkend natuurreservaat toe, bv. een gebied dat beheerd wordt door het ANB of natuurpunt",
+        "de": "Ein fehlendes Naturschutzgebiet hinzufügen",
+        "ca": "Afegeix una reserva natural que falta",
+        "cs": "Přidat chybějící přírodní rezervaci"
+      }
+    }
+  ],
+  "tagRenderings": [
+    {
+      "id": "just_created",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "This element shows a 'thank you' that the contributor has recently created this element",
+      "classes": "rounded-xl thanks",
+      "mappings": [
+        {
+          "if": "id~*",
+          "icon": "./assets/svg/party.svg",
+          "then": {
+            "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+            "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+            "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+            "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+            "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+            "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+          }
+        }
+      ],
+      "condition": {
+        "and": [
+          "_backend~*",
+          "_last_edit:passed_time<300",
+          {
+            "or": [
+              "_version_number=",
+              "_version_number=1"
+            ]
+          }
+        ]
+      },
+      "metacondition": {
+        "and": [
+          {
+            "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+            "or": [
+              "_last_edit:contributor:uid:={_uid}",
+              "_last_edit:contributor:uid="
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "images",
+      "description": "This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images",
+      "render": {
+        "*": "{image_carousel()}{image_upload()}{nearby_images():my-4}"
+      },
+      "classes": "my-4"
+    },
+    {
+      "render": {
+        "en": "Accessin this nature reserve: {access:description}",
+        "nl": "De toegankelijkheid van dit gebied is: {access:description}",
+        "de": "Zugang zu diesem Naturschutzgebiet: {access:description}",
+        "ca": "Accés a aquesta reserva natural: {access:description}",
+        "cs": "Přístup do této přírodní rezervace: {access:description}"
+      },
+      "question": {
+        "en": "Is this nature reserve accessible to the public?",
+        "nl": "Is dit gebied toegankelijk?",
+        "de": "Ist das Gebiet öffentlich zugänglich?",
+        "ca": "Aquesta reserva natural és accessible al públic?",
+        "cs": "Je tato přírodní rezervace přístupná veřejnosti?"
+      },
+      "freeform": {
+        "key": "access:description",
+        "inline": true
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "access=yes",
+              "fee="
+            ]
+          },
+          "then": {
+            "en": "Publicly accessible",
+            "nl": "Vrij toegankelijk",
+            "de": "Das Gebiet ist öffentlich zugänglich",
+            "ca": "Accessible al públic",
+            "cs": "Veřejně přístupné"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "access=no",
+              "fee="
+            ]
+          },
+          "then": {
+            "en": "Not accessible",
+            "nl": "Niet toegankelijk",
+            "de": "Das Gebiet ist nicht zugänglich",
+            "es": "No accesible",
+            "ca": "No accessible",
+            "cs": "Nepřístupné"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "access=private",
+              "fee="
+            ]
+          },
+          "then": {
+            "en": "Not accessible as this is a private area",
+            "nl": "Niet toegankelijk, want privégebied",
+            "de": "Das Gebiet ist privat und nicht zugänglich",
+            "es": "No accesible, ya que es una área privada",
+            "ca": "No accessible perquè es tracta d'una zona privada",
+            "cs": "Není přístupné, protože se jedná o soukromou oblast"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "access=permissive",
+              "fee="
+            ]
+          },
+          "then": {
+            "en": "Accessible despite being a privately owned area",
+            "nl": "Toegankelijk, ondanks dat het privegebied is",
+            "de": "Das Gebiet ist privat aber zugänglich",
+            "es": "Accesible a pesar de ser una área privada",
+            "ca": "Accessible tot i ser una propietat privada",
+            "cs": "Přístupné, přestože se jedná o soukromý areál"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "access=guided",
+              "fee="
+            ]
+          },
+          "then": {
+            "en": "Only accessible with a guide or during organised activities",
+            "nl": "Enkel toegankelijk met een gids of tijdens een activiteit",
+            "de": "Das Gebiet ist nur während Führungen oder organisierten Aktivitäten zugänglich",
+            "es": "Solo accesible con un guía o durante actividades organizadas",
+            "ca": "Només accessible amb guia o durant les activitats organitzades",
+            "cs": "Přístupné pouze s průvodcem nebo během organizovaných aktivit"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "access=yes",
+              "fee=yes"
+            ]
+          },
+          "then": {
+            "en": "Accessible with fee",
+            "nl": "Toegankelijk mits betaling",
+            "de": "Das Gebiet ist nur gegen Bezahlung zugänglich",
+            "es": "Accesible con una tasa",
+            "ca": "Accessible amb una taxa",
+            "cs": "Přístupné za poplatek"
+          }
+        }
+      ],
+      "id": "Access tag"
+    },
+    {
+      "render": {
+        "en": "Operated by {operator}",
+        "nl": "Beheer door {operator}",
+        "de": "Betrieben von {operator}",
+        "es": "Operado por {operator}",
+        "ca": "Gestionat per {operator}",
+        "cs": "Provozuje {operator}"
+      },
+      "question": {
+        "en": "Who operates this area?",
+        "nl": "Wie beheert dit gebied?",
+        "de": "Wer betreibt das Gebiet?",
+        "es": "¿Quién opera esta área?",
+        "ca": "Qui gestiona aquesta àrea?",
+        "cs": "Kdo provozuje tuto oblast?"
+      },
+      "freeform": {
+        "key": "operator",
+        "inline": true
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "operator=Natuurpunt"
+            ]
+          },
+          "then": {
+            "en": "Operated by Natuurpunt",
+            "nl": "Dit gebied wordt beheerd door Natuurpunt",
+            "de": "Das Gebiet wird betrieben von Natuurpunt",
+            "es": "Operado por NatuurPunt",
+            "ca": "Gestionat per NatuurPunt",
+            "cs": "Provozuje Natuurpunt"
+          },
+          "icon": "./assets/layers/nature_reserve/Natuurpunt.jpg"
+        },
+        {
+          "if": {
+            "and": [
+              "operator~(n|N)atuurpunt.*"
+            ]
+          },
+          "then": {
+            "en": "Operated by {operator}",
+            "nl": "Dit gebied wordt beheerd door {operator}",
+            "de": "Betrieben von {operator}",
+            "es": "Operado por {operator}",
+            "ca": "Gestionat per {operator}",
+            "cs": "Provozuje {operator}"
+          },
+          "icon": "./assets/layers/nature_reserve/Natuurpunt.jpg",
+          "hideInAnswer": true
+        },
+        {
+          "if": {
+            "and": [
+              "operator=Agentschap Natuur en Bos"
+            ]
+          },
+          "then": {
+            "en": "Operated by <i>Agentschap Natuur en Bos</i>",
+            "nl": "Dit gebied wordt beheerd door het <i>Agentschap Natuur en Bos</i>",
+            "de": "Das Gebiet wird betrieben von <i>Agentschap Natuur en Bos</i>",
+            "ca": "Gestionat per <i>Agentschap Natuur en Bos</i>",
+            "cs": "Provozováno <i>Agentschap Natuur en Bos</i>"
+          },
+          "icon": "./assets/layers/nature_reserve/ANB.jpg"
+        }
+      ],
+      "id": "Operator tag"
+    },
+    {
+      "render": {
+        "nl": "Dit gebied heet {name}",
+        "en": "This area is named {name}",
+        "de": "Dieses Gebiet heißt {name}",
+        "es": "Esta área se llama {name}",
+        "ca": "Aquesta àrea s'anomena {name}",
+        "cs": "Tato oblast se jmenuje {name}"
+      },
+      "question": {
+        "nl": "Wat is de naam van dit gebied?",
+        "en": "What is the name of this area?",
+        "de": "Wie heißt das Gebiet?",
+        "es": "¿Cual es el nombre de esta área?",
+        "ca": "Quin és el nom d'aquesta àrea?",
+        "cs": "Jaký je název této oblasti?"
+      },
+      "freeform": {
+        "key": "name",
+        "addExtraTags": [
+          "noname="
+        ],
+        "inline": true
+      },
+      "condition": {
+        "and": [
+          "name:nl="
+        ]
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "noname=yes",
+              "name="
+            ]
+          },
+          "then": {
+            "en": "This area doesn't have a name",
+            "nl": "Dit gebied heeft geen naam",
+            "de": "Das Gebiet hat keinen Namen",
+            "es": "Esta área no tiene un nombre",
+            "ca": "Aquesta àrea no té un nom",
+            "cs": "Tato oblast nemá jméno"
+          }
+        }
+      ],
+      "id": "Name tag"
+    },
+    {
+      "question": {
+        "nl": "Zijn honden toegelaten in dit gebied?",
+        "en": "Are dogs allowed in this nature reserve?",
+        "it": "I cani sono ammessi in questa riserva naturale?",
+        "fr": "Les chiens sont-ils autorisés dans cette réserve naturelle ?",
+        "de": "Sind Hunde in diesem Naturschutzgebiet erlaubt?",
+        "ca": "Els gossos estan permesos en aquesta reserva natural?",
+        "cs": "Jsou v této přírodní rezervaci povoleni psi?"
+      },
+      "condition": {
+        "or": [
+          "access=yes",
+          "access=permissive",
+          "access=guided"
+        ]
+      },
+      "mappings": [
+        {
+          "if": "dog=leashed",
+          "then": {
+            "nl": "Honden moeten aan de leiband",
+            "en": "Dogs have to be leashed",
+            "it": "I cani devono essere tenuti al guinzaglio",
+            "fr": "Les chiens doivent être tenus en laisse",
+            "de": "Hunde müssen angeleint sein",
+            "es": "Los perros deben de ir con correa",
+            "ca": "Els gossos han d'anar lligats",
+            "cs": "Psi musí být na vodítku"
+          }
+        },
+        {
+          "if": "dog=no",
+          "then": {
+            "nl": "Honden zijn niet toegestaan",
+            "en": "No dogs allowed",
+            "it": "I cani non sono ammessi",
+            "fr": "Chiens interdits",
+            "de": "Hunde sind nicht erlaubt",
+            "es": "No se permiten perros",
+            "ca": "No s'admeten gossos",
+            "cs": "Psi nejsou povoleni"
+          }
+        },
+        {
+          "if": "dog=yes",
+          "then": {
+            "nl": "Honden zijn welkom en mogen vrij rondlopen",
+            "en": "Dogs are allowed to roam freely",
+            "it": "I cani sono liberi di girare liberi",
+            "fr": "Les chiens sont autorisés à se promener librement",
+            "de": "Hunde dürfen frei herumlaufen",
+            "es": "Los perros pueden ir sueltos",
+            "ca": "Els gossos poden anar solts",
+            "cs": "Psi se mohou volně pohybovat"
+          }
+        }
+      ],
+      "id": "Dogs?"
+    },
+    {
+      "id": "website",
+      "labels": [
+        "contact"
+      ],
+      "icon": "./assets/layers/icons/website.svg",
+      "question": {
+        "en": "What is the website of {title()}?",
+        "nl": "Wat is de website van {title()}?",
+        "fr": "Quel est le site web de {title()} ?",
+        "gl": "Cal é a páxina web de {title()}?",
+        "nb_NO": "Hva er nettsiden til {title()}?",
+        "ru": "Какой сайт у {title()}?",
+        "id": "Apa situs web dari {title()}?",
+        "zh_Hant": "{title()} 網址是什麼？",
+        "it": "Qual è il sito web di {title()}?",
+        "de": "Wie lautet die Webseite von {title()}?",
+        "pt_BR": "Qual o site de {title()}?",
+        "pl": "Jaka jest strona internetowa {title()}?",
+        "sv": "Vad är webbplatsen för {title()}?",
+        "pt": "Qual é o sítio web de {title()}?",
+        "eo": "Kie estas la retejo de {title()}?",
+        "hu": "Mi a weboldala ennek: {title()}?",
+        "ca": "Quina és la web de {title()}?",
+        "ja": "{title()}のウェブサイトは？",
+        "fil": "Ano ang website ng {title()}?",
+        "es": "¿Cual es el sitio web de {title()}?",
+        "zh_Hans": "{title()} 的网站为何？",
+        "da": "Hvad er webstedet for {title()}?",
+        "cs": "Jaká je webová stránka {title()}?"
+      },
+      "render": {
+        "*": "<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>"
+      },
+      "freeform": {
+        "key": "website",
+        "type": "url",
+        "addExtraTags": [
+          "contact:website="
+        ]
+      },
+      "mappings": [
+        {
+          "if": "contact:website~*",
+          "then": "<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>",
+          "hideInAnswer": true,
+          "icon": "./assets/layers/icons/website.svg"
+        }
+      ],
+      "editButtonAriaLabel": {
+        "en": "Edit website",
+        "nl": "Pas website aan",
+        "de": "Webseite bearbeiten"
+      }
+    },
+    {
+      "question": {
+        "nl": "Wie is de conservator van dit gebied?",
+        "en": "Whom is the curator of this nature reserve?",
+        "it": "Chi è il curatore di questa riserva naturale?",
+        "fr": "Qui est en charge de la conservation de la réserve ?",
+        "de": "Wer verwaltet dieses Gebiet?",
+        "ca": "Qui és el conservador d'aquesta reserva natural?",
+        "cs": "Kdo je správcem této přírodní rezervace?"
+      },
+      "render": {
+        "nl": "{curator} is de beheerder van dit gebied",
+        "en": "{curator} is the curator of this nature reserve",
+        "it": "{curator} è il curatore di questa riserva naturale",
+        "fr": "{curator} est en charge de la conservation de la réserve",
+        "de": "{curator} ist der Pfleger dieses Naturschutzgebietes",
+        "ca": "{curator} és el conservador d'aquesta reserva natural",
+        "cs": "{curator} je správcem této přírodní rezervace"
+      },
+      "freeform": {
+        "key": "curator",
+        "type": "string",
+        "inline": true
+      },
+      "id": "Curator",
+      "questionHint": {
+        "nl": "Respecteer privacy - geef deze naam enkel als die duidelijk is gepubliceerd",
+        "en": "Respect privacy - only fill out a name if this is widely published",
+        "it": "Rispetta la privacy (scrivi il nome solo se questo è noto pubblicamente)",
+        "fr": "À ne remplir seulement que si le nom est diffusé au public",
+        "de": "Respektieren Sie die Privatsphäre. Geben Sie nur dann einen Namen an, wenn dieser allgemein bekannt ist",
+        "ca": "Respecteu la privadesa: només empleneu un nom si es publica àmpliament",
+        "cs": "Respektujte soukromí - jméno vyplňte pouze v případě, že je široce publikováno"
+      }
+    },
+    {
+      "question": {
+        "nl": "Waar kan men naartoe emailen voor vragen en meldingen van dit natuurgebied?",
+        "en": "What email address can one send to with questions and problems with this nature reserve?",
+        "it": "Qual è l’indirizzo email a cui scrivere per fare domande o segnalare problemi su questa riserva naturale?",
+        "fr": "À quelle adresse courriel peut-on envoyer des questions et des problèmes concernant cette réserve naturelle ? ",
+        "de": "An welche Email-Adresse kann man sich bei Fragen und Problemen zu diesem Gebiet wenden?",
+        "ca": "A quina adreça de correu electrònic es pot enviar amb preguntes i problemes amb aquest parc natural?",
+        "cs": "Na jakou e-mailovou adresu lze poslat dotazy a problémy týkající se této přírodní rezervace?"
+      },
+      "render": {
+        "*": "<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>"
+      },
+      "freeform": {
+        "key": "email",
+        "type": "email"
+      },
+      "id": "Email",
+      "questionHint": {
+        "nl": "Respecteer privacy - geef enkel persoonlijke emailadressen als deze elders zijn gepubliceerd",
+        "en": "Respect privacy - only fill out a personal email address if this is widely published",
+        "it": "Rispetta la privacy (compila l’indirizzo email personale solo se è stato reso pubblico)",
+        "fr": "Respecter la vie privée – renseignez une adresse électronique personnelle seulement si celle-ci est largement publiée",
+        "de": "Respektieren Sie die Privatsphäre. Geben Sie nur dann eine persönliche Email-Adresse an, wenn diese allgemein bekannt ist",
+        "ca": "Respecteu la privadesa: només ompliu una adreça de correu electrònic personal si es publica àmpliament",
+        "cs": "Respektujte soukromí - osobní e-mailovou adresu vyplňte pouze v případě, že je široce publikována"
+      }
+    },
+    {
+      "question": {
+        "nl": "Waar kan men naartoe bellen voor vragen en meldingen van dit natuurgebied?",
+        "en": "What phone number can one call to with questions and problems with this nature reserve?",
+        "it": "Quale numero di telefono comporre per fare domande o segnalare problemi riguardanti questa riserva naturale?br/>",
+        "fr": "Quel numéro de téléphone peut-on appeler pour poser des questions et résoudre des problèmes concernant cette réserve naturelle ? ",
+        "de": "Welche Telefonnummer kann man bei Fragen und Problemen zu diesem Gebiet anrufen?",
+        "ca": "A quin número de telèfon es pot trucar amb preguntes i problemes amb aquest parc natural?",
+        "cs": "Na jaké telefonní číslo lze volat v případě dotazů a problémů s touto přírodní rezervací?"
+      },
+      "render": {
+        "*": "<a href='tel:{phone}' target='_blank' rel='noopener'>{phone}</a>"
+      },
+      "freeform": {
+        "key": "phone",
+        "type": "phone"
+      },
+      "id": "phone",
+      "questionHint": {
+        "nl": "Respecteer privacy - geef enkel persoonlijke telefoonnummers als deze elders zijn gepubliceerd",
+        "en": "Respect privacy - only fill out a personal phone number address if this is widely published",
+        "it": "Rispetta la privacy (inserisci il numero di telefono privato solo se questo è noto pubblicamente)",
+        "fr": "Respecter la vie privée – renseignez un numéro de téléphone personnel seulement si celui-ci est largement publié",
+        "de": "Respektieren Sie die Privatsphäre. Geben Sie nur dann eine Telefonnummer an, wenn diese allgemein bekannt ist",
+        "ca": "Respecteu la privadesa: només empleneu una adreça de número de telèfon personal si es publica àmpliament",
+        "cs": "Respektujte soukromí - adresu s osobním telefonním číslem vyplňte pouze v případě, že je široce zveřejněna"
+      }
+    },
+    {
+      "render": {
+        "en": "Extra information: <i>{description}</i>",
+        "nl": "Extra info: <i>{description}</i>",
+        "de": "Zusätzliche Informationen: <i>{description}</i>",
+        "es": "Información adicional: <i>{description}</i>",
+        "ca": "Informació adicional: <i>{description}</i>",
+        "cs": "Další informace: <i>{description}</i>"
+      },
+      "freeform": {
+        "key": "description",
+        "inline": true
+      },
+      "id": "Non-editable description"
+    },
+    {
+      "question": {
+        "en": "Is there some extra info?",
+        "nl": "Is er extra info die je kwijt wil?",
+        "de": "Gibt es zusätzliche Informationen?",
+        "es": "¿Hay alguna información adicional?",
+        "ca": "Hi ha alguna informació addicional?",
+        "cs": "Jsou k dispozici nějaké další informace?"
+      },
+      "render": {
+        "en": "Extra info: <i>{description:0}</i>",
+        "nl": "Extra info: <i>{description:0}</i>",
+        "de": "Zusätzliche Informationen: <i>{description:0}</i>",
+        "es": "Información adicional: <i>{description:0}</i>",
+        "ca": "Informació adicional: <i>{description:0}</i>",
+        "cs": "Další informace: <i>{description:0}</i>"
+      },
+      "freeform": {
+        "key": "description:0",
+        "inline": true
+      },
+      "id": "Editable description"
+    },
+    {
+      "render": {
+        "en": "Surface area: {_surface:ha}Ha",
+        "nl": "Totale oppervlakte: {_surface:ha}Ha",
+        "it": "Area: {_surface:ha} ha",
+        "fr": "Superficie : {_surface:ha}&nbsp;ha",
+        "de": "Grundfläche: {_surface:ha}ha",
+        "es": "Superficie: {_surface:ha}Ha",
+        "ca": "Superfície: {_surface:ha}Ha",
+        "cs": "Plocha: {_surface:ha}Ha"
+      },
+      "condition": "_surface:ha!=0",
+      "id": "Surface area"
+    },
+    {
+      "id": "wikipedia",
+      "description": "Shows a wikipedia box with the corresponding wikipedia article; the wikidata-item link can be changed by a contributor",
+      "render": {
+        "*": "{wikipedia():max-height:25rem}"
+      },
+      "question": {
+        "en": "What is the corresponding Wikidata entity?",
+        "nl": "Welk Wikidata-item komt overeen met dit object?",
+        "de": "Wie lautet das zugehörige Wikidata Element?",
+        "pt": "Qual é a entidade Wikidata correspondente?",
+        "hu": "Mi a megfelelő Wikidata-elem?",
+        "it": "Qual è l’elemento Wikidata corrispondente?",
+        "nb_NO": "Hva er respektivt Wikipedia-element?",
+        "fr": "Quelle est l'entité Wikidata correspondante ?",
+        "ca": "Quina és la correspondent entitat a Wikidata?",
+        "sv": "Vad är den motsvarande Wikidata-enheten?",
+        "zh_Hant": "對應的維基資料項目是？",
+        "pl": "Jaki jest powiązany obiekt Wikidata?",
+        "ja": "対応するウィキデータのエンティティは何ですか？",
+        "fil": "Ano ang nau-ukol na entidad sa Wikidata?",
+        "es": "¿Cual es la entidad de Wikidata que se corresponde?",
+        "zh_Hans": "在Wikidata上对应的实体是什么？",
+        "da": "Hvad er den tilsvarende Wikidata-enhed?",
+        "id": "Apa entitas Wikidata yang sesuai?",
+        "cs": "Jaká je odpovídající entita Wikidata?"
+      },
+      "mappings": [
+        {
+          "if": "wikipedia~*",
+          "then": {
+            "*": "{wikipedia():max-height:25rem}",
+            "ca": "No hi ha cap enllaça a Viquipèdia encara",
+            "da": "Der er endnu ikke linket til nogen Wikipedia-side",
+            "de": "Es wurde noch keine Wikipedia-Seite verlinkt",
+            "en": "No Wikipedia page has been linked yet",
+            "es": "Todavía no se ha enlazado una página de wikipedia",
+            "fil": "Wala pang kawing ng Wikipedia page",
+            "fr": "Pas encore de lien vers une page Wikipedia",
+            "hu": "Még nincs Wikipédia-oldal belinkelve",
+            "it": "Nessuna pagina Wikipedia è ancora stata collegata",
+            "ja": "ウィキペディアのページはまだリンクされていません",
+            "nb_NO": "Ingen Wikipedia-side lenket enda",
+            "nl": "Er werd nog geen Wikipedia-pagina gekoppeld",
+            "pl": "Link do strony Wikipedii nie został jeszcze określony",
+            "pt": "Ainda não foi vinculada nenhuma página da Wikipédia",
+            "ru": "Никакой страницы на Википедии не было прикреплено",
+            "sv": "Ingen Wikipedia-sida har länkats än",
+            "zh_Hans": "尚未有连接到的维基百科页面",
+            "zh_Hant": "還沒有連結到維基百科頁面",
+            "id": "Belum ada halaman Wikipedia yang ditautkan",
+            "cs": "Žádná stránka na Wikipedii zatím nebyla propojena"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "wikidata=",
+          "then": {
+            "en": "No Wikipedia page has been linked yet",
+            "nl": "Er werd nog geen Wikipedia-pagina gekoppeld",
+            "de": "Es wurde noch keine Wikipedia-Seite verlinkt",
+            "pt": "Ainda não foi vinculada nenhuma página da Wikipédia",
+            "hu": "Még nincs Wikipédia-oldal belinkelve",
+            "it": "Nessuna pagina Wikipedia è ancora stata collegata",
+            "nb_NO": "Ingen Wikipedia-side lenket enda",
+            "fr": "Pas encore de lien vers une page Wikipedia",
+            "ca": "No hi ha cap enllaça a Viquipèdia encara",
+            "sv": "Ingen Wikipedia-sida har länkats än",
+            "zh_Hant": "還沒有連結到維基百科頁面",
+            "ru": "Никакой страницы на Википедии не было прикреплено",
+            "pl": "Link do strony Wikipedii nie został jeszcze określony",
+            "ja": "ウィキペディアのページはまだリンクされていません",
+            "fil": "Wala pang kawing ng Wikipedia page",
+            "es": "Todavía no se ha enlazado una página de wikipedia",
+            "zh_Hans": "尚未有连接到的维基百科页面",
+            "da": "Der er endnu ikke linket til nogen Wikipedia-side",
+            "id": "Belum ada halaman Wikipedia yang ditautkan",
+            "cs": "Žádná stránka na Wikipedii zatím nebyla propojena"
+          },
+          "hideInAnswer": true
+        }
+      ],
+      "freeform": {
+        "key": "wikidata",
+        "type": "wikidata",
+        "inline": true
+      }
+    },
+    {
+      "id": "leftover-questions",
+      "render": {
+        "*": "{questions( ,)}"
+      }
+    },
+    {
+      "id": "lod",
+      "labels": [
+        "added_by_default"
+      ],
+      "render": {
+        "*": "{linked_data_from_website()}"
+      }
+    },
+    {
+      "id": "minimap",
+      "description": "Shows a small map with the feature. Added by default to every popup",
+      "render": {
+        "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+      }
+    },
+    {
+      "id": "last_edit",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+      "condition": {
+        "and": [
+          "_last_edit:contributor~*",
+          "_last_edit:changeset~*"
+        ]
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsTesting=true",
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_debug=yes",
+          "_csCount>=10"
+        ]
+      },
+      "render": {
+        "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+      }
+    },
+    {
+      "id": "favourite_status",
+      "render": {
+        "*": "{favourite_status()}"
+      }
+    },
+    {
+      "id": "qr_code",
+      "labels": [
+        "added_by_default"
+      ],
+      "classes": "flex items-center gap-x-2",
+      "render": {
+        "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+        "en": "{qr_code()}Scan this code to open this location on another device",
+        "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+        "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+      }
+    },
+    {
+      "id": "share",
+      "labels": [
+        "added_by_default"
+      ],
+      "metacondition": "_supports_sharing=yes",
+      "render": {
+        "de": "{share_link(,Standort teilen)}",
+        "en": "{share_link(,Share this location)}",
+        "nl": "{share_link(,Deel deze locatie)}"
+      }
+    },
+    {
+      "id": "all-tags",
+      "render": {
+        "*": "{all_tags()}"
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_tags=full",
+          "mapcomplete-show_debug=yes"
+        ]
+      }
+    }
+  ],
+  "filter": [
+    {
+      "id": "access",
+      "options": [
+        {
+          "question": {
+            "en": "Freely accesible",
+            "nl": "Vrij te bezoeken",
+            "de": "Frei zugänglich",
+            "ca": "De lliure accés",
+            "cs": "Volně přístupné"
+          },
+          "osmTags": "access=yes"
+        }
+      ]
+    },
+    {
+      "id": "dogs",
+      "options": [
+        {
+          "question": {
+            "en": "All nature reserves",
+            "nl": "Alle natuurgebieden",
+            "de": "Alle Naturschutzgebiete",
+            "ca": "Totes les reserves naturals",
+            "cs": "Všechny přírodní rezervace"
+          }
+        },
+        {
+          "question": {
+            "en": "Dogs are allowed to roam freely",
+            "nl": "Honden mogen vrij rondlopen",
+            "de": "Hunde dürfen frei herumlaufen",
+            "ca": "Els gossos poden anar lliurement",
+            "cs": "Psi se mohou volně pohybovat"
+          },
+          "osmTags": "dog=yes"
+        },
+        {
+          "question": {
+            "en": "Dogs are allowed if they are leashed",
+            "nl": "Honden welkom aan de leiband",
+            "de": "Hunde nur erlaubt, wenn sie angeleint sind",
+            "ca": "S'admeten gossos si van lligats",
+            "cs": "Psi jsou povoleni, pokud jsou na vodítku"
+          },
+          "osmTags": {
+            "or": [
+              "dog=yes",
+              "dog=leashed"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "titleIcons": [
+    {
+      "id": "wikipedialink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+      "condition": {
+        "or": [
+          "wikipedia~*",
+          "wikidata~*"
+        ]
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "wikipedia=",
+          "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "open_until",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "#": "Titleicon showing e.g. 'open until 17:00'",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{opening_hours_state()}",
+      "condition": {
+        "or": [
+          "opening_hours~*",
+          {
+            "or": [
+              {
+                "and": [
+                  "seasonal~.*winter.*",
+                  "_now:date~....-(12|01|02)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*spring.*",
+                  "_now:date~....-(03|04|05)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*summer.*",
+                  "_now:date~....-(06|07|08)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*autumn.*",
+                  "_now:date~....-(09|10|11)-.."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "phonelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": {
+        "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+        "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+        "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+        "_context": "layers:icons.tagRenderings.phonelink.render"
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:phone~*",
+          "then": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+          }
+        }
+      ],
+      "condition": {
+        "or": [
+          "phone~*",
+          "contact:phone~*"
+        ]
+      }
+    },
+    {
+      "id": "emaillink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:email~*",
+          "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:email~*",
+          "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        }
+      ],
+      "condition": {
+        "or": [
+          "email~*",
+          "contact:email~*",
+          "operator:email~*"
+        ]
+      }
+    },
+    {
+      "id": "websitelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "website~*",
+          "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:website~*",
+          "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "context:website~*",
+          "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "smokingicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=no",
+          "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=yes",
+          "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+        }
+      ]
+    },
+    {
+      "id": "dogicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "if": "dog=no",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+        },
+        {
+          "if": "dog=leashed",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+        },
+        {
+          "if": {
+            "or": [
+              "dog=yes",
+              "dog=unleashed"
+            ]
+          },
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+        }
+      ]
+    },
+    {
+      "id": "sharelink",
+      "labels": [
+        "defaults"
+      ],
+      "render": "{share_link()}",
+      "metacondition": "_supports_sharing=yes"
+    },
+    {
+      "id": "favourite_title_icon",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "*": "{favourite_icon()}"
+      },
+      "metacondition": "_loggedIn=true"
+    },
+    {
+      "id": "osmlink",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+        "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+        "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+        "_context": "layers:icons.tagRenderings.osmlink.render"
+      },
+      "mappings": [
+        {
+          "if": "id~.*/-.*",
+          "then": ""
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "_backend~*",
+          "then": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+          }
+        }
+      ],
+      "condition": "id~(node|way|relation)/[0-9]*"
+    },
+    {
+      "id": "direction",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "{direction_indicator()}"
+    },
+    {
+      "id": "rating",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{rating()}"
+    }
+  ],
+  "_layerIcon": [
+    {
+      "icon": "./assets/layers/nature_reserve/nature_reserve.svg"
+    }
+  ]
+}

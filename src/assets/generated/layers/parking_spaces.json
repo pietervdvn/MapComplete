@@ -1,0 +1,697 @@
+{
+  "id": "parking_spaces",
+  "name": {
+    "en": "Parking Spaces",
+    "de": "Stellplätze",
+    "nl": "Parkeerplekken",
+    "pl": "Miejsca parkingowe",
+    "ca": "Places d'aparcament",
+    "cs": "Parkovací místa"
+  },
+  "description": {
+    "en": "Layer showing individual parking spaces.",
+    "de": "Ebene mit den einzelnen PKW Stellplätzen.",
+    "nl": "Laag met individuele parkeerplekken.",
+    "pl": "Warstwa pokazująca pojedyncze miejsca parkingowe.",
+    "ca": "Capa que mostra aparcaments de cotxes individuals.",
+    "cs": "Vrstva zobrazující jednotlivá parkovací místa."
+  },
+  "source": {
+    "osmTags": {
+      "and": [
+        "amenity=parking_space"
+      ]
+    }
+  },
+  "minzoom": 18,
+  "title": {
+    "render": {
+      "en": "Parking Space",
+      "de": "Stellplatz",
+      "nl": "Parkeerplek",
+      "ca": "Espai d'aparcament",
+      "cs": "Parkovací místo"
+    },
+    "mappings": [
+      {
+        "if": "parking_space=disabled",
+        "then": {
+          "en": "Disabled Parking Space",
+          "nl": "Parkeerplek voor gehandicapten",
+          "de": "Behindertenparkplatz",
+          "cs": "Parkovací místo pro osoby se zdravotním postižením"
+        }
+      },
+      {
+        "if": "parking_space=charging",
+        "then": {
+          "en": "Electric Vehicle Charging Parking Space",
+          "nl": "Parkeerplek voor opladen van elektrische voertuigen",
+          "de": "Parkplatz zum Laden von Elektrofahrzeugen"
+        }
+      }
+    ]
+  },
+  "pointRendering": [
+    {
+      "marker": [
+        {
+          "icon": {
+            "render": "./assets/layers/parking_spaces/parking_space.svg",
+            "mappings": [
+              {
+                "if": "parking_space=disabled",
+                "then": "./assets/layers/toilet/wheelchair.svg"
+              },
+              {
+                "if": "parking_space=charging",
+                "then": "./assets/themes/charging_stations/plug.svg"
+              },
+              {
+                "if": "parking_space=bus",
+                "then": "./assets/layers/transit_stops/bus_stop.svg"
+              },
+              {
+                "if": "parking_space=hgv",
+                "then": "./assets/layers/parking_spaces/hgv.svg"
+              }
+            ]
+          }
+        }
+      ],
+      "iconSize": "20,20",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "center",
+      "iconBadges": [
+        {
+          "if": "_favourite=yes",
+          "then": "circle:white;heart:red"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#696969",
+      "width": "1"
+    }
+  ],
+  "tagRenderings": [
+    {
+      "id": "just_created",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "This element shows a 'thank you' that the contributor has recently created this element",
+      "classes": "rounded-xl thanks",
+      "mappings": [
+        {
+          "if": "id~*",
+          "icon": "./assets/svg/party.svg",
+          "then": {
+            "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+            "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+            "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+            "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+            "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+            "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+          }
+        }
+      ],
+      "condition": {
+        "and": [
+          "_backend~*",
+          "_last_edit:passed_time<300",
+          {
+            "or": [
+              "_version_number=",
+              "_version_number=1"
+            ]
+          }
+        ]
+      },
+      "metacondition": {
+        "and": [
+          {
+            "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+            "or": [
+              "_last_edit:contributor:uid:={_uid}",
+              "_last_edit:contributor:uid="
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "images",
+      "description": "This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images",
+      "render": {
+        "*": "{image_carousel()}{image_upload()}{nearby_images():my-4}"
+      },
+      "classes": "my-4"
+    },
+    {
+      "id": "type",
+      "question": {
+        "en": "What kind of parking space is this?",
+        "de": "Welche Art von Stellplatz ist dies?",
+        "nl": "Wat voor parkeerplek is dit?",
+        "ca": "Quin tipus d'espai d'aparcament és aquest?",
+        "cs": "Co je to za parkovací místo?"
+      },
+      "mappings": [
+        {
+          "if": "parking_space=",
+          "then": {
+            "en": "This is a normal parking space.",
+            "de": "Dies ist ein normaler Stellplatz.",
+            "nl": "Dit is een normale parkeerplek.",
+            "ca": "És un lloc normal d'aparcament.",
+            "pl": "To jest zwykłe miejsce parkingowe.",
+            "cs": "To je normální parkovací místo."
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "parking_space=normal",
+          "then": {
+            "en": "This is a normal parking space.",
+            "de": "Dies ist ein normaler Stellplatz.",
+            "nl": "Dit is een normale parkeerplek.",
+            "pl": "To jest zwykłe miejsce parkingowe.",
+            "ca": "Aquesta és una plaça d'aparcament normal.",
+            "cs": "To je normální parkovací místo."
+          }
+        },
+        {
+          "if": "parking_space=disabled",
+          "then": {
+            "en": "This is a disabled parking space.",
+            "de": "Dies ist ein Behindertenstellplatz.",
+            "nl": "Dit is een gehandicaptenparkeerplaats.",
+            "pl": "To jest miejsce parkingowe dla niepełnosprawnych.",
+            "ca": "Aquesta és una plaça d'aparcament per a minusvàlids.",
+            "cs": "Jedná se o parkovací místo pro osoby se zdravotním postižením."
+          }
+        },
+        {
+          "if": "parking_space=charging",
+          "then": {
+            "en": "This is parking space reserved for charging vehicles.",
+            "de": "Dies ist ein Stellplatz, der für das Laden von Fahrzeugen reserviert ist.",
+            "nl": "Deze parkeerplek is gereserveerd voor het opladen van voertuigen.",
+            "pl": "To miejsce parkingowe jest zarezerwowane dla ładowania pojazdów.",
+            "ca": "Es tracta d'una plaça d'aparcament reservada per a la recàrrega de vehicles.",
+            "cs": "Jedná se o parkovací místo vyhrazené pro nabíjení vozidel."
+          }
+        },
+        {
+          "if": "parking_space=delivery",
+          "then": {
+            "en": "This is parking space reserved for deliveries.",
+            "de": "Dies ist ein Stellplatz, der für Lieferfahrzeuge reserviert ist.",
+            "nl": "Deze parkeerplek is gereserveerd voor leveringen.",
+            "pl": "To miejsce parkingowe jest przeznaczone dla dostaw.",
+            "ca": "Es tracta d'una plaça d'aparcament reservada per a repartidors.",
+            "cs": "Jedná se o parkovací místo vyhrazené pro dodávky."
+          }
+        },
+        {
+          "if": "parking_space=hgv",
+          "then": {
+            "en": "This is parking space reserved for heavy goods vehicles.",
+            "de": "Dies ist ein Stellplatz, der für Lastkraftwagen reserviert ist.",
+            "nl": "Deze parkeerplek is gereserveerd voor vrachtwagens.",
+            "cs": "Jedná se o parkovací místo vyhrazené pro těžká nákladní vozidla."
+          }
+        },
+        {
+          "if": "parking_space=caravan",
+          "then": {
+            "en": "This is parking space reserved for caravans or RVs.",
+            "de": "Dieser Stellplatz ist für Wohnwagen oder Wohnmobile reserviert.",
+            "nl": "Deze parkeerplek is gereserveerd voor caravans of campers.",
+            "cs": "Jedná se o parkovací místo vyhrazené pro karavany nebo obytná vozidla."
+          }
+        },
+        {
+          "if": "parking_space=bus",
+          "then": {
+            "en": "This is parking space reserved for buses.",
+            "de": "Dies ist ein Stellplatz, der für Busse reserviert ist.",
+            "nl": "Deze parkeerplek is gereserveerd voor bussen.",
+            "pl": "To miejsce parkingowe jest przeznaczone dla busów.",
+            "ca": "Es tracta d'una plaça d'aparcament reservada per a autobusos.",
+            "cs": "Jedná se o parkovací místo vyhrazené pro autobusy."
+          }
+        },
+        {
+          "if": "parking_space=motorcycle",
+          "then": {
+            "en": "This is parking space reserved for motorcycles.",
+            "de": "Dies ist ein Stellplatz, der für Motorräder reserviert ist.",
+            "nl": "Deze parkeerplek is gereserveerd voor motoren.",
+            "pl": "To miejsce parkingowe jest przeznaczone dla motocykli.",
+            "ca": "Es tracta d'una plaça d'aparcament reservada per a motos.",
+            "cs": "Jedná se o parkovací místo vyhrazené pro motocykly."
+          }
+        },
+        {
+          "if": "parking_space=parent",
+          "then": {
+            "en": "This is a parking space reserved for parents with children.",
+            "de": "Dies ist ein Stellplatz, der für Eltern mit Kindern reserviert ist.",
+            "nl": "Deze parkeerplek is gereserveerd voor ouders met kinderen.",
+            "pl": "To miejsce jest przeznaczone dla rodziców z dziećmi.",
+            "ca": "Es tracta d'una plaça d'aparcament reservada per a pares amb fills.",
+            "cs": "Jedná se o parkovací místo vyhrazené pro rodiče s dětmi."
+          }
+        },
+        {
+          "if": "parking_space=staff",
+          "then": {
+            "en": "This is a parking space reserved for staff.",
+            "de": "Dies ist ein Stellplatz, der für das Personal reserviert ist.",
+            "nl": "Deze parkeerplek is gereserveerd voor personeel.",
+            "pl": "To jest miejsce parkingowe przeznaczone dla pracowników.",
+            "ca": "Es tracta d'una plaça d'aparcament reservada al personal.",
+            "cs": "Jedná se o parkovací místo vyhrazené pro zaměstnance."
+          }
+        },
+        {
+          "if": "parking_space=taxi",
+          "then": {
+            "en": "This is a parking space reserved for taxis.",
+            "de": "Dies ist ein Stellplatz, der für Taxis reserviert ist.",
+            "nl": "Deze parkeerplek is gereserveerd voor taxis.",
+            "pl": "To miejsce parkingowe jest przeznaczone dla taksówek.",
+            "ca": "Aquest espai d'aparcament està reservat per a taxi.",
+            "cs": "Jedná se o parkovací místo vyhrazené pro taxíky."
+          }
+        },
+        {
+          "if": "parking_space=trailer",
+          "then": {
+            "en": "This is a parking space reserved for vehicles towing a trailer.",
+            "de": "Dies ist ein Stellplatz, der für Fahrzeuge mit Anhänger reserviert ist.",
+            "nl": "Deze parkeerplek is gereserveerd voor voertuigen met een aanhanger.",
+            "cs": "Jedná se o parkovací místo vyhrazené pro vozidla táhnoucí přívěs."
+          }
+        },
+        {
+          "if": "parking_space=car_sharing",
+          "then": {
+            "en": "This is a parking space reserved for car sharing.",
+            "de": "Dies ist ein Stellplatz, der für Carsharing reserviert ist.",
+            "nl": "Deze parkeerplek is gereserveerd voor autodelen.",
+            "cs": "Jedná se o parkovací místo vyhrazené pro sdílení automobilů."
+          }
+        }
+      ]
+    },
+    {
+      "id": "capacity",
+      "render": {
+        "en": "This parking spaces has {capacity} spaces.",
+        "de": "Dieser Parkplatz hat {capacity} Stellplätze.",
+        "nl": "Deze parkeerplek heeft {capacity} plaatsen.",
+        "ca": "Aquests espais d'aparcament tenen {capacity} places.",
+        "cs": "Toto parkoviště má {capacity} míst."
+      },
+      "mappings": [
+        {
+          "if": "capacity=1",
+          "then": {
+            "en": "This parking space has 1 space.",
+            "de": "Dieser Parkplatz hat 1 Stellplatz.",
+            "nl": "Deze parkeerplek heeft 1 plaats.",
+            "ca": "Aquest espai d'aparcament té 1 plaça.",
+            "cs": "Toto parkoviště má 1 místo."
+          }
+        }
+      ]
+    },
+    {
+      "id": "leftover-questions",
+      "render": {
+        "*": "{questions( ,)}"
+      }
+    },
+    {
+      "id": "lod",
+      "labels": [
+        "added_by_default"
+      ],
+      "render": {
+        "*": "{linked_data_from_website()}"
+      }
+    },
+    {
+      "id": "minimap",
+      "description": "Shows a small map with the feature. Added by default to every popup",
+      "render": {
+        "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+      }
+    },
+    {
+      "id": "last_edit",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+      "condition": {
+        "and": [
+          "_last_edit:contributor~*",
+          "_last_edit:changeset~*"
+        ]
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsTesting=true",
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_debug=yes",
+          "_csCount>=10"
+        ]
+      },
+      "render": {
+        "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+      }
+    },
+    {
+      "id": "favourite_status",
+      "render": {
+        "*": "{favourite_status()}"
+      }
+    },
+    {
+      "id": "qr_code",
+      "labels": [
+        "added_by_default"
+      ],
+      "classes": "flex items-center gap-x-2",
+      "render": {
+        "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+        "en": "{qr_code()}Scan this code to open this location on another device",
+        "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+        "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+      }
+    },
+    {
+      "id": "share",
+      "labels": [
+        "added_by_default"
+      ],
+      "metacondition": "_supports_sharing=yes",
+      "render": {
+        "de": "{share_link(,Standort teilen)}",
+        "en": "{share_link(,Share this location)}",
+        "nl": "{share_link(,Deel deze locatie)}"
+      }
+    },
+    {
+      "id": "all-tags",
+      "render": {
+        "*": "{all_tags()}"
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_tags=full",
+          "mapcomplete-show_debug=yes"
+        ]
+      }
+    }
+  ],
+  "titleIcons": [
+    {
+      "id": "wikipedialink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+      "condition": {
+        "or": [
+          "wikipedia~*",
+          "wikidata~*"
+        ]
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "wikipedia=",
+          "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "open_until",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "#": "Titleicon showing e.g. 'open until 17:00'",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{opening_hours_state()}",
+      "condition": {
+        "or": [
+          "opening_hours~*",
+          {
+            "or": [
+              {
+                "and": [
+                  "seasonal~.*winter.*",
+                  "_now:date~....-(12|01|02)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*spring.*",
+                  "_now:date~....-(03|04|05)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*summer.*",
+                  "_now:date~....-(06|07|08)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*autumn.*",
+                  "_now:date~....-(09|10|11)-.."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "phonelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": {
+        "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+        "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+        "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+        "_context": "layers:icons.tagRenderings.phonelink.render"
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:phone~*",
+          "then": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+          }
+        }
+      ],
+      "condition": {
+        "or": [
+          "phone~*",
+          "contact:phone~*"
+        ]
+      }
+    },
+    {
+      "id": "emaillink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:email~*",
+          "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:email~*",
+          "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        }
+      ],
+      "condition": {
+        "or": [
+          "email~*",
+          "contact:email~*",
+          "operator:email~*"
+        ]
+      }
+    },
+    {
+      "id": "websitelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "website~*",
+          "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:website~*",
+          "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "context:website~*",
+          "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "smokingicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=no",
+          "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=yes",
+          "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+        }
+      ]
+    },
+    {
+      "id": "dogicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "if": "dog=no",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+        },
+        {
+          "if": "dog=leashed",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+        },
+        {
+          "if": {
+            "or": [
+              "dog=yes",
+              "dog=unleashed"
+            ]
+          },
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+        }
+      ]
+    },
+    {
+      "id": "sharelink",
+      "labels": [
+        "defaults"
+      ],
+      "render": "{share_link()}",
+      "metacondition": "_supports_sharing=yes"
+    },
+    {
+      "id": "favourite_title_icon",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "*": "{favourite_icon()}"
+      },
+      "metacondition": "_loggedIn=true"
+    },
+    {
+      "id": "osmlink",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+        "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+        "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+        "_context": "layers:icons.tagRenderings.osmlink.render"
+      },
+      "mappings": [
+        {
+          "if": "id~.*/-.*",
+          "then": ""
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "_backend~*",
+          "then": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+          }
+        }
+      ],
+      "condition": "id~(node|way|relation)/[0-9]*"
+    },
+    {
+      "id": "direction",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "{direction_indicator()}"
+    },
+    {
+      "id": "rating",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{rating()}"
+    }
+  ],
+  "_layerIcon": [
+    {
+      "icon": "./assets/layers/parking_spaces/parking_space.svg"
+    }
+  ]
+}

@@ -1,0 +1,1946 @@
+{
+  "id": "climbing_gym",
+  "name": {
+    "de": "Kletterhallen",
+    "en": "Climbing gyms",
+    "nl": "Klimzalen",
+    "ja": "クライミングジム",
+    "fr": "Salle d’escalade",
+    "it": "Palestre di arrampicata",
+    "ru": "Комплексы скалолазания",
+    "ca": "Gimnasos d'escalada",
+    "cs": "Lezecké tělocvičny"
+  },
+  "description": {
+    "de": "Eine Kletterhalle",
+    "en": "A climbing gym",
+    "ja": "クライミングジム",
+    "nl": "Een klimzaal",
+    "fr": "Une salle d’escalade",
+    "it": "Una palestra di arrampicata",
+    "ru": "Комплекс скалолазания",
+    "ca": "Un gimnàs d'escalada",
+    "cs": "Lezecká tělocvična"
+  },
+  "source": {
+    "osmTags": {
+      "and": [
+        "sport=climbing",
+        "leisure=sports_centre"
+      ]
+    }
+  },
+  "minzoom": 10,
+  "title": {
+    "render": {
+      "nl": "Klimzaal",
+      "de": "Kletterhalle",
+      "en": "Climbing gym",
+      "ja": "クライミングジム",
+      "fr": "Salle d’escalade",
+      "it": "Palestra di arrampicata",
+      "ru": "Комплекс скалолазания",
+      "cs": "Lezecká tělocvična"
+    },
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": {
+          "nl": "Klimzaal <strong>{name}</strong>",
+          "de": "Kletterhalle <strong>{name}</strong>",
+          "en": "Climbing gym <strong>{name}</strong>",
+          "ja": "クライミングジム<strong>{name}</strong>",
+          "fr": "Salle d’escalade <strong>{name}</strong>",
+          "it": "Palestra di arrampicata <strong>{name}</strong>",
+          "cs": "Lezecká tělocvična <strong>{name}</strong>"
+        }
+      }
+    ]
+  },
+  "pointRendering": [
+    {
+      "iconBadges": [
+        {
+          "if": "opening_hours~*",
+          "then": {
+            "id": "isOpen",
+            "#": "Shows a coloured clock if opening hours are parsed. Uses the metatagging, suitable to use as a (badged) overlay",
+            "mappings": [
+              {
+                "if": "_isOpen=yes",
+                "then": "clock:#0f0;ring:#0f0"
+              },
+              {
+                "if": "_isOpen=no",
+                "then": "circle:#f00;clock:#fff"
+              },
+              {
+                "#": "Still loading the country",
+                "if": {
+                  "and": [
+                    "_isOpen=",
+                    "opening_hours~*"
+                  ]
+                },
+                "then": "clock:#ff0;ring:#ff0"
+              },
+              {
+                "#": "Still loading the country",
+                "if": {
+                  "and": [
+                    "_isOpen=parse_error",
+                    "opening_hours~*"
+                  ]
+                },
+                "then": "circle:#f0f;clock:#fff"
+              }
+            ],
+            "metacondition": "__showTimeSensitiveIcons!=no"
+          }
+        },
+        {
+          "if": "_favourite=yes",
+          "then": "circle:white;heart:red"
+        }
+      ],
+      "iconSize": "40,40",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "label": {
+        "mappings": [
+          {
+            "if": "name~*",
+            "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
+          }
+        ]
+      },
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": {
+            "render": "./assets/themes/climbing/climbing_gym.svg",
+            "id": "assetsthemesclimbingclimbinggymsvg"
+          }
+        }
+      ]
+    }
+  ],
+  "lineRendering": [],
+  "presets": [
+    {
+      "title": {
+        "en": "Climbing gym",
+        "nl": "Klimzaal",
+        "de": "Kletterhalle",
+        "cs": "Lezecká tělocvična"
+      },
+      "tags": [
+        "leisure=sports_centre",
+        "sport=climbing"
+      ]
+    }
+  ],
+  "tagRenderings": [
+    {
+      "id": "just_created",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "This element shows a 'thank you' that the contributor has recently created this element",
+      "classes": "rounded-xl thanks",
+      "mappings": [
+        {
+          "if": "id~*",
+          "icon": "./assets/svg/party.svg",
+          "then": {
+            "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+            "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+            "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+            "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+            "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+            "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+          }
+        }
+      ],
+      "condition": {
+        "and": [
+          "_backend~*",
+          "_last_edit:passed_time<300",
+          {
+            "or": [
+              "_version_number=",
+              "_version_number=1"
+            ]
+          }
+        ]
+      },
+      "metacondition": {
+        "and": [
+          {
+            "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+            "or": [
+              "_last_edit:contributor:uid:={_uid}",
+              "_last_edit:contributor:uid="
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "images",
+      "description": "This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images",
+      "render": {
+        "*": "{image_carousel()}{image_upload()}{nearby_images():my-4}"
+      },
+      "classes": "my-4"
+    },
+    {
+      "render": {
+        "*": "<strong>{name}</strong>"
+      },
+      "question": {
+        "en": "What is the name of this climbing gym?",
+        "nl": "Wat is de naam van dit Klimzaal?",
+        "de": "Wie heißt diese Kletterhalle?",
+        "ja": "このクライミングジムは何という名前ですか?",
+        "fr": "Quel est le nom de la salle d’escalade ?",
+        "it": "Qual è il nome di questa palestra di arrampicata?",
+        "cs": "Jak se jmenuje tato lezecká tělocvična?"
+      },
+      "freeform": {
+        "key": "name",
+        "inline": true
+      },
+      "id": "name"
+    },
+    {
+      "id": "website",
+      "labels": [
+        "contact"
+      ],
+      "icon": "./assets/layers/icons/website.svg",
+      "question": {
+        "en": "What is the website of {title()}?",
+        "nl": "Wat is de website van {title()}?",
+        "fr": "Quel est le site web de {title()} ?",
+        "gl": "Cal é a páxina web de {title()}?",
+        "nb_NO": "Hva er nettsiden til {title()}?",
+        "ru": "Какой сайт у {title()}?",
+        "id": "Apa situs web dari {title()}?",
+        "zh_Hant": "{title()} 網址是什麼？",
+        "it": "Qual è il sito web di {title()}?",
+        "de": "Wie lautet die Webseite von {title()}?",
+        "pt_BR": "Qual o site de {title()}?",
+        "pl": "Jaka jest strona internetowa {title()}?",
+        "sv": "Vad är webbplatsen för {title()}?",
+        "pt": "Qual é o sítio web de {title()}?",
+        "eo": "Kie estas la retejo de {title()}?",
+        "hu": "Mi a weboldala ennek: {title()}?",
+        "ca": "Quina és la web de {title()}?",
+        "ja": "{title()}のウェブサイトは？",
+        "fil": "Ano ang website ng {title()}?",
+        "es": "¿Cual es el sitio web de {title()}?",
+        "zh_Hans": "{title()} 的网站为何？",
+        "da": "Hvad er webstedet for {title()}?",
+        "cs": "Jaká je webová stránka {title()}?"
+      },
+      "render": {
+        "*": "<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>"
+      },
+      "freeform": {
+        "key": "website",
+        "type": "url",
+        "addExtraTags": [
+          "contact:website="
+        ]
+      },
+      "mappings": [
+        {
+          "if": "contact:website~*",
+          "then": "<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>",
+          "hideInAnswer": true,
+          "icon": "./assets/layers/icons/website.svg"
+        }
+      ],
+      "editButtonAriaLabel": {
+        "en": "Edit website",
+        "nl": "Pas website aan",
+        "de": "Webseite bearbeiten"
+      }
+    },
+    {
+      "id": "phone",
+      "labels": [
+        "contact"
+      ],
+      "question": {
+        "en": "What is the phone number of {title()}?",
+        "nl": "Wat is het telefoonnummer van {title()}?",
+        "fr": "Quel est le numéro de téléphone de {title()} ?",
+        "de": "Wie lautet die Telefonnummer von {title()}?",
+        "nb_NO": "Hva er telefonnummeret til {title()}?",
+        "ru": "Какой номер телефона у {title()}?",
+        "sv": "Vad är telefonnumret till {title()}?",
+        "zh_Hant": "{title()} 的電話號碼是什麼？",
+        "it": "Qual è il numero di telefono di {title()}?",
+        "pt_BR": "Qual o número de telefone de {title()}?",
+        "id": "Berapa nomor telepon dari {title()}?",
+        "pl": "Jaki jest numer telefonu do {title()}?",
+        "pt": "Qual é o número de telefone de {title()}?",
+        "eo": "Kio estas la telefonnumero de {title()}?",
+        "hu": "Mi a telefonszáma ennek: {title()}?",
+        "ca": "Quin és el telèfon de {title()}?",
+        "ja": "{title()}の電話番号は？",
+        "sl": "Kakšno telefonsko številko ima {title()}?",
+        "fil": "Ano ang telepono ng {title()}?",
+        "es": "¿Cuál es el número de teléfono de {title()}?",
+        "zh_Hans": "{title()} 的电话号码为何？",
+        "da": "Hvad er telefonnummeret til {title()}?",
+        "cs": "Jaké je telefonní číslo {title()}?"
+      },
+      "render": {
+        "*": "<a href='tel:{phone}'>{phone}</a>"
+      },
+      "icon": "./assets/layers/questions/phone.svg",
+      "mappings": [
+        {
+          "if": "contact:phone~*",
+          "then": "<a href='tel:{contact:phone}'>{contact:phone}</a>",
+          "hideInAnswer": true,
+          "icon": "./assets/layers/questions/phone.svg"
+        }
+      ],
+      "freeform": {
+        "key": "phone",
+        "type": "phone",
+        "addExtraTags": [
+          "contact:phone="
+        ]
+      },
+      "editButtonAriaLabel": {
+        "en": "Edit phone number",
+        "nl": "Pas telefoonnummer aan",
+        "de": "Telefonnummer bearbeiten"
+      }
+    },
+    {
+      "id": "email",
+      "render": {
+        "*": "<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>"
+      },
+      "icon": "./assets/svg/envelope.svg",
+      "labels": [
+        "contact"
+      ],
+      "question": {
+        "nl": "Wat is het e-mailadres van {title()}?",
+        "fr": "Quelle est l'adresse courriel de {title()} ?",
+        "en": "What is the email address of {title()}?",
+        "nb_NO": "Hva er e-postadressen til {title()}?",
+        "ru": "Какой адрес электронной почты у {title()}?",
+        "id": "Apa alamat surel dari {title()}?",
+        "zh_Hant": "{title()} 的電子郵件地址是什麼？",
+        "it": "Qual è l'indirizzo email di {title()}?",
+        "de": "Wie lautet die Mail-Adresse von {title()}?",
+        "pt_BR": "Qual o endereço de e-mail de {title()}?",
+        "pl": "Jaki jest adres e-mail do {title()}?",
+        "sv": "Vad är e-postadressen till {title()}?",
+        "pt": "Qual é o endereço de e-mail de {title()}?",
+        "eo": "Kio estas la retpoŝta adreso de {title()}?",
+        "hu": "Mi a(z) {title()} e-mail címe?",
+        "ca": "Quina és l'adreça de correu electrònic de {title()}?",
+        "ja": "{title()}のEメールアドレスは何ですか？",
+        "sl": "Kakšen naslov elektronske pošte ima {title()}?",
+        "fil": "Ano ang email address ng {title()}?",
+        "es": "¿Cuál es la dirección de correo electrónico de {title()}?",
+        "zh_Hans": "{title()} 的电子邮箱地址为何？",
+        "da": "Hvad er mailadressen på {title()}?",
+        "cs": "Jaká je e-mailová adresa {title()}?"
+      },
+      "mappings": [
+        {
+          "if": "contact:email~*",
+          "icon": "./assets/svg/envelope.svg",
+          "then": "<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>",
+          "hideInAnswer": true
+        },
+        {
+          "if": "operator:email~*",
+          "icon": "./assets/svg/envelope.svg",
+          "then": "<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>",
+          "hideInAnswer": true
+        }
+      ],
+      "freeform": {
+        "key": "email",
+        "type": "email",
+        "addExtraTags": [
+          "contact:email="
+        ]
+      },
+      "editButtonAriaLabel": {
+        "en": "Edit email address",
+        "nl": "Pas emailadres aan",
+        "de": "E-Mail Adresse bearbeiten"
+      }
+    },
+    {
+      "id": "fee",
+      "question": {
+        "en": "Is a fee required to climb here?",
+        "es": "¿Se requiere una tasa para escalar aquí?",
+        "de": "Ist das Klettern hier gebührenpflichtig?",
+        "nl": "Moet men betalen om hier te klimmen?",
+        "fr": "Est-ce que la grimpe sur ce site est payante ?",
+        "ca": "Es requereix una tarifa per a pujar aquí?",
+        "cs": "Vyžaduje se za výstup poplatek?",
+        "_context": "layers:climbing.tagRenderings.fee.question"
+      },
+      "render": {
+        "en": "A fee of {charge} should be paid for climbing here",
+        "de": "Zum Klettern wird eine Gebühr von {charge} erhoben",
+        "es": "Se debe de pagar una tasa de {charge} para escalar aquí",
+        "nl": "Men moet {charge} betalen om hier te klimmen",
+        "fr": "Une taxe de {charge} doit être payée pour grimper ici",
+        "ca": "S'ha de pagar una tarifa de {charge} per a escalar aquí",
+        "cs": "Za výstup zde je třeba zaplatit poplatek ve výši {charge}",
+        "_context": "layers:climbing.tagRenderings.fee.render"
+      },
+      "freeform": {
+        "key": "charge",
+        "addExtraTags": [
+          "fee=yes"
+        ],
+        "inline": true
+      },
+      "mappings": [
+        {
+          "if": "fee=no",
+          "addExtraTags": [
+            "charge="
+          ],
+          "then": {
+            "en": "Climbing here is free of charge",
+            "de": "Das Klettern ist hier kostenlos",
+            "es": "La escalada es gratis",
+            "nl": "Hier klimmen is gratis",
+            "fr": "Grimper ici est gratuit",
+            "ca": "L'escalada en bloc aquí és gratuïta",
+            "cs": "Lezení je zde zdarma",
+            "_context": "layers:climbing.tagRenderings.fee.mappings.0.then"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "fee=yes",
+              "charge="
+            ]
+          },
+          "then": {
+            "en": "Paying a fee is required to climb here",
+            "es": "Hay que pagar una tasa para escalar aquí",
+            "de": "Zum Klettern ist eine Gebühr zu zahlen",
+            "nl": "Men moet betalen om hier te klimmen",
+            "fr": "Il faut payer une taxe pour grimper ici",
+            "ca": "Cal pagar una quota per a escalar aquí",
+            "cs": "Za výstup je třeba zaplatit poplatek",
+            "_context": "layers:climbing.tagRenderings.fee.mappings.1.then"
+          },
+          "hideInAnswer": "charge~*"
+        }
+      ]
+    },
+    {
+      "id": "payment-options",
+      "question": {
+        "en": "Which methods of payment are accepted here?",
+        "nl": "Welke betaalmiddelen worden hier geaccepteerd?",
+        "pt": "Que métodos de pagamento são aceites aqui?",
+        "pt_BR": "Quais métodos de pagamento são aceitos aqui?",
+        "id": "Metode pembayaran manakah yang di terima disini?",
+        "de": "Welche Zahlungsmethoden werden hier akzeptiert?",
+        "fr": "Quelles sont les méthodes de paiement acceptées ici ?",
+        "hu": "Milyen fizetési módokat fogadnak el itt?",
+        "it": "Quali metodi di pagamento sono accettati qui?",
+        "nb_NO": "Hvilke betalingsmetoder godtas her?",
+        "ca": "Quins mètodes de pagament s'accepten aquí?",
+        "sv": "Vilka betalningsmetoder accepteras här?",
+        "zh_Hant": "這邊接受那種付款方式？",
+        "pl": "Jakie metody płatności są tutaj dostępne?",
+        "ru": "Какие способы оплаты здесь принимают?",
+        "ja": "どのような支払い方法が可能ですか？",
+        "sl": "Kateri načini plačila so možni tu?",
+        "fil": "Anong mga paraang pambayad ang tinatanggap dito?",
+        "es": "¿Qué métodos de pago se aceptan aquí?",
+        "zh_Hans": "这里支持哪些支付方式？",
+        "da": "Hvilke betalingsmetoder accepteres her?",
+        "cs": "Jaké platební metody jsou zde přijímány?"
+      },
+      "multiAnswer": true,
+      "mappings": [
+        {
+          "if": "payment:cash=yes",
+          "ifnot": "payment:cash=no",
+          "icon": "./assets/layers/questions/cash.svg",
+          "then": {
+            "en": "Cash is accepted here",
+            "nl": "Cash geld wordt hier aanvaard",
+            "pt": "Aceitam pagamento com dinheiro aqui",
+            "pt_BR": "Dinheiro é aceito aqui",
+            "id": "Pembayaran tunai diterima di sini",
+            "de": "Hier wird Bargeld akzeptiert",
+            "fr": "Paiement en liquide accepté",
+            "hu": "Itt készpénzzel is lehet fizetni",
+            "it": "I contanti sono accettati",
+            "nb_NO": "Kontanter godtas her",
+            "ca": "S'accepten diners",
+            "sv": "Pengar accepteras här",
+            "zh_Hant": "這邊接受現金",
+            "pl": "Płatność gotówkowa jest tutaj dostępna",
+            "ru": "Здесь принимают наличными",
+            "ja": "現金利用可能",
+            "sl": "Tu sprejemajo gotovino",
+            "fil": "Tinatanggap ang salapi rito",
+            "es": "Aquí se acepta el pago en efectivo",
+            "zh_Hans": "可用现金",
+            "da": "Her modtages kontanter",
+            "cs": "Přijímá se zde hotovost"
+          }
+        },
+        {
+          "if": "payment:cards=yes",
+          "ifnot": "payment:cards=no",
+          "icon": "./assets/layers/questions/payment_card.svg",
+          "then": {
+            "en": "Payment cards are accepted here",
+            "nl": "Betalen met bankkaarten kan hier",
+            "pt": "Aceitam pagamento com cartões bancários aqui",
+            "pt_BR": "Cartões de pagamento são aceitos aqui",
+            "id": "Kartu pembayaran diterima di sini",
+            "de": "Hier wird Kartenzahlung akzeptiert",
+            "fr": "Paiement par carte accepté",
+            "hu": "Itt fizetőkártyákkal is lehet fizetni",
+            "it": "I pagamenti con la carta sono accettati",
+            "nb_NO": "Betalingskort godtas her",
+            "ca": "S'accepten targetes de crèdit",
+            "sv": "Betalningskort accepteras här",
+            "zh_Hant": "這邊接受現金卡",
+            "pl": "Płatność kartą jest tutaj dostępna",
+            "ru": "Здесь принимают банковские карты",
+            "ja": "お支払いはこちらで承ります",
+            "sl": "Tukaj sprejemajo plačilne kartice",
+            "fil": "Tinatanggap ang mga tarhetang pambayad dito",
+            "es": "Aquí se acepta el pago por tarjeta",
+            "zh_Hans": "可用信用卡",
+            "da": "Betalingskort accepteres her",
+            "cs": "Jsou zde přijímány platební karty"
+          }
+        },
+        {
+          "if": "payment:qr_code=yes",
+          "ifnot": "payment:qr_code=no",
+          "icon": "./assets/layers/questions/qrcode.svg",
+          "then": {
+            "en": "Payment by QR-code is possible here",
+            "nl": "Betalen via een QR-code is hier mogelijk",
+            "de": "Die Bezahlung per QR-Code ist hier möglich",
+            "es": "Aquí se puede pagar con código QR",
+            "ca": "Aquí es pot pagar amb codi QR",
+            "cs": "Platba QR kódem je zde možná"
+          }
+        }
+      ]
+    },
+    {
+      "id": "opening_hours",
+      "question": {
+        "en": "What are the opening hours of {title()}?",
+        "fr": "Quelles sont les horaires d'ouverture de {title()} ?",
+        "de": "Wie lauten die Öffnungszeiten von {title()}?",
+        "nl": "Wat zijn de openingstijden van {title()}?",
+        "nb_NO": "Hva er åpningstidene for {title()})",
+        "ru": "Какое время работы у {title()}?",
+        "zh_Hant": "{title()} 的開放時間是什麼？",
+        "it": "Quali sono gli orari di apertura di {title()}?",
+        "pt_BR": "Qual o horário de funcionamento de {title()}?",
+        "pl": "Jakie są godziny otwarcia {title()}?",
+        "sv": "Vilka är öppettiderna för {title()}?",
+        "pt": "Qual é o horário de funcionamento de {title()}?",
+        "hu": "Mikor van nyitva ez: {title()}?",
+        "ca": "Quin és l'horari d'obertura de {title()}?",
+        "ja": "{title()}の営業時間は？",
+        "sl": "Kakšen odpiralni čas ima {title()}?",
+        "fil": "Anong oras nagbubukas ang {title()}?",
+        "es": "¿Cuales son las horas de apertura de {title()}?",
+        "zh_Hans": "{title()} 的开放时间为何？",
+        "da": "Hvad er åbningstiderne for {title()}?",
+        "id": "Kapan jam buka {title()}?",
+        "cs": "Jaká je otevírací doba {title()}?"
+      },
+      "render": {
+        "de": "<h3>Öffnungszeiten</h3>{opening_hours_table(opening_hours)}",
+        "fr": "<h3>Horaires d'ouverture</h3>{opening_hours_table(opening_hours)}",
+        "en": "<h3>Opening hours</h3>{opening_hours_table(opening_hours)}",
+        "nl": "<h3>Openingstijden</h3>{opening_hours_table(opening_hours)}",
+        "nb_NO": "<h3>Åpningstider</h3>{opening_hours_table(opening_hours)}",
+        "ru": "<h3>Часы работы</h3>{opening_hours_table(opening_hours)}",
+        "zh_Hant": "<h3>開放時間</h3>{opening_hours_table(opening_hours)}",
+        "it": "<h3>Orari di apertura</h3>{opening_hours_table(opening_hours)}",
+        "pl": "<h3> Godziny otwarcia</h3>{opening_hours_table(opening_hours)}",
+        "pt_BR": "<h3>Horário de funcionamento</h3>{opening_hours_table(opening_hours)}",
+        "sv": "<h3>Öppettider</h3> {opening_hours_table(opening_hours)}",
+        "pt": "<h3>Horário de funcionamento</h3>{opening_hours_table(opening_hours)}",
+        "eo": "<h3>Malfermitaj horoj</h3>{opening_hours_table(opening_hours)}",
+        "hu": "<h3>Nyitva tartás</h3>{opening_hours_table(opening_hours)}",
+        "ca": "<h3>Horari d'obertura</h3>{opening_hours_table(opening_hours)}",
+        "ja": "<h3>営業時間</h3>{opening_hours_table(opening_hours)}",
+        "sl": "<h3>Odpiralni čas</h3>{opening_hours_table(opening_hours)}",
+        "fil": "<h3>Mga oras na bukas</h3>{opening_hours_table(opening_hours)}",
+        "es": "<h3>Horas de apertura</h3>{opening_hours_table(opening_hours)}",
+        "zh_Hans": "<h3>开放时间</h3> {opening_hours_table(opening_hours)}",
+        "da": "<h3> Åbningstider</h3>{opening_hours_table(opening_hours)}",
+        "id": "<h3>Jam buka</h3>{opening_hours_table(opening_hours)}",
+        "pa_PK": "<h3>کھُلھے گھنٹے</h3>{opening_hours_table(opening_hours)}",
+        "cs": "<h3>Otevírací hodiny</h3>{opening_hours_table(opening_hours)}"
+      },
+      "freeform": {
+        "key": "opening_hours",
+        "type": "opening_hours",
+        "inline": false
+      },
+      "mappings": [
+        {
+          "#": "Just here to be able to handle those ~5000 incorrect 'opening_hours=closed' elements.",
+          "if": "opening_hours=closed",
+          "then": {
+            "en": "Marked as closed for an unspecified time",
+            "nl": "Gesloten voor onbepaalde duur",
+            "de": "Als geschlossen für eine unbestimmte Zeit markiert"
+          },
+          "hideInAnswer": true
+        }
+      ]
+    },
+    {
+      "id": "reviews",
+      "description": "Shows the reviews module (including the possibility to leave a review)",
+      "render": {
+        "*": "{create_review()}{list_reviews()}"
+      }
+    },
+    {
+      "id": "shoe_rental",
+      "question": {
+        "en": "Can one rent climbing shoes here?",
+        "nl": "Kunnen hier klimschoenen gehuurd worden?",
+        "fr": "Peut-on louer des chaussures d'escalade ici ?",
+        "de": "Kann man hier Kletterschuhe ausleihen?",
+        "pl": "Czy można tutaj wypożyczyć buty do wspinaczki?",
+        "cs": "Lze si zde půjčit lezeckou obuv?"
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "service:climbing_shoes:rental=yes",
+              "service:climbing_shoes:rental:fee=no"
+            ]
+          },
+          "then": {
+            "en": "Climbing shoes can be borrowed for free here",
+            "nl": "Klimschoenen kunnen hier gratis geleend worden",
+            "fr": "Les chaussures d'escalade peuvent être empruntées gratuitement ici",
+            "de": "Kletterschuhe können hier kostenlos ausgeliehen werden",
+            "cs": "Lezeckou obuv si můžete zdarma vypůjčit zde"
+          },
+          "addExtraTags": [
+            "service:climbing_shoes:rental:charge="
+          ]
+        },
+        {
+          "if": {
+            "and": [
+              "service:climbing_shoes:rental=yes",
+              "service:climbing_shoes:rental:charge~*"
+            ]
+          },
+          "then": {
+            "en": "Climbing shoes can be rented here for {service:climbing_shoes:rental:charge}",
+            "nl": "Klimschoenen kunnen hier gehuurd worden aan {service:climbing_shoes:rental:charge}",
+            "fr": "Les chaussures d'escalade peuvent être louées ici pour {service:climbing_shoes:rental:charge}",
+            "de": "Kletterschuhe können hier ausgeliehen werden für {service:climbing_shoes:rental:charge}",
+            "cs": "Lezeckou obuv si můžete zapůjčit zde za {service:climbing_shoes:rental:charge}"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": {
+            "and": [
+              "service:climbing_shoes:rental=yes",
+              "service:climbing_shoes:rental:fee=yes"
+            ]
+          },
+          "then": {
+            "en": "Climbing shoes can be rented here",
+            "nl": "Klimschoenen kunnen hier gehuurd worden",
+            "fr": "Les chaussures d'escalade peuvent être louées ici",
+            "de": "Kletterschuhe können hier ausgeliehen werden",
+            "pl": "Można tutaj wypożyczyć buty do wspinaczki",
+            "cs": "Lezeckou obuv si můžete půjčit zde"
+          },
+          "addExtraTags": [
+            "service:climbing_shoes:rental:charge="
+          ]
+        },
+        {
+          "if": "service:climbing_shoes:rental=no",
+          "then": {
+            "en": "Climbing shoes can <b>not</b> be rented here",
+            "nl": "Hier kunnen <b>geen</b> klimschoenen gehuurd worden",
+            "fr": "Les chaussures d'escalade ne peuvent <b>pas</b> être louées ici",
+            "de": "Kletterschuhe können hier <b>nicht</b> ausgeliehen werden",
+            "pl": "<b>Nie</b> można wypożyczyć tutaj butów do wspinaczki",
+            "cs": "Lezeckou obuv si zde <b>nemůžete</b> zapůjčit"
+          },
+          "addExtraTags": [
+            "service:climbing_shoes:rental:fee=",
+            "service:climbing_shoes:rental:charge="
+          ]
+        }
+      ]
+    },
+    {
+      "id": "harness_rental",
+      "question": {
+        "en": "Can one rent a climbing harness here?",
+        "nl": "Kan een klimgordel hier gehuurd worden?",
+        "fr": "Peut-on louer un baudrier d'escalade ici ?",
+        "de": "Kann man hier einen Klettergurt ausleihen?",
+        "cs": "Lze si zde zapůjčit horolezecký postroj?"
+      },
+      "condition": {
+        "or": [
+          "climbing:sport!=no",
+          "climbing:toprope!=no"
+        ]
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "service:climbing_harness:rental=yes",
+              "service:climbing_harness:rental:fee=no"
+            ]
+          },
+          "then": {
+            "en": "A climbing harness can be borrowed for free here",
+            "nl": "Een klimgordel kan hier gratis geleend worden",
+            "fr": "Un baudrier d'escalade peut être emprunté gratuitement ici",
+            "de": "Ein Klettergurt kann hier kostenlos ausgeliehen werden",
+            "cs": "Lezecký úvazek si můžete zdarma vypůjčit zde"
+          },
+          "addExtraTags": [
+            "service:climbing_harness:rental:charge="
+          ]
+        },
+        {
+          "if": {
+            "and": [
+              "service:climbing_harness:rental=yes",
+              "service:climbing_harness:rental:charge~*"
+            ]
+          },
+          "then": {
+            "en": "A climbing harness can be rented here for {service:climbing_harness:rental:charge}",
+            "nl": "Een klimgordel kan hier gehuurd worden aan {service:climbing_harness:rental:charge}",
+            "fr": "Un baudrier d'escalade peut être loué ici pour {service:climbing_harness:rental:charge}",
+            "de": "Ein Klettergurt kann hier ausgeliehen werden für {service:climbing_harness:rental:charge}",
+            "cs": "Lezecký postroj si zde můžete zapůjčit za {service:climbing_harness:rental:charge}"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "service:climbing_harness:rental=yes",
+          "then": {
+            "en": "A climbing harness can be rented here",
+            "nl": "Een klimgordel kan hier gehuurd worden",
+            "fr": "Un baudrier d'escalade peut être loué ici",
+            "de": "Ein Klettergurt kann hier ausgeliehen werden",
+            "cs": "Lezecký postroj si můžete půjčit zde"
+          },
+          "addExtraTags": [
+            "service:climbing_harness:rental:fee=",
+            "service:climbing_harness:rental:charge="
+          ]
+        },
+        {
+          "if": "service:climbing_harness:rental=no",
+          "then": {
+            "en": "A climbing harness can <b>not</b> be rented here",
+            "nl": "Hier kunnen <b>geen</b> klimgordels gehuurd worden",
+            "fr": "Un baudrier d'escalade ne peut <b>pas</b> être loué ici",
+            "de": "Ein Klettergurt kann hier <b>nicht</b> ausgeliehen werden",
+            "cs": "Lezecký úvazek si zde <b>nemůžete</b> zapůjčit"
+          },
+          "addExtraTags": [
+            "service:climbing_harness:rental:fee=",
+            "service:climbing_harness:rental:charge="
+          ]
+        }
+      ]
+    },
+    {
+      "id": "belay_device_rental",
+      "question": {
+        "en": "Can one rent a belay device here?",
+        "nl": "Kan een zekeringsapparaat hier gehuurd worden?",
+        "fr": "Peut-on louer un dispositif d'assurage ici ?",
+        "de": "Kann man hier ein Sicherungsgerät ausleihen?",
+        "cs": "Lze si zde půjčit jištění?"
+      },
+      "condition": {
+        "or": [
+          "climbing:sport!=no",
+          "climbing:toprope!=no"
+        ]
+      },
+      "mappings": [
+        {
+          "if": "service:climbing_belay_device:provided_at_each_rope=yes",
+          "then": {
+            "en": "Belay devices are provided at each rope",
+            "nl": "Een zekeringsapparaat is voorzien aan elk touw",
+            "fr": "Un dispositif d'assurage est prévu à chaque corde",
+            "de": "Jeder Seil hat ein Sicherungsgerät",
+            "cs": "U každého lana jsou k dispozici jistící zařízení"
+          },
+          "addExtraTags": [
+            "service:climbing_belay_device:rental=",
+            "service:climbing_belay_device:rental:fee=",
+            "service:climbing_belay_device:rental:charge="
+          ]
+        },
+        {
+          "if": {
+            "and": [
+              "service:climbing_belay_device:rental=yes",
+              "service:climbing_belay_device:rental:fee=no"
+            ]
+          },
+          "then": {
+            "en": "A belay device can be borrowed for free here",
+            "nl": "Een zekeringsapparaat kan hier gratis geleend worden",
+            "fr": "Un dispositif d'assurage peut être emprunté gratuitement ici",
+            "de": "Ein Sicherungsgerät kann hier kostenlos ausgeliehen werden",
+            "cs": "Jištění si můžete zdarma vypůjčit zde"
+          },
+          "addExtraTags": [
+            "service:climbing_belay_device:provided_at_each_rope=",
+            "service:climbing_belay_device:rental:charge="
+          ]
+        },
+        {
+          "if": {
+            "and": [
+              "service:climbing_belay_device:rental=yes",
+              "service:climbing_belay_device:rental:charge~*"
+            ]
+          },
+          "then": {
+            "en": "A belay device can be rented here for {service:climbing_belay_device:rental:charge}",
+            "nl": "Een zekeringsapparaat kan hier gehuurd worden aan {service:climbing_belay_device:rental:charge}",
+            "fr": "Un dispositif d'assurage peut être loué ici pour {service:climbing_belay_device:rental:charge}",
+            "de": "Ein Sicherungsgerät kann hier ausgeliehen werden für {service:climbing_belay_device:rental:charge}",
+            "cs": "Jištění si můžete půjčit zde za {service:climbing_belay_device:rental:charge}"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "service:climbing_belay_device:rental=yes",
+          "then": {
+            "en": "A belay device can be rented here",
+            "nl": "Een zekeringsapparaat kan hier gehuurd worden",
+            "fr": "Un dispositif d'assurage peut être loué ici",
+            "de": "Ein Sicherungsgerät kann hier ausgeliehen werden",
+            "cs": "Jištění si můžete zapůjčit zde"
+          },
+          "addExtraTags": [
+            "service:climbing_belay_device:provided_at_each_rope=",
+            "service:climbing_belay_device:rental:fee=",
+            "service:climbing_belay_device:rental:charge="
+          ]
+        },
+        {
+          "if": "service:climbing_belay_device:rental=no",
+          "then": {
+            "en": "A belay device can <b>not</b> be rented here",
+            "nl": "Hier kan <b>geen</b> zekeringsapparaat gehuurd worden",
+            "fr": "Un dispositif d'assurage ne peut <b>pas</b> être loué ici",
+            "de": "Ein Sicherungsgerät kann hier <b>nicht</b> ausgeliehen werden",
+            "cs": "Zde si <b>nelze</b> půjčit jištění"
+          },
+          "addExtraTags": [
+            "service:climbing_belay_device:provided_at_each_rope=",
+            "service:climbing_belay_device:rental:fee=",
+            "service:climbing_belay_device:rental:charge="
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rope_rental",
+      "question": {
+        "en": "Can one rent a climbing rope here?",
+        "nl": "Kan een klimtouw hier gehuurd worden?",
+        "fr": "Peut-on louer une corde d'escalade ici ?",
+        "de": "Kann man hier ein Kletterseil ausleihen?",
+        "cs": "Lze si zde půjčit lezecké lano?"
+      },
+      "condition": "climbing:sport!=no",
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "service:climbing_rope:rental=yes",
+              "service:climbing_rope:rental:fee=no"
+            ]
+          },
+          "then": {
+            "en": "A climbing rope can be borrowed for free here",
+            "nl": "Een klimtouw kan hier gratis geleend worden",
+            "fr": "Une corde d'escalade peut être empruntée gratuitement ici",
+            "de": "Ein Kletterseil kann hier kostenlos ausgeliehen werden",
+            "cs": "Lezecké lano si můžete zdarma vypůjčit zde"
+          },
+          "addExtraTags": [
+            "service:climbing_rope:rental:charge="
+          ]
+        },
+        {
+          "if": {
+            "and": [
+              "service:climbing_rope:rental=yes",
+              "service:climbing_rope:rental:charge~*"
+            ]
+          },
+          "then": {
+            "en": "A climbing rope can be rented here for {service:climbing_rope:rental:charge}",
+            "nl": "Een klimtouw kan hier gehuurd worden aan {service:climbing_rope:rental:charge}",
+            "fr": "Une corde d'escalade peut être louée ici pour {service:climbing_rope:rental:charge}",
+            "de": "Ein Kletterseil kann hier ausgeliehen werden für {service:climbing_rope:rental:charge}",
+            "cs": "Za {service:climbing_rope:rental:charge} si zde můžete zapůjčit horolezecké lano"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "service:climbing_rope:rental=yes",
+          "then": {
+            "en": "A climbing rope can be rented here",
+            "nl": "Een klimtouw kan hier gehuurd worden",
+            "fr": "Une corde d'escalade peut être louée ici",
+            "de": "Ein Kletterseil kann hier ausgeliehen werden",
+            "cs": "Lezecké lano si můžete půjčit zde"
+          },
+          "addExtraTags": [
+            "service:climbing_rope:rental:fee=",
+            "service:climbing_rope:rental:charge="
+          ]
+        },
+        {
+          "if": "service:climbing_rope:rental=no",
+          "then": {
+            "en": "A climbing rope can <b>not</b> be rented here",
+            "nl": "Hier kan <b>geen</b> klimtouw gehuurd worden",
+            "fr": "Une corde d'escalade ne peut <b>pas</b> être louée ici",
+            "de": "Ein Kletterseil kann hier <b>nicht</b> ausgeliehen werden",
+            "cs": "Lezecké lano si zde <b>nemůžete</b> zapůjčit"
+          },
+          "addExtraTags": [
+            "service:climbing_rope:rental:fee=",
+            "service:climbing_rope:rental:charge="
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bouldering",
+      "question": {
+        "de": "Kann hier gebouldert werden?",
+        "en": "Is bouldering possible here?",
+        "nl": "Is het mogelijk om hier te bolderen?",
+        "ja": "ここでボルダリングはできますか?",
+        "nb_NO": "Er buldring mulig her?",
+        "fr": "L’escalade de bloc est-elle possible ici ?",
+        "it": "È possibile praticare ‘bouldering’ qua?",
+        "ca": "És possible fer escalda en bloc aquí?",
+        "cs": "Je zde možný bouldering?",
+        "_context": "layers:climbing.tagRenderings.bouldering.question"
+      },
+      "mappings": [
+        {
+          "if": "climbing:boulder=yes",
+          "then": {
+            "de": "Hier kann gebouldert werden",
+            "en": "Bouldering is possible here",
+            "nl": "Bolderen kan hier",
+            "ja": "ボルダリングはここで可能です",
+            "nb_NO": "Buldring er mulig her",
+            "fr": "L’escalade de bloc est possible",
+            "it": "L’arrampicata su massi è possibile qua",
+            "ca": "Aquí és possible l'escalada en bloc",
+            "cs": "Bouldering je zde možný",
+            "_context": "layers:climbing.tagRenderings.bouldering.mappings.0.then"
+          }
+        },
+        {
+          "if": "climbing:boulder=no",
+          "then": {
+            "de": "Hier kann nicht gebouldert werden",
+            "en": "Bouldering is not possible here",
+            "nl": "Bolderen kan hier niet",
+            "ja": "ここではボルダリングはできません",
+            "nb_NO": "Buldring er ikke mulig her",
+            "fr": "L’escalade de bloc n’est pas possible",
+            "it": "L’arrampicata su massi non è possibile qua",
+            "ca": "Aquí no és possible l'escalada en bloc",
+            "cs": "Bouldering zde není možný",
+            "_context": "layers:climbing.tagRenderings.bouldering.mappings.1.then"
+          }
+        },
+        {
+          "if": "climbing:boulder=limited",
+          "then": {
+            "de": "Bouldern ist hier nur an wenigen Routen möglich",
+            "en": "Bouldering is possible, although there are only a few problems",
+            "nl": "Bolderen kan hier, maar er zijn niet zoveel problemen",
+            "ja": "ボルダリングは可能ですが、少しのルートしかありません",
+            "fr": "L’escalade de bloc est possible, mais il n’y a que quelques problèmes",
+            "it": "L’arrampicata su massi è possibile anche se su poche vie",
+            "ca": "L'escalada en bloc és possible, tot i que només hi ha unes poques rutes",
+            "cs": "Bouldering je možný, i když je zde jen několik problémů",
+            "_context": "layers:climbing.tagRenderings.bouldering.mappings.2.then"
+          }
+        },
+        {
+          "if": "climbing:boulder~*",
+          "then": {
+            "de": "Hier gibt es {climbing:boulder} Boulder-Routen",
+            "en": "There are {climbing:boulder} boulder problems",
+            "nl": "Er zijn hier {climbing:boulder} bolderproblemen",
+            "ja": "{climbing:boulder} ボルダールートがある",
+            "fr": "Il y a {climbing:boulder} problèmes de bloc",
+            "it": "Sono presenti {climbing:boulder} vie di arrampicata su massi",
+            "ca": "Hi han {climbing:boulder} problemes d'escalada en bloc",
+            "cs": "Existují {climbing:boulder} boulderové problémy",
+            "_context": "layers:climbing.tagRenderings.bouldering.mappings.3.then"
+          },
+          "hideInAnswer": true
+        }
+      ]
+    },
+    {
+      "id": "sportclimbing",
+      "question": {
+        "de": "Ist hier Sportklettern möglich (feste Ankerpunkte)?",
+        "en": "Is sport climbing possible here on fixed anchors?",
+        "nl": "Is het mogelijk om hier te sportklimmen/voorklimmen op reeds aangebrachte haken?",
+        "ja": "ここでは固定アンカー式のスポーツクライミングはできますか?",
+        "it": "È possibile arrampicarsi qua con ancoraggi fissi?",
+        "cs": "Je zde možné sportovní lezení na fixní kotvy?",
+        "_context": "layers:climbing.tagRenderings.sportclimbing.question"
+      },
+      "mappings": [
+        {
+          "if": "climbing:sport=yes",
+          "then": {
+            "de": "Sportklettern ist hier möglich",
+            "en": "Sport climbing is possible here",
+            "nl": "Sportklimmen/voorklimmen kan hier",
+            "ru": "Здесь можно заняться спортивным скалолазанием",
+            "ja": "ここでスポーツクライミングができます",
+            "it": "L’arrampicata sportiva è possibile qua",
+            "hu": "Itt lehetőség van sportmászásra",
+            "fr": "De l’escalade est possible ici",
+            "cs": "Sportovní lezení je zde možné",
+            "_context": "layers:climbing.tagRenderings.sportclimbing.mappings.0.then"
+          }
+        },
+        {
+          "if": "climbing:sport=no",
+          "then": {
+            "de": "Sportklettern ist hier nicht möglich",
+            "en": "Sport climbing is not possible here",
+            "nl": "Sportklimmen/voorklimmen kan hier niet",
+            "ru": "Спортивное скалолазание здесь невозможно",
+            "ja": "ここではスポーツクライミングはできません",
+            "it": "L’arrampicata sportiva non è possibile qua",
+            "hu": "Itt nincs lehetőség sportmászásra",
+            "fr": "L’escalade est impossible ici",
+            "cs": "Sportovní lezení zde není možné",
+            "_context": "layers:climbing.tagRenderings.sportclimbing.mappings.1.then"
+          }
+        },
+        {
+          "if": "climbing:sport~*",
+          "then": {
+            "de": "Hier gibt es {climbing:sport} Sportkletter-Routen",
+            "en": "There are {climbing:sport} sport climbing routes",
+            "nl": "Er zijn hier {climbing:sport} sportklimroutes/voorklimroutes",
+            "ja": "スポーツクライミングの {climbing:sport} ルートがある",
+            "it": "Sono presenti {climbing:sport} vie di arrampicata sportiva",
+            "cs": "Existují {climbing:sport} sportovních lezeckých cest",
+            "_context": "layers:climbing.tagRenderings.sportclimbing.mappings.2.then"
+          },
+          "hideInAnswer": true
+        }
+      ]
+    },
+    {
+      "id": "toprope",
+      "question": {
+        "de": "Ist Toprope-Klettern hier möglich?",
+        "en": "Is toprope climbing possible here?",
+        "nl": "Is het mogelijk om hier te toprope-klimmen?",
+        "ja": "ここでtoprope登坂はできますか?",
+        "fr": "Est-il possible d’escalader à la moulinette ?",
+        "it": "È possibile arrampicarsi con la corda dall’alto qua?",
+        "cs": "Je zde možné lezení po laně?",
+        "_context": "layers:climbing.tagRenderings.toprope.question"
+      },
+      "mappings": [
+        {
+          "if": "climbing:toprope=yes",
+          "then": {
+            "de": "Toprope-Klettern ist hier möglich",
+            "en": "Toprope climbing is possible here",
+            "nl": "Toprope-klimmen kan hier",
+            "ja": "ここでToprope登坂ができます",
+            "fr": "L’escalade à la moulinette est possible",
+            "it": "È possibile arrampicarsi con moulinette qua",
+            "cs": "Lezení po laně je zde možné",
+            "_context": "layers:climbing.tagRenderings.toprope.mappings.0.then"
+          }
+        },
+        {
+          "if": "climbing:toprope=no",
+          "then": {
+            "de": "Toprope-Climbing ist hier nicht möglich",
+            "en": "Toprope climbing is not possible here",
+            "nl": "Toprope-klimmen kan hier niet",
+            "ja": "ここではToprope登坂はできません",
+            "fr": "L’escalade à la moulinette n’est pas possible",
+            "it": "Non è possibile arrampicarsi con moulinette qua",
+            "cs": "Lezení po laně zde není možné",
+            "_context": "layers:climbing.tagRenderings.toprope.mappings.1.then"
+          }
+        },
+        {
+          "if": "climbing:toprope~*",
+          "then": {
+            "de": "Hier gibt es {climbing:toprope} Toprope-Routen",
+            "en": "There are {climbing:toprope} toprope routes",
+            "nl": "Er zijn hier {climbing:toprope} toprope routes",
+            "ja": "{climbing:toprope} 登坂ルートがある",
+            "fr": "{climbing:toprope} voies sont équipées de moulinettes",
+            "it": "Sono presenti {climbing:toprope} vie con moulinette",
+            "cs": "Je zde {climbing:toprope} tras pro lezení na laně",
+            "_context": "layers:climbing.tagRenderings.toprope.mappings.2.then"
+          },
+          "hideInAnswer": true
+        }
+      ]
+    },
+    {
+      "id": "average_length",
+      "render": {
+        "de": "Die Routen sind durchschnittlich <b>{canonical(climbing:length)}</b> lang",
+        "en": "The routes are <b>{canonical(climbing:length)}</b> long on average",
+        "nl": "De klimroutes zijn gemiddeld <b>{canonical(climbing:length)}</b> lang",
+        "ja": "ルートの長さは平均で<b>{canonical(climbing:length)}</b>です",
+        "fr": "Les voies font <b>{canonical(climbing:length)}</b> de long en moyenne",
+        "it": "Le vie sono lunghe mediamente <b>{canonical(climbing:length)}</b>",
+        "es": "Las rutas miden <b>{canonical(climbing:length)}</b> de media",
+        "ca": "Les rutes mesuren <b>{canonical(climbing:length)}</b> de mitja",
+        "cs": "Cesty jsou <b>{canonical(climbing:length)}</b> v průměru dlouhé",
+        "_context": "layers:climbing.tagRenderings.average_length.render"
+      },
+      "question": {
+        "de": "Wie lang sind die Routen (durchschnittlich) in Metern?",
+        "en": "What is the (average) length of the routes in meters?",
+        "nl": "Wat is de (gemiddelde) lengte van de klimroutes, in meter?",
+        "ja": "ルートの(平均)長さはメートル単位でいくつですか?",
+        "fr": "Quelle est la longueur moyenne des voies en mètres ?",
+        "it": "Quale è la lunghezza (media) delle vie in metri?",
+        "es": "¿Cual es la longitud (media) de las rutas en metros?",
+        "ca": "Quina és la longitud (mitjana) de les rutes en metres?",
+        "cs": "Jaká je (průměrná) délka tras v metrech?",
+        "_context": "layers:climbing.tagRenderings.average_length.question"
+      },
+      "freeform": {
+        "key": "climbing:length",
+        "type": "pfloat",
+        "inline": false
+      },
+      "condition": {
+        "or": [
+          "climbing:sport!=no",
+          "climbing:toprope!=no"
+        ]
+      }
+    },
+    {
+      "id": "min_difficulty",
+      "question": {
+        "de": "Welche Schwierigkeit hat hier die leichteste Route (französisch/belgisches System)?",
+        "en": "What is the grade of the easiest route here, according to the french classification system?",
+        "nl": "Wat is het niveau van de makkelijkste route, volgens het Franse classificatiesysteem?",
+        "ja": "ここで一番簡単なルートのレベルは、フランスのランク評価システムで何ですか?",
+        "fr": "Quel est le niveau de la voie la plus simple selon la classification franco-belge ?",
+        "it": "Qual è il livello della via più facile qua, secondo il sistema di classificazione francese?",
+        "cs": "Jaký je stupeň nejjednodušší trasy podle francouzského klasifikačního systému?",
+        "_context": "layers:climbing.tagRenderings.min_difficulty.question"
+      },
+      "render": {
+        "de": "Die leichteste Route hat hier die Schwierigkeit {climbing:grade:french:min} (französisch/belgisches System)",
+        "en": "The lowest grade is {climbing:grade:french:min} according to the french/belgian system",
+        "nl": "De minimale klimmoeilijkheid is {climbing:grade:french:min} volgens het Franse/Belgische systeem",
+        "ja": "フランス/ベルギーのランク評価システムでは、最小の難易度は{climbing:grade:french:min}です",
+        "fr": "La difficulté minimale est {climbing:grade:french:min} selon la classification franco-belge",
+        "it": "Il minimo livello di difficoltà è {climbing:grade:french:min} secondo il sistema francese/belga",
+        "cs": "Nejnižší stupeň je {climbing:grade:french:min} podle francouzského/belgického systému",
+        "_context": "layers:climbing.tagRenderings.min_difficulty.render"
+      },
+      "freeform": {
+        "key": "climbing:grade:french:min",
+        "inline": true
+      }
+    },
+    {
+      "id": "max_difficulty",
+      "question": {
+        "de": "Welche Schwierigkeit hat hier die schwerste Route (französisch/belgisches System)?",
+        "en": "What is the highest grade route here, according to the french classification system?",
+        "nl": "Wat is het niveau van de moeilijkste route, volgens het Franse classificatiesysteem?",
+        "ja": "フランスのランク評価によると、ここで一番難しいルートのレベルはどれくらいですか?",
+        "fr": "Quel est le niveau de la voie la plus difficile selon la classification franco-belge ?",
+        "it": "Qual è il livello della via più difficile qua, secondo il sistema di classificazione francese?",
+        "cs": "Jaká je zde trasa nejvyššího stupně podle francouzského klasifikačního systému?",
+        "_context": "layers:climbing.tagRenderings.max_difficulty.question"
+      },
+      "render": {
+        "de": "Die schwierigste Route hat hier die Schwierigkeitsstufe {climbing:grade:french:max} (französisch/belgisches System)",
+        "en": "The highest grade is {climbing:grade:french:max} according to the french/belgian system",
+        "nl": "De maximale klimmoeilijkheid is {climbing:grade:french:max} volgens het Franse/Belgische systeem",
+        "ja": "フランス/ベルギーのランク評価システムでは、最大の難易度は{climbing:grade:french:max}です",
+        "fr": "La difficulté maximale est {climbing:grade:french:max} selon la classification franco-belge",
+        "it": "Il massimo livello di difficoltà è {climbing:grade:french:max} secondo il sistema francese/belga",
+        "cs": "Nejvyšší stupeň je {climbing:grade:french:max} podle francouzského/belgického systému",
+        "_context": "layers:climbing.tagRenderings.max_difficulty.render"
+      },
+      "freeform": {
+        "key": "climbing:grade:french:max",
+        "inline": true
+      },
+      "condition": {
+        "and": [
+          "climbing!~route",
+          "office=",
+          "club=",
+          {
+            "or": [
+              "climbing:sport=yes",
+              "sport=climbing"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "max_bolts",
+      "question": {
+        "en": "How many bolts do routes in {title()} have at most?",
+        "de": "Wie viele Haken haben die Routen in {title()} maximal?",
+        "nl": "Wat is het maximum aantal bouten in routes ban {title()}?",
+        "cs": "Kolik šroubů na trasu {title()} je potřeba?",
+        "_context": "layers:climbing.tagRenderings.max_bolts.question"
+      },
+      "render": {
+        "en": "The sport climbing routes here have at most {climbing:bolts:max} bolts.<div class='subtle'>This is without relays and indicates how much quickdraws a climber needs</div>",
+        "de": "Die Sportkletterrouten hier haben maximal {climbing:bolts:max} Haken.<div class='subtle'>Dies ist ohne Relais und gibt an, wie viel Schnellspanner ein Kletterer braucht</div>",
+        "nl": "De sportklimroutes hebben maximaal {climbing:bolts:max} bouten. <div class='subtle'>Hierbij worden relays niet meegteld. Dit geeft aan hoeveel klimsetjes een klimmer nodig heeft</div>",
+        "_context": "layers:climbing.tagRenderings.max_bolts.render"
+      },
+      "freeform": {
+        "key": "climbing:bolts:max",
+        "type": "pnat",
+        "addExtraTag": [
+          "climbing:sport=yes"
+        ],
+        "inline": true
+      },
+      "condition": "climbing:sport!=no"
+    },
+    {
+      "id": "Speed climbing?",
+      "question": {
+        "de": "Gibt es hier eine Speedkletter-Wand?",
+        "en": "Is there a speed climbing wall?",
+        "nl": "Is er een snelklimmuur (speed climbing)?",
+        "ja": "スピードクライミングウォールはありますか?",
+        "it": "È presente una prete per l’arrampicata di velocità?",
+        "fr": "Y a-t-il un mur d'escalade de vitesse ?",
+        "cs": "Je zde rychlostní lezecká stěna?"
+      },
+      "mappings": [
+        {
+          "if": "climbing:speed=yes",
+          "then": {
+            "de": "Hier gibt es eine Speedkletter-Wand",
+            "en": "There is a speed climbing wall",
+            "nl": "Er is een snelklimmuur voor speed climbing",
+            "ja": "スピードクライミングウォールがある",
+            "it": "È presente una parete per l’arrampicata di velocità",
+            "fr": "Il y a un mur d'escalade de vitesse",
+            "cs": "K dispozici je rychlostní lezecká stěna"
+          }
+        },
+        {
+          "if": "climbing:speed=no",
+          "then": {
+            "de": "Hier gibt es keine Speedkletter-Wand",
+            "en": "There is no speed climbing wall",
+            "nl": "Er is geen snelklimmuur voor speed climbing",
+            "ja": "スピードクライミングウォールがない",
+            "it": "Non è presente una parete per l’arrampicata di velocità",
+            "fr": "Il n'y a pas de mur d'escalade de vitesse",
+            "cs": "Není zde žádná rychlostní lezecká stěna"
+          }
+        },
+        {
+          "if": "climbing:speed~*",
+          "then": {
+            "de": "Hier gibt es {climbing:speed} Speedkletter-Routen",
+            "en": "There are {climbing:speed} speed climbing walls",
+            "nl": "Er zijn hier {climbing:speed} snelklimmuren",
+            "ja": "{climbing:speed} のスピードクライミングウォールがある",
+            "it": "Sono presenti {climbing:speed} pareti per l’arrampicata di velocità",
+            "fr": "Il existe {climbing:speed} murs d'escalade de vitesse",
+            "cs": "K dispozici jsou {climbing:speed} rychlostní lezecké stěny"
+          },
+          "hideInAnswer": true
+        }
+      ]
+    },
+    {
+      "id": "internet",
+      "labels": [
+        "internet-all"
+      ],
+      "question": {
+        "en": "Does this place offer internet access?",
+        "nl": "Biedt deze plaats internettoegang aan?",
+        "de": "Bietet dieser Ort Internetzugang?",
+        "pt": "Este lugar tem acesso à Internet?",
+        "da": "Tilbyder dette sted internetadgang?",
+        "id": "Apa tempat ini menyediakan jaringan internet?",
+        "cs": "Nabízí toto místo připojení k internetu?",
+        "nb_NO": "Tilbyr dette stedet tilgang til Internett?",
+        "es": "¿Ofrece este lugar acceso a internet?",
+        "fr": "Cet endroit offre-t-il un accès à Internet ?",
+        "ca": "Aquest lloc ofereix accés a internet?",
+        "pl": "Czy to miejsce oferuje dostęp do Internetu?"
+      },
+      "mappings": [
+        {
+          "if": "internet_access=wlan",
+          "then": {
+            "en": "This place offers wireless internet access",
+            "nl": "Deze plaats biedt draadloze internettoegang aan",
+            "de": "Dieser Ort bietet drahtlosen Internetzugang",
+            "fr": "Ce lieu propose un accès internet sans fil",
+            "pt": "Este lugar tem acesso à Internet sem fios",
+            "da": "Dette sted tilbyder trådløs internetadgang",
+            "id": "Tempat ini menyediakan jaringan internet nirkabel",
+            "cs": "Toto místo nabízí bezdrátové připojení k internetu",
+            "nb_NO": "Dette stedet tilbyr trådløs tilgang til Internett",
+            "es": "Este lugar ofrece acceso a internet inalámbrico",
+            "ca": "Aquest lloc ofereix accés a internet inalàmbric",
+            "pl": "To miejsce oferuje bezprzewodowy dostęp do Internetu"
+          }
+        },
+        {
+          "if": "internet_access=no",
+          "then": {
+            "en": "This place <b>does not</b> offer internet access",
+            "nl": "Deze plaats biedt <b>geen</b> internettoegang aan",
+            "de": "Dieser Ort bietet <b>keinen</b> Internetzugang",
+            "fr": "Ce lieu <b>ne propose pas</b> d'accès internet",
+            "pt": "Este lugar <b>não</b> tem acesso à Internet",
+            "da": "Dette sted <b>tilbyder ikke</b> internetadgang",
+            "id": "Tempat ini <b>tidak</b> menyediakan jaringan internet",
+            "cs": "Toto místo <b>neposkytuje</b> připojení k internetu",
+            "nb_NO": "Dette stedet tilbyr <b>ikke</b> tilgang til Internett",
+            "es": "Este lugar <b>no</b> ofrece acceso a internet",
+            "ca": "Aquest lloc <b>no</b> ofereix accés a internet",
+            "pl": "To miejsce <b>nie</b> oferuje dostępu do Internetu"
+          }
+        },
+        {
+          "if": "internet_access=yes",
+          "then": {
+            "en": "This place offers internet access",
+            "nl": "Deze plaats biedt internettoegang aan",
+            "de": "Dieser Ort bietet Internetzugang",
+            "fr": "Ce lieu propose un accès internet",
+            "pt": "Este lugar tem acesso à Internet",
+            "da": "Dette sted tilbyder internetadgang",
+            "id": "Tempat ini menyediakan jaringan internet",
+            "cs": "Toto místo nabízí přístup k internetu",
+            "nb_NO": "Dette stedet tilbyr tilgang til Internett",
+            "es": "Este lugar ofrece acceso a internet",
+            "ca": "Aquest lloc ofereix accés a internet",
+            "pl": "To miejsce oferuje dostęp do Internetu"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "internet_access=terminal",
+          "then": {
+            "en": "This place offers internet access via a terminal or computer",
+            "nl": "Deze plaats biedt internettoegang via een terminal of computer aan",
+            "de": "Dieser Ort bietet Internetzugang über ein Terminal oder einen Computer",
+            "pt": "Este lugar tem acesso à Internet através de um terminal ou computador",
+            "da": "Dette sted tilbyder internetadgang via en terminal eller computer",
+            "id": "Tempat ini menyediakan jaringan internet melalui terminal atau komputer",
+            "cs": "Toto místo nabízí přístup k internetu prostřednictvím terminálu nebo počítače",
+            "nb_NO": "Dette stedet tilbyr tilgang til Internett via en terminal eller datamaskin",
+            "es": "Este lugar ofrece acceso a internet a través de una terminal o un ordenador",
+            "fr": "Cet endroit offre un accès à Internet via un terminal ou un ordinateur",
+            "ca": "Aquest lloc ofereix accés a internet a través d'una terminal o ordinador",
+            "pl": "To miejsce oferuje dostęp do Internetu za pośrednictwem terminala lub komputera"
+          }
+        },
+        {
+          "if": "internet_access=wired",
+          "then": {
+            "en": "This place offers wired internet access",
+            "nl": "Deze plaats biedt bedrade internettoegang aan",
+            "de": "Dieser Ort bietet kabelgebundenen Internetzugang",
+            "pt": "Este lugar tem acesso à Internet com fios/por cabo",
+            "da": "Dette sted tilbyder internetadgang via kabel",
+            "id": "Tempat ini menyediakan jaringan internet kabel",
+            "cs": "Toto místo nabízí kabelové připojení k internetu",
+            "nb_NO": "Dette stedet tilbyr trådbunden tilgang til Internett",
+            "es": "Este lugar ofrece acceso a internet por cable",
+            "fr": "Cet endroit offre un accès Internet filaire",
+            "ca": "Aquest lloc ofereix accés a internet per cable",
+            "pl": "To miejsce oferuje przewodowy dostęp do Internetu"
+          }
+        }
+      ]
+    },
+    {
+      "id": "internet-fee",
+      "labels": [
+        "internet-all"
+      ],
+      "condition": {
+        "and": [
+          "internet_access!=no",
+          "internet_access!="
+        ]
+      },
+      "question": {
+        "en": "Is there a fee for internet access?",
+        "nl": "Zijn er kosten voor internettoegang?",
+        "de": "Wird für den Internetzugang eine Gebühr erhoben?",
+        "pt": "Tem de se pagar para utilizar o acesso à Internet?",
+        "da": "Er der et gebyr for internetadgang?",
+        "cs": "Je přístup na internet zpoplatněn?",
+        "id": "Apakah ada biaya untuk akses internet?",
+        "nb_NO": "Er det et gebyr for bruk av Internett?",
+        "fr": "L'accès à l'internet est-il payant ?",
+        "ca": "Hi ha que pagar per a accedir a internet?",
+        "es": "¿Hay que pagar para acceder a internet?",
+        "pl": "Czy dostęp do Internetu jest płatny?"
+      },
+      "mappings": [
+        {
+          "if": "internet_access:fee=yes",
+          "then": {
+            "en": "There is a fee for the internet access at this place",
+            "nl": "Er zijn kosten voor internettoegang op deze plaats",
+            "de": "Der Internetzugang ist an diesem Ort gebührenpflichtig",
+            "pt": "Tem de se pagar para utilizar o acesso à Internet neste local",
+            "da": "Der er et gebyr for internetadgang på dette sted",
+            "cs": "Přístup na internet je zde zpoplatněn",
+            "id": "Ada biaya untuk akses internet di tempat ini",
+            "nb_NO": "Det er et gebyr for tilgang til Internett på dette stedet",
+            "fr": "L'accès à l'internet est payant à cet endroit",
+            "ca": "Aquí hi ha que pagar per a accedir a internet",
+            "es": "Hay que pagar para acceder a internet en este lugar",
+            "pl": "W tym miejscu dostęp do Internetu jest płatny"
+          }
+        },
+        {
+          "if": "internet_access:fee=no",
+          "then": {
+            "en": "Internet access is free at this place",
+            "nl": "Internettoegang is gratis op deze plaats",
+            "de": "Der Internetzugang ist an diesem Ort kostenlos",
+            "pt": "O acesso à Internet é gratuito neste local",
+            "da": "Internetadgang er gratis på dette sted",
+            "id": "Jaringan internet tersedia gratis di tempat ini",
+            "cs": "Přístup k internetu je zde zdarma",
+            "nb_NO": "Tilgang til Internett er gratis på dette stedet",
+            "es": "El acceso a internet es gratuito en este lugar",
+            "fr": "L'accès à Internet est gratuit dans cet endroit",
+            "ca": "Aquí l'accés a internet és gratuït",
+            "pl": "Dostęp do Internetu jest w tym miejscu bezpłatny"
+          }
+        },
+        {
+          "if": "internet_access:fee=customers",
+          "then": {
+            "en": "Internet access is free at this place, for customers only",
+            "nl": "Internettoegang is gratis op deze plaats, alleen voor klanten",
+            "de": "Der Internetzugang ist an diesem Ort kostenlos, aber nur für Kunden",
+            "pt": "O acesso à Internet é gratuito neste local, apenas para clientes",
+            "da": "Internetadgang er gratis på dette sted, kun for kunder",
+            "id": "Jaringan internet tersedia gratis di tempat ini, hanya untuk pelanggan",
+            "cs": "Přístup k internetu je na tomto místě zdarma, pouze pro zákazníky",
+            "nb_NO": "Tilgang til Internett på dette stedet er gratis, men kun for kunder",
+            "es": "El acceso a internet es gratis en este lugar, solamente para clientes",
+            "fr": "L'accès à l'internet dans cet endroit est gratuit pour les clients uniquement",
+            "ca": "Aquí l'accés a internet és gratuït sols per als clients",
+            "pl": "Dostęp do Internetu jest w tym miejscu bezpłatny, tylko dla klientów"
+          }
+        }
+      ]
+    },
+    {
+      "id": "internet-ssid",
+      "labels": [
+        "internet-all"
+      ],
+      "condition": "internet_access=wlan",
+      "question": {
+        "en": "What is the network name for the wireless internet access?",
+        "nl": "Wat is de netwerknaam voor de draadloze internettoegang?",
+        "de": "Wie lautet der Netzwerkname für den drahtlosen Internetzugang?",
+        "pt": "Qual é o nome da rede para o acesso sem fios à Internet?",
+        "da": "Hvad er netværksnavnet for den trådløse internetadgang?",
+        "id": "Apa nama jaringan internet nirkabelnya?",
+        "cs": "Jaký je název sítě pro bezdrátový přístup k internetu?",
+        "nb_NO": "Hva er nettverksnavnet for det trådløse nettverket?",
+        "es": "¿Cuál es el nombre de red para el acceso inalámbrico a internet?",
+        "fr": "Quel est le nom du réseau pour l'accès Internet sans fil ?",
+        "ca": "Quin és el nom de la xarxa per a l'accés inalàmbric a internet?",
+        "pl": "Jaka jest nazwa sieci dla bezprzewodowego dostępu do Internetu?"
+      },
+      "freeform": {
+        "key": "internet_access:ssid",
+        "type": "string",
+        "placeholder": {
+          "en": "Enter the network name",
+          "nl": "Voer de netwerknaam in",
+          "de": "Geben Sie den Netzwerknamen ein",
+          "pt": "Introduza o nome da rede",
+          "da": "Indtast netværksnavnet",
+          "id": "Masukkan nama jaringan",
+          "cs": "Zadejte název sítě",
+          "nb_NO": "Skriv inn nettverksnavnet",
+          "pa_PK": "نیٹورک دا ناں پایو",
+          "es": "Introduzca el nombre de red",
+          "fr": "Entrez le nom du réseau",
+          "ca": "Intruduixca el nom de la xarxa",
+          "pl": "Wprowadź nazwę sieci"
+        },
+        "inline": true
+      },
+      "mappings": [
+        {
+          "if": "internet_access:ssid=Telekom",
+          "then": "Telekom",
+          "hideInAnswer": "_country!=de"
+        }
+      ],
+      "render": {
+        "en": "The network name is <b>{internet_access:ssid}</b>",
+        "nl": "De netwerknaam is <b>{internet_access:ssid}</b>",
+        "de": "Der Netzwerkname lautet <b>{internet_access:ssid}</b>",
+        "pt": "O nome da rede é <b>{internet_access:ssid}</b>",
+        "da": "Netværksnavnet er <b>{internet_access:ssid}</b>",
+        "id": "Nama jaringan ini adalah <b>{internet_access:ssid}</b>",
+        "cs": "Název sítě je <b>{internet_access:ssid}</b>",
+        "nb_NO": "Nettverksnavnet er <b>{internet_access:ssid}</b>",
+        "es": "El nombre de red es <b>{internet_access:ssid}</b>",
+        "fr": "Le nom du réseau est <b>{internet_access:ssid}</b>",
+        "ca": "El nom de la xarxa és <b>{internet_access:ssid}</b>",
+        "pl": "Nazwa sieci to <b>{internet_access:ssid}</b>"
+      }
+    },
+    {
+      "id": "leftover-questions",
+      "render": {
+        "*": "{questions( ,)}"
+      }
+    },
+    {
+      "id": "lod",
+      "labels": [
+        "added_by_default"
+      ],
+      "render": {
+        "*": "{linked_data_from_website()}"
+      }
+    },
+    {
+      "id": "minimap",
+      "description": "Shows a small map with the feature. Added by default to every popup",
+      "render": {
+        "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+      }
+    },
+    {
+      "id": "last_edit",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+      "condition": {
+        "and": [
+          "_last_edit:contributor~*",
+          "_last_edit:changeset~*"
+        ]
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsTesting=true",
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_debug=yes",
+          "_csCount>=10"
+        ]
+      },
+      "render": {
+        "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+      }
+    },
+    {
+      "id": "favourite_status",
+      "render": {
+        "*": "{favourite_status()}"
+      }
+    },
+    {
+      "id": "qr_code",
+      "labels": [
+        "added_by_default"
+      ],
+      "classes": "flex items-center gap-x-2",
+      "render": {
+        "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+        "en": "{qr_code()}Scan this code to open this location on another device",
+        "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+        "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+      }
+    },
+    {
+      "id": "share",
+      "labels": [
+        "added_by_default"
+      ],
+      "metacondition": "_supports_sharing=yes",
+      "render": {
+        "de": "{share_link(,Standort teilen)}",
+        "en": "{share_link(,Share this location)}",
+        "nl": "{share_link(,Deel deze locatie)}"
+      }
+    },
+    {
+      "id": "all-tags",
+      "render": {
+        "*": "{all_tags()}"
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_tags=full",
+          "mapcomplete-show_debug=yes"
+        ]
+      }
+    }
+  ],
+  "titleIcons": [
+    {
+      "id": "wikipedialink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+      "condition": {
+        "or": [
+          "wikipedia~*",
+          "wikidata~*"
+        ]
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "wikipedia=",
+          "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "open_until",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "#": "Titleicon showing e.g. 'open until 17:00'",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{opening_hours_state()}",
+      "condition": {
+        "or": [
+          "opening_hours~*",
+          {
+            "or": [
+              {
+                "and": [
+                  "seasonal~.*winter.*",
+                  "_now:date~....-(12|01|02)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*spring.*",
+                  "_now:date~....-(03|04|05)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*summer.*",
+                  "_now:date~....-(06|07|08)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*autumn.*",
+                  "_now:date~....-(09|10|11)-.."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "phonelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": {
+        "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+        "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+        "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+        "_context": "layers:icons.tagRenderings.phonelink.render"
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:phone~*",
+          "then": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+          }
+        }
+      ],
+      "condition": {
+        "or": [
+          "phone~*",
+          "contact:phone~*"
+        ]
+      }
+    },
+    {
+      "id": "emaillink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:email~*",
+          "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:email~*",
+          "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        }
+      ],
+      "condition": {
+        "or": [
+          "email~*",
+          "contact:email~*",
+          "operator:email~*"
+        ]
+      }
+    },
+    {
+      "id": "websitelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "website~*",
+          "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:website~*",
+          "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "context:website~*",
+          "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "smokingicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=no",
+          "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=yes",
+          "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+        }
+      ]
+    },
+    {
+      "id": "dogicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "if": "dog=no",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+        },
+        {
+          "if": "dog=leashed",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+        },
+        {
+          "if": {
+            "or": [
+              "dog=yes",
+              "dog=unleashed"
+            ]
+          },
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+        }
+      ]
+    },
+    {
+      "id": "sharelink",
+      "labels": [
+        "defaults"
+      ],
+      "render": "{share_link()}",
+      "metacondition": "_supports_sharing=yes"
+    },
+    {
+      "id": "favourite_title_icon",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "*": "{favourite_icon()}"
+      },
+      "metacondition": "_loggedIn=true"
+    },
+    {
+      "id": "osmlink",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+        "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+        "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+        "_context": "layers:icons.tagRenderings.osmlink.render"
+      },
+      "mappings": [
+        {
+          "if": "id~.*/-.*",
+          "then": ""
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "_backend~*",
+          "then": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+          }
+        }
+      ],
+      "condition": "id~(node|way|relation)/[0-9]*"
+    },
+    {
+      "id": "direction",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "{direction_indicator()}"
+    },
+    {
+      "id": "rating",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{rating()}"
+    }
+  ],
+  "_layerIcon": [
+    {
+      "icon": "./assets/themes/climbing/climbing_gym.svg"
+    }
+  ]
+}

@@ -1,0 +1,1073 @@
+{
+  "id": "elevator",
+  "name": {
+    "en": "Elevator",
+    "fr": "Ascenseur",
+    "de": "Aufzüge",
+    "nl": "Lift",
+    "pa_PK": "ایلیویٹر",
+    "ca": "Ascensor",
+    "pl": "Winda",
+    "cs": "Výtah"
+  },
+  "description": {
+    "en": "This layer show elevators and asks for operational status and elevator dimensions. Useful for wheelchair accessibility information",
+    "fr": "Ce calque montre les ascenseurs et demande l'état opérationnel et les dimensions de l'ascenseur. Utile pour les informations sur l'accessibilité en fauteuil roulant",
+    "de": "Diese Ebene zeigt Aufzüge an und fragt nach dem Betriebsstatus und den Abmessungen des Aufzugs. Nützlich für Informationen zur Zugänglichkeit für Rollstuhlfahrer",
+    "nl": "Deze laag toont liften en vraagt praktische info over de grootte van de lift en ofdat deze werkt, vooral met het oog op of de lift werkt of niet.",
+    "ca": "Aquesta capa mostra ascensors i demana l'estat operatiu i les dimensions de l'ascensor. Útil per obtenir informació sobre l'accessibilitat en cadira de rodes",
+    "cs": "Tato vrstva zobrazuje výtahy a ptá se na provozní stav a rozměry výtahu. Užitečné pro informace o bezbariérovém přístupu"
+  },
+  "source": {
+    "osmTags": {
+      "and": [
+        "highway=elevator"
+      ]
+    }
+  },
+  "minzoom": 13,
+  "title": {
+    "render": {
+      "en": "Elevator",
+      "fr": "Ascenseur",
+      "de": "Aufzug",
+      "nl": "Lift",
+      "pa_PK": "ایلیویٹر",
+      "pl": "Winda",
+      "ca": "Ascensor",
+      "cs": "Výtah"
+    }
+  },
+  "pointRendering": [
+    {
+      "iconSize": "40,40",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "iconBadges": [
+        {
+          "if": {
+            "or": [
+              "operational_status=broken",
+              "operational_status=closed"
+            ]
+          },
+          "then": {
+            "render": "close:#c33",
+            "id": "closec33"
+          }
+        },
+        {
+          "if": "_favourite=yes",
+          "then": "circle:white;heart:red"
+        }
+      ],
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": {
+            "render": "circle",
+            "id": "circle"
+          },
+          "color": "white"
+        },
+        {
+          "icon": {
+            "render": "./assets/layers/elevator/elevator_wheelchair.svg",
+            "id": "assetslayerselevatorelevatorwheelchairsvg"
+          }
+        }
+      ]
+    }
+  ],
+  "lineRendering": [],
+  "presets": [
+    {
+      "title": {
+        "en": "an elevator",
+        "nl": "een lift",
+        "fr": "un ascenseur",
+        "de": "einen Aufzug",
+        "ca": "un ascensor",
+        "pl": "winda",
+        "cs": "výtah"
+      },
+      "tags": [
+        "highway=elevator"
+      ]
+    }
+  ],
+  "tagRenderings": [
+    {
+      "id": "just_created",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "This element shows a 'thank you' that the contributor has recently created this element",
+      "classes": "rounded-xl thanks",
+      "mappings": [
+        {
+          "if": "id~*",
+          "icon": "./assets/svg/party.svg",
+          "then": {
+            "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+            "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+            "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+            "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+            "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+            "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+          }
+        }
+      ],
+      "condition": {
+        "and": [
+          "_backend~*",
+          "_last_edit:passed_time<300",
+          {
+            "or": [
+              "_version_number=",
+              "_version_number=1"
+            ]
+          }
+        ]
+      },
+      "metacondition": {
+        "and": [
+          {
+            "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+            "or": [
+              "_last_edit:contributor:uid:={_uid}",
+              "_last_edit:contributor:uid="
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "images",
+      "description": "This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images",
+      "render": {
+        "*": "{image_carousel()}{image_upload()}{nearby_images():my-4}"
+      },
+      "classes": "my-4"
+    },
+    {
+      "id": "multilevels",
+      "labels": [],
+      "condition": "repeat_on=",
+      "question": {
+        "nl": "Naar welke verdiepingen gaat deze lift?",
+        "en": "What levels does this elevator go to?",
+        "de": "Auf welchen Geschossen hält dieser Aufzug?",
+        "zh_Hant": "此圖徽位於哪個樓層／層級？",
+        "fr": "Quels étages sont desservis par cet ascenceur ?",
+        "pl": "Na jakie poziomy jedzie ta winda?",
+        "pt_BR": "Em que nível esse recurso está localizado?",
+        "ru": "На каком этаже находится этот объект?",
+        "pt": "Para que pisos vai este elevador?",
+        "id": "Pada lantai berapa saja lift ini berjalan?",
+        "hu": "Melyik szinten található ez a létesítmény?",
+        "it": "A quale piano si trova questo elemento?",
+        "ca": "A quins pisos va aquest ascensor?",
+        "sv": "På vilken nivå finns den här funktionen?",
+        "ja": "この機能は何階にあるのでしょうか？",
+        "fil": "Anong palapag matatagpuan ang tampók?",
+        "es": "¿A qué pisos va este ascensor?",
+        "nb_NO": "Hvilke etasjer går heisen til?",
+        "da": "Hvilke niveauer går denne elevator til?",
+        "cs": "Do jakých podlaží tento výtah jezdí?"
+      },
+      "render": {
+        "en": "This elevator goes to floors {level}",
+        "nl": "Deze lift gaat naar de verdiepingen {level}",
+        "de": "Der Aufzug hält auf den Geschossen {level}",
+        "pt_BR": "Localizado no {level}o andar",
+        "ru": "Расположено на {level}ом этаже",
+        "zh_Hant": "位於 {level} 樓",
+        "fr": "Cet ascenceur permet d’accéder aux étages {level}",
+        "pl": "Ta winda jedzie na piętra {level}",
+        "sv": "Ligger på {level}:e våningen",
+        "pt": "Este elevador vai para os pisos {level}",
+        "eo": "En la {level}a etaĝo",
+        "hu": "A(z) {level}. emeleten",
+        "it": "Si trova al piano numero {level}",
+        "ca": "Aquest ascensor va als pisos {level}",
+        "ja": "{level}階にあります",
+        "sl": "Nahaja se v {level}. nadstropju",
+        "fil": "Natagpuan sa ika-{level} na palapag",
+        "es": "Este ascensor va a los pisos {level}",
+        "da": "Denne elevator går til etager {level}",
+        "nb_NO": "Heisen går til etasje {level}",
+        "id": "Lift ini berjalan ke lantai {level}",
+        "cs": "Tento výtah jede do {level} patra"
+      },
+      "freeform": {
+        "key": "level",
+        "type": "string",
+        "inline": true
+      },
+      "mappings": [
+        {
+          "if": "location=underground",
+          "then": {
+            "en": "Located underground",
+            "nl": "Bevindt zich ondergronds",
+            "pt_BR": "Localizado no subsolo",
+            "ru": "Расположено под землей",
+            "zh_Hant": "位於地下",
+            "fr": "En sous-sol",
+            "pl": "Znajduje się pod ziemią",
+            "sv": "Ligger under jorden",
+            "pt": "Está no subsolo",
+            "de": "Das Objekt befindet sich unter der Erde",
+            "hu": "A föld alatt",
+            "it": "Si trova sotto il livello stradale",
+            "nb_NO": "Under bakken",
+            "ca": "Situat a planta subterrani",
+            "ja": "地下にあります",
+            "id": "Terletak di bawah tanah",
+            "sl": "Nahaja se pod zemljo",
+            "fil": "Nasa ilalim ng lupa",
+            "es": "Localizado bajo tierra",
+            "da": "Placeret under jorden",
+            "cs": "Nachází se v podzemí"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "level=0",
+          "then": {
+            "en": "Located on the ground floor",
+            "nl": "Bevindt zich op de begane grond",
+            "de": "Das Objekt befindet sich im Erdgeschoss",
+            "pt_BR": "Localizado no térreo",
+            "ru": "Расположено на первом этаже",
+            "zh_Hant": "位於 1 樓",
+            "fr": "Rez-de-chaussée",
+            "pl": "Znajduje się na parterze",
+            "sv": "Ligger på bottenvåningen",
+            "pt": "Está ao nível do rés-do-chão",
+            "eo": "En la teretaĝo",
+            "hu": "A földszinten",
+            "it": "Si trova al pianoterra",
+            "nb_NO": "På gateplan",
+            "ca": "Situat a planta zero",
+            "ja": "1階にあります",
+            "id": "Terletak di lantai dasar",
+            "sl": "Nahaja se v pritličju",
+            "fil": "Nasa unang palapag",
+            "es": "Localizado en la planta baja",
+            "da": "Beliggende i stueetagen",
+            "cs": "Nachází se v přízemí"
+          }
+        },
+        {
+          "if": "level=",
+          "hideInAnswer": true,
+          "then": {
+            "en": "Located on the ground floor",
+            "nl": "Bevindt zich gelijkvloers",
+            "de": "Das Objekt befindet sich im Erdgeschoss",
+            "pt_BR": "Localizado no térreo",
+            "ru": "Расположено на первом этаже",
+            "zh_Hant": "位於 1 樓",
+            "fr": "Rez-de-chaussée",
+            "pl": "Znajduje się na parterze",
+            "sv": "Ligger på bottenvåningen",
+            "pt": "Está ao nível do rés-do-chão",
+            "eo": "En la teretaĝo",
+            "hu": "A földszinten",
+            "it": "Si trova al pianoterra",
+            "nb_NO": "På gateplan",
+            "ca": "Situat a la planta zero",
+            "ja": "1階にあります",
+            "id": "Terletak di lantai dasar",
+            "sl": "Nahaja se v pritličju",
+            "fil": "Nasa unang palapag",
+            "es": "Localizado en la planta baja",
+            "da": "Beliggende i stueetagen",
+            "cs": "Nachází se v přízemí"
+          }
+        },
+        {
+          "if": "level=1",
+          "then": {
+            "en": "Located on the first floor",
+            "nl": "Bevindt zich op de eerste verdieping",
+            "de": "Das Objekt befindet sich im 1. Obergeschoss",
+            "pt_BR": "Localizado no primeiro andar",
+            "ru": "Расположено на первом этаже",
+            "zh_Hant": "位於 2 樓",
+            "fr": "Premier étage",
+            "pl": "Znajduje się na pierwszym piętrze",
+            "sv": "Ligger på första våningen",
+            "pt": "Está no primeiro andar",
+            "id": "Berlokasi di lantai pertama",
+            "eo": "En la unua etaĝo",
+            "hu": "Az első emeleten",
+            "it": "Si trova al primo piano",
+            "nb_NO": "I andre etasje",
+            "ca": "Situat a primera planta",
+            "ja": "1階にあります",
+            "sl": "Nahaja se v prvem nadstropju",
+            "fil": "Nasa unang palapag",
+            "es": "Localizado en la primera planta",
+            "da": "Beliggende på første sal",
+            "cs": "Nachází se v prvním patře"
+          }
+        },
+        {
+          "if": "level=-1",
+          "then": {
+            "en": "Located on the first basement level",
+            "nl": "Bevindt zich in de eerste kelderverdieping",
+            "zh_Hant": "位於地下一樓",
+            "de": "Das Objekt befindet sich im 1. Untergeschoss",
+            "hu": "Az első alagsori szinten",
+            "id": "Terletak di lantai basement pertama",
+            "fr": "Sous-sol",
+            "sl": "Nahaja se v prvi kletni etaži",
+            "ca": "Localitzat a la planta base",
+            "fil": "Nasa silong",
+            "es": "Localizada en el primer sótano",
+            "nb_NO": "Er å finne på første kjellernivå",
+            "pt": "Localizado no primeiro nível da cave",
+            "da": "Beliggende på første kælderetage",
+            "cs": "Nachází se v prvním suterénu",
+            "pl": "Położone na pierwszym poziomie piwnicy"
+          }
+        }
+      ],
+      "multiAnswer": true
+    },
+    {
+      "id": "operational_status",
+      "question": {
+        "en": "Does this elevator work?",
+        "fr": "Cet ascenseur fonctionne-t-il ?",
+        "de": "Ist dieser Aufzug in Betrieb?",
+        "nl": "Werkt deze lift?",
+        "pl": "Czy ta winda działa?",
+        "ca": "Funciona aquest ascensor?",
+        "cs": "Funguje tento výtah?"
+      },
+      "mappings": [
+        {
+          "if": "operational_status=broken",
+          "then": {
+            "en": "This elevator is broken",
+            "fr": "Cet ascenseur est en panne",
+            "de": "Dieser Aufzug ist kaputt",
+            "nl": "Deze lift is kapot",
+            "pl": "Ta winda jest zepsuta",
+            "ca": "L'ascensor està trencat",
+            "cs": "Tento výtah je rozbitý"
+          },
+          "icon": "close:red"
+        },
+        {
+          "if": "operational_status=closed",
+          "then": {
+            "en": "This elevator is closed <span class='subtle'>e.g. because renovation works are going on</span>",
+            "fr": "Cet ascenseur est fermé <span class='subtle'>par ex. parce que des travaux de rénovation sont en cours</span>",
+            "de": "Dieser Aufzug ist außer Betrieb <span class='subtle'>z.B. wegen Renovierungsarbeiten</span>",
+            "nl": "Deze lift is tijdelijk gesloten <span class='subtle'>bijvoorbeeld door renovatiewerken</span>",
+            "pl": "Ta winda jest nieczynna <span class='subtle'>np. z powodu renowacji</span>",
+            "ca": "L'ascensor està tancat <span class='subtle'>p.e. perquè s'estan fent obres de reforma</span>",
+            "cs": "Tento výtah je uzavřen <span class='subtle'>např. protože probíhají renovační práce</span>"
+          },
+          "icon": "invalid:red"
+        },
+        {
+          "if": "operational_status=ok",
+          "then": {
+            "en": "This elevator works",
+            "fr": "Cet ascenseur fonctionne",
+            "de": "Dieser Aufzug ist in Betrieb",
+            "nl": "Deze lift werkt",
+            "pl": "Ta winda działa",
+            "ca": "L'ascesor funciona",
+            "cs": "Tento výtah funguje"
+          }
+        },
+        {
+          "if": "operational_status=",
+          "then": {
+            "en": "This elevator works",
+            "fr": "Cet ascenseur fonctionne",
+            "de": "Dieser Aufzug ist in Betrieb",
+            "nl": "Deze lift werkt",
+            "ca": "Aquest ascensor funciona",
+            "pl": "Ta winda działa",
+            "cs": "Tento výtah funguje"
+          },
+          "hideInAnswer": true
+        }
+      ]
+    },
+    {
+      "id": "door-width",
+      "render": {
+        "en": "This elevator's doors have a width of {canonical(door:width)}",
+        "fr": "Les portes de cet ascenseur ont une largeur de {canonical(door:width)}",
+        "de": "Die Türen des Aufzugs haben eine Breite von {canonical(door:width)}",
+        "nl": "De breedte van de liftdeur is {canonical(door:width)}",
+        "pl": "Drzwi tej windy mają szerokość {canonical(door:width)}",
+        "ca": "Les portes de l'ascensor tenen un amplada de {canonical(door:width)}",
+        "cs": "Dveře tohoto výtahu mají šířku {canonical(door:width)}"
+      },
+      "question": {
+        "en": "What is the width of this elevator's entrance?",
+        "fr": "Quelle est la largeur de l'entrée de cet ascenseur ?",
+        "de": "Wie breit ist die Tür dieses Aufzugs?",
+        "nl": "Wat is de breedte van de liftdeur?",
+        "ca": "Quina és l'amplada de l'entrada d'aquest ascensor?",
+        "pl": "Jaka jest szerokość drzwi windy?",
+        "cs": "Jaká je šířka vstupu do tohoto výtahu?"
+      },
+      "freeform": {
+        "key": "door:width",
+        "type": "pfloat",
+        "inline": false
+      }
+    },
+    {
+      "id": "elevator-shape",
+      "question": {
+        "en": "What shape does this elevator have?",
+        "de": "Welche Form hat dieser Aufzug?"
+      },
+      "mappings": [
+        {
+          "if": "shape=rectangular",
+          "alsoShowIf": "shape=",
+          "then": {
+            "en": "This elevator has a rectangular shape",
+            "de": "Dieser Aufzug hat eine rechteckige Form",
+            "fr": "Cet ascenseur est de forme rectangulaire"
+          },
+          "icon": "./assets/svg/square.svg"
+        },
+        {
+          "if": "shape=circular",
+          "then": {
+            "en": "This elevator has a circular shape",
+            "de": "Dieser Aufzug hat eine kreisförmige Form"
+          },
+          "icon": "./assets/svg/circle.svg"
+        }
+      ]
+    },
+    {
+      "id": "elevator-width",
+      "condition": {
+        "or": [
+          "shape=",
+          "shape=rectangular"
+        ]
+      },
+      "render": {
+        "en": "This elevator has a width of {canonical(width)}",
+        "fr": "Cet ascenseur a une largeur de {canonical(width)}",
+        "de": "Die Aufzugskabine hat eine Breite von {canonical(width)}",
+        "nl": "Deze lift heeft een breedte van {canonical(width)}",
+        "pl": "Szerokość tej windy to {canonical(width)}",
+        "ca": "L'ascensor té una amplada de {canonical(width)}",
+        "cs": "Tento výtah má šířku {canonical(width)}"
+      },
+      "question": {
+        "en": "What is the width of this elevator?",
+        "fr": "Quelle est la largeur de cet ascenseur ?",
+        "de": "Wie breit ist die Kabine dieses Aufzugs?",
+        "nl": "Wat is de breedte van deze lift?",
+        "pl": "Jaka jest szerokość tej windy?",
+        "ca": "Quina és l'amplada d'aquest ascensor?",
+        "cs": "Jaká je šířka tohoto výtahu?"
+      },
+      "freeform": {
+        "key": "width",
+        "type": "pfloat",
+        "inline": false
+      }
+    },
+    {
+      "id": "elevator-depth",
+      "condition": {
+        "or": [
+          "shape=",
+          "shape=rectangular"
+        ]
+      },
+      "render": {
+        "en": "This elevator has a depth of {canonical(length)}",
+        "fr": "Cet ascenseur a une profondeur de {canonical(length)}",
+        "de": "Dieser Aufzug hat eine Kabinentiefe von {canonical(length)}",
+        "nl": "Deze lift heeft een diepte van {canonical(length)}",
+        "ca": "L'ascensor té un profunditat de {canonical(length)}",
+        "cs": "Tento výtah má hloubku {canonical(length)}"
+      },
+      "question": {
+        "en": "What is the depth of this elevator?",
+        "fr": "Quelle est la profondeur de cet ascenseur ?",
+        "de": "Wie tief ist die Kabine dieses Aufzugs?",
+        "nl": "Wat is de diepte van deze lift?",
+        "ca": "Quina és la profunditat de l'ascensor?",
+        "cs": "Jaká je hloubka tohoto výtahu?"
+      },
+      "freeform": {
+        "key": "length",
+        "type": "pfloat",
+        "inline": false
+      }
+    },
+    {
+      "id": "elevator-diameter",
+      "condition": {
+        "or": [
+          "shape=circular"
+        ]
+      },
+      "render": {
+        "en": "This elevator has a diameter of {canonical(diameter)}",
+        "de": "Dieser Aufzug hat einen Durchmesser von {canonical(diameter)}"
+      },
+      "question": {
+        "en": "What is the diameter of this elevator?",
+        "de": "Was ist der Durchmesser dieses Aufzugs?"
+      },
+      "freeform": {
+        "key": "diameter",
+        "type": "pfloat",
+        "inline": false
+      }
+    },
+    {
+      "id": "induction-loop",
+      "description": "An accessibility feature: induction loops are for hard-hearing persons which have an FM-receiver.",
+      "question": {
+        "en": "Does this place have an audio induction loop for people with reduced hearing?",
+        "de": "Hat dieser Ort eine induktive Höranlage für Hörgeschädigte?",
+        "fr": "Ce lieu dispose-t’il d’une boucle auditive pour les personnes malentendantes ?",
+        "da": "Har dette sted en lydinduktionssløjfe til personer med nedsat hørelse?",
+        "cs": "Má toto místo zvukovou indukční smyčku pro osoby se sluchovým postižením?",
+        "nb_NO": "Har stedet en teleslynge for folk med redusert hørsel?",
+        "nl": "Heeft deze plaats een ringleiding voor slechthorenden?",
+        "ca": "Aquest lloc té un bucle magnètic per a la gent amb dificultats auditives?",
+        "es": "¿Este lugar tiene un bucle auditivo para personas con discapacidad auditiva?",
+        "pl": "Czy to miejsce ma pętlę indukcyjną dźwięku dla osób niedosłyszących?"
+      },
+      "mappings": [
+        {
+          "if": "hearing_loop=yes",
+          "then": {
+            "en": "This place has an audio induction loop",
+            "de": "Dieser Ort hat eine induktive Höranlage",
+            "fr": "Ce lieu dispose d’une boucle auditive",
+            "da": "Dette sted har en lydinduktionssløjfe",
+            "cs": "Toto místo má zvukovou indukční smyčku",
+            "nb_NO": "Dette stedet har en teleslynge",
+            "nl": "Deze plaats heeft een ringleiding",
+            "pl": "To miejsce ma pętlę indukcyjną audio",
+            "ca": "El lloc té un bucle magnètic",
+            "es": "Este lugar tiene un bucle auditivo"
+          },
+          "icon": {
+            "path": "./assets/layers/questions/audio_induction_loop.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "hearing_loop=no",
+          "then": {
+            "en": "This place <b>does not</b> have an audio induction loop",
+            "de": "Dieser Ort hat <b>keine</b> induktive Höranlage",
+            "fr": "Ce lieu <b>ne dispose pas</b> de boucle auditive",
+            "da": "Dette sted <b>har ikke</b> en lydinduktionssløjfe",
+            "cs": "Toto místo <b>nemá indukční zvukovou smyčku</b>",
+            "nb_NO": "Dette stedet <b>har ikke</b> en teleslynge",
+            "nl": "Deze plaats heeft <b>geen</b> ringleiding",
+            "ca": "El lloc <b>no</b> té un bucle magnètic",
+            "es": "Este lugar <b>no</b> tiene bucle auditivo",
+            "pl": "To miejsce <b>nie ma</b> pętli indukcyjnej dźwięku"
+          },
+          "icon": {
+            "path": "./assets/layers/questions/audio_induction_loop_missing.svg",
+            "class": "medium"
+          }
+        }
+      ]
+    },
+    {
+      "id": "tactile_writing_available",
+      "question": {
+        "en": "Has this elevator tactile writing?",
+        "ca": "Aquest ascensor té escriptura tàctil?",
+        "de": "Hat dieser Aufzug taktile Schrift?",
+        "cs": "Má tento výtah hmatové písmo?"
+      },
+      "mappings": [
+        {
+          "if": "tactile_writing:braille=yes",
+          "then": {
+            "en": "This elevator has tactile writing in Braille",
+            "ca": "L'ascensor té escriptura tàctil en Braille",
+            "de": "Dieser Aufzug hat eine taktile Schrift in Brailleschrift",
+            "cs": "Tento výtah má hmatové písmo v Braillově písmu"
+          }
+        },
+        {
+          "if": "tactile_writing:braille=no",
+          "then": {
+            "en": "This elevator does not have tactile writing",
+            "ca": "Aquest ascensor no té escriptura tàctil",
+            "de": "Dieser Aufzug hat keine taktile Schrift",
+            "cs": "Tento výtah nemá hmatové psaní"
+          }
+        }
+      ]
+    },
+    {
+      "id": "tactile_writing_language",
+      "condition": "tactile_writing:braille=yes",
+      "render": {
+        "ca": "{language_chooser(tactile_writing:braille,Aquest ascensor en quins idiomes té l'escriptura tàctil &LPARENSbraille&RPARENS?,Aquest ascensor té l'escriptura tàctil en &LBRACElanguage&LPARENS&RPARENS&RBRACE,Aquest ascensor té l'escriptura tàctil en &LBRACElanguage&LPARENS&RPARENS&RBRACE,,)}",
+        "cs": "{language_chooser(tactile_writing:braille,Ve kterých jazycích má tento výtah hmatové písmo &LPARENSbraillovo písmo&RPARENS?,Tento výtah má hmatové písmo v &LBRACElanguage&LPARENS&RPARENS&RBRACE,Tento výtah má hmatové písmo v &LBRACElanguage&LPARENS&RPARENS&RBRACE,,)}",
+        "de": "{language_chooser(tactile_writing:braille,In welchen Sprachen hat der Aufzug taktile Schrift &LPARENSBraille&RPARENS?,Der Aufzug hat taktile Schrift in &LBRACElanguage&LPARENS&RPARENS&RBRACE,Der Aufzug hat taktile Schrift in &LBRACElanguage&LPARENS&RPARENS&RBRACE,,)}",
+        "en": "{language_chooser(tactile_writing:braille,In which languages does this elevator have tactile writing &LPARENSbraille&RPARENS?,This elevator has tactile writing in &LBRACElanguage&LPARENS&RPARENS&RBRACE,This elevator has tactile writing in &LBRACElanguage&LPARENS&RPARENS&RBRACE,,)}",
+        "nl": "{language_chooser(tactile_writing:braille,In welke talen heeft deze lift voelbaar schrift &LPARENSbraille&RPARENS?,Deze lift heeft voelbaar schrift in het &LBRACElanguage&LPARENS&RPARENS&RBRACE,Deze lift heeft voelbaar schrift in het &LBRACElanguage&LPARENS&RPARENS&RBRACE,,)}"
+      }
+    },
+    {
+      "id": "speech_output_available",
+      "question": {
+        "en": "Has this elevator speech output?",
+        "de": "Verfügt der Aufzug über eine Sprachausgabe?",
+        "cs": "Má tento výtah hlasový výstup?"
+      },
+      "questionHint": {
+        "en": "E.g. it announces the current floor",
+        "de": "Z.B. werden Stockwerke angesagt",
+        "ca": "P. e. anuncia la planta actual",
+        "cs": "Např. oznamuje aktuální podlaží"
+      },
+      "mappings": [
+        {
+          "if": "speech_output=yes",
+          "then": {
+            "en": "This elevator has speech output",
+            "de": "Der Aufzug verfügt über eine Sprachausgabe",
+            "cs": "Tento výtah má hlasový výstup"
+          }
+        },
+        {
+          "if": "speech_output=no",
+          "then": {
+            "en": "This elevator does not have speech output",
+            "de": "Der Aufzug verfügt über keine Sprachausgabe",
+            "cs": "Tento výtah nemá hlasový výstup"
+          }
+        }
+      ]
+    },
+    {
+      "id": "speech_output",
+      "condition": "speech_output=yes",
+      "render": {
+        "ca": "{language_chooser(speech_output,Aquest ascensor en quins idiomes té sortida de veu?,Aquest ascensor té sortida de veu en &LBRACElanguage&LPARENS&RPARENS&RBRACE,Aquest ascensor té sortida de veu en &LBRACElanguage&LPARENS&RPARENS&RBRACE,,)}",
+        "cs": "{language_chooser(speech_output,Ve kterých jazycích má tento výtah hlasový výstup?,Tento výtah má hlasový výstup v &LBRACElanguage&LPARENS&RPARENS&RBRACE,Tento výtah má hlasový výstup v &LBRACElanguage&LPARENS&RPARENS&RBRACE,,)}",
+        "de": "{language_chooser(speech_output,In welchen Sprachen verfügt der Aufzug über eine Sprachausgabe?,Der Aufzug hat eine Sprachausgabe in &LBRACElanguage&LPARENS&RPARENS&RBRACE,Der Aufzug hat eine Sprachausgabe in &LBRACElanguage&LPARENS&RPARENS&RBRACE,,)}",
+        "en": "{language_chooser(speech_output,In which languages does this elevator have speech output?,This elevator has speech output in &LBRACElanguage&LPARENS&RPARENS&RBRACE,This elevator has speech output in &LBRACElanguage&LPARENS&RPARENS&RBRACE,,)}",
+        "nl": "{language_chooser(speech_output,In welke talen heeft deze lift gesproken tekst?,Deze lift heeft gesproken tekst in het &LBRACElanguage&LPARENS&RPARENS&RBRACE,Deze lift heeft gesproken tekst in het &LBRACElanguage&LPARENS&RPARENS&RBRACE,,)}"
+      }
+    },
+    {
+      "id": "leftover-questions",
+      "render": {
+        "*": "{questions( ,)}"
+      }
+    },
+    {
+      "id": "lod",
+      "labels": [
+        "added_by_default"
+      ],
+      "render": {
+        "*": "{linked_data_from_website()}"
+      }
+    },
+    {
+      "id": "minimap",
+      "description": "Shows a small map with the feature. Added by default to every popup",
+      "render": {
+        "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+      }
+    },
+    {
+      "id": "last_edit",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+      "condition": {
+        "and": [
+          "_last_edit:contributor~*",
+          "_last_edit:changeset~*"
+        ]
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsTesting=true",
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_debug=yes",
+          "_csCount>=10"
+        ]
+      },
+      "render": {
+        "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+      }
+    },
+    {
+      "id": "favourite_status",
+      "render": {
+        "*": "{favourite_status()}"
+      }
+    },
+    {
+      "id": "qr_code",
+      "labels": [
+        "added_by_default"
+      ],
+      "classes": "flex items-center gap-x-2",
+      "render": {
+        "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+        "en": "{qr_code()}Scan this code to open this location on another device",
+        "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+        "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+      }
+    },
+    {
+      "id": "share",
+      "labels": [
+        "added_by_default"
+      ],
+      "metacondition": "_supports_sharing=yes",
+      "render": {
+        "de": "{share_link(,Standort teilen)}",
+        "en": "{share_link(,Share this location)}",
+        "nl": "{share_link(,Deel deze locatie)}"
+      }
+    },
+    {
+      "id": "all-tags",
+      "render": {
+        "*": "{all_tags()}"
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_tags=full",
+          "mapcomplete-show_debug=yes"
+        ]
+      }
+    }
+  ],
+  "units": [
+    {
+      "door:width": {
+        "quantity": "distance",
+        "canonical": "m",
+        "denominations": [
+          "cm"
+        ]
+      },
+      "width": {
+        "quantity": "distance",
+        "canonical": "m",
+        "denominations": [
+          "cm"
+        ]
+      },
+      "length": {
+        "quantity": "distance",
+        "canonical": "m",
+        "denominations": [
+          "cm"
+        ]
+      }
+    }
+  ],
+  "titleIcons": [
+    {
+      "id": "wikipedialink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+      "condition": {
+        "or": [
+          "wikipedia~*",
+          "wikidata~*"
+        ]
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "wikipedia=",
+          "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "open_until",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "#": "Titleicon showing e.g. 'open until 17:00'",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{opening_hours_state()}",
+      "condition": {
+        "or": [
+          "opening_hours~*",
+          {
+            "or": [
+              {
+                "and": [
+                  "seasonal~.*winter.*",
+                  "_now:date~....-(12|01|02)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*spring.*",
+                  "_now:date~....-(03|04|05)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*summer.*",
+                  "_now:date~....-(06|07|08)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*autumn.*",
+                  "_now:date~....-(09|10|11)-.."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "phonelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": {
+        "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+        "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+        "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+        "_context": "layers:icons.tagRenderings.phonelink.render"
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:phone~*",
+          "then": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+          }
+        }
+      ],
+      "condition": {
+        "or": [
+          "phone~*",
+          "contact:phone~*"
+        ]
+      }
+    },
+    {
+      "id": "emaillink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:email~*",
+          "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:email~*",
+          "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        }
+      ],
+      "condition": {
+        "or": [
+          "email~*",
+          "contact:email~*",
+          "operator:email~*"
+        ]
+      }
+    },
+    {
+      "id": "websitelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "website~*",
+          "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:website~*",
+          "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "context:website~*",
+          "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "smokingicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=no",
+          "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=yes",
+          "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+        }
+      ]
+    },
+    {
+      "id": "dogicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "if": "dog=no",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+        },
+        {
+          "if": "dog=leashed",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+        },
+        {
+          "if": {
+            "or": [
+              "dog=yes",
+              "dog=unleashed"
+            ]
+          },
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+        }
+      ]
+    },
+    {
+      "id": "sharelink",
+      "labels": [
+        "defaults"
+      ],
+      "render": "{share_link()}",
+      "metacondition": "_supports_sharing=yes"
+    },
+    {
+      "id": "favourite_title_icon",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "*": "{favourite_icon()}"
+      },
+      "metacondition": "_loggedIn=true"
+    },
+    {
+      "id": "osmlink",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+        "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+        "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+        "_context": "layers:icons.tagRenderings.osmlink.render"
+      },
+      "mappings": [
+        {
+          "if": "id~.*/-.*",
+          "then": ""
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "_backend~*",
+          "then": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+          }
+        }
+      ],
+      "condition": "id~(node|way|relation)/[0-9]*"
+    },
+    {
+      "id": "direction",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "{direction_indicator()}"
+    },
+    {
+      "id": "rating",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{rating()}"
+    }
+  ],
+  "_layerIcon": [
+    {
+      "icon": "circle",
+      "color": "white"
+    },
+    {
+      "icon": "./assets/layers/elevator/elevator_wheelchair.svg"
+    }
+  ]
+}

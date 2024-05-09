@@ -1,0 +1,1218 @@
+{
+  "id": "entrance",
+  "name": {
+    "en": "Entrance",
+    "nl": "Toegang",
+    "de": "Eingänge",
+    "ca": "Entrada",
+    "es": "Entrada",
+    "fr": "Entrée",
+    "pa_PK": "دروازہ",
+    "cs": "Vchod"
+  },
+  "description": {
+    "en": "A layer showing entrances and offering capabilities to survey some advanced data which is important for e.g. wheelchair users (but also bicycle users, people who want to deliver, …)",
+    "nl": "Een laag met ingangen (van gebouwen etc.) waarmee je details kunt aanvullen die belangrijk zijn voor bijvoorbeeld rolstoelgebruikers (en fietsers, leveranciers, …)",
+    "de": "Eine Ebene, die Eingänge anzeigt und die Möglichkeit bietet, weitere Daten zu erheben, die z. B. für Rollstuhlfahrer wichtig sind (aber auch für Radfahrer, Lieferpersonal, …)",
+    "es": "Una capa que muestra capas y ofrece la posibilidad de sondear algunos datos avanzados que son importantes para, por ejemplo, usuarios de sillas de ruedas (pero también incluye ciclistas, gente que quiere repartir, ...)",
+    "fr": "Une couche montrant les entrées et offrant des capacités pour étudier certaines données avancées qui sont importantes, par exemple. les utilisateurs de fauteuils roulants (mais aussi les utilisateurs de vélos, les personnes qui veulent faire des livraisons, …)",
+    "ca": "Una capa que mostra entrades i ofereix la possibilitat de sondejar algunes dades avançades que són importants per a, per exemple, usuaris de cadires de rodes (però també ciclistes, repartidors, …)",
+    "cs": "Vrstva zobrazující vstupy a nabízející možnosti zjišťování některých pokročilých údajů, které jsou důležité např. pro vozíčkáře (ale také pro uživatele jízdních kol, osoby, které chtějí doručovat, ...)"
+  },
+  "source": {
+    "osmTags": {
+      "and": [
+        {
+          "or": [
+            "entrance~*",
+            "indoor=door",
+            "door~*"
+          ]
+        }
+      ]
+    }
+  },
+  "minzoom": 14,
+  "title": {
+    "render": {
+      "en": "Entrance",
+      "nl": "Ingang",
+      "ca": "Entrada",
+      "da": "Indgang",
+      "de": "Eingang",
+      "es": "Entrada",
+      "fr": "Entrée",
+      "pa_PK": "دروازہ",
+      "pl": "Wejście",
+      "cs": "Vchod"
+    }
+  },
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": {
+            "render": "circle",
+            "id": "circle"
+          },
+          "color": "white"
+        },
+        {
+          "icon": {
+            "render": "./assets/layers/entrance/entrance.svg",
+            "mappings": [
+              {
+                "if": "entrance=emergency",
+                "then": "./assets/layers/entrance/emergency_door.svg"
+              }
+            ]
+          }
+        }
+      ],
+      "iconBadges": [
+        {
+          "if": "_favourite=yes",
+          "then": "circle:white;heart:red"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [],
+  "presets": [
+    {
+      "title": {
+        "en": "an entrance",
+        "fr": "une entrée",
+        "de": "einen Eingang",
+        "nl": "een toegang",
+        "ca": "una entrada",
+        "cs": "vchod"
+      },
+      "tags": [
+        "entrance=yes"
+      ],
+      "snapToLayer": [
+        "walls_and_buildings",
+        "pedestrian_path"
+      ]
+    },
+    {
+      "title": {
+        "en": "an indoor door",
+        "de": "eine Innentür",
+        "nl": "een binnendeur",
+        "ca": "una porta interior",
+        "cs": "vnitřní dveře"
+      },
+      "tags": [
+        "indoor=door"
+      ],
+      "snapToLayer": [
+        "indoors"
+      ]
+    }
+  ],
+  "tagRenderings": [
+    {
+      "id": "just_created",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "This element shows a 'thank you' that the contributor has recently created this element",
+      "classes": "rounded-xl thanks",
+      "mappings": [
+        {
+          "if": "id~*",
+          "icon": "./assets/svg/party.svg",
+          "then": {
+            "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+            "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+            "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+            "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+            "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+            "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+          }
+        }
+      ],
+      "condition": {
+        "and": [
+          "_backend~*",
+          "_last_edit:passed_time<300",
+          {
+            "or": [
+              "_version_number=",
+              "_version_number=1"
+            ]
+          }
+        ]
+      },
+      "metacondition": {
+        "and": [
+          {
+            "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+            "or": [
+              "_last_edit:contributor:uid:={_uid}",
+              "_last_edit:contributor:uid="
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "images",
+      "description": "This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images",
+      "render": {
+        "*": "{image_carousel()}{image_upload()}{nearby_images():my-4}"
+      },
+      "classes": "my-4"
+    },
+    {
+      "id": "repeated",
+      "labels": [
+        "level"
+      ],
+      "condition": "repeat_on~*",
+      "render": {
+        "en": "Multiple, identical objects can be found on floors {repeat_on}.",
+        "nl": "Er zijn verschillende, identieke objecten op verdiepingen {repeat_on}.",
+        "de": "Mehrere identische Objekte können in Geschossen {repeat_on} gefunden werden.",
+        "cs": "V patrech {repeat_on} lze nalézt více identických objektů."
+      }
+    },
+    {
+      "id": "single_level",
+      "labels": [
+        "level"
+      ],
+      "condition": "repeat_on=",
+      "question": {
+        "nl": "Op welke verdieping bevindt dit punt zich?",
+        "en": "On what level is this feature located?",
+        "de": "Auf welcher Ebene befindet sich das Objekt?",
+        "zh_Hant": "此圖徽位於哪個樓層／層級？",
+        "fr": "À quel étage se situe l’élément ?",
+        "pl": "Na jakim poziomie znajduje się ta funkcja?",
+        "pt_BR": "Em que nível esse recurso está localizado?",
+        "ru": "На каком этаже находится этот объект?",
+        "pt": "Em que nível se encontra este elemento?",
+        "id": "Pada tingkat apa fitur ini diletakkan?",
+        "hu": "Melyik szinten található ez a létesítmény?",
+        "it": "A quale piano si trova questo elemento?",
+        "ca": "A quina planta està situat aquest element?",
+        "sv": "På vilken nivå finns den här funktionen?",
+        "ja": "この機能は何階にあるのでしょうか？",
+        "fil": "Anong palapag matatagpuan ang tampók?",
+        "es": "¿En qué nivel se encuentra esta característica?",
+        "nb_NO": "Hvilken etasje befinner funksjonen seg i?",
+        "da": "På hvilket niveau er denne funktion placeret?",
+        "cs": "V jaké úrovni se tento prvek nachází?"
+      },
+      "render": {
+        "en": "Located on the {level}th floor",
+        "nl": "Bevindt zich op de {level}de verdieping",
+        "de": "Das Objekt befindet sich im {level}. Geschoss",
+        "pt_BR": "Localizado no {level}o andar",
+        "ru": "Расположено на {level}ом этаже",
+        "zh_Hant": "位於 {level} 樓",
+        "fr": "Étage {level}",
+        "pl": "Znajduje się na {level} piętrze",
+        "sv": "Ligger på {level}:e våningen",
+        "pt": "Está no {level}º andar",
+        "eo": "En la {level}a etaĝo",
+        "hu": "A(z) {level}. emeleten",
+        "it": "Si trova al piano numero {level}",
+        "ca": "Situat a la planta {level}",
+        "ja": "{level}階にあります",
+        "sl": "Nahaja se v {level}. nadstropju",
+        "fil": "Natagpuan sa ika-{level} na palapag",
+        "es": "Localizada en la {level}° planta",
+        "da": "Beliggende på {level}. etage",
+        "nb_NO": "Ligger i {level} etasje",
+        "id": "Terletak di lantai {level}",
+        "cs": "Nachází se v {level}. patře"
+      },
+      "freeform": {
+        "key": "level",
+        "type": "float",
+        "inline": true
+      },
+      "mappings": [
+        {
+          "if": "location=underground",
+          "then": {
+            "en": "Located underground",
+            "nl": "Bevindt zich ondergronds",
+            "pt_BR": "Localizado no subsolo",
+            "ru": "Расположено под землей",
+            "zh_Hant": "位於地下",
+            "fr": "En sous-sol",
+            "pl": "Znajduje się pod ziemią",
+            "sv": "Ligger under jorden",
+            "pt": "Está no subsolo",
+            "de": "Das Objekt befindet sich unter der Erde",
+            "hu": "A föld alatt",
+            "it": "Si trova sotto il livello stradale",
+            "nb_NO": "Under bakken",
+            "ca": "Situat a planta subterrani",
+            "ja": "地下にあります",
+            "id": "Terletak di bawah tanah",
+            "sl": "Nahaja se pod zemljo",
+            "fil": "Nasa ilalim ng lupa",
+            "es": "Localizado bajo tierra",
+            "da": "Placeret under jorden",
+            "cs": "Nachází se v podzemí"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "level=0",
+          "then": {
+            "en": "Located on the ground floor",
+            "nl": "Bevindt zich op de begane grond",
+            "de": "Das Objekt befindet sich im Erdgeschoss",
+            "pt_BR": "Localizado no térreo",
+            "ru": "Расположено на первом этаже",
+            "zh_Hant": "位於 1 樓",
+            "fr": "Rez-de-chaussée",
+            "pl": "Znajduje się na parterze",
+            "sv": "Ligger på bottenvåningen",
+            "pt": "Está ao nível do rés-do-chão",
+            "eo": "En la teretaĝo",
+            "hu": "A földszinten",
+            "it": "Si trova al pianoterra",
+            "nb_NO": "På gateplan",
+            "ca": "Situat a planta zero",
+            "ja": "1階にあります",
+            "id": "Terletak di lantai dasar",
+            "sl": "Nahaja se v pritličju",
+            "fil": "Nasa unang palapag",
+            "es": "Localizado en la planta baja",
+            "da": "Beliggende i stueetagen",
+            "cs": "Nachází se v přízemí"
+          }
+        },
+        {
+          "if": "level=",
+          "hideInAnswer": true,
+          "then": {
+            "en": "Located on the ground floor",
+            "nl": "Bevindt zich gelijkvloers",
+            "de": "Das Objekt befindet sich im Erdgeschoss",
+            "pt_BR": "Localizado no térreo",
+            "ru": "Расположено на первом этаже",
+            "zh_Hant": "位於 1 樓",
+            "fr": "Rez-de-chaussée",
+            "pl": "Znajduje się na parterze",
+            "sv": "Ligger på bottenvåningen",
+            "pt": "Está ao nível do rés-do-chão",
+            "eo": "En la teretaĝo",
+            "hu": "A földszinten",
+            "it": "Si trova al pianoterra",
+            "nb_NO": "På gateplan",
+            "ca": "Situat a la planta zero",
+            "ja": "1階にあります",
+            "id": "Terletak di lantai dasar",
+            "sl": "Nahaja se v pritličju",
+            "fil": "Nasa unang palapag",
+            "es": "Localizado en la planta baja",
+            "da": "Beliggende i stueetagen",
+            "cs": "Nachází se v přízemí"
+          }
+        },
+        {
+          "if": "level=1",
+          "then": {
+            "en": "Located on the first floor",
+            "nl": "Bevindt zich op de eerste verdieping",
+            "de": "Das Objekt befindet sich im 1. Obergeschoss",
+            "pt_BR": "Localizado no primeiro andar",
+            "ru": "Расположено на первом этаже",
+            "zh_Hant": "位於 2 樓",
+            "fr": "Premier étage",
+            "pl": "Znajduje się na pierwszym piętrze",
+            "sv": "Ligger på första våningen",
+            "pt": "Está no primeiro andar",
+            "id": "Berlokasi di lantai pertama",
+            "eo": "En la unua etaĝo",
+            "hu": "Az első emeleten",
+            "it": "Si trova al primo piano",
+            "nb_NO": "I andre etasje",
+            "ca": "Situat a primera planta",
+            "ja": "1階にあります",
+            "sl": "Nahaja se v prvem nadstropju",
+            "fil": "Nasa unang palapag",
+            "es": "Localizado en la primera planta",
+            "da": "Beliggende på første sal",
+            "cs": "Nachází se v prvním patře"
+          }
+        },
+        {
+          "if": "level=-1",
+          "then": {
+            "en": "Located on the first basement level",
+            "nl": "Bevindt zich in de eerste kelderverdieping",
+            "zh_Hant": "位於地下一樓",
+            "de": "Das Objekt befindet sich im 1. Untergeschoss",
+            "hu": "Az első alagsori szinten",
+            "id": "Terletak di lantai basement pertama",
+            "fr": "Sous-sol",
+            "sl": "Nahaja se v prvi kletni etaži",
+            "ca": "Localitzat a la planta base",
+            "fil": "Nasa silong",
+            "es": "Localizada en el primer sótano",
+            "nb_NO": "Er å finne på første kjellernivå",
+            "pt": "Localizado no primeiro nível da cave",
+            "da": "Beliggende på første kælderetage",
+            "cs": "Nachází se v prvním suterénu",
+            "pl": "Położone na pierwszym poziomie piwnicy"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Entrance type",
+      "question": {
+        "en": "What type of entrance is this?",
+        "nl": "Wat voor ingang is dit?",
+        "de": "Um welchen Eingangstyp handelt es sich?",
+        "es": "¿Qué tipo de entrada es esta?",
+        "fr": "De quel type d'entrée s'agit-il ?",
+        "pl": "Jakiego rodzaju jest to wejście?",
+        "ca": "Quin tipus d'entrada és aquesta?",
+        "cs": "O jaký typ vchodu se jedná?"
+      },
+      "mappings": [
+        {
+          "if": "entrance=yes",
+          "then": {
+            "en": "No specific entrance type is known",
+            "nl": "Het specifieke type ingang is onbekend",
+            "de": "Der Eingangstyp ist nicht bekannt",
+            "es": "No se conoce un tipo de entrada específico",
+            "fr": "Aucun type d'entrée spécifique n'est connu",
+            "ca": "No es coneix cap tipus d'entrada específica",
+            "cs": "Není znám žádný konkrétní typ vstupu"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": {
+            "and": [
+              "entrance=",
+              "indoor=door"
+            ]
+          },
+          "then": {
+            "en": "This is an indoor door, separating a room or a corridor within a single building",
+            "nl": "Dit is een binnendeur, die een kamer of een gang volledig binnen hetzelfde gebouw afsluit",
+            "de": "Dies ist eine Innentür, die Räume oder Gänge innerhalb eines Gebäudes verbindet",
+            "es": "Esta es una puerta interior, que separa una habitación o pasillo dentro de un único edificio",
+            "fr": "C'est une porte intérieure, séparant une pièce ou un couloir d'un même bâtiment",
+            "ca": "Es tracta d'una porta interior, que separa una habitació o un passadís dins d'un únic edifici",
+            "cs": "Jedná se o vnitřní dveře, oddělující místnost nebo chodbu v rámci jedné budovy"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "indoor=",
+              "entrance=main"
+            ]
+          },
+          "then": {
+            "en": "This is the main entrance",
+            "nl": "Dit is de hoofdingang",
+            "de": "Dies ist der Haupteingang",
+            "es": "Esta es la entrada principal",
+            "fr": "Ceci est l'entrée principale",
+            "pl": "To jest główne wejście",
+            "ca": "Aquesta és l'entrada principal",
+            "cs": "Toto je hlavní vchod"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "indoor=",
+              "entrance=secondary"
+            ]
+          },
+          "then": {
+            "en": "This is a secondary entrance",
+            "nl": "Dit is een secundaire ingang",
+            "de": "Dies ist ein Nebeneingang",
+            "es": "Esta es una entrada secundaria",
+            "fr": "C'est une entrée secondaire",
+            "ca": "Aquesta és una entrada secundària",
+            "cs": "Toto je vedlejší vchod"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "indoor=",
+              "entrance=service"
+            ]
+          },
+          "then": {
+            "en": "This is a service entrance - normally only used for employees, delivery, …",
+            "nl": "Dit is een dienstingang - normaal gezien enkel gebruikt door werknemers, leveranciers, …",
+            "de": "Dies ist ein Diensteingang - normalerweise nur für Mitarbeiter, Anlieferung, …",
+            "es": "Esta es una entrada de servicio - normalmente solo la utilizan empleados, repartidores, …",
+            "fr": "C'est une entrée de service - normalement utilisée uniquement pour les employés, la livraison, …",
+            "ca": "Aquesta és una entrada de servei - normalment utilitzada per empleats, repartidors, …",
+            "pl": "To jest wejście serwisowe - zazwyczaj używane tylko przez pracowników, dostawy, …",
+            "cs": "Jedná se o servisní vchod – běžně se používá pouze pro zaměstnance, rozvoz,…"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "indoor=",
+              "entrance=exit"
+            ]
+          },
+          "then": {
+            "en": "This is an exit where one can not enter",
+            "nl": "Dit is enkel een uitgang, je kan hier niet naar binnen",
+            "de": "Dies ist ein Ausgang, ohne Zutrittsmöglichkeit",
+            "es": "Esta es una salida por la cual no se puede entrar",
+            "fr": "C'est une sortie où l'on ne peut pas entrer",
+            "pl": "To jest wyjście bez możliwości wejścia",
+            "ca": "Aquesta és una sortida on no es pot entrar",
+            "cs": "Toto je východ, kam člověk nemůže vstoupit"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "indoor=",
+              "entrance=entrance"
+            ]
+          },
+          "then": {
+            "en": "This is an entrance where one can only enter (but not exit)",
+            "nl": "Dit is een ingang waar je enkel naar binnen kunt (niet naar buiten)",
+            "de": "Dies ist ein Eingang, an dem man nur hineingehen kann (aber nicht hinausgehen)",
+            "es": "Esta es una entrada por la que solo se puede entrar (pero no salir)",
+            "fr": "C'est une entrée où l'on ne peut qu'entrer (mais pas sortir)",
+            "pl": "To jest wejście, którym nie można wychodzić",
+            "ca": "Aquesta és una entrada per on només es pot entrar (però no sortir)",
+            "cs": "Toto je vchod, kam lze pouze vstoupit (ale ne vystoupit)"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "indoor=",
+              "entrance=emergency"
+            ]
+          },
+          "then": {
+            "en": "This is emergency exit",
+            "nl": "Dit is een nooduitgang",
+            "de": "Dies ist ein Notausgang",
+            "es": "Esta es una salida de emergencia",
+            "fr": "C'est la sortie de secours",
+            "he": "זו יציאת חירום",
+            "pl": "To jest wyjście ewakuacyjne",
+            "ca": "Aquesta és la sortida d'emergència",
+            "cs": "Toto je nouzový východ"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "indoor=",
+              "entrance=home"
+            ]
+          },
+          "then": {
+            "en": "This is the entrance to a private home",
+            "nl": "Dit is de ingang van een private woning",
+            "de": "Dies ist ein Eingang zu einem privaten Haus",
+            "es": "Esta es la entrada a una vivienda privada",
+            "fr": "C'est l'entrée d'une maison privée",
+            "pl": "To jest wejście do prywatnego domu",
+            "ca": "Aquesta és l'entrada d'una casa particular",
+            "cs": "Toto je vchod do soukromého domu"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Door_type",
+      "question": {
+        "en": "What is the type of this door?",
+        "nl": "Om wat voor deur gaat het?",
+        "de": "Welche Tür gibt es an diesem Eingang?",
+        "es": "¿Cual es el tipo de esta puerta?",
+        "fr": "Quel est le type de cette porte ?",
+        "ca": "Quin és el tipus d'aquesta porta?",
+        "cs": "Jaký je typ těchto dveří?"
+      },
+      "mappings": [
+        {
+          "if": "door=yes",
+          "then": {
+            "en": "The door type is not known",
+            "nl": "Het type deur is onbekend",
+            "de": "Der Türtyp ist nicht bekannt",
+            "es": "Se desconoce el tipo de puerta",
+            "fr": "Le type de porte n'est pas connu",
+            "ca": "El tipus de porta és desconegut",
+            "cs": "Typ dveří není znám"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "door=hinged",
+          "then": {
+            "en": "A classical, hinged door supported by joints",
+            "nl": "Een gewone deur die aan scharnieren ophangt en openzwaait",
+            "de": "Der Eingang hat eine normale Tür mit seitlichem Anschlag",
+            "es": "Una puerta clásica, con bisagras soportadas por uniones",
+            "fr": "Une porte battante classique soutenue par des joints",
+            "ca": "Una porta clàssica, amb frontisses suportades per unions",
+            "cs": "Klasické, pantové dveře podporované klouby"
+          }
+        },
+        {
+          "if": "door=revolving",
+          "then": {
+            "en": "A revolving door which hangs on a central shaft, rotating within a cylindrical enclosure",
+            "nl": "Een tourniquet-deur (draaideur) die in een cylinder rond een centrale as draait",
+            "de": "Der Eingang hat eine Karusselltür, die sich um ihre eigene Achse dreht",
+            "es": "Una puerta giratoria que cuelga de un eje central y que rota dentro de una carcasa cilíndrica",
+            "fr": "Une porte tournante suspendue à un arbre central, tournant dans une enceinte cylindrique",
+            "ca": "Una porta giratòria que penja d'un eix central i que rota dins d'una carcasa cilíndrica",
+            "cs": "Otočné dveře, které visí na centrálním hřídeli a otáčejí se uvnitř válcového krytu"
+          }
+        },
+        {
+          "if": "door=sliding",
+          "then": {
+            "en": "A sliding door where the door slides sidewards, typically parallel with a wall",
+            "nl": "Een schuifdeur or roldeur die bij het openen en sluiten zijwaarts beweegt",
+            "de": "Der Eingang hat eine Schiebetür, bei der sich die Tür zur Seite bewegt",
+            "es": "Una puerta corredera donde la puerta se desliza hacia un lado, generalmente paralela a una pared",
+            "fr": "Une porte coulissante où la porte coulisse latéralement, généralement parallèlement à un mur",
+            "ca": "Una porta corredissa on la porta llisca cap als costats, normalment paral·lela a una paret",
+            "cs": "Posuvné dveře, kde se dveře posouvají do strany, obvykle rovnoběžně se stěnou"
+          }
+        },
+        {
+          "if": "door=overhead",
+          "then": {
+            "en": "A door which rolls from overhead, typically seen for garages",
+            "nl": "Een poort die langs boven dichtrolt, typisch voor garages",
+            "de": "Der Eingang hat ein Rolltor, das von oben nach unten rollt, typischerweise für Garagen",
+            "fr": "Une porte qui roule du haut, généralement vue pour les garages",
+            "ca": "Una porta que roda des de dalt, normalment es veu per als garatges",
+            "cs": "Dveře, které se otáčejí nad hlavou, obvykle se vyskytují u garáží"
+          }
+        },
+        {
+          "if": "door=no",
+          "then": {
+            "en": "This is an entrance without a physical door",
+            "nl": "Er is een toegang zonder een deur",
+            "de": "Der Eingang hat eine keine Tür",
+            "es": "Esta es una entrada sin una puerta física",
+            "fr": "Ceci est une entrée sans porte physique",
+            "ca": "Açò és una entrada sense una porta física",
+            "cs": "Toto je vchod bez fyzických dveří"
+          },
+          "hideInAnswer": "entrance="
+        }
+      ],
+      "questionHint": {
+        "en": "Wether or not the door is automated is asked in the next question",
+        "nl": "Of de deur al of niet automatisch werkt, vragen we hierna ",
+        "de": "Ob die Tür automatisiert ist oder nicht, wird in der nächsten Frage gefragt",
+        "es": "En la siguiente pregunta se pregunta si la puerta está automatizada o no",
+        "fr": "Le fait que la porte soit automatisée ou non est demandé dans la question suivante",
+        "ca": "A la pregunta següent es pregunta si la porta està automatitzada o no",
+        "cs": "Zda jsou dveře automatizované, se ptáte v další otázce"
+      }
+    },
+    {
+      "id": "automatic_door",
+      "question": "Is this door automated?",
+      "condition": "door!=no",
+      "mappings": [
+        {
+          "if": "automatic_door=yes",
+          "then": {
+            "en": "This is an automatic door",
+            "nl": "Dit is een automatische deur",
+            "de": "Dies ist eine Automatiktür",
+            "es": "Esta es una puerta automática",
+            "fr": "C'est une porte automatique",
+            "pl": "Te drzwi są automatyczne",
+            "ca": "Aquesta és una porta automàtica",
+            "cs": "Jedná se o automatické dveře"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "automatic_door=no",
+          "then": {
+            "en": "This door is <b>not</b> automated",
+            "nl": "Deze deur is <b>niet</b> automatisch",
+            "de": "Diese Tür ist <b>nicht</b> automatisiert",
+            "es": "Esta puerta <b>no</b> está automatizada",
+            "fr": "Cette porte n'est <b>pas</b> automatisée",
+            "ca": "Aquesta porta <b>no </b> està automatitzada",
+            "pl": "Te drzwi <b>nie</b> są automatyczne",
+            "cs": "Tyto dveře <b>nejsou</b> automatizované"
+          }
+        },
+        {
+          "if": "automatic_door=motion",
+          "then": {
+            "en": "This door will open automatically when <b>motion</b> is detected",
+            "nl": "De deur gaat automatisch open wanneer er <b>beweging</b> wordt gedetecteerd",
+            "de": "Diese Tür öffnet sich automatisch, wenn <b>Bewegung</b> erkannt wird",
+            "es": "Esta puerta se abre automáticamente cuando se detecta <b>movimiento</b>",
+            "fr": "Cette porte s'ouvrira automatiquement lorsqu'un <b>mouvement</b> sera détecté",
+            "pl": "Te drzwi automatycznie się otwierają, kiedy zostanie wykryty <b>ruch</b>",
+            "ca": "Aquesta porta s'obrirà automàticament quan es detecti <b>moviment</b>",
+            "cs": "Tyto dveře se automaticky otevřou, když je detekován <b>pohyb</b>"
+          }
+        },
+        {
+          "if": "automatic_door=floor",
+          "then": {
+            "en": "This door will open automatically when a <b>sensor in the floor</b> is triggered",
+            "nl": "De deur gaat automatisch open wanneer <b>een sensor in de vloer</b> wordt geactiveerd",
+            "de": "Diese Tür öffnet sich automatisch, wenn ein <b>Sensor im Boden</b> ausgelöst wird",
+            "es": "Esta puerta se abre automáticamente cuando se activa un <b>sensor en el suelo</b>",
+            "fr": "Cette porte s'ouvrira automatiquement lorsqu'un <b>capteur au sol</b> est déclenché",
+            "ca": "Aquesta porta s'obrirà automàticament quan s'active un <b>sensor al terra</b>",
+            "cs": "Tyto dveře se automaticky otevřou, když se spustí <b>senzor v podlaze</b>"
+          }
+        },
+        {
+          "if": "automatic_door=button",
+          "then": {
+            "en": "This door will open automatically when a <b>button is pressed</b>",
+            "nl": "De deur gaat open wanneer <b>een knop wordt ingedrukt</b>",
+            "de": "Diese Tür öffnet sich automatisch, wenn ein <b>Taster betätigt wird</b>",
+            "es": "Esta puerta se abre automáticamente cuando se <b>pulsa un botón</b>",
+            "fr": "Cette porte s'ouvrira automatiquement lorsqu'un <b>bouton est pressé</b>",
+            "ca": "Aquesta porta s'obrirà automàticament quan es <b>prem un botó</b>",
+            "cs": "Tyto dveře se automaticky otevřou po <b>stisknutí tlačítka</b>"
+          }
+        },
+        {
+          "if": "automatic_door=slowdown_button",
+          "then": {
+            "en": "This door revolves automatically all the time, but has a <b>button to slow it down</b>, e.g. for wheelchair users",
+            "nl": "De deur draait continue automatisch, maar heeft een <b>knop om te vertragen</b>, bijvoorbeeld voor rolstoelgebruikers",
+            "de": "Diese Tür dreht sich durchgehend automatisch, hat aber einen<b>Knopf, um die Drehgeschwindigkeit zu reduzieren</b>, z.B. für Rollstuhlnutzer",
+            "es": "Esta puerta gira automáticamente todo el rato, pero tiene un <b>botón para ralentizarla</b>, por ejemplo, para usuarios de sillas de ruedas",
+            "fr": "Cette porte tourne automatiquement tout le temps, mais dispose d'un <b>bouton pour la ralentir</b>, par ex. pour les utilisateurs de fauteuils roulants",
+            "ca": "Aquesta porta gira automàticament tot el temps, però té un <b>botó per a frenar-la</b>, p. e. per a usuaris de cadira de rodes",
+            "cs": "Tyto dveře se neustále otáčí automaticky, ale mají <b>tlačítko pro jejich zpomalení</b>, např. pro vozíčkáře"
+          },
+          "hideInAnswer": "door!=revolving"
+        },
+        {
+          "if": "automatic_door=continuous",
+          "then": {
+            "en": "This door revolves automatically all the time",
+            "nl": "De deur draait continue automatisch",
+            "de": "Diese Tür dreht sich durchgehend automatisch",
+            "es": "Esta puerta gira automáticamente todo el rato",
+            "fr": "Cette porte tourne automatiquement tout le temps",
+            "ca": "Aquesta porta gira automàticament tot el temps",
+            "cs": "Tyto dveře se neustále automaticky otáčejí"
+          },
+          "hideInAnswer": "door!=revolving"
+        },
+        {
+          "if": "automatic_door=serviced_on_button_press",
+          "then": {
+            "en": "This door will be opened by staff when requested by <b>pressing a button</b>",
+            "nl": "De deur wordt geopend door personeel als je dat vraagt <b>door op een knop te duwen</b>",
+            "de": "Diese Tür wird von Mitarbeitern geöffnet auf Anfrage <b>per Rufknopf</b>",
+            "es": "Esta puerta la abre el personal cuando se pide <b>pulsando un botón</b>",
+            "fr": "Cette porte sera ouverte par le personnel à la demande en <b>appuyant sur un bouton</b>",
+            "ca": "Aquesta porta l'obri el personal quan es sol·licita <b>polsant un botó</b>",
+            "cs": "Tyto dveře otevře personál na požádání <b>stisknutím tlačítka</b>"
+          }
+        },
+        {
+          "if": "automatic_door=serviced_on_request",
+          "then": {
+            "en": "This door will be opened by staff when requested",
+            "nl": "De deur wordt geopend door personeel wanneer je het vraagt",
+            "de": "Diese Tür wird von Mitarbeitern geöffnet auf Anfrage",
+            "es": "Esta puerta la abrirá el personal cuando se pida",
+            "fr": "Cette porte sera ouverte par le personnel sur demande",
+            "ca": "Aquesta porta l'obrirà el personal quan es sol·liciti",
+            "cs": "Tyto dveře otevře personál na požádání"
+          }
+        }
+      ]
+    },
+    {
+      "id": "width",
+      "render": {
+        "en": "This door has a width of {canonical(width)}",
+        "nl": "Deze deur heeft een breedte van {canonical(width)}",
+        "de": "Diese Tür hat eine Durchgangsbreite von {canonical(width)}",
+        "es": "Esta puerta tiene una ancho de {canonical(width)}",
+        "fr": "Cette porte a une largeur de {canonical(width)} mètre",
+        "ca": "Aquesta porta té una amplària de {canonical(width)}",
+        "cs": "Tyto dveře mají šířku {canonical(width)}"
+      },
+      "question": {
+        "en": "What is the width of this door/entrance?",
+        "nl": "Wat is de breedte van deze deur/toegang?",
+        "de": "Wie breit ist diese Tür bzw. dieser Eingang?",
+        "es": "¿Cual es el ancho de esta puerta/entrada?",
+        "fr": "Quelle est la largeur de cette porte/entrée ?",
+        "ca": "Quina és l'amplada d'aquesta porta/entrada?",
+        "cs": "Jaká je šířka těchto dveří/vchodu?"
+      },
+      "freeform": {
+        "key": "width",
+        "inline": false
+      }
+    },
+    {
+      "id": "kerb-height",
+      "question": {
+        "en": "What is the height of this kerb?",
+        "fr": "Quelle est la hauteur de ce seuil ?",
+        "de": "Wie hoch ist die Türschwelle?",
+        "nl": "Hoe hoog is de drempel?",
+        "ca": "Quina és l'altura d'aquest voral?",
+        "cs": "Jaká je výška tohoto obrubníku/prahu?"
+      },
+      "render": {
+        "en": "The kerb height of this door is {kerb:height}",
+        "fr": "La hauteur du seuil de porte de cette porte est {kerb:height}",
+        "de": "Die Höhe der Türschwelle ist {kerb:height}",
+        "nl": "De drempel bij deze deur is {kerb:height}",
+        "ca": "L'alçada del voral d'aquesta porta és {kerb:height}",
+        "cs": "Výška obrubníku/prahu těchto dveří je {kerb:height}"
+      },
+      "freeform": {
+        "key": "kerb:height",
+        "placeholder": {
+          "en": "Height of the door kerb",
+          "fr": "Hauteur du seuil de porte",
+          "de": "Höhe der Türschwelle",
+          "nl": "Hoogte van de drempel",
+          "pl": "Wysokość progu w drzwiach",
+          "ca": "Alçada de la vorada de la porta",
+          "cs": "Výška obrubníku/prahu dveří"
+        },
+        "type": "pnat",
+        "inline": true
+      },
+      "mappings": [
+        {
+          "if": "kerb:height=0",
+          "then": {
+            "en": "This door does not have a kerb",
+            "nl": "Deze deur heeft geen drempel",
+            "fr": "Cette porte n'a pas de seuil",
+            "de": "Diese Tür hat keine Türschwelle",
+            "pl": "Te drzwi nie mają progu",
+            "ca": "Aquesta porta no té voral",
+            "cs": "Tyto dveře nemají obrubník/práh"
+          }
+        }
+      ]
+    },
+    {
+      "id": "leftover-questions",
+      "render": {
+        "*": "{questions( ,)}"
+      }
+    },
+    {
+      "id": "lod",
+      "labels": [
+        "added_by_default"
+      ],
+      "render": {
+        "*": "{linked_data_from_website()}"
+      }
+    },
+    {
+      "id": "minimap",
+      "description": "Shows a small map with the feature. Added by default to every popup",
+      "render": {
+        "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+      }
+    },
+    {
+      "id": "last_edit",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+      "condition": {
+        "and": [
+          "_last_edit:contributor~*",
+          "_last_edit:changeset~*"
+        ]
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsTesting=true",
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_debug=yes",
+          "_csCount>=10"
+        ]
+      },
+      "render": {
+        "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+      }
+    },
+    {
+      "id": "favourite_status",
+      "render": {
+        "*": "{favourite_status()}"
+      }
+    },
+    {
+      "id": "qr_code",
+      "labels": [
+        "added_by_default"
+      ],
+      "classes": "flex items-center gap-x-2",
+      "render": {
+        "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+        "en": "{qr_code()}Scan this code to open this location on another device",
+        "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+        "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+      }
+    },
+    {
+      "id": "share",
+      "labels": [
+        "added_by_default"
+      ],
+      "metacondition": "_supports_sharing=yes",
+      "render": {
+        "de": "{share_link(,Standort teilen)}",
+        "en": "{share_link(,Share this location)}",
+        "nl": "{share_link(,Deel deze locatie)}"
+      }
+    },
+    {
+      "id": "all-tags",
+      "render": {
+        "*": "{all_tags()}"
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_tags=full",
+          "mapcomplete-show_debug=yes"
+        ]
+      }
+    }
+  ],
+  "units": [
+    {
+      "kerb:height": {
+        "quantity": "distance",
+        "canonical": "m",
+        "denominations": [
+          "cm"
+        ]
+      },
+      "width": {
+        "quantity": "distance",
+        "canonical": "m",
+        "denominations": [
+          "cm"
+        ]
+      }
+    }
+  ],
+  "titleIcons": [
+    {
+      "id": "wikipedialink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+      "condition": {
+        "or": [
+          "wikipedia~*",
+          "wikidata~*"
+        ]
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "wikipedia=",
+          "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "open_until",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "#": "Titleicon showing e.g. 'open until 17:00'",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{opening_hours_state()}",
+      "condition": {
+        "or": [
+          "opening_hours~*",
+          {
+            "or": [
+              {
+                "and": [
+                  "seasonal~.*winter.*",
+                  "_now:date~....-(12|01|02)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*spring.*",
+                  "_now:date~....-(03|04|05)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*summer.*",
+                  "_now:date~....-(06|07|08)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*autumn.*",
+                  "_now:date~....-(09|10|11)-.."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "phonelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": {
+        "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+        "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+        "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+        "_context": "layers:icons.tagRenderings.phonelink.render"
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:phone~*",
+          "then": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+          }
+        }
+      ],
+      "condition": {
+        "or": [
+          "phone~*",
+          "contact:phone~*"
+        ]
+      }
+    },
+    {
+      "id": "emaillink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:email~*",
+          "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:email~*",
+          "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        }
+      ],
+      "condition": {
+        "or": [
+          "email~*",
+          "contact:email~*",
+          "operator:email~*"
+        ]
+      }
+    },
+    {
+      "id": "websitelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "website~*",
+          "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:website~*",
+          "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "context:website~*",
+          "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "smokingicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=no",
+          "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=yes",
+          "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+        }
+      ]
+    },
+    {
+      "id": "dogicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "if": "dog=no",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+        },
+        {
+          "if": "dog=leashed",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+        },
+        {
+          "if": {
+            "or": [
+              "dog=yes",
+              "dog=unleashed"
+            ]
+          },
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+        }
+      ]
+    },
+    {
+      "id": "sharelink",
+      "labels": [
+        "defaults"
+      ],
+      "render": "{share_link()}",
+      "metacondition": "_supports_sharing=yes"
+    },
+    {
+      "id": "favourite_title_icon",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "*": "{favourite_icon()}"
+      },
+      "metacondition": "_loggedIn=true"
+    },
+    {
+      "id": "osmlink",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+        "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+        "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+        "_context": "layers:icons.tagRenderings.osmlink.render"
+      },
+      "mappings": [
+        {
+          "if": "id~.*/-.*",
+          "then": ""
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "_backend~*",
+          "then": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+          }
+        }
+      ],
+      "condition": "id~(node|way|relation)/[0-9]*"
+    },
+    {
+      "id": "direction",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "{direction_indicator()}"
+    },
+    {
+      "id": "rating",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{rating()}"
+    }
+  ],
+  "_layerIcon": [
+    {
+      "icon": "circle",
+      "color": "white"
+    },
+    {
+      "icon": "./assets/layers/entrance/entrance.svg"
+    }
+  ]
+}

@@ -1,0 +1,1398 @@
+{
+  "id": "bookcases",
+  "title": {
+    "en": "Public bookcases",
+    "nl": "Boekenruilkasten",
+    "de": "Öffentliche Bücherschränke",
+    "fr": "Microbibliothèques",
+    "ru": "Открытая карта книжных шкафов",
+    "ja": "オープン本棚マップ",
+    "zh_Hant": "開放書架地圖",
+    "it": "Mappa libera delle microbiblioteche",
+    "pt_BR": "Abrir Mapa de Estantes",
+    "nb_NO": "Kart over åpne bokhyller",
+    "hu": "Könyvespolctérkép",
+    "ca": "Llibreries públiques",
+    "es": "Estanterías publicas",
+    "pa_PK": "آزاد کتاب نقشہ",
+    "cs": "Veřejné knihovničky",
+    "eu": "Apalategi publikoak",
+    "pl": "Publiczne regały na książki",
+    "_context": "themes:bookcases.title"
+  },
+  "description": {
+    "en": "A public bookcase is a small streetside cabinet, box, old phone booth or some other objects where books are stored. Everyone can place or take a book. This map aims to collect all these bookcases.",
+    "nl": "Een boekenruilkast is een kastje waar iedereen een boek kan nemen of achterlaten.",
+    "de": "Bücherschränke sind alte Schaltschränke, Telefonzellen oder andere Einrichtungen zur Aufbewahrung von Büchern. Jeder kann Bücher abgeben oder mitnehmen. Die Karte soll helfen, alle Orte mit Bücherschränken zu sammeln.",
+    "fr": "Une microbibliothèque, également appelée boîte à livre, est un élément de mobilier urbain (étagère, armoire, etc.) dans lequel sont stockés des livres et autres objets en accès libre.",
+    "ru": "Общественный книжный шкаф - это небольшой уличный шкаф, коробка, старый телефонный аппарат или другие предметы, где хранятся книги. Каждый может положить или взять книгу. Цель этой карты - собрать все эти книжные шкафы. Вы можете обнаружить новые книжные шкафы поблизости и, имея бесплатный аккаунт OpenStreetMap, быстро добавить свои любимые книжные шкафы.",
+    "ja": "公共の本棚とは、本が保管されている小さな街角のキャビネット、箱、古い電話のトランク、その他の物のことです。誰でも本を置いたり持ったりすることができます。このマップは、すべての公共の本棚を収集することを目的としています。近くで新しい本棚を見つけることができ、無料のOpenStreetMapアカウントを使えば、お気に入りの本棚を簡単に追加できます。",
+    "zh_Hant": "公共書架是街邊箱子、盒子、舊的電話亭或是其他存放書本的物件，每一個人都能放置或拿取書本。這份地圖收集所有類型的書架，你可以探索你附近新的書架，同時也能用免費的開放街圖帳號來快速新增你最愛的書架。",
+    "it": "Una libreria pubblica è una piccola cabina a lato della strada, un locale, una vecchia cabina telefonica o qualche altro luogo in cui sono tenuti libri. Chiunque può lasciare o prendere libri. Scopo della mappa è individuarle. Se scopri nuove librerie nelle vicinanze, puoi facilmente aggiungerle con un account OpenStreetMap.",
+    "hu": "A nyilvános könyvespolc egy kis utcai szekrény, doboz, régi telefonfülke vagy más tárgy, ahol könyveket tárolnak. Bárki tehet rá vagy vihet el róla könyvet. Ez a térkép ezeket a könyvespolcokat kívánja összegyűjteni. Ha felfedezett egy új könyvespolcot a közelben, akkor egy ingyenes OpenStreetMap-fiókkal gyorsan fel is rajzolhatja a térképre.",
+    "es": "Una librería pública es un pequeño armario en la calle, una caja, una vieja cabina telefónica o algún otro objeto donde se guardan libros. Todo el mundo puede colocar o coger un libro. Este mapa pretende recoger todas estas librerías.",
+    "da": "Et offentligt bogskab er et lille skab, en kasse, en gammel telefonboks eller andre steder, hvor bøger opbevares. Alle kan lægge eller tage en bog. Dette kort har til formål at samle alle disse bogskabe. Du kan opdage nye bogkasser i nærheden og med en gratis OpenStreetMap-konto hurtigt tilføje dine yndlingsbogkasser.",
+    "ca": "Una llibreria pública és un xicotet armari al carrer, una caixa, una vella cabina telefònica o algun altre objecte on es guarden llibres. Tothom pot col·locar o agafar un llibre. Aquest mapa pretén recollir totes aquestes llibreries.",
+    "cs": "Veřejná knihovna je malá pouliční skříňka, krabice, stará telefonní budka nebo jiný předmět, ve kterém jsou uloženy knihy. Kdokoliv do ní může umístit, nebo si z ní vzít knihu. Cílem této mapy je shromáždit všechny tyto knihovny.",
+    "eu": "Kale-liburutegi publiko bat kale-armairu txiki bat da, kaxa, telefono-kabina zaharra edo liburuak gordetzeko beste objektu batzuk. Guztiek jar edo har dezakete liburu bat. Koaderno horiek guztiak biltzea da mapa honen helburua.",
+    "pl": "Publiczny regał na książki to mała przyuliczna szafka, pudełko, stara budka telefoniczna lub inne przedmioty, w których przechowywane są książki. Każdy może w nich zostawić lub zabrać książkę. Celem tej mapy jest zebranie wszystkich tych regałów.",
+    "_context": "themes:bookcases.description"
+  },
+  "icon": "./assets/themes/bookcases/bookcase.svg",
+  "layers": [
+    {
+      "id": "public_bookcase",
+      "name": {
+        "en": "Bookcases",
+        "nl": "Boekenruilkastjes",
+        "de": "Bücherschränke",
+        "fr": "Microbibliothèque",
+        "ru": "Книжные шкафы",
+        "it": "Microbiblioteche",
+        "hu": "Könyvespolcok",
+        "ca": "Bústies per llibres",
+        "cs": "Knihobudky"
+      },
+      "description": {
+        "en": "A streetside cabinet with books, accessible to anyone",
+        "nl": "Een straatkastje met boeken voor iedereen",
+        "de": "Ein Bücherschrank am Straßenrand mit Büchern, für jedermann zugänglich",
+        "fr": "Une armoire ou une boite contenant des livres en libre accès",
+        "it": "Una vetrinetta ai bordi della strada contenente libri, aperta al pubblico",
+        "ru": "Уличный шкаф с книгами, доступными для всех",
+        "hu": "Egy utcai szekrény könyvekkel, amelyet bárki használhat",
+        "cs": "Skříňka s knihami na ulici, která je přístupná komukoli"
+      },
+      "source": {
+        "osmTags": {
+          "and": [
+            "amenity=public_bookcase"
+          ]
+        }
+      },
+      "minzoom": 7,
+      "title": {
+        "render": {
+          "en": "Bookcase",
+          "nl": "Boekenruilkast",
+          "de": "Bücherschrank",
+          "fr": "Microbibliothèque",
+          "ru": "Книжный шкаф",
+          "it": "Microbiblioteca",
+          "hu": "Könyvespolc",
+          "ca": "Bústia per llibres",
+          "pa_PK": "کتاباں دی الماری",
+          "cs": "Knihobudka"
+        },
+        "mappings": [
+          {
+            "if": "name~*",
+            "then": {
+              "en": "Public bookcase <i>{name}</i>",
+              "nl": "Boekenruilkast <i>{name}</i>",
+              "de": "Öffentlicher Bücherschrank <i>{name}</i>",
+              "fr": "Microbibliothèque <i>{name}</i>",
+              "ru": "Общественный книжный шкаф <i>{name}</i>",
+              "it": "Microbiblioteca pubblica <i>{name}</i>",
+              "hu": "A nyilvános könyvespolc neve: <i>{name}</i>",
+              "ca": "Prestatgeria pública <i>{name}</i>",
+              "cs": "Veřejná knihobudka <i>{name}</i>"
+            }
+          }
+        ]
+      },
+      "pointRendering": [
+        {
+          "label": {
+            "mappings": [
+              {
+                "if": "name~*",
+                "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
+              }
+            ]
+          },
+          "location": [
+            "point",
+            "centroid"
+          ],
+          "marker": [
+            {
+              "icon": {
+                "render": "circle",
+                "id": "circle"
+              },
+              "color": "#ffffff"
+            },
+            {
+              "icon": {
+                "render": "./assets/themes/bookcases/bookcase.svg",
+                "id": "assetsthemesbookcasesbookcasesvg"
+              }
+            }
+          ],
+          "iconBadges": [
+            {
+              "if": "_favourite=yes",
+              "then": {
+                "render": "circle:white;heart:red",
+                "id": "circlewhiteheartred"
+              }
+            }
+          ]
+        }
+      ],
+      "lineRendering": [
+        {
+          "color": "#0000ff",
+          "width": "8"
+        }
+      ],
+      "presets": [
+        {
+          "title": {
+            "en": "a bookcase",
+            "nl": "een boekenruilkast",
+            "de": "einen Bücherschrank",
+            "fr": "une microbibliothèque",
+            "ru": "Книжный шкаф",
+            "it": "una microbiblioteca",
+            "hu": "Könyvespolc",
+            "ca": "una bústia per a llibres",
+            "cs": "knihobudka"
+          },
+          "tags": [
+            "amenity=public_bookcase"
+          ]
+        }
+      ],
+      "tagRenderings": [
+        {
+          "id": "just_created",
+          "labels": [
+            "added_by_default"
+          ],
+          "description": "This element shows a 'thank you' that the contributor has recently created this element",
+          "classes": "rounded-xl thanks",
+          "mappings": [
+            {
+              "if": "id~*",
+              "icon": "./assets/svg/party.svg",
+              "then": {
+                "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+                "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+                "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+                "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+                "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+                "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+              }
+            }
+          ],
+          "condition": {
+            "and": [
+              "_backend~*",
+              "_last_edit:passed_time<300",
+              {
+                "or": [
+                  "_version_number=",
+                  "_version_number=1"
+                ]
+              }
+            ]
+          },
+          "metacondition": {
+            "and": [
+              {
+                "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+                "or": [
+                  "_last_edit:contributor:uid:={_uid}",
+                  "_last_edit:contributor:uid="
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "images",
+          "description": "This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images",
+          "render": {
+            "*": "{image_carousel()}{image_upload()}{nearby_images():my-4}"
+          },
+          "classes": "my-4"
+        },
+        {
+          "render": {
+            "en": "The name of this bookcase is {name}",
+            "nl": "De naam van dit boekenruilkastje is {name}",
+            "de": "Der Name des Bücherschranks lautet {name}",
+            "fr": "Le nom de cette microbibliothèque est {name}",
+            "ru": "Название книжного шкафа — {name}",
+            "it": "Questa microbiblioteca si chiama {name}",
+            "hu": "Ennek a könyvespolcnak a neve: {name}",
+            "ca": "El nom d'aquesta prestatgeria és {name}",
+            "cs": "Název této knihobudky je {name}"
+          },
+          "question": {
+            "en": "What is the name of this public bookcase?",
+            "nl": "Wat is de naam van dit boekenruilkastje?",
+            "de": "Wie lautet der Name des Bücherschranks?",
+            "fr": "Quel est le nom de cette microbibliothèque ?",
+            "ru": "Как называется этот общественный книжный шкаф?",
+            "it": "Come si chiama questa microbiblioteca pubblica?",
+            "hu": "Mi a neve ennek a nyilvános könyvespolcnak?",
+            "ca": "Com es diu aquesta prestatgeria pública?",
+            "cs": "Jak se jmenuje tato knihobudka?"
+          },
+          "freeform": {
+            "key": "name",
+            "inline": true
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "noname=yes",
+                  "name="
+                ]
+              },
+              "then": {
+                "en": "This bookcase doesn't have a name",
+                "nl": "Dit boekenruilkastje heeft geen naam",
+                "de": "Der Bücherschrank hat keinen Namen",
+                "fr": "Cette microbibliothèque n'a pas de nom",
+                "ru": "У этого книжного шкафа нет названия",
+                "it": "Questa microbiblioteca non ha un nome proprio",
+                "hu": "Ennek a könyvespolcnak nincs neve",
+                "ca": "Aquesta prestatgeria no té un nom",
+                "cs": "Tato knihobudka nemá jméno"
+              }
+            }
+          ],
+          "id": "public_bookcase-name"
+        },
+        {
+          "render": {
+            "en": "{capacity} books fit in this bookcase",
+            "nl": "Er passen {capacity} boeken",
+            "de": "In den Bücherschrank passen ca. {capacity} Bücher",
+            "fr": "{capacity} livres peuvent entrer dans cette microbibliothèque",
+            "it": "Questa microbiblioteca può contenere fino a {capacity} libri",
+            "ru": "{capacity} книг помещается в этот книжный шкаф",
+            "hu": "Ezen a könyvespolcon {capacity} könyv fér el",
+            "ca": "Caben {capacity} llibres en aquesta prestatgeria",
+            "cs": "{capacity} knih se vejde do této knihobudky"
+          },
+          "question": {
+            "en": "How many books fit into this public bookcase?",
+            "nl": "Hoeveel boeken passen er in dit boekenruilkastje?",
+            "de": "Wie viele Bücher passen in den Bücherschrank?",
+            "fr": "Combien de livres peuvent entrer dans cette microbibliothèque ?",
+            "ru": "Сколько книг помещается в этом общественном книжном шкафу?",
+            "it": "Quanti libri può contenere questa microbiblioteca?",
+            "hu": "Hány könyv fér el ezen a nyilvános könyvespolcon?",
+            "ca": "Quants llibres caben en aquesta prestatgeria pública?",
+            "cs": "Kolik knih se vejde do této veřejné knihobudky?"
+          },
+          "freeform": {
+            "key": "capacity",
+            "type": "nat",
+            "inline": true
+          },
+          "id": "public_bookcase-capacity"
+        },
+        {
+          "id": "bookcase-booktypes",
+          "question": {
+            "en": "What kind of books can be found in this public bookcase?",
+            "nl": "Voor welke doelgroep zijn de meeste boeken in dit boekenruilkastje?",
+            "de": "Welche Bücher kann man im Bücherschrank finden?",
+            "fr": "Quel type de livres peut-on dans cette microbibliothèque ?",
+            "it": "Che tipo di libri si possono trovare in questa microbiblioteca?",
+            "ru": "Какие книги можно найти в этом общественном книжном шкафу?",
+            "hu": "Milyen fajta könyvek találhatók ezen a közösségi könyvespolcon?",
+            "ca": "Quins tipus de llibres pots trobar a aquesta prestatgeria pública?",
+            "cs": "Jaké knihy najdete v této veřejné knihobudce?"
+          },
+          "render": {
+            "nl": "Deze plaats serveert vooral {books}",
+            "en": "This place mostly serves {books}",
+            "de": "An diesem Ort gibt es hauptsächlich {books}",
+            "cs": "Toto místo nabízí hlavně {books}"
+          },
+          "freeform": {
+            "key": "books",
+            "addExtraTags": [
+              "fixme=Freeform tag `books` used, to be doublechecked"
+            ],
+            "inline": true
+          },
+          "multiAnswer": true,
+          "mappings": [
+            {
+              "if": "books=children",
+              "then": {
+                "en": "Mostly children books",
+                "nl": "Voornamelijk kinderboeken",
+                "de": "Vorwiegend Kinderbücher",
+                "fr": "Livres pour enfants",
+                "ru": "В основном детские книги",
+                "it": "Principalmente libri per l'infanzia",
+                "hu": "Többnyire gyermekkönyvek",
+                "es": "Mayoritariamente libros infantiles",
+                "ca": "Majoritàriament llibres infantils",
+                "cs": "Převážně dětské knihy"
+              }
+            },
+            {
+              "if": "books=adults",
+              "then": {
+                "en": "Mostly books for adults",
+                "nl": "Voornamelijk boeken voor volwassenen",
+                "de": "Vorwiegend Bücher für Erwachsene",
+                "fr": "Livres pour les adultes",
+                "ru": "В основном книги для взрослых",
+                "it": "Principalmente libri per persone in età adulta",
+                "hu": "Többnyire felnőtteknek szóló könyvek",
+                "es": "Mayoritariamente libros para adultos",
+                "ca": "Majoritàriament llibres per a adults",
+                "cs": "Převážně knihy pro dospělé"
+              }
+            }
+          ]
+        },
+        {
+          "id": "bookcase-is-indoors",
+          "question": {
+            "en": "Is this bookcase located outdoors?",
+            "nl": "Staat dit boekenruilkastje binnen of buiten?",
+            "de": "Befindet sich der Bücherschrank im Freien?",
+            "fr": "Cette microbiliothèque est-elle en extérieur ?",
+            "it": "Questa microbiblioteca si trova all'aperto?",
+            "hu": "A szabadban van-e ez a könyvespolc?",
+            "ca": "Aquesta prestatgeria es troba a l'exterior?",
+            "cs": "Je tato knihobudka umístěna venku?"
+          },
+          "mappings": [
+            {
+              "then": {
+                "en": "This bookcase is located indoors",
+                "nl": "Dit boekenruilkastje staat binnen",
+                "de": "Der Bücherschrank befindet sich im Innenbereich",
+                "fr": "Cette microbibliothèque est en intérieur",
+                "it": "Questa microbiblioteca si trova al chiuso",
+                "hu": "Ez a könyvespolc beltérben található",
+                "ca": "Aquesta prestatgeria es troba a l'interior",
+                "cs": "Tato knihobudka je umístěna v interiéru"
+              },
+              "if": "indoor=yes"
+            },
+            {
+              "then": {
+                "en": "This bookcase is located outdoors",
+                "nl": "Dit boekenruilkastje staat buiten",
+                "de": "Dieser Bücherschrank befindet sich im Freien",
+                "fr": "Cette microbibliothèque est en extérieur",
+                "it": "Questa microbiblioteca si trova all'aperto",
+                "hu": "Ez a könyvespolc a szabadban van",
+                "ca": "Aquesta prestatgeria es troba a l'exterior",
+                "cs": "Tato knihobudka se nachází venku"
+              },
+              "if": "indoor=no"
+            },
+            {
+              "then": {
+                "en": "This bookcase is located outdoors",
+                "nl": "Dit boekenruilkastje staat buiten",
+                "de": "Der Bücherschrank befindet sich im Freien",
+                "fr": "Cette microbibliothèque est en extérieur",
+                "it": "Questa microbiblioteca si trova all'aperto",
+                "hu": "Ez a könyvszekrény a szabadban van",
+                "ca": "La prestatgeria està ubicada a l'exterior",
+                "cs": "Tato knihobudka se nachází venku"
+              },
+              "if": "indoor=",
+              "hideInAnswer": true
+            }
+          ]
+        },
+        {
+          "id": "bookcase-is-accessible",
+          "question": {
+            "en": "Is this public bookcase freely accessible?",
+            "nl": "Is dit boekenruilkastje publiek toegankelijk?",
+            "de": "Ist dieser öffentliche Bücherschrank frei zugänglich?",
+            "fr": "Cette microbibliothèque est-elle librement accèssible ?",
+            "it": "Questa microbiblioteca è ad accesso libero?",
+            "ru": "Имеется ли свободный доступ к этому общественному книжному шкафу?",
+            "hu": "Szabadon hozzáférhető-e ez a közösségi könyvespolc?",
+            "ca": "Aquesta prestatgeria pública és de lliure accés?",
+            "cs": "Je tato veřejná knihobudka volně přístupná?"
+          },
+          "condition": "indoor=yes",
+          "mappings": [
+            {
+              "then": {
+                "en": "Publicly accessible",
+                "nl": "Publiek toegankelijk",
+                "de": "Öffentlich zugänglich",
+                "fr": "Accèssible au public",
+                "it": "È ad accesso libero",
+                "ru": "Свободный доступ",
+                "hu": "Nyilvánosan használható",
+                "es": "Accesible públicamente",
+                "ca": "Accessible al públic",
+                "cs": "Veřejně přístupné"
+              },
+              "if": "access=yes"
+            },
+            {
+              "then": {
+                "en": "Only accessible to customers",
+                "nl": "Enkel toegankelijk voor klanten",
+                "de": "Nur für Kunden zugänglich",
+                "fr": "Accèssible aux clients",
+                "it": "L'accesso è riservato ai clienti",
+                "hu": "Csak ügyfelek használhatják",
+                "es": "Solo accesible a clientes",
+                "ca": "Només accessible per als clients",
+                "cs": "Přístupné pouze zákazníkům"
+              },
+              "if": "access=customers"
+            }
+          ]
+        },
+        {
+          "question": {
+            "en": "Who maintains this public bookcase?",
+            "nl": "Wie is verantwoordelijk voor dit boekenruilkastje?",
+            "de": "Wer betreibt den Bücherschrank?",
+            "fr": "Qui entretien cette microbibliothèque ?",
+            "it": "Chi mantiene questa microbiblioteca?",
+            "hu": "Ki tartja fenn ezt a nyilvános könyvespolcot?",
+            "ca": "Qui gestiona aquesta prestatgeria pública?",
+            "cs": "Kdo tuto veřejnou knihobudku spravuje?"
+          },
+          "render": {
+            "en": "Operated by {operator}",
+            "nl": "Onderhouden door {operator}",
+            "de": "Betrieben von {operator}",
+            "fr": "Entretenue par {operator}",
+            "it": "È gestita da {operator}",
+            "hu": "Üzemeltető: {operator}",
+            "ca": "Gestionant per {operator}",
+            "cs": "Provozuje {operator}"
+          },
+          "freeform": {
+            "type": "string",
+            "key": "operator",
+            "inline": true
+          },
+          "id": "public_bookcase-operator"
+        },
+        {
+          "question": {
+            "en": "Is this public bookcase part of a bigger network?",
+            "nl": "Is dit boekenruilkastje deel van een netwerk?",
+            "de": "Gehört der Bücherschrank zu einem Netzwerk?",
+            "fr": "Cette microbibliothèque fait-elle partie d'un réseau/groupe ?",
+            "it": "Questa microbiblioteca fa parte di una rete?",
+            "hu": "Része-e egy nagyobb hálózatnak ez a nyilvános könyvespolc?",
+            "ca": "Aquesta prestatgeria pública forma part d'una xarxa més gran?",
+            "cs": "Je tato veřejná knihobudka součástí větší sítě?"
+          },
+          "render": {
+            "en": "This public bookcase is part of {brand}",
+            "nl": "Dit boekenruilkastje is deel van het netwerk {brand}",
+            "de": "Dieser Bücherschrank ist Teil von {brand}",
+            "fr": "Cette microbibliothèque fait partie du groupe {brand}",
+            "it": "Questa microbiblioteca fa parte di {brand}",
+            "hu": "Ez a nyilvános könyvespolc a(z) {brand} része",
+            "ca": "Aquesta prestatgeria pública forma part de {brand}",
+            "cs": "Tato veřejná knihobudka je součástí {brand}"
+          },
+          "condition": "ref=",
+          "freeform": {
+            "key": "brand",
+            "inline": true
+          },
+          "mappings": [
+            {
+              "then": {
+                "en": "Part of the network 'Little Free Library'",
+                "nl": "Deel van het netwerk 'Little Free Library'",
+                "de": "Der Bücherschrank gehört zum Netzwerk 'Little Free Library'",
+                "fr": "Fait partie du réseau Little Free Library",
+                "it": "Fa parte della rete 'Little Free Library'",
+                "hu": "A „Little Free Library” hálózat része",
+                "es": "Parte de la red 'Little Free Library'",
+                "pl": "Część sieci \"Little Free Library\"",
+                "ca": "Part de la xarxa 'Little Free Library'",
+                "cs": "Součást sítě 'Little Free Library'"
+              },
+              "if": {
+                "and": [
+                  "brand=Little Free Library",
+                  "nobrand="
+                ]
+              },
+              "addExtraTags": [
+                "brand:wikidata=Q6650101"
+              ]
+            },
+            {
+              "if": {
+                "and": [
+                  "nobrand=yes",
+                  "brand="
+                ]
+              },
+              "then": {
+                "en": "This public bookcase is not part of a bigger network",
+                "nl": "Dit boekenruilkastje maakt geen deel uit van een netwerk",
+                "de": "Der Bücherschrank gehört zu keinem Netzwerk",
+                "fr": "Cette microbibliothèque ne fait pas partie d'un réseau/groupe",
+                "it": "Questa microbiblioteca non fa parte di una rete",
+                "hu": "Ez a nyilvános könyvespolc nem része egy nagyobb hálózatnak",
+                "ca": "Aquesta prestatgeria pública no és part d'una xarxa més gran",
+                "cs": "Tato veřejná knihobudka není součástí větší sítě"
+              }
+            }
+          ],
+          "id": "public_bookcase-brand"
+        },
+        {
+          "render": {
+            "en": "The reference number of this public bookcase within {brand} is {ref}",
+            "nl": "Het referentienummer binnen {brand} is {ref}",
+            "de": "Die Referenznummer dieses öffentlichen Bücherschranks innerhalb {brand} lautet {ref}",
+            "fr": "Cette microbibliothèque du réseau {brand} possède le numéro {ref}",
+            "it": "Il numero identificativo di questa microbiblioteca nella rete {brand} è {ref}",
+            "hu": "A(z) {brand} márkanéven belül ennek a nyilvános könyvespolcnak az azonosító száma: {ref}",
+            "cs": "Referenční číslo této veřejné knihobudky v rámci {brand} je {ref}"
+          },
+          "question": {
+            "en": "What is the reference number of this public bookcase?",
+            "nl": "Wat is het referentienummer van dit boekenruilkastje?",
+            "de": "Wie lautet die Referenznummer dieses öffentlichen Bücherschranks?",
+            "fr": "Quelle est le numéro de référence de cette microbibliothèque ?",
+            "it": "Qual è il numero identificativo di questa microbiblioteca?",
+            "hu": "Mi az azonosító száma ennek a nyilvános könyvespolcnak?",
+            "ca": "Quin és el número de referència d'aquesta prestatgeria pública?",
+            "cs": "Jaké je referenční číslo této veřejné knihobudky?"
+          },
+          "condition": "brand~*",
+          "freeform": {
+            "key": "ref",
+            "inline": true
+          },
+          "mappings": [
+            {
+              "then": {
+                "en": "This bookcase is not part of a bigger network",
+                "nl": "Dit boekenruilkastje maakt geen deel uit van een netwerk",
+                "de": "Dieser Bücherschrank ist nicht Teil eines größeren Netzwerks",
+                "fr": "Cette microbibliothèque ne fait pas partie d'un réseau/groupe",
+                "it": "Questa microbiblioteca non fa parte di una rete",
+                "hu": "Ez a könyvespolc nem része egy nagyobb hálózatnak",
+                "ca": "Aquesta prestatgeria no forma part d'una xarxa més gran",
+                "cs": "Tato knihobudka není součástí větší sítě"
+              },
+              "if": {
+                "and": [
+                  "nobrand=yes",
+                  "brand=",
+                  "ref="
+                ]
+              }
+            }
+          ],
+          "id": "public_bookcase-ref"
+        },
+        {
+          "question": {
+            "en": "When was this public bookcase installed?",
+            "nl": "Op welke dag werd dit boekenruilkastje geinstalleerd?",
+            "de": "Wann wurde der Bücherschrank aufgebaut?",
+            "fr": "Quand a été installée cette microbibliothèque ?",
+            "it": "Quando è stata inaugurata questa microbiblioteca?",
+            "ru": "Когда был установлен этот общественный книжный шкаф?",
+            "hu": "Mikor állították fel ezt a nyilvános könyvespolcot?",
+            "ca": "Quan es va instal·lar aquesta prestatgeria pública?",
+            "cs": "Kdy byla tato veřejná knihobudka instalována?"
+          },
+          "render": {
+            "en": "Installed on {start_date}",
+            "nl": "Geplaatst op {start_date}",
+            "de": "Installiert am {start_date}",
+            "fr": "Installée le {start_date}",
+            "it": "È stata inaugurata il {start_date}",
+            "ru": "Установлен {start_date}",
+            "hu": "Telepítés dátuma: {start_date}",
+            "ca": "Instal·lat el dia {start_date}",
+            "cs": "Instalováno dne {start_date}"
+          },
+          "freeform": {
+            "key": "start_date",
+            "type": "date",
+            "inline": true
+          },
+          "id": "public_bookcase-start_date"
+        },
+        {
+          "render": {
+            "ca": "{link(Més informació al web,&LBRACEwebsite&RBRACE,,,)}",
+            "cs": "{link(Více informací na webových stránkách,&LBRACEwebsite&RBRACE,,,)}",
+            "de": "{link(Weitere Informationen auf der Webseite,&LBRACEwebsite&RBRACE,,,)}",
+            "en": "{link(More info on the website,&LBRACEwebsite&RBRACE,,,)}",
+            "fr": "{link(Plus d'infos sur le site web,&LBRACEwebsite&RBRACE,,,)}",
+            "hu": "{link(További információ ezen a weboldalon,&LBRACEwebsite&RBRACE,,,)}",
+            "it": "{link(Maggiori informazioni sul sito web,&LBRACEwebsite&RBRACE,,,)}",
+            "nl": "{link(Meer info op de website,&LBRACEwebsite&RBRACE,,,)}",
+            "ru": "{link(Более подробная информация на сайте,&LBRACEwebsite&RBRACE,,,)}"
+          },
+          "question": {
+            "en": "Is there a website with more information about this public bookcase?",
+            "nl": "Is er een website over dit boekenruilkastje?",
+            "de": "Auf welcher Webseite findet man Informationen zu diesem Bücherschrank?",
+            "fr": "Y a-t-il un site web avec plus d'informations sur cette microbibliothèque ?",
+            "it": "C'è un sito web con maggiori informazioni su questa microbiblioteca?",
+            "ru": "Есть ли веб-сайт с более подробной информацией об этом общественном книжном шкафе?",
+            "hu": "Van-e olyan weboldal, ahol további információ található erről a nyilvános könyvespolcról?",
+            "ca": "Hi ha algun lloc web amb més informació sobre aquesta prestatgeria pública?",
+            "cs": "Existuje webová stránka s dalšími informacemi o této veřejné knihobudce?"
+          },
+          "freeform": {
+            "key": "website",
+            "type": "url",
+            "inline": true
+          },
+          "id": "public_bookcase-website"
+        },
+        {
+          "id": "leftover-questions",
+          "render": {
+            "*": "{questions( ,)}"
+          }
+        },
+        {
+          "id": "lod",
+          "labels": [
+            "added_by_default"
+          ],
+          "render": {
+            "*": "{linked_data_from_website()}"
+          }
+        },
+        {
+          "id": "minimap",
+          "description": "Shows a small map with the feature. Added by default to every popup",
+          "render": {
+            "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+          }
+        },
+        {
+          "id": "move-button",
+          "render": {
+            "*": "{move_button()}"
+          }
+        },
+        {
+          "id": "delete-button",
+          "render": {
+            "*": "{delete_button()}"
+          }
+        },
+        {
+          "id": "last_edit",
+          "labels": [
+            "added_by_default"
+          ],
+          "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+          "condition": {
+            "and": [
+              "_last_edit:contributor~*",
+              "_last_edit:changeset~*"
+            ]
+          },
+          "metacondition": {
+            "or": [
+              "__featureSwitchIsTesting=true",
+              "__featureSwitchIsDebugging=true",
+              "mapcomplete-show_debug=yes",
+              "_csCount>=10"
+            ]
+          },
+          "render": {
+            "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+          }
+        },
+        {
+          "id": "favourite_status",
+          "render": {
+            "*": "{favourite_status()}"
+          }
+        },
+        {
+          "id": "qr_code",
+          "labels": [
+            "added_by_default"
+          ],
+          "classes": "flex items-center gap-x-2",
+          "render": {
+            "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+            "en": "{qr_code()}Scan this code to open this location on another device",
+            "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+            "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+          }
+        },
+        {
+          "id": "share",
+          "labels": [
+            "added_by_default"
+          ],
+          "metacondition": "_supports_sharing=yes",
+          "render": {
+            "de": "{share_link(,Standort teilen)}",
+            "en": "{share_link(,Share this location)}",
+            "nl": "{share_link(,Deel deze locatie)}"
+          }
+        },
+        {
+          "id": "all-tags",
+          "render": {
+            "*": "{all_tags()}"
+          },
+          "metacondition": {
+            "or": [
+              "__featureSwitchIsDebugging=true",
+              "mapcomplete-show_tags=full",
+              "mapcomplete-show_debug=yes"
+            ]
+          }
+        }
+      ],
+      "filter": [
+        {
+          "id": "kid-books",
+          "options": [
+            {
+              "question": {
+                "en": "Has children books",
+                "nl": "Kinderboeken aanwezig",
+                "de": "Hat Kinderbücher",
+                "ca": "Té llibres infantils",
+                "cs": "Má dětské knihy"
+              },
+              "osmTags": "books~i~.*children.*"
+            }
+          ]
+        },
+        {
+          "id": "adult-books",
+          "options": [
+            {
+              "question": {
+                "en": "Has books for adults",
+                "nl": "Boeken voor volwassenen aanwezig",
+                "de": "Hat Bücher für Erwachsene",
+                "ca": "Té llibres per a adults",
+                "cs": "Má knihy pro dospělé"
+              },
+              "osmTags": "books~i~.*adults.*"
+            }
+          ]
+        },
+        {
+          "id": "inside",
+          "options": [
+            {
+              "question": {
+                "nl": "Binnen of buiten",
+                "en": "Indoor or outdoor",
+                "de": "Innen oder Außen",
+                "hu": "Beltéri vagy kültéri",
+                "es": "Interior o exterior",
+                "ca": "Interior o exterior",
+                "cs": "Vnitřní nebo venkovní"
+              }
+            },
+            {
+              "question": {
+                "en": "Located indoors",
+                "nl": "Bevindt zich binnen",
+                "de": "Befindet sich im Innenbereich",
+                "ca": "Situat a l'interior",
+                "cs": "Nachází se v interiéru"
+              },
+              "osmTags": "indoor=yes"
+            },
+            {
+              "question": {
+                "nl": "Bevindt zich buiten",
+                "en": "Located outdoors",
+                "de": "Befindet sich im Freien",
+                "ca": "Situat a l'exterior",
+                "cs": "Nachází se venku"
+              },
+              "osmTags": {
+                "or": [
+                  "indoor=no",
+                  "indoor="
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "has_image",
+          "options": [
+            {
+              "question": {
+                "en": "With and without images",
+                "nl": "Met en zonder afbeelding",
+                "de": "Mit und ohne Bild",
+                "pl": "Z oraz bez zdjęć",
+                "ca": "Amb i sense imatges",
+                "cs": "S obrázky i bez nich"
+              }
+            },
+            {
+              "question": {
+                "en": "Has at least one image",
+                "de": "Hat mindestens ein Bild",
+                "nl": "Heeft minstens één afbeelding",
+                "pl": "Ma co najmniej jedno zdjęcie",
+                "ca": "Té com a mínim una imatge",
+                "cs": "Má alespoň jeden obrázek"
+              },
+              "osmTags": {
+                "or": [
+                  "image~*",
+                  "image:0~*",
+                  "image:1~*",
+                  "image:2~*",
+                  "image:3~*",
+                  "mapillary~*"
+                ]
+              }
+            },
+            {
+              "question": {
+                "en": "Probably does not have an image",
+                "de": "Hat wahrscheinlich kein Bild",
+                "nl": "Heeft waarschijnlijk geen afbeelding",
+                "pl": "Prawdopodobnie nie ma zdjęcia",
+                "ca": "Probablement no té una imatge",
+                "cs": "Pravděpodobně nemá obrázek"
+              },
+              "osmTags": {
+                "and": [
+                  "image=",
+                  "image:0=",
+                  "image:1=",
+                  "image:2=",
+                  "image:3=",
+                  "mapillary="
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "deletion": {
+        "softDeletionTags": {
+          "and": [
+            "disused:amenity=public_bookcase",
+            "amenity="
+          ]
+        },
+        "neededChangesets": 5
+      },
+      "allowMove": true,
+      "titleIcons": [
+        {
+          "id": "wikipedialink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+          "condition": {
+            "or": [
+              "wikipedia~*",
+              "wikidata~*"
+            ]
+          },
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "wikipedia=",
+              "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+            }
+          ]
+        },
+        {
+          "id": "open_until",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "#": "Titleicon showing e.g. 'open until 17:00'",
+          "icon": {
+            "class": "w-20 mx-1 flex items-center"
+          },
+          "render": "{opening_hours_state()}",
+          "condition": {
+            "or": [
+              "opening_hours~*",
+              {
+                "or": [
+                  {
+                    "and": [
+                      "seasonal~.*winter.*",
+                      "_now:date~....-(12|01|02)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*spring.*",
+                      "_now:date~....-(03|04|05)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*summer.*",
+                      "_now:date~....-(06|07|08)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*autumn.*",
+                      "_now:date~....-(09|10|11)-.."
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "phonelink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.render"
+          },
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "contact:phone~*",
+              "then": {
+                "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+                "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+                "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+                "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+              }
+            }
+          ],
+          "condition": {
+            "or": [
+              "phone~*",
+              "contact:phone~*"
+            ]
+          }
+        },
+        {
+          "id": "emaillink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "contact:email~*",
+              "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "operator:email~*",
+              "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+            }
+          ],
+          "condition": {
+            "or": [
+              "email~*",
+              "contact:email~*",
+              "operator:email~*"
+            ]
+          }
+        },
+        {
+          "id": "websitelink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "website~*",
+              "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "operator:website~*",
+              "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "context:website~*",
+              "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            }
+          ]
+        },
+        {
+          "id": "smokingicon",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "smoking=no",
+              "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "smoking=yes",
+              "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+            }
+          ]
+        },
+        {
+          "id": "dogicon",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "if": "dog=no",
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+            },
+            {
+              "if": "dog=leashed",
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+            },
+            {
+              "if": {
+                "or": [
+                  "dog=yes",
+                  "dog=unleashed"
+                ]
+              },
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+            }
+          ]
+        },
+        {
+          "id": "sharelink",
+          "labels": [
+            "defaults"
+          ],
+          "render": "{share_link()}",
+          "metacondition": "_supports_sharing=yes"
+        },
+        {
+          "id": "favourite_title_icon",
+          "labels": [
+            "defaults"
+          ],
+          "render": {
+            "*": "{favourite_icon()}"
+          },
+          "metacondition": "_loggedIn=true"
+        },
+        {
+          "id": "osmlink",
+          "labels": [
+            "defaults"
+          ],
+          "render": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.render"
+          },
+          "mappings": [
+            {
+              "if": "id~.*/-.*",
+              "then": ""
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "_backend~*",
+              "then": {
+                "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+                "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+                "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+                "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+              }
+            }
+          ],
+          "condition": "id~(node|way|relation)/[0-9]*"
+        },
+        {
+          "id": "direction",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "{direction_indicator()}"
+        },
+        {
+          "id": "rating",
+          "icon": {
+            "class": "w-20 mx-1 flex items-center"
+          },
+          "render": "{rating()}"
+        }
+      ],
+      "_layerIcon": [
+        {
+          "icon": "circle",
+          "color": "#ffffff"
+        },
+        {
+          "icon": "./assets/themes/bookcases/bookcase.svg"
+        }
+      ]
+    },
+    {
+      "id": "note_import_public_bookcase",
+      "description": {
+        "ca": "Una capa que importa entrades per a Bústia per llibres",
+        "cs": "Vrstva, která importuje položky pro Knihobudka",
+        "da": "Et lag som importerer poster for Bookcase",
+        "de": "Eine Ebene, die Einträge für Bücherschrank importiert",
+        "en": "A layer which imports entries for Bookcase",
+        "es": "Una capa que importar entradas para Bookcase",
+        "nl": "Deze laag toont kaart-nota's die wijzen op een Boekenruilkast",
+        "pl": "Warstwa importująca wpisy dla Bookcase",
+        "zh_Hant": "能夠為 Bookcase 匯入項目的圖層",
+        "_context": "core:importLayer.description"
+      },
+      "source": {
+        "osmTags": {
+          "and": [
+            "id~[0-9]+",
+            "comment_url~.*notes/[0-9]*/comment.json"
+          ]
+        },
+        "geoJson": "https://api.openstreetmap.org/api/0.6/notes.json?limit=10000&closed=0&bbox={x_min},{y_min},{x_max},{y_max}",
+        "geoJsonZoomLevel": 10
+      },
+      "passAllFeatures": true,
+      "minzoom": 5,
+      "title": {
+        "render": {
+          "ca": "Pot ser que hi hagi una bústia per a llibres aquí",
+          "cs": "Zde by mohl být knihobudka",
+          "da": "Mulig a bookcase",
+          "de": "Möglicherweise gibt es hier einen Bücherschrank",
+          "en": "There might be a bookcase here",
+          "es": "Puede haber a bookcase aquí",
+          "fi": "Tässä on ehkä a bookcase",
+          "nb_NO": "Det kan være a bookcase her",
+          "nl": "Is hier een boekenruilkast?",
+          "pl": "Tutaj może znajdować się a bookcase",
+          "zh_Hant": "這裡可能有 a bookcase",
+          "_context": "core:importLayer.popupTitle"
+        }
+      },
+      "calculatedTags": [
+        "_first_comment=get(feat)('comments')[0].text.toLowerCase()",
+        "_trigger_index=(() => {const lines = feat.properties['_first_comment'].split('\\n'); const matchesMapCompleteURL = lines.map(l => l.match(\".*https://mapcomplete.\\(org|osm.be\\)/\\([a-zA-Z_-]+\\)\\(.html\\)?.*#import\")); const matchedIndexes = matchesMapCompleteURL.map((doesMatch, i) => [doesMatch !== null, i]).filter(v => v[0]).map(v => v[1]); return matchedIndexes[0] })()",
+        "_comments_count=get(feat)('comments').length",
+        "_intro=(() => {const lines = get(feat)('comments')[0].text.split('\\n'); lines.splice(get(feat)('_trigger_index')-1, lines.length); return lines.filter(l => l !== '').join('<br/>');})()",
+        "_tags=(() => {let lines = get(feat)('comments')[0].text.split('\\n').map(l => l.trim()); lines.splice(0, get(feat)('_trigger_index') + 1); lines = lines.filter(l => l != ''); return lines.join(';');})()"
+      ],
+      "isShown": {
+        "and": [
+          "_trigger_index~*",
+          {
+            "or": [
+              {
+                "and": [
+                  "_tags~(^|.*;)amenity=public_bookcase($|;.*)"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "titleIcons": [
+        {
+          "render": "<a href='https://openstreetmap.org/note/{id}' target='_blank'><img src='./assets/svg/osm-logo-us.svg'></a>"
+        }
+      ],
+      "tagRenderings": [
+        {
+          "id": "Intro",
+          "render": "{_intro}"
+        },
+        {
+          "id": "conversation",
+          "render": "{visualize_note_comments(comments,1)}",
+          "condition": "_comments_count>1"
+        },
+        {
+          "id": "import",
+          "render": {
+            "ca": "{import_button(public_bookcase, _tags, he trobat un una bústia per a llibres aquí; afegeix-lo al mapa,./assets/svg/addSmall.svg,,,id)}",
+            "cs": "{import_button(public_bookcase, _tags, Našel jsem knihobudka zde - přidejte ji do mapy,./assets/svg/addSmall.svg,,,id)}",
+            "da": "{import_button(public_bookcase, _tags, Jeg har fundet en a bookcase her - tilføj den til kortet,./assets/svg/addSmall.svg,,,id)}",
+            "de": "{import_button(public_bookcase, _tags, Ich habe hier ein(en) einen Bücherschrank gefunden - Zur Karte hinzufügen,./assets/svg/addSmall.svg,,,id)}",
+            "en": "{import_button(public_bookcase, _tags, I have found a a bookcase here - add it to the map,./assets/svg/addSmall.svg,,,id)}",
+            "es": "{import_button(public_bookcase,_tags, He encontrado un(a) a bookcase aquí - añádelo al mapa,./assets/svg/addSmall.svg,,,id)}",
+            "nl": "{import_button(public_bookcase, _tags, Ik heb hier een een boekenruilkast gevonden - voeg deze toe aan de kaart...,./assets/svg/addSmall.svg,,,id)}",
+            "pl": "{import_button(public_bookcase, _tags, odnalazłem tutaj a bookcase - dodaj go do mapy,./assets/svg/addSmall.svg,,,id)}",
+            "zh_Hant": "{import_button(public_bookcase, _tags, 我在這邊發現 a bookcase - 新增到地圖,./assets/svg/addSmall.svg,,,id)}",
+            "_context": "core:importLayer.importButton"
+          },
+          "condition": "closed_at="
+        },
+        {
+          "id": "close_note_",
+          "render": {
+            "ca": "{close_note(No he pogut trobar una bústia per a llibres: esborra-ho, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "cs": "{close_note(Nepodařilo se mi najít knihobudka - odstraňte jej, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "da": "{close_note(Jeg kunne ikke finde a bookcase - fjern det, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "de": "{close_note(Ich konnte einen Bücherschrank nicht finden - entferne es, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "en": "{close_note(I could not find a bookcase - remove it, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "es": "{close_note(No he podido encontrar a bookcase - eliminarlo, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "nl": "{close_note(Ik kon hier geen een boekenruilkast vinden - verwijder deze van de kaart, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "pl": "{close_note(Nie mogłem odnaleźć a bookcase – usuń go, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "zh_Hant": "{close_note(我無法找到 a bookcase - 移除吧, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "_context": "core:importLayer.notFound"
+          },
+          "condition": "closed_at="
+        },
+        {
+          "id": "close_note_mapped",
+          "render": {
+            "ca": "{close_note(Ja hi ha un una bústia per a llibres al mapa - aquest punt és un duplicat, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "cs": "{close_note(Na mapě se již nachází knihobudka - tento bod je duplicitní, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "da": "{close_note(Der er allerede en anden a bookcase på kortet - dette punkt er en dublet, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "de": "{close_note(Es gibt bereits einen einen Bücherschrank auf der Karte - dieser Punkt ist ein Duplikat, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "en": "{close_note(There already is a bookcase on the map - this point is a duplicate, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "es": "{close_note(a bookcase ya está en el mapa - este punto es un duplicado, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "nl": "{close_note(Er staat hier reeds een boekenruilkast op de kaart; dit punt is een duplicaat. Verwijder deze van de kaart, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "pl": "{close_note(Na mapie znajduje się już a bookcase - ten punkt jest duplikatem, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "zh_Hant": "{close_note(a bookcase 已經在地圖上了 - 這個點重覆了, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "_context": "core:importLayer.alreadyMapped"
+          },
+          "condition": "closed_at="
+        },
+        {
+          "id": "handled",
+          "render": {
+            "ca": "<div class=\"thanks\">Aquesta funció s'ha gestionat. Gràcies pel teu esforç.</div>",
+            "cs": "<div class='thanks'>Tato funkce byla zpracována! Děkujeme za vaši snahu</div>",
+            "da": "<div class=\"thanks\">Dette element er blevet håndteret! Tak for din indsats</div>",
+            "de": "<div class=\"thanks\">Dieses Objekt wurde verarbeitet! Vielen Dank für Ihre Bemühungen</div>",
+            "en": "<div class='thanks'>This feature has been handled! Thanks for your effort</div>",
+            "nb_NO": "<div class='thanks'>Denne funksjonen har blitt håndtert. Takk for din innsats.</div>",
+            "nl": "<div class='thanks'>Dit object is afgehandeld. Bedankt om mee te helpen!</div>",
+            "pl": "<div class='thanks'>Ta funkcja została obsłużona! Dziękujemy za Twój wysiłek</div>",
+            "zh_Hant": "<div class='thanks'>這個圖徵已經處理了！謝謝你的辛勞</div>",
+            "_context": "core:importLayer.importHandled"
+          },
+          "condition": "closed_at~*"
+        },
+        {
+          "id": "comment",
+          "render": "{add_note_comment()}"
+        },
+        {
+          "id": "add_image",
+          "render": "{add_image_to_note()}"
+        },
+        {
+          "id": "nearby_images",
+          "render": {
+            "ca": "<h3>Imatges properes</h3>Les imatges següents són imatges geoetiquetades properes de diversos serveis en línia. Us poden ajudar a resoldre aquesta nota.{nearby_images(open)}",
+            "cs": "<h3>Obrázky z okolí</h3>Následující obrázky jsou geograficky označené obrázky z různých online služeb. Mohly by vám pomoci při řešení této poznámky.{nearby_images(open)}",
+            "da": "<h3>Billeder i nærheden</h3>De følgende billeder er geotaggede billeder i nærheden fra forskellige onlinetjenester. De kan måske hjælpe dig med at løse denne note.{nearby_images(open)}",
+            "de": "<h3>Bilder in der Nähe</h3>Die folgenden Bilder sind mit Geotags versehene Bilder aus verschiedenen Online-Diensten in der Nähe. Sie können helfen, diesen Hinweis zu lösen.{nearby_images(open)}",
+            "en": "<h3>Nearby pictures</h3>The following pictures are nearby geotagged pictures from various online services. They might help you to resolve this note.{nearby_images(open)}",
+            "es": "<h3>Imágenes cercanas</h3> Las siguientes imágenes son imágenes geoetiquetadas cerca de varios servicios en línea. Pueden ayudarte a resolver esta nota. {nearby_images(open)}",
+            "nl": "<h3>Afbeeldingen in de buurt</h3>De volgende afbeeldingen zijn in de buurt gemaakt en kunnen mogelijks helpen. {nearby_images(open)}",
+            "pl": "<h3>Zdjęcia w pobliżu</h3>Poniższe zdjęcia to zdjęcia pobliskich obiektów z geotagami z różnych usług internetowych. Mogą pomóc Ci rozwiązać tę uwagę.{nearby_images(open)}",
+            "zh_Hant": "<h3>附近圖片</h3>接下來的圖片是多個第三方線上服務附近有地理標籤的圖片，也許能協助你解決這個註解。{nearby_images(open)}",
+            "_context": "core:importLayer.nearbyImagesIntro"
+          }
+        },
+        {
+          "id": "all_tags",
+          "render": "{all_tags()}",
+          "metacondition": {
+            "or": [
+              "__featureSwitchIsDebugging=true",
+              "mapcomplete-show_tags=full",
+              "mapcomplete-show_debug=yes"
+            ]
+          }
+        }
+      ],
+      "pointRendering": [
+        {
+          "location": [
+            "point"
+          ],
+          "marker": [
+            {
+              "icon": "circle",
+              "color": "#fff"
+            },
+            {
+              "icon": {
+                "render": "help",
+                "mappings": [
+                  {
+                    "if": {
+                      "or": [
+                        "closed_at~*",
+                        "_imported=yes"
+                      ]
+                    },
+                    "then": "checkmark"
+                  }
+                ]
+              },
+              "color": "#00"
+            }
+          ],
+          "iconSize": "40,40",
+          "anchor": "center"
+        }
+      ]
+    }
+  ],
+  "widenFactor": 1,
+  "socialImage": "assets/SocialImage.png"
+}

@@ -1,0 +1,749 @@
+{
+  "id": "windturbine",
+  "name": {
+    "en": "wind turbine",
+    "nl": "windturbine",
+    "fr": "Éolienne",
+    "de": "Windräder",
+    "it": "pala eolica",
+    "zh_Hant": "風機",
+    "hu": "Szélerőmű",
+    "da": "vindmølle",
+    "ca": "Turbina Eòlica",
+    "cs": "větrná turbína"
+  },
+  "description": {
+    "en": "Modern windmills generating electricity",
+    "de": "Moderne Windmühlen zur Stromerzeugung",
+    "nl": "Windturbines (moderne windmolens die elektriciteit genereren)",
+    "da": "Moderne vindmøller til produktion af elektricitet",
+    "ca": "Molins de vent moderns que generen electricitat",
+    "cs": "Moderní větrné mlýny vyrábějící elektřinu",
+    "pl": "Nowoczesne wiatraki wytwarzające energię elektryczną"
+  },
+  "source": {
+    "osmTags": {
+      "and": [
+        "generator:source=wind"
+      ]
+    }
+  },
+  "minzoom": 10,
+  "title": {
+    "render": {
+      "en": "wind turbine",
+      "nl": "windturbine",
+      "fr": "éolienne",
+      "de": "Windrad",
+      "it": "pala eolica",
+      "zh_Hant": "風機",
+      "id": "turbin angin",
+      "hu": "szélerőmű",
+      "da": "vindmølle",
+      "pl": "turbina wiatrowa",
+      "ca": "Turbina eòlica",
+      "cs": "větrná turbína"
+    },
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": {
+          "en": "{name}",
+          "fr": "{name}",
+          "eo": "{name}",
+          "it": "{name}",
+          "ru": "{name}",
+          "zh_Hant": "{name}",
+          "id": "{name}",
+          "de": "{name}",
+          "ca": "{name}",
+          "nl": "{name}",
+          "da": "{name}",
+          "pl": "{name}",
+          "cs": "{name}",
+          "pt": "{name}"
+        }
+      }
+    ]
+  },
+  "pointRendering": [
+    {
+      "label": {
+        "mappings": [
+          {
+            "if": "generator:output:electricity~^[0-9]+.*[W]$",
+            "then": "<div style='background-color: rgba(0,0,0,0.3); color: white; font-size: 8px; padding: 0.25em; border-radius:0.5em'>{generator:output:electricity}</div>"
+          }
+        ]
+      },
+      "iconSize": "40, 40",
+      "anchor": "bottom",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": {
+            "render": "./assets/themes/openwindpowermap/wind_turbine.svg",
+            "id": "assetsthemesopenwindpowermapwindturbinesvg"
+          }
+        }
+      ],
+      "iconBadges": [
+        {
+          "if": "_favourite=yes",
+          "then": "circle:white;heart:red"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [],
+  "presets": [
+    {
+      "tags": [
+        "power=generator",
+        "generator:source=wind"
+      ],
+      "title": {
+        "en": "a wind turbine",
+        "nl": "een windturbine",
+        "fr": "une éolienne",
+        "de": "ein Windrad",
+        "it": "una pala eolica",
+        "zh_Hant": "風機",
+        "hu": "Szélerőmű",
+        "da": "en vindmølle",
+        "ca": "una turbina eòlica",
+        "cs": "větrná turbína"
+      }
+    }
+  ],
+  "tagRenderings": [
+    {
+      "id": "just_created",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "This element shows a 'thank you' that the contributor has recently created this element",
+      "classes": "rounded-xl thanks",
+      "mappings": [
+        {
+          "if": "id~*",
+          "icon": "./assets/svg/party.svg",
+          "then": {
+            "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+            "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+            "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+            "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+            "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+            "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+          }
+        }
+      ],
+      "condition": {
+        "and": [
+          "_backend~*",
+          "_last_edit:passed_time<300",
+          {
+            "or": [
+              "_version_number=",
+              "_version_number=1"
+            ]
+          }
+        ]
+      },
+      "metacondition": {
+        "and": [
+          {
+            "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+            "or": [
+              "_last_edit:contributor:uid:={_uid}",
+              "_last_edit:contributor:uid="
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "turbine-output",
+      "render": {
+        "en": "The power output of this wind turbine is {generator:output:electricity}.",
+        "fr": "La puissance générée par cette éolienne est de {generator:output:electricity}.",
+        "it": "La potenza generata da questa pala eolica è {generator:output:electricity}.",
+        "zh_Hant": "這個風機的電力輸出是 {generator:output:electricity}。",
+        "id": "Output daya dari turbin angin ini adalah {generator:output:electricity}.",
+        "hu": "A szélerőmű teljesítménye: {generator:output:electricity}.",
+        "de": "Das Windrad erzeugt {generator:output:electricity} Strom.",
+        "nl": "Deze windturbine genereert {generator:output:electricity}",
+        "da": "Denne vindmølle har en effekt på {generator:output:electricity}.",
+        "ca": "La potència de sortida d'aquest aerogenerador és {generator:output:electricity}.",
+        "cs": "Výkon této větrné turbíny je {generator:output:electricity}."
+      },
+      "question": {
+        "en": "What is the power output of this wind turbine? (e.g. 2.3 MW)",
+        "fr": "Quel est la puissance générée par cette éolienne (p.ex. 2,3 MW) ?",
+        "it": "Quant’è la potenza generata da questa pala eolica? (ad es. 2.3 MW)",
+        "zh_Hant": "這個風機的電力輸出是多少？(例如 2.3 MW)",
+        "id": "Berapa output daya dari turbin angin ini? (misalnya 2,3 MW)",
+        "hu": "Mekkora a teljesítménye ennek a szélturbinának? (pl. 2.3 MW)",
+        "de": "Wieviel Strom erzeugt das Windrad? (z.B. 2.3 MW)",
+        "nl": "Wat is de output",
+        "da": "Hvad er effekten af denne vindmølle? (f.eks. 2,3 MW)",
+        "ca": "Quina és la potència de sortida d'aquest aerogenerador? (p. ex. 2,3 MW)",
+        "cs": "Jaký je výkon této větrné turbíny? (např. 2,3 MW)",
+        "pl": "Jaka jest moc wyjściowa tej turbiny wiatrowej? (np. 2,3 MW)"
+      },
+      "freeform": {
+        "key": "generator:output:electricity",
+        "type": "pfloat",
+        "inline": true
+      }
+    },
+    {
+      "id": "turbine-operator",
+      "render": {
+        "en": "This wind turbine is operated by {operator}.",
+        "fr": "Cette éolienne est opérée par {operator}.",
+        "it": "Questa pala eolica è gestita da {operator}.",
+        "zh_Hant": "這個風機營業商是 {operator}。",
+        "id": "Turbin angin ini dioperasikan oleh {operator}.",
+        "hu": "Ennek a szélerőműnek az üzemeltetője: {operator}.",
+        "de": "Die Windturbine wird betrieben von {operator}.",
+        "da": "Denne vindmølle drives af {operator}.",
+        "nl": "Deze windturbine wordt beheerd door {operator}.",
+        "ca": "{operator} gestiona aquest aerogenerador.",
+        "cs": "Tuto větrnou turbínu provozuje {operator}."
+      },
+      "question": {
+        "en": "Who operates this wind turbine?",
+        "fr": "Qui est l’exploitant de cette éolienne ?",
+        "it": "Chi gestisce questa pala eolica?",
+        "zh_Hant": "這個風機營業商是？",
+        "hu": "Ki üzemelteti ezt a szélturbinát?",
+        "de": "Wer betreibt das Windrad?",
+        "id": "Siapa yang mengoperasikan turbin angin ini?",
+        "da": "Hvem driver denne vindmølle?",
+        "nl": "Wie beheert deze windturbine?",
+        "ca": "Qui opera aquest aerogenerador?",
+        "cs": "Kdo provozuje tuto větrnou turbínu?",
+        "pl": "Kto obsługuje tę turbinę wiatrową?"
+      },
+      "freeform": {
+        "key": "operator",
+        "inline": true
+      }
+    },
+    {
+      "id": "turbine-height",
+      "render": {
+        "en": "The total height (including rotor radius) of this wind turbine is {height} metres.",
+        "fr": "La hauteur totale, incluant les pales, est de {height} mètres.",
+        "it": "L’altezza totale (raggio del rotore incluso) di questa pala eolica è di {height} metri.",
+        "zh_Hant": "這風機的總高度 (包括風葉直徑) 是 {height} 公尺。",
+        "hu": "A szélerőmű teljes (rotor sugarával együtt számított) magassága: {height} méter.",
+        "de": "Die Gesamthöhe dieses Windrads beträgt (einschließlich Rotorradius) {height} Meter.",
+        "da": "Den samlede højde (inklusive rotorradius) for denne vindmølle er {height} meter.",
+        "nl": "De totale hoogte (inclusief rotor-radius) van deze windturbine is {height} meter",
+        "ca": "L'alçada total (inclòs el radi del rotor) d'aquest aerogenerador és de {height} metres.",
+        "cs": "Celková výška (včetně poloměru rotoru) této větrné turbíny je {height} metrů."
+      },
+      "question": {
+        "en": "What is the total height of this wind turbine (including rotor radius), in metres?",
+        "fr": "Quelle est la hauteur totale de l’éolienne en mètres, pales incluses ?",
+        "it": "Qual è l’altezza (in metri e raggio del rotore incluso) di questa pala eolica?",
+        "zh_Hant": "這個風機的總高度是多少 (包括風葉大小) 公尺？",
+        "hu": "Hány méter a szélerőmű teljes magassága (a rotor sugarával együtt)?",
+        "de": "Wie hoch ist das Windrad (inklusive Rotorradius) in Metern?",
+        "da": "Hvad er den samlede højde af denne vindmølle (inklusive rotorradius), i meter?",
+        "nl": "Wat is de totale hoogte in meter van deze windturbine (inclusief rotor-radius)?",
+        "ca": "Quina és l'alçada total d'aquest aerogenerador (inclòs el radi del rotor), en metres?",
+        "cs": "Jaká je celková výška této větrné elektrárny (včetně poloměru rotoru) v metrech?"
+      },
+      "freeform": {
+        "key": "height",
+        "type": "pfloat",
+        "inline": true
+      }
+    },
+    {
+      "id": "turbine-diameter",
+      "render": {
+        "en": "The rotor diameter of this wind turbine is {rotor:diameter} metres.",
+        "fr": "Le diamètre du rotor est de {rotor:diameter} mètres.",
+        "it": "Il diametro del rotore di questa pala eolica è di {rotor:diameter} metri.",
+        "zh_Hant": "這個風力渦輪機的風葉直徑是 {rotor:diameter} 公尺。",
+        "hu": "A szélturbina rotorátmérője: {rotor:diameter} méter.",
+        "de": "Der Rotordurchmesser der Windturbine ist {rotor:diameter} Meter.",
+        "nl": "De rotordiameter van deze windturbine is {rotor:diameter} meter.",
+        "da": "Rotordiameteren på denne vindmølle er {rotor:diameter} meter.",
+        "ca": "El diàmetre del rotor d'aquest aerogenerador és de {rotor:diameter} metres.",
+        "cs": "Průměr rotoru této větrné turbíny je {rotor:diameter} metrů."
+      },
+      "question": {
+        "en": "What is the rotor diameter of this wind turbine, in metres?",
+        "fr": "Quel est le diamètre du rotor en mètres ?",
+        "it": "Qual è il diametro (in metri) del rotore di questa pala eolica?",
+        "zh_Hant": "這個風力渦輪機的風葉直徑是多少公尺？",
+        "hu": "Hány méter a rotorátmérője ennek a szélturbinának?",
+        "de": "Wie groß ist der Rotordurchmesser der Windturbine in Meter?",
+        "nl": "Wat is de rotordiameter van deze windturbine?",
+        "da": "Hvad er rotordiameteren på denne vindmølle i meter?",
+        "ca": "Quin és el diàmetre del rotor d'aquest aerogenerador en metres?",
+        "cs": "Jaký je průměr rotoru této větrné turbíny v metrech?"
+      },
+      "freeform": {
+        "key": "rotor:diameter",
+        "type": "float",
+        "inline": true
+      }
+    },
+    {
+      "id": "turbine-start-date",
+      "render": {
+        "en": "This wind turbine went into operation on/in {start_date}.",
+        "fr": "L’éolienne est active depuis {start_date}.",
+        "it": "Questa pala eolica è entrata in funzione in data {start_date}.",
+        "zh_Hant": "這個風機從 {start_date} 開始運轉。",
+        "id": "Turbin angin ini mulai beroperasi pada/dalam {start_date}.",
+        "hu": "A szélerőmű üzembe helyezése: {start_date}.",
+        "de": "Das Windrad wurde am {start_date} in Betrieb genommen.",
+        "nl": "Deze windturbine werd op {start_date} in gebruik genomen",
+        "da": "Denne vindmølle blev sat i drift den/den {start_date}.",
+        "ca": "Aquest aerogenerador va entrar en funcionament el dia {start_date}.",
+        "cs": "Tato větrná turbína byla uvedena do provozu dne/v {start_date}."
+      },
+      "question": {
+        "en": "When did this wind turbine go into operation?",
+        "fr": "Depuis quand l’éolienne est-elle en fonctionnement ?",
+        "it": "Quando è entrata in funzione questa pala eolica?",
+        "zh_Hant": "這個風機何時開始營運？",
+        "id": "Kapan turbin angin ini mulai beroperasi?",
+        "hu": "Mikor helyezték üzembe ezt a szélerőművet?",
+        "de": "Wann wurde das Windrad in Betrieb genommen?",
+        "nl": "Wanneer werd deze windturbine in gebruik genomen?",
+        "da": "Hvornår blev denne vindmølle taget i brug?",
+        "ca": "Quan va entrar en funcionament aquest aerogenerador?",
+        "cs": "Kdy byla tato větrná turbína uvedena do provozu?",
+        "pl": "Kiedy ta turbina wiatrowa została uruchomiona?"
+      },
+      "freeform": {
+        "key": "start_date",
+        "type": "date",
+        "inline": true
+      }
+    },
+    {
+      "render": {
+        "en": "Extra information for OpenStreetMap experts: {fixme}",
+        "nl": "Extra informatie voor OpenStreetMap experts: {fixme}",
+        "fr": "Informations supplémentaires pour les experts d'OpenStreetMap : {fixme}",
+        "it": "Informazioni supplementari per gli esperti di OpenStreetMap: {fixme}",
+        "de": "Zusätzliche Informationen für OpenStreetMap-Experten: {fixme}",
+        "ru": "Дополнительная информация для экспертов OpenStreetMap: {fixme}",
+        "sl": "Dodatne informacije za OpenStreetMap strokovnjake: {fixme}",
+        "es": "Información extra para expertos en OpenStreetMap: {fixme}",
+        "ca": "Informació addicional per als experts en OpenStreetMap: {fixme}",
+        "cs": "Další informace pro odborníky na OpenStreetMap: {fixme}"
+      },
+      "question": {
+        "en": "Is there something wrong with how this is mapped, that you weren't able to fix here? (leave a note to OpenStreetMap experts)",
+        "nl": "Is er iets mis met de informatie over deze windturbine dat je hier niet opgelost kreeg? (laat hier een berichtje achter voor OpenStreetMap experts)",
+        "de": "Gibt es einen Fehler in der Kartierung, den Sie hier nicht beheben konnten? (hinterlassen Sie eine Nachricht an OpenStreetMap-Experten)",
+        "ca": "Hi ha alguna cosa malament en la manera que està mapejat això que no heu pogut solucionar aquí? (deixeu una nota als experts d'OpenStreetMap)",
+        "cs": "Je něco špatně s tím, jak je to mapováno, a vy jste to zde nedokázali opravit? (zanechte poznámku odborníkům na OpenStreetMap)",
+        "pl": "Czy jest coś nie tak z mapowaniem tego, czego nie mogłeś tutaj naprawić? (zostaw wiadomość ekspertom OpenStreetMap)"
+      },
+      "freeform": {
+        "key": "fixme",
+        "type": "text",
+        "inline": true
+      },
+      "id": "windturbine-fixme"
+    },
+    {
+      "id": "images",
+      "description": "This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images",
+      "render": {
+        "*": "{image_carousel()}{image_upload()}{nearby_images():my-4}"
+      },
+      "classes": "my-4"
+    },
+    {
+      "id": "leftover-questions",
+      "render": {
+        "*": "{questions( ,)}"
+      }
+    },
+    {
+      "id": "lod",
+      "labels": [
+        "added_by_default"
+      ],
+      "render": {
+        "*": "{linked_data_from_website()}"
+      }
+    },
+    {
+      "id": "minimap",
+      "description": "Shows a small map with the feature. Added by default to every popup",
+      "render": {
+        "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+      }
+    },
+    {
+      "id": "last_edit",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+      "condition": {
+        "and": [
+          "_last_edit:contributor~*",
+          "_last_edit:changeset~*"
+        ]
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsTesting=true",
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_debug=yes",
+          "_csCount>=10"
+        ]
+      },
+      "render": {
+        "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+      }
+    },
+    {
+      "id": "favourite_status",
+      "render": {
+        "*": "{favourite_status()}"
+      }
+    },
+    {
+      "id": "qr_code",
+      "labels": [
+        "added_by_default"
+      ],
+      "classes": "flex items-center gap-x-2",
+      "render": {
+        "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+        "en": "{qr_code()}Scan this code to open this location on another device",
+        "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+        "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+      }
+    },
+    {
+      "id": "share",
+      "labels": [
+        "added_by_default"
+      ],
+      "metacondition": "_supports_sharing=yes",
+      "render": {
+        "de": "{share_link(,Standort teilen)}",
+        "en": "{share_link(,Share this location)}",
+        "nl": "{share_link(,Deel deze locatie)}"
+      }
+    },
+    {
+      "id": "all-tags",
+      "render": {
+        "*": "{all_tags()}"
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_tags=full",
+          "mapcomplete-show_debug=yes"
+        ]
+      }
+    }
+  ],
+  "units": [
+    {
+      "generator:output:electricity": "power",
+      "height": {
+        "quantity": "distance",
+        "denominations": [
+          "m"
+        ]
+      },
+      "rotor:diamter": {
+        "quantity": "distance",
+        "denominations": [
+          "m"
+        ]
+      }
+    }
+  ],
+  "titleIcons": [
+    {
+      "id": "wikipedialink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+      "condition": {
+        "or": [
+          "wikipedia~*",
+          "wikidata~*"
+        ]
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "wikipedia=",
+          "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "open_until",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "#": "Titleicon showing e.g. 'open until 17:00'",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{opening_hours_state()}",
+      "condition": {
+        "or": [
+          "opening_hours~*",
+          {
+            "or": [
+              {
+                "and": [
+                  "seasonal~.*winter.*",
+                  "_now:date~....-(12|01|02)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*spring.*",
+                  "_now:date~....-(03|04|05)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*summer.*",
+                  "_now:date~....-(06|07|08)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*autumn.*",
+                  "_now:date~....-(09|10|11)-.."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "phonelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": {
+        "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+        "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+        "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+        "_context": "layers:icons.tagRenderings.phonelink.render"
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:phone~*",
+          "then": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+          }
+        }
+      ],
+      "condition": {
+        "or": [
+          "phone~*",
+          "contact:phone~*"
+        ]
+      }
+    },
+    {
+      "id": "emaillink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:email~*",
+          "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:email~*",
+          "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        }
+      ],
+      "condition": {
+        "or": [
+          "email~*",
+          "contact:email~*",
+          "operator:email~*"
+        ]
+      }
+    },
+    {
+      "id": "websitelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "website~*",
+          "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:website~*",
+          "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "context:website~*",
+          "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "smokingicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=no",
+          "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=yes",
+          "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+        }
+      ]
+    },
+    {
+      "id": "dogicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "if": "dog=no",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+        },
+        {
+          "if": "dog=leashed",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+        },
+        {
+          "if": {
+            "or": [
+              "dog=yes",
+              "dog=unleashed"
+            ]
+          },
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+        }
+      ]
+    },
+    {
+      "id": "sharelink",
+      "labels": [
+        "defaults"
+      ],
+      "render": "{share_link()}",
+      "metacondition": "_supports_sharing=yes"
+    },
+    {
+      "id": "favourite_title_icon",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "*": "{favourite_icon()}"
+      },
+      "metacondition": "_loggedIn=true"
+    },
+    {
+      "id": "osmlink",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+        "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+        "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+        "_context": "layers:icons.tagRenderings.osmlink.render"
+      },
+      "mappings": [
+        {
+          "if": "id~.*/-.*",
+          "then": ""
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "_backend~*",
+          "then": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+          }
+        }
+      ],
+      "condition": "id~(node|way|relation)/[0-9]*"
+    },
+    {
+      "id": "direction",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "{direction_indicator()}"
+    },
+    {
+      "id": "rating",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{rating()}"
+    }
+  ],
+  "_layerIcon": [
+    {
+      "icon": "./assets/themes/openwindpowermap/wind_turbine.svg"
+    }
+  ]
+}

@@ -1,0 +1,2791 @@
+{
+  "id": "cyclestreets",
+  "title": {
+    "en": "Cyclestreets",
+    "nl": "Fietsstraten en fietszones",
+    "ja": "Cyclestreets",
+    "zh_Hant": "單車街道",
+    "de": "Fahrradstraßen",
+    "it": "Strade ciclabili",
+    "nb_NO": "Sykkelgater",
+    "hu": "Kerékpárosutcák",
+    "ca": "Ciclocarrers",
+    "es": "Ciclocalles",
+    "fr": "Rue cyclables",
+    "da": "Cykelgader",
+    "pa_PK": "سائیکل سڑکاں",
+    "cs": "Cyklostezky",
+    "eu": "Bidegorriak",
+    "pl": "Ulice rowerowe",
+    "_context": "themes:cyclestreets.title"
+  },
+  "description": {
+    "nl": "Een fietsstraat is een straat waar <ul><li><b>automobilisten geen fietsers mogen inhalen</b></li><li>Er een maximumsnelheid van <b>30km/u</b> geldt</li><li>Fietsers gemotoriseerde voertuigen links mogen inhalen</li><li>Fietsers nog steeds voorrang aan rechts moeten verlenen - ook aan auto's en voetgangers op het zebrapad</li></ul><br/><br/>Op deze open kaart kan je alle gekende fietsstraten zien en kan je ontbrekende fietsstraten aanduiden. <b>Fietszones</b> worden aangeduid door elke straat apart als fietsstraat te markeren. <br/>Om de kaart aan te passen, moet je je aanmelden met OpenStreetMap en helemaal inzoomen tot straatniveau. ",
+    "en": "A cyclestreet is is a street where <b>motorized traffic is not allowed to overtake cyclists</b>. They are signposted by a special traffic sign. Cyclestreets can be found in the Netherlands and Belgium, but also in Germany and France. ",
+    "ja": "cyclestreetとは、<b>自動車がサイクリストを追い越すことができない</b>道です。専用の道路標識で表示されます。Cyclestreetsはオランダやベルギーにもありますが、ドイツやフランスにもあります。 ",
+    "zh_Hant": "單車街道是<b>機動車輛受限制，只允許單車通行</b>的道路。通常會有路標顯示特別的交通指標。單車街道通常在荷蘭、比利時看到，但德國與法國也有。 ",
+    "de": "Eine Fahrradstraße ist eine Straße, auf der <b>motorisierter Verkehr Radfahrer nicht überholen darf</b>. Sie sind durch ein spezielles Verkehrsschild gekennzeichnet. Fahrradstraßen gibt es in den Niederlanden und Belgien, aber auch in Deutschland und Frankreich. ",
+    "it": "Una strada ciclabile è una strada dove <b>il traffico motorizzato non può superare i velocipedi</b>. La sua presenza è segnalata da un cartello stradale specifico. Le strade ciclabili sono diffuse in Olanda e Belgio, ma si possono trovare anche in Germania e in Francia. ",
+    "hu": "A kerékpárosutca (cyclestreet, Fahrradstraße) olyan utca, ahol <b>gépjármű nem előzhet meg kerékpárost</b>. Az ilyen utcákat külön közlekedési tábla jelzi. Kerékpárosutcák találhatók Hollandiában és Belgiumban, valamint Németországban és Franciaországban is. ",
+    "es": "Una ciclocalle es una calle en la que <b>el tráfico motorizado no puede sobrepasar a los ciclistas</b>. Están marcados por una señal de tráfico especial. Las ciclocalles se pueden encontrar en los Países Bajos y Bélgica, pero también en Alemania y Francia. ",
+    "fr": "Une rue cyclable est une rue où <b>les véhicules motorisés ne sont pas autorisés à dépasser les cyclistes</b>. Elles sont signalées par un signal routier particulier. On trouve des rues cyclables en Belgique et aux Pays-Bas, mais aussi en Allemagne et en France. ",
+    "da": "En cykelgade er en gade, hvor <b>motoriseret trafik ikke må overhale cyklister</b>. De er skiltet med et særligt trafikskilt. Cykelgader findes i Holland og Belgien, men også i Tyskland og Frankrig. ",
+    "ca": "Un ciclocarrer és un carrer en el que <b>el trànsit motoritzat no pot sobrepassar als ciclistes</b>. Està senyalitzat per una senyal de trànsit especial. Els ciclocarrers es poden trobar a Holanda i Bèlgica, però també a Alemnya i França. ",
+    "cs": "Cyklostezka je ulice, kde <b>motorizovaná doprava nesmí předjíždět cyklisty</b>. Jsou označeny speciální dopravní značkou. Cyklostezky najdete v Nizozemsku a Belgii, ale také v Německu a Francii. ",
+    "pl": "Ulica rowerowa to ulica, na której <b>ruch samochodowy nie może wyprzedzać rowerzystów</b>. Są one oznaczone specjalnym znakiem drogowym. Ulice rowerowe można znaleźć w Holandii i Belgii, ale także w Niemczech i Francji. ",
+    "_context": "themes:cyclestreets.description"
+  },
+  "shortDescription": {
+    "nl": "Een kaart met alle gekende fietsstraten",
+    "en": "A map of cyclestreets",
+    "ja": "cyclestreetsの地図",
+    "zh_Hant": "單車街道的地圖",
+    "nb_NO": "Et kart over sykkelveier",
+    "de": "Eine Karte von Fahrradstraßen",
+    "it": "Una cartina per le strade ciclabili",
+    "hu": "Kerékpárosutcák térképe",
+    "ca": "Un mapa de carrers ciclistes",
+    "es": "Un mapa de ciclocalles",
+    "fr": "Une carte des rues cyclables",
+    "da": "Et kort over cykelgader",
+    "cs": "Mapa cyklostezek",
+    "pl": "Mapa ulic rowerowych",
+    "_context": "themes:cyclestreets.shortDescription"
+  },
+  "icon": "./assets/themes/cyclestreets/logo.svg",
+  "startZoom": 14,
+  "startLat": 51.2095,
+  "startLon": 3.2228,
+  "layers": [
+    {
+      "id": "fietsstraat",
+      "name": {
+        "nl": "Fietsstraten",
+        "en": "Cyclestreets",
+        "ja": "Cyclestreets",
+        "zh_Hant": "單車街道",
+        "it": "Strade ciclabili",
+        "de": "Fahrradstraßen",
+        "nb_NO": "Sykkelgater",
+        "ru": "Cyclestreets",
+        "hu": "Kerékpárosutcák",
+        "ca": "Carrers ciclistes",
+        "es": "Ciclocalles",
+        "fr": "Rue cyclables",
+        "da": "Cykelgader",
+        "pa_PK": "سائیکاں دیاں سڑکاں",
+        "cs": "Cyklostezky",
+        "eu": "Bidegorriak",
+        "pl": "Ulice rowerowe",
+        "_context": "themes:cyclestreets.layers.fietsstraat.name"
+      },
+      "minzoom": 7,
+      "source": {
+        "osmTags": {
+          "or": [
+            "cyclestreet=yes",
+            "bicycle_road=yes"
+          ]
+        }
+      },
+      "isShown": "id~way/.*",
+      "description": {
+        "nl": "Een fietsstraat is een straat waar gemotoriseerd verkeer een fietser niet mag inhalen",
+        "en": "A cyclestreet is a street where motorized traffic is not allowed to overtake a cyclist",
+        "ja": "cyclestreetとは、自動車による交通がサイクリストを追い越すことができない道路です",
+        "it": "Una strada ciclabile è una strada in cui i veicoli a motore non possono sorpassare le persone in bicicletta",
+        "de": "Eine Fahrradstraße ist eine Straße, auf der motorisierter Verkehr einen Radfahrer nicht überholen darf",
+        "hu": "A kerékpárosutca olyan utca, ahol gépjármű nem előzhet meg a kerékpárost",
+        "es": "Una ciclocalle es una calle en la que el tráfico motorizado no puede sobrepasar a un ciclista",
+        "fr": "Une rue cyclable est une rue où les véhicules motorisés ne sont pas autorisés à dépasser les cyclistes",
+        "da": "En cykelgade er en gade, hvor motoriseret trafik ikke må overhale en cyklist",
+        "cs": "Cyklostezka je ulice, kde motorová doprava nesmí předjíždět cyklisty",
+        "ca": "Un ciclocarrer és un carrer on el trànsit motoritzat no pot sobrepassar a un ciclista",
+        "pl": "Ulica rowerowa to ulica, na której pojazdy zmotoryzowane nie mogą wyprzedzać rowerzystów",
+        "_context": "themes:cyclestreets.layers.fietsstraat.description"
+      },
+      "title": "{name}",
+      "tagRenderings": [
+        {
+          "id": "is_cyclestreet",
+          "question": {
+            "nl": "Is de straat <b>{name}</b> een fietsstraat?",
+            "en": "Is the street <b>{name}</b> a cyclestreet?",
+            "de": "Ist die Straße <b>{name}</b> eine Fahrradstraße?",
+            "it": "È <b>{name}</b> una strada ciclabile?",
+            "hu": "Kerékpárosutca-e <b>{name}</b>?",
+            "es": "¿La calle <b>{name}</b> es una ciclocalle?",
+            "fr": "La rue <b>{name}</b> est-elle une rue cyclable ?",
+            "nb_NO": "Er <b>{name}</b>-gaten en sykkelgate?",
+            "da": "Er gaden <b>{name}</b> en cykelgade?",
+            "cs": "Je ulice <b>{name}</b> cyklo ulicí?",
+            "ca": "El carrer <b>{name}</b> és un ciclocarrer?",
+            "pl": "Czy ulica <b>{name}</b> jest ulicą rowerową?",
+            "_context": "themes:cyclestreets.overrideAll.+tagRenderings.is_cyclestreet.question"
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "cyclestreet=yes",
+                  "maxspeed=30",
+                  "overtaking:motor_vehicle=no",
+                  "proposed:cyclestreet="
+                ]
+              },
+              "then": {
+                "nl": "Deze straat is een fietsstraat (en dus zone 30)",
+                "en": "This street is a cyclestreet (and has a speed limit of 30 km/h)",
+                "ja": "cyclestreet(最高速度は30km/h)",
+                "nb_NO": "Denne gaten er en sykkelvei (og har en fartsgrense på 30 km/t)",
+                "de": "Diese Straße ist eine Fahrradstraße (mit einer Geschwindigkeitsbegrenzung von 30 km/h)",
+                "it": "Questa è una strada ciclabile (e ha un limite di velocità massima di 30 km/h)",
+                "hu": "Ez az utca kerékpárosutca (és 30 km/h a sebességkorlátozás)",
+                "es": "Esta calle es una ciclocalle (y tiene un límite de velocidad de 30km/h)",
+                "fr": "Cette rue est une rue cyclable (et est limitée à 30 km/h)",
+                "da": "Denne gade er en cykelgade (og har en hastighedsgrænse på 30 km/t)",
+                "cs": "Tato ulice je cyklostezkou (s omezením rychlosti na 30 km/h)",
+                "ca": "Aquest carrer és un ciclocarrer (i té un límit de velocitat de 30km/h)",
+                "pl": "Ta ulica jest ulicą rowerową (na której obowiązuje ograniczenie prędkości do 30 km/h)",
+                "_context": "themes:cyclestreets.overrideAll.+tagRenderings.is_cyclestreet.mappings.0.then"
+              },
+              "hideInAnswer": "_country!=be"
+            },
+            {
+              "if": "bicycle_road=yes",
+              "then": {
+                "en": "This street is a bicycle road",
+                "de": "Diese Straße ist eine Fahrradstraße",
+                "nl": "Deze straat is een fietsstraat",
+                "fr": "Cette rue est une piste cyclable",
+                "ca": "Aquest carrer és una pista ciclable",
+                "cs": "Tato ulice je cyklistickou silnicí",
+                "es": "Esta calle tiene ciclovías",
+                "pl": "To jest droga dla rowerów",
+                "_context": "themes:cyclestreets.overrideAll.+tagRenderings.is_cyclestreet.mappings.1.then"
+              },
+              "hideInAnswer": true
+            },
+            {
+              "if": {
+                "and": [
+                  "bicycle_road=yes",
+                  "proposed:bicycle_road=",
+                  "maxspeed=30",
+                  "source:maxspeed=DE:bicycle_road",
+                  "vehicle=no",
+                  "bicycle=designated"
+                ]
+              },
+              "then": {
+                "en": "This street is a bicycle road (has a speed limit of 30 km/h and vehicles are not allowed) (sign will be asked later)",
+                "de": "Diese Straße ist eine Fahrradstraße (hat eine Geschwindigkeitsbegrenzung von 30 km/h und Fahrzeuge sind nicht erlaubt) (Schild wird später abgefragt)",
+                "nl": "Deze straat is een fietsstraat (snelheid van 30 km/h en voertuigen niet toegestaan) (bord wordt later gevraagd)",
+                "fr": "Cette rue est une piste cyclable (avec une limitation de vitesse a 30 km/h et les véhicules ne sont pas autorisés) (un panneau sera demandé plus tard)",
+                "ca": "Aquest carrer és una carretera ciclista (té un límit de velocitat de 30km/h i els vehicles no estan permesos)(el senyal es preguntarà més tard)",
+                "cs": "Tato ulice je cyklistická (rychlost je zde omezena na 30 km/h vozidla sem mají zákaz vjezdu) (na značku se zeptáme později)",
+                "es": "Esta calle es una vía ciclista (tiene un límite de velocidad de 30 km/h y no se permiten vehículos) (se pedirá señal más adelante)",
+                "pl": "Ulica ta jest drogą rowerową (ograniczona prędkość wynosi 30 km/h i nie wolno wjeżdżać pojazdom) (znak zostanie poproszony później)",
+                "_context": "themes:cyclestreets.overrideAll.+tagRenderings.is_cyclestreet.mappings.2.then"
+              },
+              "hideInAnswer": "_country!=de"
+            },
+            {
+              "if": {
+                "and": [
+                  "cyclestreet=yes",
+                  "proposed:cyclestreet="
+                ]
+              },
+              "then": {
+                "nl": "Deze straat is een fietsstraat",
+                "en": "This street is a cyclestreet",
+                "ja": "この通りはcyclestreetだ",
+                "nb_NO": "Denne gaten er en sykkelvei",
+                "de": "Diese Straße ist eine Fahrradstraße",
+                "it": "Questa è una strada ciclabile",
+                "hu": "Ez az utca kerékpárosutca",
+                "es": "Esta calle es una ciclocalle",
+                "fr": "Cette rue est une rue cyclable",
+                "ca": "Aquest carrer és una ciclocarrer",
+                "da": "Denne gade er en cykelgade",
+                "cs": "Tato ulice je cykloulicí",
+                "pl": "Ta ulica jest ulicą rowerową",
+                "_context": "themes:cyclestreets.overrideAll.+tagRenderings.is_cyclestreet.mappings.3.then"
+              },
+              "hideInAnswer": {
+                "or": [
+                  "_country=be",
+                  "_country=de"
+                ]
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "cyclestreet=",
+                  "proposed:cyclestreet=yes"
+                ]
+              },
+              "then": {
+                "nl": "Deze straat wordt binnenkort een fietsstraat",
+                "en": "This street will become a cyclestreet soon",
+                "ja": "この通りはまもなくcyclestreetになるだろう",
+                "nb_NO": "Denne gaten vil bli sykkelvei ganske snart",
+                "de": "Diese Straße wird bald eine Fahrradstraße sein",
+                "it": "Diverrà tra poco una strada ciclabile",
+                "hu": "Ez az utca hamarosan kerékpárosutcává válik",
+                "es": "Esta calle se convertirá en una ciclocalle próximamente",
+                "fr": "Cette rue sera bientôt une rue cyclable",
+                "ca": "Aquest carrer es convertirà en un ciclocarrer pròximament",
+                "da": "Denne gade bliver snart en cykelgade",
+                "cs": "Tato ulice se brzy stane cyklostezkou",
+                "pl": "Ta ulica wkrótce stanie się ulicą rowerową",
+                "_context": "themes:cyclestreets.overrideAll.+tagRenderings.is_cyclestreet.mappings.4.then"
+              },
+              "hideInAnswer": "_country=de"
+            },
+            {
+              "if": {
+                "and": [
+                  "bicycle_road=",
+                  "proposed:bicycle_road=yes"
+                ]
+              },
+              "then": {
+                "en": "This street will become a bicycle road soon",
+                "de": "Diese Straße wird bald zu einer Fahrradstraße",
+                "nl": "Deze straat wordt binnenkort een fietsstraat",
+                "fr": "Cette rue va bientôt devenir une piste cyclable",
+                "cs": "Tato ulice se brzy stane cyklistickou silnicí",
+                "es": "Esta calle se convertirá pronto en una vía ciclista",
+                "ca": "Aquest carrer es convertirà aviat en una senda ciclable",
+                "pl": "Już niedługo ta ulica stanie się drogą rowerową",
+                "_context": "themes:cyclestreets.overrideAll.+tagRenderings.is_cyclestreet.mappings.5.then"
+              },
+              "hideInAnswer": "_country!=de"
+            },
+            {
+              "if": {
+                "and": [
+                  "cyclestreet=",
+                  "proposed:cyclestreet=",
+                  "bicycle_road=",
+                  "proposed:bicycle_road=",
+                  "overtaking:motor_vehicle="
+                ]
+              },
+              "then": {
+                "nl": "Deze straat is geen fietsstraat",
+                "en": "This street is not a cyclestreet",
+                "ja": "この通りはcyclestreetではない",
+                "nb_NO": "Denne gaten er ikke en sykkelvei",
+                "it": "Questa strada non è una strada ciclabile",
+                "de": "Diese Straße ist keine Fahrradstraße",
+                "hu": "Ez az utca nem kerékpárosutca",
+                "es": "Esta calle no es una ciclocalle",
+                "fr": "Cette rue n’est pas une rue cyclable",
+                "da": "Denne gade er ikke en cykelgade",
+                "cs": "Tato ulice není cyklo ulicí",
+                "ca": "Aquest carrer no és un ciclocarrer",
+                "pl": "Ta ulica nie jest ulicą rowerową",
+                "_context": "themes:cyclestreets.overrideAll.+tagRenderings.is_cyclestreet.mappings.6.then"
+              }
+            }
+          ]
+        },
+        {
+          "id": "supplementary_sign",
+          "condition": {
+            "and": [
+              "bicycle_road=yes",
+              "_country=de"
+            ]
+          },
+          "question": {
+            "en": "What sign does this bicycle road have?",
+            "de": "Welches Schild hat diese Fahrradstraße?",
+            "nl": "Welk bord heeft deze fietsstraat?",
+            "fr": "Quel panneau comporte cette piste cyclable ?",
+            "cs": "Jakou značku má tato cyklostezka?",
+            "es": "¿Qué señal tiene esta vía ciclista?",
+            "ca": "Quin senyal té aquesta senda ciclable?",
+            "pl": "Jaki znak ma ta droga rowerowa?",
+            "_context": "themes:cyclestreets.overrideAll.+tagRenderings.supplementary_sign.question"
+          },
+          "mappings": [
+            {
+              "if": "traffic_sign=DE:244.1,1020-30",
+              "then": {
+                "en": "Residents allowed",
+                "de": "Anlieger frei",
+                "nl": "Aanwonenden toegestaan",
+                "fr": "Riverains autorisés",
+                "ca": "Residents permesos",
+                "es": "Residentes autorizados",
+                "cs": "Přístup povolen obyvatelům",
+                "pl": "Mieszkańcy dopuszczeni",
+                "_context": "themes:cyclestreets.overrideAll.+tagRenderings.supplementary_sign.mappings.0.then"
+              },
+              "icon": {
+                "path": "./assets/themes/cyclestreets/Zeichen_244_1020-30.svg",
+                "class": "large"
+              },
+              "addExtraTags": [
+                "vehicle=destination",
+                "motorcar=",
+                "motorcycle=",
+                "motor_vehicle="
+              ]
+            },
+            {
+              "if": "traffic_sign=DE:244.1,1022-12,1024-10",
+              "then": {
+                "en": "Motor vehicles allowed",
+                "de": "KFZ frei",
+                "nl": "Motorvoertuigen toegestaan",
+                "fr": "Véhicules motorisés autorisés",
+                "cs": "Vjezd motorových vozidel povolen",
+                "ca": "Vehicles a motor permesos",
+                "es": "Vehículos a motor permitidos",
+                "pl": "Pojazdy silnikowe dozwolone",
+                "_context": "themes:cyclestreets.overrideAll.+tagRenderings.supplementary_sign.mappings.1.then"
+              },
+              "icon": {
+                "path": "./assets/themes/cyclestreets/Zeichen_244_KFZ_frei.svg",
+                "class": "large"
+              },
+              "addExtraTags": [
+                "motor_vehicle=yes",
+                "motorcar=",
+                "motorcycle=",
+                "vehicle=no"
+              ]
+            },
+            {
+              "if": "traffic_sign=DE:244.1,1022-12",
+              "then": {
+                "en": "Motorcycles allowed",
+                "de": "Motorräder frei",
+                "pa_PK": "موٹرسائیکلاں دی اِجازت اے",
+                "nl": "Motoren toegestaan",
+                "fr": "Motos autorisées",
+                "cs": "Vjezd motocyklů povolen",
+                "ca": "Motos permeses",
+                "es": "Motocicletas permitidas",
+                "pl": "Motocykle dozwolone",
+                "_context": "themes:cyclestreets.overrideAll.+tagRenderings.supplementary_sign.mappings.2.then"
+              },
+              "icon": {
+                "path": "./assets/themes/cyclestreets/Zeichen_244_1022-12.svg",
+                "class": "large"
+              },
+              "addExtraTags": [
+                "motorcycle=yes",
+                "motorcar=",
+                "motor_vehicle=",
+                "vehicle=no"
+              ]
+            },
+            {
+              "if": "traffic_sign=DE:244.1,1024-10",
+              "then": {
+                "en": "Cars allowed",
+                "de": "Autos erlaubt",
+                "pa_PK": "موٹرکاراں دی اِجازت اے",
+                "nl": "Auto's toegestaan",
+                "fr": "Voitures autorisées",
+                "cs": "Vjezd aut povolen",
+                "nb_NO": "Biler tillatt",
+                "ca": "Cotxes permesos",
+                "es": "Coches permitidos",
+                "pl": "Samochody dozwolone",
+                "_context": "themes:cyclestreets.overrideAll.+tagRenderings.supplementary_sign.mappings.3.then"
+              },
+              "icon": {
+                "path": "./assets/themes/cyclestreets/Zeichen_244_1024-10.svg",
+                "class": "large"
+              },
+              "addExtraTags": [
+                "motorcar=yes",
+                "motorcycle=",
+                "motor_vehicle=",
+                "vehicle=no"
+              ]
+            },
+            {
+              "if": "traffic_sign=DE:244.1",
+              "then": {
+                "en": "There are no supplementary signs at this bicycle road.",
+                "de": "An dieser Fahrradstraße gibt es keine zusätzlichen Schilder.",
+                "nl": "Er zijn geen onderborden bij deze fietsstraat.",
+                "fr": "Il n'y a pas de panneaux supplémentaires à cette piste cyclable.",
+                "cs": "Na této cyklostezce nejsou žádná doplňková značení.",
+                "es": "No hay señales suplementarias en esta vía ciclista.",
+                "ca": "No hi ha senyals addicionals en aquesta senda ciclable.",
+                "pl": "Na tej drodze rowerowej nie ma żadnych dodatkowych znaków.",
+                "_context": "themes:cyclestreets.overrideAll.+tagRenderings.supplementary_sign.mappings.4.then"
+              },
+              "icon": {
+                "path": "./assets/themes/cyclestreets/Zeichen_244.svg",
+                "class": "large"
+              },
+              "addExtraTags": [
+                "vehicle=no",
+                "motorcycle=",
+                "motorcar=",
+                "motor_vehicle="
+              ]
+            }
+          ]
+        },
+        {
+          "id": "future_cyclestreet",
+          "question": {
+            "nl": "Wanneer wordt deze straat een fietsstraat?",
+            "en": "When will this street become a cyclestreet?",
+            "ja": "この通りはいつcyclestreetになるんですか?",
+            "it": "Questa strada diventerà una strada ciclabile quando?",
+            "de": "Wann wird diese Straße eine Fahrradstraße?",
+            "hu": "Mikor lesz ez az utca kerékpárosutca?",
+            "es": "¿Cuándo se convertirá esta calle en una ciclocalle?",
+            "fr": "Quand cette rue deviendra-t-elle cyclable ?",
+            "nb_NO": "Når vil denne gaten bli en sykkelgate?",
+            "da": "Hvornår bliver denne gade en cykelgade?",
+            "cs": "Kdy se tato ulice stane cyklostezkou?",
+            "ca": "Quan es convertirà aquest carrer en un ciclocarrer?",
+            "pl": "Kiedy ta ulica stanie się ulicą rowerową?",
+            "_context": "themes:cyclestreets.overrideAll.+tagRenderings.future_cyclestreet.question"
+          },
+          "render": {
+            "nl": "Deze straat wordt fietsstraat op {cyclestreet:start_date}",
+            "en": "This street will become a cyclestreet at {cyclestreet:start_date}",
+            "ja": "この通りは{cyclestreet:start_date}に、cyclestreetになります",
+            "it": "Questa strada diventerà una strada ciclabile dal {cyclestreet:start_date}",
+            "de": "Diese Straße wird am {cyclestreet:start_date} zu einer Fahrradstraße",
+            "hu": "Ez az utca ekkor lesz kerékpárosutca: {cyclestreet:start_date}",
+            "es": "Esta calle se convetirá en una ciclocalle el {cyclestreet:start_date}",
+            "fr": "Cette rue deviendra une rue cyclable le {cyclestreet:start_date}",
+            "nb_NO": "Denne gaten vil bli en sykkelgate {cyclestreet:start_date}",
+            "da": "Denne gade bliver en cykelgade ved {cyclestreet:start_date}",
+            "cs": "Tato ulice se stane cyklostezkou {cyclestreet:start_date}",
+            "ca": "Aquest carrer es convertirà un ciclocarrer el {cyclestreet:start_date}",
+            "pl": "Ta ulica stanie się ulicą rowerową {cyclestreet:start_date}",
+            "_context": "themes:cyclestreets.overrideAll.+tagRenderings.future_cyclestreet.render"
+          },
+          "condition": "proposed:cyclestreet=yes",
+          "freeform": {
+            "type": "date",
+            "key": "cyclestreet:start_date",
+            "inline": true
+          }
+        },
+        {
+          "id": "just_created",
+          "labels": [
+            "added_by_default"
+          ],
+          "description": "This element shows a 'thank you' that the contributor has recently created this element",
+          "classes": "rounded-xl thanks",
+          "mappings": [
+            {
+              "if": "id~*",
+              "icon": "./assets/svg/party.svg",
+              "then": {
+                "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+                "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+                "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+                "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+                "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+                "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+              }
+            }
+          ],
+          "condition": {
+            "and": [
+              "_backend~*",
+              "_last_edit:passed_time<300",
+              {
+                "or": [
+                  "_version_number=",
+                  "_version_number=1"
+                ]
+              }
+            ]
+          },
+          "metacondition": {
+            "and": [
+              {
+                "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+                "or": [
+                  "_last_edit:contributor:uid:={_uid}",
+                  "_last_edit:contributor:uid="
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "images",
+          "description": "This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images",
+          "render": {
+            "*": "{image_carousel()}{image_upload()}{nearby_images():my-4}"
+          },
+          "classes": "my-4"
+        },
+        {
+          "id": "leftover-questions",
+          "render": {
+            "*": "{questions( ,)}"
+          }
+        },
+        {
+          "id": "lod",
+          "labels": [
+            "added_by_default"
+          ],
+          "render": {
+            "*": "{linked_data_from_website()}"
+          }
+        },
+        {
+          "id": "minimap",
+          "description": "Shows a small map with the feature. Added by default to every popup",
+          "render": {
+            "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+          }
+        },
+        {
+          "id": "last_edit",
+          "labels": [
+            "added_by_default"
+          ],
+          "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+          "condition": {
+            "and": [
+              "_last_edit:contributor~*",
+              "_last_edit:changeset~*"
+            ]
+          },
+          "metacondition": {
+            "or": [
+              "__featureSwitchIsTesting=true",
+              "__featureSwitchIsDebugging=true",
+              "mapcomplete-show_debug=yes",
+              "_csCount>=10"
+            ]
+          },
+          "render": {
+            "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+          }
+        },
+        {
+          "id": "favourite_status",
+          "render": {
+            "*": "{favourite_status()}"
+          }
+        },
+        {
+          "id": "qr_code",
+          "labels": [
+            "added_by_default"
+          ],
+          "classes": "flex items-center gap-x-2",
+          "render": {
+            "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+            "en": "{qr_code()}Scan this code to open this location on another device",
+            "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+            "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+          }
+        },
+        {
+          "id": "share",
+          "labels": [
+            "added_by_default"
+          ],
+          "metacondition": "_supports_sharing=yes",
+          "render": {
+            "de": "{share_link(,Standort teilen)}",
+            "en": "{share_link(,Share this location)}",
+            "nl": "{share_link(,Deel deze locatie)}"
+          }
+        },
+        {
+          "id": "all-tags",
+          "render": {
+            "*": "{all_tags()}"
+          },
+          "metacondition": {
+            "or": [
+              "__featureSwitchIsDebugging=true",
+              "mapcomplete-show_tags=full",
+              "mapcomplete-show_debug=yes"
+            ]
+          }
+        },
+        {
+          "id": "split-button",
+          "render": {
+            "*": "{split_button()}"
+          }
+        }
+      ],
+      "pointRendering": [
+        {
+          "marker": [
+            {
+              "icon": {
+                "render": "./assets/themes/cyclestreets/F111.svg",
+                "mappings": [
+                  {
+                    "if": "traffic_sign=DE:244.1,1020-30",
+                    "then": "./assets/themes/cyclestreets/Zeichen_244_1020-30.svg"
+                  },
+                  {
+                    "if": "traffic_sign=DE:244.1,1022-12,1024-10",
+                    "then": "./assets/themes/cyclestreets/Zeichen_244_KFZ_frei.svg"
+                  },
+                  {
+                    "if": "traffic_sign=DE:244.1,1022-12",
+                    "then": "./assets/themes/cyclestreets/Zeichen_244_1022-12.svg"
+                  },
+                  {
+                    "if": "traffic_sign=DE:244.1,1024-10",
+                    "then": "./assets/themes/cyclestreets/Zeichen_244_1024-10.svg"
+                  },
+                  {
+                    "if": "_country=de",
+                    "then": "./assets/themes/cyclestreets/Zeichen_244.svg"
+                  },
+                  {
+                    "if": "_country=fi",
+                    "then": "./assets/themes/cyclestreets/Finland_road_sign_E28.svg"
+                  }
+                ]
+              }
+            }
+          ],
+          "iconSize": {
+            "render": "40,40,center",
+            "mappings": [
+              {
+                "if": {
+                  "or": [
+                    "traffic_sign=DE:244.1,1020-30",
+                    "traffic_sign=DE:244.1,1022-12,1024-10"
+                  ]
+                },
+                "then": "40,62,center"
+              },
+              {
+                "if": {
+                  "or": [
+                    "traffic_sign=DE:244.1,1022-12",
+                    "traffic_sign=DE:244.1,1024-10"
+                  ]
+                },
+                "then": "40,70,center"
+              }
+            ]
+          },
+          "location": [
+            "projected_centerpoint"
+          ],
+          "iconBadges": [
+            {
+              "if": "_favourite=yes",
+              "then": {
+                "render": "circle:white;heart:red",
+                "id": "circlewhiteheartred"
+              }
+            }
+          ]
+        }
+      ],
+      "lineRendering": [
+        {
+          "color": "#0000ff",
+          "width": "10"
+        }
+      ],
+      "titleIcons": [
+        {
+          "id": "wikipedialink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+          "condition": {
+            "or": [
+              "wikipedia~*",
+              "wikidata~*"
+            ]
+          },
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "wikipedia=",
+              "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+            }
+          ]
+        },
+        {
+          "id": "open_until",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "#": "Titleicon showing e.g. 'open until 17:00'",
+          "icon": {
+            "class": "w-20 mx-1 flex items-center"
+          },
+          "render": "{opening_hours_state()}",
+          "condition": {
+            "or": [
+              "opening_hours~*",
+              {
+                "or": [
+                  {
+                    "and": [
+                      "seasonal~.*winter.*",
+                      "_now:date~....-(12|01|02)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*spring.*",
+                      "_now:date~....-(03|04|05)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*summer.*",
+                      "_now:date~....-(06|07|08)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*autumn.*",
+                      "_now:date~....-(09|10|11)-.."
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "phonelink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.render"
+          },
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "contact:phone~*",
+              "then": {
+                "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+                "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+                "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+                "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+              }
+            }
+          ],
+          "condition": {
+            "or": [
+              "phone~*",
+              "contact:phone~*"
+            ]
+          }
+        },
+        {
+          "id": "emaillink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "contact:email~*",
+              "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "operator:email~*",
+              "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+            }
+          ],
+          "condition": {
+            "or": [
+              "email~*",
+              "contact:email~*",
+              "operator:email~*"
+            ]
+          }
+        },
+        {
+          "id": "websitelink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "website~*",
+              "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "operator:website~*",
+              "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "context:website~*",
+              "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            }
+          ]
+        },
+        {
+          "id": "smokingicon",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "smoking=no",
+              "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "smoking=yes",
+              "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+            }
+          ]
+        },
+        {
+          "id": "dogicon",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "if": "dog=no",
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+            },
+            {
+              "if": "dog=leashed",
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+            },
+            {
+              "if": {
+                "or": [
+                  "dog=yes",
+                  "dog=unleashed"
+                ]
+              },
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+            }
+          ]
+        },
+        {
+          "id": "sharelink",
+          "labels": [
+            "defaults"
+          ],
+          "render": "{share_link()}",
+          "metacondition": "_supports_sharing=yes"
+        },
+        {
+          "id": "favourite_title_icon",
+          "labels": [
+            "defaults"
+          ],
+          "render": {
+            "*": "{favourite_icon()}"
+          },
+          "metacondition": "_loggedIn=true"
+        },
+        {
+          "id": "osmlink",
+          "labels": [
+            "defaults"
+          ],
+          "render": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.render"
+          },
+          "mappings": [
+            {
+              "if": "id~.*/-.*",
+              "then": ""
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "_backend~*",
+              "then": {
+                "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+                "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+                "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+                "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+              }
+            }
+          ],
+          "condition": "id~(node|way|relation)/[0-9]*"
+        },
+        {
+          "id": "direction",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "{direction_indicator()}"
+        }
+      ]
+    },
+    {
+      "id": "toekomstige_fietsstraat",
+      "name": {
+        "nl": "Toekomstige fietsstraat",
+        "en": "Future cyclestreet",
+        "ja": "将来のcyclestreet",
+        "zh_Hant": "將來的單車街道",
+        "nb_NO": "Fremtidig sykkelvei",
+        "it": "Futura strada ciclabile",
+        "de": "Zukünftige Fahrradstraßen",
+        "hu": "Jövőbeli kerékpárosutca",
+        "ca": "Futur carrer ciclista",
+        "es": "Futura ciclocalle",
+        "fr": "Future rue cyclable",
+        "da": "Fremtidig cykelgade",
+        "pa_PK": "بھُوکھی سائیکل سڑک",
+        "cs": "Budoucí cyklostezka",
+        "pl": "Przyszła ulica rowerowa",
+        "_context": "themes:cyclestreets.layers.toekomstige_fietsstraat.name"
+      },
+      "description": {
+        "nl": "Deze straat wordt binnenkort een fietsstraat",
+        "en": "This street will become a cyclestreet soon",
+        "ja": "この通りはまもなくcyclestreetになります",
+        "it": "Questa strada diventerà presto una strada ciclabile",
+        "de": "Diese Straße wird bald eine Fahrradstraße sein",
+        "nb_NO": "Denne gaten vil bli sykkelgate snart",
+        "hu": "Ez az utca hamarosan kerékpárosutcává válik",
+        "es": "Esta calle se convertirá en una ciclocalle próximamente",
+        "fr": "Cette rue va bientôt devenir une rue cyclable",
+        "da": "Denne gade bliver snart en cykelgade",
+        "cs": "Tato ulice se brzy stane cyklostezkou",
+        "ca": "Aquest carrer es convertirà en un ciclocarrer pròximament",
+        "pl": "Ta ulica wkrótce stanie się ulicą rowerową",
+        "_context": "themes:cyclestreets.layers.toekomstige_fietsstraat.description"
+      },
+      "minzoom": 9,
+      "source": {
+        "osmTags": {
+          "or": [
+            "proposed:cyclestreet=yes",
+            "proposed:bicycle_road=yes"
+          ]
+        }
+      },
+      "title": {
+        "render": {
+          "nl": "Toekomstige fietsstraat",
+          "en": "Future cyclestreet",
+          "ja": "将来のcyclestreet",
+          "nb_NO": "Fremtidig sykkelvei",
+          "it": "Futura strada ciclabile",
+          "de": "Zukünftige Fahrradstraße",
+          "hu": "Jövőbeli kerékpárosutca",
+          "ca": "Futur carrer ciclista",
+          "es": "Futura ciclocalle",
+          "fr": "Future rue cyclable",
+          "da": "Fremtidig cykelgade",
+          "pa_PK": "بھُوکھی سائیکل سڑک",
+          "cs": "Budoucí cyklostezka",
+          "pl": "Przyszła ulica rowerowa",
+          "_context": "themes:cyclestreets.layers.toekomstige_fietsstraat.title.render"
+        },
+        "mappings": [
+          {
+            "then": {
+              "nl": "{name} wordt fietsstraat",
+              "en": "{name} will become a cyclestreet soon",
+              "ja": "{name}は、もうすぐcyclestreetになる",
+              "it": "{name} diventerà presto una strada ciclabile",
+              "de": "{name} wird bald eine Fahrradstraße werden",
+              "nb_NO": "{name} vil bli sykkelgate snart",
+              "hu": "{name} nemsokára kerékpárosutca lesz",
+              "es": "{name} se convertirá en una ciclocalle próximamente",
+              "fr": "{name} va bientôt devenir une rue cyclable",
+              "da": "{name} bliver snart en cykelgade",
+              "cs": "{name} se brzy stane cyklostezkou",
+              "ca": "{name} es convertirà en un ciclocarrer pròximament",
+              "eu": "{name} laster bidegorri bihurtuko da",
+              "pl": "{name} wkrótce stanie się ulicą rowerową",
+              "_context": "themes:cyclestreets.layers.toekomstige_fietsstraat.title.mappings.0.then"
+            },
+            "if": "name~*"
+          }
+        ]
+      },
+      "tagRenderings": [
+        {
+          "id": "is_cyclestreet",
+          "question": {
+            "nl": "Is de straat <b>{name}</b> een fietsstraat?",
+            "en": "Is the street <b>{name}</b> a cyclestreet?",
+            "de": "Ist die Straße <b>{name}</b> eine Fahrradstraße?",
+            "it": "È <b>{name}</b> una strada ciclabile?",
+            "hu": "Kerékpárosutca-e <b>{name}</b>?",
+            "es": "¿La calle <b>{name}</b> es una ciclocalle?",
+            "fr": "La rue <b>{name}</b> est-elle une rue cyclable ?",
+            "nb_NO": "Er <b>{name}</b>-gaten en sykkelgate?",
+            "da": "Er gaden <b>{name}</b> en cykelgade?",
+            "cs": "Je ulice <b>{name}</b> cyklo ulicí?",
+            "ca": "El carrer <b>{name}</b> és un ciclocarrer?",
+            "pl": "Czy ulica <b>{name}</b> jest ulicą rowerową?",
+            "_context": "themes:cyclestreets.overrideAll.+tagRenderings.is_cyclestreet.question"
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "cyclestreet=yes",
+                  "maxspeed=30",
+                  "overtaking:motor_vehicle=no",
+                  "proposed:cyclestreet="
+                ]
+              },
+              "then": {
+                "nl": "Deze straat is een fietsstraat (en dus zone 30)",
+                "en": "This street is a cyclestreet (and has a speed limit of 30 km/h)",
+                "ja": "cyclestreet(最高速度は30km/h)",
+                "nb_NO": "Denne gaten er en sykkelvei (og har en fartsgrense på 30 km/t)",
+                "de": "Diese Straße ist eine Fahrradstraße (mit einer Geschwindigkeitsbegrenzung von 30 km/h)",
+                "it": "Questa è una strada ciclabile (e ha un limite di velocità massima di 30 km/h)",
+                "hu": "Ez az utca kerékpárosutca (és 30 km/h a sebességkorlátozás)",
+                "es": "Esta calle es una ciclocalle (y tiene un límite de velocidad de 30km/h)",
+                "fr": "Cette rue est une rue cyclable (et est limitée à 30 km/h)",
+                "da": "Denne gade er en cykelgade (og har en hastighedsgrænse på 30 km/t)",
+                "cs": "Tato ulice je cyklostezkou (s omezením rychlosti na 30 km/h)",
+                "ca": "Aquest carrer és un ciclocarrer (i té un límit de velocitat de 30km/h)",
+                "pl": "Ta ulica jest ulicą rowerową (na której obowiązuje ograniczenie prędkości do 30 km/h)",
+                "_context": "themes:cyclestreets.overrideAll.+tagRenderings.is_cyclestreet.mappings.0.then"
+              },
+              "hideInAnswer": "_country!=be"
+            },
+            {
+              "if": "bicycle_road=yes",
+              "then": {
+                "en": "This street is a bicycle road",
+                "de": "Diese Straße ist eine Fahrradstraße",
+                "nl": "Deze straat is een fietsstraat",
+                "fr": "Cette rue est une piste cyclable",
+                "ca": "Aquest carrer és una pista ciclable",
+                "cs": "Tato ulice je cyklistickou silnicí",
+                "es": "Esta calle tiene ciclovías",
+                "pl": "To jest droga dla rowerów",
+                "_context": "themes:cyclestreets.overrideAll.+tagRenderings.is_cyclestreet.mappings.1.then"
+              },
+              "hideInAnswer": true
+            },
+            {
+              "if": {
+                "and": [
+                  "bicycle_road=yes",
+                  "proposed:bicycle_road=",
+                  "maxspeed=30",
+                  "source:maxspeed=DE:bicycle_road",
+                  "vehicle=no",
+                  "bicycle=designated"
+                ]
+              },
+              "then": {
+                "en": "This street is a bicycle road (has a speed limit of 30 km/h and vehicles are not allowed) (sign will be asked later)",
+                "de": "Diese Straße ist eine Fahrradstraße (hat eine Geschwindigkeitsbegrenzung von 30 km/h und Fahrzeuge sind nicht erlaubt) (Schild wird später abgefragt)",
+                "nl": "Deze straat is een fietsstraat (snelheid van 30 km/h en voertuigen niet toegestaan) (bord wordt later gevraagd)",
+                "fr": "Cette rue est une piste cyclable (avec une limitation de vitesse a 30 km/h et les véhicules ne sont pas autorisés) (un panneau sera demandé plus tard)",
+                "ca": "Aquest carrer és una carretera ciclista (té un límit de velocitat de 30km/h i els vehicles no estan permesos)(el senyal es preguntarà més tard)",
+                "cs": "Tato ulice je cyklistická (rychlost je zde omezena na 30 km/h vozidla sem mají zákaz vjezdu) (na značku se zeptáme později)",
+                "es": "Esta calle es una vía ciclista (tiene un límite de velocidad de 30 km/h y no se permiten vehículos) (se pedirá señal más adelante)",
+                "pl": "Ulica ta jest drogą rowerową (ograniczona prędkość wynosi 30 km/h i nie wolno wjeżdżać pojazdom) (znak zostanie poproszony później)",
+                "_context": "themes:cyclestreets.overrideAll.+tagRenderings.is_cyclestreet.mappings.2.then"
+              },
+              "hideInAnswer": "_country!=de"
+            },
+            {
+              "if": {
+                "and": [
+                  "cyclestreet=yes",
+                  "proposed:cyclestreet="
+                ]
+              },
+              "then": {
+                "nl": "Deze straat is een fietsstraat",
+                "en": "This street is a cyclestreet",
+                "ja": "この通りはcyclestreetだ",
+                "nb_NO": "Denne gaten er en sykkelvei",
+                "de": "Diese Straße ist eine Fahrradstraße",
+                "it": "Questa è una strada ciclabile",
+                "hu": "Ez az utca kerékpárosutca",
+                "es": "Esta calle es una ciclocalle",
+                "fr": "Cette rue est une rue cyclable",
+                "ca": "Aquest carrer és una ciclocarrer",
+                "da": "Denne gade er en cykelgade",
+                "cs": "Tato ulice je cykloulicí",
+                "pl": "Ta ulica jest ulicą rowerową",
+                "_context": "themes:cyclestreets.overrideAll.+tagRenderings.is_cyclestreet.mappings.3.then"
+              },
+              "hideInAnswer": {
+                "or": [
+                  "_country=be",
+                  "_country=de"
+                ]
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "cyclestreet=",
+                  "proposed:cyclestreet=yes"
+                ]
+              },
+              "then": {
+                "nl": "Deze straat wordt binnenkort een fietsstraat",
+                "en": "This street will become a cyclestreet soon",
+                "ja": "この通りはまもなくcyclestreetになるだろう",
+                "nb_NO": "Denne gaten vil bli sykkelvei ganske snart",
+                "de": "Diese Straße wird bald eine Fahrradstraße sein",
+                "it": "Diverrà tra poco una strada ciclabile",
+                "hu": "Ez az utca hamarosan kerékpárosutcává válik",
+                "es": "Esta calle se convertirá en una ciclocalle próximamente",
+                "fr": "Cette rue sera bientôt une rue cyclable",
+                "ca": "Aquest carrer es convertirà en un ciclocarrer pròximament",
+                "da": "Denne gade bliver snart en cykelgade",
+                "cs": "Tato ulice se brzy stane cyklostezkou",
+                "pl": "Ta ulica wkrótce stanie się ulicą rowerową",
+                "_context": "themes:cyclestreets.overrideAll.+tagRenderings.is_cyclestreet.mappings.4.then"
+              },
+              "hideInAnswer": "_country=de"
+            },
+            {
+              "if": {
+                "and": [
+                  "bicycle_road=",
+                  "proposed:bicycle_road=yes"
+                ]
+              },
+              "then": {
+                "en": "This street will become a bicycle road soon",
+                "de": "Diese Straße wird bald zu einer Fahrradstraße",
+                "nl": "Deze straat wordt binnenkort een fietsstraat",
+                "fr": "Cette rue va bientôt devenir une piste cyclable",
+                "cs": "Tato ulice se brzy stane cyklistickou silnicí",
+                "es": "Esta calle se convertirá pronto en una vía ciclista",
+                "ca": "Aquest carrer es convertirà aviat en una senda ciclable",
+                "pl": "Już niedługo ta ulica stanie się drogą rowerową",
+                "_context": "themes:cyclestreets.overrideAll.+tagRenderings.is_cyclestreet.mappings.5.then"
+              },
+              "hideInAnswer": "_country!=de"
+            },
+            {
+              "if": {
+                "and": [
+                  "cyclestreet=",
+                  "proposed:cyclestreet=",
+                  "bicycle_road=",
+                  "proposed:bicycle_road=",
+                  "overtaking:motor_vehicle="
+                ]
+              },
+              "then": {
+                "nl": "Deze straat is geen fietsstraat",
+                "en": "This street is not a cyclestreet",
+                "ja": "この通りはcyclestreetではない",
+                "nb_NO": "Denne gaten er ikke en sykkelvei",
+                "it": "Questa strada non è una strada ciclabile",
+                "de": "Diese Straße ist keine Fahrradstraße",
+                "hu": "Ez az utca nem kerékpárosutca",
+                "es": "Esta calle no es una ciclocalle",
+                "fr": "Cette rue n’est pas une rue cyclable",
+                "da": "Denne gade er ikke en cykelgade",
+                "cs": "Tato ulice není cyklo ulicí",
+                "ca": "Aquest carrer no és un ciclocarrer",
+                "pl": "Ta ulica nie jest ulicą rowerową",
+                "_context": "themes:cyclestreets.overrideAll.+tagRenderings.is_cyclestreet.mappings.6.then"
+              }
+            }
+          ]
+        },
+        {
+          "id": "supplementary_sign",
+          "condition": {
+            "and": [
+              "bicycle_road=yes",
+              "_country=de"
+            ]
+          },
+          "question": {
+            "en": "What sign does this bicycle road have?",
+            "de": "Welches Schild hat diese Fahrradstraße?",
+            "nl": "Welk bord heeft deze fietsstraat?",
+            "fr": "Quel panneau comporte cette piste cyclable ?",
+            "cs": "Jakou značku má tato cyklostezka?",
+            "es": "¿Qué señal tiene esta vía ciclista?",
+            "ca": "Quin senyal té aquesta senda ciclable?",
+            "pl": "Jaki znak ma ta droga rowerowa?",
+            "_context": "themes:cyclestreets.overrideAll.+tagRenderings.supplementary_sign.question"
+          },
+          "mappings": [
+            {
+              "if": "traffic_sign=DE:244.1,1020-30",
+              "then": {
+                "en": "Residents allowed",
+                "de": "Anlieger frei",
+                "nl": "Aanwonenden toegestaan",
+                "fr": "Riverains autorisés",
+                "ca": "Residents permesos",
+                "es": "Residentes autorizados",
+                "cs": "Přístup povolen obyvatelům",
+                "pl": "Mieszkańcy dopuszczeni",
+                "_context": "themes:cyclestreets.overrideAll.+tagRenderings.supplementary_sign.mappings.0.then"
+              },
+              "icon": {
+                "path": "./assets/themes/cyclestreets/Zeichen_244_1020-30.svg",
+                "class": "large"
+              },
+              "addExtraTags": [
+                "vehicle=destination",
+                "motorcar=",
+                "motorcycle=",
+                "motor_vehicle="
+              ]
+            },
+            {
+              "if": "traffic_sign=DE:244.1,1022-12,1024-10",
+              "then": {
+                "en": "Motor vehicles allowed",
+                "de": "KFZ frei",
+                "nl": "Motorvoertuigen toegestaan",
+                "fr": "Véhicules motorisés autorisés",
+                "cs": "Vjezd motorových vozidel povolen",
+                "ca": "Vehicles a motor permesos",
+                "es": "Vehículos a motor permitidos",
+                "pl": "Pojazdy silnikowe dozwolone",
+                "_context": "themes:cyclestreets.overrideAll.+tagRenderings.supplementary_sign.mappings.1.then"
+              },
+              "icon": {
+                "path": "./assets/themes/cyclestreets/Zeichen_244_KFZ_frei.svg",
+                "class": "large"
+              },
+              "addExtraTags": [
+                "motor_vehicle=yes",
+                "motorcar=",
+                "motorcycle=",
+                "vehicle=no"
+              ]
+            },
+            {
+              "if": "traffic_sign=DE:244.1,1022-12",
+              "then": {
+                "en": "Motorcycles allowed",
+                "de": "Motorräder frei",
+                "pa_PK": "موٹرسائیکلاں دی اِجازت اے",
+                "nl": "Motoren toegestaan",
+                "fr": "Motos autorisées",
+                "cs": "Vjezd motocyklů povolen",
+                "ca": "Motos permeses",
+                "es": "Motocicletas permitidas",
+                "pl": "Motocykle dozwolone",
+                "_context": "themes:cyclestreets.overrideAll.+tagRenderings.supplementary_sign.mappings.2.then"
+              },
+              "icon": {
+                "path": "./assets/themes/cyclestreets/Zeichen_244_1022-12.svg",
+                "class": "large"
+              },
+              "addExtraTags": [
+                "motorcycle=yes",
+                "motorcar=",
+                "motor_vehicle=",
+                "vehicle=no"
+              ]
+            },
+            {
+              "if": "traffic_sign=DE:244.1,1024-10",
+              "then": {
+                "en": "Cars allowed",
+                "de": "Autos erlaubt",
+                "pa_PK": "موٹرکاراں دی اِجازت اے",
+                "nl": "Auto's toegestaan",
+                "fr": "Voitures autorisées",
+                "cs": "Vjezd aut povolen",
+                "nb_NO": "Biler tillatt",
+                "ca": "Cotxes permesos",
+                "es": "Coches permitidos",
+                "pl": "Samochody dozwolone",
+                "_context": "themes:cyclestreets.overrideAll.+tagRenderings.supplementary_sign.mappings.3.then"
+              },
+              "icon": {
+                "path": "./assets/themes/cyclestreets/Zeichen_244_1024-10.svg",
+                "class": "large"
+              },
+              "addExtraTags": [
+                "motorcar=yes",
+                "motorcycle=",
+                "motor_vehicle=",
+                "vehicle=no"
+              ]
+            },
+            {
+              "if": "traffic_sign=DE:244.1",
+              "then": {
+                "en": "There are no supplementary signs at this bicycle road.",
+                "de": "An dieser Fahrradstraße gibt es keine zusätzlichen Schilder.",
+                "nl": "Er zijn geen onderborden bij deze fietsstraat.",
+                "fr": "Il n'y a pas de panneaux supplémentaires à cette piste cyclable.",
+                "cs": "Na této cyklostezce nejsou žádná doplňková značení.",
+                "es": "No hay señales suplementarias en esta vía ciclista.",
+                "ca": "No hi ha senyals addicionals en aquesta senda ciclable.",
+                "pl": "Na tej drodze rowerowej nie ma żadnych dodatkowych znaków.",
+                "_context": "themes:cyclestreets.overrideAll.+tagRenderings.supplementary_sign.mappings.4.then"
+              },
+              "icon": {
+                "path": "./assets/themes/cyclestreets/Zeichen_244.svg",
+                "class": "large"
+              },
+              "addExtraTags": [
+                "vehicle=no",
+                "motorcycle=",
+                "motorcar=",
+                "motor_vehicle="
+              ]
+            }
+          ]
+        },
+        {
+          "id": "future_cyclestreet",
+          "question": {
+            "nl": "Wanneer wordt deze straat een fietsstraat?",
+            "en": "When will this street become a cyclestreet?",
+            "ja": "この通りはいつcyclestreetになるんですか?",
+            "it": "Questa strada diventerà una strada ciclabile quando?",
+            "de": "Wann wird diese Straße eine Fahrradstraße?",
+            "hu": "Mikor lesz ez az utca kerékpárosutca?",
+            "es": "¿Cuándo se convertirá esta calle en una ciclocalle?",
+            "fr": "Quand cette rue deviendra-t-elle cyclable ?",
+            "nb_NO": "Når vil denne gaten bli en sykkelgate?",
+            "da": "Hvornår bliver denne gade en cykelgade?",
+            "cs": "Kdy se tato ulice stane cyklostezkou?",
+            "ca": "Quan es convertirà aquest carrer en un ciclocarrer?",
+            "pl": "Kiedy ta ulica stanie się ulicą rowerową?",
+            "_context": "themes:cyclestreets.overrideAll.+tagRenderings.future_cyclestreet.question"
+          },
+          "render": {
+            "nl": "Deze straat wordt fietsstraat op {cyclestreet:start_date}",
+            "en": "This street will become a cyclestreet at {cyclestreet:start_date}",
+            "ja": "この通りは{cyclestreet:start_date}に、cyclestreetになります",
+            "it": "Questa strada diventerà una strada ciclabile dal {cyclestreet:start_date}",
+            "de": "Diese Straße wird am {cyclestreet:start_date} zu einer Fahrradstraße",
+            "hu": "Ez az utca ekkor lesz kerékpárosutca: {cyclestreet:start_date}",
+            "es": "Esta calle se convetirá en una ciclocalle el {cyclestreet:start_date}",
+            "fr": "Cette rue deviendra une rue cyclable le {cyclestreet:start_date}",
+            "nb_NO": "Denne gaten vil bli en sykkelgate {cyclestreet:start_date}",
+            "da": "Denne gade bliver en cykelgade ved {cyclestreet:start_date}",
+            "cs": "Tato ulice se stane cyklostezkou {cyclestreet:start_date}",
+            "ca": "Aquest carrer es convertirà un ciclocarrer el {cyclestreet:start_date}",
+            "pl": "Ta ulica stanie się ulicą rowerową {cyclestreet:start_date}",
+            "_context": "themes:cyclestreets.overrideAll.+tagRenderings.future_cyclestreet.render"
+          },
+          "condition": "proposed:cyclestreet=yes",
+          "freeform": {
+            "type": "date",
+            "key": "cyclestreet:start_date",
+            "inline": true
+          }
+        },
+        {
+          "id": "just_created",
+          "labels": [
+            "added_by_default"
+          ],
+          "description": "This element shows a 'thank you' that the contributor has recently created this element",
+          "classes": "rounded-xl thanks",
+          "mappings": [
+            {
+              "if": "id~*",
+              "icon": "./assets/svg/party.svg",
+              "then": {
+                "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+                "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+                "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+                "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+                "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+                "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+              }
+            }
+          ],
+          "condition": {
+            "and": [
+              "_backend~*",
+              "_last_edit:passed_time<300",
+              {
+                "or": [
+                  "_version_number=",
+                  "_version_number=1"
+                ]
+              }
+            ]
+          },
+          "metacondition": {
+            "and": [
+              {
+                "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+                "or": [
+                  "_last_edit:contributor:uid:={_uid}",
+                  "_last_edit:contributor:uid="
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "images",
+          "description": "This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images",
+          "render": {
+            "*": "{image_carousel()}{image_upload()}{nearby_images():my-4}"
+          },
+          "classes": "my-4"
+        },
+        {
+          "id": "leftover-questions",
+          "render": {
+            "*": "{questions( ,)}"
+          }
+        },
+        {
+          "id": "lod",
+          "labels": [
+            "added_by_default"
+          ],
+          "render": {
+            "*": "{linked_data_from_website()}"
+          }
+        },
+        {
+          "id": "minimap",
+          "description": "Shows a small map with the feature. Added by default to every popup",
+          "render": {
+            "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+          }
+        },
+        {
+          "id": "last_edit",
+          "labels": [
+            "added_by_default"
+          ],
+          "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+          "condition": {
+            "and": [
+              "_last_edit:contributor~*",
+              "_last_edit:changeset~*"
+            ]
+          },
+          "metacondition": {
+            "or": [
+              "__featureSwitchIsTesting=true",
+              "__featureSwitchIsDebugging=true",
+              "mapcomplete-show_debug=yes",
+              "_csCount>=10"
+            ]
+          },
+          "render": {
+            "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+          }
+        },
+        {
+          "id": "favourite_status",
+          "render": {
+            "*": "{favourite_status()}"
+          }
+        },
+        {
+          "id": "qr_code",
+          "labels": [
+            "added_by_default"
+          ],
+          "classes": "flex items-center gap-x-2",
+          "render": {
+            "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+            "en": "{qr_code()}Scan this code to open this location on another device",
+            "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+            "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+          }
+        },
+        {
+          "id": "share",
+          "labels": [
+            "added_by_default"
+          ],
+          "metacondition": "_supports_sharing=yes",
+          "render": {
+            "de": "{share_link(,Standort teilen)}",
+            "en": "{share_link(,Share this location)}",
+            "nl": "{share_link(,Deel deze locatie)}"
+          }
+        },
+        {
+          "id": "all-tags",
+          "render": {
+            "*": "{all_tags()}"
+          },
+          "metacondition": {
+            "or": [
+              "__featureSwitchIsDebugging=true",
+              "mapcomplete-show_tags=full",
+              "mapcomplete-show_debug=yes"
+            ]
+          }
+        },
+        {
+          "id": "split-button",
+          "render": {
+            "*": "{split_button()}"
+          }
+        }
+      ],
+      "pointRendering": [
+        {
+          "marker": [
+            {
+              "icon": {
+                "render": "./assets/themes/cyclestreets/F113.svg",
+                "mappings": [
+                  {
+                    "if": "_country=de",
+                    "then": "./assets/themes/cyclestreets/Zeichen_244a.svg"
+                  },
+                  {
+                    "if": "_country=fi",
+                    "then": "./assets/themes/cyclestreets/Finland_road_sign_E29.svg"
+                  }
+                ]
+              }
+            }
+          ],
+          "location": [
+            "projected_centerpoint"
+          ],
+          "iconBadges": [
+            {
+              "if": "_favourite=yes",
+              "then": {
+                "render": "circle:white;heart:red",
+                "id": "circlewhiteheartred"
+              }
+            }
+          ]
+        }
+      ],
+      "lineRendering": [
+        {
+          "color": "#09f9dd",
+          "width": "5"
+        }
+      ],
+      "titleIcons": [
+        {
+          "id": "wikipedialink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+          "condition": {
+            "or": [
+              "wikipedia~*",
+              "wikidata~*"
+            ]
+          },
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "wikipedia=",
+              "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+            }
+          ]
+        },
+        {
+          "id": "open_until",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "#": "Titleicon showing e.g. 'open until 17:00'",
+          "icon": {
+            "class": "w-20 mx-1 flex items-center"
+          },
+          "render": "{opening_hours_state()}",
+          "condition": {
+            "or": [
+              "opening_hours~*",
+              {
+                "or": [
+                  {
+                    "and": [
+                      "seasonal~.*winter.*",
+                      "_now:date~....-(12|01|02)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*spring.*",
+                      "_now:date~....-(03|04|05)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*summer.*",
+                      "_now:date~....-(06|07|08)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*autumn.*",
+                      "_now:date~....-(09|10|11)-.."
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "phonelink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.render"
+          },
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "contact:phone~*",
+              "then": {
+                "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+                "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+                "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+                "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+              }
+            }
+          ],
+          "condition": {
+            "or": [
+              "phone~*",
+              "contact:phone~*"
+            ]
+          }
+        },
+        {
+          "id": "emaillink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "contact:email~*",
+              "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "operator:email~*",
+              "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+            }
+          ],
+          "condition": {
+            "or": [
+              "email~*",
+              "contact:email~*",
+              "operator:email~*"
+            ]
+          }
+        },
+        {
+          "id": "websitelink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "website~*",
+              "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "operator:website~*",
+              "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "context:website~*",
+              "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            }
+          ]
+        },
+        {
+          "id": "smokingicon",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "smoking=no",
+              "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "smoking=yes",
+              "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+            }
+          ]
+        },
+        {
+          "id": "dogicon",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "if": "dog=no",
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+            },
+            {
+              "if": "dog=leashed",
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+            },
+            {
+              "if": {
+                "or": [
+                  "dog=yes",
+                  "dog=unleashed"
+                ]
+              },
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+            }
+          ]
+        },
+        {
+          "id": "sharelink",
+          "labels": [
+            "defaults"
+          ],
+          "render": "{share_link()}",
+          "metacondition": "_supports_sharing=yes"
+        },
+        {
+          "id": "favourite_title_icon",
+          "labels": [
+            "defaults"
+          ],
+          "render": {
+            "*": "{favourite_icon()}"
+          },
+          "metacondition": "_loggedIn=true"
+        },
+        {
+          "id": "osmlink",
+          "labels": [
+            "defaults"
+          ],
+          "render": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.render"
+          },
+          "mappings": [
+            {
+              "if": "id~.*/-.*",
+              "then": ""
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "_backend~*",
+              "then": {
+                "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+                "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+                "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+                "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+              }
+            }
+          ],
+          "condition": "id~(node|way|relation)/[0-9]*"
+        },
+        {
+          "id": "direction",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "{direction_indicator()}"
+        }
+      ]
+    },
+    {
+      "id": "not_cyclestreets",
+      "name": {
+        "nl": "Alle straten",
+        "en": "All streets",
+        "ja": "すべての道路",
+        "nb_NO": "Alle gater",
+        "it": "Tutte le strade",
+        "ru": "Все улицы",
+        "de": "Alle Straßen",
+        "eo": "Ĉiuj stratoj",
+        "hu": "Minden utca",
+        "ca": "Tots els carrers",
+        "es": "Todas las calles",
+        "fr": "Toutes les rues",
+        "da": "Alle gader",
+        "pa_PK": "ساریاں سڑکاں",
+        "cs": "Všechny ulice",
+        "pl": "Wszystkie ulice",
+        "_context": "themes:cyclestreets.layers.not_cyclestreets.name"
+      },
+      "description": {
+        "nl": "Laag waar je een straat als fietsstraat kan markeren",
+        "en": "Layer to mark any street as cyclestreet",
+        "ja": "任意の道路をCycle Streetとしてマークするレイヤ",
+        "nb_NO": "Lag for å markere hvilken som helst gate som sykkelvei",
+        "it": "Livello per contrassegnare tutte le strade come strade ciclabili",
+        "de": "Ebene zur Kennzeichnung einer Straße als Fahrradstraße",
+        "hu": "Réteg bármely utca kerékpárosutcaként való megjelöléséhez",
+        "es": "Capa para marcar cualquier calle como ciclocalle",
+        "fr": "Calque pour marquer une rue comme cyclable",
+        "da": "Lag for at markere enhver gade som cykelgade",
+        "cs": "Vrstva pro označení jakékoli ulice jako cyklostezky",
+        "ca": "Capa per a marcar qualsevol carrer com a ciclocarrer",
+        "pl": "Warstwa oznaczająca dowolną ulicę jako ulicę rowerową",
+        "_context": "themes:cyclestreets.layers.not_cyclestreets.description"
+      },
+      "source": {
+        "osmTags": {
+          "or": [
+            "highway=residential",
+            "highway=tertiary",
+            "highway=unclassified"
+          ]
+        }
+      },
+      "minzoom": 18,
+      "title": {
+        "render": {
+          "nl": "Straat",
+          "en": "Street",
+          "ja": "ストリート",
+          "it": "Strada",
+          "ru": "Улица",
+          "de": "Straße",
+          "eo": "Strato",
+          "nb_NO": "Gate",
+          "hu": "Utca",
+          "ca": "Carrer",
+          "es": "Calle",
+          "fr": "Rue",
+          "da": "Gade",
+          "pa_PK": "سڑک",
+          "cs": "Ulice",
+          "eu": "Kalea",
+          "pl": "Ulica",
+          "_context": "themes:cyclestreets.layers.not_cyclestreets.title.render"
+        },
+        "mappings": [
+          {
+            "if": "name~*",
+            "then": "{name}"
+          }
+        ]
+      },
+      "tagRenderings": [
+        {
+          "id": "is_cyclestreet",
+          "question": {
+            "nl": "Is de straat <b>{name}</b> een fietsstraat?",
+            "en": "Is the street <b>{name}</b> a cyclestreet?",
+            "de": "Ist die Straße <b>{name}</b> eine Fahrradstraße?",
+            "it": "È <b>{name}</b> una strada ciclabile?",
+            "hu": "Kerékpárosutca-e <b>{name}</b>?",
+            "es": "¿La calle <b>{name}</b> es una ciclocalle?",
+            "fr": "La rue <b>{name}</b> est-elle une rue cyclable ?",
+            "nb_NO": "Er <b>{name}</b>-gaten en sykkelgate?",
+            "da": "Er gaden <b>{name}</b> en cykelgade?",
+            "cs": "Je ulice <b>{name}</b> cyklo ulicí?",
+            "ca": "El carrer <b>{name}</b> és un ciclocarrer?",
+            "pl": "Czy ulica <b>{name}</b> jest ulicą rowerową?",
+            "_context": "themes:cyclestreets.overrideAll.+tagRenderings.is_cyclestreet.question"
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "cyclestreet=yes",
+                  "maxspeed=30",
+                  "overtaking:motor_vehicle=no",
+                  "proposed:cyclestreet="
+                ]
+              },
+              "then": {
+                "nl": "Deze straat is een fietsstraat (en dus zone 30)",
+                "en": "This street is a cyclestreet (and has a speed limit of 30 km/h)",
+                "ja": "cyclestreet(最高速度は30km/h)",
+                "nb_NO": "Denne gaten er en sykkelvei (og har en fartsgrense på 30 km/t)",
+                "de": "Diese Straße ist eine Fahrradstraße (mit einer Geschwindigkeitsbegrenzung von 30 km/h)",
+                "it": "Questa è una strada ciclabile (e ha un limite di velocità massima di 30 km/h)",
+                "hu": "Ez az utca kerékpárosutca (és 30 km/h a sebességkorlátozás)",
+                "es": "Esta calle es una ciclocalle (y tiene un límite de velocidad de 30km/h)",
+                "fr": "Cette rue est une rue cyclable (et est limitée à 30 km/h)",
+                "da": "Denne gade er en cykelgade (og har en hastighedsgrænse på 30 km/t)",
+                "cs": "Tato ulice je cyklostezkou (s omezením rychlosti na 30 km/h)",
+                "ca": "Aquest carrer és un ciclocarrer (i té un límit de velocitat de 30km/h)",
+                "pl": "Ta ulica jest ulicą rowerową (na której obowiązuje ograniczenie prędkości do 30 km/h)",
+                "_context": "themes:cyclestreets.overrideAll.+tagRenderings.is_cyclestreet.mappings.0.then"
+              },
+              "hideInAnswer": "_country!=be"
+            },
+            {
+              "if": "bicycle_road=yes",
+              "then": {
+                "en": "This street is a bicycle road",
+                "de": "Diese Straße ist eine Fahrradstraße",
+                "nl": "Deze straat is een fietsstraat",
+                "fr": "Cette rue est une piste cyclable",
+                "ca": "Aquest carrer és una pista ciclable",
+                "cs": "Tato ulice je cyklistickou silnicí",
+                "es": "Esta calle tiene ciclovías",
+                "pl": "To jest droga dla rowerów",
+                "_context": "themes:cyclestreets.overrideAll.+tagRenderings.is_cyclestreet.mappings.1.then"
+              },
+              "hideInAnswer": true
+            },
+            {
+              "if": {
+                "and": [
+                  "bicycle_road=yes",
+                  "proposed:bicycle_road=",
+                  "maxspeed=30",
+                  "source:maxspeed=DE:bicycle_road",
+                  "vehicle=no",
+                  "bicycle=designated"
+                ]
+              },
+              "then": {
+                "en": "This street is a bicycle road (has a speed limit of 30 km/h and vehicles are not allowed) (sign will be asked later)",
+                "de": "Diese Straße ist eine Fahrradstraße (hat eine Geschwindigkeitsbegrenzung von 30 km/h und Fahrzeuge sind nicht erlaubt) (Schild wird später abgefragt)",
+                "nl": "Deze straat is een fietsstraat (snelheid van 30 km/h en voertuigen niet toegestaan) (bord wordt later gevraagd)",
+                "fr": "Cette rue est une piste cyclable (avec une limitation de vitesse a 30 km/h et les véhicules ne sont pas autorisés) (un panneau sera demandé plus tard)",
+                "ca": "Aquest carrer és una carretera ciclista (té un límit de velocitat de 30km/h i els vehicles no estan permesos)(el senyal es preguntarà més tard)",
+                "cs": "Tato ulice je cyklistická (rychlost je zde omezena na 30 km/h vozidla sem mají zákaz vjezdu) (na značku se zeptáme později)",
+                "es": "Esta calle es una vía ciclista (tiene un límite de velocidad de 30 km/h y no se permiten vehículos) (se pedirá señal más adelante)",
+                "pl": "Ulica ta jest drogą rowerową (ograniczona prędkość wynosi 30 km/h i nie wolno wjeżdżać pojazdom) (znak zostanie poproszony później)",
+                "_context": "themes:cyclestreets.overrideAll.+tagRenderings.is_cyclestreet.mappings.2.then"
+              },
+              "hideInAnswer": "_country!=de"
+            },
+            {
+              "if": {
+                "and": [
+                  "cyclestreet=yes",
+                  "proposed:cyclestreet="
+                ]
+              },
+              "then": {
+                "nl": "Deze straat is een fietsstraat",
+                "en": "This street is a cyclestreet",
+                "ja": "この通りはcyclestreetだ",
+                "nb_NO": "Denne gaten er en sykkelvei",
+                "de": "Diese Straße ist eine Fahrradstraße",
+                "it": "Questa è una strada ciclabile",
+                "hu": "Ez az utca kerékpárosutca",
+                "es": "Esta calle es una ciclocalle",
+                "fr": "Cette rue est une rue cyclable",
+                "ca": "Aquest carrer és una ciclocarrer",
+                "da": "Denne gade er en cykelgade",
+                "cs": "Tato ulice je cykloulicí",
+                "pl": "Ta ulica jest ulicą rowerową",
+                "_context": "themes:cyclestreets.overrideAll.+tagRenderings.is_cyclestreet.mappings.3.then"
+              },
+              "hideInAnswer": {
+                "or": [
+                  "_country=be",
+                  "_country=de"
+                ]
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "cyclestreet=",
+                  "proposed:cyclestreet=yes"
+                ]
+              },
+              "then": {
+                "nl": "Deze straat wordt binnenkort een fietsstraat",
+                "en": "This street will become a cyclestreet soon",
+                "ja": "この通りはまもなくcyclestreetになるだろう",
+                "nb_NO": "Denne gaten vil bli sykkelvei ganske snart",
+                "de": "Diese Straße wird bald eine Fahrradstraße sein",
+                "it": "Diverrà tra poco una strada ciclabile",
+                "hu": "Ez az utca hamarosan kerékpárosutcává válik",
+                "es": "Esta calle se convertirá en una ciclocalle próximamente",
+                "fr": "Cette rue sera bientôt une rue cyclable",
+                "ca": "Aquest carrer es convertirà en un ciclocarrer pròximament",
+                "da": "Denne gade bliver snart en cykelgade",
+                "cs": "Tato ulice se brzy stane cyklostezkou",
+                "pl": "Ta ulica wkrótce stanie się ulicą rowerową",
+                "_context": "themes:cyclestreets.overrideAll.+tagRenderings.is_cyclestreet.mappings.4.then"
+              },
+              "hideInAnswer": "_country=de"
+            },
+            {
+              "if": {
+                "and": [
+                  "bicycle_road=",
+                  "proposed:bicycle_road=yes"
+                ]
+              },
+              "then": {
+                "en": "This street will become a bicycle road soon",
+                "de": "Diese Straße wird bald zu einer Fahrradstraße",
+                "nl": "Deze straat wordt binnenkort een fietsstraat",
+                "fr": "Cette rue va bientôt devenir une piste cyclable",
+                "cs": "Tato ulice se brzy stane cyklistickou silnicí",
+                "es": "Esta calle se convertirá pronto en una vía ciclista",
+                "ca": "Aquest carrer es convertirà aviat en una senda ciclable",
+                "pl": "Już niedługo ta ulica stanie się drogą rowerową",
+                "_context": "themes:cyclestreets.overrideAll.+tagRenderings.is_cyclestreet.mappings.5.then"
+              },
+              "hideInAnswer": "_country!=de"
+            },
+            {
+              "if": {
+                "and": [
+                  "cyclestreet=",
+                  "proposed:cyclestreet=",
+                  "bicycle_road=",
+                  "proposed:bicycle_road=",
+                  "overtaking:motor_vehicle="
+                ]
+              },
+              "then": {
+                "nl": "Deze straat is geen fietsstraat",
+                "en": "This street is not a cyclestreet",
+                "ja": "この通りはcyclestreetではない",
+                "nb_NO": "Denne gaten er ikke en sykkelvei",
+                "it": "Questa strada non è una strada ciclabile",
+                "de": "Diese Straße ist keine Fahrradstraße",
+                "hu": "Ez az utca nem kerékpárosutca",
+                "es": "Esta calle no es una ciclocalle",
+                "fr": "Cette rue n’est pas une rue cyclable",
+                "da": "Denne gade er ikke en cykelgade",
+                "cs": "Tato ulice není cyklo ulicí",
+                "ca": "Aquest carrer no és un ciclocarrer",
+                "pl": "Ta ulica nie jest ulicą rowerową",
+                "_context": "themes:cyclestreets.overrideAll.+tagRenderings.is_cyclestreet.mappings.6.then"
+              }
+            }
+          ]
+        },
+        {
+          "id": "supplementary_sign",
+          "condition": {
+            "and": [
+              "bicycle_road=yes",
+              "_country=de"
+            ]
+          },
+          "question": {
+            "en": "What sign does this bicycle road have?",
+            "de": "Welches Schild hat diese Fahrradstraße?",
+            "nl": "Welk bord heeft deze fietsstraat?",
+            "fr": "Quel panneau comporte cette piste cyclable ?",
+            "cs": "Jakou značku má tato cyklostezka?",
+            "es": "¿Qué señal tiene esta vía ciclista?",
+            "ca": "Quin senyal té aquesta senda ciclable?",
+            "pl": "Jaki znak ma ta droga rowerowa?",
+            "_context": "themes:cyclestreets.overrideAll.+tagRenderings.supplementary_sign.question"
+          },
+          "mappings": [
+            {
+              "if": "traffic_sign=DE:244.1,1020-30",
+              "then": {
+                "en": "Residents allowed",
+                "de": "Anlieger frei",
+                "nl": "Aanwonenden toegestaan",
+                "fr": "Riverains autorisés",
+                "ca": "Residents permesos",
+                "es": "Residentes autorizados",
+                "cs": "Přístup povolen obyvatelům",
+                "pl": "Mieszkańcy dopuszczeni",
+                "_context": "themes:cyclestreets.overrideAll.+tagRenderings.supplementary_sign.mappings.0.then"
+              },
+              "icon": {
+                "path": "./assets/themes/cyclestreets/Zeichen_244_1020-30.svg",
+                "class": "large"
+              },
+              "addExtraTags": [
+                "vehicle=destination",
+                "motorcar=",
+                "motorcycle=",
+                "motor_vehicle="
+              ]
+            },
+            {
+              "if": "traffic_sign=DE:244.1,1022-12,1024-10",
+              "then": {
+                "en": "Motor vehicles allowed",
+                "de": "KFZ frei",
+                "nl": "Motorvoertuigen toegestaan",
+                "fr": "Véhicules motorisés autorisés",
+                "cs": "Vjezd motorových vozidel povolen",
+                "ca": "Vehicles a motor permesos",
+                "es": "Vehículos a motor permitidos",
+                "pl": "Pojazdy silnikowe dozwolone",
+                "_context": "themes:cyclestreets.overrideAll.+tagRenderings.supplementary_sign.mappings.1.then"
+              },
+              "icon": {
+                "path": "./assets/themes/cyclestreets/Zeichen_244_KFZ_frei.svg",
+                "class": "large"
+              },
+              "addExtraTags": [
+                "motor_vehicle=yes",
+                "motorcar=",
+                "motorcycle=",
+                "vehicle=no"
+              ]
+            },
+            {
+              "if": "traffic_sign=DE:244.1,1022-12",
+              "then": {
+                "en": "Motorcycles allowed",
+                "de": "Motorräder frei",
+                "pa_PK": "موٹرسائیکلاں دی اِجازت اے",
+                "nl": "Motoren toegestaan",
+                "fr": "Motos autorisées",
+                "cs": "Vjezd motocyklů povolen",
+                "ca": "Motos permeses",
+                "es": "Motocicletas permitidas",
+                "pl": "Motocykle dozwolone",
+                "_context": "themes:cyclestreets.overrideAll.+tagRenderings.supplementary_sign.mappings.2.then"
+              },
+              "icon": {
+                "path": "./assets/themes/cyclestreets/Zeichen_244_1022-12.svg",
+                "class": "large"
+              },
+              "addExtraTags": [
+                "motorcycle=yes",
+                "motorcar=",
+                "motor_vehicle=",
+                "vehicle=no"
+              ]
+            },
+            {
+              "if": "traffic_sign=DE:244.1,1024-10",
+              "then": {
+                "en": "Cars allowed",
+                "de": "Autos erlaubt",
+                "pa_PK": "موٹرکاراں دی اِجازت اے",
+                "nl": "Auto's toegestaan",
+                "fr": "Voitures autorisées",
+                "cs": "Vjezd aut povolen",
+                "nb_NO": "Biler tillatt",
+                "ca": "Cotxes permesos",
+                "es": "Coches permitidos",
+                "pl": "Samochody dozwolone",
+                "_context": "themes:cyclestreets.overrideAll.+tagRenderings.supplementary_sign.mappings.3.then"
+              },
+              "icon": {
+                "path": "./assets/themes/cyclestreets/Zeichen_244_1024-10.svg",
+                "class": "large"
+              },
+              "addExtraTags": [
+                "motorcar=yes",
+                "motorcycle=",
+                "motor_vehicle=",
+                "vehicle=no"
+              ]
+            },
+            {
+              "if": "traffic_sign=DE:244.1",
+              "then": {
+                "en": "There are no supplementary signs at this bicycle road.",
+                "de": "An dieser Fahrradstraße gibt es keine zusätzlichen Schilder.",
+                "nl": "Er zijn geen onderborden bij deze fietsstraat.",
+                "fr": "Il n'y a pas de panneaux supplémentaires à cette piste cyclable.",
+                "cs": "Na této cyklostezce nejsou žádná doplňková značení.",
+                "es": "No hay señales suplementarias en esta vía ciclista.",
+                "ca": "No hi ha senyals addicionals en aquesta senda ciclable.",
+                "pl": "Na tej drodze rowerowej nie ma żadnych dodatkowych znaków.",
+                "_context": "themes:cyclestreets.overrideAll.+tagRenderings.supplementary_sign.mappings.4.then"
+              },
+              "icon": {
+                "path": "./assets/themes/cyclestreets/Zeichen_244.svg",
+                "class": "large"
+              },
+              "addExtraTags": [
+                "vehicle=no",
+                "motorcycle=",
+                "motorcar=",
+                "motor_vehicle="
+              ]
+            }
+          ]
+        },
+        {
+          "id": "future_cyclestreet",
+          "question": {
+            "nl": "Wanneer wordt deze straat een fietsstraat?",
+            "en": "When will this street become a cyclestreet?",
+            "ja": "この通りはいつcyclestreetになるんですか?",
+            "it": "Questa strada diventerà una strada ciclabile quando?",
+            "de": "Wann wird diese Straße eine Fahrradstraße?",
+            "hu": "Mikor lesz ez az utca kerékpárosutca?",
+            "es": "¿Cuándo se convertirá esta calle en una ciclocalle?",
+            "fr": "Quand cette rue deviendra-t-elle cyclable ?",
+            "nb_NO": "Når vil denne gaten bli en sykkelgate?",
+            "da": "Hvornår bliver denne gade en cykelgade?",
+            "cs": "Kdy se tato ulice stane cyklostezkou?",
+            "ca": "Quan es convertirà aquest carrer en un ciclocarrer?",
+            "pl": "Kiedy ta ulica stanie się ulicą rowerową?",
+            "_context": "themes:cyclestreets.overrideAll.+tagRenderings.future_cyclestreet.question"
+          },
+          "render": {
+            "nl": "Deze straat wordt fietsstraat op {cyclestreet:start_date}",
+            "en": "This street will become a cyclestreet at {cyclestreet:start_date}",
+            "ja": "この通りは{cyclestreet:start_date}に、cyclestreetになります",
+            "it": "Questa strada diventerà una strada ciclabile dal {cyclestreet:start_date}",
+            "de": "Diese Straße wird am {cyclestreet:start_date} zu einer Fahrradstraße",
+            "hu": "Ez az utca ekkor lesz kerékpárosutca: {cyclestreet:start_date}",
+            "es": "Esta calle se convetirá en una ciclocalle el {cyclestreet:start_date}",
+            "fr": "Cette rue deviendra une rue cyclable le {cyclestreet:start_date}",
+            "nb_NO": "Denne gaten vil bli en sykkelgate {cyclestreet:start_date}",
+            "da": "Denne gade bliver en cykelgade ved {cyclestreet:start_date}",
+            "cs": "Tato ulice se stane cyklostezkou {cyclestreet:start_date}",
+            "ca": "Aquest carrer es convertirà un ciclocarrer el {cyclestreet:start_date}",
+            "pl": "Ta ulica stanie się ulicą rowerową {cyclestreet:start_date}",
+            "_context": "themes:cyclestreets.overrideAll.+tagRenderings.future_cyclestreet.render"
+          },
+          "condition": "proposed:cyclestreet=yes",
+          "freeform": {
+            "type": "date",
+            "key": "cyclestreet:start_date",
+            "inline": true
+          }
+        },
+        {
+          "id": "just_created",
+          "labels": [
+            "added_by_default"
+          ],
+          "description": "This element shows a 'thank you' that the contributor has recently created this element",
+          "classes": "rounded-xl thanks",
+          "mappings": [
+            {
+              "if": "id~*",
+              "icon": "./assets/svg/party.svg",
+              "then": {
+                "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+                "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+                "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+                "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+                "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+                "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+              }
+            }
+          ],
+          "condition": {
+            "and": [
+              "_backend~*",
+              "_last_edit:passed_time<300",
+              {
+                "or": [
+                  "_version_number=",
+                  "_version_number=1"
+                ]
+              }
+            ]
+          },
+          "metacondition": {
+            "and": [
+              {
+                "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+                "or": [
+                  "_last_edit:contributor:uid:={_uid}",
+                  "_last_edit:contributor:uid="
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "images",
+          "description": "This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images",
+          "render": {
+            "*": "{image_carousel()}{image_upload()}{nearby_images():my-4}"
+          },
+          "classes": "my-4"
+        },
+        {
+          "id": "leftover-questions",
+          "render": {
+            "*": "{questions( ,)}"
+          }
+        },
+        {
+          "id": "lod",
+          "labels": [
+            "added_by_default"
+          ],
+          "render": {
+            "*": "{linked_data_from_website()}"
+          }
+        },
+        {
+          "id": "minimap",
+          "description": "Shows a small map with the feature. Added by default to every popup",
+          "render": {
+            "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+          }
+        },
+        {
+          "id": "last_edit",
+          "labels": [
+            "added_by_default"
+          ],
+          "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+          "condition": {
+            "and": [
+              "_last_edit:contributor~*",
+              "_last_edit:changeset~*"
+            ]
+          },
+          "metacondition": {
+            "or": [
+              "__featureSwitchIsTesting=true",
+              "__featureSwitchIsDebugging=true",
+              "mapcomplete-show_debug=yes",
+              "_csCount>=10"
+            ]
+          },
+          "render": {
+            "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+          }
+        },
+        {
+          "id": "favourite_status",
+          "render": {
+            "*": "{favourite_status()}"
+          }
+        },
+        {
+          "id": "qr_code",
+          "labels": [
+            "added_by_default"
+          ],
+          "classes": "flex items-center gap-x-2",
+          "render": {
+            "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+            "en": "{qr_code()}Scan this code to open this location on another device",
+            "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+            "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+          }
+        },
+        {
+          "id": "share",
+          "labels": [
+            "added_by_default"
+          ],
+          "metacondition": "_supports_sharing=yes",
+          "render": {
+            "de": "{share_link(,Standort teilen)}",
+            "en": "{share_link(,Share this location)}",
+            "nl": "{share_link(,Deel deze locatie)}"
+          }
+        },
+        {
+          "id": "all-tags",
+          "render": {
+            "*": "{all_tags()}"
+          },
+          "metacondition": {
+            "or": [
+              "__featureSwitchIsDebugging=true",
+              "mapcomplete-show_tags=full",
+              "mapcomplete-show_debug=yes"
+            ]
+          }
+        },
+        {
+          "id": "split-button",
+          "render": {
+            "*": "{split_button()}"
+          }
+        }
+      ],
+      "pointRendering": [
+        {
+          "marker": [
+            {
+              "icon": {
+                "render": "./assets/svg/pencil.svg",
+                "id": "assetssvgpencilsvg"
+              }
+            }
+          ],
+          "location": [
+            "projected_centerpoint"
+          ],
+          "iconBadges": [
+            {
+              "if": "_favourite=yes",
+              "then": {
+                "render": "circle:white;heart:red",
+                "id": "circlewhiteheartred"
+              }
+            }
+          ]
+        }
+      ],
+      "lineRendering": [
+        {
+          "color": {
+            "render": "#aaaaaa",
+            "mappings": [
+              {
+                "then": "#0000ff",
+                "if": {
+                  "or": [
+                    "cyclestreet=yes",
+                    "bicycle_road=yes"
+                  ]
+                }
+              },
+              {
+                "then": "#09f9dd",
+                "if": {
+                  "or": [
+                    "proposed:cyclestreet=yes",
+                    "proposed:bicycle_road=yes"
+                  ]
+                }
+              }
+            ]
+          },
+          "width": "5"
+        }
+      ],
+      "isCounted": false,
+      "titleIcons": [
+        {
+          "id": "wikipedialink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+          "condition": {
+            "or": [
+              "wikipedia~*",
+              "wikidata~*"
+            ]
+          },
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "wikipedia=",
+              "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+            }
+          ]
+        },
+        {
+          "id": "open_until",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "#": "Titleicon showing e.g. 'open until 17:00'",
+          "icon": {
+            "class": "w-20 mx-1 flex items-center"
+          },
+          "render": "{opening_hours_state()}",
+          "condition": {
+            "or": [
+              "opening_hours~*",
+              {
+                "or": [
+                  {
+                    "and": [
+                      "seasonal~.*winter.*",
+                      "_now:date~....-(12|01|02)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*spring.*",
+                      "_now:date~....-(03|04|05)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*summer.*",
+                      "_now:date~....-(06|07|08)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*autumn.*",
+                      "_now:date~....-(09|10|11)-.."
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "phonelink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.render"
+          },
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "contact:phone~*",
+              "then": {
+                "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+                "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+                "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+                "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+              }
+            }
+          ],
+          "condition": {
+            "or": [
+              "phone~*",
+              "contact:phone~*"
+            ]
+          }
+        },
+        {
+          "id": "emaillink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "contact:email~*",
+              "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "operator:email~*",
+              "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+            }
+          ],
+          "condition": {
+            "or": [
+              "email~*",
+              "contact:email~*",
+              "operator:email~*"
+            ]
+          }
+        },
+        {
+          "id": "websitelink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "website~*",
+              "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "operator:website~*",
+              "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "context:website~*",
+              "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            }
+          ]
+        },
+        {
+          "id": "smokingicon",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "smoking=no",
+              "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "smoking=yes",
+              "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+            }
+          ]
+        },
+        {
+          "id": "dogicon",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "if": "dog=no",
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+            },
+            {
+              "if": "dog=leashed",
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+            },
+            {
+              "if": {
+                "or": [
+                  "dog=yes",
+                  "dog=unleashed"
+                ]
+              },
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+            }
+          ]
+        },
+        {
+          "id": "sharelink",
+          "labels": [
+            "defaults"
+          ],
+          "render": "{share_link()}",
+          "metacondition": "_supports_sharing=yes"
+        },
+        {
+          "id": "favourite_title_icon",
+          "labels": [
+            "defaults"
+          ],
+          "render": {
+            "*": "{favourite_icon()}"
+          },
+          "metacondition": "_loggedIn=true"
+        },
+        {
+          "id": "osmlink",
+          "labels": [
+            "defaults"
+          ],
+          "render": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.render"
+          },
+          "mappings": [
+            {
+              "if": "id~.*/-.*",
+              "then": ""
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "_backend~*",
+              "then": {
+                "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+                "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+                "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+                "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+              }
+            }
+          ],
+          "condition": "id~(node|way|relation)/[0-9]*"
+        },
+        {
+          "id": "direction",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "{direction_indicator()}"
+        }
+      ]
+    }
+  ],
+  "widenFactor": 2,
+  "socialImage": "assets/SocialImage.png"
+}

@@ -1,0 +1,920 @@
+{
+  "id": "tertiary_education",
+  "name": {
+    "en": "Colleges and universities",
+    "nl": "Universiteiten en hogescholen",
+    "de": "Hochschulen und Universitäten",
+    "fr": "Collèges et universités",
+    "da": "Gymnasier og universiteter",
+    "ca": "Instituts superiors i universitats",
+    "cs": "Vysoké školy a univerzity"
+  },
+  "description": "Layer with all tertiary education institutes (ISCED:2011 levels 6,7 and 8)",
+  "source": {
+    "osmTags": {
+      "and": [
+        {
+          "or": [
+            "amenity=college",
+            "amenity=university",
+            {
+              "and": [
+                "amenity=school",
+                {
+                  "or": [
+                    "isced:2011:level~.*bachelor.*",
+                    "isced:2011:level~.*master.*"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "title": {
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": {
+          "*": "{name}"
+        }
+      },
+      {
+        "if": "amenity=college",
+        "then": {
+          "en": "College",
+          "nl": "Hogeschool",
+          "de": "(Fach)hochschule",
+          "fr": "Établissement d'enseignement supérieur non universitaire",
+          "pa_PK": "کالج",
+          "ca": "Institut superior",
+          "cs": "Vysoká škola"
+        }
+      },
+      {
+        "if": "amenity=university",
+        "then": {
+          "en": "University",
+          "nl": "Universiteit",
+          "de": "Universität",
+          "fr": "Universitée",
+          "da": "Universitet",
+          "pa_PK": "یونیورسٹی",
+          "ca": "Universitat",
+          "cs": "Univerzita"
+        }
+      },
+      {
+        "if": "amenity=school",
+        "then": {
+          "en": "School providing tertiary education",
+          "nl": "Onderwijsinstelling die tertiair onderwijs geeft",
+          "de": "Schule mit tertiärem Bildungsangebot",
+          "fr": "École dispensant un enseignement supérieur",
+          "da": "Skole, der udbyder videregående uddannelser",
+          "ca": "Escola que imparteix educació terciària",
+          "cs": "Škola poskytující terciární vzdělání"
+        }
+      }
+    ]
+  },
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "iconSize": "40,40",
+      "label": {
+        "mappings": [
+          {
+            "if": "name~*",
+            "then": "<div class='bg-white rounded-lg p-1'>{name}</div>"
+          }
+        ]
+      },
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": {
+            "render": "circle",
+            "id": "circle"
+          },
+          "color": "white"
+        },
+        {
+          "icon": {
+            "render": "./assets/layers/school/college.svg",
+            "id": "assetslayersschoolcollegesvg"
+          }
+        }
+      ],
+      "iconBadges": [
+        {
+          "if": "_favourite=yes",
+          "then": "circle:white;heart:red"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#22f1f4",
+      "width": 1
+    }
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "a university",
+        "nl": "een universiteit",
+        "de": "eine Universität",
+        "fr": "une université",
+        "da": "et universitet",
+        "ca": "una universitat",
+        "cs": "univerzita"
+      },
+      "description": {
+        "en": "An institute where tertiary education is given (at the level equivalent of a bachelors degree or higher). A single point per campus is enough - buildings and faculties should not be mapped with different university points.",
+        "nl": "Een onderwijsinstelling waar tertiair onderwijs wordt gegeven - dit is onderwijs waarvan het niveau overeenkomt met een bachelor of hoger is. Eén enkel punt per campus is genoeg - gebouwen en faculteiten worden hier niet op aangeduid.",
+        "de": "Eine Einrichtung, an der tertiäre Bildung vermittelt wird (auf dem Niveau eines Bachelor-Abschlusses oder höher). Ein einziger Punkt pro Campus ist ausreichend - Gebäude und Fakultäten sollten nicht mit Universitätspunkten gekennzeichnet werden.",
+        "fr": "Un institut où l'on dispense un enseignement supérieur (au niveau équivalent à un bachelor ou plus). Un simple point par campus est suffisant - les bâtiments et les facultés ne doivent pas être cartographiés avec différents points d'université.",
+        "ca": "Un institut on s'imparteix ensenyament terciari (al nivell equivalent de batxillerat o superior). N'hi ha prou amb un únic punt per campus: els edificis i les facultats no s'han de cartografiar amb diferents punts universitaris.",
+        "cs": "Institut, kde se poskytuje terciární vzdělání (na úrovni odpovídající bakalářskému titulu nebo vyšší). Stačí jeden bod na kampus - budovy a fakulty by neměly být mapovány s různými univerzitními body."
+      },
+      "tags": [
+        "amenity=university",
+        "fixme=Added with MapComplete, geometry to be drawn"
+      ]
+    }
+  ],
+  "tagRenderings": [
+    {
+      "id": "just_created",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "This element shows a 'thank you' that the contributor has recently created this element",
+      "classes": "rounded-xl thanks",
+      "mappings": [
+        {
+          "if": "id~*",
+          "icon": "./assets/svg/party.svg",
+          "then": {
+            "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+            "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+            "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+            "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+            "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+            "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+          }
+        }
+      ],
+      "condition": {
+        "and": [
+          "_backend~*",
+          "_last_edit:passed_time<300",
+          {
+            "or": [
+              "_version_number=",
+              "_version_number=1"
+            ]
+          }
+        ]
+      },
+      "metacondition": {
+        "and": [
+          {
+            "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+            "or": [
+              "_last_edit:contributor:uid:={_uid}",
+              "_last_edit:contributor:uid="
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "institution-kind",
+      "question": {
+        "en": "What kind of institution is this?",
+        "nl": "Wat voor onderwijsinstelling is dit?",
+        "de": "Was für eine Art von Institution ist das?",
+        "fr": "De quel type d'établissement s'agit-il ?",
+        "da": "Hvad er det for en institution?",
+        "ca": "Quin tipus d'institució és aquesta?",
+        "cs": "Co je to za instituci?"
+      },
+      "mappings": [
+        {
+          "if": "amenity=college",
+          "then": {
+            "en": "This is an institution of post-secondary, non-tertiary education. One has to have completed secondary education to enroll here, but no bachelor (or higher) degrees are awarded here",
+            "nl": "Dit is een onderwijsinstelling waar post-secundair, niet-tertiair onderwijs wordt gegeven. Om dit onderwijs te volgen, moet je je secundair onderwijs afgewerkt hebben maar de opleiding behaalt niet het niveau van van een bachelor.",
+            "de": "Es handelt sich um eine postsekundäre, nicht-tertiäre Bildungseinrichtung. Man muss die Sekundarstufe abgeschlossen haben, um sich hier einzuschreiben, aber es werden keine Bachelor-Abschlüsse (oder höhere Abschlüsse) verliehen",
+            "fr": "C'est un établissement d'enseignement post-secondaire, non tertiaire. Il faut avoir terminé l'enseignement secondaire pour s'inscrire ici, mais aucun baccalauréat (ou diplôme supérieur) n'est délivré ici",
+            "da": "Dette er en institution for post-gymnasial, ikke-tertiær uddannelse. Man skal have gennemført en ungdomsuddannelse for at tilmelde sig her, men her uddeles ingen bachelor (eller højere) grader",
+            "ca": "Aquesta és una institució d'educació postsecundària i no terciària. S'ha d'haver completat l'educació secundària per matricular-se aquí, però aquí no s'obtenen títols de batxillerat (o superiors)",
+            "cs": "Jedná se o instituci postsekundárního neterciárního vzdělávání. Podmínkou zápisu je ukončené středoškolské vzdělání, ale bakalářské (ani vyšší) tituly se zde neudělují"
+          }
+        },
+        {
+          "if": "amenity=university",
+          "then": {
+            "en": "This is a university, an institution of tertiary education where bachelor degrees or higher are awarded.",
+            "nl": "Dit is een universiteit (of hogeschool), een onderwijsinstelling van tertaire educatie. De gegeven opleidingen halen het niveau van een bachelor-opleiding of hoger.",
+            "de": "Dies ist eine Universität, eine Einrichtung des tertiären Bildungsbereichs, an der Bachelor-Abschlüsse oder höhere Abschlüsse verliehen werden.",
+            "fr": "C'est une université, d'un établissement d'enseignement supérieur où sont délivrés des diplômes de bachelor ou plus.",
+            "da": "Dette er et universitet, en institution for videregående uddannelse, hvor der tildeles bachelorgrader eller højere.",
+            "ca": "Açò és una universitat, una institució d'educació terciaria on s'imparteixen carreres universitàries o superior.",
+            "cs": "Jedná se o univerzitu, instituci terciárního vzdělávání, kde se uděluje titul bakalář nebo vyšší."
+          }
+        }
+      ]
+    },
+    {
+      "id": "isced",
+      "question": {
+        "en": "What level of education is given here?",
+        "nl": "Wat is het niveau van onderwijs?",
+        "de": "Welche Bildungsabschlüsse werden hier verliehen?",
+        "fr": "Quel niveau d'éducation est donné ici ?",
+        "da": "Hvilket uddannelsesniveau gives her?",
+        "ca": "Quin nivell d'educació és dona aquí?",
+        "cs": "Jaký stupeň vzdělání je zde uveden?"
+      },
+      "multiAnswer": true,
+      "mappings": [
+        {
+          "if": "isced:2011:level=bachelor",
+          "then": {
+            "en": "Bachelor degrees are awarded here",
+            "nl": "Bacheloropleidingen (of equivalent) worden hier gegeven",
+            "de": "Bachelor-Abschlüsse werden hier verliehen",
+            "fr": "Les diplômes de bachelor y sont décernés",
+            "da": "Her udstedes bachelorgrader",
+            "ca": "Aquí s'imparteixen carreres universitàries",
+            "cs": "Zde se udělují bakalářské tituly"
+          }
+        },
+        {
+          "if": "isced:2011:level=master",
+          "then": {
+            "en": "Master degrees are awarded here",
+            "nl": "Masteropleidingen (of equivalent) worden hier gegeven",
+            "de": "Hier werden Master-Abschlüsse verliehen",
+            "fr": "Des masters y sont décernés",
+            "da": "Mastergrader udstedes her",
+            "ca": "Aquí s'imparteixen masters",
+            "cs": "Zde se udělují magisterské tituly"
+          }
+        },
+        {
+          "if": "isced:2011:level=doctorate",
+          "then": {
+            "en": "Doctorate degrees are awarded here",
+            "nl": "Doctoraatsopleidingen (of equivalent) worden hier gegeven",
+            "de": "Hier werden die Doktortitel verliehen",
+            "fr": "Des doctorats y sont décernés",
+            "ca": "Aquí s'imparteixen doctorats",
+            "cs": "Zde se udělují doktoráty"
+          }
+        }
+      ],
+      "condition": "amenity=university"
+    },
+    {
+      "id": "capacity",
+      "question": {
+        "en": "How much students can at most enroll in this school?",
+        "de": "Wie viele Schüler können sich maximal an dieser Schule anmelden?",
+        "nl": "Ten hoogste hoeveel studenten kunnen er les volgen in deze school?",
+        "fr": "Combien d'élèves peuvent s'inscrire au maximum dans cette école ?",
+        "ca": "Quants alumnes poden matricular-se com a màxim a aquesta escola?",
+        "cs": "Kolik studentů se může na tuto školu maximálně zapsat?",
+        "_context": "layers:school.tagRenderings.capacity.question"
+      },
+      "render": {
+        "en": "This school can enroll at most {capacity} students",
+        "nl": "Deze school kan maximaal {capacity} studenten lesgeven",
+        "de": "Diese Schule kann höchstens {capacity} Schüler aufnehmen",
+        "fr": "Cette école peut accueillir au maximum {capacity} étudiants",
+        "ca": "A aquesta escola poden inscriure's com a màxim {capacity} estudiants",
+        "cs": "Tato škola může přijmout maximálně {capacity} studentů",
+        "_context": "layers:school.tagRenderings.capacity.render"
+      },
+      "freeform": {
+        "key": "capacity",
+        "type": "pnat",
+        "inline": true
+      },
+      "condition": null
+    },
+    {
+      "id": "gender",
+      "question": {
+        "en": "Which genders can enroll at this school?",
+        "nl": "Mogen jongens en meisjes les volgen op deze school?",
+        "de": "Welche Geschlechter können sich an dieser Schule anmelden?",
+        "fr": "Quels genres de personnes peuvent s'inscrire dans cette école ?",
+        "ca": "Quins gèneres poden inscriure's a aquesta escola?",
+        "cs": "Které pohlaví se může na tuto školu přihlásit?",
+        "_context": "layers:school.tagRenderings.gender.question"
+      },
+      "mappings": [
+        {
+          "if": "school:gender=mixed",
+          "then": {
+            "en": "Both boys and girls can enroll here and have classes together",
+            "nl": "Zowel jongens als meisjes kunnen hier les volgen. In de lessen zitten jongens en meisjes samen.",
+            "de": "Sowohl Jungen als auch Mädchen können sich hier anmelden und gemeinsam unterrichtet werden",
+            "fr": "Les garçons et les filles peuvent s'inscrire ici et suivre des cours ensemble",
+            "ca": "Els dos, nois i noies poden inscriure's aquí i prendre classes junts",
+            "cs": "Mohou se sem zapsat chlapci i dívky a mají společné hodiny",
+            "_context": "layers:school.tagRenderings.gender.mappings.0.then"
+          }
+        },
+        {
+          "if": "school:gender=separated",
+          "then": {
+            "en": "Both boys and girls can enroll here but they are separated (e.g. they have lessons in different classrooms or at different times)",
+            "nl": "Jongens en meisjes kunnen hier lesvolgen, maar de lessen zijn gescheiden (bv. de lessen zijn in andere lokalen of op andere momenten)",
+            "de": "Hier können sich sowohl Jungen als auch Mädchen anmelden, aber sie werden getrennt unterrichtet (z. B. in verschiedenen Klassenräumen oder zu verschiedenen Zeiten)",
+            "fr": "Les garçons et les filles peuvent s'inscrire ici, mais ils sont séparés (par exemple, ils ont des cours dans des classes différentes ou à des heures différentes)",
+            "ca": "Els dos, nois i noies poden inscriure's aquí, però estan separats (p. e. prenen les classes a diferents aules o diferentes hores)",
+            "cs": "Mohou se sem zapsat chlapci i dívky, ale jsou odděleni (např. mají hodiny v různých třídách nebo v různých časech)",
+            "_context": "layers:school.tagRenderings.gender.mappings.1.then"
+          }
+        },
+        {
+          "if": "school:gender=male",
+          "then": {
+            "en": "This is a boys only-school",
+            "nl": "Deze school is enkel voor jongens",
+            "de": "Dies ist eine reine Jungenschule",
+            "fr": "C'est une école réservée aux garçons",
+            "ca": "Aquesta és una escola exclusivament per a nois",
+            "cs": "Toto je škola určená pouze pro chlapce",
+            "_context": "layers:school.tagRenderings.gender.mappings.2.then"
+          }
+        },
+        {
+          "if": "school:gender=female",
+          "then": {
+            "en": "This is a girls-only school",
+            "nl": "Deze school is enkel voor meisjes",
+            "de": "Dies ist eine reine Mädchenschule",
+            "fr": "C'est une école réservée aux filles",
+            "ca": "Aquesta és una escola exclusivament per a noies",
+            "cs": "Toto je škola pouze pro dívky",
+            "_context": "layers:school.tagRenderings.gender.mappings.3.then"
+          }
+        }
+      ],
+      "condition": null
+    },
+    {
+      "id": "website",
+      "labels": [
+        "contact"
+      ],
+      "icon": "./assets/layers/icons/website.svg",
+      "question": {
+        "en": "What is the website of {title()}?",
+        "nl": "Wat is de website van {title()}?",
+        "fr": "Quel est le site web de {title()} ?",
+        "gl": "Cal é a páxina web de {title()}?",
+        "nb_NO": "Hva er nettsiden til {title()}?",
+        "ru": "Какой сайт у {title()}?",
+        "id": "Apa situs web dari {title()}?",
+        "zh_Hant": "{title()} 網址是什麼？",
+        "it": "Qual è il sito web di {title()}?",
+        "de": "Wie lautet die Webseite von {title()}?",
+        "pt_BR": "Qual o site de {title()}?",
+        "pl": "Jaka jest strona internetowa {title()}?",
+        "sv": "Vad är webbplatsen för {title()}?",
+        "pt": "Qual é o sítio web de {title()}?",
+        "eo": "Kie estas la retejo de {title()}?",
+        "hu": "Mi a weboldala ennek: {title()}?",
+        "ca": "Quina és la web de {title()}?",
+        "ja": "{title()}のウェブサイトは？",
+        "fil": "Ano ang website ng {title()}?",
+        "es": "¿Cual es el sitio web de {title()}?",
+        "zh_Hans": "{title()} 的网站为何？",
+        "da": "Hvad er webstedet for {title()}?",
+        "cs": "Jaká je webová stránka {title()}?"
+      },
+      "render": {
+        "*": "<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>"
+      },
+      "freeform": {
+        "key": "website",
+        "type": "url",
+        "addExtraTags": [
+          "contact:website="
+        ]
+      },
+      "mappings": [
+        {
+          "if": "contact:website~*",
+          "then": "<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>",
+          "hideInAnswer": true,
+          "icon": "./assets/layers/icons/website.svg"
+        }
+      ],
+      "editButtonAriaLabel": {
+        "en": "Edit website",
+        "nl": "Pas website aan",
+        "de": "Webseite bearbeiten"
+      }
+    },
+    {
+      "id": "email",
+      "render": {
+        "*": "<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>"
+      },
+      "icon": "./assets/svg/envelope.svg",
+      "labels": [
+        "contact"
+      ],
+      "question": {
+        "nl": "Wat is het e-mailadres van {title()}?",
+        "fr": "Quelle est l'adresse courriel de {title()} ?",
+        "en": "What is the email address of {title()}?",
+        "nb_NO": "Hva er e-postadressen til {title()}?",
+        "ru": "Какой адрес электронной почты у {title()}?",
+        "id": "Apa alamat surel dari {title()}?",
+        "zh_Hant": "{title()} 的電子郵件地址是什麼？",
+        "it": "Qual è l'indirizzo email di {title()}?",
+        "de": "Wie lautet die Mail-Adresse von {title()}?",
+        "pt_BR": "Qual o endereço de e-mail de {title()}?",
+        "pl": "Jaki jest adres e-mail do {title()}?",
+        "sv": "Vad är e-postadressen till {title()}?",
+        "pt": "Qual é o endereço de e-mail de {title()}?",
+        "eo": "Kio estas la retpoŝta adreso de {title()}?",
+        "hu": "Mi a(z) {title()} e-mail címe?",
+        "ca": "Quina és l'adreça de correu electrònic de {title()}?",
+        "ja": "{title()}のEメールアドレスは何ですか？",
+        "sl": "Kakšen naslov elektronske pošte ima {title()}?",
+        "fil": "Ano ang email address ng {title()}?",
+        "es": "¿Cuál es la dirección de correo electrónico de {title()}?",
+        "zh_Hans": "{title()} 的电子邮箱地址为何？",
+        "da": "Hvad er mailadressen på {title()}?",
+        "cs": "Jaká je e-mailová adresa {title()}?"
+      },
+      "mappings": [
+        {
+          "if": "contact:email~*",
+          "icon": "./assets/svg/envelope.svg",
+          "then": "<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>",
+          "hideInAnswer": true
+        },
+        {
+          "if": "operator:email~*",
+          "icon": "./assets/svg/envelope.svg",
+          "then": "<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>",
+          "hideInAnswer": true
+        }
+      ],
+      "freeform": {
+        "key": "email",
+        "type": "email",
+        "addExtraTags": [
+          "contact:email="
+        ]
+      },
+      "editButtonAriaLabel": {
+        "en": "Edit email address",
+        "nl": "Pas emailadres aan",
+        "de": "E-Mail Adresse bearbeiten"
+      }
+    },
+    {
+      "id": "phone",
+      "labels": [
+        "contact"
+      ],
+      "question": {
+        "en": "What is the phone number of {title()}?",
+        "nl": "Wat is het telefoonnummer van {title()}?",
+        "fr": "Quel est le numéro de téléphone de {title()} ?",
+        "de": "Wie lautet die Telefonnummer von {title()}?",
+        "nb_NO": "Hva er telefonnummeret til {title()}?",
+        "ru": "Какой номер телефона у {title()}?",
+        "sv": "Vad är telefonnumret till {title()}?",
+        "zh_Hant": "{title()} 的電話號碼是什麼？",
+        "it": "Qual è il numero di telefono di {title()}?",
+        "pt_BR": "Qual o número de telefone de {title()}?",
+        "id": "Berapa nomor telepon dari {title()}?",
+        "pl": "Jaki jest numer telefonu do {title()}?",
+        "pt": "Qual é o número de telefone de {title()}?",
+        "eo": "Kio estas la telefonnumero de {title()}?",
+        "hu": "Mi a telefonszáma ennek: {title()}?",
+        "ca": "Quin és el telèfon de {title()}?",
+        "ja": "{title()}の電話番号は？",
+        "sl": "Kakšno telefonsko številko ima {title()}?",
+        "fil": "Ano ang telepono ng {title()}?",
+        "es": "¿Cuál es el número de teléfono de {title()}?",
+        "zh_Hans": "{title()} 的电话号码为何？",
+        "da": "Hvad er telefonnummeret til {title()}?",
+        "cs": "Jaké je telefonní číslo {title()}?"
+      },
+      "render": {
+        "*": "<a href='tel:{phone}'>{phone}</a>"
+      },
+      "icon": "./assets/layers/questions/phone.svg",
+      "mappings": [
+        {
+          "if": "contact:phone~*",
+          "then": "<a href='tel:{contact:phone}'>{contact:phone}</a>",
+          "hideInAnswer": true,
+          "icon": "./assets/layers/questions/phone.svg"
+        }
+      ],
+      "freeform": {
+        "key": "phone",
+        "type": "phone",
+        "addExtraTags": [
+          "contact:phone="
+        ]
+      },
+      "editButtonAriaLabel": {
+        "en": "Edit phone number",
+        "nl": "Pas telefoonnummer aan",
+        "de": "Telefonnummer bearbeiten"
+      }
+    },
+    {
+      "id": "leftover-questions",
+      "render": {
+        "*": "{questions( ,)}"
+      }
+    },
+    {
+      "id": "lod",
+      "labels": [
+        "added_by_default"
+      ],
+      "render": {
+        "*": "{linked_data_from_website()}"
+      }
+    },
+    {
+      "id": "minimap",
+      "description": "Shows a small map with the feature. Added by default to every popup",
+      "render": {
+        "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+      }
+    },
+    {
+      "id": "move-button",
+      "render": {
+        "*": "{move_button()}"
+      }
+    },
+    {
+      "id": "last_edit",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+      "condition": {
+        "and": [
+          "_last_edit:contributor~*",
+          "_last_edit:changeset~*"
+        ]
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsTesting=true",
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_debug=yes",
+          "_csCount>=10"
+        ]
+      },
+      "render": {
+        "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+      }
+    },
+    {
+      "id": "favourite_status",
+      "render": {
+        "*": "{favourite_status()}"
+      }
+    },
+    {
+      "id": "qr_code",
+      "labels": [
+        "added_by_default"
+      ],
+      "classes": "flex items-center gap-x-2",
+      "render": {
+        "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+        "en": "{qr_code()}Scan this code to open this location on another device",
+        "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+        "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+      }
+    },
+    {
+      "id": "share",
+      "labels": [
+        "added_by_default"
+      ],
+      "metacondition": "_supports_sharing=yes",
+      "render": {
+        "de": "{share_link(,Standort teilen)}",
+        "en": "{share_link(,Share this location)}",
+        "nl": "{share_link(,Deel deze locatie)}"
+      }
+    },
+    {
+      "id": "all-tags",
+      "render": {
+        "*": "{all_tags()}"
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_tags=full",
+          "mapcomplete-show_debug=yes"
+        ]
+      }
+    }
+  ],
+  "allowMove": true,
+  "titleIcons": [
+    {
+      "id": "wikipedialink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+      "condition": {
+        "or": [
+          "wikipedia~*",
+          "wikidata~*"
+        ]
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "wikipedia=",
+          "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "open_until",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "#": "Titleicon showing e.g. 'open until 17:00'",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{opening_hours_state()}",
+      "condition": {
+        "or": [
+          "opening_hours~*",
+          {
+            "or": [
+              {
+                "and": [
+                  "seasonal~.*winter.*",
+                  "_now:date~....-(12|01|02)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*spring.*",
+                  "_now:date~....-(03|04|05)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*summer.*",
+                  "_now:date~....-(06|07|08)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*autumn.*",
+                  "_now:date~....-(09|10|11)-.."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "phonelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": {
+        "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+        "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+        "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+        "_context": "layers:icons.tagRenderings.phonelink.render"
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:phone~*",
+          "then": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+          }
+        }
+      ],
+      "condition": {
+        "or": [
+          "phone~*",
+          "contact:phone~*"
+        ]
+      }
+    },
+    {
+      "id": "emaillink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:email~*",
+          "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:email~*",
+          "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        }
+      ],
+      "condition": {
+        "or": [
+          "email~*",
+          "contact:email~*",
+          "operator:email~*"
+        ]
+      }
+    },
+    {
+      "id": "websitelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "website~*",
+          "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:website~*",
+          "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "context:website~*",
+          "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "smokingicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=no",
+          "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=yes",
+          "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+        }
+      ]
+    },
+    {
+      "id": "dogicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "if": "dog=no",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+        },
+        {
+          "if": "dog=leashed",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+        },
+        {
+          "if": {
+            "or": [
+              "dog=yes",
+              "dog=unleashed"
+            ]
+          },
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+        }
+      ]
+    },
+    {
+      "id": "sharelink",
+      "labels": [
+        "defaults"
+      ],
+      "render": "{share_link()}",
+      "metacondition": "_supports_sharing=yes"
+    },
+    {
+      "id": "favourite_title_icon",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "*": "{favourite_icon()}"
+      },
+      "metacondition": "_loggedIn=true"
+    },
+    {
+      "id": "osmlink",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+        "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+        "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+        "_context": "layers:icons.tagRenderings.osmlink.render"
+      },
+      "mappings": [
+        {
+          "if": "id~.*/-.*",
+          "then": ""
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "_backend~*",
+          "then": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+          }
+        }
+      ],
+      "condition": "id~(node|way|relation)/[0-9]*"
+    },
+    {
+      "id": "direction",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "{direction_indicator()}"
+    },
+    {
+      "id": "rating",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{rating()}"
+    }
+  ],
+  "_layerIcon": [
+    {
+      "icon": "circle",
+      "color": "white"
+    },
+    {
+      "icon": "./assets/layers/school/college.svg"
+    }
+  ]
+}

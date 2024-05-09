@@ -1,0 +1,770 @@
+{
+  "id": "etymology",
+  "name": {
+    "en": "Has etymology",
+    "nl": "Heeft etymology info",
+    "de": "Objekte mit Namensherkunft",
+    "fr": "A une étymologie",
+    "ca": "Té etimologia",
+    "cs": "Má etymologii"
+  },
+  "description": {
+    "en": "All objects which have an etymology known",
+    "nl": "Alle lagen met een gelinkt etymology",
+    "de": "Alle Objekte, die eine bekannte Namensherkunft haben",
+    "hu": "Minden olyan objektum, amelynél ismert a nevének az eredete",
+    "fr": "Tous les objets dont l’étymologie est connue",
+    "ca": "Tots els objectes que tenen una etimologia coneguda",
+    "cs": "Všechny objekty, které mají známou etymologii"
+  },
+  "source": {
+    "osmTags": {
+      "and": [
+        {
+          "or": [
+            "name:etymology:wikidata~*",
+            "name:etymology~*"
+          ]
+        }
+      ]
+    }
+  },
+  "calculatedTags": [
+    "_same_name_ids=closestn(feat)('*', 250, undefined, 3000)?.filter(f => f.feat.properties.name === feat.properties.name)?.map(f => f.feat.properties.id)??[]"
+  ],
+  "minzoom": 12,
+  "title": {
+    "render": {
+      "*": "{name}"
+    }
+  },
+  "pointRendering": [
+    {
+      "iconSize": "40,40",
+      "location": [
+        "point"
+      ],
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": {
+            "render": "pin",
+            "id": "pin"
+          },
+          "color": {
+            "render": "#05d7fcaa",
+            "mappings": [
+              {
+                "if": {
+                  "and": [
+                    "name:etymology=",
+                    "name:etymology:wikidata="
+                  ]
+                },
+                "then": "#fcca05aa"
+              }
+            ]
+          }
+        }
+      ],
+      "iconBadges": [
+        {
+          "if": "_favourite=yes",
+          "then": "circle:white;heart:red"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": {
+        "render": "#05d7fcaa",
+        "mappings": [
+          {
+            "if": {
+              "and": [
+                "name:etymology=",
+                "name:etymology:wikidata="
+              ]
+            },
+            "then": "#fcca05aa"
+          }
+        ]
+      },
+      "fill": "no",
+      "width": {
+        "render": "8",
+        "mappings": [
+          {
+            "if": "_geometry:type=Polygon",
+            "then": "16"
+          }
+        ]
+      }
+    }
+  ],
+  "tagRenderings": [
+    {
+      "id": "just_created",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "This element shows a 'thank you' that the contributor has recently created this element",
+      "classes": "rounded-xl thanks",
+      "mappings": [
+        {
+          "if": "id~*",
+          "icon": "./assets/svg/party.svg",
+          "then": {
+            "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+            "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+            "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+            "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+            "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+            "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+          }
+        }
+      ],
+      "condition": {
+        "and": [
+          "_backend~*",
+          "_last_edit:passed_time<300",
+          {
+            "or": [
+              "_version_number=",
+              "_version_number=1"
+            ]
+          }
+        ]
+      },
+      "metacondition": {
+        "and": [
+          {
+            "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+            "or": [
+              "_last_edit:contributor:uid:={_uid}",
+              "_last_edit:contributor:uid="
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "etymology-images-from-wikipedia",
+      "render": {
+        "*": "{image_carousel(name:etymology:wikidata)}"
+      }
+    },
+    {
+      "id": "wikipedia-etymology",
+      "condition": {
+        "and": [
+          "name:etymology!=unknown"
+        ]
+      },
+      "question": {
+        "en": "What is the Wikidata-item that this object is named after?",
+        "nl": "Wat is het Wikidata-item van hetgeen dit object is naar vernoemd?",
+        "de": "Was ist das Wikidata-Element, nach dem dieses Objekt benannt ist?",
+        "fr": "Quel est l'Item Wikidata auquel l'objet fait référence ?",
+        "cs": "Po jaké položce Wikidat je tento objekt pojmenován?"
+      },
+      "freeform": {
+        "key": "name:etymology:wikidata",
+        "type": "wikidata",
+        "helperArgs": [
+          "name",
+          {
+            "notInstanceOf": [
+              "Q79007",
+              "Q22698"
+            ],
+            "removePrefixes": {
+              "#": "no-translations",
+              "nl": [
+                "(basis|lagere |middelbare |secondaire| secundaire)?school"
+              ],
+              "en": [
+                "east",
+                "north",
+                "northeast",
+                "northwest",
+                "south",
+                "southeast",
+                "southwest",
+                "west"
+              ],
+              "fr": [
+                "allée (des |de la |de l'|de |du |d')?",
+                "autoroute (des |de la |de l'|de |du |d')?",
+                "avenue (des |de la |de l'|de |du |d')?",
+                "bibliothèque (des |de la |de l'|de |du |d')?",
+                "boulevard (des |de la |de l'|de |du |d')?",
+                "centre (culturel |sportif |nautique )?(des |de la |de l'|de |du |d')?",
+                "chaussée (des |de la |de l'|de |du |d')?",
+                "chemin (des |de la |de l'|de |du |d')?",
+                "clos (des |de la |de l'|de |du |d')?",
+                "collège (privé |public )?(des |de la |de l'|de |du |d')?",
+                "complexe sportif (des |de la |de l'|de |du |d')?",
+                "corniche (des |de la |de l'|de |du |d')?",
+                "cours (des |de la |de l'|de |du |d')?",
+                "drève (des |de la |de l'|de |du |d')?",
+                "école (maternelle |primaire |élémentaire |secondaire )?(privée |publique )?(des |de la |de l'|de |du |d')?",
+                "esplanade (des |de la |de l'|de |du |d')?",
+                "groupe scolaire (privé |public )?(des |de la |de l'|de |du |d')?",
+                "gymnase (des |de la |de l'|de |du |d')?",
+                "impasse (des |de la |de l'|de |du |d')?",
+                "lotissement (des |de la |de l'|de |du |d')?",
+                "lycée (privé |public |technologique |professionnel )*(des |de la |de l'|de |du |d')?",
+                "mail (des |de la |de l'|de |du |d')?",
+                "médiathèque (des |de la |de l'|de |du |d')?",
+                "musée (des |de la |de l'|de |du |d')?",
+                "parc (des |de la |de l'|de |du |d')?",
+                "passage (des |de la |de l'|de |du |d')?",
+                "passerelle (des |de la |de l'|de |du |d')?",
+                "place (des |de la |de l'|de |du |d')?",
+                "quai (des |de la |de l'|de |du |d')?",
+                "résidence (des |de la |de l'|de |du |d')?",
+                "route (des |de la |de l'|de |du |d')?",
+                "rue (des |de la |de l'|de |du |d')?",
+                "sente (des |de la |de l'|de |du |d')?",
+                "sentier (des |de la |de l'|de |du |d')?",
+                "square (des |de la |de l'|de |du |d')?",
+                "stade (des |de la |de l'|de |du |d')?",
+                "villa (des |de la |de l'|de |du |d')?"
+              ]
+            },
+            "removePostfixes": {
+              "#": "no-translations",
+              "nl": [
+                "baan",
+                "boulevard",
+                "dreef",
+                "heirbaan",
+                "kaai",
+                "kerk",
+                "laan",
+                "lei",
+                "pad",
+                "park",
+                "plein",
+                "ring",
+                "steenweg",
+                "straat",
+                "weg",
+                "wegel"
+              ],
+              "fr": [
+                "parque"
+              ],
+              "de": [
+                "straße",
+                "strasse",
+                "platz",
+                "gasse",
+                "graben",
+                "grundschule",
+                "gymnasium",
+                "platz",
+                "rain",
+                "schule",
+                "(-)?straße",
+                "(-)?strasse",
+                "weg"
+              ],
+              "en": [
+                "avenue",
+                "boulevard",
+                "circle",
+                "church",
+                "drive",
+                "expressway",
+                "freeway",
+                "highway",
+                "lane",
+                "parkway",
+                "path",
+                "plaza",
+                "road",
+                "square",
+                "street",
+                "terrace",
+                "trail",
+                "turnpike"
+              ]
+            }
+          }
+        ],
+        "inline": false
+      },
+      "render": {
+        "en": "<h3>Wikipedia article of the name giver</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}",
+        "nl": "<h3>Wikipedia-artikel van de naamgever</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}",
+        "de": "<h3>Wikipedia Artikel zur Namensherkunft</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}",
+        "fr": "<h3>Article Wikipedia de la référence au nom</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}",
+        "ca": "<h3> Article de la Viquipèdia del nom donant</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}",
+        "cs": "<h3>Článek autora jména na Wikipedii</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}"
+      }
+    },
+    {
+      "id": "zoeken op inventaris onroerend erfgoed",
+      "render": {
+        "nl": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='_blank'>Zoeken op inventaris onroerend erfgoed</a>",
+        "en": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='_blank'>Search on inventaris onroerend erfgoed</a>",
+        "de": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='_blank'>Suche auf inventaris onroerend erfgoed</a>",
+        "fr": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='_blank'>Chercher sur inventaris onroerend erfgoed</a>",
+        "cs": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='_blank'>Hledání na inventaris onroerend erfgoed</a>"
+      },
+      "condition": "_country=be"
+    },
+    {
+      "id": "simple etymology",
+      "question": {
+        "en": "What is this object named after?",
+        "nl": "Naar wat is dit object vernoemd?",
+        "de": "Wonach ist dieses Objekt benannt?",
+        "fr": "En référence à quoi cet objet est-il nommé ?",
+        "pl": "Po czym nazwany jest ten obiekt?",
+        "cs": "Po čem je tento objekt pojmenován?"
+      },
+      "render": {
+        "en": "Named after {name:etymology}",
+        "nl": "Vernoemd naar {name:etymology}",
+        "de": "Benannt nach {name:etymology}",
+        "da": "Opkaldt efter {name:etymology}",
+        "fr": "Nommé en référence à {name:etymology}",
+        "pl": "Nazwane po {name:etymology}",
+        "cs": "Pojmenováno po {name:etymology}"
+      },
+      "freeform": {
+        "key": "name:etymology",
+        "inline": true
+      },
+      "mappings": [
+        {
+          "if": "name:etymology=unknown",
+          "then": {
+            "en": "The origin of this name is unknown in all literature",
+            "nl": "De oorsprong van deze naam is onbekend in de literatuur",
+            "de": "Der Ursprung dieses Namens ist in der gesamten Literatur unbekannt",
+            "da": "Oprindelsen af dette navn er ukendt i al litteratur",
+            "fr": "L'origine de ce nom est inconnu",
+            "ca": "L'origen d'aquest nom és desconegut en tota la literatura",
+            "cs": "Původ tohoto jména je neznámý v celé literatuře"
+          }
+        }
+      ],
+      "condition": {
+        "or": [
+          "name:etymology~*",
+          "name:etymology:wikidata="
+        ]
+      },
+      "questionHint": {
+        "en": "This might be written on the street name sign",
+        "nl": "Dit staat mogelijks vermeld op het straatnaambordje",
+        "de": "Das könnte auf einem Straßenschild stehen",
+        "fr": "Cela peut être indiqué sur le panneau de la rue",
+        "ca": "Això podria estar escrit al cartell del nom del carrer",
+        "cs": "To může být napsáno na ceduli s názvem ulice"
+      }
+    },
+    {
+      "id": "questions",
+      "description": "Show the questions block at this location",
+      "render": {
+        "*": "{questions()}"
+      }
+    },
+    {
+      "id": "street-name-sign-image",
+      "render": {
+        "en": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Add image of a street name sign)}",
+        "nl": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Voeg afbeelding van straatnaambordje toe)}",
+        "de": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Bild eines Straßenschildes hinzufügen)}",
+        "fr": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Ajouter une photo de la plaque de rue)}",
+        "ca": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Afegeix una imatge de la placa amb el nom del carrer)}",
+        "cs": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Add image of a street name sign)}"
+      }
+    },
+    {
+      "id": "minimap",
+      "render": {
+        "*": "{minimap(18, id, _same_name_ids):height:10rem}"
+      }
+    },
+    {
+      "id": "etymology_multi_apply",
+      "render": {
+        "en": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etymology, Auto-applying data on all segments with the same name, true)}",
+        "nl": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etymology, Wijzigingen worden automatisch gedaan op alle segmenten met dezelfde naam, true)}",
+        "de": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etymology, Automatische Datenübernahme auf alle Segmente mit demselben Namen, true)}",
+        "fr": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etymology, Appliquer automatiquement aux segments avec le même nom, true)}",
+        "ca": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etimology, aplicació automàtica de dades a tots els segments amb el mateix nom, vertader)}",
+        "cs": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etymology, Auto-applying data on all segments with the same name, true)}"
+      }
+    },
+    {
+      "id": "wikipedia",
+      "#": "Note that this is a _read_only_ option, to prevent people entering a 'wikidata'-link instead of 'name:etymology:wikidata'",
+      "render": {
+        "en": "A Wikipedia article about this <b>street</b> exists:<br/>{wikipedia():max-height:25rem}",
+        "nl": "Een Wikipedia artikel over deze <b>straat</b> bestaat:<br/>{wikipedia():max-height:25rem}",
+        "de": "Zu dieser <b>Straße</b> existiert ein Wikipedia-Artikel:<br/>{wikipedia():max-height:25rem}",
+        "fr": "Un article Wikipédia à propos de cette <b>rue</b> existe :<br/>{wikipedia():max-height:25rem}",
+        "pl": "Istnieje artykuł Wikipedii na temat tej <b>ulicy</b>:<br/>{wikipedia():max-height:25rem}",
+        "ca": "Existeix un article de la Viquipèdia sobre aquest <b>carrer</b>:<br/>{wikipedia():max-height:25rem}",
+        "cs": "Článek na Wikipedii o této <b>ulici</b> existuje:<br/>{wikipedia():max-height:25rem}"
+      },
+      "condition": "wikidata~*"
+    },
+    {
+      "id": "lod",
+      "labels": [
+        "added_by_default"
+      ],
+      "render": {
+        "*": "{linked_data_from_website()}"
+      }
+    },
+    {
+      "id": "last_edit",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+      "condition": {
+        "and": [
+          "_last_edit:contributor~*",
+          "_last_edit:changeset~*"
+        ]
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsTesting=true",
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_debug=yes",
+          "_csCount>=10"
+        ]
+      },
+      "render": {
+        "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+      }
+    },
+    {
+      "id": "favourite_status",
+      "render": {
+        "*": "{favourite_status()}"
+      }
+    },
+    {
+      "id": "qr_code",
+      "labels": [
+        "added_by_default"
+      ],
+      "classes": "flex items-center gap-x-2",
+      "render": {
+        "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+        "en": "{qr_code()}Scan this code to open this location on another device",
+        "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+        "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+      }
+    },
+    {
+      "id": "share",
+      "labels": [
+        "added_by_default"
+      ],
+      "metacondition": "_supports_sharing=yes",
+      "render": {
+        "de": "{share_link(,Standort teilen)}",
+        "en": "{share_link(,Share this location)}",
+        "nl": "{share_link(,Deel deze locatie)}"
+      }
+    },
+    {
+      "id": "all-tags",
+      "render": {
+        "*": "{all_tags()}"
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_tags=full",
+          "mapcomplete-show_debug=yes"
+        ]
+      }
+    }
+  ],
+  "#": "A layer showing all objects having etymology info (either via `name:etymology:wikidata` or `name:etymology`. The intention is that this layer is reused for a certain category to also _ask_ for information",
+  "titleIcons": [
+    {
+      "id": "wikipedialink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+      "condition": {
+        "or": [
+          "wikipedia~*",
+          "wikidata~*"
+        ]
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "wikipedia=",
+          "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "open_until",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "#": "Titleicon showing e.g. 'open until 17:00'",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{opening_hours_state()}",
+      "condition": {
+        "or": [
+          "opening_hours~*",
+          {
+            "or": [
+              {
+                "and": [
+                  "seasonal~.*winter.*",
+                  "_now:date~....-(12|01|02)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*spring.*",
+                  "_now:date~....-(03|04|05)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*summer.*",
+                  "_now:date~....-(06|07|08)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*autumn.*",
+                  "_now:date~....-(09|10|11)-.."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "phonelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": {
+        "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+        "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+        "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+        "_context": "layers:icons.tagRenderings.phonelink.render"
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:phone~*",
+          "then": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+          }
+        }
+      ],
+      "condition": {
+        "or": [
+          "phone~*",
+          "contact:phone~*"
+        ]
+      }
+    },
+    {
+      "id": "emaillink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:email~*",
+          "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:email~*",
+          "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        }
+      ],
+      "condition": {
+        "or": [
+          "email~*",
+          "contact:email~*",
+          "operator:email~*"
+        ]
+      }
+    },
+    {
+      "id": "websitelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "website~*",
+          "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:website~*",
+          "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "context:website~*",
+          "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "smokingicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=no",
+          "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=yes",
+          "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+        }
+      ]
+    },
+    {
+      "id": "dogicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "if": "dog=no",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+        },
+        {
+          "if": "dog=leashed",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+        },
+        {
+          "if": {
+            "or": [
+              "dog=yes",
+              "dog=unleashed"
+            ]
+          },
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+        }
+      ]
+    },
+    {
+      "id": "sharelink",
+      "labels": [
+        "defaults"
+      ],
+      "render": "{share_link()}",
+      "metacondition": "_supports_sharing=yes"
+    },
+    {
+      "id": "favourite_title_icon",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "*": "{favourite_icon()}"
+      },
+      "metacondition": "_loggedIn=true"
+    },
+    {
+      "id": "osmlink",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+        "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+        "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+        "_context": "layers:icons.tagRenderings.osmlink.render"
+      },
+      "mappings": [
+        {
+          "if": "id~.*/-.*",
+          "then": ""
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "_backend~*",
+          "then": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+          }
+        }
+      ],
+      "condition": "id~(node|way|relation)/[0-9]*"
+    },
+    {
+      "id": "direction",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "{direction_indicator()}"
+    },
+    {
+      "id": "rating",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{rating()}"
+    }
+  ],
+  "_layerIcon": [
+    {
+      "icon": "pin",
+      "color": "#fcca05aa"
+    }
+  ]
+}

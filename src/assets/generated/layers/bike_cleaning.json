@@ -1,0 +1,734 @@
+{
+  "id": "bike_cleaning",
+  "name": {
+    "en": "Bike cleaning service",
+    "nl": "Fietsschoonmaakpunt",
+    "fr": "Service de nettoyage de vélo",
+    "it": "Servizio lavaggio bici",
+    "de": "Fahrrad-Reinigungsdienste",
+    "zh_Hant": "單車清理服務",
+    "pt_BR": "Serviço de limpeza de bicicletas",
+    "pt": "Serviço de limpeza de bicicletas",
+    "ru": "Услуги по чистке велосипедов",
+    "es": "Servicio de limpieza de bicis",
+    "da": "Cykelrengøring",
+    "cs": "Služba mytí jízdních kol",
+    "ca": "Servei de neteja de bicicletes"
+  },
+  "description": {
+    "en": "A layer showing facilities where one can clean their bike",
+    "nl": "Een laag die plaatsen toont waar je je fiets kunt wassen",
+    "de": "Eine Ebene mit Einrichtungen, in denen man sein Fahrrad reinigen kann",
+    "es": "Una capa que muestra instalaciones en las que uno puede limpiar su bici",
+    "da": "Et lag med faciliteter, hvor man kan rengøre sin cykel",
+    "fr": "Une couche affichant les lieux où l'on peut nettoyer son vélo",
+    "cs": "Vrstva zobrazující zařízení, kde si můžete umýt kolo",
+    "ca": "Una capa que mostra les instal·lacions on pots netejar la teva bicicleta",
+    "pt_BR": "Uma camada que mostra instalações onde é possível limpar a sua bicicleta",
+    "pt": "Uma camada que mostra instalações onde é possível limpar a sua bicicleta"
+  },
+  "source": {
+    "osmTags": {
+      "and": [
+        {
+          "or": [
+            "service:bicycle:cleaning=yes",
+            "service:bicycle:cleaning=diy",
+            "amenity=bicycle_wash",
+            "amenity=bike_wash"
+          ]
+        }
+      ]
+    }
+  },
+  "minzoom": 13,
+  "title": {
+    "render": {
+      "en": "Bike cleaning service",
+      "nl": "Fietsschoonmaakpunt",
+      "fr": "Service de nettoyage de vélo",
+      "it": "Servizio lavaggio bici",
+      "de": "Fahrrad-Reinigungsdienst",
+      "zh_Hant": "單車清理服務",
+      "pt_BR": "Serviço de limpeza de bicicletas",
+      "pt": "Serviço de limpeza de bicicletas",
+      "ru": "Услуги по чистке велосипедов",
+      "es": "Servicio de limpieza de bicis",
+      "da": "Cykel rengøringsservice",
+      "cs": "Služba mytí jízdních kol",
+      "ca": "Servei de neteja de bicicletes"
+    },
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": {
+          "en": "Bike cleaning service <i>{name}</i>",
+          "nl": "Fietsschoonmaakpunt <i>{name}</i>",
+          "fr": "Service de nettoyage de vélo <i>{name}</i>",
+          "it": "Servizio lavaggio bici <i>{name}</i>",
+          "de": "Fahrrad-Reinigungsdienst<i>{name}</i>",
+          "zh_Hant": "單車清理服務 <i>{name}</i>",
+          "pt_BR": "Serviço de limpeza de bicicletas <i>{name}</i>",
+          "pt": "Serviço de limpeza de bicicletas <i>{name}</i>",
+          "es": "Servicio de limpieza de bicis <i>{name}</i>",
+          "da": "Cykelrengøringstjeneste <i>{name}</i>",
+          "cs": "Služba mytí kol <i>{name}</i>",
+          "ca": "Servei de neteja de bicicletes <i>{name}</i>"
+        }
+      }
+    ]
+  },
+  "pointRendering": [
+    {
+      "iconBadges": [
+        {
+          "if": {
+            "and": [
+              "service:bicycle:cleaning~*",
+              "amenity!=bike_wash",
+              "amenity!=bicycle_wash"
+            ]
+          },
+          "then": {
+            "render": "./assets/layers/bike_cleaning/bike_cleaning_icon.svg",
+            "roaming": true
+          }
+        },
+        {
+          "if": "_favourite=yes",
+          "then": "circle:white;heart:red"
+        }
+      ],
+      "iconSize": "50,50",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "bottom",
+      "marker": [
+        {
+          "icon": {
+            "render": "./assets/layers/bike_cleaning/bike_cleaning.svg",
+            "id": "assetslayersbikecleaningbikecleaningsvg"
+          }
+        }
+      ]
+    }
+  ],
+  "lineRendering": [],
+  "presets": [
+    {
+      "title": {
+        "en": "a bike cleaning service",
+        "nl": "een fietsschoonmaakpunt",
+        "fr": "une service de nettoyage de vélo",
+        "it": "una servizio lavaggio bici",
+        "de": "eine Fahrrad-Reinigung",
+        "zh_Hant": "單車清理服務",
+        "pt_BR": "uma serviço de limpeza de bicicletas",
+        "pt": "uma serviço de limpeza de bicicletas",
+        "ru": "Услуги по чистке велосипедов",
+        "es": "un servicio de limpieza de bicis",
+        "da": "en cykelrengøring",
+        "cs": "služba mytí jízdních kol",
+        "ca": "un servei de neteja de bicicletes"
+      },
+      "tags": [
+        "amenity=bicycle_wash"
+      ]
+    }
+  ],
+  "tagRenderings": [
+    {
+      "id": "just_created",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "This element shows a 'thank you' that the contributor has recently created this element",
+      "classes": "rounded-xl thanks",
+      "mappings": [
+        {
+          "if": "id~*",
+          "icon": "./assets/svg/party.svg",
+          "then": {
+            "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+            "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+            "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+            "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+            "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+            "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+          }
+        }
+      ],
+      "condition": {
+        "and": [
+          "_backend~*",
+          "_last_edit:passed_time<300",
+          {
+            "or": [
+              "_version_number=",
+              "_version_number=1"
+            ]
+          }
+        ]
+      },
+      "metacondition": {
+        "and": [
+          {
+            "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+            "or": [
+              "_last_edit:contributor:uid:={_uid}",
+              "_last_edit:contributor:uid="
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "images",
+      "description": "This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images",
+      "render": {
+        "*": "{image_carousel()}{image_upload()}{nearby_images():my-4}"
+      },
+      "classes": "my-4"
+    },
+    {
+      "question": {
+        "en": "How much does it cost to use the cleaning service?",
+        "de": "Wie viel kostet die Nutzung des Reinigungsdienstes?",
+        "nl": "Hoeveel kost het gebruik van het fietsschoonmaakpunt?",
+        "es": "¿Cuánto cuesta utilizar el servicio de limpieza?",
+        "fr": "Combien coûte le service de nettoyage ?",
+        "da": "Hvor meget koster det at bruge rengøringsservicen?",
+        "cs": "Kolik stojí využívání služby mytí?",
+        "ca": "Molt costa utilitzar el servei de rentat?",
+        "pt_BR": "Quanto custa para usar o serviço de limpeza?"
+      },
+      "render": {
+        "en": "Using the cleaning service costs {service:bicycle:cleaning:charge}",
+        "de": "Der Reinigungsservice kostet {service:bicycle:cleaning:charge}",
+        "nl": "Het gebruik van het fietsschoonmaakpunt kost {service:bicycle:cleaning:charge}",
+        "es": "Utilizar el servicio de limpieza cuesta {service:bicycle:cleaning:charge}",
+        "fr": "Le service de nettoyage coûte {service:bicycle:cleaning:charge}",
+        "da": "Brug af rengøringsservice koster {service:bicycle:cleaning:charge}",
+        "cs": "Využití služby mytí stojí {service:bicycle:cleaning:charge}",
+        "ca": "Utilitzar el servei de rentat costa {service:bicycle:cleaning:charge}",
+        "pt_BR": "Usar o serviço de limpeza custa {service:bicycle:cleaning:charge}",
+        "pt": "Usar o serviço de limpeza custa {service:bicycle:cleaning:charge}"
+      },
+      "condition": {
+        "and": [
+          "amenity!=bike_wash",
+          "amenity!=bicycle_wash",
+          "service:bicycle:cleaning!=no",
+          "service:bicycle:cleaning!="
+        ]
+      },
+      "freeform": {
+        "key": "service:bicycle:cleaning:charge",
+        "addExtraTags": [
+          "service:bicycle:cleaning:fee=yes"
+        ],
+        "inline": true
+      },
+      "mappings": [
+        {
+          "if": "service:bicycle:cleaning:fee=no",
+          "then": {
+            "en": "The cleaning service is free to use",
+            "de": "Der Reinigungsservice ist kostenlos",
+            "nl": "Het fietsschoonmaakpunt is gratis",
+            "es": "El servicio de limpieza es gratuito",
+            "fr": "Le service de nettoyage est gratuit",
+            "da": "Rengøringsservicen er gratis at bruge",
+            "cs": "Služba mytí je k dispozici zdarma",
+            "ca": "El servei de rentat és gratuït",
+            "pt_BR": "O serviço de limpeza é grátis para usar",
+            "pt": "O serviço de limpeza é grátis para usar"
+          },
+          "addExtraTags": [
+            "service:bicycle:cleaning:charge="
+          ]
+        },
+        {
+          "if": {
+            "and": [
+              "service:bicycle:cleaning:fee=yes",
+              "service:bicycle:cleaning:charge="
+            ]
+          },
+          "then": {
+            "en": "Free to use",
+            "de": "Kostenlose Nutzung",
+            "nl": "Gratis te gebruiken",
+            "es": "Uso gratuito",
+            "fr": "Utilisation gratuite",
+            "da": "Gratis at bruge",
+            "cs": "Bezplatné používání",
+            "ca": "Debades",
+            "pt_BR": "Grátis para usar"
+          },
+          "hideInAnswer": true
+        }
+      ],
+      "id": "bike_cleaning-service:bicycle:cleaning:charge"
+    },
+    {
+      "question": {
+        "en": "How much does it cost to use the cleaning service?",
+        "de": "Wie viel kostet die Nutzung des Reinigungsdienstes?",
+        "nl": "Hoeveel kost het gebruik van het fietsschoonmaakpunt?",
+        "es": "¿Cuánto cuesta utilizar el servicio de limpieza?",
+        "fr": "Combien cela coûte-t-il d'utiliser le service de nettoyage ?",
+        "da": "Hvor meget koster det at bruge rengøringsservicen?",
+        "cs": "Kolik stojí využívání služby mytí?",
+        "ca": "Molt costa utilitzar aquest servei de neteja?",
+        "pt_BR": "Quanto custa para usar esse serviço de limpeza?",
+        "pt": "Quanto custa para usar este serviço de limpeza?"
+      },
+      "render": {
+        "en": "Using the cleaning service costs {charge}",
+        "de": "Die Nutzung des Reinigungsdienstes kostet {charge}",
+        "nl": "Het gebruik van het fietsschoonmaakpunt kost {charge}",
+        "es": "Utilizar el servicio de limpieza cuesta {charge}",
+        "fr": "L’utilisation du service de nettoyage coûte {charge}",
+        "da": "Brug af rengøringsservice koster {charge}",
+        "cs": "Využití služby mytí stojí {charge}",
+        "ca": "L'ús del servei de neteja costa {charge}",
+        "pt_BR": "Usar o serviço de limpeza custa {charge}",
+        "pt": "Usar o serviço de limpeza custa {charge}"
+      },
+      "condition": {
+        "or": [
+          "amenity=bike_wash",
+          "amenity=bicycle_wash"
+        ]
+      },
+      "freeform": {
+        "key": "charge",
+        "addExtraTags": [
+          "fee=yes"
+        ],
+        "inline": true
+      },
+      "mappings": [
+        {
+          "if": "fee=no",
+          "then": {
+            "en": "This cleaning service is free to use",
+            "de": "Der Reinigungsservice ist kostenlos",
+            "nl": "Dit fietsschoonmaakpunt is gratis te gebruiken",
+            "es": "Este servicio de limpieza es gratuito",
+            "fr": "Service de nettoyage gratuit",
+            "da": "Gratis at bruge rengøringsservice",
+            "cs": "Tato mycí služba je bezplatná",
+            "ca": "Aquest servei de neteja és gratuït",
+            "pt_BR": "Esse serviço de limpeza é grátis para usar",
+            "pt": "Esst serviço de limpeza é grátis para usar"
+          },
+          "addExtraTags": [
+            "charge="
+          ]
+        },
+        {
+          "if": "fee=yes",
+          "then": {
+            "en": "There is a fee to use this cleaning service",
+            "nl": "Dit fietsschoonmaakpunt is betalend",
+            "es": "Este servicio de limpieza es de pago",
+            "ca": "Hi ha un cost per utilitzar aquest servei de neteja",
+            "de": "Dieser Reinigungsservice ist kostenpflichtig",
+            "cs": "Využití úklidové služby je zpoplatněno",
+            "pt_BR": "Há uma taxa para utilizar esse serviço de limpeza",
+            "pt": "Há uma taxa para utilizar este serviço de limpeza"
+          }
+        }
+      ],
+      "id": "bike_cleaning-charge"
+    },
+    {
+      "id": "leftover-questions",
+      "render": {
+        "*": "{questions( ,)}"
+      }
+    },
+    {
+      "id": "lod",
+      "labels": [
+        "added_by_default"
+      ],
+      "render": {
+        "*": "{linked_data_from_website()}"
+      }
+    },
+    {
+      "id": "minimap",
+      "description": "Shows a small map with the feature. Added by default to every popup",
+      "render": {
+        "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+      }
+    },
+    {
+      "id": "move-button",
+      "render": {
+        "*": "{move_button()}"
+      }
+    },
+    {
+      "id": "delete-button",
+      "render": {
+        "*": "{delete_button()}"
+      }
+    },
+    {
+      "id": "last_edit",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+      "condition": {
+        "and": [
+          "_last_edit:contributor~*",
+          "_last_edit:changeset~*"
+        ]
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsTesting=true",
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_debug=yes",
+          "_csCount>=10"
+        ]
+      },
+      "render": {
+        "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+      }
+    },
+    {
+      "id": "favourite_status",
+      "render": {
+        "*": "{favourite_status()}"
+      }
+    },
+    {
+      "id": "qr_code",
+      "labels": [
+        "added_by_default"
+      ],
+      "classes": "flex items-center gap-x-2",
+      "render": {
+        "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+        "en": "{qr_code()}Scan this code to open this location on another device",
+        "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+        "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+      }
+    },
+    {
+      "id": "share",
+      "labels": [
+        "added_by_default"
+      ],
+      "metacondition": "_supports_sharing=yes",
+      "render": {
+        "de": "{share_link(,Standort teilen)}",
+        "en": "{share_link(,Share this location)}",
+        "nl": "{share_link(,Deel deze locatie)}"
+      }
+    },
+    {
+      "id": "all-tags",
+      "render": {
+        "*": "{all_tags()}"
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_tags=full",
+          "mapcomplete-show_debug=yes"
+        ]
+      }
+    }
+  ],
+  "deletion": {
+    "softDeletionTags": {
+      "and": [
+        "disused:amenity:={amenity}",
+        "amenity="
+      ]
+    },
+    "neededChangesets": 1
+  },
+  "allowMove": {
+    "enableRelocation": false,
+    "enableImproveAccuracy": true
+  },
+  "titleIcons": [
+    {
+      "id": "wikipedialink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+      "condition": {
+        "or": [
+          "wikipedia~*",
+          "wikidata~*"
+        ]
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "wikipedia=",
+          "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "open_until",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "#": "Titleicon showing e.g. 'open until 17:00'",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{opening_hours_state()}",
+      "condition": {
+        "or": [
+          "opening_hours~*",
+          {
+            "or": [
+              {
+                "and": [
+                  "seasonal~.*winter.*",
+                  "_now:date~....-(12|01|02)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*spring.*",
+                  "_now:date~....-(03|04|05)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*summer.*",
+                  "_now:date~....-(06|07|08)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*autumn.*",
+                  "_now:date~....-(09|10|11)-.."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "phonelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": {
+        "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+        "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+        "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+        "_context": "layers:icons.tagRenderings.phonelink.render"
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:phone~*",
+          "then": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+          }
+        }
+      ],
+      "condition": {
+        "or": [
+          "phone~*",
+          "contact:phone~*"
+        ]
+      }
+    },
+    {
+      "id": "emaillink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:email~*",
+          "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:email~*",
+          "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        }
+      ],
+      "condition": {
+        "or": [
+          "email~*",
+          "contact:email~*",
+          "operator:email~*"
+        ]
+      }
+    },
+    {
+      "id": "websitelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "website~*",
+          "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:website~*",
+          "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "context:website~*",
+          "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "smokingicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=no",
+          "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=yes",
+          "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+        }
+      ]
+    },
+    {
+      "id": "dogicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "if": "dog=no",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+        },
+        {
+          "if": "dog=leashed",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+        },
+        {
+          "if": {
+            "or": [
+              "dog=yes",
+              "dog=unleashed"
+            ]
+          },
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+        }
+      ]
+    },
+    {
+      "id": "sharelink",
+      "labels": [
+        "defaults"
+      ],
+      "render": "{share_link()}",
+      "metacondition": "_supports_sharing=yes"
+    },
+    {
+      "id": "favourite_title_icon",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "*": "{favourite_icon()}"
+      },
+      "metacondition": "_loggedIn=true"
+    },
+    {
+      "id": "osmlink",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+        "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+        "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+        "_context": "layers:icons.tagRenderings.osmlink.render"
+      },
+      "mappings": [
+        {
+          "if": "id~.*/-.*",
+          "then": ""
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "_backend~*",
+          "then": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+          }
+        }
+      ],
+      "condition": "id~(node|way|relation)/[0-9]*"
+    },
+    {
+      "id": "direction",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "{direction_indicator()}"
+    },
+    {
+      "id": "rating",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{rating()}"
+    }
+  ],
+  "_layerIcon": [
+    {
+      "icon": "./assets/layers/bike_cleaning/bike_cleaning.svg"
+    }
+  ]
+}

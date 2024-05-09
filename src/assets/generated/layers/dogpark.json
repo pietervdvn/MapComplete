@@ -1,0 +1,647 @@
+{
+  "id": "dogpark",
+  "name": {
+    "en": "dog parks",
+    "da": "hundeskove",
+    "de": "Hundeparks",
+    "es": "parques de perros",
+    "nl": "hondenweides",
+    "ca": "parcs de gossos",
+    "cs": "psí parky"
+  },
+  "description": "A layer showing dogparks, which are areas where dog are allowed to run without a leash",
+  "source": {
+    "osmTags": {
+      "and": [
+        {
+          "or": [
+            "leisure=dog_park",
+            {
+              "and": [
+                "leisure=park",
+                "dog=unleashed"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "minzoom": 10,
+  "title": {
+    "render": {
+      "en": "dog park",
+      "da": "hundeskov",
+      "de": "Hundepark",
+      "es": "parque para perros",
+      "nl": "hondenweide",
+      "ca": "parc per a gossos",
+      "cs": "psí park"
+    },
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": {
+          "*": "{name}"
+        }
+      }
+    ]
+  },
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "iconSize": "40,40",
+      "label": {
+        "mappings": [
+          {
+            "if": "name~*",
+            "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
+          }
+        ]
+      },
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": {
+            "render": "./assets/layers/dogpark/dog-park.svg",
+            "id": "assetslayersdogparkdogparksvg"
+          }
+        }
+      ],
+      "iconBadges": [
+        {
+          "if": "_favourite=yes",
+          "then": "circle:white;heart:red"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#ff0",
+      "width": 5
+    }
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "a dog park",
+        "da": "en hundeskov",
+        "de": "Ein Hundepark",
+        "es": "un parque para perros",
+        "nl": "een hondenweide",
+        "ca": "un parc per a gossos",
+        "cs": "psí park"
+      },
+      "tags": [
+        "leisure=dog_park"
+      ],
+      "description": {
+        "en": "A place for dogs, where they can run unleashed",
+        "da": "En hundeskov eller hundeg&aring;rd beregnet til hunde, hvor de kan l&oslash;be uden snor",
+        "de": "Ein Ort ohne Leinenzwang für Hunde",
+        "es": "Un lugar para perros, donde pueden correr sin correa",
+        "nl": "Een plaats waar honden vrij mogen rondlopen",
+        "ca": "Un lloc per a gossos, on poden correr sense corretja",
+        "cs": "Místo pro psy, kde mohou volně běhat"
+      }
+    }
+  ],
+  "tagRenderings": [
+    {
+      "id": "just_created",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "This element shows a 'thank you' that the contributor has recently created this element",
+      "classes": "rounded-xl thanks",
+      "mappings": [
+        {
+          "if": "id~*",
+          "icon": "./assets/svg/party.svg",
+          "then": {
+            "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+            "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+            "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+            "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+            "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+            "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+          }
+        }
+      ],
+      "condition": {
+        "and": [
+          "_backend~*",
+          "_last_edit:passed_time<300",
+          {
+            "or": [
+              "_version_number=",
+              "_version_number=1"
+            ]
+          }
+        ]
+      },
+      "metacondition": {
+        "and": [
+          {
+            "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+            "or": [
+              "_last_edit:contributor:uid:={_uid}",
+              "_last_edit:contributor:uid="
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "dogpark-fenced",
+      "mappings": [
+        {
+          "if": "barrier=fence",
+          "then": {
+            "en": "This dogpark is fenced all around",
+            "da": "Denne hundskov er indhegnet",
+            "de": "Dieser Hundepark ist komplett umzäunt",
+            "es": "Este parque para perros está cerrado todo alrededor",
+            "nl": "Deze hondenweide is volledig omheind",
+            "ca": "Aquest parc per a gossos està tancat per tot arreu",
+            "cs": "Tento psí park je kolem dokola oplocený"
+          }
+        },
+        {
+          "if": "barrier=no",
+          "then": {
+            "en": "This dogpark is not fenced all around",
+            "da": "Denne hundskov er ikke indhegnet",
+            "de": "Dieser Hundepark ist nicht komplett umzäunt",
+            "es": "Este parque para perros no está cerrado todo alrededor",
+            "nl": "Deze hondenweide is <strong>niet</strong> volledig omheind",
+            "ca": "Aquest parc de gossos no està tancat per tot el voltant",
+            "cs": "Tento psí park není kolem dokola oplocený"
+          }
+        }
+      ],
+      "question": {
+        "en": "It this dog park fenced in?",
+        "da": "Er denne hundeskov indhegnet?",
+        "de": "Ist dieser Hundepark umzäunt?",
+        "es": "¿Este parque para perros está vallado?",
+        "nl": "Is deze hondenweide volledig omheind?",
+        "ca": "Aquest parc de gossos està tancat?",
+        "cs": "Je tento psí park oplocený?"
+      }
+    },
+    {
+      "id": "smalldogs",
+      "mappings": [
+        {
+          "if": "small_dog=separate",
+          "then": {
+            "en": "Have separate area for puppies and small dogs",
+            "da": "Har en indhegning til hvalpe og sm&aring; hunde",
+            "de": "Hat einen separaten Bereich für Hundewelpen und kleine Hunde",
+            "es": "Tiene un espacio separado para cachorros y perros pequeños",
+            "nl": "Heeft gescheiden deel voor puppy's en kleine honden",
+            "ca": "Té un espai separat per a cadells i gossos petits",
+            "cs": "Má oddělený prostor pro štěňata a malé psy"
+          }
+        },
+        {
+          "if": "small_dog=shared",
+          "then": {
+            "en": "Does <strong>not</strong> have a separate area for puppies and small dogs",
+            "da": "Har <strong>ikke</strong> en indhegning til hvalpe og sm&aring; hunde",
+            "de": "Hat <strong>keinen</strong> separaten Bereich für Hundewelpen und kleine Hunde",
+            "es": "<strong>No</strong> tiene un espacio separado para cachorros y perros pequeños",
+            "nl": "Heeft <strong>geen</strong> gescheiden deel voor puppy's en kleine honden",
+            "ca": "<strong>No</strong> té un espai separat per a cadells i gossos petits",
+            "cs": "<strong>Nemá</strong>oddělený prostor pro štěňata a malé psy"
+          }
+        }
+      ],
+      "question": {
+        "en": "Does this dog park have a separate fenced in area for small dogs and puppies?",
+        "da": "Har denne hundeskov et separat indhegnet omr&aring;de for sm&aring; hunde og hvalpe (hvalpeg&aring;rd)?",
+        "de": "Hat der Hundepark einen separaten Bereich für Hundewelpen und kleine Hunde?",
+        "es": "¿Este parque para perros tiene una zona separada vallada para perros pequeños y cachorros?",
+        "nl": "Heeft deze hondenweide een gescheiden en omheind deel voor puppy's en kleine honden?",
+        "ca": "Aquest parc per a gossos té una zona tancada per a gossos petits i cadells?",
+        "cs": "Má tento psí park samostatný oplocený areál pro malé psy a štěňata?"
+      }
+    },
+    {
+      "question": {
+        "en": "What is the name of this dog park?",
+        "da": "Hvad hedder denne hundeskov?",
+        "de": "Wie lautet der Name dieses Hundeparks?",
+        "es": "¿Cual es el nombre de este parque para perros?",
+        "nl": "Wat is de naam van deze hondenweide?",
+        "ca": "Com s'anomena aquest parc per a gossos?",
+        "cs": "Jak se jmenuje tento psí park?"
+      },
+      "render": {
+        "en": "The name of this dog park is {name}",
+        "de": "Denne hundeskov hedder {name}",
+        "es": "El nombre de este parque para perros es {name}",
+        "nl": "Deze hondenweide heet {name}",
+        "ca": "Aquest parc per a gossos s'anomena {name}",
+        "cs": "Název tohoto psího parku je {name}"
+      },
+      "freeform": {
+        "key": "name",
+        "inline": true
+      },
+      "id": "Name"
+    },
+    {
+      "id": "dogarea",
+      "render": {
+        "en": "This dogpark is {_surface:ha} ha big",
+        "da": "Denne hundeskov er på {_surface:ha} hektar",
+        "de": "Der Hundepark ist {_surface:ha} ha groß",
+        "es": "Este parque para perros tiene {_surface:ha} ha",
+        "nl": "Deze hondenweide is {_surface:ha} hectaren groot",
+        "ca": "Aquest parc per a gossos té {_surface:ha} ha",
+        "cs": "Tento psí park je {_surface:ha} ha velký"
+      },
+      "condition": "_surface:ha!=0"
+    },
+    {
+      "id": "reviews",
+      "description": "Shows the reviews module (including the possibility to leave a review)",
+      "render": {
+        "*": "{create_review()}{list_reviews()}"
+      }
+    },
+    {
+      "id": "images",
+      "description": "This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images",
+      "render": {
+        "*": "{image_carousel()}{image_upload()}{nearby_images():my-4}"
+      },
+      "classes": "my-4"
+    },
+    {
+      "id": "leftover-questions",
+      "render": {
+        "*": "{questions( ,)}"
+      }
+    },
+    {
+      "id": "lod",
+      "labels": [
+        "added_by_default"
+      ],
+      "render": {
+        "*": "{linked_data_from_website()}"
+      }
+    },
+    {
+      "id": "minimap",
+      "description": "Shows a small map with the feature. Added by default to every popup",
+      "render": {
+        "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+      }
+    },
+    {
+      "id": "last_edit",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+      "condition": {
+        "and": [
+          "_last_edit:contributor~*",
+          "_last_edit:changeset~*"
+        ]
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsTesting=true",
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_debug=yes",
+          "_csCount>=10"
+        ]
+      },
+      "render": {
+        "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+      }
+    },
+    {
+      "id": "favourite_status",
+      "render": {
+        "*": "{favourite_status()}"
+      }
+    },
+    {
+      "id": "qr_code",
+      "labels": [
+        "added_by_default"
+      ],
+      "classes": "flex items-center gap-x-2",
+      "render": {
+        "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+        "en": "{qr_code()}Scan this code to open this location on another device",
+        "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+        "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+      }
+    },
+    {
+      "id": "share",
+      "labels": [
+        "added_by_default"
+      ],
+      "metacondition": "_supports_sharing=yes",
+      "render": {
+        "de": "{share_link(,Standort teilen)}",
+        "en": "{share_link(,Share this location)}",
+        "nl": "{share_link(,Deel deze locatie)}"
+      }
+    },
+    {
+      "id": "all-tags",
+      "render": {
+        "*": "{all_tags()}"
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_tags=full",
+          "mapcomplete-show_debug=yes"
+        ]
+      }
+    }
+  ],
+  "titleIcons": [
+    {
+      "id": "wikipedialink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+      "condition": {
+        "or": [
+          "wikipedia~*",
+          "wikidata~*"
+        ]
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "wikipedia=",
+          "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "open_until",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "#": "Titleicon showing e.g. 'open until 17:00'",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{opening_hours_state()}",
+      "condition": {
+        "or": [
+          "opening_hours~*",
+          {
+            "or": [
+              {
+                "and": [
+                  "seasonal~.*winter.*",
+                  "_now:date~....-(12|01|02)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*spring.*",
+                  "_now:date~....-(03|04|05)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*summer.*",
+                  "_now:date~....-(06|07|08)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*autumn.*",
+                  "_now:date~....-(09|10|11)-.."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "phonelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": {
+        "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+        "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+        "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+        "_context": "layers:icons.tagRenderings.phonelink.render"
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:phone~*",
+          "then": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+          }
+        }
+      ],
+      "condition": {
+        "or": [
+          "phone~*",
+          "contact:phone~*"
+        ]
+      }
+    },
+    {
+      "id": "emaillink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:email~*",
+          "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:email~*",
+          "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        }
+      ],
+      "condition": {
+        "or": [
+          "email~*",
+          "contact:email~*",
+          "operator:email~*"
+        ]
+      }
+    },
+    {
+      "id": "websitelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "website~*",
+          "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:website~*",
+          "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "context:website~*",
+          "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "smokingicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=no",
+          "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=yes",
+          "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+        }
+      ]
+    },
+    {
+      "id": "dogicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "if": "dog=no",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+        },
+        {
+          "if": "dog=leashed",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+        },
+        {
+          "if": {
+            "or": [
+              "dog=yes",
+              "dog=unleashed"
+            ]
+          },
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+        }
+      ]
+    },
+    {
+      "id": "sharelink",
+      "labels": [
+        "defaults"
+      ],
+      "render": "{share_link()}",
+      "metacondition": "_supports_sharing=yes"
+    },
+    {
+      "id": "favourite_title_icon",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "*": "{favourite_icon()}"
+      },
+      "metacondition": "_loggedIn=true"
+    },
+    {
+      "id": "osmlink",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+        "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+        "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+        "_context": "layers:icons.tagRenderings.osmlink.render"
+      },
+      "mappings": [
+        {
+          "if": "id~.*/-.*",
+          "then": ""
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "_backend~*",
+          "then": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+          }
+        }
+      ],
+      "condition": "id~(node|way|relation)/[0-9]*"
+    },
+    {
+      "id": "direction",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "{direction_indicator()}"
+    },
+    {
+      "id": "rating",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{rating()}"
+    }
+  ],
+  "_layerIcon": [
+    {
+      "icon": "./assets/layers/dogpark/dog-park.svg"
+    }
+  ]
+}

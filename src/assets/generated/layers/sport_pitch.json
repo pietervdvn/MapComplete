@@ -1,0 +1,1309 @@
+{
+  "id": "sport_pitch",
+  "name": {
+    "nl": "Sportterrein",
+    "fr": "Terrains de sport",
+    "en": "Sport pitches",
+    "ru": "Спортивные площадки",
+    "it": "Campi sportivi",
+    "de": "Sportplätze",
+    "ca": "Camps d'esports",
+    "es": "Pistas de deportes",
+    "cs": "Sportovní hřiště"
+  },
+  "description": {
+    "nl": "Een sportterrein",
+    "fr": "Un terrain de sport",
+    "en": "A sport pitch",
+    "it": "Un campo sportivo",
+    "ru": "Спортивная площадка",
+    "de": "Ein Sportplatz",
+    "es": "Una pista de deportes",
+    "cs": "Sportovní hřiště"
+  },
+  "source": {
+    "osmTags": {
+      "and": [
+        "leisure=pitch"
+      ]
+    }
+  },
+  "calculatedTags": [
+    "_size_classification=Number(feat.properties._surface) < 200 ? 'small' :  (Number(feat.properties._surface) < 750 ? 'medium' : 'large') "
+  ],
+  "minzoom": 12,
+  "title": {
+    "render": {
+      "nl": "Sportterrein",
+      "fr": "Terrain de sport",
+      "en": "Sport pitch",
+      "ru": "Спортивная площадка",
+      "it": "Campo sportivo",
+      "de": "Sportplatz",
+      "ca": "Camp d'esports",
+      "es": "Pista de deportes",
+      "cs": "Sportovní hřiště"
+    }
+  },
+  "pointRendering": [
+    {
+      "marker": [
+        {
+          "icon": {
+            "render": "circle",
+            "id": "circle"
+          },
+          "color": "white"
+        },
+        {
+          "icon": {
+            "render": "./assets/layers/sport_pitch/sport_pitch.svg",
+            "mappings": [
+              {
+                "if": {
+                  "or": [
+                    "sport=baseball",
+                    "sport=basketball",
+                    "sport=beachvolleyball",
+                    "sport=boules",
+                    "sport=skateboard",
+                    "sport=soccer",
+                    "sport=table_tennis",
+                    "sport=tennis",
+                    "sport=volleyball",
+                    "sport=equestrian"
+                  ]
+                },
+                "then": "./assets/layers/sport_pitch/{sport}.svg"
+              }
+            ]
+          }
+        }
+      ],
+      "iconBadges": [
+        {
+          "if": {
+            "and": [
+              "opening_hours!=24/7",
+              "opening_hours~*"
+            ]
+          },
+          "then": {
+            "id": "isOpen",
+            "#": "Shows a coloured clock if opening hours are parsed. Uses the metatagging, suitable to use as a (badged) overlay",
+            "mappings": [
+              {
+                "if": "_isOpen=yes",
+                "then": "clock:#0f0;ring:#0f0"
+              },
+              {
+                "if": "_isOpen=no",
+                "then": "circle:#f00;clock:#fff"
+              },
+              {
+                "#": "Still loading the country",
+                "if": {
+                  "and": [
+                    "_isOpen=",
+                    "opening_hours~*"
+                  ]
+                },
+                "then": "clock:#ff0;ring:#ff0"
+              },
+              {
+                "#": "Still loading the country",
+                "if": {
+                  "and": [
+                    "_isOpen=parse_error",
+                    "opening_hours~*"
+                  ]
+                },
+                "then": "circle:#f0f;clock:#fff"
+              }
+            ],
+            "metacondition": "__showTimeSensitiveIcons!=no"
+          }
+        },
+        {
+          "if": {
+            "or": [
+              "access=customers",
+              "access=private",
+              "access=no"
+            ]
+          },
+          "then": {
+            "render": "circle:white;./assets/layers/sport_pitch/lock.svg",
+            "id": "circlewhiteassetslayerssportpitchlocksvg"
+          }
+        },
+        {
+          "if": "_favourite=yes",
+          "then": "circle:white;heart:red"
+        }
+      ],
+      "iconSize": {
+        "render": "25,25,center",
+        "mappings": [
+          {
+            "if": {
+              "or": [
+                "_size_classification=medium",
+                "id~node/.*"
+              ]
+            },
+            "then": "32,32,center"
+          },
+          {
+            "if": "_size_classification=small",
+            "then": "25,25,center"
+          },
+          {
+            "if": "_size_classification=large",
+            "then": "40,40,center"
+          }
+        ]
+      },
+      "location": [
+        "point",
+        "centroid"
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#00cc00",
+      "width": "1",
+      "fill": "false"
+    }
+  ],
+  "presets": [
+    {
+      "title": {
+        "nl": "een ping-pong tafel",
+        "fr": "une table de ping-pong",
+        "en": "a tabletennis table",
+        "it": "una tavolo da tennistavolo",
+        "ru": "Стол для настольного тенниса",
+        "de": "eine Tischtennisplatte",
+        "cs": "stůl na stolní tenis"
+      },
+      "tags": [
+        "leisure=pitch",
+        "sport=table_tennis"
+      ]
+    },
+    {
+      "title": {
+        "nl": "een sportterrein",
+        "fr": "une terrain de sport",
+        "en": "a sport pitch",
+        "ru": "Спортивная площадка",
+        "it": "una campo sportivo",
+        "de": "einen Sportplatz",
+        "es": "una pista de deportes",
+        "ca": "una pista d'esports",
+        "cs": "sportovní hřiště"
+      },
+      "tags": [
+        "leisure=pitch",
+        "fixme=Toegevoegd met MapComplete, geometry nog uit te tekenen"
+      ]
+    }
+  ],
+  "tagRenderings": [
+    {
+      "id": "just_created",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "This element shows a 'thank you' that the contributor has recently created this element",
+      "classes": "rounded-xl thanks",
+      "mappings": [
+        {
+          "if": "id~*",
+          "icon": "./assets/svg/party.svg",
+          "then": {
+            "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+            "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+            "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+            "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+            "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+            "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+          }
+        }
+      ],
+      "condition": {
+        "and": [
+          "_backend~*",
+          "_last_edit:passed_time<300",
+          {
+            "or": [
+              "_version_number=",
+              "_version_number=1"
+            ]
+          }
+        ]
+      },
+      "metacondition": {
+        "and": [
+          {
+            "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+            "or": [
+              "_last_edit:contributor:uid:={_uid}",
+              "_last_edit:contributor:uid="
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "images",
+      "description": "This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images",
+      "render": {
+        "*": "{image_carousel()}{image_upload()}{nearby_images():my-4}"
+      },
+      "classes": "my-4"
+    },
+    {
+      "render": {
+        "nl": "Hier kan men {sport} beoefenen",
+        "fr": "Ici on joue au {sport}",
+        "en": "{sport} is played here",
+        "it": "Qui si gioca a {sport}",
+        "de": "Hier wird {sport} gespielt",
+        "es": "Aquí se juega al {sport}",
+        "ca": "{sport} es juga aquí",
+        "cs": "Zde se hraje {sport}"
+      },
+      "freeform": {
+        "key": "sport",
+        "inline": true
+      },
+      "question": {
+        "nl": "Welke sporten kan men hier beoefenen?",
+        "fr": "À quel sport peut-on jouer ici ?",
+        "en": "Which sport can be played here?",
+        "it": "Quale sport si gioca qui?",
+        "de": "Welche Sportarten können hier gespielt werden?",
+        "es": "¿Qué deporte se puede practicar aquí?",
+        "ca": "Quin esport es pot practicar aquí?",
+        "cs": "Jaký sport se zde dá provozovat?"
+      },
+      "multiAnswer": true,
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "sport=basketball"
+            ]
+          },
+          "then": {
+            "nl": "Hier kan men basketbal spelen",
+            "fr": "Ici, on joue au basketball",
+            "en": "Basketball is played here",
+            "it": "Qui si gioca a basket",
+            "ru": "Здесь можно играть в баскетбол",
+            "de": "Hier wird Basketball gespielt",
+            "es": "Aquí se juega al baloncesto",
+            "ca": "Aquí es juga bàsquet",
+            "cs": "Zde se hraje basketbal"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "sport=soccer"
+            ]
+          },
+          "then": {
+            "nl": "Hier kan men voetbal spelen",
+            "fr": "Ici, on joue au football",
+            "en": "Soccer is played here",
+            "it": "Qui si gioca a calcio",
+            "ru": "Здесь можно играть в футбол",
+            "de": "Hier wird Fußball gespielt",
+            "es": "Aquí se juega al fútbol",
+            "ca": "Aquí es juga futbol",
+            "cs": "Zde se hraje fotbal"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "sport=table_tennis"
+            ]
+          },
+          "then": {
+            "nl": "Dit is een pingpongtafel",
+            "fr": "C'est une table de ping-pong",
+            "en": "This is a pingpong table",
+            "ru": "Это стол для пинг-понга",
+            "it": "Questo è un tavolo da ping pong",
+            "de": "Dies ist eine Tischtennisplatte",
+            "es": "Esto es una mesa de ping pong",
+            "ca": "Aquí es juga ping pong",
+            "cs": "Toto je pingpongový stůl"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "sport=tennis"
+            ]
+          },
+          "then": {
+            "nl": "Hier kan men tennis spelen",
+            "fr": "Ici, on joue au tennis",
+            "en": "Tennis is played here",
+            "it": "Qui si gioca a tennis",
+            "ru": "Здесь можно играть в теннис",
+            "de": "Hier wird Tennis gespielt",
+            "es": "Aquí se juega al tenis",
+            "ca": "Aquí es juga al tenis",
+            "cs": "Zde se hraje tenis"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "sport=korfball"
+            ]
+          },
+          "then": {
+            "nl": "Hier kan men korfbal spelen",
+            "fr": "Ici, on joue au korfball",
+            "en": "Korfball is played here",
+            "it": "Qui si gioca a korfball",
+            "ru": "Здесь можно играть в корфбол",
+            "de": "Hier wird Kopfball gespielt",
+            "ca": "Aquí es juga al corfbol",
+            "cs": "Zde se hraje korfbal"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "sport=basket"
+            ]
+          },
+          "then": {
+            "nl": "Hier kan men basketbal beoefenen",
+            "fr": "Ici, on joue au basketball",
+            "en": "Basketball is played here",
+            "it": "Qui si gioca a basket",
+            "ru": "Здесь можно играть в баскетбол",
+            "de": "Hier wird Basketball gespielt",
+            "es": "Aquí se juega al baloncesto",
+            "cs": "Zde se hraje basketbal",
+            "ca": "Aquí es juga bàsquet"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "sport=skateboard",
+          "then": {
+            "en": "This is a skatepark",
+            "nl": "Dit is een skatepark",
+            "de": "Dies ist ein Skatepark",
+            "ca": "Açò és un skatepark",
+            "cs": "Toto je skatepark"
+          }
+        }
+      ],
+      "id": "sport_pitch-sport"
+    },
+    {
+      "id": "basketball-hoops",
+      "question": {
+        "en": "How much basketball hoops does this pitch have?",
+        "de": "Wie viele Basketballkörbe hat das Spielfeld?",
+        "cs": "Kolik má toto hřiště basketbalových košů?",
+        "ca": "Quants cèrcols té aquesta pista?"
+      },
+      "mappings": [
+        {
+          "if": "hoops=1",
+          "then": {
+            "en": "This basketball pitch has a single hoop",
+            "de": "Dieses Basketballfeld hat einen einzigen Korb",
+            "cs": "Toto basketbalové hřiště má jeden koš"
+          }
+        },
+        {
+          "if": "hoops=2",
+          "then": {
+            "en": "This basketball pitch has two hoops",
+            "de": "Dieses Basketballfeld hat zwei Körbe",
+            "cs": "Toto basketbalové hřiště má dva koše",
+            "ca": "Aquest camp de bàsquet té dos cèrcols"
+          }
+        },
+        {
+          "if": "hoops=4",
+          "then": {
+            "en": "This basketball pitch has four hoops",
+            "de": "Dieses Basketballfeld hat vier Körbe",
+            "cs": "Toto basketbalové hřiště má čtyři koše",
+            "ca": "Aquest camp de bàsquet té quatre cèrcols"
+          }
+        },
+        {
+          "if": "hoops~*",
+          "then": {
+            "en": "This basketball pitch has {hoops} hoops",
+            "de": "Dieses Basketballfeld hat {hoops} Körbe",
+            "cs": "Toto basketbalové hřiště má {hoops} koše",
+            "ca": "Aquest camp de bàsquet té {hoops} cèrcols"
+          },
+          "hideInAnswer": true
+        }
+      ],
+      "condition": "sport~(^|.*;)basketball(;.*|$)"
+    },
+    {
+      "question": {
+        "nl": "Wat is de ondergrond van dit sportveld?",
+        "fr": "De quelle surface est fait ce terrain de sport ?",
+        "en": "Which is the surface of this sport pitch?",
+        "it": "Qual è la superficie di questo campo sportivo?",
+        "ru": "Какое покрытие на этой спортивной площадке?",
+        "de": "Welchen Belag hat der Sportplatz?",
+        "es": "¿Cual es la superficie de esta pista de deportes?",
+        "ca": "Quina és la superfície d'aquest camp esportiu?",
+        "cs": "Jaký je povrch tohoto sportovního hřiště?"
+      },
+      "render": {
+        "nl": "De ondergrond is <b>{surface}</b>",
+        "fr": "La surface est <b>{surface}</b>",
+        "en": "The surface is <b>{surface}</b>",
+        "ru": "Поверхность - <b>{surface}</b>",
+        "it": "La superficie è <b>{surface}</b>",
+        "de": "Der Belag ist <b>{surface}</b>",
+        "es": "La superficie es <b>{surface}</b>",
+        "ca": "La superfícies és <b>{surface}</b>",
+        "cs": "Povrch je <b>{surface}</b>"
+      },
+      "freeform": {
+        "key": "surface",
+        "inline": true
+      },
+      "mappings": [
+        {
+          "if": "surface=grass",
+          "then": {
+            "nl": "De ondergrond is <b>gras</b>",
+            "fr": "La surface est de l'<b>herbe</b>",
+            "en": "The surface is <b>grass</b>",
+            "ru": "Поверхность - <b>трава</b>",
+            "it": "La superficie è <b>erba</b>",
+            "de": "Der Belag ist aus <b>Gras</b>",
+            "es": "La superficie es <b>hierba</b>",
+            "ca": "La superfície és <b>herba</b>",
+            "cs": "Povrch je <b>tráva</b>"
+          }
+        },
+        {
+          "if": "surface=sand",
+          "then": {
+            "nl": "De ondergrond is <b>zand</b>",
+            "fr": "La surface est du <b>sable</b>",
+            "en": "The surface is <b>sand</b>",
+            "ru": "Поверхность - <b>песок</b>",
+            "it": "La superficie è <b>sabbia</b>",
+            "de": "Der Belag ist aus <b>Sand</b>",
+            "es": "La superficie es <b>arena</b>",
+            "ca": "La superfície és <b>sorra</b>",
+            "cs": "Povrch je <b>písek</b>"
+          }
+        },
+        {
+          "if": "surface=paving_stones",
+          "then": {
+            "nl": "De ondergrond bestaat uit <b>stoeptegels</b>",
+            "fr": "La surface est des <b>pavés</b>",
+            "en": "The surface is <b>paving stones</b>",
+            "ru": "Поверхность - <b>брусчатка</b>",
+            "it": "La superficie è <b>pietre irregolari</b>",
+            "de": "Der Belag ist aus <b>Pflastersteinen</b>",
+            "es": "La superficie es <b>adoquines</b>",
+            "ca": "La superfície són <b>llambordes</b>",
+            "cs": "Povrch je <b>dlážděný</b>"
+          }
+        },
+        {
+          "if": "surface=asphalt",
+          "then": {
+            "nl": "De ondergrond is <b>asfalt</b>",
+            "fr": "La surface est de l'<b>asphalte</b>",
+            "en": "The surface is <b>asphalt</b>",
+            "ru": "Поверхность - <b>асфальт</b>",
+            "it": "La superficie è <b>asfalto</b>",
+            "de": "Der Belag ist aus <b>Asphalt</b>",
+            "es": "La superficie es <b>asfalto</b>",
+            "ca": "La superfície és <b>asfalt</b>",
+            "cs": "Povrch je <b>asfalt</b>"
+          }
+        },
+        {
+          "if": "surface=concrete",
+          "then": {
+            "nl": "De ondergrond is <b>beton</b>",
+            "fr": "La surface est du <b>béton</b>",
+            "en": "The surface is <b>concrete</b>",
+            "ru": "Поверхность - <b>бетон</b>",
+            "it": "La superficie è <b>calcestruzzo</b>",
+            "de": "Der Belag ist aus <b>Beton</b>",
+            "es": "La superficie es <b>hormigón</b>",
+            "ca": "La superfície és <b>formigó</b>",
+            "cs": "Povrch je <b>betonový</b>"
+          }
+        },
+        {
+          "if": "surface=fine_gravel",
+          "then": {
+            "en": "The surface is <b>fine gravel</b>",
+            "nl": "De ondergrond bestaat uit <b>grind</b>",
+            "de": "Die Oberfläche ist <b>feiner Kies</b>",
+            "ca": "La superfície és <b> grava fina</b>"
+          }
+        },
+        {
+          "if": "surface=tartan",
+          "then": {
+            "en": "The surface of this track is Tartan, a synthetic, slightly springy, porous surface",
+            "nl": "De ondergrond is Tartan, een synthetisch, licht verende en poreuze ondergrond",
+            "ca": "La superfície d'aquesta pista és Tartan, una superfície sintètica, lleugerament molla i porosa",
+            "de": "Der Belag dieser Laufbahn ist Tartan, ein synthetischer, leicht federnder, poröser Belag"
+          }
+        }
+      ],
+      "id": "sport_pitch-surface"
+    },
+    {
+      "id": "sport-pitch-access",
+      "question": {
+        "nl": "Is dit sportterrein publiek toegankelijk?",
+        "fr": "Est-ce que ce terrain de sport est accessible au public ?",
+        "en": "Is this sport pitch publicly accessible?",
+        "it": "Questo campo sportivo è aperto al pubblico?",
+        "ru": "Есть ли свободный доступ к этой спортивной площадке?",
+        "de": "Ist der Sportplatz öffentlich zugänglich?",
+        "es": "¿Esta pista de deportes es accesible públicamente?",
+        "ca": "Aquesta pista d'esports és accessible públicament?",
+        "cs": "Je toto sportovní hřiště veřejně přístupné?"
+      },
+      "mappings": [
+        {
+          "if": "access=yes",
+          "then": {
+            "nl": "Publiek toegankelijk",
+            "fr": "Accessible au public",
+            "en": "Public access",
+            "it": "Aperto al pubblico",
+            "ru": "Свободный доступ",
+            "de": "Der Sportplatz ist öffentlich zugänglich",
+            "es": "Acceso público",
+            "ca": "Accés públic",
+            "cs": "Veřejný přístup"
+          }
+        },
+        {
+          "if": "access=limited",
+          "then": {
+            "nl": "Beperkt toegankelijk (enkel na reservatie, tijdens bepaalde uren, …)",
+            "fr": "Accès limité (par exemple uniquement sur réservation, à certains horaires…)",
+            "en": "Limited access (e.g. only with an appointment, during certain hours, …)",
+            "it": "Accesso limitato (p.es. solo con prenotazione, in certi orari, ...)",
+            "ru": "Ограниченный доступ (напр., только по записи, в определённые часы, ...)",
+            "de": "Der Sportplatz ist nur eingeschränkt zugänglich (z. B. nur mit Termin, nur zu bestimmten Zeiten, …)",
+            "es": "Acceso limitado (ej. solo con una cita, a cieras horas, ...)",
+            "ca": "Accés limitat (p.e. només amb cita, durant certes hores, …)",
+            "cs": "Omezený přístup (např. pouze po předchozí domluvě, v určitých hodinách, ...)"
+          }
+        },
+        {
+          "if": "access=members",
+          "then": {
+            "nl": "Enkel toegankelijk voor leden van de bijhorende sportclub",
+            "fr": "Accessible uniquement aux membres du club",
+            "en": "Only accessible for members of the club",
+            "it": "Accesso limitato ai membri dell'associazione",
+            "ru": "Доступ только членам клуба",
+            "de": "Der Sportplatz ist nur für Vereinsmitglieder zugänglich",
+            "es": "Solo accesible para miembros del club",
+            "ca": "Sols accessible per a membres del club",
+            "cs": "Přístupné pouze pro členy klubu"
+          }
+        },
+        {
+          "if": "access=private",
+          "then": {
+            "nl": "Privaat en niet toegankelijk",
+            "fr": "Privé - Pas accessible au public",
+            "en": "Private - not accessible to the public",
+            "it": "Privato - non aperto al pubblico",
+            "de": "Der Sportplatz ist nicht öffentlich zugänglich (es ist ein privater Sportplatz)",
+            "es": "Privada - no accesible al público",
+            "ca": "Privat - no accessible al públic",
+            "cs": "Soukromé - veřejnosti nepřístupné"
+          }
+        },
+        {
+          "if": "access=public",
+          "then": {
+            "nl": "Publiek toegankelijk",
+            "fr": "Accessible au public",
+            "en": "Public access",
+            "it": "Aperto al pubblico",
+            "ru": "Свободный доступ",
+            "de": "Der Sportplatz ist öffentlich zugänglich",
+            "es": "Acceso público",
+            "cs": "Veřejný přístup",
+            "ca": "Accés públic"
+          },
+          "hideInAnswer": true
+        }
+      ]
+    },
+    {
+      "id": "sport-pitch-reservation",
+      "question": {
+        "nl": "Moet men reserveren om gebruik te maken van dit sportveld?",
+        "fr": "Doit-on réserver pour utiliser ce terrain de sport ?",
+        "en": "Does one have to make an appointment to use this sport pitch?",
+        "it": "È necessario prenotarsi per usare questo campo sportivo?",
+        "ru": "Нужна ли предварительная запись для доступа на эту спортивную площадку?",
+        "de": "Muss man einen Termin vereinbaren, um den Sportplatz nutzen zu dürfen?",
+        "es": "¿Hay que pedir una cita para utilizar esta pista?",
+        "ca": "Hi ha que sol·licitar cita per a utilitzar la pista?",
+        "cs": "Je nutné se na toto sportovní hřiště objednat?"
+      },
+      "condition": {
+        "and": [
+          "access!=public",
+          "access!=private",
+          "access!=members"
+        ]
+      },
+      "mappings": [
+        {
+          "if": "reservation=required",
+          "then": {
+            "nl": "Reserveren is verplicht om gebruik te maken van dit sportterrein",
+            "fr": "Il est obligatoire de réserver pour utiliser ce terrain de sport",
+            "en": "Making an appointment is obligatory to use this sport pitch",
+            "it": "La prenotazione è obbligatoria per usare questo campo sportivo",
+            "de": "Eine Voranmeldung zur Nutzung des Sportplatzes ist erforderlich",
+            "es": "Pedir una cita es obligatorio para utilizar esta pista",
+            "ca": "S'ha de demanar cita per a utilitzar la pista",
+            "cs": "Pro využití tohoto sportovního hřiště je nutné se předem objednat"
+          }
+        },
+        {
+          "if": "reservation=recommended",
+          "then": {
+            "nl": "Reserveren is sterk aangeraden om gebruik te maken van dit sportterrein",
+            "fr": "Il est recommendé de réserver pour utiliser ce terrain de sport",
+            "en": "Making an appointment is recommended when using this sport pitch",
+            "it": "La prenotazione è consigliata per usare questo campo sportivo",
+            "ru": "Желательна предварительная запись для доступа на эту спортивную площадку",
+            "de": "Eine Voranmeldung zur Nutzung des Sportplatzes wird empfohlen",
+            "es": "Se recomienda pedir una cita al utilizar esta pista",
+            "ca": "Es recomana demanar cita per a utilitzar la pista",
+            "cs": "Při použití tohoto sportovního hřiště se doporučuje domluvit si schůzku"
+          }
+        },
+        {
+          "if": "reservation=yes",
+          "then": {
+            "nl": "Reserveren is mogelijk, maar geen voorwaarde",
+            "fr": "Il est possible de réserver, mais ce n'est pas nécéssaire pour utiliser ce terrain de sport",
+            "en": "Making an appointment is possible, but not necessary to use this sport pitch",
+            "it": "La prenotazione è consentita, ma non è obbligatoria per usare questo campo sportivo",
+            "ru": "Предварительная запись для доступа на эту спортивную площадку возможна, но не обязательна",
+            "de": "Eine Voranmeldung zur Nutzung des Sportplatzes ist möglich, aber nicht erforderlich",
+            "es": "Pedir cita es posible, pero no necesario para utilizar esta pista de deportes",
+            "ca": "Es pot demanar cita, però no és necessari per a poder utilitzar la pista",
+            "cs": "Domluvit si schůzku je možné, ale pro využití tohoto sportovního hřiště to není nutné"
+          }
+        },
+        {
+          "if": "reservation=no",
+          "then": {
+            "nl": "Reserveren is niet mogelijk",
+            "fr": "On ne peut pas réserver",
+            "en": "Making an appointment is not possible",
+            "it": "Non è possibile prenotare",
+            "ru": "Невозможна предварительная запись",
+            "de": "Eine Voranmeldung zur Nutzung des Sportplatzes ist nicht möglich",
+            "es": "No es posible pedir cita",
+            "ca": "No és possible demanar cita",
+            "cs": "Sjednání schůzky není možné"
+          }
+        }
+      ]
+    },
+    {
+      "question": {
+        "nl": "Wat is het telefoonnummer van de bevoegde dienst of uitbater?",
+        "fr": "Quel est le numéro de téléphone du gérant ?",
+        "en": "What is the phone number of the operator?",
+        "it": "Qual è il numero di telefono del gestore?",
+        "de": "Wie lautet die Telefonnummer des Betreibers?",
+        "es": "¿Cual es el número de teléfono de la operadora?",
+        "ca": "Quin és el telèfon de l'operadora?",
+        "cs": "Jaké je telefonní číslo provozovatele?"
+      },
+      "freeform": {
+        "key": "phone",
+        "type": "phone"
+      },
+      "render": "<a href='tel:{phone}'>{phone}</a>",
+      "id": "sport_pitch-phone"
+    },
+    {
+      "question": {
+        "nl": "Wat is het email-adres van de bevoegde dienst of uitbater?",
+        "fr": "Quelle est l'adresse courriel du gérant ?",
+        "en": "What is the email address of the operator?",
+        "it": "Qual è l'indirizzo email del gestore?",
+        "de": "Wie lautet die Email-Adresse des Betreibers?",
+        "es": "¿Cual es la dirección de correo electrónico de la operadora?",
+        "ca": "Quina és l'adreça de correu electrònic de l'operador?",
+        "cs": "Jaká je e-mailová adresa provozovatele?"
+      },
+      "freeform": {
+        "key": "email",
+        "type": "email"
+      },
+      "render": "<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>",
+      "id": "sport_pitch-email"
+    },
+    {
+      "question": {
+        "nl": "Wanneer is dit sportveld toegankelijk?",
+        "fr": "Quand ce terrain est-il accessible ?",
+        "en": "When is this pitch accessible?",
+        "it": "Quando è aperto questo campo sportivo?",
+        "ru": "В какое время доступна эта площадка?",
+        "de": "Wann ist dieser Sportplatz zugänglich?",
+        "es": "¿Cuándo es accesible esta pista?",
+        "cs": "Kdy je toto hřiště přístupné?"
+      },
+      "render": "Openingsuren: {opening_hours_table()}",
+      "freeform": {
+        "key": "opening_hours",
+        "type": "opening_hours",
+        "inline": false
+      },
+      "mappings": [
+        {
+          "if": "opening_hours=",
+          "then": {
+            "en": "Always accessible",
+            "nl": "24/7 toegankelijk",
+            "de": "Immer zugänglich",
+            "ca": "Sempre accesible",
+            "cs": "Vždy přístupné"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "opening_hours=24/7",
+          "then": {
+            "nl": "24/7 toegankelijk",
+            "fr": "Accessible en permanence",
+            "en": "Always accessible",
+            "ru": "Всегда доступен",
+            "it": "Sempre aperto",
+            "de": "Immer zugänglich",
+            "es": "Siempre accesible",
+            "cs": "Vždy přístupné",
+            "ca": "Sempre accesible"
+          }
+        }
+      ],
+      "condition": "access~*",
+      "id": "sport_pitch-opening_hours"
+    },
+    {
+      "id": "questions",
+      "description": "Show the questions block at this location",
+      "render": {
+        "*": "{questions()}"
+      }
+    },
+    {
+      "id": "sport-pitch-reviews",
+      "render": "{reviews(name, sportpitch)}"
+    },
+    {
+      "id": "lod",
+      "labels": [
+        "added_by_default"
+      ],
+      "render": {
+        "*": "{linked_data_from_website()}"
+      }
+    },
+    {
+      "id": "minimap",
+      "description": "Shows a small map with the feature. Added by default to every popup",
+      "render": {
+        "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+      }
+    },
+    {
+      "id": "last_edit",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+      "condition": {
+        "and": [
+          "_last_edit:contributor~*",
+          "_last_edit:changeset~*"
+        ]
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsTesting=true",
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_debug=yes",
+          "_csCount>=10"
+        ]
+      },
+      "render": {
+        "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+      }
+    },
+    {
+      "id": "favourite_status",
+      "render": {
+        "*": "{favourite_status()}"
+      }
+    },
+    {
+      "id": "qr_code",
+      "labels": [
+        "added_by_default"
+      ],
+      "classes": "flex items-center gap-x-2",
+      "render": {
+        "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+        "en": "{qr_code()}Scan this code to open this location on another device",
+        "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+        "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+      }
+    },
+    {
+      "id": "share",
+      "labels": [
+        "added_by_default"
+      ],
+      "metacondition": "_supports_sharing=yes",
+      "render": {
+        "de": "{share_link(,Standort teilen)}",
+        "en": "{share_link(,Share this location)}",
+        "nl": "{share_link(,Deel deze locatie)}"
+      }
+    },
+    {
+      "id": "all-tags",
+      "render": {
+        "*": "{all_tags()}"
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_tags=full",
+          "mapcomplete-show_debug=yes"
+        ]
+      }
+    }
+  ],
+  "filter": [
+    {
+      "id": "accessibility",
+      "options": [
+        {
+          "question": {
+            "en": "Publicly accessible",
+            "nl": "Publiek toegankelijk",
+            "de": "Öffentlich zugänglich",
+            "ca": "Accés lliure",
+            "cs": "Veřejně přístupné",
+            "pt": "Acessível ao público"
+          },
+          "osmTags": {
+            "or": [
+              "access=yes",
+              "access=public",
+              "access="
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "available_sports",
+      "options": [
+        {
+          "question": {
+            "en": "All sports",
+            "nl": "Alle sporten",
+            "de": "Alle Sportarten",
+            "ca": "Tots els esports",
+            "cs": "Všechny sporty"
+          }
+        },
+        {
+          "osmTags": "sport=basketball",
+          "question": {
+            "nl": "Basketbalvelden",
+            "en": "Basketball fields",
+            "de": "Basketballplätze",
+            "ca": "Camps de bàsquet",
+            "cs": "Basketbalová hřiště"
+          }
+        },
+        {
+          "osmTags": "sport=soccer",
+          "question": {
+            "nl": "Voetbalvelden",
+            "en": "Soccer fields",
+            "de": "Fußballplätze",
+            "ca": "Camps de futbol",
+            "cs": "Fotbalová hřiště"
+          }
+        },
+        {
+          "osmTags": "sport=table_tennis",
+          "question": {
+            "nl": "Pingpong-tafel",
+            "en": "Ping-pong tables",
+            "de": "Tischtennisplatten",
+            "ca": "Taules de ping-pong",
+            "cs": "Ping-pongové stoly"
+          }
+        },
+        {
+          "osmTags": "sport=tennis",
+          "question": {
+            "nl": "Tennisveld",
+            "en": "Tennis fields",
+            "de": "Tennisplätze",
+            "ca": "Camps de tennis",
+            "cs": "Tenisové kurty"
+          }
+        },
+        {
+          "osmTags": "sport=badminton",
+          "question": {
+            "nl": "Badmintonveld",
+            "en": "Badminton fields",
+            "cs": "Badmintonová hřiště",
+            "de": "Badmintonfelder"
+          }
+        }
+      ]
+    },
+    {
+      "id": "open_now",
+      "options": [
+        {
+          "question": {
+            "en": "Open now",
+            "nl": "Nu open",
+            "de": "Jetzt geöffnet",
+            "ca": "Obert ara",
+            "es": "Abierto",
+            "fr": "Ouvert maintenant",
+            "hu": "Most nyitva van",
+            "da": "Åbent nu",
+            "zh_Hant": "目前開放",
+            "id": "Saat ini buka",
+            "it": "Aperto ora",
+            "pl": "Otwarte teraz",
+            "cs": "Nyní otevřeno"
+          },
+          "osmTags": "_isOpen=yes"
+        }
+      ]
+    }
+  ],
+  "titleIcons": [
+    {
+      "id": "wikipedialink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+      "condition": {
+        "or": [
+          "wikipedia~*",
+          "wikidata~*"
+        ]
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "wikipedia=",
+          "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "open_until",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "#": "Titleicon showing e.g. 'open until 17:00'",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{opening_hours_state()}",
+      "condition": {
+        "or": [
+          "opening_hours~*",
+          {
+            "or": [
+              {
+                "and": [
+                  "seasonal~.*winter.*",
+                  "_now:date~....-(12|01|02)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*spring.*",
+                  "_now:date~....-(03|04|05)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*summer.*",
+                  "_now:date~....-(06|07|08)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*autumn.*",
+                  "_now:date~....-(09|10|11)-.."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "phonelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": {
+        "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+        "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+        "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+        "_context": "layers:icons.tagRenderings.phonelink.render"
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:phone~*",
+          "then": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+          }
+        }
+      ],
+      "condition": {
+        "or": [
+          "phone~*",
+          "contact:phone~*"
+        ]
+      }
+    },
+    {
+      "id": "emaillink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:email~*",
+          "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:email~*",
+          "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        }
+      ],
+      "condition": {
+        "or": [
+          "email~*",
+          "contact:email~*",
+          "operator:email~*"
+        ]
+      }
+    },
+    {
+      "id": "websitelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "website~*",
+          "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:website~*",
+          "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "context:website~*",
+          "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "smokingicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=no",
+          "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=yes",
+          "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+        }
+      ]
+    },
+    {
+      "id": "dogicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "if": "dog=no",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+        },
+        {
+          "if": "dog=leashed",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+        },
+        {
+          "if": {
+            "or": [
+              "dog=yes",
+              "dog=unleashed"
+            ]
+          },
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+        }
+      ]
+    },
+    {
+      "id": "sharelink",
+      "labels": [
+        "defaults"
+      ],
+      "render": "{share_link()}",
+      "metacondition": "_supports_sharing=yes"
+    },
+    {
+      "id": "favourite_title_icon",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "*": "{favourite_icon()}"
+      },
+      "metacondition": "_loggedIn=true"
+    },
+    {
+      "id": "osmlink",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+        "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+        "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+        "_context": "layers:icons.tagRenderings.osmlink.render"
+      },
+      "mappings": [
+        {
+          "if": "id~.*/-.*",
+          "then": ""
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "_backend~*",
+          "then": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+          }
+        }
+      ],
+      "condition": "id~(node|way|relation)/[0-9]*"
+    },
+    {
+      "id": "direction",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "{direction_indicator()}"
+    },
+    {
+      "id": "rating",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{rating()}"
+    }
+  ],
+  "_layerIcon": [
+    {
+      "icon": "circle",
+      "color": "white"
+    },
+    {
+      "icon": "./assets/layers/sport_pitch/sport_pitch.svg"
+    }
+  ]
+}

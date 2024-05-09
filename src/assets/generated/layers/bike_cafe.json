@@ -1,0 +1,1038 @@
+{
+  "id": "bike_cafe",
+  "name": {
+    "en": "Bike cafe",
+    "nl": "Fietscafé",
+    "fr": "Café vélo",
+    "gl": "Café de ciclistas",
+    "de": "Fahrrad-Cafés",
+    "it": "Cafè per ciclisti",
+    "zh_Hans": "自行车咖啡",
+    "ru": "Велосипедное кафе",
+    "zh_Hant": "單車咖啡廳",
+    "pt_BR": "Café de bicicletas",
+    "pt": "Café de bicicletas",
+    "ca": "Cafeteria per a bicicletes",
+    "da": "Cykelcafé",
+    "cs": "Cyklokavárna"
+  },
+  "description": {
+    "en": "A bike café is a café geared towards cyclists, for example with services such as a pump, with lots of bicycle-related decoration, …",
+    "nl": "Een fietscafé is een café dat gericht is op fietsers, bijvoorbeeld omdat het een fietspomp heeft, fietsgerelateerde decoratie heeft enzovoorts.",
+    "de": "Ein Fahrradcafé ist ein Café, das auf Radfahrer ausgerichtet ist, zum Beispiel mit Dienstleistungen wie einer Pumpe, mit viel fahrradbezogener Dekoration, …",
+    "da": "En cykelcafé er en café rettet mod cyklister, for eksempel med tjenester som en pumpe, med masser af cykelrelateret dekoration, o.s.v",
+    "fr": "Un vélo café est un café à destination des cyclistes avec, par exemple, des services tels qu’une pompe, et de nombreuses décorations liées aux vélos, etc.",
+    "cs": "Cyklokavárna je kavárna zaměřená na cyklisty, například se službami, jako je pumpa, se spoustou výzdoby související s jízdními koly, …",
+    "ca": "Un cafè ciclista és un cafè enfocat a ciclistes, per exemple, amb serveis com una manxa, amb molta decoració relacionada amb el ciclisme, …",
+    "pt_BR": "Um café para ciclistas é um café direcionado aos ciclistas, por exemplo, com serviços como uma bomba de ar, muita decoração relacionada a bicicletas, …",
+    "pt": "Um café para ciclistas é um café direcionado aos ciclistas, por exemplo, com serviços como uma bomba de ar, muita decoração relacionada a bicicletas, …"
+  },
+  "source": {
+    "osmTags": {
+      "and": [
+        {
+          "or": [
+            "amenity=pub",
+            "amenity=bar",
+            "amenity=cafe",
+            "amenity=restaurant"
+          ]
+        },
+        {
+          "#": "Note the double tilde in 'service:bicycle' which interprets the key as regex too",
+          "or": [
+            "pub=cycling",
+            "pub=bicycle",
+            "theme=cycling",
+            "theme=bicycle",
+            "service:bicycle:.*~~*"
+          ]
+        }
+      ]
+    }
+  },
+  "minzoom": 13,
+  "title": {
+    "render": {
+      "en": "Bike cafe",
+      "nl": "Fietscafé",
+      "fr": "Café Vélo",
+      "gl": "Café de ciclistas",
+      "de": "Fahrrad-Café",
+      "it": "Cafè per ciclisti",
+      "zh_Hans": "自行车咖啡",
+      "ru": "Велосипедное кафе",
+      "zh_Hant": "單車咖啡廳",
+      "pt_BR": "Café de bicicleta",
+      "pt": "Café de bicicleta",
+      "ca": "Cafeteria per a bicicletes",
+      "da": "Cykelcafé",
+      "cs": "Cyklokavárna"
+    },
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": {
+          "en": "Bike cafe <i>{name}</i>",
+          "nl": "Fietscafé <i>{name}</i>",
+          "fr": "Café Vélo <i>{name}</i>",
+          "gl": "Café de ciclistas <i>{name}</i>",
+          "de": "Fahrrad-Café <i>{name}</i>",
+          "it": "Cafè per ciclisti <i>{name}</i>",
+          "zh_Hans": "自行车咖啡 <i>{name}</i>",
+          "ru": "Велосипедное кафе <i>{name}</i>",
+          "zh_Hant": "單車咖啡廳<i>{name}</i>",
+          "pt_BR": "Café de bicicleta <i>{name}</i>",
+          "pt": "Café de bicicleta <i>{name}</i>",
+          "da": "Cykelcafé <i>{name}</i>",
+          "cs": "Cyklokavárna <i>{name}</i>",
+          "ca": "Cafè ciclista <i>{name}</i>"
+        }
+      }
+    ]
+  },
+  "pointRendering": [
+    {
+      "iconSize": "50,50",
+      "anchor": "bottom",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": {
+            "render": "pin",
+            "id": "pin"
+          },
+          "color": "#684c2b"
+        },
+        {
+          "icon": {
+            "render": "./assets/layers/bike_cafe/bike_cafe.svg",
+            "id": "assetslayersbikecafebikecafesvg"
+          }
+        }
+      ],
+      "iconBadges": [
+        {
+          "if": "_favourite=yes",
+          "then": "circle:white;heart:red"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#694E2D",
+      "width": "2"
+    }
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "a bike cafe",
+        "nl": "een fietscafé",
+        "fr": "une café vélo",
+        "gl": "Café de ciclistas",
+        "de": "ein Fahrrad-Café",
+        "it": "un cafè per ciclisti",
+        "zh_Hans": "自行车咖啡",
+        "zh_Hant": "單車咖啡廳",
+        "ru": "Велосипедное кафе",
+        "pt_BR": "uma café de bicicleta",
+        "pt": "uma café de bicicleta",
+        "da": "en cykelcafé",
+        "cs": "kavárna pro cyklisty",
+        "ca": "un cafè ciclista"
+      },
+      "tags": [
+        "amenity=pub",
+        "pub=cycling"
+      ]
+    }
+  ],
+  "tagRenderings": [
+    {
+      "id": "just_created",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "This element shows a 'thank you' that the contributor has recently created this element",
+      "classes": "rounded-xl thanks",
+      "mappings": [
+        {
+          "if": "id~*",
+          "icon": "./assets/svg/party.svg",
+          "then": {
+            "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+            "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+            "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+            "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+            "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+            "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+          }
+        }
+      ],
+      "condition": {
+        "and": [
+          "_backend~*",
+          "_last_edit:passed_time<300",
+          {
+            "or": [
+              "_version_number=",
+              "_version_number=1"
+            ]
+          }
+        ]
+      },
+      "metacondition": {
+        "and": [
+          {
+            "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+            "or": [
+              "_last_edit:contributor:uid:={_uid}",
+              "_last_edit:contributor:uid="
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "images",
+      "description": "This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images",
+      "render": {
+        "*": "{image_carousel()}{image_upload()}{nearby_images():my-4}"
+      },
+      "classes": "my-4"
+    },
+    {
+      "question": {
+        "en": "What is the name of this bike cafe?",
+        "nl": "Wat is de naam van dit fietscafé?",
+        "fr": "Quel est le nom de ce Café vélo ?",
+        "gl": "Cal é o nome deste café de ciclistas?",
+        "de": "Wie heißt dieses Fahrrad-Café?",
+        "it": "Come si chiama questo cafè per ciclisti?",
+        "zh_Hans": "这个自行车咖啡的名字是什么？",
+        "ru": "Как называется это байк-кафе?",
+        "zh_Hant": "這個單車咖啡廳的名稱是？",
+        "pt_BR": "Qual o nome deste café de bicicleta?",
+        "pt": "Qual o nome deste café de bicicleta?",
+        "da": "Hvad hedder denne cykelcafé?",
+        "cs": "Jak se jmenuje tato cyklokavárna?",
+        "ca": "Quin és el nom d'aquest cafè ciclista?"
+      },
+      "render": {
+        "en": "This bike cafe is called {name}",
+        "nl": "Dit fietscafé heet {name}",
+        "fr": "Ce Café vélo s'appelle {name}",
+        "gl": "Este café de ciclistas chámase {name}",
+        "de": "Das Fahrrad-Café heißt {name}",
+        "it": "Questo cafè per ciclisti si chiama {name}",
+        "zh_Hans": "这家自行车咖啡叫做 {name}",
+        "ru": "Это велосипедное кафе называется {name}",
+        "zh_Hant": "這個單車咖啡廳叫做 {name}",
+        "pt_BR": "Este café de bicicleta se chama {name}",
+        "pt": "Este café de bicicleta se chama {name}",
+        "da": "Denne cykelcafé hedder {name}",
+        "cs": "Tato cyklokavárna se jmenuje {name}",
+        "ca": "Aquest cafè ciclista s'anomena {name}"
+      },
+      "freeform": {
+        "key": "name",
+        "inline": true
+      },
+      "id": "bike_cafe-name"
+    },
+    {
+      "id": "bike_cafe-bike-pump",
+      "question": {
+        "en": "Does this bike cafe offer a bike pump for use by anyone?",
+        "nl": "Biedt dit fietscafé een fietspomp aan voor iedereen?",
+        "fr": "Est-ce que ce Café vélo propose une pompe en libre accès ?",
+        "gl": "Este café de ciclistas ofrece unha bomba de ar para que calquera persoa poida usala?",
+        "de": "Hat dieses Fahrrad-Café eine Fahrradpumpe, die von jedem benutzt werden kann?",
+        "it": "Questo cafè per ciclisti offre una pompa per bici che chiunque può utilizzare?",
+        "zh_Hans": "这家自行车咖啡为每个使用者提供打气筒吗？",
+        "ru": "Есть ли в этом велосипедном кафе велосипедный насос для всеобщего использования?",
+        "zh_Hant": "這個單車咖啡廳有提供給任何人都能使用的單車打氣甬嗎？",
+        "da": "Tilbyder denne cykelcafé en cykelpumpe til brug for alle?",
+        "cs": "Nabízí tato cyklistická kavárna vzduchový kompresor na kolo k použití pro kohokoli?",
+        "ca": "Aquest cafè ciclista ofereix una bomba de bicicletes per a qualsevol persona?",
+        "pt_BR": "Esse café para ciclistas oferece uma bomba de ar para qualquer um usar?",
+        "pt": "Este café para ciclistas oferece uma bomba de ar para qualquer um usar?"
+      },
+      "mappings": [
+        {
+          "if": "service:bicycle:pump=yes",
+          "then": {
+            "en": "This bike cafe offers a bike pump for anyone",
+            "nl": "Dit fietscafé biedt een fietspomp aan voor eender wie",
+            "fr": "Ce Café vélo offre une pompe en libre accès",
+            "gl": "Este café de ciclistas ofrece unha bomba de ar",
+            "de": "Das Fahrrad-Café hat eine Fahrradpumpe, die von jedem benutzt werden kann",
+            "it": "Questo cafè per ciclisti offre una pompa per bici liberamente utilizzabile",
+            "zh_Hans": "这家自行车咖啡为每个人提供打气筒",
+            "zh_Hant": "這個單車咖啡廳有提供給任何人都能使用的單車打氣甬",
+            "ru": "В этом велосипедном кафе есть велосипедный насос для всеобщего использования",
+            "da": "Denne cykelcafé tilbyder en cykelpumpe til enhver",
+            "cs": "Tato cyklistická kavárna nabízí vzduchový kompresor na kolo pro každého",
+            "ca": "Aquest cafè ciclista ofereix una bomba per a bicicletes per a qualsevol persona",
+            "pt_BR": "Esse café para ciclistas oferece uma bomba de ar para todos",
+            "pt": "Este café para ciclistas oferece uma bomba de ar para todos"
+          }
+        },
+        {
+          "if": "service:bicycle:pump=no",
+          "then": {
+            "en": "This bike cafe doesn't offer a bike pump for anyone",
+            "nl": "Dit fietscafé biedt geen fietspomp aan voor iedereen",
+            "fr": "Ce Café vélo n'offre pas de pompe en libre accès",
+            "gl": "Este café de ciclistas non ofrece unha bomba de ar",
+            "de": "Das Fahrrad-Café hat keine Fahrradpumpe, die von jedem benutzt werden kann",
+            "it": "Questo cafè per ciclisti non offre una pompa per bici liberamente utilizzabile",
+            "zh_Hans": "这家自行车咖啡不为每个人提供打气筒",
+            "zh_Hant": "這個單車咖啡廳並沒有為所有人提供單車打氣甬",
+            "ru": "В этом велосипедном кафе нет велосипедного насоса для всеобщего использования",
+            "da": "Denne cykelcafé tilbyder ikke en cykelpumpe til nogen",
+            "cs": "Tato cyklistická kavárna nenabízí vzduchový kompresor na kolo",
+            "ca": "Aquest cafè ciclista no ofereix una bomba per a bicicletes per a qualsevol persona",
+            "pt_BR": "Esse café para ciclistas não oferece uma bomba de ar para ninguém",
+            "pt": "Este café para ciclistas não oferece uma bomba de ar para ninguém"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bike_cafe-repair-tools",
+      "question": {
+        "en": "Are tools offered to repair your own bike?",
+        "nl": "Biedt dit fietscafé gereedschap aan om je fiets zelf te herstellen?",
+        "fr": "Est-ce qu'il y a des outils pour réparer soi-même son vélo ?",
+        "gl": "Hai ferramentas aquí para arranxar a túa propia bicicleta?",
+        "de": "Gibt es Werkzeug, um das eigene Fahrrad zu reparieren?",
+        "it": "Ci sono degli strumenti per riparare la propria bicicletta?",
+        "zh_Hans": "这里有供你修车用的工具吗？",
+        "zh_Hant": "這裡是否有工具修理你的單車嗎？",
+        "ru": "Есть ли здесь инструменты для починки вашего велосипеда?",
+        "pt_BR": "Há ferramentas aqui para consertar sua bicicleta?",
+        "pt": "Há ferramentas aqui para consertar a sua própria bicicleta?",
+        "es": "¿Se ofrecen herramientas para reparar tu propia bicicleta?",
+        "da": "Er der værktøj her til at reparere din egen cykel?",
+        "cs": "Je nabízeno nářadí k opravě vlastního kola?",
+        "ca": "S'ofereixen eines per reparar la teva pròpia bicicleta?"
+      },
+      "mappings": [
+        {
+          "if": "service:bicycle:diy=yes",
+          "then": {
+            "en": "This bike cafe offers tools for DIY repair",
+            "nl": "Dit fietscafé biedt gereedschap aan om je fiets zelf te herstellen",
+            "fr": "Ce Café vélo propose des outils pour réparer son vélo soi-même",
+            "gl": "Hai ferramentas aquí para arranxar a túa propia bicicleta",
+            "de": "Das Fahrrad-Café bietet Werkzeug für die selbständige Reparatur an",
+            "it": "Questo cafè per ciclisti fornisce degli attrezzi per la riparazione fai-da-te",
+            "zh_Hans": "这家自行车咖啡为DIY修理者提供工具",
+            "zh_Hant": "這個單車咖啡廳提供工具讓你修理",
+            "ru": "В этом велосипедном кафе есть инструменты для починки своего велосипеда",
+            "pt_BR": "Este café de bicicleta oferece ferramentas de reparo faça você mesmo",
+            "pt": "Este café de bicicleta oferece ferramentas de reparo faça você mesmo",
+            "da": "Denne cykelcafé tilbyder værktøj til gør-det-selv-reparation",
+            "cs": "Tato cyklokavárna nabízí nářadí pro kutilské opravy",
+            "ca": "Aquest cafè ciclista ofereix ferramentes per a la reparació DIY"
+          }
+        },
+        {
+          "if": "service:bicycle:diy=no",
+          "then": {
+            "en": "This bike cafe doesn't offer tools for DIY repair",
+            "nl": "Dit fietscafé biedt geen gereedschap aan om je fiets zelf te herstellen",
+            "fr": "Ce Café vélo ne propose pas d'outils pour réparer son vélo soi-même",
+            "gl": "Non hai ferramentas aquí para arranxar a túa propia bicicleta",
+            "de": "Das Fahrrad-Café bietet kein Werkzeug für die selbständige Reparatur an",
+            "it": "Questo cafè per ciclisti non fornisce degli attrezzi per la riparazione fai-da-te",
+            "zh_Hans": "这家自行车咖啡不为DIY修理者提供工具",
+            "zh_Hant": "這個單車咖啡廳並沒有提供工具讓你修理",
+            "ru": "В этом велосипедном кафе нет инструментов для починки своего велосипеда",
+            "pt_BR": "Este café de bicicleta não oferece ferramentas de reparo faça você mesmo",
+            "pt": "Este café de bicicleta não oferece ferramentas de reparo faça você mesmo",
+            "da": "Denne cykelcafé tilbyder ikke værktøj til gør-det-selv-reparation",
+            "cs": "Tato cyklokavárna nenabízí nářadí pro kutilské opravy",
+            "ca": "Aquest cafè ciclista no ofereix ferramentes per a la reparació DIY"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bike_cafe-repair-service",
+      "question": {
+        "en": "Does this bike cafe repair bikes?",
+        "nl": "Herstelt dit fietscafé fietsen?",
+        "fr": "Est-ce que ce Café vélo répare les vélos ?",
+        "gl": "Este café de ciclistas arranxa bicicletas?",
+        "de": "Repariert dieses Fahrrad-Café Fahrräder?",
+        "it": "Questo cafè per ciclisti ripara le bici?",
+        "zh_Hans": "这家自行车咖啡t提供修车服务吗？",
+        "zh_Hant": "這個單車咖啡廳是否能修理單車？",
+        "ru": "Есть ли услуги ремонта велосипедов в этом велосипедном кафе?",
+        "pt_BR": "Este café de bicicleta conserta bicicletas?",
+        "pt": "Este café de bicicleta conserta bicicletas?",
+        "da": "Reparerer denne cykelcafé cykler?",
+        "cs": "Opravuje tato cyklokavárna jízdní kola?",
+        "ca": "Aquest cafè ciclista repara bicicletes?"
+      },
+      "mappings": [
+        {
+          "if": "service:bicycle:repair=yes",
+          "then": {
+            "en": "This bike cafe repairs bikes",
+            "nl": "Dit fietscafé herstelt fietsen",
+            "fr": "Ce Café vélo répare les vélos",
+            "gl": "Este café de ciclistas arranxa bicicletas",
+            "de": "Das Fahrrad-Café repariert Fahrräder",
+            "it": "Questo cafè per ciclisti ripara le bici",
+            "zh_Hans": "这家自行车咖啡可以修车",
+            "zh_Hant": "這個單車咖啡廳修理單車",
+            "ru": "В этом велосипедном кафе есть услуги ремонта велосипедов",
+            "pt_BR": "Este café de bicicleta conserta bicicletas",
+            "pt": "Este café de bicicleta conserta bicicletas",
+            "da": "Denne cykelcafé reparerer cykler",
+            "cs": "Tato cyklokavárna opravuje jízdní kola",
+            "ca": "Aquest cafè ciclista repara bicicletes"
+          }
+        },
+        {
+          "if": "service:bicycle:repair=no",
+          "then": {
+            "en": "This bike cafe doesn't repair bikes",
+            "nl": "Dit fietscafé herstelt geen fietsen",
+            "fr": "Ce Café vélo ne répare pas les vélos",
+            "gl": "Este café de ciclistas non arranxa bicicletas",
+            "de": "Das Fahrrad-Café repariert keine Fahrräder",
+            "it": "Questo cafè per ciclisti non ripara le bici",
+            "zh_Hans": "这家自行车咖啡不能修车",
+            "zh_Hant": "這個單車咖啡廳並不修理單車",
+            "ru": "В этом велосипедном кафе нет услуг ремонта велосипедов",
+            "pt_BR": "Este café de bicicleta não conserta bicicletas",
+            "pt": "Este café de bicicleta não conserta bicicletas",
+            "da": "Denne cykelcafé reparerer ikke cykler",
+            "cs": "Tato cyklokavárna neopravuje kola",
+            "ca": "Aquest cafè ciclista no repara bicicletes"
+          }
+        }
+      ]
+    },
+    {
+      "id": "website",
+      "labels": [
+        "contact"
+      ],
+      "icon": "./assets/layers/icons/website.svg",
+      "question": {
+        "en": "What is the website of {title()}?",
+        "nl": "Wat is de website van {title()}?",
+        "fr": "Quel est le site web de {title()} ?",
+        "gl": "Cal é a páxina web de {title()}?",
+        "nb_NO": "Hva er nettsiden til {title()}?",
+        "ru": "Какой сайт у {title()}?",
+        "id": "Apa situs web dari {title()}?",
+        "zh_Hant": "{title()} 網址是什麼？",
+        "it": "Qual è il sito web di {title()}?",
+        "de": "Wie lautet die Webseite von {title()}?",
+        "pt_BR": "Qual o site de {title()}?",
+        "pl": "Jaka jest strona internetowa {title()}?",
+        "sv": "Vad är webbplatsen för {title()}?",
+        "pt": "Qual é o sítio web de {title()}?",
+        "eo": "Kie estas la retejo de {title()}?",
+        "hu": "Mi a weboldala ennek: {title()}?",
+        "ca": "Quina és la web de {title()}?",
+        "ja": "{title()}のウェブサイトは？",
+        "fil": "Ano ang website ng {title()}?",
+        "es": "¿Cual es el sitio web de {title()}?",
+        "zh_Hans": "{title()} 的网站为何？",
+        "da": "Hvad er webstedet for {title()}?",
+        "cs": "Jaká je webová stránka {title()}?"
+      },
+      "render": {
+        "*": "<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>"
+      },
+      "freeform": {
+        "key": "website",
+        "type": "url",
+        "addExtraTags": [
+          "contact:website="
+        ]
+      },
+      "mappings": [
+        {
+          "if": "contact:website~*",
+          "then": "<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>",
+          "hideInAnswer": true,
+          "icon": "./assets/layers/icons/website.svg"
+        }
+      ],
+      "editButtonAriaLabel": {
+        "en": "Edit website",
+        "nl": "Pas website aan",
+        "de": "Webseite bearbeiten"
+      }
+    },
+    {
+      "id": "phone",
+      "labels": [
+        "contact"
+      ],
+      "question": {
+        "en": "What is the phone number of {title()}?",
+        "nl": "Wat is het telefoonnummer van {title()}?",
+        "fr": "Quel est le numéro de téléphone de {title()} ?",
+        "de": "Wie lautet die Telefonnummer von {title()}?",
+        "nb_NO": "Hva er telefonnummeret til {title()}?",
+        "ru": "Какой номер телефона у {title()}?",
+        "sv": "Vad är telefonnumret till {title()}?",
+        "zh_Hant": "{title()} 的電話號碼是什麼？",
+        "it": "Qual è il numero di telefono di {title()}?",
+        "pt_BR": "Qual o número de telefone de {title()}?",
+        "id": "Berapa nomor telepon dari {title()}?",
+        "pl": "Jaki jest numer telefonu do {title()}?",
+        "pt": "Qual é o número de telefone de {title()}?",
+        "eo": "Kio estas la telefonnumero de {title()}?",
+        "hu": "Mi a telefonszáma ennek: {title()}?",
+        "ca": "Quin és el telèfon de {title()}?",
+        "ja": "{title()}の電話番号は？",
+        "sl": "Kakšno telefonsko številko ima {title()}?",
+        "fil": "Ano ang telepono ng {title()}?",
+        "es": "¿Cuál es el número de teléfono de {title()}?",
+        "zh_Hans": "{title()} 的电话号码为何？",
+        "da": "Hvad er telefonnummeret til {title()}?",
+        "cs": "Jaké je telefonní číslo {title()}?"
+      },
+      "render": {
+        "*": "<a href='tel:{phone}'>{phone}</a>"
+      },
+      "icon": "./assets/layers/questions/phone.svg",
+      "mappings": [
+        {
+          "if": "contact:phone~*",
+          "then": "<a href='tel:{contact:phone}'>{contact:phone}</a>",
+          "hideInAnswer": true,
+          "icon": "./assets/layers/questions/phone.svg"
+        }
+      ],
+      "freeform": {
+        "key": "phone",
+        "type": "phone",
+        "addExtraTags": [
+          "contact:phone="
+        ]
+      },
+      "editButtonAriaLabel": {
+        "en": "Edit phone number",
+        "nl": "Pas telefoonnummer aan",
+        "de": "Telefonnummer bearbeiten"
+      }
+    },
+    {
+      "id": "email",
+      "render": {
+        "*": "<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>"
+      },
+      "icon": "./assets/svg/envelope.svg",
+      "labels": [
+        "contact"
+      ],
+      "question": {
+        "nl": "Wat is het e-mailadres van {title()}?",
+        "fr": "Quelle est l'adresse courriel de {title()} ?",
+        "en": "What is the email address of {title()}?",
+        "nb_NO": "Hva er e-postadressen til {title()}?",
+        "ru": "Какой адрес электронной почты у {title()}?",
+        "id": "Apa alamat surel dari {title()}?",
+        "zh_Hant": "{title()} 的電子郵件地址是什麼？",
+        "it": "Qual è l'indirizzo email di {title()}?",
+        "de": "Wie lautet die Mail-Adresse von {title()}?",
+        "pt_BR": "Qual o endereço de e-mail de {title()}?",
+        "pl": "Jaki jest adres e-mail do {title()}?",
+        "sv": "Vad är e-postadressen till {title()}?",
+        "pt": "Qual é o endereço de e-mail de {title()}?",
+        "eo": "Kio estas la retpoŝta adreso de {title()}?",
+        "hu": "Mi a(z) {title()} e-mail címe?",
+        "ca": "Quina és l'adreça de correu electrònic de {title()}?",
+        "ja": "{title()}のEメールアドレスは何ですか？",
+        "sl": "Kakšen naslov elektronske pošte ima {title()}?",
+        "fil": "Ano ang email address ng {title()}?",
+        "es": "¿Cuál es la dirección de correo electrónico de {title()}?",
+        "zh_Hans": "{title()} 的电子邮箱地址为何？",
+        "da": "Hvad er mailadressen på {title()}?",
+        "cs": "Jaká je e-mailová adresa {title()}?"
+      },
+      "mappings": [
+        {
+          "if": "contact:email~*",
+          "icon": "./assets/svg/envelope.svg",
+          "then": "<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>",
+          "hideInAnswer": true
+        },
+        {
+          "if": "operator:email~*",
+          "icon": "./assets/svg/envelope.svg",
+          "then": "<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>",
+          "hideInAnswer": true
+        }
+      ],
+      "freeform": {
+        "key": "email",
+        "type": "email",
+        "addExtraTags": [
+          "contact:email="
+        ]
+      },
+      "editButtonAriaLabel": {
+        "en": "Edit email address",
+        "nl": "Pas emailadres aan",
+        "de": "E-Mail Adresse bearbeiten"
+      }
+    },
+    {
+      "id": "opening_hours",
+      "question": {
+        "en": "When it this bike café opened?",
+        "fr": "Quand ce Café vélo est-t-il ouvert ?",
+        "de": "Wann ist dieses Fahrradcafé geöffnet?",
+        "nl": "Wanneer is dit fietscafé geopend?",
+        "nb_NO": "Hva er åpningstidene for {title()})",
+        "ru": "Каков режим работы этого велосипедного кафе?",
+        "zh_Hant": "何時這個單車咖啡廳營運？",
+        "it": "Quando è aperto questo cafè per ciclisti?",
+        "pt_BR": "Quando este café de bicicleta abre?",
+        "pl": "Jakie są godziny otwarcia {title()}?",
+        "sv": "Vilka är öppettiderna för {title()}?",
+        "pt": "Quando este café de bicicleta abre?",
+        "hu": "Mikor van nyitva ez: {title()}?",
+        "ca": "Quan obri aquest cafè ciclista?",
+        "ja": "{title()}の営業時間は？",
+        "sl": "Kakšen odpiralni čas ima {title()}?",
+        "fil": "Anong oras nagbubukas ang {title()}?",
+        "es": "¿Cuales son las horas de apertura de {title()}?",
+        "zh_Hans": "这家自行车咖啡什么时候开门营业？",
+        "da": "Hvornår er denne cykelcafé åbent?",
+        "id": "Kapan jam buka {title()}?",
+        "cs": "Kdy byla tato cyklistická kavárna otevřena?"
+      },
+      "render": {
+        "de": "<h3>Öffnungszeiten</h3>{opening_hours_table(opening_hours)}",
+        "fr": "<h3>Horaires d'ouverture</h3>{opening_hours_table(opening_hours)}",
+        "en": "<h3>Opening hours</h3>{opening_hours_table(opening_hours)}",
+        "nl": "<h3>Openingstijden</h3>{opening_hours_table(opening_hours)}",
+        "nb_NO": "<h3>Åpningstider</h3>{opening_hours_table(opening_hours)}",
+        "ru": "<h3>Часы работы</h3>{opening_hours_table(opening_hours)}",
+        "zh_Hant": "<h3>開放時間</h3>{opening_hours_table(opening_hours)}",
+        "it": "<h3>Orari di apertura</h3>{opening_hours_table(opening_hours)}",
+        "pl": "<h3> Godziny otwarcia</h3>{opening_hours_table(opening_hours)}",
+        "pt_BR": "<h3>Horário de funcionamento</h3>{opening_hours_table(opening_hours)}",
+        "sv": "<h3>Öppettider</h3> {opening_hours_table(opening_hours)}",
+        "pt": "<h3>Horário de funcionamento</h3>{opening_hours_table(opening_hours)}",
+        "eo": "<h3>Malfermitaj horoj</h3>{opening_hours_table(opening_hours)}",
+        "hu": "<h3>Nyitva tartás</h3>{opening_hours_table(opening_hours)}",
+        "ca": "<h3>Horari d'obertura</h3>{opening_hours_table(opening_hours)}",
+        "ja": "<h3>営業時間</h3>{opening_hours_table(opening_hours)}",
+        "sl": "<h3>Odpiralni čas</h3>{opening_hours_table(opening_hours)}",
+        "fil": "<h3>Mga oras na bukas</h3>{opening_hours_table(opening_hours)}",
+        "es": "<h3>Horas de apertura</h3>{opening_hours_table(opening_hours)}",
+        "zh_Hans": "<h3>开放时间</h3> {opening_hours_table(opening_hours)}",
+        "da": "<h3> Åbningstider</h3>{opening_hours_table(opening_hours)}",
+        "id": "<h3>Jam buka</h3>{opening_hours_table(opening_hours)}",
+        "pa_PK": "<h3>کھُلھے گھنٹے</h3>{opening_hours_table(opening_hours)}",
+        "cs": "<h3>Otevírací hodiny</h3>{opening_hours_table(opening_hours)}"
+      },
+      "freeform": {
+        "key": "opening_hours",
+        "type": "opening_hours",
+        "inline": false
+      },
+      "mappings": [
+        {
+          "#": "Just here to be able to handle those ~5000 incorrect 'opening_hours=closed' elements.",
+          "if": "opening_hours=closed",
+          "then": {
+            "en": "Marked as closed for an unspecified time",
+            "nl": "Gesloten voor onbepaalde duur",
+            "de": "Als geschlossen für eine unbestimmte Zeit markiert"
+          },
+          "hideInAnswer": true
+        }
+      ]
+    },
+    {
+      "id": "leftover-questions",
+      "render": {
+        "*": "{questions( ,)}"
+      }
+    },
+    {
+      "id": "lod",
+      "labels": [
+        "added_by_default"
+      ],
+      "render": {
+        "*": "{linked_data_from_website()}"
+      }
+    },
+    {
+      "id": "minimap",
+      "description": "Shows a small map with the feature. Added by default to every popup",
+      "render": {
+        "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+      }
+    },
+    {
+      "id": "delete-button",
+      "render": {
+        "*": "{delete_button()}"
+      }
+    },
+    {
+      "id": "last_edit",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+      "condition": {
+        "and": [
+          "_last_edit:contributor~*",
+          "_last_edit:changeset~*"
+        ]
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsTesting=true",
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_debug=yes",
+          "_csCount>=10"
+        ]
+      },
+      "render": {
+        "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+      }
+    },
+    {
+      "id": "favourite_status",
+      "render": {
+        "*": "{favourite_status()}"
+      }
+    },
+    {
+      "id": "qr_code",
+      "labels": [
+        "added_by_default"
+      ],
+      "classes": "flex items-center gap-x-2",
+      "render": {
+        "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+        "en": "{qr_code()}Scan this code to open this location on another device",
+        "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+        "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+      }
+    },
+    {
+      "id": "share",
+      "labels": [
+        "added_by_default"
+      ],
+      "metacondition": "_supports_sharing=yes",
+      "render": {
+        "de": "{share_link(,Standort teilen)}",
+        "en": "{share_link(,Share this location)}",
+        "nl": "{share_link(,Deel deze locatie)}"
+      }
+    },
+    {
+      "id": "all-tags",
+      "render": {
+        "*": "{all_tags()}"
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_tags=full",
+          "mapcomplete-show_debug=yes"
+        ]
+      }
+    }
+  ],
+  "deletion": {},
+  "titleIcons": [
+    {
+      "id": "wikipedialink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+      "condition": {
+        "or": [
+          "wikipedia~*",
+          "wikidata~*"
+        ]
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "wikipedia=",
+          "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "open_until",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "#": "Titleicon showing e.g. 'open until 17:00'",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{opening_hours_state()}",
+      "condition": {
+        "or": [
+          "opening_hours~*",
+          {
+            "or": [
+              {
+                "and": [
+                  "seasonal~.*winter.*",
+                  "_now:date~....-(12|01|02)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*spring.*",
+                  "_now:date~....-(03|04|05)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*summer.*",
+                  "_now:date~....-(06|07|08)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*autumn.*",
+                  "_now:date~....-(09|10|11)-.."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "phonelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": {
+        "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+        "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+        "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+        "_context": "layers:icons.tagRenderings.phonelink.render"
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:phone~*",
+          "then": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+          }
+        }
+      ],
+      "condition": {
+        "or": [
+          "phone~*",
+          "contact:phone~*"
+        ]
+      }
+    },
+    {
+      "id": "emaillink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:email~*",
+          "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:email~*",
+          "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        }
+      ],
+      "condition": {
+        "or": [
+          "email~*",
+          "contact:email~*",
+          "operator:email~*"
+        ]
+      }
+    },
+    {
+      "id": "websitelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "website~*",
+          "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:website~*",
+          "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "context:website~*",
+          "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "smokingicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=no",
+          "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=yes",
+          "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+        }
+      ]
+    },
+    {
+      "id": "dogicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "if": "dog=no",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+        },
+        {
+          "if": "dog=leashed",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+        },
+        {
+          "if": {
+            "or": [
+              "dog=yes",
+              "dog=unleashed"
+            ]
+          },
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+        }
+      ]
+    },
+    {
+      "id": "sharelink",
+      "labels": [
+        "defaults"
+      ],
+      "render": "{share_link()}",
+      "metacondition": "_supports_sharing=yes"
+    },
+    {
+      "id": "favourite_title_icon",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "*": "{favourite_icon()}"
+      },
+      "metacondition": "_loggedIn=true"
+    },
+    {
+      "id": "osmlink",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+        "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+        "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+        "_context": "layers:icons.tagRenderings.osmlink.render"
+      },
+      "mappings": [
+        {
+          "if": "id~.*/-.*",
+          "then": ""
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "_backend~*",
+          "then": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+          }
+        }
+      ],
+      "condition": "id~(node|way|relation)/[0-9]*"
+    },
+    {
+      "id": "direction",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "{direction_indicator()}"
+    },
+    {
+      "id": "rating",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{rating()}"
+    }
+  ],
+  "_layerIcon": [
+    {
+      "icon": "pin",
+      "color": "#684c2b"
+    },
+    {
+      "icon": "./assets/layers/bike_cafe/bike_cafe.svg"
+    }
+  ]
+}

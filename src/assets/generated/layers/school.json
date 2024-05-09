@@ -1,0 +1,1040 @@
+{
+  "id": "school",
+  "name": {
+    "en": "Primary and secondary schools",
+    "nl": "Lagere en middelbare scholen",
+    "de": "Grund- und weiterführende Schulen",
+    "fr": "Écoles primaires et secondaires",
+    "ca": "Escoles de primària i secundària",
+    "cs": "Základní a střední školy"
+  },
+  "description": "Schools giving primary and secondary education and post-secondary, non-tertiary education. Note that this level of education does not imply an age of the pupiles",
+  "source": {
+    "osmTags": {
+      "and": [
+        "amenity=school"
+      ]
+    }
+  },
+  "calculatedTags": [
+    "_enclosing=enclosingFeatures(feat)('school').map(f => f.feat.properties.id)",
+    "_is_enclosed=feat.properties._enclosing != '[]'"
+  ],
+  "isShown": {
+    "or": [
+      "building=",
+      "_is_enclosed!=true"
+    ]
+  },
+  "minzoom": 12,
+  "title": {
+    "render": {
+      "en": "School <i>{name}</i>",
+      "nl": "School <i>{name}</i>",
+      "de": "Schule <i>{name}</i>",
+      "fr": "School <i>{name}</i>",
+      "pl": "Szkoła <i>{name}</i>",
+      "ca": "Escola <i>{name}</i>",
+      "cs": "Škola <i>{name}</i>"
+    }
+  },
+  "pointRendering": [
+    {
+      "label": {
+        "mappings": [
+          {
+            "if": "name~*",
+            "then": "<div class='bg-white rounded-lg p-1'>{name}</div>"
+          }
+        ]
+      },
+      "iconSize": "40,40",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": {
+            "render": "circle",
+            "id": "circle"
+          },
+          "color": "white"
+        },
+        {
+          "icon": {
+            "render": "./assets/layers/school/school.svg",
+            "id": "assetslayersschoolschoolsvg"
+          }
+        }
+      ],
+      "iconBadges": [
+        {
+          "if": "_favourite=yes",
+          "then": "circle:white;heart:red"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#fcd862",
+      "width": 1
+    }
+  ],
+  "presets": [
+    {
+      "tags": [
+        "amenity=school",
+        "fixme=Added with MapComplete, the precise geometry should still be drawn"
+      ],
+      "title": {
+        "en": "a primary or secondary school",
+        "nl": "een lagere of middelbare school",
+        "de": "eine Grundschule oder weiterführende Schule",
+        "fr": "une école primaire ou secondaire",
+        "ca": "una escola de primària o secundària",
+        "cs": "základní nebo střední škola"
+      }
+    }
+  ],
+  "tagRenderings": [
+    {
+      "id": "just_created",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "This element shows a 'thank you' that the contributor has recently created this element",
+      "classes": "rounded-xl thanks",
+      "mappings": [
+        {
+          "if": "id~*",
+          "icon": "./assets/svg/party.svg",
+          "then": {
+            "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+            "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+            "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+            "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+            "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+            "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+          }
+        }
+      ],
+      "condition": {
+        "and": [
+          "_backend~*",
+          "_last_edit:passed_time<300",
+          {
+            "or": [
+              "_version_number=",
+              "_version_number=1"
+            ]
+          }
+        ]
+      },
+      "metacondition": {
+        "and": [
+          {
+            "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+            "or": [
+              "_last_edit:contributor:uid:={_uid}",
+              "_last_edit:contributor:uid="
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "render": {
+        "en": "This school is named {name}",
+        "nl": "Deze school heet <b>{name}</b>",
+        "de": "Diese Schule heißt {name}",
+        "fr": "Cet établissement scolaire s'appelle {name}",
+        "ca": "L'escola s'anomena {name}",
+        "pl": "Ta szkoła nazywa się {name}",
+        "cs": "Tato škola se jmenuje {name}"
+      },
+      "question": {
+        "en": "What is the name of this school?",
+        "nl": "Wat is de naam van deze school?",
+        "de": "Wie lautet der Name dieser Schule?",
+        "fr": "Quel est le nom de cet établissement scolaire?",
+        "ca": "Quin és el nom d'aquesta escola?",
+        "pl": "Jaką nazwę ma ta szkoła?",
+        "cs": "Jak se jmenuje tato škola?"
+      },
+      "freeform": {
+        "key": "name",
+        "inline": true
+      },
+      "id": "school-name"
+    },
+    {
+      "id": "capacity",
+      "question": {
+        "en": "How much students can at most enroll in this school?",
+        "de": "Wie viele Schüler können sich maximal an dieser Schule anmelden?",
+        "nl": "Ten hoogste hoeveel studenten kunnen er les volgen in deze school?",
+        "fr": "Combien d'élèves peuvent s'inscrire au maximum dans cette école ?",
+        "ca": "Quants alumnes poden matricular-se com a màxim a aquesta escola?",
+        "cs": "Kolik studentů se může na tuto školu maximálně zapsat?"
+      },
+      "render": {
+        "en": "This school can enroll at most {capacity} students",
+        "nl": "Deze school kan maximaal {capacity} studenten lesgeven",
+        "de": "Diese Schule kann höchstens {capacity} Schüler aufnehmen",
+        "fr": "Cette école peut accueillir au maximum {capacity} étudiants",
+        "ca": "A aquesta escola poden inscriure's com a màxim {capacity} estudiants",
+        "cs": "Tato škola může přijmout maximálně {capacity} studentů"
+      },
+      "freeform": {
+        "key": "capacity",
+        "type": "pnat",
+        "inline": true
+      }
+    },
+    {
+      "id": "education-level-belgium",
+      "condition": "_country=be",
+      "question": {
+        "en": "What level of education is given on this school?",
+        "nl": "Wat is het onderwijsniveau van deze school?",
+        "de": "Welches Bildungsniveau wird an dieser Schule vermittelt?",
+        "fr": "Quel est le niveau d'enseignement dispensé dans cette école ?",
+        "ca": "Quin nivell d'educació s'imparteix en aquesta escola?",
+        "cs": "Jaký stupeň vzdělání se na této škole poskytuje?"
+      },
+      "mappings": [
+        {
+          "if": "school=kindergarten",
+          "then": {
+            "en": "This is a school with a kindergarten section where young kids receive some education which prepares reading and writing.",
+            "nl": "Dit is een school die ook een kleuterschool bevat",
+            "de": "Es handelt sich um eine Schule mit einer Kindergartenabteilung, in der kleine Kinder eine Ausbildung erhalten, die auf das Lesen und Schreiben vorbereitet.",
+            "fr": "C'est une école avec une section maternelle où les jeunes enfants reçoivent un enseignement qui prépare à la lecture et à l'écriture.",
+            "ca": "Aquesta és una escola amb una secció d’educació infantil on els més petits reben una educació que prepara la lectura i l’escriptura.",
+            "cs": "Jedná se o školu s mateřskou školou, kde se malé děti vzdělávají v oblasti čtení a psaní."
+          }
+        },
+        {
+          "if": "school=primary",
+          "then": {
+            "en": "This is a school where one learns primary skills such as basic literacy and numerical skills. <div class='subtle'>Pupils typically enroll from 6 years old till 12 years old</div>",
+            "nl": "Dit is een lagere school",
+            "de": "In dieser Schule lernt man grundlegende Fähigkeiten wie Lesen, Schreiben und Rechnen. <div class='subtle'>Schüler besuchen die Schule in der Regel im Alter von 6 bis 12 Jahren</div>",
+            "fr": "C'est une école où l'on apprend les compétences primaires telles que l'alphabétisation de base et les compétences numériques.. <div class='subtle'>Les élèves s'inscrivent généralement de 6 à 12 ans.</div>",
+            "ca": "Aquesta és una escola on s'aprèn competències primàries com ara l'alfabetització bàsica i les habilitats numèriques. <div class='subtle'>Els alumnes solen matricular-se des dels 6 anys fins als 12 anys</div>",
+            "cs": "Jedná se o školu, kde se člověk učí základním dovednostem, jako je základní gramotnost a numerické dovednosti. <div class='subtle'>Žáci se obvykle zapisují ve věku od 6 let do 12 let</div>"
+          }
+        },
+        {
+          "if": "school=secondary",
+          "then": {
+            "en": "This is a secondary school which offers all grades",
+            "nl": "Dit is een middelbare school die alle schooljaren aanbiedt (dus van het eerste tot en met het zesde middelbaar)",
+            "de": "Dies ist eine weiterführende Schule, die alle Jahrgangsstufen anbietet",
+            "fr": "C'est une école secondaire qui offre toutes les classes",
+            "ca": "Aquesta és una escola secundària que ofereix tots els graus",
+            "cs": "Jedná se o střední školu, která nabízí všechny ročníky"
+          }
+        },
+        {
+          "if": "school=lower_secondary",
+          "then": {
+            "en": "This is a secondary school which does <i>not</i> have all grades, but offers <b>first and second</b> grade",
+            "nl": "Dit is een middelbare school die <i>niet</i> alle schooljaren aanbiedt, maar wel <b>het eerste en tweede middelbaar</b>",
+            "de": "Dies ist eine weiterführende Schule, die <i>nicht</i> alle Klassenstufen hat, aber <b>erste und zweite</b> Klasse anbietet",
+            "fr": "C'est une école secondaire qui n'a <i>pas</i> toutes les classes, mais qui offre <b>la première et la deuxième</b> années",
+            "ca": "Aquesta és una escola secundària que <i>no</i> ofereix tots els graus, però ofereix <b>primer i segon</b> grau",
+            "cs": "Toto je střední škola, která <i>nemá</i> všechny ročníky, ale nabízí <b>první a druhý</b> ročník"
+          }
+        },
+        {
+          "if": "school=middle_secondary",
+          "then": {
+            "en": "This is a secondary school which does <i>not</i> have all grades, but offers <b>third and fourth</b> grade",
+            "nl": "Dit is een middelbare school die <i>niet</i> alle schooljaren aanbiedt, maar wel <b>het derde en vierde middelbaar</b>",
+            "de": "Dies ist eine weiterführende Schule, die <i>nicht</i> alle Klassenstufen hat, aber <b>dritte und vierte</b> Klasse anbietet",
+            "fr": "C'est une école secondaire qui n'a <i>pas</i> toutes les classes, mais qui offre <b>la troisième et la quatrième</b> années",
+            "ca": "Aquesta és una escola secundària que <i>no</i> ofereix tots els graus, però ofereix <b>tercer i quart</b> grau",
+            "cs": "Toto je střední škola, která <i>nemá</i> všechny ročníky, ale nabízí <b>třetí a čtvrtý</b> ročník"
+          }
+        },
+        {
+          "if": "school=upper_secondary",
+          "then": {
+            "en": "This is a secondary school which does <i>not</i> have all grades, but offers <b>fifth and sixth</b> grade",
+            "nl": "Dit is een middelbare school die <i>niet</i> alle schooljaren aanbiedt, maar wel <b>het vijfde en zesde middelbaar</b>",
+            "de": "Dies ist eine weiterführende Schule, die <i>nicht</i> alle Klassenstufen hat, aber <b>fünfte und sechste</b> Klasse anbietet",
+            "fr": "C'est une école secondaire qui n'a <i>pas</i> toutes les classes, mais qui offre <b>la cinquième et la sixième</b> années",
+            "ca": "Aquesta és una escola secundària que <i>no</i> ofereix tots els graus, però ofereix <b>cinqué i sisé</b> grau",
+            "cs": "Toto je střední škola, která <i>nemá</i> všechny ročníky, ale nabízí <b>pátý a šestý</b> ročník"
+          }
+        },
+        {
+          "if": "school=post_secondary",
+          "then": {
+            "en": "This school offers post-secondary education (e.g. a seventh or eight specialisation year)",
+            "nl": "Deze school biedt post-secundair onderwijs (bijvoorbeeld <b>specialisatiejaren</b>)",
+            "de": "Diese Schule bietet eine postsekundäre Ausbildung (z. B. ein siebtes oder achtes Spezialisierungsjahr)",
+            "fr": "Cette école propose un enseignement post-secondaire (par exemple une septième ou huitième année de spécialisation)",
+            "ca": "Aquesta escola ofereix educació post secundària (p.e. un sèptim o vuité any d'especialitzció)",
+            "cs": "Tato škola nabízí pomaturitní studium (např. sedmý nebo osmý ročník oboru)"
+          }
+        }
+      ],
+      "multiAnswer": true
+    },
+    {
+      "id": "gender",
+      "question": {
+        "en": "Which genders can enroll at this school?",
+        "nl": "Mogen jongens en meisjes les volgen op deze school?",
+        "de": "Welche Geschlechter können sich an dieser Schule anmelden?",
+        "fr": "Quels genres de personnes peuvent s'inscrire dans cette école ?",
+        "ca": "Quins gèneres poden inscriure's a aquesta escola?",
+        "cs": "Které pohlaví se může na tuto školu přihlásit?"
+      },
+      "mappings": [
+        {
+          "if": "school:gender=mixed",
+          "then": {
+            "en": "Both boys and girls can enroll here and have classes together",
+            "nl": "Zowel jongens als meisjes kunnen hier les volgen. In de lessen zitten jongens en meisjes samen.",
+            "de": "Sowohl Jungen als auch Mädchen können sich hier anmelden und gemeinsam unterrichtet werden",
+            "fr": "Les garçons et les filles peuvent s'inscrire ici et suivre des cours ensemble",
+            "ca": "Els dos, nois i noies poden inscriure's aquí i prendre classes junts",
+            "cs": "Mohou se sem zapsat chlapci i dívky a mají společné hodiny"
+          }
+        },
+        {
+          "if": "school:gender=separated",
+          "then": {
+            "en": "Both boys and girls can enroll here but they are separated (e.g. they have lessons in different classrooms or at different times)",
+            "nl": "Jongens en meisjes kunnen hier lesvolgen, maar de lessen zijn gescheiden (bv. de lessen zijn in andere lokalen of op andere momenten)",
+            "de": "Hier können sich sowohl Jungen als auch Mädchen anmelden, aber sie werden getrennt unterrichtet (z. B. in verschiedenen Klassenräumen oder zu verschiedenen Zeiten)",
+            "fr": "Les garçons et les filles peuvent s'inscrire ici, mais ils sont séparés (par exemple, ils ont des cours dans des classes différentes ou à des heures différentes)",
+            "ca": "Els dos, nois i noies poden inscriure's aquí, però estan separats (p. e. prenen les classes a diferents aules o diferentes hores)",
+            "cs": "Mohou se sem zapsat chlapci i dívky, ale jsou odděleni (např. mají hodiny v různých třídách nebo v různých časech)"
+          }
+        },
+        {
+          "if": "school:gender=male",
+          "then": {
+            "en": "This is a boys only-school",
+            "nl": "Deze school is enkel voor jongens",
+            "de": "Dies ist eine reine Jungenschule",
+            "fr": "C'est une école réservée aux garçons",
+            "ca": "Aquesta és una escola exclusivament per a nois",
+            "cs": "Toto je škola určená pouze pro chlapce"
+          }
+        },
+        {
+          "if": "school:gender=female",
+          "then": {
+            "en": "This is a girls-only school",
+            "nl": "Deze school is enkel voor meisjes",
+            "de": "Dies ist eine reine Mädchenschule",
+            "fr": "C'est une école réservée aux filles",
+            "ca": "Aquesta és una escola exclusivament per a noies",
+            "cs": "Toto je škola pouze pro dívky"
+          }
+        }
+      ]
+    },
+    {
+      "id": "target-audience",
+      "condition": "school:for~*",
+      "question": {
+        "en": "Does this school target students with a special need? Which structural facilities does this school have?",
+        "nl": "Richt deze school zich op leerlingen met een speciale zorgbehoefte? Welke structurele faciliteiten heeft deze school voor leerlingen met een extra zorgbehoefte?",
+        "de": "Richtet sich diese Schule an Schüler mit besonderem Förderbedarf? Über welche strukturellen Einrichtungen verfügt diese Schule?",
+        "fr": "Est-ce que cet établissement scolaire s'adresse aux étudiants ayant des besoins particuliers? Quels types d'installation est-ce que cet établissement possède?",
+        "ca": "Aquesta escola es dirigeix a estudiants amb necessitats especials? Quines instal·lacions estructurals té aquesta escola?",
+        "cs": "Zaměřuje se tato škola na studenty se speciálními potřebami? Jaké stavební vybavení má tato škola?"
+      },
+      "multiAnswer": true,
+      "render": {
+        "en": "This school has facilities for students with {school:for}",
+        "nl": "Deze school richt zich op studenten met {school:for}",
+        "de": "Diese Schule verfügt über Einrichtungen für Schüler mit {school:for}",
+        "fr": "Cet établissement scolaire a des installations pour étudiants ayant {school:for}",
+        "ca": "Aquesta escola té instal·lacions per a estudiants amb {school:for}",
+        "cs": "Tato škola má zařízení pro studenty se {school:for}"
+      },
+      "freeform": {
+        "key": "school:for",
+        "inline": true
+      },
+      "mappings": [
+        {
+          "if": "school:for=",
+          "then": {
+            "en": "This is a school where students study skills at their age-adequate level. <div>There are little or no special facilities to cater for students with special needs or facilities are ad-hoc</div>",
+            "nl": "Deze school richt zich op studenten zonder extra zorgbehoefte. <div class='subtle>Dit omvat leerlingen waarbij kleine, ad-hoc maatregelen volstaan om de lessen te volgen.</div>",
+            "de": "Es handelt sich um eine Schule, in der die Schüler Fähigkeiten auf ihrem altersgemäßen Niveau erlernen. <div>Es gibt wenig oder keine speziellen Einrichtungen für Schüler mit besonderen Bedürfnissen oder die Einrichtungen sind ad-hoc</div>",
+            "fr": "C'est un établissement scolaire où les étudiants acquièrent des compétences à un niveau adapté à leur âge. <div>Il y a peu ou pas d'adaptations spéciales pour aider les étudiants ayant des besoins particuliers, ou les installations sont ad-hoc</div> Remark: isn't it contradictory to say there's no special facility + the facilities are ad-hoc?",
+            "ca": "Aquesta és una escola on els estudiants estudien habilitats al nivell adequat per a la seva edat. <div>Hi ha poques o cap instal·lació especial per atendre els estudiants amb necessitats especials o les instal·lacions són ad-hoc</div>",
+            "cs": "Jedná se o školu, kde studenti studují dovednosti na úrovni odpovídající jejich věku. <div>Existuje málo nebo žádná speciální zařízení pro studenty se speciálními potřebami nebo zařízení jsou ad hoc</div>"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "school:for=mainstream",
+          "then": {
+            "en": "This is a school for students without special needs<div class='subtle'>This includes students who can follow the courses with small, ad hoc measurements</div>",
+            "nl": "Deze school richt zich op studenten zonder extra zorgbehoefte<div class='subtle>Dit omvat leerlingen waarbij kleine, ad-hoc maatregelen volstaan om de lessen te volgen.</div>",
+            "de": "Dies ist eine Schule für Schüler ohne besondere Bedürfnisse<div class='subtle'>Dazu gehören auch Schüler, die den Kursen mit kleinen Ad-hoc-Maßnahmen folgen können</div>",
+            "fr": "C'est un établissement scolaire pour étudiants sans besoins particuliers. <div class='subtle'>Sont inclus les étudiants qui peuvent suivre les cours avec de petites adaptations.</div>",
+            "ca": "Aquesta és una escola per a estudiants sense necessitats especials <div class='subtle'> Açò inclou alumnes que poden seguir les classes amb petites mesures</div>",
+            "cs": "Toto je škola pro studenty bez speciálních potřeb<div class='subtle'>To zahrnuje studenty, kteří mohou absolvovat kurzy s malými, ad hoc měřeními</div>"
+          }
+        },
+        {
+          "if": "school:for=adults",
+          "then": {
+            "en": "This is a school where adults are taught skills on the level as specified.",
+            "nl": "Deze school richt zich op volwassenen",
+            "de": "Dies ist eine Schule, in der Erwachsene auf dem angegebenen Niveau unterrichtet werden.",
+            "fr": "C'est un établissement où des adultes sont formés au niveau mentionné.",
+            "ca": "Aquesta és una escola on els adults reben competències al nivell especificat.",
+            "cs": "Jedná se o školu, kde se dospělí učí dovednostem na stanovené úrovni."
+          }
+        },
+        {
+          "if": "school:for=autism",
+          "then": {
+            "en": "This is a school for students with autism",
+            "nl": "Deze school richt zich op studenten in het autisme-spectrum",
+            "de": "Dies ist eine Schule für Schüler mit Autismus",
+            "fr": "C'est un établissement scolaire pour les étudiants ayant un trouble du spectre de l’autisme (TSA)",
+            "ca": "Aquesta és una escola per a estudiants amb autisme",
+            "pl": "To jest szkoła dla uczniów z autyzmem",
+            "cs": "Jedná se o školu pro studenty s autismem"
+          }
+        },
+        {
+          "if": "school:for=learning_disabilities",
+          "then": {
+            "en": "This is a school for students with learning disabilities",
+            "nl": "Deze school richt zich op leerlingen met een leerprobleem",
+            "de": "Dies ist eine Schule für Schüler mit Lernschwierigkeiten",
+            "fr": "C'est un établissement scolaire pour les étudiants ayant des troubles d’apprentissage",
+            "ca": "Aquesta és una escola per a estudiants amb dificultats de l'aprenentatge",
+            "cs": "Jedná se o školu pro žáky s poruchami učení"
+          }
+        },
+        {
+          "if": "school:for=blind",
+          "then": {
+            "en": "This is a school for blind students or students with sight impairments",
+            "nl": "Deze school richt zich op blinde en slechtziende studenten",
+            "de": "Dies ist eine Schule für blinde oder sehbehinderte Schüler",
+            "fr": "C'est un établissement scolaire pour les étudiants aveugles ou malvoyants",
+            "ca": "Aquesta és una escola per a estudiants cecs o estudiants amb deficiències visuals",
+            "cs": "Jedná se o školu pro nevidomé studenty nebo studenty se zrakovým postižením"
+          }
+        },
+        {
+          "if": "school:for=deaf",
+          "then": {
+            "en": "This is a school for deaf students or students with hearing impairments",
+            "nl": "Deze school richt zich op dove en hardhorende studenten",
+            "de": "Dies ist eine Schule für gehörlose oder hörgeschädigte Schüler",
+            "fr": "C'est un établissement scolaire pour les étudiants sourds ou malentendants",
+            "ca": "Aquesta és una escola per a estudiants sords o amb dificultats auditives",
+            "pl": "To jest szkoła dla uczniów głuchych i słabosłyszących",
+            "cs": "Jedná se o školu pro neslyšící studenty nebo studenty se sluchovým postižením"
+          }
+        },
+        {
+          "if": "school:for=disabilities",
+          "then": {
+            "en": "This is a school for students with disabilities",
+            "nl": "Deze school richt zich op studenten met een beperking",
+            "de": "Dies ist eine Schule für Schüler mit Behinderungen",
+            "fr": "C'est un établissement scolaire pour les étudiants en situation de handicap",
+            "ca": "Aquesta és una escola per a estudiants amb discapacitats",
+            "pl": "To jest szkoła dla uczniów z niepełnosprawnościami",
+            "cs": "Jedná se o školu pro studenty se zdravotním postižením"
+          }
+        },
+        {
+          "if": "school:for=special_needs",
+          "then": {
+            "en": "This is a school for students with special needs",
+            "nl": "Deze school richt zich op studenten met extra zorgbehoeften",
+            "de": "Dies ist eine Schule für Schüler mit besonderen Bedürfnissen",
+            "fr": "C'est un établissement scolaire pour les étudiants ayant des besoins particuliers",
+            "ca": "Aquesta és una escola per a estudiants amb necessitats especials",
+            "pl": "To jest szkoła dla uczniów z specjalnymi potrzebami",
+            "cs": "Jedná se o školu pro žáky se speciálními potřebami"
+          }
+        }
+      ],
+      "questionHint": {
+        "en": "Ad-hoc measures are not enough to count as a special-needs school",
+        "nl": "Ad-hoc maatregelen zijn niet voldoende ",
+        "de": "Ad-hoc-Maßnahmen reichen nicht aus, um als Förderschule zu gelten",
+        "cs": "Ad hoc opatření nestačí k tomu, aby se škola považovala za školu pro žáky se speciálními vzdělávacími potřebami"
+      }
+    },
+    {
+      "id": "website",
+      "labels": [
+        "contact"
+      ],
+      "icon": "./assets/layers/icons/website.svg",
+      "question": {
+        "en": "What is the website of {title()}?",
+        "nl": "Wat is de website van {title()}?",
+        "fr": "Quel est le site web de {title()} ?",
+        "gl": "Cal é a páxina web de {title()}?",
+        "nb_NO": "Hva er nettsiden til {title()}?",
+        "ru": "Какой сайт у {title()}?",
+        "id": "Apa situs web dari {title()}?",
+        "zh_Hant": "{title()} 網址是什麼？",
+        "it": "Qual è il sito web di {title()}?",
+        "de": "Wie lautet die Webseite von {title()}?",
+        "pt_BR": "Qual o site de {title()}?",
+        "pl": "Jaka jest strona internetowa {title()}?",
+        "sv": "Vad är webbplatsen för {title()}?",
+        "pt": "Qual é o sítio web de {title()}?",
+        "eo": "Kie estas la retejo de {title()}?",
+        "hu": "Mi a weboldala ennek: {title()}?",
+        "ca": "Quina és la web de {title()}?",
+        "ja": "{title()}のウェブサイトは？",
+        "fil": "Ano ang website ng {title()}?",
+        "es": "¿Cual es el sitio web de {title()}?",
+        "zh_Hans": "{title()} 的网站为何？",
+        "da": "Hvad er webstedet for {title()}?",
+        "cs": "Jaká je webová stránka {title()}?"
+      },
+      "render": {
+        "*": "<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>"
+      },
+      "freeform": {
+        "key": "website",
+        "type": "url",
+        "addExtraTags": [
+          "contact:website="
+        ]
+      },
+      "mappings": [
+        {
+          "if": "contact:website~*",
+          "then": "<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>",
+          "hideInAnswer": true,
+          "icon": "./assets/layers/icons/website.svg"
+        }
+      ],
+      "editButtonAriaLabel": {
+        "en": "Edit website",
+        "nl": "Pas website aan",
+        "de": "Webseite bearbeiten"
+      }
+    },
+    {
+      "id": "phone",
+      "labels": [
+        "contact"
+      ],
+      "question": {
+        "en": "What is the phone number of {title()}?",
+        "nl": "Wat is het telefoonnummer van {title()}?",
+        "fr": "Quel est le numéro de téléphone de {title()} ?",
+        "de": "Wie lautet die Telefonnummer von {title()}?",
+        "nb_NO": "Hva er telefonnummeret til {title()}?",
+        "ru": "Какой номер телефона у {title()}?",
+        "sv": "Vad är telefonnumret till {title()}?",
+        "zh_Hant": "{title()} 的電話號碼是什麼？",
+        "it": "Qual è il numero di telefono di {title()}?",
+        "pt_BR": "Qual o número de telefone de {title()}?",
+        "id": "Berapa nomor telepon dari {title()}?",
+        "pl": "Jaki jest numer telefonu do {title()}?",
+        "pt": "Qual é o número de telefone de {title()}?",
+        "eo": "Kio estas la telefonnumero de {title()}?",
+        "hu": "Mi a telefonszáma ennek: {title()}?",
+        "ca": "Quin és el telèfon de {title()}?",
+        "ja": "{title()}の電話番号は？",
+        "sl": "Kakšno telefonsko številko ima {title()}?",
+        "fil": "Ano ang telepono ng {title()}?",
+        "es": "¿Cuál es el número de teléfono de {title()}?",
+        "zh_Hans": "{title()} 的电话号码为何？",
+        "da": "Hvad er telefonnummeret til {title()}?",
+        "cs": "Jaké je telefonní číslo {title()}?"
+      },
+      "render": {
+        "*": "<a href='tel:{phone}'>{phone}</a>"
+      },
+      "icon": "./assets/layers/questions/phone.svg",
+      "mappings": [
+        {
+          "if": "contact:phone~*",
+          "then": "<a href='tel:{contact:phone}'>{contact:phone}</a>",
+          "hideInAnswer": true,
+          "icon": "./assets/layers/questions/phone.svg"
+        }
+      ],
+      "freeform": {
+        "key": "phone",
+        "type": "phone",
+        "addExtraTags": [
+          "contact:phone="
+        ]
+      },
+      "editButtonAriaLabel": {
+        "en": "Edit phone number",
+        "nl": "Pas telefoonnummer aan",
+        "de": "Telefonnummer bearbeiten"
+      }
+    },
+    {
+      "id": "email",
+      "render": {
+        "*": "<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>"
+      },
+      "icon": "./assets/svg/envelope.svg",
+      "labels": [
+        "contact"
+      ],
+      "question": {
+        "nl": "Wat is het e-mailadres van {title()}?",
+        "fr": "Quelle est l'adresse courriel de {title()} ?",
+        "en": "What is the email address of {title()}?",
+        "nb_NO": "Hva er e-postadressen til {title()}?",
+        "ru": "Какой адрес электронной почты у {title()}?",
+        "id": "Apa alamat surel dari {title()}?",
+        "zh_Hant": "{title()} 的電子郵件地址是什麼？",
+        "it": "Qual è l'indirizzo email di {title()}?",
+        "de": "Wie lautet die Mail-Adresse von {title()}?",
+        "pt_BR": "Qual o endereço de e-mail de {title()}?",
+        "pl": "Jaki jest adres e-mail do {title()}?",
+        "sv": "Vad är e-postadressen till {title()}?",
+        "pt": "Qual é o endereço de e-mail de {title()}?",
+        "eo": "Kio estas la retpoŝta adreso de {title()}?",
+        "hu": "Mi a(z) {title()} e-mail címe?",
+        "ca": "Quina és l'adreça de correu electrònic de {title()}?",
+        "ja": "{title()}のEメールアドレスは何ですか？",
+        "sl": "Kakšen naslov elektronske pošte ima {title()}?",
+        "fil": "Ano ang email address ng {title()}?",
+        "es": "¿Cuál es la dirección de correo electrónico de {title()}?",
+        "zh_Hans": "{title()} 的电子邮箱地址为何？",
+        "da": "Hvad er mailadressen på {title()}?",
+        "cs": "Jaká je e-mailová adresa {title()}?"
+      },
+      "mappings": [
+        {
+          "if": "contact:email~*",
+          "icon": "./assets/svg/envelope.svg",
+          "then": "<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>",
+          "hideInAnswer": true
+        },
+        {
+          "if": "operator:email~*",
+          "icon": "./assets/svg/envelope.svg",
+          "then": "<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>",
+          "hideInAnswer": true
+        }
+      ],
+      "freeform": {
+        "key": "email",
+        "type": "email",
+        "addExtraTags": [
+          "contact:email="
+        ]
+      },
+      "editButtonAriaLabel": {
+        "en": "Edit email address",
+        "nl": "Pas emailadres aan",
+        "de": "E-Mail Adresse bearbeiten"
+      }
+    },
+    {
+      "id": "school-language",
+      "render": {
+        "ca": "{language_chooser(language,Quina és la llengua principal d'aquesta escola?<div class='subtle'>Quina llengua es parla amb els estudiants en classes no relacionades amb la llengua i l'administració?</div>,,&LBRACElanguage&LPARENS&RPARENS&RBRACE és la llengua principal d'aquesta escola,En aquesta escola s'utilitzen els idiomes següents:&LBRACElist&LPARENS&RPARENS&RBRACE,La llengua principal d'aquesta escola és desconeguda)}",
+        "cs": "{language_chooser(language,Jaký je hlavní jazyk této školy?<div class='subtle'>Jakým jazykem se mluví se studenty v nejazykových kurzech a administrativou?</div>,,&LBRACElanguage&LPARENS&RPARENS&RBRACE je hlavním jazykem této školy,V této škole se používají následující jazyky:&LBRACElist&LPARENS&RPARENS&RBRACE,Hlavní jazyk této školy není znám)}",
+        "de": "{language_chooser(language,Was ist die Hauptsprache dieser Schule?<div class='subtle'>Welche Sprache wird mit den Schülern in den nicht sprachbezogenen Kursen und mit der Verwaltung gesprochen?</div>,,&LBRACElanguage&LPARENS&RPARENS&RBRACE ist die Hauptsprache der Schule,Folgende Sprachen werden in der Schule verwendet:&LBRACElist&LPARENS&RPARENS&RBRACE,Die Unterrichtssprache der Schule ist unbekannt)}",
+        "en": "{language_chooser(language,What is the main language of this school?<div class='subtle'>What language is spoken with the students in non-language related courses and with the administration?</div>,,&LBRACElanguage&LPARENS&RPARENS&RBRACE is the main language of this school,The following languages are used in this school:&LBRACElist&LPARENS&RPARENS&RBRACE,The main language of this school is unknown)}",
+        "fr": "{language_chooser(language,Quelle est la langue principale de cette école ?<div class='subtle'>Quelle langue est parlée avec les élèves des cours non linguistiques et avec l'administration ?</div>,,&LBRACElanguage&LPARENS&RPARENS&RBRACE est la langue principale dans cette école,Ces langues sont utilisées dans cette école :&LBRACElist&LPARENS&RPARENS&RBRACE,La langue principale de cette école est inconnue)}",
+        "nl": "{language_chooser(language,Wat is de voertaal van deze school?<div class='subtle'>Welke taal wordt met de studenten gesproken in niet-taal-gerelateerde vakken en met de administratie?</div>,,&LBRACElanguage&LPARENS&RPARENS&RBRACE is the main language of this school,The following languages are used in this school:&LBRACElist&LPARENS&RPARENS&RBRACE,De voertaal van deze school is niet gekend)}",
+        "pl": "{language_chooser(language,What is the main language of this school?<div class='subtle'>What language is spoken with the students in non-language related courses and with the administration?</div>,,Język &LBRACElanguage&LPARENS&RPARENS&RBRACE jest głównym językiem używanym w tej szkole,Następujące języki są używane w tej szkole:&LBRACElist&LPARENS&RPARENS&RBRACE,The main language of this school is unknown)}"
+      }
+    },
+    {
+      "id": "leftover-questions",
+      "render": {
+        "*": "{questions( ,)}"
+      }
+    },
+    {
+      "id": "lod",
+      "labels": [
+        "added_by_default"
+      ],
+      "render": {
+        "*": "{linked_data_from_website()}"
+      }
+    },
+    {
+      "id": "minimap",
+      "description": "Shows a small map with the feature. Added by default to every popup",
+      "render": {
+        "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+      }
+    },
+    {
+      "id": "move-button",
+      "render": {
+        "*": "{move_button()}"
+      }
+    },
+    {
+      "id": "last_edit",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+      "condition": {
+        "and": [
+          "_last_edit:contributor~*",
+          "_last_edit:changeset~*"
+        ]
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsTesting=true",
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_debug=yes",
+          "_csCount>=10"
+        ]
+      },
+      "render": {
+        "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+      }
+    },
+    {
+      "id": "favourite_status",
+      "render": {
+        "*": "{favourite_status()}"
+      }
+    },
+    {
+      "id": "qr_code",
+      "labels": [
+        "added_by_default"
+      ],
+      "classes": "flex items-center gap-x-2",
+      "render": {
+        "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+        "en": "{qr_code()}Scan this code to open this location on another device",
+        "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+        "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+      }
+    },
+    {
+      "id": "share",
+      "labels": [
+        "added_by_default"
+      ],
+      "metacondition": "_supports_sharing=yes",
+      "render": {
+        "de": "{share_link(,Standort teilen)}",
+        "en": "{share_link(,Share this location)}",
+        "nl": "{share_link(,Deel deze locatie)}"
+      }
+    },
+    {
+      "id": "all-tags",
+      "render": {
+        "*": "{all_tags()}"
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_tags=full",
+          "mapcomplete-show_debug=yes"
+        ]
+      }
+    }
+  ],
+  "allowMove": {
+    "enableImproveAccuracy": true,
+    "enableRelocation": true
+  },
+  "titleIcons": [
+    {
+      "id": "wikipedialink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+      "condition": {
+        "or": [
+          "wikipedia~*",
+          "wikidata~*"
+        ]
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "wikipedia=",
+          "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "open_until",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "#": "Titleicon showing e.g. 'open until 17:00'",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{opening_hours_state()}",
+      "condition": {
+        "or": [
+          "opening_hours~*",
+          {
+            "or": [
+              {
+                "and": [
+                  "seasonal~.*winter.*",
+                  "_now:date~....-(12|01|02)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*spring.*",
+                  "_now:date~....-(03|04|05)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*summer.*",
+                  "_now:date~....-(06|07|08)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*autumn.*",
+                  "_now:date~....-(09|10|11)-.."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "phonelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": {
+        "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+        "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+        "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+        "_context": "layers:icons.tagRenderings.phonelink.render"
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:phone~*",
+          "then": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+          }
+        }
+      ],
+      "condition": {
+        "or": [
+          "phone~*",
+          "contact:phone~*"
+        ]
+      }
+    },
+    {
+      "id": "emaillink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:email~*",
+          "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:email~*",
+          "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        }
+      ],
+      "condition": {
+        "or": [
+          "email~*",
+          "contact:email~*",
+          "operator:email~*"
+        ]
+      }
+    },
+    {
+      "id": "websitelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "website~*",
+          "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:website~*",
+          "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "context:website~*",
+          "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "smokingicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=no",
+          "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=yes",
+          "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+        }
+      ]
+    },
+    {
+      "id": "dogicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "if": "dog=no",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+        },
+        {
+          "if": "dog=leashed",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+        },
+        {
+          "if": {
+            "or": [
+              "dog=yes",
+              "dog=unleashed"
+            ]
+          },
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+        }
+      ]
+    },
+    {
+      "id": "sharelink",
+      "labels": [
+        "defaults"
+      ],
+      "render": "{share_link()}",
+      "metacondition": "_supports_sharing=yes"
+    },
+    {
+      "id": "favourite_title_icon",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "*": "{favourite_icon()}"
+      },
+      "metacondition": "_loggedIn=true"
+    },
+    {
+      "id": "osmlink",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+        "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+        "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+        "_context": "layers:icons.tagRenderings.osmlink.render"
+      },
+      "mappings": [
+        {
+          "if": "id~.*/-.*",
+          "then": ""
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "_backend~*",
+          "then": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+          }
+        }
+      ],
+      "condition": "id~(node|way|relation)/[0-9]*"
+    },
+    {
+      "id": "direction",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "{direction_indicator()}"
+    },
+    {
+      "id": "rating",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{rating()}"
+    }
+  ],
+  "_layerIcon": [
+    {
+      "icon": "circle",
+      "color": "white"
+    },
+    {
+      "icon": "./assets/layers/school/school.svg"
+    }
+  ]
+}

@@ -1,0 +1,2471 @@
+{
+  "id": "recycling",
+  "name": {
+    "en": "Recycling",
+    "nl": "Recycling",
+    "de": "Recyclingeinrichtungen",
+    "ca": "Residus",
+    "es": "Reciclaje",
+    "it": "Riciclo",
+    "pa_PK": "ریسائیکلنگ",
+    "fr": "Recyclage",
+    "cs": "Recyklování"
+  },
+  "description": {
+    "en": "A layer with recycling containers and centres",
+    "nl": "Een laag met recyclagingcontainers en -centrums",
+    "de": "Eine Ebene mit Recyclingcontainern und -zentren",
+    "es": "Una capa con contenedores y centros de reciclaje",
+    "it": "Un livello con i contenitori e centri per la raccolta rifiuti riciclabili",
+    "ca": "Una capa amb contenidors i centres de reciclatge",
+    "fr": "Une couche avec des conteneurs de recyclage et des déchèteries",
+    "cs": "Vrstva s recyklačními kontejnery a středisky"
+  },
+  "source": {
+    "osmTags": {
+      "and": [
+        "amenity=recycling"
+      ]
+    }
+  },
+  "calculatedTags": [
+    "_waste_amount=Object.keys(feat.properties).filter(key => key.startsWith('recycling:')).filter(k => feat.properties[k] === 'yes').length"
+  ],
+  "minzoom": 10,
+  "title": {
+    "render": {
+      "en": "Recycling facility",
+      "nl": "Recyclingfaciliteit",
+      "de": "Recyclinganlage",
+      "es": "Instalación de reciclaje",
+      "it": "Impianti di riciclo",
+      "ca": "Instal·lació de reciclatge",
+      "fr": "Point de recyclage",
+      "cs": "Recyklační zařízení"
+    },
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": {
+          "*": "{name}",
+          "ca": "Centre de reciclatge",
+          "de": "Wertstoffhof",
+          "en": "Recycling centre",
+          "es": "Centro de reciclaje",
+          "it": "Centro di riciclo rifiuti",
+          "nl": "Recyclingcentrum",
+          "fr": "Déchèterie",
+          "cs": "Recyklační centrum"
+        }
+      },
+      {
+        "if": "recycling_type=centre",
+        "then": {
+          "en": "Recycling centre",
+          "nl": "Recyclingcentrum",
+          "de": "Wertstoffhof",
+          "es": "Centro de reciclaje",
+          "it": "Centro di riciclo rifiuti",
+          "ca": "Centre de reciclatge",
+          "fr": "Déchèterie",
+          "cs": "Recyklační centrum"
+        }
+      },
+      {
+        "if": "recycling_type=container",
+        "then": {
+          "en": "Recycling container",
+          "nl": "Recyclingcontainer",
+          "de": "Recyclingcontainer",
+          "es": "Contenedor de reciclaje",
+          "it": "Contenitore per il riciclo",
+          "ca": "Contenidor de reciclatge",
+          "fr": "Conteneur de recyclage",
+          "cs": "Recyklační kontejner"
+        }
+      }
+    ]
+  },
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "iconBadges": [
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:batteries=yes"
+            ]
+          },
+          "then": {
+            "render": "./assets/layers/recycling/batteries.svg",
+            "id": "assetslayersrecyclingbatteriessvg"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:beverage_cartons=yes"
+            ]
+          },
+          "then": {
+            "render": "./assets/layers/recycling/beverage_cartons.svg",
+            "id": "assetslayersrecyclingbeveragecartonssvg"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:cans=yes"
+            ]
+          },
+          "then": {
+            "render": "./assets/layers/recycling/cans.svg",
+            "id": "assetslayersrecyclingcanssvg"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:clothes=yes"
+            ]
+          },
+          "then": {
+            "render": "./assets/layers/recycling/clothes.svg",
+            "id": "assetslayersrecyclingclothessvg"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:cooking_oil=yes"
+            ]
+          },
+          "then": {
+            "render": "./assets/layers/recycling/cooking_oil.svg",
+            "id": "assetslayersrecyclingcookingoilsvg"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:engine_oil=yes"
+            ]
+          },
+          "then": {
+            "render": "./assets/layers/recycling/engine_oil.svg",
+            "id": "assetslayersrecyclingengineoilsvg"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:fluorescent_tubes=yes"
+            ]
+          },
+          "then": {
+            "render": "./assets/layers/recycling/fluorescent_tubes.svg",
+            "id": "assetslayersrecyclingfluorescenttubessvg"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:glass=yes"
+            ]
+          },
+          "then": {
+            "render": "./assets/layers/recycling/glass.svg",
+            "id": "assetslayersrecyclingglasssvg"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:glass_bottles=yes"
+            ]
+          },
+          "then": {
+            "render": "./assets/layers/recycling/glass_bottles.svg",
+            "id": "assetslayersrecyclingglassbottlessvg"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              {
+                "or": [
+                  "recycling:green_waste=yes",
+                  "recycling:organic=yes"
+                ]
+              }
+            ]
+          },
+          "then": {
+            "render": "./assets/layers/recycling/garden_waste.svg",
+            "id": "assetslayersrecyclinggardenwastesvg"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:light_bulbs=yes"
+            ]
+          },
+          "then": {
+            "render": "./assets/layers/recycling/light_bulbs.svg",
+            "id": "assetslayersrecyclinglightbulbssvg"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:newspaper=yes"
+            ]
+          },
+          "then": {
+            "render": "./assets/layers/recycling/newspaper.svg",
+            "id": "assetslayersrecyclingnewspapersvg"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:paper=yes"
+            ]
+          },
+          "then": {
+            "render": "./assets/layers/recycling/paper.svg",
+            "id": "assetslayersrecyclingpapersvg"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:plastic_bottles=yes"
+            ]
+          },
+          "then": {
+            "render": "./assets/layers/recycling/plastic_bottles.svg",
+            "id": "assetslayersrecyclingplasticbottlessvg"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:plastic_packaging=yes"
+            ]
+          },
+          "then": {
+            "render": "./assets/layers/recycling/plastic_packaging.svg",
+            "id": "assetslayersrecyclingplasticpackagingsvg"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:plastic=yes"
+            ]
+          },
+          "then": {
+            "render": "./assets/layers/recycling/plastic.svg",
+            "id": "assetslayersrecyclingplasticsvg"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:printer_cartridges=yes"
+            ]
+          },
+          "then": {
+            "render": "./assets/layers/recycling/printer_cartridges.svg",
+            "id": "assetslayersrecyclingprintercartridgessvg"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:scrap_metal=yes"
+            ]
+          },
+          "then": {
+            "render": "./assets/layers/recycling/scrap_metal.svg",
+            "id": "assetslayersrecyclingscrapmetalsvg"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:shoes=yes"
+            ]
+          },
+          "then": {
+            "render": "./assets/layers/recycling/shoes.svg",
+            "id": "assetslayersrecyclingshoessvg"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              {
+                "or": [
+                  "recycling:small_appliances=yes",
+                  "recycling:small_electrical_appliances=yes"
+                ]
+              }
+            ]
+          },
+          "then": {
+            "render": "./assets/layers/recycling/small_electrical_appliances.svg",
+            "id": "assetslayersrecyclingsmallelectricalappliancessvg"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:waste=yes"
+            ]
+          },
+          "then": {
+            "render": "./assets/layers/waste_disposal/waste_disposal.svg",
+            "id": "assetslayerswastedisposalwastedisposalsvg"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:needles=yes"
+            ]
+          },
+          "then": {
+            "render": "./assets/layers/recycling/needles.svg",
+            "id": "assetslayersrecyclingneedlessvg"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:bicycles=yes"
+            ]
+          },
+          "then": {
+            "render": "./assets/layers/recycling/bicycles.svg",
+            "id": "assetslayersrecyclingbicyclessvg"
+          }
+        },
+        {
+          "if": "_favourite=yes",
+          "then": "circle:white;heart:red"
+        }
+      ],
+      "marker": [
+        {
+          "icon": {
+            "render": "circle",
+            "id": "circle"
+          },
+          "color": "white"
+        },
+        {
+          "icon": {
+            "render": "./assets/layers/recycling/recycling-14.svg",
+            "mappings": [
+              {
+                "if": {
+                  "and": [
+                    "_waste_amount=1",
+                    "recycling:batteries=yes"
+                  ]
+                },
+                "then": "./assets/layers/recycling/batteries.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "_waste_amount=1",
+                    "recycling:beverage_cartons=yes"
+                  ]
+                },
+                "then": "./assets/layers/recycling/beverage_cartons.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "_waste_amount=1",
+                    "recycling:cans=yes"
+                  ]
+                },
+                "then": "./assets/layers/recycling/cans.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "_waste_amount=1",
+                    "recycling:clothes=yes"
+                  ]
+                },
+                "then": "./assets/layers/recycling/clothes.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "_waste_amount=1",
+                    "recycling:cooking_oil=yes"
+                  ]
+                },
+                "then": "./assets/layers/recycling/cooking_oil.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "_waste_amount=1",
+                    "recycling:engine_oil=yes"
+                  ]
+                },
+                "then": "./assets/layers/recycling/engine_oil.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "_waste_amount=1",
+                    "recycling:fluorescent_tubes=yes"
+                  ]
+                },
+                "then": "./assets/layers/recycling/fluorescent_tubes.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "_waste_amount=1",
+                    "recycling:glass=yes"
+                  ]
+                },
+                "then": "./assets/layers/recycling/glass.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "_waste_amount=1",
+                    "recycling:glass_bottles=yes"
+                  ]
+                },
+                "then": "./assets/layers/recycling/glass_bottles.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "_waste_amount=1",
+                    {
+                      "or": [
+                        "recycling:green_waste=yes",
+                        "recycling:organic=yes"
+                      ]
+                    }
+                  ]
+                },
+                "then": "./assets/layers/recycling/garden_waste.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "_waste_amount=1",
+                    "recycling:light_bulbs=yes"
+                  ]
+                },
+                "then": "./assets/layers/recycling/light_bulbs.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "_waste_amount=1",
+                    "recycling:newspaper=yes"
+                  ]
+                },
+                "then": "./assets/layers/recycling/newspaper.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "_waste_amount=1",
+                    "recycling:paper=yes"
+                  ]
+                },
+                "then": "./assets/layers/recycling/paper.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "_waste_amount=1",
+                    "recycling:plastic_bottles=yes"
+                  ]
+                },
+                "then": "./assets/layers/recycling/plastic_bottles.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "_waste_amount=1",
+                    "recycling:plastic_packaging=yes"
+                  ]
+                },
+                "then": "./assets/layers/recycling/plastic_packaging.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "_waste_amount=1",
+                    "recycling:plastic=yes"
+                  ]
+                },
+                "then": "./assets/layers/recycling/plastic.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "_waste_amount=1",
+                    "recycling:printer_cartridges=yes"
+                  ]
+                },
+                "then": "./assets/layers/recycling/printer_cartridges.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "_waste_amount=1",
+                    "recycling:scrap_metal=yes"
+                  ]
+                },
+                "then": "./assets/layers/recycling/scrap_metal.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "_waste_amount=1",
+                    "recycling:shoes=yes"
+                  ]
+                },
+                "then": "./assets/layers/recycling/shoes.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "_waste_amount=1",
+                    {
+                      "or": [
+                        "recycling:small_appliances=yes",
+                        "recycling:small_electric_appliances=yes"
+                      ]
+                    }
+                  ]
+                },
+                "then": "./assets/layers/recycling/small_electrical_appliances.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "_waste_amount=1",
+                    "recycling:waste=yes"
+                  ]
+                },
+                "then": "./assets/layers/waste_disposal/waste_disposal.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "_waste_amount=1",
+                    "recycling:needles=yes"
+                  ]
+                },
+                "then": "./assets/layers/recycling/needles.svg"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "lineRendering": [],
+  "presets": [
+    {
+      "title": {
+        "en": "a recycling container",
+        "nl": "een recycling container",
+        "de": "einen Recyclingcontainer",
+        "es": "un contenedor de reciclaje",
+        "it": "un contenitore per il riciclo",
+        "ca": "un contenidor de reciclatge",
+        "fr": "un conteneur de recyclage",
+        "cs": "recyklační kontejner"
+      },
+      "tags": [
+        "amenity=recycling",
+        "recycling_type=container"
+      ]
+    },
+    {
+      "title": {
+        "en": "a recycling centre",
+        "nl": "een containerpark (recycling center)",
+        "de": "einen Wertstoffhof",
+        "es": "un centro de reciclado",
+        "it": "un centro di riciclo",
+        "ca": "un centre de reciclatge",
+        "fr": "une déchèterie",
+        "cs": "recyklační centrum"
+      },
+      "tags": [
+        "amenity=recycling",
+        "recycling_type=centre"
+      ]
+    }
+  ],
+  "tagRenderings": [
+    {
+      "id": "just_created",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "This element shows a 'thank you' that the contributor has recently created this element",
+      "classes": "rounded-xl thanks",
+      "mappings": [
+        {
+          "if": "id~*",
+          "icon": "./assets/svg/party.svg",
+          "then": {
+            "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+            "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+            "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+            "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+            "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+            "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+          }
+        }
+      ],
+      "condition": {
+        "and": [
+          "_backend~*",
+          "_last_edit:passed_time<300",
+          {
+            "or": [
+              "_version_number=",
+              "_version_number=1"
+            ]
+          }
+        ]
+      },
+      "metacondition": {
+        "and": [
+          {
+            "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+            "or": [
+              "_last_edit:contributor:uid:={_uid}",
+              "_last_edit:contributor:uid="
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "images",
+      "description": "This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images",
+      "render": {
+        "*": "{image_carousel()}{image_upload()}{nearby_images():my-4}"
+      },
+      "classes": "my-4"
+    },
+    {
+      "id": "recycling-type",
+      "question": {
+        "en": "What type of recycling is this?",
+        "nl": "Wat voor soort recycling is dit?",
+        "de": "Um welche Recyclingeinrichtung handelt es sich?",
+        "it": "Che tipo di raccolta è questo?",
+        "ca": "Quin tipus de reciclatge és aquest?",
+        "fr": "De quel type d’installation de recyclage s’agit-il ?",
+        "cs": "O jaký typ recyklace se jedná?"
+      },
+      "mappings": [
+        {
+          "if": "recycling_type=container",
+          "addExtraTags": [
+            "amenity=recycling"
+          ],
+          "then": {
+            "en": "This is a recycling container",
+            "nl": "Dit is een recyclingcontainer",
+            "de": "Dies ist ein Recycling-Container",
+            "es": "Esto es un contenedor de reciclaje",
+            "it": "Questo è un contenitore per il riciclo di rifiuti",
+            "ca": "Açò és un contenidor de reciclatge",
+            "fr": "C'est un conteneur de recyclage",
+            "cs": "Jedná se o recyklační kontejner"
+          }
+        },
+        {
+          "if": "recycling_type=centre",
+          "addExtraTags": [
+            "amenity=recycling"
+          ],
+          "then": {
+            "en": "This is a recycling centre",
+            "nl": "Dit is een recyclingcentrum",
+            "de": "Dies ist ein Wertstoffhof",
+            "es": "Esto es un centro de reciclaje",
+            "it": "Questo è un centro per la raccola e riciclo di rifiuti",
+            "ca": "Açò és un centre de reciclatge",
+            "fr": "C'est une déchèterie",
+            "cs": "Jedná se o recyklační centrum"
+          }
+        },
+        {
+          "if": "amenity=waste_disposal",
+          "then": {
+            "en": "Waste disposal container for residual waste",
+            "nl": "Afvalcontainer voor restafval",
+            "de": "Dies ist ein Abfallbehälter für Restmüll",
+            "it": "Contenitore per lo smaltimento del secco",
+            "ca": "Contenidor per a residus no reciclables (fracció resta)",
+            "fr": "Conteneur à déchets pour déchets résiduels",
+            "cs": "Kontejner na zbytkový odpad"
+          },
+          "addExtraTags": [
+            "recycling:batteries=",
+            "recycling:beverage_cartons=",
+            "recycling:cans=",
+            "recycling:clothes=",
+            "recycling:cooking_oil=",
+            "recycling:engine_oil=",
+            "recycling:fluorescent_tubes=",
+            "recycling:green_waste=",
+            "recycling:light_bulbs=",
+            "recycling:organic=",
+            "recycling:glass_bottles=",
+            "recycling:glass=",
+            "recycling:newspaper=",
+            "recycling:paper=",
+            "recycling:plastic_bottles=",
+            "recycling:plastic_packaging=",
+            "recycling:plastic=",
+            "recycling:printer_cartridges=",
+            "recycling:scrap_metal=",
+            "recycling:shoes=",
+            "recycling:small_appliances=",
+            "recycling:small_electrical_appliances=",
+            "recycling:waste="
+          ]
+        },
+        {
+          "if": "recycling_type=pickup_point",
+          "addExtraTags": [
+            "amenity=recycling"
+          ],
+          "then": {
+            "en": "This is a pickup point. The waste material is placed here without placing it in a dedicated container.",
+            "nl": "Dit is een verzamelplaats zonder container waar het afval later opgepikt wordt.",
+            "ca": "Aquest és un punt de recollida. El rebuig es col·loca aquí sense col·locar-lo en un contenidor dedicat.",
+            "de": "Dies ist ein Abholpunkt. Abfälle werden hier abgelegt, ohne sie in einen speziellen Behälter zu geben.",
+            "fr": "C'est un point de ramassage. Les déchets y sont déposés sans être placés dans un conteneur spécifique.",
+            "cs": "Jedná se o místo vyzvednutí. Odpadní materiál se zde ukládá bez umístění do vyhrazeného kontejneru."
+          }
+        },
+        {
+          "if": "recycling_type=dump",
+          "addExtraTags": [
+            "amenity=recycling"
+          ],
+          "then": {
+            "en": "This is a dump where the waste material is stacked.",
+            "nl": "Dit is een afvalhoop waar het afvalmateriaal bovenop elkaar gestapeld wordt.",
+            "ca": "Es tracta d’un abocador on s’apilen els residus.",
+            "de": "Dies ist eine Deponie, auf der die Abfälle gelagert werden.",
+            "fr": "C'est une décharge où les déchets sont empilés.",
+            "cs": "Jedná se o skládku, kde se ukládá odpadní materiál."
+          }
+        }
+      ]
+    },
+    {
+      "id": "recycling-centre-name",
+      "question": {
+        "en": "What is the name of this recycling centre?",
+        "nl": "Wat is de naam van dit recyclagecentrum?",
+        "de": "Wie lautet der Name dieses Wertstoffhofs?",
+        "es": "¿Cual es el nombre de este centro de reciclaje?",
+        "it": "Come si chiama questo centro raccolta e riciclo rifiuti?",
+        "ca": "Quin és el nom d’aquest centre de reciclatge?",
+        "fr": "Quel est le nom de cette déchèterie ?",
+        "cs": "Jak se toto recyklační centrum jmenuje?"
+      },
+      "render": {
+        "en": "This recycling centre is named <b>{name}</b>",
+        "nl": "Dit recyclagecentrum heet <b>{name}</b>",
+        "de": "Dieser Wertstoffhof heißt <b>{name}</b>",
+        "es": "Este centro de reciclaje se llama <b>{name}</b>",
+        "it": "Questo centro raccolta e riciclo rifiuti si chiama <b>{name}</b>",
+        "ca": "Aquest centre de reciclatge s'anomena <b>{name}</b>",
+        "fr": "Le nom de cette déchèterie est <b>{name}</b>",
+        "cs": "Toto recyklační středisko se jmenuje <b>{name}</b>"
+      },
+      "freeform": {
+        "key": "name",
+        "inline": true
+      },
+      "mappings": [
+        {
+          "if": "noname=yes",
+          "then": {
+            "en": "This recycling centre doesn't have a specific name",
+            "nl": "Dit recyclagecentrum heeft geen specifieke naam",
+            "de": "Dieser Wertstoffhof hat keinen bestimmten Namen",
+            "es": "Este centro de reciclaje no tiene un nombre específico",
+            "it": "Questo centro raccolta e riciclo rifiuti non ha un nome specifico",
+            "ca": "Aquest centre de reciclatge no té un nom específic",
+            "fr": "Cette déchèterie n'a pas de nom spécifique",
+            "cs": "Toto recyklační centrum nemá konkrétní název"
+          }
+        }
+      ],
+      "condition": "recycling_type=centre"
+    },
+    {
+      "id": "container-location",
+      "question": {
+        "en": "Where is this container located?",
+        "nl": "Waar bevindt deze container zich?",
+        "de": "Wo befindet sich dieser Container?",
+        "es": "¿Dónde se sitúa este contenedor?",
+        "it": "Dove si trova questo contenitore?",
+        "ca": "On es troba aquest contenidor?",
+        "fr": "Où ce conteneur est-il situé ?",
+        "cs": "Kde se tento kontejner nachází?"
+      },
+      "condition": "recycling_type=container",
+      "mappings": [
+        {
+          "if": "location=underground",
+          "then": {
+            "en": "This is an underground container",
+            "nl": "Dit is een ondergrondse container",
+            "de": "Dies ist ein Unterflurcontainer",
+            "es": "Este es un contenedor bajo tierra",
+            "it": "E' un contenitore sotterraneo",
+            "ca": "Aquest contenidor està soterrat",
+            "fr": "C'est un conteneur enterré",
+            "cs": "Toto je podzemní kontejner"
+          }
+        },
+        {
+          "if": "location=indoor",
+          "then": {
+            "en": "This container is located indoors",
+            "nl": "Deze container bevindt zich binnen",
+            "de": "Dieser Container befindet sich in einem Gebäude",
+            "es": "Este contenedor se sitúa en el interior",
+            "it": "Questo contenitore è al chiuso",
+            "ca": "Aquest contenidor està situat a l'interior",
+            "fr": "Ce conteneur est situé en intérieur",
+            "cs": "Tento kontejner je umístěn uvnitř"
+          }
+        },
+        {
+          "if": "location=",
+          "then": {
+            "en": "This container is located outdoors",
+            "nl": "Deze container is buiten",
+            "de": "Der Container befindet sich im Freien",
+            "es": "Este contenedor se sitúa en el exterior",
+            "it": "Questo contenitore è all'aperto",
+            "ca": "Aquest contenidor està situat a l'aire lliure",
+            "fr": "Ce conteneur est situé à l'extérieur",
+            "cs": "Tento kontejner je umístěn venku"
+          }
+        }
+      ]
+    },
+    {
+      "id": "recycling-accepts",
+      "question": {
+        "en": "What can be recycled here?",
+        "nl": "Wat kan hier gerecycled worden?",
+        "de": "Was kann hier recycelt werden?",
+        "es": "¿Qué se puede reciclar aquí?",
+        "it": "Cosa si può riciclare qui?",
+        "ca": "Què es pot reciclar aquí?",
+        "fr": "Que peut-on recycler ici ?",
+        "cs": "Co se zde dá recyklovat?"
+      },
+      "multiAnswer": true,
+      "mappings": [
+        {
+          "if": "recycling:batteries=yes",
+          "ifnot": "recycling:batteries=",
+          "then": {
+            "en": "Batteries can be recycled here",
+            "nl": "Batterijen kunnen hier gerecycled worden",
+            "de": "Batterien können hier recycelt werden",
+            "es": "Aquí se pueden reciclar baterías",
+            "it": "Batterie",
+            "ca": "Aquí es poden reciclar piles",
+            "fr": "Les piles et batteries domestiques peuvent être recyclées ici",
+            "cs": "Baterie se zde dají recyklovat"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/batteries.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "recycling:beverage_cartons=yes",
+          "ifnot": "recycling:beverage_cartons=",
+          "then": {
+            "en": "Beverage cartons can be recycled here",
+            "nl": "Drankpakken kunnen hier gerecycled worden",
+            "de": "Getränkekartons können hier recycelt werden",
+            "it": "Cartoni per bevande",
+            "ca": "Aquí es poden reciclar els cartons de begudes",
+            "fr": "Les briques alimentaires en carton peuvent être recyclées ici",
+            "cs": "Nápojové kartony se zde dají recyklovat"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/beverage_cartons.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "recycling:cans=yes",
+          "ifnot": "recycling:cans=",
+          "then": {
+            "en": "Cans can be recycled here",
+            "nl": "Blikken kunnen hier gerecycled worden",
+            "de": "Dosen können hier recycelt werden",
+            "es": "Aquí se pueden reciclar latas",
+            "it": "Lattine",
+            "ca": "Aquí es poden reciclar llaunes",
+            "fr": "Les boites de conserve et canettes peuvent être recyclées ici",
+            "cs": "Plechovky se zde dají recyklovat"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/cans.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "recycling:clothes=yes",
+          "ifnot": "recycling:clothes=",
+          "then": {
+            "en": "Clothes can be recycled here",
+            "nl": "Kleren kunnen hier gerecycled worden",
+            "de": "Kleidung kann hier recycelt werden",
+            "es": "Aquí se puede reciclar ropa",
+            "it": "Abiti",
+            "ca": "Aquí es pot reciclar roba",
+            "fr": "Les vêtements peuvent être recyclés ici",
+            "cs": "Oblečení se zde dá recyklovat"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/clothes.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "recycling:cooking_oil=yes",
+          "ifnot": "recycling:cooking_oil=",
+          "then": {
+            "en": "Cooking oil can be recycled here",
+            "nl": "Frituurvet kan hier gerecycled worden",
+            "de": "Speiseöl kann hier recycelt werden",
+            "es": "Aquí se puede reciclar aceite de cocina",
+            "it": "Olio da cucina",
+            "ca": "Aquí es pot reciclar oli de cuina",
+            "fr": "Les huiles de friture peuvent être recyclées ici",
+            "cs": "Olej na vaření zde lze recyklovat"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/cooking_oil.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "recycling:engine_oil=yes",
+          "ifnot": "recycling:engine_oil=",
+          "then": {
+            "en": "Engine oil can be recycled here",
+            "nl": "Motorolie kan hier gerecycled worden",
+            "de": "Motoröl kann hier recycelt werden",
+            "es": "Aquí se puede reciclar aceite de motor",
+            "it": "Olio di motore",
+            "ca": "Aquí es pot reciclar oli de motor",
+            "fr": "Les huiles de moteur peuvent être recyclées ici",
+            "cs": "Motorový olej zde lze recyklovat"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/engine_oil.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "recycling:fluorescent_tubes=yes",
+          "ifnot": "recycling:fluorescent_tubes=",
+          "then": {
+            "en": "Fluorescent tubes can be recycled here",
+            "nl": "TL-buizen kunnen hier gerecycled worden",
+            "de": "Hier können Leuchtstoffröhren recycelt werden",
+            "ca": "Aquí es poden reciclar tub fluroescents",
+            "fr": "Les lampes fluorescentes peuvent être recyclées ici",
+            "cs": "Zářivky se zde dají recyklovat"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/fluorescent_tubes.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "recycling:green_waste=yes",
+          "ifnot": "recycling:green_waste=",
+          "then": {
+            "en": "Green waste can be recycled here",
+            "nl": "Groen afval kan hier gerecycled worden",
+            "de": "Grünabfälle können hier recycelt werden",
+            "it": "Verde",
+            "ca": "Aquí es poden reciclar residus verds",
+            "fr": "Les déchets verts peuvent être recyclés ici",
+            "cs": "Zelený odpad se zde dá recyklovat",
+            "es": "Los residuos orgánicos pueden reciclarse aquí"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/garden_waste.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "recycling:organic=yes",
+          "ifnot": "recycling:organic=",
+          "then": {
+            "en": "Organic waste can be recycled here",
+            "nl": "Organisch afval kan hier gerecycled worden",
+            "de": "Bio-Abfall kann hier recycelt werden",
+            "es": "Aquí se pueden reciclar residuos orgánicos",
+            "it": "Umido",
+            "ca": "Ací es poden reciclar residus orgànics",
+            "fr": "Les déchets organiques peuvent être recyclés ici",
+            "cs": "Organický odpad lze zde recyklovat"
+          },
+          "hideInAnswer": true,
+          "icon": {
+            "path": "./assets/layers/recycling/garden_waste.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "recycling:glass_bottles=yes",
+          "ifnot": "recycling:glass_bottles=",
+          "then": {
+            "en": "Glass bottles can be recycled here",
+            "nl": "Glazen flessen kunnen hier gerecycled worden",
+            "de": "Glasflaschen können hier recycelt werden",
+            "es": "Aquí se pueden reciclar botellas de cristal",
+            "it": "Bottiglie di vetro",
+            "ca": "Aquí es poden reciclar ampolles de vidre",
+            "fr": "Les bouteilles en verre et bocaux peuvent être recyclés ici",
+            "cs": "Skleněné lahve se zde dají recyklovat"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/glass_bottles.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "recycling:glass=yes",
+          "ifnot": "recycling:glass=",
+          "then": {
+            "en": "Glass can be recycled here",
+            "nl": "Glas kan hier gerecycled worden",
+            "de": "Glas kann hier recycelt werden",
+            "es": "Aquí se puede reciclar cristal",
+            "it": "Vetro",
+            "ca": "Aquí es pot reciclar vidre",
+            "fr": "Tout type de verre peut être recyclé ici",
+            "cs": "Sklo se zde dá recyklovat"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/glass.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "recycling:light_bulbs=yes",
+          "ifnot": "recycling:light_bulbs=",
+          "then": {
+            "en": "Light bulbs can be recycled here",
+            "nl": "Lampen kunnen hier gerecycled worden",
+            "de": "Hier können Glühbirnen recycelt werden",
+            "ca": "Aquí es poden reciclar bombetes",
+            "fr": "Les lampes basse consommation peuvent être recyclées ici",
+            "cs": "Žárovky se zde dají recyklovat",
+            "es": "Las bombillas pueden reciclarse aquí"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/light_bulbs.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "recycling:newspaper=yes",
+          "ifnot": "recycling:newspaper=",
+          "then": {
+            "en": "Newspapers can be recycled here",
+            "nl": "Kranten kunnen hier gerecycled worden",
+            "de": "Zeitungen können hier recycelt werden",
+            "es": "Aquí se pueden reciclar periódicos",
+            "it": "Giornali",
+            "ca": "Aquí es poden reciclar diaris",
+            "fr": "Les journaux peuvent être recyclés ici",
+            "cs": "Noviny se zde dají recyklovat"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/newspaper.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "recycling:paper=yes",
+          "ifnot": "recycling:paper=",
+          "then": {
+            "en": "Paper can be recycled here",
+            "nl": "Papier kan hier gerecycled worden",
+            "de": "Papier kann hier recycelt werden",
+            "es": "Aquí se puede reciclar papel",
+            "it": "Carta",
+            "ca": "Aquí es pot reciclar paper",
+            "fr": "Le papier peut être recyclé ici",
+            "cs": "Papír se zde dá recyklovat"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/paper.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "recycling:plastic_bottles=yes",
+          "ifnot": "recycling:plastic_bottles=",
+          "then": {
+            "en": "Plastic bottles can be recycled here",
+            "nl": "Plastic flessen kunnen hier gerecycled worden",
+            "de": "Plastikflaschen können hier recycelt werden",
+            "es": "Aquí se pueden reciclar botellas de plástico",
+            "it": "Bottiglie di platica",
+            "ca": "Aquí es poden reciclar ampolles de plàstic",
+            "fr": "Les bouteilles en plastique peuvent être recyclées ici",
+            "cs": "Plastové lahve se zde dají recyklovat"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/plastic_bottles.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "recycling:plastic_packaging=yes",
+          "ifnot": "recycling:plastic_packaging=",
+          "then": {
+            "en": "Plastic packaging can be recycled here",
+            "nl": "Plastic verpakking kan hier gerecycled worden",
+            "de": "Kunststoffverpackungen können hier recycelt werden",
+            "es": "Aquí se pueden reciclar embalajes plásticos",
+            "it": "Confezioni di plastica",
+            "ca": "Aquí es poden reciclar envasos de plàstic",
+            "fr": "Les emballages plastiques peuvent être recyclés ici",
+            "cs": "Plastové obaly se zde dají recyklovat"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/plastic_packaging.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "recycling:plastic=yes",
+          "ifnot": "recycling:plastic=",
+          "then": {
+            "en": "Plastic can be recycled here",
+            "nl": "Plastic kan hier gerecycled worden",
+            "de": "Kunststoff kann hier recycelt werden",
+            "es": "Aquí se puede reciclar plástico",
+            "it": "Plastica",
+            "ca": "Aquí es pot reciclar plàstic",
+            "fr": "Le plastique peut être recyclé ici",
+            "pl": "Plastik może być tutaj poddany recyklingowi",
+            "cs": "Plast se zde dá recyklovat"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/plastic.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "recycling:printer_cartridges=yes",
+          "ifnot": "recycling:printer_cartridges=",
+          "then": {
+            "en": "Printer cartridges can be recycled here",
+            "nl": "Inktpatronen kunnen hier gerecycleerd worden",
+            "de": "Druckerpatronen können hier recycelt werden",
+            "ca": "Els cartutxos d'impressora es poden reciclar aquí",
+            "fr": "Les cartouches d'imprimante peuvent être recyclées ici",
+            "cs": "Náplně do tiskáren lze recyklovat zde"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/printer_cartridges.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "recycling:scrap_metal=yes",
+          "ifnot": "recycling:scrap_metal=",
+          "then": {
+            "en": "Scrap metal can be recycled here",
+            "nl": "Oud metaal kan hier gerecycled worden",
+            "ca": "Aquí es pot reciclar ferralla",
+            "de": "Metallschrott kann hier recycelt werden",
+            "es": "Aquí se puede reciclar chatarra",
+            "it": "Rottami metallici",
+            "fr": "La ferraille peut être recyclée ici",
+            "cs": "Kovový šrot lze zde recyklovat"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/scrap_metal.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "recycling:shoes=yes",
+          "ifnot": "recycling:shoes=",
+          "then": {
+            "en": "Shoes can be recycled here",
+            "nl": "Schoenen kunnen hier gerecycled worden",
+            "de": "Schuhe können hier recycelt werden",
+            "es": "El calzado se puede reciclar aquí",
+            "it": "Scarpe",
+            "ca": "Aquí es poden reciclar sabates",
+            "fr": "Les chaussures peuvent être recyclées ici",
+            "cs": "Boty se zde dají recyklovat"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/shoes.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "recycling:small_appliances=yes",
+          "ifnot": "recycling:small_appliances=",
+          "then": {
+            "en": "Small electrical appliances can be recycled here",
+            "nl": "Kleine elektrische apparaten kunnen hier gerecycled worden",
+            "de": "Elektrokleingeräte können hier recycelt werden",
+            "it": "Piccoli elettrodomestici",
+            "ca": "Aquí es poden reciclar petits electrodomèstics",
+            "fr": "Les petits appareils électriques peuvent être recyclés ici",
+            "cs": "Drobné elektrospotřebiče se zde dají recyklovat"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/small_electrical_appliances.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "recycling:small_electrical_appliances=yes",
+          "ifnot": "recycling:small_electrical_appliances=",
+          "then": {
+            "en": "Small electrical appliances can be recycled here",
+            "nl": "Kleine elektrische apparaten kunnen hier gerecycled worden",
+            "de": "Elektrokleingeräte können hier recycelt werden",
+            "it": "Piccoli elettrodomestici",
+            "ca": "Aquí es poden reciclar petits electrodomèstics",
+            "fr": "Les petits appareils électriques peuvent être recyclés ici",
+            "cs": "Drobné elektrospotřebiče se zde dají recyklovat"
+          },
+          "hideInAnswer": true,
+          "icon": {
+            "path": "./assets/layers/recycling/small_electrical_appliances.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "recycling:needles=yes",
+          "ifnot": "recycling:needles=",
+          "then": {
+            "en": "Needles can be recycled here",
+            "nl": "Injectienaalden kunnen hier gerecycled worden",
+            "de": "Nadeln können hier recycelt werden",
+            "it": "Aghi e oggetti appuntiti",
+            "ca": "Aquí es poden reciclar agulles",
+            "fr": "Les aiguilles peuvent être recyclées ici",
+            "cs": "Jehly se zde dají recyklovat"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/needles.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "recycling:waste=yes",
+          "ifnot": "recycling:waste=",
+          "then": {
+            "en": "Residual waste can be recycled here",
+            "nl": "Restafval kan hier gerecycled worden",
+            "de": "Restmüll kann hier recycelt werden",
+            "it": "Secco",
+            "ca": "Ací es pot reciclar el rebuig",
+            "fr": "Les autres déchets peuvent être déposés ici",
+            "cs": "Zbytkový odpad zde lze recyklovat"
+          },
+          "icon": {
+            "path": "./assets/layers/waste_disposal/waste_disposal.svg",
+            "class": "medium"
+          },
+          "hideInAnswer": "recycling_type=container"
+        },
+        {
+          "if": "recycling:bicycles=yes",
+          "ifnot": "recycling:bicycles=",
+          "then": {
+            "en": "Bicycles can be recycled here",
+            "nl": "Fietsen (en fietswrakken) kunnen hier gerecycled worden",
+            "ca": "Aquí es poden reciclar bicicletes",
+            "de": "Fahrräder können hier recycelt werden",
+            "fr": "Les vélos peuvent être recyclés ici",
+            "cs": "Kola se zde dají recyklovat"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/bicycles.svg",
+            "class": "medium"
+          }
+        }
+      ]
+    },
+    {
+      "id": "operator",
+      "render": {
+        "en": "This recycling facility is operated by {operator}",
+        "nl": "Deze recyclingfaciliteit wordt beheerd door {operator}",
+        "de": "Die Recyclingeinrichtung wird betrieben von {operator}",
+        "es": "Esta infraestructura de reciclado la opera {operator}",
+        "it": "Questa struttura di raccola e riciclo è gestita da {operator}",
+        "ca": "Aquesta infraestuctura de reciclatge està operada per {operator}",
+        "fr": "Ce point de recyclage est géré par {operator}",
+        "cs": "Toto recyklační zařízení provozuje {operator}"
+      },
+      "question": {
+        "en": "What company operates this recycling facility?",
+        "nl": "Wat is de beheerder van deze recyclingfaciliteit?",
+        "de": "Welches Unternehmen betreibt diese Recyclinganlage?",
+        "es": "¿Que empresa opera esta facilidad de reciclado?",
+        "it": "Quale azienda gestisce questo impianto di raccolta e riciclo?",
+        "ca": "Quina empresa opera aquesta infraestructura de reciclatge?",
+        "fr": "Quelle entreprise gère ce point de recyclage ?",
+        "cs": "Jaká společnost provozuje toto recyklační zařízení?"
+      },
+      "freeform": {
+        "key": "operator",
+        "type": "string",
+        "inline": true
+      }
+    },
+    {
+      "id": "website",
+      "labels": [
+        "contact"
+      ],
+      "icon": "./assets/layers/icons/website.svg",
+      "question": {
+        "en": "What is the website of {title()}?",
+        "nl": "Wat is de website van {title()}?",
+        "fr": "Quel est le site web de {title()} ?",
+        "gl": "Cal é a páxina web de {title()}?",
+        "nb_NO": "Hva er nettsiden til {title()}?",
+        "ru": "Какой сайт у {title()}?",
+        "id": "Apa situs web dari {title()}?",
+        "zh_Hant": "{title()} 網址是什麼？",
+        "it": "Qual è il sito web di {title()}?",
+        "de": "Wie lautet die Webseite von {title()}?",
+        "pt_BR": "Qual o site de {title()}?",
+        "pl": "Jaka jest strona internetowa {title()}?",
+        "sv": "Vad är webbplatsen för {title()}?",
+        "pt": "Qual é o sítio web de {title()}?",
+        "eo": "Kie estas la retejo de {title()}?",
+        "hu": "Mi a weboldala ennek: {title()}?",
+        "ca": "Quina és la web de {title()}?",
+        "ja": "{title()}のウェブサイトは？",
+        "fil": "Ano ang website ng {title()}?",
+        "es": "¿Cual es el sitio web de {title()}?",
+        "zh_Hans": "{title()} 的网站为何？",
+        "da": "Hvad er webstedet for {title()}?",
+        "cs": "Jaká je webová stránka {title()}?"
+      },
+      "render": {
+        "*": "<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>"
+      },
+      "freeform": {
+        "key": "website",
+        "type": "url",
+        "addExtraTags": [
+          "contact:website="
+        ]
+      },
+      "mappings": [
+        {
+          "if": "contact:website~*",
+          "then": "<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>",
+          "hideInAnswer": true,
+          "icon": "./assets/layers/icons/website.svg"
+        }
+      ],
+      "editButtonAriaLabel": {
+        "en": "Edit website",
+        "nl": "Pas website aan",
+        "de": "Webseite bearbeiten"
+      },
+      "condition": "recycling_type=centre"
+    },
+    {
+      "id": "email",
+      "render": {
+        "*": "<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>"
+      },
+      "icon": "./assets/svg/envelope.svg",
+      "labels": [
+        "contact"
+      ],
+      "question": {
+        "nl": "Wat is het e-mailadres van {title()}?",
+        "fr": "Quelle est l'adresse courriel de {title()} ?",
+        "en": "What is the email address of {title()}?",
+        "nb_NO": "Hva er e-postadressen til {title()}?",
+        "ru": "Какой адрес электронной почты у {title()}?",
+        "id": "Apa alamat surel dari {title()}?",
+        "zh_Hant": "{title()} 的電子郵件地址是什麼？",
+        "it": "Qual è l'indirizzo email di {title()}?",
+        "de": "Wie lautet die Mail-Adresse von {title()}?",
+        "pt_BR": "Qual o endereço de e-mail de {title()}?",
+        "pl": "Jaki jest adres e-mail do {title()}?",
+        "sv": "Vad är e-postadressen till {title()}?",
+        "pt": "Qual é o endereço de e-mail de {title()}?",
+        "eo": "Kio estas la retpoŝta adreso de {title()}?",
+        "hu": "Mi a(z) {title()} e-mail címe?",
+        "ca": "Quina és l'adreça de correu electrònic de {title()}?",
+        "ja": "{title()}のEメールアドレスは何ですか？",
+        "sl": "Kakšen naslov elektronske pošte ima {title()}?",
+        "fil": "Ano ang email address ng {title()}?",
+        "es": "¿Cuál es la dirección de correo electrónico de {title()}?",
+        "zh_Hans": "{title()} 的电子邮箱地址为何？",
+        "da": "Hvad er mailadressen på {title()}?",
+        "cs": "Jaká je e-mailová adresa {title()}?"
+      },
+      "mappings": [
+        {
+          "if": "contact:email~*",
+          "icon": "./assets/svg/envelope.svg",
+          "then": "<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>",
+          "hideInAnswer": true
+        },
+        {
+          "if": "operator:email~*",
+          "icon": "./assets/svg/envelope.svg",
+          "then": "<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>",
+          "hideInAnswer": true
+        }
+      ],
+      "freeform": {
+        "key": "email",
+        "type": "email",
+        "addExtraTags": [
+          "contact:email="
+        ]
+      },
+      "editButtonAriaLabel": {
+        "en": "Edit email address",
+        "nl": "Pas emailadres aan",
+        "de": "E-Mail Adresse bearbeiten"
+      },
+      "condition": "recycling_type=centre"
+    },
+    {
+      "id": "phone",
+      "labels": [
+        "contact"
+      ],
+      "question": {
+        "en": "What is the phone number of {title()}?",
+        "nl": "Wat is het telefoonnummer van {title()}?",
+        "fr": "Quel est le numéro de téléphone de {title()} ?",
+        "de": "Wie lautet die Telefonnummer von {title()}?",
+        "nb_NO": "Hva er telefonnummeret til {title()}?",
+        "ru": "Какой номер телефона у {title()}?",
+        "sv": "Vad är telefonnumret till {title()}?",
+        "zh_Hant": "{title()} 的電話號碼是什麼？",
+        "it": "Qual è il numero di telefono di {title()}?",
+        "pt_BR": "Qual o número de telefone de {title()}?",
+        "id": "Berapa nomor telepon dari {title()}?",
+        "pl": "Jaki jest numer telefonu do {title()}?",
+        "pt": "Qual é o número de telefone de {title()}?",
+        "eo": "Kio estas la telefonnumero de {title()}?",
+        "hu": "Mi a telefonszáma ennek: {title()}?",
+        "ca": "Quin és el telèfon de {title()}?",
+        "ja": "{title()}の電話番号は？",
+        "sl": "Kakšno telefonsko številko ima {title()}?",
+        "fil": "Ano ang telepono ng {title()}?",
+        "es": "¿Cuál es el número de teléfono de {title()}?",
+        "zh_Hans": "{title()} 的电话号码为何？",
+        "da": "Hvad er telefonnummeret til {title()}?",
+        "cs": "Jaké je telefonní číslo {title()}?"
+      },
+      "render": {
+        "*": "<a href='tel:{phone}'>{phone}</a>"
+      },
+      "icon": "./assets/layers/questions/phone.svg",
+      "mappings": [
+        {
+          "if": "contact:phone~*",
+          "then": "<a href='tel:{contact:phone}'>{contact:phone}</a>",
+          "hideInAnswer": true,
+          "icon": "./assets/layers/questions/phone.svg"
+        }
+      ],
+      "freeform": {
+        "key": "phone",
+        "type": "phone",
+        "addExtraTags": [
+          "contact:phone="
+        ]
+      },
+      "editButtonAriaLabel": {
+        "en": "Edit phone number",
+        "nl": "Pas telefoonnummer aan",
+        "de": "Telefonnummer bearbeiten"
+      },
+      "condition": "recycling_type=centre"
+    },
+    {
+      "id": "opening_hours_24_7",
+      "question": {
+        "en": "What are the opening hours of this recycling facility?",
+        "fr": "Quelles sont les horaires d'ouverture de {title()} ?",
+        "de": "Wie sind die Öffnungszeiten dieser Recyclinganlage?",
+        "nl": "Wat zijn de openingstijden van deze recyclingfaciliteit?",
+        "nb_NO": "Hva er åpningstidene for {title()})",
+        "ru": "Какое время работы у {title()}?",
+        "zh_Hant": "{title()} 的開放時間是什麼？",
+        "it": "Quali sono gli orari di apertura di questo impianto di raccolta e riciclo?",
+        "pt_BR": "Qual o horário de funcionamento de {title()}?",
+        "pl": "Jakie są godziny otwarcia {title()}?",
+        "sv": "Vilka är öppettiderna för {title()}?",
+        "pt": "Qual é o horário de funcionamento de {title()}?",
+        "hu": "Mikor van nyitva ez: {title()}?",
+        "ca": "Quin és l'horari d'obertura d'aquesta instal·lació de reciclatge?",
+        "ja": "{title()}の営業時間は？",
+        "sl": "Kakšen odpiralni čas ima {title()}?",
+        "fil": "Anong oras nagbubukas ang {title()}?",
+        "es": "¿A qué horas abre esta facilidad de reciclado?",
+        "zh_Hans": "{title()} 的开放时间为何？",
+        "da": "Hvad er åbningstiderne for {title()}?",
+        "id": "Kapan jam buka {title()}?",
+        "cs": "Jaká je otevírací doba tohoto recyklačního zařízení?"
+      },
+      "render": {
+        "de": "<h3>Öffnungszeiten</h3>{opening_hours_table(opening_hours)}",
+        "fr": "<h3>Horaires d'ouverture</h3>{opening_hours_table(opening_hours)}",
+        "en": "<h3>Opening hours</h3>{opening_hours_table(opening_hours)}",
+        "nl": "<h3>Openingstijden</h3>{opening_hours_table(opening_hours)}",
+        "nb_NO": "<h3>Åpningstider</h3>{opening_hours_table(opening_hours)}",
+        "ru": "<h3>Часы работы</h3>{opening_hours_table(opening_hours)}",
+        "zh_Hant": "<h3>開放時間</h3>{opening_hours_table(opening_hours)}",
+        "it": "<h3>Orari di apertura</h3>{opening_hours_table(opening_hours)}",
+        "pl": "<h3> Godziny otwarcia</h3>{opening_hours_table(opening_hours)}",
+        "pt_BR": "<h3>Horário de funcionamento</h3>{opening_hours_table(opening_hours)}",
+        "sv": "<h3>Öppettider</h3> {opening_hours_table(opening_hours)}",
+        "pt": "<h3>Horário de funcionamento</h3>{opening_hours_table(opening_hours)}",
+        "eo": "<h3>Malfermitaj horoj</h3>{opening_hours_table(opening_hours)}",
+        "hu": "<h3>Nyitva tartás</h3>{opening_hours_table(opening_hours)}",
+        "ca": "<h3>Horari d'obertura</h3>{opening_hours_table(opening_hours)}",
+        "ja": "<h3>営業時間</h3>{opening_hours_table(opening_hours)}",
+        "sl": "<h3>Odpiralni čas</h3>{opening_hours_table(opening_hours)}",
+        "fil": "<h3>Mga oras na bukas</h3>{opening_hours_table(opening_hours)}",
+        "es": "<h3>Horas de apertura</h3>{opening_hours_table(opening_hours)}",
+        "zh_Hans": "<h3>开放时间</h3> {opening_hours_table(opening_hours)}",
+        "da": "<h3> Åbningstider</h3>{opening_hours_table(opening_hours)}",
+        "id": "<h3>Jam buka</h3>{opening_hours_table(opening_hours)}",
+        "pa_PK": "<h3>کھُلھے گھنٹے</h3>{opening_hours_table(opening_hours)}",
+        "cs": "<h3>Otevírací hodiny</h3>{opening_hours_table(opening_hours)}"
+      },
+      "freeform": {
+        "key": "opening_hours",
+        "type": "opening_hours",
+        "inline": false
+      },
+      "mappings": [
+        {
+          "if": "opening_hours=24/7",
+          "icon": "./assets/layers/questions/open24_7.svg",
+          "then": {
+            "en": "24/7 opened (including holidays)",
+            "de": "durchgehend geöffnet (auch an Feiertagen)",
+            "zh_Hant": "24/7 開放 (包括假日)",
+            "id": "Buka 24 jam (termasuk hari libur)",
+            "hu": "Éjjel-nappal nyitva (munkaszüneti napokon is)",
+            "es": "Abierta 24/7 (incluyendo festivos)",
+            "nl": "24/7 open (ook tijdens feestdagen)",
+            "fr": "Ouvert 24h/24 (jours fériés compris)",
+            "nb_NO": "Døgnåpent (inkludert helligdager)",
+            "cs": "Otevřeno 24/7 (včetně svátků)",
+            "ca": "Obert 24/7 (incloent-hi festius)",
+            "pl": "Otwarte 24/7 (również w święta)"
+          }
+        },
+        {
+          "#": "Just here to be able to handle those ~5000 incorrect 'opening_hours=closed' elements.",
+          "if": "opening_hours=closed",
+          "then": {
+            "en": "Marked as closed for an unspecified time",
+            "nl": "Gesloten voor onbepaalde duur",
+            "de": "Als geschlossen für eine unbestimmte Zeit markiert"
+          },
+          "hideInAnswer": true
+        }
+      ]
+    },
+    {
+      "id": "access",
+      "question": {
+        "en": "Who can use this recycling facility?",
+        "nl": "Wie kan deze recyclingfaciliteit gebruiken?",
+        "de": "Wer kann diese Recyclinganlage nutzen?",
+        "ca": "Qui pot utilitzar aquesta instal·lació de reciclatge?",
+        "fr": "Qui peut utiliser ce point de recyclage ?",
+        "cs": "Kdo může toto recyklační zařízení využívat?"
+      },
+      "mappings": [
+        {
+          "if": "access=yes",
+          "then": {
+            "en": "Everyone can use this recycling facility",
+            "nl": "Iedereen mag deze recyclingfaciliteit gebruiken",
+            "de": "Alle können diese Recyclinganlage nutzen",
+            "ca": "Tothom pot utilitzar aquesta instal·lació de reciclatge",
+            "fr": "Tout le monde peut utiliser ce point de recyclage",
+            "cs": "Toto recyklační zařízení může využívat každý"
+          }
+        },
+        {
+          "if": "access=residents",
+          "then": {
+            "en": "Only residents can use this recycling facility",
+            "nl": "Enkel bewoners kunnen deze recyclingfaciliteit gebruiken",
+            "de": "Nur Anwohnende können diese Recyclinganlage nutzen",
+            "ca": "Només els residents poden utilitzar aquesta instal·lació de reciclatge",
+            "fr": "Seuls les résidents peuvent utiliser ce point de recyclage",
+            "cs": "Toto recyklační zařízení mohou využívat pouze obyvatelé"
+          }
+        },
+        {
+          "if": "access=private",
+          "then": {
+            "en": "This recycling facility is only for private use",
+            "nl": "Deze recyclingfaciliteit is alleen voor privégebruik",
+            "de": "Diese Recyclinganlage ist nur für den privaten Gebrauch bestimmt",
+            "ca": "Aquesta instal·lació de reciclatge és només per a ús privat",
+            "fr": "Ce point de recyclage est réservé à un usage privé",
+            "cs": "Toto recyklační zařízení je určeno pouze pro soukromé použití"
+          }
+        }
+      ],
+      "freeform": {
+        "key": "access",
+        "type": "string",
+        "inline": true
+      },
+      "render": {
+        "en": "This recycling facility can be used by {access}",
+        "nl": "Deze recyclingfaciliteit kan gebruikt worden door {access}",
+        "de": "Diese Recyclinganlage kann von {access} genutzt werden",
+        "ca": "Aquesta instal·lació de reciclatge la pot utilitzar {access}",
+        "fr": "Ce point de recyclage peut être utilisé par {access}",
+        "cs": "Toto recyklační zařízení mohou využívat {access}"
+      }
+    },
+    {
+      "id": "survey_date",
+      "question": {
+        "en": "When was this object last surveyed?",
+        "de": "Wann wurde dieses Objekt zuletzt geprüft?",
+        "cs": "Kdy byl tento objekt naposledy zkoumán?"
+      },
+      "freeform": {
+        "key": "survey:date",
+        "type": "date",
+        "inline": true
+      },
+      "render": {
+        "en": "This object was last surveyed on <b>{survey:date}</b>",
+        "de": "Dieses Objekt wurde zuletzt geprüft am <b>{survey:date}</b>",
+        "cs": "Tento objekt byl naposledy zkoumán dne <b>{survey:date}</b>"
+      },
+      "mappings": [
+        {
+          "if": "survey:date:={_now:date}",
+          "then": {
+            "en": "This object was last surveyed today",
+            "de": "Dieses Objekt wurde heute zuletzt geprüft",
+            "cs": "Tento objekt byl naposledy zkoumán dnes"
+          }
+        }
+      ]
+    },
+    {
+      "id": "leftover-questions",
+      "render": {
+        "*": "{questions( ,)}"
+      }
+    },
+    {
+      "id": "lod",
+      "labels": [
+        "added_by_default"
+      ],
+      "render": {
+        "*": "{linked_data_from_website()}"
+      }
+    },
+    {
+      "id": "minimap",
+      "description": "Shows a small map with the feature. Added by default to every popup",
+      "render": {
+        "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+      }
+    },
+    {
+      "id": "move-button",
+      "render": {
+        "*": "{move_button()}"
+      }
+    },
+    {
+      "id": "delete-button",
+      "render": {
+        "*": "{delete_button()}"
+      }
+    },
+    {
+      "id": "last_edit",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+      "condition": {
+        "and": [
+          "_last_edit:contributor~*",
+          "_last_edit:changeset~*"
+        ]
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsTesting=true",
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_debug=yes",
+          "_csCount>=10"
+        ]
+      },
+      "render": {
+        "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+      }
+    },
+    {
+      "id": "favourite_status",
+      "render": {
+        "*": "{favourite_status()}"
+      }
+    },
+    {
+      "id": "qr_code",
+      "labels": [
+        "added_by_default"
+      ],
+      "classes": "flex items-center gap-x-2",
+      "render": {
+        "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+        "en": "{qr_code()}Scan this code to open this location on another device",
+        "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+        "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+      }
+    },
+    {
+      "id": "share",
+      "labels": [
+        "added_by_default"
+      ],
+      "metacondition": "_supports_sharing=yes",
+      "render": {
+        "de": "{share_link(,Standort teilen)}",
+        "en": "{share_link(,Share this location)}",
+        "nl": "{share_link(,Deel deze locatie)}"
+      }
+    },
+    {
+      "id": "all-tags",
+      "render": {
+        "*": "{all_tags()}"
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_tags=full",
+          "mapcomplete-show_debug=yes"
+        ]
+      }
+    }
+  ],
+  "filter": [
+    {
+      "id": "open_now",
+      "options": [
+        {
+          "question": {
+            "en": "Open now",
+            "nl": "Nu open",
+            "de": "Jetzt geöffnet",
+            "ca": "Obert ara",
+            "es": "Abierto",
+            "fr": "Ouvert maintenant",
+            "hu": "Most nyitva van",
+            "da": "Åbent nu",
+            "zh_Hant": "目前開放",
+            "id": "Saat ini buka",
+            "it": "Aperto ora",
+            "pl": "Otwarte teraz",
+            "cs": "Nyní otevřeno"
+          },
+          "osmTags": "_isOpen=yes"
+        }
+      ]
+    },
+    {
+      "id": "recyclingType",
+      "options": [
+        {
+          "question": {
+            "en": "All recycling types",
+            "nl": "Alle recyclingtypes",
+            "de": "Alle Recyclingarten",
+            "es": "Todos los tipos de reciclado",
+            "it": "Tutti i tipi di rifiuti",
+            "ca": "Tots els tipus de reciclatge",
+            "fr": "Tout type de recyclage",
+            "cs": "Všechny typy recyklace"
+          }
+        },
+        {
+          "question": {
+            "en": "Recycling of batteries",
+            "nl": "Recycling van batterijen",
+            "de": "Recycling von Batterien",
+            "es": "Reciclaje de baterías",
+            "it": "Riciclo di batterie",
+            "ca": "Reciclatge de piles",
+            "fr": "Recyclage de piles et batteries domestiques",
+            "cs": "Recyklace baterií"
+          },
+          "osmTags": "recycling:batteries=yes"
+        },
+        {
+          "question": {
+            "en": "Recycling of beverage cartons",
+            "nl": "Recycling van drankpakken",
+            "de": "Recycling von Getränkekartons",
+            "it": "Riciclo di confezioni per bevande",
+            "ca": "Reciclatge de cartrons de begudes",
+            "fr": "Recyclage d'emballage de boissons",
+            "cs": "Recyklace nápojových kartonů"
+          },
+          "osmTags": "recycling:beverage_cartons=yes"
+        },
+        {
+          "question": {
+            "en": "Recycling of cans",
+            "nl": "Recycling van blikken",
+            "de": "Recycling von Dosen",
+            "es": "Reciclaje de latas",
+            "it": "Riciclo di lattine",
+            "ca": "Reciclatge de llaunes",
+            "fr": "Recyclage de boites de conserve et de canettes",
+            "cs": "Recyklace plechovek"
+          },
+          "osmTags": "recycling:cans=yes"
+        },
+        {
+          "question": {
+            "en": "Recycling of clothes",
+            "nl": "Recycling van kleding",
+            "de": "Recycling von Kleidung",
+            "es": "Reciclaje de ropa",
+            "it": "Riciclo di abiti",
+            "ca": "Reciclatge de roba",
+            "fr": "Recyclage de vêtements",
+            "cs": "Recyklace oděvů"
+          },
+          "osmTags": "recycling:clothes=yes"
+        },
+        {
+          "question": {
+            "en": "Recycling of cooking oil",
+            "nl": "Recycling van frituurvet",
+            "de": "Recycling von Speiseöl",
+            "es": "Reciclaje de aceite de cocina",
+            "it": "Riciclo di olio da cucina",
+            "ca": "Reciclatge d'oli de cuina",
+            "fr": "Recyclage des huiles de friture",
+            "cs": "Recyklace kuchyňského oleje"
+          },
+          "osmTags": "recycling:cooking_oil=yes"
+        },
+        {
+          "question": {
+            "en": "Recycling of engine oil",
+            "nl": "Recycling van motorolie",
+            "de": "Recycling von Motoröl",
+            "es": "Reciclaje de aceite de motor",
+            "it": "Riciclo di olio da motore",
+            "ca": "Reciclatge d'oli de motor",
+            "fr": "Recyclage des huiles de moteur",
+            "cs": "Recyklace motorového oleje"
+          },
+          "osmTags": "recycling:engine_oil=yes"
+        },
+        {
+          "question": {
+            "en": "Recycling of fluorescent tubes",
+            "nl": "Recycling van tl-buizen",
+            "de": "Recycling von Leuchtstoffröhren",
+            "ca": "Reciclatge de tubs fluorescents",
+            "fr": "Recyclage des lampes fluorescentes",
+            "cs": "Recyklace zářivek"
+          },
+          "osmTags": "recycling:fluorescent_tubes=yes"
+        },
+        {
+          "question": {
+            "en": "Recycling of green waste",
+            "nl": "Recycling van groen afval",
+            "de": "Recycling von Grünabfällen",
+            "it": "Riciclo di umido",
+            "ca": "Reciclatge de residus verds",
+            "fr": "Recyclage des déchets verts",
+            "cs": "Recyklace zeleného odpadu",
+            "es": "Reciclaje de residuos orgánicos"
+          },
+          "osmTags": {
+            "or": [
+              "recycling:green_waste=yes",
+              "recycling:organic=yes"
+            ]
+          }
+        },
+        {
+          "question": {
+            "en": "Recycling of glass bottles",
+            "nl": "Recycling van glazen flessen",
+            "de": "Recycling von Glasflaschen",
+            "es": "Reciclaje de botellas de cristal",
+            "it": "Riciclo di bottiglie di vetro",
+            "ca": "Reciclatge d'ampolles de vidre",
+            "fr": "Recyclage des bouteilles en verre et des bocaux",
+            "cs": "Recyklace skleněných lahví"
+          },
+          "osmTags": "recycling:glass_bottles=yes"
+        },
+        {
+          "question": {
+            "en": "Recycling of glass",
+            "nl": "Recycling van glas",
+            "de": "Recycling von Glas",
+            "es": "Reciclaje de cristal",
+            "it": "Riciclo di vetro",
+            "ca": "Reciclatge de vidre",
+            "fr": "Recyclage de tout type de verre",
+            "cs": "Recyklace skla"
+          },
+          "osmTags": "recycling:glass=yes"
+        },
+        {
+          "question": {
+            "en": "Recycling of light bulbs",
+            "nl": "Recycling van lampen",
+            "de": "Recycling von Glühbirnen",
+            "ca": "Reciclatge de bombetes",
+            "fr": "Recyclage des lampes basse consommation",
+            "cs": "Recyklace žárovek",
+            "es": "Reciclaje de bombillas"
+          },
+          "osmTags": "recycling:light_bulbs=yes"
+        },
+        {
+          "question": {
+            "en": "Recycling of newspapers",
+            "nl": "Recycling van kranten",
+            "de": "Recycling von Zeitungen",
+            "es": "Reciclaje de periódicos",
+            "it": "Riciclo di giornali",
+            "ca": "Reciclatge de diaris",
+            "fr": "Recyclage des journaux",
+            "cs": "Recyklace novin"
+          },
+          "osmTags": "recycling:newspaper=yes"
+        },
+        {
+          "question": {
+            "en": "Recycling of paper",
+            "nl": "Recycling van papier",
+            "de": "Recycling von Papier",
+            "es": "Reciclaje de papel",
+            "it": "Riciclo di carta",
+            "ca": "Reciclatge de paper",
+            "fr": "Recyclage du papier",
+            "cs": "Recyklace papíru"
+          },
+          "osmTags": "recycling:paper=yes"
+        },
+        {
+          "question": {
+            "en": "Recycling of plastic bottles",
+            "nl": "Recycling van plastic flessen",
+            "de": "Recycling von Plastikflaschen",
+            "es": "Reciclaje de botellas de papel",
+            "it": "Riciclo di bottiglie di plastica",
+            "ca": "Reciclatge d'ampolles de plàstic",
+            "fr": "Recyclage des bouteilles en plastique",
+            "cs": "Recyklace plastových lahví"
+          },
+          "osmTags": "recycling:plastic_bottles=yes"
+        },
+        {
+          "question": {
+            "en": "Recycling of plastic packaging",
+            "nl": "Recycling van plastic verpakking",
+            "de": "Recycling von Kunststoffverpackungen",
+            "es": "Reciclaje de embalajes plásticos",
+            "it": "Riciclo di confezioni di plastica",
+            "ca": "Reciclatge d'envasos de plàstic",
+            "fr": "Recyclage des emballages en plastique",
+            "cs": "Recyklace plastových obalů"
+          },
+          "osmTags": "recycling:plastic_packaging=yes"
+        },
+        {
+          "question": {
+            "en": "Recycling of plastic",
+            "nl": "Recycling van plastic",
+            "de": "Recycling von Kunststoffen",
+            "es": "Reciclaje de plástico",
+            "it": "Riciclo di plastica",
+            "ca": "Reciclatge de plàstic",
+            "fr": "Recyclage du plastique",
+            "cs": "Recyklace plastů"
+          },
+          "osmTags": "recycling:plastic=yes"
+        },
+        {
+          "question": {
+            "en": "Recycling of scrap metal",
+            "nl": "Recycling van oud metaal",
+            "de": "Recycling von Metallschrott",
+            "es": "Reciclaje de chatarra",
+            "it": "Riciclo di rottami metallici",
+            "ca": "Reciclatge de ferralla",
+            "fr": "Recyclage de la ferraille",
+            "cs": "Recyklace kovového šrotu"
+          },
+          "osmTags": "recycling:scrap_metal=yes"
+        },
+        {
+          "question": {
+            "en": "Recycling of small electrical appliances",
+            "nl": "Recycling van kleine elektrische apparaten",
+            "de": "Recycling von Elektrokleingeräten",
+            "es": "Reciclaje de pequeños electrodomésticos",
+            "it": "Riciclo di piccoli elettrodomestici",
+            "ca": "Reciclatge de petits electrodomèstics",
+            "fr": "Recyclage des petits appareils électriques",
+            "cs": "Recyklace malých elektrospotřebičů"
+          },
+          "osmTags": {
+            "or": [
+              "recycling:small_appliances=yes",
+              "recycling:small_electrical_appliances=yes"
+            ]
+          }
+        },
+        {
+          "question": {
+            "en": "Recycling of residual waste",
+            "nl": "Recycling van restafval",
+            "de": "Recycling von Restabfällen",
+            "it": "Riciclo di secco",
+            "ca": "Reciclatge del rebuig",
+            "fr": "Recyclage des autres déchets",
+            "cs": "Recyklace zbytkového odpadu"
+          },
+          "osmTags": "recycling:waste=yes"
+        },
+        {
+          "question": {
+            "en": "Recycling of printer cartridges",
+            "nl": "Recycling van inktpatronen",
+            "ca": "Reciclatge de cartutxos d'impressora",
+            "de": "Recycling von Druckerpatronen",
+            "it": "Riciclo di secco",
+            "fr": "Recyclage des cartouches d'imprimante",
+            "cs": "Recyklace náplní do tiskáren"
+          },
+          "osmTags": "recycling:printer_cartridges=yes"
+        },
+        {
+          "question": {
+            "en": "Recycling of bicycles",
+            "nl": "Recycling van fietsen",
+            "ca": "Reciclatge de bicicletes",
+            "de": "Recycling von Fahrrädern",
+            "fr": "Recyclage des vélos",
+            "cs": "Recyklace jízdních kol"
+          },
+          "osmTags": "recycling:bicycles=yes"
+        }
+      ]
+    },
+    {
+      "#": "ignore-possible-duplicate",
+      "id": "public-access",
+      "options": [
+        {
+          "question": {
+            "en": "Only public access",
+            "nl": "Enkel publiek toegankelijke afvalcontainers",
+            "de": "Nur öffentliche Recyclingeinrichtungen",
+            "it": "Solo accesso pubblico",
+            "id": "Hanya akses publik",
+            "da": "Kun offentlig adgang",
+            "ca": "Només amb accés públic",
+            "fr": "Accès public uniquement",
+            "cs": "Pouze veřejný přístup"
+          },
+          "osmTags": {
+            "or": [
+              "access=yes",
+              "access="
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "deletion": {
+    "neededChangesets": 1
+  },
+  "allowMove": {
+    "enableRelocation": true,
+    "enableImproveAccuracy": true
+  },
+  "titleIcons": [
+    {
+      "id": "wikipedialink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+      "condition": {
+        "or": [
+          "wikipedia~*",
+          "wikidata~*"
+        ]
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "wikipedia=",
+          "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "open_until",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "#": "Titleicon showing e.g. 'open until 17:00'",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{opening_hours_state()}",
+      "condition": {
+        "or": [
+          "opening_hours~*",
+          {
+            "or": [
+              {
+                "and": [
+                  "seasonal~.*winter.*",
+                  "_now:date~....-(12|01|02)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*spring.*",
+                  "_now:date~....-(03|04|05)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*summer.*",
+                  "_now:date~....-(06|07|08)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*autumn.*",
+                  "_now:date~....-(09|10|11)-.."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "phonelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": {
+        "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+        "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+        "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+        "_context": "layers:icons.tagRenderings.phonelink.render"
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:phone~*",
+          "then": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+          }
+        }
+      ],
+      "condition": {
+        "or": [
+          "phone~*",
+          "contact:phone~*"
+        ]
+      }
+    },
+    {
+      "id": "emaillink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:email~*",
+          "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:email~*",
+          "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        }
+      ],
+      "condition": {
+        "or": [
+          "email~*",
+          "contact:email~*",
+          "operator:email~*"
+        ]
+      }
+    },
+    {
+      "id": "websitelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "website~*",
+          "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:website~*",
+          "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "context:website~*",
+          "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "smokingicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=no",
+          "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=yes",
+          "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+        }
+      ]
+    },
+    {
+      "id": "dogicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "if": "dog=no",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+        },
+        {
+          "if": "dog=leashed",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+        },
+        {
+          "if": {
+            "or": [
+              "dog=yes",
+              "dog=unleashed"
+            ]
+          },
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+        }
+      ]
+    },
+    {
+      "id": "sharelink",
+      "labels": [
+        "defaults"
+      ],
+      "render": "{share_link()}",
+      "metacondition": "_supports_sharing=yes"
+    },
+    {
+      "id": "favourite_title_icon",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "*": "{favourite_icon()}"
+      },
+      "metacondition": "_loggedIn=true"
+    },
+    {
+      "id": "osmlink",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+        "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+        "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+        "_context": "layers:icons.tagRenderings.osmlink.render"
+      },
+      "mappings": [
+        {
+          "if": "id~.*/-.*",
+          "then": ""
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "_backend~*",
+          "then": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+          }
+        }
+      ],
+      "condition": "id~(node|way|relation)/[0-9]*"
+    },
+    {
+      "id": "direction",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "{direction_indicator()}"
+    },
+    {
+      "id": "rating",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{rating()}"
+    }
+  ],
+  "_layerIcon": [
+    {
+      "icon": "circle",
+      "color": "white"
+    },
+    {
+      "icon": "./assets/layers/recycling/recycling-14.svg"
+    }
+  ]
+}

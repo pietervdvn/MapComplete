@@ -1,0 +1,939 @@
+{
+  "id": "climbing_area",
+  "name": {
+    "nl": "Klimgelegenheden",
+    "de": "Klettereinrichtungen",
+    "en": "Climbing opportunities",
+    "ja": "登坂教室",
+    "fr": "Opportunité d’escalade",
+    "it": "Opportunità di arrampicata",
+    "ca": "Oportunitats d'escalada",
+    "cs": "Lezecké příležitosti"
+  },
+  "description": {
+    "en": "An area where climbing is possible, e.g. a crag, site, boulder, … Contains aggregation of routes",
+    "de": "Ein Gebiet, in dem Klettern möglich ist, z. B. ein Felsen, ein Klettergarten, eine Boulderhalle, … Enthält eine Sammlung von Routen",
+    "nl": "Een gebied waar klimmen mogelijk is, bv. een klimsite, een bolder of klimrots,…",
+    "ca": "Una àrea on l'escalada és possible, p.e. una penya, lloc, bloc, … Conté l'agregació de rutes",
+    "cs": "Oblast, kde je možné lezení, např. skalisko, místo, balvan, … Obsahuje agregaci cest"
+  },
+  "source": {
+    "osmTags": {
+      "and": [
+        "sport=climbing",
+        "climbing!~route",
+        "leisure!~sports_centre",
+        "climbing!=route_top",
+        "climbing!=route_bottom"
+      ]
+    }
+  },
+  "calculatedTags": [
+    "_contained_climbing_routes_properties=overlapWith(feat)('climbing_route').map(f => f.feat.properties).map(p => {return {id: p.id, name: p.name, 'climbing:grade:french': p['climbing:grade:french'], 'climbing:length': p['climbing:length']} })",
+    "_contained_climbing_routes=get(feat)('_contained_climbing_routes_properties')?.map(p => `<li><a href='#${p.id}'>${p.name ?? 'climbing route'}</a> (<b class='climbing-${p['__difficulty:char']} rounded-full p-l-1 p-r-1'>${p['climbing:grade:french'] ?? 'unknown difficulty'}</b>, ${p['climbing:length'] ?? 'unkown length'} meter)</li>`).join('')",
+    "_contained_climbing_route_ids=get(feat)('_contained_climbing_routes_properties')?.map(p => p.id)",
+    "_difficulty_hist=get(feat)('_contained_climbing_routes_properties')?.map(p => p['climbing:grade:french'])?.filter(p => (p ?? null) !== null)?.sort()",
+    "_difficulty_max=get(feat)('_difficulty_hist')?.at(-1)",
+    "_difficulty_min=get(feat)('_difficulty_hist')?.at(0)",
+    "_length_hist=get(feat)('_contained_climbing_routes_properties')?.map(p => p['climbing:length'])?.filter(p => (p ?? null)  !== null)?.sort()",
+    "_length_max=get(feat)('_length_hist')?.at(-1)",
+    "_length_min=get(feat)('_length_hist')?.at(0)",
+    "_bolts_hist=get(feat)('_contained_climbing_routes_properties')?.map(p => p['climbing:bolts'])?.filter(p => (p ?? null)  !== null)?.sort()",
+    "_bolts_max=get(feat)('_bolts_hist')?.at(-1)",
+    "_bolts_min=get(feat)('_bolts_hist')?.at(0)",
+    "_contained_climbing_routes_count=get(feat)('_contained_climbing_routes_properties')?.length"
+  ],
+  "minzoom": 10,
+  "title": {
+    "render": {
+      "en": "Climbing opportunity",
+      "nl": "Klimgelegenheid",
+      "de": "Klettereinrichtung",
+      "ja": "登坂教室",
+      "nb_NO": "Klatremulighet",
+      "fr": "Opportunité d’escalade",
+      "it": "Opportunità di arrampicata",
+      "ca": "Oportunitat d'escalada",
+      "cs": "Příležitost k lezení"
+    },
+    "mappings": [
+      {
+        "if": "climbing=crag",
+        "then": {
+          "en": "Climbing crag <b>{name}</b>",
+          "fr": "Mur d’escalade <b>{name}</b>",
+          "it": "Muro da arrampicata <b>{name}</b>",
+          "de": "Klettergarten <b>{name}</b>",
+          "nl": "Klimrots of klimzone <b>{name}</b>",
+          "cs": "Lezecká cesta <b>{name}</b>"
+        }
+      },
+      {
+        "if": {
+          "and": [
+            {
+              "or": [
+                "climbing=area",
+                "climbing=site"
+              ]
+            },
+            "name~*"
+          ]
+        },
+        "then": {
+          "en": "Climbing area <b>{name}</b>",
+          "nl": "Klimsite <b>{name}</b>",
+          "fr": "Zone d’escalade <b>{name}</b>",
+          "de": "Klettergebiet <b>{name}</b>",
+          "it": "Area di arrampicata <b>{name}</b>",
+          "cs": "Lezecká oblast <b>{name}</b>"
+        }
+      },
+      {
+        "if": {
+          "or": [
+            "climbing=site",
+            "climbing=area"
+          ]
+        },
+        "then": {
+          "en": "Climbing site",
+          "nl": "Klimsite",
+          "fr": "Site d’escalade",
+          "de": "Klettergebiet",
+          "it": "Sito di arrampicata",
+          "ca": "Llocs d'escalada",
+          "cs": "Lezecká lokalita"
+        }
+      },
+      {
+        "if": "name~*",
+        "then": {
+          "nl": "Klimgelegenheid <b>{name}</b>",
+          "en": "Climbing opportunity <b>{name}</b>",
+          "fr": "Opportunité d’escalade <b>{name}</b>",
+          "de": "Klettereinrichtung <b>{name}</b>",
+          "it": "Opportunità di arrampicata <b>{name}</b>",
+          "ca": "Oportunitat d'escalada <b>{name}</b>",
+          "cs": "Lezecká příležitost <b>{name}</b>"
+        }
+      }
+    ]
+  },
+  "pointRendering": [
+    {
+      "iconSize": "40,40",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": {
+            "render": "./assets/themes/climbing/climbing_no_rope.svg",
+            "id": "assetsthemesclimbingclimbingnoropesvg"
+          }
+        }
+      ],
+      "iconBadges": [
+        {
+          "if": "_favourite=yes",
+          "then": "circle:white;heart:red"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "dashArray": "8 16",
+      "lineCap": "square",
+      "color": "#d38d5fAA",
+      "fill": "no",
+      "width": "8"
+    }
+  ],
+  "presets": [
+    {
+      "tags": [
+        "sport=climbing"
+      ],
+      "title": {
+        "en": "a climbing opportunity",
+        "nl": "een klimgelegenheid",
+        "de": "eine Klettereinrichtung",
+        "ja": "登坂教室",
+        "nb_NO": "en klatremulighet",
+        "fr": "une opportunité d’escalade",
+        "it": "una opportunità di arrampicata",
+        "ca": "una oportuinitat d'escalada",
+        "cs": "lezecká příležitost"
+      },
+      "description": {
+        "nl": "Een klimgelegenheid",
+        "de": "Eine Klettereinrichtung",
+        "en": "A climbing opportunity",
+        "ja": "登坂教室",
+        "nb_NO": "En klatremulighet",
+        "fr": "Opportunité d’escalade",
+        "it": "Un’opportunità di arrampicata",
+        "ca": "Una oportunitat d'escalada",
+        "cs": "Lezecká příležitost"
+      }
+    }
+  ],
+  "tagRenderings": [
+    {
+      "id": "just_created",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "This element shows a 'thank you' that the contributor has recently created this element",
+      "classes": "rounded-xl thanks",
+      "mappings": [
+        {
+          "if": "id~*",
+          "icon": "./assets/svg/party.svg",
+          "then": {
+            "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+            "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+            "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+            "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+            "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+            "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+          }
+        }
+      ],
+      "condition": {
+        "and": [
+          "_backend~*",
+          "_last_edit:passed_time<300",
+          {
+            "or": [
+              "_version_number=",
+              "_version_number=1"
+            ]
+          }
+        ]
+      },
+      "metacondition": {
+        "and": [
+          {
+            "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+            "or": [
+              "_last_edit:contributor:uid:={_uid}",
+              "_last_edit:contributor:uid="
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "images",
+      "description": "This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images",
+      "render": {
+        "*": "{image_carousel()}{image_upload()}{nearby_images():my-4}"
+      },
+      "classes": "my-4"
+    },
+    {
+      "id": "minimap",
+      "render": "{minimap(18, id, _contained_climbing_route_ids): height: 9rem; overflow: hidden; border-radius:3rem; }"
+    },
+    {
+      "render": {
+        "en": "<h3>Length overview</h3>{histogram(_length_hist)}",
+        "fr": "<h3>Résumé de longueur</h3>{histogram(_length_hist)}",
+        "de": "<h3>Längenübersicht</h3>{histogram(_length_hist)}",
+        "it": "<h3>Riassunto della lunghezza</h3>{histogram(_length_hist)}",
+        "nl": "<h3>Overzicht van lengtes</h3>{histogram(_length_hist)}",
+        "cs": "<h3>Přehled délky</h3>{histogram(_length_hist)}"
+      },
+      "condition": "_length_hist!~\\[\\]",
+      "id": "Contained routes length hist"
+    },
+    {
+      "render": {
+        "en": "<h3>Grades overview</h3>{histogram(_difficulty_hist)}",
+        "fr": "<h3>Résumé des difficultés</h3>{histogram(_difficulty_hist)}",
+        "de": "<h3>Schwierigkeitsübersicht</h3>{histogram(_difficulty_hist)}",
+        "it": "<h3>Riassunto delle difficoltà</h3>{histogram(_difficulty_hist)}",
+        "nl": "<h3>Overzicht van moeilijkheidsgraden</h>{histogram(_difficulty_hist)}",
+        "cs": "<h3>Přehled hodnocení</h3>{histogram(_difficulty_hist)}"
+      },
+      "condition": "_difficulty_hist!~\\[\\]",
+      "id": "Contained routes hist"
+    },
+    {
+      "render": {
+        "en": "<h3>Contains {_contained_climbing_routes_count} routes</h3> <ul>{_contained_climbing_routes}</ul>",
+        "fr": "<h3>Contient {_contained_climbing_routes_count} voies</h3> <ul>{_contained_climbing_routes}</ul>",
+        "it": "<h3>Contiene {_contained_climbing_routes_count} vie</h3> <ul>{_contained_climbing_routes}</ul>",
+        "de": "<h3> Enthält {_contained_climbing_routes_count} Routen</h3> <ul>{_contained_climbing_routes}</ul>",
+        "nl": "<h3>Bevat {_contained_climbing_routes_count} routes</h3> <ul>{_contained_climbing_routes}</ul>",
+        "ca": "<h3>Conté {_contained_climbing_routes_count} rutes</h3> <ul>{_contained_climbing_routes}</ul>",
+        "cs": "<h3>Obsahuje {_contained_climbing_routes_count} tras</h3> <ul>{_contained_climbing_routes}</ul>"
+      },
+      "condition": "_contained_climbing_routes~*",
+      "id": "Contained_climbing_routes"
+    },
+    {
+      "render": {
+        "en": "<strong>{name}</strong>",
+        "nl": "<strong>{name}</strong>",
+        "de": "<strong>{name}</strong>",
+        "ca": "<strong>{name}</strong>",
+        "fr": "<strong>{name}</strong>",
+        "id": "<strong>{name}</strong>",
+        "ru": "<strong>{name}</strong>",
+        "ja": "<strong>{name}</strong>",
+        "it": "<strong>{name}</strong>",
+        "eu": "<strong>{name}</strong>",
+        "cs": "<strong>{name}</strong>"
+      },
+      "question": {
+        "en": "What is the name of this climbing opportunity?",
+        "nl": "Wat is de naam van dit Klimgelegenheid?",
+        "de": "Wie heißt die Klettereinrichtung?",
+        "ja": "この登坂教室の名前は何ですか?",
+        "fr": "Quel est le nom de ce site ?",
+        "it": "Qual è il nome di questa opportunità di arrampicata?",
+        "cs": "Jak se jmenuje tato lezecká příležitost?"
+      },
+      "freeform": {
+        "key": "name",
+        "inline": true
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "noname=yes",
+              "name="
+            ]
+          },
+          "then": {
+            "en": "This climbing opportunity doesn't have a name",
+            "nl": "Dit Klimgelegenheid heeft geen naam",
+            "de": "Die Klettereinrichtung hat keinen Namen",
+            "ja": "この登坂教室には名前がついていない",
+            "fr": "Ce site n’a pas de nom",
+            "it": "Questa opportunità di arrampicata non ha un nome",
+            "cs": "Tato lezecká příležitost nemá jméno"
+          }
+        }
+      ],
+      "id": "name"
+    },
+    {
+      "question": "What kind of climbing opportunity is this?",
+      "mappings": [
+        {
+          "if": "climbing=boulder",
+          "then": {
+            "en": "A climbing boulder - a single rock or cliff with one or a few climbing routes which can be climbed safely without rope",
+            "fr": "Rocher d’escalade, rocher avec une ou peu de voie permettant d’escalader sans corde",
+            "de": "Ein Kletterfelsen - ein einzelner Felsen oder eine Klippe mit einer oder wenigen Kletterrouten, die ohne Seil sicher bestiegen werden können",
+            "it": "Un masso per arrampicata (una singola roccia o falesia con una o poche vie di arrampicata che possono essere scalate in sicurezza senza una corda)",
+            "nl": "Een klimboulder - een enkele rots of klif met één of enkele klimroutes die veilig zonder touw kunnen worden beklommen",
+            "ca": "Una roca d'escalada: una única roca o penya-segat amb una o unes quantes vies d'escalada que es poden escalar amb seguretat sense corda",
+            "cs": "Lezecký balvan - jediná skála nebo útes s jednou nebo několika lezeckými cestami, na které lze bezpečně vylézt bez lana"
+          }
+        },
+        {
+          "if": "climbing=crag",
+          "then": {
+            "en": "A climbing crag - a single rock or cliff with at least a few climbing routes",
+            "fr": "Mur d’escalade, rocher avec plusieurs voies d’escalades",
+            "it": "Un muro da arrampicata (un singolo masso o falesia con almeno qualche via per arrampicata)",
+            "de": "Ein Kletterfelsen - ein einzelner Fels oder eine Klippe mit mindestens einigen Kletterrouten",
+            "nl": "Een klimzone - een enkele rots of klif met klimroutes",
+            "cs": "Lezecká skála - jediná skála nebo útes s alespoň několika lezeckými cestami"
+          }
+        },
+        {
+          "if": "climbing=area",
+          "then": "A climbing area with one or more climbing crags and/or boulders"
+        }
+      ],
+      "id": "Type"
+    },
+    {
+      "question": {
+        "en": "What is the rock type here?",
+        "fr": "Quel est le type de roche ?",
+        "de": "Welchen Gesteinstyp gibt es hier?",
+        "it": "Qual è il tipo di roccia qua?",
+        "nl": "Wat is de rotssoort?",
+        "ca": "Quin és el tipus de roca aquí?",
+        "cs": "Jaký je zde typ skály?"
+      },
+      "render": {
+        "en": "The rock type is {rock}",
+        "fr": "La roche est du {rock}",
+        "de": "Der Gesteinstyp ist {rock}",
+        "it": "Il tipo di roccia è {rock}",
+        "nl": "De rotssoort is {rock}",
+        "ca": "El tipus de roca és {rock}",
+        "cs": "Typ skály je {rock}"
+      },
+      "freeform": {
+        "key": "rock",
+        "inline": true
+      },
+      "mappings": [
+        {
+          "if": "rock=limestone",
+          "then": {
+            "en": "Limestone",
+            "nl": "Kalksteen",
+            "fr": "Calcaire",
+            "de": "Kalkstein",
+            "it": "Calcare",
+            "pa_PK": "چونہ پتھر",
+            "eu": "Kareharria",
+            "ca": "Calcària",
+            "cs": "Vápenec"
+          }
+        }
+      ],
+      "condition": {
+        "or": [
+          "climbing=crag",
+          "natural=cliff",
+          "natural=bare_rock"
+        ]
+      },
+      "id": "Rock type (crag/rock/cliff only)"
+    },
+    {
+      "id": "reviews",
+      "description": "Shows the reviews module (including the possibility to leave a review)",
+      "render": {
+        "*": "{create_review()}{list_reviews()}"
+      }
+    },
+    {
+      "id": "website",
+      "question": {
+        "en": "Is there a (unofficial) website with more informations (e.g. topos)?",
+        "de": "Gibt es eine (inoffizielle) Website mit mehr Informationen (z.B. Topos)?",
+        "ja": "もっと情報のある(非公式の)ウェブサイトはありますか(例えば、topos)?",
+        "nl": "Is er een (onofficiële) website met meer informatie (b.v. met topos)?",
+        "ru": "Есть ли (неофициальный) веб-сайт с более подробной информацией (напр., topos)?",
+        "fr": "Existe-t’il un site avec plus d’informations (ex : topographie) ?",
+        "it": "C’è un sito web (anche non ufficiale) con qualche informazione in più (ad es. topografie)?",
+        "cs": "Existuje (neoficiální) webová stránka s více informacemi (např. topos)?",
+        "_context": "layers:climbing.tagRenderings.website.question"
+      },
+      "condition": {
+        "and": [
+          "leisure!~sports_centre",
+          "sport=climbing",
+          "office=",
+          "club="
+        ]
+      },
+      "render": "<a href='{url}' target='_blank' rel='noopener'>{url}</a>",
+      "freeform": {
+        "key": "url",
+        "type": "url"
+      }
+    },
+    {
+      "id": "fee",
+      "question": {
+        "en": "Is a fee required to climb here?",
+        "es": "¿Se requiere una tasa para escalar aquí?",
+        "de": "Ist das Klettern hier gebührenpflichtig?",
+        "nl": "Moet men betalen om hier te klimmen?",
+        "fr": "Est-ce que la grimpe sur ce site est payante ?",
+        "ca": "Es requereix una tarifa per a pujar aquí?",
+        "cs": "Vyžaduje se za výstup poplatek?",
+        "_context": "layers:climbing.tagRenderings.fee.question"
+      },
+      "render": {
+        "en": "A fee of {charge} should be paid for climbing here",
+        "de": "Zum Klettern wird eine Gebühr von {charge} erhoben",
+        "es": "Se debe de pagar una tasa de {charge} para escalar aquí",
+        "nl": "Men moet {charge} betalen om hier te klimmen",
+        "fr": "Une taxe de {charge} doit être payée pour grimper ici",
+        "ca": "S'ha de pagar una tarifa de {charge} per a escalar aquí",
+        "cs": "Za výstup zde je třeba zaplatit poplatek ve výši {charge}",
+        "_context": "layers:climbing.tagRenderings.fee.render"
+      },
+      "freeform": {
+        "key": "charge",
+        "addExtraTags": [
+          "fee=yes"
+        ],
+        "inline": true
+      },
+      "mappings": [
+        {
+          "if": "fee=no",
+          "addExtraTags": [
+            "charge="
+          ],
+          "then": {
+            "en": "Climbing here is free of charge",
+            "de": "Das Klettern ist hier kostenlos",
+            "es": "La escalada es gratis",
+            "nl": "Hier klimmen is gratis",
+            "fr": "Grimper ici est gratuit",
+            "ca": "L'escalada en bloc aquí és gratuïta",
+            "cs": "Lezení je zde zdarma",
+            "_context": "layers:climbing.tagRenderings.fee.mappings.0.then"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "fee=yes",
+              "charge="
+            ]
+          },
+          "then": {
+            "en": "Paying a fee is required to climb here",
+            "es": "Hay que pagar una tasa para escalar aquí",
+            "de": "Zum Klettern ist eine Gebühr zu zahlen",
+            "nl": "Men moet betalen om hier te klimmen",
+            "fr": "Il faut payer une taxe pour grimper ici",
+            "ca": "Cal pagar una quota per a escalar aquí",
+            "cs": "Za výstup je třeba zaplatit poplatek",
+            "_context": "layers:climbing.tagRenderings.fee.mappings.1.then"
+          },
+          "hideInAnswer": "charge~*"
+        }
+      ]
+    },
+    {
+      "id": "bouldering",
+      "question": {
+        "de": "Kann hier gebouldert werden?",
+        "en": "Is bouldering possible here?",
+        "nl": "Is het mogelijk om hier te bolderen?",
+        "ja": "ここでボルダリングはできますか?",
+        "nb_NO": "Er buldring mulig her?",
+        "fr": "L’escalade de bloc est-elle possible ici ?",
+        "it": "È possibile praticare ‘bouldering’ qua?",
+        "ca": "És possible fer escalda en bloc aquí?",
+        "cs": "Je zde možný bouldering?",
+        "_context": "layers:climbing.tagRenderings.bouldering.question"
+      },
+      "mappings": [
+        {
+          "if": "climbing:boulder=yes",
+          "then": {
+            "de": "Hier kann gebouldert werden",
+            "en": "Bouldering is possible here",
+            "nl": "Bolderen kan hier",
+            "ja": "ボルダリングはここで可能です",
+            "nb_NO": "Buldring er mulig her",
+            "fr": "L’escalade de bloc est possible",
+            "it": "L’arrampicata su massi è possibile qua",
+            "ca": "Aquí és possible l'escalada en bloc",
+            "cs": "Bouldering je zde možný",
+            "_context": "layers:climbing.tagRenderings.bouldering.mappings.0.then"
+          }
+        },
+        {
+          "if": "climbing:boulder=no",
+          "then": {
+            "de": "Hier kann nicht gebouldert werden",
+            "en": "Bouldering is not possible here",
+            "nl": "Bolderen kan hier niet",
+            "ja": "ここではボルダリングはできません",
+            "nb_NO": "Buldring er ikke mulig her",
+            "fr": "L’escalade de bloc n’est pas possible",
+            "it": "L’arrampicata su massi non è possibile qua",
+            "ca": "Aquí no és possible l'escalada en bloc",
+            "cs": "Bouldering zde není možný",
+            "_context": "layers:climbing.tagRenderings.bouldering.mappings.1.then"
+          }
+        },
+        {
+          "if": "climbing:boulder=limited",
+          "then": {
+            "de": "Bouldern ist hier nur an wenigen Routen möglich",
+            "en": "Bouldering is possible, although there are only a few problems",
+            "nl": "Bolderen kan hier, maar er zijn niet zoveel problemen",
+            "ja": "ボルダリングは可能ですが、少しのルートしかありません",
+            "fr": "L’escalade de bloc est possible, mais il n’y a que quelques problèmes",
+            "it": "L’arrampicata su massi è possibile anche se su poche vie",
+            "ca": "L'escalada en bloc és possible, tot i que només hi ha unes poques rutes",
+            "cs": "Bouldering je možný, i když je zde jen několik problémů",
+            "_context": "layers:climbing.tagRenderings.bouldering.mappings.2.then"
+          }
+        },
+        {
+          "if": "climbing:boulder~*",
+          "then": {
+            "de": "Hier gibt es {climbing:boulder} Boulder-Routen",
+            "en": "There are {climbing:boulder} boulder problems",
+            "nl": "Er zijn hier {climbing:boulder} bolderproblemen",
+            "ja": "{climbing:boulder} ボルダールートがある",
+            "fr": "Il y a {climbing:boulder} problèmes de bloc",
+            "it": "Sono presenti {climbing:boulder} vie di arrampicata su massi",
+            "ca": "Hi han {climbing:boulder} problemes d'escalada en bloc",
+            "cs": "Existují {climbing:boulder} boulderové problémy",
+            "_context": "layers:climbing.tagRenderings.bouldering.mappings.3.then"
+          },
+          "hideInAnswer": true
+        }
+      ]
+    },
+    {
+      "id": "leftover-questions",
+      "render": {
+        "*": "{questions( ,)}"
+      }
+    },
+    {
+      "id": "lod",
+      "labels": [
+        "added_by_default"
+      ],
+      "render": {
+        "*": "{linked_data_from_website()}"
+      }
+    },
+    {
+      "id": "last_edit",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+      "condition": {
+        "and": [
+          "_last_edit:contributor~*",
+          "_last_edit:changeset~*"
+        ]
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsTesting=true",
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_debug=yes",
+          "_csCount>=10"
+        ]
+      },
+      "render": {
+        "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+      }
+    },
+    {
+      "id": "favourite_status",
+      "render": {
+        "*": "{favourite_status()}"
+      }
+    },
+    {
+      "id": "qr_code",
+      "labels": [
+        "added_by_default"
+      ],
+      "classes": "flex items-center gap-x-2",
+      "render": {
+        "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+        "en": "{qr_code()}Scan this code to open this location on another device",
+        "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+        "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+      }
+    },
+    {
+      "id": "share",
+      "labels": [
+        "added_by_default"
+      ],
+      "metacondition": "_supports_sharing=yes",
+      "render": {
+        "de": "{share_link(,Standort teilen)}",
+        "en": "{share_link(,Share this location)}",
+        "nl": "{share_link(,Deel deze locatie)}"
+      }
+    },
+    {
+      "id": "all-tags",
+      "render": {
+        "*": "{all_tags()}"
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_tags=full",
+          "mapcomplete-show_debug=yes"
+        ]
+      }
+    }
+  ],
+  "titleIcons": [
+    {
+      "id": "wikipedialink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+      "condition": {
+        "or": [
+          "wikipedia~*",
+          "wikidata~*"
+        ]
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "wikipedia=",
+          "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "open_until",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "#": "Titleicon showing e.g. 'open until 17:00'",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{opening_hours_state()}",
+      "condition": {
+        "or": [
+          "opening_hours~*",
+          {
+            "or": [
+              {
+                "and": [
+                  "seasonal~.*winter.*",
+                  "_now:date~....-(12|01|02)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*spring.*",
+                  "_now:date~....-(03|04|05)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*summer.*",
+                  "_now:date~....-(06|07|08)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*autumn.*",
+                  "_now:date~....-(09|10|11)-.."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "phonelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": {
+        "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+        "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+        "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+        "_context": "layers:icons.tagRenderings.phonelink.render"
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:phone~*",
+          "then": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+          }
+        }
+      ],
+      "condition": {
+        "or": [
+          "phone~*",
+          "contact:phone~*"
+        ]
+      }
+    },
+    {
+      "id": "emaillink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:email~*",
+          "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:email~*",
+          "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        }
+      ],
+      "condition": {
+        "or": [
+          "email~*",
+          "contact:email~*",
+          "operator:email~*"
+        ]
+      }
+    },
+    {
+      "id": "websitelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "website~*",
+          "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:website~*",
+          "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "context:website~*",
+          "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "smokingicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=no",
+          "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=yes",
+          "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+        }
+      ]
+    },
+    {
+      "id": "dogicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "if": "dog=no",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+        },
+        {
+          "if": "dog=leashed",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+        },
+        {
+          "if": {
+            "or": [
+              "dog=yes",
+              "dog=unleashed"
+            ]
+          },
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+        }
+      ]
+    },
+    {
+      "id": "sharelink",
+      "labels": [
+        "defaults"
+      ],
+      "render": "{share_link()}",
+      "metacondition": "_supports_sharing=yes"
+    },
+    {
+      "id": "favourite_title_icon",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "*": "{favourite_icon()}"
+      },
+      "metacondition": "_loggedIn=true"
+    },
+    {
+      "id": "osmlink",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+        "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+        "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+        "_context": "layers:icons.tagRenderings.osmlink.render"
+      },
+      "mappings": [
+        {
+          "if": "id~.*/-.*",
+          "then": ""
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "_backend~*",
+          "then": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+          }
+        }
+      ],
+      "condition": "id~(node|way|relation)/[0-9]*"
+    },
+    {
+      "id": "direction",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "{direction_indicator()}"
+    },
+    {
+      "id": "rating",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{rating()}"
+    }
+  ],
+  "_layerIcon": [
+    {
+      "icon": "./assets/themes/climbing/climbing_no_rope.svg"
+    }
+  ]
+}

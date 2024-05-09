@@ -1,0 +1,2301 @@
+{
+  "id": "indoors",
+  "name": {
+    "en": "Indoors",
+    "de": "Innenräume",
+    "nl": "Binnenruimtes",
+    "pa_PK": "اندروں",
+    "ca": "Interiors",
+    "cs": "Vnitřní prostory"
+  },
+  "description": {
+    "en": "Basic indoor mapping: shows room outlines",
+    "de": "Grundlegende Innenraumkartierung: zeigt Umrisse von Räumen",
+    "nl": "Een basis voor indoor-navigatie: toont binnenruimtes",
+    "cs": "Základní mapování interiérů: zobrazuje obrysy místností",
+    "ca": "Mapeig interior bàsic: mostra els contorns de les habitacions",
+    "pl": "Podstawowe mapowanie wnętrz: pokazuje kontury pomieszczeń",
+    "es": "Cartografía básica en interiores: muestra esquemas de espacio"
+  },
+  "source": {
+    "osmTags": {
+      "and": [
+        {
+          "or": [
+            "indoor=room",
+            "indoor=area",
+            "indoor=wall",
+            "indoor=door",
+            "indoor=level"
+          ]
+        }
+      ]
+    }
+  },
+  "minzoom": 13,
+  "title": {
+    "render": {
+      "en": "Indoor area {name}",
+      "de": "Innenbereich {name}",
+      "nl": "Binnenruimte {name}",
+      "ca": "Àrea interior {name}",
+      "cs": "Vnitřní prostor {name}"
+    },
+    "mappings": [
+      {
+        "if": "indoor=room",
+        "then": {
+          "en": "Indoor Room {name}",
+          "de": "Innenraum {name}",
+          "nl": "Binnenruimte {name}",
+          "pl": "Wewnętrzne pomieszczenie {name}",
+          "ca": "Habitació interior {name}",
+          "cs": "Vnitřní místnost {name}"
+        }
+      },
+      {
+        "if": "indoor=area",
+        "then": {
+          "en": "Indoor Area {name}",
+          "de": "Innenbereich {name}",
+          "nl": "Gebied in gebouw {name}",
+          "ca": "Àrea interior {name}",
+          "cs": "Vnitřní prostor {name}"
+        }
+      },
+      {
+        "if": "indoor=wall",
+        "then": {
+          "en": "Indoor Wall {name}",
+          "de": "Innenwand {name}",
+          "nl": "Muur in gebouw {name}",
+          "ca": "Paret interior {name}",
+          "cs": "Vnitřní stěna {name}"
+        }
+      },
+      {
+        "if": "indoor=corridor",
+        "then": {
+          "en": "Indoor Corridor {name}",
+          "de": "Innengang {name}",
+          "nl": "Gang in gebouw {name}",
+          "ca": "Passadis interior {name}",
+          "cs": "Vnitřní chodba {name}"
+        }
+      },
+      {
+        "if": "indoor=door",
+        "then": {
+          "en": "Indoor Door {name}",
+          "de": "Innentür {name}",
+          "nl": "Binnendeur {name}",
+          "ca": "Porta interior {name}",
+          "cs": "Vnitřní dveře {name}"
+        }
+      },
+      {
+        "if": "indoor=level",
+        "then": {
+          "en": "Indoor Level {name}",
+          "de": "Geschoss {name}",
+          "nl": "Verdieping in gebouw {name}",
+          "cs": "Vnitřní Level {name}"
+        }
+      }
+    ]
+  },
+  "titleIcons": [
+    {
+      "id": "wikipedialink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+      "condition": {
+        "or": [
+          "wikipedia~*",
+          "wikidata~*"
+        ]
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "wikipedia=",
+          "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "open_until",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "#": "Titleicon showing e.g. 'open until 17:00'",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{opening_hours_state()}",
+      "condition": {
+        "or": [
+          "opening_hours~*",
+          {
+            "or": [
+              {
+                "and": [
+                  "seasonal~.*winter.*",
+                  "_now:date~....-(12|01|02)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*spring.*",
+                  "_now:date~....-(03|04|05)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*summer.*",
+                  "_now:date~....-(06|07|08)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*autumn.*",
+                  "_now:date~....-(09|10|11)-.."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "phonelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": {
+        "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+        "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+        "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+        "_context": "layers:icons.tagRenderings.phonelink.render"
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:phone~*",
+          "then": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+          }
+        }
+      ],
+      "condition": {
+        "or": [
+          "phone~*",
+          "contact:phone~*"
+        ]
+      }
+    },
+    {
+      "id": "emaillink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:email~*",
+          "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:email~*",
+          "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        }
+      ],
+      "condition": {
+        "or": [
+          "email~*",
+          "contact:email~*",
+          "operator:email~*"
+        ]
+      }
+    },
+    {
+      "id": "websitelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "website~*",
+          "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:website~*",
+          "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "context:website~*",
+          "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "smokingicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=no",
+          "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=yes",
+          "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+        }
+      ]
+    },
+    {
+      "id": "dogicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "if": "dog=no",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+        },
+        {
+          "if": "dog=leashed",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+        },
+        {
+          "if": {
+            "or": [
+              "dog=yes",
+              "dog=unleashed"
+            ]
+          },
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+        }
+      ]
+    },
+    {
+      "id": "sharelink",
+      "labels": [
+        "defaults"
+      ],
+      "render": "{share_link()}",
+      "metacondition": "_supports_sharing=yes"
+    },
+    {
+      "id": "favourite_title_icon",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "*": "{favourite_icon()}"
+      },
+      "metacondition": "_loggedIn=true"
+    },
+    {
+      "id": "osmlink",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+        "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+        "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+        "_context": "layers:icons.tagRenderings.osmlink.render"
+      },
+      "mappings": [
+        {
+          "if": "id~.*/-.*",
+          "then": ""
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "_backend~*",
+          "then": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+          }
+        }
+      ],
+      "condition": "id~(node|way|relation)/[0-9]*"
+    },
+    {
+      "id": "direction",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "{direction_indicator()}"
+    },
+    {
+      "render": "{ref}",
+      "condition": "ref~*"
+    },
+    {
+      "icon": {
+        "class": ""
+      },
+      "mappings": [
+        {
+          "if": "capacity~*",
+          "then": "<div class='flex rounded-full low-interaction font-bold space-x-1 items-center mx-1'><img class='w-4 h-4' src='./assets/layers/indoors/room_conference.svg'/> {capacity}<div>"
+        }
+      ]
+    }
+  ],
+  "pointRendering": [
+    {
+      "label": {
+        "render": "<div style='margin-top: -20px; color:#013220; background:white' class='rounded-full p-1 font-bold'>{name}</div>",
+        "condition": "name~*",
+        "mappings": [
+          {
+            "if": {
+              "or": [
+                "room=administration",
+                "room=auditorium",
+                "room=bedroom",
+                "room=chapel",
+                "room=class",
+                "room=computer",
+                "room=conference",
+                "room=crypt",
+                "room=kitchen",
+                "room=laboratory",
+                "room=library",
+                "room=locker",
+                "room=nursery",
+                "room=office",
+                "room=prison_cell",
+                "room=restaurant",
+                "room=security_check",
+                "room=sport",
+                "room=storage",
+                "room=technical",
+                "room=toilet",
+                "room=toilets",
+                "room=waiting"
+              ]
+            },
+            "then": "<div style='margin-top: 0px; color:#013220; background:white' class='rounded-full p-1 font-bold'>{name}</div>"
+          }
+        ]
+      },
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": {
+            "mappings": [
+              {
+                "if": {
+                  "or": [
+                    "room=administration",
+                    "room=auditorium",
+                    "room=bedroom",
+                    "room=chapel",
+                    "room=class",
+                    "room=computer",
+                    "room=conference",
+                    "room=crypt",
+                    "room=kitchen",
+                    "room=laboratory",
+                    "room=library",
+                    "room=locker",
+                    "room=nursery",
+                    "room=office",
+                    "room=prison_cell",
+                    "room=restaurant",
+                    "room=security_check",
+                    "room=sport",
+                    "room=storage",
+                    "room=technical",
+                    "room=toilets",
+                    "room=waiting"
+                  ]
+                },
+                "then": "./assets/layers/indoors/room_{room}.svg"
+              },
+              {
+                "if": "room=toilet",
+                "then": "./assets/layers/indoors/room_toilets.svg"
+              }
+            ]
+          }
+        }
+      ],
+      "iconSize": "15,15",
+      "anchor": "bottom",
+      "iconBadges": [
+        {
+          "if": "_favourite=yes",
+          "then": "circle:white;heart:red"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#d3d7d588",
+      "width": "8",
+      "offset": -4,
+      "fill": "no"
+    },
+    {
+      "color": "#4f5551",
+      "fill": "no",
+      "width": "2"
+    }
+  ],
+  "tagRenderings": [
+    {
+      "id": "just_created",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "This element shows a 'thank you' that the contributor has recently created this element",
+      "classes": "rounded-xl thanks",
+      "mappings": [
+        {
+          "if": "id~*",
+          "icon": "./assets/svg/party.svg",
+          "then": {
+            "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+            "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+            "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+            "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+            "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+            "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+          }
+        }
+      ],
+      "condition": {
+        "and": [
+          "_backend~*",
+          "_last_edit:passed_time<300",
+          {
+            "or": [
+              "_version_number=",
+              "_version_number=1"
+            ]
+          }
+        ]
+      },
+      "metacondition": {
+        "and": [
+          {
+            "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+            "or": [
+              "_last_edit:contributor:uid:={_uid}",
+              "_last_edit:contributor:uid="
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "images",
+      "description": "This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images",
+      "render": {
+        "*": "{image_carousel()}{image_upload()}{nearby_images():my-4}"
+      },
+      "classes": "my-4"
+    },
+    {
+      "id": "repeated",
+      "labels": [
+        "level"
+      ],
+      "condition": "repeat_on~*",
+      "render": {
+        "en": "Multiple, identical objects can be found on floors {repeat_on}.",
+        "nl": "Er zijn verschillende, identieke objecten op verdiepingen {repeat_on}.",
+        "de": "Mehrere identische Objekte können in Geschossen {repeat_on} gefunden werden.",
+        "cs": "V patrech {repeat_on} lze nalézt více identických objektů."
+      }
+    },
+    {
+      "id": "single_level",
+      "labels": [
+        "level"
+      ],
+      "condition": "repeat_on=",
+      "question": {
+        "nl": "Op welke verdieping bevindt dit punt zich?",
+        "en": "On what level is this feature located?",
+        "de": "Auf welcher Ebene befindet sich das Objekt?",
+        "zh_Hant": "此圖徽位於哪個樓層／層級？",
+        "fr": "À quel étage se situe l’élément ?",
+        "pl": "Na jakim poziomie znajduje się ta funkcja?",
+        "pt_BR": "Em que nível esse recurso está localizado?",
+        "ru": "На каком этаже находится этот объект?",
+        "pt": "Em que nível se encontra este elemento?",
+        "id": "Pada tingkat apa fitur ini diletakkan?",
+        "hu": "Melyik szinten található ez a létesítmény?",
+        "it": "A quale piano si trova questo elemento?",
+        "ca": "A quina planta està situat aquest element?",
+        "sv": "På vilken nivå finns den här funktionen?",
+        "ja": "この機能は何階にあるのでしょうか？",
+        "fil": "Anong palapag matatagpuan ang tampók?",
+        "es": "¿En qué nivel se encuentra esta característica?",
+        "nb_NO": "Hvilken etasje befinner funksjonen seg i?",
+        "da": "På hvilket niveau er denne funktion placeret?",
+        "cs": "V jaké úrovni se tento prvek nachází?"
+      },
+      "render": {
+        "en": "Located on the {level}th floor",
+        "nl": "Bevindt zich op de {level}de verdieping",
+        "de": "Das Objekt befindet sich im {level}. Geschoss",
+        "pt_BR": "Localizado no {level}o andar",
+        "ru": "Расположено на {level}ом этаже",
+        "zh_Hant": "位於 {level} 樓",
+        "fr": "Étage {level}",
+        "pl": "Znajduje się na {level} piętrze",
+        "sv": "Ligger på {level}:e våningen",
+        "pt": "Está no {level}º andar",
+        "eo": "En la {level}a etaĝo",
+        "hu": "A(z) {level}. emeleten",
+        "it": "Si trova al piano numero {level}",
+        "ca": "Situat a la planta {level}",
+        "ja": "{level}階にあります",
+        "sl": "Nahaja se v {level}. nadstropju",
+        "fil": "Natagpuan sa ika-{level} na palapag",
+        "es": "Localizada en la {level}° planta",
+        "da": "Beliggende på {level}. etage",
+        "nb_NO": "Ligger i {level} etasje",
+        "id": "Terletak di lantai {level}",
+        "cs": "Nachází se v {level}. patře"
+      },
+      "freeform": {
+        "key": "level",
+        "type": "float",
+        "inline": true
+      },
+      "mappings": [
+        {
+          "if": "location=underground",
+          "then": {
+            "en": "Located underground",
+            "nl": "Bevindt zich ondergronds",
+            "pt_BR": "Localizado no subsolo",
+            "ru": "Расположено под землей",
+            "zh_Hant": "位於地下",
+            "fr": "En sous-sol",
+            "pl": "Znajduje się pod ziemią",
+            "sv": "Ligger under jorden",
+            "pt": "Está no subsolo",
+            "de": "Das Objekt befindet sich unter der Erde",
+            "hu": "A föld alatt",
+            "it": "Si trova sotto il livello stradale",
+            "nb_NO": "Under bakken",
+            "ca": "Situat a planta subterrani",
+            "ja": "地下にあります",
+            "id": "Terletak di bawah tanah",
+            "sl": "Nahaja se pod zemljo",
+            "fil": "Nasa ilalim ng lupa",
+            "es": "Localizado bajo tierra",
+            "da": "Placeret under jorden",
+            "cs": "Nachází se v podzemí"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "level=0",
+          "then": {
+            "en": "Located on the ground floor",
+            "nl": "Bevindt zich op de begane grond",
+            "de": "Das Objekt befindet sich im Erdgeschoss",
+            "pt_BR": "Localizado no térreo",
+            "ru": "Расположено на первом этаже",
+            "zh_Hant": "位於 1 樓",
+            "fr": "Rez-de-chaussée",
+            "pl": "Znajduje się na parterze",
+            "sv": "Ligger på bottenvåningen",
+            "pt": "Está ao nível do rés-do-chão",
+            "eo": "En la teretaĝo",
+            "hu": "A földszinten",
+            "it": "Si trova al pianoterra",
+            "nb_NO": "På gateplan",
+            "ca": "Situat a planta zero",
+            "ja": "1階にあります",
+            "id": "Terletak di lantai dasar",
+            "sl": "Nahaja se v pritličju",
+            "fil": "Nasa unang palapag",
+            "es": "Localizado en la planta baja",
+            "da": "Beliggende i stueetagen",
+            "cs": "Nachází se v přízemí"
+          }
+        },
+        {
+          "if": "level=",
+          "hideInAnswer": true,
+          "then": {
+            "en": "Located on the ground floor",
+            "nl": "Bevindt zich gelijkvloers",
+            "de": "Das Objekt befindet sich im Erdgeschoss",
+            "pt_BR": "Localizado no térreo",
+            "ru": "Расположено на первом этаже",
+            "zh_Hant": "位於 1 樓",
+            "fr": "Rez-de-chaussée",
+            "pl": "Znajduje się na parterze",
+            "sv": "Ligger på bottenvåningen",
+            "pt": "Está ao nível do rés-do-chão",
+            "eo": "En la teretaĝo",
+            "hu": "A földszinten",
+            "it": "Si trova al pianoterra",
+            "nb_NO": "På gateplan",
+            "ca": "Situat a la planta zero",
+            "ja": "1階にあります",
+            "id": "Terletak di lantai dasar",
+            "sl": "Nahaja se v pritličju",
+            "fil": "Nasa unang palapag",
+            "es": "Localizado en la planta baja",
+            "da": "Beliggende i stueetagen",
+            "cs": "Nachází se v přízemí"
+          }
+        },
+        {
+          "if": "level=1",
+          "then": {
+            "en": "Located on the first floor",
+            "nl": "Bevindt zich op de eerste verdieping",
+            "de": "Das Objekt befindet sich im 1. Obergeschoss",
+            "pt_BR": "Localizado no primeiro andar",
+            "ru": "Расположено на первом этаже",
+            "zh_Hant": "位於 2 樓",
+            "fr": "Premier étage",
+            "pl": "Znajduje się na pierwszym piętrze",
+            "sv": "Ligger på första våningen",
+            "pt": "Está no primeiro andar",
+            "id": "Berlokasi di lantai pertama",
+            "eo": "En la unua etaĝo",
+            "hu": "Az első emeleten",
+            "it": "Si trova al primo piano",
+            "nb_NO": "I andre etasje",
+            "ca": "Situat a primera planta",
+            "ja": "1階にあります",
+            "sl": "Nahaja se v prvem nadstropju",
+            "fil": "Nasa unang palapag",
+            "es": "Localizado en la primera planta",
+            "da": "Beliggende på første sal",
+            "cs": "Nachází se v prvním patře"
+          }
+        },
+        {
+          "if": "level=-1",
+          "then": {
+            "en": "Located on the first basement level",
+            "nl": "Bevindt zich in de eerste kelderverdieping",
+            "zh_Hant": "位於地下一樓",
+            "de": "Das Objekt befindet sich im 1. Untergeschoss",
+            "hu": "Az első alagsori szinten",
+            "id": "Terletak di lantai basement pertama",
+            "fr": "Sous-sol",
+            "sl": "Nahaja se v prvi kletni etaži",
+            "ca": "Localitzat a la planta base",
+            "fil": "Nasa silong",
+            "es": "Localizada en el primer sótano",
+            "nb_NO": "Er å finne på første kjellernivå",
+            "pt": "Localizado no primeiro nível da cave",
+            "da": "Beliggende på første kælderetage",
+            "cs": "Nachází se v prvním suterénu",
+            "pl": "Położone na pierwszym poziomie piwnicy"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ref",
+      "question": {
+        "en": "What is the reference number of this room?",
+        "de": "Wie lautet die Nummer dieses Raums?",
+        "nl": "Wat is het referentienummer van deze ruimte?",
+        "fr": "Quel est le numéro de référence de cette pièce ?",
+        "pl": "Jaki jest numer referencyjny tego pomieszczenia?",
+        "ca": "Quin és el número de referència d'aquesta habitació?",
+        "cs": "Jaké je referenční číslo této místnosti?"
+      },
+      "render": {
+        "en": "This room has the reference number {ref}",
+        "de": "Dieser Raum hat die Raumnummer {ref}",
+        "nl": "Deze ruimte heeft het referentienummer {ref}",
+        "pl": "To pomieszczenie ma numer referencyjny {ref}",
+        "ca": "Aquesta habitació té el número de referència {ref}",
+        "cs": "Tato místnost má referenční číslo {ref}"
+      },
+      "freeform": {
+        "key": "ref",
+        "type": "string",
+        "placeholder": {
+          "en": "Reference number of the room (e.g. '1.1' or 'A1')",
+          "de": "Raumnummer (z.B. '1.1' oder 'A1')",
+          "nl": "Referentienummer van de ruimte (bv. '1.1' of A1' )",
+          "ca": "Número de referència de l'habitació (p. e. '1.1' o 'A1')",
+          "cs": "Referenční číslo místnosti (např. \"1.1\" nebo \"A1\")"
+        },
+        "inline": true
+      },
+      "condition": {
+        "or": [
+          "indoor=room",
+          "indoor=area",
+          "indoor=corridor"
+        ]
+      }
+    },
+    {
+      "id": "name",
+      "question": {
+        "en": "What is the name of this room?",
+        "de": "Wie lautet der Name dieses Raums?",
+        "nl": "Wat is de naam van deze ruimte?",
+        "ru": "Как называется эта комната?",
+        "ca": "Quin és el nom d'aquesta habitació?",
+        "cs": "Jak se jmenuje tato místnost?"
+      },
+      "render": {
+        "en": "This room is named {name}",
+        "de": "Der Name des Raums lautet {name}",
+        "nl": "Deze ruimte heet {name}",
+        "ru": "Эта комната называется {name}",
+        "fr": "Cette pièce s'appelle {name}",
+        "ca": "Aquesta habitació es diu {name}",
+        "cs": "Tato místnost se jmenuje {name}"
+      },
+      "freeform": {
+        "key": "name",
+        "type": "string",
+        "placeholder": {
+          "en": "Name of the room",
+          "de": "Name des Raums",
+          "nl": "Naam van de ruimte",
+          "ru": "Название комнаты",
+          "ca": "Nom de l'habitació",
+          "cs": "Název místnosti"
+        },
+        "inline": true
+      },
+      "condition": {
+        "or": [
+          "indoor=room",
+          "indoor=area",
+          "indoor=corridor"
+        ]
+      }
+    },
+    {
+      "id": "room-type",
+      "question": {
+        "en": "What type of room is this?",
+        "ca": "Quin tipus d'habitació és aquesta?",
+        "de": "Wie wird dieser Raum genutzt?",
+        "cs": "O jaký typ pokoje se jedná?"
+      },
+      "mappings": [
+        {
+          "if": "room=administration",
+          "then": {
+            "en": "This is a administrative room",
+            "de": "Dies ist ein Verwaltungsraum",
+            "cs": "Jedná se o administrativní místnost"
+          },
+          "icon": "./assets/layers/indoors/room_administration.svg"
+        },
+        {
+          "if": "room=auditorium",
+          "then": {
+            "en": "This is a auditorium",
+            "de": "Dies ist ein Auditorium",
+            "ca": "Açò és un auditori",
+            "cs": "Jedná se o posluchárnu"
+          },
+          "icon": "./assets/layers/indoors/room_auditorium.svg"
+        },
+        {
+          "if": "room=bedroom",
+          "then": {
+            "en": "This is a bedroom",
+            "de": "Dies ist ein Schlafzimmer",
+            "ca": "Açò és un dormitori",
+            "cs": "Jedná se o ložnici"
+          },
+          "icon": "./assets/layers/indoors/room_bedroom.svg"
+        },
+        {
+          "if": "room=chapel",
+          "then": {
+            "en": "This is a chapel",
+            "de": "Dies ist eine Kapelle",
+            "ca": "Açò és una capella",
+            "cs": "Jedná se o kapli"
+          },
+          "icon": "./assets/layers/indoors/room_chapel.svg"
+        },
+        {
+          "if": "room=class",
+          "then": {
+            "en": "This is a classroom",
+            "de": "Dies ist ein Klassenzimmer",
+            "ca": "Açò és una aula",
+            "cs": "Jedná se o učebnu",
+            "fr": "C'est une salle de classe"
+          },
+          "icon": "./assets/layers/indoors/room_class.svg"
+        },
+        {
+          "if": "room=classroom",
+          "then": {
+            "en": "This is a classroom",
+            "de": "Dies ist ein Klassenzimmer",
+            "ca": "Açò és una aula",
+            "cs": "Jedná se o učebnu"
+          },
+          "icon": "./assets/layers/indoors/room_class.svg",
+          "hideInAnswer": true
+        },
+        {
+          "if": "room=computer",
+          "then": {
+            "en": "This is a computer room",
+            "de": "Dies ist ein Computerraum",
+            "cs": "Jedná se o počítačovou místnost"
+          },
+          "icon": "./assets/layers/indoors/room_computer.svg"
+        },
+        {
+          "if": "room=conference",
+          "then": {
+            "en": "This is a conference room",
+            "de": "Dies ist ein Konferenzraum",
+            "ca": "Açò és una sala de conferències",
+            "cs": "Jedná se o konferenční místnost"
+          },
+          "icon": "./assets/layers/indoors/room_conference.svg"
+        },
+        {
+          "if": "room=crypt",
+          "then": {
+            "en": "This is a crypt",
+            "de": "Dies ist eine Krypta",
+            "ca": "Açò és una cripta",
+            "cs": "Jedná se o kryptu"
+          },
+          "icon": "./assets/layers/indoors/room_crypt.svg"
+        },
+        {
+          "if": "room=kitchen",
+          "then": {
+            "en": "This is a kitchen",
+            "de": "Dies ist eine Küche",
+            "ca": "Açò és una cuina",
+            "cs": "Jedná se o kuchyň"
+          },
+          "icon": "./assets/layers/indoors/room_kitchen.svg"
+        },
+        {
+          "if": "room=laboratory",
+          "then": {
+            "en": "This is a laboratory",
+            "de": "Dies ist ein Labor",
+            "ca": "Açò és un laboratori",
+            "cs": "Jedná se o laboratoř"
+          },
+          "icon": "./assets/layers/indoors/room_laboratory.svg"
+        },
+        {
+          "if": "room=library",
+          "then": {
+            "en": "This is a library",
+            "de": "Dies ist eine Bibliothek",
+            "cs": "Jedná se o knihovnu"
+          },
+          "icon": "./assets/layers/indoors/room_library.svg"
+        },
+        {
+          "if": "room=locker",
+          "then": {
+            "en": "This is a locker room",
+            "de": "Dies ist ein Umkleideraum",
+            "cs": "Jedná se o šatnu"
+          },
+          "icon": "./assets/layers/indoors/room_locker.svg"
+        },
+        {
+          "if": "room=nursery",
+          "then": {
+            "en": "This is a nursery",
+            "de": "Dies ist ein Kinderzimmer",
+            "cs": "Jedná se o školku"
+          },
+          "icon": "./assets/layers/indoors/room_nursery.svg"
+        },
+        {
+          "if": "room=office",
+          "then": {
+            "en": "This is an office",
+            "de": "Dies ist ein Büro",
+            "ca": "Açò és una oficina",
+            "cs": "Jedná se o kancelář",
+            "fr": "C'est un bureau"
+          },
+          "icon": "./assets/layers/indoors/room_office.svg"
+        },
+        {
+          "if": "room=prison_cell",
+          "then": {
+            "en": "This is a prison_cell",
+            "de": "Dies ist eine Gefängniszelle",
+            "cs": "Jedná se o vězeňskou celu"
+          },
+          "icon": "./assets/layers/indoors/room_prison_cell.svg"
+        },
+        {
+          "if": "room=restaurant",
+          "then": {
+            "en": "This is a restaurant",
+            "de": "Dies ist ein Restaurant",
+            "ca": "Açò és un restaurant",
+            "cs": "Jedná se o restauraci"
+          },
+          "icon": "./assets/layers/indoors/room_restaurant.svg"
+        },
+        {
+          "if": "room=security_check",
+          "then": {
+            "en": "This is a room to perform security checks",
+            "de": "Dies ist ein Raum für Sicherheitskontrollen",
+            "cs": "Jedná se o místnost pro provádění bezpečnostních kontrol"
+          },
+          "icon": "./assets/layers/indoors/room_security_check.svg"
+        },
+        {
+          "if": "room=sport",
+          "then": {
+            "en": "This is a sport room",
+            "de": "Dies ist ein Raum um Sport zu treiben",
+            "cs": "Jedná se o sportovní místnost"
+          },
+          "icon": "./assets/layers/indoors/room_sport.svg"
+        },
+        {
+          "if": "room=storage",
+          "then": {
+            "en": "This is a storage room",
+            "ca": "Açò és un magatzem",
+            "de": "Dies ist ein Lagerraum",
+            "cs": "Jedná se o skladovací místnost"
+          },
+          "icon": "./assets/layers/indoors/room_storage.svg"
+        },
+        {
+          "if": "room=technical",
+          "then": {
+            "en": "This is a technical room",
+            "de": "Dies ist ein Technikraum",
+            "cs": "Jedná se o technickou místnost"
+          },
+          "icon": "./assets/layers/indoors/room_technical.svg"
+        },
+        {
+          "if": "room=toilets",
+          "then": {
+            "en": "These are toilets",
+            "de": "Dies ist ein WC-Raum",
+            "cs": "Jedná se o toalety"
+          },
+          "icon": "./assets/layers/indoors/room_toilets.svg",
+          "addExtraTags": [
+            "amenity=toilets"
+          ]
+        },
+        {
+          "if": "room=waiting",
+          "then": {
+            "en": "This is a waiting room",
+            "ca": "Açò és una sala d'espera",
+            "de": "Dies ist ein Wartezimmer",
+            "cs": "Jedná se o čekárnu"
+          },
+          "icon": "./assets/layers/indoors/room_waiting.svg"
+        }
+      ]
+    },
+    {
+      "id": "room-capacity",
+      "question": {
+        "en": "How much people can at most fit in this room?",
+        "de": "Wie viele Personen passen höchstens in diesen Raum?",
+        "cs": "Kolik lidí se maximálně vejde do této místnosti?"
+      },
+      "condition": {
+        "or": [
+          "room=waiting",
+          "room=restaurant",
+          "room=office",
+          "room=nursery",
+          "room=conference",
+          "room=auditorium",
+          "room=chapel",
+          "room=bedroom",
+          "room=classroom"
+        ]
+      },
+      "render": {
+        "en": "At most {capacity} people fit this room",
+        "de": "Kapazität für höchstens {capacity} Personen",
+        "cs": "Do této místnosti se vejde maximálně {capacity} osob"
+      },
+      "freeform": {
+        "key": "capacity",
+        "type": "pnat",
+        "inline": true
+      }
+    },
+    {
+      "id": "wikipedia-etymology",
+      "condition": {
+        "and": [
+          "name:etymology!=unknown",
+          "name~*"
+        ]
+      },
+      "question": {
+        "en": "What is the Wikidata-item that this object is named after?",
+        "nl": "Wat is het Wikidata-item van hetgeen dit object is naar vernoemd?",
+        "de": "Was ist das Wikidata-Element, nach dem dieses Objekt benannt ist?",
+        "fr": "Quel est l'Item Wikidata auquel l'objet fait référence ?",
+        "cs": "Po jaké položce Wikidat je tento objekt pojmenován?",
+        "_context": "layers:etymology.tagRenderings.wikipedia-etymology.question"
+      },
+      "freeform": {
+        "key": "name:etymology:wikidata",
+        "type": "wikidata",
+        "helperArgs": [
+          "name",
+          {
+            "notInstanceOf": [
+              "Q79007",
+              "Q22698"
+            ],
+            "removePrefixes": {
+              "#": "no-translations",
+              "nl": [
+                "(basis|lagere |middelbare |secondaire| secundaire)?school"
+              ],
+              "en": [
+                "east",
+                "north",
+                "northeast",
+                "northwest",
+                "south",
+                "southeast",
+                "southwest",
+                "west"
+              ],
+              "fr": [
+                "allée (des |de la |de l'|de |du |d')?",
+                "autoroute (des |de la |de l'|de |du |d')?",
+                "avenue (des |de la |de l'|de |du |d')?",
+                "bibliothèque (des |de la |de l'|de |du |d')?",
+                "boulevard (des |de la |de l'|de |du |d')?",
+                "centre (culturel |sportif |nautique )?(des |de la |de l'|de |du |d')?",
+                "chaussée (des |de la |de l'|de |du |d')?",
+                "chemin (des |de la |de l'|de |du |d')?",
+                "clos (des |de la |de l'|de |du |d')?",
+                "collège (privé |public )?(des |de la |de l'|de |du |d')?",
+                "complexe sportif (des |de la |de l'|de |du |d')?",
+                "corniche (des |de la |de l'|de |du |d')?",
+                "cours (des |de la |de l'|de |du |d')?",
+                "drève (des |de la |de l'|de |du |d')?",
+                "école (maternelle |primaire |élémentaire |secondaire )?(privée |publique )?(des |de la |de l'|de |du |d')?",
+                "esplanade (des |de la |de l'|de |du |d')?",
+                "groupe scolaire (privé |public )?(des |de la |de l'|de |du |d')?",
+                "gymnase (des |de la |de l'|de |du |d')?",
+                "impasse (des |de la |de l'|de |du |d')?",
+                "lotissement (des |de la |de l'|de |du |d')?",
+                "lycée (privé |public |technologique |professionnel )*(des |de la |de l'|de |du |d')?",
+                "mail (des |de la |de l'|de |du |d')?",
+                "médiathèque (des |de la |de l'|de |du |d')?",
+                "musée (des |de la |de l'|de |du |d')?",
+                "parc (des |de la |de l'|de |du |d')?",
+                "passage (des |de la |de l'|de |du |d')?",
+                "passerelle (des |de la |de l'|de |du |d')?",
+                "place (des |de la |de l'|de |du |d')?",
+                "quai (des |de la |de l'|de |du |d')?",
+                "résidence (des |de la |de l'|de |du |d')?",
+                "route (des |de la |de l'|de |du |d')?",
+                "rue (des |de la |de l'|de |du |d')?",
+                "sente (des |de la |de l'|de |du |d')?",
+                "sentier (des |de la |de l'|de |du |d')?",
+                "square (des |de la |de l'|de |du |d')?",
+                "stade (des |de la |de l'|de |du |d')?",
+                "villa (des |de la |de l'|de |du |d')?"
+              ]
+            },
+            "removePostfixes": {
+              "#": "no-translations",
+              "nl": [
+                "baan",
+                "boulevard",
+                "dreef",
+                "heirbaan",
+                "kaai",
+                "kerk",
+                "laan",
+                "lei",
+                "pad",
+                "park",
+                "plein",
+                "ring",
+                "steenweg",
+                "straat",
+                "weg",
+                "wegel"
+              ],
+              "fr": [
+                "parque"
+              ],
+              "de": [
+                "straße",
+                "strasse",
+                "platz",
+                "gasse",
+                "graben",
+                "grundschule",
+                "gymnasium",
+                "platz",
+                "rain",
+                "schule",
+                "(-)?straße",
+                "(-)?strasse",
+                "weg"
+              ],
+              "en": [
+                "avenue",
+                "boulevard",
+                "circle",
+                "church",
+                "drive",
+                "expressway",
+                "freeway",
+                "highway",
+                "lane",
+                "parkway",
+                "path",
+                "plaza",
+                "road",
+                "square",
+                "street",
+                "terrace",
+                "trail",
+                "turnpike"
+              ]
+            }
+          }
+        ],
+        "inline": false
+      },
+      "render": {
+        "en": "<h3>Wikipedia article of the name giver</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}",
+        "nl": "<h3>Wikipedia-artikel van de naamgever</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}",
+        "de": "<h3>Wikipedia Artikel zur Namensherkunft</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}",
+        "fr": "<h3>Article Wikipedia de la référence au nom</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}",
+        "ca": "<h3> Article de la Viquipèdia del nom donant</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}",
+        "cs": "<h3>Článek autora jména na Wikipedii</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}",
+        "_context": "layers:etymology.tagRenderings.wikipedia-etymology.render"
+      }
+    },
+    {
+      "question": {
+        "en": "Are these toilets publicly accessible?",
+        "de": "Ist die Toilette öffentlich zugänglich?",
+        "fr": "Ces toilettes sont-elles accessibles au public ?",
+        "nl": "Zijn deze toiletten publiek toegankelijk?",
+        "it": "Questi servizi igienici sono aperti al pubblico?",
+        "ru": "Есть ли свободный доступ к этим туалетам?",
+        "da": "Er disse toiletter offentligt tilgængelige?",
+        "ca": "Aquests serveis són d'accés públic?",
+        "cs": "Jsou tyto toalety veřejně přístupné?",
+        "_context": "layers:toilet.tagRenderings.toilet-access.question"
+      },
+      "render": {
+        "en": "Access is {access}",
+        "de": "Zugang ist {access}",
+        "fr": "L'accès est {access}",
+        "nl": "Toegankelijkheid is {access}",
+        "it": "L'accesso è {access}",
+        "es": "El acceso es {access}",
+        "da": "Adgang er {access}",
+        "ca": "L'accés és {access}",
+        "cs": "Přístup je {access}",
+        "_context": "layers:toilet.tagRenderings.toilet-access.render"
+      },
+      "freeform": {
+        "key": "access",
+        "addExtraTags": [
+          "fixme=the tag access was filled out by the user and might need refinement"
+        ],
+        "inline": true
+      },
+      "mappings": [
+        {
+          "if": "access=yes",
+          "then": {
+            "en": "Public access",
+            "de": "Der Zugang ist öffentlich",
+            "fr": "Accès publique",
+            "nl": "Publiek toegankelijk",
+            "it": "Accesso pubblico",
+            "ru": "Свободный доступ",
+            "es": "Acceso público",
+            "da": "Offentlig adgang",
+            "ca": "Accés públic",
+            "cs": "Veřejný přístup",
+            "_context": "layers:toilet.tagRenderings.toilet-access.mappings.0.then"
+          }
+        },
+        {
+          "if": "access=customers",
+          "then": {
+            "en": "Only access to customers",
+            "de": "Der Zugang ist nur für Kunden",
+            "fr": "Accès réservé aux clients",
+            "nl": "Enkel toegang voor klanten",
+            "it": "Accesso riservato ai clienti e alle clienti",
+            "es": "Solo accesible a clientes",
+            "da": "Kun adgang til kunder",
+            "ca": "Sols accessible per a clients",
+            "cs": "Přístup pouze pro zákazníky",
+            "_context": "layers:toilet.tagRenderings.toilet-access.mappings.1.then"
+          }
+        },
+        {
+          "if": "access=no",
+          "then": {
+            "en": "Not accessible",
+            "de": "Der Zugang ist nicht erlaubt oder nicht möglich",
+            "fr": "Toilettes privées",
+            "nl": "Niet toegankelijk",
+            "ru": "Недоступно",
+            "it": "Non accessibile",
+            "es": "No accesible",
+            "da": "Ikke tilgængelig",
+            "ca": "No accessible",
+            "cs": "Nepřístupné",
+            "_context": "layers:toilet.tagRenderings.toilet-access.mappings.2.then"
+          }
+        },
+        {
+          "if": "access=key",
+          "then": {
+            "en": "Accessible, but one has to ask a key to enter",
+            "de": "Der Zugang ist möglich, aber man muss nach einen Schlüssel fragen",
+            "fr": "Accessible, mais vous devez demander la clé",
+            "nl": "Toegankelijk na het vragen van de sleutel",
+            "it": "Accessibile, ma occorre chiedere una chiave per accedere",
+            "es": "Accesible, pero hay que pedir la llave para entrar",
+            "da": "Tilgængelig, men man skal bede om en nøgle for at komme ind",
+            "ca": "Accessible, però s'ha de demanar la clau per a entrar",
+            "cs": "Přístupné, ale pro vstup je třeba požádat o klíč",
+            "_context": "layers:toilet.tagRenderings.toilet-access.mappings.3.then"
+          }
+        },
+        {
+          "if": "access=public",
+          "then": {
+            "en": "Public access",
+            "de": "Öffentlicher Zugang",
+            "fr": "Accès publique",
+            "nl": "Publiek toegankelijk",
+            "it": "Accesso pubblico",
+            "ru": "Свободный доступ",
+            "es": "De acceso público",
+            "da": "Offentlig adgang",
+            "ca": "Accés públic",
+            "cs": "Veřejný přístup",
+            "_context": "layers:toilet.tagRenderings.toilet-access.mappings.4.then"
+          },
+          "hideInAnswer": true
+        }
+      ],
+      "labels": [
+        "relevant-questions"
+      ],
+      "id": "toilet-access",
+      "condition": {
+        "and": [
+          "amenity=toilets"
+        ]
+      }
+    },
+    {
+      "id": "toilets-fee",
+      "labels": [
+        "relevant-questions"
+      ],
+      "condition": {
+        "and": [
+          "amenity=toilets",
+          "access!=no"
+        ]
+      },
+      "question": {
+        "en": "Are these toilets free to use?",
+        "de": "Können diese Toiletten kostenlos benutzt werden?",
+        "fr": "Ces toilettes sont-elles payantes ?",
+        "nl": "Zijn deze toiletten gratis te gebruiken?",
+        "it": "Questi servizi igienici sono gratuiti?",
+        "da": "Er det gratis at benytte disse toiletter?",
+        "ca": "Aquest serveis són gratuïts?",
+        "cs": "Jsou tyto toalety zdarma?",
+        "_context": "layers:toilet.tagRenderings.toilets-fee.question"
+      },
+      "mappings": [
+        {
+          "then": {
+            "en": "These are paid toilets",
+            "de": "Die Nutzung ist gebührenpflichtig",
+            "fr": "Toilettes payantes",
+            "nl": "Men moet betalen om deze toiletten te gebruiken",
+            "ru": "Это платные туалеты",
+            "it": "Questi servizi igienici sono a pagamento",
+            "es": "Estos son baños de pago",
+            "da": "Det er betalingstoiletter",
+            "ca": "Aquests serveis són de pagament",
+            "cs": "Jedná se o placené toalety",
+            "_context": "layers:toilet.tagRenderings.toilets-fee.mappings.0.then"
+          },
+          "if": "fee=yes"
+        },
+        {
+          "if": "fee=no",
+          "then": {
+            "en": "Free to use",
+            "de": "Die Nutzung ist kostenlos",
+            "fr": "Toilettes gratuites",
+            "nl": "Gratis te gebruiken",
+            "it": "Gratis",
+            "da": "Gratis at bruge",
+            "ca": "Gratuït",
+            "cs": "Použití zdarma",
+            "_context": "layers:toilet.tagRenderings.toilets-fee.mappings.1.then"
+          }
+        }
+      ]
+    },
+    {
+      "labels": [
+        "relevant-questions"
+      ],
+      "question": {
+        "en": "How much does one have to pay for these toilets?",
+        "de": "Wie viel muss man für die Nutzung bezahlen?",
+        "fr": "Quel est le prix d'accès de ces toilettes ?",
+        "nl": "Hoeveel moet men betalen om deze toiletten te gebruiken?",
+        "it": "Quanto costa l'accesso a questi servizi igienici?",
+        "ru": "Сколько стоит посещение туалета?",
+        "es": "¿Cuánto hay que pagar para estos baños?",
+        "da": "Hvor meget skal man betale for disse toiletter?",
+        "ca": "Quant s'ha de pagar per aquests lavabos?",
+        "cs": "Kolik se za tyto toalety platí?",
+        "_context": "layers:toilet.tagRenderings.toilet-charge.question"
+      },
+      "render": {
+        "en": "The fee is {charge}",
+        "de": "Die Gebühr beträgt {charge}",
+        "fr": "Le prix est {charge}",
+        "nl": "De toiletten gebruiken kost {charge}",
+        "it": "La tariffa è {charge}",
+        "ru": "Стоимость {charge}",
+        "es": "La tasa es {charge}",
+        "da": "Gebyret er {charge}",
+        "ca": "La taxa és {charge}",
+        "cs": "Poplatek je {charge}",
+        "_context": "layers:toilet.tagRenderings.toilet-charge.render"
+      },
+      "condition": {
+        "and": [
+          "amenity=toilets",
+          "fee=yes"
+        ]
+      },
+      "freeform": {
+        "key": "charge",
+        "type": "string",
+        "placeholder": {
+          "en": "e.g. 0.50 EUR",
+          "nl": "bijv. 0.50 EUR",
+          "de": "z.B. 0.50 EUR",
+          "ca": "p. ex. 0.50 eur",
+          "cs": "např. 0,50 EUR",
+          "_context": "layers:toilet.tagRenderings.toilet-charge.freeform.placeholder"
+        },
+        "inline": true
+      },
+      "id": "toilet-charge"
+    },
+    {
+      "id": "payment-options-split",
+      "question": {
+        "en": "Which methods of payment are accepted here?",
+        "nl": "Welke betaalmiddelen worden hier geaccepteerd?",
+        "pt": "Que métodos de pagamento são aceites aqui?",
+        "pt_BR": "Quais métodos de pagamento são aceitos aqui?",
+        "id": "Metode pembayaran manakah yang di terima disini?",
+        "de": "Welche Zahlungsmethoden werden hier akzeptiert?",
+        "fr": "Quelles sont les méthodes de paiement acceptées ici ?",
+        "hu": "Milyen fizetési módokat fogadnak el itt?",
+        "it": "Quali metodi di pagamento sono accettati qui?",
+        "nb_NO": "Hvilke betalingsmetoder godtas her?",
+        "ca": "Quins mètodes de pagament s'accepten aquí?",
+        "sv": "Vilka betalningsmetoder accepteras här?",
+        "zh_Hant": "這邊接受那種付款方式？",
+        "pl": "Jakie metody płatności są tutaj dostępne?",
+        "ru": "Какие способы оплаты здесь принимают?",
+        "ja": "どのような支払い方法が可能ですか？",
+        "sl": "Kateri načini plačila so možni tu?",
+        "fil": "Anong mga paraang pambayad ang tinatanggap dito?",
+        "es": "¿Qué métodos de pago se aceptan aquí?",
+        "zh_Hans": "这里支持哪些支付方式？",
+        "da": "Hvilke betalingsmetoder accepteres her?",
+        "cs": "Jaké platební metody jsou zde přijímány?",
+        "_context": "layers:toilet.tagRenderings.payment-options-split.question"
+      },
+      "multiAnswer": true,
+      "mappings": [
+        {
+          "if": "payment:cash=yes",
+          "ifnot": "payment:cash=",
+          "icon": "./assets/layers/questions/cash.svg",
+          "then": {
+            "en": "Cash is accepted here",
+            "nl": "Cash geld wordt hier aanvaard",
+            "pt": "Aceitam pagamento com dinheiro aqui",
+            "pt_BR": "Dinheiro é aceito aqui",
+            "id": "Pembayaran tunai diterima di sini",
+            "de": "Hier wird Bargeld akzeptiert",
+            "fr": "Paiement en liquide accepté",
+            "hu": "Itt készpénzzel is lehet fizetni",
+            "it": "I contanti sono accettati",
+            "nb_NO": "Kontanter godtas her",
+            "ca": "S'accepten diners",
+            "sv": "Pengar accepteras här",
+            "zh_Hant": "這邊接受現金",
+            "pl": "Płatność gotówkowa jest tutaj dostępna",
+            "ru": "Здесь принимают наличными",
+            "ja": "現金利用可能",
+            "sl": "Tu sprejemajo gotovino",
+            "fil": "Tinatanggap ang salapi rito",
+            "es": "Aquí se acepta el pago en efectivo",
+            "zh_Hans": "可用现金",
+            "da": "Her modtages kontanter",
+            "cs": "Přijímá se zde hotovost",
+            "_context": "layers:toilet.tagRenderings.payment-options-split.mappings.0.then"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "payment:cards=yes",
+          "ifnot": "payment:cards=",
+          "icon": "./assets/layers/questions/payment_card.svg",
+          "then": {
+            "en": "Payment cards are accepted here",
+            "nl": "Betalen met bankkaarten kan hier",
+            "pt": "Aceitam pagamento com cartões bancários aqui",
+            "pt_BR": "Cartões de pagamento são aceitos aqui",
+            "id": "Kartu pembayaran diterima di sini",
+            "de": "Hier wird Kartenzahlung akzeptiert",
+            "fr": "Paiement par carte accepté",
+            "hu": "Itt fizetőkártyákkal is lehet fizetni",
+            "it": "I pagamenti con la carta sono accettati",
+            "nb_NO": "Betalingskort godtas her",
+            "ca": "S'accepten targetes de crèdit",
+            "sv": "Betalningskort accepteras här",
+            "zh_Hant": "這邊接受現金卡",
+            "pl": "Płatność kartą jest tutaj dostępna",
+            "ru": "Здесь принимают банковские карты",
+            "ja": "お支払いはこちらで承ります",
+            "sl": "Tukaj sprejemajo plačilne kartice",
+            "fil": "Tinatanggap ang mga tarhetang pambayad dito",
+            "es": "Aquí se acepta el pago por tarjeta",
+            "zh_Hans": "可用信用卡",
+            "da": "Betalingskort accepteres her",
+            "cs": "Jsou zde přijímány platební karty",
+            "_context": "layers:toilet.tagRenderings.payment-options-split.mappings.1.then"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "payment:qr_code=yes",
+          "ifnot": "payment:qr_code=no",
+          "icon": "./assets/layers/questions/qrcode.svg",
+          "then": {
+            "en": "Payment by QR-code is possible here",
+            "nl": "Betalen via een QR-code is hier mogelijk",
+            "de": "Die Bezahlung per QR-Code ist hier möglich",
+            "es": "Aquí se puede pagar con código QR",
+            "ca": "Aquí es pot pagar amb codi QR",
+            "cs": "Platba QR kódem je zde možná",
+            "_context": "layers:toilet.tagRenderings.payment-options-split.mappings.2.then"
+          }
+        },
+        {
+          "if": "payment:coins=yes",
+          "ifnot": "payment:coins=no",
+          "icon": "./assets/layers/questions/coins.svg",
+          "then": {
+            "en": "Coins are accepted here",
+            "nl": "Muntgeld wordt hier aanvaard",
+            "de": "Münzen werden hier akzeptiert",
+            "fr": "Les pièces sont acceptées ici",
+            "ca": "Aquí s'accepten monedes",
+            "es": "Aquí se aceptan monedas",
+            "nb_NO": "Mynter aksepteres her",
+            "pl": "Monety są tutaj akceptowane",
+            "cs": "Jsou zde přijímány mince",
+            "_context": "layers:toilet.tagRenderings.payment-options-split.mappings.3.then"
+          }
+        },
+        {
+          "if": "payment:notes=yes",
+          "ifnot": "payment:notes=no",
+          "icon": "./assets/layers/questions/notes.svg",
+          "then": {
+            "en": "Bank notes are accepted here",
+            "nl": "Bankbiljetten worden hier aanvaard",
+            "de": "Geldscheine werden hier akzeptiert",
+            "fr": "Les billets de banque sont acceptés ici",
+            "ca": "Aquí s'accepten bitllets",
+            "es": "Aquí se aceptan billetes",
+            "nb_NO": "Sedler aksepteres her",
+            "pl": "Banknoty są tutaj akceptowane",
+            "cs": "Jsou zde přijímány bankovky",
+            "_context": "layers:toilet.tagRenderings.payment-options-split.mappings.4.then"
+          }
+        },
+        {
+          "if": "payment:debit_cards=yes",
+          "ifnot": "payment:debit_cards=no",
+          "icon": "./assets/layers/questions/payment_card.svg",
+          "then": {
+            "en": "Debit cards are accepted here",
+            "nl": "Betalen met debetkaarten kan hier",
+            "de": "Debitkarten werden hier akzeptiert",
+            "fr": "Les cartes de débit sont acceptées ici",
+            "ca": "Aquí s'accepten targetes de dèbit",
+            "es": "Aquí se aceptan tarjetas de débito",
+            "nb_NO": "Debetkort aksepteres her",
+            "pl": "Akceptowane są tutaj karty debetowe",
+            "cs": "Jsou zde přijímány debetní karty",
+            "_context": "layers:toilet.tagRenderings.payment-options-split.mappings.5.then"
+          }
+        },
+        {
+          "if": "payment:credit_cards=yes",
+          "ifnot": "payment:credit_cards=no",
+          "icon": "./assets/layers/questions/payment_card.svg",
+          "then": {
+            "en": "Credit cards are accepted here",
+            "nl": "Betalen met creditkaarten kan hier",
+            "de": "Kreditkarten werden hier akzeptiert",
+            "fr": "Les cartes de crédit sont acceptées ici",
+            "ca": "Aquí s'accepten targetes de crèdit",
+            "es": "Aquí se aceptan tarjetas de crédito",
+            "nb_NO": "Kredittkort aksepteres her",
+            "pl": "Akceptowane są tutaj karty kredytowe",
+            "cs": "Jsou zde přijímány kreditní karty",
+            "_context": "layers:toilet.tagRenderings.payment-options-split.mappings.6.then"
+          }
+        }
+      ],
+      "condition": {
+        "and": [
+          "amenity=toilets",
+          "fee=yes"
+        ]
+      },
+      "labels": [
+        "relevant-questions"
+      ]
+    },
+    {
+      "id": "opening_hours_24_7",
+      "question": {
+        "en": "When are these toilets opened?",
+        "fr": "Quand ces toilettes sont-elles ouvertes ?",
+        "de": "Wann sind diese Toiletten geöffnet?",
+        "nl": "Wanneer zijn deze toiletten open?",
+        "nb_NO": "Hva er åpningstidene for {title()})",
+        "ru": "Какое время работы у {title()}?",
+        "zh_Hant": "{title()} 的開放時間是什麼？",
+        "it": "Quali sono gli orari di apertura di {title()}?",
+        "pt_BR": "Qual o horário de funcionamento de {title()}?",
+        "pl": "Jakie są godziny otwarcia {title()}?",
+        "sv": "Vilka är öppettiderna för {title()}?",
+        "pt": "Qual é o horário de funcionamento de {title()}?",
+        "hu": "Mikor van nyitva ez: {title()}?",
+        "ca": "Quan obrin aquests lavabos?",
+        "ja": "{title()}の営業時間は？",
+        "sl": "Kakšen odpiralni čas ima {title()}?",
+        "fil": "Anong oras nagbubukas ang {title()}?",
+        "es": "¿Cuales son las horas de apertura de {title()}?",
+        "zh_Hans": "{title()} 的开放时间为何？",
+        "da": "Hvornår åbnes disse toiletter?",
+        "id": "Kapan jam buka {title()}?",
+        "cs": "Kdy jsou tyto toalety otevřeny?",
+        "_context": "layers:toilet.tagRenderings.opening_hours_24_7.question"
+      },
+      "render": {
+        "de": "<h3>Öffnungszeiten</h3>{opening_hours_table(opening_hours)}",
+        "fr": "<h3>Horaires d'ouverture</h3>{opening_hours_table(opening_hours)}",
+        "en": "<h3>Opening hours</h3>{opening_hours_table(opening_hours)}",
+        "nl": "<h3>Openingstijden</h3>{opening_hours_table(opening_hours)}",
+        "nb_NO": "<h3>Åpningstider</h3>{opening_hours_table(opening_hours)}",
+        "ru": "<h3>Часы работы</h3>{opening_hours_table(opening_hours)}",
+        "zh_Hant": "<h3>開放時間</h3>{opening_hours_table(opening_hours)}",
+        "it": "<h3>Orari di apertura</h3>{opening_hours_table(opening_hours)}",
+        "pl": "<h3> Godziny otwarcia</h3>{opening_hours_table(opening_hours)}",
+        "pt_BR": "<h3>Horário de funcionamento</h3>{opening_hours_table(opening_hours)}",
+        "sv": "<h3>Öppettider</h3> {opening_hours_table(opening_hours)}",
+        "pt": "<h3>Horário de funcionamento</h3>{opening_hours_table(opening_hours)}",
+        "eo": "<h3>Malfermitaj horoj</h3>{opening_hours_table(opening_hours)}",
+        "hu": "<h3>Nyitva tartás</h3>{opening_hours_table(opening_hours)}",
+        "ca": "<h3>Horari d'obertura</h3>{opening_hours_table(opening_hours)}",
+        "ja": "<h3>営業時間</h3>{opening_hours_table(opening_hours)}",
+        "sl": "<h3>Odpiralni čas</h3>{opening_hours_table(opening_hours)}",
+        "fil": "<h3>Mga oras na bukas</h3>{opening_hours_table(opening_hours)}",
+        "es": "<h3>Horas de apertura</h3>{opening_hours_table(opening_hours)}",
+        "zh_Hans": "<h3>开放时间</h3> {opening_hours_table(opening_hours)}",
+        "da": "<h3> Åbningstider</h3>{opening_hours_table(opening_hours)}",
+        "id": "<h3>Jam buka</h3>{opening_hours_table(opening_hours)}",
+        "pa_PK": "<h3>کھُلھے گھنٹے</h3>{opening_hours_table(opening_hours)}",
+        "cs": "<h3>Otevírací hodiny</h3>{opening_hours_table(opening_hours)}",
+        "_context": "layers:toilet.tagRenderings.opening_hours_24_7.render"
+      },
+      "freeform": {
+        "key": "opening_hours",
+        "type": "opening_hours",
+        "inline": false
+      },
+      "mappings": [
+        {
+          "if": "opening_hours=24/7",
+          "icon": "./assets/layers/questions/open24_7.svg",
+          "then": {
+            "en": "24/7 opened (including holidays)",
+            "de": "durchgehend geöffnet (auch an Feiertagen)",
+            "zh_Hant": "24/7 開放 (包括假日)",
+            "id": "Buka 24 jam (termasuk hari libur)",
+            "hu": "Éjjel-nappal nyitva (munkaszüneti napokon is)",
+            "es": "Abierta 24/7 (incluyendo festivos)",
+            "nl": "24/7 open (ook tijdens feestdagen)",
+            "fr": "Ouvert 24h/24 (jours fériés compris)",
+            "nb_NO": "Døgnåpent (inkludert helligdager)",
+            "cs": "Otevřeno 24/7 (včetně svátků)",
+            "ca": "Obert 24/7 (incloent-hi festius)",
+            "pl": "Otwarte 24/7 (również w święta)",
+            "_context": "layers:toilet.tagRenderings.opening_hours_24_7.mappings.0.then"
+          }
+        },
+        {
+          "#": "Just here to be able to handle those ~5000 incorrect 'opening_hours=closed' elements.",
+          "if": "opening_hours=closed",
+          "then": {
+            "en": "Marked as closed for an unspecified time",
+            "nl": "Gesloten voor onbepaalde duur",
+            "de": "Als geschlossen für eine unbestimmte Zeit markiert",
+            "_context": "layers:toilet.tagRenderings.opening_hours_24_7.mappings.1.then"
+          },
+          "hideInAnswer": true
+        }
+      ],
+      "condition": {
+        "and": [
+          "amenity=toilets",
+          "access!=no"
+        ]
+      },
+      "labels": [
+        "relevant-questions"
+      ]
+    },
+    {
+      "id": "toilets-wheelchair",
+      "labels": [
+        "relevant-questions"
+      ],
+      "question": {
+        "en": "Is there a dedicated toilet for wheelchair users?",
+        "de": "Können Rollstuhlfahrer die Toilette benutzen?",
+        "fr": "Y a-t-il des toilettes réservées aux personnes en fauteuil roulant ?",
+        "nl": "Is er een rolstoeltoegankelijke toilet voorzien?",
+        "it": "C'è un WC riservato alle persone in sedia a rotelle",
+        "da": "Er der et særligt toilet til kørestolsbrugere?",
+        "ca": "Hi ha un lavabo específic per a usuaris amb cadira de rodes?",
+        "cs": "Je zde vyhrazená toaleta pro vozíčkáře?",
+        "_context": "layers:toilet.tagRenderings.toilets-wheelchair.question"
+      },
+      "mappings": [
+        {
+          "then": {
+            "en": "There is a dedicated toilet for wheelchair users",
+            "de": "Rollstuhlfahrer können die Toilette benutzen",
+            "fr": "Il y a des toilettes réservées pour les personnes à mobilité réduite",
+            "nl": "Er is een toilet voor rolstoelgebruikers",
+            "it": "C'è un WC riservato alle persone in sedia a rotelle",
+            "es": "Hay un baño dedicado para usuarios con sillas de ruedas",
+            "da": "Der er et særligt toilet til kørestolsbrugere",
+            "ca": "Hi ha un lavabo dedicat per a usuaris amb cadira de rodes",
+            "cs": "K dispozici je speciální toaleta pro vozíčkáře",
+            "_context": "layers:toilet.tagRenderings.toilets-wheelchair.mappings.0.then"
+          },
+          "if": "wheelchair=yes"
+        },
+        {
+          "if": "wheelchair=no",
+          "then": {
+            "en": "No wheelchair access",
+            "de": "Rollstuhlfahrer können die Toilette nicht benutzen",
+            "fr": "Non accessible aux personnes à mobilité réduite",
+            "nl": "Niet toegankelijk voor rolstoelgebruikers",
+            "it": "Non accessibile in sedia a rotelle",
+            "ru": "Недоступно пользователям кресел-колясок",
+            "es": "Sin acceso para sillas de ruedas",
+            "da": "Ingen kørestolsadgang",
+            "ca": "Sense accés per a cadires de rodes",
+            "cs": "Žádný bezbariérový přístup",
+            "_context": "layers:toilet.tagRenderings.toilets-wheelchair.mappings.1.then"
+          }
+        },
+        {
+          "if": "wheelchair=designated",
+          "then": {
+            "en": "There is only a dedicated toilet for wheelchair users",
+            "nl": "Er is alleen een toilet voor rolstoelgebruikers",
+            "de": "Es gibt nur eine barrierefreie Toilette für Rollstuhlfahrer",
+            "da": "Der er kun et særligt toilet til kørestolsbrugere",
+            "ca": "És només un lavabo per a usuaris amb cadira de rodes",
+            "cs": "K dispozici je pouze vyhrazená toaleta pro vozíčkáře",
+            "_context": "layers:toilet.tagRenderings.toilets-wheelchair.mappings.2.then"
+          }
+        }
+      ],
+      "condition": {
+        "and": [
+          "amenity=toilets"
+        ]
+      }
+    },
+    {
+      "id": "wheelchair-door-width",
+      "condition": {
+        "and": [
+          "amenity=toilets",
+          {
+            "or": [
+              "wheelchair=yes",
+              "wheelchair=designated"
+            ]
+          }
+        ]
+      },
+      "labels": [
+        "relevant-questions"
+      ],
+      "question": {
+        "en": "What is the width of the door to the wheelchair accessible toilet?",
+        "nl": "Hoe breed is de deur van de rolstoeltoegankelijke toilet?",
+        "fr": "Quelle est la largeur de la porte des toilettes accessibles aux fauteuils roulants ?",
+        "de": "Wie breit ist die Tür zur rollstuhlgerechten Toilette?",
+        "da": "Hvad er bredden på døren til det kørestolsvenlige toilet?",
+        "ca": "Quina és l'amplada de la porta per al lavabo accéssible?",
+        "cs": "Jaká je šířka dveří na bezbariérovou toaletu?",
+        "_context": "layers:toilet.tagRenderings.wheelchair-door-width.question"
+      },
+      "render": {
+        "en": "The door to the wheelchair-accessible toilet is {canonical(door:width)} wide",
+        "nl": "De deur naar de rolstoeltoegankelijke toilet is {canonical(door:width)} wide",
+        "fr": "La porte des toilettes accessibles aux fauteuils roulants a une large de {canonical(door:width)}",
+        "de": "Die Tür zur rollstuhlgerechten Toilette ist {canonical(door:width)} breit",
+        "da": "Døren til det kørestolsvenlige toilet er {canonical(door:width)} bred",
+        "ca": "La porta del vàter accessible amb cadira de rodes té {canonical(door:width)} d'ample",
+        "cs": "Dveře na bezbariérovou toaletu mají šířku {canonical(door:width)}",
+        "_context": "layers:toilet.tagRenderings.wheelchair-door-width.render"
+      },
+      "freeform": {
+        "key": "door:width",
+        "type": "pfloat",
+        "inline": false
+      }
+    },
+    {
+      "id": "toilets-type",
+      "labels": [
+        "relevant-questions"
+      ],
+      "question": {
+        "en": "Which kind of toilets are these?",
+        "de": "Welche Toiletten gibt es hier?",
+        "fr": "De quel type sont ces toilettes ?",
+        "nl": "Welke toiletten zijn dit?",
+        "it": "Di che tipo di servizi igienici si tratta?",
+        "ru": "Какие это туалеты?",
+        "es": "¿Qué tipo de aseos son?",
+        "da": "Hvilken slags toiletter er det?",
+        "ca": "Quin tipus de lavabo són aquests?",
+        "cs": "O jaký druh záchodů se jedná?",
+        "_context": "layers:toilet.tagRenderings.toilets-type.question"
+      },
+      "mappings": [
+        {
+          "if": "toilets:position=seated",
+          "then": {
+            "en": "There are only seated toilets",
+            "de": "Hier gibt es nur Toiletten zum Sitzen",
+            "fr": "Il y a uniquement des sièges de toilettes",
+            "nl": "Er zijn enkel WC's om op te zitten",
+            "it": "Ci sono solo WC con sedile",
+            "ca": "Només hi han lavabos asseguts",
+            "cs": "K dispozici jsou pouze toalety k sezení",
+            "_context": "layers:toilet.tagRenderings.toilets-type.mappings.0.then"
+          }
+        },
+        {
+          "if": "toilets:position=urinal",
+          "then": {
+            "en": "There are only urinals here",
+            "de": "Hier gibt es nur Urinale zum Stehen",
+            "fr": "Il y a uniquement des urinoirs",
+            "nl": "Er zijn enkel urinoirs",
+            "it": "Ci sono solo urinali",
+            "es": "Aquí solo hay orinales",
+            "da": "Her er kun urinaler",
+            "ca": "Aquí només hi han urinals",
+            "cs": "Jsou zde pouze pisoáry",
+            "_context": "layers:toilet.tagRenderings.toilets-type.mappings.1.then"
+          }
+        },
+        {
+          "if": "toilets:position=squat",
+          "then": {
+            "en": "There are only squat toilets here",
+            "de": "Hier gibt es nur Toiletten zum Hocken",
+            "fr": "Il y a uniquement des toilettes turques",
+            "nl": "Er zijn enkel hurktoiletten",
+            "it": "Ci sono solo turche",
+            "da": "Der er kun squat-toiletter her",
+            "ca": "Aquí només hi han lavabos a la gatzoneta",
+            "cs": "Jsou zde pouze \"turecké\" toalety",
+            "_context": "layers:toilet.tagRenderings.toilets-type.mappings.2.then"
+          }
+        },
+        {
+          "if": "toilets:position=seated;urinal",
+          "then": {
+            "en": "Both seated toilets and urinals are available here",
+            "de": "Hier gibt es Sitztoiletten und Urinale",
+            "fr": "Il y a des sièges de toilettes et des urinoirs",
+            "nl": "Er zijn zowel urinoirs als zittoiletten",
+            "it": "Ci sono sia sedili, sia urinali",
+            "es": "Aquí hay tanto váteres de sentarse como orinales",
+            "da": "Både siddende toiletter og urinaler er tilgængelige her",
+            "ca": "Aquí hi ha lavabos per a utilitzar tant de peu com asseguts",
+            "cs": "Zde jsou k dispozici sedací toalety i pisoáry",
+            "_context": "layers:toilet.tagRenderings.toilets-type.mappings.3.then"
+          }
+        }
+      ],
+      "condition": {
+        "and": [
+          "amenity=toilets"
+        ]
+      }
+    },
+    {
+      "id": "toilets-changing-table",
+      "labels": [
+        "relevant-questions"
+      ],
+      "question": {
+        "en": "Is a changing table (to change diapers) available?",
+        "de": "Ist hier ein Wickeltisch (zum Wechseln von Babywindeln) vorhanden?",
+        "fr": "Ces toilettes disposent-elles d'une table à langer ?",
+        "nl": "Is er een luiertafel beschikbaar?",
+        "it": "È disponibile un fasciatoio (per cambiare i pannolini)?",
+        "da": "Findes der puslebord (til bleskift)?",
+        "ca": "Hi ha un canviador per a nadons (per a canviar bolquers) disponible?",
+        "cs": "Je k dispozici přebalovací pult (na výměnu plenek)?",
+        "_context": "layers:toilet.tagRenderings.toilets-changing-table.question"
+      },
+      "mappings": [
+        {
+          "then": {
+            "en": "A changing table is available",
+            "de": "Ein Wickeltisch ist verfügbar",
+            "fr": "Une table à langer est disponible",
+            "nl": "Er is een luiertafel",
+            "it": "È disponibile un fasciatoio",
+            "es": "Hay un cambiador",
+            "da": "Et puslebord er tilgængeligt",
+            "ca": "Hi ha un canviador per a nadons",
+            "cs": "Přebalovací pult je k dispozici",
+            "_context": "layers:toilet.tagRenderings.toilets-changing-table.mappings.0.then"
+          },
+          "if": "changing_table=yes",
+          "icon": "./assets/layers/toilet/baby.svg"
+        },
+        {
+          "if": "changing_table=no",
+          "then": {
+            "en": "No changing table is available",
+            "de": "Es ist kein Wickeltisch verfügbar",
+            "fr": "Aucune table à langer",
+            "nl": "Geen luiertafel",
+            "it": "Non è disponibile un fasciatoio",
+            "es": "No hay cambiador",
+            "da": "Der er ikke noget puslebord til rådighed",
+            "ca": "No hi ha canviador per a nadons",
+            "cs": "Přebalovací pult není k dispozici",
+            "_context": "layers:toilet.tagRenderings.toilets-changing-table.mappings.1.then"
+          }
+        }
+      ],
+      "condition": {
+        "and": [
+          "amenity=toilets"
+        ]
+      }
+    },
+    {
+      "labels": [
+        "relevant-questions"
+      ],
+      "question": {
+        "en": "Where is the changing table located?",
+        "de": "Wo befindet sich der Wickeltisch?",
+        "fr": "Où se situe la table à langer ?",
+        "nl": "Waar bevindt de luiertafel zich?",
+        "it": "Dove si trova il fasciatoio?",
+        "es": "¿Dónde está el cambiador?",
+        "da": "Hvor er puslebordet placeret?",
+        "ca": "On està el canviador?",
+        "cs": "Kde je umístěn přebalovací pult?",
+        "_context": "layers:toilet.tagRenderings.toilet-changing_table:location.question"
+      },
+      "render": {
+        "en": "A changing table is located at {changing_table:location}",
+        "de": "Ein Wickeltisch befindet sich in {changing_table:location}",
+        "fr": "Emplacement de la table à langer : {changing_table:location}",
+        "nl": "Er bevindt zich een luiertafel in {changing_table:location}",
+        "it": "Il fasciatoio si trova presso {changing_table:location}",
+        "es": "El cambiador está en {changing_table:location}",
+        "da": "Puslebordet er placeret på {changing_table:location}",
+        "ca": "El cambiador està a {changing_table:location}",
+        "cs": "Přebalovací pult se nachází v {changing_table:location}",
+        "_context": "layers:toilet.tagRenderings.toilet-changing_table:location.render"
+      },
+      "condition": {
+        "and": [
+          "amenity=toilets",
+          "changing_table=yes"
+        ]
+      },
+      "freeform": {
+        "key": "changing_table:location",
+        "inline": true
+      },
+      "mappings": [
+        {
+          "then": {
+            "en": "A changing table is in the toilet for women",
+            "de": "Ein Wickeltisch ist in der Damentoilette vorhanden",
+            "fr": "La table à langer est dans les toilettes pour femmes. ",
+            "nl": "Er bevindt zich een luiertafel in de vrouwentoiletten ",
+            "it": "Il fasciatoio è nei servizi igienici femminili. ",
+            "da": "Puslebordet er på toilettet til kvinder. ",
+            "ca": "El canviador està al lavabo per a dones. ",
+            "cs": "Přebalovací pult je na dámské toaletě. ",
+            "_context": "layers:toilet.tagRenderings.toilet-changing_table:location.mappings.0.then"
+          },
+          "if": "changing_table:location=female_toilet"
+        },
+        {
+          "then": {
+            "en": "A changing table is in the toilet for men",
+            "de": "Ein Wickeltisch ist in der Herrentoilette vorhanden",
+            "fr": "La table à langer est dans les toilettes pour hommes. ",
+            "nl": "Er bevindt zich een luiertafel in de herentoiletten ",
+            "it": "Il fasciatoio è nei servizi igienici maschili. ",
+            "ca": "El canviador està al lavabo per a homes. ",
+            "cs": "Přebalovací pult je na pánské toaletě. ",
+            "_context": "layers:toilet.tagRenderings.toilet-changing_table:location.mappings.1.then"
+          },
+          "if": "changing_table:location=male_toilet"
+        },
+        {
+          "if": "changing_table:location=wheelchair_toilet",
+          "then": {
+            "en": "A changing table is in the toilet for wheelchair users",
+            "de": "Ein Wickeltisch ist in der barrierefreien Toilette vorhanden",
+            "fr": "La table à langer est dans les toilettes pour personnes à mobilité réduite. ",
+            "nl": "Er bevindt zich een luiertafel in de rolstoeltoegankelijke toilet ",
+            "it": "Il fasciatoio è nei servizi igienici per persone in sedia a rotelle. ",
+            "da": "Puslebordet er på toilettet for kørestolsbrugere. ",
+            "ca": "El canviador està al lavabo per a usuaris de cadira de rodes. ",
+            "cs": "Přebalovací pult je na toaletě pro vozíčkáře. ",
+            "_context": "layers:toilet.tagRenderings.toilet-changing_table:location.mappings.2.then"
+          }
+        },
+        {
+          "if": "changing_table:location=dedicated_room",
+          "then": {
+            "en": "A changing table is in a dedicated room",
+            "de": "Ein Wickeltisch befindet sich in einem eigenen Raum",
+            "fr": "La table à langer est dans un espace dédié. ",
+            "nl": "Er bevindt zich een luiertafel in een daartoe voorziene kamer ",
+            "it": "Il fasciatoio è in una stanza dedicata. ",
+            "es": "El cambiador está en una habitación dedicada",
+            "da": "Vuggestuen står i et særligt rum. ",
+            "ca": "El canviador està en una habitació dedicada. ",
+            "cs": "Přebalovací pult je ve vyhrazené místnosti. ",
+            "_context": "layers:toilet.tagRenderings.toilet-changing_table:location.mappings.3.then"
+          }
+        }
+      ],
+      "multiAnswer": true,
+      "id": "toilet-changing_table:location"
+    },
+    {
+      "labels": [
+        "relevant-questions"
+      ],
+      "id": "toilet-handwashing",
+      "question": {
+        "en": "Do these toilets have a sink to wash your hands?",
+        "nl": "Hebben deze toiletten een lavabo om de handen te wassen?",
+        "de": "Gibt es hier ein Handwaschbecken?",
+        "es": "¿Esto baños tienen una pileta para lavarte las manos?",
+        "fr": "Ces toilettes ont-ils un lavabo pour se laver les mains ?",
+        "da": "Har disse toiletter en håndvask til at vaske hænder?",
+        "ca": "Aquests lavabos tenen una pica per a rentar-te les mans?",
+        "cs": "Mají tyto toalety umyvadlo na mytí rukou?",
+        "_context": "layers:toilet.tagRenderings.toilet-handwashing.question"
+      },
+      "mappings": [
+        {
+          "if": "toilets:handwashing=yes",
+          "then": {
+            "en": "These toilets have a sink to wash your hands",
+            "nl": "Deze toiletten hebben een lavabo waar men de handen kan wassen",
+            "de": "Die Toilette hat ein Handwaschbecken",
+            "es": "Estos aseos tienen un lavabo para lavarse las manos",
+            "fr": "Ces toilettes ont un lavabo pour se laver les mains",
+            "da": "Dette toilet har en vask til at vaske dine hænder",
+            "ca": "Aquests lavabos tenen una pica per a rentar-te les mans",
+            "cs": "Tyto toalety mají umyvadlo na mytí rukou",
+            "_context": "layers:toilet.tagRenderings.toilet-handwashing.mappings.0.then"
+          }
+        },
+        {
+          "if": "toilets:handwashing=no",
+          "then": {
+            "en": "These toilets <b>don't</b> have a sink to wash your hands",
+            "nl": "Deze toiletten hebben <b>geen</b> lavabo waar men de handen kan wassen",
+            "de": "Die Toilette hat <b>kein</b> Handwaschbecken",
+            "es": "Estos aseos <b>no tienen lavabo</b> para lavarse las manos",
+            "fr": "Ces toilettes <b>n'ont pas</b> de lavabo pour se laver les mains",
+            "da": "Disse toiletter <b> har ikke </b> en vask til at vaske dine hænder",
+            "ca": "Aquests lavabos <b>no</b> tenen una pica per a rentar-te les mans",
+            "cs": "Tyto toalety <b>nemají umyvadlo na mytí rukou</b>",
+            "_context": "layers:toilet.tagRenderings.toilet-handwashing.mappings.1.then"
+          }
+        }
+      ],
+      "condition": {
+        "and": [
+          "amenity=toilets"
+        ]
+      }
+    },
+    {
+      "id": "toilet-has-paper",
+      "labels": [
+        "relevant-questions"
+      ],
+      "question": {
+        "en": "Does one have to bring their own toilet paper to this toilet?",
+        "nl": "Moet je je eigen toiletpapier meenemen naar deze toilet?",
+        "de": "Ist Toilettenpapier vorhanden?",
+        "es": "¿Hay que traer tu propio papel higiénico a este baño?",
+        "fr": "Est-ce qu'il faut apporter son propre papier toilette ?",
+        "da": "Skal man selv medbringe toiletpapir til dette toilet?",
+        "ca": "Hi ha que portar el teu propi paper higiènic a aquest lavabo?",
+        "cs": "Musí si člověk na tento záchod přinést vlastní toaletní papír?",
+        "_context": "layers:toilet.tagRenderings.toilet-has-paper.question"
+      },
+      "mappings": [
+        {
+          "if": "toilets:paper_supplied=yes",
+          "then": {
+            "en": "This toilet is equipped with toilet paper",
+            "nl": "Deze toilet is voorzien van toiletpapier",
+            "de": "Die Toilette ist in der Regel mit Toilettenpapier ausgestattet",
+            "es": "Este baño esta equipado con papel higiénico",
+            "fr": "Ces toilettes sont équipés de papier toilette",
+            "da": "Dette toilet er udstyret med toiletpapir",
+            "ca": "Aquest lavabo està equipat amb paper higiènic",
+            "cs": "Toaleta je vybavena toaletním papírem",
+            "_context": "layers:toilet.tagRenderings.toilet-has-paper.mappings.0.then"
+          }
+        },
+        {
+          "if": "toilets:paper_supplied=no",
+          "then": {
+            "en": "You have to bring your own toilet paper to this toilet",
+            "nl": "Je moet je eigen toiletpapier meebrengen naar deze toilet",
+            "de": "Die Toilette ist nicht mit Toilettenpapier ausgestattet, man muss es selbst mitbringen",
+            "es": "Tienes que traer tu propio papel higiénico a este baño",
+            "fr": "Vous devez apporter votre propre papier toilette ici",
+            "da": "Du skal selv medbringe toiletpapir til dette toilet",
+            "ca": "Has de portar el teu paper higiènic a aquest lavabo",
+            "cs": "Na tuto toaletu si musíte přinést vlastní toaletní papír",
+            "_context": "layers:toilet.tagRenderings.toilet-has-paper.mappings.1.then"
+          }
+        }
+      ],
+      "condition": {
+        "#": "Urinals normally don't have toilet paper",
+        "and": [
+          "amenity=toilets",
+          "toilets:position!=urinal"
+        ]
+      }
+    },
+    {
+      "id": "leftover-questions",
+      "render": {
+        "*": "{questions( ,)}"
+      }
+    },
+    {
+      "id": "lod",
+      "labels": [
+        "added_by_default"
+      ],
+      "render": {
+        "*": "{linked_data_from_website()}"
+      }
+    },
+    {
+      "id": "minimap",
+      "description": "Shows a small map with the feature. Added by default to every popup",
+      "render": {
+        "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+      }
+    },
+    {
+      "id": "last_edit",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+      "condition": {
+        "and": [
+          "_last_edit:contributor~*",
+          "_last_edit:changeset~*"
+        ]
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsTesting=true",
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_debug=yes",
+          "_csCount>=10"
+        ]
+      },
+      "render": {
+        "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+      }
+    },
+    {
+      "id": "favourite_status",
+      "render": {
+        "*": "{favourite_status()}"
+      }
+    },
+    {
+      "id": "qr_code",
+      "labels": [
+        "added_by_default"
+      ],
+      "classes": "flex items-center gap-x-2",
+      "render": {
+        "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+        "en": "{qr_code()}Scan this code to open this location on another device",
+        "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+        "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+      }
+    },
+    {
+      "id": "share",
+      "labels": [
+        "added_by_default"
+      ],
+      "metacondition": "_supports_sharing=yes",
+      "render": {
+        "de": "{share_link(,Standort teilen)}",
+        "en": "{share_link(,Share this location)}",
+        "nl": "{share_link(,Deel deze locatie)}"
+      }
+    },
+    {
+      "id": "all-tags",
+      "render": {
+        "*": "{all_tags()}"
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_tags=full",
+          "mapcomplete-show_debug=yes"
+        ]
+      }
+    }
+  ],
+  "_layerIcon": []
+}

@@ -1,0 +1,1695 @@
+{
+  "id": "trees",
+  "title": {
+    "en": "Trees",
+    "nl": "Bomen",
+    "fr": "Arbres",
+    "it": "Alberi",
+    "ru": "Деревья",
+    "ja": "樹木",
+    "zh_Hant": "樹木",
+    "pl": "Drzewa",
+    "de": "Bäume",
+    "nb_NO": "Trær",
+    "id": "Pohon",
+    "hu": "Fatérkép",
+    "ca": "Arbres",
+    "es": "Árboles",
+    "da": "Træer",
+    "pa_PK": "رُکھ",
+    "cs": "Stromy",
+    "pt_BR": "Árvores",
+    "eu": "Zuhaitzak",
+    "pt": "Árvores",
+    "_context": "themes:trees.title"
+  },
+  "description": {
+    "nl": "Breng bomen in kaart!",
+    "en": "Map all the trees!",
+    "fr": "Cartographions tous les arbres !",
+    "it": "Mappa tutti gli alberi!",
+    "ja": "すべての樹木をマッピングします!",
+    "zh_Hant": "繪製所有樹木！",
+    "ru": "Нанесите все деревья на карту!",
+    "de": "Kartieren Sie alle Bäume!",
+    "nb_NO": "Kartlegg trærne.",
+    "hu": "Térképezzünk fel minden fát!",
+    "ca": "Mapeja tots els arbres!",
+    "es": "¡Mapa de los Árboles!",
+    "da": "Kortlæg alle træerne!",
+    "cs": "Zmapujte všechny stromy!",
+    "pt_BR": "Mapeie todas as árvores!",
+    "pl": "Zmapuj wszystkie drzewa!",
+    "pt": "Mapeie todas as árvores!",
+    "_context": "themes:trees.description"
+  },
+  "shortDescription": {
+    "en": "Map all the trees",
+    "nl": "Breng bomen in kaart",
+    "fr": "Cartographions tous les arbres",
+    "it": "Mappa tutti gli alberi",
+    "ja": "すべての樹木をマッピングする",
+    "zh_Hant": "所有樹木的地圖",
+    "ru": "Карта деревьев",
+    "pl": "Mapa wszystkich drzew",
+    "de": "Kartieren Sie alle Bäume",
+    "nb_NO": "Kartlegg alle trærne",
+    "hu": "Az összes fa feltérképezése",
+    "ca": "Mapeja tots els arbres",
+    "es": "Mapa de los Árboles",
+    "da": "Kortlæg alle træer",
+    "cs": "Zmapujte všechny stromy",
+    "_context": "themes:trees.shortDescription"
+  },
+  "icon": "./assets/themes/trees/logo.svg",
+  "socialImage": "./assets/themes/trees/logo.svg",
+  "startZoom": 8,
+  "startLat": 50.642,
+  "startLon": 4.482,
+  "defaultBackgroundId": "photo",
+  "credits": [
+    "Midgard"
+  ],
+  "layers": [
+    {
+      "id": "tree_node",
+      "name": {
+        "nl": "Boom",
+        "en": "Tree",
+        "it": "Albero",
+        "ru": "Дерево",
+        "fr": "Arbre",
+        "de": "Bäume",
+        "ca": "Arbre",
+        "es": "Árbol",
+        "da": "Træ",
+        "pt_BR": "Árvore",
+        "cs": "Strom",
+        "pt": "Árvore"
+      },
+      "description": {
+        "en": "A layer showing trees",
+        "nl": "Een laag die bomen toont",
+        "es": "Una capa que muestra árboles",
+        "de": "Eine Ebene, die Bäume zeigt",
+        "fr": "Une couche montrant les arbres",
+        "da": "Et lag, der viser træer",
+        "ca": "Una capa que mostra arbres",
+        "cs": "Vrstva zobrazující stromy"
+      },
+      "source": {
+        "osmTags": {
+          "and": [
+            "natural=tree"
+          ]
+        }
+      },
+      "minzoom": 16,
+      "title": {
+        "render": {
+          "nl": "Boom",
+          "en": "Tree",
+          "it": "Albero",
+          "ru": "Дерево",
+          "fr": "Arbre",
+          "de": "Baum",
+          "eo": "Arbo",
+          "ca": "Arbre",
+          "es": "Árbol",
+          "da": "Træ",
+          "pt": "Árvore",
+          "cs": "Strom"
+        },
+        "mappings": [
+          {
+            "if": {
+              "and": [
+                "name~*",
+                "species:wikidata~*"
+              ]
+            },
+            "then": {
+              "*": "{name} ({wikidata_label(species:wikidata)})"
+            }
+          },
+          {
+            "if": {
+              "and": [
+                "name~*"
+              ]
+            },
+            "then": {
+              "*": "{name}"
+            }
+          },
+          {
+            "if": "species:wikidata~*",
+            "then": {
+              "*": "{wikidata_label(species:wikidata)}"
+            }
+          },
+          {
+            "if": "species~*",
+            "then": {
+              "*": "<i>{species}</i>"
+            }
+          }
+        ]
+      },
+      "pointRendering": [
+        {
+          "marker": [
+            {
+              "icon": {
+                "render": "circle",
+                "id": "circle"
+              },
+              "color": "#ffffff"
+            },
+            {
+              "icon": {
+                "render": "./assets/layers/tree_node/unknown.svg",
+                "mappings": [
+                  {
+                    "if": {
+                      "and": [
+                        "leaf_type=broadleaved"
+                      ]
+                    },
+                    "then": "./assets/layers/tree_node/broadleaved.svg"
+                  },
+                  {
+                    "if": {
+                      "and": [
+                        "leaf_type=needleleaved"
+                      ]
+                    },
+                    "then": "./assets/layers/tree_node/needleleaved.svg"
+                  }
+                ]
+              }
+            }
+          ],
+          "iconSize": "40,40",
+          "location": [
+            "point",
+            "centroid"
+          ],
+          "anchor": "bottom",
+          "iconBadges": [
+            {
+              "if": "_favourite=yes",
+              "then": {
+                "render": "circle:white;heart:red",
+                "id": "circlewhiteheartred"
+              }
+            }
+          ]
+        }
+      ],
+      "lineRendering": [],
+      "presets": [
+        {
+          "tags": [
+            "natural=tree",
+            "leaf_type=broadleaved"
+          ],
+          "title": {
+            "nl": "een loofboom",
+            "en": "a broadleaved tree",
+            "it": "una albero latifoglia",
+            "fr": "une arbre feuillu",
+            "ru": "Лиственное дерево",
+            "de": "ein Laubbaum",
+            "es": "árbol de hoja ancha",
+            "da": "et løvtræ",
+            "pt": "uma árvore de folhas largas",
+            "ca": "un arbre de fulla ampla",
+            "cs": "listnatý strom"
+          },
+          "description": {
+            "nl": "Een boom van een soort die blaadjes heeft, bijvoorbeeld eik of populier.",
+            "en": "A tree of a species with leaves, such as oak or populus.",
+            "it": "Un albero di una specie con foglie larghe come la quercia o il pioppo.",
+            "fr": "Un arbre d'une espèce avec de larges feuilles, comme le chêne ou le peuplier.",
+            "de": "Ein Baum mit Blättern, z. B. Eiche oder Buche.",
+            "es": "Un árbol de hojas como el Roble o el Álamo.",
+            "pt": "Uma árvore de uma espécie com folhas, como carvalho ou populus.",
+            "ca": "Arbre d'una espècie amb fulles, com el roure o el pollancre.",
+            "cs": "Strom s listy, například dub nebo topol."
+          }
+        },
+        {
+          "tags": [
+            "natural=tree",
+            "leaf_type=needleleaved"
+          ],
+          "title": {
+            "nl": "een naaldboom",
+            "en": "a needleleaved tree",
+            "it": "una albero aghifoglia",
+            "ru": "Хвойное дерево",
+            "fr": "une arbre résineux",
+            "de": "ein Nadelbaum",
+            "es": "Árbol tipo Conífera",
+            "da": "et nåletræ",
+            "pt": "uma árvore com folhas de agulha",
+            "ca": "un arbre amb fulles d'agulla",
+            "cs": "jehličnatý strom"
+          },
+          "description": {
+            "nl": "Een boom van een soort met naalden, bijvoorbeeld den of spar.",
+            "en": "A tree of a species with needles, such as pine or spruce.",
+            "it": "Un albero di una specie con aghi come il pino o l’abete.",
+            "ru": "Дерево с хвоей (иглами), например, сосна или ель.",
+            "fr": "Une espèce d’arbre avec des épines comme le pin ou l’épicéa.",
+            "de": "Ein Baum mit Nadeln, z. B. Kiefer oder Fichte.",
+            "es": "Un árbol de hojas agujas, como el Pino o el Abeto.",
+            "da": "Et træ af en art med nåle, såsom fyr eller gran.",
+            "ca": "Arbre d'una espècie amb agulles, com el pi o l'avet.",
+            "cs": "Strom s jehlicemi, například borovice nebo smrk."
+          }
+        },
+        {
+          "tags": [
+            "natural=tree"
+          ],
+          "title": {
+            "nl": "een boom",
+            "en": "a tree",
+            "it": "una albero",
+            "ru": "Дерево",
+            "fr": "une arbre",
+            "id": "Pohon",
+            "de": "ein Baum",
+            "ca": "un arbre",
+            "es": "un árbol",
+            "da": "et træ",
+            "pt": "uma árvore",
+            "pt_BR": "uma árvore",
+            "cs": "strom"
+          },
+          "description": {
+            "nl": "Wanneer je niet zeker bent of het nu een loof- of naaldboom is.",
+            "en": "If you're not sure whether it's a broadleaved or needleleaved tree.",
+            "it": "Qualora non si sia sicuri se si tratta di un albero latifoglia o aghifoglia.",
+            "fr": "Si vous n'êtes pas sûr(e) de savoir s'il s'agit d'un arbre à feuilles larges ou à aiguilles.",
+            "ru": "Если вы не уверены в том, лиственное это дерево или хвойное.",
+            "de": "Wenn Sie nicht sicher sind, ob es sich um einen Laubbaum oder einen Nadelbaum handelt.",
+            "es": "Si no estás seguro de si es un árbol de hoja ancha o de hoja de aguja.",
+            "da": "Hvis du ikke er sikker på, om det er et løv- eller nåletræ.",
+            "ca": "Si no esteu segur de si es tracta d'un arbre amb fulles amples o amb fulles d'agulles.",
+            "cs": "Pokud si nejste jisti, zda se jedná o listnatý nebo jehličnatý strom."
+          }
+        }
+      ],
+      "tagRenderings": [
+        {
+          "id": "just_created",
+          "labels": [
+            "added_by_default"
+          ],
+          "description": "This element shows a 'thank you' that the contributor has recently created this element",
+          "classes": "rounded-xl thanks",
+          "mappings": [
+            {
+              "if": "id~*",
+              "icon": "./assets/svg/party.svg",
+              "then": {
+                "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+                "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+                "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+                "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+                "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+                "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+              }
+            }
+          ],
+          "condition": {
+            "and": [
+              "_backend~*",
+              "_last_edit:passed_time<300",
+              {
+                "or": [
+                  "_version_number=",
+                  "_version_number=1"
+                ]
+              }
+            ]
+          },
+          "metacondition": {
+            "and": [
+              {
+                "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+                "or": [
+                  "_last_edit:contributor:uid:={_uid}",
+                  "_last_edit:contributor:uid="
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "images",
+          "description": "This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images",
+          "render": {
+            "*": "{image_carousel()}{image_upload()}{nearby_images():my-4}"
+          },
+          "classes": "my-4"
+        },
+        {
+          "id": "plantnet",
+          "render": "{plantnet_detection()}"
+        },
+        {
+          "id": "tree-species-wikidata",
+          "question": {
+            "en": "What species is this tree?",
+            "de": "Um welche Baumart handelt es sich?",
+            "id": "Spesies pohon apa ini?",
+            "es": "¿De qué especie es este árbol?",
+            "nl": "Wat is de boomsoort?",
+            "fr": "Quelle est l'espèce de cet arbre ?",
+            "da": "Hvilken art er dette træ?",
+            "pt": "Que espécie é esta árvore?",
+            "pt_BR": "Que espécie é esta árvore?",
+            "ca": "De quina espècie és aquest arbre?",
+            "cs": "Jaký druh je tento strom?"
+          },
+          "render": {
+            "*": "{wikipedia(species:wikidata):max-height: 25rem}"
+          },
+          "freeform": {
+            "key": "species:wikidata",
+            "type": "wikidata",
+            "helperArgs": [
+              "species",
+              {
+                "instanceOf": [
+                  10884,
+                  16521
+                ]
+              }
+            ],
+            "inline": true
+          }
+        },
+        {
+          "id": "tree-wikipedia",
+          "#": "If this tree has a wikipedia article, show it. People can _only_ set the species though!",
+          "render": {
+            "*": "{wikipedia()}"
+          },
+          "condition": {
+            "or": [
+              "wikipedia~*",
+              "wikidata~*"
+            ]
+          }
+        },
+        {
+          "id": "circumference",
+          "question": {
+            "en": "What is the circumference of the tree trunk?",
+            "de": "Wie groß ist der Umfang des Baumstammes?",
+            "fr": "Quelle est la circonférence du tronc ? ",
+            "nl": "Wat is de omtrek van de boomstam? ",
+            "es": "¿Cuál es la circunferencia del tronco del árbol?",
+            "pt": "Qual é a circunferência do tronco da árvore?",
+            "pt_BR": "Qual é a circunferência do tronco da árvore?",
+            "ca": "Quina és la circumferència del tronc de l'arbre?",
+            "cs": "Jaký je obvod kmene stromu?"
+          },
+          "render": {
+            "en": "The tree trunk has a circumference of {circumference} meter",
+            "de": "Der Baumstamm hat einen Umfang von {circumference} Meter",
+            "fr": "Le tronc a une circonférence de {circumference} mètre(s)",
+            "nl": "De boomstam heeft een omtrek van {circumference} meter",
+            "es": "El tronco del árbol tiene una circunferencia de {circumference} metros",
+            "pt": "O tronco da árvore tem uma circunferência de <b>{circumference}</b> metros",
+            "pt_BR": "O tronco da árvore tem uma circunferência de {circumference} metro",
+            "ca": "El tronc de l'arbre té una circumferència de {circumference} metre",
+            "cs": "Kmen stromu má obvod {circumference} metr"
+          },
+          "freeform": {
+            "key": "circumference",
+            "inline": true,
+            "type": "pfloat"
+          },
+          "questionHint": {
+            "en": "This is measured at a height of 1.30m",
+            "de": "Dies wird in einer Höhe von 1,30 m gemessen",
+            "fr": "La mesure est effectuée à 1.30m de hauteur",
+            "nl": "Dit wordt 1.30m boven de grond gemeten",
+            "es": "Se mide a una altura de 1,30 m",
+            "ca": "Es mesura a una alçada d'1,30 m",
+            "pt_BR": "Isso é medido a uma altura de 1,30m",
+            "cs": "Měří se ve výšce 1,30 m",
+            "pt": "Isto é medido a uma altura de 1,30m"
+          }
+        },
+        {
+          "id": "height",
+          "question": {
+            "en": "What is the height of this tree?",
+            "de": "Wie hoch ist dieser Baum?",
+            "fr": "Quelle est la hauteur de cette arbre ?",
+            "nl": "Wat is de hoogte van deze boom?",
+            "pt": "Qual a altura dessa árvore?",
+            "pt_BR": "Qual a altura dessa árvore?",
+            "ca": "Quina és l'alçada d'aquest arbre?",
+            "cs": "Jaká je výška tohoto stromu?",
+            "es": "¿Qué altura tiene este árbol?"
+          },
+          "freeform": {
+            "key": "height",
+            "type": "pfloat",
+            "inline": true
+          },
+          "render": {
+            "en": "This tree is {height} meter high",
+            "de": "Dieser Baum ist {height} Meter hoch",
+            "fr": "Cet arbre a une hauteur de {height} mètre(s)",
+            "nl": "Deze boom is {height} meter hoog",
+            "es": "Este árbol tiene {height} metros de altura",
+            "pt": "Esta árvore tem {height} metros de altura",
+            "pt_BR": "Esta árvore tem {height} metros de altura",
+            "ca": "Aquest arbre té {height} metres d'altura",
+            "cs": "Tento strom je {height} metr vysoký"
+          }
+        },
+        {
+          "id": "tree-denotation",
+          "question": {
+            "nl": "Hoe significant is deze boom? Kies het eerste antwoord dat van toepassing is.",
+            "en": "How significant is this tree? Choose the first answer that applies.",
+            "it": "Quanto significativo è questo albero? Scegli la prima risposta che corrisponde.",
+            "fr": "Quelle est l'importance de cet arbre ? Choisissez la première réponse qui s'applique.",
+            "de": "Wie bedeutsam ist dieser Baum? Wählen Sie die erste Antwort, die zutrifft.",
+            "es": "¿Qué importancia tiene este árbol? Elige la primera respuesta que corresponda.",
+            "da": "Hvor vigtigt er dette træ? Vælg det første svar, der passer.",
+            "pt": "Quão significativa é esta árvore? Escolha a primeira resposta que se aplica.",
+            "ca": "Quina importància té aquest arbre? Trieu la primera resposta que correspongui.",
+            "cs": "Jak významný je tento strom? Vyberte první správnou odpověď."
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "denotation=landmark"
+                ]
+              },
+              "then": {
+                "nl": "De boom valt op door zijn grootte of prominente locatie. Hij is nuttig voor navigatie.",
+                "en": "The tree is remarkable due to its size or prominent location. It is useful for navigation.",
+                "it": "È un albero notevole per le sue dimensioni o per la posizione prominente. È utile alla navigazione.",
+                "fr": "L'arbre est remarquable en raison de sa taille ou de son emplacement proéminent. Il est utile pour la navigation.",
+                "de": "Der Baum ist aufgrund seiner Größe oder seiner markanten Lage bedeutsam. Er ist nützlich zur Orientierung.",
+                "es": "El árbol es notable debido a su tamaño o ubicación prominente. Es útil para la navegación.",
+                "da": "Træet er bemærkelsesværdigt på grund af sin størrelse eller sin fremtrædende placering. Det er nyttigt til navigation.",
+                "pt": "A árvore é notável devido ao seu tamanho ou localização proeminente. É útil para navegação.",
+                "ca": "L'arbre és notable per la seva mida o per la seva ubicació destacada. És útil per a la navegació.",
+                "cs": "Strom je pozoruhodný svou velikostí nebo nápadným umístěním. Je užitečný pro navigaci."
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "denotation=natural_monument"
+                ]
+              },
+              "then": {
+                "nl": "De boom is een natuurlijk monument, bijvoorbeeld doordat hij bijzonder oud of van een waardevolle soort is.",
+                "en": "The tree is a natural monument, e.g. because it is especially old, or of a valuable species.",
+                "it": "L’albero è un monumento naturale, ad esempio perché specialmente antico o appartenente a specie importanti.",
+                "fr": "Cet arbre est un monument naturel (p.ex. : âge, espèce, etc).",
+                "de": "Der Baum ist ein Naturdenkmal, z. B. weil er besonders alt ist oder zu einer wertvollen Art gehört.",
+                "es": "El árbol es un monumento natural, por ejemplo, porque es especialmente antiguo, o de una especie valiosa.",
+                "da": "Træet er et naturmonument, f.eks. fordi den er særlig gammel eller af en værdifuld art.",
+                "pt": "A árvore é um monumento natural, por ex. porque é especialmente antigo ou de uma espécie valiosa.",
+                "ca": "L'arbre és un monument natural, p. e. perquè és especialment antic o d'una espècie valuosa.",
+                "cs": "Strom je přírodní památkou, např. proto, že je mimořádně starý nebo patří k cenným druhům."
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "denotation=agricultural"
+                ]
+              },
+              "then": {
+                "nl": "De boom wordt voor landbouwdoeleinden gebruikt, bijvoorbeeld in een boomgaard.",
+                "en": "The tree is used for agricultural purposes, e.g. in an orchard.",
+                "it": "L’albero è usato per scopi agricoli, ad esempio in un frutteto.",
+                "fr": "Cet arbre est utilisé à but agricole (p.ex. : dans un verger).",
+                "de": "Der Baum wird für landwirtschaftliche Zwecke genutzt, z. B. in einer Obstplantage.",
+                "es": "El árbol se utiliza con fines agrícolas, por ejemplo, en un huerto.",
+                "da": "Træet anvendes til landbrugsformål, f.eks. i en frugtplantage.",
+                "pt": "A árvore é utilizada para fins agrícolas, por ex. em um pomar.",
+                "ca": "L'arbre s'utilitza amb finalitats agrícoles, p. en un hort.",
+                "cs": "Strom se používá pro zemědělské účely, např. v sadu."
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "denotation=park"
+                ]
+              },
+              "then": {
+                "nl": "De boom staat in een park of dergelijke (begraafplaats, schoolterrein, …).",
+                "en": "The tree is in a park or similar (cemetery, school grounds, …).",
+                "it": "L’albero è in un parco o qualcosa di simile (cimitero, aree didattiche, etc.).",
+                "fr": "Cet arbre est dans un parc ou une aire similaire (ex : cimetière, cour d’école, …).",
+                "de": "Der Baum steht in einem Park oder ähnlichem (Friedhof, Schulgelände, ...).",
+                "es": "El árbol está en un parque o similar (cementerio, recinto escolar, ...).",
+                "da": "Træet står i en park eller lignende (kirkegård, skoleområde, ...).",
+                "pt": "A árvore está em um parque ou similar (cemitério, pátio da escola, …).",
+                "ca": "L'arbre està en un parc o semblant (cementiri, recinte escolar, …).",
+                "cs": "Strom se nachází v parku nebo podobném místě (hřbitov, školní pozemek, ...)."
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "denotation=garden"
+                ]
+              },
+              "then": {
+                "nl": "De boom staat in de tuin bij een woning/flatgebouw.",
+                "en": "The tree is in a residential garden.",
+                "it": "L’albero è un giardino residenziale.",
+                "fr": "Cet arbre est dans une jardin de résidence.",
+                "es": "El árbol está en un jardín de una vivienda.",
+                "de": "Der Baum steht in einem Wohngarten.",
+                "da": "Træet står i en villahave.",
+                "ca": "L'arbre està en un jardí residencial.",
+                "pt": "A árvore está em um jardim residencial.",
+                "cs": "Strom se nachází v obytné zahradě."
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "denotation=avenue"
+                ]
+              },
+              "then": {
+                "nl": "Dit is een laanboom.",
+                "en": "This is a tree along an avenue.",
+                "it": "Fa parte di un viale alberato.",
+                "fr": "C'est un arbre le long d'une avenue.",
+                "de": "Dieser Baum steht entlang einer Straße.",
+                "es": "Este es un árbol a lo largo de una avenida.",
+                "da": "Dette er et træ langs en allé.",
+                "pt": "Esta é uma árvore ao longo de uma avenida.",
+                "ca": "Aquest és un arbre al llarg d'una avinguda.",
+                "cs": "Tohle je strom podél aleje."
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "denotation=urban"
+                ]
+              },
+              "then": {
+                "nl": "De boom staat in een woonkern.",
+                "en": "The tree is in an urban area.",
+                "it": "L’albero si trova in un’area urbana.",
+                "fr": "L'arbre est dans une zone urbaine.",
+                "es": "El árbol está en una zona urbana.",
+                "de": "Der Baum steht in einem städtischen Gebiet.",
+                "da": "Træet står i et byområde.",
+                "ca": "L'arbre està en una àrea urbana.",
+                "pt": "A árvore está em uma área urbana.",
+                "pt_BR": "A árvore está em uma área urbana.",
+                "cs": "Strom se nachází v městské oblasti."
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "denotation=none"
+                ]
+              },
+              "then": {
+                "nl": "De boom staat buiten een woonkern.",
+                "en": "The tree is outside of an urban area.",
+                "it": "L’albero si trova fuori dall’area urbana.",
+                "fr": "Cet arbre est en zone rurale.",
+                "de": "Dieser Baum steht außerhalb eines städtischen Gebiets.",
+                "es": "El árbol está fuera de una zona urbana.",
+                "da": "Træet står uden for et byområde.",
+                "pt": "A árvore está fora de uma área urbana.",
+                "ca": "L'arbre es troba fora d'una zona urbana.",
+                "cs": "Strom se nachází mimo městskou oblast."
+              }
+            }
+          ]
+        },
+        {
+          "id": "tree-leaf_type",
+          "question": {
+            "nl": "Is dit een naald- of loofboom?",
+            "en": "Is this a broadleaved or needleleaved tree?",
+            "it": "Si tratta di un albero latifoglia o aghifoglia?",
+            "fr": "Cet arbre est-il un feuillu ou un résineux ?",
+            "de": "Ist dies ein Laub- oder Nadelbaum?",
+            "es": "¿Es un árbol de hoja ancha o de hoja aguja?",
+            "pt": "Esta é uma árvore de folhas largas ou acículas?",
+            "ca": "És un arbre de fulla ampla o d'agulla?",
+            "cs": "Jedná se o listnatý nebo jehličnatý strom?"
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "leaf_type=broadleaved"
+                ]
+              },
+              "then": {
+                "nl": "Loofboom",
+                "en": "Broadleaved",
+                "it": "Latifoglia",
+                "fr": "Feuillu",
+                "de": "Laubbaum",
+                "ca": "De fulla ampla",
+                "es": "Latifoliada",
+                "id": "Berdaun lebar",
+                "da": "Bredbladet",
+                "pt": "Folha larga",
+                "cs": "Listnatý"
+              },
+              "icon": {
+                "path": "./assets/layers/tree_node/broadleaved.svg",
+                "class": "small"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "leaf_type=needleleaved"
+                ]
+              },
+              "then": {
+                "nl": "Naaldboom",
+                "en": "Needleleaved",
+                "it": "Aghifoglia",
+                "fr": "Résineux",
+                "de": "Nadelbaum",
+                "ca": "Amb fulles d'agulla",
+                "es": "Hoja aguja",
+                "id": "Berdaun jarum",
+                "cs": "Jehličnatý"
+              },
+              "icon": {
+                "path": "./assets/layers/tree_node/needleleaved.svg",
+                "class": "small"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "leaf_type=leafless"
+                ]
+              },
+              "then": {
+                "nl": "Permanent bladloos",
+                "en": "Permanently leafless",
+                "it": "Privo di foglie (permanente)",
+                "fr": "Sans feuilles (Permanent)",
+                "de": "Dauerhaft blattlos",
+                "es": "Permanentemente sin hojas",
+                "id": "Tanpa daun permanen",
+                "da": "Permanent bladløs",
+                "pt": "permanentemente sem folhas",
+                "ca": "Permanentment sense fulles",
+                "cs": "Trvale bez listů"
+              },
+              "hideInAnswer": true,
+              "icon": {
+                "path": "./assets/layers/tree_node/leafless.svg",
+                "class": "small"
+              }
+            }
+          ],
+          "condition": {
+            "#": "If the wikidata entry is known, no need to ask for redundant data such as leaf type",
+            "and": [
+              "species:wikidata="
+            ]
+          }
+        },
+        {
+          "id": "tree-decidouous",
+          "question": {
+            "nl": "Is deze boom groenblijvend of bladverliezend?",
+            "en": "Is this tree evergreen or deciduous?",
+            "it": "È un sempreverde o caduco?",
+            "ru": "Это дерево вечнозелёное или листопадное?",
+            "fr": "L’arbre est-il à feuillage persistant ou caduc ?",
+            "de": "Ist dies ein Nadelbaum oder ein Laubbaum?",
+            "es": "¿El árbol es perenne o caduco?",
+            "da": "Er dette træ stedsegrønt eller løvfældende?",
+            "pt": "Essa árvore é perene ou caducifólia?",
+            "pt_BR": "Essa árvore é perene ou caducifólia?",
+            "ca": "Aquest arbre és perenne o caducifoli?",
+            "cs": "Je tento strom stálezelený nebo opadavý?"
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "leaf_cycle=deciduous"
+                ]
+              },
+              "then": {
+                "nl": "Bladverliezend: de boom is een periode van het jaar kaal.",
+                "en": "Deciduous: the tree loses its leaves for some time of the year.",
+                "it": "Caduco: l’albero perde le sue foglie per un periodo dell’anno.",
+                "ru": "Листопадное: у дерева опадают листья в определённое время года.",
+                "fr": "Caduc : l’arbre perd son feuillage une partie de l’année.",
+                "de": "Laubabwerfend: Der Baum verliert für eine gewisse Zeit des Jahres seine Blätter.",
+                "es": "Caduco o Deciduo: el árbol pierde las hojas en un período del año.",
+                "da": "Løvfældende: træet mister bladene i en periode af året.",
+                "pt": "Caducifólia: a árvore perde as folhas em alguma época do ano.",
+                "ca": "Caducifoli: l'arbre perd les fulles durant alguna època de l'any.",
+                "cs": "Opadavý: strom po určitou část roku ztrácí listy."
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "leaf_cycle=evergreen"
+                ]
+              },
+              "then": {
+                "nl": "Groenblijvend.",
+                "en": "Evergreen.",
+                "it": "Sempreverde.",
+                "fr": "À feuilles persistantes.",
+                "ru": "Вечнозелёное.",
+                "de": "immergrüner Baum.",
+                "ca": "Perenne.",
+                "es": "Siempreverde.",
+                "da": "Stedsegrøn.",
+                "pt": "Perene.",
+                "cs": "Stálozelený."
+              }
+            }
+          ],
+          "condition": {
+            "#": "If the wikidata entry is known, no need to ask for redundant data such as leaf type",
+            "and": [
+              "leaf_type!~^leafless$",
+              "species:wikidata="
+            ]
+          }
+        },
+        {
+          "render": {
+            "nl": "Naam: {name}",
+            "en": "Name: {name}",
+            "it": "Nome: {name}",
+            "ru": "Название: {name}",
+            "fr": "Nom : {name}",
+            "id": "Nama: {name}",
+            "de": "Name: {name}",
+            "eo": "Nomo: {name}",
+            "es": "Nombre: {name}",
+            "da": "Navn: {name}",
+            "pt": "Nome: {name}",
+            "ca": "Nom : {name}",
+            "cs": "Jméno: {name}"
+          },
+          "question": {
+            "nl": "Heeft de boom een naam?",
+            "en": "Does the tree have a name?",
+            "it": "L’albero ha un nome?",
+            "fr": "L'arbre a-t-il un nom ?",
+            "ru": "Есть ли у этого дерева название?",
+            "de": "Hat der Baum einen Namen?",
+            "es": "¿Tiene nombre este árbol?",
+            "id": "Apakah pohon ini memiliki nama?",
+            "da": "Har træet et navn?",
+            "pt": "A árvore tem nome?",
+            "ca": "Té nom aquest arbre?",
+            "cs": "Má strom nějaké jméno?"
+          },
+          "freeform": {
+            "key": "name",
+            "addExtraTags": [
+              "noname="
+            ],
+            "inline": true
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "name=",
+                  "noname=yes"
+                ]
+              },
+              "then": {
+                "nl": "De boom heeft geen naam.",
+                "en": "The tree does not have a name.",
+                "it": "L’albero non ha un nome.",
+                "fr": "L'arbre n'a pas de nom.",
+                "ru": "У этого дерева нет названия.",
+                "de": "Der Baum hat keinen Namen.",
+                "es": "El árbol no tiene nombre.",
+                "id": "Pohon ini tidak memiliki nama.",
+                "da": "Træet har ikke et navn.",
+                "pt": "A árvore não tem nome.",
+                "ca": "L'arbre no té nom.",
+                "cs": "Strom nemá jméno."
+              }
+            }
+          ],
+          "condition": {
+            "or": [
+              "denotation=landmark",
+              "denotation=natural_monument",
+              "name~*"
+            ]
+          },
+          "id": "tree_node-name"
+        },
+        {
+          "id": "tree-heritage",
+          "question": {
+            "nl": "Is deze boom erkend als erfgoed?",
+            "en": "Is this tree registered heritage?",
+            "it": "Quest’albero è registrato come patrimonio?",
+            "fr": "Cet arbre est-il inscrit au patrimoine ?",
+            "de": "Ist dieser Baum ein Naturdenkmal?",
+            "es": "¿Este árbol es patrimonio registrado?",
+            "id": "Apakah pohon ini merupakan warisan yang terdaftar?",
+            "da": "Er dette træ registreret som kulturarv?",
+            "pt": "Esta árvore é patrimônio tombado?",
+            "ca": "Aquest arbre és patrimoni registrat?",
+            "cs": "Je tento strom registrovaným dědictvím?"
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "heritage=4",
+                  "heritage:operator=OnroerendErfgoed"
+                ]
+              },
+              "then": {
+                "nl": "Erkend als houtig erfgoed door <i>Onroerend Erfgoed Vlaanderen</i>",
+                "en": "Registered as heritage by <i>Onroerend Erfgoed</i> Flanders",
+                "it": "Registrato come patrimonio da <i>Onroerend Erfgoed</i> Flanders",
+                "fr": "Inscrit au registre du Patrimoine Immobilier (<i>Onroerend Erfgoed</i>) Flammand",
+                "de": "Als Denkmal registriert von der <i>Onroerend Erfgoed</i> Flandern",
+                "es": "Registrado como patrimonio por <i>Onroerend Erfgoed</i> Flandes",
+                "id": "Terdaftar sebagai warisan oleh <i>Onroerend Erfgoed</i> Flanders",
+                "pt": "Registrado como patrimônio por <i>Onroerend Erfgoed</i> Flanders",
+                "ca": "Registrat com a patrimoni per <i>Onroerend Erfgoed</i> Flandes",
+                "cs": "Zapsáno jako dědictví <i>Onroerend Erfgoed</i> Flanders"
+              },
+              "icon": {
+                "path": "./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg",
+                "class": "small"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "heritage=4",
+                  "heritage:operator=aatl"
+                ]
+              },
+              "then": {
+                "nl": "Erkend als natuurlijk erfgoed door <i>Directie Cultureel Erfgoed Brussel</i>",
+                "en": "Registered as heritage by <i>Direction du Patrimoine culturel</i> Brussels",
+                "it": "Registrato come patrimonio da <i>Direction du Patrimoine culturel</i> di Bruxelles",
+                "fr": "Enregistré comme patrimoine par la <i>Direction du Patrimoine culturel</i> Bruxelles",
+                "de": "Als Denkmal registriert von der <i>Direction du Patrimoine culturel</i> Brüssel",
+                "es": "Registrado como patrimonio por la <i>Dirección de Patrimonio Cultural</i> de Bruselas",
+                "id": "Terdaftar sebagai warisan budaya oleh <i>Direction du Patrimoine culturel</i> Brussels",
+                "da": "Registreret som kulturarv af <i>Direction du Patrimoine culturel</i> Bruxelles",
+                "pt": "Registrado como patrimônio por <i>Direction du Patrimoine culturel</i> Brussels",
+                "ca": "Registrat com a patrimoni per la <i>Direction du Patrimoine culturel</i> Brussel·les",
+                "cs": "Zapsáno jako kulturní dědictví <i>Direction du Patrimoine culturel</i> Brusel"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "heritage=yes",
+                  "heritage:operator="
+                ]
+              },
+              "then": {
+                "nl": "Erkend als erfgoed door een andere organisatie",
+                "en": "Registered as heritage by a different organisation",
+                "it": "Registrato come patrimonio da un’organizzazione differente",
+                "fr": "Enregistré comme patrimoine par une autre organisation",
+                "de": "Von einer anderen Organisation als Denkmal registriert",
+                "es": "Registrado como patrimonio por una organización diferente",
+                "id": "Terdaftar sebagai warisan oleh organisasi yang berbeda",
+                "da": "Registreret som kulturarv af en anden organisation",
+                "pt": "Registrado como patrimônio por uma organização diferente",
+                "ca": "Registrat com a patrimoni per una organització diferent",
+                "cs": "Registrováno jako kulturní dědictví jinou organizací"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "heritage=no",
+                  "heritage:operator="
+                ]
+              },
+              "then": {
+                "nl": "Niet erkend als erfgoed",
+                "en": "Not registered as heritage",
+                "it": "Non è registrato come patrimonio",
+                "fr": "Non enregistré comme patrimoine",
+                "de": "Nicht als Denkmal registriert",
+                "es": "No registrado como patrimonio",
+                "id": "Tidak terdaftar sebagai warisan",
+                "da": "Ikke registreret som kulturarv",
+                "pt": "Não registrado como patrimônio",
+                "ca": "No registrat com a patrimoni",
+                "cs": "Není zapsáno jako kulturní dědictví"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "heritage~*"
+                ]
+              },
+              "then": {
+                "nl": "Erkend als erfgoed door een andere organisatie",
+                "en": "Registered as heritage by a different organisation",
+                "it": "Registrato come patrimonio da un’organizzazione differente",
+                "fr": "Enregistré comme patrimoine par une autre organisation",
+                "de": "Von einer anderen Organisation als Denkmal registriert",
+                "es": "Registrado como patrimonio por un organización diferente",
+                "id": "Terdaftar sebagai warisan oleh organisasi yang berbeda",
+                "da": "Registreret som kulturarv af en anden organisation",
+                "pt": "Registrado como patrimônio por uma organização diferente",
+                "ca": "Registrat com a patrimoni per una organització diferent",
+                "cs": "Registrováno jako kulturní dědictví jinou organizací"
+              },
+              "hideInAnswer": true
+            }
+          ],
+          "condition": {
+            "or": [
+              "denotation=landmark",
+              "denotation=natural_monument"
+            ]
+          }
+        },
+        {
+          "render": {
+            "nl": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Onroerend Erfgoed-ID: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>",
+            "en": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Onroerend Erfgoed ID: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>",
+            "it": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Onroerend Erfgoed ID: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>",
+            "ru": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Onroerend Erfgoed ID: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>",
+            "fr": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Identifiant Onroerend Erfgoed : <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>",
+            "de": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Onroerend Erfgoed Kennung: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>",
+            "da": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Onroerend Erfgoed ID: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>",
+            "ca": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/>Identifiació Onroerend Erfgoed: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>",
+            "cs": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Onroerend Erfgoed ID: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>"
+          },
+          "question": {
+            "nl": "Wat is het ID uitgegeven door Onroerend Erfgoed Vlaanderen?",
+            "en": "What is the ID issued by Onroerend Erfgoed Flanders?",
+            "it": "Qual è l’ID rilasciato da Onroerend Erfgoed Flanders?",
+            "fr": "Quel est son identifiant donné par Onroerend Erfgoed ?",
+            "de": "Wie lautet die Kennung der Onroerend Erfgoed Flanders?",
+            "es": "¿Cuál es el número de identificación emitido por Onroerend Erfgoed Flandes?",
+            "da": "Hvad er ID udstedt af Onroerend Erfgoed Flanders?",
+            "pt": "Qual é o ID emitido por Onroerend Erfgoed Flanders?",
+            "ca": "Quina és la identificació emesa per Onroerend Erfgoed Flanders?",
+            "cs": "Jaké je ID vydané společností Onroerend Erfgoed Flanders?"
+          },
+          "freeform": {
+            "key": "ref:OnroerendErfgoed",
+            "type": "nat"
+          },
+          "condition": {
+            "and": [
+              "heritage=4",
+              "heritage:operator=OnroerendErfgoed"
+            ]
+          },
+          "id": "tree_node-ref:OnroerendErfgoed"
+        },
+        {
+          "render": {
+            "nl": "<img src=\"./assets/svg/wikidata.svg\" style=\"width:1em;height:0.56em;vertical-align:middle\" alt=\"\"/> Wikidata: <a href=\"http://www.wikidata.org/entity/{wikidata}\">{wikidata}</a>",
+            "en": "<img src=\"./assets/svg/wikidata.svg\" style=\"width:1em;height:0.56em;vertical-align:middle\" alt=\"\"/> Wikidata: <a href=\"http://www.wikidata.org/entity/{wikidata}\">{wikidata}</a>",
+            "it": "<img src=\"./assets/svg/wikidata.svg\" style=\"width:1em;height:0.56em;vertical-align:middle\" alt=\"\"/> Wikidata: <a href=\"http://www.wikidata.org/entity/{wikidata}\">{wikidata}</a>",
+            "ru": "<img src=\"./assets/svg/wikidata.svg\" style=\"width:1em;height:0.56em;vertical-align:middle\" alt=\"\"/> Wikidata: <a href=\"http://www.wikidata.org/entity/{wikidata}\">{wikidata}</a>",
+            "fr": "<img src=\"./assets/svg/wikidata.svg\" style=\"width:1em;height:0.56em;vertical-align:middle\" alt=\"\"/> Wikidata : <a href=\"http://www.wikidata.org/entity/{wikidata}\">{wikidata}</a>",
+            "de": "<img src=\"./assets/svg/wikidata.svg\" style=\"width:1em;height:0.56em;vertical-align:middle\" alt=\"\"/> Wikidata: <a href=\"http://www.wikidata.org/entity/{wikidata}\">{wikidata}</a>",
+            "es": "<img src=\"./assets/svg/wikidata.svg\" style=\"width:1em;height:0.56em;vertical-align:middle\" alt=\"\"/> Wikidata: <a href=\"http://www.wikidata.org/entity/{wikidata}\">{wikidata}</a>",
+            "da": "<img src=\"./assets/svg/wikidata.svg\" style=\"width:1em;height:0.56em;vertical-align:middle\" alt=\"\"/> Wikidata: <a href=\"http://www.wikidata.org/entity/{wikidata}\">{wikidata}</a>",
+            "ca": "<img src=\"./assets/svg/wikidata.svg\" style=\"width:1em;height:0.56em;vertical-align:middle\" alt=\"\"/>Wikidata<a href=\"http://www.wikidata.org/entity/{wikidata}\">{wikidata}</a>",
+            "cs": "<img src=\"./assets/svg/wikidata.svg\" style=\"width:1em;height:0.56em;vertical-align:middle\" alt=\"\"/> Wikidata: <a href=\"http://www.wikidata.org/entity/{wikidata}\">{wikidata}</a>"
+          },
+          "question": {
+            "nl": "Wat is het Wikidata-ID van deze boom?",
+            "en": "What is the Wikidata ID for this tree?",
+            "it": "Qual è l’ID Wikidata per questo albero?",
+            "fr": "Quel est l'identifiant Wikidata de cet arbre ?",
+            "de": "Was ist das passende Wikidata Element zu diesem Baum?",
+            "es": "¿Cuál es el ID de Wikidata para este árbol?",
+            "da": "Hvad er Wikidata-id'et for dette træ?",
+            "pt": "Qual é o ID do Wikidata para esta árvore?",
+            "ca": "Quin és l'identificador de Wikidata d'aquest arbre?",
+            "cs": "Jaké je ID Wikidata pro tento strom?"
+          },
+          "freeform": {
+            "key": "wikidata",
+            "type": "wikidata"
+          },
+          "condition": {
+            "or": [
+              "denotation=landmark",
+              "denotation=natural_monument",
+              "wikidata~*"
+            ]
+          },
+          "id": "tree_node-wikidata"
+        },
+        {
+          "id": "leftover-questions",
+          "render": {
+            "*": "{questions( ,)}"
+          }
+        },
+        {
+          "id": "lod",
+          "labels": [
+            "added_by_default"
+          ],
+          "render": {
+            "*": "{linked_data_from_website()}"
+          }
+        },
+        {
+          "id": "minimap",
+          "description": "Shows a small map with the feature. Added by default to every popup",
+          "render": {
+            "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+          }
+        },
+        {
+          "id": "move-button",
+          "render": {
+            "*": "{move_button()}"
+          }
+        },
+        {
+          "id": "delete-button",
+          "render": {
+            "*": "{delete_button()}"
+          }
+        },
+        {
+          "id": "last_edit",
+          "labels": [
+            "added_by_default"
+          ],
+          "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+          "condition": {
+            "and": [
+              "_last_edit:contributor~*",
+              "_last_edit:changeset~*"
+            ]
+          },
+          "metacondition": {
+            "or": [
+              "__featureSwitchIsTesting=true",
+              "__featureSwitchIsDebugging=true",
+              "mapcomplete-show_debug=yes",
+              "_csCount>=10"
+            ]
+          },
+          "render": {
+            "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+          }
+        },
+        {
+          "id": "favourite_status",
+          "render": {
+            "*": "{favourite_status()}"
+          }
+        },
+        {
+          "id": "qr_code",
+          "labels": [
+            "added_by_default"
+          ],
+          "classes": "flex items-center gap-x-2",
+          "render": {
+            "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+            "en": "{qr_code()}Scan this code to open this location on another device",
+            "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+            "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+          }
+        },
+        {
+          "id": "share",
+          "labels": [
+            "added_by_default"
+          ],
+          "metacondition": "_supports_sharing=yes",
+          "render": {
+            "de": "{share_link(,Standort teilen)}",
+            "en": "{share_link(,Share this location)}",
+            "nl": "{share_link(,Deel deze locatie)}"
+          }
+        },
+        {
+          "id": "all-tags",
+          "render": {
+            "*": "{all_tags()}"
+          },
+          "metacondition": {
+            "or": [
+              "__featureSwitchIsDebugging=true",
+              "mapcomplete-show_tags=full",
+              "mapcomplete-show_debug=yes"
+            ]
+          }
+        }
+      ],
+      "deletion": {
+        "minNeededChangesets": 5
+      },
+      "allowMove": {
+        "enableRelocation": false,
+        "enableImproveAccuracy": true
+      },
+      "titleIcons": [
+        {
+          "id": "wikipedialink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+          "condition": {
+            "or": [
+              "wikipedia~*",
+              "wikidata~*"
+            ]
+          },
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "wikipedia=",
+              "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+            }
+          ]
+        },
+        {
+          "id": "open_until",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "#": "Titleicon showing e.g. 'open until 17:00'",
+          "icon": {
+            "class": "w-20 mx-1 flex items-center"
+          },
+          "render": "{opening_hours_state()}",
+          "condition": {
+            "or": [
+              "opening_hours~*",
+              {
+                "or": [
+                  {
+                    "and": [
+                      "seasonal~.*winter.*",
+                      "_now:date~....-(12|01|02)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*spring.*",
+                      "_now:date~....-(03|04|05)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*summer.*",
+                      "_now:date~....-(06|07|08)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*autumn.*",
+                      "_now:date~....-(09|10|11)-.."
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "phonelink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.render"
+          },
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "contact:phone~*",
+              "then": {
+                "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+                "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+                "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+                "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+              }
+            }
+          ],
+          "condition": {
+            "or": [
+              "phone~*",
+              "contact:phone~*"
+            ]
+          }
+        },
+        {
+          "id": "emaillink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "contact:email~*",
+              "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "operator:email~*",
+              "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+            }
+          ],
+          "condition": {
+            "or": [
+              "email~*",
+              "contact:email~*",
+              "operator:email~*"
+            ]
+          }
+        },
+        {
+          "id": "websitelink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "website~*",
+              "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "operator:website~*",
+              "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "context:website~*",
+              "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            }
+          ]
+        },
+        {
+          "id": "smokingicon",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "smoking=no",
+              "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "smoking=yes",
+              "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+            }
+          ]
+        },
+        {
+          "id": "dogicon",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "if": "dog=no",
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+            },
+            {
+              "if": "dog=leashed",
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+            },
+            {
+              "if": {
+                "or": [
+                  "dog=yes",
+                  "dog=unleashed"
+                ]
+              },
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+            }
+          ]
+        },
+        {
+          "id": "sharelink",
+          "labels": [
+            "defaults"
+          ],
+          "render": "{share_link()}",
+          "metacondition": "_supports_sharing=yes"
+        },
+        {
+          "id": "favourite_title_icon",
+          "labels": [
+            "defaults"
+          ],
+          "render": {
+            "*": "{favourite_icon()}"
+          },
+          "metacondition": "_loggedIn=true"
+        },
+        {
+          "id": "osmlink",
+          "labels": [
+            "defaults"
+          ],
+          "render": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.render"
+          },
+          "mappings": [
+            {
+              "if": "id~.*/-.*",
+              "then": ""
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "_backend~*",
+              "then": {
+                "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+                "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+                "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+                "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+              }
+            }
+          ],
+          "condition": "id~(node|way|relation)/[0-9]*"
+        },
+        {
+          "id": "direction",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "{direction_indicator()}"
+        },
+        {
+          "id": "rating",
+          "icon": {
+            "class": "w-20 mx-1 flex items-center"
+          },
+          "render": "{rating()}"
+        }
+      ],
+      "_layerIcon": [
+        {
+          "icon": "circle",
+          "color": "#ffffff"
+        },
+        {
+          "icon": "./assets/layers/tree_node/unknown.svg"
+        }
+      ]
+    },
+    {
+      "id": "note_import_tree_node",
+      "description": {
+        "ca": "Una capa que importa entrades per a Arbre",
+        "cs": "Vrstva, která importuje položky pro Strom",
+        "da": "Et lag som importerer poster for Træ",
+        "de": "Eine Ebene, die Einträge für Baum importiert",
+        "en": "A layer which imports entries for Tree",
+        "es": "Una capa que importar entradas para Árbol",
+        "nl": "Deze laag toont kaart-nota's die wijzen op een Boom",
+        "pl": "Warstwa importująca wpisy dla Tree",
+        "zh_Hant": "能夠為 Tree 匯入項目的圖層",
+        "_context": "core:importLayer.description"
+      },
+      "source": {
+        "osmTags": {
+          "and": [
+            "id~[0-9]+",
+            "comment_url~.*notes/[0-9]*/comment.json"
+          ]
+        },
+        "geoJson": "https://api.openstreetmap.org/api/0.6/notes.json?limit=10000&closed=0&bbox={x_min},{y_min},{x_max},{y_max}",
+        "geoJsonZoomLevel": 10
+      },
+      "passAllFeatures": true,
+      "minzoom": 12,
+      "title": {
+        "render": {
+          "ca": "Pot ser que hi hagi un arbre de fulla ampla aquí",
+          "cs": "Zde by mohl být listnatý strom",
+          "da": "Mulig et løvtræ",
+          "de": "Möglicherweise gibt es hier ein Laubbaum",
+          "en": "There might be a broadleaved tree here",
+          "es": "Puede haber árbol de hoja ancha aquí",
+          "fi": "Tässä on ehkä a broadleaved tree",
+          "nb_NO": "Det kan være a broadleaved tree her",
+          "nl": "Is hier een loofboom?",
+          "pl": "Tutaj może znajdować się a broadleaved tree",
+          "zh_Hant": "這裡可能有 a broadleaved tree",
+          "_context": "core:importLayer.popupTitle"
+        }
+      },
+      "calculatedTags": [
+        "_first_comment=get(feat)('comments')[0].text.toLowerCase()",
+        "_trigger_index=(() => {const lines = feat.properties['_first_comment'].split('\\n'); const matchesMapCompleteURL = lines.map(l => l.match(\".*https://mapcomplete.\\(org|osm.be\\)/\\([a-zA-Z_-]+\\)\\(.html\\)?.*#import\")); const matchedIndexes = matchesMapCompleteURL.map((doesMatch, i) => [doesMatch !== null, i]).filter(v => v[0]).map(v => v[1]); return matchedIndexes[0] })()",
+        "_comments_count=get(feat)('comments').length",
+        "_intro=(() => {const lines = get(feat)('comments')[0].text.split('\\n'); lines.splice(get(feat)('_trigger_index')-1, lines.length); return lines.filter(l => l !== '').join('<br/>');})()",
+        "_tags=(() => {let lines = get(feat)('comments')[0].text.split('\\n').map(l => l.trim()); lines.splice(0, get(feat)('_trigger_index') + 1); lines = lines.filter(l => l != ''); return lines.join(';');})()"
+      ],
+      "isShown": {
+        "and": [
+          "_trigger_index~*",
+          {
+            "or": [
+              {
+                "and": [
+                  "_tags~(^|.*;)natural=tree($|;.*)",
+                  "_tags~(^|.*;)leaf_type=broadleaved($|;.*)"
+                ]
+              },
+              {
+                "and": [
+                  "_tags~(^|.*;)natural=tree($|;.*)",
+                  "_tags~(^|.*;)leaf_type=needleleaved($|;.*)"
+                ]
+              },
+              {
+                "and": [
+                  "_tags~(^|.*;)natural=tree($|;.*)"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "titleIcons": [
+        {
+          "render": "<a href='https://openstreetmap.org/note/{id}' target='_blank'><img src='./assets/svg/osm-logo-us.svg'></a>"
+        }
+      ],
+      "tagRenderings": [
+        {
+          "id": "Intro",
+          "render": "{_intro}"
+        },
+        {
+          "id": "conversation",
+          "render": "{visualize_note_comments(comments,1)}",
+          "condition": "_comments_count>1"
+        },
+        {
+          "id": "import",
+          "render": {
+            "ca": "{import_button(tree_node, _tags, he trobat un un arbre de fulla ampla aquí; afegeix-lo al mapa,./assets/svg/addSmall.svg,,,id)}",
+            "cs": "{import_button(tree_node, _tags, Našel jsem listnatý strom zde - přidejte ji do mapy,./assets/svg/addSmall.svg,,,id)}",
+            "da": "{import_button(tree_node, _tags, Jeg har fundet en et løvtræ her - tilføj den til kortet,./assets/svg/addSmall.svg,,,id)}",
+            "de": "{import_button(tree_node, _tags, Ich habe hier ein(en) ein Laubbaum gefunden - Zur Karte hinzufügen,./assets/svg/addSmall.svg,,,id)}",
+            "en": "{import_button(tree_node, _tags, I have found a a broadleaved tree here - add it to the map,./assets/svg/addSmall.svg,,,id)}",
+            "es": "{import_button(tree_node,_tags, He encontrado un(a) árbol de hoja ancha aquí - añádelo al mapa,./assets/svg/addSmall.svg,,,id)}",
+            "nl": "{import_button(tree_node, _tags, Ik heb hier een een loofboom gevonden - voeg deze toe aan de kaart...,./assets/svg/addSmall.svg,,,id)}",
+            "pl": "{import_button(tree_node, _tags, odnalazłem tutaj a broadleaved tree - dodaj go do mapy,./assets/svg/addSmall.svg,,,id)}",
+            "zh_Hant": "{import_button(tree_node, _tags, 我在這邊發現 a broadleaved tree - 新增到地圖,./assets/svg/addSmall.svg,,,id)}",
+            "_context": "core:importLayer.importButton"
+          },
+          "condition": "closed_at="
+        },
+        {
+          "id": "close_note_",
+          "render": {
+            "ca": "{close_note(No he pogut trobar un arbre de fulla ampla: esborra-ho, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "cs": "{close_note(Nepodařilo se mi najít listnatý strom - odstraňte jej, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "da": "{close_note(Jeg kunne ikke finde et løvtræ - fjern det, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "de": "{close_note(Ich konnte ein Laubbaum nicht finden - entferne es, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "en": "{close_note(I could not find a broadleaved tree - remove it, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "es": "{close_note(No he podido encontrar árbol de hoja ancha - eliminarlo, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "nl": "{close_note(Ik kon hier geen een loofboom vinden - verwijder deze van de kaart, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "pl": "{close_note(Nie mogłem odnaleźć a broadleaved tree – usuń go, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "zh_Hant": "{close_note(我無法找到 a broadleaved tree - 移除吧, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "_context": "core:importLayer.notFound"
+          },
+          "condition": "closed_at="
+        },
+        {
+          "id": "close_note_mapped",
+          "render": {
+            "ca": "{close_note(Ja hi ha un un arbre de fulla ampla al mapa - aquest punt és un duplicat, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "cs": "{close_note(Na mapě se již nachází listnatý strom - tento bod je duplicitní, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "da": "{close_note(Der er allerede en anden et løvtræ på kortet - dette punkt er en dublet, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "de": "{close_note(Es gibt bereits einen ein Laubbaum auf der Karte - dieser Punkt ist ein Duplikat, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "en": "{close_note(There already is a broadleaved tree on the map - this point is a duplicate, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "es": "{close_note(árbol de hoja ancha ya está en el mapa - este punto es un duplicado, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "nl": "{close_note(Er staat hier reeds een loofboom op de kaart; dit punt is een duplicaat. Verwijder deze van de kaart, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "pl": "{close_note(Na mapie znajduje się już a broadleaved tree - ten punkt jest duplikatem, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "zh_Hant": "{close_note(a broadleaved tree 已經在地圖上了 - 這個點重覆了, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "_context": "core:importLayer.alreadyMapped"
+          },
+          "condition": "closed_at="
+        },
+        {
+          "id": "handled",
+          "render": {
+            "ca": "<div class=\"thanks\">Aquesta funció s'ha gestionat. Gràcies pel teu esforç.</div>",
+            "cs": "<div class='thanks'>Tato funkce byla zpracována! Děkujeme za vaši snahu</div>",
+            "da": "<div class=\"thanks\">Dette element er blevet håndteret! Tak for din indsats</div>",
+            "de": "<div class=\"thanks\">Dieses Objekt wurde verarbeitet! Vielen Dank für Ihre Bemühungen</div>",
+            "en": "<div class='thanks'>This feature has been handled! Thanks for your effort</div>",
+            "nb_NO": "<div class='thanks'>Denne funksjonen har blitt håndtert. Takk for din innsats.</div>",
+            "nl": "<div class='thanks'>Dit object is afgehandeld. Bedankt om mee te helpen!</div>",
+            "pl": "<div class='thanks'>Ta funkcja została obsłużona! Dziękujemy za Twój wysiłek</div>",
+            "zh_Hant": "<div class='thanks'>這個圖徵已經處理了！謝謝你的辛勞</div>",
+            "_context": "core:importLayer.importHandled"
+          },
+          "condition": "closed_at~*"
+        },
+        {
+          "id": "comment",
+          "render": "{add_note_comment()}"
+        },
+        {
+          "id": "add_image",
+          "render": "{add_image_to_note()}"
+        },
+        {
+          "id": "nearby_images",
+          "render": {
+            "ca": "<h3>Imatges properes</h3>Les imatges següents són imatges geoetiquetades properes de diversos serveis en línia. Us poden ajudar a resoldre aquesta nota.{nearby_images(open)}",
+            "cs": "<h3>Obrázky z okolí</h3>Následující obrázky jsou geograficky označené obrázky z různých online služeb. Mohly by vám pomoci při řešení této poznámky.{nearby_images(open)}",
+            "da": "<h3>Billeder i nærheden</h3>De følgende billeder er geotaggede billeder i nærheden fra forskellige onlinetjenester. De kan måske hjælpe dig med at løse denne note.{nearby_images(open)}",
+            "de": "<h3>Bilder in der Nähe</h3>Die folgenden Bilder sind mit Geotags versehene Bilder aus verschiedenen Online-Diensten in der Nähe. Sie können helfen, diesen Hinweis zu lösen.{nearby_images(open)}",
+            "en": "<h3>Nearby pictures</h3>The following pictures are nearby geotagged pictures from various online services. They might help you to resolve this note.{nearby_images(open)}",
+            "es": "<h3>Imágenes cercanas</h3> Las siguientes imágenes son imágenes geoetiquetadas cerca de varios servicios en línea. Pueden ayudarte a resolver esta nota. {nearby_images(open)}",
+            "nl": "<h3>Afbeeldingen in de buurt</h3>De volgende afbeeldingen zijn in de buurt gemaakt en kunnen mogelijks helpen. {nearby_images(open)}",
+            "pl": "<h3>Zdjęcia w pobliżu</h3>Poniższe zdjęcia to zdjęcia pobliskich obiektów z geotagami z różnych usług internetowych. Mogą pomóc Ci rozwiązać tę uwagę.{nearby_images(open)}",
+            "zh_Hant": "<h3>附近圖片</h3>接下來的圖片是多個第三方線上服務附近有地理標籤的圖片，也許能協助你解決這個註解。{nearby_images(open)}",
+            "_context": "core:importLayer.nearbyImagesIntro"
+          }
+        },
+        {
+          "id": "all_tags",
+          "render": "{all_tags()}",
+          "metacondition": {
+            "or": [
+              "__featureSwitchIsDebugging=true",
+              "mapcomplete-show_tags=full",
+              "mapcomplete-show_debug=yes"
+            ]
+          }
+        }
+      ],
+      "pointRendering": [
+        {
+          "location": [
+            "point"
+          ],
+          "marker": [
+            {
+              "icon": "circle",
+              "color": "#fff"
+            },
+            {
+              "icon": {
+                "render": "help",
+                "mappings": [
+                  {
+                    "if": {
+                      "or": [
+                        "closed_at~*",
+                        "_imported=yes"
+                      ]
+                    },
+                    "then": "checkmark"
+                  }
+                ]
+              },
+              "color": "#00"
+            }
+          ],
+          "iconSize": "40,40",
+          "anchor": "center"
+        }
+      ]
+    }
+  ],
+  "osmApiTileSize": 18,
+  "widenFactor": 0.2
+}

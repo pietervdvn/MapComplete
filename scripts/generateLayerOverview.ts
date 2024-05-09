@@ -343,7 +343,7 @@ class LayerOverviewUtils extends Script {
             const context = "While building builtin layer " + sharedLayerPath
             const fixed = prepLayer.convertStrict(parsed, context)
 
-            if (fixed.source.osmTags["and"] === undefined) {
+            if (fixed.source.osmTags !== undefined && fixed.source.osmTags["and"] === undefined) {
                 fixed.source.osmTags = { and: [fixed.source.osmTags] }
             }
 

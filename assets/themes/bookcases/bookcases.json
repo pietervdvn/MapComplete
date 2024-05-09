@@ -1,8 +1,8 @@
 {
   "id": "bookcases",
   "title": {
-    "en": "Open Bookcase Map",
-    "nl": "Open boekenruilkasten-kaart",
+    "en": "Public bookcases",
+    "nl": "Boekenruilkasten",
     "de": "Karte öffentlicher Bücherschränke",
     "fr": "Carte des microbibliothèques",
     "ru": "Открытая карта книжных шкафов",
@@ -19,7 +19,7 @@
   },
   "description": {
     "en": "A public bookcase is a small streetside cabinet, box, old phone booth or some other objects where books are stored. Everyone can place or take a book. This map aims to collect all these bookcases.",
-    "nl": "Een boekenruilkast is een kastje waar iedereen een boek kan nemen of achterlaten. Op deze kaart kan je deze boekenruilkasten terugvinden en met een gratis OpenStreetMap-account, ook boekenruilkasten toevoegen of informatie verbeteren",
+    "nl": "Een boekenruilkast is een kastje waar iedereen een boek kan nemen of achterlaten.",
     "de": "Bücherschränke sind alte Schaltschränke, Telefonzellen oder andere Einrichtungen zur Aufbewahrung von Büchern. Jeder kann Bücher abgeben oder mitnehmen. Die Karte soll helfen, alle Orte mit Bücherschränken zu sammeln.",
     "fr": "Une microbibliothèques, également appelée boite à livre, est un élément de mobilier urbain (étagère, armoire, etc) dans lequel sont stockés des livres et autres objets en accès libre. Découvrez les boites à livres prêt de chez vous, ou ajouter en une nouvelle à l'aide de votre compte OpenStreetMap.",
     "ru": "Общественный книжный шкаф - это небольшой уличный шкаф, коробка, старый телефонный аппарат или другие предметы, где хранятся книги. Каждый может положить или взять книгу. Цель этой карты - собрать все эти книжные шкафы. Вы можете обнаружить новые книжные шкафы поблизости и, имея бесплатный аккаунт OpenStreetMap, быстро добавить свои любимые книжные шкафы.",

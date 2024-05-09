@@ -1,0 +1,1376 @@
+{
+  "id": "ticket_machine",
+  "name": {
+    "en": "Ticket Machines",
+    "de": "Fahrkartenautomaten",
+    "nl": "Kaartautomaten",
+    "ca": "Màquines de bitllets",
+    "cs": "Automaty na jízdenky"
+  },
+  "description": {
+    "en": "Find ticket machines for public transport tickets",
+    "de": "Fahrkartenautomaten für ÖPNV-Tickets finden",
+    "nl": "Zoek kaartautomaten voor het openbaar vervoer",
+    "ca": "Troba màquines de bitllets per a bitllets de transport públic",
+    "cs": "Vyhledejte automaty na jízdenky na veřejnou dopravu"
+  },
+  "source": {
+    "osmTags": {
+      "and": [
+        "amenity=vending_machine",
+        "vending=public_transport_tickets"
+      ]
+    }
+  },
+  "minzoom": 18,
+  "title": {
+    "render": {
+      "en": "Ticket Machine",
+      "de": "Fahrkartenautomat",
+      "nl": "Kaartautomaat",
+      "ca": "Màquina de bitllets",
+      "cs": "Automat na jízdenky"
+    }
+  },
+  "pointRendering": [
+    {
+      "iconSize": "20,20",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": {
+            "render": "square",
+            "id": "square"
+          },
+          "color": "lightblue"
+        },
+        {
+          "icon": {
+            "render": "./assets/themes/stations/public_transport_tickets.svg",
+            "id": "assetsthemesstationspublictransportticketssvg"
+          }
+        }
+      ],
+      "iconBadges": [
+        {
+          "if": "_favourite=yes",
+          "then": "circle:white;heart:red"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [],
+  "presets": [
+    {
+      "tags": [
+        "amenity=vending_machine",
+        "vending=public_transport_tickets"
+      ],
+      "title": {
+        "en": "a ticket machine",
+        "de": "einen Fahrkartenautomat",
+        "nl": "een kaartautomaat",
+        "ca": "una màquina de bitllets",
+        "cs": "automat na jízdenky"
+      }
+    }
+  ],
+  "tagRenderings": [
+    {
+      "id": "just_created",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "This element shows a 'thank you' that the contributor has recently created this element",
+      "classes": "rounded-xl thanks",
+      "mappings": [
+        {
+          "if": "id~*",
+          "icon": "./assets/svg/party.svg",
+          "then": {
+            "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+            "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+            "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+            "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+            "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+            "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+          }
+        }
+      ],
+      "condition": {
+        "and": [
+          "_backend~*",
+          "_last_edit:passed_time<300",
+          {
+            "or": [
+              "_version_number=",
+              "_version_number=1"
+            ]
+          }
+        ]
+      },
+      "metacondition": {
+        "and": [
+          {
+            "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+            "or": [
+              "_last_edit:contributor:uid:={_uid}",
+              "_last_edit:contributor:uid="
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "images",
+      "description": "This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images",
+      "render": {
+        "*": "{image_carousel()}{image_upload()}{nearby_images():my-4}"
+      },
+      "classes": "my-4"
+    },
+    {
+      "id": "repeated",
+      "labels": [
+        "level"
+      ],
+      "condition": "repeat_on~*",
+      "render": {
+        "en": "Multiple, identical objects can be found on floors {repeat_on}.",
+        "nl": "Er zijn verschillende, identieke objecten op verdiepingen {repeat_on}.",
+        "de": "Mehrere identische Objekte können in Geschossen {repeat_on} gefunden werden.",
+        "cs": "V patrech {repeat_on} lze nalézt více identických objektů."
+      }
+    },
+    {
+      "id": "single_level",
+      "labels": [
+        "level"
+      ],
+      "condition": "repeat_on=",
+      "question": {
+        "nl": "Op welke verdieping bevindt dit punt zich?",
+        "en": "On what level is this feature located?",
+        "de": "Auf welcher Ebene befindet sich das Objekt?",
+        "zh_Hant": "此圖徽位於哪個樓層／層級？",
+        "fr": "À quel étage se situe l’élément ?",
+        "pl": "Na jakim poziomie znajduje się ta funkcja?",
+        "pt_BR": "Em que nível esse recurso está localizado?",
+        "ru": "На каком этаже находится этот объект?",
+        "pt": "Em que nível se encontra este elemento?",
+        "id": "Pada tingkat apa fitur ini diletakkan?",
+        "hu": "Melyik szinten található ez a létesítmény?",
+        "it": "A quale piano si trova questo elemento?",
+        "ca": "A quina planta està situat aquest element?",
+        "sv": "På vilken nivå finns den här funktionen?",
+        "ja": "この機能は何階にあるのでしょうか？",
+        "fil": "Anong palapag matatagpuan ang tampók?",
+        "es": "¿En qué nivel se encuentra esta característica?",
+        "nb_NO": "Hvilken etasje befinner funksjonen seg i?",
+        "da": "På hvilket niveau er denne funktion placeret?",
+        "cs": "V jaké úrovni se tento prvek nachází?"
+      },
+      "render": {
+        "en": "Located on the {level}th floor",
+        "nl": "Bevindt zich op de {level}de verdieping",
+        "de": "Das Objekt befindet sich im {level}. Geschoss",
+        "pt_BR": "Localizado no {level}o andar",
+        "ru": "Расположено на {level}ом этаже",
+        "zh_Hant": "位於 {level} 樓",
+        "fr": "Étage {level}",
+        "pl": "Znajduje się na {level} piętrze",
+        "sv": "Ligger på {level}:e våningen",
+        "pt": "Está no {level}º andar",
+        "eo": "En la {level}a etaĝo",
+        "hu": "A(z) {level}. emeleten",
+        "it": "Si trova al piano numero {level}",
+        "ca": "Situat a la planta {level}",
+        "ja": "{level}階にあります",
+        "sl": "Nahaja se v {level}. nadstropju",
+        "fil": "Natagpuan sa ika-{level} na palapag",
+        "es": "Localizada en la {level}° planta",
+        "da": "Beliggende på {level}. etage",
+        "nb_NO": "Ligger i {level} etasje",
+        "id": "Terletak di lantai {level}",
+        "cs": "Nachází se v {level}. patře"
+      },
+      "freeform": {
+        "key": "level",
+        "type": "float",
+        "inline": true
+      },
+      "mappings": [
+        {
+          "if": "location=underground",
+          "then": {
+            "en": "Located underground",
+            "nl": "Bevindt zich ondergronds",
+            "pt_BR": "Localizado no subsolo",
+            "ru": "Расположено под землей",
+            "zh_Hant": "位於地下",
+            "fr": "En sous-sol",
+            "pl": "Znajduje się pod ziemią",
+            "sv": "Ligger under jorden",
+            "pt": "Está no subsolo",
+            "de": "Das Objekt befindet sich unter der Erde",
+            "hu": "A föld alatt",
+            "it": "Si trova sotto il livello stradale",
+            "nb_NO": "Under bakken",
+            "ca": "Situat a planta subterrani",
+            "ja": "地下にあります",
+            "id": "Terletak di bawah tanah",
+            "sl": "Nahaja se pod zemljo",
+            "fil": "Nasa ilalim ng lupa",
+            "es": "Localizado bajo tierra",
+            "da": "Placeret under jorden",
+            "cs": "Nachází se v podzemí"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "level=0",
+          "then": {
+            "en": "Located on the ground floor",
+            "nl": "Bevindt zich op de begane grond",
+            "de": "Das Objekt befindet sich im Erdgeschoss",
+            "pt_BR": "Localizado no térreo",
+            "ru": "Расположено на первом этаже",
+            "zh_Hant": "位於 1 樓",
+            "fr": "Rez-de-chaussée",
+            "pl": "Znajduje się na parterze",
+            "sv": "Ligger på bottenvåningen",
+            "pt": "Está ao nível do rés-do-chão",
+            "eo": "En la teretaĝo",
+            "hu": "A földszinten",
+            "it": "Si trova al pianoterra",
+            "nb_NO": "På gateplan",
+            "ca": "Situat a planta zero",
+            "ja": "1階にあります",
+            "id": "Terletak di lantai dasar",
+            "sl": "Nahaja se v pritličju",
+            "fil": "Nasa unang palapag",
+            "es": "Localizado en la planta baja",
+            "da": "Beliggende i stueetagen",
+            "cs": "Nachází se v přízemí"
+          }
+        },
+        {
+          "if": "level=",
+          "hideInAnswer": true,
+          "then": {
+            "en": "Located on the ground floor",
+            "nl": "Bevindt zich gelijkvloers",
+            "de": "Das Objekt befindet sich im Erdgeschoss",
+            "pt_BR": "Localizado no térreo",
+            "ru": "Расположено на первом этаже",
+            "zh_Hant": "位於 1 樓",
+            "fr": "Rez-de-chaussée",
+            "pl": "Znajduje się na parterze",
+            "sv": "Ligger på bottenvåningen",
+            "pt": "Está ao nível do rés-do-chão",
+            "eo": "En la teretaĝo",
+            "hu": "A földszinten",
+            "it": "Si trova al pianoterra",
+            "nb_NO": "På gateplan",
+            "ca": "Situat a la planta zero",
+            "ja": "1階にあります",
+            "id": "Terletak di lantai dasar",
+            "sl": "Nahaja se v pritličju",
+            "fil": "Nasa unang palapag",
+            "es": "Localizado en la planta baja",
+            "da": "Beliggende i stueetagen",
+            "cs": "Nachází se v přízemí"
+          }
+        },
+        {
+          "if": "level=1",
+          "then": {
+            "en": "Located on the first floor",
+            "nl": "Bevindt zich op de eerste verdieping",
+            "de": "Das Objekt befindet sich im 1. Obergeschoss",
+            "pt_BR": "Localizado no primeiro andar",
+            "ru": "Расположено на первом этаже",
+            "zh_Hant": "位於 2 樓",
+            "fr": "Premier étage",
+            "pl": "Znajduje się na pierwszym piętrze",
+            "sv": "Ligger på första våningen",
+            "pt": "Está no primeiro andar",
+            "id": "Berlokasi di lantai pertama",
+            "eo": "En la unua etaĝo",
+            "hu": "Az első emeleten",
+            "it": "Si trova al primo piano",
+            "nb_NO": "I andre etasje",
+            "ca": "Situat a primera planta",
+            "ja": "1階にあります",
+            "sl": "Nahaja se v prvem nadstropju",
+            "fil": "Nasa unang palapag",
+            "es": "Localizado en la primera planta",
+            "da": "Beliggende på første sal",
+            "cs": "Nachází se v prvním patře"
+          }
+        },
+        {
+          "if": "level=-1",
+          "then": {
+            "en": "Located on the first basement level",
+            "nl": "Bevindt zich in de eerste kelderverdieping",
+            "zh_Hant": "位於地下一樓",
+            "de": "Das Objekt befindet sich im 1. Untergeschoss",
+            "hu": "Az első alagsori szinten",
+            "id": "Terletak di lantai basement pertama",
+            "fr": "Sous-sol",
+            "sl": "Nahaja se v prvi kletni etaži",
+            "ca": "Localitzat a la planta base",
+            "fil": "Nasa silong",
+            "es": "Localizada en el primer sótano",
+            "nb_NO": "Er å finne på første kjellernivå",
+            "pt": "Localizado no primeiro nível da cave",
+            "da": "Beliggende på første kælderetage",
+            "cs": "Nachází se v prvním suterénu",
+            "pl": "Położone na pierwszym poziomie piwnicy"
+          }
+        }
+      ]
+    },
+    {
+      "id": "operator",
+      "question": {
+        "en": "Who is the operator of this ticket machine?",
+        "de": "Wer ist der Betreiber dieses Fahrkartenautomaten?",
+        "nl": "Wie is de beheerder van deze kaartautomaat?",
+        "ca": "Qui és l'operador d'aquesta màquina de venda de bitllets?",
+        "cs": "Kdo je provozovatelem tohoto automatu na jízdenky?"
+      },
+      "render": {
+        "en": "This ticket machine is operated by {operator}",
+        "de": "Dieser Fahrkartenautomat wird betrieben von {operator}",
+        "nl": "Deze kaartautomaat wordt beheerd door {operator}",
+        "ca": "{operator} opera aquesta màquina de bitllets",
+        "cs": "Tento automat na jízdenky provozuje {operator}"
+      },
+      "freeform": {
+        "key": "operator",
+        "type": "string",
+        "placeholder": {
+          "en": "Name of the operator",
+          "de": "Name des Betreibers",
+          "nl": "Naam van de beheerder",
+          "ca": "Nom de l'operador",
+          "cs": "Jméno operátora"
+        },
+        "inline": true
+      },
+      "mappings": [
+        {
+          "if": "operator=Nederlandse Spoorwegen",
+          "then": {
+            "en": "Dutch Railways (NS)",
+            "nl": "Nederlandse Spoorwegen (NS)",
+            "de": "Niederländische Eisenbahn (NS)",
+            "ca": "Ferrocarrils holandesos (NS)",
+            "cs": "Nizozemské dráhy (NS)"
+          },
+          "addExtraTags": [
+            "operator:wikidata=Q23076"
+          ],
+          "hideInAnswer": "_country!=nl"
+        }
+      ]
+    },
+    {
+      "id": "payment-options-split",
+      "question": {
+        "en": "Which methods of payment are accepted here?",
+        "nl": "Welke betaalmiddelen worden hier geaccepteerd?",
+        "pt": "Que métodos de pagamento são aceites aqui?",
+        "pt_BR": "Quais métodos de pagamento são aceitos aqui?",
+        "id": "Metode pembayaran manakah yang di terima disini?",
+        "de": "Welche Zahlungsmethoden werden hier akzeptiert?",
+        "fr": "Quelles sont les méthodes de paiement acceptées ici ?",
+        "hu": "Milyen fizetési módokat fogadnak el itt?",
+        "it": "Quali metodi di pagamento sono accettati qui?",
+        "nb_NO": "Hvilke betalingsmetoder godtas her?",
+        "ca": "Quins mètodes de pagament s'accepten aquí?",
+        "sv": "Vilka betalningsmetoder accepteras här?",
+        "zh_Hant": "這邊接受那種付款方式？",
+        "pl": "Jakie metody płatności są tutaj dostępne?",
+        "ru": "Какие способы оплаты здесь принимают?",
+        "ja": "どのような支払い方法が可能ですか？",
+        "sl": "Kateri načini plačila so možni tu?",
+        "fil": "Anong mga paraang pambayad ang tinatanggap dito?",
+        "es": "¿Qué métodos de pago se aceptan aquí?",
+        "zh_Hans": "这里支持哪些支付方式？",
+        "da": "Hvilke betalingsmetoder accepteres her?",
+        "cs": "Jaké platební metody jsou zde přijímány?"
+      },
+      "multiAnswer": true,
+      "mappings": [
+        {
+          "if": "payment:cash=yes",
+          "ifnot": "payment:cash=",
+          "icon": "./assets/layers/questions/cash.svg",
+          "then": {
+            "en": "Cash is accepted here",
+            "nl": "Cash geld wordt hier aanvaard",
+            "pt": "Aceitam pagamento com dinheiro aqui",
+            "pt_BR": "Dinheiro é aceito aqui",
+            "id": "Pembayaran tunai diterima di sini",
+            "de": "Hier wird Bargeld akzeptiert",
+            "fr": "Paiement en liquide accepté",
+            "hu": "Itt készpénzzel is lehet fizetni",
+            "it": "I contanti sono accettati",
+            "nb_NO": "Kontanter godtas her",
+            "ca": "S'accepten diners",
+            "sv": "Pengar accepteras här",
+            "zh_Hant": "這邊接受現金",
+            "pl": "Płatność gotówkowa jest tutaj dostępna",
+            "ru": "Здесь принимают наличными",
+            "ja": "現金利用可能",
+            "sl": "Tu sprejemajo gotovino",
+            "fil": "Tinatanggap ang salapi rito",
+            "es": "Aquí se acepta el pago en efectivo",
+            "zh_Hans": "可用现金",
+            "da": "Her modtages kontanter",
+            "cs": "Přijímá se zde hotovost"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "payment:cards=yes",
+          "ifnot": "payment:cards=",
+          "icon": "./assets/layers/questions/payment_card.svg",
+          "then": {
+            "en": "Payment cards are accepted here",
+            "nl": "Betalen met bankkaarten kan hier",
+            "pt": "Aceitam pagamento com cartões bancários aqui",
+            "pt_BR": "Cartões de pagamento são aceitos aqui",
+            "id": "Kartu pembayaran diterima di sini",
+            "de": "Hier wird Kartenzahlung akzeptiert",
+            "fr": "Paiement par carte accepté",
+            "hu": "Itt fizetőkártyákkal is lehet fizetni",
+            "it": "I pagamenti con la carta sono accettati",
+            "nb_NO": "Betalingskort godtas her",
+            "ca": "S'accepten targetes de crèdit",
+            "sv": "Betalningskort accepteras här",
+            "zh_Hant": "這邊接受現金卡",
+            "pl": "Płatność kartą jest tutaj dostępna",
+            "ru": "Здесь принимают банковские карты",
+            "ja": "お支払いはこちらで承ります",
+            "sl": "Tukaj sprejemajo plačilne kartice",
+            "fil": "Tinatanggap ang mga tarhetang pambayad dito",
+            "es": "Aquí se acepta el pago por tarjeta",
+            "zh_Hans": "可用信用卡",
+            "da": "Betalingskort accepteres her",
+            "cs": "Jsou zde přijímány platební karty"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "payment:qr_code=yes",
+          "ifnot": "payment:qr_code=no",
+          "icon": "./assets/layers/questions/qrcode.svg",
+          "then": {
+            "en": "Payment by QR-code is possible here",
+            "nl": "Betalen via een QR-code is hier mogelijk",
+            "de": "Die Bezahlung per QR-Code ist hier möglich",
+            "es": "Aquí se puede pagar con código QR",
+            "ca": "Aquí es pot pagar amb codi QR",
+            "cs": "Platba QR kódem je zde možná"
+          }
+        },
+        {
+          "if": "payment:coins=yes",
+          "ifnot": "payment:coins=no",
+          "icon": "./assets/layers/questions/coins.svg",
+          "then": {
+            "en": "Coins are accepted here",
+            "nl": "Muntgeld wordt hier aanvaard",
+            "de": "Münzen werden hier akzeptiert",
+            "fr": "Les pièces sont acceptées ici",
+            "ca": "Aquí s'accepten monedes",
+            "es": "Aquí se aceptan monedas",
+            "nb_NO": "Mynter aksepteres her",
+            "pl": "Monety są tutaj akceptowane",
+            "cs": "Jsou zde přijímány mince"
+          }
+        },
+        {
+          "if": "payment:notes=yes",
+          "ifnot": "payment:notes=no",
+          "icon": "./assets/layers/questions/notes.svg",
+          "then": {
+            "en": "Bank notes are accepted here",
+            "nl": "Bankbiljetten worden hier aanvaard",
+            "de": "Geldscheine werden hier akzeptiert",
+            "fr": "Les billets de banque sont acceptés ici",
+            "ca": "Aquí s'accepten bitllets",
+            "es": "Aquí se aceptan billetes",
+            "nb_NO": "Sedler aksepteres her",
+            "pl": "Banknoty są tutaj akceptowane",
+            "cs": "Jsou zde přijímány bankovky"
+          }
+        },
+        {
+          "if": "payment:debit_cards=yes",
+          "ifnot": "payment:debit_cards=no",
+          "icon": "./assets/layers/questions/payment_card.svg",
+          "then": {
+            "en": "Debit cards are accepted here",
+            "nl": "Betalen met debetkaarten kan hier",
+            "de": "Debitkarten werden hier akzeptiert",
+            "fr": "Les cartes de débit sont acceptées ici",
+            "ca": "Aquí s'accepten targetes de dèbit",
+            "es": "Aquí se aceptan tarjetas de débito",
+            "nb_NO": "Debetkort aksepteres her",
+            "pl": "Akceptowane są tutaj karty debetowe",
+            "cs": "Jsou zde přijímány debetní karty"
+          }
+        },
+        {
+          "if": "payment:credit_cards=yes",
+          "ifnot": "payment:credit_cards=no",
+          "icon": "./assets/layers/questions/payment_card.svg",
+          "then": {
+            "en": "Credit cards are accepted here",
+            "nl": "Betalen met creditkaarten kan hier",
+            "de": "Kreditkarten werden hier akzeptiert",
+            "fr": "Les cartes de crédit sont acceptées ici",
+            "ca": "Aquí s'accepten targetes de crèdit",
+            "es": "Aquí se aceptan tarjetas de crédito",
+            "nb_NO": "Kredittkort aksepteres her",
+            "pl": "Akceptowane są tutaj karty kredytowe",
+            "cs": "Jsou zde přijímány kreditní karty"
+          }
+        }
+      ]
+    },
+    {
+      "id": "denominations-coins",
+      "condition": {
+        "and": [
+          {
+            "or": [
+              "payment:coins=yes",
+              "payment:cash=yes"
+            ]
+          },
+          {
+            "or": [
+              "_currency~.*EUR.*",
+              "_currency~.*CHF.*"
+            ]
+          }
+        ]
+      },
+      "question": {
+        "en": "What coins can you use to pay here?",
+        "de": "Mit welchen Münzen kann man hier bezahlen?",
+        "nl": "Met welke munten kan je hier betalen?",
+        "fr": "Quelles pièces peut-on utiliser pour payer ici ?",
+        "pl": "Jakimi monetami można tutaj zapłacić?",
+        "ca": "Quines monedes es poden utilitzar per a pagar aquí?",
+        "es": "¿Qué monedas se pueden usar aquí para pagar?",
+        "nb_NO": "Hvilke mynter kan brukes til betaling her?",
+        "cs": "Jakými mincemi zde lze platit?"
+      },
+      "multiAnswer": true,
+      "mappings": [
+        {
+          "if": "payment:coins:denominations=0.01 EUR",
+          "icon": "./assets/layers/questions/denominations/eur/1cent.svg",
+          "then": {
+            "en": "1 cent coins are accepted",
+            "de": "1-Cent-Münzen werden akzeptiert",
+            "nl": "Munten van 1 cent worden geaccepteerd",
+            "nb_NO": "1-cent mynter aksepteres",
+            "fr": "Les pièces d'1 cent sont acceptées",
+            "pl": "Akceptowane są monety 1 centowe",
+            "ca": "S'accepten monedes de 1 cèntim",
+            "es": "Se aceptan monedas de 1 céntimo",
+            "cs": "Jsou přijímány mince v hodnotě 1 centu",
+            "id": "1 koin sen diterima"
+          },
+          "hideInAnswer": "_currency!~.*EUR.*"
+        },
+        {
+          "if": "payment:coins:denominations=0.02 EUR",
+          "icon": "./assets/layers/questions/denominations/eur/2cent.svg",
+          "then": {
+            "en": "2 cent coins are accepted",
+            "de": "2-Cent-Münzen werden akzeptiert",
+            "nl": "Munten van 2 cent worden geaccepteerd",
+            "nb_NO": "2-cent mynter aksepteres",
+            "fr": "Les pièces de 2 cents sont acceptées",
+            "pl": "Akceptowane są monety 2 centowe",
+            "ca": "S'accepten monedes de 2 cèntims",
+            "es": "Se aceptan monedas de 2 céntimos",
+            "cs": "Jsou přijímány mince v hodnotě 2 centů",
+            "id": "Koin 2 sen diterima"
+          },
+          "hideInAnswer": "_currency!~.*EUR.*"
+        },
+        {
+          "if": "payment:coins:denominations=0.05 EUR",
+          "icon": "./assets/layers/questions/denominations/eur/5cent.svg",
+          "then": {
+            "en": "5 cent coins are accepted",
+            "de": "5-Cent-Münzen werden akzeptiert",
+            "nl": "Munten van 5 cent worden geaccepteerd",
+            "nb_NO": "5-cent mynter aksepteres",
+            "fr": "Les pièces de 5 cents sont acceptées",
+            "pl": "Akceptowane są monety 5 centowe",
+            "ca": "S'accepten monedes de 5 cèntims",
+            "es": "Se aceptan monedas de 5 céntimos",
+            "cs": "Jsou přijímány mince v hodnotě 5 centů",
+            "id": "Koin 5 sen diterima"
+          },
+          "hideInAnswer": "_currency!~.*EUR.*"
+        },
+        {
+          "if": "payment:coins:denominations=0.10 EUR",
+          "icon": "./assets/layers/questions/denominations/eur/10cent.svg",
+          "then": {
+            "en": "10 cent coins are accepted",
+            "de": "10-Cent-Münzen werden akzeptiert",
+            "nl": "Munten van 10 cent worden geaccepteerd",
+            "nb_NO": "10-cent mynter aksepteres",
+            "fr": "Les pièces de 10 cents sont acceptées",
+            "pl": "Akceptowane są monety 10-centowe",
+            "ca": "S'accepten monedes de 10 cèntims",
+            "es": "Se aceptan monedas de 10 céntimos",
+            "cs": "Jsou přijímány mince v hodnotě 10 centů",
+            "id": "Koin 10 sen diterima"
+          },
+          "hideInAnswer": "_currency!~.*EUR.*"
+        },
+        {
+          "if": "payment:coins:denominations=0.20 EUR",
+          "icon": "./assets/layers/questions/denominations/eur/20cent.svg",
+          "then": {
+            "en": "20 cent coins are accepted",
+            "de": "20-Cent-Münzen werden akzeptiert",
+            "nl": "Munten van 20 cent worden geaccepteerd",
+            "nb_NO": "20-cent mynter aksepteres",
+            "fr": "Les pièces de 20 cents sont acceptées",
+            "pl": "Akceptowane są monety 20-centowe",
+            "ca": "S'accepten monedes de 20 cèntims",
+            "es": "Se aceptan monedas de 20 céntimos",
+            "cs": "Jsou přijímány mince v hodnotě 20 centů",
+            "id": "Koin 20 sen diterima"
+          },
+          "hideInAnswer": "_currency!~.*EUR.*"
+        },
+        {
+          "if": "payment:coins:denominations=0.50 EUR",
+          "icon": "./assets/layers/questions/denominations/eur/50cent.svg",
+          "then": {
+            "en": "50 cent coins are accepted",
+            "de": "50-Cent-Münzen werden akzeptiert",
+            "nl": "Munten van 50 cent worden geaccepteerd",
+            "nb_NO": "50-cent mynter aksepteres",
+            "fr": "Les pièces de 50 cents sont acceptées",
+            "pl": "Akceptowane są monety 50-centowe",
+            "ca": "S'accepten monedes de 50 cèntims",
+            "es": "Se aceptan monedas de 50 céntimos",
+            "cs": "Jsou přijímány mince v hodnotě 50 centů",
+            "id": "Koin 50 sen diterima"
+          },
+          "hideInAnswer": "_currency!~.*EUR.*"
+        },
+        {
+          "if": "payment:coins:denominations=1 EUR",
+          "icon": "./assets/layers/questions/denominations/eur/1euro.svg",
+          "then": {
+            "en": "1 euro coins are accepted",
+            "de": "1-Euro-Münzen werden akzeptiert",
+            "nl": "Munten van 1 euro worden geaccepteerd",
+            "nb_NO": "1-euro mynter aksepteres",
+            "fr": "Les pièces de 1 euro sont acceptées",
+            "pl": "Akceptowane są monety 1 euro",
+            "ca": "S'accepten monedes de 1 euro",
+            "es": "Se aceptan monedas de 1 euro",
+            "cs": "Jsou přijímány mince v hodnotě 1 eura"
+          },
+          "hideInAnswer": "_currency!~.*EUR.*"
+        },
+        {
+          "if": "payment:coins:denominations=2 EUR",
+          "icon": "./assets/layers/questions/denominations/eur/2euro.svg",
+          "then": {
+            "en": "2 euro coins are accepted",
+            "de": "2-Euro-Münzen werden akzeptiert",
+            "nl": "Munten van 2 euro worden geaccepteerd",
+            "nb_NO": "2-euro mynter aksepteres",
+            "fr": "Les pièces de 2 euros sont acceptées",
+            "pl": "Akceptowane są monety 2 euro",
+            "ca": "S'accepten monedes de 2 euros",
+            "es": "Se aceptan monedas de 2 euros",
+            "cs": "Jsou přijímány mince v hodnotě 2 euro"
+          },
+          "hideInAnswer": "_currency!~.*EUR.*"
+        },
+        {
+          "if": "payment:coins:denominations=0.05 CHF",
+          "icon": "./assets/layers/questions/denominations/chf/5rp-2019-800px.png",
+          "then": {
+            "en": "5 centimes coins are accepted",
+            "nl": "Munten van 5 rappen worden geaccepteerd",
+            "ca": "S'accepten monedes de 5 cèntims",
+            "de": "5-Centime-Münzen werden akzeptiert"
+          },
+          "hideInAnswer": "_currency!~.*CHF.*"
+        },
+        {
+          "if": "payment:coins:denominations=0.10 CHF",
+          "icon": "./assets/layers/questions/denominations/chf/10rp-2019-800px.png",
+          "then": {
+            "en": "10 centimes coins are accepted",
+            "nl": "Munten van 10 rappen worden geaccepteerd",
+            "ca": "S'accepten monedes de 10 cèntims",
+            "de": "10-Centime-Münzen werden akzeptiert"
+          },
+          "hideInAnswer": "_currency!~.*CHF.*"
+        },
+        {
+          "if": "payment:coins:denominations=0.20 CHF",
+          "icon": "./assets/layers/questions/denominations/chf/20rp-2019-800px.png",
+          "then": {
+            "en": "20 centimes coins are accepted",
+            "nl": "Munten van 20 rappen worden geaccepteerd",
+            "ca": "S'accepten monedes de 20 cèntims",
+            "de": "20-Centime-Münzen werden akzeptiert"
+          },
+          "hideInAnswer": "_currency!~.*CHF.*"
+        },
+        {
+          "if": "payment:coins:denominations=0.50 CHF",
+          "icon": "./assets/layers/questions/denominations/chf/50rp-2019-800px.png",
+          "then": {
+            "en": "½ franc coins are accepted",
+            "nl": "Munten van ½ frank worden geaccepteerd",
+            "ca": "S'accepten monedes de ½ franc",
+            "de": "½-Schweizer Franken-Münzen werden akzeptiert"
+          },
+          "hideInAnswer": "_currency!~.*CHF.*"
+        },
+        {
+          "if": "payment:coins:denominations=1 CHF",
+          "icon": "./assets/layers/questions/denominations/chf/1fr-2019-800px.png",
+          "then": {
+            "en": "1 franc coins are accepted",
+            "nl": "Munten van 1 frank worden geaccepteerd",
+            "ca": "S'accepten monedes d'1 franc",
+            "de": "1-Schweizer Franken-Münzen werden akzeptiert"
+          },
+          "hideInAnswer": "_currency!~.*CHF.*"
+        },
+        {
+          "if": "payment:coins:denominations=2 CHF",
+          "icon": "./assets/layers/questions/denominations/chf/2fr-2019-800px.png",
+          "then": {
+            "en": "2 francs coins are accepted",
+            "nl": "Munten van 2 frank worden geaccepteerd",
+            "ca": "S'accepten monedes de 2 francs",
+            "de": "2-Schweizer Franken-Münzen werden akzeptiert"
+          },
+          "hideInAnswer": "_currency!~.*CHF.*"
+        },
+        {
+          "if": "payment:coins:denominations=5 CHF",
+          "icon": "./assets/layers/questions/denominations/chf/5fr-2019-800px.png",
+          "then": {
+            "en": "5 francs coins are accepted",
+            "nl": "Munten van 5 frank worden geaccepteerd",
+            "ca": "S'accepten monedes de 5 francs",
+            "de": "5-Schweizer Franken-Münzen werden akzeptiert"
+          },
+          "hideInAnswer": "_currency!~.*CHF.*"
+        }
+      ]
+    },
+    {
+      "id": "denominations-notes",
+      "condition": {
+        "and": [
+          {
+            "or": [
+              "payment:notes=yes",
+              "payment:cash=yes"
+            ]
+          },
+          {
+            "or": [
+              "_currency~.*EUR.*",
+              "_currency~.*CHF.*"
+            ]
+          }
+        ]
+      },
+      "question": {
+        "en": "what notes can you use to pay here?",
+        "nl": "Met welke bankbiljetten kan je hier betalen?",
+        "de": "Mit welchen Banknoten kann man hier bezahlen?",
+        "es": "¿con qué billetes se puede pagar aquí?",
+        "pl": "Jakimi banknotami można tu zapłacić?",
+        "cs": "Jakými bankovkami zde lze platit?",
+        "ca": "Amb quins bitllets pot pagar aquí?",
+        "fr": "quels billets pouvez vous utiliser pour payer ici ?"
+      },
+      "multiAnswer": true,
+      "mappings": [
+        {
+          "if": "payment:notes:denominations=5 EUR",
+          "icon": "./assets/layers/questions/denominations/eur/5euro.svg",
+          "then": {
+            "en": "5 euro notes are accepted",
+            "nl": "Biljetten van 5 euro worden geaccepteerd",
+            "de": "5-Euro-Scheine werden angenommen",
+            "es": "Se aceptan billetes de 5 euros",
+            "pl": "Banknoty 5 euro są akceptowane",
+            "cs": "Jsou přijímány bankovky v hodnotě 5 euro",
+            "ca": "S'accepten billets de 5 euros",
+            "fr": "Les billets de 5 euros ne sont pas acceptés"
+          },
+          "hideInAnswer": "_currency!~.*EUR.*"
+        },
+        {
+          "if": "payment:notes:denominations=10 EUR",
+          "icon": "./assets/layers/questions/denominations/eur/10euro.svg",
+          "then": {
+            "en": "10 euro notes are accepted",
+            "nl": "Biljetten van 10 euro worden geaccepteerd",
+            "de": "10-Euro-Scheine werden angenommen",
+            "es": "Se aceptan billetes de 10 euros",
+            "pl": "Banknoty 10 euro są akceptowane",
+            "cs": "Jsou přijímány bankovky v hodnotě 10 euro",
+            "ca": "S'accepten bitllets de 10 euros",
+            "fr": "Les billets de 10 euros sont acceptés"
+          },
+          "hideInAnswer": "_currency!~.*EUR.*"
+        },
+        {
+          "if": "payment:notes:denominations=20 EUR",
+          "icon": "./assets/layers/questions/denominations/eur/20euro.svg",
+          "then": {
+            "en": "20 euro notes are accepted",
+            "nl": "Biljetten van 20 euro worden geaccepteerd",
+            "de": "20-Euro-Scheine werden angenommen",
+            "es": "Se aceptan billetes de 20 euros",
+            "pl": "Banknoty 20 euro są akceptowane",
+            "cs": "Jsou přijímány bankovky v hodnotě 20 euro",
+            "ca": "S'accepten bitllets de 20 euros",
+            "fr": "Les billets de 20 euros sont acceptés"
+          },
+          "hideInAnswer": "_currency!~.*EUR.*"
+        },
+        {
+          "if": "payment:notes:denominations=50 EUR",
+          "icon": "./assets/layers/questions/denominations/eur/50euro.svg",
+          "then": {
+            "en": "50 euro notes are accepted",
+            "nl": "Biljetten van 50 euro worden geaccepteerd",
+            "de": "50-Euro-Scheine werden angenommen",
+            "es": "Se aceptan billetes de 50 euros",
+            "pl": "Banknoty 50 euro są akceptowane",
+            "cs": "Jsou přijímány bankovky v hodnotě 50 euro",
+            "ca": "S'accepten bitllets de 50 euros",
+            "fr": "Les billets de 50 euros sont acceptés"
+          },
+          "hideInAnswer": "_currency!~.*EUR.*"
+        },
+        {
+          "if": "payment:notes:denominations=100 EUR",
+          "icon": "./assets/layers/questions/denominations/eur/100euro.svg",
+          "then": {
+            "en": "100 euro notes are accepted",
+            "nl": "Biljetten van 100 euro worden geaccepteerd",
+            "de": "100-Euro-Scheine werden angenommen",
+            "es": "Se aceptan billetes de 100 euros",
+            "pl": "Banknoty 100 euro są akceptowane",
+            "cs": "Jsou přijímány bankovky v hodnotě 100 euro",
+            "ca": "S'accepten bitllets de 100 euros",
+            "fr": "Les billets de 100 euros sont acceptés"
+          },
+          "hideInAnswer": "_currency!~.*EUR.*"
+        },
+        {
+          "if": "payment:notes:denominations=200 EUR",
+          "icon": "./assets/layers/questions/denominations/eur/200euro.svg",
+          "then": {
+            "en": "200 euro notes are accepted",
+            "nl": "Biljetten van 200 euro worden geaccepteerd",
+            "de": "200-Euro-Scheine werden angenommen",
+            "es": "Se aceptan billetes de 200 euros",
+            "pl": "Banknoty 200 euro są akceptowane",
+            "cs": "Jsou přijímány bankovky v hodnotě 200 euro",
+            "ca": "S'accepten bitllets de 200 euros",
+            "fr": "Les billets de 200 euros sont acceptés"
+          },
+          "hideInAnswer": "_currency!~.*EUR.*"
+        },
+        {
+          "if": "payment:notes:denominations=500 EUR",
+          "icon": "./assets/layers/questions/denominations/eur/500euro.svg",
+          "then": {
+            "en": "500 euro notes are accepted",
+            "nl": "Biljetten van 500 euro worden geaccepteerd",
+            "de": "500-Euro-Scheine werden angenommen",
+            "es": "Se aceptan billetes de 500 euros",
+            "pl": "Banknoty 500 euro są akceptowane",
+            "cs": "Jsou přijímány bankovky v hodnotě 500 euro",
+            "ca": "S'accepten bitllets de 500 euros",
+            "fr": "Les billets de 500 euros sont acceptés"
+          },
+          "hideInAnswer": "_currency!~.*EUR.*"
+        },
+        {
+          "if": "payment:notes:denominations=10 CHF",
+          "icon": "./assets/layers/questions/denominations/chf/10chf.svg",
+          "then": {
+            "en": "10 francs notes are accepted",
+            "nl": "Biljetten van 10 frank worden geaccepteerd",
+            "ca": "S'accepten bitllets de 10 francs",
+            "de": "10-Schweizer Franken-Scheine werden akzeptiert"
+          },
+          "hideInAnswer": "_currency!~.*CHF.*"
+        },
+        {
+          "if": "payment:notes:denominations=20 CHF",
+          "icon": "./assets/layers/questions/denominations/chf/20chf.svg",
+          "then": {
+            "en": "20 francs notes are accepted",
+            "nl": "Biljetten van 20 frank worden geaccepteerd",
+            "ca": "S'accepten bitllets de 20 francs",
+            "de": "20-Schweizer Franken-Scheine werden akzeptiert"
+          },
+          "hideInAnswer": "_currency!~.*CHF.*"
+        },
+        {
+          "if": "payment:notes:denominations=50 CHF",
+          "icon": "./assets/layers/questions/denominations/chf/50chf.svg",
+          "then": {
+            "en": "50 francs notes are accepted",
+            "nl": "Biljetten van 50 frank worden geaccepteerd",
+            "ca": "S'accepten bitllets de 50 francs",
+            "de": "50-Schweizer Franken-Scheine werden akzeptiert"
+          },
+          "hideInAnswer": "_currency!~.*CHF.*"
+        },
+        {
+          "if": "payment:notes:denominations=100 CHF",
+          "icon": "./assets/layers/questions/denominations/chf/100chf.svg",
+          "then": {
+            "en": "100 francs notes are accepted",
+            "nl": "Biljetten van 100 frank worden geaccepteerd",
+            "ca": "S'accepten bitllets de 100 francs",
+            "de": "100-Schweizer Franken-Scheine werden akzeptiert"
+          },
+          "hideInAnswer": "_currency!~.*CHF.*"
+        },
+        {
+          "if": "payment:notes:denominations=200 CHF",
+          "icon": "./assets/layers/questions/denominations/chf/200chf.svg",
+          "then": {
+            "en": "200 francs notes are accepted",
+            "nl": "Biljetten van 200 frank worden geaccepteerd",
+            "ca": "S'accepten bitllets de 200 francs",
+            "de": "200-Schweizer Franken-Scheine werden akzeptiert"
+          },
+          "hideInAnswer": "_currency!~.*CHF.*"
+        },
+        {
+          "if": "payment:notes:denominations=1000 CHF",
+          "icon": "./assets/layers/questions/denominations/chf/1000chf.svg",
+          "then": {
+            "en": "1000 francs notes are accepted",
+            "nl": "Biljetten van 1000 frank worden geaccepteerd",
+            "ca": "S'accepten bitllets de 1000 francs",
+            "de": "1000-Schweizer Franken-Scheine werden akzeptiert"
+          },
+          "hideInAnswer": "_currency!~.*CHF.*"
+        }
+      ]
+    },
+    {
+      "id": "leftover-questions",
+      "render": {
+        "*": "{questions( ,)}"
+      }
+    },
+    {
+      "id": "lod",
+      "labels": [
+        "added_by_default"
+      ],
+      "render": {
+        "*": "{linked_data_from_website()}"
+      }
+    },
+    {
+      "id": "minimap",
+      "description": "Shows a small map with the feature. Added by default to every popup",
+      "render": {
+        "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+      }
+    },
+    {
+      "id": "move-button",
+      "render": {
+        "*": "{move_button()}"
+      }
+    },
+    {
+      "id": "delete-button",
+      "render": {
+        "*": "{delete_button()}"
+      }
+    },
+    {
+      "id": "last_edit",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+      "condition": {
+        "and": [
+          "_last_edit:contributor~*",
+          "_last_edit:changeset~*"
+        ]
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsTesting=true",
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_debug=yes",
+          "_csCount>=10"
+        ]
+      },
+      "render": {
+        "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+      }
+    },
+    {
+      "id": "favourite_status",
+      "render": {
+        "*": "{favourite_status()}"
+      }
+    },
+    {
+      "id": "qr_code",
+      "labels": [
+        "added_by_default"
+      ],
+      "classes": "flex items-center gap-x-2",
+      "render": {
+        "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+        "en": "{qr_code()}Scan this code to open this location on another device",
+        "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+        "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+      }
+    },
+    {
+      "id": "share",
+      "labels": [
+        "added_by_default"
+      ],
+      "metacondition": "_supports_sharing=yes",
+      "render": {
+        "de": "{share_link(,Standort teilen)}",
+        "en": "{share_link(,Share this location)}",
+        "nl": "{share_link(,Deel deze locatie)}"
+      }
+    },
+    {
+      "id": "all-tags",
+      "render": {
+        "*": "{all_tags()}"
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_tags=full",
+          "mapcomplete-show_debug=yes"
+        ]
+      }
+    }
+  ],
+  "deletion": {},
+  "allowMove": true,
+  "titleIcons": [
+    {
+      "id": "wikipedialink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+      "condition": {
+        "or": [
+          "wikipedia~*",
+          "wikidata~*"
+        ]
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "wikipedia=",
+          "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "open_until",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "#": "Titleicon showing e.g. 'open until 17:00'",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{opening_hours_state()}",
+      "condition": {
+        "or": [
+          "opening_hours~*",
+          {
+            "or": [
+              {
+                "and": [
+                  "seasonal~.*winter.*",
+                  "_now:date~....-(12|01|02)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*spring.*",
+                  "_now:date~....-(03|04|05)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*summer.*",
+                  "_now:date~....-(06|07|08)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*autumn.*",
+                  "_now:date~....-(09|10|11)-.."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "phonelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": {
+        "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+        "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+        "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+        "_context": "layers:icons.tagRenderings.phonelink.render"
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:phone~*",
+          "then": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+          }
+        }
+      ],
+      "condition": {
+        "or": [
+          "phone~*",
+          "contact:phone~*"
+        ]
+      }
+    },
+    {
+      "id": "emaillink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:email~*",
+          "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:email~*",
+          "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        }
+      ],
+      "condition": {
+        "or": [
+          "email~*",
+          "contact:email~*",
+          "operator:email~*"
+        ]
+      }
+    },
+    {
+      "id": "websitelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "website~*",
+          "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:website~*",
+          "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "context:website~*",
+          "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "smokingicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=no",
+          "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=yes",
+          "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+        }
+      ]
+    },
+    {
+      "id": "dogicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "if": "dog=no",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+        },
+        {
+          "if": "dog=leashed",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+        },
+        {
+          "if": {
+            "or": [
+              "dog=yes",
+              "dog=unleashed"
+            ]
+          },
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+        }
+      ]
+    },
+    {
+      "id": "sharelink",
+      "labels": [
+        "defaults"
+      ],
+      "render": "{share_link()}",
+      "metacondition": "_supports_sharing=yes"
+    },
+    {
+      "id": "favourite_title_icon",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "*": "{favourite_icon()}"
+      },
+      "metacondition": "_loggedIn=true"
+    },
+    {
+      "id": "osmlink",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+        "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+        "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+        "_context": "layers:icons.tagRenderings.osmlink.render"
+      },
+      "mappings": [
+        {
+          "if": "id~.*/-.*",
+          "then": ""
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "_backend~*",
+          "then": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+          }
+        }
+      ],
+      "condition": "id~(node|way|relation)/[0-9]*"
+    },
+    {
+      "id": "direction",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "{direction_indicator()}"
+    },
+    {
+      "id": "rating",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{rating()}"
+    }
+  ],
+  "_layerIcon": [
+    {
+      "icon": "square",
+      "color": "lightblue"
+    },
+    {
+      "icon": "./assets/themes/stations/public_transport_tickets.svg"
+    }
+  ]
+}

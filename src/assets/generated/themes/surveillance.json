@@ -1,0 +1,2915 @@
+{
+  "id": "surveillance",
+  "title": {
+    "en": "Surveillance under Surveillance",
+    "nl": "Surveillance under Surveillance",
+    "ja": "監視カメラの監視",
+    "zh_Hant": "被監視的監視器",
+    "fr": "Surveillance",
+    "de": "Überwachung unter Überwachung",
+    "it": "Sorveglianza sotto controllo",
+    "hu": "Megfigyelt térfigyelés",
+    "ca": "Vigilància sota vigilància",
+    "nb_NO": "Overvåkning under overvåkning",
+    "da": "Overvågning under Overvågning",
+    "es": "Vigilancia bajo vigilancia",
+    "cs": "Dohled pod dohledem",
+    "pl": "Monitoring monitoringu",
+    "sl": "Nadzor nadzora",
+    "_context": "themes:surveillance.title"
+  },
+  "description": {
+    "en": "On this open map, you can find surveillance cameras.",
+    "nl": "Op deze open kaart kan je bewakingscamera's vinden.",
+    "ja": "このオープンマップでは、監視カメラを確認できます。",
+    "zh_Hant": "在這份開放地圖，你可以找到監視鏡頭。",
+    "fr": "Cette carte indique l’emplacement des caméras de surveillance.",
+    "pl": "Na tej otwartej mapie można znaleźć kamery monitoringu.",
+    "de": "Auf dieser offenen Karte finden Sie Überwachungskameras.",
+    "it": "In questa cartina puoi trovare le telecamere di sorveglianza.",
+    "hu": "Ezen a térképen térfigyelő kamerák láthatók.",
+    "ru": "На этой открытой карте можно найти камеры слежения.",
+    "da": "På dette åbne kort kan du finde overvågningskameraer.",
+    "nb_NO": "Her finner du overvåkningskameraer.",
+    "ca": "A aquest mapa obert pots trobar càmeres de vigilància.",
+    "es": "En este mapa abierto, puede encontrar cámaras de vigilancia.",
+    "cs": "Na této otevřené mapě najdete bezpečnostní kamery.",
+    "_context": "themes:surveillance.description"
+  },
+  "shortDescription": {
+    "en": "Surveillance cameras and other means of surveillance",
+    "nl": "Bewakingscameras en dergelijke",
+    "ja": "監視カメラおよびその他の監視手段",
+    "zh_Hant": "監視鏡頭與其他型式的監視",
+    "fr": "Caméras et autres dispositifs de surveillance",
+    "pl": "Kamery monitorujące i inne środki nadzoru",
+    "de": "Überwachungskameras und andere Mittel zur Überwachung",
+    "it": "Telecamere di sorveglianza e altri mezzi di sorveglianza",
+    "hu": "Térfigyelő kamerák és más figyelőeszközök",
+    "da": "Overvågningskameraer og andre overvågningsmidler",
+    "nb_NO": "Overvåkningskameraer og andre typer overvåkning",
+    "ca": "Càmeres de vigilància i altres tipus de vigilància",
+    "es": "Cámaras de vigilancia y otros medios de vigilancia",
+    "cs": "Bezpečnostní kamery a další prostředky sledování",
+    "_context": "themes:surveillance.shortDescription"
+  },
+  "icon": "./assets/themes/surveillance/logo.svg",
+  "defaultBackgroundId": "maptiler.carto",
+  "enableMorePrivacy": true,
+  "layers": [
+    {
+      "id": "surveillance_camera",
+      "name": {
+        "en": "Surveillance camera's",
+        "nl": "Bewakingscamera's",
+        "ru": "Камеры наблюдения",
+        "fr": "Caméras de surveillance",
+        "it": "Videocamere di sorveglianza",
+        "de": "Überwachungskameras",
+        "ca": "Càmeres de videovigilància",
+        "es": "Cámaras de vigilancia",
+        "cs": "Bezpečnostní kamery",
+        "sl": "Nadzorne kamere"
+      },
+      "description": {
+        "en": "This layer shows surveillance cameras and allows a contributor to update information and add new cameras",
+        "nl": "Deze laag toont bewakingscamera's en laat toe om de informatie te verrijken en om nieuwe camera\"s toe te voegen",
+        "de": "Diese Ebene zeigt die Überwachungskameras an und ermöglicht es, Informationen zu aktualisieren und neue Kameras hinzuzufügen",
+        "es": "Esta capa muestra las cámaras de vigilancia y permite a quien colabora, actualizar la información y agregar nuevas cámaras",
+        "fr": "Cette couche affiche les caméras de surveillance et permet au contributeur de mettre à jour les informations et ajouter de nouvelles caméras",
+        "ca": "Aquesta capa mostra les càmeres de vigilància i permet a qui col·labora, actualitzar la informació i afegir noves càmeres",
+        "cs": "Tato vrstva zobrazuje sledovací kamery a umožňuje přispěvateli aktualizovat informace a přidávat nové kamery",
+        "sl": "Ta sloj prikazuje nadzorne kamere in urednikom omogoča posodabljanje informacij obstoječih in dodajanje novih kamer"
+      },
+      "enableMorePrivacy": true,
+      "source": {
+        "osmTags": {
+          "and": [
+            "man_made=surveillance",
+            {
+              "or": [
+                "surveillance:type=camera",
+                "surveillance:type=ALPR",
+                "surveillance:type=ANPR"
+              ]
+            }
+          ]
+        }
+      },
+      "minzoom": 12,
+      "title": {
+        "render": {
+          "en": "Surveillance Camera",
+          "nl": "Bewakingscamera",
+          "ru": "Камера наблюдения",
+          "fr": "Caméra de surveillance",
+          "it": "Videocamera di sorveglianza",
+          "de": "Überwachungskamera",
+          "ca": "Càmera de videovigilància",
+          "da": "Overvågningskamera",
+          "es": "Cámara de vigilancia",
+          "cs": "Bezpečnostní kamera",
+          "sl": "Nadzorna kamera"
+        }
+      },
+      "pointRendering": [
+        {
+          "marker": [
+            {
+              "icon": {
+                "render": "./assets/themes/surveillance/logo.svg",
+                "mappings": [
+                  {
+                    "if": "surveillance:type=ALPR",
+                    "then": "./assets/layers/surveillance_camera/ALPR.svg"
+                  },
+                  {
+                    "if": "camera:type=dome",
+                    "then": "./assets/themes/surveillance/dome.svg"
+                  },
+                  {
+                    "if": "_direction:leftright=right",
+                    "then": "./assets/themes/surveillance/cam_right.svg"
+                  },
+                  {
+                    "if": "_direction:leftright=left",
+                    "then": "./assets/themes/surveillance/cam_left.svg"
+                  }
+                ]
+              }
+            }
+          ],
+          "iconSize": {
+            "mappings": [
+              {
+                "if": {
+                  "and": [
+                    "camera:type=fixed",
+                    "surveillance:type=camera",
+                    "_direction:leftright~*"
+                  ]
+                },
+                "then": "50,35,center"
+              }
+            ],
+            "render": "35,35,center"
+          },
+          "location": [
+            "point",
+            "centroid"
+          ],
+          "rotation": {
+            "#": "Note: {camera:direction} is substituted by a number, giving the string 'calc(123deg + 90deg)'  ; it is this string that is used as css property, which interprets the calc",
+            "render": "calc({_direction:numerical}deg + 90deg)",
+            "mappings": [
+              {
+                "if": {
+                  "or": [
+                    "camera:type=dome",
+                    "surveillance:type=ALPR"
+                  ]
+                },
+                "then": "0"
+              },
+              {
+                "if": "_direction:leftright=right",
+                "then": "calc({_direction:numerical}deg - 90deg)"
+              }
+            ]
+          },
+          "iconBadges": [
+            {
+              "if": "_favourite=yes",
+              "then": {
+                "render": "circle:white;heart:red",
+                "id": "circlewhiteheartred"
+              }
+            }
+          ]
+        }
+      ],
+      "lineRendering": [
+        {
+          "color": "#f00",
+          "width": "8"
+        }
+      ],
+      "presets": [
+        {
+          "tags": [
+            "man_made=surveillance",
+            "surveillance:type=camera"
+          ],
+          "title": {
+            "en": "a surveillance camera",
+            "nl": "een bewakingscamera",
+            "de": "eine Überwachungskamera",
+            "es": "una cámara de vigilancia",
+            "fr": "une caméra de surveillance",
+            "ca": "una càmera de vigilància",
+            "cs": "bezpečnostní kamera",
+            "sl": "nadzorna kamera"
+          }
+        },
+        {
+          "tags": [
+            "man_made=surveillance",
+            "surveillance:type=camera",
+            "camera:mount=wall"
+          ],
+          "title": {
+            "en": "a surveillance camera mounted on a wall",
+            "nl": "een bewakingscamera gemonteerd op een muur",
+            "de": "eine an einer Wand montierte Überwachungskamera",
+            "es": "una cámara de vigilancia montada en una pared",
+            "fr": "une caméra de surveillance fixée au mur",
+            "ca": "una càmera de vigilància muntada en una paret",
+            "cs": "sledovací kamera namontovaná na zdi",
+            "sl": "nadzorna kamera pritrjena na steno"
+          },
+          "snapToLayer": [
+            "walls_and_buildings"
+          ]
+        },
+        {
+          "tags": [
+            "man_made=surveillance",
+            "surveillance:type=ALPR"
+          ],
+          "title": {
+            "en": "an ALPR camera (Automatic Number Plate Reader)",
+            "ca": "una càmera ALPR (lector automàtic de matrícules, per les seves sigles en anglès)",
+            "de": "Eine Kamera zur automatischen Nummernschilderkennung",
+            "cs": "kamera ALPR (automatická čtečka registračních značek)",
+            "sl": "kamera za prepoznavo registrskih tablic"
+          },
+          "description": {
+            "en": "An ALPR typically has two lenses and an array of infrared lights.",
+            "ca": "Un ALPR normalment té dues lents i una sèrie de llums infrarojes.",
+            "de": "Eine automatische Nummernschilderkennung hat üblicherweise zwei Linsen und ein Reihe aus Infrarotlichtern.",
+            "cs": "ALPR má obvykle dvě čočky a pole infračervených světel.",
+            "sl": "Kamera za prepoznavo registrskih tablic ima običajno dve leči in polje infrardečih lučk."
+          },
+          "exampleImages": [
+            "./assets/layers/surveillance_camera/ALPR_Example.jpg",
+            "./assets/layers/surveillance_camera/ALPR_Example2.jpg"
+          ]
+        },
+        {
+          "tags": [
+            "man_made=surveillance",
+            "surveillance:type=ALPR",
+            "camera:mount=wall"
+          ],
+          "title": {
+            "en": "an ALPR camera (Automatic Number Plate Reader) mounted on a wall",
+            "ca": "una càmera ALPR (lector automàtic de matrícules) muntada a la paret",
+            "de": "eine Kamera zur Nummernschilderkennung, die an einer Wand befestigt ist",
+            "cs": "kamera ALPR (Automatická čtečka registračních značek) namontovaná na zdi",
+            "sl": "na steno pritrjena kamera za prepoznavo registrskih tablic"
+          },
+          "description": {
+            "en": "An ALPR typically has two lenses and an array of infrared lights.",
+            "ca": "Un ALPR normalment té dues lents i una sèrie de llums infrarojes.",
+            "de": "Eine automatische Nummernschilderkennung hat üblicherweise zwei Linsen und ein Reihe aus Infrarotlichtern.",
+            "cs": "ALPR má obvykle dvě čočky a pole infračervených světel.",
+            "sl": "Kamera za prepoznavo registrskih tablic ima običajno dve leči in polje infrardečih lučk."
+          },
+          "exampleImages": [
+            "./assets/layers/surveillance_camera/ALPR_Example.jpg",
+            "./assets/layers/surveillance_camera/ALPR_Example2.jpg"
+          ],
+          "snapToLayer": [
+            "walls_and_buildings"
+          ]
+        }
+      ],
+      "tagRenderings": [
+        {
+          "id": "just_created",
+          "labels": [
+            "added_by_default"
+          ],
+          "description": "This element shows a 'thank you' that the contributor has recently created this element",
+          "classes": "rounded-xl thanks",
+          "mappings": [
+            {
+              "if": "id~*",
+              "icon": "./assets/svg/party.svg",
+              "then": {
+                "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+                "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+                "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+                "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+                "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+                "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+              }
+            }
+          ],
+          "condition": {
+            "and": [
+              "_backend~*",
+              "_last_edit:passed_time<300",
+              {
+                "or": [
+                  "_version_number=",
+                  "_version_number=1"
+                ]
+              }
+            ]
+          },
+          "metacondition": {
+            "and": [
+              {
+                "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+                "or": [
+                  "_last_edit:contributor:uid:={_uid}",
+                  "_last_edit:contributor:uid="
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "images",
+          "description": "This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images",
+          "render": {
+            "*": "{image_carousel()}{image_upload()}{nearby_images():my-4}"
+          },
+          "classes": "my-4"
+        },
+        {
+          "id": "has_alpr",
+          "question": {
+            "en": "Can this camera automatically detect license plates?",
+            "ca": "Aquesta càmera pot detectar matrícules automàticament?",
+            "de": "Dient diese Kamera der Nummernschilderkennung?",
+            "cs": "Dokáže tato kamera automaticky rozpoznat registrační značky?",
+            "sl": "Ali ta kamera lahko samodejno prepoznava registrske tablice?"
+          },
+          "questionHint": {
+            "en": "An <b>ALPR</b> (Automatic License Plate Reader) typically has two lenses and an array of infrared LEDS in between.",
+            "ca": "Un <b>ALPR</b> (lector automàtic de matrícules, per les seves sigles en anglès) normalment té dues lents i una sèrie de LEDs infrarojos entremig.",
+            "de": "Eine Kamera zur <b>Nummernschilderkennung</b> hat üblicherweise zwei Linsen mit dazwischenliegenden Infrarot-LEDs.",
+            "cs": "Automatická čtečka registračních značek (<b>ALPR</b>) má obvykle dvě čočky a mezi nimi soustavu infračervených diod LED.",
+            "sl": "Kamera za <b>prepoznavo registrskih tablic</b> ima običajno dve leči in med njima polje infrardečih LED svetil."
+          },
+          "mappings": [
+            {
+              "if": "surveillance:type=camera",
+              "then": {
+                "en": "This is a camera without number plate recognition.",
+                "ca": "Es tracta d'una càmera sense reconeixement de matrícules.",
+                "de": "Dies ist eine Kamera ohne Nummernschilderkennung.",
+                "cs": "Jedná se o kameru bez rozpoznání SPZ.",
+                "sl": "To je kamera brez prepoznave registrskih tablic."
+              }
+            },
+            {
+              "if": "surveillance:type=ALPR",
+              "then": {
+                "en": "This is an ALPR (Automatic License Plate Reader)",
+                "ca": "Açò és un ALPR (lector automàtic de matrícules, per les seves sigles en anglès)",
+                "de": "Dies ist eine Kamera mit Nummernschilderkennung",
+                "cs": "Jedná se o zařízení ALPR (automatické čtení registračních značek)",
+                "sl": "To je kamera s prepoznavo registrskih tablic"
+              },
+              "icon": {
+                "path": "./assets/layers/surveillance_camera/ALPR.svg"
+              }
+            }
+          ]
+        },
+        {
+          "question": {
+            "en": "What kind of camera is this?",
+            "nl": "Wat voor soort camera is dit?",
+            "fr": "Quel genre de caméra est-ce ?",
+            "it": "Di che tipo di videocamera si tratta?",
+            "ru": "Какая это камера?",
+            "de": "Um welchen Kameratyp handelt es sich?",
+            "ca": "Quin tipus de càmera és aquesta?",
+            "es": "¿Qué tipo de cámara es?",
+            "cs": "Jaká je to kamera?",
+            "sl": "Kakšne vrste kamera je to?"
+          },
+          "mappings": [
+            {
+              "if": "camera:type=fixed",
+              "then": {
+                "en": "A fixed (non-moving) camera",
+                "nl": "Een vaste camera",
+                "fr": "Une caméra fixe (non mobile)",
+                "it": "Una videocamera fissa (non semovente)",
+                "de": "Eine fest montierte (nicht bewegliche) Kamera",
+                "ca": "Una càmera fixa (no movible)",
+                "es": "Cámara fija (no móvil)",
+                "cs": "Pevná (nepohyblivá) kamera",
+                "sl": "Fiksna (nepremična) kamera"
+              },
+              "icon": "./assets/themes/surveillance/cam_right.svg"
+            },
+            {
+              "if": "camera:type=dome",
+              "then": {
+                "en": "A dome camera (which can turn)",
+                "nl": "Een dome (bolvormige camera die kan draaien)",
+                "fr": "Une caméra dôme (qui peut tourner)",
+                "it": "Una videocamera a cupola (che può ruotare)",
+                "ru": "Камера с поворотным механизмом",
+                "de": "Eine Kuppelkamera (drehbar)",
+                "ca": "Càmera de cúpula (que pot girar)",
+                "es": "Cámara con domo (que se puede girar)",
+                "cs": "Kopulovitá (dome) kamera (která se může otáčet)",
+                "sl": "Kamera v kupoli (obračajoča)"
+              },
+              "icon": "./assets/themes/surveillance/dome.svg"
+            },
+            {
+              "if": {
+                "and": [
+                  "camera:type=panning"
+                ]
+              },
+              "then": {
+                "en": "A panning camera",
+                "nl": "Een camera die (met een motor) van links naar rechts kan draaien",
+                "ru": "Панорамная камера",
+                "fr": "Une caméra panoramique",
+                "it": "Una videocamera panoramica",
+                "de": "Eine bewegliche Kamera",
+                "ca": "Una càmera panoràmica",
+                "es": "Cámara panorámica",
+                "cs": "Otáčecí kamera"
+              }
+            }
+          ],
+          "id": "Camera type: fixed; panning; dome"
+        },
+        {
+          "question": {
+            "en": "In which geographical direction does this camera film?",
+            "nl": "In welke geografische richting filmt deze camera?",
+            "fr": "Dans quelle direction géographique cette caméra filme-t-elle ?",
+            "it": "In quale direzione geografica punta questa videocamera?",
+            "de": "In welche Himmelsrichtung filmt diese Kamera?",
+            "da": "I hvilken geografisk retning filmer dette kamera?",
+            "ca": "En quina direcció geogràfica apunta aquesta càmera?",
+            "es": "¿A qué dirección geográfica apunta esta cámara?",
+            "cs": "Ve kterém geografickém směru tato kamera snímá?",
+            "sl": "V katero geografsko smer snema ta kamera?"
+          },
+          "render": {
+            "en": "Films to a compass heading of {camera:direction}",
+            "nl": "Filmt in kompasrichting {camera:direction}",
+            "fr": "Filme dans une direction {camera:direction}",
+            "it": "Punta in direzione {camera:direction}",
+            "de": "filmt in Himmelsrichtung {camera:direction}",
+            "da": "Filmer til en kompasretning af {camera:direction}",
+            "ca": "Grava en direcció {camera:direction}",
+            "es": "Graba en dirección a {camera:direction}",
+            "cs": "Snímané oblasti podle směru kompasu {camera:direction}",
+            "sl": "Snema v smeri kompasa {camera:direction}"
+          },
+          "condition": {
+            "or": [
+              "camera:direction~*",
+              "direction~*",
+              "camera:type!=dome",
+              {
+                "and": [
+                  "camera:type=dome",
+                  "camera:mount=wall"
+                ]
+              }
+            ]
+          },
+          "freeform": {
+            "key": "camera:direction",
+            "type": "direction",
+            "inline": true
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "camera:direction=",
+                  "direction~*"
+                ]
+              },
+              "then": {
+                "en": "Films to a compass heading of {direction}",
+                "nl": "Filmt in kompasrichting {direction}",
+                "fr": "Filme dans une direction {direction}",
+                "it": "Punta in direzione {direction}",
+                "de": "filmt in Himmelsrichtung {direction}",
+                "da": "Filmer til en kompasretning af {direction}",
+                "es": "Graba en dirección a {direction}",
+                "ca": "Grava en direcció {direction}",
+                "cs": "Snímaná oblast podle směru kompasu {direction}",
+                "sl": "Snema v smeri kompasa {direction}"
+              },
+              "hideInAnswer": true
+            }
+          ],
+          "id": "camera_direction"
+        },
+        {
+          "freeform": {
+            "key": "operator",
+            "inline": true
+          },
+          "question": {
+            "en": "Who operates this CCTV?",
+            "nl": "Wie beheert deze bewakingscamera?",
+            "fr": "Qui exploite ce système de vidéosurveillance ?",
+            "it": "Chi gestisce questa videocamera a circuito chiuso?",
+            "de": "Wer betreibt diese Kamera?",
+            "ca": "Qui opera aquest circuit de televisió tancat?",
+            "es": "¿Quién opera el sistema de esta cámara?",
+            "cs": "Kdo provozuje tento kamerový systém?",
+            "sl": "Kdo upravlja s to kamero?"
+          },
+          "render": {
+            "en": "Operated by {operator}",
+            "nl": "Beheer door {operator}",
+            "fr": "Exploité par {operator}",
+            "it": "È gestita da {operator}",
+            "de": "Betrieben von {operator}",
+            "ca": "Operat per {operator}",
+            "es": "Operado por {operator}",
+            "cs": "Provozuje {operator}",
+            "pt": "Operado por {operator}",
+            "sl": "Upravlja jo {operator}"
+          },
+          "id": "Operator"
+        },
+        {
+          "question": {
+            "en": "What kind of surveillance is this camera?",
+            "nl": "Wat soort bewaking wordt hier uitgevoerd?",
+            "fr": "De quel genre de surveillance cette caméra est-elle ?",
+            "it": "Che cosa sorveglia questa videocamera?",
+            "de": "Was überwacht diese Kamera?",
+            "da": "Hvilken form for overvågning er dette kamera?",
+            "ca": "Què vigila aquesta càmera?",
+            "es": "¿Qué tipo de vigilancia aplica a esta cámara?",
+            "cs": "Co sleduje tato kamera?",
+            "sl": "Kaj nadzoruje ta kamera?"
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "surveillance=public"
+                ]
+              },
+              "then": {
+                "en": "A public area is surveilled, such as a street, a bridge, a square, a park, a train station, a public corridor or tunnel, …",
+                "nl": "Bewaking van de publieke ruimte, dus een straat, een brug, een park, een plein, een stationsgebouw, een publiek toegankelijke gang of tunnel…",
+                "fr": "Une zone publique est surveillée, telle qu'une rue, un pont, une place, un parc, une gare, un couloir, un tunnel public…",
+                "it": "Sorveglia un'area pubblica, come una strada, un ponte, una piazza, un parco, una stazione, un passaggio o un sottopasso pubblico, ...",
+                "de": "Die Kamera überwacht einen öffentlichen Bereich, z. B. Straßen, Brücken, Plätze, Parks, Bahnhöfe, öffentliche Gänge oder Tunnel, …",
+                "da": "Et offentligt område overvåges, f.eks. en gade, en bro, et torv, en park, en togstation, en offentlig korridor eller en tunnel, …",
+                "ca": "Es vigila una àrea pública, com un carrer, un pont, una plaça, un parc, una estació de tren, un túnel públic, …",
+                "es": "Es un área pública, como una calle, un puente, una plaza, un parque, una estación de tren, un corredor público o túnel, …",
+                "cs": "Sleduje se veřejný prostor, například ulice, most, náměstí, park, nádraží, veřejný koridor nebo tunel, …",
+                "sl": "Nadzoruje javno površino kot je ulica, most, trg, park, postaja, javni hodnik, tunel…"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "surveillance=outdoor"
+                ]
+              },
+              "then": {
+                "en": "An outdoor, yet private area is surveilled (e.g. a parking lot, a fuel station, courtyard, entrance, private driveway, …)",
+                "nl": "Een buitenruimte met privaat karakter (zoals een privé-oprit, een parking, tankstation, …)",
+                "fr": "Une zone extérieure, mais privée, est surveillée (par exemple, un parking, une station-service, une cour, une entrée, une allée privée…)",
+                "it": "Sorveglia un'area esterna di proprietà privata (un parcheggio, una stazione di servizio, un cortile, un ingresso, un vialetto privato, ...)",
+                "de": "Die Kamera überwacht einen privaten Außenbereich (z.B. Parkplätze, Tankstellen, Innenhöfe, Eingänge, private Einfahrten, …)",
+                "da": "Et udendørs, men privat område overvåges (f.eks. en parkeringsplads, en tankstation, en gårdsplads, en indgang, en privat indkørsel, ...)",
+                "ca": "Es vigila una àrea exterior, encara que privada (p.e. una plaça d'aparcament, una estació de servei, pati, entrada, via d'accés privada, …)",
+                "es": "Es un área exterior pero privada (ej: estacionamiento, gasolinera, patio, entrada, camino privado, ...)",
+                "cs": "Sleduje se venkovní, ale soukromý prostor (např. parkoviště, čerpací stanice, dvůr, vchod, soukromá příjezdová cesta, ...)",
+                "sl": "Nadzoruje zunanjo, a zasebno površino (npr. parkirišče, bencinsko črpalko, dvorišče, vhod v stavbo, zasebni dovoz…)"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "surveillance=indoor"
+                ]
+              },
+              "then": {
+                "nl": "Een private binnenruimte wordt bewaakt, bv. een winkel, een parkeergarage, …",
+                "en": "A private indoor area is surveilled, e.g. a shop, a private underground parking, …",
+                "fr": "Une zone intérieure privée est surveillée, par exemple un magasin, un parking souterrain privé…",
+                "it": "Sorveglia un ambiente interno di proprietà privata, per esempio un negozio, un parcheggio sotterraneo privato, ...",
+                "de": "Die Kamera überwacht einen privaten Innenbereich, z. B. Geschäfte, private Tiefgaragen, …",
+                "da": "Et privat indendørs område overvåges, f.eks. en butik, en privat parkeringskælder, …",
+                "ca": "Es vigila una àrea interior privada, p.e. una botiga, un parking subterrani privat, …",
+                "es": "La vigilancia ocurre en un lugar interior privado, por ejemplo una tienda, un estacionamiento privado subterráneo, …",
+                "cs": "Soukromý vnitřní prostor je sledován, např. obchod, soukromé podzemní parkoviště, …",
+                "sl": "Nadzoruje zasebno notranjo površino, npr. trgovino, zasebno podzemno parkirišče…"
+              }
+            }
+          ],
+          "id": "Surveillance type: public, outdoor, indoor"
+        },
+        {
+          "question": {
+            "en": "Is the public space surveilled by this camera an indoor or outdoor space?",
+            "nl": "Bevindt de bewaakte publieke ruimte camera zich binnen of buiten?",
+            "fr": "L'espace public surveillé par cette caméra est-il un espace intérieur ou extérieur ?",
+            "it": "Lo spazio pubblico sorvegliato da questa videocamera è all'aperto o al chiuso?",
+            "de": "Handelt es sich bei dem von dieser Kamera überwachten öffentlichen Raum um einen Innen- oder Außenbereich?",
+            "da": "Er det offentlige rum, der overvåges af dette kamera, et indendørs eller udendørs rum?",
+            "es": "¿El espacio público vigilado por esta cámara es un espacio interior o exterior?",
+            "ca": "L'espai públic vigilat per aquesta càmera és un espai interior o exterior?",
+            "cs": "Je veřejný prostor sledovaný touto kamerou vnitřní nebo venkovní prostor?",
+            "sl": "Ali je javni prostor, ki ga nadzoruje ta kamera, notranji ali zunanji?"
+          },
+          "condition": {
+            "and": [
+              "surveillance:type=public"
+            ]
+          },
+          "mappings": [
+            {
+              "if": "indoor=yes",
+              "then": {
+                "en": "This camera is located indoors",
+                "nl": "Deze camera bevindt zich binnen",
+                "fr": "Cette caméra est située à l'intérieur",
+                "it": "Questa videocamera si trova al chiuso",
+                "de": "Diese Kamera befindet sich im Innenraum",
+                "da": "Dette kamera er placeret indendørs",
+                "es": "Esta cámara está ubicada en un lugar interior",
+                "ca": "Aquesta càmera es troba a l'interior",
+                "cs": "Tato kamera je umístěna ve vnitřním prostoru",
+                "sl": "Ta kamera je znotraj"
+              }
+            },
+            {
+              "if": "indoor=no",
+              "then": {
+                "en": "This camera is located outdoors",
+                "nl": "Deze camera bevindt zich buiten",
+                "fr": "Cette caméra est située à l'extérieur",
+                "it": "Questa videocamera si trova all'aperto",
+                "ru": "Эта камера расположена снаружи",
+                "de": "Diese Kamera befindet sich im Freien",
+                "da": "Dette kamera er placeret udendørs",
+                "es": "Esta cámara está ubicada en un lugar exterior",
+                "ca": "Aquesta càmera es troba a l'exterior",
+                "cs": "Tato kamera je umístěna ve venkovním prostoru",
+                "sl": "Ta kamera je zunaj"
+              }
+            },
+            {
+              "if": "indoor=",
+              "then": {
+                "en": "This camera is probably located outdoors",
+                "nl": "Deze camera bevindt zich waarschijnlijk buiten",
+                "fr": "Cette caméra est probablement située à l'extérieur",
+                "it": "Questa videocamera si trova probabilmente all'esterno",
+                "ru": "Возможно, эта камера расположена снаружи",
+                "de": "Diese Kamera ist möglicherweise im Freien",
+                "da": "Dette kamera er sandsynligvis placeret udendørs",
+                "es": "Esta cámara está probablemente colocada en el exterior",
+                "ca": "Aquesta càmera probablement es troba a l'exterior",
+                "cs": "Tato kamera je pravděpodobně umístěna venku",
+                "sl": "Ta kamera je verjetno zunaj"
+              },
+              "hideInAnswer": true
+            }
+          ],
+          "id": "is_indoor"
+        },
+        {
+          "question": {
+            "en": "On which level is this camera located?",
+            "nl": "Op welke verdieping bevindt deze camera zich?",
+            "fr": "À quel niveau se trouve cette caméra ?",
+            "it": "A che piano si trova questa videocamera?",
+            "de": "Auf welcher Ebene befindet sich diese Kamera?",
+            "es": "¿A qué nivel está colocada esta cámara?",
+            "ca": "A quina planta es troba aquesta càmera?",
+            "cs": "Ve kterém podlaží se nachází tato kamera?",
+            "sl": "V katerem nadstropju je ta kamera?"
+          },
+          "render": {
+            "en": "Located on level {level}",
+            "nl": "Bevindt zich op verdieping {level}",
+            "fr": "Situé au niveau {level}",
+            "it": "Si trova al piano {level}",
+            "de": "Befindet sich auf Ebene {level}",
+            "es": "Ubicado en la planta {level}",
+            "ca": "Ubicat a la planta {level}",
+            "cs": "Nachází se v patře {level}",
+            "sl": "Se nahaja v {level}. nadstropju"
+          },
+          "freeform": {
+            "key": "level",
+            "type": "nat",
+            "inline": true
+          },
+          "condition": {
+            "or": [
+              "indoor=yes",
+              "surveillance:type=ye"
+            ]
+          },
+          "id": "Level"
+        },
+        {
+          "question": {
+            "en": "What exactly is surveilled here?",
+            "nl": "Wat wordt hier precies bewaakt?",
+            "fr": "Qu'est-ce qui est surveillé ici ?",
+            "it": "Che cosa è sorvegliato qui?",
+            "de": "Was genau wird hier überwacht?",
+            "da": "Hvad er det præcist, der overvåges her?",
+            "ca": "Que vigilen exactament aquí?",
+            "es": "¿Qué se vigila aquí exactamente?",
+            "cs": "Co přesně se zde sleduje?",
+            "sl": "Kaj točno je nadzorovano tu?"
+          },
+          "freeform": {
+            "key": "surveillance:zone",
+            "inline": true
+          },
+          "render": {
+            "en": "Surveills a {surveillance:zone}",
+            "nl": "Bewaakt een {surveillance:zone}",
+            "fr": "Surveille un(e) {surveillance:zone}",
+            "it": " Sorveglia una {surveillance:zone}",
+            "de": "Überwacht ein/e {surveillance:zone}",
+            "da": "Overvåger en {surveillance:zone}",
+            "ca": "Vigila un/a {surveillance:zone}",
+            "es": "Vigila un/a {surveillance:zone}",
+            "cs": "Sleduje {surveillance:zone}",
+            "sl": "Nadzoruje {surveillance:zone}"
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "surveillance:zone=parking"
+                ]
+              },
+              "then": {
+                "en": "Surveills a parking",
+                "nl": "Bewaakt een parking",
+                "fr": "Surveille un parking",
+                "it": "Sorveglia un parcheggio",
+                "de": "Überwacht einen Parkplatz",
+                "da": "Overvåger en parkeringsplads",
+                "ca": "Vigilen un aparcament",
+                "es": "Vigila un estacionamiento",
+                "cs": "Hlídá parkoviště",
+                "sl": "Nadzoruje parkirišče"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "surveillance:zone=traffic"
+                ]
+              },
+              "then": {
+                "en": "Surveills the traffic",
+                "nl": "Bewaakt het verkeer",
+                "fr": "Surveille la circulation",
+                "it": "Sorveglia il traffico",
+                "de": "Überwacht den Verkehr",
+                "da": "Overvåger trafikken",
+                "ca": "Vigilen el trànsit",
+                "es": "Vigila el tránsito",
+                "cs": "Sleduje provoz",
+                "sl": "Nadzoruje promet"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "surveillance:zone=entrance"
+                ]
+              },
+              "then": {
+                "en": "Surveills an entrance",
+                "nl": "Bewaakt een ingang",
+                "fr": "Surveille une entrée",
+                "it": "Sorveglia un ingresso",
+                "de": "Überwacht einen Eingang",
+                "da": "Overvåger en indgang",
+                "ca": "Vigilen una entrada",
+                "es": "Vigila una entrada",
+                "cs": "Hlídá vchod",
+                "sl": "Nadzoruje vhod"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "surveillance:zone=corridor"
+                ]
+              },
+              "then": {
+                "en": "Surveills a corridor",
+                "nl": "Bewaakt een gang",
+                "fr": "Surveille un couloir",
+                "it": "Sorveglia un corridoio",
+                "de": "Überwacht einen Gang",
+                "da": "Overvåger en korridor",
+                "ca": "Vigilen un corredor",
+                "es": "Vigila un corredor",
+                "cs": "Sleduje chodbu",
+                "sl": "Nadzoruje hodnik"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "surveillance:zone=public_transport_platform"
+                ]
+              },
+              "then": {
+                "en": "Surveills a public tranport platform",
+                "nl": "Bewaakt een perron of bushalte",
+                "fr": "Surveille un quai de transport public",
+                "it": "Sorveglia una pensilina del trasporto pubblico",
+                "de": "Überwacht eine Haltestelle",
+                "da": "Overvejer en offentlig transportplatform",
+                "ca": "Vigilen una parada de transport públic",
+                "es": "Vigila una parada de transporte público",
+                "cs": "Sleduje zastávku veřejné dopravy",
+                "sl": "Nadzoruje peron javnega prevoza"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "surveillance:zone=shop"
+                ]
+              },
+              "then": {
+                "en": "Surveills a shop",
+                "nl": "Bewaakt een winkel",
+                "fr": "Surveille un magasin",
+                "it": "Sorveglia un negozio",
+                "de": "Überwacht ein Geschäft",
+                "da": "Overvåger en butik",
+                "ca": "Vigilen una botiga",
+                "es": "Vigila una tienda",
+                "cs": "Dohlíží na obchod",
+                "sl": "Nadzoruje trgovino"
+              }
+            }
+          ],
+          "id": "Surveillance:zone"
+        },
+        {
+          "question": {
+            "en": "How is this camera placed?",
+            "nl": "Hoe is deze camera geplaatst?",
+            "fr": "Comment cette caméra est-elle placée ?",
+            "it": "Com'è posizionata questa telecamera?",
+            "ru": "Как расположена эта камера?",
+            "de": "Woran ist diese Kamera befestigt?",
+            "da": "Hvordan er dette kamera placeret?",
+            "ca": "Com està posicionada aquesta càmera?",
+            "es": "¿Cómo está colocada la cámara?",
+            "cs": "Jak je tato kamera umístěna?",
+            "sl": "Kako je postavljena ta kamera?"
+          },
+          "render": {
+            "en": "Mounting method: {camera:mount}",
+            "nl": "Ophanging: {camera:mount}",
+            "fr": "Méthode de montage : {camera:mount}",
+            "it": "Metodo di montaggio: {camera:mount}",
+            "de": "Montageart: {camera:mount}",
+            "da": "Monteringsmetode: {camera:mount}",
+            "ca": "Mètode de muntatge: {camera:mount}",
+            "es": "Método de montaje: {camera:mount}",
+            "cs": "Způsob montáže: {camera:mount}",
+            "sl": "Način namestitve: {camera:mount}"
+          },
+          "freeform": {
+            "key": "camera:mount",
+            "inline": true
+          },
+          "mappings": [
+            {
+              "if": "camera:mount=wall",
+              "then": {
+                "en": "This camera is placed against a wall",
+                "nl": "Deze camera hangt aan een muur",
+                "fr": "Cette caméra est placée contre un mur",
+                "it": "Questa telecamera è posizionata contro un muro",
+                "de": "Diese Kamera ist an einer Wand befestigt",
+                "da": "Dette kamera er placeret op ad en væg",
+                "ca": "Aquesta càmera està ubicada contra un mur",
+                "es": "Está cámara está colocada sobre una pared",
+                "cs": "Tato kamera je umístěna na zdi",
+                "sl": "Ta kamera je pritrjena na steno"
+              }
+            },
+            {
+              "if": "camera:mount=pole",
+              "then": {
+                "en": "This camera is placed on a pole",
+                "nl": "Deze camera staat op een paal",
+                "fr": "Cette caméra est placée sur un poteau",
+                "it": "Questa telecamera è posizionata su un palo",
+                "de": "Diese Kamera ist an einer Stange befestigt",
+                "da": "Dette kamera er placeret på en stang",
+                "ca": "Aquesta càmera està posicionada a un pal",
+                "es": "Esta cámara está colocada en un poste",
+                "cs": "Tato kamera je umístěna na sloupu",
+                "sl": "Ta kamera je nameščena na drog"
+              }
+            },
+            {
+              "if": "camera:mount=ceiling",
+              "then": {
+                "en": "This camera is placed on the ceiling",
+                "nl": "Deze camera hangt aan het plafond",
+                "fr": "Cette caméra est placée au plafond",
+                "it": "Questa telecamera è posizionata sul soffitto",
+                "de": "Diese Kamera ist an der Decke befestigt",
+                "da": "Dette kamera er placeret i loftet",
+                "ca": "Aquesta càmera està posicionada al sostre",
+                "es": "Esta cámara está colocada en un techo",
+                "cs": "Tato kamera je umístěna na stropě",
+                "sl": "Ta kamera je pritrjena na strop"
+              }
+            },
+            {
+              "if": "camera:mount=street_lamp",
+              "then": {
+                "en": "This camera is placed on a street light",
+                "nl": "Deze camera staat op een straatlantaarn",
+                "fr": "Cette caméra est placée sur un lampadaire",
+                "it": "Questa telecamera è posizionata su un lampione",
+                "de": "Diese Kamera ist an einer Laterne befestigt",
+                "da": "Dette kamera er placeret på en gadelampe",
+                "ca": "Aquesta càmera està posicionada a un fanal",
+                "es": "Esta cámara está colocada sobre una farola",
+                "cs": "Tato kamera je umístěna na pouličním osvětlení",
+                "sl": "Ta kamera je nameščena na ulično svetilko"
+              }
+            },
+            {
+              "if": "camera:mount=tree",
+              "then": {
+                "en": "This camera is placed on a tree",
+                "nl": "Deze camera staat op een boom",
+                "fr": "Cette caméra est placée sur un arbre",
+                "it": "Questa telecamera è posizionata su un albero",
+                "de": "Diese Kamera ist an einem Baum befestigt",
+                "da": "Dette kamera er placeret på et træ",
+                "ca": "Aquesta càmera està posicionada a un arbre",
+                "es": "Esta cámara está colocada en un árbol",
+                "cs": "Tato kamera je umístěna na stromě",
+                "sl": "Ta kamera je nameščena na drevo"
+              }
+            }
+          ],
+          "id": "camera:mount"
+        },
+        {
+          "id": "leftover-questions",
+          "render": {
+            "*": "{questions( ,)}"
+          }
+        },
+        {
+          "id": "lod",
+          "labels": [
+            "added_by_default"
+          ],
+          "render": {
+            "*": "{linked_data_from_website()}"
+          }
+        },
+        {
+          "id": "minimap",
+          "description": "Shows a small map with the feature. Added by default to every popup",
+          "render": {
+            "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+          }
+        },
+        {
+          "id": "delete-button",
+          "render": {
+            "*": "{delete_button()}"
+          }
+        },
+        {
+          "id": "last_edit",
+          "labels": [
+            "added_by_default"
+          ],
+          "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+          "condition": {
+            "and": [
+              "_last_edit:contributor~*",
+              "_last_edit:changeset~*"
+            ]
+          },
+          "metacondition": {
+            "or": [
+              "__featureSwitchIsTesting=true",
+              "__featureSwitchIsDebugging=true",
+              "mapcomplete-show_debug=yes",
+              "_csCount>=10"
+            ]
+          },
+          "render": {
+            "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+          }
+        },
+        {
+          "id": "favourite_status",
+          "render": {
+            "*": "{favourite_status()}"
+          }
+        },
+        {
+          "id": "qr_code",
+          "labels": [
+            "added_by_default"
+          ],
+          "classes": "flex items-center gap-x-2",
+          "render": {
+            "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+            "en": "{qr_code()}Scan this code to open this location on another device",
+            "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+            "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+          }
+        },
+        {
+          "id": "share",
+          "labels": [
+            "added_by_default"
+          ],
+          "metacondition": "_supports_sharing=yes",
+          "render": {
+            "de": "{share_link(,Standort teilen)}",
+            "en": "{share_link(,Share this location)}",
+            "nl": "{share_link(,Deel deze locatie)}"
+          }
+        },
+        {
+          "id": "all-tags",
+          "render": {
+            "*": "{all_tags()}"
+          },
+          "metacondition": {
+            "or": [
+              "__featureSwitchIsDebugging=true",
+              "mapcomplete-show_tags=full",
+              "mapcomplete-show_debug=yes"
+            ]
+          }
+        }
+      ],
+      "deletion": {},
+      "titleIcons": [
+        {
+          "id": "wikipedialink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+          "condition": {
+            "or": [
+              "wikipedia~*",
+              "wikidata~*"
+            ]
+          },
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "wikipedia=",
+              "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+            }
+          ]
+        },
+        {
+          "id": "open_until",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "#": "Titleicon showing e.g. 'open until 17:00'",
+          "icon": {
+            "class": "w-20 mx-1 flex items-center"
+          },
+          "render": "{opening_hours_state()}",
+          "condition": {
+            "or": [
+              "opening_hours~*",
+              {
+                "or": [
+                  {
+                    "and": [
+                      "seasonal~.*winter.*",
+                      "_now:date~....-(12|01|02)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*spring.*",
+                      "_now:date~....-(03|04|05)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*summer.*",
+                      "_now:date~....-(06|07|08)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*autumn.*",
+                      "_now:date~....-(09|10|11)-.."
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "phonelink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.render"
+          },
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "contact:phone~*",
+              "then": {
+                "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+                "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+                "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+                "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+              }
+            }
+          ],
+          "condition": {
+            "or": [
+              "phone~*",
+              "contact:phone~*"
+            ]
+          }
+        },
+        {
+          "id": "emaillink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "contact:email~*",
+              "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "operator:email~*",
+              "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+            }
+          ],
+          "condition": {
+            "or": [
+              "email~*",
+              "contact:email~*",
+              "operator:email~*"
+            ]
+          }
+        },
+        {
+          "id": "websitelink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "website~*",
+              "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "operator:website~*",
+              "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "context:website~*",
+              "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            }
+          ]
+        },
+        {
+          "id": "smokingicon",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "smoking=no",
+              "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "smoking=yes",
+              "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+            }
+          ]
+        },
+        {
+          "id": "dogicon",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "if": "dog=no",
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+            },
+            {
+              "if": "dog=leashed",
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+            },
+            {
+              "if": {
+                "or": [
+                  "dog=yes",
+                  "dog=unleashed"
+                ]
+              },
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+            }
+          ]
+        },
+        {
+          "id": "sharelink",
+          "labels": [
+            "defaults"
+          ],
+          "render": "{share_link()}",
+          "metacondition": "_supports_sharing=yes"
+        },
+        {
+          "id": "favourite_title_icon",
+          "labels": [
+            "defaults"
+          ],
+          "render": {
+            "*": "{favourite_icon()}"
+          },
+          "metacondition": "_loggedIn=true"
+        },
+        {
+          "id": "osmlink",
+          "labels": [
+            "defaults"
+          ],
+          "render": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.render"
+          },
+          "mappings": [
+            {
+              "if": "id~.*/-.*",
+              "then": ""
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "_backend~*",
+              "then": {
+                "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+                "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+                "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+                "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+              }
+            }
+          ],
+          "condition": "id~(node|way|relation)/[0-9]*"
+        },
+        {
+          "id": "direction",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "{direction_indicator()}"
+        },
+        {
+          "id": "rating",
+          "icon": {
+            "class": "w-20 mx-1 flex items-center"
+          },
+          "render": "{rating()}"
+        }
+      ],
+      "_layerIcon": [
+        {
+          "icon": "./assets/themes/surveillance/logo.svg"
+        }
+      ]
+    },
+    {
+      "id": "speed_camera",
+      "name": {
+        "en": "Speed Camera",
+        "de": "Blitzer",
+        "nl": "Flitspaal",
+        "es": "Cámara de velocidad",
+        "ca": "Càmera de velocitat",
+        "cs": "Rychlostní radar",
+        "sl": "Hitrostna kamera"
+      },
+      "description": {
+        "en": "Layer showing speed cameras",
+        "de": "Ebene mit Blitzern",
+        "nl": "Laag met flitspalen",
+        "es": "Capa con cámaras de velocidad",
+        "ca": "Capa que mostra càmeres de velocitat",
+        "cs": "Vrstva zobrazující rychlostní radary",
+        "sl": "Sloj prikazuje hitrostne kamere (radarje)"
+      },
+      "source": {
+        "osmTags": {
+          "and": [
+            "highway=speed_camera"
+          ]
+        }
+      },
+      "minzoom": 12,
+      "title": {
+        "render": {
+          "en": "Speed Camera",
+          "de": "Blitzer",
+          "nl": "Flitspaal",
+          "es": "Cámara de velocidad",
+          "ca": "Càmera de velocitat",
+          "cs": "Rychlostní radar"
+        }
+      },
+      "pointRendering": [
+        {
+          "location": [
+            "point",
+            "centroid"
+          ],
+          "marker": [
+            {
+              "icon": {
+                "render": "square",
+                "id": "square"
+              },
+              "color": "white"
+            },
+            {
+              "icon": {
+                "render": "./assets/layers/speed_camera/speed_camera.svg",
+                "id": "assetslayersspeedcameraspeedcamerasvg"
+              }
+            }
+          ],
+          "iconBadges": [
+            {
+              "if": "_favourite=yes",
+              "then": {
+                "render": "circle:white;heart:red",
+                "id": "circlewhiteheartred"
+              }
+            }
+          ]
+        }
+      ],
+      "lineRendering": [],
+      "presets": [
+        {
+          "tags": [
+            "highway=speed_camera"
+          ],
+          "title": {
+            "en": "a speed camera",
+            "de": "einen Blitzer",
+            "nl": "een flitspaal",
+            "es": "una cámara de velocidad",
+            "ca": "una càmera de velocitat",
+            "cs": "rychlostní radar",
+            "sl": "hitrostna kamera"
+          }
+        }
+      ],
+      "tagRenderings": [
+        {
+          "id": "just_created",
+          "labels": [
+            "added_by_default"
+          ],
+          "description": "This element shows a 'thank you' that the contributor has recently created this element",
+          "classes": "rounded-xl thanks",
+          "mappings": [
+            {
+              "if": "id~*",
+              "icon": "./assets/svg/party.svg",
+              "then": {
+                "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+                "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+                "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+                "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+                "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+                "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+              }
+            }
+          ],
+          "condition": {
+            "and": [
+              "_backend~*",
+              "_last_edit:passed_time<300",
+              {
+                "or": [
+                  "_version_number=",
+                  "_version_number=1"
+                ]
+              }
+            ]
+          },
+          "metacondition": {
+            "and": [
+              {
+                "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+                "or": [
+                  "_last_edit:contributor:uid:={_uid}",
+                  "_last_edit:contributor:uid="
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "images",
+          "description": "This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images",
+          "render": {
+            "*": "{image_carousel()}{image_upload()}{nearby_images():my-4}"
+          },
+          "classes": "my-4"
+        },
+        {
+          "id": "maxspeed",
+          "question": {
+            "en": "What is the maximum speed allowed at this speed camera?",
+            "de": "Wie hoch ist die zulässige Höchstgeschwindigkeit an diesem Blitzer?",
+            "nl": "Wat is de maximum toegestane snelheid bij deze flitspaal?",
+            "es": "¿Cuál es la velocidad máxima permitida en este radar?",
+            "fr": "Quelle est la vitesse maximale autorisée au niveau de ce radar ?",
+            "ca": "Quina és la velocitat màxima permesa en aquest radar?",
+            "cs": "Jaká je maximální povolená rychlost na tomto rychlostním radaru?"
+          },
+          "freeform": {
+            "key": "maxspeed",
+            "type": "pnat",
+            "placeholder": {
+              "en": "Maximum speed allowed",
+              "de": "Zulässige Höchstgeschwindigkeit",
+              "nl": "Maximum toegestane snelheid",
+              "es": "Velocidad máxima permitida",
+              "fr": "Vitesse maximale autorisée",
+              "ca": "Velocitat màxima permesa",
+              "cs": "Maximální povolená rychlost"
+            },
+            "inline": false
+          },
+          "render": {
+            "en": "The maximum speed allowed is {canonical(maxspeed)}",
+            "de": "Die zulässige Höchstgeschwindigkeit beträgt {canonical(maxspeed)}",
+            "nl": "De maximum toegestane snelheid is {canonical(maxspeed)}",
+            "es": "La velocidad máxima permitida es {canonical(maxspeed)}",
+            "fr": "La vitesse maximale autorisée est {canonical(maxspeed)}",
+            "ca": "La velocitat màxima permesa és {canonical(maxspeed)}",
+            "cs": "Maximální povolená rychlost je {canonical(maxspeed)}"
+          }
+        },
+        {
+          "id": "ref",
+          "render": {
+            "en": "The reference number of this speed camera is {ref}",
+            "de": "Die Referenznummer dieses Blitzers ist {ref}",
+            "nl": "De referentie van deze flitspaal is {ref}",
+            "es": "El número de referencia de este radar de velocidad es {ref}",
+            "cs": "Referenční číslo tohoto rychlostního radaru je {ref}"
+          },
+          "condition": "ref~*"
+        },
+        {
+          "question": {
+            "en": "In which geographical direction does this camera film?",
+            "nl": "In welke geografische richting filmt deze camera?",
+            "fr": "Dans quelle direction géographique cette caméra filme-t-elle ?",
+            "it": "In quale direzione geografica punta questa videocamera?",
+            "de": "In welche Himmelsrichtung filmt diese Kamera?",
+            "da": "I hvilken geografisk retning filmer dette kamera?",
+            "ca": "En quina direcció geogràfica apunta aquesta càmera?",
+            "es": "¿A qué dirección geográfica apunta esta cámara?",
+            "cs": "Ve kterém geografickém směru tato kamera snímá?",
+            "sl": "V katero geografsko smer snema ta kamera?"
+          },
+          "render": {
+            "en": "Films to a compass heading of {direction}",
+            "nl": "Filmt in kompasrichting {direction}",
+            "fr": "Filme dans une direction {direction}",
+            "it": "Punta in direzione {direction}",
+            "de": "filmt in Himmelsrichtung {direction}",
+            "da": "Filmer til en kompasretning af {direction}",
+            "ca": "Grava en direcció {direction}",
+            "es": "Graba en dirección a {direction}",
+            "cs": "Snímané oblasti podle směru kompasu {direction}",
+            "sl": "Snema v smeri kompasa {direction}"
+          },
+          "freeform": {
+            "key": "direction",
+            "type": "direction",
+            "inline": true
+          },
+          "id": "camera_direction"
+        },
+        {
+          "id": "leftover-questions",
+          "render": {
+            "*": "{questions( ,)}"
+          }
+        },
+        {
+          "id": "lod",
+          "labels": [
+            "added_by_default"
+          ],
+          "render": {
+            "*": "{linked_data_from_website()}"
+          }
+        },
+        {
+          "id": "minimap",
+          "description": "Shows a small map with the feature. Added by default to every popup",
+          "render": {
+            "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+          }
+        },
+        {
+          "id": "move-button",
+          "render": {
+            "*": "{move_button()}"
+          }
+        },
+        {
+          "id": "last_edit",
+          "labels": [
+            "added_by_default"
+          ],
+          "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+          "condition": {
+            "and": [
+              "_last_edit:contributor~*",
+              "_last_edit:changeset~*"
+            ]
+          },
+          "metacondition": {
+            "or": [
+              "__featureSwitchIsTesting=true",
+              "__featureSwitchIsDebugging=true",
+              "mapcomplete-show_debug=yes",
+              "_csCount>=10"
+            ]
+          },
+          "render": {
+            "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+          }
+        },
+        {
+          "id": "favourite_status",
+          "render": {
+            "*": "{favourite_status()}"
+          }
+        },
+        {
+          "id": "qr_code",
+          "labels": [
+            "added_by_default"
+          ],
+          "classes": "flex items-center gap-x-2",
+          "render": {
+            "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+            "en": "{qr_code()}Scan this code to open this location on another device",
+            "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+            "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+          }
+        },
+        {
+          "id": "share",
+          "labels": [
+            "added_by_default"
+          ],
+          "metacondition": "_supports_sharing=yes",
+          "render": {
+            "de": "{share_link(,Standort teilen)}",
+            "en": "{share_link(,Share this location)}",
+            "nl": "{share_link(,Deel deze locatie)}"
+          }
+        },
+        {
+          "id": "all-tags",
+          "render": {
+            "*": "{all_tags()}"
+          },
+          "metacondition": {
+            "or": [
+              "__featureSwitchIsDebugging=true",
+              "mapcomplete-show_tags=full",
+              "mapcomplete-show_debug=yes"
+            ]
+          }
+        }
+      ],
+      "allowMove": {
+        "enableImproveAccuracy": true,
+        "enableRelocation": false
+      },
+      "units": [
+        {
+          "maxspeed": {
+            "quantity": "speed",
+            "denominations": [
+              "kmh",
+              "mph"
+            ]
+          }
+        }
+      ],
+      "titleIcons": [
+        {
+          "id": "wikipedialink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+          "condition": {
+            "or": [
+              "wikipedia~*",
+              "wikidata~*"
+            ]
+          },
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "wikipedia=",
+              "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+            }
+          ]
+        },
+        {
+          "id": "open_until",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "#": "Titleicon showing e.g. 'open until 17:00'",
+          "icon": {
+            "class": "w-20 mx-1 flex items-center"
+          },
+          "render": "{opening_hours_state()}",
+          "condition": {
+            "or": [
+              "opening_hours~*",
+              {
+                "or": [
+                  {
+                    "and": [
+                      "seasonal~.*winter.*",
+                      "_now:date~....-(12|01|02)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*spring.*",
+                      "_now:date~....-(03|04|05)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*summer.*",
+                      "_now:date~....-(06|07|08)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*autumn.*",
+                      "_now:date~....-(09|10|11)-.."
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "phonelink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.render"
+          },
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "contact:phone~*",
+              "then": {
+                "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+                "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+                "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+                "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+              }
+            }
+          ],
+          "condition": {
+            "or": [
+              "phone~*",
+              "contact:phone~*"
+            ]
+          }
+        },
+        {
+          "id": "emaillink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "contact:email~*",
+              "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "operator:email~*",
+              "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+            }
+          ],
+          "condition": {
+            "or": [
+              "email~*",
+              "contact:email~*",
+              "operator:email~*"
+            ]
+          }
+        },
+        {
+          "id": "websitelink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "website~*",
+              "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "operator:website~*",
+              "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "context:website~*",
+              "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            }
+          ]
+        },
+        {
+          "id": "smokingicon",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "smoking=no",
+              "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "smoking=yes",
+              "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+            }
+          ]
+        },
+        {
+          "id": "dogicon",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "if": "dog=no",
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+            },
+            {
+              "if": "dog=leashed",
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+            },
+            {
+              "if": {
+                "or": [
+                  "dog=yes",
+                  "dog=unleashed"
+                ]
+              },
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+            }
+          ]
+        },
+        {
+          "id": "sharelink",
+          "labels": [
+            "defaults"
+          ],
+          "render": "{share_link()}",
+          "metacondition": "_supports_sharing=yes"
+        },
+        {
+          "id": "favourite_title_icon",
+          "labels": [
+            "defaults"
+          ],
+          "render": {
+            "*": "{favourite_icon()}"
+          },
+          "metacondition": "_loggedIn=true"
+        },
+        {
+          "id": "osmlink",
+          "labels": [
+            "defaults"
+          ],
+          "render": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.render"
+          },
+          "mappings": [
+            {
+              "if": "id~.*/-.*",
+              "then": ""
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "_backend~*",
+              "then": {
+                "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+                "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+                "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+                "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+              }
+            }
+          ],
+          "condition": "id~(node|way|relation)/[0-9]*"
+        },
+        {
+          "id": "direction",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "{direction_indicator()}"
+        },
+        {
+          "id": "rating",
+          "icon": {
+            "class": "w-20 mx-1 flex items-center"
+          },
+          "render": "{rating()}"
+        }
+      ],
+      "_layerIcon": [
+        {
+          "icon": "square",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/speed_camera/speed_camera.svg"
+        }
+      ],
+      "_basedOn": "speed_camera"
+    },
+    {
+      "id": "walls_and_buildings",
+      "description": "This layer is needed by surveillance_camera because a preset snaps to this layer (at presets[1])",
+      "source": {
+        "osmTags": {
+          "and": [
+            {
+              "or": [
+                "barrier=wall",
+                "building~*"
+              ]
+            }
+          ]
+        }
+      },
+      "calculatedTags": [
+        "_entrance_properties=overlapWith(feat)('entrance')?.map(e => e.feat.properties)?.filter(p => p !== undefined && p.indoor !== 'door')",
+        "_entrance_properties_with_width=get(feat)('_entrance_properties')?.filter(p => p['width'] !== undefined)",
+        "_entrances_count=get(feat)('_entrance_properties').length",
+        "_entrances_count_without_width_count= get(feat)('_entrances_count') - get(feat)('_entrance_properties_with_width').length",
+        "_biggest_width= Math.max( get(feat)('_entrance_properties').map(p => p.width))",
+        "_biggest_width_properties= /* Can be a list! */ get(feat)('_entrance_properties').filter(p => p.width === get(feat)('_biggest_width'))",
+        "_biggest_width_id=get(feat)('_biggest_width_properties').id"
+      ],
+      "isCounted": false,
+      "minzoom": 18,
+      "shownByDefault": false,
+      "title": {
+        "render": {
+          "en": "Wall or building",
+          "nl": "Muur of gebouw",
+          "de": "Wand oder Gebäude",
+          "es": "Pared o edificio",
+          "fr": "Mur ou bâtiment",
+          "da": "Mur eller bygning",
+          "ca": "Paret o edifici",
+          "cs": "Zeď nebo budova"
+        }
+      },
+      "pointRendering": null,
+      "lineRendering": [
+        {
+          "color": "#fff",
+          "fill": "no",
+          "width": "3"
+        },
+        {
+          "color": "#333",
+          "fill": "no",
+          "width": "2"
+        }
+      ],
+      "passAllFeatures": true,
+      "tagRenderings": [
+        {
+          "id": "just_created",
+          "labels": [
+            "added_by_default"
+          ],
+          "description": "This element shows a 'thank you' that the contributor has recently created this element",
+          "classes": "rounded-xl thanks",
+          "mappings": [
+            {
+              "if": "id~*",
+              "icon": "./assets/svg/party.svg",
+              "then": {
+                "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+                "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+                "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+                "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+                "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+                "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+              }
+            }
+          ],
+          "condition": {
+            "and": [
+              "_backend~*",
+              "_last_edit:passed_time<300",
+              {
+                "or": [
+                  "_version_number=",
+                  "_version_number=1"
+                ]
+              }
+            ]
+          },
+          "metacondition": {
+            "and": [
+              {
+                "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+                "or": [
+                  "_last_edit:contributor:uid:={_uid}",
+                  "_last_edit:contributor:uid="
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "entrance_info",
+          "render": {
+            "ca": "<h3>Entrades</h3>Aquest edifici té {_entrances_count} entrades:{multi(_entrance_properties_with_width,Una <a href='#&LBRACEid&RBRACE'>entrada </a> de &LBRACEcanonical&LPARENSwidth&RPARENS&RBRACE,)}{_entrances_count_without_width_count} entrades encara no tenen informació d'amplada",
+            "cs": "<h3>Vchody</h3>Tato budova má {_entrances_count} vchodů:{multi(_entrance_properties_with_width,<a href='#&LBRACEid&RBRACE'>vchod</a> &LBRACEcanonical&LPARENSwidth&RPARENS&RBRACE,)}{_entrances_count_without_width_count} vchody zatím nemají informace o šířce",
+            "da": "<h3>Indgange</h3>Denne bygning har {_entrances_count} indgange:{multi(_entrance_properties_with_width,En <a href='#&LBRACEid&RBRACE'>indgang</a> på &LBRACEcanonical&LPARENSwidth&RPARENS&RBRACE,)}{_entrances_count_without_width_count} indgange har endnu ikke oplysninger om bredde",
+            "de": "<h3>Eingänge</h3>Das Gebäude hat {_entrances_count} Eingänge:{multi(_entrance_properties_with_width,Ein <a href='#&LBRACEid&RBRACE'>Eingang</a> von &LBRACEcanonical&LPARENSwidth&RPARENS&RBRACE,)}{_entrances_count_without_width_count} Eingänge haben keine Angaben zur Breite",
+            "en": "<h3>Entrances</h3>This building has {_entrances_count} entrances:{multi(_entrance_properties_with_width,An <a href='#&LBRACEid&RBRACE'>entrance</a> of &LBRACEcanonical&LPARENSwidth&RPARENS&RBRACE,)}{_entrances_count_without_width_count} entrances don't have width information yet",
+            "nl": "<h3>Ingangen</h3>Dit gebouw heeft {_entrances_count} ingangen:{multi(_entrance_properties_with_width,Een <a href='#&LBRACEid&RBRACE'>ingang</a> van &LBRACEcanonical&LPARENSwidth&RPARENS&RBRACE,)}{_entrances_count_without_width_count} ingangen hebben nog geen informatie over de breedte"
+          },
+          "mappings": [
+            {
+              "if": "_entrances_count=0",
+              "then": {
+                "en": "No entrance has been marked",
+                "de": "Es wurde kein Eingang markiert",
+                "da": "Der er ikke markeret nogen indgang",
+                "nl": "Geen ingang is gemarkeerd",
+                "ca": "No s'ha senyalitzat cap entrada",
+                "cs": "Nebyl označen žádný vchod"
+              }
+            },
+            {
+              "if": "_entrances_count_without_width:=_entrances_count",
+              "then": {
+                "en": "None of the {_entrance_count} entrances have width information yet",
+                "de": "Keiner der {_entrance_count} Eingänge hat bisher Angaben zur Breite",
+                "da": "Ingen af {_entrance_count}-indgangene har oplysninger om bredde endnu",
+                "nl": "Geen van de {_entrance_count} ingangen hebben al informatie over de breedte",
+                "ca": "Cap de les {_entrance_count} entrades té informació d'amplada encara",
+                "cs": "Žádný z {_entrance_count} vchodů zatím nemá informace o šířce"
+              }
+            }
+          ]
+        },
+        {
+          "id": "biggest_width",
+          "render": "The <a href='#{_biggest_width_id}'>entrance with the biggest width</a> is {canonical(_biggest_width)} wide",
+          "condition": "_biggest_width_id~*"
+        },
+        {
+          "id": "leftover-questions",
+          "render": {
+            "*": "{questions( ,)}"
+          }
+        },
+        {
+          "id": "lod",
+          "labels": [
+            "added_by_default"
+          ],
+          "render": {
+            "*": "{linked_data_from_website()}"
+          }
+        },
+        {
+          "id": "minimap",
+          "description": "Shows a small map with the feature. Added by default to every popup",
+          "render": {
+            "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+          }
+        },
+        {
+          "id": "last_edit",
+          "labels": [
+            "added_by_default"
+          ],
+          "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+          "condition": {
+            "and": [
+              "_last_edit:contributor~*",
+              "_last_edit:changeset~*"
+            ]
+          },
+          "metacondition": {
+            "or": [
+              "__featureSwitchIsTesting=true",
+              "__featureSwitchIsDebugging=true",
+              "mapcomplete-show_debug=yes",
+              "_csCount>=10"
+            ]
+          },
+          "render": {
+            "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+          }
+        },
+        {
+          "id": "favourite_status",
+          "render": {
+            "*": "{favourite_status()}"
+          }
+        },
+        {
+          "id": "qr_code",
+          "labels": [
+            "added_by_default"
+          ],
+          "classes": "flex items-center gap-x-2",
+          "render": {
+            "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+            "en": "{qr_code()}Scan this code to open this location on another device",
+            "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+            "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+          }
+        },
+        {
+          "id": "share",
+          "labels": [
+            "added_by_default"
+          ],
+          "metacondition": "_supports_sharing=yes",
+          "render": {
+            "de": "{share_link(,Standort teilen)}",
+            "en": "{share_link(,Share this location)}",
+            "nl": "{share_link(,Deel deze locatie)}"
+          }
+        },
+        {
+          "id": "all-tags",
+          "render": {
+            "*": "{all_tags()}"
+          },
+          "metacondition": {
+            "or": [
+              "__featureSwitchIsDebugging=true",
+              "mapcomplete-show_tags=full",
+              "mapcomplete-show_debug=yes"
+            ]
+          }
+        }
+      ],
+      "units": [
+        {
+          "width": {
+            "quantity": "distance",
+            "denominations": [
+              "m",
+              "cm"
+            ]
+          },
+          "_biggest_width": {
+            "quantity": "distance",
+            "denominations": [
+              "m",
+              "cm"
+            ]
+          }
+        }
+      ],
+      "titleIcons": [
+        {
+          "id": "wikipedialink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+          "condition": {
+            "or": [
+              "wikipedia~*",
+              "wikidata~*"
+            ]
+          },
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "wikipedia=",
+              "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+            }
+          ]
+        },
+        {
+          "id": "open_until",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "#": "Titleicon showing e.g. 'open until 17:00'",
+          "icon": {
+            "class": "w-20 mx-1 flex items-center"
+          },
+          "render": "{opening_hours_state()}",
+          "condition": {
+            "or": [
+              "opening_hours~*",
+              {
+                "or": [
+                  {
+                    "and": [
+                      "seasonal~.*winter.*",
+                      "_now:date~....-(12|01|02)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*spring.*",
+                      "_now:date~....-(03|04|05)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*summer.*",
+                      "_now:date~....-(06|07|08)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*autumn.*",
+                      "_now:date~....-(09|10|11)-.."
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "phonelink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.render"
+          },
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "contact:phone~*",
+              "then": {
+                "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+                "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+                "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+                "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+              }
+            }
+          ],
+          "condition": {
+            "or": [
+              "phone~*",
+              "contact:phone~*"
+            ]
+          }
+        },
+        {
+          "id": "emaillink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "contact:email~*",
+              "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "operator:email~*",
+              "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+            }
+          ],
+          "condition": {
+            "or": [
+              "email~*",
+              "contact:email~*",
+              "operator:email~*"
+            ]
+          }
+        },
+        {
+          "id": "websitelink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "website~*",
+              "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "operator:website~*",
+              "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "context:website~*",
+              "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            }
+          ]
+        },
+        {
+          "id": "smokingicon",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "smoking=no",
+              "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "smoking=yes",
+              "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+            }
+          ]
+        },
+        {
+          "id": "dogicon",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "if": "dog=no",
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+            },
+            {
+              "if": "dog=leashed",
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+            },
+            {
+              "if": {
+                "or": [
+                  "dog=yes",
+                  "dog=unleashed"
+                ]
+              },
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+            }
+          ]
+        },
+        {
+          "id": "sharelink",
+          "labels": [
+            "defaults"
+          ],
+          "render": "{share_link()}",
+          "metacondition": "_supports_sharing=yes"
+        },
+        {
+          "id": "favourite_title_icon",
+          "labels": [
+            "defaults"
+          ],
+          "render": {
+            "*": "{favourite_icon()}"
+          },
+          "metacondition": "_loggedIn=true"
+        },
+        {
+          "id": "osmlink",
+          "labels": [
+            "defaults"
+          ],
+          "render": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.render"
+          },
+          "mappings": [
+            {
+              "if": "id~.*/-.*",
+              "then": ""
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "_backend~*",
+              "then": {
+                "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+                "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+                "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+                "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+              }
+            }
+          ],
+          "condition": "id~(node|way|relation)/[0-9]*"
+        },
+        {
+          "id": "direction",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "{direction_indicator()}"
+        },
+        {
+          "id": "rating",
+          "icon": {
+            "class": "w-20 mx-1 flex items-center"
+          },
+          "render": "{rating()}"
+        }
+      ],
+      "_layerIcon": [],
+      "forceLoad": true
+    },
+    {
+      "id": "note_import_surveillance_camera",
+      "description": {
+        "ca": "Una capa que importa entrades per a Càmera de videovigilància",
+        "cs": "Vrstva, která importuje položky pro Bezpečnostní kamera",
+        "da": "Et lag som importerer poster for Overvågningskamera",
+        "de": "Eine Ebene, die Einträge für Überwachungskamera importiert",
+        "en": "A layer which imports entries for Surveillance Camera",
+        "es": "Una capa que importar entradas para Cámara de vigilancia",
+        "nl": "Deze laag toont kaart-nota's die wijzen op een Bewakingscamera",
+        "pl": "Warstwa importująca wpisy dla Surveillance Camera",
+        "zh_Hant": "能夠為 Surveillance Camera 匯入項目的圖層",
+        "_context": "core:importLayer.description"
+      },
+      "source": {
+        "osmTags": {
+          "and": [
+            "id~[0-9]+",
+            "comment_url~.*notes/[0-9]*/comment.json"
+          ]
+        },
+        "geoJson": "https://api.openstreetmap.org/api/0.6/notes.json?limit=10000&closed=0&bbox={x_min},{y_min},{x_max},{y_max}",
+        "geoJsonZoomLevel": 10
+      },
+      "passAllFeatures": true,
+      "minzoom": 10,
+      "title": {
+        "render": {
+          "ca": "Pot ser que hi hagi una càmera de vigilància aquí",
+          "cs": "Zde by mohl být bezpečnostní kamera",
+          "da": "Mulig a surveillance camera",
+          "de": "Möglicherweise gibt es hier eine Überwachungskamera",
+          "en": "There might be a surveillance camera here",
+          "es": "Puede haber una cámara de vigilancia aquí",
+          "fi": "Tässä on ehkä a surveillance camera",
+          "nb_NO": "Det kan være a surveillance camera her",
+          "nl": "Is hier een bewakingscamera?",
+          "pl": "Tutaj może znajdować się a surveillance camera",
+          "zh_Hant": "這裡可能有 a surveillance camera",
+          "_context": "core:importLayer.popupTitle"
+        }
+      },
+      "calculatedTags": [
+        "_first_comment=get(feat)('comments')[0].text.toLowerCase()",
+        "_trigger_index=(() => {const lines = feat.properties['_first_comment'].split('\\n'); const matchesMapCompleteURL = lines.map(l => l.match(\".*https://mapcomplete.\\(org|osm.be\\)/\\([a-zA-Z_-]+\\)\\(.html\\)?.*#import\")); const matchedIndexes = matchesMapCompleteURL.map((doesMatch, i) => [doesMatch !== null, i]).filter(v => v[0]).map(v => v[1]); return matchedIndexes[0] })()",
+        "_comments_count=get(feat)('comments').length",
+        "_intro=(() => {const lines = get(feat)('comments')[0].text.split('\\n'); lines.splice(get(feat)('_trigger_index')-1, lines.length); return lines.filter(l => l !== '').join('<br/>');})()",
+        "_tags=(() => {let lines = get(feat)('comments')[0].text.split('\\n').map(l => l.trim()); lines.splice(0, get(feat)('_trigger_index') + 1); lines = lines.filter(l => l != ''); return lines.join(';');})()"
+      ],
+      "isShown": {
+        "and": [
+          "_trigger_index~*",
+          {
+            "or": [
+              {
+                "and": [
+                  "_tags~(^|.*;)man_made=surveillance($|;.*)",
+                  "_tags~(^|.*;)surveillance:type=camera($|;.*)"
+                ]
+              },
+              {
+                "and": [
+                  "_tags~(^|.*;)man_made=surveillance($|;.*)",
+                  "_tags~(^|.*;)surveillance:type=camera($|;.*)",
+                  "_tags~(^|.*;)camera:mount=wall($|;.*)"
+                ]
+              },
+              {
+                "and": [
+                  "_tags~(^|.*;)man_made=surveillance($|;.*)",
+                  "_tags~(^|.*;)surveillance:type=ALPR($|;.*)"
+                ]
+              },
+              {
+                "and": [
+                  "_tags~(^|.*;)man_made=surveillance($|;.*)",
+                  "_tags~(^|.*;)surveillance:type=ALPR($|;.*)",
+                  "_tags~(^|.*;)camera:mount=wall($|;.*)"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "titleIcons": [
+        {
+          "render": "<a href='https://openstreetmap.org/note/{id}' target='_blank'><img src='./assets/svg/osm-logo-us.svg'></a>"
+        }
+      ],
+      "tagRenderings": [
+        {
+          "id": "Intro",
+          "render": "{_intro}"
+        },
+        {
+          "id": "conversation",
+          "render": "{visualize_note_comments(comments,1)}",
+          "condition": "_comments_count>1"
+        },
+        {
+          "id": "import",
+          "render": {
+            "ca": "{import_button(surveillance_camera, _tags, he trobat un una càmera de vigilància aquí; afegeix-lo al mapa,./assets/svg/addSmall.svg,,,id)}",
+            "cs": "{import_button(surveillance_camera, _tags, Našel jsem bezpečnostní kamera zde - přidejte ji do mapy,./assets/svg/addSmall.svg,,,id)}",
+            "da": "{import_button(surveillance_camera, _tags, Jeg har fundet en a surveillance camera her - tilføj den til kortet,./assets/svg/addSmall.svg,,,id)}",
+            "de": "{import_button(surveillance_camera, _tags, Ich habe hier ein(en) eine Überwachungskamera gefunden - Zur Karte hinzufügen,./assets/svg/addSmall.svg,,,id)}",
+            "en": "{import_button(surveillance_camera, _tags, I have found a a surveillance camera here - add it to the map,./assets/svg/addSmall.svg,,,id)}",
+            "es": "{import_button(surveillance_camera,_tags, He encontrado un(a) una cámara de vigilancia aquí - añádelo al mapa,./assets/svg/addSmall.svg,,,id)}",
+            "nl": "{import_button(surveillance_camera, _tags, Ik heb hier een een bewakingscamera gevonden - voeg deze toe aan de kaart...,./assets/svg/addSmall.svg,,,id)}",
+            "pl": "{import_button(surveillance_camera, _tags, odnalazłem tutaj a surveillance camera - dodaj go do mapy,./assets/svg/addSmall.svg,,,id)}",
+            "zh_Hant": "{import_button(surveillance_camera, _tags, 我在這邊發現 a surveillance camera - 新增到地圖,./assets/svg/addSmall.svg,,,id)}",
+            "_context": "core:importLayer.importButton"
+          },
+          "condition": "closed_at="
+        },
+        {
+          "id": "close_note_",
+          "render": {
+            "ca": "{close_note(No he pogut trobar una càmera de vigilància: esborra-ho, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "cs": "{close_note(Nepodařilo se mi najít bezpečnostní kamera - odstraňte jej, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "da": "{close_note(Jeg kunne ikke finde a surveillance camera - fjern det, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "de": "{close_note(Ich konnte eine Überwachungskamera nicht finden - entferne es, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "en": "{close_note(I could not find a surveillance camera - remove it, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "es": "{close_note(No he podido encontrar una cámara de vigilancia - eliminarlo, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "nl": "{close_note(Ik kon hier geen een bewakingscamera vinden - verwijder deze van de kaart, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "pl": "{close_note(Nie mogłem odnaleźć a surveillance camera – usuń go, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "zh_Hant": "{close_note(我無法找到 a surveillance camera - 移除吧, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "_context": "core:importLayer.notFound"
+          },
+          "condition": "closed_at="
+        },
+        {
+          "id": "close_note_mapped",
+          "render": {
+            "ca": "{close_note(Ja hi ha un una càmera de vigilància al mapa - aquest punt és un duplicat, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "cs": "{close_note(Na mapě se již nachází bezpečnostní kamera - tento bod je duplicitní, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "da": "{close_note(Der er allerede en anden a surveillance camera på kortet - dette punkt er en dublet, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "de": "{close_note(Es gibt bereits einen eine Überwachungskamera auf der Karte - dieser Punkt ist ein Duplikat, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "en": "{close_note(There already is a surveillance camera on the map - this point is a duplicate, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "es": "{close_note(una cámara de vigilancia ya está en el mapa - este punto es un duplicado, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "nl": "{close_note(Er staat hier reeds een bewakingscamera op de kaart; dit punt is een duplicaat. Verwijder deze van de kaart, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "pl": "{close_note(Na mapie znajduje się już a surveillance camera - ten punkt jest duplikatem, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "zh_Hant": "{close_note(a surveillance camera 已經在地圖上了 - 這個點重覆了, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "_context": "core:importLayer.alreadyMapped"
+          },
+          "condition": "closed_at="
+        },
+        {
+          "id": "handled",
+          "render": {
+            "ca": "<div class=\"thanks\">Aquesta funció s'ha gestionat. Gràcies pel teu esforç.</div>",
+            "cs": "<div class='thanks'>Tato funkce byla zpracována! Děkujeme za vaši snahu</div>",
+            "da": "<div class=\"thanks\">Dette element er blevet håndteret! Tak for din indsats</div>",
+            "de": "<div class=\"thanks\">Dieses Objekt wurde verarbeitet! Vielen Dank für Ihre Bemühungen</div>",
+            "en": "<div class='thanks'>This feature has been handled! Thanks for your effort</div>",
+            "nb_NO": "<div class='thanks'>Denne funksjonen har blitt håndtert. Takk for din innsats.</div>",
+            "nl": "<div class='thanks'>Dit object is afgehandeld. Bedankt om mee te helpen!</div>",
+            "pl": "<div class='thanks'>Ta funkcja została obsłużona! Dziękujemy za Twój wysiłek</div>",
+            "zh_Hant": "<div class='thanks'>這個圖徵已經處理了！謝謝你的辛勞</div>",
+            "_context": "core:importLayer.importHandled"
+          },
+          "condition": "closed_at~*"
+        },
+        {
+          "id": "comment",
+          "render": "{add_note_comment()}"
+        },
+        {
+          "id": "add_image",
+          "render": "{add_image_to_note()}"
+        },
+        {
+          "id": "nearby_images",
+          "render": {
+            "ca": "<h3>Imatges properes</h3>Les imatges següents són imatges geoetiquetades properes de diversos serveis en línia. Us poden ajudar a resoldre aquesta nota.{nearby_images(open)}",
+            "cs": "<h3>Obrázky z okolí</h3>Následující obrázky jsou geograficky označené obrázky z různých online služeb. Mohly by vám pomoci při řešení této poznámky.{nearby_images(open)}",
+            "da": "<h3>Billeder i nærheden</h3>De følgende billeder er geotaggede billeder i nærheden fra forskellige onlinetjenester. De kan måske hjælpe dig med at løse denne note.{nearby_images(open)}",
+            "de": "<h3>Bilder in der Nähe</h3>Die folgenden Bilder sind mit Geotags versehene Bilder aus verschiedenen Online-Diensten in der Nähe. Sie können helfen, diesen Hinweis zu lösen.{nearby_images(open)}",
+            "en": "<h3>Nearby pictures</h3>The following pictures are nearby geotagged pictures from various online services. They might help you to resolve this note.{nearby_images(open)}",
+            "es": "<h3>Imágenes cercanas</h3> Las siguientes imágenes son imágenes geoetiquetadas cerca de varios servicios en línea. Pueden ayudarte a resolver esta nota. {nearby_images(open)}",
+            "nl": "<h3>Afbeeldingen in de buurt</h3>De volgende afbeeldingen zijn in de buurt gemaakt en kunnen mogelijks helpen. {nearby_images(open)}",
+            "pl": "<h3>Zdjęcia w pobliżu</h3>Poniższe zdjęcia to zdjęcia pobliskich obiektów z geotagami z różnych usług internetowych. Mogą pomóc Ci rozwiązać tę uwagę.{nearby_images(open)}",
+            "zh_Hant": "<h3>附近圖片</h3>接下來的圖片是多個第三方線上服務附近有地理標籤的圖片，也許能協助你解決這個註解。{nearby_images(open)}",
+            "_context": "core:importLayer.nearbyImagesIntro"
+          }
+        },
+        {
+          "id": "all_tags",
+          "render": "{all_tags()}",
+          "metacondition": {
+            "or": [
+              "__featureSwitchIsDebugging=true",
+              "mapcomplete-show_tags=full",
+              "mapcomplete-show_debug=yes"
+            ]
+          }
+        }
+      ],
+      "pointRendering": [
+        {
+          "location": [
+            "point"
+          ],
+          "marker": [
+            {
+              "icon": "circle",
+              "color": "#fff"
+            },
+            {
+              "icon": {
+                "render": "help",
+                "mappings": [
+                  {
+                    "if": {
+                      "or": [
+                        "closed_at~*",
+                        "_imported=yes"
+                      ]
+                    },
+                    "then": "checkmark"
+                  }
+                ]
+              },
+              "color": "#00"
+            }
+          ],
+          "iconSize": "40,40",
+          "anchor": "center"
+        }
+      ]
+    },
+    {
+      "id": "note_import_speed_camera",
+      "description": {
+        "ca": "Una capa que importa entrades per a Càmera de velocitat",
+        "cs": "Vrstva, která importuje položky pro Rychlostní radar",
+        "da": "Et lag som importerer poster for Speed Camera",
+        "de": "Eine Ebene, die Einträge für Blitzer importiert",
+        "en": "A layer which imports entries for Speed Camera",
+        "es": "Una capa que importar entradas para Cámara de velocidad",
+        "nl": "Deze laag toont kaart-nota's die wijzen op een Flitspaal",
+        "pl": "Warstwa importująca wpisy dla Speed Camera",
+        "zh_Hant": "能夠為 Speed Camera 匯入項目的圖層",
+        "_context": "core:importLayer.description"
+      },
+      "source": {
+        "osmTags": {
+          "and": [
+            "id~[0-9]+",
+            "comment_url~.*notes/[0-9]*/comment.json"
+          ]
+        },
+        "geoJson": "https://api.openstreetmap.org/api/0.6/notes.json?limit=10000&closed=0&bbox={x_min},{y_min},{x_max},{y_max}",
+        "geoJsonZoomLevel": 10
+      },
+      "passAllFeatures": true,
+      "minzoom": 10,
+      "title": {
+        "render": {
+          "ca": "Pot ser que hi hagi una càmera de velocitat aquí",
+          "cs": "Zde by mohl být rychlostní radar",
+          "da": "Mulig a speed camera",
+          "de": "Möglicherweise gibt es hier einen Blitzer",
+          "en": "There might be a speed camera here",
+          "es": "Puede haber una cámara de velocidad aquí",
+          "fi": "Tässä on ehkä a speed camera",
+          "nb_NO": "Det kan være a speed camera her",
+          "nl": "Is hier een flitspaal?",
+          "pl": "Tutaj może znajdować się a speed camera",
+          "zh_Hant": "這裡可能有 a speed camera",
+          "_context": "core:importLayer.popupTitle"
+        }
+      },
+      "calculatedTags": [
+        "_first_comment=get(feat)('comments')[0].text.toLowerCase()",
+        "_trigger_index=(() => {const lines = feat.properties['_first_comment'].split('\\n'); const matchesMapCompleteURL = lines.map(l => l.match(\".*https://mapcomplete.\\(org|osm.be\\)/\\([a-zA-Z_-]+\\)\\(.html\\)?.*#import\")); const matchedIndexes = matchesMapCompleteURL.map((doesMatch, i) => [doesMatch !== null, i]).filter(v => v[0]).map(v => v[1]); return matchedIndexes[0] })()",
+        "_comments_count=get(feat)('comments').length",
+        "_intro=(() => {const lines = get(feat)('comments')[0].text.split('\\n'); lines.splice(get(feat)('_trigger_index')-1, lines.length); return lines.filter(l => l !== '').join('<br/>');})()",
+        "_tags=(() => {let lines = get(feat)('comments')[0].text.split('\\n').map(l => l.trim()); lines.splice(0, get(feat)('_trigger_index') + 1); lines = lines.filter(l => l != ''); return lines.join(';');})()"
+      ],
+      "isShown": {
+        "and": [
+          "_trigger_index~*",
+          {
+            "or": [
+              {
+                "and": [
+                  "_tags~(^|.*;)highway=speed_camera($|;.*)"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "titleIcons": [
+        {
+          "render": "<a href='https://openstreetmap.org/note/{id}' target='_blank'><img src='./assets/svg/osm-logo-us.svg'></a>"
+        }
+      ],
+      "tagRenderings": [
+        {
+          "id": "Intro",
+          "render": "{_intro}"
+        },
+        {
+          "id": "conversation",
+          "render": "{visualize_note_comments(comments,1)}",
+          "condition": "_comments_count>1"
+        },
+        {
+          "id": "import",
+          "render": {
+            "ca": "{import_button(speed_camera, _tags, he trobat un una càmera de velocitat aquí; afegeix-lo al mapa,./assets/svg/addSmall.svg,,,id)}",
+            "cs": "{import_button(speed_camera, _tags, Našel jsem rychlostní radar zde - přidejte ji do mapy,./assets/svg/addSmall.svg,,,id)}",
+            "da": "{import_button(speed_camera, _tags, Jeg har fundet en a speed camera her - tilføj den til kortet,./assets/svg/addSmall.svg,,,id)}",
+            "de": "{import_button(speed_camera, _tags, Ich habe hier ein(en) einen Blitzer gefunden - Zur Karte hinzufügen,./assets/svg/addSmall.svg,,,id)}",
+            "en": "{import_button(speed_camera, _tags, I have found a a speed camera here - add it to the map,./assets/svg/addSmall.svg,,,id)}",
+            "es": "{import_button(speed_camera,_tags, He encontrado un(a) una cámara de velocidad aquí - añádelo al mapa,./assets/svg/addSmall.svg,,,id)}",
+            "nl": "{import_button(speed_camera, _tags, Ik heb hier een een flitspaal gevonden - voeg deze toe aan de kaart...,./assets/svg/addSmall.svg,,,id)}",
+            "pl": "{import_button(speed_camera, _tags, odnalazłem tutaj a speed camera - dodaj go do mapy,./assets/svg/addSmall.svg,,,id)}",
+            "zh_Hant": "{import_button(speed_camera, _tags, 我在這邊發現 a speed camera - 新增到地圖,./assets/svg/addSmall.svg,,,id)}",
+            "_context": "core:importLayer.importButton"
+          },
+          "condition": "closed_at="
+        },
+        {
+          "id": "close_note_",
+          "render": {
+            "ca": "{close_note(No he pogut trobar una càmera de velocitat: esborra-ho, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "cs": "{close_note(Nepodařilo se mi najít rychlostní radar - odstraňte jej, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "da": "{close_note(Jeg kunne ikke finde a speed camera - fjern det, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "de": "{close_note(Ich konnte einen Blitzer nicht finden - entferne es, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "en": "{close_note(I could not find a speed camera - remove it, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "es": "{close_note(No he podido encontrar una cámara de velocidad - eliminarlo, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "nl": "{close_note(Ik kon hier geen een flitspaal vinden - verwijder deze van de kaart, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "pl": "{close_note(Nie mogłem odnaleźć a speed camera – usuń go, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "zh_Hant": "{close_note(我無法找到 a speed camera - 移除吧, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "_context": "core:importLayer.notFound"
+          },
+          "condition": "closed_at="
+        },
+        {
+          "id": "close_note_mapped",
+          "render": {
+            "ca": "{close_note(Ja hi ha un una càmera de velocitat al mapa - aquest punt és un duplicat, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "cs": "{close_note(Na mapě se již nachází rychlostní radar - tento bod je duplicitní, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "da": "{close_note(Der er allerede en anden a speed camera på kortet - dette punkt er en dublet, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "de": "{close_note(Es gibt bereits einen einen Blitzer auf der Karte - dieser Punkt ist ein Duplikat, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "en": "{close_note(There already is a speed camera on the map - this point is a duplicate, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "es": "{close_note(una cámara de velocidad ya está en el mapa - este punto es un duplicado, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "nl": "{close_note(Er staat hier reeds een flitspaal op de kaart; dit punt is een duplicaat. Verwijder deze van de kaart, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "pl": "{close_note(Na mapie znajduje się już a speed camera - ten punkt jest duplikatem, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "zh_Hant": "{close_note(a speed camera 已經在地圖上了 - 這個點重覆了, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "_context": "core:importLayer.alreadyMapped"
+          },
+          "condition": "closed_at="
+        },
+        {
+          "id": "handled",
+          "render": {
+            "ca": "<div class=\"thanks\">Aquesta funció s'ha gestionat. Gràcies pel teu esforç.</div>",
+            "cs": "<div class='thanks'>Tato funkce byla zpracována! Děkujeme za vaši snahu</div>",
+            "da": "<div class=\"thanks\">Dette element er blevet håndteret! Tak for din indsats</div>",
+            "de": "<div class=\"thanks\">Dieses Objekt wurde verarbeitet! Vielen Dank für Ihre Bemühungen</div>",
+            "en": "<div class='thanks'>This feature has been handled! Thanks for your effort</div>",
+            "nb_NO": "<div class='thanks'>Denne funksjonen har blitt håndtert. Takk for din innsats.</div>",
+            "nl": "<div class='thanks'>Dit object is afgehandeld. Bedankt om mee te helpen!</div>",
+            "pl": "<div class='thanks'>Ta funkcja została obsłużona! Dziękujemy za Twój wysiłek</div>",
+            "zh_Hant": "<div class='thanks'>這個圖徵已經處理了！謝謝你的辛勞</div>",
+            "_context": "core:importLayer.importHandled"
+          },
+          "condition": "closed_at~*"
+        },
+        {
+          "id": "comment",
+          "render": "{add_note_comment()}"
+        },
+        {
+          "id": "add_image",
+          "render": "{add_image_to_note()}"
+        },
+        {
+          "id": "nearby_images",
+          "render": {
+            "ca": "<h3>Imatges properes</h3>Les imatges següents són imatges geoetiquetades properes de diversos serveis en línia. Us poden ajudar a resoldre aquesta nota.{nearby_images(open)}",
+            "cs": "<h3>Obrázky z okolí</h3>Následující obrázky jsou geograficky označené obrázky z různých online služeb. Mohly by vám pomoci při řešení této poznámky.{nearby_images(open)}",
+            "da": "<h3>Billeder i nærheden</h3>De følgende billeder er geotaggede billeder i nærheden fra forskellige onlinetjenester. De kan måske hjælpe dig med at løse denne note.{nearby_images(open)}",
+            "de": "<h3>Bilder in der Nähe</h3>Die folgenden Bilder sind mit Geotags versehene Bilder aus verschiedenen Online-Diensten in der Nähe. Sie können helfen, diesen Hinweis zu lösen.{nearby_images(open)}",
+            "en": "<h3>Nearby pictures</h3>The following pictures are nearby geotagged pictures from various online services. They might help you to resolve this note.{nearby_images(open)}",
+            "es": "<h3>Imágenes cercanas</h3> Las siguientes imágenes son imágenes geoetiquetadas cerca de varios servicios en línea. Pueden ayudarte a resolver esta nota. {nearby_images(open)}",
+            "nl": "<h3>Afbeeldingen in de buurt</h3>De volgende afbeeldingen zijn in de buurt gemaakt en kunnen mogelijks helpen. {nearby_images(open)}",
+            "pl": "<h3>Zdjęcia w pobliżu</h3>Poniższe zdjęcia to zdjęcia pobliskich obiektów z geotagami z różnych usług internetowych. Mogą pomóc Ci rozwiązać tę uwagę.{nearby_images(open)}",
+            "zh_Hant": "<h3>附近圖片</h3>接下來的圖片是多個第三方線上服務附近有地理標籤的圖片，也許能協助你解決這個註解。{nearby_images(open)}",
+            "_context": "core:importLayer.nearbyImagesIntro"
+          }
+        },
+        {
+          "id": "all_tags",
+          "render": "{all_tags()}",
+          "metacondition": {
+            "or": [
+              "__featureSwitchIsDebugging=true",
+              "mapcomplete-show_tags=full",
+              "mapcomplete-show_debug=yes"
+            ]
+          }
+        }
+      ],
+      "pointRendering": [
+        {
+          "location": [
+            "point"
+          ],
+          "marker": [
+            {
+              "icon": "circle",
+              "color": "#fff"
+            },
+            {
+              "icon": {
+                "render": "help",
+                "mappings": [
+                  {
+                    "if": {
+                      "or": [
+                        "closed_at~*",
+                        "_imported=yes"
+                      ]
+                    },
+                    "then": "checkmark"
+                  }
+                ]
+              },
+              "color": "#00"
+            }
+          ],
+          "iconSize": "40,40",
+          "anchor": "center"
+        }
+      ]
+    }
+  ],
+  "socialImage": "assets/SocialImage.png"
+}

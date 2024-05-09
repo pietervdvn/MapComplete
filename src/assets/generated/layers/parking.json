@@ -1,0 +1,978 @@
+{
+  "id": "parking",
+  "name": {
+    "en": "Parking",
+    "nl": "Parking",
+    "de": "Parkplätze",
+    "ca": "Aparcament",
+    "es": "Aparcamiento",
+    "fr": "Lieu de stationnement",
+    "pa_PK": "پارکنگ",
+    "pl": "Parking",
+    "cs": "Parkoviště"
+  },
+  "description": {
+    "en": "A layer showing car parkings",
+    "nl": "Deze laag toont autoparkings",
+    "de": "Eine Ebene mit Parkplätzen",
+    "es": "Una capa que muestra aparcamientos para coches",
+    "fr": "Un calque montrant les parkings",
+    "ca": "Una capa que mostra aparcaments per a cotxes",
+    "pl": "Warstwa pokazująca parkingi samochodowe",
+    "cs": "Vrstva zobrazující parkoviště"
+  },
+  "source": {
+    "osmTags": {
+      "and": [
+        "amenity=parking"
+      ]
+    }
+  },
+  "minzoom": 12,
+  "title": {
+    "render": {
+      "nl": "Parking voor auto's",
+      "en": "Car parking",
+      "de": "Parkplatz",
+      "es": "aparcamiento de coches",
+      "fr": "Lieu de stationnement",
+      "pl": "Parking samochodowy",
+      "ca": "Aparcament de cotxes",
+      "cs": "Parkování"
+    }
+  },
+  "pointRendering": [
+    {
+      "iconSize": "36,36",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "iconBadges": [
+        {
+          "if": {
+            "or": [
+              "capacity:disabled>0",
+              "capacity:disabled=yes"
+            ]
+          },
+          "then": {
+            "render": "circle:white;./assets/layers/toilet/wheelchair.svg",
+            "id": "circlewhiteassetslayerstoiletwheelchairsvg"
+          }
+        },
+        {
+          "if": "_favourite=yes",
+          "then": "circle:white;heart:red"
+        }
+      ],
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": {
+            "render": "./assets/layers/parking/parking.svg",
+            "id": "assetslayersparkingparkingsvg"
+          }
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "width": 2,
+      "color": "#ddcc00"
+    }
+  ],
+  "presets": [
+    {
+      "tags": [
+        "amenity=parking"
+      ],
+      "title": {
+        "nl": "een parking voor auto's",
+        "en": "a car parking",
+        "de": "einen Parkplatz",
+        "es": "un aparcamiento de coches",
+        "fr": "un lieu de stationnement pour voitures",
+        "ca": "un aparcament per a cotxes",
+        "pl": "parking samochodowy",
+        "cs": "parkoviště"
+      }
+    }
+  ],
+  "tagRenderings": [
+    {
+      "id": "just_created",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "This element shows a 'thank you' that the contributor has recently created this element",
+      "classes": "rounded-xl thanks",
+      "mappings": [
+        {
+          "if": "id~*",
+          "icon": "./assets/svg/party.svg",
+          "then": {
+            "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+            "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+            "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+            "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+            "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+            "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+          }
+        }
+      ],
+      "condition": {
+        "and": [
+          "_backend~*",
+          "_last_edit:passed_time<300",
+          {
+            "or": [
+              "_version_number=",
+              "_version_number=1"
+            ]
+          }
+        ]
+      },
+      "metacondition": {
+        "and": [
+          {
+            "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+            "or": [
+              "_last_edit:contributor:uid:={_uid}",
+              "_last_edit:contributor:uid="
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "images",
+      "description": "This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images",
+      "render": {
+        "*": "{image_carousel()}{image_upload()}{nearby_images():my-4}"
+      },
+      "classes": "my-4"
+    },
+    {
+      "id": "repeated",
+      "labels": [
+        "level"
+      ],
+      "condition": "repeat_on~*",
+      "render": {
+        "en": "Multiple, identical objects can be found on floors {repeat_on}.",
+        "nl": "Er zijn verschillende, identieke objecten op verdiepingen {repeat_on}.",
+        "de": "Mehrere identische Objekte können in Geschossen {repeat_on} gefunden werden.",
+        "cs": "V patrech {repeat_on} lze nalézt více identických objektů."
+      }
+    },
+    {
+      "id": "single_level",
+      "labels": [
+        "level"
+      ],
+      "condition": "repeat_on=",
+      "question": {
+        "nl": "Op welke verdieping bevindt dit punt zich?",
+        "en": "On what level is this feature located?",
+        "de": "Auf welcher Ebene befindet sich das Objekt?",
+        "zh_Hant": "此圖徽位於哪個樓層／層級？",
+        "fr": "À quel étage se situe l’élément ?",
+        "pl": "Na jakim poziomie znajduje się ta funkcja?",
+        "pt_BR": "Em que nível esse recurso está localizado?",
+        "ru": "На каком этаже находится этот объект?",
+        "pt": "Em que nível se encontra este elemento?",
+        "id": "Pada tingkat apa fitur ini diletakkan?",
+        "hu": "Melyik szinten található ez a létesítmény?",
+        "it": "A quale piano si trova questo elemento?",
+        "ca": "A quina planta està situat aquest element?",
+        "sv": "På vilken nivå finns den här funktionen?",
+        "ja": "この機能は何階にあるのでしょうか？",
+        "fil": "Anong palapag matatagpuan ang tampók?",
+        "es": "¿En qué nivel se encuentra esta característica?",
+        "nb_NO": "Hvilken etasje befinner funksjonen seg i?",
+        "da": "På hvilket niveau er denne funktion placeret?",
+        "cs": "V jaké úrovni se tento prvek nachází?"
+      },
+      "render": {
+        "en": "Located on the {level}th floor",
+        "nl": "Bevindt zich op de {level}de verdieping",
+        "de": "Das Objekt befindet sich im {level}. Geschoss",
+        "pt_BR": "Localizado no {level}o andar",
+        "ru": "Расположено на {level}ом этаже",
+        "zh_Hant": "位於 {level} 樓",
+        "fr": "Étage {level}",
+        "pl": "Znajduje się na {level} piętrze",
+        "sv": "Ligger på {level}:e våningen",
+        "pt": "Está no {level}º andar",
+        "eo": "En la {level}a etaĝo",
+        "hu": "A(z) {level}. emeleten",
+        "it": "Si trova al piano numero {level}",
+        "ca": "Situat a la planta {level}",
+        "ja": "{level}階にあります",
+        "sl": "Nahaja se v {level}. nadstropju",
+        "fil": "Natagpuan sa ika-{level} na palapag",
+        "es": "Localizada en la {level}° planta",
+        "da": "Beliggende på {level}. etage",
+        "nb_NO": "Ligger i {level} etasje",
+        "id": "Terletak di lantai {level}",
+        "cs": "Nachází se v {level}. patře"
+      },
+      "freeform": {
+        "key": "level",
+        "type": "float",
+        "inline": true
+      },
+      "mappings": [
+        {
+          "if": "location=underground",
+          "then": {
+            "en": "Located underground",
+            "nl": "Bevindt zich ondergronds",
+            "pt_BR": "Localizado no subsolo",
+            "ru": "Расположено под землей",
+            "zh_Hant": "位於地下",
+            "fr": "En sous-sol",
+            "pl": "Znajduje się pod ziemią",
+            "sv": "Ligger under jorden",
+            "pt": "Está no subsolo",
+            "de": "Das Objekt befindet sich unter der Erde",
+            "hu": "A föld alatt",
+            "it": "Si trova sotto il livello stradale",
+            "nb_NO": "Under bakken",
+            "ca": "Situat a planta subterrani",
+            "ja": "地下にあります",
+            "id": "Terletak di bawah tanah",
+            "sl": "Nahaja se pod zemljo",
+            "fil": "Nasa ilalim ng lupa",
+            "es": "Localizado bajo tierra",
+            "da": "Placeret under jorden",
+            "cs": "Nachází se v podzemí"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "level=0",
+          "then": {
+            "en": "Located on the ground floor",
+            "nl": "Bevindt zich op de begane grond",
+            "de": "Das Objekt befindet sich im Erdgeschoss",
+            "pt_BR": "Localizado no térreo",
+            "ru": "Расположено на первом этаже",
+            "zh_Hant": "位於 1 樓",
+            "fr": "Rez-de-chaussée",
+            "pl": "Znajduje się na parterze",
+            "sv": "Ligger på bottenvåningen",
+            "pt": "Está ao nível do rés-do-chão",
+            "eo": "En la teretaĝo",
+            "hu": "A földszinten",
+            "it": "Si trova al pianoterra",
+            "nb_NO": "På gateplan",
+            "ca": "Situat a planta zero",
+            "ja": "1階にあります",
+            "id": "Terletak di lantai dasar",
+            "sl": "Nahaja se v pritličju",
+            "fil": "Nasa unang palapag",
+            "es": "Localizado en la planta baja",
+            "da": "Beliggende i stueetagen",
+            "cs": "Nachází se v přízemí"
+          }
+        },
+        {
+          "if": "level=",
+          "hideInAnswer": true,
+          "then": {
+            "en": "Located on the ground floor",
+            "nl": "Bevindt zich gelijkvloers",
+            "de": "Das Objekt befindet sich im Erdgeschoss",
+            "pt_BR": "Localizado no térreo",
+            "ru": "Расположено на первом этаже",
+            "zh_Hant": "位於 1 樓",
+            "fr": "Rez-de-chaussée",
+            "pl": "Znajduje się na parterze",
+            "sv": "Ligger på bottenvåningen",
+            "pt": "Está ao nível do rés-do-chão",
+            "eo": "En la teretaĝo",
+            "hu": "A földszinten",
+            "it": "Si trova al pianoterra",
+            "nb_NO": "På gateplan",
+            "ca": "Situat a la planta zero",
+            "ja": "1階にあります",
+            "id": "Terletak di lantai dasar",
+            "sl": "Nahaja se v pritličju",
+            "fil": "Nasa unang palapag",
+            "es": "Localizado en la planta baja",
+            "da": "Beliggende i stueetagen",
+            "cs": "Nachází se v přízemí"
+          }
+        },
+        {
+          "if": "level=1",
+          "then": {
+            "en": "Located on the first floor",
+            "nl": "Bevindt zich op de eerste verdieping",
+            "de": "Das Objekt befindet sich im 1. Obergeschoss",
+            "pt_BR": "Localizado no primeiro andar",
+            "ru": "Расположено на первом этаже",
+            "zh_Hant": "位於 2 樓",
+            "fr": "Premier étage",
+            "pl": "Znajduje się na pierwszym piętrze",
+            "sv": "Ligger på första våningen",
+            "pt": "Está no primeiro andar",
+            "id": "Berlokasi di lantai pertama",
+            "eo": "En la unua etaĝo",
+            "hu": "Az első emeleten",
+            "it": "Si trova al primo piano",
+            "nb_NO": "I andre etasje",
+            "ca": "Situat a primera planta",
+            "ja": "1階にあります",
+            "sl": "Nahaja se v prvem nadstropju",
+            "fil": "Nasa unang palapag",
+            "es": "Localizado en la primera planta",
+            "da": "Beliggende på første sal",
+            "cs": "Nachází se v prvním patře"
+          }
+        },
+        {
+          "if": "level=-1",
+          "then": {
+            "en": "Located on the first basement level",
+            "nl": "Bevindt zich in de eerste kelderverdieping",
+            "zh_Hant": "位於地下一樓",
+            "de": "Das Objekt befindet sich im 1. Untergeschoss",
+            "hu": "Az első alagsori szinten",
+            "id": "Terletak di lantai basement pertama",
+            "fr": "Sous-sol",
+            "sl": "Nahaja se v prvi kletni etaži",
+            "ca": "Localitzat a la planta base",
+            "fil": "Nasa silong",
+            "es": "Localizada en el primer sótano",
+            "nb_NO": "Er å finne på første kjellernivå",
+            "pt": "Localizado no primeiro nível da cave",
+            "da": "Beliggende på første kælderetage",
+            "cs": "Nachází se v prvním suterénu",
+            "pl": "Położone na pierwszym poziomie piwnicy"
+          }
+        }
+      ]
+    },
+    {
+      "id": "parking-type",
+      "mappings": [
+        {
+          "if": "parking=surface",
+          "then": {
+            "en": "This is a surface parking lot",
+            "nl": "Dit is een bovengronds parkeerterrein",
+            "de": "Dies ist ein oberirdischer Parkplatz",
+            "fr": "C'est un parking en surface",
+            "ca": "Aquest és un aparcament en superfície",
+            "cs": "Jedná se o povrchové parkoviště"
+          }
+        },
+        {
+          "if": "parking=street_side",
+          "then": {
+            "en": "This is a parking bay next to a street",
+            "nl": "Dit is een parkeerplek langs een weg",
+            "de": "Dies ist eine Parkbucht neben einer Straße",
+            "fr": "C'est un lieu de stationnement à côté d'une route",
+            "ca": "Es tracta d'un aparcament al costat d'un carrer",
+            "cs": "Jedná se o parkoviště vedle ulice"
+          }
+        },
+        {
+          "if": "parking=underground",
+          "then": {
+            "en": "This is an underground parking garage",
+            "nl": "Dit is een ondergrondse parkeergarage",
+            "de": "Dies ist eine Tiefgarage",
+            "fr": "C'est un parking souterrain",
+            "ca": "Aquest és un aparcament subterrani",
+            "pl": "To jest podziemny parking",
+            "cs": "Jedná se o podzemní garáž"
+          }
+        },
+        {
+          "if": "parking=multi-storey",
+          "then": {
+            "en": "This is a multi-storey parking garage",
+            "nl": "Dit is een bovengrondse parkeergarage met meerdere verdiepingen",
+            "de": "Dies ist ein mehrstöckiges oberirdisches Parkhaus",
+            "fr": "C'est un parking à plusieurs étages",
+            "pl": "To jest wielopiętrowy parking",
+            "ca": "Es tracta d'un garatge de diverses plantes",
+            "cs": "Jedná se o vícepodlažní parkovací garáž"
+          }
+        },
+        {
+          "if": "parking=rooftop",
+          "then": {
+            "en": "This is a rooftop parking deck",
+            "nl": "Dit is een parkeerdek op een dak",
+            "de": "Dies ist ein Parkdeck auf dem Dach",
+            "fr": "C'est un parking sur le toit",
+            "cs": "Jedná se o střešní parkoviště"
+          }
+        },
+        {
+          "if": "parking=lane",
+          "then": {
+            "en": "This is a lane for parking on the road",
+            "nl": "Dit is een strook voor parkeren op de weg",
+            "de": "Dies ist eine Fahrspur zum Parken auf der Straße",
+            "fr": "C'est une voie de stationnement sur la route",
+            "pl": "To jest pas do parkowania na jezdni",
+            "ca": "Aquest és un carril per aparcar al carrer",
+            "cs": "Jedná se o pruh pro parkování na silnici"
+          }
+        },
+        {
+          "if": "parking=carports",
+          "then": {
+            "en": "This is parking covered by carports",
+            "nl": "Dit is parking overdekt met carports",
+            "de": "Dies ist ein durch Carports überdachter Parkplatz",
+            "fr": "C'est un parking couvert avec des abris auto",
+            "cs": "Jedná se o parkoviště kryté přístřešky pro auta"
+          }
+        },
+        {
+          "if": "parking=garage_boxes",
+          "then": {
+            "en": "This a parking consisting of garage boxes",
+            "nl": "Dit is een parking bestaande uit garageboxen",
+            "de": "Dies ist ein Parkplatz bestehend aus Garagenboxen",
+            "fr": "C'est un parking composé de box de garage",
+            "cs": "Jedná se o parkoviště skládající se z garážových boxů"
+          }
+        },
+        {
+          "if": "parking=layby",
+          "then": {
+            "en": "This is a parking on a layby",
+            "nl": "Dit is een parkeerplek op een layby",
+            "de": "Hier gibt es Parkmöglichkeiten auf einem kleinen Rastplatz",
+            "fr": "C'est un parking sur une aire de stationnement",
+            "ca": "Aquest és un aparcament en una zona de descans",
+            "cs": "Jedná se o parkoviště na odpočívadle"
+          }
+        },
+        {
+          "if": "parking=sheds",
+          "then": {
+            "en": "This is a parking consisting of sheds",
+            "nl": "Dit is een parking bestaande uit schuren",
+            "de": "Hier gibt es Parkmöglichkeiten unter einer offenen Dachkonstruktion",
+            "fr": "C'est un parking composé de cabanons",
+            "cs": "Jedná se o parkoviště tvořené přístřešky"
+          }
+        }
+      ],
+      "question": {
+        "en": "What kind of parking is this?",
+        "nl": "Wat voor parking is dit?",
+        "de": "Was ist das für ein Parkplatz?",
+        "fr": "De quel type de stationnement s'agit-il ?",
+        "ca": "Quin tipus d'aparcament és aquest?",
+        "pl": "Jaki to rodzaj parkingu?",
+        "cs": "Jaký je druh parkování?"
+      }
+    },
+    {
+      "id": "capacity-disabled",
+      "freeform": {
+        "key": "capacity:disabled",
+        "type": "pnat",
+        "placeholder": {
+          "en": "Amount of parking spots reserved for disabled people",
+          "nl": "Aantal parkeerplaatsen voor gehandicapten",
+          "de": "Anzahl barrierefreier Stellplätze",
+          "fr": "Nombre de places de stationnement réservées aux personnes à mobilité réduite",
+          "ca": "Quantitat de places d'aparcament reservades per a persones amb mobilitat reduïda",
+          "pl": "Liczba miejsc parkingowych przeznaczonych dla niepełnosprawnych",
+          "cs": "Počet parkovacích míst vyhrazených pro osoby se zdravotním postižením"
+        },
+        "inline": true
+      },
+      "mappings": [
+        {
+          "if": "capacity:disabled=yes",
+          "then": {
+            "en": "There are disabled parking spots, but it is not known how many",
+            "nl": "Er zijn parkeerplaatsen voor gehandicapten, maar het is niet bekend hoeveel er zijn",
+            "de": "Es gibt barrierefreie Stellplätze, aber die Anzahl ist unbekannt",
+            "fr": "Il y a des places de stationnement pour personnes à mobilité réduite, mais on ne sait pas combien",
+            "ca": "Hi ha places d'aparcament per a gent amb mobilitat reduïda, però no es sap quantes",
+            "pl": "Są tutaj miejsca parkingowe dla niepełnosprawnych, ale nie wiadomo ile",
+            "cs": "K dispozici jsou parkovací místa pro osoby se zdravotním postižením, ale není známo, kolik jich je"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "capacity:disabled=no",
+          "then": {
+            "en": "There are no disabled parking spots",
+            "nl": "Er zijn geen parkeerplaatsen voor gehandicapten",
+            "de": "Es gibt keine barrierefreien Stellplätze",
+            "fr": "Il n'y a pas de places de stationnement pour personnes à mobilité réduite",
+            "pl": "Nie ma tutaj żadnych miejsc parkingowych dla niepełnosprawnych",
+            "ca": "No hi ha places d'aparcament per a minusvàlids",
+            "cs": "Nejsou zde žádná parkovací místa pro osoby se zdravotním postižením"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "capacity:disabled=0",
+          "then": {
+            "en": "There are no disabled parking spots",
+            "nl": "Er zijn geen parkeerplaatsen voor gehandicapten",
+            "de": "Es gibt keine barrierefreien Stellplätze",
+            "fr": "Il n'y a pas de places de stationnement pour personnes à mobilité réduite",
+            "ca": "No hi ha places d'aparcament per a persones amb mobilitat reduïda",
+            "pl": "Nie ma tutaj żadnych miejsc parkingowych dla niepełnosprawnych",
+            "cs": "Nejsou zde žádná parkovací místa pro osoby se zdravotním postižením"
+          }
+        }
+      ],
+      "question": {
+        "en": "How many disabled parking spots are there at this parking?",
+        "nl": "Hoeveel parkeerplaatsen voor gehandicapten zijn er op deze parking?",
+        "de": "Wie viele barrierefreie Stellplätze gibt es auf diesem Parkplatz?",
+        "fr": "Combien y a-t-il de places de stationnement pour personnes à mobilité réduite dans ce parking ?",
+        "ca": "Quantes places d'aparcament per a persones amb mobilitat reduïda hi ha al parking?",
+        "pl": "Jak wiele miejsc parkingowych dla niepełnosprawnych znajduje się na tym parkingu?",
+        "cs": "Kolik je na tomto parkovišti parkovacích míst pro osoby se zdravotním postižením?"
+      },
+      "render": {
+        "en": "There are {capacity:disabled} disabled parking spots",
+        "nl": "Er zijn {capacity:disabled} parkeerplaatsen voor gehandicapten",
+        "de": "Es gibt {capacity:disabled} barrierefreie Stellplätze",
+        "fr": "Il y a {capacity:disabled} places de stationnement pour personnes à mobilité réduite",
+        "ca": "Hi ha {capacity:disabled} places d'aparcament per a discapacitats",
+        "pl": "Jest {capacity:disabled} miejsc parkingowych dla niepełnosprawnych",
+        "cs": "K dispozici je {capacity:disabled} parkovacích míst pro osoby se zdravotním postižením"
+      }
+    },
+    {
+      "id": "capacity",
+      "freeform": {
+        "key": "capacity",
+        "type": "pnat",
+        "placeholder": {
+          "en": "Amount of parking spots",
+          "nl": "Aantal parkeerplaatsen",
+          "de": "Anzahl der Parkplätze",
+          "fr": "Nombre de places de stationnement",
+          "ca": "Quantitat de places d'aparcament",
+          "pl": "Liczba miejsc parkingowych",
+          "cs": "Počet parkovacích míst"
+        },
+        "inline": true
+      },
+      "question": {
+        "en": "How many parking spots are there at this parking?",
+        "nl": "Hoeveel parkeerplaatsen zijn er op deze parking?",
+        "de": "Wie viele Stellplätze gibt es auf diesem Parkplatz?",
+        "fr": "Combien de places de stationnement y a-t-il dans ce parking ?",
+        "ca": "Quantes places d'aparcament hi han a aquest aparcament?",
+        "pl": "Ile miejsc parkingowych jest na tym parkingu?",
+        "cs": "Kolik je na tomto parkovišti parkovacích míst?"
+      },
+      "render": {
+        "en": "There are {capacity} parking spots",
+        "nl": "Er zijn {capacity} parkeerplaatsen",
+        "de": "Es gibt {capacity} Stellplätze",
+        "fr": "Il y a {capacity} places de stationnement",
+        "ca": "Hi han {capacity} places d'aparcament",
+        "pl": "Jest {capacity} miejsc parkingowych",
+        "cs": "Počet parkovacích míst {capacity}"
+      }
+    },
+    {
+      "id": "leftover-questions",
+      "render": {
+        "*": "{questions( ,)}"
+      }
+    },
+    {
+      "id": "lod",
+      "labels": [
+        "added_by_default"
+      ],
+      "render": {
+        "*": "{linked_data_from_website()}"
+      }
+    },
+    {
+      "id": "minimap",
+      "description": "Shows a small map with the feature. Added by default to every popup",
+      "render": {
+        "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+      }
+    },
+    {
+      "id": "move-button",
+      "render": {
+        "*": "{move_button()}"
+      }
+    },
+    {
+      "id": "delete-button",
+      "render": {
+        "*": "{delete_button()}"
+      }
+    },
+    {
+      "id": "last_edit",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+      "condition": {
+        "and": [
+          "_last_edit:contributor~*",
+          "_last_edit:changeset~*"
+        ]
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsTesting=true",
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_debug=yes",
+          "_csCount>=10"
+        ]
+      },
+      "render": {
+        "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+      }
+    },
+    {
+      "id": "favourite_status",
+      "render": {
+        "*": "{favourite_status()}"
+      }
+    },
+    {
+      "id": "qr_code",
+      "labels": [
+        "added_by_default"
+      ],
+      "classes": "flex items-center gap-x-2",
+      "render": {
+        "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+        "en": "{qr_code()}Scan this code to open this location on another device",
+        "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+        "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+      }
+    },
+    {
+      "id": "share",
+      "labels": [
+        "added_by_default"
+      ],
+      "metacondition": "_supports_sharing=yes",
+      "render": {
+        "de": "{share_link(,Standort teilen)}",
+        "en": "{share_link(,Share this location)}",
+        "nl": "{share_link(,Deel deze locatie)}"
+      }
+    },
+    {
+      "id": "all-tags",
+      "render": {
+        "*": "{all_tags()}"
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_tags=full",
+          "mapcomplete-show_debug=yes"
+        ]
+      }
+    }
+  ],
+  "deletion": {
+    "softDeletionTags": {
+      "and": [
+        "disused:amenity:={amenity}",
+        "amenity="
+      ]
+    },
+    "neededChangesets": 1
+  },
+  "allowMove": {
+    "enableRelocation": false,
+    "enableImproveAccuracy": true
+  },
+  "titleIcons": [
+    {
+      "id": "wikipedialink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+      "condition": {
+        "or": [
+          "wikipedia~*",
+          "wikidata~*"
+        ]
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "wikipedia=",
+          "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "open_until",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "#": "Titleicon showing e.g. 'open until 17:00'",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{opening_hours_state()}",
+      "condition": {
+        "or": [
+          "opening_hours~*",
+          {
+            "or": [
+              {
+                "and": [
+                  "seasonal~.*winter.*",
+                  "_now:date~....-(12|01|02)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*spring.*",
+                  "_now:date~....-(03|04|05)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*summer.*",
+                  "_now:date~....-(06|07|08)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*autumn.*",
+                  "_now:date~....-(09|10|11)-.."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "phonelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": {
+        "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+        "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+        "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+        "_context": "layers:icons.tagRenderings.phonelink.render"
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:phone~*",
+          "then": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+          }
+        }
+      ],
+      "condition": {
+        "or": [
+          "phone~*",
+          "contact:phone~*"
+        ]
+      }
+    },
+    {
+      "id": "emaillink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:email~*",
+          "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:email~*",
+          "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        }
+      ],
+      "condition": {
+        "or": [
+          "email~*",
+          "contact:email~*",
+          "operator:email~*"
+        ]
+      }
+    },
+    {
+      "id": "websitelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "website~*",
+          "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:website~*",
+          "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "context:website~*",
+          "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "smokingicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=no",
+          "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=yes",
+          "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+        }
+      ]
+    },
+    {
+      "id": "dogicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "if": "dog=no",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+        },
+        {
+          "if": "dog=leashed",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+        },
+        {
+          "if": {
+            "or": [
+              "dog=yes",
+              "dog=unleashed"
+            ]
+          },
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+        }
+      ]
+    },
+    {
+      "id": "sharelink",
+      "labels": [
+        "defaults"
+      ],
+      "render": "{share_link()}",
+      "metacondition": "_supports_sharing=yes"
+    },
+    {
+      "id": "favourite_title_icon",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "*": "{favourite_icon()}"
+      },
+      "metacondition": "_loggedIn=true"
+    },
+    {
+      "id": "osmlink",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+        "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+        "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+        "_context": "layers:icons.tagRenderings.osmlink.render"
+      },
+      "mappings": [
+        {
+          "if": "id~.*/-.*",
+          "then": ""
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "_backend~*",
+          "then": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+          }
+        }
+      ],
+      "condition": "id~(node|way|relation)/[0-9]*"
+    },
+    {
+      "id": "direction",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "{direction_indicator()}"
+    },
+    {
+      "id": "rating",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{rating()}"
+    }
+  ],
+  "_layerIcon": [
+    {
+      "icon": "./assets/layers/parking/parking.svg"
+    }
+  ]
+}

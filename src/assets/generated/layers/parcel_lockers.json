@@ -1,0 +1,942 @@
+{
+  "id": "parcel_lockers",
+  "name": {
+    "en": "Parcel Lockers",
+    "de": "Paketschließfächer",
+    "nl": "Pakketautomaten",
+    "ca": "bústies intel·ligents",
+    "fr": "Casiers à colis",
+    "pl": "Paczkomaty",
+    "cs": "Schránky na balíky"
+  },
+  "description": {
+    "en": "Layer showing parcel lockers for collecting and sending parcels.",
+    "de": "Ebene mit Paketschließfächern zum Abholen und Versenden von Paketen.",
+    "nl": "Laag met pakketautomaten voor het ophalen en verzenden van paketten.",
+    "ca": "Capa que mostra les bústies intel·ligents per recollir i enviar paquets.",
+    "fr": "Couche affichant les casiers pour récupérer ou envoyer des colis.",
+    "pl": "Warstwa pokazująca paczkomaty umożliwiające odbieranie i wysyłanie przesyłek.",
+    "cs": "Vrstva se schránkami na balíky pro vyzvedávání a odesílání balíků."
+  },
+  "source": {
+    "osmTags": {
+      "and": [
+        {
+          "or": [
+            "amenity=parcel_locker",
+            {
+              "and": [
+                "amenity=vending_machine",
+                "vending=parcel_pickup;parcel_mail_in"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "minzoom": 12,
+  "title": {
+    "render": {
+      "en": "Parcel Locker",
+      "de": "Paketschließfach",
+      "nl": "Pakketautomaat",
+      "ca": "Bústia intel·ligent",
+      "fr": "Casier à colis",
+      "pl": "Paczkomat",
+      "cs": "Schránka na balíky"
+    },
+    "mappings": [
+      {
+        "if": "brand~*",
+        "then": {
+          "en": "{brand} parcel locker",
+          "de": "{brand} Paketschließfach",
+          "nl": "{brand} pakketautomaat",
+          "ca": "{brand} bústia intel·ligent",
+          "fr": "Casier à colis {brand}",
+          "pl": "Paczkomat {brand}",
+          "cs": "{brand} schránka na balíky"
+        }
+      }
+    ]
+  },
+  "pointRendering": [
+    {
+      "iconBadges": [
+        {
+          "if": "opening_hours~*",
+          "then": {
+            "id": "isOpen",
+            "#": "Shows a coloured clock if opening hours are parsed. Uses the metatagging, suitable to use as a (badged) overlay",
+            "mappings": [
+              {
+                "if": "_isOpen=yes",
+                "then": "clock:#0f0;ring:#0f0"
+              },
+              {
+                "if": "_isOpen=no",
+                "then": "circle:#f00;clock:#fff"
+              },
+              {
+                "#": "Still loading the country",
+                "if": {
+                  "and": [
+                    "_isOpen=",
+                    "opening_hours~*"
+                  ]
+                },
+                "then": "clock:#ff0;ring:#ff0"
+              },
+              {
+                "#": "Still loading the country",
+                "if": {
+                  "and": [
+                    "_isOpen=parse_error",
+                    "opening_hours~*"
+                  ]
+                },
+                "then": "circle:#f0f;clock:#fff"
+              }
+            ],
+            "metacondition": "__showTimeSensitiveIcons!=no"
+          }
+        },
+        {
+          "if": "_favourite=yes",
+          "then": "circle:white;heart:red"
+        }
+      ],
+      "iconSize": "40,40",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": {
+            "render": "square",
+            "id": "square"
+          },
+          "color": "white"
+        },
+        {
+          "icon": {
+            "render": "./assets/layers/parcel_lockers/parcel_lockers.svg",
+            "id": "assetslayersparcellockersparcellockerssvg"
+          }
+        }
+      ]
+    }
+  ],
+  "lineRendering": [],
+  "presets": [
+    {
+      "title": {
+        "en": "a parcel locker",
+        "nl": "een pakketautomaat",
+        "de": "ein Paketschließfach",
+        "ca": "una bústia intel·ligent",
+        "fr": "un casier à colis",
+        "pl": "paczkomat",
+        "cs": "schránky na balíky"
+      },
+      "tags": [
+        "amenity=parcel_locker"
+      ]
+    }
+  ],
+  "tagRenderings": [
+    {
+      "id": "just_created",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "This element shows a 'thank you' that the contributor has recently created this element",
+      "classes": "rounded-xl thanks",
+      "mappings": [
+        {
+          "if": "id~*",
+          "icon": "./assets/svg/party.svg",
+          "then": {
+            "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+            "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+            "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+            "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+            "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+            "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+          }
+        }
+      ],
+      "condition": {
+        "and": [
+          "_backend~*",
+          "_last_edit:passed_time<300",
+          {
+            "or": [
+              "_version_number=",
+              "_version_number=1"
+            ]
+          }
+        ]
+      },
+      "metacondition": {
+        "and": [
+          {
+            "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+            "or": [
+              "_last_edit:contributor:uid:={_uid}",
+              "_last_edit:contributor:uid="
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "images",
+      "description": "This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images",
+      "render": {
+        "*": "{image_carousel()}{image_upload()}{nearby_images():my-4}"
+      },
+      "classes": "my-4"
+    },
+    {
+      "id": "brand",
+      "question": {
+        "en": "What is the brand of the parcel locker?",
+        "de": "Welche Marke hat das Paketschließfach?",
+        "nl": "Wat is het merk van deze pakketautomaat?",
+        "ca": "Quina és la marca d'aquesta bústia intel·ligent?",
+        "fr": "Quelle est la marque de ce casier à colis ?",
+        "pl": "Jakiej marki jest ten paczkomat?",
+        "cs": "Jaká je značka schránky na balíky?"
+      },
+      "freeform": {
+        "key": "brand",
+        "type": "string",
+        "placeholder": {
+          "en": "Brand",
+          "de": "Marke",
+          "nl": "Merk",
+          "ca": "Marca",
+          "fr": "Marque",
+          "pl": "Marka",
+          "cs": "Značka"
+        },
+        "inline": true
+      },
+      "mappings": [
+        {
+          "if": "brand=Amazon Locker",
+          "then": {
+            "en": "This is an Amazon Locker",
+            "de": "Dies ist ein Amazon Locker",
+            "nl": "Dit is een Amazon Locker",
+            "ca": "Açò és un Amazon Locker",
+            "fr": "C'est un Amazon Locker",
+            "pl": "To jest paczkomat Amazonu",
+            "cs": "Toto je Amazon Locker"
+          },
+          "addExtraTags": [
+            "brand:wikidata=Q16974764",
+            "brand:wikipedia=en:Amazon Locker",
+            "operator=Amazon"
+          ]
+        },
+        {
+          "if": "brand=DHL Packstation",
+          "then": {
+            "en": "This is a DHL Packstation",
+            "de": "Dies ist eine DHL-Packstation",
+            "nl": "Dit is een DHL Packstation",
+            "ca": "Açò és un DHL Packstation",
+            "cs": "Toto je DHL Packstation"
+          },
+          "addExtraTags": [
+            "brand:wikidata=Q1766703",
+            "brand:wikipedia=de:Packstation",
+            "operator=DHL"
+          ],
+          "hideInAnswer": "_country!=de"
+        },
+        {
+          "if": "brand=Pickup Station",
+          "then": {
+            "en": "This is a DPD Pickup Station",
+            "de": "Dies ist eine DPD Pickup Station",
+            "nl": "Dit is een DPD Pickup Station",
+            "fr": "C'est une DPD Pickup Station",
+            "cs": "Toto je DPD Pickup Station"
+          },
+          "addExtraTags": [
+            "operator=DPD"
+          ],
+          "hideInAnswer": "_country!=pl"
+        },
+        {
+          "if": "brand=PostNL",
+          "then": {
+            "en": "This is a PostNL Parcel Locker",
+            "nl": "Dit is een PostNL pakketautomaat",
+            "de": "Dies ist ein PostNL-Paketschließfach",
+            "ca": "Açò és una bústia intel·ligent de PostNL",
+            "fr": "C'est un PostNL Parcel Locker",
+            "pl": "To jest paczkomat PostNL",
+            "cs": "Toto je PostNL Parcel Locker"
+          },
+          "addExtraTags": [
+            "operator=PostNL"
+          ],
+          "hideInAnswer": "_country!=nl"
+        }
+      ],
+      "render": {
+        "en": "This is a {brand} parcel locker",
+        "de": "Dies ist ein Paketschließfach von {brand}",
+        "nl": "Dit is een {brand} pakketautomaat",
+        "ca": "Açò és una bústia intel·ligent de {brand}",
+        "fr": "C'est un casier à colis {brand}",
+        "pl": "To jest paczkomat marki {brand}",
+        "cs": "To je {brand} schránka na balíky"
+      }
+    },
+    {
+      "id": "operator",
+      "question": {
+        "en": "What is the operator of the parcel locker?",
+        "de": "Was ist der Betreiber des Paketschließfachs?",
+        "nl": "Wat is de beheerder van deze pakketautomaat?",
+        "ca": "Qui gestiona aquesta bústia intel·ligent?",
+        "fr": "Quel est l'exploitant de ce casier à colis ?",
+        "cs": "Kdo je provozovatelem schránky na balíky?"
+      },
+      "freeform": {
+        "key": "operator",
+        "type": "string",
+        "placeholder": {
+          "en": "Operator",
+          "de": "Betreiber",
+          "nl": "Beheerder",
+          "ca": "Gestor",
+          "fr": "Exploitant",
+          "pl": "Operator",
+          "cs": "Operátor"
+        },
+        "inline": true
+      },
+      "render": {
+        "en": "This parcel locker is operated by {operator}",
+        "de": "Dieses Paketschließfach wird von {operator} betrieben",
+        "nl": "Deze pakketautomaat wordt beheerd door {operator}",
+        "ca": "Aquesta bústia intel·ligent la gestiona {operator}",
+        "fr": "Ce casier à colis est exploité par {operator}",
+        "pl": "Ten paczkomat jest obsługiwany przez {operator}",
+        "cs": "Tuto schránku na balíky provozuje {operator}"
+      }
+    },
+    {
+      "id": "opening_hours_24_7",
+      "question": {
+        "en": "What are the opening hours of {title()}?",
+        "fr": "Quelles sont les horaires d'ouverture de {title()} ?",
+        "de": "Wie lauten die Öffnungszeiten von {title()}?",
+        "nl": "Wat zijn de openingstijden van {title()}?",
+        "nb_NO": "Hva er åpningstidene for {title()})",
+        "ru": "Какое время работы у {title()}?",
+        "zh_Hant": "{title()} 的開放時間是什麼？",
+        "it": "Quali sono gli orari di apertura di {title()}?",
+        "pt_BR": "Qual o horário de funcionamento de {title()}?",
+        "pl": "Jakie są godziny otwarcia {title()}?",
+        "sv": "Vilka är öppettiderna för {title()}?",
+        "pt": "Qual é o horário de funcionamento de {title()}?",
+        "hu": "Mikor van nyitva ez: {title()}?",
+        "ca": "Quin és l'horari d'obertura de {title()}?",
+        "ja": "{title()}の営業時間は？",
+        "sl": "Kakšen odpiralni čas ima {title()}?",
+        "fil": "Anong oras nagbubukas ang {title()}?",
+        "es": "¿Cuales son las horas de apertura de {title()}?",
+        "zh_Hans": "{title()} 的开放时间为何？",
+        "da": "Hvad er åbningstiderne for {title()}?",
+        "id": "Kapan jam buka {title()}?",
+        "cs": "Jaká je otevírací doba {title()}?"
+      },
+      "render": {
+        "de": "<h3>Öffnungszeiten</h3>{opening_hours_table(opening_hours)}",
+        "fr": "<h3>Horaires d'ouverture</h3>{opening_hours_table(opening_hours)}",
+        "en": "<h3>Opening hours</h3>{opening_hours_table(opening_hours)}",
+        "nl": "<h3>Openingstijden</h3>{opening_hours_table(opening_hours)}",
+        "nb_NO": "<h3>Åpningstider</h3>{opening_hours_table(opening_hours)}",
+        "ru": "<h3>Часы работы</h3>{opening_hours_table(opening_hours)}",
+        "zh_Hant": "<h3>開放時間</h3>{opening_hours_table(opening_hours)}",
+        "it": "<h3>Orari di apertura</h3>{opening_hours_table(opening_hours)}",
+        "pl": "<h3> Godziny otwarcia</h3>{opening_hours_table(opening_hours)}",
+        "pt_BR": "<h3>Horário de funcionamento</h3>{opening_hours_table(opening_hours)}",
+        "sv": "<h3>Öppettider</h3> {opening_hours_table(opening_hours)}",
+        "pt": "<h3>Horário de funcionamento</h3>{opening_hours_table(opening_hours)}",
+        "eo": "<h3>Malfermitaj horoj</h3>{opening_hours_table(opening_hours)}",
+        "hu": "<h3>Nyitva tartás</h3>{opening_hours_table(opening_hours)}",
+        "ca": "<h3>Horari d'obertura</h3>{opening_hours_table(opening_hours)}",
+        "ja": "<h3>営業時間</h3>{opening_hours_table(opening_hours)}",
+        "sl": "<h3>Odpiralni čas</h3>{opening_hours_table(opening_hours)}",
+        "fil": "<h3>Mga oras na bukas</h3>{opening_hours_table(opening_hours)}",
+        "es": "<h3>Horas de apertura</h3>{opening_hours_table(opening_hours)}",
+        "zh_Hans": "<h3>开放时间</h3> {opening_hours_table(opening_hours)}",
+        "da": "<h3> Åbningstider</h3>{opening_hours_table(opening_hours)}",
+        "id": "<h3>Jam buka</h3>{opening_hours_table(opening_hours)}",
+        "pa_PK": "<h3>کھُلھے گھنٹے</h3>{opening_hours_table(opening_hours)}",
+        "cs": "<h3>Otevírací hodiny</h3>{opening_hours_table(opening_hours)}"
+      },
+      "freeform": {
+        "key": "opening_hours",
+        "type": "opening_hours",
+        "inline": false
+      },
+      "mappings": [
+        {
+          "if": "opening_hours=24/7",
+          "icon": "./assets/layers/questions/open24_7.svg",
+          "then": {
+            "en": "24/7 opened (including holidays)",
+            "de": "durchgehend geöffnet (auch an Feiertagen)",
+            "zh_Hant": "24/7 開放 (包括假日)",
+            "id": "Buka 24 jam (termasuk hari libur)",
+            "hu": "Éjjel-nappal nyitva (munkaszüneti napokon is)",
+            "es": "Abierta 24/7 (incluyendo festivos)",
+            "nl": "24/7 open (ook tijdens feestdagen)",
+            "fr": "Ouvert 24h/24 (jours fériés compris)",
+            "nb_NO": "Døgnåpent (inkludert helligdager)",
+            "cs": "Otevřeno 24/7 (včetně svátků)",
+            "ca": "Obert 24/7 (incloent-hi festius)",
+            "pl": "Otwarte 24/7 (również w święta)"
+          }
+        },
+        {
+          "#": "Just here to be able to handle those ~5000 incorrect 'opening_hours=closed' elements.",
+          "if": "opening_hours=closed",
+          "then": {
+            "en": "Marked as closed for an unspecified time",
+            "nl": "Gesloten voor onbepaalde duur",
+            "de": "Als geschlossen für eine unbestimmte Zeit markiert"
+          },
+          "hideInAnswer": true
+        }
+      ]
+    },
+    {
+      "id": "ref",
+      "question": {
+        "en": "What is the reference number/identifier of this parcel locker?",
+        "de": "Wie lautet die Referenznummer/Kennung dieses Paketschließfachs?",
+        "nl": "Wat is het referentienummer/identificator van deze pakketautomaat?",
+        "ca": "Quin és el nombre de referència/identificador d'aquesta bústia intel·ligent?",
+        "fr": "Quel est le numéro de référence/d'identification de ce casier à colis ?",
+        "cs": "Jaké je referenční číslo/identifikátor této schránky na balíky?"
+      },
+      "freeform": {
+        "key": "ref",
+        "type": "string",
+        "placeholder": {
+          "en": "Reference",
+          "de": "Referenz",
+          "nl": "Referentie",
+          "pa_PK": "ہوالہ",
+          "ca": "Referència",
+          "fr": "Référence",
+          "cs": "Reference"
+        },
+        "inline": true
+      },
+      "render": {
+        "en": "This parcel locker has the reference {ref}",
+        "de": "Dieses Paketschließfach hat die Kennnummer {ref}",
+        "nl": "Deze pakketautomaat heeft de referentie {ref}",
+        "ca": "Aquesta bústia intel·ligent té la referència {ref}",
+        "fr": "Ce casier a colis porte la référence {ref}",
+        "cs": "Tato schránka na balíky má referenční číslo {ref}"
+      }
+    },
+    {
+      "id": "mail-in",
+      "question": {
+        "en": "Can you send packages from this parcel locker?",
+        "de": "Können Sie von diesem Paketschließfach aus Pakete versenden?",
+        "nl": "Kan je pakketten versturen vanuit deze pakketautomaat?",
+        "ca": "Pots enviar paquets des d'aquesta bústia intel·ligent?",
+        "fr": "Peut-on envoyer des colis depuis ce casier ?",
+        "pl": "Czy z tego paczkomatu można wysyłać przesyłki?",
+        "cs": "Lze z této schránky na balíky odesílat balíky?"
+      },
+      "mappings": [
+        {
+          "if": "parcel_mail_in=yes",
+          "then": {
+            "en": "You can send packages from this parcel locker",
+            "de": "Sie können Pakete von diesem Paketschließfach aus versenden",
+            "nl": "Je kan pakketten versturen vanuit deze pakketautomaat",
+            "ca": "Pots enviar paquets des d'aquesta bústia intel·ligent",
+            "fr": "On peut envoyer des colis depuis ce casier",
+            "pl": "Z tego paczkomatu można wysyłać przesyłki",
+            "cs": "Z této schránky na balíky můžete posílat balíky"
+          }
+        },
+        {
+          "if": "parcel_mail_in=no",
+          "then": {
+            "en": "You <b>can't</b> send packages from this parcel locker",
+            "de": "Sie können <b>keine</b> Pakete von diesem Paketschließfach aus versenden",
+            "nl": "Je kan <b>geen</b> pakketten versturen vanuit deze pakketautomaat",
+            "ca": "<b>No pots</b> enviar paquets des d'aquesta bústia intel·ligent",
+            "fr": "On <b>ne peut pas</b> envoyer de colis depuis ce casier",
+            "pl": "Z tego paczkomatu <b>nie można</b> wysyłać przesyłek",
+            "cs": "Z této schránky na balíky <b>nemůžete posílat balíky</b>"
+          }
+        }
+      ],
+      "condition": "amenity=parcel_locker"
+    },
+    {
+      "id": "pickup",
+      "question": {
+        "en": "Can you pick up packages from this parcel locker?",
+        "de": "Können Sie Pakete aus diesem Paketschließfach abholen?",
+        "nl": "Kan je pakketten ophalen bij deze pakketautomaat?",
+        "ca": "Pots arreplegar paquets a aquest armari intel·ligent?",
+        "fr": "Peut-on retirer des colis depuis ce casier ?",
+        "pl": "Czy z tego paczkomatu można odbierać przesyłki?",
+        "cs": "Můžete si vyzvednout balíčky z této schránky na balíky?"
+      },
+      "mappings": [
+        {
+          "if": "parcel_pickup=yes",
+          "then": {
+            "en": "You can pick up packages from this parcel locker",
+            "de": "Sie können Pakete von diesem Paketschließfach abholen",
+            "nl": "Je kan pakketten ophalen bij deze pakketautomaat",
+            "ca": "Pots arreplegar paquets a aquesta bústia intel·ligent",
+            "fr": "On peut retirer des colis depuis ce casier",
+            "pl": "Z tego paczkomatu można odbierać przesyłki",
+            "cs": "Balíčky si můžete vyzvednout v této schránce na balíky"
+          }
+        },
+        {
+          "if": "parcel_pickup=no",
+          "then": {
+            "en": "You <b>can't</b> pick up packages from this parcel locker",
+            "de": "Sie können <b>keine</b> Pakete von diesem Paketschließfach abholen",
+            "nl": "Je kan <b>geen</b> pakketten ophalen bij deze pakketautomaat",
+            "ca": "<b>No pots</b> arreplegar paquets a aquesta bústia intel·ligent",
+            "fr": "On <b>ne peut pas</b> retirer de colis depuis ce casier",
+            "pl": "Z tego paczkomatu <b>nie można</b> odbierać przesyłek",
+            "cs": "Z této schránky na balíky <b>nemůžete vyzvedávat balíky</b>"
+          }
+        }
+      ],
+      "condition": "amenity=parcel_locker"
+    },
+    {
+      "id": "leftover-questions",
+      "render": {
+        "*": "{questions( ,)}"
+      }
+    },
+    {
+      "id": "lod",
+      "labels": [
+        "added_by_default"
+      ],
+      "render": {
+        "*": "{linked_data_from_website()}"
+      }
+    },
+    {
+      "id": "minimap",
+      "description": "Shows a small map with the feature. Added by default to every popup",
+      "render": {
+        "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+      }
+    },
+    {
+      "id": "move-button",
+      "render": {
+        "*": "{move_button()}"
+      }
+    },
+    {
+      "id": "delete-button",
+      "render": {
+        "*": "{delete_button()}"
+      }
+    },
+    {
+      "id": "last_edit",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+      "condition": {
+        "and": [
+          "_last_edit:contributor~*",
+          "_last_edit:changeset~*"
+        ]
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsTesting=true",
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_debug=yes",
+          "_csCount>=10"
+        ]
+      },
+      "render": {
+        "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+      }
+    },
+    {
+      "id": "favourite_status",
+      "render": {
+        "*": "{favourite_status()}"
+      }
+    },
+    {
+      "id": "qr_code",
+      "labels": [
+        "added_by_default"
+      ],
+      "classes": "flex items-center gap-x-2",
+      "render": {
+        "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+        "en": "{qr_code()}Scan this code to open this location on another device",
+        "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+        "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+      }
+    },
+    {
+      "id": "share",
+      "labels": [
+        "added_by_default"
+      ],
+      "metacondition": "_supports_sharing=yes",
+      "render": {
+        "de": "{share_link(,Standort teilen)}",
+        "en": "{share_link(,Share this location)}",
+        "nl": "{share_link(,Deel deze locatie)}"
+      }
+    },
+    {
+      "id": "all-tags",
+      "render": {
+        "*": "{all_tags()}"
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_tags=full",
+          "mapcomplete-show_debug=yes"
+        ]
+      }
+    }
+  ],
+  "filter": [
+    {
+      "id": "open_now",
+      "options": [
+        {
+          "question": {
+            "en": "Open now",
+            "nl": "Nu open",
+            "de": "Jetzt geöffnet",
+            "ca": "Obert ara",
+            "es": "Abierto",
+            "fr": "Ouvert maintenant",
+            "hu": "Most nyitva van",
+            "da": "Åbent nu",
+            "zh_Hant": "目前開放",
+            "id": "Saat ini buka",
+            "it": "Aperto ora",
+            "pl": "Otwarte teraz",
+            "cs": "Nyní otevřeno"
+          },
+          "osmTags": "_isOpen=yes"
+        }
+      ]
+    }
+  ],
+  "deletion": {},
+  "allowMove": {
+    "enableImproveAccuracy": true
+  },
+  "titleIcons": [
+    {
+      "id": "wikipedialink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+      "condition": {
+        "or": [
+          "wikipedia~*",
+          "wikidata~*"
+        ]
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "wikipedia=",
+          "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "open_until",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "#": "Titleicon showing e.g. 'open until 17:00'",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{opening_hours_state()}",
+      "condition": {
+        "or": [
+          "opening_hours~*",
+          {
+            "or": [
+              {
+                "and": [
+                  "seasonal~.*winter.*",
+                  "_now:date~....-(12|01|02)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*spring.*",
+                  "_now:date~....-(03|04|05)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*summer.*",
+                  "_now:date~....-(06|07|08)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*autumn.*",
+                  "_now:date~....-(09|10|11)-.."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "phonelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": {
+        "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+        "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+        "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+        "_context": "layers:icons.tagRenderings.phonelink.render"
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:phone~*",
+          "then": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+          }
+        }
+      ],
+      "condition": {
+        "or": [
+          "phone~*",
+          "contact:phone~*"
+        ]
+      }
+    },
+    {
+      "id": "emaillink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:email~*",
+          "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:email~*",
+          "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        }
+      ],
+      "condition": {
+        "or": [
+          "email~*",
+          "contact:email~*",
+          "operator:email~*"
+        ]
+      }
+    },
+    {
+      "id": "websitelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "website~*",
+          "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:website~*",
+          "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "context:website~*",
+          "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "smokingicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=no",
+          "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=yes",
+          "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+        }
+      ]
+    },
+    {
+      "id": "dogicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "if": "dog=no",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+        },
+        {
+          "if": "dog=leashed",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+        },
+        {
+          "if": {
+            "or": [
+              "dog=yes",
+              "dog=unleashed"
+            ]
+          },
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+        }
+      ]
+    },
+    {
+      "id": "sharelink",
+      "labels": [
+        "defaults"
+      ],
+      "render": "{share_link()}",
+      "metacondition": "_supports_sharing=yes"
+    },
+    {
+      "id": "favourite_title_icon",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "*": "{favourite_icon()}"
+      },
+      "metacondition": "_loggedIn=true"
+    },
+    {
+      "id": "osmlink",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+        "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+        "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+        "_context": "layers:icons.tagRenderings.osmlink.render"
+      },
+      "mappings": [
+        {
+          "if": "id~.*/-.*",
+          "then": ""
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "_backend~*",
+          "then": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+          }
+        }
+      ],
+      "condition": "id~(node|way|relation)/[0-9]*"
+    },
+    {
+      "id": "direction",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "{direction_indicator()}"
+    },
+    {
+      "id": "rating",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{rating()}"
+    }
+  ],
+  "_layerIcon": [
+    {
+      "icon": "square",
+      "color": "white"
+    },
+    {
+      "icon": "./assets/layers/parcel_lockers/parcel_lockers.svg"
+    }
+  ]
+}

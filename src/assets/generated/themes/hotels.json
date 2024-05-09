@@ -1,0 +1,2295 @@
+{
+  "id": "hotels",
+  "title": {
+    "en": "Hotels",
+    "de": "Hotels",
+    "da": "Hoteller",
+    "nb_NO": "Hoteller",
+    "ca": "Hotels",
+    "nl": "Hotels",
+    "pa_PK": "ہوٹیل",
+    "fr": "Hôtels",
+    "cs": "Hotely",
+    "es": "Hoteles",
+    "eu": "Hotelak",
+    "pl": "Hotele",
+    "_context": "themes:hotels.title"
+  },
+  "description": {
+    "en": "On this map, you'll find hotels in your area",
+    "de": "Auf dieser Karte finden Sie Hotels in Ihrer Nähe",
+    "da": "På dette kort finder du hoteller i dit område",
+    "nb_NO": "På dette kartet finner du hoteller der du er",
+    "nl": "Op deze kaart vind je hotels in je omgeving",
+    "fr": "Sur cette carte, vous trouverez les hôtels dans votre zone",
+    "cs": "Na této mapě najdete hotely ve vašem okolí",
+    "es": "En este mapa encontrarás hoteles en tu zona",
+    "ca": "En aquest mapa trobareu hotels a la vostra zona",
+    "pl": "Na tej mapie znajdziesz hotele w Twojej okolicy",
+    "_context": "themes:hotels.description"
+  },
+  "icon": "./assets/layers/hotel/hotel.svg",
+  "startZoom": 13,
+  "startLat": 50.8552,
+  "startLon": 4.3755,
+  "layers": [
+    {
+      "id": "hotel",
+      "name": {
+        "en": "Hotels",
+        "nl": "Hotels",
+        "de": "Hotels",
+        "pa_PK": "ہوٹل",
+        "ru": "Гостиницы",
+        "fr": "Hôtels",
+        "ca": "Hotels",
+        "cs": "Hotely"
+      },
+      "description": {
+        "en": "Layer showing all hotels",
+        "nl": "Laag die alle hotels toont",
+        "de": "Eine Ebene mit Hotels",
+        "fr": "Couche affichant les hôtels",
+        "ca": "Capa que mostra tots els hotels",
+        "cs": "Vrstva zobrazující všechny hotely"
+      },
+      "source": {
+        "osmTags": {
+          "and": [
+            "tourism=hotel"
+          ]
+        }
+      },
+      "minzoom": 13,
+      "title": {
+        "render": {
+          "en": "Hotel",
+          "nl": "Hotel",
+          "de": "Hotel",
+          "pa_PK": "ہوٹل",
+          "fr": "Hôtel",
+          "ca": "Hotel",
+          "cs": "Hotel"
+        },
+        "mappings": [
+          {
+            "if": "name~*",
+            "then": {
+              "en": "Hotel {name}",
+              "nl": "Hotel {name}",
+              "de": "Hotel {name}",
+              "fr": "Hôtel {name}",
+              "ca": "Hotel {name}",
+              "cs": "Hotel {name}"
+            }
+          }
+        ]
+      },
+      "pointRendering": [
+        {
+          "location": [
+            "point",
+            "centroid"
+          ],
+          "iconSize": "40,40",
+          "anchor": "center",
+          "marker": [
+            {
+              "icon": {
+                "render": "circle",
+                "id": "circle"
+              },
+              "color": "white"
+            },
+            {
+              "icon": {
+                "render": "./assets/layers/hotel/hotel.svg",
+                "id": "assetslayershotelhotelsvg"
+              }
+            }
+          ],
+          "iconBadges": [
+            {
+              "if": "_favourite=yes",
+              "then": {
+                "render": "circle:white;heart:red",
+                "id": "circlewhiteheartred"
+              }
+            }
+          ]
+        }
+      ],
+      "lineRendering": [],
+      "presets": [
+        {
+          "title": {
+            "en": "a hotel",
+            "nl": "een hotel",
+            "de": "ein Hotel",
+            "ca": "un hotel",
+            "ru": "гостиница",
+            "fr": "un hôtel",
+            "cs": "hotel"
+          },
+          "tags": [
+            "tourism=hotel"
+          ]
+        }
+      ],
+      "tagRenderings": [
+        {
+          "id": "just_created",
+          "labels": [
+            "added_by_default"
+          ],
+          "description": "This element shows a 'thank you' that the contributor has recently created this element",
+          "classes": "rounded-xl thanks",
+          "mappings": [
+            {
+              "if": "id~*",
+              "icon": "./assets/svg/party.svg",
+              "then": {
+                "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+                "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+                "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+                "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+                "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+                "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+              }
+            }
+          ],
+          "condition": {
+            "and": [
+              "_backend~*",
+              "_last_edit:passed_time<300",
+              {
+                "or": [
+                  "_version_number=",
+                  "_version_number=1"
+                ]
+              }
+            ]
+          },
+          "metacondition": {
+            "and": [
+              {
+                "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+                "or": [
+                  "_last_edit:contributor:uid:={_uid}",
+                  "_last_edit:contributor:uid="
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "images",
+          "description": "This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images",
+          "render": {
+            "*": "{image_carousel()}{image_upload()}{nearby_images():my-4}"
+          },
+          "classes": "my-4"
+        },
+        {
+          "id": "reviews",
+          "description": "Shows the reviews module (including the possibility to leave a review)",
+          "render": {
+            "*": "{create_review()}{list_reviews()}"
+          }
+        },
+        {
+          "id": "name",
+          "freeform": {
+            "key": "name",
+            "placeholder": {
+              "en": "Name of the hotel",
+              "nl": "Naam van het hotel",
+              "de": "Name des Hotels",
+              "ru": "Название гостиницы",
+              "fr": "Nom de l'hôtel",
+              "ca": "Nom de l'hotel",
+              "cs": "Název hotelu"
+            },
+            "inline": true
+          },
+          "question": {
+            "en": "What is the name of this hotel?",
+            "nl": "Wat is de naam van dit hotel?",
+            "de": "Wie lautet der Name des Hotels?",
+            "ru": "Как называется эта гостиница?",
+            "fr": "Quel est le nom de cet hôtel ?",
+            "ca": "Quin és el nom d'aquest hotel?",
+            "cs": "Jak se tento hotel jmenuje?"
+          },
+          "render": {
+            "en": "This hotel is called {name}",
+            "nl": "Dit hotel heet {name}",
+            "de": "Der Name des Hotels lautet {name}",
+            "ca": "Aquest hotel es diu {name}",
+            "fr": "Cet hôtel s'appelle {name}",
+            "cs": "Tento hotel se jmenuje {name}"
+          }
+        },
+        {
+          "id": "phone",
+          "labels": [
+            "contact"
+          ],
+          "question": {
+            "en": "What is the phone number of {title()}?",
+            "nl": "Wat is het telefoonnummer van {title()}?",
+            "fr": "Quel est le numéro de téléphone de {title()} ?",
+            "de": "Wie lautet die Telefonnummer von {title()}?",
+            "nb_NO": "Hva er telefonnummeret til {title()}?",
+            "ru": "Какой номер телефона у {title()}?",
+            "sv": "Vad är telefonnumret till {title()}?",
+            "zh_Hant": "{title()} 的電話號碼是什麼？",
+            "it": "Qual è il numero di telefono di {title()}?",
+            "pt_BR": "Qual o número de telefone de {title()}?",
+            "id": "Berapa nomor telepon dari {title()}?",
+            "pl": "Jaki jest numer telefonu do {title()}?",
+            "pt": "Qual é o número de telefone de {title()}?",
+            "eo": "Kio estas la telefonnumero de {title()}?",
+            "hu": "Mi a telefonszáma ennek: {title()}?",
+            "ca": "Quin és el telèfon de {title()}?",
+            "ja": "{title()}の電話番号は？",
+            "sl": "Kakšno telefonsko številko ima {title()}?",
+            "fil": "Ano ang telepono ng {title()}?",
+            "es": "¿Cuál es el número de teléfono de {title()}?",
+            "zh_Hans": "{title()} 的电话号码为何？",
+            "da": "Hvad er telefonnummeret til {title()}?",
+            "cs": "Jaké je telefonní číslo {title()}?"
+          },
+          "render": {
+            "*": "<a href='tel:{phone}'>{phone}</a>"
+          },
+          "icon": "./assets/layers/questions/phone.svg",
+          "mappings": [
+            {
+              "if": "contact:phone~*",
+              "then": "<a href='tel:{contact:phone}'>{contact:phone}</a>",
+              "hideInAnswer": true,
+              "icon": "./assets/layers/questions/phone.svg"
+            }
+          ],
+          "freeform": {
+            "key": "phone",
+            "type": "phone",
+            "addExtraTags": [
+              "contact:phone="
+            ]
+          },
+          "editButtonAriaLabel": {
+            "en": "Edit phone number",
+            "nl": "Pas telefoonnummer aan",
+            "de": "Telefonnummer bearbeiten"
+          }
+        },
+        {
+          "id": "email",
+          "render": {
+            "*": "<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>"
+          },
+          "icon": "./assets/svg/envelope.svg",
+          "labels": [
+            "contact"
+          ],
+          "question": {
+            "nl": "Wat is het e-mailadres van {title()}?",
+            "fr": "Quelle est l'adresse courriel de {title()} ?",
+            "en": "What is the email address of {title()}?",
+            "nb_NO": "Hva er e-postadressen til {title()}?",
+            "ru": "Какой адрес электронной почты у {title()}?",
+            "id": "Apa alamat surel dari {title()}?",
+            "zh_Hant": "{title()} 的電子郵件地址是什麼？",
+            "it": "Qual è l'indirizzo email di {title()}?",
+            "de": "Wie lautet die Mail-Adresse von {title()}?",
+            "pt_BR": "Qual o endereço de e-mail de {title()}?",
+            "pl": "Jaki jest adres e-mail do {title()}?",
+            "sv": "Vad är e-postadressen till {title()}?",
+            "pt": "Qual é o endereço de e-mail de {title()}?",
+            "eo": "Kio estas la retpoŝta adreso de {title()}?",
+            "hu": "Mi a(z) {title()} e-mail címe?",
+            "ca": "Quina és l'adreça de correu electrònic de {title()}?",
+            "ja": "{title()}のEメールアドレスは何ですか？",
+            "sl": "Kakšen naslov elektronske pošte ima {title()}?",
+            "fil": "Ano ang email address ng {title()}?",
+            "es": "¿Cuál es la dirección de correo electrónico de {title()}?",
+            "zh_Hans": "{title()} 的电子邮箱地址为何？",
+            "da": "Hvad er mailadressen på {title()}?",
+            "cs": "Jaká je e-mailová adresa {title()}?"
+          },
+          "mappings": [
+            {
+              "if": "contact:email~*",
+              "icon": "./assets/svg/envelope.svg",
+              "then": "<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>",
+              "hideInAnswer": true
+            },
+            {
+              "if": "operator:email~*",
+              "icon": "./assets/svg/envelope.svg",
+              "then": "<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>",
+              "hideInAnswer": true
+            }
+          ],
+          "freeform": {
+            "key": "email",
+            "type": "email",
+            "addExtraTags": [
+              "contact:email="
+            ]
+          },
+          "editButtonAriaLabel": {
+            "en": "Edit email address",
+            "nl": "Pas emailadres aan",
+            "de": "E-Mail Adresse bearbeiten"
+          }
+        },
+        {
+          "id": "website",
+          "labels": [
+            "contact"
+          ],
+          "icon": "./assets/layers/icons/website.svg",
+          "question": {
+            "en": "What is the website of {title()}?",
+            "nl": "Wat is de website van {title()}?",
+            "fr": "Quel est le site web de {title()} ?",
+            "gl": "Cal é a páxina web de {title()}?",
+            "nb_NO": "Hva er nettsiden til {title()}?",
+            "ru": "Какой сайт у {title()}?",
+            "id": "Apa situs web dari {title()}?",
+            "zh_Hant": "{title()} 網址是什麼？",
+            "it": "Qual è il sito web di {title()}?",
+            "de": "Wie lautet die Webseite von {title()}?",
+            "pt_BR": "Qual o site de {title()}?",
+            "pl": "Jaka jest strona internetowa {title()}?",
+            "sv": "Vad är webbplatsen för {title()}?",
+            "pt": "Qual é o sítio web de {title()}?",
+            "eo": "Kie estas la retejo de {title()}?",
+            "hu": "Mi a weboldala ennek: {title()}?",
+            "ca": "Quina és la web de {title()}?",
+            "ja": "{title()}のウェブサイトは？",
+            "fil": "Ano ang website ng {title()}?",
+            "es": "¿Cual es el sitio web de {title()}?",
+            "zh_Hans": "{title()} 的网站为何？",
+            "da": "Hvad er webstedet for {title()}?",
+            "cs": "Jaká je webová stránka {title()}?"
+          },
+          "render": {
+            "*": "<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>"
+          },
+          "freeform": {
+            "key": "website",
+            "type": "url",
+            "addExtraTags": [
+              "contact:website="
+            ]
+          },
+          "mappings": [
+            {
+              "if": "contact:website~*",
+              "then": "<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>",
+              "hideInAnswer": true,
+              "icon": "./assets/layers/icons/website.svg"
+            }
+          ],
+          "editButtonAriaLabel": {
+            "en": "Edit website",
+            "nl": "Pas website aan",
+            "de": "Webseite bearbeiten"
+          }
+        },
+        {
+          "id": "wheelchair-access",
+          "question": {
+            "nl": "Is deze plaats rolstoeltoegankelijk?",
+            "en": "Is this place accessible with a wheelchair?",
+            "pt": "Este lugar é acessível a utilizadores de cadeiras de rodas?",
+            "pt_BR": "Este lugar é acessível com uma cadeira de rodas?",
+            "de": "Ist der Ort rollstuhlzugänglich?",
+            "fr": "Est-ce que cet endroit est accessible en chaise roulante ?",
+            "hu": "Akadálymentes-e ez a hely?",
+            "it": "Questo luogo è accessibile con una sedia a rotelle?",
+            "nb_NO": "Er dette stedet tilgjengelig for rullestoler?",
+            "ca": "Aquest lloc és accessible amb cadira de rodes?",
+            "sv": "Är det här stället tillgängligt med en rullstol?",
+            "zh_Hant": "這個地方可以坐輪椅到達嗎？",
+            "pl": "Czy to miejsce jest dostępne dla osób na wózkach inwalidzkich?",
+            "ja": "車いすでのアクセスは可能ですか？",
+            "fil": "Kaya bang abutin ang lugar na ito ng naka-wheelchair?",
+            "es": "¿Este lugar es accesible con una silla de ruedas?",
+            "da": "Er stedet tilgængeligt med en kørestol?",
+            "id": "Apakah tempat ini dapat diakses dengan kursi roda?",
+            "cs": "Je toto místo přístupné pro vozíčkáře?"
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "wheelchair=designated"
+                ]
+              },
+              "then": {
+                "nl": "Deze plaats is speciaal aangepast voor gebruikers van een rolstoel",
+                "en": "This place is specially adapted for wheelchair users",
+                "pt": "Este lugar está especialmente adaptado para utilizadores de cadeira de rodas",
+                "pt_BR": "Este lugar é especialmente adaptado para usuários de cadeira de rodas",
+                "de": "Der Ort ist speziell für Rollstuhlfahrer gestaltet",
+                "hu": "Ez a hely kifejezetten kerekesszékeseknek lett kialakítva",
+                "it": "Questo luogo è stato adattato per favorire le persone in sedia a rotelle",
+                "nb_NO": "Dette stedet er spesielt tilpasset rullestolsbrukere",
+                "fr": "Cet endroit est spécialement adapté pour les usagers de fauteuils roulants",
+                "ca": "Aquest lloc està especialment adaptat per a les cadires de rodes",
+                "sv": "Det här stället är speciellt anpassat för rullstolsburna användare",
+                "zh_Hant": "這個地方有特別設計給輪椅使用者",
+                "ru": "Это место подходит для людей на инвалидной коляске",
+                "pl": "W tym miejscu zainstalowane zostały udogodnienia dla osób na wózkach inwalidzkich",
+                "ja": "この場所は、車椅子の方のための特別仕様になっています",
+                "fil": "Ang lugar na ito ay angkop sa mga gumagamit ng wheelchair",
+                "es": "Este lugar está especialmente adaptado para usuarios en sillas de ruedas",
+                "da": "Dette sted er specielt indrettet til kørestolsbrugere",
+                "id": "Tempat ini dirancang khusus untuk pengguna kursi roda",
+                "cs": "Toto místo je speciálně upraveno pro vozíčkáře"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "wheelchair=yes"
+                ]
+              },
+              "then": {
+                "nl": "Deze plaats is vlot bereikbaar met een rolstoel",
+                "en": "This place is easily reachable with a wheelchair",
+                "pt": "Este lugar é de fácil acesso com uma cadeira de rodas",
+                "pt_BR": "Este lugar é facilmente acessível com uma cadeira de rodas",
+                "de": "Der Ort ist rollstuhlzugänglich gestaltet",
+                "hu": "Ez a hely könnyedén elérhető kerekesszékkel",
+                "it": "Questo luogo è facilmente raggiungibile con una sedia a rotelle",
+                "nb_NO": "Dette stedet kan enkelt besøkes med rullestol",
+                "fr": "Cet endroit est facilement accessible avec un fauteuil roulant",
+                "ca": "És facilment arribable amb cadira de rodes",
+                "sv": "Denna plats är lätt att nå med rullstol",
+                "zh_Hant": "這個地方坐輪椅很容易到達",
+                "ru": "До этого места легко добраться на инвалидной коляске",
+                "pl": "To miejsce jest łatwo dostępne dla osób na wózkach inwalidzkich",
+                "ja": "この場所は、車いすで簡単に行くことができます",
+                "fil": "Ang lugar na ito ay kayang abutin ng mga naka-wheelchair",
+                "es": "Este lugar es fácilmente accesible con una silla de ruedas",
+                "da": "Dette sted er let tilgængeligt med en kørestol",
+                "id": "Tempat ini mudah dijangkau dengan kursi roda",
+                "cs": "Toto místo je snadno dosažitelné s invalidním vozíkem"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "wheelchair=limited"
+                ]
+              },
+              "then": {
+                "nl": "Deze plaats is bereikbaar met een rolstoel, maar het is niet makkelijk",
+                "en": "It is possible to reach this place in a wheelchair, but it is not easy",
+                "pt": "É possível chegar a este local em cadeira de rodas, mas não é fácil",
+                "pt_BR": "É possível chegar a esse local em uma cadeira de rodas, mas não é fácil",
+                "de": "Der Ort ist nur eingeschränkt rollstuhlzugänglich",
+                "fr": "Il est possible d'accéder à cet endroit en chaise roulante, mais ce n'est pas facile",
+                "hu": "Ez a hely ugyan elérhető kerekesszékkel, de nehezen",
+                "it": "È possibile raggiungere questo luogo con una sedia a rotella ma non è semplice",
+                "nb_NO": "Det er mulig å besøke dette stedet i rullestol, men det er ikke lett",
+                "ca": "És possible fer servir cadira de rodes a aquest lloc però no és fàcil",
+                "sv": "Det är möjligt att nå den här platsen i en rullstol, men det är inte lätt",
+                "zh_Hant": "這個地方可以坐輪椅到達，但並不容易",
+                "ru": "До этого места можно добраться, но не просто",
+                "pl": "To miejsce jest dostępne dla osób na wózkach inwalidzkich, ale z pewnymi trudnościami",
+                "ja": "車いすでこの場所まで行くことは可能ですが、簡単ではありません",
+                "fil": "Kayang abutin ang lugar na ito ng mga naka-wheelchair, pero hindi madali",
+                "es": "Es posible llegar a este lugar con una silla de ruedas, pero no es fácil",
+                "da": "Det er muligt at komme til dette sted med en kørestol, men det er ikke let",
+                "id": "Dimungkinkan untuk mencapai tempat ini dengan kursi roda, tetapi tidak mudah",
+                "cs": "Na toto místo je možné se dostat na invalidním vozíku, ale není to snadné"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "wheelchair=no"
+                ]
+              },
+              "then": {
+                "nl": "Niet rolstoeltoegankelijk",
+                "en": "This place is not reachable with a wheelchair",
+                "pt": "Este lugar não é acessível com uma cadeira de rodas",
+                "pt_BR": "Este lugar não é alcançável com uma cadeira de rodas",
+                "de": "Der Ort ist nicht rollstuhlzugänglich",
+                "fr": "Cet endroit n'est pas accessible en chaise roulante",
+                "hu": "Ez a hely kerekesszékkel elérhetetlen",
+                "it": "Questo luogo non è accessibile con una sedia a rotelle",
+                "nb_NO": "Dette stedet er ikke tilgjengelig for besøk med rullestol",
+                "ca": "Aquest lloc no és accessible amb cadira de rodes",
+                "sv": "Den här platsen kan inte nås med en rullstol",
+                "zh_Hant": "輪椅無法到達這個地方",
+                "pl": "To miejsce jest niedostępne dla osób na wózkach inwalidzkich",
+                "ja": "この場所は車いすでは行けません",
+                "fil": "Ang lugar na ito ay hindi kayang abutin ng naka-wheelchair",
+                "es": "No es posible llegar a este lugar con una silla de ruedas",
+                "da": "Dette sted er ikke tilgængeligt med kørestol",
+                "id": "Tempat ini tidak bisa dijangkau dengan kursi roda",
+                "cs": "Na toto místo se nelze dostat s invalidním vozíkem"
+              }
+            }
+          ]
+        },
+        {
+          "id": "internet",
+          "labels": [
+            "internet-all"
+          ],
+          "question": {
+            "en": "Does this place offer internet access?",
+            "nl": "Biedt deze plaats internettoegang aan?",
+            "de": "Bietet dieser Ort Internetzugang?",
+            "pt": "Este lugar tem acesso à Internet?",
+            "da": "Tilbyder dette sted internetadgang?",
+            "id": "Apa tempat ini menyediakan jaringan internet?",
+            "cs": "Nabízí toto místo připojení k internetu?",
+            "nb_NO": "Tilbyr dette stedet tilgang til Internett?",
+            "es": "¿Ofrece este lugar acceso a internet?",
+            "fr": "Cet endroit offre-t-il un accès à Internet ?",
+            "ca": "Aquest lloc ofereix accés a internet?",
+            "pl": "Czy to miejsce oferuje dostęp do Internetu?"
+          },
+          "mappings": [
+            {
+              "if": "internet_access=wlan",
+              "then": {
+                "en": "This place offers wireless internet access",
+                "nl": "Deze plaats biedt draadloze internettoegang aan",
+                "de": "Dieser Ort bietet drahtlosen Internetzugang",
+                "fr": "Ce lieu propose un accès internet sans fil",
+                "pt": "Este lugar tem acesso à Internet sem fios",
+                "da": "Dette sted tilbyder trådløs internetadgang",
+                "id": "Tempat ini menyediakan jaringan internet nirkabel",
+                "cs": "Toto místo nabízí bezdrátové připojení k internetu",
+                "nb_NO": "Dette stedet tilbyr trådløs tilgang til Internett",
+                "es": "Este lugar ofrece acceso a internet inalámbrico",
+                "ca": "Aquest lloc ofereix accés a internet inalàmbric",
+                "pl": "To miejsce oferuje bezprzewodowy dostęp do Internetu"
+              }
+            },
+            {
+              "if": "internet_access=no",
+              "then": {
+                "en": "This place <b>does not</b> offer internet access",
+                "nl": "Deze plaats biedt <b>geen</b> internettoegang aan",
+                "de": "Dieser Ort bietet <b>keinen</b> Internetzugang",
+                "fr": "Ce lieu <b>ne propose pas</b> d'accès internet",
+                "pt": "Este lugar <b>não</b> tem acesso à Internet",
+                "da": "Dette sted <b>tilbyder ikke</b> internetadgang",
+                "id": "Tempat ini <b>tidak</b> menyediakan jaringan internet",
+                "cs": "Toto místo <b>neposkytuje</b> připojení k internetu",
+                "nb_NO": "Dette stedet tilbyr <b>ikke</b> tilgang til Internett",
+                "es": "Este lugar <b>no</b> ofrece acceso a internet",
+                "ca": "Aquest lloc <b>no</b> ofereix accés a internet",
+                "pl": "To miejsce <b>nie</b> oferuje dostępu do Internetu"
+              }
+            },
+            {
+              "if": "internet_access=yes",
+              "then": {
+                "en": "This place offers internet access",
+                "nl": "Deze plaats biedt internettoegang aan",
+                "de": "Dieser Ort bietet Internetzugang",
+                "fr": "Ce lieu propose un accès internet",
+                "pt": "Este lugar tem acesso à Internet",
+                "da": "Dette sted tilbyder internetadgang",
+                "id": "Tempat ini menyediakan jaringan internet",
+                "cs": "Toto místo nabízí přístup k internetu",
+                "nb_NO": "Dette stedet tilbyr tilgang til Internett",
+                "es": "Este lugar ofrece acceso a internet",
+                "ca": "Aquest lloc ofereix accés a internet",
+                "pl": "To miejsce oferuje dostęp do Internetu"
+              },
+              "hideInAnswer": true
+            },
+            {
+              "if": "internet_access=terminal",
+              "then": {
+                "en": "This place offers internet access via a terminal or computer",
+                "nl": "Deze plaats biedt internettoegang via een terminal of computer aan",
+                "de": "Dieser Ort bietet Internetzugang über ein Terminal oder einen Computer",
+                "pt": "Este lugar tem acesso à Internet através de um terminal ou computador",
+                "da": "Dette sted tilbyder internetadgang via en terminal eller computer",
+                "id": "Tempat ini menyediakan jaringan internet melalui terminal atau komputer",
+                "cs": "Toto místo nabízí přístup k internetu prostřednictvím terminálu nebo počítače",
+                "nb_NO": "Dette stedet tilbyr tilgang til Internett via en terminal eller datamaskin",
+                "es": "Este lugar ofrece acceso a internet a través de una terminal o un ordenador",
+                "fr": "Cet endroit offre un accès à Internet via un terminal ou un ordinateur",
+                "ca": "Aquest lloc ofereix accés a internet a través d'una terminal o ordinador",
+                "pl": "To miejsce oferuje dostęp do Internetu za pośrednictwem terminala lub komputera"
+              }
+            },
+            {
+              "if": "internet_access=wired",
+              "then": {
+                "en": "This place offers wired internet access",
+                "nl": "Deze plaats biedt bedrade internettoegang aan",
+                "de": "Dieser Ort bietet kabelgebundenen Internetzugang",
+                "pt": "Este lugar tem acesso à Internet com fios/por cabo",
+                "da": "Dette sted tilbyder internetadgang via kabel",
+                "id": "Tempat ini menyediakan jaringan internet kabel",
+                "cs": "Toto místo nabízí kabelové připojení k internetu",
+                "nb_NO": "Dette stedet tilbyr trådbunden tilgang til Internett",
+                "es": "Este lugar ofrece acceso a internet por cable",
+                "fr": "Cet endroit offre un accès Internet filaire",
+                "ca": "Aquest lloc ofereix accés a internet per cable",
+                "pl": "To miejsce oferuje przewodowy dostęp do Internetu"
+              }
+            }
+          ]
+        },
+        {
+          "id": "internet-fee",
+          "labels": [
+            "internet-all"
+          ],
+          "condition": {
+            "and": [
+              "internet_access!=no",
+              "internet_access!="
+            ]
+          },
+          "question": {
+            "en": "Is there a fee for internet access?",
+            "nl": "Zijn er kosten voor internettoegang?",
+            "de": "Wird für den Internetzugang eine Gebühr erhoben?",
+            "pt": "Tem de se pagar para utilizar o acesso à Internet?",
+            "da": "Er der et gebyr for internetadgang?",
+            "cs": "Je přístup na internet zpoplatněn?",
+            "id": "Apakah ada biaya untuk akses internet?",
+            "nb_NO": "Er det et gebyr for bruk av Internett?",
+            "fr": "L'accès à l'internet est-il payant ?",
+            "ca": "Hi ha que pagar per a accedir a internet?",
+            "es": "¿Hay que pagar para acceder a internet?",
+            "pl": "Czy dostęp do Internetu jest płatny?"
+          },
+          "mappings": [
+            {
+              "if": "internet_access:fee=yes",
+              "then": {
+                "en": "There is a fee for the internet access at this place",
+                "nl": "Er zijn kosten voor internettoegang op deze plaats",
+                "de": "Der Internetzugang ist an diesem Ort gebührenpflichtig",
+                "pt": "Tem de se pagar para utilizar o acesso à Internet neste local",
+                "da": "Der er et gebyr for internetadgang på dette sted",
+                "cs": "Přístup na internet je zde zpoplatněn",
+                "id": "Ada biaya untuk akses internet di tempat ini",
+                "nb_NO": "Det er et gebyr for tilgang til Internett på dette stedet",
+                "fr": "L'accès à l'internet est payant à cet endroit",
+                "ca": "Aquí hi ha que pagar per a accedir a internet",
+                "es": "Hay que pagar para acceder a internet en este lugar",
+                "pl": "W tym miejscu dostęp do Internetu jest płatny"
+              }
+            },
+            {
+              "if": "internet_access:fee=no",
+              "then": {
+                "en": "Internet access is free at this place",
+                "nl": "Internettoegang is gratis op deze plaats",
+                "de": "Der Internetzugang ist an diesem Ort kostenlos",
+                "pt": "O acesso à Internet é gratuito neste local",
+                "da": "Internetadgang er gratis på dette sted",
+                "id": "Jaringan internet tersedia gratis di tempat ini",
+                "cs": "Přístup k internetu je zde zdarma",
+                "nb_NO": "Tilgang til Internett er gratis på dette stedet",
+                "es": "El acceso a internet es gratuito en este lugar",
+                "fr": "L'accès à Internet est gratuit dans cet endroit",
+                "ca": "Aquí l'accés a internet és gratuït",
+                "pl": "Dostęp do Internetu jest w tym miejscu bezpłatny"
+              }
+            },
+            {
+              "if": "internet_access:fee=customers",
+              "then": {
+                "en": "Internet access is free at this place, for customers only",
+                "nl": "Internettoegang is gratis op deze plaats, alleen voor klanten",
+                "de": "Der Internetzugang ist an diesem Ort kostenlos, aber nur für Kunden",
+                "pt": "O acesso à Internet é gratuito neste local, apenas para clientes",
+                "da": "Internetadgang er gratis på dette sted, kun for kunder",
+                "id": "Jaringan internet tersedia gratis di tempat ini, hanya untuk pelanggan",
+                "cs": "Přístup k internetu je na tomto místě zdarma, pouze pro zákazníky",
+                "nb_NO": "Tilgang til Internett på dette stedet er gratis, men kun for kunder",
+                "es": "El acceso a internet es gratis en este lugar, solamente para clientes",
+                "fr": "L'accès à l'internet dans cet endroit est gratuit pour les clients uniquement",
+                "ca": "Aquí l'accés a internet és gratuït sols per als clients",
+                "pl": "Dostęp do Internetu jest w tym miejscu bezpłatny, tylko dla klientów"
+              }
+            }
+          ]
+        },
+        {
+          "id": "internet-ssid",
+          "labels": [
+            "internet-all"
+          ],
+          "condition": "internet_access=wlan",
+          "question": {
+            "en": "What is the network name for the wireless internet access?",
+            "nl": "Wat is de netwerknaam voor de draadloze internettoegang?",
+            "de": "Wie lautet der Netzwerkname für den drahtlosen Internetzugang?",
+            "pt": "Qual é o nome da rede para o acesso sem fios à Internet?",
+            "da": "Hvad er netværksnavnet for den trådløse internetadgang?",
+            "id": "Apa nama jaringan internet nirkabelnya?",
+            "cs": "Jaký je název sítě pro bezdrátový přístup k internetu?",
+            "nb_NO": "Hva er nettverksnavnet for det trådløse nettverket?",
+            "es": "¿Cuál es el nombre de red para el acceso inalámbrico a internet?",
+            "fr": "Quel est le nom du réseau pour l'accès Internet sans fil ?",
+            "ca": "Quin és el nom de la xarxa per a l'accés inalàmbric a internet?",
+            "pl": "Jaka jest nazwa sieci dla bezprzewodowego dostępu do Internetu?"
+          },
+          "freeform": {
+            "key": "internet_access:ssid",
+            "type": "string",
+            "placeholder": {
+              "en": "Enter the network name",
+              "nl": "Voer de netwerknaam in",
+              "de": "Geben Sie den Netzwerknamen ein",
+              "pt": "Introduza o nome da rede",
+              "da": "Indtast netværksnavnet",
+              "id": "Masukkan nama jaringan",
+              "cs": "Zadejte název sítě",
+              "nb_NO": "Skriv inn nettverksnavnet",
+              "pa_PK": "نیٹورک دا ناں پایو",
+              "es": "Introduzca el nombre de red",
+              "fr": "Entrez le nom du réseau",
+              "ca": "Intruduixca el nom de la xarxa",
+              "pl": "Wprowadź nazwę sieci"
+            },
+            "inline": true
+          },
+          "mappings": [
+            {
+              "if": "internet_access:ssid=Telekom",
+              "then": "Telekom",
+              "hideInAnswer": "_country!=de"
+            }
+          ],
+          "render": {
+            "en": "The network name is <b>{internet_access:ssid}</b>",
+            "nl": "De netwerknaam is <b>{internet_access:ssid}</b>",
+            "de": "Der Netzwerkname lautet <b>{internet_access:ssid}</b>",
+            "pt": "O nome da rede é <b>{internet_access:ssid}</b>",
+            "da": "Netværksnavnet er <b>{internet_access:ssid}</b>",
+            "id": "Nama jaringan ini adalah <b>{internet_access:ssid}</b>",
+            "cs": "Název sítě je <b>{internet_access:ssid}</b>",
+            "nb_NO": "Nettverksnavnet er <b>{internet_access:ssid}</b>",
+            "es": "El nombre de red es <b>{internet_access:ssid}</b>",
+            "fr": "Le nom du réseau est <b>{internet_access:ssid}</b>",
+            "ca": "El nom de la xarxa és <b>{internet_access:ssid}</b>",
+            "pl": "Nazwa sieci to <b>{internet_access:ssid}</b>"
+          }
+        },
+        {
+          "id": "leftover-questions",
+          "render": {
+            "*": "{questions( ,)}"
+          }
+        },
+        {
+          "id": "lod",
+          "labels": [
+            "added_by_default"
+          ],
+          "render": {
+            "*": "{linked_data_from_website()}"
+          }
+        },
+        {
+          "id": "minimap",
+          "description": "Shows a small map with the feature. Added by default to every popup",
+          "render": {
+            "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+          }
+        },
+        {
+          "id": "move-button",
+          "render": {
+            "*": "{move_button()}"
+          }
+        },
+        {
+          "id": "last_edit",
+          "labels": [
+            "added_by_default"
+          ],
+          "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+          "condition": {
+            "and": [
+              "_last_edit:contributor~*",
+              "_last_edit:changeset~*"
+            ]
+          },
+          "metacondition": {
+            "or": [
+              "__featureSwitchIsTesting=true",
+              "__featureSwitchIsDebugging=true",
+              "mapcomplete-show_debug=yes",
+              "_csCount>=10"
+            ]
+          },
+          "render": {
+            "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+          }
+        },
+        {
+          "id": "favourite_status",
+          "render": {
+            "*": "{favourite_status()}"
+          }
+        },
+        {
+          "id": "qr_code",
+          "labels": [
+            "added_by_default"
+          ],
+          "classes": "flex items-center gap-x-2",
+          "render": {
+            "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+            "en": "{qr_code()}Scan this code to open this location on another device",
+            "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+            "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+          }
+        },
+        {
+          "id": "share",
+          "labels": [
+            "added_by_default"
+          ],
+          "metacondition": "_supports_sharing=yes",
+          "render": {
+            "de": "{share_link(,Standort teilen)}",
+            "en": "{share_link(,Share this location)}",
+            "nl": "{share_link(,Deel deze locatie)}"
+          }
+        },
+        {
+          "id": "all-tags",
+          "render": {
+            "*": "{all_tags()}"
+          },
+          "metacondition": {
+            "or": [
+              "__featureSwitchIsDebugging=true",
+              "mapcomplete-show_tags=full",
+              "mapcomplete-show_debug=yes"
+            ]
+          }
+        }
+      ],
+      "allowMove": {
+        "enableImproveAccuracy": true,
+        "enableRelocation": true
+      },
+      "titleIcons": [
+        {
+          "id": "wikipedialink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+          "condition": {
+            "or": [
+              "wikipedia~*",
+              "wikidata~*"
+            ]
+          },
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "wikipedia=",
+              "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+            }
+          ]
+        },
+        {
+          "id": "open_until",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "#": "Titleicon showing e.g. 'open until 17:00'",
+          "icon": {
+            "class": "w-20 mx-1 flex items-center"
+          },
+          "render": "{opening_hours_state()}",
+          "condition": {
+            "or": [
+              "opening_hours~*",
+              {
+                "or": [
+                  {
+                    "and": [
+                      "seasonal~.*winter.*",
+                      "_now:date~....-(12|01|02)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*spring.*",
+                      "_now:date~....-(03|04|05)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*summer.*",
+                      "_now:date~....-(06|07|08)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*autumn.*",
+                      "_now:date~....-(09|10|11)-.."
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "phonelink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.render"
+          },
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "contact:phone~*",
+              "then": {
+                "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+                "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+                "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+                "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+              }
+            }
+          ],
+          "condition": {
+            "or": [
+              "phone~*",
+              "contact:phone~*"
+            ]
+          }
+        },
+        {
+          "id": "emaillink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "contact:email~*",
+              "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "operator:email~*",
+              "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+            }
+          ],
+          "condition": {
+            "or": [
+              "email~*",
+              "contact:email~*",
+              "operator:email~*"
+            ]
+          }
+        },
+        {
+          "id": "websitelink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "website~*",
+              "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "operator:website~*",
+              "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "context:website~*",
+              "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            }
+          ]
+        },
+        {
+          "id": "smokingicon",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "smoking=no",
+              "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "smoking=yes",
+              "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+            }
+          ]
+        },
+        {
+          "id": "dogicon",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "if": "dog=no",
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+            },
+            {
+              "if": "dog=leashed",
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+            },
+            {
+              "if": {
+                "or": [
+                  "dog=yes",
+                  "dog=unleashed"
+                ]
+              },
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+            }
+          ]
+        },
+        {
+          "id": "sharelink",
+          "labels": [
+            "defaults"
+          ],
+          "render": "{share_link()}",
+          "metacondition": "_supports_sharing=yes"
+        },
+        {
+          "id": "favourite_title_icon",
+          "labels": [
+            "defaults"
+          ],
+          "render": {
+            "*": "{favourite_icon()}"
+          },
+          "metacondition": "_loggedIn=true"
+        },
+        {
+          "id": "osmlink",
+          "labels": [
+            "defaults"
+          ],
+          "render": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.render"
+          },
+          "mappings": [
+            {
+              "if": "id~.*/-.*",
+              "then": ""
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "_backend~*",
+              "then": {
+                "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+                "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+                "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+                "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+              }
+            }
+          ],
+          "condition": "id~(node|way|relation)/[0-9]*"
+        },
+        {
+          "id": "direction",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "{direction_indicator()}"
+        },
+        {
+          "id": "rating",
+          "icon": {
+            "class": "w-20 mx-1 flex items-center"
+          },
+          "render": "{rating()}"
+        }
+      ],
+      "_layerIcon": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/hotel/hotel.svg"
+        }
+      ]
+    },
+    {
+      "id": "love_hotel",
+      "name": {
+        "en": "Love hotels",
+        "de": "Love Hotels"
+      },
+      "description": {
+        "en": "A love hotel is a type of short-stay hotel found around the world operated primarily for the purpose of allowing guests privacy for sexual activities",
+        "de": "Ein Love Hotel ist eine Art Kurzzeithotel, das in erster Linie zu dem Zweck betrieben wird, den Gästen Privatsphäre für sexuelle Aktivitäten zu bieten"
+      },
+      "enableMorePrivacy": true,
+      "source": {
+        "osmTags": {
+          "and": [
+            "amenity=love_hotel"
+          ]
+        }
+      },
+      "minzoom": 18,
+      "title": {
+        "render": {
+          "en": "Love Hotel <i>{name}</i>",
+          "de": "Love Hotel <i>{name}</i>"
+        }
+      },
+      "pointRendering": [
+        {
+          "location": [
+            "point",
+            "centroid"
+          ],
+          "marker": [
+            {
+              "icon": {
+                "render": "circle",
+                "id": "circle"
+              },
+              "color": "white"
+            },
+            {
+              "icon": {
+                "render": "ring",
+                "id": "ring"
+              },
+              "color": "blue"
+            }
+          ],
+          "iconBadges": [
+            {
+              "if": "_favourite=yes",
+              "then": {
+                "render": "circle:white;heart:red",
+                "id": "circlewhiteheartred"
+              }
+            }
+          ]
+        },
+        {
+          "location": [
+            "point",
+            "centroid"
+          ],
+          "marker": [
+            {
+              "icon": {
+                "render": "./assets/layers/hotel/hotel.svg",
+                "id": "assetslayershotelhotelsvg"
+              }
+            }
+          ],
+          "iconSize": "27,27"
+        }
+      ],
+      "lineRendering": [],
+      "presets": [
+        {
+          "title": {
+            "en": "a love hotel",
+            "de": "ein Love Hotel"
+          },
+          "description": {
+            "en": "A love hotel is a type of short-stay hotel found around the world operated primarily for the purpose of allowing guests privacy for sexual activities.",
+            "de": "Ein Love Hotel ist eine Art Kurzzeithotel, das in erster Linie zu dem Zweck betrieben wird, den Gästen Privatsphäre für sexuelle Aktivitäten zu bieten"
+          },
+          "tags": [
+            "amenity=love_hotel"
+          ]
+        }
+      ],
+      "tagRenderings": [
+        {
+          "id": "just_created",
+          "labels": [
+            "added_by_default"
+          ],
+          "description": "This element shows a 'thank you' that the contributor has recently created this element",
+          "classes": "rounded-xl thanks",
+          "mappings": [
+            {
+              "if": "id~*",
+              "icon": "./assets/svg/party.svg",
+              "then": {
+                "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+                "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+                "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+                "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+                "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+                "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+              }
+            }
+          ],
+          "condition": {
+            "and": [
+              "_backend~*",
+              "_last_edit:passed_time<300",
+              {
+                "or": [
+                  "_version_number=",
+                  "_version_number=1"
+                ]
+              }
+            ]
+          },
+          "metacondition": {
+            "and": [
+              {
+                "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+                "or": [
+                  "_last_edit:contributor:uid:={_uid}",
+                  "_last_edit:contributor:uid="
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "images",
+          "description": "This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images",
+          "render": {
+            "*": "{image_carousel()}{image_upload()}{nearby_images():my-4}"
+          },
+          "classes": "my-4"
+        },
+        {
+          "id": "reviews",
+          "description": "Shows the reviews module (including the possibility to leave a review)",
+          "render": {
+            "*": "{create_review()}{list_reviews()}"
+          }
+        },
+        {
+          "id": "name",
+          "question": {
+            "en": "What is the name of this love hotel?",
+            "de": "Wie lautet der Name des Love Hotels?"
+          },
+          "render": {
+            "en": "This love hotel is named <b>{name}</b>",
+            "de": "Der Name des Love Hotels lautet <b>{name}</b>"
+          },
+          "freeform": {
+            "key": "name",
+            "inline": true
+          }
+        },
+        {
+          "id": "phone",
+          "labels": [
+            "contact"
+          ],
+          "question": {
+            "en": "What is the phone number of {title()}?",
+            "nl": "Wat is het telefoonnummer van {title()}?",
+            "fr": "Quel est le numéro de téléphone de {title()} ?",
+            "de": "Wie lautet die Telefonnummer von {title()}?",
+            "nb_NO": "Hva er telefonnummeret til {title()}?",
+            "ru": "Какой номер телефона у {title()}?",
+            "sv": "Vad är telefonnumret till {title()}?",
+            "zh_Hant": "{title()} 的電話號碼是什麼？",
+            "it": "Qual è il numero di telefono di {title()}?",
+            "pt_BR": "Qual o número de telefone de {title()}?",
+            "id": "Berapa nomor telepon dari {title()}?",
+            "pl": "Jaki jest numer telefonu do {title()}?",
+            "pt": "Qual é o número de telefone de {title()}?",
+            "eo": "Kio estas la telefonnumero de {title()}?",
+            "hu": "Mi a telefonszáma ennek: {title()}?",
+            "ca": "Quin és el telèfon de {title()}?",
+            "ja": "{title()}の電話番号は？",
+            "sl": "Kakšno telefonsko številko ima {title()}?",
+            "fil": "Ano ang telepono ng {title()}?",
+            "es": "¿Cuál es el número de teléfono de {title()}?",
+            "zh_Hans": "{title()} 的电话号码为何？",
+            "da": "Hvad er telefonnummeret til {title()}?",
+            "cs": "Jaké je telefonní číslo {title()}?"
+          },
+          "render": {
+            "*": "<a href='tel:{phone}'>{phone}</a>"
+          },
+          "icon": "./assets/layers/questions/phone.svg",
+          "mappings": [
+            {
+              "if": "contact:phone~*",
+              "then": "<a href='tel:{contact:phone}'>{contact:phone}</a>",
+              "hideInAnswer": true,
+              "icon": "./assets/layers/questions/phone.svg"
+            }
+          ],
+          "freeform": {
+            "key": "phone",
+            "type": "phone",
+            "addExtraTags": [
+              "contact:phone="
+            ]
+          },
+          "editButtonAriaLabel": {
+            "en": "Edit phone number",
+            "nl": "Pas telefoonnummer aan",
+            "de": "Telefonnummer bearbeiten"
+          }
+        },
+        {
+          "id": "email",
+          "render": {
+            "*": "<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>"
+          },
+          "icon": "./assets/svg/envelope.svg",
+          "labels": [
+            "contact"
+          ],
+          "question": {
+            "nl": "Wat is het e-mailadres van {title()}?",
+            "fr": "Quelle est l'adresse courriel de {title()} ?",
+            "en": "What is the email address of {title()}?",
+            "nb_NO": "Hva er e-postadressen til {title()}?",
+            "ru": "Какой адрес электронной почты у {title()}?",
+            "id": "Apa alamat surel dari {title()}?",
+            "zh_Hant": "{title()} 的電子郵件地址是什麼？",
+            "it": "Qual è l'indirizzo email di {title()}?",
+            "de": "Wie lautet die Mail-Adresse von {title()}?",
+            "pt_BR": "Qual o endereço de e-mail de {title()}?",
+            "pl": "Jaki jest adres e-mail do {title()}?",
+            "sv": "Vad är e-postadressen till {title()}?",
+            "pt": "Qual é o endereço de e-mail de {title()}?",
+            "eo": "Kio estas la retpoŝta adreso de {title()}?",
+            "hu": "Mi a(z) {title()} e-mail címe?",
+            "ca": "Quina és l'adreça de correu electrònic de {title()}?",
+            "ja": "{title()}のEメールアドレスは何ですか？",
+            "sl": "Kakšen naslov elektronske pošte ima {title()}?",
+            "fil": "Ano ang email address ng {title()}?",
+            "es": "¿Cuál es la dirección de correo electrónico de {title()}?",
+            "zh_Hans": "{title()} 的电子邮箱地址为何？",
+            "da": "Hvad er mailadressen på {title()}?",
+            "cs": "Jaká je e-mailová adresa {title()}?"
+          },
+          "mappings": [
+            {
+              "if": "contact:email~*",
+              "icon": "./assets/svg/envelope.svg",
+              "then": "<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>",
+              "hideInAnswer": true
+            },
+            {
+              "if": "operator:email~*",
+              "icon": "./assets/svg/envelope.svg",
+              "then": "<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>",
+              "hideInAnswer": true
+            }
+          ],
+          "freeform": {
+            "key": "email",
+            "type": "email",
+            "addExtraTags": [
+              "contact:email="
+            ]
+          },
+          "editButtonAriaLabel": {
+            "en": "Edit email address",
+            "nl": "Pas emailadres aan",
+            "de": "E-Mail Adresse bearbeiten"
+          }
+        },
+        {
+          "id": "website",
+          "labels": [
+            "contact"
+          ],
+          "icon": "./assets/layers/icons/website.svg",
+          "question": {
+            "en": "What is the website of {title()}?",
+            "nl": "Wat is de website van {title()}?",
+            "fr": "Quel est le site web de {title()} ?",
+            "gl": "Cal é a páxina web de {title()}?",
+            "nb_NO": "Hva er nettsiden til {title()}?",
+            "ru": "Какой сайт у {title()}?",
+            "id": "Apa situs web dari {title()}?",
+            "zh_Hant": "{title()} 網址是什麼？",
+            "it": "Qual è il sito web di {title()}?",
+            "de": "Wie lautet die Webseite von {title()}?",
+            "pt_BR": "Qual o site de {title()}?",
+            "pl": "Jaka jest strona internetowa {title()}?",
+            "sv": "Vad är webbplatsen för {title()}?",
+            "pt": "Qual é o sítio web de {title()}?",
+            "eo": "Kie estas la retejo de {title()}?",
+            "hu": "Mi a weboldala ennek: {title()}?",
+            "ca": "Quina és la web de {title()}?",
+            "ja": "{title()}のウェブサイトは？",
+            "fil": "Ano ang website ng {title()}?",
+            "es": "¿Cual es el sitio web de {title()}?",
+            "zh_Hans": "{title()} 的网站为何？",
+            "da": "Hvad er webstedet for {title()}?",
+            "cs": "Jaká je webová stránka {title()}?"
+          },
+          "render": {
+            "*": "<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>"
+          },
+          "freeform": {
+            "key": "website",
+            "type": "url",
+            "addExtraTags": [
+              "contact:website="
+            ]
+          },
+          "mappings": [
+            {
+              "if": "contact:website~*",
+              "then": "<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>",
+              "hideInAnswer": true,
+              "icon": "./assets/layers/icons/website.svg"
+            }
+          ],
+          "editButtonAriaLabel": {
+            "en": "Edit website",
+            "nl": "Pas website aan",
+            "de": "Webseite bearbeiten"
+          }
+        },
+        {
+          "id": "leftover-questions",
+          "render": {
+            "*": "{questions( ,)}"
+          }
+        },
+        {
+          "id": "lod",
+          "labels": [
+            "added_by_default"
+          ],
+          "render": {
+            "*": "{linked_data_from_website()}"
+          }
+        },
+        {
+          "id": "minimap",
+          "description": "Shows a small map with the feature. Added by default to every popup",
+          "render": {
+            "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+          }
+        },
+        {
+          "id": "last_edit",
+          "labels": [
+            "added_by_default"
+          ],
+          "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+          "condition": {
+            "and": [
+              "_last_edit:contributor~*",
+              "_last_edit:changeset~*"
+            ]
+          },
+          "metacondition": {
+            "or": [
+              "__featureSwitchIsTesting=true",
+              "__featureSwitchIsDebugging=true",
+              "mapcomplete-show_debug=yes",
+              "_csCount>=10"
+            ]
+          },
+          "render": {
+            "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+          }
+        },
+        {
+          "id": "favourite_status",
+          "render": {
+            "*": "{favourite_status()}"
+          }
+        },
+        {
+          "id": "qr_code",
+          "labels": [
+            "added_by_default"
+          ],
+          "classes": "flex items-center gap-x-2",
+          "render": {
+            "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+            "en": "{qr_code()}Scan this code to open this location on another device",
+            "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+            "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+          }
+        },
+        {
+          "id": "share",
+          "labels": [
+            "added_by_default"
+          ],
+          "metacondition": "_supports_sharing=yes",
+          "render": {
+            "de": "{share_link(,Standort teilen)}",
+            "en": "{share_link(,Share this location)}",
+            "nl": "{share_link(,Deel deze locatie)}"
+          }
+        },
+        {
+          "id": "all-tags",
+          "render": {
+            "*": "{all_tags()}"
+          },
+          "metacondition": {
+            "or": [
+              "__featureSwitchIsDebugging=true",
+              "mapcomplete-show_tags=full",
+              "mapcomplete-show_debug=yes"
+            ]
+          }
+        }
+      ],
+      "credits": "Asteliks",
+      "titleIcons": [
+        {
+          "id": "wikipedialink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+          "condition": {
+            "or": [
+              "wikipedia~*",
+              "wikidata~*"
+            ]
+          },
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "wikipedia=",
+              "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+            }
+          ]
+        },
+        {
+          "id": "open_until",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "#": "Titleicon showing e.g. 'open until 17:00'",
+          "icon": {
+            "class": "w-20 mx-1 flex items-center"
+          },
+          "render": "{opening_hours_state()}",
+          "condition": {
+            "or": [
+              "opening_hours~*",
+              {
+                "or": [
+                  {
+                    "and": [
+                      "seasonal~.*winter.*",
+                      "_now:date~....-(12|01|02)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*spring.*",
+                      "_now:date~....-(03|04|05)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*summer.*",
+                      "_now:date~....-(06|07|08)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*autumn.*",
+                      "_now:date~....-(09|10|11)-.."
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "phonelink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.render"
+          },
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "contact:phone~*",
+              "then": {
+                "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+                "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+                "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+                "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+              }
+            }
+          ],
+          "condition": {
+            "or": [
+              "phone~*",
+              "contact:phone~*"
+            ]
+          }
+        },
+        {
+          "id": "emaillink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "contact:email~*",
+              "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "operator:email~*",
+              "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+            }
+          ],
+          "condition": {
+            "or": [
+              "email~*",
+              "contact:email~*",
+              "operator:email~*"
+            ]
+          }
+        },
+        {
+          "id": "websitelink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "website~*",
+              "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "operator:website~*",
+              "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "context:website~*",
+              "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            }
+          ]
+        },
+        {
+          "id": "smokingicon",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "smoking=no",
+              "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "smoking=yes",
+              "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+            }
+          ]
+        },
+        {
+          "id": "dogicon",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "if": "dog=no",
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+            },
+            {
+              "if": "dog=leashed",
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+            },
+            {
+              "if": {
+                "or": [
+                  "dog=yes",
+                  "dog=unleashed"
+                ]
+              },
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+            }
+          ]
+        },
+        {
+          "id": "sharelink",
+          "labels": [
+            "defaults"
+          ],
+          "render": "{share_link()}",
+          "metacondition": "_supports_sharing=yes"
+        },
+        {
+          "id": "favourite_title_icon",
+          "labels": [
+            "defaults"
+          ],
+          "render": {
+            "*": "{favourite_icon()}"
+          },
+          "metacondition": "_loggedIn=true"
+        },
+        {
+          "id": "osmlink",
+          "labels": [
+            "defaults"
+          ],
+          "render": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.render"
+          },
+          "mappings": [
+            {
+              "if": "id~.*/-.*",
+              "then": ""
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "_backend~*",
+              "then": {
+                "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+                "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+                "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+                "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+              }
+            }
+          ],
+          "condition": "id~(node|way|relation)/[0-9]*"
+        },
+        {
+          "id": "direction",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "{direction_indicator()}"
+        },
+        {
+          "id": "rating",
+          "icon": {
+            "class": "w-20 mx-1 flex items-center"
+          },
+          "render": "{rating()}"
+        }
+      ],
+      "_layerIcon": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "ring",
+          "color": "blue"
+        }
+      ],
+      "_basedOn": "love_hotel"
+    },
+    {
+      "id": "note_import_hotel",
+      "description": {
+        "ca": "Una capa que importa entrades per a Hotel",
+        "cs": "Vrstva, která importuje položky pro Hotel",
+        "da": "Et lag som importerer poster for Hotel",
+        "de": "Eine Ebene, die Einträge für Hotel importiert",
+        "en": "A layer which imports entries for Hotel",
+        "es": "Una capa que importar entradas para Hotel",
+        "nl": "Deze laag toont kaart-nota's die wijzen op een Hotel",
+        "pl": "Warstwa importująca wpisy dla Hotel",
+        "zh_Hant": "能夠為 Hotel 匯入項目的圖層",
+        "_context": "core:importLayer.description"
+      },
+      "source": {
+        "osmTags": {
+          "and": [
+            "id~[0-9]+",
+            "comment_url~.*notes/[0-9]*/comment.json"
+          ]
+        },
+        "geoJson": "https://api.openstreetmap.org/api/0.6/notes.json?limit=10000&closed=0&bbox={x_min},{y_min},{x_max},{y_max}",
+        "geoJsonZoomLevel": 10
+      },
+      "passAllFeatures": true,
+      "minzoom": 11,
+      "title": {
+        "render": {
+          "ca": "Pot ser que hi hagi un hotel aquí",
+          "cs": "Zde by mohl být hotel",
+          "da": "Mulig a hotel",
+          "de": "Möglicherweise gibt es hier ein Hotel",
+          "en": "There might be a hotel here",
+          "es": "Puede haber a hotel aquí",
+          "fi": "Tässä on ehkä a hotel",
+          "nb_NO": "Det kan være a hotel her",
+          "nl": "Is hier een hotel?",
+          "pl": "Tutaj może znajdować się a hotel",
+          "zh_Hant": "這裡可能有 a hotel",
+          "_context": "core:importLayer.popupTitle"
+        }
+      },
+      "calculatedTags": [
+        "_first_comment=get(feat)('comments')[0].text.toLowerCase()",
+        "_trigger_index=(() => {const lines = feat.properties['_first_comment'].split('\\n'); const matchesMapCompleteURL = lines.map(l => l.match(\".*https://mapcomplete.\\(org|osm.be\\)/\\([a-zA-Z_-]+\\)\\(.html\\)?.*#import\")); const matchedIndexes = matchesMapCompleteURL.map((doesMatch, i) => [doesMatch !== null, i]).filter(v => v[0]).map(v => v[1]); return matchedIndexes[0] })()",
+        "_comments_count=get(feat)('comments').length",
+        "_intro=(() => {const lines = get(feat)('comments')[0].text.split('\\n'); lines.splice(get(feat)('_trigger_index')-1, lines.length); return lines.filter(l => l !== '').join('<br/>');})()",
+        "_tags=(() => {let lines = get(feat)('comments')[0].text.split('\\n').map(l => l.trim()); lines.splice(0, get(feat)('_trigger_index') + 1); lines = lines.filter(l => l != ''); return lines.join(';');})()"
+      ],
+      "isShown": {
+        "and": [
+          "_trigger_index~*",
+          {
+            "or": [
+              {
+                "and": [
+                  "_tags~(^|.*;)tourism=hotel($|;.*)"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "titleIcons": [
+        {
+          "render": "<a href='https://openstreetmap.org/note/{id}' target='_blank'><img src='./assets/svg/osm-logo-us.svg'></a>"
+        }
+      ],
+      "tagRenderings": [
+        {
+          "id": "Intro",
+          "render": "{_intro}"
+        },
+        {
+          "id": "conversation",
+          "render": "{visualize_note_comments(comments,1)}",
+          "condition": "_comments_count>1"
+        },
+        {
+          "id": "import",
+          "render": {
+            "ca": "{import_button(hotel, _tags, he trobat un un hotel aquí; afegeix-lo al mapa,./assets/svg/addSmall.svg,,,id)}",
+            "cs": "{import_button(hotel, _tags, Našel jsem hotel zde - přidejte ji do mapy,./assets/svg/addSmall.svg,,,id)}",
+            "da": "{import_button(hotel, _tags, Jeg har fundet en a hotel her - tilføj den til kortet,./assets/svg/addSmall.svg,,,id)}",
+            "de": "{import_button(hotel, _tags, Ich habe hier ein(en) ein Hotel gefunden - Zur Karte hinzufügen,./assets/svg/addSmall.svg,,,id)}",
+            "en": "{import_button(hotel, _tags, I have found a a hotel here - add it to the map,./assets/svg/addSmall.svg,,,id)}",
+            "es": "{import_button(hotel,_tags, He encontrado un(a) a hotel aquí - añádelo al mapa,./assets/svg/addSmall.svg,,,id)}",
+            "nl": "{import_button(hotel, _tags, Ik heb hier een een hotel gevonden - voeg deze toe aan de kaart...,./assets/svg/addSmall.svg,,,id)}",
+            "pl": "{import_button(hotel, _tags, odnalazłem tutaj a hotel - dodaj go do mapy,./assets/svg/addSmall.svg,,,id)}",
+            "zh_Hant": "{import_button(hotel, _tags, 我在這邊發現 a hotel - 新增到地圖,./assets/svg/addSmall.svg,,,id)}",
+            "_context": "core:importLayer.importButton"
+          },
+          "condition": "closed_at="
+        },
+        {
+          "id": "close_note_",
+          "render": {
+            "ca": "{close_note(No he pogut trobar un hotel: esborra-ho, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "cs": "{close_note(Nepodařilo se mi najít hotel - odstraňte jej, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "da": "{close_note(Jeg kunne ikke finde a hotel - fjern det, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "de": "{close_note(Ich konnte ein Hotel nicht finden - entferne es, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "en": "{close_note(I could not find a hotel - remove it, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "es": "{close_note(No he podido encontrar a hotel - eliminarlo, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "nl": "{close_note(Ik kon hier geen een hotel vinden - verwijder deze van de kaart, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "pl": "{close_note(Nie mogłem odnaleźć a hotel – usuń go, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "zh_Hant": "{close_note(我無法找到 a hotel - 移除吧, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "_context": "core:importLayer.notFound"
+          },
+          "condition": "closed_at="
+        },
+        {
+          "id": "close_note_mapped",
+          "render": {
+            "ca": "{close_note(Ja hi ha un un hotel al mapa - aquest punt és un duplicat, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "cs": "{close_note(Na mapě se již nachází hotel - tento bod je duplicitní, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "da": "{close_note(Der er allerede en anden a hotel på kortet - dette punkt er en dublet, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "de": "{close_note(Es gibt bereits einen ein Hotel auf der Karte - dieser Punkt ist ein Duplikat, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "en": "{close_note(There already is a hotel on the map - this point is a duplicate, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "es": "{close_note(a hotel ya está en el mapa - este punto es un duplicado, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "nl": "{close_note(Er staat hier reeds een hotel op de kaart; dit punt is een duplicaat. Verwijder deze van de kaart, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "pl": "{close_note(Na mapie znajduje się już a hotel - ten punkt jest duplikatem, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "zh_Hant": "{close_note(a hotel 已經在地圖上了 - 這個點重覆了, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "_context": "core:importLayer.alreadyMapped"
+          },
+          "condition": "closed_at="
+        },
+        {
+          "id": "handled",
+          "render": {
+            "ca": "<div class=\"thanks\">Aquesta funció s'ha gestionat. Gràcies pel teu esforç.</div>",
+            "cs": "<div class='thanks'>Tato funkce byla zpracována! Děkujeme za vaši snahu</div>",
+            "da": "<div class=\"thanks\">Dette element er blevet håndteret! Tak for din indsats</div>",
+            "de": "<div class=\"thanks\">Dieses Objekt wurde verarbeitet! Vielen Dank für Ihre Bemühungen</div>",
+            "en": "<div class='thanks'>This feature has been handled! Thanks for your effort</div>",
+            "nb_NO": "<div class='thanks'>Denne funksjonen har blitt håndtert. Takk for din innsats.</div>",
+            "nl": "<div class='thanks'>Dit object is afgehandeld. Bedankt om mee te helpen!</div>",
+            "pl": "<div class='thanks'>Ta funkcja została obsłużona! Dziękujemy za Twój wysiłek</div>",
+            "zh_Hant": "<div class='thanks'>這個圖徵已經處理了！謝謝你的辛勞</div>",
+            "_context": "core:importLayer.importHandled"
+          },
+          "condition": "closed_at~*"
+        },
+        {
+          "id": "comment",
+          "render": "{add_note_comment()}"
+        },
+        {
+          "id": "add_image",
+          "render": "{add_image_to_note()}"
+        },
+        {
+          "id": "nearby_images",
+          "render": {
+            "ca": "<h3>Imatges properes</h3>Les imatges següents són imatges geoetiquetades properes de diversos serveis en línia. Us poden ajudar a resoldre aquesta nota.{nearby_images(open)}",
+            "cs": "<h3>Obrázky z okolí</h3>Následující obrázky jsou geograficky označené obrázky z různých online služeb. Mohly by vám pomoci při řešení této poznámky.{nearby_images(open)}",
+            "da": "<h3>Billeder i nærheden</h3>De følgende billeder er geotaggede billeder i nærheden fra forskellige onlinetjenester. De kan måske hjælpe dig med at løse denne note.{nearby_images(open)}",
+            "de": "<h3>Bilder in der Nähe</h3>Die folgenden Bilder sind mit Geotags versehene Bilder aus verschiedenen Online-Diensten in der Nähe. Sie können helfen, diesen Hinweis zu lösen.{nearby_images(open)}",
+            "en": "<h3>Nearby pictures</h3>The following pictures are nearby geotagged pictures from various online services. They might help you to resolve this note.{nearby_images(open)}",
+            "es": "<h3>Imágenes cercanas</h3> Las siguientes imágenes son imágenes geoetiquetadas cerca de varios servicios en línea. Pueden ayudarte a resolver esta nota. {nearby_images(open)}",
+            "nl": "<h3>Afbeeldingen in de buurt</h3>De volgende afbeeldingen zijn in de buurt gemaakt en kunnen mogelijks helpen. {nearby_images(open)}",
+            "pl": "<h3>Zdjęcia w pobliżu</h3>Poniższe zdjęcia to zdjęcia pobliskich obiektów z geotagami z różnych usług internetowych. Mogą pomóc Ci rozwiązać tę uwagę.{nearby_images(open)}",
+            "zh_Hant": "<h3>附近圖片</h3>接下來的圖片是多個第三方線上服務附近有地理標籤的圖片，也許能協助你解決這個註解。{nearby_images(open)}",
+            "_context": "core:importLayer.nearbyImagesIntro"
+          }
+        },
+        {
+          "id": "all_tags",
+          "render": "{all_tags()}",
+          "metacondition": {
+            "or": [
+              "__featureSwitchIsDebugging=true",
+              "mapcomplete-show_tags=full",
+              "mapcomplete-show_debug=yes"
+            ]
+          }
+        }
+      ],
+      "pointRendering": [
+        {
+          "location": [
+            "point"
+          ],
+          "marker": [
+            {
+              "icon": "circle",
+              "color": "#fff"
+            },
+            {
+              "icon": {
+                "render": "help",
+                "mappings": [
+                  {
+                    "if": {
+                      "or": [
+                        "closed_at~*",
+                        "_imported=yes"
+                      ]
+                    },
+                    "then": "checkmark"
+                  }
+                ]
+              },
+              "color": "#00"
+            }
+          ],
+          "iconSize": "40,40",
+          "anchor": "center"
+        }
+      ]
+    },
+    {
+      "id": "note_import_love_hotel",
+      "description": {
+        "ca": "Una capa que importa entrades per a Love Hotel <i>{name}</i>",
+        "cs": "Vrstva, která importuje položky pro Love Hotel <i>{name}</i>",
+        "da": "Et lag som importerer poster for Love Hotel <i>{name}</i>",
+        "de": "Eine Ebene, die Einträge für Love Hotel <i>{name}</i> importiert",
+        "en": "A layer which imports entries for Love Hotel <i>{name}</i>",
+        "es": "Una capa que importar entradas para Love Hotel <i>{name}</i>",
+        "nl": "Deze laag toont kaart-nota's die wijzen op een Love Hotel <i>{name}</i>",
+        "pl": "Warstwa importująca wpisy dla Love Hotel <i>{name}</i>",
+        "zh_Hant": "能夠為 Love Hotel <i>{name}</i> 匯入項目的圖層",
+        "_context": "core:importLayer.description"
+      },
+      "source": {
+        "osmTags": {
+          "and": [
+            "id~[0-9]+",
+            "comment_url~.*notes/[0-9]*/comment.json"
+          ]
+        },
+        "geoJson": "https://api.openstreetmap.org/api/0.6/notes.json?limit=10000&closed=0&bbox={x_min},{y_min},{x_max},{y_max}",
+        "geoJsonZoomLevel": 10
+      },
+      "passAllFeatures": true,
+      "minzoom": 12,
+      "title": {
+        "render": {
+          "ca": "Pot ser que hi hagi a love hotel aquí",
+          "cs": "Zde by mohl být a love hotel",
+          "da": "Mulig a love hotel",
+          "de": "Möglicherweise gibt es hier ein Love Hotel",
+          "en": "There might be a love hotel here",
+          "es": "Puede haber a love hotel aquí",
+          "fi": "Tässä on ehkä a love hotel",
+          "nb_NO": "Det kan være a love hotel her",
+          "nl": "Is hier a love hotel?",
+          "pl": "Tutaj może znajdować się a love hotel",
+          "zh_Hant": "這裡可能有 a love hotel",
+          "_context": "core:importLayer.popupTitle"
+        }
+      },
+      "calculatedTags": [
+        "_first_comment=get(feat)('comments')[0].text.toLowerCase()",
+        "_trigger_index=(() => {const lines = feat.properties['_first_comment'].split('\\n'); const matchesMapCompleteURL = lines.map(l => l.match(\".*https://mapcomplete.\\(org|osm.be\\)/\\([a-zA-Z_-]+\\)\\(.html\\)?.*#import\")); const matchedIndexes = matchesMapCompleteURL.map((doesMatch, i) => [doesMatch !== null, i]).filter(v => v[0]).map(v => v[1]); return matchedIndexes[0] })()",
+        "_comments_count=get(feat)('comments').length",
+        "_intro=(() => {const lines = get(feat)('comments')[0].text.split('\\n'); lines.splice(get(feat)('_trigger_index')-1, lines.length); return lines.filter(l => l !== '').join('<br/>');})()",
+        "_tags=(() => {let lines = get(feat)('comments')[0].text.split('\\n').map(l => l.trim()); lines.splice(0, get(feat)('_trigger_index') + 1); lines = lines.filter(l => l != ''); return lines.join(';');})()"
+      ],
+      "isShown": {
+        "and": [
+          "_trigger_index~*",
+          {
+            "or": [
+              {
+                "and": [
+                  "_tags~(^|.*;)amenity=love_hotel($|;.*)"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "titleIcons": [
+        {
+          "render": "<a href='https://openstreetmap.org/note/{id}' target='_blank'><img src='./assets/svg/osm-logo-us.svg'></a>"
+        }
+      ],
+      "tagRenderings": [
+        {
+          "id": "Intro",
+          "render": "{_intro}"
+        },
+        {
+          "id": "conversation",
+          "render": "{visualize_note_comments(comments,1)}",
+          "condition": "_comments_count>1"
+        },
+        {
+          "id": "import",
+          "render": {
+            "ca": "{import_button(love_hotel, _tags, he trobat un a love hotel aquí; afegeix-lo al mapa,./assets/svg/addSmall.svg,,,id)}",
+            "cs": "{import_button(love_hotel, _tags, Našel jsem a love hotel zde - přidejte ji do mapy,./assets/svg/addSmall.svg,,,id)}",
+            "da": "{import_button(love_hotel, _tags, Jeg har fundet en a love hotel her - tilføj den til kortet,./assets/svg/addSmall.svg,,,id)}",
+            "de": "{import_button(love_hotel, _tags, Ich habe hier ein(en) ein Love Hotel gefunden - Zur Karte hinzufügen,./assets/svg/addSmall.svg,,,id)}",
+            "en": "{import_button(love_hotel, _tags, I have found a a love hotel here - add it to the map,./assets/svg/addSmall.svg,,,id)}",
+            "es": "{import_button(love_hotel,_tags, He encontrado un(a) a love hotel aquí - añádelo al mapa,./assets/svg/addSmall.svg,,,id)}",
+            "nl": "{import_button(love_hotel, _tags, Ik heb hier een a love hotel gevonden - voeg deze toe aan de kaart...,./assets/svg/addSmall.svg,,,id)}",
+            "pl": "{import_button(love_hotel, _tags, odnalazłem tutaj a love hotel - dodaj go do mapy,./assets/svg/addSmall.svg,,,id)}",
+            "zh_Hant": "{import_button(love_hotel, _tags, 我在這邊發現 a love hotel - 新增到地圖,./assets/svg/addSmall.svg,,,id)}",
+            "_context": "core:importLayer.importButton"
+          },
+          "condition": "closed_at="
+        },
+        {
+          "id": "close_note_",
+          "render": {
+            "ca": "{close_note(No he pogut trobar a love hotel: esborra-ho, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "cs": "{close_note(Nepodařilo se mi najít a love hotel - odstraňte jej, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "da": "{close_note(Jeg kunne ikke finde a love hotel - fjern det, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "de": "{close_note(Ich konnte ein Love Hotel nicht finden - entferne es, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "en": "{close_note(I could not find a love hotel - remove it, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "es": "{close_note(No he podido encontrar a love hotel - eliminarlo, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "nl": "{close_note(Ik kon hier geen a love hotel vinden - verwijder deze van de kaart, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "pl": "{close_note(Nie mogłem odnaleźć a love hotel – usuń go, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "zh_Hant": "{close_note(我無法找到 a love hotel - 移除吧, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "_context": "core:importLayer.notFound"
+          },
+          "condition": "closed_at="
+        },
+        {
+          "id": "close_note_mapped",
+          "render": {
+            "ca": "{close_note(Ja hi ha un a love hotel al mapa - aquest punt és un duplicat, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "cs": "{close_note(Na mapě se již nachází a love hotel - tento bod je duplicitní, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "da": "{close_note(Der er allerede en anden a love hotel på kortet - dette punkt er en dublet, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "de": "{close_note(Es gibt bereits einen ein Love Hotel auf der Karte - dieser Punkt ist ein Duplikat, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "en": "{close_note(There already is a love hotel on the map - this point is a duplicate, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "es": "{close_note(a love hotel ya está en el mapa - este punto es un duplicado, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "nl": "{close_note(Er staat hier reeds a love hotel op de kaart; dit punt is een duplicaat. Verwijder deze van de kaart, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "pl": "{close_note(Na mapie znajduje się już a love hotel - ten punkt jest duplikatem, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "zh_Hant": "{close_note(a love hotel 已經在地圖上了 - 這個點重覆了, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "_context": "core:importLayer.alreadyMapped"
+          },
+          "condition": "closed_at="
+        },
+        {
+          "id": "handled",
+          "render": {
+            "ca": "<div class=\"thanks\">Aquesta funció s'ha gestionat. Gràcies pel teu esforç.</div>",
+            "cs": "<div class='thanks'>Tato funkce byla zpracována! Děkujeme za vaši snahu</div>",
+            "da": "<div class=\"thanks\">Dette element er blevet håndteret! Tak for din indsats</div>",
+            "de": "<div class=\"thanks\">Dieses Objekt wurde verarbeitet! Vielen Dank für Ihre Bemühungen</div>",
+            "en": "<div class='thanks'>This feature has been handled! Thanks for your effort</div>",
+            "nb_NO": "<div class='thanks'>Denne funksjonen har blitt håndtert. Takk for din innsats.</div>",
+            "nl": "<div class='thanks'>Dit object is afgehandeld. Bedankt om mee te helpen!</div>",
+            "pl": "<div class='thanks'>Ta funkcja została obsłużona! Dziękujemy za Twój wysiłek</div>",
+            "zh_Hant": "<div class='thanks'>這個圖徵已經處理了！謝謝你的辛勞</div>",
+            "_context": "core:importLayer.importHandled"
+          },
+          "condition": "closed_at~*"
+        },
+        {
+          "id": "comment",
+          "render": "{add_note_comment()}"
+        },
+        {
+          "id": "add_image",
+          "render": "{add_image_to_note()}"
+        },
+        {
+          "id": "nearby_images",
+          "render": {
+            "ca": "<h3>Imatges properes</h3>Les imatges següents són imatges geoetiquetades properes de diversos serveis en línia. Us poden ajudar a resoldre aquesta nota.{nearby_images(open)}",
+            "cs": "<h3>Obrázky z okolí</h3>Následující obrázky jsou geograficky označené obrázky z různých online služeb. Mohly by vám pomoci při řešení této poznámky.{nearby_images(open)}",
+            "da": "<h3>Billeder i nærheden</h3>De følgende billeder er geotaggede billeder i nærheden fra forskellige onlinetjenester. De kan måske hjælpe dig med at løse denne note.{nearby_images(open)}",
+            "de": "<h3>Bilder in der Nähe</h3>Die folgenden Bilder sind mit Geotags versehene Bilder aus verschiedenen Online-Diensten in der Nähe. Sie können helfen, diesen Hinweis zu lösen.{nearby_images(open)}",
+            "en": "<h3>Nearby pictures</h3>The following pictures are nearby geotagged pictures from various online services. They might help you to resolve this note.{nearby_images(open)}",
+            "es": "<h3>Imágenes cercanas</h3> Las siguientes imágenes son imágenes geoetiquetadas cerca de varios servicios en línea. Pueden ayudarte a resolver esta nota. {nearby_images(open)}",
+            "nl": "<h3>Afbeeldingen in de buurt</h3>De volgende afbeeldingen zijn in de buurt gemaakt en kunnen mogelijks helpen. {nearby_images(open)}",
+            "pl": "<h3>Zdjęcia w pobliżu</h3>Poniższe zdjęcia to zdjęcia pobliskich obiektów z geotagami z różnych usług internetowych. Mogą pomóc Ci rozwiązać tę uwagę.{nearby_images(open)}",
+            "zh_Hant": "<h3>附近圖片</h3>接下來的圖片是多個第三方線上服務附近有地理標籤的圖片，也許能協助你解決這個註解。{nearby_images(open)}",
+            "_context": "core:importLayer.nearbyImagesIntro"
+          }
+        },
+        {
+          "id": "all_tags",
+          "render": "{all_tags()}",
+          "metacondition": {
+            "or": [
+              "__featureSwitchIsDebugging=true",
+              "mapcomplete-show_tags=full",
+              "mapcomplete-show_debug=yes"
+            ]
+          }
+        }
+      ],
+      "pointRendering": [
+        {
+          "location": [
+            "point"
+          ],
+          "marker": [
+            {
+              "icon": "circle",
+              "color": "#fff"
+            },
+            {
+              "icon": {
+                "render": "help",
+                "mappings": [
+                  {
+                    "if": {
+                      "or": [
+                        "closed_at~*",
+                        "_imported=yes"
+                      ]
+                    },
+                    "then": "checkmark"
+                  }
+                ]
+              },
+              "color": "#00"
+            }
+          ],
+          "iconSize": "40,40",
+          "anchor": "center"
+        }
+      ]
+    }
+  ],
+  "socialImage": "assets/SocialImage.png"
+}

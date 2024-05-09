@@ -1,0 +1,1692 @@
+{
+  "id": "bicycle_rental",
+  "name": {
+    "en": "Bicycle rental",
+    "nl": "Fietsverhuur",
+    "fr": "Location de vélo",
+    "de": "Fahrradverleihstationen",
+    "da": "Cykeludlejning",
+    "es": "Alquiler de bicicletas",
+    "cs": "Půjčovna kol",
+    "ca": "Lloguer de bicicletes",
+    "pt_BR": "Aluguel de bicicletas",
+    "pt": "Aluguel de bicicletas"
+  },
+  "description": {
+    "en": "Bicycle rental stations",
+    "nl": "Fietsverhuurstations",
+    "fr": "Stations de location de vélo",
+    "de": "Fahrradverleihstationen",
+    "es": "Estaciones de alquiler de bicicletas",
+    "da": "Stationer til udlejning af cykler",
+    "cs": "Půjčovny jízdních kol",
+    "ca": "Estacions de lloguer de bicicletes",
+    "pl": "Stacje wypożyczania rowerów",
+    "pt_BR": "Estações de aluguel de bicicletas",
+    "pt": "Estações de aluguel de bicicletas"
+  },
+  "source": {
+    "osmTags": {
+      "and": [
+        {
+          "or": [
+            "amenity=bicycle_rental",
+            "bicycle_rental~*",
+            "service:bicycle:rental=yes",
+            "rental~.*bicycle.*"
+          ]
+        }
+      ]
+    }
+  },
+  "minzoom": 12,
+  "title": {
+    "render": {
+      "en": "Bicycle rental",
+      "nl": "Fietsverhuur",
+      "es": "Alquiler de bicicletas",
+      "de": "Fahrradverleih",
+      "da": "Cykeludlejning",
+      "fr": "Location de vélo",
+      "cs": "Půjčovna kol",
+      "ca": "Lloguer de bicicletes",
+      "pl": "Wypożyczalnia rowerów",
+      "pt_BR": "Aluguel de bicicleta",
+      "pt": "Aluguel de bicicleta"
+    },
+    "mappings": [
+      {
+        "if": {
+          "and": [
+            "name~*"
+          ]
+        },
+        "then": {
+          "en": "{name}",
+          "nl": "{name}",
+          "ca": "{name}",
+          "de": "{name}",
+          "es": "{name}",
+          "da": "{name}",
+          "fr": "{name}",
+          "cs": "{name}",
+          "eu": "{name}",
+          "pl": "{name}",
+          "pt_BR": "{name}",
+          "pt": "{name}"
+        }
+      }
+    ]
+  },
+  "pointRendering": [
+    {
+      "iconSize": "40,40",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": {
+            "render": "./assets/themes/bicycle_rental/logo.svg",
+            "id": "assetsthemesbicyclerentallogosvg"
+          }
+        }
+      ],
+      "iconBadges": [
+        {
+          "if": "_favourite=yes",
+          "then": "circle:white;heart:red"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#3333aa88",
+      "width": "2"
+    }
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "a bicycle rental shop",
+        "nl": "een fietsverhuurzaak",
+        "fr": "un magasin de location de vélos",
+        "de": "ein Geschäft mit Fahrradverleih",
+        "es": "una tienda de alquiler de bicicletas",
+        "da": "en cykeludlejningsforretning",
+        "cs": "půjčovna jízdních kol",
+        "ca": "una botiga de lloguer de bicicletes",
+        "pt_BR": "uma loja de aluguel de bicicletas",
+        "pt": "uma loja de aluguel de bicicletas"
+      },
+      "tags": [
+        "amenity=bicycle_rental",
+        "bicycle_rental=shop"
+      ],
+      "description": {
+        "en": "A manned shop which focuses on bicycle rental",
+        "nl": "Een bemande winkel die focust op fietsverhuur",
+        "fr": "Un magasin qui priorise la location de vélos",
+        "de": "Ein Geschäft, das sich auf den Fahrradverleih konzentriert",
+        "da": "En bemandet butik, der fokuserer på cykeludlejning",
+        "es": "Una tienda atendida que se centra en el alquiler de bicicletas",
+        "cs": "Obsluhovaný obchod zaměřený na půjčování jízdních kol",
+        "ca": "Una botiga atesa que es centra en el lloguer de bicicletes",
+        "pt_BR": "Uma loja com atendimento pessoal que foca no aluguel de bicicletas",
+        "pt": "Uma loja com atendimento pessoal que foca no aluguel de bicicletas"
+      }
+    },
+    {
+      "title": {
+        "en": "a bicycle rental",
+        "nl": "een fietsverhuur",
+        "de": "eine Fahrradleihstation",
+        "da": "cykeludlejning",
+        "es": "un alquiler de bicicletas",
+        "fr": "une location de vélos",
+        "cs": "půjčovna kol",
+        "ca": "un lloguer de bicicletes",
+        "pt_BR": "um aluguel de bicicletas",
+        "pt": "um aluguel de bicicletas"
+      },
+      "tags": [
+        "amenity=bicycle_rental"
+      ]
+    }
+  ],
+  "tagRenderings": [
+    {
+      "id": "just_created",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "This element shows a 'thank you' that the contributor has recently created this element",
+      "classes": "rounded-xl thanks",
+      "mappings": [
+        {
+          "if": "id~*",
+          "icon": "./assets/svg/party.svg",
+          "then": {
+            "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+            "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+            "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+            "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+            "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+            "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+          }
+        }
+      ],
+      "condition": {
+        "and": [
+          "_backend~*",
+          "_last_edit:passed_time<300",
+          {
+            "or": [
+              "_version_number=",
+              "_version_number=1"
+            ]
+          }
+        ]
+      },
+      "metacondition": {
+        "and": [
+          {
+            "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+            "or": [
+              "_last_edit:contributor:uid:={_uid}",
+              "_last_edit:contributor:uid="
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "images",
+      "description": "This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images",
+      "render": {
+        "*": "{image_carousel()}{image_upload()}{nearby_images():my-4}"
+      },
+      "classes": "my-4"
+    },
+    {
+      "id": "bicycle_rental_type",
+      "question": {
+        "en": "What kind of bicycle rental is this?",
+        "nl": "Wat voor fietsverhuur is dit?",
+        "de": "Was ist das für ein Fahrradverleih?",
+        "es": "¿Qué tipo de alquiler de bicicletas es este?",
+        "da": "Hvilken slags cykeludlejning er dette?",
+        "fr": "De quel type de location de vélo s'agit-il ?",
+        "cs": "O jakou půjčovnu jízdních kol se jedná?",
+        "ca": "Quin tipus de lloguer de bicicletes és aquest?",
+        "pt_BR": "Qual tipo de aluguel de bicicletas é esse?",
+        "pt": "Qual tipo de aluguel de bicicletas é este?"
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "shop=rental",
+              "bicycle_rental=shop"
+            ]
+          },
+          "then": {
+            "en": "This is a shop whose main focus is bicycle rental",
+            "nl": "Dit is een zaak die focust op fietsverhuur",
+            "de": "Dies ist ein Geschäft, dessen Schwerpunkt auf dem Fahrradverleih liegt",
+            "es": "Esta es una tienda que se centra en el alquiler de bicicletas",
+            "da": "Dette er en butik, hvis hovedfokus er cykeludlejning",
+            "fr": "C'est un magasin dont l'activité principale est la location de vélo",
+            "cs": "Jedná se o obchod, jehož hlavním zaměřením je půjčování jízdních kol",
+            "ca": "Es tracta d'una botiga que té com a objectiu principal el lloguer de bicicletes",
+            "pt_BR": "Essa é uma loja cujo foco principal é o aluguel de bicicletas",
+            "pt": "Esta é uma loja cujo foco principal é o aluguel de bicicletas"
+          }
+        },
+        {
+          "if": "shop=rental",
+          "then": {
+            "en": "This is a rental business which rents out various objects and/or vehicles. It rents out bicycles too, but this is not the main focus",
+            "nl": "Dit is een zaak die verschillende voorwerpen en/of voertuigen verhuurt, waaronder ook fietsen; al zijn fietsen niet de hoofdfocus",
+            "de": "Dies ist ein Geschäft, das verschiedene Gegenstände und/oder Fahrzeuge vermietet. Es vermietet auch Fahrräder, aber das ist nicht der Hauptschwerpunkt",
+            "es": "Se trata de una empresa de alquiler que alquila diversos objetos y/o vehículos. También alquila bicicletas, pero este no es el objetivo principal",
+            "da": "Dette er en udlejningsvirksomhed, som udlejer forskellige genstande og/eller køretøjer. Den udlejer også cykler, men det er ikke det primære fokus",
+            "fr": "C'est une agence louant diverses choses et/ou voitures. Elle loue également des vélos, mais ce n'est pas sa principale activité",
+            "cs": "Jedná se o půjčovnu, která pronajímá různé předměty a/nebo vozidla. Pronajímá také jízdní kola, ale to není hlavní náplní",
+            "ca": "Es tracta d'una empresa de lloguer que lloga diversos objectes i/o vehicles. També lloga bicicletes, però aquest no és l'objectiu principal",
+            "pt_BR": "Esse é um negócio de aluguel que aluga variados objetos e/ou veículos. Eles também alugam bicicletas, mas esse não é o foco principal",
+            "pt": "Esse é um negócio de aluguel que aluga variados objetos e/ou veículos. Eles também alugam bicicletas, mas esse não é o foco principal"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "service:bicycle:rental=yes",
+              "shop=bicycle"
+            ]
+          },
+          "then": {
+            "en": "This is a shop which sells or repairs bicycles, but also rents out bicycles",
+            "nl": "Dit is een fietsenmaker of fietswinkel die ook fietsen verhuurt",
+            "de": "Dies ist ein Geschäft, das Fahrräder verkauft oder repariert, aber auch Fahrräder vermietet",
+            "es": "Esta es una tienda que vende o alquila bicicletas, pero también las alquila",
+            "da": "Dette er en butik, der sælger eller reparerer cykler, men som også udlejer cykler",
+            "fr": "C'est un magasin qui vend ou répare des vélos mais peut également en louer",
+            "cs": "Jedná se o prodejnu, která prodává nebo opravuje jízdní kola, ale také je pronajímá",
+            "ca": "Es tracta d'una botiga que ven o repara bicicletes, però també lloga bicicletes",
+            "pt_BR": "Essa é uma loja que vende ou conserta bicicletas, mas também aluga elas",
+            "pt": "Esta é uma loja que vende ou conserta bicicletas, mas também aluga elas"
+          }
+        },
+        {
+          "if": "bicycle_rental=docking_station",
+          "addExtraTags": [
+            "service:bicycle:rental="
+          ],
+          "then": {
+            "en": "This is an automated docking station, where a bicycle is mechanically locked to a structure",
+            "nl": "Dit is een docking station waar de fietsen mechanisch in een grotere structuur worden vastgemaakt",
+            "de": "Dies ist eine automatisierte Radstation, bei der ein Fahrrad mechanisch an einer Struktur befestigt wird",
+            "es": "Se trata de una estación de bicicletas automatizada donde una bicicleta se fija mecánicamente a una estructura",
+            "fr": "C'est un point d’attache automatisé où le vélo est attaché mécaniquement à une structure",
+            "da": "Dette er en automatiseret dockingstation, hvor en cykel låses mekanisk fast i en struktur",
+            "cs": "Jedná se o automatickou dokovací stanici, kde je jízdní kolo mechanicky uzamčeno ke konstrukci",
+            "ca": "Es tracta d'una estació d'acoblament automatitzada, on una bicicleta es bloqueja mecànicament a una estructura",
+            "pt_BR": "Esta é uma estação de ancoragem automatizada, onde uma bicicleta é travada mecanicamente a uma estrutura",
+            "pt": "Esta é uma estação de ancoragem automatizada, onde uma bicicleta é travada mecanicamente a uma estrutura"
+          }
+        },
+        {
+          "if": "bicycle_rental=key_dispensing_machine",
+          "addExtraTags": [
+            "service:bicycle:rental="
+          ],
+          "then": {
+            "en": "A machine is present which dispenses and accepts keys, eventually after authentication and/or payment. The bicycles are parked nearby",
+            "nl": "Hier is een machine die fietssleutels verdeelt en terugneemt, eventueel na aanmelden of betaling. De fietsen staan in de buurt geparkeerd",
+            "hu": "Ez egy leadási pont: ennek a kerékpárkölcsönzőnek a kijelölt kerékpártárolója",
+            "de": "Dies ist ein Automat, der Schlüssel ausgibt und annimmt, eventuell nach Authentifizierung und/oder Bezahlung. Die Fahrräder sind in der Nähe geparkt",
+            "es": "Una máquina que dispensa y acepta llaves, eventualmente después de la autenticación y/o el pago está presente. Las bicicletas están aparcadas cerca",
+            "fr": "Il y a un distributeur qui distribue et accepte les clés, éventuellement après identification et/ou payement. Les vélos sont stationnés à proximité",
+            "da": "Der er en maskine til stede, som udleverer og modtager nøgler, eventuelt efter autentificering og/eller betaling. Cyklerne er parkeret i nærheden",
+            "cs": "Přítomný je automat, který vydává a přijímá klíče, případně po ověření pravosti a/nebo zaplacení. Jízdní kola jsou zaparkována v blízkosti",
+            "ca": "Hi ha una màquina present que dispensa i accepta claus, eventualment després de l'autenticació i/o el pagament. Les bicicletes estan aparcades a prop",
+            "pt_BR": "Uma máquina está presente que dispensa e aceita chaves, geralmente após autenticação e/ou pagamento. As bicicletas estão estacionadas nas proximidades",
+            "pt": "Uma máquina que dispensa e aceita chaves está presente, geralmente após autenticação e/ou pagamento. As bicicletas estão estacionadas nas proximidades"
+          }
+        },
+        {
+          "if": "bicycle_rental=dropoff_point",
+          "addExtraTags": [
+            "service:bicycle:rental="
+          ],
+          "then": {
+            "en": "This is a dropoff point, e.g. a reserved parking to place the bicycles clearly marked as being for the rental service only",
+            "nl": "Dit is een dropzone, bv. een fietsparkeerplaats die is voorbehouden voor fietsverhuur",
+            "de": "Dies ist ein Rückgabepunkt, z.B. ein reservierter Parkplatz, um die Fahrräder abzustellen, die eindeutig als nur für den Verleih gekennzeichnet sind",
+            "es": "Se trata de un punto de entrega, por ejemplo, un aparcamiento reservado para colocar las bicicletas claramente señalizado como exclusivo para el servicio de alquiler",
+            "fr": "C'est un point de dépôt, p.ex. un emplacement de parking réservé aux vélos de location",
+            "da": "Dette er et afleveringssted, f.eks. en reserveret parkeringsplads til cykler, som er tydeligt markeret som værende forbeholdt udlejningstjenesten",
+            "cs": "Jedná se o místo předání, např. vyhrazené parkoviště pro umístění jízdních kol, zřetelně označené jako místo určené pouze pro půjčovnu",
+            "ca": "Aquest és un punt de baixada, p. ex. un aparcament reservat per col·locar les bicicletes marcades clarament com a només per al servei de lloguer",
+            "pt_BR": "Este é um ponto de devolução, p. ex. um estacionamento reservado para colocar as bicicletas claramente marcadas como sendo apenas para o serviço de aluguel",
+            "pt": "Este é um ponto de devolução, p. ex. um estacionamento reservado para pôr as bicicletas claramente marcadas como ser apenas para o serviço de aluguel"
+          }
+        }
+      ],
+      "condition": "amenity=bicycle_rental"
+    },
+    {
+      "id": "website",
+      "labels": [
+        "contact"
+      ],
+      "icon": "./assets/layers/icons/website.svg",
+      "question": {
+        "en": "What is the website of {title()}?",
+        "nl": "Wat is de website van {title()}?",
+        "fr": "Quel est le site web de {title()} ?",
+        "gl": "Cal é a páxina web de {title()}?",
+        "nb_NO": "Hva er nettsiden til {title()}?",
+        "ru": "Какой сайт у {title()}?",
+        "id": "Apa situs web dari {title()}?",
+        "zh_Hant": "{title()} 網址是什麼？",
+        "it": "Qual è il sito web di {title()}?",
+        "de": "Wie lautet die Webseite von {title()}?",
+        "pt_BR": "Qual o site de {title()}?",
+        "pl": "Jaka jest strona internetowa {title()}?",
+        "sv": "Vad är webbplatsen för {title()}?",
+        "pt": "Qual é o sítio web de {title()}?",
+        "eo": "Kie estas la retejo de {title()}?",
+        "hu": "Mi a weboldala ennek: {title()}?",
+        "ca": "Quina és la web de {title()}?",
+        "ja": "{title()}のウェブサイトは？",
+        "fil": "Ano ang website ng {title()}?",
+        "es": "¿Cual es el sitio web de {title()}?",
+        "zh_Hans": "{title()} 的网站为何？",
+        "da": "Hvad er webstedet for {title()}?",
+        "cs": "Jaká je webová stránka {title()}?"
+      },
+      "render": {
+        "*": "<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>"
+      },
+      "freeform": {
+        "key": "website",
+        "type": "url",
+        "addExtraTags": [
+          "contact:website="
+        ]
+      },
+      "mappings": [
+        {
+          "if": "contact:website~*",
+          "then": "<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>",
+          "hideInAnswer": true,
+          "icon": "./assets/layers/icons/website.svg"
+        }
+      ],
+      "editButtonAriaLabel": {
+        "en": "Edit website",
+        "nl": "Pas website aan",
+        "de": "Webseite bearbeiten"
+      }
+    },
+    {
+      "id": "email",
+      "render": {
+        "*": "<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>"
+      },
+      "icon": "./assets/svg/envelope.svg",
+      "labels": [
+        "contact"
+      ],
+      "question": {
+        "nl": "Wat is het e-mailadres van {title()}?",
+        "fr": "Quelle est l'adresse courriel de {title()} ?",
+        "en": "What is the email address of {title()}?",
+        "nb_NO": "Hva er e-postadressen til {title()}?",
+        "ru": "Какой адрес электронной почты у {title()}?",
+        "id": "Apa alamat surel dari {title()}?",
+        "zh_Hant": "{title()} 的電子郵件地址是什麼？",
+        "it": "Qual è l'indirizzo email di {title()}?",
+        "de": "Wie lautet die Mail-Adresse von {title()}?",
+        "pt_BR": "Qual o endereço de e-mail de {title()}?",
+        "pl": "Jaki jest adres e-mail do {title()}?",
+        "sv": "Vad är e-postadressen till {title()}?",
+        "pt": "Qual é o endereço de e-mail de {title()}?",
+        "eo": "Kio estas la retpoŝta adreso de {title()}?",
+        "hu": "Mi a(z) {title()} e-mail címe?",
+        "ca": "Quina és l'adreça de correu electrònic de {title()}?",
+        "ja": "{title()}のEメールアドレスは何ですか？",
+        "sl": "Kakšen naslov elektronske pošte ima {title()}?",
+        "fil": "Ano ang email address ng {title()}?",
+        "es": "¿Cuál es la dirección de correo electrónico de {title()}?",
+        "zh_Hans": "{title()} 的电子邮箱地址为何？",
+        "da": "Hvad er mailadressen på {title()}?",
+        "cs": "Jaká je e-mailová adresa {title()}?"
+      },
+      "mappings": [
+        {
+          "if": "contact:email~*",
+          "icon": "./assets/svg/envelope.svg",
+          "then": "<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>",
+          "hideInAnswer": true
+        },
+        {
+          "if": "operator:email~*",
+          "icon": "./assets/svg/envelope.svg",
+          "then": "<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>",
+          "hideInAnswer": true
+        }
+      ],
+      "freeform": {
+        "key": "email",
+        "type": "email",
+        "addExtraTags": [
+          "contact:email="
+        ]
+      },
+      "editButtonAriaLabel": {
+        "en": "Edit email address",
+        "nl": "Pas emailadres aan",
+        "de": "E-Mail Adresse bearbeiten"
+      }
+    },
+    {
+      "id": "phone",
+      "labels": [
+        "contact"
+      ],
+      "question": {
+        "en": "What is the phone number of {title()}?",
+        "nl": "Wat is het telefoonnummer van {title()}?",
+        "fr": "Quel est le numéro de téléphone de {title()} ?",
+        "de": "Wie lautet die Telefonnummer von {title()}?",
+        "nb_NO": "Hva er telefonnummeret til {title()}?",
+        "ru": "Какой номер телефона у {title()}?",
+        "sv": "Vad är telefonnumret till {title()}?",
+        "zh_Hant": "{title()} 的電話號碼是什麼？",
+        "it": "Qual è il numero di telefono di {title()}?",
+        "pt_BR": "Qual o número de telefone de {title()}?",
+        "id": "Berapa nomor telepon dari {title()}?",
+        "pl": "Jaki jest numer telefonu do {title()}?",
+        "pt": "Qual é o número de telefone de {title()}?",
+        "eo": "Kio estas la telefonnumero de {title()}?",
+        "hu": "Mi a telefonszáma ennek: {title()}?",
+        "ca": "Quin és el telèfon de {title()}?",
+        "ja": "{title()}の電話番号は？",
+        "sl": "Kakšno telefonsko številko ima {title()}?",
+        "fil": "Ano ang telepono ng {title()}?",
+        "es": "¿Cuál es el número de teléfono de {title()}?",
+        "zh_Hans": "{title()} 的电话号码为何？",
+        "da": "Hvad er telefonnummeret til {title()}?",
+        "cs": "Jaké je telefonní číslo {title()}?"
+      },
+      "render": {
+        "*": "<a href='tel:{phone}'>{phone}</a>"
+      },
+      "icon": "./assets/layers/questions/phone.svg",
+      "mappings": [
+        {
+          "if": "contact:phone~*",
+          "then": "<a href='tel:{contact:phone}'>{contact:phone}</a>",
+          "hideInAnswer": true,
+          "icon": "./assets/layers/questions/phone.svg"
+        }
+      ],
+      "freeform": {
+        "key": "phone",
+        "type": "phone",
+        "addExtraTags": [
+          "contact:phone="
+        ]
+      },
+      "editButtonAriaLabel": {
+        "en": "Edit phone number",
+        "nl": "Pas telefoonnummer aan",
+        "de": "Telefonnummer bearbeiten"
+      }
+    },
+    {
+      "id": "opening_hours",
+      "question": {
+        "en": "What are the opening hours of {title()}?",
+        "fr": "Quelles sont les horaires d'ouverture de {title()} ?",
+        "de": "Wie lauten die Öffnungszeiten von {title()}?",
+        "nl": "Wat zijn de openingstijden van {title()}?",
+        "nb_NO": "Hva er åpningstidene for {title()})",
+        "ru": "Какое время работы у {title()}?",
+        "zh_Hant": "{title()} 的開放時間是什麼？",
+        "it": "Quali sono gli orari di apertura di {title()}?",
+        "pt_BR": "Qual o horário de funcionamento de {title()}?",
+        "pl": "Jakie są godziny otwarcia {title()}?",
+        "sv": "Vilka är öppettiderna för {title()}?",
+        "pt": "Qual é o horário de funcionamento de {title()}?",
+        "hu": "Mikor van nyitva ez: {title()}?",
+        "ca": "Quin és l'horari d'obertura de {title()}?",
+        "ja": "{title()}の営業時間は？",
+        "sl": "Kakšen odpiralni čas ima {title()}?",
+        "fil": "Anong oras nagbubukas ang {title()}?",
+        "es": "¿Cuales son las horas de apertura de {title()}?",
+        "zh_Hans": "{title()} 的开放时间为何？",
+        "da": "Hvad er åbningstiderne for {title()}?",
+        "id": "Kapan jam buka {title()}?",
+        "cs": "Jaká je otevírací doba {title()}?"
+      },
+      "render": {
+        "de": "<h3>Öffnungszeiten</h3>{opening_hours_table(opening_hours)}",
+        "fr": "<h3>Horaires d'ouverture</h3>{opening_hours_table(opening_hours)}",
+        "en": "<h3>Opening hours</h3>{opening_hours_table(opening_hours)}",
+        "nl": "<h3>Openingstijden</h3>{opening_hours_table(opening_hours)}",
+        "nb_NO": "<h3>Åpningstider</h3>{opening_hours_table(opening_hours)}",
+        "ru": "<h3>Часы работы</h3>{opening_hours_table(opening_hours)}",
+        "zh_Hant": "<h3>開放時間</h3>{opening_hours_table(opening_hours)}",
+        "it": "<h3>Orari di apertura</h3>{opening_hours_table(opening_hours)}",
+        "pl": "<h3> Godziny otwarcia</h3>{opening_hours_table(opening_hours)}",
+        "pt_BR": "<h3>Horário de funcionamento</h3>{opening_hours_table(opening_hours)}",
+        "sv": "<h3>Öppettider</h3> {opening_hours_table(opening_hours)}",
+        "pt": "<h3>Horário de funcionamento</h3>{opening_hours_table(opening_hours)}",
+        "eo": "<h3>Malfermitaj horoj</h3>{opening_hours_table(opening_hours)}",
+        "hu": "<h3>Nyitva tartás</h3>{opening_hours_table(opening_hours)}",
+        "ca": "<h3>Horari d'obertura</h3>{opening_hours_table(opening_hours)}",
+        "ja": "<h3>営業時間</h3>{opening_hours_table(opening_hours)}",
+        "sl": "<h3>Odpiralni čas</h3>{opening_hours_table(opening_hours)}",
+        "fil": "<h3>Mga oras na bukas</h3>{opening_hours_table(opening_hours)}",
+        "es": "<h3>Horas de apertura</h3>{opening_hours_table(opening_hours)}",
+        "zh_Hans": "<h3>开放时间</h3> {opening_hours_table(opening_hours)}",
+        "da": "<h3> Åbningstider</h3>{opening_hours_table(opening_hours)}",
+        "id": "<h3>Jam buka</h3>{opening_hours_table(opening_hours)}",
+        "pa_PK": "<h3>کھُلھے گھنٹے</h3>{opening_hours_table(opening_hours)}",
+        "cs": "<h3>Otevírací hodiny</h3>{opening_hours_table(opening_hours)}"
+      },
+      "freeform": {
+        "key": "opening_hours",
+        "type": "opening_hours",
+        "inline": false
+      },
+      "mappings": [
+        {
+          "#": "Just here to be able to handle those ~5000 incorrect 'opening_hours=closed' elements.",
+          "if": "opening_hours=closed",
+          "then": {
+            "en": "Marked as closed for an unspecified time",
+            "nl": "Gesloten voor onbepaalde duur",
+            "de": "Als geschlossen für eine unbestimmte Zeit markiert"
+          },
+          "hideInAnswer": true
+        }
+      ],
+      "condition": {
+        "or": [
+          "shop~*",
+          "opening_hours~*"
+        ]
+      }
+    },
+    {
+      "id": "payment-options",
+      "question": {
+        "en": "Which methods of payment are accepted here?",
+        "nl": "Welke betaalmiddelen worden hier geaccepteerd?",
+        "pt": "Que métodos de pagamento são aceites aqui?",
+        "pt_BR": "Quais métodos de pagamento são aceitos aqui?",
+        "id": "Metode pembayaran manakah yang di terima disini?",
+        "de": "Welche Zahlungsmethoden werden hier akzeptiert?",
+        "fr": "Quelles sont les méthodes de paiement acceptées ici ?",
+        "hu": "Milyen fizetési módokat fogadnak el itt?",
+        "it": "Quali metodi di pagamento sono accettati qui?",
+        "nb_NO": "Hvilke betalingsmetoder godtas her?",
+        "ca": "Quins mètodes de pagament s'accepten aquí?",
+        "sv": "Vilka betalningsmetoder accepteras här?",
+        "zh_Hant": "這邊接受那種付款方式？",
+        "pl": "Jakie metody płatności są tutaj dostępne?",
+        "ru": "Какие способы оплаты здесь принимают?",
+        "ja": "どのような支払い方法が可能ですか？",
+        "sl": "Kateri načini plačila so možni tu?",
+        "fil": "Anong mga paraang pambayad ang tinatanggap dito?",
+        "es": "¿Qué métodos de pago se aceptan aquí?",
+        "zh_Hans": "这里支持哪些支付方式？",
+        "da": "Hvilke betalingsmetoder accepteres her?",
+        "cs": "Jaké platební metody jsou zde přijímány?"
+      },
+      "multiAnswer": true,
+      "mappings": [
+        {
+          "if": "payment:cash=yes",
+          "ifnot": "payment:cash=no",
+          "icon": "./assets/layers/questions/cash.svg",
+          "then": {
+            "en": "Cash is accepted here",
+            "nl": "Cash geld wordt hier aanvaard",
+            "pt": "Aceitam pagamento com dinheiro aqui",
+            "pt_BR": "Dinheiro é aceito aqui",
+            "id": "Pembayaran tunai diterima di sini",
+            "de": "Hier wird Bargeld akzeptiert",
+            "fr": "Paiement en liquide accepté",
+            "hu": "Itt készpénzzel is lehet fizetni",
+            "it": "I contanti sono accettati",
+            "nb_NO": "Kontanter godtas her",
+            "ca": "S'accepten diners",
+            "sv": "Pengar accepteras här",
+            "zh_Hant": "這邊接受現金",
+            "pl": "Płatność gotówkowa jest tutaj dostępna",
+            "ru": "Здесь принимают наличными",
+            "ja": "現金利用可能",
+            "sl": "Tu sprejemajo gotovino",
+            "fil": "Tinatanggap ang salapi rito",
+            "es": "Aquí se acepta el pago en efectivo",
+            "zh_Hans": "可用现金",
+            "da": "Her modtages kontanter",
+            "cs": "Přijímá se zde hotovost"
+          }
+        },
+        {
+          "if": "payment:cards=yes",
+          "ifnot": "payment:cards=no",
+          "icon": "./assets/layers/questions/payment_card.svg",
+          "then": {
+            "en": "Payment cards are accepted here",
+            "nl": "Betalen met bankkaarten kan hier",
+            "pt": "Aceitam pagamento com cartões bancários aqui",
+            "pt_BR": "Cartões de pagamento são aceitos aqui",
+            "id": "Kartu pembayaran diterima di sini",
+            "de": "Hier wird Kartenzahlung akzeptiert",
+            "fr": "Paiement par carte accepté",
+            "hu": "Itt fizetőkártyákkal is lehet fizetni",
+            "it": "I pagamenti con la carta sono accettati",
+            "nb_NO": "Betalingskort godtas her",
+            "ca": "S'accepten targetes de crèdit",
+            "sv": "Betalningskort accepteras här",
+            "zh_Hant": "這邊接受現金卡",
+            "pl": "Płatność kartą jest tutaj dostępna",
+            "ru": "Здесь принимают банковские карты",
+            "ja": "お支払いはこちらで承ります",
+            "sl": "Tukaj sprejemajo plačilne kartice",
+            "fil": "Tinatanggap ang mga tarhetang pambayad dito",
+            "es": "Aquí se acepta el pago por tarjeta",
+            "zh_Hans": "可用信用卡",
+            "da": "Betalingskort accepteres her",
+            "cs": "Jsou zde přijímány platební karty"
+          }
+        },
+        {
+          "if": "payment:qr_code=yes",
+          "ifnot": "payment:qr_code=no",
+          "icon": "./assets/layers/questions/qrcode.svg",
+          "then": {
+            "en": "Payment by QR-code is possible here",
+            "nl": "Betalen via een QR-code is hier mogelijk",
+            "de": "Die Bezahlung per QR-Code ist hier möglich",
+            "es": "Aquí se puede pagar con código QR",
+            "ca": "Aquí es pot pagar amb codi QR",
+            "cs": "Platba QR kódem je zde možná"
+          }
+        }
+      ],
+      "condition": "shop~*"
+    },
+    {
+      "id": "payment-options-advanced",
+      "question": {
+        "en": "Which methods of payment are accepted here?",
+        "nl": "Welke betaalmiddelen worden hier geaccepteerd?",
+        "pt": "Que métodos de pagamento são aceites aqui?",
+        "pt_BR": "Quais métodos de pagamento são aceitos aqui?",
+        "id": "Metode pembayaran manakah yang di terima disini?",
+        "de": "Welche Zahlungsmethoden werden hier akzeptiert?",
+        "fr": "Quelles sont les méthodes de paiement acceptées ici ?",
+        "hu": "Milyen fizetési módokat fogadnak el itt?",
+        "it": "Quali metodi di pagamento sono accettati qui?",
+        "nb_NO": "Hvilke betalingsmetoder godtas her?",
+        "ca": "Quins mètodes de pagament s'accepten aquí?",
+        "sv": "Vilka betalningsmetoder accepteras här?",
+        "zh_Hant": "這邊接受那種付款方式？",
+        "pl": "Jakie metody płatności są tutaj dostępne?",
+        "ru": "Какие способы оплаты здесь принимают?",
+        "ja": "どのような支払い方法が可能ですか？",
+        "sl": "Kateri načini plačila so možni tu?",
+        "fil": "Anong mga paraang pambayad ang tinatanggap dito?",
+        "es": "¿Qué métodos de pago se aceptan aquí?",
+        "zh_Hans": "这里支持哪些支付方式？",
+        "da": "Hvilke betalingsmetoder accepteres her?",
+        "cs": "Jaké platební metody jsou zde přijímány?"
+      },
+      "multiAnswer": true,
+      "mappings": [
+        {
+          "if": "payment:cash=yes",
+          "ifnot": "payment:cash=no",
+          "icon": "./assets/layers/questions/cash.svg",
+          "then": {
+            "en": "Cash is accepted here",
+            "nl": "Cash geld wordt hier aanvaard",
+            "pt": "Aceitam pagamento com dinheiro aqui",
+            "pt_BR": "Dinheiro é aceito aqui",
+            "id": "Pembayaran tunai diterima di sini",
+            "de": "Hier wird Bargeld akzeptiert",
+            "fr": "Paiement en liquide accepté",
+            "hu": "Itt készpénzzel is lehet fizetni",
+            "it": "I contanti sono accettati",
+            "nb_NO": "Kontanter godtas her",
+            "ca": "S'accepten diners",
+            "sv": "Pengar accepteras här",
+            "zh_Hant": "這邊接受現金",
+            "pl": "Płatność gotówkowa jest tutaj dostępna",
+            "ru": "Здесь принимают наличными",
+            "ja": "現金利用可能",
+            "sl": "Tu sprejemajo gotovino",
+            "fil": "Tinatanggap ang salapi rito",
+            "es": "Aquí se acepta el pago en efectivo",
+            "zh_Hans": "可用现金",
+            "da": "Her modtages kontanter",
+            "cs": "Přijímá se zde hotovost"
+          }
+        },
+        {
+          "if": "payment:cards=yes",
+          "ifnot": "payment:cards=no",
+          "icon": "./assets/layers/questions/payment_card.svg",
+          "then": {
+            "en": "Payment cards are accepted here",
+            "nl": "Betalen met bankkaarten kan hier",
+            "pt": "Aceitam pagamento com cartões bancários aqui",
+            "pt_BR": "Cartões de pagamento são aceitos aqui",
+            "id": "Kartu pembayaran diterima di sini",
+            "de": "Hier wird Kartenzahlung akzeptiert",
+            "fr": "Paiement par carte accepté",
+            "hu": "Itt fizetőkártyákkal is lehet fizetni",
+            "it": "I pagamenti con la carta sono accettati",
+            "nb_NO": "Betalingskort godtas her",
+            "ca": "S'accepten targetes de crèdit",
+            "sv": "Betalningskort accepteras här",
+            "zh_Hant": "這邊接受現金卡",
+            "pl": "Płatność kartą jest tutaj dostępna",
+            "ru": "Здесь принимают банковские карты",
+            "ja": "お支払いはこちらで承ります",
+            "sl": "Tukaj sprejemajo plačilne kartice",
+            "fil": "Tinatanggap ang mga tarhetang pambayad dito",
+            "es": "Aquí se acepta el pago por tarjeta",
+            "zh_Hans": "可用信用卡",
+            "da": "Betalingskort accepteres her",
+            "cs": "Jsou zde přijímány platební karty"
+          }
+        },
+        {
+          "if": "payment:qr_code=yes",
+          "ifnot": "payment:qr_code=no",
+          "icon": "./assets/layers/questions/qrcode.svg",
+          "then": {
+            "en": "Payment by QR-code is possible here",
+            "nl": "Betalen via een QR-code is hier mogelijk",
+            "de": "Die Bezahlung per QR-Code ist hier möglich",
+            "es": "Aquí se puede pagar con código QR",
+            "ca": "Aquí es pot pagar amb codi QR",
+            "cs": "Platba QR kódem je zde možná"
+          }
+        },
+        {
+          "if": "payment:app=yes",
+          "ifnot": "payment:app=no",
+          "icon": "./assets/layers/questions/smartphone.svg",
+          "then": {
+            "en": "Payment is done using a dedicated app",
+            "nl": "Betalen via een app van het netwerk",
+            "hu": "Fizetés erre a célra szolgáló alkalmazással",
+            "zh_Hant": "使用專用應用程式付款",
+            "de": "Die Bezahlung erfolgt über eine spezielle App",
+            "fr": "Paiement via une application",
+            "sl": "Plačilo se opravi z namensko aplikacijo",
+            "ca": "El pagament es fa amb una app dedicada",
+            "fil": "Binabayaran gamit ang sariling app",
+            "es": "El pago se realiza con una aplicación dedicada",
+            "zh_Hans": "使用专用APP支付",
+            "da": "Betaling sker ved hjælp af en dedikeret app",
+            "nb_NO": "Betaling utføres med et eget program",
+            "pt": "O pagamento é feito utilizando uma aplicação dedicada",
+            "it": "Pagamento effettuato utilizzando un'app dedicata",
+            "id": "Pembayaran dilakukan dengan aplikasi khusus",
+            "cs": "Platba se provádí pomocí speciální aplikace",
+            "pl": "Płatność odbywa się za pomocą dedykowanej aplikacji"
+          }
+        },
+        {
+          "if": "payment:membership_card=yes",
+          "ifnot": "payment:membership_card=no",
+          "icon": "./assets/layers/questions/nfc_card.svg",
+          "then": {
+            "en": "Payment is done using a membership card",
+            "nl": "Betalen via een lidkaart van het netwerk",
+            "hu": "Fizetési tagsági kártyával",
+            "zh_Hant": "使用會員卡付款",
+            "de": "Die Bezahlung erfolgt mit einer Mitgliedskarte",
+            "fr": "Paiement via une carte de membre",
+            "sl": "Plačilo se izvede s člansko izkaznico",
+            "ca": "El pagament es fa amb una targeta de membre",
+            "fil": "Binabayaran gamit ang membership card",
+            "es": "El pago se realiza con una tarjeta de membresía",
+            "nb_NO": "Betaling utføres med et medlemskort",
+            "zh_Hans": "使用会员卡支付",
+            "da": "Betaling sker med medlemskort",
+            "pt": "O pagamento é feito usando um cartão de membro",
+            "id": "Pembayaran dilakukan dengan kartu anggota",
+            "cs": "Platba se provádí pomocí členské karty",
+            "pl": "Płatność odbywa się za pomocą karty członkowskiej"
+          }
+        }
+      ],
+      "condition": "shop="
+    },
+    {
+      "id": "bicycle-types",
+      "labels": [
+        "bicycle_rental"
+      ],
+      "question": {
+        "en": "What kind of bicycles and accessories are rented here?",
+        "nl": "Wat voor soort fietsen en fietstoebehoren worden hier verhuurd?",
+        "de": "Welche Fahrräder und welches Zubehör kann hier geliehen werden?",
+        "es": "¿Qué tipo de bicicletas y accesorios se alquilan aquí?",
+        "da": "Hvilken slags cykler og tilbehør udlejes her?",
+        "fr": "Quels types de vélos et d’accessoires peuvent être loués ici ?",
+        "cs": "Jaká jízdní kola a příslušenství se zde půjčují?",
+        "ca": "Quin tipus de bicicletes i accessoris es lloguen aquí?",
+        "pt_BR": "Quais tipos de bicicleta e acessórios podem ser alugados aqui?",
+        "pt": "Quais tipos de bicicleta e acessórios podem ser alugados aqui?"
+      },
+      "render": {
+        "en": "{rental} is rented here",
+        "nl": "{rental} kunnen hier uitgeleend worden",
+        "de": "{rental} können hier gemietet werden",
+        "es": "{rental} se alquilan aquí",
+        "da": "{rental} udlejes her",
+        "fr": "{rental} est louable ici",
+        "cs": "Zde si můžete půjčit {rental}",
+        "ca": "{rental} es lloga aquí",
+        "pt_BR": "{rental} é alugado aqui",
+        "pt": "{rental} é alugado aqui"
+      },
+      "freeform": {
+        "key": "rental",
+        "inline": true
+      },
+      "multiAnswer": true,
+      "mappings": [
+        {
+          "if": "rental=city_bike",
+          "then": {
+            "en": "Normal city bikes can be rented here",
+            "nl": "Gewone stadsfietsen kunnen hier gehuurd worden",
+            "de": "Normale Stadtfahrräder können ausgeliehen werden",
+            "es": "Aquí se pueden alquilar bicis normales",
+            "da": "Her kan man leje almindelige bycykler",
+            "fr": "Des vélos de ville peuvent être loués ici",
+            "cs": "Zde si můžete půjčit běžná městská kola",
+            "ca": "Aquí es poden llogar bicicletes de ciutat normals",
+            "pt_BR": "Bicicletas urbanas comuns podem ser alugadas aqui",
+            "pt": "Bicicletas urbanas comuns podem ser alugadas aqui"
+          }
+        },
+        {
+          "if": "rental=ebike",
+          "then": {
+            "en": "Electrical bikes can be rented here",
+            "nl": "Elektrische fietsen kunnen hier gehuurd worden",
+            "de": "Elektrofahrräder können ausgeliehen werden",
+            "es": "Aquí se pueden alquilar bicis eléctricas",
+            "da": "El-cykler kan lejes her",
+            "fr": "Des vélos électriques peuvent être loués ici",
+            "cs": "Zde si můžete půjčit elektrokola",
+            "ca": "Aquí es poden llogar bicicletes elèctriques",
+            "pt_BR": "Bicicletas elétricas podem ser alugadas aqui",
+            "pt": "Bicicletas elétricas podem ser alugadas aqui"
+          }
+        },
+        {
+          "if": "rental=bmx",
+          "then": {
+            "en": "BMX bikes can be rented here",
+            "nl": "BMX-fietsen kunnen hier gehuurd worden",
+            "de": "BMX-Räder können ausgeliehen werden",
+            "es": "Aquí se pueden alquilar bicis BMX",
+            "da": "BMX cykler kan lejes her",
+            "fr": "Des BMX peuvent être loués ici",
+            "cs": "Zde si můžete půjčit BMX kola",
+            "ca": "Aquí es poden llogar BMX",
+            "pt_BR": "Bicicletas BMX podem ser alugadas aqui",
+            "pt": "Bicicletas BMX podem ser alugadas aqui"
+          }
+        },
+        {
+          "if": "rental=mtb",
+          "then": {
+            "en": "Mountainbikes can be rented here",
+            "nl": "Mountainbikes kunnen hier gehuurd worden",
+            "de": "Mountainbikes können ausgeliehen werden",
+            "es": "Aquí se pueden alquilar bicis de montaña",
+            "da": "Mountainbikes kan lejes her",
+            "fr": "Des vélos de montagne peuvent être loués ici",
+            "cs": "Zde si můžete půjčit horská kola",
+            "ca": "Aquí es poden llogar bicicletes de muntanya",
+            "pt_BR": "Bicicletas de montanha podem ser alugadas aqui",
+            "pt": "Bicicletas de montanha podem ser alugadas aqui"
+          }
+        },
+        {
+          "if": "rental=kid_bike",
+          "then": {
+            "en": "Bikes for children can be rented here",
+            "nl": "Kinderfietsen kunnen hier gehuurd worden",
+            "de": "Kinderfahrräder können ausgeliehen werden",
+            "es": "Aquí se pueden alquilar bicis infantiles",
+            "da": "Børnecykler kan lejes her",
+            "fr": "Des vélos d'enfants peuvent être loués ici",
+            "cs": "Zde si můžete půjčit dětská kola",
+            "ca": "Aquí es poden llogar bicicletes infantils",
+            "pt_BR": "Bicicletas para crianças podem ser alugadas aqui",
+            "pt": "Bicicletas para crianças podem ser alugadas aqui"
+          }
+        },
+        {
+          "if": "rental=tandem",
+          "then": {
+            "en": "Tandem bicycles can be rented here",
+            "nl": "Tandems kunnen hier gehuurd worden",
+            "de": "Tandems können ausgeliehen werden",
+            "da": "Tandemcykler kan lejes her",
+            "fr": "Des tandems peuvent être loués ici",
+            "es": "Aquí se pueden alquilar tándems",
+            "cs": "Zde si můžete půjčit tandemová kola",
+            "ca": "Aquí es poden llogar tàndems",
+            "pt_BR": "Bicicletas tandem podem ser alugadas aqui",
+            "pt": "Bicicletas tandem podem ser alugadas aqui"
+          }
+        },
+        {
+          "if": "rental=racebike",
+          "then": {
+            "en": "Race bicycles can be rented here",
+            "nl": "Wielerfietsen (sportfietsen) kunnen hier gehuurd worden",
+            "de": "Rennräder können ausgeliehen werden",
+            "es": "Aquí se pueden alquilar bicicletas de carreras",
+            "da": "Racercykler kan lejes her",
+            "fr": "Des vélos de course peuvent être loués ici",
+            "cs": "Zde si můžete půjčit závodní kola",
+            "ca": "Aquí es poden llogar bicicletes de carreres",
+            "pt_BR": "Bicicletas de estrada podem ser alugadas aqui",
+            "pt": "Bicicletas de estrada podem ser alugadas aqui"
+          }
+        },
+        {
+          "if": "rental=bike_helmet",
+          "then": {
+            "en": "Bike helmets can be rented here",
+            "nl": "Fietshelmen kunnen hier gehuurd worden",
+            "es": "Aquí se pueden alquilar cascos",
+            "de": "Fahrradhelme können ausgeliehen werden",
+            "fr": "Des casques de vélos peuvent être loués ici",
+            "da": "Cykelhjelme kan lejes her",
+            "cs": "Zde si můžete půjčit cyklistické přilby",
+            "ca": "Aquí es poden llogar cascos de bicicleta",
+            "pt_BR": "Capacetes de ciclismo podem ser alugados aqui",
+            "pt": "Capacetes de ciclismo podem ser alugados aqui"
+          }
+        }
+      ],
+      "condition": {
+        "and": []
+      }
+    },
+    {
+      "id": "rental-capacity-city_bike",
+      "labels": [
+        "bicycle_rental"
+      ],
+      "question": {
+        "en": "How many city bikes can be rented here?",
+        "nl": "Hoeveel stadsfietsen kunnen hier uitgeleend worden?",
+        "de": "Wie viele Stadträder können hier gemietet werden?",
+        "fr": "Combien de vélos de ville peuvent être loués ici ?",
+        "cs": "Kolik typů kol si zde můžete pronajmout?",
+        "es": "¿Cuántos bicis de ciudad se pueden alquilar aquí?",
+        "ca": "Quants Bicicletes de ciutat es poden llogar aquí?",
+        "pt_BR": "Quantos bicicletas urbanas podem ser alugados aqui?",
+        "pt": "Quantos bicicletas urbanas podem ser alugados aqui?"
+      },
+      "render": {
+        "en": "{capacity:city_bike} city bikes can be rented here",
+        "nl": "{capacity:city_bike} stadsfietsen kunnen hier uitgeleend worden",
+        "de": "{capacity:city_bike} Stadträder können hier gemietet werden",
+        "fr": "{capacity:city_bike} vélos de ville peuvent être loués ici",
+        "cs": "{capacity:city_bike} typů si můžete pronajmout zde",
+        "es": "{capacity:city_bike} bicis de ciudad pueden alquilarse aquí",
+        "ca": "{capacity:city_bike} Bicicletes de ciutat es poden llogar aquí",
+        "pt_BR": "{capacity:city_bike} bicicletas urbanas podem ser alugados aqui",
+        "pt": "{capacity:city_bike} bicicletas urbanas podem ser alugados aqui"
+      },
+      "freeform": {
+        "key": "capacity:city_bike",
+        "type": "pnat",
+        "inline": true
+      },
+      "condition": {
+        "and": [
+          "rental~.*city_bike.*"
+        ]
+      }
+    },
+    {
+      "id": "rental-capacity-ebike",
+      "labels": [
+        "bicycle_rental"
+      ],
+      "question": {
+        "en": "How many electrical bikes can be rented here?",
+        "nl": "Hoeveel elektrische fietsen kunnen hier uitgeleend worden?",
+        "de": "Wie viele Elektrofahrräder können hier gemietet werden?",
+        "fr": "Combien de vélos électriques peuvent être loués ici ?",
+        "cs": "Kolik typů kol si zde můžete pronajmout?",
+        "es": "¿Cuántos bicis eléctricas se pueden alquilar aquí?",
+        "ca": "Quants bicicletes elèctriques es poden llogar aquí?",
+        "pt_BR": "Quantos bicicletas elétricas podem ser alugados aqui?",
+        "pt": "Quantos bicicletas elétricas podem ser alugados aqui?"
+      },
+      "render": {
+        "en": "{capacity:ebike} electrical bikes can be rented here",
+        "nl": "{capacity:ebike} elektrische fietsen kunnen hier uitgeleend worden",
+        "de": "{capacity:ebike} Elektrofahrräder können hier gemietet werden",
+        "fr": "{capacity:ebike} vélos électriques peuvent être loués ici",
+        "cs": "{capacity:ebike} typů si můžete pronajmout zde",
+        "es": "{capacity:ebike} bicis eléctricas pueden alquilarse aquí",
+        "ca": "{capacity:ebike} bicicletes elèctriques es poden llogar aquí",
+        "pt_BR": "{capacity:ebike} bicicletas elétricas podem ser alugados aqui",
+        "pt": "{capacity:ebike} bicicletas elétricas podem ser alugados aqui"
+      },
+      "freeform": {
+        "key": "capacity:ebike",
+        "type": "pnat",
+        "inline": true
+      },
+      "condition": {
+        "and": [
+          "rental~.*ebike.*"
+        ]
+      }
+    },
+    {
+      "id": "rental-capacity-kid_bike",
+      "labels": [
+        "bicycle_rental"
+      ],
+      "question": {
+        "en": "How many bikes for children can be rented here?",
+        "nl": "Hoeveel kinderfietsen kunnen hier uitgeleend worden?",
+        "de": "Wie viele Kinderfahrräder können hier gemietet werden?",
+        "fr": "Combien de vélos d'enfants peuvent être loués ici ?",
+        "cs": "Kolik typů kol si zde můžete pronajmout?",
+        "es": "¿Cuántos bicis infantiles se pueden alquilar aquí?",
+        "ca": "Quants bicicletes per a xiquets es poden llogar aquí?",
+        "pt_BR": "Quantos bicicletas para crianças podem ser alugados aqui?",
+        "pt": "Quantos bicicletas para crianças podem ser alugados aqui?"
+      },
+      "render": {
+        "en": "{capacity:kid_bike} bikes for children can be rented here",
+        "nl": "{capacity:kid_bike} kinderfietsen kunnen hier uitgeleend worden",
+        "de": "{capacity:kid_bike} Kinderfahrräder können hier gemietet werden",
+        "fr": "{capacity:kid_bike} vélos d'enfants peuvent être loués ici",
+        "cs": "{capacity:kid_bike} typů si můžete pronajmout zde",
+        "es": "{capacity:kid_bike} bicis infantiles pueden alquilarse aquí",
+        "ca": "{capacity:kid_bike} bicicletes per a xiquets es poden llogar aquí",
+        "pt_BR": "{capacity:kid_bike} bicicletas para crianças podem ser alugados aqui",
+        "pt": "{capacity:kid_bike} bicicletas para crianças podem ser alugados aqui"
+      },
+      "freeform": {
+        "key": "capacity:kid_bike",
+        "type": "pnat",
+        "inline": true
+      },
+      "condition": {
+        "and": [
+          "rental~.*kid_bike.*"
+        ]
+      }
+    },
+    {
+      "id": "rental-capacity-bmx",
+      "labels": [
+        "bicycle_rental"
+      ],
+      "question": {
+        "en": "How many BMX bikes can be rented here?",
+        "nl": "Hoeveel BMX-fietsen kunnen hier uitgeleend worden?",
+        "de": "Wie viele BMX-Räder können hier gemietet werden?",
+        "fr": "Combien de BMX peuvent être loués ici ?",
+        "cs": "Kolik typů kol si zde můžete pronajmout?",
+        "es": "¿Cuántos bicis BMX se pueden alquilar aquí?",
+        "ca": "Quants Bicicletes BMX es poden llogar aquí?",
+        "pt_BR": "Quantos bicicletas BMX podem ser alugados aqui?",
+        "pt": "Quantos bicicletas BMX podem ser alugados aqui?"
+      },
+      "render": {
+        "en": "{capacity:bmx} BMX bikes can be rented here",
+        "nl": "{capacity:bmx} BMX-fietsen kunnen hier uitgeleend worden",
+        "de": "{capacity:bmx} BMX-Räder können hier gemietet werden",
+        "fr": "{capacity:bmx} BMX peuvent être loués ici",
+        "cs": "{capacity:bmx} typů si můžete pronajmout zde",
+        "es": "{capacity:bmx} bicis BMX pueden alquilarse aquí",
+        "ca": "{capacity:bmx} Bicicletes BMX es poden llogar aquí",
+        "pt_BR": "{capacity:bmx} bicicletas BMX podem ser alugados aqui",
+        "pt": "{capacity:bmx} bicicletas BMX podem ser alugados aqui"
+      },
+      "freeform": {
+        "key": "capacity:bmx",
+        "type": "pnat",
+        "inline": true
+      },
+      "condition": {
+        "and": [
+          "rental~.*bmx.*"
+        ]
+      }
+    },
+    {
+      "id": "rental-capacity-mtb",
+      "labels": [
+        "bicycle_rental"
+      ],
+      "question": {
+        "en": "How many mountainbikes can be rented here?",
+        "nl": "Hoeveel mountainbikes kunnen hier uitgeleend worden?",
+        "de": "Wie viele Mountainbikes können hier gemietet werden?",
+        "fr": "Combien de vélos de montagne peuvent être loués ici ?",
+        "cs": "Kolik typů kol si zde můžete pronajmout?",
+        "es": "¿Cuántos bicicletas de montaña se pueden alquilar aquí?",
+        "ca": "Quants bicicletas de muntanya es poden llogar aquí?",
+        "pt_BR": "Quantos bicicletas de montanha podem ser alugados aqui?",
+        "pt": "Quantos bicicletas de montanha podem ser alugados aqui?"
+      },
+      "render": {
+        "en": "{capacity:mtb} mountainbikes can be rented here",
+        "nl": "{capacity:mtb} mountainbikes kunnen hier uitgeleend worden",
+        "de": "{capacity:mtb} Mountainbikes können hier gemietet werden",
+        "fr": "{capacity:mtb} vélos de montagne peuvent être loués ici",
+        "cs": "{capacity:mtb} typů si můžete pronajmout zde",
+        "es": "{capacity:mtb} bicicletas de montaña pueden alquilarse aquí",
+        "ca": "{capacity:mtb} bicicletas de muntanya es poden llogar aquí",
+        "pt_BR": "{capacity:mtb} bicicletas de montanha podem ser alugados aqui",
+        "pt": "{capacity:mtb} bicicletas de montanha podem ser alugados aqui"
+      },
+      "freeform": {
+        "key": "capacity:mtb",
+        "type": "pnat",
+        "inline": true
+      },
+      "condition": {
+        "and": [
+          "rental~.*mtb.*"
+        ]
+      }
+    },
+    {
+      "id": "rental-capacity-bicycle_pannier",
+      "labels": [
+        "bicycle_rental"
+      ],
+      "question": {
+        "en": "How many bicycle panniers can be rented here?",
+        "nl": "Hoeveel fietstassen kunnen hier uitgeleend worden?",
+        "de": "Wie viele Fahrradtaschen können hier gemietet werden?",
+        "fr": "Combien de sacoches pour vélo peuvent être loués ici ?",
+        "cs": "Kolik typů kol si zde můžete pronajmout?",
+        "es": "¿Cuántos alforjas de bicicleta se pueden alquilar aquí?",
+        "ca": "Quants maletes de bicicletes es poden llogar aquí?",
+        "pt_BR": "Quantos alforjes de bicicleta podem ser alugados aqui?",
+        "pt": "Quantos alforjes de bicicleta podem ser alugados aqui?"
+      },
+      "render": {
+        "en": "{capacity:bicycle_pannier} bicycle panniers can be rented here",
+        "nl": "{capacity:bicycle_pannier} fietstassen kunnen hier uitgeleend worden",
+        "de": "{capacity:bicycle_pannier} Fahrradtaschen können hier gemietet werden",
+        "fr": "{capacity:bicycle_pannier} sacoches pour vélo peuvent être loués ici",
+        "cs": "{capacity:bicycle_pannier} typů si můžete pronajmout zde",
+        "es": "{capacity:bicycle_pannier} alforjas de bicicleta pueden alquilarse aquí",
+        "ca": "{capacity:bicycle_pannier} maletes de bicicletes es poden llogar aquí",
+        "pt_BR": "{capacity:bicycle_pannier} alforjes de bicicleta podem ser alugados aqui",
+        "pt": "{capacity:bicycle_pannier} alforjes de bicicleta podem ser alugados aqui"
+      },
+      "freeform": {
+        "key": "capacity:bicycle_pannier",
+        "type": "pnat",
+        "inline": true
+      },
+      "condition": {
+        "and": [
+          "rental~.*bicycle_pannier.*"
+        ]
+      }
+    },
+    {
+      "id": "rental-capacity-tandem_bicycle",
+      "labels": [
+        "bicycle_rental"
+      ],
+      "question": {
+        "en": "How many tandem can be rented here?",
+        "nl": "Hoeveel tandem kunnen hier uitgeleend worden?",
+        "de": "Wie viele Tandems können hier gemietet werden?",
+        "fr": "Combien de tandem peuvent être loués ici ?",
+        "cs": "Kolik typů kol si zde můžete pronajmout?",
+        "es": "¿Cuántos tándem se pueden alquilar aquí?",
+        "ca": "Quants tàndem es poden llogar aquí?",
+        "pt_BR": "Quantos tandem podem ser alugados aqui?",
+        "pt": "Quantos tandem podem ser alugados aqui?"
+      },
+      "render": {
+        "en": "{capacity:tandem_bicycle} tandem can be rented here",
+        "nl": "{capacity:tandem_bicycle} tandem kunnen hier uitgeleend worden",
+        "de": "{capacity:tandem_bicycle} Tandems können hier gemietet werden",
+        "fr": "{capacity:tandem_bicycle} tandem peuvent être loués ici",
+        "cs": "{capacity:tandem_bicycle} typů si můžete pronajmout zde",
+        "es": "{capacity:tandem_bicycle} tándem pueden alquilarse aquí",
+        "ca": "{capacity:tandem_bicycle} tàndem es poden llogar aquí",
+        "pt_BR": "{capacity:tandem_bicycle} tandem podem ser alugados aqui",
+        "pt": "{capacity:tandem_bicycle} tandem podem ser alugados aqui"
+      },
+      "freeform": {
+        "key": "capacity:tandem_bicycle",
+        "type": "pnat",
+        "inline": true
+      },
+      "condition": {
+        "and": [
+          "rental~.*tandem_bicycle.*"
+        ]
+      }
+    },
+    {
+      "id": "leftover-questions",
+      "render": {
+        "*": "{questions( ,)}"
+      }
+    },
+    {
+      "id": "lod",
+      "labels": [
+        "added_by_default"
+      ],
+      "render": {
+        "*": "{linked_data_from_website()}"
+      }
+    },
+    {
+      "id": "minimap",
+      "description": "Shows a small map with the feature. Added by default to every popup",
+      "render": {
+        "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+      }
+    },
+    {
+      "id": "move-button",
+      "render": {
+        "*": "{move_button()}"
+      }
+    },
+    {
+      "id": "delete-button",
+      "render": {
+        "*": "{delete_button()}"
+      }
+    },
+    {
+      "id": "last_edit",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+      "condition": {
+        "and": [
+          "_last_edit:contributor~*",
+          "_last_edit:changeset~*"
+        ]
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsTesting=true",
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_debug=yes",
+          "_csCount>=10"
+        ]
+      },
+      "render": {
+        "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+      }
+    },
+    {
+      "id": "favourite_status",
+      "render": {
+        "*": "{favourite_status()}"
+      }
+    },
+    {
+      "id": "qr_code",
+      "labels": [
+        "added_by_default"
+      ],
+      "classes": "flex items-center gap-x-2",
+      "render": {
+        "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+        "en": "{qr_code()}Scan this code to open this location on another device",
+        "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+        "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+      }
+    },
+    {
+      "id": "share",
+      "labels": [
+        "added_by_default"
+      ],
+      "metacondition": "_supports_sharing=yes",
+      "render": {
+        "de": "{share_link(,Standort teilen)}",
+        "en": "{share_link(,Share this location)}",
+        "nl": "{share_link(,Deel deze locatie)}"
+      }
+    },
+    {
+      "id": "all-tags",
+      "render": {
+        "*": "{all_tags()}"
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_tags=full",
+          "mapcomplete-show_debug=yes"
+        ]
+      }
+    }
+  ],
+  "deletion": {
+    "softDeletionTags": {
+      "and": [
+        "disused:amenity=bicycle_rental",
+        "bicycle_rental=",
+        "rental="
+      ]
+    },
+    "neededChangesets": 10,
+    "extraDeleteReasons": [
+      {
+        "explanation": {
+          "nl": "{title()} is permanent gestopt",
+          "en": "{title()} has closed down permanently",
+          "fr": "{title()} a était fermé de façon permanente",
+          "de": "{title()} ist dauerhaft geschlossen",
+          "es": "{title()} ha cerrado permanentemente",
+          "da": "{title()} er lukket permanent",
+          "cs": "{title()} je trvale uzavřen",
+          "ca": "{title()} ha tancat permanentment",
+          "pt_BR": "{title()} fechou permanentemente",
+          "pt": "{title()} fechou permanentemente"
+        },
+        "changesetMessage": "shop_closed"
+      }
+    ],
+    "nonDeleteMappings": [
+      {
+        "if": {
+          "and": [
+            "service:bicycle:rental=no"
+          ]
+        },
+        "then": {
+          "en": "This bicycle shop used to rent out bikes but doesn't rent out bikes anymore",
+          "nl": "Deze fietszaak verhuurde vroeger fietsen, maar nu niet meer",
+          "fr": "Ce magasin de vélo louait des vélos, mais n'en loue plus maintenant",
+          "de": "Dieser Fahrradladen vermietete früher Fahrräder, aber jetzt nicht mehr",
+          "es": "Esta tienda de bicicletas alquilaba bicis, pero ya no lo hace",
+          "da": "Denne cykelbutik plejede at udleje cykler, men udlejer ikke længere cykler",
+          "cs": "Tento obchod s koly dříve půjčoval kola, ale už je nepůjčuje",
+          "ca": "Aquesta botiga de bicicletes solia llogar bicicletes, però ja no",
+          "pt_BR": "Essa loja de bicicletas costumava alugar bicicletas, mas não aluga mais",
+          "pt": "Esta loja de bicicletas costumava alugar bicicletas, mas ja não as aluga"
+        }
+      }
+    ]
+  },
+  "allowMove": {
+    "enableImproveAccuracy": true,
+    "enableRelocation": true
+  },
+  "titleIcons": [
+    {
+      "id": "wikipedialink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+      "condition": {
+        "or": [
+          "wikipedia~*",
+          "wikidata~*"
+        ]
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "wikipedia=",
+          "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "open_until",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "#": "Titleicon showing e.g. 'open until 17:00'",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{opening_hours_state()}",
+      "condition": {
+        "or": [
+          "opening_hours~*",
+          {
+            "or": [
+              {
+                "and": [
+                  "seasonal~.*winter.*",
+                  "_now:date~....-(12|01|02)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*spring.*",
+                  "_now:date~....-(03|04|05)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*summer.*",
+                  "_now:date~....-(06|07|08)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*autumn.*",
+                  "_now:date~....-(09|10|11)-.."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "phonelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": {
+        "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+        "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+        "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+        "_context": "layers:icons.tagRenderings.phonelink.render"
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:phone~*",
+          "then": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+          }
+        }
+      ],
+      "condition": {
+        "or": [
+          "phone~*",
+          "contact:phone~*"
+        ]
+      }
+    },
+    {
+      "id": "emaillink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:email~*",
+          "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:email~*",
+          "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        }
+      ],
+      "condition": {
+        "or": [
+          "email~*",
+          "contact:email~*",
+          "operator:email~*"
+        ]
+      }
+    },
+    {
+      "id": "websitelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "website~*",
+          "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:website~*",
+          "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "context:website~*",
+          "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "smokingicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=no",
+          "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=yes",
+          "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+        }
+      ]
+    },
+    {
+      "id": "dogicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "if": "dog=no",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+        },
+        {
+          "if": "dog=leashed",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+        },
+        {
+          "if": {
+            "or": [
+              "dog=yes",
+              "dog=unleashed"
+            ]
+          },
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+        }
+      ]
+    },
+    {
+      "id": "sharelink",
+      "labels": [
+        "defaults"
+      ],
+      "render": "{share_link()}",
+      "metacondition": "_supports_sharing=yes"
+    },
+    {
+      "id": "favourite_title_icon",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "*": "{favourite_icon()}"
+      },
+      "metacondition": "_loggedIn=true"
+    },
+    {
+      "id": "osmlink",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+        "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+        "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+        "_context": "layers:icons.tagRenderings.osmlink.render"
+      },
+      "mappings": [
+        {
+          "if": "id~.*/-.*",
+          "then": ""
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "_backend~*",
+          "then": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+          }
+        }
+      ],
+      "condition": "id~(node|way|relation)/[0-9]*"
+    },
+    {
+      "id": "direction",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "{direction_indicator()}"
+    },
+    {
+      "id": "rating",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{rating()}"
+    }
+  ],
+  "_layerIcon": [
+    {
+      "icon": "./assets/themes/bicycle_rental/logo.svg"
+    }
+  ]
+}

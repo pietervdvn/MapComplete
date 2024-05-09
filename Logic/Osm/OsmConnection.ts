@@ -1,10 +1,8 @@
-import osmAuth from "osm-auth"
+import { osmAuth } from "osm-auth"
 import { Store, Stores, UIEventSource } from "../UIEventSource"
 import { OsmPreferences } from "./OsmPreferences"
 import { ChangesetHandler } from "./ChangesetHandler"
 import { ElementStorage } from "../ElementStorage"
-import Svg from "../../Svg"
-import Img from "../../UI/Base/Img"
 import { Utils } from "../../Utils"
 import { OsmObject } from "./OsmObject"
 import { Changes } from "./Changes"
@@ -33,8 +31,8 @@ export type OsmServiceState = "online" | "readonly" | "offline" | "unknown" | "u
 export class OsmConnection {
     public static readonly oauth_configs = {
         osm: {
-            oauth_consumer_key: "hivV7ec2o49Two8g9h8Is1VIiVOgxQ1iYexCbvem",
-            oauth_secret: "wDBRTCem0vxD7txrg1y6p5r8nvmz8tAhET7zDASI",
+            oauth_consumer_key: "K93H1d8ve7p-tVLE1ZwsQ4lAFLQk8INx5vfTLMu5DWk",
+            oauth_secret: "NBWGhWDrD3QDB35xtVuxv4aExnmIt4FA_WgeLtwxasg",
             url: "https://www.openstreetmap.org",
             // OAUTH 1.0 application
             // https://www.openstreetmap.org/user/Pieter%20Vander%20Vennet/oauth_clients/7404
@@ -513,7 +511,7 @@ export class OsmConnection {
         // In standalone mode, we DON'T use single page login, as 'redirecting' opens a new window anyway...
         // Same for an iframe...
 
-        this.auth = new osmAuth({
+        this.auth = new osmAuth(<any> {
             oauth_consumer_key: this._oauth_config.oauth_consumer_key,
             oauth_secret: this._oauth_config.oauth_secret,
             url: this._oauth_config.url,

@@ -1,0 +1,938 @@
+{
+  "id": "playground_equipment",
+  "name": {
+    "en": "Playground equipment",
+    "de": "Spielplatzausstattung"
+  },
+  "description": {
+    "en": "Layer showing playground equipment",
+    "de": "Ebene mit Spielplatzausrüstung"
+  },
+  "source": {
+    "osmTags": {
+      "and": [
+        "playground~*"
+      ]
+    }
+  },
+  "minzoom": 18,
+  "title": {
+    "render": {
+      "en": "Playground device",
+      "de": "Spielplatzgerät"
+    }
+  },
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": {
+            "render": "circle",
+            "id": "circle"
+          },
+          "color": "white"
+        },
+        {
+          "icon": {
+            "render": "./assets/themes/playgrounds/playground.svg",
+            "id": "assetsthemesplaygroundsplaygroundsvg"
+          }
+        }
+      ],
+      "iconSize": "20,20",
+      "iconBadges": [
+        {
+          "if": "_favourite=yes",
+          "then": "circle:white;heart:red"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "width": 1,
+      "color": "blue"
+    }
+  ],
+  "presets": [
+    {
+      "tags": [
+        "playground=yes"
+      ],
+      "title": {
+        "en": "a playground device",
+        "de": "ein Spielgerät"
+      },
+      "description": {
+        "en": "An exact type is asked later",
+        "de": "Ein genauer Typ wird später gefragt"
+      }
+    }
+  ],
+  "tagRenderings": [
+    {
+      "id": "just_created",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "This element shows a 'thank you' that the contributor has recently created this element",
+      "classes": "rounded-xl thanks",
+      "mappings": [
+        {
+          "if": "id~*",
+          "icon": "./assets/svg/party.svg",
+          "then": {
+            "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+            "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+            "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+            "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+            "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+            "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+          }
+        }
+      ],
+      "condition": {
+        "and": [
+          "_backend~*",
+          "_last_edit:passed_time<300",
+          {
+            "or": [
+              "_version_number=",
+              "_version_number=1"
+            ]
+          }
+        ]
+      },
+      "metacondition": {
+        "and": [
+          {
+            "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+            "or": [
+              "_last_edit:contributor:uid:={_uid}",
+              "_last_edit:contributor:uid="
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "images",
+      "description": "This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images",
+      "render": {
+        "*": "{image_carousel()}{image_upload()}{nearby_images():my-4}"
+      },
+      "classes": "my-4"
+    },
+    {
+      "render": {
+        "en": "This is a {playground}",
+        "de": "Das ist ein {playground}"
+      },
+      "id": "type",
+      "freeform": {
+        "key": "playground",
+        "placeholder": {
+          "en": "Type of device",
+          "de": "Art des Geräts"
+        },
+        "addExtraTags": [
+          "fixme=Freeform input used"
+        ],
+        "inline": true
+      },
+      "question": {
+        "en": "What kind of device is this?",
+        "nl": "Wat voor speeltoestel is dit?",
+        "de": "Was ist das für ein Gerät?"
+      },
+      "invalidValues": "playground=yes",
+      "mappings": [
+        {
+          "if": "playground=swing",
+          "then": {
+            "en": "This is a swing",
+            "nl": "Dit is een schommel",
+            "de": "Das ist eine Schaukel"
+          }
+        },
+        {
+          "if": "playground=structure",
+          "then": {
+            "en": "This is a structure consisting of several connected playground devices",
+            "de": "Dies ist eine Struktur aus mehreren angeschlossenen Spielgeräten"
+          },
+          "icon": {
+            "path": "./assets/layers/playground_equipment/SunwardCohousingPlayStructure2005.jpg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "playground=slide",
+          "then": {
+            "en": "This is a slide",
+            "de": "Das ist eine Rutsche"
+          }
+        },
+        {
+          "if": "playground=sandpit",
+          "then": {
+            "en": "This is a sand pit",
+            "nl": "Dit is een zandbak",
+            "de": "Dies ist ein Sandkasten"
+          },
+          "searchTerms": {
+            "en": [
+              "sandbox"
+            ]
+          },
+          "icon": {
+            "path": "./assets/layers/playground_equipment/Zandbakw.jpg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "playground=springy",
+          "then": {
+            "en": "This is a spring rider",
+            "nl": "Dit is een veertoestel",
+            "de": "Dies ist ein Springreiter"
+          },
+          "searchTerms": {
+            "en": [
+              "springy"
+            ],
+            "nl": [
+              "wipkip"
+            ]
+          }
+        },
+        {
+          "if": "playground=climbingframe",
+          "then": {
+            "en": "This is a climbing frame",
+            "nl": "Dit is een klimrek",
+            "de": "Dies ist ein Kletterrahmen"
+          },
+          "searchTerms": {
+            "en": [
+              "jungle gym",
+              "rope spider"
+            ]
+          },
+          "icon": {
+            "path": "./assets/layers/playground_equipment/DeimosXL1.jpg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "playground=seesaw",
+          "then": {
+            "en": "This is a seesaw",
+            "nl": "Dit is een wipwap",
+            "de": "Dies ist eine Wippe"
+          },
+          "searchTerms": {
+            "en": [
+              "teeter-totter",
+              "teeterboard"
+            ]
+          },
+          "icon": {
+            "path": "./assets/layers/playground_equipment/Seesaw-aa.jpg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "playground=playhouse",
+          "then": {
+            "en": "This is a playhouse",
+            "de": "Das ist ein Spielhaus"
+          },
+          "searchTerms": {
+            "en": [
+              "Wendyhouse"
+            ]
+          },
+          "icon": {
+            "path": "./assets/layers/playground_equipment/Playhouse.jpg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "playground=roundabout",
+          "then": {
+            "en": "This is a roundabout",
+            "de": "Dies ist ein Karussell"
+          },
+          "searchTerms": {
+            "en": [
+              "merry-go-round"
+            ]
+          },
+          "icon": {
+            "path": "./assets/layers/playground_equipment/Manually_powered_carousel_on_a_playground_in_Saint-Petersburg.JPG",
+            "class": "large"
+          }
+        },
+        {
+          "if": "playground=basketswing",
+          "then": {
+            "en": "This is a basket swing",
+            "de": "Dies ist eine Korbschaukel"
+          },
+          "icon": {
+            "path": "./assets/layers/playground_equipment/Playground_swing_03.jpg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "playground=zipwire",
+          "then": {
+            "en": "This is a zip wire",
+            "de": "Dies ist ein Seilzug"
+          }
+        },
+        {
+          "if": "playground=horizontal_bar",
+          "then": {
+            "en": "This is a horizontal bar",
+            "nl": "Dit is een rekstok",
+            "de": "Dies ist ein horizontaler Balken"
+          },
+          "icon": {
+            "path": "./assets/layers/playground_equipment/Rekstok.JPG",
+            "class": "large"
+          }
+        },
+        {
+          "if": "playground=hopscotch",
+          "then": {
+            "en": "This is a hopscotch",
+            "de": "Dies ist ein Hüpfspiel"
+          },
+          "icon": {
+            "path": "./assets/layers/playground_equipment/Hinkelbaan_tegels.jpg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "playground=splash_pad",
+          "then": {
+            "en": "This is a splash pad",
+            "de": "Dies ist ein Planschbecken"
+          },
+          "searchTerms": {
+            "en": "spray pool"
+          },
+          "icon": {
+            "path": "./assets/layers/playground_equipment/Urbeach-high-park-splashpad.jpg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "playground=climbingwall",
+          "then": {
+            "en": "This is a climbing wall",
+            "de": "Das ist eine Kletterwand"
+          },
+          "icon": {
+            "path": "./assets/layers/playground_equipment/Playground_climbingwall.jpg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "playground=map",
+          "then": {
+            "en": "This is a map",
+            "de": "Das ist eine Karte"
+          },
+          "icon": {
+            "path": "./assets/layers/playground_equipment/Playground_Map,_Washington_Elementary.jpg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "playground=bridge",
+          "then": {
+            "en": "This is a bridge (either as a standalone device or as part of a larger structure)",
+            "de": "Dies ist eine Brücke (entweder als eigenständiges Gerät oder als Teil einer größeren Struktur)"
+          },
+          "icon": {
+            "path": "./assets/layers/playground_equipment/Playground_in_Muchall_Park,_Wolverhampton_-_geograph.org.uk_-_2735437.jpg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "playground=cushion",
+          "then": {
+            "en": "This is a bouncy cushion",
+            "de": "Das ist ein Hüpfkissen"
+          },
+          "icon": {
+            "path": "./assets/layers/playground_equipment/Hupfkissen.jpg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "playground=activitypanel",
+          "then": {
+            "en": "This is an activity panel",
+            "de": "Dies ist ein Aktivitätspanel"
+          },
+          "icon": {
+            "path": "./assets/layers/playground_equipment/Szwedy_-_plac_zabaw_-_kotko_i_krzyzyk.jpg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "playground=teenshelter",
+          "then": {
+            "en": "This is a teen shelter",
+            "de": "Dies ist eine Jugendherberge"
+          },
+          "icon": {
+            "path": "./assets/layers/playground_equipment/Teen_shelter_near_former_coastguard_lookout,_Watchet_-_geograph.org.uk_-_1714960.jpg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "playground=funnel_ball",
+          "then": {
+            "en": "This is a funnel used to play with funnel ball",
+            "de": "Dies ist ein Trichter, mit dem man Trichterball spielen kann"
+          },
+          "icon": {
+            "path": "./assets/layers/playground_equipment/Funnel_ball.jpg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "playground=spinning_circle",
+          "then": {
+            "en": "This is a spinning circle",
+            "de": "Dies ist ein sich drehender Kreis"
+          },
+          "icon": {
+            "path": "./assets/layers/playground_equipment/Spinning_circle.jpg",
+            "class": "large"
+          }
+        }
+      ]
+    },
+    {
+      "id": "wheelchair-access",
+      "question": {
+        "nl": "Is deze plaats rolstoeltoegankelijk?",
+        "en": "Is this device accessible by wheelchair?",
+        "pt": "Este lugar é acessível a utilizadores de cadeiras de rodas?",
+        "pt_BR": "Este lugar é acessível com uma cadeira de rodas?",
+        "de": "Ist dieses Gerät mit Rollstuhl erreichbar?",
+        "fr": "Est-ce que cet endroit est accessible en chaise roulante ?",
+        "hu": "Akadálymentes-e ez a hely?",
+        "it": "Questo luogo è accessibile con una sedia a rotelle?",
+        "nb_NO": "Er dette stedet tilgjengelig for rullestoler?",
+        "ca": "Aquest lloc és accessible amb cadira de rodes?",
+        "sv": "Är det här stället tillgängligt med en rullstol?",
+        "zh_Hant": "這個地方可以坐輪椅到達嗎？",
+        "pl": "Czy to miejsce jest dostępne dla osób na wózkach inwalidzkich?",
+        "ja": "車いすでのアクセスは可能ですか？",
+        "fil": "Kaya bang abutin ang lugar na ito ng naka-wheelchair?",
+        "es": "¿Este lugar es accesible con una silla de ruedas?",
+        "da": "Er stedet tilgængeligt med en kørestol?",
+        "id": "Apakah tempat ini dapat diakses dengan kursi roda?",
+        "cs": "Je toto místo přístupné pro vozíčkáře?"
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "wheelchair=designated"
+            ]
+          },
+          "then": {
+            "nl": "Deze plaats is speciaal aangepast voor gebruikers van een rolstoel",
+            "en": "This place is specially adapted for wheelchair users",
+            "pt": "Este lugar está especialmente adaptado para utilizadores de cadeira de rodas",
+            "pt_BR": "Este lugar é especialmente adaptado para usuários de cadeira de rodas",
+            "de": "Der Ort ist speziell für Rollstuhlfahrer gestaltet",
+            "hu": "Ez a hely kifejezetten kerekesszékeseknek lett kialakítva",
+            "it": "Questo luogo è stato adattato per favorire le persone in sedia a rotelle",
+            "nb_NO": "Dette stedet er spesielt tilpasset rullestolsbrukere",
+            "fr": "Cet endroit est spécialement adapté pour les usagers de fauteuils roulants",
+            "ca": "Aquest lloc està especialment adaptat per a les cadires de rodes",
+            "sv": "Det här stället är speciellt anpassat för rullstolsburna användare",
+            "zh_Hant": "這個地方有特別設計給輪椅使用者",
+            "ru": "Это место подходит для людей на инвалидной коляске",
+            "pl": "W tym miejscu zainstalowane zostały udogodnienia dla osób na wózkach inwalidzkich",
+            "ja": "この場所は、車椅子の方のための特別仕様になっています",
+            "fil": "Ang lugar na ito ay angkop sa mga gumagamit ng wheelchair",
+            "es": "Este lugar está especialmente adaptado para usuarios en sillas de ruedas",
+            "da": "Dette sted er specielt indrettet til kørestolsbrugere",
+            "id": "Tempat ini dirancang khusus untuk pengguna kursi roda",
+            "cs": "Toto místo je speciálně upraveno pro vozíčkáře"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "wheelchair=yes"
+            ]
+          },
+          "then": {
+            "nl": "Deze plaats is vlot bereikbaar met een rolstoel",
+            "en": "This place is easily reachable with a wheelchair",
+            "pt": "Este lugar é de fácil acesso com uma cadeira de rodas",
+            "pt_BR": "Este lugar é facilmente acessível com uma cadeira de rodas",
+            "de": "Der Ort ist rollstuhlzugänglich gestaltet",
+            "hu": "Ez a hely könnyedén elérhető kerekesszékkel",
+            "it": "Questo luogo è facilmente raggiungibile con una sedia a rotelle",
+            "nb_NO": "Dette stedet kan enkelt besøkes med rullestol",
+            "fr": "Cet endroit est facilement accessible avec un fauteuil roulant",
+            "ca": "És facilment arribable amb cadira de rodes",
+            "sv": "Denna plats är lätt att nå med rullstol",
+            "zh_Hant": "這個地方坐輪椅很容易到達",
+            "ru": "До этого места легко добраться на инвалидной коляске",
+            "pl": "To miejsce jest łatwo dostępne dla osób na wózkach inwalidzkich",
+            "ja": "この場所は、車いすで簡単に行くことができます",
+            "fil": "Ang lugar na ito ay kayang abutin ng mga naka-wheelchair",
+            "es": "Este lugar es fácilmente accesible con una silla de ruedas",
+            "da": "Dette sted er let tilgængeligt med en kørestol",
+            "id": "Tempat ini mudah dijangkau dengan kursi roda",
+            "cs": "Toto místo je snadno dosažitelné s invalidním vozíkem"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "wheelchair=limited"
+            ]
+          },
+          "then": {
+            "nl": "Deze plaats is bereikbaar met een rolstoel, maar het is niet makkelijk",
+            "en": "It is possible to reach this place in a wheelchair, but it is not easy",
+            "pt": "É possível chegar a este local em cadeira de rodas, mas não é fácil",
+            "pt_BR": "É possível chegar a esse local em uma cadeira de rodas, mas não é fácil",
+            "de": "Der Ort ist nur eingeschränkt rollstuhlzugänglich",
+            "fr": "Il est possible d'accéder à cet endroit en chaise roulante, mais ce n'est pas facile",
+            "hu": "Ez a hely ugyan elérhető kerekesszékkel, de nehezen",
+            "it": "È possibile raggiungere questo luogo con una sedia a rotella ma non è semplice",
+            "nb_NO": "Det er mulig å besøke dette stedet i rullestol, men det er ikke lett",
+            "ca": "És possible fer servir cadira de rodes a aquest lloc però no és fàcil",
+            "sv": "Det är möjligt att nå den här platsen i en rullstol, men det är inte lätt",
+            "zh_Hant": "這個地方可以坐輪椅到達，但並不容易",
+            "ru": "До этого места можно добраться, но не просто",
+            "pl": "To miejsce jest dostępne dla osób na wózkach inwalidzkich, ale z pewnymi trudnościami",
+            "ja": "車いすでこの場所まで行くことは可能ですが、簡単ではありません",
+            "fil": "Kayang abutin ang lugar na ito ng mga naka-wheelchair, pero hindi madali",
+            "es": "Es posible llegar a este lugar con una silla de ruedas, pero no es fácil",
+            "da": "Det er muligt at komme til dette sted med en kørestol, men det er ikke let",
+            "id": "Dimungkinkan untuk mencapai tempat ini dengan kursi roda, tetapi tidak mudah",
+            "cs": "Na toto místo je možné se dostat na invalidním vozíku, ale není to snadné"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "wheelchair=no"
+            ]
+          },
+          "then": {
+            "nl": "Niet rolstoeltoegankelijk",
+            "en": "This place is not reachable with a wheelchair",
+            "pt": "Este lugar não é acessível com uma cadeira de rodas",
+            "pt_BR": "Este lugar não é alcançável com uma cadeira de rodas",
+            "de": "Der Ort ist nicht rollstuhlzugänglich",
+            "fr": "Cet endroit n'est pas accessible en chaise roulante",
+            "hu": "Ez a hely kerekesszékkel elérhetetlen",
+            "it": "Questo luogo non è accessibile con una sedia a rotelle",
+            "nb_NO": "Dette stedet er ikke tilgjengelig for besøk med rullestol",
+            "ca": "Aquest lloc no és accessible amb cadira de rodes",
+            "sv": "Den här platsen kan inte nås med en rullstol",
+            "zh_Hant": "輪椅無法到達這個地方",
+            "pl": "To miejsce jest niedostępne dla osób na wózkach inwalidzkich",
+            "ja": "この場所は車いすでは行けません",
+            "fil": "Ang lugar na ito ay hindi kayang abutin ng naka-wheelchair",
+            "es": "No es posible llegar a este lugar con una silla de ruedas",
+            "da": "Dette sted er ikke tilgængeligt med kørestol",
+            "id": "Tempat ini tidak bisa dijangkau dengan kursi roda",
+            "cs": "Na toto místo se nelze dostat s invalidním vozíkem"
+          }
+        }
+      ]
+    },
+    {
+      "id": "leftover-questions",
+      "render": {
+        "*": "{questions( ,)}"
+      }
+    },
+    {
+      "id": "lod",
+      "labels": [
+        "added_by_default"
+      ],
+      "render": {
+        "*": "{linked_data_from_website()}"
+      }
+    },
+    {
+      "id": "minimap",
+      "description": "Shows a small map with the feature. Added by default to every popup",
+      "render": {
+        "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+      }
+    },
+    {
+      "id": "move-button",
+      "render": {
+        "*": "{move_button()}"
+      }
+    },
+    {
+      "id": "last_edit",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+      "condition": {
+        "and": [
+          "_last_edit:contributor~*",
+          "_last_edit:changeset~*"
+        ]
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsTesting=true",
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_debug=yes",
+          "_csCount>=10"
+        ]
+      },
+      "render": {
+        "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+      }
+    },
+    {
+      "id": "favourite_status",
+      "render": {
+        "*": "{favourite_status()}"
+      }
+    },
+    {
+      "id": "qr_code",
+      "labels": [
+        "added_by_default"
+      ],
+      "classes": "flex items-center gap-x-2",
+      "render": {
+        "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+        "en": "{qr_code()}Scan this code to open this location on another device",
+        "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+        "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+      }
+    },
+    {
+      "id": "share",
+      "labels": [
+        "added_by_default"
+      ],
+      "metacondition": "_supports_sharing=yes",
+      "render": {
+        "de": "{share_link(,Standort teilen)}",
+        "en": "{share_link(,Share this location)}",
+        "nl": "{share_link(,Deel deze locatie)}"
+      }
+    },
+    {
+      "id": "all-tags",
+      "render": {
+        "*": "{all_tags()}"
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_tags=full",
+          "mapcomplete-show_debug=yes"
+        ]
+      }
+    }
+  ],
+  "allowMove": true,
+  "titleIcons": [
+    {
+      "id": "wikipedialink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+      "condition": {
+        "or": [
+          "wikipedia~*",
+          "wikidata~*"
+        ]
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "wikipedia=",
+          "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "open_until",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "#": "Titleicon showing e.g. 'open until 17:00'",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{opening_hours_state()}",
+      "condition": {
+        "or": [
+          "opening_hours~*",
+          {
+            "or": [
+              {
+                "and": [
+                  "seasonal~.*winter.*",
+                  "_now:date~....-(12|01|02)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*spring.*",
+                  "_now:date~....-(03|04|05)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*summer.*",
+                  "_now:date~....-(06|07|08)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*autumn.*",
+                  "_now:date~....-(09|10|11)-.."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "phonelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": {
+        "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+        "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+        "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+        "_context": "layers:icons.tagRenderings.phonelink.render"
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:phone~*",
+          "then": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+          }
+        }
+      ],
+      "condition": {
+        "or": [
+          "phone~*",
+          "contact:phone~*"
+        ]
+      }
+    },
+    {
+      "id": "emaillink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:email~*",
+          "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:email~*",
+          "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        }
+      ],
+      "condition": {
+        "or": [
+          "email~*",
+          "contact:email~*",
+          "operator:email~*"
+        ]
+      }
+    },
+    {
+      "id": "websitelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "website~*",
+          "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:website~*",
+          "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "context:website~*",
+          "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "smokingicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=no",
+          "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=yes",
+          "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+        }
+      ]
+    },
+    {
+      "id": "dogicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "if": "dog=no",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+        },
+        {
+          "if": "dog=leashed",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+        },
+        {
+          "if": {
+            "or": [
+              "dog=yes",
+              "dog=unleashed"
+            ]
+          },
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+        }
+      ]
+    },
+    {
+      "id": "sharelink",
+      "labels": [
+        "defaults"
+      ],
+      "render": "{share_link()}",
+      "metacondition": "_supports_sharing=yes"
+    },
+    {
+      "id": "favourite_title_icon",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "*": "{favourite_icon()}"
+      },
+      "metacondition": "_loggedIn=true"
+    },
+    {
+      "id": "osmlink",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+        "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+        "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+        "_context": "layers:icons.tagRenderings.osmlink.render"
+      },
+      "mappings": [
+        {
+          "if": "id~.*/-.*",
+          "then": ""
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "_backend~*",
+          "then": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+          }
+        }
+      ],
+      "condition": "id~(node|way|relation)/[0-9]*"
+    },
+    {
+      "id": "direction",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "{direction_indicator()}"
+    },
+    {
+      "id": "rating",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{rating()}"
+    }
+  ],
+  "_layerIcon": [
+    {
+      "icon": "circle",
+      "color": "white"
+    },
+    {
+      "icon": "./assets/themes/playgrounds/playground.svg"
+    }
+  ]
+}

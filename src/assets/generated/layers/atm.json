@@ -1,0 +1,1171 @@
+{
+  "id": "atm",
+  "name": {
+    "en": "ATMs",
+    "de": "Geldautomaten",
+    "fr": "DABs",
+    "nl": "Geldautomaten",
+    "ca": "Caixers Automàtics",
+    "nb_NO": "Minibanker",
+    "cs": "Bankomaty",
+    "he": "כספומטים",
+    "eu": "kutxazainak",
+    "pl": "Bankomaty",
+    "pt_BR": "Caixas eletrônicos",
+    "es": "Cajeros automáticos",
+    "pt": "Multibancos",
+    "it": "Sportelli Bancomat"
+  },
+  "description": {
+    "en": "ATMs to withdraw money",
+    "de": "Geldautomaten zum Geld abheben",
+    "fr": "DABs pour retirer de l'argent",
+    "nl": "Geldautomaten om geld op te nemen",
+    "ca": "Caixers automàtics per a retirar diners",
+    "nb_NO": "Minibanker fo rå ta ut penger",
+    "cs": "Bankomaty pro výběr peněz",
+    "es": "Cajeros automáticos para retirar dinero",
+    "he": "כספומטים למשיכת כסף",
+    "pl": "Bankomaty do wypłacania pieniędzy",
+    "pt_BR": "Caixas eletrônicos para sacar dinheiro",
+    "pt": "Multibancos para levantar dinheiro",
+    "it": "Sportello Bancomat per prelevare denaro"
+  },
+  "source": {
+    "osmTags": {
+      "and": [
+        "amenity=atm"
+      ]
+    }
+  },
+  "minzoom": 13,
+  "title": {
+    "render": {
+      "en": "ATM",
+      "de": "Geldautomat",
+      "fr": "DAB",
+      "nl": "Geldautomaat",
+      "nb_NO": "Minibank",
+      "ca": "Caixer Automàtic",
+      "cs": "Bankomat",
+      "he": "כספומט",
+      "eu": "Kutxazaina",
+      "pl": "Bankomat",
+      "pt_BR": "Caixa eletrônico",
+      "es": "Cajero automático",
+      "pt": "Multibanco",
+      "sl": "Bankomat"
+    },
+    "mappings": [
+      {
+        "if": "brand~*",
+        "then": {
+          "en": "{brand} ATM",
+          "de": "{brand}-Geldautomat",
+          "fr": "DAB {brand}",
+          "nl": "{brand} Geldautomaat",
+          "nb_NO": "{brand}-minibank",
+          "ca": "Caixer automàtic {brand}",
+          "cs": "Bankomat {brand}",
+          "he": "כספומט {brand}",
+          "pl": "Bankomat {brand}",
+          "pt_BR": "Caixa eletrônico {brand}",
+          "es": "Cajero automático de {brand}",
+          "pt": "Multibanco {brand}"
+        }
+      }
+    ]
+  },
+  "pointRendering": [
+    {
+      "marker": [
+        {
+          "icon": {
+            "render": "circle",
+            "id": "circle"
+          },
+          "color": "white"
+        },
+        {
+          "icon": {
+            "render": "./assets/layers/atm/atm.svg",
+            "id": "assetslayersatmatmsvg"
+          }
+        }
+      ],
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "iconBadges": [
+        {
+          "if": "_favourite=yes",
+          "then": "circle:white;heart:red"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [],
+  "presets": [
+    {
+      "tags": [
+        "amenity=atm"
+      ],
+      "title": {
+        "en": "an ATM",
+        "de": "einen Geldautomaten",
+        "fr": "un DAB",
+        "nl": "een geldautomaat",
+        "ca": "un caixer automàtic",
+        "nb_NO": "en minibank",
+        "cs": "bankomat",
+        "pl": "bankomat",
+        "pt_BR": "um caixa eletrônico",
+        "es": "Un cajero automático",
+        "pt": "um multibanco",
+        "it": "Uno sportello bancomat"
+      }
+    }
+  ],
+  "tagRenderings": [
+    {
+      "id": "just_created",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "This element shows a 'thank you' that the contributor has recently created this element",
+      "classes": "rounded-xl thanks",
+      "mappings": [
+        {
+          "if": "id~*",
+          "icon": "./assets/svg/party.svg",
+          "then": {
+            "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+            "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+            "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+            "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+            "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+            "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+          }
+        }
+      ],
+      "condition": {
+        "and": [
+          "_backend~*",
+          "_last_edit:passed_time<300",
+          {
+            "or": [
+              "_version_number=",
+              "_version_number=1"
+            ]
+          }
+        ]
+      },
+      "metacondition": {
+        "and": [
+          {
+            "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+            "or": [
+              "_last_edit:contributor:uid:={_uid}",
+              "_last_edit:contributor:uid="
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "images",
+      "description": "This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images",
+      "render": {
+        "*": "{image_carousel()}{image_upload()}{nearby_images():my-4}"
+      },
+      "classes": "my-4"
+    },
+    {
+      "id": "name",
+      "render": {
+        "en": "The name of this ATM is {name}",
+        "de": "Der Name des Geldautomaten ist {name}",
+        "fr": "Le nom de ce DAB est {name}",
+        "nl": "De naam van deze geldautomaat is {name}",
+        "ca": "El nom d'aquest caixer és {name}",
+        "nb_NO": "Navnet på denne minibanken er {name}",
+        "cs": "Název tohoto bankomatu je {name}",
+        "he": "שמו של כספומט זה הוא {name}",
+        "pl": "Nazwa tego bankomatu to {name}",
+        "pt_BR": "O nome desse caixa eletrônico é {name}",
+        "es": "El nombre del banco de este cajero automático es {name}",
+        "pt": "O nome deste multibanco é {name}",
+        "it": "Il nome di questo sportello bancomat è {name}"
+      },
+      "condition": "name~*"
+    },
+    {
+      "id": "brand",
+      "question": {
+        "en": "What brand is this ATM?",
+        "de": "Von welcher Marke ist dieser Geldautomat?",
+        "fr": "De quelle marque est ce DAB ?",
+        "nl": "Van welk merk is deze geldautomaat?",
+        "ca": "De quina marca és aquest caixer?",
+        "nb_NO": "Hvilet merke har denne minibanken?",
+        "cs": "Jaká je značka bankomatu?",
+        "he": "איזה מותג הכספומט הזה?",
+        "pl": "Jakiej marki jest ten bankomat?",
+        "pt_BR": "De qual marca é esse caixa eletrônico?",
+        "es": "¿De qué banco es este cajero?",
+        "pt": "De qual marca é este multibanco?"
+      },
+      "freeform": {
+        "key": "brand",
+        "type": "string",
+        "placeholder": {
+          "en": "Brand name",
+          "de": "Markenname",
+          "fr": "Nom de marque",
+          "nl": "Merknaam",
+          "nb_NO": "Merkenavn",
+          "ca": "Nom de la marca",
+          "cs": "Obchodní značka",
+          "he": "שם מותג",
+          "pl": "Nazwa handlowa",
+          "pt_BR": "Nome da marca",
+          "es": "Marca",
+          "pt": "Nome da marca"
+        },
+        "inline": true
+      },
+      "render": {
+        "en": "The brand of this ATM is {brand}",
+        "de": "Die Marke des Geldautomaten ist {brand}",
+        "fr": "La marque de ce DAB est {brand}",
+        "nl": "Het merk van deze geldautomaat is {brand}",
+        "nb_NO": "Merkenavnet for denne minibanken er {brand}",
+        "ca": "La marca d'aquest caixer és {brand}",
+        "cs": "Značka tohoto bankomatu je {brand}",
+        "he": "המותג של כספומט זה הוא {brand}",
+        "pt_BR": "A marca desse caixa eletrônico é {brand}",
+        "es": "El banco de este cajero automático es {brand}",
+        "pt": "A marca deste multibanco é {brand}"
+      }
+    },
+    {
+      "id": "operator",
+      "condition": "amenity!=bank",
+      "question": {
+        "en": "What company operates this ATM?",
+        "de": "Welches Unternehmen betreibt den Geldautomaten?",
+        "fr": "Quelle société exploite ce DAB ?",
+        "nl": "Welk bedrijf beheert deze geldautomaat?",
+        "nb_NO": "Hvilket selskap driver denne minibanken?",
+        "ca": "Quina companyia opera aquest caixer?",
+        "cs": "Která společnost provozuje tento bankomat?",
+        "he": "איזו חברה מפעילה את הכספומט הזה?",
+        "pl": "Jaka firma obsługuje ten bankomat?",
+        "pt_BR": "Qual companhia opera esse caixa eletrônico?",
+        "es": "¿De qué banco es este cajero automático?",
+        "pt": "Qual companhia opera este multibanco?"
+      },
+      "freeform": {
+        "key": "operator",
+        "type": "string",
+        "placeholder": {
+          "en": "Operator",
+          "de": "Betreiber",
+          "fr": "Opérateur",
+          "nl": "Beheerder",
+          "ca": "Operador",
+          "cs": "Operátor",
+          "he": "מפעיל",
+          "eu": "Operadorea",
+          "pt_BR": "Operador",
+          "es": "Operador",
+          "pt": "Operador",
+          "it": "Operatore"
+        },
+        "inline": true
+      },
+      "render": {
+        "en": "The ATM is operated by {operator}",
+        "de": "Der Geldautomat wird betrieben von {operator}",
+        "fr": "Ce DAB est exploité par {operator}",
+        "nl": "Deze geldautomaat wordt beheerd door {operator}",
+        "nb_NO": "Minibanken drives av {operator}",
+        "ca": "{operator} opera aquest caixer",
+        "cs": "Bankomat provozuje {operator}",
+        "he": "הכספומט מופעל על ידי {operator}",
+        "pl": "Ten bankomat jest obsługiwany przez {operator}",
+        "pt_BR": "O caixa eletrônico é operado por {operator}",
+        "es": "El cajero es de {operator}",
+        "pt": "O multibanco é operado por {operator}",
+        "sl": "Ta bankomat upravlja {operator}"
+      }
+    },
+    {
+      "id": "opening_hours_24_7",
+      "question": {
+        "en": "What are the opening hours of {title()}?",
+        "fr": "Quelles sont les horaires d'ouverture de {title()} ?",
+        "de": "Wie lauten die Öffnungszeiten von {title()}?",
+        "nl": "Wat zijn de openingstijden van {title()}?",
+        "nb_NO": "Hva er åpningstidene for {title()})",
+        "ru": "Какое время работы у {title()}?",
+        "zh_Hant": "{title()} 的開放時間是什麼？",
+        "it": "Quali sono gli orari di apertura di {title()}?",
+        "pt_BR": "Qual o horário de funcionamento de {title()}?",
+        "pl": "Jakie są godziny otwarcia {title()}?",
+        "sv": "Vilka är öppettiderna för {title()}?",
+        "pt": "Qual é o horário de funcionamento de {title()}?",
+        "hu": "Mikor van nyitva ez: {title()}?",
+        "ca": "Quin és l'horari d'obertura de {title()}?",
+        "ja": "{title()}の営業時間は？",
+        "sl": "Kakšen odpiralni čas ima {title()}?",
+        "fil": "Anong oras nagbubukas ang {title()}?",
+        "es": "¿Cuales son las horas de apertura de {title()}?",
+        "zh_Hans": "{title()} 的开放时间为何？",
+        "da": "Hvad er åbningstiderne for {title()}?",
+        "id": "Kapan jam buka {title()}?",
+        "cs": "Jaká je otevírací doba {title()}?"
+      },
+      "render": {
+        "de": "<h3>Öffnungszeiten</h3>{opening_hours_table(opening_hours)}",
+        "fr": "<h3>Horaires d'ouverture</h3>{opening_hours_table(opening_hours)}",
+        "en": "<h3>Opening hours</h3>{opening_hours_table(opening_hours)}",
+        "nl": "<h3>Openingstijden</h3>{opening_hours_table(opening_hours)}",
+        "nb_NO": "<h3>Åpningstider</h3>{opening_hours_table(opening_hours)}",
+        "ru": "<h3>Часы работы</h3>{opening_hours_table(opening_hours)}",
+        "zh_Hant": "<h3>開放時間</h3>{opening_hours_table(opening_hours)}",
+        "it": "<h3>Orari di apertura</h3>{opening_hours_table(opening_hours)}",
+        "pl": "<h3> Godziny otwarcia</h3>{opening_hours_table(opening_hours)}",
+        "pt_BR": "<h3>Horário de funcionamento</h3>{opening_hours_table(opening_hours)}",
+        "sv": "<h3>Öppettider</h3> {opening_hours_table(opening_hours)}",
+        "pt": "<h3>Horário de funcionamento</h3>{opening_hours_table(opening_hours)}",
+        "eo": "<h3>Malfermitaj horoj</h3>{opening_hours_table(opening_hours)}",
+        "hu": "<h3>Nyitva tartás</h3>{opening_hours_table(opening_hours)}",
+        "ca": "<h3>Horari d'obertura</h3>{opening_hours_table(opening_hours)}",
+        "ja": "<h3>営業時間</h3>{opening_hours_table(opening_hours)}",
+        "sl": "<h3>Odpiralni čas</h3>{opening_hours_table(opening_hours)}",
+        "fil": "<h3>Mga oras na bukas</h3>{opening_hours_table(opening_hours)}",
+        "es": "<h3>Horas de apertura</h3>{opening_hours_table(opening_hours)}",
+        "zh_Hans": "<h3>开放时间</h3> {opening_hours_table(opening_hours)}",
+        "da": "<h3> Åbningstider</h3>{opening_hours_table(opening_hours)}",
+        "id": "<h3>Jam buka</h3>{opening_hours_table(opening_hours)}",
+        "pa_PK": "<h3>کھُلھے گھنٹے</h3>{opening_hours_table(opening_hours)}",
+        "cs": "<h3>Otevírací hodiny</h3>{opening_hours_table(opening_hours)}"
+      },
+      "freeform": {
+        "key": "opening_hours",
+        "type": "opening_hours",
+        "inline": false
+      },
+      "mappings": [
+        {
+          "if": "opening_hours=24/7",
+          "icon": "./assets/layers/questions/open24_7.svg",
+          "then": {
+            "en": "24/7 opened (including holidays)",
+            "de": "durchgehend geöffnet (auch an Feiertagen)",
+            "zh_Hant": "24/7 開放 (包括假日)",
+            "id": "Buka 24 jam (termasuk hari libur)",
+            "hu": "Éjjel-nappal nyitva (munkaszüneti napokon is)",
+            "es": "Abierta 24/7 (incluyendo festivos)",
+            "nl": "24/7 open (ook tijdens feestdagen)",
+            "fr": "Ouvert 24h/24 (jours fériés compris)",
+            "nb_NO": "Døgnåpent (inkludert helligdager)",
+            "cs": "Otevřeno 24/7 (včetně svátků)",
+            "ca": "Obert 24/7 (incloent-hi festius)",
+            "pl": "Otwarte 24/7 (również w święta)"
+          }
+        },
+        {
+          "#": "Just here to be able to handle those ~5000 incorrect 'opening_hours=closed' elements.",
+          "if": "opening_hours=closed",
+          "then": {
+            "en": "Marked as closed for an unspecified time",
+            "nl": "Gesloten voor onbepaalde duur",
+            "de": "Als geschlossen für eine unbestimmte Zeit markiert"
+          },
+          "hideInAnswer": true
+        }
+      ]
+    },
+    {
+      "id": "cash_out",
+      "question": {
+        "en": "Can you withdraw cash from this ATM?",
+        "de": "Kann man an diesem Geldautomaten Bargeld abheben?",
+        "nl": "Kan je geld ophalen bij deze geldautomaat?",
+        "nb_NO": "Kan man gjøre uttak fra denne minibanken?",
+        "ca": "Pots retirar diners des d'aquest caixer?",
+        "cs": "Lze z tohoto bankomatu vybírat hotovost?",
+        "he": "האם אתה יכול למשוך מזומן מהכספומט הזה?",
+        "pt_BR": "Você pode sacar dinheiro nesse caixa eletrônico?",
+        "es": "¿Se puede sacar dinero de este cajero?",
+        "pt": "Pode levantar dinheiro neste multibanco?",
+        "it": "Puoi prelevare dei contanti da questo sportello bancomat?"
+      },
+      "mappings": [
+        {
+          "if": "cash_out=",
+          "then": {
+            "en": "You can withdraw cash from this ATM",
+            "de": "Sie können an diesem Geldautomaten Bargeld abheben",
+            "nl": "Je kan geld ophalen bij deze geldautomaat",
+            "ca": "Pots retirar diners a aquest caixer",
+            "nb_NO": "Du kan gjøre uttak i denne minibanken",
+            "cs": "Z tohoto bankomatu můžete vybírat hotovost",
+            "he": "אתה יכול למשוך מזומן מהכספומט הזה",
+            "pl": "Z tego bankomatu można wypłacić pieniądze",
+            "pt_BR": "Você pode sacar dinheiro nesse caixa eletrônico",
+            "es": "Puede retirar dinero de este cajero automático",
+            "pt": "Pode levantar dinheiro neste multibanco",
+            "it": "Puoi prelevare dei contanti da questo sportello bancomat"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "cash_out=yes",
+          "then": {
+            "en": "You can withdraw cash from this ATM",
+            "de": "An diesem Geldautomaten können Sie Bargeld abheben",
+            "nl": "Je kan geld ophalen bij deze geldautomaat",
+            "ca": "Pots retirar diners des d'aquest caixer",
+            "cs": "Z tohoto bankomatu můžete vybírat hotovost",
+            "he": "אתה יכול למשוך מזומן מהכספומט הזה",
+            "pt_BR": "Você pode sacar dinheiro nesse caixa eletrônico",
+            "es": "Puede retirar dinero de este cajero automático",
+            "pt": "Pode levantar dinheiro neste multibanco",
+            "it": "Puoi prelevare dei contanti da questo sportello bancomat"
+          }
+        },
+        {
+          "if": "cash_out=no",
+          "then": {
+            "en": "You cannot withdraw cash from this ATM",
+            "de": "Sie können an diesem Geldautomaten kein Bargeld abheben",
+            "nl": "Je kan geen geld ophalen bij deze geldautomaat",
+            "ca": "No pots retirar diners des d'aquest caixer",
+            "cs": "Z tohoto bankomatu nelze vybírat hotovost",
+            "he": "לא ניתן למשוך מזומן מכספומט זה",
+            "pt_BR": "Você não pode sacar dinheiro nesse caixa eletrônico",
+            "es": "No puede retirar dinero de este cajero automático",
+            "pt": "Não pode levantar dinheiro neste multibanco",
+            "it": "Non puoi prelevare dei contanti da questo sportello bancomat"
+          }
+        }
+      ]
+    },
+    {
+      "id": "cash_in",
+      "question": {
+        "en": "Can you deposit cash into this ATM?",
+        "de": "Kann man an diesem Geldautomaten Bargeld einzahlen?",
+        "nl": "Kan je geld storten bij deze geldautomaat?",
+        "ca": "Pots dipositar diners a aquest caixer?",
+        "cs": "Můžete do tohoto bankomatu vložit hotovost?",
+        "fr": "Pouvez-vous déposer de l'argent liquide dans ce DAB ?",
+        "he": "האם אתה יכול להפקיד מזומן בכספומט הזה?",
+        "pl": "Czy ten bankomat pozwala wpłacać pieniądze?",
+        "pt_BR": "Você pode depositar dinheiro nesse caixa eletrônico?",
+        "es": "¿Se puede ingresar dinero en efectivo en este cajero?",
+        "pt": "Pode depositar dinheiro neste multibanco?",
+        "it": "Puoi depositare dei contanti in questo sportello bancomat?"
+      },
+      "mappings": [
+        {
+          "if": "cash_in=",
+          "then": {
+            "en": "You probably cannot deposit cash into this ATM",
+            "de": "Sie können wahrscheinlich kein Bargeld in diesen Geldautomaten einzahlen",
+            "nl": "Je kan waarschijnlijk geen geld deponeren in deze geldautomaat",
+            "ca": "Probablement no pots ingressar diners a aquest caixer",
+            "nb_NO": "Du kan antagelig ikke gjøre innskudd i denne minibanken",
+            "cs": "Do tohoto bankomatu pravděpodobně nelze vložit hotovost",
+            "fr": "Vous ne pouvez probablement pas déposer d'argent liquide dans ce DAB",
+            "he": "כנראה שלא תוכל להפקיד מזומן בכספומט הזה",
+            "pl": "Prawdopodobnie ten bankomat nie pozwala wpłacać pieniędzy",
+            "pt_BR": "Você provavelmente não pode depositar dinheiro nesse caixa eletrônico",
+            "es": "Es probable que no pueda ingresar dinero en efectivo en este cajero automático",
+            "pt": "Provavelmente não pode depositar dinheiro neste multibanco",
+            "it": "Probabilmente non puoi depositare dei contanti in questo sportello bancomat"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "cash_in=yes",
+          "then": {
+            "en": "You can deposit cash into this ATM",
+            "de": "Sie können Bargeld in diesen Geldautomaten einzahlen",
+            "nl": "Je kan geld deponeren in deze geldautomaat",
+            "nb_NO": "Du kan ikke gjøre innskudd i denne minibanken",
+            "ca": "Pots dipositar diners a aquest caixer",
+            "cs": "Do tohoto bankomatu můžete vkládat hotovost",
+            "fr": "Vous pouvez déposer de l'argent liquide dans ce DAB",
+            "he": "אתה יכול להפקיד מזומן לכספומט זה",
+            "pl": "Ten bankomat pozwala wpłacać pieniądze",
+            "pt_BR": "Você pode depositar dinheiro nesse caixa eletrônico",
+            "es": "Puede ingresar dinero en efectivo en este cajero automático",
+            "pt": "Pode depositar dinheiro neste mutibanco",
+            "it": "Puoi depositare dei contanti in questo sportello bancomat"
+          }
+        },
+        {
+          "if": "cash_in=no",
+          "then": {
+            "en": "You cannot deposit cash into this ATM",
+            "de": "Sie können an diesem Geldautomaten kein Bargeld einzahlen",
+            "nl": "Je kan geen geld deponeren in deze geldautomaat",
+            "nb_NO": "Du kan ikke gjøre innskudd i denne minibanken",
+            "ca": "No pots dipositar diners a aquest caixer",
+            "cs": "Do tohoto bankomatu nelze vkládat hotovost",
+            "fr": "Vous ne pouvez pas déposer d'agent liquide dans ce DAB",
+            "he": "לא ניתן להפקיד מזומן לכספומט זה",
+            "pl": "Ten bankomat nie pozwala wpłacać pieniędzy",
+            "pt_BR": "Você não pode depositar dinheiro nesse caixa eletrônico",
+            "es": "No se puede ingresar dinero en efectivo en este cajero automático",
+            "pt": "Não pode depositar dinheiro neste multibanco",
+            "it": "Non puoi depositare dei contanti in questo sportello bancomat"
+          }
+        }
+      ]
+    },
+    {
+      "id": "cash_out-denominations-notes",
+      "condition": {
+        "and": [
+          {
+            "or": [
+              "cash_out=",
+              "cash_out=yes"
+            ]
+          },
+          {
+            "or": [
+              "_currency=",
+              "_currency~.*EUR.*"
+            ]
+          }
+        ]
+      },
+      "question": {
+        "en": "What notes can you withdraw here?",
+        "nl": "Welke bankbiljetten kan je hier afhalen?",
+        "fr": "Quels billets pouvez-vous retirer ici ?",
+        "de": "Welche Geldscheine können Sie hier abheben?",
+        "cs": "Jaké bankovky zde můžete vybírat?",
+        "he": "אילו הערות תוכל למשוך כאן?",
+        "ca": "Quins bitllets pots retirar aquí?",
+        "pl": "Jakie banknoty można tutaj wypłacić?",
+        "pt_BR": "Quais notas você pode sacar aqui?",
+        "es": "¿Qué billetes puede retirar aquí?",
+        "pt": "Quais notas pode levantar aqui?",
+        "it": "Quali banconote si possono ritirare qui?"
+      },
+      "multiAnswer": true,
+      "mappings": [
+        {
+          "if": "cash_out:notes:denominations=5 EUR",
+          "icon": "./assets/layers/questions/denominations/eur/5euro.svg",
+          "then": {
+            "en": "5 euro notes can be withdrawn",
+            "nl": "Je kunt biljetten van 5 euro afhalen",
+            "de": "5-Euro-Scheine können abgehoben werden",
+            "cs": "Bankovky v hodnotě 5 eur lze vybírat",
+            "ca": "es poden retirar bitllets de 5 euros",
+            "fr": "On peut retirer des billets de 5 euros",
+            "pt_BR": "Notas de 5 euros podem ser sacadas",
+            "es": "Se pueden retirar billetes de 5 euros",
+            "pt": "Notas de 5 euros podem ser levantadas",
+            "it": "Si possono prelevare banconote da 5 euro"
+          }
+        },
+        {
+          "if": "cash_out:notes:denominations=10 EUR",
+          "icon": "./assets/layers/questions/denominations/eur/10euro.svg",
+          "then": {
+            "en": "10 euro notes can be withdrawn",
+            "nl": "Je kunt biljetten van 10 euro afhalen",
+            "de": "10-Euro-Scheine können abgehoben werden",
+            "cs": "Bankovky v hodnotě 10 eur lze vybírat",
+            "ca": "es poden retirar bitllets de 10 euros",
+            "fr": "On peut retirer des billets de 10 euros",
+            "pt_BR": "Notas de 10 euros podem ser sacadas",
+            "es": "Se pueden retirar billetes de 10 euros",
+            "pt": "Notas de 10 euros podem ser levantadas",
+            "it": "Si possono prelevare banconote da 10 euro"
+          }
+        },
+        {
+          "if": "cash_out:notes:denominations=20 EUR",
+          "icon": "./assets/layers/questions/denominations/eur/20euro.svg",
+          "then": {
+            "en": "20 euro notes can be withdrawn",
+            "nl": "Je kunt biljetten van 20 euro afhalen",
+            "de": "20-Euro-Scheine können abgehoben werden",
+            "cs": "Bankovky v hodnotě 20 eur lze vybírat",
+            "ca": "es poden retirar bitllets de 20 euros",
+            "fr": "On peut retirer des billets de 20 euros",
+            "pt_BR": "Notas de 20 euros podem ser sacadas",
+            "es": "Se pueden retirar billetes de 20 euros",
+            "pt": "Notas de 20 euros podem ser levantadas",
+            "it": "Si possono prelevare banconote da 20 euro"
+          }
+        },
+        {
+          "if": "cash_out:notes:denominations=50 EUR",
+          "icon": "./assets/layers/questions/denominations/eur/50euro.svg",
+          "then": {
+            "en": "50 euro notes can be withdrawn",
+            "nl": "Je kunt biljetten van 50 euro afhalen",
+            "de": "Es können 50-Euro-Scheine abgehoben werden",
+            "cs": "50 eurové bankovky lze vybírat",
+            "ca": "es poden retirar bitllets de 50 euros",
+            "fr": "On peut retirer des billets de 50 euros",
+            "pt_BR": "Notas de 50 euros podem ser sacadas",
+            "es": "Se pueden retirar billetes de 50 euros",
+            "pt": "Notas de 50 euros podem ser levantadas",
+            "it": "Si possono prelevare banconote da 50 euro"
+          }
+        },
+        {
+          "if": "cash_out:notes:denominations=100 EUR",
+          "icon": "./assets/layers/questions/denominations/eur/100euro.svg",
+          "then": {
+            "en": "100 euro notes can be withdrawn",
+            "nl": "Je kunt biljetten van 100 euro afhalen",
+            "de": "100-Euro-Scheine können abgehoben werden",
+            "cs": "100 eurové bankovky lze vybírat",
+            "ca": "es poden retirar bitllets de 100 euros",
+            "fr": "On peut retirer des billets de 100 euros",
+            "pt_BR": "Notas de 100 euros podem ser sacadas",
+            "es": "Se pueden retirar billetes de 100 euros",
+            "pt": "Notas de 100 euros podem ser levantadas",
+            "it": "Si possono prelevare banconote da 100 euro"
+          }
+        },
+        {
+          "if": "cash_out:notes:denominations=200 EUR",
+          "icon": "./assets/layers/questions/denominations/eur/200euro.svg",
+          "then": {
+            "en": "200 euro notes can be withdrawn",
+            "nl": "Je kunt biljetten van 200 euro afhalen",
+            "de": "200-Euro-Scheine können abgehoben werden",
+            "cs": "200 eurové bankovky lze vybírat",
+            "ca": "es poden retirar bitllets de 200 euros",
+            "fr": "On peut retirer des billets de 200 euros",
+            "pt_BR": "Notas de 200 euros podem ser sacadas",
+            "es": "Se pueden retirar billetes de 200 euros",
+            "pt": "Notas de 200 euros podem ser levantadas",
+            "it": "Non si possono prelevare banconote da 200 euro"
+          }
+        },
+        {
+          "if": "cash_out:notes:denominations=500 EUR",
+          "icon": "./assets/layers/questions/denominations/eur/500euro.svg",
+          "then": {
+            "en": "500 euro notes can be withdrawn",
+            "nl": "Je kunt biljetten van 500 euro afhalen",
+            "de": "500-Euro-Scheine können abgehoben werden",
+            "cs": "Bankovky v hodnotě 500 eur lze vybírat",
+            "ca": "es poden retirar bitllets de 500 euros",
+            "fr": "On peut retirer des billets de 500 euros",
+            "pt_BR": "Notas de 500 euros podem ser sacadas",
+            "es": "Se pueden retirar billetes de 500 euros",
+            "pt": "Notas de 500 euros podem ser levantadas",
+            "it": "Non si possono prelevare banconote da 500 euro"
+          }
+        }
+      ]
+    },
+    {
+      "id": "speech_output",
+      "question": {
+        "en": "Does this ATM have speech output for visually impaired users?",
+        "de": "Verfügt dieser Geldautomat über eine Sprachausgabe für sehbehinderte Benutzer?",
+        "nl": "Heeft deze automaat spraak voor slechtziende en blinde gebruikers?",
+        "ca": "Aquest caixer té un lector de pantalla per a usuaris amb discapacitat visual?",
+        "cs": "Má tento bankomat hlasový výstup pro zrakově postižené uživatele?",
+        "he": "האם לכספומט הזה יש פלט דיבור למשתמשים לקויי ראייה?",
+        "pt_BR": "Esse caixa eletrônico tem saída de fala para usuários com deficiência visual?",
+        "es": "¿Dispone este cajero automático de salida de voz para usuarios con discapacidad visual?",
+        "pt": "Este multibanco tem saída de fala para utilizadores com deficiência visual?"
+      },
+      "mappings": [
+        {
+          "if": "speech_output=yes",
+          "then": {
+            "en": "This ATM has speech output, usually available through a headphone jack",
+            "de": "Dieser Geldautomat verfügt über eine Sprachausgabe, die normalerweise über eine Kopfhörerbuchse verfügbar ist",
+            "nl": "Deze automaat heeft spraak, waarschijnlijk beschikbaar via een hoofdtelefoon-aansluiting",
+            "ca": "Aquest caixer té lector de pantalla, normalment disponible a través d'un connector d'auriculars \"jack\"",
+            "cs": "Tento bankomat má řečový výstup, který je obvykle dostupný přes konektor pro sluchátka",
+            "he": "לכספומט זה יש פלט דיבור, זמין בדרך כלל דרך שקע אוזניות",
+            "pt_BR": "Este caixa eletrônico possui saída de fala, geralmente disponível por meio de um plug de fone de ouvido",
+            "es": "Este cajero automático tiene salida de voz, normalmente disponible a través de una toma de auriculares",
+            "pt": "Este multibanco tem saída de fala, geralmente disponível por meio de um plug de auscultadores"
+          }
+        },
+        {
+          "if": "speech_output=no",
+          "then": {
+            "en": "This ATM does not have speech output",
+            "de": "Dieser Geldautomat hat keine Sprachausgabe",
+            "nl": "Deze automaat heeft geen spraak",
+            "ca": "Aquest caixer no té lector de pantalla",
+            "cs": "Tento bankomat nemá hlasový výstup",
+            "he": "לכספומט זה אין פלט דיבור",
+            "pt_BR": "Esse caixa eletrônico não possui saída de fala",
+            "es": "Este cajero no tiene salida de voz",
+            "pt": "Este multibanco não possui saída de fala"
+          }
+        }
+      ]
+    },
+    {
+      "id": "speech_output_language",
+      "condition": "speech_output=yes",
+      "render": {
+        "ca": "{language_chooser(speech_output,En quins idiomes té sortida de veu aquest caixer?,Aquest caixer té sortida de veu en &LBRACElanguage&LPARENS&RPARENS&RBRACE,Aquest caixer té sortida de veu en &LBRACElanguage&LPARENS&RPARENS&RBRACE,,)}",
+        "cs": "{language_chooser(speech_output,V jakých jazycích má tento bankomat řečový výstup?,Tento bankomat má řečový výstup v &LBRACElanguage&LPARENS&RPARENS&RBRACE,Tento bankomat má řečový výstup v &LBRACElanguage&LPARENS&RPARENS&RBRACE,,)}",
+        "de": "{language_chooser(speech_output,In welchen Sprachen hat dieser Geldautomat eine Sprachausgabe?,Dieser Geldautomat hat eine Sprachausgabe in &LBRACElanguage&LPARENS&RPARENS&RBRACE,Dieser Geldautomat hat eine Sprachausgabe in &LBRACElanguage&LPARENS&RPARENS&RBRACE,,)}",
+        "en": "{language_chooser(speech_output,In which languages does this ATM have speech output?,This ATM has speech output in &LBRACElanguage&LPARENS&RPARENS&RBRACE,This ATM has speech output in &LBRACElanguage&LPARENS&RPARENS&RBRACE,,)}",
+        "es": "{language_chooser(speech_output,¿En qué idiomas tiene salida de voz este cajero automático?,Este cajero automático tiene salida de voz en &LBRACElanguage&LPARENS&RPARENS&RBRACE,Este cajero automático tiene salida de voz en &LBRACElanguage&LPARENS&RPARENS&RBRACE,,)}",
+        "he": "{language_chooser(speech_output,באילו שפות יש לכספומט הזה פלט דיבור?,לכספומט הזה יש פלט דיבור ב &LBRACElanguage&LPARENS&RPARENS&RBRACE,לכספומט הזה יש פלט דיבור ב &LBRACElanguage&LPARENS&RPARENS&RBRACE,,)}",
+        "nl": "{language_chooser(speech_output,In welke taal is de spraak van deze geldautomaat?,Deze geldautomaat heeft spraak in &LBRACElanguage&LPARENS&RPARENS&RBRACE,Deze automaat heeft spraak in &LBRACElanguage&LPARENS&RPARENS&RBRACE,,)}",
+        "pt": "{language_chooser(speech_output,Em que línguas este multibanco tem saída de fala?,Este multibanco tem saída de fala em &LBRACElanguage&LPARENS&RPARENS&RBRACE,This ATM has speech output in &LBRACElanguage&LPARENS&RPARENS&RBRACE,,)}",
+        "pt_BR": "{language_chooser(speech_output,Em quais línguas esse caixa eletrônico tem saída de fala?,Este caixa eletrônico tem saída de fala em &LBRACElanguage&LPARENS&RPARENS&RBRACE,Este caixa eletrônico tem saída de fala em &LBRACElanguage&LPARENS&RPARENS&RBRACE,,)}"
+      }
+    },
+    {
+      "id": "leftover-questions",
+      "render": {
+        "*": "{questions( ,)}"
+      }
+    },
+    {
+      "id": "lod",
+      "labels": [
+        "added_by_default"
+      ],
+      "render": {
+        "*": "{linked_data_from_website()}"
+      }
+    },
+    {
+      "id": "minimap",
+      "description": "Shows a small map with the feature. Added by default to every popup",
+      "render": {
+        "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+      }
+    },
+    {
+      "id": "move-button",
+      "render": {
+        "*": "{move_button()}"
+      }
+    },
+    {
+      "id": "delete-button",
+      "render": {
+        "*": "{delete_button()}"
+      }
+    },
+    {
+      "id": "last_edit",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+      "condition": {
+        "and": [
+          "_last_edit:contributor~*",
+          "_last_edit:changeset~*"
+        ]
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsTesting=true",
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_debug=yes",
+          "_csCount>=10"
+        ]
+      },
+      "render": {
+        "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+      }
+    },
+    {
+      "id": "favourite_status",
+      "render": {
+        "*": "{favourite_status()}"
+      }
+    },
+    {
+      "id": "qr_code",
+      "labels": [
+        "added_by_default"
+      ],
+      "classes": "flex items-center gap-x-2",
+      "render": {
+        "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+        "en": "{qr_code()}Scan this code to open this location on another device",
+        "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+        "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+      }
+    },
+    {
+      "id": "share",
+      "labels": [
+        "added_by_default"
+      ],
+      "metacondition": "_supports_sharing=yes",
+      "render": {
+        "de": "{share_link(,Standort teilen)}",
+        "en": "{share_link(,Share this location)}",
+        "nl": "{share_link(,Deel deze locatie)}"
+      }
+    },
+    {
+      "id": "all-tags",
+      "render": {
+        "*": "{all_tags()}"
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_tags=full",
+          "mapcomplete-show_debug=yes"
+        ]
+      }
+    }
+  ],
+  "filter": [
+    {
+      "id": "open_now",
+      "options": [
+        {
+          "question": {
+            "en": "Open now",
+            "nl": "Nu open",
+            "de": "Jetzt geöffnet",
+            "ca": "Obert ara",
+            "es": "Abierto",
+            "fr": "Ouvert maintenant",
+            "hu": "Most nyitva van",
+            "da": "Åbent nu",
+            "zh_Hant": "目前開放",
+            "id": "Saat ini buka",
+            "it": "Aperto ora",
+            "pl": "Otwarte teraz",
+            "cs": "Nyní otevřeno"
+          },
+          "osmTags": "_isOpen=yes"
+        }
+      ]
+    },
+    {
+      "id": "speech_output",
+      "options": [
+        {
+          "question": {
+            "en": "With speech output",
+            "de": "Mit Sprachausgabe",
+            "nl": "Heeft spraak",
+            "ca": "Amb sortida de veu",
+            "cs": "S hlasovým výstupem",
+            "he": "עם פלט דיבור",
+            "pt_BR": "Com saída de fala",
+            "es": "Con salida de audio",
+            "pt": "Com saída de fala"
+          },
+          "osmTags": "speech_output=yes"
+        }
+      ]
+    }
+  ],
+  "deletion": {
+    "softDeletionTags": {
+      "and": [
+        "disused:amenity=atm",
+        "amenity="
+      ]
+    }
+  },
+  "allowMove": {
+    "enableImproveAccuracy": true,
+    "enableRelocation": false
+  },
+  "titleIcons": [
+    {
+      "id": "wikipedialink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+      "condition": {
+        "or": [
+          "wikipedia~*",
+          "wikidata~*"
+        ]
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "wikipedia=",
+          "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "open_until",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "#": "Titleicon showing e.g. 'open until 17:00'",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{opening_hours_state()}",
+      "condition": {
+        "or": [
+          "opening_hours~*",
+          {
+            "or": [
+              {
+                "and": [
+                  "seasonal~.*winter.*",
+                  "_now:date~....-(12|01|02)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*spring.*",
+                  "_now:date~....-(03|04|05)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*summer.*",
+                  "_now:date~....-(06|07|08)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*autumn.*",
+                  "_now:date~....-(09|10|11)-.."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "phonelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": {
+        "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+        "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+        "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+        "_context": "layers:icons.tagRenderings.phonelink.render"
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:phone~*",
+          "then": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+          }
+        }
+      ],
+      "condition": {
+        "or": [
+          "phone~*",
+          "contact:phone~*"
+        ]
+      }
+    },
+    {
+      "id": "emaillink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:email~*",
+          "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:email~*",
+          "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        }
+      ],
+      "condition": {
+        "or": [
+          "email~*",
+          "contact:email~*",
+          "operator:email~*"
+        ]
+      }
+    },
+    {
+      "id": "websitelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "website~*",
+          "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:website~*",
+          "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "context:website~*",
+          "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "smokingicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=no",
+          "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=yes",
+          "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+        }
+      ]
+    },
+    {
+      "id": "dogicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "if": "dog=no",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+        },
+        {
+          "if": "dog=leashed",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+        },
+        {
+          "if": {
+            "or": [
+              "dog=yes",
+              "dog=unleashed"
+            ]
+          },
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+        }
+      ]
+    },
+    {
+      "id": "sharelink",
+      "labels": [
+        "defaults"
+      ],
+      "render": "{share_link()}",
+      "metacondition": "_supports_sharing=yes"
+    },
+    {
+      "id": "favourite_title_icon",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "*": "{favourite_icon()}"
+      },
+      "metacondition": "_loggedIn=true"
+    },
+    {
+      "id": "osmlink",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+        "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+        "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+        "_context": "layers:icons.tagRenderings.osmlink.render"
+      },
+      "mappings": [
+        {
+          "if": "id~.*/-.*",
+          "then": ""
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "_backend~*",
+          "then": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+          }
+        }
+      ],
+      "condition": "id~(node|way|relation)/[0-9]*"
+    },
+    {
+      "id": "direction",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "{direction_indicator()}"
+    },
+    {
+      "id": "rating",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{rating()}"
+    }
+  ],
+  "_layerIcon": [
+    {
+      "icon": "circle",
+      "color": "white"
+    },
+    {
+      "icon": "./assets/layers/atm/atm.svg"
+    }
+  ]
+}

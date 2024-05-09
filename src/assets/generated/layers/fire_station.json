@@ -1,0 +1,764 @@
+{
+  "id": "fire_station",
+  "name": {
+    "en": "Map of fire stations",
+    "ja": "消防署の地図",
+    "nb_NO": "Kart over brannstasjoner",
+    "it": "Mappa delle caserme dei vigili del fuoco",
+    "ru": "Карта пожарных частей",
+    "fr": "Couche des stations de pompiers",
+    "de": "Feuerwachen",
+    "nl": "Kaart van de brandweerstations",
+    "es": "Mapa de parques de bomberos",
+    "ca": "Mapa de parcs de bombers",
+    "cs": "Mapa požárních stanic"
+  },
+  "description": {
+    "en": "Map layer to show fire stations.",
+    "ja": "消防署を表示するためのマップレイヤ。",
+    "it": "Livello che mostra le caserme dei vigili del fuoco.",
+    "ru": "Слой карты, отображающий пожарные части.",
+    "fr": "Couche des stations de pompiers.",
+    "de": "Kartenebene zur Darstellung von Feuerwachen.",
+    "nl": "Kaartlaag die de brandweerstations toont.",
+    "es": "Capa del mapa que muestra parques de bomberos.",
+    "ca": "Capa del mapa que mostra els parcs de bombers.",
+    "cs": "Vrstva mapy zobrazující požární stanice."
+  },
+  "source": {
+    "osmTags": {
+      "and": [
+        "amenity=fire_station"
+      ]
+    }
+  },
+  "minzoom": 12,
+  "title": {
+    "render": {
+      "en": "Fire Station",
+      "ja": "消防署",
+      "ru": "Пожарная часть",
+      "nb_NO": "Brannstasjon",
+      "it": "Caserma dei vigili del fuoco",
+      "fr": "Station de pompiers",
+      "de": "Feuerwache",
+      "nl": "Brandweerstation",
+      "es": "Parque de bomberos",
+      "ca": "Parc de bombers",
+      "cs": "Hasičská stanice"
+    }
+  },
+  "pointRendering": [
+    {
+      "iconSize": "35,35",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": {
+            "render": "./assets/themes/hailhydrant/Twemoji12_1f692.svg",
+            "id": "assetsthemeshailhydrantTwemoji121f692svg"
+          }
+        }
+      ],
+      "iconBadges": [
+        {
+          "if": "_favourite=yes",
+          "then": "circle:white;heart:red"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#c22",
+      "width": "1"
+    }
+  ],
+  "presets": [
+    {
+      "tags": [
+        "amenity=fire_station"
+      ],
+      "title": {
+        "en": "a fire station",
+        "ja": "消防署",
+        "ru": "пожарная часть",
+        "fr": "une caserne de pompiers",
+        "de": "eine Feuerwache",
+        "it": "una caserma dei vigili del fuoco",
+        "nb_NO": "en brannstasjon",
+        "nl": "een brandweerstation",
+        "es": "un parque de bomberos",
+        "ca": "un parc de bombers",
+        "cs": "požární stanice"
+      },
+      "description": {
+        "en": "A fire station is a place where the fire trucks and firefighters are located when not in operation.",
+        "ja": "消防署は、運転していないときに消防車や消防士がいる場所です。",
+        "fr": "Une caserne de pompiers est un lieu où les pompiers et leur équipements sont situés en dehors des missions.",
+        "de": "Eine Feuerwache ist ein Ort, an dem Feuerwehrfahrzeuge und Feuerwehrleute untergebracht sind, wenn sie nicht im Einsatz sind.",
+        "it": "Una caserma dei pompieri è un luogo dove si trovano i mezzi antincendio e i pompieri tra una missione e l’altra.",
+        "nl": "Een brandweerstation is een plaats waar brandweerwagens en brandweerlieden gebaseerd zijn.",
+        "es": "Un parque de bomberos es donde los bomberos y los camiones de incendios se encuentran cuando no están en uso.",
+        "ca": "Un parc de bombers és on els bombers i els camions es troben quan no estan en ús.",
+        "cs": "Hasičská zbrojnice je místo, kde se nacházejí hasičská vozidla a hasiči."
+      }
+    }
+  ],
+  "tagRenderings": [
+    {
+      "id": "just_created",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "This element shows a 'thank you' that the contributor has recently created this element",
+      "classes": "rounded-xl thanks",
+      "mappings": [
+        {
+          "if": "id~*",
+          "icon": "./assets/svg/party.svg",
+          "then": {
+            "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+            "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+            "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+            "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+            "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+            "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+          }
+        }
+      ],
+      "condition": {
+        "and": [
+          "_backend~*",
+          "_last_edit:passed_time<300",
+          {
+            "or": [
+              "_version_number=",
+              "_version_number=1"
+            ]
+          }
+        ]
+      },
+      "metacondition": {
+        "and": [
+          {
+            "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+            "or": [
+              "_last_edit:contributor:uid:={_uid}",
+              "_last_edit:contributor:uid="
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "station-name",
+      "freeform": {
+        "key": "name",
+        "inline": true
+      },
+      "question": {
+        "en": "What is the name of this fire station?",
+        "ja": "この消防署の名前は何ですか?",
+        "ru": "Как называется эта пожарная часть?",
+        "it": "Come si chiama questa caserma dei vigili del fuoco?",
+        "fr": "Quel est le nom de la station ?",
+        "de": "Wie ist der Name der Feuerwache?",
+        "nl": "Wat is de naam van dit brandweerstation?",
+        "es": "¿Cual es el nombre de este parque de bomberos?",
+        "ca": "Quin és el nom d'aquest parc de bombers?",
+        "cs": "Jak se jmenuje tato požární stanice?"
+      },
+      "render": {
+        "en": "This station is called {name}.",
+        "ja": "このステーションの名前は{name}です。",
+        "it": "Questa caserma si chiama {name}.",
+        "ru": "Эта часть называется {name}.",
+        "fr": "Cette station s’appelle {name}.",
+        "nb_NO": "Denne stasjonen heter {name}.",
+        "nl": "Dit station heet {name}.",
+        "de": "Der Name der Feuerwache ist {name}.",
+        "es": "Este parque de bomberos se llama {name}.",
+        "ca": "Aquest parc de bombers es diu {name}.",
+        "cs": "Tato stanice se jmenuje {name}."
+      }
+    },
+    {
+      "id": "station-street",
+      "freeform": {
+        "key": "addr:street",
+        "inline": true
+      },
+      "question": {
+        "en": " What is the street name where the station located?",
+        "ja": " 救急ステーションの所在地はどこですか?",
+        "it": " Qual è il nome della via in cui si trova la caserma?",
+        "ru": " По какому адресу расположена эта часть?",
+        "fr": " Quel est le nom de la rue dans lequel elle se situe ?",
+        "nl": " Aan welke straat ligt dit station?",
+        "de": " In welcher Straße ist die Feuerwache?",
+        "ca": " Quin és el nom del carrer on es troba aquesta estació?",
+        "cs": " Jak se jmenuje ulice, kde se stanice nachází?"
+      },
+      "render": {
+        "en": "This station is along a highway called {addr:street}.",
+        "ja": "{addr:street} 沿いにあります。",
+        "ru": "Часть расположена вдоль шоссе {addr:street}.",
+        "fr": "La station fait partie de la {addr:street}.",
+        "it": "La stazione si trova in una strada chiamata {addr:street}.",
+        "nl": "Dit station ligt aan {addr:street}.",
+        "de": "Die Feuerwache liegt an der Straße namens {addr:street}.",
+        "ca": "Aquesta estació es troba al llarg d'una carretera anomenada {addr:street}.",
+        "cs": "Tato stanice je podél dálnice s názvem {addr:street}."
+      }
+    },
+    {
+      "id": "station-place",
+      "question": {
+        "en": "Where is the station located? (e.g. name of neighborhood, villlage, or town)",
+        "ja": "このステーションの住所は?(例: 地区、村、または町の名称)",
+        "ru": "Где расположена часть? (напр., название населённого пункта)",
+        "fr": "Dans quelle localité la station est-elle située (p.ex. nom du quartier, village ou ville) ?",
+        "it": "In che località si trova la stazione? (ad es. quartiere, paese o città)",
+        "nl": "Waar is dit station gelegen? (v.b. naam van de buurt, dorp of stad)",
+        "de": "Wo befindet sich die Station? (z. B. Name des Viertels, des Dorfes oder der Stadt)",
+        "ca": "On es troba aquesta estació? (p.e. nom del barri, poble o ciutat)",
+        "cs": "Kde se stanice nachází? (např. název čtvrti, obce nebo města)"
+      },
+      "freeform": {
+        "key": "addr:place",
+        "inline": true
+      },
+      "render": {
+        "en": "This station is found within {addr:place}.",
+        "ja": "このステーションは{addr:place}にあります。",
+        "ru": "Эта часть расположена в {addr:place}.",
+        "fr": "La station fait partie de {addr:place}.",
+        "it": "La stazione si trova a {addr:place}.",
+        "nl": "Dit station ligt in {addr:place}.",
+        "de": "Diese Station befindet sich innerhalb von {addr:place}.",
+        "ca": "Aquesta estació es troba dins de {addr:place}.",
+        "cs": "Tato stanice se nachází v {addr:place}."
+      }
+    },
+    {
+      "id": "station-agency",
+      "question": {
+        "en": "What agency operates this station?",
+        "ja": "このステーションを運営しているのはどこですか?",
+        "fr": "Quel est l’exploitant de la station ?",
+        "it": "Quale agenzia gestisce questa stazione?",
+        "nl": "Welk agentschap beheert dit station?",
+        "de": "Welche Organisation betreibt diese Station?",
+        "es": "¿Que agencia opera este parque?",
+        "ca": "Quina agència opera aquesta estació?",
+        "cs": "Jaká agentura provozuje tuto stanici?"
+      },
+      "render": {
+        "en": "This station is operated by {operator}.",
+        "ja": "このステーションは{operator}によって運営されています。",
+        "fr": "Cette station est opérée par {operator}.",
+        "it": "Questa stazione è gestita da {operator}.",
+        "nl": "Dit station wordt beheerd door {operator}.",
+        "de": "Diese Station wird betrieben von {operator}.",
+        "es": "Este parque lo opera {operator}.",
+        "ca": "{operator} opera aquest parc.",
+        "cs": "Tuto stanici provozuje společnost {operator}."
+      },
+      "freeform": {
+        "key": "operator",
+        "inline": true
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "operator=Bureau of Fire Protection",
+              "operator:type=government"
+            ]
+          },
+          "then": {
+            "en": "Bureau of Fire Protection",
+            "ja": "消防局(消防庁)",
+            "fr": "Brigade de Protection du Feu",
+            "de": "Brandschutzbehörde",
+            "it": "Servizio antincendio governativo",
+            "nl": "Brandveiligheidsbureau",
+            "ca": "Bureau of Fire Protection (Filipines)",
+            "cs": "Úřad požární ochrany"
+          }
+        }
+      ]
+    },
+    {
+      "id": "station-operator",
+      "question": {
+        "en": "How is the station operator classified?",
+        "ja": "ステーションの運営の分類は?",
+        "fr": "Quel est le type d’exploitant ?",
+        "it": "Com’è classificato il gestore di questa stazione?",
+        "nl": "Wat voor soort beheerder beheert dit station?",
+        "de": "Wie kann der Betreiber der Feuerwache eingestuft werden?",
+        "ca": "Com es classifica l'operador de l'estació?",
+        "cs": "Jak je klasifikován provozovatel stanice?"
+      },
+      "render": {
+        "en": "The operator is a(n) {operator:type} entity.",
+        "ja": "運営者は、{operator:type} です。",
+        "fr": "L’exploitant est de type {operator:type}.",
+        "it": "Il gestore è un ente {operator:type}.",
+        "nl": "De beheerder is een organisatie van type {operator:type} .",
+        "de": "Der Betreiber ist {operator:type}.",
+        "ca": "Aquest operador és una entitat {operator:type}.",
+        "cs": "Provozovatel je {operator:type} subjekt."
+      },
+      "freeform": {
+        "key": "operator:type",
+        "inline": true
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "operator:type=government"
+            ]
+          },
+          "then": {
+            "en": "The station is operated by the government.",
+            "ja": "ステーションは自治体が運営する。",
+            "fr": "La station est opérée par le gouvernement.",
+            "it": "Questa stazione è gestita dal governo.",
+            "nb_NO": "Stasjonen drives av myndighetene.",
+            "nl": "Dit station wordt beheerd door de overheid.",
+            "de": "Die Station wird von einer Behörde betrieben.",
+            "es": "Este parque de bomberos lo opera el gobierno.",
+            "ca": "Aquest parc l'opera el govern.",
+            "cs": "Provozovatelem stanice je vláda."
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "operator:type=community"
+            ]
+          },
+          "then": {
+            "en": "The station is operated by a community-based, or informal organization.",
+            "ja": "任意団体やコミュニティが運営しているステーションである。",
+            "fr": "La station est opérée par une organisation informelle.",
+            "it": "Questa stazione è gestita dalla comunità oppure un’associazione informale.",
+            "nl": "Dit station wordt beheerd door een informele of gemeenschapsorganisatie.",
+            "de": "Die Feuerwache wird von einer gemeinnützigen Organisation betrieben.",
+            "ca": "Aquesta estació l'opera una comunitat o organització informal.",
+            "cs": "Provozovatelem stanice je komunitní nebo neformální organizace."
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "operator:type=ngo"
+            ]
+          },
+          "then": {
+            "en": "The station is operated by a formal group of volunteers.",
+            "ja": "公益団体が運営しているステーションである。",
+            "fr": "La station est opérée par un groupe officiel de bénévoles.",
+            "it": "Questa stazione è gestita da un gruppo di volontari ufficiale.",
+            "nl": "Dit station wordt beheerd door een formele groep vrijwilligers.",
+            "de": "Die Feuerwache wird von einer Freiwilligenorganisation betrieben.",
+            "ca": "Aquest operació l'opera un grup formal de voluntaris.",
+            "cs": "Stanice je provozována formální skupinou dobrovolníků."
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "operator:type=private"
+            ]
+          },
+          "then": {
+            "en": "The station is privately operated.",
+            "ja": "個人が運営しているステーションである。",
+            "fr": "La station est opérée par un groupe privé.",
+            "it": "Questa stazione è gestita da privati.",
+            "nl": "Dit station wordt door private organisatie beheerd.",
+            "de": "Die Feuerwache wird von einer privaten Organisation betrieben.",
+            "ca": "Aquesta estació l'opera una entitat privada.",
+            "cs": "Stanice je provozována soukromě."
+          }
+        }
+      ]
+    },
+    {
+      "id": "images",
+      "description": "This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images",
+      "render": {
+        "*": "{image_carousel()}{image_upload()}{nearby_images():my-4}"
+      },
+      "classes": "my-4"
+    },
+    {
+      "id": "leftover-questions",
+      "render": {
+        "*": "{questions( ,)}"
+      }
+    },
+    {
+      "id": "lod",
+      "labels": [
+        "added_by_default"
+      ],
+      "render": {
+        "*": "{linked_data_from_website()}"
+      }
+    },
+    {
+      "id": "minimap",
+      "description": "Shows a small map with the feature. Added by default to every popup",
+      "render": {
+        "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+      }
+    },
+    {
+      "id": "last_edit",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+      "condition": {
+        "and": [
+          "_last_edit:contributor~*",
+          "_last_edit:changeset~*"
+        ]
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsTesting=true",
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_debug=yes",
+          "_csCount>=10"
+        ]
+      },
+      "render": {
+        "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+      }
+    },
+    {
+      "id": "favourite_status",
+      "render": {
+        "*": "{favourite_status()}"
+      }
+    },
+    {
+      "id": "qr_code",
+      "labels": [
+        "added_by_default"
+      ],
+      "classes": "flex items-center gap-x-2",
+      "render": {
+        "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+        "en": "{qr_code()}Scan this code to open this location on another device",
+        "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+        "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+      }
+    },
+    {
+      "id": "share",
+      "labels": [
+        "added_by_default"
+      ],
+      "metacondition": "_supports_sharing=yes",
+      "render": {
+        "de": "{share_link(,Standort teilen)}",
+        "en": "{share_link(,Share this location)}",
+        "nl": "{share_link(,Deel deze locatie)}"
+      }
+    },
+    {
+      "id": "all-tags",
+      "render": {
+        "*": "{all_tags()}"
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_tags=full",
+          "mapcomplete-show_debug=yes"
+        ]
+      }
+    }
+  ],
+  "titleIcons": [
+    {
+      "id": "wikipedialink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+      "condition": {
+        "or": [
+          "wikipedia~*",
+          "wikidata~*"
+        ]
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "wikipedia=",
+          "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "open_until",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "#": "Titleicon showing e.g. 'open until 17:00'",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{opening_hours_state()}",
+      "condition": {
+        "or": [
+          "opening_hours~*",
+          {
+            "or": [
+              {
+                "and": [
+                  "seasonal~.*winter.*",
+                  "_now:date~....-(12|01|02)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*spring.*",
+                  "_now:date~....-(03|04|05)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*summer.*",
+                  "_now:date~....-(06|07|08)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*autumn.*",
+                  "_now:date~....-(09|10|11)-.."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "phonelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": {
+        "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+        "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+        "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+        "_context": "layers:icons.tagRenderings.phonelink.render"
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:phone~*",
+          "then": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+          }
+        }
+      ],
+      "condition": {
+        "or": [
+          "phone~*",
+          "contact:phone~*"
+        ]
+      }
+    },
+    {
+      "id": "emaillink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:email~*",
+          "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:email~*",
+          "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        }
+      ],
+      "condition": {
+        "or": [
+          "email~*",
+          "contact:email~*",
+          "operator:email~*"
+        ]
+      }
+    },
+    {
+      "id": "websitelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "website~*",
+          "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:website~*",
+          "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "context:website~*",
+          "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "smokingicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=no",
+          "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=yes",
+          "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+        }
+      ]
+    },
+    {
+      "id": "dogicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "if": "dog=no",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+        },
+        {
+          "if": "dog=leashed",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+        },
+        {
+          "if": {
+            "or": [
+              "dog=yes",
+              "dog=unleashed"
+            ]
+          },
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+        }
+      ]
+    },
+    {
+      "id": "sharelink",
+      "labels": [
+        "defaults"
+      ],
+      "render": "{share_link()}",
+      "metacondition": "_supports_sharing=yes"
+    },
+    {
+      "id": "favourite_title_icon",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "*": "{favourite_icon()}"
+      },
+      "metacondition": "_loggedIn=true"
+    },
+    {
+      "id": "osmlink",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+        "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+        "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+        "_context": "layers:icons.tagRenderings.osmlink.render"
+      },
+      "mappings": [
+        {
+          "if": "id~.*/-.*",
+          "then": ""
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "_backend~*",
+          "then": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+          }
+        }
+      ],
+      "condition": "id~(node|way|relation)/[0-9]*"
+    },
+    {
+      "id": "direction",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "{direction_indicator()}"
+    },
+    {
+      "id": "rating",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{rating()}"
+    }
+  ],
+  "_layerIcon": [
+    {
+      "icon": "./assets/themes/hailhydrant/Twemoji12_1f692.svg"
+    }
+  ]
+}

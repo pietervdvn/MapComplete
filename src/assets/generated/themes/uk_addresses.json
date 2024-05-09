@@ -1,0 +1,2812 @@
+{
+  "id": "uk_addresses",
+  "title": {
+    "en": "Addresses in Great Britain",
+    "de": "Adressen in Großbritannien",
+    "it": "Indirizzi UK",
+    "id": "Alamat Inggris",
+    "_context": "themes:uk_addresses.title"
+  },
+  "mustHaveLanguage": [
+    "en"
+  ],
+  "description": {
+    "en": "Help us collect addresses and make them freely available. Each address contributed will be added to OpenStreetMap so you will need to create an account and log in before you start. Please do not copy addresses from the internet or other sources subject to copyright. This website works well on mobile so a good option is to contibute the addresses closest to you.",
+    "_context": "themes:uk_addresses.description"
+  },
+  "shortDescription": {
+    "en": "Help to build an open dataset of addresses in Great Britain",
+    "de": "Helfen Sie beim Aufbau eines offenen Datensatzes britischer Adressen",
+    "it": "Aiuta a costruire un dataset libero per gli indirizzi nel Regno Unito",
+    "_context": "themes:uk_addresses.shortDescription"
+  },
+  "icon": "./assets/themes/uk_addresses/housenumber_unknown.svg",
+  "startZoom": 7,
+  "startLat": 53.21261,
+  "startLon": -1.47216,
+  "credits": [
+    "Pieter Vander Vennet, Rob Nickerson, Russ Garrett"
+  ],
+  "hideFromOverview": true,
+  "layers": [
+    {
+      "id": "raw_inspire_polygons",
+      "description": "External dataset: inspire polygon",
+      "source": {
+        "geoJson": "https://osm-uk-addresses.russss.dev/inspire/{z}/{x}/{y}.json",
+        "osmTags": "inspireid~*",
+        "geoJsonZoomLevel": 18
+      },
+      "minzoom": 18,
+      "calculatedTags": [
+        "_has_address=overlapWith(feat)('address').length > 0"
+      ],
+      "shownByDefault": false,
+      "name": {
+        "en": "Inspire polygons",
+        "_context": "themes:uk_addresses.layers.raw_inspire_polygons.name"
+      },
+      "pointRendering": null,
+      "lineRendering": [
+        {
+          "width": 2,
+          "color": {
+            "render": "#00f",
+            "mappings": [
+              {
+                "if": "_has_address=true",
+                "then": "#0f0"
+              }
+            ]
+          }
+        }
+      ],
+      "titleIcons": [
+        {
+          "id": "wikipedialink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+          "condition": {
+            "or": [
+              "wikipedia~*",
+              "wikidata~*"
+            ]
+          },
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "wikipedia=",
+              "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+            }
+          ]
+        },
+        {
+          "id": "open_until",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "#": "Titleicon showing e.g. 'open until 17:00'",
+          "icon": {
+            "class": "w-20 mx-1 flex items-center"
+          },
+          "render": "{opening_hours_state()}",
+          "condition": {
+            "or": [
+              "opening_hours~*",
+              {
+                "or": [
+                  {
+                    "and": [
+                      "seasonal~.*winter.*",
+                      "_now:date~....-(12|01|02)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*spring.*",
+                      "_now:date~....-(03|04|05)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*summer.*",
+                      "_now:date~....-(06|07|08)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*autumn.*",
+                      "_now:date~....-(09|10|11)-.."
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "phonelink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.render"
+          },
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "contact:phone~*",
+              "then": {
+                "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+                "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+                "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+                "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+              }
+            }
+          ],
+          "condition": {
+            "or": [
+              "phone~*",
+              "contact:phone~*"
+            ]
+          }
+        },
+        {
+          "id": "emaillink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "contact:email~*",
+              "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "operator:email~*",
+              "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+            }
+          ],
+          "condition": {
+            "or": [
+              "email~*",
+              "contact:email~*",
+              "operator:email~*"
+            ]
+          }
+        },
+        {
+          "id": "websitelink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "website~*",
+              "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "operator:website~*",
+              "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "context:website~*",
+              "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            }
+          ]
+        },
+        {
+          "id": "smokingicon",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "smoking=no",
+              "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "smoking=yes",
+              "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+            }
+          ]
+        },
+        {
+          "id": "dogicon",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "if": "dog=no",
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+            },
+            {
+              "if": "dog=leashed",
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+            },
+            {
+              "if": {
+                "or": [
+                  "dog=yes",
+                  "dog=unleashed"
+                ]
+              },
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+            }
+          ]
+        },
+        {
+          "id": "sharelink",
+          "labels": [
+            "defaults"
+          ],
+          "render": "{share_link()}",
+          "metacondition": "_supports_sharing=yes"
+        },
+        {
+          "id": "favourite_title_icon",
+          "labels": [
+            "defaults"
+          ],
+          "render": {
+            "*": "{favourite_icon()}"
+          },
+          "metacondition": "_loggedIn=true"
+        },
+        {
+          "id": "osmlink",
+          "labels": [
+            "defaults"
+          ],
+          "render": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.render"
+          },
+          "mappings": [
+            {
+              "if": "id~.*/-.*",
+              "then": ""
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "_backend~*",
+              "then": {
+                "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+                "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+                "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+                "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+              }
+            }
+          ],
+          "condition": "id~(node|way|relation)/[0-9]*"
+        },
+        {
+          "id": "direction",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "{direction_indicator()}"
+        }
+      ],
+      "forceLoad": true
+    },
+    {
+      "id": "to_import",
+      "source": {
+        "geoJson": "https://osm-uk-addresses.russss.dev/addresses/{z}/{x}/{y}.json",
+        "osmTags": {
+          "and": [
+            "urpn_count~*",
+            "id!~node/.*"
+          ]
+        },
+        "geoJsonZoomLevel": 16
+      },
+      "name": "Addresses to check",
+      "minzoom": 18,
+      "title": {
+        "render": {
+          "en": "This address needs adding",
+          "_context": "themes:uk_addresses.layers.to_import.title.render"
+        }
+      },
+      "tagRenderings": [
+        {
+          "id": "just_created",
+          "labels": [
+            "added_by_default"
+          ],
+          "description": "This element shows a 'thank you' that the contributor has recently created this element",
+          "classes": "rounded-xl thanks",
+          "mappings": [
+            {
+              "if": "id~*",
+              "icon": "./assets/svg/party.svg",
+              "then": {
+                "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+                "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+                "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+                "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+                "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+                "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+              }
+            }
+          ],
+          "condition": {
+            "and": [
+              "_backend~*",
+              "_last_edit:passed_time<300",
+              {
+                "or": [
+                  "_version_number=",
+                  "_version_number=1"
+                ]
+              }
+            ]
+          },
+          "metacondition": {
+            "and": [
+              {
+                "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+                "or": [
+                  "_last_edit:contributor:uid:={_uid}",
+                  "_last_edit:contributor:uid="
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "uk_addresses_explanation",
+          "render": {
+            "en": "We think there should be an address here. Please click below to add it.",
+            "_context": "themes:uk_addresses.layers.to_import.tagRenderings.uk_addresses_explanation.render"
+          }
+        },
+        {
+          "id": "uk_addresses_embedding_outline",
+          "render": "<b>Warning: </b>This point lies within a building or area for which we already have an address. You should only add this address if it is different. <br>The number and street name we have for the <a href='#{_embedding_object:id}'>existing address</a> is <b>{_embedding_object:addr:housenumber} {_embedding_object:addr:street}</b>",
+          "mappings": [
+            {
+              "if": "_embedding_object:id=true",
+              "then": {
+                "en": "<b>Warning: </b>The property boundary containing this point already contains at least one recorded address. You should only add this address if it is different.",
+                "_context": "themes:uk_addresses.layers.to_import.tagRenderings.uk_addresses_embedding_outline.mappings.0.then"
+              }
+            },
+            {
+              "if": "_embedding_object:id=false",
+              "then": {
+                "en": "We checked our data and found no other address within the same property boundary. If you know the details for this address, please add it.",
+                "_context": "themes:uk_addresses.layers.to_import.tagRenderings.uk_addresses_embedding_outline.mappings.1.then"
+              }
+            }
+          ],
+          "condition": "_embedding_object:id~*"
+        },
+        {
+          "id": "uk_addresses_import_button",
+          "render": {
+            "*": "{import_button(address,urpn_count=$urpn_count;ref:GB:uprn=$ref:GB:uprn$,Add this address,./assets/themes/uk_addresses/housenumber_add.svg,,,,)}"
+          }
+        },
+        {
+          "id": "leftover-questions",
+          "render": {
+            "*": "{questions( ,)}"
+          }
+        },
+        {
+          "id": "lod",
+          "labels": [
+            "added_by_default"
+          ],
+          "render": {
+            "*": "{linked_data_from_website()}"
+          }
+        },
+        {
+          "id": "minimap",
+          "description": "Shows a small map with the feature. Added by default to every popup",
+          "render": {
+            "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+          }
+        },
+        {
+          "id": "last_edit",
+          "labels": [
+            "added_by_default"
+          ],
+          "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+          "condition": {
+            "and": [
+              "_last_edit:contributor~*",
+              "_last_edit:changeset~*"
+            ]
+          },
+          "metacondition": {
+            "or": [
+              "__featureSwitchIsTesting=true",
+              "__featureSwitchIsDebugging=true",
+              "mapcomplete-show_debug=yes",
+              "_csCount>=10"
+            ]
+          },
+          "render": {
+            "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+          }
+        },
+        {
+          "id": "favourite_status",
+          "render": {
+            "*": "{favourite_status()}"
+          }
+        },
+        {
+          "id": "qr_code",
+          "labels": [
+            "added_by_default"
+          ],
+          "classes": "flex items-center gap-x-2",
+          "render": {
+            "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+            "en": "{qr_code()}Scan this code to open this location on another device",
+            "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+            "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+          }
+        },
+        {
+          "id": "share",
+          "labels": [
+            "added_by_default"
+          ],
+          "metacondition": "_supports_sharing=yes",
+          "render": {
+            "de": "{share_link(,Standort teilen)}",
+            "en": "{share_link(,Share this location)}",
+            "nl": "{share_link(,Deel deze locatie)}"
+          }
+        },
+        {
+          "id": "all-tags",
+          "render": {
+            "*": "{all_tags()}"
+          },
+          "metacondition": {
+            "or": [
+              "__featureSwitchIsDebugging=true",
+              "mapcomplete-show_tags=full",
+              "mapcomplete-show_debug=yes"
+            ]
+          }
+        }
+      ],
+      "calculatedTags": [
+        "_embedding_object=overlapWith(feat)('address')[0]?.feat?.properties ?? null",
+        "_embedding_object:addr:housenumber=JSON.parse(feat.properties._embedding_object)?.['addr:housenumber']",
+        "_embedding_object:addr:street=JSON.parse(feat.properties._embedding_object)?.['addr:street']",
+        "_embedding_inspire_polygon_has_address=overlapWith(feat)('raw_inspire_polygons')[0]?.feat?.properties?._has_address",
+        "_embedding_object:id=get(feat, '_embedding_object')?.id ?? feat.properties._embedding_inspire_polygon_has_address"
+      ],
+      "filter": [
+        {
+          "id": "to_handle",
+          "options": [
+            {
+              "default": true,
+              "question": "Only show non-matched objects",
+              "osmTags": {
+                "and": [
+                  "_imported=",
+                  {
+                    "or": [
+                      "_embedding_object:id=",
+                      "_embedding_object:id=false"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "description": "Alamat",
+      "pointRendering": [
+        {
+          "marker": [
+            {
+              "icon": {
+                "render": "./assets/themes/uk_addresses/housenumber_unknown.svg",
+                "mappings": [
+                  {
+                    "if": {
+                      "and": [
+                        "_embedding_object:id~*",
+                        "_embedding_object:id!=false"
+                      ]
+                    },
+                    "then": "./assets/themes/uk_addresses/housenumber_unknown_small.svg"
+                  },
+                  {
+                    "if": "_imported=yes",
+                    "then": "./assets/themes/uk_addresses/housenumber_unknown_small.svg"
+                  }
+                ]
+              }
+            }
+          ],
+          "iconSize": "40,40",
+          "location": [
+            "point",
+            "centroid"
+          ],
+          "anchor": "center",
+          "iconBadges": [
+            {
+              "if": "_favourite=yes",
+              "then": {
+                "render": "circle:white;heart:red",
+                "id": "circlewhiteheartred"
+              }
+            }
+          ]
+        }
+      ],
+      "lineRendering": [
+        {}
+      ],
+      "titleIcons": [
+        {
+          "id": "wikipedialink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+          "condition": {
+            "or": [
+              "wikipedia~*",
+              "wikidata~*"
+            ]
+          },
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "wikipedia=",
+              "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+            }
+          ]
+        },
+        {
+          "id": "open_until",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "#": "Titleicon showing e.g. 'open until 17:00'",
+          "icon": {
+            "class": "w-20 mx-1 flex items-center"
+          },
+          "render": "{opening_hours_state()}",
+          "condition": {
+            "or": [
+              "opening_hours~*",
+              {
+                "or": [
+                  {
+                    "and": [
+                      "seasonal~.*winter.*",
+                      "_now:date~....-(12|01|02)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*spring.*",
+                      "_now:date~....-(03|04|05)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*summer.*",
+                      "_now:date~....-(06|07|08)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*autumn.*",
+                      "_now:date~....-(09|10|11)-.."
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "phonelink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.render"
+          },
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "contact:phone~*",
+              "then": {
+                "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+                "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+                "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+                "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+              }
+            }
+          ],
+          "condition": {
+            "or": [
+              "phone~*",
+              "contact:phone~*"
+            ]
+          }
+        },
+        {
+          "id": "emaillink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "contact:email~*",
+              "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "operator:email~*",
+              "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+            }
+          ],
+          "condition": {
+            "or": [
+              "email~*",
+              "contact:email~*",
+              "operator:email~*"
+            ]
+          }
+        },
+        {
+          "id": "websitelink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "website~*",
+              "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "operator:website~*",
+              "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "context:website~*",
+              "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            }
+          ]
+        },
+        {
+          "id": "smokingicon",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "smoking=no",
+              "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "smoking=yes",
+              "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+            }
+          ]
+        },
+        {
+          "id": "dogicon",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "if": "dog=no",
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+            },
+            {
+              "if": "dog=leashed",
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+            },
+            {
+              "if": {
+                "or": [
+                  "dog=yes",
+                  "dog=unleashed"
+                ]
+              },
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+            }
+          ]
+        },
+        {
+          "id": "sharelink",
+          "labels": [
+            "defaults"
+          ],
+          "render": "{share_link()}",
+          "metacondition": "_supports_sharing=yes"
+        },
+        {
+          "id": "favourite_title_icon",
+          "labels": [
+            "defaults"
+          ],
+          "render": {
+            "*": "{favourite_icon()}"
+          },
+          "metacondition": "_loggedIn=true"
+        },
+        {
+          "id": "osmlink",
+          "labels": [
+            "defaults"
+          ],
+          "render": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.render"
+          },
+          "mappings": [
+            {
+              "if": "id~.*/-.*",
+              "then": ""
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "_backend~*",
+              "then": {
+                "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+                "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+                "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+                "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+              }
+            }
+          ],
+          "condition": "id~(node|way|relation)/[0-9]*"
+        },
+        {
+          "id": "direction",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "{direction_indicator()}"
+        }
+      ]
+    },
+    {
+      "id": "uk_address",
+      "name": {
+        "en": "Known addresses in OSM",
+        "_context": "themes:uk_addresses.layers.uk_address.name"
+      },
+      "minzoom": 18,
+      "source": {
+        "osmTags": {
+          "or": [
+            "addr:unit~*",
+            "addr:flats~*",
+            "addr:housename~*",
+            "addr:housenumber~*",
+            "addr:place~*",
+            "addr:substreet~*",
+            "addr:street~*",
+            "addr:parentstreet~*",
+            "addr:suburb~*",
+            "addr:city~*",
+            "addr:postcode~*",
+            "fixme:addr~*",
+            "urpn_count~*"
+          ]
+        }
+      },
+      "title": {
+        "render": {
+          "en": "Review and update the address",
+          "_context": "themes:uk_addresses.layers.uk_address.title.render"
+        }
+      },
+      "description": {
+        "en": "Addresses",
+        "nl": "Adressen",
+        "de": "Adressen",
+        "ru": "Адреса",
+        "zh_Hant": "地址",
+        "hu": "Címek",
+        "_context": "themes:uk_addresses.layers.uk_address.description"
+      },
+      "calculatedTags": [
+        "_closest_3_street_names=closestn(feat)('named_streets',3, 'name').map(f => f.feat.properties.name)",
+        "_closest_street:0:name=JSON.parse(feat.properties._closest_3_street_names)[0]",
+        "_closest_street:1:name=JSON.parse(feat.properties._closest_3_street_names)[1]",
+        "_closest_street:2:name=JSON.parse(feat.properties._closest_3_street_names)[2]"
+      ],
+      "tagRenderings": [
+        {
+          "id": "just_created",
+          "labels": [
+            "added_by_default"
+          ],
+          "description": "This element shows a 'thank you' that the contributor has recently created this element",
+          "classes": "rounded-xl thanks",
+          "mappings": [
+            {
+              "if": "id~*",
+              "icon": "./assets/svg/party.svg",
+              "then": {
+                "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+                "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+                "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+                "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+                "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+                "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+              }
+            }
+          ],
+          "condition": {
+            "and": [
+              "_backend~*",
+              "_last_edit:passed_time<300",
+              {
+                "or": [
+                  "_version_number=",
+                  "_version_number=1"
+                ]
+              }
+            ]
+          },
+          "metacondition": {
+            "and": [
+              {
+                "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+                "or": [
+                  "_last_edit:contributor:uid:={_uid}",
+                  "_last_edit:contributor:uid="
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "questions",
+          "description": "Show the questions block at this location",
+          "render": {
+            "*": "{questions()}"
+          }
+        },
+        {
+          "id": "preview",
+          "render": {
+            "en": "<div>The envelope below shows the address that we have recorded. You can change this by answering any remaining questions above, or by clicking the pencil icons below. We do not need you to provide a recipient's name or any of the parts shown in <span style='color: #4e7ce8'>[blue]</span>.</div><div style='background: #f1d592; min-height: 270px; border-radius: 2px; padding: 1rem 1rem 2rem 7rem; margin: 1rem; box-shadow: 0 2px 5px 0px rgba(0,0,0,.6)' class='flex flex-col'><img src='./assets/themes/uk_addresses/stamp-outline.png' class='self-end w-16'/><div>{addr:unit} {addr:housename}</div><div>{addr:housenumber} {addr:street}</div><div>{addr:parentstreet}</div><div style='color: #4e7ce8'>[Suburb]</div><div  style='color: #4e7ce8'>[Town]</div><div style='color: #4e7ce8'>[Postal code]</div></div>",
+            "_context": "themes:uk_addresses.layers.uk_address.tagRenderings.preview.render"
+          },
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "addr:substreet~*",
+              "then": "<div>The envelope below shows the address that we have recorded. You can change this by answering any remaining questions above, or by clicking the pencil icons below. We do not need you to provide a recipient's name or any of the parts shown in <span style='color: #4e7ce8'>[blue]</span>.</div><div style='background: #f1d592; min-height: 270px; border-radius: 2px; padding: 1rem 1rem 2rem 7rem; margin: 1rem; box-shadow: 0 2px 5px 0px rgba(0,0,0,.6)' class='flex flex-col'><img src='./assets/themes/uk_addresses/stamp-outline.png' class='self-end w-16'/><div>{addr:unit} {addr:housename}</div><div>{addr:housenumber} {addr:substreet}</div><div>{addr:street}</div><div>{addr:parentstreet}</div><div style='color: #4e7ce8'>[Suburb]</div><div style='color: #4e7ce8'>[Town]</div><div style='color: #4e7ce8'>[Postal code]</div></div>"
+            }
+          ]
+        },
+        {
+          "id": "uk_addresses_unit",
+          "render": "<div class='subtle'>Sub-unit (e.g. 1, Flat 2, Unit C)</div><div><b>{addr:unit}</b></div>",
+          "question": {
+            "en": "What is the sub-unit for this address? ",
+            "_context": "themes:uk_addresses.layers.uk_address.tagRenderings.uk_addresses_unit.question"
+          },
+          "freeform": {
+            "key": "addr:unit",
+            "placeholder": "Sub-unit (e.g. 1, Flat 2, Unit C)",
+            "addExtraTags": [
+              "not:addr:unit="
+            ],
+            "inline": true
+          },
+          "mappings": [
+            {
+              "if": "not:addr:unit=yes",
+              "then": "<div class='subtle'>Sub-unit (e.g. 1, Flat 2, Unit C)</div><div>There is no sub-unit within this address</div>",
+              "hideInAnswer": true
+            },
+            {
+              "if": "not:addr:unit=yes",
+              "then": "There is no sub-unit within this address",
+              "addExtraTags": [
+                "addr:unit="
+              ]
+            },
+            {
+              "if": "addr:unit=",
+              "then": "<div class='subtle'>Sub-unit (e.g. 1, Flat 2, Unit C)</div>",
+              "hideInAnswer": true
+            }
+          ],
+          "condition": {
+            "or": [
+              "addr:housenumber~*",
+              "addr:housename~*",
+              "addr:substreet~*"
+            ]
+          },
+          "questionHint": {
+            "en": "Some named building or large complexes are split into sub-units",
+            "_context": "themes:uk_addresses.layers.uk_address.tagRenderings.uk_addresses_unit.questionHint"
+          }
+        },
+        {
+          "id": "uk_addresses_housename",
+          "question": "What is the house or building name for this address?",
+          "questionHint": "As shown on a sign. Please do NOT add names of the people who live here!",
+          "render": "<div class='subtle'>House or building name</div><div><b>{addr:housename}</b></div>",
+          "freeform": {
+            "key": "addr:housename",
+            "placeholder": "Name (e.g. Rose Cottage, Broadcasting House, Acme Corp HQ)",
+            "addExtraTags": [
+              "nohousename="
+            ],
+            "inline": true
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "nohousename=yes",
+                  "addr:housename="
+                ]
+              },
+              "then": "<div class='subtle'>House or building name</div><div>This building has no housename</div>",
+              "hideInAnswer": true
+            },
+            {
+              "if": {
+                "and": [
+                  "nohousename=yes",
+                  "addr:housename="
+                ]
+              },
+              "then": "This building has no housename"
+            },
+            {
+              "#": "By adding nohousenumber!=yes, this option will trigger when first added, but will be untriggered if a housenumber is added, resulting in the question poping up!",
+              "if": {
+                "and": [
+                  "addr:housename=",
+                  "nohousenumber!=yes"
+                ]
+              },
+              "then": "<div class='subtle'>House or building name</div>",
+              "hideInAnswer": true
+            }
+          ]
+        },
+        {
+          "id": "uk_addresses_housenumber",
+          "render": "<div class='subtle'>Number (e.g. 1, 1A, 2)</div><div><b>{addr:housenumber}</b></div>",
+          "question": {
+            "en": "What is the house or building number for this address?",
+            "_context": "themes:uk_addresses.layers.uk_address.tagRenderings.uk_addresses_housenumber.question"
+          },
+          "freeform": {
+            "key": "addr:housenumber",
+            "placeholder": "Number (e.g. 1, 1A, 2)",
+            "addExtraTags": [
+              "nohousenumber="
+            ],
+            "inline": true
+          },
+          "mappings": [
+            {
+              "if": "nohousenumber=yes",
+              "then": {
+                "en": "<div class='subtle'>Number (e.g. 1, 1A, 2)</div><div>This building has no house number</div>",
+                "_context": "themes:uk_addresses.layers.uk_address.tagRenderings.uk_addresses_housenumber.mappings.0.then"
+              },
+              "hideInAnswer": true
+            },
+            {
+              "if": "nohousenumber=yes",
+              "then": {
+                "en": "This building has no house number",
+                "nl": "Dit gebouw heeft geen huisnummer",
+                "de": "Dieses Gebäude hat keine Hausnummer",
+                "_context": "themes:uk_addresses.layers.uk_address.tagRenderings.uk_addresses_housenumber.mappings.1.then"
+              },
+              "addExtraTags": [
+                "addr:housenumber="
+              ]
+            }
+          ]
+        },
+        {
+          "id": "uk_addresses_placename",
+          "question": {
+            "en": "What is the place or locality for this address?",
+            "_context": "themes:uk_addresses.layers.uk_address.tagRenderings.uk_addresses_placename.question"
+          },
+          "render": {
+            "en": "<div class='subtle'>Place (e.g. Castle Mews, West Business Park)</div><div><b>{addr:substreet}</b></div>",
+            "_context": "themes:uk_addresses.layers.uk_address.tagRenderings.uk_addresses_placename.render"
+          },
+          "freeform": {
+            "key": "addr:substreet",
+            "placeholder": "Place (e.g. The Cross, West Business Park, Castle Mews)",
+            "addExtraTags": [
+              "not:addr:parentstreet=",
+              "addr:parentstreet:={addr:street}",
+              "addr:street=",
+              "not:addr:substreet="
+            ],
+            "inline": true
+          },
+          "mappings": [
+            {
+              "if": "not:addr:substreet=yes",
+              "then": {
+                "en": "<div class='subtle'>Place (e.g. Castle Mews, West Business Park)</div><div>No extra place name is given or needed</div>",
+                "_context": "themes:uk_addresses.layers.uk_address.tagRenderings.uk_addresses_placename.mappings.0.then"
+              },
+              "hideInAnswer": true
+            },
+            {
+              "if": "not:addr:substreet=yes",
+              "then": {
+                "en": "No extra place name is given or needed",
+                "_context": "themes:uk_addresses.layers.uk_address.tagRenderings.uk_addresses_placename.mappings.1.then"
+              },
+              "addExtraTags": [
+                "addr:substreet="
+              ]
+            },
+            {
+              "if": "addr:substreet=",
+              "then": {
+                "en": "<div class='subtle'>Place (e.g. Castle Mews, West Business Park)</div>",
+                "_context": "themes:uk_addresses.layers.uk_address.tagRenderings.uk_addresses_placename.mappings.2.then"
+              },
+              "hideInAnswer": true
+            }
+          ],
+          "condition": "addr:parentstreet=",
+          "questionHint": {
+            "en": "This is additional information that appears before (or instead of) a street name in the address",
+            "_context": "themes:uk_addresses.layers.uk_address.tagRenderings.uk_addresses_placename.questionHint"
+          }
+        },
+        {
+          "id": "uk_addresses_placename_with_parent",
+          "question": {
+            "en": "What is the place or locality for this address?",
+            "_context": "themes:uk_addresses.layers.uk_address.tagRenderings.uk_addresses_placename_with_parent.question"
+          },
+          "render": {
+            "en": "<div class='subtle'>Place (e.g. Castle Mews, West Business Park)</div><div><b>{addr:substreet}</b></div>",
+            "_context": "themes:uk_addresses.layers.uk_address.tagRenderings.uk_addresses_placename_with_parent.render"
+          },
+          "freeform": {
+            "key": "addr:substreet",
+            "placeholder": "Place (e.g. The Cross, West Business Park, Castle Mews)",
+            "addExtraTags": [
+              "addr:street=",
+              "not:addr:substreet="
+            ],
+            "inline": true
+          },
+          "mappings": [
+            {
+              "if": "not:addr:substreet=yes",
+              "then": {
+                "en": "<div class='subtle'>Place (e.g. Castle Mews, West Business Park)</div><div>No extra place name is given or needed</div>",
+                "_context": "themes:uk_addresses.layers.uk_address.tagRenderings.uk_addresses_placename_with_parent.mappings.0.then"
+              },
+              "hideInAnswer": true
+            },
+            {
+              "if": "not:addr:substreet=yes",
+              "then": {
+                "en": "No extra place name is given or needed",
+                "_context": "themes:uk_addresses.layers.uk_address.tagRenderings.uk_addresses_placename_with_parent.mappings.1.then"
+              },
+              "addExtraTags": [
+                "addr:substreet="
+              ]
+            },
+            {
+              "if": "addr:substreet=",
+              "then": {
+                "en": "<div class='subtle'>Place (e.g. Castle Mews, West Business Park)</div>",
+                "_context": "themes:uk_addresses.layers.uk_address.tagRenderings.uk_addresses_placename_with_parent.mappings.2.then"
+              },
+              "hideInAnswer": true
+            }
+          ],
+          "condition": {
+            "or": [
+              {
+                "and": [
+                  "addr:parentstreet~*",
+                  "addr:street="
+                ]
+              },
+              {
+                "and": [
+                  "addr:parentstreet~*",
+                  "addr:street~*",
+                  "addr:substreet~*"
+                ]
+              }
+            ]
+          },
+          "questionHint": {
+            "en": "This is additional information that appears before (or instead of) a street name in the address",
+            "_context": "themes:uk_addresses.layers.uk_address.tagRenderings.uk_addresses_placename_with_parent.questionHint"
+          }
+        },
+        {
+          "id": "uk_addresses_street",
+          "render": "<div class='subtle'>Street name</div><div><b>{addr:street}</b></div>",
+          "question": {
+            "en": "What is the street name for this address?",
+            "_context": "themes:uk_addresses.layers.uk_address.tagRenderings.uk_addresses_street.question"
+          },
+          "freeform": {
+            "key": "addr:street",
+            "placeholder": "Other (please specify)",
+            "inline": true
+          },
+          "mappings": [
+            {
+              "if": "addr:street:={_closest_street:0:name}",
+              "then": "<div class='subtle'>Street name</div><div><b>{_closest_street:0:name}</b></div>",
+              "hideInAnswer": true
+            },
+            {
+              "if": "addr:street:={_closest_street:1:name}",
+              "then": "<div class='subtle'>Street name</div><div><b>{_closest_street:1:name}</b></div>",
+              "hideInAnswer": true
+            },
+            {
+              "if": "addr:street:={_closest_street:2:name}",
+              "then": "<div class='subtle'>Street name</div><div><b>{_closest_street:2:name}</b></div>",
+              "hideInAnswer": true
+            },
+            {
+              "if": "addr:street:={_closest_street:0:name}",
+              "then": "<b>{_closest_street:0:name}</b>",
+              "hideInAnswer": "_closest_street:0:name="
+            },
+            {
+              "if": "addr:street:={_closest_street:1:name}",
+              "then": "<b>{_closest_street:1:name}</b>",
+              "hideInAnswer": "_closest_street:1:name="
+            },
+            {
+              "if": "addr:street:={_closest_street:2:name}",
+              "then": "<b>{_closest_street:2:name}</b>",
+              "hideInAnswer": "_closest_street:2:name="
+            }
+          ],
+          "condition": {
+            "or": [
+              "addr:street~*",
+              "addr:substreet="
+            ]
+          }
+        },
+        {
+          "id": "uk_addresses_parentstreet",
+          "render": "<div class='subtle'>Parent street name</div><div><b>{addr:parentstreet}</b></div>",
+          "question": {
+            "en": "What is the parent street name for this address?",
+            "_context": "themes:uk_addresses.layers.uk_address.tagRenderings.uk_addresses_parentstreet.question"
+          },
+          "freeform": {
+            "key": "addr:parentstreet",
+            "placeholder": "Other (please specify)",
+            "addExtraTags": [
+              "not:addr:parentstreet="
+            ],
+            "inline": true
+          },
+          "mappings": [
+            {
+              "if": "not:addr:parentstreet=yes",
+              "then": "<div class='subtle'>Parent street name</div><div>No parent street name is needed within this address</div>",
+              "hideInAnswer": true
+            },
+            {
+              "if": "not:addr:parentstreet=yes",
+              "then": "No parent street name is needed within this address",
+              "addExtraTags": [
+                "addr:parentstreet="
+              ]
+            },
+            {
+              "if": "addr:parentstreet:={_closest_street:0:name}",
+              "then": "<div class='subtle'>Parent street name</div><div><b>{_closest_street:0:name}</b></div>",
+              "hideInAnswer": true
+            },
+            {
+              "if": "addr:parentstreet:={_closest_street:1:name}",
+              "then": "<div class='subtle'>Parent street name</div><div><b>{_closest_street:1:name}</b></div>",
+              "hideInAnswer": true
+            },
+            {
+              "if": "addr:parentstreet:={_closest_street:2:name}",
+              "then": "<div class='subtle'>Parent street name</div><div><b>{_closest_street:2:name}</b></div>",
+              "hideInAnswer": true
+            },
+            {
+              "if": "addr:parentstreet:={_closest_street:0:name}",
+              "then": "<b>{_closest_street:0:name}</b>",
+              "hideInAnswer": "_closest_street:0:name="
+            },
+            {
+              "if": "addr:parentstreet:={_closest_street:1:name}",
+              "then": "<b>{_closest_street:1:name}</b>",
+              "hideInAnswer": "_closest_street:1:name="
+            },
+            {
+              "if": "addr:parentstreet:={_closest_street:2:name}",
+              "then": "<b>{_closest_street:2:name}</b>",
+              "hideInAnswer": "_closest_street:2:name="
+            },
+            {
+              "if": "addr:parentstreet=",
+              "then": {
+                "en": "<div class='subtle'>Parent street name</div>",
+                "_context": "themes:uk_addresses.layers.uk_address.tagRenderings.uk_addresses_parentstreet.mappings.8.then"
+              },
+              "hideInAnswer": true
+            }
+          ],
+          "condition": {
+            "or": [
+              "addr:parentstreet~*",
+              "addr:substreet~*"
+            ]
+          },
+          "questionHint": {
+            "en": "This street name will appear after the place name or first street name in the address",
+            "_context": "themes:uk_addresses.layers.uk_address.tagRenderings.uk_addresses_parentstreet.questionHint"
+          }
+        },
+        {
+          "id": "fixme",
+          "render": "This address is complicated. We have recorded the following description: {fixme:addr}",
+          "question": {
+            "en": "Please explain what the address is so that someone else can look at it",
+            "_context": "themes:uk_addresses.layers.uk_address.tagRenderings.fixme.question"
+          },
+          "freeform": {
+            "key": "fixme:addr",
+            "placeholder": "Type here...",
+            "inline": true
+          },
+          "mappings": [
+            {
+              "if": "fixme:addr=",
+              "then": "Complicated address? Please click the pencil and write some text to describe the situation. You can also add a photo below if that helps",
+              "hideInAnswer": true
+            }
+          ]
+        },
+        {
+          "id": "address-sign-image",
+          "render": {
+            "en": "{image_carousel(image:address)}<br/>{image_upload(image:address, Too complex? Add a photo of the address)}",
+            "_context": "themes:uk_addresses.layers.uk_address.tagRenderings.address-sign-image.render"
+          }
+        },
+        {
+          "id": "lod",
+          "labels": [
+            "added_by_default"
+          ],
+          "render": {
+            "*": "{linked_data_from_website()}"
+          }
+        },
+        {
+          "id": "minimap",
+          "description": "Shows a small map with the feature. Added by default to every popup",
+          "render": {
+            "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+          }
+        },
+        {
+          "id": "last_edit",
+          "labels": [
+            "added_by_default"
+          ],
+          "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+          "condition": {
+            "and": [
+              "_last_edit:contributor~*",
+              "_last_edit:changeset~*"
+            ]
+          },
+          "metacondition": {
+            "or": [
+              "__featureSwitchIsTesting=true",
+              "__featureSwitchIsDebugging=true",
+              "mapcomplete-show_debug=yes",
+              "_csCount>=10"
+            ]
+          },
+          "render": {
+            "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+          }
+        },
+        {
+          "id": "favourite_status",
+          "render": {
+            "*": "{favourite_status()}"
+          }
+        },
+        {
+          "id": "qr_code",
+          "labels": [
+            "added_by_default"
+          ],
+          "classes": "flex items-center gap-x-2",
+          "render": {
+            "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+            "en": "{qr_code()}Scan this code to open this location on another device",
+            "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+            "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+          }
+        },
+        {
+          "id": "share",
+          "labels": [
+            "added_by_default"
+          ],
+          "metacondition": "_supports_sharing=yes",
+          "render": {
+            "de": "{share_link(,Standort teilen)}",
+            "en": "{share_link(,Share this location)}",
+            "nl": "{share_link(,Deel deze locatie)}"
+          }
+        },
+        {
+          "id": "all-tags",
+          "render": {
+            "*": "{all_tags()}"
+          },
+          "metacondition": {
+            "or": [
+              "__featureSwitchIsDebugging=true",
+              "mapcomplete-show_tags=full",
+              "mapcomplete-show_debug=yes"
+            ]
+          }
+        }
+      ],
+      "pointRendering": [
+        {
+          "label": {
+            "render": "<div style='margin-top: -42px; color: white' class='rounded-full p-1 font-bold relative'>{addr:housenumber}</div>",
+            "condition": "addr:housenumber~*"
+          },
+          "iconSize": "50,50",
+          "marker": [
+            {
+              "icon": {
+                "render": "./assets/layers/address/housenumber_blank.svg",
+                "mappings": [
+                  {
+                    "if": {
+                      "or": [
+                        {
+                          "and": [
+                            "addr:housenumber=",
+                            "nohousenumber!=yes"
+                          ]
+                        },
+                        "addr:street="
+                      ]
+                    },
+                    "then": "./assets/themes/uk_addresses/housenumber_unknown.svg"
+                  }
+                ]
+              }
+            }
+          ],
+          "location": [
+            "point",
+            "centroid"
+          ],
+          "anchor": "center",
+          "iconBadges": [
+            {
+              "if": "_favourite=yes",
+              "then": {
+                "render": "circle:white;heart:red",
+                "id": "circlewhiteheartred"
+              }
+            }
+          ]
+        }
+      ],
+      "lineRendering": [
+        {
+          "color": {
+            "render": "#00f",
+            "mappings": [
+              {
+                "if": {
+                  "or": [
+                    {
+                      "and": [
+                        "addr:housenumber=",
+                        "nohousenumber!=yes"
+                      ]
+                    },
+                    "addr:street="
+                  ]
+                },
+                "then": "#ff0"
+              }
+            ]
+          },
+          "width": "3"
+        }
+      ],
+      "titleIcons": [
+        {
+          "id": "wikipedialink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+          "condition": {
+            "or": [
+              "wikipedia~*",
+              "wikidata~*"
+            ]
+          },
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "wikipedia=",
+              "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+            }
+          ]
+        },
+        {
+          "id": "open_until",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "#": "Titleicon showing e.g. 'open until 17:00'",
+          "icon": {
+            "class": "w-20 mx-1 flex items-center"
+          },
+          "render": "{opening_hours_state()}",
+          "condition": {
+            "or": [
+              "opening_hours~*",
+              {
+                "or": [
+                  {
+                    "and": [
+                      "seasonal~.*winter.*",
+                      "_now:date~....-(12|01|02)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*spring.*",
+                      "_now:date~....-(03|04|05)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*summer.*",
+                      "_now:date~....-(06|07|08)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*autumn.*",
+                      "_now:date~....-(09|10|11)-.."
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "phonelink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.render"
+          },
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "contact:phone~*",
+              "then": {
+                "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+                "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+                "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+                "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+              }
+            }
+          ],
+          "condition": {
+            "or": [
+              "phone~*",
+              "contact:phone~*"
+            ]
+          }
+        },
+        {
+          "id": "emaillink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "contact:email~*",
+              "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "operator:email~*",
+              "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+            }
+          ],
+          "condition": {
+            "or": [
+              "email~*",
+              "contact:email~*",
+              "operator:email~*"
+            ]
+          }
+        },
+        {
+          "id": "websitelink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "website~*",
+              "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "operator:website~*",
+              "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "context:website~*",
+              "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            }
+          ]
+        },
+        {
+          "id": "smokingicon",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "smoking=no",
+              "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "smoking=yes",
+              "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+            }
+          ]
+        },
+        {
+          "id": "dogicon",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "if": "dog=no",
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+            },
+            {
+              "if": "dog=leashed",
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+            },
+            {
+              "if": {
+                "or": [
+                  "dog=yes",
+                  "dog=unleashed"
+                ]
+              },
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+            }
+          ]
+        },
+        {
+          "id": "sharelink",
+          "labels": [
+            "defaults"
+          ],
+          "render": "{share_link()}",
+          "metacondition": "_supports_sharing=yes"
+        },
+        {
+          "id": "favourite_title_icon",
+          "labels": [
+            "defaults"
+          ],
+          "render": {
+            "*": "{favourite_icon()}"
+          },
+          "metacondition": "_loggedIn=true"
+        },
+        {
+          "id": "osmlink",
+          "labels": [
+            "defaults"
+          ],
+          "render": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.render"
+          },
+          "mappings": [
+            {
+              "if": "id~.*/-.*",
+              "then": ""
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "_backend~*",
+              "then": {
+                "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+                "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+                "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+                "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+              }
+            }
+          ],
+          "condition": "id~(node|way|relation)/[0-9]*"
+        },
+        {
+          "id": "direction",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "{direction_indicator()}"
+        }
+      ]
+    },
+    {
+      "id": "named_streets",
+      "description": "Hidden layer with all streets which have a name. Useful to detect addresses",
+      "source": {
+        "osmTags": {
+          "and": [
+            "highway~*",
+            "name~*"
+          ]
+        }
+      },
+      "minzoom": 18,
+      "shownByDefault": false,
+      "pointRendering": null,
+      "lineRendering": [
+        {
+          "color": "#ccc",
+          "width": "3"
+        }
+      ],
+      "titleIcons": [
+        {
+          "id": "wikipedialink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+          "condition": {
+            "or": [
+              "wikipedia~*",
+              "wikidata~*"
+            ]
+          },
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "wikipedia=",
+              "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+            }
+          ]
+        },
+        {
+          "id": "open_until",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "#": "Titleicon showing e.g. 'open until 17:00'",
+          "icon": {
+            "class": "w-20 mx-1 flex items-center"
+          },
+          "render": "{opening_hours_state()}",
+          "condition": {
+            "or": [
+              "opening_hours~*",
+              {
+                "or": [
+                  {
+                    "and": [
+                      "seasonal~.*winter.*",
+                      "_now:date~....-(12|01|02)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*spring.*",
+                      "_now:date~....-(03|04|05)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*summer.*",
+                      "_now:date~....-(06|07|08)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*autumn.*",
+                      "_now:date~....-(09|10|11)-.."
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "phonelink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.render"
+          },
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "contact:phone~*",
+              "then": {
+                "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+                "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+                "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+                "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+              }
+            }
+          ],
+          "condition": {
+            "or": [
+              "phone~*",
+              "contact:phone~*"
+            ]
+          }
+        },
+        {
+          "id": "emaillink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "contact:email~*",
+              "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "operator:email~*",
+              "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+            }
+          ],
+          "condition": {
+            "or": [
+              "email~*",
+              "contact:email~*",
+              "operator:email~*"
+            ]
+          }
+        },
+        {
+          "id": "websitelink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "website~*",
+              "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "operator:website~*",
+              "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "context:website~*",
+              "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            }
+          ]
+        },
+        {
+          "id": "smokingicon",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "smoking=no",
+              "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "smoking=yes",
+              "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+            }
+          ]
+        },
+        {
+          "id": "dogicon",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "if": "dog=no",
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+            },
+            {
+              "if": "dog=leashed",
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+            },
+            {
+              "if": {
+                "or": [
+                  "dog=yes",
+                  "dog=unleashed"
+                ]
+              },
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+            }
+          ]
+        },
+        {
+          "id": "sharelink",
+          "labels": [
+            "defaults"
+          ],
+          "render": "{share_link()}",
+          "metacondition": "_supports_sharing=yes"
+        },
+        {
+          "id": "favourite_title_icon",
+          "labels": [
+            "defaults"
+          ],
+          "render": {
+            "*": "{favourite_icon()}"
+          },
+          "metacondition": "_loggedIn=true"
+        },
+        {
+          "id": "osmlink",
+          "labels": [
+            "defaults"
+          ],
+          "render": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.render"
+          },
+          "mappings": [
+            {
+              "if": "id~.*/-.*",
+              "then": ""
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "_backend~*",
+              "then": {
+                "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+                "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+                "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+                "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+              }
+            }
+          ],
+          "condition": "id~(node|way|relation)/[0-9]*"
+        },
+        {
+          "id": "direction",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "{direction_indicator()}"
+        },
+        {
+          "id": "rating",
+          "icon": {
+            "class": "w-20 mx-1 flex items-center"
+          },
+          "render": "{rating()}"
+        }
+      ],
+      "_layerIcon": [],
+      "forceLoad": true
+    },
+    {
+      "id": "address",
+      "name": {
+        "en": "Known addresses in OSM",
+        "de": "Bekannte Adressen in OSM",
+        "zh_Hant": "OSM 上已知的地址",
+        "hu": "Ismert címek az OSM-en",
+        "nl": "Bekende adressen in OSM",
+        "fr": "Adresses connues d’OpenStreetMap",
+        "ru": "Известные адреса в OSM",
+        "id": "Alamat yang dikenal di OSM",
+        "es": "Direcciones conocidas en OSM",
+        "zh_Hans": "OSM中已知的地址",
+        "nb_NO": "Kjente adresser i OSM",
+        "da": "Kendte adresser i OSM",
+        "pt": "Endereços conhecidos no OSM",
+        "eo": "Konataj adresoj en OSM",
+        "cs": "Známé adresy v OSM",
+        "pa_PK": "او‌ایس‌ایم وچ جاݨ پچھاݨے پتے",
+        "ca": "Adreces conegudes a OSM",
+        "zgh": "ⴰⵏⵙⵉⵡⵏ ⵉⵜⵜⵡⴰⵙⵙⵏⵏ ⴳ OSM",
+        "pt_BR": "Endereços conhecidos no OSM",
+        "eu": "OSMko helbide ezagunak",
+        "pl": "Znane adresy w OSM",
+        "it": "Indirizzo presente su OSM"
+      },
+      "description": "This layer is needed by raw_inspire_polygons because a calculated tag loads features from this layer (at calculatedTag[0] which calculates the value for _has_address)",
+      "source": {
+        "osmTags": {
+          "and": [
+            {
+              "or": [
+                "addr:housenumber~*",
+                "addr:street~*"
+              ]
+            }
+          ]
+        }
+      },
+      "calculatedTags": [
+        "_closest_3_street_names=closestn(feat)('named_streets',3, 'name').map(f => f.feat.properties.name)",
+        "_closest_street:0:name=JSON.parse(feat.properties._closest_3_street_names)[0]",
+        "_closest_street:1:name=JSON.parse(feat.properties._closest_3_street_names)[1]",
+        "_closest_street:2:name=JSON.parse(feat.properties._closest_3_street_names)[2]"
+      ],
+      "minzoom": 18,
+      "title": {
+        "render": {
+          "en": "Known address",
+          "de": "Bekannte Adresse",
+          "hu": "Ismert cím",
+          "nl": "Bekend adres",
+          "fr": "Adresse connue",
+          "pl": "Znany adres",
+          "ru": "Известный адрес",
+          "es": "Domicilio conocido",
+          "zh_Hans": "已知的地址",
+          "id": "Alamat yang diketahui",
+          "nb_NO": "Kjent adresse",
+          "da": "Kendt adresse",
+          "cs": "Známá adresa",
+          "ca": "Adreça coneguda",
+          "pt": "Endereço conhecido",
+          "pt_BR": "Endereço conhecido",
+          "he": "כתובת ידועה",
+          "eu": "Helbide ezaguna",
+          "it": "Indirizzo conosciuto"
+        }
+      },
+      "pointRendering": [
+        {
+          "label": {
+            "render": "<div style='margin-top: -42px; color: white' class='rounded-full p-1 font-bold relative'>{addr:housenumber}</div>",
+            "condition": "addr:housenumber~*"
+          },
+          "iconSize": "50,50",
+          "marker": [
+            {
+              "icon": {
+                "render": "./assets/layers/address/housenumber_blank.svg",
+                "mappings": [
+                  {
+                    "if": {
+                      "or": [
+                        {
+                          "and": [
+                            "addr:housenumber=",
+                            "nohousenumber!=yes"
+                          ]
+                        },
+                        "addr:street="
+                      ]
+                    },
+                    "then": "./assets/themes/uk_addresses/housenumber_unknown.svg"
+                  }
+                ]
+              }
+            }
+          ],
+          "location": [
+            "point",
+            "centroid"
+          ],
+          "anchor": "center",
+          "iconBadges": [
+            {
+              "if": "_favourite=yes",
+              "then": "circle:white;heart:red"
+            }
+          ]
+        }
+      ],
+      "lineRendering": [
+        {
+          "color": {
+            "render": "#00f",
+            "mappings": [
+              {
+                "if": {
+                  "or": [
+                    {
+                      "and": [
+                        "addr:housenumber=",
+                        "nohousenumber!=yes"
+                      ]
+                    },
+                    "addr:street="
+                  ]
+                },
+                "then": "#ff0"
+              }
+            ]
+          },
+          "width": "8"
+        }
+      ],
+      "tagRenderings": [
+        {
+          "id": "just_created",
+          "labels": [
+            "added_by_default"
+          ],
+          "description": "This element shows a 'thank you' that the contributor has recently created this element",
+          "classes": "rounded-xl thanks",
+          "mappings": [
+            {
+              "if": "id~*",
+              "icon": "./assets/svg/party.svg",
+              "then": {
+                "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+                "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+                "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+                "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+                "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+                "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+              }
+            }
+          ],
+          "condition": {
+            "and": [
+              "_backend~*",
+              "_last_edit:passed_time<300",
+              {
+                "or": [
+                  "_version_number=",
+                  "_version_number=1"
+                ]
+              }
+            ]
+          },
+          "metacondition": {
+            "and": [
+              {
+                "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+                "or": [
+                  "_last_edit:contributor:uid:={_uid}",
+                  "_last_edit:contributor:uid="
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "housenumber",
+          "render": {
+            "en": "The house number is <b>{addr:housenumber}</b>",
+            "nl": "Het huisnummer is <b>{addr:housenumber}</b>",
+            "de": "Die Hausnummer ist <b>{addr:housenumber}</b>",
+            "hu": "A házszám: <b>{addr:housenumber}</b>",
+            "fr": "Son numéro est le <b>{addr:housenumber}</b>",
+            "pl": "Numer tego domu to <b>{addr:housenumber}</b>",
+            "ru": "Номер дома <b>{addr:housenumber}</b>",
+            "zh_Hans": "门牌号是 <b>{addr:housenumber}</b>",
+            "id": "Nomor rumah ini <b>{addr:housenumber}</b>",
+            "es": "El número de puerta es <b>{addr:housenumber}</b>",
+            "da": "Husnummeret er <b>{addr:housenumber}</b>",
+            "cs": "Číslo domu je <b>{addr:housenumber}</b>",
+            "pt": "O número da casa é <b>{addr:housenumber}</b>",
+            "nb_NO": "Husnummeret er <b>{addr:housenumber}</b>",
+            "ca": "El número de porta és <b>{addr:housenumber}</b>",
+            "pt_BR": "O número da casa é <b>{addr:housenumber}</b>",
+            "he": "מספר הבית הוא <b>{addr:housenumber}</b>",
+            "eu": "Etxearen zenbakia <b>{addr:housenumber}</b> da",
+            "it": "Il numero civico della casa è <b>{addr:housenumber}</b>",
+            "zh_Hant": "門牌號碼是 <b>{addr:housenumber}</b>"
+          },
+          "question": {
+            "en": "What is the number of this house?",
+            "de": "Wie lautet die Nummer dieses Hauses?",
+            "hu": "Mi ennek az épületnek a házszáma?",
+            "nl": "Wat is het huisnummer van dit huis?",
+            "fr": "Quel est le numéro de ce bâtiment ?",
+            "pl": "Jaki jest numer tego domu?",
+            "ru": "Какой номер у этого дома?",
+            "es": "¿Cuál es el número de esta casa?",
+            "zh_Hans": "这个屋子的门牌号是多少？",
+            "id": "Berapa nomor rumah ini?",
+            "da": "Hvad er nummeret på dette hus?",
+            "cs": "Jaké je číslo tohoto domu?",
+            "pt": "Qual é o número desta casa?",
+            "nb_NO": "Hvilket husnummer har dette huset?",
+            "ca": "Quin és el número d'aquesta casa?",
+            "pt_BR": "Qual é o número desta casa?",
+            "he": "מה המספר של הבית הזה?",
+            "eu": "Zein da etxe honen zenbakia?",
+            "it": "Qual è il numero civico di questa casa?",
+            "zh_Hant": "這間房子的門牌號碼是多少？"
+          },
+          "freeform": {
+            "key": "addr:housenumber",
+            "addExtraTags": [
+              "nohousenumber="
+            ],
+            "inline": true
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "nohousenumber=yes"
+                ]
+              },
+              "addExtraTags": [
+                "addr:housenumber="
+              ],
+              "then": {
+                "en": "This building has no house number",
+                "nl": "Dit gebouw heeft geen huisnummer",
+                "de": "Dieses Gebäude hat keine Hausnummer",
+                "hu": "Ennek az épületnek nincs házszáma",
+                "fr": "Ce bâtiment n’a pas de numéro",
+                "pl": "Ten budynek nie ma numeru",
+                "ru": "У этого здания нет номера",
+                "id": "Bangunan ini tidak memiliki nomor rumah",
+                "es": "Esta edificación no tiene número",
+                "zh_Hans": "这个建筑物没有门牌号",
+                "da": "Denne bygning har intet husnummer",
+                "zh_Hant": "這棟建築沒有門牌",
+                "cs": "Tato budova nemá číslo domu",
+                "pt": "Este prédio não tem número",
+                "nb_NO": "Denne bygningen har ikke noe husnummer",
+                "ca": "Aquest edifici no té número",
+                "pt_BR": "Este prédio não tem número",
+                "he": "למבנה זה אין מספר בית",
+                "eu": "Eraikin honek ez du etxe zenbakirik",
+                "it": "Questo edificio non ha indirizzo"
+              }
+            }
+          ]
+        },
+        {
+          "id": "street",
+          "render": {
+            "en": "This address is in street <b>{addr:street}</b>",
+            "de": "Diese Adresse befindet sich in der Straße <b>{addr:street}</b>",
+            "hu": "Ez a cím a következő utcában van: <b>{addr:street}</b>",
+            "nl": "Dit adres bevindt zich in de straat <b>{addr:street}</b>",
+            "fr": "Le nom de la voie est <b>{addr:street}</b>",
+            "pl": "Ten adres znajduje się na ulicy <b>{addr:street}</b>",
+            "zh_Hans": "这个地址位于<b>{addr:street}</b>街",
+            "id": "Alamat ini ada di jalan <b>{addr:street}</b>",
+            "es": "La dirección está en esta calle <b>{addr:street}</b>",
+            "da": "Denne adresse er på gaden <b>{addr:street}</b>",
+            "cs": "Tato adresa se nachází v ulici <b>{addr:street}</b>",
+            "ca": "L'adreça està a aquest carrer <b>{addr:street}</b>",
+            "pt": "Este endereço é na rua <b>{addr:street}</b>",
+            "pt_BR": "Este endereço fica na rua <b>{addr:street}</b>",
+            "he": "כתובת זו נמצאת ברחוב <b>{addr:street}</b>",
+            "eu": "Helbide hau <b>{addr:street}</b> kalean dago",
+            "it": "L’indirizzo è in via <b>{addr:street}</b>"
+          },
+          "question": {
+            "en": "What street is this address located in?",
+            "de": "In welcher Straße befindet sich diese Adresse?",
+            "hu": "Melyik utcában található ez a cím?",
+            "nl": "In welke straat bevindt dit adres zich?",
+            "fr": "Dans quelle rue est située l’adresse ?",
+            "pl": "Na jakiej ulicy znajduje się ten adres?",
+            "ru": "Какая эта улица?",
+            "es": "¿En qué calle se encuentra esta dirección?",
+            "zh_Hans": "这个地址位于哪条街道？",
+            "id": "Alamat ini di jalan apa?",
+            "da": "Hvilken gade ligger denne adresse på?",
+            "cs": "V jaké ulici se nachází tato adresa?",
+            "ca": "A quin carrer es troba l'adreça?",
+            "pt": "Em que rua fica esse endereço?",
+            "pt_BR": "Em que rua fica esse endereço?",
+            "he": "באיזה רחוב נמצאת הכתובת הזו?",
+            "eu": "Zein kaletan dago helbide hori?",
+            "it": "Qual è la via in cui si trova?",
+            "zh_Hant": "地址所在的道路是？"
+          },
+          "freeform": {
+            "key": "addr:street",
+            "inline": true
+          },
+          "mappings": [
+            {
+              "if": "addr:street:={_closest_street:0:name}",
+              "then": "Located in <b>{_closest_street:0:name}</b>",
+              "hideInAnswer": "_closest_street:0:name="
+            },
+            {
+              "if": "addr:street:={_closest_street:1:name}",
+              "then": "Located in <b>{_closest_street:1:name}</b>",
+              "hideInAnswer": "_closest_street:1:name="
+            },
+            {
+              "if": "addr:street:={_closest_street:2:name}",
+              "then": "Located in <b>{_closest_street:2:name}</b>",
+              "hideInAnswer": "_closest_street:2:name="
+            }
+          ],
+          "condition": {
+            "and": [
+              "nohousenumber!~yes"
+            ]
+          }
+        },
+        {
+          "id": "fixme",
+          "render": "<b>Fixme description</b>{fixme}",
+          "question": {
+            "en": "What should be fixed here? Please explain",
+            "zh_Hant": "這裡需要修什麼？請直接解釋",
+            "de": "Was sollte hier korrigiert werden? Bitte erläutern",
+            "hu": "Mit kellene itt kijavítani? Légy szíves, magyarázd el",
+            "fr": "Précisez ce qui devrait être corrigé ici",
+            "pl": "Co wymaga naprawy? Proszę wytłumaczyć",
+            "id": "Apa yang harus diperbaiki di sini? Tolong jelaskan",
+            "es": "¿Qué debe corregirse aquí? Expóngalo",
+            "nl": "Wat moet hier gecorrigeerd worden? Leg het uit",
+            "zh_Hans": "这里应被如何修复？请做出解释",
+            "da": "Hvad skal rettes her? Forklar venligst",
+            "cs": "Co by se zde mělo opravit? Vysvětlete to, prosím",
+            "pt": "O que deve ser corrigido aqui? Explique",
+            "nb_NO": "Hva bør fikses her? Forklar.",
+            "ca": "Què s’hauria de corregir aquí? Exposa-ho",
+            "pt_BR": "O que deve ser corrigido aqui? Explique",
+            "he": "מה צריך לתקן כאן? אנא הסבר",
+            "eu": "Zer konpondu behar da hemen? Azaldu mesedez",
+            "it": "Indica cosa deve essere corretto qui"
+          },
+          "freeform": {
+            "key": "fixme",
+            "inline": true
+          },
+          "mappings": [
+            {
+              "if": "fixme=",
+              "then": "No fixme - write something here to explain complicated cases"
+            }
+          ]
+        },
+        {
+          "id": "leftover-questions",
+          "render": {
+            "*": "{questions( ,)}"
+          }
+        },
+        {
+          "id": "lod",
+          "labels": [
+            "added_by_default"
+          ],
+          "render": {
+            "*": "{linked_data_from_website()}"
+          }
+        },
+        {
+          "id": "minimap",
+          "description": "Shows a small map with the feature. Added by default to every popup",
+          "render": {
+            "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+          }
+        },
+        {
+          "id": "last_edit",
+          "labels": [
+            "added_by_default"
+          ],
+          "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+          "condition": {
+            "and": [
+              "_last_edit:contributor~*",
+              "_last_edit:changeset~*"
+            ]
+          },
+          "metacondition": {
+            "or": [
+              "__featureSwitchIsTesting=true",
+              "__featureSwitchIsDebugging=true",
+              "mapcomplete-show_debug=yes",
+              "_csCount>=10"
+            ]
+          },
+          "render": {
+            "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+          }
+        },
+        {
+          "id": "favourite_status",
+          "render": {
+            "*": "{favourite_status()}"
+          }
+        },
+        {
+          "id": "qr_code",
+          "labels": [
+            "added_by_default"
+          ],
+          "classes": "flex items-center gap-x-2",
+          "render": {
+            "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+            "en": "{qr_code()}Scan this code to open this location on another device",
+            "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+            "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+          }
+        },
+        {
+          "id": "share",
+          "labels": [
+            "added_by_default"
+          ],
+          "metacondition": "_supports_sharing=yes",
+          "render": {
+            "de": "{share_link(,Standort teilen)}",
+            "en": "{share_link(,Share this location)}",
+            "nl": "{share_link(,Deel deze locatie)}"
+          }
+        },
+        {
+          "id": "all-tags",
+          "render": {
+            "*": "{all_tags()}"
+          },
+          "metacondition": {
+            "or": [
+              "__featureSwitchIsDebugging=true",
+              "mapcomplete-show_tags=full",
+              "mapcomplete-show_debug=yes"
+            ]
+          }
+        }
+      ],
+      "titleIcons": [
+        {
+          "id": "wikipedialink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+          "condition": {
+            "or": [
+              "wikipedia~*",
+              "wikidata~*"
+            ]
+          },
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "wikipedia=",
+              "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+            }
+          ]
+        },
+        {
+          "id": "open_until",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "#": "Titleicon showing e.g. 'open until 17:00'",
+          "icon": {
+            "class": "w-20 mx-1 flex items-center"
+          },
+          "render": "{opening_hours_state()}",
+          "condition": {
+            "or": [
+              "opening_hours~*",
+              {
+                "or": [
+                  {
+                    "and": [
+                      "seasonal~.*winter.*",
+                      "_now:date~....-(12|01|02)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*spring.*",
+                      "_now:date~....-(03|04|05)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*summer.*",
+                      "_now:date~....-(06|07|08)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*autumn.*",
+                      "_now:date~....-(09|10|11)-.."
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "phonelink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.render"
+          },
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "contact:phone~*",
+              "then": {
+                "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+                "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+                "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+                "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+              }
+            }
+          ],
+          "condition": {
+            "or": [
+              "phone~*",
+              "contact:phone~*"
+            ]
+          }
+        },
+        {
+          "id": "emaillink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "contact:email~*",
+              "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "operator:email~*",
+              "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+            }
+          ],
+          "condition": {
+            "or": [
+              "email~*",
+              "contact:email~*",
+              "operator:email~*"
+            ]
+          }
+        },
+        {
+          "id": "websitelink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "website~*",
+              "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "operator:website~*",
+              "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "context:website~*",
+              "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            }
+          ]
+        },
+        {
+          "id": "smokingicon",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "smoking=no",
+              "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "smoking=yes",
+              "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+            }
+          ]
+        },
+        {
+          "id": "dogicon",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "if": "dog=no",
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+            },
+            {
+              "if": "dog=leashed",
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+            },
+            {
+              "if": {
+                "or": [
+                  "dog=yes",
+                  "dog=unleashed"
+                ]
+              },
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+            }
+          ]
+        },
+        {
+          "id": "sharelink",
+          "labels": [
+            "defaults"
+          ],
+          "render": "{share_link()}",
+          "metacondition": "_supports_sharing=yes"
+        },
+        {
+          "id": "favourite_title_icon",
+          "labels": [
+            "defaults"
+          ],
+          "render": {
+            "*": "{favourite_icon()}"
+          },
+          "metacondition": "_loggedIn=true"
+        },
+        {
+          "id": "osmlink",
+          "labels": [
+            "defaults"
+          ],
+          "render": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.render"
+          },
+          "mappings": [
+            {
+              "if": "id~.*/-.*",
+              "then": ""
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "_backend~*",
+              "then": {
+                "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+                "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+                "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+                "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+              }
+            }
+          ],
+          "condition": "id~(node|way|relation)/[0-9]*"
+        },
+        {
+          "id": "direction",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "{direction_indicator()}"
+        }
+      ],
+      "_layerIcon": [
+        {
+          "icon": "./assets/themes/uk_addresses/housenumber_unknown.svg"
+        }
+      ],
+      "forceLoad": true,
+      "passAllFeatures": true
+    }
+  ],
+  "tileLayerSources": [
+    {
+      "id": "property-boundaries",
+      "url": "https://tiles.osmuk.org/PropertyBoundaries/{z}/{x}/{y}.png",
+      "isOverlay": true,
+      "min_zoom": 18,
+      "max_zoom": 20,
+      "defaultState": false,
+      "name": {
+        "en": "Property boundaries by osmuk.org",
+        "de": "Grenzverläufe gemäß osmuk.org",
+        "_context": "themes:uk_addresses.tileLayerSources.property-boundaries.name"
+      }
+    }
+  ],
+  "enableShareScreen": false,
+  "enableMoreQuests": false,
+  "widenFactor": 1.01,
+  "socialImage": "assets/SocialImage.png"
+}

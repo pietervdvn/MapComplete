@@ -1,0 +1,861 @@
+{
+  "id": "map",
+  "name": {
+    "en": "Maps",
+    "nl": "Kaarten",
+    "it": "Mappe",
+    "ru": "Карты",
+    "fr": "Cartes",
+    "de": "Karten",
+    "ca": "Mapes",
+    "es": "Mapas",
+    "pa_PK": "نقشے",
+    "pl": "Mapy",
+    "cs": "Mapy"
+  },
+  "description": {
+    "en": "A map, meant for tourists which is permanently installed in the public space",
+    "nl": "Een permantent geinstalleerde kaart",
+    "it": "Una mappa, destinata ai turisti e che è sistemata in maniera permanente in uno spazio pubblico",
+    "fr": "Une carte, destinée aux touristes, installée en permanence dans l'espace public",
+    "de": "Eine Karte, die für Touristen gedacht ist und dauerhaft im öffentlichen Raum aufgestellt ist",
+    "es": "Un mapa, pensado para turistas y que está instalado de manera permanente en un espacio público",
+    "pl": "Mapa, przeznaczona dla turystów, która jest zainstalowana w przestrzeni publicznej na stałe",
+    "ca": "Un mapa",
+    "cs": "Mapa určená pro turisty, která je trvale instalována na veřejném prostranství"
+  },
+  "source": {
+    "osmTags": {
+      "and": [
+        {
+          "or": [
+            "tourism=map",
+            "information=map"
+          ]
+        }
+      ]
+    }
+  },
+  "minzoom": 12,
+  "title": {
+    "render": {
+      "en": "Map",
+      "nl": "Kaart",
+      "it": "Mappa",
+      "ru": "Карта",
+      "fr": "Carte",
+      "de": "Karte",
+      "ca": "Mapa",
+      "es": "Mapa",
+      "pa_PK": "نقشہ",
+      "pl": "Mapa",
+      "cs": "Mapa"
+    }
+  },
+  "pointRendering": [
+    {
+      "marker": [
+        {
+          "icon": {
+            "render": "./assets/layers/map/map.svg",
+            "mappings": [
+              {
+                "if": {
+                  "and": [
+                    "map_source=OpenStreetMap",
+                    "map_source:attribution=sticker"
+                  ]
+                },
+                "then": "./assets/layers/map/map-stickered.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "map_source=OpenStreetMap",
+                    "map_source:attribution=yes"
+                  ]
+                },
+                "then": "./assets/layers/map/osm-logo-white-bg.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "map_source=OpenStreetMap"
+                  ]
+                },
+                "then": "./assets/layers/map/osm-logo-buggy-attr.svg"
+              }
+            ]
+          }
+        }
+      ],
+      "iconSize": "50,50",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "center",
+      "iconBadges": [
+        {
+          "if": "_favourite=yes",
+          "then": "circle:white;heart:red"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#00f",
+      "width": "8"
+    }
+  ],
+  "presets": [
+    {
+      "tags": [
+        "tourism=information",
+        "information=map"
+      ],
+      "title": {
+        "en": "a map",
+        "nl": "een kaart",
+        "it": "una mappa",
+        "ru": "Карта",
+        "fr": "une carte",
+        "de": "eine Karte",
+        "ca": "un mapa",
+        "es": "un mapa",
+        "pl": "mapa",
+        "cs": "mapa"
+      },
+      "description": {
+        "en": "Add a missing map",
+        "nl": "Voeg een ontbrekende kaart toe",
+        "it": "Aggiungi una mappa mancante",
+        "fr": "Ajouter une carte manquante",
+        "de": "Fehlende Karte hinzufügen",
+        "ru": "Добавить отсутствующую карту",
+        "es": "Añadir un mapa que falta",
+        "ca": "Afegeix un mapa que falta",
+        "pl": "Dodaj brakującą mapę",
+        "cs": "Přidat chybějící mapu"
+      }
+    }
+  ],
+  "tagRenderings": [
+    {
+      "id": "just_created",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "This element shows a 'thank you' that the contributor has recently created this element",
+      "classes": "rounded-xl thanks",
+      "mappings": [
+        {
+          "if": "id~*",
+          "icon": "./assets/svg/party.svg",
+          "then": {
+            "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+            "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+            "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+            "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+            "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+            "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+          }
+        }
+      ],
+      "condition": {
+        "and": [
+          "_backend~*",
+          "_last_edit:passed_time<300",
+          {
+            "or": [
+              "_version_number=",
+              "_version_number=1"
+            ]
+          }
+        ]
+      },
+      "metacondition": {
+        "and": [
+          {
+            "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+            "or": [
+              "_last_edit:contributor:uid:={_uid}",
+              "_last_edit:contributor:uid="
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "images",
+      "description": "This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images",
+      "render": {
+        "*": "{image_carousel()}{image_upload()}{nearby_images():my-4}"
+      },
+      "classes": "my-4"
+    },
+    {
+      "id": "map_type",
+      "question": {
+        "en": "What type of map is shown?",
+        "de": "Was für eine Karte ist das?",
+        "pl": "Jaki rodzaj mapy jest pokazany?",
+        "ca": "Quin tipus de mapa es mostra?",
+        "cs": "Jaký typ mapy je zobrazen?"
+      },
+      "mappings": [
+        {
+          "if": "map_type=topo",
+          "then": {
+            "en": "Topographical map <p class='subtle'>The map contains contour lines. </p>",
+            "de": "Topographische Katte <p class='subtle'> Die Karte enthält Höhenlinien. </p>",
+            "ca": "Mapa topogràfic <p class='subtle'>El mapa conté línies de contorn. </p>",
+            "cs": "Topografická mapa <p class='subtle'>Mapa obsahuje vrstevnice. </p>"
+          }
+        },
+        {
+          "if": "map_type=street",
+          "then": {
+            "en": "A map with all streets or ways of an area. <p class='subtle'>The streets are mostly named; the angles, distances etc. are accurate</p>",
+            "de": "Eine Karte mit allen Straßen und Wegen eines Gebietes. <p class='subtle'>Die Straßen sind meist benannt; die Winkel, die Entfernungen, etc. stimmen</p>",
+            "pl": "Mapa z wszystkimi ulicami i ścieżkami w danym obszarze. <p class='subtle'>Ulica w większości mają nazwy; kąty, odległości itp. są poprawne</p>",
+            "ca": "Un mapa amb tots els carrers o camins d'una àrea. <p class='subtle'>Els carrers estan majoritàriament nomenats; els angles, distàncies etc. són acurades</p>",
+            "cs": "Mapa se všemi ulicemi nebo cestami v oblasti. <p class='subtle'>Ulice jsou většinou pojmenované, úhly, vzdálenosti atd. jsou přesné</p>"
+          }
+        },
+        {
+          "if": "map_type=scheme",
+          "then": {
+            "en": "This is a schematic map. <p class='subtle'>A sketched map with only important ways and POIs. The angles, distances etc. are merely illustrative, not accurate.</p> ",
+            "de": "Dies ist eine schematische Karte. <p class='subtle'>Eine skizzierte Karte mit nur wichtigen Wegen und POIs. Die Winkel, Entfernungen usw. sind lediglich illustrativ, nicht genau.</p> ",
+            "pl": "To jest mapa schematyczna. <p class='subtle'>Mapa-szkic z tylko ważnymi drogami i POI. Kąty, odległości itp. są tylko ilustratywne, niedokładne.</p> ",
+            "ca": "Això és un mapa esquemàtic. <p class='subtle'>Un mapa esbossat amb només camins importants i PDI. Els angles, els trajectes etc. són merament il·lustratius, no acurat.</p> ",
+            "cs": "Jedná se o schematickou mapu. <p class='subtle'>Schematická mapa s vyznačením pouze důležitých cest a bodů zájmu. Úhly, vzdálenosti atd. jsou pouze ilustrativní, nikoliv přesné.</p> "
+          }
+        },
+        {
+          "if": "map_type=toposcope",
+          "then": {
+            "en": "This is a toposcope. <p class='subtle'>A marker erected on high places which indicates the direction to notable landscape features which can be seen from that point<p>",
+            "de": "Dies ist ein Toposkop. <p class='subtle'>Eine Markierung, die an hohen Stellen angebracht ist und die Richtung zu wichtigen Landschaftsobjekten anzeigt, die von diesem Punkt aus gesehen werden können<p>",
+            "ca": "Això és un toposcope. <p class='subtle'>Un marcador erigit en llocs alts que indica la direcció cap als elements paisatgístics notables que es poden veure des d'aquest punt<p>",
+            "cs": "Jedná se o toposkop. <p class='subtle'>Značka vztyčená na vyvýšených místech, která udává směr k pozoruhodným krajinným prvkům, které jsou z tohoto místa vidět<p>"
+          }
+        }
+      ]
+    },
+    {
+      "id": "map_size",
+      "question": {
+        "en": "What is the size of the shown area on the map?",
+        "de": "Was wird von der Fläche abgedeckt?",
+        "pl": "Jaki jest rozmiar obszaru pokazanego na tej mapie?",
+        "ca": "Quina és la mida de l'àrea mostrada en el mapa?",
+        "cs": "Jak velká je zobrazená oblast na mapě?"
+      },
+      "mappings": [
+        {
+          "if": "map_size=building",
+          "then": {
+            "en": "A map of the rooms within a building",
+            "de": "Eine Karte der Räume innerhalb eines Gebäudes",
+            "pl": "Plan pomieszczeń w budynku",
+            "ca": "Un mapa de les habitacions dins d'un edifici",
+            "cs": "Mapa místností uvnitř budovy"
+          }
+        },
+        {
+          "if": "map_size=site",
+          "then": {
+            "en": "A map of special site, like of a historical castle, a park, a campus, a forest, ....",
+            "de": "Örtlichkeit (z.B. Burg)",
+            "ca": "Un mapa d'un lloc especial, com un castell històric, un parc, un campus, un bosc, …",
+            "cs": "Mapa speciálního místa, například historického zámku, parku, areálu, lesa, ...."
+          }
+        },
+        {
+          "if": "map_size=village",
+          "then": {
+            "en": "A map showing the village or town",
+            "de": "Eine Karte, die das Dorf oder die Stadt anzeigt",
+            "pl": "Mapa pokazująca wieś lub niewielkie miasto",
+            "ca": "Un mapa que mostra el poble o la ciutat",
+            "cs": "Mapa zobrazující vesnici nebo město"
+          }
+        },
+        {
+          "if": "map_size=city",
+          "then": {
+            "en": " A map of a city",
+            "de": "Stadt",
+            "pl": " Mapa miasta",
+            "ca": " Un mapa d'una ciutat",
+            "cs": " Mapa města"
+          }
+        },
+        {
+          "if": "map_size=region",
+          "then": {
+            "en": "The map of an entire region, showing multiple cities and villages",
+            "de": "Region",
+            "pl": "Mapa całego regionu, pokazująca wiele miast i wsi",
+            "ca": "El mapa d'una regió sencera, mostrant múltiples ciutats i pobles",
+            "cs": "Mapa celého regionu s několika městy a vesnicemi"
+          }
+        }
+      ]
+    },
+    {
+      "labels": [
+        "map"
+      ],
+      "question": {
+        "en": "On which data is this map based?",
+        "nl": "Op welke data is deze kaart gebaseerd?",
+        "it": "Su quali dati si basa questa mappa?",
+        "fr": "Sur quelles données cette carte est-elle basée ?",
+        "de": "Auf welchen Daten basiert diese Karte?",
+        "es": "¿En qué datos se basa este mapa?",
+        "ca": "En quines dades es basa aquest mapa?",
+        "pl": "Na jakich danych bazuje ta mapa?",
+        "cs": "Na jakých datech je mapa založena?"
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "map_source=OpenStreetMap",
+              "not:map_source="
+            ]
+          },
+          "then": {
+            "en": "This map is based on OpenStreetMap",
+            "nl": "Deze kaart is gebaseerd op OpenStreetMap",
+            "it": "Questa mappa si basa su OpenStreetMap",
+            "ru": "Эта карта основана на OpenStreetMap",
+            "fr": "Cette carte est basée sur OpenStreetMap",
+            "de": "Diese Karte basiert auf OpenStreetMap",
+            "es": "Este mapa se basa en OpenStreetMap",
+            "ca": "Aquest mapa està basat en OpenStreetMap",
+            "pl": "Ta mapa bazuje na OpenStreetMap",
+            "cs": "Tato mapa je založena na OpenStreetMap"
+          }
+        }
+      ],
+      "freeform": {
+        "key": "map_source",
+        "inline": true
+      },
+      "render": {
+        "en": "This map is based on {map_source}",
+        "nl": "Deze kaart is gebaseerd op {map_source}",
+        "it": "Questa mappa si basa su {map_source}",
+        "ru": "Эта карта основана на {map_source}",
+        "fr": "Cette carte est basée sur {map_source}",
+        "de": "Diese Karte basiert auf {map_source}",
+        "es": "Este mapa se basa en {map_source}",
+        "pl": "Ta mapa bazuje na {map_source}",
+        "ca": "Aquest mapa està basat en {map_source}",
+        "cs": "Tato mapa vychází z {map_source}"
+      },
+      "id": "map-map_source"
+    },
+    {
+      "id": "map-attribution",
+      "labels": [
+        "map"
+      ],
+      "question": {
+        "en": "Is the OpenStreetMap-attribution given?",
+        "nl": "Is de attributie voor OpenStreetMap aanwezig?",
+        "it": "L’attribuzione a OpenStreetMap è presente?",
+        "de": "Ist die OpenStreetMap-Attribution vorhanden?",
+        "fr": "L’attribution à OpenStreetMap est elle-présente ?",
+        "es": "¿Hay una atribución a OpenStreetMap?",
+        "ca": "Hi ha atribució a OpenStreetMap?",
+        "cs": "Je uveden atribut OpenStreetMap?"
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "map_source:attribution=yes"
+            ]
+          },
+          "then": {
+            "en": "OpenStreetMap is clearly attributed, including the ODBL-license",
+            "nl": "De OpenStreetMap-attributie is duidelijk aangegeven, zelfs met vermelding van \"ODBL\"",
+            "it": "L’attribuzione a OpenStreetMap è chiaramente specificata, inclusa la licenza ODBL",
+            "de": "OpenStreetMap ist eindeutig attributiert, einschließlich der ODBL-Lizenz",
+            "fr": "L’attribution est clairement inscrite ainsi que la licence ODBL",
+            "es": "Se atribuye claramente a OpenStreetMap, incluyendo la licencia ODBL",
+            "pl": "Źródło, czyli OpenStreetMap, jest w widoczny sposób podane, zawiera informację o licencji ODBL",
+            "ca": "OpenStreetMap està clarament atribuït, incloent la llicència ODBL",
+            "cs": "OpenStreetMap je jasně popsán, včetně licence ODBL"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "map_source:attribution=incomplete"
+            ]
+          },
+          "then": {
+            "en": "OpenStreetMap is clearly attributed, but the license is not mentioned",
+            "nl": "OpenStreetMap is duidelijk aangegeven, maar de licentievermelding ontbreekt",
+            "it": "L’attribuzione a OpenStreetMap è chiaramente specificata ma la licenza non compare",
+            "de": "OpenStreetMap ist eindeutig attributiert, aber die Lizenz wird nicht erwähnt",
+            "fr": "L’attribution est clairement inscrite mais la licence est absente",
+            "es": "Se atribuya claramente a OpenStreetMap, pero no se menciona la licencia",
+            "ca": "OpenStreetMap està clarament atribuït, però no es menciona la llicència",
+            "cs": "OpenStreetMap je jasně připsána, ale licence není uvedena"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "map_source:attribution=sticker"
+            ]
+          },
+          "then": {
+            "en": "OpenStreetMap wasn't mentioned, but someone put an OpenStreetMap-sticker on it",
+            "nl": "OpenStreetMap was oorspronkelijk niet aangeduid, maar iemand plaatste er een sticker",
+            "it": "Non era presente alcun cenno a OpenStreetMap ma qualcuno vi ha attaccato un adesivo di OpenStreetMap",
+            "de": "OpenStreetMap wurde nicht erwähnt, aber jemand hat einen OpenStreetMap-Aufkleber darauf geklebt",
+            "fr": "OpenStreetMap n’est pas mentionné, un sticker OpenStreetMap a été collé",
+            "es": "No se mencionaba OpenStreetMap, pero alguien le pegó una pegatina de OpenStreetMap",
+            "ca": "OpenStreetMap no es mencionava, però algú hi ha posat una enganxina d'OpenStreetMap",
+            "cs": "OpenStreetMap nebyl zmíněn, ale někdo dal OpenStreetMap-nálepku na to"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "map_source:attribution=none"
+            ]
+          },
+          "then": {
+            "en": "There is no attribution at all",
+            "nl": "Er is geen attributie",
+            "it": "Non c’è alcuna attribuzione",
+            "fr": "Il n'y a aucune attribution",
+            "de": "Es gibt überhaupt keine Namensnennung",
+            "es": "No hay atribución",
+            "ca": "No hi ha atribució",
+            "cs": "Neexistuje vůbec žádný atribut"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "map_source:attribution=no"
+            ]
+          },
+          "then": {
+            "nl": "Er is geen attributie",
+            "en": "There is no attribution at all",
+            "it": "Non c’è alcuna attribuzione",
+            "fr": "Il n'y a aucune attribution",
+            "de": "Es gibt überhaupt keine Namensnennung",
+            "es": "No hay atribución",
+            "ca": "No hi ha atribució",
+            "cs": "Neexistuje vůbec žádný atribut"
+          },
+          "hideInAnswer": true
+        }
+      ],
+      "condition": {
+        "or": [
+          "map_source~(O|)pen(S|s)treet(M|m)ap",
+          "map_source=osm",
+          "map_source=OSM"
+        ]
+      }
+    },
+    {
+      "id": "leftover-questions",
+      "render": {
+        "*": "{questions( ,)}"
+      }
+    },
+    {
+      "id": "lod",
+      "labels": [
+        "added_by_default"
+      ],
+      "render": {
+        "*": "{linked_data_from_website()}"
+      }
+    },
+    {
+      "id": "minimap",
+      "description": "Shows a small map with the feature. Added by default to every popup",
+      "render": {
+        "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+      }
+    },
+    {
+      "id": "move-button",
+      "render": {
+        "*": "{move_button()}"
+      }
+    },
+    {
+      "id": "delete-button",
+      "render": {
+        "*": "{delete_button()}"
+      }
+    },
+    {
+      "id": "last_edit",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+      "condition": {
+        "and": [
+          "_last_edit:contributor~*",
+          "_last_edit:changeset~*"
+        ]
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsTesting=true",
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_debug=yes",
+          "_csCount>=10"
+        ]
+      },
+      "render": {
+        "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+      }
+    },
+    {
+      "id": "favourite_status",
+      "render": {
+        "*": "{favourite_status()}"
+      }
+    },
+    {
+      "id": "qr_code",
+      "labels": [
+        "added_by_default"
+      ],
+      "classes": "flex items-center gap-x-2",
+      "render": {
+        "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+        "en": "{qr_code()}Scan this code to open this location on another device",
+        "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+        "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+      }
+    },
+    {
+      "id": "share",
+      "labels": [
+        "added_by_default"
+      ],
+      "metacondition": "_supports_sharing=yes",
+      "render": {
+        "de": "{share_link(,Standort teilen)}",
+        "en": "{share_link(,Share this location)}",
+        "nl": "{share_link(,Deel deze locatie)}"
+      }
+    },
+    {
+      "id": "all-tags",
+      "render": {
+        "*": "{all_tags()}"
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_tags=full",
+          "mapcomplete-show_debug=yes"
+        ]
+      }
+    }
+  ],
+  "deletion": {
+    "softDeletionTags": {
+      "and": [
+        "razed:tourism:=information",
+        "tourism="
+      ]
+    },
+    "neededChangesets": 1
+  },
+  "allowMove": {
+    "enableRelocation": false,
+    "enableImproveAccuracy": true
+  },
+  "titleIcons": [
+    {
+      "id": "wikipedialink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+      "condition": {
+        "or": [
+          "wikipedia~*",
+          "wikidata~*"
+        ]
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "wikipedia=",
+          "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "open_until",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "#": "Titleicon showing e.g. 'open until 17:00'",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{opening_hours_state()}",
+      "condition": {
+        "or": [
+          "opening_hours~*",
+          {
+            "or": [
+              {
+                "and": [
+                  "seasonal~.*winter.*",
+                  "_now:date~....-(12|01|02)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*spring.*",
+                  "_now:date~....-(03|04|05)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*summer.*",
+                  "_now:date~....-(06|07|08)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*autumn.*",
+                  "_now:date~....-(09|10|11)-.."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "phonelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": {
+        "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+        "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+        "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+        "_context": "layers:icons.tagRenderings.phonelink.render"
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:phone~*",
+          "then": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+          }
+        }
+      ],
+      "condition": {
+        "or": [
+          "phone~*",
+          "contact:phone~*"
+        ]
+      }
+    },
+    {
+      "id": "emaillink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:email~*",
+          "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:email~*",
+          "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        }
+      ],
+      "condition": {
+        "or": [
+          "email~*",
+          "contact:email~*",
+          "operator:email~*"
+        ]
+      }
+    },
+    {
+      "id": "websitelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "website~*",
+          "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:website~*",
+          "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "context:website~*",
+          "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "smokingicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=no",
+          "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=yes",
+          "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+        }
+      ]
+    },
+    {
+      "id": "dogicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "if": "dog=no",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+        },
+        {
+          "if": "dog=leashed",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+        },
+        {
+          "if": {
+            "or": [
+              "dog=yes",
+              "dog=unleashed"
+            ]
+          },
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+        }
+      ]
+    },
+    {
+      "id": "sharelink",
+      "labels": [
+        "defaults"
+      ],
+      "render": "{share_link()}",
+      "metacondition": "_supports_sharing=yes"
+    },
+    {
+      "id": "favourite_title_icon",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "*": "{favourite_icon()}"
+      },
+      "metacondition": "_loggedIn=true"
+    },
+    {
+      "id": "osmlink",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+        "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+        "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+        "_context": "layers:icons.tagRenderings.osmlink.render"
+      },
+      "mappings": [
+        {
+          "if": "id~.*/-.*",
+          "then": ""
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "_backend~*",
+          "then": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+          }
+        }
+      ],
+      "condition": "id~(node|way|relation)/[0-9]*"
+    },
+    {
+      "id": "direction",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "{direction_indicator()}"
+    },
+    {
+      "id": "rating",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{rating()}"
+    }
+  ],
+  "_layerIcon": [
+    {
+      "icon": "./assets/layers/map/map.svg"
+    }
+  ]
+}

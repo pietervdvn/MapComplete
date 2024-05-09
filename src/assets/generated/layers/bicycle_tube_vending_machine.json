@@ -1,0 +1,1070 @@
+{
+  "id": "bicycle_tube_vending_machine",
+  "name": {
+    "en": "Bicycle tube vending machine",
+    "nl": "Fietsbanden-verkoopsautomaat",
+    "fr": "Distributeur automatique de chambre à air de vélo",
+    "it": "Distributore automatico di camere d’aria per bici",
+    "de": "Automat für Fahrradschläuche",
+    "ru": "Торговый автомат для велосипедистов",
+    "zh_Hant": "自行車內胎自動售貨機",
+    "pt_BR": "Máquina de venda automática de tubos de bicicleta",
+    "pt": "Máquina de venda automática de tubos de bicicleta",
+    "da": "Automat til salg af cykelslanger",
+    "cs": "Automat na cyklistické duše",
+    "ca": "Màquina expenedora de tubs de bicicleta",
+    "es": "Máquina expendedora de tubos de bicicleta"
+  },
+  "description": {
+    "en": "A layer showing vending machines for bicycle tubes (either purpose-built bicycle tube vending machines or classical vending machines with bicycle tubes and optionally additional bicycle related objects such as lights, gloves, locks, …)",
+    "nl": "Een laag met verkoopsautomaten met binnenbanden voor fietsen (dit kan een automaat zijn met énkel fietsbanden, of een gewone automaat met fietsbanden en andere fietsaccessoires zoals lichten, handschoenen, sloten,...)",
+    "de": "Eine Ebene mit Automaten für Fahrradschläuche (entweder spezielle Fahrradschlauch-Automaten oder klassische Automaten mit Fahrradschläuchen und optional zusätzlichen fahrradbezogenen Gegenständen wie Lampen, Handschuhe, Schlösser, …)",
+    "da": "Et lag med automater til cykelslanger (enten specialbyggede cykelslangeautomater eller klassiske automater med cykelslanger og eventuelt andre cykelrelaterede genstande som f.eks. lys, handsker, låse, o.s.v)",
+    "fr": "Une couche affichant des distributeurs automatiques de chambre à air (que ce soit des distributeurs conçus spécifiquement pour les chambres à air ou des distributeurs classiques incluant des chambres à air ainsi des objets apparentés tels que de l'éclairage pour vélo, des gants, des cadenas, ...)",
+    "cs": "Vrstva zobrazující automaty na cyklistické duše (buď speciální automaty na cyklistické duše, nebo klasické automaty s cyklistickými dušemi a případně dalšími předměty souvisejícími s jízdními koly, jako jsou světla, rukavice, zámky, ...)",
+    "ca": "Una capa que mostra màquines expenedores per a tubs de bicicleta (ja siguin màquines expenedores de tubs de bicicleta o màquines expenedores clàssiques amb tubs de bicicleta i opcionalment objectes addicionals relacionats amb la bicicleta com ara llums, guants, panys, ...)",
+    "pt_BR": "Uma camada que mostra máquinas de venda de câmaras de ar de bicicleta (sejam máquinas de venda de câmaras de ar de bicicleta específicas ou máquinas de venda clássicas com câmaras de ar de bicicleta e opcionalmente objetos relacionados a bicicletas, como luzes, luvas, travas, ...)",
+    "es": "Una capa que muestra máquinas expendedoras de cámaras de bicicleta (ya sean máquinas expendedoras de cámaras de bicicleta especialmente diseñadas o máquinas expendedoras clásicas con cámaras de bicicleta y, opcionalmente, objetos adicionales relacionados con la bicicleta, como luces, guantes, candados, etc.)",
+    "pt": "Uma camada que mostra máquinas de venda de câmaras de ar de bicicleta (sejam máquinas de venda de câmaras de ar de bicicleta específicas ou máquinas de venda clássicas com câmaras de ar de bicicleta e opcionalmente objetos relacionados a bicicletas, como luzes, luvas, travas, ...)"
+  },
+  "source": {
+    "osmTags": {
+      "and": [
+        "amenity=vending_machine",
+        "vending~.*bicycle_tube.*"
+      ]
+    }
+  },
+  "minzoom": 13,
+  "title": {
+    "render": {
+      "en": "Bicycle tube vending machine",
+      "nl": "Fietsbanden-verkoopautomaat",
+      "fr": "Distributeur automatique de chambre à air de vélo",
+      "it": "Distributore automatico di camere d’aria per bici",
+      "de": "Fahrradschlauch-Automat",
+      "ru": "Торговый автомат для велосипедистов",
+      "zh_Hant": "自行車內胎自動售貨機",
+      "pt_BR": "Máquina de venda automática de tubos de bicicleta",
+      "pt": "Máquina de venda automática de tubos de bicicleta",
+      "da": "Automat til salg af cykelslanger",
+      "cs": "Automat na cyklistické duše",
+      "ca": "Màquina expenedora de tubs de bicicleta"
+    },
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": {
+          "en": "Bicycle tube vending machine {name}",
+          "ca": "Màquina expenedora de cambres d'aire de bicicletes {name}",
+          "de": "{name} Fahrradschlauch-Automat",
+          "cs": "Automat na cyklistické pláště{name}",
+          "nl": "Fietsbanden-verkoopautomaat {name}",
+          "pt_BR": "Máquina de venda de câmara de ar para bicicleta {name}",
+          "es": "Máquina expendedora de cámaras de bicicleta {name}",
+          "pt": "Máquina de venda de câmara de ar para bicicleta {name}"
+        }
+      }
+    ]
+  },
+  "titleIcons": [
+    {
+      "render": "<a href='https://fietsambassade.gent.be/' target='_blank'><img src='./assets/themes/cyclofix/fietsambassade_gent_logo_small.svg'/></a>",
+      "condition": "operator=De Fietsambassade Gent"
+    },
+    {
+      "id": "wikipedialink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+      "condition": {
+        "or": [
+          "wikipedia~*",
+          "wikidata~*"
+        ]
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "wikipedia=",
+          "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "open_until",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "#": "Titleicon showing e.g. 'open until 17:00'",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{opening_hours_state()}",
+      "condition": {
+        "or": [
+          "opening_hours~*",
+          {
+            "or": [
+              {
+                "and": [
+                  "seasonal~.*winter.*",
+                  "_now:date~....-(12|01|02)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*spring.*",
+                  "_now:date~....-(03|04|05)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*summer.*",
+                  "_now:date~....-(06|07|08)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*autumn.*",
+                  "_now:date~....-(09|10|11)-.."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "phonelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": {
+        "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+        "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+        "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+        "_context": "layers:icons.tagRenderings.phonelink.render"
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:phone~*",
+          "then": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+          }
+        }
+      ],
+      "condition": {
+        "or": [
+          "phone~*",
+          "contact:phone~*"
+        ]
+      }
+    },
+    {
+      "id": "emaillink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:email~*",
+          "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:email~*",
+          "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        }
+      ],
+      "condition": {
+        "or": [
+          "email~*",
+          "contact:email~*",
+          "operator:email~*"
+        ]
+      }
+    },
+    {
+      "id": "websitelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "website~*",
+          "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:website~*",
+          "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "context:website~*",
+          "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "smokingicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=no",
+          "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=yes",
+          "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+        }
+      ]
+    },
+    {
+      "id": "dogicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "if": "dog=no",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+        },
+        {
+          "if": "dog=leashed",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+        },
+        {
+          "if": {
+            "or": [
+              "dog=yes",
+              "dog=unleashed"
+            ]
+          },
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+        }
+      ]
+    },
+    {
+      "id": "sharelink",
+      "labels": [
+        "defaults"
+      ],
+      "render": "{share_link()}",
+      "metacondition": "_supports_sharing=yes"
+    },
+    {
+      "id": "favourite_title_icon",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "*": "{favourite_icon()}"
+      },
+      "metacondition": "_loggedIn=true"
+    },
+    {
+      "id": "osmlink",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+        "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+        "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+        "_context": "layers:icons.tagRenderings.osmlink.render"
+      },
+      "mappings": [
+        {
+          "if": "id~.*/-.*",
+          "then": ""
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "_backend~*",
+          "then": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+          }
+        }
+      ],
+      "condition": "id~(node|way|relation)/[0-9]*"
+    },
+    {
+      "id": "direction",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "{direction_indicator()}"
+    }
+  ],
+  "pointRendering": [
+    {
+      "iconBadges": [
+        {
+          "if": {
+            "or": [
+              "operational_status=broken",
+              "operational_status=closed"
+            ]
+          },
+          "then": {
+            "render": "close:#c33",
+            "id": "closec33"
+          }
+        },
+        {
+          "if": "_favourite=yes",
+          "then": "circle:white;heart:red"
+        }
+      ],
+      "iconSize": "50,50",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "bottom",
+      "marker": [
+        {
+          "icon": {
+            "render": "pin",
+            "id": "pin"
+          },
+          "color": "#ffffff"
+        },
+        {
+          "icon": {
+            "render": "./assets/layers/bicycle_tube_vending_machine/pinIcon.svg",
+            "id": "assetslayersbicycletubevendingmachinepinIconsvg"
+          }
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#6bc4f7"
+    }
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "a bicycle tube vending machine",
+        "nl": "een fietsbanden-verkoopsautomaat",
+        "fr": "une distributeur automatique de chambre à air de vélo",
+        "it": "una distributore automatico di camere d’aria per bici",
+        "de": "einen Fahrradschlauch-Automaten",
+        "ru": "Торговый автомат для велосипедистов",
+        "zh_Hant": "自行車內胎自動售貨機",
+        "pt_BR": "uma máquina de venda automática de tubos de bicicleta",
+        "pt": "uma máquina de venda automática de tubos de bicicleta",
+        "da": "en automat til salg af cykelslanger",
+        "cs": "automat na cyklistické duše",
+        "ca": "una màquina expenedora de tubs de bicicleta",
+        "es": "una máquina expendedora de tubos de bicicleta"
+      },
+      "tags": [
+        "amenity=vending_machine",
+        "vending=bicycle_tube"
+      ]
+    }
+  ],
+  "tagRenderings": [
+    {
+      "id": "just_created",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "This element shows a 'thank you' that the contributor has recently created this element",
+      "classes": "rounded-xl thanks",
+      "mappings": [
+        {
+          "if": "id~*",
+          "icon": "./assets/svg/party.svg",
+          "then": {
+            "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+            "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+            "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+            "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+            "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+            "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+          }
+        }
+      ],
+      "condition": {
+        "and": [
+          "_backend~*",
+          "_last_edit:passed_time<300",
+          {
+            "or": [
+              "_version_number=",
+              "_version_number=1"
+            ]
+          }
+        ]
+      },
+      "metacondition": {
+        "and": [
+          {
+            "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+            "or": [
+              "_last_edit:contributor:uid:={_uid}",
+              "_last_edit:contributor:uid="
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "images",
+      "description": "This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images",
+      "render": {
+        "*": "{image_carousel()}{image_upload()}{nearby_images():my-4}"
+      },
+      "classes": "my-4"
+    },
+    {
+      "question": {
+        "en": "Is this vending machine still operational?",
+        "nl": "Is deze verkoopsautomaat nog steeds werkende?",
+        "fr": "Cette machine est-elle encore opérationelle ?",
+        "it": "Questo distributore automatico funziona ancora?",
+        "ru": "Этот торговый автомат все еще работает?",
+        "de": "Ist dieser Automat in Betrieb?",
+        "zh_Hant": "這個自動販賣機仍有運作嗎？",
+        "pt_BR": "Esta máquina de venda automática ainda está operacional?",
+        "pt": "Esta máquina de venda automática ainda está operacional?",
+        "es": "¿Todavía funciona esta máquina expendedora?",
+        "da": "Er denne salgsautomat stadig i drift?",
+        "cs": "Je tento automat stále v provozu?",
+        "ca": "Aquesta màquina expenedora encara funciona?"
+      },
+      "render": {
+        "en": "The operational status is <i>{operational_status}</i>",
+        "nl": "Deze verkoopsautomaat is <i>{operational_status}</i>",
+        "fr": "L'état opérationnel est <i>{operational_status}</i>",
+        "it": "Lo stato operativo è <i>{operational_status}</i>",
+        "de": "Der Betriebszustand ist <i>{operational_status}</i>",
+        "ru": "Рабочий статус: <i> {operational_status}</i>",
+        "zh_Hant": "運作狀態是 <i>{operational_status}</i>",
+        "pt_BR": "O estado operacional é: <i>{operational_status}</i>",
+        "pt": "O estado operacional é: <i>{operational_status}</i>",
+        "es": "El estado operacional es <i>{operational_status}</i>",
+        "da": "Driftsstatus er <i>{operational_status}</i>",
+        "cs": "Provozní stav je <i>{operational_status}</i>",
+        "ca": "L'estat operatiu és <i>{operational_status}</i>"
+      },
+      "freeform": {
+        "key": "operational_status",
+        "inline": true
+      },
+      "mappings": [
+        {
+          "if": "operational_status=",
+          "then": {
+            "en": "This vending machine works",
+            "nl": "Deze verkoopsautomaat werkt",
+            "fr": "Le distributeur automatique fonctionne",
+            "hu": "Ez az automata működik",
+            "it": "Il distributore automatico funziona",
+            "ru": "Этот торговый автомат работает",
+            "zh_Hans": "这个借还机正常工作",
+            "de": "Dieser Automat ist in Betrieb",
+            "zh_Hant": "這個自動販賣機仍運作",
+            "pt_BR": "Esta máquina de venda automática funciona",
+            "pt": "Esta máquina de venda automática funciona",
+            "da": "Denne salgsautomat virker",
+            "es": "Esta máquina expendedora funciona",
+            "cs": "Tento prodejní automat funguje",
+            "ca": "Aquesta màquina expenedora funciona"
+          }
+        },
+        {
+          "if": "operational_status=broken",
+          "then": {
+            "en": "This vending machine is broken",
+            "nl": "Deze verkoopsautomaat is kapot",
+            "fr": "Le distributeur automatique est en panne",
+            "hu": "Ez az automata elromlott",
+            "it": "Il distributore automatico è guasto",
+            "ru": "Этот торговый автомат сломан",
+            "zh_Hans": "这个借还机已经损坏",
+            "de": "Dieser Automat ist kaputt",
+            "zh_Hant": "這個自動販賣機沒有運作了",
+            "pt_BR": "Esta máquina de venda automática está quebrada",
+            "pt": "Esta máquina de venda automática está quebrada",
+            "es": "Esta máquina exprendedora está rota",
+            "da": "Denne salgsautomat er i stykker",
+            "cs": "Tento prodejní automat je rozbitý",
+            "ca": "Aquesta màquina expenedora està trencada"
+          }
+        },
+        {
+          "if": "operational_status=closed",
+          "then": {
+            "en": "This vending machine is closed",
+            "nl": "Deze verkoopsautomaat is uitgeschakeld",
+            "fr": "Le distributeur automatique est fermé",
+            "hu": "Ez az automata zárva van",
+            "it": "Il distributore automatico è spento",
+            "ru": "Этот торговый автомат закрыт",
+            "zh_Hans": "这个借还机被关闭了",
+            "de": "Dieser Automat ist geschlossen",
+            "zh_Hant": "這個自動販賣機已經關閉了",
+            "pt_BR": "Esta máquina de venda automática está fechada",
+            "pt": "Esta máquina de venda automática está fechada",
+            "es": "Esta máquina exprendedora está cerrada",
+            "da": "Denne salgsautomat er lukket",
+            "cs": "Tento prodejní automat je uzavřen",
+            "ca": "Aquesta màquina expenedora està tancada"
+          }
+        }
+      ],
+      "id": "Still in use?"
+    },
+    {
+      "question": {
+        "en": "How much does a bicycle tube cost?",
+        "ca": "Quant costa una cambra d'aire de bicicleta?",
+        "de": "Wie viel kostet ein Fahrradschlauch?",
+        "cs": "Kolik stojí duše na kolo?",
+        "nl": "Hoeveel kost een fietsband?",
+        "pt_BR": "Quanto custa uma câmara de ar para bicicleta?",
+        "es": "¿Cuánto cuesta una cámara para la bicicleta?",
+        "pt": "Quanto custa uma câmara de ar para bicicleta?"
+      },
+      "render": {
+        "en": "A bicycle tube costs {charge}",
+        "ca": "Una cambra d'aire de bicicleta costa {charge}",
+        "de": "Ein Fahrradschlauch kostet {charge}",
+        "cs": "Cena jedné duše {charge}",
+        "nl": "Een fietsband kost {charge}",
+        "pt_BR": "Uma câmara de ar para bicicleta custa {charge}",
+        "es": "Una cámara para bicicletas cuesta {charge}",
+        "pt": "Uma câmara de ar para bicicleta custa {charge}"
+      },
+      "freeform": {
+        "key": "charge",
+        "inline": true
+      },
+      "id": "bicycle_tube_vending_machine-charge"
+    },
+    {
+      "id": "payment-options-split",
+      "question": {
+        "en": "Which methods of payment are accepted here?",
+        "nl": "Welke betaalmiddelen worden hier geaccepteerd?",
+        "pt": "Que métodos de pagamento são aceites aqui?",
+        "pt_BR": "Quais métodos de pagamento são aceitos aqui?",
+        "id": "Metode pembayaran manakah yang di terima disini?",
+        "de": "Welche Zahlungsmethoden werden hier akzeptiert?",
+        "fr": "Quelles sont les méthodes de paiement acceptées ici ?",
+        "hu": "Milyen fizetési módokat fogadnak el itt?",
+        "it": "Quali metodi di pagamento sono accettati qui?",
+        "nb_NO": "Hvilke betalingsmetoder godtas her?",
+        "ca": "Quins mètodes de pagament s'accepten aquí?",
+        "sv": "Vilka betalningsmetoder accepteras här?",
+        "zh_Hant": "這邊接受那種付款方式？",
+        "pl": "Jakie metody płatności są tutaj dostępne?",
+        "ru": "Какие способы оплаты здесь принимают?",
+        "ja": "どのような支払い方法が可能ですか？",
+        "sl": "Kateri načini plačila so možni tu?",
+        "fil": "Anong mga paraang pambayad ang tinatanggap dito?",
+        "es": "¿Qué métodos de pago se aceptan aquí?",
+        "zh_Hans": "这里支持哪些支付方式？",
+        "da": "Hvilke betalingsmetoder accepteres her?",
+        "cs": "Jaké platební metody jsou zde přijímány?"
+      },
+      "multiAnswer": true,
+      "mappings": [
+        {
+          "if": "payment:cash=yes",
+          "ifnot": "payment:cash=",
+          "icon": "./assets/layers/questions/cash.svg",
+          "then": {
+            "en": "Cash is accepted here",
+            "nl": "Cash geld wordt hier aanvaard",
+            "pt": "Aceitam pagamento com dinheiro aqui",
+            "pt_BR": "Dinheiro é aceito aqui",
+            "id": "Pembayaran tunai diterima di sini",
+            "de": "Hier wird Bargeld akzeptiert",
+            "fr": "Paiement en liquide accepté",
+            "hu": "Itt készpénzzel is lehet fizetni",
+            "it": "I contanti sono accettati",
+            "nb_NO": "Kontanter godtas her",
+            "ca": "S'accepten diners",
+            "sv": "Pengar accepteras här",
+            "zh_Hant": "這邊接受現金",
+            "pl": "Płatność gotówkowa jest tutaj dostępna",
+            "ru": "Здесь принимают наличными",
+            "ja": "現金利用可能",
+            "sl": "Tu sprejemajo gotovino",
+            "fil": "Tinatanggap ang salapi rito",
+            "es": "Aquí se acepta el pago en efectivo",
+            "zh_Hans": "可用现金",
+            "da": "Her modtages kontanter",
+            "cs": "Přijímá se zde hotovost"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "payment:cards=yes",
+          "ifnot": "payment:cards=",
+          "icon": "./assets/layers/questions/payment_card.svg",
+          "then": {
+            "en": "Payment cards are accepted here",
+            "nl": "Betalen met bankkaarten kan hier",
+            "pt": "Aceitam pagamento com cartões bancários aqui",
+            "pt_BR": "Cartões de pagamento são aceitos aqui",
+            "id": "Kartu pembayaran diterima di sini",
+            "de": "Hier wird Kartenzahlung akzeptiert",
+            "fr": "Paiement par carte accepté",
+            "hu": "Itt fizetőkártyákkal is lehet fizetni",
+            "it": "I pagamenti con la carta sono accettati",
+            "nb_NO": "Betalingskort godtas her",
+            "ca": "S'accepten targetes de crèdit",
+            "sv": "Betalningskort accepteras här",
+            "zh_Hant": "這邊接受現金卡",
+            "pl": "Płatność kartą jest tutaj dostępna",
+            "ru": "Здесь принимают банковские карты",
+            "ja": "お支払いはこちらで承ります",
+            "sl": "Tukaj sprejemajo plačilne kartice",
+            "fil": "Tinatanggap ang mga tarhetang pambayad dito",
+            "es": "Aquí se acepta el pago por tarjeta",
+            "zh_Hans": "可用信用卡",
+            "da": "Betalingskort accepteres her",
+            "cs": "Jsou zde přijímány platební karty"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "payment:qr_code=yes",
+          "ifnot": "payment:qr_code=no",
+          "icon": "./assets/layers/questions/qrcode.svg",
+          "then": {
+            "en": "Payment by QR-code is possible here",
+            "nl": "Betalen via een QR-code is hier mogelijk",
+            "de": "Die Bezahlung per QR-Code ist hier möglich",
+            "es": "Aquí se puede pagar con código QR",
+            "ca": "Aquí es pot pagar amb codi QR",
+            "cs": "Platba QR kódem je zde možná"
+          }
+        },
+        {
+          "if": "payment:coins=yes",
+          "ifnot": "payment:coins=no",
+          "icon": "./assets/layers/questions/coins.svg",
+          "then": {
+            "en": "Coins are accepted here",
+            "nl": "Muntgeld wordt hier aanvaard",
+            "de": "Münzen werden hier akzeptiert",
+            "fr": "Les pièces sont acceptées ici",
+            "ca": "Aquí s'accepten monedes",
+            "es": "Aquí se aceptan monedas",
+            "nb_NO": "Mynter aksepteres her",
+            "pl": "Monety są tutaj akceptowane",
+            "cs": "Jsou zde přijímány mince"
+          }
+        },
+        {
+          "if": "payment:notes=yes",
+          "ifnot": "payment:notes=no",
+          "icon": "./assets/layers/questions/notes.svg",
+          "then": {
+            "en": "Bank notes are accepted here",
+            "nl": "Bankbiljetten worden hier aanvaard",
+            "de": "Geldscheine werden hier akzeptiert",
+            "fr": "Les billets de banque sont acceptés ici",
+            "ca": "Aquí s'accepten bitllets",
+            "es": "Aquí se aceptan billetes",
+            "nb_NO": "Sedler aksepteres her",
+            "pl": "Banknoty są tutaj akceptowane",
+            "cs": "Jsou zde přijímány bankovky"
+          }
+        },
+        {
+          "if": "payment:debit_cards=yes",
+          "ifnot": "payment:debit_cards=no",
+          "icon": "./assets/layers/questions/payment_card.svg",
+          "then": {
+            "en": "Debit cards are accepted here",
+            "nl": "Betalen met debetkaarten kan hier",
+            "de": "Debitkarten werden hier akzeptiert",
+            "fr": "Les cartes de débit sont acceptées ici",
+            "ca": "Aquí s'accepten targetes de dèbit",
+            "es": "Aquí se aceptan tarjetas de débito",
+            "nb_NO": "Debetkort aksepteres her",
+            "pl": "Akceptowane są tutaj karty debetowe",
+            "cs": "Jsou zde přijímány debetní karty"
+          }
+        },
+        {
+          "if": "payment:credit_cards=yes",
+          "ifnot": "payment:credit_cards=no",
+          "icon": "./assets/layers/questions/payment_card.svg",
+          "then": {
+            "en": "Credit cards are accepted here",
+            "nl": "Betalen met creditkaarten kan hier",
+            "de": "Kreditkarten werden hier akzeptiert",
+            "fr": "Les cartes de crédit sont acceptées ici",
+            "ca": "Aquí s'accepten targetes de crèdit",
+            "es": "Aquí se aceptan tarjetas de crédito",
+            "nb_NO": "Kredittkort aksepteres her",
+            "pl": "Akceptowane są tutaj karty kredytowe",
+            "cs": "Jsou zde přijímány kreditní karty"
+          }
+        }
+      ]
+    },
+    {
+      "question": {
+        "en": "Which brand of tubes are sold here?",
+        "ca": "Quines marques de cambres d'aire es venen aquí?",
+        "de": "Welche Fahrradschläuche werden hier verkauft?",
+        "cs": "Jaká značka duší je zde prodávána?",
+        "nl": "Welk merk banden wordt hier verkocht?",
+        "pt_BR": "Quais marcas de câmara de ar são vendidas aqui?",
+        "es": "¿Qué cámaras se venden aquí?",
+        "pt": "Quais marcas de câmara de ar são vendidas aqui?"
+      },
+      "freeform": {
+        "key": "brand",
+        "inline": true
+      },
+      "render": {
+        "en": "{brand} tubes are sold here",
+        "ca": "Aquí es venen cambres d'aire {brand}",
+        "de": "Hier werden Fahrradschläuche von {brand} verkauft",
+        "cs": "{brand} duše jsou zde prodávány",
+        "nl": "{brand} banden worden hier verkocht",
+        "pt_BR": "câmaras de ar {brand} são vendidas aqui",
+        "es": "Las cámaras {brand} se venden aquí",
+        "pt": "câmaras de ar {brand} são vendidas aqui"
+      },
+      "mappings": [
+        {
+          "if": "brand=Continental",
+          "then": {
+            "en": "Continental tubes are sold here",
+            "ca": "Aquí es venen cambres d'aire Continental",
+            "de": "Hier werden Fahrradschläuche von Continental verkauft",
+            "cs": "Continental duše jsou zde prodávány",
+            "nl": "Continental banden worden hier verkocht",
+            "pt_BR": "Câmaras de ar Continental são vendidas aqui",
+            "es": "Las cámaras Continental se venden aquí",
+            "pt": "Câmaras de ar Continental são vendidas aqui"
+          }
+        },
+        {
+          "if": "brand=Schwalbe",
+          "then": {
+            "en": "Schwalbe tubes are sold here",
+            "ca": "Aquí es venen cambres d'aire Schwalbe",
+            "de": "Hier werden Fahrradschläuche von Schwalbe verkauft",
+            "cs": "Schwalbe duše jsou zde prodávány",
+            "nl": "Schwalbe banden worden hier verkocht",
+            "pt_BR": "Câmaras de ar Schwalbe são vendidas aqui",
+            "es": "Las cámaras Schwalbe se venden aquí",
+            "pt": "Câmaras de ar Schwalbe são vendidas aqui"
+          }
+        }
+      ],
+      "multiAnswer": true,
+      "id": "bicycle_tube_vending_machine-brand"
+    },
+    {
+      "question": {
+        "en": "Who maintains this vending machine?",
+        "ca": "Qui manté aquesta màquina expenedora?",
+        "de": "Wer betreibt den Automaten?",
+        "cs": "Kdo se stará o tento automat?",
+        "nl": "Wie onderhoudt deze verkoopautomaat?",
+        "pt_BR": "Quem mantém essa máquina de venda?",
+        "es": "¿Quién mantiene esta máquina expendedora?",
+        "pt": "Quem mantém esta máquina de venda?"
+      },
+      "render": "This vending machine is maintained by {operator}",
+      "mappings": [
+        {
+          "if": "operator=Schwalbe",
+          "then": {
+            "en": "Maintained by Schwalbe",
+            "ca": "Mantés per Schwalbe",
+            "de": "Betrieben von Schwalbe",
+            "cs": "Udržuje Schwalbe",
+            "nl": "Onderhouden door Schwalbe",
+            "pt_BR": "Mantido pela Schwalbe",
+            "es": "Mantenido por Schwalbe",
+            "pt": "Mantido pela Schwalbe"
+          }
+        },
+        {
+          "if": "operator=Continental",
+          "then": {
+            "en": "Maintained by Continental",
+            "ca": "Mantés per Continental",
+            "de": "Betrieben von Continental",
+            "cs": "Udržuje Continental",
+            "nl": "Onderhouden door Continental",
+            "pt_BR": "Mantido pela Continental",
+            "es": "Mantenido por Continental",
+            "pt": "Mantido pela Continental"
+          }
+        }
+      ],
+      "freeform": {
+        "key": "operator",
+        "inline": true
+      },
+      "id": "bicycle_tube_vending_machine-operator"
+    },
+    {
+      "id": "other-items-vending",
+      "question": {
+        "en": "Are other biycle accessories sold here?",
+        "ca": "Es venen altres accessoris per a bicicletes aquí?",
+        "de": "Wird weiteres Fahrradzubehör verkauft?",
+        "cs": "Prodávají se zde další doplňky na kolo?",
+        "nl": "Worden hier andere fietsaccessoires verkocht?",
+        "pt_BR": "Outros acessórios para bicicleta são vendidos aqui?",
+        "es": "¿Se venden aquí otros accesorios para bicicletas?",
+        "pt": "Outros acessórios para bicicleta são vendidos aqui?"
+      },
+      "mappings": [
+        {
+          "if": "vending=bicycle_tube",
+          "then": {
+            "en": "Bicycle inner tubes are sold here",
+            "nl": "Fietsbinnenbanden worden hier verkocht",
+            "ca": "Aquí es venen cambres d'aire de bicicletes",
+            "de": "Hier werden Fahrradschläuche verkauft",
+            "cs": "Zde se prodávají cyklistické duše",
+            "pt_BR": "Câmaras de ar para bicicletas são vendidas aqui",
+            "es": "Aquí se venden cámaras de aire para bicicletas",
+            "pt": "Câmaras de ar para bicicletas são vendidas aqui"
+          }
+        },
+        {
+          "if": "vending=bicycle_light",
+          "then": {
+            "en": "Bicycle lights are sold here",
+            "nl": "Fietslampjes worden hier verkocht",
+            "ca": "Aquí es venen llums per a bicicletes",
+            "de": "Hier werden Fahrradlampen verkauft",
+            "cs": "Zde se prodávají světla na jízdní kola",
+            "pt_BR": "Luzes para bicicleta são vendidas aqui",
+            "es": "Las luces para bicicletas se venden aquí",
+            "pt": "Luzes para bicicleta são vendidas aqui"
+          }
+        },
+        {
+          "if": "vending=gloves",
+          "then": {
+            "en": "Gloves are sold here",
+            "nl": "Handschoenen worden hier verkocht",
+            "ca": "Aquí es venen guants",
+            "de": "Hier werden Fahrradhandschuhe verkauft",
+            "cs": "Prodávají se zde rukavice",
+            "pt_BR": "Luvas são vendidas aqui",
+            "es": "Los guantes se venden aquí",
+            "pt": "Luvas são vendidas aqui"
+          }
+        },
+        {
+          "if": "vending=bicycle_repair_kit",
+          "then": {
+            "en": "Bicycle repair kits are sold here",
+            "nl": "Fietsreparatiesets worden hier verkocht",
+            "ca": "Aquí es venen kits de reparació de bicicletes",
+            "de": "Hier werden Fahrrad-Reparatursets verkauft",
+            "cs": "Zde se prodávají sady na opravu jízdních kol",
+            "pt_BR": "Kits para reparo de bicicleta são vendidos aqui",
+            "es": "Los kits de reparación de bicicletas se venden aquí",
+            "pt": "Kits para reparo de bicicleta são vendidos aqui"
+          }
+        },
+        {
+          "if": "vending=bicycle_pump",
+          "then": {
+            "en": "Bicycle pumps are sold here",
+            "nl": "Fietspompen worden hier verkocht",
+            "ca": "Aquí es venen bombes de bicicletes",
+            "de": "Hier werden Fahrradpumpen verkauft",
+            "cs": "Prodávají se zde pumpy na kolo",
+            "pt_BR": "Bombas de ar para bicicleta são vendidas aqui",
+            "es": "Las bombas para bicicletas se venden aquí",
+            "pt": "Bombas de ar para bicicleta são vendidas aqui"
+          }
+        },
+        {
+          "if": "vending=bicycle_lock",
+          "then": {
+            "en": "Bicycle locks are sold here",
+            "nl": "Fietssloten worden hier verkocht",
+            "ca": "Aquí es venen cadenats per a bicicletes",
+            "de": "Hier werden Fahrradschlösser verkauft",
+            "cs": "Prodávají se zde zámky na kola",
+            "pt_BR": "Cadeados para bicicleta são vendidos aqui",
+            "es": "Aquí se venden candados para bicicletas",
+            "pt": "Cadeados para bicicleta são vendidos aqui"
+          }
+        }
+      ],
+      "multiAnswer": true
+    },
+    {
+      "id": "leftover-questions",
+      "render": {
+        "*": "{questions( ,)}"
+      }
+    },
+    {
+      "id": "lod",
+      "labels": [
+        "added_by_default"
+      ],
+      "render": {
+        "*": "{linked_data_from_website()}"
+      }
+    },
+    {
+      "id": "minimap",
+      "description": "Shows a small map with the feature. Added by default to every popup",
+      "render": {
+        "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+      }
+    },
+    {
+      "id": "move-button",
+      "render": {
+        "*": "{move_button()}"
+      }
+    },
+    {
+      "id": "delete-button",
+      "render": {
+        "*": "{delete_button()}"
+      }
+    },
+    {
+      "id": "last_edit",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+      "condition": {
+        "and": [
+          "_last_edit:contributor~*",
+          "_last_edit:changeset~*"
+        ]
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsTesting=true",
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_debug=yes",
+          "_csCount>=10"
+        ]
+      },
+      "render": {
+        "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+      }
+    },
+    {
+      "id": "favourite_status",
+      "render": {
+        "*": "{favourite_status()}"
+      }
+    },
+    {
+      "id": "qr_code",
+      "labels": [
+        "added_by_default"
+      ],
+      "classes": "flex items-center gap-x-2",
+      "render": {
+        "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+        "en": "{qr_code()}Scan this code to open this location on another device",
+        "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+        "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+      }
+    },
+    {
+      "id": "share",
+      "labels": [
+        "added_by_default"
+      ],
+      "metacondition": "_supports_sharing=yes",
+      "render": {
+        "de": "{share_link(,Standort teilen)}",
+        "en": "{share_link(,Share this location)}",
+        "nl": "{share_link(,Deel deze locatie)}"
+      }
+    },
+    {
+      "id": "all-tags",
+      "render": {
+        "*": "{all_tags()}"
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_tags=full",
+          "mapcomplete-show_debug=yes"
+        ]
+      }
+    }
+  ],
+  "deletion": {
+    "softDeletionTags": {
+      "and": [
+        "disused:amenity:={amenity}",
+        "amenity="
+      ]
+    },
+    "neededChangesets": 1
+  },
+  "allowMove": {
+    "enableRelocation": false,
+    "enableImproveAccuracy": true
+  },
+  "_layerIcon": [
+    {
+      "icon": "pin",
+      "color": "#ffffff"
+    },
+    {
+      "icon": "./assets/layers/bicycle_tube_vending_machine/pinIcon.svg"
+    }
+  ]
+}

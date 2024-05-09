@@ -1,0 +1,1391 @@
+{
+  "id": "bicyclelib",
+  "title": {
+    "en": "Bicycle libraries",
+    "nl": "Fietsbibliotheken",
+    "it": "Biciclette in prestito",
+    "ru": "Велосипедные библиотеки",
+    "ja": "自転車ライブラリ",
+    "fr": "Vélothèques",
+    "zh_Hant": "單車圖書館",
+    "nb_NO": "Sykkelbibliotek",
+    "de": "Fahrradbibliotheken",
+    "pt_BR": "Bibliotecas de bicicletas",
+    "pl": "Wypożyczalnie rowerów",
+    "hu": "Kerékpárkönyvtárak",
+    "id": "Perpustakaan sepeda",
+    "ca": "Biblioteques de bicicletes",
+    "da": "Cykelbiblioteker",
+    "pa_PK": "سائیکلاں دیاں لائیبریریاں",
+    "cs": "Bicycle libraries",
+    "es": "Bibliotecas de bicicletas",
+    "eu": "Bizikleta liburutegia",
+    "pt": "Bibliotecas de bicicletas",
+    "_context": "themes:bicyclelib.title"
+  },
+  "description": {
+    "nl": "Een fietsbibliotheek is een plaats waar men een fiets kan lenen, vaak voor een klein bedrag per jaar. Een typisch voorbeeld zijn kinderfietsbibliotheken, waar men een fiets op maat van het kind kan lenen. Is het kind de fiets ontgroeid, dan kan het te kleine fietsje omgeruild worden voor een grotere.",
+    "en": "A bicycle library is a place where bicycles can be lent, often for a small yearly fee. A notable use case are bicycle libraries for kids, which allows them to change for a bigger bike when they've outgrown their current bike",
+    "it": "«Biciclette in prestito» è un luogo dove le biciclette possono essere prese in prestito, spesso in cambio di un piccolo contributo annuale. Un caso degno di nota è quello delle biciclette in prestito per bambini che permettono loro di cambiare le dimensioni della propria bici quando quella attuale diventa troppo piccola",
+    "ru": "Велосипедная библиотека - это место, где велосипеды можно взять на время, часто за небольшую ежегодную плату. Примером использования являются библиотеки велосипедов для детей, что позволяет им сменить велосипед на больший, когда они перерастают свой нынешний велосипед",
+    "ja": "自転車ライブラリは、少額の年間料金で自転車を借りられる場所です。注目すべきユースケースとしては、子供向けの自転車ライブラリで、子どもの成長にあわせて大きな自転車へ借り替えられます",
+    "fr": "Une vélothèque est un endroit où on peut emprunter des vélos, souvent moyennant une petite somme annuelle. Un cas d'utilisation notable est celui des vélothèques pour les enfants, qui leur permettent de passer à un vélo plus grand quand ils sont trop grands pour leur vélo actuel",
+    "zh_Hant": "單車圖書館是指每年支付小額費用，然後可以租用單車的地方。最有名的單車圖書館案例是給小孩的，能夠讓長大的小孩用目前的單車換成比較大的單車",
+    "de": "Fahrradbibliotheken sind Orte, um Fahrräder auszuleihen, oft gegen eine geringe Gebühr. Ein wichtiger Anwendungsfall sind Fahrradbibliotheken für Kinder, die es ihnen ermöglichen, auf ein größeres Fahrrad umzusteigen, wenn sie aus ihrem aktuellen Fahrrad herausgewachsen sind",
+    "hu": "A kerékpárkönyvtárak olyan helyek, ahol kerékpárokat lehet kölcsönözni, gyakran egy kis éves díj ellenében. Figyelemre méltó felhasználásuk a gyerekeknek szánt kerékpárkönyvtárak, amelyek segítségével nagyobb kerékpárra válthatnak, amikor jelenlegi kerékpárjukat kinőtték",
+    "nb_NO": "Et sykkelbibliotek er et sted der man kan låne sykler, ofte for en liten årlig sum. I særdeleshet finnes de for unger som lar dem bytte til en større sykkel når de har vokst fra den de har.",
+    "ca": "Una biblioteca de bicicletes és un lloc on es poden prestar bicicletes, sovint per una petita quota anual. Un cas d'ús notable són les biblioteques de bicicletes per als nens, que els permet canviar per una bicicleta més gran quan han superat la seva bicicleta actual",
+    "da": "Et cykelbibliotek er et sted, hvor cykler kan udlånes, ofte mod et mindre årligt gebyr. Et bemærkelsesværdigt eksempel er cykelbiblioteker til børn, som giver dem mulighed for at skifte til en større cykel, når de er vokset fra deres nuværende cykel",
+    "cs": "\"Bicycle library\" je místo, kde si lze půjčit jízdní kola, často za malý roční poplatek. Významným případem použití jsou \"bicycle libraries\" pro děti, které jim umožňují vyměnit kolo za větší, když ze svého stávajícího kola vyrostou",
+    "es": "Una biblioteca de bicicletas es un lugar donde se prestan bicicletas, a menudo por una pequeña cuota anual. Un caso de uso notable son las bibliotecas de bicicletas para niños, que les permiten cambiar por una bicicleta más grande cuando les queda pequeña",
+    "eu": "Bizikletak uzteko lekua da bizikleta-liburutegia, askotan urteko kuota txiki baten truke. Kasu aipagarri bat haurrentzako bizikleta-liburutegiak dira, egungo bizikleta gainditu dutenean bizikleta handiago baterako aldatzeko aukera ematen dietenak",
+    "pl": "Biblioteka rowerowa to miejsce, w którym można wypożyczyć rowery, często za niewielką opłatą roczną. Godnym uwagi przypadkiem zastosowania są biblioteki rowerowe dla dzieci, które pozwalają im zmienić rower na większy, gdy wyrosną z obecnego roweru",
+    "_context": "themes:bicyclelib.description"
+  },
+  "icon": "./assets/themes/bicyclelib/logo.svg",
+  "layers": [
+    {
+      "id": "bicycle_library",
+      "name": {
+        "en": "Bicycle library",
+        "nl": "Fietsbibliotheek",
+        "fr": "Vélothèque",
+        "it": "Bici in prestito",
+        "ru": "Велосипедная библиотека",
+        "zh_Hant": "單車圖書館",
+        "pt_BR": "Biblioteca de bicicleta",
+        "de": "Fahrradbibliotheken",
+        "pt": "Biblioteca de bicicleta",
+        "ca": "Biblioteca per a bicicletes",
+        "es": "Biblioteca de bicicletas",
+        "da": "Cykel bibliotek",
+        "cs": "Půjčovna kol"
+      },
+      "description": {
+        "en": "A facility where bicycles can be lent for longer period of times",
+        "nl": "Een plaats waar men voor langere tijd een fiets kan lenen",
+        "fr": "Un lieu où des vélos peuvent être empruntés pour un temps plus long",
+        "hu": "Létesítmény, ahonnan kerékpár kölcsönözhető hosszabb időre",
+        "it": "Una struttura dove le biciclette possono essere prestate per periodi di tempo più lunghi",
+        "de": "Eine Einrichtung, in der Fahrräder für längere Zeit geliehen werden können",
+        "ru": "Учреждение, где велосипед может быть арендован на более длительный срок",
+        "zh_Hant": "能夠長期租用單車的設施",
+        "pt_BR": "Uma instalação onde as bicicletas podem ser emprestadas por períodos mais longos",
+        "pl": "Obiekt, w którym rowery można wypożyczyć na dłuższy okres",
+        "pt": "Uma instalação onde as bicicletas podem ser emprestadas por períodos mais longos",
+        "es": "Una instalación donde se pueden alquilar bicicletas durante largos periodos de tiempo",
+        "da": "En facilitet, hvor cykler kan lånes i længere perioder",
+        "cs": "Zařízení, kde si lze půjčit jízdní kola na delší dobu",
+        "ca": "Una instal·lació on es poden cedir bicicletes per llargs períodes de temps"
+      },
+      "source": {
+        "osmTags": {
+          "and": [
+            "amenity=bicycle_library"
+          ]
+        }
+      },
+      "minzoom": 0,
+      "title": {
+        "render": {
+          "en": "Bicycle library",
+          "nl": "Fietsbibliotheek",
+          "fr": "Vélothèque",
+          "it": "Bici in prestito",
+          "ru": "Велосипедная библиотека",
+          "zh_Hant": "單車圖書館",
+          "pt_BR": "Biblioteca de bicicleta",
+          "de": "Fahrradbibliothek",
+          "pt": "Biblioteca de bicicleta",
+          "ca": "Biblioteca per a bicicletes",
+          "da": "Cykelbibliotek",
+          "es": "Biblioteca de bicicletas",
+          "cs": "Půjčovna kol"
+        },
+        "mappings": [
+          {
+            "if": "name~*",
+            "then": "<i>{name}</i>"
+          }
+        ]
+      },
+      "titleIcons": [
+        {
+          "condition": {
+            "or": [
+              "service:bicycle:pump=yes",
+              "service:bicycle:pump=separate"
+            ]
+          },
+          "render": "<img src='./assets/layers/bike_shop/pump.svg'/>"
+        },
+        {
+          "id": "wikipedialink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+          "condition": {
+            "or": [
+              "wikipedia~*",
+              "wikidata~*"
+            ]
+          },
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "wikipedia=",
+              "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+            }
+          ]
+        },
+        {
+          "id": "open_until",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "#": "Titleicon showing e.g. 'open until 17:00'",
+          "icon": {
+            "class": "w-20 mx-1 flex items-center"
+          },
+          "render": "{opening_hours_state()}",
+          "condition": {
+            "or": [
+              "opening_hours~*",
+              {
+                "or": [
+                  {
+                    "and": [
+                      "seasonal~.*winter.*",
+                      "_now:date~....-(12|01|02)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*spring.*",
+                      "_now:date~....-(03|04|05)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*summer.*",
+                      "_now:date~....-(06|07|08)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*autumn.*",
+                      "_now:date~....-(09|10|11)-.."
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "phonelink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.render"
+          },
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "contact:phone~*",
+              "then": {
+                "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+                "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+                "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+                "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+              }
+            }
+          ],
+          "condition": {
+            "or": [
+              "phone~*",
+              "contact:phone~*"
+            ]
+          }
+        },
+        {
+          "id": "emaillink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "contact:email~*",
+              "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "operator:email~*",
+              "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+            }
+          ],
+          "condition": {
+            "or": [
+              "email~*",
+              "contact:email~*",
+              "operator:email~*"
+            ]
+          }
+        },
+        {
+          "id": "websitelink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "website~*",
+              "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "operator:website~*",
+              "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "context:website~*",
+              "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            }
+          ]
+        },
+        {
+          "id": "smokingicon",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "smoking=no",
+              "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "smoking=yes",
+              "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+            }
+          ]
+        },
+        {
+          "id": "dogicon",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "if": "dog=no",
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+            },
+            {
+              "if": "dog=leashed",
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+            },
+            {
+              "if": {
+                "or": [
+                  "dog=yes",
+                  "dog=unleashed"
+                ]
+              },
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+            }
+          ]
+        },
+        {
+          "id": "sharelink",
+          "labels": [
+            "defaults"
+          ],
+          "render": "{share_link()}",
+          "metacondition": "_supports_sharing=yes"
+        },
+        {
+          "id": "favourite_title_icon",
+          "labels": [
+            "defaults"
+          ],
+          "render": {
+            "*": "{favourite_icon()}"
+          },
+          "metacondition": "_loggedIn=true"
+        },
+        {
+          "id": "osmlink",
+          "labels": [
+            "defaults"
+          ],
+          "render": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.render"
+          },
+          "mappings": [
+            {
+              "if": "id~.*/-.*",
+              "then": ""
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "_backend~*",
+              "then": {
+                "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+                "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+                "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+                "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+              }
+            }
+          ],
+          "condition": "id~(node|way|relation)/[0-9]*"
+        },
+        {
+          "id": "direction",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "{direction_indicator()}"
+        }
+      ],
+      "pointRendering": [
+        {
+          "iconBadges": [
+            {
+              "if": "opening_hours~*",
+              "then": {
+                "id": "isOpen",
+                "#": "Shows a coloured clock if opening hours are parsed. Uses the metatagging, suitable to use as a (badged) overlay",
+                "mappings": [
+                  {
+                    "if": "_isOpen=yes",
+                    "then": "clock:#0f0;ring:#0f0"
+                  },
+                  {
+                    "if": "_isOpen=no",
+                    "then": "circle:#f00;clock:#fff"
+                  },
+                  {
+                    "#": "Still loading the country",
+                    "if": {
+                      "and": [
+                        "_isOpen=",
+                        "opening_hours~*"
+                      ]
+                    },
+                    "then": "clock:#ff0;ring:#ff0"
+                  },
+                  {
+                    "#": "Still loading the country",
+                    "if": {
+                      "and": [
+                        "_isOpen=parse_error",
+                        "opening_hours~*"
+                      ]
+                    },
+                    "then": "circle:#f0f;clock:#fff"
+                  }
+                ],
+                "metacondition": "__showTimeSensitiveIcons!=no"
+              }
+            },
+            {
+              "if": "service:bicycle:pump=yes",
+              "then": {
+                "render": "circle:#e2783d;./assets/layers/bike_repair_station/pump.svg",
+                "id": "circlee2783dassetslayersbikerepairstationpumpsvg"
+              }
+            },
+            {
+              "if": "_favourite=yes",
+              "then": {
+                "render": "circle:white;heart:red",
+                "id": "circlewhiteheartred"
+              }
+            }
+          ],
+          "iconSize": "50,50",
+          "location": [
+            "point",
+            "centroid"
+          ],
+          "anchor": "bottom",
+          "marker": [
+            {
+              "icon": {
+                "render": "pin",
+                "id": "pin"
+              },
+              "color": "#22ff55"
+            },
+            {
+              "icon": {
+                "render": "./assets/layers/bicycle_library/bicycle_library.svg",
+                "id": "assetslayersbicyclelibrarybicyclelibrarysvg"
+              }
+            }
+          ]
+        }
+      ],
+      "lineRendering": [
+        {
+          "color": "#c00",
+          "width": "1"
+        }
+      ],
+      "presets": [
+        {
+          "title": {
+            "nl": "een fietsbibliotheek",
+            "en": "a bicycle library",
+            "ru": "Велосипедная библиотека",
+            "zh_Hant": "自行車圖書館 ( Fietsbibliotheek)",
+            "it": "una bici in prestito",
+            "fr": "une vélothèque",
+            "pt_BR": "uma biblioteca de bicicletas",
+            "de": "eine Fahrradbibliothek",
+            "pt": "uma biblioteca de bicicletas",
+            "eo": "Fietsbibliotheek",
+            "da": "et cykelbibliotek",
+            "es": "una biblioteca de bicicletas",
+            "cs": "půjčovna kol",
+            "ca": "una biblioteca de bicicletes"
+          },
+          "tags": [
+            "amenity=bicycle_library"
+          ],
+          "description": {
+            "nl": "Een fietsbieb heeft een collectie fietsen die leden mogen lenen",
+            "en": "A bicycle library has a collection of bikes which can be lent",
+            "fr": "Une vélothèque a une flotte de vélos qui peuvent être empruntés",
+            "it": "Una ciclo-teca o «bici in prestito» ha una collezione di bici che possno essere prestate",
+            "ru": "В велосипедной библиотеке есть велосипеды для аренды",
+            "zh_Hant": "單車圖書館有一大批單車供人租借",
+            "de": "Eine Fahrradbibliothek verfügt über eine Sammlung von Fahrrädern, die ausgeliehen werden können",
+            "es": "Una biblioteca de bicicletas tiene una colección de bicicletas que se pueden prestar",
+            "da": "Et cykelbibliotek har en samling cykler, som kan lånes",
+            "cs": "Cyklistická půjčovna má k dispozici sbírku kol, která lze zapůjčit",
+            "ca": "Una biblioteca de bicicletes té una col·lecció de bicicletes que es poden cedir",
+            "pt": "Uma \"biblioteca de bicicletas\" tem uma coleção de bicicletas que podem ser emprestadas",
+            "pt_BR": "Uma biblioteca de bicicletas tem uma coleção de bicicletas que podem ser emprestadas"
+          }
+        }
+      ],
+      "tagRenderings": [
+        {
+          "id": "just_created",
+          "labels": [
+            "added_by_default"
+          ],
+          "description": "This element shows a 'thank you' that the contributor has recently created this element",
+          "classes": "rounded-xl thanks",
+          "mappings": [
+            {
+              "if": "id~*",
+              "icon": "./assets/svg/party.svg",
+              "then": {
+                "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+                "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+                "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+                "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+                "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+                "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+              }
+            }
+          ],
+          "condition": {
+            "and": [
+              "_backend~*",
+              "_last_edit:passed_time<300",
+              {
+                "or": [
+                  "_version_number=",
+                  "_version_number=1"
+                ]
+              }
+            ]
+          },
+          "metacondition": {
+            "and": [
+              {
+                "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+                "or": [
+                  "_last_edit:contributor:uid:={_uid}",
+                  "_last_edit:contributor:uid="
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "images",
+          "description": "This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images",
+          "render": {
+            "*": "{image_carousel()}{image_upload()}{nearby_images():my-4}"
+          },
+          "classes": "my-4"
+        },
+        {
+          "question": {
+            "en": "What is the name of this bicycle library?",
+            "nl": "Wat is de naam van deze fietsbieb?",
+            "fr": "Quel est le nom de cette vélothèque ?",
+            "it": "Qual è il nome di questo “bici in prestito”?",
+            "ru": "Как называется эта велосипедная библиотека?",
+            "nb_NO": "Hva heter dette sykkelbiblioteket?",
+            "zh_Hant": "這個單車圖書館的名稱是？",
+            "pt_BR": "Qual o nome desta biblioteca de bicicleta?",
+            "de": "Wie lautet der Name dieser Fahrradbibliothek?",
+            "pt": "Qual o nome desta biblioteca de bicicleta?",
+            "da": "Hvad hedder dette cykelbibliotek?",
+            "es": "¿Cuál es el nombre de esta biblioteca de bicicletas?",
+            "cs": "Jak se jmenuje tato půjčovna kol?",
+            "ca": "Com es diu aquesta biblioteca de bicicletes?"
+          },
+          "render": {
+            "en": "This bicycle library is called {name}",
+            "nl": "Deze fietsbieb heet {name}",
+            "fr": "Cette vélothèque s'appelle {name}",
+            "it": "Il “bici in prestito” è chiamato {name}",
+            "ru": "Эта велосипедная библиотека называется {name}",
+            "nb_NO": "Dette sykkelbiblioteket heter {name}",
+            "zh_Hant": "這個單車圖書館叫做 {name}",
+            "pt_BR": "Esta biblioteca de bicicleta é chamada de {name}",
+            "de": "Diese Fahrradbibliothek heißt {name}",
+            "pt": "Esta biblioteca de bicicleta é chamada de {name}",
+            "da": "Dette cykelbibliotek hedder {name}",
+            "es": "Esta biblioteca de bicicletas se llama {name}",
+            "cs": "Tato půjčovna jízdních kol se jmenuje {name}",
+            "ca": "Aquesta biblioteca de bicicletes es diu {name}"
+          },
+          "freeform": {
+            "key": "name",
+            "inline": true
+          },
+          "id": "bicycle_library-name"
+        },
+        {
+          "id": "website",
+          "labels": [
+            "contact"
+          ],
+          "icon": "./assets/layers/icons/website.svg",
+          "question": {
+            "en": "What is the website of {title()}?",
+            "nl": "Wat is de website van {title()}?",
+            "fr": "Quel est le site web de {title()} ?",
+            "gl": "Cal é a páxina web de {title()}?",
+            "nb_NO": "Hva er nettsiden til {title()}?",
+            "ru": "Какой сайт у {title()}?",
+            "id": "Apa situs web dari {title()}?",
+            "zh_Hant": "{title()} 網址是什麼？",
+            "it": "Qual è il sito web di {title()}?",
+            "de": "Wie lautet die Webseite von {title()}?",
+            "pt_BR": "Qual o site de {title()}?",
+            "pl": "Jaka jest strona internetowa {title()}?",
+            "sv": "Vad är webbplatsen för {title()}?",
+            "pt": "Qual é o sítio web de {title()}?",
+            "eo": "Kie estas la retejo de {title()}?",
+            "hu": "Mi a weboldala ennek: {title()}?",
+            "ca": "Quina és la web de {title()}?",
+            "ja": "{title()}のウェブサイトは？",
+            "fil": "Ano ang website ng {title()}?",
+            "es": "¿Cual es el sitio web de {title()}?",
+            "zh_Hans": "{title()} 的网站为何？",
+            "da": "Hvad er webstedet for {title()}?",
+            "cs": "Jaká je webová stránka {title()}?"
+          },
+          "render": {
+            "*": "<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>"
+          },
+          "freeform": {
+            "key": "website",
+            "type": "url",
+            "addExtraTags": [
+              "contact:website="
+            ]
+          },
+          "mappings": [
+            {
+              "if": "contact:website~*",
+              "then": "<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>",
+              "hideInAnswer": true,
+              "icon": "./assets/layers/icons/website.svg"
+            }
+          ],
+          "editButtonAriaLabel": {
+            "en": "Edit website",
+            "nl": "Pas website aan",
+            "de": "Webseite bearbeiten"
+          }
+        },
+        {
+          "id": "phone",
+          "labels": [
+            "contact"
+          ],
+          "question": {
+            "en": "What is the phone number of {title()}?",
+            "nl": "Wat is het telefoonnummer van {title()}?",
+            "fr": "Quel est le numéro de téléphone de {title()} ?",
+            "de": "Wie lautet die Telefonnummer von {title()}?",
+            "nb_NO": "Hva er telefonnummeret til {title()}?",
+            "ru": "Какой номер телефона у {title()}?",
+            "sv": "Vad är telefonnumret till {title()}?",
+            "zh_Hant": "{title()} 的電話號碼是什麼？",
+            "it": "Qual è il numero di telefono di {title()}?",
+            "pt_BR": "Qual o número de telefone de {title()}?",
+            "id": "Berapa nomor telepon dari {title()}?",
+            "pl": "Jaki jest numer telefonu do {title()}?",
+            "pt": "Qual é o número de telefone de {title()}?",
+            "eo": "Kio estas la telefonnumero de {title()}?",
+            "hu": "Mi a telefonszáma ennek: {title()}?",
+            "ca": "Quin és el telèfon de {title()}?",
+            "ja": "{title()}の電話番号は？",
+            "sl": "Kakšno telefonsko številko ima {title()}?",
+            "fil": "Ano ang telepono ng {title()}?",
+            "es": "¿Cuál es el número de teléfono de {title()}?",
+            "zh_Hans": "{title()} 的电话号码为何？",
+            "da": "Hvad er telefonnummeret til {title()}?",
+            "cs": "Jaké je telefonní číslo {title()}?"
+          },
+          "render": {
+            "*": "<a href='tel:{phone}'>{phone}</a>"
+          },
+          "icon": "./assets/layers/questions/phone.svg",
+          "mappings": [
+            {
+              "if": "contact:phone~*",
+              "then": "<a href='tel:{contact:phone}'>{contact:phone}</a>",
+              "hideInAnswer": true,
+              "icon": "./assets/layers/questions/phone.svg"
+            }
+          ],
+          "freeform": {
+            "key": "phone",
+            "type": "phone",
+            "addExtraTags": [
+              "contact:phone="
+            ]
+          },
+          "editButtonAriaLabel": {
+            "en": "Edit phone number",
+            "nl": "Pas telefoonnummer aan",
+            "de": "Telefonnummer bearbeiten"
+          }
+        },
+        {
+          "id": "email",
+          "render": {
+            "*": "<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>"
+          },
+          "icon": "./assets/svg/envelope.svg",
+          "labels": [
+            "contact"
+          ],
+          "question": {
+            "nl": "Wat is het e-mailadres van {title()}?",
+            "fr": "Quelle est l'adresse courriel de {title()} ?",
+            "en": "What is the email address of {title()}?",
+            "nb_NO": "Hva er e-postadressen til {title()}?",
+            "ru": "Какой адрес электронной почты у {title()}?",
+            "id": "Apa alamat surel dari {title()}?",
+            "zh_Hant": "{title()} 的電子郵件地址是什麼？",
+            "it": "Qual è l'indirizzo email di {title()}?",
+            "de": "Wie lautet die Mail-Adresse von {title()}?",
+            "pt_BR": "Qual o endereço de e-mail de {title()}?",
+            "pl": "Jaki jest adres e-mail do {title()}?",
+            "sv": "Vad är e-postadressen till {title()}?",
+            "pt": "Qual é o endereço de e-mail de {title()}?",
+            "eo": "Kio estas la retpoŝta adreso de {title()}?",
+            "hu": "Mi a(z) {title()} e-mail címe?",
+            "ca": "Quina és l'adreça de correu electrònic de {title()}?",
+            "ja": "{title()}のEメールアドレスは何ですか？",
+            "sl": "Kakšen naslov elektronske pošte ima {title()}?",
+            "fil": "Ano ang email address ng {title()}?",
+            "es": "¿Cuál es la dirección de correo electrónico de {title()}?",
+            "zh_Hans": "{title()} 的电子邮箱地址为何？",
+            "da": "Hvad er mailadressen på {title()}?",
+            "cs": "Jaká je e-mailová adresa {title()}?"
+          },
+          "mappings": [
+            {
+              "if": "contact:email~*",
+              "icon": "./assets/svg/envelope.svg",
+              "then": "<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>",
+              "hideInAnswer": true
+            },
+            {
+              "if": "operator:email~*",
+              "icon": "./assets/svg/envelope.svg",
+              "then": "<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>",
+              "hideInAnswer": true
+            }
+          ],
+          "freeform": {
+            "key": "email",
+            "type": "email",
+            "addExtraTags": [
+              "contact:email="
+            ]
+          },
+          "editButtonAriaLabel": {
+            "en": "Edit email address",
+            "nl": "Pas emailadres aan",
+            "de": "E-Mail Adresse bearbeiten"
+          }
+        },
+        {
+          "id": "opening_hours",
+          "question": {
+            "en": "What are the opening hours of {title()}?",
+            "fr": "Quelles sont les horaires d'ouverture de {title()} ?",
+            "de": "Wie lauten die Öffnungszeiten von {title()}?",
+            "nl": "Wat zijn de openingstijden van {title()}?",
+            "nb_NO": "Hva er åpningstidene for {title()})",
+            "ru": "Какое время работы у {title()}?",
+            "zh_Hant": "{title()} 的開放時間是什麼？",
+            "it": "Quali sono gli orari di apertura di {title()}?",
+            "pt_BR": "Qual o horário de funcionamento de {title()}?",
+            "pl": "Jakie są godziny otwarcia {title()}?",
+            "sv": "Vilka är öppettiderna för {title()}?",
+            "pt": "Qual é o horário de funcionamento de {title()}?",
+            "hu": "Mikor van nyitva ez: {title()}?",
+            "ca": "Quin és l'horari d'obertura de {title()}?",
+            "ja": "{title()}の営業時間は？",
+            "sl": "Kakšen odpiralni čas ima {title()}?",
+            "fil": "Anong oras nagbubukas ang {title()}?",
+            "es": "¿Cuales son las horas de apertura de {title()}?",
+            "zh_Hans": "{title()} 的开放时间为何？",
+            "da": "Hvad er åbningstiderne for {title()}?",
+            "id": "Kapan jam buka {title()}?",
+            "cs": "Jaká je otevírací doba {title()}?"
+          },
+          "render": {
+            "de": "<h3>Öffnungszeiten</h3>{opening_hours_table(opening_hours)}",
+            "fr": "<h3>Horaires d'ouverture</h3>{opening_hours_table(opening_hours)}",
+            "en": "<h3>Opening hours</h3>{opening_hours_table(opening_hours)}",
+            "nl": "<h3>Openingstijden</h3>{opening_hours_table(opening_hours)}",
+            "nb_NO": "<h3>Åpningstider</h3>{opening_hours_table(opening_hours)}",
+            "ru": "<h3>Часы работы</h3>{opening_hours_table(opening_hours)}",
+            "zh_Hant": "<h3>開放時間</h3>{opening_hours_table(opening_hours)}",
+            "it": "<h3>Orari di apertura</h3>{opening_hours_table(opening_hours)}",
+            "pl": "<h3> Godziny otwarcia</h3>{opening_hours_table(opening_hours)}",
+            "pt_BR": "<h3>Horário de funcionamento</h3>{opening_hours_table(opening_hours)}",
+            "sv": "<h3>Öppettider</h3> {opening_hours_table(opening_hours)}",
+            "pt": "<h3>Horário de funcionamento</h3>{opening_hours_table(opening_hours)}",
+            "eo": "<h3>Malfermitaj horoj</h3>{opening_hours_table(opening_hours)}",
+            "hu": "<h3>Nyitva tartás</h3>{opening_hours_table(opening_hours)}",
+            "ca": "<h3>Horari d'obertura</h3>{opening_hours_table(opening_hours)}",
+            "ja": "<h3>営業時間</h3>{opening_hours_table(opening_hours)}",
+            "sl": "<h3>Odpiralni čas</h3>{opening_hours_table(opening_hours)}",
+            "fil": "<h3>Mga oras na bukas</h3>{opening_hours_table(opening_hours)}",
+            "es": "<h3>Horas de apertura</h3>{opening_hours_table(opening_hours)}",
+            "zh_Hans": "<h3>开放时间</h3> {opening_hours_table(opening_hours)}",
+            "da": "<h3> Åbningstider</h3>{opening_hours_table(opening_hours)}",
+            "id": "<h3>Jam buka</h3>{opening_hours_table(opening_hours)}",
+            "pa_PK": "<h3>کھُلھے گھنٹے</h3>{opening_hours_table(opening_hours)}",
+            "cs": "<h3>Otevírací hodiny</h3>{opening_hours_table(opening_hours)}"
+          },
+          "freeform": {
+            "key": "opening_hours",
+            "type": "opening_hours",
+            "inline": false
+          },
+          "mappings": [
+            {
+              "#": "Just here to be able to handle those ~5000 incorrect 'opening_hours=closed' elements.",
+              "if": "opening_hours=closed",
+              "then": {
+                "en": "Marked as closed for an unspecified time",
+                "nl": "Gesloten voor onbepaalde duur",
+                "de": "Als geschlossen für eine unbestimmte Zeit markiert"
+              },
+              "hideInAnswer": true
+            }
+          ]
+        },
+        {
+          "question": {
+            "en": "How much does lending a bicycle cost?",
+            "nl": "Hoeveel kost het huren van een fiets?",
+            "fr": "Combien coûte l'emprunt d'un vélo ?",
+            "hu": "Mennyibe kerül egy kerékpár kölcsönzése?",
+            "it": "Quanto costa il prestito di una bicicletta?",
+            "ru": "Сколько стоит прокат велосипеда?",
+            "de": "Wie viel kostet das Ausleihen eines Fahrrads?",
+            "nb_NO": "Hvor mye koster det å leie en sykkel?",
+            "zh_Hant": "租用單車的費用多少？",
+            "pt_BR": "Quanto custa um empréstimo de bicicleta?",
+            "pt": "Quanto custa um empréstimo de bicicleta?",
+            "da": "Hvor meget koster det at leje en cykel?",
+            "es": "¿Cuánto cuesta alquilar una bicicleta?",
+            "cs": "Kolik stojí půjčení kola?",
+            "ca": "Quant costa el préstec d'una bicicleta?"
+          },
+          "render": {
+            "en": "Lending a bicycle costs {charge}",
+            "nl": "Een fiets huren kost {charge}",
+            "fr": "Emprunter un vélo coûte {charge}",
+            "hu": "Egy kerékpár kölcsönzése {charge}",
+            "it": "Il prestito di una bicicletta costa {charge}",
+            "ru": "Стоимость аренды велосипеда {charge}",
+            "de": "Das Ausleihen eines Fahrrads kostet {charge}",
+            "nb_NO": "Sykkelleie koster {charge}",
+            "zh_Hant": "租借單車需要 {charge}",
+            "pt_BR": "Custos de empréstimo de bicicleta {charge}",
+            "pt": "Custos de empréstimo de bicicleta {charge}",
+            "es": "Alquilar una bicicleta cuesta {charge}",
+            "da": "Cykelleje koster {charge}",
+            "cs": "Půjčení kola stojí {charge}",
+            "ca": "El préstec d'una bicicleta costa {charge}"
+          },
+          "freeform": {
+            "key": "charge",
+            "addExtraTags": [
+              "fee=yes"
+            ],
+            "inline": true
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "fee=no",
+                  "charge="
+                ]
+              },
+              "then": {
+                "en": "Lending a bicycle is free",
+                "nl": "Een fiets huren is gratis",
+                "fr": "L'emprunt de vélo est gratuit",
+                "hu": "A kerékpárkölcsönzés ingyenes",
+                "it": "Il prestito di una bicicletta è gratuito",
+                "de": "Das Ausleihen eines Fahrrads ist kostenlos",
+                "ru": "Прокат велосипедов бесплатен",
+                "nb_NO": "Det er gratis å leie en sykkel",
+                "zh_Hant": "租借單車免費",
+                "pt_BR": "Emprestar uma bicicleta é grátis",
+                "pt": "Emprestar uma bicicleta é grátis",
+                "da": "Det er gratis at låne en cykel",
+                "es": "Alquilar una bicicleta es gratis",
+                "cs": "Půjčení jízdního kola je zdarma",
+                "ca": "El préstec d'una bicicleta és gratuït"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "fee=yes",
+                  "charge=€20warranty + €20/year"
+                ]
+              },
+              "then": {
+                "en": "Lending a bicycle costs €20/year and €20 warranty",
+                "nl": "Een fiets huren kost €20/jaar en €20 waarborg",
+                "fr": "Emprunter un vélo coûte 20 €/an et 20 € de garantie",
+                "it": "Il prestito di una bicicletta costa 20 €/anno più 20 € di garanzia",
+                "de": "Das Ausleihen eines Fahrrads kostet 20€ pro Jahr und 20€ Gebühr",
+                "zh_Hant": "租借單車價錢 €20/year 與 €20 保證金",
+                "ru": "Прокат велосипеда стоит €20/год и €20 залог",
+                "pt_BR": "Emprestar uma bicicleta custa €20/ano e €20 de garantia",
+                "pt": "Emprestar uma bicicleta custa €20/ano e €20 de garantia",
+                "es": "Alquilar una bicicleta cuesta 20€/año y 20€ de garantía",
+                "da": "Udlån af en cykel koster 20 €/år og 20 € garanti",
+                "cs": "Půjčení kola stojí 20 €/rok a 20 € záloha",
+                "ca": "El préstec d'una bicicleta costa 20€/any i 20€ de garantia"
+              }
+            }
+          ],
+          "id": "bicycle_library-charge"
+        },
+        {
+          "id": "bicycle-library-target-group",
+          "question": {
+            "en": "Who can loan bicycles here?",
+            "nl": "Voor wie worden hier fietsen aangeboden?",
+            "fr": "Qui peut emprunter des vélos ici ?",
+            "hu": "Ki kölcsönözhet itt kerékpárt?",
+            "it": "Chi può prendere in prestito le biciclette qua?",
+            "zh_Hans": "谁可以从这里借出自行车？",
+            "de": "Wer kann hier Fahrräder ausleihen?",
+            "ru": "Кто здесь может арендовать велосипед?",
+            "zh_Hant": "誰可以在這裡租單車？",
+            "pt_BR": "Quem pode emprestar bicicletas aqui?",
+            "pt": "Quem pode emprestar bicicletas aqui?",
+            "da": "Hvem kan låne cykler her?",
+            "es": "¿Quién puede alquilar bicicletas aquí?",
+            "cs": "Kdo si zde může půjčit jízdní kolo?",
+            "ca": "Qui pot llogar bicicletes aquí?"
+          },
+          "multiAnswer": true,
+          "mappings": [
+            {
+              "if": "bicycle_library:for=child",
+              "then": {
+                "nl": "Aanbod voor kinderen",
+                "en": "Bikes for children available",
+                "fr": "Vélos pour enfants disponibles",
+                "it": "Sono disponibili biciclette per bambini",
+                "de": "Fahrräder für Kinder verfügbar",
+                "ru": "Доступны детские велосипеды",
+                "zh_Hant": "提供兒童單車",
+                "pt_BR": "Bicicletas para crianças disponíveis",
+                "pt": "Bicicletas para crianças disponíveis",
+                "es": "Bicicletas para niños disponibles",
+                "da": "Cykler til børn til rådighed",
+                "cs": "Dětská kola k dispozici",
+                "ca": "Bicicletes per a xiquets disponibles"
+              }
+            },
+            {
+              "if": "bicycle_library:for=adult",
+              "then": {
+                "nl": "Aanbod voor volwassenen",
+                "en": "Bikes for adult available",
+                "fr": "Vélos pour adultes disponibles",
+                "it": "Sono disponibili biciclette per adulti",
+                "de": "Fahrräder für Erwachsene verfügbar",
+                "ru": "Доступны велосипеды для взрослых",
+                "zh_Hant": "有提供成人單車",
+                "pt_BR": "Bicicletas para adulto disponíveis",
+                "pt": "Bicicletas para adulto disponíveis",
+                "es": "Bicicletas para adultos disponibles",
+                "da": "Cykler til voksne til rådighed",
+                "cs": "K dispozici kola pro dospělé",
+                "ca": "Bicicletes per a adults disponibles"
+              }
+            },
+            {
+              "if": "bicycle_library:for=disabled",
+              "then": {
+                "nl": "Aanbod voor personen met een handicap",
+                "en": "Bikes for disabled persons available",
+                "fr": "Vélos pour personnes handicapées disponibles",
+                "it": "Sono disponibili biciclette per disabili",
+                "de": "Fahrräder für Behinderte verfügbar",
+                "ru": "Доступны велосипеды для людей с ограниченными возможностями",
+                "zh_Hant": "有提供行動不便人士的單車",
+                "pt_BR": "Bicicletas para deficientes físicos disponíveis",
+                "pt": "Bicicletas para deficientes físicos disponíveis",
+                "es": "Bicicletas para discapacitados disponibles",
+                "da": "Cykler til handicappede til rådighed",
+                "cs": "K dispozici jsou kola pro osoby se zdravotním postižením",
+                "ca": "Bicicletes per a discapacitats disponibles"
+              }
+            }
+          ]
+        },
+        {
+          "id": "description",
+          "question": {
+            "nl": "Zijn er nog andere relevante zaken die je niet in de bovenstaande vragen kwijt kon? Vul ze hier in.",
+            "fr": "Y a-t-il quelque chose de pertinent que vous n'avez pas pu donner à la dernière question ? Ajoutez-le ici.",
+            "en": "Is there still some relevant info that the previous questions did not cover? Feel free to add it here.",
+            "nb_NO": "Er det noe mer som er relevant du ikke kunne opplyse om i tidligere svar? Legg det til her.",
+            "ru": "Есть ли ещё что-то важное, о чём вы не смогли рассказать в предыдущих вопросах? Добавьте это здесь.",
+            "zh_Hant": "有什麼相關的資訊你無法在先前的問題回應的嗎？請加在這邊吧。",
+            "it": "C'è ancora qualche informazione importante che non è stato possibile fornire nelle domande precedenti? Aggiungila qui.",
+            "de": "Gibt es noch etwas, das die vorhergehenden Fragen nicht abgedeckt haben? Hier wäre Platz dafür.",
+            "pl": "Czy jest jeszcze coś istotnego, czego nie mogłeś podać w poprzednich pytaniach? Dodaj to tutaj.",
+            "pt_BR": "Ainda há algo de relevante que não pôde dar nas perguntas anteriores? Adicione aqui.",
+            "pt": "Ainda há algo de relevante que não tenha podido dar nas perguntas anteriores? Adicione-o aqui.",
+            "hu": "Van-e még valami lényeges, amit nem tudott megadni az előző kérdésekben? Itt megteheti.",
+            "ca": "Hi ha quelcom rellevant que no t'hem preguntat? Afegeix-ho aquí.",
+            "sv": "Finns det fortfarande någonting relevant som du inte kunde ge i de föregående frågorna? Lägg till det här.",
+            "id": "Apakah masih ada sesuatu yang relevan yang tidak dapat Anda berikan dalam pertanyaan sebelumnya? Tambahkan di sini. ",
+            "ja": "前の質問で伝えきれなかった関連事項がまだありますか？ここに追加してください。",
+            "es": "¿Aún hay algo relevante que no ha encajado en las preguntas anteriores? Compártalo aquí.",
+            "sl": "Ali je še kaj pomembnega, česar niste mogli povedati v prejšnjih vprašanjih? Dopišite tukaj.",
+            "fil": "Mayroon pa bang mga bagay na nau-ugnay at hindi mo maibigay sa mga nakaraang tanong? Idagdag dito.",
+            "da": "Er der stadig noget relevant, du ikke kunne give i de foregående spørgsmål? Tilføj det her.",
+            "cs": "Je ještě něco relevantního, co jste nemohli uvést v předchozích otázkách? Přidejte to sem."
+          },
+          "render": {
+            "*": "{description}"
+          },
+          "freeform": {
+            "key": "description",
+            "inline": true
+          },
+          "questionHint": {
+            "nl": "Herhaal geen antwoorden die je reeds gaf",
+            "fr": "Ne répétez pas des réponses déjà données",
+            "en": "Please don't repeat already stated facts",
+            "nb_NO": "Ikke gjenta fakta som allerede er nevnt",
+            "ru": "Не повторяйте уже изложенные факты",
+            "zh_Hant": "不要重覆答覆已經知道的事情",
+            "it": "Non ripetere informazioni già fornite",
+            "de": "Bitte keine bereits erhobenen Informationen wiederholen",
+            "pl": "Nie powtarzaj już podanych faktów",
+            "pt_BR": " Não repita fatos já declarados",
+            "pt": "Não repita factos já declarados",
+            "hu": "Ne ismételjen meg már megadott tényeket",
+            "ca": "No repeteixis informació que ja hi és",
+            "sv": "Repetera inte redan angivna fakta",
+            "id": "  Jangan ulangi fakta yang sudah dinyatakan ",
+            "ja": "今後表示しない",
+            "es": "No repita datos ya expresados",
+            "sl": "Ne ponavljajte že navedenih dejstev",
+            "fil": "Huwag ulitin ang mga nai-saad na",
+            "da": "Gentag ikke allerede nævnte fakta",
+            "cs": "Neopakujte již uvedená fakta"
+          }
+        },
+        {
+          "id": "leftover-questions",
+          "render": {
+            "*": "{questions( ,)}"
+          }
+        },
+        {
+          "id": "lod",
+          "labels": [
+            "added_by_default"
+          ],
+          "render": {
+            "*": "{linked_data_from_website()}"
+          }
+        },
+        {
+          "id": "minimap",
+          "description": "Shows a small map with the feature. Added by default to every popup",
+          "render": {
+            "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+          }
+        },
+        {
+          "id": "move-button",
+          "render": {
+            "*": "{move_button()}"
+          }
+        },
+        {
+          "id": "delete-button",
+          "render": {
+            "*": "{delete_button()}"
+          }
+        },
+        {
+          "id": "last_edit",
+          "labels": [
+            "added_by_default"
+          ],
+          "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+          "condition": {
+            "and": [
+              "_last_edit:contributor~*",
+              "_last_edit:changeset~*"
+            ]
+          },
+          "metacondition": {
+            "or": [
+              "__featureSwitchIsTesting=true",
+              "__featureSwitchIsDebugging=true",
+              "mapcomplete-show_debug=yes",
+              "_csCount>=10"
+            ]
+          },
+          "render": {
+            "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+          }
+        },
+        {
+          "id": "favourite_status",
+          "render": {
+            "*": "{favourite_status()}"
+          }
+        },
+        {
+          "id": "qr_code",
+          "labels": [
+            "added_by_default"
+          ],
+          "classes": "flex items-center gap-x-2",
+          "render": {
+            "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+            "en": "{qr_code()}Scan this code to open this location on another device",
+            "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+            "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+          }
+        },
+        {
+          "id": "share",
+          "labels": [
+            "added_by_default"
+          ],
+          "metacondition": "_supports_sharing=yes",
+          "render": {
+            "de": "{share_link(,Standort teilen)}",
+            "en": "{share_link(,Share this location)}",
+            "nl": "{share_link(,Deel deze locatie)}"
+          }
+        },
+        {
+          "id": "all-tags",
+          "render": {
+            "*": "{all_tags()}"
+          },
+          "metacondition": {
+            "or": [
+              "__featureSwitchIsDebugging=true",
+              "mapcomplete-show_tags=full",
+              "mapcomplete-show_debug=yes"
+            ]
+          }
+        }
+      ],
+      "deletion": {},
+      "allowMove": true,
+      "_layerIcon": [
+        {
+          "icon": "pin",
+          "color": "#22ff55"
+        },
+        {
+          "icon": "./assets/layers/bicycle_library/bicycle_library.svg"
+        }
+      ],
+      "_basedOn": "bicycle_library"
+    },
+    {
+      "id": "note_import_bicycle_library",
+      "description": {
+        "ca": "Una capa que importa entrades per a Biblioteca per a bicicletes",
+        "cs": "Vrstva, která importuje položky pro Půjčovna kol",
+        "da": "Et lag som importerer poster for Cykelbibliotek",
+        "de": "Eine Ebene, die Einträge für Fahrradbibliothek importiert",
+        "en": "A layer which imports entries for Bicycle library",
+        "es": "Una capa que importar entradas para Biblioteca de bicicletas",
+        "nl": "Deze laag toont kaart-nota's die wijzen op een Fietsbibliotheek",
+        "pl": "Warstwa importująca wpisy dla Bicycle library",
+        "zh_Hant": "能夠為 單車圖書館 匯入項目的圖層",
+        "_context": "core:importLayer.description"
+      },
+      "source": {
+        "osmTags": {
+          "and": [
+            "id~[0-9]+",
+            "comment_url~.*notes/[0-9]*/comment.json"
+          ]
+        },
+        "geoJson": "https://api.openstreetmap.org/api/0.6/notes.json?limit=10000&closed=0&bbox={x_min},{y_min},{x_max},{y_max}",
+        "geoJsonZoomLevel": 10
+      },
+      "passAllFeatures": true,
+      "minzoom": -2,
+      "title": {
+        "render": {
+          "ca": "Pot ser que hi hagi una biblioteca de bicicletes aquí",
+          "cs": "Zde by mohl být půjčovna kol",
+          "da": "Mulig et cykelbibliotek",
+          "de": "Möglicherweise gibt es hier eine Fahrradbibliothek",
+          "en": "There might be a bicycle library here",
+          "es": "Puede haber una biblioteca de bicicletas aquí",
+          "fi": "Tässä on ehkä a bicycle library",
+          "nb_NO": "Det kan være a bicycle library her",
+          "nl": "Is hier een fietsbibliotheek?",
+          "pl": "Tutaj może znajdować się a bicycle library",
+          "zh_Hant": "這裡可能有 自行車圖書館 ( Fietsbibliotheek)",
+          "_context": "core:importLayer.popupTitle"
+        }
+      },
+      "calculatedTags": [
+        "_first_comment=get(feat)('comments')[0].text.toLowerCase()",
+        "_trigger_index=(() => {const lines = feat.properties['_first_comment'].split('\\n'); const matchesMapCompleteURL = lines.map(l => l.match(\".*https://mapcomplete.\\(org|osm.be\\)/\\([a-zA-Z_-]+\\)\\(.html\\)?.*#import\")); const matchedIndexes = matchesMapCompleteURL.map((doesMatch, i) => [doesMatch !== null, i]).filter(v => v[0]).map(v => v[1]); return matchedIndexes[0] })()",
+        "_comments_count=get(feat)('comments').length",
+        "_intro=(() => {const lines = get(feat)('comments')[0].text.split('\\n'); lines.splice(get(feat)('_trigger_index')-1, lines.length); return lines.filter(l => l !== '').join('<br/>');})()",
+        "_tags=(() => {let lines = get(feat)('comments')[0].text.split('\\n').map(l => l.trim()); lines.splice(0, get(feat)('_trigger_index') + 1); lines = lines.filter(l => l != ''); return lines.join(';');})()"
+      ],
+      "isShown": {
+        "and": [
+          "_trigger_index~*",
+          {
+            "or": [
+              {
+                "and": [
+                  "_tags~(^|.*;)amenity=bicycle_library($|;.*)"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "titleIcons": [
+        {
+          "render": "<a href='https://openstreetmap.org/note/{id}' target='_blank'><img src='./assets/svg/osm-logo-us.svg'></a>"
+        }
+      ],
+      "tagRenderings": [
+        {
+          "id": "Intro",
+          "render": "{_intro}"
+        },
+        {
+          "id": "conversation",
+          "render": "{visualize_note_comments(comments,1)}",
+          "condition": "_comments_count>1"
+        },
+        {
+          "id": "import",
+          "render": {
+            "ca": "{import_button(bicycle_library, _tags, he trobat un una biblioteca de bicicletes aquí; afegeix-lo al mapa,./assets/svg/addSmall.svg,,,id)}",
+            "cs": "{import_button(bicycle_library, _tags, Našel jsem půjčovna kol zde - přidejte ji do mapy,./assets/svg/addSmall.svg,,,id)}",
+            "da": "{import_button(bicycle_library, _tags, Jeg har fundet en et cykelbibliotek her - tilføj den til kortet,./assets/svg/addSmall.svg,,,id)}",
+            "de": "{import_button(bicycle_library, _tags, Ich habe hier ein(en) eine Fahrradbibliothek gefunden - Zur Karte hinzufügen,./assets/svg/addSmall.svg,,,id)}",
+            "en": "{import_button(bicycle_library, _tags, I have found a a bicycle library here - add it to the map,./assets/svg/addSmall.svg,,,id)}",
+            "es": "{import_button(bicycle_library,_tags, He encontrado un(a) una biblioteca de bicicletas aquí - añádelo al mapa,./assets/svg/addSmall.svg,,,id)}",
+            "nl": "{import_button(bicycle_library, _tags, Ik heb hier een een fietsbibliotheek gevonden - voeg deze toe aan de kaart...,./assets/svg/addSmall.svg,,,id)}",
+            "pl": "{import_button(bicycle_library, _tags, odnalazłem tutaj a bicycle library - dodaj go do mapy,./assets/svg/addSmall.svg,,,id)}",
+            "zh_Hant": "{import_button(bicycle_library, _tags, 我在這邊發現 自行車圖書館 ( Fietsbibliotheek) - 新增到地圖,./assets/svg/addSmall.svg,,,id)}",
+            "_context": "core:importLayer.importButton"
+          },
+          "condition": "closed_at="
+        },
+        {
+          "id": "close_note_",
+          "render": {
+            "ca": "{close_note(No he pogut trobar una biblioteca de bicicletes: esborra-ho, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "cs": "{close_note(Nepodařilo se mi najít půjčovna kol - odstraňte jej, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "da": "{close_note(Jeg kunne ikke finde et cykelbibliotek - fjern det, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "de": "{close_note(Ich konnte eine Fahrradbibliothek nicht finden - entferne es, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "en": "{close_note(I could not find a bicycle library - remove it, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "es": "{close_note(No he podido encontrar una biblioteca de bicicletas - eliminarlo, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "nl": "{close_note(Ik kon hier geen een fietsbibliotheek vinden - verwijder deze van de kaart, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "pl": "{close_note(Nie mogłem odnaleźć a bicycle library – usuń go, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "zh_Hant": "{close_note(我無法找到 自行車圖書館 ( Fietsbibliotheek) - 移除吧, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "_context": "core:importLayer.notFound"
+          },
+          "condition": "closed_at="
+        },
+        {
+          "id": "close_note_mapped",
+          "render": {
+            "ca": "{close_note(Ja hi ha un una biblioteca de bicicletes al mapa - aquest punt és un duplicat, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "cs": "{close_note(Na mapě se již nachází půjčovna kol - tento bod je duplicitní, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "da": "{close_note(Der er allerede en anden et cykelbibliotek på kortet - dette punkt er en dublet, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "de": "{close_note(Es gibt bereits einen eine Fahrradbibliothek auf der Karte - dieser Punkt ist ein Duplikat, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "en": "{close_note(There already is a bicycle library on the map - this point is a duplicate, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "es": "{close_note(una biblioteca de bicicletas ya está en el mapa - este punto es un duplicado, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "nl": "{close_note(Er staat hier reeds een fietsbibliotheek op de kaart; dit punt is een duplicaat. Verwijder deze van de kaart, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "pl": "{close_note(Na mapie znajduje się już a bicycle library - ten punkt jest duplikatem, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "zh_Hant": "{close_note(自行車圖書館 ( Fietsbibliotheek) 已經在地圖上了 - 這個點重覆了, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "_context": "core:importLayer.alreadyMapped"
+          },
+          "condition": "closed_at="
+        },
+        {
+          "id": "handled",
+          "render": {
+            "ca": "<div class=\"thanks\">Aquesta funció s'ha gestionat. Gràcies pel teu esforç.</div>",
+            "cs": "<div class='thanks'>Tato funkce byla zpracována! Děkujeme za vaši snahu</div>",
+            "da": "<div class=\"thanks\">Dette element er blevet håndteret! Tak for din indsats</div>",
+            "de": "<div class=\"thanks\">Dieses Objekt wurde verarbeitet! Vielen Dank für Ihre Bemühungen</div>",
+            "en": "<div class='thanks'>This feature has been handled! Thanks for your effort</div>",
+            "nb_NO": "<div class='thanks'>Denne funksjonen har blitt håndtert. Takk for din innsats.</div>",
+            "nl": "<div class='thanks'>Dit object is afgehandeld. Bedankt om mee te helpen!</div>",
+            "pl": "<div class='thanks'>Ta funkcja została obsłużona! Dziękujemy za Twój wysiłek</div>",
+            "zh_Hant": "<div class='thanks'>這個圖徵已經處理了！謝謝你的辛勞</div>",
+            "_context": "core:importLayer.importHandled"
+          },
+          "condition": "closed_at~*"
+        },
+        {
+          "id": "comment",
+          "render": "{add_note_comment()}"
+        },
+        {
+          "id": "add_image",
+          "render": "{add_image_to_note()}"
+        },
+        {
+          "id": "nearby_images",
+          "render": {
+            "ca": "<h3>Imatges properes</h3>Les imatges següents són imatges geoetiquetades properes de diversos serveis en línia. Us poden ajudar a resoldre aquesta nota.{nearby_images(open)}",
+            "cs": "<h3>Obrázky z okolí</h3>Následující obrázky jsou geograficky označené obrázky z různých online služeb. Mohly by vám pomoci při řešení této poznámky.{nearby_images(open)}",
+            "da": "<h3>Billeder i nærheden</h3>De følgende billeder er geotaggede billeder i nærheden fra forskellige onlinetjenester. De kan måske hjælpe dig med at løse denne note.{nearby_images(open)}",
+            "de": "<h3>Bilder in der Nähe</h3>Die folgenden Bilder sind mit Geotags versehene Bilder aus verschiedenen Online-Diensten in der Nähe. Sie können helfen, diesen Hinweis zu lösen.{nearby_images(open)}",
+            "en": "<h3>Nearby pictures</h3>The following pictures are nearby geotagged pictures from various online services. They might help you to resolve this note.{nearby_images(open)}",
+            "es": "<h3>Imágenes cercanas</h3> Las siguientes imágenes son imágenes geoetiquetadas cerca de varios servicios en línea. Pueden ayudarte a resolver esta nota. {nearby_images(open)}",
+            "nl": "<h3>Afbeeldingen in de buurt</h3>De volgende afbeeldingen zijn in de buurt gemaakt en kunnen mogelijks helpen. {nearby_images(open)}",
+            "pl": "<h3>Zdjęcia w pobliżu</h3>Poniższe zdjęcia to zdjęcia pobliskich obiektów z geotagami z różnych usług internetowych. Mogą pomóc Ci rozwiązać tę uwagę.{nearby_images(open)}",
+            "zh_Hant": "<h3>附近圖片</h3>接下來的圖片是多個第三方線上服務附近有地理標籤的圖片，也許能協助你解決這個註解。{nearby_images(open)}",
+            "_context": "core:importLayer.nearbyImagesIntro"
+          }
+        },
+        {
+          "id": "all_tags",
+          "render": "{all_tags()}",
+          "metacondition": {
+            "or": [
+              "__featureSwitchIsDebugging=true",
+              "mapcomplete-show_tags=full",
+              "mapcomplete-show_debug=yes"
+            ]
+          }
+        }
+      ],
+      "pointRendering": [
+        {
+          "location": [
+            "point"
+          ],
+          "marker": [
+            {
+              "icon": "circle",
+              "color": "#fff"
+            },
+            {
+              "icon": {
+                "render": "help",
+                "mappings": [
+                  {
+                    "if": {
+                      "or": [
+                        "closed_at~*",
+                        "_imported=yes"
+                      ]
+                    },
+                    "then": "checkmark"
+                  }
+                ]
+              },
+              "color": "#00"
+            }
+          ],
+          "iconSize": "40,40",
+          "anchor": "center"
+        }
+      ]
+    }
+  ],
+  "widenFactor": 1.5,
+  "socialImage": "assets/SocialImage.png"
+}

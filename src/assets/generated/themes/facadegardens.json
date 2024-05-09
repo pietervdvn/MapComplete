@@ -1,0 +1,1860 @@
+{
+  "id": "facadegardens",
+  "title": {
+    "en": "Facade gardens",
+    "nl": "Straatgeveltuintjes",
+    "ja": "ファサード庭園",
+    "zh_Hant": "立面花園",
+    "it": "Giardini verticali",
+    "fr": "Jardins de façade",
+    "de": "Fassadengärten",
+    "hu": "Homlokzati kertek",
+    "ca": "Jardins verticals",
+    "es": "Jardines de fachada",
+    "da": "Facadehaver",
+    "cs": "Fasádní zahrady",
+    "pl": "Ogrody fasadowe",
+    "_context": "themes:facadegardens.title"
+  },
+  "description": {
+    "nl": "Ontharde voortuintjes, groene gevels en bomen ín de stad brengen naast rust ook een mooiere stad, een grotere biodiversiteit, een verkoelend effect en een betere luchtkwaliteit. <br/> Klimaan VZW en 'Mechelen Klimaatneutraal' willen met het project Klim(t)aan je Gevel bestaande en nieuwe geveltuintjes in kaart brengen als voorbeeld voor mensen zelf een tuintje willen aanleggen of voor stadwandelaars die houden van de natuur. <br/>Meer info over het project op <a href='https://klimaan.be/' target=_blank>klimaan.be</a>.",
+    "en": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>Facade gardens</a>, green facades and trees in the city not only bring peace and quiet, but also a more beautiful city, greater biodiversity, a cooling effect and better air quality. <br/> Klimaan VZW and Mechelen Klimaatneutraal want to map existing and new facade gardens as an example for people who want to build their own garden or for city walkers who love nature.<br/>More info about the project at <a href='https://klimaan.be/' target=_blank>klimaan.be</a>.",
+    "ja": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>ファサード庭園</a>、都市の緑のファサードと樹木は、平和と静けさをもたらすだけでなく、より美しい都市、より大きな生物多様性、冷却効果、より良い大気質をもたらす。<br/>KlimaanのVZWとMechelenのKlimaatneutraalは、自分で庭を作りたい人や自然を愛する都市の歩行者のために、既存のファサード庭園と新しいファサード庭園のマッピングしたいと考えています。<br/>このプロジェクトに関する詳細情報は<a href='https://klimaan.be/' target=_blank>klimaan</a>にあります。",
+    "fr": "Les <a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>jardins muraux</a> en ville n’apportent pas seulement paix et tranquillité mais contribuent à embellir la ville, favoriser la biodiversité, régule la température et assainit l’air. <br/> Klimaan VZW et Mechelen Klimaatneutraal veulent cartographier les jardins muraux comme exemple pour les personnes souhaitant en construire ainsi que celles aimant la nature.<br/>Plus d’infos sur <a href='https://klimaan.be/' target=_blank>klimaan.be</a>.",
+    "de": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>Fassadengärten</a>, grüne Fassaden und Bäume in der Stadt bringen nicht nur Ruhe und Frieden, sondern auch eine schönere Stadt, eine größere Artenvielfalt, einen Kühleffekt und eine bessere Luftqualität. <br/> Klimaan VZW und Mechelen Klimaatneutraal wollen bestehende und neue Fassadengärten als Beispiel für Menschen, die ihren eigenen Garten anlegen wollen, oder für naturverbundene Stadtspaziergänger kartieren.<br/>Mehr Informationen über das Projekt unter <a href='https://klimaan.be/' target=_blank>klimaan.be</a>.",
+    "it": "I <a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>giardini veritcali</a> e gli alberi in città non solo portano pace e tranquillità ma creano anche un ambiente più bello, aumentano la biodiversità, rendono il clima più fresco e migliorano la qualità dell’aria. <br/> Klimaan VZW e Mechelen Klimaatneutraal vogliono mappare sia i giardini verticali esistenti che quelli nuovi per mostrarli a quanti vogliono costruire un loro proprio giardino o per quelli che amano la natura e vogliono camminare per la città.<br/>Per ulteriori informazioni visita <a href='https://klimaan.be/' target=_blank>klimaan.be</a>.",
+    "hu": "A <a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>homlokzatkertek</a>, zöld homlokzatok és fák a városban nemcsak békét és nyugalmat, hanem szebb várost, nagyobb biológiai sokféleséget, hűsítő hatást és jobb levegőminőséget is hoznak. <br/> A Klimaan VZW és a Mechelen Klimaatneutraal a meglévő és új homlokzati kerteket szeretné feltérképezni, hogy példaként szolgáljanak a saját kertet építeni vágyóknak vagy a természetet kedvelő városi sétálóknak.<br/>További információ a projektről a <a href='https://klimaan.be/' target=_blank>klimaan.be</a> oldalon.",
+    "da": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>Facadehaver</a>, grønne facader og træer i byen bringer ikke kun fred og ro, men også en smukkere by , større biodiversitet, en kølende effekt og bedre luftkvalitet. <br/> Klimaan VZW og Mechelen Klimaatneutraal ønsker at kortlægge eksisterende og nye facadehaver som et eksempel for folk, der vil bygge deres egen have eller for byvandrere, der elsker naturen.<br/>Mere info om projektet på <a href ='https://klimaan.be/' target=_blank>klimaan.be</a>.",
+    "cs": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>Fasádní zahrady</a>, zelené fasády a stromy ve městě přinášejí nejen klid a pohodu, ale také krásnější město, větší biodiverzitu, ochlazující efekt a lepší kvalitu ovzduší. <br/> Klimaan VZW a Mechelen Klimaatneutraal chtějí zmapovat stávající i nové fasádní zahrady jako příklad pro lidi, kteří si chtějí vybudovat vlastní zahradu, nebo pro městské chodce, kteří mají rádi přírodu.<br/>Více informací o projektu najdete na <a href='https://klimaan.be/' target=_blank>klimaan.be</a>.",
+    "es": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>Los jardines de fachada</a>, las fachadas verdes y los árboles en la ciudad no sólo aportan paz y tranquilidad, sino también una ciudad más bella, una mayor biodiversidad, un efecto refrescante y una mejor calidad del aire. <br/> Klimaan VZW y Mechelen Klimaatneutraal quieren trazar un mapa de los jardines de fachada existentes y nuevos como ejemplo para las personas que quieran construir su propio jardín o para los paseantes urbanos amantes de la naturaleza. <br/>Más información sobre el proyecto en <a href='https://klimaan.be/' target=_blank>klimaan.be</a>.",
+    "ca": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>Els Jardins de façana</a>, façanes verdes i arbres de la ciutat no només aporten pau i tranquil·litat, sinó també una ciutat més bella , una major biodiversitat, un efecte de refredament i una millor qualitat de l'aire. <br/> Klimaan VZW i Mechelen Klimaatneutraal volen cartografiar els jardins de façana existents i nous com a exemple per a les persones que volen construir el seu propi jardí o per als excursionistes de la ciutat que estimen la natura.<br/>Més informació sobre el projecte a <a href ='https://klimaan.be/' target=_blank>klimaan.be</a>.",
+    "pl": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>Ogrody fasadowe</a>, zielone fasady i drzewa w mieście nie tylko zapewniają ciszę i spokój, ale także piękniejsze miasto, większą różnorodność biologiczną, efekt chłodzący i lepszą jakość powietrza. <br/> Klimaan VZW i Mechelen Klimaatneutraal chcą zmapować istniejące i nowe ogrody fasadowe jako przykład dla osób chcących zbudować własny ogród lub dla spacerowiczów kochających przyrodę.<br/>Więcej informacji o projekcie na <a href ='https://klimaan.be/' target=_blank>klimaan.be</a>.",
+    "_context": "themes:facadegardens.description"
+  },
+  "shortDescription": {
+    "nl": "Deze kaart toont geveltuintjes met foto's en bruikbare info over oriëntatie, zonlicht en planttypes.",
+    "en": "This map shows facade gardens with pictures and useful info about orientation, sunshine and plant types.",
+    "ja": "このマップには、ファサード庭園が図とともに表示され、方向、日照、植物のタイプに関する有用な情報が示されます。",
+    "zh_Hant": "這地圖顯示立面花園的照片以及其他像是方向、日照以及植栽種類等實用訊息。",
+    "it": "Questa mappa mostra i giardini verticali, con foto e informazioni utili sulla loro orientazione, sull'illuminazione solare e sui tipi di piante.",
+    "fr": "Cette carte indique les murs végétalisés avec des photos et des informations comme leur orientation, l’ensoleillement et le type de plantes.",
+    "de": "Diese Karte zeigt Fassadengärten mit Bildern und Details zu Ausrichtung, Sonneneinstrahlung und Pflanzen.",
+    "hu": "Ez a térkép homlokzati kerteket jelenít meg képekkel, valamint adatokkal a tájolásukról, a napsütésnek való kitettségükről és a bennük található növényzetről.",
+    "es": "Este mapa muestra jardines de fachada con fotografías e información útil sobre la orientación, la luz del sol y los tipos de plantas.",
+    "da": "Dette kort viser facadehaver med billeder og nyttig info om orientering, solskin og plantetyper.",
+    "cs": "Tato mapa zobrazuje fasádní zahrady s obrázky a užitečnými informacemi o orientaci, oslunění a druzích rostlin.",
+    "ca": "Aquest mapa mostra jardins a façanes amb fotografies i informació útil sobre l'orientació, llum del sol i els tipus de plantes.",
+    "pl": "Mapa przedstawia ogrody fasadowe ze zdjęciami i przydatnymi informacjami na temat orientacji, nasłonecznienia i rodzajów roślin.",
+    "_context": "themes:facadegardens.shortDescription"
+  },
+  "icon": "./assets/themes/facadegardens/geveltuin.svg",
+  "startZoom": 15,
+  "startLat": 51.02768,
+  "startLon": 4.480705,
+  "credits": [
+    "joost schouppe; stla"
+  ],
+  "layers": [
+    {
+      "id": "facadegardens",
+      "name": {
+        "nl": "Geveltuintjes",
+        "en": "Facade gardens",
+        "ja": "ファサード庭園",
+        "zh_Hant": "立面花園",
+        "fr": "Jardins muraux",
+        "de": "Fassadengärten",
+        "it": "Giardini verticali",
+        "hu": "Homlokzati kertek",
+        "ca": "Jardins verticals",
+        "es": "Jardines de fachada",
+        "da": "Facadehaver",
+        "cs": "Fasádní zahrady",
+        "pl": "Ogrody fasadowe",
+        "_context": "themes:facadegardens.layers.facadegardens.name"
+      },
+      "minzoom": 12,
+      "source": {
+        "osmTags": {
+          "and": [
+            "leisure=garden",
+            "garden:type=facade_garden"
+          ]
+        }
+      },
+      "title": {
+        "render": {
+          "nl": "Geveltuintje",
+          "en": "Facade garden",
+          "ja": "ファサード庭園",
+          "zh_Hant": "立面花園",
+          "fr": "Jardin mural",
+          "de": "Fassadengarten",
+          "it": "Giardino verticale",
+          "hu": "Homlokzati kert",
+          "ca": "Jardí vertical",
+          "es": "Jardín de fachada",
+          "da": "Facadehave",
+          "cs": "Fasádní zahrada",
+          "pl": "Ogród fasadowy",
+          "_context": "themes:facadegardens.layers.facadegardens.title.render"
+        }
+      },
+      "description": {
+        "nl": "Geveltuintjes",
+        "en": "Facade gardens",
+        "ja": "ファサード庭園",
+        "zh_Hant": "立面花園",
+        "fr": "Jardins muraux",
+        "de": "Fassadengärten",
+        "it": "Giardini verticali",
+        "hu": "Homlokzati kertek",
+        "ca": "Jardins verticals",
+        "es": "Jardines de fachada",
+        "da": "Facadehaver",
+        "cs": "Fasádní zahrady",
+        "pl": "Ogrody fasadowe",
+        "_context": "themes:facadegardens.layers.facadegardens.description"
+      },
+      "tagRenderings": [
+        {
+          "id": "just_created",
+          "labels": [
+            "added_by_default"
+          ],
+          "description": "This element shows a 'thank you' that the contributor has recently created this element",
+          "classes": "rounded-xl thanks",
+          "mappings": [
+            {
+              "if": "id~*",
+              "icon": "./assets/svg/party.svg",
+              "then": {
+                "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+                "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+                "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+                "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+                "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+                "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+              }
+            }
+          ],
+          "condition": {
+            "and": [
+              "_backend~*",
+              "_last_edit:passed_time<300",
+              {
+                "or": [
+                  "_version_number=",
+                  "_version_number=1"
+                ]
+              }
+            ]
+          },
+          "metacondition": {
+            "and": [
+              {
+                "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+                "or": [
+                  "_last_edit:contributor:uid:={_uid}",
+                  "_last_edit:contributor:uid="
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "images",
+          "description": "This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images",
+          "render": {
+            "*": "{image_carousel()}{image_upload()}{nearby_images():my-4}"
+          },
+          "classes": "my-4"
+        },
+        {
+          "render": {
+            "nl": "Oriëntatie: {direction} (waarbij 0=N en 90=O)",
+            "en": "Orientation: {direction} (where 0=N and 90=O)",
+            "ja": "方向: {direction} (0=N で 90=O)",
+            "fr": "Orientation : {direction} (0 pour le Nord et 90 pour l’Ouest)",
+            "de": "Ausrichtung: {direction} (wobei 0=N und 90=O)",
+            "it": "Orientamento: {direction} (0 per il Nord e 90 per l’Est)",
+            "hu": "Tájolás: {direction} (0=észak, 90=kelet stb.)",
+            "es": "Orientación: {direction} (donde 0=N y 90=O)",
+            "da": "Orientering: {direction} (hvor 0=N og 90=O)",
+            "ca": "Orientació: {direction} (on 0=N y 90=O)",
+            "cs": "Orientace: {direction} (kde 0=N a 90=O)",
+            "pl": "Orientacja: {direction} (gdzie 0=N i 90=E)",
+            "_context": "themes:facadegardens.layers.facadegardens.tagRenderings.facadegardens-direction.render"
+          },
+          "question": {
+            "nl": "Hoe is de tuin georiënteerd?",
+            "en": "What is the orientation of the garden?",
+            "ja": "庭の向きはどうなっていますか?",
+            "fr": "Quelle est l’orientation du jardin ?",
+            "de": "Wie ist der Garten ausgerichtet?",
+            "it": "Com’è orientato questo giardino?",
+            "hu": "Milyen a kert tájolása?",
+            "es": "¿Cual es la orientación del jardín?",
+            "da": "Hvad er havens orientering?",
+            "ca": "Quina és l'orientació del jardí?",
+            "cs": "Jaká je orientace zahrady?",
+            "pl": "Jaka jest orientacja ogrodu?",
+            "_context": "themes:facadegardens.layers.facadegardens.tagRenderings.facadegardens-direction.question"
+          },
+          "freeform": {
+            "type": "direction",
+            "key": "direction",
+            "inline": true
+          },
+          "id": "facadegardens-direction"
+        },
+        {
+          "id": "facadegardens-sunshine",
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "direct_sunlight=yes"
+                ]
+              },
+              "then": {
+                "nl": "Het is een volle zon tuintje",
+                "en": "The garden is in full sun",
+                "ja": "庭は日があたっている",
+                "it": "Il giardino è completamente illuminato dal sole",
+                "fr": "Le jardin est en plein soleil",
+                "de": "Der Garten liegt in voller Sonne",
+                "hu": "A kert teljesen a napon van",
+                "es": "El jardín está completamente al sol",
+                "nb_NO": "Hagen er ikke i skyggen",
+                "da": "Haven er i fuld sol",
+                "cs": "Zahrada je na přímém slunci",
+                "ca": "El jardí està completament al sol",
+                "pl": "Ogród jest w pełnym słońcu",
+                "_context": "themes:facadegardens.layers.facadegardens.tagRenderings.facadegardens-sunshine.mappings.0.then"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "direct_sunlight=partial"
+                ]
+              },
+              "then": {
+                "nl": "Het is een halfschaduw tuintje",
+                "en": "The garden is in partial shade",
+                "ja": "庭は部分的に日陰である",
+                "nb_NO": "Denne hagen er i delvis skygge",
+                "it": "Il giardino è parzialmente in ombra",
+                "fr": "Le jardin est partiellement ensoleillé",
+                "de": "Der Garten liegt im Halbschatten",
+                "hu": "A kert részben árnyékban van",
+                "es": "El jardín está parcialmente a la sombra",
+                "da": "Haven er i delvis skygge",
+                "cs": "Zahrada je v polostínu",
+                "ca": "El jardí està parcialment a l'ombra",
+                "pl": "Ogród jest częściowo w cieniu",
+                "_context": "themes:facadegardens.layers.facadegardens.tagRenderings.facadegardens-sunshine.mappings.1.then"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "direct_sunlight=no"
+                ]
+              },
+              "then": {
+                "nl": "Het is een schaduw tuintje",
+                "en": "The garden is in the shade",
+                "ja": "庭は日陰である",
+                "it": "Il giardino è in ombra",
+                "fr": "Le jardin est à l’ombre",
+                "de": "Der Garten liegt im Schatten",
+                "hu": "A kert árnyékban van",
+                "es": "El jardín está a la sombra",
+                "nb_NO": "Hagen er i skyggen",
+                "da": "Haven ligger i skygge",
+                "cs": "Zahrada je ve stínu",
+                "ca": "El jardí està a l'ombra",
+                "pl": "Ogród jest w cieniu",
+                "_context": "themes:facadegardens.layers.facadegardens.tagRenderings.facadegardens-sunshine.mappings.2.then"
+              }
+            }
+          ],
+          "question": {
+            "nl": "Ligt de tuin in zon/half schaduw of schaduw?",
+            "en": "Is the garden shaded or sunny?",
+            "ja": "庭は日陰ですか、日当たりがいいですか?",
+            "it": "Il giardino è al sole o in ombra?",
+            "ru": "Сад расположен на солнечной стороне или в тени?",
+            "fr": "Quel est l’ensoleillement du jardin ?",
+            "de": "Ist der Garten schattig oder sonnig?",
+            "hu": "Árnyékban vagy napon van a kert?",
+            "es": "¿El jardín está al sol o a la sombra?",
+            "nb_NO": "Er hagen i skygge eller ei?",
+            "da": "Er haven skyggefuld eller solrig?",
+            "cs": "Je zahrada zastíněná nebo slunná?",
+            "ca": "El jardí està al sol o a l'ombra?",
+            "pl": "Czy ogród jest zacieniony czy słoneczny?",
+            "_context": "themes:facadegardens.layers.facadegardens.tagRenderings.facadegardens-sunshine.question"
+          }
+        },
+        {
+          "id": "facadegardens-rainbarrel",
+          "question": {
+            "nl": "Is er een regenton voorzien bij het tuintje?",
+            "en": "Is there a water barrel installed for the garden?",
+            "ja": "庭に水桶が設置されているのですか?",
+            "fr": "Des réserves d’eau ont-elles été installées pour le jardin ?",
+            "de": "Gibt es ein Wasserfass für den Garten?",
+            "it": "È stata installata una riserva d’acqua per il giardino?",
+            "zh_Hant": "花園當中有設置雨筒嗎？",
+            "hu": "Van-e a kertben vizeshordó?",
+            "nb_NO": "Er det en vanntønne installert i denne hagen?",
+            "da": "Er der installeret en vandtønde til haven?",
+            "cs": "Je do zahrady instalován sud na vodu?",
+            "ca": "Hi ha un barril d'aigua instal·lat per al jardí?",
+            "es": "¿Hay un barril de agua instalado para el jardín?",
+            "pl": "Czy w ogrodzie zainstalowano beczkę na wodę?",
+            "_context": "themes:facadegardens.layers.facadegardens.tagRenderings.facadegardens-rainbarrel.question"
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "rain_barrel=yes"
+                ]
+              },
+              "then": {
+                "nl": "Er is een regenton",
+                "en": "There is a rain barrel",
+                "ja": "雨樽がある",
+                "it": "C'è un contenitore per raccogliere la pioggia",
+                "ru": "Есть бочка с дождевой водой",
+                "fr": "Il y a des réserves",
+                "de": "Es gibt eine Regentonne",
+                "zh_Hant": "這裡有個雨筒",
+                "hu": "Van benne esővízgyűjtő hordó",
+                "nb_NO": "Har regntønne",
+                "da": "Der er en regntønde",
+                "cs": "K dispozici je sud na dešťovou vodu",
+                "ca": "Hi ha un barril de pluja",
+                "es": "Hay un barril de lluvia",
+                "pl": "Jest beczka na deszczówkę",
+                "_context": "themes:facadegardens.layers.facadegardens.tagRenderings.facadegardens-rainbarrel.mappings.0.then"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "rain_barrel=no"
+                ]
+              },
+              "then": {
+                "nl": "Er is geen regenton",
+                "en": "There is no rain barrel",
+                "ja": "雨樽はありません",
+                "it": "Non c'è un contenitore per raccogliere la pioggia",
+                "ru": "Нет бочки с дождевой водой",
+                "fr": "Il n’y a pas de réserves",
+                "de": "Es gibt keine Regentonne",
+                "zh_Hant": "這裡沒有雨筒",
+                "hu": "Nincs benne esővízgyűjtő hordó",
+                "nb_NO": "Har ikke regntønne",
+                "da": "Der er ingen regntønde",
+                "cs": "Sud na dešťovou vodu není k dispozici",
+                "ca": "No hi ha un barril de pluja",
+                "es": "No hay barril de lluvia",
+                "pl": "Nie ma beczki na deszczówkę",
+                "_context": "themes:facadegardens.layers.facadegardens.tagRenderings.facadegardens-rainbarrel.mappings.1.then"
+              }
+            }
+          ]
+        },
+        {
+          "render": {
+            "nl": "Aanlegdatum van de tuin: {start_date}",
+            "en": "Construction date of the garden: {start_date}",
+            "ru": "Дата строительства сада: {start_date}",
+            "ja": "庭園の建設日: {start_date}",
+            "it": "Data di realizzazione del giardino: {start_date}",
+            "fr": "Date de construction du jardin : {start_date}",
+            "de": "Errichtungsdatum des Gartens: {start_date}",
+            "hu": "A kert építésének időpontja: {start_date}",
+            "es": "Fecha de construcción del jardín: {start_date}",
+            "nb_NO": "Konstruksjonsdato for hagen: {start_date}",
+            "da": "Anlægsdato for haven: {start_date}",
+            "cs": "Datum výstavby zahrady: {start_date}",
+            "ca": "Data de construcció del jardí: {start_date}",
+            "pl": "Data budowy ogrodu: {start_date}",
+            "_context": "themes:facadegardens.layers.facadegardens.tagRenderings.facadegardens-start_date.render"
+          },
+          "question": {
+            "nl": "Wanneer werd de tuin aangelegd? (vul gewoon een jaartal in)",
+            "en": "When was the garden constructed? (a year is sufficient)",
+            "ja": "その庭園はいつ造られたのですか?(建設年で十分です)",
+            "it": "Quando è stato realizzato il giardino? (è sufficiente l'anno)",
+            "fr": "Quand le jardin a-t’il été construit ? (L’année suffit)",
+            "de": "Wann wurde der Garten angelegt? (Jahr ist ausreichend)",
+            "hu": "Mikor épült a kert? (Év megadása is elegendő)",
+            "es": "¿Cuándo se construyó el jardín? (el año es suficiente)",
+            "nb_NO": "Når ble hagen opprettet? (Årstall holder.)",
+            "da": "Hvornår blev haven bygget? (et år er nok)",
+            "cs": "Kdy byla zahrada postavena? (rok je postačující)",
+            "ca": "Quan es va construir el jardí? (l'any és suficient)",
+            "pl": "Kiedy powstał ogród? (rok wystarczy)",
+            "_context": "themes:facadegardens.layers.facadegardens.tagRenderings.facadegardens-start_date.question"
+          },
+          "freeform": {
+            "key": "start_date",
+            "type": "text",
+            "inline": true
+          },
+          "id": "facadegardens-start_date"
+        },
+        {
+          "id": "facadegardens-edible",
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "edible=yes"
+                ]
+              },
+              "then": {
+                "nl": "Er staan eetbare planten",
+                "en": "There are edible plants",
+                "ja": "食用の植物がある",
+                "it": "Ci sono piante commestibili",
+                "fr": "Il y a des plantes comestibles",
+                "de": "Es gibt essbare Pflanzen",
+                "hu": "Van benne ehető növény",
+                "es": "Hay plantas comestibles",
+                "nb_NO": "Det finnes spisbare planter",
+                "da": "Der er spiselige planter",
+                "cs": "Jsou zde jedlé rostliny",
+                "ca": "Hi han plantes comestibles",
+                "pl": "Istnieją rośliny jadalne",
+                "_context": "themes:facadegardens.layers.facadegardens.tagRenderings.facadegardens-edible.mappings.0.then"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "edible=no"
+                ]
+              },
+              "then": {
+                "nl": "Er staan geen eetbare planten",
+                "en": "There are no edible plants",
+                "ja": "食用植物は存在しない",
+                "it": "Non ci sono piante commestibili",
+                "fr": "Il n’y a pas de plantes comestibles",
+                "de": "Es gibt keine essbaren Pflanzen",
+                "hu": "Nincs benne ehető növény",
+                "es": "No hay plantas comestibles",
+                "nb_NO": "Det finnes ingen spisbare planter",
+                "da": "Der er ikke spiselige planter",
+                "cs": "Nejsou zde jedlé rostliny",
+                "ca": "No hi han plantes comestibles",
+                "pl": "Nie ma roślin jadalnych",
+                "_context": "themes:facadegardens.layers.facadegardens.tagRenderings.facadegardens-edible.mappings.1.then"
+              }
+            }
+          ],
+          "question": {
+            "nl": "Staan er eetbare planten?",
+            "en": "Are there any edible plants?",
+            "ja": "食用の植物はありますか?",
+            "it": "Ci sono piante commestibili?",
+            "fr": "Y-a-t’il des plantes comestibles ?",
+            "de": "Gibt es essbare Pflanzen?",
+            "hu": "Van-e benne ehető növény?",
+            "es": "¿Hay alguna planta comestible?",
+            "nb_NO": "Finnes det noen spisbare planter?",
+            "da": "Er der nogle spiselige planter?",
+            "cs": "Jsou zde jedlé rostliny?",
+            "ca": "Hi ha alguna planta comestible?",
+            "pl": "Czy są jakieś rośliny jadalne?",
+            "_context": "themes:facadegardens.layers.facadegardens.tagRenderings.facadegardens-edible.question"
+          }
+        },
+        {
+          "id": "facadegardens-plants",
+          "question": {
+            "nl": "Wat voor planten staan hier?",
+            "en": "What kinds of plants grow here?",
+            "ja": "ここではどんな植物が育つんですか?",
+            "it": "Che tipi di piante sono presenti qui?",
+            "ru": "Какие виды растений обитают здесь?",
+            "fr": "Quel type de plantes pousse ici ?",
+            "de": "Welche Pflanzen wachsen hier?",
+            "hu": "Milyen jellegű növények nőnek benne?",
+            "es": "¿Qué tipo de plantas crecen aquí?",
+            "nb_NO": "Hva slags planter vokser her?",
+            "da": "Hvilke slags planter vokser her?",
+            "cs": "Jaké druhy rostlin zde rostou?",
+            "ca": "Quin tipus de plantes creixen aquí?",
+            "pl": "Jakie rośliny tu rosną?",
+            "_context": "themes:facadegardens.layers.facadegardens.tagRenderings.facadegardens-plants.question"
+          },
+          "mappings": [
+            {
+              "if": "plant=vine",
+              "then": {
+                "nl": "Er staat een klimplant",
+                "en": "There are vines",
+                "ja": "つるがある",
+                "it": "Ci sono viti",
+                "fr": "Il y a des plantes grimpantes",
+                "de": "Es gibt Weinreben",
+                "hu": "Van benne szőlő",
+                "da": "Der er vinstokke",
+                "cs": "Zde jsou révy",
+                "es": "Esto son viñedos",
+                "ca": "Hi ha vinyes",
+                "pl": "Są winorośle",
+                "_context": "themes:facadegardens.layers.facadegardens.tagRenderings.facadegardens-plants.mappings.0.then"
+              }
+            },
+            {
+              "if": "plant=flower",
+              "then": {
+                "nl": "Er staan bloeiende planten",
+                "en": "There are flowering plants",
+                "ja": "花を咲かせる植物がある",
+                "it": "Ci sono piante da fiore",
+                "fr": "Il y a des fleurs",
+                "de": "Es gibt blühende Pflanzen",
+                "hu": "Van benne virágos növény",
+                "da": "Der er blomstrende planter",
+                "cs": "Jsou zde kvetoucí rostliny",
+                "es": "Hay plantas con flores",
+                "ca": "Hi ha plantes amb flors",
+                "pl": "Są rośliny kwitnące",
+                "_context": "themes:facadegardens.layers.facadegardens.tagRenderings.facadegardens-plants.mappings.1.then"
+              }
+            },
+            {
+              "if": "plant=shrub",
+              "then": {
+                "nl": "Er staan struiken",
+                "en": "There are shrubs",
+                "ja": "低木がある",
+                "it": "Ci sono arbusti",
+                "fr": "Il y a des buissons",
+                "de": "Es gibt Sträucher",
+                "hu": "Van benne cserje",
+                "es": "Hay arbustos",
+                "da": "Der er buske",
+                "ca": "Hi ha arbustos",
+                "cs": "Jsou zde keře",
+                "pl": "Są krzewy",
+                "_context": "themes:facadegardens.layers.facadegardens.tagRenderings.facadegardens-plants.mappings.2.then"
+              }
+            },
+            {
+              "if": "plant=groundcover",
+              "then": {
+                "nl": "Er staan bodembedekkers",
+                "en": "There are groundcovering plants",
+                "ja": "地をはう植物がある",
+                "it": "Ci sono piante tappezzanti",
+                "fr": "Il y a des plantes couvre-sol",
+                "de": "Es gibt Bodendecker",
+                "hu": "Van benne talajtakaró növény",
+                "da": "Der er bunddækkende planter",
+                "cs": "Jsou zde půdopokryvné rostliny",
+                "es": "Hay plantas cubresuelos",
+                "ca": "Hi ha plantes que cobreixen el sòl",
+                "pl": "Istnieją rośliny okrywowe",
+                "_context": "themes:facadegardens.layers.facadegardens.tagRenderings.facadegardens-plants.mappings.3.then"
+              }
+            }
+          ],
+          "multiAnswer": true
+        },
+        {
+          "render": {
+            "nl": "Meer details: {description}",
+            "en": "More details: {description}",
+            "ja": "詳細情報: {description}",
+            "it": "Maggiori dettagli: {description}",
+            "ru": "Подробнее: {description}",
+            "fr": "Plus de détails : {description}",
+            "de": "Weitere Details: {description}",
+            "eo": "Pliaj detaloj: {description}",
+            "hu": "További részletek: {description}",
+            "es": "Más detalles: {description}",
+            "nb_NO": "Flere detaljer: {description}",
+            "da": "Flere detaljer: {description}",
+            "ca": "Més detalls: {description}",
+            "cs": "Další podrobnosti: {description}",
+            "pl": "Więcej szczegółów: {description}",
+            "_context": "themes:facadegardens.layers.facadegardens.tagRenderings.facadegardens-description.render"
+          },
+          "question": {
+            "nl": "Aanvullende omschrijving van de tuin (indien nodig, en voor zover nog niet omschreven hierboven)",
+            "en": "Extra describing info about the garden (if needed and not yet described above)",
+            "ja": "庭園に関する追加の説明情報(必要な場合でまだ上記に記載されていない場合)",
+            "it": "Altre informazioni per descrivere il giardino (se necessarie e non riportate qui sopra)",
+            "ru": "Дополнительная информация о саде (если требуется или еще не указана выше)",
+            "fr": "Détails supplémentaires sur le jardin (si nécessaire et non décrit précédemment)",
+            "de": "Zusätzliche Informationen über den Garten (falls erforderlich und oben noch nicht beschrieben)",
+            "hu": "További leíró jellegű információ a kertről (ha szükséges, és följebb nincs leírva)",
+            "es": "Información descriptiva complementaria sobre el jardín (si es necesaria pero no se describe arriba)",
+            "nb_NO": "Ekstra beskrivende info om hagen (hvis det trengs og ikke er gjengitt ovenfor)",
+            "da": "Ekstra beskrivende info om haven (hvis nødvendigt og endnu ikke beskrevet ovenfor)",
+            "cs": "Další popisné informace o zahradě (pokud jsou potřeba a nejsou popsány výše)",
+            "ca": "Informació descriptiva complementària sobre el jardí (si és necesaria y no està encara descrit dalt)",
+            "pl": "Dodatkowe informacje opisujące ogród (jeśli są potrzebne i nie zostały jeszcze opisane powyżej)",
+            "_context": "themes:facadegardens.layers.facadegardens.tagRenderings.facadegardens-description.question"
+          },
+          "freeform": {
+            "key": "description",
+            "type": "text",
+            "inline": true
+          },
+          "id": "facadegardens-description"
+        },
+        {
+          "id": "leftover-questions",
+          "render": {
+            "*": "{questions( ,)}"
+          }
+        },
+        {
+          "id": "lod",
+          "labels": [
+            "added_by_default"
+          ],
+          "render": {
+            "*": "{linked_data_from_website()}"
+          }
+        },
+        {
+          "id": "minimap",
+          "description": "Shows a small map with the feature. Added by default to every popup",
+          "render": {
+            "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+          }
+        },
+        {
+          "id": "move-button",
+          "render": {
+            "*": "{move_button()}"
+          }
+        },
+        {
+          "id": "delete-button",
+          "render": {
+            "*": "{delete_button()}"
+          }
+        },
+        {
+          "id": "last_edit",
+          "labels": [
+            "added_by_default"
+          ],
+          "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+          "condition": {
+            "and": [
+              "_last_edit:contributor~*",
+              "_last_edit:changeset~*"
+            ]
+          },
+          "metacondition": {
+            "or": [
+              "__featureSwitchIsTesting=true",
+              "__featureSwitchIsDebugging=true",
+              "mapcomplete-show_debug=yes",
+              "_csCount>=10"
+            ]
+          },
+          "render": {
+            "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+          }
+        },
+        {
+          "id": "favourite_status",
+          "render": {
+            "*": "{favourite_status()}"
+          }
+        },
+        {
+          "id": "qr_code",
+          "labels": [
+            "added_by_default"
+          ],
+          "classes": "flex items-center gap-x-2",
+          "render": {
+            "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+            "en": "{qr_code()}Scan this code to open this location on another device",
+            "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+            "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+          }
+        },
+        {
+          "id": "share",
+          "labels": [
+            "added_by_default"
+          ],
+          "metacondition": "_supports_sharing=yes",
+          "render": {
+            "de": "{share_link(,Standort teilen)}",
+            "en": "{share_link(,Share this location)}",
+            "nl": "{share_link(,Deel deze locatie)}"
+          }
+        },
+        {
+          "id": "all-tags",
+          "render": {
+            "*": "{all_tags()}"
+          },
+          "metacondition": {
+            "or": [
+              "__featureSwitchIsDebugging=true",
+              "mapcomplete-show_tags=full",
+              "mapcomplete-show_debug=yes"
+            ]
+          }
+        }
+      ],
+      "presets": [
+        {
+          "tags": [
+            "leisure=garden",
+            "garden:type=facade_garden"
+          ],
+          "snapToLayer": [
+            "walls_and_buildings"
+          ],
+          "title": {
+            "nl": "een geveltuintje",
+            "en": "a facade garden",
+            "ja": "ファサード庭園",
+            "it": "una giardino verticale",
+            "fr": "une jardin mural",
+            "de": "eine fassadengarten",
+            "hu": "homlokzatkert",
+            "ca": "un jardí vertical",
+            "es": "un jardín de fachada",
+            "nb_NO": "en fronthage",
+            "da": "en facadehave",
+            "cs": "fasádní zahrada",
+            "pl": "ogród fasadowy",
+            "_context": "themes:facadegardens.layers.facadegardens.presets.0.title"
+          },
+          "description": {
+            "nl": "Voeg geveltuintje toe",
+            "en": "Add a facade garden",
+            "ja": "ファサード庭園を追加する",
+            "it": "Aggiungi un giardino verticale",
+            "fr": "Ajouter un jardin mural",
+            "de": "Einen Fassadengarten hinzufügen",
+            "hu": "Homlokzatkert hozzáadása",
+            "ca": "Afegeix un jardí vertical",
+            "es": "Añadir un jardín de fachada",
+            "nb_NO": "Legg til en fronthage",
+            "da": "Tilføj en facadehave",
+            "cs": "Přidat fasádní zahradu",
+            "pl": "Dodaj ogród fasadowy",
+            "_context": "themes:facadegardens.layers.facadegardens.presets.0.description"
+          }
+        }
+      ],
+      "deletion": {},
+      "allowMove": {
+        "enableImproveAccuracy": true,
+        "enableRelocation": false
+      },
+      "pointRendering": [
+        {
+          "marker": [
+            {
+              "icon": {
+                "render": "circle",
+                "id": "circle"
+              },
+              "color": "white"
+            },
+            {
+              "icon": {
+                "render": "./assets/themes/facadegardens/geveltuin.svg",
+                "mappings": [
+                  {
+                    "if": {
+                      "and": [
+                        "direct_sunlight=yes"
+                      ]
+                    },
+                    "then": "./assets/themes/facadegardens/zon.svg"
+                  },
+                  {
+                    "if": {
+                      "and": [
+                        "direct_sunlight=partial"
+                      ]
+                    },
+                    "then": "./assets/themes/facadegardens/halfzon.svg"
+                  },
+                  {
+                    "if": {
+                      "and": [
+                        "direct_sunlight=no"
+                      ]
+                    },
+                    "then": "./assets/themes/facadegardens/schaduw.svg"
+                  }
+                ]
+              }
+            }
+          ],
+          "iconBadges": [
+            {
+              "if": "plant~.*vine.*",
+              "then": {
+                "render": "circle:white;./assets/themes/facadegardens/klimplant.svg",
+                "id": "circlewhiteassetsthemesfacadegardensklimplantsvg"
+              }
+            },
+            {
+              "if": "plant~.*groundcover.*",
+              "then": {
+                "render": "circle:white;./assets/themes/facadegardens/bodembedekker.svg",
+                "id": "circlewhiteassetsthemesfacadegardensbodembedekkersvg"
+              }
+            },
+            {
+              "if": "edible=true",
+              "then": {
+                "render": "circle:white;./assets/themes/facadegardens/eetbaar.svg",
+                "id": "circlewhiteassetsthemesfacadegardenseetbaarsvg"
+              }
+            },
+            {
+              "if": "rain_barel=yes",
+              "then": {
+                "render": "circle:white;./assets/themes/facadegardens/gevelton.svg",
+                "id": "circlewhiteassetsthemesfacadegardensgeveltonsvg"
+              }
+            },
+            {
+              "if": "plant~.*shrub.*",
+              "then": {
+                "render": "circle:white;./assets/themes/facadegardens/struik.svg",
+                "id": "circlewhiteassetsthemesfacadegardensstruiksvg"
+              }
+            },
+            {
+              "if": "plant~.*flower.*",
+              "then": {
+                "render": "circle:white;./assets/themes/facadegardens/bloei.svg",
+                "id": "circlewhiteassetsthemesfacadegardensbloeisvg"
+              }
+            },
+            {
+              "if": "_favourite=yes",
+              "then": {
+                "render": "circle:white;heart:red",
+                "id": "circlewhiteheartred"
+              }
+            }
+          ],
+          "iconSize": "50,50",
+          "location": [
+            "point",
+            "centroid"
+          ],
+          "anchor": "center"
+        }
+      ],
+      "lineRendering": [],
+      "titleIcons": [
+        {
+          "id": "wikipedialink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+          "condition": {
+            "or": [
+              "wikipedia~*",
+              "wikidata~*"
+            ]
+          },
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "wikipedia=",
+              "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+            }
+          ]
+        },
+        {
+          "id": "open_until",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "#": "Titleicon showing e.g. 'open until 17:00'",
+          "icon": {
+            "class": "w-20 mx-1 flex items-center"
+          },
+          "render": "{opening_hours_state()}",
+          "condition": {
+            "or": [
+              "opening_hours~*",
+              {
+                "or": [
+                  {
+                    "and": [
+                      "seasonal~.*winter.*",
+                      "_now:date~....-(12|01|02)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*spring.*",
+                      "_now:date~....-(03|04|05)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*summer.*",
+                      "_now:date~....-(06|07|08)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*autumn.*",
+                      "_now:date~....-(09|10|11)-.."
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "phonelink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.render"
+          },
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "contact:phone~*",
+              "then": {
+                "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+                "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+                "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+                "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+              }
+            }
+          ],
+          "condition": {
+            "or": [
+              "phone~*",
+              "contact:phone~*"
+            ]
+          }
+        },
+        {
+          "id": "emaillink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "contact:email~*",
+              "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "operator:email~*",
+              "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+            }
+          ],
+          "condition": {
+            "or": [
+              "email~*",
+              "contact:email~*",
+              "operator:email~*"
+            ]
+          }
+        },
+        {
+          "id": "websitelink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "website~*",
+              "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "operator:website~*",
+              "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "context:website~*",
+              "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            }
+          ]
+        },
+        {
+          "id": "smokingicon",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "smoking=no",
+              "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "smoking=yes",
+              "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+            }
+          ]
+        },
+        {
+          "id": "dogicon",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "if": "dog=no",
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+            },
+            {
+              "if": "dog=leashed",
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+            },
+            {
+              "if": {
+                "or": [
+                  "dog=yes",
+                  "dog=unleashed"
+                ]
+              },
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+            }
+          ]
+        },
+        {
+          "id": "sharelink",
+          "labels": [
+            "defaults"
+          ],
+          "render": "{share_link()}",
+          "metacondition": "_supports_sharing=yes"
+        },
+        {
+          "id": "favourite_title_icon",
+          "labels": [
+            "defaults"
+          ],
+          "render": {
+            "*": "{favourite_icon()}"
+          },
+          "metacondition": "_loggedIn=true"
+        },
+        {
+          "id": "osmlink",
+          "labels": [
+            "defaults"
+          ],
+          "render": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.render"
+          },
+          "mappings": [
+            {
+              "if": "id~.*/-.*",
+              "then": ""
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "_backend~*",
+              "then": {
+                "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+                "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+                "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+                "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+              }
+            }
+          ],
+          "condition": "id~(node|way|relation)/[0-9]*"
+        },
+        {
+          "id": "direction",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "{direction_indicator()}"
+        }
+      ]
+    },
+    {
+      "id": "walls_and_buildings",
+      "description": "This layer is needed by facadegardens because a preset snaps to this layer (at presets[0])",
+      "source": {
+        "osmTags": {
+          "and": [
+            {
+              "or": [
+                "barrier=wall",
+                "building~*"
+              ]
+            }
+          ]
+        }
+      },
+      "calculatedTags": [
+        "_entrance_properties=overlapWith(feat)('entrance')?.map(e => e.feat.properties)?.filter(p => p !== undefined && p.indoor !== 'door')",
+        "_entrance_properties_with_width=get(feat)('_entrance_properties')?.filter(p => p['width'] !== undefined)",
+        "_entrances_count=get(feat)('_entrance_properties').length",
+        "_entrances_count_without_width_count= get(feat)('_entrances_count') - get(feat)('_entrance_properties_with_width').length",
+        "_biggest_width= Math.max( get(feat)('_entrance_properties').map(p => p.width))",
+        "_biggest_width_properties= /* Can be a list! */ get(feat)('_entrance_properties').filter(p => p.width === get(feat)('_biggest_width'))",
+        "_biggest_width_id=get(feat)('_biggest_width_properties').id"
+      ],
+      "isCounted": false,
+      "minzoom": 18,
+      "shownByDefault": false,
+      "title": {
+        "render": {
+          "en": "Wall or building",
+          "nl": "Muur of gebouw",
+          "de": "Wand oder Gebäude",
+          "es": "Pared o edificio",
+          "fr": "Mur ou bâtiment",
+          "da": "Mur eller bygning",
+          "ca": "Paret o edifici",
+          "cs": "Zeď nebo budova"
+        }
+      },
+      "pointRendering": null,
+      "lineRendering": [
+        {
+          "color": "#fff",
+          "fill": "no",
+          "width": "3"
+        },
+        {
+          "color": "#333",
+          "fill": "no",
+          "width": "2"
+        }
+      ],
+      "passAllFeatures": true,
+      "tagRenderings": [
+        {
+          "id": "just_created",
+          "labels": [
+            "added_by_default"
+          ],
+          "description": "This element shows a 'thank you' that the contributor has recently created this element",
+          "classes": "rounded-xl thanks",
+          "mappings": [
+            {
+              "if": "id~*",
+              "icon": "./assets/svg/party.svg",
+              "then": {
+                "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+                "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+                "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+                "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+                "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+                "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+              }
+            }
+          ],
+          "condition": {
+            "and": [
+              "_backend~*",
+              "_last_edit:passed_time<300",
+              {
+                "or": [
+                  "_version_number=",
+                  "_version_number=1"
+                ]
+              }
+            ]
+          },
+          "metacondition": {
+            "and": [
+              {
+                "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+                "or": [
+                  "_last_edit:contributor:uid:={_uid}",
+                  "_last_edit:contributor:uid="
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "entrance_info",
+          "render": {
+            "ca": "<h3>Entrades</h3>Aquest edifici té {_entrances_count} entrades:{multi(_entrance_properties_with_width,Una <a href='#&LBRACEid&RBRACE'>entrada </a> de &LBRACEcanonical&LPARENSwidth&RPARENS&RBRACE,)}{_entrances_count_without_width_count} entrades encara no tenen informació d'amplada",
+            "cs": "<h3>Vchody</h3>Tato budova má {_entrances_count} vchodů:{multi(_entrance_properties_with_width,<a href='#&LBRACEid&RBRACE'>vchod</a> &LBRACEcanonical&LPARENSwidth&RPARENS&RBRACE,)}{_entrances_count_without_width_count} vchody zatím nemají informace o šířce",
+            "da": "<h3>Indgange</h3>Denne bygning har {_entrances_count} indgange:{multi(_entrance_properties_with_width,En <a href='#&LBRACEid&RBRACE'>indgang</a> på &LBRACEcanonical&LPARENSwidth&RPARENS&RBRACE,)}{_entrances_count_without_width_count} indgange har endnu ikke oplysninger om bredde",
+            "de": "<h3>Eingänge</h3>Das Gebäude hat {_entrances_count} Eingänge:{multi(_entrance_properties_with_width,Ein <a href='#&LBRACEid&RBRACE'>Eingang</a> von &LBRACEcanonical&LPARENSwidth&RPARENS&RBRACE,)}{_entrances_count_without_width_count} Eingänge haben keine Angaben zur Breite",
+            "en": "<h3>Entrances</h3>This building has {_entrances_count} entrances:{multi(_entrance_properties_with_width,An <a href='#&LBRACEid&RBRACE'>entrance</a> of &LBRACEcanonical&LPARENSwidth&RPARENS&RBRACE,)}{_entrances_count_without_width_count} entrances don't have width information yet",
+            "nl": "<h3>Ingangen</h3>Dit gebouw heeft {_entrances_count} ingangen:{multi(_entrance_properties_with_width,Een <a href='#&LBRACEid&RBRACE'>ingang</a> van &LBRACEcanonical&LPARENSwidth&RPARENS&RBRACE,)}{_entrances_count_without_width_count} ingangen hebben nog geen informatie over de breedte"
+          },
+          "mappings": [
+            {
+              "if": "_entrances_count=0",
+              "then": {
+                "en": "No entrance has been marked",
+                "de": "Es wurde kein Eingang markiert",
+                "da": "Der er ikke markeret nogen indgang",
+                "nl": "Geen ingang is gemarkeerd",
+                "ca": "No s'ha senyalitzat cap entrada",
+                "cs": "Nebyl označen žádný vchod"
+              }
+            },
+            {
+              "if": "_entrances_count_without_width:=_entrances_count",
+              "then": {
+                "en": "None of the {_entrance_count} entrances have width information yet",
+                "de": "Keiner der {_entrance_count} Eingänge hat bisher Angaben zur Breite",
+                "da": "Ingen af {_entrance_count}-indgangene har oplysninger om bredde endnu",
+                "nl": "Geen van de {_entrance_count} ingangen hebben al informatie over de breedte",
+                "ca": "Cap de les {_entrance_count} entrades té informació d'amplada encara",
+                "cs": "Žádný z {_entrance_count} vchodů zatím nemá informace o šířce"
+              }
+            }
+          ]
+        },
+        {
+          "id": "biggest_width",
+          "render": "The <a href='#{_biggest_width_id}'>entrance with the biggest width</a> is {canonical(_biggest_width)} wide",
+          "condition": "_biggest_width_id~*"
+        },
+        {
+          "id": "leftover-questions",
+          "render": {
+            "*": "{questions( ,)}"
+          }
+        },
+        {
+          "id": "lod",
+          "labels": [
+            "added_by_default"
+          ],
+          "render": {
+            "*": "{linked_data_from_website()}"
+          }
+        },
+        {
+          "id": "minimap",
+          "description": "Shows a small map with the feature. Added by default to every popup",
+          "render": {
+            "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+          }
+        },
+        {
+          "id": "last_edit",
+          "labels": [
+            "added_by_default"
+          ],
+          "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+          "condition": {
+            "and": [
+              "_last_edit:contributor~*",
+              "_last_edit:changeset~*"
+            ]
+          },
+          "metacondition": {
+            "or": [
+              "__featureSwitchIsTesting=true",
+              "__featureSwitchIsDebugging=true",
+              "mapcomplete-show_debug=yes",
+              "_csCount>=10"
+            ]
+          },
+          "render": {
+            "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+          }
+        },
+        {
+          "id": "favourite_status",
+          "render": {
+            "*": "{favourite_status()}"
+          }
+        },
+        {
+          "id": "qr_code",
+          "labels": [
+            "added_by_default"
+          ],
+          "classes": "flex items-center gap-x-2",
+          "render": {
+            "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+            "en": "{qr_code()}Scan this code to open this location on another device",
+            "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+            "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+          }
+        },
+        {
+          "id": "share",
+          "labels": [
+            "added_by_default"
+          ],
+          "metacondition": "_supports_sharing=yes",
+          "render": {
+            "de": "{share_link(,Standort teilen)}",
+            "en": "{share_link(,Share this location)}",
+            "nl": "{share_link(,Deel deze locatie)}"
+          }
+        },
+        {
+          "id": "all-tags",
+          "render": {
+            "*": "{all_tags()}"
+          },
+          "metacondition": {
+            "or": [
+              "__featureSwitchIsDebugging=true",
+              "mapcomplete-show_tags=full",
+              "mapcomplete-show_debug=yes"
+            ]
+          }
+        }
+      ],
+      "units": [
+        {
+          "width": {
+            "quantity": "distance",
+            "denominations": [
+              "m",
+              "cm"
+            ]
+          },
+          "_biggest_width": {
+            "quantity": "distance",
+            "denominations": [
+              "m",
+              "cm"
+            ]
+          }
+        }
+      ],
+      "titleIcons": [
+        {
+          "id": "wikipedialink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+          "condition": {
+            "or": [
+              "wikipedia~*",
+              "wikidata~*"
+            ]
+          },
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "wikipedia=",
+              "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+            }
+          ]
+        },
+        {
+          "id": "open_until",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "#": "Titleicon showing e.g. 'open until 17:00'",
+          "icon": {
+            "class": "w-20 mx-1 flex items-center"
+          },
+          "render": "{opening_hours_state()}",
+          "condition": {
+            "or": [
+              "opening_hours~*",
+              {
+                "or": [
+                  {
+                    "and": [
+                      "seasonal~.*winter.*",
+                      "_now:date~....-(12|01|02)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*spring.*",
+                      "_now:date~....-(03|04|05)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*summer.*",
+                      "_now:date~....-(06|07|08)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*autumn.*",
+                      "_now:date~....-(09|10|11)-.."
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "phonelink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.render"
+          },
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "contact:phone~*",
+              "then": {
+                "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+                "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+                "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+                "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+              }
+            }
+          ],
+          "condition": {
+            "or": [
+              "phone~*",
+              "contact:phone~*"
+            ]
+          }
+        },
+        {
+          "id": "emaillink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "contact:email~*",
+              "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "operator:email~*",
+              "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+            }
+          ],
+          "condition": {
+            "or": [
+              "email~*",
+              "contact:email~*",
+              "operator:email~*"
+            ]
+          }
+        },
+        {
+          "id": "websitelink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "website~*",
+              "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "operator:website~*",
+              "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "context:website~*",
+              "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            }
+          ]
+        },
+        {
+          "id": "smokingicon",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "smoking=no",
+              "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "smoking=yes",
+              "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+            }
+          ]
+        },
+        {
+          "id": "dogicon",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "if": "dog=no",
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+            },
+            {
+              "if": "dog=leashed",
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+            },
+            {
+              "if": {
+                "or": [
+                  "dog=yes",
+                  "dog=unleashed"
+                ]
+              },
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+            }
+          ]
+        },
+        {
+          "id": "sharelink",
+          "labels": [
+            "defaults"
+          ],
+          "render": "{share_link()}",
+          "metacondition": "_supports_sharing=yes"
+        },
+        {
+          "id": "favourite_title_icon",
+          "labels": [
+            "defaults"
+          ],
+          "render": {
+            "*": "{favourite_icon()}"
+          },
+          "metacondition": "_loggedIn=true"
+        },
+        {
+          "id": "osmlink",
+          "labels": [
+            "defaults"
+          ],
+          "render": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.render"
+          },
+          "mappings": [
+            {
+              "if": "id~.*/-.*",
+              "then": ""
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "_backend~*",
+              "then": {
+                "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+                "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+                "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+                "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+              }
+            }
+          ],
+          "condition": "id~(node|way|relation)/[0-9]*"
+        },
+        {
+          "id": "direction",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "{direction_indicator()}"
+        },
+        {
+          "id": "rating",
+          "icon": {
+            "class": "w-20 mx-1 flex items-center"
+          },
+          "render": "{rating()}"
+        }
+      ],
+      "_layerIcon": [],
+      "forceLoad": true
+    },
+    {
+      "id": "note_import_facadegardens",
+      "description": {
+        "ca": "Una capa que importa entrades per a Jardí vertical",
+        "cs": "Vrstva, která importuje položky pro Fasádní zahrada",
+        "da": "Et lag som importerer poster for Facadehave",
+        "de": "Eine Ebene, die Einträge für Fassadengarten importiert",
+        "en": "A layer which imports entries for Facade garden",
+        "es": "Una capa que importar entradas para Jardín de fachada",
+        "nl": "Deze laag toont kaart-nota's die wijzen op een Geveltuintje",
+        "pl": "Warstwa importująca wpisy dla Ogród fasadowy",
+        "zh_Hant": "能夠為 立面花園 匯入項目的圖層",
+        "_context": "core:importLayer.description"
+      },
+      "source": {
+        "osmTags": {
+          "and": [
+            "id~[0-9]+",
+            "comment_url~.*notes/[0-9]*/comment.json"
+          ]
+        },
+        "geoJson": "https://api.openstreetmap.org/api/0.6/notes.json?limit=10000&closed=0&bbox={x_min},{y_min},{x_max},{y_max}",
+        "geoJsonZoomLevel": 10
+      },
+      "passAllFeatures": true,
+      "minzoom": 10,
+      "title": {
+        "render": {
+          "ca": "Pot ser que hi hagi un jardí vertical aquí",
+          "cs": "Zde by mohl být fasádní zahrada",
+          "da": "Mulig en facadehave",
+          "de": "Möglicherweise gibt es hier eine fassadengarten",
+          "en": "There might be a facade garden here",
+          "es": "Puede haber un jardín de fachada aquí",
+          "fi": "Tässä on ehkä a facade garden",
+          "nb_NO": "Det kan være en fronthage her",
+          "nl": "Is hier een geveltuintje?",
+          "pl": "Tutaj może znajdować się ogród fasadowy",
+          "zh_Hant": "這裡可能有 a facade garden",
+          "_context": "core:importLayer.popupTitle"
+        }
+      },
+      "calculatedTags": [
+        "_first_comment=get(feat)('comments')[0].text.toLowerCase()",
+        "_trigger_index=(() => {const lines = feat.properties['_first_comment'].split('\\n'); const matchesMapCompleteURL = lines.map(l => l.match(\".*https://mapcomplete.\\(org|osm.be\\)/\\([a-zA-Z_-]+\\)\\(.html\\)?.*#import\")); const matchedIndexes = matchesMapCompleteURL.map((doesMatch, i) => [doesMatch !== null, i]).filter(v => v[0]).map(v => v[1]); return matchedIndexes[0] })()",
+        "_comments_count=get(feat)('comments').length",
+        "_intro=(() => {const lines = get(feat)('comments')[0].text.split('\\n'); lines.splice(get(feat)('_trigger_index')-1, lines.length); return lines.filter(l => l !== '').join('<br/>');})()",
+        "_tags=(() => {let lines = get(feat)('comments')[0].text.split('\\n').map(l => l.trim()); lines.splice(0, get(feat)('_trigger_index') + 1); lines = lines.filter(l => l != ''); return lines.join(';');})()"
+      ],
+      "isShown": {
+        "and": [
+          "_trigger_index~*",
+          {
+            "or": [
+              {
+                "and": [
+                  "_tags~(^|.*;)leisure=garden($|;.*)",
+                  "_tags~(^|.*;)garden:type=facade_garden($|;.*)"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "titleIcons": [
+        {
+          "render": "<a href='https://openstreetmap.org/note/{id}' target='_blank'><img src='./assets/svg/osm-logo-us.svg'></a>"
+        }
+      ],
+      "tagRenderings": [
+        {
+          "id": "Intro",
+          "render": "{_intro}"
+        },
+        {
+          "id": "conversation",
+          "render": "{visualize_note_comments(comments,1)}",
+          "condition": "_comments_count>1"
+        },
+        {
+          "id": "import",
+          "render": {
+            "ca": "{import_button(facadegardens, _tags, he trobat un un jardí vertical aquí; afegeix-lo al mapa,./assets/svg/addSmall.svg,,,id)}",
+            "cs": "{import_button(facadegardens, _tags, Našel jsem fasádní zahrada zde - přidejte ji do mapy,./assets/svg/addSmall.svg,,,id)}",
+            "da": "{import_button(facadegardens, _tags, Jeg har fundet en en facadehave her - tilføj den til kortet,./assets/svg/addSmall.svg,,,id)}",
+            "de": "{import_button(facadegardens, _tags, Ich habe hier ein(en) eine fassadengarten gefunden - Zur Karte hinzufügen,./assets/svg/addSmall.svg,,,id)}",
+            "en": "{import_button(facadegardens, _tags, I have found a a facade garden here - add it to the map,./assets/svg/addSmall.svg,,,id)}",
+            "es": "{import_button(facadegardens,_tags, He encontrado un(a) un jardín de fachada aquí - añádelo al mapa,./assets/svg/addSmall.svg,,,id)}",
+            "nl": "{import_button(facadegardens, _tags, Ik heb hier een een geveltuintje gevonden - voeg deze toe aan de kaart...,./assets/svg/addSmall.svg,,,id)}",
+            "pl": "{import_button(facadegardens, _tags, odnalazłem tutaj ogród fasadowy - dodaj go do mapy,./assets/svg/addSmall.svg,,,id)}",
+            "zh_Hant": "{import_button(facadegardens, _tags, 我在這邊發現 a facade garden - 新增到地圖,./assets/svg/addSmall.svg,,,id)}",
+            "_context": "core:importLayer.importButton"
+          },
+          "condition": "closed_at="
+        },
+        {
+          "id": "close_note_",
+          "render": {
+            "ca": "{close_note(No he pogut trobar un jardí vertical: esborra-ho, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "cs": "{close_note(Nepodařilo se mi najít fasádní zahrada - odstraňte jej, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "da": "{close_note(Jeg kunne ikke finde en facadehave - fjern det, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "de": "{close_note(Ich konnte eine fassadengarten nicht finden - entferne es, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "en": "{close_note(I could not find a facade garden - remove it, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "es": "{close_note(No he podido encontrar un jardín de fachada - eliminarlo, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "nl": "{close_note(Ik kon hier geen een geveltuintje vinden - verwijder deze van de kaart, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "pl": "{close_note(Nie mogłem odnaleźć ogród fasadowy – usuń go, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "zh_Hant": "{close_note(我無法找到 a facade garden - 移除吧, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "_context": "core:importLayer.notFound"
+          },
+          "condition": "closed_at="
+        },
+        {
+          "id": "close_note_mapped",
+          "render": {
+            "ca": "{close_note(Ja hi ha un un jardí vertical al mapa - aquest punt és un duplicat, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "cs": "{close_note(Na mapě se již nachází fasádní zahrada - tento bod je duplicitní, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "da": "{close_note(Der er allerede en anden en facadehave på kortet - dette punkt er en dublet, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "de": "{close_note(Es gibt bereits einen eine fassadengarten auf der Karte - dieser Punkt ist ein Duplikat, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "en": "{close_note(There already is a facade garden on the map - this point is a duplicate, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "es": "{close_note(un jardín de fachada ya está en el mapa - este punto es un duplicado, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "nl": "{close_note(Er staat hier reeds een geveltuintje op de kaart; dit punt is een duplicaat. Verwijder deze van de kaart, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "pl": "{close_note(Na mapie znajduje się już ogród fasadowy - ten punkt jest duplikatem, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "zh_Hant": "{close_note(a facade garden 已經在地圖上了 - 這個點重覆了, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "_context": "core:importLayer.alreadyMapped"
+          },
+          "condition": "closed_at="
+        },
+        {
+          "id": "handled",
+          "render": {
+            "ca": "<div class=\"thanks\">Aquesta funció s'ha gestionat. Gràcies pel teu esforç.</div>",
+            "cs": "<div class='thanks'>Tato funkce byla zpracována! Děkujeme za vaši snahu</div>",
+            "da": "<div class=\"thanks\">Dette element er blevet håndteret! Tak for din indsats</div>",
+            "de": "<div class=\"thanks\">Dieses Objekt wurde verarbeitet! Vielen Dank für Ihre Bemühungen</div>",
+            "en": "<div class='thanks'>This feature has been handled! Thanks for your effort</div>",
+            "nb_NO": "<div class='thanks'>Denne funksjonen har blitt håndtert. Takk for din innsats.</div>",
+            "nl": "<div class='thanks'>Dit object is afgehandeld. Bedankt om mee te helpen!</div>",
+            "pl": "<div class='thanks'>Ta funkcja została obsłużona! Dziękujemy za Twój wysiłek</div>",
+            "zh_Hant": "<div class='thanks'>這個圖徵已經處理了！謝謝你的辛勞</div>",
+            "_context": "core:importLayer.importHandled"
+          },
+          "condition": "closed_at~*"
+        },
+        {
+          "id": "comment",
+          "render": "{add_note_comment()}"
+        },
+        {
+          "id": "add_image",
+          "render": "{add_image_to_note()}"
+        },
+        {
+          "id": "nearby_images",
+          "render": {
+            "ca": "<h3>Imatges properes</h3>Les imatges següents són imatges geoetiquetades properes de diversos serveis en línia. Us poden ajudar a resoldre aquesta nota.{nearby_images(open)}",
+            "cs": "<h3>Obrázky z okolí</h3>Následující obrázky jsou geograficky označené obrázky z různých online služeb. Mohly by vám pomoci při řešení této poznámky.{nearby_images(open)}",
+            "da": "<h3>Billeder i nærheden</h3>De følgende billeder er geotaggede billeder i nærheden fra forskellige onlinetjenester. De kan måske hjælpe dig med at løse denne note.{nearby_images(open)}",
+            "de": "<h3>Bilder in der Nähe</h3>Die folgenden Bilder sind mit Geotags versehene Bilder aus verschiedenen Online-Diensten in der Nähe. Sie können helfen, diesen Hinweis zu lösen.{nearby_images(open)}",
+            "en": "<h3>Nearby pictures</h3>The following pictures are nearby geotagged pictures from various online services. They might help you to resolve this note.{nearby_images(open)}",
+            "es": "<h3>Imágenes cercanas</h3> Las siguientes imágenes son imágenes geoetiquetadas cerca de varios servicios en línea. Pueden ayudarte a resolver esta nota. {nearby_images(open)}",
+            "nl": "<h3>Afbeeldingen in de buurt</h3>De volgende afbeeldingen zijn in de buurt gemaakt en kunnen mogelijks helpen. {nearby_images(open)}",
+            "pl": "<h3>Zdjęcia w pobliżu</h3>Poniższe zdjęcia to zdjęcia pobliskich obiektów z geotagami z różnych usług internetowych. Mogą pomóc Ci rozwiązać tę uwagę.{nearby_images(open)}",
+            "zh_Hant": "<h3>附近圖片</h3>接下來的圖片是多個第三方線上服務附近有地理標籤的圖片，也許能協助你解決這個註解。{nearby_images(open)}",
+            "_context": "core:importLayer.nearbyImagesIntro"
+          }
+        },
+        {
+          "id": "all_tags",
+          "render": "{all_tags()}",
+          "metacondition": {
+            "or": [
+              "__featureSwitchIsDebugging=true",
+              "mapcomplete-show_tags=full",
+              "mapcomplete-show_debug=yes"
+            ]
+          }
+        }
+      ],
+      "pointRendering": [
+        {
+          "location": [
+            "point"
+          ],
+          "marker": [
+            {
+              "icon": "circle",
+              "color": "#fff"
+            },
+            {
+              "icon": {
+                "render": "help",
+                "mappings": [
+                  {
+                    "if": {
+                      "or": [
+                        "closed_at~*",
+                        "_imported=yes"
+                      ]
+                    },
+                    "then": "checkmark"
+                  }
+                ]
+              },
+              "color": "#00"
+            }
+          ],
+          "iconSize": "40,40",
+          "anchor": "center"
+        }
+      ]
+    }
+  ],
+  "widenFactor": 1.5,
+  "socialImage": "assets/SocialImage.png"
+}

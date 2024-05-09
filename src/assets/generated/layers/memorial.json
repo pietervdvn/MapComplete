@@ -1,0 +1,1740 @@
+{
+  "id": "memorial",
+  "name": {
+    "en": "Memorials",
+    "de": "Denkmäler"
+  },
+  "description": "Layer showing memorial plaques, based upon a unofficial theme. Can be expanded to have multiple types of memorials later on",
+  "source": {
+    "osmTags": {
+      "and": [
+        {
+          "or": [
+            "memorial~*",
+            "historic=memorial"
+          ]
+        }
+      ]
+    }
+  },
+  "minzoom": 9,
+  "title": {
+    "render": {
+      "en": "Memorial plaque",
+      "ca": "Placa commemorativa",
+      "cs": "Pamětní deska",
+      "de": "Gedenktafel"
+    },
+    "mappings": [
+      {
+        "if": "memorial=plaque",
+        "then": {
+          "en": "Memorial plaque",
+          "de": "Gedenktafel",
+          "ca": "Placa commemorativa",
+          "cs": "Pamětní deska"
+        }
+      }
+    ]
+  },
+  "pointRendering": [
+    {
+      "location": [
+        "centroid",
+        "point"
+      ],
+      "marker": [
+        {
+          "icon": {
+            "render": "circle",
+            "id": "circle"
+          },
+          "color": "white"
+        },
+        {
+          "icon": {
+            "render": "./assets/layers/memorial/memorial.svg",
+            "mappings": [
+              {
+                "if": "memorial=plaque",
+                "then": "./assets/layers/memorial/plaque.svg"
+              },
+              {
+                "if": {
+                  "or": [
+                    "memorial=bench",
+                    "amenity=bench"
+                  ]
+                },
+                "then": "./assets/layers/bench/bench.svg"
+              }
+            ]
+          }
+        }
+      ],
+      "iconBadges": [
+        {
+          "if": "_favourite=yes",
+          "then": "circle:white;heart:red"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [],
+  "presets": [
+    {
+      "title": {
+        "en": "a memorial",
+        "de": "ein Denkmal"
+      },
+      "tags": [
+        "historic=memorial"
+      ]
+    }
+  ],
+  "tagRenderings": [
+    {
+      "id": "just_created",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "This element shows a 'thank you' that the contributor has recently created this element",
+      "classes": "rounded-xl thanks",
+      "mappings": [
+        {
+          "if": "id~*",
+          "icon": "./assets/svg/party.svg",
+          "then": {
+            "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+            "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+            "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+            "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+            "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+            "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+          }
+        }
+      ],
+      "condition": {
+        "and": [
+          "_backend~*",
+          "_last_edit:passed_time<300",
+          {
+            "or": [
+              "_version_number=",
+              "_version_number=1"
+            ]
+          }
+        ]
+      },
+      "metacondition": {
+        "and": [
+          {
+            "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+            "or": [
+              "_last_edit:contributor:uid:={_uid}",
+              "_last_edit:contributor:uid="
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "images",
+      "description": "This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images",
+      "render": {
+        "*": "{image_carousel()}{image_upload()}{nearby_images():my-4}"
+      },
+      "classes": "my-4"
+    },
+    {
+      "id": "memorial-type",
+      "question": {
+        "en": "What type of memorial is this?",
+        "de": "Was für eine Art von Denkmal ist das?"
+      },
+      "mappings": [
+        {
+          "if": "memorial=statue",
+          "then": {
+            "en": "This is a statue",
+            "de": "Das ist eine Statue"
+          },
+          "addExtraTags": [
+            "tourism=artwork",
+            "artwork=statue"
+          ]
+        },
+        {
+          "if": "memorial=plaque",
+          "then": {
+            "en": "This is a plaque",
+            "de": "Dies ist eine Gedenktafel"
+          }
+        },
+        {
+          "if": "memorial=bench",
+          "then": {
+            "en": "This is a commemorative bench",
+            "de": "Dies ist eine Gedenkbank"
+          },
+          "addExtraTags": [
+            "amenity=bench"
+          ]
+        },
+        {
+          "if": "memorial=ghost_bike",
+          "then": {
+            "en": "This is a ghost bike - a bicycle painted white to remember a cyclist whom deceased because of a car crash",
+            "de": "Dies ist ein Geisterrad - ein Fahrrad weiß lackiert, um an einen Radfahrer zu erinnern, der wegen eines Autounfalls verstorben ist"
+          }
+        },
+        {
+          "if": "memorial=stolperstein",
+          "alsoShowIf": "memorial:type=stolperstein",
+          "then": {
+            "en": "This is a stolperstein (stumbing stone)",
+            "de": "Dies ist ein Stolperstein"
+          }
+        },
+        {
+          "if": "memorial=stele",
+          "then": {
+            "en": "This is a stele",
+            "de": "Das ist eine Stele"
+          }
+        },
+        {
+          "if": "memorial=stone",
+          "then": {
+            "en": "This is a memorial stone",
+            "de": "Das ist ein Gedenkstein"
+          }
+        },
+        {
+          "if": "memorial=bust",
+          "then": {
+            "en": "This is a bust",
+            "de": "Das ist eine Büste"
+          }
+        },
+        {
+          "if": "memorial=sculpture",
+          "then": {
+            "en": "This is a sculpture",
+            "de": "Dies ist eine Skulptur"
+          }
+        },
+        {
+          "if": "memorial=obelisk",
+          "then": {
+            "en": "This is an obelisk",
+            "de": "Das ist ein Obelisk",
+            "es": "Es un obelisco"
+          }
+        },
+        {
+          "if": "memorial=cross",
+          "then": {
+            "en": "This is a cross",
+            "de": "Das ist ein Kreuz",
+            "es": "Es una cruz"
+          }
+        },
+        {
+          "if": "memorial=blue_plaque",
+          "then": {
+            "en": "This is a blue plaque",
+            "de": "Dies ist eine blaue Plaque"
+          },
+          "onlyShowIf": "_country=gb"
+        },
+        {
+          "if": "memorial=tank",
+          "then": {
+            "en": "This is a historic tank, permanently placed in public space as memorial",
+            "de": "Dies ist ein historischer Panzer, der permanent in den öffentlichen Raum als Denkmal platziert wurde"
+          }
+        },
+        {
+          "if": "memorial=tree",
+          "then": {
+            "en": "This is a memorial tree",
+            "de": "Das ist ein Baumdenkmal"
+          },
+          "addExtraTags": [
+            "natural=tree"
+          ]
+        }
+      ],
+      "render": {
+        "en": "This is a {memorial}",
+        "de": "Das ist ein {memorial}"
+      },
+      "freeform": {
+        "key": "memorial",
+        "inline": true
+      }
+    },
+    {
+      "id": "inscription",
+      "question": {
+        "en": "What is the inscription of this plaque?",
+        "ca": "Quina és la inscripció d'aquesta placa?",
+        "cs": "Jaký je nápis na této desce?",
+        "de": "Wie lautet die Inschrift auf dieser Gedenktafel?"
+      },
+      "#:condition": "Benches have a separate inscription question",
+      "condition": "memorial!=bench",
+      "render": {
+        "en": "The inscription on this plaque reads: <p><i>{inscription}<i></p>",
+        "ca": "La inscripció d'aquesta placa diu: <p><i>{inscription}<i></p>",
+        "cs": "Nápis na této desce zní: <p><i>{inscription}<i></p>",
+        "de": "Die Inschrift auf dieser Gedenktafel lautet: <p><i>{inscription}<i></p>"
+      },
+      "freeform": {
+        "key": "inscription",
+        "type": "text",
+        "inline": true
+      },
+      "mappings": [
+        {
+          "if": "not:inscription=yes",
+          "then": {
+            "en": "This memorial does not have an inscription",
+            "de": "Dieses Denkmal hat keine Inschrift"
+          },
+          "addExtraTags": [
+            "inscription="
+          ]
+        }
+      ]
+    },
+    {
+      "id": "memorial-wikidata",
+      "freeform": {
+        "key": "wikidata",
+        "type": "wikidata",
+        "inline": false
+      },
+      "question": {
+        "en": "What is the Wikipedia page about this memorial?",
+        "de": "Was ist die Wikipedia-Seite über dieses Denkmal?"
+      },
+      "questionHint": {
+        "en": "This is a about the memorial itself, not about the person or event that the memorial remembers. If this memorial does not have a Wikipedia page or Wikidata entity, skip this question.",
+        "de": "Hier geht es um das Denkmal selbst, nicht um die Person oder das Ereignis, an das die Denkmal erinnert. Wenn diese Gedenkstätte keine Wikipedia-Seite oder Wikidata-Entität hat, überspringe diese Frage."
+      },
+      "render": {
+        "de": "<h3>Wikipedia-Seite über das Denkmal</h3>{wikipedia(wikidata)}",
+        "en": "<h3>Wikipedia page about the memorial</h3>{wikipedia(wikidata)}"
+      }
+    },
+    {
+      "id": "subject-wikidata",
+      "freeform": {
+        "key": "subject:wikidata",
+        "type": "wikidata",
+        "helperArgs": [
+          "subject;memorial:conflict"
+        ],
+        "inline": false
+      },
+      "question": {
+        "en": "What is the Wikipedia page about the person or event that is remembered here?",
+        "de": "Was ist die Wikipedia-Seite über die Person oder Veranstaltung, die hier erinnert wird?"
+      },
+      "questionHint": {
+        "en": "If the person or event does not have a Wikipedia page or Wikidata entity, skip this question.",
+        "de": "Wenn die Person oder das Ereignis keine Wikipedia-Seite oder Wikidata-Entität hat, überspringe diese Frage."
+      },
+      "render": {
+        "de": "<h3>Wikipedia-Seite über das erinnerte Ereignis oder die Person</h3>{wikipedia(subject:wikidata)}",
+        "en": "<h3>Wikipedia page about the remembered event or person</h3>{wikipedia(subject:wikidata)}"
+      }
+    },
+    {
+      "question": {
+        "en": "When was this memorial installed?",
+        "de": "Wann wurde dieses Denkmal installiert?"
+      },
+      "render": {
+        "nl": "Geplaatst op {start_date}",
+        "en": "Placed on {start_date}",
+        "it": "Piazzata in data {start_date}",
+        "fr": "Placé le {start_date}",
+        "ru": "Установлен {start_date}",
+        "de": "Aufgestellt am {start_date}",
+        "ca": "Col·locat el {start_date}",
+        "cs": "Umístěno {start_date}"
+      },
+      "freeform": {
+        "key": "start_date",
+        "type": "date",
+        "inline": true
+      },
+      "id": "start_date"
+    },
+    {
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "backrest=yes",
+              "two_sided=yes"
+            ]
+          },
+          "then": {
+            "en": "This bench is two-sided and shares the backrest",
+            "nl": "Dit is een dubbele bank waarbij de rugleuning gedeeld wordt",
+            "de": "Diese Bank ist zweiseitig und teilt sich die Rückenlehne",
+            "ca": "Aquest banc té dues cares i comparteix el respatller",
+            "cs": "Tato lavička je oboustranná a má společné opěradlo",
+            "es": "Este banco tiene dos caras y comparte el respaldo",
+            "he": "ספסל זה דו צדדי וחולק את משענת הגב",
+            "fr": "Ce banc a deux côtés avec un dossier partagé",
+            "pl": "Ta ławka jest dwustronna ze wspólnym oparciem",
+            "pt_BR": "Esse banco é de dois lados e compartilha o encosto",
+            "pt": "Esse banco é de dois lados e partilha o encosto",
+            "_context": "layers:bench.tagRenderings.bench-backrest.mappings.0.then"
+          },
+          "icon": {
+            "path": "./assets/layers/bench/two_sided.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "backrest=yes",
+          "then": {
+            "en": "This bench does have a backrest",
+            "de": "Diese Sitzbank hat eine Rückenlehne",
+            "fr": "Dossier : Oui",
+            "nl": "Heeft een rugleuning",
+            "es": "Tiene respaldo",
+            "hu": "Van háttámlája",
+            "id": "Sandaran: Ya",
+            "it": "Schienale: Sì",
+            "ru": "Со спинкой",
+            "zh_Hans": "有靠背",
+            "zh_Hant": "靠背：有",
+            "nb_NO": "Rygglene: Ja",
+            "fi": "Selkänoja: kyllä",
+            "pl": "Oparcie: Tak",
+            "pt_BR": "Tem encosto",
+            "pt": "Encosto: Sim",
+            "ca": "Té espatller",
+            "da": "Har et ryglæn",
+            "cs": "Má opěradlo",
+            "he": "יש משענת גב",
+            "_context": "layers:bench.tagRenderings.bench-backrest.mappings.1.then"
+          },
+          "addExtraTags": [
+            "two_sided=no"
+          ]
+        },
+        {
+          "if": "backrest=no",
+          "addExtraTags": [
+            "two_sided="
+          ],
+          "then": {
+            "en": "This bench does <b>not</b> have a backrest",
+            "de": "Diese Sitzbank hat <b>keine</b> Rückenlehne",
+            "fr": "Dossier : Non",
+            "nl": "Heeft <b>geen</b> rugleuning",
+            "es": "<b>No</b> tiene respaldo",
+            "hu": "<b>Nincs</b> háttámlája",
+            "id": "Sandaran: Tidak",
+            "it": "Schienale: No",
+            "ru": "Без спинки",
+            "zh_Hans": "<b>没有</b>靠背",
+            "zh_Hant": "靠背：無",
+            "nb_NO": "Rygglene: Nei",
+            "fi": "Selkänoja: ei",
+            "pl": "<b>Nie</b> posiada oparcia",
+            "pt_BR": "<b>Não</b> tem encosto",
+            "pt": "Não <b>not</b> tem um encosto",
+            "ca": "<b>No</b> té espatller",
+            "da": "Har <b>ikke</b> et ryglæn",
+            "cs": "<b>nemá</b> opěradlo",
+            "_context": "layers:bench.tagRenderings.bench-backrest.mappings.2.then"
+          }
+        }
+      ],
+      "question": {
+        "en": "Does this bench have a backrest?",
+        "de": "Hat diese Sitzbank eine Rückenlehne?",
+        "fr": "Ce banc dispose-t-il d'un dossier ?",
+        "nl": "Heeft deze zitbank een rugleuning?",
+        "es": "¿Este banco tiene respaldo?",
+        "hu": "Van-e háttámlája ennek a padnak?",
+        "id": "Apakah bangku ini memiliki sandaran?",
+        "it": "Questa panchina ha lo schienale?",
+        "ru": "Есть ли у этой скамейки спинка?",
+        "zh_Hans": "这个长椅有靠背吗？",
+        "zh_Hant": "這個長椅是否有靠背？",
+        "nb_NO": "Har denne beken et rygglene?",
+        "pl": "Czy ta ławka ma oparcie?",
+        "pt_BR": "Esse banco tem um encosto?",
+        "pt": "Este assento tem um escosto?",
+        "da": "Har denne bænk et ryglæn?",
+        "cs": "Má tato lavička opěradlo?",
+        "ca": "Aquest banc té respatller?",
+        "he": "האם לספסל הזה יש משענת?",
+        "_context": "layers:bench.tagRenderings.bench-backrest.question"
+      },
+      "id": "bench-backrest",
+      "labels": [
+        "bench-questions"
+      ],
+      "condition": {
+        "and": [
+          "amenity=bench"
+        ]
+      }
+    },
+    {
+      "render": {
+        "en": "This bench has {seats} seats",
+        "de": "Diese Sitzbank hat {seats} Sitzplätze",
+        "fr": "{seats} places",
+        "nl": "{seats} zitplaatsen",
+        "es": "{seats} asientos",
+        "hu": "{seats} ülőhely",
+        "id": "{seats} kursi",
+        "it": "{seats} posti",
+        "ru": "{seats} мест",
+        "zh_Hant": "{seats} 座位數",
+        "nb_NO": "{seats} seter",
+        "pl": "{seats} siedzeń",
+        "pt_BR": "{seats} assentos",
+        "pt": "{seats} lugares",
+        "ca": "{seats} seients",
+        "da": "{seats} pladser",
+        "cs": "{seats} míst k sezení",
+        "zh_Hans": "{seats}座",
+        "he": "{seats} מושבים",
+        "_context": "layers:bench.tagRenderings.bench-seats.render"
+      },
+      "freeform": {
+        "key": "seats",
+        "type": "nat",
+        "addExtraTags": [
+          "seats:separated="
+        ],
+        "inline": true
+      },
+      "question": {
+        "en": "How many seats does this bench have?",
+        "de": "Wie viele Sitzplätze hat diese Bank?",
+        "fr": "De combien de places dispose ce banc ?",
+        "nl": "Hoeveel zitplaatsen heeft deze bank?",
+        "es": "¿Cuántos asientos tiene este banco?",
+        "hu": "Hány ülőhely van ezen a padon?",
+        "it": "Quanti posti ha questa panchina?",
+        "ru": "Сколько мест на этой скамейке?",
+        "zh_Hans": "这个长椅有几个座位？",
+        "zh_Hant": "這個長椅有幾個位子？",
+        "nb_NO": "Hvor mange sitteplasser har denne benken?",
+        "pl": "Ile siedzeń ma ta ławka?",
+        "pt_BR": "Quantos assentos este banco tem?",
+        "pt": "Quantos lugares este banco tem?",
+        "da": "Hvor mange pladser har denne bænk?",
+        "cs": "Kolik má tato lavice míst k sezení?",
+        "ca": "Quants seients té aquest banc?",
+        "he": "כמה מושבים יש לספסל הזה?",
+        "_context": "layers:bench.tagRenderings.bench-seats.question"
+      },
+      "id": "bench-seats",
+      "labels": [
+        "bench-questions"
+      ],
+      "mappings": [
+        {
+          "if": "seats:separated=no",
+          "addExtraTags": [
+            "seats="
+          ],
+          "then": {
+            "en": "This bench does not have separated seats",
+            "nl": "Deze bank is niet ingedeeld in aparte zitplaatsen",
+            "de": "Diese Bank hat keine getrennten Sitze",
+            "fr": "Ce banc n'a pas de sièges séparés",
+            "es": "Este banco no tiene asientos separados",
+            "ca": "Aquest banc no té els seients separats",
+            "cs": "Tato lavička nemá oddělená sedadla",
+            "pt": "Este banco não tem assentos separados",
+            "pt_BR": "Esse banco não tem assentos separados",
+            "_context": "layers:bench.tagRenderings.bench-seats.mappings.0.then"
+          }
+        }
+      ],
+      "condition": {
+        "and": [
+          "amenity=bench"
+        ]
+      }
+    },
+    {
+      "render": {
+        "en": "Material: {material}",
+        "de": "Material: {material}",
+        "fr": "Matériau : {material}",
+        "nl": "Gemaakt van {material}",
+        "es": "Material: {material}",
+        "hu": "Anyag: {material}",
+        "it": "Materiale: {material}",
+        "ru": "Материал: {material}",
+        "zh_Hant": "材質：{material}",
+        "nb_NO": "Materiale: {material}",
+        "fi": "Materiaali: {material}",
+        "zh_Hans": "材质: {material}",
+        "pl": "Materiał: {material}",
+        "pt_BR": "Material: {material}",
+        "pt": "Material: {material}",
+        "eo": "Materialo: {material}",
+        "ca": "Material: {material}",
+        "da": "Materiale: {material}",
+        "cs": "Materiál: {material}",
+        "he": "חומר: {material}",
+        "_context": "layers:bench.tagRenderings.bench-material.render"
+      },
+      "freeform": {
+        "key": "material",
+        "inline": true
+      },
+      "mappings": [
+        {
+          "if": "material=wood",
+          "then": {
+            "en": "The seating is made from wood",
+            "de": "Die Sitzfläche ist aus Holz",
+            "fr": "L'assise est en bois",
+            "nl": "Gemaakt uit hout",
+            "es": "El asiento está hecho de madera",
+            "hu": "Ülőfelület: fa",
+            "it": "Materiale: legno",
+            "ru": "Материал: дерево",
+            "zh_Hans": "座椅是木制的",
+            "nb_NO": "Materiale: tre",
+            "zh_Hant": "材質：木頭",
+            "pt_BR": "Material: madeira",
+            "fi": "Materiaali: puu",
+            "pl": "Siedzisko wykonane jest z drewna",
+            "pt": "Material: madeira",
+            "eo": "Materialo: ligna",
+            "ca": "El seient està fet de fusta",
+            "da": "Siddepladserne er lavet af træ",
+            "cs": "Sedací část je vyrobena ze dřeva",
+            "he": "מקום הישיבה עשוי מעץ",
+            "_context": "layers:bench.tagRenderings.bench-material.mappings.0.then"
+          }
+        },
+        {
+          "if": "material=metal",
+          "then": {
+            "en": "The seating is made from metal",
+            "de": "Die Sitzfläche ist aus Metall",
+            "fr": "L'assise est en métal",
+            "nl": "Gemaakt uit metaal",
+            "es": "El asiento está hecho de metal",
+            "hu": "Ülőfelület: fém",
+            "it": "Materiale: metallo",
+            "ru": "Материал: металл",
+            "zh_Hans": "座椅是金属制的",
+            "nb_NO": "Materiale: metall",
+            "zh_Hant": "材質：金屬",
+            "pl": "Siedzisko wykonane jest z metalu",
+            "pt_BR": "Material: metal",
+            "pt": "Material: metal",
+            "eo": "Materialo: metala",
+            "ca": "El seient està fet de metall",
+            "da": "Sædet er lavet af metal",
+            "cs": "Sedací část je vyrobena z kovu",
+            "he": "מקום הישיבה עשוי מתכת",
+            "_context": "layers:bench.tagRenderings.bench-material.mappings.1.then"
+          }
+        },
+        {
+          "if": "material=stone",
+          "then": {
+            "en": "The seating is made from stone",
+            "de": "Die Sitzfläche ist aus Stein",
+            "fr": "L'assise est en pierre",
+            "nl": "Het zitgedeelte is gemaakt uit steen",
+            "es": "El asiento está hecho de piedra",
+            "hu": "Ülőfelület: kő",
+            "it": "Materiale: pietra",
+            "ru": "Материал: камень",
+            "zh_Hans": "座椅是石制的",
+            "nb_NO": "Materiale: stein",
+            "zh_Hant": "材質：石頭",
+            "pt_BR": "Material: pedra",
+            "fi": "Materiaali: kivi",
+            "pl": "Siedzisko wykonane jest z kamienia",
+            "pt": "Material: pedra",
+            "eo": "Materialo: ŝtona",
+            "ca": "El seient està fet de pedra",
+            "da": "Siddepladserne er lavet af sten",
+            "cs": "Sedací část je vyrobena z kamene",
+            "he": "מקום הישיבה עשוי אבן",
+            "_context": "layers:bench.tagRenderings.bench-material.mappings.2.then"
+          }
+        },
+        {
+          "if": "material=concrete",
+          "then": {
+            "en": "The seating is made from concrete",
+            "de": "Die Sitzfläche ist aus Beton",
+            "fr": "Matériau du siège : béton",
+            "nl": "Het zitgedeelte is gemaakt uit beton",
+            "es": "El asiento está hecho de hormigón",
+            "hu": "Ülőfelület: beton",
+            "it": "Materiale: cemento",
+            "ru": "Материал: бетон",
+            "zh_Hans": "座椅是混凝土制的",
+            "nb_NO": "Materiale: betong",
+            "zh_Hant": "材質：水泥",
+            "pt_BR": "Material: concreto",
+            "fi": "Materiaali: betoni",
+            "pl": "Siedzisko wykonane jest z betonu",
+            "pt": "Material: concreto",
+            "eo": "Materialo: betona",
+            "ca": "El seient està fet de ciment",
+            "da": "Siddepladserne er lavet af beton",
+            "cs": "Sedací část je vyrobena z betonu",
+            "he": "מקום הישיבה עשוי בטון",
+            "_context": "layers:bench.tagRenderings.bench-material.mappings.3.then"
+          }
+        },
+        {
+          "if": "material=plastic",
+          "then": {
+            "en": "The seating is made from plastic",
+            "de": "Die Sitzfläche ist aus Kunststoff",
+            "fr": "L'assise est en plastique",
+            "nl": "Het zitgedeelte is gemaakt uit plastiek",
+            "es": "El asiento está hecho de plástico",
+            "hu": "Ülőfelület: műanyag",
+            "it": "Materiale: plastica",
+            "ru": "Материал: пластик",
+            "zh_Hans": "座椅是塑料制的",
+            "nb_NO": "Materiale: plastikk",
+            "zh_Hant": "材質：塑膠",
+            "pt_BR": "Material: plástico",
+            "fi": "Materiaali: muovi",
+            "pl": "Siedzisko wykonane jest z tworzywa sztucznego",
+            "pt": "Material: plástico",
+            "eo": "Materialo: plasta",
+            "ca": "El seient està fet de plàstic",
+            "da": "Sædet er lavet af plastik",
+            "cs": "Sedací část je vyrobena z plastu",
+            "he": "מקום הישיבה עשוי פלסטיק",
+            "_context": "layers:bench.tagRenderings.bench-material.mappings.4.then"
+          }
+        },
+        {
+          "if": "material=steel",
+          "then": {
+            "en": "The seating is made from steel",
+            "de": "Die Sitzfläche ist aus Stahl",
+            "fr": "L'assise est en acier",
+            "nl": "Het zitgedeelte is gemaakt uit staal",
+            "es": "El asiento está hecho de acero",
+            "hu": "Ülőfelület: acél",
+            "it": "Materiale: acciaio",
+            "ru": "Материал: сталь",
+            "zh_Hans": "座椅是不锈钢制的",
+            "nb_NO": "Materiale: stål",
+            "zh_Hant": "材質：鋼鐵",
+            "pt_BR": "Material: aço",
+            "fi": "Materiaali: teräs",
+            "pl": "Siedzisko wykonane jest ze stali",
+            "pt": "Material: aço",
+            "eo": "Materialo: ŝtala",
+            "ca": "El seient està fet d'acer",
+            "da": "Siddepladserne er lavet af stål",
+            "cs": "Sedací část je vyrobena z oceli",
+            "he": "מקום הישיבה עשוי פלדה",
+            "_context": "layers:bench.tagRenderings.bench-material.mappings.5.then"
+          }
+        }
+      ],
+      "question": {
+        "en": "What is the bench (seating) made from?",
+        "de": "Aus welchem Material ist die Sitzfläche der Bank?",
+        "fr": "De quel matériau ce banc est-il fait ?",
+        "nl": "Uit welk materiaal is het zitgedeelte van deze zitbank gemaakt?",
+        "hu": "Miből van a pad (ülőfelülete)?",
+        "it": "Di che materiale è fatta questa panchina?",
+        "zh_Hans": "这个长椅（或座椅）是用什么材料做的？",
+        "ru": "Из какого материала сделана скамейка?",
+        "zh_Hant": "這個長椅 (座位) 是什麼做的？",
+        "pt_BR": "De que é feito o banco (assento)?",
+        "pl": "Z czego wykonana jest ławka (siedzisko)?",
+        "pt": "De que é feito o banco (assento)?",
+        "es": "¿De que está hecho el banco (asiento)?",
+        "da": "Hvad er bænken (sædet) lavet af?",
+        "cs": "Z čeho je vyrobena lavice (sedadlo)?",
+        "ca": "De què està fent el banc (seient)?",
+        "he": "ממה עשוי הספסל (המושב)?",
+        "_context": "layers:bench.tagRenderings.bench-material.question"
+      },
+      "id": "bench-material",
+      "labels": [
+        "bench-questions"
+      ],
+      "condition": {
+        "and": [
+          "amenity=bench"
+        ]
+      }
+    },
+    {
+      "question": {
+        "en": "In which direction are you looking when sitting on the bench?",
+        "de": "In welche Richtung schaut man, wenn man auf der Bank sitzt?",
+        "nl": "In welke richting kijk je wanneer je op deze zitbank zit?",
+        "fr": "Dans quelle direction regardez-vous quand vous êtes assis sur le banc ?",
+        "hu": "Milyen irányba néz a pad?",
+        "it": "In che direzione si guarda quando si è seduti su questa panchina?",
+        "ru": "В каком направлении вы смотрите, когда сидите на скамейке?",
+        "zh_Hans": "坐在长椅上的时候你目视的方向是哪边？",
+        "zh_Hant": "坐在長椅時是面對那個方向？",
+        "pt_BR": "Em que direção você olha quando está sentado no banco?",
+        "pl": "W jakim kierunku patrzysz siedząc na ławce?",
+        "pt": "Em que direção olha quando está sentado no banco?",
+        "es": "¿En qué dirección miras sentado en el banco?",
+        "da": "I hvilken retning kigger du, når du sidder på bænken?",
+        "cs": "Kterým směrem se díváte, když sedíte na lavičce?",
+        "ca": "En quina direcció mires asseguts al banc?",
+        "_context": "layers:bench.tagRenderings.bench-direction.question"
+      },
+      "render": {
+        "en": "When sitting on the bench, one looks towards {direction}°.",
+        "de": "Wenn man auf der Bank sitzt, schaut man in Richtung {direction}°.",
+        "nl": "Wanneer je op deze bank zit, dan kijk je in {direction}°.",
+        "fr": "Assis sur le banc, on regarde vers {direction}°.",
+        "hu": "A pad {direction}° felé néz.",
+        "it": "Quando si è seduti su questa panchina, si guarda verso {direction}°.",
+        "zh_Hans": "坐在长椅上的时候目视方向为 {direction}°方位。",
+        "ru": "Сидя на скамейке, вы смотрите в сторону {direction}°.",
+        "zh_Hant": "當坐在長椅時，那個人朝向 {direction}°。",
+        "pl": "Siedząc na ławce, patrzy się w kierunku {direction}°.",
+        "pt_BR": "Ao sentar-se no banco, olha-se para {direction} °.",
+        "pt": "Ao sentar-se no banco, olha-se para {direction} °.",
+        "es": "Cuando se está sentado en el banco, se mira hacia a {direction}º.",
+        "da": "Når man sidder på bænken, kigger man i retningen {direction}°.",
+        "cs": "Když sedíte na lavičce, díváte se směrem v úhlu {direction}°.",
+        "ca": "Quan s'està assegut al banc, es mira cap a {direction}º.",
+        "_context": "layers:bench.tagRenderings.bench-direction.render"
+      },
+      "freeform": {
+        "key": "direction",
+        "type": "direction",
+        "inline": true
+      },
+      "labels": [
+        "bench-questions"
+      ],
+      "id": "bench-direction",
+      "condition": {
+        "and": [
+          "amenity=bench",
+          "two_sided!=yes"
+        ]
+      }
+    },
+    {
+      "render": {
+        "en": "Colour: {colour}",
+        "de": "Farbe: {colour}",
+        "fr": "Couleur : {colour}",
+        "nl": "Kleur: {colour}",
+        "hu": "Szín: {colour}",
+        "it": "Colore: {colour}",
+        "ru": "Цвет: {colour}",
+        "id": "Warna: {colour}",
+        "zh_Hans": "颜色： {colour}",
+        "zh_Hant": "顏色：{colour}",
+        "nb_NO": "Farge: {colour}",
+        "pt_BR": "Cor: {colour}",
+        "fi": "Väri: {colour}",
+        "pl": "Kolor: {colour}",
+        "pt": "Cor: {colour}",
+        "eo": "Koloro: {colour}",
+        "es": "Color: {colour}",
+        "ca": "Color: {colour}",
+        "da": "Farve: {colour}",
+        "cs": "Barva: {colour}",
+        "he": "צבע: {colour}",
+        "_context": "layers:bench.tagRenderings.bench-colour.render"
+      },
+      "question": {
+        "en": "Which colour does this bench have?",
+        "de": "Welche Farbe hat diese Sitzbank?",
+        "fr": "Quelle est la couleur de ce banc ?",
+        "nl": "Welke kleur heeft deze zitbank?",
+        "hu": "Milyen színű ez a pad?",
+        "it": "Di che colore è questa panchina?",
+        "ru": "Какого цвета скамейка?",
+        "zh_Hans": "这个长椅是什么颜色的？",
+        "zh_Hant": "這個長椅是什麼顏色的？",
+        "pt_BR": "Qual a cor dessa bancada?",
+        "pl": "Jaki kolor ma ta ławka?",
+        "pt": "Qual a cor dessa bancada?",
+        "es": "¿De qué color es este banco?",
+        "da": "Hvilken farve har denne bænk?",
+        "cs": "Jakou barvu má tato lavička?",
+        "ca": "De quin color és aquest banc?",
+        "he": "איזה צבע יש לספסל הזה?",
+        "_context": "layers:bench.tagRenderings.bench-colour.question"
+      },
+      "freeform": {
+        "key": "colour",
+        "type": "color",
+        "inline": true
+      },
+      "mappings": [
+        {
+          "if": "colour=brown",
+          "then": {
+            "en": "Colour: brown",
+            "de": "Farbe: braun",
+            "fr": "Couleur : marron",
+            "nl": "De kleur is bruin",
+            "hu": "Szín: barna",
+            "it": "Colore: marrone",
+            "ru": "Цвет: коричневый",
+            "zh_Hans": "颜色：棕",
+            "zh_Hant": "顏色：棕色",
+            "nb_NO": "Farge: brun",
+            "pt_BR": "Cor: marrom",
+            "fi": "Väri: ruskea",
+            "pl": "Kolor: brązowy",
+            "pt": "Cor: castanho",
+            "eo": "Koloro: bruna",
+            "ca": "Color: marró",
+            "es": "Color: marrón",
+            "da": "Farve: brun",
+            "cs": "Barva: hnědá",
+            "he": "צבע: חום",
+            "_context": "layers:bench.tagRenderings.bench-colour.mappings.0.then"
+          }
+        },
+        {
+          "if": "colour=green",
+          "then": {
+            "en": "Colour: green",
+            "de": "Farbe: grün",
+            "fr": "Couleur : verte",
+            "nl": "De kleur is groen",
+            "hu": "Szín: zöld",
+            "it": "Colore: verde",
+            "ru": "Цвет: зеленый",
+            "zh_Hans": "颜色：绿",
+            "zh_Hant": "顏色：綠色",
+            "nb_NO": "Farge: grønn",
+            "pt_BR": "Cor: verde",
+            "fi": "Väri: vihreä",
+            "pl": "Kolor: zielony",
+            "pt": "Cor: verde",
+            "eo": "Koloro: verda",
+            "es": "Color: verde",
+            "ca": "Color: verd",
+            "da": "Farve: grøn",
+            "cs": "Barva: zelená",
+            "he": "צבע: ירוק",
+            "_context": "layers:bench.tagRenderings.bench-colour.mappings.1.then"
+          }
+        },
+        {
+          "if": "colour=gray",
+          "then": {
+            "en": "Colour: gray",
+            "de": "Farbe: grau",
+            "fr": "Couleur : gris",
+            "nl": "De kleur is grijs",
+            "hu": "Szín: szürke",
+            "it": "Colore: grigio",
+            "ru": "Цвет: серый",
+            "zh_Hans": "颜色：灰",
+            "zh_Hant": "顏色：灰色",
+            "nb_NO": "Farge: grå",
+            "pt_BR": "Cor: cinza",
+            "fi": "Väri: harmaa",
+            "pl": "Kolor: szary",
+            "pt": "Cor: cinzento",
+            "eo": "Koloro: griza",
+            "es": "Color: gris",
+            "ca": "Color: gris",
+            "da": "Farve: grå",
+            "cs": "Barva: šedá",
+            "he": "צבע: אפור",
+            "_context": "layers:bench.tagRenderings.bench-colour.mappings.2.then"
+          }
+        },
+        {
+          "if": "colour=white",
+          "then": {
+            "en": "Colour: white",
+            "de": "Farbe: weiß",
+            "fr": "Couleur : blanc",
+            "nl": "De kleur is wit",
+            "hu": "Szín: fehér",
+            "it": "Colore: bianco",
+            "ru": "Цвет: белый",
+            "zh_Hans": "颜色：白",
+            "zh_Hant": "顏色：白色",
+            "nb_NO": "Farge: hvit",
+            "pt_BR": "Cor: branco",
+            "fi": "Väri: valkoinen",
+            "pl": "Kolor: biały",
+            "pt": "Cor: branco",
+            "eo": "Koloro: blanka",
+            "es": "Color: blanco",
+            "ca": "Color: blanc",
+            "da": "Farve: hvid",
+            "cs": "Barva: bílá",
+            "he": "צבע: לבן",
+            "_context": "layers:bench.tagRenderings.bench-colour.mappings.3.then"
+          }
+        },
+        {
+          "if": "colour=red",
+          "then": {
+            "en": "Colour: red",
+            "de": "Farbe: rot",
+            "fr": "Couleur : rouge",
+            "nl": "De kleur is rood",
+            "hu": "Szín: piros",
+            "it": "Colore: rosso",
+            "ru": "Цвет: красный",
+            "zh_Hans": "颜色：红",
+            "zh_Hant": "顏色：紅色",
+            "nb_NO": "Farge: rød",
+            "pt_BR": "Cor: vermelho",
+            "fi": "Väri: punainen",
+            "pl": "Kolor: czerwony",
+            "pt": "Cor: vermelho",
+            "eo": "Koloro: ruĝa",
+            "es": "Color: rojo",
+            "ca": "Color: vermell",
+            "da": "Farve: rød",
+            "cs": "Barva: červená",
+            "he": "צבע: אדום",
+            "_context": "layers:bench.tagRenderings.bench-colour.mappings.4.then"
+          }
+        },
+        {
+          "if": "colour=black",
+          "then": {
+            "en": "Colour: black",
+            "de": "Farbe: schwarz",
+            "fr": "Couleur : noire",
+            "nl": "De kleur is zwart",
+            "hu": "Szín: fekete",
+            "it": "Colore: nero",
+            "ru": "Цвет: чёрный",
+            "zh_Hans": "颜色：黑",
+            "zh_Hant": "顏色：黑色",
+            "nb_NO": "Farge: svart",
+            "pt_BR": "Cor: preto",
+            "fi": "Väri: musta",
+            "pl": "Kolor: czarny",
+            "pt": "Cor: preto",
+            "eo": "Koloro: nigra",
+            "es": "Color: negro",
+            "ca": "Color: negre",
+            "da": "Farve: sort",
+            "cs": "Barva: černá",
+            "he": "צבע: שחור",
+            "_context": "layers:bench.tagRenderings.bench-colour.mappings.5.then"
+          }
+        },
+        {
+          "if": "colour=blue",
+          "then": {
+            "en": "Colour: blue",
+            "de": "Farbe: blau",
+            "fr": "Couleur : bleu",
+            "nl": "De kleur is blauw",
+            "hu": "Szín: kék",
+            "it": "Colore: blu",
+            "ru": "Цвет: синий",
+            "zh_Hans": "颜色：蓝",
+            "zh_Hant": "顏色：藍色",
+            "nb_NO": "Farge: blå",
+            "pt_BR": "Cor: azul",
+            "fi": "Väri: sininen",
+            "pl": "Kolor: niebieski",
+            "pt": "Cor: azul",
+            "eo": "Koloro: blua",
+            "es": "Color: azul",
+            "ca": "Color: blau",
+            "da": "Farve: blå",
+            "cs": "Barva: modrá",
+            "he": "צבע: כחול",
+            "_context": "layers:bench.tagRenderings.bench-colour.mappings.6.then"
+          }
+        },
+        {
+          "if": "colour=yellow",
+          "then": {
+            "en": "Colour: yellow",
+            "de": "Farbe: gelb",
+            "fr": "Couleur : jaune",
+            "nl": "De kleur is geel",
+            "hu": "Szín: sárga",
+            "it": "Colore: giallo",
+            "ru": "Цвет: желтый",
+            "zh_Hans": "颜色：黄",
+            "zh_Hant": "顏色：黃色",
+            "nb_NO": "Farge: gul",
+            "pt_BR": "Cor: amarelo",
+            "fi": "Väri: keltainen",
+            "pl": "Kolor: żółty",
+            "pt": "Cor: amarelo",
+            "eo": "Koloro: flava",
+            "es": "Color: amarillo",
+            "ca": "Color: groc",
+            "da": "Farve: gul",
+            "cs": "Barva: žlutá",
+            "he": "צבע: צהוב",
+            "_context": "layers:bench.tagRenderings.bench-colour.mappings.7.then"
+          }
+        }
+      ],
+      "labels": [
+        "bench-questions"
+      ],
+      "id": "bench-colour",
+      "condition": {
+        "and": [
+          "amenity=bench"
+        ]
+      }
+    },
+    {
+      "question": {
+        "en": "When was this bench last surveyed?",
+        "nl": "Wanneer is deze laatste bank laatst gesurveyed?",
+        "fr": "Quand ce banc a-t-il été contrôlé pour la dernière fois ?",
+        "it": "Quando è stata verificata l’ultima volta questa panchina?",
+        "zh_Hans": "上次对这个长椅实地调查是什么时候？",
+        "de": "Wann wurde diese Bank zuletzt überprüft?",
+        "ru": "Когда последний раз обследовали эту скамейку?",
+        "zh_Hant": "上一次探察長椅是什麼時候？",
+        "pt_BR": "Quando esta bancada foi pesquisada pela última vez?",
+        "pl": "Kiedy ostatnio badano tę ławkę?",
+        "pt": "Quando esta bancada foi pesquisada pela última vez?",
+        "es": "¿Cuándo fue la última vez que se inspeccionó este banco?",
+        "da": "Hvornår blev denne bænk sidst kortlagt?",
+        "cs": "Kdy byla tato lavička naposledy kontrolována?",
+        "ca": "Quan va ser l'últim cop que s'ha inspeccionat aquest banc?",
+        "he": "מתי הספסל הזה נבדק לאחרונה?",
+        "_context": "layers:bench.tagRenderings.bench-survey:date.question"
+      },
+      "render": {
+        "en": "This bench was last surveyed on {survey:date}",
+        "nl": "Deze bank is laatst gesurveyd op {survey:date}",
+        "fr": "Ce banc a été contrôlé pour la dernière fois le {survey:date}",
+        "it": "Questa panchina è stata controllata l’ultima volta in data {survey:date}",
+        "zh_Hans": "这个长椅于 {survey:date}最后一次实地调查",
+        "de": "Diese Bank wurde zuletzt überprüft am {survey:date}",
+        "ru": "Последний раз обследование этой скамейки проводилось {survey:date}",
+        "zh_Hant": "這個長椅最後是在 {survey:date} 探查的",
+        "pt_BR": "Esta bancada foi pesquisada pela última vez em {survey:date}",
+        "pl": "Ławka ta była ostatnio badana w dniu {survey:date}",
+        "pt": "Esta bancada foi pesquisada pela última vez em {survey:date}",
+        "es": "Este banco se inspeccionó por última vez el {survey:date}",
+        "da": "Denne bænk blev sidst kortlagt den {survey:date}",
+        "cs": "Tato lavička byla naposledy zkontrolována dne {survey:date}",
+        "ca": "Aquest banc s'ha inspeccionat per últim com el {survey:date}",
+        "he": "ספסל זה נבדק לאחרונה ב {survey:date}",
+        "_context": "layers:bench.tagRenderings.bench-survey:date.render"
+      },
+      "freeform": {
+        "key": "survey:date",
+        "type": "date",
+        "inline": true
+      },
+      "mappings": [
+        {
+          "if": "survey:date:={_now:date}",
+          "then": {
+            "en": "Surveyed today!",
+            "nl": "Vandaag nagekeken!",
+            "de": "Heute geprüft!",
+            "fr": "Vérifié sur le terrain aujourd'hui !",
+            "ca": "Inspeccionat avui!",
+            "cs": "Zjištěno dnes!",
+            "pt": "Pesquisado hoje!",
+            "he": "נבדק היום!",
+            "pt_BR": "Pesquisado hoje!",
+            "es": "¡Encuestado hoy!",
+            "_context": "layers:bench.tagRenderings.bench-survey:date.mappings.0.then"
+          }
+        }
+      ],
+      "labels": [
+        "bench-questions"
+      ],
+      "id": "bench-survey:date",
+      "condition": {
+        "and": [
+          "amenity=bench"
+        ]
+      }
+    },
+    {
+      "id": "bench-inscription",
+      "labels": [
+        "bench-questions"
+      ],
+      "render": {
+        "en": "This bench has the following inscription:<br/><p><i>{inscription}</i></p>",
+        "nl": "Deze bank heeft een inscriptie: <br/><p><i>{inscription}</i></p>",
+        "de": "Diese Bank hat folgende Inschrift:<br/><p><i>{inscription}</i></p>",
+        "fr": "Ce banc a l'inscription suivante :<br/><p><i>{inscription}</i></p>",
+        "ca": "Aquest banc té la següent inscripció:<br/><p><i>{inscription}</i></p>",
+        "cs": "Tato lavice má následující nápis:<br/><p><i>{inscription}</i></p>",
+        "pt": "Este banco tem a seguinte inscrição:<br/><p><i>{inscription}</i></p>",
+        "pt_BR": "Esse banco tem a seguinte inscrição: <br/><p><i>{inscription}</i></p>",
+        "es": "Este banco tiene la siguiente inscripción:<br/><p><i>{inscription}</i></p>",
+        "_context": "layers:bench.tagRenderings.bench-inscription.render"
+      },
+      "question": {
+        "en": "Does this bench have an inscription?",
+        "nl": "Heeft deze bank een inscriptie?",
+        "de": "Hat diese Bank eine Inschrift?",
+        "fr": "Est-ce que ce banc possède une inscription ?",
+        "ca": "Aquest banc té una inscripció?",
+        "cs": "Má tato lavička nápis?",
+        "pt": "Esse banco tem inscrição?",
+        "pt_BR": "Esse banco tem uma inscrição?",
+        "es": "¿Este banco tiene una inscripción?",
+        "_context": "layers:bench.tagRenderings.bench-inscription.question"
+      },
+      "freeform": {
+        "key": "inscription",
+        "type": "text",
+        "addExtraTags": [
+          "not:inscription="
+        ],
+        "inline": true
+      },
+      "mappings": [
+        {
+          "if": "not:inscription=yes",
+          "then": {
+            "en": "This bench does not have an inscription",
+            "nl": "Deze bank heeft geen inscriptie",
+            "de": "Diese Bank hat keine Inschrift",
+            "fr": "Ce banc n'a pas d'inscription",
+            "ca": "Aquest banc no té cap inscripció",
+            "cs": "Tato lavička nemá nápis",
+            "pt": "Este banco não tem inscrição",
+            "pt_BR": "Esse banco não tem uma inscrição",
+            "es": "Este banco no tiene inscripción",
+            "_context": "layers:bench.tagRenderings.bench-inscription.mappings.0.then"
+          },
+          "addExtraTags": [
+            "inscription="
+          ]
+        },
+        {
+          "if": "inscription=",
+          "then": {
+            "en": "This bench <span class='subtle'>(probably)</span> does not not have an inscription",
+            "nl": "Deze bank heeft <span class='subtle'>(waarschijnlijk)</span> geen inscriptie",
+            "de": "Diese Bank hat <span class='subtle'>(wahrscheinlich)</span> keine Inschrift",
+            "fr": "Ce banc n'a <span class='subtle'>(probablement)</span> pas d'inscription",
+            "es": "Este banco <span class='subtle'>(probablemente)</span> no tiene inscripción",
+            "ca": "Aquest banc <span class='subtle'>(probablement)</span> no té cap inscripció",
+            "cs": "Tato lavička <span class='subtle'>(pravděpodobně)</span> nemá nápis",
+            "pt_BR": "Esse banco <span class='subtle'>provavelmente</span> não tem uma inscrição",
+            "pt": "Esse banco <span class='subtle'>provavelmente</span> não tem uma inscrição",
+            "_context": "layers:bench.tagRenderings.bench-inscription.mappings.1.then"
+          },
+          "hideInAnswer": true
+        }
+      ],
+      "questionHint": {
+        "en": "E.g. on a mounted plaque, in the backrest, …",
+        "nl": "Bijvoorbeeld op een aangebracht plakkaat, ingesneden in de rugleuning, …",
+        "de": "Z.B. auf einer angebrachten Plakette, in der Rückenlehne, …",
+        "fr": "Par exemple, sur une plaque accrochée, sur le dossier, …",
+        "ca": "P. ex. en una placa, al respatller, …",
+        "cs": "Např. na připevněné desce, v opěradle, …",
+        "pt": "Por exemplo: em placa montada, no encosto, ...",
+        "pt_BR": "P. ex. em uma placa montada, no encosto, …",
+        "es": "Por ejemplo, en una placa montada, en el respaldo, …",
+        "_context": "layers:bench.tagRenderings.bench-inscription.questionHint"
+      },
+      "condition": {
+        "and": [
+          "amenity=bench"
+        ]
+      }
+    },
+    {
+      "id": "bench-memorial",
+      "labels": [
+        "bench-questions"
+      ],
+      "condition": {
+        "and": [
+          "amenity=bench",
+          {
+            "or": [
+              "historic=memorial",
+              "inscription~*",
+              "memorial=bench",
+              "tourism=artwork"
+            ]
+          }
+        ]
+      },
+      "question": {
+        "en": "Does this bench act as memorial for someone or something?",
+        "nl": "Is deze bank een gedenkteken voor iemand of iets?",
+        "de": "Dient diese Bank als Denkmal für jemanden oder etwas?",
+        "fr": "Ce banc sert-il de mémorial pour quelqu'un ou quelque chose ?",
+        "ca": "Aquest banc actua com a memorial per a algú o algo?",
+        "cs": "Slouží tato lavička jako památník někoho nebo něčeho?",
+        "pt": "Este banco serve como memorial para alguém ou algo?",
+        "pl": "Czy ta ławka służy jako pomnik upamiętniający kogoś lub coś?",
+        "pt_BR": "Esse banco serve como memorial para alguém ou alguma coisa?",
+        "es": "¿Actúa este banco como monumento conmemorativo de alguien o algo?",
+        "_context": "layers:bench.tagRenderings.bench-memorial.question"
+      },
+      "mappings": [
+        {
+          "if": "historic=memorial",
+          "then": {
+            "en": "This bench is a memorial for someone or something",
+            "nl": "Deze bank is een gedenkteken aan iemand of iets",
+            "de": "Diese Bank ist ein Denkmal für jemanden oder etwas",
+            "fr": "Ce banc est un mémorial pour quelqu'un ou quelque chose",
+            "ca": "Aquest banc és un memorial per a algú o alguna cosa",
+            "cs": "Tato lavička je pomníkem pro někoho nebo něco",
+            "pt": "Este banco é um memorial para alguém ou algo",
+            "pl": "Ta ławka jest pomnikiem upamiętniającym kogoś lub coś",
+            "pt_BR": "Esse banco é um memorial para alguém ou alguma coisa",
+            "es": "Este banco es un memorial para alguien o algo",
+            "_context": "layers:bench.tagRenderings.bench-memorial.mappings.0.then"
+          },
+          "addExtraTags": [
+            "memorial=bench",
+            "not:historic="
+          ]
+        },
+        {
+          "if": {
+            "and": [
+              "historic=",
+              "not:historic=memorial"
+            ]
+          },
+          "then": {
+            "en": "This bench is a <b>not</b> a memorial for someone or something",
+            "nl": "Deze bank is <b>geen</b> gedenkteken aan iemand of iets",
+            "de": "Diese Bank ist <b>kein</b> Denkmal für jemanden oder etwas",
+            "fr": "Ce banc n'est <b>pas</b> un mémorial pour quelqu'un ou quelque chose",
+            "ca": "Aquest banc <b>no</b> és un memorial per a algú o alguna cosa",
+            "cs": "Tato lavička <b>není</b> pro někoho nebo něco památníkem",
+            "pt": "Este banco <b>não é</b> um memorial para alguém ou algo",
+            "pl": "Ta ławka <b>nie</b> jest pomnikiem upamiętniającym kogoś lub coś",
+            "pt_BR": "Esse banco <b>não</b> é um memorial para alguém ou alguma coisa",
+            "es": "Este banco es un <b>no</b> memorial para alguien o algo",
+            "_context": "layers:bench.tagRenderings.bench-memorial.mappings.1.then"
+          },
+          "addExtraTags": [
+            "memorial="
+          ]
+        }
+      ]
+    },
+    {
+      "id": "leftover-questions",
+      "render": {
+        "*": "{questions( ,)}"
+      }
+    },
+    {
+      "id": "lod",
+      "labels": [
+        "added_by_default"
+      ],
+      "render": {
+        "*": "{linked_data_from_website()}"
+      }
+    },
+    {
+      "id": "minimap",
+      "description": "Shows a small map with the feature. Added by default to every popup",
+      "render": {
+        "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+      }
+    },
+    {
+      "id": "move-button",
+      "render": {
+        "*": "{move_button()}"
+      }
+    },
+    {
+      "id": "delete-button",
+      "render": {
+        "*": "{delete_button()}"
+      }
+    },
+    {
+      "id": "last_edit",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+      "condition": {
+        "and": [
+          "_last_edit:contributor~*",
+          "_last_edit:changeset~*"
+        ]
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsTesting=true",
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_debug=yes",
+          "_csCount>=10"
+        ]
+      },
+      "render": {
+        "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+      }
+    },
+    {
+      "id": "favourite_status",
+      "render": {
+        "*": "{favourite_status()}"
+      }
+    },
+    {
+      "id": "qr_code",
+      "labels": [
+        "added_by_default"
+      ],
+      "classes": "flex items-center gap-x-2",
+      "render": {
+        "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+        "en": "{qr_code()}Scan this code to open this location on another device",
+        "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+        "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+      }
+    },
+    {
+      "id": "share",
+      "labels": [
+        "added_by_default"
+      ],
+      "metacondition": "_supports_sharing=yes",
+      "render": {
+        "de": "{share_link(,Standort teilen)}",
+        "en": "{share_link(,Share this location)}",
+        "nl": "{share_link(,Deel deze locatie)}"
+      }
+    },
+    {
+      "id": "all-tags",
+      "render": {
+        "*": "{all_tags()}"
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_tags=full",
+          "mapcomplete-show_debug=yes"
+        ]
+      }
+    }
+  ],
+  "deletion": {},
+  "allowMove": {
+    "enableImproveAccuracy": true,
+    "enableRelocation": false
+  },
+  "defaultBackgroundId": "protomaps.white",
+  "titleIcons": [
+    {
+      "id": "wikipedialink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+      "condition": {
+        "or": [
+          "wikipedia~*",
+          "wikidata~*"
+        ]
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "wikipedia=",
+          "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "open_until",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "#": "Titleicon showing e.g. 'open until 17:00'",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{opening_hours_state()}",
+      "condition": {
+        "or": [
+          "opening_hours~*",
+          {
+            "or": [
+              {
+                "and": [
+                  "seasonal~.*winter.*",
+                  "_now:date~....-(12|01|02)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*spring.*",
+                  "_now:date~....-(03|04|05)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*summer.*",
+                  "_now:date~....-(06|07|08)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*autumn.*",
+                  "_now:date~....-(09|10|11)-.."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "phonelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": {
+        "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+        "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+        "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+        "_context": "layers:icons.tagRenderings.phonelink.render"
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:phone~*",
+          "then": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+          }
+        }
+      ],
+      "condition": {
+        "or": [
+          "phone~*",
+          "contact:phone~*"
+        ]
+      }
+    },
+    {
+      "id": "emaillink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:email~*",
+          "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:email~*",
+          "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        }
+      ],
+      "condition": {
+        "or": [
+          "email~*",
+          "contact:email~*",
+          "operator:email~*"
+        ]
+      }
+    },
+    {
+      "id": "websitelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "website~*",
+          "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:website~*",
+          "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "context:website~*",
+          "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "smokingicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=no",
+          "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=yes",
+          "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+        }
+      ]
+    },
+    {
+      "id": "dogicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "if": "dog=no",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+        },
+        {
+          "if": "dog=leashed",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+        },
+        {
+          "if": {
+            "or": [
+              "dog=yes",
+              "dog=unleashed"
+            ]
+          },
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+        }
+      ]
+    },
+    {
+      "id": "sharelink",
+      "labels": [
+        "defaults"
+      ],
+      "render": "{share_link()}",
+      "metacondition": "_supports_sharing=yes"
+    },
+    {
+      "id": "favourite_title_icon",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "*": "{favourite_icon()}"
+      },
+      "metacondition": "_loggedIn=true"
+    },
+    {
+      "id": "osmlink",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+        "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+        "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+        "_context": "layers:icons.tagRenderings.osmlink.render"
+      },
+      "mappings": [
+        {
+          "if": "id~.*/-.*",
+          "then": ""
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "_backend~*",
+          "then": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+          }
+        }
+      ],
+      "condition": "id~(node|way|relation)/[0-9]*"
+    },
+    {
+      "id": "direction",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "{direction_indicator()}"
+    },
+    {
+      "id": "rating",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{rating()}"
+    }
+  ],
+  "_layerIcon": [
+    {
+      "icon": "circle",
+      "color": "white"
+    },
+    {
+      "icon": "./assets/layers/memorial/memorial.svg"
+    }
+  ]
+}

@@ -1,0 +1,726 @@
+{
+  "id": "waste_disposal",
+  "name": {
+    "en": "Waste Disposal Bins",
+    "nl": "Afvalcontainers voor huishoudelijk afval",
+    "de": "Mülltonnen und Müllcontainer",
+    "it": "Contenitori per la raccolta differenziata",
+    "id": "Tempat Pembuangan Limbah",
+    "da": "Affaldsspande",
+    "ca": "Contenidor de brossa",
+    "fr": "Réceptacles destinés à recevoir des déchets",
+    "cs": "Odpadkové koše"
+  },
+  "description": {
+    "en": "Waste Disposal Bin, medium to large bin for disposal of (household) waste",
+    "nl": "Een grote afvalcontainer voor (huishoudelijk) afval",
+    "de": "Entsorgungsbehälter, mittlerer bis großer Behälter zur Entsorgung von (Haushalts-)Abfällen",
+    "it": "Cestino per lo smaltimento dei rifiuti, contenitore di dimensioni medio grandi per lo smaltimento dei rifiuti (domestici)",
+    "da": "Affaldsspande, mellemstor til stor skraldespand til bortskaffelse af (husholdnings)affald",
+    "fr": "Réceptacle destiné à recevoir des déchets (domestiques) enveloppés dans des sacs en plastique",
+    "ca": "Contenidor de fem, contenidor mitjà o gran per a l'eliminació de residus (domèstics)",
+    "cs": "Odpadkový koš, střední až velký koš na likvidaci (domácího) odpadu"
+  },
+  "source": {
+    "osmTags": {
+      "and": [
+        "amenity=waste_disposal"
+      ]
+    }
+  },
+  "minzoom": 12,
+  "minzoomVisible": 12,
+  "title": {
+    "render": {
+      "en": "Waste Disposal",
+      "nl": "Afvalbak",
+      "de": "Mülltonne",
+      "it": "Smaltimento rifiuti",
+      "id": "Pembuangan Limbah",
+      "da": "Bortskaffelse af affald",
+      "ca": "Contenidor de fem",
+      "cs": "Nakládání s odpady"
+    }
+  },
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "iconSize": "20,20",
+      "marker": [
+        {
+          "icon": {
+            "render": "circle",
+            "id": "circle"
+          },
+          "color": "white"
+        },
+        {
+          "icon": {
+            "render": "./assets/layers/waste_disposal/waste_disposal.svg",
+            "id": "assetslayerswastedisposalwastedisposalsvg"
+          }
+        }
+      ],
+      "iconBadges": [
+        {
+          "if": "_favourite=yes",
+          "then": "circle:white;heart:red"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [],
+  "presets": [
+    {
+      "title": {
+        "en": "a waste disposal bin",
+        "nl": "Een afvalcontainer",
+        "de": "eine Mülltonne",
+        "it": "un raccoglitore per lo smaltimento rifiuti",
+        "id": "tempat pembuangan sampahh",
+        "da": "en affaldsbeholder",
+        "ca": "un contenidor de basura",
+        "cs": "koš na odpadky",
+        "pl": "kosz na śmieci"
+      },
+      "tags": [
+        "amenity=waste_disposal"
+      ],
+      "description": {
+        "en": "Medium to large bin for disposal of (household) waste",
+        "nl": "middelgrote of grote afvalcontainer voor (huishoudelijk) afval",
+        "de": "Mittlere bis große Mülltonne für die Entsorgung von (Haushalts-)Abfällen",
+        "it": "Cestino di dimensioni medio-grandi per lo smaltimento dei rifiuti (domestici)",
+        "id": "Tempat sampah sedang hingga besar untuk pembuangan limbah (rumah tangga)",
+        "da": "Mellemstor til stor skraldespand til bortskaffelse af (husholdnings)affald",
+        "ca": "Contenidor mitjà o gran per a dipositar residus (domèstics)",
+        "cs": "Střední až velký kontejner na odpad (z domácností)"
+      }
+    }
+  ],
+  "tagRenderings": [
+    {
+      "id": "just_created",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "This element shows a 'thank you' that the contributor has recently created this element",
+      "classes": "rounded-xl thanks",
+      "mappings": [
+        {
+          "if": "id~*",
+          "icon": "./assets/svg/party.svg",
+          "then": {
+            "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+            "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+            "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+            "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+            "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+            "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+          }
+        }
+      ],
+      "condition": {
+        "and": [
+          "_backend~*",
+          "_last_edit:passed_time<300",
+          {
+            "or": [
+              "_version_number=",
+              "_version_number=1"
+            ]
+          }
+        ]
+      },
+      "metacondition": {
+        "and": [
+          {
+            "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+            "or": [
+              "_last_edit:contributor:uid:={_uid}",
+              "_last_edit:contributor:uid="
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "images",
+      "description": "This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images",
+      "render": {
+        "*": "{image_carousel()}{image_upload()}{nearby_images():my-4}"
+      },
+      "classes": "my-4"
+    },
+    {
+      "id": "type",
+      "description": "Mapping allowing to change between waste_disposal and recycling",
+      "question": {
+        "en": "What kind of waste disposal bin is this?",
+        "de": "Was für ein Abfalleimer ist das?",
+        "ca": "Quin tipus de contenidor de brossa és aquest?",
+        "cs": "Co je to za odpadkový koš?",
+        "pl": "Co to za pojemnik na śmieci?"
+      },
+      "mappings": [
+        {
+          "if": "amenity=waste_disposal",
+          "then": {
+            "en": "This is a medium to large bin for disposal of (household) waste",
+            "de": "Dies ist eine Mülltonne oder ein Müllcontainer für (Haushalts-)Abfälle",
+            "ca": "Es tracta d'un contenidor mitjà o gran per a dipositar residus (domèstics)",
+            "cs": "Jedná se o střední až velkou popelnici na (domovní) odpad"
+          }
+        },
+        {
+          "if": "amenity=recycling",
+          "then": {
+            "en": "This is actually a recycling container",
+            "de": "Dies ist eigentlich ein Recyclingcontainer",
+            "ca": "En realitat es tracta d'un contenidor de reciclatge",
+            "cs": "To je vlastně recyklační kontejner",
+            "pl": "W rzeczywistości jest to pojemnik do recyklingu"
+          },
+          "addExtraTags": [
+            "recycling_type=container"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "access",
+      "render": {
+        "en": "Access: {access}",
+        "nl": "Toegankelijk voor {access}",
+        "de": "Zugang: {access}",
+        "it": "Accesso: {access}",
+        "id": "Akses: {access}",
+        "da": "Adgang: {access}",
+        "ca": "Accés: {access}",
+        "cs": "Přístup: {access}"
+      },
+      "question": {
+        "en": "Who can use this waste disposal bin?",
+        "nl": "Wie mag deze afvalcontainer gebruiken?",
+        "de": "Wer darf die Mülltonne nutzen?",
+        "it": "Chi può utilizzare questo cestino per lo smaltimento dei rifiuti?",
+        "id": "Siapa yang bisa menggunakan tempat sampah ini?",
+        "da": "Hvem kan bruge denne affaldsbeholder?",
+        "ca": "Qui pot utilitzar aquest contenidor de brossa?",
+        "cs": "Kdo může používat tento koš na odpadky?",
+        "pl": "Kto może korzystać z tego pojemnika na odpady?"
+      },
+      "freeform": {
+        "key": "access",
+        "type": "string",
+        "inline": true
+      },
+      "mappings": [
+        {
+          "if": "access=yes",
+          "then": {
+            "en": "This bin can be used by anyone",
+            "nl": "Iedereen mag deze afvalcontainer gebruiken",
+            "de": "Jeder darf die Mülltonne nutzen",
+            "it": "Questo cestino può essere usato da chiunque",
+            "id": "Tempat sampah ini bisa digunakan oleh siapa saja",
+            "da": "Denne skraldespand kan bruges af alle",
+            "ca": "Aquest contenidor es pot utilitzat per qualsevol",
+            "cs": "Tento koš může používat kdokoli",
+            "pl": "Z tego pojemnika może korzystać każdy"
+          }
+        },
+        {
+          "if": "access=no",
+          "then": {
+            "en": "This bin is private",
+            "nl": "Deze afvalcontainer is enkel voor privaat gebruik",
+            "de": "Niemand darf die Mülltonne nutzen (privat)",
+            "it": "Questo cestino è privato",
+            "id": "Tempat sampah ini bersifat pribadi",
+            "da": "Denne skraldespand er privat",
+            "ca": "Aquest contenidor és privat",
+            "cs": "Tento koš je soukromý",
+            "pl": "Ten kosz jest prywatny"
+          }
+        },
+        {
+          "if": "access=residents",
+          "then": {
+            "en": "This bin is only for residents",
+            "nl": "Enkel bewoners mogen deze afvalcontainer gebruiken",
+            "de": "Nur Anwohner dürfen die Mülltonne nutzen",
+            "it": "Questo cestino è solo per residenti",
+            "id": "Tempat sampah ini hanya untuk penghuni",
+            "da": "Denne skraldespand er kun for beboere",
+            "ca": "Aquest contenidor és només per als residents",
+            "cs": "Tento koš je určen pouze pro obyvatele",
+            "pl": "Ten kosz jest przeznaczony wyłącznie dla mieszkańców"
+          }
+        }
+      ]
+    },
+    {
+      "id": "disposal-location",
+      "question": {
+        "en": "Where is this container located?",
+        "nl": "Waar bevindt deze container zich?",
+        "de": "Wo befindet sich die Mülltonne?",
+        "it": "Dove si trova questo contenitore?",
+        "id": "Di manakah lokasi kontainer ini?",
+        "da": "Hvor er denne container placeret?",
+        "ca": "On es troba aquest contenidor?",
+        "cs": "Kde se nachází tento kontejner?",
+        "pl": "Gdzie znajduje się ten kontener?"
+      },
+      "mappings": [
+        {
+          "if": "location=underground",
+          "then": {
+            "en": "This is an underground container",
+            "nl": "Dit is een ondergrondse container",
+            "de": "Die Mülltonne befindet sich unter der Erde",
+            "it": "Questo è un contenitore sotterraneo",
+            "id": "Ini adalah kontainer bawah tanah",
+            "da": "Dette er en underjordisk container",
+            "ca": "Aquest contenidor està soterrat",
+            "cs": "Jedná se o podzemní kontejner",
+            "pl": "To jest podziemny kontener"
+          }
+        },
+        {
+          "if": "location=indoor",
+          "then": {
+            "en": "This container is located indoors",
+            "nl": "Deze container bevindt zich binnen",
+            "de": "Die Mülltonne befindet sich in einem Gebäude",
+            "it": "Questo contenitore è al chiuso",
+            "id": "Kontainer ini terletak di dalam ruangan",
+            "da": "Denne container er placeret indendørs",
+            "ca": "Aquest contenidor està situat a l'interior",
+            "cs": "Tento kontejner se nachází uvnitř",
+            "pl": "Kontener ten znajduje się w pomieszczeniu zamkniętym"
+          }
+        },
+        {
+          "if": "location=",
+          "then": {
+            "en": "This container is located outdoors",
+            "nl": "Deze container is buiten",
+            "de": "Die Mülltonne bzw. der Müllcontainer befindet sich im Freien",
+            "it": "Questo contenitore è all'aperto",
+            "id": "Kontainer ini terletak di luar ruangan",
+            "da": "Denne container er placeret udendørs",
+            "ca": "Aquest contenidor està situat a l'aire lliure",
+            "cs": "Tento kontejner se nachází venku",
+            "pl": "Kontener ten znajduje się na zewnątrz"
+          }
+        }
+      ]
+    },
+    {
+      "id": "leftover-questions",
+      "render": {
+        "*": "{questions( ,)}"
+      }
+    },
+    {
+      "id": "lod",
+      "labels": [
+        "added_by_default"
+      ],
+      "render": {
+        "*": "{linked_data_from_website()}"
+      }
+    },
+    {
+      "id": "minimap",
+      "description": "Shows a small map with the feature. Added by default to every popup",
+      "render": {
+        "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+      }
+    },
+    {
+      "id": "move-button",
+      "render": {
+        "*": "{move_button()}"
+      }
+    },
+    {
+      "id": "delete-button",
+      "render": {
+        "*": "{delete_button()}"
+      }
+    },
+    {
+      "id": "last_edit",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+      "condition": {
+        "and": [
+          "_last_edit:contributor~*",
+          "_last_edit:changeset~*"
+        ]
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsTesting=true",
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_debug=yes",
+          "_csCount>=10"
+        ]
+      },
+      "render": {
+        "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+      }
+    },
+    {
+      "id": "favourite_status",
+      "render": {
+        "*": "{favourite_status()}"
+      }
+    },
+    {
+      "id": "qr_code",
+      "labels": [
+        "added_by_default"
+      ],
+      "classes": "flex items-center gap-x-2",
+      "render": {
+        "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+        "en": "{qr_code()}Scan this code to open this location on another device",
+        "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+        "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+      }
+    },
+    {
+      "id": "share",
+      "labels": [
+        "added_by_default"
+      ],
+      "metacondition": "_supports_sharing=yes",
+      "render": {
+        "de": "{share_link(,Standort teilen)}",
+        "en": "{share_link(,Share this location)}",
+        "nl": "{share_link(,Deel deze locatie)}"
+      }
+    },
+    {
+      "id": "all-tags",
+      "render": {
+        "*": "{all_tags()}"
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_tags=full",
+          "mapcomplete-show_debug=yes"
+        ]
+      }
+    }
+  ],
+  "filter": [
+    {
+      "#": "ignore-possible-duplicate",
+      "id": "public-access",
+      "options": [
+        {
+          "question": {
+            "en": "Only public access",
+            "nl": "Enkel publiek toegankelijke afvalcontainers",
+            "de": "Nur öffentliche Mülltonnen",
+            "it": "Solo accesso pubblico",
+            "id": "Hanya akses publik",
+            "da": "Kun offentlig adgang",
+            "ca": "Només amb accés públic",
+            "cs": "Pouze veřejný přístup"
+          },
+          "osmTags": "access=yes"
+        }
+      ]
+    }
+  ],
+  "deletion": {},
+  "allowMove": {
+    "enableImproveAccuracy": true,
+    "enableRelocation": true
+  },
+  "titleIcons": [
+    {
+      "id": "wikipedialink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+      "condition": {
+        "or": [
+          "wikipedia~*",
+          "wikidata~*"
+        ]
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "wikipedia=",
+          "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "open_until",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "#": "Titleicon showing e.g. 'open until 17:00'",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{opening_hours_state()}",
+      "condition": {
+        "or": [
+          "opening_hours~*",
+          {
+            "or": [
+              {
+                "and": [
+                  "seasonal~.*winter.*",
+                  "_now:date~....-(12|01|02)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*spring.*",
+                  "_now:date~....-(03|04|05)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*summer.*",
+                  "_now:date~....-(06|07|08)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*autumn.*",
+                  "_now:date~....-(09|10|11)-.."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "phonelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": {
+        "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+        "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+        "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+        "_context": "layers:icons.tagRenderings.phonelink.render"
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:phone~*",
+          "then": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+          }
+        }
+      ],
+      "condition": {
+        "or": [
+          "phone~*",
+          "contact:phone~*"
+        ]
+      }
+    },
+    {
+      "id": "emaillink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:email~*",
+          "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:email~*",
+          "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        }
+      ],
+      "condition": {
+        "or": [
+          "email~*",
+          "contact:email~*",
+          "operator:email~*"
+        ]
+      }
+    },
+    {
+      "id": "websitelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "website~*",
+          "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:website~*",
+          "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "context:website~*",
+          "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "smokingicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=no",
+          "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=yes",
+          "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+        }
+      ]
+    },
+    {
+      "id": "dogicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "if": "dog=no",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+        },
+        {
+          "if": "dog=leashed",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+        },
+        {
+          "if": {
+            "or": [
+              "dog=yes",
+              "dog=unleashed"
+            ]
+          },
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+        }
+      ]
+    },
+    {
+      "id": "sharelink",
+      "labels": [
+        "defaults"
+      ],
+      "render": "{share_link()}",
+      "metacondition": "_supports_sharing=yes"
+    },
+    {
+      "id": "favourite_title_icon",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "*": "{favourite_icon()}"
+      },
+      "metacondition": "_loggedIn=true"
+    },
+    {
+      "id": "osmlink",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+        "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+        "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+        "_context": "layers:icons.tagRenderings.osmlink.render"
+      },
+      "mappings": [
+        {
+          "if": "id~.*/-.*",
+          "then": ""
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "_backend~*",
+          "then": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+          }
+        }
+      ],
+      "condition": "id~(node|way|relation)/[0-9]*"
+    },
+    {
+      "id": "direction",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "{direction_indicator()}"
+    },
+    {
+      "id": "rating",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{rating()}"
+    }
+  ],
+  "_layerIcon": [
+    {
+      "icon": "circle",
+      "color": "white"
+    },
+    {
+      "icon": "./assets/layers/waste_disposal/waste_disposal.svg"
+    }
+  ]
+}

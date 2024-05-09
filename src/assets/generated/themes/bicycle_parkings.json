@@ -1,0 +1,1772 @@
+{
+  "id": "bicycle_parkings",
+  "title": {
+    "en": "Bicycle parkings",
+    "de": "Fahrradabstellplätze",
+    "fr": "Stationnement vélo",
+    "_context": "themes:bicycle_parkings.title"
+  },
+  "description": {
+    "en": "A map showing all types of bicycle parkings",
+    "de": "Eine Karte mit allen Arten von Fahrradabstellplätzen",
+    "_context": "themes:bicycle_parkings.description"
+  },
+  "icon": "./assets/themes/bicycle_parkings/logo.svg",
+  "layers": [
+    {
+      "id": "bike_parking",
+      "name": {
+        "en": "Bike parking",
+        "nl": "Fietsparking",
+        "fr": "Parking à vélo",
+        "gl": "Aparcadoiro de bicicletas",
+        "de": "Fahrrad-Parkplätze",
+        "hu": "Kerékpártároló",
+        "it": "Parcheggio bici",
+        "zh_Hant": "單車停車場",
+        "ru": "Велосипедная парковка",
+        "pl": "Parking dla rowerów",
+        "pt_BR": "Estacionamento de bicicletas",
+        "pt": "Estacionamento de bicicletas",
+        "ca": "Aparcament per a bicicletes",
+        "es": "Aparcamiento de bicis",
+        "da": "Cykelparkering",
+        "cs": "Parkování kol"
+      },
+      "description": {
+        "en": "A layer showing where you can park your bike",
+        "nl": "Een laag die toont waar je je fiets kunt parkeren",
+        "de": "Eine Ebene, die anzeigt, wo Sie Ihr Fahrrad abstellen können",
+        "es": "Una capa que muestra donde puedes aparcar tu bici",
+        "da": "Et lag, der viser, hvor man kan parkere sin cykel",
+        "fr": "Une couche montrant où stationner son vélo",
+        "cs": "Vrstva ukazující, kde můžete zaparkovat kolo",
+        "ca": "Una capa que mostra on pots aparcar la teva bicicleta",
+        "it": "Un livello che mostra dove puoi parcheggiare la tua bicicletta",
+        "pt_BR": "Uma camada mostrado onde você pode estacionar sua bicicleta",
+        "pt": "Uma camada que mostra onde pode estacionar a sua bicicleta"
+      },
+      "source": {
+        "osmTags": {
+          "and": [
+            "amenity=bicycle_parking"
+          ]
+        }
+      },
+      "minzoom": 12,
+      "title": {
+        "render": {
+          "en": "Bike parking",
+          "nl": "Fietsparking",
+          "fr": "Parking à vélo",
+          "gl": "Aparcadoiro de bicicletas",
+          "de": "Fahrrad-Parkplätze",
+          "hu": "Kerékpártároló",
+          "it": "Parcheggio bici",
+          "zh_Hant": "單車停車場",
+          "ru": "Велосипедная парковка",
+          "pl": "Parking dla rowerów",
+          "pt_BR": "Estacionamento de bicicletas",
+          "pt": "Estacionamento de bicicletas",
+          "ca": "Aparcament per a bicicletes",
+          "es": "Aparcamiento de bicis",
+          "da": "Cykelparkering",
+          "cs": "Parkování kol"
+        }
+      },
+      "pointRendering": [
+        {
+          "iconSize": "40,40",
+          "location": [
+            "point",
+            "projected_centerpoint",
+            "polygon_centroid"
+          ],
+          "anchor": "bottom",
+          "marker": [
+            {
+              "icon": {
+                "render": "pin",
+                "id": "pin"
+              },
+              "color": "#5473de"
+            },
+            {
+              "icon": {
+                "render": "./assets/layers/bike_parking/parking.svg",
+                "id": "assetslayersbikeparkingparkingsvg"
+              }
+            }
+          ],
+          "iconBadges": [
+            {
+              "if": "_favourite=yes",
+              "then": {
+                "render": "circle:white;heart:red",
+                "id": "circlewhiteheartred"
+              }
+            }
+          ]
+        }
+      ],
+      "lineRendering": [
+        {
+          "color": "#00f",
+          "width": "1"
+        }
+      ],
+      "presets": [
+        {
+          "title": {
+            "en": "a bike parking",
+            "nl": "een fietsparking",
+            "fr": "un parking à vélo",
+            "gl": "Aparcadoiro de bicicletas",
+            "de": "einen Fahrrad-Parkplatz",
+            "hu": "Kerékpártároló",
+            "it": "una parcheggio bici",
+            "zh_Hant": "單車停車場",
+            "ru": "Велосипедная парковка",
+            "pl": "Parking dla rowerów",
+            "pt_BR": "uma estacionamento de bicicletas",
+            "pt": "uma estacionamento de bicicletas",
+            "es": "un aparcamiento de bicis",
+            "da": "en cykelparkering",
+            "cs": "parkování kol",
+            "ca": "un aparcament per a bicis"
+          },
+          "tags": [
+            "amenity=bicycle_parking"
+          ]
+        }
+      ],
+      "tagRenderings": [
+        {
+          "id": "just_created",
+          "labels": [
+            "added_by_default"
+          ],
+          "description": "This element shows a 'thank you' that the contributor has recently created this element",
+          "classes": "rounded-xl thanks",
+          "mappings": [
+            {
+              "if": "id~*",
+              "icon": "./assets/svg/party.svg",
+              "then": {
+                "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+                "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+                "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+                "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+                "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+                "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+              }
+            }
+          ],
+          "condition": {
+            "and": [
+              "_backend~*",
+              "_last_edit:passed_time<300",
+              {
+                "or": [
+                  "_version_number=",
+                  "_version_number=1"
+                ]
+              }
+            ]
+          },
+          "metacondition": {
+            "and": [
+              {
+                "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+                "or": [
+                  "_last_edit:contributor:uid:={_uid}",
+                  "_last_edit:contributor:uid="
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "images",
+          "description": "This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images",
+          "render": {
+            "*": "{image_carousel()}{image_upload()}{nearby_images():my-4}"
+          },
+          "classes": "my-4"
+        },
+        {
+          "question": {
+            "en": "What is the type of this bicycle parking?",
+            "nl": "Van welk type is deze fietsparking?",
+            "fr": "Quel type de parking à vélos est-ce ?",
+            "gl": "Que tipo de aparcadoiro de bicicletas é?",
+            "de": "Was ist die Art dieses Fahrrad-Parkplatzes?",
+            "hu": "Milyen típusú ez a kerékpártároló?",
+            "it": "Di che tipo di parcheggio bici si tratta?",
+            "ru": "К какому типу относится эта велопарковка?",
+            "zh_Hant": "這是那種類型的單車停車場？",
+            "pl": "Jaki jest typ tego parkingu dla rowerów?",
+            "pt_BR": "Qual o tipo deste estacionamento de bicicletas?",
+            "pt": "Qual o tipo deste estacionamento de bicicletas?",
+            "es": "¿Cual es el tipo de este aparcamiento de bicicletas?",
+            "da": "Hvilken type cykelparkering er det?",
+            "cs": "Jaký je typ tohoto parkoviště pro jízdní kola?",
+            "ca": "Quin és el tipus d'aquest aparcament de bicicletes?"
+          },
+          "render": {
+            "en": "This is a bicycle parking of the type: {bicycle_parking}",
+            "nl": "Dit is een fietsparking van het type: {bicycle_parking}",
+            "fr": "C'est un parking à vélo de type {bicycle_parking}",
+            "gl": "Este é un aparcadoiro de bicicletas do tipo: {bicycle_parking}",
+            "de": "Dies ist ein Fahrrad-Parkplatz der Art: {bicycle_parking}",
+            "hu": "Ez egy {bicycle_parking} típusú kerékpártároló",
+            "it": "È un parcheggio bici del tipo: {bicycle_parking}",
+            "zh_Hant": "這個單車停車場的類型是：{bicycle_parking}",
+            "ru": "Это велопарковка типа {bicycle_parking}",
+            "pl": "Jest to parking rowerowy typu: {bicycle_parking}",
+            "pt_BR": "Este é um estacionamento de bicicletas do tipo: {bicycle_parking}",
+            "pt": "Este é um estacionamento de bicicletas do tipo: {bicycle_parking}",
+            "es": "Este es un aparcamiento de bicicletas del tipo: {bicycle_parking}",
+            "da": "Dette er en cykelparkering af typen: {bicycle_parking}",
+            "cs": "Jde o typ parkoviště pro jízdní kola: {bicycle_parking}",
+            "ca": "Aquest és un aparcament de bicicletes del tipus: {bicycle_parking}"
+          },
+          "freeform": {
+            "key": "bicycle_parking",
+            "addExtraTags": [
+              "fixme=Freeform used on 'bicycle_parking'-tag: possibly a wrong value"
+            ],
+            "inline": true
+          },
+          "mappings": [
+            {
+              "if": "bicycle_parking=stands",
+              "then": {
+                "en": "Stands",
+                "nl": "Nietjes",
+                "fr": "Arceaux",
+                "gl": "De roda (Stands)",
+                "de": "Fahrradbügel",
+                "hu": "Korlát",
+                "it": "Archetti",
+                "zh_Hant": "單車架",
+                "ca": "Bastidors",
+                "da": "Hæftestativer",
+                "cs": "Stojany",
+                "pt_BR": "Racks para prender a bicicleta"
+              },
+              "icon": {
+                "path": "./assets/layers/bike_parking/staple.svg",
+                "class": "large"
+              }
+            },
+            {
+              "if": "bicycle_parking=wall_loops",
+              "then": {
+                "en": "Wheelbenders / rack",
+                "nl": "Wielrek/lussen",
+                "fr": "Pinces-roues",
+                "gl": "Aros",
+                "de": "Metallgestänge",
+                "hu": "Kerékbefogó hurok",
+                "it": "Scolapiatti",
+                "zh_Hant": "車輪架/圓圈",
+                "ca": "Portarodes/bucles",
+                "da": "Hjulstativ/løkker",
+                "cs": "Stojan na kola / smyčky",
+                "pt_BR": "Suporte de rodas/loops"
+              },
+              "icon": {
+                "path": "./assets/layers/bike_parking/wall_loops.svg",
+                "class": "large"
+              }
+            },
+            {
+              "if": "bicycle_parking=handlebar_holder",
+              "then": {
+                "en": "Handlebar holder",
+                "nl": "Stuurhouder",
+                "fr": "Support guidon",
+                "gl": "Cadeado para guiador",
+                "de": "Halter für Fahrradlenker",
+                "it": "Blocca manubrio",
+                "zh_Hant": "車把架",
+                "ca": "Suport de manillar",
+                "da": "Styrholder",
+                "cs": "Držák na řídítka",
+                "pt_BR": "Suporte para guidão",
+                "pt": "Suporte para guidão"
+              },
+              "icon": {
+                "path": "./assets/layers/bike_parking/handlebar_holder.svg",
+                "class": "large"
+              }
+            },
+            {
+              "if": "bicycle_parking=rack",
+              "then": {
+                "en": "Rack",
+                "nl": "Rek",
+                "fr": "Râtelier",
+                "gl": "Cremalleira",
+                "de": "Gestell",
+                "zh_Hant": "車架",
+                "it": "Rastrelliera",
+                "ru": "Стойка",
+                "ca": "Enganxament",
+                "da": "Stativ",
+                "cs": "Stojan",
+                "eu": "Rack-a",
+                "pt_BR": "Suporte",
+                "pt": "Suporte"
+              },
+              "icon": {
+                "path": "./assets/layers/bike_parking/rack.svg",
+                "class": "large"
+              }
+            },
+            {
+              "if": "bicycle_parking=two_tier",
+              "then": {
+                "en": "Two-tiered",
+                "nl": "Dubbel (twee verdiepingen)",
+                "fr": "Superposé",
+                "gl": "Dobre cremalleira",
+                "de": "Zweistufig",
+                "hu": "Kétszintű",
+                "zh_Hant": "兩層",
+                "it": "A due piani",
+                "ru": "Двухуровневая",
+                "ca": "De dos nivells",
+                "da": "To-lags",
+                "cs": "Dvouúrovňové",
+                "pt_BR": "De dois níveis",
+                "pt": "De dois níveis"
+              },
+              "icon": {
+                "path": "./assets/layers/bike_parking/two_tier.svg",
+                "class": "large"
+              }
+            },
+            {
+              "if": "bicycle_parking=shed",
+              "then": {
+                "en": "Shed",
+                "nl": "Schuur",
+                "fr": "Abri",
+                "gl": "Abeiro",
+                "de": "Schuppen",
+                "hu": "Fészer",
+                "zh_Hant": "車棚",
+                "it": "Rimessa",
+                "ru": "Навес",
+                "es": "Caseta",
+                "da": "Skur",
+                "cs": "Přístřešek",
+                "pa_PK": "شیڈ",
+                "ca": "cobert",
+                "eu": "Etxola",
+                "pt_BR": "Cabana",
+                "pt": "Cabana"
+              },
+              "icon": {
+                "path": "./assets/layers/bike_parking/shed.svg",
+                "class": "large"
+              }
+            },
+            {
+              "if": "bicycle_parking=bollard",
+              "then": {
+                "en": "Bollard",
+                "nl": "Paal met ring",
+                "fr": "Potelet",
+                "it": "Colonnina",
+                "de": "Poller",
+                "zh_Hant": "柱子",
+                "ca": "Pilona",
+                "es": "Bolardo",
+                "da": "Pullert",
+                "cs": "Sloupek",
+                "pa_PK": "بولارڈ",
+                "eu": "Bolardo",
+                "pt_BR": "Pilar",
+                "pt": "Pilar"
+              },
+              "icon": {
+                "path": "./assets/layers/bike_parking/bollard.svg",
+                "class": "large"
+              }
+            },
+            {
+              "if": "bicycle_parking=floor",
+              "then": {
+                "en": "An area on the floor which is marked for bicycle parking",
+                "nl": "Een oppervlakte die gemarkeerd is om fietsen te parkeren",
+                "fr": "Zone au sol qui est marquée pour le stationnement des vélos",
+                "it": "Una zona del terreno che è marcata per il parcheggio delle bici",
+                "de": "Ein Bereich auf dem Boden, der für das Abstellen von Fahrrädern gekennzeichnet ist",
+                "zh_Hant": "樓層當中標示為單車停車場的區域",
+                "es": "Una área en el suelo que está marcada para el aparcamiento de bicicletas",
+                "da": "Et område på gulvet, der er markeret til cykelparkering",
+                "cs": "Plocha na zemi označená pro parkování jízdních kol",
+                "ca": "Una zona al terra que està senyalitzada per a l'aparcament de bicicletes",
+                "pt_BR": "Uma área no chão que é marcada para o estacionamento de bicicletas",
+                "pt": "Uma área no chão que é marcada para o estacionamento de bicicletas"
+              }
+            },
+            {
+              "if": "bicycle_parking=lockers",
+              "then": {
+                "en": "A locker - the bicycles are enclosed completely individually or with a few bicycles together. The locker is too small to fit a person standing..",
+                "nl": "Een fietskluis waar één of enkele fietsen staan en op slot kan en die te klein is om in recht te staan.",
+                "de": "Ein Schließfach - Fahrräder werden einzeln oder mit mehreren Fahrrädern zusammen eingeschlossen. Der Schrank ist zu klein für eine stehende Person."
+              }
+            }
+          ],
+          "id": "Bicycle parking type"
+        },
+        {
+          "question": {
+            "en": "What is the relative location of this bicycle parking?",
+            "nl": "Wat is de relatieve locatie van deze parking??",
+            "fr": "Quelle est la position relative de ce parking à vélo ?",
+            "it": "Qual è la posizione relativa di questo parcheggio bici?",
+            "zh_Hant": "這個單車停車場的相對位置是？",
+            "pl": "Jaka jest względna lokalizacja tego parkingu rowerowego?",
+            "pt_BR": "Qual a localização relativa deste estacionamento de bicicletas?",
+            "de": "Wo befinden sich diese Fahrradabstellplätze?",
+            "pt": "Qual a localização relativa deste estacionamento de bicicletas?",
+            "es": "¿Cual es la localización relativa de este aparcamiento de bicicletas?",
+            "da": "Hvad er den relative placering af denne cykelparkering?",
+            "cs": "Jaké je relativní umístění tohoto parkoviště pro jízdní kola?",
+            "ca": "Quina és la ubicació relativa d'aquest aparcament per a bicicletes?"
+          },
+          "mappings": [
+            {
+              "if": "location=underground",
+              "then": {
+                "en": "Underground parking",
+                "nl": "Ondergrondse parking",
+                "fr": "Parking souterrain",
+                "it": "Parcheggio sotterraneo",
+                "ru": "Подземная парковка",
+                "de": "In einer Tiefgarage",
+                "zh_Hant": "地下停車場",
+                "pt_BR": "Estacionamento subterrâneo",
+                "pt": "Estacionamento subterrâneo",
+                "ca": "Aparcament subterrani",
+                "es": "Aparcamiento subterráneo",
+                "da": "Underjordisk parkering",
+                "cs": "Podzemní parkoviště"
+              }
+            },
+            {
+              "if": "location=surface",
+              "then": {
+                "en": "Surface level parking",
+                "nl": "Parking op de begane grond",
+                "fr": "Parking en surface",
+                "it": "Parcheggio in superficie",
+                "ru": "Подземная парковка",
+                "de": "Auf einem ebenerdigen Parkplatz",
+                "zh_Hant": "地面停車場",
+                "pt_BR": "Estacionamento de superfície",
+                "pt": "Estacionamento de superfície",
+                "hu": "Felszíni parkoló",
+                "es": "Aparcamiento a nivel de calle",
+                "da": "Parkering i gade niveau",
+                "cs": "Povrchové parkoviště",
+                "ca": "Aparcament a nivell de carrer"
+              }
+            },
+            {
+              "if": "location=rooftop",
+              "then": {
+                "en": "Rooftop parking",
+                "nl": "Dakparking",
+                "fr": "Parking sur un toit",
+                "hu": "Tetőparkoló",
+                "it": "Parcheggio sul tetto",
+                "de": "Auf einem Parkplatz auf dem Dach",
+                "zh_Hant": "屋頂停車場",
+                "pt_BR": "Estacionamento no telhado",
+                "pt": "Estacionamento no telhado",
+                "ru": "Парковка на крыше",
+                "ca": "Aparcament al terrat",
+                "es": "Aparcamiento de azotea",
+                "da": "Tagparkering",
+                "cs": "Parkoviště na střeše",
+                "pl": "Parking na dachu"
+              }
+            },
+            {
+              "if": "location=",
+              "then": {
+                "en": "Surface level parking",
+                "nl": "Parking op de begane grond",
+                "fr": "Parking en surface",
+                "hu": "Felszíni parkoló",
+                "it": "Parcheggio in superficie",
+                "de": "Ebenerdiges Parken",
+                "zh_Hant": "地面層停車場",
+                "pt_BR": "Estacionamento ao nível da superfície",
+                "pt": "Estacionamento ao nível da superfície",
+                "es": "Aparcamiento a nivel de calle",
+                "da": "Parkering i gade niveau",
+                "cs": "Povrchové parkoviště",
+                "ca": "Aparcament a nivell de carrer"
+              },
+              "hideInAnswer": true
+            }
+          ],
+          "id": "Underground?"
+        },
+        {
+          "question": {
+            "en": "Is this parking covered? Also select \"covered\" for indoor parkings.",
+            "nl": "Is deze parking overdekt? Selecteer ook \"overdekt\" voor fietsparkings binnen een gebouw.",
+            "gl": "Este aparcadoiro está cuberto? Tamén escolle \"cuberto\" para aparcadoiros interiores.",
+            "de": "Ist der Parkplatz überdacht? Wählen Sie auch \"überdacht\" für Parkplätze in Innenräumen.",
+            "fr": "Ce parking est-il couvert ? Sélectionnez aussi \"couvert\" pour les parkings en intérieur.",
+            "hu": "Fedett-e ez a parkoló? Beltéri parkolónál is válaszd a „fedett” opciót.",
+            "it": "È un parcheggio coperto? Indicare “coperto” per parcheggi all’interno.",
+            "zh_Hant": "這個停車場是否有車棚？如果是室內停車場也請選擇\"遮蔽\"。",
+            "pt_BR": "Este estacionamento é coberto? Também selecione \"coberto\" para estacionamentos internos.",
+            "pt": "Este estacionamento é coberto? Também selecione \"coberto\" para estacionamentos internos.",
+            "es": "¿Está cubierto este aparcamiento? Selecciona \"cubierto\" también para aparcamientos interiores.",
+            "da": "Er denne parkering overdækket? Vælg også \"overdækket\" for indendørs parkeringspladser.",
+            "cs": "Je toto parkoviště zastřešené? U vnitřních parkovišť vyberte také možnost \"kryté\".",
+            "ca": "Aquest aparcament està cobert? També seleccioneu \"cobert\" per als aparcaments interiors."
+          },
+          "condition": {
+            "and": [
+              "bicycle_parking!=shed",
+              "location!=underground"
+            ]
+          },
+          "mappings": [
+            {
+              "if": "covered=yes",
+              "then": {
+                "en": "This parking is covered (it has a roof)",
+                "nl": "Deze parking is overdekt (er is een afdak)",
+                "gl": "Este aparcadoiro está cuberto (ten un teito)",
+                "de": "Der Parkplatz ist überdacht",
+                "fr": "Ce parking est couvert (il a un toit)",
+                "hu": "Ez a parkoló fedett",
+                "it": "È un parcheggio coperto (ha un tetto)",
+                "zh_Hant": "這個停車場有遮蔽 (有屋頂)",
+                "ru": "Это крытая парковка (есть крыша/навес)",
+                "pt_BR": "Este estacionamento é coberto (tem um telhado)",
+                "pt": "Este estacionamento é coberto (tem um telhado)",
+                "es": "Este aparcamiento está cubierto (tiene un tejado)",
+                "da": "Denne parkeringsplads er overdækket (den har et tag)",
+                "cs": "Toto parkoviště je zastřešené (má střechu)",
+                "ca": "Aquest aparcament està cobert (té un sostre)"
+              }
+            },
+            {
+              "if": "covered=no",
+              "then": {
+                "en": "This parking is not covered",
+                "nl": "Deze parking is niet overdekt",
+                "gl": "Este aparcadoiro non está cuberto",
+                "de": "Der Parkplatz ist nicht überdacht",
+                "fr": "Ce parking n'est pas couvert",
+                "hu": "Ez a parkoló nem fedett",
+                "it": "Non è un parcheggio coperto",
+                "zh_Hant": "這個停車場沒有遮蔽",
+                "ru": "Это открытая парковка",
+                "pt_BR": "Este estacionamento não é coberto",
+                "pt": "Este estacionamento não é coberto",
+                "es": "Este aparcamiento no está cubierto",
+                "da": "Denne parkeringsplads er ikke overdækket",
+                "cs": "Toto parkoviště není zastřešené",
+                "ca": "Aquest aparcament no està cobert"
+              }
+            }
+          ],
+          "id": "Is covered?"
+        },
+        {
+          "question": {
+            "en": "How many bicycles fit in this bicycle parking?",
+            "fr": "Combien de vélos entrent dans ce parking à vélos (y compris les éventuels vélos de transport) ?",
+            "nl": "Hoeveel fietsen kunnen in deze fietsparking?",
+            "gl": "Cantas bicicletas caben neste aparcadoiro de bicicletas (incluídas as posíbeis bicicletas de carga)?",
+            "de": "Wie viele Fahrräder passen auf diesen Fahrrad-Parkplatz?",
+            "it": "Quante biciclette entrano in questo parcheggio per bici (incluse le eventuali bici cargo)?",
+            "zh_Hant": "這個單車停車場能放幾台單車 (包括裝箱單車)？",
+            "es": "¿Cuántas bicicletas caben en este aparcamiento de bicicletas (incluyendo posibles bicicletas de carga)?",
+            "da": "Hvor mange cykler er der plads til på denne cykelparkering (inklusive mulige ladcykler)?",
+            "cs": "Kolik jízdních kol se vejde na toto parkoviště (včetně případných nákladních kol)?",
+            "ca": "Quantes bicicletes caben en aquest aparcament de bicicletes (incloent possibles bicicletes de càrrega)?",
+            "pt_BR": "Quantas bicicletas cabem nesse estacionamento de bicicletas (incluindo possíveis bicicletas de carga)?",
+            "pt": "Quantas bicicletas cabem neste estacionamento de bicicletas (incluindo possíveis bicicletas de carga)?"
+          },
+          "questionHint": {
+            "en": "This includes regular bicycles, cargo bikes, ebikes, ...",
+            "nl": "Dit is het totaal aantal gewone fietsen, bakfietsen, elektrische fietsen, ...",
+            "de": "Dazu gehören reguläre Fahrräder, Lasträder, Ebikes,..."
+          },
+          "render": {
+            "en": "Place for {capacity} bikes",
+            "fr": "Place pour {capacity} vélos",
+            "nl": "Plaats voor {capacity} fietsen",
+            "gl": "Lugar para {capacity} bicicletas",
+            "de": "Der Parkplatz bietet Platz für {capacity} Fahrräder",
+            "it": "Posti per {capacity} bici",
+            "zh_Hant": "{capacity} 單車的地方",
+            "ru": "Место для {capacity} велосипеда(ов)",
+            "pt_BR": "Lugar para {capacity} bicicletas",
+            "pt": "Lugar para {capacity} bicicletas",
+            "es": "Espacio para {capacity} bicis",
+            "da": "Plads til {capacity} cykler",
+            "cs": "Místo pro {capacity} kol",
+            "ca": "Espai per a {capacity} bicis",
+            "pl": "Miejsce na {capacity} rowerów"
+          },
+          "freeform": {
+            "key": "capacity",
+            "type": "nat",
+            "inline": true
+          },
+          "id": "Capacity"
+        },
+        {
+          "question": {
+            "en": "Who can use this bicycle parking?",
+            "nl": "Wie mag er deze fietsenstalling gebruiken?",
+            "fr": "Qui peut utiliser ce parking à vélo ?",
+            "it": "Chi può usare questo parcheggio bici?",
+            "de": "Wer darf den Parkplatz nutzen?",
+            "zh_Hant": "誰可以使用這個單車停車場？",
+            "ru": "Кто может пользоваться этой велопарковкой?",
+            "pt_BR": "Quem pode usar este estacionamento de bicicletas?",
+            "pt": "Quem pode usar este estacionamento de bicicletas?",
+            "es": "¿Quién puede utilizar este aparcamiento de bicicletas?",
+            "da": "Hvem kan bruge denne cykelparkering?",
+            "cs": "Kdo může parkoviště pro jízdní kola využívat?",
+            "ca": "Qui pot utilitzar aquest aparcament de bicicletes?",
+            "pl": "Kto może używać tego parkingu dla rowerów?"
+          },
+          "render": {
+            "en": "{access}",
+            "de": "{access}",
+            "fr": "{access}",
+            "nl": "{access}",
+            "it": "{access}",
+            "ru": "{access}",
+            "id": "{access}",
+            "zh_Hant": "{access}",
+            "fi": "{access}",
+            "pt_BR": "{access}",
+            "pt": "{access}",
+            "eo": "{access}",
+            "ca": "{access}",
+            "es": "{access}",
+            "da": "{access}",
+            "cs": "{access}",
+            "eu": "{access}",
+            "pl": "{access}"
+          },
+          "freeform": {
+            "key": "access",
+            "addExtraTags": [
+              "fixme=Freeform used on 'access'-tag: possibly a wrong value"
+            ],
+            "inline": true
+          },
+          "mappings": [
+            {
+              "if": "access=yes",
+              "then": {
+                "en": "Publicly accessible",
+                "nl": "Publiek toegankelijke fietsenstalling",
+                "fr": "Accessible publiquement",
+                "it": "Accessibile pubblicamente",
+                "de": "Der Parkplatz darf öffentlich genutzt werden",
+                "zh_Hant": "公開可用",
+                "pt_BR": "Acessível ao público",
+                "pt": "Acessível ao público",
+                "ca": "Accessible al públic",
+                "es": "Accesible públicamente",
+                "da": "Offentligt tilgængelig",
+                "cs": "Veřejně přístupné",
+                "pl": "Dostępne publicznie"
+              }
+            },
+            {
+              "if": "access=customers",
+              "then": {
+                "en": "Access is primarily for visitors to a business",
+                "nl": "Klanten van de zaak of winkel",
+                "fr": "Accès destiné principalement aux visiteurs d'un lieu",
+                "it": "Accesso destinato principalmente ai visitatori di un’attività",
+                "zh_Hant": "通行性主要是為了企業的顧客",
+                "pt_BR": "Acesso é principalmente para visitantes de uma empresa",
+                "de": "Der Parkplatz darf von Kunden des Unternehmens genutzt werden",
+                "pt": "Acesso é principalmente para visitantes de uma empresa",
+                "es": "El acceso es primariamente para visitantes a un negocio",
+                "da": "Adgang hovedsageligt for besøgende til en virksomhed",
+                "cs": "Přístup je určen především pro návštěvníky podniku",
+                "ca": "L'accés és principalment per a visitants d'un negoci"
+              }
+            },
+            {
+              "if": "access=members",
+              "then": {
+                "en": "Access is limited to members of a school, company or organisation",
+                "nl": "Private fietsenstalling van een school, een bedrijf, ...",
+                "ca": "L'accés està limitat a membres d'una escola, companyia o organització",
+                "cs": "Přístup je omezen na členy školy, společnosti nebo organizace",
+                "da": "Adgangen er begrænset til medlemmer af en skole, virksomhed eller organisation",
+                "de": "Der Parkplatz darf nur von Mitgliedern einer Schule, Firma oder Organisation genutzt werden",
+                "es": "El acceso se limita a miembros de una escuela, compañía u organización",
+                "fr": "Accès limité aux membres d'une école, entreprise ou organisation",
+                "it": "Accesso limitato ai membri di una scuola, una compagnia o un’organizzazione",
+                "pt": "Acesso é limitado aos membros de uma escola, companhia ou organização",
+                "pt_BR": "Acesso é limitado aos membros de uma escola, companhia ou organização",
+                "zh_Hant": "通行性僅限學校、公司或組織的成員"
+              }
+            },
+            {
+              "if": "access=private",
+              "then": {
+                "en": "Access is limited to members of a school, company or organisation",
+                "nl": "Private fietsenstalling van een school, een bedrijf, ...",
+                "fr": "Accès limité aux membres d'une école, entreprise ou organisation",
+                "it": "Accesso limitato ai membri di una scuola, una compagnia o un’organizzazione",
+                "zh_Hant": "通行性僅限學校、公司或組織的成員",
+                "pt_BR": "Acesso é limitado aos membros de uma escola, companhia ou organização",
+                "de": "Der Parkplatz darf nur von Mitgliedern einer Schule, Firma oder Organisation genutzt werden",
+                "pt": "Acesso é limitado aos membros de uma escola, companhia ou organização",
+                "es": "El acceso se limita a miembros de una escuela, compañía u organización",
+                "da": "Adgangen er begrænset til medlemmer af en skole, virksomhed eller organisation",
+                "cs": "Přístup je omezen na členy školy, společnosti nebo organizace",
+                "ca": "L'accés està limitat a membres d'una escola, companyia o organització"
+              }
+            }
+          ],
+          "id": "Access"
+        },
+        {
+          "id": "fee",
+          "question": {
+            "en": "Are these bicycle parkings free to use?",
+            "nl": "Is deze fietsenstalling gratis te gebruiken?",
+            "de": "Sind die Fahrradparkplätze kostenlos zu benutzen?"
+          },
+          "mappings": [
+            {
+              "if": "fee=yes",
+              "then": {
+                "en": "One has to <b>pay</b> to use this bicycle parking",
+                "nl": "<b>Betalende</b> fietsparking",
+                "de": "Man muss <b>zahlen</b>, um den Fahrradparkplatz zu nutzen"
+              }
+            },
+            {
+              "if": "fee=no",
+              "alsoShowIf": "fee=",
+              "then": {
+                "en": "Free to use",
+                "nl": "Gratis te gebruiken",
+                "de": "Die Nutzung ist kostenlos"
+              }
+            }
+          ]
+        },
+        {
+          "id": "charge",
+          "condition": "fee=yes",
+          "question": {
+            "en": "How much does it cost to park your bike here?",
+            "nl": "Hoeveel kost het om een fiets te stallen?"
+          },
+          "questionHint": {
+            "en": "This is the amount which is charged for a single bike",
+            "nl": "Dit is de kostprijs voor een enkele fiets"
+          },
+          "render": {
+            "en": "Parking your bike costs {charge}",
+            "nl": "Je fiets hier parkeren kost {charge}"
+          },
+          "freeform": {
+            "key": "charge",
+            "type": "currency",
+            "inline": true
+          }
+        },
+        {
+          "id": "opening_hours_24_7_default",
+          "question": {
+            "en": "What are the opening hours of {title()}?",
+            "fr": "Quelles sont les horaires d'ouverture de {title()} ?",
+            "de": "Wie lauten die Öffnungszeiten von {title()}?",
+            "nl": "Wat zijn de openingstijden van {title()}?",
+            "nb_NO": "Hva er åpningstidene for {title()})",
+            "ru": "Какое время работы у {title()}?",
+            "zh_Hant": "{title()} 的開放時間是什麼？",
+            "it": "Quali sono gli orari di apertura di {title()}?",
+            "pt_BR": "Qual o horário de funcionamento de {title()}?",
+            "pl": "Jakie są godziny otwarcia {title()}?",
+            "sv": "Vilka är öppettiderna för {title()}?",
+            "pt": "Qual é o horário de funcionamento de {title()}?",
+            "hu": "Mikor van nyitva ez: {title()}?",
+            "ca": "Quin és l'horari d'obertura de {title()}?",
+            "ja": "{title()}の営業時間は？",
+            "sl": "Kakšen odpiralni čas ima {title()}?",
+            "fil": "Anong oras nagbubukas ang {title()}?",
+            "es": "¿Cuales son las horas de apertura de {title()}?",
+            "zh_Hans": "{title()} 的开放时间为何？",
+            "da": "Hvad er åbningstiderne for {title()}?",
+            "id": "Kapan jam buka {title()}?",
+            "cs": "Jaká je otevírací doba {title()}?"
+          },
+          "render": {
+            "de": "<h3>Öffnungszeiten</h3>{opening_hours_table(opening_hours)}",
+            "fr": "<h3>Horaires d'ouverture</h3>{opening_hours_table(opening_hours)}",
+            "en": "<h3>Opening hours</h3>{opening_hours_table(opening_hours)}",
+            "nl": "<h3>Openingstijden</h3>{opening_hours_table(opening_hours)}",
+            "nb_NO": "<h3>Åpningstider</h3>{opening_hours_table(opening_hours)}",
+            "ru": "<h3>Часы работы</h3>{opening_hours_table(opening_hours)}",
+            "zh_Hant": "<h3>開放時間</h3>{opening_hours_table(opening_hours)}",
+            "it": "<h3>Orari di apertura</h3>{opening_hours_table(opening_hours)}",
+            "pl": "<h3> Godziny otwarcia</h3>{opening_hours_table(opening_hours)}",
+            "pt_BR": "<h3>Horário de funcionamento</h3>{opening_hours_table(opening_hours)}",
+            "sv": "<h3>Öppettider</h3> {opening_hours_table(opening_hours)}",
+            "pt": "<h3>Horário de funcionamento</h3>{opening_hours_table(opening_hours)}",
+            "eo": "<h3>Malfermitaj horoj</h3>{opening_hours_table(opening_hours)}",
+            "hu": "<h3>Nyitva tartás</h3>{opening_hours_table(opening_hours)}",
+            "ca": "<h3>Horari d'obertura</h3>{opening_hours_table(opening_hours)}",
+            "ja": "<h3>営業時間</h3>{opening_hours_table(opening_hours)}",
+            "sl": "<h3>Odpiralni čas</h3>{opening_hours_table(opening_hours)}",
+            "fil": "<h3>Mga oras na bukas</h3>{opening_hours_table(opening_hours)}",
+            "es": "<h3>Horas de apertura</h3>{opening_hours_table(opening_hours)}",
+            "zh_Hans": "<h3>开放时间</h3> {opening_hours_table(opening_hours)}",
+            "da": "<h3> Åbningstider</h3>{opening_hours_table(opening_hours)}",
+            "id": "<h3>Jam buka</h3>{opening_hours_table(opening_hours)}",
+            "pa_PK": "<h3>کھُلھے گھنٹے</h3>{opening_hours_table(opening_hours)}",
+            "cs": "<h3>Otevírací hodiny</h3>{opening_hours_table(opening_hours)}"
+          },
+          "freeform": {
+            "key": "opening_hours",
+            "type": "opening_hours",
+            "inline": false
+          },
+          "mappings": [
+            {
+              "if": "opening_hours=24/7",
+              "icon": "./assets/layers/questions/open24_7.svg",
+              "then": {
+                "en": "24/7 opened (including holidays)",
+                "de": "durchgehend geöffnet (auch an Feiertagen)",
+                "zh_Hant": "24/7 開放 (包括假日)",
+                "id": "Buka 24 jam (termasuk hari libur)",
+                "hu": "Éjjel-nappal nyitva (munkaszüneti napokon is)",
+                "es": "Abierta 24/7 (incluyendo festivos)",
+                "nl": "24/7 open (ook tijdens feestdagen)",
+                "fr": "Ouvert 24h/24 (jours fériés compris)",
+                "nb_NO": "Døgnåpent (inkludert helligdager)",
+                "cs": "Otevřeno 24/7 (včetně svátků)",
+                "ca": "Obert 24/7 (incloent-hi festius)",
+                "pl": "Otwarte 24/7 (również w święta)"
+              },
+              "#": "The first mapping is 'opening_hours=24/7', we amend this to also show if no info is known",
+              "alsoShowIf": "opening_hours="
+            },
+            {
+              "#": "Just here to be able to handle those ~5000 incorrect 'opening_hours=closed' elements.",
+              "if": "opening_hours=closed",
+              "then": {
+                "en": "Marked as closed for an unspecified time",
+                "nl": "Gesloten voor onbepaalde duur",
+                "de": "Als geschlossen für eine unbestimmte Zeit markiert"
+              },
+              "hideInAnswer": true
+            }
+          ]
+        },
+        {
+          "id": "operator",
+          "question": {
+            "en": "Who maintains this bicycle parking?",
+            "nl": "Wie beheert deze fietsenstalling?",
+            "de": "Wer unterhält diese Fahrradabstellplätze?"
+          },
+          "render": {
+            "en": "This bicycle parking is maintained by {operator}",
+            "nl": "Deze fietsenstalling wordt beheerd door {operator}",
+            "de": "Dieser Fahrradparkplatz wird von {operator} bereitgestellt"
+          },
+          "freeform": {
+            "key": "operator",
+            "inline": true
+          }
+        },
+        {
+          "id": "operator_phone",
+          "question": {
+            "en": "What is the phone number of the operator of this bicycle parking?",
+            "nl": "Wat is het telefoonnummer van de operator van deze fietsenstalling?",
+            "de": "Wie lautet die Telefonnummer des Betreibers dieses Fahrradparkplatzes?"
+          },
+          "questionHint": {
+            "en": "One might be able to call this number in case of problems, e.g. to remove unmaintained bicycles",
+            "nl": "Men kan dit nummer bellen om bv. fietswrakken of defecten te melden",
+            "de": "Man könnte diese Nummer anrufen, wenn es Probleme gibt, z. B. um nicht gewartete Fahrräder zu entfernen"
+          },
+          "icon": "./assets/layers/questions/phone.svg",
+          "freeform": {
+            "key": "operator:phone",
+            "type": "phone",
+            "addExtraTags": [
+              "phone=",
+              "contact:phone="
+            ]
+          },
+          "render": "<a href='tel:{operator:phone}'>{operator:phone}</a>",
+          "mappings": [
+            {
+              "if": "phone~*",
+              "hideInAnswer": true,
+              "then": {
+                "*": "<a href='tel:{phone}'>{phone}</a>"
+              },
+              "icon": "./assets/layers/questions/phone.svg"
+            },
+            {
+              "if": "contact:phone~*",
+              "hideInAnswer": true,
+              "then": {
+                "*": "<a href='tel:{contact:phone}'>{contact:phone}</a>"
+              },
+              "icon": "./assets/layers/questions/phone.svg"
+            }
+          ]
+        },
+        {
+          "id": "operator_website",
+          "question": {
+            "en": "What is the website number of the operator of this bicycle parking?",
+            "nl": "Wat is de website van de operator van deze fietsenstalling?",
+            "de": "Wie lautet die Nummer auf der Website des Betreibers dieses Fahrradparkplatzes?"
+          },
+          "icon": "./assets/layers/icons/website.svg",
+          "freeform": {
+            "key": "operator:website",
+            "type": "url",
+            "addExtraTags": [
+              "website=",
+              "contact:website="
+            ]
+          },
+          "render": "<a href='{operator:website}'>{operator:website}</a>",
+          "mappings": [
+            {
+              "if": "website~*",
+              "hideInAnswer": true,
+              "then": {
+                "*": "<a href='{website}'>{website}</a>"
+              },
+              "icon": "./assets/layers/icons/website.svg"
+            },
+            {
+              "if": "contact:website~*",
+              "hideInAnswer": true,
+              "then": {
+                "*": "<a href='{contact:website}'>{contact:website}</a>"
+              },
+              "icon": "./assets/layers/icons/website.svg"
+            }
+          ]
+        },
+        {
+          "id": "operator_email",
+          "question": {
+            "en": "What is the email address of the operator of this bicycle parking?",
+            "nl": "Wat is het emailadres van de beheerder van deze parking?"
+          },
+          "icon": "./assets/svg/envelope.svg",
+          "freeform": {
+            "key": "operator:email",
+            "type": "email"
+          },
+          "render": "<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>"
+        },
+        {
+          "question": {
+            "en": "Does this bicycle parking have spots for cargo bikes?",
+            "nl": "Heeft deze fietsparking plaats voor bakfietsen?",
+            "gl": "Este aparcadoiro de bicicletas ten espazo para bicicletas de carga?",
+            "de": "Hat der Parkplatz Stellflächen für Lastenfahrräder?",
+            "fr": "Est-ce que ce parking à vélo a des emplacements pour des vélos cargo ?",
+            "it": "Questo parcheggio dispone di posti specifici per le bici cargo?",
+            "zh_Hant": "這個單車停車場有地方放裝箱的單車嗎？",
+            "pt_BR": "O estacionamento de bicicletas tem vagas para bicicletas de carga?",
+            "pt": "O estacionamento de bicicletas tem vagas para bicicletas de carga?",
+            "es": "¿Este aparcamiento de bicicletas tiene huecos para bicicletas de carga?",
+            "da": "Har denne cykelparkering plads til ladcykler?",
+            "cs": "Má toto parkoviště místa pro nákladní kola?",
+            "ca": "Aquest aparcament de bicicletes té punts per a bicicletes de càrrega?"
+          },
+          "mappings": [
+            {
+              "if": "cargo_bike=yes",
+              "then": {
+                "en": "This parking has room for cargo bikes",
+                "nl": "Deze parking heeft plaats voor bakfietsen",
+                "gl": "Este aparcadoiro ten espazo para bicicletas de carga",
+                "de": "Der Parkplatz hat Stellflächen für Lastenfahrräder",
+                "fr": "Ce parking a de la place pour les vélos cargo",
+                "it": "Questo parcheggio ha posto per bici cargo",
+                "zh_Hant": "這個停車場有地方可以放裝箱單車",
+                "pt_BR": "Este estacionamento tem vagas para bicicletas de carga",
+                "pt": "Este estacionamento tem vagas para bicicletas de carga",
+                "es": "Este aparcamiento tiene espacio para bicicletas de carga",
+                "da": "Denne parkeringsplads har plads til ladcykler",
+                "cs": "Na tomto parkovišti je místo pro nákladní kola",
+                "ca": "Aquest aparcament té espai per a bicicletes de càrrega"
+              }
+            },
+            {
+              "if": "cargo_bike=designated",
+              "then": {
+                "en": "This parking has designated (official) spots for cargo bikes.",
+                "nl": "Er zijn speciale plaatsen voorzien voor bakfietsen.",
+                "gl": "Este aparcadoiro ten espazos designados (oficiais) para bicicletas de carga.",
+                "de": "Der Parkplatz hat ausgewiesene (offizielle) Stellflächen für Lastenfahrräder.",
+                "fr": "Ce parking a des emplacements (officiellement) destinés aux vélos cargo.",
+                "it": "Questo parcheggio ha posti destinati (ufficialmente) alle bici cargo.",
+                "zh_Hant": "這停車場有設計 (官方) 空間給裝箱的單車。",
+                "pt_BR": "Este estacionamento tem vagas (oficiais) projetadas para bicicletas de carga.",
+                "pt": "Este estacionamento tem vagas (oficiais) projetadas para bicicletas de carga.",
+                "es": "Este aparcamiento tiene huecos designados (oficialmente) para bicicletas de carga.",
+                "da": "Denne parkeringsplads har udpegede (officielle) pladser til ladcykler.",
+                "cs": "Toto parkoviště má vyhrazená (oficiální) místa pro nákladní kola.",
+                "ca": "Aquest aparcament hi han llocs designats (oficialment) per a bicicletes de càrrega."
+              }
+            },
+            {
+              "if": "cargo_bike=no",
+              "then": {
+                "en": "You're not allowed to park cargo bikes or there are no places provided for cargo bikes",
+                "nl": "Je mag hier geen bakfietsen parkeren",
+                "gl": "Non está permitido aparcar bicicletas de carga",
+                "de": "Das Abstellen von Lastenfahrrädern ist nicht erlaubt oder es gibt keine Stellplätze für Lastenfahrräder",
+                "fr": "Il est interdit de garer des vélos cargo",
+                "it": "Il parcheggio delle bici cargo è proibito",
+                "pt_BR": "Você não tem permissão para estacionar bicicletas de carga",
+                "pt": "Não tem permissão para estacionar bicicletas de carga",
+                "es": "No está permitido aparcar bicicletas de carga",
+                "da": "Det er ikke tilladt at parkere ladcykler",
+                "cs": "Není povoleno parkovat nákladní kola",
+                "ca": "No teniu permís per aparcar bicicletes de càrrega"
+              }
+            }
+          ],
+          "id": "Cargo bike spaces?"
+        },
+        {
+          "question": {
+            "en": "How many cargo bicycles fit in this bicycle parking?",
+            "nl": "Voor hoeveel bakfietsen heeft deze fietsparking plaats?",
+            "fr": "Combien de vélos de transport entrent dans ce parking à vélos ?",
+            "gl": "Cantas bicicletas de carga caben neste aparcadoiro de bicicletas?",
+            "de": "Wie viele Lastenfahrräder passen auf diesen Fahrrad-Parkplatz?",
+            "it": "Quante bici cargo entrano in questo parcheggio per bici?",
+            "pt_BR": "Quantas bicicletas de carga cabem neste estacionamento de bicicletas?",
+            "pt": "Quantas bicicletas de carga cabem neste estacionamento de bicicletas?",
+            "es": "¿Cuántas bicicletas de carga caben en este aparcamiento de bicicletas?",
+            "da": "Hvor mange ladcykler er der plads til i denne cykelparkering?",
+            "cs": "Kolik nákladních jízdních kol se vejde do tohoto parkoviště pro jízdní kola?",
+            "ca": "Quantes bicicletes de càrrega caben en aquest aparcament de bicicletes?"
+          },
+          "render": {
+            "en": "This parking fits {capacity:cargo_bike} cargo bikes",
+            "nl": "Deze parking heeft plaats voor {capacity:cargo_bike} bakfietsen",
+            "fr": "Ce parking a de la place pour {capacity:cargo_bike} vélos de transport",
+            "gl": "Neste aparcadoiro caben {capacity:cargo_bike} bicicletas de carga",
+            "de": "Auf diesen Parkplatz passen {capacity:cargo_bike} Lastenfahrräder",
+            "it": "Questo parcheggio può contenere {capacity:cargo_bike} bici cargo",
+            "pt_BR": "Neste estacionamento cabem {capacity:cargo_bike} bicicletas de carga",
+            "pt": "Neste estacionamento cabem {capacity:cargo_bike} bicicletas de carga",
+            "es": "En este aparcamiento caben {capacity:cargo_bike} bicicletas de carga",
+            "da": "Der er plads til {capacity:cargo_bike} på denne cykelparkering",
+            "cs": "Toto parkoviště je vhodné pro {capacity:cargo_bike} nákladních kol",
+            "ca": "A aquest aparcament caben {capacity:cargo_bike} bicicletes de càrrega"
+          },
+          "condition": {
+            "or": [
+              "capacity:cargo_bike~*",
+              "cargo_bike~designated|yes"
+            ]
+          },
+          "freeform": {
+            "key": "capacity:cargo_bike",
+            "type": "nat",
+            "inline": true
+          },
+          "mappings": [
+            {
+              "if": "cargo_bike=no",
+              "then": {
+                "en": "There are no dedicated spaces for cargo bikes here or parking cargo bikes here is not allowed",
+                "nl": "Hier zijn geen plaatsen voor bakfietsen voorzien of bakfietsen stallen is niet toegestaan ",
+                "de": "Es gibt hier keine speziellen Stellplätze für Lastenfahrräder oder das Abstellen von Lastenfahrrädern ist hier nicht erlaubt"
+              },
+              "hideInAnswer": "capacity:cargo_bike=",
+              "addExtraTags": [
+                "capacity:cargo_bike="
+              ]
+            }
+          ],
+          "id": "Cargo bike capacity?"
+        },
+        {
+          "id": "maxstay",
+          "question": {
+            "en": "What is the maximum allowed parking duration?",
+            "nl": "Wat is de toegestane, maximale parkeerduur?"
+          },
+          "questionHint": {
+            "en": "If the bicycle is parked for a longer amount, it might be removed by the operator",
+            "nl": "Indien een fiets langer geparkeerd staat, kan deze verwijderd worden door de beheerder"
+          },
+          "freeform": {
+            "key": "maxstay",
+            "type": "pnat",
+            "inline": false
+          },
+          "render": {
+            "en": "A bike can be parked here for at most {canonical(maxstay)}",
+            "nl": "Een fiets mag hier maximaal {canonical(maxstay)} parkeren"
+          }
+        },
+        {
+          "id": "leftover-questions",
+          "render": {
+            "*": "{questions( ,)}"
+          }
+        },
+        {
+          "id": "lod",
+          "labels": [
+            "added_by_default"
+          ],
+          "render": {
+            "*": "{linked_data_from_website()}"
+          }
+        },
+        {
+          "id": "minimap",
+          "description": "Shows a small map with the feature. Added by default to every popup",
+          "render": {
+            "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+          }
+        },
+        {
+          "id": "move-button",
+          "render": {
+            "*": "{move_button()}"
+          }
+        },
+        {
+          "id": "delete-button",
+          "render": {
+            "*": "{delete_button()}"
+          }
+        },
+        {
+          "id": "last_edit",
+          "labels": [
+            "added_by_default"
+          ],
+          "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+          "condition": {
+            "and": [
+              "_last_edit:contributor~*",
+              "_last_edit:changeset~*"
+            ]
+          },
+          "metacondition": {
+            "or": [
+              "__featureSwitchIsTesting=true",
+              "__featureSwitchIsDebugging=true",
+              "mapcomplete-show_debug=yes",
+              "_csCount>=10"
+            ]
+          },
+          "render": {
+            "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+          }
+        },
+        {
+          "id": "favourite_status",
+          "render": {
+            "*": "{favourite_status()}"
+          }
+        },
+        {
+          "id": "qr_code",
+          "labels": [
+            "added_by_default"
+          ],
+          "classes": "flex items-center gap-x-2",
+          "render": {
+            "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+            "en": "{qr_code()}Scan this code to open this location on another device",
+            "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+            "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+          }
+        },
+        {
+          "id": "share",
+          "labels": [
+            "added_by_default"
+          ],
+          "metacondition": "_supports_sharing=yes",
+          "render": {
+            "de": "{share_link(,Standort teilen)}",
+            "en": "{share_link(,Share this location)}",
+            "nl": "{share_link(,Deel deze locatie)}"
+          }
+        },
+        {
+          "id": "all-tags",
+          "render": {
+            "*": "{all_tags()}"
+          },
+          "metacondition": {
+            "or": [
+              "__featureSwitchIsDebugging=true",
+              "mapcomplete-show_tags=full",
+              "mapcomplete-show_debug=yes"
+            ]
+          }
+        }
+      ],
+      "deletion": {
+        "softDeletionTags": {
+          "and": [
+            "disused:amenity:={amenity}",
+            "amenity="
+          ]
+        },
+        "neededChangesets": 1
+      },
+      "allowMove": {
+        "enableRelocation": false,
+        "enableImproveAccuracy": true
+      },
+      "units": [
+        {
+          "maxstay": {
+            "quantity": "duration",
+            "denominations": [
+              "days",
+              "weeks",
+              "months"
+            ]
+          },
+          "charge": {
+            "quantity": "duration",
+            "inverted": true,
+            "denominations": [
+              "days",
+              "weeks",
+              "months",
+              "years"
+            ]
+          }
+        }
+      ],
+      "titleIcons": [
+        {
+          "id": "wikipedialink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+          "condition": {
+            "or": [
+              "wikipedia~*",
+              "wikidata~*"
+            ]
+          },
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "wikipedia=",
+              "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+            }
+          ]
+        },
+        {
+          "id": "open_until",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "#": "Titleicon showing e.g. 'open until 17:00'",
+          "icon": {
+            "class": "w-20 mx-1 flex items-center"
+          },
+          "render": "{opening_hours_state()}",
+          "condition": {
+            "or": [
+              "opening_hours~*",
+              {
+                "or": [
+                  {
+                    "and": [
+                      "seasonal~.*winter.*",
+                      "_now:date~....-(12|01|02)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*spring.*",
+                      "_now:date~....-(03|04|05)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*summer.*",
+                      "_now:date~....-(06|07|08)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*autumn.*",
+                      "_now:date~....-(09|10|11)-.."
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "phonelink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.render"
+          },
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "contact:phone~*",
+              "then": {
+                "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+                "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+                "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+                "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+              }
+            }
+          ],
+          "condition": {
+            "or": [
+              "phone~*",
+              "contact:phone~*"
+            ]
+          }
+        },
+        {
+          "id": "emaillink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "contact:email~*",
+              "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "operator:email~*",
+              "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+            }
+          ],
+          "condition": {
+            "or": [
+              "email~*",
+              "contact:email~*",
+              "operator:email~*"
+            ]
+          }
+        },
+        {
+          "id": "websitelink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "website~*",
+              "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "operator:website~*",
+              "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "context:website~*",
+              "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            }
+          ]
+        },
+        {
+          "id": "smokingicon",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "smoking=no",
+              "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "smoking=yes",
+              "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+            }
+          ]
+        },
+        {
+          "id": "dogicon",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "if": "dog=no",
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+            },
+            {
+              "if": "dog=leashed",
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+            },
+            {
+              "if": {
+                "or": [
+                  "dog=yes",
+                  "dog=unleashed"
+                ]
+              },
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+            }
+          ]
+        },
+        {
+          "id": "sharelink",
+          "labels": [
+            "defaults"
+          ],
+          "render": "{share_link()}",
+          "metacondition": "_supports_sharing=yes"
+        },
+        {
+          "id": "favourite_title_icon",
+          "labels": [
+            "defaults"
+          ],
+          "render": {
+            "*": "{favourite_icon()}"
+          },
+          "metacondition": "_loggedIn=true"
+        },
+        {
+          "id": "osmlink",
+          "labels": [
+            "defaults"
+          ],
+          "render": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.render"
+          },
+          "mappings": [
+            {
+              "if": "id~.*/-.*",
+              "then": ""
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "_backend~*",
+              "then": {
+                "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+                "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+                "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+                "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+              }
+            }
+          ],
+          "condition": "id~(node|way|relation)/[0-9]*"
+        },
+        {
+          "id": "direction",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "{direction_indicator()}"
+        },
+        {
+          "id": "rating",
+          "icon": {
+            "class": "w-20 mx-1 flex items-center"
+          },
+          "render": "{rating()}"
+        }
+      ],
+      "_layerIcon": [
+        {
+          "icon": "pin",
+          "color": "#5473de"
+        },
+        {
+          "icon": "./assets/layers/bike_parking/parking.svg"
+        }
+      ],
+      "_basedOn": "bike_parking"
+    },
+    {
+      "id": "note_import_bike_parking",
+      "description": {
+        "ca": "Una capa que importa entrades per a Aparcament per a bicicletes",
+        "cs": "Vrstva, která importuje položky pro Parkování kol",
+        "da": "Et lag som importerer poster for Cykelparkering",
+        "de": "Eine Ebene, die Einträge für Fahrrad-Parkplätze importiert",
+        "en": "A layer which imports entries for Bike parking",
+        "es": "Una capa que importar entradas para Aparcamiento de bicis",
+        "nl": "Deze laag toont kaart-nota's die wijzen op een Fietsparking",
+        "pl": "Warstwa importująca wpisy dla Parking dla rowerów",
+        "zh_Hant": "能夠為 單車停車場 匯入項目的圖層",
+        "_context": "core:importLayer.description"
+      },
+      "source": {
+        "osmTags": {
+          "and": [
+            "id~[0-9]+",
+            "comment_url~.*notes/[0-9]*/comment.json"
+          ]
+        },
+        "geoJson": "https://api.openstreetmap.org/api/0.6/notes.json?limit=10000&closed=0&bbox={x_min},{y_min},{x_max},{y_max}",
+        "geoJsonZoomLevel": 10
+      },
+      "passAllFeatures": true,
+      "minzoom": 10,
+      "title": {
+        "render": {
+          "ca": "Pot ser que hi hagi un aparcament per a bicis aquí",
+          "cs": "Zde by mohl být parkování kol",
+          "da": "Mulig en cykelparkering",
+          "de": "Möglicherweise gibt es hier einen Fahrrad-Parkplatz",
+          "en": "There might be a bike parking here",
+          "es": "Puede haber un aparcamiento de bicis aquí",
+          "fi": "Tässä on ehkä a bike parking",
+          "nb_NO": "Det kan være a bike parking her",
+          "nl": "Is hier een fietsparking?",
+          "pl": "Tutaj może znajdować się Parking dla rowerów",
+          "zh_Hant": "這裡可能有 單車停車場",
+          "_context": "core:importLayer.popupTitle"
+        }
+      },
+      "calculatedTags": [
+        "_first_comment=get(feat)('comments')[0].text.toLowerCase()",
+        "_trigger_index=(() => {const lines = feat.properties['_first_comment'].split('\\n'); const matchesMapCompleteURL = lines.map(l => l.match(\".*https://mapcomplete.\\(org|osm.be\\)/\\([a-zA-Z_-]+\\)\\(.html\\)?.*#import\")); const matchedIndexes = matchesMapCompleteURL.map((doesMatch, i) => [doesMatch !== null, i]).filter(v => v[0]).map(v => v[1]); return matchedIndexes[0] })()",
+        "_comments_count=get(feat)('comments').length",
+        "_intro=(() => {const lines = get(feat)('comments')[0].text.split('\\n'); lines.splice(get(feat)('_trigger_index')-1, lines.length); return lines.filter(l => l !== '').join('<br/>');})()",
+        "_tags=(() => {let lines = get(feat)('comments')[0].text.split('\\n').map(l => l.trim()); lines.splice(0, get(feat)('_trigger_index') + 1); lines = lines.filter(l => l != ''); return lines.join(';');})()"
+      ],
+      "isShown": {
+        "and": [
+          "_trigger_index~*",
+          {
+            "or": [
+              {
+                "and": [
+                  "_tags~(^|.*;)amenity=bicycle_parking($|;.*)"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "titleIcons": [
+        {
+          "render": "<a href='https://openstreetmap.org/note/{id}' target='_blank'><img src='./assets/svg/osm-logo-us.svg'></a>"
+        }
+      ],
+      "tagRenderings": [
+        {
+          "id": "Intro",
+          "render": "{_intro}"
+        },
+        {
+          "id": "conversation",
+          "render": "{visualize_note_comments(comments,1)}",
+          "condition": "_comments_count>1"
+        },
+        {
+          "id": "import",
+          "render": {
+            "ca": "{import_button(bike_parking, _tags, he trobat un un aparcament per a bicis aquí; afegeix-lo al mapa,./assets/svg/addSmall.svg,,,id)}",
+            "cs": "{import_button(bike_parking, _tags, Našel jsem parkování kol zde - přidejte ji do mapy,./assets/svg/addSmall.svg,,,id)}",
+            "da": "{import_button(bike_parking, _tags, Jeg har fundet en en cykelparkering her - tilføj den til kortet,./assets/svg/addSmall.svg,,,id)}",
+            "de": "{import_button(bike_parking, _tags, Ich habe hier ein(en) einen Fahrrad-Parkplatz gefunden - Zur Karte hinzufügen,./assets/svg/addSmall.svg,,,id)}",
+            "en": "{import_button(bike_parking, _tags, I have found a a bike parking here - add it to the map,./assets/svg/addSmall.svg,,,id)}",
+            "es": "{import_button(bike_parking,_tags, He encontrado un(a) un aparcamiento de bicis aquí - añádelo al mapa,./assets/svg/addSmall.svg,,,id)}",
+            "nl": "{import_button(bike_parking, _tags, Ik heb hier een een fietsparking gevonden - voeg deze toe aan de kaart...,./assets/svg/addSmall.svg,,,id)}",
+            "pl": "{import_button(bike_parking, _tags, odnalazłem tutaj Parking dla rowerów - dodaj go do mapy,./assets/svg/addSmall.svg,,,id)}",
+            "zh_Hant": "{import_button(bike_parking, _tags, 我在這邊發現 單車停車場 - 新增到地圖,./assets/svg/addSmall.svg,,,id)}",
+            "_context": "core:importLayer.importButton"
+          },
+          "condition": "closed_at="
+        },
+        {
+          "id": "close_note_",
+          "render": {
+            "ca": "{close_note(No he pogut trobar un aparcament per a bicis: esborra-ho, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "cs": "{close_note(Nepodařilo se mi najít parkování kol - odstraňte jej, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "da": "{close_note(Jeg kunne ikke finde en cykelparkering - fjern det, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "de": "{close_note(Ich konnte einen Fahrrad-Parkplatz nicht finden - entferne es, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "en": "{close_note(I could not find a bike parking - remove it, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "es": "{close_note(No he podido encontrar un aparcamiento de bicis - eliminarlo, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "nl": "{close_note(Ik kon hier geen een fietsparking vinden - verwijder deze van de kaart, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "pl": "{close_note(Nie mogłem odnaleźć Parking dla rowerów – usuń go, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "zh_Hant": "{close_note(我無法找到 單車停車場 - 移除吧, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "_context": "core:importLayer.notFound"
+          },
+          "condition": "closed_at="
+        },
+        {
+          "id": "close_note_mapped",
+          "render": {
+            "ca": "{close_note(Ja hi ha un un aparcament per a bicis al mapa - aquest punt és un duplicat, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "cs": "{close_note(Na mapě se již nachází parkování kol - tento bod je duplicitní, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "da": "{close_note(Der er allerede en anden en cykelparkering på kortet - dette punkt er en dublet, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "de": "{close_note(Es gibt bereits einen einen Fahrrad-Parkplatz auf der Karte - dieser Punkt ist ein Duplikat, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "en": "{close_note(There already is a bike parking on the map - this point is a duplicate, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "es": "{close_note(un aparcamiento de bicis ya está en el mapa - este punto es un duplicado, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "nl": "{close_note(Er staat hier reeds een fietsparking op de kaart; dit punt is een duplicaat. Verwijder deze van de kaart, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "pl": "{close_note(Na mapie znajduje się już Parking dla rowerów - ten punkt jest duplikatem, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "zh_Hant": "{close_note(單車停車場 已經在地圖上了 - 這個點重覆了, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "_context": "core:importLayer.alreadyMapped"
+          },
+          "condition": "closed_at="
+        },
+        {
+          "id": "handled",
+          "render": {
+            "ca": "<div class=\"thanks\">Aquesta funció s'ha gestionat. Gràcies pel teu esforç.</div>",
+            "cs": "<div class='thanks'>Tato funkce byla zpracována! Děkujeme za vaši snahu</div>",
+            "da": "<div class=\"thanks\">Dette element er blevet håndteret! Tak for din indsats</div>",
+            "de": "<div class=\"thanks\">Dieses Objekt wurde verarbeitet! Vielen Dank für Ihre Bemühungen</div>",
+            "en": "<div class='thanks'>This feature has been handled! Thanks for your effort</div>",
+            "nb_NO": "<div class='thanks'>Denne funksjonen har blitt håndtert. Takk for din innsats.</div>",
+            "nl": "<div class='thanks'>Dit object is afgehandeld. Bedankt om mee te helpen!</div>",
+            "pl": "<div class='thanks'>Ta funkcja została obsłużona! Dziękujemy za Twój wysiłek</div>",
+            "zh_Hant": "<div class='thanks'>這個圖徵已經處理了！謝謝你的辛勞</div>",
+            "_context": "core:importLayer.importHandled"
+          },
+          "condition": "closed_at~*"
+        },
+        {
+          "id": "comment",
+          "render": "{add_note_comment()}"
+        },
+        {
+          "id": "add_image",
+          "render": "{add_image_to_note()}"
+        },
+        {
+          "id": "nearby_images",
+          "render": {
+            "ca": "<h3>Imatges properes</h3>Les imatges següents són imatges geoetiquetades properes de diversos serveis en línia. Us poden ajudar a resoldre aquesta nota.{nearby_images(open)}",
+            "cs": "<h3>Obrázky z okolí</h3>Následující obrázky jsou geograficky označené obrázky z různých online služeb. Mohly by vám pomoci při řešení této poznámky.{nearby_images(open)}",
+            "da": "<h3>Billeder i nærheden</h3>De følgende billeder er geotaggede billeder i nærheden fra forskellige onlinetjenester. De kan måske hjælpe dig med at løse denne note.{nearby_images(open)}",
+            "de": "<h3>Bilder in der Nähe</h3>Die folgenden Bilder sind mit Geotags versehene Bilder aus verschiedenen Online-Diensten in der Nähe. Sie können helfen, diesen Hinweis zu lösen.{nearby_images(open)}",
+            "en": "<h3>Nearby pictures</h3>The following pictures are nearby geotagged pictures from various online services. They might help you to resolve this note.{nearby_images(open)}",
+            "es": "<h3>Imágenes cercanas</h3> Las siguientes imágenes son imágenes geoetiquetadas cerca de varios servicios en línea. Pueden ayudarte a resolver esta nota. {nearby_images(open)}",
+            "nl": "<h3>Afbeeldingen in de buurt</h3>De volgende afbeeldingen zijn in de buurt gemaakt en kunnen mogelijks helpen. {nearby_images(open)}",
+            "pl": "<h3>Zdjęcia w pobliżu</h3>Poniższe zdjęcia to zdjęcia pobliskich obiektów z geotagami z różnych usług internetowych. Mogą pomóc Ci rozwiązać tę uwagę.{nearby_images(open)}",
+            "zh_Hant": "<h3>附近圖片</h3>接下來的圖片是多個第三方線上服務附近有地理標籤的圖片，也許能協助你解決這個註解。{nearby_images(open)}",
+            "_context": "core:importLayer.nearbyImagesIntro"
+          }
+        },
+        {
+          "id": "all_tags",
+          "render": "{all_tags()}",
+          "metacondition": {
+            "or": [
+              "__featureSwitchIsDebugging=true",
+              "mapcomplete-show_tags=full",
+              "mapcomplete-show_debug=yes"
+            ]
+          }
+        }
+      ],
+      "pointRendering": [
+        {
+          "location": [
+            "point"
+          ],
+          "marker": [
+            {
+              "icon": "circle",
+              "color": "#fff"
+            },
+            {
+              "icon": {
+                "render": "help",
+                "mappings": [
+                  {
+                    "if": {
+                      "or": [
+                        "closed_at~*",
+                        "_imported=yes"
+                      ]
+                    },
+                    "then": "checkmark"
+                  }
+                ]
+              },
+              "color": "#00"
+            }
+          ],
+          "iconSize": "40,40",
+          "anchor": "center"
+        }
+      ]
+    }
+  ],
+  "socialImage": "assets/SocialImage.png"
+}

@@ -1,0 +1,1960 @@
+{
+  "id": "drinking_water",
+  "title": {
+    "en": "Drinking Water",
+    "nl": "Drinkwaterpunten",
+    "fr": "Eau potable",
+    "ru": "Питьевая вода",
+    "ja": "飲料水",
+    "zh_Hant": "飲用水",
+    "it": "Acqua potabile",
+    "de": "Trinkwasserstellen",
+    "nb_NO": "Drikkevann",
+    "hu": "Ivóvíz",
+    "ca": "Aigua Potable",
+    "es": "Agua Potable",
+    "da": "Drikkevand",
+    "pa_PK": "پیݨ والا پاݨی",
+    "cs": "Pitná voda",
+    "pl": "Woda pitna",
+    "_context": "themes:drinking_water.title"
+  },
+  "description": {
+    "en": "On this map, publicly accessible drinking water spots are shown and can be easily added",
+    "nl": "Op deze kaart staan publiek toegankelijke drinkwaterpunten en kan je makkelijk een nieuw drinkwaterpunt toevoegen",
+    "fr": "Cette carte affiche les points d'accès public à de l'eau potable et permet d'en ajouter facilement",
+    "ja": "この地図には、一般にアクセス可能な飲料水スポットが示されており、簡単に追加することができる",
+    "zh_Hant": "在這份地圖上，公共可及的飲水點可以顯示出來，也能輕易的增加",
+    "it": "Questa mappa mostra tutti i luoghi in cui è disponibile acqua potabile ed è possibile aggiungerne di nuovi",
+    "ru": "На этой карте показываются и могут быть легко добавлены общедоступные точки питьевой воды",
+    "de": "Eine Karte zum Anzeigen und Bearbeiten öffentlicher Trinkwasserstellen",
+    "nb_NO": "Offentlig tilgjengelige drikkevannssteder",
+    "hu": "Ezen a térképen a nyilvánosan hozzáférhető ivóvíznyerő helyek láthatók, szerkeszthetők és rajzolhatók fel könnyedén",
+    "es": "En este mapa, se muestran los puntos de agua potable accesibles públicamente y pueden añadirse fácilmente",
+    "ca": "En aquest mapa es mostren els punts d'aigua potable accessibles al públic i es poden afegir fàcilment",
+    "da": "På dette kort er offentligt tilgængelige drikkevandsteder vist og kan nemt tilføjes",
+    "cs": "Na této mapě jsou zobrazena veřejně přístupná místa s pitnou vodou, která lze snadno přidat",
+    "pl": "Na tej mapie znajdują się dostępne publicznie źródła pitnej wody i mogą łatwo być dodane",
+    "_context": "themes:drinking_water.description"
+  },
+  "icon": "./assets/themes/drinking_water/logo.svg",
+  "startLat": 50.8465573,
+  "startLon": 4.351697,
+  "layers": [
+    {
+      "id": "drinking_water",
+      "name": {
+        "en": "Drinking water",
+        "nl": "Drinkbaar water",
+        "fr": "Eau potable",
+        "gl": "Auga potábel",
+        "de": "Trinkwasserstellen",
+        "it": "Acqua potabile",
+        "ru": "Питьевая вода",
+        "id": "Air minum",
+        "hu": "Ivóvíz",
+        "ca": "Aigua potable",
+        "es": "Agua potable",
+        "cs": "Pitná voda"
+      },
+      "description": {
+        "en": "A layer showing drinking water fountains",
+        "nl": "Deze laag toont drinkwaterpunten",
+        "hu": "Ivóvizet adó kutakat megjelenítő réteg",
+        "de": "Eine Ebene mit Trinkwasserbrunnen",
+        "es": "Una capa que muestra fuentes de agua potable",
+        "fr": "Une couche montrant les fontaines d'eau potable",
+        "ca": "Una capa que mostra fonts d'aigua potable",
+        "cs": "Vrstva zobrazující fontány s pitnou vodou"
+      },
+      "source": {
+        "osmTags": {
+          "and": [
+            {
+              "or": [
+                "amenity=drinking_water",
+                "drinking_water=yes",
+                "disused:amenity=drinking_water"
+              ]
+            },
+            "man_made!=reservoir_covered",
+            "access!=permissive",
+            "access!=private"
+          ]
+        }
+      },
+      "calculatedTags": [
+        "_closest_other_drinking_water=closestn(feat)('drinking_water', 1, undefined, 5000).map(f => ({id: f.feat.id, distance: ''+f.distance}))[0]",
+        "_closest_other_drinking_water_id=get(feat)('_closest_other_drinking_water')?.id",
+        "_closest_other_drinking_water_distance=Math.floor(Number(get(feat)('_closest_other_drinking_water')?.distance))"
+      ],
+      "minzoom": 12,
+      "title": {
+        "render": {
+          "en": "Drinking water",
+          "nl": "Drinkbaar water",
+          "fr": "Eau potable",
+          "gl": "Auga potábel",
+          "de": "Trinkwasserstelle",
+          "it": "Acqua potabile",
+          "ru": "Питьевая вода",
+          "id": "Air minum",
+          "hu": "Ivóvíz",
+          "ca": "Aigua potable",
+          "es": "Agua potable",
+          "cs": "Pitná voda"
+        }
+      },
+      "titleIcons": [
+        {
+          "id": "wikipedialink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+          "condition": {
+            "or": [
+              "wikipedia~*",
+              "wikidata~*"
+            ]
+          },
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "wikipedia=",
+              "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+            }
+          ]
+        },
+        {
+          "id": "open_until",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "#": "Titleicon showing e.g. 'open until 17:00'",
+          "icon": {
+            "class": "w-20 mx-1 flex items-center"
+          },
+          "render": "{opening_hours_state()}",
+          "condition": {
+            "or": [
+              "opening_hours~*",
+              {
+                "or": [
+                  {
+                    "and": [
+                      "seasonal~.*winter.*",
+                      "_now:date~....-(12|01|02)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*spring.*",
+                      "_now:date~....-(03|04|05)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*summer.*",
+                      "_now:date~....-(06|07|08)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*autumn.*",
+                      "_now:date~....-(09|10|11)-.."
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "phonelink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.render"
+          },
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "contact:phone~*",
+              "then": {
+                "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+                "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+                "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+                "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+              }
+            }
+          ],
+          "condition": {
+            "or": [
+              "phone~*",
+              "contact:phone~*"
+            ]
+          }
+        },
+        {
+          "id": "emaillink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "contact:email~*",
+              "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "operator:email~*",
+              "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+            }
+          ],
+          "condition": {
+            "or": [
+              "email~*",
+              "contact:email~*",
+              "operator:email~*"
+            ]
+          }
+        },
+        {
+          "id": "websitelink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "website~*",
+              "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "operator:website~*",
+              "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "context:website~*",
+              "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            }
+          ]
+        },
+        {
+          "id": "smokingicon",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "smoking=no",
+              "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "smoking=yes",
+              "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+            }
+          ]
+        },
+        {
+          "id": "dogicon",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "if": "dog=no",
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+            },
+            {
+              "if": "dog=leashed",
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+            },
+            {
+              "if": {
+                "or": [
+                  "dog=yes",
+                  "dog=unleashed"
+                ]
+              },
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+            }
+          ]
+        },
+        {
+          "id": "sharelink",
+          "labels": [
+            "defaults"
+          ],
+          "render": "{share_link()}",
+          "metacondition": "_supports_sharing=yes"
+        },
+        {
+          "id": "favourite_title_icon",
+          "labels": [
+            "defaults"
+          ],
+          "render": {
+            "*": "{favourite_icon()}"
+          },
+          "metacondition": "_loggedIn=true"
+        },
+        {
+          "id": "osmlink",
+          "labels": [
+            "defaults"
+          ],
+          "render": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.render"
+          },
+          "mappings": [
+            {
+              "if": "id~.*/-.*",
+              "then": ""
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "_backend~*",
+              "then": {
+                "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+                "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+                "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+                "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+              }
+            }
+          ],
+          "condition": "id~(node|way|relation)/[0-9]*"
+        },
+        {
+          "id": "direction",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "{direction_indicator()}"
+        },
+        {
+          "id": "title_icon_auto_type",
+          "mappings": [
+            {
+              "if": "fountain=bubbler",
+              "then": "<img class=\"m-1 h-6 w-6 low-interaction rounded\" src='./assets/layers/drinking_water/bubbler.svg'/>"
+            },
+            {
+              "if": "fountain=bottle_refill",
+              "then": "<img class=\"m-1 h-6 w-6 low-interaction rounded\" src='./assets/layers/drinking_water/bottle.svg'/>"
+            },
+            {
+              "if": "man_made=water_tap",
+              "then": "<img class=\"m-1 h-6 w-6 low-interaction rounded\" src='./assets/layers/drinking_water/tap.svg'/>"
+            }
+          ]
+        },
+        {
+          "id": "title_icon_auto_seasonal",
+          "mappings": [
+            {
+              "if": "seasonal=spring;summer;autumn",
+              "then": "<img class=\"m-1 h-6 w-6 low-interaction rounded\" src='./assets/layers/drinking_water/no_winter.svg'/>"
+            }
+          ]
+        }
+      ],
+      "pointRendering": [
+        {
+          "iconBadges": [
+            {
+              "if": {
+                "or": [
+                  "operational_status=broken",
+                  "operational_status=closed",
+                  "disused:amenity=drinking_water"
+                ]
+              },
+              "then": {
+                "render": "close:#c33",
+                "id": "closec33"
+              }
+            },
+            {
+              "if": "tourism=artwork",
+              "then": {
+                "render": "circle:white;./assets/layers/artwork/artwork.svg",
+                "id": "circlewhiteassetslayersartworkartworksvg"
+              }
+            },
+            {
+              "if": "_favourite=yes",
+              "then": {
+                "render": "circle:white;heart:red",
+                "id": "circlewhiteheartred"
+              }
+            }
+          ],
+          "iconSize": "40,40",
+          "location": [
+            "point",
+            "centroid"
+          ],
+          "anchor": "bottom",
+          "marker": [
+            {
+              "icon": {
+                "render": "pin",
+                "id": "pin"
+              },
+              "color": "#6BC4F7"
+            },
+            {
+              "icon": {
+                "render": "./assets/layers/drinking_water/drips.svg",
+                "id": "assetslayersdrinkingwaterdripssvg"
+              }
+            }
+          ]
+        }
+      ],
+      "lineRendering": [],
+      "presets": [
+        {
+          "title": {
+            "en": "a drinking water",
+            "nl": "drinkbaar water",
+            "fr": "une eau potable",
+            "gl": "auga potábel",
+            "de": "eine Trinkwasserstelle",
+            "it": "una acqua potabile",
+            "ru": "питьевая вода",
+            "id": "air minum",
+            "hu": "ivóvíz",
+            "ca": "una font d'aigua potable",
+            "cs": "pitná voda"
+          },
+          "description": {
+            "en": "Typically a drinking fountain, water tap, water well or natural spring",
+            "de": "Typischerweise ein Trinkbrunnen, Wasserhahn, Brunnen oder eine natürliche Quelle",
+            "nl": "Meestal een drinkwaterfonteintje, waterkraan, waterput of natuurlijke bron"
+          },
+          "tags": [
+            "amenity=drinking_water"
+          ]
+        }
+      ],
+      "tagRenderings": [
+        {
+          "id": "just_created",
+          "labels": [
+            "added_by_default"
+          ],
+          "description": "This element shows a 'thank you' that the contributor has recently created this element",
+          "classes": "rounded-xl thanks",
+          "mappings": [
+            {
+              "if": "id~*",
+              "icon": "./assets/svg/party.svg",
+              "then": {
+                "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+                "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+                "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+                "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+                "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+                "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+              }
+            }
+          ],
+          "condition": {
+            "and": [
+              "_backend~*",
+              "_last_edit:passed_time<300",
+              {
+                "or": [
+                  "_version_number=",
+                  "_version_number=1"
+                ]
+              }
+            ]
+          },
+          "metacondition": {
+            "and": [
+              {
+                "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+                "or": [
+                  "_last_edit:contributor:uid:={_uid}",
+                  "_last_edit:contributor:uid="
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "images",
+          "description": "This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images",
+          "render": {
+            "*": "{image_carousel()}{image_upload()}{nearby_images():my-4}"
+          },
+          "classes": "my-4"
+        },
+        {
+          "question": {
+            "en": "Is this drinking water spot still operational?",
+            "nl": "Is deze drinkwaterkraan nog steeds werkende?",
+            "it": "Questo punto di acqua potabile è sempre funzionante?",
+            "fr": "Ce point d'eau potable est-il toujours opérationnel ?",
+            "de": "Ist diese Trinkwasserstelle noch in Betrieb?",
+            "hu": "Működik-e még ez az ivóvíznyerő hely?",
+            "es": "¿Todavía esta operativo este punto de agua potable?",
+            "ca": "Aquest punt d'aigua potable continua operatiu?",
+            "cs": "Je toto místo na pitnou vodu stále funkční?"
+          },
+          "render": {
+            "en": "The operational status is <i>{operational_status}</i>",
+            "nl": "Deze waterkraan-status is <i>{operational_status}</i>",
+            "it": "Lo stato operativo è <i>{operational_status}</i>",
+            "fr": "L'état opérationnel est <i>{operational_status}</i>",
+            "de": "Der Betriebsstatus ist <i>{operational_status}</i>",
+            "hu": "Működési állapota: <i>{operational_status}</i>",
+            "es": "El estado operacional es <i>{operational_status}</i>",
+            "ca": "L'estat operatiu és <i>{operational_status}</i>",
+            "cs": "Provozní stav je <i>{operational_status}</i>",
+            "pt": "O estado operacional é: <i>{operational_status}</i>"
+          },
+          "freeform": {
+            "key": "operational_status",
+            "inline": true
+          },
+          "mappings": [
+            {
+              "if": "operational_status=",
+              "addExtraTags": [
+                "disused:amenity=",
+                "amenity=drinking_water"
+              ],
+              "then": {
+                "en": "This drinking water works",
+                "nl": "Deze drinkwaterfontein werkt",
+                "it": "La fontanella funziona",
+                "fr": "Cette fontaine fonctionne",
+                "de": "Diese Trinkwasserstelle ist in Betrieb",
+                "hu": "Ez az ivóvízkút működik",
+                "es": "Esta agua potable funciona",
+                "ca": "La font d'aigua funciona",
+                "cs": "Tato pitná voda funguje"
+              }
+            },
+            {
+              "if": "operational_status=broken",
+              "then": {
+                "en": "This drinking water is broken",
+                "nl": "Deze drinkwaterfontein is kapot",
+                "it": "La fontanella è guasta",
+                "fr": "Cette fontaine est cassée",
+                "de": "Diese Trinkwasserstelle ist kaputt",
+                "hu": "Ez az ivóvízkút elromlott",
+                "es": "Esta agua potable está rota",
+                "ca": "Aquesta font d'aigua potable està trencada",
+                "cs": "Tato pitná voda je rozbitá"
+              }
+            },
+            {
+              "if": "operational_status=closed",
+              "then": {
+                "en": "This drinking water is closed",
+                "nl": "Deze drinkwaterfontein is afgesloten",
+                "it": "La fontanella è chiusa",
+                "fr": "Cette fontaine est fermée",
+                "de": "Diese Trinkwasserstelle wurde geschlossen",
+                "hu": "Ez az ivóvízkút el van zárva",
+                "es": "Esta agua potable está cerrada",
+                "ca": "Aquesta font d'aigua potable està tancada",
+                "cs": "Tato pitná voda je uzavřena"
+              }
+            }
+          ],
+          "id": "Still in use?"
+        },
+        {
+          "id": "type",
+          "question": {
+            "en": "What type of drinking water point is this?",
+            "nl": "Wat voor soort drinkwaterpunt is dit?",
+            "de": "Um welche Art von Trinkwasserentnahmestelle handelt es sich?"
+          },
+          "mappings": [
+            {
+              "if": "fountain=bubbler",
+              "icon": "./assets/layers/drinking_water/bubbler.svg",
+              "then": {
+                "en": "This is a bubbler fountain. A water jet to drink from is sent upwards, typically controlled by a push button.",
+                "nl": "Dit is een waterhappertje - een drinkwaterfonteintje waarbij een waterstraaltje omhoog spuit. Dit kan permanent werken of door op een drukknop te duwen.",
+                "de": "Dies ist ein Sprudelbrunnen. Ein Wasserstrahl zum Trinken wird nach oben gerichtet und in der Regel durch einen Druckknopf gesteuert."
+              },
+              "addExtraTags": [
+                "man_made="
+              ]
+            },
+            {
+              "if": "fountain=bottle_refill",
+              "icon": "./assets/layers/drinking_water/bottle.svg",
+              "then": {
+                "en": "This is a bottle refill point where the water is sent downwards, typically controlled by a push button or a motion sensor. Drinking directly from the stream might be very hard or impossible.",
+                "nl": "Dit is een hervulpunt voor drinkwaterflessen. De waterstraal wordt omlaag gestuurd wanneer op een drukknop geduwd wordt of wanneer er beweging gedetecteerd wordt. Rechtstreeks van de waterstraal drinking kan moeilijk of zelfs onmogelijk zijn.",
+                "de": "Dies ist eine Flaschenauffüllstation, an der das Wasser nach unten geleitet wird, in der Regel durch einen Druckknopf oder einen Bewegungssensor gesteuert. Direkt aus dem Wasserstrahl zu trinken, kann sehr schwierig oder unmöglich sein."
+              },
+              "addExtraTags": [
+                "man_made=",
+                "bottle=yes"
+              ]
+            },
+            {
+              "if": "man_made=water_tap",
+              "icon": "./assets/layers/drinking_water/tap.svg",
+              "then": {
+                "en": "This is a water tap. The water flows downward and the stream is controlled by a valve or push-button.",
+                "nl": "Dit is een waterkraan. Het water strooomt naar beneden en het volume wordt door een knop of draaimechanisme geregeld.",
+                "de": "Dies ist ein Wasserhahn. Das Wasser fließt nach unten und der Wasserstrahl wird durch ein Ventil oder einen Druckknopf gesteuert."
+              },
+              "addExtraTags": [
+                "fountain="
+              ]
+            }
+          ]
+        },
+        {
+          "question": {
+            "en": "How easy is it to fill water bottles?",
+            "nl": "Hoe gemakkelijk is het om drinkbussen bij te vullen?",
+            "de": "Wie einfach hier das Befüllen von Wasserflaschen?",
+            "it": "Quanto è facile riempire d’acqua le bottiglie?",
+            "fr": "Est-il facile de remplir des bouteilles d'eau ?",
+            "hu": "Mennyire könnyű itt vizespalackot tölteni?",
+            "es": "¿Cómo de fácil es rellenar botellas de agua?",
+            "ca": "Com de fàcil és reomplir botelles d'aigua?",
+            "ru": "Поместится ли здесь бутылка для воды?",
+            "cs": "Jak snadné je plnit láhve s vodou?"
+          },
+          "mappings": [
+            {
+              "if": "bottle=yes",
+              "then": {
+                "en": "It is easy to refill water bottles",
+                "nl": "Een drinkbus bijvullen gaat makkelijk",
+                "de": "Wasserflaschen können hier problemlos gefüllt werden",
+                "it": "È facile riempire d’acqua le bottiglie",
+                "fr": "Il est facile de remplir les bouteilles d'eau",
+                "hu": "Könnyen lehet vizespalackot tölteni",
+                "es": "Es fácil rellenar botellas de agua",
+                "ca": "És fàcil reomplir botelles d'aigua",
+                "ru": "Здесь легко поместится бутылка для воды",
+                "cs": "Je snadné doplnit láhve s vodou"
+              }
+            },
+            {
+              "if": "bottle=no",
+              "then": {
+                "en": "Water bottles may not fit",
+                "nl": "Een drinkbus past moeilijk",
+                "de": "Wasserflaschen können hier nicht oder nur sehr aufwändig gefüllt werden",
+                "it": "Le bottiglie d’acqua potrebbero non entrare",
+                "fr": "Les bouteilles d'eau peuvent ne pas passer",
+                "hu": "Lehet, hogy nem fér alá egy vizespalack",
+                "es": "Las botellas de agua pueden no caber",
+                "ca": "Les botelles d'aigua podrien no cabre",
+                "ru": "Бутылка для воды может не поместиться",
+                "cs": "Láhve s vodou nemusí pasovat"
+              }
+            }
+          ],
+          "condition": "fountain!=bottle_refill",
+          "id": "Bottle refill"
+        },
+        {
+          "id": "fee",
+          "question": {
+            "en": "Is this drinking water point free to use?",
+            "nl": "Is dit drinkwaterpunt gratis te gebruiken?",
+            "de": "Kann diese Trinkwasserstelle kostenlos genutzt werden?"
+          },
+          "mappings": [
+            {
+              "if": "fee=no",
+              "then": {
+                "en": "Free to use",
+                "nl": "Gratis te gebruiken",
+                "de": "Die Nutzung ist kostenlos"
+              }
+            },
+            {
+              "if": "fee=yes",
+              "then": {
+                "en": "One needs to pay to use this drinking water point",
+                "nl": "Men moet betalen om dit drinkwaterpunt te gebruiken",
+                "de": "Die Nutzung ist kostenpflichtig"
+              }
+            }
+          ]
+        },
+        {
+          "id": "seasonal",
+          "question": {
+            "en": "Is this drinking water point available all year round?",
+            "nl": "Is dit drinkwaterpunt heel het jaar door beschikbaar?",
+            "de": "Ist die Trinkwasserstelle ganzjährig in Betrieb?"
+          },
+          "mappings": [
+            {
+              "if": "seasonal=no",
+              "then": {
+                "en": "This drinking water point is available all around the year",
+                "nl": "Dit drinkwaterpunt is heel het jaar door beschikbaar",
+                "de": "Die Trinkwasserstelle ist ganzjährig in Betrieb"
+              }
+            },
+            {
+              "if": "seasonal=summer",
+              "then": {
+                "en": "This drinking water point is only available in summer",
+                "nl": "Dit drinkwaterpunt is enkel in de zomer beschikbaar",
+                "de": "Die Trinkwasserstelle ist nur im Sommer in Betrieb"
+              }
+            },
+            {
+              "if": "seasonal=spring;summer;autumn",
+              "icon": "./assets/layers/drinking_water/no_winter.svg",
+              "then": {
+                "en": "This drinking water point is closed during the winter",
+                "nl": "Dit drinkwaterpunt is gesloten in de winter",
+                "de": "Die Trinkwasserstelle ist im Winter nicht in Betrieb"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opening_hours_24_7",
+          "question": {
+            "en": "What are the opening hours of {title()}?",
+            "fr": "Quelles sont les horaires d'ouverture de {title()} ?",
+            "de": "Wie lauten die Öffnungszeiten von {title()}?",
+            "nl": "Wat zijn de openingstijden van {title()}?",
+            "nb_NO": "Hva er åpningstidene for {title()})",
+            "ru": "Какое время работы у {title()}?",
+            "zh_Hant": "{title()} 的開放時間是什麼？",
+            "it": "Quali sono gli orari di apertura di {title()}?",
+            "pt_BR": "Qual o horário de funcionamento de {title()}?",
+            "pl": "Jakie są godziny otwarcia {title()}?",
+            "sv": "Vilka är öppettiderna för {title()}?",
+            "pt": "Qual é o horário de funcionamento de {title()}?",
+            "hu": "Mikor van nyitva ez: {title()}?",
+            "ca": "Quin és l'horari d'obertura de {title()}?",
+            "ja": "{title()}の営業時間は？",
+            "sl": "Kakšen odpiralni čas ima {title()}?",
+            "fil": "Anong oras nagbubukas ang {title()}?",
+            "es": "¿Cuales son las horas de apertura de {title()}?",
+            "zh_Hans": "{title()} 的开放时间为何？",
+            "da": "Hvad er åbningstiderne for {title()}?",
+            "id": "Kapan jam buka {title()}?",
+            "cs": "Jaká je otevírací doba {title()}?"
+          },
+          "render": {
+            "de": "<h3>Öffnungszeiten</h3>{opening_hours_table(opening_hours)}",
+            "fr": "<h3>Horaires d'ouverture</h3>{opening_hours_table(opening_hours)}",
+            "en": "<h3>Opening hours</h3>{opening_hours_table(opening_hours)}",
+            "nl": "<h3>Openingstijden</h3>{opening_hours_table(opening_hours)}",
+            "nb_NO": "<h3>Åpningstider</h3>{opening_hours_table(opening_hours)}",
+            "ru": "<h3>Часы работы</h3>{opening_hours_table(opening_hours)}",
+            "zh_Hant": "<h3>開放時間</h3>{opening_hours_table(opening_hours)}",
+            "it": "<h3>Orari di apertura</h3>{opening_hours_table(opening_hours)}",
+            "pl": "<h3> Godziny otwarcia</h3>{opening_hours_table(opening_hours)}",
+            "pt_BR": "<h3>Horário de funcionamento</h3>{opening_hours_table(opening_hours)}",
+            "sv": "<h3>Öppettider</h3> {opening_hours_table(opening_hours)}",
+            "pt": "<h3>Horário de funcionamento</h3>{opening_hours_table(opening_hours)}",
+            "eo": "<h3>Malfermitaj horoj</h3>{opening_hours_table(opening_hours)}",
+            "hu": "<h3>Nyitva tartás</h3>{opening_hours_table(opening_hours)}",
+            "ca": "<h3>Horari d'obertura</h3>{opening_hours_table(opening_hours)}",
+            "ja": "<h3>営業時間</h3>{opening_hours_table(opening_hours)}",
+            "sl": "<h3>Odpiralni čas</h3>{opening_hours_table(opening_hours)}",
+            "fil": "<h3>Mga oras na bukas</h3>{opening_hours_table(opening_hours)}",
+            "es": "<h3>Horas de apertura</h3>{opening_hours_table(opening_hours)}",
+            "zh_Hans": "<h3>开放时间</h3> {opening_hours_table(opening_hours)}",
+            "da": "<h3> Åbningstider</h3>{opening_hours_table(opening_hours)}",
+            "id": "<h3>Jam buka</h3>{opening_hours_table(opening_hours)}",
+            "pa_PK": "<h3>کھُلھے گھنٹے</h3>{opening_hours_table(opening_hours)}",
+            "cs": "<h3>Otevírací hodiny</h3>{opening_hours_table(opening_hours)}"
+          },
+          "freeform": {
+            "key": "opening_hours",
+            "type": "opening_hours",
+            "inline": false
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "seasonal!=no",
+                  "seasonal~*",
+                  {
+                    "or": [
+                      {
+                        "and": [
+                          "seasonal!~.*winter.*",
+                          "_now:date~....-(12|01|02)-.."
+                        ]
+                      },
+                      {
+                        "and": [
+                          "seasonal!~.*spring.*",
+                          "_now:date~....-(03|04|05)-.."
+                        ]
+                      },
+                      {
+                        "and": [
+                          "seasonal!~.*summer.*",
+                          "_now:date~....-(06|07|08)-.."
+                        ]
+                      },
+                      {
+                        "and": [
+                          "seasonal!~.*autumn.*",
+                          "_now:date~....-(09|10|11)-.."
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              "then": {
+                "en": "This drinking water fountain is closed this season. As such, the opening hours are not shown.",
+                "nl": "Dit drinkwaterpunt is dit seizoen gesloten. De openingsuren worden dus niet weergegeven.",
+                "de": "Der Trinkwasserbrunnen ist derzeit nicht in Betrieb. Deshalb werden keine Öffnungszeiten angezeigt."
+              },
+              "hideInAnswer": true
+            },
+            {
+              "if": "opening_hours=24/7",
+              "icon": "./assets/layers/questions/open24_7.svg",
+              "then": {
+                "en": "24/7 opened (including holidays)",
+                "de": "durchgehend geöffnet (auch an Feiertagen)",
+                "zh_Hant": "24/7 開放 (包括假日)",
+                "id": "Buka 24 jam (termasuk hari libur)",
+                "hu": "Éjjel-nappal nyitva (munkaszüneti napokon is)",
+                "es": "Abierta 24/7 (incluyendo festivos)",
+                "nl": "24/7 open (ook tijdens feestdagen)",
+                "fr": "Ouvert 24h/24 (jours fériés compris)",
+                "nb_NO": "Døgnåpent (inkludert helligdager)",
+                "cs": "Otevřeno 24/7 (včetně svátků)",
+                "ca": "Obert 24/7 (incloent-hi festius)",
+                "pl": "Otwarte 24/7 (również w święta)"
+              }
+            },
+            {
+              "#": "Just here to be able to handle those ~5000 incorrect 'opening_hours=closed' elements.",
+              "if": "opening_hours=closed",
+              "then": {
+                "en": "Marked as closed for an unspecified time",
+                "nl": "Gesloten voor onbepaalde duur",
+                "de": "Als geschlossen für eine unbestimmte Zeit markiert"
+              },
+              "hideInAnswer": true
+            }
+          ],
+          "questionHint": {
+            "en": "These are the opening hours if the drinking water fountain is operational.",
+            "nl": "Tijdens deze openingsuren is dit drinkwaterpunt bruikbaar.",
+            "de": "Dies sind die Öffnungszeiten des Trinkwasserbrunnens, wenn dieser in Betrieb ist."
+          }
+        },
+        {
+          "id": "bench-artwork",
+          "question": {
+            "en": "Does this drinking water fountain have an artistic element?",
+            "nl": "Heeft dit drinkwaterpunt een geintegreerd kunstwerk?",
+            "de": "Verfügt der Trinkwasserbrunnen über ein künstlerisches Element?"
+          },
+          "mappings": [
+            {
+              "if": "tourism=artwork",
+              "addExtraTags": [
+                "not:tourism:artwork="
+              ],
+              "then": {
+                "en": "This drinking water point has an integrated artwork",
+                "nl": "Dit drinkwaterpunt heeft een geintegreerd kunstwerk",
+                "de": "Die Trinkwasserstelle hat ein integriertes Kunstwerk"
+              }
+            },
+            {
+              "if": "not:tourism:artwork=yes",
+              "then": {
+                "en": "This drinking water point does not have an integrated artwork",
+                "nl": "Dit drinkwaterpunt heeft geen geïntegreerd kunstwerk",
+                "de": "Die Trinkwasserstelle hat kein integriertes Kunstwerk"
+              },
+              "addExtraTags": [
+                "tourism="
+              ]
+            },
+            {
+              "if": "tourism=",
+              "then": {
+                "en": "This drinking water point <span class=\"subtle\">probably</span> doesn't have an integrated artwork",
+                "nl": "Dit drinkwaterpunt heeft <span class=\"subtle\">waarschijnlijk</span> geen geïntegreerd kunstwerk",
+                "de": "Die Trinkwasserstelle hat <span class=\"subtle\">wahrscheinlich</span> kein integriertes Kunstwerk"
+              },
+              "hideInAnswer": true
+            }
+          ],
+          "questionHint": {
+            "en": "E.g. it has an integrated statue or other non-trivial, creative work",
+            "nl": "Bijvoorbeeld een standbeeld of ander, niet-triviaal kunstwerk",
+            "de": "Z.B. eine integrierte Statue oder andere künstlerische Werke"
+          }
+        },
+        {
+          "labels": [
+            "artwork-question"
+          ],
+          "render": {
+            "en": "This is a {artwork_type}",
+            "nl": "Dit is een {artwork_type}",
+            "fr": "Type d'œuvre : {artwork_type}",
+            "de": "Dies ist ein {artwork_type}",
+            "it": "Si tratta di un {artwork_type}",
+            "ru": "Это {artwork_type}",
+            "es": "Esta es un {artwork_type}",
+            "ja": "これは{artwork_type}です",
+            "zh_Hant": "這是 {artwork_type}",
+            "nb_NO": "Dette er et kunstverk av typen {artwork_type}",
+            "id": "Ini adalah {artwork_type}",
+            "pt": "Isto é um(a) {artwork_type}",
+            "hu": "Ez egy {artwork_type}",
+            "pl": "Jest to {artwork_type}",
+            "da": "Dette er en {artwork_type}",
+            "cs": "Toto je {artwork_type}",
+            "ca": "Aquesta és un {artwork_type}",
+            "he": "זהו {artwork_type}",
+            "pt_BR": "Isso é um(a) {artwork_type}",
+            "_context": "layers:artwork.tagRenderings.artwork-artwork_type.render"
+          },
+          "question": {
+            "en": "What is the type of this artwork?",
+            "nl": "Wat voor soort kunstwerk is dit?",
+            "fr": "Quel est le type de cette œuvre d'art ?",
+            "de": "Um welche Art Kunstwerk handelt es sich?",
+            "it": "Che tipo di opera d’arte è questo?",
+            "ru": "К какому типу относится эта работа?",
+            "es": "¿Qué tipo de obra es esta pieza?",
+            "ja": "この作品の種類は何ですか?",
+            "zh_Hant": "這是什麼類型的藝術品？",
+            "nb_NO": "Hvilken type kunstverk er dette?",
+            "id": "Apa jenis karya seni ini?",
+            "pt": "Qual é o tipo desta obra de arte?",
+            "hu": "Milyen fajta műalkotás ez?",
+            "pl": "Jakiego rodzaju jest to dzieło sztuki?",
+            "da": "Hvilken slags kunstværk er det?",
+            "cs": "Jaký je typ tohoto uměleckého díla?",
+            "ca": "Quin tipus d'obra és aquesta peça?",
+            "he": "מהו סוג היצירה הזו?",
+            "pt_BR": "Qual é o tipo dessa obra de arte?",
+            "_context": "layers:artwork.tagRenderings.artwork-artwork_type.question"
+          },
+          "freeform": {
+            "key": "artwork_type",
+            "addExtraTags": [
+              "fixme=Freeform field used for artwork type - doublecheck the value"
+            ],
+            "inline": true
+          },
+          "mappings": [
+            {
+              "if": "artwork_type=architecture",
+              "then": {
+                "en": "Architecture",
+                "nl": "Architectuur",
+                "fr": "Architecture",
+                "de": "Architektur",
+                "it": "Architettura",
+                "ru": "Архитектура",
+                "ja": "建物",
+                "zh_Hant": "建築物",
+                "nb_NO": "Arkitektur",
+                "id": "Arsitektur",
+                "pt": "Arquitetura",
+                "hu": "Építészet",
+                "pl": "Architektura",
+                "es": "Arquitectura",
+                "ca": "Arquitectura",
+                "da": "Arkitektur",
+                "cs": "Architektura",
+                "pt_BR": "Arquitetura",
+                "he": "אדריכלות",
+                "eu": "Arkitektura",
+                "zh_Hans": "建筑",
+                "_context": "layers:artwork.tagRenderings.artwork-artwork_type.mappings.0.then"
+              }
+            },
+            {
+              "if": "artwork_type=mural",
+              "then": {
+                "en": "Mural",
+                "nl": "Muurschildering",
+                "fr": "Peinture murale",
+                "de": "Wandbild",
+                "it": "Murale",
+                "ru": "Фреска",
+                "ja": "壁画",
+                "zh_Hant": "壁畫",
+                "nb_NO": "Veggmaleri",
+                "id": "Mural",
+                "pt": "Mural",
+                "hu": "Falfestmény",
+                "pl": "Mural",
+                "es": "Mural",
+                "ca": "Mural",
+                "da": "Vægmaleri",
+                "cs": "Nástěnná malba",
+                "pa_PK": "کندھ چتر",
+                "pt_BR": "Mural",
+                "he": "ציור קיר",
+                "eu": "Murala",
+                "zh_Hans": "壁画",
+                "_context": "layers:artwork.tagRenderings.artwork-artwork_type.mappings.1.then"
+              }
+            },
+            {
+              "if": "artwork_type=painting",
+              "then": {
+                "en": "Painting",
+                "nl": "Schilderij",
+                "fr": "Peinture",
+                "de": "Malerei",
+                "it": "Dipinto",
+                "ru": "Живопись",
+                "ja": "絵画",
+                "zh_Hant": "繪畫",
+                "nb_NO": "Maleri",
+                "id": "Lukisan",
+                "pt": "Pintura",
+                "hu": "Festmény",
+                "pl": "Obraz",
+                "es": "Pintura",
+                "ca": "Pintura",
+                "da": "Maleri",
+                "cs": "Malba",
+                "he": "ציור",
+                "eu": "Margolana",
+                "pt_BR": "Pintura",
+                "zh_Hans": "喷绘",
+                "_context": "layers:artwork.tagRenderings.artwork-artwork_type.mappings.2.then"
+              }
+            },
+            {
+              "if": "artwork_type=sculpture",
+              "then": {
+                "en": "Sculpture",
+                "nl": "Beeldhouwwerk",
+                "fr": "Sculpture",
+                "de": "Skulptur",
+                "it": "Scultura",
+                "ru": "Скульптура",
+                "ja": "彫刻",
+                "zh_Hant": "雕塑",
+                "nb_NO": "Skulptur",
+                "id": "Patung",
+                "pt": "Escultura",
+                "hu": "Absztrakt szobor",
+                "pl": "Rzeźba",
+                "es": "Escultura",
+                "ca": "Escultura",
+                "da": "Skulptur",
+                "cs": "Plastika",
+                "pa_PK": "مورتی",
+                "pt_BR": "Escultura",
+                "he": "פיסול",
+                "eu": "Eskultura",
+                "zh_Hans": "雕塑",
+                "_context": "layers:artwork.tagRenderings.artwork-artwork_type.mappings.3.then"
+              }
+            },
+            {
+              "if": "artwork_type=statue",
+              "then": {
+                "en": "Statue",
+                "nl": "Standbeeld",
+                "fr": "Statue",
+                "de": "Statue",
+                "it": "Statua",
+                "ru": "Статуя",
+                "ja": "彫像",
+                "zh_Hant": "雕像",
+                "nb_NO": "Statue",
+                "pt": "Estátua",
+                "hu": "Szobor",
+                "pl": "Posąg",
+                "es": "Estatua",
+                "ca": "Estàtua",
+                "da": "Statue",
+                "cs": "Socha",
+                "pt_BR": "Estátua",
+                "he": "פסל",
+                "eu": "Estatua",
+                "zh_Hans": "雕像",
+                "_context": "layers:artwork.tagRenderings.artwork-artwork_type.mappings.4.then"
+              }
+            },
+            {
+              "if": "artwork_type=bust",
+              "then": {
+                "en": "Bust",
+                "nl": "Buste",
+                "fr": "Buste",
+                "de": "Büste",
+                "it": "Busto",
+                "ru": "Бюст",
+                "ja": "胸像",
+                "zh_Hant": "半身像",
+                "nb_NO": "Byste",
+                "pt": "Busto",
+                "hu": "Mellszobor",
+                "pl": "Popiersie",
+                "es": "Busto",
+                "ca": "Bust",
+                "da": "Buste",
+                "cs": "Busta",
+                "pt_BR": "Busto",
+                "eu": "Bustoa",
+                "zh_Hans": "半身像",
+                "_context": "layers:artwork.tagRenderings.artwork-artwork_type.mappings.5.then"
+              }
+            },
+            {
+              "if": "artwork_type=stone",
+              "then": {
+                "en": "Stone",
+                "nl": "Steen",
+                "fr": "Rocher",
+                "de": "Stein",
+                "it": "Masso",
+                "ru": "Камень",
+                "ja": "石",
+                "zh_Hant": "石頭",
+                "nb_NO": "Stein",
+                "id": "Batu",
+                "pt": "Pedra",
+                "hu": "Kő",
+                "pl": "Skała",
+                "ca": "Pedra",
+                "es": "Piedra",
+                "da": "Sten",
+                "pa_PK": "پتھر",
+                "cs": "Kámen",
+                "pt_BR": "Pedra",
+                "he": "אבן",
+                "eu": "Harria",
+                "zh_Hans": "石头",
+                "_context": "layers:artwork.tagRenderings.artwork-artwork_type.mappings.6.then"
+              }
+            },
+            {
+              "if": "artwork_type=installation",
+              "then": {
+                "en": "Installation",
+                "nl": "Installatie",
+                "fr": "Installation",
+                "de": "Installation",
+                "it": "Istallazione",
+                "ru": "Инсталляция",
+                "ja": "インスタレーション",
+                "zh_Hant": "安裝",
+                "nb_NO": "Installasjon",
+                "id": "Instalasi",
+                "pt": "Instalação",
+                "hu": "Installáció",
+                "pl": "Instalacja artystyczna",
+                "es": "Instalación",
+                "ca": "Instal·lació",
+                "da": "Installation",
+                "cs": "Instalace",
+                "pt_BR": "Instalação",
+                "eu": "Instalazioa",
+                "zh_Hans": "设施",
+                "_context": "layers:artwork.tagRenderings.artwork-artwork_type.mappings.7.then"
+              }
+            },
+            {
+              "if": "artwork_type=graffiti",
+              "then": {
+                "en": "Graffiti",
+                "nl": "Graffiti",
+                "fr": "Graffiti",
+                "de": "Graffiti",
+                "it": "Graffiti",
+                "ru": "Граффити",
+                "ja": "落書き",
+                "zh_Hant": "塗鴨",
+                "nb_NO": "Graffiti",
+                "id": "Graffiti",
+                "pt": "Grafite",
+                "hu": "Graffiti",
+                "pl": "Graffiti",
+                "es": "Grafiti",
+                "ca": "Grafiti",
+                "da": "Graffiti",
+                "cs": "Grafiti",
+                "eu": "Graffitia",
+                "pt_BR": "Grafite",
+                "zh_Hans": "涂鸦/粗糙雕刻",
+                "_context": "layers:artwork.tagRenderings.artwork-artwork_type.mappings.8.then"
+              }
+            },
+            {
+              "if": "artwork_type=relief",
+              "then": {
+                "en": "Relief",
+                "nl": "Reliëf",
+                "fr": "Relief",
+                "de": "Relief",
+                "it": "Rilievo",
+                "ru": "Рельеф",
+                "ja": "レリーフ",
+                "zh_Hant": "寬慰",
+                "nb_NO": "Relieff",
+                "id": "Relief",
+                "pt": "Relevo",
+                "hu": "Dombormű",
+                "pl": "Płaskorzeźba",
+                "ca": "Relleu",
+                "es": "Relieve",
+                "da": "Relief",
+                "cs": "Reliéf",
+                "eu": "Erliebea",
+                "pt_BR": "Relevo",
+                "_context": "layers:artwork.tagRenderings.artwork-artwork_type.mappings.9.then"
+              }
+            },
+            {
+              "if": "artwork_type=azulejo",
+              "then": {
+                "en": "Azulejo (Spanish decorative tilework)",
+                "nl": "Azulejo (Spaanse siertegels)",
+                "fr": "Azulejo (faïence latine)",
+                "de": "Azulejo (spanische dekorative Fliesenarbeit)",
+                "it": "Azulejo (ornamento decorativo piastrellato spagnolo)",
+                "ru": "Азуле́жу (испанская роспись глазурованной керамической плитки)",
+                "ja": "Azulejo (スペインの装飾タイル)",
+                "zh_Hant": "Azulejo (西班牙雕塑作品名稱)",
+                "nb_NO": "Azulejo (Spansk dekorativt flisverk)",
+                "id": "Azulejo (ubin dekoratif Spanyol)",
+                "pt": "Azulejo (azulejo decorativo espanhol e português)",
+                "hu": "Azulejo (portugál vagy spanyol dekoratív csempe)",
+                "pl": "Azulejo (hiszpańskie płytka dekoracyjna)",
+                "es": "Azulejo (Baldosas decorativas Españolas y Portuguesas)",
+                "da": "Azulejo (spansk dekorativt flisebeklædning)",
+                "cs": "Azulejo (španělské dekorativní dlaždice)",
+                "ca": "Azulejo (Rajoles decoratives espanyoles i portugueses)",
+                "pt_BR": "Azulejo (Revestimento de azulejos decorativos espanhóis)",
+                "zh_Hans": "Azulejo（西班牙装饰瓷砖）",
+                "_context": "layers:artwork.tagRenderings.artwork-artwork_type.mappings.10.then"
+              }
+            },
+            {
+              "if": "artwork_type=tilework",
+              "then": {
+                "en": "Tilework",
+                "nl": "Tegelwerk",
+                "fr": "Carrelage",
+                "de": "Fliesenarbeit",
+                "it": "Mosaico di piastrelle",
+                "ru": "Плитка (мозаика)",
+                "ja": "タイルワーク",
+                "zh_Hant": "瓷磚",
+                "nb_NO": "Flisarbeid",
+                "pt": "Ladrilhos",
+                "hu": "Csempe",
+                "pl": "Płyta ceramiczna (fliza)",
+                "ca": "Enrajolat",
+                "es": "Cerámica",
+                "da": "flisebeklædning",
+                "cs": "Obklady a dlažba",
+                "he": "יצירת פסיפס",
+                "eu": "Keramika",
+                "pt_BR": "Azulejaria",
+                "_context": "layers:artwork.tagRenderings.artwork-artwork_type.mappings.11.then"
+              }
+            },
+            {
+              "if": "artwork_type=woodcarving",
+              "then": {
+                "nl": "Houtsculptuur",
+                "en": "Woodcarving",
+                "de": "Holzschnitzerei",
+                "cs": "Dřevořezba",
+                "pt": "Entalhe em madeira",
+                "fr": "Sculpture sur bois",
+                "nb_NO": "Treskjæring",
+                "ca": "Tallat a la fusta",
+                "es": "Tallado en madera",
+                "he": "גילוף בעץ",
+                "eu": "Egur taila",
+                "pl": "Rzeźbienie w drewnie",
+                "pt_BR": "Entalhe",
+                "it": "Scultura in legno",
+                "_context": "layers:artwork.tagRenderings.artwork-artwork_type.mappings.12.then"
+              }
+            }
+          ],
+          "id": "artwork-artwork_type",
+          "condition": "tourism=artwork"
+        },
+        {
+          "id": "artwork-artist-wikidata",
+          "labels": [
+            "artwork-question"
+          ],
+          "render": {
+            "en": "This artwork was made by {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}",
+            "de": "Dieses Kunstwerk wurde geschaffen von {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}",
+            "nl": "Dit kunstwerk is gemaakt door {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}",
+            "cs": "Toto dílo vytvořil {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}",
+            "pt": "Esta obra de arte foi feita por {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}",
+            "es": "Esta obra de arte la creó {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}",
+            "ca": "Aquesta obra d'art la va crear {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}",
+            "fr": "Cette oeuvre a été crée par {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}",
+            "pl": "To dzieło sztuki zostało zrobione przez {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}",
+            "pt_BR": "Essa obra de arte foi feita por {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}",
+            "zh_Hans": "此艺术作品由 {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)} 创建",
+            "_context": "layers:artwork.tagRenderings.artwork-artist-wikidata.render"
+          },
+          "question": {
+            "en": "Who made this artwork?",
+            "de": "Wer hat dieses Kunstwerk geschaffen?",
+            "nl": "Wie heeft dit kunstwerk gemaakt?",
+            "cs": "Kdo je autorem tohoto díla?",
+            "pt": "Quem fez essa obra de arte?",
+            "es": "¿Quién creó esta obra de arte?",
+            "fr": "Qui a fait cette oeuvre d'art ?",
+            "ca": "Qui va crear aquesta obra d'art?",
+            "nb_NO": "Hvem laget dette kunstverket?",
+            "he": "מי יצר את היצירה הזו?",
+            "pl": "Kto stworzył to dzieło sztuki?",
+            "pt_BR": "Quem fez essa obra de arte?",
+            "zh_Hans": "这件艺术品是谁创作的？",
+            "_context": "layers:artwork.tagRenderings.artwork-artist-wikidata.question"
+          },
+          "freeform": {
+            "key": "artist:wikidata",
+            "type": "wikidata",
+            "helperArgs": [
+              "artist_name",
+              {
+                "instanceOf": [
+                  "Q5"
+                ]
+              }
+            ],
+            "inline": false
+          },
+          "condition": "tourism=artwork"
+        },
+        {
+          "question": {
+            "en": "Which artist created this?",
+            "nl": "Welke kunstenaar creëerde dit kunstwerk?",
+            "fr": "Quel artiste a créé cette œuvre ?",
+            "de": "Wer hat das Kunstwerk erschaffen?",
+            "it": "Quale artista ha creato quest’opera?",
+            "ru": "Какой художник создал это?",
+            "ja": "どのアーティストが作ったんですか?",
+            "zh_Hant": "創造這個的藝術家是誰？",
+            "nb_NO": "Hvilken artist lagde dette?",
+            "id": "Seniman mana yang menciptakan ini?",
+            "pt": "Que artista criou isto?",
+            "hu": "Melyik művész alkotása ezt?",
+            "pl": "Który artysta to stworzył?",
+            "es": "¿Que artista creó esto?",
+            "da": "Hvilken kunstner har lavet dette?",
+            "cs": "Který umělec to vytvořil?",
+            "ca": "Quin artista va crear açò?",
+            "pt_BR": "Que artista criou isto?",
+            "he": "איזה אמן יצר את זה?",
+            "zh_Hans": "这是哪位艺术家创作的？",
+            "_context": "layers:artwork.tagRenderings.artwork-artist_name.question"
+          },
+          "render": {
+            "en": "Created by {artist_name}",
+            "nl": "Gecreëerd door {artist_name}",
+            "fr": "Créé par {artist_name}",
+            "de": "Erstellt von {artist_name}",
+            "it": "Creato da {artist_name}",
+            "ru": "Создано {artist_name}",
+            "ja": "作成者:{artist_name}",
+            "zh_Hant": "{artist_name} 創作",
+            "nb_NO": "Laget av {artist_name}",
+            "id": "Dibuat oleh {artist_name}",
+            "pt": "Criado por {artist_name}",
+            "hu": "Alkotó: {artist_name}",
+            "pl": "Stworzone przez {artist_name}",
+            "es": "Creado por {artist_name}",
+            "da": "Lavet af {artist_name}",
+            "cs": "Vytvořil {artist_name}",
+            "ca": "Creat per {artist_name}",
+            "he": "נוצר על ידי {artist_name}",
+            "pt_BR": "Criado por {artist_name}",
+            "zh_Hans": "由{artist_name}创建",
+            "_context": "layers:artwork.tagRenderings.artwork-artist_name.render"
+          },
+          "freeform": {
+            "key": "artist_name",
+            "inline": true
+          },
+          "condition": "tourism=artwork",
+          "id": "artwork-artist_name",
+          "labels": [
+            "artwork-question"
+          ]
+        },
+        {
+          "question": {
+            "en": "Is there a website with more information about this artwork?",
+            "nl": "Is er een website met meer informatie over dit kunstwerk?",
+            "fr": "Existe-t-il un site web où trouver plus d'informations sur cette œuvre d'art ?",
+            "de": "Auf welcher Webseite gibt es weitere Informationen zum Kunstwerk?",
+            "it": "Esiste un sito web con maggiori informazioni su quest’opera?",
+            "ru": "Есть ли сайт с более подробной информацией об этой работе?",
+            "ja": "この作品についての詳しい情報はどのウェブサイトにありますか?",
+            "zh_Hant": "在那個網站能夠找到更多藝術品的資訊？",
+            "nb_NO": "Finnes det en nettside med mer info om dette kunstverket?",
+            "id": "Adakah situs web mengenai informasi lebih lanjut tentang karya seni ini?",
+            "pt": "Existe um site com mais informações sobre esta obra de arte?",
+            "hu": "Van-e olyan honlap, amely további információkat tartalmaz erről a műalkotásról?",
+            "pl": "Gdzie znajdę więcej informacji na temat tego dzieła sztuki?",
+            "es": "¿Hay un sitio web con más información sobre esta obra de arte?",
+            "da": "Er der et websted med mere information om dette kunstværk?",
+            "cs": "Existuje webová stránka s dalšími informacemi o tomto uměleckém díle?",
+            "ca": "Hi ha un lloc web amb més informació sobre aquesta obra d'art?",
+            "he": "האם יש אתר אינטרנט עם מידע נוסף על היצירה הזו?",
+            "pt_BR": "Há um website com mais informações sobre essa arte?",
+            "_context": "layers:artwork.tagRenderings.artwork-website.question"
+          },
+          "render": {
+            "ca": "{link(Més informació a aquesta pàgina web,&LBRACEwebsite&RBRACE,,,)}",
+            "cs": "{link(Více informací na této webové stránce,&LBRACEwebsite&RBRACE,,,)}",
+            "da": "{link(Yderligere oplysninger på  dette websted,&LBRACEwebsite&RBRACE,,,)}",
+            "de": "{link(Weitere Informationen auf dieser Webseite,&LBRACEwebsite&RBRACE,,,)}",
+            "en": "{link(More information on this website,&LBRACEwebsite&RBRACE,,,)}",
+            "es": "{link(Más información en este sitio web,&LBRACEwebsite&RBRACE,,,)}",
+            "fr": "{link(Plus d'info sûr ce site web,&LBRACEwebsite&RBRACE,,,)}",
+            "hu": "{link(További információ ezen a weboldalon,&LBRACEwebsite&RBRACE,,,)}",
+            "id": "{link(Info lanjut tersedia di laman web ini,&LBRACEwebsite&RBRACE,,,)}",
+            "it": "{link(Ulteriori informazioni su questo sito web,&LBRACEwebsite&RBRACE,,,)}",
+            "ja": "{link(Webサイトに詳細情報がある,&LBRACEwebsite&RBRACE,,,)}",
+            "nb_NO": "{link(Mer info er å finne på denne nettsiden,&LBRACEwebsite&RBRACE,,,)}",
+            "nl": "{link(Meer informatie op deze website,&LBRACEwebsite&RBRACE,,,)}",
+            "pl": "{link(Więcej informacji na tej stronie,&LBRACEwebsite&RBRACE,,,)}",
+            "pt": "{link(Mais informações neste site,&LBRACEwebsite&RBRACE,,,)}",
+            "pt_BR": "{link(Mais informações nesse website,&LBRACEwebsite&RBRACE,,,)}",
+            "ru": "{link(Больше информации на этом сайте,&LBRACEwebsite&RBRACE,,,)}",
+            "zh_Hant": "{link(這個網站有更多資訊,&LBRACEwebsite&RBRACE,,,)}",
+            "_context": "layers:artwork.tagRenderings.artwork-website.render"
+          },
+          "freeform": {
+            "key": "website",
+            "type": "url",
+            "addExtraTags": [
+              "url="
+            ],
+            "inline": true
+          },
+          "id": "artwork-website",
+          "labels": [
+            "artwork-question"
+          ],
+          "pl": {
+            "mappings": {
+              "0": {
+                "then": "To dzieło sztuki pełni również funkcję ławki"
+              },
+              "1": {
+                "then": "To dzieło sztuki nie pełni funkcji ławki"
+              },
+              "2": {
+                "then": "To dzieło sztuki nie pełni funkcji ławki"
+              }
+            },
+            "question": "Czy to dzieło sztuki pełni funkcję ławki?"
+          },
+          "condition": "tourism=artwork"
+        },
+        {
+          "id": "artwork_subject",
+          "condition": "tourism=artwork",
+          "question": {
+            "en": "What does this artwork depict?",
+            "de": "Was zeigt dieses Kunstwerk?",
+            "nl": "Wat beeldt dit kunstwerk af?",
+            "cs": "Co zobrazuje toto umělecké dílo?",
+            "pt": "O que esta obra de arte representa?",
+            "es": "¿Qué representa esta obra de arte?",
+            "fr": "Que représente cette oeuvre d'art ?",
+            "ca": "Què representa aquesta obra d'art?",
+            "he": "מה מתארת היצירה הזו?",
+            "pl": "Co przedstawia to dzieło sztuki?",
+            "pt_BR": "O que esta obra de arte representa?",
+            "it": "Che cosa rappresenta quest'opera d'arte?",
+            "_context": "layers:artwork.tagRenderings.artwork_subject.question"
+          },
+          "freeform": {
+            "key": "subject:wikidata",
+            "type": "wikidata",
+            "inline": false
+          },
+          "render": {
+            "en": "This artwork depicts {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}",
+            "de": "Das Kunstwerk zeigt {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}",
+            "nl": "Dit kunstwerk beeldt {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)} af",
+            "cs": "Toto dílo zobrazuje {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}",
+            "pt": "A obra de arte representa {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}",
+            "es": "Esta obra de arte representa {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}",
+            "nb_NO": "Dette kunstverket viser {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}",
+            "ca": "Aquesta obra d'art representa {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}",
+            "fr": "Cette œuvre dépeint {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}",
+            "pl": "To dzieło sztuki przedstawia {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}",
+            "pt_BR": "Essa arte representa {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}",
+            "it": "Quest'opera d'arte rappresenta {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}",
+            "_context": "layers:artwork.tagRenderings.artwork_subject.render"
+          },
+          "labels": [
+            "artwork-question"
+          ]
+        },
+        {
+          "id": "render-closest-drinking-water",
+          "render": {
+            "en": "<a href='#{_closest_other_drinking_water_id}'>There is another drinking water fountain at {_closest_other_drinking_water_distance} meters</a>",
+            "nl": "<a href='#{_closest_other_drinking_water_id}'>Er bevindt zich een ander drinkwaterpunt op {_closest_other_drinking_water_distance} meter</a>",
+            "it": "<a href='#{_closest_other_drinking_water_id}'>C’è un’altra fontanella a {_closest_other_drinking_water_distance} metri</a>",
+            "de": "<a href='#{_closest_other_drinking_water_id}'>Eine weitere Trinkwasserstelle befindet sich in {_closest_other_drinking_water_distance} Meter</a>",
+            "fr": "<a href='#{_closest_other_drinking_water_id}'>Une autre source d’eau potable est à {_closest_other_drinking_water_distance} mètres</a>",
+            "hu": "<a href='#{_closest_other_drinking_water_id}'>Van egy másik ivóvízkút {_closest_other_drinking_water_distance} méter távolságra</a>",
+            "es": "<a href='#{_closest_other_drinking_water_id}'>Hay otra fuente de agua potable a {_closest_other_drinking_water_distance} metros</a>",
+            "ca": "<a href='#{_closest_other_drinking_water_id}'>Hi ha una altra font d'aigua potable a {_closest_other_drinking_water_distance} metres</a>",
+            "cs": "<a href='#{_closest_other_drinking_water_id}'>Do {_closest_other_drinking_water_distance} metrů je další fontána s pitnou vodou</a>"
+          },
+          "condition": "_closest_other_drinking_water_id~*"
+        },
+        {
+          "id": "leftover-questions",
+          "render": {
+            "*": "{questions( ,)}"
+          }
+        },
+        {
+          "id": "lod",
+          "labels": [
+            "added_by_default"
+          ],
+          "render": {
+            "*": "{linked_data_from_website()}"
+          }
+        },
+        {
+          "id": "minimap",
+          "description": "Shows a small map with the feature. Added by default to every popup",
+          "render": {
+            "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+          }
+        },
+        {
+          "id": "move-button",
+          "render": {
+            "*": "{move_button()}"
+          }
+        },
+        {
+          "id": "delete-button",
+          "render": {
+            "*": "{delete_button()}"
+          }
+        },
+        {
+          "id": "last_edit",
+          "labels": [
+            "added_by_default"
+          ],
+          "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+          "condition": {
+            "and": [
+              "_last_edit:contributor~*",
+              "_last_edit:changeset~*"
+            ]
+          },
+          "metacondition": {
+            "or": [
+              "__featureSwitchIsTesting=true",
+              "__featureSwitchIsDebugging=true",
+              "mapcomplete-show_debug=yes",
+              "_csCount>=10"
+            ]
+          },
+          "render": {
+            "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+          }
+        },
+        {
+          "id": "favourite_status",
+          "render": {
+            "*": "{favourite_status()}"
+          }
+        },
+        {
+          "id": "qr_code",
+          "labels": [
+            "added_by_default"
+          ],
+          "classes": "flex items-center gap-x-2",
+          "render": {
+            "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+            "en": "{qr_code()}Scan this code to open this location on another device",
+            "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+            "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+          }
+        },
+        {
+          "id": "share",
+          "labels": [
+            "added_by_default"
+          ],
+          "metacondition": "_supports_sharing=yes",
+          "render": {
+            "de": "{share_link(,Standort teilen)}",
+            "en": "{share_link(,Share this location)}",
+            "nl": "{share_link(,Deel deze locatie)}"
+          }
+        },
+        {
+          "id": "all-tags",
+          "render": {
+            "*": "{all_tags()}"
+          },
+          "metacondition": {
+            "or": [
+              "__featureSwitchIsDebugging=true",
+              "mapcomplete-show_tags=full",
+              "mapcomplete-show_debug=yes"
+            ]
+          }
+        }
+      ],
+      "deletion": {
+        "softDeletionTags": {
+          "and": [
+            "disused:amenity:={amenity}",
+            "amenity="
+          ]
+        },
+        "nonDeleteMappings": [
+          {
+            "if": {
+              "and": [
+                "drinking_water=no",
+                "amenity=fountain"
+              ]
+            },
+            "then": {
+              "en": "This is a decorative fountain of which the water is not drinkable by humans",
+              "nl": "Dit is een decoratieve fontein waarvan het water niet geschikt is om te drinken door mensen",
+              "de": "Dies ist ein Zierbrunnen, dessen Wasser für den Menschen nicht trinkbar ist",
+              "es": "Esta es una fuente decorativa con agua no potable",
+              "ca": "Es tracta d'una font decorativa amb aigua no potable",
+              "cs": "Jedná se o dekorativní fontánu, jejíž voda není pro lidi pitná"
+            }
+          },
+          {
+            "if": {
+              "and": [
+                "drinking_water=no",
+                "amenity=",
+                "man_made=water_tap"
+              ]
+            },
+            "then": {
+              "en": "This is a water tap or water pump with non-drinkable water.<div class='subtle'>Examples are water taps with rain water to tap water for nearby plants</div>",
+              "nl": "Dit is een waterkraan of waterpomp met ondrinkbaar water.<div class='subtle'>Bijvoorbeeld een waterkraan met regenwater om planten water mee te geven</div",
+              "de": "Dies ist ein Wasserhahn oder eine Wasserpumpe mit nicht trinkbarem Wasser.<div class='subtle'>Beispiele sind Wasserhähne mit Regenwasser zum Zapfen von Wasser für nahe gelegene Pflanzen</div>",
+              "es": "Este es un grifo de agua o una bomba de agua con agua no potable.<div class='subtle'>Ejemplos son grifos con agua de lluvia o agua del grifo para plantas cercanas</div>",
+              "ca": "Es tracta d'una aixeta d'aigua o bomba d'aigua amb aigua no potable. <div class='subtle'> Per exemple les aixetes d'aigua amb aigua de pluja per aprofitar i regar les plantes properes</div>",
+              "cs": "Jedná se o vodovodní kohoutek nebo vodní čerpadlo s nepitnou vodou.<div class='subtle'>Příkladem jsou vodovodní kohoutky s dešťovou vodou pro zalévání rostlin v okolí</div>"
+            }
+          },
+          {
+            "if": {
+              "and": [
+                "amenity=",
+                "man_made=pump",
+                "historic=yes",
+                "drinking_water=no"
+              ]
+            },
+            "then": {
+              "en": "This is a historic, manual water pump where no drinking water can be found",
+              "nl": "Dit is een historische, manuele waterpomp waar geen drinkwater uitkomt",
+              "de": "Dies ist eine historische, manuelle Wasserpumpe, an der kein Trinkwasser zu finden ist"
+            }
+          }
+        ]
+      },
+      "allowMove": {
+        "enableRelocation": false,
+        "enableImproveAccuracy": true
+      },
+      "_layerIcon": [
+        {
+          "icon": "pin",
+          "color": "#6BC4F7"
+        },
+        {
+          "icon": "./assets/layers/drinking_water/drips.svg"
+        }
+      ],
+      "forceLoad": true
+    },
+    {
+      "id": "note_import_drinking_water",
+      "description": {
+        "ca": "Una capa que importa entrades per a Aigua potable",
+        "cs": "Vrstva, která importuje položky pro Pitná voda",
+        "da": "Et lag som importerer poster for Drinking water",
+        "de": "Eine Ebene, die Einträge für Trinkwasserstelle importiert",
+        "en": "A layer which imports entries for Drinking water",
+        "es": "Una capa que importar entradas para Agua potable",
+        "nl": "Deze laag toont kaart-nota's die wijzen op een Drinkbaar water",
+        "pl": "Warstwa importująca wpisy dla Drinking water",
+        "zh_Hant": "能夠為 Drinking water 匯入項目的圖層",
+        "_context": "core:importLayer.description"
+      },
+      "source": {
+        "osmTags": {
+          "and": [
+            "id~[0-9]+",
+            "comment_url~.*notes/[0-9]*/comment.json"
+          ]
+        },
+        "geoJson": "https://api.openstreetmap.org/api/0.6/notes.json?limit=10000&closed=0&bbox={x_min},{y_min},{x_max},{y_max}",
+        "geoJsonZoomLevel": 10
+      },
+      "passAllFeatures": true,
+      "minzoom": 10,
+      "title": {
+        "render": {
+          "ca": "Pot ser que hi hagi una font d'aigua potable aquí",
+          "cs": "Zde by mohl být pitná voda",
+          "da": "Mulig a drinking water",
+          "de": "Möglicherweise gibt es hier eine Trinkwasserstelle",
+          "en": "There might be a drinking water here",
+          "es": "Puede haber a drinking water aquí",
+          "fi": "Tässä on ehkä a drinking water",
+          "nb_NO": "Det kan være a drinking water her",
+          "nl": "Is hier drinkbaar water?",
+          "pl": "Tutaj może znajdować się a drinking water",
+          "zh_Hant": "這裡可能有 a drinking water",
+          "_context": "core:importLayer.popupTitle"
+        }
+      },
+      "calculatedTags": [
+        "_first_comment=get(feat)('comments')[0].text.toLowerCase()",
+        "_trigger_index=(() => {const lines = feat.properties['_first_comment'].split('\\n'); const matchesMapCompleteURL = lines.map(l => l.match(\".*https://mapcomplete.\\(org|osm.be\\)/\\([a-zA-Z_-]+\\)\\(.html\\)?.*#import\")); const matchedIndexes = matchesMapCompleteURL.map((doesMatch, i) => [doesMatch !== null, i]).filter(v => v[0]).map(v => v[1]); return matchedIndexes[0] })()",
+        "_comments_count=get(feat)('comments').length",
+        "_intro=(() => {const lines = get(feat)('comments')[0].text.split('\\n'); lines.splice(get(feat)('_trigger_index')-1, lines.length); return lines.filter(l => l !== '').join('<br/>');})()",
+        "_tags=(() => {let lines = get(feat)('comments')[0].text.split('\\n').map(l => l.trim()); lines.splice(0, get(feat)('_trigger_index') + 1); lines = lines.filter(l => l != ''); return lines.join(';');})()"
+      ],
+      "isShown": {
+        "and": [
+          "_trigger_index~*",
+          {
+            "or": [
+              {
+                "and": [
+                  "_tags~(^|.*;)amenity=drinking_water($|;.*)"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "titleIcons": [
+        {
+          "render": "<a href='https://openstreetmap.org/note/{id}' target='_blank'><img src='./assets/svg/osm-logo-us.svg'></a>"
+        }
+      ],
+      "tagRenderings": [
+        {
+          "id": "Intro",
+          "render": "{_intro}"
+        },
+        {
+          "id": "conversation",
+          "render": "{visualize_note_comments(comments,1)}",
+          "condition": "_comments_count>1"
+        },
+        {
+          "id": "import",
+          "render": {
+            "ca": "{import_button(drinking_water, _tags, he trobat un una font d'aigua potable aquí; afegeix-lo al mapa,./assets/svg/addSmall.svg,,,id)}",
+            "cs": "{import_button(drinking_water, _tags, Našel jsem pitná voda zde - přidejte ji do mapy,./assets/svg/addSmall.svg,,,id)}",
+            "da": "{import_button(drinking_water, _tags, Jeg har fundet en a drinking water her - tilføj den til kortet,./assets/svg/addSmall.svg,,,id)}",
+            "de": "{import_button(drinking_water, _tags, Ich habe hier ein(en) eine Trinkwasserstelle gefunden - Zur Karte hinzufügen,./assets/svg/addSmall.svg,,,id)}",
+            "en": "{import_button(drinking_water, _tags, I have found a a drinking water here - add it to the map,./assets/svg/addSmall.svg,,,id)}",
+            "es": "{import_button(drinking_water,_tags, He encontrado un(a) a drinking water aquí - añádelo al mapa,./assets/svg/addSmall.svg,,,id)}",
+            "nl": "{import_button(drinking_water, _tags, Ik heb hier een drinkbaar water gevonden - voeg deze toe aan de kaart...,./assets/svg/addSmall.svg,,,id)}",
+            "pl": "{import_button(drinking_water, _tags, odnalazłem tutaj a drinking water - dodaj go do mapy,./assets/svg/addSmall.svg,,,id)}",
+            "zh_Hant": "{import_button(drinking_water, _tags, 我在這邊發現 a drinking water - 新增到地圖,./assets/svg/addSmall.svg,,,id)}",
+            "_context": "core:importLayer.importButton"
+          },
+          "condition": "closed_at="
+        },
+        {
+          "id": "close_note_",
+          "render": {
+            "ca": "{close_note(No he pogut trobar una font d'aigua potable: esborra-ho, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "cs": "{close_note(Nepodařilo se mi najít pitná voda - odstraňte jej, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "da": "{close_note(Jeg kunne ikke finde a drinking water - fjern det, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "de": "{close_note(Ich konnte eine Trinkwasserstelle nicht finden - entferne es, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "en": "{close_note(I could not find a drinking water - remove it, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "es": "{close_note(No he podido encontrar a drinking water - eliminarlo, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "nl": "{close_note(Ik kon hier geen drinkbaar water vinden - verwijder deze van de kaart, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "pl": "{close_note(Nie mogłem odnaleźć a drinking water – usuń go, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "zh_Hant": "{close_note(我無法找到 a drinking water - 移除吧, ./assets/svg/close.svg, id, This feature does not exist, 18)}",
+            "_context": "core:importLayer.notFound"
+          },
+          "condition": "closed_at="
+        },
+        {
+          "id": "close_note_mapped",
+          "render": {
+            "ca": "{close_note(Ja hi ha un una font d'aigua potable al mapa - aquest punt és un duplicat, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "cs": "{close_note(Na mapě se již nachází pitná voda - tento bod je duplicitní, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "da": "{close_note(Der er allerede en anden a drinking water på kortet - dette punkt er en dublet, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "de": "{close_note(Es gibt bereits einen eine Trinkwasserstelle auf der Karte - dieser Punkt ist ein Duplikat, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "en": "{close_note(There already is a drinking water on the map - this point is a duplicate, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "es": "{close_note(a drinking water ya está en el mapa - este punto es un duplicado, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "nl": "{close_note(Er staat hier reeds drinkbaar water op de kaart; dit punt is een duplicaat. Verwijder deze van de kaart, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "pl": "{close_note(Na mapie znajduje się już a drinking water - ten punkt jest duplikatem, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "zh_Hant": "{close_note(a drinking water 已經在地圖上了 - 這個點重覆了, ./assets/svg/duplicate.svg, id, Already mapped, 18)}",
+            "_context": "core:importLayer.alreadyMapped"
+          },
+          "condition": "closed_at="
+        },
+        {
+          "id": "handled",
+          "render": {
+            "ca": "<div class=\"thanks\">Aquesta funció s'ha gestionat. Gràcies pel teu esforç.</div>",
+            "cs": "<div class='thanks'>Tato funkce byla zpracována! Děkujeme za vaši snahu</div>",
+            "da": "<div class=\"thanks\">Dette element er blevet håndteret! Tak for din indsats</div>",
+            "de": "<div class=\"thanks\">Dieses Objekt wurde verarbeitet! Vielen Dank für Ihre Bemühungen</div>",
+            "en": "<div class='thanks'>This feature has been handled! Thanks for your effort</div>",
+            "nb_NO": "<div class='thanks'>Denne funksjonen har blitt håndtert. Takk for din innsats.</div>",
+            "nl": "<div class='thanks'>Dit object is afgehandeld. Bedankt om mee te helpen!</div>",
+            "pl": "<div class='thanks'>Ta funkcja została obsłużona! Dziękujemy za Twój wysiłek</div>",
+            "zh_Hant": "<div class='thanks'>這個圖徵已經處理了！謝謝你的辛勞</div>",
+            "_context": "core:importLayer.importHandled"
+          },
+          "condition": "closed_at~*"
+        },
+        {
+          "id": "comment",
+          "render": "{add_note_comment()}"
+        },
+        {
+          "id": "add_image",
+          "render": "{add_image_to_note()}"
+        },
+        {
+          "id": "nearby_images",
+          "render": {
+            "ca": "<h3>Imatges properes</h3>Les imatges següents són imatges geoetiquetades properes de diversos serveis en línia. Us poden ajudar a resoldre aquesta nota.{nearby_images(open)}",
+            "cs": "<h3>Obrázky z okolí</h3>Následující obrázky jsou geograficky označené obrázky z různých online služeb. Mohly by vám pomoci při řešení této poznámky.{nearby_images(open)}",
+            "da": "<h3>Billeder i nærheden</h3>De følgende billeder er geotaggede billeder i nærheden fra forskellige onlinetjenester. De kan måske hjælpe dig med at løse denne note.{nearby_images(open)}",
+            "de": "<h3>Bilder in der Nähe</h3>Die folgenden Bilder sind mit Geotags versehene Bilder aus verschiedenen Online-Diensten in der Nähe. Sie können helfen, diesen Hinweis zu lösen.{nearby_images(open)}",
+            "en": "<h3>Nearby pictures</h3>The following pictures are nearby geotagged pictures from various online services. They might help you to resolve this note.{nearby_images(open)}",
+            "es": "<h3>Imágenes cercanas</h3> Las siguientes imágenes son imágenes geoetiquetadas cerca de varios servicios en línea. Pueden ayudarte a resolver esta nota. {nearby_images(open)}",
+            "nl": "<h3>Afbeeldingen in de buurt</h3>De volgende afbeeldingen zijn in de buurt gemaakt en kunnen mogelijks helpen. {nearby_images(open)}",
+            "pl": "<h3>Zdjęcia w pobliżu</h3>Poniższe zdjęcia to zdjęcia pobliskich obiektów z geotagami z różnych usług internetowych. Mogą pomóc Ci rozwiązać tę uwagę.{nearby_images(open)}",
+            "zh_Hant": "<h3>附近圖片</h3>接下來的圖片是多個第三方線上服務附近有地理標籤的圖片，也許能協助你解決這個註解。{nearby_images(open)}",
+            "_context": "core:importLayer.nearbyImagesIntro"
+          }
+        },
+        {
+          "id": "all_tags",
+          "render": "{all_tags()}",
+          "metacondition": {
+            "or": [
+              "__featureSwitchIsDebugging=true",
+              "mapcomplete-show_tags=full",
+              "mapcomplete-show_debug=yes"
+            ]
+          }
+        }
+      ],
+      "pointRendering": [
+        {
+          "location": [
+            "point"
+          ],
+          "marker": [
+            {
+              "icon": "circle",
+              "color": "#fff"
+            },
+            {
+              "icon": {
+                "render": "help",
+                "mappings": [
+                  {
+                    "if": {
+                      "or": [
+                        "closed_at~*",
+                        "_imported=yes"
+                      ]
+                    },
+                    "then": "checkmark"
+                  }
+                ]
+              },
+              "color": "#00"
+            }
+          ],
+          "iconSize": "40,40",
+          "anchor": "center"
+        }
+      ]
+    }
+  ],
+  "socialImage": "assets/SocialImage.png"
+}

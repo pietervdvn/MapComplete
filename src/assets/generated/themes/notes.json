@@ -1,0 +1,1103 @@
+{
+  "id": "notes",
+  "title": {
+    "en": "Notes on OpenStreetMap",
+    "hu": "Jegyzetek az OpenStreetMapen",
+    "nl": "Kaartnotas op OpenStreetMap",
+    "de": "Notizen von OpenStreetMap",
+    "ca": "Notes a OpenStreetMap",
+    "es": "Notas en OpenStreetMap",
+    "nb_NO": "Notater på OpenStreetMap",
+    "fr": "Notes sur OpenStreetMap",
+    "da": "Noter på OpenStreetMap",
+    "cs": "Poznámky k OpenStreetMap",
+    "zh_Hant": "開放街圖上的註解",
+    "pl": "Notatki na OpenStreetMap",
+    "_context": "themes:notes.title"
+  },
+  "description": {
+    "en": "A note is a pin on the map with some text to indicate something wrong.<br/><br/>Make sure to checkout the <a href='#filters'>filter view</a> to search for users and text.",
+    "hu": "A jegyzet egy gombostű a térképen egy szöveggel, amely azt jelzi, hogy valami nem stimmel.<br/><br/>Felhasználók vagy szövegek kereséséhez nézd meg a <a href='#filters'>szűrő nézetet</a>.",
+    "nl": "Een kaartnota bevat tekst op een specifieke locatie om aan te duiden dat er iets mis is of ontbreekt.<br/><br/>Bekijk ook het <a href='#filters'>filtermenu</a> om de notas te filteren op tekst, gebruiker, datum, ...",
+    "de": "Eine Notiz enthält eine Fehlerbeschreibung und ist als Markierung auf der Karte sichtbar.<br/><br/>In der <a href='#filters'>Ebenenauswahl</a> kann nach Ersteller, Bearbeiter und Inhalt gesucht werden.",
+    "es": "Una nota es un pin en el mapa con algún texto para indicar algo erróneo.<br/><br/>Asegúrate de comprobar la <a href='#filters'> vista de filtros</a> para buscar usuarios y texto.",
+    "fr": "Une note est une épingle sur la carte avec du text pour indiquer une erreur.<br/><br/>Assurez-vous d’utiliser le <a href='#filters'>filtre</a> pour chercher des utilisateurs and du texte.",
+    "da": "En note er en nål på kortet med noget tekst, der indikerer, at noget er forkert.<br/><br/>Sørg for at tjekke <a href='#filters'>filtervisningen</a> for at søge efter brugere og tekst .",
+    "cs": "Poznámka je špendlík na mapě s textem, jež označuje, že něco není v pořádku.<br/><br/>Nezapomeňte si prohlédnout zobrazení filtru <a href='#filters'></a> pro vyhledávání uživatelů a textu.",
+    "ca": "Una nota és un marcador al mapa amb un text per indicar alguna cosa incorrecta.<br/><br/>Assegureu-vos de revisar la <a href='#filters'>visualització de filtres</a> per cercar usuaris i text.",
+    "zh_Hant": "註解會散佈在地圖上並且有一些文字說明，來顯示那邊有錯誤。<br/><br/>請確認用<a href='#filter'>過濾檢視</a>來搜尋使用者或是文字。",
+    "pl": "Uwaga to pinezka na mapie z tekstem wskazującym, że coś jest nie tak.<br/><br/>Pamiętaj o skorzystaniu z <a href='#filters'>widoku filtra</a>, aby wyszukać użytkowników i tekst .",
+    "_context": "themes:notes.description"
+  },
+  "icon": "./assets/themes/notes/logo.svg",
+  "layers": [
+    {
+      "id": "note",
+      "name": {
+        "en": "OpenStreetMap notes",
+        "nl": "OpenStreetMap Notes",
+        "de": "OpenStreetMap-Hinweise",
+        "es": "Notas de OpenStreetMap",
+        "ca": "Notes d'OpenStreetMap",
+        "cs": "Poznámky OpenStreetMap"
+      },
+      "description": "This layer shows notes on OpenStreetMap. Having this layer in your theme will trigger the 'add new note' functionality in the 'addNewPoint'-popup (or if your theme has no presets, it'll enable adding notes)",
+      "source": {
+        "osmTags": {
+          "and": [
+            "date_created~*"
+          ]
+        },
+        "geoJson": "https://api.openstreetmap.org/api/0.6/notes.json?limit=10000&closed=7&bbox={x_min},{y_min},{x_max},{y_max}",
+        "geoJsonZoomLevel": 12
+      },
+      "calculatedTags": [
+        "_total_comments:=get(feat)('comments').length",
+        "_first_comment:=get(feat)('comments')[0].text",
+        "_opened_by_anonymous_user:=get(feat)('comments')[0].user === undefined",
+        "_first_user:=get(feat)('comments')[0].user",
+        "_last_user:=(() => {const comms = get(feat)('comments'); return comms[comms.length - 1].user})()",
+        "_first_user_id:=get(feat)('comments')[0].uid",
+        "_is_import_note:=(() => {const lines = feat.properties['_first_comment'].split('\\n'); const matchesMapCompleteURL = lines.map(l => l.match(\".*https://mapcomplete.\\(osm.be|org\\)/\\([a-zA-Z_-]+\\)\\(.html\\).*#import\")); const matchedIndexes = matchesMapCompleteURL.map((doesMatch, i) => [doesMatch !== null, i]).filter(v => v[0]).map(v => v[1]); return matchedIndexes[0] })()"
+      ],
+      "minzoom": 10,
+      "title": {
+        "render": {
+          "en": "Note",
+          "nl": "Note",
+          "ca": "Nota",
+          "de": "Notiz",
+          "es": "Nota",
+          "pa_PK": "نوٹ",
+          "pl": "Notatka",
+          "cs": "Poznámka"
+        },
+        "mappings": [
+          {
+            "if": "closed_at~*",
+            "then": {
+              "en": "Closed note",
+              "nl": "Gesloten Note",
+              "de": "Geschlossene Notiz",
+              "es": "Nota cerrada",
+              "pl": "Zamknięta notatka",
+              "ca": "Nota tancada",
+              "cs": "Uzavřená poznámka"
+            }
+          }
+        ]
+      },
+      "titleIcons": [
+        {
+          "ariaLabel": {
+            "en": "See on OpenStreetMap.org",
+            "nl": "Bekijk op OpenStreetMap.org",
+            "de": "Auf OpenStreetMap.org ansehen"
+          },
+          "render": "<a href='https://openstreetmap.org/note/{id}' target='_blank'><img src='./assets/svg/osm-logo-us.svg'></a>"
+        }
+      ],
+      "pointRendering": [
+        {
+          "location": [
+            "point",
+            "centroid"
+          ],
+          "marker": [
+            {
+              "icon": {
+                "render": "./assets/svg/note.svg",
+                "mappings": [
+                  {
+                    "if": "closed_at~*",
+                    "then": "./assets/svg/resolved.svg"
+                  }
+                ]
+              }
+            }
+          ],
+          "iconSize": "40,40",
+          "iconBadges": [
+            {
+              "if": "_total_comments>1",
+              "then": {
+                "render": "circle:white;./assets/svg/speech_bubble.svg",
+                "id": "circlewhiteassetssvgspeechbubblesvg"
+              }
+            },
+            {
+              "if": "_is_import_note~*",
+              "then": {
+                "render": "./assets/svg/addSmall.svg",
+                "id": "assetssvgaddSmallsvg"
+              }
+            },
+            {
+              "if": "_favourite=yes",
+              "then": {
+                "render": "circle:white;heart:red",
+                "id": "circlewhiteheartred"
+              }
+            }
+          ],
+          "anchor": "bottom"
+        }
+      ],
+      "lineRendering": [],
+      "tagRenderings": [
+        {
+          "id": "just_created",
+          "labels": [
+            "added_by_default"
+          ],
+          "description": "This element shows a 'thank you' that the contributor has recently created this element",
+          "classes": "rounded-xl thanks",
+          "mappings": [
+            {
+              "if": "id~*",
+              "icon": "./assets/svg/party.svg",
+              "then": {
+                "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+                "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+                "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+                "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+                "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+                "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+              }
+            }
+          ],
+          "condition": {
+            "and": [
+              "_backend~*",
+              "_last_edit:passed_time<300",
+              {
+                "or": [
+                  "_version_number=",
+                  "_version_number=1"
+                ]
+              }
+            ]
+          },
+          "metacondition": {
+            "and": [
+              {
+                "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+                "or": [
+                  "_last_edit:contributor:uid:={_uid}",
+                  "_last_edit:contributor:uid="
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "conversation",
+          "classes": "p-0",
+          "render": "{visualize_note_comments()}"
+        },
+        {
+          "id": "add_image",
+          "render": "{add_image_to_note()}"
+        },
+        {
+          "id": "comment",
+          "render": "{add_note_comment()}"
+        },
+        {
+          "id": "nearby-images",
+          "render": {
+            "ca": "<h3>Imatges properes</h3>Les imatges de sota són imatges geoetiquetades properes i poden ser útils per a encarregar-se d'aquesta nota.{nearby_images(open,)}",
+            "cs": "<h3>Obrázky v okolí</h3>Obrázky níže jsou obrázky s geografickými značkami v okolí a mohou vám pomoci s touto poznámkou.{nearby_images(open,)}",
+            "de": "<h3>Bilder aus der Nähe</h3>Die folgenden Bilder sind mit Geotags versehene Bilder aus der Nähe und könnten für die Bearbeitung dieser Notiz hilfreich sein.{nearby_images(open,)}",
+            "en": "<h3>Nearby images</h3>The pictures below are nearby geotagged images and might be helpful to handle this note.{nearby_images(open,)}",
+            "es": "<h3>Imágenes cercanas</h3>Las imágenes de debajo son imágenes geoetiquetadas cercanas y pueden ser útiles para encargarse de esta nota.{nearby_images(open,)}",
+            "nl": "<h3>Afbeeldingen in de buurt</h3>Onderstaande afbeeldingen zijn afbeeldingen met geo-referentie en die in de buurt genomen zijn. Mogelijks zijn ze nuttig om deze kaartnota af te handelen.{nearby_images(open,)}"
+          }
+        },
+        {
+          "id": "report-contributor",
+          "render": {
+            "en": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle'>Report {_first_user} for spam or inappropriate messages</a>",
+            "nl": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle'>{_first_user} melden voor spam of ongepaste opmerkingen</a>",
+            "de": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle' {_first_user} für Spam oder unangemessene Nachrichten melden</a>",
+            "es": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle'>Reportar {_first_user} por spam o mensajes inapropiados</a>",
+            "ca": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle'>Reporta {_first_user} per spam o missatges inapropiats</a>",
+            "cs": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle'>Nahlásit uživateli {_first_user} spam nebo nevhodné zprávy</ a>"
+          },
+          "condition": "_opened_by_anonymous_user=false"
+        },
+        {
+          "id": "report-note",
+          "render": {
+            "en": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Report this note as spam or inappropriate</a>",
+            "nl": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Deze note melden als spam of ongepast</a>",
+            "de": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Notiz als Spam oder unangemessen melden</a>",
+            "es": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Reporta esta nota como spam o inapropiada</a>",
+            "ca": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Reporta aquesta nota com spam o inapropiada</a>",
+            "cs": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Nahlásit tuto poznámku jako spam nebo nevhodnou</a>"
+          }
+        },
+        {
+          "id": "leftover-questions",
+          "render": {
+            "*": "{questions( ,)}"
+          }
+        },
+        {
+          "id": "lod",
+          "labels": [
+            "added_by_default"
+          ],
+          "render": {
+            "*": "{linked_data_from_website()}"
+          }
+        },
+        {
+          "id": "minimap",
+          "description": "Shows a small map with the feature. Added by default to every popup",
+          "render": {
+            "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+          }
+        },
+        {
+          "id": "last_edit",
+          "labels": [
+            "added_by_default"
+          ],
+          "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+          "condition": {
+            "and": [
+              "_last_edit:contributor~*",
+              "_last_edit:changeset~*"
+            ]
+          },
+          "metacondition": {
+            "or": [
+              "__featureSwitchIsTesting=true",
+              "__featureSwitchIsDebugging=true",
+              "mapcomplete-show_debug=yes",
+              "_csCount>=10"
+            ]
+          },
+          "render": {
+            "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+          }
+        },
+        {
+          "id": "favourite_status",
+          "render": {
+            "*": "{favourite_status()}"
+          }
+        },
+        {
+          "id": "qr_code",
+          "labels": [
+            "added_by_default"
+          ],
+          "classes": "flex items-center gap-x-2",
+          "render": {
+            "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+            "en": "{qr_code()}Scan this code to open this location on another device",
+            "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+            "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+          }
+        },
+        {
+          "id": "share",
+          "labels": [
+            "added_by_default"
+          ],
+          "metacondition": "_supports_sharing=yes",
+          "render": {
+            "de": "{share_link(,Standort teilen)}",
+            "en": "{share_link(,Share this location)}",
+            "nl": "{share_link(,Deel deze locatie)}"
+          }
+        },
+        {
+          "id": "all-tags",
+          "render": {
+            "*": "{all_tags()}"
+          },
+          "metacondition": {
+            "or": [
+              "__featureSwitchIsDebugging=true",
+              "mapcomplete-show_tags=full",
+              "mapcomplete-show_debug=yes"
+            ]
+          }
+        }
+      ],
+      "filter": [
+        {
+          "id": "search",
+          "options": [
+            {
+              "osmTags": "_first_comment~i~.*{search}.*",
+              "fields": [
+                {
+                  "name": "search"
+                }
+              ],
+              "question": {
+                "en": "Should mention {search} in the first comment",
+                "nl": "Moet in de eerste opmerking \"{search}\" bevatten",
+                "de": "Sollte {search} im ersten Kommentar erwähnen",
+                "es": "Debe mencionar {search} en el primer comentario",
+                "ca": "Has de mencionar {search} en el primer comentari",
+                "cs": "Měl by se zmínit {search} v prvním komentáři"
+              }
+            }
+          ]
+        },
+        {
+          "id": "not",
+          "options": [
+            {
+              "osmTags": "_first_comment!~i~.*{search}.*",
+              "fields": [
+                {
+                  "name": "search"
+                }
+              ],
+              "question": {
+                "en": "Should <b>not</b> mention {search} in the first comment",
+                "nl": "Mag in de eerste opmerking <b>niet</b> \"{search}\" bevatten",
+                "de": "Sollte <b>nicht</b> {search} im ersten Kommentar erwähnen",
+                "es": "<b>No</b> debe mencionar {search} en el primer comentario",
+                "ca": "<b>No</b> s'ha de mencionar {search} al primer comentari",
+                "cs": "V prvním komentáři by jste <b>neměli</b> zmiňovat {search}"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opened_by",
+          "options": [
+            {
+              "osmTags": "_first_user~i~.*{search}.*",
+              "fields": [
+                {
+                  "name": "search"
+                }
+              ],
+              "question": {
+                "en": "Opened by contributor {search}",
+                "nl": "Geopend door bijdrager {search}",
+                "de": "Erstellt von {search}",
+                "es": "Abierto por el contributor {search}",
+                "fr": "Ouverte par {search}",
+                "ca": "Obert pel contribuïdor {search}",
+                "cs": "Otevřeno přispěvatelem {search}"
+              }
+            }
+          ]
+        },
+        {
+          "id": "not_opened_by",
+          "options": [
+            {
+              "osmTags": "_first_user!~i~.*{search}.*",
+              "fields": [
+                {
+                  "name": "search"
+                }
+              ],
+              "question": {
+                "en": "<b>Not</b> opened by contributor {search}",
+                "nl": "<b>Niet</b> geopend door bijdrager {search}",
+                "de": "<b>Nicht</b> erstellt von {search}",
+                "es": "<b>No</b> abierto por el contributor {search}",
+                "ca": "<b>No</b> obert pel contribuïdor {search}",
+                "cs": "<b>Není</b> otevřeno přispěvatelem {search}"
+              }
+            }
+          ]
+        },
+        {
+          "id": "edited_by",
+          "options": [
+            {
+              "osmTags": "_last_user~i~.*{search}.*",
+              "fields": [
+                {
+                  "name": "search"
+                }
+              ],
+              "question": {
+                "en": "Last edited by contributor {search}",
+                "nl": "Laatst bewerkt door bijdrager {search}",
+                "de": "Zuletzt bearbeitet von {search}",
+                "es": "Editada por última vez por el contributor {search}",
+                "ca": "Editat per última vega pel contribuïdor {search}",
+                "cs": "Naposledy upravil přispěvatel {search}"
+              }
+            }
+          ]
+        },
+        {
+          "id": "not_edited_by",
+          "options": [
+            {
+              "osmTags": "_last_user!~i~.*{search}.*",
+              "fields": [
+                {
+                  "name": "search"
+                }
+              ],
+              "question": {
+                "en": "Opened after {search}",
+                "nl": "Geopend na {search}",
+                "de": "Zuletzt bearbeitet nach dem {search}",
+                "es": "Abierta después de {search}",
+                "ca": "Oberta després de {search}",
+                "cs": "Otevřeno po {search}"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opened_before",
+          "options": [
+            {
+              "osmTags": "date_created<{search}",
+              "fields": [
+                {
+                  "name": "search",
+                  "type": "date"
+                }
+              ],
+              "question": {
+                "en": "Created before {search}",
+                "nl": "Aangemaakt voor {search}",
+                "de": "Erstellt vor dem {search}",
+                "es": "Creada antes de {search}",
+                "ca": "Creada abans de {search}",
+                "cs": "Vytvořeno před {search}"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opened_after",
+          "options": [
+            {
+              "osmTags": "date_created>{search}",
+              "fields": [
+                {
+                  "name": "search",
+                  "type": "date"
+                }
+              ],
+              "question": {
+                "en": "Created after {search}",
+                "nl": "Aangemaakt na {search}",
+                "de": "Erstellt nach dem {search}",
+                "es": "Creada después de {search}",
+                "ca": "Creada després de {search}",
+                "cs": "Vytvořeno po {search}"
+              }
+            }
+          ]
+        },
+        {
+          "id": "anonymous",
+          "options": [
+            {
+              "osmTags": "_opened_by_anonymous_user=true",
+              "question": {
+                "en": "Only show notes opened by an anonymous contributor",
+                "nl": "Toon enkel de Notes geopend door een anonieme bijdrager",
+                "de": "Nur Notizen anzeigen, die anonym erstellt wurden",
+                "es": "Solo mostrar las notas abiertas por contributores anómimos",
+                "ca": "Sols mostrar les notes obertes per contribuïdors anònims",
+                "cs": "Zobrazovat pouze poznámky otevřené anonymním přispěvatelem"
+              }
+            }
+          ]
+        },
+        {
+          "id": "is_open",
+          "options": [
+            {
+              "osmTags": "closed_at=",
+              "question": {
+                "en": "Only show open notes",
+                "nl": "Toon enkel open Notes",
+                "de": "Nur offene Notizen anzeigen",
+                "es": "Solo mostrar las notas abiertas",
+                "ca": "Sols mostra les notes obertes",
+                "cs": "Zobrazit pouze otevřené poznámky"
+              }
+            }
+          ]
+        },
+        {
+          "id": "no_imports",
+          "options": [
+            {
+              "question": {
+                "en": "All Notes",
+                "nl": "Alle Notes",
+                "de": "Alle Notizen",
+                "es": "Todas las notas",
+                "ca": "Totes les notes",
+                "cs": "Všechny poznámky"
+              }
+            },
+            {
+              "osmTags": "_is_import_note=",
+              "question": {
+                "en": "Hide import notes",
+                "nl": "Verberg import Notes",
+                "de": "Importnotizen ausblenden",
+                "es": "Ocultar las notas de importación",
+                "ca": "Oculta les notes d'importació",
+                "cs": "Skrýt poznámky k importu"
+              }
+            },
+            {
+              "osmTags": "_is_import_note~*",
+              "question": {
+                "en": "Show only import Notes",
+                "nl": "Toon enkel import Notes",
+                "de": "Nur Importnotizen anzeigen",
+                "es": "Solo mostrar las notas de importación",
+                "ca": "Mostrar només les notes d'importació",
+                "cs": "Zobrazit pouze poznámky k importu"
+              }
+            }
+          ]
+        }
+      ],
+      "_layerIcon": [
+        {
+          "icon": "./assets/svg/note.svg"
+        }
+      ]
+    },
+    {
+      "id": "fixme",
+      "name": {
+        "en": "OSM objects with FIXME tags",
+        "de": "OSM-Objekte mit FIXME-Tags",
+        "pl": "Obiekty OSM z znacznikami FIXME",
+        "ca": "Objectes d'OSM amb etiquetes FIXME",
+        "cs": "Objekty OSM se značkami FIXME"
+      },
+      "description": {
+        "en": "OSM objects that likely need to be fixed, based on a FIXME tag.",
+        "de": "OSM-Objekte, die wahrscheinlich korrigiert werden müssen, basierend auf einem FIXME-Tag.",
+        "ca": "Objectes OSM que probablement s'han de solucionar, basats en una etiqueta FIXME.",
+        "cs": "Objekty OSM, které je pravděpodobně nutné opravit na základě značky FIXME."
+      },
+      "source": {
+        "osmTags": {
+          "and": [
+            {
+              "or": [
+                "fixme~*",
+                "FIXME~*"
+              ]
+            }
+          ]
+        }
+      },
+      "minzoom": 16,
+      "title": {
+        "render": {
+          "en": "OSM object with FIXME tag",
+          "de": "OSM-Objekt mit FIXME-Tags",
+          "pl": "Obiekt OSM z znacznikiem FIXME",
+          "ca": "Objecte OSM amb etiqueta FIXME",
+          "cs": "Objekt OSM s tagem FIXME"
+        }
+      },
+      "pointRendering": [
+        {
+          "location": [
+            "centroid",
+            "point"
+          ],
+          "label": "<div class='bg-white rounded p-2'>{fixme}</div>",
+          "marker": [
+            {
+              "icon": {
+                "render": "./assets/svg/bug.svg",
+                "id": "assetssvgbugsvg"
+              }
+            }
+          ],
+          "iconBadges": [
+            {
+              "if": "_favourite=yes",
+              "then": {
+                "render": "circle:white;heart:red",
+                "id": "circlewhiteheartred"
+              }
+            }
+          ]
+        }
+      ],
+      "lineRendering": [
+        {
+          "color": "#ff0000",
+          "dashArray": "5,5",
+          "width": 2
+        }
+      ],
+      "tagRenderings": [
+        {
+          "id": "just_created",
+          "labels": [
+            "added_by_default"
+          ],
+          "description": "This element shows a 'thank you' that the contributor has recently created this element",
+          "classes": "rounded-xl thanks",
+          "mappings": [
+            {
+              "if": "id~*",
+              "icon": "./assets/svg/party.svg",
+              "then": {
+                "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+                "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+                "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+                "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+                "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+                "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+              }
+            }
+          ],
+          "condition": {
+            "and": [
+              "_backend~*",
+              "_last_edit:passed_time<300",
+              {
+                "or": [
+                  "_version_number=",
+                  "_version_number=1"
+                ]
+              }
+            ]
+          },
+          "metacondition": {
+            "and": [
+              {
+                "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+                "or": [
+                  "_last_edit:contributor:uid:={_uid}",
+                  "_last_edit:contributor:uid="
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "fixme",
+          "freeform": {
+            "key": "fixme",
+            "type": "text",
+            "inline": true
+          },
+          "question": {
+            "en": "What is wrong with this feature?",
+            "de": "Was stimmt mit diesem Objekt nicht?",
+            "pl": "Co jest nie tak z tym obiektem?",
+            "ca": "Que hi ha mal amb aquest element?",
+            "cs": "Co je na této funkci špatného?"
+          },
+          "mappings": [
+            {
+              "if": "fixme=",
+              "then": {
+                "en": "This issue has been resolved",
+                "de": "Dieses Problem wurde behoben",
+                "pl": "Ten problem został rozwiązany",
+                "ca": "Aquest problema s'ha resolt",
+                "cs": "Tento problém byl vyřešen"
+              }
+            }
+          ],
+          "render": {
+            "en": "Fixme Text: {fixme}",
+            "de": "Fixme Text: {fixme}",
+            "ca": "Text Fixme: {fixme}",
+            "cs": "Fixme Text: {fixme}"
+          }
+        },
+        {
+          "id": "note",
+          "condition": "note~*",
+          "render": {
+            "en": "Note Text: {note}",
+            "de": "Notiz Text: {note}",
+            "fr": "Texte de la note : {note}",
+            "pl": "Tekst notatki: {note}",
+            "ca": "Text de la nota: {note}",
+            "cs": "Text poznámky: {note}"
+          }
+        },
+        {
+          "id": "all_tags",
+          "description": "Shows a table with all the tags of the feature",
+          "render": {
+            "*": "{all_tags()}"
+          }
+        },
+        {
+          "id": "leftover-questions",
+          "render": {
+            "*": "{questions( ,)}"
+          }
+        },
+        {
+          "id": "lod",
+          "labels": [
+            "added_by_default"
+          ],
+          "render": {
+            "*": "{linked_data_from_website()}"
+          }
+        },
+        {
+          "id": "minimap",
+          "description": "Shows a small map with the feature. Added by default to every popup",
+          "render": {
+            "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+          }
+        },
+        {
+          "id": "last_edit",
+          "labels": [
+            "added_by_default"
+          ],
+          "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+          "condition": {
+            "and": [
+              "_last_edit:contributor~*",
+              "_last_edit:changeset~*"
+            ]
+          },
+          "metacondition": {
+            "or": [
+              "__featureSwitchIsTesting=true",
+              "__featureSwitchIsDebugging=true",
+              "mapcomplete-show_debug=yes",
+              "_csCount>=10"
+            ]
+          },
+          "render": {
+            "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+            "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+          }
+        },
+        {
+          "id": "favourite_status",
+          "render": {
+            "*": "{favourite_status()}"
+          }
+        },
+        {
+          "id": "qr_code",
+          "labels": [
+            "added_by_default"
+          ],
+          "classes": "flex items-center gap-x-2",
+          "render": {
+            "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+            "en": "{qr_code()}Scan this code to open this location on another device",
+            "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+            "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+          }
+        },
+        {
+          "id": "share",
+          "labels": [
+            "added_by_default"
+          ],
+          "metacondition": "_supports_sharing=yes",
+          "render": {
+            "de": "{share_link(,Standort teilen)}",
+            "en": "{share_link(,Share this location)}",
+            "nl": "{share_link(,Deel deze locatie)}"
+          }
+        }
+      ],
+      "syncSelection": "theme-only",
+      "titleIcons": [
+        {
+          "id": "wikipedialink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+          "condition": {
+            "or": [
+              "wikipedia~*",
+              "wikidata~*"
+            ]
+          },
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "wikipedia=",
+              "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+            }
+          ]
+        },
+        {
+          "id": "open_until",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "#": "Titleicon showing e.g. 'open until 17:00'",
+          "icon": {
+            "class": "w-20 mx-1 flex items-center"
+          },
+          "render": "{opening_hours_state()}",
+          "condition": {
+            "or": [
+              "opening_hours~*",
+              {
+                "or": [
+                  {
+                    "and": [
+                      "seasonal~.*winter.*",
+                      "_now:date~....-(12|01|02)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*spring.*",
+                      "_now:date~....-(03|04|05)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*summer.*",
+                      "_now:date~....-(06|07|08)-.."
+                    ]
+                  },
+                  {
+                    "and": [
+                      "seasonal~.*autumn.*",
+                      "_now:date~....-(09|10|11)-.."
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "phonelink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.render"
+          },
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "contact:phone~*",
+              "then": {
+                "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+                "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+                "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+                "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+              }
+            }
+          ],
+          "condition": {
+            "or": [
+              "phone~*",
+              "contact:phone~*"
+            ]
+          }
+        },
+        {
+          "id": "emaillink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "contact:email~*",
+              "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "operator:email~*",
+              "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+            }
+          ],
+          "condition": {
+            "or": [
+              "email~*",
+              "contact:email~*",
+              "operator:email~*"
+            ]
+          }
+        },
+        {
+          "id": "websitelink",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "website~*",
+              "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "operator:website~*",
+              "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "context:website~*",
+              "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+            }
+          ]
+        },
+        {
+          "id": "smokingicon",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "#": "ignore-image-in-then",
+              "if": "smoking=no",
+              "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "smoking=yes",
+              "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+            }
+          ]
+        },
+        {
+          "id": "dogicon",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "mappings": [
+            {
+              "if": "dog=no",
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+            },
+            {
+              "if": "dog=leashed",
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+            },
+            {
+              "if": {
+                "or": [
+                  "dog=yes",
+                  "dog=unleashed"
+                ]
+              },
+              "#": "ignore-image-in-then",
+              "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+            }
+          ]
+        },
+        {
+          "id": "sharelink",
+          "labels": [
+            "defaults"
+          ],
+          "render": "{share_link()}",
+          "metacondition": "_supports_sharing=yes"
+        },
+        {
+          "id": "favourite_title_icon",
+          "labels": [
+            "defaults"
+          ],
+          "render": {
+            "*": "{favourite_icon()}"
+          },
+          "metacondition": "_loggedIn=true"
+        },
+        {
+          "id": "osmlink",
+          "labels": [
+            "defaults"
+          ],
+          "render": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.render"
+          },
+          "mappings": [
+            {
+              "if": "id~.*/-.*",
+              "then": ""
+            },
+            {
+              "#": "ignore-image-in-then",
+              "if": "_backend~*",
+              "then": {
+                "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+                "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+                "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+                "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+              }
+            }
+          ],
+          "condition": "id~(node|way|relation)/[0-9]*"
+        },
+        {
+          "id": "direction",
+          "labels": [
+            "defaults",
+            "in_favourite"
+          ],
+          "render": "{direction_indicator()}"
+        },
+        {
+          "id": "rating",
+          "icon": {
+            "class": "w-20 mx-1 flex items-center"
+          },
+          "render": "{rating()}"
+        }
+      ],
+      "_layerIcon": [
+        {
+          "icon": "./assets/svg/bug.svg"
+        }
+      ]
+    }
+  ],
+  "enableDownload": true,
+  "socialImage": "assets/SocialImage.png"
+}

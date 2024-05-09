@@ -1,0 +1,728 @@
+{
+  "id": "bench_at_pt",
+  "name": {
+    "en": "Benches at public transport stops",
+    "de": "Sitzbänke an Haltestellen",
+    "fr": "Bancs des arrêts de transport en commun",
+    "nl": "Zitbanken aan bushaltes",
+    "es": "Bancos en una parada de transporte público",
+    "hu": "Padok megállókban",
+    "it": "Panchine alle fermate del trasporto pubblico",
+    "ru": "Скамейки на остановках общественного транспорта",
+    "zh_Hans": "在公交站点的长椅",
+    "nb_NO": "Benker",
+    "zh_Hant": "大眾運輸站點的長椅",
+    "pt_BR": "Bancos em pontos de transporte público",
+    "pl": "Ławki na przystankach komunikacji miejskiej",
+    "pt": "Bancos em pontos de transporte público",
+    "da": "Bænke ved stoppesteder for offentlig transport",
+    "cs": "Lavičky na zastávkách veřejné dopravy",
+    "ca": "Bancs en una parada de transport públic"
+  },
+  "description": {
+    "en": "A layer showing all public-transport-stops which do have a bench",
+    "es": "Una capa que muestra todas las paradas de transporte público que tienen bancos",
+    "nl": "Een laag die stopplaatsen van openbaar vervoer toont waar er een zitbank is",
+    "fr": "Une couche montrant tous les arrêts de transports publics qui ont un banc",
+    "de": "Eine Ebene mit allen Haltestellen des öffentlichen Nahverkehrs, die über eine Sitzbank verfügen",
+    "da": "Et lag, der viser alle offentlige stoppesteder, som har en bænk",
+    "cs": "Vrstva zobrazující všechny zastávky veřejné dopravy, které mají lavičku",
+    "ca": "Una capa que mostra totes les parades de transport públic que tenen bancs",
+    "pt": "Uma camada mostrando todas as paradas de transporte público que possuem um banco",
+    "pl": "Warstwa pokazująca wszystkie przystanki transportu publicznego, które mają ławki",
+    "pt_BR": "Uma camada mostrando todas as paradas de transporte público que têm um banco"
+  },
+  "source": {
+    "osmTags": {
+      "and": [
+        "highway=bus_stop",
+        {
+          "or": [
+            "bench=yes",
+            "bench=stand_up_bench"
+          ]
+        }
+      ]
+    }
+  },
+  "minzoom": 14,
+  "title": {
+    "render": {
+      "en": "Bench",
+      "de": "Sitzbank",
+      "fr": "Banc",
+      "nl": "Zitbank",
+      "es": "Banco",
+      "hu": "Pad",
+      "it": "Panchina",
+      "ru": "Скамейка",
+      "id": "Bangku",
+      "zh_Hans": "长椅",
+      "nb_NO": "Benk",
+      "zh_Hant": "長椅",
+      "pt_BR": "Banco",
+      "fi": "Penkki",
+      "pl": "Ławka",
+      "pt": "Banco",
+      "ca": "Banc",
+      "da": "Bænk",
+      "cs": "Lavička",
+      "pa_PK": "بینچ",
+      "he": "ספסל",
+      "eu": "Banku"
+    },
+    "mappings": [
+      {
+        "if": {
+          "or": [
+            "public_transport=platform",
+            "railway=platform",
+            "highway=bus_stop"
+          ]
+        },
+        "then": {
+          "en": "Bench at public transport stop",
+          "de": "Sitzbank bei Haltestelle",
+          "fr": "Banc d'un arrêt de transport en commun",
+          "nl": "Zitbank aan een bushalte",
+          "hu": "Pad megállóban",
+          "it": "Panchina alla fermata del trasporto pubblico",
+          "ru": "Скамейка на остановке общественного транспорта",
+          "zh_Hans": "在公交站点的长椅",
+          "zh_Hant": "大眾運輸站點的長椅",
+          "pt_BR": "Banco em ponto de transporte público",
+          "pl": "Ławka na przystanku komunikacji miejskiej",
+          "pt": "Banco em ponto de transporte público",
+          "es": "Banco en una parada de transporte público",
+          "da": "Bænk ved offentlig stoppested",
+          "cs": "Lavička na zastávce veřejné dopravy",
+          "ca": "Banc en una parada de transport públic",
+          "he": "ספסל בתחנת תחבורה ציבורית"
+        }
+      },
+      {
+        "if": {
+          "and": [
+            "amenity=shelter"
+          ]
+        },
+        "then": {
+          "en": "Bench in shelter",
+          "de": "Sitzbank in Unterstand",
+          "fr": "Banc dans un abri",
+          "nl": "Zitbank in een schuilhokje",
+          "hu": "Pad fedett helyen",
+          "it": "Panchina in un riparo",
+          "zh_Hans": "在庇护所的长椅",
+          "ru": "Скамейка в укрытии",
+          "zh_Hant": "涼亭內的長椅",
+          "pt_BR": "Banco em abrigo",
+          "pt": "Banco em abrigo",
+          "es": "Banco en marquesina",
+          "da": "Bænk i læskur",
+          "cs": "Lavička v přístřešku",
+          "ca": "Banc en marquesina",
+          "he": "ספסל בסככה"
+        }
+      }
+    ]
+  },
+  "pointRendering": [
+    {
+      "iconSize": "35,35",
+      "location": [
+        "point"
+      ],
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": {
+            "render": "circle",
+            "id": "circle"
+          },
+          "color": "white"
+        },
+        {
+          "icon": {
+            "render": "./assets/themes/benches/bench_public_transport.svg",
+            "id": "assetsthemesbenchesbenchpublictransportsvg"
+          }
+        }
+      ],
+      "iconBadges": [
+        {
+          "if": "_favourite=yes",
+          "then": "circle:white;heart:red"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#00f",
+      "width": "8"
+    }
+  ],
+  "tagRenderings": [
+    {
+      "id": "just_created",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "This element shows a 'thank you' that the contributor has recently created this element",
+      "classes": "rounded-xl thanks",
+      "mappings": [
+        {
+          "if": "id~*",
+          "icon": "./assets/svg/party.svg",
+          "then": {
+            "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+            "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+            "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+            "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+            "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+            "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+          }
+        }
+      ],
+      "condition": {
+        "and": [
+          "_backend~*",
+          "_last_edit:passed_time<300",
+          {
+            "or": [
+              "_version_number=",
+              "_version_number=1"
+            ]
+          }
+        ]
+      },
+      "metacondition": {
+        "and": [
+          {
+            "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+            "or": [
+              "_last_edit:contributor:uid:={_uid}",
+              "_last_edit:contributor:uid="
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "images",
+      "description": "This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images",
+      "render": {
+        "*": "{image_carousel()}{image_upload()}{nearby_images():my-4}"
+      },
+      "classes": "my-4"
+    },
+    {
+      "render": {
+        "en": "{name}",
+        "de": "{name}",
+        "fr": "{name}",
+        "nl": "{name}",
+        "hu": "{name}",
+        "it": "{name}",
+        "ru": "{name}",
+        "id": "{name}",
+        "zh_Hans": "{name}",
+        "zh_Hant": "{name}",
+        "pt_BR": "{name}",
+        "fi": "{name}",
+        "pl": "{name}",
+        "pt": "{name}",
+        "eo": "{name}",
+        "es": "{name}",
+        "ca": "{name}",
+        "da": "{name}",
+        "cs": "{name}",
+        "eu": "{name}"
+      },
+      "freeform": {
+        "key": "name",
+        "inline": true
+      },
+      "id": "bench_at_pt-name"
+    },
+    {
+      "id": "bench_at_pt-bench_type",
+      "question": {
+        "en": "What kind of bench is this?",
+        "nl": "Wat voor soort bank is dit?",
+        "de": "Was ist das für eine Bank?",
+        "es": "¿Qué tipo de banco es este?",
+        "fr": "Quel type de banc est-ce ?",
+        "da": "Hvilken slags bænk er dette?",
+        "cs": "Co je to za lavičku?",
+        "pt": "Que tipo de banco é este?",
+        "ca": "Quin tipus de banc és aquest?",
+        "pt_BR": "Qual tipo de banco é esse?"
+      },
+      "mappings": [
+        {
+          "if": "bench=yes",
+          "then": {
+            "en": "There is a normal, sit-down bench here",
+            "fr": "Il y a un banc normal pour s'asseoir ici",
+            "de": "Hier gibt es eine normale Sitzbank",
+            "nl": "Er is hier een normale zitbank",
+            "da": "Der er en normal siddebænk her",
+            "es": "Hay un banco normal aquí",
+            "cs": "Zde je normální lavička k sezení",
+            "ca": "Aquí hi ha un banc normal",
+            "pt_BR": "Há um banco comum, para sentar, aqui",
+            "pt": "Há um banco comum, para sentar, aqui"
+          }
+        },
+        {
+          "if": "bench=stand_up_bench",
+          "then": {
+            "en": "Stand up bench",
+            "de": "Hier gibt es eine Stehbank zum Anlehnen",
+            "fr": "Banc assis debout",
+            "nl": "Leunbank",
+            "it": "Panca in piedi",
+            "zh_Hans": "站立长凳",
+            "ru": "Встаньте на скамейке",
+            "zh_Hant": "站立長椅",
+            "da": "Stå-op bænk",
+            "es": "Banco de pié",
+            "cs": "Je zde lavička, o kterou se lze opřít",
+            "ca": "Banc dempeus",
+            "pt": "banco de pé",
+            "pt_BR": "Banco para ficar em pé"
+          }
+        },
+        {
+          "if": "bench=no",
+          "then": {
+            "en": "There is no bench here",
+            "fr": "Il n'y a pas de banc ici",
+            "de": "Hier gibt es keine Bank",
+            "nl": "Er is hier geen bank",
+            "es": "No hay ningún banco aquí",
+            "da": "Der er ingen bænk her",
+            "cs": "Zde není žádná lavička",
+            "pt": "Não há nenhum banco aqui",
+            "ca": "Aquí no hi ha cap banc",
+            "pt_BR": "Não há banco aqui"
+          }
+        }
+      ]
+    },
+    {
+      "id": "leftover-questions",
+      "render": {
+        "*": "{questions( ,)}"
+      }
+    },
+    {
+      "id": "lod",
+      "labels": [
+        "added_by_default"
+      ],
+      "render": {
+        "*": "{linked_data_from_website()}"
+      }
+    },
+    {
+      "id": "minimap",
+      "description": "Shows a small map with the feature. Added by default to every popup",
+      "render": {
+        "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+      }
+    },
+    {
+      "id": "delete-button",
+      "render": {
+        "*": "{delete_button()}"
+      }
+    },
+    {
+      "id": "last_edit",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+      "condition": {
+        "and": [
+          "_last_edit:contributor~*",
+          "_last_edit:changeset~*"
+        ]
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsTesting=true",
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_debug=yes",
+          "_csCount>=10"
+        ]
+      },
+      "render": {
+        "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+      }
+    },
+    {
+      "id": "favourite_status",
+      "render": {
+        "*": "{favourite_status()}"
+      }
+    },
+    {
+      "id": "qr_code",
+      "labels": [
+        "added_by_default"
+      ],
+      "classes": "flex items-center gap-x-2",
+      "render": {
+        "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+        "en": "{qr_code()}Scan this code to open this location on another device",
+        "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+        "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+      }
+    },
+    {
+      "id": "share",
+      "labels": [
+        "added_by_default"
+      ],
+      "metacondition": "_supports_sharing=yes",
+      "render": {
+        "de": "{share_link(,Standort teilen)}",
+        "en": "{share_link(,Share this location)}",
+        "nl": "{share_link(,Deel deze locatie)}"
+      }
+    },
+    {
+      "id": "all-tags",
+      "render": {
+        "*": "{all_tags()}"
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_tags=full",
+          "mapcomplete-show_debug=yes"
+        ]
+      }
+    }
+  ],
+  "deletion": {
+    "omitDefaultDeleteReasons": true,
+    "nonDeleteMappings": [
+      {
+        "if": "bench=no",
+        "then": {
+          "en": "This bus stop does not have a bench (there never was one or it has been removed)",
+          "de": "Diese Bushaltestelle hat keine Bank (es gab nie eine oder sie wurde entfernt)",
+          "fr": "Cette station de bus n'a pas de banc (il n'y en a jamais eu ou il a été retiré)",
+          "nl": "Deze bushalte heeft geen zitbank (er is er nooit een geweest of deze is verwijderd)",
+          "ca": "Aquesta para de bus no té un banc (mai n'ha tingut un o ha estat eliminat)",
+          "cs": "Na této autobusové zastávce není lavička (nikdy zde nebyla nebo byla odstraněna)",
+          "pt": "Este ponto de ônibus não tem banco (nunca houve ou foi removido)",
+          "pl": "Ten przystanek autobusowy nie ma ławki (nigdy jej nie było lub została usunięta)",
+          "pt_BR": "Essa parada de ônibus não tem um banco (nunca teve ou ele foi removido)",
+          "es": "Esta parada de autobús no tiene banco (nunca lo hubo o lo han quitado)"
+        }
+      }
+    ],
+    "extraDeleteReasons": [
+      {
+        "changesetMessage": "discontinued",
+        "explanation": {
+          "en": "This bus stop is not used anymore",
+          "de": "Diese Bushaltestelle wird nicht mehr genutzt",
+          "fr": "Cette station de bus n'est plus utilisée",
+          "nl": "Deze bushalte wordt niet meer gebruikt",
+          "ca": "Aquesta parada de bus no s'utilitza més",
+          "cs": "Tato autobusová zastávka se již nepoužívá",
+          "pt": "Este ponto de ônibus não é mais usado",
+          "pl": "Ten przystanek autobusowy nie jest już używany",
+          "pt_BR": "Essa parada de ônibus não é mais usada",
+          "es": "Esta parada ya no se usa"
+        }
+      }
+    ],
+    "softDeletionTags": {
+      "and": [
+        "disused:highway=bus_stop",
+        "bench=no"
+      ]
+    }
+  },
+  "titleIcons": [
+    {
+      "id": "wikipedialink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+      "condition": {
+        "or": [
+          "wikipedia~*",
+          "wikidata~*"
+        ]
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "wikipedia=",
+          "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "open_until",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "#": "Titleicon showing e.g. 'open until 17:00'",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{opening_hours_state()}",
+      "condition": {
+        "or": [
+          "opening_hours~*",
+          {
+            "or": [
+              {
+                "and": [
+                  "seasonal~.*winter.*",
+                  "_now:date~....-(12|01|02)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*spring.*",
+                  "_now:date~....-(03|04|05)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*summer.*",
+                  "_now:date~....-(06|07|08)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*autumn.*",
+                  "_now:date~....-(09|10|11)-.."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "phonelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": {
+        "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+        "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+        "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+        "_context": "layers:icons.tagRenderings.phonelink.render"
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:phone~*",
+          "then": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+          }
+        }
+      ],
+      "condition": {
+        "or": [
+          "phone~*",
+          "contact:phone~*"
+        ]
+      }
+    },
+    {
+      "id": "emaillink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:email~*",
+          "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:email~*",
+          "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        }
+      ],
+      "condition": {
+        "or": [
+          "email~*",
+          "contact:email~*",
+          "operator:email~*"
+        ]
+      }
+    },
+    {
+      "id": "websitelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "website~*",
+          "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:website~*",
+          "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "context:website~*",
+          "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "smokingicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=no",
+          "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=yes",
+          "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+        }
+      ]
+    },
+    {
+      "id": "dogicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "if": "dog=no",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+        },
+        {
+          "if": "dog=leashed",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+        },
+        {
+          "if": {
+            "or": [
+              "dog=yes",
+              "dog=unleashed"
+            ]
+          },
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+        }
+      ]
+    },
+    {
+      "id": "sharelink",
+      "labels": [
+        "defaults"
+      ],
+      "render": "{share_link()}",
+      "metacondition": "_supports_sharing=yes"
+    },
+    {
+      "id": "favourite_title_icon",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "*": "{favourite_icon()}"
+      },
+      "metacondition": "_loggedIn=true"
+    },
+    {
+      "id": "osmlink",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+        "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+        "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+        "_context": "layers:icons.tagRenderings.osmlink.render"
+      },
+      "mappings": [
+        {
+          "if": "id~.*/-.*",
+          "then": ""
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "_backend~*",
+          "then": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+          }
+        }
+      ],
+      "condition": "id~(node|way|relation)/[0-9]*"
+    },
+    {
+      "id": "direction",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "{direction_indicator()}"
+    },
+    {
+      "id": "rating",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{rating()}"
+    }
+  ],
+  "_layerIcon": [
+    {
+      "icon": "circle",
+      "color": "white"
+    },
+    {
+      "icon": "./assets/themes/benches/bench_public_transport.svg"
+    }
+  ]
+}

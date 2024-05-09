@@ -2,13 +2,13 @@
   "id": "advertising",
   "credits": "Offsel",
   "title": {
-    "en": "Open Advertising Map",
+    "en": "Advertising",
     "ca": "Mapa obert de publicitat",
     "es": "Mapa abierto de publicidad",
     "de": "Offene Werbekarte",
     "cs": "Otevřít reklamní mapu",
     "fr": "Open Advertising Map",
-    "nl": "Reclamekaart"
+    "nl": "Reclame"
   },
   "shortDescription": {
     "ca": "On puc trobar elements publicitaris?",

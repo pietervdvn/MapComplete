@@ -1,0 +1,1181 @@
+{
+  "id": "postoffices",
+  "name": {
+    "en": "Post offices",
+    "de": "Poststellen",
+    "ru": "Почтовые отделения",
+    "zh_Hant": "郵局",
+    "id": "Kantor pos",
+    "hu": "Posták",
+    "nl": "Postkantoren",
+    "ca": "Oficines de correus",
+    "es": "Oficinas de correo",
+    "fr": "Bureaux de poste",
+    "nb_NO": "Postkontor",
+    "cs": "Pošty"
+  },
+  "description": {
+    "en": "A layer showing post offices.",
+    "de": "Eine Ebene mit Postämtern.",
+    "zh_Hant": "圖層顯示郵局。",
+    "id": "Layer yang menunjukkan kantor pos.",
+    "hu": "Postákat megjelenítő réteg.",
+    "nl": "Een laag die postkantoren toont.",
+    "es": "Una capa que muestra oficinas postales.",
+    "fr": "Un claque montrant les bureaux de poste.",
+    "nb_NO": "Et lag som viser postkontor.",
+    "ca": "Una capa que mostra oficines postals.",
+    "cs": "Vrstva zobrazující pošty."
+  },
+  "source": {
+    "osmTags": {
+      "and": [
+        {
+          "or": [
+            "amenity=post_office",
+            "post_office=post_partner"
+          ]
+        }
+      ]
+    }
+  },
+  "minzoom": 12,
+  "title": {
+    "render": {
+      "en": "Post Office",
+      "de": "Poststelle",
+      "ru": "Почтовое отделение",
+      "zh_Hant": "郵局",
+      "id": "Kantor Pos",
+      "hu": "Posta",
+      "nl": "Postkantoor",
+      "ca": "Oficina postal",
+      "es": "Oficina de Correo",
+      "fr": "Bureau de poste",
+      "nb_NO": "Postkontor",
+      "cs": "Pošta"
+    },
+    "mappings": [
+      {
+        "if": {
+          "and": [
+            "post_office=post_partner",
+            "name="
+          ]
+        },
+        "then": {
+          "en": "Post partner at a shop",
+          "de": "Postfiliale im Einzelhandel",
+          "nl": "Postpartner in een winkel",
+          "cs": "Poštovní partner v obchodě"
+        }
+      },
+      {
+        "if": {
+          "and": [
+            "post_office=post_partner",
+            "name~*"
+          ]
+        },
+        "then": {
+          "en": "Post partner at {name}",
+          "de": "Postfiliale im {name}",
+          "ca": "Col·laborador postal a {name}",
+          "cs": "Poštovní partner v {name}"
+        }
+      }
+    ]
+  },
+  "pointRendering": [
+    {
+      "iconBadges": [
+        {
+          "if": "opening_hours~*",
+          "then": {
+            "id": "isOpen",
+            "#": "Shows a coloured clock if opening hours are parsed. Uses the metatagging, suitable to use as a (badged) overlay",
+            "mappings": [
+              {
+                "if": "_isOpen=yes",
+                "then": "clock:#0f0;ring:#0f0"
+              },
+              {
+                "if": "_isOpen=no",
+                "then": "circle:#f00;clock:#fff"
+              },
+              {
+                "#": "Still loading the country",
+                "if": {
+                  "and": [
+                    "_isOpen=",
+                    "opening_hours~*"
+                  ]
+                },
+                "then": "clock:#ff0;ring:#ff0"
+              },
+              {
+                "#": "Still loading the country",
+                "if": {
+                  "and": [
+                    "_isOpen=parse_error",
+                    "opening_hours~*"
+                  ]
+                },
+                "then": "circle:#f0f;clock:#fff"
+              }
+            ],
+            "metacondition": "__showTimeSensitiveIcons!=no"
+          }
+        },
+        {
+          "if": "shop~*",
+          "then": {
+            "render": "./assets/themes/shops/shop.svg",
+            "id": "assetsthemesshopsshopsvg"
+          }
+        },
+        {
+          "if": "_favourite=yes",
+          "then": "circle:white;heart:red"
+        }
+      ],
+      "iconSize": "40,40",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": {
+            "render": "square",
+            "id": "square"
+          },
+          "color": "white"
+        },
+        {
+          "icon": {
+            "render": "./assets/layers/postoffices/post_office.svg",
+            "id": "assetslayerspostofficespostofficesvg"
+          }
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#DADADA",
+      "width": "1"
+    }
+  ],
+  "presets": [
+    {
+      "tags": [
+        "amenity=post_office"
+      ],
+      "title": {
+        "en": "a post office",
+        "de": "eine Poststelle",
+        "ru": "Почтовое отделение",
+        "zh_Hant": "郵局",
+        "id": "Kantor Pos",
+        "hu": "Posta",
+        "nl": "een postkantoor",
+        "ca": "una oficina de correus",
+        "es": "una oficina de correo",
+        "nb_NO": "et postkontor",
+        "fr": "un bureau de poste",
+        "cs": "pošta"
+      }
+    }
+  ],
+  "tagRenderings": [
+    {
+      "id": "just_created",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "This element shows a 'thank you' that the contributor has recently created this element",
+      "classes": "rounded-xl thanks",
+      "mappings": [
+        {
+          "if": "id~*",
+          "icon": "./assets/svg/party.svg",
+          "then": {
+            "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+            "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+            "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+            "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+            "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+            "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+          }
+        }
+      ],
+      "condition": {
+        "and": [
+          "_backend~*",
+          "_last_edit:passed_time<300",
+          {
+            "or": [
+              "_version_number=",
+              "_version_number=1"
+            ]
+          }
+        ]
+      },
+      "metacondition": {
+        "and": [
+          {
+            "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+            "or": [
+              "_last_edit:contributor:uid:={_uid}",
+              "_last_edit:contributor:uid="
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "images",
+      "description": "This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images",
+      "render": {
+        "*": "{image_carousel()}{image_upload()}{nearby_images():my-4}"
+      },
+      "classes": "my-4"
+    },
+    {
+      "id": "minimap",
+      "render": "{minimap(18): height: 5rem; overflow: hidden; border-radius:3rem; }"
+    },
+    {
+      "id": "opening_hours",
+      "question": {
+        "en": "What are the opening hours for this post office?",
+        "fr": "Quelles sont les heures d’ouverture de ce bureau de poste ?",
+        "de": "Wie sind die Öffnungszeiten dieser Poststelle?",
+        "nl": "Wat zijn de openingsuren voor dit postkantoor?",
+        "nb_NO": "Hva er åpningstidene for {title()})",
+        "ru": "Какое время работы у {title()}?",
+        "zh_Hant": "這間郵局的開放時間是？",
+        "it": "Quali sono gli orari di apertura di {title()}?",
+        "pt_BR": "Qual o horário de funcionamento de {title()}?",
+        "pl": "Jakie są godziny otwarcia {title()}?",
+        "sv": "Vilka är öppettiderna för {title()}?",
+        "pt": "Qual é o horário de funcionamento de {title()}?",
+        "hu": "Mikor van nyitva ez a posta?",
+        "ca": "Quines son els horaris d'apertura per a aquesta oficina postal?",
+        "ja": "{title()}の営業時間は？",
+        "sl": "Kakšen odpiralni čas ima {title()}?",
+        "fil": "Anong oras nagbubukas ang {title()}?",
+        "es": "¿Cuáles son las horas de apertura para esta oficina postal?",
+        "zh_Hans": "{title()} 的开放时间为何？",
+        "da": "Hvad er åbningstiderne for {title()}?",
+        "id": "Jam berapa kantor pos ini buka?",
+        "cs": "Jaká je otevírací doba této pošty?"
+      },
+      "render": {
+        "de": "<h3>Öffnungszeiten</h3>{opening_hours_table(opening_hours)}",
+        "fr": "<h3>Horaires d'ouverture</h3>{opening_hours_table(opening_hours)}",
+        "en": "<h3>Opening hours</h3>{opening_hours_table(opening_hours)}",
+        "nl": "<h3>Openingstijden</h3>{opening_hours_table(opening_hours)}",
+        "nb_NO": "<h3>Åpningstider</h3>{opening_hours_table(opening_hours)}",
+        "ru": "<h3>Часы работы</h3>{opening_hours_table(opening_hours)}",
+        "zh_Hant": "<h3>開放時間</h3>{opening_hours_table(opening_hours)}",
+        "it": "<h3>Orari di apertura</h3>{opening_hours_table(opening_hours)}",
+        "pl": "<h3> Godziny otwarcia</h3>{opening_hours_table(opening_hours)}",
+        "pt_BR": "<h3>Horário de funcionamento</h3>{opening_hours_table(opening_hours)}",
+        "sv": "<h3>Öppettider</h3> {opening_hours_table(opening_hours)}",
+        "pt": "<h3>Horário de funcionamento</h3>{opening_hours_table(opening_hours)}",
+        "eo": "<h3>Malfermitaj horoj</h3>{opening_hours_table(opening_hours)}",
+        "hu": "<h3>Nyitva tartás</h3>{opening_hours_table(opening_hours)}",
+        "ca": "<h3>Horari d'obertura</h3>{opening_hours_table(opening_hours)}",
+        "ja": "<h3>営業時間</h3>{opening_hours_table(opening_hours)}",
+        "sl": "<h3>Odpiralni čas</h3>{opening_hours_table(opening_hours)}",
+        "fil": "<h3>Mga oras na bukas</h3>{opening_hours_table(opening_hours)}",
+        "es": "<h3>Horas de apertura</h3>{opening_hours_table(opening_hours)}",
+        "zh_Hans": "<h3>开放时间</h3> {opening_hours_table(opening_hours)}",
+        "da": "<h3> Åbningstider</h3>{opening_hours_table(opening_hours)}",
+        "id": "<h3>Jam buka</h3>{opening_hours_table(opening_hours)}",
+        "pa_PK": "<h3>کھُلھے گھنٹے</h3>{opening_hours_table(opening_hours)}",
+        "cs": "<h3>Otevírací hodiny</h3>{opening_hours_table(opening_hours)}"
+      },
+      "freeform": {
+        "key": "opening_hours",
+        "type": "opening_hours",
+        "inline": false
+      },
+      "mappings": [
+        {
+          "#": "Just here to be able to handle those ~5000 incorrect 'opening_hours=closed' elements.",
+          "if": "opening_hours=closed",
+          "then": {
+            "en": "Marked as closed for an unspecified time",
+            "nl": "Gesloten voor onbepaalde duur",
+            "de": "Als geschlossen für eine unbestimmte Zeit markiert"
+          },
+          "hideInAnswer": true
+        }
+      ]
+    },
+    {
+      "id": "post_partner",
+      "question": {
+        "en": "Is this a post partner?",
+        "de": "Ist dies ein Post-Partner?",
+        "ca": "Aquesta botiga és un col·laborador postal?",
+        "cs": "Jedná se o partnerskou poštu?"
+      },
+      "mappings": [
+        {
+          "if": "post_office=post_partner",
+          "then": {
+            "en": "This shop is a post partner",
+            "de": "Dieses Geschäft ist ein Post-Partner",
+            "ca": "Aquesta botiga és un col·laborador postal",
+            "cs": "Tento obchod je poštovním partnerem"
+          }
+        },
+        {
+          "if": "post_office=",
+          "then": {
+            "en": "This shop is not a post partner",
+            "de": "Dieses Geschäft ist kein Post-Partner",
+            "ca": "Aquesta botiga no és un col·laborador postal",
+            "cs": "Tento obchod není poštovním partnerem"
+          },
+          "addExtraTags": [
+            "was:post_office=post_partner"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "partner-brand",
+      "render": {
+        "en": "This location offers services for {post_office:brand}",
+        "de": "Dieser Standort bietet Dienstleistungen für {post_office:brand} an",
+        "cs": "Toto místo nabízí služby pro {post_office:brand}"
+      },
+      "question": {
+        "en": "For which brand does this location offer services?",
+        "de": "Für welche Marke bietet dieser Standort Dienstleistungen an?",
+        "ca": "Per a quina marca ofereix serveis aquesta localització?",
+        "cs": "Pro jakou značku nabízí toto místo služby?"
+      },
+      "condition": "post_office=post_partner",
+      "freeform": {
+        "key": "post_office:brand",
+        "type": "string",
+        "inline": true
+      },
+      "multiAnswer": true,
+      "mappings": [
+        {
+          "if": "post_office:brand=DHL",
+          "then": {
+            "en": "This location offers services for DHL",
+            "de": "Dieser Standort bietet Dienstleistungen für DHL an",
+            "nl": "Deze locatie biedt diensten aan voor DHL",
+            "ca": "Aquesta localització ofereix serveis per a DHL",
+            "cs": "Toto místo nabízí služby pro společnost DHL"
+          },
+          "hideInAnswer": "_country=de"
+        },
+        {
+          "if": "post_office:brand=DPD",
+          "then": {
+            "en": "This location offers services for DPD",
+            "de": "Dieser Standort bietet Dienstleistungen für DPD an",
+            "nl": "Deze locatie biedt diensten aan voor DPD",
+            "ca": "Aquesta localització ofereix serveis per a DPD",
+            "cs": "Toto místo nabízí služby pro společnost DPD"
+          }
+        },
+        {
+          "if": "post_office:brand=GLS",
+          "then": {
+            "en": "This location offers services for GLS",
+            "de": "Dieser Standort bietet Dienstleistungen für GLS an",
+            "nl": "Deze locatie biedt diensten aan voor GLS",
+            "ca": "Aquesta localització ofereix serveis per a GLS",
+            "cs": "Toto místo nabízí služby pro společnost GLS"
+          }
+        },
+        {
+          "if": "post_office:brand=UPS",
+          "then": {
+            "en": "This location offers services for UPS",
+            "de": "Dieser Standort bietet Dienstleistungen für UPS an",
+            "nl": "Deze locatie biedt diensten aan voor UPS",
+            "ca": "Aquesta localització ofereix serveis per a UPS",
+            "cs": "Toto místo nabízí služby pro společnost UPS"
+          }
+        },
+        {
+          "if": "post_office:brand=DHL Paketshop",
+          "then": {
+            "en": "This location is a DHL Paketshop",
+            "de": "Dieser Standort ist ein DHL Paketshop",
+            "ca": "Aquesta ubicació és una botiga DHL Paketshop",
+            "cs": "Tato lokalita je DHL Paketshop"
+          },
+          "hideInAnswer": "_country!=de"
+        },
+        {
+          "if": "post_office:brand=Hermes PaketShop",
+          "then": {
+            "en": "This location is a Hermes PaketShop",
+            "de": "Dieser Standort ist ein Hermes PaketShop",
+            "ca": "Aquesta ubicació és una botiga Hermes PaketShop",
+            "cs": "Tato lokalita je Hermes Paketshop"
+          },
+          "hideInAnswer": "_country!=de"
+        },
+        {
+          "if": "post_office:brand=PostNL",
+          "then": {
+            "en": "This location is a PostNL-point",
+            "de": "Dieser Standort ist ein PostNL-Punkt",
+            "nl": "Deze locatie is een PostNL-punt",
+            "ca": "Aquesta ubicació és un punt PostNL",
+            "cs": "Toto umístění je bod PostNL"
+          },
+          "hideInAnswer": {
+            "and": [
+              "_country!=nl",
+              "_country!=be"
+            ]
+          }
+        },
+        {
+          "if": "post_office:brand=bpost",
+          "then": {
+            "en": "This location offers services for bpost",
+            "de": "Dieser Standort bietet Dienstleistungen für bpost an",
+            "nl": "Deze locatie biedt diensten aan voor bpost",
+            "cs": "Toto místo nabízí služby pro společnost bpost"
+          },
+          "hideInAnswer": "_country!=be"
+        }
+      ]
+    },
+    {
+      "id": "letter-from",
+      "render": {
+        "en": "You can post letters with these companies: {post_office:letter_from}",
+        "de": "Mit diesen Unternehmen können Sie Briefe aufgeben: {post_office:letter_from}",
+        "nl": "Je kan brieven posten met de volgende bedrijven: {post_office:letter_from}",
+        "ca": "Podeu enviar cartes amb aquestes empreses: {post_office:letter_from}",
+        "cs": "U těchto společností můžete zasílat dopisy: {post_office:letter_from}"
+      },
+      "question": {
+        "en": "Can you post a letter here?",
+        "de": "Können Sie hier einen Brief aufgeben?",
+        "nl": "Kan je hier een brief posten?",
+        "ca": "Pots enviar cartes des d'aquí?",
+        "cs": "Můžete zde poslat dopis?"
+      },
+      "freeform": {
+        "key": "post_office:letter_from",
+        "type": "string",
+        "inline": true
+      },
+      "mappings": [
+        {
+          "if": "post_office:letter_from=yes",
+          "then": {
+            "en": "You can post letters here",
+            "de": "Sie können Briefe hier aufgeben",
+            "nl": "Je kan hier brieven posten",
+            "ca": "Pots enviar cartes des d'aquí",
+            "cs": "Zde můžete posílat dopisy"
+          }
+        },
+        {
+          "if": "post_office:letter_from=no",
+          "then": {
+            "en": "You can't post letters here",
+            "de": "Sie können hier keine Briefe aufgeben",
+            "nl": "Je kan hier geen brieven posten",
+            "ca": "No pots enviar cartes des d'aquí",
+            "cs": "Zde nemůžete posílat dopisy"
+          }
+        }
+      ]
+    },
+    {
+      "id": "parcel-from",
+      "render": {
+        "en": "You can post parcels with these companies: {post_office:parcel_from}",
+        "de": "Sie können Pakete mit diesen Unternehmen versenden: {post_office:parcel_from}",
+        "nl": "Je kan pakketten versturen met deze bedrijven: {post_office:parcel_from}",
+        "ca": "Podeu enviar paquets amb aquestes empreses: {post_office:parcel_from}",
+        "cs": "U těchto společností můžete posílat balíky: {post_office:parcel_from}"
+      },
+      "question": {
+        "en": "Can you send a parcel here?",
+        "de": "Können Sie hier Pakete versenden?",
+        "nl": "Kan je hier pakketten versturen?",
+        "ca": "Pots enviar un paquet des d'aquí?",
+        "pl": "Czy można tutaj wysłać paczkę?",
+        "cs": "Můžete zde odeslat balík?"
+      },
+      "freeform": {
+        "key": "post_office:parcel_from",
+        "type": "string",
+        "inline": true
+      },
+      "mappings": [
+        {
+          "if": "post_office:parcel_from=yes",
+          "then": {
+            "en": "You can send parcels here",
+            "de": "Hier können Sie Pakete versenden",
+            "nl": "Je kan hier pakketten versturen",
+            "ca": "Pots enviar paquets des d'aquí",
+            "pl": "Można tutaj wysłać paczki",
+            "cs": "Zde můžete posílat balíky"
+          }
+        },
+        {
+          "if": "post_office:parcel_from=no",
+          "then": {
+            "en": "You can't send parcels here",
+            "de": "Sie können hier keine Pakete versenden",
+            "nl": "Je kan hier geen pakketten versturen",
+            "ca": "No pots enviar paquets des d'aquí",
+            "pl": "Nie można tutaj wysłać paczek",
+            "cs": "Zde nemůžete posílat balíky"
+          }
+        }
+      ]
+    },
+    {
+      "id": "parcel-pickup",
+      "render": {
+        "en": "You can pick up parcels from these companies: {post_office:parcel_pickup}",
+        "de": "Sie können Pakete von diesen Unternehmen abholen: {post_office:parcel_pickup}",
+        "ca": "Podeu recollir paquets d'aquestes empreses: {post_office:parcel_pickup}",
+        "cs": "Můžete si zde vyzvednout zásilky těchto společností: {post_office:parcel_pickup}"
+      },
+      "question": {
+        "en": "Can you pick up missed parcels here?",
+        "de": "Können Sie hier verpasste Pakete abholen?",
+        "ca": "Es poden recollir els paquets perduts aquí?",
+        "cs": "Můžete si zde vyzvednout zmeškané zásilky?"
+      },
+      "freeform": {
+        "key": "post_office:parcel_pickup",
+        "type": "string",
+        "inline": true
+      },
+      "mappings": [
+        {
+          "if": "post_office:parcel_pickup=yes",
+          "then": {
+            "en": "You can pick up missed parcels here",
+            "de": "Hier können Sie verpasste Pakete abholen",
+            "ca": "Podeu recollir els paquets perduts aquí",
+            "cs": "Zmeškané zásilky si můžete vyzvednout zde"
+          }
+        },
+        {
+          "if": "post_office:parcel_pickup=no",
+          "then": {
+            "en": "You can't pick up missed parcels here",
+            "de": "Sie können hier keine verpassten Pakete abholen",
+            "ca": "No podeu recollir paquets perduts aquí",
+            "cs": "Zmeškané zásilky si zde nemůžete vyzvednout"
+          }
+        }
+      ]
+    },
+    {
+      "id": "parcel-to",
+      "render": {
+        "en": "You can send parcels to here for pickup with these companies: {post_office:parcel_to}",
+        "de": "Mit diesen Unternehmen können Sie Pakete zur Abholung hierher senden: {post_office:parcel_to}",
+        "ca": "Podeu enviar paquets aquí per recollir-los amb aquestes empreses: {post_office:parcel_to}"
+      },
+      "question": {
+        "en": "Can you send parcels to here for pickup?",
+        "de": "Können Sie Pakete zur Abholung hierher schicken?",
+        "ca": "Pots enviar paquets aquí per a arreplegar-los?"
+      },
+      "freeform": {
+        "key": "post_office:parcel_to",
+        "type": "string",
+        "inline": true
+      },
+      "mappings": [
+        {
+          "if": "post_office:parcel_to=yes",
+          "then": {
+            "en": "You can send parcels to here for pickup",
+            "de": "Sie können Pakete zur Abholung hierher schicken",
+            "ca": "Pots enviar paquets aquí per a arreplegar-los"
+          }
+        },
+        {
+          "if": "post_office:parcel_to=no",
+          "then": {
+            "en": "You can't send parcels to here for pickup",
+            "de": "Sie können keine Pakete zur Abholung hierher schicken",
+            "ca": "No pots enviar paquets ací per a arreplegar-los"
+          }
+        }
+      ]
+    },
+    {
+      "id": "stamps",
+      "render": {
+        "en": "You can buy stamps from companies: {post_office:stamps}",
+        "de": "Sie können Briefmarken folgender Unternehmen kaufen: {post_office:stamps}",
+        "nl": "Je kan hier postzegels kopen van de volgende bedrijven: {post_office:stamps}",
+        "cs": "Známky si můžete zakoupit u firem: {post_office:stamps}"
+      },
+      "question": {
+        "en": "Can you buy stamps here?",
+        "de": "Kann man hier Briefmarken kaufen?",
+        "nl": "Kan je hier postzegels kopen?",
+        "ca": "Pots comprar segells aquí?",
+        "cs": "Mohu si zde zakoupit známky?"
+      },
+      "freeform": {
+        "key": "post_office:stamps",
+        "type": "string",
+        "inline": true
+      },
+      "mappings": [
+        {
+          "if": "post_office:stamps=yes",
+          "then": {
+            "en": "You can buy stamps here",
+            "de": "Sie können hier Briefmarken kaufen",
+            "nl": "Je kan hier postzegels kopen",
+            "ca": "Pots comprar segells aquí",
+            "cs": "Zde si můžete zakoupit známky"
+          }
+        },
+        {
+          "if": "post_office:stamps=no",
+          "then": {
+            "en": "You can't buy stamps here",
+            "de": "Sie können hier keine Briefmarken kaufen",
+            "nl": "Je kan hier geen postzegels kopen",
+            "ca": "No pots comprar segells aquí",
+            "cs": "Zde si nemůžete zakoupit známky"
+          }
+        }
+      ]
+    },
+    {
+      "id": "has_atm",
+      "question": {
+        "en": "Does this post office have an ATM?",
+        "nl": "Heeft dit postkantoor een bankautomaat?",
+        "de": "Verfügt die Postfiliale über einen Geldautomat?",
+        "ca": "Aquesta oficina postal té un caixer automàtic?",
+        "cs": "Má tato pošta bankomat?"
+      },
+      "mappings": [
+        {
+          "if": "atm=yes",
+          "then": {
+            "en": "This post office has an ATM",
+            "nl": "Dit postkantoor heeft een bankautomaat",
+            "de": "Die Postfiliale verfügt über einen Geldautomat",
+            "ca": "Aquesta oficina postal té un caixer automàtic",
+            "cs": "Tato pošta má bankomat"
+          }
+        },
+        {
+          "if": "atm=no",
+          "then": {
+            "en": "This post office does <b>not</b> have an ATM",
+            "nl": "Dit postkantoor heeft <b>geen</b> bankautomaaat",
+            "de": "Die Postfiliale verfügt <b>nicht</b> über einen Geldautomat",
+            "ca": "Aquesta oficina postal <b>no</b> té un caixer automàtic",
+            "cs": "Tato pošta <b>nemá</b> bankomat"
+          }
+        },
+        {
+          "if": "atm=separate",
+          "then": {
+            "en": "This post office does have an ATM, but it is mapped as a different icon",
+            "nl": "Dit postkantoor heeft een bankautomaat, maar deze staat apart op de kaart aangeduid",
+            "de": "Die Postfiliale verfügt über einen Geldautomat, der aber bereits separat kartiert ist",
+            "ca": "Aquesta oficina postal té un caixer automàtic, però està mapejat com a un element diferent",
+            "cs": "Tato pošta má bankomat, ale je namapován jako jiná ikona"
+          }
+        }
+      ]
+    },
+    {
+      "id": "leftover-questions",
+      "render": {
+        "*": "{questions( ,)}"
+      }
+    },
+    {
+      "id": "lod",
+      "labels": [
+        "added_by_default"
+      ],
+      "render": {
+        "*": "{linked_data_from_website()}"
+      }
+    },
+    {
+      "id": "last_edit",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+      "condition": {
+        "and": [
+          "_last_edit:contributor~*",
+          "_last_edit:changeset~*"
+        ]
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsTesting=true",
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_debug=yes",
+          "_csCount>=10"
+        ]
+      },
+      "render": {
+        "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+      }
+    },
+    {
+      "id": "favourite_status",
+      "render": {
+        "*": "{favourite_status()}"
+      }
+    },
+    {
+      "id": "qr_code",
+      "labels": [
+        "added_by_default"
+      ],
+      "classes": "flex items-center gap-x-2",
+      "render": {
+        "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+        "en": "{qr_code()}Scan this code to open this location on another device",
+        "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+        "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+      }
+    },
+    {
+      "id": "share",
+      "labels": [
+        "added_by_default"
+      ],
+      "metacondition": "_supports_sharing=yes",
+      "render": {
+        "de": "{share_link(,Standort teilen)}",
+        "en": "{share_link(,Share this location)}",
+        "nl": "{share_link(,Deel deze locatie)}"
+      }
+    },
+    {
+      "id": "all-tags",
+      "render": {
+        "*": "{all_tags()}"
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_tags=full",
+          "mapcomplete-show_debug=yes"
+        ]
+      }
+    }
+  ],
+  "filter": [
+    {
+      "id": "open_now",
+      "options": [
+        {
+          "question": {
+            "en": "Open now",
+            "nl": "Nu open",
+            "de": "Jetzt geöffnet",
+            "ca": "Obert ara",
+            "es": "Abierto",
+            "fr": "Ouvert maintenant",
+            "hu": "Most nyitva van",
+            "da": "Åbent nu",
+            "zh_Hant": "目前開放",
+            "id": "Saat ini buka",
+            "it": "Aperto ora",
+            "pl": "Otwarte teraz",
+            "cs": "Nyní otevřeno"
+          },
+          "osmTags": "_isOpen=yes"
+        }
+      ]
+    },
+    {
+      "id": "letter_from",
+      "options": [
+        {
+          "question": {
+            "en": "Offers letter posting",
+            "de": "Bietet Briefpost an"
+          },
+          "osmTags": {
+            "and": [
+              "post_office:letter_from~*",
+              "post_office:letter_from!~i~no"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "parcel_from",
+      "options": [
+        {
+          "question": {
+            "en": "Offers parcel posting",
+            "de": "Bietet Paketaufgabe an"
+          },
+          "osmTags": {
+            "and": [
+              "post_office:parcel_from~*",
+              "post_office:parcel_from!~i~no"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "parcel_pickup",
+      "options": [
+        {
+          "question": {
+            "en": "Offers pickup of missed parcels",
+            "de": "Bietet die Abholung von verpassten Paketen an"
+          },
+          "osmTags": {
+            "and": [
+              "post_office:parcel_pickup~*",
+              "post_office:parcel_pickup!~i~no"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "parcel_to",
+      "options": [
+        {
+          "question": {
+            "en": "Accepts pickup of parcels sent here",
+            "de": "Akzeptiert die Abholung von Paketen, die hierher geschickt werden"
+          },
+          "osmTags": {
+            "and": [
+              "post_office:parcel_to~*",
+              "post_office:parcel_to!~i~no"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "stamps",
+      "options": [
+        {
+          "question": {
+            "en": "Sells stamps",
+            "de": "Verkauft Briefmarken"
+          },
+          "osmTags": {
+            "and": [
+              "post_office:stamps~*",
+              "post_office:stamps!~i~no"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "titleIcons": [
+    {
+      "id": "wikipedialink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+      "condition": {
+        "or": [
+          "wikipedia~*",
+          "wikidata~*"
+        ]
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "wikipedia=",
+          "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "open_until",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "#": "Titleicon showing e.g. 'open until 17:00'",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{opening_hours_state()}",
+      "condition": {
+        "or": [
+          "opening_hours~*",
+          {
+            "or": [
+              {
+                "and": [
+                  "seasonal~.*winter.*",
+                  "_now:date~....-(12|01|02)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*spring.*",
+                  "_now:date~....-(03|04|05)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*summer.*",
+                  "_now:date~....-(06|07|08)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*autumn.*",
+                  "_now:date~....-(09|10|11)-.."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "phonelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": {
+        "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+        "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+        "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+        "_context": "layers:icons.tagRenderings.phonelink.render"
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:phone~*",
+          "then": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+          }
+        }
+      ],
+      "condition": {
+        "or": [
+          "phone~*",
+          "contact:phone~*"
+        ]
+      }
+    },
+    {
+      "id": "emaillink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:email~*",
+          "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:email~*",
+          "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        }
+      ],
+      "condition": {
+        "or": [
+          "email~*",
+          "contact:email~*",
+          "operator:email~*"
+        ]
+      }
+    },
+    {
+      "id": "websitelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "website~*",
+          "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:website~*",
+          "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "context:website~*",
+          "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "smokingicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=no",
+          "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=yes",
+          "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+        }
+      ]
+    },
+    {
+      "id": "dogicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "if": "dog=no",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+        },
+        {
+          "if": "dog=leashed",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+        },
+        {
+          "if": {
+            "or": [
+              "dog=yes",
+              "dog=unleashed"
+            ]
+          },
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+        }
+      ]
+    },
+    {
+      "id": "sharelink",
+      "labels": [
+        "defaults"
+      ],
+      "render": "{share_link()}",
+      "metacondition": "_supports_sharing=yes"
+    },
+    {
+      "id": "favourite_title_icon",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "*": "{favourite_icon()}"
+      },
+      "metacondition": "_loggedIn=true"
+    },
+    {
+      "id": "osmlink",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+        "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+        "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+        "_context": "layers:icons.tagRenderings.osmlink.render"
+      },
+      "mappings": [
+        {
+          "if": "id~.*/-.*",
+          "then": ""
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "_backend~*",
+          "then": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+          }
+        }
+      ],
+      "condition": "id~(node|way|relation)/[0-9]*"
+    },
+    {
+      "id": "direction",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "{direction_indicator()}"
+    },
+    {
+      "id": "rating",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{rating()}"
+    }
+  ],
+  "_layerIcon": [
+    {
+      "icon": "square",
+      "color": "white"
+    },
+    {
+      "icon": "./assets/layers/postoffices/post_office.svg"
+    }
+  ]
+}

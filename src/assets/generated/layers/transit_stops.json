@@ -1,0 +1,1079 @@
+{
+  "id": "transit_stops",
+  "name": {
+    "en": "Transit Stops",
+    "de": "Haltestellen",
+    "da": "Transitstationer",
+    "fr": "Arrêts de transport en commun",
+    "ca": "Parades de transport públic",
+    "cs": "Tranzitní zastávky"
+  },
+  "description": {
+    "en": "Layer showing different types of transit stops.",
+    "de": "Ebene mit verschiedenen Arten von Haltestellen.",
+    "da": "Lag, der viser forskellige typer transitstop.",
+    "ca": "Capa que mostra diferents tipus de parades de transport públic.",
+    "cs": "Vrstva zobrazující různé typy zastávek veřejné dopravy."
+  },
+  "source": {
+    "osmTags": {
+      "and": [
+        {
+          "or": [
+            "highway=bus_stop"
+          ]
+        }
+      ]
+    }
+  },
+  "minzoom": 15,
+  "title": {
+    "render": {
+      "en": "Transit Stop",
+      "de": "Haltestelle",
+      "da": "Transit Stop",
+      "nl": "Bushalte",
+      "ca": "Parada de transport públic",
+      "cs": "Tranzitní zastávka"
+    },
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": {
+          "en": "Stop {name}",
+          "de": "Haltestelle {name}",
+          "da": "Stop {name}",
+          "nl": "Halte {name}",
+          "ca": "Parada {name}",
+          "cs": "Zastávka {name}"
+        }
+      }
+    ]
+  },
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "label": "<div style=\"background: white; display: block\">{name}</div>",
+      "marker": [
+        {
+          "icon": {
+            "render": "./assets/layers/transit_stops/bus_stop.svg",
+            "mappings": []
+          }
+        }
+      ],
+      "iconBadges": [
+        {
+          "if": "_favourite=yes",
+          "then": "circle:white;heart:red"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [],
+  "tagRenderings": [
+    {
+      "id": "just_created",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "This element shows a 'thank you' that the contributor has recently created this element",
+      "classes": "rounded-xl thanks",
+      "mappings": [
+        {
+          "if": "id~*",
+          "icon": "./assets/svg/party.svg",
+          "then": {
+            "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+            "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+            "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+            "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+            "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+            "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+          }
+        }
+      ],
+      "condition": {
+        "and": [
+          "_backend~*",
+          "_last_edit:passed_time<300",
+          {
+            "or": [
+              "_version_number=",
+              "_version_number=1"
+            ]
+          }
+        ]
+      },
+      "metacondition": {
+        "and": [
+          {
+            "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+            "or": [
+              "_last_edit:contributor:uid:={_uid}",
+              "_last_edit:contributor:uid="
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "stop_name",
+      "render": {
+        "en": "This stop is called <b>{name}</b>",
+        "de": "Der Name der Haltestelle lautet <b>{name}</b>",
+        "da": "Dette stop hedder <b>{name}</b>",
+        "nl": "Deze halte heet <b>{name}</b>",
+        "ca": "Aquesta parada es diu <b>{name}</b>",
+        "fr": "Cet arrêt est nommé <b>{name}</b>",
+        "cs": "Tato zastávka se jmenuje <b>{name}</b>"
+      },
+      "freeform": {
+        "key": "name",
+        "type": "string",
+        "addExtraTags": [
+          "noname="
+        ],
+        "placeholder": {
+          "en": "Name of the stop",
+          "de": "Name der Haltestelle",
+          "da": "Navn på stoppestedet",
+          "nl": "Naam van de halte",
+          "ca": "Nom de la parada",
+          "cs": "Název zastávky"
+        },
+        "inline": true
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "noname=yes",
+              "name="
+            ]
+          },
+          "then": {
+            "en": "This stop has no name",
+            "de": "Die Haltestelle hat keinen Namen",
+            "da": "Dette stop har intet navn",
+            "nl": "Deze halte heeft geen naam",
+            "ca": "Aquesta parada no té nom",
+            "cs": "Tato zastávka nemá jméno"
+          }
+        }
+      ],
+      "question": {
+        "en": "What is the name of this stop?",
+        "de": "Wie lautet der Name der Haltestelle?",
+        "da": "Hvad er navnet på dette stop?",
+        "nl": "Wat is de naam van deze halte?",
+        "ca": "Quin és el nom d'aquesta parada?",
+        "cs": "Jak se tato zastávka jmenuje?"
+      }
+    },
+    {
+      "id": "images",
+      "description": "This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images",
+      "render": {
+        "*": "{image_carousel()}{image_upload()}{nearby_images():my-4}"
+      },
+      "classes": "my-4"
+    },
+    {
+      "id": "shelter",
+      "mappings": [
+        {
+          "if": "shelter=yes",
+          "then": {
+            "en": "This stop has a shelter",
+            "de": "Die Haltestelle hat einen Unterstand",
+            "da": "Dette stop har et ly",
+            "nl": "Deze halte heeft een schuilplaats",
+            "ca": "Aquesta parada té una coberta",
+            "fr": "Cet arrêt a un abri",
+            "cs": "Tato zastávka má přístřešek"
+          }
+        },
+        {
+          "if": "shelter=no",
+          "then": {
+            "en": "This stop does <b>not</b> have a shelter",
+            "de": "Die Haltestelle hat <b>keinen</b> Unterstand",
+            "da": "Dette stop har ikke et ly",
+            "nl": "Deze halte heeft <b>geen</b> schuilplaats",
+            "ca": "Aquesta parada <b>no</b> té una coberta",
+            "fr": "Cet arrêt <b>n'a pas</b> d'abri",
+            "cs": "Tato zastávka <b>nemá</b> přístřešek"
+          }
+        },
+        {
+          "if": "shelter=separate",
+          "then": {
+            "en": "This stop has a shelter, that's separately mapped",
+            "de": "Die Haltestelle hat einen Unterstand, der separat kariert ist",
+            "nl": "Deze halte heeft een schuilplaats, die apart op de kaart staat",
+            "ca": "Aquesta parada té un refugi que està mapejat separadament",
+            "cs": "Tato zastávka má přístřešek, který je samostatně zmapován"
+          },
+          "hideInAnswer": true
+        }
+      ],
+      "question": {
+        "en": "Does this stop have a shelter?",
+        "de": "Hat die Haltestelle einen Unterstand?",
+        "da": "Har dette stop et ly?",
+        "nl": "Heeft deze halte een schuilplaats?",
+        "ca": "Aquesta parada té una coberta?",
+        "fr": "Cet arrêt a-t-il un abri ?",
+        "cs": "Má tato zastávka přístřešek?"
+      }
+    },
+    {
+      "id": "bench",
+      "mappings": [
+        {
+          "if": "bench=yes",
+          "then": {
+            "en": "This stop has a bench",
+            "de": "Die Haltestelle hat eine Bank",
+            "da": "Dette stop har en bænk",
+            "nl": "Deze halte heeft een zitbank",
+            "ca": "Aquesta parada té un banc",
+            "fr": "Cet arrêt a un banc",
+            "cs": "Tato zastávka má lavičku"
+          }
+        },
+        {
+          "if": "bench=no",
+          "then": {
+            "en": "This stop does <b>not</b> have a bench",
+            "de": "Die Haltestelle hat <b>keine</b> Sitzbank",
+            "da": "Dette stoppested har ingen bænk",
+            "nl": "Deze halte heeft <b>geen</b> zitbank",
+            "ca": "Aquesta parada <b>no</b> té un banc",
+            "fr": "Cet arrêt <b>n'a pas</b> de banc",
+            "cs": "Tato zastávka <b>nemá</b> lavičku"
+          }
+        },
+        {
+          "if": "bench=separate",
+          "then": {
+            "en": "This stop has a bench, that's separately mapped",
+            "de": "Die Haltestelle hat eine Bank, die separat kartiert ist",
+            "nl": "Deze halte heeft een zitbank, die los aangegeven is op de kaart",
+            "fr": "Cet arrêt a un banc, cartographié séparément",
+            "ca": "Aquesta parada té un banc que està mapejat separadament",
+            "cs": "Tato zastávka má lavičku, která je samostatně zmapována"
+          },
+          "hideInAnswer": true
+        }
+      ],
+      "question": {
+        "en": "Does this stop have a bench?",
+        "de": "Gibt es an der Haltestelle eine Sitzbank?",
+        "da": "Har dette stop en bænk?",
+        "nl": "Heeft deze halte een zitbank?",
+        "ca": "Aquesta parada té un banc?",
+        "fr": "Est-ce que cet arrêt a un banc ?",
+        "cs": "Má tato zastávka lavičku?"
+      }
+    },
+    {
+      "id": "bin",
+      "mappings": [
+        {
+          "if": "bin=yes",
+          "then": {
+            "en": "This stop has a bin",
+            "de": "Die Haltestelle hat einen Mülleimer",
+            "da": "Dette stop har en skraldespand",
+            "nl": "Deze halte heeft een vuilnisbak",
+            "ca": "Aquesta parada té una paperera",
+            "fr": "Cet arrêt a un poubelle",
+            "cs": "Tato zastávka má odpadkový koš"
+          }
+        },
+        {
+          "if": "bin=no",
+          "then": {
+            "en": "This stop does <b>not</b> have a bin",
+            "de": "Die Haltestelle hat <b>keinen</b> Mülleimer",
+            "da": "Dette stoppested har ikke en skraldespand",
+            "nl": "Deze halte heeft <b>geen</b> vuilnisbak",
+            "ca": "Aquesta parada <b>no</b> té paperera",
+            "fr": "Cet arrêt <b>n'a pas</b> de poubelle",
+            "cs": "Tato zastávka <b>nemá</b> koš"
+          }
+        },
+        {
+          "if": "bin=separate",
+          "then": {
+            "en": "This stop has a bin, that's separately mapped",
+            "de": "Die Haltestelle hat einen Mülleimer, der separat kartiert ist",
+            "nl": "Deze heeft een vuilnisbak, die los op de kaart staat",
+            "ca": "Aquesta parada té una paperera que està mapejada separadament",
+            "cs": "Tato zastávka má koš, který je mapován samostatně"
+          },
+          "hideInAnswer": true
+        }
+      ],
+      "question": {
+        "en": "Does this stop have a bin?",
+        "de": "Hat die Haltestelle einen Mülleimer?",
+        "da": "Har dette stop en skraldespand?",
+        "nl": "Heeft deze halte een vuilnisbak?",
+        "ca": "Aquesta parada té una paperera?",
+        "cs": "Má tato zastávka koš?"
+      }
+    },
+    {
+      "id": "wheelchair-access",
+      "question": {
+        "nl": "Is deze plaats rolstoeltoegankelijk?",
+        "en": "Is this place accessible with a wheelchair?",
+        "pt": "Este lugar é acessível a utilizadores de cadeiras de rodas?",
+        "pt_BR": "Este lugar é acessível com uma cadeira de rodas?",
+        "de": "Ist der Ort rollstuhlzugänglich?",
+        "fr": "Est-ce que cet endroit est accessible en chaise roulante ?",
+        "hu": "Akadálymentes-e ez a hely?",
+        "it": "Questo luogo è accessibile con una sedia a rotelle?",
+        "nb_NO": "Er dette stedet tilgjengelig for rullestoler?",
+        "ca": "Aquest lloc és accessible amb cadira de rodes?",
+        "sv": "Är det här stället tillgängligt med en rullstol?",
+        "zh_Hant": "這個地方可以坐輪椅到達嗎？",
+        "pl": "Czy to miejsce jest dostępne dla osób na wózkach inwalidzkich?",
+        "ja": "車いすでのアクセスは可能ですか？",
+        "fil": "Kaya bang abutin ang lugar na ito ng naka-wheelchair?",
+        "es": "¿Este lugar es accesible con una silla de ruedas?",
+        "da": "Er stedet tilgængeligt med en kørestol?",
+        "id": "Apakah tempat ini dapat diakses dengan kursi roda?",
+        "cs": "Je toto místo přístupné pro vozíčkáře?"
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "wheelchair=designated"
+            ]
+          },
+          "then": {
+            "nl": "Deze plaats is speciaal aangepast voor gebruikers van een rolstoel",
+            "en": "This place is specially adapted for wheelchair users",
+            "pt": "Este lugar está especialmente adaptado para utilizadores de cadeira de rodas",
+            "pt_BR": "Este lugar é especialmente adaptado para usuários de cadeira de rodas",
+            "de": "Der Ort ist speziell für Rollstuhlfahrer gestaltet",
+            "hu": "Ez a hely kifejezetten kerekesszékeseknek lett kialakítva",
+            "it": "Questo luogo è stato adattato per favorire le persone in sedia a rotelle",
+            "nb_NO": "Dette stedet er spesielt tilpasset rullestolsbrukere",
+            "fr": "Cet endroit est spécialement adapté pour les usagers de fauteuils roulants",
+            "ca": "Aquest lloc està especialment adaptat per a les cadires de rodes",
+            "sv": "Det här stället är speciellt anpassat för rullstolsburna användare",
+            "zh_Hant": "這個地方有特別設計給輪椅使用者",
+            "ru": "Это место подходит для людей на инвалидной коляске",
+            "pl": "W tym miejscu zainstalowane zostały udogodnienia dla osób na wózkach inwalidzkich",
+            "ja": "この場所は、車椅子の方のための特別仕様になっています",
+            "fil": "Ang lugar na ito ay angkop sa mga gumagamit ng wheelchair",
+            "es": "Este lugar está especialmente adaptado para usuarios en sillas de ruedas",
+            "da": "Dette sted er specielt indrettet til kørestolsbrugere",
+            "id": "Tempat ini dirancang khusus untuk pengguna kursi roda",
+            "cs": "Toto místo je speciálně upraveno pro vozíčkáře"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "wheelchair=yes"
+            ]
+          },
+          "then": {
+            "nl": "Deze plaats is vlot bereikbaar met een rolstoel",
+            "en": "This place is easily reachable with a wheelchair",
+            "pt": "Este lugar é de fácil acesso com uma cadeira de rodas",
+            "pt_BR": "Este lugar é facilmente acessível com uma cadeira de rodas",
+            "de": "Der Ort ist rollstuhlzugänglich gestaltet",
+            "hu": "Ez a hely könnyedén elérhető kerekesszékkel",
+            "it": "Questo luogo è facilmente raggiungibile con una sedia a rotelle",
+            "nb_NO": "Dette stedet kan enkelt besøkes med rullestol",
+            "fr": "Cet endroit est facilement accessible avec un fauteuil roulant",
+            "ca": "És facilment arribable amb cadira de rodes",
+            "sv": "Denna plats är lätt att nå med rullstol",
+            "zh_Hant": "這個地方坐輪椅很容易到達",
+            "ru": "До этого места легко добраться на инвалидной коляске",
+            "pl": "To miejsce jest łatwo dostępne dla osób na wózkach inwalidzkich",
+            "ja": "この場所は、車いすで簡単に行くことができます",
+            "fil": "Ang lugar na ito ay kayang abutin ng mga naka-wheelchair",
+            "es": "Este lugar es fácilmente accesible con una silla de ruedas",
+            "da": "Dette sted er let tilgængeligt med en kørestol",
+            "id": "Tempat ini mudah dijangkau dengan kursi roda",
+            "cs": "Toto místo je snadno dosažitelné s invalidním vozíkem"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "wheelchair=limited"
+            ]
+          },
+          "then": {
+            "nl": "Deze plaats is bereikbaar met een rolstoel, maar het is niet makkelijk",
+            "en": "It is possible to reach this place in a wheelchair, but it is not easy",
+            "pt": "É possível chegar a este local em cadeira de rodas, mas não é fácil",
+            "pt_BR": "É possível chegar a esse local em uma cadeira de rodas, mas não é fácil",
+            "de": "Der Ort ist nur eingeschränkt rollstuhlzugänglich",
+            "fr": "Il est possible d'accéder à cet endroit en chaise roulante, mais ce n'est pas facile",
+            "hu": "Ez a hely ugyan elérhető kerekesszékkel, de nehezen",
+            "it": "È possibile raggiungere questo luogo con una sedia a rotella ma non è semplice",
+            "nb_NO": "Det er mulig å besøke dette stedet i rullestol, men det er ikke lett",
+            "ca": "És possible fer servir cadira de rodes a aquest lloc però no és fàcil",
+            "sv": "Det är möjligt att nå den här platsen i en rullstol, men det är inte lätt",
+            "zh_Hant": "這個地方可以坐輪椅到達，但並不容易",
+            "ru": "До этого места можно добраться, но не просто",
+            "pl": "To miejsce jest dostępne dla osób na wózkach inwalidzkich, ale z pewnymi trudnościami",
+            "ja": "車いすでこの場所まで行くことは可能ですが、簡単ではありません",
+            "fil": "Kayang abutin ang lugar na ito ng mga naka-wheelchair, pero hindi madali",
+            "es": "Es posible llegar a este lugar con una silla de ruedas, pero no es fácil",
+            "da": "Det er muligt at komme til dette sted med en kørestol, men det er ikke let",
+            "id": "Dimungkinkan untuk mencapai tempat ini dengan kursi roda, tetapi tidak mudah",
+            "cs": "Na toto místo je možné se dostat na invalidním vozíku, ale není to snadné"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "wheelchair=no"
+            ]
+          },
+          "then": {
+            "nl": "Niet rolstoeltoegankelijk",
+            "en": "This place is not reachable with a wheelchair",
+            "pt": "Este lugar não é acessível com uma cadeira de rodas",
+            "pt_BR": "Este lugar não é alcançável com uma cadeira de rodas",
+            "de": "Der Ort ist nicht rollstuhlzugänglich",
+            "fr": "Cet endroit n'est pas accessible en chaise roulante",
+            "hu": "Ez a hely kerekesszékkel elérhetetlen",
+            "it": "Questo luogo non è accessibile con una sedia a rotelle",
+            "nb_NO": "Dette stedet er ikke tilgjengelig for besøk med rullestol",
+            "ca": "Aquest lloc no és accessible amb cadira de rodes",
+            "sv": "Den här platsen kan inte nås med en rullstol",
+            "zh_Hant": "輪椅無法到達這個地方",
+            "pl": "To miejsce jest niedostępne dla osób na wózkach inwalidzkich",
+            "ja": "この場所は車いすでは行けません",
+            "fil": "Ang lugar na ito ay hindi kayang abutin ng naka-wheelchair",
+            "es": "No es posible llegar a este lugar con una silla de ruedas",
+            "da": "Dette sted er ikke tilgængeligt med kørestol",
+            "id": "Tempat ini tidak bisa dijangkau dengan kursi roda",
+            "cs": "Na toto místo se nelze dostat s invalidním vozíkem"
+          }
+        }
+      ]
+    },
+    {
+      "id": "tactile_paving",
+      "mappings": [
+        {
+          "if": "tactile_paving=yes",
+          "then": {
+            "en": "This stop has tactile paving",
+            "de": "Die Haltestelle hat ein taktiles Pflaster",
+            "ca": "Aquesta parada té una superfície podotàctil",
+            "nl": "Deze halte heeft een geleidelijn",
+            "fr": "Cet arrêt a une surface podotactile",
+            "cs": "Tato zastávka má hmatovou dlažbu"
+          }
+        },
+        {
+          "if": "tactile_paving=no",
+          "then": {
+            "en": "This stop does <b>not</b> have tactile paving",
+            "de": "Die Haltestelle hat <b>kein</b> taktiles Pflaster",
+            "ca": "Aquesta parada <b>no</b> té superfície podotàctil",
+            "nl": "Deze halte heeft <b>geen</b> geleidelijn",
+            "fr": "Cet arrêt <b>n'a pas</b> de surface podotactile",
+            "cs": "Tato zastávka <b>nemá</b> hmatovou dlažbu"
+          }
+        }
+      ],
+      "question": {
+        "en": "Does this stop have tactile paving?",
+        "de": "Hat die Haltestelle hat ein taktiles Pflaster?",
+        "ca": "Aquesta parada té una superfície podotàctil?",
+        "nl": "Heeft deze halte een geleidelijn?",
+        "fr": "Cet arrêt a-t-il une surface podotactile ?",
+        "cs": "Má tato zastávka hmatovou dlažbu?"
+      }
+    },
+    {
+      "id": "lit",
+      "mappings": [
+        {
+          "if": "lit=yes",
+          "then": {
+            "en": "This stop is lit",
+            "de": "Die Haltestelle ist beleuchtet",
+            "nl": "Deze halte is verlicht",
+            "ca": "Aquesta parada té il·luminació",
+            "fr": "Cet arrêt est éclairé",
+            "cs": "Tato zastávka je osvětlena"
+          }
+        },
+        {
+          "if": "lit=no",
+          "then": {
+            "en": "This stop is <b>not</b> lit",
+            "de": "Die Haltestelle hat <b>keine</b> Beleuchtung",
+            "da": "Dette stop lyser ikke",
+            "nl": "Deze halte is <b>niet</b> verlicht",
+            "ca": "Aquesta parada <b>no</b> té il·luminació",
+            "fr": "Cet arrêt <b>n'est pas</b> éclairé",
+            "cs": "Tato zastávka <b>není osvětlena</b>"
+          }
+        }
+      ],
+      "question": {
+        "en": "Is this stop lit?",
+        "de": "Ist die Haltestelle beleuchtet?",
+        "nl": "Is deze halte verlicht?",
+        "ca": "Aquesta parada té il·luminació?",
+        "fr": "Cet arrêt est-il éclairé ?",
+        "cs": "Je tato zastávka osvětlena?"
+      }
+    },
+    {
+      "id": "departures_board",
+      "mappings": [
+        {
+          "if": "departures_board=yes",
+          "then": {
+            "en": "This stop has a departures board of unknown type",
+            "de": "Die Haltestelle hat einen Fahrplan, der nicht näher definiert ist",
+            "da": "Dette stoppested har en afgangstavle af ukendt type",
+            "ca": "Aquesta parada té un tauler de sortides de tipus desconegut",
+            "cs": "Tato zastávka má odjezdovou tabuli neznámého typu"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "departures_board=realtime",
+          "then": {
+            "en": "This stop has a board showing realtime departure information",
+            "de": "Die Haltestelle hat einen Fahrplan, der Abfahrtszeiten in Echtzeit anzeigt",
+            "da": "Dette stop har en tavle med oplysninger om afgang i realtid",
+            "fr": "Cet arrêt a un panneau indiquant les départs en temps réel",
+            "ca": "Aquesta parada té un tauló amb els horaris en temps real",
+            "cs": "Tato zastávka má tabuli zobrazující informace o odjezdu v reálném čase"
+          }
+        },
+        {
+          "if": "passenger_information_display=yes",
+          "then": {
+            "en": "This stop has a board showing realtime departure information",
+            "de": "Die Haltestelle hat einen Fahrplan, der Abfahrtszeiten in Echtzeit anzeigt",
+            "da": "Dette stop har en tavle med oplysninger om afgang i realtid",
+            "ca": "Aquesta parada té un tauló amb els horaris en temps real",
+            "cs": "Tato zastávka má tabuli zobrazující informace o odjezdu v reálném čase"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "departures_board=timetable",
+          "then": {
+            "en": "This stop has a timetable showing regular departures",
+            "de": "Die Haltestelle hat einen Fahrplan, der die regulären Abfahrtszeiten anzeigt",
+            "da": "Dette stop har en køreplan, der viser regelmæssige afgange",
+            "ca": "Aquesta parada té un horari que mostra les sortides regulars",
+            "cs": "Tato zastávka má jízdní řád s pravidelnými odjezdy"
+          }
+        },
+        {
+          "if": "departures_board=interval",
+          "then": {
+            "en": "This stop has a timetable containing just the interval between departures",
+            "de": "Die Haltestelle hat einen Fahrplan, der den Abstand zwischen Abfahrten anzeigt",
+            "da": "Dette stop har en køreplan, der kun indeholder intervallet mellem afgangene",
+            "ca": "Aquesta parada té un horari que conté només l'interval entre sortides",
+            "cs": "Tato zastávka má jízdní řád obsahující pouze interval mezi odjezdy"
+          }
+        },
+        {
+          "if": "departures_board=no",
+          "then": {
+            "en": "This stop does <b>not</b> have a departures board",
+            "de": "Die Haltestelle hat <b>keinen</b> Fahrplan",
+            "da": "Dette stop har ikke en afgangstavle",
+            "ca": "Aquesta parada <b>no</b> té un tauler de sortides",
+            "cs": "Tato zastávka <b>nemá</b> tabulku odjezdů"
+          }
+        }
+      ]
+    },
+    {
+      "render": {
+        "en": "<h3>{_contained_routes_count} routes stop at this stop</h3> <ul>{_contained_routes}</ul>",
+        "de": "<h3>{_contained_routes_count} Linien halten an der Haltestelle</h3> <ul>{_contained_routes}</ul>",
+        "da": "<h3>{_contained_routes_count} ruter stopper ved dette stoppested</h3> <ul>{_contained_routes}</ul>",
+        "nl": "<h3>{_contained_routes_count} lijnen stoppen bij deze halte</h3> <ul>{_contained_routes}</ul>",
+        "ca": "<h3>{_contained_routes_count} rutes paren a aquesta parada</h3> <ul>{_contained_routes}</ul>",
+        "cs": "Na této zastávce staví <h3>{_contained_routes_count} tras</h3> <ul>{_contained_routes}</ul>"
+      },
+      "condition": "_contained_routes~*",
+      "id": "contained_routes"
+    },
+    {
+      "id": "leftover-questions",
+      "render": {
+        "*": "{questions( ,)}"
+      }
+    },
+    {
+      "id": "lod",
+      "labels": [
+        "added_by_default"
+      ],
+      "render": {
+        "*": "{linked_data_from_website()}"
+      }
+    },
+    {
+      "id": "minimap",
+      "description": "Shows a small map with the feature. Added by default to every popup",
+      "render": {
+        "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+      }
+    },
+    {
+      "id": "last_edit",
+      "labels": [
+        "added_by_default"
+      ],
+      "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+      "condition": {
+        "and": [
+          "_last_edit:contributor~*",
+          "_last_edit:changeset~*"
+        ]
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsTesting=true",
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_debug=yes",
+          "_csCount>=10"
+        ]
+      },
+      "render": {
+        "ca": "{link(Darrera edició el &LBRACE_last_edit:timestamp&RBRACE per &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "cs": "{link(Naposledy upravil &LBRACE_last_edit:timestamp&RBRACE &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "de": "{link(Zuletzt bearbeitet am &LBRACE_last_edit:timestamp&RBRACE von &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "en": "{link(Last edited on &LBRACE_last_edit:timestamp&RBRACE by &LBRACE_last_edit:contributor&RBRACE,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}",
+        "nl": "{link(Laatst gewijzigd op &LBRACE_last_edit:timestamp&RBRACE door &LBRACE_last_edit:contributor&RBRACE ,&LBRACE_backend&RBRACE/changeset/&LBRACE_last_edit:changeset&RBRACE,subtle font-small,,)}"
+      }
+    },
+    {
+      "id": "favourite_status",
+      "render": {
+        "*": "{favourite_status()}"
+      }
+    },
+    {
+      "id": "qr_code",
+      "labels": [
+        "added_by_default"
+      ],
+      "classes": "flex items-center gap-x-2",
+      "render": {
+        "de": "{qr_code()}Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
+        "en": "{qr_code()}Scan this code to open this location on another device",
+        "nl": "{qr_code()}Scan deze code om deze locatie op een ander apparaat te zien",
+        "sl": "{qr_code()}Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+      }
+    },
+    {
+      "id": "share",
+      "labels": [
+        "added_by_default"
+      ],
+      "metacondition": "_supports_sharing=yes",
+      "render": {
+        "de": "{share_link(,Standort teilen)}",
+        "en": "{share_link(,Share this location)}",
+        "nl": "{share_link(,Deel deze locatie)}"
+      }
+    },
+    {
+      "id": "all-tags",
+      "render": {
+        "*": "{all_tags()}"
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_tags=full",
+          "mapcomplete-show_debug=yes"
+        ]
+      }
+    }
+  ],
+  "filter": [
+    {
+      "id": "shelter",
+      "options": [
+        {
+          "osmTags": {
+            "or": [
+              "shelter=yes",
+              "shelter=separate"
+            ]
+          },
+          "question": {
+            "en": "With a shelter",
+            "de": "Mit Unterstand",
+            "fr": "Avec un abri",
+            "ca": "Amb refugi",
+            "cs": "S přístřeškem"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bench",
+      "options": [
+        {
+          "osmTags": {
+            "or": [
+              "bench=yes",
+              "bench=separate"
+            ]
+          },
+          "question": {
+            "en": "With a bench",
+            "de": "Mit Sitzbank",
+            "fr": "Avec un banc",
+            "ca": "Amb un banc",
+            "cs": "S lavičkou"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bin",
+      "options": [
+        {
+          "osmTags": {
+            "or": [
+              "bin=yes",
+              "bin=separate"
+            ]
+          },
+          "question": {
+            "en": "With a bin",
+            "de": "Mit Mülleimer",
+            "fr": "Avec un poubelle",
+            "ca": "Amb paperera",
+            "cs": "S košem"
+          }
+        }
+      ]
+    },
+    {
+      "id": "tactile_paving",
+      "options": [
+        {
+          "question": {
+            "en": "All types"
+          }
+        },
+        {
+          "question": {
+            "en": "This stop has tactile paving",
+            "de": "Die Haltestelle hat ein taktiles Pflaster",
+            "ca": "Aquesta parada té una superfície podotàctil",
+            "nl": "Deze halte heeft een geleidelijn",
+            "fr": "Cet arrêt a une surface podotactile",
+            "cs": "Tato zastávka má hmatovou dlažbu"
+          },
+          "osmTags": "tactile_paving=yes"
+        },
+        {
+          "question": {
+            "en": "This stop does <b>not</b> have tactile paving",
+            "de": "Die Haltestelle hat <b>kein</b> taktiles Pflaster",
+            "ca": "Aquesta parada <b>no</b> té superfície podotàctil",
+            "nl": "Deze halte heeft <b>geen</b> geleidelijn",
+            "fr": "Cet arrêt <b>n'a pas</b> de surface podotactile",
+            "cs": "Tato zastávka <b>nemá</b> hmatovou dlažbu"
+          },
+          "osmTags": "tactile_paving=no"
+        }
+      ]
+    }
+  ],
+  "allowMove": false,
+  "titleIcons": [
+    {
+      "id": "wikipedialink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank' rel='noopener'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+      "condition": {
+        "or": [
+          "wikipedia~*",
+          "wikidata~*"
+        ]
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "wikipedia=",
+          "then": "<a class='h-8' href='https://www.wikidata.org/wiki/{wikidata}' target='_blank' rel='noopener'><img src='./assets/svg/wikidata.svg' alt='Wikidata'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "open_until",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "#": "Titleicon showing e.g. 'open until 17:00'",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{opening_hours_state()}",
+      "condition": {
+        "or": [
+          "opening_hours~*",
+          {
+            "or": [
+              {
+                "and": [
+                  "seasonal~.*winter.*",
+                  "_now:date~....-(12|01|02)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*spring.*",
+                  "_now:date~....-(03|04|05)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*summer.*",
+                  "_now:date~....-(06|07|08)-.."
+                ]
+              },
+              {
+                "and": [
+                  "seasonal~.*autumn.*",
+                  "_now:date~....-(09|10|11)-.."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "phonelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": {
+        "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefon)}",
+        "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,phone)}",
+        "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEphone&RBRACE,,,Telefoneer)}",
+        "_context": "layers:icons.tagRenderings.phonelink.render"
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:phone~*",
+          "then": {
+            "de": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefon)}",
+            "en": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,phone)}",
+            "nl": "{link(<img textmode='📞' alt='phone' src='./assets/layers/questions/phone.svg'/>,tel:&LBRACEcontact:phone&RBRACE,,,Telefoneer)}",
+            "_context": "layers:icons.tagRenderings.phonelink.mappings.0.then"
+          }
+        }
+      ],
+      "condition": {
+        "or": [
+          "phone~*",
+          "contact:phone~*"
+        ]
+      }
+    },
+    {
+      "id": "emaillink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>",
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "contact:email~*",
+          "then": "<a href='mailto:{contact:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:email~*",
+          "then": "<a href='mailto:{operator:email}'><img textmode='✉️' alt='email' src='./assets/layers/questions/send_email.svg'/></a>"
+        }
+      ],
+      "condition": {
+        "or": [
+          "email~*",
+          "contact:email~*",
+          "operator:email~*"
+        ]
+      }
+    },
+    {
+      "id": "websitelink",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "website~*",
+          "then": "<a href='{website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "operator:website~*",
+          "then": "<a href='{operator:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "context:website~*",
+          "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "smokingicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=no",
+          "then": "<img textmode='🚭️' alt='no smoking' src='./assets/layers/questions/no_smoking.svg'/>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=yes",
+          "then": "<img textmode='🚬️' alt='smoking allowed' src='./assets/layers/questions/smoking.svg'/>"
+        }
+      ]
+    },
+    {
+      "id": "dogicon",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "mappings": [
+        {
+          "if": "dog=no",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕 ⃠' alt='no_dogs' src='./assets/layers/questions/no_dogs.svg'>"
+        },
+        {
+          "if": "dog=leashed",
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed but leashed' src='./assets/layers/questions/dogs_leashed.svg'>"
+        },
+        {
+          "if": {
+            "or": [
+              "dog=yes",
+              "dog=unleashed"
+            ]
+          },
+          "#": "ignore-image-in-then",
+          "then": "<img textmode='🐕' alt='dogs are allowed' src='./assets/layers/questions/dogs_allowed.svg'>"
+        }
+      ]
+    },
+    {
+      "id": "sharelink",
+      "labels": [
+        "defaults"
+      ],
+      "render": "{share_link()}",
+      "metacondition": "_supports_sharing=yes"
+    },
+    {
+      "id": "favourite_title_icon",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "*": "{favourite_icon()}"
+      },
+      "metacondition": "_loggedIn=true"
+    },
+    {
+      "id": "osmlink",
+      "labels": [
+        "defaults"
+      ],
+      "render": {
+        "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+        "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+        "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,https://openstreetmap.org/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+        "_context": "layers:icons.tagRenderings.osmlink.render"
+      },
+      "mappings": [
+        {
+          "if": "id~.*/-.*",
+          "then": ""
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "_backend~*",
+          "then": {
+            "de": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Auf openstreetmap.org öffnen)}",
+            "en": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Open on openstreetmap.org)}",
+            "nl": "{link(<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>,&LBRACE_backend&RBRACE/&LBRACEid&RBRACE,,,Bekijk op openstreetmap.org)}",
+            "_context": "layers:icons.tagRenderings.osmlink.mappings.1.then"
+          }
+        }
+      ],
+      "condition": "id~(node|way|relation)/[0-9]*"
+    },
+    {
+      "id": "direction",
+      "labels": [
+        "defaults",
+        "in_favourite"
+      ],
+      "render": "{direction_indicator()}"
+    },
+    {
+      "id": "rating",
+      "icon": {
+        "class": "w-20 mx-1 flex items-center"
+      },
+      "render": "{rating()}"
+    }
+  ],
+  "_layerIcon": [
+    {
+      "icon": "./assets/layers/transit_stops/bus_stop.svg"
+    }
+  ]
+}
