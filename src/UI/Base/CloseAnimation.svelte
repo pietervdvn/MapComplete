@@ -33,7 +33,7 @@ console.log("Animating", debug," to", opened)
   }
 
   onDestroy(isOpened.addCallback(opened => animate(opened)))
-  onMount(() => animate(isOpened.data))
+  onMount(() =>  requestAnimationFrame(() => animate(isOpened.data)))
 
 
 </script>
@@ -42,7 +42,7 @@ console.log("Animating", debug," to", opened)
 </div>
 
 <div bind:this={elem} class="pointer-events-none absolute bottom-0 right-0 low-interaction rounded-2xl"
-     style="transition: all 0.65s ease-out, background-color 1.8s ease-out; background: var(--background-color);">
+     style="transition: all 0.5s ease-out, background-color 1.4s ease-out; background: var(--background-color);">
   <!-- Classes should be the same as the 'floatoaver' -->
 </div>
 
