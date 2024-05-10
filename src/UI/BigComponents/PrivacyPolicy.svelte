@@ -9,6 +9,7 @@
   export let state: SpecialVisualizationState
   const usersettings = UserRelatedState.usersettingsConfig
   const editPrivacy = usersettings.tagRenderings.find(tr => tr.id === "more_privacy")
+  const isLoggedIn = state.osmConnection.isLoggedIn
 </script>
 
 <div class="link-underline flex flex-col">
@@ -44,10 +45,9 @@
     <li>
       <Tr t={t.items.language} />
     </li>
+
     <li>
-      <Tr t={t.items.distanceIndicator} />
-    </li>
-    <li>
+      {#if $isLoggedIn}
       <TagRenderingEditable config={editPrivacy} selectedElement={{
               type: "Feature",
               properties: { id: "settings" },
@@ -55,6 +55,9 @@
             }}
                             {state}
                             tags={state.userRelatedState.preferencesAsTags} />
+        {:else}
+          <Tr t={t.items.distanceIndicator} />
+        {/if}
     </li>
   </ul>
 
