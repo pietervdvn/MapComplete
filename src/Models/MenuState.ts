@@ -101,6 +101,11 @@ export class MenuState {
 
         this.allToggles = [
             {
+                toggle: this.privacyPanelIsOpened,
+                name: "privacy",
+                showOverOthers: true,
+            },
+            {
                 toggle: this.menuIsOpened,
                 name: "menu",
                 submenu: this.menuViewTab,
@@ -118,11 +123,6 @@ export class MenuState {
             {
                 toggle: this.communityIndexPanelIsOpened,
                 name: "community",
-                showOverOthers: true,
-            },
-            {
-                toggle: this.privacyPanelIsOpened,
-                name: "privacy",
                 showOverOthers: true,
             },
             {

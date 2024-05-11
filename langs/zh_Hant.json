@@ -651,11 +651,20 @@
         "tryAgain": "選擇不同物種"
     },
     "privacy": {
-        "editing": "當你對地圖變動時，這些變動會存在開放街圖並且是公開給所有人。採用 MapComplete 的編輯變動包括以下資料：<ul><li>你做的變動</li><li>你的使用者名稱</li><li>你在什麼時間做的變動</li><li>當你做出變動時使用的主題</li><li>使用者介面語言</li><li>你會多接近時變動物件的指示。其他的圖客可以用這些資訊來決定是否是居於踏查還是遠端研究</li></ul>請參考<a href='https://wiki.osmfoundation.org/wiki/Privacy_Policy' target='_blank'>OpenStreetMap.org的隱私政策</a>來取得更多資訊。我們也提醒你註冊帳號時能夠採用假名。",
+        "editingIntro": "當你對地圖變動時，這些變動會存在開放街圖並且是公開給所有人。採用 MapComplete 的編輯變動包括以下資料：",
+        "editingOutro": "請參考<a href='https://wiki.osmfoundation.org/wiki/Privacy_Policy' target='_blank'>OpenStreetMap.org的隱私政策</a>來取得更多資訊。我們也提醒你註冊帳號時能夠採用假名。",
         "editingTitle": "當做出變動",
         "geodata": "當 MapComplete 取得你地理位置時，你的地理位置與先前造訪的地點資訊會留在你的裝置上。你的位置資訊從來不會自動傳送到任何地方 - 除非有些功能很清楚顯示其他狀態。",
         "geodataTitle": "你的地理位置",
         "intro": "隱私相當重要 - 對個人與對社會都是。MapComplete 試著盡可能尊重你的隱私 - 所以不會需要惱人的 cookie。然而我們仍然告知，在那些情境下，以及做出的選擇與取捨下，有那些資訊會被收集與分享。",
+        "items": {
+            "changesYouMake": "你做的變動",
+            "username": "你的使用者名稱",
+            "date": "你在什麼時間做的變動",
+            "theme": "當你做出變動時使用的主題",
+            "language": "使用者介面語言",
+            "distanceIndicator": "你會多接近時變動物件的指示。其他的圖客可以用這些資訊來決定是否是居於踏查還是遠端研究"
+        },
         "miscCookies": "MapComplete 整合多項服務，特別是載入圖徵的圖片。圖片是放在多個第三方服務供應商，也許會有他們自己的 cookies。",
         "miscCookiesTitle": "其他 cookies",
         "surveillance": "你會閱讀隱私政策，你大概相當在意隱私 - 所以我們也是！我們甚至製作 <a href='https://mapcomplete.org/surveillance'> 主題地圖顯示監視器。</a>如果在意就繪製這些圖徵吧！",

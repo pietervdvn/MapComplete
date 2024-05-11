@@ -69,6 +69,7 @@ import {
 import summaryLayer from "../assets/generated/layers/summary.json"
 import { LayerConfigJson } from "./ThemeConfig/Json/LayerConfigJson"
 import Locale from "../UI/i18n/Locale"
+import Hash from "../Logic/Web/Hash"
 
 /**
  *
@@ -496,6 +497,12 @@ export default class ThemeViewState implements SpecialVisualizationState {
         if (this.layout.customCss !== undefined && window.location.pathname.indexOf("theme") >= 0) {
             Utils.LoadCustomCss(this.layout.customCss)
         }
+
+        Hash.hash.addCallbackAndRunD(hash => {
+            if(hash === "current_view" || hash.match(/current_view_[0-9]+/)){
+                this.selectCurrentView()
+            }
+        })
     }
 
     /**
@@ -820,5 +827,10 @@ export default class ThemeViewState implements SpecialVisualizationState {
             this.featureSwitches.backgroundLayerId,
             this.userRelatedState.preferredBackgroundLayer
         )
+    }
+
+    public selectCurrentView(){
+        this.guistate.closeAll()
+        this.selectedElement.setData(this.currentView.features?.data?.[0])
     }
 }

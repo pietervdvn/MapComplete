@@ -271,7 +271,7 @@
     {#if currentViewLayer?.tagRenderings && currentViewLayer.defaultIcon()}
       <MapControlButton
         on:click={() => {
-          state.selectedElement.setData(state.currentView.features?.data?.[0])
+          state.selectCurrentView()
         }}
         on:keydown={forwardEventToMap}
         htmlElem={openCurrentViewLayerButton}
@@ -661,7 +661,7 @@
         <Tr t={Translations.t.privacy.title} />
       </h2>
       <div class="overflow-auto p-4">
-        <PrivacyPolicy />
+        <PrivacyPolicy {state}/>
       </div>
     </div>
   </FloatOver>

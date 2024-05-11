@@ -15,6 +15,7 @@
   import Add from "../../assets/svg/Add.svelte"
   import Location_refused from "../../assets/svg/Location_refused.svelte"
   import Location from "../../assets/svg/Location.svelte"
+  import SpecialTranslation from "../Popup/TagRendering/SpecialTranslation.svelte"
 
   /**
    * The theme introduction panel
@@ -48,6 +49,7 @@
 <div class="flex h-full flex-col justify-between">
   <div>
     <!-- Intro, description, ... -->
+
     <Tr t={layout.description} />
     <Tr t={Translations.t.general.welcomeExplanation.general} />
     {#if layout.layers.some((l) => l.presets?.length > 0)}

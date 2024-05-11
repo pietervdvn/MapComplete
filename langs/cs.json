@@ -540,11 +540,20 @@
         "tryAgain": "Vyberte jiný druh"
     },
     "privacy": {
-        "editing": "Když v mapě provedete změnu, tato změna se zaznamená na OpenStreetMap a je veřejně dostupná komukoli. Sada změn provedená pomocí MapComplete obsahuje následující data: <ul><li>Provedené změny</li><li>Vaše uživatelské jméno</li><li>Když je tato změna provedena</li><li>Motiv kterou jste použili při provádění změny</li><li>Jazyk uživatelského rozhraní</li><li>Indikace toho, jak blízko jste byli ke změněným objektům. Ostatní tvůrci map mohou tyto informace použít k určení, zda byla změna provedena na základě průzkumu nebo vzdáleného výzkumu</li></ul> Viz <a href='https://wiki.osmfoundation.org/wiki/Privacy_Policy' target='_blank'>zásady ochrany osobních údajů na OpenStreetMap.org</a> pro podrobné informace. Rádi bychom vám připomněli, že při registraci můžete použít smyšlené jméno.",
+        "editingIntro": "Když v mapě provedete změnu, tato změna se zaznamená na OpenStreetMap a je veřejně dostupná komukoli. Sada změn provedená pomocí MapComplete obsahuje následující data:",
+        "editingOutro": "Viz <a href='https://wiki.osmfoundation.org/wiki/Privacy_Policy' target='_blank'>zásady ochrany osobních údajů na OpenStreetMap.org</a> pro podrobné informace. Rádi bychom vám připomněli, že při registraci můžete použít smyšlené jméno.",
         "editingTitle": "Při provádění změn",
         "geodata": "Když MapComplete získá vaši geolokaci, vaše geolokace a dříve navštívená místa zůstanou ve vašem zařízení. Vaše údaje o poloze nejsou nikdy automaticky odesílány nikam jinam – pokud některá funkce jasně nestanoví jinak.",
         "geodataTitle": "Vaše geolokace",
         "intro": "Soukromí je důležité – jak pro jednotlivce, tak pro společnost. MapComplete se snaží co nejvíce respektovat vaše soukromí – až do té míry není potřeba žádný obtěžující banner cookie. Přesto bychom vás rádi informovali, které informace jsou shromažďovány a sdíleny, za jakých okolností a proč jsou tyto kompromisy prováděny.",
+        "items": {
+            "changesYouMake": "Provedené změny",
+            "username": "Vaše uživatelské jméno",
+            "date": "Když je tato změna provedena",
+            "theme": "Motiv kterou jste použili při provádění změny",
+            "language": "Jazyk uživatelského rozhraní",
+            "distanceIndicator": "Indikace toho, jak blízko jste byli ke změněným objektům. Ostatní tvůrci map mohou tyto informace použít k určení, zda byla změna provedena na základě průzkumu nebo vzdáleného výzkumu"
+        },
         "miscCookies": "MapComplete se integruje s různými dalšími službami, zejména pro načítání obrázků funkcí. Obrázky jsou hostovány na různých serverech třetích stran, které mohou samy nastavovat soubory cookie.",
         "miscCookiesTitle": "Jiné cookies",
         "surveillance": "Když čtete zásady ochrany osobních údajů, pravděpodobně vám záleží na soukromí – nám také! Dokonce jsme vytvořili <a href='https://mapcomplete.org/surveillance'>téma zobrazující sledovací kamery.</a> Neváhejte je všechny zmapovat!",

@@ -205,7 +205,7 @@
           checkedMappings,
           tags.data
         )
-        if (state.featureSwitches.featureSwitchIsDebugging.data) {
+        if (featureSwitchIsDebugging?.data) {
           console.log(
             "Constructing change spec from",
             {
