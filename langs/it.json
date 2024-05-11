@@ -20,6 +20,7 @@
         "cancel": "Annulla",
         "cannotBeDeleted": "Questo oggetto non può essere rimosso",
         "delete": "Rimuovi",
+        "deletedTitle": "Elemento cancellato",
         "explanations": {
             "hardDelete": "Questo elemento verrà rimosso da OpenStreetMap. Un utente esperto potrebbe recuperarlo",
             "retagNoOtherThemes": "Questo elemento verrà riclassificato e nascosto da questa applicazione",
@@ -27,6 +28,7 @@
             "selectReason": "Si prega di selezionare il motivo della rimozione di questo oggetto",
             "softDelete": "Questo oggetto verrà aggiornato e nascosto da questa applicazione. <span class=\"subtle\">{reason}</span>"
         },
+        "isChanged": "Questo elemento è stato modificato e non è visibile in questo livello",
         "isDeleted": "Questo oggetto è stato rimosso",
         "isntAPoint": "Solo i nodi possono essere rimossi, l'elemento selezionato è un percorso, un’area oppure una relazione.",
         "loading": "Controllo delle proprietà per verificare se questo oggetto può essere rimosso.",
@@ -44,6 +46,12 @@
         "safeDelete": "Questo elemento può essere rimosso in sicurezza.",
         "useSomethingElse": "Per rimuoverlo usa un altro editor OpenStreetMap",
         "whyDelete": "Perché questo elemento andrebbe rimosso?"
+    },
+    "external": {
+        "allAreApplied": "Tutti i valori esterni mancanti sono stati copiati su OpenStreetMap",
+        "allIncluded": "I dati caricati da {source} sono contenuti in OpenStreetMap",
+        "apply": "Applica",
+        "applyAll": "Applica tutti i valori mancanti"
     },
     "favourite": {
         "loginNeeded": "<h3>Accedi</h3>Il layout personale è disponibile soltanto per gli utenti OpenStreetMap",
