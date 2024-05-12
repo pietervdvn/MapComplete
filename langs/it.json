@@ -143,10 +143,10 @@
             "pleaseLogin": "Accedi per aggiungere un nuovo elemento",
             "presetInfo": "Il nuovo PDI avrà {tags}",
             "stillLoading": "Caricamento dei dati ancora in corso. Attendi un po’ prima di aggiungere un nuovo elemento.",
-            "title": "Aggiungi un nuovo elemento?",
+            "title": "Aggiungi un nuovo elemento",
             "warnVisibleForEveryone": "La tua aggiunta sarà visibile a tutti",
             "wrongType": "Questo elemento non è un nodo o una way e non può essere importato",
-            "zoomInFurther": "Ingrandisci di più per aggiungere un elemento.",
+            "zoomInFurther": "Ingrandisci di più per aggiungere un elemento",
             "zoomInMore": "Ingrandisci ancora per importare questo oggetto"
         },
         "apply_button": {
@@ -189,7 +189,7 @@
             "downloadAsPdfHelper": "Ideale per stampare la mappa corrente",
             "downloadAsPng": "Scarca come immagine",
             "downloadAsSvg": "Scarica una SVG dalla mappa corrente",
-            "downloadAsSvgHelper": "Compatible con Inkscape o Adobe Illustrator; necessita di ulteriori processamenti  ",
+            "downloadAsSvgHelper": "Compatible con Inkscape o Adobe Illustrator; necessita di ulteriori processamenti",
             "downloadCSV": "Scarica i dati visibili come CSV",
             "downloadCSVHelper": "Compatibile con LibreOffice Calc, Excel, …",
             "downloadFeatureAsGeojson": "Scarica come file GeoJSON",
@@ -283,7 +283,7 @@
             "generatedWith": "Generato con mapcomplete.org/{layoutid}",
             "versionInfo": "v{version} - generato il {date}"
         },
-        "pickLanguage": "Scegli una lingua:",
+        "pickLanguage": "Scegli una lingua",
         "poweredByOsm": "Basato su OpenStreetMap",
         "questionBox": {
             "answeredMultiple": "Hai risposto a {answered} domande",
@@ -446,7 +446,7 @@
         "i_am_affiliated": "<span>Sono associato con questo oggetto</span><br><span class=\"subtle\">Spunta se sei il proprietario, creatore, dipendente, etc.</span>",
         "name_required": "È richiesto un nome per poter mostrare e creare recensioni",
         "no_reviews_yet": "Non ci sono ancora recensioni. Sii il primo a scriverne una aiutando così i dati liberi e l’attività!",
-        "saved": "<span class=\"thanks\">Recensione salvata. Grazie per averla condivisa!</span>",
+        "saved": "Recensione salvata. Grazie per averla condivisa!",
         "saving_review": "Salvataggio…",
         "title": "{count} recensioni",
         "title_singular": "Una recensione",
