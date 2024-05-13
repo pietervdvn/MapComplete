@@ -55,6 +55,9 @@
             "2": {
                 "title": "un cartellone pubblicitario fissato al muro"
             },
+            "3": {
+                "title": "un contenitore di poster pubblicitari di una pensilina del trasporto pubblico"
+            },
             "4": {
                 "description": "PIccolo pannello per la pubblicità di vicinanza, generalmente destinato ai pedoni",
                 "title": "un piccolo pannello"
@@ -71,6 +74,9 @@
             },
             "8": {
                 "title": "uno schermo fissato al muro"
+            },
+            "9": {
+                "title": "uno schermo montato su una pensilina del traporto pubblico"
             }
         },
         "tagRenderings": {
@@ -263,7 +269,7 @@
         }
     },
     "atm": {
-        "description": "Sportello Bancomat per prelevare denaro",
+        "description": "Sportelli Bancomat per prelevare denaro",
         "name": "Sportelli Bancomat",
         "presets": {
             "0": {
@@ -349,7 +355,7 @@
                         "then": "Schienale: Sì"
                     },
                     "2": {
-                        "then": "Schienale: No"
+                        "then": "Questa panchina <b>non</b> ha uno schienale"
                     }
                 },
                 "question": "Questa panchina ha lo schienale?"
@@ -1009,6 +1015,37 @@
             "render": "Oggetto relativo alle bici"
         }
     },
+    "charging_station": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Tutti i tipi di veicoli"
+                    },
+                    "1": {
+                        "question": "Stazione di ricarica per biciclette"
+                    },
+                    "2": {
+                        "question": "Stazione di ricarica per auto"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Solo stazioni di ricarica funzionanti"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Tutti i connettori"
+                    }
+                }
+            }
+        }
+    },
     "climbing": {
         "tagRenderings": {
             "average_length": {
@@ -1272,7 +1309,7 @@
                     }
                 },
                 "question": "Quanti bulloni sono presenti in questo percorso prima di arrivare alla moulinette?",
-                "render": "Questo percorso ha {climbing:bolts} bulloni"
+                "render": "Questo percorso ha {climbing:bolts} bulloni <div class='subtle'>Questa è senza collettori e indica di quanti bloccaggi rapidi ha bisogno un arrampicatore</div>"
             }
         },
         "title": {
