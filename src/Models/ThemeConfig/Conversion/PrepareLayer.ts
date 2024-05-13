@@ -161,7 +161,9 @@ class ExpandTagRendering extends Conversion<
     private readonly _options: {
         /* If true, will copy the 'osmSource'-tags into the condition */
         applyCondition?: true | boolean
-        noHardcodedStrings?: false | boolean
+        noHardcodedStrings?: false | boolean,
+        addToContext?: false | boolean
+
     }
 
     constructor(
@@ -169,11 +171,13 @@ class ExpandTagRendering extends Conversion<
         self: LayerConfigJson,
         options?: {
             applyCondition?: true | boolean
-            noHardcodedStrings?: false | boolean
+            noHardcodedStrings?: false | boolean,
+            // If set, a question will be added to the 'sharedTagRenderings'. Should only be used for 'questions.json'
+            addToContext?: false | boolean
         }
     ) {
         super(
-            "Converts a tagRenderingSpec into the full tagRendering, e.g. by substituting the tagRendering by the shared-question",
+            "Converts a tagRenderingSpec into the full tagRendering, e.g. by substituting the tagRendering by the shared-question and reusing the builtins",
             [],
             "ExpandTagRendering"
         )
@@ -204,8 +208,17 @@ class ExpandTagRendering extends Conversion<
             if (typeof tr === "string" || tr["builtin"] !== undefined) {
                 const stable = this.convert(tr, ctx.inOperation("recursive_resolve"))
                 result.push(...stable)
+                if(this._options?.addToContext){
+                    for (const tr of stable) {
+                        this._state.tagRenderings?.set(tr.id, tr)
+                    }
+                }
             } else {
                 result.push(tr)
+                if(this._options?.addToContext){
+                    this._state.tagRenderings?.set(tr["id"], <QuestionableTagRenderingConfigJson> tr)
+                }
+
             }
         }
 
@@ -220,7 +233,7 @@ class ExpandTagRendering extends Conversion<
         }
         const result: TagRenderingConfigJson[] = []
         for (const tagRenderingConfigJson of direct) {
-            let nm: string | string[] | undefined = tagRenderingConfigJson["builtin"]
+            const nm: string | string[] | undefined = tagRenderingConfigJson["builtin"]
             if (nm !== undefined) {
                 let indirect: TagRenderingConfigJson[]
                 if (typeof nm === "string") {
@@ -1261,12 +1274,14 @@ export class AutoTitleIcon extends DesugaringStep<LayerConfigJson> {
 }
 
 export class PrepareLayer extends Fuse<LayerConfigJson> {
-    constructor(state: DesugaringContext) {
+    constructor(state: DesugaringContext, options?: {addTagRenderingsToContext?: false | boolean}) {
         super(
             "Fully prepares and expands a layer for the LayerConfig.",
             new On("tagRenderings", new Each(new RewriteSpecial())),
             new On("tagRenderings", new Concat(new ExpandRewrite()).andThenF(Utils.Flatten)),
-            new On("tagRenderings", (layer) => new Concat(new ExpandTagRendering(state, layer))),
+            new On("tagRenderings", (layer) => new Concat(new ExpandTagRendering(state, layer, {
+                addToContext: options?.addTagRenderingsToContext ?? false
+            }))),
             new On("tagRenderings", new Each(new DetectInline())),
             new AddQuestionBox(),
             new AddEditingElements(state),

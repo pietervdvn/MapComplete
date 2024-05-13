@@ -1011,11 +1011,11 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         })
     }
 
-    public static async downloadJsonCached(
+    public static async downloadJsonCached<T = object | []>(
         url: string,
         maxCacheTimeMs: number,
         headers?: Record<string, string>
-    ): Promise<object> {
+    ): Promise<T> {
         const result = await Utils.downloadJsonCachedAdvanced(url, maxCacheTimeMs, headers)
         if (result["content"]) {
             return result["content"]
@@ -1023,11 +1023,11 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         throw result["error"]
     }
 
-    public static async downloadJsonCachedAdvanced(
+    public static async downloadJsonCachedAdvanced<T = object | []>(
         url: string,
         maxCacheTimeMs: number,
         headers?: Record<string, string>
-    ): Promise<{ content: object | [] } | { error: string; url: string; statuscode?: number }> {
+    ): Promise<{ content: T } | { error: string; url: string; statuscode?: number }> {
         const cached = Utils._download_cache.get(url)
         if (cached !== undefined) {
             if (new Date().getTime() - cached.timestamp <= maxCacheTimeMs) {
@@ -1042,10 +1042,10 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         Utils._download_cache.set(url, { promise, timestamp: new Date().getTime() })
         return await promise
     }
-    public static async downloadJson(
+    public static async downloadJson<T = object | []>(
         url: string,
         headers?: Record<string, string>
-    ): Promise<object | []>
+    ): Promise<T>
     public static async downloadJson<T>(
         url: string,
         headers?: Record<string, string>

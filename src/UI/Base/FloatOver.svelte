@@ -11,7 +11,6 @@
    */
   const dispatch = createEventDispatcher<{ close }>()
 
-  export let extraClasses = "p-4 md:p-6"
 </script>
 
 <!-- Draw the background over the total screen -->
@@ -24,7 +23,7 @@
 />
 <!-- draw a _second_ absolute div, placed using 'bottom' which will be above the navigation bar on mobile browsers -->
 <div
-  class={twMerge("absolute bottom-0 right-0 h-full w-screen", extraClasses)}
+  class={"absolute bottom-0 right-0 h-full w-screen p-4 md:p-6"}
   style="z-index: 21"
   use:trapFocus
 >

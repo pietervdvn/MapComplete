@@ -12,6 +12,7 @@
   },
   "icon": "./assets/layers/stripclub/stripclub.svg",
   "hideFromOverview": true,
+  "enableMorePrivacy": true,
   "layers": [
     "brothel",
     "stripclub",

@@ -550,11 +550,20 @@
         "tryAgain": "Seleccioneu una espècie diferent"
     },
     "privacy": {
-        "editing": "Quan facis un canvi al mapa, aquest canvi es registra a OpenStreetMap i està disponible públicament per a tothom. Un conjunt de canvis fet amb MapComplete inclou les dades següents: <ul><li>Els canvis que has fet</li><li>El teu nom d'usuari</li><li>Quan es fa aquest canvi</li><li>La petició que vas utilitzar mentre feies el canvi</li><li>L'idioma de la interfície d'usuari</li><li>Una indicació de la proximitat a la que estaves dels objectes canviats. Altres mapejadors poden utilitzar aquesta informació per determinar si es va fer un canvi basant-se en una enquesta o en una investigació remota</li></ul> Consulta <a href=\"https://wiki.osmfoundation.org/wiki/Privacy_Policy\" target=\"_blank\">la política de privadesa a OpenStreetMap.org</a> per obtenir informació detallada. Ens agradaria recordar-te que pots utilitzar un nom de ficció quan et registris.",
+        "editingIntro": "Quan facis un canvi al mapa, aquest canvi es registra a OpenStreetMap i està disponible públicament per a tothom. Un conjunt de canvis fet amb MapComplete inclou les dades següents:",
+        "editingOutro": "Consulta <a href=\"https://wiki.osmfoundation.org/wiki/Privacy_Policy\" target=\"_blank\">la política de privadesa a OpenStreetMap.org</a> per obtenir informació detallada. Ens agradaria recordar-te que pots utilitzar un nom de ficció quan et registris.",
         "editingTitle": "Quan es facin canvis",
         "geodata": "Quan MapComplete obté la geolocalització, aquesta i les ubicacions visitades anteriorment romandran al teu dispositiu. Les teves dades d'ubicació mai s'envien automàticament a cap altre lloc, tret que alguna funcionalitat indiqui clarament el contrari.",
         "geodataTitle": "La teva geoclocalització",
         "intro": "La privadesa és important, tant per a l'individu com per a la societat. MapComplete intenta respectar la vostra privadesa tant com sigui possible, fins al punt que no es necessita cap banner de galetes molest. No obstant això, encara volem informar-vos quina informació es recopila i es comparteix, en quines circumstàncies i per què es fan aquestes compensacions.",
+        "items": {
+            "changesYouMake": "Els canvis que has fet",
+            "username": "El teu nom d'usuari",
+            "date": "Quan es fa aquest canvi",
+            "theme": "La petició que vas utilitzar mentre feies el canvi",
+            "language": "L'idioma de la interfície d'usuari",
+            "distanceIndicator": "Una indicació de la proximitat a la que estaves dels objectes canviats. Altres mapejadors poden utilitzar aquesta informació per determinar si es va fer un canvi basant-se en una enquesta o en una investigació remota"
+        },
         "miscCookies": "MapComplete s'integra amb diversos altres serveis, especialment per carregar imatges de característiques. Les imatges s'allotgen en diversos servidors de tercers, que poden establir galetes per si mateixos.",
         "miscCookiesTitle": "Altres galetes",
         "surveillance": "Ja que estàs llegint la política de privadesa, probablement t'interessa la privadesa, a nosaltres també! Fins i tot hem creat <a href='https://mapcomplete.org/surveillance'>una tema que mostra les càmeres de vigilància.</a> No dubtis a mapejar-les totes!",

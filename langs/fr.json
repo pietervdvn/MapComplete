@@ -430,11 +430,20 @@
         "takeImages": "Prenez des photos de l'arbre pour détecter automatiquement de quel type il s'agit"
     },
     "privacy": {
-        "editing": "Lorsque vous faites une modification sur la carte, cette modification est enregistrée dans OpenStreetMap et est displnible publiquement pour tout le monde. Un groupe de modification fait avec MapComplete inclus les données suivantes : <ul><li>Les modifications que vous avez faites</li><li>Votre nom d'utilisateur</li><li>Quand la modification a été faite</li><li>Le thème utilisé lorsque vous faites la modification</li><li>La langue de l'interface utilisateur</li><li>Une indication sur votre proximité avec l'objet modifié. D'autres utilisateurs peuvent utiliser cette information pour déterminer si la modification a été faite par un relevé de terrain ou par une recherche à distance</li></ul> Merci de vous référer à <a href='https://wiki.osmfoundation.org/wiki/Privacy_Policy' target='_blank'>la politique de confidentialité d'OpenStreetMap.org</a> pour plus de détails. Nous vous rappelons que vous pouvez utiliser un pseudonyme lors de votre inscription.",
+        "editingIntro": "Lorsque vous faites une modification sur la carte, cette modification est enregistrée dans OpenStreetMap et est displnible publiquement pour tout le monde. Un groupe de modification fait avec MapComplete inclus les données suivantes :",
+        "editingOutro": "Merci de vous référer à <a href='https://wiki.osmfoundation.org/wiki/Privacy_Policy' target='_blank'>la politique de confidentialité d'OpenStreetMap.org</a> pour plus de détails. Nous vous rappelons que vous pouvez utiliser un pseudonyme lors de votre inscription.",
         "editingTitle": "Lorsque vous faites une modification",
         "geodata": "Quand MapComplete obtient votre géolocalisation, votre géolocalisation et les lieux visités précédemment restent sur votre appareil. Vos données de localisation ne sont jamais envoyées automatiquement ailleurs - sauf si une fonctionnalité vous indique que c'est le cas.",
         "geodataTitle": "Votre géolocalisation",
         "intro": "La vie privée est importante - tant pour l'individu que pour la société. MapComplete s'efforce de respecter votre vie privée autant que possible - jusqu'au point où aucune bannière de cookie gênante n'est nécessaire. Toutefois, nous tenons à vous informer des informations qui sont recueillies et partagées, des circonstances dans lesquelles elles le sont et des raisons pour lesquelles ces compromis sont faits.",
+        "items": {
+            "changesYouMake": "Les modifications que vous avez faites",
+            "username": "Votre nom d'utilisateur",
+            "date": "Quand la modification a été faite",
+            "theme": "Le thème utilisé lorsque vous faites la modification",
+            "language": "La langue de l'interface utilisateur",
+            "distanceIndicator": "Une indication sur votre proximité avec l'objet modifié. D'autres utilisateurs peuvent utiliser cette information pour déterminer si la modification a été faite par un relevé de terrain ou par une recherche à distance"
+        },
         "miscCookiesTitle": "Autres cookies",
         "title": "Politique de confidentialité",
         "tracking": "Afin d'avoir une idée des personnes qui visitent notre site web, certaines informations techniques sont collectées. Il s'agit notamment du pays depuis lequel vous avez visité la page Web, du site Web qui vous a renvoyé vers MapComplete, du type de votre appareil et de la taille de l'écran. Un cookie est placé sur votre appareil pour indiquer que vous avez visité MapComplete plus tôt dans la journée. Ces données ne sont pas suffisamment détaillées pour vous identifier personnellement. Ces statistiques ne sont accessibles à quiconque que sous forme agrégée et sont <a href='https://pietervdvn.goatcounter.com' target='_blank'>accessible à tout le monde</a>",

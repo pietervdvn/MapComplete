@@ -2,6 +2,7 @@ import { Utils } from "../../Utils"
 import { TagsFilter } from "./TagsFilter"
 import { TagConfigJson } from "../../Models/ThemeConfig/Json/TagConfigJson"
 import { ExpressionSpecification } from "maplibre-gl"
+import { RegexTag } from "./RegexTag"
 
 export class Tag extends TagsFilter {
     public key: string
@@ -122,6 +123,7 @@ export class Tag extends TagsFilter {
     /**
      *
      * import {RegexTag} from "./RegexTag";
+     * import {And} from "./And";
      *
      * // should handle advanced regexes
      * new Tag("key", "aaa").shadows(new RegexTag("key", /a+/)) // => true
@@ -131,14 +133,20 @@ export class Tag extends TagsFilter {
      * new Tag("key","value").shadows(new RegexTag("key", "value", true)) // => false
      * new Tag("key","value").shadows(new RegexTag("otherkey", "value", true)) // => false
      * new Tag("key","value").shadows(new RegexTag("otherkey", "value", false)) // => false
+     * new Tag("key","value").shadows(new And([new Tag("x","y"), new RegexTag("a","b", true)]) // => false
      */
     shadows(other: TagsFilter): boolean {
-        if (other["key"] !== undefined) {
-            if (other["key"] !== this.key) {
-                return false
-            }
+        if ((other["key"] !== this.key)) {
+            return false
         }
-        return other.matchesProperties({ [this.key]: this.value })
+        if(other instanceof Tag){
+            // Other.key === this.key
+            return other.value === this.value
+        }
+        if(other instanceof RegexTag){
+            return other.matchesProperties({[this.key]: this.value})
+        }
+        return false
     }
 
     usedKeys(): string[] {

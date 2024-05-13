@@ -753,6 +753,7 @@
         "+mappings": [
           {
             "if": "opening_hours=24/7",
+            "icon": "./assets/layers/questions/open24_7.svg",
             "then": {
               "en": "24/7 opened (including holidays)",
               "de": "durchgehend geöffnet (auch an Feiertagen)",
@@ -767,6 +768,18 @@
               "ca": "Obert 24/7 (incloent-hi festius)",
               "pl": "Otwarte 24/7 (również w święta)"
             }
+          }
+        ]
+      }
+    },
+    {
+      "id": "opening_hours_24_7_default",
+      "builtin": "opening_hours_24_7",
+      "override": {
+        "mappings": [
+          {
+            "#": "The first mapping is 'opening_hours=24/7', we amend this to also show if no info is known",
+            "alsoShowIf": "opening_hours="
           }
         ]
       }

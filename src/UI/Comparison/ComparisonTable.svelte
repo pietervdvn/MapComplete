@@ -109,16 +109,17 @@
   <div class="low-interaction border-interactive p-1">
     {#if !readonly}
       <Tr t={t.loadedFrom.Subs({ url: sourceUrl, source: sourceUrl })} />
-      <h3>
-        <Tr t={t.conflicting.title} />
-      </h3>
     {/if}
 
     <div class="flex flex-col" class:gap-y-8={!readonly}>
-      {#if !readonly}
-        <Tr t={t.conflicting.intro} />
-      {/if}
+
       {#if $different.length > 0}
+        {#if !readonly}
+          <h3>
+            <Tr t={t.conflicting.title} />
+          </h3>
+          <Tr t={t.conflicting.intro} />
+        {/if}
         {#each $different as key (key)}
           <div class="mx-2 rounded-2xl">
             <ComparisonAction
@@ -135,6 +136,13 @@
       {/if}
 
       {#if $missing.length > 0}
+        {#if !readonly}
+         <h3 class="m-0">
+          <Tr t={t.missing.title} />
+         </h3>
+
+          <Tr t={t.missing.intro} />
+        {/if}
         {#if currentStep === "init"}
           {#each $missing as key (key)}
             <div class:glowing-shadow={applyAllHovered} class="mx-2 rounded-2xl">

@@ -18,7 +18,7 @@
     EyeIcon,
     HeartIcon,
     MenuIcon,
-    XCircleIcon,
+    XCircleIcon
   } from "@rgossiaux/svelte-heroicons/solid"
   import Tr from "./Base/Tr.svelte"
   import CommunityIndexView from "./BigComponents/CommunityIndexView.svelte"
@@ -73,6 +73,8 @@
   import { BBox } from "../Logic/BBox"
   import ReviewsOverview from "./Reviews/ReviewsOverview.svelte"
   import ExtraLinkButton from "./BigComponents/ExtraLinkButton.svelte"
+  import CloseAnimation from "./Base/CloseAnimation.svelte"
+  import { LastClickFeatureSource } from "../Logic/FeatureSource/Sources/LastClickFeatureSource"
 
   export let state: ThemeViewState
   let layout = state.layout
@@ -138,7 +140,7 @@
     const bottomRight = mlmap.unproject([rect.right, rect.bottom])
     const bbox = new BBox([
       [topLeft.lng, topLeft.lat],
-      [bottomRight.lng, bottomRight.lat],
+      [bottomRight.lng, bottomRight.lat]
     ])
     state.visualFeedbackViewportBounds.setData(bbox)
   }
@@ -151,7 +153,7 @@
   })
   let featureSwitches: FeatureSwitchState = state.featureSwitches
   let availableLayers = state.availableLayers
-  let currentViewLayer = layout.layers.find((l) => l.id === "current_view")
+  let currentViewLayer: LayerConfig = layout.layers.find((l) => l.id === "current_view")
   let rasterLayer: Store<RasterLayerPolygon> = state.mapProperties.rasterLayer
   let rasterLayerName =
     rasterLayer.data?.properties?.name ??
@@ -183,6 +185,22 @@
     const animation = mlmap.keyboard?.keydown(e)
     animation?.cameraAnimation(mlmap)
   }
+
+  /**
+   * Needed for the animations
+   */
+  let openMapButton : UIEventSource<HTMLElement> = new UIEventSource<HTMLElement>(undefined)
+  let openMenuButton : UIEventSource<HTMLElement> = new UIEventSource<HTMLElement>(undefined)
+  let openCurrentViewLayerButton : UIEventSource<HTMLElement> = new UIEventSource<HTMLElement>(undefined)
+  let _openNewElementButton: HTMLButtonElement
+  let openNewElementButton : UIEventSource<HTMLElement> = new UIEventSource<HTMLElement>(undefined)
+
+  $: {
+    openNewElementButton.setData(_openNewElementButton)
+  }
+  let openFilterButton : UIEventSource<HTMLElement> = new UIEventSource<HTMLElement>(undefined)
+  let openBackgroundButton : UIEventSource<HTMLElement> = new UIEventSource<HTMLElement>(undefined)
+
 </script>
 
 <div class="absolute top-0 left-0 h-screen w-screen overflow-hidden">
@@ -228,6 +246,7 @@
     <MapControlButton
       on:click={() => state.guistate.themeIsOpened.setData(true)}
       on:keydown={forwardEventToMap}
+      htmlElem={openMapButton}
     >
       <div class="m-0.5 mx-1 flex cursor-pointer items-center max-[480px]:w-full sm:mx-1 md:mx-2">
         <img
@@ -245,15 +264,17 @@
       arialabel={Translations.t.general.labels.menu}
       on:click={() => state.guistate.menuIsOpened.setData(true)}
       on:keydown={forwardEventToMap}
+      htmlElem={openMenuButton}
     >
       <MenuIcon class="h-8 w-8 cursor-pointer" />
     </MapControlButton>
     {#if currentViewLayer?.tagRenderings && currentViewLayer.defaultIcon()}
       <MapControlButton
         on:click={() => {
-          state.selectedElement.setData(state.currentView.features?.data?.[0])
+          state.selectCurrentView()
         }}
         on:keydown={forwardEventToMap}
+        htmlElem={openCurrentViewLayerButton}
       >
         <ToSvelte
           construct={() => currentViewLayer.defaultIcon().SetClass("w-8 h-8 cursor-pointer")}
@@ -287,6 +308,7 @@
           <button
             class="pointer-events-auto w-fit low-interaction"
             class:disabled={$currentZoom < Constants.minZoomLevelToAddNewPoint}
+            bind:this={_openNewElementButton}
             on:click={() => {
               state.openNewDialog()
             }}
@@ -310,12 +332,13 @@
             arialabel={Translations.t.general.labels.filter}
             on:click={() => state.guistate.openFilterView()}
             on:keydown={forwardEventToMap}
+            htmlElem={openFilterButton}
           >
             <Filter class="h-6 w-6" />
           </MapControlButton>
         </If>
         <If condition={state.featureSwitches.featureSwitchBackgroundSelection}>
-          <OpenBackgroundSelectorButton hideTooltip={true} {state} />
+          <OpenBackgroundSelectorButton hideTooltip={true} {state} htmlElem={openBackgroundButton} />
         </If>
         <a
           class="bg-black-transparent pointer-events-auto h-fit max-h-12 cursor-pointer self-end overflow-hidden rounded-2xl pl-1 pr-2 text-white opacity-50 hover:opacity-100"
@@ -638,7 +661,7 @@
         <Tr t={Translations.t.privacy.title} />
       </h2>
       <div class="overflow-auto p-4">
-        <PrivacyPolicy />
+        <PrivacyPolicy {state}/>
       </div>
     </div>
   </FloatOver>
@@ -657,3 +680,11 @@
     </div>
   </FloatOver>
 </If>
+
+
+<CloseAnimation isOpened={state.guistate.themeIsOpened} moveTo={openMapButton} debug="theme"/>
+<CloseAnimation isOpened={state.guistate.menuIsOpened} moveTo={openMenuButton} debug="menu"/>
+<CloseAnimation isOpened={selectedLayer.map(sl => (sl !== undefined && sl === currentViewLayer))} moveTo={openCurrentViewLayerButton} debug="currentViewLayer"/>
+<CloseAnimation isOpened={selectedElement.map(sl =>{ console.log("SE is", sl);  return sl !== undefined && sl?.properties?.id === LastClickFeatureSource.newPointElementId })} moveTo={openNewElementButton} debug="newElement"/>
+<CloseAnimation isOpened={state.guistate.filtersPanelIsOpened} moveTo={openFilterButton} debug="filter"/>
+<CloseAnimation isOpened={state.guistate.backgroundLayerSelectionIsOpened} moveTo={openBackgroundButton} debug="bg"/>

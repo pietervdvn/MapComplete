@@ -439,4 +439,16 @@ export interface LayoutConfigJson {
      * group: hidden
      */
     enableNodeDatabase?: boolean
+
+    /**
+     * question: Should this theme leak some location info when making changes?
+     *
+     * When a changeset is made, a 'distance to object'-class is written to the changeset.
+     * For some particular themes and layers, this might leak too much information, and we want to obfuscate this
+     *
+     * ifunset: Write 'change_within_x_m' as usual and if GPS is enabled
+     * iftrue: Do not write 'change_within_x_m' and do not indicate that this was done by survey
+     */
+    enableMorePrivacy: boolean
+
 }

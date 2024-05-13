@@ -43,6 +43,7 @@ export default class UserRelatedState {
     public readonly fixateNorth: UIEventSource<undefined | "yes">
     public readonly a11y: UIEventSource<undefined | "always" | "never" | "default">
     public readonly homeLocation: FeatureSource
+    public readonly morePrivacy: UIEventSource<undefined | "yes" | "no">
     /**
      * The language as saved into the preferences of the user, if logged in.
      * Note that this is _different_ from the languages a user can set via the osm.org interface here: https://www.openstreetmap.org/preferences
@@ -106,12 +107,12 @@ export default class UserRelatedState {
             })
         )
         this.language = this.osmConnection.GetPreference("language")
-        this.showTags = <UIEventSource<any>>this.osmConnection.GetPreference("show_tags")
-        this.showCrosshair = <UIEventSource<any>>this.osmConnection.GetPreference("show_crosshair")
-        this.fixateNorth = <UIEventSource<"yes">>this.osmConnection.GetPreference("fixate-north")
-        this.a11y = <UIEventSource<"always" | "never" | "default">>(
-            this.osmConnection.GetPreference("a11y")
-        )
+        this.showTags = this.osmConnection.GetPreference("show_tags")
+        this.showCrosshair = this.osmConnection.GetPreference("show_crosshair")
+        this.fixateNorth = this.osmConnection.GetPreference("fixate-north")
+        this.morePrivacy = this.osmConnection.GetPreference("more_privacy", "no")
+
+        this.a11y = this.osmConnection.GetPreference("a11y")
 
         this.mangroveIdentity = new MangroveIdentity(
             this.osmConnection.GetLongPreference("identity", "mangrove"),

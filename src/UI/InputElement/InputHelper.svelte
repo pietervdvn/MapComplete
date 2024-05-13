@@ -19,6 +19,7 @@
   import OpeningHoursInput from "./Helpers/OpeningHoursInput.svelte"
   import SlopeInput from "./Helpers/SlopeInput.svelte"
   import type { SpecialVisualizationState } from "../SpecialVisualization"
+  import NameSuggestionIndexInput from "./Helpers/NameSuggestionIndexInput.svelte"
 
   export let type: ValidatorType
   export let value: UIEventSource<string | object>
@@ -26,6 +27,9 @@
   export let feature: Feature
   export let args: (string | number | boolean)[] = undefined
   export let state: SpecialVisualizationState
+  export let helperArgs: (string | number | boolean)[]
+  export let key: string
+  export let extraTags: UIEventSource<Record<string, string>>
 
   let properties = { feature, args: args ?? [] }
 </script>
@@ -50,4 +54,6 @@
   <SlopeInput {value} {feature} {state} />
 {:else if type === "wikidata"}
   <ToSvelte construct={() => InputHelpers.constructWikidataHelper(value, properties)} />
+{:else if type === "nsi"}
+  <NameSuggestionIndexInput {value} {feature} {helperArgs} {key} {extraTags} />
 {/if}

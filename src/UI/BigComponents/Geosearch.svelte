@@ -113,7 +113,7 @@
     {:else}
       <input
         type="search"
-        class="w-full"
+        class="w-full outline-none"
         bind:this={inputElement}
         on:keypress={(keypr) => {
           feedback = undefined

@@ -19,6 +19,7 @@ import Title from "../../UI/Base/Title"
 import Table from "../../UI/Base/Table"
 import ChangeLocationAction from "./Actions/ChangeLocationAction"
 import ChangeTagAction from "./Actions/ChangeTagAction"
+import FeatureSwitchState from "../State/FeatureSwitchState"
 
 /**
  * Handles all changes made to OSM.
@@ -28,7 +29,7 @@ export class Changes {
     public readonly pendingChanges: UIEventSource<ChangeDescription[]> =
         LocalStorageSource.GetParsed<ChangeDescription[]>("pending-changes", [])
     public readonly allChanges = new UIEventSource<ChangeDescription[]>(undefined)
-    public readonly state: { allElements?: IndexedFeatureSource; osmConnection: OsmConnection }
+    public readonly state: { allElements?: IndexedFeatureSource; osmConnection: OsmConnection, featureSwitches?: FeatureSwitchState }
     public readonly extraComment: UIEventSource<string> = new UIEventSource(undefined)
     public readonly backend: string
     public readonly isUploading = new UIEventSource(false)
@@ -45,7 +46,8 @@ export class Changes {
             allElements?: IndexedFeatureSource
             featurePropertiesStore?: FeaturePropertiesStore
             osmConnection: OsmConnection
-            historicalUserLocations?: FeatureSource
+            historicalUserLocations?: FeatureSource,
+            featureSwitches?: FeatureSwitchState
         },
         leftRightSensitive: boolean = false
     ) {
@@ -429,6 +431,9 @@ export class Changes {
         }
         if (!change.trackStatistics) {
             // Probably irrelevant, such as a new helper node
+            return
+        }
+        if(this.state.featureSwitches.featureSwitchMorePrivacy?.data){
             return
         }
 

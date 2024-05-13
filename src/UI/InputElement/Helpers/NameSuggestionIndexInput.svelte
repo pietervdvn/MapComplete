@@ -27,9 +27,9 @@
     addExtraTags = helperArgs[1].split(";")
   }
 
-  const path = `${key}s/${maintag.split("=")[0]}/${maintag.split("=")[1]}`
+  const [k, v] = maintag.split("=")
 
-  let items: NSIItem[] = NameSuggestionIndex.getSuggestionsFor(path, feature.properties["_country"], GeoOperations.centerpointCoordinates(feature))
+  let items: NSIItem[] = NameSuggestionIndex.getSuggestionsFor(key, k, v, feature.properties["_country"], GeoOperations.centerpointCoordinates(feature))
 
   let selectedItem: NSIItem = items.find((item) => item.tags[key] === value.data)
 
@@ -113,10 +113,10 @@
   })
 </script>
 
-
 {#if items?.length >= 0}
   <div>
     <div class="normal-background my-2 flex w-5/6 justify-between rounded-full pl-2">
+      <!-- TODO translate placeholder -->
       <input type="text" placeholder="Filter entries" bind:value={filter} class="outline-none" />
       <SearchIcon aria-hidden="true" class="h-6 w-6 self-end" />
     </div>

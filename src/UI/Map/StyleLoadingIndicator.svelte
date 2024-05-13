@@ -1,11 +1,11 @@
 <script lang="ts">
   import Loading from "../Base/Loading.svelte"
-  import { Stores, UIEventSource } from "../../Logic/UIEventSource"
+  import { Store, Stores, UIEventSource } from "../../Logic/UIEventSource"
   import { Map as MlMap } from "maplibre-gl"
   import { onDestroy } from "svelte"
 
   let isLoading = false
-  export let map: UIEventSource<MlMap>
+  export let map: Store<MlMap>
   /**
    * Optional. Only used for the 'global' change indicator so that it won't spin on pan/zoom but only when a change _actually_ occured
    */

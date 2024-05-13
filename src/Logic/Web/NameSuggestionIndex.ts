@@ -5,6 +5,8 @@ import type { Feature, FeatureCollection, MultiPolygon } from "geojson"
 import * as turf from "@turf/turf"
 import { Utils } from "../../Utils"
 import TagInfo from "./TagInfo"
+import type { Feature, MultiPolygon } from "geojson"
+import * as turf from "@turf/turf"
 
 /**
  * Main name suggestion index file
@@ -140,6 +142,7 @@ export default class NameSuggestionIndex {
                 return true
             }
             const resolvedSet = NameSuggestionIndex.loco.resolveLocationSet(i.locationSet)
+
             if (resolvedSet) {
                 // We actually have a location set, so we can check if the feature is in it, by determining if our point is inside the MultiPolygon using @turf/boolean-point-in-polygon
                 // This might occur for some extra boundaries, such as counties, ...

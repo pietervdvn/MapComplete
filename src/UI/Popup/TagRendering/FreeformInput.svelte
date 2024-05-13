@@ -15,6 +15,7 @@
   export let unvalidatedText: UIEventSource<string> = new UIEventSource<string>(value.data)
   export let config: TagRenderingConfig
   export let tags: UIEventSource<Record<string, string>>
+  export let extraTags: UIEventSource<Record<string, string>>
 
   export let feature: Feature = undefined
   export let state: SpecialVisualizationState
@@ -27,6 +28,8 @@
     inline = false
     inline = config.freeform?.inline
   }
+  let helperArgs = config.freeform?.helperArgs
+  let key = config.freeform?.key
 
   const dispatch = createEventDispatcher<{ selected }>()
   export let feedback: UIEventSource<Translation>
@@ -75,6 +78,9 @@
     type={config.freeform.type}
     {value}
     {state}
+    {helperArgs}
+    {key}
+    {extraTags}
     on:submit
   />
 </div>

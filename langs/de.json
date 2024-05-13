@@ -673,11 +673,20 @@
         "tryAgain": "Wähle eine andere Art"
     },
     "privacy": {
-        "editing": "Ihre Änderungen werden auf OpenStreetMap gespeichert und sind öffentlich zugänglich. Ein mit MapComplete erstellter Änderungssatz enthält folgende Daten: <ul><li>Ihre Änderungen</li><li>Ihren Benutzernamen</li><li>Den Zeitpunkt Ihrer Änderungen</li><li>Das bei Ihren Änderungen verwendete MapComplete-Thema</li><li>Die Sprache Ihrer Benutzeroberfläche</li><li>Ihre Entfernung zu den geänderten Objekten. Dadurch kann festgestellt werden, ob die Änderungen vor Ort gespeichert wurden</li></ul> Ausführliche Informationen finden Sie in <a href=\"https://wiki.osmfoundation.org/wiki/Privacy_Policy\" target=\"_blank\">den Datenschutzbestimmungen auf OpenStreetMap.org</a>. Wir möchten Sie daran erinnern, dass Sie zur Anmeldung einen fiktiven Namen verwenden können.",
+        "editingIntro": "Ihre Änderungen werden auf OpenStreetMap gespeichert und sind öffentlich zugänglich. Ein mit MapComplete erstellter Änderungssatz enthält folgende Daten:",
+        "editingOutro": "Ausführliche Informationen finden Sie in <a href=\"https://wiki.osmfoundation.org/wiki/Privacy_Policy\" target=\"_blank\">den Datenschutzbestimmungen auf OpenStreetMap.org</a>. Wir möchten Sie daran erinnern, dass Sie zur Anmeldung einen fiktiven Namen verwenden können.",
         "editingTitle": "Ihre Änderungen",
         "geodata": "Wenn MapComplete Ihren aktuellen Standort ermittelt, verbleibt dieser wie auch zuvor ermittelte Standorte auf Ihrem Gerät. Ihre Standortdaten werden niemals automatisch an eine andere Stelle gesendet - es sei denn, eine Funktion gibt eindeutig etwas anderes an.",
         "geodataTitle": "Standortdaten",
         "intro": "Privatsphäre ist wichtig - sowohl für den Einzelnen als auch für die Gesellschaft. MapComplete versucht, Ihre Privatsphäre so weit wie möglich zu respektieren - bis zu dem Punkt, an dem kein lästiger Cookie-Banner mehr nötig ist. Dennoch möchten wir Sie darüber informieren, welche Informationen gesammelt und weitergegeben werden, unter welchen Umständen und warum diese Kompromisse gemacht werden.",
+        "items": {
+            "changesYouMake": "Ihre Änderungen",
+            "username": "Ihren Benutzernamen",
+            "date": "Den Zeitpunkt Ihrer Änderungen",
+            "theme": "Das bei Ihren Änderungen verwendete MapComplete-Thema",
+            "language": "Die Sprache Ihrer Benutzeroberfläche",
+            "distanceIndicator": "Ihre Entfernung zu den geänderten Objekten. Dadurch kann festgestellt werden, ob die Änderungen vor Ort gespeichert wurden"
+        },
         "miscCookies": "MapComplete integriert weitere Dienste, insbesondere um Bilder von Objekten zu laden. Diese Bilder werden auf Servern von Drittanbietern gehostet, die möglicherweise eigene Cookies setzen.",
         "miscCookiesTitle": "Andere Cookies",
         "surveillance": "Da Sie die Datenschutzbestimmungen lesen, ist Ihnen der Datenschutz wahrscheinlich wichtig - uns auch! Wir haben sogar <a href=\"https://mapcomplete.org/surveillance\">ein Thema erstellt, das Überwachungskameras zeigt.</a> Zögern Sie nicht, sie alle zu mappen!",

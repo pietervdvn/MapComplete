@@ -712,9 +712,6 @@
             "public_bookcase-brand": {
                 "mappings": {
                     "0": {
-                        "then": "A „Little Free Library” hálózat része"
-                    },
-                    "1": {
                         "then": "Ez a nyilvános könyvespolc nem része egy nagyobb hálózatnak"
                     }
                 },

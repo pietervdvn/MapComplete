@@ -28,6 +28,7 @@
     "pt_BR": "Completaremos os dados das características de publicidade com referência, operador e iluminação",
     "it": "Completeremo i dati da caratteristiche pubblicitarie, con referenza, operatore e illuminazione"
   },
+  "enableMorePrivacy": true,
   "source": {
     "osmTags": {
       "and": [

@@ -6638,20 +6638,6 @@
                 "freeform": {
                     "placeholder": "Brand"
                 },
-                "mappings": {
-                    "0": {
-                        "then": "This is an Amazon Locker"
-                    },
-                    "1": {
-                        "then": "This is a DHL Packstation"
-                    },
-                    "2": {
-                        "then": "This is a DPD Pickup Station"
-                    },
-                    "3": {
-                        "then": "This is a PostNL Parcel Locker"
-                    }
-                },
                 "question": "What is the brand of the parcel locker?",
                 "render": "This is a {brand} parcel locker"
             },
@@ -7484,11 +7470,11 @@
                 "question": "Is this bookcase located outdoors?"
             },
             "public_bookcase-brand": {
+                "freeform": {
+                    "placeholder": "Name of the network"
+                },
                 "mappings": {
                     "0": {
-                        "then": "Part of the network 'Little Free Library'"
-                    },
-                    "1": {
                         "then": "This public bookcase is not part of a bigger network"
                     }
                 },
