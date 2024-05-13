@@ -181,6 +181,17 @@
     ]
   },
   {
+    "path": "pmd.svg",
+    "license": "CC-BY-SA-4.0",
+    "authors": [
+      "Modified from Tobias Zwick"
+    ],
+    "sources": [
+      "https://github.com/streetcomplete/StreetComplete/blob/master/res/graphics/recycling%20icons/cans.svg",
+      "https://github.com/streetcomplete/StreetComplete/blob/master/res/graphics/recycling%20icons/plastic_packaging.svg"
+    ]
+  },
+  {
     "path": "printer_cartridges.svg",
     "license": "CC-BY-4.0",
     "authors": [
