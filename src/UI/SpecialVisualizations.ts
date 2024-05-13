@@ -35,7 +35,7 @@ import StatisticsPanel from "./BigComponents/StatisticsPanel"
 import AutoApplyButton from "./Popup/AutoApplyButton"
 import { LanguageElement } from "./Popup/LanguageElement/LanguageElement"
 import FeatureReviews from "../Logic/Web/MangroveReviews"
-import Maproulette from "../Logic/Maproulette"
+import Maproulette, { MaprouletteTask } from "../Logic/Maproulette"
 import SvelteUIElement from "./Base/SvelteUIElement"
 import { BBoxFeatureSourceForLayer } from "../Logic/FeatureSource/Sources/TouchesBboxFeatureSource"
 import { Feature, GeoJsonProperties } from "geojson"
@@ -1039,7 +1039,7 @@ console.log(">>> ",helpTexts.join("\n\n"))
                         return undefined
                     }
                     const challenge = Stores.FromPromise(
-                        Utils.downloadJsonCached(
+                        Utils.downloadJsonCached<MaprouletteTask>(
                             `${Maproulette.defaultEndpoint}/challenge/${parentId}`,
                             24 * 60 * 60 * 1000
                         )

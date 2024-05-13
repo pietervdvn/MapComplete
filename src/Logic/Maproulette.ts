@@ -1,5 +1,9 @@
 import Constants from "../Models/Constants"
-
+export interface MaprouletteTask {
+    name: string,
+    description: string,
+    instruction: string
+}
 export default class Maproulette {
     public static readonly defaultEndpoint = "https://maproulette.org/api/v2"
 
