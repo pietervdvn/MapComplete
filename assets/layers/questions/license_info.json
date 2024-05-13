@@ -60,6 +60,18 @@
     ]
   },
   {
+    "path": "dogs_outside.svg",
+    "license": "PUBLIC-DOMAIN",
+    "authors": [
+      "OpenClipArt",
+      "Mannivu"
+    ],
+    "sources": [
+      "https://freesvg.org/no-dogs-round-sign-vector-graphics",
+      "https://github.com/pietervdvn/MapComplete/pull/1948"
+    ]
+  },
+  {
     "path": "nfc_card.svg",
     "license": "CC0-1.0",
     "authors": [
