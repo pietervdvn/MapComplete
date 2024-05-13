@@ -32,7 +32,7 @@
         "title": "Panchine"
     },
     "bicycle_rental": {
-        "description": "In questa mappa trovi i luoghi conosciuti da OpenStreetMap  dove puoi noleggiare delle biciclette"
+        "description": "In questa mappa trovi i luoghi conosciuti da OpenStreetMap dove puoi noleggiare delle biciclette"
     },
     "bicyclelib": {
         "description": "«Biciclette in prestito» è un luogo dove le biciclette possono essere prese in prestito, spesso in cambio di un piccolo contributo annuale. Un caso degno di nota è quello delle biciclette in prestito per bambini che permettono loro di cambiare le dimensioni della propria bici quando quella attuale diventa troppo piccola",
@@ -526,7 +526,7 @@
         }
     },
     "ghostbikes": {
-        "description": "Una <b>bici fantasma</b> è un monumento in ricordo di un ciclista che è morto in un incidente stradale, che ha la forma di un una bicicletta bianca installata in maniera permanente ne luogo dell’incidente.<br/><br/>In questa cartina, è possibile vedere tutte le bici fantasma che sono state aggiunte su OpenStreetMap. Ne manca una? Chiunque può aggiungere o migliorare le informazioni qui presenti (è solo richiesto un account gratuito su OpenStreetMap).",
+        "description": "Una <b>bici fantasma</b> è un monumento in ricordo di un ciclista che è morto in un incidente stradale, che ha la forma di un una bicicletta bianca installata in maniera permanente ne luogo dell’incidente.<br/><br/>In questa mappa, è possibile vedere tutte le bici fantasma che sono state aggiunte su OpenStreetMap. Ne manca una? Chiunque può aggiungere o migliorare le informazioni qui presenti (è solo richiesto un account gratuito su OpenStreetMap). <p>Esiste un <a href='https://masto.bike/@ghostbikebot' target='_blank'>account automatizzato su Mastodon da aggiornamenti mensili sulle bici fantasma del mondo</a></p>",
         "title": "Bici fantasma"
     },
     "hackerspaces": {
@@ -535,9 +535,9 @@
         "title": "Hackerspace"
     },
     "hailhydrant": {
-        "description": "In questa cartina puoi vedere e aggiornare idranti, stazioni dei pompieri, stazioni delle ambulanze ed estintori del tuo quartiere preferito.\n\nPuoi seguire la tua posizione precisa (solo su cellulare) e selezionare i livelli che ti interessano nell’angolo in basso a sinistra. Puoi anche usare questo strumento per aggiungere o modificare i PDI sulla mappa e fornire ulteriori dettagli rispondendo alle domande.\n\nTutte le modifiche che farai verranno automaticamente salvate nel database globale di OpenStreetMap e potranno essere riutilizzate liberamente da tutti.",
+        "description": "In questa cartina puoi vedere e aggiornare idranti, stazioni dei pompieri, stazioni delle ambulanze ed estintori del tuo quartiere preferito.",
         "shortDescription": "Carta che mostra gli idranti, gli estintori, le caserme dei vigili del fuoco e le stazioni delle ambulanze.",
-        "title": "Idranti, estintori, caserme dei vigili del fuoco e stazioni delle ambulanze."
+        "title": "Idranti, estintori, caserme dei vigili del fuoco e stazioni delle ambulanze"
     },
     "maps": {
         "description": "In questa carta puoi trovare tutte le mappe conosciute da OpenStreetMap (tipicamente una grossa mappa su di un pannello informativo che mostra l’area, la città o la regione, ad es. una mappa turistica dietro a un manifesto, la mappa di una riserva naturale, la mappa della rete ciclistica regionale, etc.)<br/><br/>Se manca una mappa, puoi aggiungerla facilmente a questa su OpenStreetMap.",
@@ -572,7 +572,7 @@
         "title": "Codici postali"
     },
     "postboxes": {
-        "description": "In questa cartina puoi veder e modificare gli uffici postali e le buche delle lettere. Puoi usare questa cartina per trovare dove imbucare la tua prossima cartolina! :)<br/>Hai trovato un errore o una buca delle lettere mancante? Puoi modificare questa cartina con un account gratuito su OpenStreetMap.",
+        "description": "In questa mappa puoi veder e modificare gli uffici postali e le buche delle lettere. Puoi usare questa mappa per scoprire dove imbucare la tua prossima cartolina! :)<br/>Hai trovato un errore o una buca delle lettere mancante? Puoi modificare questa cartina con un account gratuito su OpenStreetMap.",
         "shortDescription": "Una cartina che mostra le buche delle lettere e gli uffici postali",
         "title": "Buche delle lettere e uffici postali"
     },
