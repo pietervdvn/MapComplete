@@ -1,4 +1,8 @@
 {
+    "advertising": {
+        "description": "Vi siete mai chiesti quante pubblicità ci sono nelle nostre strade e strade? Con questa mappa è possibile trovare e aggiungere informazioni su tutte le caratteristiche pubblicitarie che si possono trovare sulla strada",
+        "title": "Pubblicità"
+    },
     "aed": {
         "description": "Su questa mappa puoi trovare e segnalare i defibrillatori nelle vicinanze",
         "title": "Mappa dei defibrillatori (DAE)"
@@ -8,7 +12,7 @@
         "title": "Mappa libera delle opere d'arte"
     },
     "atm": {
-        "description": "Questa mappa mostra gli sportelli bancomat per ritirare o depositare del denaro",
+        "description": "Questa mappa mostra gli sportelli Bancomat per ritirare o depositare del denaro",
         "layers": {
             "3": {
                 "override": {
@@ -27,7 +31,7 @@
         "title": "Sportelli bancomat"
     },
     "benches": {
-        "description": "Questa mappa mostra tutte le panchine che sono state aggiunte su OpenStreetMap: panchine individuali e quelle alle fermate del trasporto pubblico o nei ripari. Se disponi di un account OpenStreetMap puoi mappare delle nuove panchine o modificare i dettagli di quelle esistenti.",
+        "description": "Questa mappa mostra tutte le panchine che sono state aggiunte su OpenStreetMap: panchine individuali e quelle alle fermate del trasporto pubblico o sotto le pensiline.",
         "shortDescription": "Una mappa delle panchine",
         "title": "Panchine"
     },
@@ -335,6 +339,14 @@
     },
     "cycle_highways": {
         "description": "Questa cartina mostra le strade per velocipedi",
+        "layers": {
+            "0": {
+                "name": "strade per biciclette",
+                "title": {
+                    "render": "strada per bicilette"
+                }
+            }
+        },
         "title": "Strade per velocipedi"
     },
     "cycle_infra": {
@@ -424,7 +436,7 @@
             }
         },
         "shortDescription": "Qual è l’origine di un toponimo?",
-        "title": "Apri Carta Etimologica"
+        "title": "Etimologia - da cosa prende nome un luogo?"
     },
     "facadegardens": {
         "description": "I <a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>giardini veritcali</a> e gli alberi in città non solo portano pace e tranquillità ma creano anche un ambiente più bello, aumentano la biodiversità, rendono il clima più fresco e migliorano la qualità dell’aria. <br/> Klimaan VZW e Mechelen Klimaatneutraal vogliono mappare sia i giardini verticali esistenti che quelli nuovi per mostrarli a quanti vogliono costruire un loro proprio giardino o per quelli che amano la natura e vogliono camminare per la città.<br/>Per ulteriori informazioni visita <a href='https://klimaan.be/' target=_blank>klimaan.be</a>.",
