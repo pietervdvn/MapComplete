@@ -26,6 +26,7 @@ import { Translatable } from "../Json/Translatable"
 import { ConversionContext } from "./ConversionContext"
 import { AvailableRasterLayers } from "../../RasterLayers"
 import PointRenderingConfigJson from "../Json/PointRenderingConfigJson"
+import NameSuggestionIndex from "../../../Logic/Web/NameSuggestionIndex"
 
 class ValidateLanguageCompleteness extends DesugaringStep<LayoutConfig> {
     private readonly _languages: string[]
@@ -1030,6 +1031,14 @@ class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
                         .err(
                             `The rendering for language ${ln} does not contain \`{${json.freeform.key}}\`. This is a bug, as this rendering should show exactly this freeform key!`
                         )
+                }
+            }
+            if(json.freeform.type === "nsi"){
+                const [key, value] = json.freeform.helperArgs[0].split("=")
+                const path = `${json.freeform.key}s/${key}/${value}`
+                const suggestions = NameSuggestionIndex.getSuggestionsFor(path)
+                if(suggestions === undefined){
+                    context.enters("freeform","type").err("No entry found in the 'Name Suggestion Index' for "+path)
                 }
             }
         }
