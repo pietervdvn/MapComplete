@@ -35,6 +35,23 @@
             "1": {
                 "title": "un cartellone pubblicitario fissato a terra"
             },
+            "10": {
+                "description": "Un telo impermeabile con un messaggio stampato, fissato in modo permanente al muro",
+                "title": "un telone"
+            },
+            "11": {
+                "title": "un totem"
+            },
+            "12": {
+                "description": "Utilizzato per insegna pubblicitaria, un'insegna al neon, i loghi o le indicazioni d'entrata",
+                "title": "un'insegna"
+            },
+            "13": {
+                "title": "una scultura"
+            },
+            "14": {
+                "title": "un murales"
+            },
             "2": {
                 "title": "un cartellone pubblicitario fissato al muro"
             },
@@ -54,23 +71,6 @@
             },
             "8": {
                 "title": "uno schermo fissato al muro"
-            },
-            "10": {
-                "description": "Un telo impermeabile con un messaggio stampato, fissato in modo permanente al muro",
-                "title": "un telone"
-            },
-            "11": {
-                "title": "un totem"
-            },
-            "12": {
-                "description": "Utilizzato per insegna pubblicitaria, un'insegna al neon, i loghi o le indicazioni d'entrata",
-                "title": "un'insegna"
-            },
-            "13": {
-                "title": "una scultura"
-            },
-            "14": {
-                "title": "un murales"
             }
         },
         "tagRenderings": {
@@ -124,7 +124,7 @@
                 "render": "La stazione si trova a {addr:place}."
             },
             "ambulance-street": {
-                "question": " Come si chiama la strada in cui si trova questa stazione?",
+                "question": "Come si chiama la strada in cui si trova questa stazione?",
                 "render": "Questa stazione si trova in {addr:street}."
             }
         },
@@ -153,6 +153,15 @@
                     "1": {
                         "then": "Murale"
                     },
+                    "10": {
+                        "then": "Azulejo (ornamento decorativo piastrellato spagnolo)"
+                    },
+                    "11": {
+                        "then": "Mosaico di piastrelle"
+                    },
+                    "12": {
+                        "then": "Scultura in legno"
+                    },
                     "2": {
                         "then": "Dipinto"
                     },
@@ -176,15 +185,6 @@
                     },
                     "9": {
                         "then": "Rilievo"
-                    },
-                    "10": {
-                        "then": "Azulejo (ornamento decorativo piastrellato spagnolo)"
-                    },
-                    "11": {
-                        "then": "Mosaico di piastrelle"
-                    },
-                    "12": {
-                        "then": "Scultura in legno"
                     }
                 },
                 "question": "Che tipo di opera d’arte è questo?",
@@ -496,6 +496,9 @@
             "render": "Bici in prestito"
         }
     },
+    "bicycle_rental": {
+        "description": "Stazione noleggio biciclette"
+    },
     "bicycle_tube_vending_machine": {
         "name": "Distributore automatico di camere d’aria per bici",
         "presets": {
@@ -633,7 +636,7 @@
                         "then": "Archetti"
                     },
                     "1": {
-                        "then": "Scolapiatti"
+                        "then": "Rastrelliera classica"
                     },
                     "2": {
                         "then": "Blocca manubrio"
@@ -1463,7 +1466,7 @@
     },
     "extinguisher": {
         "description": "Livello della mappa che mostra gli idranti antincendio.",
-        "name": "Cartina degli estintori.",
+        "name": "Mappa degli estintori",
         "presets": {
             "0": {
                 "description": "Un estintore è un dispositivo portatile di piccole dimensioni usato per spegnere un incendio",
@@ -1631,16 +1634,16 @@
             "hydrant-state": {
                 "mappings": {
                     "0": {
-                        "then": "L’idrante è (parzialmente o completamente) funzionante."
+                        "then": "L’idrante è (parzialmente o completamente) funzionante"
                     },
                     "1": {
-                        "then": "L’idrante è fuori servizio."
+                        "then": "L’idrante è fuori servizio"
                     },
                     "2": {
-                        "then": "L’idrante è stato rimosso."
+                        "then": "L’idrante è stato rimosso"
                     }
                 },
-                "question": "Aggiorna lo stato di funzionamento dell’idrante."
+                "question": "Questo idrante è ancora in funzione?"
             },
             "hydrant-type": {
                 "mappings": {
@@ -1765,7 +1768,7 @@
                 "render": "Area: {_surface:ha} ha"
             },
             "phone": {
-                "question": "Quale numero di telefono comporre per fare domande o segnalare problemi riguardanti questa riserva naturale?br/>",
+                "question": "Quale numero di telefono comporre per fare domande o segnalare problemi riguardanti questa riserva naturale?",
                 "questionHint": "Rispetta la privacy (inserisci il numero di telefono privato solo se questo è noto pubblicamente)"
             }
         }
@@ -1919,6 +1922,9 @@
             "render": "Parco giochi"
         }
     },
+    "postboxes": {
+        "description": "Questo livello mostra le buche delle lettere."
+    },
     "public_bookcase": {
         "description": "Una vetrinetta ai bordi della strada contenente libri, aperta al pubblico",
         "name": "Microbiblioteche",
@@ -1970,7 +1976,7 @@
                         "then": "Fa parte della rete 'Little Free Library'"
                     },
                     "1": {
-                        "then": "Questa microbiblioteca non fa parte di una rete"
+                        "then": "Questa biblioteca pubblica non fa parte di una rete"
                     }
                 },
                 "question": "Questa microbiblioteca fa parte di una rete?",
@@ -1996,7 +2002,7 @@
             "public_bookcase-ref": {
                 "mappings": {
                     "0": {
-                        "then": "Questa microbiblioteca non fa parte di una rete"
+                        "then": "Questa biblioteca non fa parte di una rete"
                     }
                 },
                 "question": "Qual è il numero identificativo di questa microbiblioteca?",
@@ -2139,27 +2145,6 @@
                     "1": {
                         "question": "Riciclo di batterie"
                     },
-                    "2": {
-                        "question": "Riciclo di confezioni per bevande"
-                    },
-                    "3": {
-                        "question": "Riciclo di lattine"
-                    },
-                    "4": {
-                        "question": "Riciclo di abiti"
-                    },
-                    "5": {
-                        "question": "Riciclo di olio da cucina"
-                    },
-                    "6": {
-                        "question": "Riciclo di olio da motore"
-                    },
-                    "8": {
-                        "question": "Riciclo di umido"
-                    },
-                    "9": {
-                        "question": "Riciclo di bottiglie di vetro"
-                    },
                     "10": {
                         "question": "Riciclo di vetro"
                     },
@@ -2187,8 +2172,29 @@
                     "19": {
                         "question": "Riciclo di secco"
                     },
+                    "2": {
+                        "question": "Riciclo di confezioni per bevande"
+                    },
                     "20": {
                         "question": "Riciclo di secco"
+                    },
+                    "3": {
+                        "question": "Riciclo di lattine"
+                    },
+                    "4": {
+                        "question": "Riciclo di abiti"
+                    },
+                    "5": {
+                        "question": "Riciclo di olio da cucina"
+                    },
+                    "6": {
+                        "question": "Riciclo di olio da motore"
+                    },
+                    "8": {
+                        "question": "Riciclo di umido"
+                    },
+                    "9": {
+                        "question": "Riciclo di bottiglie di vetro"
                     }
                 }
             },
@@ -2241,27 +2247,6 @@
                     "1": {
                         "then": "Cartoni per bevande"
                     },
-                    "2": {
-                        "then": "Lattine"
-                    },
-                    "3": {
-                        "then": "Abiti"
-                    },
-                    "4": {
-                        "then": "Olio da cucina"
-                    },
-                    "5": {
-                        "then": "Olio di motore"
-                    },
-                    "7": {
-                        "then": "Verde"
-                    },
-                    "8": {
-                        "then": "Umido"
-                    },
-                    "9": {
-                        "then": "Bottiglie di vetro"
-                    },
                     "10": {
                         "then": "Vetro"
                     },
@@ -2286,6 +2271,9 @@
                     "19": {
                         "then": "Scarpe"
                     },
+                    "2": {
+                        "then": "Lattine"
+                    },
                     "20": {
                         "then": "Piccoli elettrodomestici"
                     },
@@ -2297,6 +2285,24 @@
                     },
                     "23": {
                         "then": "Secco"
+                    },
+                    "3": {
+                        "then": "Abiti"
+                    },
+                    "4": {
+                        "then": "Olio da cucina"
+                    },
+                    "5": {
+                        "then": "Olio di motore"
+                    },
+                    "7": {
+                        "then": "Verde"
+                    },
+                    "8": {
+                        "then": "Umido"
+                    },
+                    "9": {
+                        "then": "Bottiglie di vetro"
                     }
                 },
                 "question": "Cosa si può riciclare qui?"
@@ -2522,13 +2528,13 @@
             "Surveillance type: public, outdoor, indoor": {
                 "mappings": {
                     "0": {
-                        "then": "Sorveglia un'area pubblica, come una strada, un ponte, una piazza, un parco, una stazione, un passaggio o un sottopasso pubblico, ..."
+                        "then": "Sorveglia un'area pubblica, come una strada, un ponte, una piazza, un parco, una stazione, un passaggio o un sottopasso pubblico, …"
                     },
                     "1": {
                         "then": "Sorveglia un'area esterna di proprietà privata (un parcheggio, una stazione di servizio, un cortile, un ingresso, un vialetto privato, ...)"
                     },
                     "2": {
-                        "then": "Sorveglia un ambiente interno di proprietà privata, per esempio un negozio, un parcheggio sotterraneo privato, ..."
+                        "then": "Sorveglia un ambiente interno di proprietà privata, per esempio un negozio, un parcheggio sotterraneo privato, …"
                     }
                 },
                 "question": "Che cosa sorveglia questa videocamera?"
@@ -2555,7 +2561,7 @@
                     }
                 },
                 "question": "Che cosa è sorvegliato qui?",
-                "render": " Sorveglia una {surveillance:zone}"
+                "render": "Sorveglia una {surveillance:zone}"
             },
             "camera:mount": {
                 "mappings": {
@@ -2642,16 +2648,16 @@
             "toilet-changing_table:location": {
                 "mappings": {
                     "0": {
-                        "then": "Il fasciatoio è nei servizi igienici femminili. "
+                        "then": "Un fasciatoio è nei servizi igienici femminili"
                     },
                     "1": {
-                        "then": "Il fasciatoio è nei servizi igienici maschili. "
+                        "then": "Un fasciatoio è nei servizi igienici maschili"
                     },
                     "2": {
-                        "then": "Il fasciatoio è nei servizi igienici per persone in sedia a rotelle. "
+                        "then": "Un fasciatoio è nei servizi igienici per persone in sedia a rotelle"
                     },
                     "3": {
-                        "then": "Il fasciatoio è in una stanza dedicata. "
+                        "then": "Un fasciatoio è in una stanza dedicata"
                     }
                 },
                 "question": "Dove si trova il fasciatoio?",
@@ -2709,7 +2715,7 @@
                         "then": "Non accessibile in sedia a rotelle"
                     }
                 },
-                "question": "C'è un WC riservato alle persone in sedia a rotelle"
+                "question": "C'è un WC riservato alle persone in sedia a rotelle?"
             }
         },
         "title": {
@@ -2756,7 +2762,7 @@
                         "then": "Non accessibile in sedia a rotelle"
                     }
                 },
-                "question": "C'è un WC riservato alle persone in sedia a rotelle"
+                "question": "C'è un WC riservato alle persone in sedia a rotelle?"
             }
         }
     },
@@ -2921,7 +2927,7 @@
         }
     },
     "waste_basket": {
-        "description": "Questo è un cestino dei rifiuti pubblico, un bidone della spazzatura, dove puoi buttare via la tua spazzatura",
+        "description": "Questo è un cestino, un bidone dei rifiuti pubblico, dove puoi buttare via la tua spazzatura.",
         "filter": {
             "0": {
                 "options": {
