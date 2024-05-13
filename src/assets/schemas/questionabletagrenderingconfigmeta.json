@@ -683,7 +683,8 @@
     "hints": {
       "typehint": "translation",
       "group": "expert",
-      "question": "What placeholder text should be shown in the input-element if there is no input?"
+      "question": "What placeholder text should be shown in the input-element if there is no input?",
+      "ifunset": "No specific placeholder is set, show the type of the textfield"
     },
     "type": [
       {
@@ -1012,7 +1013,7 @@
     "hints": {
       "typehint": "tag",
       "question": "When should this item be shown?",
-      "ifunset": "No specific condition set; always show this tagRendering or ask the question if unkown"
+      "ifunset": "No specific condition set; always show this tagRendering or show this question if unknown"
     },
     "type": [
       {
@@ -1100,7 +1101,8 @@
     "required": false,
     "hints": {
       "typehint": "tag",
-      "question": "When should this item be shown (including special conditions)?"
+      "question": "When should this item be shown (including special conditions)?",
+      "ifunset": "No specific metacondition set which is evaluated against the <i>usersettings/application state</i>; always show this tagRendering or show this question if unknown"
     },
     "type": [
       {
@@ -1113,7 +1115,7 @@
         "type": "string"
       }
     ],
-    "description": "If set, this tag will be evaluated agains the _usersettings/application state_ table.\nEnable 'show debug info' in user settings to see available options.\nNote that values with an underscore depicts _application state_ (including metainfo about the user) whereas values without an underscore depict _user settings_"
+    "description": "If set, this tag will be evaluated against the _usersettings/application state_ table.\nEnable 'show debug info' in user settings to see available options (at the settings-tab).\nNote that values with an underscore depicts _application state_ (including metainfo about the user) whereas values without an underscore depict _user settings_"
   },
   {
     "path": [

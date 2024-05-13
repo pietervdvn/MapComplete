@@ -712,16 +712,7 @@
         "type": "currency"
       }
     },
-    {
-      "builtin": "opening_hours_24_7",
-      "override": {
-        "mappings": [
-          {
-            "alsoShowIf": "opening_hours="
-          }
-        ]
-      }
-    },
+    "opening_hours_24_7_default",
     {
       "id": "operator",
       "question": {

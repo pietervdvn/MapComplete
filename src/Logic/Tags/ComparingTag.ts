@@ -1,10 +1,9 @@
 import { TagsFilter } from "./TagsFilter"
-import { TagConfigJson } from "../../Models/ThemeConfig/Json/TagConfigJson"
 import { Tag } from "./Tag"
 import { ExpressionSpecification } from "maplibre-gl"
 
 export default class ComparingTag extends TagsFilter {
-    private readonly _key: string
+    public readonly key: string
     private readonly _predicate: (value: string) => boolean
     private readonly _representation: "<" | ">" | "<=" | ">="
     private readonly _boundary: string
@@ -16,7 +15,7 @@ export default class ComparingTag extends TagsFilter {
         boundary: string
     ) {
         super()
-        this._key = key
+        this.key = key
         this._predicate = predicate
         this._representation = representation
         this._boundary = boundary
@@ -27,7 +26,7 @@ export default class ComparingTag extends TagsFilter {
     }
 
     asHumanString() {
-        return this._key + this._representation + this._boundary
+        return this.asJson()
     }
 
     asOverpass(): string[] {
@@ -55,7 +54,7 @@ export default class ComparingTag extends TagsFilter {
             return true
         }
         if (other instanceof ComparingTag) {
-            if (other._key !== this._key) {
+            if (other.key !== this.key) {
                 return false
             }
             const selfDesc = this._representation === "<" || this._representation === "<="
@@ -76,7 +75,7 @@ export default class ComparingTag extends TagsFilter {
         }
 
         if (other instanceof Tag) {
-            if (other.key !== this._key) {
+            if (other.key !== this.key) {
                 return false
             }
             if (this.matchesProperties({ [other.key]: other.value })) {
@@ -101,19 +100,25 @@ export default class ComparingTag extends TagsFilter {
      * t.matchesProperties({differentKey: 42}) // => false
      */
     matchesProperties(properties: Record<string, string>): boolean {
-        return this._predicate(properties[this._key])
+        return this._predicate(properties[this.key])
     }
 
     usedKeys(): string[] {
-        return [this._key]
+        return [this.key]
     }
 
     usedTags(): { key: string; value: string }[] {
         return []
     }
 
-    asJson(): TagConfigJson {
-        return this._key + this._representation
+    /**
+     * import { TagUtils } from "../../../src/Logic/Tags/TagUtils"
+     *
+     * TagUtils.Tag("count>42").asJson() // => "count>42"
+     * TagUtils.Tag("count<0").asJson() // => "count<0"
+     */
+    asJson(): string {
+        return this.key + this._representation + this._boundary
     }
 
     optimize(): TagsFilter | boolean {
@@ -124,11 +129,11 @@ export default class ComparingTag extends TagsFilter {
         return true
     }
 
-    visit(f: (TagsFilter) => void) {
+    visit(f: (tf: TagsFilter) => void) {
         f(this)
     }
 
     asMapboxExpression(): ExpressionSpecification {
-        return [this._representation, ["get", this._key], this._boundary]
+        return [this._representation, ["get", this.key], this._boundary]
     }
 }

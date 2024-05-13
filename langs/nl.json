@@ -581,11 +581,20 @@
         "takeImages": "Neem afbeeldingen van de boom om de soort automatisch te herkennen"
     },
     "privacy": {
-        "editing": "Wanneer je een wijziging maakt, wordt deze wijziging opgeslaan op OpenStreetMap. Dit is zichtbaar voor iedereen. Een wijzigingenset gemaakt met MapComplete bevat de volgende data:\n<ul><li>De aanpassingen aan de data</li><li>Je gebruikersnaam</li><li>Wanneer deze wijziging werd gemaakt</li><li>Het thema dat je gebruikt om de wijziging te maken</li><li>De taal van de gebruikersinterface</li><li>Een indicatie hoe ver jij je van de gewijzigde objecten bevindt. Andere bijdragers kunnen deze informatie gebruiken om af te leiden of de wijziging gemaakt door lokaal te gaan kijken of door onderzoek vanop afstand</li></ul> Bekijk ook <a href=\"https://wiki.osmfoundation.org/wiki/Privacy_Policy\" target=\"_blank\">de privacy-policy op OpenStreetMap.org</a> voor gedetailleerde info. We herinneren je eraan dat je een pseudoniem of fictieve naam kan gebruiken wanneer je je registreert.",
+        "editingIntro": "Wanneer je een wijziging maakt, wordt deze wijziging opgeslaan op OpenStreetMap. Dit is zichtbaar voor iedereen. Een wijzigingenset gemaakt met MapComplete bevat de volgende data:",
+        "editingOutro": "Bekijk ook <a href=\"https://wiki.osmfoundation.org/wiki/Privacy_Policy\" target=\"_blank\">de privacy-policy op OpenStreetMap.org</a> voor gedetailleerde info. We herinneren je eraan dat je een pseudoniem of fictieve naam kan gebruiken wanneer je je registreert.",
         "editingTitle": "Wanneer je wijzigingen maakt",
         "geodata": "Op het moment dat MapComplete je locatie krijgt, blijft deze informatie en de geschiedenis ervan lokaal op je toestel. Je locatiedata wordt nooit automatisch doorgestuurd naar waar dan ook - behalve wanneer een bepaalde functionaliteit daar expliciet om vraagt.",
         "geodataTitle": "Jouw locatie",
         "intro": "We vinden privacy belangrijk, zowel for het individu als voor de samenleving. MapComplete probeert zo veel mogelijk te vermijden dat private gegevens worden verzameld. Daarom is er zelfs geen cookie banner nodig. Maar we geven graag informatie over welke data verzameld en gedeeld worden, onder welke omstandigheden, en waarom deze afwegingen gemaakt worden.",
+        "items": {
+            "changesYouMake": "De aanpassingen aan de data",
+            "username": "Je gebruikersnaam",
+            "date": "Wanneer deze wijziging werd gemaakt",
+            "theme": "Het thema dat je gebruikt om de wijziging te maken",
+            "language": "De taal van de gebruikersinterface",
+            "distanceIndicator": "Een indicatie hoe ver jij je van de gewijzigde objecten bevindt. Andere bijdragers kunnen deze informatie gebruiken om af te leiden of de wijziging gemaakt door lokaal te gaan kijken of door onderzoek vanop afstand"
+        },
         "miscCookies": "MapComplete integreert met verschillende andere services, in het bijzonder om afbeeldingen van kaart-objecten te tonen. Deze afbeeldingen zijn opgeslaan bij diverse websites, die elk cookies kunnen instellen.",
         "miscCookiesTitle": "Andere cookies",
         "surveillance": "Gezien je de privacy-policy leest, vind je privacy waarschijnlijk belangrijk - wij ook! We hebben zelfs <a href=\"https://mapcomplete.org/surveillance\">een kaart met bewakingcamera's</a> gemaakt. Voeg er zeker toe!",

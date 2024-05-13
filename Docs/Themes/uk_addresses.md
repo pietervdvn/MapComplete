@@ -13,11 +13,11 @@ This theme contains the following layers:
 
 
 
-  - [address](../Layers/address.md)
   - [raw_inspire_polygons](../Layers/raw_inspire_polygons.md)
   - [to_import](../Layers/to_import.md)
   - [uk_address](../Layers/uk_address.md)
   - [named_streets](../Layers/named_streets.md)
+  - [address](../Layers/address.md)
   - [selected_element](../Layers/selected_element.md)
   - [gps_location](../Layers/gps_location.md)
   - [gps_location_history](../Layers/gps_location_history.md)

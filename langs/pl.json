@@ -540,11 +540,20 @@
         "tryAgain": "Wybierz inny gatunek"
     },
     "privacy": {
-        "editing": "Kiedy dokonasz zmiany na mapie, zmiana ta zostanie zarejestrowana w OpenStreetMap i będzie publicznie dostępna dla każdego. Zestaw zmian wprowadzony za pomocą MapComplete zawiera następujące dane: <ul><li>Wprowadzone zmiany</li><li>Twoja nazwa użytkownika</li><li>Kiedy dokonano tej zmiany</li><li>Motyw, którego użyłeś podczas wprowadzania zmiany</li><li>Język interfejsu użytkownika</li><li>Wskazanie, jak blisko byłeś zmienionych obiektów. Inni twórcy map mogą wykorzystać te informacje do ustalenia, czy zmiana została wprowadzona na podstawie realnych odwiedzin miejsca czy zdalnych badań.</li></ul> Zapoznaj się z <a href='https://wiki.osmfoundation.org/wiki/Privacy_Policy' target='_blank'>polityką prywatności na OpenStreetMap.org</a>, aby uzyskać szczegółowe informacje. Przypominamy, że podczas rejestracji możesz użyć fikcyjnego imienia i nazwiska.",
+        "editingIntro": "Kiedy dokonasz zmiany na mapie, zmiana ta zostanie zarejestrowana w OpenStreetMap i będzie publicznie dostępna dla każdego. Zestaw zmian wprowadzony za pomocą MapComplete zawiera następujące dane:",
+        "editingOutro": "Zapoznaj się z <a href='https://wiki.osmfoundation.org/wiki/Privacy_Policy' target='_blank'>polityką prywatności na OpenStreetMap.org</a>, aby uzyskać szczegółowe informacje. Przypominamy, że podczas rejestracji możesz użyć fikcyjnego imienia i nazwiska.",
         "editingTitle": "Podczas wprowadzania zmian",
         "geodata": "Gdy MapComplete pobierze Twoją geolokalizację, Twoja geolokalizacja i wcześniej odwiedzone lokalizacje pozostaną na Twoim urządzeniu. Twoje dane o lokalizacji nigdy nie są automatycznie wysyłane gdziekolwiek indziej, chyba że niektóre funkcje wyraźnie stanowią inaczej.",
         "geodataTitle": "Twoja geolokalizacja",
         "intro": "Prywatność jest ważna – zarówno dla jednostki, jak i dla społeczeństwa. MapComplete stara się w jak największym stopniu szanować Twoją prywatność - do tego stopnia, że nie jest potrzebny irytujący baner z plikami cookie. Jednakże nadal chcielibyśmy poinformować Cię, jakie informacje są gromadzone i udostępniane, w jakich okolicznościach i dlaczego dokonuje się takich kompromisów.",
+        "items": {
+            "changesYouMake": "Wprowadzone zmiany",
+            "username": "Twoja nazwa użytkownika",
+            "date": "Kiedy dokonano tej zmiany",
+            "theme": "Motyw, którego użyłeś podczas wprowadzania zmiany",
+            "language": "Język interfejsu użytkownika",
+            "distanceIndicator": "Wskazanie, jak blisko byłeś zmienionych obiektów. Inni twórcy map mogą wykorzystać te informacje do ustalenia, czy zmiana została wprowadzona na podstawie realnych odwiedzin miejsca czy zdalnych badań."
+        },
         "miscCookies": "MapComplete integruje się z różnymi innymi usługami, szczególnie w celu wczytywania obrazów obiektów. Obrazy są przechowywane na różnych serwerach stron trzecich, które mogą samodzielnie ustawiać pliki cookie.",
         "miscCookiesTitle": "Inne ciasteczka",
         "surveillance": "Czytając politykę prywatności, prawdopodobnie zależy Ci na prywatności - nam też! Stworzyliśmy nawet <a href='https://mapcomplete.org/surveillance'>motyw przedstawiający kamery monitorujące.</a> Możesz zmapować je wszystkie!",

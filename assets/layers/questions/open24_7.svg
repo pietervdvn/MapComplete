@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="59.535809mm"
+   height="53.162579mm"
+   viewBox="0 0 59.535809 53.162579"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (1:1.3.2+202311252150+091e20ef0f)"
+   sodipodi:docname="open24_7.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.2448246"
+     inkscape:cx="167.49348"
+     inkscape:cy="144.19702"
+     inkscape:window-width="1920"
+     inkscape:window-height="995"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g4" />
+  <defs
+     id="defs1">
+    <rect
+       x="195.29895"
+       y="583.53101"
+       width="265.52469"
+       height="247.68958"
+       id="rect2" />
+    <rect
+       x="69.833305"
+       y="301.19489"
+       width="537.72614"
+       height="337.24045"
+       id="rect1" />
+    <rect
+       x="69.833305"
+       y="301.19489"
+       width="537.72614"
+       height="337.24045"
+       id="rect1-4" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-23.847285,-105.0215)">
+    <text
+       xml:space="preserve"
+       transform="scale(0.26458333)"
+       id="text2"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:151.181px;line-height:2;font-family:'Ubuntu Mono';-inkscape-font-specification:'Ubuntu Mono Bold';white-space:pre;shape-inside:url(#rect2);fill:#000000;fill-opacity:1;stroke:#0000ff;stroke-width:0.00001;stroke-linecap:round"><tspan
+         x="195.29883"
+         y="1028.9189"
+         id="tspan4">7</tspan></text>
+    <g
+       id="g4"
+       transform="rotate(19.031252,53.955502,129.65312)">
+      <text
+         xml:space="preserve"
+         transform="matrix(0.24864277,-0.0904495,0.0904495,0.24864277,-37.896511,23.10344)"
+         id="text1"
+         style="font-size:151.181px;line-height:2;font-family:QTBrushStroke;-inkscape-font-specification:QTBrushStroke;white-space:pre;shape-inside:url(#rect1);fill:#ffffff;stroke:#0000ff;stroke-width:0.00001;stroke-linecap:round"><tspan
+           x="69.833984"
+           y="498.89354"
+           id="tspan6"><tspan
+             style="font-weight:bold;font-family:'Ubuntu Mono';-inkscape-font-specification:'Ubuntu Mono Bold';fill:#000000"
+             id="tspan5">24</tspan></tspan></text>
+      <text
+         xml:space="preserve"
+         transform="matrix(0.31987307,-0.11005382,0.11005382,0.31987307,-8.6266834,2.8601416)"
+         id="text1-5"
+         style="font-size:151.181px;line-height:2;font-family:QTBrushStroke;-inkscape-font-specification:QTBrushStroke;white-space:pre;shape-inside:url(#rect1-4);display:inline;fill:#ffffff;stroke:#0000ff;stroke-width:0.00001;stroke-linecap:round"><tspan
+           x="69.833984"
+           y="498.89354"
+           id="tspan8"><tspan
+             style="font-weight:bold;font-family:'Ubuntu Mono';-inkscape-font-specification:'Ubuntu Mono Bold';fill:#000000"
+             id="tspan7">7</tspan></tspan></text>
+      <g
+         id="path2"
+         transform="translate(1.922053,-1.2055383)">
+        <path
+           style="color:#000000;fill:#000000;stroke-linecap:round;-inkscape-stroke:none"
+           d="M 41.997064,155.10511 71.103506,106.61208"
+           id="path3" />
+        <path
+           style="color:#000000;fill:#000000;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1"
+           d="m 72.390625,104.46875 a 2.5,2.5 0 0 0 -3.429688,0.85742 l -29.107421,48.49219 a 2.5,2.5 0 0 0 0.857421,3.42969 2.5,2.5 0 0 0 3.429688,-0.85547 l 29.105469,-48.49414 a 2.5,2.5 0 0 0 -0.855469,-3.42969 z"
+           id="path4" />
+      </g>
+    </g>
+  </g>
+</svg>

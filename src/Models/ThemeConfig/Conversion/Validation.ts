@@ -561,6 +561,65 @@ export class DetectNonErasedKeysInMappings extends DesugaringStep<QuestionableTa
     }
 }
 
+export class DetectMappingsShadowedByCondition extends DesugaringStep<TagRenderingConfigJson> {
+    private readonly _forceError: boolean
+
+    constructor(forceError: boolean = false) {
+        super("Checks that, if the tagrendering has a condition, that a mapping is not contradictory to it, i.e. that there are no dead mappings", [], "DetectMappingsShadowedByCondition")
+        this._forceError = forceError
+    }
+
+    /**
+     *
+     * const validator = new DetectMappingsShadowedByCondition(true)
+     * const ctx = ConversionContext.construct([],["test"])
+     * validator.convert({
+     *     condition: "count>0",
+     *     mappings:[
+     *         {
+     *             if: "count=0",
+     *             then:{
+     *                 en: "No count"
+     *             }
+     *         }
+     *     ]
+     * }, ctx)
+     * ctx.hasErrors() // => true
+     */
+    convert(json: TagRenderingConfigJson, context: ConversionContext): TagRenderingConfigJson {
+        if(!json.condition && !json.metacondition){
+            return json
+        }
+        if(!json.mappings || json.mappings?.length ==0){
+            return json
+        }
+        let conditionJson = json.condition ?? json.metacondition
+        if(json.condition !== undefined && json.metacondition !== undefined){
+            conditionJson = {and: [json.condition, json.metacondition]}
+        }
+        const condition = TagUtils.Tag(conditionJson, context.path.join("."))
+
+        for (let i = 0; i < json.mappings.length; i++){
+            const mapping = json.mappings[i]
+            const tagIf = TagUtils.Tag(mapping.if, context.path.join("."))
+            const optimized = new And([tagIf, condition]).optimize()
+            if(optimized === false){
+                const msg = ("Detected a conflicting mapping and condition. The mapping requires tags " + tagIf.asHumanString() + ", yet this can never happen because the set condition requires " + condition.asHumanString())
+                const ctx = context.enters("mappings", i)
+                if (this._forceError) {
+                    ctx.err(msg)
+                } else {
+                    ctx.warn(msg)
+                }
+            }
+        }
+
+
+        return undefined
+    }
+
+}
+
 export class DetectShadowedMappings extends DesugaringStep<TagRenderingConfigJson> {
     private readonly _calculatedTagNames: string[]
 
@@ -1079,6 +1138,8 @@ export class ValidateTagRenderings extends Fuse<TagRenderingConfigJson> {
             "Various validation on tagRenderingConfigs",
             new MiscTagRenderingChecks(),
             new DetectShadowedMappings(layerConfig),
+
+            new DetectMappingsShadowedByCondition(),
             new DetectConflictingAddExtraTags(),
             // TODO enable   new DetectNonErasedKeysInMappings(),
             new DetectMappingsWithImages(doesImageExist),

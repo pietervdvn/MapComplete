@@ -3,3 +3,10 @@
 This server hosts the studio files and is used for expermintal builds.
 
 For used hosts, see the Caddyfile
+
+
+## Cache forwarding
+
+As the ISP of Nerdlab is a bit picky, we use SSH-port-forwarding on the cache server:
+
+`ssh -R 5445:127.0.0.1:5445 hetzner`

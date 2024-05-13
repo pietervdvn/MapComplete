@@ -7,7 +7,7 @@
   import type { ConfigMeta } from "./configMeta"
   import type {
     MappingConfigJson,
-    QuestionableTagRenderingConfigJson,
+    QuestionableTagRenderingConfigJson
   } from "../../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
   import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig"
   import TagRenderingEditable from "../Popup/TagRendering/TagRenderingEditable.svelte"
@@ -59,8 +59,8 @@
           labelMapping = {
             if: "value=" + label,
             then: {
-              en: "Builtin collection <b>" + label + "</b>:",
-            },
+              en: "Builtin collection <b>" + label + "</b>:"
+            }
           }
           perLabel[label] = labelMapping
           mappingsBuiltin.push(labelMapping)
@@ -72,14 +72,14 @@
     mappingsBuiltin.push({
       if: "value=" + tr["id"],
       then: {
-        en: "Builtin <b>" + tr["id"] + "</b> <div class='subtle'>" + description + "</div>",
-      },
+        en: "Builtin <b>" + tr["id"] + "</b> <div class='subtle'>" + description + "</div>"
+      }
     })
   }
 
   const configBuiltin = new TagRenderingConfig(<QuestionableTagRenderingConfigJson>{
     question: "Which builtin element should be shown?",
-    mappings: mappingsBuiltin,
+    mappings: mappingsBuiltin
   })
 
   const tags = new UIEventSource({ value })
@@ -112,7 +112,7 @@
     "condition",
     "metacondition",
     "mappings",
-    "icon",
+    "icon"
   ])
   const ignored = new Set(["labels", "description", "classes"])
 
@@ -196,7 +196,10 @@
     <h3>Text field and input element configuration</h3>
     <div class="border-l border-dashed border-gray-800 pl-2">
       <SchemaBasedField {state} path={[...path, "render"]} schema={topLevelItems["render"]} />
-      <Region {state} {path} configs={freeformSchema} />
+      {#if freeformSchema?.length > 0}
+        <!-- In read-only cases, (e.g. popup title) there will be no freeform-schema to set and thus freeformSchema will be undefined -->
+        <Region {state} {path} configs={freeformSchema} />
+      {/if}
       <SchemaBasedField {state} path={[...path, "icon"]} schema={topLevelItems["icon"]} />
     </div>
 

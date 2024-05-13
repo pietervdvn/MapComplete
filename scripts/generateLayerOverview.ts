@@ -44,6 +44,7 @@ class ParseLayer extends Conversion<
 > {
     private readonly _prepareLayer: PrepareLayer
     private readonly _doesImageExist: DoesImageExist
+    private readonly _options: { readonly addExpandedTagRenderingsToContext?: boolean }
 
     constructor(prepareLayer: PrepareLayer, doesImageExist: DoesImageExist) {
         super("Parsed a layer from file, validates it", [], "ParseLayer")
@@ -287,9 +288,11 @@ class LayerOverviewUtils extends Script {
             tagRenderings: bootstrapTagRenderings,
             sharedLayers: null,
             publicLayers: null,
+        }, {
+            addTagRenderingsToContext: true
         })
 
-        let path = "assets/layers/questions/questions.json"
+        const path = "assets/layers/questions/questions.json"
         const sharedQuestions = this.parseLayer(doesImageExist, prepareLayer, path).raw
 
         const dict = new Map<string, QuestionableTagRenderingConfigJson>()

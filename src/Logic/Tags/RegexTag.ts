@@ -259,6 +259,13 @@ export class RegexTag extends TagsFilter {
      * new RegexTag("key",/^..*$/, true).shadows(new Tag("key","")) // => true
      * new RegexTag("key","value", true).shadows(new Tag("key","value")) // => false
      * new RegexTag("key","value", true).shadows(new Tag("key","some_other_value")) // => false
+     * new RegexTag("key","value", true).shadows(new Tag("key","some_other_value", true)) // => false
+     *
+     * const route = TagUtils.Tag("climbing!~route")
+     * const routeBottom = TagUtils.Tag("climbing!~route_bottom")
+     * route.shadows(routeBottom) // => false
+     * routeBottom.shadows(route) // => false
+     *
      */
     shadows(other: TagsFilter): boolean {
         if (other instanceof RegexTag) {
@@ -267,7 +274,7 @@ export class RegexTag extends TagsFilter {
                 return false
             }
             if (
-                (other.value["source"] ?? other.key) === (this.value["source"] ?? this.key) &&
+                (other.value["source"] ?? other.value) === (this.value["source"] ?? this.value) &&
                 this.invert == other.invert
             ) {
                 // Values (and inverts) match

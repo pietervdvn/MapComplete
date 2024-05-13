@@ -188,7 +188,7 @@ export default abstract class ImportFlow<ArgT extends ImportFlowArguments> {
                     return { error: new Translation({ "*": e }) }
                 }
 
-                if (state.mapProperties.zoom.data < 18) {
+                if (state.mapProperties.zoom.data < 16) {
                     return { error: t.zoomInMore }
                 }
 

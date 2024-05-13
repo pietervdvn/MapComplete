@@ -88,7 +88,7 @@ export interface TagRenderingConfigJson {
      *
      * question: When should this item be shown?
      * type: tag
-     * ifunset: No specific condition set; always show this tagRendering or ask the question if unkown
+     * ifunset: No specific condition set; always show this tagRendering or show this question if unknown
      *
      * Only show this tagrendering (or ask the question) if the selected object also matches the tags specified as `condition`.
      *
@@ -132,9 +132,10 @@ export interface TagRenderingConfigJson {
 
     /** question: When should this item be shown (including special conditions)?
      * type: tag
+     * ifunset: No specific metacondition set which is evaluated against the <i>usersettings/application state</i>; always show this tagRendering or show this question if unknown
      *
-     * If set, this tag will be evaluated agains the _usersettings/application state_ table.
-     * Enable 'show debug info' in user settings to see available options.
+     * If set, this tag will be evaluated against the _usersettings/application state_ table.
+     * Enable 'show debug info' in user settings to see available options (at the settings-tab).
      * Note that values with an underscore depicts _application state_ (including metainfo about the user) whereas values without an underscore depict _user settings_
      */
     metacondition?: TagConfigJson

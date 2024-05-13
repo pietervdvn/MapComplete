@@ -229,6 +229,7 @@ export interface QuestionableTagRenderingConfigJson extends TagRenderingConfigJs
          * A (translated) text that is shown (as gray text) within the textfield
          * type: translation
          * group: expert
+         * ifunset: No specific placeholder is set, show the type of the textfield
          */
         placeholder?: Translatable
 

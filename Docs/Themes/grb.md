@@ -13,7 +13,6 @@ This theme contains the following layers:
 
 
 
-  - [named_streets](../Layers/named_streets.md)
   - [osm_buildings_no_points](../Layers/osm_buildings_no_points.md)
   - [grb](../Layers/grb.md)
   - [service_ways](../Layers/service_ways.md)
@@ -21,6 +20,7 @@ This theme contains the following layers:
   - [address](../Layers/address.md)
   - [crab_address](../Layers/crab_address.md)
   - [current_view](../Layers/current_view.md)
+  - [named_streets](../Layers/named_streets.md)
   - [selected_element](../Layers/selected_element.md)
   - [gps_location](../Layers/gps_location.md)
   - [gps_location_history](../Layers/gps_location_history.md)

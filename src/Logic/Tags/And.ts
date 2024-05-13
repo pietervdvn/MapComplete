@@ -5,6 +5,7 @@ import { Tag } from "./Tag"
 import { RegexTag } from "./RegexTag"
 import { TagConfigJson } from "../../Models/ThemeConfig/Json/TagConfigJson"
 import { ExpressionSpecification } from "maplibre-gl"
+import ComparingTag from "./ComparingTag"
 
 export class And extends TagsFilter {
     public and: TagsFilter[]
@@ -242,6 +243,27 @@ export class And extends TagsFilter {
      * const raw = {"and": [{"and":["advertising=screen"]}, {"and":["advertising~*"]}]}]
      * const parsed = TagUtils.Tag(raw)
      * parsed.optimize().asJson() // => "advertising=screen"
+     *
+     * const raw = {"and": ["count=0", "count>0"]}
+     * const parsed = TagUtils.Tag(raw)
+     * parsed.optimize() // => false
+     *
+     * const raw = {"and": ["count>0", "count>10"]}
+     * const parsed = TagUtils.Tag(raw)
+     * parsed.optimize().asJson() // => "count>0"
+     *
+     * // regression test
+     * const orig = {
+     *   "and": [
+     *     "sport=climbing",
+     *     "climbing!~route",
+     *     "climbing!=route_top",
+     *     "climbing!=route_bottom",
+     *     "leisure!~sports_centre"
+     *   ]
+     * }
+     * const parsed = TagUtils.Tag(orig)
+     * parsed.optimize().asJson() // => orig
      */
     optimize(): TagsFilter | boolean {
         if (this.and.length === 0) {
@@ -256,9 +278,30 @@ export class And extends TagsFilter {
         }
         const optimized = <TagsFilter[]>optimizedRaw
 
+        for (let i = 0; i <optimized.length; i++) {
+            for (let j = i + 1; j < optimized.length; j++) {
+                const ti = optimized[i]
+                const tj = optimized[j]
+                if(ti.shadows(tj)){
+                    // if 'ti' is true, this implies 'tj' is always true as well.
+                    // if 'ti' is false, then 'tj' might be true or false
+                    // (e.g. let 'ti' be 'count>0' and 'tj' be 'count>10'.
+                    // As such, it is no use to keep 'tj' around:
+                    // If 'ti' is true, then 'tj' will be true too and 'tj' can be ignored
+                    // If 'ti' is false, then the entire expression will be false and it doesn't matter what 'tj' yields
+                    optimized.splice(j, 1)
+                }else if (tj.shadows(ti)){
+                    optimized.splice(i, 1)
+                    i--
+                    continue
+                }
+            }
+        }
+
+
         {
             // Conflicting keys do return false
-            const properties: object = {}
+            const properties: Record<string, string> = {}
             for (const opt of optimized) {
                 if (opt instanceof Tag) {
                     properties[opt.key] = opt.value
@@ -277,8 +320,7 @@ export class And extends TagsFilter {
                         // detected an internal conflict
                         return false
                     }
-                }
-                if (opt instanceof RegexTag) {
+                } else if (opt instanceof RegexTag) {
                     const k = opt.key
                     if (typeof k !== "string") {
                         continue
@@ -315,6 +357,11 @@ export class And extends TagsFilter {
                             optimized.splice(i, 1)
                             i--
                         }
+                    }
+                }else if(opt instanceof ComparingTag) {
+                    const ct = opt
+                    if(properties[ct.key] !== undefined && !ct.matchesProperties(properties)){
+                        return false
                     }
                 }
             }

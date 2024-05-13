@@ -845,10 +845,10 @@
                         "then": "Diese Bank ist zweiseitig und teilt sich die Rückenlehne"
                     },
                     "1": {
-                        "then": "Die Sitzbank hat eine Rückenlehne"
+                        "then": "Diese Sitzbank hat eine Rückenlehne"
                     },
                     "2": {
-                        "then": "Die Sitzbank hat <b>keine</b> Rückenlehne"
+                        "then": "Diese Sitzbank hat <b>keine</b> Rückenlehne"
                     }
                 },
                 "question": "Hat diese Sitzbank eine Rückenlehne?"
@@ -942,7 +942,7 @@
                     }
                 },
                 "question": "Wie viele Sitzplätze hat diese Bank?",
-                "render": "Die Sitzbank hat {seats} Sitzplätze"
+                "render": "Diese Sitzbank hat {seats} Sitzplätze"
             },
             "bench-survey:date": {
                 "mappings": {

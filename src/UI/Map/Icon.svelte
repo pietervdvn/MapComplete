@@ -34,6 +34,7 @@
   import { LinkIcon } from "@babeard/svelte-heroicons/mini"
   import Square_rounded from "../../assets/svg/Square_rounded.svelte"
   import Bug from "../../assets/svg/Bug.svelte"
+  import Pop_out from "../../assets/svg/Pop_out.svelte"
 
   /**
    * Renders a single icon.
@@ -123,6 +124,9 @@
     <AddSmall {color} class={clss} />
   {:else if icon === "link"}
     <LinkIcon style="--svg-color: {color}" class={twMerge(clss, "apply-fill")} />
+  {:else if icon === "popout"}
+    <LinkIcon style="--svg-color: {color}" />
+
   {:else}
     <img class={clss ?? "h-full w-full"} src={icon} aria-hidden="true" alt="" />
   {/if}

@@ -393,27 +393,6 @@
                     }
                 },
                 "question": "What is the purpose of the animal shelter?"
-            },
-            "boarded_animals": {
-                "mappings": {
-                    "0": {
-                        "then": "Dogs are kept here"
-                    },
-                    "1": {
-                        "then": "Cats are kept here"
-                    },
-                    "2": {
-                        "then": "Horses are kept here"
-                    },
-                    "3": {
-                        "then": "Birds are kept here"
-                    },
-                    "4": {
-                        "then": "Wild animals are kept here"
-                    }
-                },
-                "question": "Which animals are accepted here?",
-                "render": "{animal_shelter} is kept here"
             }
         },
         "title": {
@@ -866,10 +845,10 @@
                         "then": "This bench is two-sided and shares the backrest"
                     },
                     "1": {
-                        "then": "Does have a backrest"
+                        "then": "This bench does have a backrest"
                     },
                     "2": {
-                        "then": "Does <b>not</b> have a backrest"
+                        "then": "This bench does <b>not</b> have a backrest"
                     }
                 },
                 "question": "Does this bench have a backrest?"
@@ -914,12 +893,12 @@
                         "then": "This bench does not have an inscription"
                     },
                     "1": {
-                        "then": "This bench does <span class='subtle'>(probably)</span> not have an inscription"
+                        "then": "This bench <span class='subtle'>(probably)</span> does not not have an inscription"
                     }
                 },
                 "question": "Does this bench have an inscription?",
                 "questionHint": "E.g. on a mounted plaque, in the backrest, …",
-                "render": "This bench does have the following inscription:<br/><p><i>{inscription}</i></p>"
+                "render": "This bench has the following inscription:<br/><p><i>{inscription}</i></p>"
             },
             "bench-material": {
                 "mappings": {
@@ -963,7 +942,7 @@
                     }
                 },
                 "question": "How many seats does this bench have?",
-                "render": "{seats} seats"
+                "render": "This bench has {seats} seats"
             },
             "bench-survey:date": {
                 "mappings": {
@@ -1495,6 +1474,11 @@
                 },
                 "question": "What is the relative location of this bicycle parking?"
             },
+            "charge": {
+                "question": "How much does it cost to park your bike here?",
+                "questionHint": "This is the amount which is charged for a single bike",
+                "render": "Parking your bike costs {charge}"
+            },
             "fee": {
                 "mappings": {
                     "0": {
@@ -1506,17 +1490,9 @@
                 },
                 "question": "Are these bicycle parkings free to use?"
             },
-            "maxstay": {
-                "question": "What is the maximum allowed parking duration?",
-                "questionHint": "If the bicycle is parked for a longer amount, it might be removed by the operator",
-                "render": "A bike can be parked here for at most {canonical(maxstay)}"
-            },
             "operator": {
                 "question": "Who maintains this bicycle parking?",
                 "render": "This bicycle parking is maintained by {operator}"
-            },
-            "operator_email": {
-                "question": "What is the email address of the operator of this bicycle parking?"
             },
             "operator_phone": {
                 "question": "What is the phone number of the operator of this bicycle parking?",
@@ -2185,9 +2161,6 @@
                     },
                     "16": {
                         "question": "Has a <div style='display: inline-block'><b><b>Bosch Active Connect with 5 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> connector"
-                    },
-                    "17": {
-                        "question": "Has a <div style='display: inline-block'><b><b>BS1363</b> (Type G)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bs1363.svg'/></div> connector"
                     }
                 }
             }
@@ -2332,12 +2305,6 @@
                     },
                     "31": {
                         "then": "<b>Bosch Active Connect with 5 pins</b> and cable"
-                    },
-                    "32": {
-                        "then": "<b>BS1363</b> (Type G)"
-                    },
-                    "33": {
-                        "then": "<b>BS1363</b> (Type G)"
                     }
                 },
                 "question": "Which charging connections are available here?"
@@ -2572,9 +2539,6 @@
                         },
                         "15": {
                             "2": "<b>Bosch Active Connect with 5 pins</b> and cable"
-                        },
-                        "16": {
-                            "2": "<b>BS1363</b> (Type G)"
                         }
                     }
                 }
@@ -5149,22 +5113,6 @@
             "render": "Restaurant"
         }
     },
-    "food_courts": {
-        "description": "Food courts with a variety of food options.",
-        "name": "Food Courts",
-        "tagRenderings": {
-            "name": {
-                "freeform": {
-                    "placeholder": "Name of the food court"
-                },
-                "question": "What is the name of this food court?",
-                "render": "This food court is called <b>{name}</b>."
-            }
-        },
-        "title": {
-            "render": "Food Court"
-        }
-    },
     "ghost_bike": {
         "description": "A layer showing memorials for cyclists, killed in road accidents",
         "name": "Ghost bikes",
@@ -6675,74 +6623,6 @@
         "name": "OSM Community Index",
         "title": {
             "render": "OSM Community Index"
-        }
-    },
-    "outdoor_seating": {
-        "description": "Outdoor seating areas, usually located near cafes and restaurants.",
-        "name": "Outdoor Seating",
-        "tagRenderings": {
-            "access": {
-                "mappings": {
-                    "0": {
-                        "then": "Anyone can use this outdoor seating area."
-                    },
-                    "1": {
-                        "then": "Only customers can use this outdoor seating area."
-                    },
-                    "2": {
-                        "then": "This outdoor seating area is private."
-                    }
-                },
-                "question": "Who can use this outdoor seating area?"
-            },
-            "covered": {
-                "mappings": {
-                    "0": {
-                        "then": "This outdoor seating area is covered."
-                    },
-                    "1": {
-                        "then": "This outdoor seating area is not covered."
-                    }
-                },
-                "question": "Is this outdoor seating area covered?"
-            },
-            "heating": {
-                "mappings": {
-                    "0": {
-                        "then": "This outdoor seating area is heated."
-                    },
-                    "1": {
-                        "then": "This outdoor seating area is not heated."
-                    }
-                },
-                "question": "Is this outdoor seating area heated?"
-            },
-            "seasonal": {
-                "mappings": {
-                    "0": {
-                        "then": "This outdoor seating area is available all year round."
-                    },
-                    "1": {
-                        "then": "This outdoor seating area is available in spring."
-                    },
-                    "2": {
-                        "then": "This outdoor seating area is available in summer."
-                    },
-                    "3": {
-                        "then": "This outdoor seating area is available in autumn."
-                    },
-                    "4": {
-                        "then": "This outdoor seating area is available in winter."
-                    },
-                    "5": {
-                        "then": "This outdoor seating area is available in the dry season."
-                    }
-                },
-                "question": "Is this outdoor seating area seasonal?"
-            }
-        },
-        "title": {
-            "render": "Outdoor Seating area"
         }
     },
     "parcel_lockers": {
@@ -9077,10 +8957,6 @@
             }
         },
         "tagRenderings": {
-            "camera_direction": {
-                "question": "In which geographical direction does this camera film?",
-                "render": "Films to a compass heading of {direction}"
-            },
             "maxspeed": {
                 "freeform": {
                     "placeholder": "Maximum speed allowed"
@@ -10665,6 +10541,10 @@
                     "4": {
                         "human": "{quantity} months",
                         "humanSingular": "one month"
+                    },
+                    "5": {
+                        "human": "{quantity} years",
+                        "humanSingular": "one year"
                     }
                 }
             }

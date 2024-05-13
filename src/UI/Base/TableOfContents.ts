@@ -1,11 +1,8 @@
-import Combine from "./Combine"
 import BaseUIElement from "../BaseUIElement"
-import Title from "./Title"
 import List from "./List"
-import Link from "./Link"
 import { marked } from "marked"
 import { parse as parse_html } from "node-html-parser"
-import {default as turndown} from "turndown"
+import { default as turndown } from "turndown"
 import { Utils } from "../../Utils"
 
 export default class TableOfContents {
@@ -56,7 +53,7 @@ export default class TableOfContents {
         const htmlSource = <string>marked.parse(md)
         const el = parse_html(htmlSource)
         const structure = TableOfContents.generateStructure(<any>el)
-        let firstTitle = structure[1]
+        const firstTitle = structure[1]
         let minDepth = undefined
         do {
             minDepth = Math.min(...structure.map(s => s.depth))
@@ -81,7 +78,7 @@ export default class TableOfContents {
         let topLevelCount = 0
         for (const el of structure) {
             const depthDiff = el.depth - minDepth
-            let link = `[${el.title}](#${TableOfContents.asLinkableId(el.title)})`
+            const link = `[${el.title}](#${TableOfContents.asLinkableId(el.title)})`
             if (depthDiff === 0) {
                 topLevelCount++
                 toc += `${topLevelCount}. ${link}\n`
@@ -91,16 +88,14 @@ export default class TableOfContents {
         }
 
         const heading = Utils.Times(() => "#", firstTitle.depth)
-        toc = heading +" Table of contents\n\n"+toc
+        toc = heading + " Table of contents\n\n" + toc
 
-        const original = el.outerHTML
-        const firstTitleIndex = original.indexOf(firstTitle.el.outerHTML)
-        const tocHtml = (<string>marked.parse(toc))
-        const withToc = original.substring(0, firstTitleIndex) + tocHtml + original.substring(firstTitleIndex)
+        const firstTitleIndex = md.indexOf(firstTitle.title)
 
-        const htmlToMd = new turndown()
-        return htmlToMd.turndown(withToc)
+        const intro = md.substring(0, firstTitleIndex)
+        const splitPoint = intro.lastIndexOf("\n")
 
+        return md.substring(0, splitPoint) + toc + md.substring(splitPoint)
 
     }
 

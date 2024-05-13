@@ -216,7 +216,7 @@ class ApplyButton extends UIElement {
 }
 
 export default class AutoApplyButton implements SpecialVisualization {
-    public readonly docs: BaseUIElement
+    public readonly docs: string
     public readonly funcName: string = "auto_apply"
     public readonly needsUrls = []
 
@@ -273,7 +273,7 @@ export default class AutoApplyButton implements SpecialVisualization {
                 "Then, use a calculated tag on the host feature to determine the overlapping object ids",
                 "At last, add this component",
             ]),
-        ])
+        ]).AsMarkdown()
     }
 
     constr(

@@ -165,7 +165,7 @@ export class GenerateDocs extends Script {
             this.generateForTheme(theme)
         })
 
-        this.WriteFile("./Docs/SpecialRenderings.md", SpecialVisualizations.HelpMessage(), [
+        this.WriteMarkdownFile("./Docs/SpecialRenderings.md", SpecialVisualizations.HelpMessage(), [
             "src/UI/SpecialVisualizations.ts"
         ])
         this.WriteFile(
@@ -244,7 +244,7 @@ export class GenerateDocs extends Script {
         let md = markdown
 
         if (options?.noTableOfContents !== false) {
-            md = TableOfContents.insertTocIntoMd(md)
+           md = TableOfContents.insertTocIntoMd(md)
         }
 
         md.replace(/\n\n\n+/g, "\n\n")

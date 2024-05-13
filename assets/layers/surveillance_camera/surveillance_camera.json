@@ -22,6 +22,7 @@
     "cs": "Tato vrstva zobrazuje sledovací kamery a umožňuje přispěvateli aktualizovat informace a přidávat nové kamery",
     "sl": "Ta sloj prikazuje nadzorne kamere in urednikom omogoča posodabljanje informacij obstoječih in dodajanje novih kamer"
   },
+  "enableMorePrivacy": true,
   "source": {
     "osmTags": {
       "and": [
