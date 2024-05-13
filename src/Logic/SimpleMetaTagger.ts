@@ -119,7 +119,7 @@ class CountryTagger extends SimpleMetaTagger {
     constructor() {
         super({
             keys: ["_country"],
-            doc: "The country code of the property (with latlon2country)",
+            doc: "The country codes of the of the country/countries that the feature is located in (with latlon2country). Might contain _multiple_ countries, separated by a `;`",
             includesDates: false,
         })
     }
@@ -138,7 +138,7 @@ class CountryTagger extends SimpleMetaTagger {
                     return
                 }
                 const oldCountry = feature.properties["_country"]
-                const newCountry = countries[0].trim().toLowerCase()
+                const newCountry = countries.join(";").trim().toLowerCase()
                 if (oldCountry !== newCountry) {
                     if (typeof window === undefined) {
                         tagsSource.data["_country"] = newCountry
@@ -150,7 +150,7 @@ class CountryTagger extends SimpleMetaTagger {
                         /**
                          * What is this weird construction?
                          *
-                         * For a theme with a hundreds of items (e.g. shops)
+                         * For a theme with hundreds of items (e.g. shops)
                          * the country for all those shops will probably arrive at the same time.
                          *
                          * This means that all those stores will be pinged around the same time.
