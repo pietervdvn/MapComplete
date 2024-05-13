@@ -16,3 +16,7 @@ socket:USB-A,,usb_port.svg,<b>USB</b> to charge phones and small electronics,,,5
 socket:bosch_3pin,,bosch-3pin.svg,<b>Bosch Active Connect with 3 pins</b> and cable,,,,,,<b>Bosch Active Connect met 3 pinnen</b> aan een kabel,bicycle,car;motorcar;hgv;bus,
 socket:bosch_5pin,,bosch-5pin.svg,<b>Bosch Active Connect with 5 pins</b> and cable,,,,,,<b>Bosch Active Connect met 5 pinnen</b> aan een kabel,bicycle,car;motorcar;hgv;bus,
 socket:bs1363,,bs1363.svg,<b>BS1363</b> (Type G),bh;bd;bz;bt;bw;bn;kh;cy;dm;gh;gi;gd;gg;gy;id;iq;ie;im;je;jo;ke;kw;lb;mo;mw;mv;mt;mu;ng;om;pk;qa;rw;sa;sc;sl;sb;lk;sd;tz;ug;vu;vn;ye;zm;zw,,230,13,3kW,<b>BS1363</b> (VK 3-pin),*,,
+socket:nema5_15,,nema-5-15.svg,<b>NEMA 5-15</b> (Type B),as;ai;ag;aw;bb;bz;bm;bo;vg;ky;co;cr;cu;do;ec;sv;pf;gu;gt;gy;ht;hn;jm;jp;jo;la;lb;lr;mx;fm;ms;ni;ne;pw;pa;py;pe;ph;pr;sr;th;tt;tm;ve;vn,,120,15,1.8 kW,<b>NEMA 5-15</b> (VS 3-pin),*,,
+socket:sev1011_t23,,typej.svg,<b>SEV 1011 T23</b> (Type J),jo;li;mg;mv;rw;ch,,230,16,3.7 kW,<b>SEV 1011 T23</b> (Zwitserse 3-pin),*,,
+socket:as3112,,as3112.svg,<b>AS3112</b> (Type I),as;ar;au;cn;ck;fj;ki;nr;nz;nu;pg;sb;tj;to;tv;uy;uz;vu,,230,10,2.3 kW,<b>AS3112</b> (Australische 3-pin),*,,
+socket:nema_5_20,,nema-5-20.svg,<b>NEMA 5-20</b> (Type B),as;ai;ag;aw;bb;bz;bm;bo;vg;ky;co;cr;cu;do;ec;sv;pf;gu;gt;gy;ht;hn;jm;jp;jo;la;lb;lr;mx;fm;ms;ni;ne;pw;pa;py;pe;ph;pr;sr;th;tt;tm;ve;vn,,120,20,2.4 kW,<b>NEMA 5-20</b> (VS 3-pin),*,,
