@@ -3727,6 +3727,30 @@
             "render": "Votre chemin"
         }
     },
+    "guidepost": {
+        "tagRenderings": {
+            "type": {
+                "mappings": {
+                    "0": {
+                        "then": "Un itinéraire vélo"
+                    },
+                    "1": {
+                        "then": "un itinéraire de randonnée"
+                    },
+                    "2": {
+                        "then": "un itinéraire de vtt"
+                    },
+                    "3": {
+                        "then": "un itinéraire équestre"
+                    },
+                    "4": {
+                        "then": "un itinéraire de pistes de ski"
+                    }
+                },
+                "question": "Quel type d'itinéraire indique ce panneau ?"
+            }
+        }
+    },
     "hotel": {
         "description": "Couche affichant les hôtels",
         "name": "Hôtels",
@@ -4011,7 +4035,7 @@
                         "then": "La carte d'un site particulier, comme un château, un parc, un campus, une forêt, ...."
                     },
                     "2": {
-                        "then": "Une carte de village ou de ville"
+                        "then": "Une carte de village ou de petite ville"
                     },
                     "3": {
                         "then": " Une carte de ville"
@@ -4032,6 +4056,9 @@
                     },
                     "2": {
                         "then": "Un plan schématique. <p class='subtle'>Une carte schématique sur laquelle seuls les éléments principaux sont indiqués (rues, POIs). Les angles, distances etc. peuvent être déformés pour rendre le plan plus lisible.</p> "
+                    },
+                    "3": {
+                        "then": "Une table d'orientation. <p class='subtle'>Un élément érigé sur une hauteur qui indique la direction d'éléments paysagers remarquables visibles depuis ce point<p>"
                     }
                 },
                 "question": "De quel type de carte s'agit-il ?"
@@ -4096,7 +4123,7 @@
         "name": "Mémoriaux",
         "presets": {
             "0": {
-                "title": "Un mémorial"
+                "title": "un mémorial"
             }
         },
         "tagRenderings": {
@@ -4130,19 +4157,19 @@
                         "then": "C'est un arbre du souvenir"
                     },
                     "2": {
-                        "then": "C'est un banc commémoratif (banc de crémation)"
+                        "then": "C'est un banc commémoratif"
                     },
                     "3": {
                         "then": "C'est un vélo fantôme - un vélo blanc peint en mémoire d'un cycliste mort à cet endroit suite à un accident avec une voiture"
                     },
                     "4": {
-                        "then": "C'est un stolperstein (pierres d'achoppement)"
+                        "then": "C'est un stolperstein (pierre d'achoppement)"
                     },
                     "5": {
                         "then": "C'est une stèle"
                     },
                     "6": {
-                        "then": "Pierre commémorative"
+                        "then": "C'est une pierre commémorative"
                     },
                     "7": {
                         "then": "C'est un buste"
@@ -4159,7 +4186,7 @@
             },
             "memorial-wikidata": {
                 "question": "Quelle est la page Wikipedia de ce mémorial ?",
-                "questionHint": "C'est la page Wikipedia du mémorial et non celle de la personne ou de l'évènement commémoré. Si le mémorial n'a pas de page Wikipedia ou d'entité Wikidata, passez cette question.",
+                "questionHint": "C'est la page Wikipédia du mémorial et non celle de la personne ou de l'évènement commémoré. Si le mémorial n'a pas de page Wikipédia ou d'entité Wikidata, passez cette question.",
                 "render": {
                     "before": "<h3>Page Wikipedia du mémorial</h3>"
                 }
@@ -4179,10 +4206,10 @@
         "title": {
             "mappings": {
                 "0": {
-                    "then": "Mémorial plaque"
+                    "then": "Plaque commémorative"
                 }
             },
-            "render": "Mémorial plaque"
+            "render": "Plaque commémorative"
         }
     },
     "mountain_rescue": {
@@ -6746,13 +6773,31 @@
             },
             "picture-license": {
                 "mappings": {
+                    "1": {
+                        "then": "Les photos que vous avez ajoutées seront sous licence <b>CC0</b>  et mises dans le domaine public. Cela signifie que n'importe qui pourra les utiliser, quel qu'en soit l'usage."
+                    },
                     "3": {
                         "then": "Les photos que vous prenez seront sous la licence <b>CC-BY-SA 4.0</b> ce qui signifie que quiconque utilisant votre photo doit vous créditer et que les modifications apportées à votre photo doivent être repartagées avec la même licence."
                     }
                 }
             },
             "show_tags": {
-                "question": "Afficher les attributs OpenStreetMap bruts ?"
+                "mappings": {
+                    "0": {
+                        "then": "Ne jamais voir les étiquettes."
+                    },
+                    "1": {
+                        "then": "Voir les étiquettes au bout de  {__userjourney_tagsVisibleAt} modifications"
+                    },
+                    "2": {
+                        "then": "Voir les étiquettes quand je fais une modification"
+                    },
+                    "3": {
+                        "then": "Voir les étiquettes quand je fais une modification et toujours voir les étiquettes pour chaque élément"
+                    }
+                },
+                "question": "Afficher les attributs OpenStreetMap bruts ?",
+                "questionHint": "Les<b>Tags</b> ou étiquettes sont des attributs rattachés à chaque élément. C'est une donnée technique qui est stockée dans une base de données. Vous n'avez pas besoin de connaître ces étiquettes pour utiliser MapComplete, mais certains utilisateurs préfèrent les afficher."
             },
             "translation-completeness": {
                 "render": "Les traductions pour {_theme} en {_language} sont à {_translation_percentage} % : {_translation_translated_count} chaînes traduites sur {_translation_total}"
