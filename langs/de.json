@@ -49,6 +49,7 @@
     },
     "external": {
         "allAreApplied": "Alle fehlenden, externen Werte wurden in OpenStreetMap kopiert",
+        "allIncluded": "Von {source} geladene Daten sind in OpenStreetMap enthalten",
         "apply": "Übernehmen",
         "applyAll": "Alle fehlenden Werte übernehmen",
         "conflicting": {

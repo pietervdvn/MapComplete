@@ -20,6 +20,7 @@
         "cancel": "Annulla",
         "cannotBeDeleted": "Questo oggetto non può essere rimosso",
         "delete": "Rimuovi",
+        "deletedTitle": "Elemento cancellato",
         "explanations": {
             "hardDelete": "Questo elemento verrà rimosso da OpenStreetMap. Un utente esperto potrebbe recuperarlo",
             "retagNoOtherThemes": "Questo elemento verrà riclassificato e nascosto da questa applicazione",
@@ -27,6 +28,7 @@
             "selectReason": "Si prega di selezionare il motivo della rimozione di questo oggetto",
             "softDelete": "Questo oggetto verrà aggiornato e nascosto da questa applicazione. <span class=\"subtle\">{reason}</span>"
         },
+        "isChanged": "Questo elemento è stato modificato e non è visibile in questo livello",
         "isDeleted": "Questo oggetto è stato rimosso",
         "isntAPoint": "Solo i nodi possono essere rimossi, l'elemento selezionato è un percorso, un’area oppure una relazione.",
         "loading": "Controllo delle proprietà per verificare se questo oggetto può essere rimosso.",
@@ -44,6 +46,12 @@
         "safeDelete": "Questo elemento può essere rimosso in sicurezza.",
         "useSomethingElse": "Per rimuoverlo usa un altro editor OpenStreetMap",
         "whyDelete": "Perché questo elemento andrebbe rimosso?"
+    },
+    "external": {
+        "allAreApplied": "Tutti i valori esterni mancanti sono stati copiati su OpenStreetMap",
+        "allIncluded": "I dati caricati da {source} sono contenuti in OpenStreetMap",
+        "apply": "Applica",
+        "applyAll": "Applica tutti i valori mancanti"
     },
     "favourite": {
         "loginNeeded": "<h3>Accedi</h3>Il layout personale è disponibile soltanto per gli utenti OpenStreetMap",
@@ -135,10 +143,10 @@
             "pleaseLogin": "Accedi per aggiungere un nuovo elemento",
             "presetInfo": "Il nuovo PDI avrà {tags}",
             "stillLoading": "Caricamento dei dati ancora in corso. Attendi un po’ prima di aggiungere un nuovo elemento.",
-            "title": "Aggiungi un nuovo elemento?",
+            "title": "Aggiungi un nuovo elemento",
             "warnVisibleForEveryone": "La tua aggiunta sarà visibile a tutti",
             "wrongType": "Questo elemento non è un nodo o una way e non può essere importato",
-            "zoomInFurther": "Ingrandisci di più per aggiungere un elemento.",
+            "zoomInFurther": "Ingrandisci di più per aggiungere un elemento",
             "zoomInMore": "Ingrandisci ancora per importare questo oggetto"
         },
         "apply_button": {
@@ -181,7 +189,7 @@
             "downloadAsPdfHelper": "Ideale per stampare la mappa corrente",
             "downloadAsPng": "Scarca come immagine",
             "downloadAsSvg": "Scarica una SVG dalla mappa corrente",
-            "downloadAsSvgHelper": "Compatible con Inkscape o Adobe Illustrator; necessita di ulteriori processamenti  ",
+            "downloadAsSvgHelper": "Compatible con Inkscape o Adobe Illustrator; necessita di ulteriori processamenti",
             "downloadCSV": "Scarica i dati visibili come CSV",
             "downloadCSVHelper": "Compatibile con LibreOffice Calc, Excel, …",
             "downloadFeatureAsGeojson": "Scarica come file GeoJSON",
@@ -275,7 +283,7 @@
             "generatedWith": "Generato con mapcomplete.org/{layoutid}",
             "versionInfo": "v{version} - generato il {date}"
         },
-        "pickLanguage": "Scegli una lingua:",
+        "pickLanguage": "Scegli una lingua",
         "poweredByOsm": "Basato su OpenStreetMap",
         "questionBox": {
             "answeredMultiple": "Hai risposto a {answered} domande",
@@ -438,7 +446,7 @@
         "i_am_affiliated": "<span>Sono associato con questo oggetto</span><br><span class=\"subtle\">Spunta se sei il proprietario, creatore, dipendente, etc.</span>",
         "name_required": "È richiesto un nome per poter mostrare e creare recensioni",
         "no_reviews_yet": "Non ci sono ancora recensioni. Sii il primo a scriverne una aiutando così i dati liberi e l’attività!",
-        "saved": "<span class=\"thanks\">Recensione salvata. Grazie per averla condivisa!</span>",
+        "saved": "Recensione salvata. Grazie per averla condivisa!",
         "saving_review": "Salvataggio…",
         "title": "{count} recensioni",
         "title_singular": "Una recensione",
