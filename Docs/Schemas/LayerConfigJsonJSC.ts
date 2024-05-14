@@ -204,7 +204,7 @@ export default {
       "type": "boolean"
     },
     "presets": {
-      "description": "<div class='flex'>\n    <div>\nPresets for this layer.\n\nA preset consists of one or more attributes (tags), a title and optionally a description and optionally example images.\n\nWhen the contributor wishes to add a point to OpenStreetMap, they'll:\n\n1. Press the 'add new point'-button\n2. Choose a preset from the list of all presets\n3. Confirm the choice. In this step, the `description` (if set) and `exampleImages` (if given) will be shown\n4. Confirm the location\n5. A new point will be created with the attributes that were defined in the preset\n\nIf no presets are defined, the button which invites to add a new preset will not be shown.\n</div>\n<a class='block m-2 min-w-64' href='./Docs/Screenshots/AddNewItemScreencast.webm' target='_blank'> <video controls autoplay muted src='./Docs/Screenshots/AddNewItemScreencast.webm' class='w-64'/></a>\n</div>\n\ngroup: presets",
+      "description": "<div class='flex'>\n    <div>\nPresets for this layer.\n\nA preset consists of one or more attributes (tags), a title and optionally a description and optionally example images.\n\nWhen the contributor wishes to add a point to OpenStreetMap, they'll:\n\n1. Press the 'add new point'-button\n2. Choose a preset from the list of all presets\n3. Confirm the choice. In this step, the `description` (if set) and `exampleImages` (if given) will be shown\n4. Confirm the location\n5. A new point will be created with the attributes that were defined in the preset\n\nIf no presets are defined, the button which invites to add a new preset will not be shown.\n</div>\n<video controls autoplay muted src='./Docs/Screenshots/AddNewItemScreencast.webm' class='w-64'/>\n</div>\n\ngroup: presets",
       "type": "array",
       "items": {
         "type": "object",
@@ -379,7 +379,7 @@ export default {
       "type": "boolean"
     },
     "units": {
-      "description": "Either a list with [{\"key\": \"unitname\", \"key2\": {\"quantity\": \"unitname\", \"denominations\": [\"denom\", \"denom\"]}}]",
+      "description": "Either a list with [{\"key\": \"unitname\", \"key2\": {\"quantity\": \"unitname\", \"denominations\": [\"denom\", \"denom\"]}}]\n\nUse `\"inverted\": true` if the amount should be _divided_ by the denomination, e.g. for charge over time (`€5/day`)",
       "type": "array",
       "items": {
         "anyOf": [
@@ -387,7 +387,7 @@ export default {
             "$ref": "#/definitions/default_2"
           },
           {
-            "$ref": "#/definitions/Record<string,string|{quantity:string;denominations:string[];canonical?:string|undefined;}>"
+            "$ref": "#/definitions/Record<string,string|{quantity:string;denominations:string[];canonical?:string|undefined;inverted?:boolean|undefined;}>"
           }
         ]
       }
@@ -548,7 +548,7 @@ export default {
       "type": "object",
       "properties": {
         "render": {
-          "description": "question: What value should be shown (if no predifined option matches)?\n\nThis piece of text will be shown in the infobox.\nNote that \"&LBRACEkey&RBRACE\"-parts are substituted by the corresponding values of the element.\n\nThis value will be used if there is no mapping which matches (or there are no matches)\nNote that this is a HTML-interpreted value, so you can add links as e.g. '&lt;a href='{website}'>{website}&lt;/a>' or include images such as `This is of type A &lt;br>&lt;img src='typeA-icon.svg' />`",
+          "description": "question: What value should be shown (if no predefined option matches)?\n\nThis piece of text will be shown in the infobox.\nNote that \"&LBRACEkey&RBRACE\"-parts are substituted by the corresponding values of the element.\n\nThis value will be used if there is no mapping which matches (or there are no matches)\nNote that this is a HTML-interpreted value, so you can add links as e.g. '&lt;a href='{website}'>{website}&lt;/a>' or include images such as `This is of type A &lt;br>&lt;img src='typeA-icon.svg' />`",
           "type": "string"
         },
         "mappings": {
@@ -1930,7 +1930,7 @@ export default {
         "applicableUnits"
       ]
     },
-    "Record<string,string|{quantity:string;denominations:string[];canonical?:string|undefined;}>": {
+    "Record<string,string|{quantity:string;denominations:string[];canonical?:string|undefined;inverted?:boolean|undefined;}>": {
       "type": "object"
     }
   },
