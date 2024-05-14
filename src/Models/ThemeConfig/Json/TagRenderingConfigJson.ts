@@ -6,7 +6,7 @@ import { Translatable } from "./Translatable"
  */
 export interface MinimalTagRenderingConfigJson {
     /**
-     * question: What value should be shown (if no predifined option matches)?
+     * question: What value should be shown (if no predefined option matches)?
      *
      * This piece of text will be shown in the infobox.
      * Note that "&LBRACEkey&RBRACE"-parts are substituted by the corresponding values of the element.
