@@ -1095,7 +1095,7 @@ class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
             if(json.freeform.type === "nsi"){
                 const [key, value] = json.freeform.helperArgs[0].split("=")
                 const path = `${json.freeform.key}s/${key}/${value}`
-                const suggestions = NameSuggestionIndex.getSuggestionsFor(path)
+                const suggestions = NameSuggestionIndex.getSuggestionsFor(json.freeform.key, key, value)
                 if(suggestions === undefined){
                     context.enters("freeform","type").err("No entry found in the 'Name Suggestion Index' for "+path)
                 }
