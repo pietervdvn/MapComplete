@@ -4,7 +4,6 @@
   import type { Feature } from "geojson"
   import type { SpecialVisualizationState } from "../../SpecialVisualization"
   import TagRenderingAnswer from "./TagRenderingAnswer.svelte"
-  import { PencilAltIcon } from "@rgossiaux/svelte-heroicons/solid"
   import TagRenderingQuestion from "./TagRenderingQuestion.svelte"
   import { onDestroy } from "svelte"
   import Tr from "../../Base/Tr.svelte"
@@ -12,9 +11,7 @@
   import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
   import { Utils } from "../../../Utils"
   import { twMerge } from "tailwind-merge"
-  import { ariaLabel } from "../../../Utils/ariaLabel"
   import EditButton from "./EditButton.svelte"
-  import EditItemButton from "../../Studio/EditItemButton.svelte"
 
   export let config: TagRenderingConfig
   export let tags: UIEventSource<Record<string, string>>
