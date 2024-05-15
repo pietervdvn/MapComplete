@@ -1113,18 +1113,6 @@
           }
         },
         {
-          "if": "recycling:pmd=yes",
-          "ifnot": "recycling:pmd=",
-          "then": {
-            "en": "Plastic packaging, metal packaging and drink cartons (PMD) can be recycled here",
-            "nl": "Plastic verkpakkingen, metalen verkpakkingen en drankpakken kunnen hier gerecycled worden"
-          },
-          "icon": {
-            "path": "./assets/layers/recycling/pmd.svg",
-            "class": "medium"
-          }
-        },
-        {
           "if": "recycling:printer_cartridges=yes",
           "ifnot": "recycling:printer_cartridges=",
           "then": {
@@ -1259,6 +1247,18 @@
           },
           "icon": {
             "path": "./assets/layers/recycling/bicycles.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "recycling:pmd=yes",
+          "ifnot": "recycling:pmd=",
+          "then": {
+            "en": "Plastic packaging, metal packaging and drink cartons (PMD) can be recycled here",
+            "nl": "Plastic verpakkingen, metalen verpakkingen en drankpakken kunnen hier gerecycled worden"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/pmd.svg",
             "class": "medium"
           }
         }
