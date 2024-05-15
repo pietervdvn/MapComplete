@@ -28,11 +28,11 @@
   export let mappingIsSelected: boolean
 
   /**
-   * If there are many mappings, we might hide it.
+   * If there are many mappings, we might hide it, e.g. because of search.
    * This is the searchterm where it might hide
    */
   export let searchTerm: undefined | UIEventSource<string>
-
+  export let hideUnlessSearched = false
   $: {
     if (selectedElement !== undefined || mapping !== undefined) {
       searchTerm.setData(undefined)
@@ -42,17 +42,21 @@
   let matchesTerm: Store<boolean> | undefined =
     searchTerm?.map(
       (search) => {
+        search = search?.trim()
         if (!search) {
+          if(hideUnlessSearched){
+            if (mapping.priorityIf?.matchesProperties(tags.data)) {
+              return true
+            }
+            return false
+          }
           return true
         }
         if (mappingIsSelected) {
           return true
         }
-        search = search.toLowerCase()
         // There is a searchterm - this might hide the mapping
-        if (mapping.priorityIf?.matchesProperties(tags.data)) {
-          return true
-        }
+        search = search.toLowerCase()
         if (mapping.then.txt.toLowerCase().indexOf(search) >= 0) {
           return true
         }

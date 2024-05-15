@@ -1,12 +1,15 @@
 import * as nsi from "../../../node_modules/name-suggestion-index/dist/nsi.json"
+import * as nsiWD from "../../../node_modules/name-suggestion-index/dist/wikidata.min.json"
+
 import * as nsiFeatures from "../../../node_modules/name-suggestion-index/dist/featureCollection.json"
 import { LocationConflation } from "@rapideditor/location-conflation"
-import type { Feature, FeatureCollection, MultiPolygon } from "geojson"
-import * as turf from "@turf/turf"
-import { Utils } from "../../Utils"
-import TagInfo from "./TagInfo"
 import type { Feature, MultiPolygon } from "geojson"
+import { Utils } from "../../Utils"
 import * as turf from "@turf/turf"
+import { Mapping } from "../../Models/ThemeConfig/TagRenderingConfig"
+import { Tag } from "../Tags/Tag"
+import { TypedTranslation } from "../../UI/i18n/Translation"
+import { RegexTag } from "../Tags/RegexTag"
 
 /**
  * Main name suggestion index file
@@ -48,9 +51,7 @@ export interface NSIItem {
         include: string[],
         exclude: string[]
     }
-    tags: {
-        [key: string]: string
-    }
+    tags: Record<string, string>
     fromTemplate?: boolean
 }
 
@@ -71,15 +72,87 @@ export default class NameSuggestionIndex {
         return this._supportedTypes
     }
 
-    public static async buildTaginfoCountsPerCountry(type = "brand", key: string, value: string) {
-        const allData: { nsi: NSIItem, stats }[] = []
-        const brands = NameSuggestionIndex.getSuggestionsFor(type, key, value)
-        for (const brand of brands) {
-            const brandValue = brand.tags[type]
-            const allStats = await TagInfo.getGlobalDistributionsFor(type, brandValue)
-            allData.push({ nsi: brand, stats: allStats })
+
+    /**
+     * Fetches the data files for a single country. Note that it contains _all_ entries having this brand, not for a single type of object
+     * @param type
+     * @param countries
+     * @private
+     */
+    private static async fetchFrequenciesFor(type: string, countries: string[]) {
+        let stats = await Promise.all(countries.map(c => {
+            try {
+
+                return Utils.downloadJsonCached<Record<string, number>>(`./assets/data/nsi/stats/${type}.${c.toUpperCase()}.json`, 24 * 60 * 60 * 1000)
+            } catch (e) {
+                console.error("Could not fetch " + type + " statistics due to", e)
+                return undefined
+            }
+        }))
+        stats = Utils.NoNull(stats)
+        if (stats.length === 1) {
+            return stats[0]
         }
-        return allData
+        const merged = stats[0]
+        for (let i = 1; i < stats.length; i++) {
+            for (const countryCode in stats[i]) {
+                merged[countryCode] = (merged[countryCode] ?? 0) + stats[i][countryCode]
+            }
+        }
+        return merged
+    }
+
+    public static isSvg(nsiItem: NSIItem, type: string): boolean | undefined {
+        const logos = nsiWD["wikidata"][nsiItem?.tags?.[type + ":wikidata"]]?.logos
+        if(nsiItem.id === "axa-2f6feb"){
+            console.trace(">>> HI")
+        }
+        if (!logos) {
+            return undefined
+        }
+        if (logos.facebook) {
+            return false
+        }
+        const url: string = logos.wikidata
+        if (url.toLowerCase().endsWith(".svg")) {
+            return true
+        }
+        return false
+    }
+
+    public static async generateMappings(type: string, key: string, value: string, country: string[], location?: [number, number]) {
+        const mappings: Mapping[] = []
+        const frequencies = await NameSuggestionIndex.fetchFrequenciesFor(type, country)
+        const actualBrands = NameSuggestionIndex.getSuggestionsFor(type, key, value, country.join(";"), location)
+        for (const nsiItem of actualBrands) {
+            const tags = nsiItem.tags
+            const frequency = frequencies[nsiItem.displayName]
+            const logos = nsiWD["wikidata"][nsiItem.tags[type + ":wikidata"]]?.logos
+            let iconUrl = logos?.facebook ?? logos?.wikidata
+            const hasIcon = iconUrl !== undefined
+            let icon = undefined
+            if (hasIcon) {
+                // Using <img src=...> works fine without an extension for JPG and PNG, but _not_ svg :(
+                icon = "./assets/data/nsi/logos/" + nsiItem.id
+                if (NameSuggestionIndex.isSvg(nsiItem, type)) {
+                    console.log("Is svg:", nsiItem.displayName)
+                    icon = icon + ".svg"
+                }
+            }
+            mappings.push({
+                if: new Tag(type, tags[type]),
+                addExtraTags: Object.keys(tags).filter(k => k !== type).map(k => new Tag(k, tags[k])),
+                then: new TypedTranslation<{}>({ "*": nsiItem.displayName }),
+                hideInAnswer: false,
+                ifnot: undefined,
+                alsoShowIf: undefined,
+                icon,
+                iconClass: "medium",
+                priorityIf: frequency > 0 ? new RegexTag("id", /.*/) : undefined,
+                searchTerms: { "*": [nsiItem.displayName, nsiItem.id] }
+            })
+        }
+        return mappings
     }
 
     public static supportedTags(type: "operator" | "brand" | "flag" | "transit" | string): Record<string, string[]> {
@@ -101,26 +174,27 @@ export default class NameSuggestionIndex {
         return tags
     }
 
-    public static allPossible(type: "brand" | "operator"): string[] {
-        const options: string[] = []
+    /**
+     * Returns a list of all brands/operators
+     * @param type
+     */
+    public static allPossible(type: "brand" | "operator"): NSIItem[] {
+        const options: NSIItem[] = []
         const tags = NameSuggestionIndex.supportedTags(type)
         for (const osmKey in tags) {
             const values = tags[osmKey]
             for (const osmValue of values) {
                 const suggestions = this.getSuggestionsFor(type, osmKey, osmValue)
-                for (const suggestion of suggestions) {
-                    const value = suggestion.tags[type]
-                    options.push(value)
-                }
+                options.push(...suggestions)
             }
         }
-        return Utils.Dedup(options)
+        return (options)
     }
 
     /**
      *
      * @param path
-     * @param country
+     * @param country: a string containing one or more country codes, separated by ";"
      * @param location: center point of the feature, should be [lon, lat]
      */
     public static getSuggestionsFor(type: string, key: string, value: string, country: string = undefined, location: [number, number] = undefined): NSIItem[] {

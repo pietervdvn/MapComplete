@@ -1,8 +1,9 @@
 <script lang="ts">
-  import { UIEventSource } from "../../Logic/UIEventSource"
+  import { Store } from "../../Logic/UIEventSource"
   import { marked } from "marked"
-  export let src: string
-  export let srcWritable: UIEventSource<string> = undefined
+
+  export let src: string = undefined
+  export let srcWritable: Store<string> = undefined
   srcWritable?.addCallbackAndRunD(t => {
     src = t
   })

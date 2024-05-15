@@ -290,6 +290,7 @@
         "loginToStart": "Log in to answer this question",
         "loginWithOpenStreetMap": "Login with OpenStreetMap",
         "logout": "Log out",
+        "mappingsAreHidden": "Some options are hidden. Use search to show more options.",
         "menu": {
             "aboutMapComplete": "About MapComplete",
             "filter": "Filter data"
@@ -686,11 +687,11 @@
         "intro": "Privacy is important - for both the individual and for society. MapComplete tries to respect your privacy as much as possible - up to the point no annoying cookie banner is needed. However, we still would like to inform you which information is gathered and shared, under which circumstances and why these trade-offs are made.",
         "items": {
             "changesYouMake": "The changes you made",
-            "username": "Your username",
             "date": "When this change is made",
-            "theme": "The theme you used while making the change",
+            "distanceIndicator": "An indication of how close you were to changed objects. Other mappers can use this information to determine if a change was made based on survey or on remote research",
             "language": "The language of the user interface",
-            "distanceIndicator": "An indication of how close you were to changed objects. Other mappers can use this information to determine if a change was made based on survey or on remote research"
+            "theme": "The theme you used while making the change",
+            "username": "Your username"
         },
         "miscCookies": "MapComplete integrates with various other services, especially to load images of features. Images are hosted on various third-party servers, which might set cookies on their own.",
         "miscCookiesTitle": "Other cookies",

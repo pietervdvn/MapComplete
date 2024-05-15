@@ -3,7 +3,7 @@
    * Shows all questions for which the answers are unknown.
    * The questions can either be shown all at once or one at a time (in which case they can be skipped)
    */
-  import TagRenderingConfig from "../../../Models/ThemeConfig/TagRenderingConfig"
+  import TagRenderingConfig, { TagRenderingConfigUtils } from "../../../Models/ThemeConfig/TagRenderingConfig"
   import { Store, UIEventSource } from "../../../Logic/UIEventSource"
   import type { Feature } from "geojson"
   import type { SpecialVisualizationState } from "../../SpecialVisualization"
@@ -13,6 +13,7 @@
   import Translations from "../../i18n/Translations.js"
   import { Utils } from "../../../Utils"
   import { onDestroy } from "svelte"
+  import TagRenderingQuestionDynamic from "./TagRenderingQuestionDynamic.svelte"
 
   export let layer: LayerConfig
   export let tags: UIEventSource<Record<string, string>>
@@ -93,7 +94,7 @@
   let skipped: number = 0
 
   function skip(question: { id: string }, didAnswer: boolean = false) {
-    skippedQuestions.data.add(question.id)
+    skippedQuestions.data.add(question.id) // Must use ID, the config object might be a copy of the original
     skippedQuestions.ping()
     if (didAnswer) {
       answered++
@@ -161,11 +162,11 @@
       {#if $showAllQuestionsAtOnce}
         <div class="flex flex-col gap-y-1">
           {#each $allQuestionsToAsk as question (question.id)}
-            <TagRenderingQuestion config={question} {tags} {selectedElement} {state} {layer} />
+            <TagRenderingQuestionDynamic config={question} {tags} {selectedElement} {state} {layer} />
           {/each}
         </div>
       {:else if $firstQuestion !== undefined}
-        <TagRenderingQuestion
+        <TagRenderingQuestionDynamic
           config={$firstQuestion}
           {layer}
           {selectedElement}
@@ -184,7 +185,7 @@
           >
             <Tr t={Translations.t.general.skip} />
           </button>
-        </TagRenderingQuestion>
+        </TagRenderingQuestionDynamic>
       {/if}
     </div>
   {/if}

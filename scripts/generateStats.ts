@@ -7,7 +7,7 @@ import ScriptUtils from "./ScriptUtils"
 import TagRenderingConfig from "../src/Models/ThemeConfig/TagRenderingConfig"
 import { And } from "../src/Logic/Tags/And"
 import Script from "./Script"
-import NameSuggestionIndex, { NSIItem } from "../src/Logic/Web/NameSuggestionIndex"
+import NameSuggestionIndex from "../src/Logic/Web/NameSuggestionIndex"
 import TagInfo, { TagInfoStats } from "../src/Logic/Web/TagInfo"
 
 class Utilities {
@@ -18,6 +18,7 @@ class Utilities {
         }
         return newR
     }
+
 }
 class GenerateStats extends Script {
 
@@ -61,9 +62,7 @@ class GenerateStats extends Script {
         await Promise.all(
             Array.from(keysAndTags.keys()).map(async (key) => {
                 const values = keysAndTags.get(key)
-                const data = await Utils.downloadJson(
-                    `https://taginfo.openstreetmap.org/api/4/key/stats?key=${key}`
-                )
+                const data = await TagInfo.global.getStats(key)
                 const count = data.data.find((item) => item.type === "all").count
                 keyTotal.set(key, count)
                 console.log(key, "-->", count)
@@ -72,10 +71,8 @@ class GenerateStats extends Script {
                     tagTotal.set(key, new Map<string, number>())
                     await Promise.all(
                         Array.from(values).map(async (value) => {
-                            const tagData = await Utils.downloadJson(
-                                `https://taginfo.openstreetmap.org/api/4/tag/stats?key=${key}&value=${value}`
-                            )
-                            const count = tagData.data.find((item) => item.type === "all").count
+                           const tagData: TagInfoStats= await TagInfo.global.getStats(key, value)
+                            const count = tagData.data .find((item) => item.type === "all").count
                             tagTotal.get(key).set(value, count)
                             console.log(key + "=" + value, "-->", count)
                         })
@@ -98,20 +95,74 @@ class GenerateStats extends Script {
         )
     }
 
-    async createNameSuggestionIndexFile() {
-        const type = "brand"
+    private summarizeNSI(sourcefile: string, pathNoExtension: string): void {
+        const data = <Record<string, Record<string, number>>>JSON.parse(readFileSync(sourcefile, "utf8"))
+
+        const allCountries: Set<string> = new Set()
+        for (const brand in data) {
+            const perCountry = data[brand]
+            for (const country in perCountry) {
+                allCountries.add(country)
+                const count = perCountry[country]
+                if (count === 0) {
+                    delete perCountry[country]
+                }
+            }
+        }
+
+        const pathOut = pathNoExtension + ".summarized.json"
+        writeFileSync(pathOut, JSON.stringify(
+            data, null, "  "), "utf8")
+        console.log("Written", pathOut)
+
+        const allBrands = Object.keys(data)
+        allBrands.sort()
+        for (const country of allCountries) {
+            const summary = <Record<string, number>>{}
+            for (const brand of allBrands) {
+                const count = data[brand][country]
+                if (count > 2) { // Eéntje is geentje
+                    // We ignore count == 1 as they are rather exceptional
+                    summary[brand] = data[brand][country]
+                }
+            }
+
+            const countryPath = pathNoExtension + "." + country + ".json"
+            writeFileSync(countryPath, JSON.stringify(summary), "utf8")
+            console.log("Written", countryPath)
+        }
+    }
+
+
+    async createNameSuggestionIndexFile(basepath: string,type: "brand" | "operator") {
+        const path = basepath+type+'.json'
         let allBrands = <Record<string, Record<string, number>>>{}
-        const path = "./src/assets/generated/nsi_stats/" + type + ".json"
         if (existsSync(path)) {
             allBrands = JSON.parse(readFileSync(path, "utf8"))
             console.log("Loaded",Object.keys(allBrands).length," previously loaded brands")
         }
         let lastWrite = new Date()
-        const allBrandNames: string[] = NameSuggestionIndex.allPossible(type)
-        for (const brand of allBrandNames) {
+        let skipped = 0
+        const allBrandNames: string[] = Utils.Dedup(NameSuggestionIndex.allPossible(type).map(item => item.tags[type]))
+        for (let i = 0; i < allBrandNames.length; i++){
+            if(i % 100 == 0){
+                console.log("Downloading ",i+"/"+allBrandNames.length,"; skipped",skipped)
+            }
+            const brand = allBrandNames[i]
+            if(!!allBrands[brand] && Object.keys(allBrands[brand]).length == 0){
+                delete allBrands[brand]
+                console.log("Deleted", brand, "as no entries at all")
+            }
             if(allBrands[brand] !== undefined){
-                console.log("Skipping", brand,", already loaded")
-                continue
+                const max = Math.max(...Object.values(allBrands[brand]))
+                skipped++
+                if(max < 0){
+                    console.log("HMMMM:", allBrands[brand])
+                    delete allBrands[brand]
+
+                }else{
+                    continue
+                }
             }
             const distribution: Record<string, number> = Utilities.mapValues(await TagInfo.getGlobalDistributionsFor(type, brand), s => s.data.find(t => t.type === "all").count)
             allBrands[brand] = distribution
@@ -128,8 +179,11 @@ class GenerateStats extends Script {
     }
 
     async main(_: string[]) {
-        //  this.createOptimizationFile()
-        await this.createNameSuggestionIndexFile()
+        await this.createOptimizationFile()
+        const type = "brand"
+        const basepath = "./src/assets/generated/stats/"
+        await this.createNameSuggestionIndexFile(basepath, type)
+        this.summarizeNSI(basepath+type+".json", "./public/assets/data/stats/"+type)
 
     }
 

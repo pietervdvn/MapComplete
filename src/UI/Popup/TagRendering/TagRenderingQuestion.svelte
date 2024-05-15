@@ -293,6 +293,7 @@
   let showTags = state?.userRelatedState?.showTags ?? new ImmutableStore(undefined)
   let numberOfCs = state?.osmConnection?.userDetails?.data?.csCount ?? 0
   let question = config.question
+  let hideMappingsUnlessSearchedFor = config.mappings.length > 8 && config.mappings.some(m => m.priorityIf)
   $: question = config.question
   if (state?.osmConnection) {
     onDestroy(
@@ -335,7 +336,7 @@
           {/if}
         </legend>
 
-        {#if config.mappings?.length >= 8}
+        {#if config.mappings?.length >= 8 || hideMappingsUnlessSearchedFor}
           <div class="sticky flex w-full" aria-hidden="true">
             <Search class="h-6 w-6" />
             <input
@@ -345,7 +346,14 @@
               use:placeholder={Translations.t.general.searchAnswer}
             />
           </div>
+          {#if hideMappingsUnlessSearchedFor}
+            <div class="rounded border border-black border-dashed p-1 px-2 m-1">
+              <Tr t={Translations.t.general.mappingsAreHidden}/>
+            </div>
+          {/if}
         {/if}
+
+
 
         {#if config.freeform?.key && !(mappings?.length > 0)}
           <!-- There are no options to choose from, simply show the input element: fill out the text field -->
@@ -373,6 +381,7 @@
                 {selectedElement}
                 {layer}
                 {searchTerm}
+                hideUnlessSearched={hideMappingsUnlessSearchedFor}
                 mappingIsSelected={selectedMapping === i}
               >
                 <input
@@ -420,6 +429,7 @@
                 {selectedElement}
                 {layer}
                 {searchTerm}
+                hideUnlessSearched={hideMappingsUnlessSearchedFor}
                 mappingIsSelected={checkedMappings[i]}
               >
                 <input
