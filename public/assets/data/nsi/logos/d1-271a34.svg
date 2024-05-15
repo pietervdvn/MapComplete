@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="100"
+   height="100"
+   viewBox="0 0 26.458333 26.458334"
+   version="1.1"
+   id="svg19985"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname="logo.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <title
+     id="title20035">Tiendas D1 logo</title>
+  <sodipodi:namedview
+     id="namedview19987"
+     pagecolor="#ffffff"
+     bordercolor="#111111"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:document-units="px"
+     showgrid="false"
+     units="px"
+     width="100px"
+     inkscape:zoom="1"
+     inkscape:cx="-240.5"
+     inkscape:cy="-84.5"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs19982" />
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g19980"
+       transform="matrix(0.18661297,0,0,0.18661297,28.101444,9.1120343)">
+      <rect
+         style="fill:#ea0b2a;fill-opacity:1;stroke-width:1.01031"
+         id="rect4351"
+         width="137.48732"
+         height="137.6727"
+         x="-148.21336"
+         y="-46.92487" />
+      <path
+         id="rect841"
+         style="fill:#ffffff;stroke-width:1.28927"
+         d="m -104.67677,-37.994737 c -7.65916,-0.0051 -16.25356,1.880249 -25.78537,6.571007 l -17.79638,10.401331 v 40.574364 l 36.87628,66.057137 35.839783,-20.667414 c 6.961525,-3.875333 11.601174,-7.751516 15.468682,-11.368478 20.111079,-18.343217 5.930963,-53.47899414 1.805619,-60.9712904 C -61.893959,-13.85696 -77.32257,-37.976406 -104.67677,-37.994737 Z m -3.05093,30.8850114 c 4.94046,-0.072905 13.926491,1.8926884 20.839679,15.2141261 9.539868,18.3431865 3.351993,25.5766035 2.06283,26.8683855 -0.773508,0.516713 -2.579584,2.067231 -7.994107,5.167494 l -5.154523,3.100486 -24.236979,-44.1801195 0.51442,-0.2577423 c 8.25069,-4.650389 9.28282,-5.1668665 10.31414,-5.4252229 0,0 1.40887,-0.4542991 3.65454,-0.4874069 z" />
+      <circle
+         style="fill:#ffec01;fill-opacity:1;stroke-width:1.93519"
+         id="path3691"
+         cx="-52.846333"
+         cy="-7.2482433"
+         r="25.826559" />
+      <path
+         class="st4"
+         d="m -56.91939,-26.297795 12.18522,23.592651 6.74076,-3.629627 3.62964,6.74075 -20.7408,11.148189 -3.62964,-6.740773 5.96298,-3.111112 -7.51854,-14.518552 c 0,0 -1.03704,1.814807 -2.85186,3.629627 -1.81482,1.81483 -2.5926,1.81483 -2.5926,1.81483 l -3.37038,-6.481498 c 0,0 2.5926,-2.333346 4.14816,-4.407427 1.2963,-2.074069 1.81482,-4.925934 1.81482,-4.925934 z"
+         id="path20-3"
+         inkscape:connector-curvature="0"
+         style="fill:#0069b4;fill-opacity:1;stroke-width:2.59261" />
+    </g>
+  </g>
+  <metadata
+     id="metadata20031">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>Tiendas D1 logo</dc:title>
+        <dc:date>25-enr-2023</dc:date>
+        <cc:license
+           rdf:resource="http://scripts.sil.org/OFL" />
+      </cc:Work>
+      <cc:License
+         rdf:about="http://scripts.sil.org/OFL">
+        <cc:permits
+           rdf:resource="http://scripts.sil.org/pub/OFL/Reproduction" />
+        <cc:permits
+           rdf:resource="http://scripts.sil.org/pub/OFL/Distribution" />
+        <cc:permits
+           rdf:resource="http://scripts.sil.org/pub/OFL/Embedding" />
+        <cc:permits
+           rdf:resource="http://scripts.sil.org/pub/OFL/DerivativeWorks" />
+        <cc:requires
+           rdf:resource="http://scripts.sil.org/pub/OFL/Notice" />
+        <cc:requires
+           rdf:resource="http://scripts.sil.org/pub/OFL/Attribution" />
+        <cc:requires
+           rdf:resource="http://scripts.sil.org/pub/OFL/ShareAlike" />
+        <cc:requires
+           rdf:resource="http://scripts.sil.org/pub/OFL/DerivativeRenaming" />
+        <cc:requires
+           rdf:resource="http://scripts.sil.org/pub/OFL/BundlingWhenSelling" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+</svg>

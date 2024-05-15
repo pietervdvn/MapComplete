@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="51.872952mm"
+   height="51.733688mm"
+   viewBox="0 0 51.872952 51.733688"
+   version="1.1"
+   id="svg948"
+   inkscape:version="1.1.1 (c3084ef, 2021-09-22)"
+   sodipodi:docname="Icon_Schaffhauser_Kantonalbank.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview950"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="3.0756637"
+     inkscape:cx="98.027622"
+     inkscape:cy="97.865056"
+     inkscape:window-width="1383"
+     inkscape:window-height="912"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs945" />
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-107.63057,-155.81752)">
+    <rect
+       style="fill:#ffffff;stroke-width:0.2;stroke-opacity:0.992908"
+       id="rect1068"
+       width="51.872948"
+       height="51.733688"
+       x="107.63057"
+       y="155.81752" />
+    <path
+       d="m 109.67164,157.71718 h 47.86145 v 47.78957 h -47.86145 z m -2.04107,-1.89966 h 51.87295 v 51.73369 h -51.87295 v -51.73369 m 47.15782,4.3639 h -23.93111 l -13.23192,21.46755 13.23192,21.53823 h 23.93111 l -13.23271,-21.53823 13.23271,-21.46755 v 0"
+       id="path3048"
+       style="fill:#171716;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.39105" />
+  </g>
+</svg>

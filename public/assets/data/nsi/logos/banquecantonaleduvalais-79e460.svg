@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="56.40123mm"
+   height="56.38398mm"
+   viewBox="0 0 56.40123 56.38398"
+   version="1.1"
+   id="svg3219"
+   inkscape:version="1.1.1 (c3084ef, 2021-09-22)"
+   sodipodi:docname="Icon Walliser Kantonalbank.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview3221"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="0.63428732"
+     inkscape:cx="-84.346634"
+     inkscape:cy="-182.88242"
+     inkscape:window-width="1383"
+     inkscape:window-height="912"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs3216" />
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-127.35106,-197.04684)">
+    <rect
+       style="fill:#ffffff;stroke-width:0.2;stroke-opacity:0.992908"
+       id="rect3407"
+       width="50.363358"
+       height="50.44791"
+       x="130.42262"
+       y="200.01488" />
+    <path
+       d="m 139.4803,225.21208 13.79444,22.64677 h 24.64847 l -13.79617,-22.64677 13.79617,-22.69854 h -24.54493 l -13.89798,22.69854"
+       id="path2590"
+       style="fill:#ef2e31;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.38048" />
+    <path
+       d="m 130.42262,200.01487 h 25.16788 v -2.96803 h -28.23944 v 56.38398 h 28.23944 v -2.96804 h -25.16788 z m 25.16788,0 h 25.19548 v 50.44791 H 155.5905 v 2.96804 h 28.16179 V 197.04684 H 155.5905 v 2.96803"
+       id="path2594"
+       style="fill:#ef2e31;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.38048" />
+    <path
+       d="m 158.22031,212.79639 -3.33213,2.41929 1.27522,3.9568 -3.35802,-2.4469 -3.35802,2.4469 1.30283,-3.9568 -3.35802,-2.41929 h 4.13799 l 1.27522,-3.93092 1.27522,3.93092 h 4.13971"
+       id="path2598"
+       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.38048" />
+    <path
+       d="m 149.44736,206.39269 -3.35629,2.4469 1.27522,3.93092 -3.33213,-2.44863 -3.3563,2.44863 1.27522,-3.93092 -3.35801,-2.4469 h 4.16387 l 1.27522,-3.93092 1.27521,3.93092 h 4.13799"
+       id="path2602"
+       style="fill:#ef2e31;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.38048" />
+  </g>
+</svg>

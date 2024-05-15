@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="47.125271mm"
+   height="47.130119mm"
+   viewBox="0 0 47.125271 47.130119"
+   version="1.1"
+   id="svg1717"
+   inkscape:version="1.1.1 (c3084ef, 2021-09-22)"
+   sodipodi:docname="Icon_Basler_Kantonalbank.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1719"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="0.63785073"
+     inkscape:cx="-224.97427"
+     inkscape:cy="246.13909"
+     inkscape:window-width="1383"
+     inkscape:window-height="912"
+     inkscape:window-x="116"
+     inkscape:window-y="80"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1714" />
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-164.7586,-83.45446)">
+    <path
+       id="path2458"
+       style="fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.89954"
+       d="m 164.7586,130.58458 h 47.12527 V 83.45446 H 164.7586 Z" />
+    <path
+       id="path2460"
+       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.89954"
+       d="m 166.68188,128.53535 h 43.29058 V 85.242499 h -43.29058 z" />
+    <path
+       id="path2462"
+       style="fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.89954"
+       d="m 173.84078,107.02303 11.94338,19.45132 h 21.74026 L 195.5668,107.035 207.57666,87.540946 h -21.74501 l -11.99087,19.477334" />
+  </g>
+</svg>
