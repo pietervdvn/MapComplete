@@ -461,11 +461,11 @@
         "intro": "La vie privée est importante - tant pour l'individu que pour la société. MapComplete s'efforce de respecter votre vie privée autant que possible - jusqu'au point où aucune bannière de cookie gênante n'est nécessaire. Toutefois, nous tenons à vous informer des informations qui sont recueillies et partagées, des circonstances dans lesquelles elles le sont et des raisons pour lesquelles ces compromis sont faits.",
         "items": {
             "changesYouMake": "Les modifications que vous avez faites",
-            "username": "Votre nom d'utilisateur",
             "date": "Quand la modification a été faite",
-            "theme": "Le thème utilisé lorsque vous faites la modification",
+            "distanceIndicator": "Une indication sur votre proximité avec l'objet modifié. D'autres utilisateurs peuvent utiliser cette information pour déterminer si la modification a été faite par un relevé de terrain ou par une recherche à distance",
             "language": "La langue de l'interface utilisateur",
-            "distanceIndicator": "Une indication sur votre proximité avec l'objet modifié. D'autres utilisateurs peuvent utiliser cette information pour déterminer si la modification a été faite par un relevé de terrain ou par une recherche à distance"
+            "theme": "Le thème utilisé lorsque vous faites la modification",
+            "username": "Votre nom d'utilisateur"
         },
         "miscCookiesTitle": "Autres cookies",
         "title": "Politique de confidentialité",

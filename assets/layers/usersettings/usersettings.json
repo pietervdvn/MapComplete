@@ -510,8 +510,7 @@
     },
     {
       "id": "more_privacy",
-      "question":
-      {
+      "question": {
         "en": "When making changes, should a rough indication be given how far away you were from the object?"
       },
       "questionHint": {

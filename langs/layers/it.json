@@ -2086,6 +2086,9 @@
                     },
                     "3": {
                         "then": "I cani sono ammessi e possono andare in giro liberamente"
+                    },
+                    "4": {
+                        "then": "I cani sono ammessi solo all'esterno"
                     }
                 },
                 "question": "I cani sono ammessi in quest’attività?"

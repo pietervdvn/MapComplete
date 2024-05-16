@@ -548,11 +548,11 @@
         "intro": "Prywatność jest ważna – zarówno dla jednostki, jak i dla społeczeństwa. MapComplete stara się w jak największym stopniu szanować Twoją prywatność - do tego stopnia, że nie jest potrzebny irytujący baner z plikami cookie. Jednakże nadal chcielibyśmy poinformować Cię, jakie informacje są gromadzone i udostępniane, w jakich okolicznościach i dlaczego dokonuje się takich kompromisów.",
         "items": {
             "changesYouMake": "Wprowadzone zmiany",
-            "username": "Twoja nazwa użytkownika",
             "date": "Kiedy dokonano tej zmiany",
-            "theme": "Motyw, którego użyłeś podczas wprowadzania zmiany",
+            "distanceIndicator": "Wskazanie, jak blisko byłeś zmienionych obiektów. Inni twórcy map mogą wykorzystać te informacje do ustalenia, czy zmiana została wprowadzona na podstawie realnych odwiedzin miejsca czy zdalnych badań.",
             "language": "Język interfejsu użytkownika",
-            "distanceIndicator": "Wskazanie, jak blisko byłeś zmienionych obiektów. Inni twórcy map mogą wykorzystać te informacje do ustalenia, czy zmiana została wprowadzona na podstawie realnych odwiedzin miejsca czy zdalnych badań."
+            "theme": "Motyw, którego użyłeś podczas wprowadzania zmiany",
+            "username": "Twoja nazwa użytkownika"
         },
         "miscCookies": "MapComplete integruje się z różnymi innymi usługami, szczególnie w celu wczytywania obrazów obiektów. Obrazy są przechowywane na różnych serwerach stron trzecich, które mogą samodzielnie ustawiać pliki cookie.",
         "miscCookiesTitle": "Inne ciasteczka",

@@ -2193,6 +2193,18 @@
                     },
                     "17": {
                         "question": "Has a <div style='display: inline-block'><b><b>BS1363</b> (Type G)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bs1363.svg'/></div> connector"
+                    },
+                    "18": {
+                        "question": "Has a <div style='display: inline-block'><b><b>NEMA 5-15</b> (Type B)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/nema-5-15.svg'/></div> connector"
+                    },
+                    "19": {
+                        "question": "Has a <div style='display: inline-block'><b><b>SEV 1011 T23</b> (Type J)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/typej.svg'/></div> connector"
+                    },
+                    "20": {
+                        "question": "Has a <div style='display: inline-block'><b><b>AS3112</b> (Type I)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/as3112.svg'/></div> connector"
+                    },
+                    "21": {
+                        "question": "Has a <div style='display: inline-block'><b><b>NEMA 5-20</b> (Type B)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/nema-5-20.svg'/></div> connector"
                     }
                 }
             }
@@ -2343,6 +2355,30 @@
                     },
                     "33": {
                         "then": "<b>BS1363</b> (Type G)"
+                    },
+                    "34": {
+                        "then": "<b>NEMA 5-15</b> (Type B)"
+                    },
+                    "35": {
+                        "then": "<b>NEMA 5-15</b> (Type B)"
+                    },
+                    "36": {
+                        "then": "<b>SEV 1011 T23</b> (Type J)"
+                    },
+                    "37": {
+                        "then": "<b>SEV 1011 T23</b> (Type J)"
+                    },
+                    "38": {
+                        "then": "<b>AS3112</b> (Type I)"
+                    },
+                    "39": {
+                        "then": "<b>AS3112</b> (Type I)"
+                    },
+                    "40": {
+                        "then": "<b>NEMA 5-20</b> (Type B)"
+                    },
+                    "41": {
+                        "then": "<b>NEMA 5-20</b> (Type B)"
                     }
                 },
                 "question": "Which charging connections are available here?"
@@ -2580,6 +2616,18 @@
                         },
                         "16": {
                             "2": "<b>BS1363</b> (Type G)"
+                        },
+                        "17": {
+                            "2": "<b>NEMA 5-15</b> (Type B)"
+                        },
+                        "18": {
+                            "2": "<b>SEV 1011 T23</b> (Type J)"
+                        },
+                        "19": {
+                            "2": "<b>AS3112</b> (Type I)"
+                        },
+                        "20": {
+                            "2": "<b>NEMA 5-20</b> (Type B)"
                         }
                     }
                 }
@@ -7790,6 +7838,9 @@
                     },
                     "3": {
                         "then": "Dogs are allowed and can run around freely"
+                    },
+                    "4": {
+                        "then": "Dogs are allowed only outside"
                     }
                 },
                 "question": "Are dogs allowed in this business?"
@@ -8286,6 +8337,9 @@
                     },
                     "21": {
                         "question": "Recycling of bicycles"
+                    },
+                    "22": {
+                        "question": "Recycling of plastic packaging, metal packaging and drink cartons (PMD)"
                     }
                 }
             },
@@ -8421,6 +8475,9 @@
                     },
                     "24": {
                         "then": "Bicycles can be recycled here"
+                    },
+                    "25": {
+                        "then": "Plastic packaging, metal packaging and drink cartons (PMD) can be recycled here"
                     }
                 },
                 "question": "What can be recycled here?"
@@ -10799,6 +10856,25 @@
                     }
                 }
             },
+            "more_privacy": {
+                "mappings": {
+                    "0": {
+                        "then": "When making changes to OpenStreetMap, do not indicate how far away you were from the changed objects."
+                    },
+                    "1": {
+                        "then": "When making changes to OpenStreetMap, roughly indicate how far away you were from the changed objects. This helps other contributors to understand how you made the change"
+                    }
+                },
+                "question": "When making changes, should a rough indication be given how far away you were from the object?",
+                "questionHint": "If you make a change to one or more objects and you enabled your location, a rough indication of where you made will be saved: it is indicated if you were closer then 25m, 500m, 5km or further away then 5km. This helps mappers understand your context when making changes, but gives an indication of where you were at this time. "
+            },
+            "more_privacy_theme_override": {
+                "mappings": {
+                    "0": {
+                        "then": "This theme is sensitive. Making changes will not indicate if you were nearby explicitly."
+                    }
+                }
+            },
             "picture-license": {
                 "mappings": {
                     "0": {
@@ -11236,6 +11312,12 @@
                     },
                     "6": {
                         "question": "Waste basket for plastic"
+                    },
+                    "7": {
+                        "question": "Waste basket for plastic packaging, metal packaging and drink cartons (PMD)"
+                    },
+                    "8": {
+                        "question": "Waste basket for paper"
                     }
                 }
             },
@@ -11293,6 +11375,9 @@
                     },
                     "7": {
                         "then": "A waste basket for paper"
+                    },
+                    "8": {
+                        "then": "A waste basket for plastic packaging, metal packaging and drink cartons (PMD)"
                     }
                 },
                 "question": "What kind of waste basket is this?"

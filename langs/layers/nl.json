@@ -1885,6 +1885,18 @@
                     },
                     "17": {
                         "question": "Heeft een <div style='display: inline-block'><b><b>BS1363</b> (VK 3-pin)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bs1363.svg'/></div>"
+                    },
+                    "18": {
+                        "question": "Heeft een <div style='display: inline-block'><b><b>NEMA 5-15</b> (VS 3-pin)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/nema-5-15.svg'/></div>"
+                    },
+                    "19": {
+                        "question": "Heeft een <div style='display: inline-block'><b><b>SEV 1011 T23</b> (Zwitserse 3-pin)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/typej.svg'/></div>"
+                    },
+                    "20": {
+                        "question": "Heeft een <div style='display: inline-block'><b><b>AS3112</b> (Australische 3-pin)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/as3112.svg'/></div>"
+                    },
+                    "21": {
+                        "question": "Heeft een <div style='display: inline-block'><b><b>NEMA 5-20</b> (VS 3-pin)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/nema-5-20.svg'/></div>"
                     }
                 }
             }
@@ -2035,6 +2047,30 @@
                     },
                     "33": {
                         "then": "<b>BS1363</b> (VK 3-pin)"
+                    },
+                    "34": {
+                        "then": "<b>NEMA 5-15</b> (VS 3-pin)"
+                    },
+                    "35": {
+                        "then": "<b>NEMA 5-15</b> (VS 3-pin)"
+                    },
+                    "36": {
+                        "then": "<b>SEV 1011 T23</b> (Zwitserse 3-pin)"
+                    },
+                    "37": {
+                        "then": "<b>SEV 1011 T23</b> (Zwitserse 3-pin)"
+                    },
+                    "38": {
+                        "then": "<b>AS3112</b> (Australische 3-pin)"
+                    },
+                    "39": {
+                        "then": "<b>AS3112</b> (Australische 3-pin)"
+                    },
+                    "40": {
+                        "then": "<b>NEMA 5-20</b> (VS 3-pin)"
+                    },
+                    "41": {
+                        "then": "<b>NEMA 5-20</b> (VS 3-pin)"
                     }
                 },
                 "question": "Welke aansluitingen zijn hier beschikbaar?"
@@ -2272,6 +2308,18 @@
                         },
                         "16": {
                             "2": "<b>BS1363</b> (VK 3-pin)"
+                        },
+                        "17": {
+                            "2": "<b>NEMA 5-15</b> (VS 3-pin)"
+                        },
+                        "18": {
+                            "2": "<b>SEV 1011 T23</b> (Zwitserse 3-pin)"
+                        },
+                        "19": {
+                            "2": "<b>AS3112</b> (Australische 3-pin)"
+                        },
+                        "20": {
+                            "2": "<b>NEMA 5-20</b> (VS 3-pin)"
                         }
                     }
                 }
@@ -6869,6 +6917,9 @@
                     },
                     "21": {
                         "question": "Recycling van fietsen"
+                    },
+                    "22": {
+                        "question": "Recycling van plastic verkpakkingen, metalen verkpakkingen en drankpakken (PMD)"
                     }
                 }
             },
@@ -7004,6 +7055,9 @@
                     },
                     "24": {
                         "then": "Fietsen (en fietswrakken) kunnen hier gerecycled worden"
+                    },
+                    "25": {
+                        "then": "Plastic verpakkingen, metalen verpakkingen en drankpakken kunnen hier gerecycled worden"
                     }
                 },
                 "question": "Wat kan hier gerecycled worden?"
@@ -9288,6 +9342,12 @@
                     },
                     "6": {
                         "question": "Vuilnisbak voor plastic"
+                    },
+                    "7": {
+                        "question": "Vuilnisbak voor plastic verpakkingen, metalen verpakkingen en drankpakken (PMD)"
+                    },
+                    "8": {
+                        "question": "Vuilnisbak voor papier"
                     }
                 }
             },
@@ -9345,6 +9405,9 @@
                     },
                     "7": {
                         "then": "Een vuilnisbak voor papier"
+                    },
+                    "8": {
+                        "then": "Een vuilnisbak voor plastic verpakkingen, metalen verpakkingen en drankpakken (PMD)"
                     }
                 },
                 "question": "Wat voor soort vuilnisbak is dit?"

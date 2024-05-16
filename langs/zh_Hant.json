@@ -659,11 +659,11 @@
         "intro": "隱私相當重要 - 對個人與對社會都是。MapComplete 試著盡可能尊重你的隱私 - 所以不會需要惱人的 cookie。然而我們仍然告知，在那些情境下，以及做出的選擇與取捨下，有那些資訊會被收集與分享。",
         "items": {
             "changesYouMake": "你做的變動",
-            "username": "你的使用者名稱",
             "date": "你在什麼時間做的變動",
-            "theme": "當你做出變動時使用的主題",
+            "distanceIndicator": "你會多接近時變動物件的指示。其他的圖客可以用這些資訊來決定是否是居於踏查還是遠端研究",
             "language": "使用者介面語言",
-            "distanceIndicator": "你會多接近時變動物件的指示。其他的圖客可以用這些資訊來決定是否是居於踏查還是遠端研究"
+            "theme": "當你做出變動時使用的主題",
+            "username": "你的使用者名稱"
         },
         "miscCookies": "MapComplete 整合多項服務，特別是載入圖徵的圖片。圖片是放在多個第三方服務供應商，也許會有他們自己的 cookies。",
         "miscCookiesTitle": "其他 cookies",

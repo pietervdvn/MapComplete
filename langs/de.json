@@ -682,11 +682,11 @@
         "intro": "Privatsphäre ist wichtig - sowohl für den Einzelnen als auch für die Gesellschaft. MapComplete versucht, Ihre Privatsphäre so weit wie möglich zu respektieren - bis zu dem Punkt, an dem kein lästiger Cookie-Banner mehr nötig ist. Dennoch möchten wir Sie darüber informieren, welche Informationen gesammelt und weitergegeben werden, unter welchen Umständen und warum diese Kompromisse gemacht werden.",
         "items": {
             "changesYouMake": "Ihre Änderungen",
-            "username": "Ihren Benutzernamen",
             "date": "Den Zeitpunkt Ihrer Änderungen",
-            "theme": "Das bei Ihren Änderungen verwendete MapComplete-Thema",
+            "distanceIndicator": "Ihre Entfernung zu den geänderten Objekten. Dadurch kann festgestellt werden, ob die Änderungen vor Ort gespeichert wurden",
             "language": "Die Sprache Ihrer Benutzeroberfläche",
-            "distanceIndicator": "Ihre Entfernung zu den geänderten Objekten. Dadurch kann festgestellt werden, ob die Änderungen vor Ort gespeichert wurden"
+            "theme": "Das bei Ihren Änderungen verwendete MapComplete-Thema",
+            "username": "Ihren Benutzernamen"
         },
         "miscCookies": "MapComplete integriert weitere Dienste, insbesondere um Bilder von Objekten zu laden. Diese Bilder werden auf Servern von Drittanbietern gehostet, die möglicherweise eigene Cookies setzen.",
         "miscCookiesTitle": "Andere Cookies",

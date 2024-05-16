@@ -442,11 +442,11 @@
         "intro": "La privacidad es importante - tanto para el individual como para la sociedad. MapComplete intenta respetar tu privacidad tanto como sea posible - hasta el punto de que no se necesita ningún banner de cookies molesto es necesario. De todas formas, nos gustaría informarte de qué información se recolecta y se comparte, bajo que circunstancias y por qué se hacen estos compromisos.",
         "items": {
             "changesYouMake": " Los cambios que has hecho",
-            "username": "Tu nombre de usuario",
             "date": "Cuándo se efectuó el cambio",
-            "theme": "El tema que utilizaste mientras que hacías el cambio",
+            "distanceIndicator": "Una indicación de como de cerca estabas a los objetos cambiados. Otros mapeadores pueden utilizar esta información para determina si un cambio se hizo basándose en un sondeo o en una investigación remota",
             "language": "El idioma de la interfaz de usuario",
-            "distanceIndicator": "Una indicación de como de cerca estabas a los objetos cambiados. Otros mapeadores pueden utilizar esta información para determina si un cambio se hizo basándose en un sondeo o en una investigación remota"
+            "theme": "El tema que utilizaste mientras que hacías el cambio",
+            "username": "Tu nombre de usuario"
         },
         "miscCookies": "MapComplete se integra con varios otros servicios, especialmente para cargar imágenes de características. Las imágenes se alojan en varios servidores de terceros, que puede que establezcan cookies por si mismos.",
         "miscCookiesTitle": "Otras cookies",

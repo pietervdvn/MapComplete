@@ -548,11 +548,11 @@
         "intro": "Soukromí je důležité – jak pro jednotlivce, tak pro společnost. MapComplete se snaží co nejvíce respektovat vaše soukromí – až do té míry není potřeba žádný obtěžující banner cookie. Přesto bychom vás rádi informovali, které informace jsou shromažďovány a sdíleny, za jakých okolností a proč jsou tyto kompromisy prováděny.",
         "items": {
             "changesYouMake": "Provedené změny",
-            "username": "Vaše uživatelské jméno",
             "date": "Když je tato změna provedena",
-            "theme": "Motiv kterou jste použili při provádění změny",
+            "distanceIndicator": "Indikace toho, jak blízko jste byli ke změněným objektům. Ostatní tvůrci map mohou tyto informace použít k určení, zda byla změna provedena na základě průzkumu nebo vzdáleného výzkumu",
             "language": "Jazyk uživatelského rozhraní",
-            "distanceIndicator": "Indikace toho, jak blízko jste byli ke změněným objektům. Ostatní tvůrci map mohou tyto informace použít k určení, zda byla změna provedena na základě průzkumu nebo vzdáleného výzkumu"
+            "theme": "Motiv kterou jste použili při provádění změny",
+            "username": "Vaše uživatelské jméno"
         },
         "miscCookies": "MapComplete se integruje s různými dalšími službami, zejména pro načítání obrázků funkcí. Obrázky jsou hostovány na různých serverech třetích stran, které mohou samy nastavovat soubory cookie.",
         "miscCookiesTitle": "Jiné cookies",
