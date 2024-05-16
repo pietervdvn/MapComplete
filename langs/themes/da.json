@@ -631,33 +631,6 @@
     "onwheels": {
         "description": "På dette kort vises steder, der er offentligt tilgængelige for kørestolsbrugere, og de kan nemt tilføjes",
         "layers": {
-            "19": {
-                "override": {
-                    "=title": {
-                        "render": "Statistikker"
-                    }
-                }
-            },
-            "20": {
-                "override": {
-                    "+tagRenderings": {
-                        "0": {
-                            "render": {
-                                "special": {
-                                    "text": "Importere"
-                                }
-                            }
-                        },
-                        "1": {
-                            "render": {
-                                "special": {
-                                    "message": "Tilføj alle de foreslåede tags"
-                                }
-                            }
-                        }
-                    }
-                }
-            },
             "4": {
                 "override": {
                     "filter": {
@@ -690,6 +663,33 @@
                                 },
                                 "3": {
                                     "question": "Skyl kantsten (~0 cm)"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "19": {
+                "override": {
+                    "=title": {
+                        "render": "Statistikker"
+                    }
+                }
+            },
+            "20": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "Importere"
+                                }
+                            }
+                        },
+                        "1": {
+                            "render": {
+                                "special": {
+                                    "message": "Tilføj alle de foreslåede tags"
                                 }
                             }
                         }

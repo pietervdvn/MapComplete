@@ -563,7 +563,7 @@
       "render": {
         "en": "Email for questions about this defibrillator: <a href='mailto:{email}'>{email}</a>",
         "nl": "Email voor vragen over deze defibrillator: <a href='mailto:{email}'>{email}</a>",
-        "fr": "Adresse électronique pour des questions à propos de ce défibrillateur : <a href='mailto:{email}'>{email}</a>",
+        "fr": "Adresse électronique pour des questions à propos de ce défibrillateur : <a href='mailto :{email}'>{email}</a>",
         "it": "Indirizzo email per le domande su questo defibrillatore:<a href='mailto:{email}'>{email}</a>",
         "de": "E-Mail für Fragen zu diesem Defibrillator: <a href='mailto:{email}'>{email}</a>",
         "sl": "Email naslov za vprašanja o tem defibrilatorju: <a href='mailto:{email}'>{email}</a>",
@@ -591,7 +591,7 @@
     {
       "render": {
         "en": "Telephone for questions about this defibrillator: <a href='tel:{phone}'>{phone}</a>",
-        "fr": "Numéro de téléphone pour questions sur le défibrillateur : <a href='tel:{phone}'>{phone}</a>",
+        "fr": "Numéro de téléphone pour questions sur le défibrillateur : <a href='tel :{phone}'>{phone}</a>",
         "nl": "Telefoonnummer voor vragen over deze defibrillator: <a href='tel:{phone}'>{phone}</a>",
         "it": "Numero di telefono per le domande su questo defibrillatore:<a href='tel:{phone}'>{phone}</a>",
         "de": "Telefonnummer für Fragen zu diesem Defibrillator: <a href='tel:{phone}'>{phone}</a>",

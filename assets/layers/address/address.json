@@ -326,7 +326,8 @@
         "pt_BR": "O que deve ser corrigido aqui? Explique",
         "he": "מה צריך לתקן כאן? אנא הסבר",
         "eu": "Zer konpondu behar da hemen? Azaldu mesedez",
-        "it": "Indica cosa deve essere corretto qui"
+        "it": "Indica cosa deve essere corretto qui",
+        "ru": "Что исправить? Пожалуйста, предложите"
       },
       "freeform": {
         "key": "fixme"

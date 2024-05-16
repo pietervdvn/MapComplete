@@ -140,7 +140,8 @@
         "de": "Was für eine Karte ist das?",
         "pl": "Jaki rodzaj mapy jest pokazany?",
         "ca": "Quin tipus de mapa es mostra?",
-        "cs": "Jaký typ mapy je zobrazen?"
+        "cs": "Jaký typ mapy je zobrazen?",
+        "fr": "De quel type de carte s'agit-il ?"
       },
       "mappings": [
         {
@@ -149,7 +150,8 @@
             "en": "Topographical map <p class='subtle'>The map contains contour lines. </p>",
             "de": "Topographische Katte <p class='subtle'> Die Karte enthält Höhenlinien. </p>",
             "ca": "Mapa topogràfic <p class='subtle'>El mapa conté línies de contorn. </p>",
-            "cs": "Topografická mapa <p class='subtle'>Mapa obsahuje vrstevnice. </p>"
+            "cs": "Topografická mapa <p class='subtle'>Mapa obsahuje vrstevnice. </p>",
+            "fr": "Plan topographique"
           }
         },
         {
@@ -159,7 +161,8 @@
             "de": "Eine Karte mit allen Straßen und Wegen eines Gebietes. <p class='subtle'>Die Straßen sind meist benannt; die Winkel, die Entfernungen, etc. stimmen</p>",
             "pl": "Mapa z wszystkimi ulicami i ścieżkami w danym obszarze. <p class='subtle'>Ulica w większości mają nazwy; kąty, odległości itp. są poprawne</p>",
             "ca": "Un mapa amb tots els carrers o camins d'una àrea. <p class='subtle'>Els carrers estan majoritàriament nomenats; els angles, distàncies etc. són acurades</p>",
-            "cs": "Mapa se všemi ulicemi nebo cestami v oblasti. <p class='subtle'>Ulice jsou většinou pojmenované, úhly, vzdálenosti atd. jsou přesné</p>"
+            "cs": "Mapa se všemi ulicemi nebo cestami v oblasti. <p class='subtle'>Ulice jsou většinou pojmenované, úhly, vzdálenosti atd. jsou přesné</p>",
+            "fr": "Une carte des rues du secteur. <p class='subtle'>Le nom des rues est généralement indiqué; les angles, distances, etc. sont précis</p>"
           }
         },
         {
@@ -169,7 +172,8 @@
             "de": "Dies ist eine schematische Karte. <p class='subtle'>Eine skizzierte Karte mit nur wichtigen Wegen und POIs. Die Winkel, Entfernungen usw. sind lediglich illustrativ, nicht genau.</p> ",
             "pl": "To jest mapa schematyczna. <p class='subtle'>Mapa-szkic z tylko ważnymi drogami i POI. Kąty, odległości itp. są tylko ilustratywne, niedokładne.</p> ",
             "ca": "Això és un mapa esquemàtic. <p class='subtle'>Un mapa esbossat amb només camins importants i PDI. Els angles, els trajectes etc. són merament il·lustratius, no acurat.</p> ",
-            "cs": "Jedná se o schematickou mapu. <p class='subtle'>Schematická mapa s vyznačením pouze důležitých cest a bodů zájmu. Úhly, vzdálenosti atd. jsou pouze ilustrativní, nikoliv přesné.</p> "
+            "cs": "Jedná se o schematickou mapu. <p class='subtle'>Schematická mapa s vyznačením pouze důležitých cest a bodů zájmu. Úhly, vzdálenosti atd. jsou pouze ilustrativní, nikoliv přesné.</p> ",
+            "fr": "Un plan schématique. <p class='subtle'>Une carte schématique sur laquelle seuls les éléments principaux sont indiqués (rues, POIs). Les angles, distances etc. peuvent être déformés pour rendre le plan plus lisible.</p> "
           }
         },
         {
@@ -178,7 +182,8 @@
             "en": "This is a toposcope. <p class='subtle'>A marker erected on high places which indicates the direction to notable landscape features which can be seen from that point<p>",
             "de": "Dies ist ein Toposkop. <p class='subtle'>Eine Markierung, die an hohen Stellen angebracht ist und die Richtung zu wichtigen Landschaftsobjekten anzeigt, die von diesem Punkt aus gesehen werden können<p>",
             "ca": "Això és un toposcope. <p class='subtle'>Un marcador erigit en llocs alts que indica la direcció cap als elements paisatgístics notables que es poden veure des d'aquest punt<p>",
-            "cs": "Jedná se o toposkop. <p class='subtle'>Značka vztyčená na vyvýšených místech, která udává směr k pozoruhodným krajinným prvkům, které jsou z tohoto místa vidět<p>"
+            "cs": "Jedná se o toposkop. <p class='subtle'>Značka vztyčená na vyvýšených místech, která udává směr k pozoruhodným krajinným prvkům, které jsou z tohoto místa vidět<p>",
+            "fr": "Une table d'orientation. <p class='subtle'>Un élément érigé sur une hauteur qui indique la direction d'éléments paysagers remarquables visibles depuis ce point<p>"
           }
         }
       ]
@@ -190,7 +195,8 @@
         "de": "Was wird von der Fläche abgedeckt?",
         "pl": "Jaki jest rozmiar obszaru pokazanego na tej mapie?",
         "ca": "Quina és la mida de l'àrea mostrada en el mapa?",
-        "cs": "Jak velká je zobrazená oblast na mapě?"
+        "cs": "Jak velká je zobrazená oblast na mapě?",
+        "fr": "Quelle est la taille de la zone visible sur la carte ?"
       },
       "mappings": [
         {
@@ -200,7 +206,8 @@
             "de": "Eine Karte der Räume innerhalb eines Gebäudes",
             "pl": "Plan pomieszczeń w budynku",
             "ca": "Un mapa de les habitacions dins d'un edifici",
-            "cs": "Mapa místností uvnitř budovy"
+            "cs": "Mapa místností uvnitř budovy",
+            "fr": "Plan d'intérieur de bâtiment, montrant les différentes pièces"
           }
         },
         {
@@ -209,7 +216,8 @@
             "en": "A map of special site, like of a historical castle, a park, a campus, a forest, ....",
             "de": "Örtlichkeit (z.B. Burg)",
             "ca": "Un mapa d'un lloc especial, com un castell històric, un parc, un campus, un bosc, …",
-            "cs": "Mapa speciálního místa, například historického zámku, parku, areálu, lesa, ...."
+            "cs": "Mapa speciálního místa, například historického zámku, parku, areálu, lesa, ....",
+            "fr": "La carte d'un site particulier, comme un château, un parc, un campus, une forêt, ...."
           }
         },
         {
@@ -219,7 +227,8 @@
             "de": "Eine Karte, die das Dorf oder die Stadt anzeigt",
             "pl": "Mapa pokazująca wieś lub niewielkie miasto",
             "ca": "Un mapa que mostra el poble o la ciutat",
-            "cs": "Mapa zobrazující vesnici nebo město"
+            "cs": "Mapa zobrazující vesnici nebo město",
+            "fr": "Une carte de village ou de petite ville"
           }
         },
         {
@@ -229,7 +238,8 @@
             "de": "Stadt",
             "pl": " Mapa miasta",
             "ca": " Un mapa d'una ciutat",
-            "cs": " Mapa města"
+            "cs": " Mapa města",
+            "fr": " Une carte de ville"
           }
         },
         {
@@ -239,7 +249,8 @@
             "de": "Region",
             "pl": "Mapa całego regionu, pokazująca wiele miast i wsi",
             "ca": "El mapa d'una regió sencera, mostrant múltiples ciutats i pobles",
-            "cs": "Mapa celého regionu s několika městy a vesnicemi"
+            "cs": "Mapa celého regionu s několika městy a vesnicemi",
+            "fr": "La carte d'une région entière, montrant de nombreuses villes et villages"
           }
         }
       ]

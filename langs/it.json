@@ -122,7 +122,7 @@
         "add": {
             "addNew": "Aggiungi {category} qua",
             "backToSelect": "Seleziona una categoria differente",
-            "confirmButton": "Aggiungi una {category} qua.<br><div class=\"alert\">La tua aggiunta è visibile a chiunque</div>",
+            "confirmButton": "Aggiungi una {category}<br/><div class='alert'>La tua aggiunta è visibile a chiunque</div>",
             "confirmTitle": "Aggiungi un {title}?",
             "disableFilters": "Disabilita tutti i filtri",
             "disableFiltersExplanation": "Alcuni oggetti potrebbero essere nascosti da un filtro",
@@ -137,7 +137,7 @@
                 "zoomInMore": "Ingrandisci di più per importare questo elemento"
             },
             "importTags": "L'elemento riceverà {tags}",
-            "intro": "Hai cliccato in un punto dove non ci sono ancora dei dati.<br>",
+            "intro": "Hai cliccato in un punto dove non ci sono ancora dei dati.<br/>",
             "layerNotEnabled": "Il livello {layer} non è abilitato. Abilita questo livello per aggiungere un elemento",
             "openLayerControl": "Apri il pannello di controllo dei livelli",
             "pleaseLogin": "Accedi per aggiungere un nuovo elemento",
@@ -237,7 +237,7 @@
         "morescreen": {
             "createYourOwnTheme": "Crea il tuo tema di MapComplete personalizzato da zero",
             "hiddenExplanation": "Questi temi sono solo accessibili se si dispone del collegamento. Hai scoperto {hidden_discovered} su {total_hidden} temi nascosti.",
-            "intro": "<h3>Altre mappe tematiche?</h3>Ti diverti a raccogliere dati geografici?<br>Sono disponibili altri temi.",
+            "intro": "<h3>Altre mappe tematiche?</h3>Ti diverti a raccogliere dati geografici?<br/>Sono disponibili altri temi.",
             "noMatchingThemes": "Nessun argomento corrisponde ai tuoi criteri di ricerca",
             "noSearch": "Mostra tutti gli argomenti",
             "previouslyHiddenTitle": "Temi nascosti precedentemente visitati",
@@ -293,7 +293,7 @@
         "questions": {
             "emailIs": "L’indirizzo email di questa {category} è <a href=\"mailto:{email}\" target=\"_blank\">{email}</a>",
             "emailOf": "Qual è l’indirizzo email di {category}?",
-            "phoneNumberIs": "Il numero di telefono di questa {category} è <a target=\"_blank\">{phone}</a>",
+            "phoneNumberIs": "Il numero di telefono di questa {category} è <a href='tel:{phone}' target='_blank'>{phone}</a>",
             "phoneNumberOf": "Qual è il numero di telefono di {category}?",
             "websiteIs": "Sito web: <a href=\"{website}\" target=\"_blank\">{website}</a>",
             "websiteOf": "Qual è il sito web di {category}?"
@@ -312,7 +312,7 @@
         },
         "sharescreen": {
             "copiedToClipboard": "Collegamento copiato negli appunti",
-            "embedIntro": "<h3>Incorpora nel tuo sito web</h3>Siamo lieti se vorrai includere questa cartina nel tuo sito web.<br>Ti incoraggiamo a farlo (non devi neanche chieder il permesso).<br>È gratuito e lo sarà per sempre. Più persone lo useranno e più valore acquisirà.",
+            "embedIntro": "<h3>Incorpora nel tuo sito web</h3>Siamo lieti se vorrai includere questa cartina nel tuo sito web.<br/>Ti incoraggiamo a farlo (non devi neanche chieder il permesso).<br/>È gratuito e lo sarà per sempre. Più persone lo useranno e più valore acquisirà.",
             "fsUserbadge": "Abilita il pulsante di accesso",
             "fsWelcomeMessage": "Mostra il messaggio di benvenuto e le schede associate",
             "intro": "<h3>Condividi questa mappa</h3>Condividi questa mappa copiando il collegamento qua sotto e inviandolo ad amici o parenti:",

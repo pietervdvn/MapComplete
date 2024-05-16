@@ -2,11 +2,13 @@
   "id": "memorials",
   "title": {
     "en": "Memorials",
-    "de": "Denkmäler"
+    "de": "Denkmäler",
+    "fr": "Mémoriaux"
   },
   "description": {
     "en": "Memorials are physical objects permantently placed in the public space to remember a person or event. They can be a wide range of objects, such as statues, plaques, paintings, military objects (such as tanks), ...",
-    "de": "Denkmäler sind physische Objekte, die dauerhaft im öffentlichen Raum aufgestellt werden, um an eine Person oder ein Ereignis zu erinnern. Dabei kann es sich um eine Vielzahl von Objekten handeln, z. B. Statuen, Tafeln, Gemälde, militärische Objekte (wie Panzer), ..."
+    "de": "Denkmäler sind physische Objekte, die dauerhaft im öffentlichen Raum aufgestellt werden, um an eine Person oder ein Ereignis zu erinnern. Dabei kann es sich um eine Vielzahl von Objekten handeln, z. B. Statuen, Tafeln, Gemälde, militärische Objekte (wie Panzer), ...",
+    "fr": "Un mémorial est un objet physiquement installé sur l'espace public en souvenir d'une personne ou d'un évènement. Cela peut être toute sorte d'objets, comme une statue, une plaque, une peinture, un objet militaire (comme un tank), ..."
   },
   "icon": "./assets/layers/memorial/memorial.svg",
   "layers": [

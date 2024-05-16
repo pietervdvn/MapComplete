@@ -14,7 +14,9 @@
     "pt_BR": "Anunciar",
     "zh_Hans": "广告",
     "it": "Pubblicità",
-    "zh_Hant": "廣告"
+    "zh_Hant": "廣告",
+    "fr": "Publicité",
+    "ru": "Реклама"
   },
   "description": {
     "ca": "Completarem les dades dels elements publicitaris amb referència, operador i il·luminació",
@@ -26,7 +28,8 @@
     "eu": "Publizitate-ezaugarrien datuak osatuko ditugu erreferentziarekin, operadorearekin eta argiztatuarekin.",
     "pl": "Uzupełnimy dane z obiektów reklamowych o referencję, operatora i oświetlenie",
     "pt_BR": "Completaremos os dados das características de publicidade com referência, operador e iluminação",
-    "it": "Completeremo i dati da caratteristiche pubblicitarie, con referenza, operatore e illuminazione"
+    "it": "Completeremo i dati da caratteristiche pubblicitarie, con referenza, operatore e illuminazione",
+    "fr": "Nous allons compléter les information sur la publicité avec la référence, l'opérateur et l'éclairage"
   },
   "enableMorePrivacy": true,
   "source": {
@@ -429,7 +432,8 @@
         "pt_BR": "um outdoor",
         "zh_Hans": "一块广告牌",
         "it": "un cartellone",
-        "zh_Hant": "一塊告示牌"
+        "zh_Hant": "一塊告示牌",
+        "ru": "билборд"
       },
       "description": {
         "en": "A large outdoor advertising structure, typically found in high-traffic areas such as alongside busy roads",
@@ -501,7 +505,9 @@
       ],
       "title": {
         "en": "a poster box part of a public transport shelter",
-        "de": "ein Plakatkasten, der zu einem Unterstand für öffentliche Verkehrsmittel gehört"
+        "de": "ein Plakatkasten, der zu einem Unterstand für öffentliche Verkehrsmittel gehört",
+        "fr": "Un affichage sur un abribus",
+        "it": "un contenitore di poster pubblicitari di una pensilina del trasporto pubblico"
       },
       "snapToLayer": [
         "shelter"
@@ -558,7 +564,8 @@
         "pt": "uma coluna",
         "pl": "kolumna",
         "pt_BR": "uma coluna",
-        "it": "una colonna"
+        "it": "una colonna",
+        "ru": "столбец"
       },
       "description": {
         "en": "A cylindrical outdoor structure which shows advertisements",
@@ -660,7 +667,9 @@
       ],
       "title": {
         "en": "a screen mounted on a transit shelter",
-        "de": "ein Bildschirm, der an einem Wartehäuschen angebracht ist"
+        "de": "ein Bildschirm, der an einem Wartehäuschen angebracht ist",
+        "fr": "un écran fixé sur un abri de transport",
+        "it": "uno schermo montato su una pensilina del traporto pubblico"
       },
       "snapToLayer": [
         "shelter"
@@ -839,7 +848,8 @@
         "pl": "To jest {advertising}",
         "pt_BR": "Isso é uma {advertising}",
         "zh_Hans": "这是一个{advertising}",
-        "pt": "Isto é uma {advertising}"
+        "pt": "Isto é uma {advertising}",
+        "fr": "C'est un {advertising}"
       },
       "question": {
         "ca": "Quin tipus d'element publicitari és aquest?",
@@ -888,7 +898,7 @@
             ]
           },
           "then": {
-            "ca": "Açò és un tauló d'anunis",
+            "ca": "Açò és un tauló d'anuncis",
             "es": "Esto es un tablón de anuncios",
             "en": "This is a board",
             "de": "Dies ist ein Brett",
