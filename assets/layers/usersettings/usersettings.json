@@ -254,7 +254,7 @@
             "de": "Hintergrundebene <span class='code'>{mapcomplete-preferred-background-layer}</span> als Standardhintergrund verwenden",
             "cs": "Použít vrstvu pozadí <span class='code'>{mapcomplete-preferred-background-layer}</span> jako výchozí pozadí",
             "nl": "Gebruik <span class='code'>{mapcomplete-preferred-background-layer}</span> altijd als achtergrondlaag",
-            "fr": "Utiliser le fond (<span class='code'>{__current_background}</span>)par défaut"
+            "fr": "Utiliser le fond (<span class='code'>{mapcomplete-preferred-background-layer}</span>)par défaut"
           },
           "hideInAnswer": true
         }
