@@ -6749,7 +6749,7 @@
                         "then": "Utiliser le fond actuel (<span class='code'>{__current_background}</span>) par défaut"
                     },
                     "5": {
-                        "then": "Utiliser le fond (<span class='code'>{__current_background}</span>)par défaut"
+                        "then": "Utiliser le fond (<span class='code'>{mapcomplete-preferred-background-layer}</span>)par défaut"
                     }
                 },
                 "question": "Quel fond souhaitez-vous utiliser par défaut ?"
