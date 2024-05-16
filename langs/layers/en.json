@@ -8453,31 +8453,31 @@
                         "then": "Plastic can be recycled here"
                     },
                     "17": {
-                        "then": "Printer cartridges can be recycled here"
+                        "then": "Plastic packaging, metal packaging and drink cartons (PMD) can be recycled here"
                     },
                     "18": {
-                        "then": "Scrap metal can be recycled here"
+                        "then": "Printer cartridges can be recycled here"
                     },
                     "19": {
-                        "then": "Shoes can be recycled here"
+                        "then": "Scrap metal can be recycled here"
                     },
                     "20": {
-                        "then": "Small electrical appliances can be recycled here"
+                        "then": "Shoes can be recycled here"
                     },
                     "21": {
                         "then": "Small electrical appliances can be recycled here"
                     },
                     "22": {
-                        "then": "Needles can be recycled here"
+                        "then": "Small electrical appliances can be recycled here"
                     },
                     "23": {
-                        "then": "Residual waste can be recycled here"
+                        "then": "Needles can be recycled here"
                     },
                     "24": {
-                        "then": "Bicycles can be recycled here"
+                        "then": "Residual waste can be recycled here"
                     },
                     "25": {
-                        "then": "Plastic packaging, metal packaging and drink cartons (PMD) can be recycled here"
+                        "then": "Bicycles can be recycled here"
                     }
                 },
                 "question": "What can be recycled here?"
@@ -11374,10 +11374,10 @@
                         "then": "A waste basket for plastic"
                     },
                     "7": {
-                        "then": "A waste basket for paper"
+                        "then": "A waste basket for plastic packaging, metal packaging and drink cartons (PMD)"
                     },
                     "8": {
-                        "then": "A waste basket for plastic packaging, metal packaging and drink cartons (PMD)"
+                        "then": "A waste basket for paper"
                     }
                 },
                 "question": "What kind of waste basket is this?"

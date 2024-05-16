@@ -5444,28 +5444,28 @@
                     "16": {
                         "then": "Le plastique peut être recyclé ici"
                     },
-                    "17": {
+                    "18": {
                         "then": "Les cartouches d'imprimante peuvent être recyclées ici"
                     },
-                    "18": {
+                    "19": {
                         "then": "La ferraille peut être recyclée ici"
                     },
-                    "19": {
-                        "then": "Les chaussures peuvent être recyclées ici"
-                    },
                     "20": {
-                        "then": "Les petits appareils électriques peuvent être recyclés ici"
+                        "then": "Les chaussures peuvent être recyclées ici"
                     },
                     "21": {
                         "then": "Les petits appareils électriques peuvent être recyclés ici"
                     },
                     "22": {
-                        "then": "Les aiguilles peuvent être recyclées ici"
+                        "then": "Les petits appareils électriques peuvent être recyclés ici"
                     },
                     "23": {
-                        "then": "Les autres déchets peuvent être déposés ici"
+                        "then": "Les aiguilles peuvent être recyclées ici"
                     },
                     "24": {
+                        "then": "Les autres déchets peuvent être déposés ici"
+                    },
+                    "25": {
                         "then": "Les vélos peuvent être recyclés ici"
                     }
                 },
@@ -7117,7 +7117,7 @@
                     "6": {
                         "then": "Une poubelle pour plastiques"
                     },
-                    "7": {
+                    "8": {
                         "then": "Une poubelle pour papier"
                     }
                 },

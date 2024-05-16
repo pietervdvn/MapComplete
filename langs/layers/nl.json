@@ -7033,31 +7033,31 @@
                         "then": "Plastic kan hier gerecycled worden"
                     },
                     "17": {
-                        "then": "Inktpatronen kunnen hier gerecycleerd worden"
+                        "then": "Plastic verpakkingen, metalen verpakkingen en drankpakken kunnen hier gerecycled worden"
                     },
                     "18": {
-                        "then": "Oud metaal kan hier gerecycled worden"
+                        "then": "Inktpatronen kunnen hier gerecycleerd worden"
                     },
                     "19": {
-                        "then": "Schoenen kunnen hier gerecycled worden"
+                        "then": "Oud metaal kan hier gerecycled worden"
                     },
                     "20": {
-                        "then": "Kleine elektrische apparaten kunnen hier gerecycled worden"
+                        "then": "Schoenen kunnen hier gerecycled worden"
                     },
                     "21": {
                         "then": "Kleine elektrische apparaten kunnen hier gerecycled worden"
                     },
                     "22": {
-                        "then": "Injectienaalden kunnen hier gerecycled worden"
+                        "then": "Kleine elektrische apparaten kunnen hier gerecycled worden"
                     },
                     "23": {
-                        "then": "Restafval kan hier gerecycled worden"
+                        "then": "Injectienaalden kunnen hier gerecycled worden"
                     },
                     "24": {
-                        "then": "Fietsen (en fietswrakken) kunnen hier gerecycled worden"
+                        "then": "Restafval kan hier gerecycled worden"
                     },
                     "25": {
-                        "then": "Plastic verpakkingen, metalen verpakkingen en drankpakken kunnen hier gerecycled worden"
+                        "then": "Fietsen (en fietswrakken) kunnen hier gerecycled worden"
                     }
                 },
                 "question": "Wat kan hier gerecycled worden?"
@@ -9404,10 +9404,10 @@
                         "then": "Een vuilnisbak voor plastic"
                     },
                     "7": {
-                        "then": "Een vuilnisbak voor papier"
+                        "then": "Een vuilnisbak voor plastic verpakkingen, metalen verpakkingen en drankpakken (PMD)"
                     },
                     "8": {
-                        "then": "Een vuilnisbak voor plastic verpakkingen, metalen verpakkingen en drankpakken (PMD)"
+                        "then": "Een vuilnisbak voor papier"
                     }
                 },
                 "question": "Wat voor soort vuilnisbak is dit?"

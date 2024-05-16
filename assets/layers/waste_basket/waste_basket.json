@@ -207,6 +207,13 @@
           }
         },
         {
+          "if": "waste=pmd",
+          "then": {
+            "en": "A waste basket for plastic packaging, metal packaging and drink cartons (PMD)",
+            "nl": "Een vuilnisbak voor plastic verpakkingen, metalen verpakkingen en drankpakken (PMD)"
+          }
+        },
+        {
           "if": "waste=paper",
           "then": {
             "en": "A waste basket for paper",
@@ -218,13 +225,6 @@
             "fr": "Une poubelle pour papier",
             "ca": "Una paperera per a paper",
             "cs": "Odpadový koš na papír"
-          }
-        },
-        {
-          "if": "waste=pmd",
-          "then": {
-            "en": "A waste basket for plastic packaging, metal packaging and drink cartons (PMD)",
-            "nl": "Een vuilnisbak voor plastic verpakkingen, metalen verpakkingen en drankpakken (PMD)"
           }
         }
       ]

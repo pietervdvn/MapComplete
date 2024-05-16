@@ -2326,22 +2326,22 @@
                     "16": {
                         "then": "Plastica"
                     },
-                    "18": {
+                    "19": {
                         "then": "Rottami metallici"
                     },
-                    "19": {
-                        "then": "Scarpe"
-                    },
                     "20": {
-                        "then": "Piccoli elettrodomestici"
+                        "then": "Scarpe"
                     },
                     "21": {
                         "then": "Piccoli elettrodomestici"
                     },
                     "22": {
-                        "then": "Aghi e oggetti appuntiti"
+                        "then": "Piccoli elettrodomestici"
                     },
                     "23": {
+                        "then": "Aghi e oggetti appuntiti"
+                    },
+                    "24": {
                         "then": "Secco"
                     }
                 },
@@ -3046,7 +3046,7 @@
                     "6": {
                         "then": "Un cestino rifiuti per la plastica"
                     },
-                    "7": {
+                    "8": {
                         "then": "Un cestino rifiuti per la carta"
                     }
                 },
