@@ -35,23 +35,6 @@
             "1": {
                 "title": "un cartellone pubblicitario fissato a terra"
             },
-            "10": {
-                "description": "Un telo impermeabile con un messaggio stampato, fissato in modo permanente al muro",
-                "title": "un telone"
-            },
-            "11": {
-                "title": "un totem"
-            },
-            "12": {
-                "description": "Utilizzato per insegna pubblicitaria, un'insegna al neon, i loghi o le indicazioni d'entrata",
-                "title": "un'insegna"
-            },
-            "13": {
-                "title": "una scultura"
-            },
-            "14": {
-                "title": "un murales"
-            },
             "2": {
                 "title": "un cartellone pubblicitario fissato al muro"
             },
@@ -77,6 +60,23 @@
             },
             "9": {
                 "title": "uno schermo montato su una pensilina del traporto pubblico"
+            },
+            "10": {
+                "description": "Un telo impermeabile con un messaggio stampato, fissato in modo permanente al muro",
+                "title": "un telone"
+            },
+            "11": {
+                "title": "un totem"
+            },
+            "12": {
+                "description": "Utilizzato per insegna pubblicitaria, un'insegna al neon, i loghi o le indicazioni d'entrata",
+                "title": "un'insegna"
+            },
+            "13": {
+                "title": "una scultura"
+            },
+            "14": {
+                "title": "un murales"
             }
         },
         "tagRenderings": {
@@ -159,15 +159,6 @@
                     "1": {
                         "then": "Murale"
                     },
-                    "10": {
-                        "then": "Azulejo (ornamento decorativo piastrellato spagnolo)"
-                    },
-                    "11": {
-                        "then": "Mosaico di piastrelle"
-                    },
-                    "12": {
-                        "then": "Scultura in legno"
-                    },
                     "2": {
                         "then": "Dipinto"
                     },
@@ -191,6 +182,15 @@
                     },
                     "9": {
                         "then": "Rilievo"
+                    },
+                    "10": {
+                        "then": "Azulejo (ornamento decorativo piastrellato spagnolo)"
+                    },
+                    "11": {
+                        "then": "Mosaico di piastrelle"
+                    },
+                    "12": {
+                        "then": "Scultura in legno"
                     }
                 },
                 "question": "Che tipo di opera d’arte è questo?",
@@ -2182,6 +2182,27 @@
                     "1": {
                         "question": "Riciclo di batterie"
                     },
+                    "2": {
+                        "question": "Riciclo di confezioni per bevande"
+                    },
+                    "3": {
+                        "question": "Riciclo di lattine"
+                    },
+                    "4": {
+                        "question": "Riciclo di abiti"
+                    },
+                    "5": {
+                        "question": "Riciclo di olio da cucina"
+                    },
+                    "6": {
+                        "question": "Riciclo di olio da motore"
+                    },
+                    "8": {
+                        "question": "Riciclo di umido"
+                    },
+                    "9": {
+                        "question": "Riciclo di bottiglie di vetro"
+                    },
                     "10": {
                         "question": "Riciclo di vetro"
                     },
@@ -2209,29 +2230,8 @@
                     "19": {
                         "question": "Riciclo di secco"
                     },
-                    "2": {
-                        "question": "Riciclo di confezioni per bevande"
-                    },
                     "20": {
                         "question": "Riciclo di secco"
-                    },
-                    "3": {
-                        "question": "Riciclo di lattine"
-                    },
-                    "4": {
-                        "question": "Riciclo di abiti"
-                    },
-                    "5": {
-                        "question": "Riciclo di olio da cucina"
-                    },
-                    "6": {
-                        "question": "Riciclo di olio da motore"
-                    },
-                    "8": {
-                        "question": "Riciclo di umido"
-                    },
-                    "9": {
-                        "question": "Riciclo di bottiglie di vetro"
                     }
                 }
             },
@@ -2284,6 +2284,27 @@
                     "1": {
                         "then": "Cartoni per bevande"
                     },
+                    "2": {
+                        "then": "Lattine"
+                    },
+                    "3": {
+                        "then": "Abiti"
+                    },
+                    "4": {
+                        "then": "Olio da cucina"
+                    },
+                    "5": {
+                        "then": "Olio di motore"
+                    },
+                    "7": {
+                        "then": "Verde"
+                    },
+                    "8": {
+                        "then": "Umido"
+                    },
+                    "9": {
+                        "then": "Bottiglie di vetro"
+                    },
                     "10": {
                         "then": "Vetro"
                     },
@@ -2308,9 +2329,6 @@
                     "19": {
                         "then": "Scarpe"
                     },
-                    "2": {
-                        "then": "Lattine"
-                    },
                     "20": {
                         "then": "Piccoli elettrodomestici"
                     },
@@ -2322,24 +2340,6 @@
                     },
                     "23": {
                         "then": "Secco"
-                    },
-                    "3": {
-                        "then": "Abiti"
-                    },
-                    "4": {
-                        "then": "Olio da cucina"
-                    },
-                    "5": {
-                        "then": "Olio di motore"
-                    },
-                    "7": {
-                        "then": "Verde"
-                    },
-                    "8": {
-                        "then": "Umido"
-                    },
-                    "9": {
-                        "then": "Bottiglie di vetro"
                     }
                 },
                 "question": "Cosa si può riciclare qui?"

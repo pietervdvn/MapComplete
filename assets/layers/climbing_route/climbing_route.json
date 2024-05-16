@@ -239,7 +239,7 @@
         "en": "This route has {climbing:bolts} bolts <div class='subtle'>This is without relays and indicates how much quickdraws a climber needs</div>",
         "fr": "Cette voie a {climbing:bolts} prises <div class='subtle'>C'est sans relai et indique de combien de dégaine un grimpeur a besoin</div>",
         "de": "Diese Route hat {climbing:bolts} Haken <div class='subtle'>Dies ist ohne Relais und gibt an, wie viel Schnellspanner ein Kletterer braucht</div>",
-        "it": "Questo percorso ha {climbing:bolts} bulloni",
+        "it": "Questo percorso ha {climbing:bolts} bulloni <div class='subtle'>Questa è senza collettori e indica di quanti bloccaggi rapidi ha bisogno un arrampicatore</div>",
         "nl": "Deze route heeft {climbing:bolts} klimbouten. <div class='subtle'>Dit is zonder het relay mee te tellen. Een klimmer heeft dus minstens {climbing:bolts} klimsetjes nodig om boven te raken</div>"
       },
       "freeform": {

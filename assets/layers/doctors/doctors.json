@@ -16,7 +16,8 @@
     "nl": "Deze laag toont dokterspraktijken",
     "he": "שכבה זו מציגה מרפאות רופאים",
     "ca": "Aquesta capa mostra els consultoris mèdics",
-    "cs": "Tato vrstva zobrazuje ordinace lékařů"
+    "cs": "Tato vrstva zobrazuje ordinace lékařů",
+    "fr": "Cette ocuhe montre les cabinets de médecin"
   },
   "source": {
     "osmTags": "amenity=doctors"

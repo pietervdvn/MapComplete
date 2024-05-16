@@ -44,7 +44,8 @@
       "label": {
         "render": {
           "en": "{name}",
-          "de": "{name}"
+          "de": "{name}",
+          "fr": "{name}"
         },
         "condition": "name~*",
         "classes": "bg-white p-1 px-2 rounded"
@@ -169,18 +170,21 @@
       "id": "duration",
       "question": {
         "en": "How long takes a single journey with this elevator?",
-        "de": "Wie lange dauert eine Fahrt mit diesem Aufzug?"
+        "de": "Wie lange dauert eine Fahrt mit diesem Aufzug?",
+        "fr": "Combien de temps dure le trajet dans cet ascenseur ?"
       },
       "questionHint": {
         "en": "This excludes the waiting time.",
-        "de": "Dies schließt die Wartezeit aus."
+        "de": "Dies schließt die Wartezeit aus.",
+        "fr": "Cela n'inclut pas le temps d'attente."
       },
       "freeform": {
         "key": "duration"
       },
       "render": {
         "en": "A single journey takes {duration} minutes",
-        "de": "Eine Fahrt dauert {duration} Minuten"
+        "de": "Eine Fahrt dauert {duration} Minuten",
+        "fr": "Un aller simple dure {duration} minutes"
       }
     },
     {

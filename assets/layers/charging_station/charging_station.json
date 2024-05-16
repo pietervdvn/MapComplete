@@ -69,7 +69,8 @@
     "en": "A charging station",
     "nl": "Oplaadpunten",
     "ca": "Una estació de càrrega",
-    "de": "Eine Ladestation"
+    "de": "Eine Ladestation",
+    "fr": "Une station de recharge"
   },
   "#": "no-question-hint-check",
   "tagRenderings": [
@@ -2519,7 +2520,9 @@
             "en": "All vehicle types",
             "nl": "Alle voertuigen",
             "ca": "Tots els tipus de vehicles",
-            "de": "Ladestationen für alle Fahrzeugtypen"
+            "de": "Ladestationen für alle Fahrzeugtypen",
+            "fr": "Tous les types de véhicules",
+            "it": "Tutti i tipi di veicoli"
           }
         },
         {
@@ -2527,7 +2530,9 @@
             "en": "Charging station for bicycles",
             "nl": "Oplaadpunten voor fietsen",
             "ca": "Punt de recàrrega per a bicicletes",
-            "de": "Ladestationen für Fahrräder"
+            "de": "Ladestationen für Fahrräder",
+            "fr": "Station de recharge pour vélos",
+            "it": "Stazione di ricarica per biciclette"
           },
           "osmTags": "bicycle=yes"
         },
@@ -2535,7 +2540,9 @@
           "question": {
             "en": "Charging station for cars",
             "nl": "Oplaadpunten voor auto's",
-            "de": "Ladestationen für Autos"
+            "de": "Ladestationen für Autos",
+            "fr": "Station de recharge pour voitures",
+            "it": "Stazione di ricarica per auto"
           },
           "osmTags": {
             "or": [
@@ -2553,7 +2560,9 @@
           "question": {
             "en": "Only working charging stations",
             "nl": "Enkel werkende oplaadpunten",
-            "de": "Nur Ladestationen in Betrieb"
+            "de": "Nur Ladestationen in Betrieb",
+            "fr": "Seulement les stations de recharge qui fonctionnent",
+            "it": "Solo stazioni di ricarica funzionanti"
           },
           "osmTags": {
             "and": [
@@ -2571,7 +2580,8 @@
           "question": {
             "en": "All connectors",
             "nl": "Alle types",
-            "de": "Alle Anschlüsse"
+            "de": "Alle Anschlüsse",
+            "it": "Tutti i connettori"
           }
         },
         {

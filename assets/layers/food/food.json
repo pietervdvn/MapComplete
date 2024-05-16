@@ -16,7 +16,7 @@
     "nl": "Een laag die restaurants en fast food toont (met een speciale weergave van frituren)",
     "de": "Eine Ebene mit Restaurants und Fast-Food-Einrichtungen (mit speziellem Rendering für Pommesbuden)",
     "es": "Una capa mostrando restaurantes y locales de comida rápida (con un renderizado especial para friterías)",
-    "fr": "Un claque montrant les restaurants et les endroits de nourriture rapide (avec un rendu spécial pour les friteries)",
+    "fr": "Un calque montrant les restaurants et les lieux de restauration rapide (avec un rendu spécial pour les friteries)",
     "ca": "Una capa que mostra restaurants i locals de menjar ràpid (amb un renderitzat especial per a fregiduries)",
     "cs": "Vrstva zobrazující restaurace a zařízení rychlého občerstvení (se speciálním vykreslením pro fritézy)",
     "pl": "Warstwa przedstawiająca restauracje i obiekty typu fast-food (ze specjalnym renderowaniem dla frytek)"
@@ -1205,7 +1205,8 @@
             "de": "Restaurants und Schnellimbissbetriebe",
             "cs": "Restaurace a podniky rychlého občerstvení",
             "pl": "Restauracje i firmy typu fast food",
-            "es": "Restaurantes y negocios de comida rápida"
+            "es": "Restaurantes y negocios de comida rápida",
+            "fr": "Restaurants et restauration rapide"
           }
         },
         {
@@ -1243,7 +1244,8 @@
             "de": "Hat ein vegetarisches Menü",
             "cs": "Má vegetariánské menu",
             "pl": "Ma menu wegetariańskie",
-            "es": "Tiene menú vegetariano"
+            "es": "Tiene menú vegetariano",
+            "fr": "A un menu végétarien"
           },
           "osmTags": {
             "or": [

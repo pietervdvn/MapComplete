@@ -342,13 +342,15 @@
             "en": "{quantity} minutes",
             "nl": "{quantity} minuten",
             "ca": "{quantity} minuts",
-            "de": "{quantity} Minuten"
+            "de": "{quantity} Minuten",
+            "fr": "{quantity} minutes"
           },
           "humanSingular": {
             "en": "one minute",
             "nl": "één minuut",
             "ca": "un minut",
-            "de": "eine Minute"
+            "de": "eine Minute",
+            "fr": "une minute"
           }
         },
         {
@@ -367,13 +369,15 @@
             "en": "{quantity} hours",
             "nl": "{quantity} uren",
             "ca": "{quantity} hores",
-            "de": "{quantity} Stunden"
+            "de": "{quantity} Stunden",
+            "fr": "{quantity} heures"
           },
           "humanSingular": {
             "en": "one hour",
             "nl": "één uur",
             "ca": "una hora",
-            "de": "eine Stunde"
+            "de": "eine Stunde",
+            "fr": "une heure"
           }
         },
         {
@@ -389,12 +393,14 @@
             "en": "{quantity} days",
             "nl": "{quantity} day",
             "ca": "{quantity} dies",
-            "de": "{quantity} Tage"
+            "de": "{quantity} Tage",
+            "fr": "{quantity} jours"
           },
           "humanSingular": {
             "en": "one day",
             "nl": "één dag",
-            "de": "ein Tag"
+            "de": "ein Tag",
+            "fr": "un jour"
           }
         },
         {
@@ -403,11 +409,15 @@
           "canonicalDenominationSingular": "week",
           "humanSingular": {
             "en": "one week",
-            "nl": "één week"
+            "nl": "één week",
+            "de": "ein Woche",
+            "fr": "une semaine"
           },
           "human": {
             "en": "{quantity} weeks",
-            "nl": "{quantity} weken"
+            "nl": "{quantity} weken",
+            "de": "{quantity} Wochen",
+            "fr": "{quantity} semaines"
           }
         },
         {
@@ -416,11 +426,15 @@
           "canonicalDenominationSingular": "month",
           "humanSingular": {
             "en": "one month",
-            "nl": "één maand"
+            "nl": "één maand",
+            "de": "ein Monat",
+            "fr": "un mois"
           },
           "human": {
             "en": "{quantity} months",
-            "nl": "{quantity} maanden"
+            "nl": "{quantity} maanden",
+            "de": "{quantity} Monate",
+            "fr": "{quantity} mois"
           }
         },
         {
@@ -429,11 +443,15 @@
           "canonicalDenominationSingular": "year",
           "humanSingular": {
             "en": "one year",
-            "nl": "één jaar"
+            "nl": "één jaar",
+            "de": "ein Jahr",
+            "fr": "un an"
           },
           "human": {
             "en": "{quantity} years",
-            "nl": "{quantity} jaar"
+            "nl": "{quantity} jaar",
+            "de": "{quantity} Jahre",
+            "fr": "{quantity} années"
           }
         }
       ]

@@ -101,7 +101,7 @@
       "title": {
         "en": "a bench",
         "de": "eine Sitzbank",
-        "fr": "une banc",
+        "fr": "un banc",
         "nl": "een zitbank",
         "es": "una banco",
         "it": "una panchina",
@@ -157,7 +157,7 @@
           "then": {
             "en": "This bench does have a backrest",
             "de": "Diese Sitzbank hat eine Rückenlehne",
-            "fr": "Dossier : Oui",
+            "fr": "Ce banc a un dossier",
             "nl": "Heeft een rugleuning",
             "es": "Tiene respaldo",
             "hu": "Van háttámlája",
@@ -188,12 +188,12 @@
           "then": {
             "en": "This bench does <b>not</b> have a backrest",
             "de": "Diese Sitzbank hat <b>keine</b> Rückenlehne",
-            "fr": "Dossier : Non",
+            "fr": "Ce banc n'a <b>pas</b> de dossier",
             "nl": "Heeft <b>geen</b> rugleuning",
             "es": "<b>No</b> tiene respaldo",
             "hu": "<b>Nincs</b> háttámlája",
             "id": "Sandaran: Tidak",
-            "it": "Schienale: No",
+            "it": "Questa panchina <b>non</b> ha uno schienale",
             "ru": "Без спинки",
             "zh_Hans": "<b>没有</b>靠背",
             "zh_Hant": "靠背：無",
@@ -413,7 +413,7 @@
           "then": {
             "en": "The seating is made from concrete",
             "de": "Die Sitzfläche ist aus Beton",
-            "fr": "Matériau du siège : béton",
+            "fr": "L'assise est en béton",
             "nl": "Het zitgedeelte is gemaakt uit beton",
             "es": "El asiento está hecho de hormigón",
             "hu": "Ülőfelület: beton",
@@ -637,7 +637,7 @@
           "then": {
             "en": "Colour: green",
             "de": "Farbe: grün",
-            "fr": "Couleur : verte",
+            "fr": "Couleur : vert",
             "nl": "De kleur is groen",
             "hu": "Szín: zöld",
             "it": "Colore: verde",
@@ -737,7 +737,7 @@
           "then": {
             "en": "Colour: black",
             "de": "Farbe: schwarz",
-            "fr": "Couleur : noire",
+            "fr": "Couleur : noir",
             "nl": "De kleur is zwart",
             "hu": "Szín: fekete",
             "it": "Colore: nero",
@@ -1032,7 +1032,7 @@
         "de": "Z.B. hat es ein integriertes Gemälde, eine Statue oder eine andere nicht triviale, kreative Arbeit",
         "ca": "P.e. té una pintura integrada, estatua o altres treballs no trivials i creatius",
         "cs": "Např. má integrovaný obraz, sochu nebo jiné netriviální tvůrčí dílo",
-        "fr": "Par ex. il intègre une peinture, statue ou autre élément non commune, travail cratif",
+        "fr": "Par ex. il intègre une peinture, statue ou autre élément non commune, travail créatif",
         "pl": "Np. jest na niej coś namalowane, ma rzeźbę lub inną nietrywialną pracę",
         "pt_BR": "Ex. possui uma pintura integrada, estátua ou outro trabalho criativo não trivial",
         "es": "Por ejemplo, si lleva integrado un cuadro, una estatua u otra obra creativa no trivial",
