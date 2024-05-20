@@ -194,11 +194,11 @@ export interface QuestionableTagRenderingConfigJson extends TagRenderingConfigJs
     mappings?: MappingConfigJson[]
 
     /**
-     * If true, use checkboxes instead of radio buttons when asking the question
-     *
      * question: Should a contributor be allowed to select multiple mappings?
      *
-     * iftrue: allow to select multiple mappings
+     * If true, use checkboxes instead of radio buttons when asking the question.
+     *
+     * iftrue: allow to select multiple mappings (and show a freeform-value as list if ';'-separated)
      * iffalse: only allow to select a single mapping
      * ifunset: only allow to select a single mapping
      */

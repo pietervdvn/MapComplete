@@ -445,7 +445,7 @@
           <span slot="close-button" />
         </SelectedElementTitle>
       {/if}
-      <SelectedElementView {state} layer={$selectedLayer} selectedElement={$selectedElement} />
+      <SelectedElementView {state} selectedElement={$selectedElement} />
     </div>
   </FloatOver>
 {/if}
