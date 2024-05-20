@@ -6,6 +6,10 @@
 
   export let osmConnection: OsmConnection
   export let clss: string | undefined = undefined
+
+  if(osmConnection === undefined){
+    console.error("No osmConnection passed into loginButton")
+  }
 </script>
 
 <button class={clss} on:click={() => osmConnection.AttemptLogin()} style="margin-left: 0">
