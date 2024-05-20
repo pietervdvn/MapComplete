@@ -31,7 +31,8 @@
       "description": "Maproulette challenge containing velopark data",
       "source": {
         "osmTags": "mr_taskId~*",
-        "geoJson": "https://maproulette.org/api/v2/challenge/view/43282"
+        "geoJson": "https://maproulette.org/api/v2/challenge/view/43282",
+        "idKey": "mr_taskId"
       },
       "title": {
         "render": "Velopark parking <span class='literal-code'>{mr_velopark_id}</span>"
@@ -53,6 +54,24 @@
             "special": {
               "type": "login_button"
             }
+          }
+        },
+        {
+          "id": "is_linked",
+          "multiAnswer": true,
+          "classes": "thanks",
+          "render": {
+            "special": {
+              "type": "link",
+              "href": "#{_osm_parkings_with_this_velopark_ref}",
+              "text": {
+                "en": "Matched with bicycle parking {_osm_parkings_with_this_velopark_ref}",
+                "nl": "Gelinkt met fietsenstalling {_osm_parkings_with_this_velopark_ref}"
+              }
+            }
+          },
+          "freeform": {
+            "key": "_osm_parkings_with_this_velopark_ref"
           }
         },
         {
@@ -90,7 +109,6 @@
             "en": "<h3>Nearby parkings</h3>There are {_nearby_bicycle_parkings:count} bicycle parkings within {_distance_cutoff}m known in OpenStreetMap.",
             "nl": "<h3>Parkings in de buurt</h3>Er zijn {_nearby_bicycle_parkings:count} fietsparkings gekend binnen {_distance_cutoff}m in OpenStreetMap."
           },
-          "condition": "_nearby_bicycle_parkings:count>0",
           "mappings": [
             {
               "if": "_nearby_bicycle_parkings:count=0",
@@ -250,9 +268,10 @@
       "calculatedTags": [
         "_distance_cutoff=50",
         "mr_velopark_id=feat.properties['ref:velopark']?.split('/')?.at(-1)",
-        "_nearby_bicycle_parkings=closestn(feat)(['bike_parking','bike_parking_with_velopark_ref'], 100, undefined, get(feat)('_distance_cutoff'))",
-        "_nearby_bicycle_parkings:count=get(feat)('_nearby_bicycle_parkings').length",
-        "_nearby_bicycle_parkings:props=get(feat)('_nearby_bicycle_parkings').map(f => ({_distance: Math.round(f.distance), _ref: feat.properties['ref:velopark'], _mr_id: feat.properties.id, '_velopark:id': (f.feat.properties['_velopark:id'] ?? 'unlinked') /*Explicit copy to trigger lazy loading*/, ...f.feat.properties}))"
+        "_osm_parkings_with_this_velopark_ref=closestn(feat)('bike_parking_with_velopark_ref',25).filter(f => f.feat.properties['ref:velopark'] === feat.properties['ref:velopark']).map(f => f.feat.properties.id).join(';')",
+        "_nearby_bicycle_parkings=closestn(feat)(['bike_parking','bike_parking_with_velopark_ref'], 20, undefined, get(feat)('_distance_cutoff'))",
+        "_nearby_bicycle_parkings:count=get(feat)('_nearby_bicycle_parkings')?.length",
+        "_nearby_bicycle_parkings:props=get(feat)('_nearby_bicycle_parkings')?.map(f => ({_distance: Math.round(f.distance), _ref: feat.properties['ref:velopark'], _mr_id: feat.properties.id, '_velopark:id': (f.feat.properties['_velopark:id'] ?? 'unlinked') /*Explicit copy to trigger lazy loading*/, ...f.feat.properties}))"
       ],
       "pointRendering": [
         {
@@ -488,7 +507,7 @@
         "condition": {
           "and": [
             "ref:velopark~https://data.velopark.be/data/.*",
-            "id!~.*maproulette.org/.*"
+            "mr_taskId="
           ]
         },
         "render": {
