@@ -50,13 +50,13 @@
 
 <div>
   {#each parts as part, i}
-    {#if part.subs}
+    {#if part["subs"]}
       <!-- This is a field! -->
       <span class="mx-1">
-        <ValidatedInput value={fieldValues[part.subs]} type={fieldTypes[part.subs]} />
+        <ValidatedInput value={fieldValues[part["subs"]]} type={fieldTypes[part["subs"]]} />
       </span>
     {:else}
-      {part.message}
+      {@html part["message"]}
     {/if}
   {/each}
 </div>
