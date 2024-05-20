@@ -6,6 +6,7 @@ import { writeFileSync } from "fs"
 import ScriptUtils from "./ScriptUtils"
 import TagRenderingConfig from "../src/Models/ThemeConfig/TagRenderingConfig"
 import { And } from "../src/Logic/Tags/And"
+import TagInfo from "../src/Logic/Web/TagInfo"
 
 /* Downloads stats on osmSource-tags and keys from tagInfo */
 
@@ -49,9 +50,7 @@ async function main(includeTags = true) {
     await Promise.all(
         Array.from(keysAndTags.keys()).map(async (key) => {
             const values = keysAndTags.get(key)
-            const data = await Utils.downloadJson(
-                `https://taginfo.openstreetmap.org/api/4/key/stats?key=${key}`
-            )
+            const data = await TagInfo.global.getStats(key)
             const count = data.data.find((item) => item.type === "all").count
             keyTotal.set(key, count)
             console.log(key, "-->", count)
@@ -60,9 +59,7 @@ async function main(includeTags = true) {
                 tagTotal.set(key, new Map<string, number>())
                 await Promise.all(
                     Array.from(values).map(async (value) => {
-                        const tagData = await Utils.downloadJson(
-                            `https://taginfo.openstreetmap.org/api/4/tag/stats?key=${key}&value=${value}`
-                        )
+                        const tagData = await TagInfo.global.getStats(key, value)
                         const count = tagData.data.find((item) => item.type === "all").count
                         tagTotal.get(key).set(value, count)
                         console.log(key + "=" + value, "-->", count)
