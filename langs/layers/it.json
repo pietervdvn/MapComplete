@@ -38,6 +38,9 @@
             "2": {
                 "title": "un cartellone pubblicitario fissato al muro"
             },
+            "3": {
+                "title": "un contenitore di poster pubblicitari di una pensilina del trasporto pubblico"
+            },
             "4": {
                 "description": "PIccolo pannello per la pubblicità di vicinanza, generalmente destinato ai pedoni",
                 "title": "un piccolo pannello"
@@ -54,6 +57,9 @@
             },
             "8": {
                 "title": "uno schermo fissato al muro"
+            },
+            "9": {
+                "title": "uno schermo montato su una pensilina del traporto pubblico"
             },
             "10": {
                 "description": "Un telo impermeabile con un messaggio stampato, fissato in modo permanente al muro",
@@ -124,7 +130,7 @@
                 "render": "La stazione si trova a {addr:place}."
             },
             "ambulance-street": {
-                "question": " Come si chiama la strada in cui si trova questa stazione?",
+                "question": "Come si chiama la strada in cui si trova questa stazione?",
                 "render": "Questa stazione si trova in {addr:street}."
             }
         },
@@ -263,7 +269,7 @@
         }
     },
     "atm": {
-        "description": "Sportello Bancomat per prelevare denaro",
+        "description": "Sportelli Bancomat per prelevare denaro",
         "name": "Sportelli Bancomat",
         "presets": {
             "0": {
@@ -349,7 +355,7 @@
                         "then": "Schienale: Sì"
                     },
                     "2": {
-                        "then": "Schienale: No"
+                        "then": "Questa panchina <b>non</b> ha uno schienale"
                     }
                 },
                 "question": "Questa panchina ha lo schienale?"
@@ -496,6 +502,9 @@
             "render": "Bici in prestito"
         }
     },
+    "bicycle_rental": {
+        "description": "Stazione noleggio biciclette"
+    },
     "bicycle_tube_vending_machine": {
         "name": "Distributore automatico di camere d’aria per bici",
         "presets": {
@@ -633,7 +642,7 @@
                         "then": "Archetti"
                     },
                     "1": {
-                        "then": "Scolapiatti"
+                        "then": "Rastrelliera classica"
                     },
                     "2": {
                         "then": "Blocca manubrio"
@@ -1006,6 +1015,37 @@
             "render": "Oggetto relativo alle bici"
         }
     },
+    "charging_station": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Tutti i tipi di veicoli"
+                    },
+                    "1": {
+                        "question": "Stazione di ricarica per biciclette"
+                    },
+                    "2": {
+                        "question": "Stazione di ricarica per auto"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Solo stazioni di ricarica funzionanti"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Tutti i connettori"
+                    }
+                }
+            }
+        }
+    },
     "climbing": {
         "tagRenderings": {
             "average_length": {
@@ -1269,7 +1309,7 @@
                     }
                 },
                 "question": "Quanti bulloni sono presenti in questo percorso prima di arrivare alla moulinette?",
-                "render": "Questo percorso ha {climbing:bolts} bulloni"
+                "render": "Questo percorso ha {climbing:bolts} bulloni <div class='subtle'>Questa è senza collettori e indica di quanti bloccaggi rapidi ha bisogno un arrampicatore</div>"
             }
         },
         "title": {
@@ -1463,7 +1503,7 @@
     },
     "extinguisher": {
         "description": "Livello della mappa che mostra gli idranti antincendio.",
-        "name": "Cartina degli estintori.",
+        "name": "Mappa degli estintori",
         "presets": {
             "0": {
                 "description": "Un estintore è un dispositivo portatile di piccole dimensioni usato per spegnere un incendio",
@@ -1631,16 +1671,16 @@
             "hydrant-state": {
                 "mappings": {
                     "0": {
-                        "then": "L’idrante è (parzialmente o completamente) funzionante."
+                        "then": "L’idrante è (parzialmente o completamente) funzionante"
                     },
                     "1": {
-                        "then": "L’idrante è fuori servizio."
+                        "then": "L’idrante è fuori servizio"
                     },
                     "2": {
-                        "then": "L’idrante è stato rimosso."
+                        "then": "L’idrante è stato rimosso"
                     }
                 },
-                "question": "Aggiorna lo stato di funzionamento dell’idrante."
+                "question": "Questo idrante è ancora in funzione?"
             },
             "hydrant-type": {
                 "mappings": {
@@ -1765,7 +1805,7 @@
                 "render": "Area: {_surface:ha} ha"
             },
             "phone": {
-                "question": "Quale numero di telefono comporre per fare domande o segnalare problemi riguardanti questa riserva naturale?br/>",
+                "question": "Quale numero di telefono comporre per fare domande o segnalare problemi riguardanti questa riserva naturale?",
                 "questionHint": "Rispetta la privacy (inserisci il numero di telefono privato solo se questo è noto pubblicamente)"
             }
         }
@@ -1919,6 +1959,9 @@
             "render": "Parco giochi"
         }
     },
+    "postboxes": {
+        "description": "Questo livello mostra le buche delle lettere."
+    },
     "public_bookcase": {
         "description": "Una vetrinetta ai bordi della strada contenente libri, aperta al pubblico",
         "name": "Microbiblioteche",
@@ -1967,7 +2010,10 @@
             "public_bookcase-brand": {
                 "mappings": {
                     "0": {
-                        "then": "Questa microbiblioteca non fa parte di una rete"
+                        "then": "Fa parte della rete 'Little Free Library'"
+                    },
+                    "1": {
+                        "then": "Questa biblioteca pubblica non fa parte di una rete"
                     }
                 },
                 "question": "Questa microbiblioteca fa parte di una rete?",
@@ -1993,7 +2039,7 @@
             "public_bookcase-ref": {
                 "mappings": {
                     "0": {
-                        "then": "Questa microbiblioteca non fa parte di una rete"
+                        "then": "Questa biblioteca non fa parte di una rete"
                     }
                 },
                 "question": "Qual è il numero identificativo di questa microbiblioteca?",
@@ -2040,6 +2086,9 @@
                     },
                     "3": {
                         "then": "I cani sono ammessi e possono andare in giro liberamente"
+                    },
+                    "4": {
+                        "then": "I cani sono ammessi solo all'esterno"
                     }
                 },
                 "question": "I cani sono ammessi in quest’attività?"
@@ -2277,22 +2326,22 @@
                     "16": {
                         "then": "Plastica"
                     },
-                    "18": {
+                    "19": {
                         "then": "Rottami metallici"
                     },
-                    "19": {
-                        "then": "Scarpe"
-                    },
                     "20": {
-                        "then": "Piccoli elettrodomestici"
+                        "then": "Scarpe"
                     },
                     "21": {
                         "then": "Piccoli elettrodomestici"
                     },
                     "22": {
-                        "then": "Aghi e oggetti appuntiti"
+                        "then": "Piccoli elettrodomestici"
                     },
                     "23": {
+                        "then": "Aghi e oggetti appuntiti"
+                    },
+                    "24": {
                         "then": "Secco"
                     }
                 },
@@ -2519,13 +2568,13 @@
             "Surveillance type: public, outdoor, indoor": {
                 "mappings": {
                     "0": {
-                        "then": "Sorveglia un'area pubblica, come una strada, un ponte, una piazza, un parco, una stazione, un passaggio o un sottopasso pubblico, ..."
+                        "then": "Sorveglia un'area pubblica, come una strada, un ponte, una piazza, un parco, una stazione, un passaggio o un sottopasso pubblico, …"
                     },
                     "1": {
                         "then": "Sorveglia un'area esterna di proprietà privata (un parcheggio, una stazione di servizio, un cortile, un ingresso, un vialetto privato, ...)"
                     },
                     "2": {
-                        "then": "Sorveglia un ambiente interno di proprietà privata, per esempio un negozio, un parcheggio sotterraneo privato, ..."
+                        "then": "Sorveglia un ambiente interno di proprietà privata, per esempio un negozio, un parcheggio sotterraneo privato, …"
                     }
                 },
                 "question": "Che cosa sorveglia questa videocamera?"
@@ -2552,7 +2601,7 @@
                     }
                 },
                 "question": "Che cosa è sorvegliato qui?",
-                "render": " Sorveglia una {surveillance:zone}"
+                "render": "Sorveglia una {surveillance:zone}"
             },
             "camera:mount": {
                 "mappings": {
@@ -2639,16 +2688,16 @@
             "toilet-changing_table:location": {
                 "mappings": {
                     "0": {
-                        "then": "Il fasciatoio è nei servizi igienici femminili. "
+                        "then": "Un fasciatoio è nei servizi igienici femminili"
                     },
                     "1": {
-                        "then": "Il fasciatoio è nei servizi igienici maschili. "
+                        "then": "Un fasciatoio è nei servizi igienici maschili"
                     },
                     "2": {
-                        "then": "Il fasciatoio è nei servizi igienici per persone in sedia a rotelle. "
+                        "then": "Un fasciatoio è nei servizi igienici per persone in sedia a rotelle"
                     },
                     "3": {
-                        "then": "Il fasciatoio è in una stanza dedicata. "
+                        "then": "Un fasciatoio è in una stanza dedicata"
                     }
                 },
                 "question": "Dove si trova il fasciatoio?",
@@ -2706,7 +2755,7 @@
                         "then": "Non accessibile in sedia a rotelle"
                     }
                 },
-                "question": "C'è un WC riservato alle persone in sedia a rotelle"
+                "question": "C'è un WC riservato alle persone in sedia a rotelle?"
             }
         },
         "title": {
@@ -2753,7 +2802,7 @@
                         "then": "Non accessibile in sedia a rotelle"
                     }
                 },
-                "question": "C'è un WC riservato alle persone in sedia a rotelle"
+                "question": "C'è un WC riservato alle persone in sedia a rotelle?"
             }
         }
     },
@@ -2918,7 +2967,7 @@
         }
     },
     "waste_basket": {
-        "description": "Questo è un cestino dei rifiuti pubblico, un bidone della spazzatura, dove puoi buttare via la tua spazzatura",
+        "description": "Questo è un cestino, un bidone dei rifiuti pubblico, dove puoi buttare via la tua spazzatura.",
         "filter": {
             "0": {
                 "options": {
@@ -2997,7 +3046,7 @@
                     "6": {
                         "then": "Un cestino rifiuti per la plastica"
                     },
-                    "7": {
+                    "8": {
                         "then": "Un cestino rifiuti per la carta"
                     }
                 },

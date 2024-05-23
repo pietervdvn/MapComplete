@@ -16,6 +16,7 @@
   role="dialog"
   style="max-width: 100vw; max-height: 100vh"
   tabindex="-1"
+  id="modal-right"
   use:trapFocus
 >
   <slot name="close-button">
@@ -30,3 +31,12 @@
     <slot />
   </div>
 </div>
+
+<!-- Experimental support for foldable devices -->
+<style lang="scss">
+  @media (horizontal-viewport-segments: 2) {
+    #modal-right {
+      width: 50%;
+    }
+  }
+</style>

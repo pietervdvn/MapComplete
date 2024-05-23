@@ -163,7 +163,7 @@
                         "then": "Açò és una tanca publicitària"
                     },
                     "1": {
-                        "then": "Açò és un tauló d'anunis"
+                        "then": "Açò és un tauló d'anuncis"
                     },
                     "2": {
                         "then": "Açò és una columna"
@@ -6711,28 +6711,28 @@
                     "16": {
                         "then": "Aquí es pot reciclar plàstic"
                     },
-                    "17": {
+                    "18": {
                         "then": "Els cartutxos d'impressora es poden reciclar aquí"
                     },
-                    "18": {
+                    "19": {
                         "then": "Aquí es pot reciclar ferralla"
                     },
-                    "19": {
-                        "then": "Aquí es poden reciclar sabates"
-                    },
                     "20": {
-                        "then": "Aquí es poden reciclar petits electrodomèstics"
+                        "then": "Aquí es poden reciclar sabates"
                     },
                     "21": {
                         "then": "Aquí es poden reciclar petits electrodomèstics"
                     },
                     "22": {
-                        "then": "Aquí es poden reciclar agulles"
+                        "then": "Aquí es poden reciclar petits electrodomèstics"
                     },
                     "23": {
-                        "then": "Ací es pot reciclar el rebuig"
+                        "then": "Aquí es poden reciclar agulles"
                     },
                     "24": {
+                        "then": "Ací es pot reciclar el rebuig"
+                    },
+                    "25": {
                         "then": "Aquí es poden reciclar bicicletes"
                     }
                 },
@@ -9107,7 +9107,7 @@
                     "6": {
                         "then": "Una paperera per a plàstic"
                     },
-                    "7": {
+                    "8": {
                         "then": "Una paperera per a paper"
                     }
                 },

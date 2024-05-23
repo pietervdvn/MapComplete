@@ -242,6 +242,15 @@
           "if": {
             "and": [
               "_waste_amount>1",
+              "recycling:pmd=yes"
+            ]
+          },
+          "then": "./assets/layers/recycling/pmd.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
               "recycling:printer_cartridges=yes"
             ]
           },
@@ -469,6 +478,15 @@
                 "if": {
                   "and": [
                     "_waste_amount=1",
+                    "recycling:pmd=yes"
+                  ]
+                },
+                "then": "./assets/layers/recycling/pmd.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "_waste_amount=1",
                     "recycling:printer_cartridges=yes"
                   ]
                 },
@@ -640,6 +658,7 @@
             "recycling:plastic_bottles=",
             "recycling:plastic_packaging=",
             "recycling:plastic=",
+            "recycling:pmd=",
             "recycling:printer_cartridges=",
             "recycling:scrap_metal=",
             "recycling:shoes=",
@@ -1090,6 +1109,18 @@
           },
           "icon": {
             "path": "./assets/layers/recycling/plastic.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "recycling:pmd=yes",
+          "ifnot": "recycling:pmd=",
+          "then": {
+            "en": "Plastic packaging, metal packaging and drink cartons (PMD) can be recycled here",
+            "nl": "Plastic verpakkingen, metalen verpakkingen en drankpakken kunnen hier gerecycled worden"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/pmd.svg",
             "class": "medium"
           }
         },
@@ -1636,6 +1667,13 @@
             "cs": "Recyklace jízdních kol"
           },
           "osmTags": "recycling:bicycles=yes"
+        },
+        {
+          "question": {
+            "en": "Recycling of plastic packaging, metal packaging and drink cartons (PMD)",
+            "nl": "Recycling van plastic verkpakkingen, metalen verkpakkingen en drankpakken (PMD)"
+          },
+          "osmTags": "recycling:pmd=yes"
         }
       ]
     },

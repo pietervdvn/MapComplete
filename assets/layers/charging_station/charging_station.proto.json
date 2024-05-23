@@ -874,7 +874,13 @@
       }
     }
   ],
-  "lineRendering": [],
+  "lineRendering": [
+    {
+      "color": "black",
+      "width": 2,
+      "fillColor": "#80808080"
+    }
+  ],
   "pointRendering": [
     {
       "location": [

@@ -119,7 +119,8 @@
         "da": "cykelmotorveje",
         "pa_PK": "سائیکل‌وے",
         "cs": "cyklodálnice",
-        "pl": "ścieżki rowerowe"
+        "pl": "ścieżki rowerowe",
+        "it": "strade per biciclette"
       },
       "source": {
         "osmTags": "cycle_network=BE-VLG:cycle_highway"
@@ -137,7 +138,8 @@
           "da": "cykelmotorvej",
           "pa_PK": "سائیکل‌وے",
           "cs": "cyklodálnice",
-          "pl": "ścieżka rowerowa"
+          "pl": "ścieżka rowerowa",
+          "it": "strada per bicilette"
         }
       },
       "filter": [

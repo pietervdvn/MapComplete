@@ -103,7 +103,7 @@ export abstract class EditJsonState<T> {
         // Walk the path down to see if we find something
         let entry = this.configuration.data
         for (let i = 0; i < path.length; i++) {
-            if (entry === undefined) {
+            if (entry === undefined || entry === null) {
                 // We reached a dead end - no old vlaue
                 return undefined
             }

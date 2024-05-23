@@ -394,7 +394,7 @@
         "de": "Können Rollstuhlfahrer die Toilette benutzen?",
         "fr": "Y a-t-il des toilettes réservées aux personnes en fauteuil roulant ?",
         "nl": "Is er een rolstoeltoegankelijke toilet voorzien?",
-        "it": "C'è un WC riservato alle persone in sedia a rotelle",
+        "it": "C'è un WC riservato alle persone in sedia a rotelle?",
         "da": "Er der et særligt toilet til kørestolsbrugere?",
         "ca": "Hi ha un lavabo específic per a usuaris amb cadira de rodes?",
         "cs": "Je zde vyhrazená toaleta pro vozíčkáře?"
@@ -763,9 +763,9 @@
           "then": {
             "en": "A changing table is in the toilet for women",
             "de": "Ein Wickeltisch ist in der Damentoilette vorhanden",
-            "fr": "La table à langer est dans les toilettes pour femmes. ",
+            "fr": "La table à langer est dans les toilettes pour femmes.",
             "nl": "Er bevindt zich een luiertafel in de vrouwentoiletten ",
-            "it": "Il fasciatoio è nei servizi igienici femminili. ",
+            "it": "Un fasciatoio è nei servizi igienici femminili",
             "da": "Puslebordet er på toilettet til kvinder. ",
             "ca": "El canviador està al lavabo per a dones. ",
             "cs": "Přebalovací pult je na dámské toaletě. "
@@ -776,9 +776,9 @@
           "then": {
             "en": "A changing table is in the toilet for men",
             "de": "Ein Wickeltisch ist in der Herrentoilette vorhanden",
-            "fr": "La table à langer est dans les toilettes pour hommes. ",
+            "fr": "La table à langer est dans les toilettes pour hommes.",
             "nl": "Er bevindt zich een luiertafel in de herentoiletten ",
-            "it": "Il fasciatoio è nei servizi igienici maschili. ",
+            "it": "Un fasciatoio è nei servizi igienici maschili",
             "ca": "El canviador està al lavabo per a homes. ",
             "cs": "Přebalovací pult je na pánské toaletě. "
           },
@@ -789,9 +789,9 @@
           "then": {
             "en": "A changing table is in the toilet for wheelchair users",
             "de": "Ein Wickeltisch ist in der barrierefreien Toilette vorhanden",
-            "fr": "La table à langer est dans les toilettes pour personnes à mobilité réduite. ",
+            "fr": "La table à langer est dans les toilettes pour personnes à mobilité réduite.",
             "nl": "Er bevindt zich een luiertafel in de rolstoeltoegankelijke toilet ",
-            "it": "Il fasciatoio è nei servizi igienici per persone in sedia a rotelle. ",
+            "it": "Un fasciatoio è nei servizi igienici per persone in sedia a rotelle",
             "da": "Puslebordet er på toilettet for kørestolsbrugere. ",
             "ca": "El canviador està al lavabo per a usuaris de cadira de rodes. ",
             "cs": "Přebalovací pult je na toaletě pro vozíčkáře. "
@@ -802,9 +802,9 @@
           "then": {
             "en": "A changing table is in a dedicated room",
             "de": "Ein Wickeltisch befindet sich in einem eigenen Raum",
-            "fr": "La table à langer est dans un espace dédié. ",
+            "fr": "La table à langer est dans un espace dédié.",
             "nl": "Er bevindt zich een luiertafel in een daartoe voorziene kamer ",
-            "it": "Il fasciatoio è in una stanza dedicata. ",
+            "it": "Un fasciatoio è in una stanza dedicata",
             "es": "El cambiador está en una habitación dedicada",
             "da": "Vuggestuen står i et særligt rum. ",
             "ca": "El canviador està en una habitació dedicada. ",

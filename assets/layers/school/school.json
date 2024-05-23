@@ -28,7 +28,7 @@
       "en": "School <i>{name}</i>",
       "nl": "School <i>{name}</i>",
       "de": "Schule <i>{name}</i>",
-      "fr": "School <i>{name}</i>",
+      "fr": "École <i>{name}</i>",
       "pl": "Szkoła <i>{name}</i>",
       "ca": "Escola <i>{name}</i>",
       "cs": "Škola <i>{name}</i>"

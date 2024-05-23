@@ -186,7 +186,7 @@
             "gl": "Aros",
             "de": "Metallgestänge",
             "hu": "Kerékbefogó hurok",
-            "it": "Scolapiatti",
+            "it": "Rastrelliera classica",
             "zh_Hant": "車輪架/圓圈",
             "ca": "Portarodes/bucles",
             "da": "Hjulstativ/løkker",
@@ -697,15 +697,18 @@
       "condition": "fee=yes",
       "question": {
         "en": "How much does it cost to park your bike here?",
-        "nl": "Hoeveel kost het om een fiets te stallen?"
+        "nl": "Hoeveel kost het om een fiets te stallen?",
+        "de": "Wie viel kostet es, Ihr Fahrrad hier zu parken?"
       },
       "questionHint": {
         "en": "This is the amount which is charged for a single bike",
-        "nl": "Dit is de kostprijs voor een enkele fiets"
+        "nl": "Dit is de kostprijs voor een enkele fiets",
+        "de": "Das ist der Betrag, der für ein einzelnes Fahrrad berechnet wird"
       },
       "render": {
         "en": "Parking your bike costs {charge}",
-        "nl": "Je fiets hier parkeren kost {charge}"
+        "nl": "Je fiets hier parkeren kost {charge}",
+        "de": "Das Parken Ihres Fahrrads kostet {charge}"
       },
       "freeform": {
         "key": "charge",

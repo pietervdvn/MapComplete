@@ -1227,9 +1227,17 @@
                 },
                 "question": "Is deze fietsenstalling gratis te gebruiken?"
             },
+            "maxstay": {
+                "question": "Wat is de toegestane, maximale parkeerduur?",
+                "questionHint": "Indien een fiets langer geparkeerd staat, kan deze verwijderd worden door de beheerder",
+                "render": "Een fiets mag hier maximaal {canonical(maxstay)} parkeren"
+            },
             "operator": {
                 "question": "Wie beheert deze fietsenstalling?",
                 "render": "Deze fietsenstalling wordt beheerd door {operator}"
+            },
+            "operator_email": {
+                "question": "Wat is het emailadres van de beheerder van deze parking?"
             },
             "operator_phone": {
                 "question": "Wat is het telefoonnummer van de operator van deze fietsenstalling?",
@@ -1874,6 +1882,21 @@
                     },
                     "16": {
                         "question": "Heeft een <div style='display: inline-block'><b><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div>"
+                    },
+                    "17": {
+                        "question": "Heeft een <div style='display: inline-block'><b><b>BS1363</b> (VK 3-pin)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bs1363.svg'/></div>"
+                    },
+                    "18": {
+                        "question": "Heeft een <div style='display: inline-block'><b><b>NEMA 5-15</b> (VS 3-pin)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/nema-5-15.svg'/></div>"
+                    },
+                    "19": {
+                        "question": "Heeft een <div style='display: inline-block'><b><b>SEV 1011 T23</b> (Zwitserse 3-pin)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/typej.svg'/></div>"
+                    },
+                    "20": {
+                        "question": "Heeft een <div style='display: inline-block'><b><b>AS3112</b> (Australische 3-pin)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/as3112.svg'/></div>"
+                    },
+                    "21": {
+                        "question": "Heeft een <div style='display: inline-block'><b><b>NEMA 5-20</b> (VS 3-pin)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/nema-5-20.svg'/></div>"
                     }
                 }
             }
@@ -2018,6 +2041,36 @@
                     },
                     "31": {
                         "then": "<b>Bosch Active Connect met 5 pinnen</b> aan een kabel"
+                    },
+                    "32": {
+                        "then": "<b>BS1363</b> (VK 3-pin)"
+                    },
+                    "33": {
+                        "then": "<b>BS1363</b> (VK 3-pin)"
+                    },
+                    "34": {
+                        "then": "<b>NEMA 5-15</b> (VS 3-pin)"
+                    },
+                    "35": {
+                        "then": "<b>NEMA 5-15</b> (VS 3-pin)"
+                    },
+                    "36": {
+                        "then": "<b>SEV 1011 T23</b> (Zwitserse 3-pin)"
+                    },
+                    "37": {
+                        "then": "<b>SEV 1011 T23</b> (Zwitserse 3-pin)"
+                    },
+                    "38": {
+                        "then": "<b>AS3112</b> (Australische 3-pin)"
+                    },
+                    "39": {
+                        "then": "<b>AS3112</b> (Australische 3-pin)"
+                    },
+                    "40": {
+                        "then": "<b>NEMA 5-20</b> (VS 3-pin)"
+                    },
+                    "41": {
+                        "then": "<b>NEMA 5-20</b> (VS 3-pin)"
                     }
                 },
                 "question": "Welke aansluitingen zijn hier beschikbaar?"
@@ -2252,6 +2305,21 @@
                         },
                         "15": {
                             "2": "<b>Bosch Active Connect met 5 pinnen</b> aan een kabel"
+                        },
+                        "16": {
+                            "2": "<b>BS1363</b> (VK 3-pin)"
+                        },
+                        "17": {
+                            "2": "<b>NEMA 5-15</b> (VS 3-pin)"
+                        },
+                        "18": {
+                            "2": "<b>SEV 1011 T23</b> (Zwitserse 3-pin)"
+                        },
+                        "19": {
+                            "2": "<b>AS3112</b> (Australische 3-pin)"
+                        },
+                        "20": {
+                            "2": "<b>NEMA 5-20</b> (VS 3-pin)"
                         }
                     }
                 }
@@ -6832,6 +6900,9 @@
                     },
                     "21": {
                         "question": "Recycling van fietsen"
+                    },
+                    "22": {
+                        "question": "Recycling van plastic verkpakkingen, metalen verkpakkingen en drankpakken (PMD)"
                     }
                 }
             },
@@ -6945,27 +7016,30 @@
                         "then": "Plastic kan hier gerecycled worden"
                     },
                     "17": {
-                        "then": "Inktpatronen kunnen hier gerecycleerd worden"
+                        "then": "Plastic verpakkingen, metalen verpakkingen en drankpakken kunnen hier gerecycled worden"
                     },
                     "18": {
-                        "then": "Oud metaal kan hier gerecycled worden"
+                        "then": "Inktpatronen kunnen hier gerecycleerd worden"
                     },
                     "19": {
-                        "then": "Schoenen kunnen hier gerecycled worden"
+                        "then": "Oud metaal kan hier gerecycled worden"
                     },
                     "20": {
-                        "then": "Kleine elektrische apparaten kunnen hier gerecycled worden"
+                        "then": "Schoenen kunnen hier gerecycled worden"
                     },
                     "21": {
                         "then": "Kleine elektrische apparaten kunnen hier gerecycled worden"
                     },
                     "22": {
-                        "then": "Injectienaalden kunnen hier gerecycled worden"
+                        "then": "Kleine elektrische apparaten kunnen hier gerecycled worden"
                     },
                     "23": {
-                        "then": "Restafval kan hier gerecycled worden"
+                        "then": "Injectienaalden kunnen hier gerecycled worden"
                     },
                     "24": {
+                        "then": "Restafval kan hier gerecycled worden"
+                    },
+                    "25": {
                         "then": "Fietsen (en fietswrakken) kunnen hier gerecycled worden"
                     }
                 },
@@ -7329,6 +7403,10 @@
             }
         },
         "tagRenderings": {
+            "camera_direction": {
+                "question": "In welke geografische richting filmt deze camera?",
+                "render": "Filmt in kompasrichting {direction}"
+            },
             "maxspeed": {
                 "freeform": {
                     "placeholder": "Maximum toegestane snelheid"
@@ -9247,6 +9325,12 @@
                     },
                     "6": {
                         "question": "Vuilnisbak voor plastic"
+                    },
+                    "7": {
+                        "question": "Vuilnisbak voor plastic verpakkingen, metalen verpakkingen en drankpakken (PMD)"
+                    },
+                    "8": {
+                        "question": "Vuilnisbak voor papier"
                     }
                 }
             },
@@ -9303,6 +9387,9 @@
                         "then": "Een vuilnisbak voor plastic"
                     },
                     "7": {
+                        "then": "Een vuilnisbak voor plastic verpakkingen, metalen verpakkingen en drankpakken (PMD)"
+                    },
+                    "8": {
                         "then": "Een vuilnisbak voor papier"
                     }
                 },

@@ -2,7 +2,9 @@
   "id": "bicycle_parkings",
   "title": {
     "en": "Bicycle parkings",
-    "de": "Fahrradabstellplätze"
+    "de": "Fahrradabstellplätze",
+    "ca": "Aparcament de bicicletes",
+    "fr": "Stationnement vélo"
   },
   "description": {
     "en": "A map showing all types of bicycle parkings",

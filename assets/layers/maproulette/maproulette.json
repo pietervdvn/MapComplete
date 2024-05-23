@@ -15,7 +15,8 @@
     "ca": "Capa que mostra totes les tasques de MapRoulette",
     "pl": "Warstwa pokazująca wszystkie zadania w MapRoulette",
     "cs": "Vrstva zobrazující všechny úlohy v MapRoulette",
-    "es": "Capa mostrando todas las tareas en MapRoulette"
+    "es": "Capa mostrando todas las tareas en MapRoulette",
+    "fr": "Couche montrant toutes les tâches dans MapRoulette"
   },
   "source": {
     "geoJson": "https://maproulette.org/api/v2/tasks/box/{x_min}/{y_min}/{x_max}/{y_max}",
@@ -114,7 +115,8 @@
             "nl": "Taak werd opgelost",
             "pl": "Zadanie jest naprawione",
             "ca": "La tasca està arreglada",
-            "cs": "Úkol je opraven"
+            "cs": "Úkol je opraven",
+            "fr": "La tâche est résolue"
           }
         },
         {
@@ -125,7 +127,8 @@
             "nl": "Taak was vals positief",
             "pl": "Zadanie jest fałszywie pozytywne",
             "ca": "La tasca és un fals positiu",
-            "cs": "Úkol je falešně pozitivní"
+            "cs": "Úkol je falešně pozitivní",
+            "fr": "Faux positif"
           }
         },
         {
@@ -180,7 +183,8 @@
             "nl": "Taak is uitgeschakeld",
             "pl": "Zadanie jest wyłączone",
             "ca": "La tasca està deshabilitada",
-            "cs": "Úloha je zakázána"
+            "cs": "Úloha je zakázána",
+            "fr": "La tâche est désactivée"
           }
         }
       ]

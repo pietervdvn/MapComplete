@@ -60,7 +60,8 @@
       "id": "type",
       "question": {
         "en": "What kind of routes are shown on this guidepost?",
-        "de": "Welche Arten von Routen werden auf diesem Wegweiser angezeigt?"
+        "de": "Welche Arten von Routen werden auf diesem Wegweiser angezeigt?",
+        "fr": "Quel type d'itinéraire indique ce panneau ?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -69,7 +70,8 @@
           "ifnot": "bicycle=",
           "then": {
             "en": "This guidepost shows bicycle routes",
-            "de": "Dieser Wegweiser zeigt Fahrradrouten"
+            "de": "Dieser Wegweiser zeigt Fahrradrouten",
+            "fr": "Un itinéraire vélo"
           }
         },
         {
@@ -77,7 +79,8 @@
           "ifnot": "hiking=",
           "then": {
             "en": "This guidepost shows hiking routes",
-            "de": "Dieser Wegweiser zeigt Wanderwege"
+            "de": "Dieser Wegweiser zeigt Wanderwege",
+            "fr": "un itinéraire de randonnée"
           }
         },
         {
@@ -85,7 +88,8 @@
           "ifnot": "mtb=",
           "then": {
             "en": "This guidepost shows mountain bike routes",
-            "de": "Dieser Wegweiser zeigt Mountainbike-Routen"
+            "de": "Dieser Wegweiser zeigt Mountainbike-Routen",
+            "fr": "un itinéraire de vtt"
           }
         },
         {
@@ -93,7 +97,8 @@
           "ifnot": "horse=",
           "then": {
             "en": "This guidepost shows horse riding routes",
-            "de": "Dieser Wegweiser zeigt Reitwege"
+            "de": "Dieser Wegweiser zeigt Reitwege",
+            "fr": "un itinéraire équestre"
           }
         },
         {
@@ -101,7 +106,8 @@
           "ifnot": "ski=",
           "then": {
             "en": "This guidepost shows ski routes",
-            "de": "Dieser Wegweiser zeigt Skirouten"
+            "de": "Dieser Wegweiser zeigt Skirouten",
+            "fr": "un itinéraire de pistes de ski"
           }
         }
       ]

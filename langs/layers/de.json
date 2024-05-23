@@ -1474,6 +1474,11 @@
                 },
                 "question": "Wo befinden sich diese Fahrradabstellplätze?"
             },
+            "charge": {
+                "question": "Wie viel kostet es, Ihr Fahrrad hier zu parken?",
+                "questionHint": "Das ist der Betrag, der für ein einzelnes Fahrrad berechnet wird",
+                "render": "Das Parken Ihres Fahrrads kostet {charge}"
+            },
             "fee": {
                 "mappings": {
                     "0": {
@@ -8251,28 +8256,28 @@
                     "16": {
                         "then": "Kunststoff kann hier recycelt werden"
                     },
-                    "17": {
+                    "18": {
                         "then": "Druckerpatronen können hier recycelt werden"
                     },
-                    "18": {
+                    "19": {
                         "then": "Metallschrott kann hier recycelt werden"
                     },
-                    "19": {
-                        "then": "Schuhe können hier recycelt werden"
-                    },
                     "20": {
-                        "then": "Elektrokleingeräte können hier recycelt werden"
+                        "then": "Schuhe können hier recycelt werden"
                     },
                     "21": {
                         "then": "Elektrokleingeräte können hier recycelt werden"
                     },
                     "22": {
-                        "then": "Nadeln können hier recycelt werden"
+                        "then": "Elektrokleingeräte können hier recycelt werden"
                     },
                     "23": {
-                        "then": "Restmüll kann hier recycelt werden"
+                        "then": "Nadeln können hier recycelt werden"
                     },
                     "24": {
+                        "then": "Restmüll kann hier recycelt werden"
+                    },
+                    "25": {
                         "then": "Fahrräder können hier recycelt werden"
                     }
                 },
@@ -10515,6 +10520,18 @@
                     "2": {
                         "human": "{quantity} Tage",
                         "humanSingular": "ein Tag"
+                    },
+                    "3": {
+                        "human": "{quantity} Wochen",
+                        "humanSingular": "ein Woche"
+                    },
+                    "4": {
+                        "human": "{quantity} Monate",
+                        "humanSingular": "ein Monat"
+                    },
+                    "5": {
+                        "human": "{quantity} Jahre",
+                        "humanSingular": "ein Jahr"
                     }
                 }
             }
@@ -11132,7 +11149,7 @@
                     "6": {
                         "then": "Der Abfalleimer ist für Plastik"
                     },
-                    "7": {
+                    "8": {
                         "then": "Der Abfalleimer ist für Papier"
                     }
                 },

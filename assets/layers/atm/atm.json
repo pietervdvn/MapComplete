@@ -29,7 +29,7 @@
     "pl": "Bankomaty do wypłacania pieniędzy",
     "pt_BR": "Caixas eletrônicos para sacar dinheiro",
     "pt": "Multibancos para levantar dinheiro",
-    "it": "Sportello Bancomat per prelevare denaro"
+    "it": "Sportelli Bancomat per prelevare denaro"
   },
   "source": {
     "osmTags": "amenity=atm"

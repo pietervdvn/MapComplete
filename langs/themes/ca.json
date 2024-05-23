@@ -96,6 +96,9 @@
         "shortDescription": "Un mapa de bancs",
         "title": "Bancs"
     },
+    "bicycle_parkings": {
+        "title": "Aparcament de bicicletes"
+    },
     "bicycle_rental": {
         "description": "En aquest mapa, trobaràs nombroses estacions de lloguer de bicicletes que són conegudes per OpenStreetMap",
         "shortDescription": "Un mapa amb estacions de lloguer de bicicletes i botigues de lloguer de bicicletes",
@@ -605,6 +608,9 @@
         "description": "L'objectiu d'aquest mapa és presentar als ciclistes una solució fàcil d'utilitzar per trobar la infraestructura adequada per a les seves necessitats.<br><br>Pots fer un seguiment de la teva ubicació precisa (només mòbil) i seleccionar capes que siguin rellevants per a tu a la cantonada inferior esquerra. També podeu utilitzar aquesta eina per afegir o editar pins (punts d'interès) al mapa i proporcionar més dades responent a les preguntes.<br><br>Tots els canvis que feu es desaran automàticament a la base de dades global d'OpenStreetMap i es poden ser reutilitzat lliurement per altres persones.<br><br>Per obtenir més informació sobre el projecte cyclofix, aneu a <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a> .",
         "title": "Cyclofix - un mapa per a ciclistes"
     },
+    "disaster_response": {
+        "title": "Resposta davant de desastres"
+    },
     "drinking_water": {
         "description": "En aquest mapa es mostren els punts d'aigua potable accessibles al públic i es poden afegir fàcilment",
         "title": "Aigua Potable"
@@ -899,33 +905,6 @@
     "onwheels": {
         "description": "En aquest mapa, es mostren llocs públics accessibles per a cadira de rodes i es poden afegir fàcilment",
         "layers": {
-            "19": {
-                "override": {
-                    "=title": {
-                        "render": "Estadístiques"
-                    }
-                }
-            },
-            "20": {
-                "override": {
-                    "+tagRenderings": {
-                        "0": {
-                            "render": {
-                                "special": {
-                                    "text": "Importar"
-                                }
-                            }
-                        },
-                        "1": {
-                            "render": {
-                                "special": {
-                                    "message": "Afegiu totes les etiquetes suggerides"
-                                }
-                            }
-                        }
-                    }
-                }
-            },
             "4": {
                 "override": {
                     "filter": {
@@ -967,6 +946,33 @@
             "8": {
                 "override": {
                     "name": "Places d'aparcament per a minusvàlids"
+                }
+            },
+            "19": {
+                "override": {
+                    "=title": {
+                        "render": "Estadístiques"
+                    }
+                }
+            },
+            "20": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "Importar"
+                                }
+                            }
+                        },
+                        "1": {
+                            "render": {
+                                "special": {
+                                    "message": "Afegiu totes les etiquetes suggerides"
+                                }
+                            }
+                        }
+                    }
                 }
             }
         },
@@ -1128,6 +1134,10 @@
     "stations": {
         "description": "Veure, editar i afegir detalls a una estació de tren",
         "layers": {
+            "3": {
+                "description": "Capa que mostra les estacions de tren",
+                "name": "Estació de tren"
+            },
             "16": {
                 "description": "Pantalles que mostren els trens que sortiran de l'estació",
                 "name": "Taulers de sortides",
@@ -1159,10 +1169,6 @@
                 "title": {
                     "render": "Tauler de sortides"
                 }
-            },
-            "3": {
-                "description": "Capa que mostra les estacions de tren",
-                "name": "Estació de tren"
             }
         },
         "title": "Estacions de tren"

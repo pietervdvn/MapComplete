@@ -25,6 +25,8 @@
         }
     },
     "advertising": {
+        "description": "Nous allons compléter les information sur la publicité avec la référence, l'opérateur et l'éclairage",
+        "name": "Publicité",
         "presets": {
             "0": {
                 "description": "Un grand équipement extérieur, principalement disposé dans les zones à fort trafic comme une route",
@@ -35,6 +37,9 @@
             },
             "2": {
                 "title": "un panneau à affiches monté sur un mur"
+            },
+            "3": {
+                "title": "Un affichage sur un abribus"
             },
             "4": {
                 "description": "Petit panneau pour l’affichage de proximité, généralement à destination des piétons",
@@ -52,6 +57,9 @@
             },
             "8": {
                 "title": "un écran fixé au mur"
+            },
+            "9": {
+                "title": "un écran fixé sur un abri de transport"
             },
             "10": {
                 "description": "Une pièce de textile imperméable avec un message imprimé, ancrée de façon permanente sur un mur.",
@@ -188,7 +196,8 @@
                         "then": "C'est une peinture murale"
                     }
                 },
-                "question": "De quel type de dispositif publicitaire s'agit-il ?"
+                "question": "De quel type de dispositif publicitaire s'agit-il ?",
+                "render": "C'est un {advertising}"
             }
         },
         "title": {
@@ -224,7 +233,19 @@
         }
     },
     "aerialway": {
+        "pointRendering": {
+            "1": {
+                "label": {
+                    "render": "{name}"
+                }
+            }
+        },
         "tagRenderings": {
+            "duration": {
+                "question": "Combien de temps dure le trajet dans cet ascenseur ?",
+                "questionHint": "Cela n'inclut pas le temps d'attente.",
+                "render": "Un aller simple dure {duration} minutes"
+            },
             "length": {
                 "render": "Cette voie aérienne fait {_length:km} kilomètre de long"
             }
@@ -548,10 +569,10 @@
         "title": {
             "mappings": {
                 "0": {
-                    "then": "Bollard"
+                    "then": "Potelet"
                 },
                 "1": {
-                    "then": "Barrière cyclable"
+                    "then": "Barrière à vélos"
                 }
             },
             "render": "Barrière"
@@ -584,7 +605,7 @@
         "name": "Bancs",
         "presets": {
             "0": {
-                "title": "une banc"
+                "title": "un banc"
             }
         },
         "tagRenderings": {
@@ -601,7 +622,7 @@
                     }
                 },
                 "question": "Est-ce que ce banc inclut un élément artistique ?",
-                "questionHint": "Par ex. il intègre une peinture, statue ou autre élément non commune, travail cratif"
+                "questionHint": "Par ex. il intègre une peinture, statue ou autre élément non commune, travail créatif"
             },
             "bench-backrest": {
                 "mappings": {
@@ -609,10 +630,10 @@
                         "then": "Ce banc a deux côtés avec un dossier partagé"
                     },
                     "1": {
-                        "then": "Dossier : Oui"
+                        "then": "Ce banc a un dossier"
                     },
                     "2": {
-                        "then": "Dossier : Non"
+                        "then": "Ce banc n'a <b>pas</b> de dossier"
                     }
                 },
                 "question": "Ce banc dispose-t-il d'un dossier ?"
@@ -623,7 +644,7 @@
                         "then": "Couleur : marron"
                     },
                     "1": {
-                        "then": "Couleur : verte"
+                        "then": "Couleur : vert"
                     },
                     "2": {
                         "then": "Couleur : gris"
@@ -635,7 +656,7 @@
                         "then": "Couleur : rouge"
                     },
                     "5": {
-                        "then": "Couleur : noire"
+                        "then": "Couleur : noir"
                     },
                     "6": {
                         "then": "Couleur : bleu"
@@ -676,7 +697,7 @@
                         "then": "L'assise est en pierre"
                     },
                     "3": {
-                        "then": "Matériau du siège : béton"
+                        "then": "L'assise est en béton"
                     },
                     "4": {
                         "then": "L'assise est en plastique"
@@ -1644,7 +1665,7 @@
                 }
             }
         },
-        "description": "Une couche montrants les cafés et pubs où l’on peut prendre un verre. Cette couche pose des questions y afférentes.",
+        "description": "Une couche montrant les cafés et pubs où l’on peut prendre un verre. Cette couche pose des questions y afférant.",
         "name": "Cafés et pubs",
         "presets": {
             "0": {
@@ -1727,6 +1748,31 @@
         },
         "title": {
             "render": "Société de location de véhicules"
+        }
+    },
+    "charging_station": {
+        "description": "Une station de recharge",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Tous les types de véhicules"
+                    },
+                    "1": {
+                        "question": "Station de recharge pour vélos"
+                    },
+                    "2": {
+                        "question": "Station de recharge pour voitures"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Seulement les stations de recharge qui fonctionnent"
+                    }
+                }
+            }
         }
     },
     "climbing": {
@@ -2467,7 +2513,7 @@
                         "then": "Ceci est une route cyclable"
                     },
                     "2": {
-                        "then": "Ceci n'est pas une rue cyclable"
+                        "then": "Ceci n'est pas une rue cyclable (vélorue)"
                     }
                 },
                 "question": "Est-ce une route cyclable ?"
@@ -2798,7 +2844,7 @@
             },
             "defibrillator-email": {
                 "question": "Quelle est l'adresse électronique pour des questions à propos de ce défibrillateur ?",
-                "render": "Adresse électronique pour des questions à propos de ce défibrillateur : <a href='mailto:{email}'>{email}</a>"
+                "render": "Adresse électronique pour des questions à propos de ce défibrillateur : <a href='mailto :{email}'>{email}</a>"
             },
             "defibrillator-fixme": {
                 "question": "Y a-t-il quelque chose qui ne va pas dans la manière dont ça a été cartographié, et que vous n'avez pas pu réparer ici ? (laisser une note pour les experts d'OpenStreetMap)",
@@ -2829,7 +2875,7 @@
             },
             "defibrillator-phone": {
                 "question": "Quel est le numéro de téléphone pour questions sur le défibrillateur ?",
-                "render": "Numéro de téléphone pour questions sur le défibrillateur : <a href='tel:{phone}'>{phone}</a>"
+                "render": "Numéro de téléphone pour questions sur le défibrillateur : <a href='tel :{phone}'>{phone}</a>"
             },
             "defibrillator-ref": {
                 "question": "Quel est le numéro d'identification officiel de ce dispositif ? (si il est visible sur le dispositif)",
@@ -2869,6 +2915,7 @@
         "name": "Visualisation de la direction"
     },
     "doctors": {
+        "description": "Cette ocuhe montre les cabinets de médecin",
         "name": "Médecins",
         "presets": {
             "0": {
@@ -3313,7 +3360,7 @@
                 }
             }
         },
-        "description": "Un claque montrant les restaurants et les endroits de nourriture rapide (avec un rendu spécial pour les friteries)",
+        "description": "Un calque montrant les restaurants et les lieux de restauration rapide (avec un rendu spécial pour les friteries)",
         "filter": {
             "1": {
                 "options": {
@@ -3324,11 +3371,21 @@
             },
             "2": {
                 "options": {
+                    "0": {
+                        "question": "Restaurants et restauration rapide"
+                    },
                     "1": {
                         "question": "Seulement les fastfood"
                     },
                     "2": {
                         "question": "Seulement les restaurants"
+                    }
+                }
+            },
+            "3": {
+                "options": {
+                    "0": {
+                        "question": "A un menu végétarien"
                     }
                 }
             },
@@ -3631,7 +3688,7 @@
                     }
                 },
                 "question": "À qui est dédié ce vélo fantôme ?",
-                "questionHint": "Veuillez respecter la vie privée – ajoutez le nom seulement s'il est largement publié ou marqué sur le vélo. Choisissez de ne pas indiquer le nom de famille ",
+                "questionHint": "Veuillez respecter la vie privée – ajoutez le nom seulement s'il est largement publié ou marqué sur le vélo. Choisissez de ne pas indiquer le nom de famille.",
                 "render": "En souvenir de {subject}"
             },
             "ghost_bike-source": {
@@ -3668,6 +3725,30 @@
         },
         "title": {
             "render": "Votre chemin"
+        }
+    },
+    "guidepost": {
+        "tagRenderings": {
+            "type": {
+                "mappings": {
+                    "0": {
+                        "then": "Un itinéraire vélo"
+                    },
+                    "1": {
+                        "then": "un itinéraire de randonnée"
+                    },
+                    "2": {
+                        "then": "un itinéraire de vtt"
+                    },
+                    "3": {
+                        "then": "un itinéraire équestre"
+                    },
+                    "4": {
+                        "then": "un itinéraire de pistes de ski"
+                    }
+                },
+                "question": "Quel type d'itinéraire indique ce panneau ?"
+            }
         }
     },
     "hotel": {
@@ -3944,10 +4025,76 @@
                 },
                 "question": "Sur quelles données cette carte est-elle basée ?",
                 "render": "Cette carte est basée sur {map_source}"
+            },
+            "map_size": {
+                "mappings": {
+                    "0": {
+                        "then": "Plan d'intérieur de bâtiment, montrant les différentes pièces"
+                    },
+                    "1": {
+                        "then": "La carte d'un site particulier, comme un château, un parc, un campus, une forêt, ...."
+                    },
+                    "2": {
+                        "then": "Une carte de village ou de petite ville"
+                    },
+                    "3": {
+                        "then": " Une carte de ville"
+                    },
+                    "4": {
+                        "then": "La carte d'une région entière, montrant de nombreuses villes et villages"
+                    }
+                },
+                "question": "Quelle est la taille de la zone visible sur la carte ?"
+            },
+            "map_type": {
+                "mappings": {
+                    "0": {
+                        "then": "Plan topographique"
+                    },
+                    "1": {
+                        "then": "Une carte des rues du secteur. <p class='subtle'>Le nom des rues est généralement indiqué; les angles, distances, etc. sont précis</p>"
+                    },
+                    "2": {
+                        "then": "Un plan schématique. <p class='subtle'>Une carte schématique sur laquelle seuls les éléments principaux sont indiqués (rues, POIs). Les angles, distances etc. peuvent être déformés pour rendre le plan plus lisible.</p> "
+                    },
+                    "3": {
+                        "then": "Une table d'orientation. <p class='subtle'>Un élément érigé sur une hauteur qui indique la direction d'éléments paysagers remarquables visibles depuis ce point<p>"
+                    }
+                },
+                "question": "De quel type de carte s'agit-il ?"
             }
         },
         "title": {
             "render": "Carte"
+        }
+    },
+    "maproulette": {
+        "description": "Couche montrant toutes les tâches dans MapRoulette",
+        "tagRenderings": {
+            "status": {
+                "mappings": {
+                    "1": {
+                        "then": "La tâche est résolue"
+                    },
+                    "2": {
+                        "then": "Faux positif"
+                    },
+                    "7": {
+                        "then": "La tâche est désactivée"
+                    }
+                }
+            }
+        }
+    },
+    "maproulette_challenge": {
+        "tagRenderings": {
+            "status": {
+                "mappings": {
+                    "3": {
+                        "then": "La tâche est passée"
+                    }
+                }
+            }
         }
     },
     "maxspeed": {
@@ -3973,14 +4120,157 @@
         }
     },
     "memorial": {
-        "tagRenderings": {
-            "start_date": {
-                "render": "Placé le {start_date}"
+        "name": "Mémoriaux",
+        "presets": {
+            "0": {
+                "title": "un mémorial"
             }
+        },
+        "tagRenderings": {
+            "inscription": {
+                "mappings": {
+                    "0": {
+                        "then": "Il n'y a aucune inscription sur cette plaque"
+                    }
+                },
+                "question": "Quelle est l'inscription sur cette plaque ?",
+                "render": "L'inscription sur cette plaque indique: <p><i>{inscription}<i></p>"
+            },
+            "memorial-type": {
+                "mappings": {
+                    "0": {
+                        "then": "C'est une statue"
+                    },
+                    "1": {
+                        "then": "C'est une plaque"
+                    },
+                    "2": {
+                        "then": "C'est un banc commémoratif"
+                    },
+                    "3": {
+                        "then": "C'est un vélo fantôme - un vélo blanc peint en mémoire d'un cycliste mort à cet endroit suite à un accident avec une voiture"
+                    },
+                    "4": {
+                        "then": "C'est un stolperstein (pierre d'achoppement)"
+                    },
+                    "5": {
+                        "then": "C'est une stèle"
+                    },
+                    "6": {
+                        "then": "C'est une pierre commémorative"
+                    },
+                    "7": {
+                        "then": "C'est un buste"
+                    },
+                    "8": {
+                        "then": "C'est une sculpture"
+                    },
+                    "9": {
+                        "then": "C'est un obélisque"
+                    },
+                    "10": {
+                        "then": "C'est une croix"
+                    },
+                    "11": {
+                        "then": "C'est une plaque bleue (spécifique aux pays anglo-saxons)"
+                    },
+                    "12": {
+                        "then": "C'est un char historique, placé de manière permanente dans l'espace public comme mémorial"
+                    },
+                    "13": {
+                        "then": "C'est un arbre du souvenir"
+                    }
+                },
+                "question": "C'est un mémorial de guerre",
+                "render": "C'est un {memorial}"
+            },
+            "memorial-wikidata": {
+                "question": "Quelle est la page Wikipedia de ce mémorial ?",
+                "questionHint": "C'est la page Wikipédia du mémorial et non celle de la personne ou de l'évènement commémoré. Si le mémorial n'a pas de page Wikipédia ou d'entité Wikidata, passez cette question.",
+                "render": {
+                    "before": "<h3>Page Wikipedia du mémorial</h3>"
+                }
+            },
+            "start_date": {
+                "question": "Quand ce mémorial a-t-il été installé ?",
+                "render": "Placé le {start_date}"
+            },
+            "subject-wikidata": {
+                "question": "Quelle est la page Wikipedia qui fait référence à cet évènement ou cette personne?",
+                "questionHint": "Si la personne ou l'évènement n'a pas de page Wikipedia ou d'entité Wikidata, passez cette question.",
+                "render": {
+                    "before": "<h3>Page Wikipedia sur la personne ou l'évènement commémoré</h3>"
+                }
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Plaque commémorative"
+                }
+            },
+            "render": "Plaque commémorative"
+        }
+    },
+    "mountain_rescue": {
+        "description": "Un bâtiment où les organismes de secours stockent du matériel ou assurent la garde",
+        "name": "Postes de secours en montagne",
+        "presets": {
+            "0": {
+                "title": "un poste de secours en montagne"
+            }
+        },
+        "title": {
+            "render": "Poste de secours en montagne"
         }
     },
     "nature_reserve": {
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Toutes les réserves naturelles"
+                    },
+                    "1": {
+                        "question": "Les chiens sont autorisés sans laisse"
+                    },
+                    "2": {
+                        "question": "Les chiens sont autorisés tenus en laisse"
+                    }
+                }
+            }
+        },
+        "name": "Réserve naturelle",
+        "presets": {
+            "0": {
+                "description": "Ajouter une réserve naturelle manquante",
+                "title": "une réserve naturelle"
+            }
+        },
         "tagRenderings": {
+            "Access tag": {
+                "mappings": {
+                    "0": {
+                        "then": "Accessible au grand public"
+                    },
+                    "1": {
+                        "then": "Non accessible"
+                    },
+                    "2": {
+                        "then": "Non accessible car c'est une zone privée"
+                    },
+                    "3": {
+                        "then": "Accessible bien que ce soit une zone privée"
+                    },
+                    "4": {
+                        "then": "Seulement accessible avec un guide ou lors d'activités organisées"
+                    },
+                    "5": {
+                        "then": "Payant"
+                    }
+                },
+                "question": "Est-ce que cette réserve naturelle est ouverte au public ?"
+            },
             "Curator": {
                 "question": "Qui est en charge de la conservation de la réserve ?",
                 "questionHint": "À ne remplir seulement que si le nom est diffusé au public",
@@ -4000,15 +4290,26 @@
                 },
                 "question": "Les chiens sont-ils autorisés dans cette réserve naturelle ?"
             },
+            "Editable description": {
+                "question": "Y-a-t-il des informations complémentaires?",
+                "render": "Information complémentaire: <i>{description:0}</i>"
+            },
             "Email": {
-                "question": "À quelle adresse courriel peut-on envoyer des questions et des problèmes concernant cette réserve naturelle ? ",
+                "question": "À quelle adresse courriel peut-on envoyer des questions et des problèmes concernant cette réserve naturelle ?",
                 "questionHint": "Respecter la vie privée – renseignez une adresse électronique personnelle seulement si celle-ci est largement publiée"
+            },
+            "Name tag": {
+                "mappings": {
+                    "0": {
+                        "then": "Ce lieu n'a pas de nom"
+                    }
+                }
             },
             "Surface area": {
                 "render": "Superficie : {_surface:ha}&nbsp;ha"
             },
             "phone": {
-                "question": "Quel numéro de téléphone peut-on appeler pour poser des questions et résoudre des problèmes concernant cette réserve naturelle ? ",
+                "question": "Quel numéro de téléphone peut-on appeler pour poser des questions et résoudre des problèmes concernant cette réserve naturelle ?",
                 "questionHint": "Respecter la vie privée – renseignez un numéro de téléphone personnel seulement si celui-ci est largement publié"
             }
         }
@@ -5129,28 +5430,28 @@
                     "16": {
                         "then": "Le plastique peut être recyclé ici"
                     },
-                    "17": {
+                    "18": {
                         "then": "Les cartouches d'imprimante peuvent être recyclées ici"
                     },
-                    "18": {
+                    "19": {
                         "then": "La ferraille peut être recyclée ici"
                     },
-                    "19": {
-                        "then": "Les chaussures peuvent être recyclées ici"
-                    },
                     "20": {
-                        "then": "Les petits appareils électriques peuvent être recyclés ici"
+                        "then": "Les chaussures peuvent être recyclées ici"
                     },
                     "21": {
                         "then": "Les petits appareils électriques peuvent être recyclés ici"
                     },
                     "22": {
-                        "then": "Les aiguilles peuvent être recyclées ici"
+                        "then": "Les petits appareils électriques peuvent être recyclés ici"
                     },
                     "23": {
-                        "then": "Les autres déchets peuvent être déposés ici"
+                        "then": "Les aiguilles peuvent être recyclées ici"
                     },
                     "24": {
+                        "then": "Les autres déchets peuvent être déposés ici"
+                    },
+                    "25": {
                         "then": "Les vélos peuvent être recyclés ici"
                     }
                 },
@@ -5305,7 +5606,7 @@
             }
         },
         "title": {
-            "render": "School <i>{name}</i>"
+            "render": "École <i>{name}</i>"
         }
     },
     "selected_element": {
@@ -5874,16 +6175,16 @@
             "toilet-changing_table:location": {
                 "mappings": {
                     "0": {
-                        "then": "La table à langer est dans les toilettes pour femmes. "
+                        "then": "La table à langer est dans les toilettes pour femmes."
                     },
                     "1": {
-                        "then": "La table à langer est dans les toilettes pour hommes. "
+                        "then": "La table à langer est dans les toilettes pour hommes."
                     },
                     "2": {
-                        "then": "La table à langer est dans les toilettes pour personnes à mobilité réduite. "
+                        "then": "La table à langer est dans les toilettes pour personnes à mobilité réduite."
                     },
                     "3": {
-                        "then": "La table à langer est dans un espace dédié. "
+                        "then": "La table à langer est dans un espace dédié."
                     }
                 },
                 "question": "Où se situe la table à langer ?",
@@ -6205,7 +6506,7 @@
         },
         "tagRenderings": {
             "circumference": {
-                "question": "Quelle est la circonférence du tronc ? ",
+                "question": "Quelle est la circonférence du tronc ?",
                 "questionHint": "La mesure est effectuée à 1.30m de hauteur",
                 "render": "Le tronc a une circonférence de {circumference} mètre(s)"
             },
@@ -6372,6 +6673,34 @@
                         "humanShort": "{quantity} mph"
                     }
                 }
+            },
+            "5": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "{quantity} minutes",
+                        "humanSingular": "une minute"
+                    },
+                    "1": {
+                        "human": "{quantity} heures",
+                        "humanSingular": "une heure"
+                    },
+                    "2": {
+                        "human": "{quantity} jours",
+                        "humanSingular": "un jour"
+                    },
+                    "3": {
+                        "human": "{quantity} semaines",
+                        "humanSingular": "une semaine"
+                    },
+                    "4": {
+                        "human": "{quantity} mois",
+                        "humanSingular": "un mois"
+                    },
+                    "5": {
+                        "human": "{quantity} années",
+                        "humanSingular": "un an"
+                    }
+                }
             }
         }
     },
@@ -6387,6 +6716,29 @@
                     }
                 },
                 "question": "Est-ce que les questions pour les champs sans donnée doivent apparaître une à une ou toutes ensembles ?"
+            },
+            "background-layer": {
+                "mappings": {
+                    "0": {
+                        "then": "Utiliser le fond par défaut"
+                    },
+                    "1": {
+                        "then": "Utiliser le fond OpenStreetMap-carto par défaut"
+                    },
+                    "2": {
+                        "then": "Utiliser le fond imagerie aérienne par défaut"
+                    },
+                    "3": {
+                        "then": "Utiliser un fond non basé sur OpenStreetMap par défaut"
+                    },
+                    "4": {
+                        "then": "Utiliser le fond actuel (<span class='code'>{__current_background}</span>) par défaut"
+                    },
+                    "5": {
+                        "then": "Utiliser le fond (<span class='code'>{mapcomplete-preferred-background-layer}</span>)par défaut"
+                    }
+                },
+                "question": "Quel fond souhaitez-vous utiliser par défaut ?"
             },
             "cscount-thanks": {
                 "mappings": {
@@ -6407,13 +6759,31 @@
             },
             "picture-license": {
                 "mappings": {
+                    "1": {
+                        "then": "Les photos que vous avez ajoutées seront sous licence <b>CC0</b>  et mises dans le domaine public. Cela signifie que n'importe qui pourra les utiliser, quel qu'en soit l'usage."
+                    },
                     "3": {
                         "then": "Les photos que vous prenez seront sous la licence <b>CC-BY-SA 4.0</b> ce qui signifie que quiconque utilisant votre photo doit vous créditer et que les modifications apportées à votre photo doivent être repartagées avec la même licence."
                     }
                 }
             },
             "show_tags": {
-                "question": "Afficher les attributs OpenStreetMap bruts ?"
+                "mappings": {
+                    "0": {
+                        "then": "Ne jamais voir les étiquettes."
+                    },
+                    "1": {
+                        "then": "Voir les étiquettes au bout de  {__userjourney_tagsVisibleAt} modifications"
+                    },
+                    "2": {
+                        "then": "Voir les étiquettes quand je fais une modification"
+                    },
+                    "3": {
+                        "then": "Voir les étiquettes quand je fais une modification et toujours voir les étiquettes pour chaque élément"
+                    }
+                },
+                "question": "Afficher les attributs OpenStreetMap bruts ?",
+                "questionHint": "Les<b>Tags</b> ou étiquettes sont des attributs rattachés à chaque élément. C'est une donnée technique qui est stockée dans une base de données. Vous n'avez pas besoin de connaître ces étiquettes pour utiliser MapComplete, mais certains utilisateurs préfèrent les afficher."
             },
             "translation-completeness": {
                 "render": "Les traductions pour {_theme} en {_language} sont à {_translation_percentage} % : {_translation_translated_count} chaînes traduites sur {_translation_total}"
@@ -6733,7 +7103,7 @@
                     "6": {
                         "then": "Une poubelle pour plastiques"
                     },
-                    "7": {
+                    "8": {
                         "then": "Une poubelle pour papier"
                     }
                 },

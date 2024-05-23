@@ -18,7 +18,7 @@
     "nl": "Dit is een publieke vuilnisbak waar je je afval kan weggooien.",
     "de": "Dies ist ein öffentlicher Abfalleimer, in den Sie Ihren Müll entsorgen können.",
     "hu": "Ez egy nyilvános szemétkosár vagy kuka, ahová kidobhatod a szemetedet.",
-    "it": "Questo è un cestino dei rifiuti pubblico, un bidone della spazzatura, dove puoi buttare via la tua spazzatura",
+    "it": "Questo è un cestino, un bidone dei rifiuti pubblico, dove puoi buttare via la tua spazzatura.",
     "es": "Esta es una papelera pública, donde puedes tirar tu basura.",
     "da": "Dette er en offentlig affaldskurv, en skraldespand, hvor du kan smide dit affald.",
     "fr": "C'est une poubelle dans laquelle vous pouvez jeter vos mégots.",
@@ -207,6 +207,13 @@
           }
         },
         {
+          "if": "waste=pmd",
+          "then": {
+            "en": "A waste basket for plastic packaging, metal packaging and drink cartons (PMD)",
+            "nl": "Een vuilnisbak voor plastic verpakkingen, metalen verpakkingen en drankpakken (PMD)"
+          }
+        },
+        {
           "if": "waste=paper",
           "then": {
             "en": "A waste basket for paper",
@@ -237,8 +244,8 @@
       },
       "condition": {
         "or": [
-          "waste=dog_excrement",
-          "waste=trash",
+          "waste~i~.*dog_excrement.*",
+          "waste~i~.*trash.*",
           "waste="
         ]
       },
@@ -397,6 +404,20 @@
             "cs": "Odpadkový koš na plast"
           },
           "osmTags": "waste~i~.*plastic.*"
+        },
+        {
+          "question": {
+            "en": "Waste basket for plastic packaging, metal packaging and drink cartons (PMD)",
+            "nl": "Vuilnisbak voor plastic verpakkingen, metalen verpakkingen en drankpakken (PMD)"
+          },
+          "osmTags": "waste~i~.*pmd.*"
+        },
+        {
+          "question": {
+            "en": "Waste basket for paper",
+            "nl": "Vuilnisbak voor papier"
+          },
+          "osmTags": "waste~i~.*paper.*"
         }
       ]
     },
@@ -432,16 +453,5 @@
   "allowMove": {
     "enableRelocation": false,
     "enableImproveAccuracy": true
-  },
-  "cs": {
-    "0": {
-      "iconSize": {
-        "mappings": {
-          "0": {
-            "then": "Odpadkový koš"
-          }
-        }
-      }
-    }
   }
 }

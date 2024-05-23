@@ -1035,7 +1035,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             }
         }
         const promise =
-            /*NO AWAIT as we work with the promise directly */ Utils.downloadJsonAdvanced(
+            /*NO AWAIT as we work with the promise directly */ Utils.downloadJsonAdvanced<T>(
                 url,
                 headers
             )
@@ -1069,11 +1069,11 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         })
     }
 
-    public static async downloadJsonAdvanced(
+    public static async downloadJsonAdvanced<T = object | []>(
         url: string,
         headers?: Record<string, string>
     ): Promise<
-        { content: object | object[] } | { error: string; url: string; statuscode?: number }
+        { content: T } | { error: string; url: string; statuscode?: number }
     > {
         const injected = Utils.injectedDownloads[url]
         if (injected !== undefined) {
@@ -1091,7 +1091,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         try {
             if (typeof data === "string") {
                 if (data === "") {
-                    return { content: {} }
+                    return { content: <T> {} }
                 }
                 return { content: JSON.parse(data) }
             }

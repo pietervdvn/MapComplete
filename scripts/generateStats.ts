@@ -72,15 +72,15 @@ class GenerateStats extends Script {
                     tagTotal.set(key, new Map<string, number>())
                     await Promise.all(
                         Array.from(values).map(async (value) => {
-                            const tagData: TagInfoStats = await TagInfo.global.getStats(key, value)
-                            const count = tagData.data.find((item) => item.type === "all").count
-                            tagTotal.get(key).set(value, count)
-                            console.log(key + "=" + value, "-->", count)
-                        })
+                                const tagData = await TagInfo.global.getStats(key, value)
+                                const count = tagData.data.find((item) => item.type === "all").count
+                                tagTotal.get(key).set(value, count)
+                                console.log(key + "=" + value, "-->", count)
+                            }
+                        )
                     )
                 }
-            })
-        )
+            }))
         writeFileSync(
             "./src/assets/key_totals.json",
             JSON.stringify(
@@ -181,11 +181,12 @@ class GenerateStats extends Script {
 
     async main(_: string[]) {
         const basepath = "./src/assets/generated/stats/"
-        for (const type of ["operator","brand"]) {
+        await this.createOptimizationFile()
+
+        for (const type of ["operator", "brand"]) {
             await this.createNameSuggestionIndexFile(basepath, type)
             this.summarizeNSI(basepath + type + ".json", "./public/assets/data/nsi/stats/" + type)
         }
-        await this.createOptimizationFile()
 
 
     }

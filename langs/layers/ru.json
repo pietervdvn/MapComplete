@@ -3,6 +3,9 @@
         "description": "Адреса",
         "name": "Известные адреса в OSM",
         "tagRenderings": {
+            "fixme": {
+                "question": "Что исправить? Пожалуйста, предложите"
+            },
             "housenumber": {
                 "mappings": {
                     "0": {
@@ -18,6 +21,17 @@
         },
         "title": {
             "render": "Известный адрес"
+        }
+    },
+    "advertising": {
+        "name": "Реклама",
+        "presets": {
+            "0": {
+                "title": "билборд"
+            },
+            "5": {
+                "title": "столбец"
+            }
         }
     },
     "ambulancestation": {

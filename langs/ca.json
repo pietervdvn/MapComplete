@@ -558,11 +558,11 @@
         "intro": "La privadesa és important, tant per a l'individu com per a la societat. MapComplete intenta respectar la vostra privadesa tant com sigui possible, fins al punt que no es necessita cap banner de galetes molest. No obstant això, encara volem informar-vos quina informació es recopila i es comparteix, en quines circumstàncies i per què es fan aquestes compensacions.",
         "items": {
             "changesYouMake": "Els canvis que has fet",
-            "username": "El teu nom d'usuari",
             "date": "Quan es fa aquest canvi",
-            "theme": "La petició que vas utilitzar mentre feies el canvi",
+            "distanceIndicator": "Una indicació de la proximitat a la que estaves dels objectes canviats. Altres mapejadors poden utilitzar aquesta informació per determinar si es va fer un canvi basant-se en una enquesta o en una investigació remota",
             "language": "L'idioma de la interfície d'usuari",
-            "distanceIndicator": "Una indicació de la proximitat a la que estaves dels objectes canviats. Altres mapejadors poden utilitzar aquesta informació per determinar si es va fer un canvi basant-se en una enquesta o en una investigació remota"
+            "theme": "La petició que vas utilitzar mentre feies el canvi",
+            "username": "El teu nom d'usuari"
         },
         "miscCookies": "MapComplete s'integra amb diversos altres serveis, especialment per carregar imatges de característiques. Les imatges s'allotgen en diversos servidors de tercers, que poden establir galetes per si mateixos.",
         "miscCookiesTitle": "Altres galetes",

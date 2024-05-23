@@ -24,7 +24,7 @@
 
 <section class="w-full">
   <slot name="title" />
-  <div class="gap-4 md:grid md:grid-flow-row md:grid-cols-2 lg:grid-cols-3">
+  <div class="theme-list my-2 gap-4 md:grid md:grid-flow-row md:grid-cols-2 lg:grid-cols-3">
     {#each filteredThemes as theme (theme.id)}
       {#if theme !== undefined && !(hideThemes && theme?.hideFromOverview)}
         <!-- TODO: doesn't work if first theme is hidden -->

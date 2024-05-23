@@ -3,6 +3,7 @@
   import { Store, UIEventSource } from "../../../Logic/UIEventSource"
   import type { Feature } from "geojson"
   import type { SpecialVisualizationState } from "../../SpecialVisualization"
+  import TagRenderingAnswer from "./TagRenderingAnswer.svelte"
   import TagRenderingQuestion from "./TagRenderingQuestion.svelte"
   import { onDestroy } from "svelte"
   import Tr from "../../Base/Tr.svelte"
@@ -11,7 +12,6 @@
   import { Utils } from "../../../Utils"
   import { twMerge } from "tailwind-merge"
   import EditButton from "./EditButton.svelte"
-  import TagRenderingAnswer from "./TagRenderingAnswer.svelte"
 
   export let config: TagRenderingConfig
   export let tags: UIEventSource<Record<string, string>>

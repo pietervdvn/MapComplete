@@ -103,8 +103,8 @@ export default class TagInfo {
             return undefined
         }
     }
-
     private static readonly blacklist =["VI","GF","PR"]
+
     public static async getGlobalDistributionsFor(key: string, value?: string): Promise<Record<string, TagInfoStats>> {
         const countriesAll = await this.geofabrikCountries()
         const countries = countriesAll.map(c => c["iso3166-1:alpha2"]?.[0]).filter(c => !!c && TagInfo.blacklist.indexOf(c) < 0)

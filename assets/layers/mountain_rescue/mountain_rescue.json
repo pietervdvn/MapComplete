@@ -2,11 +2,13 @@
   "id": "mountain_rescue",
   "name": {
     "en": "Mountain rescue stations",
-    "de": "Bergrettungsstationen"
+    "de": "Bergrettungsstationen",
+    "fr": "Postes de secours en montagne"
   },
   "description": {
     "en": "A building where first aid responders store material and might be on watch",
-    "de": "Ein Gebäude, in dem die Ersthelfer Material lagern und möglicherweise Wache halten"
+    "de": "Ein Gebäude, in dem die Ersthelfer Material lagern und möglicherweise Wache halten",
+    "fr": "Un bâtiment où les organismes de secours stockent du matériel ou assurent la garde"
   },
   "source": {
     "osmTags": "emergency=mountain_rescue"
@@ -15,7 +17,8 @@
   "title": {
     "render": {
       "en": "Mountain rescue station",
-      "de": "Bergrettungsstation"
+      "de": "Bergrettungsstation",
+      "fr": "Poste de secours en montagne"
     }
   },
   "pointRendering": [
@@ -46,7 +49,8 @@
     {
       "title": {
         "en": "a mountain rescue station",
-        "de": "eine Bergrettungsstation"
+        "de": "eine Bergrettungsstation",
+        "fr": "un poste de secours en montagne"
       },
       "tags": [
         "emergency=mountain_rescue"

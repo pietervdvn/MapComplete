@@ -471,11 +471,11 @@
         "intro": "Privatliv er vigtigt - både for den enkelte og for samfundet. MapComplete forsøger at respektere dit privatliv så meget som muligt - så vidt muligt uden et irriterende cookie-banner. Vi vil dog stadig gerne informere dig om, hvilke oplysninger der indsamles og deles, under hvilke omstændigheder, og hvorfor disse afvejninger foretages.",
         "items": {
             "changesYouMake": "De ændringer, du har foretaget",
-            "username": "Dit brugernavn",
             "date": "Hvornår denne ændring er foretaget",
-            "theme": "Det tema, du brugte, mens du foretog ændringen",
+            "distanceIndicator": "En angivelse af, hvor tæt du var på ændrede objekter. Andre kortlæggere kan bruge disse oplysninger til at afgøre, om en ændring blev foretaget på baggrund af en kortlægning på stedet eller på baggrund af fjernundersøgelser",
             "language": "Sproget i brugergrænsefladen",
-            "distanceIndicator": "En angivelse af, hvor tæt du var på ændrede objekter. Andre kortlæggere kan bruge disse oplysninger til at afgøre, om en ændring blev foretaget på baggrund af en kortlægning på stedet eller på baggrund af fjernundersøgelser"
+            "theme": "Det tema, du brugte, mens du foretog ændringen",
+            "username": "Dit brugernavn"
         },
         "miscCookies": "MapComplete integreres med forskellige andre tjenester, især til at hente billeder af elementer. Billederne er hostet på forskellige tredjepartsservere, som måske selv sætter cookies.",
         "miscCookiesTitle": "Andre cookies",

@@ -589,17 +589,17 @@
         "intro": "We vinden privacy belangrijk, zowel for het individu als voor de samenleving. MapComplete probeert zo veel mogelijk te vermijden dat private gegevens worden verzameld. Daarom is er zelfs geen cookie banner nodig. Maar we geven graag informatie over welke data verzameld en gedeeld worden, onder welke omstandigheden, en waarom deze afwegingen gemaakt worden.",
         "items": {
             "changesYouMake": "De aanpassingen aan de data",
-            "username": "Je gebruikersnaam",
             "date": "Wanneer deze wijziging werd gemaakt",
-            "theme": "Het thema dat je gebruikt om de wijziging te maken",
+            "distanceIndicator": "Een indicatie hoe ver jij je van de gewijzigde objecten bevindt. Andere bijdragers kunnen deze informatie gebruiken om af te leiden of de wijziging gemaakt door lokaal te gaan kijken of door onderzoek vanop afstand",
             "language": "De taal van de gebruikersinterface",
-            "distanceIndicator": "Een indicatie hoe ver jij je van de gewijzigde objecten bevindt. Andere bijdragers kunnen deze informatie gebruiken om af te leiden of de wijziging gemaakt door lokaal te gaan kijken of door onderzoek vanop afstand"
+            "theme": "Het thema dat je gebruikt om de wijziging te maken",
+            "username": "Je gebruikersnaam"
         },
         "miscCookies": "MapComplete integreert met verschillende andere services, in het bijzonder om afbeeldingen van kaart-objecten te tonen. Deze afbeeldingen zijn opgeslaan bij diverse websites, die elk cookies kunnen instellen.",
         "miscCookiesTitle": "Andere cookies",
         "surveillance": "Gezien je de privacy-policy leest, vind je privacy waarschijnlijk belangrijk - wij ook! We hebben zelfs <a href=\"https://mapcomplete.org/surveillance\">een kaart met bewakingcamera's</a> gemaakt. Voeg er zeker toe!",
         "title": "Privacyverklaring",
-        "tracking": "Om enig inzicht te krijgen in wie de site bezoekt, wordt er technische informatie verzameld. Dit omvat het land van waaruit je de site bezoekt, vanop welke website je doorklikte naar MapComplete, het type toestel en de schermgrootte. Een cookie wordt op he toestel geplaatst om mee te geven dat je de site eerder in de dag bezocht. De data is niet gedetailleerd genoeg om persoonlijke informatie te zijn. Er zijn enkel geaggregeerde statistieken mogelijk. Deze <a href=\"https://pietervdvn.goatcounter.com\" target=\"_blank\">kunnen door iedereen bekeken worden</a>.",
+        "tracking": "Om enig inzicht te krijgen in wie de site bezoekt, wordt er technische informatie verzameld. Dit omvat het land van waaruit je de site bezoekt, vanop welke website je doorklikte naar MapComplete, het type toestel en de schermgrootte. Een cookie wordt op het toestel geplaatst om mee te geven dat je de site eerder in de dag bezocht. De data is niet gedetailleerd genoeg om persoonlijke informatie te zijn. Er zijn enkel geaggregeerde statistieken mogelijk. Deze <a href=\"https://pietervdvn.goatcounter.com\" target=\"_blank\">kunnen door iedereen bekeken worden</a>.",
         "trackingTitle": "Statistische informatie",
         "whileYoureHere": "Vind je privacy belangrijk?"
     },

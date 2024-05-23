@@ -69,7 +69,8 @@
     "en": "A charging station",
     "nl": "Oplaadpunten",
     "ca": "Una estació de càrrega",
-    "de": "Eine Ladestation"
+    "de": "Eine Ladestation",
+    "fr": "Une station de recharge"
   },
   "#": "no-question-hint-check",
   "tagRenderings": [
@@ -1300,6 +1301,252 @@
             "path": "./assets/layers/charging_station/bs1363.svg",
             "class": "medium"
           }
+        },
+        {
+          "if": "socket:nema5_15=1",
+          "ifnot": "socket:nema5_15=",
+          "then": {
+            "en": "<b>NEMA 5-15</b> (Type B)",
+            "nl": "<b>NEMA 5-15</b> (VS 3-pin)"
+          },
+          "icon": {
+            "path": "./assets/layers/charging_station/nema-5-15.svg",
+            "class": "medium"
+          },
+          "hideInAnswer": {
+            "and": [
+              "_country!=as",
+              "_country!=ai",
+              "_country!=ag",
+              "_country!=aw",
+              "_country!=bb",
+              "_country!=bz",
+              "_country!=bm",
+              "_country!=bo",
+              "_country!=vg",
+              "_country!=ky",
+              "_country!=co",
+              "_country!=cr",
+              "_country!=cu",
+              "_country!=do",
+              "_country!=ec",
+              "_country!=sv",
+              "_country!=pf",
+              "_country!=gu",
+              "_country!=gt",
+              "_country!=gy",
+              "_country!=ht",
+              "_country!=hn",
+              "_country!=jm",
+              "_country!=jp",
+              "_country!=jo",
+              "_country!=la",
+              "_country!=lb",
+              "_country!=lr",
+              "_country!=mx",
+              "_country!=fm",
+              "_country!=ms",
+              "_country!=ni",
+              "_country!=ne",
+              "_country!=pw",
+              "_country!=pa",
+              "_country!=py",
+              "_country!=pe",
+              "_country!=ph",
+              "_country!=pr",
+              "_country!=sr",
+              "_country!=th",
+              "_country!=tt",
+              "_country!=tm",
+              "_country!=ve",
+              "_country!=vn"
+            ]
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "socket:nema5_15~*",
+              "socket:nema5_15!=1"
+            ]
+          },
+          "then": {
+            "en": "<b>NEMA 5-15</b> (Type B)",
+            "nl": "<b>NEMA 5-15</b> (VS 3-pin)"
+          },
+          "hideInAnswer": true,
+          "icon": {
+            "path": "./assets/layers/charging_station/nema-5-15.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "socket:sev1011_t23=1",
+          "ifnot": "socket:sev1011_t23=",
+          "then": {
+            "en": "<b>SEV 1011 T23</b> (Type J)",
+            "nl": "<b>SEV 1011 T23</b> (Zwitserse 3-pin)"
+          },
+          "icon": {
+            "path": "./assets/layers/charging_station/typej.svg",
+            "class": "medium"
+          },
+          "hideInAnswer": {
+            "and": [
+              "_country!=jo",
+              "_country!=li",
+              "_country!=mg",
+              "_country!=mv",
+              "_country!=rw",
+              "_country!=ch"
+            ]
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "socket:sev1011_t23~*",
+              "socket:sev1011_t23!=1"
+            ]
+          },
+          "then": {
+            "en": "<b>SEV 1011 T23</b> (Type J)",
+            "nl": "<b>SEV 1011 T23</b> (Zwitserse 3-pin)"
+          },
+          "hideInAnswer": true,
+          "icon": {
+            "path": "./assets/layers/charging_station/typej.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "socket:as3112=1",
+          "ifnot": "socket:as3112=",
+          "then": {
+            "en": "<b>AS3112</b> (Type I)",
+            "nl": "<b>AS3112</b> (Australische 3-pin)"
+          },
+          "icon": {
+            "path": "./assets/layers/charging_station/as3112.svg",
+            "class": "medium"
+          },
+          "hideInAnswer": {
+            "and": [
+              "_country!=as",
+              "_country!=ar",
+              "_country!=au",
+              "_country!=cn",
+              "_country!=ck",
+              "_country!=fj",
+              "_country!=ki",
+              "_country!=nr",
+              "_country!=nz",
+              "_country!=nu",
+              "_country!=pg",
+              "_country!=sb",
+              "_country!=tj",
+              "_country!=to",
+              "_country!=tv",
+              "_country!=uy",
+              "_country!=uz",
+              "_country!=vu"
+            ]
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "socket:as3112~*",
+              "socket:as3112!=1"
+            ]
+          },
+          "then": {
+            "en": "<b>AS3112</b> (Type I)",
+            "nl": "<b>AS3112</b> (Australische 3-pin)"
+          },
+          "hideInAnswer": true,
+          "icon": {
+            "path": "./assets/layers/charging_station/as3112.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "socket:nema_5_20=1",
+          "ifnot": "socket:nema_5_20=",
+          "then": {
+            "en": "<b>NEMA 5-20</b> (Type B)",
+            "nl": "<b>NEMA 5-20</b> (VS 3-pin)"
+          },
+          "icon": {
+            "path": "./assets/layers/charging_station/nema-5-20.svg",
+            "class": "medium"
+          },
+          "hideInAnswer": {
+            "and": [
+              "_country!=as",
+              "_country!=ai",
+              "_country!=ag",
+              "_country!=aw",
+              "_country!=bb",
+              "_country!=bz",
+              "_country!=bm",
+              "_country!=bo",
+              "_country!=vg",
+              "_country!=ky",
+              "_country!=co",
+              "_country!=cr",
+              "_country!=cu",
+              "_country!=do",
+              "_country!=ec",
+              "_country!=sv",
+              "_country!=pf",
+              "_country!=gu",
+              "_country!=gt",
+              "_country!=gy",
+              "_country!=ht",
+              "_country!=hn",
+              "_country!=jm",
+              "_country!=jp",
+              "_country!=jo",
+              "_country!=la",
+              "_country!=lb",
+              "_country!=lr",
+              "_country!=mx",
+              "_country!=fm",
+              "_country!=ms",
+              "_country!=ni",
+              "_country!=ne",
+              "_country!=pw",
+              "_country!=pa",
+              "_country!=py",
+              "_country!=pe",
+              "_country!=ph",
+              "_country!=pr",
+              "_country!=sr",
+              "_country!=th",
+              "_country!=tt",
+              "_country!=tm",
+              "_country!=ve",
+              "_country!=vn"
+            ]
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "socket:nema_5_20~*",
+              "socket:nema_5_20!=1"
+            ]
+          },
+          "then": {
+            "en": "<b>NEMA 5-20</b> (Type B)",
+            "nl": "<b>NEMA 5-20</b> (VS 3-pin)"
+          },
+          "hideInAnswer": true,
+          "icon": {
+            "path": "./assets/layers/charging_station/nema-5-20.svg",
+            "class": "medium"
+          }
         }
       ]
     },
@@ -1657,6 +1904,78 @@
             ],
             [
               "3kW"
+            ]
+          ],
+          [
+            "socket:nema5_15",
+            "socket:nema5_15",
+            {
+              "en": "<b>NEMA 5-15</b> (Type B)",
+              "nl": "<b>NEMA 5-15</b> (VS 3-pin)"
+            },
+            "nema-5-15.svg",
+            [
+              "120"
+            ],
+            [
+              "15"
+            ],
+            [
+              "1.8 kW"
+            ]
+          ],
+          [
+            "socket:sev1011_t23",
+            "socket:sev1011_t23",
+            {
+              "en": "<b>SEV 1011 T23</b> (Type J)",
+              "nl": "<b>SEV 1011 T23</b> (Zwitserse 3-pin)"
+            },
+            "typej.svg",
+            [
+              "230"
+            ],
+            [
+              "16"
+            ],
+            [
+              "3.7 kW"
+            ]
+          ],
+          [
+            "socket:as3112",
+            "socket:as3112",
+            {
+              "en": "<b>AS3112</b> (Type I)",
+              "nl": "<b>AS3112</b> (Australische 3-pin)"
+            },
+            "as3112.svg",
+            [
+              "230"
+            ],
+            [
+              "10"
+            ],
+            [
+              "2.3 kW"
+            ]
+          ],
+          [
+            "socket:nema_5_20",
+            "socket:nema_5_20",
+            {
+              "en": "<b>NEMA 5-20</b> (Type B)",
+              "nl": "<b>NEMA 5-20</b> (VS 3-pin)"
+            },
+            "nema-5-20.svg",
+            [
+              "120"
+            ],
+            [
+              "20"
+            ],
+            [
+              "2.4 kW"
             ]
           ]
         ]
@@ -2413,7 +2732,13 @@
       }
     }
   ],
-  "lineRendering": [],
+  "lineRendering": [
+    {
+      "color": "black",
+      "width": 2,
+      "fillColor": "#80808080"
+    }
+  ],
   "pointRendering": [
     {
       "location": [
@@ -2519,7 +2844,9 @@
             "en": "All vehicle types",
             "nl": "Alle voertuigen",
             "ca": "Tots els tipus de vehicles",
-            "de": "Ladestationen für alle Fahrzeugtypen"
+            "de": "Ladestationen für alle Fahrzeugtypen",
+            "fr": "Tous les types de véhicules",
+            "it": "Tutti i tipi di veicoli"
           }
         },
         {
@@ -2527,7 +2854,9 @@
             "en": "Charging station for bicycles",
             "nl": "Oplaadpunten voor fietsen",
             "ca": "Punt de recàrrega per a bicicletes",
-            "de": "Ladestationen für Fahrräder"
+            "de": "Ladestationen für Fahrräder",
+            "fr": "Station de recharge pour vélos",
+            "it": "Stazione di ricarica per biciclette"
           },
           "osmTags": "bicycle=yes"
         },
@@ -2535,7 +2864,9 @@
           "question": {
             "en": "Charging station for cars",
             "nl": "Oplaadpunten voor auto's",
-            "de": "Ladestationen für Autos"
+            "de": "Ladestationen für Autos",
+            "fr": "Station de recharge pour voitures",
+            "it": "Stazione di ricarica per auto"
           },
           "osmTags": {
             "or": [
@@ -2553,7 +2884,9 @@
           "question": {
             "en": "Only working charging stations",
             "nl": "Enkel werkende oplaadpunten",
-            "de": "Nur Ladestationen in Betrieb"
+            "de": "Nur Ladestationen in Betrieb",
+            "fr": "Seulement les stations de recharge qui fonctionnent",
+            "it": "Solo stazioni di ricarica funzionanti"
           },
           "osmTags": {
             "and": [
@@ -2571,7 +2904,8 @@
           "question": {
             "en": "All connectors",
             "nl": "Alle types",
-            "de": "Alle Anschlüsse"
+            "de": "Alle Anschlüsse",
+            "it": "Tutti i connettori"
           }
         },
         {
@@ -2711,6 +3045,34 @@
             "nl": "Heeft een <div style='display: inline-block'><b><b>BS1363</b> (VK 3-pin)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bs1363.svg'/></div>"
           },
           "osmTags": "socket:bs1363~*"
+        },
+        {
+          "question": {
+            "en": "Has a <div style='display: inline-block'><b><b>NEMA 5-15</b> (Type B)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/nema-5-15.svg'/></div> connector",
+            "nl": "Heeft een <div style='display: inline-block'><b><b>NEMA 5-15</b> (VS 3-pin)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/nema-5-15.svg'/></div>"
+          },
+          "osmTags": "socket:nema5_15~*"
+        },
+        {
+          "question": {
+            "en": "Has a <div style='display: inline-block'><b><b>SEV 1011 T23</b> (Type J)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/typej.svg'/></div> connector",
+            "nl": "Heeft een <div style='display: inline-block'><b><b>SEV 1011 T23</b> (Zwitserse 3-pin)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/typej.svg'/></div>"
+          },
+          "osmTags": "socket:sev1011_t23~*"
+        },
+        {
+          "question": {
+            "en": "Has a <div style='display: inline-block'><b><b>AS3112</b> (Type I)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/as3112.svg'/></div> connector",
+            "nl": "Heeft een <div style='display: inline-block'><b><b>AS3112</b> (Australische 3-pin)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/as3112.svg'/></div>"
+          },
+          "osmTags": "socket:as3112~*"
+        },
+        {
+          "question": {
+            "en": "Has a <div style='display: inline-block'><b><b>NEMA 5-20</b> (Type B)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/nema-5-20.svg'/></div> connector",
+            "nl": "Heeft een <div style='display: inline-block'><b><b>NEMA 5-20</b> (VS 3-pin)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/nema-5-20.svg'/></div>"
+          },
+          "osmTags": "socket:nema_5_20~*"
         }
       ]
     }
@@ -2865,6 +3227,42 @@
       "socket:bs1363:voltage": "voltage",
       "socket:bs1363:current": "current",
       "socket:bs1363:output": {
+        "quantity": "power",
+        "denominations": [
+          "mW",
+          "kW"
+        ]
+      },
+      "socket:nema5_15:voltage": "voltage",
+      "socket:nema5_15:current": "current",
+      "socket:nema5_15:output": {
+        "quantity": "power",
+        "denominations": [
+          "mW",
+          "kW"
+        ]
+      },
+      "socket:sev1011_t23:voltage": "voltage",
+      "socket:sev1011_t23:current": "current",
+      "socket:sev1011_t23:output": {
+        "quantity": "power",
+        "denominations": [
+          "mW",
+          "kW"
+        ]
+      },
+      "socket:as3112:voltage": "voltage",
+      "socket:as3112:current": "current",
+      "socket:as3112:output": {
+        "quantity": "power",
+        "denominations": [
+          "mW",
+          "kW"
+        ]
+      },
+      "socket:nema_5_20:voltage": "voltage",
+      "socket:nema_5_20:current": "current",
+      "socket:nema_5_20:output": {
         "quantity": "power",
         "denominations": [
           "mW",

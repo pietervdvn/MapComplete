@@ -393,6 +393,27 @@
                     }
                 },
                 "question": "What is the purpose of the animal shelter?"
+            },
+            "boarded_animals": {
+                "mappings": {
+                    "0": {
+                        "then": "Dogs are kept here"
+                    },
+                    "1": {
+                        "then": "Cats are kept here"
+                    },
+                    "2": {
+                        "then": "Horses are kept here"
+                    },
+                    "3": {
+                        "then": "Birds are kept here"
+                    },
+                    "4": {
+                        "then": "Wild animals are kept here"
+                    }
+                },
+                "question": "Which animals are accepted here?",
+                "render": "{animal_shelter} is kept here"
             }
         },
         "title": {
@@ -1490,9 +1511,17 @@
                 },
                 "question": "Are these bicycle parkings free to use?"
             },
+            "maxstay": {
+                "question": "What is the maximum allowed parking duration?",
+                "questionHint": "If the bicycle is parked for a longer amount, it might be removed by the operator",
+                "render": "A bike can be parked here for at most {canonical(maxstay)}"
+            },
             "operator": {
                 "question": "Who maintains this bicycle parking?",
                 "render": "This bicycle parking is maintained by {operator}"
+            },
+            "operator_email": {
+                "question": "What is the email address of the operator of this bicycle parking?"
             },
             "operator_phone": {
                 "question": "What is the phone number of the operator of this bicycle parking?",
@@ -2161,6 +2190,21 @@
                     },
                     "16": {
                         "question": "Has a <div style='display: inline-block'><b><b>Bosch Active Connect with 5 pins</b> and cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> connector"
+                    },
+                    "17": {
+                        "question": "Has a <div style='display: inline-block'><b><b>BS1363</b> (Type G)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bs1363.svg'/></div> connector"
+                    },
+                    "18": {
+                        "question": "Has a <div style='display: inline-block'><b><b>NEMA 5-15</b> (Type B)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/nema-5-15.svg'/></div> connector"
+                    },
+                    "19": {
+                        "question": "Has a <div style='display: inline-block'><b><b>SEV 1011 T23</b> (Type J)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/typej.svg'/></div> connector"
+                    },
+                    "20": {
+                        "question": "Has a <div style='display: inline-block'><b><b>AS3112</b> (Type I)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/as3112.svg'/></div> connector"
+                    },
+                    "21": {
+                        "question": "Has a <div style='display: inline-block'><b><b>NEMA 5-20</b> (Type B)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/nema-5-20.svg'/></div> connector"
                     }
                 }
             }
@@ -2305,6 +2349,36 @@
                     },
                     "31": {
                         "then": "<b>Bosch Active Connect with 5 pins</b> and cable"
+                    },
+                    "32": {
+                        "then": "<b>BS1363</b> (Type G)"
+                    },
+                    "33": {
+                        "then": "<b>BS1363</b> (Type G)"
+                    },
+                    "34": {
+                        "then": "<b>NEMA 5-15</b> (Type B)"
+                    },
+                    "35": {
+                        "then": "<b>NEMA 5-15</b> (Type B)"
+                    },
+                    "36": {
+                        "then": "<b>SEV 1011 T23</b> (Type J)"
+                    },
+                    "37": {
+                        "then": "<b>SEV 1011 T23</b> (Type J)"
+                    },
+                    "38": {
+                        "then": "<b>AS3112</b> (Type I)"
+                    },
+                    "39": {
+                        "then": "<b>AS3112</b> (Type I)"
+                    },
+                    "40": {
+                        "then": "<b>NEMA 5-20</b> (Type B)"
+                    },
+                    "41": {
+                        "then": "<b>NEMA 5-20</b> (Type B)"
                     }
                 },
                 "question": "Which charging connections are available here?"
@@ -2539,6 +2613,21 @@
                         },
                         "15": {
                             "2": "<b>Bosch Active Connect with 5 pins</b> and cable"
+                        },
+                        "16": {
+                            "2": "<b>BS1363</b> (Type G)"
+                        },
+                        "17": {
+                            "2": "<b>NEMA 5-15</b> (Type B)"
+                        },
+                        "18": {
+                            "2": "<b>SEV 1011 T23</b> (Type J)"
+                        },
+                        "19": {
+                            "2": "<b>AS3112</b> (Type I)"
+                        },
+                        "20": {
+                            "2": "<b>NEMA 5-20</b> (Type B)"
                         }
                     }
                 }
@@ -5113,6 +5202,22 @@
             "render": "Restaurant"
         }
     },
+    "food_courts": {
+        "description": "Food courts with a variety of food options.",
+        "name": "Food Courts",
+        "tagRenderings": {
+            "name": {
+                "freeform": {
+                    "placeholder": "Name of the food court"
+                },
+                "question": "What is the name of this food court?",
+                "render": "This food court is called <b>{name}</b>."
+            }
+        },
+        "title": {
+            "render": "Food Court"
+        }
+    },
     "ghost_bike": {
         "description": "A layer showing memorials for cyclists, killed in road accidents",
         "name": "Ghost bikes",
@@ -6625,6 +6730,74 @@
             "render": "OSM Community Index"
         }
     },
+    "outdoor_seating": {
+        "description": "Outdoor seating areas, usually located near cafes and restaurants.",
+        "name": "Outdoor Seating",
+        "tagRenderings": {
+            "access": {
+                "mappings": {
+                    "0": {
+                        "then": "Anyone can use this outdoor seating area."
+                    },
+                    "1": {
+                        "then": "Only customers can use this outdoor seating area."
+                    },
+                    "2": {
+                        "then": "This outdoor seating area is private."
+                    }
+                },
+                "question": "Who can use this outdoor seating area?"
+            },
+            "covered": {
+                "mappings": {
+                    "0": {
+                        "then": "This outdoor seating area is covered."
+                    },
+                    "1": {
+                        "then": "This outdoor seating area is not covered."
+                    }
+                },
+                "question": "Is this outdoor seating area covered?"
+            },
+            "heating": {
+                "mappings": {
+                    "0": {
+                        "then": "This outdoor seating area is heated."
+                    },
+                    "1": {
+                        "then": "This outdoor seating area is not heated."
+                    }
+                },
+                "question": "Is this outdoor seating area heated?"
+            },
+            "seasonal": {
+                "mappings": {
+                    "0": {
+                        "then": "This outdoor seating area is available all year round."
+                    },
+                    "1": {
+                        "then": "This outdoor seating area is available in spring."
+                    },
+                    "2": {
+                        "then": "This outdoor seating area is available in summer."
+                    },
+                    "3": {
+                        "then": "This outdoor seating area is available in autumn."
+                    },
+                    "4": {
+                        "then": "This outdoor seating area is available in winter."
+                    },
+                    "5": {
+                        "then": "This outdoor seating area is available in the dry season."
+                    }
+                },
+                "question": "Is this outdoor seating area seasonal?"
+            }
+        },
+        "title": {
+            "render": "Outdoor Seating area"
+        }
+    },
     "parcel_lockers": {
         "description": "Layer showing parcel lockers for collecting and sending parcels.",
         "name": "Parcel Lockers",
@@ -7651,6 +7824,9 @@
                     },
                     "3": {
                         "then": "Dogs are allowed and can run around freely"
+                    },
+                    "4": {
+                        "then": "Dogs are allowed only outside"
                     }
                 },
                 "question": "Are dogs allowed in this business?"
@@ -8147,6 +8323,9 @@
                     },
                     "21": {
                         "question": "Recycling of bicycles"
+                    },
+                    "22": {
+                        "question": "Recycling of plastic packaging, metal packaging and drink cartons (PMD)"
                     }
                 }
             },
@@ -8260,27 +8439,30 @@
                         "then": "Plastic can be recycled here"
                     },
                     "17": {
-                        "then": "Printer cartridges can be recycled here"
+                        "then": "Plastic packaging, metal packaging and drink cartons (PMD) can be recycled here"
                     },
                     "18": {
-                        "then": "Scrap metal can be recycled here"
+                        "then": "Printer cartridges can be recycled here"
                     },
                     "19": {
-                        "then": "Shoes can be recycled here"
+                        "then": "Scrap metal can be recycled here"
                     },
                     "20": {
-                        "then": "Small electrical appliances can be recycled here"
+                        "then": "Shoes can be recycled here"
                     },
                     "21": {
                         "then": "Small electrical appliances can be recycled here"
                     },
                     "22": {
-                        "then": "Needles can be recycled here"
+                        "then": "Small electrical appliances can be recycled here"
                     },
                     "23": {
-                        "then": "Residual waste can be recycled here"
+                        "then": "Needles can be recycled here"
                     },
                     "24": {
+                        "then": "Residual waste can be recycled here"
+                    },
+                    "25": {
                         "then": "Bicycles can be recycled here"
                     }
                 },
@@ -8943,6 +9125,10 @@
             }
         },
         "tagRenderings": {
+            "camera_direction": {
+                "question": "In which geographical direction does this camera film?",
+                "render": "Films to a compass heading of {direction}"
+            },
             "maxspeed": {
                 "freeform": {
                     "placeholder": "Maximum speed allowed"
@@ -10656,6 +10842,25 @@
                     }
                 }
             },
+            "more_privacy": {
+                "mappings": {
+                    "0": {
+                        "then": "When making changes to OpenStreetMap, do not indicate how far away you were from the changed objects."
+                    },
+                    "1": {
+                        "then": "When making changes to OpenStreetMap, roughly indicate how far away you were from the changed objects. This helps other contributors to understand how you made the change"
+                    }
+                },
+                "question": "When making changes, should a rough indication be given how far away you were from the object?",
+                "questionHint": "If you make a change to one or more objects and you enabled your location, a rough indication of where you made will be saved: it is indicated if you were closer then 25m, 500m, 5km or further away then 5km. This helps mappers understand your context when making changes, but gives an indication of where you were at this time. "
+            },
+            "more_privacy_theme_override": {
+                "mappings": {
+                    "0": {
+                        "then": "This theme is sensitive. Making changes will not indicate if you were nearby explicitly."
+                    }
+                }
+            },
             "picture-license": {
                 "mappings": {
                     "0": {
@@ -11093,6 +11298,12 @@
                     },
                     "6": {
                         "question": "Waste basket for plastic"
+                    },
+                    "7": {
+                        "question": "Waste basket for plastic packaging, metal packaging and drink cartons (PMD)"
+                    },
+                    "8": {
+                        "question": "Waste basket for paper"
                     }
                 }
             },
@@ -11149,6 +11360,9 @@
                         "then": "A waste basket for plastic"
                     },
                     "7": {
+                        "then": "A waste basket for plastic packaging, metal packaging and drink cartons (PMD)"
+                    },
+                    "8": {
                         "then": "A waste basket for paper"
                     }
                 },

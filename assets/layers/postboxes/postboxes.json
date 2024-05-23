@@ -25,7 +25,8 @@
     "fr": "Le calque montrant les boîtes à lettres.",
     "ca": "La capa que mostra bústies de correus.",
     "cs": "Vrstva zobrazující poštovní schránky.",
-    "pl": "Warstwa pokazująca skrzynki pocztowe."
+    "pl": "Warstwa pokazująca skrzynki pocztowe.",
+    "it": "Questo livello mostra le buche delle lettere."
   },
   "source": {
     "osmTags": "amenity=post_box"

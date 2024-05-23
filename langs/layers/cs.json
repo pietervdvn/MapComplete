@@ -6971,28 +6971,28 @@
                     "16": {
                         "then": "Plast se zde dá recyklovat"
                     },
-                    "17": {
+                    "18": {
                         "then": "Náplně do tiskáren lze recyklovat zde"
                     },
-                    "18": {
+                    "19": {
                         "then": "Kovový šrot lze zde recyklovat"
                     },
-                    "19": {
-                        "then": "Boty se zde dají recyklovat"
-                    },
                     "20": {
-                        "then": "Drobné elektrospotřebiče se zde dají recyklovat"
+                        "then": "Boty se zde dají recyklovat"
                     },
                     "21": {
                         "then": "Drobné elektrospotřebiče se zde dají recyklovat"
                     },
                     "22": {
-                        "then": "Jehly se zde dají recyklovat"
+                        "then": "Drobné elektrospotřebiče se zde dají recyklovat"
                     },
                     "23": {
-                        "then": "Zbytkový odpad zde lze recyklovat"
+                        "then": "Jehly se zde dají recyklovat"
                     },
                     "24": {
+                        "then": "Zbytkový odpad zde lze recyklovat"
+                    },
+                    "25": {
                         "then": "Kola se zde dají recyklovat"
                     }
                 },
@@ -9363,7 +9363,7 @@
                     "6": {
                         "then": "Odpadkový koš na plasty"
                     },
-                    "7": {
+                    "8": {
                         "then": "Odpadový koš na papír"
                     }
                 },

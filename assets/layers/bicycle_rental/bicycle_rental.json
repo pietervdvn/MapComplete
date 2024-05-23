@@ -23,7 +23,8 @@
     "ca": "Estacions de lloguer de bicicletes",
     "pl": "Stacje wypożyczania rowerów",
     "pt_BR": "Estações de aluguel de bicicletas",
-    "pt": "Estações de aluguel de bicicletas"
+    "pt": "Estações de aluguel de bicicletas",
+    "it": "Stazione noleggio biciclette"
   },
   "source": {
     "osmTags": {
