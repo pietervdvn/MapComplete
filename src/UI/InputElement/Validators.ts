@@ -28,6 +28,7 @@ import TagValidator from "./Validators/TagValidator"
 import IdValidator from "./Validators/IdValidator"
 import SlopeValidator from "./Validators/SlopeValidator"
 import VeloparkValidator from "./Validators/VeloparkValidator"
+import NameSuggestionIndexValidator from "./Validators/NameSuggestionIndexValidator"
 import CurrencyValidator from "./Validators/CurrencyValidator"
 
 export type ValidatorType = (typeof Validators.availableTypes)[number]
@@ -61,6 +62,7 @@ export default class Validators {
         "id",
         "slope",
         "velopark",
+        "nsi",
         "currency"
     ] as const
 
@@ -91,6 +93,7 @@ export default class Validators {
         new IdValidator(),
         new SlopeValidator(),
         new VeloparkValidator(),
+        new NameSuggestionIndexValidator(),
         new CurrencyValidator()
     ]
 

@@ -374,6 +374,7 @@
       "id": "public_bookcase-operator"
     },
     {
+      "id": "public_bookcase-brand",
       "question": {
         "en": "Is this public bookcase part of a bigger network?",
         "nl": "Is dit boekenruilkastje deel van een netwerk?",
@@ -396,52 +397,33 @@
       },
       "condition": "ref=",
       "freeform": {
-        "key": "brand"
+        "key": "brand",
+        "placeholder": {
+          "en": "Name of the network"
+        },
+        "addExtraTags": [
+          "nobrand="
+        ]
       },
       "mappings": [
         {
-          "then": {
-            "en": "Part of the network 'Little Free Library'",
-            "nl": "Deel van het netwerk 'Little Free Library'",
-            "de": "Der Bücherschrank gehört zum Netzwerk 'Little Free Library'",
-            "fr": "Fait partie du réseau Little Free Library",
-            "it": "Fa parte della rete 'Little Free Library'",
-            "hu": "A „Little Free Library” hálózat része",
-            "es": "Parte de la red 'Little Free Library'",
-            "pl": "Część sieci \"Little Free Library\"",
-            "ca": "Part de la xarxa 'Little Free Library'",
-            "cs": "Součást sítě 'Little Free Library'"
-          },
-          "if": {
-            "and": [
-              "brand=Little Free Library",
-              "nobrand="
-            ]
-          },
-          "addExtraTags": [
-            "brand:wikidata=Q6650101"
-          ]
-        },
-        {
-          "if": {
-            "and": [
-              "nobrand=yes",
-              "brand="
-            ]
-          },
+          "if": "nobrand=yes",
           "then": {
             "en": "This public bookcase is not part of a bigger network",
             "nl": "Dit boekenruilkastje maakt geen deel uit van een netwerk",
             "de": "Der Bücherschrank gehört zu keinem Netzwerk",
             "fr": "Cette microbibliothèque ne fait pas partie d'un réseau/groupe",
-            "it": "Questa biblioteca pubblica non fa parte di una rete",
+            "it": "Questa microbiblioteca non fa parte di una rete",
             "hu": "Ez a nyilvános könyvespolc nem része egy nagyobb hálózatnak",
             "ca": "Aquesta prestatgeria pública no és part d'una xarxa més gran",
             "cs": "Tato veřejná knihobudka není součástí větší sítě"
-          }
+          },
+          "addExtraTags": [
+            "brand:wikidata=",
+            "brand="
+          ]
         }
-      ],
-      "id": "public_bookcase-brand"
+      ]
     },
     {
       "render": {

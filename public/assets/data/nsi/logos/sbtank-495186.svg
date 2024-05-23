@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   sodipodi:docname="SB Tank logo.svg"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   id="svg62"
+   version="1.1"
+   viewBox="0 0 100.54166 15.874999"
+   height="60"
+   width="380">
+  <defs
+     id="defs56" />
+  <sodipodi:namedview
+     inkscape:window-maximized="1"
+     inkscape:window-y="-8"
+     inkscape:window-x="-8"
+     inkscape:window-height="746"
+     inkscape:window-width="1366"
+     units="px"
+     fit-margin-bottom="0"
+     fit-margin-right="0"
+     fit-margin-left="0"
+     fit-margin-top="0"
+     showgrid="false"
+     inkscape:document-rotation="0"
+     inkscape:current-layer="layer1"
+     inkscape:document-units="px"
+     inkscape:cy="62.344805"
+     inkscape:cx="239.97339"
+     inkscape:zoom="1.979899"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base" />
+  <metadata
+     id="metadata59">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(127.62436,-180.665)"
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Layer 1">
+    <g
+       transform="translate(1.0583333,0.52916663)"
+       id="g142">
+      <path
+         style="fill:#ef7d01;fill-opacity:1;stroke-width:1.75"
+         d="M 30.892578,61.964844 C 23.723283,78.793115 14.935991,65.545925 5.9824219,82.322266 H 26.339844 Z"
+         id="path134"
+         transform="matrix(0.26458332,0,0,0.26458332,-98.559525,170.55952)" />
+      <path
+         style="fill:#000000;fill-opacity:1;stroke-width:1.75"
+         d="M 10.535156,61.964844 5.9824219,82.322266 C 11.240089,64.151619 25.215799,74.717235 30.892578,61.964844 Z"
+         id="rect126"
+         transform="matrix(0.26458332,0,0,0.26458332,-98.559525,170.55952)" />
+    </g>
+    <text
+       id="text116"
+       y="196.07838"
+       x="-89.349464"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.7556px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#000000;stroke-width:0.264583"
+         y="196.07838"
+         x="-89.349464"
+         id="tspan114"
+         sodipodi:role="line">TANK</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold Italic';fill:#ef7d01;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-126.63355"
+       y="195.81793"
+       id="text120"><tspan
+         sodipodi:role="line"
+         id="tspan118"
+         x="-126.63355"
+         y="195.81793"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.7556px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold Italic';fill:#ef7d01;fill-opacity:1;stroke-width:0.264583">SB</tspan></text>
+    <g
+       transform="translate(0,16.111234)"
+       id="g146">
+      <rect
+         style="fill:#ef7d01;fill-opacity:1;stroke-width:0.468707"
+         id="rect122"
+         width="5.3861604"
+         height="5.5192628"
+         x="-53.953243"
+         y="191.57425"
+         transform="matrix(1,0,-0.21828984,0.97588398,0,0)" />
+      <path
+         style="fill:#ffffff;stroke:none;stroke-width:0.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m -96.976753,192.34039 c 2.368965,-4.43874 4.694083,-0.93367 6.590959,-5.38615 -1.501981,3.37407 -5.199868,0.5785 -6.590959,5.38615 z"
+         id="path124"
+         sodipodi:nodetypes="ccc" />
+    </g>
+  </g>
+</svg>

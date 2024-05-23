@@ -11,6 +11,7 @@
   import UserRelatedState from "../../Logic/State/UserRelatedState"
   import Delete_icon from "../../assets/svg/Delete_icon.svelte"
   import BackButton from "../Base/BackButton.svelte"
+  import TagRenderingEditableDynamic from "../Popup/TagRendering/TagRenderingEditableDynamic.svelte"
 
   export let state: SpecialVisualizationState
   export let selectedElement: Feature
@@ -68,7 +69,7 @@
     tabindex="-1"
   >
     {#each $knownTagRenderings as config (config.id)}
-      <TagRenderingEditable
+      <TagRenderingEditableDynamic
         {tags}
         {config}
         {state}

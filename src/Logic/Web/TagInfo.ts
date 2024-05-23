@@ -38,9 +38,9 @@ export default class TagInfo {
     public async getStats(key: string, value?: string): Promise<TagInfoStats> {
         let url: string
         if (value) {
-            url = `${this._backend}api/4/tag/stats?key=${key}&value=${value}`
+            url = `${this._backend}api/4/tag/stats?key=${encodeURIComponent(key)}&value=${encodeURIComponent(value)}`
         } else {
-            url = `${this._backend}api/4/key/stats?key=${key}`
+            url = `${this._backend}api/4/key/stats?key=${encodeURIComponent(key)}`
         }
         return await Utils.downloadJsonCached<TagInfoStats>(url, 1000 * 60 * 60)
     }
@@ -97,20 +97,21 @@ export default class TagInfo {
             return undefined
         }
         try {
-           return await ti.getStats(key, value)
+            return await ti.getStats(key, value)
         } catch (e) {
             console.warn("Could not fetch info for", countryCode,key,value, "due to", e)
             return undefined
         }
     }
+    private static readonly blacklist =["VI","GF","PR"]
 
     public static async getGlobalDistributionsFor(key: string, value?: string): Promise<Record<string, TagInfoStats>> {
-        const countries = await this.geofabrikCountries()
+        const countriesAll = await this.geofabrikCountries()
+        const countries = countriesAll.map(c => c["iso3166-1:alpha2"]?.[0]).filter(c => !!c && TagInfo.blacklist.indexOf(c) < 0)
         const perCountry: Record<string, TagInfoStats> = {}
-        const results = await Promise.all(countries.map(country => TagInfo.getDistributionsFor(country?.["iso3166-1:alpha2"]?.[0], key, value)))
+        const results = await Promise.all(countries.map(country => TagInfo.getDistributionsFor(country, key, value)))
         for (let i = 0; i < countries.length; i++){
-            const country = countries[i]
-            const countryCode = country["iso3166-1:alpha2"]?.[0]
+            const countryCode = countries[i]
             if(results[i]){
              perCountry[countryCode] = results[i]
             }

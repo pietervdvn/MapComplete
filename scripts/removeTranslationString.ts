@@ -27,10 +27,22 @@ async function main(args: string[]) {
     const path = args[0].split(".")
     console.log("Removing translation string ", path, "from the translations for " + directory)
     const files = ScriptUtils.readDirRecSync(directory, 1).filter((f) => f.endsWith(".json"))
+    const removedLanguages: string[] = []
     for (const file of files) {
-        const json = JSON.parse(fs.readFileSync(file, { encoding: "utf-8" }))
-        Utils.WalkPath(path, json, (_) => undefined)
-        fs.writeFileSync(file, JSON.stringify(json, null, "    ") + "\n")
+        const rawContents = fs.readFileSync(file, { encoding: "utf-8" })
+        const json = JSON.parse(rawContents)
+        Utils.WalkPath(path, json, (found) => {
+            removedLanguages.push(file)
+            console.log("Removing ",found)
+            return undefined
+        })
+        const lastChar = rawContents.endsWith("\n") ? "\n" : ""
+        fs.writeFileSync(file, JSON.stringify(json, null, "    ") + lastChar)
+    }
+    if(removedLanguages.length === 0){
+     console.warn("No items removed. Doublecheck the paths")
+    }else{
+    console.log("Removed items in "+removedLanguages.join(", "))
     }
 }
 

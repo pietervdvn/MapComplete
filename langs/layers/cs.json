@@ -5582,20 +5582,6 @@
                 "freeform": {
                     "placeholder": "Značka"
                 },
-                "mappings": {
-                    "0": {
-                        "then": "Toto je Amazon Locker"
-                    },
-                    "1": {
-                        "then": "Toto je DHL Packstation"
-                    },
-                    "2": {
-                        "then": "Toto je DPD Pickup Station"
-                    },
-                    "3": {
-                        "then": "Toto je PostNL Parcel Locker"
-                    }
-                },
                 "question": "Jaká je značka schránky na balíky?",
                 "render": "To je {brand} schránka na balíky"
             },
@@ -6277,9 +6263,6 @@
             "public_bookcase-brand": {
                 "mappings": {
                     "0": {
-                        "then": "Součást sítě 'Little Free Library'"
-                    },
-                    "1": {
                         "then": "Tato veřejná knihobudka není součástí větší sítě"
                     }
                 },

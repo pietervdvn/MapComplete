@@ -3448,13 +3448,6 @@
                         "then": "Solo accesible a clientes"
                     }
                 }
-            },
-            "public_bookcase-brand": {
-                "mappings": {
-                    "0": {
-                        "then": "Parte de la red 'Little Free Library'"
-                    }
-                }
             }
         }
     },

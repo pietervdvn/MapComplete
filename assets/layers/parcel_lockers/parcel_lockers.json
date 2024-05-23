@@ -114,7 +114,10 @@
       },
       "freeform": {
         "key": "brand",
-        "type": "string",
+        "type": "nsi",
+        "helperArgs": [
+          "amenity=parcel_locker"
+        ],
         "placeholder": {
           "en": "Brand",
           "de": "Marke",
@@ -125,71 +128,6 @@
           "cs": "Značka"
         }
       },
-      "mappings": [
-        {
-          "if": "brand=Amazon Locker",
-          "then": {
-            "en": "This is an Amazon Locker",
-            "de": "Dies ist ein Amazon Locker",
-            "nl": "Dit is een Amazon Locker",
-            "ca": "Açò és un Amazon Locker",
-            "fr": "C'est un Amazon Locker",
-            "pl": "To jest paczkomat Amazonu",
-            "cs": "Toto je Amazon Locker"
-          },
-          "addExtraTags": [
-            "brand:wikidata=Q16974764",
-            "brand:wikipedia=en:Amazon Locker",
-            "operator=Amazon"
-          ]
-        },
-        {
-          "if": "brand=DHL Packstation",
-          "then": {
-            "en": "This is a DHL Packstation",
-            "de": "Dies ist eine DHL-Packstation",
-            "nl": "Dit is een DHL Packstation",
-            "ca": "Açò és un DHL Packstation",
-            "cs": "Toto je DHL Packstation"
-          },
-          "addExtraTags": [
-            "brand:wikidata=Q1766703",
-            "brand:wikipedia=de:Packstation",
-            "operator=DHL"
-          ],
-          "hideInAnswer": "_country!=de"
-        },
-        {
-          "if": "brand=Pickup Station",
-          "then": {
-            "en": "This is a DPD Pickup Station",
-            "de": "Dies ist eine DPD Pickup Station",
-            "nl": "Dit is een DPD Pickup Station",
-            "fr": "C'est une DPD Pickup Station",
-            "cs": "Toto je DPD Pickup Station"
-          },
-          "addExtraTags": [
-            "operator=DPD"
-          ],
-          "hideInAnswer": "_country!=pl"
-        },
-        {
-          "if": "brand=PostNL",
-          "then": {
-            "en": "This is a PostNL Parcel Locker",
-            "nl": "Dit is een PostNL pakketautomaat",
-            "de": "Dies ist ein PostNL-Paketschließfach",
-            "ca": "Açò és una bústia intel·ligent de PostNL",
-            "fr": "C'est un PostNL Parcel Locker",
-            "pl": "To jest paczkomat PostNL",
-            "cs": "Toto je PostNL Parcel Locker"
-          },
-          "addExtraTags": [
-            "operator=PostNL"
-          ],
-          "hideInAnswer": "_country!=nl"
-        }
-      ],
       "render": {
         "en": "This is a {brand} parcel locker",
         "de": "Dies ist ein Paketschließfach von {brand}",

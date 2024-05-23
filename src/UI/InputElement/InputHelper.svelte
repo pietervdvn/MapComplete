@@ -26,6 +26,9 @@
   export let feature: Feature
   export let args: (string | number | boolean)[] = undefined
   export let state: SpecialVisualizationState
+  export let helperArgs: (string | number | boolean)[]
+  export let key: string
+  export let extraTags: UIEventSource<Record<string, string>>
 
   let properties = { feature, args: args ?? [] }
 </script>
