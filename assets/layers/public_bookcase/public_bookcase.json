@@ -130,10 +130,6 @@
       "condition": "ref=",
       "freeform": {
         "key": "brand",
-        "type": "nsi",
-        "helperArgs": [
-          "amenity=public_bookcase"
-        ],
         "placeholder": {
           "en": "Name of the network"
         },

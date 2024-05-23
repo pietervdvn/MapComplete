@@ -283,6 +283,26 @@
       }
     },
     {
+      "id": "brand",
+      "question": {
+        "en": "What is the brand of this shop?"
+      },
+      "render": {
+        "en": "Part of <b>{brand}</b>"
+      },
+      "freeform": {
+        "key":"brand"
+      },
+      "mappings": [
+        {
+          "if": "not:brand=yes",
+          "then": {
+            "en": "This shop does not have a specific brand, it is not part of a bigger chain"
+          }
+        }
+      ]
+    },
+    {
       "id": "second_hand",
       "question": {
         "en": "Does this shop sell second-hand items?",
