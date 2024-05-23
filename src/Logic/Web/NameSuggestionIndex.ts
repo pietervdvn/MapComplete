@@ -58,6 +58,10 @@ export interface NSIItem {
 export default class NameSuggestionIndex {
 
     private static readonly nsiFile: Readonly<NSIFile> = <any>nsi
+    private static readonly nsiWdFile: Readonly<Record<string, {
+        logos: { wikidata?: string, facebook?: string }
+    }>> = <any>nsiWD["wikidata"]
+
     private static loco = new LocationConflation(nsiFeatures) // Some additional boundaries
 
     private static _supportedTypes: string[]
@@ -68,7 +72,12 @@ export default class NameSuggestionIndex {
         }
         const keys = Object.keys(NameSuggestionIndex.nsiFile.nsi)
         const all = keys.map(k => NameSuggestionIndex.nsiFile.nsi[k].properties.path.split("/")[0])
-        this._supportedTypes = Utils.Dedup(all)
+        this._supportedTypes = Utils.Dedup(all).map(s => {
+            if(s.endsWith("s")){
+                s = s.substring(0, s.length - 1)
+            }
+            return s
+        })
         return this._supportedTypes
     }
 
@@ -82,7 +91,6 @@ export default class NameSuggestionIndex {
     private static async fetchFrequenciesFor(type: string, countries: string[]) {
         let stats = await Promise.all(countries.map(c => {
             try {
-
                 return Utils.downloadJsonCached<Record<string, number>>(`./assets/data/nsi/stats/${type}.${c.toUpperCase()}.json`, 24 * 60 * 60 * 1000)
             } catch (e) {
                 console.error("Could not fetch " + type + " statistics due to", e)
@@ -92,6 +100,9 @@ export default class NameSuggestionIndex {
         stats = Utils.NoNull(stats)
         if (stats.length === 1) {
             return stats[0]
+        }
+        if(stats.length === 0){
+            return {}
         }
         const merged = stats[0]
         for (let i = 1; i < stats.length; i++) {
@@ -103,10 +114,7 @@ export default class NameSuggestionIndex {
     }
 
     public static isSvg(nsiItem: NSIItem, type: string): boolean | undefined {
-        const logos = nsiWD["wikidata"][nsiItem?.tags?.[type + ":wikidata"]]?.logos
-        if(nsiItem.id === "axa-2f6feb"){
-            console.trace(">>> HI")
-        }
+        const logos = this.nsiWdFile[nsiItem?.tags?.[type + ":wikidata"]]?.logos
         if (!logos) {
             return undefined
         }
@@ -120,37 +128,45 @@ export default class NameSuggestionIndex {
         return false
     }
 
-    public static async generateMappings(type: string, key: string, value: string, country: string[], location?: [number, number]) {
+    public static async generateMappings(type: string, tags: Record<string, string>, country: string[], location?: [number, number]): Promise<Mapping[]> {
         const mappings: Mapping[] = []
         const frequencies = await NameSuggestionIndex.fetchFrequenciesFor(type, country)
-        const actualBrands = NameSuggestionIndex.getSuggestionsFor(type, key, value, country.join(";"), location)
-        for (const nsiItem of actualBrands) {
-            const tags = nsiItem.tags
-            const frequency = frequencies[nsiItem.displayName]
-            const logos = nsiWD["wikidata"][nsiItem.tags[type + ":wikidata"]]?.logos
-            let iconUrl = logos?.facebook ?? logos?.wikidata
-            const hasIcon = iconUrl !== undefined
-            let icon = undefined
-            if (hasIcon) {
-                // Using <img src=...> works fine without an extension for JPG and PNG, but _not_ svg :(
-                icon = "./assets/data/nsi/logos/" + nsiItem.id
-                if (NameSuggestionIndex.isSvg(nsiItem, type)) {
-                    console.log("Is svg:", nsiItem.displayName)
-                    icon = icon + ".svg"
-                }
+        for (const key in tags) {
+            if (key.startsWith("_")) {
+                continue
             }
-            mappings.push({
-                if: new Tag(type, tags[type]),
-                addExtraTags: Object.keys(tags).filter(k => k !== type).map(k => new Tag(k, tags[k])),
-                then: new TypedTranslation<{}>({ "*": nsiItem.displayName }),
-                hideInAnswer: false,
-                ifnot: undefined,
-                alsoShowIf: undefined,
-                icon,
-                iconClass: "medium",
-                priorityIf: frequency > 0 ? new RegexTag("id", /.*/) : undefined,
-                searchTerms: { "*": [nsiItem.displayName, nsiItem.id] }
-            })
+            const value = tags[key]
+            const actualBrands = NameSuggestionIndex.getSuggestionsForKV(type, key, value, country.join(";"), location)
+            if(!actualBrands){
+                continue
+            }
+            for (const nsiItem of actualBrands) {
+                const tags = nsiItem.tags
+                const frequency = frequencies[nsiItem.displayName]
+                const logos = this.nsiWdFile[nsiItem.tags[type + ":wikidata"]]?.logos
+                const iconUrl = logos?.facebook ?? logos?.wikidata
+                const hasIcon = iconUrl !== undefined
+                let icon = undefined
+                if (hasIcon) {
+                    // Using <img src=...> works fine without an extension for JPG and PNG, but _not_ svg :(
+                    icon = "./assets/data/nsi/logos/" + nsiItem.id
+                    if (NameSuggestionIndex.isSvg(nsiItem, type)) {
+                        icon = icon + ".svg"
+                    }
+                }
+                mappings.push({
+                    if: new Tag(type, tags[type]),
+                    addExtraTags: Object.keys(tags).filter(k => k !== type).map(k => new Tag(k, tags[k])),
+                    then: new TypedTranslation<Record<string, never>>({ "*": nsiItem.displayName }),
+                    hideInAnswer: false,
+                    ifnot: undefined,
+                    alsoShowIf: undefined,
+                    icon,
+                    iconClass: "medium",
+                    priorityIf: frequency > 0 ? new RegexTag("id", /.*/) : undefined,
+                    searchTerms: { "*": [nsiItem.displayName, nsiItem.id] }
+                })
+            }
         }
         return mappings
     }
@@ -184,7 +200,7 @@ export default class NameSuggestionIndex {
         for (const osmKey in tags) {
             const values = tags[osmKey]
             for (const osmValue of values) {
-                const suggestions = this.getSuggestionsFor(type, osmKey, osmValue)
+                const suggestions = this.getSuggestionsForKV(type, osmKey, osmValue)
                 options.push(...suggestions)
             }
         }
@@ -193,11 +209,19 @@ export default class NameSuggestionIndex {
 
     /**
      *
-     * @param path
      * @param country: a string containing one or more country codes, separated by ";"
      * @param location: center point of the feature, should be [lon, lat]
      */
-    public static getSuggestionsFor(type: string, key: string, value: string, country: string = undefined, location: [number, number] = undefined): NSIItem[] {
+    public static getSuggestionsFor(type: string, tags: {key: string, value: string}[], country: string = undefined, location: [number, number] = undefined): NSIItem[] {
+        return tags.flatMap(tag => this.getSuggestionsForKV(type, tag.key, tag.value, country, location))
+    }
+
+    /**
+     *
+     * @param country: a string containing one or more country codes, separated by ";"
+     * @param location: center point of the feature, should be [lon, lat]
+     */
+    public static getSuggestionsForKV(type: string, key: string, value: string, country: string = undefined, location: [number, number] = undefined): NSIItem[] {
         const path = `${type}s/${key}/${value}`
         const entry = NameSuggestionIndex.nsiFile.nsi[path]
         return entry?.items?.filter(i => {

@@ -20,6 +20,7 @@ class Utilities {
     }
 
 }
+
 class GenerateStats extends Script {
 
     async createOptimizationFile(includeTags = true) {
@@ -71,8 +72,8 @@ class GenerateStats extends Script {
                     tagTotal.set(key, new Map<string, number>())
                     await Promise.all(
                         Array.from(values).map(async (value) => {
-                           const tagData: TagInfoStats= await TagInfo.global.getStats(key, value)
-                            const count = tagData.data .find((item) => item.type === "all").count
+                            const tagData: TagInfoStats = await TagInfo.global.getStats(key, value)
+                            const count = tagData.data.find((item) => item.type === "all").count
                             tagTotal.get(key).set(value, count)
                             console.log(key + "=" + value, "-->", count)
                         })
@@ -134,33 +135,33 @@ class GenerateStats extends Script {
     }
 
 
-    async createNameSuggestionIndexFile(basepath: string,type: "brand" | "operator") {
-        const path = basepath+type+'.json'
+    async createNameSuggestionIndexFile(basepath: string, type: "brand" | "operator" | string) {
+        const path = basepath + type + ".json"
         let allBrands = <Record<string, Record<string, number>>>{}
         if (existsSync(path)) {
             allBrands = JSON.parse(readFileSync(path, "utf8"))
-            console.log("Loaded",Object.keys(allBrands).length," previously loaded brands")
+            console.log("Loaded", Object.keys(allBrands).length, " previously loaded brands")
         }
-        let lastWrite = new Date()
+        const lastWrite = new Date()
         let skipped = 0
         const allBrandNames: string[] = Utils.Dedup(NameSuggestionIndex.allPossible(type).map(item => item.tags[type]))
-        for (let i = 0; i < allBrandNames.length; i++){
-            if(i % 100 == 0){
-                console.log("Downloading ",i+"/"+allBrandNames.length,"; skipped",skipped)
+        for (let i = 0; i < allBrandNames.length; i++) {
+            if (i % 100 == 0) {
+                console.log("Downloading ", i + "/" + allBrandNames.length, "; skipped", skipped)
             }
             const brand = allBrandNames[i]
-            if(!!allBrands[brand] && Object.keys(allBrands[brand]).length == 0){
+            if (!!allBrands[brand] && Object.keys(allBrands[brand]).length == 0) {
                 delete allBrands[brand]
                 console.log("Deleted", brand, "as no entries at all")
             }
-            if(allBrands[brand] !== undefined){
+            if (allBrands[brand] !== undefined) {
                 const max = Math.max(...Object.values(allBrands[brand]))
                 skipped++
-                if(max < 0){
+                if (max < 0) {
                     console.log("HMMMM:", allBrands[brand])
                     delete allBrands[brand]
 
-                }else{
+                } else {
                     continue
                 }
             }
@@ -179,11 +180,13 @@ class GenerateStats extends Script {
     }
 
     async main(_: string[]) {
-        await this.createOptimizationFile()
-        const type = "brand"
         const basepath = "./src/assets/generated/stats/"
-        await this.createNameSuggestionIndexFile(basepath, type)
-        this.summarizeNSI(basepath+type+".json", "./public/assets/data/stats/"+type)
+        for (const type of ["operator","brand"]) {
+            await this.createNameSuggestionIndexFile(basepath, type)
+            this.summarizeNSI(basepath + type + ".json", "./public/assets/data/nsi/stats/" + type)
+        }
+        await this.createOptimizationFile()
+
 
     }
 

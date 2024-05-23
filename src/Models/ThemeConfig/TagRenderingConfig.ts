@@ -72,12 +72,11 @@ export default class TagRenderingConfig {
         readonly addExtraTags: UploadableTag[]
         readonly inline: boolean
         readonly default?: string
-        readonly helperArgs?: (string | number | boolean)[]
     }
 
     public readonly multiAnswer: boolean
 
-    public readonly mappings: Mapping[]
+    public mappings: Mapping[]
     public readonly editButtonAriaLabel?: Translation
     public readonly labels: string[]
     public readonly classes: string[] | undefined
@@ -202,8 +201,7 @@ export default class TagRenderingConfig {
                         TagUtils.ParseUploadableTag(tg, `${context}.extratag[${i}]`)
                     ) ?? [],
                 inline: json.freeform.inline ?? false,
-                default: json.freeform.default,
-                helperArgs: json.freeform.helperArgs
+                default: json.freeform.default
             }
             if (json.freeform["extraTags"] !== undefined) {
                 throw `Freeform.extraTags is defined. This should probably be 'freeform.addExtraTag' (at ${context})`
@@ -251,7 +249,7 @@ export default class TagRenderingConfig {
                     commonIconSize
                 )
             )
-        }else{
+        } else {
             this.mappings = []
         }
 
@@ -371,8 +369,8 @@ export default class TagRenderingConfig {
 
         let icon = undefined
         let iconClass = commonSize
-        if (!!mapping.icon) {
-            if (typeof mapping.icon === "string" && mapping.icon !== "") {
+        if (mapping.icon) {
+            if (typeof mapping.icon === "string") {
                 icon = mapping.icon.trim()
             } else if (mapping.icon["path"]) {
                 icon = mapping.icon["path"].trim()
@@ -467,8 +465,8 @@ export default class TagRenderingConfig {
 
         // A flag to check that the freeform key isn't matched multiple times
         // If it is undefined, it is "used" already, or at least we don't have to check for it anymore
-        let freeformKeyDefined = this.freeform?.key !== undefined
-        let usedFreeformValues = new Set<string>()
+        const freeformKeyDefined = this.freeform?.key !== undefined
+        const usedFreeformValues = new Set<string>()
         // We run over all the mappings first, to check if the mapping matches
         const applicableMappings: {
             then: TypedTranslation<Record<string, string>>
@@ -556,9 +554,6 @@ export default class TagRenderingConfig {
     EnumerateTranslations(): Translation[] {
         const translations: Translation[] = []
         for (const key in this) {
-            if (!this.hasOwnProperty(key)) {
-                continue
-            }
             const o = this[key]
             if (o instanceof Translation) {
                 translations.push(o)
@@ -572,7 +567,7 @@ export default class TagRenderingConfig {
             const key = this.freeform?.key
             const answerMappings = this.mappings?.filter((m) => m.hideInAnswer !== true)
             if (key === undefined) {
-                let values: { k: string; v: string }[][] = Utils.NoNull(
+                const values: { k: string; v: string }[][] = Utils.NoNull(
                     answerMappings?.map((m) => m.if.asChange({})) ?? []
                 )
                 if (values.length === 0) {
@@ -870,21 +865,25 @@ export default class TagRenderingConfig {
 export class TagRenderingConfigUtils {
 
     public static withNameSuggestionIndex(config: TagRenderingConfig, tags: UIEventSource<Record<string, string>>, feature?: Feature): Store<TagRenderingConfig> {
-        if(config.freeform?.type !== "nsi"){
+        const isNSI = NameSuggestionIndex.supportedTypes().indexOf(config.freeform?.key) >= 0
+        if (!isNSI) {
             return new ImmutableStore(config)
         }
-        const extraMappings = tags.mapD(tags => tags._country).bindD(country => {
-            const [k, v] = ("" + config.freeform.helperArgs[0]).split("=")
-            const center = GeoOperations.centerpointCoordinates(feature)
-            return UIEventSource.FromPromise(NameSuggestionIndex.generateMappings(config.freeform.key, k, v, country.split(";"), center))
-        })
-       return extraMappings.map(extraMappings => {
-            if(!extraMappings || extraMappings.length == 0){
+        const extraMappings = tags
+            .bindD(tags => {
+                const country  = tags._country
+                if(country === undefined){
+                    return undefined
+                }
+                const center = GeoOperations.centerpointCoordinates(feature)
+                return UIEventSource.FromPromise(NameSuggestionIndex.generateMappings(config.freeform.key, tags, country.split(";"), center))
+            })
+        return extraMappings.map(extraMappings => {
+            if (!extraMappings || extraMappings.length == 0) {
                 return config
             }
             const clone: TagRenderingConfig = Object.create(config)
-           /// SHHHTTT, this is not cheating at all!
-            clone.mappings.splice(clone.mappings.length, 0, ...extraMappings)
+            clone.mappings = [...clone.mappings ?? [], ...extraMappings]
             return clone
         })
     }

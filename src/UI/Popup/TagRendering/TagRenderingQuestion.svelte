@@ -72,7 +72,6 @@
   /**
    * Prepares and fills the checkedMappings
    */
-  console.log("Initing ", config.id)
 
   function initialize(tgs: Record<string, string>, confg: TagRenderingConfig): void {
     mappings = confg.mappings?.filter((m) => {
@@ -160,7 +159,6 @@
       }
     }
     if (somethingChanged) {
-      console.log("Updating minimal tags to", newMinimal, "of", config.id)
       minimalTags.setData(newMinimal)
     }
   })
@@ -224,7 +222,7 @@
       }
     }
 
-    if (extraTags.data) {
+    if (extraTags.data && selectedTags !== undefined) {
       // Map the extraTags into an array of Tag objects
       const extraTagsArray = Object.entries(extraTags.data).map(([k, v]) => new Tag(k, v))
 
@@ -236,7 +234,7 @@
         // Add the extraTags to the existing And
         selectedTags = new And([...selectedTags.and, ...extraTagsArray])
       } else {
-        console.error("selectedTags is not of type Tag or And")
+        console.error("selectedTags is not of type Tag or And, it is a "+JSON.stringify(selectedTags))
       }
     }
   }

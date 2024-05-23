@@ -3,8 +3,6 @@
   import { Store, UIEventSource } from "../../../Logic/UIEventSource"
   import type { Feature } from "geojson"
   import type { SpecialVisualizationState } from "../../SpecialVisualization"
-  import TagRenderingAnswer from "./TagRenderingAnswer.svelte"
-  import { PencilAltIcon } from "@rgossiaux/svelte-heroicons/solid"
   import TagRenderingQuestion from "./TagRenderingQuestion.svelte"
   import { onDestroy } from "svelte"
   import Tr from "../../Base/Tr.svelte"
@@ -12,9 +10,8 @@
   import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
   import { Utils } from "../../../Utils"
   import { twMerge } from "tailwind-merge"
-  import { ariaLabel } from "../../../Utils/ariaLabel"
   import EditButton from "./EditButton.svelte"
-  import EditItemButton from "../../Studio/EditItemButton.svelte"
+  import TagRenderingAnswerDynamic from "./TagRenderingAnswerDynamic.svelte"
 
   export let config: TagRenderingConfig
   export let tags: UIEventSource<Record<string, string>>
@@ -103,7 +100,7 @@
       </TagRenderingQuestion>
     {:else}
       <div class="low-interaction flex items-center justify-between overflow-hidden rounded px-2">
-        <TagRenderingAnswer id={answerId} {config} {tags} {selectedElement} {state} {layer} />
+        <TagRenderingAnswerDynamic id={answerId} {config} {tags} {selectedElement} {state} {layer} />
         <EditButton
           arialabel={config.editButtonAriaLabel}
           ariaLabelledBy={answerId}
@@ -115,7 +112,7 @@
     {/if}
   {:else}
     <div class="h-full w-full overflow-hidden">
-      <TagRenderingAnswer {config} {tags} {selectedElement} {state} {layer} />
+      <TagRenderingAnswerDynamic {config} {tags} {selectedElement} {state} {layer} />
     </div>
   {/if}
 </div>

@@ -391,7 +391,6 @@ export default class ThemeViewState implements SpecialVisualizationState {
             if (fs.layer.layerDef.source.geojsonSource !== undefined) {
                 return // We don't cache external data layers
             }
-            console.log("Setting up a local store feature sink for", layerId)
             const storage = new SaveFeatureSourceToLocalStorage(
                 this.osmConnection.Backend(),
                 fs.layer.layerDef.id,
