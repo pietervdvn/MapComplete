@@ -315,7 +315,9 @@ export default class LayoutConfig implements LayoutInformation {
                 continue
             }
             if (layer.source.osmTags.matchesProperties(tags)) {
-                return layer
+                if(!layer.isShown || layer.isShown.matchesProperties(tags)){// https://github.com/pietervdvn/MapComplete/issues/1959
+                    return layer
+                }
             }
         }
         console.log("Fallthrough", this, tags)
