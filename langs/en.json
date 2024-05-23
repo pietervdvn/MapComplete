@@ -494,7 +494,7 @@
         },
         "welcomeBack": "Welcome back!",
         "welcomeExplanation": {
-            "addNew": "Tap the map to add a new POI.",
+            "addNew": "Is an item missing? Use the button on the bottom-left to add a new point of interest.",
             "general": "On this map, you can see, edit and add <i>points of interest</i>. Zoom around to see the POI, tap one to see or edit the information. All data is sourced from and saved to OpenStreetMap, which can be freely reused."
         },
         "wikipedia": {
