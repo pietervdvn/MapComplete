@@ -426,7 +426,7 @@
         },
         "welcomeBack": "Je bent aangemeld. Welkom terug!",
         "welcomeExplanation": {
-            "addNew": "Klik op de kaart om een nieuw punt toe te voegen.",
+            "addNew": "Ontbreekt een item? Gebruik de knop links-onderaan om een interesepunt toe te voegen.",
             "general": "Op deze kaart kan je <i>interessepunten</i> bekijken, bewerken en toevoegen. Zoom in om de interessepunten te zien, duid eentje aan om alle informatie te zien en te bewerken. Alle informatie komt van OpenStreetMap die gratis hergebruikt mag worden."
         },
         "wikipedia": {
