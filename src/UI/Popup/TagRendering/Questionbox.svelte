@@ -3,16 +3,16 @@
    * Shows all questions for which the answers are unknown.
    * The questions can either be shown all at once or one at a time (in which case they can be skipped)
    */
-  import TagRenderingConfig, { TagRenderingConfigUtils } from "../../../Models/ThemeConfig/TagRenderingConfig"
-  import { Store, UIEventSource } from "../../../Logic/UIEventSource"
+  import TagRenderingConfig from "../../../Models/ThemeConfig/TagRenderingConfig"
+  import { UIEventSource } from "../../../Logic/UIEventSource"
   import type { Feature } from "geojson"
   import type { SpecialVisualizationState } from "../../SpecialVisualization"
   import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
-  import TagRenderingQuestion from "./TagRenderingQuestion.svelte"
   import Tr from "../../Base/Tr.svelte"
   import Translations from "../../i18n/Translations.js"
   import { Utils } from "../../../Utils"
   import { onDestroy } from "svelte"
+  import TagRenderingQuestion from "./TagRenderingQuestion.svelte"
   import TagRenderingQuestionDynamic from "./TagRenderingQuestionDynamic.svelte"
 
   export let layer: LayerConfig
@@ -26,7 +26,8 @@
   export let onlyForLabels: string[] | undefined = undefined
   const _onlyForLabels = new Set(onlyForLabels)
   /**
-   * If set, only questions _not_ having these labels will be shown
+   * If set, only questions _not_ having these labels will be shown.
+   * This is used for a partial questionbox
    */
   export let notForLabels: string[] | undefined = undefined
   const _notForLabels = new Set(notForLabels)
@@ -41,14 +42,15 @@
     }
     return true
   }
+  const baseQuestions = (layer.tagRenderings ?? [])?.filter(
+    (tr) => allowed(tr.labels) && tr.question !== undefined
+  )
 
   let skippedQuestions = new UIEventSource<Set<string>>(new Set<string>())
   let questionboxElem: HTMLDivElement
   let questionsToAsk = tags.map(
     (tags) => {
-      const baseQuestions = (layer.tagRenderings ?? [])?.filter(
-        (tr) => allowed(tr.labels) && tr.question !== undefined
-      )
+
       const questionsToAsk: TagRenderingConfig[] = []
       for (const baseQuestion of baseQuestions) {
         if (skippedQuestions.data.has(baseQuestion.id)) {

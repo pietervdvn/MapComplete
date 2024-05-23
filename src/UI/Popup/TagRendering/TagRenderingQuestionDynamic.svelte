@@ -8,6 +8,7 @@ import type { SpecialVisualizationState } from "../../SpecialVisualization"
 import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
 import TagRenderingQuestion from "./TagRenderingQuestion.svelte"
 import type { UploadableTag } from "../../../Logic/Tags/TagUtils"
+import { writable } from "svelte/store"
 
 export let config: TagRenderingConfig
 export let tags: UIEventSource<Record<string, string>>
@@ -22,6 +23,7 @@ export let allowDeleteOfFreeform: boolean = false
 
 
 let dynamicConfig = TagRenderingConfigUtils.withNameSuggestionIndex(config, tags, selectedElement)
+
 </script>
 
 <TagRenderingQuestion

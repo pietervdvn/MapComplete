@@ -3,7 +3,6 @@
   import type { SpecialVisualizationState } from "../../SpecialVisualization"
   import Tr from "../../Base/Tr.svelte"
   import type { Feature } from "geojson"
-  import type { Mapping } from "../../../Models/ThemeConfig/TagRenderingConfig"
   import TagRenderingConfig from "../../../Models/ThemeConfig/TagRenderingConfig"
   import { TagsFilter } from "../../../Logic/Tags/TagsFilter"
   import FreeformInput from "./FreeformInput.svelte"
@@ -59,7 +58,6 @@
    */
   let checkedMappings: boolean[]
 
-  let mappings: Mapping[] = config?.mappings ?? []
   let searchTerm: UIEventSource<string> = new UIEventSource("")
 
   let dispatch = createEventDispatcher<{
@@ -74,7 +72,7 @@
    */
 
   function initialize(tgs: Record<string, string>, confg: TagRenderingConfig): void {
-    mappings = confg.mappings?.filter((m) => {
+    const mappings = confg.mappings?.filter((m) => {
       if (typeof m.hideInAnswer === "boolean") {
         return !m.hideInAnswer
       }
@@ -169,7 +167,7 @@
 
   onDestroy(
     freeformInput.subscribe((freeformValue) => {
-      if (!mappings || mappings?.length == 0 || config.freeform?.key === undefined) {
+      if (!config?.mappings || config?.mappings?.length == 0 || config.freeform?.key === undefined) {
         return
       }
       // If a freeform value is given, mark the 'mapping' as marked
@@ -178,11 +176,11 @@
           // Initialization didn't yet run
           return
         }
-        checkedMappings[mappings.length] = freeformValue?.length > 0
+        checkedMappings[config?.mappings.length] = freeformValue?.length > 0
         return
       }
       if (freeformValue?.length > 0) {
-        selectedMapping = mappings.length
+        selectedMapping = config.mappings.length
       }
     })
   )
@@ -192,7 +190,7 @@
       allowDeleteOfFreeform &&
       $freeformInput === undefined &&
       $freeformInputUnvalidated === "" &&
-      (mappings?.length ?? 0) === 0
+      (config?.mappings?.length ?? 0) === 0
     ) {
       selectedTags = new Tag(config.freeform.key, "")
     } else {
@@ -353,7 +351,7 @@
 
 
 
-        {#if config.freeform?.key && !(mappings?.length > 0)}
+        {#if config.freeform?.key && !(config?.mappings?.length > 0)}
           <!-- There are no options to choose from, simply show the input element: fill out the text field -->
           <FreeformInput
             {config}
@@ -367,7 +365,7 @@
             unvalidatedText={freeformInputUnvalidated}
             on:submit={() => onSave()}
           />
-        {:else if mappings !== undefined && !config.multiAnswer}
+        {:else if config.mappings !== undefined && !config.multiAnswer}
           <!-- Simple radiobuttons as mapping -->
           <div class="flex flex-col">
             {#each config.mappings as mapping, i (mapping.then)}
@@ -416,7 +414,7 @@
               </label>
             {/if}
           </div>
-        {:else if mappings !== undefined && config.multiAnswer}
+        {:else if config.mappings !== undefined && config.multiAnswer}
           <!-- Multiple answers can be chosen: checkboxes -->
           <div class="flex flex-col">
             {#each config.mappings as mapping, i (mapping.then)}
@@ -480,7 +478,7 @@
             <!-- TagRenderingQuestion-buttons -->
             <slot name="cancel" />
             <slot name="save-button" {selectedTags}>
-              {#if allowDeleteOfFreeform && (mappings?.length ?? 0) === 0 && $freeformInput === undefined && $freeformInputUnvalidated === ""}
+              {#if allowDeleteOfFreeform && (config?.mappings?.length ?? 0) === 0 && $freeformInput === undefined && $freeformInputUnvalidated === ""}
                 <button
                   class="primary flex"
                   on:click|stopPropagation|preventDefault={() => onSave()}

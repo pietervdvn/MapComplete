@@ -4,20 +4,10 @@ import * as nsiWD from "../node_modules/name-suggestion-index/dist/wikidata.min.
 import { existsSync, writeFileSync } from "fs"
 import ScriptUtils from "./ScriptUtils"
 import { Utils } from "../src/Utils"
-import { WikimediaImageProvider } from "../src/Logic/ImageProviders/WikimediaImageProvider"
-import { renameSync } from "node:fs"
 
-export default class DownloadNsiLogos extends Script {
+class DownloadNsiLogos extends Script {
     constructor() {
         super("Downloads all images of the NSI")
-    }
-
-    private async getWikimediaUrl(startUrl: string) {
-        if (!startUrl) {
-            return startUrl
-        }
-
-
     }
 
     private async downloadLogo(nsiItem: NSIItem, type: string, basePath: string) {
@@ -71,8 +61,8 @@ export default class DownloadNsiLogos extends Script {
                 }
                 if ((<string>logos.wikidata).toLowerCase().endsWith(".svg")) {
                     console.log("Written SVG", path)
-                    if(!path.endsWith(".svg")){
-                        throw "Undetected svg path:"+logos.wikidata
+                    if (!path.endsWith(".svg")) {
+                        throw "Undetected svg path:" + logos.wikidata
                     }
                     writeFileSync(path, dloaded["content"], "utf8")
                     return true
@@ -90,8 +80,12 @@ export default class DownloadNsiLogos extends Script {
 
     }
 
-    async main(args: string[]): Promise<void> {
-        const type = "brand"
+    async main(): Promise<void> {
+        await this.downloadFor("operator")
+        await this.downloadFor("brand")
+    }
+
+    async downloadFor(type: "brand" | "operator"): Promise<void> {
         const items = NameSuggestionIndex.allPossible(type)
         const basePath = "./public/assets/data/nsi/logos/"
         let downloadCount = 0

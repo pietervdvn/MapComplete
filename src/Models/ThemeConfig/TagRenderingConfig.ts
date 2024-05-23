@@ -883,7 +883,8 @@ export class TagRenderingConfigUtils {
                 return config
             }
             const clone: TagRenderingConfig = Object.create(config)
-            clone.mappings = [...clone.mappings ?? [], ...extraMappings]
+            const oldMappingsCloned = clone.mappings?.map(m => ({ ...m, priorityIf: m.priorityIf ?? TagUtils.Tag("id~*") })) ?? []
+            clone.mappings = [...oldMappingsCloned, ...extraMappings]
             return clone
         })
     }

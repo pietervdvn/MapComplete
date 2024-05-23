@@ -11,7 +11,7 @@
   import { Utils } from "../../../Utils"
   import { twMerge } from "tailwind-merge"
   import EditButton from "./EditButton.svelte"
-  import TagRenderingAnswerDynamic from "./TagRenderingAnswerDynamic.svelte"
+  import TagRenderingAnswer from "./TagRenderingAnswer.svelte"
 
   export let config: TagRenderingConfig
   export let tags: UIEventSource<Record<string, string>>
@@ -100,7 +100,7 @@
       </TagRenderingQuestion>
     {:else}
       <div class="low-interaction flex items-center justify-between overflow-hidden rounded px-2">
-        <TagRenderingAnswerDynamic id={answerId} {config} {tags} {selectedElement} {state} {layer} />
+        <TagRenderingAnswer id={answerId} {config} {tags} {selectedElement} {state} {layer} />
         <EditButton
           arialabel={config.editButtonAriaLabel}
           ariaLabelledBy={answerId}
@@ -112,7 +112,7 @@
     {/if}
   {:else}
     <div class="h-full w-full overflow-hidden">
-      <TagRenderingAnswerDynamic {config} {tags} {selectedElement} {state} {layer} />
+      <TagRenderingAnswer {config} {tags} {selectedElement} {state} {layer} />
     </div>
   {/if}
 </div>

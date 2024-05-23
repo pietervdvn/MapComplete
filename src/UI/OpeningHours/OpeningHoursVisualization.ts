@@ -55,7 +55,7 @@ export default class OpeningHoursVisualization extends Toggle {
                     applicableWeek.startingMonday
                 )
                 Locale.language.mapD((lng) => {
-                    console.log("Setting OH description to", lng, textual)
+                    console.debug("Setting OH description to", lng, textual)
                     vis.ConstructElement().ariaLabel = textual.textFor(lng)
                 })
                 return vis
