@@ -49,7 +49,9 @@ export default class NearbyImagesSearch {
     private readonly _options: NearbyImageOptions
 
     constructor(options: NearbyImageOptions, features: IndexedFeatureSource) {
-        this.individualStores = NearbyImagesSearch.services.map((s) =>
+        this.individualStores = NearbyImagesSearch.services
+            .filter(s => s !== "kartaview" /*DEAD*/)
+            .map((s) =>
             NearbyImagesSearch.buildPictureFetcher(options, s)
         )
 
@@ -98,7 +100,7 @@ export default class NearbyImagesSearch {
             )
             return pics
         } catch (e) {
-            console.error("Could not fetch images from service", fetcher, e)
+            console.warn("Could not fetch images from service", fetcher, e)
             return []
         }
     }

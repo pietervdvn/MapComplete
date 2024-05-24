@@ -1,426 +1,453 @@
 {
   "#": "Generated with generateStats.ts",
-  "date": "2023-12-04T14:42:01.299Z",
+  "date": "2024-05-23T09:36:50.687Z",
   "keys": {
-    "FIXME": 119237,
-    "access": 20023328,
-    "addr:housenumber": 146524978,
-    "addr:street": 137485111,
-    "advertising": 158347,
-    "amenity": 25340913,
-    "area": 1803451,
-    "association": 757,
-    "barrier": 23634152,
-    "bench": 1300789,
-    "bicycle": 7507086,
-    "bicycle_rental": 26948,
-    "boundary": 2366033,
-    "brand": 2317628,
-    "building": 585543589,
-    "camera:direction": 61201,
-    "climbing": 9051,
-    "club": 53046,
-    "construction:amenity": 1943,
-    "conveying": 27311,
-    "craft": 296376,
-    "crossing": 8736722,
-    "cyclestreet": 12505,
-    "cycleway": 1016837,
-    "direction": 2978834,
-    "disused:amenity": 63413,
-    "dog": 95086,
-    "door": 280843,
-    "drinking_water": 136067,
-    "emergency": 2542692,
-    "entrance": 3769592,
-    "fixme": 1746318,
-    "footway": 7540651,
-    "generator:source": 2387982,
-    "healthcare": 790125,
-    "highway": 249307936,
-    "indoor": 562051,
-    "information": 1073014,
-    "isced:2011:level": 27,
-    "isced:level:2011": 74,
-    "landuse": 41730047,
-    "leisure": 8955744,
-    "man_made": 6799900,
-    "memorial": 209327,
-    "motorcar": 621864,
-    "name": 98684655,
-    "name:etymology": 56375,
-    "name:etymology:wikidata": 1174439,
-    "name:nl": 80468,
-    "natural": 64176097,
-    "ngo": 57,
-    "office": 1092855,
-    "parking_space": 600707,
-    "planned:amenity": 237,
-    "playground": 182188,
-    "post_office": 16379,
-    "protect_class": 83815,
-    "pub": 324,
-    "public_transport": 5111577,
-    "railway": 7068070,
-    "recycling_type": 385569,
-    "ref": 18607577,
-    "rental": 13611,
-    "route": 1075802,
-    "service:bicycle:cleaning": 1179,
-    "service:bicycle:pump": 14053,
-    "service:bicycle:pump:operational_status": 344,
-    "service:bicycle:rental": 4599,
-    "service:bicycle:repair": 15470,
-    "service:bicycle:retail": 11467,
-    "service:bicycle:tools": 6227,
-    "shelter": 1647743,
-    "shop": 5860878,
-    "species": 1656206,
-    "species:wikidata": 107778,
-    "sport": 2580042,
-    "subject": 40076,
-    "surface:colour": 17851,
-    "surveillance:type": 171923,
-    "theme": 906,
-    "toilets": 90842,
-    "tourism": 3211694,
-    "tower:type": 596349,
-    "type": 11757856,
-    "vending": 252016
+    "FIXME": 90640,
+    "access": 21142852,
+    "addr:housenumber": 151990107,
+    "addr:street": 142420615,
+    "advertising": 171135,
+    "aerialway": 197971,
+    "amenity": 26676073,
+    "area": 1834151,
+    "association": 865,
+    "barrier": 25284583,
+    "bench": 1391500,
+    "bicycle": 7828362,
+    "bicycle_rental": 31236,
+    "boundary": 2414731,
+    "brand": 2486902,
+    "building": 608973229,
+    "camera:direction": 68436,
+    "climbing": 16054,
+    "club": 57313,
+    "construction:amenity": 1998,
+    "conveying": 29311,
+    "craft": 310010,
+    "crossing": 9631513,
+    "cyclestreet": 13428,
+    "cycleway": 1061650,
+    "direction": 3274782,
+    "disused:amenity": 70327,
+    "dog": 104256,
+    "door": 298551,
+    "drinking_water": 145233,
+    "emergency": 2690342,
+    "entrance": 4018859,
+    "fixme": 1779436,
+    "footway": 8436097,
+    "generator:source": 2636536,
+    "healthcare": 837928,
+    "highway": 257166231,
+    "historic": 1855845,
+    "image": 346788,
+    "image:0": 4605,
+    "image:1": 1273,
+    "image:2": 592,
+    "image:3": 1721,
+    "image:4": 87,
+    "image:5": 45,
+    "indoor": 617474,
+    "information": 1132904,
+    "isced:2011:level": 39,
+    "isced:level:2011": 92,
+    "landuse": 43467885,
+    "leisure": 9368229,
+    "man_made": 7417549,
+    "memorial": 241702,
+    "motorcar": 663486,
+    "name": 101551922,
+    "name:etymology": 60953,
+    "name:etymology:wikidata": 1348930,
+    "name:nl": 82996,
+    "natural": 69630642,
+    "ngo": 58,
+    "office": 1146164,
+    "parking_space": 741073,
+    "piste:type": 298017,
+    "planned:amenity": 214,
+    "playground": 203636,
+    "post_office": 17057,
+    "protect_class": 87403,
+    "pub": 333,
+    "public_transport": 5366542,
+    "railway": 7323134,
+    "recycling_type": 410633,
+    "ref": 19172387,
+    "rental": 14512,
+    "route": 1138851,
+    "service:bicycle:cleaning": 1250,
+    "service:bicycle:pump": 15527,
+    "service:bicycle:pump:operational_status": 386,
+    "service:bicycle:rental": 4728,
+    "service:bicycle:repair": 16260,
+    "service:bicycle:retail": 11917,
+    "service:bicycle:tools": 6928,
+    "shelter": 1747775,
+    "shop": 6098296,
+    "species": 1691922,
+    "species:wikidata": 284812,
+    "sport": 2685487,
+    "subject": 43282,
+    "surface:colour": 19841,
+    "surveillance:type": 191169,
+    "theme": 1070,
+    "toilets": 100526,
+    "tourism": 3342528,
+    "tower:type": 644047,
+    "type": 12379501,
+    "vending": 268175
   },
   "tags": {
     "advertising": {
-      "billboard": 76420,
-      "board": 15040,
-      "column": 21212,
-      "flag": 4264,
-      "poster_box": 22932,
-      "screen": 1352,
-      "sculpture": 145,
-      "sign": 6172,
-      "tarp": 407,
-      "totem": 7097,
-      "wall_painting": 132
+      "billboard": 81998,
+      "board": 16354,
+      "column": 23202,
+      "flag": 4411,
+      "poster_box": 24310,
+      "screen": 1603,
+      "sculpture": 171,
+      "sign": 6521,
+      "tarp": 469,
+      "totem": 8482,
+      "wall_painting": 153
     },
     "amenity": {
-      "animal_shelter": 6056,
-      "atm": 207899,
-      "bank": 389470,
-      "bar": 219208,
-      "bench": 2313183,
-      "bicycle_library": 46,
-      "bicycle_parking": 616881,
-      "bicycle_rental": 63710,
-      "bicycle_repair_station": 14026,
-      "bicycle_wash": 79,
-      "biergarten": 10323,
-      "bike_wash": 1,
-      "binoculars": 1109,
-      "cafe": 530066,
-      "car_rental": 26726,
-      "charging_station": 111996,
-      "childcare": 50390,
-      "clinic": 179739,
-      "clock": 25274,
-      "college": 64379,
-      "dentist": 122076,
-      "doctors": 166850,
-      "drinking_water": 294750,
-      "fast_food": 533335,
-      "fire_station": 131842,
-      "hospital": 204756,
-      "ice_cream": 48853,
-      "kindergarten": 294441,
-      "nightclub": 22779,
-      "parcel_locker": 44270,
-      "parking": 5158899,
-      "parking_space": 2292063,
-      "pharmacy": 383181,
-      "post_box": 370286,
-      "post_office": 198908,
-      "pub": 185475,
-      "public_bookcase": 21608,
-      "reception_desk": 2426,
-      "recycling": 417512,
-      "restaurant": 1346895,
-      "school": 1286594,
-      "shelter": 494594,
-      "shower": 27029,
-      "ticket_validator": 7730,
-      "toilets": 417991,
-      "university": 54299,
-      "vending_machine": 247257,
-      "veterinary": 52813,
-      "waste_basket": 759718,
-      "waste_disposal": 219245
+      "animal_shelter": 6632,
+      "atm": 213132,
+      "bank": 394631,
+      "bar": 223657,
+      "bench": 2448192,
+      "bicycle_library": 50,
+      "bicycle_parking": 661380,
+      "bicycle_rental": 70715,
+      "bicycle_repair_station": 15191,
+      "bicycle_wash": 160,
+      "biergarten": 10292,
+      "bike_wash": 0,
+      "binoculars": 1222,
+      "brothel": 3290,
+      "cafe": 547985,
+      "car_rental": 27557,
+      "charging_station": 123708,
+      "childcare": 52038,
+      "cinema": 30540,
+      "clinic": 185331,
+      "clock": 26645,
+      "college": 65476,
+      "dentist": 127096,
+      "doctors": 174128,
+      "drinking_water": 304056,
+      "fast_food": 556235,
+      "fire_station": 134084,
+      "food_court": 14355,
+      "hospital": 207825,
+      "ice_cream": 51292,
+      "kindergarten": 304750,
+      "love_hotel": 4594,
+      "nightclub": 23193,
+      "parcel_locker": 50047,
+      "parking": 5423184,
+      "parking_space": 2643943,
+      "pharmacy": 396183,
+      "post_box": 377033,
+      "post_office": 201698,
+      "pub": 187092,
+      "public_bookcase": 26185,
+      "reception_desk": 2549,
+      "recycling": 441661,
+      "restaurant": 1386625,
+      "school": 1310434,
+      "shelter": 523799,
+      "shower": 27712,
+      "stripclub": 1290,
+      "ticket_validator": 8369,
+      "toilets": 431366,
+      "trolley_bay": 11708,
+      "university": 54833,
+      "vending_machine": 263514,
+      "veterinary": 54753,
+      "waste_basket": 819116,
+      "waste_disposal": 232926
     },
     "association": {
-      "bicycle": 47,
+      "bicycle": 53,
       "cycling": 5
     },
     "barrier": {
-      "bollard": 668017,
-      "cycle_barrier": 122201,
-      "kerb": 1178769,
-      "retaining_wall": 472454,
-      "wall": 4448788
+      "bollard": 713540,
+      "cycle_barrier": 127055,
+      "kerb": 1423380,
+      "retaining_wall": 512191,
+      "wall": 4716387
     },
     "bench": {
-      "stand_up_bench": 212,
-      "yes": 778144
+      "stand_up_bench": 216,
+      "yes": 832463
     },
     "bicycle": {
-      "designated": 1499247,
-      "no": 1614544,
-      "yes": 3753651
+      "designated": 1605994,
+      "no": 1661746,
+      "yes": 3877159
     },
     "boundary": {
-      "protected_area": 111282
+      "protected_area": 115446
     },
     "climbing": {
-      "area": 191,
-      "crag": 2873,
-      "route": 1040,
+      "area": 325,
+      "crag": 3542,
+      "route": 1178,
       "site": 14
     },
     "club": {
-      "bicycle": 60,
+      "bicycle": 70,
       "climbing": 1,
       "cycling": 7
     },
     "construction:amenity": {
-      "charging_station": 259
+      "charging_station": 304
     },
     "conveying": {
-      "yes": 12153
+      "yes": 12874
     },
     "craft": {
-      "key_cutter": 3711,
-      "shoe_repair": 64
+      "key_cutter": 3896,
+      "shoe_repair": 63
     },
     "crossing": {
-      "traffic_signals": 1408141
+      "traffic_signals": 1573591
     },
     "cyclestreet": {
-      "yes": 12480
+      "yes": 13404
     },
     "cycleway": {
-      "lane": 300810,
-      "shared_lane": 71051,
-      "track": 77166
+      "lane": 308235,
+      "shared_lane": 76070,
+      "track": 74462
     },
     "disused:amenity": {
-      "charging_station": 289,
-      "drinking_water": 2758
+      "charging_station": 326,
+      "drinking_water": 3146
     },
     "dog": {
-      "unleashed": 727
+      "unleashed": 1174
     },
     "drinking_water": {
-      "yes": 74561
+      "yes": 78273
     },
     "emergency": {
-      "ambulance_station": 13020,
-      "defibrillator": 80699,
-      "fire_extinguisher": 11605,
-      "fire_hydrant": 1928477
+      "ambulance_station": 13561,
+      "assembly_point": 15852,
+      "defibrillator": 91453,
+      "disaster_response": 1278,
+      "fire_extinguisher": 12885,
+      "fire_hydrant": 2045340,
+      "mountain_rescue": 804
     },
     "footway": {
-      "crossing": 3111184
+      "crossing": 3473614
     },
     "generator:source": {
-      "wind": 390537
+      "wind": 405101
     },
     "healthcare": {
-      "physiotherapist": 17548
+      "physiotherapist": 19015
     },
     "highway": {
-      "bridleway": 107507,
-      "bus_stop": 3459595,
-      "corridor": 46847,
-      "crossing": 8505991,
-      "cycleway": 1693405,
-      "elevator": 39221,
-      "footway": 21573091,
-      "living_street": 1753722,
-      "motorway": 1182914,
-      "motorway_link": 829035,
-      "path": 13690001,
-      "pedestrian": 767066,
-      "primary": 3462637,
-      "primary_link": 433106,
-      "residential": 65553821,
-      "secondary": 5008689,
-      "secondary_link": 340521,
-      "service": 54202864,
-      "speed_camera": 61915,
-      "speed_display": 2621,
-      "steps": 1618344,
-      "street_lamp": 3879570,
-      "tertiary": 7809143,
-      "tertiary_link": 245867,
-      "track": 25718176,
-      "traffic_signals": 1709993,
-      "trunk": 1679773,
-      "trunk_link": 519826,
-      "unclassified": 16914480
+      "bridleway": 109975,
+      "bus_stop": 3587282,
+      "corridor": 49259,
+      "crossing": 9189431,
+      "cycleway": 1775462,
+      "elevator": 42196,
+      "footway": 23079658,
+      "living_street": 1883561,
+      "motorway": 1204850,
+      "motorway_link": 840209,
+      "path": 14198406,
+      "pedestrian": 785222,
+      "primary": 3549765,
+      "primary_link": 445944,
+      "residential": 66420752,
+      "secondary": 5144666,
+      "secondary_link": 348073,
+      "service": 55947562,
+      "speed_camera": 64026,
+      "speed_display": 2940,
+      "steps": 1696893,
+      "street_lamp": 4010703,
+      "tertiary": 8026003,
+      "tertiary_link": 253121,
+      "track": 26448303,
+      "traffic_signals": 1759343,
+      "trunk": 1733560,
+      "trunk_link": 530328,
+      "unclassified": 17225383
+    },
+    "historic": {
+      "memorial": 370367
     },
     "indoor": {
-      "area": 25332,
-      "corridor": 17609,
-      "door": 19157,
-      "level": 4253,
-      "room": 157006,
-      "wall": 32366
+      "area": 15505,
+      "corridor": 18343,
+      "door": 21487,
+      "level": 4550,
+      "room": 176469,
+      "wall": 35097
     },
     "information": {
-      "board": 321201,
-      "guidepost": 520873,
-      "map": 108166,
-      "office": 27749,
-      "route_marker": 59596,
-      "visitor_centre": 523
+      "board": 341674,
+      "guidepost": 545174,
+      "map": 113370,
+      "office": 28711,
+      "route_marker": 66118,
+      "visitor_centre": 623
     },
     "isced:level:2011": {
       "early_childhood": 0
     },
     "landuse": {
-      "village_green": 102589
+      "village_green": 104306
     },
     "leisure": {
-      "bird_hide": 6607,
-      "dog_park": 21993,
-      "fitness_centre": 72920,
-      "fitness_station": 62923,
-      "hackerspace": 1537,
-      "nature_reserve": 129575,
-      "park": 1168747,
-      "picnic_table": 302582,
-      "pitch": 2307262,
-      "playground": 821692,
-      "sports_centre": 231823,
-      "track": 124600
+      "bird_hide": 6895,
+      "dog_park": 23177,
+      "fitness_centre": 77581,
+      "fitness_station": 68530,
+      "hackerspace": 1427,
+      "nature_reserve": 132659,
+      "outdoor_seating": 53708,
+      "park": 1192441,
+      "picnic_table": 326071,
+      "pitch": 2384296,
+      "playground": 853054,
+      "sports_centre": 239823,
+      "track": 130725
     },
     "man_made": {
-      "surveillance": 205953
+      "surveillance": 225310
     },
     "memorial": {
-      "ghost_bike": 748,
-      "plaque": 45536
+      "ghost_bike": 849,
+      "plaque": 50346
     },
     "motorcar": {
-      "no": 270350,
-      "yes": 190966
+      "no": 299098,
+      "yes": 196065
     },
     "natural": {
-      "cliff": 761375,
-      "rock": 229114,
-      "stone": 52141,
-      "tree": 23309774
+      "cliff": 789632,
+      "rock": 233607,
+      "stone": 57706,
+      "tree": 24715764
     },
     "ngo": {
       "bicycle": 0,
       "cycling": 0
     },
     "office": {
-      "government": 250353
+      "government": 261001
     },
     "parking_space": {
-      "disabled": 161162
+      "charging": 12547,
+      "disabled": 203421
+    },
+    "piste:type": {
+      "connection": 2490,
+      "downhill": 101760
     },
     "planned:amenity": {
-      "charging_station": 72
+      "charging_station": 39
     },
     "playground": {
-      "forest": 77
+      "forest": 84
     },
     "post_office": {
-      "post_partner": 7560
+      "post_partner": 8171
     },
     "pub": {
       "bicycle": 0,
-      "cycling": 12
+      "cycling": 15
     },
     "public_transport": {
-      "platform": 3254387
+      "platform": 3416997
     },
     "railway": {
-      "platform": 167408
+      "platform": 173952
     },
     "recycling_type": {
-      "centre": 29508,
-      "container": 355016
+      "centre": 31415,
+      "container": 378070
     },
     "route": {
-      "bus": 272174
+      "bus": 285494
     },
     "service:bicycle:cleaning": {
-      "diy": 4,
-      "yes": 909
+      "diy": 6,
+      "yes": 974
     },
     "service:bicycle:pump": {
-      "no": 1548,
-      "yes": 12452
+      "no": 1735,
+      "yes": 13737
     },
     "service:bicycle:pump:operational_status": {
-      "broken": 122
+      "broken": 139
     },
     "service:bicycle:rental": {
-      "yes": 3902
+      "yes": 4008
     },
     "service:bicycle:repair": {
-      "yes": 15134
+      "yes": 15899
     },
     "service:bicycle:tools": {
-      "no": 354,
-      "yes": 5872
+      "no": 382,
+      "yes": 6545
     },
     "shelter": {
-      "yes": 884942
+      "yes": 936548
     },
     "shop": {
-      "bicycle": 51336,
+      "bicycle": 52359,
       "bicycle_rental": 1,
-      "rental": 5206,
-      "sports": 40802
+      "rental": 5706,
+      "sports": 42115
     },
     "sport": {
-      "bicycle": 114,
-      "climbing": 29028,
-      "cycling": 8225
+      "bicycle": 113,
+      "climbing": 36314,
+      "cycling": 8679
     },
     "surface:colour": {
-      "rainbow": 217
+      "rainbow": 289
     },
     "surveillance:type": {
-      "ALPR": 4424,
+      "ALPR": 5044,
       "ANPR": 3,
-      "camera": 165247
+      "camera": 183588
     },
     "theme": {
       "bicycle": 16,
       "cycling": 7
     },
     "toilets": {
-      "yes": 70811
+      "yes": 78095
     },
     "tourism": {
-      "artwork": 245861,
-      "hotel": 407208,
-      "map": 51,
-      "viewpoint": 219932
+      "artwork": 259874,
+      "hotel": 420311,
+      "map": 50,
+      "viewpoint": 227503
     },
     "tower:type": {
-      "observation": 23057
+      "observation": 25318
     },
     "type": {
-      "route": 1005677
+      "route": 1061215
     },
     "vending": {
-      "elongated_coin": 816,
-      "parcel_pickup;parcel_mail_in": 522,
-      "parking_tickets": 70753,
-      "public_transport_tickets": 26895
+      "parcel_pickup;parcel_mail_in": 127,
+      "parking_tickets": 76738,
+      "public_transport_tickets": 28027
     }
   }
 }

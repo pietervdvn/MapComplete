@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="200"
+   height="200"
+   viewBox="0 0 200 200"
+   id="svg11194"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="Logo LEveloSTAR Rennes.svg">
+  <defs
+     id="defs11196">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath5996">
+      <path
+         d="m 205.311,390.029 28.52,0 0,28.521 -28.52,0 0,-28.521 z"
+         id="path5998"
+         inkscape:connector-curvature="0" />
+    </clipPath>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2.8"
+     inkscape:cx="166.59718"
+     inkscape:cy="92.080883"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata11199">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(1262.7081,-392.92789)">
+    <g
+       id="g110790"
+       transform="matrix(10.718972,0,0,-10.718972,-1062.5849,492.86623)"
+       style="fill:#2b4794;fill-opacity:1">
+      <path
+         d="m 0,0 c 0,-5.155 -4.179,-9.335 -9.334,-9.335 -5.156,0 -9.336,4.18 -9.336,9.335 0,5.155 4.18,9.335 9.336,9.335 C -4.179,9.335 0,5.155 0,0"
+         style="fill:#2b4794;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path110792"
+         inkscape:connector-curvature="0" />
+    </g>
+    <g
+       id="g110794"
+       transform="matrix(10.718972,0,0,-10.718972,-1132.8396,502.84131)">
+      <path
+         d="M 0,0 C -0.001,0.002 -0.002,0.004 -0.003,0.005 L 1.563,5.543 C 1.289,5.779 0.877,5.947 0.577,5.99 0.466,6.006 0.337,6.016 0.206,6.016 -0.015,6.015 -0.236,5.985 -0.375,5.906 l 0,0.006 C -0.38,5.91 -0.385,5.908 -0.39,5.906 L -2.753,-2.67 c -0.006,-0.017 -0.018,-0.038 -0.029,-0.058 -0.011,0.02 -0.024,0.041 -0.029,0.058 L -5.175,5.906 C -5.397,6.032 -5.828,6.034 -6.131,5.991 L -6.128,5.99 C -6.426,5.947 -6.835,5.78 -7.11,5.545 l 2.805,-9.91 c 0.411,-0.224 0.876,-0.363 1.371,-0.386 0.051,-0.004 0.101,-0.01 0.154,-0.01 0.051,0 0.1,0.006 0.15,0.01 0.502,0.023 0.973,0.164 1.389,0.394 L 0,0 Z"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path110796"
+         inkscape:connector-curvature="0" />
+    </g>
+  </g>
+</svg>

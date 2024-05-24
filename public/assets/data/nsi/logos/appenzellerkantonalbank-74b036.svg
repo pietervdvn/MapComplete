@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.0"
+   width="223.13246"
+   height="223.13229"
+   id="svg2"
+   sodipodi:docname="Icon_Appenzeller_Kantonalbank.svg"
+   inkscape:version="1.1.1 (c3084ef, 2021-09-22)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview2309"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="1"
+     inkscape:cx="-72.5"
+     inkscape:cy="-1"
+     inkscape:window-width="1377"
+     inkscape:window-height="912"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="g2900" />
+  <defs
+     id="defs4" />
+  <g
+     transform="translate(-13.181884,-14.884647)"
+     id="layer1">
+    <g
+       transform="matrix(5.8248529,0,0,5.8248529,1983.7609,-4751.1788)"
+       id="g2900">
+      <path
+         d="m -338.20817,856.43872 v -38.11254 h 38.11257 v 38.11254 h -38.11257"
+         id="path2524"
+         style="fill:#ed192e;fill-opacity:1;fill-rule:nonzero;stroke:none" />
+      <path
+         d="m -338.20817,856.43872 v -38.11254 h 38.11257 v 38.11254 z"
+         id="path2528"
+         style="fill:none;stroke:#ed192e;stroke-width:0.1944;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <path
+         d="m -301.55644,854.976 v -35.18184 h -35.18109 V 854.976 h 35.18109"
+         id="path2530"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none" />
+      <path
+         d="m -330.86226,837.38442 9.65765,15.73128 17.58308,-5.4e-4 -9.66951,-15.71819 9.71096,-15.76435 -17.5862,10e-4 -9.69598,15.75048"
+         id="path2532"
+         style="fill:#ed192e;fill-opacity:1;fill-rule:nonzero;stroke:none" />
+    </g>
+  </g>
+</svg>

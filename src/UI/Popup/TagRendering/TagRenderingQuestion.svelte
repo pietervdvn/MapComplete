@@ -3,7 +3,6 @@
   import type { SpecialVisualizationState } from "../../SpecialVisualization"
   import Tr from "../../Base/Tr.svelte"
   import type { Feature } from "geojson"
-  import type { Mapping } from "../../../Models/ThemeConfig/TagRenderingConfig"
   import TagRenderingConfig from "../../../Models/ThemeConfig/TagRenderingConfig"
   import { TagsFilter } from "../../../Logic/Tags/TagsFilter"
   import FreeformInput from "./FreeformInput.svelte"
@@ -30,6 +29,7 @@
   import { placeholder } from "../../../Utils/placeholder"
   import { TrashIcon } from "@rgossiaux/svelte-heroicons/solid"
   import { Tag } from "../../../Logic/Tags/Tag"
+  import { And } from "../../../Logic/Tags/And"
   import { get } from "svelte/store"
   import Markdown from "../../Base/Markdown.svelte"
 
@@ -40,6 +40,7 @@
   export let state: SpecialVisualizationState
   export let layer: LayerConfig | undefined
   export let selectedTags: UploadableTag = undefined
+  export let extraTags: UIEventSource<Record<string, string>> = new UIEventSource({})
 
   export let allowDeleteOfFreeform: boolean = false
 
@@ -57,7 +58,6 @@
    */
   let checkedMappings: boolean[]
 
-  let mappings: Mapping[] = config?.mappings ?? []
   let searchTerm: UIEventSource<string> = new UIEventSource("")
 
   let dispatch = createEventDispatcher<{
@@ -70,16 +70,17 @@
   /**
    * Prepares and fills the checkedMappings
    */
-  console.log("Initing ", config.id)
 
   function initialize(tgs: Record<string, string>, confg: TagRenderingConfig): void {
-    mappings = confg.mappings?.filter((m) => {
+    const mappings = confg.mappings?.filter((m) => {
       if (typeof m.hideInAnswer === "boolean") {
         return !m.hideInAnswer
       }
       return !m.hideInAnswer.matchesProperties(tgs)
     })
-    selectedMapping = mappings?.findIndex(mapping => mapping.if.matchesProperties(tgs) || mapping.alsoShowIf?.matchesProperties(tgs))
+    selectedMapping = mappings?.findIndex(
+      (mapping) => mapping.if.matchesProperties(tgs) || mapping.alsoShowIf?.matchesProperties(tgs)
+    )
     if (selectedMapping < 0) {
       selectedMapping = undefined
     }
@@ -105,7 +106,7 @@
             seenFreeforms.push(newProps[confg.freeform.key])
           }
           return matches
-        })
+        }),
       ]
 
       if (tgs !== undefined && confg.freeform) {
@@ -136,17 +137,15 @@
       freeformInput.set(undefined)
     }
     feedback.setData(undefined)
-
-
   }
 
-  let usedKeys: string[] = config.usedTags().flatMap(t => t.usedKeys())
+  let usedKeys: string[] = config.usedTags().flatMap((t) => t.usedKeys())
   /**
    * The 'minimalTags' is a subset of the tags of the feature, only containing the values relevant for this object.
    * The main goal is to be stable and only 'ping' when an actual change is relevant
    */
   let minimalTags = new UIEventSource<Record<string, string>>(undefined)
-  tags.addCallbackAndRunD(tags => {
+  tags.addCallbackAndRunD((tags) => {
     const previousMinimal = minimalTags.data
     const newMinimal: Record<string, string> = {}
     let somethingChanged = previousMinimal === undefined
@@ -156,22 +155,19 @@
       if (newValue !== undefined && newValue !== null) {
         newMinimal[key] = newValue
       }
-
     }
     if (somethingChanged) {
-      console.log("Updating minimal tags to", newMinimal,"of",config.id)
       minimalTags.setData(newMinimal)
     }
   })
 
-  minimalTags.addCallbackAndRunD(tgs => {
+  minimalTags.addCallbackAndRunD((tgs) => {
     initialize(tgs, config)
   })
 
-
   onDestroy(
     freeformInput.subscribe((freeformValue) => {
-      if (!mappings || mappings?.length == 0 || config.freeform?.key === undefined) {
+      if (!config?.mappings || config?.mappings?.length == 0 || config.freeform?.key === undefined) {
         return
       }
       // If a freeform value is given, mark the 'mapping' as marked
@@ -180,11 +176,11 @@
           // Initialization didn't yet run
           return
         }
-        checkedMappings[mappings.length] = freeformValue?.length > 0
+        checkedMappings[config?.mappings.length] = freeformValue?.length > 0
         return
       }
       if (freeformValue?.length > 0) {
-        selectedMapping = mappings.length
+        selectedMapping = config.mappings.length
       }
     })
   )
@@ -194,7 +190,7 @@
       allowDeleteOfFreeform &&
       $freeformInput === undefined &&
       $freeformInputUnvalidated === "" &&
-      (mappings?.length ?? 0) === 0
+      (config?.mappings?.length ?? 0) === 0
     ) {
       selectedTags = new Tag(config.freeform.key, "")
     } else {
@@ -206,16 +202,37 @@
           tags.data
         )
         if (featureSwitchIsDebugging?.data) {
-          console.log("Constructing change spec from", {
-            freeform: $freeformInput,
-            selectedMapping,
-            checkedMappings,
-            currentTags: tags.data
-          }, " --> ", selectedTags)
+          console.log(
+            "Constructing change spec from",
+            {
+              freeform: $freeformInput,
+              selectedMapping,
+              checkedMappings,
+              currentTags: tags.data,
+            },
+            " --> ",
+            selectedTags
+          )
         }
       } catch (e) {
         console.error("Could not calculate changeSpecification:", e)
         selectedTags = undefined
+      }
+    }
+
+    if (extraTags.data && selectedTags !== undefined) {
+      // Map the extraTags into an array of Tag objects
+      const extraTagsArray = Object.entries(extraTags.data).map(([k, v]) => new Tag(k, v))
+
+      // Check the type of selectedTags
+      if (selectedTags instanceof Tag) {
+        // Re-define selectedTags as an And
+        selectedTags = new And([selectedTags, ...extraTagsArray])
+      } else if (selectedTags instanceof And) {
+        // Add the extraTags to the existing And
+        selectedTags = new And([...selectedTags.and, ...extraTagsArray])
+      } else {
+        console.error("selectedTags is not of type Tag or And, it is a "+JSON.stringify(selectedTags))
       }
     }
   }
@@ -224,6 +241,7 @@
     if (selectedTags === undefined) {
       return
     }
+
     if (layer === undefined || (layer?.source === null && layer.id !== "favourite")) {
       /**
        * This is a special, privileged layer.
@@ -245,7 +263,7 @@
     dispatch("saved", { config, applied: selectedTags })
     const change = new ChangeTagAction(tags.data.id, selectedTags, tags.data, {
       theme: tags.data["_orig_theme"] ?? state.layout.id,
-      changeType: "answer"
+      changeType: "answer",
     })
     freeformInput.set(undefined)
     selectedMapping = undefined
@@ -271,6 +289,7 @@
   let showTags = state?.userRelatedState?.showTags ?? new ImmutableStore(undefined)
   let numberOfCs = state?.osmConnection?.userDetails?.data?.csCount ?? 0
   let question = config.question
+  let hideMappingsUnlessSearchedFor = config.mappings.length > 8 && config.mappings.some(m => m.priorityIf)
   $: question = config.question
   if (state?.osmConnection) {
     onDestroy(
@@ -298,7 +317,7 @@
 
           {#if config.questionhint}
             {#if config.questionHintIsMd}
-              <Markdown srcWritable={ config.questionhint.current} />
+              <Markdown srcWritable={config.questionhint.current} />
             {:else}
               <div class="max-h-60 overflow-y-auto">
                 <SpecialTranslation
@@ -313,7 +332,7 @@
           {/if}
         </legend>
 
-        {#if config.mappings?.length >= 8}
+        {#if config.mappings?.length >= 8 || hideMappingsUnlessSearchedFor}
           <div class="sticky flex w-full" aria-hidden="true">
             <Search class="h-6 w-6" />
             <input
@@ -323,9 +342,16 @@
               use:placeholder={Translations.t.general.searchAnswer}
             />
           </div>
+          {#if hideMappingsUnlessSearchedFor}
+            <div class="rounded border border-black border-dashed p-1 px-2 m-1">
+              <Tr t={Translations.t.general.mappingsAreHidden}/>
+            </div>
+          {/if}
         {/if}
 
-        {#if config.freeform?.key && !(mappings?.length > 0)}
+
+
+        {#if config.freeform?.key && !(config?.mappings?.length > 0)}
           <!-- There are no options to choose from, simply show the input element: fill out the text field -->
           <FreeformInput
             {config}
@@ -333,12 +359,13 @@
             {feedback}
             {unit}
             {state}
+            {extraTags}
             feature={selectedElement}
             value={freeformInput}
             unvalidatedText={freeformInputUnvalidated}
             on:submit={() => onSave()}
           />
-        {:else if mappings !== undefined && !config.multiAnswer}
+        {:else if config.mappings !== undefined && !config.multiAnswer}
           <!-- Simple radiobuttons as mapping -->
           <div class="flex flex-col">
             {#each config.mappings as mapping, i (mapping.then)}
@@ -350,6 +377,7 @@
                 {selectedElement}
                 {layer}
                 {searchTerm}
+                hideUnlessSearched={hideMappingsUnlessSearchedFor}
                 mappingIsSelected={selectedMapping === i}
               >
                 <input
@@ -376,6 +404,7 @@
                   {feedback}
                   {unit}
                   {state}
+                  {extraTags}
                   feature={selectedElement}
                   value={freeformInput}
                   unvalidatedText={freeformInputUnvalidated}
@@ -385,7 +414,7 @@
               </label>
             {/if}
           </div>
-        {:else if mappings !== undefined && config.multiAnswer}
+        {:else if config.mappings !== undefined && config.multiAnswer}
           <!-- Multiple answers can be chosen: checkboxes -->
           <div class="flex flex-col">
             {#each config.mappings as mapping, i (mapping.then)}
@@ -396,6 +425,7 @@
                 {selectedElement}
                 {layer}
                 {searchTerm}
+                hideUnlessSearched={hideMappingsUnlessSearchedFor}
                 mappingIsSelected={checkedMappings[i]}
               >
                 <input
@@ -420,6 +450,7 @@
                   {feedback}
                   {unit}
                   {state}
+                  {extraTags}
                   feature={selectedElement}
                   value={freeformInput}
                   unvalidatedText={freeformInputUnvalidated}
@@ -447,7 +478,7 @@
             <!-- TagRenderingQuestion-buttons -->
             <slot name="cancel" />
             <slot name="save-button" {selectedTags}>
-              {#if allowDeleteOfFreeform && (mappings?.length ?? 0) === 0 && $freeformInput === undefined && $freeformInputUnvalidated === ""}
+              {#if allowDeleteOfFreeform && (config?.mappings?.length ?? 0) === 0 && $freeformInput === undefined && $freeformInputUnvalidated === ""}
                 <button
                   class="primary flex"
                   on:click|stopPropagation|preventDefault={() => onSave()}

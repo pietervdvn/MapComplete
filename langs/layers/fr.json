@@ -4382,17 +4382,6 @@
                 "freeform": {
                     "placeholder": "Marque"
                 },
-                "mappings": {
-                    "0": {
-                        "then": "C'est un Amazon Locker"
-                    },
-                    "2": {
-                        "then": "C'est une DPD Pickup Station"
-                    },
-                    "3": {
-                        "then": "C'est un PostNL Parcel Locker"
-                    }
-                },
                 "question": "Quelle est la marque de ce casier à colis ?",
                 "render": "C'est un casier à colis {brand}"
             },
@@ -4824,9 +4813,6 @@
             "public_bookcase-brand": {
                 "mappings": {
                     "0": {
-                        "then": "Fait partie du réseau Little Free Library"
-                    },
-                    "1": {
                         "then": "Cette microbibliothèque ne fait pas partie d'un réseau/groupe"
                     }
                 },

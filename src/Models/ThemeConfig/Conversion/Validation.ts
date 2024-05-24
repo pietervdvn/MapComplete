@@ -26,6 +26,7 @@ import { Translatable } from "../Json/Translatable"
 import { ConversionContext } from "./ConversionContext"
 import { AvailableRasterLayers } from "../../RasterLayers"
 import PointRenderingConfigJson from "../Json/PointRenderingConfigJson"
+import NameSuggestionIndex from "../../../Logic/Web/NameSuggestionIndex"
 
 class ValidateLanguageCompleteness extends DesugaringStep<LayoutConfig> {
     private readonly _languages: string[]
@@ -926,8 +927,10 @@ class CheckTranslation extends DesugaringStep<Translatable> {
 }
 
 class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
-    constructor() {
+    private readonly _layerConfig: LayerConfigJson
+    constructor(layerConfig?: LayerConfigJson) {
         super("Miscellaneous checks on the tagrendering", ["special"], "MiscTagRenderingChecks")
+        this._layerConfig = layerConfig
     }
 
     convert(
@@ -1091,6 +1094,15 @@ class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
                         )
                 }
             }
+            if(this._layerConfig?.source?.osmTags && NameSuggestionIndex.supportedTypes().indexOf(json.freeform.key) >= 0){
+                const tags=  TagUtils.TagD(this._layerConfig?.source?.osmTags)?.usedTags()
+                const suggestions = NameSuggestionIndex.getSuggestionsFor(json.freeform.key, tags)
+                if(suggestions === undefined){
+                    context.enters("freeform","type").err("No entry found in the 'Name Suggestion Index'. None of the 'osmSource'-tags match an entry in the NSI.\n\tOsmSource-tags are "+tags.map(t => t.asHumanString()).join(" ; "))
+                }
+            }else if(json.freeform.type === "nsi"){
+                context.enters("freeform","type").warn("No need to explicitly set type to 'NSI', autodetected based on freeform type")
+            }
         }
         if (json.render && json["question"] && json.freeform === undefined) {
             context.err(
@@ -1136,7 +1148,7 @@ export class ValidateTagRenderings extends Fuse<TagRenderingConfigJson> {
     constructor(layerConfig?: LayerConfigJson, doesImageExist?: DoesImageExist) {
         super(
             "Various validation on tagRenderingConfigs",
-            new MiscTagRenderingChecks(),
+            new MiscTagRenderingChecks(layerConfig),
             new DetectShadowedMappings(layerConfig),
 
             new DetectMappingsShadowedByCondition(),
@@ -1147,7 +1159,7 @@ export class ValidateTagRenderings extends Fuse<TagRenderingConfigJson> {
             new On("question", new ValidatePossibleLinks()),
             new On("questionHint", new ValidatePossibleLinks()),
             new On("mappings", new Each(new On("then", new ValidatePossibleLinks()))),
-            new MiscTagRenderingChecks()
+            new MiscTagRenderingChecks(layerConfig)
         )
     }
 }

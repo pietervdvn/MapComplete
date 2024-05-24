@@ -19,6 +19,9 @@ missing_translations.txt
 .DS_Store
 Svg.ts
 data/
+src/assets/generated/nsi_stats/brand.json
+src/assets/generated/nsi_stats/brand.summarized.json
+
 Folder.DotSettings.user
 index_*.ts
 .~lock.*

@@ -1,11 +1,10 @@
 import * as fs from "fs"
 import { existsSync, lstatSync, readdirSync, readFileSync } from "fs"
 import { Utils } from "../src/Utils"
-import * as https from "https"
+import {https} from "follow-redirects"
 import { LayoutConfigJson } from "../src/Models/ThemeConfig/Json/LayoutConfigJson"
 import { LayerConfigJson } from "../src/Models/ThemeConfig/Json/LayerConfigJson"
 import xml2js from "xml2js"
-import { resolve } from "node:dns"
 
 export default class ScriptUtils {
     public static fixUtils() {

@@ -18,7 +18,6 @@
 
   function animate(opened: boolean) {
     const moveToElem = moveTo.data
-console.log("Animating", debug," to", opened)
     if (opened) {
       copySizeOf(targetOuter)
       elem.style.background = "var(--background-color)"

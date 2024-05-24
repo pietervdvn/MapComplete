@@ -6811,20 +6811,6 @@
                 "freeform": {
                     "placeholder": "Marke"
                 },
-                "mappings": {
-                    "0": {
-                        "then": "Dies ist ein Amazon Locker"
-                    },
-                    "1": {
-                        "then": "Dies ist eine DHL-Packstation"
-                    },
-                    "2": {
-                        "then": "Dies ist eine DPD Pickup Station"
-                    },
-                    "3": {
-                        "then": "Dies ist ein PostNL-Paketschließfach"
-                    }
-                },
                 "question": "Welche Marke hat das Paketschließfach?",
                 "render": "Dies ist ein Paketschließfach von {brand}"
             },
@@ -7659,9 +7645,6 @@
             "public_bookcase-brand": {
                 "mappings": {
                     "0": {
-                        "then": "Der Bücherschrank gehört zum Netzwerk 'Little Free Library'"
-                    },
-                    "1": {
                         "then": "Der Bücherschrank gehört zu keinem Netzwerk"
                     }
                 },

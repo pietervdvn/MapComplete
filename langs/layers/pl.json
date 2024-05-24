@@ -2082,14 +2082,6 @@
                 "freeform": {
                     "placeholder": "Marka"
                 },
-                "mappings": {
-                    "0": {
-                        "then": "To jest paczkomat Amazonu"
-                    },
-                    "3": {
-                        "then": "To jest paczkomat PostNL"
-                    }
-                },
                 "question": "Jakiej marki jest ten paczkomat?",
                 "render": "To jest paczkomat marki {brand}"
             },
@@ -2239,17 +2231,6 @@
                     }
                 },
                 "question": "Czy można tutaj wysłać paczkę?"
-            }
-        }
-    },
-    "public_bookcase": {
-        "tagRenderings": {
-            "public_bookcase-brand": {
-                "mappings": {
-                    "0": {
-                        "then": "Część sieci \"Little Free Library\""
-                    }
-                }
             }
         }
     },

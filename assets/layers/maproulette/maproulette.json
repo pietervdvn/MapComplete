@@ -21,7 +21,8 @@
   "source": {
     "geoJson": "https://maproulette.org/api/v2/tasks/box/{x_min}/{y_min}/{x_max}/{y_max}",
     "geoJsonZoomLevel": 16,
-    "osmTags": "title~*"
+    "osmTags": "title~*",
+    "idKey": "mr_taskId"
   },
   "minzoom": 15,
   "title": {

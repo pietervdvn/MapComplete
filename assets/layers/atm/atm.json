@@ -150,7 +150,10 @@
       },
       "freeform": {
         "key": "brand",
-        "type": "string",
+        "type": "nsi",
+        "helperArgs": [
+          "amenity=atm"
+        ],
         "placeholder": {
           "en": "Brand name",
           "de": "Markenname",

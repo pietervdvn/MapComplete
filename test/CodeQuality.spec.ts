@@ -81,7 +81,6 @@ const cachedHashes: Record<string, string> = {}
 async function validateScriptIntegrityOf(path: string): Promise<void> {
     const htmlContents = readFileSync(path, "utf8")
     const doc = parse_html(htmlContents)
-    // @ts-ignore
     const scripts = Array.from(doc.getElementsByTagName("script"))
     // Maps source URL onto hash
     const failed = new Set<string>()

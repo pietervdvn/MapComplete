@@ -445,7 +445,7 @@
           <span slot="close-button" />
         </SelectedElementTitle>
       {/if}
-      <SelectedElementView {state} layer={$selectedLayer} selectedElement={$selectedElement} />
+      <SelectedElementView {state} selectedElement={$selectedElement} />
     </div>
   </FloatOver>
 {/if}
@@ -685,6 +685,6 @@
 <CloseAnimation isOpened={state.guistate.themeIsOpened} moveTo={openMapButton} debug="theme"/>
 <CloseAnimation isOpened={state.guistate.menuIsOpened} moveTo={openMenuButton} debug="menu"/>
 <CloseAnimation isOpened={selectedLayer.map(sl => (sl !== undefined && sl === currentViewLayer))} moveTo={openCurrentViewLayerButton} debug="currentViewLayer"/>
-<CloseAnimation isOpened={selectedElement.map(sl =>{ console.log("SE is", sl);  return sl !== undefined && sl?.properties?.id === LastClickFeatureSource.newPointElementId })} moveTo={openNewElementButton} debug="newElement"/>
+<CloseAnimation isOpened={selectedElement.map(sl => sl !== undefined && sl?.properties?.id === LastClickFeatureSource.newPointElementId)} moveTo={openNewElementButton} debug="newElement"/>
 <CloseAnimation isOpened={state.guistate.filtersPanelIsOpened} moveTo={openFilterButton} debug="filter"/>
 <CloseAnimation isOpened={state.guistate.backgroundLayerSelectionIsOpened} moveTo={openBackgroundButton} debug="bg"/>

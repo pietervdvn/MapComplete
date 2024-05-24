@@ -1747,7 +1747,7 @@ console.log(">>> ",helpTexts.join("\n\n"))
                 ): BaseUIElement {
                     return new Toggle(
                         undefined,
-                        new SvelteUIElement(LoginButton),
+                        new SvelteUIElement(LoginButton, {osmConnection: state.osmConnection}),
                         state.osmConnection.isLoggedIn
                     )
                 }

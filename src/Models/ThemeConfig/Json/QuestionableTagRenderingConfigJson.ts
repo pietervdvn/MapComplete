@@ -194,11 +194,11 @@ export interface QuestionableTagRenderingConfigJson extends TagRenderingConfigJs
     mappings?: MappingConfigJson[]
 
     /**
-     * If true, use checkboxes instead of radio buttons when asking the question
-     *
      * question: Should a contributor be allowed to select multiple mappings?
      *
-     * iftrue: allow to select multiple mappings
+     * If true, use checkboxes instead of radio buttons when asking the question.
+     *
+     * iftrue: allow to select multiple mappings (and show a freeform-value as list if ';'-separated)
      * iffalse: only allow to select a single mapping
      * ifunset: only allow to select a single mapping
      */
@@ -233,12 +233,6 @@ export interface QuestionableTagRenderingConfigJson extends TagRenderingConfigJs
          */
         placeholder?: Translatable
 
-        /**
-         * Extra parameters to initialize the input helper arguments.
-         * For semantics, see the 'SpecialInputElements.md'
-         * group: expert
-         */
-        helperArgs?: (string | number | boolean | any)[]
         /**
          * If a value is added with the textfield, these extra tag is addded.
          * Useful to add a 'fixme=freeform textfield used - to be checked'

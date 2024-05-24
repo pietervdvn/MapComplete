@@ -13,7 +13,7 @@
    */
   let calculatedTags: string[] = []
   for (const calculated of layer?.calculatedTags ?? []) {
-    if (calculated) {
+    if (!calculated) {
       continue
     }
     const name = calculated[0]
@@ -69,7 +69,7 @@
           {:else if $tags[key] === ""}
             <i>Empty string</i>
           {:else if $tags[key] !== "string"}
-            <span class="literal-code">{$tags[key]}</span>
+            <span class="literal-code">{JSON.stringify($tags[key])}</span>
             <i>{typeof $tags[key]}</i>
           {:else}
             {$tags[key]}

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="Слой_1"
+   data-name="Слой 1"
+   viewBox="0 0 399.99999 315"
+   version="1.1"
+   sodipodi:docname="Vkusno_I_Tochka_symbol_resizefix.svg"
+   width="400"
+   height="315"
+   inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     id="namedview17"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     showgrid="false"
+     showguides="false"
+     inkscape:zoom="0.87593224"
+     inkscape:cx="163.25464"
+     inkscape:cy="228.32816"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Слой_1" />
+  <defs
+     id="defs4">
+    <style
+       id="style2">
+      .cls-1 {
+        fill: #e8410f;
+      }
+
+      .cls-2 {
+        fill: #ef7403;
+      }
+    </style>
+  </defs>
+  <title
+     id="title6">Vkusno I Tochka symbol</title>
+  <g
+     id="g14"
+     transform="matrix(1.2787009,0,0,1.2787009,0,8.0211277e-4)">
+    <circle
+       class="cls-1"
+       cx="57.657269"
+       cy="188.65173"
+       r="57.657269"
+       id="circle8" />
+    <path
+       class="cls-2"
+       d="M 112.78343,2.28665 A 4.585,4.585 0 0 0 106.30681,0.74672 57.19984,57.19984 0 0 0 83.95022,28.25555 q -0.33366,0.87978 -0.63143,1.7519 a 54.98209,54.98209 0 0 0 4.778,45.16933 q 48.31814,83.65778 96.63627,167.3156 a 4.58491,4.58491 0 0 0 6.28092,1.66325 52.0521,52.0521 0 0 0 17.7693,-16.79137 c 6.96534,-10.85287 8.40824,-22.45423 7.78006,-32.17724 a 65.91065,65.91065 0 0 0 -8.87442,-28.652 Q 160.23616,84.41088 112.78343,2.28665 Z"
+       id="path10" />
+    <path
+       class="cls-2"
+       d="m 208.90488,2.28665 a 4.585,4.585 0 0 0 -6.47662,-1.53993 57.19984,57.19984 0 0 0 -22.35659,27.50883 q -0.33366,0.87978 -0.63143,1.7519 a 54.98213,54.98213 0 0 0 4.778,45.16933 q 48.31813,83.65778 96.63627,167.3156 a 4.58491,4.58491 0 0 0 6.28092,1.66325 52.052,52.052 0 0 0 17.7693,-16.79137 c 6.96534,-10.85287 8.40825,-22.45423 7.78006,-32.17724 a 65.91052,65.91052 0 0 0 -8.87442,-28.652 Q 256.35761,84.41088 208.90488,2.28665 Z"
+       id="path12" />
+  </g>
+  <metadata
+     id="metadata373">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>Vkusno I Tochka symbol</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>
