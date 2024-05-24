@@ -5,7 +5,6 @@ import List from "../UI/Base/List"
 import Title from "../UI/Base/Title"
 import { BBox } from "./BBox"
 import { Feature, Geometry, MultiPolygon, Polygon } from "geojson"
-import { GeoJSONFeature } from "maplibre-gl"
 
 export interface ExtraFuncParams {
     /**
@@ -508,9 +507,9 @@ export class ExtraFunctions {
     public static constructHelpers(
         params: ExtraFuncParams
     ): Record<ExtraFuncType, (feature: Feature) => Function> {
-        const record: Record<string, (feature: GeoJSONFeature) => Function> = {}
+        const record: Record<string, (feature: Feature) => Function> = {}
         for (const f of ExtraFunctions.allFuncs) {
-            if (this.types.indexOf(<any>f._name) < 0) {
+            if ((<readonly string[]> this.types).indexOf(f._name) < 0) {
                 throw "Invalid extraFunc-type: " + f._name
             }
             record[f._name] = (feat) => f._f(params, feat)

@@ -9,11 +9,14 @@ import { IndexedFeatureSource } from "./FeatureSource/FeatureSource"
 import OsmObjectDownloader from "./Osm/OsmObjectDownloader"
 import { Utils } from "../Utils"
 import { Store, UIEventSource } from "./UIEventSource"
+import { selectDefault } from "../Utils/selectDefault"
 
 /**
  * Metatagging adds various tags to the elements, e.g. lat, lon, surface area, ...
  *
- * All metatags start with an underscore
+ * All metatags start with an underscore.
+ *
+ * Will apply the metatags as soon as they are passed in
  */
 export default class MetaTagging {
     private static errorPrintCount = 0
@@ -23,6 +26,18 @@ export default class MetaTagging {
         string,
         ((feature: Feature, propertiesStore: UIEventSource<any>) => void)[]
     >()
+    private state: {
+        readonly selectedElement: Store<Feature>;
+        readonly layout: LayoutConfig;
+        readonly osmObjectDownloader: OsmObjectDownloader;
+        readonly perLayer: ReadonlyMap<string, GeoIndexedStoreForLayer>;
+        readonly indexedFeatures: IndexedFeatureSource;
+        readonly featureProperties: FeaturePropertiesStore
+    }
+    private params: {
+        getFeatureById: (id) => Feature;
+        getFeaturesWithin: (layerId, bbox) => (Feature[][] | [Feature[]])
+    }
 
     constructor(state: {
         readonly selectedElement: Store<Feature>
@@ -32,7 +47,8 @@ export default class MetaTagging {
         readonly indexedFeatures: IndexedFeatureSource
         readonly featureProperties: FeaturePropertiesStore
     }) {
-        const params = MetaTagging.createExtraFuncParams(state)
+        this.state = state
+        const params = this.params = MetaTagging.createExtraFuncParams(state)
         for (const layer of state.layout.layers) {
             if (layer.source === null) {
                 continue
@@ -61,21 +77,55 @@ export default class MetaTagging {
             })
         }
 
-        state.selectedElement.addCallbackAndRunD((feature) => {
-            const layer = state.layout.getMatchingLayer(feature.properties)
-            // Force update the tags of the currently selected element
-            MetaTagging.addMetatags(
-                [feature],
-                params,
-                layer,
-                state.layout,
-                state.osmObjectDownloader,
-                state.featureProperties,
-                {
-                    evaluateStrict: true,
+        // Force update the tags of the currently selected element
+        state.selectedElement.addCallbackAndRunD(feature => {
+            this.updateCurrentSelectedElement()
+            let lastUpdateMoment = new Date()
+            const tags = state?.featureProperties?.getStore(feature.properties.id)
+            console.log("Binding an updater to", feature)
+            tags?.addCallbackD(() => {
+                console.log("Received an update!")
+                if(feature !== state.selectedElement.data){
+                    return true // Unregister, we are not the selected element anymore
                 }
-            )
+                if(new Date().getTime() - lastUpdateMoment.getTime() < 250){
+                    return
+                }
+                lastUpdateMoment = new Date()
+                window.requestIdleCallback(() => {
+                    this.updateCurrentSelectedElement()
+                    lastUpdateMoment = new Date()
+
+                })
+            })
         })
+
+
+    }
+
+    /**
+     * Triggers an update of the calculated tags of the selected element
+     * @private
+     */
+    private updateCurrentSelectedElement() {
+        const feature = this.state.selectedElement.data
+        if (!feature) {
+            return
+        }
+        const state = this.state
+        const layer = state.layout.getMatchingLayer(feature.properties)
+        // Force update if the tags of the element changed
+        MetaTagging.addMetatags(
+            [feature],
+            this.params,
+            layer,
+            state.layout,
+            state.osmObjectDownloader,
+            state.featureProperties,
+            {
+                evaluateStrict: true
+            }
+        )
     }
 
     // noinspection JSUnusedGlobalSymbols
@@ -142,7 +192,7 @@ export default class MetaTagging {
             const feature = features[i]
             const tags = featurePropertiesStores?.getStore(feature.properties.id)
             let somethingChanged = false
-            let definedTags = new Set(Object.getOwnPropertyNames(feature.properties))
+            const definedTags = new Set(Object.getOwnPropertyNames(feature.properties))
 
             for (const metatag of metatagsToApply) {
                 try {
@@ -161,6 +211,7 @@ export default class MetaTagging {
                         metatag.applyMetaTagsOnFeature(feature, layer, tags, state)
                         if (options?.evaluateStrict) {
                             for (const key of metatag.keys) {
+                                // Important: we _have_ to evaluate this as this might trigger a calculation
                                 const evaluated = feature.properties[key]
                                 if (evaluated !== undefined) {
                                     strictlyEvaluated++
@@ -211,6 +262,7 @@ export default class MetaTagging {
                 atLeastOneFeatureChanged = true
             }
         }
+        console.debug("Strictly evaluated ", strictlyEvaluated, " values") // Do not remove this
         return atLeastOneFeatureChanged
     }
 
@@ -228,12 +280,12 @@ export default class MetaTagging {
                     })
                     return feats
                 }
-                if(!state.perLayer.get(layerId)){
+                if (!state.perLayer.get(layerId)) {
                     // This layer is not loaded
                     return []
                 }
                 return [state.perLayer.get(layerId).GetFeaturesWithin(bbox)]
-            },
+            }
         }
     }
 
@@ -278,8 +330,8 @@ export default class MetaTagging {
                 if (MetaTagging.errorPrintCount < MetaTagging.stopErrorOutputAt) {
                     console.warn(
                         "Could not calculate a " +
-                            (isStrict ? "strict " : "") +
-                            "calculated tag for key",
+                        (isStrict ? "strict " : "") +
+                        "calculated tag for key",
                         key,
                         "for feature",
                         feat.properties.id,
@@ -287,9 +339,9 @@ export default class MetaTagging {
                         code,
                         "(in layer",
                         layerId +
-                            ") due to \n" +
-                            e +
-                            "\n. Are you the theme creator? Doublecheck your code. Note that the metatags might not be stable on new features",
+                        ") due to \n" +
+                        e +
+                        "\n. Are you the theme creator? Doublecheck your code. Note that the metatags might not be stable on new features",
                         e,
                         e.stack,
                         { feat }
@@ -328,7 +380,6 @@ export default class MetaTagging {
 
             const funcName = "metaTaggging_for_" + id
             if (typeof MetaTagging.metataggingObject[funcName] !== "function") {
-                console.log(MetaTagging.metataggingObject)
                 throw (
                     "Error: metatagging-object for this theme does not have an entry at " +
                     funcName +
