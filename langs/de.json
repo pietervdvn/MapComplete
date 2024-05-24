@@ -290,6 +290,7 @@
         "loginToStart": "Anmelden, um diese Frage zu beantworten",
         "loginWithOpenStreetMap": "Bei OpenStreetMap anmelden",
         "logout": "Abmelden",
+        "mappingsAreHidden": "Einige Optionen sind versteckt. Verwende die Suche, um mehr Optionen anzuzeigen.",
         "menu": {
             "aboutMapComplete": "Über MapComplete",
             "filter": "Daten filtern"
