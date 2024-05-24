@@ -4,6 +4,7 @@
     "en": "Velopark to OpenStreetMap synchronisation tool",
     "nl": "Velopark naar OpenStreetMap sync tool"
   },
+  "customCss": "./assets/themes/velopark/velopark.css",
   "mustHaveLanguage": [
     "nl",
     "en"
@@ -309,9 +310,7 @@
       ],
       "hideTagRenderingsWithLabels": [
         "images",
-        "leftover-questions",
-        "qr_code",
-        "favourite_status"
+        "leftover-questions"
       ],
       "override": {
         "id": "bike_parking_with_velopark_ref",
@@ -395,9 +394,7 @@
       ],
       "hideTagRenderingsWithLabels": [
         "images",
-        "leftover-questions",
-        "qr_code",
-        "favourite_status"
+        "leftover-questions"
       ],
       "override": {
         "doCount": false,
