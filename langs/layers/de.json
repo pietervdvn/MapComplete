@@ -7643,6 +7643,9 @@
                 "question": "Befindet sich der Bücherschrank im Freien?"
             },
             "public_bookcase-brand": {
+                "freeform": {
+                    "placeholder": "Name des Netzwerks"
+                },
                 "mappings": {
                     "0": {
                         "then": "Der Bücherschrank gehört zu keinem Netzwerk"
