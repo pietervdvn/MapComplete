@@ -214,7 +214,7 @@
         "cs": "Tento psí park je {_surface:ha} ha velký"
       },
       "condition": "_surface:ha!=0"
-    },
+    }
 
   ]
 }
