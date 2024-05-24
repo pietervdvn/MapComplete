@@ -914,7 +914,7 @@
                         "then": "Diese Bank hat keine Inschrift"
                     },
                     "1": {
-                        "then": "Diese Bank hat <span class='subtle'>(wahrscheinlich)</span> keine Inschrift"
+                        "then": "Diese Bank hat <span class='subtle'>wahrscheinlich</span> keine Inschrift"
                     }
                 },
                 "question": "Hat diese Bank eine Inschrift?",
