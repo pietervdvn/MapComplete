@@ -56,6 +56,7 @@
     "trolley_bay"
   ],
   "overrideAll": {
-    "minzoom": 14
+    "minzoom": 14,
+    "syncSelection": "theme-only"
   }
 }

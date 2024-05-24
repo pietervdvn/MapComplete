@@ -531,7 +531,7 @@ export interface LayerConfigJson {
     )[]
 
     /**
-     * If set, synchronizes whether or not this layer is enabled.
+     * If set, synchronizes whether this layer is enabled.
      *
      * group: advanced
      * question: Should enabling/disabling the layer be saved (locally or in the cloud)?
