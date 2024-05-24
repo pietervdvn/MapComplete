@@ -60,6 +60,10 @@
         "done": "Fertig",
         "error": "Fehler",
         "loadedFrom": "Die folgenden Daten werden von <a href={url}>{source}</a> unter Verwendung des eingebetteten JSON-LD geladen",
+        "missing": {
+            "intro": "OpenStreetMap hat keine Informationen über die folgenden Attribute",
+            "title": "Fehlende Objekte"
+        },
         "noDataLoaded": "Die externe Website hat keine verlinkten Daten, die geladen werden könnten",
         "overwrite": "In OpenStreetMap überschreiben"
     },
