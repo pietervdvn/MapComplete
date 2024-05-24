@@ -493,7 +493,7 @@
         },
         "welcomeBack": "Willkommen zurück!",
         "welcomeExplanation": {
-            "addNew": "Tippen oden klicken Sie auf die Karte, um einen neuen Ort hinzuzufügen.",
+            "addNew": "Fehlt ein Punkt? Verwende die Schaltfläche unten links, um ein neues Sonderziel hinzuzufügen.",
             "general": "Auf dieser Karte können Sie <i>themenspezifische Kartenobjekte</i> ansehen, bearbeiten und hinzufügen. Verschieben Sie den Kartenausschnitt, um Objekte zu entdecken, tippen Sie auf eines, um weitere Informationen zu sehen oder zu bearbeiten. Alle Daten stammen von OpenStreetMap und dürfen frei verwendet werden."
         },
         "wikipedia": {
