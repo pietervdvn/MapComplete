@@ -193,7 +193,7 @@ export default class TagApplyButton implements AutoAction, SpecialVisualization 
                 }
                 return el
             })
-        ).SetClass("subtle")
+        ).SetClass("subtle break-all")
         const applied = new UIEventSource(
             tags?.data?.["mr_taskStatus"] !== undefined &&
                 tags?.data?.["mr_taskStatus"] !== "Created"
