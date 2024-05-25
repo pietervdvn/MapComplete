@@ -351,7 +351,7 @@
 
 
 
-        {#if config.freeform?.key && !(config?.mappings?.length > 0)}
+        {#if config.freeform?.key && !(config?.mappings?.filter(m => m.hideInAnswer != true)?.length > 0)}
           <!-- There are no options to choose from, simply show the input element: fill out the text field -->
           <FreeformInput
             {config}
@@ -504,7 +504,9 @@
               <TagHint {state} tags={selectedTags} currentProperties={$tags} />
               <span class="flex flex-wrap">
                 {#if $featureSwitchIsTesting}
+                  <button class="small" on:click={() => console.log("Configuration is ", config)}>
                   Testmode &nbsp;
+                  </button>
                 {/if}
                 {#if $featureSwitchIsTesting || $featureSwitchIsDebugging}
                   <span class="subtle">{config.id}</span>

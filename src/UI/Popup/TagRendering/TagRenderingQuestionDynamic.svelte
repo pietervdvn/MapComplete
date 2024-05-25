@@ -1,5 +1,7 @@
 <script lang="ts">/**
  * Wrapper around 'tagRenderingEditable' but might add mappings dynamically
+ *
+ * Note: does not forward the 'save-button'-slot
  */
 import TagRenderingConfig, { TagRenderingConfigUtils } from "../../../Models/ThemeConfig/TagRenderingConfig"
 import { UIEventSource } from "../../../Logic/UIEventSource"
@@ -9,6 +11,10 @@ import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
 import TagRenderingQuestion from "./TagRenderingQuestion.svelte"
 import type { UploadableTag } from "../../../Logic/Tags/TagUtils"
 import { writable } from "svelte/store"
+import Translations from "../../i18n/Translations"
+import { twJoin } from "tailwind-merge"
+import Tr from "../../Base/Tr.svelte"
+import { TrashIcon } from "@rgossiaux/svelte-heroicons/solid"
 
 export let config: TagRenderingConfig
 export let tags: UIEventSource<Record<string, string>>
@@ -23,7 +29,6 @@ export let allowDeleteOfFreeform: boolean = false
 
 
 let dynamicConfig = TagRenderingConfigUtils.withNameSuggestionIndex(config, tags, selectedElement)
-
 </script>
 
 <TagRenderingQuestion
@@ -35,4 +40,6 @@ let dynamicConfig = TagRenderingConfigUtils.withNameSuggestionIndex(config, tags
   {selectedTags}
   {allowDeleteOfFreeform}
   {extraTags}
-/>
+>
+  <slot name="cancel" slot="cancel" />
+</TagRenderingQuestion>
