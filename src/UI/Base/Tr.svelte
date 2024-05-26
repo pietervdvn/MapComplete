@@ -6,19 +6,25 @@
   import WeblateLink from "./WeblateLink.svelte"
   import { Store } from "../../Logic/UIEventSource"
   import FromHtml from "./FromHtml.svelte"
+  import { Utils } from "../../Utils"
 
   export let t: Translation
   export let cls: string = ""
   // Text for the current language
   let txt: Store<string | undefined> = t?.current
+  let lang = t?.currentLang
   $: {
     txt = t?.current
+    lang = t?.currentLang
   }
+
 </script>
 
 {#if $txt}
   <span class={cls}>
-    <FromHtml src={$txt} />
+    <span lang={$lang}>
+      {@html Utils.purify($txt)}
+    </span>
     <WeblateLink context={t?.context} />
   </span>
 {/if}
