@@ -125,18 +125,21 @@ class CountryTagger extends SimpleMetaTagger {
     }
 
     applyMetaTagsOnFeature(feature: Feature, _, tagsSource) {
-        const [lat, lon] = GeoOperations.centerpointCoordinates(feature)
         const runningTasks = this.runningTasks
+        if(runningTasks.has(feature) || !!feature.properties._country){
+            return
+        }
         runningTasks.add(feature)
+        const [lon, lat] = GeoOperations.centerpointCoordinates(feature)
         CountryTagger.coder
             .GetCountryCodeAsync(lon, lat)
             .then((countries) => {
                 if (!countries) {
-                    console.warn("Country coder returned ", countries)
+                    console.warn("Country coder returned weird value", countries)
                     return
                 }
-                const oldCountry = feature.properties["_country"]
                 const newCountry = countries.join(";").trim().toLowerCase()
+                const oldCountry = feature.properties["_country"]
                 if (oldCountry !== newCountry) {
                     if (typeof window === undefined) {
                         tagsSource.data["_country"] = newCountry
@@ -144,7 +147,6 @@ class CountryTagger extends SimpleMetaTagger {
                     } else {
                         // We set, be we don't ping... this is for later
                         tagsSource.data["_country"] = newCountry
-
                         /**
                          * What is this weird construction?
                          *
