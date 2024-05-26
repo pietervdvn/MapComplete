@@ -74,9 +74,15 @@
     onDestroy(_htmlElement.addCallbackAndRun(() => setHighlighting()))
   }
   let answerId = "answer-" + Utils.randomString(5)
+  let debug = state.featureSwitches.featureSwitchIsDebugging
 </script>
 
 <div bind:this={htmlElem} class={twMerge(clss, "tr-" + config.id)}>
+  {#if $debug}
+    <span class="subtle">
+      {config.id}
+    </span>
+  {/if}
   {#if config.question && (!editingEnabled || $editingEnabled)}
     {#if editMode}
       <TagRenderingQuestion
