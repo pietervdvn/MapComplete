@@ -174,10 +174,10 @@ export class Translation extends BaseUIElement {
             return "en"
         }
         for (const i in this.translations) {
-            return this.translations[i] // Return a random language
+            return i // Return a random language
         }
         console.error("Missing language ", Locale.language.data, "for", this.translations)
-        return ""
+        return undefined
     }
     public textFor(language: string): string | undefined {
         return this.translations[this.actualLanguage(language)]
