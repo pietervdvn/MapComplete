@@ -149,43 +149,50 @@
     "opening_hours_by_appointment",
     {
       "question": {
-        "en": "Which animals are accepted here?"
+        "en": "Which animals are accepted here?",
+        "de": "Welche Tiere werden hier akzeptiert?"
       },
       "id": "boarded_animals",
       "mappings": [
         {
           "if": "animal_shelter=dog",
           "then": {
-            "en": "Dogs are kept here"
+            "en": "Dogs are kept here",
+            "de": "Hunde werden hier gehalten"
           }
         },
         {
           "if": "animal_shelter=cat",
           "then": {
-            "en": "Cats are kept here"
+            "en": "Cats are kept here",
+            "de": "Katzen werden hier gehalten"
           }
         },
         {
           "if": "animal_shelter=horse",
           "then": {
-            "en": "Horses are kept here"
+            "en": "Horses are kept here",
+            "de": "Pferde werden hier gehalten"
           }
         },
         {
           "if": "animal_shelter=bird",
           "then": {
-            "en": "Birds are kept here"
+            "en": "Birds are kept here",
+            "de": "Vögel werden hier gehalten"
           }
         },
         {
           "if": "animal_shelter=wildlife",
           "then": {
-            "en": "Wild animals are kept here"
+            "en": "Wild animals are kept here",
+            "de": "Wildtiere werden hier gehalten"
           }
         }
       ],
       "render": {
-        "en": "{animal_shelter} is kept here"
+        "en": "{animal_shelter} is kept here",
+        "de": "{animal_shelter} wird hier gehalten"
       },
       "freeform": {
         "key": "animal_shelter"

@@ -399,7 +399,8 @@
       "freeform": {
         "key": "brand",
         "placeholder": {
-          "en": "Name of the network"
+          "en": "Name of the network",
+          "de": "Name des Netzwerks"
         },
         "addExtraTags": [
           "nobrand="
@@ -413,7 +414,7 @@
             "nl": "Dit boekenruilkastje maakt geen deel uit van een netwerk",
             "de": "Der Bücherschrank gehört zu keinem Netzwerk",
             "fr": "Cette microbibliothèque ne fait pas partie d'un réseau/groupe",
-            "it": "Questa microbiblioteca non fa parte di una rete",
+            "it": "Fa parte della rete 'Little Free Library'",
             "hu": "Ez a nyilvános könyvespolc nem része egy nagyobb hálózatnak",
             "ca": "Aquesta prestatgeria pública no és part d'una xarxa més gran",
             "cs": "Tato veřejná knihobudka není součástí větší sítě"

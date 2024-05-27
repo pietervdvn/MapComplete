@@ -503,7 +503,8 @@
         {
           "if": "__featureSwitchMorePrivacy=true",
           "then": {
-            "en": "This theme is sensitive. Making changes will not indicate if you were nearby explicitly."
+            "en": "This theme is sensitive. Making changes will not indicate if you were nearby explicitly.",
+            "de": "Dieses Thema ist sensibel. Wenn du Änderungen vornimmst, wird nicht angezeigt, ob du explizit in der Nähe warst."
           }
         }
       ]
@@ -511,22 +512,26 @@
     {
       "id": "more_privacy",
       "question": {
-        "en": "When making changes, should a rough indication be given how far away you were from the object?"
+        "en": "When making changes, should a rough indication be given how far away you were from the object?",
+        "de": "Sollte bei Änderungen eine grobe Angabe gemacht werden, wie weit du vom Objekt entfernt warst?"
       },
       "questionHint": {
-        "en": "If you make a change to one or more objects and you enabled your location, a rough indication of where you made will be saved: it is indicated if you were closer then 25m, 500m, 5km or further away then 5km. This helps mappers understand your context when making changes, but gives an indication of where you were at this time. "
+        "en": "If you make a change to one or more objects and you enabled your location, a rough indication of where you made will be saved: it is indicated if you were closer then 25m, 500m, 5km or further away then 5km. This helps mappers understand your context when making changes, but gives an indication of where you were at this time. ",
+        "de": "Wenn du eine Änderung an einem oder mehreren Objekten vornimmst und deinen Standort aktivierst, wird eine ungefähre Angabe darüber gespeichert, wo du dich befunden hast: Es wird angezeigt, ob du näher als 25m, 500m, 5km oder weiter als 5km entfernt warst. Das hilft den Kartierern, deinen Kontext zu verstehen, wenn du Änderungen vornimmst, gibt aber auch einen Hinweis darauf, wo du zu diesem Zeitpunkt warst. "
       },
       "mappings": [
         {
           "if": "mapcomplete-more_privacy=yes",
           "then": {
-            "en": "When making changes to OpenStreetMap, do not indicate how far away you were from the changed objects."
+            "en": "When making changes to OpenStreetMap, do not indicate how far away you were from the changed objects.",
+            "de": "Wenn du Änderungen an OpenStreetMap vornimmst, gibst du nicht an, wie weit du von den geänderten Objekten entfernt warst."
           }
         },
         {
           "if": "mapcomplete-more_privacy=no",
           "then": {
-            "en": "When making changes to OpenStreetMap, roughly indicate how far away you were from the changed objects. This helps other contributors to understand how you made the change"
+            "en": "When making changes to OpenStreetMap, roughly indicate how far away you were from the changed objects. This helps other contributors to understand how you made the change",
+            "de": "Wenn du Änderungen an OpenStreetMap vornimmst, gib grob an, wie weit du von den geänderten Objekten entfernt warst. Das hilft anderen Mitwirkenden zu verstehen, wie du die Änderung vorgenommen hast."
           }
         }
       ]

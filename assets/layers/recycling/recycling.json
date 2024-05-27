@@ -1117,7 +1117,8 @@
           "ifnot": "recycling:pmd=",
           "then": {
             "en": "Plastic packaging, metal packaging and drink cartons (PMD) can be recycled here",
-            "nl": "Plastic verpakkingen, metalen verpakkingen en drankpakken kunnen hier gerecycled worden"
+            "nl": "Plastic verpakkingen, metalen verpakkingen en drankpakken kunnen hier gerecycled worden",
+            "de": "Kunststoffverpackungen, Metallverpackungen und Getränkekartons (Tetrapak) können hier recycelt werden"
           },
           "icon": {
             "path": "./assets/layers/recycling/pmd.svg",
@@ -1671,7 +1672,8 @@
         {
           "question": {
             "en": "Recycling of plastic packaging, metal packaging and drink cartons (PMD)",
-            "nl": "Recycling van plastic verkpakkingen, metalen verkpakkingen en drankpakken (PMD)"
+            "nl": "Recycling van plastic verkpakkingen, metalen verkpakkingen en drankpakken (PMD)",
+            "de": "Recycling von Kunststoffverpackungen, Metallverpackungen und Getränkekartons (Tetrapak)"
           },
           "osmTags": "recycling:pmd=yes"
         }

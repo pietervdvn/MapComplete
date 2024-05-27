@@ -1,10 +1,12 @@
 {
   "id": "food_courts",
   "name": {
-    "en": "Food Courts"
+    "en": "Food Courts",
+    "de": "Food Courts"
   },
   "description": {
-    "en": "Food courts with a variety of food options."
+    "en": "Food courts with a variety of food options.",
+    "de": "Food-Courts mit einer Vielzahl von Essensmöglichkeiten."
   },
   "source": {
     "osmTags": "amenity=food_court"
@@ -12,7 +14,8 @@
   "minzoom": 12,
   "title": {
     "render": {
-      "en": "Food Court"
+      "en": "Food Court",
+      "de": "Food Court"
     },
     "mappings": [
       {
@@ -52,17 +55,20 @@
     {
       "id": "name",
       "question": {
-        "en": "What is the name of this food court?"
+        "en": "What is the name of this food court?",
+        "de": "Wie lautet der Name dieses Food-Courts?"
       },
       "freeform": {
         "key": "name",
         "type": "string",
         "placeholder": {
-          "en": "Name of the food court"
+          "en": "Name of the food court",
+          "de": "Name des Food-Courts"
         }
       },
       "render": {
-        "en": "This food court is called <b>{name}</b>."
+        "en": "This food court is called <b>{name}</b>.",
+        "de": "Dieser Food Court heißt <b>{name}</b>."
       }
     },
     "reviews",
