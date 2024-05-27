@@ -31,7 +31,6 @@
     "it": "Completeremo i dati da caratteristiche pubblicitarie, con referenza, operatore e illuminazione",
     "fr": "Nous allons compléter les information sur la publicité avec la référence, l'opérateur et l'éclairage"
   },
-  "enableMorePrivacy": true,
   "source": {
     "osmTags": {
       "and": [
@@ -1643,5 +1642,6 @@
   "allowMove": {
     "enableImproveAccuracy": true,
     "enableRelocation": false
-  }
+  },
+  "enableMorePrivacy": true
 }
