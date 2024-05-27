@@ -813,7 +813,8 @@
       "id": "operator_email",
       "question": {
         "en": "What is the email address of the operator of this bicycle parking?",
-        "nl": "Wat is het emailadres van de beheerder van deze parking?"
+        "nl": "Wat is het emailadres van de beheerder van deze parking?",
+        "de": "Wie lautet die E-Mail-Adresse des Betreibers dieses Fahrradparkplatzes?"
       },
       "icon": "./assets/svg/envelope.svg",
       "freeform": {
@@ -954,11 +955,13 @@
       "id": "maxstay",
       "question": {
         "en": "What is the maximum allowed parking duration?",
-        "nl": "Wat is de toegestane, maximale parkeerduur?"
+        "nl": "Wat is de toegestane, maximale parkeerduur?",
+        "de": "Was ist die maximal erlaubte Parkdauer?"
       },
       "questionHint": {
         "en": "If the bicycle is parked for a longer amount, it might be removed by the operator",
-        "nl": "Indien een fiets langer geparkeerd staat, kan deze verwijderd worden door de beheerder"
+        "nl": "Indien een fiets langer geparkeerd staat, kan deze verwijderd worden door de beheerder",
+        "de": "Wenn das Fahrrad für längere Zeit abgestellt wird, kann es vom Betreiber entfernt werden"
       },
       "freeform": {
         "key": "maxstay",
@@ -966,7 +969,8 @@
       },
       "render": {
         "en": "A bike can be parked here for at most {canonical(maxstay)}",
-        "nl": "Een fiets mag hier maximaal {canonical(maxstay)} parkeren"
+        "nl": "Een fiets mag hier maximaal {canonical(maxstay)} parkeren",
+        "de": "Ein Fahrrad kann hier höchstens für {canonical(maxstay)} geparkt werden"
       }
     }
   ],

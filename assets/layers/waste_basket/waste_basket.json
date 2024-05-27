@@ -210,7 +210,8 @@
           "if": "waste=pmd",
           "then": {
             "en": "A waste basket for plastic packaging, metal packaging and drink cartons (PMD)",
-            "nl": "Een vuilnisbak voor plastic verpakkingen, metalen verpakkingen en drankpakken (PMD)"
+            "nl": "Een vuilnisbak voor plastic verpakkingen, metalen verpakkingen en drankpakken (PMD)",
+            "de": "Ein Papierkorb für Kunststoffverpackungen, Metallverpackungen und Getränkekartons (Tetrapak)"
           }
         },
         {
@@ -408,14 +409,16 @@
         {
           "question": {
             "en": "Waste basket for plastic packaging, metal packaging and drink cartons (PMD)",
-            "nl": "Vuilnisbak voor plastic verpakkingen, metalen verpakkingen en drankpakken (PMD)"
+            "nl": "Vuilnisbak voor plastic verpakkingen, metalen verpakkingen en drankpakken (PMD)",
+            "de": "Papierkorb für Kunststoffverpackungen, Metallverpackungen und Getränkekartons (Tetrapak)"
           },
           "osmTags": "waste~i~.*pmd.*"
         },
         {
           "question": {
             "en": "Waste basket for paper",
-            "nl": "Vuilnisbak voor papier"
+            "nl": "Vuilnisbak voor papier",
+            "de": "Papierkorb für Papier"
           },
           "osmTags": "waste~i~.*paper.*"
         }

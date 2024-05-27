@@ -1228,7 +1228,8 @@
           "ifnot": "socket:bs1363=",
           "then": {
             "en": "<b>BS1363</b> (Type G)",
-            "nl": "<b>BS1363</b> (VK 3-pin)"
+            "nl": "<b>BS1363</b> (VK 3-pin)",
+            "de": "<b>BS1363</b> (Typ G)"
           },
           "icon": {
             "path": "./assets/layers/charging_station/bs1363.svg",
@@ -1294,7 +1295,8 @@
           },
           "then": {
             "en": "<b>BS1363</b> (Type G)",
-            "nl": "<b>BS1363</b> (VK 3-pin)"
+            "nl": "<b>BS1363</b> (VK 3-pin)",
+            "de": "<b>BS1363</b> (Typ G)"
           },
           "hideInAnswer": true,
           "icon": {
@@ -1307,7 +1309,8 @@
           "ifnot": "socket:nema5_15=",
           "then": {
             "en": "<b>NEMA 5-15</b> (Type B)",
-            "nl": "<b>NEMA 5-15</b> (VS 3-pin)"
+            "nl": "<b>NEMA 5-15</b> (VS 3-pin)",
+            "de": "<b>NEMA 5-15</b> (Typ B)"
           },
           "icon": {
             "path": "./assets/layers/charging_station/nema-5-15.svg",
@@ -1372,7 +1375,8 @@
           },
           "then": {
             "en": "<b>NEMA 5-15</b> (Type B)",
-            "nl": "<b>NEMA 5-15</b> (VS 3-pin)"
+            "nl": "<b>NEMA 5-15</b> (VS 3-pin)",
+            "de": "<b>NEMA 5-15</b> (Typ B)"
           },
           "hideInAnswer": true,
           "icon": {
@@ -1385,7 +1389,8 @@
           "ifnot": "socket:sev1011_t23=",
           "then": {
             "en": "<b>SEV 1011 T23</b> (Type J)",
-            "nl": "<b>SEV 1011 T23</b> (Zwitserse 3-pin)"
+            "nl": "<b>SEV 1011 T23</b> (Zwitserse 3-pin)",
+            "de": "<b>SEV 1011 T23</b> (Typ J)"
           },
           "icon": {
             "path": "./assets/layers/charging_station/typej.svg",
@@ -1411,7 +1416,8 @@
           },
           "then": {
             "en": "<b>SEV 1011 T23</b> (Type J)",
-            "nl": "<b>SEV 1011 T23</b> (Zwitserse 3-pin)"
+            "nl": "<b>SEV 1011 T23</b> (Zwitserse 3-pin)",
+            "de": "<b>SEV 1011 T23</b> (Typ J)"
           },
           "hideInAnswer": true,
           "icon": {
@@ -1424,7 +1430,8 @@
           "ifnot": "socket:as3112=",
           "then": {
             "en": "<b>AS3112</b> (Type I)",
-            "nl": "<b>AS3112</b> (Australische 3-pin)"
+            "nl": "<b>AS3112</b> (Australische 3-pin)",
+            "de": "<b>AS3112</b> (Typ I)"
           },
           "icon": {
             "path": "./assets/layers/charging_station/as3112.svg",
@@ -1462,7 +1469,8 @@
           },
           "then": {
             "en": "<b>AS3112</b> (Type I)",
-            "nl": "<b>AS3112</b> (Australische 3-pin)"
+            "nl": "<b>AS3112</b> (Australische 3-pin)",
+            "de": "<b>AS3112</b> (Typ I)"
           },
           "hideInAnswer": true,
           "icon": {
@@ -1475,7 +1483,8 @@
           "ifnot": "socket:nema_5_20=",
           "then": {
             "en": "<b>NEMA 5-20</b> (Type B)",
-            "nl": "<b>NEMA 5-20</b> (VS 3-pin)"
+            "nl": "<b>NEMA 5-20</b> (VS 3-pin)",
+            "de": "<b>NEMA 5-20</b> (Typ B)"
           },
           "icon": {
             "path": "./assets/layers/charging_station/nema-5-20.svg",
@@ -1540,7 +1549,8 @@
           },
           "then": {
             "en": "<b>NEMA 5-20</b> (Type B)",
-            "nl": "<b>NEMA 5-20</b> (VS 3-pin)"
+            "nl": "<b>NEMA 5-20</b> (VS 3-pin)",
+            "de": "<b>NEMA 5-20</b> (Typ B)"
           },
           "hideInAnswer": true,
           "icon": {
@@ -1893,7 +1903,8 @@
             "socket:bs1363",
             {
               "en": "<b>BS1363</b> (Type G)",
-              "nl": "<b>BS1363</b> (VK 3-pin)"
+              "nl": "<b>BS1363</b> (VK 3-pin)",
+              "de": "<b>BS1363</b> (Typ G)"
             },
             "bs1363.svg",
             [
@@ -1911,7 +1922,8 @@
             "socket:nema5_15",
             {
               "en": "<b>NEMA 5-15</b> (Type B)",
-              "nl": "<b>NEMA 5-15</b> (VS 3-pin)"
+              "nl": "<b>NEMA 5-15</b> (VS 3-pin)",
+              "de": "<b>NEMA 5-15</b> (Typ B)"
             },
             "nema-5-15.svg",
             [
@@ -1929,7 +1941,8 @@
             "socket:sev1011_t23",
             {
               "en": "<b>SEV 1011 T23</b> (Type J)",
-              "nl": "<b>SEV 1011 T23</b> (Zwitserse 3-pin)"
+              "nl": "<b>SEV 1011 T23</b> (Zwitserse 3-pin)",
+              "de": "<b>SEV 1011 T23</b> (Typ J)"
             },
             "typej.svg",
             [
@@ -1947,7 +1960,8 @@
             "socket:as3112",
             {
               "en": "<b>AS3112</b> (Type I)",
-              "nl": "<b>AS3112</b> (Australische 3-pin)"
+              "nl": "<b>AS3112</b> (Australische 3-pin)",
+              "de": "<b>AS3112</b> (Typ I)"
             },
             "as3112.svg",
             [
@@ -1965,7 +1979,8 @@
             "socket:nema_5_20",
             {
               "en": "<b>NEMA 5-20</b> (Type B)",
-              "nl": "<b>NEMA 5-20</b> (VS 3-pin)"
+              "nl": "<b>NEMA 5-20</b> (VS 3-pin)",
+              "de": "<b>NEMA 5-20</b> (Typ B)"
             },
             "nema-5-20.svg",
             [
@@ -3042,35 +3057,40 @@
         {
           "question": {
             "en": "Has a <div style='display: inline-block'><b><b>BS1363</b> (Type G)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bs1363.svg'/></div> connector",
-            "nl": "Heeft een <div style='display: inline-block'><b><b>BS1363</b> (VK 3-pin)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bs1363.svg'/></div>"
+            "nl": "Heeft een <div style='display: inline-block'><b><b>BS1363</b> (VK 3-pin)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bs1363.svg'/></div>",
+            "de": "Hat ein <div style='display: inline-block'><b><b>BS1363</b> (Type G)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bs1363.svg'/></div> Anschluss"
           },
           "osmTags": "socket:bs1363~*"
         },
         {
           "question": {
             "en": "Has a <div style='display: inline-block'><b><b>NEMA 5-15</b> (Type B)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/nema-5-15.svg'/></div> connector",
-            "nl": "Heeft een <div style='display: inline-block'><b><b>NEMA 5-15</b> (VS 3-pin)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/nema-5-15.svg'/></div>"
+            "nl": "Heeft een <div style='display: inline-block'><b><b>NEMA 5-15</b> (VS 3-pin)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/nema-5-15.svg'/></div>",
+            "de": "Hat ein <div style='display: inline-block'><b><b>NEMA 5-15</b> (Type B)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/nema-5-15.svg'/></div> Anschluss"
           },
           "osmTags": "socket:nema5_15~*"
         },
         {
           "question": {
             "en": "Has a <div style='display: inline-block'><b><b>SEV 1011 T23</b> (Type J)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/typej.svg'/></div> connector",
-            "nl": "Heeft een <div style='display: inline-block'><b><b>SEV 1011 T23</b> (Zwitserse 3-pin)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/typej.svg'/></div>"
+            "nl": "Heeft een <div style='display: inline-block'><b><b>SEV 1011 T23</b> (Zwitserse 3-pin)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/typej.svg'/></div>",
+            "de": "Hat ein <div style='display: inline-block'><b><b>SEV 1011 T23</b> (Type J)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/typej.svg'/></div> Anschluss"
           },
           "osmTags": "socket:sev1011_t23~*"
         },
         {
           "question": {
             "en": "Has a <div style='display: inline-block'><b><b>AS3112</b> (Type I)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/as3112.svg'/></div> connector",
-            "nl": "Heeft een <div style='display: inline-block'><b><b>AS3112</b> (Australische 3-pin)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/as3112.svg'/></div>"
+            "nl": "Heeft een <div style='display: inline-block'><b><b>AS3112</b> (Australische 3-pin)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/as3112.svg'/></div>",
+            "de": "Hat ein <div style='display: inline-block'><b><b>AS3112</b> (Type I)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/as3112.svg'/></div> Anschluss"
           },
           "osmTags": "socket:as3112~*"
         },
         {
           "question": {
             "en": "Has a <div style='display: inline-block'><b><b>NEMA 5-20</b> (Type B)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/nema-5-20.svg'/></div> connector",
-            "nl": "Heeft een <div style='display: inline-block'><b><b>NEMA 5-20</b> (VS 3-pin)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/nema-5-20.svg'/></div>"
+            "nl": "Heeft een <div style='display: inline-block'><b><b>NEMA 5-20</b> (VS 3-pin)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/nema-5-20.svg'/></div>",
+            "de": "Hat ein <div style='display: inline-block'><b><b>NEMA 5-20</b> (Type B)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/nema-5-20.svg'/></div> Anschluss"
           },
           "osmTags": "socket:nema_5_20~*"
         }

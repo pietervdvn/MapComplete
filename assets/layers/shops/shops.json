@@ -291,7 +291,7 @@
         "en": "Part of <b>{brand}</b>"
       },
       "freeform": {
-        "key":"brand"
+        "key": "brand"
       },
       "mappings": [
         {

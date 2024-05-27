@@ -1,10 +1,12 @@
 {
   "id": "outdoor_seating",
   "name": {
-    "en": "Outdoor Seating"
+    "en": "Outdoor Seating",
+    "de": "Außenbestuhlung"
   },
   "description": {
-    "en": "Outdoor seating areas, usually located near cafes and restaurants."
+    "en": "Outdoor seating areas, usually located near cafes and restaurants.",
+    "de": "Sitzgelegenheiten im Freien, die sich in der Regel in der Nähe von Cafés und Restaurants befinden."
   },
   "source": {
     "osmTags": "leisure=outdoor_seating"
@@ -12,7 +14,8 @@
   "minzoom": 18,
   "title": {
     "render": {
-      "en": "Outdoor Seating area"
+      "en": "Outdoor Seating area",
+      "de": "Sitzbereich im Freien"
     },
     "mappings": [
       {
@@ -46,25 +49,29 @@
     {
       "id": "access",
       "question": {
-        "en": "Who can use this outdoor seating area?"
+        "en": "Who can use this outdoor seating area?",
+        "de": "Wer kann diesen Sitzbereich im Freien nutzen?"
       },
       "mappings": [
         {
           "if": "access=yes",
           "then": {
-            "en": "Anyone can use this outdoor seating area."
+            "en": "Anyone can use this outdoor seating area.",
+            "de": "Dieser Sitzbereich im Freien kann von jedermann genutzt werden."
           }
         },
         {
           "if": "access=customers",
           "then": {
-            "en": "Only customers can use this outdoor seating area."
+            "en": "Only customers can use this outdoor seating area.",
+            "de": "Dieser Sitzbereich im Freien kann nur von Kunden genutzt werden."
           }
         },
         {
           "if": "access=private",
           "then": {
-            "en": "This outdoor seating area is private."
+            "en": "This outdoor seating area is private.",
+            "de": "Dieser Sitzbereich im Freien ist privat."
           }
         }
       ]
@@ -72,44 +79,51 @@
     {
       "id": "seasonal",
       "question": {
-        "en": "Is this outdoor seating area seasonal?"
+        "en": "Is this outdoor seating area seasonal?",
+        "de": "Ist dieser Sitzbereich im Freien saisonabhängig?"
       },
       "multiAnswer": true,
       "mappings": [
         {
           "if": "seasonal=no",
           "then": {
-            "en": "This outdoor seating area is available all year round."
+            "en": "This outdoor seating area is available all year round.",
+            "de": "Dieser Sitzbereich im Freien ist das ganze Jahr über verfügbar."
           }
         },
         {
           "if": "seasonal=spring",
           "then": {
-            "en": "This outdoor seating area is available in spring."
+            "en": "This outdoor seating area is available in spring.",
+            "de": "Dieser Sitzbereich im Freien ist im Frühjahr verfügbar."
           }
         },
         {
           "if": "seasonal=summer",
           "then": {
-            "en": "This outdoor seating area is available in summer."
+            "en": "This outdoor seating area is available in summer.",
+            "de": "Dieser Sitzbereich im Freien ist im Sommer verfügbar."
           }
         },
         {
           "if": "seasonal=autumn",
           "then": {
-            "en": "This outdoor seating area is available in autumn."
+            "en": "This outdoor seating area is available in autumn.",
+            "de": "Dieser Sitzbereich im Freien ist im Herbst verfügbar."
           }
         },
         {
           "if": "seasonal=winter",
           "then": {
-            "en": "This outdoor seating area is available in winter."
+            "en": "This outdoor seating area is available in winter.",
+            "de": "Dieser Sitzbereich im Freien ist im Winter verfügbar."
           }
         },
         {
           "if": "seasonal=dry_season",
           "then": {
-            "en": "This outdoor seating area is available in the dry season."
+            "en": "This outdoor seating area is available in the dry season.",
+            "de": "Dieser Sitzbereich im Freien ist in der Trockenzeit verfügbar."
           }
         }
       ]
@@ -121,19 +135,22 @@
     {
       "id": "heating",
       "question": {
-        "en": "Is this outdoor seating area heated?"
+        "en": "Is this outdoor seating area heated?",
+        "de": "Ist dieser Außensitzbereich beheizt?"
       },
       "mappings": [
         {
           "if": "heating=yes",
           "then": {
-            "en": "This outdoor seating area is heated."
+            "en": "This outdoor seating area is heated.",
+            "de": "Dieser Außensitzbereich ist beheizt."
           }
         },
         {
           "if": "heating=no",
           "then": {
-            "en": "This outdoor seating area is not heated."
+            "en": "This outdoor seating area is not heated.",
+            "de": "Dieser Außensitzbereich ist nicht beheizt."
           }
         }
       ]
@@ -141,19 +158,22 @@
     {
       "id": "covered",
       "question": {
-        "en": "Is this outdoor seating area covered?"
+        "en": "Is this outdoor seating area covered?",
+        "de": "Ist dieser Sitzbereich im Freien überdacht?"
       },
       "mappings": [
         {
           "if": "covered=yes",
           "then": {
-            "en": "This outdoor seating area is covered."
+            "en": "This outdoor seating area is covered.",
+            "de": "Dieser Sitzbereich im Freien ist überdacht."
           }
         },
         {
           "if": "covered=no",
           "then": {
-            "en": "This outdoor seating area is not covered."
+            "en": "This outdoor seating area is not covered.",
+            "de": "Dieser Sitzbereich im Freien ist nicht überdacht."
           }
         }
       ]

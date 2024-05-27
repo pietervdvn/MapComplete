@@ -625,7 +625,8 @@
           "icon": "./assets/layers/questions/dogs_outside.svg",
           "then": {
             "en": "Dogs are allowed only outside",
-            "it": "I cani sono ammessi solo all'esterno"
+            "it": "I cani sono ammessi solo all'esterno",
+            "de": "Hunde sind nur draußen erlaubt"
           }
         }
       ]
