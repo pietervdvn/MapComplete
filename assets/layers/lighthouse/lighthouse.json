@@ -1,0 +1,75 @@
+{
+  "id": "lighthouse",
+  "name": {
+    "en": "lighthouse"
+  },
+  "source": {
+    "osmTags": "man_made=lighthouse"
+  },
+  "minzoom": 5,
+  "title": {
+    "render": {
+      "en": "lighthouse"
+    },
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": {
+          "en": "{name}"
+        }
+      }
+    ]
+  },
+  "tagRenderings": [
+    "images",
+    "wikipedia",
+    {
+      "render": {
+        "en": "The height of this lighthouse is {height} metres."
+      },
+      "question": {
+        "en": "What is the height of this lighthouse, in metres?"
+      },
+      "freeform": {
+        "key": "height",
+        "type": "pfloat"
+      },
+      "id": "lighthouse-height"
+    }
+  ],
+  "presets": [
+    {
+      "tags": [
+        "man_made=lighthouse"
+      ],
+      "title": {
+        "en": "a lighthouse"
+      }
+    }
+  ],
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "./assets/themes/lighthouses/lighthouse.svg"
+        }
+      ],
+      "anchor": "bottom"
+    }
+  ],
+  "lineRendering": [],
+  "units": [
+    {
+      "height": {
+        "quantity": "distance",
+        "denominations": [
+          "m"
+        ]
+      }
+    }
+  ]
+}

@@ -246,6 +246,9 @@ export class Unit {
                 return found
             }
 
+            if(!Array.isArray(toLoad.denominations)){
+                throw "toLoad is not an array. Did you forget the [ and ] around the denominations at "+ctx+"?"
+            }
             const denoms = toLoad.denominations
                 .map((d) => d.toLowerCase())
                 .map((d) => fetchDenom(d))
