@@ -17,13 +17,15 @@ export default class AllImageProviders {
         Mapillary.singleton,
         WikidataImageProvider.singleton,
         WikimediaImageProvider.singleton,
+        // The 'genericImageProvider' is a fallback that scans various other tags for tags, unless the URL starts with one of the given prefixes
         new GenericImageProvider(
-            [].concat(
+            [
                 ...Imgur.defaultValuePrefix,
                 ...WikimediaImageProvider.commonsPrefixes,
                 ...Mapillary.valuePrefixes,
-                ...AllImageProviders.dontLoadFromPrefixes
-            )
+                ...AllImageProviders.dontLoadFromPrefixes,
+                "Category:"
+            ]
         ),
     ]
     public static apiUrls: string[] = [].concat(
