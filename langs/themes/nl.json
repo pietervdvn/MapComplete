@@ -1068,6 +1068,25 @@
     },
     "postboxes": {
         "description": "Op deze kaart kan je informatie over brievenbussen en postkantoren vinden en toevoegen. Je kan deze kaart gebruiken om te achterhalen waar je je volgende postkaart naar kan sturen! :)<br/>Zie je een fout of ontbreekt een brievenbus? Dan kan je deze kaart aanpassen met een gratis OpenStreetMap account. ",
+        "layers": {
+            "3": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "Deze winkel is een post-partner"
+                                },
+                                "1": {
+                                    "then": "Deze winkel is geen post-partner"
+                                }
+                            },
+                            "question": "Is deze winkel een post-partner?"
+                        }
+                    }
+                }
+            }
+        },
         "shortDescription": "Een kaart die brievenbussen en postkantoren toont",
         "title": "Brievenbussen en postkantoren"
     },
