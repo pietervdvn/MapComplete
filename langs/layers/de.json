@@ -6279,8 +6279,8 @@
                         "then": "Dieses Denkmal hat keine Inschrift"
                     }
                 },
-                "question": "Wie lautet die Inschrift auf dieser Gedenktafel?",
-                "render": "Die Inschrift auf dieser Gedenktafel lautet: <p><i>{inscription}<i></p>"
+                "question": "Wie lautet die Inschrift auf diesem Denkmal?",
+                "render": "Die Inschrift auf diesem Denkmal lautet: <p><i>{inscription}<i></p>"
             },
             "memorial-type": {
                 "mappings": {
