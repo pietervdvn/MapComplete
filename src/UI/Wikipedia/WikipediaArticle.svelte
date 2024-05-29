@@ -15,8 +15,12 @@
    * Shows a wikipedia-article + wikidata preview for the given item
    */
   export let wikipediaDetails: Store<FullWikipediaDetails>
+  let titleOnly = wikipediaDetails.mapD(details => Object.keys(details).length === 1 && details.title !== undefined)
 </script>
 
+{#if $titleOnly}
+  <Loading>{$wikipediaDetails.title}</Loading>
+{/if}
 {#if $wikipediaDetails.articleUrl}
   <a class="flex" href={$wikipediaDetails.articleUrl} rel="noreferrer" target="_blank">
     <Wikipedia class="h-6 w-6" />
