@@ -235,25 +235,6 @@
                 "then": "#f00"
               }
             ]
-          },
-          "dashArray": {
-            "render": "",
-            "mappings": [
-              {
-                "if": {
-                  "and": [
-                    "oneway=yes",
-                    {
-                      "or": [
-                        "oneway:bicycle=yes",
-                        "oneway:bicycle="
-                      ]
-                    }
-                  ]
-                },
-                "then": "5 6"
-              }
-            ]
           }
         }
       ]

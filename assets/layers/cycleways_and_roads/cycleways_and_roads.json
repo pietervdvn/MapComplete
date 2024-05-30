@@ -268,42 +268,7 @@
           }
         ]
       },
-      "width": "8",
-      "dashArray": {
-        "render": "",
-        "mappings": [
-          {
-            "if": {
-              "or": [
-                "oneway=yes",
-                {
-                  "or": [
-                    "highway=cycleway",
-                    "highway=path"
-                  ]
-                }
-              ]
-            },
-            "then": ""
-          },
-          {
-            "if": "cycleway=track",
-            "then": ""
-          },
-          {
-            "if": "cycleway=shared_lane",
-            "then": "15 30"
-          },
-          {
-            "if": "cycleway=lane",
-            "then": "25 15 15 15 25"
-          },
-          {
-            "if": "cyclestreet=yes",
-            "then": ""
-          }
-        ]
-      }
+      "width": "8"
     }
   ],
   "tagRenderings": [
