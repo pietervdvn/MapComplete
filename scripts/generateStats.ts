@@ -140,15 +140,12 @@ class GenerateStats extends Script {
         let allBrands = <Record<string, Record<string, number>>>{}
         if (existsSync(path)) {
             allBrands = JSON.parse(readFileSync(path, "utf8"))
-            console.log("Loaded", Object.keys(allBrands).length, " previously loaded brands")
+            console.log("Loaded", Object.keys(allBrands).length, " previously loaded " + type,"from",path)
         }
-        const lastWrite = new Date()
         let skipped = 0
         const allBrandNames: string[] = Utils.Dedup(NameSuggestionIndex.allPossible(type).map(item => item.tags[type]))
+        const missingBrandNames : string[] = []
         for (let i = 0; i < allBrandNames.length; i++) {
-            if (i % 100 == 0) {
-                console.log("Downloading ", i + "/" + allBrandNames.length, "; skipped", skipped)
-            }
             const brand = allBrandNames[i]
             if (!!allBrands[brand] && Object.keys(allBrands[brand]).length == 0) {
                 delete allBrands[brand]
@@ -157,20 +154,35 @@ class GenerateStats extends Script {
             if (allBrands[brand] !== undefined) {
                 const max = Math.max(...Object.values(allBrands[brand]))
                 skipped++
+                if (skipped % 100 == 0) {
+                    console.warn("Busy; ", i + "/" + allBrandNames.length, "; skipped", skipped)
+                }
                 if (max < 0) {
                     console.log("HMMMM:", allBrands[brand])
                     delete allBrands[brand]
-
                 } else {
                     continue
                 }
             }
-            const distribution: Record<string, number> = Utilities.mapValues(await TagInfo.getGlobalDistributionsFor(type, brand), s => s.data.find(t => t.type === "all").count)
-            allBrands[brand] = distribution
-            if ((new Date().getTime() - lastWrite.getTime()) / 1000 >= 5) {
-                writeFileSync(path, JSON.stringify(allBrands), "utf8")
-                console.log("Checkpointed", path)
+            missingBrandNames.push(brand)
+
+        }
+        const batchSize = 101
+        for (let i = 0; i < missingBrandNames.length; i += batchSize) {
+
+            console.warn("Downloading",batchSize,"items: ", i + "/" + (missingBrandNames.length), "; skipped", skipped, "total:",allBrandNames.length)
+
+            const distributions = await Promise.all(Utils.TimesT(batchSize, async j => {
+                await ScriptUtils.sleep(j * 250)
+                return TagInfo.getGlobalDistributionsFor(type, missingBrandNames[i + j])
+            }))
+            for (let j = 0; j < distributions.length; j++) {
+                const brand = missingBrandNames[i + j]
+                const distribution: Record<string, number> = Utilities.mapValues(distributions[j], s => s.data.find(t => t.type === "all").count)
+                allBrands[brand] = distribution
             }
+            writeFileSync(path, JSON.stringify(allBrands), "utf8")
+            console.log("Checkpointed", path)
         }
         writeFileSync(path, JSON.stringify(allBrands), "utf8")
     }

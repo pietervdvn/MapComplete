@@ -178,7 +178,7 @@ export default class ScriptUtils {
                 if(!headers.Accept){
                     headers.accept ??= "application/json"
                 }
-                console.log(" > ScriptUtils.Download(", url, ")")
+                ScriptUtils.erasableLog(" > ScriptUtils.Download(", url, ")")
                 const urlObj = new URL(url)
                 const request = https.get(
                     {
