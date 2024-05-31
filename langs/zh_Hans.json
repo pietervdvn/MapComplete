@@ -20,12 +20,19 @@
         "cancel": "取消",
         "cannotBeDeleted": "此功能无法被删除",
         "delete": "删除",
+        "deletedTitle": "已删除的功能",
         "explanations": {
             "hardDelete": "此功能在 OpenStreetMap 中将被删除。它可以由有经验的贡献者进行恢复",
-            "retagNoOtherThemes": "此功能将被重新分类并从此应用中隐藏"
+            "retagNoOtherThemes": "此功能将被重新分类并从此应用中隐藏",
+            "retagOtherThemes": "此功能将在 {otherThemes} 中重新标记和可见",
+            "selectReason": "请选择应删除此功能的原因",
+            "softDelete": "此功能将在此应用程序中更新并隐藏。<span class='subtle'>{reason}</span>"
         },
+        "isChanged": "此要素已更改，不再与此图层匹配",
+        "isDeleted": "此功能已删除",
         "isntAPoint": "只能删除节点，选择的特征是路径、区域或关系。",
         "loading": "检查属性以检查是否可以删除此功能。",
+        "loginToDelete": "您必须登录才能删除功能",
         "notEnoughExperience": "这个要素由其他人创建。",
         "onlyEditedByLoggedInUser": "这个要素仅被您所编辑，您可以安全的删除它。",
         "partOfOthers": "该节点是某种方式或关系的一部分，不能直接删除。",
@@ -40,6 +47,24 @@
         "useSomethingElse": "使用其他OpenStreetMap编辑器来删除它",
         "whyDelete": "为什么这个要素需要被删除？"
     },
+    "external": {
+        "allAreApplied": "所有缺失的外部值都已复制到OpenStreetMap中",
+        "allIncluded": "从{source}加载的数据包含在OpenStreetMap中",
+        "apply": "应用",
+        "applyAll": "应用所有缺失值",
+        "conflicting": {
+            "intro": "OpenStreetMap的值与以下值的源网站不同。",
+            "title": "冲突项目"
+        },
+        "currentInOsmIs": "目前，OpenStreetMap记录了以下值：",
+        "done": "做",
+        "error": "错误",
+        "loadedFrom": "以下数据是使用嵌入式 JSON-LD 从 <a href={url}>{source} </a>加载的",
+        "missing": {
+            "intro": "OpenStreetMap没有关于以下属性的信息",
+            "title": "缺少的物品"
+        }
+    },
     "favourite": {
         "reload": "重新加载数据"
     },
@@ -47,6 +72,16 @@
         "add": {
             "disableFilters": "禁用所有过滤器",
             "hasBeenImported": "这个要素已经被导入过了"
+        },
+        "attribution": {
+            "mapillaryHelp": "<b>Mapillary</b> 是一项在线服务，它收集街头图片并在免费许可下提供。贡献者可以使用这些图片来改进OpenStreetMap"
         }
+    },
+    "image": {
+        "uploadFailed": "无法上传您的图片。您是否已连接到互联网，并允许第三方 API？Brave 浏览器或 uMatrix 插件可能会阻止它们。"
+    },
+    "privacy": {
+        "editingOutro": "有关详细信息，请参阅<a href='https：//wiki.osmfoundation.org/wiki/Privacy_Policy' target='_blank'> OpenStreetMap.org 上的隐私政策</a>。我们想提醒您，您可以在注册时使用虚构的名字。",
+        "miscCookies": "MapComplete 与各种其他服务集成，特别是加载要素图像。图像托管在各种第三方服务器上，这些服务器可能会自行设置 cookie。"
     }
 }
