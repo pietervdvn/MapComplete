@@ -47,6 +47,22 @@
         "useSomethingElse": "請使用其他的開放街圖編輯器來刪除",
         "whyDelete": "為什麼這個圖徵要被刪除？"
     },
+    "external": {
+        "allAreApplied": "所有遺失，外部數值已經複製到開放街圖了",
+        "allIncluded": "從 {source} 載入的資料已經在開放街圖了",
+        "apply": "套用",
+        "applyAll": "套用所有遺失數值",
+        "conflicting": {
+            "intro": "開放街圖與來源網站的數值不同。",
+            "title": "衝突物件"
+        },
+        "error": "錯誤",
+        "loadedFrom": "下列資料透過內嵌 JSON-LD 由 <a href={url}>{source}</a> 載入",
+        "missing": {
+            "intro": "開放街圖沒有下列屬性的資訊",
+            "title": "遺失的物件"
+        }
+    },
     "favourite": {
         "loginNeeded": "<h3>登入</h3>只有開放街圖使用者才有個人化樣式",
         "panelIntro": "<h3>你的個人主題</h3>從所有官方主題啟用你喜愛的圖層",
@@ -192,6 +208,11 @@
         "customThemeIntro": "這些是先前使用者創造的主題。",
         "customThemeTitle": "客製化主題",
         "download": {
+            "custom": {
+                "height": "圖片高度 (公釐)：",
+                "title": "下載有專門寬度與高度的圖片",
+                "width": "圖片寬度 (公釐)： "
+            },
             "downloadAsPdf": "下載目前地圖的 PDF 檔",
             "downloadAsPdfHelper": "列印當前地圖相當理想",
             "downloadAsPng": "下載為圖片",
@@ -263,6 +284,7 @@
         "loginToStart": "登入之後來回答這問題",
         "loginWithOpenStreetMap": "用開放街圖帳號登入",
         "logout": "登出",
+        "mappingsAreHidden": "有些選項已經隱藏，搜尋來顯示更多選項。",
         "menu": {
             "aboutMapComplete": "關於 MapComplete",
             "filter": "篩選資料"
@@ -466,7 +488,7 @@
         },
         "welcomeBack": "歡迎回來！",
         "welcomeExplanation": {
-            "addNew": "點一下地圖來新增新興趣點。",
+            "addNew": "有物件遺漏嗎？使用左下角的按鈕來新增新興趣點。",
             "general": "在這份地圖，你可以檢視、編輯與新增<i>興趣點</i>。在附近放大來檢視興趣點，點一個來檢視或是編輯資訊。所有資料來源以及儲存到開放街圖，能夠自由被再利用。"
         },
         "wikipedia": {
