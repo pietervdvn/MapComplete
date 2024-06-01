@@ -84,7 +84,8 @@ export default class MetaTagging {
             const tags = state?.featureProperties?.getStore(feature.properties.id)
             console.log("Binding an updater to", feature)
             tags?.addCallbackD(() => {
-                console.log("Received an update!")
+                console.log("Received an update! Re-calculating the metatags")
+
                 if(feature !== state.selectedElement.data){
                     return true // Unregister, we are not the selected element anymore
                 }
@@ -107,7 +108,7 @@ export default class MetaTagging {
      * Triggers an update of the calculated tags of the selected element
      * @private
      */
-    private updateCurrentSelectedElement() {
+    private updateCurrentSelectedElement(lightUpdate = false) {
         const feature = this.state.selectedElement.data
         if (!feature) {
             return
@@ -123,7 +124,8 @@ export default class MetaTagging {
             state.osmObjectDownloader,
             state.featureProperties,
             {
-                evaluateStrict: true
+                includeDates: !lightUpdate,
+                evaluateStrict: !lightUpdate
             }
         )
     }
@@ -207,8 +209,12 @@ export default class MetaTagging {
                             // All keys are defined - lets skip!
                             continue
                         }
+                        const shouldPing = metatag.applyMetaTagsOnFeature(feature, layer, tags, state)
+                        if(!shouldPing){
+                            continue
+                        }
                         somethingChanged = true
-                        metatag.applyMetaTagsOnFeature(feature, layer, tags, state)
+
                         if (options?.evaluateStrict) {
                             for (const key of metatag.keys) {
                                 // Important: we _have_ to evaluate this as this might trigger a calculation
