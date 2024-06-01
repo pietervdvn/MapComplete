@@ -525,7 +525,7 @@
     },
     {
       "id": "Reservation",
-      "condition": "takeaway=only",
+      "condition": "takeaway!=only",
       "question": {
         "en": "Is a reservation required for this place?",
         "nl": "Is reserveren verplicht voor deze zaak?",
