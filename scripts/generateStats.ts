@@ -8,7 +8,7 @@ import TagRenderingConfig from "../src/Models/ThemeConfig/TagRenderingConfig"
 import { And } from "../src/Logic/Tags/And"
 import Script from "./Script"
 import NameSuggestionIndex from "../src/Logic/Web/NameSuggestionIndex"
-import TagInfo, { TagInfoStats } from "../src/Logic/Web/TagInfo"
+import TagInfo from "../src/Logic/Web/TagInfo"
 
 class Utilities {
     static mapValues<X extends string | number, T, TOut>(record: Record<X, T>, f: ((t: T) => TOut)): Record<X, TOut> {
