@@ -358,6 +358,7 @@
   ],
   "tagRenderings": [
     "images",
+    "level",
     {
       "id": "vending",
       "question": {
@@ -487,7 +488,10 @@
             "de": "Fahrradschläuche werden verkauft",
             "fr": "Vent des chambres à air pour vélo",
             "ca": "Es venen càmeres interiors de bicicletes",
-            "cs": "Prodává duše na kola"
+            "cs": "Prodává duše na kola",
+            "pt_BR": "Câmaras de ar para bicicletas são vendidas aqui",
+            "es": "Aquí se venden cámaras de aire para bicicletas",
+            "pt": "Câmaras de ar para bicicletas são vendidas aqui"
           }
         },
         {
@@ -646,7 +650,10 @@
             "nl": "Fietslampjes worden verkocht",
             "de": "Fahrradlampen werden verkauft",
             "cs": "Prodává světla na kolo",
-            "ca": "Es venen llums per a bicicletes"
+            "ca": "Es venen llums per a bicicletes",
+            "pt_BR": "Luzes para bicicleta são vendidas aqui",
+            "es": "Las luces para bicicletas se venden aquí",
+            "pt": "Luzes para bicicleta são vendidas aqui"
           }
         },
         {
@@ -656,7 +663,10 @@
             "nl": "Handschoenen worden verkocht",
             "de": "Fahrradhandschuhe werden verkauft",
             "cs": "Prodává rukavice",
-            "ca": "Es venen guants"
+            "ca": "Es venen guants",
+            "pt_BR": "Luvas são vendidas aqui",
+            "es": "Los guantes se venden aquí",
+            "pt": "Luvas são vendidas aqui"
           }
         },
         {
@@ -666,7 +676,10 @@
             "nl": "Fietsreparatiesets worden verkocht",
             "de": "Fahrrad-Reparaturset werden verkauft",
             "cs": "Prodává sady na opravu jízdních kol",
-            "ca": "Es venen kits de reparació de bicicletes"
+            "ca": "Es venen kits de reparació de bicicletes",
+            "pt_BR": "Kits para reparo de bicicleta são vendidos aqui",
+            "es": "Los kits de reparación de bicicletas se venden aquí",
+            "pt": "Kits para reparo de bicicleta são vendidos aqui"
           }
         },
         {
@@ -676,7 +689,10 @@
             "nl": "Fietspompen worden verkocht",
             "de": "Fahrradpumpen werden verkauft",
             "cs": "Prodává pumpy na kolo",
-            "ca": "Es venen bombes de bicicletes"
+            "ca": "Es venen bombes de bicicletes",
+            "pt_BR": "Bombas de ar para bicicleta são vendidas aqui",
+            "es": "Las bombas para bicicletas se venden aquí",
+            "pt": "Bombas de ar para bicicleta são vendidas aqui"
           }
         },
         {
@@ -686,11 +702,70 @@
             "nl": "Fietssloten worden verkocht",
             "de": "Fahrradschlösser werden verkauft",
             "cs": "Prodává zámky na kolo",
-            "ca": "Es venen cadenats per a bicicletes"
+            "ca": "Es venen cadenats per a bicicletes",
+            "pt_BR": "Cadeados para bicicleta são vendidos aqui",
+            "es": "Aquí se venden candados para bicicletas",
+            "pt": "Cadeados para bicicleta são vendidos aqui"
           }
         }
       ],
       "multiAnswer": true
+    },
+    {
+      "question": {
+        "en": "Which brand of tubes are sold here?",
+        "ca": "Quines marques de cambres d'aire es venen aquí?",
+        "de": "Welche Fahrradschläuche werden hier verkauft?",
+        "cs": "Jaká značka duší je zde prodávána?",
+        "nl": "Welk merk banden wordt hier verkocht?",
+        "pt_BR": "Quais marcas de câmara de ar são vendidas aqui?",
+        "es": "¿Qué cámaras se venden aquí?",
+        "pt": "Quais marcas de câmara de ar são vendidas aqui?"
+      },
+      "condition": "vending~.*bicycle_tube.*",
+      "freeform": {
+        "key": "brand"
+      },
+      "render": {
+        "en": "{brand} tubes are sold here",
+        "ca": "Aquí es venen cambres d'aire {brand}",
+        "de": "Hier werden Fahrradschläuche von {brand} verkauft",
+        "cs": "{brand} duše jsou zde prodávány",
+        "nl": "{brand} banden worden hier verkocht",
+        "pt_BR": "câmaras de ar {brand} são vendidas aqui",
+        "es": "Las cámaras {brand} se venden aquí",
+        "pt": "câmaras de ar {brand} são vendidas aqui"
+      },
+      "mappings": [
+        {
+          "if": "brand=Continental",
+          "then": {
+            "en": "Continental tubes are sold here",
+            "ca": "Aquí es venen cambres d'aire Continental",
+            "de": "Hier werden Fahrradschläuche von Continental verkauft",
+            "cs": "Continental duše jsou zde prodávány",
+            "nl": "Continental banden worden hier verkocht",
+            "pt_BR": "Câmaras de ar Continental são vendidas aqui",
+            "es": "Las cámaras Continental se venden aquí",
+            "pt": "Câmaras de ar Continental são vendidas aqui"
+          }
+        },
+        {
+          "if": "brand=Schwalbe",
+          "then": {
+            "en": "Schwalbe tubes are sold here",
+            "ca": "Aquí es venen cambres d'aire Schwalbe",
+            "de": "Hier werden Fahrradschläuche von Schwalbe verkauft",
+            "cs": "Schwalbe duše jsou zde prodávány",
+            "nl": "Schwalbe banden worden hier verkocht",
+            "pt_BR": "Câmaras de ar Schwalbe são vendidas aqui",
+            "es": "Las cámaras Schwalbe se venden aquí",
+            "pt": "Câmaras de ar Schwalbe são vendidas aqui"
+          }
+        }
+      ],
+      "multiAnswer": true,
+      "id": "bicycle_tube_vending_machine-brand"
     },
     "opening_hours_24_7",
     "payment-options-split",
@@ -773,7 +848,6 @@
         }
       ]
     },
-    "level",
     {
       "builtin": "phone",
       "override": {
@@ -791,7 +865,171 @@
         }
       }
     },
-    "website"
+    "website",
+    {
+      "rewrite": {
+        "sourceString": [
+          "{product_key}",
+          "{product_name}"
+        ],
+        "into": [
+          [
+            "bicycle_tube",
+            {
+              "en": "a bicycle tube",
+              "ca": "una cambra d'aire de bicicleta",
+              "de": "ein Fahrradschlauch",
+              "nl": "een fietsband",
+              "pt_BR": "uma câmara de ar para bicicleta",
+              "es": "una cámara para la bicicleta",
+              "pt": "uma câmara de ar para bicicleta",
+              "cs": "duše na kolo"
+            }
+          ],
+          [
+            "bicycle_light",
+            {
+              "en": "bicycle light",
+              "nl": "een fietslichtje"
+            }
+          ],
+          [
+            "condom",
+            {
+              "en": "a condom",
+              "nl": "een condoom"
+            }
+          ]
+        ]
+      },
+      "renderings": {
+        "question": {
+          "en": "How much does a {product_name} cost?",
+          "ca": "Quant costa {product_name}?",
+          "de": "Wie viel kostet {product_name}?",
+          "cs": "Kolik stojí {product_name}?",
+          "nl": "Hoeveel kost {product_name}?",
+          "pt_BR": "Quanto custa {product_name}?",
+          "es": "¿Cuánto cuesta {product_name}?",
+          "pt": "Quanto custa {product_name}?"
+        },
+        "render": {
+          "en": "{product_name} costs {charge:{product_key}}",
+          "ca": "{product_name} costa {charge:{product_key}}",
+          "de": "{product_name} kostet {charge:{product_key}}",
+          "cs": "{product_name} {charge:{product_key}}",
+          "nl": "{product_name} kost {charge:{product_key}}",
+          "pt_BR": "{product_name} custa {charge:{product_key}}",
+          "es": "{product_name} cuesta {charge:{product_key}}",
+          "pt": "{product_name} custa {charge:{product_key}}"
+        },
+        "freeform": {
+          "key": "charge:{product_key}",
+          "type": "currency"
+        },
+        "condition": "vending~.*{product_key}.*",
+        "id": "charge_{product_key}"
+      }
+    },
+    {
+      "id": "operational_status",
+      "question": {
+        "en": "Is this vending machine still operational?",
+        "nl": "Is deze verkoopsautomaat nog steeds werkende?",
+        "fr": "Cette machine est-elle encore opérationelle ?",
+        "it": "Questo distributore automatico funziona ancora?",
+        "ru": "Этот торговый автомат все еще работает?",
+        "de": "Ist dieser Automat in Betrieb?",
+        "zh_Hant": "這個自動販賣機仍有運作嗎？",
+        "pt_BR": "Esta máquina de venda automática ainda está operacional?",
+        "pt": "Esta máquina de venda automática ainda está operacional?",
+        "es": "¿Todavía funciona esta máquina expendedora?",
+        "da": "Er denne salgsautomat stadig i drift?",
+        "cs": "Je tento automat stále v provozu?",
+        "ca": "Aquesta màquina expenedora encara funciona?"
+      },
+      "mappings": [
+        {
+          "if": "operational_status=",
+          "then": {
+            "en": "This vending machine works",
+            "nl": "Deze verkoopsautomaat werkt",
+            "fr": "Le distributeur automatique fonctionne",
+            "hu": "Ez az automata működik",
+            "it": "Il distributore automatico funziona",
+            "ru": "Этот торговый автомат работает",
+            "zh_Hans": "这个借还机正常工作",
+            "de": "Dieser Automat ist in Betrieb",
+            "zh_Hant": "這個自動販賣機仍運作",
+            "pt_BR": "Esta máquina de venda automática funciona",
+            "pt": "Esta máquina de venda automática funciona",
+            "da": "Denne salgsautomat virker",
+            "es": "Esta máquina expendedora funciona",
+            "cs": "Tento prodejní automat funguje",
+            "ca": "Aquesta màquina expenedora funciona"
+          }
+        },
+        {
+          "if": "operational_status=broken",
+          "then": {
+            "en": "This vending machine is broken",
+            "nl": "Deze verkoopsautomaat is kapot",
+            "fr": "Le distributeur automatique est en panne",
+            "hu": "Ez az automata elromlott",
+            "it": "Il distributore automatico è guasto",
+            "ru": "Этот торговый автомат сломан",
+            "zh_Hans": "这个借还机已经损坏",
+            "de": "Dieser Automat ist kaputt",
+            "zh_Hant": "這個自動販賣機沒有運作了",
+            "pt_BR": "Esta máquina de venda automática está quebrada",
+            "pt": "Esta máquina de venda automática está quebrada",
+            "es": "Esta máquina exprendedora está rota",
+            "da": "Denne salgsautomat er i stykker",
+            "cs": "Tento prodejní automat je rozbitý",
+            "ca": "Aquesta màquina expenedora està trencada"
+          }
+        },
+        {
+          "if": "operational_status=closed",
+          "then": {
+            "en": "This vending machine is closed",
+            "nl": "Deze verkoopsautomaat is uitgeschakeld",
+            "fr": "Le distributeur automatique est fermé",
+            "hu": "Ez az automata zárva van",
+            "it": "Il distributore automatico è spento",
+            "ru": "Этот торговый автомат закрыт",
+            "zh_Hans": "这个借还机被关闭了",
+            "de": "Dieser Automat ist geschlossen",
+            "zh_Hant": "這個自動販賣機已經關閉了",
+            "pt_BR": "Esta máquina de venda automática está fechada",
+            "pt": "Esta máquina de venda automática está fechada",
+            "es": "Esta máquina exprendedora está cerrada",
+            "da": "Denne salgsautomat er lukket",
+            "cs": "Tento prodejní automat je uzavřen",
+            "ca": "Aquesta màquina expenedora està tancada"
+          }
+        },
+        {
+          "if": "operational_status~*",
+          "hideInAnswer": true,
+          "then": {
+            "en": "The operational status is <i>{operational_status}</i>",
+            "nl": "Deze verkoopsautomaat is <i>{operational_status}</i>",
+            "fr": "L'état opérationnel est <i>{operational_status}</i>",
+            "it": "Lo stato operativo è <i>{operational_status}</i>",
+            "de": "Der Betriebszustand ist <i>{operational_status}</i>",
+            "ru": "Рабочий статус: <i> {operational_status}</i>",
+            "zh_Hant": "運作狀態是 <i>{operational_status}</i>",
+            "pt_BR": "O estado operacional é: <i>{operational_status}</i>",
+            "pt": "O estado operacional é: <i>{operational_status}</i>",
+            "es": "El estado operacional es <i>{operational_status}</i>",
+            "da": "Driftsstatus er <i>{operational_status}</i>",
+            "cs": "Provozní stav je <i>{operational_status}</i>",
+            "ca": "L'estat operatiu és <i>{operational_status}</i>"
+          }
+        }
+      ]
+    }
   ],
   "filter": [
     "open_now",
@@ -1094,7 +1332,15 @@
       ]
     }
   ],
-  "deletion": true,
+  "deletion": {
+    "softDeletionTags": {
+      "and": [
+        "disused:amenity:={amenity}",
+        "amenity="
+      ]
+    },
+    "neededChangesets": 0
+  },
   "allowMove": {
     "enableImproveAccuracy": true,
     "enableRelocation": true
