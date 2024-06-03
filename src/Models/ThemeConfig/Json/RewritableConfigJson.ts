@@ -47,6 +47,38 @@ export default interface RewritableConfigJson<T> {
         sourceString: string[]
         into: (string | any)[][]
     }
+    /**
+     * Used to expand a sublist.
+     * E.g. a target `rendering` is:
+     *
+     * e.g.
+     * {
+     *     rewrite: ["{{x}}", "{{y}}"],
+     *     into:[
+     *         ["{{x}}": "some X"],
+     *         ["{{y}}", ["option 1", "option 2"]]
+     *     ],
+     *     renderings:[
+     *         {
+     *             "question":"Is {{x}}",
+     *             "mappings": ["if={{y}}",then: "..."]
+     *         }
+     *     ]
+     *     subExpand: {
+     *         // The list with the key
+     *         "mappings":
+     *         // will be taken and multiplied by all possible values of
+     *         "{{y}}"
+     *         // Note that this implies that `into.[*].[{{y}}]` should be a list of items
+     *     }
+     * }
+     *
+     * Expansion will result in:
+     * {
+     *     question: "Is some X",
+     *     mappings: [{"if=option 1", then: "..."}, {"if=option 2", then: "..."}]
+     * }
+     */
     subexpand?: Record<string, string[]>
     renderings: T | T[]
 }
