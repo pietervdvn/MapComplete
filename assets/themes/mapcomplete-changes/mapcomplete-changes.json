@@ -1,4 +1,4 @@
-²{
+{
   "id": "mapcomplete-changes",
   "title": {
     "en": "Changes made with MapComplete"
@@ -9,12 +9,11 @@
   "description": {
     "en": "This maps shows all the changes made with MapComplete"
   },
-  "shortDescription": {
-    "en": "Shows changes made by MapComplete",
-    "de": "Änderungen von MapComplete anzeigen"
-  },
   "icon": "./assets/svg/logo.svg",
   "hideFromOverview": true,
+  "startLat": 0,
+  "startLon": 0,
+  "startZoom": 1,
   "layers": [
     {
       "id": "mapcomplete-changes",
@@ -297,6 +296,10 @@
                   {
                     "if": "theme=kerbs_and_crossings",
                     "then": "./assets/layers/kerbs/KerbIcon.svg"
+                  },
+                  {
+                    "if": "theme=lighthouses",
+                    "then": "./assets/themes/lighthouses/lighthouse.svg"
                   },
                   {
                     "if": "theme=mapcomplete-changes",
