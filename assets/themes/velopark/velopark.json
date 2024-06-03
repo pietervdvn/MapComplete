@@ -4,7 +4,6 @@
     "en": "Velopark to OpenStreetMap synchronisation tool",
     "nl": "Velopark naar OpenStreetMap sync tool"
   },
-  "customCss": "./assets/themes/velopark/velopark.css",
   "mustHaveLanguage": [
     "nl",
     "en"
@@ -534,6 +533,7 @@
       }
     ]
   },
+  "customCss": "./assets/themes/velopark/velopark.css",
   "lockLocation": [
     [
       2.51357303225,

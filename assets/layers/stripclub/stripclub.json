@@ -8,7 +8,6 @@
     "en": "A venue where erotic dance, striptease, or lap dances are performed commercially. ",
     "de": "Ein Ort, an dem erotische Tanz-, Striptease- oder Lapdances kommerziell durchgeführt werden. "
   },
-  "enableMorePrivacy": true,
   "source": {
     "osmTags": "amenity=stripclub"
   },
@@ -88,5 +87,6 @@
     },
     "opening_hours",
     "contact"
-  ]
+  ],
+  "enableMorePrivacy": true
 }
