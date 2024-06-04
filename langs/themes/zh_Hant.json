@@ -13,7 +13,7 @@
         "title": "藝術品"
     },
     "atm": {
-        "description": "這份地圖顯示領錢與存錢的 ATM",
+        "description": "此地圖顯示了提款或存款的 ATM",
         "layers": {
             "3": {
                 "override": {
@@ -53,7 +53,7 @@
     },
     "bookcases": {
         "description": "公共書架是街邊箱子、盒子、舊的電話亭或是其他存放書本的物件，每一個人都能放置或拿取書本。這份地圖收集所有類型的書架，你可以探索你附近新的書架，同時也能用免費的開放街圖帳號來快速新增你最愛的書架。",
-        "title": "開放書架地圖"
+        "title": "公共書櫃"
     },
     "cafes_and_pubs": {
         "description": "咖啡廳、俱樂部與酒吧",
@@ -123,10 +123,10 @@
                     "caravansites-long-term": {
                         "mappings": {
                             "0": {
-                                "then": "有，這個地方有提供長期租用，但你也可以用天計算費用"
+                                "then": "有些地方提供長期租用，但你也可以用天計算費用"
                             },
                             "1": {
-                                "then": "沒有，這裡沒有永久的客戶"
+                                "then": "這裏沒有永久的客人"
                             },
                             "2": {
                                 "then": "如果有長期租用合約才有可能待下來(如果你選擇這個地方則會在這份地圖消失)"
@@ -283,12 +283,30 @@
     "climbing": {
         "description": "在這份地圖上你會發現能夠攀爬機會，像是攀岩體育館、抱石大廳以及大自然當中的巨石。",
         "descriptionTail": "攀爬地圖最初由 <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a> 製作。如果你有回饋意見或問題請到Please <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>這邊反應</a>。</p><p>這專案使用來自<a href='https://www.openstreetmap.org/' target='_blank'>開放街圖</a>專案的資料。</p>",
-        "title": "開放攀爬地圖"
+        "title": "攀岩館、俱樂部和場所"
+    },
+    "cycle_highways": {
+        "layers": {
+            "0": {
+                "name": "單車高速公路",
+                "title": {
+                    "render": "單車高速公路"
+                }
+            }
+        },
+        "title": "單車高速公路"
     },
     "cycle_infra": {
         "description": "可以檢視與編輯單車相關設施的地圖，在 #os0c21時製作。",
         "shortDescription": "檢視與編輯單車相關設施的地圖。",
         "title": "單車設施"
+    },
+    "cyclenodes": {
+        "layers": {
+            "1": {
+                "name": "節點"
+            }
+        }
     },
     "cyclestreets": {
         "description": "單車街道是<b>機動車輛受限制，只允許單車通行</b>的道路。通常會有路標顯示特別的交通指標。單車街道通常在荷蘭、比利時看到，但德國與法國也有。 ",
@@ -297,7 +315,16 @@
                 "name": "單車街道"
             },
             "1": {
-                "name": "將來的單車街道"
+                "name": "將來的單車街道",
+                "title": {
+                    "render": "將來的單車街道"
+                }
+            },
+            "2": {
+                "name": "所有道路",
+                "title": {
+                    "render": "街道"
+                }
             }
         },
         "shortDescription": "單車街道的地圖",
@@ -305,11 +332,14 @@
     },
     "cyclofix": {
         "description": "這份地圖的目的是為單車騎士能夠輕易顯示滿足他們需求的相關設施。<br><br>你可以追蹤你確切位置 (只有行動版)，以及在左下角選擇相關的圖層。你可以使用這工具在地圖新增或編輯釘子，以及透過回答問題來提供更多資訊。<br><br>所有你的變動都會自動存在開放街圖這全球資料圖，並且能被任何人自由取用。<br><br>你可以到 <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a> 閱讀更多資訊。",
-        "title": "單車修正 - 單車騎士的開放地圖"
+        "title": "單車修正—單車騎士的地圖"
     },
     "drinking_water": {
         "description": "在這份地圖上，公共可及的飲水點可以顯示出來，也能輕易的增加",
         "title": "飲用水"
+    },
+    "education": {
+        "title": "教育"
     },
     "etymology": {
         "description": "在這份地圖，你可以看到物件是以何命名，道路、 建築等的命名由來連到 Wikidata。在跳出選單，你可以看到物件命名由來的維基條目 (如果有的話)，或是 Wikidata 框。如果物件本身有維基頁面，也會顯示。<br/><br/><b>你也可以貢獻！</b>放大到夠大的層級，然後<i>所有</i>道路都會顯示。你可以點選一個之後 Wikidata 搜尋框會跳出來。只要點幾下，你可以新增詞源連結。注意你要有開放街圖帳號才能這麼做。",
@@ -364,12 +394,39 @@
     "hackerspaces": {
         "description": "在這份地圖上你可以看到駭客空間，新增或直接更新資料",
         "shortDescription": "駭客空間的地圖",
-        "title": "駭客空間"
+        "title": "駭客空間與創客空間"
     },
     "hailhydrant": {
         "description": "在這份地圖上面你可以在你喜愛的社區尋找與更新消防栓、消防隊、急救站與滅火器。\n\n你可以追蹤確切位置 (只有行動版) 以及在左下角選擇與你相關的圖層。你也可以使用這工具新增或編輯地圖上的釘子 (興趣點)，以及透過回答一些問題提供額外的資訊。\n\n所有你做出的變動都會自動存到開放街圖這個全球資料庫，而且能自由讓其他人取用。",
         "shortDescription": "顯示消防栓、滅火器、消防隊與急救站的地圖。",
-        "title": "消防栓、滅火器、消防隊、以及急救站。"
+        "title": "消防栓、滅火器、消防局和救護站"
+    },
+    "healthcare": {
+        "layers": {
+            "5": {
+                "override": {
+                    "=presets": {
+                        "2": {
+                            "title": "配鏡師"
+                        }
+                    }
+                }
+            }
+        },
+        "title": "醫療保健"
+    },
+    "hotels": {
+        "title": "飯店"
+    },
+    "indoors": {
+        "title": "室內"
+    },
+    "mapcomplete-changes": {
+        "layers": {
+            "0": {
+                "name": "變更集中心"
+            }
+        }
     },
     "maproulette": {
         "title": "MapRoulette 任務"
@@ -398,9 +455,33 @@
         "shortDescription": "開發可及能觀景的高塔",
         "title": "觀景塔"
     },
+    "onwheels": {
+        "layers": {
+            "19": {
+                "override": {
+                    "=title": {
+                        "render": "統計數據"
+                    }
+                }
+            },
+            "20": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "匯入"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
     "openwindpowermap": {
         "description": "顯示與編輯風機的地圖。",
-        "title": "開放風力地圖"
+        "title": "風力發電機"
     },
     "parkings": {
         "description": "這地圖顯示不同的停車空間",
@@ -469,7 +550,7 @@
         "title": "郵遞區號"
     },
     "postboxes": {
-        "description": "在這份地圖你能找到與新增有關郵局與郵筒的資料，你可以用這份地圖找到寄送您下張明信片的地方！:)<br/>發現錯誤或是有郵筒遺漏嗎？你可以用免費的開放街圖帳號來編輯。 ",
+        "description": "在這份地圖你能找到與新增有關郵局與郵筒的資料，你可以用這份地圖找到寄送您下張明信片的地方！:)<br/>發現錯誤或是有郵筒遺漏嗎？你可以用免費的開放街圖帳號來編輯。",
         "shortDescription": "顯示郵筒與郵局的地圖",
         "title": "郵筒與郵局地圖"
     },
@@ -486,7 +567,10 @@
         "layers": {
             "0": {
                 "description": "顯示道路的人行穿越道的圖層",
-                "name": "人行道"
+                "name": "人行道",
+                "title": {
+                    "render": "{name}"
+                }
             }
         },
         "title": "人行道"
@@ -513,10 +597,8 @@
     },
     "stations": {
         "layers": {
-            "3": {
-                "description": "顯示火車站的圖層"
-            },
             "16": {
+                "name": "出發板",
                 "presets": {
                     "0": {
                         "title": "時刻表"
@@ -535,6 +617,10 @@
                 "title": {
                     "render": "時刻表"
                 }
+            },
+            "3": {
+                "description": "顯示火車站的圖層",
+                "name": "火車站"
             }
         },
         "title": "火車站"
@@ -612,6 +698,16 @@
         "description": "繪製所有樹木！",
         "shortDescription": "所有樹木的地圖",
         "title": "樹木"
+    },
+    "vending_machine": {
+        "title": "自動販賣機"
+    },
+    "walkingnodes": {
+        "layers": {
+            "1": {
+                "name": "節點"
+            }
+        }
     },
     "walls_and_buildings": {
         "description": "特殊的內建圖層顯示所有牆壁與建築。這個圖層對於規畫要靠牆的東西 (例如 AED、郵筒、入口、地址、監視器等) 相當實用。這個圖層預設顯示而且無法由使用者開關。",
