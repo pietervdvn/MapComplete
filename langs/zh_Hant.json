@@ -64,6 +64,7 @@
             "intro": "開放街圖沒有下列屬性的資訊",
             "title": "遺失的物件"
         },
+        "noDataLoaded": "外部網站沒有可以載入的已連結資料",
         "overwrite": "在 OpenStreetMap 中覆寫"
     },
     "favourite": {
