@@ -222,11 +222,14 @@
             "natural=tree"
           ]
         },
-        {"if": "historic=tomb",
+        {
+          "if": "historic=tomb",
           "then": {
             "en": "This is a gravestone; the person is buried here"
           },
-          "addExtraTags": ["memorial="]
+          "addExtraTags": [
+            "memorial="
+          ]
         }
       ],
       "render": {

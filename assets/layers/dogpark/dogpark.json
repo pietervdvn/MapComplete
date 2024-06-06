@@ -201,7 +201,6 @@
         "cs": "Má tento psí park samostatný oplocený areál pro malé psy a štěňata?"
       }
     },
-
     {
       "id": "dogarea",
       "render": {
@@ -215,6 +214,5 @@
       },
       "condition": "_surface:ha!=0"
     }
-
   ]
 }

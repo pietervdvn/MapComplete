@@ -162,14 +162,16 @@
         "minzoom": 11,
         "source": {
           "osmTags": {
-            "and+": ["vending~.*bicycle.*"]
+            "and+": [
+              "vending~.*bicycle.*"
+            ]
           }
         },
-        "=presets":[]
-
+        "=presets": []
       }
     },
-    {"#": "All vending machines at high zoom level to avoid duplicates",
+    {
+      "#": "All vending machines at high zoom level to avoid duplicates",
       "builtin": "vending_machine",
       "override": {
         "name": null,
