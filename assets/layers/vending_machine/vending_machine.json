@@ -867,6 +867,7 @@
     },
     "website",
     {
+      "id": "charge_cost_rewritten",
       "rewrite": {
         "sourceString": [
           "{product_key}",
@@ -902,34 +903,38 @@
           ]
         ]
       },
-      "renderings": {
-        "question": {
-          "en": "How much does a {product_name} cost?",
-          "ca": "Quant costa {product_name}?",
-          "de": "Wie viel kostet {product_name}?",
-          "cs": "Kolik stojí {product_name}?",
-          "nl": "Hoeveel kost {product_name}?",
-          "pt_BR": "Quanto custa {product_name}?",
-          "es": "¿Cuánto cuesta {product_name}?",
-          "pt": "Quanto custa {product_name}?"
-        },
-        "render": {
-          "en": "{product_name} costs {charge:{product_key}}",
-          "ca": "{product_name} costa {charge:{product_key}}",
-          "de": "{product_name} kostet {charge:{product_key}}",
-          "cs": "{product_name} {charge:{product_key}}",
-          "nl": "{product_name} kost {charge:{product_key}}",
-          "pt_BR": "{product_name} custa {charge:{product_key}}",
-          "es": "{product_name} cuesta {charge:{product_key}}",
-          "pt": "{product_name} custa {charge:{product_key}}"
-        },
-        "freeform": {
-          "key": "charge:{product_key}",
-          "type": "currency"
-        },
-        "condition": "vending~.*{product_key}.*",
-        "id": "charge_{product_key}"
-      }
+      "renderings": [
+        {
+          "id": "charge_{product_key}",
+          "question": {
+            "en": "How much does a {product_name} cost?",
+            "ca": "Quant costa {product_name}?",
+            "de": "Wie viel kostet {product_name}?",
+            "cs": "Kolik stojí {product_name}?",
+            "nl": "Hoeveel kost {product_name}?",
+            "pt_BR": "Quanto custa {product_name}?",
+            "es": "¿Cuánto cuesta {product_name}?",
+            "pt": "Quanto custa {product_name}?"
+          },
+          "render": {
+            "en": "{product_name} costs {charge}",
+            "ca": "{product_name} costa {charge}",
+            "de": "{product_name} kostet {charge}",
+            "cs": "{product_name} {charge}",
+            "nl": "{product_name} kost {charge}",
+            "pt_BR": "{product_name} custa {charge}",
+            "es": "{product_name} cuesta {charge}",
+            "pt": "{product_name} custa {charge}"
+          },
+          "freeform": {
+            "key": "charge",
+            "type": "currency",
+            "inline": true,
+            "postfixDistinguished":  "{product_key}"
+          },
+          "condition": "vending~.*{product_key}.*"
+        }
+      ]
     },
     {
       "id": "operational_status",
