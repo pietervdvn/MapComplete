@@ -364,23 +364,6 @@
             }
         }
     },
-    "bicycle_tube_vending_machine": {
-        "tagRenderings": {
-            "Still in use?": {
-                "mappings": {
-                    "0": {
-                        "then": "Ez az automata működik"
-                    },
-                    "1": {
-                        "then": "Ez az automata elromlott"
-                    },
-                    "2": {
-                        "then": "Ez az automata zárva van"
-                    }
-                }
-            }
-        }
-    },
     "bike_parking": {
         "name": "Kerékpártároló",
         "presets": {
@@ -927,6 +910,23 @@
                 "applicableUnits": {
                     "0": {
                         "human": "{quantity} méter"
+                    }
+                }
+            }
+        }
+    },
+    "vending_machine": {
+        "tagRenderings": {
+            "operational_status": {
+                "mappings": {
+                    "0": {
+                        "then": "Ez az automata működik"
+                    },
+                    "1": {
+                        "then": "Ez az automata elromlott"
+                    },
+                    "2": {
+                        "then": "Ez az automata zárva van"
                     }
                 }
             }

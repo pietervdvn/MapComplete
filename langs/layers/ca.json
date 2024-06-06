@@ -1046,90 +1046,6 @@
             "render": "Lloguer de bicicletes"
         }
     },
-    "bicycle_tube_vending_machine": {
-        "description": "Una capa que mostra màquines expenedores per a tubs de bicicleta (ja siguin màquines expenedores de tubs de bicicleta o màquines expenedores clàssiques amb tubs de bicicleta i opcionalment objectes addicionals relacionats amb la bicicleta com ara llums, guants, panys, ...)",
-        "name": "Màquina expenedora de tubs de bicicleta",
-        "presets": {
-            "0": {
-                "title": "una màquina expenedora de tubs de bicicleta"
-            }
-        },
-        "tagRenderings": {
-            "Still in use?": {
-                "mappings": {
-                    "0": {
-                        "then": "Aquesta màquina expenedora funciona"
-                    },
-                    "1": {
-                        "then": "Aquesta màquina expenedora està trencada"
-                    },
-                    "2": {
-                        "then": "Aquesta màquina expenedora està tancada"
-                    }
-                },
-                "question": "Aquesta màquina expenedora encara funciona?",
-                "render": "L'estat operatiu és <i>{operational_status}</i>"
-            },
-            "bicycle_tube_vending_machine-brand": {
-                "mappings": {
-                    "0": {
-                        "then": "Aquí es venen cambres d'aire Continental"
-                    },
-                    "1": {
-                        "then": "Aquí es venen cambres d'aire Schwalbe"
-                    }
-                },
-                "question": "Quines marques de cambres d'aire es venen aquí?",
-                "render": "Aquí es venen cambres d'aire {brand}"
-            },
-            "bicycle_tube_vending_machine-charge": {
-                "question": "Quant costa una cambra d'aire de bicicleta?",
-                "render": "Una cambra d'aire de bicicleta costa {charge}"
-            },
-            "bicycle_tube_vending_machine-operator": {
-                "mappings": {
-                    "0": {
-                        "then": "Mantés per Schwalbe"
-                    },
-                    "1": {
-                        "then": "Mantés per Continental"
-                    }
-                },
-                "question": "Qui manté aquesta màquina expenedora?"
-            },
-            "other-items-vending": {
-                "mappings": {
-                    "0": {
-                        "then": "Aquí es venen cambres d'aire de bicicletes"
-                    },
-                    "1": {
-                        "then": "Aquí es venen llums per a bicicletes"
-                    },
-                    "2": {
-                        "then": "Aquí es venen guants"
-                    },
-                    "3": {
-                        "then": "Aquí es venen kits de reparació de bicicletes"
-                    },
-                    "4": {
-                        "then": "Aquí es venen bombes de bicicletes"
-                    },
-                    "5": {
-                        "then": "Aquí es venen cadenats per a bicicletes"
-                    }
-                },
-                "question": "Es venen altres accessoris per a bicicletes aquí?"
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Màquina expenedora de cambres d'aire de bicicletes {name}"
-                }
-            },
-            "render": "Màquina expenedora de tubs de bicicleta"
-        }
-    },
     "bike_cafe": {
         "description": "Un cafè ciclista és un cafè enfocat a ciclistes, per exemple, amb serveis com una manxa, amb molta decoració relacionada amb el ciclisme, …",
         "name": "Cafeteria per a bicicletes",
@@ -8825,6 +8741,33 @@
             }
         },
         "tagRenderings": {
+            "bicycle_tube_vending_machine-brand": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquí es venen cambres d'aire Continental"
+                    },
+                    "1": {
+                        "then": "Aquí es venen cambres d'aire Schwalbe"
+                    }
+                },
+                "question": "Quines marques de cambres d'aire es venen aquí?",
+                "render": "Aquí es venen cambres d'aire {brand}"
+            },
+            "charge_cost_rewritten": {
+                "renderings": {
+                    "0": {
+                        "question": "Quant costa {product_name}?",
+                        "render": "{product_name} costa {charge:{product_key}}"
+                    }
+                },
+                "rewrite": {
+                    "into": {
+                        "0": {
+                            "1": "una cambra d'aire de bicicleta"
+                        }
+                    }
+                }
+            },
             "indoor": {
                 "mappings": {
                     "0": {
@@ -8838,6 +8781,23 @@
                     }
                 },
                 "question": "Aquesta màquina expenedora està a l'exterior?"
+            },
+            "operational_status": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquesta màquina expenedora funciona"
+                    },
+                    "1": {
+                        "then": "Aquesta màquina expenedora està trencada"
+                    },
+                    "2": {
+                        "then": "Aquesta màquina expenedora està tancada"
+                    },
+                    "3": {
+                        "then": "L'estat operatiu és <i>{operational_status}</i>"
+                    }
+                },
+                "question": "Aquesta màquina expenedora encara funciona?"
             },
             "operator": {
                 "freeform": {

@@ -1191,90 +1191,6 @@
             "render": "Fahrradverleih"
         }
     },
-    "bicycle_tube_vending_machine": {
-        "description": "Eine Ebene mit Automaten für Fahrradschläuche (entweder spezielle Fahrradschlauch-Automaten oder klassische Automaten mit Fahrradschläuchen und optional zusätzlichen fahrradbezogenen Gegenständen wie Lampen, Handschuhe, Schlösser, …)",
-        "name": "Automat für Fahrradschläuche",
-        "presets": {
-            "0": {
-                "title": "einen Fahrradschlauch-Automaten"
-            }
-        },
-        "tagRenderings": {
-            "Still in use?": {
-                "mappings": {
-                    "0": {
-                        "then": "Dieser Automat ist in Betrieb"
-                    },
-                    "1": {
-                        "then": "Dieser Automat ist kaputt"
-                    },
-                    "2": {
-                        "then": "Dieser Automat ist geschlossen"
-                    }
-                },
-                "question": "Ist dieser Automat in Betrieb?",
-                "render": "Der Betriebszustand ist <i>{operational_status}</i>"
-            },
-            "bicycle_tube_vending_machine-brand": {
-                "mappings": {
-                    "0": {
-                        "then": "Hier werden Fahrradschläuche von Continental verkauft"
-                    },
-                    "1": {
-                        "then": "Hier werden Fahrradschläuche von Schwalbe verkauft"
-                    }
-                },
-                "question": "Welche Fahrradschläuche werden hier verkauft?",
-                "render": "Hier werden Fahrradschläuche von {brand} verkauft"
-            },
-            "bicycle_tube_vending_machine-charge": {
-                "question": "Wie viel kostet ein Fahrradschlauch?",
-                "render": "Ein Fahrradschlauch kostet {charge}"
-            },
-            "bicycle_tube_vending_machine-operator": {
-                "mappings": {
-                    "0": {
-                        "then": "Betrieben von Schwalbe"
-                    },
-                    "1": {
-                        "then": "Betrieben von Continental"
-                    }
-                },
-                "question": "Wer betreibt den Automaten?"
-            },
-            "other-items-vending": {
-                "mappings": {
-                    "0": {
-                        "then": "Hier werden Fahrradschläuche verkauft"
-                    },
-                    "1": {
-                        "then": "Hier werden Fahrradlampen verkauft"
-                    },
-                    "2": {
-                        "then": "Hier werden Fahrradhandschuhe verkauft"
-                    },
-                    "3": {
-                        "then": "Hier werden Fahrrad-Reparatursets verkauft"
-                    },
-                    "4": {
-                        "then": "Hier werden Fahrradpumpen verkauft"
-                    },
-                    "5": {
-                        "then": "Hier werden Fahrradschlösser verkauft"
-                    }
-                },
-                "question": "Wird weiteres Fahrradzubehör verkauft?"
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "{name} Fahrradschlauch-Automat"
-                }
-            },
-            "render": "Fahrradschlauch-Automat"
-        }
-    },
     "bike_cafe": {
         "description": "Ein Fahrradcafé ist ein Café, das auf Radfahrer ausgerichtet ist, zum Beispiel mit Dienstleistungen wie einer Pumpe, mit viel fahrradbezogener Dekoration, …",
         "name": "Fahrrad-Cafés",
@@ -11071,6 +10987,33 @@
             }
         },
         "tagRenderings": {
+            "bicycle_tube_vending_machine-brand": {
+                "mappings": {
+                    "0": {
+                        "then": "Hier werden Fahrradschläuche von Continental verkauft"
+                    },
+                    "1": {
+                        "then": "Hier werden Fahrradschläuche von Schwalbe verkauft"
+                    }
+                },
+                "question": "Welche Fahrradschläuche werden hier verkauft?",
+                "render": "Hier werden Fahrradschläuche von {brand} verkauft"
+            },
+            "charge_cost_rewritten": {
+                "renderings": {
+                    "0": {
+                        "question": "Wie viel kostet {product_name}?",
+                        "render": "{product_name} kostet {charge:{product_key}}"
+                    }
+                },
+                "rewrite": {
+                    "into": {
+                        "0": {
+                            "1": "ein Fahrradschlauch"
+                        }
+                    }
+                }
+            },
             "indoor": {
                 "mappings": {
                     "0": {
@@ -11084,6 +11027,23 @@
                     }
                 },
                 "question": "Ist der Automat in einem Gebäude untergebracht?"
+            },
+            "operational_status": {
+                "mappings": {
+                    "0": {
+                        "then": "Dieser Automat ist in Betrieb"
+                    },
+                    "1": {
+                        "then": "Dieser Automat ist kaputt"
+                    },
+                    "2": {
+                        "then": "Dieser Automat ist geschlossen"
+                    },
+                    "3": {
+                        "then": "Der Betriebszustand ist <i>{operational_status}</i>"
+                    }
+                },
+                "question": "Ist dieser Automat in Betrieb?"
             },
             "operator": {
                 "freeform": {

@@ -955,35 +955,6 @@
             "render": "Location de vélo"
         }
     },
-    "bicycle_tube_vending_machine": {
-        "description": "Une couche affichant des distributeurs automatiques de chambre à air (que ce soit des distributeurs conçus spécifiquement pour les chambres à air ou des distributeurs classiques incluant des chambres à air ainsi des objets apparentés tels que de l'éclairage pour vélo, des gants, des cadenas, ...)",
-        "name": "Distributeur automatique de chambre à air de vélo",
-        "presets": {
-            "0": {
-                "title": "une distributeur automatique de chambre à air de vélo"
-            }
-        },
-        "tagRenderings": {
-            "Still in use?": {
-                "mappings": {
-                    "0": {
-                        "then": "Le distributeur automatique fonctionne"
-                    },
-                    "1": {
-                        "then": "Le distributeur automatique est en panne"
-                    },
-                    "2": {
-                        "then": "Le distributeur automatique est fermé"
-                    }
-                },
-                "question": "Cette machine est-elle encore opérationelle ?",
-                "render": "L'état opérationnel est <i>{operational_status}</i>"
-            }
-        },
-        "title": {
-            "render": "Distributeur automatique de chambre à air de vélo"
-        }
-    },
     "bike_cafe": {
         "description": "Un vélo café est un café à destination des cyclistes avec, par exemple, des services tels qu’une pompe, et de nombreuses décorations liées aux vélos, etc.",
         "name": "Café vélo",
@@ -6900,6 +6871,23 @@
                     }
                 },
                 "question": "Est-ce que ce distributeur est en intérieur ?"
+            },
+            "operational_status": {
+                "mappings": {
+                    "0": {
+                        "then": "Le distributeur automatique fonctionne"
+                    },
+                    "1": {
+                        "then": "Le distributeur automatique est en panne"
+                    },
+                    "2": {
+                        "then": "Le distributeur automatique est fermé"
+                    },
+                    "3": {
+                        "then": "L'état opérationnel est <i>{operational_status}</i>"
+                    }
+                },
+                "question": "Cette machine est-elle encore opérationelle ?"
             },
             "operator": {
                 "freeform": {
