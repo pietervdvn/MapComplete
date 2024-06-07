@@ -492,7 +492,7 @@
             "tuesday": "Terça-feira",
             "wednesday": "Quarta-feira"
         },
-        "welcomeBack": "Iniciou a sessão, bem-vindo de volta!",
+        "welcomeBack": "Bem-vindo de volta!",
         "welcomeExplanation": {
             "addNew": "Está a faltar um item? Utilize o botão no canto inferior esquerdo para adicionar um novo ponto de interesse.",
             "general": "Neste mapa, pode ver, editar e adicionar <i>pontos de interesse</i>. Aproxime a visualização para ver o POI, toque num para ver ou editar a informação. Todos os dados são obtidos e guardados no OpenStreetMap, que podem ser livremente reutilizados."
@@ -696,20 +696,40 @@
         "miscCookies": "O MapComplete integra-se em vários outros serviços, nomeadamente para carregar imagens de elementos. As imagens são alojadas em vários servidores de terceiros, que poderão criar cookies por si próprios.",
         "miscCookiesTitle": "Outros cookies",
         "surveillance": "Como está a ler a política de privacidade, provavelmente preocupa-se com a privacidade - nós também! Até criámos <a href='https://mapcomplete.org/surveillance'>um tema que mostra câmaras de vigilância.</a> Não hesite em mapeá-las todas!",
-        "title": "Política de privacidade"
+        "title": "Política de privacidade",
+        "tracking": "Para obter informações sobre quem visita o nosso sítio web, são recolhidas algumas informações técnicas. Estas incluem o país a partir do qual visitou a página web, o sítio web que o encaminhou para a MapComplete, o tipo de dispositivo e o tamanho do ecrã. É colocado um cookie no seu dispositivo para indicar que visitou o MapComplete hoje. Estes dados não são suficientemente pormenorizados para o identificar pessoalmente. Estas estatísticas só são disponibilizadas a qualquer pessoa de forma agregada e são <a href='https://pietervdvn.goatcounter.com' target='_blank'>acessíveis ao público</a>",
+        "trackingTitle": "Dados estatísticos",
+        "whileYoureHere": "Preocupa-se com a privacidade?"
     },
     "reviews": {
         "affiliated_reviewer_warning": "(avaliação de afiliado)",
         "attribution": "As avaliações são fornecidas por <a href=\"https://mangrove.reviews/\" target=\"_blank\">Mangrove Reviews</a> e estão disponíveis sob a licença <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a>.",
-        "i_am_affiliated": "<span>Eu sou afiliado a este objeto</span><br><span class=\"subtle\"><br><span class=\"subtle\">Marque isto se for proprietário, criador, funcionário…</span></span>",
+        "averageRating": "Classificação média de {n} estrelas",
+        "i_am_affiliated": "Estou associado a este objeto",
+        "i_am_affiliated_explanation": "Marque caso seja proprietário, criador, empregado…",
         "name_required": "É necessário um nome para mostrar e criar avaliações",
         "no_reviews_yet": "Ainda não existem avaliações. Seja o primeiro a escrever uma e ajude a abrir os dados e os negócios!",
-        "saved": "<span class=\"thanks\">Avaliação guardada. Obrigado por partilhar!</span>",
+        "non_place_review": "Uma avaliação não é sobre um local e não é mostrada aqui.",
+        "non_place_reviews": "{n} avaliações não são sobre um local e não são mostradas aqui.",
+        "question": "Como classificaria {title()}?",
+        "question_opinion": "Como foi a sua experiência?",
+        "rate": "Avaliar {n} estrelas",
+        "rated": "Avaliado com {n} estrelas",
+        "reviewPlaceholder": "Descreva a sua experiência…",
+        "reviewing_as": "A avaliar como {nickname}",
+        "reviewing_as_anonymous": "Avaliar como anónimo",
+        "reviews_bug": "Esperava mais avaliações? Algumas avaliações não são apresentadas devido a um erro.",
+        "save": "Guardar avaliação",
+        "saved": "Avaliação guardada. Obrigado por partilhar!",
         "saving_review": "A guardar…",
+        "see_all": "Ver todas as avaliações em mangrove.reviews",
         "title": "{count} avaliações",
         "title_singular": "Uma avaliação",
+        "too_long": "São permitidos no máximo {max} caracteres. A sua avaliação tem {amount} caracteres.",
         "tos": "Se criar uma avaliação, concorda com <a href=\"https://mangrove.reviews/terms\" target=\"_blank\">os termos do serviço e a política de privacidade de Mangrove.reviews</a>",
-        "write_a_comment": "Deixar uma avaliação…"
+        "write_a_comment": "Deixar uma avaliação…",
+        "your_reviews": "As suas avaliações anteriores",
+        "your_reviews_empty": "Não encontrámos nenhuma das suas avaliações anteriores"
     },
     "split": {
         "cancel": "Cancelar",
@@ -717,13 +737,99 @@
         "inviteToSplit": "Dividir esta estrada em segmentos mais pequenos. Isto permite atribuir propriedades diferentes a várias partes da estrada.",
         "loginToSplit": "Tem de estar autenticado para dividir uma estrada",
         "split": "Dividir",
-        "splitTitle": "Escolha no mapa onde dividir esta estrada"
+        "splitAgain": "Dividir esta estrada novamente",
+        "splitTitle": "Seccione no mapa onde as propriedades desta estrada mudam"
     },
     "translations": {
-        "activateButton": "Ajude a traduzir MapComplete"
+        "activateButton": "Ajude a traduzir MapComplete",
+        "allMissing": "Ainda não há traduções",
+        "missing": "{count} cadeias de caracteres não traduzidas",
+        "notImmediate": "As traduções não são atualizadas diretamente. Normalmente, isto demora alguns dias"
     },
     "userinfo": {
+        "editDescription": "Editar a descrição do seu perfil",
         "gotoInbox": "Abra sua caixa de entrada",
-        "gotoSettings": "Vá para suas configurações no OpenStreetMap.org"
+        "gotoSettings": "Vá para suas configurações no OpenStreetMap.org",
+        "noDescription": "Ainda não tem uma descrição no seu perfil",
+        "noDescriptionCallToAction": "Adicionar uma descrição do perfil",
+        "notLoggedIn": "Terminou a sessão"
+    },
+    "validation": {
+        "color": {
+            "description": "Uma cor ou código hexadecimal"
+        },
+        "date": {
+            "description": "Uma data, começando pelo ano"
+        },
+        "direction": {
+            "description": "Uma orientação"
+        },
+        "distance": {
+            "description": "Uma distância em metros"
+        },
+        "email": {
+            "description": "endereço de e-mail",
+            "feedback": "Isto não é um endereço de e-mail válido",
+            "noAt": "Um e-mail deve conter um @"
+        },
+        "fediverse": {
+            "description": "Um identificador fediverse, frequentemente @username@server.tld",
+            "feedback": "Um identificador fediverse consiste em @username@server.tld ou é uma hiperligação a um perfil",
+            "invalidHost": "{host} não é um nome de hospedeiro válido",
+            "onYourServer": "Ver e seguir no seu servidor"
+        },
+        "float": {
+            "description": "um número",
+            "feedback": "Isto não é um número"
+        },
+        "id": {
+            "description": "um identificador",
+            "invalidCharacter": "Um identificador só pode conter letras, dígitos e sublinhados",
+            "shouldBeLonger": "Um identificador deve ter pelo menos 3 caracteres"
+        },
+        "int": {
+            "description": "um número inteiro"
+        },
+        "nat": {
+            "description": "um número inteiro positivo ou zero",
+            "mustBePositive": "Este número deve ser positivo",
+            "mustBeWhole": "Só são permitidos números inteiros",
+            "notANumber": "Introduzir um número"
+        },
+        "opening_hours": {
+            "description": "Horário de funcionamento"
+        },
+        "pfloat": {
+            "description": "um número positivo"
+        },
+        "phone": {
+            "description": "um número de telefone",
+            "feedback": "Este não é um número de telefone válido",
+            "feedbackCountry": "Este não é um número de telefone válido (para o país {country})"
+        },
+        "pnat": {
+            "description": "um número inteiro positivo",
+            "noZero": "O zero não é permitido"
+        },
+        "slope": {
+            "inputExplanation": "Coloque o telemóvel no chão com a parte superior do telemóvel a apontar para o topo da inclinação.",
+            "inputIncorrect": "Para obter medições corretas, certifique-se de que a seta está dentro da área verde."
+        },
+        "string": {
+            "description": "um pedaço de texto"
+        },
+        "text": {
+            "description": "um pedaço de texto"
+        },
+        "tooLong": "O texto é demasiado longo, são permitidos no máximo 255 caracteres. Tem agora {count} caracteres.",
+        "url": {
+            "description": "hiperligação a um sítio web",
+            "feedback": "Isto não é um endereço web válido"
+        },
+        "wikidata": {
+            "description": "Um identificador Wikidata",
+            "empty": "Por favor, introduza algumas entradas wikidata",
+            "startsWithQ": "Um identificador wikidata começa por Q e é seguido de um número"
+        }
     }
 }
