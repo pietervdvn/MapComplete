@@ -20,6 +20,9 @@ export default class LineRenderingConfig extends WithContextLoader {
         this.color = this.tr("color", "#0000ff")
         this.width = this.tr("width", "7")
         this.dashArray = json.dashArray
+        if(this.dashArray !== undefined && typeof this.dashArray !== "string"){
+            throw "Invalid dasharray at "+context+"; this should be a string but is a "+typeof this.dashArray
+        }
         this.lineCap = this.tr("lineCap", "round")
         this.fill = this.tr("fill", undefined)
         this.fillColor = this.tr("fillColor", undefined)

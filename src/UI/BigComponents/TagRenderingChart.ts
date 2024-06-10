@@ -1,4 +1,4 @@
-import ChartJs from "../Base/ChartJs"
+import ChartJs, { ChartJsColours } from "../Base/ChartJs"
 import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig"
 import { ChartConfiguration } from "chart.js"
 import Combine from "../Base/Combine"
@@ -111,12 +111,12 @@ export class StackedRenderingChart extends ChartJs {
                 }
             }
             let backgroundColor =
-                TagRenderingChart.borderColors[i % TagRenderingChart.borderColors.length]
+                ChartJsColours.borderColors[i % ChartJsColours.borderColors.length]
             if (label === "Unknown") {
-                backgroundColor = TagRenderingChart.unkownBorderColor
+                backgroundColor = ChartJsColours.unknownBorderColor
             }
             if (label === "Other") {
-                backgroundColor = TagRenderingChart.otherBorderColor
+                backgroundColor = ChartJsColours.otherBorderColor
             }
             datasets.push({
                 data: countsPerDay,
@@ -185,31 +185,7 @@ export class StackedRenderingChart extends ChartJs {
 }
 
 export default class TagRenderingChart extends Combine {
-    public static readonly unkownColor = "rgba(128, 128, 128, 0.2)"
-    public static readonly unkownBorderColor = "rgba(128, 128, 128, 0.2)"
 
-    public static readonly otherColor = "rgba(128, 128, 128, 0.2)"
-    public static readonly otherBorderColor = "rgba(128, 128, 255)"
-    public static readonly notApplicableColor = "rgba(128, 128, 128, 0.2)"
-    public static readonly notApplicableBorderColor = "rgba(255, 0, 0)"
-
-    public static readonly backgroundColors = [
-        "rgba(255, 99, 132, 0.2)",
-        "rgba(54, 162, 235, 0.2)",
-        "rgba(255, 206, 86, 0.2)",
-        "rgba(75, 192, 192, 0.2)",
-        "rgba(153, 102, 255, 0.2)",
-        "rgba(255, 159, 64, 0.2)",
-    ]
-
-    public static readonly borderColors = [
-        "rgba(255, 99, 132, 1)",
-        "rgba(54, 162, 235, 1)",
-        "rgba(255, 206, 86, 1)",
-        "rgba(75, 192, 192, 1)",
-        "rgba(153, 102, 255, 1)",
-        "rgba(255, 159, 64, 1)",
-    ]
 
     /**
      * Creates a chart about this tagRendering for the given data
@@ -242,19 +218,19 @@ export default class TagRenderingChart extends Combine {
         }
 
         const borderColor = [
-            TagRenderingChart.unkownBorderColor,
-            TagRenderingChart.otherBorderColor,
-            TagRenderingChart.notApplicableBorderColor,
+            ChartJsColours.unknownBorderColor,
+            ChartJsColours.otherBorderColor,
+            ChartJsColours.notApplicableBorderColor,
         ]
         const backgroundColor = [
-            TagRenderingChart.unkownColor,
-            TagRenderingChart.otherColor,
-            TagRenderingChart.notApplicableColor,
+           ChartJsColours.unknownColor,
+           ChartJsColours.otherColor,
+           ChartJsColours.notApplicableColor,
         ]
 
         while (borderColor.length < data.length) {
-            borderColor.push(...TagRenderingChart.borderColors)
-            backgroundColor.push(...TagRenderingChart.backgroundColors)
+            borderColor.push(...ChartJsColours.borderColors)
+            backgroundColor.push(...ChartJsColours.backgroundColors)
         }
 
         for (let i = data.length; i >= 0; i--) {

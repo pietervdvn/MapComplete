@@ -523,7 +523,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
                     v =
                         v.translations[useLang] ??
                         v.translations["*"] ??
-                        (v.textFor !== undefined ? v.textFor(useLang) : v)
+                        (v?.textFor(useLang) ?? v)
                 }
 
                 if (v.InnerConstructElement !== undefined) {

@@ -18,7 +18,8 @@ export default abstract class ImageProvider {
     public abstract SourceIcon(id?: string, location?: { lon: number; lat: number }): BaseUIElement
 
     /**
-     * Given a properies object, maps it onto _all_ the available pictures for this imageProvider
+     * Given a properties object, maps it onto _all_ the available pictures for this imageProvider.
+     * This iterates over _all_ tags and matches _anything_ that might be an image
      */
     public GetRelevantUrls(
         allTags: Store<any>,
@@ -71,7 +72,5 @@ export default abstract class ImageProvider {
 
     public abstract apiUrls(): string[]
 
-    public backlink(): string | undefined {
-        return undefined
-    }
+
 }

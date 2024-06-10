@@ -1011,90 +1011,6 @@
             "render": "Půjčovna kol"
         }
     },
-    "bicycle_tube_vending_machine": {
-        "description": "Vrstva zobrazující automaty na cyklistické duše (buď speciální automaty na cyklistické duše, nebo klasické automaty s cyklistickými dušemi a případně dalšími předměty souvisejícími s jízdními koly, jako jsou světla, rukavice, zámky, ...)",
-        "name": "Automat na cyklistické duše",
-        "presets": {
-            "0": {
-                "title": "automat na cyklistické duše"
-            }
-        },
-        "tagRenderings": {
-            "Still in use?": {
-                "mappings": {
-                    "0": {
-                        "then": "Tento prodejní automat funguje"
-                    },
-                    "1": {
-                        "then": "Tento prodejní automat je rozbitý"
-                    },
-                    "2": {
-                        "then": "Tento prodejní automat je uzavřen"
-                    }
-                },
-                "question": "Je tento automat stále v provozu?",
-                "render": "Provozní stav je <i>{operational_status}</i>"
-            },
-            "bicycle_tube_vending_machine-brand": {
-                "mappings": {
-                    "0": {
-                        "then": "Continental duše jsou zde prodávány"
-                    },
-                    "1": {
-                        "then": "Schwalbe duše jsou zde prodávány"
-                    }
-                },
-                "question": "Jaká značka duší je zde prodávána?",
-                "render": "{brand} duše jsou zde prodávány"
-            },
-            "bicycle_tube_vending_machine-charge": {
-                "question": "Kolik stojí duše na kolo?",
-                "render": "Cena jedné duše {charge}"
-            },
-            "bicycle_tube_vending_machine-operator": {
-                "mappings": {
-                    "0": {
-                        "then": "Udržuje Schwalbe"
-                    },
-                    "1": {
-                        "then": "Udržuje Continental"
-                    }
-                },
-                "question": "Kdo se stará o tento automat?"
-            },
-            "other-items-vending": {
-                "mappings": {
-                    "0": {
-                        "then": "Zde se prodávají cyklistické duše"
-                    },
-                    "1": {
-                        "then": "Zde se prodávají světla na jízdní kola"
-                    },
-                    "2": {
-                        "then": "Prodávají se zde rukavice"
-                    },
-                    "3": {
-                        "then": "Zde se prodávají sady na opravu jízdních kol"
-                    },
-                    "4": {
-                        "then": "Prodávají se zde pumpy na kolo"
-                    },
-                    "5": {
-                        "then": "Prodávají se zde zámky na kola"
-                    }
-                },
-                "question": "Prodávají se zde další doplňky na kolo?"
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Automat na cyklistické pláště{name}"
-                }
-            },
-            "render": "Automat na cyklistické duše"
-        }
-    },
     "bike_cafe": {
         "description": "Cyklokavárna je kavárna zaměřená na cyklisty, například se službami, jako je pumpa, se spoustou výzdoby související s jízdními koly, …",
         "name": "Cyklokavárna",
@@ -9081,6 +8997,33 @@
             }
         },
         "tagRenderings": {
+            "bicycle_tube_vending_machine-brand": {
+                "mappings": {
+                    "0": {
+                        "then": "Continental duše jsou zde prodávány"
+                    },
+                    "1": {
+                        "then": "Schwalbe duše jsou zde prodávány"
+                    }
+                },
+                "question": "Jaká značka duší je zde prodávána?",
+                "render": "{brand} duše jsou zde prodávány"
+            },
+            "charge_cost_rewritten": {
+                "renderings": {
+                    "0": {
+                        "question": "Kolik stojí {product_name}?",
+                        "render": "{product_name} {charge:{product_key}}"
+                    }
+                },
+                "rewrite": {
+                    "into": {
+                        "0": {
+                            "1": "duše na kolo"
+                        }
+                    }
+                }
+            },
             "indoor": {
                 "mappings": {
                     "0": {
@@ -9094,6 +9037,23 @@
                     }
                 },
                 "question": "Je tento automat uvnitř?"
+            },
+            "operational_status": {
+                "mappings": {
+                    "0": {
+                        "then": "Tento prodejní automat funguje"
+                    },
+                    "1": {
+                        "then": "Tento prodejní automat je rozbitý"
+                    },
+                    "2": {
+                        "then": "Tento prodejní automat je uzavřen"
+                    },
+                    "3": {
+                        "then": "Provozní stav je <i>{operational_status}</i>"
+                    }
+                },
+                "question": "Je tento automat stále v provozu?"
             },
             "operator": {
                 "freeform": {

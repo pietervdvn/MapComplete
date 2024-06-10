@@ -45,7 +45,6 @@
         "bike_cafe",
         "bike_shop",
         "bike_repair_station",
-        "bicycle_tube_vending_machine",
         "drinking_water",
         "bike_themed_object",
         "bike_cleaning"
@@ -152,6 +151,32 @@
         "name": null,
         "filter": {
           "sameAs": "charging_station_ebikes"
+        },
+        "minzoom": 18
+      }
+    },
+    {
+      "builtin": "vending_machine",
+      "override": {
+        "id": "vending_machine_bicycle",
+        "minzoom": 11,
+        "source": {
+          "osmTags": {
+            "and+": [
+              "vending~.*bicycle.*"
+            ]
+          }
+        },
+        "=presets": []
+      }
+    },
+    {
+      "#": "All vending machines at high zoom level to avoid duplicates",
+      "builtin": "vending_machine",
+      "override": {
+        "name": null,
+        "filter": {
+          "sameAs": "vending_machine_bicycle"
         },
         "minzoom": 18
       }

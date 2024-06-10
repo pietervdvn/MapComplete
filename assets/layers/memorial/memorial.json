@@ -78,6 +78,9 @@
         "de": "ein Denkmal",
         "fr": "un mémorial"
       },
+      "description": {
+        "en": "A memorial is a physical object which remembers a person or event."
+      },
       "tags": [
         "historic=memorial"
       ]
@@ -217,6 +220,15 @@
           },
           "addExtraTags": [
             "natural=tree"
+          ]
+        },
+        {
+          "if": "historic=tomb",
+          "then": {
+            "en": "This is a gravestone; the person is buried here"
+          },
+          "addExtraTags": [
+            "memorial="
           ]
         }
       ],

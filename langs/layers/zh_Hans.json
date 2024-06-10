@@ -482,23 +482,6 @@
             }
         }
     },
-    "bicycle_tube_vending_machine": {
-        "tagRenderings": {
-            "Still in use?": {
-                "mappings": {
-                    "0": {
-                        "then": "这个借还机正常工作"
-                    },
-                    "1": {
-                        "then": "这个借还机已经损坏"
-                    },
-                    "2": {
-                        "then": "这个借还机被关闭了"
-                    }
-                }
-            }
-        }
-    },
     "bike_cafe": {
         "name": "自行车咖啡",
         "presets": {
@@ -624,6 +607,23 @@
                     }
                 },
                 "question": "在Wikidata上对应的实体是什么？"
+            }
+        }
+    },
+    "vending_machine": {
+        "tagRenderings": {
+            "operational_status": {
+                "mappings": {
+                    "0": {
+                        "then": "这个借还机正常工作"
+                    },
+                    "1": {
+                        "then": "这个借还机已经损坏"
+                    },
+                    "2": {
+                        "then": "这个借还机被关闭了"
+                    }
+                }
             }
         }
     }

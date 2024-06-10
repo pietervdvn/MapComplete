@@ -4,7 +4,7 @@
   import Locale from "../../i18n/Locale"
   import type {
     RenderingSpecification,
-    SpecialVisualizationState,
+    SpecialVisualizationState
   } from "../../SpecialVisualization"
   import { Utils } from "../../../Utils.js"
   import type { Feature } from "geojson"
@@ -25,11 +25,13 @@
   export let layer: LayerConfig | undefined
 
   let language = Locale.language
+  let lang = t.actualLanguage($language)
   let txt: string = t.textFor($language)
   let specs: RenderingSpecification[] = []
   $: {
     try {
       txt = t.textFor($language)
+      lang = t.actualLanguage($language)
       if (txt !== undefined) {
         let key = "cached_special_spec_" + $language
         specs = t[key]
@@ -61,13 +63,15 @@
   }
 </script>
 
-{#each specs as specpart}
-  {#if typeof specpart === "string"}
-    <span>
-      <FromHtml src={Utils.SubstituteKeys(specpart, $tags)} />
-      <WeblateLink context={t.context} />
-    </span>
-  {:else if $tags !== undefined}
-    <ToSvelte construct={() => createVisualisation(specpart)} />
-  {/if}
-{/each}
+<span {lang}>
+  {#each specs as specpart}
+    {#if typeof specpart === "string"}
+      <span>
+        {@html Utils.purify(Utils.SubstituteKeys(specpart, $tags)) }
+        <WeblateLink context={t.context} />
+      </span>
+    {:else if $tags !== undefined}
+      <ToSvelte construct={() => createVisualisation(specpart)} />
+    {/if}
+  {/each}
+</span>

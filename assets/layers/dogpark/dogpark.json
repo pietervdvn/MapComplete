@@ -98,8 +98,44 @@
     }
   ],
   "tagRenderings": [
+    "images",
+    "reviews",
+    {
+      "question": {
+        "en": "What is the name of this dog park?",
+        "da": "Hvad hedder denne hundeskov?",
+        "de": "Wie lautet der Name dieses Hundeparks?",
+        "es": "¿Cual es el nombre de este parque para perros?",
+        "nl": "Wat is de naam van deze hondenweide?",
+        "ca": "Com s'anomena aquest parc per a gossos?",
+        "cs": "Jak se jmenuje tento psí park?"
+      },
+      "render": {
+        "en": "The name of this dog park is {name}",
+        "de": "Denne hundeskov hedder {name}",
+        "es": "El nombre de este parque para perros es {name}",
+        "nl": "Deze hondenweide heet {name}",
+        "ca": "Aquest parc per a gossos s'anomena {name}",
+        "cs": "Název tohoto psího parku je {name}"
+      },
+      "freeform": {
+        "key": "name"
+      },
+      "id": "Name"
+    },
+    "opening_hours_24_7",
+    "website",
     {
       "id": "dogpark-fenced",
+      "question": {
+        "en": "It this dog park fenced in?",
+        "da": "Er denne hundeskov indhegnet?",
+        "de": "Ist dieser Hundepark umzäunt?",
+        "es": "¿Este parque para perros está vallado?",
+        "nl": "Is deze hondenweide volledig omheind?",
+        "ca": "Aquest parc de gossos està tancat?",
+        "cs": "Je tento psí park oplocený?"
+      },
       "mappings": [
         {
           "if": "barrier=fence",
@@ -125,16 +161,7 @@
             "cs": "Tento psí park není kolem dokola oplocený"
           }
         }
-      ],
-      "question": {
-        "en": "It this dog park fenced in?",
-        "da": "Er denne hundeskov indhegnet?",
-        "de": "Ist dieser Hundepark umzäunt?",
-        "es": "¿Este parque para perros está vallado?",
-        "nl": "Is deze hondenweide volledig omheind?",
-        "ca": "Aquest parc de gossos està tancat?",
-        "cs": "Je tento psí park oplocený?"
-      }
+      ]
     },
     {
       "id": "smalldogs",
@@ -175,29 +202,6 @@
       }
     },
     {
-      "question": {
-        "en": "What is the name of this dog park?",
-        "da": "Hvad hedder denne hundeskov?",
-        "de": "Wie lautet der Name dieses Hundeparks?",
-        "es": "¿Cual es el nombre de este parque para perros?",
-        "nl": "Wat is de naam van deze hondenweide?",
-        "ca": "Com s'anomena aquest parc per a gossos?",
-        "cs": "Jak se jmenuje tento psí park?"
-      },
-      "render": {
-        "en": "The name of this dog park is {name}",
-        "de": "Denne hundeskov hedder {name}",
-        "es": "El nombre de este parque para perros es {name}",
-        "nl": "Deze hondenweide heet {name}",
-        "ca": "Aquest parc per a gossos s'anomena {name}",
-        "cs": "Název tohoto psího parku je {name}"
-      },
-      "freeform": {
-        "key": "name"
-      },
-      "id": "Name"
-    },
-    {
       "id": "dogarea",
       "render": {
         "en": "This dogpark is {_surface:ha} ha big",
@@ -209,8 +213,6 @@
         "cs": "Tento psí park je {_surface:ha} ha velký"
       },
       "condition": "_surface:ha!=0"
-    },
-    "reviews",
-    "images"
+    }
   ]
 }

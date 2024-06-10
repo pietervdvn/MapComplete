@@ -532,35 +532,6 @@
             "render": "Cykeludlejning"
         }
     },
-    "bicycle_tube_vending_machine": {
-        "description": "Et lag med automater til cykelslanger (enten specialbyggede cykelslangeautomater eller klassiske automater med cykelslanger og eventuelt andre cykelrelaterede genstande som f.eks. lys, handsker, låse, o.s.v)",
-        "name": "Automat til salg af cykelslanger",
-        "presets": {
-            "0": {
-                "title": "en automat til salg af cykelslanger"
-            }
-        },
-        "tagRenderings": {
-            "Still in use?": {
-                "mappings": {
-                    "0": {
-                        "then": "Denne salgsautomat virker"
-                    },
-                    "1": {
-                        "then": "Denne salgsautomat er i stykker"
-                    },
-                    "2": {
-                        "then": "Denne salgsautomat er lukket"
-                    }
-                },
-                "question": "Er denne salgsautomat stadig i drift?",
-                "render": "Driftsstatus er <i>{operational_status}</i>"
-            }
-        },
-        "title": {
-            "render": "Automat til salg af cykelslanger"
-        }
-    },
     "bike_cafe": {
         "description": "En cykelcafé er en café rettet mod cyklister, for eksempel med tjenester som en pumpe, med masser af cykelrelateret dekoration, o.s.v",
         "name": "Cykelcafé",
@@ -2462,6 +2433,27 @@
         },
         "title": {
             "render": "Indstillinger"
+        }
+    },
+    "vending_machine": {
+        "tagRenderings": {
+            "operational_status": {
+                "mappings": {
+                    "0": {
+                        "then": "Denne salgsautomat virker"
+                    },
+                    "1": {
+                        "then": "Denne salgsautomat er i stykker"
+                    },
+                    "2": {
+                        "then": "Denne salgsautomat er lukket"
+                    },
+                    "3": {
+                        "then": "Driftsstatus er <i>{operational_status}</i>"
+                    }
+                },
+                "question": "Er denne salgsautomat stadig i drift?"
+            }
         }
     },
     "veterinary": {

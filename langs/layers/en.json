@@ -1191,90 +1191,6 @@
             "render": "Bicycle rental"
         }
     },
-    "bicycle_tube_vending_machine": {
-        "description": "A layer showing vending machines for bicycle tubes (either purpose-built bicycle tube vending machines or classical vending machines with bicycle tubes and optionally additional bicycle related objects such as lights, gloves, locks, …)",
-        "name": "Bicycle tube vending machine",
-        "presets": {
-            "0": {
-                "title": "a bicycle tube vending machine"
-            }
-        },
-        "tagRenderings": {
-            "Still in use?": {
-                "mappings": {
-                    "0": {
-                        "then": "This vending machine works"
-                    },
-                    "1": {
-                        "then": "This vending machine is broken"
-                    },
-                    "2": {
-                        "then": "This vending machine is closed"
-                    }
-                },
-                "question": "Is this vending machine still operational?",
-                "render": "The operational status is <i>{operational_status}</i>"
-            },
-            "bicycle_tube_vending_machine-brand": {
-                "mappings": {
-                    "0": {
-                        "then": "Continental tubes are sold here"
-                    },
-                    "1": {
-                        "then": "Schwalbe tubes are sold here"
-                    }
-                },
-                "question": "Which brand of tubes are sold here?",
-                "render": "{brand} tubes are sold here"
-            },
-            "bicycle_tube_vending_machine-charge": {
-                "question": "How much does a bicycle tube cost?",
-                "render": "A bicycle tube costs {charge}"
-            },
-            "bicycle_tube_vending_machine-operator": {
-                "mappings": {
-                    "0": {
-                        "then": "Maintained by Schwalbe"
-                    },
-                    "1": {
-                        "then": "Maintained by Continental"
-                    }
-                },
-                "question": "Who maintains this vending machine?"
-            },
-            "other-items-vending": {
-                "mappings": {
-                    "0": {
-                        "then": "Bicycle inner tubes are sold here"
-                    },
-                    "1": {
-                        "then": "Bicycle lights are sold here"
-                    },
-                    "2": {
-                        "then": "Gloves are sold here"
-                    },
-                    "3": {
-                        "then": "Bicycle repair kits are sold here"
-                    },
-                    "4": {
-                        "then": "Bicycle pumps are sold here"
-                    },
-                    "5": {
-                        "then": "Bicycle locks are sold here"
-                    }
-                },
-                "question": "Are other biycle accessories sold here?"
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Bicycle tube vending machine {name}"
-                }
-            },
-            "render": "Bicycle tube vending machine"
-        }
-    },
     "bike_cafe": {
         "description": "A bike café is a café geared towards cyclists, for example with services such as a pump, with lots of bicycle-related decoration, …",
         "name": "Bike cafe",
@@ -5306,6 +5222,44 @@
             "render": "Your travelled path"
         }
     },
+    "grave": {
+        "description": "Tombstones (and graves) indicate where a person was buried. On this map, those can be recorded and a link to Wikipedia can be made",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "With or without wikidata"
+                    },
+                    "1": {
+                        "question": "Has a link to Wikidata"
+                    },
+                    "2": {
+                        "question": "Has no link to Wikidata"
+                    }
+                }
+            }
+        },
+        "name": "Gravestones",
+        "presets": {
+            "0": {
+                "description": "A tombstone is a physical object which indicates that one or more persons are buried here. It generally has the name, birth date and death date of the person or persons as inscription.",
+                "title": "a tombstone"
+            }
+        },
+        "tagRenderings": {
+            "buried:wikidata": {
+                "question": "What is the Wikipedia page of the person buried here?",
+                "render": "{wikipedia(buried:wikidata)}"
+            },
+            "name": {
+                "question": "What is the name of the person buried here?",
+                "render": "<b>{name}</b> is buried here"
+            }
+        },
+        "title": {
+            "render": "Tombstone"
+        }
+    },
     "guidepost": {
         "description": "Guideposts (also known as fingerposts or finger posts) are often found along official hiking/cycling/riding/skiing routes to indicate the directions to different destinations",
         "name": "Guideposts",
@@ -5969,6 +5923,28 @@
             }
         }
     },
+    "lighthouse": {
+        "name": "lighthouse",
+        "presets": {
+            "0": {
+                "title": "a lighthouse"
+            }
+        },
+        "tagRenderings": {
+            "lighthouse-height": {
+                "question": "What is the height of this lighthouse, in metres?",
+                "render": "The height of this lighthouse is {height} metres."
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
+            "render": "lighthouse"
+        }
+    },
     "love_hotel": {
         "description": "A love hotel is a type of short-stay hotel found around the world operated primarily for the purpose of allowing guests privacy for sexual activities",
         "name": "Love hotels",
@@ -6269,6 +6245,7 @@
         "name": "Memorials",
         "presets": {
             "0": {
+                "description": "A memorial is a physical object which remembers a person or event.",
                 "title": "a memorial"
             }
         },
@@ -6324,7 +6301,10 @@
                         "then": "This is a sculpture"
                     },
                     "9": {
-                        "then": "This is an obelisk"
+                      "then": "This is an obelisk"
+                    },
+                    "14": {
+                        "then": "This is a gravestone; the person is buried here"
                     }
                 },
                 "question": "What type of memorial is this?",
@@ -11087,6 +11067,39 @@
             }
         },
         "tagRenderings": {
+            "bicycle_tube_vending_machine-brand": {
+                "mappings": {
+                    "0": {
+                        "then": "Continental tubes are sold here"
+                    },
+                    "1": {
+                        "then": "Schwalbe tubes are sold here"
+                    }
+                },
+                "question": "Which brand of tubes are sold here?",
+                "render": "{brand} tubes are sold here"
+            },
+            "charge_cost_rewritten": {
+                "renderings": {
+                    "0": {
+                        "question": "How much does a {product_name} cost?",
+                        "render": "{product_name} costs {charge:{product_key}}"
+                    }
+                },
+                "rewrite": {
+                    "into": {
+                        "0": {
+                            "1": "a bicycle tube"
+                        },
+                        "1": {
+                            "1": "bicycle light"
+                        },
+                        "2": {
+                            "1": "a condom"
+                        }
+                    }
+                }
+            },
             "indoor": {
                 "mappings": {
                     "0": {
@@ -11100,6 +11113,23 @@
                     }
                 },
                 "question": "Is this vending machine indoors?"
+            },
+            "operational_status": {
+                "mappings": {
+                    "0": {
+                        "then": "This vending machine works"
+                    },
+                    "1": {
+                        "then": "This vending machine is broken"
+                    },
+                    "2": {
+                        "then": "This vending machine is closed"
+                    },
+                    "3": {
+                        "then": "The operational status is <i>{operational_status}</i>"
+                    }
+                },
+                "question": "Is this vending machine still operational?"
             },
             "operator": {
                 "freeform": {

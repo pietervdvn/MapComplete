@@ -19,7 +19,17 @@
     const name = calculated[0]
     calculatedTags.push(name)
   }
-  let knownValues: Store<string[]> = tags.map((tags) => Object.keys(tags))
+  let knownValues: UIEventSource<string[]> = new UIEventSource<string[]>([])
+
+  tags.addCallbackAndRunD(tags => {
+    knownValues.setData(Object.keys(tags))
+  })
+
+  function reEvalKnownValues(){
+    knownValues.setData(Object.keys(tags.data))
+
+  }
+
 
   const metaKeys: string[] = [].concat(...SimpleMetaTaggers.metatags.map((k) => k.keys))
   let allCalculatedTags = new Set<string>([...calculatedTags, ...metaKeys])
@@ -90,6 +100,7 @@
               class="small"
               on:click={(_) => {
                 console.log($tags[key])
+                reEvalKnownValues()
               }}
             >
               Evaluate

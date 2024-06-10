@@ -16,4 +16,7 @@ export default class MarkdownUtils {
         return result
     }
 
+    static list(strings: string[]): string {
+        return strings.map(item => " - "+item).join("\n")
+    }
 }

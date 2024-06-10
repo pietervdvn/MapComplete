@@ -1011,90 +1011,6 @@
             "render": "Aluguel de bicicleta"
         }
     },
-    "bicycle_tube_vending_machine": {
-        "description": "Uma camada que mostra máquinas de venda de câmaras de ar de bicicleta (sejam máquinas de venda de câmaras de ar de bicicleta específicas ou máquinas de venda clássicas com câmaras de ar de bicicleta e opcionalmente objetos relacionados a bicicletas, como luzes, luvas, travas, ...)",
-        "name": "Máquina de venda automática de tubos de bicicleta",
-        "presets": {
-            "0": {
-                "title": "uma máquina de venda automática de tubos de bicicleta"
-            }
-        },
-        "tagRenderings": {
-            "Still in use?": {
-                "mappings": {
-                    "0": {
-                        "then": "Esta máquina de venda automática funciona"
-                    },
-                    "1": {
-                        "then": "Esta máquina de venda automática está quebrada"
-                    },
-                    "2": {
-                        "then": "Esta máquina de venda automática está fechada"
-                    }
-                },
-                "question": "Esta máquina de venda automática ainda está operacional?",
-                "render": "O estado operacional é: <i>{operational_status}</i>"
-            },
-            "bicycle_tube_vending_machine-brand": {
-                "mappings": {
-                    "0": {
-                        "then": "Câmaras de ar Continental são vendidas aqui"
-                    },
-                    "1": {
-                        "then": "Câmaras de ar Schwalbe são vendidas aqui"
-                    }
-                },
-                "question": "Quais marcas de câmara de ar são vendidas aqui?",
-                "render": "câmaras de ar {brand} são vendidas aqui"
-            },
-            "bicycle_tube_vending_machine-charge": {
-                "question": "Quanto custa uma câmara de ar para bicicleta?",
-                "render": "Uma câmara de ar para bicicleta custa {charge}"
-            },
-            "bicycle_tube_vending_machine-operator": {
-                "mappings": {
-                    "0": {
-                        "then": "Mantido pela Schwalbe"
-                    },
-                    "1": {
-                        "then": "Mantido pela Continental"
-                    }
-                },
-                "question": "Quem mantém essa máquina de venda?"
-            },
-            "other-items-vending": {
-                "mappings": {
-                    "0": {
-                        "then": "Câmaras de ar para bicicletas são vendidas aqui"
-                    },
-                    "1": {
-                        "then": "Luzes para bicicleta são vendidas aqui"
-                    },
-                    "2": {
-                        "then": "Luvas são vendidas aqui"
-                    },
-                    "3": {
-                        "then": "Kits para reparo de bicicleta são vendidos aqui"
-                    },
-                    "4": {
-                        "then": "Bombas de ar para bicicleta são vendidas aqui"
-                    },
-                    "5": {
-                        "then": "Cadeados para bicicleta são vendidos aqui"
-                    }
-                },
-                "question": "Outros acessórios para bicicleta são vendidos aqui?"
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Máquina de venda de câmara de ar para bicicleta {name}"
-                }
-            },
-            "render": "Máquina de venda automática de tubos de bicicleta"
-        }
-    },
     "bike_cafe": {
         "description": "Um café para ciclistas é um café direcionado aos ciclistas, por exemplo, com serviços como uma bomba de ar, muita decoração relacionada a bicicletas, …",
         "name": "Café de bicicletas",
@@ -1586,6 +1502,76 @@
             },
             "tree-species-wikidata": {
                 "question": "Que espécie é esta árvore?"
+            }
+        }
+    },
+    "vending_machine": {
+        "tagRenderings": {
+            "bicycle_tube_vending_machine-brand": {
+                "mappings": {
+                    "0": {
+                        "then": "Câmaras de ar Continental são vendidas aqui"
+                    },
+                    "1": {
+                        "then": "Câmaras de ar Schwalbe são vendidas aqui"
+                    }
+                },
+                "question": "Quais marcas de câmara de ar são vendidas aqui?",
+                "render": "câmaras de ar {brand} são vendidas aqui"
+            },
+            "charge_cost_rewritten": {
+                "renderings": {
+                    "0": {
+                        "question": "Quanto custa {product_name}?",
+                        "render": "{product_name} custa {charge:{product_key}}"
+                    }
+                },
+                "rewrite": {
+                    "into": {
+                        "0": {
+                            "1": "uma câmara de ar para bicicleta"
+                        }
+                    }
+                }
+            },
+            "operational_status": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta máquina de venda automática funciona"
+                    },
+                    "1": {
+                        "then": "Esta máquina de venda automática está quebrada"
+                    },
+                    "2": {
+                        "then": "Esta máquina de venda automática está fechada"
+                    },
+                    "3": {
+                        "then": "O estado operacional é: <i>{operational_status}</i>"
+                    }
+                },
+                "question": "Esta máquina de venda automática ainda está operacional?"
+            },
+            "vending": {
+                "mappings": {
+                    "8": {
+                        "then": "Câmaras de ar para bicicletas são vendidas aqui"
+                    },
+                    "22": {
+                        "then": "Luzes para bicicleta são vendidas aqui"
+                    },
+                    "23": {
+                        "then": "Luvas são vendidas aqui"
+                    },
+                    "24": {
+                        "then": "Kits para reparo de bicicleta são vendidos aqui"
+                    },
+                    "25": {
+                        "then": "Bombas de ar para bicicleta são vendidas aqui"
+                    },
+                    "26": {
+                        "then": "Cadeados para bicicleta são vendidos aqui"
+                    }
+                }
             }
         }
     }

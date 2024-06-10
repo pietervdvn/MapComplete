@@ -505,34 +505,6 @@
     "bicycle_rental": {
         "description": "Stazione noleggio biciclette"
     },
-    "bicycle_tube_vending_machine": {
-        "name": "Distributore automatico di camere d’aria per bici",
-        "presets": {
-            "0": {
-                "title": "una distributore automatico di camere d’aria per bici"
-            }
-        },
-        "tagRenderings": {
-            "Still in use?": {
-                "mappings": {
-                    "0": {
-                        "then": "Il distributore automatico funziona"
-                    },
-                    "1": {
-                        "then": "Il distributore automatico è guasto"
-                    },
-                    "2": {
-                        "then": "Il distributore automatico è spento"
-                    }
-                },
-                "question": "Questo distributore automatico funziona ancora?",
-                "render": "Lo stato operativo è <i>{operational_status}</i>"
-            }
-        },
-        "title": {
-            "render": "Distributore automatico di camere d’aria per bici"
-        }
-    },
     "bike_cafe": {
         "name": "Cafè per ciclisti",
         "presets": {
@@ -2943,6 +2915,27 @@
                         "human": "{quantity} piedi"
                     }
                 }
+            }
+        }
+    },
+    "vending_machine": {
+        "tagRenderings": {
+            "operational_status": {
+                "mappings": {
+                    "0": {
+                        "then": "Il distributore automatico funziona"
+                    },
+                    "1": {
+                        "then": "Il distributore automatico è guasto"
+                    },
+                    "2": {
+                        "then": "Il distributore automatico è spento"
+                    },
+                    "3": {
+                        "then": "Lo stato operativo è <i>{operational_status}</i>"
+                    }
+                },
+                "question": "Questo distributore automatico funziona ancora?"
             }
         }
     },

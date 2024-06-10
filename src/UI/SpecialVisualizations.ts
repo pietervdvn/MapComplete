@@ -651,13 +651,13 @@ console.log(">>> ",helpTexts.join("\n\n"))
             },
             {
                 funcName: "rating",
-                docs: "Shows stars which represent the avarage rating on mangrove.reviews",
+                docs: "Shows stars which represent the average rating on mangrove.",
                 needsUrls: [MangroveReviews.ORIGINAL_API],
                 args: [
                     {
                         name: "subjectKey",
                         defaultValue: "name",
-                        doc: "The key to use to determine the subject. If specified, the subject will be <b>tags[subjectKey]</b>"
+                        doc: "The key to use to determine the subject. If the value is specified, the subject will be <b>tags[subjectKey]</b> and will use this to filter the reviews."
                     },
                     {
                         name: "fallback",

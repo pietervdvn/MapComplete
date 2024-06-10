@@ -907,90 +907,6 @@
             "render": "Fietsverhuur"
         }
     },
-    "bicycle_tube_vending_machine": {
-        "description": "Een laag met verkoopsautomaten met binnenbanden voor fietsen (dit kan een automaat zijn met énkel fietsbanden, of een gewone automaat met fietsbanden en andere fietsaccessoires zoals lichten, handschoenen, sloten,...)",
-        "name": "Fietsbanden-verkoopsautomaat",
-        "presets": {
-            "0": {
-                "title": "een fietsbanden-verkoopsautomaat"
-            }
-        },
-        "tagRenderings": {
-            "Still in use?": {
-                "mappings": {
-                    "0": {
-                        "then": "Deze verkoopsautomaat werkt"
-                    },
-                    "1": {
-                        "then": "Deze verkoopsautomaat is kapot"
-                    },
-                    "2": {
-                        "then": "Deze verkoopsautomaat is uitgeschakeld"
-                    }
-                },
-                "question": "Is deze verkoopsautomaat nog steeds werkende?",
-                "render": "Deze verkoopsautomaat is <i>{operational_status}</i>"
-            },
-            "bicycle_tube_vending_machine-brand": {
-                "mappings": {
-                    "0": {
-                        "then": "Continental banden worden hier verkocht"
-                    },
-                    "1": {
-                        "then": "Schwalbe banden worden hier verkocht"
-                    }
-                },
-                "question": "Welk merk banden wordt hier verkocht?",
-                "render": "{brand} banden worden hier verkocht"
-            },
-            "bicycle_tube_vending_machine-charge": {
-                "question": "Hoeveel kost een fietsband?",
-                "render": "Een fietsband kost {charge}"
-            },
-            "bicycle_tube_vending_machine-operator": {
-                "mappings": {
-                    "0": {
-                        "then": "Onderhouden door Schwalbe"
-                    },
-                    "1": {
-                        "then": "Onderhouden door Continental"
-                    }
-                },
-                "question": "Wie onderhoudt deze verkoopautomaat?"
-            },
-            "other-items-vending": {
-                "mappings": {
-                    "0": {
-                        "then": "Fietsbinnenbanden worden hier verkocht"
-                    },
-                    "1": {
-                        "then": "Fietslampjes worden hier verkocht"
-                    },
-                    "2": {
-                        "then": "Handschoenen worden hier verkocht"
-                    },
-                    "3": {
-                        "then": "Fietsreparatiesets worden hier verkocht"
-                    },
-                    "4": {
-                        "then": "Fietspompen worden hier verkocht"
-                    },
-                    "5": {
-                        "then": "Fietssloten worden hier verkocht"
-                    }
-                },
-                "question": "Worden hier andere fietsaccessoires verkocht?"
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Fietsbanden-verkoopautomaat {name}"
-                }
-            },
-            "render": "Fietsbanden-verkoopautomaat"
-        }
-    },
     "bike_cafe": {
         "description": "Een fietscafé is een café dat gericht is op fietsers, bijvoorbeeld omdat het een fietspomp heeft, fietsgerelateerde decoratie heeft enzovoorts.",
         "name": "Fietscafé",
@@ -9159,6 +9075,39 @@
             }
         },
         "tagRenderings": {
+            "bicycle_tube_vending_machine-brand": {
+                "mappings": {
+                    "0": {
+                        "then": "Continental banden worden hier verkocht"
+                    },
+                    "1": {
+                        "then": "Schwalbe banden worden hier verkocht"
+                    }
+                },
+                "question": "Welk merk banden wordt hier verkocht?",
+                "render": "{brand} banden worden hier verkocht"
+            },
+            "charge_cost_rewritten": {
+                "renderings": {
+                    "0": {
+                        "question": "Hoeveel kost {product_name}?",
+                        "render": "{product_name} kost {charge:{product_key}}"
+                    }
+                },
+                "rewrite": {
+                    "into": {
+                        "0": {
+                            "1": "een fietsband"
+                        },
+                        "1": {
+                            "1": "een fietslichtje"
+                        },
+                        "2": {
+                            "1": "een condoom"
+                        }
+                    }
+                }
+            },
             "indoor": {
                 "mappings": {
                     "0": {
@@ -9172,6 +9121,23 @@
                     }
                 },
                 "question": "Is deze verkoopautomaat binnen?"
+            },
+            "operational_status": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze verkoopsautomaat werkt"
+                    },
+                    "1": {
+                        "then": "Deze verkoopsautomaat is kapot"
+                    },
+                    "2": {
+                        "then": "Deze verkoopsautomaat is uitgeschakeld"
+                    },
+                    "3": {
+                        "then": "Deze verkoopsautomaat is <i>{operational_status}</i>"
+                    }
+                },
+                "question": "Is deze verkoopsautomaat nog steeds werkende?"
             },
             "operator": {
                 "freeform": {

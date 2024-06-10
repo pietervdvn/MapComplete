@@ -358,8 +358,13 @@ class LineRenderingLayer {
                     }
                 }
                 if (this._config.dashArray) {
+                    try{
+
                     layer.paint["line-dasharray"] =
                         this._config.dashArray?.split(" ")?.map((s) => Number(s)) ?? null
+                    }catch (e) {
+                        console.error(`Invalid dasharray in layer ${this._layername}:`, this._config.dashArray)
+                    }
                 }
                 map.addLayer(layer)
 

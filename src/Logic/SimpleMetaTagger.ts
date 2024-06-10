@@ -32,7 +32,7 @@ export abstract class SimpleMetaTagger {
 
     /***
      * A function that adds some extra data to a feature
-     * @param docs: what does this extra data do?
+     * @param docs what does this extra data do?
      */
     protected constructor(docs: {
         keys: string[]
@@ -66,7 +66,7 @@ export abstract class SimpleMetaTagger {
      * @param state
      */
     public abstract applyMetaTagsOnFeature(
-        feature: any,
+        feature: Feature,
         layer: LayerConfig,
         tagsStore: UIEventSource<Record<string, string>>,
         state: MetataggingState
@@ -114,7 +114,7 @@ class CountryTagger extends SimpleMetaTagger {
         Constants.countryCoderEndpoint,
         Utils.downloadJson
     )
-    public runningTasks: Set<any> = new Set<any>()
+    public runningTasks: Set<Feature> = new Set<Feature>()
 
     constructor() {
         super({
@@ -124,21 +124,22 @@ class CountryTagger extends SimpleMetaTagger {
         })
     }
 
-    applyMetaTagsOnFeature(feature, _, tagsSource) {
-        let centerPoint: any = GeoOperations.centerpoint(feature)
+    applyMetaTagsOnFeature(feature: Feature, _, tagsSource) {
         const runningTasks = this.runningTasks
-        const lat = centerPoint.geometry.coordinates[1]
-        const lon = centerPoint.geometry.coordinates[0]
+        if(runningTasks.has(feature) || !!feature.properties._country){
+            return
+        }
         runningTasks.add(feature)
+        const [lon, lat] = GeoOperations.centerpointCoordinates(feature)
         CountryTagger.coder
             .GetCountryCodeAsync(lon, lat)
             .then((countries) => {
                 if (!countries) {
-                    console.warn("Country coder returned ", countries)
+                    console.warn("Country coder returned weird value", countries)
                     return
                 }
-                const oldCountry = feature.properties["_country"]
                 const newCountry = countries.join(";").trim().toLowerCase()
+                const oldCountry = feature.properties["_country"]
                 if (oldCountry !== newCountry) {
                     if (typeof window === undefined) {
                         tagsSource.data["_country"] = newCountry
@@ -146,7 +147,6 @@ class CountryTagger extends SimpleMetaTagger {
                     } else {
                         // We set, be we don't ping... this is for later
                         tagsSource.data["_country"] = newCountry
-
                         /**
                          * What is this weird construction?
                          *
@@ -178,7 +178,7 @@ class CountryTagger extends SimpleMetaTagger {
 
 class InlineMetaTagger extends SimpleMetaTagger {
     public readonly applyMetaTagsOnFeature: (
-        feature: any,
+        feature: Feature,
         layer: LayerConfig,
         tagsStore: UIEventSource<OsmTags>,
         state: MetataggingState
@@ -197,7 +197,7 @@ class InlineMetaTagger extends SimpleMetaTagger {
             cleanupRetagger?: boolean
         },
         f: (
-            feature: any,
+            feature: Feature,
             layer: LayerConfig,
             tagsStore: UIEventSource<OsmTags>,
             state: MetataggingState
@@ -259,7 +259,7 @@ export default class SimpleMetaTaggers {
             keys: ["_geometry:type"],
             doc: "Adds the geometry type as property. This is identical to the GoeJson geometry type and is one of `Point`,`LineString`, `Polygon` and exceptionally `MultiPolygon` or `MultiLineString`",
         },
-        (feature, _) => {
+        (feature) => {
             const changed = feature.properties["_geometry:type"] === feature.geometry.type
             feature.properties["_geometry:type"] = feature.geometry.type
             return changed
@@ -410,9 +410,6 @@ export default class SimpleMetaTaggers {
             }
             let rewritten = false
             for (const key in feature.properties) {
-                if (!feature.properties.hasOwnProperty(key)) {
-                    continue
-                }
                 for (const unit of units) {
                     if (unit === undefined) {
                         continue
@@ -434,7 +431,7 @@ export default class SimpleMetaTaggers {
                     const defaultDenom = unit.getDefaultDenomination(
                         () => feature.properties["_country"]
                     )
-                    let canonical =
+                    const canonical =
                         denomination?.canonicalValue(value, defaultDenom == denomination, unit.inverted) ??
                         undefined
                     if (canonical === value) {
@@ -514,7 +511,7 @@ export default class SimpleMetaTaggers {
                                     state: undefined,
                                 },
                             },
-                            <any>{ tag_key: "opening_hours" }
+                            <any> { tag_key: "opening_hours" }
                         )
 
                         // Recalculate!
@@ -644,13 +641,12 @@ export default class SimpleMetaTaggers {
                 const currencies = {}
                 // Check if there are any currency:XXX tags, add them to the map
                 for (const key in feature.properties) {
-                    if (key.startsWith("currency:")) {
-                        if (feature.properties[key] === "yes") {
-                            currencies[key.slice(9)] = true
-                        } else {
-                            currencies[key.slice(9)] = false
-                        }
+                    if (!key.startsWith("currency:")) {
+                        continue
                     }
+                    const currency = key.slice(9)
+                    const hasCurrency = feature.properties[key] === "yes"
+                    currencies[currency] = hasCurrency
                 }
 
                 // Determine the default currency for the country
@@ -700,7 +696,7 @@ export default class SimpleMetaTaggers {
      * Returns 'true' is at least one change has been made
      * @param tags
      */
-    public static removeBothTagging(tags: any): boolean {
+    public static removeBothTagging(tags: Record<string, string | number>): boolean {
         let somethingChanged = false
 
         /**

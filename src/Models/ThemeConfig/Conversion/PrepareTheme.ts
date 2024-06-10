@@ -269,6 +269,7 @@ class AddImportLayers extends DesugaringStep<LayoutConfigJson> {
                     json.layers.push(importLayerResult)
                 }
             } catch (e) {
+                console.error("Error", e)
                 context.err("Could not generate an import-layer for " + layer.id + " due to " + e)
             }
         }

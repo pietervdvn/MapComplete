@@ -286,7 +286,7 @@
             "man_made!=mast"
           ]
         },
-        "geoJson": "https://betadata.grbosm.site/grb?bbox={x_min},{y_min},{x_max},{y_max}",
+        "geoJson": "https://proxy.mapcomplete.org/json?url=https://betadata.byteless.net/grb?bbox={x_min},{y_min},{x_max},{y_max}",
         "geoJsonZoomLevel": 18,
         "mercatorCrs": true,
         "idKey": "osm_id"

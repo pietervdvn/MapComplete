@@ -264,7 +264,22 @@ export interface QuestionableTagRenderingConfigJson extends TagRenderingConfigJs
          * ifunset: The question will be considered answered if any value is set for the key
          * group: expert
          */
-        invalidValues?: TagConfigJson
+        invalidValues?: TagConfigJson,
+
+        /**
+         * question: If this key shared and distinguished by a postfix, what is the postfix?
+         * This option is used specifically for `charge`, where the cost is indicated with `/item`.
+         *
+         * For example, a vending machine might sell `bicycle_tube`.
+         * Setting this value to `bicycle_tube`, then answering this question will set `charge= €XX/bicycle_tube`.
+         * If charge did already contain another value, e.g. `charge= €YY/some_item; €ZZ/other_item`, then `€XX/bicycle_tube`will be added.
+         * Note: those values are sorted alphabetically
+         * Note: no need to add the `/`
+         *
+         * ifunset: Don't distinguish by postfix
+         * group: expert
+         */
+        postfixDistinguished?: string
     }
 
     /**

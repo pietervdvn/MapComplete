@@ -272,15 +272,6 @@
         {
           "#": "left",
           "color": "#888",
-          "dashArray": {
-            "render": "",
-            "mappings": [
-              {
-                "if": "sidewalk:left=",
-                "then": "1,12"
-              }
-            ]
-          },
           "width": {
             "render": 6,
             "mappings": [
@@ -300,15 +291,6 @@
         },
         {
           "color": "#888",
-          "dashArray": {
-            "render": "",
-            "mappings": [
-              {
-                "if": "sidewalk:right=",
-                "then": "1,12"
-              }
-            ]
-          },
           "width": {
             "render": 6,
             "mappings": [
