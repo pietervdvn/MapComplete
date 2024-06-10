@@ -35,6 +35,12 @@ lod.mapcomplete.org {
     }
 }
 
+proxy.mapcomplete.org {
+    reverse_proxy {
+        to http://127.0.0.1:1237
+    }
+}
+
 bounce.mapcomplete.org {
     reverse_proxy {
         to http://127.0.0.1:1236
