@@ -428,13 +428,10 @@ function transformTranslation(
  *
  * const result = sortKeys({"b": 43, "a": 42})
  * JSON.stringify(result) // => '{"a":42,"b":43}'
- *
- * const result = sortKeys({"1": "one", "2": "two", "9":"nine","10": "ten"})
- * JSON.stringify(result) // => '{"1":"one","10":"ten","2":"two","9":"nine"}'
  */
 function sortKeys(o: object): object {
     const keys = Object.keys(o)
-    keys.sort()
+    keys.sort((a,b) => (""+a) < (""+b) ? -1 : 1)
     const nw = {}
     for (const key of keys) {
         const v = o[key]
