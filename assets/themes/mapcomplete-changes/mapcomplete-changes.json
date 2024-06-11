@@ -3,21 +3,17 @@
   "title": {
     "en": "Changes made with MapComplete"
   },
-<<<<<<< HEAD
-=======
   "shortDescription": {
     "en": "Shows changes made by MapComplete"
   },
->>>>>>> develop
   "description": {
     "en": "This maps shows all the changes made with MapComplete"
   },
-  "shortDescription": {
-    "en": "Shows changes made by MapComplete",
-    "de": "Änderungen von MapComplete anzeigen"
-  },
   "icon": "./assets/svg/logo.svg",
   "hideFromOverview": true,
+  "startLat": 0,
+  "startLon": 0,
+  "startZoom": 1,
   "layers": [
     {
       "id": "mapcomplete-changes",
