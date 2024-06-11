@@ -1162,6 +1162,19 @@
                     }
                 },
                 "question": "Quelle est la position relative de ce parking à vélo ?"
+            },
+            "fee": {
+                "mappings": {
+                    "0": {
+                        "then": "L'utilisation de ce parking à vélo est <b>payant</b>"
+                    },
+                    "1": {
+                        "then": "L'utilisation de ce parking à vélo est <b>gratuit</b>"
+                    }
+                }
+            },
+            "operator": {
+                "question": "Qui entretient ce parking à vélos ?"
             }
         },
         "title": {
