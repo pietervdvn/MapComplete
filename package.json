@@ -22,6 +22,8 @@
       "url": "https://www.openstreetmap.org"
     },
     "mvt_layer_server": "https://cache.mapcomplete.org/public.{type}_{layer}/{z}/{x}/{y}.pbf",
+    "#summary_server": "Should be the endpoint; appending status.json should work",
+    "summary_server": "https://cache.mapcomplete.org/",
     "disabled:oauth_credentials": {
       "##": "DEV",
       "#": "This client-id is registered by 'MapComplete' on https://master.apis.dev.openstreetmap.org/",
