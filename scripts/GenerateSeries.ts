@@ -5,6 +5,7 @@ import Script from "./Script"
 import { GeoOperations } from "../src/Logic/GeoOperations"
 import { Feature, Polygon } from "geojson"
 import { Tiles } from "../src/Models/TileRange"
+import { BBox } from "../src/Logic/BBox"
 
 class StatsDownloader {
     private readonly urlTemplate =
@@ -269,7 +270,22 @@ class GenerateSeries extends Script {
         )
 
         allFeatures = allFeatures.filter((f) => f.properties.metadata?.theme !== "EMPTY CS" && f.geometry.coordinates.length > 0)
-        const centerpoints = allFeatures.map((f) => GeoOperations.centerpoint(f))
+        const centerpointsAll = allFeatures.map((f) => {
+            const centerpoint = GeoOperations.centerpoint(f)
+            // OsmCha doesn't adhere to the Geojson standard and uses `lat` `lon` as coordinates instead of `lon`, `lat`
+            centerpoint.geometry.coordinates.reverse()
+            return centerpoint
+        })
+        const centerpoints = centerpointsAll.filter(p => {
+            const bbox= BBox.get(p)
+            if(bbox.minLat === -90 && bbox.maxLat === -90){
+                // Due to some bug somewhere, those invalid bboxes might appear if the latitude is < 90
+                // This crashes the 'spreadIntoBBoxes
+                // As workaround, we simply ignore them for now
+                return false
+            }
+            return true
+        })
         console.log("Found", centerpoints.length, " changesets in total")
 
         const perBbox = GeoOperations.spreadIntoBboxes(centerpoints, options.zoomlevel)
