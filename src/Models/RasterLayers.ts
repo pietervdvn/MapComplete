@@ -80,11 +80,14 @@ export class AvailableRasterLayers {
                         return GeoOperations.inside(lonlat, eliPolygon)
                     })
                     matching.unshift(AvailableRasterLayers.osmCarto)
-                    matching.push(AvailableRasterLayers.defaultBackgroundLayer)
+
                     if (enableBing?.data) {
                         matching.push(AvailableRasterLayers.bing)
                     }
                     matching.push(...AvailableRasterLayers.globalLayers)
+                    if(!matching.some(l => l.id === AvailableRasterLayers.defaultBackgroundLayer.properties.id)){
+                        matching.push(AvailableRasterLayers.defaultBackgroundLayer)
+                    }
                     return matching
                 },
                 [enableBing]
