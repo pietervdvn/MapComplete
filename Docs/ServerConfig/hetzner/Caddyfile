@@ -3,7 +3,6 @@ hosted.mapcomplete.org {
 		root * public/
 		header {
 			+Permissions-Policy "interest-cohort=()"
-			+Report-To `\{"group":"csp-endpoint", "max_age": 86400,"endpoints": [\{"url": "https://report.mapcomplete.org/csp"}], "include_subdomains": true}`
 	    }
     }
 }
