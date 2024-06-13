@@ -201,7 +201,7 @@
         },
         {
           "#": "ignore-image-in-then",
-          "if": "context:website~*",
+          "if": "contact:website~*",
           "then": "<a href='{contact:website}' target='_blank' rel='noopener'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>"
         }
       ]
