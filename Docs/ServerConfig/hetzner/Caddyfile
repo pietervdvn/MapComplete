@@ -1,15 +1,11 @@
 hosted.mapcomplete.org {
 	file_server {
 		root * public/
-		index index.html
 		header {
 			+Permissions-Policy "interest-cohort=()"
 			+Report-To `\{"group":"csp-endpoint", "max_age": 86400,"endpoints": [\{"url": "https://report.mapcomplete.org/csp"}], "include_subdomains": true}`
-	}
-}
-
-`
-}
+	    }
+    }
 }
 
 countrycoder.mapcomplete.org {
