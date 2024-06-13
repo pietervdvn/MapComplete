@@ -1,21 +1,25 @@
 hosted.mapcomplete.org {
-	root * public/
 	file_server
+	root * public/
+
 	header {
 		+Permissions-Policy "interest-cohort=()"
-        +Report-To `\{"group":"csp-endpoint", "max_age": 86400,"endpoints": [\{"url": "https://report.mapcomplete.org/csp"}], "include_subdomains": true}`
-	}
+		+Report-To `\{"group":"csp-endpoint", "max_age": 86400,"endpoints": [\{"url": "https://report.mapcomplete.org/csp"
+	}	], "include_subdomains": true
+}
+
+`
+}
 }
 
 countrycoder.mapcomplete.org {
-	root * tiles/
 	file_server
+	root * tiles/
 	header {
-        +Permissions-Policy "interest-cohort=()"
-        +Access-Control-Allow-Origin https://hosted.mapcomplete.org https://dev.mapcomplete.org https://mapcomplete.org
-    }
+		+Permissions-Policy "interest-cohort=()"
+		+Access-Control-Allow-Origin https://hosted.mapcomplete.org https://dev.mapcomplete.org https://mapcomplete.org
+	}
 }
-
 
 report.mapcomplete.org {
 	reverse_proxy {
@@ -30,15 +34,7 @@ studio.mapcomplete.org {
 }
 
 lod.mapcomplete.org {
-    reverse_proxy /extractgraph {
-        to http://127.0.0.1:2346
-    }
+	reverse_proxy /extractgraph {
+		to http://127.0.0.1:2346
+	}
 }
-
-proxy.mapcomplete.org {
-    reverse_proxy {
-        to http://127.0.0.1:1237
-    }
-}
-
-
