@@ -65,6 +65,10 @@ class Compare extends Script {
 
     async main(args: string[]): Promise<void> {
         let [velopark, osm, key] = args
+        if(velopark === undefined || osm === undefined){
+            console.log("Needed argument: velopark.geojson osm.geojson [key]\nThe key is optional and will be `ref:velopark` by default\nUse overpass to get a geojson with ref:velopark")
+            return
+        }
         key ??= "ref:velopark"
         const veloparkData: FeatureCollection = JSON.parse(fs.readFileSync(velopark, "utf-8"))
         const osmData: FeatureCollection = JSON.parse(fs.readFileSync(osm, "utf-8"))
@@ -82,6 +86,7 @@ class Compare extends Script {
                 console.error("No velopark entry found for", veloId)
                 continue
             }
+            console.log("Veloparking is", veloparking)
             diffs.push(this.compare(veloId, parking, veloparking))
         }
         console.log(
