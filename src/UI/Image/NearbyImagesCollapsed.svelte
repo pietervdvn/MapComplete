@@ -25,7 +25,6 @@
   let expanded = false
 </script>
 
-<LoginToggle {state}>
   <div class="my-4">
     {#if expanded}
       <NearbyImages {tags} {state} {lon} {lat} {feature} {linkable} {layer}>
@@ -54,4 +53,3 @@
       </button>
     {/if}
   </div>
-</LoginToggle>

@@ -30,7 +30,7 @@
       lon,
       lat,
       allowSpherical: new UIEventSource<boolean>(false),
-      blacklist: AllImageProviders.LoadImagesFor(tags),
+      blacklist: AllImageProviders.LoadImagesFor(tags)
     },
     state.indexedFeatures
   )
@@ -39,26 +39,24 @@
   let allDone = imagesProvider.allDone
 </script>
 
-<LoginToggle {state}>
-  <div class="interactive border-interactive rounded-2xl p-2">
-    <div class="flex justify-between">
-      <h4>
-        <Tr t={Translations.t.image.nearby.title} />
-      </h4>
-      <slot name="corner" />
-    </div>
-    {#if !$allDone}
-      <Loading />
-    {:else if $images.length === 0}
-      <Tr t={Translations.t.image.nearby.noNearbyImages} cls="alert" />
-    {:else}
-      <div class="flex w-full space-x-1 overflow-x-auto" style="scroll-snap-type: x proximity">
-        {#each $images as image (image.pictureUrl)}
+<div class="interactive border-interactive rounded-2xl p-2">
+  <div class="flex justify-between">
+    <h4>
+      <Tr t={Translations.t.image.nearby.title} />
+    </h4>
+    <slot name="corner" />
+  </div>
+  {#if !$allDone}
+    <Loading />
+  {:else if $images.length === 0}
+    <Tr t={Translations.t.image.nearby.noNearbyImages} cls="alert" />
+  {:else}
+    <div class="flex w-full space-x-1 overflow-x-auto" style="scroll-snap-type: x proximity">
+      {#each $images as image (image.pictureUrl)}
           <span class="w-fit shrink-0" style="scroll-snap-align: start">
             <LinkableImage {tags} {image} {state} {feature} {layer} {linkable} />
           </span>
-        {/each}
-      </div>
-    {/if}
-  </div>
-</LoginToggle>
+      {/each}
+    </div>
+  {/if}
+</div>
