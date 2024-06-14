@@ -26,7 +26,6 @@ export default class LayoutSource extends FeatureSourceMerger {
 
     private readonly supportsForceDownload: UpdatableFeatureSource[]
 
-    private readonly fromCache: Map<string, LocalStorageFeatureSource>
     public static readonly fromCacheZoomLevel = 15
     constructor(
         layers: LayerConfig[],
