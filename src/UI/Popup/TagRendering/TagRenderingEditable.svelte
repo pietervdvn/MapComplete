@@ -1,6 +1,6 @@
 <script lang="ts">
   import TagRenderingConfig from "../../../Models/ThemeConfig/TagRenderingConfig"
-  import { Store, UIEventSource } from "../../../Logic/UIEventSource"
+  import { ImmutableStore, Store, UIEventSource } from "../../../Logic/UIEventSource"
   import type { Feature } from "geojson"
   import type { SpecialVisualizationState } from "../../SpecialVisualization"
   import TagRenderingAnswer from "./TagRenderingAnswer.svelte"
@@ -74,7 +74,7 @@
     onDestroy(_htmlElement.addCallbackAndRun(() => setHighlighting()))
   }
   let answerId = "answer-" + Utils.randomString(5)
-  let debug = state.featureSwitches.featureSwitchIsDebugging
+  let debug = state?.featureSwitches?.featureSwitchIsDebugging ?? new ImmutableStore(false)
 </script>
 
 <div bind:this={htmlElem} class={twMerge(clss, "tr-" + config.id)}>
