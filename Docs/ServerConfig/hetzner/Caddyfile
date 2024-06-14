@@ -1,19 +1,17 @@
 hosted.mapcomplete.org {
-	file_server {
-		root * public/
-		header {
-			+Permissions-Policy "interest-cohort=()"
-	    }
-    }
+	root * public/
+	file_server
+	header {
+		+Permissions-Policy "interest-cohort=()"
+	}
 }
 
 countrycoder.mapcomplete.org {
-	file_server {
-		root * tiles/
-		header {
-			+Permissions-Policy "interest-cohort=()"
-			+Access-Control-Allow-Origin https://hosted.mapcomplete.org https://dev.mapcomplete.org https://mapcomplete.org
-		}
+	root * tiles/
+	file_server
+	header {
+		+Permissions-Policy "interest-cohort=()"
+		+Access-Control-Allow-Origin https://hosted.mapcomplete.org https://dev.mapcomplete.org https://mapcomplete.org
 	}
 }
 
