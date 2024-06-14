@@ -272,8 +272,9 @@ class GenerateSeries extends Script {
         allFeatures = allFeatures.filter((f) => f.properties.metadata?.theme !== "EMPTY CS" && f.geometry.coordinates.length > 0)
         const centerpointsAll = allFeatures.map((f) => {
             const centerpoint = GeoOperations.centerpoint(f)
+            const c = centerpoint.geometry.coordinates
             // OsmCha doesn't adhere to the Geojson standard and uses `lat` `lon` as coordinates instead of `lon`, `lat`
-            centerpoint.geometry.coordinates.reverse()
+            centerpoint.geometry.coordinates = [c[1], c[0]]
             return centerpoint
         })
         const centerpoints = centerpointsAll.filter(p => {
