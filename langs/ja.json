@@ -5,10 +5,6 @@
         "retrying": "データの読み込みに失敗しました。{count} 秒以内に再試行します…",
         "zoomIn": "ズーム・インしてデータを表示または編集"
     },
-    "delete": {
-        "explanations": {},
-        "reasons": {}
-    },
     "favourite": {
         "loginNeeded": "<h3>ログイン</h3>個人用レイアウトはOpenStreetMapユーザのみが使用できます",
         "panelIntro": "<h3>お客様の個人的なテーマ</h3>すべての公式テーマからお気に入りのレイヤを有効にする",
@@ -19,7 +15,6 @@
         "add": {
             "addNew": "ここに新しい {category} を追加します",
             "confirmButton": "ここに{category}を追加します。<br><div class=\"alert\">追加内容はすべてのユーザーに表示されます。</div>",
-            "import": {},
             "intro": "データがまだわからない場所をクリックしました。<br>",
             "layerNotEnabled": "レイヤ{layer}は有効になっていません。このレイヤで点を追加できるようにする",
             "openLayerControl": "レイヤコントロールボックスを開く",
@@ -28,7 +23,6 @@
             "title": "新しいポイントを追加しますか?",
             "zoomInFurther": "さらにズーム拡大して点を追加します。"
         },
-        "apply_button": {},
         "attribution": {
             "attributionContent": "<p>すべてのデータは<a href=\"https://osm.org\" target=\"_blank\">OpenStreetMap</a>によって提供され、<a href=\"https://osm.org/copyright\" target=\"_blank\"> Open DataBaseライセンス</a>の下で自由に再利用できます。</p>",
             "attributionTitle": "帰属通知",
@@ -43,17 +37,14 @@
         "backgroundMap": "背景マップ",
         "cancel": "[キャンセル]",
         "customThemeIntro": "<h3>カスタムテーマ</h3>これらは以前にアクセスされたユーザー生成テーマです。",
-        "download": {},
         "fewChangesBefore": "新しいポイントを追加する前に、既存のポイントに関するいくつかの質問に答えてください。",
         "getStartedLogin": "OpenStreetMapを使用してログインし開始します",
         "getStartedNewAccount": " または<a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">新しいアカウントを作成する</a>",
         "goToInbox": "受信トレイを開く",
-        "histogram": {},
         "layerSelection": {
             "title": "レイヤを選択",
             "zoomInToSeeThisLayer": "レイヤを拡大表示します"
         },
-        "levelSelection": {},
         "loginToStart": "ログインしてこの質問に答えてください",
         "loginWithOpenStreetMap": "OpenStreetMapからログインする",
         "morescreen": {
@@ -81,7 +72,6 @@
             "ph_open": "開店"
         },
         "osmLinkTooltip": "履歴とその他の編集オプションについては、OpenStreetMapのこのオブジェクトを参照してください",
-        "pdf": {},
         "pickLanguage": "言語を選択します: ",
         "questions": {
             "emailIs": "この{category}の電子メール・アドレスは<a href=\"mailto:{email}\" target=\"_blank\">{email}</a>です",
@@ -127,11 +117,7 @@
             "tuesday": "火曜日",
             "wednesday": "水曜日"
         },
-        "welcomeBack": "ログインしました、お帰りなさい!",
-        "welcomeExplanation": {},
-        "wikipedia": {
-            "previewbox": {}
-        }
+        "welcomeBack": "ログインしました、お帰りなさい!"
     },
     "image": {
         "addPicture": "写真の追加",
@@ -145,21 +131,12 @@
         "uploadingMultiple": "{count} 枚の写真をアップロードします…",
         "uploadingPicture": "写真をアップロードします…"
     },
-    "importInspector": {},
-    "importLayer": {},
     "index": {
         "#": "これらのテキストは、テーマがロードされていない場合にテーマボタンの上に表示されます",
         "intro": "MapCompleteはOpenStreetMapのビューア兼エディタであり、特定のテーマに関する情報を表示します。",
         "pickTheme": "開始するには、下のテーマを選択してください。",
         "title": "MapCompleteへようこそ"
     },
-    "move": {
-        "inviteToMove": {},
-        "reasons": {}
-    },
-    "multi_apply": {},
-    "notes": {},
-    "privacy": {},
     "reviews": {
         "affiliated_reviewer_warning": "(関係者のレビュー)",
         "attribution": "レビューは、<a href=\"https://mangrove.reviews/\" target=\"_blank\">Mangrove Reviews</a> and are available under <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a>で公開されます。",
@@ -172,25 +149,5 @@
         "title_singular": "1回のレビュー",
         "tos": "レビューを作成する場合は、<a href=\"https://mangrove.reviews/terms\" target=\"_blank\">Mangrove.reviewsのTOSおよびプライバシーポリシーに同意します。</a>",
         "write_a_comment": "レビューを残す…"
-    },
-    "split": {},
-    "translations": {},
-    "validation": {
-        "color": {},
-        "date": {},
-        "direction": {},
-        "distance": {},
-        "email": {},
-        "float": {},
-        "int": {},
-        "nat": {},
-        "opening_hours": {},
-        "pfloat": {},
-        "phone": {},
-        "pnat": {},
-        "string": {},
-        "text": {},
-        "url": {},
-        "wikidata": {}
     }
 }
