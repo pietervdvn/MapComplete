@@ -195,7 +195,6 @@
     "translations": {
         "activateButton": "Помогите перевести MapComplete"
     },
-    "userinfo": {},
     "validation": {
         "nat": {
             "notANumber": "Введите число"
