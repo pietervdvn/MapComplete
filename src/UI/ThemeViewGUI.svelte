@@ -203,6 +203,7 @@
 
 </script>
 
+<main>
 <div class="absolute top-0 left-0 h-screen w-screen overflow-hidden">
   <MaplibreMap map={maplibremap} mapProperties={mapproperties} />
 </div>
@@ -688,3 +689,4 @@
 <CloseAnimation isOpened={selectedElement.map(sl => sl !== undefined && sl?.properties?.id === LastClickFeatureSource.newPointElementId)} moveTo={openNewElementButton} debug="newElement"/>
 <CloseAnimation isOpened={state.guistate.filtersPanelIsOpened} moveTo={openFilterButton} debug="filter"/>
 <CloseAnimation isOpened={state.guistate.backgroundLayerSelectionIsOpened} moveTo={openBackgroundButton} debug="bg"/>
+</main>

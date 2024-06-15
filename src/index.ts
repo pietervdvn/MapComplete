@@ -52,8 +52,10 @@ async function main() {
         ])
         console.log("The available layers on server are", Array.from(availableLayers))
         const state = new ThemeViewState(layout, availableLayers)
-        const main = new SvelteUIElement(ThemeViewGUI, { state })
-        main.AttachTo("maindiv")
+        new ThemeViewGUI({
+            target: document.getElementById("maindiv"),
+            props: {state}
+        })
         Array.from(document.getElementsByClassName("delete-on-load")).forEach((el) => {
             el.parentElement.removeChild(el)
         })

@@ -30,7 +30,7 @@
       }
   > = UIEventSource.FromPromise(Utils.downloadJsonCached(source))
 </script>
-
+<main>
 <h1>Contributed images with MapComplete: leaderboard</h1>
 
 {#if $data}
@@ -67,3 +67,4 @@
 <div>
   Logged in as {$loggedInContributor}
 </div>
+</main>

@@ -5,6 +5,7 @@
   console.log("???")
 </script>
 
+<main>
 <div class="flex flex-col">
   <Tr t={Translations.t.general["404"]} />
   <BackButton
@@ -18,3 +19,4 @@
     </div>
   </BackButton>
 </div>
+</main>
