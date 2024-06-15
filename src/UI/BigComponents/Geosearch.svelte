@@ -12,6 +12,7 @@
   import { SearchIcon } from "@rgossiaux/svelte-heroicons/solid"
   import { ariaLabel } from "../../Utils/ariaLabel"
   import { GeoLocationState } from "../../Logic/State/GeoLocationState"
+  import { Search } from "flowbite-svelte"
 
   export let perLayer: ReadonlyMap<string, GeoIndexedStoreForLayer> | undefined = undefined
   export let bounds: UIEventSource<BBox>

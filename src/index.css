@@ -718,6 +718,8 @@ svg.apply-fill path {
   max-width: 100%;
 }
 
+/** Flowbite workaround **/
+
 /************************* Experimental support for foldable devices ********************************/
 @media (horizontal-viewport-segments: 2) {
   .theme-list {
