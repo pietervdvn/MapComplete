@@ -162,7 +162,7 @@
             "intro": "An dieser Stelle sind noch keine Daten vorhanden.<br/>",
             "layerNotEnabled": "Die Ebene {layer} ist nicht eingeschaltet. Schalten Sie die Ebene ein, um ein Objekt hinzuzufügen",
             "openLayerControl": "Das Ebenen-Fenster öffnen",
-            "pleaseLogin": "Bitte anmelden, um ein neues Objekt hinzuzufügen",
+            "pleaseLogin": "Bitte über OpenStreetMap anmelden, um ein neues Objekt hinzuzufügen",
             "presetInfo": "Der neue POI hat {tags}",
             "stillLoading": "Die Daten werden noch geladen. Bitte warten Sie, bevor Sie ein neues Objekt hinzufügen.",
             "title": "Neues Objekt hinzufügen",
@@ -593,10 +593,10 @@
     "index": {
         "#": "Dieser Text wird über der Thema-Auswahlschaltfläche gezeigt, wenn kein Thema geladen ist",
         "featuredThemeTitle": "Diese Woche im Blickpunkt",
-        "intro": "MapComplete ist eine OpenStreetMap-Anwendung, mit der Informationen zu Objekten eines bestimmten Themas angezeigt und bearbeitet werden können.",
+        "intro": "Karten zu verschiedenen Themen, zu denen Sie beitragen können",
         "logIn": "Anmelden, um Themen anzuzeigen, die Sie bereits besucht haben",
         "pickTheme": "Eines der folgenden Themen auswählen, um zu starten.",
-        "title": "Willkommen bei MapComplete"
+        "title": "MapComplete"
     },
     "move": {
         "cancel": "Verschieben abbrechen",
