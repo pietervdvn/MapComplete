@@ -367,7 +367,7 @@ function transformTranslation(
         return `new Translation( ${JSON.stringify(obj)} )`
     }
 
-    let values: string[] = []
+    const values: string[] = []
     const spaces = Utils.Times((_) => "  ", path.length + 1)
 
     for (const key in obj) {
@@ -424,9 +424,14 @@ function transformTranslation(
     return `{${values.join(",\n")}}`
 }
 
+/**
+ *
+ * const result = sortKeys({"b": 43, "a": 42})
+ * JSON.stringify(result) // => '{"a":42,"b":43}'
+ */
 function sortKeys(o: object): object {
     const keys = Object.keys(o)
-    keys.sort()
+    keys.sort((a,b) => (""+a) < (""+b) ? -1 : 1)
     const nw = {}
     for (const key of keys) {
         const v = o[key]

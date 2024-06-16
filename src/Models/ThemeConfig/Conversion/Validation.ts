@@ -1890,7 +1890,7 @@ export class DetectDuplicatePresets extends DesugaringStep<LayoutConfig> {
             )
             const layerIds = layersWithDup.map((l) => l.id)
             context.err(
-                `This themes has multiple presets which are named:${dups}, namely layers ${layerIds.join(
+                `This theme has multiple presets which are named:${dups}, namely layers ${layerIds.join(
                     ", "
                 )} this is confusing for contributors and is probably the result of reusing the same layer multiple times. Use \`{"override": {"=presets": []}}\` to remove some presets`
             )
@@ -1911,7 +1911,7 @@ export class DetectDuplicatePresets extends DesugaringStep<LayoutConfig> {
                     )
                 ) {
                     context.err(
-                        `This themes has multiple presets with the same tags: ${presetATags.asHumanString(
+                        `This theme has multiple presets with the same tags: ${presetATags.asHumanString(
                             false,
                             false,
                             {}

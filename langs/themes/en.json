@@ -975,6 +975,10 @@
         },
         "title": "Kerbs and crossings"
     },
+    "lighthouses": {
+        "description": "Lighthouses are tall buildings with a light on top to guide marine traffic.",
+        "title": "Lighthouses"
+    },
     "mapcomplete-changes": {
         "description": "This maps shows all the changes made with MapComplete",
         "layers": {

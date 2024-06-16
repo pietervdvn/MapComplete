@@ -279,34 +279,6 @@
             "render": "單車圖書館"
         }
     },
-    "bicycle_tube_vending_machine": {
-        "name": "自行車內胎自動售貨機",
-        "presets": {
-            "0": {
-                "title": "自行車內胎自動售貨機"
-            }
-        },
-        "tagRenderings": {
-            "Still in use?": {
-                "mappings": {
-                    "0": {
-                        "then": "這個自動販賣機仍運作"
-                    },
-                    "1": {
-                        "then": "這個自動販賣機沒有運作了"
-                    },
-                    "2": {
-                        "then": "這個自動販賣機已經關閉了"
-                    }
-                },
-                "question": "這個自動販賣機仍有運作嗎？",
-                "render": "運作狀態是 <i>{operational_status}</i>"
-            }
-        },
-        "title": {
-            "render": "自行車內胎自動售貨機"
-        }
-    },
     "bike_cafe": {
         "name": "單車咖啡廳",
         "presets": {
@@ -813,6 +785,27 @@
         },
         "title": {
             "render": "設定"
+        }
+    },
+    "vending_machine": {
+        "tagRenderings": {
+            "operational_status": {
+                "mappings": {
+                    "0": {
+                        "then": "這個自動販賣機仍運作"
+                    },
+                    "1": {
+                        "then": "這個自動販賣機沒有運作了"
+                    },
+                    "2": {
+                        "then": "這個自動販賣機已經關閉了"
+                    },
+                    "3": {
+                        "then": "運作狀態是 <i>{operational_status}</i>"
+                    }
+                },
+                "question": "這個自動販賣機仍有運作嗎？"
+            }
         }
     },
     "walls_and_buildings": {

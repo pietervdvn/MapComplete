@@ -891,6 +891,10 @@
         "shortDescription": "Deze kaart toont de maximumsnelheid voor elke straat.",
         "title": "Maximale snelheden"
     },
+    "memorials": {
+        "description": "Een gedenkteken is een fysiek object dat permanent in de publieke ruimte aanwezig is om een persoon of gebeurtenis te herdenken. Dit kan in diverse vormen, zoals standbeelden, naamborden, muurschilderingen, militaire objecten,...",
+        "title": "Gedenktekens en graven"
+    },
     "nature": {
         "description": "Op deze kaart vind je informatie voor natuurliefhebbers, zoals info over het natuurgebied waar je inzit, vogelkijkhutten, informatieborden, ...",
         "shortDescription": "Deze kaart bevat informatie voor natuurliefhebbers",
@@ -908,6 +912,33 @@
     "onwheels": {
         "description": "Op deze kaart kan je informatie rond rolstoeltoegankelijkheid zien, zoals toegangsdeuren met hun breedte en drempelhoogte, toiletten met toegankelijkheidsinformatie, recepties maar ook winkels, cafés en restaurants.",
         "layers": {
+            "19": {
+                "override": {
+                    "=title": {
+                        "render": "Statistieken"
+                    }
+                }
+            },
+            "20": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "Importeren"
+                                }
+                            }
+                        },
+                        "1": {
+                            "render": {
+                                "special": {
+                                    "message": "Voeg alle gesuggereerde tags toe"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "4": {
                 "override": {
                     "filter": {
@@ -949,33 +980,6 @@
             "8": {
                 "override": {
                     "name": "Parkeerplaatsen voor personen met een beperking"
-                }
-            },
-            "19": {
-                "override": {
-                    "=title": {
-                        "render": "Statistieken"
-                    }
-                }
-            },
-            "20": {
-                "override": {
-                    "+tagRenderings": {
-                        "0": {
-                            "render": {
-                                "special": {
-                                    "text": "Importeren"
-                                }
-                            }
-                        },
-                        "1": {
-                            "render": {
-                                "special": {
-                                    "message": "Voeg alle gesuggereerde tags toe"
-                                }
-                            }
-                        }
-                    }
                 }
             }
         },
@@ -1064,6 +1068,25 @@
     },
     "postboxes": {
         "description": "Op deze kaart kan je informatie over brievenbussen en postkantoren vinden en toevoegen. Je kan deze kaart gebruiken om te achterhalen waar je je volgende postkaart naar kan sturen! :)<br/>Zie je een fout of ontbreekt een brievenbus? Dan kan je deze kaart aanpassen met een gratis OpenStreetMap account. ",
+        "layers": {
+            "3": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "Deze winkel is een post-partner"
+                                },
+                                "1": {
+                                    "then": "Deze winkel is geen post-partner"
+                                }
+                            },
+                            "question": "Is deze winkel een post-partner?"
+                        }
+                    }
+                }
+            }
+        },
         "shortDescription": "Een kaart die brievenbussen en postkantoren toont",
         "title": "Brievenbussen en postkantoren"
     },
@@ -1183,10 +1206,6 @@
     "stations": {
         "description": "Bekijk, bewerk en voeg details to aan een treinstation",
         "layers": {
-            "3": {
-                "description": "Laag met treinstations",
-                "name": "Treinstations"
-            },
             "16": {
                 "description": "Schermen die treinen tonen die van dit station vertrekken",
                 "name": "Vertrektijdenborden",
@@ -1218,6 +1237,10 @@
                 "title": {
                     "render": "Vertrektijdenbord"
                 }
+            },
+            "3": {
+                "description": "Laag met treinstations",
+                "name": "Treinstations"
             }
         },
         "title": "Treinstations"

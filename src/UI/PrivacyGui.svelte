@@ -16,7 +16,7 @@
     userRelatedState: new UserRelatedState(osmConnection)
   }
 </script>
-
+<main>
 <div class="flex h-screen flex-col overflow-hidden px-4">
   <div class="flex justify-between">
     <h2 class="flex items-center">
@@ -33,3 +33,4 @@
     <Tr t={Translations.t.general.backToIndex} />
   </a>
 </div>
+</main>

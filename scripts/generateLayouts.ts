@@ -392,6 +392,8 @@ class GenerateLayouts extends Script {
             }
         }
 
+        hosts.add("http://www.schema.org") // Schema.org is _not_ encrypted and thus needs an exception
+
         if (hosts.has("*")) {
             throw "* is not allowed as connect-src"
         }

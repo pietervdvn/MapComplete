@@ -8,6 +8,7 @@ import { OsmConnection } from "../Osm/OsmConnection"
 import { Changes } from "../Osm/Changes"
 import Translations from "../../UI/i18n/Translations"
 import NoteCommentElement from "../../UI/Popup/Notes/NoteCommentElement"
+import { Translation } from "../../UI/i18n/Translation"
 
 /**
  * The ImageUploadManager has a
@@ -72,6 +73,19 @@ export class ImageUploadManager {
         }
     }
 
+    public canBeUploaded(file: File): true | {error: Translation} {
+        const sizeInBytes = file.size
+        const self = this
+        if (sizeInBytes > this._uploader.maxFileSizeInMegabytes * 1000000) {
+             const error = Translations.t.image.toBig.Subs({
+                actual_size: Math.floor(sizeInBytes / 1000000) + "MB",
+                max_size: self._uploader.maxFileSizeInMegabytes + "MB",
+            })
+            return {error}
+        }
+        return true
+    }
+
     /**
      * Uploads the given image, applies the correct title and license for the known user.
      * Will then add this image to the OSM-feature or the OSM-note
@@ -84,19 +98,14 @@ export class ImageUploadManager {
         tagsStore: UIEventSource<OsmTags>,
         targetKey?: string
     ): Promise<void> {
-        const sizeInBytes = file.size
-        const tags = tagsStore.data
-        const featureId = <OsmId>tags.id
-        const self = this
-        if (sizeInBytes > this._uploader.maxFileSizeInMegabytes * 1000000) {
-            this.increaseCountFor(this._uploadStarted, featureId)
-            this.increaseCountFor(this._uploadFailed, featureId)
-            throw Translations.t.image.toBig.Subs({
-                actual_size: Math.floor(sizeInBytes / 1000000) + "MB",
-                max_size: self._uploader.maxFileSizeInMegabytes + "MB",
-            }).txt
+
+        const canBeUploaded = this.canBeUploaded(file)
+        if(canBeUploaded !== true){
+            throw canBeUploaded.error
         }
 
+        const tags = tagsStore.data
+        const featureId = <OsmId>tags.id
         const licenseStore = this._osmConnection?.GetPreference("pictures-license", "CC0")
         const license = licenseStore?.data ?? "CC0"
 

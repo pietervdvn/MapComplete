@@ -118,6 +118,7 @@ export default class WikidataPreviewBox extends VariableUiElement {
                     return new FixedUiElement(maybeWikidata["error"]).SetClass("alert")
                 }
                 const wikidata = <WikidataResponse>maybeWikidata["success"]
+                console.log(">>>> got wikidata", wikidata)
                 return WikidataPreviewBox.WikidataResponsePreview(wikidata, options)
             })
         )
@@ -131,6 +132,8 @@ export default class WikidataPreviewBox extends VariableUiElement {
             extraItems?: (BaseUIElement | string)[]
         }
     ): BaseUIElement {
+        console.log(">>> constructing wikidata preview box", wikidata.labels)
+
         const link = new Link(
             new Combine([
                 wikidata.id,
@@ -143,13 +146,12 @@ export default class WikidataPreviewBox extends VariableUiElement {
             Wikidata.IdToArticle(wikidata.id),
             true
         )?.SetClass("must-link")
-
         let info = new Combine([
             new Combine([
                 Translation.fromMap(wikidata.labels)?.SetClass("font-bold"),
                 link,
             ]).SetClass("flex justify-between flex-wrap-reverse"),
-            Translation.fromMap(wikidata.descriptions),
+            Translation.fromMap(wikidata.descriptions, true),
             WikidataPreviewBox.QuickFacts(wikidata, options),
             ...(options?.extraItems ?? []),
         ]).SetClass("flex flex-col link-underline")

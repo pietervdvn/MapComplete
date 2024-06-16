@@ -53,7 +53,7 @@
         "customThemeIntro": "<h3>Temas personalizados</h3> Esses são temas gerados pelo usuário visitados anteriormente.",
         "fewChangesBefore": "Por favor, responda algumas perguntas de pontos existentes antes de adicionar um novo ponto.",
         "getStartedLogin": "Entrar com OpenStreetMap para começar",
-        "getStartedNewAccount": " ou <a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">crie uma nova conta</a>",
+        "getStartedNewAccount": " ou <a href='https://www.openstreetmap.org/user/new' target='_blank'>crie uma nova conta</a>",
         "goToInbox": "Abrir mensagens",
         "layerSelection": {
             "title": "Selecionar camadas",
@@ -83,9 +83,9 @@
         "questions": {
             "emailIs": "O endereço de e-mail deste {category} é <a href=\"mailto:{email}\" target=\"_blank\">{email}</a>",
             "emailOf": "Qual é o endereço de e-mail de {category}?",
-            "phoneNumberIs": "O número de telefone deste {category} é <a target=\"_blank\">{phone}</a>",
+            "phoneNumberIs": "O número de telefone deste {category} é <a href='tel:{phone}' target='_blank'>{phone}</a>",
             "phoneNumberOf": "Qual é o número de telefone de {category}?",
-            "websiteIs": "Site: <a href=\"{website}\" target=\"_blank\">{website}</a>",
+            "websiteIs": "Site: <a href='{website}' target='_blank'>{website}</a>",
             "websiteOf": "Qual é o site de {category}?"
         },
         "readYourMessages": "Por favor, leia todas as suas mensagens do OpenStreetMap antes de adicionar um novo ponto.",
@@ -99,7 +99,7 @@
         },
         "sharescreen": {
             "copiedToClipboard": "Link copiado para a área de transferência",
-            "embedIntro": "<h3>Incorpore em seu site</h3>Por favor, incorpore este mapa em seu site.<br>Nós o encorajamos a fazer isso - você nem precisa pedir permissão.<br>É gratuito e sempre será. Quanto mais pessoas usarem isso, mais valioso se tornará.",
+            "embedIntro": "<h3>Incorpore em seu site</h3>Por favor, incorpore este mapa em seu site.<br/>Nós o encorajamos a fazer isso - você nem precisa pedir permissão.<br/>É gratuito e sempre será. Quanto mais pessoas usarem isso, mais valioso se tornará.",
             "fsUserbadge": "Habilite o botão de login",
             "fsWelcomeMessage": "Mostra o pop-up da mensagem de boas-vindas e as guias associadas",
             "intro": "<h3>Compartilhe este mapa</h3> Compartilhe este mapa copiando o link abaixo e enviando-o para amigos e familiares:",
@@ -143,7 +143,7 @@
         "isDeleted": "Excluída",
         "pleaseLogin": "Faça login para adicionar uma imagem",
         "respectPrivacy": "Não fotografe pessoas e nem placas de veículos. Não faça upload do Google Maps, Google Streetview ou outras fontes protegidas por direitos autorais.",
-        "uploadDone": "<span class=\"thanks\">Sua foto foi adicionada. Obrigado por ajudar!</span>",
+        "uploadDone": "Sua foto foi adicionada. Obrigado por ajudar!",
         "uploadFailed": "Não foi possível enviar sua foto. Você está conectado à Internet e permite APIs de terceiros? O navegador Brave ou o plugin uMatrix podem bloqueá-los.",
         "uploadingMultiple": "Fazendo upload de {count} imagens…",
         "uploadingPicture": "Enviando sua imagem…"

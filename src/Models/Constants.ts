@@ -164,6 +164,7 @@ export default class Constants {
      */
     public static VectorTileServer: string | undefined = Constants.config.mvt_layer_server
     public static readonly maptilerApiKey = "GvoVAJgu46I5rZapJuAy"
+    public static readonly SummaryServer: string = Constants.config.summary_server
 
     private static isRetina(): boolean {
         if (Utils.runningFromConsole) {

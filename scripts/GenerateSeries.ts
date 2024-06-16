@@ -5,6 +5,7 @@ import Script from "./Script"
 import { GeoOperations } from "../src/Logic/GeoOperations"
 import { Feature, Polygon } from "geojson"
 import { Tiles } from "../src/Models/TileRange"
+import { BBox } from "../src/Logic/BBox"
 
 class StatsDownloader {
     private readonly urlTemplate =
@@ -123,7 +124,7 @@ class StatsDownloader {
             Referer:
                 "https://osmcha.org/?filters=%7B%22date__gte%22%3A%5B%7B%22label%22%3A%222020-07-05%22%2C%22value%22%3A%222020-07-05%22%7D%5D%2C%22editor%22%3A%5B%7B%22label%22%3A%22mapcomplete%22%2C%22value%22%3A%22mapcomplete%22%7D%5D%7D",
             "Content-Type": "application/json",
-            Authorization: "Token 6e422e2afedb79ef66573982012000281f03dc91",
+            Authorization: "Token 9cc11ad2868778272eadbb1a423ebb507184bc04",
             DNT: "1",
             Connection: "keep-alive",
             TE: "Trailers",
@@ -135,7 +136,7 @@ class StatsDownloader {
             ScriptUtils.erasableLog(
                 `Downloading stats for ${year}-${month}-${day}, page ${page} ${url}`
             )
-            const result = await Utils.downloadJson(url, headers)
+            const result = await Utils.downloadJson<{features: [], next: string}>(url, headers)
             page++
             allFeatures.push(...result.features)
             if (result.features === undefined) {
@@ -201,11 +202,11 @@ class GenerateSeries extends Script {
         const targetDir = args[0] ?? "../../git/MapComplete-data"
 
         await this.downloadStatistics(targetDir + "/changeset-metadata")
-        await this.generateCenterPoints(
+        this.generateCenterPoints(
             targetDir + "/changeset-metadata",
             targetDir + "/mapcomplete-changes/",
             {
-                zoomlevel: 8,
+                zoomlevel: 8
             }
         )
     }
@@ -248,10 +249,8 @@ class GenerateSeries extends Script {
         const allPaths = readdirSync(sourceDir).filter(
             (p) => p.startsWith("stats.") && p.endsWith(".json")
         )
-        let allFeatures: ChangeSetData[] = [].concat(
-            ...allPaths.map(
+        let allFeatures: ChangeSetData[] = allPaths.flatMap(
                 (path) => JSON.parse(readFileSync(sourceDir + "/" + path, "utf-8")).features
-            )
         )
         allFeatures = allFeatures.filter(
             (f) =>
@@ -270,8 +269,24 @@ class GenerateSeries extends Script {
                     f.properties.editor.toLowerCase().startsWith("mapcomplete"))
         )
 
-        allFeatures = allFeatures.filter((f) => f.properties.metadata?.theme !== "EMPTY CS")
-        const centerpoints = allFeatures.map((f) => GeoOperations.centerpoint(f))
+        allFeatures = allFeatures.filter((f) => f.properties.metadata?.theme !== "EMPTY CS" && f.geometry.coordinates.length > 0)
+        const centerpointsAll = allFeatures.map((f) => {
+            const centerpoint = GeoOperations.centerpoint(f)
+            const c = centerpoint.geometry.coordinates
+            // OsmCha doesn't adhere to the Geojson standard and uses `lat` `lon` as coordinates instead of `lon`, `lat`
+            centerpoint.geometry.coordinates = [c[1], c[0]]
+            return centerpoint
+        })
+        const centerpoints = centerpointsAll.filter(p => {
+            const bbox= BBox.get(p)
+            if(bbox.minLat === -90 && bbox.maxLat === -90){
+                // Due to some bug somewhere, those invalid bboxes might appear if the latitude is < 90
+                // This crashes the 'spreadIntoBBoxes
+                // As workaround, we simply ignore them for now
+                return false
+            }
+            return true
+        })
         console.log("Found", centerpoints.length, " changesets in total")
 
         const perBbox = GeoOperations.spreadIntoBboxes(centerpoints, options.zoomlevel)

@@ -65,6 +65,7 @@
   }
 </script>
 
+<main>
 <div class="m-4 flex flex-col">
   <LanguagePicker
     clss="self-end max-w-full"
@@ -165,3 +166,4 @@
     v{Constants.vNumber}
   </div>
 </div>
+</main>

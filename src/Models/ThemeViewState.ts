@@ -690,9 +690,8 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 l.source.geojsonSource === undefined &&
                 l.doCount
         )
-        const url = new URL(Constants.VectorTileServer)
         const summaryTileSource = new SummaryTileSource(
-            url.protocol + "//" + url.host + "/summary",
+            Constants.SummaryServer,
             layers.map((l) => l.id),
             this.mapProperties.zoom.map((z) => Math.max(Math.floor(z), 0)),
             this.mapProperties,

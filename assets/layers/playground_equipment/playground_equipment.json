@@ -364,5 +364,8 @@
       }
     }
   ],
-  "allowMove": true
+  "allowMove": true,
+  "deletion": {
+    "neededChangesets": 0
+  }
 }

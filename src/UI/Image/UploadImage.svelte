@@ -13,6 +13,7 @@
   import FileSelector from "../Base/FileSelector.svelte"
   import Camera_plus from "../../assets/svg/Camera_plus.svelte"
   import LoginButton from "../Base/LoginButton.svelte"
+  import { Translation } from "../i18n/Translation"
 
   export let state: SpecialVisualizationState
 
@@ -31,16 +32,25 @@
 
   let licenseStore = state?.userRelatedState?.imageLicense ?? new ImmutableStore("CC0")
 
+  let errors = new UIEventSource<Translation[]>([])
+
   function handleFiles(files: FileList) {
+    const errs = []
     for (let i = 0; i < files.length; i++) {
       const file = files.item(i)
       console.log("Got file", file.name)
       try {
+        const canBeUploaded = state?.imageUploadManager?.canBeUploaded(file)
+        if (canBeUploaded !== true) {
+          errs.push(canBeUploaded.error)
+          continue
+        }
         state?.imageUploadManager.uploadImageAndApply(file, tags, targetKey)
       } catch (e) {
         alert(e)
       }
     }
+    errors.setData(errs)
   }
 </script>
 
@@ -50,6 +60,9 @@
   </LoginButton>
   <div class="flex flex-col">
     <UploadingImageCounter {state} {tags} />
+    {#each $errors as error}
+      <Tr t={error} cls="alert" />
+    {/each}
     <FileSelector
       accept="image/*"
       cls="button border-2 text-2xl"

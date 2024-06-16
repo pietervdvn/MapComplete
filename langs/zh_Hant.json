@@ -4,7 +4,7 @@
     },
     "centerMessage": {
         "allFilteredAway": "檢視畫面當中沒有滿足過瀘條件的圖徵",
-        "loadingData": "正在讀取資料…",
+        "loadingData": "載入資料中…",
         "noData": "目前檢視畫面沒有相關的圖徵",
         "ready": "完成！",
         "retrying": "無法讀取資料，請在 {count} 秒後再試一次…",
@@ -46,6 +46,26 @@
         "safeDelete": "這圖徵無法安全地刪除。",
         "useSomethingElse": "請使用其他的開放街圖編輯器來刪除",
         "whyDelete": "為什麼這個圖徵要被刪除？"
+    },
+    "external": {
+        "allAreApplied": "所有遺失，外部數值已經複製到開放街圖了",
+        "allIncluded": "從 {source} 載入的資料已經在開放街圖了",
+        "apply": "套用",
+        "applyAll": "套用所有遺失數值",
+        "conflicting": {
+            "intro": "開放街圖與來源網站的數值不同。",
+            "title": "衝突物件"
+        },
+        "currentInOsmIs": "目前，OpenStreetMap 記錄了以下值：",
+        "done": "完成",
+        "error": "錯誤",
+        "loadedFrom": "下列資料透過內嵌 JSON-LD 由 <a href={url}>{source}</a> 載入",
+        "missing": {
+            "intro": "開放街圖沒有下列屬性的資訊",
+            "title": "遺失的物件"
+        },
+        "noDataLoaded": "外部網站沒有可以載入的已連結資料",
+        "overwrite": "在 OpenStreetMap 中覆寫"
     },
     "favourite": {
         "loginNeeded": "<h3>登入</h3>只有開放街圖使用者才有個人化樣式",
@@ -182,7 +202,7 @@
             "title": "版權與署名",
             "translatedBy": "MapComplete 由 {contributors} 翻譯，而且還有 <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} 更多貢獻者</a>"
         },
-        "back": "回去",
+        "back": "返回",
         "backToIndex": "回到所有主題地圖的總覽頁面",
         "backToMap": "回到地圖",
         "backgroundMap": "選擇背景圖層",
@@ -192,6 +212,13 @@
         "customThemeIntro": "這些是先前使用者創造的主題。",
         "customThemeTitle": "客製化主題",
         "download": {
+            "custom": {
+                "download": "下載 {width} 毫米寬 {height} 毫米高的 PNG",
+                "downloadHelper": "這是用於列印的",
+                "height": "圖片高度 (公釐)：",
+                "title": "下載有專門寬度與高度的圖片",
+                "width": "圖片寬度 (公釐)： "
+            },
             "downloadAsPdf": "下載目前地圖的 PDF 檔",
             "downloadAsPdfHelper": "列印當前地圖相當理想",
             "downloadAsPng": "下載為圖片",
@@ -208,7 +235,7 @@
             "downloadGeojson": "下載可視資料為 GeoJSON",
             "downloadGpx": "下載為 GPX 檔案",
             "downloadGpxHelper": "GPX 檔案能被大部分導航裝置或 app 使用",
-            "exporting": "匯出…",
+            "exporting": "匯出中…",
             "includeMetaData": "包括 metadata (上次編輯者、計算數值等)",
             "licenseInfo": "<h3>著作權聲明</h3>提供的資料採用 ODbL 授權釋出。可以用任何目標再利用資料，但是需<ul><li>標明 <b>© 開放街圖貢獻者</b></li><li>任何變動必須相同方式授權</li></ul> 請閱讀完整的 <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">著作權聲明</a>。",
             "noDataLoaded": "還未載入資料，之後能夠下載",
@@ -263,6 +290,7 @@
         "loginToStart": "登入之後來回答這問題",
         "loginWithOpenStreetMap": "用開放街圖帳號登入",
         "logout": "登出",
+        "mappingsAreHidden": "有些選項已經隱藏，搜尋來顯示更多選項。",
         "menu": {
             "aboutMapComplete": "關於 MapComplete",
             "filter": "篩選資料"
@@ -390,7 +418,7 @@
             "modes": {
                 "private": {
                     "docs": "你軌跡的點會被分享出去，並且與其他軌跡整合。你能看到完整的軌跡，並且載入到其他編輯軟體。OpenStreetMap.org 保留你的軌跡",
-                    "name": "暱名"
+                    "name": "匿名"
                 },
                 "public": {
                     "docs": "你的軌跡會被所有人看到，在 openstreetmap.org 上包括你的使用者檔案與 GPS 軌跡列表",
@@ -466,7 +494,7 @@
         },
         "welcomeBack": "歡迎回來！",
         "welcomeExplanation": {
-            "addNew": "點一下地圖來新增新興趣點。",
+            "addNew": "有物件遺漏嗎？使用左下角的按鈕來新增新興趣點。",
             "general": "在這份地圖，你可以檢視、編輯與新增<i>興趣點</i>。在附近放大來檢視興趣點，點一個來檢視或是編輯資訊。所有資料來源以及儲存到開放街圖，能夠自由被再利用。"
         },
         "wikipedia": {
@@ -475,7 +503,7 @@
             "doSearch": "搜尋來檢視結果",
             "failed": "無法載入維基百科頁面",
             "fromWikipedia": "從自由的百科全書維基百科來的",
-            "loading": "載入維基百科…",
+            "loading": "載入維基百科中…",
             "noResults": "<i>{search}</i>找不到結果",
             "noWikipediaPage": "這個 Wikidata 項目還沒有相對應的維基百科頁面。",
             "previewbox": {
@@ -516,7 +544,7 @@
         "currentLicense": "你的圖片會以 {license} 釋出",
         "doDelete": "移除圖片",
         "dontDelete": "取消",
-        "isDeleted": "已移除",
+        "isDeleted": "已刪除",
         "nearby": {
             "close": "以附近圖片收起面板",
             "link": "這個圖片顯示物物",
@@ -571,9 +599,9 @@
         "title": "歡迎使用 MapComplete"
     },
     "move": {
-        "cancel": "取消動作",
+        "cancel": "取消移動",
         "cannotBeMoved": "這個圖徵無法移動。",
-        "confirmMove": "移動到這裡",
+        "confirmMove": "移動至這裏",
         "inviteToMove": {
             "generic": "移動這個點",
             "reasonInaccurate": "改進這個點的精確度",
@@ -603,7 +631,7 @@
         "addComment": "新增評論",
         "addCommentAndClose": "新增評論並且關閉",
         "addCommentPlaceholder": "新增評論…",
-        "anonymous": "暱名用戶",
+        "anonymous": "匿名用戶",
         "closeNote": "關閉註解",
         "createNote": "新增新註解",
         "createNoteIntro": "地圖有什麼錯誤或缺漏的嗎？這裡新增註解，之後會由志工來檢查。",
@@ -689,7 +717,7 @@
         "rated": "評分 {n} 顆星",
         "reviewPlaceholder": "描述你的經驗…",
         "reviewing_as": "以 {nickname} 評鑑",
-        "reviewing_as_anonymous": "暱名評鑑",
+        "reviewing_as_anonymous": "匿名評鑑",
         "reviews_bug": "預期更多評鑑嗎？有些評鑑因為臭蟲無法顯示。",
         "save": "儲存評鑑",
         "saved": "已經儲存評鑑，謝謝你的分享！",
@@ -708,7 +736,7 @@
         "hasBeenSplit": "這路徑已經分割",
         "inviteToSplit": "分割這道路比較小的片段，讓不同道路能有不同的屬性。",
         "loginToSplit": "你必須登入才能分割道路",
-        "split": "分開",
+        "split": "分割",
         "splitAgain": "再次切割道路",
         "splitTitle": "請在地圖選擇要在那裡變更道路屬性"
     },

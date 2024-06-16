@@ -15,7 +15,8 @@
     {
       "builtin": [
         "ghost_bike",
-        "memorial"
+        "memorial",
+        "grave"
       ],
       "override": {
         "minzoom": 9
@@ -23,7 +24,8 @@
     },
     {
       "builtin": [
-        "bench"
+        "bench",
+        "artwork"
       ],
       "override": {
         "minzoom": 18

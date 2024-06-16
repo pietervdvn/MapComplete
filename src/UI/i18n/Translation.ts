@@ -10,9 +10,21 @@ export class Translation extends BaseUIElement {
     public readonly translations: Record<string, string>
     public readonly context?: string
     private onDestroy: () => void
+    /**
+     * If a text is needed to display and is not available in the requested language,
+     * it will default to english and - if this is not available - give any language it has available.
+     *
+     * If strictLanguages is set, it'll return undefined instead
+     * @private
+     */
+    private _strictLanguages: boolean
 
-    constructor(translations: string | Record<string, string>, context?: string) {
+    constructor(translations: string | Record<string, string>, context?: string, strictLanguages?: boolean) {
         super()
+        this._strictLanguages = strictLanguages
+        if(strictLanguages){
+            console.log(">>> strict:", translations)
+        }
         if (translations === undefined) {
             console.error("Translation without content at " + context)
             throw `Translation without content (${context})`
@@ -67,16 +79,28 @@ export class Translation extends BaseUIElement {
     }
 
     private _current: Store<string>
+    private _currentLanguage: Store<string>
 
-    get current(): Store<string> {
-        if (!this._current) {
-            this._current = Locale.language.map(
-                (l) => this.textFor(l),
+    /**
+     * Indicates what language is effectively returned by `current`.
+     * In most cases, this will be the language of choice, but if no translation is available, this will probably be `en`
+     */
+    get currentLang(): Store<string>{
+        if (!this._currentLanguage) {
+            this._currentLanguage = Locale.language.map(
+                (l) => this.actualLanguage(l),
                 [],
                 (f) => {
                     this.onDestroy = f
                 }
             )
+        }
+        return this._currentLanguage
+    }
+
+    get current(): Store<string> {
+        if (!this._current) {
+            this._current = this.currentLang.map(l => this.translations[l])
         }
         return this._current
     }
@@ -108,8 +132,9 @@ export class Translation extends BaseUIElement {
         return allTranslations
     }
 
-    static fromMap(transl: Map<string, string>) {
+    static fromMap(transl: Map<string, string>, strictLanguages: boolean = false) {
         const translations = {}
+        console.log("Strict:", strictLanguages)
         let hasTranslation = false
         transl?.forEach((value, key) => {
             translations[key] = value
@@ -118,7 +143,7 @@ export class Translation extends BaseUIElement {
         if (!hasTranslation) {
             return undefined
         }
-        return new Translation(translations)
+        return new Translation(translations, undefined, strictLanguages)
     }
 
     public toString() {
@@ -131,33 +156,39 @@ export class Translation extends BaseUIElement {
         this.isDestroyed = true
     }
 
-    public textFor(language: string): string {
+    /**
+     * Which language will be effectively used for the given language of choice?
+     */
+    public actualLanguage(language: string): "*" | string | undefined {
         if (this.translations["*"]) {
-            return this.translations["*"]
+            return "*"
         }
         const txt = this.translations[language]
-        if (txt !== undefined) {
-            return txt
+        if(txt === undefined && this._strictLanguages){
+            return undefined
         }
-        const en = this.translations["en"]
-        if (en !== undefined) {
-            return en
+        if (txt !== undefined ) {
+            return language
+        }
+        if (this.translations["en"] !== undefined) {
+            return "en"
         }
         for (const i in this.translations) {
-            if (!this.translations.hasOwnProperty(i)) {
-                continue
-            }
-            return this.translations[i] // Return a random language
+            return i // Return a random language
         }
         console.error("Missing language ", Locale.language.data, "for", this.translations)
-        return ""
+        return undefined
+    }
+    public textFor(language: string): string | undefined {
+        return this.translations[this.actualLanguage(language)]
     }
 
     InnerConstructElement(): HTMLElement {
         const el = document.createElement("span")
         const self = this
-
-        el.innerHTML = self.txt
+        if(self.txt){
+            el.innerHTML = self.txt
+        }
         if (self.translations["*"] !== undefined) {
             return el
         }
@@ -166,7 +197,11 @@ export class Translation extends BaseUIElement {
             if (self.isDestroyed) {
                 return true
             }
-            el.innerHTML = self.txt
+            if(self.txt === undefined){
+                el.innerHTML = ""
+            }else{
+                el.innerHTML = self.txt
+            }
         })
 
         if (self.context === undefined || self.context?.indexOf(":") < 0) {

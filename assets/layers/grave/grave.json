@@ -1,0 +1,101 @@
+{
+  "credits": "Built for Wegspotter on the meetup",
+  "minzoom": 15,
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "./assets/layers/memorial/memorial.svg",
+          "color": "white"
+        }
+      ],
+      "label": "{name}",
+      "labelCssClasses": "bg-white rounded px-2"
+    }
+  ],
+  "tagRenderings": [
+    "images",
+    {
+      "question": {
+        "en": "What is the Wikipedia page of the person buried here?"
+      },
+      "id": "buried:wikidata",
+      "render": {
+        "en": "{wikipedia(buried:wikidata)}"
+      },
+      "freeform": {
+        "key": "buried:wikidata",
+        "type": "wikidata"
+      }
+    },
+    {
+      "question": {
+        "en": "What is the name of the person buried here?"
+      },
+      "id": "name",
+      "render": {
+        "en": "<b>{name}</b> is buried here"
+      },
+      "freeform": {
+        "key": "name"
+      }
+    }
+  ],
+  "lineRendering": [],
+  "id": "grave",
+  "name": {
+    "en": "Gravestones"
+  },
+  "description": {
+    "en": "Tombstones (and graves) indicate where a person was buried. On this map, those can be recorded and a link to Wikipedia can be made"
+  },
+  "source": {
+    "osmTags": "historic=tomb"
+  },
+  "title": {
+    "render": {
+      "en": "Tombstone"
+    }
+  },
+  "presets": [
+    {
+      "title": {
+        "en": "a tombstone"
+      },
+      "tags": [
+        "historic=tomb"
+      ],
+      "description": {
+        "en": "A tombstone is a physical object which indicates that one or more persons are buried here. It generally has the name, birth date and death date of the person or persons as inscription."
+      }
+    }
+  ],
+  "filter": [
+    {
+      "id": "has_wikidata",
+      "options": [
+        {
+          "question": {
+            "en": "With or without wikidata"
+          }
+        },
+        {
+          "question": {
+            "en": "Has a link to Wikidata"
+          },
+          "osmTags": "buried:wikidata~*"
+        },
+        {
+          "question": {
+            "en": "Has no link to Wikidata"
+          },
+          "osmTags": "buried:wikidata="
+        }
+      ]
+    }
+  ]
+}

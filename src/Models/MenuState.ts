@@ -106,6 +106,11 @@ export class MenuState {
                 showOverOthers: true,
             },
             {
+                toggle: this.communityIndexPanelIsOpened,
+                name: "community",
+                showOverOthers: true,
+            },
+            {
                 toggle: this.menuIsOpened,
                 name: "menu",
                 submenu: this.menuViewTab,
@@ -118,11 +123,6 @@ export class MenuState {
             {
                 toggle: this.backgroundLayerSelectionIsOpened,
                 name: "background",
-                showOverOthers: true,
-            },
-            {
-                toggle: this.communityIndexPanelIsOpened,
-                name: "community",
                 showOverOthers: true,
             },
             {

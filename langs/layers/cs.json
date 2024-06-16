@@ -35,6 +35,23 @@
             "1": {
                 "title": "volně stojící plakátovací skříň"
             },
+            "10": {
+                "description": "Kus nepromokavého textilu s natištěným vzkazem, trvale připevněný na stěnu",
+                "title": "plachta"
+            },
+            "11": {
+                "title": "totem"
+            },
+            "12": {
+                "description": "Používá se pro reklamní nápisy, neonové nápisy, loga a vstupní nápisy institucí",
+                "title": "cedule"
+            },
+            "13": {
+                "title": "socha"
+            },
+            "14": {
+                "title": "nástěnná malba"
+            },
             "2": {
                 "title": "plakátovací skříň připevněná na stěnu"
             },
@@ -54,23 +71,6 @@
             },
             "8": {
                 "title": "obrazovka připevněná na stěnu"
-            },
-            "10": {
-                "description": "Kus nepromokavého textilu s natištěným vzkazem, trvale připevněný na stěnu",
-                "title": "plachta"
-            },
-            "11": {
-                "title": "totem"
-            },
-            "12": {
-                "description": "Používá se pro reklamní nápisy, neonové nápisy, loga a vstupní nápisy institucí",
-                "title": "cedule"
-            },
-            "13": {
-                "title": "socha"
-            },
-            "14": {
-                "title": "nástěnná malba"
             }
         },
         "tagRenderings": {
@@ -165,6 +165,9 @@
                     "1": {
                         "then": "Toto je deska"
                     },
+                    "10": {
+                        "then": "Toto je nástěnná malba"
+                    },
                     "2": {
                         "then": "Toto je sloup"
                     },
@@ -188,9 +191,6 @@
                     },
                     "9": {
                         "then": "Toto je totem"
-                    },
-                    "10": {
-                        "then": "Toto je nástěnná malba"
                     }
                 },
                 "question": "O jaký typ reklamního prvku se jedná?",
@@ -204,6 +204,9 @@
                 },
                 "1": {
                     "then": "Deska"
+                },
+                "10": {
+                    "then": "Nástěnná malba"
                 },
                 "2": {
                     "then": "Skříň na plakáty"
@@ -228,9 +231,6 @@
                 },
                 "9": {
                     "then": "Totem"
-                },
-                "10": {
-                    "then": "Nástěnná malba"
                 }
             }
         }
@@ -312,6 +312,15 @@
                     "1": {
                         "then": "Nástěnná malba"
                     },
+                    "10": {
+                        "then": "Azulejo (španělské dekorativní dlaždice)"
+                    },
+                    "11": {
+                        "then": "Obklady a dlažba"
+                    },
+                    "12": {
+                        "then": "Dřevořezba"
+                    },
                     "2": {
                         "then": "Malba"
                     },
@@ -335,15 +344,6 @@
                     },
                     "9": {
                         "then": "Reliéf"
-                    },
-                    "10": {
-                        "then": "Azulejo (španělské dekorativní dlaždice)"
-                    },
-                    "11": {
-                        "then": "Obklady a dlažba"
-                    },
-                    "12": {
-                        "then": "Dřevořezba"
                     }
                 },
                 "question": "Jaký je typ tohoto uměleckého díla?",
@@ -1009,90 +1009,6 @@
                 }
             },
             "render": "Půjčovna kol"
-        }
-    },
-    "bicycle_tube_vending_machine": {
-        "description": "Vrstva zobrazující automaty na cyklistické duše (buď speciální automaty na cyklistické duše, nebo klasické automaty s cyklistickými dušemi a případně dalšími předměty souvisejícími s jízdními koly, jako jsou světla, rukavice, zámky, ...)",
-        "name": "Automat na cyklistické duše",
-        "presets": {
-            "0": {
-                "title": "automat na cyklistické duše"
-            }
-        },
-        "tagRenderings": {
-            "Still in use?": {
-                "mappings": {
-                    "0": {
-                        "then": "Tento prodejní automat funguje"
-                    },
-                    "1": {
-                        "then": "Tento prodejní automat je rozbitý"
-                    },
-                    "2": {
-                        "then": "Tento prodejní automat je uzavřen"
-                    }
-                },
-                "question": "Je tento automat stále v provozu?",
-                "render": "Provozní stav je <i>{operational_status}</i>"
-            },
-            "bicycle_tube_vending_machine-brand": {
-                "mappings": {
-                    "0": {
-                        "then": "Continental duše jsou zde prodávány"
-                    },
-                    "1": {
-                        "then": "Schwalbe duše jsou zde prodávány"
-                    }
-                },
-                "question": "Jaká značka duší je zde prodávána?",
-                "render": "{brand} duše jsou zde prodávány"
-            },
-            "bicycle_tube_vending_machine-charge": {
-                "question": "Kolik stojí duše na kolo?",
-                "render": "Cena jedné duše {charge}"
-            },
-            "bicycle_tube_vending_machine-operator": {
-                "mappings": {
-                    "0": {
-                        "then": "Udržuje Schwalbe"
-                    },
-                    "1": {
-                        "then": "Udržuje Continental"
-                    }
-                },
-                "question": "Kdo se stará o tento automat?"
-            },
-            "other-items-vending": {
-                "mappings": {
-                    "0": {
-                        "then": "Zde se prodávají cyklistické duše"
-                    },
-                    "1": {
-                        "then": "Zde se prodávají světla na jízdní kola"
-                    },
-                    "2": {
-                        "then": "Prodávají se zde rukavice"
-                    },
-                    "3": {
-                        "then": "Zde se prodávají sady na opravu jízdních kol"
-                    },
-                    "4": {
-                        "then": "Prodávají se zde pumpy na kolo"
-                    },
-                    "5": {
-                        "then": "Prodávají se zde zámky na kola"
-                    }
-                },
-                "question": "Prodávají se zde další doplňky na kolo?"
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Automat na cyklistické pláště{name}"
-                }
-            },
-            "render": "Automat na cyklistické duše"
         }
     },
     "bike_cafe": {
@@ -2634,6 +2550,15 @@
                     "1": {
                         "then": "Tato cyklostezka je zpevněná"
                     },
+                    "10": {
+                        "then": "Tato cyklostezka je tvořena jemným štěrkem"
+                    },
+                    "11": {
+                        "then": "Tato cyklostezka je z oblázkového kamene"
+                    },
+                    "12": {
+                        "then": "Tato cyklostezka je vyrobena ze surové zeminy"
+                    },
                     "2": {
                         "then": "Tato cyklostezka je z asfaltu"
                     },
@@ -2657,15 +2582,6 @@
                     },
                     "9": {
                         "then": "Tato cyklostezka je štěrková"
-                    },
-                    "10": {
-                        "then": "Tato cyklostezka je tvořena jemným štěrkem"
-                    },
-                    "11": {
-                        "then": "Tato cyklostezka je z oblázkového kamene"
-                    },
-                    "12": {
-                        "then": "Tato cyklostezka je vyrobena ze surové zeminy"
                     }
                 },
                 "question": "Jaký je povrch cyklostezky?",
@@ -2714,6 +2630,15 @@
                     "1": {
                         "then": "Tato cyklostezka je zpevněná"
                     },
+                    "10": {
+                        "then": "Tato cyklostezka je vyrobena z jemného štěrku"
+                    },
+                    "11": {
+                        "then": "Tato cyklostezka je z oblázků"
+                    },
+                    "12": {
+                        "then": "Tato cyklostezka je vyrobena ze surové půdy"
+                    },
                     "2": {
                         "then": "Tato cyklostezka je z asfaltu"
                     },
@@ -2737,15 +2662,6 @@
                     },
                     "9": {
                         "then": "Tato cyklostezka je ze štěrku"
-                    },
-                    "10": {
-                        "then": "Tato cyklostezka je vyrobena z jemného štěrku"
-                    },
-                    "11": {
-                        "then": "Tato cyklostezka je z oblázků"
-                    },
-                    "12": {
-                        "then": "Tato cyklostezka je vyrobena ze surové půdy"
                     }
                 },
                 "question": "Z čeho je povrch ulice vyroben?",
@@ -3614,6 +3530,54 @@
                     }
                 }
             },
+            "10": {
+                "options": {
+                    "0": {
+                        "question": "Bez preference psů"
+                    },
+                    "1": {
+                        "question": "Psi povoleny"
+                    },
+                    "2": {
+                        "question": "Psi nejsou povoleni"
+                    }
+                }
+            },
+            "11": {
+                "options": {
+                    "0": {
+                        "question": "Nabízí internet"
+                    }
+                }
+            },
+            "12": {
+                "options": {
+                    "0": {
+                        "question": "Nabízí elektřinu"
+                    }
+                }
+            },
+            "13": {
+                "options": {
+                    "0": {
+                        "question": "Má nabídku bez cukru"
+                    }
+                }
+            },
+            "14": {
+                "options": {
+                    "0": {
+                        "question": "Má bezlepkovou nabídku"
+                    }
+                }
+            },
+            "15": {
+                "options": {
+                    "0": {
+                        "question": "Má nabídku bez laktózy"
+                    }
+                }
+            },
             "2": {
                 "options": {
                     "0": {
@@ -3682,54 +3646,6 @@
                 "options": {
                     "0": {
                         "question": "Použití zdarma"
-                    }
-                }
-            },
-            "10": {
-                "options": {
-                    "0": {
-                        "question": "Bez preference psů"
-                    },
-                    "1": {
-                        "question": "Psi povoleny"
-                    },
-                    "2": {
-                        "question": "Psi nejsou povoleni"
-                    }
-                }
-            },
-            "11": {
-                "options": {
-                    "0": {
-                        "question": "Nabízí internet"
-                    }
-                }
-            },
-            "12": {
-                "options": {
-                    "0": {
-                        "question": "Nabízí elektřinu"
-                    }
-                }
-            },
-            "13": {
-                "options": {
-                    "0": {
-                        "question": "Má nabídku bez cukru"
-                    }
-                }
-            },
-            "14": {
-                "options": {
-                    "0": {
-                        "question": "Má bezlepkovou nabídku"
-                    }
-                }
-            },
-            "15": {
-                "options": {
-                    "0": {
-                        "question": "Má nabídku bez laktózy"
                     }
                 }
             }
@@ -3851,30 +3767,6 @@
                     "1": {
                         "then": "Tato fitness stanice má ceduli s pokyny pro konkrétní cvičení."
                     },
-                    "2": {
-                        "then": "Tato posilovna má zařízení pro sedy-lehy."
-                    },
-                    "3": {
-                        "then": "Tato posilovna má zařízení pro kliky. Obvykle se skládá z jedné nebo více nízkých vodorovných tyčí."
-                    },
-                    "4": {
-                        "then": "Tato posilovací stanice má tyče pro strečink."
-                    },
-                    "5": {
-                        "then": "Tato fitness stanice má stanici pro vytváření hyperextenzí."
-                    },
-                    "6": {
-                        "then": "Tato posilovací stanice má kruhy pro gymnastická cvičení."
-                    },
-                    "7": {
-                        "then": "Tato fitness stanice má horizontální žebřík, známý také jako ručkovací žebřík."
-                    },
-                    "8": {
-                        "then": "Tato fitness stanice má nástěnné tyče, na které lze lézt."
-                    },
-                    "9": {
-                        "then": "Tato fitness stanice má sloupky pro provádění slalomových cvičení."
-                    },
                     "10": {
                         "then": "Tato fitness stanice má odrazové můstky."
                     },
@@ -3905,6 +3797,9 @@
                     "19": {
                         "then": "Tato fitness stanice má bojová lana."
                     },
+                    "2": {
+                        "then": "Tato posilovna má zařízení pro sedy-lehy."
+                    },
                     "20": {
                         "then": "Tato posilovna má stacionární kolo."
                     },
@@ -3919,6 +3814,27 @@
                     },
                     "24": {
                         "then": "Tato fitness stanice má slackline."
+                    },
+                    "3": {
+                        "then": "Tato posilovna má zařízení pro kliky. Obvykle se skládá z jedné nebo více nízkých vodorovných tyčí."
+                    },
+                    "4": {
+                        "then": "Tato posilovací stanice má tyče pro strečink."
+                    },
+                    "5": {
+                        "then": "Tato fitness stanice má stanici pro vytváření hyperextenzí."
+                    },
+                    "6": {
+                        "then": "Tato posilovací stanice má kruhy pro gymnastická cvičení."
+                    },
+                    "7": {
+                        "then": "Tato fitness stanice má horizontální žebřík, známý také jako ručkovací žebřík."
+                    },
+                    "8": {
+                        "then": "Tato fitness stanice má nástěnné tyče, na které lze lézt."
+                    },
+                    "9": {
+                        "then": "Tato fitness stanice má sloupky pro provádění slalomových cvičení."
                     }
                 },
                 "question": "Jaké vybavení má tato fitness stanice?"
@@ -4038,6 +3954,21 @@
                     "1": {
                         "then": "Tohle je hranolkárna"
                     },
+                    "10": {
+                        "then": "Podávají se zde čínské pokrmy"
+                    },
+                    "11": {
+                        "then": "Podávají se zde řecká jídla"
+                    },
+                    "12": {
+                        "then": "Podávají se zde indická jídla"
+                    },
+                    "13": {
+                        "then": "Podávají se zde turecké pokrmy"
+                    },
+                    "14": {
+                        "then": "Podávají se zde thajské pokrmy"
+                    },
                     "2": {
                         "then": "Podávají hlavně těstoviny"
                     },
@@ -4061,21 +3992,6 @@
                     },
                     "9": {
                         "then": "Podávají se zde francouzská jídla"
-                    },
-                    "10": {
-                        "then": "Podávají se zde čínské pokrmy"
-                    },
-                    "11": {
-                        "then": "Podávají se zde řecká jídla"
-                    },
-                    "12": {
-                        "then": "Podávají se zde indická jídla"
-                    },
-                    "13": {
-                        "then": "Podávají se zde turecké pokrmy"
-                    },
-                    "14": {
-                        "then": "Podávají se zde thajské pokrmy"
                     }
                 },
                 "question": "Jaké jídlo se zde podává?",
@@ -4656,30 +4572,6 @@
                     "1": {
                         "then": "Jedná se o posluchárnu"
                     },
-                    "2": {
-                        "then": "Jedná se o ložnici"
-                    },
-                    "3": {
-                        "then": "Jedná se o kapli"
-                    },
-                    "4": {
-                        "then": "Jedná se o učebnu"
-                    },
-                    "5": {
-                        "then": "Jedná se o učebnu"
-                    },
-                    "6": {
-                        "then": "Jedná se o počítačovou místnost"
-                    },
-                    "7": {
-                        "then": "Jedná se o konferenční místnost"
-                    },
-                    "8": {
-                        "then": "Jedná se o kryptu"
-                    },
-                    "9": {
-                        "then": "Jedná se o kuchyň"
-                    },
                     "10": {
                         "then": "Jedná se o laboratoř"
                     },
@@ -4710,6 +4602,9 @@
                     "19": {
                         "then": "Jedná se o skladovací místnost"
                     },
+                    "2": {
+                        "then": "Jedná se o ložnici"
+                    },
                     "20": {
                         "then": "Jedná se o technickou místnost"
                     },
@@ -4718,6 +4613,27 @@
                     },
                     "22": {
                         "then": "Jedná se o čekárnu"
+                    },
+                    "3": {
+                        "then": "Jedná se o kapli"
+                    },
+                    "4": {
+                        "then": "Jedná se o učebnu"
+                    },
+                    "5": {
+                        "then": "Jedná se o učebnu"
+                    },
+                    "6": {
+                        "then": "Jedná se o počítačovou místnost"
+                    },
+                    "7": {
+                        "then": "Jedná se o konferenční místnost"
+                    },
+                    "8": {
+                        "then": "Jedná se o kryptu"
+                    },
+                    "9": {
+                        "then": "Jedná se o kuchyň"
                     }
                 },
                 "question": "O jaký typ pokoje se jedná?"
@@ -5352,6 +5268,19 @@
                     }
                 }
             },
+            "10": {
+                "options": {
+                    "0": {
+                        "question": "Všechny poznámky"
+                    },
+                    "1": {
+                        "question": "Skrýt poznámky k importu"
+                    },
+                    "2": {
+                        "question": "Zobrazit pouze poznámky k importu"
+                    }
+                }
+            },
             "2": {
                 "options": {
                     "0": {
@@ -5405,19 +5334,6 @@
                 "options": {
                     "0": {
                         "question": "Zobrazit pouze otevřené poznámky"
-                    }
-                }
-            },
-            "10": {
-                "options": {
-                    "0": {
-                        "question": "Všechny poznámky"
-                    },
-                    "1": {
-                        "question": "Skrýt poznámky k importu"
-                    },
-                    "2": {
-                        "question": "Zobrazit pouze poznámky k importu"
                     }
                 }
             }
@@ -5725,6 +5641,18 @@
                     "1": {
                         "then": "To je normální parkovací místo."
                     },
+                    "10": {
+                        "then": "Jedná se o parkovací místo vyhrazené pro zaměstnance."
+                    },
+                    "11": {
+                        "then": "Jedná se o parkovací místo vyhrazené pro taxíky."
+                    },
+                    "12": {
+                        "then": "Jedná se o parkovací místo vyhrazené pro vozidla táhnoucí přívěs."
+                    },
+                    "13": {
+                        "then": "Jedná se o parkovací místo vyhrazené pro sdílení automobilů."
+                    },
                     "2": {
                         "then": "Jedná se o parkovací místo pro osoby se zdravotním postižením."
                     },
@@ -5748,18 +5676,6 @@
                     },
                     "9": {
                         "then": "Jedná se o parkovací místo vyhrazené pro rodiče s dětmi."
-                    },
-                    "10": {
-                        "then": "Jedná se o parkovací místo vyhrazené pro zaměstnance."
-                    },
-                    "11": {
-                        "then": "Jedná se o parkovací místo vyhrazené pro taxíky."
-                    },
-                    "12": {
-                        "then": "Jedná se o parkovací místo vyhrazené pro vozidla táhnoucí přívěs."
-                    },
-                    "13": {
-                        "then": "Jedná se o parkovací místo vyhrazené pro sdílení automobilů."
                     }
                 },
                 "question": "Co je to za parkovací místo?"
@@ -6800,30 +6716,6 @@
                     "1": {
                         "question": "Recyklace baterií"
                     },
-                    "2": {
-                        "question": "Recyklace nápojových kartonů"
-                    },
-                    "3": {
-                        "question": "Recyklace plechovek"
-                    },
-                    "4": {
-                        "question": "Recyklace oděvů"
-                    },
-                    "5": {
-                        "question": "Recyklace kuchyňského oleje"
-                    },
-                    "6": {
-                        "question": "Recyklace motorového oleje"
-                    },
-                    "7": {
-                        "question": "Recyklace zářivek"
-                    },
-                    "8": {
-                        "question": "Recyklace zeleného odpadu"
-                    },
-                    "9": {
-                        "question": "Recyklace skleněných lahví"
-                    },
                     "10": {
                         "question": "Recyklace skla"
                     },
@@ -6854,11 +6746,35 @@
                     "19": {
                         "question": "Recyklace zbytkového odpadu"
                     },
+                    "2": {
+                        "question": "Recyklace nápojových kartonů"
+                    },
                     "20": {
                         "question": "Recyklace náplní do tiskáren"
                     },
                     "21": {
                         "question": "Recyklace jízdních kol"
+                    },
+                    "3": {
+                        "question": "Recyklace plechovek"
+                    },
+                    "4": {
+                        "question": "Recyklace oděvů"
+                    },
+                    "5": {
+                        "question": "Recyklace kuchyňského oleje"
+                    },
+                    "6": {
+                        "question": "Recyklace motorového oleje"
+                    },
+                    "7": {
+                        "question": "Recyklace zářivek"
+                    },
+                    "8": {
+                        "question": "Recyklace zeleného odpadu"
+                    },
+                    "9": {
+                        "question": "Recyklace skleněných lahví"
                     }
                 }
             },
@@ -6926,30 +6842,6 @@
                     "1": {
                         "then": "Nápojové kartony se zde dají recyklovat"
                     },
-                    "2": {
-                        "then": "Plechovky se zde dají recyklovat"
-                    },
-                    "3": {
-                        "then": "Oblečení se zde dá recyklovat"
-                    },
-                    "4": {
-                        "then": "Olej na vaření zde lze recyklovat"
-                    },
-                    "5": {
-                        "then": "Motorový olej zde lze recyklovat"
-                    },
-                    "6": {
-                        "then": "Zářivky se zde dají recyklovat"
-                    },
-                    "7": {
-                        "then": "Zelený odpad se zde dá recyklovat"
-                    },
-                    "8": {
-                        "then": "Organický odpad lze zde recyklovat"
-                    },
-                    "9": {
-                        "then": "Skleněné lahve se zde dají recyklovat"
-                    },
                     "10": {
                         "then": "Sklo se zde dá recyklovat"
                     },
@@ -6977,6 +6869,9 @@
                     "19": {
                         "then": "Kovový šrot lze zde recyklovat"
                     },
+                    "2": {
+                        "then": "Plechovky se zde dají recyklovat"
+                    },
                     "20": {
                         "then": "Boty se zde dají recyklovat"
                     },
@@ -6994,6 +6889,27 @@
                     },
                     "25": {
                         "then": "Kola se zde dají recyklovat"
+                    },
+                    "3": {
+                        "then": "Oblečení se zde dá recyklovat"
+                    },
+                    "4": {
+                        "then": "Olej na vaření zde lze recyklovat"
+                    },
+                    "5": {
+                        "then": "Motorový olej zde lze recyklovat"
+                    },
+                    "6": {
+                        "then": "Zářivky se zde dají recyklovat"
+                    },
+                    "7": {
+                        "then": "Zelený odpad se zde dá recyklovat"
+                    },
+                    "8": {
+                        "then": "Organický odpad lze zde recyklovat"
+                    },
+                    "9": {
+                        "then": "Skleněné lahve se zde dají recyklovat"
                     }
                 },
                 "question": "Co se zde dá recyklovat?"
@@ -7794,6 +7710,12 @@
                     "1": {
                         "then": "Tato lampa používá LED diody"
                     },
+                    "10": {
+                        "then": "Tato lampa používá vysokotlaké sodíkové výbojky (oranžové s bílou)"
+                    },
+                    "11": {
+                        "then": "Tato lampa svítí pomocí plynu"
+                    },
                     "2": {
                         "then": "Tato lampa využívá žárovkové osvětlení"
                     },
@@ -7817,12 +7739,6 @@
                     },
                     "9": {
                         "then": "Tato lampa používá nízkotlaké sodíkové výbojky (monochromatické oranžové)"
-                    },
-                    "10": {
-                        "then": "Tato lampa používá vysokotlaké sodíkové výbojky (oranžové s bílou)"
-                    },
-                    "11": {
-                        "then": "Tato lampa svítí pomocí plynu"
                     }
                 },
                 "question": "Jaké osvětlení používá tato lampa?"
@@ -8993,30 +8909,6 @@
                     "1": {
                         "question": "Prodej nápojů"
                     },
-                    "2": {
-                        "question": "Prodej sladkostí"
-                    },
-                    "3": {
-                        "question": "Prodej potravin"
-                    },
-                    "4": {
-                        "question": "Prodej cigaret"
-                    },
-                    "5": {
-                        "question": "Prodej kondomů"
-                    },
-                    "6": {
-                        "question": "Prodej kávy"
-                    },
-                    "7": {
-                        "question": "Prodej vody"
-                    },
-                    "8": {
-                        "question": "Prodej novin"
-                    },
-                    "9": {
-                        "question": "Prodej duší na jízdní kola"
-                    },
                     "10": {
                         "question": "Prodej mléka"
                     },
@@ -9047,6 +8939,9 @@
                     "19": {
                         "question": "Prodej květin"
                     },
+                    "2": {
+                        "question": "Prodej sladkostí"
+                    },
                     "20": {
                         "question": "Prodej parkovacích lístků"
                     },
@@ -9070,6 +8965,27 @@
                     },
                     "27": {
                         "question": "Prodej zámků na kola"
+                    },
+                    "3": {
+                        "question": "Prodej potravin"
+                    },
+                    "4": {
+                        "question": "Prodej cigaret"
+                    },
+                    "5": {
+                        "question": "Prodej kondomů"
+                    },
+                    "6": {
+                        "question": "Prodej kávy"
+                    },
+                    "7": {
+                        "question": "Prodej vody"
+                    },
+                    "8": {
+                        "question": "Prodej novin"
+                    },
+                    "9": {
+                        "question": "Prodej duší na jízdní kola"
                     }
                 }
             }
@@ -9081,6 +8997,33 @@
             }
         },
         "tagRenderings": {
+            "bicycle_tube_vending_machine-brand": {
+                "mappings": {
+                    "0": {
+                        "then": "Continental duše jsou zde prodávány"
+                    },
+                    "1": {
+                        "then": "Schwalbe duše jsou zde prodávány"
+                    }
+                },
+                "question": "Jaká značka duší je zde prodávána?",
+                "render": "{brand} duše jsou zde prodávány"
+            },
+            "charge_cost_rewritten": {
+                "renderings": {
+                    "0": {
+                        "question": "Kolik stojí {product_name}?",
+                        "render": "{product_name} {charge:{product_key}}"
+                    }
+                },
+                "rewrite": {
+                    "into": {
+                        "0": {
+                            "1": "duše na kolo"
+                        }
+                    }
+                }
+            },
             "indoor": {
                 "mappings": {
                     "0": {
@@ -9094,6 +9037,23 @@
                     }
                 },
                 "question": "Je tento automat uvnitř?"
+            },
+            "operational_status": {
+                "mappings": {
+                    "0": {
+                        "then": "Tento prodejní automat funguje"
+                    },
+                    "1": {
+                        "then": "Tento prodejní automat je rozbitý"
+                    },
+                    "2": {
+                        "then": "Tento prodejní automat je uzavřen"
+                    },
+                    "3": {
+                        "then": "Provozní stav je <i>{operational_status}</i>"
+                    }
+                },
+                "question": "Je tento automat stále v provozu?"
             },
             "operator": {
                 "freeform": {
@@ -9115,30 +9075,6 @@
                     },
                     "1": {
                         "then": "Prodává sladkosti"
-                    },
-                    "2": {
-                        "then": "Prodává jídlo"
-                    },
-                    "3": {
-                        "then": "Prodává cigarety"
-                    },
-                    "4": {
-                        "then": "Prodává kondomy"
-                    },
-                    "5": {
-                        "then": "Prodává kafe"
-                    },
-                    "6": {
-                        "then": "Prodává pitnou vodu"
-                    },
-                    "7": {
-                        "then": "Prodává noviny"
-                    },
-                    "8": {
-                        "then": "Prodává duše na kola"
-                    },
-                    "9": {
-                        "then": "Prodává mléko"
                     },
                     "10": {
                         "then": "Prodává chléb"
@@ -9170,6 +9106,9 @@
                     "19": {
                         "then": "Prodává parkovací lístky"
                     },
+                    "2": {
+                        "then": "Prodává jídlo"
+                    },
                     "20": {
                         "then": "Prodává pamětní mince/lisované"
                     },
@@ -9190,6 +9129,27 @@
                     },
                     "26": {
                         "then": "Prodává zámky na kolo"
+                    },
+                    "3": {
+                        "then": "Prodává cigarety"
+                    },
+                    "4": {
+                        "then": "Prodává kondomy"
+                    },
+                    "5": {
+                        "then": "Prodává kafe"
+                    },
+                    "6": {
+                        "then": "Prodává pitnou vodu"
+                    },
+                    "7": {
+                        "then": "Prodává noviny"
+                    },
+                    "8": {
+                        "then": "Prodává duše na kola"
+                    },
+                    "9": {
+                        "then": "Prodává mléko"
                     }
                 },
                 "question": "Co tento automat prodává?",

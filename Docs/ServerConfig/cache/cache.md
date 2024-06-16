@@ -10,6 +10,6 @@ https://dynamicdns.park-your-domain.com/update?host=cache&domain=mapcomplete.org
 
 ## Setup
 
-See SettingUpPSQL.md
+See [SettingUpPSQL.md](../SettingUpPSQL.md)
 
 
