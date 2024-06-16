@@ -167,7 +167,11 @@
 
   onDestroy(
     freeformInput.subscribe((freeformValue) => {
-      if (!config?.mappings || config?.mappings?.length == 0 || config.freeform?.key === undefined) {
+      if (
+        !config?.mappings ||
+        config?.mappings?.length == 0 ||
+        config.freeform?.key === undefined
+      ) {
         return
       }
       // If a freeform value is given, mark the 'mapping' as marked
@@ -232,7 +236,9 @@
         // Add the extraTags to the existing And
         selectedTags = new And([...selectedTags.and, ...extraTagsArray])
       } else {
-        console.error("selectedTags is not of type Tag or And, it is a "+JSON.stringify(selectedTags))
+        console.error(
+          "selectedTags is not of type Tag or And, it is a " + JSON.stringify(selectedTags)
+        )
       }
     }
   }
@@ -289,7 +295,8 @@
   let showTags = state?.userRelatedState?.showTags ?? new ImmutableStore(undefined)
   let numberOfCs = state?.osmConnection?.userDetails?.data?.csCount ?? 0
   let question = config.question
-  let hideMappingsUnlessSearchedFor = config.mappings.length > 8 && config.mappings.some(m => m.priorityIf)
+  let hideMappingsUnlessSearchedFor =
+    config.mappings.length > 8 && config.mappings.some((m) => m.priorityIf)
   $: question = config.question
   if (state?.osmConnection) {
     onDestroy(
@@ -343,15 +350,13 @@
             />
           </div>
           {#if hideMappingsUnlessSearchedFor}
-            <div class="rounded border border-black border-dashed p-1 px-2 m-1">
-              <Tr t={Translations.t.general.mappingsAreHidden}/>
+            <div class="m-1 rounded border border-dashed border-black p-1 px-2">
+              <Tr t={Translations.t.general.mappingsAreHidden} />
             </div>
           {/if}
         {/if}
 
-
-
-        {#if config.freeform?.key && !(config?.mappings?.filter(m => m.hideInAnswer != true)?.length > 0)}
+        {#if config.freeform?.key && !(config?.mappings?.filter((m) => m.hideInAnswer != true)?.length > 0)}
           <!-- There are no options to choose from, simply show the input element: fill out the text field -->
           <FreeformInput
             {config}
@@ -505,7 +510,7 @@
               <span class="flex flex-wrap">
                 {#if $featureSwitchIsTesting}
                   <button class="small" on:click={() => console.log("Configuration is ", config)}>
-                  Testmode &nbsp;
+                    Testmode &nbsp;
                   </button>
                 {/if}
                 {#if $featureSwitchIsTesting || $featureSwitchIsDebugging}

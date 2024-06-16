@@ -3,12 +3,14 @@
   "title": {
     "en": "Memorials",
     "de": "Denkmäler",
-    "fr": "Mémoriaux"
+    "fr": "Mémoriaux",
+    "nl": "Gedenktekens en graven"
   },
   "description": {
     "en": "Memorials are physical objects permantently placed in the public space to remember a person or event. They can be a wide range of objects, such as statues, plaques, paintings, military objects (such as tanks), ...",
     "de": "Denkmäler sind physische Objekte, die dauerhaft im öffentlichen Raum aufgestellt werden, um an eine Person oder ein Ereignis zu erinnern. Dabei kann es sich um eine Vielzahl von Objekten handeln, z. B. Statuen, Tafeln, Gemälde, militärische Objekte (wie Panzer), ...",
-    "fr": "Un mémorial est un objet physiquement installé sur l'espace public en souvenir d'une personne ou d'un évènement. Cela peut être toute sorte d'objets, comme une statue, une plaque, une peinture, un objet militaire (comme un tank), ..."
+    "fr": "Un mémorial est un objet physiquement installé sur l'espace public en souvenir d'une personne ou d'un évènement. Cela peut être toute sorte d'objets, comme une statue, une plaque, une peinture, un objet militaire (comme un tank), ...",
+    "nl": "Een gedenkteken is een fysiek object dat permanent in de publieke ruimte aanwezig is om een persoon of gebeurtenis te herdenken. Dit kan in diverse vormen, zoals standbeelden, naamborden, muurschilderingen, militaire objecten,..."
   },
   "icon": "./assets/layers/memorial/memorial.svg",
   "layers": [

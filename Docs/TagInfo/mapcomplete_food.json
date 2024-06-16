@@ -236,22 +236,22 @@
     },
     {
       "key": "reservation",
-      "description": "Layer 'Restaurants and fast food' shows reservation=required with a fixed text, namely 'A reservation is required at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if takeaway=only)",
+      "description": "Layer 'Restaurants and fast food' shows reservation=required with a fixed text, namely 'A reservation is required at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if takeaway!=only)",
       "value": "required"
     },
     {
       "key": "reservation",
-      "description": "Layer 'Restaurants and fast food' shows reservation=recommended with a fixed text, namely 'A reservation is not required, but still recommended to make sure you get a table' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if takeaway=only)",
+      "description": "Layer 'Restaurants and fast food' shows reservation=recommended with a fixed text, namely 'A reservation is not required, but still recommended to make sure you get a table' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if takeaway!=only)",
       "value": "recommended"
     },
     {
       "key": "reservation",
-      "description": "Layer 'Restaurants and fast food' shows reservation=yes with a fixed text, namely 'Reservation is possible at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if takeaway=only)",
+      "description": "Layer 'Restaurants and fast food' shows reservation=yes with a fixed text, namely 'Reservation is possible at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if takeaway!=only)",
       "value": "yes"
     },
     {
       "key": "reservation",
-      "description": "Layer 'Restaurants and fast food' shows reservation=no with a fixed text, namely 'Reservation is not possible at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if takeaway=only)",
+      "description": "Layer 'Restaurants and fast food' shows reservation=no with a fixed text, namely 'Reservation is not possible at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if takeaway!=only)",
       "value": "no"
     },
     {
@@ -548,6 +548,11 @@
       "key": "dog",
       "description": "Layer 'Restaurants and fast food' shows dog=unleashed with a fixed text, namely 'Dogs are allowed and can run around freely' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
       "value": "unleashed"
+    },
+    {
+      "key": "dog",
+      "description": "Layer 'Restaurants and fast food' shows dog=outside with a fixed text, namely 'Dogs are allowed only outside' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "outside"
     },
     {
       "key": "internet_access",

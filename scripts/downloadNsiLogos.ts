@@ -35,7 +35,6 @@ class DownloadNsiLogos extends Script {
             return false
         }
 
-
         if (!logos) {
             return false
         }
@@ -51,7 +50,8 @@ class DownloadNsiLogos extends Script {
             do {
                 ttl--
                 const dloaded = await Utils.downloadAdvanced(url, {
-                    "User-Agent": "MapComplete NSI scraper/0.1 (https://github.com/pietervdvn/MapComplete; pietervdvn@posteo.net)"
+                    "User-Agent":
+                        "MapComplete NSI scraper/0.1 (https://github.com/pietervdvn/MapComplete; pietervdvn@posteo.net)",
                 })
                 const redirect: string | undefined = dloaded["redirect"]
                 if (redirect) {
@@ -77,7 +77,6 @@ class DownloadNsiLogos extends Script {
         }
 
         return false
-
     }
 
     async main(): Promise<void> {
@@ -94,12 +93,14 @@ class DownloadNsiLogos extends Script {
             if (i % 100 === 0) {
                 console.log(i + "/" + items.length, "downloaded " + downloadCount)
             }
-            await Promise.all(Utils.TimesT(stepcount, j => j).map(async j => {
-                const downloaded = await this.downloadLogo(items[i + j], type, basePath)
-                if (downloaded) {
-                    downloadCount++
-                }
-            }))
+            await Promise.all(
+                Utils.TimesT(stepcount, (j) => j).map(async (j) => {
+                    const downloaded = await this.downloadLogo(items[i + j], type, basePath)
+                    if (downloaded) {
+                        downloadCount++
+                    }
+                })
+            )
         }
     }
 }

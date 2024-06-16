@@ -25,18 +25,18 @@ Ski and snowboard pistes
 1. [ Themes using this layer ](#-themes-using-this-layer-)
 2. [ Basic tags for this layer ](#-basic-tags-for-this-layer-)
 3. [ Supported attributes ](#-supported-attributes-)
-  - [just_created](#just_created)
-  - [images](#images)
-  - [piste_difficulty](#piste_difficulty)
-  - [length](#length)
-  - [leftover-questions](#leftover-questions)
-  - [lod](#lod)
-  - [minimap](#minimap)
-  - [last_edit](#last_edit)
-  - [favourite_status](#favourite_status)
-  - [qr_code](#qr_code)
-  - [share](#share)
-  - [all-tags](#all-tags)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
 
  Themes using this layer 
 -------------------------
@@ -82,160 +82,109 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/piste:difficulty#values) [piste:difficulty](https://wiki.openstreetmap.org/wiki/Key:piste:difficulty) | Multiple choice | [novice](https://wiki.openstreetmap.org/wiki/Tag:piste:difficulty%3Dnovice) [easy](https://wiki.openstreetmap.org/wiki/Tag:piste:difficulty%3Deasy) [intermediate](https://wiki.openstreetmap.org/wiki/Tag:piste:difficulty%3Dintermediate) [advanced](https://wiki.openstreetmap.org/wiki/Tag:piste:difficulty%3Dadvanced) [expert](https://wiki.openstreetmap.org/wiki/Tag:piste:difficulty%3Dexpert) [freeride](https://wiki.openstreetmap.org/wiki/Tag:piste:difficulty%3Dfreeride)
 
 
-
-
-### just_created 
-
-
-
+### this.id
 This element shows a 'thank you' that the contributor has recently created this element
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
+ - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
+This tagrendering has labels 
+`added_by_default`
 
-
-
-
-
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
-
-
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### images 
-
-
-
+### this.id
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### piste_difficulty 
-
-
-
-The question is  *What is the difficulty of this piste?*
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-  - *Novice (green)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:piste:difficulty' target='_blank'>piste:difficulty</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:piste:difficulty%3Dnovice' target='_blank'>novice</a>
-  - *Easy (blue)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:piste:difficulty' target='_blank'>piste:difficulty</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:piste:difficulty%3Deasy' target='_blank'>easy</a>
-  - *Intermediate (red)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:piste:difficulty' target='_blank'>piste:difficulty</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:piste:difficulty%3Dintermediate' target='_blank'>intermediate</a>
-  - *Advanced (black)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:piste:difficulty' target='_blank'>piste:difficulty</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:piste:difficulty%3Dadvanced' target='_blank'>advanced</a>
-  - *Expert (orange/double black)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:piste:difficulty' target='_blank'>piste:difficulty</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:piste:difficulty%3Dexpert' target='_blank'>expert</a>
-  - *Freeride*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:piste:difficulty' target='_blank'>piste:difficulty</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:piste:difficulty%3Dfreeride' target='_blank'>freeride</a>
+### this.id
+
+The question is `What is the difficulty of this piste?`
+
+ - *Novice (green)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:piste:difficulty' target='_blank'>piste:difficulty</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:piste:difficulty%3Dnovice' target='_blank'>novice</a>
+ - *Easy (blue)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:piste:difficulty' target='_blank'>piste:difficulty</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:piste:difficulty%3Deasy' target='_blank'>easy</a>
+ - *Intermediate (red)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:piste:difficulty' target='_blank'>piste:difficulty</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:piste:difficulty%3Dintermediate' target='_blank'>intermediate</a>
+ - *Advanced (black)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:piste:difficulty' target='_blank'>piste:difficulty</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:piste:difficulty%3Dadvanced' target='_blank'>advanced</a>
+ - *Expert (orange/double black)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:piste:difficulty' target='_blank'>piste:difficulty</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:piste:difficulty%3Dexpert' target='_blank'>expert</a>
+ - *Freeride* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:piste:difficulty' target='_blank'>piste:difficulty</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:piste:difficulty%3Dfreeride' target='_blank'>freeride</a>
 
 
 
+### this.id
 
-### length 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### leftover-questions 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### lod 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has no question and is thus read-only
+
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has labels  `added_by_default`
+This tagrendering has labels 
+`added_by_default`
 
-
-
-### minimap 
-
-
-
+### this.id
 Shows a small map with the feature. Added by default to every popup
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
 
 
-### last_edit 
 
-
-
+### this.id
 Gives some metainfo about the last edit and who did edit it - rendering only
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:changeset~.+ & _last_edit:contributor~.+
+This tagrendering has labels 
+`added_by_default`
 
-This tagrendering has labels  `added_by_default`
+### this.id
 
-
-
-### favourite_status 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### qr_code 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has no question and is thus read-only
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has labels  `added_by_default`
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
-
-### share 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### all-tags 
-
-
-
-This tagrendering has no question and is thus read-only
 
  
 

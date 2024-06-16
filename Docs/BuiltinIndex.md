@@ -19,7 +19,6 @@
  - bench_at_pt
  - bicycle_library
  - bicycle_rental
- - bicycle_tube_vending_machine
  - bike_cafe
  - bike_cleaning
  - bike_parking
@@ -56,6 +55,7 @@
  - food_courts
  - ghost_bike
  - governments
+ - grave
  - guidepost
  - hackerspace
  - hotel
@@ -65,6 +65,7 @@
  - information_board
  - item_with_image
  - kerbs
+ - lighthouse
  - love_hotel
  - map
  - memorial
@@ -188,6 +189,7 @@
  - dentist
  - disaster_response
  - doctors
+ - dogpark
  - elongated_coin
  - fitness_centre
  - food
@@ -281,6 +283,7 @@
 
              - artwork
  - cinema
+ - lighthouse
  - nature_reserve
  - observation_tower
             
@@ -292,16 +295,17 @@
             ### opening_hours_24_7
 
              - atm
- - bike_parking
  - bike_repair_station
  - charging_station
  - defibrillator
+ - dogpark
  - drinking_water
  - elongated_coin
  - fitness_station
  - hackerspace
  - outdoor_seating
  - parcel_lockers
+ - questions
  - recycling
  - souvenir_coin
  - souvenir_note
@@ -340,17 +344,9 @@
              - bicycle_rental
  - charging_station
             
-            ### payment-options-split
+            ### opening_hours_24_7_default
 
-             - bicycle_tube_vending_machine
- - elongated_coin
- - parking_ticket_machine
- - shower
- - souvenir_coin
- - souvenir_note
- - ticket_machine
- - toilet
- - vending_machine
+             - bike_parking
             
             ### level
 
@@ -509,6 +505,17 @@
 
              - elevator
  - reception_desk
+            
+            ### payment-options-split
+
+             - elongated_coin
+ - parking_ticket_machine
+ - shower
+ - souvenir_coin
+ - souvenir_note
+ - ticket_machine
+ - toilet
+ - vending_machine
             
             ### denominations-coins
 

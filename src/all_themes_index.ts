@@ -29,5 +29,5 @@ if (layout !== "") {
 }
 
 new AllThemesGui({
-    target: document.getElementById("main")
+    target: document.getElementById("main"),
 })

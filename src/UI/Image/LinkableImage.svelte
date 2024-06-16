@@ -69,12 +69,12 @@
       previewedImage={state.previewedImage}
     />
   </div>
-  <LoginToggle {state} silentFail={true} >
-  {#if linkable}
-    <label>
-      <input bind:checked={$isLinked} type="checkbox" />
-      <SpecialTranslation t={t.link} {tags} {state} {layer} {feature} />
-    </label>
-  {/if}
+  <LoginToggle {state} silentFail={true}>
+    {#if linkable}
+      <label>
+        <input bind:checked={$isLinked} type="checkbox" />
+        <SpecialTranslation t={t.link} {tags} {state} {layer} {feature} />
+      </label>
+    {/if}
   </LoginToggle>
 </div>

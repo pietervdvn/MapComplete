@@ -25,22 +25,22 @@ A map, meant for tourists which is permanently installed in the public space
 1. [ Themes using this layer ](#-themes-using-this-layer-)
 2. [ Basic tags for this layer ](#-basic-tags-for-this-layer-)
 3. [ Supported attributes ](#-supported-attributes-)
-  - [just_created](#just_created)
-  - [images](#images)
-  - [map_type](#map_type)
-  - [map_size](#map_size)
-  - [map-map_source](#map-map_source)
-  - [map-attribution](#map-attribution)
-  - [leftover-questions](#leftover-questions)
-  - [lod](#lod)
-  - [minimap](#minimap)
-  - [move-button](#move-button)
-  - [delete-button](#delete-button)
-  - [last_edit](#last_edit)
-  - [favourite_status](#favourite_status)
-  - [qr_code](#qr_code)
-  - [share](#share)
-  - [all-tags](#all-tags)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
 
  Themes using this layer 
 -------------------------
@@ -91,228 +91,152 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/map_source:attribution#values) [map_source:attribution](https://wiki.openstreetmap.org/wiki/Key:map_source:attribution) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:map_source:attribution%3Dyes) [incomplete](https://wiki.openstreetmap.org/wiki/Tag:map_source:attribution%3Dincomplete) [sticker](https://wiki.openstreetmap.org/wiki/Tag:map_source:attribution%3Dsticker) [none](https://wiki.openstreetmap.org/wiki/Tag:map_source:attribution%3Dnone)
 
 
-
-
-### just_created 
-
-
-
+### this.id
 This element shows a 'thank you' that the contributor has recently created this element
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
+ - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
+This tagrendering has labels 
+`added_by_default`
 
-
-
-
-
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
-
-
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### images 
-
-
-
+### this.id
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
 
 
 
 
+### this.id
 
-### map_type 
+The question is `What type of map is shown?`
 
+ - *Topographical map <p class='subtle'>The map contains contour lines. </p>* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:map_type' target='_blank'>map_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_type%3Dtopo' target='_blank'>topo</a>
+ - *A map with all streets or ways of an area. <p class='subtle'>The streets are mostly named; the angles, distances etc. are accurate</p>* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:map_type' target='_blank'>map_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_type%3Dstreet' target='_blank'>street</a>
+ - *This is a schematic map. <p class='subtle'>A sketched map with only important ways and POIs. The angles, distances etc. are merely illustrative, not accurate.</p> * corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:map_type' target='_blank'>map_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_type%3Dscheme' target='_blank'>scheme</a>
+ - *This is a toposcope. <p class='subtle'>A marker erected on high places which indicates the direction to notable landscape features which can be seen from that point<p>* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:map_type' target='_blank'>map_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_type%3Dtoposcope' target='_blank'>toposcope</a>
 
 
-The question is  *What type of map is shown?*
 
+### this.id
 
+The question is `What is the size of the shown area on the map?`
 
+ - *A map of the rooms within a building* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:map_size' target='_blank'>map_size</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_size%3Dbuilding' target='_blank'>building</a>
+ - *A map of special site, like of a historical castle, a park, a campus, a forest, ....* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:map_size' target='_blank'>map_size</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_size%3Dsite' target='_blank'>site</a>
+ - *A map showing the village or town* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:map_size' target='_blank'>map_size</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_size%3Dvillage' target='_blank'>village</a>
+ - * A map of a city* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:map_size' target='_blank'>map_size</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_size%3Dcity' target='_blank'>city</a>
+ - *The map of an entire region, showing multiple cities and villages* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:map_size' target='_blank'>map_size</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_size%3Dregion' target='_blank'>region</a>
 
 
-  - *Topographical map <p class='subtle'>The map contains contour lines. </p>*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:map_type' target='_blank'>map_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_type%3Dtopo' target='_blank'>topo</a>
-  - *A map with all streets or ways of an area. <p class='subtle'>The streets are mostly named; the angles, distances etc. are accurate</p>*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:map_type' target='_blank'>map_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_type%3Dstreet' target='_blank'>street</a>
-  - *This is a schematic map. <p class='subtle'>A sketched map with only important ways and POIs. The angles, distances etc. are merely illustrative, not accurate.</p> *  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:map_type' target='_blank'>map_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_type%3Dscheme' target='_blank'>scheme</a>
-  - *This is a toposcope. <p class='subtle'>A marker erected on high places which indicates the direction to notable landscape features which can be seen from that point<p>*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:map_type' target='_blank'>map_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_type%3Dtoposcope' target='_blank'>toposcope</a>
 
+### this.id
 
+The question is `On which data is this map based?`
+This rendering asks information about the property 
+[map_source](https://wiki.openstreetmap.org/wiki/Key:map_source)
+This is rendered with `This map is based on {map_source}`
+ - *This map is based on OpenStreetMap* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:map_source' target='_blank'>map_source</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_source%3DOpenStreetMap' target='_blank'>OpenStreetMap</a> & not:map_source=
 
+This tagrendering has labels 
+`map`
 
-### map_size 
+### this.id
 
+The question is `Is the OpenStreetMap-attribution given?`
 
+ - *OpenStreetMap is clearly attributed, including the ODBL-license* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:map_source:attribution' target='_blank'>map_source:attribution</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_source:attribution%3Dyes' target='_blank'>yes</a>
+ - *OpenStreetMap is clearly attributed, but the license is not mentioned* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:map_source:attribution' target='_blank'>map_source:attribution</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_source:attribution%3Dincomplete' target='_blank'>incomplete</a>
+ - *OpenStreetMap wasn't mentioned, but someone put an OpenStreetMap-sticker on it* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:map_source:attribution' target='_blank'>map_source:attribution</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_source:attribution%3Dsticker' target='_blank'>sticker</a>
+ - *There is no attribution at all* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:map_source:attribution' target='_blank'>map_source:attribution</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_source:attribution%3Dnone' target='_blank'>none</a>
+ - *There is no attribution at all* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:map_source:attribution' target='_blank'>map_source:attribution</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_source:attribution%3Dno' target='_blank'>no</a>
+ - _This option cannot be chosen as answer_
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:map_source' target='_blank'>map_source</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_source%3Dosm' target='_blank'>osm</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:map_source' target='_blank'>map_source</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_source%3DOSM' target='_blank'>OSM</a> | map_source~^((O|)pen(S|s)treet(M|m)ap)$
+This tagrendering has labels 
+`map`
 
-The question is  *What is the size of the shown area on the map?*
+### this.id
 
+_This tagrendering has no question and is thus read-only_
 
 
 
 
-  - *A map of the rooms within a building*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:map_size' target='_blank'>map_size</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_size%3Dbuilding' target='_blank'>building</a>
-  - *A map of special site, like of a historical castle, a park, a campus, a forest, ....*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:map_size' target='_blank'>map_size</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_size%3Dsite' target='_blank'>site</a>
-  - *A map showing the village or town*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:map_size' target='_blank'>map_size</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_size%3Dvillage' target='_blank'>village</a>
-  - * A map of a city*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:map_size' target='_blank'>map_size</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_size%3Dcity' target='_blank'>city</a>
-  - *The map of an entire region, showing multiple cities and villages*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:map_size' target='_blank'>map_size</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_size%3Dregion' target='_blank'>region</a>
 
+### this.id
 
+_This tagrendering has no question and is thus read-only_
 
 
-### map-map_source 
 
+This tagrendering has labels 
+`added_by_default`
 
-
-The question is  *On which data is this map based?*
-
-This rendering asks information about the property  [map_source](https://wiki.openstreetmap.org/wiki/Key:map_source) This is rendered with  `This map is based on {map_source}`
-
-
-
-  - *This map is based on OpenStreetMap*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:map_source' target='_blank'>map_source</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_source%3DOpenStreetMap' target='_blank'>OpenStreetMap</a> & not:map_source=
-
-
-This tagrendering has labels  `map`
-
-
-
-### map-attribution 
-
-
-
-The question is  *Is the OpenStreetMap-attribution given?*
-
-
-
-
-
-  - *OpenStreetMap is clearly attributed, including the ODBL-license*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:map_source:attribution' target='_blank'>map_source:attribution</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_source:attribution%3Dyes' target='_blank'>yes</a>
-  - *OpenStreetMap is clearly attributed, but the license is not mentioned*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:map_source:attribution' target='_blank'>map_source:attribution</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_source:attribution%3Dincomplete' target='_blank'>incomplete</a>
-  - *OpenStreetMap wasn't mentioned, but someone put an OpenStreetMap-sticker on it*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:map_source:attribution' target='_blank'>map_source:attribution</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_source:attribution%3Dsticker' target='_blank'>sticker</a>
-  - *There is no attribution at all*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:map_source:attribution' target='_blank'>map_source:attribution</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_source:attribution%3Dnone' target='_blank'>none</a>
-  - *There is no attribution at all*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:map_source:attribution' target='_blank'>map_source:attribution</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_source:attribution%3Dno' target='_blank'>no</a>
-  - _This option cannot be chosen as answer_
-
-
-This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:map_source' target='_blank'>map_source</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_source%3Dosm' target='_blank'>osm</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:map_source' target='_blank'>map_source</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_source%3DOSM' target='_blank'>OSM</a> | map_source~^((O|)pen(S|s)treet(M|m)ap)$`
-
-This tagrendering has labels  `map`
-
-
-
-### leftover-questions 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### lod 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### minimap 
-
-
-
+### this.id
 Shows a small map with the feature. Added by default to every popup
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### move-button 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### delete-button 
+### this.id
 
-
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
 
 
-### last_edit 
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
+
+
+### this.id
 Gives some metainfo about the last edit and who did edit it - rendering only
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:changeset~.+ & _last_edit:contributor~.+
+This tagrendering has labels 
+`added_by_default`
 
-This tagrendering has labels  `added_by_default`
+### this.id
 
-
-
-### favourite_status 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### qr_code 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has no question and is thus read-only
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has labels  `added_by_default`
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
-
-### share 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### all-tags 
-
-
-
-This tagrendering has no question and is thus read-only
 
  
 

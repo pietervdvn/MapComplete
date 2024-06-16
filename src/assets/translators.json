@@ -1,15 +1,15 @@
 {
   "contributors": [
     {
-      "commits": 337,
-      "contributor": "kjon"
-    },
-    {
-      "commits": 336,
+      "commits": 374,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 186,
+      "commits": 346,
+      "contributor": "kjon"
+    },
+    {
+      "commits": 188,
       "contributor": "paunofu"
     },
     {
@@ -17,8 +17,12 @@
       "contributor": "Allan Nordhøy"
     },
     {
-      "commits": 72,
+      "commits": 83,
       "contributor": "Robin van der Linde"
+    },
+    {
+      "commits": 65,
+      "contributor": "mcliquid"
     },
     {
       "commits": 61,
@@ -26,23 +30,19 @@
     },
     {
       "commits": 49,
-      "contributor": "mcliquid"
-    },
-    {
-      "commits": 47,
       "contributor": "Anonymous"
     },
     {
-      "commits": 42,
+      "commits": 44,
       "contributor": "Supaplex"
     },
     {
       "commits": 36,
-      "contributor": "Iago"
+      "contributor": "Lucas"
     },
     {
-      "commits": 34,
-      "contributor": "Lucas"
+      "commits": 36,
+      "contributor": "Iago"
     },
     {
       "commits": 33,
@@ -61,24 +61,28 @@
       "contributor": "Reza Almanda"
     },
     {
+      "commits": 25,
+      "contributor": "SC"
+    },
+    {
       "commits": 23,
       "contributor": "Marco"
     },
     {
-      "commits": 21,
-      "contributor": "SC"
+      "commits": 18,
+      "contributor": "gallegonovato"
+    },
+    {
+      "commits": 18,
+      "contributor": "Max Spicer"
+    },
+    {
+      "commits": 18,
+      "contributor": "Štefan Baebler"
     },
     {
       "commits": 18,
       "contributor": "el_libre como el chaval"
-    },
-    {
-      "commits": 17,
-      "contributor": "Štefan Baebler"
-    },
-    {
-      "commits": 16,
-      "contributor": "gallegonovato"
     },
     {
       "commits": 15,
@@ -150,6 +154,14 @@
     },
     {
       "commits": 9,
+      "contributor": "Patchanka64"
+    },
+    {
+      "commits": 9,
+      "contributor": "Manuel Tassi"
+    },
+    {
+      "commits": 9,
       "contributor": "Lasse Liehu"
     },
     {
@@ -174,6 +186,10 @@
     },
     {
       "commits": 8,
+      "contributor": "Krzysztof Chorzempa"
+    },
+    {
+      "commits": 8,
       "contributor": "Vinicius"
     },
     {
@@ -191,6 +207,10 @@
     {
       "commits": 7,
       "contributor": "Niels Elgaard Larsen"
+    },
+    {
+      "commits": 6,
+      "contributor": "hugoalh"
     },
     {
       "commits": 6,
@@ -275,10 +295,6 @@
     {
       "commits": 5,
       "contributor": "Alexey Shabanov"
-    },
-    {
-      "commits": 4,
-      "contributor": "Krzysztof Chorzempa"
     },
     {
       "commits": 4,
@@ -382,6 +398,14 @@
     },
     {
       "commits": 2,
+      "contributor": "yhr"
+    },
+    {
+      "commits": 2,
+      "contributor": "Stéphanie Jean-Daubias"
+    },
+    {
+      "commits": 2,
       "contributor": "CaldeiraG"
     },
     {
@@ -431,10 +455,6 @@
     {
       "commits": 2,
       "contributor": "Valerio Bozzolan"
-    },
-    {
-      "commits": 2,
-      "contributor": "Manuel Tassi"
     },
     {
       "commits": 2,
@@ -491,6 +511,14 @@
     {
       "commits": 2,
       "contributor": "Leo Alcaraz"
+    },
+    {
+      "commits": 1,
+      "contributor": "Обо всем"
+    },
+    {
+      "commits": 1,
+      "contributor": "David"
     },
     {
       "commits": 1,

@@ -180,7 +180,8 @@
         "he": "המותג של כספומט זה הוא {brand}",
         "pt_BR": "A marca desse caixa eletrônico é {brand}",
         "es": "El banco de este cajero automático es {brand}",
-        "pt": "A marca deste multibanco é {brand}"
+        "pt": "A marca deste multibanco é {brand}",
+        "pl": "Marka tego bankomatu to {brand}"
       }
     },
     {

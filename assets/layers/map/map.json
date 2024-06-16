@@ -357,7 +357,8 @@
             "fr": "L’attribution est clairement inscrite mais la licence est absente",
             "es": "Se atribuya claramente a OpenStreetMap, pero no se menciona la licencia",
             "ca": "OpenStreetMap està clarament atribuït, però no es menciona la llicència",
-            "cs": "OpenStreetMap je jasně připsána, ale licence není uvedena"
+            "cs": "OpenStreetMap je jasně připsána, ale licence není uvedena",
+            "pl": "Wyraźnie zaznaczono źródło jako OpenStreetMap, ale nie podano licencji"
           }
         },
         {
@@ -391,7 +392,8 @@
             "de": "Es gibt überhaupt keine Namensnennung",
             "es": "No hay atribución",
             "ca": "No hi ha atribució",
-            "cs": "Neexistuje vůbec žádný atribut"
+            "cs": "Neexistuje vůbec žádný atribut",
+            "pl": "W ogóle nie podano źródła"
           }
         },
         {
@@ -408,7 +410,8 @@
             "de": "Es gibt überhaupt keine Namensnennung",
             "es": "No hay atribución",
             "ca": "No hi ha atribució",
-            "cs": "Neexistuje vůbec žádný atribut"
+            "cs": "Neexistuje vůbec žádný atribut",
+            "pl": "W ogóle nie podano źródła"
           },
           "hideInAnswer": true
         }

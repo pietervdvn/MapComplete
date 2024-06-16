@@ -18,18 +18,26 @@
 
 <div class="mt-12">
   {#if deleteState === "init"}
-    <button on:click={() => {deleteState = "confirm"}} class="small">
+    <button
+      on:click={() => {
+        deleteState = "confirm"
+      }}
+      class="small"
+    >
       <TrashIcon class="h-6 w-6" />
-      Delete this  {objectType}
+      Delete this {objectType}
     </button>
   {:else if deleteState === "confirm"}
     <div class="flex">
-      <BackButton on:click={() => {deleteState = "init"}}>
+      <BackButton
+        on:click={() => {
+          deleteState = "init"
+        }}
+      >
         Don't delete
       </BackButton>
       <NextButton clss="primary" on:click={() => deleteLayer()}>
         <div class="alert flex p-2">
-
           <TrashIcon class="h-6 w-6" />
           Do delete this {objectType}
         </div>

@@ -5,13 +5,7 @@
     "nl": "Oplaadpunten",
     "de": "Ladestationen"
   },
-  "description": {
-    "en": "A charging station",
-    "nl": "Oplaadpunten",
-    "ca": "Una estació de càrrega",
-    "de": "Eine Ladestation",
-    "fr": "Une station de recharge"
-  },
+  "minzoom": 10,
   "source": {
     "osmTags": {
       "and": [
@@ -26,7 +20,6 @@
       ]
     }
   },
-  "minzoom": 10,
   "title": {
     "render": {
       "en": "Charging station",
@@ -72,109 +65,14 @@
       }
     ]
   },
-  "pointRendering": [
-    {
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "marker": [
-        {
-          "icon": "pin",
-          "color": "#fff"
-        },
-        {
-          "icon": {
-            "render": "./assets/themes/charging_stations/plug.svg",
-            "mappings": [
-              {
-                "if": "bicycle=yes",
-                "then": "./assets/themes/charging_stations/bicycle.svg"
-              },
-              {
-                "if": {
-                  "or": [
-                    "car=yes",
-                    "motorcar=yes"
-                  ]
-                },
-                "then": "./assets/themes/charging_stations/car.svg"
-              }
-            ]
-          }
-        }
-      ],
-      "iconBadges": [
-        {
-          "if": {
-            "or": [
-              "disused:amenity=charging_station",
-              "operational_status=broken"
-            ]
-          },
-          "then": "close:#c22;"
-        },
-        {
-          "if": {
-            "or": [
-              "proposed:amenity=charging_station",
-              "planned:amenity=charging_station"
-            ]
-          },
-          "then": "./assets/layers/charging_station/under_construction.svg"
-        },
-        {
-          "if": {
-            "and": [
-              "bicycle=yes",
-              {
-                "or": [
-                  "motorcar=yes",
-                  "car=yes"
-                ]
-              }
-            ]
-          },
-          "then": "circle:#fff;./assets/themes/charging_stations/car.svg"
-        }
-      ],
-      "anchor": "bottom",
-      "iconSize": "50,50"
-    }
-  ],
-  "lineRendering": [
-    {
-      "color": "black",
-      "width": 2,
-      "fillColor": "#80808080"
-    }
-  ],
-  "presets": [
-    {
-      "tags": [
-        "amenity=charging_station",
-        "motorcar=no",
-        "bicycle=yes"
-      ],
-      "title": {
-        "en": "charging station for electrical bikes",
-        "nl": "oplaadpunt voor elektrische fietsen",
-        "de": "Ladestation für Elektrofahrräder"
-      }
-    },
-    {
-      "tags": [
-        "amenity=charging_station",
-        "motorcar=yes",
-        "bicycle=no"
-      ],
-      "title": {
-        "en": "charging station for cars",
-        "nl": "oplaadstation voor elektrische auto's",
-        "de": "Ladestation für Autos"
-      }
-    }
-  ],
+  "description": {
+    "en": "A charging station",
+    "nl": "Oplaadpunten",
+    "ca": "Una estació de càrrega",
+    "de": "Eine Ladestation",
+    "fr": "Une station de recharge"
+  },
+  "#": "no-question-hint-check",
   "tagRenderings": [
     "images",
     {
@@ -184,7 +82,8 @@
         "en": "Which vehicles are allowed to charge here?",
         "nl": "Welke voertuigen kunnen hier opgeladen worden?",
         "ca": "Quins vehicles tenen permesa la càrrega aquí?",
-        "de": "Welche Fahrzeuge können hier laden?"
+        "de": "Welche Fahrzeuge können hier laden?",
+        "pl": "Jakie pojazdy mogą być tutaj ładowane?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -195,7 +94,8 @@
             "en": "<b>Bicycles</b> can be charged here",
             "nl": "<b>Elektrische fietsen</b> kunnen hier opgeladen worden",
             "ca": "Aquí es poden carregar <b>bicicletes</b>",
-            "de": "Hier können <b>Fahrräder</b> laden"
+            "de": "Hier können <b>Fahrräder</b> laden",
+            "pl": "Mogą tutaj być ładowane <b>rowery</b>"
           }
         },
         {
@@ -205,7 +105,8 @@
             "en": "<b>Cars</b> can be charged here",
             "nl": "<b>Elektrische auto's</b> kunnen hier opgeladen worden",
             "ca": "Aquí es poden carregar <b>cotxes</b>",
-            "de": "Hier können <b>Autos</b> laden"
+            "de": "Hier können <b>Autos</b> laden",
+            "pl": "Mogą tutaj być ładowane <b>samochody</b>"
           }
         },
         {
@@ -215,7 +116,8 @@
             "en": "<b>Scooters</b> can be charged here",
             "nl": "<b>Elektrische scooters</b> (snorfiets of bromfiets) kunnen hier opgeladen worden",
             "ca": "Aquí es poden carregar <b>Scooters</b>",
-            "de": "Hier können <b>Roller</b> laden"
+            "de": "Hier können <b>Roller</b> laden",
+            "pl": "Mogą być tutaj ładowane <b>hulajnogi<b>"
           }
         },
         {
@@ -235,7 +137,8 @@
             "en": "<b>Buses</b> can be charged here",
             "nl": "<b>Bussen</b> kunnen hier opgeladen worden",
             "ca": "Aquí es poden carregar <b>autobusos</b>",
-            "de": "Hier können <b>Busse</b> laden"
+            "de": "Hier können <b>Busse</b> laden",
+            "pl": "Mogą być tutaj ładowane <b>autobusy</b>"
           }
         }
       ]
@@ -246,7 +149,8 @@
         "en": "Who is allowed to use this charging station?",
         "nl": "Wie mag er dit oplaadpunt gebruiken?",
         "ca": "Qui pot utilitzar aquesta estació de càrrega?",
-        "de": "Wer darf diese Ladestation benutzen?"
+        "de": "Wer darf diese Ladestation benutzen?",
+        "pl": "Kto może używać tej stacji ładowania?"
       },
       "render": {
         "en": "Access is {access}",
@@ -267,7 +171,8 @@
             "en": "Anyone can use this charging station (payment might be needed)",
             "nl": "Toegankelijk voor iedereen (mogelijks met aanmelden en/of te betalen)",
             "ca": "Qualsevol persona pot utilitzar aquesta estació de recàrrega (pot ser calgui un pagament)",
-            "de": "Jeder kann die Station nutzen (eventuell gegen Bezahlung)"
+            "de": "Jeder kann die Station nutzen (eventuell gegen Bezahlung)",
+            "pl": "Każdy może używać tej stacji ładowania (opłata może być wymagana)"
           }
         },
         {
@@ -276,7 +181,8 @@
             "en": "Anyone can use this charging station (payment might be needed)",
             "nl": "Toegankelijk voor iedereen (mogelijks met aanmelden en/of te betalen)",
             "ca": "Qualsevol persona pot utilitzar aquesta estació de recàrrega (pot ser calgui un pagament)",
-            "de": "Jeder kann diese Ladestation nutzen (eventuell gegen Bezahlung)"
+            "de": "Jeder kann diese Ladestation nutzen (eventuell gegen Bezahlung)",
+            "pl": "Każdy może używać tej stacji ładowania (opłata może być wymagana)"
           },
           "hideInAnswer": true
         },
@@ -324,13 +230,15 @@
         "en": "{capacity} vehicles can be charged here at the same time",
         "nl": "{capacity} voertuigen kunnen hier op hetzelfde moment opgeladen worden",
         "ca": "Aquí poden carregar {capacity} vehicles a l'hora",
-        "de": "Hier können {capacity} Fahrzeuge gleichzeitig laden"
+        "de": "Hier können {capacity} Fahrzeuge gleichzeitig laden",
+        "pl": "{capacity} pojazdów może być tutaj ładowanych jednocześnie"
       },
       "question": {
         "en": "How much vehicles can be charged here at the same time?",
         "nl": "Hoeveel voertuigen kunnen hier opgeladen worden?",
         "ca": "Quants vehicles poden carregar a la vegada?",
-        "de": "Wie viele Fahrzeuge können hier gleichzeitig laden?"
+        "de": "Wie viele Fahrzeuge können hier gleichzeitig laden?",
+        "pl": "Ile pojazdów może być tutaj ładowanych jednocześnie?"
       },
       "freeform": {
         "key": "capacity",
@@ -2245,7 +2153,8 @@
           "en": "When is this charging station opened?",
           "nl": "Wanneer is dit oplaadpunt beschikbaar??",
           "ca": "Quan està oberta aquesta estació de càrrega?",
-          "de": "Wann ist die Ladestation geöffnet?"
+          "de": "Wann ist die Ladestation geöffnet?",
+          "pl": "Kiedy jest otwarta ta stacja ładowania?"
         }
       },
       "id": "OH"
@@ -2301,7 +2210,8 @@
             "nl": "Gratis te gebruiken",
             "en": "Free to use",
             "ca": "Ús gratuït",
-            "de": "Kostenlose Nutzung"
+            "de": "Kostenlose Nutzung",
+            "pl": "Darmowa"
           },
           "hideInAnswer": true
         },
@@ -2527,13 +2437,15 @@
         "en": "Part of the network <b>{network}</b>",
         "nl": "Maakt deel uit van het <b>{network}</b>-netwerk",
         "ca": "Part de la xarxa <b>{network}</b>",
-        "de": "Teil des Netzwerks <b>{network}</b>"
+        "de": "Teil des Netzwerks <b>{network}</b>",
+        "pl": "Część sieci <b>{network}</b>"
       },
       "question": {
         "en": "Is this charging station part of a network?",
         "nl": "Is dit oplaadpunt deel van een groter netwerk?",
         "ca": "Aquesta estació de càrrega forma part d'una xarxa?",
-        "de": "Ist diese Ladestation Teil eines Netzwerks?"
+        "de": "Ist diese Ladestation Teil eines Netzwerks?",
+        "pl": "Czy ta stacja ładowania jest częścią sieci?"
       },
       "freeform": {
         "key": "network"
@@ -2552,7 +2464,8 @@
           "then": {
             "en": "Not part of a bigger network",
             "nl": "Maakt geen deel uit van een groter netwerk",
-            "de": "Nicht Teil eines größeren Netzwerks"
+            "de": "Nicht Teil eines größeren Netzwerks",
+            "pl": "Nie jest częścią większej sieci"
           },
           "hideInAnswer": true
         },
@@ -2606,7 +2519,8 @@
         "en": "This charging station is operated by {operator}",
         "nl": "Wordt beheerd door {operator}",
         "ca": "Aquesta estació de càrrega l'opera {operator}",
-        "de": "Die Station wird betrieben von {operator}"
+        "de": "Die Station wird betrieben von {operator}",
+        "pl": "Ta stacja ładowania jest obsługiwana przez {operator}"
       },
       "freeform": {
         "key": "operator"
@@ -2638,13 +2552,15 @@
         "en": "What number can one call if there is a problem with this charging station?",
         "nl": "Wat is het telefoonnummer van de beheerder van dit oplaadpunt?",
         "ca": "A quin número es pot cridar si hi ha algun problema amb aquest punt de càrrega?",
-        "de": "Welche Nummer kann man anrufen, wenn es ein Problem mit dieser Ladestation gibt?"
+        "de": "Welche Nummer kann man anrufen, wenn es ein Problem mit dieser Ladestation gibt?",
+        "pl": "Na jaki numer można zadzwonić w przypadku problemów z tą stacją ładowania?"
       },
       "render": {
         "en": "In case of problems, call <a href='tel:{phone}'>{phone}</a>",
         "nl": "Bij problemen, bel naar <a href='tel:{phone}'>{phone}</a>",
         "ca": "En cas de problemes, truqueu a <a href='tel:{phone}'>{phone}</a>",
-        "de": "Bei Problemen, anrufen unter <a href='tel:{phone}'>{phone}</a>"
+        "de": "Bei Problemen, anrufen unter <a href='tel:{phone}'>{phone}</a>",
+        "pl": "W przypadku problemów zadzwoń na <a href='tel:{phone}'>{phone}</a>"
       },
       "freeform": {
         "key": "phone",
@@ -2663,7 +2579,8 @@
         "en": "In case of problems, send an email to <a href='mailto:{email}'>{email}</a>",
         "nl": "Bij problemen, email naar <a href='mailto:{email}'>{email}</a>",
         "ca": "En cas de problemes, envia un email a <a href='mailto:{email}'>{email}</a>",
-        "de": "Bei Problemen senden Sie bitte eine E-Mail an <a href='mailto:{email}'>{email}</a>"
+        "de": "Bei Problemen senden Sie bitte eine E-Mail an <a href='mailto:{email}'>{email}</a>",
+        "pl": "W przypadku problemów, wyślij emaila do <a href='mailto:{email}'>{email}</a>"
       },
       "freeform": {
         "key": "email",
@@ -2693,12 +2610,14 @@
       "question": {
         "en": "What is the reference number of this charging station?",
         "nl": "Wat is het referentienummer van dit oplaadstation?",
-        "de": "Welche Kennnummer hat die Ladestation?"
+        "de": "Welche Kennnummer hat die Ladestation?",
+        "pl": "Jaki jest numer referencyjny tej stacji ładowania?"
       },
       "render": {
         "en": "Reference number is <b>{ref}</b>",
         "nl": "Het referentienummer van dit oplaadpunt is <b>{ref}</b>",
-        "de": "Die Kennziffer ist <b>{ref}</b>"
+        "de": "Die Kennziffer ist <b>{ref}</b>",
+        "pl": "Numer referencyjny to <b>{ref}</b>"
       },
       "freeform": {
         "key": "ref"
@@ -2729,7 +2648,8 @@
             "en": "This charging station works",
             "nl": "Dit oplaadpunt werkt",
             "ca": "Aquesta estació de càrrega funciona",
-            "de": "Die Station ist in Betrieb"
+            "de": "Die Station ist in Betrieb",
+            "pl": "Ta stacja ładowania działa"
           }
         },
         {
@@ -2746,7 +2666,8 @@
             "en": "This charging station is broken",
             "nl": "Dit oplaadpunt is kapot",
             "ca": "Aquesta estació de carrega està trencada",
-            "de": "Die Station ist defekt"
+            "de": "Die Station ist defekt",
+            "pl": "Ta stacja ładowania jest zepsuta"
           }
         },
         {
@@ -2763,7 +2684,8 @@
             "en": "A charging station is planned here",
             "nl": "Hier zal binnenkort een oplaadpunt gebouwd worden",
             "ca": "Aquí està prevista una estació de recàrrega",
-            "de": "Die Station ist erst in Planung"
+            "de": "Die Station ist erst in Planung",
+            "pl": "Planowana jest tutaj stacja ładowania"
           }
         },
         {
@@ -2779,7 +2701,8 @@
           "then": {
             "en": "A charging station is constructed here",
             "nl": "Hier wordt op dit moment een oplaadpunt gebouwd",
-            "de": "Die Station ist aktuell im Bau"
+            "de": "Die Station ist aktuell im Bau",
+            "pl": "Budowana jest tutaj stacja ładowania"
           }
         },
         {
@@ -2846,6 +2769,109 @@
         "en": "<h3>Technical questions</h3>The questions below are very technical. Feel free to ignore them<br/>{questions(technical)}",
         "nl": "<h3>Technische vragen</h3>De vragen hieronder zijn erg technisch - sla deze over indien je hier geen tijd voor hebt<br/>{questions(technical)}",
         "de": "<h3>Technische Frage</h3>Die nächsten Fragen sind sehr technisch. Du kannst diese auch überspringen.<br/>{questions(technical)}"
+      }
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "black",
+      "width": 2,
+      "fillColor": "#80808080"
+    }
+  ],
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "pin",
+          "color": "#fff"
+        },
+        {
+          "icon": {
+            "render": "./assets/themes/charging_stations/plug.svg",
+            "mappings": [
+              {
+                "if": "bicycle=yes",
+                "then": "./assets/themes/charging_stations/bicycle.svg"
+              },
+              {
+                "if": {
+                  "or": [
+                    "car=yes",
+                    "motorcar=yes"
+                  ]
+                },
+                "then": "./assets/themes/charging_stations/car.svg"
+              }
+            ]
+          }
+        }
+      ],
+      "iconBadges": [
+        {
+          "if": {
+            "or": [
+              "disused:amenity=charging_station",
+              "operational_status=broken"
+            ]
+          },
+          "then": "close:#c22;"
+        },
+        {
+          "if": {
+            "or": [
+              "proposed:amenity=charging_station",
+              "planned:amenity=charging_station"
+            ]
+          },
+          "then": "./assets/layers/charging_station/under_construction.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "bicycle=yes",
+              {
+                "or": [
+                  "motorcar=yes",
+                  "car=yes"
+                ]
+              }
+            ]
+          },
+          "then": "circle:#fff;./assets/themes/charging_stations/car.svg"
+        }
+      ],
+      "anchor": "bottom",
+      "iconSize": "50,50"
+    }
+  ],
+  "presets": [
+    {
+      "tags": [
+        "amenity=charging_station",
+        "motorcar=no",
+        "bicycle=yes"
+      ],
+      "title": {
+        "en": "charging station for electrical bikes",
+        "nl": "oplaadpunt voor elektrische fietsen",
+        "de": "Ladestation für Elektrofahrräder"
+      }
+    },
+    {
+      "tags": [
+        "amenity=charging_station",
+        "motorcar=yes",
+        "bicycle=no"
+      ],
+      "title": {
+        "en": "charging station for cars",
+        "nl": "oplaadstation voor elektrische auto's",
+        "de": "Ladestation für Autos"
       }
     }
   ],
@@ -3096,19 +3122,6 @@
       ]
     }
   ],
-  "deletion": {
-    "softDeletionTags": {
-      "and": [
-        "amenity=",
-        "disused:amenity=charging_station"
-      ]
-    },
-    "neededChangesets": 10
-  },
-  "allowMove": {
-    "enableRelocation": false,
-    "enableImproveAccuracy": true
-  },
   "units": [
     {
       "maxstay": {
@@ -3303,5 +3316,17 @@
       }
     }
   ],
-  "#": "no-question-hint-check"
+  "allowMove": {
+    "enableRelocation": false,
+    "enableImproveAccuracy": true
+  },
+  "deletion": {
+    "softDeletionTags": {
+      "and": [
+        "amenity=",
+        "disused:amenity=charging_station"
+      ]
+    },
+    "neededChangesets": 10
+  }
 }

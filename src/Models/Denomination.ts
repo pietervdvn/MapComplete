@@ -149,9 +149,8 @@ export class Denomination {
         if (stripped === null) {
             return null
         }
-        if(inverted){
+        if (inverted) {
             return (stripped + "/" + this.canonical).trim()
-
         }
         if (stripped === "1" && this._canonicalSingular !== undefined) {
             return ("1 " + this._canonicalSingular).trim()
@@ -187,10 +186,10 @@ export class Denomination {
                 return value.substring(key.length).trim()
             }
             let trimmed = value.substring(0, value.length - key.length).trim()
-            if(!inverted){
+            if (!inverted) {
                 return trimmed
             }
-            if(trimmed.endsWith("/")){
+            if (trimmed.endsWith("/")) {
                 trimmed = trimmed.substring(0, trimmed.length - 1).trim()
             }
             return trimmed
@@ -218,13 +217,23 @@ export class Denomination {
             return null
         }
 
-        if(!this._validator.isValid(value.trim())){
+        if (!this._validator.isValid(value.trim())) {
             return null
         }
         return this._validator.reformat(value.trim())
     }
 
     withValidator(validator: Validator) {
-        return new Denomination(this.canonical, this._canonicalSingular, this.useIfNoUnitGiven, this.prefix, this.addSpace, this.alternativeDenominations, this.human, this.humanSingular, validator)
+        return new Denomination(
+            this.canonical,
+            this._canonicalSingular,
+            this.useIfNoUnitGiven,
+            this.prefix,
+            this.addSpace,
+            this.alternativeDenominations,
+            this.human,
+            this.humanSingular,
+            validator
+        )
     }
 }

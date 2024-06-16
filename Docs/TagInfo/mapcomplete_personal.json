@@ -770,7 +770,7 @@
     },
     {
       "key": "inscription",
-      "description": "Layer 'Artworks' shows inscription= with a fixed text, namely 'This bench <span class='subtle'>(probably)</span> does not not have an inscription' (in the mapcomplete.org theme 'Personal theme') Picking this answer will delete the key inscription. (This is only shown if amenity=bench)",
+      "description": "Layer 'Artworks' shows inscription= with a fixed text, namely 'This bench <span class='subtle'>probably</span> does not not have an inscription' (in the mapcomplete.org theme 'Personal theme') Picking this answer will delete the key inscription. (This is only shown if amenity=bench)",
       "value": ""
     },
     {
@@ -1270,7 +1270,7 @@
     },
     {
       "key": "inscription",
-      "description": "Layer 'Benches' shows inscription= with a fixed text, namely 'This bench <span class='subtle'>(probably)</span> does not not have an inscription' (in the mapcomplete.org theme 'Personal theme') Picking this answer will delete the key inscription.",
+      "description": "Layer 'Benches' shows inscription= with a fixed text, namely 'This bench <span class='subtle'>probably</span> does not not have an inscription' (in the mapcomplete.org theme 'Personal theme') Picking this answer will delete the key inscription.",
       "value": ""
     },
     {
@@ -1777,151 +1777,6 @@
     {
       "key": "capacity:tandem_bicycle",
       "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'capacity:tandem_bicycle' (in the mapcomplete.org theme 'Personal theme') (This is only shown if rental~^(.*tandem_bicycle.*)$)"
-    },
-    {
-      "key": "amenity",
-      "description": "The MapComplete theme Personal theme has a layer Bicycle tube vending machine showing features with this tag",
-      "value": "vending_machine"
-    },
-    {
-      "key": "vending",
-      "description": "The MapComplete theme Personal theme has a layer Bicycle tube vending machine showing features with this tag"
-    },
-    {
-      "key": "id",
-      "description": "Layer 'Bicycle tube vending machine' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Personal theme') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
-    },
-    {
-      "key": "image",
-      "description": "The layer 'Bicycle tube vending machine allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-    },
-    {
-      "key": "mapillary",
-      "description": "The layer 'Bicycle tube vending machine allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-    },
-    {
-      "key": "wikidata",
-      "description": "The layer 'Bicycle tube vending machine allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-    },
-    {
-      "key": "wikipedia",
-      "description": "The layer 'Bicycle tube vending machine allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-    },
-    {
-      "key": "operational_status",
-      "description": "Layer 'Bicycle tube vending machine' shows and asks freeform values for key 'operational_status' (in the mapcomplete.org theme 'Personal theme')"
-    },
-    {
-      "key": "operational_status",
-      "description": "Layer 'Bicycle tube vending machine' shows operational_status= with a fixed text, namely 'This vending machine works' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') Picking this answer will delete the key operational_status.",
-      "value": ""
-    },
-    {
-      "key": "operational_status",
-      "description": "Layer 'Bicycle tube vending machine' shows operational_status=broken with a fixed text, namely 'This vending machine is broken' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
-      "value": "broken"
-    },
-    {
-      "key": "operational_status",
-      "description": "Layer 'Bicycle tube vending machine' shows operational_status=closed with a fixed text, namely 'This vending machine is closed' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
-      "value": "closed"
-    },
-    {
-      "key": "charge",
-      "description": "Layer 'Bicycle tube vending machine' shows and asks freeform values for key 'charge' (in the mapcomplete.org theme 'Personal theme')"
-    },
-    {
-      "key": "payment:cash",
-      "description": "Layer 'Bicycle tube vending machine' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' (in the mapcomplete.org theme 'Personal theme')",
-      "value": "yes"
-    },
-    {
-      "key": "payment:cards",
-      "description": "Layer 'Bicycle tube vending machine' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' (in the mapcomplete.org theme 'Personal theme')",
-      "value": "yes"
-    },
-    {
-      "key": "payment:qr_code",
-      "description": "Layer 'Bicycle tube vending machine' shows payment:qr_code=yes with a fixed text, namely 'Payment by QR-code is possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
-      "value": "yes"
-    },
-    {
-      "key": "payment:coins",
-      "description": "Layer 'Bicycle tube vending machine' shows payment:coins=yes with a fixed text, namely 'Coins are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
-      "value": "yes"
-    },
-    {
-      "key": "payment:notes",
-      "description": "Layer 'Bicycle tube vending machine' shows payment:notes=yes with a fixed text, namely 'Bank notes are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
-      "value": "yes"
-    },
-    {
-      "key": "payment:debit_cards",
-      "description": "Layer 'Bicycle tube vending machine' shows payment:debit_cards=yes with a fixed text, namely 'Debit cards are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
-      "value": "yes"
-    },
-    {
-      "key": "payment:credit_cards",
-      "description": "Layer 'Bicycle tube vending machine' shows payment:credit_cards=yes with a fixed text, namely 'Credit cards are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
-      "value": "yes"
-    },
-    {
-      "key": "brand",
-      "description": "Layer 'Bicycle tube vending machine' shows and asks freeform values for key 'brand' (in the mapcomplete.org theme 'Personal theme')"
-    },
-    {
-      "key": "brand",
-      "description": "Layer 'Bicycle tube vending machine' shows brand=Continental with a fixed text, namely 'Continental tubes are sold here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
-      "value": "Continental"
-    },
-    {
-      "key": "brand",
-      "description": "Layer 'Bicycle tube vending machine' shows brand=Schwalbe with a fixed text, namely 'Schwalbe tubes are sold here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
-      "value": "Schwalbe"
-    },
-    {
-      "key": "operator",
-      "description": "Layer 'Bicycle tube vending machine' shows and asks freeform values for key 'operator' (in the mapcomplete.org theme 'Personal theme')"
-    },
-    {
-      "key": "operator",
-      "description": "Layer 'Bicycle tube vending machine' shows operator=Schwalbe with a fixed text, namely 'Maintained by Schwalbe' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
-      "value": "Schwalbe"
-    },
-    {
-      "key": "operator",
-      "description": "Layer 'Bicycle tube vending machine' shows operator=Continental with a fixed text, namely 'Maintained by Continental' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
-      "value": "Continental"
-    },
-    {
-      "key": "vending",
-      "description": "Layer 'Bicycle tube vending machine' shows vending=bicycle_tube with a fixed text, namely 'Bicycle inner tubes are sold here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
-      "value": "bicycle_tube"
-    },
-    {
-      "key": "vending",
-      "description": "Layer 'Bicycle tube vending machine' shows vending=bicycle_light with a fixed text, namely 'Bicycle lights are sold here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
-      "value": "bicycle_light"
-    },
-    {
-      "key": "vending",
-      "description": "Layer 'Bicycle tube vending machine' shows vending=gloves with a fixed text, namely 'Gloves are sold here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
-      "value": "gloves"
-    },
-    {
-      "key": "vending",
-      "description": "Layer 'Bicycle tube vending machine' shows vending=bicycle_repair_kit with a fixed text, namely 'Bicycle repair kits are sold here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
-      "value": "bicycle_repair_kit"
-    },
-    {
-      "key": "vending",
-      "description": "Layer 'Bicycle tube vending machine' shows vending=bicycle_pump with a fixed text, namely 'Bicycle pumps are sold here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
-      "value": "bicycle_pump"
-    },
-    {
-      "key": "vending",
-      "description": "Layer 'Bicycle tube vending machine' shows vending=bicycle_lock with a fixed text, namely 'Bicycle locks are sold here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
-      "value": "bicycle_lock"
     },
     {
       "key": "amenity",
@@ -3345,6 +3200,11 @@
       "value": "unleashed"
     },
     {
+      "key": "dog",
+      "description": "Layer 'Cafés and pubs' shows dog=outside with a fixed text, namely 'Dogs are allowed only outside' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "outside"
+    },
+    {
       "key": "internet_access",
       "description": "Layer 'Cafés and pubs' shows internet_access=wlan with a fixed text, namely 'This place offers wireless internet access' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "wlan"
@@ -3648,6 +3508,42 @@
     {
       "key": "socket:bs1363",
       "description": "Layer 'Charging stations' shows socket:bs1363~.+ & socket:bs1363!=1 with a fixed text, namely '<b>BS1363</b> (Type G)' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "socket:nema5_15",
+      "description": "Layer 'Charging stations' shows socket:nema5_15=1 with a fixed text, namely '<b>NEMA 5-15</b> (Type B)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "1"
+    },
+    {
+      "key": "socket:nema5_15",
+      "description": "Layer 'Charging stations' shows socket:nema5_15~.+ & socket:nema5_15!=1 with a fixed text, namely '<b>NEMA 5-15</b> (Type B)' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "socket:sev1011_t23",
+      "description": "Layer 'Charging stations' shows socket:sev1011_t23=1 with a fixed text, namely '<b>SEV 1011 T23</b> (Type J)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "1"
+    },
+    {
+      "key": "socket:sev1011_t23",
+      "description": "Layer 'Charging stations' shows socket:sev1011_t23~.+ & socket:sev1011_t23!=1 with a fixed text, namely '<b>SEV 1011 T23</b> (Type J)' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "socket:as3112",
+      "description": "Layer 'Charging stations' shows socket:as3112=1 with a fixed text, namely '<b>AS3112</b> (Type I)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "1"
+    },
+    {
+      "key": "socket:as3112",
+      "description": "Layer 'Charging stations' shows socket:as3112~.+ & socket:as3112!=1 with a fixed text, namely '<b>AS3112</b> (Type I)' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "socket:nema_5_20",
+      "description": "Layer 'Charging stations' shows socket:nema_5_20=1 with a fixed text, namely '<b>NEMA 5-20</b> (Type B)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "1"
+    },
+    {
+      "key": "socket:nema_5_20",
+      "description": "Layer 'Charging stations' shows socket:nema_5_20~.+ & socket:nema_5_20!=1 with a fixed text, namely '<b>NEMA 5-20</b> (Type B)' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "socket:schuko",
@@ -4310,6 +4206,130 @@
       "key": "socket:bs1363:output",
       "description": "Layer 'Charging stations' shows socket:bs1363:output=3kW with a fixed text, namely '<b>BS1363</b> (Type G) outputs at most 3kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:bs1363~.+ & socket:bs1363!=0)",
       "value": "3kW"
+    },
+    {
+      "key": "socket:nema5_15",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:nema5_15' (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:nema5_15~.+ & socket:nema5_15!=0)"
+    },
+    {
+      "key": "socket:nema5_15:voltage",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:nema5_15:voltage' (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:nema5_15~.+ & socket:nema5_15!=0)"
+    },
+    {
+      "key": "socket:nema5_15:voltage",
+      "description": "Layer 'Charging stations' shows socket:nema5_15:voltage=120 V with a fixed text, namely '<b>NEMA 5-15</b> (Type B) outputs 120 volt' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:nema5_15~.+ & socket:nema5_15!=0)",
+      "value": "120 V"
+    },
+    {
+      "key": "socket:nema5_15:current",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:nema5_15:current' (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:nema5_15~.+ & socket:nema5_15!=0)"
+    },
+    {
+      "key": "socket:nema5_15:current",
+      "description": "Layer 'Charging stations' shows socket:nema5_15:current=15 A with a fixed text, namely '<b>NEMA 5-15</b> (Type B) outputs at most 15 A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:nema5_15~.+ & socket:nema5_15!=0)",
+      "value": "15 A"
+    },
+    {
+      "key": "socket:nema5_15:output",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:nema5_15:output' (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:nema5_15~.+ & socket:nema5_15!=0)"
+    },
+    {
+      "key": "socket:nema5_15:output",
+      "description": "Layer 'Charging stations' shows socket:nema5_15:output=1.8 kW with a fixed text, namely '<b>NEMA 5-15</b> (Type B) outputs at most 1.8 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:nema5_15~.+ & socket:nema5_15!=0)",
+      "value": "1.8 kW"
+    },
+    {
+      "key": "socket:sev1011_t23",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:sev1011_t23' (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:sev1011_t23~.+ & socket:sev1011_t23!=0)"
+    },
+    {
+      "key": "socket:sev1011_t23:voltage",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:sev1011_t23:voltage' (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:sev1011_t23~.+ & socket:sev1011_t23!=0)"
+    },
+    {
+      "key": "socket:sev1011_t23:voltage",
+      "description": "Layer 'Charging stations' shows socket:sev1011_t23:voltage=230 V with a fixed text, namely '<b>SEV 1011 T23</b> (Type J) outputs 230 volt' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:sev1011_t23~.+ & socket:sev1011_t23!=0)",
+      "value": "230 V"
+    },
+    {
+      "key": "socket:sev1011_t23:current",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:sev1011_t23:current' (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:sev1011_t23~.+ & socket:sev1011_t23!=0)"
+    },
+    {
+      "key": "socket:sev1011_t23:current",
+      "description": "Layer 'Charging stations' shows socket:sev1011_t23:current=16 A with a fixed text, namely '<b>SEV 1011 T23</b> (Type J) outputs at most 16 A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:sev1011_t23~.+ & socket:sev1011_t23!=0)",
+      "value": "16 A"
+    },
+    {
+      "key": "socket:sev1011_t23:output",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:sev1011_t23:output' (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:sev1011_t23~.+ & socket:sev1011_t23!=0)"
+    },
+    {
+      "key": "socket:sev1011_t23:output",
+      "description": "Layer 'Charging stations' shows socket:sev1011_t23:output=3.7 kW with a fixed text, namely '<b>SEV 1011 T23</b> (Type J) outputs at most 3.7 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:sev1011_t23~.+ & socket:sev1011_t23!=0)",
+      "value": "3.7 kW"
+    },
+    {
+      "key": "socket:as3112",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:as3112' (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:as3112~.+ & socket:as3112!=0)"
+    },
+    {
+      "key": "socket:as3112:voltage",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:as3112:voltage' (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:as3112~.+ & socket:as3112!=0)"
+    },
+    {
+      "key": "socket:as3112:voltage",
+      "description": "Layer 'Charging stations' shows socket:as3112:voltage=230 V with a fixed text, namely '<b>AS3112</b> (Type I) outputs 230 volt' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:as3112~.+ & socket:as3112!=0)",
+      "value": "230 V"
+    },
+    {
+      "key": "socket:as3112:current",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:as3112:current' (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:as3112~.+ & socket:as3112!=0)"
+    },
+    {
+      "key": "socket:as3112:current",
+      "description": "Layer 'Charging stations' shows socket:as3112:current=10 A with a fixed text, namely '<b>AS3112</b> (Type I) outputs at most 10 A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:as3112~.+ & socket:as3112!=0)",
+      "value": "10 A"
+    },
+    {
+      "key": "socket:as3112:output",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:as3112:output' (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:as3112~.+ & socket:as3112!=0)"
+    },
+    {
+      "key": "socket:as3112:output",
+      "description": "Layer 'Charging stations' shows socket:as3112:output=2.3 kW with a fixed text, namely '<b>AS3112</b> (Type I) outputs at most 2.3 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:as3112~.+ & socket:as3112!=0)",
+      "value": "2.3 kW"
+    },
+    {
+      "key": "socket:nema_5_20",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:nema_5_20' (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:nema_5_20~.+ & socket:nema_5_20!=0)"
+    },
+    {
+      "key": "socket:nema_5_20:voltage",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:nema_5_20:voltage' (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:nema_5_20~.+ & socket:nema_5_20!=0)"
+    },
+    {
+      "key": "socket:nema_5_20:voltage",
+      "description": "Layer 'Charging stations' shows socket:nema_5_20:voltage=120 V with a fixed text, namely '<b>NEMA 5-20</b> (Type B) outputs 120 volt' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:nema_5_20~.+ & socket:nema_5_20!=0)",
+      "value": "120 V"
+    },
+    {
+      "key": "socket:nema_5_20:current",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:nema_5_20:current' (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:nema_5_20~.+ & socket:nema_5_20!=0)"
+    },
+    {
+      "key": "socket:nema_5_20:current",
+      "description": "Layer 'Charging stations' shows socket:nema_5_20:current=20 A with a fixed text, namely '<b>NEMA 5-20</b> (Type B) outputs at most 20 A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:nema_5_20~.+ & socket:nema_5_20!=0)",
+      "value": "20 A"
+    },
+    {
+      "key": "socket:nema_5_20:output",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:nema_5_20:output' (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:nema_5_20~.+ & socket:nema_5_20!=0)"
+    },
+    {
+      "key": "socket:nema_5_20:output",
+      "description": "Layer 'Charging stations' shows socket:nema_5_20:output=2.4 kW with a fixed text, namely '<b>NEMA 5-20</b> (Type B) outputs at most 2.4 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if socket:nema_5_20~.+ & socket:nema_5_20!=0)",
+      "value": "2.4 kW"
     },
     {
       "key": "opening_hours",
@@ -6653,6 +6673,48 @@
       "description": "Layer 'dog parks' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Personal theme') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
     },
     {
+      "key": "image",
+      "description": "The layer 'dog parks allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'dog parks allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'dog parks allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'dog parks allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'dog parks' shows and asks freeform values for key 'name' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'dog parks' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'dog parks' shows opening_hours=24/7 with a fixed text, namely '24/7 opened (including holidays)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "24/7"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'dog parks' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Personal theme')",
+      "value": "closed"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'dog parks' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "contact:website",
+      "description": "Layer 'dog parks' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
       "key": "barrier",
       "description": "Layer 'dog parks' shows barrier=fence with a fixed text, namely 'This dogpark is fenced all around' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "fence"
@@ -6671,26 +6733,6 @@
       "key": "small_dog",
       "description": "Layer 'dog parks' shows small_dog=shared with a fixed text, namely 'Does <strong>not</strong> have a separate area for puppies and small dogs' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "shared"
-    },
-    {
-      "key": "name",
-      "description": "Layer 'dog parks' shows and asks freeform values for key 'name' (in the mapcomplete.org theme 'Personal theme')"
-    },
-    {
-      "key": "image",
-      "description": "The layer 'dog parks allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-    },
-    {
-      "key": "mapillary",
-      "description": "The layer 'dog parks allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-    },
-    {
-      "key": "wikidata",
-      "description": "The layer 'dog parks allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-    },
-    {
-      "key": "wikipedia",
-      "description": "The layer 'dog parks allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "amenity",
@@ -8305,22 +8347,22 @@
     },
     {
       "key": "reservation",
-      "description": "Layer 'Restaurants and fast food' shows reservation=required with a fixed text, namely 'A reservation is required at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if takeaway=only)",
+      "description": "Layer 'Restaurants and fast food' shows reservation=required with a fixed text, namely 'A reservation is required at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if takeaway!=only)",
       "value": "required"
     },
     {
       "key": "reservation",
-      "description": "Layer 'Restaurants and fast food' shows reservation=recommended with a fixed text, namely 'A reservation is not required, but still recommended to make sure you get a table' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if takeaway=only)",
+      "description": "Layer 'Restaurants and fast food' shows reservation=recommended with a fixed text, namely 'A reservation is not required, but still recommended to make sure you get a table' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if takeaway!=only)",
       "value": "recommended"
     },
     {
       "key": "reservation",
-      "description": "Layer 'Restaurants and fast food' shows reservation=yes with a fixed text, namely 'Reservation is possible at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if takeaway=only)",
+      "description": "Layer 'Restaurants and fast food' shows reservation=yes with a fixed text, namely 'Reservation is possible at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if takeaway!=only)",
       "value": "yes"
     },
     {
       "key": "reservation",
-      "description": "Layer 'Restaurants and fast food' shows reservation=no with a fixed text, namely 'Reservation is not possible at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if takeaway=only)",
+      "description": "Layer 'Restaurants and fast food' shows reservation=no with a fixed text, namely 'Reservation is not possible at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if takeaway!=only)",
       "value": "no"
     },
     {
@@ -8619,6 +8661,11 @@
       "value": "unleashed"
     },
     {
+      "key": "dog",
+      "description": "Layer 'Restaurants and fast food' shows dog=outside with a fixed text, namely 'Dogs are allowed only outside' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "outside"
+    },
+    {
       "key": "internet_access",
       "description": "Layer 'Restaurants and fast food' shows internet_access=wlan with a fixed text, namely 'This place offers wireless internet access' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "wlan"
@@ -8862,6 +8909,39 @@
     {
       "key": "name",
       "description": "Layer 'governments' shows and asks freeform values for key 'name' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "historic",
+      "description": "The MapComplete theme Personal theme has a layer Gravestones showing features with this tag",
+      "value": "tomb"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Gravestones' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Personal theme') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Gravestones allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Gravestones allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Gravestones allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Gravestones allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "buried:wikidata",
+      "description": "Layer 'Gravestones' shows and asks freeform values for key 'buried:wikidata' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'Gravestones' shows and asks freeform values for key 'name' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "information",
@@ -10295,6 +10375,48 @@
       "description": "Layer 'Kindergartens and childcare' shows and asks freeform values for key 'capacity' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
+      "key": "man_made",
+      "description": "The MapComplete theme Personal theme has a layer lighthouse showing features with this tag",
+      "value": "lighthouse"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'lighthouse' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Personal theme') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'lighthouse allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'lighthouse allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'lighthouse allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'lighthouse allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "Layer 'lighthouse' shows and asks freeform values for key 'wikidata' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "wikipedia",
+      "description": "Layer 'lighthouse' shows wikipedia~.+ with a fixed text, namely '{wikipedia():max-height:25rem}' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "wikidata",
+      "description": "Layer 'lighthouse' shows wikidata= with a fixed text, namely 'No Wikipedia page has been linked yet' (in the mapcomplete.org theme 'Personal theme') Picking this answer will delete the key wikidata.",
+      "value": ""
+    },
+    {
+      "key": "height",
+      "description": "Layer 'lighthouse' shows and asks freeform values for key 'height' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
       "key": "amenity",
       "description": "The MapComplete theme Personal theme has a layer Love hotels showing features with this tag",
       "value": "love_hotel"
@@ -10652,6 +10774,11 @@
       "value": "tree"
     },
     {
+      "key": "historic",
+      "description": "Layer 'Memorials' shows historic=tomb with a fixed text, namely 'This is a gravestone; the person is buried here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "tomb"
+    },
+    {
       "key": "inscription",
       "description": "Layer 'Memorials' shows and asks freeform values for key 'inscription' (in the mapcomplete.org theme 'Personal theme') (This is only shown if memorial!=bench)"
     },
@@ -10803,7 +10930,7 @@
     },
     {
       "key": "inscription",
-      "description": "Layer 'Memorials' shows inscription= with a fixed text, namely 'This bench <span class='subtle'>(probably)</span> does not not have an inscription' (in the mapcomplete.org theme 'Personal theme') Picking this answer will delete the key inscription. (This is only shown if amenity=bench)",
+      "description": "Layer 'Memorials' shows inscription= with a fixed text, namely 'This bench <span class='subtle'>probably</span> does not not have an inscription' (in the mapcomplete.org theme 'Personal theme') Picking this answer will delete the key inscription. (This is only shown if amenity=bench)",
       "value": ""
     },
     {
@@ -11398,26 +11525,6 @@
     {
       "key": "brand",
       "description": "Layer 'Parcel Lockers' shows and asks freeform values for key 'brand' (in the mapcomplete.org theme 'Personal theme')"
-    },
-    {
-      "key": "brand",
-      "description": "Layer 'Parcel Lockers' shows brand=Amazon Locker with a fixed text, namely 'This is an Amazon Locker' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
-      "value": "Amazon Locker"
-    },
-    {
-      "key": "brand",
-      "description": "Layer 'Parcel Lockers' shows brand=DHL Packstation with a fixed text, namely 'This is a DHL Packstation' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
-      "value": "DHL Packstation"
-    },
-    {
-      "key": "brand",
-      "description": "Layer 'Parcel Lockers' shows brand=Pickup Station with a fixed text, namely 'This is a DPD Pickup Station' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
-      "value": "Pickup Station"
-    },
-    {
-      "key": "brand",
-      "description": "Layer 'Parcel Lockers' shows brand=PostNL with a fixed text, namely 'This is a PostNL Parcel Locker' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
-      "value": "PostNL"
     },
     {
       "key": "operator",
@@ -12555,13 +12662,17 @@
     },
     {
       "key": "post_office",
-      "description": "Layer 'Post offices' shows post_office=post_partner with a fixed text, namely 'This shop is a post partner' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if post_office=post_partner)",
+      "description": "Layer 'Post offices' shows post_office=post_partner with a fixed text, namely 'This shop is a post partner' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "post_partner"
     },
     {
       "key": "post_office",
-      "description": "Layer 'Post offices' shows post_office= with a fixed text, namely 'This shop is not a post partner' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') Picking this answer will delete the key post_office. (This is only shown if post_office=post_partner)",
+      "description": "Layer 'Post offices' shows post_office= with a fixed text, namely 'This shop is not a post partner' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') Picking this answer will delete the key post_office.",
       "value": ""
+    },
+    {
+      "key": "brand",
+      "description": "Layer 'Post offices' shows and asks freeform values for key 'brand' (in the mapcomplete.org theme 'Personal theme') (This is only shown if amenity=post_office)"
     },
     {
       "key": "post_office:brand",
@@ -12783,24 +12894,9 @@
       "description": "Layer 'Bookcases' shows and asks freeform values for key 'brand' (in the mapcomplete.org theme 'Personal theme') (This is only shown if ref=)"
     },
     {
-      "key": "brand",
-      "description": "Layer 'Bookcases' shows brand=Little Free Library & nobrand= with a fixed text, namely 'Part of the network 'Little Free Library'' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if ref=)",
-      "value": "Little Free Library"
-    },
-    {
       "key": "nobrand",
-      "description": "Layer 'Bookcases' shows brand=Little Free Library & nobrand= with a fixed text, namely 'Part of the network 'Little Free Library'' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') Picking this answer will delete the key nobrand. (This is only shown if ref=)",
-      "value": ""
-    },
-    {
-      "key": "nobrand",
-      "description": "Layer 'Bookcases' shows nobrand=yes & brand= with a fixed text, namely 'This public bookcase is not part of a bigger network' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if ref=)",
+      "description": "Layer 'Bookcases' shows nobrand=yes with a fixed text, namely 'This public bookcase is not part of a bigger network' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if ref=)",
       "value": "yes"
-    },
-    {
-      "key": "brand",
-      "description": "Layer 'Bookcases' shows nobrand=yes & brand= with a fixed text, namely 'This public bookcase is not part of a bigger network' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') Picking this answer will delete the key brand. (This is only shown if ref=)",
-      "value": ""
     },
     {
       "key": "ref",
@@ -13104,6 +13200,11 @@
     {
       "key": "recycling:plastic",
       "description": "Layer 'Recycling' shows recycling:plastic=yes with a fixed text, namely 'Plastic can be recycled here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "recycling:pmd",
+      "description": "Layer 'Recycling' shows recycling:pmd=yes with a fixed text, namely 'Plastic packaging, metal packaging and drink cartons (PMD) can be recycled here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "yes"
     },
     {
@@ -14296,6 +14397,15 @@
       "value": "wine"
     },
     {
+      "key": "brand",
+      "description": "Layer 'Shop' shows and asks freeform values for key 'brand' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "not:brand",
+      "description": "Layer 'Shop' shows not:brand=yes with a fixed text, namely 'This shop does not have a specific brand, it is not part of a bigger chain' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
       "key": "second_hand",
       "description": "Layer 'Shop' shows second_hand=only with a fixed text, namely 'This shop sells second-hand items <b>only</b>' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if shop=clothes | shop=car | shop=books | shop=charity | shop=car_repair | shop=furniture | shop=bicycle | shop=bicycle | shop=mobile_phone | shop=computer | shop=toys)",
       "value": "only"
@@ -14415,6 +14525,16 @@
       "key": "service:print:A0",
       "description": "Layer 'Shop' shows service:print:A0=yes with a fixed text, namely 'This shop can print on papers of size A0' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if shop~^(.*copyshop.*)$ | shop~^(.*stationery.*)$ | service:print=yes)",
       "value": "yes"
+    },
+    {
+      "key": "service:binding",
+      "description": "Layer 'Shop' shows service:binding=yes with a fixed text, namely 'This shop binds papers into a booklet' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if shop~^(.*copyshop.*)$ | shop~^(.*stationery.*)$ | service:print=yes)",
+      "value": "yes"
+    },
+    {
+      "key": "service:binding",
+      "description": "Layer 'Shop' shows service:binding=no with a fixed text, namely 'This shop does bind books' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if shop~^(.*copyshop.*)$ | shop~^(.*stationery.*)$ | service:print=yes)",
+      "value": "no"
     },
     {
       "key": "craft",
@@ -17405,6 +17525,35 @@
       "description": "The layer 'Vending Machines allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
+      "key": "level",
+      "description": "Layer 'Vending Machines' shows and asks freeform values for key 'level' (in the mapcomplete.org theme 'Personal theme') (This is only shown if repeat_on=)"
+    },
+    {
+      "key": "location",
+      "description": "Layer 'Vending Machines' shows location=underground with a fixed text, namely 'Located underground' (in the mapcomplete.org theme 'Personal theme') (This is only shown if repeat_on=)",
+      "value": "underground"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Vending Machines' shows level=0 with a fixed text, namely 'Located on the ground floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if repeat_on=)",
+      "value": "0"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Vending Machines' shows level= with a fixed text, namely 'Located on the ground floor' (in the mapcomplete.org theme 'Personal theme') Picking this answer will delete the key level. (This is only shown if repeat_on=)",
+      "value": ""
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Vending Machines' shows level=1 with a fixed text, namely 'Located on the first floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if repeat_on=)",
+      "value": "1"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Vending Machines' shows level=-1 with a fixed text, namely 'Located on the first basement level' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if repeat_on=)",
+      "value": "-1"
+    },
+    {
       "key": "vending",
       "description": "Layer 'Vending Machines' shows and asks freeform values for key 'vending' (in the mapcomplete.org theme 'Personal theme')"
     },
@@ -17542,6 +17691,20 @@
       "key": "vending",
       "description": "Layer 'Vending Machines' shows vending=bicycle_lock with a fixed text, namely 'Bicycle locks are sold' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "bicycle_lock"
+    },
+    {
+      "key": "brand",
+      "description": "Layer 'Vending Machines' shows and asks freeform values for key 'brand' (in the mapcomplete.org theme 'Personal theme') (This is only shown if vending~^(.*bicycle_tube.*)$)"
+    },
+    {
+      "key": "brand",
+      "description": "Layer 'Vending Machines' shows brand=Continental with a fixed text, namely 'Continental tubes are sold here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if vending~^(.*bicycle_tube.*)$)",
+      "value": "Continental"
+    },
+    {
+      "key": "brand",
+      "description": "Layer 'Vending Machines' shows brand=Schwalbe with a fixed text, namely 'Schwalbe tubes are sold here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if vending~^(.*bicycle_tube.*)$)",
+      "value": "Schwalbe"
     },
     {
       "key": "opening_hours",
@@ -17752,35 +17915,6 @@
       "value": "no"
     },
     {
-      "key": "level",
-      "description": "Layer 'Vending Machines' shows and asks freeform values for key 'level' (in the mapcomplete.org theme 'Personal theme') (This is only shown if repeat_on=)"
-    },
-    {
-      "key": "location",
-      "description": "Layer 'Vending Machines' shows location=underground with a fixed text, namely 'Located underground' (in the mapcomplete.org theme 'Personal theme') (This is only shown if repeat_on=)",
-      "value": "underground"
-    },
-    {
-      "key": "level",
-      "description": "Layer 'Vending Machines' shows level=0 with a fixed text, namely 'Located on the ground floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if repeat_on=)",
-      "value": "0"
-    },
-    {
-      "key": "level",
-      "description": "Layer 'Vending Machines' shows level= with a fixed text, namely 'Located on the ground floor' (in the mapcomplete.org theme 'Personal theme') Picking this answer will delete the key level. (This is only shown if repeat_on=)",
-      "value": ""
-    },
-    {
-      "key": "level",
-      "description": "Layer 'Vending Machines' shows level=1 with a fixed text, namely 'Located on the first floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if repeat_on=)",
-      "value": "1"
-    },
-    {
-      "key": "level",
-      "description": "Layer 'Vending Machines' shows level=-1 with a fixed text, namely 'Located on the first basement level' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if repeat_on=)",
-      "value": "-1"
-    },
-    {
       "key": "phone",
       "description": "Layer 'Vending Machines' shows and asks freeform values for key 'phone' (in the mapcomplete.org theme 'Personal theme')"
     },
@@ -17795,6 +17929,37 @@
     {
       "key": "contact:website",
       "description": "Layer 'Vending Machines' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "charge",
+      "description": "Layer 'Vending Machines' shows and asks freeform values for key 'charge' (in the mapcomplete.org theme 'Personal theme') (This is only shown if vending~^(.*bicycle_tube.*)$)"
+    },
+    {
+      "key": "charge",
+      "description": "Layer 'Vending Machines' shows and asks freeform values for key 'charge' (in the mapcomplete.org theme 'Personal theme') (This is only shown if vending~^(.*bicycle_light.*)$)"
+    },
+    {
+      "key": "charge",
+      "description": "Layer 'Vending Machines' shows and asks freeform values for key 'charge' (in the mapcomplete.org theme 'Personal theme') (This is only shown if vending~^(.*condom.*)$)"
+    },
+    {
+      "key": "operational_status",
+      "description": "Layer 'Vending Machines' shows operational_status= with a fixed text, namely 'This vending machine works' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') Picking this answer will delete the key operational_status.",
+      "value": ""
+    },
+    {
+      "key": "operational_status",
+      "description": "Layer 'Vending Machines' shows operational_status=broken with a fixed text, namely 'This vending machine is broken' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "broken"
+    },
+    {
+      "key": "operational_status",
+      "description": "Layer 'Vending Machines' shows operational_status=closed with a fixed text, namely 'This vending machine is closed' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "closed"
+    },
+    {
+      "key": "operational_status",
+      "description": "Layer 'Vending Machines' shows operational_status~.+ with a fixed text, namely 'The operational status is <i>{operational_status}</i>' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "amenity",
@@ -17925,32 +18090,37 @@
     },
     {
       "key": "waste",
+      "description": "Layer 'Waste Basket' shows waste=pmd with a fixed text, namely 'A waste basket for plastic packaging, metal packaging and drink cartons (PMD)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "pmd"
+    },
+    {
+      "key": "waste",
       "description": "Layer 'Waste Basket' shows waste=paper with a fixed text, namely 'A waste basket for paper' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "paper"
     },
     {
       "key": "vending",
-      "description": "Layer 'Waste Basket' shows vending=dog_excrement_bag & not:vending= with a fixed text, namely 'This waste basket has a dispenser for (dog) excrement bags' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if waste=dog_excrement | waste=trash | waste=)",
+      "description": "Layer 'Waste Basket' shows vending=dog_excrement_bag & not:vending= with a fixed text, namely 'This waste basket has a dispenser for (dog) excrement bags' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if waste~^(.*dog_excrement.*)$ | waste~^(.*trash.*)$ | waste=)",
       "value": "dog_excrement_bag"
     },
     {
       "key": "not:vending",
-      "description": "Layer 'Waste Basket' shows vending=dog_excrement_bag & not:vending= with a fixed text, namely 'This waste basket has a dispenser for (dog) excrement bags' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') Picking this answer will delete the key not:vending. (This is only shown if waste=dog_excrement | waste=trash | waste=)",
+      "description": "Layer 'Waste Basket' shows vending=dog_excrement_bag & not:vending= with a fixed text, namely 'This waste basket has a dispenser for (dog) excrement bags' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') Picking this answer will delete the key not:vending. (This is only shown if waste~^(.*dog_excrement.*)$ | waste~^(.*trash.*)$ | waste=)",
       "value": ""
     },
     {
       "key": "not:vending",
-      "description": "Layer 'Waste Basket' shows not:vending=dog_excrement_bag & vending= with a fixed text, namely 'This waste basket <b>does not</b> have a dispenser for (dog) excrement bags' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if waste=dog_excrement | waste=trash | waste=)",
+      "description": "Layer 'Waste Basket' shows not:vending=dog_excrement_bag & vending= with a fixed text, namely 'This waste basket <b>does not</b> have a dispenser for (dog) excrement bags' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if waste~^(.*dog_excrement.*)$ | waste~^(.*trash.*)$ | waste=)",
       "value": "dog_excrement_bag"
     },
     {
       "key": "vending",
-      "description": "Layer 'Waste Basket' shows not:vending=dog_excrement_bag & vending= with a fixed text, namely 'This waste basket <b>does not</b> have a dispenser for (dog) excrement bags' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') Picking this answer will delete the key vending. (This is only shown if waste=dog_excrement | waste=trash | waste=)",
+      "description": "Layer 'Waste Basket' shows not:vending=dog_excrement_bag & vending= with a fixed text, namely 'This waste basket <b>does not</b> have a dispenser for (dog) excrement bags' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') Picking this answer will delete the key vending. (This is only shown if waste~^(.*dog_excrement.*)$ | waste~^(.*trash.*)$ | waste=)",
       "value": ""
     },
     {
       "key": "vending",
-      "description": "Layer 'Waste Basket' shows vending= with a fixed text, namely 'This waste basket <b>does not</b> have a dispenser for (dog) excrement bags' (in the mapcomplete.org theme 'Personal theme') Picking this answer will delete the key vending. (This is only shown if waste=dog_excrement | waste=trash | waste=)",
+      "description": "Layer 'Waste Basket' shows vending= with a fixed text, namely 'This waste basket <b>does not</b> have a dispenser for (dog) excrement bags' (in the mapcomplete.org theme 'Personal theme') Picking this answer will delete the key vending. (This is only shown if waste~^(.*dog_excrement.*)$ | waste~^(.*trash.*)$ | waste=)",
       "value": ""
     },
     {

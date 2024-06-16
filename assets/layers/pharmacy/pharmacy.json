@@ -32,7 +32,8 @@
       "nl": "{name}",
       "fr": "{name}",
       "ca": "{name}",
-      "cs": "{name}"
+      "cs": "{name}",
+      "pl": "{name}"
     },
     "mappings": [
       {
@@ -44,7 +45,8 @@
           "pa_PK": "فارمیسی",
           "fr": "Pharmacie",
           "ca": "Farmàcia",
-          "cs": "Lékárna"
+          "cs": "Lékárna",
+          "pl": "Apteka"
         }
       }
     ]
@@ -117,7 +119,8 @@
         "nl": "Wat is de naam van deze apotheek?",
         "fr": "Quel est le nom de cette pharmacie ?",
         "ca": "Quin és el nom de la farmàcia?",
-        "cs": "Jak se lékárna jmenuje?"
+        "cs": "Jak se lékárna jmenuje?",
+        "pl": "Jak nazywa się ta apteka?"
       },
       "render": {
         "en": "This pharmacy is called {name}",
@@ -125,7 +128,8 @@
         "nl": "Deze apotheek heet {name}",
         "ca": "Aquesta farmàcia es diu {name}",
         "fr": "Cette pharmacie s'appelle {name}",
-        "cs": "Tato lékárna se jmenuje {name}"
+        "cs": "Tato lékárna se jmenuje {name}",
+        "pl": "Nazwa tej apteki to {name}"
       }
     },
     "opening_hours",
@@ -151,7 +155,8 @@
             "de": "Die Apotheke ist für Rollstuhlfahrer leicht zugänglich",
             "nl": "Deze apotheek is makkelijk te bereiken met een rolstoel",
             "fr": "Cette pharmacie est facile d'accès en chaise roulante",
-            "cs": "Tato lékárna je snadno přístupná na invalidním vozíku"
+            "cs": "Tato lékárna je snadno přístupná na invalidním vozíku",
+            "pl": "Ta apteka jest łatwo dostępna na wózku"
           }
         },
         {

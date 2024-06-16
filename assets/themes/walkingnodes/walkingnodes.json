@@ -134,7 +134,8 @@
         "pa_PK": "نوڈ",
         "cs": "uzly",
         "eu": "nodoak",
-        "pl": "węzły"
+        "pl": "węzły",
+        "zh_Hant": "節點"
       },
       "source": {
         "osmTags": {

@@ -73,7 +73,11 @@ export default class InitialMapPositioning {
 
         if (initialHash?.match(/^(node|way|relation)\/[0-9]+$/)) {
             const [type, id] = initialHash.split("/")
-            OsmObjectDownloader.RawDownloadObjectAsync(type, Number(id), Constants.osmAuthConfig.url + "/").then(osmObject => {
+            OsmObjectDownloader.RawDownloadObjectAsync(
+                type,
+                Number(id),
+                Constants.osmAuthConfig.url + "/"
+            ).then((osmObject) => {
                 if (osmObject === "deleted") {
                     return
                 }
@@ -83,6 +87,5 @@ export default class InitialMapPositioning {
                 this.location.setData({ lon, lat })
             })
         }
-
     }
 }

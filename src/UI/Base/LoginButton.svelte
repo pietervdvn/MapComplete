@@ -7,7 +7,7 @@
   export let osmConnection: OsmConnection
   export let clss: string | undefined = undefined
 
-  if(osmConnection === undefined){
+  if (osmConnection === undefined) {
     console.error("No osmConnection passed into loginButton")
   }
 </script>

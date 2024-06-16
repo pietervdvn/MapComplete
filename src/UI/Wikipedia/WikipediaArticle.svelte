@@ -15,7 +15,9 @@
    * Shows a wikipedia-article + wikidata preview for the given item
    */
   export let wikipediaDetails: Store<FullWikipediaDetails>
-  let titleOnly = wikipediaDetails.mapD(details => Object.keys(details).length === 1 && details.title !== undefined)
+  let titleOnly = wikipediaDetails.mapD(
+    (details) => Object.keys(details).length === 1 && details.title !== undefined
+  )
 </script>
 
 {#if $titleOnly}

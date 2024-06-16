@@ -20,11 +20,11 @@ export class LayoutInformation {
     id: string
     icon: string
     title: Translatable | Translation
-    shortDescription: Translatable| Translation
-    definition?: Translatable| Translation
+    shortDescription: Translatable | Translation
+    definition?: Translatable | Translation
     mustHaveLanguage?: boolean
     hideFromOverview?: boolean
-    keywords?: (Translatable| Translation)[]
+    keywords?: (Translatable | Translation)[]
 }
 
 export default class LayoutConfig implements LayoutInformation {
@@ -64,7 +64,6 @@ export default class LayoutConfig implements LayoutInformation {
     public readonly enablePdfDownload: boolean
     public readonly enableTerrain: boolean
     public readonly enableMorePrivacy: boolean
-
 
     public readonly customCss?: string
 
@@ -206,7 +205,9 @@ export default class LayoutConfig implements LayoutInformation {
         this.overpassTimeout = json.overpassTimeout ?? 30
         this.overpassMaxZoom = json.overpassMaxZoom ?? 16
         this.osmApiTileSize = json.osmApiTileSize ?? this.overpassMaxZoom + 1
-        this.enableMorePrivacy = json.enableMorePrivacy || json.layers.some(l => (<LayerConfigJson> l).enableMorePrivacy)
+        this.enableMorePrivacy =
+            json.enableMorePrivacy ||
+            json.layers.some((l) => (<LayerConfigJson>l).enableMorePrivacy)
 
         this.layersDict = new Map<string, LayerConfig>()
         for (const layer of this.layers) {
@@ -315,7 +316,8 @@ export default class LayoutConfig implements LayoutInformation {
                 continue
             }
             if (layer.source.osmTags.matchesProperties(tags)) {
-                if(!layer.isShown || layer.isShown.matchesProperties(tags)){// https://github.com/pietervdvn/MapComplete/issues/1959
+                if (!layer.isShown || layer.isShown.matchesProperties(tags)) {
+                    // https://github.com/pietervdvn/MapComplete/issues/1959
                     return layer
                 }
             }
@@ -324,16 +326,22 @@ export default class LayoutConfig implements LayoutInformation {
         return undefined
     }
 
-    public getUsedImages(){
-        if(this.usedImages){
+    public getUsedImages() {
+        if (this.usedImages) {
             return this.usedImages
         }
         const json = this.source
         // The 'favourite'-layer contains pretty much all images as it bundles all layers, so we exclude it
-        const jsonNoFavourites = {...json, layers: json.layers.filter(l => l["id"] !== "favourite")}
+        const jsonNoFavourites = {
+            ...json,
+            layers: json.layers.filter((l) => l["id"] !== "favourite"),
+        }
         this.usedImages = Array.from(
             new ExtractImages(this.official, undefined)
-                .convertStrict(jsonNoFavourites, ConversionContext.construct([json.id], ["ExtractImages"]))
+                .convertStrict(
+                    jsonNoFavourites,
+                    ConversionContext.construct([json.id], ["ExtractImages"])
+                )
                 .map((i) => i.path)
         ).sort()
         return this.usedImages

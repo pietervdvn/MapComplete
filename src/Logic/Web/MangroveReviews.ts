@@ -110,12 +110,12 @@ export class MangroveIdentity {
                 return []
             }
             const allReviews = await MangroveReviews.getReviews({
-                kid: pem
+                kid: pem,
             })
             this.allReviewsById.setData(
                 allReviews.reviews.map((r) => ({
                     ...r,
-                    ...r.payload
+                    ...r.payload,
                 }))
             )
         })
@@ -182,10 +182,10 @@ export default class FeatureReviews {
                 feature.geometry.type === "Polygon"
             ) {
                 coordss = feature.geometry.coordinates
-            }else if(feature.geometry.type === "MultiPolygon"){
+            } else if (feature.geometry.type === "MultiPolygon") {
                 coordss = feature.geometry.coordinates[0]
-            }else{
-                throw "Invalid feature type: "+feature.geometry.type
+            } else {
+                throw "Invalid feature type: " + feature.geometry.type
             }
             let maxDistance = 0
             for (const coords of coordss) {
@@ -288,7 +288,7 @@ export default class FeatureReviews {
         }
         const r: Review = {
             sub: this.subjectUri.data,
-            ...review
+            ...review,
         }
         const keypair: CryptoKeyPair = await this._identity.getKeypair()
         const jwt = await MangroveReviews.signReview(keypair, r)
@@ -303,7 +303,7 @@ export default class FeatureReviews {
             ...r,
             kid,
             signature: jwt,
-            madeByLoggedInUser: new ImmutableStore(true)
+            madeByLoggedInUser: new ImmutableStore(true),
         }
         this._reviews.data.push(reviewWithKid)
         this._reviews.ping()
@@ -350,7 +350,7 @@ export default class FeatureReviews {
                 signature: reviewData.signature,
                 madeByLoggedInUser: this._identity.getKeyId().map((user_key_id) => {
                     return reviewData.kid === user_key_id
-                })
+                }),
             })
             hasNew = true
         }
@@ -369,12 +369,16 @@ export default class FeatureReviews {
     private ConstructSubjectUri(dontEncodeName: boolean = false): Store<string> {
         // https://www.rfc-editor.org/rfc/rfc5870#section-3.4.2
         // `u` stands for `uncertainty`, https://www.rfc-editor.org/rfc/rfc5870#section-3.4.3
-        return this._name.map(name => {
+        return this._name.map((name) => {
             let uri = `geo:${this._lat},${this._lon}?u=${Math.round(this._uncertainty)}`
             if (name) {
                 uri += "&q=" + (dontEncodeName ? name : encodeURIComponent(name))
-            }else if(this._uncertainty > 1000){
-                console.error("Not fetching reviews. Only got a point and a very big uncertainty range ("+this._uncertainty+"), so you'd probably only get garbage. Specify a name")
+            } else if (this._uncertainty > 1000) {
+                console.error(
+                    "Not fetching reviews. Only got a point and a very big uncertainty range (" +
+                        this._uncertainty +
+                        "), so you'd probably only get garbage. Specify a name"
+                )
                 return undefined
             }
             return uri

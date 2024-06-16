@@ -71,6 +71,4 @@ export default abstract class ImageProvider {
     public abstract DownloadAttribution(providedImage: ProvidedImage): Promise<LicenseInfo>
 
     public abstract apiUrls(): string[]
-
-
 }

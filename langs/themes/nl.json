@@ -912,33 +912,6 @@
     "onwheels": {
         "description": "Op deze kaart kan je informatie rond rolstoeltoegankelijkheid zien, zoals toegangsdeuren met hun breedte en drempelhoogte, toiletten met toegankelijkheidsinformatie, recepties maar ook winkels, cafés en restaurants.",
         "layers": {
-            "19": {
-                "override": {
-                    "=title": {
-                        "render": "Statistieken"
-                    }
-                }
-            },
-            "20": {
-                "override": {
-                    "+tagRenderings": {
-                        "0": {
-                            "render": {
-                                "special": {
-                                    "text": "Importeren"
-                                }
-                            }
-                        },
-                        "1": {
-                            "render": {
-                                "special": {
-                                    "message": "Voeg alle gesuggereerde tags toe"
-                                }
-                            }
-                        }
-                    }
-                }
-            },
             "4": {
                 "override": {
                     "filter": {
@@ -980,6 +953,33 @@
             "8": {
                 "override": {
                     "name": "Parkeerplaatsen voor personen met een beperking"
+                }
+            },
+            "19": {
+                "override": {
+                    "=title": {
+                        "render": "Statistieken"
+                    }
+                }
+            },
+            "20": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "Importeren"
+                                }
+                            }
+                        },
+                        "1": {
+                            "render": {
+                                "special": {
+                                    "message": "Voeg alle gesuggereerde tags toe"
+                                }
+                            }
+                        }
+                    }
                 }
             }
         },
@@ -1206,6 +1206,10 @@
     "stations": {
         "description": "Bekijk, bewerk en voeg details to aan een treinstation",
         "layers": {
+            "3": {
+                "description": "Laag met treinstations",
+                "name": "Treinstations"
+            },
             "16": {
                 "description": "Schermen die treinen tonen die van dit station vertrekken",
                 "name": "Vertrektijdenborden",
@@ -1237,10 +1241,6 @@
                 "title": {
                     "render": "Vertrektijdenbord"
                 }
-            },
-            "3": {
-                "description": "Laag met treinstations",
-                "name": "Treinstations"
             }
         },
         "title": "Treinstations"

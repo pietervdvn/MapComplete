@@ -7,7 +7,7 @@
   export let isOpened: Store<boolean>
   export let moveTo: Store<HTMLElement>
 
-  export let debug : string
+  export let debug: string
   function copySizeOf(htmlElem: HTMLElement) {
     const target = htmlElem.getBoundingClientRect()
     elem.style.left = target.x + "px"
@@ -31,18 +31,18 @@
     }
   }
 
-  onDestroy(isOpened.addCallback(opened => animate(opened)))
-  onMount(() =>  requestAnimationFrame(() => animate(isOpened.data)))
-
-
+  onDestroy(isOpened.addCallback((opened) => animate(opened)))
+  onMount(() => requestAnimationFrame(() => animate(isOpened.data)))
 </script>
-<div class={"absolute bottom-0 right-0 h-full w-screen p-4 md:p-6 pointer-events-none invisible"}>
+
+<div class={"pointer-events-none invisible absolute bottom-0 right-0 h-full w-screen p-4 md:p-6"}>
   <div class="content h-full" bind:this={targetOuter} style="background: red" />
 </div>
 
-<div bind:this={elem} class="pointer-events-none absolute bottom-0 right-0 low-interaction rounded-2xl"
-     style="transition: all 0.5s ease-out, background-color 1.4s ease-out; background: var(--background-color);">
+<div
+  bind:this={elem}
+  class="low-interaction pointer-events-none absolute bottom-0 right-0 rounded-2xl"
+  style="transition: all 0.5s ease-out, background-color 1.4s ease-out; background: var(--background-color);"
+>
   <!-- Classes should be the same as the 'floatoaver' -->
 </div>
-
-

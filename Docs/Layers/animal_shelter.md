@@ -25,26 +25,26 @@ An animal shelter is a facility where animals in trouble are brought and facilit
 1. [ Themes using this layer ](#-themes-using-this-layer-)
 2. [ Basic tags for this layer ](#-basic-tags-for-this-layer-)
 3. [ Supported attributes ](#-supported-attributes-)
-  - [just_created](#just_created)
-  - [images](#images)
-  - [reviews](#reviews)
-  - [2](#2)
-  - [website](#website)
-  - [phone](#phone)
-  - [email](#email)
-  - [6](#6)
-  - [opening_hours_by_appointment](#opening_hours_by_appointment)
-  - [boarded_animals](#boarded_animals)
-  - [leftover-questions](#leftover-questions)
-  - [lod](#lod)
-  - [minimap](#minimap)
-  - [move-button](#move-button)
-  - [delete-button](#delete-button)
-  - [last_edit](#last_edit)
-  - [favourite_status](#favourite_status)
-  - [qr_code](#qr_code)
-  - [share](#share)
-  - [all-tags](#all-tags)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
 
  Themes using this layer 
 -------------------------
@@ -93,282 +93,197 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/animal_shelter#values) [animal_shelter](https://wiki.openstreetmap.org/wiki/Key:animal_shelter) | [string](../SpecialInputElements.md#string) | [dog](https://wiki.openstreetmap.org/wiki/Tag:animal_shelter%3Ddog) [cat](https://wiki.openstreetmap.org/wiki/Tag:animal_shelter%3Dcat) [horse](https://wiki.openstreetmap.org/wiki/Tag:animal_shelter%3Dhorse) [bird](https://wiki.openstreetmap.org/wiki/Tag:animal_shelter%3Dbird) [wildlife](https://wiki.openstreetmap.org/wiki/Tag:animal_shelter%3Dwildlife)
 
 
-
-
-### just_created 
-
-
-
+### this.id
 This element shows a 'thank you' that the contributor has recently created this element
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
+ - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
+This tagrendering has labels 
+`added_by_default`
 
-
-
-
-
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
-
-
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### images 
-
-
-
+### this.id
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
 
 
-### reviews 
 
-
-
+### this.id
 Shows the reviews module (including the possibility to leave a review)
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
 
 
 
 
+### this.id
 
-### 2 
+The question is `What is the name of this animal shelter?`
+This rendering asks information about the property 
+[name](https://wiki.openstreetmap.org/wiki/Key:name)
+This is rendered with `This animal shelter is named <b>{name}</b>`
 
 
 
-The question is  *What is the name of this animal shelter?*
 
-This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) This is rendered with  `This animal shelter is named <b>{name}</b>`
+### this.id
 
+The question is `What is the website of {title()}?`
+This rendering asks information about the property 
+[website](https://wiki.openstreetmap.org/wiki/Key:website)
+This is rendered with `<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>`
+ - *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>* corresponds with contact:website~.+
+ - _This option cannot be chosen as answer_
 
+This tagrendering has labels 
+`contact`
 
-### website 
+### this.id
 
+The question is `What is the phone number of {title()}?`
+This rendering asks information about the property 
+[phone](https://wiki.openstreetmap.org/wiki/Key:phone)
+This is rendered with `<a href='tel:{phone}'>{phone}</a>`
+ - *<a href='tel:{contact:phone}'>{contact:phone}</a>* corresponds with contact:phone~.+
+ - _This option cannot be chosen as answer_
 
+This tagrendering has labels 
+`contact`
 
-The question is  *What is the website of {title()}?*
+### this.id
 
-This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) This is rendered with  `<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>`
+The question is `What is the email address of {title()}?`
+This rendering asks information about the property 
+[email](https://wiki.openstreetmap.org/wiki/Key:email)
+This is rendered with `<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>`
+ - *<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>* corresponds with contact:email~.+
+ - _This option cannot be chosen as answer_
+ - *<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>* corresponds with operator:email~.+
+ - _This option cannot be chosen as answer_
 
+This tagrendering has labels 
+`contact`
 
+### this.id
 
-  - *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>*  corresponds with  contact:website~.+
-  - _This option cannot be chosen as answer_
+The question is `What is the purpose of the animal shelter?`
 
+ - *Animals are kept here until adopted by a new owner* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:purpose' target='_blank'>purpose</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:purpose%3Dadoption' target='_blank'>adoption</a>
+ - *Animals are taken care of for the rest of their lives* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:purpose' target='_blank'>purpose</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:purpose%3Dsanctuary' target='_blank'>sanctuary</a>
+ - *Injured animals are rehabilitated here until they can be released in nature again * corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:purpose' target='_blank'>purpose</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:purpose%3Drelease' target='_blank'>release</a>
 
-This tagrendering has labels  `contact`
 
 
+### this.id
 
-### phone 
+The question is `What are the opening hours of {title()}?`
+This rendering asks information about the property 
+[opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours)
+This is rendered with `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
+ - *Only by appointment* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D"by appointment"' target='_blank'>"by appointment"</a>
+ - _This option cannot be chosen as answer_
+ - *Only by appointment* corresponds with opening_hours~^("by appointment"|by appointment)$
+ - _This option cannot be chosen as answer_
 
 
 
-The question is  *What is the phone number of {title()}?*
+### this.id
 
-This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) This is rendered with  `<a href='tel:{phone}'>{phone}</a>`
+The question is `Which animals are accepted here?`
+This rendering asks information about the property 
+[animal_shelter](https://wiki.openstreetmap.org/wiki/Key:animal_shelter)
+This is rendered with `{animal_shelter} is kept here`
+ - *Dogs are kept here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:animal_shelter' target='_blank'>animal_shelter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:animal_shelter%3Ddog' target='_blank'>dog</a>
+ - *Cats are kept here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:animal_shelter' target='_blank'>animal_shelter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:animal_shelter%3Dcat' target='_blank'>cat</a>
+ - *Horses are kept here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:animal_shelter' target='_blank'>animal_shelter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:animal_shelter%3Dhorse' target='_blank'>horse</a>
+ - *Birds are kept here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:animal_shelter' target='_blank'>animal_shelter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:animal_shelter%3Dbird' target='_blank'>bird</a>
+ - *Wild animals are kept here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:animal_shelter' target='_blank'>animal_shelter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:animal_shelter%3Dwildlife' target='_blank'>wildlife</a>
 
 
 
-  - *<a href='tel:{contact:phone}'>{contact:phone}</a>*  corresponds with  contact:phone~.+
-  - _This option cannot be chosen as answer_
+### this.id
 
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has labels  `contact`
 
 
 
-### email 
 
+### this.id
 
+_This tagrendering has no question and is thus read-only_
 
-The question is  *What is the email address of {title()}?*
 
-This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) This is rendered with  `<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>`
 
+This tagrendering has labels 
+`added_by_default`
 
-
-  - *<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>*  corresponds with  contact:email~.+
-  - _This option cannot be chosen as answer_
-  - *<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>*  corresponds with  operator:email~.+
-  - _This option cannot be chosen as answer_
-
-
-This tagrendering has labels  `contact`
-
-
-
-### 6 
-
-
-
-The question is  *What is the purpose of the animal shelter?*
-
-
-
-
-
-  - *Animals are kept here until adopted by a new owner*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:purpose' target='_blank'>purpose</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:purpose%3Dadoption' target='_blank'>adoption</a>
-  - *Animals are taken care of for the rest of their lives*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:purpose' target='_blank'>purpose</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:purpose%3Dsanctuary' target='_blank'>sanctuary</a>
-  - *Injured animals are rehabilitated here until they can be released in nature again *  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:purpose' target='_blank'>purpose</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:purpose%3Drelease' target='_blank'>release</a>
-
-
-
-
-### opening_hours_by_appointment 
-
-
-
-The question is  *What are the opening hours of {title()}?*
-
-This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
-
-
-
-  - *Only by appointment*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D"by appointment"' target='_blank'>"by appointment"</a>
-  - _This option cannot be chosen as answer_
-  - *Only by appointment*  corresponds with  opening_hours~^("by appointment"|by appointment)$
-  - _This option cannot be chosen as answer_
-
-
-
-
-### boarded_animals 
-
-
-
-The question is  *Which animals are accepted here?*
-
-This rendering asks information about the property  [animal_shelter](https://wiki.openstreetmap.org/wiki/Key:animal_shelter) This is rendered with  `{animal_shelter} is kept here`
-
-
-
-  - *Dogs are kept here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:animal_shelter' target='_blank'>animal_shelter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:animal_shelter%3Ddog' target='_blank'>dog</a>
-  - *Cats are kept here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:animal_shelter' target='_blank'>animal_shelter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:animal_shelter%3Dcat' target='_blank'>cat</a>
-  - *Horses are kept here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:animal_shelter' target='_blank'>animal_shelter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:animal_shelter%3Dhorse' target='_blank'>horse</a>
-  - *Birds are kept here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:animal_shelter' target='_blank'>animal_shelter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:animal_shelter%3Dbird' target='_blank'>bird</a>
-  - *Wild animals are kept here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:animal_shelter' target='_blank'>animal_shelter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:animal_shelter%3Dwildlife' target='_blank'>wildlife</a>
-
-
-
-
-### leftover-questions 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### lod 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### minimap 
-
-
-
+### this.id
 Shows a small map with the feature. Added by default to every popup
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### move-button 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### delete-button 
+### this.id
 
-
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
 
 
-### last_edit 
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
+
+
+### this.id
 Gives some metainfo about the last edit and who did edit it - rendering only
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:changeset~.+ & _last_edit:contributor~.+
+This tagrendering has labels 
+`added_by_default`
 
-This tagrendering has labels  `added_by_default`
+### this.id
 
-
-
-### favourite_status 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### qr_code 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has no question and is thus read-only
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has labels  `added_by_default`
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
-
-### share 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### all-tags 
-
-
-
-This tagrendering has no question and is thus read-only
 
  
 

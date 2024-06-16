@@ -25,31 +25,31 @@
   let expanded = false
 </script>
 
-  <div class="my-4">
-    {#if expanded}
-      <NearbyImages {tags} {state} {lon} {lat} {feature} {linkable} {layer}>
-        <button
-          slot="corner"
-          class="no-image-background h-6 w-6 cursor-pointer border-none p-0"
-          use:ariaLabel={t.close}
-          on:click={() => {
-            expanded = false
-          }}
-        >
-          <XCircleIcon />
-        </button>
-      </NearbyImages>
-    {:else}
+<div class="my-4">
+  {#if expanded}
+    <NearbyImages {tags} {state} {lon} {lat} {feature} {linkable} {layer}>
       <button
-        class="flex w-full items-center"
-        style="margin-left: 0; margin-right: 0"
+        slot="corner"
+        class="no-image-background h-6 w-6 cursor-pointer border-none p-0"
+        use:ariaLabel={t.close}
         on:click={() => {
-          expanded = true
+          expanded = false
         }}
-        aria-expanded={expanded}
       >
-        <Camera_plus class="mr-2 block h-8 w-8 p-1" />
-        <Tr t={t.seeNearby} />
+        <XCircleIcon />
       </button>
-    {/if}
-  </div>
+    </NearbyImages>
+  {:else}
+    <button
+      class="flex w-full items-center"
+      style="margin-left: 0; margin-right: 0"
+      on:click={() => {
+        expanded = true
+      }}
+      aria-expanded={expanded}
+    >
+      <Camera_plus class="mr-2 block h-8 w-8 p-1" />
+      <Tr t={t.seeNearby} />
+    </button>
+  {/if}
+</div>

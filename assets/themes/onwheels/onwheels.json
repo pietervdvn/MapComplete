@@ -482,7 +482,8 @@
             "cs": "Statistiky",
             "es": "Estadísticas",
             "eu": "Estatistika",
-            "pl": "Statystyki"
+            "pl": "Statystyki",
+            "zh_Hant": "統計數據"
           }
         },
         "tagRenderings+": [
@@ -525,7 +526,8 @@
                   "cs": "Dovoz",
                   "es": "Importar",
                   "eu": "Inportatu",
-                  "pl": "Import"
+                  "pl": "Import",
+                  "zh_Hant": "匯入"
                 },
                 "icon": "./assets/svg/addSmall.svg",
                 "maproulette_id": "mr_taskId"

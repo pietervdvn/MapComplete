@@ -8,7 +8,7 @@
   const t = Translations.t.privacy
   export let state: SpecialVisualizationState
   const usersettings = UserRelatedState.usersettingsConfig
-  const editPrivacy = usersettings.tagRenderings.find(tr => tr.id === "more_privacy")
+  const editPrivacy = usersettings.tagRenderings.find((tr) => tr.id === "more_privacy")
   const isLoggedIn = state.osmConnection.isLoggedIn
 </script>
 
@@ -48,16 +48,19 @@
 
     <li>
       {#if $isLoggedIn}
-      <TagRenderingEditable config={editPrivacy} selectedElement={{
-              type: "Feature",
-              properties: { id: "settings" },
-              geometry: { type: "Point", coordinates: [0, 0] },
-            }}
-                            {state}
-                            tags={state.userRelatedState.preferencesAsTags} />
-        {:else}
-          <Tr t={t.items.distanceIndicator} />
-        {/if}
+        <TagRenderingEditable
+          config={editPrivacy}
+          selectedElement={{
+            type: "Feature",
+            properties: { id: "settings" },
+            geometry: { type: "Point", coordinates: [0, 0] },
+          }}
+          {state}
+          tags={state.userRelatedState.preferencesAsTags}
+        />
+      {:else}
+        <Tr t={t.items.distanceIndicator} />
+      {/if}
     </li>
   </ul>
 

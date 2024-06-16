@@ -25,23 +25,23 @@ Layer showing stairs and escalators
 1. [ Themes using this layer ](#-themes-using-this-layer-)
 2. [ Basic tags for this layer ](#-basic-tags-for-this-layer-)
 3. [ Supported attributes ](#-supported-attributes-)
-  - [just_created](#just_created)
-  - [images](#images)
-  - [multilevels](#multilevels)
-  - [conveying](#conveying)
-  - [handrail](#handrail)
-  - [tactile_writing](#tactile_writing)
-  - [tactile_writing_language](#tactile_writing_language)
-  - [ramp](#ramp)
-  - [incline](#incline)
-  - [leftover-questions](#leftover-questions)
-  - [lod](#lod)
-  - [minimap](#minimap)
-  - [last_edit](#last_edit)
-  - [favourite_status](#favourite_status)
-  - [qr_code](#qr_code)
-  - [share](#share)
-  - [all-tags](#all-tags)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
 
  Themes using this layer 
 -------------------------
@@ -89,257 +89,171 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/incline#values) [incline](https://wiki.openstreetmap.org/wiki/Key:incline) | [slope](../SpecialInputElements.md#slope) | 
 
 
-
-
-### just_created 
-
-
-
+### this.id
 This element shows a 'thank you' that the contributor has recently created this element
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
+ - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
+This tagrendering has labels 
+`added_by_default`
 
-
-
-
-
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
-
-
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### images 
-
-
-
+### this.id
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
 
 
 
 
+### this.id
 
-### multilevels 
+The question is `Between which levels are these stairs?`
+This rendering asks information about the property 
+[level](https://wiki.openstreetmap.org/wiki/Key:level)
+This is rendered with `These stairs are between the levels {level}`
+ - *Located underground* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground' target='_blank'>underground</a>
+ - _This option cannot be chosen as answer_
+ - *Located on the ground floor* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D0' target='_blank'>0</a>
+ - *Located on the ground floor* corresponds with level=
+ - _This option cannot be chosen as answer_
+ - *Located on the first floor* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D1' target='_blank'>1</a>
+ - *Located on the first basement level* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D-1' target='_blank'>-1</a>
 
 
 
-The question is  *Between which levels are these stairs?*
+### this.id
 
-This rendering asks information about the property  [level](https://wiki.openstreetmap.org/wiki/Key:level) This is rendered with  `These stairs are between the levels {level}`
+_This tagrendering has no question and is thus read-only_
 
+ - *This is an escalator* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:conveying' target='_blank'>conveying</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:conveying%3Dyes' target='_blank'>yes</a>
+ - *This is not an escalator* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:conveying' target='_blank'>conveying</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:conveying%3Dno' target='_blank'>no</a>
+ - *This is not an escalator* corresponds with conveying=
+ - _This option cannot be chosen as answer_
 
 
-  - *Located underground*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground' target='_blank'>underground</a>
-  - _This option cannot be chosen as answer_
-  - *Located on the ground floor*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D0' target='_blank'>0</a>
-  - *Located on the ground floor*  corresponds with  level=
-  - _This option cannot be chosen as answer_
-  - *Located on the first floor*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D1' target='_blank'>1</a>
-  - *Located on the first basement level*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D-1' target='_blank'>-1</a>
 
+### this.id
 
+The question is `Does this stair have a handrail?`
 
+ - *These stairs have a handrail* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:handrail' target='_blank'>handrail</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:handrail%3Dyes' target='_blank'>yes</a>
+ - *These stairs do <b>not</b> have a handrail* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:handrail' target='_blank'>handrail</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:handrail%3Dno' target='_blank'>no</a>
 
-### conveying 
 
 
+### this.id
 
-This tagrendering has no question and is thus read-only
+The question is `Do these stairs have tactile writing on the handrail?`
 
+ - *There is tactile writing on the handrail* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:tactile_writing' target='_blank'>tactile_writing</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tactile_writing%3Dyes' target='_blank'>yes</a>
+ - *There is no tactile writing on the handrail* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:tactile_writing' target='_blank'>tactile_writing</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tactile_writing%3Dno' target='_blank'>no</a>
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:handrail' target='_blank'>handrail</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:handrail%3Dyes' target='_blank'>yes</a> & conveying!=yes
 
 
+### this.id
 
+_This tagrendering has no question and is thus read-only_
 
-  - *This is an escalator*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:conveying' target='_blank'>conveying</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:conveying%3Dyes' target='_blank'>yes</a>
-  - *This is not an escalator*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:conveying' target='_blank'>conveying</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:conveying%3Dno' target='_blank'>no</a>
-  - *This is not an escalator*  corresponds with  conveying=
-  - _This option cannot be chosen as answer_
 
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:tactile_writing' target='_blank'>tactile_writing</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tactile_writing%3Dyes' target='_blank'>yes</a>
 
 
+### this.id
 
-### handrail 
+The question is `Is there a ramp at these stairs?`
 
+ - *There is a ramp for bicycles here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:ramp:bicycle' target='_blank'>ramp:bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:ramp:bicycle%3Dyes' target='_blank'>yes</a>
+ - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:ramp:bicycle' target='_blank'>ramp:bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:ramp:bicycle%3Dno' target='_blank'>no</a>
+ - *There is a ramp for wheelchairs here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:ramp:wheelchair' target='_blank'>ramp:wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:ramp:wheelchair%3Dyes' target='_blank'>yes</a>
+ - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:ramp:wheelchair' target='_blank'>ramp:wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:ramp:wheelchair%3Dno' target='_blank'>no</a>
+ - *There is ramp for wheelchairs here, but it is shown separately on the map* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:ramp' target='_blank'>ramp</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:ramp%3Dseparate' target='_blank'>separate</a>
+ - _This option cannot be chosen as answer_
+ - *There is a ramp for strollers here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:ramp:stroller' target='_blank'>ramp:stroller</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:ramp:stroller%3Dyes' target='_blank'>yes</a>
+ - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:ramp:stroller' target='_blank'>ramp:stroller</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:ramp:stroller%3Dno' target='_blank'>no</a>
+ - *There is no ramp at these stairs* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:ramp' target='_blank'>ramp</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:ramp%3Dno' target='_blank'>no</a>
+ - Unselecting this answer will add ramp=
 
 
-The question is  *Does this stair have a handrail?*
 
+### this.id
 
+The question is `What is the incline of these stairs?`
+This rendering asks information about the property 
+[incline](https://wiki.openstreetmap.org/wiki/Key:incline)
+This is rendered with `These stairs have an incline of {incline}`
+ - *The upward direction is {direction_absolute()}* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:incline' target='_blank'>incline</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:incline%3Dup' target='_blank'>up</a>
+ - _This option cannot be chosen as answer_
+ - *The downward direction is {direction_absolute()}* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:incline' target='_blank'>incline</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:incline%3Ddown' target='_blank'>down</a>
+ - _This option cannot be chosen as answer_
 
 
 
-  - *These stairs have a handrail*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:handrail' target='_blank'>handrail</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:handrail%3Dyes' target='_blank'>yes</a>
-  - *These stairs do <b>not</b> have a handrail*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:handrail' target='_blank'>handrail</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:handrail%3Dno' target='_blank'>no</a>
+### this.id
 
+_This tagrendering has no question and is thus read-only_
 
 
 
-### tactile_writing 
 
 
+### this.id
 
-The question is  *Do these stairs have tactile writing on the handrail?*
+_This tagrendering has no question and is thus read-only_
 
 
 
+This tagrendering has labels 
+`added_by_default`
 
-
-  - *There is tactile writing on the handrail*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:tactile_writing' target='_blank'>tactile_writing</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tactile_writing%3Dyes' target='_blank'>yes</a>
-  - *There is no tactile writing on the handrail*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:tactile_writing' target='_blank'>tactile_writing</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tactile_writing%3Dno' target='_blank'>no</a>
-
-
-This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:handrail' target='_blank'>handrail</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:handrail%3Dyes' target='_blank'>yes</a> & conveying!=yes`
-
-
-
-### tactile_writing_language 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:tactile_writing' target='_blank'>tactile_writing</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tactile_writing%3Dyes' target='_blank'>yes</a>`
-
-
-
-### ramp 
-
-
-
-The question is  *Is there a ramp at these stairs?*
-
-
-
-
-
-  - *There is a ramp for bicycles here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:ramp:bicycle' target='_blank'>ramp:bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:ramp:bicycle%3Dyes' target='_blank'>yes</a>
-  - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:ramp:bicycle' target='_blank'>ramp:bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:ramp:bicycle%3Dno' target='_blank'>no</a>
-  - *There is a ramp for wheelchairs here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:ramp:wheelchair' target='_blank'>ramp:wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:ramp:wheelchair%3Dyes' target='_blank'>yes</a>
-  - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:ramp:wheelchair' target='_blank'>ramp:wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:ramp:wheelchair%3Dno' target='_blank'>no</a>
-  - *There is ramp for wheelchairs here, but it is shown separately on the map*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:ramp' target='_blank'>ramp</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:ramp%3Dseparate' target='_blank'>separate</a>
-  - _This option cannot be chosen as answer_
-  - *There is a ramp for strollers here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:ramp:stroller' target='_blank'>ramp:stroller</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:ramp:stroller%3Dyes' target='_blank'>yes</a>
-  - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:ramp:stroller' target='_blank'>ramp:stroller</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:ramp:stroller%3Dno' target='_blank'>no</a>
-  - *There is no ramp at these stairs*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:ramp' target='_blank'>ramp</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:ramp%3Dno' target='_blank'>no</a>
-  - Unselecting this answer will add ramp=
-
-
-
-
-### incline 
-
-
-
-The question is  *What is the incline of these stairs?*
-
-This rendering asks information about the property  [incline](https://wiki.openstreetmap.org/wiki/Key:incline) This is rendered with  `These stairs have an incline of {incline}`
-
-
-
-  - *The upward direction is {direction_absolute()}*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:incline' target='_blank'>incline</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:incline%3Dup' target='_blank'>up</a>
-  - _This option cannot be chosen as answer_
-  - *The downward direction is {direction_absolute()}*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:incline' target='_blank'>incline</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:incline%3Ddown' target='_blank'>down</a>
-  - _This option cannot be chosen as answer_
-
-
-
-
-### leftover-questions 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### lod 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### minimap 
-
-
-
+### this.id
 Shows a small map with the feature. Added by default to every popup
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
 
 
-### last_edit 
 
-
-
+### this.id
 Gives some metainfo about the last edit and who did edit it - rendering only
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:changeset~.+ & _last_edit:contributor~.+
+This tagrendering has labels 
+`added_by_default`
 
-This tagrendering has labels  `added_by_default`
+### this.id
 
-
-
-### favourite_status 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### qr_code 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has no question and is thus read-only
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has labels  `added_by_default`
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
-
-### share 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### all-tags 
-
-
-
-This tagrendering has no question and is thus read-only
 
  
 

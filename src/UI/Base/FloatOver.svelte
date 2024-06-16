@@ -10,7 +10,6 @@
    * The slotted element will be shown on top, with a lower-opacity border
    */
   const dispatch = createEventDispatcher<{ close }>()
-
 </script>
 
 <!-- Draw the background over the total screen -->

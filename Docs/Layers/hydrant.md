@@ -25,24 +25,24 @@ Map layer to show fire hydrants.
 1. [ Themes using this layer ](#-themes-using-this-layer-)
 2. [ Basic tags for this layer ](#-basic-tags-for-this-layer-)
 3. [ Supported attributes ](#-supported-attributes-)
-  - [just_created](#just_created)
-  - [hydrant-color](#hydrant-color)
-  - [hydrant-type](#hydrant-type)
-  - [hydrant-state](#hydrant-state)
-  - [hydrant-diameter](#hydrant-diameter)
-  - [hydrant-number-of-couplings](#hydrant-number-of-couplings)
-  - [hydrant-couplings](#hydrant-couplings)
-  - [hydrant-couplings-diameters](#hydrant-couplings-diameters)
-  - [images](#images)
-  - [leftover-questions](#leftover-questions)
-  - [lod](#lod)
-  - [minimap](#minimap)
-  - [move-button](#move-button)
-  - [last_edit](#last_edit)
-  - [favourite_status](#favourite_status)
-  - [qr_code](#qr_code)
-  - [share](#share)
-  - [all-tags](#all-tags)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
 
  Themes using this layer 
 -------------------------
@@ -91,238 +91,172 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/couplings:diameters#values) [couplings:diameters](https://wiki.openstreetmap.org/wiki/Key:couplings:diameters) | [string](../SpecialInputElements.md#string) | 
 
 
-
-
-### just_created 
-
-
-
+### this.id
 This element shows a 'thank you' that the contributor has recently created this element
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
+ - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
+This tagrendering has labels 
+`added_by_default`
 
+### this.id
 
+The question is `What color is the hydrant?`
+This rendering asks information about the property 
+[colour](https://wiki.openstreetmap.org/wiki/Key:colour)
+This is rendered with `The hydrant color is {colour}`
+ - *The hydrant color is yellow.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dyellow' target='_blank'>yellow</a>
+ - *The hydrant color is red.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dred' target='_blank'>red</a>
 
 
 
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
+### this.id
 
+The question is `What type of hydrant is it?`
+This rendering asks information about the property 
+[fire_hydrant:type](https://wiki.openstreetmap.org/wiki/Key:fire_hydrant:type)
+This is rendered with ` Hydrant type: {fire_hydrant:type}`
+ - *Pillar type.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fire_hydrant:type' target='_blank'>fire_hydrant:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fire_hydrant:type%3Dpillar' target='_blank'>pillar</a>
+ - *Pipe type.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fire_hydrant:type' target='_blank'>fire_hydrant:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fire_hydrant:type%3Dpipe' target='_blank'>pipe</a>
+ - *Wall type.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fire_hydrant:type' target='_blank'>fire_hydrant:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fire_hydrant:type%3Dwall' target='_blank'>wall</a>
+ - *Underground type.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fire_hydrant:type' target='_blank'>fire_hydrant:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fire_hydrant:type%3Dunderground' target='_blank'>underground</a>
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
 
-This tagrendering has labels  `added_by_default`
 
+### this.id
 
+The question is `Is this hydrant still working?`
 
-### hydrant-color 
+ - *The hydrant is (fully or partially) working* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:emergency' target='_blank'>emergency</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:emergency%3Dfire_hydrant' target='_blank'>fire_hydrant</a>
+ - *The hydrant is unavailable* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:disused:emergency' target='_blank'>disused:emergency</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:disused:emergency%3Dfire_hydrant' target='_blank'>fire_hydrant</a> & emergency=
+ - *The hydrant has been removed* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:removed:emergency' target='_blank'>removed:emergency</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:removed:emergency%3Dfire_hydrant' target='_blank'>fire_hydrant</a> & emergency=
 
 
 
-The question is  *What color is the hydrant?*
+### this.id
 
-This rendering asks information about the property  [colour](https://wiki.openstreetmap.org/wiki/Key:colour) This is rendered with  `The hydrant color is {colour}`
+The question is `What is the pipe diameter of this hydrant?`
+This rendering asks information about the property 
+[fire_hydrant:diameter](https://wiki.openstreetmap.org/wiki/Key:fire_hydrant:diameter)
+This is rendered with `Pipe diameter: {canonical(fire_hydrant:diameter)}`
 
 
 
-  - *The hydrant color is yellow.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dyellow' target='_blank'>yellow</a>
-  - *The hydrant color is red.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dred' target='_blank'>red</a>
 
+### this.id
 
+The question is `How many couplings does this fire hydrant have?`
+This rendering asks information about the property 
+[couplings](https://wiki.openstreetmap.org/wiki/Key:couplings)
+This is rendered with `Number of couplings: {couplings}`
 
 
-### hydrant-type 
 
 
+### this.id
 
-The question is  *What type of hydrant is it?*
+The question is `What kind of couplings does this hydrant have?`
+This rendering asks information about the property 
+[couplings:type](https://wiki.openstreetmap.org/wiki/Key:couplings:type)
+This is rendered with `Couplings: {couplings:type}`
+ - *Storz coupling* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:couplings:type' target='_blank'>couplings:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:couplings:type%3DStorz' target='_blank'>Storz</a>
+ - *UNI coupling* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:couplings:type' target='_blank'>couplings:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:couplings:type%3DUNI' target='_blank'>UNI</a>
+ - *Barcelona coupling* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:couplings:type' target='_blank'>couplings:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:couplings:type%3DBarcelona' target='_blank'>Barcelona</a>
 
-This rendering asks information about the property  [fire_hydrant:type](https://wiki.openstreetmap.org/wiki/Key:fire_hydrant:type) This is rendered with  ` Hydrant type: {fire_hydrant:type}`
 
 
+### this.id
 
-  - *Pillar type.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fire_hydrant:type' target='_blank'>fire_hydrant:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fire_hydrant:type%3Dpillar' target='_blank'>pillar</a>
-  - *Pipe type.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fire_hydrant:type' target='_blank'>fire_hydrant:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fire_hydrant:type%3Dpipe' target='_blank'>pipe</a>
-  - *Wall type.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fire_hydrant:type' target='_blank'>fire_hydrant:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fire_hydrant:type%3Dwall' target='_blank'>wall</a>
-  - *Underground type.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fire_hydrant:type' target='_blank'>fire_hydrant:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fire_hydrant:type%3Dunderground' target='_blank'>underground</a>
+The question is `What diameter are the couplings of this hydrant?`
+This rendering asks information about the property 
+[couplings:diameters](https://wiki.openstreetmap.org/wiki/Key:couplings:diameters)
+This is rendered with `Coupling diameters: {couplings:diameters}`
 
 
 
 
-### hydrant-state 
-
-
-
-The question is  *Is this hydrant still working?*
-
-
-
-
-
-  - *The hydrant is (fully or partially) working*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:emergency' target='_blank'>emergency</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:emergency%3Dfire_hydrant' target='_blank'>fire_hydrant</a>
-  - *The hydrant is unavailable*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:disused:emergency' target='_blank'>disused:emergency</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:disused:emergency%3Dfire_hydrant' target='_blank'>fire_hydrant</a> & emergency=
-  - *The hydrant has been removed*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:removed:emergency' target='_blank'>removed:emergency</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:removed:emergency%3Dfire_hydrant' target='_blank'>fire_hydrant</a> & emergency=
-
-
-
-
-### hydrant-diameter 
-
-
-
-The question is  *What is the pipe diameter of this hydrant?*
-
-This rendering asks information about the property  [fire_hydrant:diameter](https://wiki.openstreetmap.org/wiki/Key:fire_hydrant:diameter) This is rendered with  `Pipe diameter: {canonical(fire_hydrant:diameter)}`
-
-
-
-### hydrant-number-of-couplings 
-
-
-
-The question is  *How many couplings does this fire hydrant have?*
-
-This rendering asks information about the property  [couplings](https://wiki.openstreetmap.org/wiki/Key:couplings) This is rendered with  `Number of couplings: {couplings}`
-
-
-
-### hydrant-couplings 
-
-
-
-The question is  *What kind of couplings does this hydrant have?*
-
-This rendering asks information about the property  [couplings:type](https://wiki.openstreetmap.org/wiki/Key:couplings:type) This is rendered with  `Couplings: {couplings:type}`
-
-
-
-  - *Storz coupling*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:couplings:type' target='_blank'>couplings:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:couplings:type%3DStorz' target='_blank'>Storz</a>
-  - *UNI coupling*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:couplings:type' target='_blank'>couplings:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:couplings:type%3DUNI' target='_blank'>UNI</a>
-  - *Barcelona coupling*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:couplings:type' target='_blank'>couplings:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:couplings:type%3DBarcelona' target='_blank'>Barcelona</a>
-
-
-
-
-### hydrant-couplings-diameters 
-
-
-
-The question is  *What diameter are the couplings of this hydrant?*
-
-This rendering asks information about the property  [couplings:diameters](https://wiki.openstreetmap.org/wiki/Key:couplings:diameters) This is rendered with  `Coupling diameters: {couplings:diameters}`
-
-
-
-### images 
-
-
-
+### this.id
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### leftover-questions 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### lod 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has no question and is thus read-only
+
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has labels  `added_by_default`
+This tagrendering has labels 
+`added_by_default`
 
-
-
-### minimap 
-
-
-
+### this.id
 Shows a small map with the feature. Added by default to every popup
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### move-button 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### last_edit 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
+
+
+### this.id
 Gives some metainfo about the last edit and who did edit it - rendering only
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:changeset~.+ & _last_edit:contributor~.+
+This tagrendering has labels 
+`added_by_default`
 
-This tagrendering has labels  `added_by_default`
+### this.id
 
-
-
-### favourite_status 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### qr_code 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has no question and is thus read-only
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has labels  `added_by_default`
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
-
-### share 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### all-tags 
-
-
-
-This tagrendering has no question and is thus read-only
 
  
 

@@ -185,8 +185,6 @@ export class StackedRenderingChart extends ChartJs {
 }
 
 export default class TagRenderingChart extends Combine {
-
-
     /**
      * Creates a chart about this tagRendering for the given data
      */
@@ -223,9 +221,9 @@ export default class TagRenderingChart extends Combine {
             ChartJsColours.notApplicableBorderColor,
         ]
         const backgroundColor = [
-           ChartJsColours.unknownColor,
-           ChartJsColours.otherColor,
-           ChartJsColours.notApplicableColor,
+            ChartJsColours.unknownColor,
+            ChartJsColours.otherColor,
+            ChartJsColours.notApplicableColor,
         ]
 
         while (borderColor.length < data.length) {

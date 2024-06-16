@@ -264,7 +264,7 @@ export interface QuestionableTagRenderingConfigJson extends TagRenderingConfigJs
          * ifunset: The question will be considered answered if any value is set for the key
          * group: expert
          */
-        invalidValues?: TagConfigJson,
+        invalidValues?: TagConfigJson
 
         /**
          * question: If this key shared and distinguished by a postfix, what is the postfix?

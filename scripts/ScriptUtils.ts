@@ -1,7 +1,7 @@
 import * as fs from "fs"
 import { existsSync, lstatSync, readdirSync, readFileSync } from "fs"
 import { Utils } from "../src/Utils"
-import {https} from "follow-redirects"
+import { https } from "follow-redirects"
 import { LayoutConfigJson } from "../src/Models/ThemeConfig/Json/LayoutConfigJson"
 import { LayerConfigJson } from "../src/Models/ThemeConfig/Json/LayerConfigJson"
 import xml2js from "xml2js"
@@ -175,7 +175,7 @@ export default class ScriptUtils {
         const requestPromise = new Promise((resolve, reject) => {
             try {
                 headers = headers ?? {}
-                if(!headers.Accept){
+                if (!headers.Accept) {
                     headers.accept ??= "application/json"
                 }
                 ScriptUtils.erasableLog(" > ScriptUtils.Download(", url, ")")
@@ -222,15 +222,12 @@ export default class ScriptUtils {
             }
         })
         const timeoutPromise = new Promise<any>((resolve, reject) => {
-            setTimeout(
-                () => {
-                    if(timeoutSecs === undefined){
-                        return // No resolve
-                    }
-                   resolve("timeout")
-                },
-                (timeoutSecs ?? 10) * 1000
-            )
+            setTimeout(() => {
+                if (timeoutSecs === undefined) {
+                    return // No resolve
+                }
+                resolve("timeout")
+            }, (timeoutSecs ?? 10) * 1000)
         })
         return Promise.race([requestPromise, timeoutPromise])
     }

@@ -25,21 +25,23 @@ A layer showing dogparks, which are areas where dog are allowed to run without a
 1. [ Themes using this layer ](#-themes-using-this-layer-)
 2. [ Basic tags for this layer ](#-basic-tags-for-this-layer-)
 3. [ Supported attributes ](#-supported-attributes-)
-  - [just_created](#just_created)
-  - [dogpark-fenced](#dogpark-fenced)
-  - [smalldogs](#smalldogs)
-  - [Name](#name)
-  - [dogarea](#dogarea)
-  - [reviews](#reviews)
-  - [images](#images)
-  - [leftover-questions](#leftover-questions)
-  - [lod](#lod)
-  - [minimap](#minimap)
-  - [last_edit](#last_edit)
-  - [favourite_status](#favourite_status)
-  - [qr_code](#qr_code)
-  - [share](#share)
-  - [all-tags](#all-tags)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
 
  Themes using this layer 
 -------------------------
@@ -82,199 +84,163 @@ this quick overview is incomplete
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/name#values) [name](https://wiki.openstreetmap.org/wiki/Key:name) | [string](../SpecialInputElements.md#string) | 
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/opening_hours#values) [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | [24/7](https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/website#values) [website](https://wiki.openstreetmap.org/wiki/Key:website) | [url](../SpecialInputElements.md#url) | 
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/barrier#values) [barrier](https://wiki.openstreetmap.org/wiki/Key:barrier) | Multiple choice | [fence](https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dfence) [no](https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dno)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/small_dog#values) [small_dog](https://wiki.openstreetmap.org/wiki/Key:small_dog) | Multiple choice | [separate](https://wiki.openstreetmap.org/wiki/Tag:small_dog%3Dseparate) [shared](https://wiki.openstreetmap.org/wiki/Tag:small_dog%3Dshared)
-[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/name#values) [name](https://wiki.openstreetmap.org/wiki/Key:name) | [string](../SpecialInputElements.md#string) | 
 
 
-
-
-### just_created 
-
-
-
+### this.id
 This element shows a 'thank you' that the contributor has recently created this element
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
+ - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
+This tagrendering has labels 
+`added_by_default`
 
-
-
-
-
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
-
-
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### dogpark-fenced 
-
-
-
-The question is  *It this dog park fenced in?*
-
-
-
-
-
-  - *This dogpark is fenced all around*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:barrier' target='_blank'>barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dfence' target='_blank'>fence</a>
-  - *This dogpark is not fenced all around*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:barrier' target='_blank'>barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dno' target='_blank'>no</a>
-
-
-
-
-### smalldogs 
-
-
-
-The question is  *Does this dog park have a separate fenced in area for small dogs and puppies?*
-
-
-
-
-
-  - *Have separate area for puppies and small dogs*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:small_dog' target='_blank'>small_dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:small_dog%3Dseparate' target='_blank'>separate</a>
-  - *Does <strong>not</strong> have a separate area for puppies and small dogs*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:small_dog' target='_blank'>small_dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:small_dog%3Dshared' target='_blank'>shared</a>
-
-
-
-
-### Name 
-
-
-
-The question is  *What is the name of this dog park?*
-
-This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) This is rendered with  `The name of this dog park is {name}`
-
-
-
-### dogarea 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### reviews 
-
-
-
-Shows the reviews module (including the possibility to leave a review)
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### images 
-
-
-
+### this.id
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### leftover-questions 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### lod 
+### this.id
+Shows the reviews module (including the possibility to leave a review)
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has no question and is thus read-only
+
+
+### this.id
+
+The question is `What is the name of this dog park?`
+This rendering asks information about the property 
+[name](https://wiki.openstreetmap.org/wiki/Key:name)
+This is rendered with `The name of this dog park is {name}`
 
 
 
-This tagrendering has labels  `added_by_default`
+
+### this.id
+
+The question is `What are the opening hours of {title()}?`
+This rendering asks information about the property 
+[opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours)
+This is rendered with `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
+ - *24/7 opened (including holidays)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
+ - *Marked as closed for an unspecified time* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>
+ - _This option cannot be chosen as answer_
 
 
 
-### minimap 
+### this.id
+
+The question is `What is the website of {title()}?`
+This rendering asks information about the property 
+[website](https://wiki.openstreetmap.org/wiki/Key:website)
+This is rendered with `<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>`
+ - *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>* corresponds with contact:website~.+
+ - _This option cannot be chosen as answer_
+
+This tagrendering has labels 
+`contact`
+
+### this.id
+
+The question is `It this dog park fenced in?`
+
+ - *This dogpark is fenced all around* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:barrier' target='_blank'>barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dfence' target='_blank'>fence</a>
+ - *This dogpark is not fenced all around* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:barrier' target='_blank'>barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dno' target='_blank'>no</a>
 
 
 
+### this.id
+
+The question is `Does this dog park have a separate fenced in area for small dogs and puppies?`
+
+ - *Have separate area for puppies and small dogs* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:small_dog' target='_blank'>small_dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:small_dog%3Dseparate' target='_blank'>separate</a>
+ - *Does <strong>not</strong> have a separate area for puppies and small dogs* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:small_dog' target='_blank'>small_dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:small_dog%3Dshared' target='_blank'>shared</a>
+
+
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
 Shows a small map with the feature. Added by default to every popup
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
 
 
-### last_edit 
 
-
-
+### this.id
 Gives some metainfo about the last edit and who did edit it - rendering only
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:changeset~.+ & _last_edit:contributor~.+
+This tagrendering has labels 
+`added_by_default`
 
-This tagrendering has labels  `added_by_default`
+### this.id
 
-
-
-### favourite_status 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### qr_code 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has no question and is thus read-only
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has labels  `added_by_default`
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
-
-### share 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### all-tags 
-
-
-
-This tagrendering has no question and is thus read-only
 
  
 

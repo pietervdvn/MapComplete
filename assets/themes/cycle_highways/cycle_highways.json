@@ -12,7 +12,8 @@
     "da": "Cykelmotorveje",
     "pa_PK": "سائیکل‌وے",
     "cs": "Cyklodálnice",
-    "pl": "Ścieżki rowerowe"
+    "pl": "Ścieżki rowerowe",
+    "zh_Hant": "單車高速公路"
   },
   "description": {
     "en": "This map shows cycle highways",
@@ -120,7 +121,8 @@
         "pa_PK": "سائیکل‌وے",
         "cs": "cyklodálnice",
         "pl": "ścieżki rowerowe",
-        "it": "strade per biciclette"
+        "it": "strade per biciclette",
+        "zh_Hant": "單車高速公路"
       },
       "source": {
         "osmTags": "cycle_network=BE-VLG:cycle_highway"
@@ -139,7 +141,8 @@
           "pa_PK": "سائیکل‌وے",
           "cs": "cyklodálnice",
           "pl": "ścieżka rowerowa",
-          "it": "strada per bicilette"
+          "it": "strada per bicilette",
+          "zh_Hant": "單車高速公路"
         }
       },
       "filter": [

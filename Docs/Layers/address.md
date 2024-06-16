@@ -26,18 +26,18 @@ Addresses
 1. [ Themes using this layer ](#-themes-using-this-layer-)
 2. [ Basic tags for this layer ](#-basic-tags-for-this-layer-)
 3. [ Supported attributes ](#-supported-attributes-)
-  - [just_created](#just_created)
-  - [housenumber](#housenumber)
-  - [street](#street)
-  - [fixme](#fixme)
-  - [leftover-questions](#leftover-questions)
-  - [lod](#lod)
-  - [minimap](#minimap)
-  - [last_edit](#last_edit)
-  - [favourite_status](#favourite_status)
-  - [qr_code](#qr_code)
-  - [share](#share)
-  - [all-tags](#all-tags)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
 
  Themes using this layer 
 -------------------------
@@ -85,165 +85,112 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/fixme#values) [fixme](https://wiki.openstreetmap.org/wiki/Key:fixme) | [string](../SpecialInputElements.md#string) | [](https://wiki.openstreetmap.org/wiki/Tag:fixme%3D)
 
 
-
-
-### just_created 
-
-
-
+### this.id
 This element shows a 'thank you' that the contributor has recently created this element
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
+ - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
+This tagrendering has labels 
+`added_by_default`
 
+### this.id
 
+The question is `What is the number of this house?`
+This rendering asks information about the property 
+[addr:housenumber](https://wiki.openstreetmap.org/wiki/Key:addr:housenumber)
+This is rendered with `The house number is <b>{addr:housenumber}</b>`
+ - *This building has no house number* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:nohousenumber' target='_blank'>nohousenumber</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:nohousenumber%3Dyes' target='_blank'>yes</a>
 
 
 
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
+### this.id
 
+The question is `What street is this address located in?`
+This rendering asks information about the property 
+[addr:street](https://wiki.openstreetmap.org/wiki/Key:addr:street)
+This is rendered with `This address is in street <b>{addr:street}</b>`
+ - *Located in <b>{_closest_street:0:name}</b>* corresponds with addr:street=
+ - *Located in <b>{_closest_street:1:name}</b>* corresponds with addr:street=
+ - *Located in <b>{_closest_street:2:name}</b>* corresponds with addr:street=
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
 
-This tagrendering has labels  `added_by_default`
 
+### this.id
 
+The question is `What should be fixed here? Please explain`
+This rendering asks information about the property 
+[fixme](https://wiki.openstreetmap.org/wiki/Key:fixme)
+This is rendered with `<b>Fixme description</b>{fixme}`
+ - *No fixme - write something here to explain complicated cases* corresponds with fixme=
 
-### housenumber 
 
 
+### this.id
 
-The question is  *What is the number of this house?*
+_This tagrendering has no question and is thus read-only_
 
-This rendering asks information about the property  [addr:housenumber](https://wiki.openstreetmap.org/wiki/Key:addr:housenumber) This is rendered with  `The house number is <b>{addr:housenumber}</b>`
 
 
 
-  - *This building has no house number*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:nohousenumber' target='_blank'>nohousenumber</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:nohousenumber%3Dyes' target='_blank'>yes</a>
 
+### this.id
 
+_This tagrendering has no question and is thus read-only_
 
 
-### street 
 
+This tagrendering has labels 
+`added_by_default`
 
-
-The question is  *What street is this address located in?*
-
-This rendering asks information about the property  [addr:street](https://wiki.openstreetmap.org/wiki/Key:addr:street) This is rendered with  `This address is in street <b>{addr:street}</b>`
-
-
-
-  - *Located in <b>{_closest_street:0:name}</b>*  corresponds with  addr:street=
-  - *Located in <b>{_closest_street:1:name}</b>*  corresponds with  addr:street=
-  - *Located in <b>{_closest_street:2:name}</b>*  corresponds with  addr:street=
-
-
-
-
-### fixme 
-
-
-
-The question is  *What should be fixed here? Please explain*
-
-This rendering asks information about the property  [fixme](https://wiki.openstreetmap.org/wiki/Key:fixme) This is rendered with  `<b>Fixme description</b>{fixme}`
-
-
-
-  - *No fixme - write something here to explain complicated cases*  corresponds with  fixme=
-
-
-
-
-### leftover-questions 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### lod 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### minimap 
-
-
-
+### this.id
 Shows a small map with the feature. Added by default to every popup
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
 
 
-### last_edit 
 
-
-
+### this.id
 Gives some metainfo about the last edit and who did edit it - rendering only
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:changeset~.+ & _last_edit:contributor~.+
+This tagrendering has labels 
+`added_by_default`
 
-This tagrendering has labels  `added_by_default`
+### this.id
 
-
-
-### favourite_status 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### qr_code 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has no question and is thus read-only
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has labels  `added_by_default`
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
-
-### share 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### all-tags 
-
-
-
-This tagrendering has no question and is thus read-only
 
  
 

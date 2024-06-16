@@ -44,7 +44,7 @@
       (search) => {
         search = search?.trim()
         if (!search) {
-          if(hideUnlessSearched){
+          if (hideUnlessSearched) {
             if (mapping.priorityIf?.matchesProperties(tags.data)) {
               return true
             }

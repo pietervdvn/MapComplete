@@ -25,23 +25,23 @@ Layer with all tertiary education institutes (ISCED:2011 levels 6,7 and 8)
 1. [ Themes using this layer ](#-themes-using-this-layer-)
 2. [ Basic tags for this layer ](#-basic-tags-for-this-layer-)
 3. [ Supported attributes ](#-supported-attributes-)
-  - [just_created](#just_created)
-  - [institution-kind](#institution-kind)
-  - [isced](#isced)
-  - [capacity](#capacity)
-  - [gender](#gender)
-  - [website](#website)
-  - [email](#email)
-  - [phone](#phone)
-  - [leftover-questions](#leftover-questions)
-  - [lod](#lod)
-  - [minimap](#minimap)
-  - [move-button](#move-button)
-  - [last_edit](#last_edit)
-  - [favourite_status](#favourite_status)
-  - [qr_code](#qr_code)
-  - [share](#share)
-  - [all-tags](#all-tags)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
 
  Themes using this layer 
 -------------------------
@@ -94,247 +94,166 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/phone#values) [phone](https://wiki.openstreetmap.org/wiki/Key:phone) | [phone](../SpecialInputElements.md#phone) | 
 
 
-
-
-### just_created 
-
-
-
+### this.id
 This element shows a 'thank you' that the contributor has recently created this element
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
+ - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
+This tagrendering has labels 
+`added_by_default`
 
+### this.id
 
+The question is `What kind of institution is this?`
 
+ - *This is an institution of post-secondary, non-tertiary education. One has to have completed secondary education to enroll here, but no bachelor (or higher) degrees are awarded here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcollege' target='_blank'>college</a>
+ - *This is a university, an institution of tertiary education where bachelor degrees or higher are awarded.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Duniversity' target='_blank'>university</a>
 
 
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
 
+### this.id
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
+The question is `What level of education is given here?`
 
-This tagrendering has labels  `added_by_default`
+ - *Bachelor degrees are awarded here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:isced:2011:level' target='_blank'>isced:2011:level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:isced:2011:level%3Dbachelor' target='_blank'>bachelor</a>
+ - *Master degrees are awarded here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:isced:2011:level' target='_blank'>isced:2011:level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:isced:2011:level%3Dmaster' target='_blank'>master</a>
+ - *Doctorate degrees are awarded here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:isced:2011:level' target='_blank'>isced:2011:level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:isced:2011:level%3Ddoctorate' target='_blank'>doctorate</a>
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Duniversity' target='_blank'>university</a>
 
 
+### this.id
 
-### institution-kind 
+The question is `How much students can at most enroll in this school?`
+This rendering asks information about the property 
+[capacity](https://wiki.openstreetmap.org/wiki/Key:capacity)
+This is rendered with `This school can enroll at most {capacity} students`
 
 
 
-The question is  *What kind of institution is this?*
 
+### this.id
 
+The question is `Which genders can enroll at this school?`
 
+ - *Both boys and girls can enroll here and have classes together* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:school:gender' target='_blank'>school:gender</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:gender%3Dmixed' target='_blank'>mixed</a>
+ - *Both boys and girls can enroll here but they are separated (e.g. they have lessons in different classrooms or at different times)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:school:gender' target='_blank'>school:gender</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:gender%3Dseparated' target='_blank'>separated</a>
+ - *This is a boys only-school* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:school:gender' target='_blank'>school:gender</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:gender%3Dmale' target='_blank'>male</a>
+ - *This is a girls-only school* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:school:gender' target='_blank'>school:gender</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:gender%3Dfemale' target='_blank'>female</a>
 
 
-  - *This is an institution of post-secondary, non-tertiary education. One has to have completed secondary education to enroll here, but no bachelor (or higher) degrees are awarded here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcollege' target='_blank'>college</a>
-  - *This is a university, an institution of tertiary education where bachelor degrees or higher are awarded.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Duniversity' target='_blank'>university</a>
 
+### this.id
 
+The question is `What is the website of {title()}?`
+This rendering asks information about the property 
+[website](https://wiki.openstreetmap.org/wiki/Key:website)
+This is rendered with `<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>`
+ - *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>* corresponds with contact:website~.+
+ - _This option cannot be chosen as answer_
 
+This tagrendering has labels 
+`contact`
 
-### isced 
+### this.id
 
+The question is `What is the email address of {title()}?`
+This rendering asks information about the property 
+[email](https://wiki.openstreetmap.org/wiki/Key:email)
+This is rendered with `<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>`
+ - *<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>* corresponds with contact:email~.+
+ - _This option cannot be chosen as answer_
+ - *<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>* corresponds with operator:email~.+
+ - _This option cannot be chosen as answer_
 
+This tagrendering has labels 
+`contact`
 
-The question is  *What level of education is given here?*
+### this.id
 
+The question is `What is the phone number of {title()}?`
+This rendering asks information about the property 
+[phone](https://wiki.openstreetmap.org/wiki/Key:phone)
+This is rendered with `<a href='tel:{phone}'>{phone}</a>`
+ - *<a href='tel:{contact:phone}'>{contact:phone}</a>* corresponds with contact:phone~.+
+ - _This option cannot be chosen as answer_
 
+This tagrendering has labels 
+`contact`
 
+### this.id
 
+_This tagrendering has no question and is thus read-only_
 
-  - *Bachelor degrees are awarded here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:isced:2011:level' target='_blank'>isced:2011:level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:isced:2011:level%3Dbachelor' target='_blank'>bachelor</a>
-  - *Master degrees are awarded here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:isced:2011:level' target='_blank'>isced:2011:level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:isced:2011:level%3Dmaster' target='_blank'>master</a>
-  - *Doctorate degrees are awarded here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:isced:2011:level' target='_blank'>isced:2011:level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:isced:2011:level%3Ddoctorate' target='_blank'>doctorate</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Duniversity' target='_blank'>university</a>`
 
 
+### this.id
 
-### capacity 
+_This tagrendering has no question and is thus read-only_
 
 
 
-The question is  *How much students can at most enroll in this school?*
+This tagrendering has labels 
+`added_by_default`
 
-This rendering asks information about the property  [capacity](https://wiki.openstreetmap.org/wiki/Key:capacity) This is rendered with  `This school can enroll at most {capacity} students`
-
-
-
-### gender 
-
-
-
-The question is  *Which genders can enroll at this school?*
-
-
-
-
-
-  - *Both boys and girls can enroll here and have classes together*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:school:gender' target='_blank'>school:gender</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:gender%3Dmixed' target='_blank'>mixed</a>
-  - *Both boys and girls can enroll here but they are separated (e.g. they have lessons in different classrooms or at different times)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:school:gender' target='_blank'>school:gender</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:gender%3Dseparated' target='_blank'>separated</a>
-  - *This is a boys only-school*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:school:gender' target='_blank'>school:gender</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:gender%3Dmale' target='_blank'>male</a>
-  - *This is a girls-only school*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:school:gender' target='_blank'>school:gender</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:gender%3Dfemale' target='_blank'>female</a>
-
-
-
-
-### website 
-
-
-
-The question is  *What is the website of {title()}?*
-
-This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) This is rendered with  `<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>`
-
-
-
-  - *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>*  corresponds with  contact:website~.+
-  - _This option cannot be chosen as answer_
-
-
-This tagrendering has labels  `contact`
-
-
-
-### email 
-
-
-
-The question is  *What is the email address of {title()}?*
-
-This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) This is rendered with  `<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>`
-
-
-
-  - *<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>*  corresponds with  contact:email~.+
-  - _This option cannot be chosen as answer_
-  - *<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>*  corresponds with  operator:email~.+
-  - _This option cannot be chosen as answer_
-
-
-This tagrendering has labels  `contact`
-
-
-
-### phone 
-
-
-
-The question is  *What is the phone number of {title()}?*
-
-This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) This is rendered with  `<a href='tel:{phone}'>{phone}</a>`
-
-
-
-  - *<a href='tel:{contact:phone}'>{contact:phone}</a>*  corresponds with  contact:phone~.+
-  - _This option cannot be chosen as answer_
-
-
-This tagrendering has labels  `contact`
-
-
-
-### leftover-questions 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### lod 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### minimap 
-
-
-
+### this.id
 Shows a small map with the feature. Added by default to every popup
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### move-button 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### last_edit 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
+
+
+### this.id
 Gives some metainfo about the last edit and who did edit it - rendering only
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:changeset~.+ & _last_edit:contributor~.+
+This tagrendering has labels 
+`added_by_default`
 
-This tagrendering has labels  `added_by_default`
+### this.id
 
-
-
-### favourite_status 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### qr_code 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has no question and is thus read-only
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has labels  `added_by_default`
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
-
-### share 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### all-tags 
-
-
-
-This tagrendering has no question and is thus read-only
 
  
 

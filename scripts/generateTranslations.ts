@@ -431,7 +431,7 @@ function transformTranslation(
  */
 function sortKeys(o: object): object {
     const keys = Object.keys(o)
-    keys.sort((a,b) => (""+a) < (""+b) ? -1 : 1)
+    keys.sort((a, b) => ("" + a < "" + b ? -1 : 1))
     const nw = {}
     for (const key of keys) {
         const v = o[key]
@@ -582,9 +582,7 @@ function MergeTranslation(source: any, target: any, language: string, context: s
             // Add the translation
             if (targetV === undefined) {
                 if (typeof target === "string") {
-                    throw (
-                        `Trying to merge a translation for ${language} into a fixed string at ${context} for key ${key}`
-                    )
+                    throw `Trying to merge a translation for ${language} into a fixed string at ${context} for key ${key}`
                 }
                 target[key] = source[key]
                 continue

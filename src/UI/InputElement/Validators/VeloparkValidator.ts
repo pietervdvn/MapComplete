@@ -3,7 +3,10 @@ import UrlValidator from "./UrlValidator"
 
 export default class VeloparkValidator extends UrlValidator {
     constructor() {
-        super("velopark", "A special URL-validator that checks the domain name and rewrites to the correct velopark format.")
+        super(
+            "velopark",
+            "A special URL-validator that checks the domain name and rewrites to the correct velopark format."
+        )
     }
 
     getFeedback(s: string): Translation {

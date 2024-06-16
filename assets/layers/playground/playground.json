@@ -9,7 +9,8 @@
     "fr": "Aire de jeu",
     "ca": "Parcs infantils",
     "pa_PK": "کھید دے میدان",
-    "cs": "Dětská hřiště"
+    "cs": "Dětská hřiště",
+    "pl": "Place zabaw"
   },
   "description": {
     "nl": "Speeltuinen",
@@ -20,7 +21,8 @@
     "fr": "Aire de jeu",
     "ca": "Parcs infantils",
     "pa_PK": "کھید دے میدان",
-    "cs": "Dětská hřiště"
+    "cs": "Dětská hřiště",
+    "pl": "Place zabaw"
   },
   "source": {
     "osmTags": {
@@ -126,7 +128,8 @@
         "it": "una campetto",
         "de": "einen Spielplatz",
         "ca": "un parc infantil",
-        "cs": "hřiště"
+        "cs": "hřiště",
+        "pl": "plac zabaw"
       }
     }
   ],
@@ -310,7 +313,8 @@
         "de": "Wird der Spielplatz nachts beleuchtet?",
         "ru": "Эта игровая площадка освещается ночью?",
         "ca": "Aquest parc infantil està il·luminat per la nit?",
-        "cs": "Je toto hřiště v noci osvětlené?"
+        "cs": "Je toto hřiště v noci osvětlené?",
+        "pl": "Czy ten plac zabaw jest oświetlony w nocy?"
       },
       "mappings": [
         {
@@ -323,7 +327,8 @@
             "ru": "Эта детская площадка освещается ночью",
             "fr": "L’aire de jeu est éclairée de nuit",
             "ca": "Aquest parc infantil està il·luminat per la nit",
-            "cs": "Toto hřiště je v noci osvětleno"
+            "cs": "Toto hřiště je v noci osvětleno",
+            "pl": "Ten plac zabaw jest oświetlony w nocy"
           }
         },
         {
@@ -336,7 +341,8 @@
             "ru": "Эта детская площадка не освещается ночью",
             "fr": "L’aire de jeu n’est pas éclairée de nuit",
             "ca": "Aquest parc infantil no està il·luminat per la nit",
-            "cs": "Toto hřiště není v noci osvětleno"
+            "cs": "Toto hřiště není v noci osvětleno",
+            "pl": "Ten plac zabaw nie jest oświetlony w nocy"
           }
         }
       ]
@@ -462,7 +468,8 @@
             "nl": "Er moet <b>betaald</b> worden om deze speeltuin te mogen gebruiken",
             "de": "Der Spielplatz ist <b>gebührenpflichtig</b>",
             "ca": "Aquest és un parc infantil <b>de pagament</b>",
-            "cs": "Toto je <b>placené</b> hřiště"
+            "cs": "Toto je <b>placené</b> hřiště",
+            "pl": "To jest <b>płatny</b> plac zabaw"
           },
           "addExtraTags": [
             "access=customers"
@@ -494,7 +501,8 @@
             "fr": "Réservée aux élèves de l’école",
             "es": "Solo accesibles para estudiantes de la escuela",
             "ca": "Només accessible per als alumnes de l'escola",
-            "cs": "Přístupné pouze studentům školy"
+            "cs": "Přístupné pouze studentům školy",
+            "pl": "Dostępny tylko dla uczniów szkoły"
           },
           "hideInAnswer": true
         },
@@ -509,7 +517,8 @@
             "de": "Der Spielplatz ist nicht öffentlich zugänglich",
             "es": "No accesible",
             "ca": "No accessible",
-            "cs": "Nepřístupné"
+            "cs": "Nepřístupné",
+            "pl": "Niedostępny"
           }
         },
         {
@@ -545,7 +554,8 @@
         "ru": "<a href='mailto:{email}'>{email}</a>",
         "id": "<a href='mailto:{email}'>{email}</a>",
         "es": "<a href='mailto:{email}'>{email}</a>",
-        "cs": "<a href='mailto:{email}'>{email}</a>"
+        "cs": "<a href='mailto:{email}'>{email}</a>",
+        "pl": "<a href='mailto:{email}'>{email}</a>"
       },
       "freeform": {
         "key": "email",
@@ -573,7 +583,8 @@
         "id": "<a href='tel:{phone}'>{phone}</a>",
         "it": "<a href='tel:{phone}'>{phone}</a>",
         "es": "<a href='tel:{phone}'>{phone}</a>",
-        "cs": "<a href='tel:{phone}'>{phone}</a>"
+        "cs": "<a href='tel:{phone}'>{phone}</a>",
+        "pl": "<a href='tel:{phone}'>{phone}</a>"
       },
       "freeform": {
         "key": "phone",
@@ -591,7 +602,8 @@
         "it": "Il campetto è accessibile a persone in sedia a rotelle?",
         "ru": "Доступна ли детская площадка пользователям кресел-колясок?",
         "ca": "Aquest parc infantil és accessible per a persones en cadira de rodes?",
-        "cs": "Je toto hřiště přístupné pro vozíčkáře?"
+        "cs": "Je toto hřiště přístupné pro vozíčkáře?",
+        "pl": "Czy ten plac zabaw jest dostępny dla osób na wózkach?"
       },
       "mappings": [
         {
@@ -605,7 +617,8 @@
             "ru": "Полностью доступна пользователям кресел-колясок",
             "es": "Completamente accesible para usuarios de silla de ruedas",
             "ca": "Totalment accessible per a persones en cadira de rodes",
-            "cs": "Plně přístupné pro vozíčkáře"
+            "cs": "Plně přístupné pro vozíčkáře",
+            "pl": "W pełni dostępne dla osób na wózkach"
           }
         },
         {
@@ -619,7 +632,8 @@
             "ru": "Частично доступна пользователям кресел-колясок",
             "es": "Acceso limitado para usuarios de silla de ruedas",
             "ca": "Accessibilitat limitada per a persones en cadira de rodes",
-            "cs": "Omezený přístup pro vozíčkáře"
+            "cs": "Omezený přístup pro vozíčkáře",
+            "pl": "Ograniczona dostępność dla osób na wózkach"
           }
         },
         {
@@ -633,7 +647,8 @@
             "ru": "Недоступна пользователям кресел-колясок",
             "es": "No accesible a usuarios de sillas de ruedas",
             "ca": "No accessible per a persones en cadira de rodes",
-            "cs": "Není přístupný pro vozíčkáře"
+            "cs": "Není přístupný pro vozíčkáře",
+            "pl": "Niedostępne dla osób na wózkach"
           }
         }
       ]
@@ -652,7 +667,8 @@
         "ru": "Когда открыта эта игровая площадка?",
         "de": "Wann ist dieser Spielplatz zugänglich?",
         "ca": "Quan és accesible aquest parc infantil?",
-        "cs": "Kdy je toto hřiště přístupné?"
+        "cs": "Kdy je toto hřiště přístupné?",
+        "pl": "Kiedy dostępny jest ten plac zabaw?"
       },
       "mappings": [
         {
@@ -666,7 +682,8 @@
             "de": "Zugänglich von Sonnenaufgang bis Sonnenuntergang",
             "es": "Accesible desde el amanecer hasta el anochecer",
             "ca": "Accesible des de la sortida del sol fins al vespre",
-            "cs": "Přístupné od východu do západu slunce"
+            "cs": "Přístupné od východu do západu slunce",
+            "pl": "Dostępny od wschodu do zachodu słońca"
           }
         },
         {
@@ -680,7 +697,8 @@
             "de": "Immer zugänglich",
             "ca": "Sempre accessible",
             "es": "Siempre accesible",
-            "cs": "Vždy přístupné"
+            "cs": "Vždy přístupné",
+            "pl": "Dostępny zawsze"
           }
         }
       ],

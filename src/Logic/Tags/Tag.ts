@@ -136,15 +136,15 @@ export class Tag extends TagsFilter {
      * new Tag("key","value").shadows(new And([new Tag("x","y"), new RegexTag("a","b", true)]) // => false
      */
     shadows(other: TagsFilter): boolean {
-        if ((other["key"] !== this.key)) {
+        if (other["key"] !== this.key) {
             return false
         }
-        if(other instanceof Tag){
+        if (other instanceof Tag) {
             // Other.key === this.key
             return other.value === this.value
         }
-        if(other instanceof RegexTag){
-            return other.matchesProperties({[this.key]: this.value})
+        if (other instanceof RegexTag) {
+            return other.matchesProperties({ [this.key]: this.value })
         }
         return false
     }

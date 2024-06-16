@@ -50,10 +50,8 @@ export default class NearbyImagesSearch {
 
     constructor(options: NearbyImageOptions, features: IndexedFeatureSource) {
         this.individualStores = NearbyImagesSearch.services
-            .filter(s => s !== "kartaview" /*DEAD*/)
-            .map((s) =>
-            NearbyImagesSearch.buildPictureFetcher(options, s)
-        )
+            .filter((s) => s !== "kartaview" /*DEAD*/)
+            .map((s) => NearbyImagesSearch.buildPictureFetcher(options, s))
 
         const allDone = new UIEventSource(false)
         this.allDone = allDone

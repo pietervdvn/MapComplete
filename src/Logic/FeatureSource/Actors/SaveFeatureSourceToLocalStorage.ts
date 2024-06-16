@@ -38,7 +38,7 @@ class SingleTileSaver {
             if (this._registeredIds.has(id)) {
                 continue
             }
-            if(id.match(/(node|way|relation)\/-.*/)){
+            if (id.match(/(node|way|relation)\/-.*/)) {
                 // We don't cache newly created points
                 continue
             }

@@ -62,7 +62,12 @@ export default class OsmObjectDownloader {
         if (idN < 0) {
             obj = this.constructObject(<"node" | "way" | "relation">type, idN)
         } else {
-            obj = await OsmObjectDownloader.RawDownloadObjectAsync(type, idN, this.backend, maxCacheAgeInSecs)
+            obj = await OsmObjectDownloader.RawDownloadObjectAsync(
+                type,
+                idN,
+                this.backend,
+                maxCacheAgeInSecs
+            )
         }
         if (obj === "deleted") {
             return obj

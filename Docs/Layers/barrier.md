@@ -27,25 +27,25 @@ Obstacles while cycling, such as bollards and cycle barriers
 1. [ Themes using this layer ](#-themes-using-this-layer-)
 2. [ Basic tags for this layer ](#-basic-tags-for-this-layer-)
 3. [ Supported attributes ](#-supported-attributes-)
-  - [just_created](#just_created)
-  - [images](#images)
-  - [bicycle=yes/no](#bicycle=yesno)
-  - [barrier_type](#barrier_type)
-  - [Bollard type](#bollard-type)
-  - [Cycle barrier type](#cycle-barrier-type)
-  - [MaxWidth](#maxwidth)
-  - [Space between barrier (cyclebarrier)](#space-between-barrier-(cyclebarrier))
-  - [Width of opening (cyclebarrier)](#width-of-opening-(cyclebarrier))
-  - [Overlap (cyclebarrier)](#overlap-(cyclebarrier))
-  - [leftover-questions](#leftover-questions)
-  - [lod](#lod)
-  - [minimap](#minimap)
-  - [delete-button](#delete-button)
-  - [last_edit](#last_edit)
-  - [favourite_status](#favourite_status)
-  - [qr_code](#qr_code)
-  - [share](#share)
-  - [all-tags](#all-tags)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
 
  Themes using this layer 
 -------------------------
@@ -98,263 +98,177 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/overlap#values) [overlap](https://wiki.openstreetmap.org/wiki/Key:overlap) | [distance](../SpecialInputElements.md#distance) | 
 
 
-
-
-### just_created 
-
-
-
+### this.id
 This element shows a 'thank you' that the contributor has recently created this element
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
+ - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
+This tagrendering has labels 
+`added_by_default`
 
-
-
-
-
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
-
-
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### images 
-
-
-
+### this.id
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
 
 
 
 
+### this.id
 
-### bicycle=yes/no 
+The question is `Can a bicycle go past this barrier?`
 
+ - *A cyclist can go past this.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle' target='_blank'>bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle%3Dyes' target='_blank'>yes</a>
+ - *A cyclist can not go past this.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle' target='_blank'>bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle%3Dno' target='_blank'>no</a>
+This tagrendering is only visible in the popup if the following condition is met: _referencing_ways~.+
 
 
-The question is  *Can a bicycle go past this barrier?*
+### this.id
 
+_This tagrendering has no question and is thus read-only_
 
+ - *This is a single bollard in the road* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:barrier' target='_blank'>barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dbollard' target='_blank'>bollard</a>
+ - *This is a cycle barrier slowing down cyclists* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:barrier' target='_blank'>barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dcycle_barrier' target='_blank'>cycle_barrier</a>
 
 
 
-  - *A cyclist can go past this.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle' target='_blank'>bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle%3Dyes' target='_blank'>yes</a>
-  - *A cyclist can not go past this.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle' target='_blank'>bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle%3Dno' target='_blank'>no</a>
+### this.id
 
+The question is `What kind of bollard is this?`
 
-This tagrendering is only visible in the popup if the following condition is met: `_referencing_ways~.+`
+ - *Removable bollard* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bollard' target='_blank'>bollard</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bollard%3Dremovable' target='_blank'>removable</a>
+ - *Fixed bollard* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bollard' target='_blank'>bollard</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bollard%3Dfixed' target='_blank'>fixed</a>
+ - *Bollard that can be folded down* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bollard' target='_blank'>bollard</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bollard%3Dfoldable' target='_blank'>foldable</a>
+ - *Flexible bollard, usually plastic* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bollard' target='_blank'>bollard</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bollard%3Dflexible' target='_blank'>flexible</a>
+ - *Rising bollard* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bollard' target='_blank'>bollard</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bollard%3Drising' target='_blank'>rising</a>
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:barrier' target='_blank'>barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dbollard' target='_blank'>bollard</a>
 
 
+### this.id
 
-### barrier_type 
+The question is `What kind of cycling barrier is this?`
 
+ - *Single, just two barriers with a space inbetween* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Dsingle' target='_blank'>single</a>
+ - *Double, two barriers behind each other* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Ddouble' target='_blank'>double</a>
+ - *Triple, three barriers behind each other* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Dtriple' target='_blank'>triple</a>
+ - *Squeeze gate, gap is smaller at top, than at the bottom* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Dsqueeze' target='_blank'>squeeze</a>
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:barrier' target='_blank'>barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dcycle_barrier' target='_blank'>cycle_barrier</a>
 
 
-This tagrendering has no question and is thus read-only
+### this.id
 
+The question is `How wide is the gap left over besides the barrier?`
+This rendering asks information about the property 
+[maxwidth:physical](https://wiki.openstreetmap.org/wiki/Key:maxwidth:physical)
+This is rendered with `Maximum width: {maxwidth:physical} m`
 
+This tagrendering is only visible in the popup if the following condition is met: _referencing_ways~.+ & cycle_barrier!=double & cycle_barrier!=triple
 
 
+### this.id
 
-  - *This is a single bollard in the road*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:barrier' target='_blank'>barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dbollard' target='_blank'>bollard</a>
-  - *This is a cycle barrier slowing down cyclists*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:barrier' target='_blank'>barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dcycle_barrier' target='_blank'>cycle_barrier</a>
+The question is `How much space is there between the barriers (along the length of the road)?`
+This rendering asks information about the property 
+[width:separation](https://wiki.openstreetmap.org/wiki/Key:width:separation)
+This is rendered with `Space between barriers (along the length of the road): {width:separation} m`
 
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Ddouble' target='_blank'>double</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Dtriple' target='_blank'>triple</a>
 
 
+### this.id
 
-### Bollard type 
+The question is `How wide is the smallest opening next to the barriers?`
+This rendering asks information about the property 
+[width:opening](https://wiki.openstreetmap.org/wiki/Key:width:opening)
+This is rendered with `Width of opening: {width:opening} m`
 
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Ddouble' target='_blank'>double</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Dtriple' target='_blank'>triple</a>
 
 
-The question is  *What kind of bollard is this?*
+### this.id
 
+The question is `How much overlap do the barriers have?`
+This rendering asks information about the property 
+[overlap](https://wiki.openstreetmap.org/wiki/Key:overlap)
+This is rendered with `Overlap: {overlap} m`
 
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Ddouble' target='_blank'>double</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Dtriple' target='_blank'>triple</a>
 
 
+### this.id
 
-  - *Removable bollard*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bollard' target='_blank'>bollard</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bollard%3Dremovable' target='_blank'>removable</a>
-  - *Fixed bollard*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bollard' target='_blank'>bollard</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bollard%3Dfixed' target='_blank'>fixed</a>
-  - *Bollard that can be folded down*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bollard' target='_blank'>bollard</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bollard%3Dfoldable' target='_blank'>foldable</a>
-  - *Flexible bollard, usually plastic*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bollard' target='_blank'>bollard</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bollard%3Dflexible' target='_blank'>flexible</a>
-  - *Rising bollard*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bollard' target='_blank'>bollard</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bollard%3Drising' target='_blank'>rising</a>
+_This tagrendering has no question and is thus read-only_
 
 
-This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:barrier' target='_blank'>barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dbollard' target='_blank'>bollard</a>`
 
 
 
-### Cycle barrier type 
+### this.id
 
+_This tagrendering has no question and is thus read-only_
 
 
-The question is  *What kind of cycling barrier is this?*
 
+This tagrendering has labels 
+`added_by_default`
 
-
-
-
-  - *Single, just two barriers with a space inbetween*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Dsingle' target='_blank'>single</a>
-  - *Double, two barriers behind each other*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Ddouble' target='_blank'>double</a>
-  - *Triple, three barriers behind each other*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Dtriple' target='_blank'>triple</a>
-  - *Squeeze gate, gap is smaller at top, than at the bottom*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Dsqueeze' target='_blank'>squeeze</a>
-
-
-This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:barrier' target='_blank'>barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dcycle_barrier' target='_blank'>cycle_barrier</a>`
-
-
-
-### MaxWidth 
-
-
-
-The question is  *How wide is the gap left over besides the barrier?*
-
-This rendering asks information about the property  [maxwidth:physical](https://wiki.openstreetmap.org/wiki/Key:maxwidth:physical) This is rendered with  `Maximum width: {maxwidth:physical} m`
-
-This tagrendering is only visible in the popup if the following condition is met: `_referencing_ways~.+ & cycle_barrier!=double & cycle_barrier!=triple`
-
-
-
-### Space between barrier (cyclebarrier) 
-
-
-
-The question is  *How much space is there between the barriers (along the length of the road)?*
-
-This rendering asks information about the property  [width:separation](https://wiki.openstreetmap.org/wiki/Key:width:separation) This is rendered with  `Space between barriers (along the length of the road): {width:separation} m`
-
-This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Ddouble' target='_blank'>double</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Dtriple' target='_blank'>triple</a>`
-
-
-
-### Width of opening (cyclebarrier) 
-
-
-
-The question is  *How wide is the smallest opening next to the barriers?*
-
-This rendering asks information about the property  [width:opening](https://wiki.openstreetmap.org/wiki/Key:width:opening) This is rendered with  `Width of opening: {width:opening} m`
-
-This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Ddouble' target='_blank'>double</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Dtriple' target='_blank'>triple</a>`
-
-
-
-### Overlap (cyclebarrier) 
-
-
-
-The question is  *How much overlap do the barriers have?*
-
-This rendering asks information about the property  [overlap](https://wiki.openstreetmap.org/wiki/Key:overlap) This is rendered with  `Overlap: {overlap} m`
-
-This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Ddouble' target='_blank'>double</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Dtriple' target='_blank'>triple</a>`
-
-
-
-### leftover-questions 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### lod 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### minimap 
-
-
-
+### this.id
 Shows a small map with the feature. Added by default to every popup
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### delete-button 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### last_edit 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
+
+
+### this.id
 Gives some metainfo about the last edit and who did edit it - rendering only
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:changeset~.+ & _last_edit:contributor~.+
+This tagrendering has labels 
+`added_by_default`
 
-This tagrendering has labels  `added_by_default`
+### this.id
 
-
-
-### favourite_status 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### qr_code 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has no question and is thus read-only
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has labels  `added_by_default`
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
-
-### share 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### all-tags 
-
-
-
-This tagrendering has no question and is thus read-only
 
  
 

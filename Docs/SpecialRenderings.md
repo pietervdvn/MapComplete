@@ -796,13 +796,13 @@ Creates a button where a user can upload an image to IMGUR
 
 ### rating
 
-Shows stars which represent the avarage rating on mangrove.reviews
+Shows stars which represent the average rating on mangrove.
 
 
 
 | name | default | description |
 -----|-----|----- |
-| subjectKey | name | The key to use to determine the subject. If specified, the subject will be <b>tags[subjectKey]</b> |
+| subjectKey | name | The key to use to determine the subject. If the value is specified, the subject will be <b>tags[subjectKey]</b> and will use this to filter the reviews. |
 | fallback | _undefined_ | The identifier to use, if <i>tags[subjectKey]</i> as specified above is not available. This is effectively a fallback value |
 
 

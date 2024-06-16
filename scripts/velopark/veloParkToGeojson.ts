@@ -23,9 +23,9 @@ class VeloParkToGeojson extends Script {
             JSON.stringify(
                 extension === ".geojson"
                     ? {
-                        type: "FeatureCollection",
-                        features
-                    }
+                          type: "FeatureCollection",
+                          features,
+                      }
                     : features,
                 null,
                 "    "
@@ -34,10 +34,9 @@ class VeloParkToGeojson extends Script {
         console.log("Written", file, "(" + features.length, " features)")
     }
 
-    private static async downloadDataFor(
-        url: string
-    ): Promise<Feature[]> {
-        const cachePath = "/home/pietervdvn/data/velopark_cache_refined/" + url.replace(/[/:.]/g, "_")
+    private static async downloadDataFor(url: string): Promise<Feature[]> {
+        const cachePath =
+            "/home/pietervdvn/data/velopark_cache_refined/" + url.replace(/[/:.]/g, "_")
         if (fs.existsSync(cachePath)) {
             return JSON.parse(fs.readFileSync(cachePath, "utf8"))
         }
@@ -50,7 +49,7 @@ class VeloParkToGeojson extends Script {
             if (Object.keys(sectionInfo).length === 0) {
                 console.warn("No result for", url)
             }
-            if(!sectionInfo.geometry?.coordinates){
+            if (!sectionInfo.geometry?.coordinates) {
                 throw "Invalid properties!"
             }
             allVelopark.push(sectionInfo)
@@ -70,8 +69,8 @@ class VeloParkToGeojson extends Script {
         const allVelopark: Feature[] = []
         const batchSize = 50
         for (let i = 0; i < allVeloparkRaw.length; i += batchSize) {
-            await Promise.all(Utils.TimesT(batchSize, j => j).map(
-                async j => {
+            await Promise.all(
+                Utils.TimesT(batchSize, (j) => j).map(async (j) => {
                     const f = allVeloparkRaw[i + j]
                     if (!f) {
                         return
@@ -83,9 +82,8 @@ class VeloParkToGeojson extends Script {
                         console.error("Loading ", f.url, " failed due to", e)
                         failed++
                     }
-                }
-            ))
-
+                })
+            )
         }
         console.log(
             "Fetching data done, got ",
@@ -140,7 +138,7 @@ class VeloParkToGeojson extends Script {
     private static async createDiff(allVelopark: Feature[]) {
         const bboxBelgium = new BBox([
             [2.51357303225, 49.5294835476],
-            [6.15665815596, 51.4750237087]
+            [6.15665815596, 51.4750237087],
         ])
 
         const alreadyLinkedQuery = new Overpass(

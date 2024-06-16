@@ -71,7 +71,8 @@
         "es": "Estación de Tren",
         "cs": "Vlaková nádraží",
         "it": "Stazioni ferroviarie",
-        "pl": "Stacje Kolejowe"
+        "pl": "Stacje Kolejowe",
+        "zh_Hant": "火車站"
       },
       "description": {
         "en": "Layer showing train stations",
@@ -292,7 +293,8 @@
         "ca": "Taulers de sortides",
         "es": "Tableros de salidas",
         "cs": "Odjezdové tabule",
-        "pl": "Tablice odjazdów"
+        "pl": "Tablice odjazdów",
+        "zh_Hant": "出發板"
       },
       "description": {
         "en": "Displays showing the trains that will leave from this station",

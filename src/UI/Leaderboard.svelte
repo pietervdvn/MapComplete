@@ -30,41 +30,42 @@
       }
   > = UIEventSource.FromPromise(Utils.downloadJsonCached(source))
 </script>
+
 <main>
-<h1>Contributed images with MapComplete: leaderboard</h1>
+  <h1>Contributed images with MapComplete: leaderboard</h1>
 
-{#if $data}
-  <table>
-    <tr>
-      <th>Rank</th>
-      <th>Contributor</th>
-      <th>Number of images contributed</th>
-    </tr>
-    {#each $data.leaderboard as contributor}
+  {#if $data}
+    <table>
       <tr>
-        <td>
-          {contributor.rank}
-        </td>
-        <td>
-          {#if $loggedInContributor === contributor.name}
-            <a class="thanks" href={contributor.account}>{contributor.name}</a>
-          {:else}
-            <a href={contributor.account}>{contributor.name}</a>
-          {/if}
-        </td>
-        <td>
-          <b>{contributor.nrOfImages}</b>
-          total images
-        </td>
+        <th>Rank</th>
+        <th>Contributor</th>
+        <th>Number of images contributed</th>
       </tr>
-    {/each}
-  </table>
-  Statistics generated on {$data.date}
-{:else}
-  <Loading />
-{/if}
+      {#each $data.leaderboard as contributor}
+        <tr>
+          <td>
+            {contributor.rank}
+          </td>
+          <td>
+            {#if $loggedInContributor === contributor.name}
+              <a class="thanks" href={contributor.account}>{contributor.name}</a>
+            {:else}
+              <a href={contributor.account}>{contributor.name}</a>
+            {/if}
+          </td>
+          <td>
+            <b>{contributor.nrOfImages}</b>
+            total images
+          </td>
+        </tr>
+      {/each}
+    </table>
+    Statistics generated on {$data.date}
+  {:else}
+    <Loading />
+  {/if}
 
-<div>
-  Logged in as {$loggedInContributor}
-</div>
+  <div>
+    Logged in as {$loggedInContributor}
+  </div>
 </main>

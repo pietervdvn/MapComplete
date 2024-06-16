@@ -161,9 +161,8 @@ class ExpandTagRendering extends Conversion<
     private readonly _options: {
         /* If true, will copy the 'osmSource'-tags into the condition */
         applyCondition?: true | boolean
-        noHardcodedStrings?: false | boolean,
+        noHardcodedStrings?: false | boolean
         addToContext?: false | boolean
-
     }
 
     constructor(
@@ -171,7 +170,7 @@ class ExpandTagRendering extends Conversion<
         self: LayerConfigJson,
         options?: {
             applyCondition?: true | boolean
-            noHardcodedStrings?: false | boolean,
+            noHardcodedStrings?: false | boolean
             // If set, a question will be added to the 'sharedTagRenderings'. Should only be used for 'questions.json'
             addToContext?: false | boolean
         }
@@ -208,17 +207,16 @@ class ExpandTagRendering extends Conversion<
             if (typeof tr === "string" || tr["builtin"] !== undefined) {
                 const stable = this.convert(tr, ctx.inOperation("recursive_resolve"))
                 result.push(...stable)
-                if(this._options?.addToContext){
+                if (this._options?.addToContext) {
                     for (const tr of stable) {
                         this._state.tagRenderings?.set(tr.id, tr)
                     }
                 }
             } else {
                 result.push(tr)
-                if(this._options?.addToContext){
-                    this._state.tagRenderings?.set(tr["id"], <QuestionableTagRenderingConfigJson> tr)
+                if (this._options?.addToContext) {
+                    this._state.tagRenderings?.set(tr["id"], <QuestionableTagRenderingConfigJson>tr)
                 }
-
             }
         }
 
@@ -1274,14 +1272,23 @@ export class AutoTitleIcon extends DesugaringStep<LayerConfigJson> {
 }
 
 export class PrepareLayer extends Fuse<LayerConfigJson> {
-    constructor(state: DesugaringContext, options?: {addTagRenderingsToContext?: false | boolean}) {
+    constructor(
+        state: DesugaringContext,
+        options?: { addTagRenderingsToContext?: false | boolean }
+    ) {
         super(
             "Fully prepares and expands a layer for the LayerConfig.",
             new On("tagRenderings", new Each(new RewriteSpecial())),
             new On("tagRenderings", new Concat(new ExpandRewrite()).andThenF(Utils.Flatten)),
-            new On("tagRenderings", (layer) => new Concat(new ExpandTagRendering(state, layer, {
-                addToContext: options?.addTagRenderingsToContext ?? false
-            }))),
+            new On(
+                "tagRenderings",
+                (layer) =>
+                    new Concat(
+                        new ExpandTagRendering(state, layer, {
+                            addToContext: options?.addTagRenderingsToContext ?? false,
+                        })
+                    )
+            ),
             new On("tagRenderings", new Each(new DetectInline())),
             new AddQuestionBox(),
             new AddEditingElements(state),

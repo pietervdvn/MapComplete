@@ -75,7 +75,7 @@
       {/if}
     </NextButton>
     {#if description}
-      <Markdown src={description}/>
+      <Markdown src={description} />
     {/if}
     {#each $messages as message}
       <ShowConversionMessage {message} />

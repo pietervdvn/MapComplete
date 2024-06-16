@@ -25,29 +25,29 @@ A layer with recycling containers and centres
 1. [ Themes using this layer ](#-themes-using-this-layer-)
 2. [ Basic tags for this layer ](#-basic-tags-for-this-layer-)
 3. [ Supported attributes ](#-supported-attributes-)
-  - [just_created](#just_created)
-  - [images](#images)
-  - [recycling-type](#recycling-type)
-  - [recycling-centre-name](#recycling-centre-name)
-  - [container-location](#container-location)
-  - [recycling-accepts](#recycling-accepts)
-  - [operator](#operator)
-  - [website](#website)
-  - [email](#email)
-  - [phone](#phone)
-  - [opening_hours_24_7](#opening_hours_24_7)
-  - [access](#access)
-  - [survey_date](#survey_date)
-  - [leftover-questions](#leftover-questions)
-  - [lod](#lod)
-  - [minimap](#minimap)
-  - [move-button](#move-button)
-  - [delete-button](#delete-button)
-  - [last_edit](#last_edit)
-  - [favourite_status](#favourite_status)
-  - [qr_code](#qr_code)
-  - [share](#share)
-  - [all-tags](#all-tags)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
     + [Filters](#filters)
 
  Themes using this layer 
@@ -100,392 +100,279 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/survey:date#values) [survey:date](https://wiki.openstreetmap.org/wiki/Key:survey:date) | [date](../SpecialInputElements.md#date) | [](https://wiki.openstreetmap.org/wiki/Tag:survey:date%3D)
 
 
-
-
-### just_created 
-
-
-
+### this.id
 This element shows a 'thank you' that the contributor has recently created this element
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
+ - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
+This tagrendering has labels 
+`added_by_default`
 
-
-
-
-
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
-
-
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### images 
-
-
-
+### this.id
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
+_This tagrendering has no question and is thus read-only_
+
+
+
+
+
+### this.id
+
+The question is `What type of recycling is this?`
+
+ - *This is a recycling container* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:recycling_type' target='_blank'>recycling_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling_type%3Dcontainer' target='_blank'>container</a>
+ - *This is a recycling centre* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:recycling_type' target='_blank'>recycling_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling_type%3Dcentre' target='_blank'>centre</a>
+ - *Waste disposal container for residual waste* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dwaste_disposal' target='_blank'>waste_disposal</a>
+ - *This is a pickup point. The waste material is placed here without placing it in a dedicated container.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:recycling_type' target='_blank'>recycling_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling_type%3Dpickup_point' target='_blank'>pickup_point</a>
+ - *This is a dump where the waste material is stacked.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:recycling_type' target='_blank'>recycling_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling_type%3Ddump' target='_blank'>dump</a>
+
+
+
+### this.id
+
+The question is `What is the name of this recycling centre?`
+This rendering asks information about the property 
+[name](https://wiki.openstreetmap.org/wiki/Key:name)
+This is rendered with `This recycling centre is named <b>{name}</b>`
+ - *This recycling centre doesn't have a specific name* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:noname' target='_blank'>noname</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:noname%3Dyes' target='_blank'>yes</a>
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:recycling_type' target='_blank'>recycling_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling_type%3Dcentre' target='_blank'>centre</a>
+
+
+### this.id
+
+The question is `Where is this container located?`
+
+ - *This is an underground container* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground' target='_blank'>underground</a>
+ - *This container is located indoors* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dindoor' target='_blank'>indoor</a>
+ - *This container is located outdoors* corresponds with location=
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:recycling_type' target='_blank'>recycling_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling_type%3Dcontainer' target='_blank'>container</a>
+
+
+### this.id
+
+The question is `What can be recycled here?`
+
+ - *Batteries can be recycled here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:recycling:batteries' target='_blank'>recycling:batteries</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:batteries%3Dyes' target='_blank'>yes</a>
+ - Unselecting this answer will add recycling:batteries=
+ - *Beverage cartons can be recycled here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:recycling:beverage_cartons' target='_blank'>recycling:beverage_cartons</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:beverage_cartons%3Dyes' target='_blank'>yes</a>
+ - Unselecting this answer will add recycling:beverage_cartons=
+ - *Cans can be recycled here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:recycling:cans' target='_blank'>recycling:cans</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:cans%3Dyes' target='_blank'>yes</a>
+ - Unselecting this answer will add recycling:cans=
+ - *Clothes can be recycled here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:recycling:clothes' target='_blank'>recycling:clothes</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:clothes%3Dyes' target='_blank'>yes</a>
+ - Unselecting this answer will add recycling:clothes=
+ - *Cooking oil can be recycled here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:recycling:cooking_oil' target='_blank'>recycling:cooking_oil</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:cooking_oil%3Dyes' target='_blank'>yes</a>
+ - Unselecting this answer will add recycling:cooking_oil=
+ - *Engine oil can be recycled here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:recycling:engine_oil' target='_blank'>recycling:engine_oil</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:engine_oil%3Dyes' target='_blank'>yes</a>
+ - Unselecting this answer will add recycling:engine_oil=
+ - *Fluorescent tubes can be recycled here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:recycling:fluorescent_tubes' target='_blank'>recycling:fluorescent_tubes</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:fluorescent_tubes%3Dyes' target='_blank'>yes</a>
+ - Unselecting this answer will add recycling:fluorescent_tubes=
+ - *Green waste can be recycled here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:recycling:green_waste' target='_blank'>recycling:green_waste</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:green_waste%3Dyes' target='_blank'>yes</a>
+ - Unselecting this answer will add recycling:green_waste=
+ - *Organic waste can be recycled here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:recycling:organic' target='_blank'>recycling:organic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:organic%3Dyes' target='_blank'>yes</a>
+ - _This option cannot be chosen as answer_
+ - Unselecting this answer will add recycling:organic=
+ - *Glass bottles can be recycled here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:recycling:glass_bottles' target='_blank'>recycling:glass_bottles</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:glass_bottles%3Dyes' target='_blank'>yes</a>
+ - Unselecting this answer will add recycling:glass_bottles=
+ - *Glass can be recycled here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:recycling:glass' target='_blank'>recycling:glass</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:glass%3Dyes' target='_blank'>yes</a>
+ - Unselecting this answer will add recycling:glass=
+ - *Light bulbs can be recycled here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:recycling:light_bulbs' target='_blank'>recycling:light_bulbs</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:light_bulbs%3Dyes' target='_blank'>yes</a>
+ - Unselecting this answer will add recycling:light_bulbs=
+ - *Newspapers can be recycled here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:recycling:newspaper' target='_blank'>recycling:newspaper</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:newspaper%3Dyes' target='_blank'>yes</a>
+ - Unselecting this answer will add recycling:newspaper=
+ - *Paper can be recycled here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:recycling:paper' target='_blank'>recycling:paper</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:paper%3Dyes' target='_blank'>yes</a>
+ - Unselecting this answer will add recycling:paper=
+ - *Plastic bottles can be recycled here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:recycling:plastic_bottles' target='_blank'>recycling:plastic_bottles</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:plastic_bottles%3Dyes' target='_blank'>yes</a>
+ - Unselecting this answer will add recycling:plastic_bottles=
+ - *Plastic packaging can be recycled here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:recycling:plastic_packaging' target='_blank'>recycling:plastic_packaging</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:plastic_packaging%3Dyes' target='_blank'>yes</a>
+ - Unselecting this answer will add recycling:plastic_packaging=
+ - *Plastic can be recycled here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:recycling:plastic' target='_blank'>recycling:plastic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:plastic%3Dyes' target='_blank'>yes</a>
+ - Unselecting this answer will add recycling:plastic=
+ - *Plastic packaging, metal packaging and drink cartons (PMD) can be recycled here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:recycling:pmd' target='_blank'>recycling:pmd</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:pmd%3Dyes' target='_blank'>yes</a>
+ - Unselecting this answer will add recycling:pmd=
+ - *Printer cartridges can be recycled here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:recycling:printer_cartridges' target='_blank'>recycling:printer_cartridges</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:printer_cartridges%3Dyes' target='_blank'>yes</a>
+ - Unselecting this answer will add recycling:printer_cartridges=
+ - *Scrap metal can be recycled here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:recycling:scrap_metal' target='_blank'>recycling:scrap_metal</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:scrap_metal%3Dyes' target='_blank'>yes</a>
+ - Unselecting this answer will add recycling:scrap_metal=
+ - *Shoes can be recycled here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:recycling:shoes' target='_blank'>recycling:shoes</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:shoes%3Dyes' target='_blank'>yes</a>
+ - Unselecting this answer will add recycling:shoes=
+ - *Small electrical appliances can be recycled here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:recycling:small_appliances' target='_blank'>recycling:small_appliances</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:small_appliances%3Dyes' target='_blank'>yes</a>
+ - Unselecting this answer will add recycling:small_appliances=
+ - *Small electrical appliances can be recycled here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:recycling:small_electrical_appliances' target='_blank'>recycling:small_electrical_appliances</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:small_electrical_appliances%3Dyes' target='_blank'>yes</a>
+ - _This option cannot be chosen as answer_
+ - Unselecting this answer will add recycling:small_electrical_appliances=
+ - *Needles can be recycled here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:recycling:needles' target='_blank'>recycling:needles</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:needles%3Dyes' target='_blank'>yes</a>
+ - Unselecting this answer will add recycling:needles=
+ - *Residual waste can be recycled here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:recycling:waste' target='_blank'>recycling:waste</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:waste%3Dyes' target='_blank'>yes</a>
+ - Unselecting this answer will add recycling:waste=
+ - *Bicycles can be recycled here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:recycling:bicycles' target='_blank'>recycling:bicycles</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:bicycles%3Dyes' target='_blank'>yes</a>
+ - Unselecting this answer will add recycling:bicycles=
 
-This tagrendering has no question and is thus read-only
 
 
+### this.id
 
+The question is `What company operates this recycling facility?`
+This rendering asks information about the property 
+[operator](https://wiki.openstreetmap.org/wiki/Key:operator)
+This is rendered with `This recycling facility is operated by {operator}`
 
 
-### recycling-type 
 
 
+### this.id
 
-The question is  *What type of recycling is this?*
+The question is `What is the website of {title()}?`
+This rendering asks information about the property 
+[website](https://wiki.openstreetmap.org/wiki/Key:website)
+This is rendered with `<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>`
+ - *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>* corresponds with contact:website~.+
+ - _This option cannot be chosen as answer_
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:recycling_type' target='_blank'>recycling_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling_type%3Dcentre' target='_blank'>centre</a>
+This tagrendering has labels 
+`contact`
 
+### this.id
 
+The question is `What is the email address of {title()}?`
+This rendering asks information about the property 
+[email](https://wiki.openstreetmap.org/wiki/Key:email)
+This is rendered with `<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>`
+ - *<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>* corresponds with contact:email~.+
+ - _This option cannot be chosen as answer_
+ - *<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>* corresponds with operator:email~.+
+ - _This option cannot be chosen as answer_
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:recycling_type' target='_blank'>recycling_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling_type%3Dcentre' target='_blank'>centre</a>
+This tagrendering has labels 
+`contact`
 
+### this.id
 
+The question is `What is the phone number of {title()}?`
+This rendering asks information about the property 
+[phone](https://wiki.openstreetmap.org/wiki/Key:phone)
+This is rendered with `<a href='tel:{phone}'>{phone}</a>`
+ - *<a href='tel:{contact:phone}'>{contact:phone}</a>* corresponds with contact:phone~.+
+ - _This option cannot be chosen as answer_
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:recycling_type' target='_blank'>recycling_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling_type%3Dcentre' target='_blank'>centre</a>
+This tagrendering has labels 
+`contact`
 
-  - *This is a recycling container*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:recycling_type' target='_blank'>recycling_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling_type%3Dcontainer' target='_blank'>container</a>
-  - *This is a recycling centre*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:recycling_type' target='_blank'>recycling_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling_type%3Dcentre' target='_blank'>centre</a>
-  - *Waste disposal container for residual waste*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dwaste_disposal' target='_blank'>waste_disposal</a>
-  - *This is a pickup point. The waste material is placed here without placing it in a dedicated container.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:recycling_type' target='_blank'>recycling_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling_type%3Dpickup_point' target='_blank'>pickup_point</a>
-  - *This is a dump where the waste material is stacked.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:recycling_type' target='_blank'>recycling_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling_type%3Ddump' target='_blank'>dump</a>
+### this.id
 
+The question is `What are the opening hours of this recycling facility?`
+This rendering asks information about the property 
+[opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours)
+This is rendered with `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
+ - *24/7 opened (including holidays)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
+ - *Marked as closed for an unspecified time* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>
+ - _This option cannot be chosen as answer_
 
 
 
-### recycling-centre-name 
+### this.id
 
+The question is `Who can use this recycling facility?`
+This rendering asks information about the property 
+[access](https://wiki.openstreetmap.org/wiki/Key:access)
+This is rendered with `This recycling facility can be used by {access}`
+ - *Everyone can use this recycling facility* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>
+ - *Only residents can use this recycling facility* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dresidents' target='_blank'>residents</a>
+ - *This recycling facility is only for private use* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate' target='_blank'>private</a>
 
 
-The question is  *What is the name of this recycling centre?*
 
-This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) This is rendered with  `This recycling centre is named <b>{name}</b>`
+### this.id
 
+The question is `When was this object last surveyed?`
+This rendering asks information about the property 
+[survey:date](https://wiki.openstreetmap.org/wiki/Key:survey:date)
+This is rendered with `This object was last surveyed on <b>{survey:date}</b>`
+ - *This object was last surveyed today* corresponds with survey:date=
 
 
-  - *This recycling centre doesn't have a specific name*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:noname' target='_blank'>noname</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:noname%3Dyes' target='_blank'>yes</a>
 
+### this.id
 
-This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:recycling_type' target='_blank'>recycling_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling_type%3Dcentre' target='_blank'>centre</a>`
+_This tagrendering has no question and is thus read-only_
 
 
 
-### container-location 
 
 
+### this.id
 
-The question is  *Where is this container located?*
+_This tagrendering has no question and is thus read-only_
 
 
 
+This tagrendering has labels 
+`added_by_default`
 
-
-  - *This is an underground container*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground' target='_blank'>underground</a>
-  - *This container is located indoors*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dindoor' target='_blank'>indoor</a>
-  - *This container is located outdoors*  corresponds with  location=
-
-
-This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:recycling_type' target='_blank'>recycling_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling_type%3Dcontainer' target='_blank'>container</a>`
-
-
-
-### recycling-accepts 
-
-
-
-The question is  *What can be recycled here?*
-
-
-
-
-
-  - *Batteries can be recycled here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:recycling:batteries' target='_blank'>recycling:batteries</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:batteries%3Dyes' target='_blank'>yes</a>
-  - Unselecting this answer will add recycling:batteries=
-  - *Beverage cartons can be recycled here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:recycling:beverage_cartons' target='_blank'>recycling:beverage_cartons</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:beverage_cartons%3Dyes' target='_blank'>yes</a>
-  - Unselecting this answer will add recycling:beverage_cartons=
-  - *Cans can be recycled here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:recycling:cans' target='_blank'>recycling:cans</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:cans%3Dyes' target='_blank'>yes</a>
-  - Unselecting this answer will add recycling:cans=
-  - *Clothes can be recycled here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:recycling:clothes' target='_blank'>recycling:clothes</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:clothes%3Dyes' target='_blank'>yes</a>
-  - Unselecting this answer will add recycling:clothes=
-  - *Cooking oil can be recycled here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:recycling:cooking_oil' target='_blank'>recycling:cooking_oil</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:cooking_oil%3Dyes' target='_blank'>yes</a>
-  - Unselecting this answer will add recycling:cooking_oil=
-  - *Engine oil can be recycled here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:recycling:engine_oil' target='_blank'>recycling:engine_oil</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:engine_oil%3Dyes' target='_blank'>yes</a>
-  - Unselecting this answer will add recycling:engine_oil=
-  - *Fluorescent tubes can be recycled here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:recycling:fluorescent_tubes' target='_blank'>recycling:fluorescent_tubes</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:fluorescent_tubes%3Dyes' target='_blank'>yes</a>
-  - Unselecting this answer will add recycling:fluorescent_tubes=
-  - *Green waste can be recycled here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:recycling:green_waste' target='_blank'>recycling:green_waste</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:green_waste%3Dyes' target='_blank'>yes</a>
-  - Unselecting this answer will add recycling:green_waste=
-  - *Organic waste can be recycled here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:recycling:organic' target='_blank'>recycling:organic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:organic%3Dyes' target='_blank'>yes</a>
-  - _This option cannot be chosen as answer_
-  - Unselecting this answer will add recycling:organic=
-  - *Glass bottles can be recycled here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:recycling:glass_bottles' target='_blank'>recycling:glass_bottles</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:glass_bottles%3Dyes' target='_blank'>yes</a>
-  - Unselecting this answer will add recycling:glass_bottles=
-  - *Glass can be recycled here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:recycling:glass' target='_blank'>recycling:glass</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:glass%3Dyes' target='_blank'>yes</a>
-  - Unselecting this answer will add recycling:glass=
-  - *Light bulbs can be recycled here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:recycling:light_bulbs' target='_blank'>recycling:light_bulbs</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:light_bulbs%3Dyes' target='_blank'>yes</a>
-  - Unselecting this answer will add recycling:light_bulbs=
-  - *Newspapers can be recycled here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:recycling:newspaper' target='_blank'>recycling:newspaper</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:newspaper%3Dyes' target='_blank'>yes</a>
-  - Unselecting this answer will add recycling:newspaper=
-  - *Paper can be recycled here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:recycling:paper' target='_blank'>recycling:paper</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:paper%3Dyes' target='_blank'>yes</a>
-  - Unselecting this answer will add recycling:paper=
-  - *Plastic bottles can be recycled here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:recycling:plastic_bottles' target='_blank'>recycling:plastic_bottles</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:plastic_bottles%3Dyes' target='_blank'>yes</a>
-  - Unselecting this answer will add recycling:plastic_bottles=
-  - *Plastic packaging can be recycled here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:recycling:plastic_packaging' target='_blank'>recycling:plastic_packaging</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:plastic_packaging%3Dyes' target='_blank'>yes</a>
-  - Unselecting this answer will add recycling:plastic_packaging=
-  - *Plastic can be recycled here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:recycling:plastic' target='_blank'>recycling:plastic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:plastic%3Dyes' target='_blank'>yes</a>
-  - Unselecting this answer will add recycling:plastic=
-  - *Printer cartridges can be recycled here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:recycling:printer_cartridges' target='_blank'>recycling:printer_cartridges</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:printer_cartridges%3Dyes' target='_blank'>yes</a>
-  - Unselecting this answer will add recycling:printer_cartridges=
-  - *Scrap metal can be recycled here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:recycling:scrap_metal' target='_blank'>recycling:scrap_metal</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:scrap_metal%3Dyes' target='_blank'>yes</a>
-  - Unselecting this answer will add recycling:scrap_metal=
-  - *Shoes can be recycled here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:recycling:shoes' target='_blank'>recycling:shoes</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:shoes%3Dyes' target='_blank'>yes</a>
-  - Unselecting this answer will add recycling:shoes=
-  - *Small electrical appliances can be recycled here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:recycling:small_appliances' target='_blank'>recycling:small_appliances</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:small_appliances%3Dyes' target='_blank'>yes</a>
-  - Unselecting this answer will add recycling:small_appliances=
-  - *Small electrical appliances can be recycled here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:recycling:small_electrical_appliances' target='_blank'>recycling:small_electrical_appliances</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:small_electrical_appliances%3Dyes' target='_blank'>yes</a>
-  - _This option cannot be chosen as answer_
-  - Unselecting this answer will add recycling:small_electrical_appliances=
-  - *Needles can be recycled here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:recycling:needles' target='_blank'>recycling:needles</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:needles%3Dyes' target='_blank'>yes</a>
-  - Unselecting this answer will add recycling:needles=
-  - *Residual waste can be recycled here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:recycling:waste' target='_blank'>recycling:waste</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:waste%3Dyes' target='_blank'>yes</a>
-  - Unselecting this answer will add recycling:waste=
-  - *Bicycles can be recycled here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:recycling:bicycles' target='_blank'>recycling:bicycles</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:bicycles%3Dyes' target='_blank'>yes</a>
-  - Unselecting this answer will add recycling:bicycles=
-
-
-
-
-### operator 
-
-
-
-The question is  *What company operates this recycling facility?*
-
-This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) This is rendered with  `This recycling facility is operated by {operator}`
-
-
-
-### website 
-
-
-
-The question is  *What is the website of {title()}?*
-
-This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) This is rendered with  `<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>`
-
-
-
-  - *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>*  corresponds with  contact:website~.+
-  - _This option cannot be chosen as answer_
-
-
-This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:recycling_type' target='_blank'>recycling_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling_type%3Dcentre' target='_blank'>centre</a>`
-
-This tagrendering has labels  `contact`
-
-
-
-### email 
-
-
-
-The question is  *What is the email address of {title()}?*
-
-This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) This is rendered with  `<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>`
-
-
-
-  - *<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>*  corresponds with  contact:email~.+
-  - _This option cannot be chosen as answer_
-  - *<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>*  corresponds with  operator:email~.+
-  - _This option cannot be chosen as answer_
-
-
-This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:recycling_type' target='_blank'>recycling_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling_type%3Dcentre' target='_blank'>centre</a>`
-
-This tagrendering has labels  `contact`
-
-
-
-### phone 
-
-
-
-The question is  *What is the phone number of {title()}?*
-
-This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) This is rendered with  `<a href='tel:{phone}'>{phone}</a>`
-
-
-
-  - *<a href='tel:{contact:phone}'>{contact:phone}</a>*  corresponds with  contact:phone~.+
-  - _This option cannot be chosen as answer_
-
-
-This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:recycling_type' target='_blank'>recycling_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling_type%3Dcentre' target='_blank'>centre</a>`
-
-This tagrendering has labels  `contact`
-
-
-
-### opening_hours_24_7 
-
-
-
-The question is  *What are the opening hours of this recycling facility?*
-
-This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
-
-
-
-  - *24/7 opened (including holidays)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
-  - *Marked as closed for an unspecified time*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>
-  - _This option cannot be chosen as answer_
-
-
-
-
-### access 
-
-
-
-The question is  *Who can use this recycling facility?*
-
-This rendering asks information about the property  [access](https://wiki.openstreetmap.org/wiki/Key:access) This is rendered with  `This recycling facility can be used by {access}`
-
-
-
-  - *Everyone can use this recycling facility*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>
-  - *Only residents can use this recycling facility*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dresidents' target='_blank'>residents</a>
-  - *This recycling facility is only for private use*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate' target='_blank'>private</a>
-
-
-
-
-### survey_date 
-
-
-
-The question is  *When was this object last surveyed?*
-
-This rendering asks information about the property  [survey:date](https://wiki.openstreetmap.org/wiki/Key:survey:date) This is rendered with  `This object was last surveyed on <b>{survey:date}</b>`
-
-
-
-  - *This object was last surveyed today*  corresponds with  survey:date=
-
-
-
-
-### leftover-questions 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### lod 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### minimap 
-
-
-
+### this.id
 Shows a small map with the feature. Added by default to every popup
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### move-button 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### delete-button 
+### this.id
 
-
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
 
 
-### last_edit 
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
+
+
+### this.id
 Gives some metainfo about the last edit and who did edit it - rendering only
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:changeset~.+ & _last_edit:contributor~.+
+This tagrendering has labels 
+`added_by_default`
 
-This tagrendering has labels  `added_by_default`
+### this.id
 
-
-
-### favourite_status 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### qr_code 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has no question and is thus read-only
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has labels  `added_by_default`
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
-
-### share 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### all-tags 
-
-
-
-This tagrendering has no question and is thus read-only
 
 
 
@@ -528,6 +415,7 @@ recyclingType.18 | Recycling of small electrical appliances | recycling:small_ap
 recyclingType.19 | Recycling of residual waste | recycling:waste=yes
 recyclingType.20 | Recycling of printer cartridges | recycling:printer_cartridges=yes
 recyclingType.21 | Recycling of bicycles | recycling:bicycles=yes
+recyclingType.22 | Recycling of plastic packaging, metal packaging and drink cartons (PMD) | recycling:pmd=yes
 
 
 

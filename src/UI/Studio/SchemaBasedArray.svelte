@@ -97,7 +97,7 @@
   <h3>{schema.path.at(-1)}</h3>
 
   {#if subparts.length > 0}
-    <Markdown src={schema.description}/>
+    <Markdown src={schema.description} />
   {/if}
   {#if $currentValue === undefined}
     No array defined

@@ -85,7 +85,12 @@ export class AvailableRasterLayers {
                         matching.push(AvailableRasterLayers.bing)
                     }
                     matching.push(...AvailableRasterLayers.globalLayers)
-                    if(!matching.some(l => l.id === AvailableRasterLayers.defaultBackgroundLayer.properties.id)){
+                    if (
+                        !matching.some(
+                            (l) =>
+                                l.id === AvailableRasterLayers.defaultBackgroundLayer.properties.id
+                        )
+                    ) {
                         matching.push(AvailableRasterLayers.defaultBackgroundLayer)
                     }
                     return matching

@@ -266,7 +266,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
                     featurePropertiesStore: this.featureProperties,
                     osmConnection: this.osmConnection,
                     historicalUserLocations: this.geolocation.historicalUserLocations,
-                    featureSwitches: this.featureSwitches
+                    featureSwitches: this.featureSwitches,
                 },
                 layout?.isLeftRightSensitive() ?? false
             )
@@ -497,8 +497,8 @@ export default class ThemeViewState implements SpecialVisualizationState {
             Utils.LoadCustomCss(this.layout.customCss)
         }
 
-        Hash.hash.addCallbackAndRunD(hash => {
-            if(hash === "current_view" || hash.match(/current_view_[0-9]+/)){
+        Hash.hash.addCallbackAndRunD((hash) => {
+            if (hash === "current_view" || hash.match(/current_view_[0-9]+/)) {
                 this.selectCurrentView()
             }
         })
@@ -827,7 +827,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
         )
     }
 
-    public selectCurrentView(){
+    public selectCurrentView() {
         this.guistate.closeAll()
         this.selectedElement.setData(this.currentView.features?.data?.[0])
     }

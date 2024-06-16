@@ -65,8 +65,10 @@ class Compare extends Script {
 
     async main(args: string[]): Promise<void> {
         let [velopark, osm, key] = args
-        if(velopark === undefined || osm === undefined){
-            console.log("Needed argument: velopark.geojson osm.geojson [key]\nThe key is optional and will be `ref:velopark` by default\nUse overpass to get a geojson with ref:velopark")
+        if (velopark === undefined || osm === undefined) {
+            console.log(
+                "Needed argument: velopark.geojson osm.geojson [key]\nThe key is optional and will be `ref:velopark` by default\nUse overpass to get a geojson with ref:velopark"
+            )
             return
         }
         key ??= "ref:velopark"

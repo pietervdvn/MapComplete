@@ -30,7 +30,7 @@ async function getAvailableLayers(): Promise<Set<string>> {
     try {
         const host = new URL(Constants.SummaryServer).host
         const status: { layers: string[] } = await Promise.any([
-            Utils.downloadJson<{layers}>("https://" + host + "/summary/status.json"),
+            Utils.downloadJson<{ layers }>("https://" + host + "/summary/status.json"),
             timeout(2500),
         ])
         return new Set<string>(status.layers)
@@ -54,7 +54,7 @@ async function main() {
         const state = new ThemeViewState(layout, availableLayers)
         new ThemeViewGUI({
             target: document.getElementById("maindiv"),
-            props: {state}
+            props: { state },
         })
         Array.from(document.getElementsByClassName("delete-on-load")).forEach((el) => {
             el.parentElement.removeChild(el)

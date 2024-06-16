@@ -19,7 +19,7 @@
   /**
    * Only show the 'successful' state, don't show loading or error messages
    */
-  export let silentFail : boolean = false
+  export let silentFail: boolean = false
   let loadingStatus = state?.osmConnection?.loadingStatus ?? new ImmutableStore("logged-in")
   let badge = state?.featureSwitches?.featureSwitchEnableLogin ?? new ImmutableStore(true)
   const t = Translations.t.general

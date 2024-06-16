@@ -25,31 +25,31 @@ Playgrounds
 1. [ Themes using this layer ](#-themes-using-this-layer-)
 2. [ Basic tags for this layer ](#-basic-tags-for-this-layer-)
 3. [ Supported attributes ](#-supported-attributes-)
-  - [just_created](#just_created)
-  - [images](#images)
-  - [reviews](#reviews)
-  - [playground-surface](#playground-surface)
-  - [playground-lit](#playground-lit)
-  - [playground-min_age](#playground-min_age)
-  - [playground-max_age](#playground-max_age)
-  - [playground-operator](#playground-operator)
-  - [playground-access](#playground-access)
-  - [website](#website)
-  - [playground-email](#playground-email)
-  - [playground-phone](#playground-phone)
-  - [Playground-wheelchair](#playground-wheelchair)
-  - [playground-opening_hours](#playground-opening_hours)
-  - [check_date](#check_date)
-  - [questions](#questions)
-  - [playground-reviews](#playground-reviews)
-  - [lod](#lod)
-  - [minimap](#minimap)
-  - [delete-button](#delete-button)
-  - [last_edit](#last_edit)
-  - [favourite_status](#favourite_status)
-  - [qr_code](#qr_code)
-  - [share](#share)
-  - [all-tags](#all-tags)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
 
  Themes using this layer 
 -------------------------
@@ -107,349 +107,252 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/check_date#values) [check_date](https://wiki.openstreetmap.org/wiki/Key:check_date) | [date](../SpecialInputElements.md#date) | [](https://wiki.openstreetmap.org/wiki/Tag:check_date%3D)
 
 
-
-
-### just_created 
-
-
-
+### this.id
 This element shows a 'thank you' that the contributor has recently created this element
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
+ - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
+This tagrendering has labels 
+`added_by_default`
 
-
-
-
-
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
-
-
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### images 
-
-
-
+### this.id
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
 
 
-### reviews 
 
-
-
+### this.id
 Shows the reviews module (including the possibility to leave a review)
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
 
 
 
 
+### this.id
 
-### playground-surface 
+The question is `Which is the surface of this playground?`
+This rendering asks information about the property 
+[surface](https://wiki.openstreetmap.org/wiki/Key:surface)
+This is rendered with `The surface is <b>{surface}</b>`
+ - *The surface is <b>grass</b>* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dgrass' target='_blank'>grass</a>
+ - *The surface is <b>sand</b>* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dsand' target='_blank'>sand</a>
+ - *The surface consist of <b>woodchips</b>* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dwoodchips' target='_blank'>woodchips</a>
+ - *The surface is <b>paving stones</b>* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dpaving_stones' target='_blank'>paving_stones</a>
+ - *The surface is <b>asphalt</b>* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dasphalt' target='_blank'>asphalt</a>
+ - *The surface is <b>concrete</b>* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dconcrete' target='_blank'>concrete</a>
+ - *The surface is <b>unpaved</b>* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dunpaved' target='_blank'>unpaved</a>
+ - _This option cannot be chosen as answer_
+ - *The surface is <b>paved</b>* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dpaved' target='_blank'>paved</a>
+ - _This option cannot be chosen as answer_
+ - *The surface is tartan - a synthetic, springy surface typically seen on athletic pistes* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dtartan' target='_blank'>tartan</a>
+ - *The surface is made from rubber, such as rubber tiles, rubber mulch or a big rubber area* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Drubber' target='_blank'>rubber</a>
 
 
 
-The question is  *Which is the surface of this playground?*
+### this.id
 
-This rendering asks information about the property  [surface](https://wiki.openstreetmap.org/wiki/Key:surface) This is rendered with  `The surface is <b>{surface}</b>`
+The question is `Is this playground lit at night?`
 
+ - *This playground is lit at night* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:lit' target='_blank'>lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:lit%3Dyes' target='_blank'>yes</a>
+ - *This playground is not lit at night* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:lit' target='_blank'>lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:lit%3Dno' target='_blank'>no</a>
 
+This tagrendering has labels 
+`extra`
 
-  - *The surface is <b>grass</b>*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dgrass' target='_blank'>grass</a>
-  - *The surface is <b>sand</b>*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dsand' target='_blank'>sand</a>
-  - *The surface consist of <b>woodchips</b>*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dwoodchips' target='_blank'>woodchips</a>
-  - *The surface is <b>paving stones</b>*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dpaving_stones' target='_blank'>paving_stones</a>
-  - *The surface is <b>asphalt</b>*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dasphalt' target='_blank'>asphalt</a>
-  - *The surface is <b>concrete</b>*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dconcrete' target='_blank'>concrete</a>
-  - *The surface is <b>unpaved</b>*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dunpaved' target='_blank'>unpaved</a>
-  - _This option cannot be chosen as answer_
-  - *The surface is <b>paved</b>*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dpaved' target='_blank'>paved</a>
-  - _This option cannot be chosen as answer_
-  - *The surface is tartan - a synthetic, springy surface typically seen on athletic pistes*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dtartan' target='_blank'>tartan</a>
-  - *The surface is made from rubber, such as rubber tiles, rubber mulch or a big rubber area*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Drubber' target='_blank'>rubber</a>
+### this.id
 
+The question is `What is the minimum age required to access this playground?`
+This rendering asks information about the property 
+[min_age](https://wiki.openstreetmap.org/wiki/Key:min_age)
+This is rendered with `Accessible to kids older than {min_age} years`
 
 
+This tagrendering has labels 
+`extra`
 
-### playground-lit 
+### this.id
 
+The question is `What is the maximum age allowed to access this playground?`
+This rendering asks information about the property 
+[max_age](https://wiki.openstreetmap.org/wiki/Key:max_age)
+This is rendered with `Accessible to kids of at most {max_age}`
 
 
-The question is  *Is this playground lit at night?*
+This tagrendering has labels 
+`extra`
 
+### this.id
 
+The question is `Who operates this playground?`
+This rendering asks information about the property 
+[operator](https://wiki.openstreetmap.org/wiki/Key:operator)
+This is rendered with `Operated by {operator}`
 
 
 
-  - *This playground is lit at night*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:lit' target='_blank'>lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:lit%3Dyes' target='_blank'>yes</a>
-  - *This playground is not lit at night*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:lit' target='_blank'>lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:lit%3Dno' target='_blank'>no</a>
 
+### this.id
 
-This tagrendering has labels  `extra`
+The question is `Is this playground accessible to the general public?`
 
+ - *Accessible to the general public* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>
+ - *This is a <b>paid</b> playground* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>
+ - *Only accessible for clients of the operating business* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers' target='_blank'>customers</a>
+ - *Only accessible to students of the school* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dstudents' target='_blank'>students</a>
+ - _This option cannot be chosen as answer_
+ - *Not accessible* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate' target='_blank'>private</a>
+ - *This is a schoolyard - an outdoor area where the pupils can play during their breaks; but it is not accessible to the general public* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dschoolyard' target='_blank'>schoolyard</a>
 
 
-### playground-min_age 
 
+### this.id
 
+The question is `What is the website of {title()}?`
+This rendering asks information about the property 
+[website](https://wiki.openstreetmap.org/wiki/Key:website)
+This is rendered with `<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>`
+ - *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>* corresponds with contact:website~.+
+ - _This option cannot be chosen as answer_
 
-The question is  *What is the minimum age required to access this playground?*
+This tagrendering has labels 
+`contact`
 
-This rendering asks information about the property  [min_age](https://wiki.openstreetmap.org/wiki/Key:min_age) This is rendered with  `Accessible to kids older than {min_age} years`
+### this.id
 
-This tagrendering has labels  `extra`
+The question is `What is the email address of the playground maintainer?`
+This rendering asks information about the property 
+[email](https://wiki.openstreetmap.org/wiki/Key:email)
+This is rendered with `<a href='mailto:{email}'>{email}</a>`
 
 
 
-### playground-max_age 
 
+### this.id
 
+The question is `What is the phone number of the playground maintainer?`
+This rendering asks information about the property 
+[phone](https://wiki.openstreetmap.org/wiki/Key:phone)
+This is rendered with `<a href='tel:{phone}'>{phone}</a>`
 
-The question is  *What is the maximum age allowed to access this playground?*
 
-This rendering asks information about the property  [max_age](https://wiki.openstreetmap.org/wiki/Key:max_age) This is rendered with  `Accessible to kids of at most {max_age}`
 
-This tagrendering has labels  `extra`
 
+### this.id
 
+The question is `Is this playground accessible to wheelchair users?`
 
-### playground-operator 
+ - *Completely accessible for wheelchair users* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes' target='_blank'>yes</a>
+ - *Limited accessibility for wheelchair users* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dlimited' target='_blank'>limited</a>
+ - *Not accessible for wheelchair users* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dno' target='_blank'>no</a>
 
 
 
-The question is  *Who operates this playground?*
+### this.id
 
-This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) This is rendered with  `Operated by {operator}`
+The question is `When is this playground accessible?`
+This rendering asks information about the property 
+[opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours)
+This is rendered with `{opening_hours_table(opening_hours)}`
+ - *Accessible from sunrise till sunset* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dsunrise-sunset' target='_blank'>sunrise-sunset</a>
+ - *Always accessible* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
 
 
 
-### playground-access 
+### this.id
 
+The question is `When was this object last checked?`
+This rendering asks information about the property 
+[check_date](https://wiki.openstreetmap.org/wiki/Key:check_date)
+This is rendered with `This object was last checked on <b>{check_date}</b>`
+ - *This object was last checked today* corresponds with check_date=
 
 
-The question is  *Is this playground accessible to the general public?*
 
-
-
-
-
-  - *Accessible to the general public*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>
-  - *This is a <b>paid</b> playground*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>
-  - *Only accessible for clients of the operating business*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers' target='_blank'>customers</a>
-  - *Only accessible to students of the school*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dstudents' target='_blank'>students</a>
-  - _This option cannot be chosen as answer_
-  - *Not accessible*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate' target='_blank'>private</a>
-  - *This is a schoolyard - an outdoor area where the pupils can play during their breaks; but it is not accessible to the general public*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dschoolyard' target='_blank'>schoolyard</a>
-
-
-
-
-### website 
-
-
-
-The question is  *What is the website of {title()}?*
-
-This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) This is rendered with  `<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>`
-
-
-
-  - *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>*  corresponds with  contact:website~.+
-  - _This option cannot be chosen as answer_
-
-
-This tagrendering has labels  `contact`
-
-
-
-### playground-email 
-
-
-
-The question is  *What is the email address of the playground maintainer?*
-
-This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) This is rendered with  `<a href='mailto:{email}'>{email}</a>`
-
-
-
-### playground-phone 
-
-
-
-The question is  *What is the phone number of the playground maintainer?*
-
-This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) This is rendered with  `<a href='tel:{phone}'>{phone}</a>`
-
-
-
-### Playground-wheelchair 
-
-
-
-The question is  *Is this playground accessible to wheelchair users?*
-
-
-
-
-
-  - *Completely accessible for wheelchair users*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes' target='_blank'>yes</a>
-  - *Limited accessibility for wheelchair users*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dlimited' target='_blank'>limited</a>
-  - *Not accessible for wheelchair users*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dno' target='_blank'>no</a>
-
-
-
-
-### playground-opening_hours 
-
-
-
-The question is  *When is this playground accessible?*
-
-This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) This is rendered with  `{opening_hours_table(opening_hours)}`
-
-
-
-  - *Accessible from sunrise till sunset*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dsunrise-sunset' target='_blank'>sunrise-sunset</a>
-  - *Always accessible*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
-
-
-
-
-### check_date 
-
-
-
-The question is  *When was this object last checked?*
-
-This rendering asks information about the property  [check_date](https://wiki.openstreetmap.org/wiki/Key:check_date) This is rendered with  `This object was last checked on <b>{check_date}</b>`
-
-
-
-  - *This object was last checked today*  corresponds with  check_date=
-
-
-
-
-### questions 
-
-
-
+### this.id
 Show the questions block at this location
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### playground-reviews 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### lod 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has no question and is thus read-only
+
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has labels  `added_by_default`
+This tagrendering has labels 
+`added_by_default`
 
-
-
-### minimap 
-
-
-
+### this.id
 Shows a small map with the feature. Added by default to every popup
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### delete-button 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### last_edit 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
+
+
+### this.id
 Gives some metainfo about the last edit and who did edit it - rendering only
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:changeset~.+ & _last_edit:contributor~.+
+This tagrendering has labels 
+`added_by_default`
 
-This tagrendering has labels  `added_by_default`
+### this.id
 
-
-
-### favourite_status 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### qr_code 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has no question and is thus read-only
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has labels  `added_by_default`
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
-
-### share 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### all-tags 
-
-
-
-This tagrendering has no question and is thus read-only
 
  
 

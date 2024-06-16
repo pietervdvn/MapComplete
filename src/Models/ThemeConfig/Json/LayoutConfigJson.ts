@@ -450,5 +450,4 @@ export interface LayoutConfigJson {
      * iftrue: Do not write 'change_within_x_m' and do not indicate that this was done by survey
      */
     enableMorePrivacy: boolean
-
 }

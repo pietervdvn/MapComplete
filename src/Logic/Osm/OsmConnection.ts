@@ -143,7 +143,11 @@ export class OsmConnection {
 
             options.oauth_token.setData(undefined)
         }
-        if (!Utils.runningFromConsole && this.auth.authenticated() && options.attemptLogin !== false) {
+        if (
+            !Utils.runningFromConsole &&
+            this.auth.authenticated() &&
+            options.attemptLogin !== false
+        ) {
             this.AttemptLogin()
         } else {
             console.log("Not authenticated")
@@ -210,7 +214,7 @@ export class OsmConnection {
         this.auth.xhr(
             {
                 method: "GET",
-                path: "/api/0.6/user/details"
+                path: "/api/0.6/user/details",
             },
             (err, details: XMLDocument) => {
                 if (err != null) {
@@ -322,9 +326,9 @@ export class OsmConnection {
                     method,
                     headers: header,
                     content,
-                    path: `/api/0.6/${path}`
+                    path: `/api/0.6/${path}`,
                 },
-                function(err, response) {
+                function (err, response) {
                     if (err !== null) {
                         error(err)
                     } else {
@@ -341,7 +345,7 @@ export class OsmConnection {
         header?: Record<string, string>,
         allowAnonymous: boolean = false
     ): Promise<T> {
-        return <T> await this.interact(path, "POST", header, content, allowAnonymous)
+        return <T>await this.interact(path, "POST", header, content, allowAnonymous)
     }
 
     public async put<T extends string>(
@@ -349,7 +353,7 @@ export class OsmConnection {
         content?: string,
         header?: Record<string, string>
     ): Promise<T> {
-        return <T> await this.interact(path, "PUT", header, content)
+        return <T>await this.interact(path, "PUT", header, content)
     }
 
     public async get(
@@ -377,7 +381,7 @@ export class OsmConnection {
     public reopenNote(id: number | string, text?: string): Promise<string> {
         if (this._dryRun.data) {
             console.warn("Dryrun enabled - not actually reopening note ", id, " with text ", text)
-            return new Promise(resolve => {
+            return new Promise((resolve) => {
                 resolve("")
             })
         }
@@ -404,7 +408,7 @@ export class OsmConnection {
             "notes.json",
             content,
             {
-                "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"
+                "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
             },
             true
         )
@@ -445,7 +449,7 @@ export class OsmConnection {
             file: gpx,
             description: options.description,
             tags: options.labels?.join(",") ?? "",
-            visibility: options.visibility
+            visibility: options.visibility,
         }
 
         if (!contents.description) {
@@ -453,9 +457,9 @@ export class OsmConnection {
         }
         const extras = {
             file:
-                "; filename=\"" +
+                '; filename="' +
                 (options.filename ?? "gpx_track_mapcomplete_" + new Date().toISOString()) +
-                "\"\r\nContent-Type: application/gpx+xml"
+                '"\r\nContent-Type: application/gpx+xml',
         }
 
         const boundary = "987654"
@@ -463,7 +467,7 @@ export class OsmConnection {
         let body = ""
         for (const key in contents) {
             body += "--" + boundary + "\r\n"
-            body += "Content-Disposition: form-data; name=\"" + key + "\""
+            body += 'Content-Disposition: form-data; name="' + key + '"'
             if (extras[key] !== undefined) {
                 body += extras[key]
             }
@@ -474,7 +478,7 @@ export class OsmConnection {
 
         const response = await this.post("gpx/create", body, {
             "Content-Type": "multipart/form-data; boundary=" + boundary,
-            "Content-Length": ""+body.length
+            "Content-Length": "" + body.length,
         })
         const parsed = JSON.parse(response)
         console.log("Uploaded GPX track", parsed)
@@ -497,9 +501,9 @@ export class OsmConnection {
                 {
                     method: "POST",
 
-                    path: `/api/0.6/notes/${id}/comment?text=${encodeURIComponent(text)}`
+                    path: `/api/0.6/notes/${id}/comment?text=${encodeURIComponent(text)}`,
                 },
-                function(err) {
+                function (err) {
                     if (err !== null) {
                         error(err)
                     } else {
@@ -514,7 +518,7 @@ export class OsmConnection {
      * To be called by land.html
      */
     public finishLogin(callback: (previousURL: string) => void) {
-        this.auth.authenticate(function() {
+        this.auth.authenticate(function () {
             // Fully authed at this point
             console.log("Authentication successful!")
             const previousLocation = LocalStorageSource.Get("location_before_login")
@@ -531,7 +535,7 @@ export class OsmConnection {
                 ? "https://mapcomplete.org/land.html"
                 : window.location.protocol + "//" + window.location.host + "/land.html",
             singlepage: true, // We always use 'singlePage', it is the most stable - including in PWA
-            auto: true
+            auto: true,
         })
     }
 

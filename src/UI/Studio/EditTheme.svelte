@@ -22,39 +22,36 @@
   export let selfLayers: { owner: number; id: string }[]
   export let otherLayers: { owner: number; id: string }[]
   {
-
     /**
      * We modify the schema and inject options for self-declared layers
      */
 
-    const layerSchema = schema.find(l => l.path.join(".") === "layers")
-    const suggestions: { if: string, then: string }[] = layerSchema.hints.suggestions
-    suggestions.unshift(...selfLayers.map(
-      l => ({
+    const layerSchema = schema.find((l) => l.path.join(".") === "layers")
+    const suggestions: { if: string; then: string }[] = layerSchema.hints.suggestions
+    suggestions.unshift(
+      ...selfLayers.map((l) => ({
         if: `value=https://studio.mapcomplete.org/${l.owner}/layers/${l.id}/${l.id}.json`,
-        then: `<b>${l.id}</b> (made by you)`
-      })
-    ))
+        then: `<b>${l.id}</b> (made by you)`,
+      }))
+    )
 
     for (let i = 0; i < otherLayers.length; i++) {
       const l = otherLayers[i]
       const mapping = {
         if: `value=https://studio.mapcomplete.org/${l.owner}/layers/${l.id}/${l.id}.json`,
-        then: `<b>${l.id}</b> (made by ${l.owner})`
+        then: `<b>${l.id}</b> (made by ${l.owner})`,
       }
       /**
        * This is a filthy hack which is time-sensitive and will break
        * It downloads the username and patches the suggestion, assuming that the list with all layers will be shown a while _after_ loading the view.
        * Caching in 'getInformationAboutUser' helps with this as well
        */
-      osmConnection.getInformationAboutUser(l.owner).then(userInfo => {
+      osmConnection.getInformationAboutUser(l.owner).then((userInfo) => {
         mapping.then = `<b>${l.id}</b> (made by ${userInfo.display_name})`
       })
       suggestions.push(mapping)
     }
-
   }
-
 
   let messages = state.messages
   let hasErrors = messages.map(
@@ -102,8 +99,7 @@
       <div slot="content0" class="mb-8">
         <Region configs={perRegion["basic"]} path={[]} {state} title="Basic properties" />
         <Region configs={perRegion["start_location"]} path={[]} {state} title="Start location" />
-        <DeleteButton {state} {backToStudio} objectType="theme"/>
-
+        <DeleteButton {state} {backToStudio} objectType="theme" />
       </div>
 
       <div slot="title1">Layers</div>
@@ -126,10 +122,11 @@
           Below, you'll find the raw configuration file in `.json`-format. This is mostly for
           debugging purposes, but you can also edit the file directly if you want.
         </div>
-        <div class="literal-code overflow-y-auto h-full" style="min-height: 75%">
+        <div class="literal-code h-full overflow-y-auto" style="min-height: 75%">
           <RawEditor {state} />
         </div>
         <ShowConversionMessages messages={$messages} />
+      </div>
     </TabbedGroup>
   </div>
 </div>

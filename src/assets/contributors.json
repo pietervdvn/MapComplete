@@ -1,11 +1,11 @@
 {
   "contributors": [
     {
-      "commits": 7248,
+      "commits": 7544,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 451,
+      "commits": 481,
       "contributor": "Robin van der Linde"
     },
     {
@@ -17,7 +17,7 @@
       "contributor": "Win Olario"
     },
     {
-      "commits": 34,
+      "commits": 35,
       "contributor": "dependabot[bot]"
     },
     {
@@ -239,6 +239,14 @@
     {
       "commits": 2,
       "contributor": "Stanislas Gueniffey"
+    },
+    {
+      "commits": 1,
+      "contributor": "Manuel Tassi"
+    },
+    {
+      "commits": 1,
+      "contributor": "contrapunctus"
     },
     {
       "commits": 1,

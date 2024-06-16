@@ -73,15 +73,15 @@ export class ImageUploadManager {
         }
     }
 
-    public canBeUploaded(file: File): true | {error: Translation} {
+    public canBeUploaded(file: File): true | { error: Translation } {
         const sizeInBytes = file.size
         const self = this
         if (sizeInBytes > this._uploader.maxFileSizeInMegabytes * 1000000) {
-             const error = Translations.t.image.toBig.Subs({
+            const error = Translations.t.image.toBig.Subs({
                 actual_size: Math.floor(sizeInBytes / 1000000) + "MB",
                 max_size: self._uploader.maxFileSizeInMegabytes + "MB",
             })
-            return {error}
+            return { error }
         }
         return true
     }
@@ -98,9 +98,8 @@ export class ImageUploadManager {
         tagsStore: UIEventSource<OsmTags>,
         targetKey?: string
     ): Promise<void> {
-
         const canBeUploaded = this.canBeUploaded(file)
-        if(canBeUploaded !== true){
+        if (canBeUploaded !== true) {
             throw canBeUploaded.error
         }
 

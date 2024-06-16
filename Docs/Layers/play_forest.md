@@ -25,21 +25,21 @@ Een speelbos is een vrij toegankelijke zone in een bos
 1. [ Themes using this layer ](#-themes-using-this-layer-)
 2. [ Basic tags for this layer ](#-basic-tags-for-this-layer-)
 3. [ Supported attributes ](#-supported-attributes-)
-  - [just_created](#just_created)
-  - [images](#images)
-  - [play_forest-operator](#play_forest-operator)
-  - [play_forest-opening_hours](#play_forest-opening_hours)
-  - [play_forest-email](#play_forest-email)
-  - [play_forest-phone](#play_forest-phone)
-  - [questions](#questions)
-  - [play_forest-reviews](#play_forest-reviews)
-  - [lod](#lod)
-  - [minimap](#minimap)
-  - [last_edit](#last_edit)
-  - [favourite_status](#favourite_status)
-  - [qr_code](#qr_code)
-  - [share](#share)
-  - [all-tags](#all-tags)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
 
  Themes using this layer 
 -------------------------
@@ -85,195 +85,137 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/phone#values) [phone](https://wiki.openstreetmap.org/wiki/Key:phone) | [phone](../SpecialInputElements.md#phone) | 
 
 
-
-
-### just_created 
-
-
-
+### this.id
 This element shows a 'thank you' that the contributor has recently created this element
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
+ - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
+This tagrendering has labels 
+`added_by_default`
 
-
-
-
-
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
-
-
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### images 
-
-
-
+### this.id
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### play_forest-operator 
-
-
-
-The question is  *Wie beheert dit gebied?*
-
-This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) This is rendered with  `Dit gebied wordt beheerd door {operator}`
-
-
-
-  - *Dit gebied wordt beheerd door het <a href='https://www.natuurenbos.be/spelen'>Agentschap Natuur en Bos</a>*  corresponds with  operator~^([aA][nN][bB])$
-  - _This option cannot be chosen as answer_
-  - *Dit gebied wordt beheerd door het <a href='https://www.natuurenbos.be/spelen'>Agentschap Natuur en Bos</a>*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:operator' target='_blank'>operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator%3DAgenstchap Natuur en Bos' target='_blank'>Agenstchap Natuur en Bos</a>
-
-
-
-
-### play_forest-opening_hours 
-
-
-
-The question is  *Wanneer is deze speelzone toegankelijk?*
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-  - *Het hele jaar door overdag toegankelijk (van 08:00 tot 22:00)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D08:00-22:00' target='_blank'>08:00-22:00</a>
-  - *Enkel in de <b>zomervakantie</b> en overdag toegankelijk (van 1 juli tot 31 augustus, van 08:00 tot 22:00*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3DJul-Aug 08:00-22:00' target='_blank'>Jul-Aug 08:00-22:00</a>
+### this.id
+
+The question is `Wie beheert dit gebied?`
+This rendering asks information about the property 
+[operator](https://wiki.openstreetmap.org/wiki/Key:operator)
+This is rendered with `Dit gebied wordt beheerd door {operator}`
+ - *Dit gebied wordt beheerd door het <a href='https://www.natuurenbos.be/spelen'>Agentschap Natuur en Bos</a>* corresponds with operator~^([aA][nN][bB])$
+ - _This option cannot be chosen as answer_
+ - *Dit gebied wordt beheerd door het <a href='https://www.natuurenbos.be/spelen'>Agentschap Natuur en Bos</a>* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:operator' target='_blank'>operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator%3DAgenstchap Natuur en Bos' target='_blank'>Agenstchap Natuur en Bos</a>
+
+
+
+### this.id
+
+The question is `Wanneer is deze speelzone toegankelijk?`
+
+ - *Het hele jaar door overdag toegankelijk (van 08:00 tot 22:00)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D08:00-22:00' target='_blank'>08:00-22:00</a>
+ - *Enkel in de <b>zomervakantie</b> en overdag toegankelijk (van 1 juli tot 31 augustus, van 08:00 tot 22:00* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3DJul-Aug 08:00-22:00' target='_blank'>Jul-Aug 08:00-22:00</a>
+
+
+
+### this.id
+
+The question is `Wie kan men emailen indien er problemen zijn met de speelzone?`
+This rendering asks information about the property 
+[email](https://wiki.openstreetmap.org/wiki/Key:email)
+This is rendered with `De bevoegde dienst kan bereikt worden via {email}`
 
 
 
 
-### play_forest-email 
+### this.id
+
+The question is `Wie kan men bellen indien er problemen zijn met de speelzone?`
+This rendering asks information about the property 
+[phone](https://wiki.openstreetmap.org/wiki/Key:phone)
+This is rendered with `De bevoegde dienst kan getelefoneerd worden via {phone}`
 
 
 
-The question is  *Wie kan men emailen indien er problemen zijn met de speelzone?*
 
-This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) This is rendered with  `De bevoegde dienst kan bereikt worden via {email}`
-
-
-
-### play_forest-phone 
-
-
-
-The question is  *Wie kan men bellen indien er problemen zijn met de speelzone?*
-
-This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) This is rendered with  `De bevoegde dienst kan getelefoneerd worden via {phone}`
-
-
-
-### questions 
-
-
-
+### this.id
 Show the questions block at this location
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### play_forest-reviews 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### lod 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has no question and is thus read-only
+
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has labels  `added_by_default`
+This tagrendering has labels 
+`added_by_default`
 
-
-
-### minimap 
-
-
-
+### this.id
 Shows a small map with the feature. Added by default to every popup
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
 
 
-### last_edit 
 
-
-
+### this.id
 Gives some metainfo about the last edit and who did edit it - rendering only
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:changeset~.+ & _last_edit:contributor~.+
+This tagrendering has labels 
+`added_by_default`
 
-This tagrendering has labels  `added_by_default`
+### this.id
 
-
-
-### favourite_status 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### qr_code 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has no question and is thus read-only
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has labels  `added_by_default`
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
-
-### share 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### all-tags 
-
-
-
-This tagrendering has no question and is thus read-only
 
  
 

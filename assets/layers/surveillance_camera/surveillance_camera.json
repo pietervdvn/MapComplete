@@ -270,7 +270,8 @@
         "ca": "Quin tipus de càmera és aquesta?",
         "es": "¿Qué tipo de cámara es?",
         "cs": "Jaká je to kamera?",
-        "sl": "Kakšne vrste kamera je to?"
+        "sl": "Kakšne vrste kamera je to?",
+        "pl": "Jakiego rodzaju jest ta kamera?"
       },
       "mappings": [
         {
@@ -575,7 +576,8 @@
         "es": "¿A qué nivel está colocada esta cámara?",
         "ca": "A quina planta es troba aquesta càmera?",
         "cs": "Ve kterém podlaží se nachází tato kamera?",
-        "sl": "V katerem nadstropju je ta kamera?"
+        "sl": "V katerem nadstropju je ta kamera?",
+        "pl": "Na którym piętrze znajduje się ta kamera?"
       },
       "render": {
         "en": "Located on level {level}",

@@ -8,7 +8,8 @@
   "description": {
     "en": "This layer contains assembly points and waiting areas where all employees, passengers or a large crowd assemble in case of an emergency.",
     "it": "Questo livello contiene punti di raccolta e aree di attesa in cui tutti i dipendenti, i passeggeri o una grande folla si riuniscono in caso di emergenza.",
-    "de": "Diese Ebene enthält Sammelplätze und Wartebereiche, in denen sich alle Mitarbeiter, Fahrgäste oder eine große Menschenmenge im Notfall versammeln."
+    "de": "Diese Ebene enthält Sammelplätze und Wartebereiche, in denen sich alle Mitarbeiter, Fahrgäste oder eine große Menschenmenge im Notfall versammeln.",
+    "pl": "Ta warstwa zawiera punkty zbiórki oraz miejsca oczekiwania, gdzie wszyscy pracownicy, pasażerowie lub duży tłum gromadzą się w przypadku zagrożenia."
   },
   "source": {
     "osmTags": {
@@ -44,7 +45,8 @@
       "title": {
         "en": "an assembly point",
         "it": "un punto di raccolta",
-        "de": "ein Sammelplatz"
+        "de": "ein Sammelplatz",
+        "pl": "punkt zbiórki"
       },
       "tags": [
         "emergency=assembly_point"
@@ -61,12 +63,14 @@
       "question": {
         "en": "What is the name of this assembly point?",
         "it": "Qual è il nome di questo punto di raccolta?",
-        "de": "Wie lautet der Name dieser Sammelstelle?"
+        "de": "Wie lautet der Name dieser Sammelstelle?",
+        "pl": "Jak nazywa się ten punkt zbiórki?"
       },
       "render": {
         "en": "This assembly point is named <b>{name}</b>",
         "it": "Questo punto di raccolta si chiama <b>{name}</b>",
-        "de": "Diese Sammelstelle hat den Namen <b>{name}</b>"
+        "de": "Diese Sammelstelle hat den Namen <b>{name}</b>",
+        "pl": "Ten punkt zbiórki nazywa się <b>{name}</b>"
       }
     },
     {
@@ -101,7 +105,8 @@
           "then": {
             "en": "Earthquake",
             "it": "Terremoto",
-            "de": "Erdbeben"
+            "de": "Erdbeben",
+            "pl": "Trzęsienie ziemi"
           },
           "icon": {
             "path": "./assets/layers/assembly_point/earthquake.svg",
@@ -114,7 +119,8 @@
           "then": {
             "en": "Flood",
             "it": "Alluvione",
-            "de": "Flut"
+            "de": "Flut",
+            "pl": "Powódź"
           },
           "icon": {
             "path": "./assets/layers/assembly_point/flood.svg",
@@ -127,7 +133,8 @@
           "then": {
             "en": "Fire",
             "it": "Incendio",
-            "de": "Feuer"
+            "de": "Feuer",
+            "pl": "Pożar"
           },
           "icon": {
             "path": "./assets/layers/assembly_point/fire.svg",
@@ -140,7 +147,8 @@
           "then": {
             "en": "Landslide",
             "it": "Frana",
-            "de": "Erdrutsch"
+            "de": "Erdrutsch",
+            "pl": "Osuwisko"
           },
           "icon": {
             "path": "./assets/layers/assembly_point/landslide.svg",

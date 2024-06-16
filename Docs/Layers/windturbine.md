@@ -25,22 +25,22 @@ Modern windmills generating electricity
 1. [ Themes using this layer ](#-themes-using-this-layer-)
 2. [ Basic tags for this layer ](#-basic-tags-for-this-layer-)
 3. [ Supported attributes ](#-supported-attributes-)
-  - [just_created](#just_created)
-  - [turbine-output](#turbine-output)
-  - [turbine-operator](#turbine-operator)
-  - [turbine-height](#turbine-height)
-  - [turbine-diameter](#turbine-diameter)
-  - [turbine-start-date](#turbine-start-date)
-  - [windturbine-fixme](#windturbine-fixme)
-  - [images](#images)
-  - [leftover-questions](#leftover-questions)
-  - [lod](#lod)
-  - [minimap](#minimap)
-  - [last_edit](#last_edit)
-  - [favourite_status](#favourite_status)
-  - [qr_code](#qr_code)
-  - [share](#share)
-  - [all-tags](#all-tags)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
 
  Themes using this layer 
 -------------------------
@@ -88,190 +88,148 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/fixme#values) [fixme](https://wiki.openstreetmap.org/wiki/Key:fixme) | [text](../SpecialInputElements.md#text) | 
 
 
-
-
-### just_created 
-
-
-
+### this.id
 This element shows a 'thank you' that the contributor has recently created this element
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
+ - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
+This tagrendering has labels 
+`added_by_default`
 
+### this.id
 
-
-
-
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
-
-
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### turbine-output 
+The question is `What is the power output of this wind turbine? (e.g. 2.3 MW)`
+This rendering asks information about the property 
+[generator:output:electricity](https://wiki.openstreetmap.org/wiki/Key:generator:output:electricity)
+This is rendered with `The power output of this wind turbine is {generator:output:electricity}.`
 
 
 
-The question is  *What is the power output of this wind turbine? (e.g. 2.3 MW)*
 
-This rendering asks information about the property  [generator:output:electricity](https://wiki.openstreetmap.org/wiki/Key:generator:output:electricity) This is rendered with  `The power output of this wind turbine is {generator:output:electricity}.`
+### this.id
 
-
-
-### turbine-operator 
-
-
-
-The question is  *Who operates this wind turbine?*
-
-This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) This is rendered with  `This wind turbine is operated by {operator}.`
+The question is `Who operates this wind turbine?`
+This rendering asks information about the property 
+[operator](https://wiki.openstreetmap.org/wiki/Key:operator)
+This is rendered with `This wind turbine is operated by {operator}.`
 
 
 
-### turbine-height 
+
+### this.id
+
+The question is `What is the total height of this wind turbine (including rotor radius), in metres?`
+This rendering asks information about the property 
+[height](https://wiki.openstreetmap.org/wiki/Key:height)
+This is rendered with `The total height (including rotor radius) of this wind turbine is {height} metres.`
 
 
 
-The question is  *What is the total height of this wind turbine (including rotor radius), in metres?*
 
-This rendering asks information about the property  [height](https://wiki.openstreetmap.org/wiki/Key:height) This is rendered with  `The total height (including rotor radius) of this wind turbine is {height} metres.`
+### this.id
 
-
-
-### turbine-diameter 
-
-
-
-The question is  *What is the rotor diameter of this wind turbine, in metres?*
-
-This rendering asks information about the property  [rotor:diameter](https://wiki.openstreetmap.org/wiki/Key:rotor:diameter) This is rendered with  `The rotor diameter of this wind turbine is {rotor:diameter} metres.`
+The question is `What is the rotor diameter of this wind turbine, in metres?`
+This rendering asks information about the property 
+[rotor:diameter](https://wiki.openstreetmap.org/wiki/Key:rotor:diameter)
+This is rendered with `The rotor diameter of this wind turbine is {rotor:diameter} metres.`
 
 
 
-### turbine-start-date 
+
+### this.id
+
+The question is `When did this wind turbine go into operation?`
+This rendering asks information about the property 
+[start_date](https://wiki.openstreetmap.org/wiki/Key:start_date)
+This is rendered with `This wind turbine went into operation on/in {start_date}.`
 
 
 
-The question is  *When did this wind turbine go into operation?*
 
-This rendering asks information about the property  [start_date](https://wiki.openstreetmap.org/wiki/Key:start_date) This is rendered with  `This wind turbine went into operation on/in {start_date}.`
+### this.id
 
-
-
-### windturbine-fixme 
-
-
-
-The question is  *Is there something wrong with how this is mapped, that you weren't able to fix here? (leave a note to OpenStreetMap experts)*
-
-This rendering asks information about the property  [fixme](https://wiki.openstreetmap.org/wiki/Key:fixme) This is rendered with  `Extra information for OpenStreetMap experts: {fixme}`
+The question is `Is there something wrong with how this is mapped, that you weren't able to fix here? (leave a note to OpenStreetMap experts)`
+This rendering asks information about the property 
+[fixme](https://wiki.openstreetmap.org/wiki/Key:fixme)
+This is rendered with `Extra information for OpenStreetMap experts: {fixme}`
 
 
 
-### images 
 
-
-
+### this.id
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### leftover-questions 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### lod 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has no question and is thus read-only
+
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has labels  `added_by_default`
+This tagrendering has labels 
+`added_by_default`
 
-
-
-### minimap 
-
-
-
+### this.id
 Shows a small map with the feature. Added by default to every popup
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
 
 
-### last_edit 
 
-
-
+### this.id
 Gives some metainfo about the last edit and who did edit it - rendering only
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:changeset~.+ & _last_edit:contributor~.+
+This tagrendering has labels 
+`added_by_default`
 
-This tagrendering has labels  `added_by_default`
+### this.id
 
-
-
-### favourite_status 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### qr_code 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has no question and is thus read-only
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has labels  `added_by_default`
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
-
-### share 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### all-tags 
-
-
-
-This tagrendering has no question and is thus read-only
 
  
 

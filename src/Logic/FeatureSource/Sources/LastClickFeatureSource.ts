@@ -16,7 +16,7 @@ export class LastClickFeatureSource {
     private i: number = 0
     private readonly hasPresets: boolean
     private readonly hasNoteLayer: boolean
-    public static readonly newPointElementId=  "new_point_dialog"
+    public static readonly newPointElementId = "new_point_dialog"
 
     constructor(layout: LayoutConfig) {
         this.hasNoteLayer = layout.hasNoteLayer()

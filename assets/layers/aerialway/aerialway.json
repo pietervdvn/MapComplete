@@ -6,7 +6,9 @@
   },
   "description": {
     "en": "Various forms of transport for passengers and goods that use wires, including cable cars, gondolas, chair lifts, drag lifts, and zip lines. ",
-    "de": "Alle Arten von seil- oder drahtgestütztem Personen- oder Gütertransport, wie Seilbahnen, Gondeln, Sessellifte, Schlepplifte. "
+    "de": "Alle Arten von seil- oder drahtgestütztem Personen- oder Gütertransport, wie Seilbahnen, Gondeln, Sessellifte, Schlepplifte. ",
+    "es": "Diversas formas de transporte de pasajeros y mercancías que utilizan cables, como teleféricos, telecabinas, telesillas, telesquíes y tirolinas. ",
+    "pl": "Różne formy transportu dla pasażerów i dóbr, które używają lin, w tym kolejki gondolowe, wyciągi krzesełkowe i orczykowe oraz tyrolki. "
   },
   "source": {
     "osmTags": {
@@ -45,7 +47,8 @@
         "render": {
           "en": "{name}",
           "de": "{name}",
-          "fr": "{name}"
+          "fr": "{name}",
+          "pl": "{name}"
         },
         "condition": "name~*",
         "classes": "bg-white p-1 px-2 rounded"
@@ -118,7 +121,8 @@
           "if": "aerialway=drag_lift",
           "then": {
             "en": "A drag lift",
-            "de": "Ein Schlepplift"
+            "de": "Ein Schlepplift",
+            "pl": "Wyciąg orczykowy"
           },
           "hideInAnswer": true
         },
@@ -161,7 +165,8 @@
           "if": "aerialway=zip_line",
           "then": {
             "en": "A zip line. (A touristical attraction where adventurous people go down at high speeds) ",
-            "de": "Eine Seilrutsche. (Eine Touristenattraktion, bei der abenteuerlustige Menschen mit hoher Geschwindigkeit hinunterfahren) "
+            "de": "Eine Seilrutsche. (Eine Touristenattraktion, bei der abenteuerlustige Menschen mit hoher Geschwindigkeit hinunterfahren) ",
+            "pl": "Tyrolka. (Atrakcja turystyczna, która pozwala żądnym przygód zjechać z dużą szybkością) "
           }
         }
       ]
@@ -171,12 +176,14 @@
       "question": {
         "en": "How long takes a single journey with this elevator?",
         "de": "Wie lange dauert eine Fahrt mit diesem Aufzug?",
-        "fr": "Combien de temps dure le trajet dans cet ascenseur ?"
+        "fr": "Combien de temps dure le trajet dans cet ascenseur ?",
+        "pl": "Jak długo trwa pojedynczy przejazd tą windą?"
       },
       "questionHint": {
         "en": "This excludes the waiting time.",
         "de": "Dies schließt die Wartezeit aus.",
-        "fr": "Cela n'inclut pas le temps d'attente."
+        "fr": "Cela n'inclut pas le temps d'attente.",
+        "pl": "To nie włącza czasu oczekiwania."
       },
       "freeform": {
         "key": "duration"
@@ -184,7 +191,8 @@
       "render": {
         "en": "A single journey takes {duration} minutes",
         "de": "Eine Fahrt dauert {duration} Minuten",
-        "fr": "Un aller simple dure {duration} minutes"
+        "fr": "Un aller simple dure {duration} minutes",
+        "pl": "Pojedynczy przejazd trwa {duration} minut"
       }
     },
     {
@@ -194,11 +202,13 @@
       },
       "question": {
         "en": "How many people fit a single carriage?",
-        "de": "Wie viele Leute passen in eine Kabine?"
+        "de": "Wie viele Leute passen in eine Kabine?",
+        "pl": "Ile osób może pomieścić jeden wagon?"
       },
       "render": {
         "en": "{aerialway:occupancy} people fit a single carriage",
-        "de": "{aerialway:occupancy} Leute passen in eine Kabine"
+        "de": "{aerialway:occupancy} Leute passen in eine Kabine",
+        "pl": "{aerialway:occupancy} osób mieści się w jednym wagonie"
       }
     },
     "opening_hours",

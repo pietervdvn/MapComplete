@@ -566,7 +566,11 @@ export class DetectMappingsShadowedByCondition extends DesugaringStep<TagRenderi
     private readonly _forceError: boolean
 
     constructor(forceError: boolean = false) {
-        super("Checks that, if the tagrendering has a condition, that a mapping is not contradictory to it, i.e. that there are no dead mappings", [], "DetectMappingsShadowedByCondition")
+        super(
+            "Checks that, if the tagrendering has a condition, that a mapping is not contradictory to it, i.e. that there are no dead mappings",
+            [],
+            "DetectMappingsShadowedByCondition"
+        )
         this._forceError = forceError
     }
 
@@ -588,24 +592,28 @@ export class DetectMappingsShadowedByCondition extends DesugaringStep<TagRenderi
      * ctx.hasErrors() // => true
      */
     convert(json: TagRenderingConfigJson, context: ConversionContext): TagRenderingConfigJson {
-        if(!json.condition && !json.metacondition){
+        if (!json.condition && !json.metacondition) {
             return json
         }
-        if(!json.mappings || json.mappings?.length ==0){
+        if (!json.mappings || json.mappings?.length == 0) {
             return json
         }
         let conditionJson = json.condition ?? json.metacondition
-        if(json.condition !== undefined && json.metacondition !== undefined){
-            conditionJson = {and: [json.condition, json.metacondition]}
+        if (json.condition !== undefined && json.metacondition !== undefined) {
+            conditionJson = { and: [json.condition, json.metacondition] }
         }
         const condition = TagUtils.Tag(conditionJson, context.path.join("."))
 
-        for (let i = 0; i < json.mappings.length; i++){
+        for (let i = 0; i < json.mappings.length; i++) {
             const mapping = json.mappings[i]
             const tagIf = TagUtils.Tag(mapping.if, context.path.join("."))
             const optimized = new And([tagIf, condition]).optimize()
-            if(optimized === false){
-                const msg = ("Detected a conflicting mapping and condition. The mapping requires tags " + tagIf.asHumanString() + ", yet this can never happen because the set condition requires " + condition.asHumanString())
+            if (optimized === false) {
+                const msg =
+                    "Detected a conflicting mapping and condition. The mapping requires tags " +
+                    tagIf.asHumanString() +
+                    ", yet this can never happen because the set condition requires " +
+                    condition.asHumanString()
                 const ctx = context.enters("mappings", i)
                 if (this._forceError) {
                     ctx.err(msg)
@@ -615,10 +623,8 @@ export class DetectMappingsShadowedByCondition extends DesugaringStep<TagRenderi
             }
         }
 
-
         return undefined
     }
-
 }
 
 export class DetectShadowedMappings extends DesugaringStep<TagRenderingConfigJson> {
@@ -1094,14 +1100,26 @@ class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
                         )
                 }
             }
-            if(this._layerConfig?.source?.osmTags && NameSuggestionIndex.supportedTypes().indexOf(json.freeform.key) >= 0){
-                const tags=  TagUtils.TagD(this._layerConfig?.source?.osmTags)?.usedTags()
+            if (
+                this._layerConfig?.source?.osmTags &&
+                NameSuggestionIndex.supportedTypes().indexOf(json.freeform.key) >= 0
+            ) {
+                const tags = TagUtils.TagD(this._layerConfig?.source?.osmTags)?.usedTags()
                 const suggestions = NameSuggestionIndex.getSuggestionsFor(json.freeform.key, tags)
-                if(suggestions === undefined){
-                    context.enters("freeform","type").err("No entry found in the 'Name Suggestion Index'. None of the 'osmSource'-tags match an entry in the NSI.\n\tOsmSource-tags are "+tags.map(t => t.asHumanString()).join(" ; "))
+                if (suggestions === undefined) {
+                    context
+                        .enters("freeform", "type")
+                        .err(
+                            "No entry found in the 'Name Suggestion Index'. None of the 'osmSource'-tags match an entry in the NSI.\n\tOsmSource-tags are " +
+                                tags.map((t) => t.asHumanString()).join(" ; ")
+                        )
                 }
-            }else if(json.freeform.type === "nsi"){
-                context.enters("freeform","type").warn("No need to explicitly set type to 'NSI', autodetected based on freeform type")
+            } else if (json.freeform.type === "nsi") {
+                context
+                    .enters("freeform", "type")
+                    .warn(
+                        "No need to explicitly set type to 'NSI', autodetected based on freeform type"
+                    )
             }
         }
         if (json.render && json["question"] && json.freeform === undefined) {
@@ -1720,8 +1738,12 @@ export class ValidateLayer extends Conversion<
             }
         }
 
-        if(json.allowMove?.["enableAccuraccy"] !== undefined){
-            context.enters("allowMove", "enableAccuracy").err("`enableAccuracy` is written with two C in the first occurrence and only one in the last")
+        if (json.allowMove?.["enableAccuraccy"] !== undefined) {
+            context
+                .enters("allowMove", "enableAccuracy")
+                .err(
+                    "`enableAccuracy` is written with two C in the first occurrence and only one in the last"
+                )
         }
 
         return { raw: json, parsed: layerConfig }

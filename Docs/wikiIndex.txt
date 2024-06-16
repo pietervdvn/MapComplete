@@ -382,6 +382,15 @@ The position of a signpost can be used by a hiker/biker/rider/s…
 |genre= POI, editor, kerbs_and_crossings
 }}
 {{service_item
+|name= [https://mapcomplete.org/lighthouses lighthouses]
+|region= Worldwide
+|lang= {{#language:en|en}}, {{#language:de|en}}
+|descr= A MapComplete theme: Lighthouses are tall buildings with a light on top to guide marine traffic
+|material= {{yes|[https://mapcomplete.org/ Yes]}}
+|image= MapComplete_Screenshot.png
+|genre= POI, editor, lighthouses
+}}
+{{service_item
 |name= [https://mapcomplete.org/maps maps]
 |region= Worldwide
 |lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:fr|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:es|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:ca|en}}, {{#language:pl|en}}
@@ -402,7 +411,7 @@ The position of a signpost can be used by a hiker/biker/rider/s…
 {{service_item
 |name= [https://mapcomplete.org/memorials memorials]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:de|en}}
+|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:nl|en}}
 |descr= A MapComplete theme: Memorials are physical objects permantently placed in the public space to remember a person or event
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png

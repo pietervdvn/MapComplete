@@ -25,20 +25,20 @@ This is a public waste basket, thrash can, where you can throw away your thrash.
 1. [ Themes using this layer ](#-themes-using-this-layer-)
 2. [ Basic tags for this layer ](#-basic-tags-for-this-layer-)
 3. [ Supported attributes ](#-supported-attributes-)
-  - [just_created](#just_created)
-  - [images](#images)
-  - [waste-basket-waste-types](#waste-basket-waste-types)
-  - [dispensing_dog_bags](#dispensing_dog_bags)
-  - [leftover-questions](#leftover-questions)
-  - [lod](#lod)
-  - [minimap](#minimap)
-  - [move-button](#move-button)
-  - [delete-button](#delete-button)
-  - [last_edit](#last_edit)
-  - [favourite_status](#favourite_status)
-  - [qr_code](#qr_code)
-  - [share](#share)
-  - [all-tags](#all-tags)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
     + [Filters](#filters)
 
  Themes using this layer 
@@ -83,195 +83,136 @@ this quick overview is incomplete
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
-[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/waste#values) [waste](https://wiki.openstreetmap.org/wiki/Key:waste) | Multiple choice | [trash](https://wiki.openstreetmap.org/wiki/Tag:waste%3Dtrash) [dog_excrement](https://wiki.openstreetmap.org/wiki/Tag:waste%3Ddog_excrement) [cigarettes](https://wiki.openstreetmap.org/wiki/Tag:waste%3Dcigarettes) [drugs](https://wiki.openstreetmap.org/wiki/Tag:waste%3Ddrugs) [sharps](https://wiki.openstreetmap.org/wiki/Tag:waste%3Dsharps) [plastic](https://wiki.openstreetmap.org/wiki/Tag:waste%3Dplastic) [paper](https://wiki.openstreetmap.org/wiki/Tag:waste%3Dpaper)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/waste#values) [waste](https://wiki.openstreetmap.org/wiki/Key:waste) | Multiple choice | [trash](https://wiki.openstreetmap.org/wiki/Tag:waste%3Dtrash) [dog_excrement](https://wiki.openstreetmap.org/wiki/Tag:waste%3Ddog_excrement) [cigarettes](https://wiki.openstreetmap.org/wiki/Tag:waste%3Dcigarettes) [drugs](https://wiki.openstreetmap.org/wiki/Tag:waste%3Ddrugs) [sharps](https://wiki.openstreetmap.org/wiki/Tag:waste%3Dsharps) [plastic](https://wiki.openstreetmap.org/wiki/Tag:waste%3Dplastic) [pmd](https://wiki.openstreetmap.org/wiki/Tag:waste%3Dpmd) [paper](https://wiki.openstreetmap.org/wiki/Tag:waste%3Dpaper)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/vending#values) [vending](https://wiki.openstreetmap.org/wiki/Key:vending) | Multiple choice | [dog_excrement_bag](https://wiki.openstreetmap.org/wiki/Tag:vending%3Ddog_excrement_bag) [](https://wiki.openstreetmap.org/wiki/Tag:vending%3D)
 
 
-
-
-### just_created 
-
-
-
+### this.id
 This element shows a 'thank you' that the contributor has recently created this element
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
+ - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
+This tagrendering has labels 
+`added_by_default`
 
-
-
-
-
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
-
-
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### images 
-
-
-
+### this.id
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### waste-basket-waste-types 
-
-
-
-The question is  *What kind of waste basket is this?*
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-  - *A waste basket for general waste*  corresponds with  waste=
-  - _This option cannot be chosen as answer_
-  - *A waste basket for general waste*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:waste' target='_blank'>waste</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:waste%3Dtrash' target='_blank'>trash</a>
-  - *A waste basket for dog excrements*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:waste' target='_blank'>waste</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:waste%3Ddog_excrement' target='_blank'>dog_excrement</a>
-  - *A waste basket for cigarettes*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:waste' target='_blank'>waste</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:waste%3Dcigarettes' target='_blank'>cigarettes</a>
-  - *A waste basket for drugs*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:waste' target='_blank'>waste</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:waste%3Ddrugs' target='_blank'>drugs</a>
-  - *A waste basket for needles and other sharp objects*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:waste' target='_blank'>waste</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:waste%3Dsharps' target='_blank'>sharps</a>
-  - *A waste basket for plastic*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:waste' target='_blank'>waste</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:waste%3Dplastic' target='_blank'>plastic</a>
-  - *A waste basket for paper*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:waste' target='_blank'>waste</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:waste%3Dpaper' target='_blank'>paper</a>
+### this.id
+
+The question is `What kind of waste basket is this?`
+
+ - *A waste basket for general waste* corresponds with waste=
+ - _This option cannot be chosen as answer_
+ - *A waste basket for general waste* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:waste' target='_blank'>waste</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:waste%3Dtrash' target='_blank'>trash</a>
+ - *A waste basket for dog excrements* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:waste' target='_blank'>waste</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:waste%3Ddog_excrement' target='_blank'>dog_excrement</a>
+ - *A waste basket for cigarettes* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:waste' target='_blank'>waste</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:waste%3Dcigarettes' target='_blank'>cigarettes</a>
+ - *A waste basket for drugs* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:waste' target='_blank'>waste</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:waste%3Ddrugs' target='_blank'>drugs</a>
+ - *A waste basket for needles and other sharp objects* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:waste' target='_blank'>waste</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:waste%3Dsharps' target='_blank'>sharps</a>
+ - *A waste basket for plastic* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:waste' target='_blank'>waste</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:waste%3Dplastic' target='_blank'>plastic</a>
+ - *A waste basket for plastic packaging, metal packaging and drink cartons (PMD)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:waste' target='_blank'>waste</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:waste%3Dpmd' target='_blank'>pmd</a>
+ - *A waste basket for paper* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:waste' target='_blank'>waste</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:waste%3Dpaper' target='_blank'>paper</a>
 
 
 
+### this.id
 
-### dispensing_dog_bags 
+The question is `Does this waste basket have a dispenser for dog excrement bags?`
 
-
-
-The question is  *Does this waste basket have a dispenser for dog excrement bags?*
-
-
-
-
-
-  - *This waste basket has a dispenser for (dog) excrement bags*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:vending' target='_blank'>vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vending%3Ddog_excrement_bag' target='_blank'>dog_excrement_bag</a> & not:vending=
-  - *This waste basket <b>does not</b> have a dispenser for (dog) excrement bags*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:not:vending' target='_blank'>not:vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:not:vending%3Ddog_excrement_bag' target='_blank'>dog_excrement_bag</a> & vending=
-  - *This waste basket <b>does not</b> have a dispenser for (dog) excrement bags*  corresponds with  vending=
-  - _This option cannot be chosen as answer_
+ - *This waste basket has a dispenser for (dog) excrement bags* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:vending' target='_blank'>vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vending%3Ddog_excrement_bag' target='_blank'>dog_excrement_bag</a> & not:vending=
+ - *This waste basket <b>does not</b> have a dispenser for (dog) excrement bags* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:not:vending' target='_blank'>not:vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:not:vending%3Ddog_excrement_bag' target='_blank'>dog_excrement_bag</a> & vending=
+ - *This waste basket <b>does not</b> have a dispenser for (dog) excrement bags* corresponds with vending=
+ - _This option cannot be chosen as answer_
 
 
 
+### this.id
 
-### leftover-questions 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### lod 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has no question and is thus read-only
+This tagrendering has labels 
+`added_by_default`
 
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### minimap 
-
-
-
+### this.id
 Shows a small map with the feature. Added by default to every popup
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### move-button 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### delete-button 
+### this.id
 
-
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
 
 
-### last_edit 
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
+
+
+### this.id
 Gives some metainfo about the last edit and who did edit it - rendering only
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:changeset~.+ & _last_edit:contributor~.+
+This tagrendering has labels 
+`added_by_default`
 
-This tagrendering has labels  `added_by_default`
+### this.id
 
-
-
-### favourite_status 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### qr_code 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has no question and is thus read-only
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has labels  `added_by_default`
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
-
-### share 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### all-tags 
-
-
-
-This tagrendering has no question and is thus read-only
 
 
 
@@ -292,6 +233,8 @@ waste-type.3 | Waste basket for dog excrement | waste~^(.*dog_excrement.*)$
 waste-type.4 | Waste basket for trash | waste~^(.*trash.*)$
 waste-type.5 | Waste basket for sharps | waste~^(.*sharps.*)$
 waste-type.6 | Waste basket for plastic | waste~^(.*plastic.*)$
+waste-type.7 | Waste basket for plastic packaging, metal packaging and drink cartons (PMD) | waste~^(.*pmd.*)$
+waste-type.8 | Waste basket for paper | waste~^(.*paper.*)$
 
 
 

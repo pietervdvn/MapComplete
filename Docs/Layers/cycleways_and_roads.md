@@ -30,32 +30,32 @@ All infrastructure that someone can cycle over, accompanied with questions about
 1. [ Themes using this layer ](#-themes-using-this-layer-)
 2. [ Basic tags for this layer ](#-basic-tags-for-this-layer-)
 3. [ Supported attributes ](#-supported-attributes-)
-  - [just_created](#just_created)
-  - [Cycleway type for a road](#cycleway-type-for-a-road)
-  - [is lit?](#is-lit)
-  - [Is this a cyclestreet? (For a road)](#is-this-a-cyclestreet-(for-a-road))
-  - [Maxspeed (for road)](#maxspeed-(for-road))
-  - [Cycleway:surface](#cyclewaysurface)
-  - [incline](#incline)
-  - [Cycleway:smoothness](#cyclewaysmoothness)
-  - [Surface of the road](#surface-of-the-road)
-  - [Surface of the street](#surface-of-the-street)
-  - [width:carriageway](#widthcarriageway)
-  - [cycleway-lane-track-traffic-signs](#cycleway-lane-track-traffic-signs)
-  - [cycleway-traffic-signs](#cycleway-traffic-signs)
-  - [cycleway-traffic-signs-supplementary](#cycleway-traffic-signs-supplementary)
-  - [cycleways_and_roads-cycleway:buffer](#cycleways_and_roads-cyclewaybuffer)
-  - [cyclelan-segregation](#cyclelan-segregation)
-  - [cycleway-segregation](#cycleway-segregation)
-  - [leftover-questions](#leftover-questions)
-  - [lod](#lod)
-  - [minimap](#minimap)
-  - [split-button](#split-button)
-  - [last_edit](#last_edit)
-  - [favourite_status](#favourite_status)
-  - [qr_code](#qr_code)
-  - [share](#share)
-  - [all-tags](#all-tags)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
 
  Themes using this layer 
 -------------------------
@@ -137,463 +137,315 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/separation#values) [separation](https://wiki.openstreetmap.org/wiki/Key:separation) | Multiple choice | [dashed_line](https://wiki.openstreetmap.org/wiki/Tag:separation%3Ddashed_line) [solid_line](https://wiki.openstreetmap.org/wiki/Tag:separation%3Dsolid_line) [parking_lane](https://wiki.openstreetmap.org/wiki/Tag:separation%3Dparking_lane) [kerb](https://wiki.openstreetmap.org/wiki/Tag:separation%3Dkerb)
 
 
-
-
-### just_created 
-
-
-
+### this.id
 This element shows a 'thank you' that the contributor has recently created this element
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
+ - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
+This tagrendering has labels 
+`added_by_default`
 
+### this.id
 
+The question is `What kind of cycleway is here?`
 
+ - *There is a shared lane* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway' target='_blank'>cycleway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway%3Dshared_lane' target='_blank'>shared_lane</a>
+ - *There is a lane next to the road (separated with paint)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway' target='_blank'>cycleway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway%3Dlane' target='_blank'>lane</a>
+ - *There is a track, but no cycleway drawn separately from this road on the map.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway' target='_blank'>cycleway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway%3Dtrack' target='_blank'>track</a>
+ - *There is a separately drawn cycleway* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway' target='_blank'>cycleway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway%3Dseparate' target='_blank'>separate</a>
+ - *There is no cycleway* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway' target='_blank'>cycleway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway%3Dno' target='_blank'>no</a>
+ - *There is no cycleway* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway' target='_blank'>cycleway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway%3Dno' target='_blank'>no</a>
 
 
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
 
+### this.id
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
+The question is `Is this street lit?`
 
-This tagrendering has labels  `added_by_default`
+ - *This street is lit* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:lit' target='_blank'>lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:lit%3Dyes' target='_blank'>yes</a>
+ - *This road is not lit* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:lit' target='_blank'>lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:lit%3Dno' target='_blank'>no</a>
+ - *This road is lit at night* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:lit' target='_blank'>lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:lit%3Dsunset-sunrise' target='_blank'>sunset-sunrise</a>
+ - _This option cannot be chosen as answer_
+ - *This road is lit 24/7* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:lit' target='_blank'>lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:lit%3D24/7' target='_blank'>24/7</a>
 
 
 
-### Cycleway type for a road 
+### this.id
 
+The question is `Is this a cyclestreet?`
 
+ - *This is a cyclestreet, and a 30km/h zone.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cyclestreet' target='_blank'>cyclestreet</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cyclestreet%3Dyes' target='_blank'>yes</a>
+ - *This is a cyclestreet* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cyclestreet' target='_blank'>cyclestreet</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cyclestreet%3Dyes' target='_blank'>yes</a>
+ - *This is not a cyclestreet.* corresponds with cyclestreet=
 
-The question is  *What kind of cycleway is here?*
 
 
+### this.id
 
+The question is `What is the maximum speed in this street?`
+This rendering asks information about the property 
+[maxspeed](https://wiki.openstreetmap.org/wiki/Key:maxspeed)
+This is rendered with `The maximum speed on this road is {maxspeed} km/h`
+ - *The maximum speed is 20 km/h* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:maxspeed' target='_blank'>maxspeed</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:maxspeed%3D20' target='_blank'>20</a>
+ - *The maximum speed is 30 km/h* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:maxspeed' target='_blank'>maxspeed</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:maxspeed%3D30' target='_blank'>30</a>
+ - *The maximum speed is 50 km/h* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:maxspeed' target='_blank'>maxspeed</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:maxspeed%3D50' target='_blank'>50</a>
+ - *The maximum speed is 70 km/h* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:maxspeed' target='_blank'>maxspeed</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:maxspeed%3D70' target='_blank'>70</a>
+ - *The maximum speed is 90 km/h* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:maxspeed' target='_blank'>maxspeed</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:maxspeed%3D90' target='_blank'>90</a>
 
 
-  - *There is a shared lane*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway' target='_blank'>cycleway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway%3Dshared_lane' target='_blank'>shared_lane</a>
-  - *There is a lane next to the road (separated with paint)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway' target='_blank'>cycleway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway%3Dlane' target='_blank'>lane</a>
-  - *There is a track, but no cycleway drawn separately from this road on the map.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway' target='_blank'>cycleway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway%3Dtrack' target='_blank'>track</a>
-  - *There is a separately drawn cycleway*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway' target='_blank'>cycleway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway%3Dseparate' target='_blank'>separate</a>
-  - *There is no cycleway*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway' target='_blank'>cycleway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway%3Dno' target='_blank'>no</a>
-  - *There is no cycleway*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway' target='_blank'>cycleway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway%3Dno' target='_blank'>no</a>
 
+### this.id
 
+The question is `What is the surface of the cycleway made from?`
+This rendering asks information about the property 
+[cycleway:surface](https://wiki.openstreetmap.org/wiki/Key:cycleway:surface)
+This is rendered with `This cyleway is made of {cycleway:surface}`
+ - *This cycleway is unpaved* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:surface' target='_blank'>cycleway:surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:surface%3Dunpaved' target='_blank'>unpaved</a>
+ - _This option cannot be chosen as answer_
+ - *This cycleway is paved* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:surface' target='_blank'>cycleway:surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:surface%3Dpaved' target='_blank'>paved</a>
+ - _This option cannot be chosen as answer_
+ - *This cycleway is made of asphalt* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:surface' target='_blank'>cycleway:surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:surface%3Dasphalt' target='_blank'>asphalt</a>
+ - *This cycleway is made of smooth paving stones* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:surface' target='_blank'>cycleway:surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:surface%3Dpaving_stones' target='_blank'>paving_stones</a>
+ - *This cycleway is made of concrete* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:surface' target='_blank'>cycleway:surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:surface%3Dconcrete' target='_blank'>concrete</a>
+ - *This cycleway is made of cobblestone (unhewn or sett)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:surface' target='_blank'>cycleway:surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:surface%3Dcobblestone' target='_blank'>cobblestone</a>
+ - _This option cannot be chosen as answer_
+ - *This cycleway is made of raw, natural cobblestone* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:surface' target='_blank'>cycleway:surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:surface%3Dunhewn_cobblestone' target='_blank'>unhewn_cobblestone</a>
+ - *This cycleway is made of flat, square cobblestone* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:surface' target='_blank'>cycleway:surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:surface%3Dsett' target='_blank'>sett</a>
+ - *This cycleway is made of wood* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:surface' target='_blank'>cycleway:surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:surface%3Dwood' target='_blank'>wood</a>
+ - *This cycleway is made of gravel* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:surface' target='_blank'>cycleway:surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:surface%3Dgravel' target='_blank'>gravel</a>
+ - *This cycleway is made of fine gravel* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:surface' target='_blank'>cycleway:surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:surface%3Dfine_gravel' target='_blank'>fine_gravel</a>
+ - *This cycleway is made of pebblestone* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:surface' target='_blank'>cycleway:surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:surface%3Dpebblestone' target='_blank'>pebblestone</a>
+ - *This cycleway is made from raw ground* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:surface' target='_blank'>cycleway:surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:surface%3Dground' target='_blank'>ground</a>
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway' target='_blank'>cycleway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway%3Dshared_lane' target='_blank'>shared_lane</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway' target='_blank'>cycleway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway%3Dlane' target='_blank'>lane</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway' target='_blank'>cycleway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway%3Dtrack' target='_blank'>track</a>
 
 
-### is lit? 
+### this.id
 
+The question is `Does {title()} have an incline?`
+This rendering asks information about the property 
+[incline](https://wiki.openstreetmap.org/wiki/Key:incline)
+This is rendered with `This road has an slope of {incline}`
+ - *There is (probably) no incline here* corresponds with incline=
+ - _This option cannot be chosen as answer_
+ - *This road has a slope* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:incline' target='_blank'>incline</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:incline%3Dup' target='_blank'>up</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:incline' target='_blank'>incline</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:incline%3Ddown' target='_blank'>down</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:incline' target='_blank'>incline</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:incline%3Dyes' target='_blank'>yes</a>
+ - _This option cannot be chosen as answer_
 
 
-The question is  *Is this street lit?*
 
+### this.id
 
+The question is `What is the smoothness of this cycleway?`
 
+ - *Usable for thin rollers: rollerblade, skateboard* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:smoothness' target='_blank'>cycleway:smoothness</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:smoothness%3Dexcellent' target='_blank'>excellent</a>
+ - *Usable for thin wheels: racing bike* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:smoothness' target='_blank'>cycleway:smoothness</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:smoothness%3Dgood' target='_blank'>good</a>
+ - *Usable for normal wheels: city bike, wheelchair, scooter* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:smoothness' target='_blank'>cycleway:smoothness</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:smoothness%3Dintermediate' target='_blank'>intermediate</a>
+ - *Usable for robust wheels: trekking bike, car, rickshaw* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:smoothness' target='_blank'>cycleway:smoothness</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:smoothness%3Dbad' target='_blank'>bad</a>
+ - *Usable for vehicles with high clearance: light duty off-road vehicle* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:smoothness' target='_blank'>cycleway:smoothness</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:smoothness%3Dvery_bad' target='_blank'>very_bad</a>
+ - *Usable for off-road vehicles: heavy duty off-road vehicle* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:smoothness' target='_blank'>cycleway:smoothness</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:smoothness%3Dhorrible' target='_blank'>horrible</a>
+ - *Usable for specialized off-road vehicles: tractor, ATV* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:smoothness' target='_blank'>cycleway:smoothness</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:smoothness%3Dvery_horrible' target='_blank'>very_horrible</a>
+ - *Impassable / No wheeled vehicle* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:smoothness' target='_blank'>cycleway:smoothness</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:smoothness%3Dimpassable' target='_blank'>impassable</a>
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway' target='_blank'>cycleway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway%3Dshared_lane' target='_blank'>shared_lane</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway' target='_blank'>cycleway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway%3Dlane' target='_blank'>lane</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway' target='_blank'>cycleway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway%3Dtrack' target='_blank'>track</a>
 
 
-  - *This street is lit*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:lit' target='_blank'>lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:lit%3Dyes' target='_blank'>yes</a>
-  - *This road is not lit*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:lit' target='_blank'>lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:lit%3Dno' target='_blank'>no</a>
-  - *This road is lit at night*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:lit' target='_blank'>lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:lit%3Dsunset-sunrise' target='_blank'>sunset-sunrise</a>
-  - _This option cannot be chosen as answer_
-  - *This road is lit 24/7*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:lit' target='_blank'>lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:lit%3D24/7' target='_blank'>24/7</a>
+### this.id
 
+The question is `What is the surface of the street made from?`
+This rendering asks information about the property 
+[surface](https://wiki.openstreetmap.org/wiki/Key:surface)
+This is rendered with `This road is made of {surface}`
+ - *This cycleway is unhardened* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dunpaved' target='_blank'>unpaved</a>
+ - _This option cannot be chosen as answer_
+ - *This cycleway is paved* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dpaved' target='_blank'>paved</a>
+ - _This option cannot be chosen as answer_
+ - *This cycleway is made of asphalt* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dasphalt' target='_blank'>asphalt</a>
+ - *This cycleway is made of smooth paving stones* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dpaving_stones' target='_blank'>paving_stones</a>
+ - *This cycleway is made of concrete* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dconcrete' target='_blank'>concrete</a>
+ - *This cycleway is made of cobblestone (unhewn or sett)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dcobblestone' target='_blank'>cobblestone</a>
+ - _This option cannot be chosen as answer_
+ - *This cycleway is made of raw, natural cobblestone* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dunhewn_cobblestone' target='_blank'>unhewn_cobblestone</a>
+ - *This cycleway is made of flat, square cobblestone* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dsett' target='_blank'>sett</a>
+ - *This cycleway is made of wood* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dwood' target='_blank'>wood</a>
+ - *This cycleway is made of gravel* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dgravel' target='_blank'>gravel</a>
+ - *This cycleway is made of fine gravel* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dfine_gravel' target='_blank'>fine_gravel</a>
+ - *This cycleway is made of pebblestone* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dpebblestone' target='_blank'>pebblestone</a>
+ - *This cycleway is made from raw ground* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dground' target='_blank'>ground</a>
 
 
 
-### Is this a cyclestreet? (For a road) 
+### this.id
 
+The question is `What is the smoothness of this street?`
 
+ - *Usable for thin rollers: rollerblade, skateboard* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:smoothness' target='_blank'>smoothness</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:smoothness%3Dexcellent' target='_blank'>excellent</a>
+ - *Usable for thin wheels: racing bike* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:smoothness' target='_blank'>smoothness</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:smoothness%3Dgood' target='_blank'>good</a>
+ - *Usable for normal wheels: city bike, wheelchair, scooter* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:smoothness' target='_blank'>smoothness</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:smoothness%3Dintermediate' target='_blank'>intermediate</a>
+ - *Usable for robust wheels: trekking bike, car, rickshaw* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:smoothness' target='_blank'>smoothness</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:smoothness%3Dbad' target='_blank'>bad</a>
+ - *Usable for vehicles with high clearance: light duty off-road vehicle* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:smoothness' target='_blank'>smoothness</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:smoothness%3Dvery_bad' target='_blank'>very_bad</a>
+ - *Usable for off-road vehicles: heavy duty off-road vehicle* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:smoothness' target='_blank'>smoothness</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:smoothness%3Dhorrible' target='_blank'>horrible</a>
+ - *Usable for specialized off-road vehicles: tractor, ATV* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:smoothness' target='_blank'>smoothness</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:smoothness%3Dvery_horrible' target='_blank'>very_horrible</a>
+ - *Impassable / No wheeled vehicle* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:smoothness' target='_blank'>smoothness</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:smoothness%3Dimpassable' target='_blank'>impassable</a>
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway' target='_blank'>cycleway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway%3Dno' target='_blank'>no</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dcycleway' target='_blank'>cycleway</a>
 
-The question is  *Is this a cyclestreet?*
 
+### this.id
 
+The question is `What is the carriage width of this road (in meters)?`
+This rendering asks information about the property 
+[width:carriageway](https://wiki.openstreetmap.org/wiki/Key:width:carriageway)
+This is rendered with `The carriage width of this road is <strong>{width:carriageway}m</strong>`
 
 
 
-  - *This is a cyclestreet, and a 30km/h zone.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cyclestreet' target='_blank'>cyclestreet</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cyclestreet%3Dyes' target='_blank'>yes</a>
-  - *This is a cyclestreet*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cyclestreet' target='_blank'>cyclestreet</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cyclestreet%3Dyes' target='_blank'>yes</a>
-  - *This is not a cyclestreet.*  corresponds with  cyclestreet=
 
+### this.id
 
+The question is `What traffic sign does this cycleway have?`
 
+ - *Compulsory cycleway* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:traffic_sign' target='_blank'>cycleway:traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:traffic_sign%3DBE:D7' target='_blank'>BE:D7</a>
+ - *Compulsory cycleway (with supplementary sign)<br>* corresponds with cycleway:traffic_sign~^(BE:D7;.*)$
+ - _This option cannot be chosen as answer_
+ - *Segregated foot/cycleway* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:traffic_sign' target='_blank'>cycleway:traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:traffic_sign%3DBE:D9' target='_blank'>BE:D9</a>
+ - *Unsegregated foot/cycleway* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:traffic_sign' target='_blank'>cycleway:traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:traffic_sign%3DBE:D10' target='_blank'>BE:D10</a>
+ - *No traffic sign present* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:traffic_sign' target='_blank'>cycleway:traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:traffic_sign%3Dnone' target='_blank'>none</a>
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:_country' target='_blank'>_country</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_country%3Dbe' target='_blank'>be</a> & (<a href='https://wiki.openstreetmap.org/wiki/Key:cycleway' target='_blank'>cycleway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway%3Dlane' target='_blank'>lane</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway' target='_blank'>cycleway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway%3Dtrack' target='_blank'>track</a>)
 
-### Maxspeed (for road) 
 
+### this.id
 
+The question is `What traffic sign does this cycleway have?`
 
-The question is  *What is the maximum speed in this street?*
+ - *Compulsory cycleway* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:traffic_sign' target='_blank'>traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DBE:D7' target='_blank'>BE:D7</a>
+ - *Compulsory cycleway (with supplementary sign)<br>* corresponds with traffic_sign~^(BE:D7;.*)$
+ - _This option cannot be chosen as answer_
+ - *Segregated foot/cycleway* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:traffic_sign' target='_blank'>traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DBE:D9' target='_blank'>BE:D9</a>
+ - *Unsegregated foot/cycleway* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:traffic_sign' target='_blank'>traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DBE:D10' target='_blank'>BE:D10</a>
+ - *Compulsory cycleway* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:traffic_sign' target='_blank'>traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DNL:G11' target='_blank'>NL:G11</a>
+ - *Compulsory (moped)cycleway* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:traffic_sign' target='_blank'>traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DNL:G12a' target='_blank'>NL:G12a</a>
+ - *Non-compulsory cycleway* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:traffic_sign' target='_blank'>traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DNL:G13' target='_blank'>NL:G13</a>
+ - *No traffic sign present* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:traffic_sign' target='_blank'>traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3Dnone' target='_blank'>none</a>
+This tagrendering is only visible in the popup if the following condition is met: (<a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dcycleway' target='_blank'>cycleway</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dpath' target='_blank'>path</a>) & (<a href='https://wiki.openstreetmap.org/wiki/Key:_country' target='_blank'>_country</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_country%3Dbe' target='_blank'>be</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:_country' target='_blank'>_country</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_country%3Dnl' target='_blank'>nl</a>)
 
-This rendering asks information about the property  [maxspeed](https://wiki.openstreetmap.org/wiki/Key:maxspeed) This is rendered with  `The maximum speed on this road is {maxspeed} km/h`
 
+### this.id
 
+The question is `Does the traffic sign D7 (<img src='./assets/layers/cycleways_and_roads/traffic_sign/be/Belgian_road_sign_D07.svg' style='width: 1.5em'>) have a supplementary sign?`
 
-  - *The maximum speed is 20 km/h*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:maxspeed' target='_blank'>maxspeed</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:maxspeed%3D20' target='_blank'>20</a>
-  - *The maximum speed is 30 km/h*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:maxspeed' target='_blank'>maxspeed</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:maxspeed%3D30' target='_blank'>30</a>
-  - *The maximum speed is 50 km/h*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:maxspeed' target='_blank'>maxspeed</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:maxspeed%3D50' target='_blank'>50</a>
-  - *The maximum speed is 70 km/h*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:maxspeed' target='_blank'>maxspeed</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:maxspeed%3D70' target='_blank'>70</a>
-  - *The maximum speed is 90 km/h*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:maxspeed' target='_blank'>maxspeed</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:maxspeed%3D90' target='_blank'>90</a>
+ - *Mopeds must use the cycleway* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:traffic_sign' target='_blank'>cycleway:traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:traffic_sign%3DBE:D7;BE:M6' target='_blank'>BE:D7;BE:M6</a>
+ - *Speedpedelecs must use the cycleway* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:traffic_sign' target='_blank'>cycleway:traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:traffic_sign%3DBE:D7;BE:M13' target='_blank'>BE:D7;BE:M13</a>
+ - *Mopeds and speedpedelecs must use the cycleway* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:traffic_sign' target='_blank'>cycleway:traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:traffic_sign%3DBE:D7;BE:M14' target='_blank'>BE:D7;BE:M14</a>
+ - *Mopeds are not allowed* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:traffic_sign' target='_blank'>cycleway:traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:traffic_sign%3DBE:D7;BE:M7' target='_blank'>BE:D7;BE:M7</a>
+ - *Speedpedelecs are not allowed* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:traffic_sign' target='_blank'>cycleway:traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:traffic_sign%3DBE:D7;BE:M15' target='_blank'>BE:D7;BE:M15</a>
+ - *Mopeds and speedpedelecs are not allowed* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:traffic_sign' target='_blank'>cycleway:traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:traffic_sign%3DBE:D7;BE:M16' target='_blank'>BE:D7;BE:M16</a>
+ - *No supplementary traffic sign present* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:traffic_sign:supplementary' target='_blank'>cycleway:traffic_sign:supplementary</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:traffic_sign:supplementary%3Dnone' target='_blank'>none</a>
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:traffic_sign' target='_blank'>cycleway:traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:traffic_sign%3DBE:D7' target='_blank'>BE:D7</a> | cycleway:traffic_sign~^(BE:D7;.*)$
 
 
+### this.id
 
+The question is `How wide is the gap between the cycleway and the road?`
+This rendering asks information about the property 
+[cycleway:buffer](https://wiki.openstreetmap.org/wiki/Key:cycleway:buffer)
+This is rendered with `The buffer besides this cycleway is {cycleway:buffer} m`
 
-### Cycleway:surface 
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway' target='_blank'>cycleway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway%3Dtrack' target='_blank'>track</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway' target='_blank'>cycleway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway%3Dlane' target='_blank'>lane</a>
 
 
+### this.id
 
-The question is  *What is the surface of the cycleway made from?*
+The question is `How is this cycleway separated from the road?`
 
-This rendering asks information about the property  [cycleway:surface](https://wiki.openstreetmap.org/wiki/Key:cycleway:surface) This is rendered with  `This cyleway is made of {cycleway:surface}`
+ - *This cycleway is separated by a dashed line* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:separation' target='_blank'>cycleway:separation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:separation%3Ddashed_line' target='_blank'>dashed_line</a>
+ - *This cycleway is separated by a solid line* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:separation' target='_blank'>cycleway:separation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:separation%3Dsolid_line' target='_blank'>solid_line</a>
+ - *This cycleway is separated by a parking lane* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:separation' target='_blank'>cycleway:separation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:separation%3Dparking_lane' target='_blank'>parking_lane</a>
+ - *This cycleway is separated by a kerb* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:separation' target='_blank'>cycleway:separation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:separation%3Dkerb' target='_blank'>kerb</a>
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway' target='_blank'>cycleway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway%3Dtrack' target='_blank'>track</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway' target='_blank'>cycleway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway%3Dlane' target='_blank'>lane</a>
 
 
+### this.id
 
-  - *This cycleway is unpaved*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:surface' target='_blank'>cycleway:surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:surface%3Dunpaved' target='_blank'>unpaved</a>
-  - _This option cannot be chosen as answer_
-  - *This cycleway is paved*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:surface' target='_blank'>cycleway:surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:surface%3Dpaved' target='_blank'>paved</a>
-  - _This option cannot be chosen as answer_
-  - *This cycleway is made of asphalt*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:surface' target='_blank'>cycleway:surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:surface%3Dasphalt' target='_blank'>asphalt</a>
-  - *This cycleway is made of smooth paving stones*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:surface' target='_blank'>cycleway:surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:surface%3Dpaving_stones' target='_blank'>paving_stones</a>
-  - *This cycleway is made of concrete*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:surface' target='_blank'>cycleway:surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:surface%3Dconcrete' target='_blank'>concrete</a>
-  - *This cycleway is made of cobblestone (unhewn or sett)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:surface' target='_blank'>cycleway:surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:surface%3Dcobblestone' target='_blank'>cobblestone</a>
-  - _This option cannot be chosen as answer_
-  - *This cycleway is made of raw, natural cobblestone*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:surface' target='_blank'>cycleway:surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:surface%3Dunhewn_cobblestone' target='_blank'>unhewn_cobblestone</a>
-  - *This cycleway is made of flat, square cobblestone*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:surface' target='_blank'>cycleway:surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:surface%3Dsett' target='_blank'>sett</a>
-  - *This cycleway is made of wood*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:surface' target='_blank'>cycleway:surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:surface%3Dwood' target='_blank'>wood</a>
-  - *This cycleway is made of gravel*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:surface' target='_blank'>cycleway:surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:surface%3Dgravel' target='_blank'>gravel</a>
-  - *This cycleway is made of fine gravel*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:surface' target='_blank'>cycleway:surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:surface%3Dfine_gravel' target='_blank'>fine_gravel</a>
-  - *This cycleway is made of pebblestone*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:surface' target='_blank'>cycleway:surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:surface%3Dpebblestone' target='_blank'>pebblestone</a>
-  - *This cycleway is made from raw ground*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:surface' target='_blank'>cycleway:surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:surface%3Dground' target='_blank'>ground</a>
+The question is `How is this cycleway separated from the road?`
 
+ - *This cycleway is separated by a dashed line* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:separation' target='_blank'>separation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:separation%3Ddashed_line' target='_blank'>dashed_line</a>
+ - *This cycleway is separated by a solid line* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:separation' target='_blank'>separation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:separation%3Dsolid_line' target='_blank'>solid_line</a>
+ - *This cycleway is separated by a parking lane* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:separation' target='_blank'>separation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:separation%3Dparking_lane' target='_blank'>parking_lane</a>
+ - *This cycleway is separated by a kerb* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:separation' target='_blank'>separation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:separation%3Dkerb' target='_blank'>kerb</a>
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dcycleway' target='_blank'>cycleway</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dpath' target='_blank'>path</a>
 
-This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:cycleway' target='_blank'>cycleway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway%3Dshared_lane' target='_blank'>shared_lane</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway' target='_blank'>cycleway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway%3Dlane' target='_blank'>lane</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway' target='_blank'>cycleway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway%3Dtrack' target='_blank'>track</a>`
 
+### this.id
 
+_This tagrendering has no question and is thus read-only_
 
-### incline 
 
 
 
-The question is  *Does {title()} have an incline?*
 
-This rendering asks information about the property  [incline](https://wiki.openstreetmap.org/wiki/Key:incline) This is rendered with  `This road has an slope of {incline}`
+### this.id
 
+_This tagrendering has no question and is thus read-only_
 
 
-  - *There is (probably) no incline here*  corresponds with  incline=
-  - _This option cannot be chosen as answer_
-  - *This road has a slope*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:incline' target='_blank'>incline</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:incline%3Dup' target='_blank'>up</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:incline' target='_blank'>incline</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:incline%3Ddown' target='_blank'>down</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:incline' target='_blank'>incline</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:incline%3Dyes' target='_blank'>yes</a>
-  - _This option cannot be chosen as answer_
 
+This tagrendering has labels 
+`added_by_default`
 
-
-
-### Cycleway:smoothness 
-
-
-
-The question is  *What is the smoothness of this cycleway?*
-
-
-
-
-
-  - *Usable for thin rollers: rollerblade, skateboard*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:smoothness' target='_blank'>cycleway:smoothness</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:smoothness%3Dexcellent' target='_blank'>excellent</a>
-  - *Usable for thin wheels: racing bike*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:smoothness' target='_blank'>cycleway:smoothness</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:smoothness%3Dgood' target='_blank'>good</a>
-  - *Usable for normal wheels: city bike, wheelchair, scooter*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:smoothness' target='_blank'>cycleway:smoothness</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:smoothness%3Dintermediate' target='_blank'>intermediate</a>
-  - *Usable for robust wheels: trekking bike, car, rickshaw*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:smoothness' target='_blank'>cycleway:smoothness</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:smoothness%3Dbad' target='_blank'>bad</a>
-  - *Usable for vehicles with high clearance: light duty off-road vehicle*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:smoothness' target='_blank'>cycleway:smoothness</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:smoothness%3Dvery_bad' target='_blank'>very_bad</a>
-  - *Usable for off-road vehicles: heavy duty off-road vehicle*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:smoothness' target='_blank'>cycleway:smoothness</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:smoothness%3Dhorrible' target='_blank'>horrible</a>
-  - *Usable for specialized off-road vehicles: tractor, ATV*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:smoothness' target='_blank'>cycleway:smoothness</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:smoothness%3Dvery_horrible' target='_blank'>very_horrible</a>
-  - *Impassable / No wheeled vehicle*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:smoothness' target='_blank'>cycleway:smoothness</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:smoothness%3Dimpassable' target='_blank'>impassable</a>
-
-
-This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:cycleway' target='_blank'>cycleway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway%3Dshared_lane' target='_blank'>shared_lane</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway' target='_blank'>cycleway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway%3Dlane' target='_blank'>lane</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway' target='_blank'>cycleway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway%3Dtrack' target='_blank'>track</a>`
-
-
-
-### Surface of the road 
-
-
-
-The question is  *What is the surface of the street made from?*
-
-This rendering asks information about the property  [surface](https://wiki.openstreetmap.org/wiki/Key:surface) This is rendered with  `This road is made of {surface}`
-
-
-
-  - *This cycleway is unhardened*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dunpaved' target='_blank'>unpaved</a>
-  - _This option cannot be chosen as answer_
-  - *This cycleway is paved*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dpaved' target='_blank'>paved</a>
-  - _This option cannot be chosen as answer_
-  - *This cycleway is made of asphalt*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dasphalt' target='_blank'>asphalt</a>
-  - *This cycleway is made of smooth paving stones*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dpaving_stones' target='_blank'>paving_stones</a>
-  - *This cycleway is made of concrete*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dconcrete' target='_blank'>concrete</a>
-  - *This cycleway is made of cobblestone (unhewn or sett)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dcobblestone' target='_blank'>cobblestone</a>
-  - _This option cannot be chosen as answer_
-  - *This cycleway is made of raw, natural cobblestone*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dunhewn_cobblestone' target='_blank'>unhewn_cobblestone</a>
-  - *This cycleway is made of flat, square cobblestone*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dsett' target='_blank'>sett</a>
-  - *This cycleway is made of wood*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dwood' target='_blank'>wood</a>
-  - *This cycleway is made of gravel*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dgravel' target='_blank'>gravel</a>
-  - *This cycleway is made of fine gravel*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dfine_gravel' target='_blank'>fine_gravel</a>
-  - *This cycleway is made of pebblestone*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dpebblestone' target='_blank'>pebblestone</a>
-  - *This cycleway is made from raw ground*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dground' target='_blank'>ground</a>
-
-
-
-
-### Surface of the street 
-
-
-
-The question is  *What is the smoothness of this street?*
-
-
-
-
-
-  - *Usable for thin rollers: rollerblade, skateboard*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:smoothness' target='_blank'>smoothness</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:smoothness%3Dexcellent' target='_blank'>excellent</a>
-  - *Usable for thin wheels: racing bike*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:smoothness' target='_blank'>smoothness</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:smoothness%3Dgood' target='_blank'>good</a>
-  - *Usable for normal wheels: city bike, wheelchair, scooter*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:smoothness' target='_blank'>smoothness</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:smoothness%3Dintermediate' target='_blank'>intermediate</a>
-  - *Usable for robust wheels: trekking bike, car, rickshaw*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:smoothness' target='_blank'>smoothness</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:smoothness%3Dbad' target='_blank'>bad</a>
-  - *Usable for vehicles with high clearance: light duty off-road vehicle*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:smoothness' target='_blank'>smoothness</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:smoothness%3Dvery_bad' target='_blank'>very_bad</a>
-  - *Usable for off-road vehicles: heavy duty off-road vehicle*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:smoothness' target='_blank'>smoothness</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:smoothness%3Dhorrible' target='_blank'>horrible</a>
-  - *Usable for specialized off-road vehicles: tractor, ATV*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:smoothness' target='_blank'>smoothness</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:smoothness%3Dvery_horrible' target='_blank'>very_horrible</a>
-  - *Impassable / No wheeled vehicle*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:smoothness' target='_blank'>smoothness</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:smoothness%3Dimpassable' target='_blank'>impassable</a>
-
-
-This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:cycleway' target='_blank'>cycleway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway%3Dno' target='_blank'>no</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dcycleway' target='_blank'>cycleway</a>`
-
-
-
-### width:carriageway 
-
-
-
-The question is  *What is the carriage width of this road (in meters)?*
-
-This rendering asks information about the property  [width:carriageway](https://wiki.openstreetmap.org/wiki/Key:width:carriageway) This is rendered with  `The carriage width of this road is <strong>{width:carriageway}m</strong>`
-
-
-
-### cycleway-lane-track-traffic-signs 
-
-
-
-The question is  *What traffic sign does this cycleway have?*
-
-
-
-
-
-  - *Compulsory cycleway*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:traffic_sign' target='_blank'>cycleway:traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:traffic_sign%3DBE:D7' target='_blank'>BE:D7</a>
-  - *Compulsory cycleway (with supplementary sign)<br>*  corresponds with  cycleway:traffic_sign~^(BE:D7;.*)$
-  - _This option cannot be chosen as answer_
-  - *Segregated foot/cycleway*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:traffic_sign' target='_blank'>cycleway:traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:traffic_sign%3DBE:D9' target='_blank'>BE:D9</a>
-  - *Unsegregated foot/cycleway*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:traffic_sign' target='_blank'>cycleway:traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:traffic_sign%3DBE:D10' target='_blank'>BE:D10</a>
-  - *No traffic sign present*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:traffic_sign' target='_blank'>cycleway:traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:traffic_sign%3Dnone' target='_blank'>none</a>
-
-
-This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:_country' target='_blank'>_country</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_country%3Dbe' target='_blank'>be</a> & (<a href='https://wiki.openstreetmap.org/wiki/Key:cycleway' target='_blank'>cycleway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway%3Dlane' target='_blank'>lane</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway' target='_blank'>cycleway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway%3Dtrack' target='_blank'>track</a>)`
-
-
-
-### cycleway-traffic-signs 
-
-
-
-The question is  *What traffic sign does this cycleway have?*
-
-
-
-
-
-  - *Compulsory cycleway*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:traffic_sign' target='_blank'>traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DBE:D7' target='_blank'>BE:D7</a>
-  - *Compulsory cycleway (with supplementary sign)<br>*  corresponds with  traffic_sign~^(BE:D7;.*)$
-  - _This option cannot be chosen as answer_
-  - *Segregated foot/cycleway*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:traffic_sign' target='_blank'>traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DBE:D9' target='_blank'>BE:D9</a>
-  - *Unsegregated foot/cycleway*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:traffic_sign' target='_blank'>traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DBE:D10' target='_blank'>BE:D10</a>
-  - *Compulsory cycleway*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:traffic_sign' target='_blank'>traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DNL:G11' target='_blank'>NL:G11</a>
-  - *Compulsory (moped)cycleway*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:traffic_sign' target='_blank'>traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DNL:G12a' target='_blank'>NL:G12a</a>
-  - *Non-compulsory cycleway*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:traffic_sign' target='_blank'>traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DNL:G13' target='_blank'>NL:G13</a>
-  - *No traffic sign present*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:traffic_sign' target='_blank'>traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3Dnone' target='_blank'>none</a>
-
-
-This tagrendering is only visible in the popup if the following condition is met: `(<a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dcycleway' target='_blank'>cycleway</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dpath' target='_blank'>path</a>) & (<a href='https://wiki.openstreetmap.org/wiki/Key:_country' target='_blank'>_country</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_country%3Dbe' target='_blank'>be</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:_country' target='_blank'>_country</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_country%3Dnl' target='_blank'>nl</a>)`
-
-
-
-### cycleway-traffic-signs-supplementary 
-
-
-
-The question is  *Does the traffic sign D7 (<img src='./assets/layers/cycleways_and_roads/traffic_sign/be/Belgian_road_sign_D07.svg' style='width: 1.5em'>) have a supplementary sign?*
-
-
-
-
-
-  - *Mopeds must use the cycleway*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:traffic_sign' target='_blank'>cycleway:traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:traffic_sign%3DBE:D7;BE:M6' target='_blank'>BE:D7;BE:M6</a>
-  - *Speedpedelecs must use the cycleway*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:traffic_sign' target='_blank'>cycleway:traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:traffic_sign%3DBE:D7;BE:M13' target='_blank'>BE:D7;BE:M13</a>
-  - *Mopeds and speedpedelecs must use the cycleway*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:traffic_sign' target='_blank'>cycleway:traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:traffic_sign%3DBE:D7;BE:M14' target='_blank'>BE:D7;BE:M14</a>
-  - *Mopeds are not allowed*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:traffic_sign' target='_blank'>cycleway:traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:traffic_sign%3DBE:D7;BE:M7' target='_blank'>BE:D7;BE:M7</a>
-  - *Speedpedelecs are not allowed*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:traffic_sign' target='_blank'>cycleway:traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:traffic_sign%3DBE:D7;BE:M15' target='_blank'>BE:D7;BE:M15</a>
-  - *Mopeds and speedpedelecs are not allowed*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:traffic_sign' target='_blank'>cycleway:traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:traffic_sign%3DBE:D7;BE:M16' target='_blank'>BE:D7;BE:M16</a>
-  - *No supplementary traffic sign present*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:traffic_sign:supplementary' target='_blank'>cycleway:traffic_sign:supplementary</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:traffic_sign:supplementary%3Dnone' target='_blank'>none</a>
-
-
-This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:traffic_sign' target='_blank'>cycleway:traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:traffic_sign%3DBE:D7' target='_blank'>BE:D7</a> | cycleway:traffic_sign~^(BE:D7;.*)$`
-
-
-
-### cycleways_and_roads-cycleway:buffer 
-
-
-
-The question is  *How wide is the gap between the cycleway and the road?*
-
-This rendering asks information about the property  [cycleway:buffer](https://wiki.openstreetmap.org/wiki/Key:cycleway:buffer) This is rendered with  `The buffer besides this cycleway is {cycleway:buffer} m`
-
-This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:cycleway' target='_blank'>cycleway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway%3Dtrack' target='_blank'>track</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway' target='_blank'>cycleway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway%3Dlane' target='_blank'>lane</a>`
-
-
-
-### cyclelan-segregation 
-
-
-
-The question is  *How is this cycleway separated from the road?*
-
-
-
-
-
-  - *This cycleway is separated by a dashed line*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:separation' target='_blank'>cycleway:separation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:separation%3Ddashed_line' target='_blank'>dashed_line</a>
-  - *This cycleway is separated by a solid line*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:separation' target='_blank'>cycleway:separation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:separation%3Dsolid_line' target='_blank'>solid_line</a>
-  - *This cycleway is separated by a parking lane*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:separation' target='_blank'>cycleway:separation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:separation%3Dparking_lane' target='_blank'>parking_lane</a>
-  - *This cycleway is separated by a kerb*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:separation' target='_blank'>cycleway:separation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:separation%3Dkerb' target='_blank'>kerb</a>
-
-
-This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:cycleway' target='_blank'>cycleway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway%3Dtrack' target='_blank'>track</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:cycleway' target='_blank'>cycleway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway%3Dlane' target='_blank'>lane</a>`
-
-
-
-### cycleway-segregation 
-
-
-
-The question is  *How is this cycleway separated from the road?*
-
-
-
-
-
-  - *This cycleway is separated by a dashed line*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:separation' target='_blank'>separation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:separation%3Ddashed_line' target='_blank'>dashed_line</a>
-  - *This cycleway is separated by a solid line*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:separation' target='_blank'>separation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:separation%3Dsolid_line' target='_blank'>solid_line</a>
-  - *This cycleway is separated by a parking lane*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:separation' target='_blank'>separation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:separation%3Dparking_lane' target='_blank'>parking_lane</a>
-  - *This cycleway is separated by a kerb*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:separation' target='_blank'>separation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:separation%3Dkerb' target='_blank'>kerb</a>
-
-
-This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dcycleway' target='_blank'>cycleway</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dpath' target='_blank'>path</a>`
-
-
-
-### leftover-questions 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### lod 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### minimap 
-
-
-
+### this.id
 Shows a small map with the feature. Added by default to every popup
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### split-button 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### last_edit 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
+
+
+### this.id
 Gives some metainfo about the last edit and who did edit it - rendering only
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:changeset~.+ & _last_edit:contributor~.+
+This tagrendering has labels 
+`added_by_default`
 
-This tagrendering has labels  `added_by_default`
+### this.id
 
-
-
-### favourite_status 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### qr_code 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has no question and is thus read-only
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has labels  `added_by_default`
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
-
-### share 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### all-tags 
-
-
-
-This tagrendering has no question and is thus read-only
 
  
 

@@ -123,12 +123,15 @@ export default class PointRenderingConfig extends WithContextLoader {
             context + ".rotationAlignment"
         )
     }
-    private static FromHtmlMulti(multiSpec: string, tags: Store<Record<string, string>>): BaseUIElement {
+    private static FromHtmlMulti(
+        multiSpec: string,
+        tags: Store<Record<string, string>>
+    ): BaseUIElement {
         const icons: IconConfig[] = []
 
         for (const subspec of multiSpec.split(";")) {
-            if(subspec.startsWith("http://") || subspec.startsWith("https://")){
-                icons.push(new IconConfig({icon: subspec}))
+            if (subspec.startsWith("http://") || subspec.startsWith("https://")) {
+                icons.push(new IconConfig({ icon: subspec }))
                 continue
             }
             const [icon, color] = subspec.split(":")

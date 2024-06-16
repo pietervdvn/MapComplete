@@ -6,17 +6,17 @@
 </script>
 
 <main>
-<div class="flex flex-col">
-  <Tr t={Translations.t.general["404"]} />
-  <BackButton
-    clss="m-8"
-    on:click={() => {
-      window.location = "index.html"
-    }}
-  >
-    <div class="flex w-full justify-center">
-      <Tr t={Translations.t.general.backToIndex} />
-    </div>
-  </BackButton>
-</div>
+  <div class="flex flex-col">
+    <Tr t={Translations.t.general["404"]} />
+    <BackButton
+      clss="m-8"
+      on:click={() => {
+        window.location = "index.html"
+      }}
+    >
+      <div class="flex w-full justify-center">
+        <Tr t={Translations.t.general.backToIndex} />
+      </div>
+    </BackButton>
+  </div>
 </main>

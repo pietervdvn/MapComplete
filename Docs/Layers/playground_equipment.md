@@ -25,19 +25,20 @@ Layer showing playground equipment
 1. [ Themes using this layer ](#-themes-using-this-layer-)
 2. [ Basic tags for this layer ](#-basic-tags-for-this-layer-)
 3. [ Supported attributes ](#-supported-attributes-)
-  - [just_created](#just_created)
-  - [images](#images)
-  - [type](#type)
-  - [wheelchair-access](#wheelchair-access)
-  - [leftover-questions](#leftover-questions)
-  - [lod](#lod)
-  - [minimap](#minimap)
-  - [move-button](#move-button)
-  - [last_edit](#last_edit)
-  - [favourite_status](#favourite_status)
-  - [qr_code](#qr_code)
-  - [share](#share)
-  - [all-tags](#all-tags)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
 
  Themes using this layer 
 -------------------------
@@ -81,194 +82,146 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/wheelchair#values) [wheelchair](https://wiki.openstreetmap.org/wiki/Key:wheelchair) | Multiple choice | [designated](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Ddesignated) [yes](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dlimited) [no](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dno)
 
 
-
-
-### just_created 
-
-
-
+### this.id
 This element shows a 'thank you' that the contributor has recently created this element
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
+ - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
+This tagrendering has labels 
+`added_by_default`
 
-
-
-
-
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
-
-
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### images 
-
-
-
+### this.id
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### type 
-
-
-
-The question is  *What kind of device is this?*
-
-This rendering asks information about the property  [playground](https://wiki.openstreetmap.org/wiki/Key:playground) This is rendered with  `This is a {playground}`
-
-
-
-  - *This is a swing*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:playground' target='_blank'>playground</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:playground%3Dswing' target='_blank'>swing</a>
-  - *This is a structure consisting of several connected playground devices*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:playground' target='_blank'>playground</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:playground%3Dstructure' target='_blank'>structure</a>
-  - *This is a slide*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:playground' target='_blank'>playground</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:playground%3Dslide' target='_blank'>slide</a>
-  - *This is a sand pit*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:playground' target='_blank'>playground</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:playground%3Dsandpit' target='_blank'>sandpit</a>
-  - *This is a spring rider*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:playground' target='_blank'>playground</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:playground%3Dspringy' target='_blank'>springy</a>
-  - *This is a climbing frame*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:playground' target='_blank'>playground</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:playground%3Dclimbingframe' target='_blank'>climbingframe</a>
-  - *This is a seesaw*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:playground' target='_blank'>playground</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:playground%3Dseesaw' target='_blank'>seesaw</a>
-  - *This is a playhouse*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:playground' target='_blank'>playground</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:playground%3Dplayhouse' target='_blank'>playhouse</a>
-  - *This is a roundabout*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:playground' target='_blank'>playground</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:playground%3Droundabout' target='_blank'>roundabout</a>
-  - *This is a basket swing*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:playground' target='_blank'>playground</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:playground%3Dbasketswing' target='_blank'>basketswing</a>
-  - *This is a zip wire*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:playground' target='_blank'>playground</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:playground%3Dzipwire' target='_blank'>zipwire</a>
-  - *This is a horizontal bar*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:playground' target='_blank'>playground</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:playground%3Dhorizontal_bar' target='_blank'>horizontal_bar</a>
-  - *This is a hopscotch*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:playground' target='_blank'>playground</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:playground%3Dhopscotch' target='_blank'>hopscotch</a>
-  - *This is a splash pad*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:playground' target='_blank'>playground</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:playground%3Dsplash_pad' target='_blank'>splash_pad</a>
-  - *This is a climbing wall*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:playground' target='_blank'>playground</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:playground%3Dclimbingwall' target='_blank'>climbingwall</a>
-  - *This is a map*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:playground' target='_blank'>playground</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:playground%3Dmap' target='_blank'>map</a>
-  - *This is a bridge (either as a standalone device or as part of a larger structure)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:playground' target='_blank'>playground</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:playground%3Dbridge' target='_blank'>bridge</a>
-  - *This is a bouncy cushion*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:playground' target='_blank'>playground</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:playground%3Dcushion' target='_blank'>cushion</a>
-  - *This is an activity panel*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:playground' target='_blank'>playground</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:playground%3Dactivitypanel' target='_blank'>activitypanel</a>
-  - *This is a teen shelter*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:playground' target='_blank'>playground</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:playground%3Dteenshelter' target='_blank'>teenshelter</a>
-  - *This is a funnel used to play with funnel ball*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:playground' target='_blank'>playground</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:playground%3Dfunnel_ball' target='_blank'>funnel_ball</a>
-  - *This is a spinning circle*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:playground' target='_blank'>playground</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:playground%3Dspinning_circle' target='_blank'>spinning_circle</a>
-
-
-
-
-### wheelchair-access 
-
-
-
-The question is  *Is this device accessible by wheelchair?*
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-  - *This place is specially adapted for wheelchair users*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Ddesignated' target='_blank'>designated</a>
-  - *This place is easily reachable with a wheelchair*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes' target='_blank'>yes</a>
-  - *It is possible to reach this place in a wheelchair, but it is not easy*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dlimited' target='_blank'>limited</a>
-  - *This place is not reachable with a wheelchair*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dno' target='_blank'>no</a>
+### this.id
+
+The question is `What kind of device is this?`
+This rendering asks information about the property 
+[playground](https://wiki.openstreetmap.org/wiki/Key:playground)
+This is rendered with `This is a {playground}`
+ - *This is a swing* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:playground' target='_blank'>playground</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:playground%3Dswing' target='_blank'>swing</a>
+ - *This is a structure consisting of several connected playground devices* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:playground' target='_blank'>playground</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:playground%3Dstructure' target='_blank'>structure</a>
+ - *This is a slide* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:playground' target='_blank'>playground</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:playground%3Dslide' target='_blank'>slide</a>
+ - *This is a sand pit* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:playground' target='_blank'>playground</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:playground%3Dsandpit' target='_blank'>sandpit</a>
+ - *This is a spring rider* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:playground' target='_blank'>playground</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:playground%3Dspringy' target='_blank'>springy</a>
+ - *This is a climbing frame* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:playground' target='_blank'>playground</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:playground%3Dclimbingframe' target='_blank'>climbingframe</a>
+ - *This is a seesaw* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:playground' target='_blank'>playground</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:playground%3Dseesaw' target='_blank'>seesaw</a>
+ - *This is a playhouse* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:playground' target='_blank'>playground</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:playground%3Dplayhouse' target='_blank'>playhouse</a>
+ - *This is a roundabout* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:playground' target='_blank'>playground</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:playground%3Droundabout' target='_blank'>roundabout</a>
+ - *This is a basket swing* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:playground' target='_blank'>playground</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:playground%3Dbasketswing' target='_blank'>basketswing</a>
+ - *This is a zip wire* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:playground' target='_blank'>playground</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:playground%3Dzipwire' target='_blank'>zipwire</a>
+ - *This is a horizontal bar* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:playground' target='_blank'>playground</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:playground%3Dhorizontal_bar' target='_blank'>horizontal_bar</a>
+ - *This is a hopscotch* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:playground' target='_blank'>playground</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:playground%3Dhopscotch' target='_blank'>hopscotch</a>
+ - *This is a splash pad* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:playground' target='_blank'>playground</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:playground%3Dsplash_pad' target='_blank'>splash_pad</a>
+ - *This is a climbing wall* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:playground' target='_blank'>playground</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:playground%3Dclimbingwall' target='_blank'>climbingwall</a>
+ - *This is a map* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:playground' target='_blank'>playground</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:playground%3Dmap' target='_blank'>map</a>
+ - *This is a bridge (either as a standalone device or as part of a larger structure)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:playground' target='_blank'>playground</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:playground%3Dbridge' target='_blank'>bridge</a>
+ - *This is a bouncy cushion* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:playground' target='_blank'>playground</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:playground%3Dcushion' target='_blank'>cushion</a>
+ - *This is an activity panel* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:playground' target='_blank'>playground</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:playground%3Dactivitypanel' target='_blank'>activitypanel</a>
+ - *This is a teen shelter* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:playground' target='_blank'>playground</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:playground%3Dteenshelter' target='_blank'>teenshelter</a>
+ - *This is a funnel used to play with funnel ball* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:playground' target='_blank'>playground</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:playground%3Dfunnel_ball' target='_blank'>funnel_ball</a>
+ - *This is a spinning circle* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:playground' target='_blank'>playground</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:playground%3Dspinning_circle' target='_blank'>spinning_circle</a>
+
+
+
+### this.id
+
+The question is `Is this device accessible by wheelchair?`
+
+ - *This place is specially adapted for wheelchair users* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Ddesignated' target='_blank'>designated</a>
+ - *This place is easily reachable with a wheelchair* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes' target='_blank'>yes</a>
+ - *It is possible to reach this place in a wheelchair, but it is not easy* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dlimited' target='_blank'>limited</a>
+ - *This place is not reachable with a wheelchair* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dno' target='_blank'>no</a>
+
+
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
 
-### leftover-questions 
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has no question and is thus read-only
+This tagrendering has labels 
+`added_by_default`
 
-
-
-
-
-### lod 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### minimap 
-
-
-
+### this.id
 Shows a small map with the feature. Added by default to every popup
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### move-button 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### last_edit 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
+
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+
+
+### this.id
 Gives some metainfo about the last edit and who did edit it - rendering only
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:changeset~.+ & _last_edit:contributor~.+
+This tagrendering has labels 
+`added_by_default`
 
-This tagrendering has labels  `added_by_default`
+### this.id
 
-
-
-### favourite_status 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### qr_code 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has no question and is thus read-only
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has labels  `added_by_default`
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
-
-### share 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### all-tags 
-
-
-
-This tagrendering has no question and is thus read-only
 
  
 

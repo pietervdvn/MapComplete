@@ -13,26 +13,26 @@ export default class CurrencyValidator extends Validator {
             return
         }
         let locale = "en-US"
-        if(!Utils.runningFromConsole){
-             locale??= navigator.language
+        if (!Utils.runningFromConsole) {
+            locale ??= navigator.language
         }
         this.segmenter = new Intl.Segmenter(locale, {
-            granularity: "word"
+            granularity: "word",
         })
 
         const mapping: Map<string, string> = new Map<string, string>()
         const supportedCurrencies: Set<string> = new Set(Intl.supportedValuesOf("currency"))
         this.supportedCurrencies = supportedCurrencies
         for (const currency of supportedCurrencies) {
-            const symbol = (0).toLocaleString(
-                locale,
-                {
+            const symbol = (0)
+                .toLocaleString(locale, {
                     style: "currency",
                     currency: currency,
                     minimumFractionDigits: 0,
-                    maximumFractionDigits: 0
-                }
-            ).replace(/\d/g, "").trim()
+                    maximumFractionDigits: 0,
+                })
+                .replace(/\d/g, "")
+                .trim()
 
             mapping.set(symbol.toLowerCase(), currency)
         }
@@ -44,8 +44,10 @@ export default class CurrencyValidator extends Validator {
             return s
         }
 
-        const parts = Array.from(this.segmenter.segment(s)).map(i => i.segment).filter(part => part.trim().length > 0)
-        if(parts.length !== 2){
+        const parts = Array.from(this.segmenter.segment(s))
+            .map((i) => i.segment)
+            .filter((part) => part.trim().length > 0)
+        if (parts.length !== 2) {
             return s
         }
         const mapping = this.symbolToCurrencyMapping
@@ -64,10 +66,10 @@ export default class CurrencyValidator extends Validator {
             }
             amount = part
         }
-        if(amount === undefined || currency === undefined){
+        if (amount === undefined || currency === undefined) {
             return s
         }
 
-        return amount+" "+currency
+        return amount + " " + currency
     }
 }

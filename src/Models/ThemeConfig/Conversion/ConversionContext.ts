@@ -157,10 +157,14 @@ export class ConversionContext {
      * @constructor
      */
     MergeObjectsForOverride<T, S>(source: Readonly<S>, target: T): T & S {
-        try{
-            return Utils.Merge(source,target)
-        }catch (e) {
-            this.err("Could not apply an override: due to "+e+"\n\tHINT: did you just pull changes from the repository or switch branches? Try 'npm run reset:layeroverview'")
+        try {
+            return Utils.Merge(source, target)
+        } catch (e) {
+            this.err(
+                "Could not apply an override: due to " +
+                    e +
+                    "\n\tHINT: did you just pull changes from the repository or switch branches? Try 'npm run reset:layeroverview'"
+            )
         }
     }
 }

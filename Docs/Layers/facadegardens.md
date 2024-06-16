@@ -26,25 +26,25 @@ Facade gardens
 1. [ Themes using this layer ](#-themes-using-this-layer-)
 2. [ Basic tags for this layer ](#-basic-tags-for-this-layer-)
 3. [ Supported attributes ](#-supported-attributes-)
-  - [just_created](#just_created)
-  - [images](#images)
-  - [facadegardens-direction](#facadegardens-direction)
-  - [facadegardens-sunshine](#facadegardens-sunshine)
-  - [facadegardens-rainbarrel](#facadegardens-rainbarrel)
-  - [facadegardens-start_date](#facadegardens-start_date)
-  - [facadegardens-edible](#facadegardens-edible)
-  - [facadegardens-plants](#facadegardens-plants)
-  - [facadegardens-description](#facadegardens-description)
-  - [leftover-questions](#leftover-questions)
-  - [lod](#lod)
-  - [minimap](#minimap)
-  - [move-button](#move-button)
-  - [delete-button](#delete-button)
-  - [last_edit](#last_edit)
-  - [favourite_status](#favourite_status)
-  - [qr_code](#qr_code)
-  - [share](#share)
-  - [all-tags](#all-tags)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
 
  Themes using this layer 
 -------------------------
@@ -95,247 +95,173 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/description#values) [description](https://wiki.openstreetmap.org/wiki/Key:description) | [text](../SpecialInputElements.md#text) | 
 
 
-
-
-### just_created 
-
-
-
+### this.id
 This element shows a 'thank you' that the contributor has recently created this element
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
+ - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
+This tagrendering has labels 
+`added_by_default`
 
-
-
-
-
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
-
-
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### images 
-
-
-
+### this.id
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
 
 
 
 
+### this.id
 
-### facadegardens-direction 
+The question is `What is the orientation of the garden?`
+This rendering asks information about the property 
+[direction](https://wiki.openstreetmap.org/wiki/Key:direction)
+This is rendered with `Orientation: {direction} (where 0=N and 90=O)`
 
 
 
-The question is  *What is the orientation of the garden?*
 
-This rendering asks information about the property  [direction](https://wiki.openstreetmap.org/wiki/Key:direction) This is rendered with  `Orientation: {direction} (where 0=N and 90=O)`
+### this.id
 
+The question is `Is the garden shaded or sunny?`
 
+ - *The garden is in full sun* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:direct_sunlight' target='_blank'>direct_sunlight</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:direct_sunlight%3Dyes' target='_blank'>yes</a>
+ - *The garden is in partial shade* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:direct_sunlight' target='_blank'>direct_sunlight</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:direct_sunlight%3Dpartial' target='_blank'>partial</a>
+ - *The garden is in the shade* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:direct_sunlight' target='_blank'>direct_sunlight</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:direct_sunlight%3Dno' target='_blank'>no</a>
 
-### facadegardens-sunshine 
 
 
+### this.id
 
-The question is  *Is the garden shaded or sunny?*
+The question is `Is there a water barrel installed for the garden?`
 
+ - *There is a rain barrel* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:rain_barrel' target='_blank'>rain_barrel</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rain_barrel%3Dyes' target='_blank'>yes</a>
+ - *There is no rain barrel* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:rain_barrel' target='_blank'>rain_barrel</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rain_barrel%3Dno' target='_blank'>no</a>
 
 
 
+### this.id
 
-  - *The garden is in full sun*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:direct_sunlight' target='_blank'>direct_sunlight</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:direct_sunlight%3Dyes' target='_blank'>yes</a>
-  - *The garden is in partial shade*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:direct_sunlight' target='_blank'>direct_sunlight</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:direct_sunlight%3Dpartial' target='_blank'>partial</a>
-  - *The garden is in the shade*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:direct_sunlight' target='_blank'>direct_sunlight</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:direct_sunlight%3Dno' target='_blank'>no</a>
+The question is `When was the garden constructed? (a year is sufficient)`
+This rendering asks information about the property 
+[start_date](https://wiki.openstreetmap.org/wiki/Key:start_date)
+This is rendered with `Construction date of the garden: {start_date}`
 
 
 
 
-### facadegardens-rainbarrel 
+### this.id
 
+The question is `Are there any edible plants?`
 
+ - *There are edible plants* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:edible' target='_blank'>edible</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:edible%3Dyes' target='_blank'>yes</a>
+ - *There are no edible plants* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:edible' target='_blank'>edible</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:edible%3Dno' target='_blank'>no</a>
 
-The question is  *Is there a water barrel installed for the garden?*
 
 
+### this.id
 
+The question is `What kinds of plants grow here?`
 
+ - *There are vines* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:plant' target='_blank'>plant</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:plant%3Dvine' target='_blank'>vine</a>
+ - *There are flowering plants* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:plant' target='_blank'>plant</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:plant%3Dflower' target='_blank'>flower</a>
+ - *There are shrubs* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:plant' target='_blank'>plant</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:plant%3Dshrub' target='_blank'>shrub</a>
+ - *There are groundcovering plants* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:plant' target='_blank'>plant</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:plant%3Dgroundcover' target='_blank'>groundcover</a>
 
-  - *There is a rain barrel*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:rain_barrel' target='_blank'>rain_barrel</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rain_barrel%3Dyes' target='_blank'>yes</a>
-  - *There is no rain barrel*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:rain_barrel' target='_blank'>rain_barrel</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rain_barrel%3Dno' target='_blank'>no</a>
 
 
+### this.id
 
+The question is `Extra describing info about the garden (if needed and not yet described above)`
+This rendering asks information about the property 
+[description](https://wiki.openstreetmap.org/wiki/Key:description)
+This is rendered with `More details: {description}`
 
-### facadegardens-start_date 
 
 
 
-The question is  *When was the garden constructed? (a year is sufficient)*
+### this.id
 
-This rendering asks information about the property  [start_date](https://wiki.openstreetmap.org/wiki/Key:start_date) This is rendered with  `Construction date of the garden: {start_date}`
+_This tagrendering has no question and is thus read-only_
 
 
 
-### facadegardens-edible 
 
 
+### this.id
 
-The question is  *Are there any edible plants?*
+_This tagrendering has no question and is thus read-only_
 
 
 
+This tagrendering has labels 
+`added_by_default`
 
-
-  - *There are edible plants*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:edible' target='_blank'>edible</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:edible%3Dyes' target='_blank'>yes</a>
-  - *There are no edible plants*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:edible' target='_blank'>edible</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:edible%3Dno' target='_blank'>no</a>
-
-
-
-
-### facadegardens-plants 
-
-
-
-The question is  *What kinds of plants grow here?*
-
-
-
-
-
-  - *There are vines*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:plant' target='_blank'>plant</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:plant%3Dvine' target='_blank'>vine</a>
-  - *There are flowering plants*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:plant' target='_blank'>plant</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:plant%3Dflower' target='_blank'>flower</a>
-  - *There are shrubs*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:plant' target='_blank'>plant</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:plant%3Dshrub' target='_blank'>shrub</a>
-  - *There are groundcovering plants*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:plant' target='_blank'>plant</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:plant%3Dgroundcover' target='_blank'>groundcover</a>
-
-
-
-
-### facadegardens-description 
-
-
-
-The question is  *Extra describing info about the garden (if needed and not yet described above)*
-
-This rendering asks information about the property  [description](https://wiki.openstreetmap.org/wiki/Key:description) This is rendered with  `More details: {description}`
-
-
-
-### leftover-questions 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### lod 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### minimap 
-
-
-
+### this.id
 Shows a small map with the feature. Added by default to every popup
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### move-button 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### delete-button 
+### this.id
 
-
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
 
 
-### last_edit 
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
+
+
+### this.id
 Gives some metainfo about the last edit and who did edit it - rendering only
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:changeset~.+ & _last_edit:contributor~.+
+This tagrendering has labels 
+`added_by_default`
 
-This tagrendering has labels  `added_by_default`
+### this.id
 
-
-
-### favourite_status 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### qr_code 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has no question and is thus read-only
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has labels  `added_by_default`
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
-
-### share 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### all-tags 
-
-
-
-This tagrendering has no question and is thus read-only
 
  
 

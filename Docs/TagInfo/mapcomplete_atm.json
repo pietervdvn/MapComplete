@@ -223,13 +223,17 @@
     },
     {
       "key": "post_office",
-      "description": "Layer 'Post offices' shows post_office=post_partner with a fixed text, namely 'This shop is a post partner' and allows to pick this as a default answer (in the mapcomplete.org theme 'ATM Machines') (This is only shown if post_office=post_partner)",
+      "description": "Layer 'Post offices' shows post_office=post_partner with a fixed text, namely 'This shop is a post partner' and allows to pick this as a default answer (in the mapcomplete.org theme 'ATM Machines')",
       "value": "post_partner"
     },
     {
       "key": "post_office",
-      "description": "Layer 'Post offices' shows post_office= with a fixed text, namely 'This shop is not a post partner' and allows to pick this as a default answer (in the mapcomplete.org theme 'ATM Machines') Picking this answer will delete the key post_office. (This is only shown if post_office=post_partner)",
+      "description": "Layer 'Post offices' shows post_office= with a fixed text, namely 'This shop is not a post partner' and allows to pick this as a default answer (in the mapcomplete.org theme 'ATM Machines') Picking this answer will delete the key post_office.",
       "value": ""
+    },
+    {
+      "key": "brand",
+      "description": "Layer 'Post offices' shows and asks freeform values for key 'brand' (in the mapcomplete.org theme 'ATM Machines') (This is only shown if amenity=post_office)"
     },
     {
       "key": "post_office:brand",

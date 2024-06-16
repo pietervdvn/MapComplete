@@ -5,14 +5,16 @@
     "nl": "Kinesist",
     "de": "Physiotherapeuten",
     "ca": "Fisioterapeuta",
-    "cs": "Fyzioterapeut"
+    "cs": "Fyzioterapeut",
+    "pl": "Fizjoterapeuta"
   },
   "description": {
     "en": "This layer shows physiotherapists",
     "nl": "Deze laag toont kinesisten",
     "de": "Diese Ebene zeigt Physiotherapeuten",
     "ca": "Aquesta capa mostra fisioterapeutes",
-    "cs": "Tato vrstva zobrazuje fyzioterapeuty"
+    "cs": "Tato vrstva zobrazuje fyzioterapeuty",
+    "pl": "Ta warstwa pokazuje fizjoterapeutów"
   },
   "source": {
     "osmTags": "healthcare=physiotherapist"
@@ -24,7 +26,8 @@
       "nl": "Kinesist {name}",
       "de": "Physiotherapeut {name}",
       "ca": "Fisioterapeuta {name}",
-      "cs": "Fyzioterapeut {name}"
+      "cs": "Fyzioterapeut {name}",
+      "pl": "Fizjoterapeuta {name}"
     }
   },
   "pointRendering": [

@@ -126,7 +126,6 @@
     <LinkIcon style="--svg-color: {color}" class={twMerge(clss, "apply-fill")} />
   {:else if icon === "popout"}
     <LinkIcon style="--svg-color: {color}" />
-
   {:else}
     <img class={clss ?? "h-full w-full"} src={icon} aria-hidden="true" alt="" />
   {/if}

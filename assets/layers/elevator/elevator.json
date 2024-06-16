@@ -16,7 +16,8 @@
     "de": "Diese Ebene zeigt Aufzüge an und fragt nach dem Betriebsstatus und den Abmessungen des Aufzugs. Nützlich für Informationen zur Zugänglichkeit für Rollstuhlfahrer",
     "nl": "Deze laag toont liften en vraagt praktische info over de grootte van de lift en ofdat deze werkt, vooral met het oog op of de lift werkt of niet.",
     "ca": "Aquesta capa mostra ascensors i demana l'estat operatiu i les dimensions de l'ascensor. Útil per obtenir informació sobre l'accessibilitat en cadira de rodes",
-    "cs": "Tato vrstva zobrazuje výtahy a ptá se na provozní stav a rozměry výtahu. Užitečné pro informace o bezbariérovém přístupu"
+    "cs": "Tato vrstva zobrazuje výtahy a ptá se na provozní stav a rozměry výtahu. Užitečné pro informace o bezbariérovém přístupu",
+    "pl": "Ta warstwa pokazuje windy i zadaje pytania o ich status i wymiary. Przydatne do informacji o dostępności dla wózków"
   },
   "source": {
     "osmTags": "highway=elevator"
@@ -178,7 +179,8 @@
       "id": "elevator-shape",
       "question": {
         "en": "What shape does this elevator have?",
-        "de": "Welche Form hat dieser Aufzug?"
+        "de": "Welche Form hat dieser Aufzug?",
+        "pl": "Jaki kształt ma ta winda?"
       },
       "mappings": [
         {
@@ -187,7 +189,8 @@
           "then": {
             "en": "This elevator has a rectangular shape",
             "de": "Dieser Aufzug hat eine rechteckige Form",
-            "fr": "Cet ascenseur est de forme rectangulaire"
+            "fr": "Cet ascenseur est de forme rectangulaire",
+            "pl": "Ta winda ma prostokątny kształt"
           },
           "icon": "./assets/svg/square.svg"
         },
@@ -195,7 +198,8 @@
           "if": "shape=circular",
           "then": {
             "en": "This elevator has a circular shape",
-            "de": "Dieser Aufzug hat eine kreisförmige Form"
+            "de": "Dieser Aufzug hat eine kreisförmige Form",
+            "pl": "Ta winda ma okrągły kształt"
           },
           "icon": "./assets/svg/circle.svg"
         }
@@ -353,7 +357,8 @@
         "en": "E.g. it announces the current floor",
         "de": "Z.B. werden Stockwerke angesagt",
         "ca": "P. e. anuncia la planta actual",
-        "cs": "Např. oznamuje aktuální podlaží"
+        "cs": "Např. oznamuje aktuální podlaží",
+        "pl": "Np. informuje o aktualnym piętrze"
       },
       "mappings": [
         {

@@ -13,7 +13,8 @@
     "es": "Servicio de limpieza de bicis",
     "da": "Cykelrengøring",
     "cs": "Služba mytí jízdních kol",
-    "ca": "Servei de neteja de bicicletes"
+    "ca": "Servei de neteja de bicicletes",
+    "pl": "Usługa czyszczenia rowerów"
   },
   "description": {
     "en": "A layer showing facilities where one can clean their bike",
@@ -25,7 +26,8 @@
     "cs": "Vrstva zobrazující zařízení, kde si můžete umýt kolo",
     "ca": "Una capa que mostra les instal·lacions on pots netejar la teva bicicleta",
     "pt_BR": "Uma camada que mostra instalações onde é possível limpar a sua bicicleta",
-    "pt": "Uma camada que mostra instalações onde é possível limpar a sua bicicleta"
+    "pt": "Uma camada que mostra instalações onde é possível limpar a sua bicicleta",
+    "pl": "Warstwa pokazująca obiekty, gdzie można wyczyścić swój rower"
   },
   "source": {
     "osmTags": {
@@ -120,7 +122,8 @@
         "es": "un servicio de limpieza de bicis",
         "da": "en cykelrengøring",
         "cs": "služba mytí jízdních kol",
-        "ca": "un servei de neteja de bicicletes"
+        "ca": "un servei de neteja de bicicletes",
+        "pl": "usługa czyszczenia rowerów"
       },
       "tags": [
         "amenity=bicycle_wash"
@@ -203,7 +206,8 @@
             "da": "Gratis at bruge",
             "cs": "Bezplatné používání",
             "ca": "Debades",
-            "pt_BR": "Grátis para usar"
+            "pt_BR": "Grátis para usar",
+            "pl": "Darmowa"
           },
           "hideInAnswer": true
         }

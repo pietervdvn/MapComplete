@@ -11,7 +11,7 @@
 </script>
 
 <div class="link-underline flex h-full w-full flex-col justify-between">
-  <div class="overflow-y-auto h-full">
+  <div class="h-full overflow-y-auto">
     <slot />
   </div>
 

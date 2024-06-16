@@ -25,19 +25,19 @@ A layer showing all public-transport-stops which do have a bench
 1. [ Themes using this layer ](#-themes-using-this-layer-)
 2. [ Basic tags for this layer ](#-basic-tags-for-this-layer-)
 3. [ Supported attributes ](#-supported-attributes-)
-  - [just_created](#just_created)
-  - [images](#images)
-  - [bench_at_pt-name](#bench_at_pt-name)
-  - [bench_at_pt-bench_type](#bench_at_pt-bench_type)
-  - [leftover-questions](#leftover-questions)
-  - [lod](#lod)
-  - [minimap](#minimap)
-  - [delete-button](#delete-button)
-  - [last_edit](#last_edit)
-  - [favourite_status](#favourite_status)
-  - [qr_code](#qr_code)
-  - [share](#share)
-  - [all-tags](#all-tags)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
 
  Themes using this layer 
 -------------------------
@@ -84,167 +84,116 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/bench#values) [bench](https://wiki.openstreetmap.org/wiki/Key:bench) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:bench%3Dyes) [stand_up_bench](https://wiki.openstreetmap.org/wiki/Tag:bench%3Dstand_up_bench) [no](https://wiki.openstreetmap.org/wiki/Tag:bench%3Dno)
 
 
-
-
-### just_created 
-
-
-
+### this.id
 This element shows a 'thank you' that the contributor has recently created this element
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
+ - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
+This tagrendering has labels 
+`added_by_default`
 
-
-
-
-
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
-
-
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### images 
-
-
-
+### this.id
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### bench_at_pt-name 
-
-
-
-This tagrendering has no question and is thus read-only
-
-This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) This is rendered with  `{name}`
-
-
-
-### bench_at_pt-bench_type 
-
-
-
-The question is  *What kind of bench is this?*
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-  - *There is a normal, sit-down bench here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bench' target='_blank'>bench</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bench%3Dyes' target='_blank'>yes</a>
-  - *Stand up bench*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bench' target='_blank'>bench</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bench%3Dstand_up_bench' target='_blank'>stand_up_bench</a>
-  - *There is no bench here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bench' target='_blank'>bench</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bench%3Dno' target='_blank'>no</a>
+### this.id
+
+_This tagrendering has no question and is thus read-only_
+This rendering asks information about the property 
+[name](https://wiki.openstreetmap.org/wiki/Key:name)
+This is rendered with `{name}`
 
 
 
 
-### leftover-questions 
+### this.id
+
+The question is `What kind of bench is this?`
+
+ - *There is a normal, sit-down bench here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bench' target='_blank'>bench</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bench%3Dyes' target='_blank'>yes</a>
+ - *Stand up bench* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bench' target='_blank'>bench</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bench%3Dstand_up_bench' target='_blank'>stand_up_bench</a>
+ - *There is no bench here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bench' target='_blank'>bench</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bench%3Dno' target='_blank'>no</a>
 
 
 
-This tagrendering has no question and is thus read-only
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### lod 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has no question and is thus read-only
+This tagrendering has labels 
+`added_by_default`
 
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### minimap 
-
-
-
+### this.id
 Shows a small map with the feature. Added by default to every popup
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### delete-button 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### last_edit 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
+
+
+### this.id
 Gives some metainfo about the last edit and who did edit it - rendering only
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:changeset~.+ & _last_edit:contributor~.+
+This tagrendering has labels 
+`added_by_default`
 
-This tagrendering has labels  `added_by_default`
+### this.id
 
-
-
-### favourite_status 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### qr_code 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has no question and is thus read-only
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has labels  `added_by_default`
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
-
-### share 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### all-tags 
-
-
-
-This tagrendering has no question and is thus read-only
 
  
 

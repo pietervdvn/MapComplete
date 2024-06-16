@@ -13,7 +13,7 @@
   export let enabled: Store<boolean> = new ImmutableStore(true)
   export let arialabel: Translation = undefined
   export let htmlElem: UIEventSource<HTMLElement> = undefined
-  let _htmlElem : HTMLElement
+  let _htmlElem: HTMLElement
   $: {
     htmlElem?.setData(_htmlElem)
   }

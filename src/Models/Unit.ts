@@ -76,11 +76,13 @@ export class Unit {
     static fromJson(
         json:
             | UnitConfigJson
-            | Record<string, string | { quantity: string; denominations: string[], inverted?: boolean }>,
+            | Record<
+                  string,
+                  string | { quantity: string; denominations: string[]; inverted?: boolean }
+              >,
         tagRenderings: TagRenderingConfig[],
         ctx: string
     ): Unit[] {
-
         let types: Record<string, ValidatorType> = {}
         for (const tagRendering of tagRenderings) {
             if (tagRendering.freeform?.type) {
@@ -94,7 +96,12 @@ export class Unit {
         return this.parse(<UnitConfigJson>json, types, ctx)
     }
 
-    private static parseDenomination(json: UnitConfigJson, validator: Validator, appliesToKey: string, ctx: string): Unit {
+    private static parseDenomination(
+        json: UnitConfigJson,
+        validator: Validator,
+        appliesToKey: string,
+        ctx: string
+    ): Unit {
         const applicable = json.applicableUnits.map((u, i) =>
             Denomination.fromJson(u, validator, `${ctx}.units[${i}]`)
         )
@@ -157,7 +164,11 @@ export class Unit {
      *     ]
      * }, "test")
      */
-    private static parse(json: UnitConfigJson, types: Record<string, ValidatorType>, ctx: string): Unit[] {
+    private static parse(
+        json: UnitConfigJson,
+        types: Record<string, ValidatorType>,
+        ctx: string
+    ): Unit[] {
         const appliesTo = json.appliesToKey
         for (let i = 0; i < (appliesTo ?? []).length; i++) {
             let key = appliesTo[i]
@@ -170,7 +181,6 @@ export class Unit {
             throw `${ctx}: define at least one applicable unit`
         }
         // Some keys do have unit handling
-
 
         const units: Unit[] = []
         if (appliesTo === undefined) {
@@ -213,7 +223,8 @@ export class Unit {
     private static loadFromLibrary(
         spec: Record<
             string,
-            string | { quantity: string; denominations: string[]; canonical?: string, inverted?: boolean }
+            | string
+            | { quantity: string; denominations: string[]; canonical?: string; inverted?: boolean }
         >,
         types: Record<string, ValidatorType>,
         ctx: string
@@ -225,7 +236,14 @@ export class Unit {
             if (typeof toLoad === "string") {
                 const loaded = this.getFromLibrary(toLoad, ctx)
                 units.push(
-                    new Unit(loaded.quantity, [key], loaded.denominations, loaded.eraseInvalid, validator, toLoad["inverted"])
+                    new Unit(
+                        loaded.quantity,
+                        [key],
+                        loaded.denominations,
+                        loaded.eraseInvalid,
+                        validator,
+                        toLoad["inverted"]
+                    )
                 )
                 continue
             }
@@ -246,19 +264,32 @@ export class Unit {
                 return found
             }
 
-            if(!Array.isArray(toLoad.denominations)){
-                throw "toLoad is not an array. Did you forget the [ and ] around the denominations at "+ctx+"?"
+            if (!Array.isArray(toLoad.denominations)) {
+                throw (
+                    "toLoad is not an array. Did you forget the [ and ] around the denominations at " +
+                    ctx +
+                    "?"
+                )
             }
             const denoms = toLoad.denominations
                 .map((d) => d.toLowerCase())
                 .map((d) => fetchDenom(d))
-                .map(d => d.withValidator(validator))
+                .map((d) => d.withValidator(validator))
 
             if (toLoad.canonical) {
                 const canonical = fetchDenom(toLoad.canonical).withValidator(validator)
                 denoms.unshift(canonical.withBlankCanonical())
             }
-            units.push(new Unit(loaded.quantity, [key], denoms, loaded.eraseInvalid, validator, toLoad["inverted"]))
+            units.push(
+                new Unit(
+                    loaded.quantity,
+                    [key],
+                    denoms,
+                    loaded.eraseInvalid,
+                    validator,
+                    toLoad["inverted"]
+                )
+            )
         }
         return units
     }
@@ -280,7 +311,11 @@ export class Unit {
         }
         const defaultDenom = this.getDefaultDenomination(country)
         for (const denomination of this.denominationsSorted) {
-            const bare = denomination.StrippedValue(valueWithDenom, defaultDenom === denomination, this.inverted)
+            const bare = denomination.StrippedValue(
+                valueWithDenom,
+                defaultDenom === denomination,
+                this.inverted
+            )
             if (bare !== null) {
                 return [bare, denomination]
             }
@@ -294,8 +329,8 @@ export class Unit {
         }
         const [stripped, denom] = this.findDenomination(value, country)
         const human = denom?.human
-        if(this.inverted ){
-            return human.Subs({quantity: stripped+"/"})
+        if (this.inverted) {
+            return human.Subs({ quantity: stripped + "/" })
         }
         if (stripped === "1") {
             return denom?.humanSingular ?? stripped
@@ -309,8 +344,8 @@ export class Unit {
 
     public toOsm(value: string, denomination: string) {
         const denom = this.denominations.find((d) => d.canonical === denomination)
-        if(this.inverted){
-            return value+"/"+denom._canonicalSingular
+        if (this.inverted) {
+            return value + "/" + denom._canonicalSingular
         }
 
         const space = denom.addSpace ? " " : ""

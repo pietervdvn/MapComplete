@@ -246,6 +246,11 @@
       "value": "unleashed"
     },
     {
+      "key": "dog",
+      "description": "Layer 'Cafés and pubs' shows dog=outside with a fixed text, namely 'Dogs are allowed only outside' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cafés and pubs')",
+      "value": "outside"
+    },
+    {
       "key": "internet_access",
       "description": "Layer 'Cafés and pubs' shows internet_access=wlan with a fixed text, namely 'This place offers wireless internet access' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cafés and pubs')",
       "value": "wlan"
