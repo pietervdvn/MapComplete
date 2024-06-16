@@ -10,7 +10,6 @@
   import MoreScreen from "./BigComponents/MoreScreen"
   import LoginToggle from "./Base/LoginToggle.svelte"
   import Pencil from "../assets/svg/Pencil.svelte"
-  import Login from "../assets/svg/Login.svelte"
   import Constants from "../Models/Constants"
   import { Store, UIEventSource } from "../Logic/UIEventSource"
   import { placeholder } from "../Utils/placeholder"
@@ -20,6 +19,12 @@
   import * as themeOverview from "../assets/generated/theme_overview.json"
   import UnofficialThemeList from "./BigComponents/UnofficialThemeList.svelte"
   import Eye from "../assets/svg/Eye.svelte"
+  import LoginButton from "./Base/LoginButton.svelte"
+  import ChevronDoubleRight from "@babeard/svelte-heroicons/mini/ChevronDoubleRight"
+  import Mastodon from "../assets/svg/Mastodon.svelte"
+  import Liberapay from "../assets/svg/Liberapay.svelte"
+  import Bug from "../assets/svg/Bug.svelte"
+  import Github from "../assets/svg/Github.svelte"
 
   const featureSwitches = new OsmConnectionFeatureSwitches()
   const osmConnection = new OsmConnection({
@@ -28,7 +33,7 @@
       "oauth_token",
       undefined,
       "Used to complete the login"
-    ),
+    )
   })
   const state = new UserRelatedState(osmConnection)
   const t = Translations.t.index
@@ -37,7 +42,7 @@
   let userLanguages = osmConnection.userDetails.map((ud) => ud.languages)
   let themeSearchText: UIEventSource<string | undefined> = new UIEventSource<string>(undefined)
 
-  document.addEventListener("keydown", function (event) {
+  document.addEventListener("keydown", function(event) {
     if (event.ctrlKey && event.code === "KeyF") {
       document.getElementById("theme-search")?.focus()
       event.preventDefault()
@@ -66,84 +71,116 @@
 </script>
 
 <main>
-<div class="m-4 flex flex-col">
-  <LanguagePicker
-    clss="self-end max-w-full"
-    assignTo={state.language}
-    availableLanguages={t.title.SupportedLanguages()}
-    preferredLanguages={userLanguages}
-  />
+  <div class="m-4 flex flex-col">
+    <LanguagePicker
+      clss="self-end max-w-full"
+      assignTo={state.language}
+      availableLanguages={t.title.SupportedLanguages()}
+      preferredLanguages={userLanguages}
+    />
 
-  <div class="mt-4 flex">
-    <div class="m-3 flex-none">
-      <Logo alt="MapComplete Logo" class="h-12 w-12 sm:h-24 sm:w-24" />
-    </div>
+    <div class="mt-4 flex">
+      <div class="m-3 flex-none">
+        <Logo alt="MapComplete Logo" class="h-12 w-12 sm:h-24 sm:w-24" />
+      </div>
 
-    <div class="flex flex-col">
-      <h1 class="m-0 font-extrabold tracking-tight md:text-6xl">
-        <Tr t={t.title} />
-      </h1>
-      <Tr
-        cls="my-4 mr-4 text-base font-semibold sm:text-lg md:mt-5 md:text-xl lg:mx-0"
-        t={Translations.t.index.intro}
-      />
-    </div>
-  </div>
-
-  <form
-    class="flex justify-center"
-    on:submit|preventDefault={(_) => MoreScreen.applySearch(themeSearchText.data)}
-  >
-    <label
-      class="neutral-label my-2 flex w-full items-center rounded-full border-2 border-black sm:w-1/2"
-    >
-      <SearchIcon aria-hidden="true" class="h-8 w-8" />
-      <input
-        autofocus
-        bind:value={$themeSearchText}
-        class="mr-4 w-full outline-none"
-        id="theme-search"
-        type="search"
-        use:placeholder={tr.searchForATheme}
-      />
-    </label>
-  </form>
-
-  <ThemesList search={themeSearchText} {state} themes={MoreScreen.officialThemes} />
-
-  <LoginToggle {state}>
-    <ThemesList
-      hideThemes={false}
-      isCustom={false}
-      search={themeSearchText}
-      {state}
-      themes={$visitedHiddenThemes}
-    >
-      <svelte:fragment slot="title">
-        <h3>
-          <Tr t={tr.previouslyHiddenTitle} />
-        </h3>
+      <div class="flex flex-col">
+        <h1 class="m-0 font-extrabold tracking-tight md:text-6xl">
+          <Tr t={t.title} />
+        </h1>
         <p>
+
           <Tr
-            t={tr.hiddenExplanation.Subs({
+            cls="my-4 mr-4 text-base font-semibold sm:text-lg md:mt-5 md:text-xl lg:mx-0"
+            t={Translations.t.index.intro}
+          />
+          <span class="link-underline">
+          <a href="#about"><Tr t={Translations.t.index.learnMore} />
+          <ChevronDoubleRight class="w-4 h-4 inline" />
+          </a>
+        </span>
+        </p>
+      </div>
+    </div>
+
+    <form
+      class="flex justify-center"
+      on:submit|preventDefault={(_) => MoreScreen.applySearch(themeSearchText.data)}
+    >
+      <label
+        class="neutral-label my-2 flex w-full items-center rounded-full border-2 border-black sm:w-1/2"
+      >
+        <SearchIcon aria-hidden="true" class="h-8 w-8" />
+        <input
+          autofocus
+          bind:value={$themeSearchText}
+          class="mr-4 w-full outline-none"
+          id="theme-search"
+          type="search"
+          use:placeholder={tr.searchForATheme}
+        />
+      </label>
+    </form>
+
+    <ThemesList search={themeSearchText} {state} themes={MoreScreen.officialThemes} />
+
+    <LoginToggle {state}>
+      <ThemesList
+        hideThemes={false}
+        isCustom={false}
+        search={themeSearchText}
+        {state}
+        themes={$visitedHiddenThemes}
+      >
+        <svelte:fragment slot="title">
+          <h3>
+            <Tr t={tr.previouslyHiddenTitle} />
+          </h3>
+          <p>
+            <Tr
+              t={tr.hiddenExplanation.Subs({
               hidden_discovered: $visitedHiddenThemes.length.toString(),
               total_hidden: hiddenThemes.length.toString(),
             })}
-          />
-        </p>
-      </svelte:fragment>
-    </ThemesList>
+            />
+          </p>
+        </svelte:fragment>
+      </ThemesList>
 
-    <UnofficialThemeList search={themeSearchText} {state} />
+      <UnofficialThemeList search={themeSearchText} {state} />
 
-    <div slot="not-logged-in">
-      <button class="m-0 my-2 w-full" on:click={() => osmConnection.AttemptLogin()}>
-        <Login class="mr-2 h-6 w-6 " />
-        <Tr t={Translations.t.index.logIn} />
-      </button>
-    </div>
+      <LoginButton osmConnection={state.osmConnection} />
+
+
+      <h3 id="about">
+        <Tr t={Translations.t.index.about} />
+      </h3>
+      <Tr cls="link-underline" t={Translations.t.general.aboutMapComplete.intro} />
+
+      <span class="links-as-button flex flex-col gap-y-1">
+
+                <a class="flex" href="https://github.com/pietervdvn/MapComplete/" target="_blank">
+          <Github class="mr-2 h-6 w-6" />
+          <Tr t={Translations.t.general.attribution.gotoSourceCode} />
+        </a>
+    <a class="flex" href="https://github.com/pietervdvn/MapComplete/issues" target="_blank">
+      <Bug class="mr-2 h-6 w-6" />
+      <Tr t={Translations.t.general.attribution.openIssueTracker} />
+    </a>
+
+    <a class="flex" href="https://en.osm.town/@MapComplete" target="_blank">
+      <Mastodon class="mr-2 h-6 w-6" />
+      <Tr t={Translations.t.general.attribution.followOnMastodon} />
+    </a>
+
+    <a class="flex" href="https://liberapay.com/pietervdvn/" target="_blank">
+      <Liberapay class="mr-2 h-6 w-6" />
+      <Tr t={Translations.t.general.attribution.donate} />
+    </a>
+
+
     <a
-      class="button h-fit w-full"
+      class="flex"
       href={window.location.protocol + "//" + window.location.host + "/studio.html"}
     >
       <Pencil class="mr-2 h-6 w-6" />
@@ -151,19 +188,21 @@
     </a>
 
     <a
-      class="button h-fit w-full"
+      class="flex"
       href={window.location.protocol + "//" + window.location.host + "/privacy.html"}
     >
       <Eye class="mr-2 h-6 w-6" />
       <Tr t={Translations.t.privacy.title} />
     </a>
-  </LoginToggle>
+</span>
 
-  <Tr cls="link-underline" t={Translations.t.general.aboutMapComplete.intro} />
-  <Tr t={tr.streetcomplete} />
 
-  <div class="subtle mb-16 self-end">
-    v{Constants.vNumber}
+    </LoginToggle>
+
+    <Tr t={tr.streetcomplete} />
+
+    <div class="subtle mb-16 self-end">
+      v{Constants.vNumber}
+    </div>
   </div>
-</div>
 </main>

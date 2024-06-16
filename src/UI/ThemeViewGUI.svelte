@@ -75,6 +75,7 @@
   import ExtraLinkButton from "./BigComponents/ExtraLinkButton.svelte"
   import CloseAnimation from "./Base/CloseAnimation.svelte"
   import { LastClickFeatureSource } from "../Logic/FeatureSource/Sources/LastClickFeatureSource"
+  import Github from "../assets/svg/Github.svelte"
 
   export let state: ThemeViewState
   let layout = state.layout
@@ -566,6 +567,12 @@
           <Add class="h-6 w-6" />
           <Tr t={Translations.t.general.backToIndex} />
         </a>
+
+        <a class="flex" href="https://github.com/pietervdvn/MapComplete/" target="_blank">
+          <Github class="h-6 w-6" />
+          <Tr t={Translations.t.general.attribution.gotoSourceCode} />
+        </a>
+
 
         <a class="flex" href="https://github.com/pietervdvn/MapComplete/issues" target="_blank">
           <Bug class="h-6 w-6" />

@@ -185,6 +185,7 @@
             "editId": "Open the OpenStreetMap online editor here",
             "editJosm": "Edit here with JOSM",
             "followOnMastodon": "Follow MapComplete on Mastodon",
+            "gotoSourceCode": "View the source code",
             "iconAttribution": {
                 "title": "Used icons"
             },
@@ -592,8 +593,10 @@
     },
     "index": {
         "#": "These texts are shown above the theme buttons when no theme is loaded",
+        "about": "About MapComplete",
         "featuredThemeTitle": "Featured this week",
         "intro": "MapComplete is an OpenStreetMap-viewer and editor, which shows you information about features of a specific theme and allows to update it.",
+        "learnMore": "Learn more",
         "logIn": "Log in to see other themes you previously visited",
         "pickTheme": "Pick a theme below to get started.",
         "title": "Welcome to MapComplete"
