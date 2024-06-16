@@ -19,10 +19,7 @@
   style="background-color: #00000088; z-index: 20"
 />
 <!-- draw a _second_ absolute div, placed using 'bottom' which will be above the navigation bar on mobile browsers -->
-<div
-  class={"absolute bottom-0 right-0 h-full w-screen p-4 md:p-6"}
-  style="z-index: 21"
->
+<div class={"absolute bottom-0 right-0 h-full w-screen p-4 md:p-6"} style="z-index: 21">
   <div class="content normal-background h-full" on:click|stopPropagation={() => {}}>
     <div class="h-full rounded-xl">
       <slot />

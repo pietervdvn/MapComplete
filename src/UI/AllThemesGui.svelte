@@ -33,7 +33,7 @@
       "oauth_token",
       undefined,
       "Used to complete the login"
-    )
+    ),
   })
   const state = new UserRelatedState(osmConnection)
   const t = Translations.t.index
@@ -42,7 +42,7 @@
   let userLanguages = osmConnection.userDetails.map((ud) => ud.languages)
   let themeSearchText: UIEventSource<string | undefined> = new UIEventSource<string>(undefined)
 
-  document.addEventListener("keydown", function(event) {
+  document.addEventListener("keydown", function (event) {
     if (event.ctrlKey && event.code === "KeyF") {
       document.getElementById("theme-search")?.focus()
       event.preventDefault()
@@ -89,16 +89,16 @@
           <Tr t={t.title} />
         </h1>
         <p>
-
           <Tr
             cls="my-4 mr-4 text-base font-semibold sm:text-lg md:mt-5 md:text-xl lg:mx-0"
             t={Translations.t.index.intro}
           />
           <span class="link-underline">
-          <a href="#about"><Tr t={Translations.t.index.learnMore} />
-          <ChevronDoubleRight class="w-4 h-4 inline" />
-          </a>
-        </span>
+            <a href="#about">
+              <Tr t={Translations.t.index.learnMore} />
+              <ChevronDoubleRight class="inline h-4 w-4" />
+            </a>
+          </span>
         </p>
       </div>
     </div>
@@ -139,9 +139,9 @@
           <p>
             <Tr
               t={tr.hiddenExplanation.Subs({
-              hidden_discovered: $visitedHiddenThemes.length.toString(),
-              total_hidden: hiddenThemes.length.toString(),
-            })}
+                hidden_discovered: $visitedHiddenThemes.length.toString(),
+                total_hidden: hiddenThemes.length.toString(),
+              })}
             />
           </p>
         </svelte:fragment>
@@ -151,52 +151,47 @@
 
       <LoginButton osmConnection={state.osmConnection} />
 
-
       <h3 id="about">
         <Tr t={Translations.t.index.about} />
       </h3>
       <Tr cls="link-underline" t={Translations.t.general.aboutMapComplete.intro} />
 
       <span class="links-as-button flex flex-col gap-y-1">
-
-                <a class="flex" href="https://github.com/pietervdvn/MapComplete/" target="_blank">
+        <a class="flex" href="https://github.com/pietervdvn/MapComplete/" target="_blank">
           <Github class="mr-2 h-6 w-6" />
           <Tr t={Translations.t.general.attribution.gotoSourceCode} />
         </a>
-    <a class="flex" href="https://github.com/pietervdvn/MapComplete/issues" target="_blank">
-      <Bug class="mr-2 h-6 w-6" />
-      <Tr t={Translations.t.general.attribution.openIssueTracker} />
-    </a>
+        <a class="flex" href="https://github.com/pietervdvn/MapComplete/issues" target="_blank">
+          <Bug class="mr-2 h-6 w-6" />
+          <Tr t={Translations.t.general.attribution.openIssueTracker} />
+        </a>
 
-    <a class="flex" href="https://en.osm.town/@MapComplete" target="_blank">
-      <Mastodon class="mr-2 h-6 w-6" />
-      <Tr t={Translations.t.general.attribution.followOnMastodon} />
-    </a>
+        <a class="flex" href="https://en.osm.town/@MapComplete" target="_blank">
+          <Mastodon class="mr-2 h-6 w-6" />
+          <Tr t={Translations.t.general.attribution.followOnMastodon} />
+        </a>
 
-    <a class="flex" href="https://liberapay.com/pietervdvn/" target="_blank">
-      <Liberapay class="mr-2 h-6 w-6" />
-      <Tr t={Translations.t.general.attribution.donate} />
-    </a>
+        <a class="flex" href="https://liberapay.com/pietervdvn/" target="_blank">
+          <Liberapay class="mr-2 h-6 w-6" />
+          <Tr t={Translations.t.general.attribution.donate} />
+        </a>
 
+        <a
+          class="flex"
+          href={window.location.protocol + "//" + window.location.host + "/studio.html"}
+        >
+          <Pencil class="mr-2 h-6 w-6" />
+          <Tr t={Translations.t.general.morescreen.createYourOwnTheme} />
+        </a>
 
-    <a
-      class="flex"
-      href={window.location.protocol + "//" + window.location.host + "/studio.html"}
-    >
-      <Pencil class="mr-2 h-6 w-6" />
-      <Tr t={Translations.t.general.morescreen.createYourOwnTheme} />
-    </a>
-
-    <a
-      class="flex"
-      href={window.location.protocol + "//" + window.location.host + "/privacy.html"}
-    >
-      <Eye class="mr-2 h-6 w-6" />
-      <Tr t={Translations.t.privacy.title} />
-    </a>
-</span>
-
-
+        <a
+          class="flex"
+          href={window.location.protocol + "//" + window.location.host + "/privacy.html"}
+        >
+          <Eye class="mr-2 h-6 w-6" />
+          <Tr t={Translations.t.privacy.title} />
+        </a>
+      </span>
     </LoginToggle>
 
     <Tr t={tr.streetcomplete} />
