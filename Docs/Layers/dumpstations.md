@@ -25,25 +25,25 @@ Sanitary dump stations
 1. [ Themes using this layer ](#-themes-using-this-layer-)
 2. [ Basic tags for this layer ](#-basic-tags-for-this-layer-)
 3. [ Supported attributes ](#-supported-attributes-)
-  - [just_created](#just_created)
-  - [images](#images)
-  - [dumpstations-fee](#dumpstations-fee)
-  - [dumpstations-charge](#dumpstations-charge)
-  - [dumpstations-waterpoint](#dumpstations-waterpoint)
-  - [dumpstations-grey-water](#dumpstations-grey-water)
-  - [dumpstations-chemical-waste](#dumpstations-chemical-waste)
-  - [dumpstations-access](#dumpstations-access)
-  - [dumpstations-network](#dumpstations-network)
-  - [operator](#operator)
-  - [power_supply](#power_supply)
-  - [leftover-questions](#leftover-questions)
-  - [lod](#lod)
-  - [minimap](#minimap)
-  - [last_edit](#last_edit)
-  - [favourite_status](#favourite_status)
-  - [qr_code](#qr_code)
-  - [share](#share)
-  - [all-tags](#all-tags)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
 
  Themes using this layer 
 -------------------------
@@ -96,261 +96,175 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/power_supply#values) [power_supply](https://wiki.openstreetmap.org/wiki/Key:power_supply) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:power_supply%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:power_supply%3Dno)
 
 
-
-
-### just_created 
-
-
-
+### this.id
 This element shows a 'thank you' that the contributor has recently created this element
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
+ - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
+This tagrendering has labels 
+`added_by_default`
 
-
-
-
-
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
-
-
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### images 
-
-
-
+### this.id
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
 
 
 
 
+### this.id
 
-### dumpstations-fee 
+The question is `Does this place charge a fee?`
 
+ - *You need to pay for use* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>
+ - *Can be used for free* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno' target='_blank'>no</a>
 
 
-The question is  *Does this place charge a fee?*
 
+### this.id
 
+The question is `How much does this place charge?`
+This rendering asks information about the property 
+[charge](https://wiki.openstreetmap.org/wiki/Key:charge)
+This is rendered with `This place charges {charge}`
 
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>
 
 
-  - *You need to pay for use*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>
-  - *Can be used for free*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno' target='_blank'>no</a>
+### this.id
 
+The question is `Does this place have a water point?`
 
+ - *This place has a water point* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:water_point' target='_blank'>water_point</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:water_point%3Dyes' target='_blank'>yes</a>
+ - *This place does not have a water point* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:water_point' target='_blank'>water_point</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:water_point%3Dno' target='_blank'>no</a>
 
 
-### dumpstations-charge 
 
+### this.id
 
+The question is `Can you dispose of grey water here?`
 
-The question is  *How much does this place charge?*
+ - *You can dispose of grey water here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:sanitary_dump_station:grey_water' target='_blank'>sanitary_dump_station:grey_water</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sanitary_dump_station:grey_water%3Dyes' target='_blank'>yes</a>
+ - *You cannot dispose of gray water here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:sanitary_dump_station:grey_water' target='_blank'>sanitary_dump_station:grey_water</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sanitary_dump_station:grey_water%3Dno' target='_blank'>no</a>
 
-This rendering asks information about the property  [charge](https://wiki.openstreetmap.org/wiki/Key:charge) This is rendered with  `This place charges {charge}`
 
-This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>`
 
+### this.id
 
+The question is `Can you dispose of chemical toilet waste here?`
 
-### dumpstations-waterpoint 
+ - *You can dispose of chemical toilet waste here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:sanitary_dump_station:chemical_toilet' target='_blank'>sanitary_dump_station:chemical_toilet</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sanitary_dump_station:chemical_toilet%3Dyes' target='_blank'>yes</a>
+ - *You cannot dispose of chemical toilet waste here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:sanitary_dump_station:chemical_toilet' target='_blank'>sanitary_dump_station:chemical_toilet</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sanitary_dump_station:chemical_toilet%3Dno' target='_blank'>no</a>
 
 
 
-The question is  *Does this place have a water point?*
+### this.id
 
+The question is `Who can use this dump station?`
 
+ - *You need a network key/code to use this* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dnetwork' target='_blank'>network</a>
+ - *You need to be a customer of camping/campersite to use this place* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers' target='_blank'>customers</a>
+ - *Anyone can use this dump station* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dpublic' target='_blank'>public</a>
+ - _This option cannot be chosen as answer_
+ - *Anyone can use this dump station* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>
 
 
 
-  - *This place has a water point*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:water_point' target='_blank'>water_point</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:water_point%3Dyes' target='_blank'>yes</a>
-  - *This place does not have a water point*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:water_point' target='_blank'>water_point</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:water_point%3Dno' target='_blank'>no</a>
+### this.id
 
+The question is `What network is this place a part of? (skip if none)`
+This rendering asks information about the property 
+[network](https://wiki.openstreetmap.org/wiki/Key:network)
+This is rendered with `This station is part of network {network}`
 
 
 
-### dumpstations-grey-water 
 
+### this.id
 
+The question is `Who operates this place?`
+This rendering asks information about the property 
+[operator](https://wiki.openstreetmap.org/wiki/Key:operator)
+This is rendered with `This place is operated by {operator}`
 
-The question is  *Can you dispose of grey water here?*
 
 
 
+### this.id
 
+The question is `Does this place have a power supply?`
 
-  - *You can dispose of grey water here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:sanitary_dump_station:grey_water' target='_blank'>sanitary_dump_station:grey_water</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sanitary_dump_station:grey_water%3Dyes' target='_blank'>yes</a>
-  - *You cannot dispose of gray water here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:sanitary_dump_station:grey_water' target='_blank'>sanitary_dump_station:grey_water</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sanitary_dump_station:grey_water%3Dno' target='_blank'>no</a>
+ - *This place has a power supply* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:power_supply' target='_blank'>power_supply</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:power_supply%3Dyes' target='_blank'>yes</a>
+ - *This place does not have power supply* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:power_supply' target='_blank'>power_supply</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:power_supply%3Dno' target='_blank'>no</a>
 
 
 
+### this.id
 
-### dumpstations-chemical-waste 
+_This tagrendering has no question and is thus read-only_
 
 
 
-The question is  *Can you dispose of chemical toilet waste here?*
 
 
+### this.id
 
+_This tagrendering has no question and is thus read-only_
 
 
-  - *You can dispose of chemical toilet waste here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:sanitary_dump_station:chemical_toilet' target='_blank'>sanitary_dump_station:chemical_toilet</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sanitary_dump_station:chemical_toilet%3Dyes' target='_blank'>yes</a>
-  - *You cannot dispose of chemical toilet waste here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:sanitary_dump_station:chemical_toilet' target='_blank'>sanitary_dump_station:chemical_toilet</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sanitary_dump_station:chemical_toilet%3Dno' target='_blank'>no</a>
 
+This tagrendering has labels 
+`added_by_default`
 
-
-
-### dumpstations-access 
-
-
-
-The question is  *Who can use this dump station?*
-
-
-
-
-
-  - *You need a network key/code to use this*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dnetwork' target='_blank'>network</a>
-  - *You need to be a customer of camping/campersite to use this place*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers' target='_blank'>customers</a>
-  - *Anyone can use this dump station*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dpublic' target='_blank'>public</a>
-  - _This option cannot be chosen as answer_
-  - *Anyone can use this dump station*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>
-
-
-
-
-### dumpstations-network 
-
-
-
-The question is  *What network is this place a part of? (skip if none)*
-
-This rendering asks information about the property  [network](https://wiki.openstreetmap.org/wiki/Key:network) This is rendered with  `This station is part of network {network}`
-
-
-
-### operator 
-
-
-
-The question is  *Who operates this place?*
-
-This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) This is rendered with  `This place is operated by {operator}`
-
-
-
-### power_supply 
-
-
-
-The question is  *Does this place have a power supply?*
-
-
-
-
-
-  - *This place has a power supply*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:power_supply' target='_blank'>power_supply</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:power_supply%3Dyes' target='_blank'>yes</a>
-  - *This place does not have power supply*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:power_supply' target='_blank'>power_supply</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:power_supply%3Dno' target='_blank'>no</a>
-
-
-
-
-### leftover-questions 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### lod 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### minimap 
-
-
-
+### this.id
 Shows a small map with the feature. Added by default to every popup
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
 
 
-### last_edit 
 
-
-
+### this.id
 Gives some metainfo about the last edit and who did edit it - rendering only
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:changeset~.+ & _last_edit:contributor~.+
+This tagrendering has labels 
+`added_by_default`
 
-This tagrendering has labels  `added_by_default`
+### this.id
 
-
-
-### favourite_status 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### qr_code 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has no question and is thus read-only
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has labels  `added_by_default`
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
-
-### share 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### all-tags 
-
-
-
-This tagrendering has no question and is thus read-only
 
  
 

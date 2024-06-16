@@ -50,7 +50,6 @@
   let questionboxElem: HTMLDivElement
   let questionsToAsk = tags.map(
     (tags) => {
-
       const questionsToAsk: TagRenderingConfig[] = []
       for (const baseQuestion of baseQuestions) {
         if (skippedQuestions.data.has(baseQuestion.id)) {
@@ -164,7 +163,13 @@
       {#if $showAllQuestionsAtOnce}
         <div class="flex flex-col gap-y-1">
           {#each $allQuestionsToAsk as question (question.id)}
-            <TagRenderingQuestionDynamic config={question} {tags} {selectedElement} {state} {layer} />
+            <TagRenderingQuestionDynamic
+              config={question}
+              {tags}
+              {selectedElement}
+              {state}
+              {layer}
+            />
           {/each}
         </div>
       {:else if $firstQuestion !== undefined}

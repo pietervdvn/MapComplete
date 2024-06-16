@@ -1,7 +1,11 @@
 import { Store, UIEventSource } from "../Logic/UIEventSource"
 import BaseUIElement from "./BaseUIElement"
 import LayoutConfig from "../Models/ThemeConfig/LayoutConfig"
-import { FeatureSource, IndexedFeatureSource, WritableFeatureSource } from "../Logic/FeatureSource/FeatureSource"
+import {
+    FeatureSource,
+    IndexedFeatureSource,
+    WritableFeatureSource,
+} from "../Logic/FeatureSource/FeatureSource"
 import { OsmConnection } from "../Logic/Osm/OsmConnection"
 import { Changes } from "../Logic/Osm/Changes"
 import { ExportableMap, MapProperties } from "../Models/MapProperties"
@@ -63,7 +67,6 @@ export interface SpecialVisualizationState {
 
     readonly currentView: FeatureSource<Feature<Polygon>>
     readonly favourites: FavouritesFeatureSource
-
 
     /**
      * If data is currently being fetched from external sources

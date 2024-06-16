@@ -25,17 +25,17 @@ Map layer to show fire extinguishers.
 1. [ Themes using this layer ](#-themes-using-this-layer-)
 2. [ Basic tags for this layer ](#-basic-tags-for-this-layer-)
 3. [ Supported attributes ](#-supported-attributes-)
-  - [just_created](#just_created)
-  - [extinguisher-location](#extinguisher-location)
-  - [images](#images)
-  - [leftover-questions](#leftover-questions)
-  - [lod](#lod)
-  - [minimap](#minimap)
-  - [last_edit](#last_edit)
-  - [favourite_status](#favourite_status)
-  - [qr_code](#qr_code)
-  - [share](#share)
-  - [all-tags](#all-tags)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
 
  Themes using this layer 
 -------------------------
@@ -78,146 +78,99 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/location#values) [location](https://wiki.openstreetmap.org/wiki/Key:location) | [string](../SpecialInputElements.md#string) | [indoor](https://wiki.openstreetmap.org/wiki/Tag:location%3Dindoor) [outdoor](https://wiki.openstreetmap.org/wiki/Tag:location%3Doutdoor)
 
 
-
-
-### just_created 
-
-
-
+### this.id
 This element shows a 'thank you' that the contributor has recently created this element
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
+ - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
+This tagrendering has labels 
+`added_by_default`
 
+### this.id
 
-
-
-
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
-
-
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### extinguisher-location 
+The question is `Where is it positioned?`
+This rendering asks information about the property 
+[location](https://wiki.openstreetmap.org/wiki/Key:location)
+This is rendered with `Location: {location}`
+ - *Found indoors.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dindoor' target='_blank'>indoor</a>
+ - *Found outdoors.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Doutdoor' target='_blank'>outdoor</a>
 
 
 
-The question is  *Where is it positioned?*
-
-This rendering asks information about the property  [location](https://wiki.openstreetmap.org/wiki/Key:location) This is rendered with  `Location: {location}`
-
-
-
-  - *Found indoors.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dindoor' target='_blank'>indoor</a>
-  - *Found outdoors.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Doutdoor' target='_blank'>outdoor</a>
-
-
-
-
-### images 
-
-
-
+### this.id
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### leftover-questions 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### lod 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has no question and is thus read-only
+
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has labels  `added_by_default`
+This tagrendering has labels 
+`added_by_default`
 
-
-
-### minimap 
-
-
-
+### this.id
 Shows a small map with the feature. Added by default to every popup
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
 
 
-### last_edit 
 
-
-
+### this.id
 Gives some metainfo about the last edit and who did edit it - rendering only
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:changeset~.+ & _last_edit:contributor~.+
+This tagrendering has labels 
+`added_by_default`
 
-This tagrendering has labels  `added_by_default`
+### this.id
 
-
-
-### favourite_status 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### qr_code 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has no question and is thus read-only
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has labels  `added_by_default`
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
-
-### share 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### all-tags 
-
-
-
-This tagrendering has no question and is thus read-only
 
  
 

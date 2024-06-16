@@ -835,7 +835,7 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
     }
 
     public mapAsyncD<J>(f: (t: T) => Promise<J>): Store<J> {
-        return this.bindD(t => UIEventSource.FromPromise(f(t)))
+        return this.bindD((t) => UIEventSource.FromPromise(f(t)))
     }
 
     /**
@@ -901,5 +901,4 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
     update(f: Updater<T> & ((value: T) => T)): void {
         this.setData(f(this.data))
     }
-
 }

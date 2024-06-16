@@ -154,7 +154,7 @@ class PointRenderingLayer {
 
         if (this._onClick) {
             const self = this
-            el.addEventListener("click", function(ev) {
+            el.addEventListener("click", function (ev) {
                 ev.preventDefault()
                 self._onClick(feature)
                 // Workaround to signal the MapLibreAdaptor to ignore this click
@@ -200,7 +200,7 @@ class LineRenderingLayer {
         "lineCap",
         "offset",
         "fill",
-        "fillColor"
+        "fillColor",
     ] as const
 
     private static readonly lineConfigKeysColor = ["color", "fillColor"] as const
@@ -264,8 +264,8 @@ class LineRenderingLayer {
                         "icon-rotation-alignment": "map",
                         "icon-pitch-alignment": "map",
                         "icon-image": imgId,
-                        "icon-size": 0.055
-                    }
+                        "icon-size": 0.055,
+                    },
                 }
                 const filter = img.if?.asMapboxExpression()
                 if (filter) {
@@ -338,9 +338,9 @@ class LineRenderingLayer {
                     type: "geojson",
                     data: {
                         type: "FeatureCollection",
-                        features
+                        features,
                     },
-                    promoteId: "id"
+                    promoteId: "id",
                 })
                 const linelayer = this._layername + "_line"
                 const layer: AddLayerObject = {
@@ -351,19 +351,21 @@ class LineRenderingLayer {
                         "line-color": ["feature-state", "color"],
                         "line-opacity": ["feature-state", "color-opacity"],
                         "line-width": ["feature-state", "width"],
-                        "line-offset": ["feature-state", "offset"]
+                        "line-offset": ["feature-state", "offset"],
                     },
                     layout: {
-                        "line-cap": "round"
-                    }
+                        "line-cap": "round",
+                    },
                 }
                 if (this._config.dashArray) {
-                    try{
-
-                    layer.paint["line-dasharray"] =
-                        this._config.dashArray?.split(" ")?.map((s) => Number(s)) ?? null
-                    }catch (e) {
-                        console.error(`Invalid dasharray in layer ${this._layername}:`, this._config.dashArray)
+                    try {
+                        layer.paint["line-dasharray"] =
+                            this._config.dashArray?.split(" ")?.map((s) => Number(s)) ?? null
+                    } catch (e) {
+                        console.error(
+                            `Invalid dasharray in layer ${this._layername}:`,
+                            this._config.dashArray
+                        )
                     }
                 }
                 map.addLayer(layer)
@@ -398,8 +400,8 @@ class LineRenderingLayer {
                     layout: {},
                     paint: {
                         "fill-color": ["feature-state", "fillColor"],
-                        "fill-opacity": ["feature-state", "fillColor-opacity"]
-                    }
+                        "fill-opacity": ["feature-state", "fillColor-opacity"],
+                    },
                 })
                 if (this._onClick) {
                     map.on("click", polylayer, (e) => {
@@ -430,7 +432,7 @@ class LineRenderingLayer {
                 this.currentSourceData = features
                 src.setData({
                     type: "FeatureCollection",
-                    features: this.currentSourceData
+                    features: this.currentSourceData,
                 })
             }
         }
@@ -513,15 +515,15 @@ export default class ShowDataLayer {
                 layers.filter((l) => l.source !== null).map((l) => new FilteredLayer(l)),
                 features,
                 {
-                    constructStore: (features, layer) => new SimpleFeatureSource(layer, features)
+                    constructStore: (features, layer) => new SimpleFeatureSource(layer, features),
                 }
             )
         if (options?.zoomToFeatures) {
             options.zoomToFeatures = false
-            features.features.addCallbackD(features => {
+            features.features.addCallbackD((features) => {
                 ShowDataLayer.zoomToCurrentFeatures(mlmap.data, features)
             })
-            mlmap.addCallbackD(map => {
+            mlmap.addCallbackD((map) => {
                 ShowDataLayer.zoomToCurrentFeatures(map, features.features.data)
             })
         }
@@ -530,7 +532,7 @@ export default class ShowDataLayer {
             new ShowDataLayer(mlmap, {
                 layer: fs.layer.layerDef,
                 features: fs,
-                ...(options ?? {})
+                ...(options ?? {}),
             })
         })
     }
@@ -543,12 +545,11 @@ export default class ShowDataLayer {
         return new ShowDataLayer(map, {
             layer: ShowDataLayer.rangeLayer,
             features,
-            doShowLayer
+            doShowLayer,
         })
     }
 
-    public destruct() {
-    }
+    public destruct() {}
 
     private static zoomToCurrentFeatures(map: MlMap, features: Feature[]) {
         if (!features || !map || features.length == 0) {
@@ -560,7 +561,7 @@ export default class ShowDataLayer {
             map.resize()
             map.fitBounds(bbox.toLngLat(), {
                 padding: { top: 10, bottom: 10, left: 10, right: 10 },
-                animate: false
+                animate: false,
             })
         })
     }
@@ -573,8 +574,8 @@ export default class ShowDataLayer {
                 this._options.layer.title === undefined
                     ? undefined
                     : (feature: Feature) => {
-                        selectedElement?.setData(feature)
-                    }
+                          selectedElement?.setData(feature)
+                      }
         }
         if (this._options.drawLines !== false) {
             for (let i = 0; i < this._options.layer.lineRendering.length; i++) {
@@ -606,7 +607,9 @@ export default class ShowDataLayer {
             }
         }
         if (this._options.zoomToFeatures) {
-            features.features.addCallbackAndRunD((features) => ShowDataLayer.zoomToCurrentFeatures(map, features))
+            features.features.addCallbackAndRunD((features) =>
+                ShowDataLayer.zoomToCurrentFeatures(map, features)
+            )
         }
     }
 }

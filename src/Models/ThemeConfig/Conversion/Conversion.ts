@@ -39,7 +39,12 @@ export abstract class Conversion<TIn, TOut> {
             ConversionContext.print(msg)
         }
         if (context.hasErrors()) {
-            throw new Error(["Detected one or more errors, stopping now:", context.getAll("error").map(e => e.context.path.join(".")+": "+e.message)].join("\n\t"))
+            throw new Error(
+                [
+                    "Detected one or more errors, stopping now:",
+                    context.getAll("error").map((e) => e.context.path.join(".") + ": " + e.message),
+                ].join("\n\t")
+            )
         }
         return fixed
     }

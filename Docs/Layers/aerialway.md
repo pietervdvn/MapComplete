@@ -25,22 +25,22 @@ Various forms of transport for passengers and goods that use wires, including ca
 1. [ Themes using this layer ](#-themes-using-this-layer-)
 2. [ Basic tags for this layer ](#-basic-tags-for-this-layer-)
 3. [ Supported attributes ](#-supported-attributes-)
-  - [just_created](#just_created)
-  - [images](#images)
-  - [type](#type)
-  - [duration](#duration)
-  - [occupancy](#occupancy)
-  - [opening_hours](#opening_hours)
-  - [oneway](#oneway)
-  - [length](#length)
-  - [leftover-questions](#leftover-questions)
-  - [lod](#lod)
-  - [minimap](#minimap)
-  - [last_edit](#last_edit)
-  - [favourite_status](#favourite_status)
-  - [qr_code](#qr_code)
-  - [share](#share)
-  - [all-tags](#all-tags)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
 
  Themes using this layer 
 -------------------------
@@ -91,218 +91,155 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/oneway#values) [oneway](https://wiki.openstreetmap.org/wiki/Key:oneway) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:oneway%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:oneway%3Dno)
 
 
-
-
-### just_created 
-
-
-
+### this.id
 This element shows a 'thank you' that the contributor has recently created this element
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
+ - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
+This tagrendering has labels 
+`added_by_default`
 
-
-
-
-
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
-
-
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### images 
-
-
-
+### this.id
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
 
 
 
 
+### this.id
 
-### type 
+The question is `What type of aerialway is this?`
 
+ - *This is a cable car where the car goes up and down again on the same cable.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:aerialway' target='_blank'>aerialway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:aerialway%3Dcable_car' target='_blank'>cable_car</a>
+ - *This is a gondola where the cars go around in continuous circles* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:aerialway' target='_blank'>aerialway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:aerialway%3Dgondola' target='_blank'>gondola</a>
+ - *An open chairlift with seats to sit on and open to the outside air.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:aerialway' target='_blank'>aerialway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:aerialway%3Dchair_lift' target='_blank'>chair_lift</a>
+ - *An aerialway which has both chairs and gondolas in the same continuous track* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:aerialway' target='_blank'>aerialway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:aerialway%3Dmixed' target='_blank'>mixed</a>
+ - *A drag lift* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:aerialway' target='_blank'>aerialway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:aerialway%3Ddrag_lift' target='_blank'>drag_lift</a>
+ - _This option cannot be chosen as answer_
+ - *A drag lift with T-shaped carriers for two passengers at a time* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:aerialway' target='_blank'>aerialway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:aerialway%3Dt-bar' target='_blank'>t-bar</a>
+ - *A drag lift with L-shaped bars for a single passenger at a time* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:aerialway' target='_blank'>aerialway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:aerialway%3Dj-bar' target='_blank'>j-bar</a>
+ - *A drag lift with a platter to drag a single passenger at a time* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:aerialway' target='_blank'>aerialway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:aerialway%3Dplatter' target='_blank'>platter</a>
+ - *A tow line which which drags skieers* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:aerialway' target='_blank'>aerialway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:aerialway%3Drope_tow' target='_blank'>rope_tow</a>
+ - *A magic carpet (a conveyor belt on the ground)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:aerialway' target='_blank'>aerialway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:aerialway%3Dmagic_carpet' target='_blank'>magic_carpet</a>
+ - *A zip line. (A touristical attraction where adventurous people go down at high speeds) * corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:aerialway' target='_blank'>aerialway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:aerialway%3Dzip_line' target='_blank'>zip_line</a>
 
 
-The question is  *What type of aerialway is this?*
 
+### this.id
 
+The question is `How long takes a single journey with this elevator?`
+This rendering asks information about the property 
+[duration](https://wiki.openstreetmap.org/wiki/Key:duration)
+This is rendered with `A single journey takes {duration} minutes`
 
 
 
-  - *This is a cable car where the car goes up and down again on the same cable.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:aerialway' target='_blank'>aerialway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:aerialway%3Dcable_car' target='_blank'>cable_car</a>
-  - *This is a gondola where the cars go around in continuous circles*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:aerialway' target='_blank'>aerialway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:aerialway%3Dgondola' target='_blank'>gondola</a>
-  - *An open chairlift with seats to sit on and open to the outside air.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:aerialway' target='_blank'>aerialway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:aerialway%3Dchair_lift' target='_blank'>chair_lift</a>
-  - *An aerialway which has both chairs and gondolas in the same continuous track*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:aerialway' target='_blank'>aerialway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:aerialway%3Dmixed' target='_blank'>mixed</a>
-  - *A drag lift*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:aerialway' target='_blank'>aerialway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:aerialway%3Ddrag_lift' target='_blank'>drag_lift</a>
-  - _This option cannot be chosen as answer_
-  - *A drag lift with T-shaped carriers for two passengers at a time*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:aerialway' target='_blank'>aerialway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:aerialway%3Dt-bar' target='_blank'>t-bar</a>
-  - *A drag lift with L-shaped bars for a single passenger at a time*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:aerialway' target='_blank'>aerialway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:aerialway%3Dj-bar' target='_blank'>j-bar</a>
-  - *A drag lift with a platter to drag a single passenger at a time*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:aerialway' target='_blank'>aerialway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:aerialway%3Dplatter' target='_blank'>platter</a>
-  - *A tow line which which drags skieers*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:aerialway' target='_blank'>aerialway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:aerialway%3Drope_tow' target='_blank'>rope_tow</a>
-  - *A magic carpet (a conveyor belt on the ground)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:aerialway' target='_blank'>aerialway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:aerialway%3Dmagic_carpet' target='_blank'>magic_carpet</a>
-  - *A zip line. (A touristical attraction where adventurous people go down at high speeds) *  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:aerialway' target='_blank'>aerialway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:aerialway%3Dzip_line' target='_blank'>zip_line</a>
 
+### this.id
 
+The question is `How many people fit a single carriage?`
+This rendering asks information about the property 
+[aerialway:occupancy](https://wiki.openstreetmap.org/wiki/Key:aerialway:occupancy)
+This is rendered with `{aerialway:occupancy} people fit a single carriage`
 
 
-### duration 
 
 
+### this.id
 
-The question is  *How long takes a single journey with this elevator?*
+The question is `What are the opening hours of {title()}?`
+This rendering asks information about the property 
+[opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours)
+This is rendered with `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
+ - *Marked as closed for an unspecified time* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>
+ - _This option cannot be chosen as answer_
 
-This rendering asks information about the property  [duration](https://wiki.openstreetmap.org/wiki/Key:duration) This is rendered with  `A single journey takes {duration} minutes`
 
 
+### this.id
 
-### occupancy 
+The question is `In what direction can this aerialway be taken?`
 
+ - *This aerialway can only be taken to the top* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:oneway' target='_blank'>oneway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:oneway%3Dyes' target='_blank'>yes</a>
+ - *This aerialway can be taken in both directions* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:oneway' target='_blank'>oneway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:oneway%3Dno' target='_blank'>no</a>
 
 
-The question is  *How many people fit a single carriage?*
 
-This rendering asks information about the property  [aerialway:occupancy](https://wiki.openstreetmap.org/wiki/Key:aerialway:occupancy) This is rendered with  `{aerialway:occupancy} people fit a single carriage`
+### this.id
 
+_This tagrendering has no question and is thus read-only_
 
 
-### opening_hours 
 
 
 
-The question is  *What are the opening hours of {title()}?*
+### this.id
 
-This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
+_This tagrendering has no question and is thus read-only_
 
 
 
-  - *Marked as closed for an unspecified time*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>
-  - _This option cannot be chosen as answer_
 
 
+### this.id
 
+_This tagrendering has no question and is thus read-only_
 
-### oneway 
 
 
+This tagrendering has labels 
+`added_by_default`
 
-The question is  *In what direction can this aerialway be taken?*
-
-
-
-
-
-  - *This aerialway can only be taken to the top*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:oneway' target='_blank'>oneway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:oneway%3Dyes' target='_blank'>yes</a>
-  - *This aerialway can be taken in both directions*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:oneway' target='_blank'>oneway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:oneway%3Dno' target='_blank'>no</a>
-
-
-
-
-### length 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### leftover-questions 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### lod 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### minimap 
-
-
-
+### this.id
 Shows a small map with the feature. Added by default to every popup
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
 
 
-### last_edit 
 
-
-
+### this.id
 Gives some metainfo about the last edit and who did edit it - rendering only
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:changeset~.+ & _last_edit:contributor~.+
+This tagrendering has labels 
+`added_by_default`
 
-This tagrendering has labels  `added_by_default`
+### this.id
 
-
-
-### favourite_status 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### qr_code 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has no question and is thus read-only
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has labels  `added_by_default`
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
-
-### share 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### all-tags 
-
-
-
-This tagrendering has no question and is thus read-only
 
  
 

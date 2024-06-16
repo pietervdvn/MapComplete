@@ -101,24 +101,9 @@
       "description": "Layer 'Bookcases' shows and asks freeform values for key 'brand' (in the mapcomplete.org theme 'Public bookcases') (This is only shown if ref=)"
     },
     {
-      "key": "brand",
-      "description": "Layer 'Bookcases' shows brand=Little Free Library & nobrand= with a fixed text, namely 'Part of the network 'Little Free Library'' and allows to pick this as a default answer (in the mapcomplete.org theme 'Public bookcases') (This is only shown if ref=)",
-      "value": "Little Free Library"
-    },
-    {
       "key": "nobrand",
-      "description": "Layer 'Bookcases' shows brand=Little Free Library & nobrand= with a fixed text, namely 'Part of the network 'Little Free Library'' and allows to pick this as a default answer (in the mapcomplete.org theme 'Public bookcases') Picking this answer will delete the key nobrand. (This is only shown if ref=)",
-      "value": ""
-    },
-    {
-      "key": "nobrand",
-      "description": "Layer 'Bookcases' shows nobrand=yes & brand= with a fixed text, namely 'This public bookcase is not part of a bigger network' and allows to pick this as a default answer (in the mapcomplete.org theme 'Public bookcases') (This is only shown if ref=)",
+      "description": "Layer 'Bookcases' shows nobrand=yes with a fixed text, namely 'This public bookcase is not part of a bigger network' and allows to pick this as a default answer (in the mapcomplete.org theme 'Public bookcases') (This is only shown if ref=)",
       "value": "yes"
-    },
-    {
-      "key": "brand",
-      "description": "Layer 'Bookcases' shows nobrand=yes & brand= with a fixed text, namely 'This public bookcase is not part of a bigger network' and allows to pick this as a default answer (in the mapcomplete.org theme 'Public bookcases') Picking this answer will delete the key brand. (This is only shown if ref=)",
-      "value": ""
     },
     {
       "key": "ref",

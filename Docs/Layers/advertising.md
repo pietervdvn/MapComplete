@@ -32,25 +32,25 @@ We will complete data from advertising features with reference, operator and lit
 1. [ Themes using this layer ](#-themes-using-this-layer-)
 2. [ Basic tags for this layer ](#-basic-tags-for-this-layer-)
 3. [ Supported attributes ](#-supported-attributes-)
-  - [just_created](#just_created)
-  - [images](#images)
-  - [type](#type)
-  - [animated](#animated)
-  - [luminous_or_lit_advertising](#luminous_or_lit_advertising)
-  - [operator](#operator)
-  - [message_type](#message_type)
-  - [Sides](#sides)
-  - [ref](#ref)
-  - [leftover-questions](#leftover-questions)
-  - [lod](#lod)
-  - [minimap](#minimap)
-  - [move-button](#move-button)
-  - [delete-button](#delete-button)
-  - [last_edit](#last_edit)
-  - [favourite_status](#favourite_status)
-  - [qr_code](#qr_code)
-  - [share](#share)
-  - [all-tags](#all-tags)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
 
  Themes using this layer 
 -------------------------
@@ -100,285 +100,204 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/ref#values) [ref](https://wiki.openstreetmap.org/wiki/Key:ref) | [string](../SpecialInputElements.md#string) | 
 
 
-
-
-### just_created 
-
-
-
+### this.id
 This element shows a 'thank you' that the contributor has recently created this element
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
+ - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
+This tagrendering has labels 
+`added_by_default`
 
-
-
-
-
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
-
-
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### images 
-
-
-
+### this.id
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
 
 
 
 
+### this.id
 
-### type 
+The question is `Which type of advertising feature is this?`
+This rendering asks information about the property 
+[advertising](https://wiki.openstreetmap.org/wiki/Key:advertising)
+This is rendered with `This is a {advertising}`
+ - *This is a billboard* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dbillboard' target='_blank'>billboard</a>
+ - *This is a board* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dboard' target='_blank'>board</a>
+ - *This is a column* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dcolumn' target='_blank'>column</a>
+ - *This is a flag* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dflag' target='_blank'>flag</a>
+ - *This is a poster Box* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dposter_box' target='_blank'>poster_box</a>
+ - *This is a screen* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dscreen' target='_blank'>screen</a>
+ - *This is a sculpture* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dsculpture' target='_blank'>sculpture</a>
+ - *This is a sign* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dsign' target='_blank'>sign</a>
+ - *This is a tarp (a weatherproof piece of textile with an advertising message)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dtarp' target='_blank'>tarp</a>
+ - *This is a totem* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dtotem' target='_blank'>totem</a>
+ - *This is a wall painting* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dwall_painting' target='_blank'>wall_painting</a>
 
 
 
-The question is  *Which type of advertising feature is this?*
+### this.id
 
-This rendering asks information about the property  [advertising](https://wiki.openstreetmap.org/wiki/Key:advertising) This is rendered with  `This is a {advertising}`
+The question is `Does this advertisement cycle through multiple messages?`
 
+ - *<b>Static</b>, always shows the same message* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:animated' target='_blank'>animated</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:animated%3Dno' target='_blank'>no</a>
+ - *This object has a built-in <b>digital display</b> to show prices or some other message* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:animated' target='_blank'>animated</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:animated%3Ddigital_display' target='_blank'>digital_display</a>
+ - *<b>Trivision</b> - the billboard consists of many triangular prisms which regularly rotate* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:animated' target='_blank'>animated</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:animated%3Dtrivision_blades' target='_blank'>trivision_blades</a>
+ - *<b>Scrolling</b> posters* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:animated' target='_blank'>animated</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:animated%3Dwinding_posters' target='_blank'>winding_posters</a>
+ - *<b>Rotates</b> on itself* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:animated' target='_blank'>animated</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:animated%3Drevolving' target='_blank'>revolving</a>
 
 
-  - *This is a billboard*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dbillboard' target='_blank'>billboard</a>
-  - *This is a board*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dboard' target='_blank'>board</a>
-  - *This is a column*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dcolumn' target='_blank'>column</a>
-  - *This is a flag*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dflag' target='_blank'>flag</a>
-  - *This is a poster Box*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dposter_box' target='_blank'>poster_box</a>
-  - *This is a screen*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dscreen' target='_blank'>screen</a>
-  - *This is a sculpture*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dsculpture' target='_blank'>sculpture</a>
-  - *This is a sign*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dsign' target='_blank'>sign</a>
-  - *This is a tarp (a weatherproof piece of textile with an advertising message)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dtarp' target='_blank'>tarp</a>
-  - *This is a totem*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dtotem' target='_blank'>totem</a>
-  - *This is a wall painting*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dwall_painting' target='_blank'>wall_painting</a>
 
+### this.id
 
+The question is `Is this object lit or does it emit light?`
 
+ - *This is a neon-tube light* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:luminous' target='_blank'>luminous</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:luminous%3Dneon' target='_blank'>neon</a>
+ - *This object both emits light and is lighted by an external light source* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:lit' target='_blank'>lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:lit%3Dyes' target='_blank'>yes</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:luminous' target='_blank'>luminous</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:luminous%3Dyes' target='_blank'>yes</a>
+ - *This object emits light* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:luminous' target='_blank'>luminous</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:luminous%3Dyes' target='_blank'>yes</a>
+ - *This object is lit externally, e.g. by a spotlight or other lights* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:lit' target='_blank'>lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:lit%3Dyes' target='_blank'>yes</a>
+ - *This object does not emit light and is not lighted by externally* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:lit' target='_blank'>lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:lit%3Dno' target='_blank'>no</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:luminous' target='_blank'>luminous</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:luminous%3Dno' target='_blank'>no</a>
 
-### animated 
 
 
+### this.id
 
-The question is  *Does this advertisement cycle through multiple messages?*
+The question is `Who operates this feature?`
+This rendering asks information about the property 
+[operator](https://wiki.openstreetmap.org/wiki/Key:operator)
+This is rendered with `Operated by {operator}`
 
 
 
 
+### this.id
 
-  - *<b>Static</b>, always shows the same message*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:animated' target='_blank'>animated</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:animated%3Dno' target='_blank'>no</a>
-  - *This object has a built-in <b>digital display</b> to show prices or some other message*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:animated' target='_blank'>animated</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:animated%3Ddigital_display' target='_blank'>digital_display</a>
-  - *<b>Trivision</b> - the billboard consists of many triangular prisms which regularly rotate*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:animated' target='_blank'>animated</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:animated%3Dtrivision_blades' target='_blank'>trivision_blades</a>
-  - *<b>Scrolling</b> posters*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:animated' target='_blank'>animated</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:animated%3Dwinding_posters' target='_blank'>winding_posters</a>
-  - *<b>Rotates</b> on itself*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:animated' target='_blank'>animated</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:animated%3Drevolving' target='_blank'>revolving</a>
+The question is `What kind of message is shown?`
 
+ - *Commercial message* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:message' target='_blank'>message</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:message%3Dcommercial' target='_blank'>commercial</a>
+ - Unselecting this answer will add message=
+ - *Local information* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:message' target='_blank'>message</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:message%3Dlocal' target='_blank'>local</a>
+ - Unselecting this answer will add message=
+ - *Security information* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:message' target='_blank'>message</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:message%3Dsafety' target='_blank'>safety</a>
+ - Unselecting this answer will add message=
+ - *Electoral advertising* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:message' target='_blank'>message</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:message%3Dpolitical' target='_blank'>political</a>
+ - Unselecting this answer will add message=
+ - *Information related to theatre, concerts, …* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:message' target='_blank'>message</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:message%3Dshowbiz' target='_blank'>showbiz</a>
+ - Unselecting this answer will add message=
+ - *Message from non-profit organizations* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:message' target='_blank'>message</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:message%3Dnon_profit' target='_blank'>non_profit</a>
+ - Unselecting this answer will add message=
+ - *To express your opinion* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:message' target='_blank'>message</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:message%3Dopinion' target='_blank'>opinion</a>
+ - Unselecting this answer will add message=
+ - *Religious message* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:message' target='_blank'>message</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:message%3Dreligion' target='_blank'>religion</a>
+ - Unselecting this answer will add message=
+ - *Funding sign* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:message' target='_blank'>message</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:message%3Dfunding' target='_blank'>funding</a>
+ - Unselecting this answer will add message=
+ - *A map* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:information' target='_blank'>information</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:information%3Dmap' target='_blank'>map</a>
+ - Unselecting this answer will add information=
 
 
 
-### luminous_or_lit_advertising 
+### this.id
 
+The question is `From how many sides you can watch advertisments?`
 
+ - *This object has advertisements on a single side* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:sides' target='_blank'>sides</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sides%3D1' target='_blank'>1</a>
+ - *This object has advertisements on both sides* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:sides' target='_blank'>sides</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sides%3D2' target='_blank'>2</a>
+This tagrendering is only visible in the popup if the following condition is met: _referencing_ways= & (<a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dposter_box' target='_blank'>poster_box</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dscreen' target='_blank'>screen</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dbillboard' target='_blank'>billboard</a>)
 
-The question is  *Is this object lit or does it emit light?*
 
+### this.id
 
+The question is `Wich is the reference number?`
+This rendering asks information about the property 
+[ref](https://wiki.openstreetmap.org/wiki/Key:ref)
+This is rendered with `Reference number is {ref}`
 
 
 
-  - *This is a neon-tube light*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:luminous' target='_blank'>luminous</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:luminous%3Dneon' target='_blank'>neon</a>
-  - *This object both emits light and is lighted by an external light source*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:lit' target='_blank'>lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:lit%3Dyes' target='_blank'>yes</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:luminous' target='_blank'>luminous</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:luminous%3Dyes' target='_blank'>yes</a>
-  - *This object emits light*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:luminous' target='_blank'>luminous</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:luminous%3Dyes' target='_blank'>yes</a>
-  - *This object is lit externally, e.g. by a spotlight or other lights*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:lit' target='_blank'>lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:lit%3Dyes' target='_blank'>yes</a>
-  - *This object does not emit light and is not lighted by externally*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:lit' target='_blank'>lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:lit%3Dno' target='_blank'>no</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:luminous' target='_blank'>luminous</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:luminous%3Dno' target='_blank'>no</a>
 
+### this.id
 
+_This tagrendering has no question and is thus read-only_
 
 
-### operator 
 
 
 
-The question is  *Who operates this feature?*
+### this.id
 
-This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) This is rendered with  `Operated by {operator}`
+_This tagrendering has no question and is thus read-only_
 
 
 
-### message_type 
+This tagrendering has labels 
+`added_by_default`
 
-
-
-The question is  *What kind of message is shown?*
-
-
-
-
-
-  - *Commercial message*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:message' target='_blank'>message</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:message%3Dcommercial' target='_blank'>commercial</a>
-  - Unselecting this answer will add message=
-  - *Local information*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:message' target='_blank'>message</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:message%3Dlocal' target='_blank'>local</a>
-  - Unselecting this answer will add message=
-  - *Security information*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:message' target='_blank'>message</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:message%3Dsafety' target='_blank'>safety</a>
-  - Unselecting this answer will add message=
-  - *Electoral advertising*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:message' target='_blank'>message</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:message%3Dpolitical' target='_blank'>political</a>
-  - Unselecting this answer will add message=
-  - *Information related to theatre, concerts, …*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:message' target='_blank'>message</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:message%3Dshowbiz' target='_blank'>showbiz</a>
-  - Unselecting this answer will add message=
-  - *Message from non-profit organizations*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:message' target='_blank'>message</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:message%3Dnon_profit' target='_blank'>non_profit</a>
-  - Unselecting this answer will add message=
-  - *To express your opinion*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:message' target='_blank'>message</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:message%3Dopinion' target='_blank'>opinion</a>
-  - Unselecting this answer will add message=
-  - *Religious message*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:message' target='_blank'>message</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:message%3Dreligion' target='_blank'>religion</a>
-  - Unselecting this answer will add message=
-  - *Funding sign*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:message' target='_blank'>message</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:message%3Dfunding' target='_blank'>funding</a>
-  - Unselecting this answer will add message=
-  - *A map*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:information' target='_blank'>information</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:information%3Dmap' target='_blank'>map</a>
-  - Unselecting this answer will add information=
-
-
-
-
-### Sides 
-
-
-
-The question is  *From how many sides you can watch advertisments?*
-
-
-
-
-
-  - *This object has advertisements on a single side*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:sides' target='_blank'>sides</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sides%3D1' target='_blank'>1</a>
-  - *This object has advertisements on both sides*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:sides' target='_blank'>sides</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sides%3D2' target='_blank'>2</a>
-
-
-This tagrendering is only visible in the popup if the following condition is met: `_referencing_ways= & (<a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dposter_box' target='_blank'>poster_box</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dscreen' target='_blank'>screen</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dbillboard' target='_blank'>billboard</a>)`
-
-
-
-### ref 
-
-
-
-The question is  *Wich is the reference number?*
-
-This rendering asks information about the property  [ref](https://wiki.openstreetmap.org/wiki/Key:ref) This is rendered with  `Reference number is {ref}`
-
-
-
-### leftover-questions 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### lod 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### minimap 
-
-
-
+### this.id
 Shows a small map with the feature. Added by default to every popup
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### move-button 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### delete-button 
+### this.id
 
-
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
 
 
-### last_edit 
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
+
+
+### this.id
 Gives some metainfo about the last edit and who did edit it - rendering only
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:changeset~.+ & _last_edit:contributor~.+
+This tagrendering has labels 
+`added_by_default`
 
-This tagrendering has labels  `added_by_default`
+### this.id
 
-
-
-### favourite_status 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### qr_code 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has no question and is thus read-only
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has labels  `added_by_default`
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
-
-### share 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### all-tags 
-
-
-
-This tagrendering has no question and is thus read-only
 
  
 

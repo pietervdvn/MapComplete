@@ -26,22 +26,22 @@ No themes use this layer
 
 1. [ Basic tags for this layer ](#-basic-tags-for-this-layer-)
 2. [ Supported attributes ](#-supported-attributes-)
-  - [just_created](#just_created)
-  - [images](#images)
-  - [trail-length](#trail-length)
-  - [Name](#name)
-  - [Operator tag](#operator-tag)
-  - [Color](#color)
-  - [Wheelchair access](#wheelchair-access)
-  - [pushchair access](#pushchair-access)
-  - [leftover-questions](#leftover-questions)
-  - [lod](#lod)
-  - [minimap](#minimap)
-  - [last_edit](#last_edit)
-  - [favourite_status](#favourite_status)
-  - [qr_code](#qr_code)
-  - [share](#share)
-  - [all-tags](#all-tags)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
 
  Basic tags for this layer 
 ---------------------------
@@ -80,217 +80,149 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/pushchair#values) [pushchair](https://wiki.openstreetmap.org/wiki/Key:pushchair) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:pushchair%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:pushchair%3Dno)
 
 
-
-
-### just_created 
-
-
-
+### this.id
 This element shows a 'thank you' that the contributor has recently created this element
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
+ - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
+This tagrendering has labels 
+`added_by_default`
 
-
-
-
-
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
-
-
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### images 
-
-
-
+### this.id
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
 
 
 
 
+### this.id
 
-### trail-length 
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has no question and is thus read-only
 
 
+### this.id
 
+The question is `What is the name of this trail?`
+This rendering asks information about the property 
+[name](https://wiki.openstreetmap.org/wiki/Key:name)
+This is rendered with `This trail is called <b>{name}</b>`
 
 
-### Name 
 
 
+### this.id
 
-The question is  *What is the name of this trail?*
+The question is `Who maintains this trail?`
+This rendering asks information about the property 
+[operator](https://wiki.openstreetmap.org/wiki/Key:operator)
+This is rendered with `This trail is maintained by {operator}`
+ - *This trail is maintained by Natuurpunt* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:operator' target='_blank'>operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator%3DNatuurpunt' target='_blank'>Natuurpunt</a>
+ - *This trail is maintained by {operator}* corresponds with operator~^((n|N)atuurpunt.*)$
+ - _This option cannot be chosen as answer_
 
-This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) This is rendered with  `This trail is called <b>{name}</b>`
 
 
+### this.id
 
-### Operator tag 
+The question is `What is the reference colour of this trail?`
+This rendering asks information about the property 
+[colour](https://wiki.openstreetmap.org/wiki/Key:colour)
+This is rendered with `The reference colour is {colour}`
+ - *Blue trail* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dblue' target='_blank'>blue</a>
+ - *Red trail* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dred' target='_blank'>red</a>
+ - *Green trail* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dgreen' target='_blank'>green</a>
+ - *Yellow trail* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dyellow' target='_blank'>yellow</a>
 
 
 
-The question is  *Who maintains this trail?*
+### this.id
 
-This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) This is rendered with  `This trail is maintained by {operator}`
+The question is `Is this trail wheelchair accessible?`
 
+ - *This trail is wheelchair-accessible* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes' target='_blank'>yes</a>
+ - *This trail is not wheelchair accessible* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dno' target='_blank'>no</a>
 
 
-  - *This trail is maintained by Natuurpunt*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:operator' target='_blank'>operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator%3DNatuurpunt' target='_blank'>Natuurpunt</a>
-  - *This trail is maintained by {operator}*  corresponds with  operator~^((n|N)atuurpunt.*)$
-  - _This option cannot be chosen as answer_
 
+### this.id
 
+The question is `Is this trail accessible with a pushchair?`
 
+ - *This trail is accessible with a pushchair* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:pushchair' target='_blank'>pushchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:pushchair%3Dyes' target='_blank'>yes</a>
+ - *This trail is not accessible with a pushchair* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:pushchair' target='_blank'>pushchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:pushchair%3Dno' target='_blank'>no</a>
 
-### Color 
 
 
+### this.id
 
-The question is  *What is the reference colour of this trail?*
+_This tagrendering has no question and is thus read-only_
 
-This rendering asks information about the property  [colour](https://wiki.openstreetmap.org/wiki/Key:colour) This is rendered with  `The reference colour is {colour}`
 
 
 
-  - *Blue trail*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dblue' target='_blank'>blue</a>
-  - *Red trail*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dred' target='_blank'>red</a>
-  - *Green trail*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dgreen' target='_blank'>green</a>
-  - *Yellow trail*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dyellow' target='_blank'>yellow</a>
 
+### this.id
 
+_This tagrendering has no question and is thus read-only_
 
 
-### Wheelchair access 
 
+This tagrendering has labels 
+`added_by_default`
 
-
-The question is  *Is this trail wheelchair accessible?*
-
-
-
-
-
-  - *This trail is wheelchair-accessible*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes' target='_blank'>yes</a>
-  - *This trail is not wheelchair accessible*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dno' target='_blank'>no</a>
-
-
-
-
-### pushchair access 
-
-
-
-The question is  *Is this trail accessible with a pushchair?*
-
-
-
-
-
-  - *This trail is accessible with a pushchair*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:pushchair' target='_blank'>pushchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:pushchair%3Dyes' target='_blank'>yes</a>
-  - *This trail is not accessible with a pushchair*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:pushchair' target='_blank'>pushchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:pushchair%3Dno' target='_blank'>no</a>
-
-
-
-
-### leftover-questions 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### lod 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### minimap 
-
-
-
+### this.id
 Shows a small map with the feature. Added by default to every popup
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
 
 
-### last_edit 
 
-
-
+### this.id
 Gives some metainfo about the last edit and who did edit it - rendering only
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:changeset~.+ & _last_edit:contributor~.+
+This tagrendering has labels 
+`added_by_default`
 
-This tagrendering has labels  `added_by_default`
+### this.id
 
-
-
-### favourite_status 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### qr_code 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has no question and is thus read-only
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has labels  `added_by_default`
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
-
-### share 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### all-tags 
-
-
-
-This tagrendering has no question and is thus read-only
 
  
 

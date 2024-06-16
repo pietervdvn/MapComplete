@@ -25,33 +25,33 @@ A layer showing where you can park your bike
 1. [ Themes using this layer ](#-themes-using-this-layer-)
 2. [ Basic tags for this layer ](#-basic-tags-for-this-layer-)
 3. [ Supported attributes ](#-supported-attributes-)
-  - [just_created](#just_created)
-  - [images](#images)
-  - [Bicycle parking type](#bicycle-parking-type)
-  - [Underground?](#underground)
-  - [Is covered?](#is-covered)
-  - [Capacity](#capacity)
-  - [Access](#access)
-  - [fee](#fee)
-  - [charge](#charge)
-  - [opening_hours_24_7](#opening_hours_24_7)
-  - [operator](#operator)
-  - [operator_phone](#operator_phone)
-  - [operator_website](#operator_website)
-  - [operator_email](#operator_email)
-  - [Cargo bike spaces?](#cargo-bike-spaces)
-  - [Cargo bike capacity?](#cargo-bike-capacity)
-  - [maxstay](#maxstay)
-  - [leftover-questions](#leftover-questions)
-  - [lod](#lod)
-  - [minimap](#minimap)
-  - [move-button](#move-button)
-  - [delete-button](#delete-button)
-  - [last_edit](#last_edit)
-  - [favourite_status](#favourite_status)
-  - [qr_code](#qr_code)
-  - [share](#share)
-  - [all-tags](#all-tags)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
 
  Themes using this layer 
 -------------------------
@@ -112,381 +112,273 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/maxstay#values) [maxstay](https://wiki.openstreetmap.org/wiki/Key:maxstay) | [pnat](../SpecialInputElements.md#pnat) | 
 
 
-
-
-### just_created 
-
-
-
+### this.id
 This element shows a 'thank you' that the contributor has recently created this element
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
+ - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
+This tagrendering has labels 
+`added_by_default`
 
-
-
-
-
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
-
-
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### images 
-
-
-
+### this.id
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
 
 
 
 
+### this.id
 
-### Bicycle parking type 
+The question is `What is the type of this bicycle parking?`
+This rendering asks information about the property 
+[bicycle_parking](https://wiki.openstreetmap.org/wiki/Key:bicycle_parking)
+This is rendered with `This is a bicycle parking of the type: {bicycle_parking}`
+ - *Stands* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_parking' target='_blank'>bicycle_parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dstands' target='_blank'>stands</a>
+ - *Wheelbenders / rack* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_parking' target='_blank'>bicycle_parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dwall_loops' target='_blank'>wall_loops</a>
+ - *Handlebar holder* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_parking' target='_blank'>bicycle_parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dhandlebar_holder' target='_blank'>handlebar_holder</a>
+ - *Rack* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_parking' target='_blank'>bicycle_parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Drack' target='_blank'>rack</a>
+ - *Two-tiered* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_parking' target='_blank'>bicycle_parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dtwo_tier' target='_blank'>two_tier</a>
+ - *Shed* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_parking' target='_blank'>bicycle_parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dshed' target='_blank'>shed</a>
+ - *Bollard* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_parking' target='_blank'>bicycle_parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dbollard' target='_blank'>bollard</a>
+ - *An area on the floor which is marked for bicycle parking* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_parking' target='_blank'>bicycle_parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dfloor' target='_blank'>floor</a>
+ - *A locker - the bicycles are enclosed completely individually or with a few bicycles together. The locker is too small to fit a person standing..* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_parking' target='_blank'>bicycle_parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dlockers' target='_blank'>lockers</a>
 
 
 
-The question is  *What is the type of this bicycle parking?*
+### this.id
 
-This rendering asks information about the property  [bicycle_parking](https://wiki.openstreetmap.org/wiki/Key:bicycle_parking) This is rendered with  `This is a bicycle parking of the type: {bicycle_parking}`
+The question is `What is the relative location of this bicycle parking?`
 
+ - *Underground parking* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground' target='_blank'>underground</a>
+ - *Surface level parking* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dsurface' target='_blank'>surface</a>
+ - *Rooftop parking* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Drooftop' target='_blank'>rooftop</a>
+ - *Surface level parking* corresponds with location=
+ - _This option cannot be chosen as answer_
 
 
-  - *Stands*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_parking' target='_blank'>bicycle_parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dstands' target='_blank'>stands</a>
-  - *Wheelbenders / rack*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_parking' target='_blank'>bicycle_parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dwall_loops' target='_blank'>wall_loops</a>
-  - *Handlebar holder*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_parking' target='_blank'>bicycle_parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dhandlebar_holder' target='_blank'>handlebar_holder</a>
-  - *Rack*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_parking' target='_blank'>bicycle_parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Drack' target='_blank'>rack</a>
-  - *Two-tiered*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_parking' target='_blank'>bicycle_parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dtwo_tier' target='_blank'>two_tier</a>
-  - *Shed*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_parking' target='_blank'>bicycle_parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dshed' target='_blank'>shed</a>
-  - *Bollard*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_parking' target='_blank'>bicycle_parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dbollard' target='_blank'>bollard</a>
-  - *An area on the floor which is marked for bicycle parking*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_parking' target='_blank'>bicycle_parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dfloor' target='_blank'>floor</a>
-  - *A locker - the bicycles are enclosed completely individually or with a few bicycles together. The locker is too small to fit a person standing..*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_parking' target='_blank'>bicycle_parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dlockers' target='_blank'>lockers</a>
 
+### this.id
 
+The question is `Is this parking covered? Also select "covered" for indoor parkings.`
 
+ - *This parking is covered (it has a roof)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:covered' target='_blank'>covered</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:covered%3Dyes' target='_blank'>yes</a>
+ - *This parking is not covered* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:covered' target='_blank'>covered</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:covered%3Dno' target='_blank'>no</a>
 
-### Underground? 
 
 
+### this.id
 
-The question is  *What is the relative location of this bicycle parking?*
+The question is `How many bicycles fit in this bicycle parking?`
+This rendering asks information about the property 
+[capacity](https://wiki.openstreetmap.org/wiki/Key:capacity)
+This is rendered with `Place for {capacity} bikes`
 
 
 
 
+### this.id
 
-  - *Underground parking*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground' target='_blank'>underground</a>
-  - *Surface level parking*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dsurface' target='_blank'>surface</a>
-  - *Rooftop parking*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Drooftop' target='_blank'>rooftop</a>
-  - *Surface level parking*  corresponds with  location=
-  - _This option cannot be chosen as answer_
+The question is `Who can use this bicycle parking?`
+This rendering asks information about the property 
+[access](https://wiki.openstreetmap.org/wiki/Key:access)
+This is rendered with `{access}`
+ - *Publicly accessible* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>
+ - *Access is primarily for visitors to a business* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers' target='_blank'>customers</a>
+ - *Access is limited to members of a school, company or organisation* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dmembers' target='_blank'>members</a>
+ - *Access is limited to members of a school, company or organisation* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate' target='_blank'>private</a>
 
 
 
+### this.id
 
-### Is covered? 
+The question is `Are these bicycle parkings free to use?`
 
+ - *One has to <b>pay</b> to use this bicycle parking* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>
+ - *Free to use* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno' target='_blank'>no</a>
 
 
-The question is  *Is this parking covered? Also select "covered" for indoor parkings.*
 
+### this.id
 
+The question is `How much does it cost to park your bike here?`
+This rendering asks information about the property 
+[charge](https://wiki.openstreetmap.org/wiki/Key:charge)
+This is rendered with `Parking your bike costs {charge}`
 
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>
 
 
-  - *This parking is covered (it has a roof)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:covered' target='_blank'>covered</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:covered%3Dyes' target='_blank'>yes</a>
-  - *This parking is not covered*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:covered' target='_blank'>covered</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:covered%3Dno' target='_blank'>no</a>
+### this.id
 
+The question is `What are the opening hours of {title()}?`
+This rendering asks information about the property 
+[opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours)
+This is rendered with `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
+ - *24/7 opened (including holidays)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
+ - *Marked as closed for an unspecified time* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>
+ - _This option cannot be chosen as answer_
 
 
 
-### Capacity 
+### this.id
 
+The question is `Who maintains this bicycle parking?`
+This rendering asks information about the property 
+[operator](https://wiki.openstreetmap.org/wiki/Key:operator)
+This is rendered with `This bicycle parking is maintained by {operator}`
 
 
-The question is  *How many bicycles fit in this bicycle parking?*
 
-This rendering asks information about the property  [capacity](https://wiki.openstreetmap.org/wiki/Key:capacity) This is rendered with  `Place for {capacity} bikes`
 
+### this.id
 
+The question is `What is the phone number of the operator of this bicycle parking?`
+This rendering asks information about the property 
+[operator:phone](https://wiki.openstreetmap.org/wiki/Key:operator:phone)
+This is rendered with `<a href='tel:{operator:phone}'>{operator:phone}</a>`
+ - *<a href='tel:{phone}'>{phone}</a>* corresponds with phone~.+
+ - _This option cannot be chosen as answer_
+ - *<a href='tel:{contact:phone}'>{contact:phone}</a>* corresponds with contact:phone~.+
+ - _This option cannot be chosen as answer_
 
-### Access 
 
 
+### this.id
 
-The question is  *Who can use this bicycle parking?*
+The question is `What is the website number of the operator of this bicycle parking?`
+This rendering asks information about the property 
+[operator:website](https://wiki.openstreetmap.org/wiki/Key:operator:website)
+This is rendered with `<a href='{operator:website}'>{operator:website}</a>`
+ - *<a href='{website}'>{website}</a>* corresponds with website~.+
+ - _This option cannot be chosen as answer_
+ - *<a href='{contact:website}'>{contact:website}</a>* corresponds with contact:website~.+
+ - _This option cannot be chosen as answer_
 
-This rendering asks information about the property  [access](https://wiki.openstreetmap.org/wiki/Key:access) This is rendered with  `{access}`
 
 
+### this.id
 
-  - *Publicly accessible*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>
-  - *Access is primarily for visitors to a business*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers' target='_blank'>customers</a>
-  - *Access is limited to members of a school, company or organisation*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dmembers' target='_blank'>members</a>
-  - *Access is limited to members of a school, company or organisation*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate' target='_blank'>private</a>
+The question is `What is the email address of the operator of this bicycle parking?`
+This rendering asks information about the property 
+[operator:email](https://wiki.openstreetmap.org/wiki/Key:operator:email)
+This is rendered with `<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>`
 
 
 
 
-### fee 
+### this.id
 
+The question is `Does this bicycle parking have spots for cargo bikes?`
 
+ - *This parking has room for cargo bikes* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cargo_bike' target='_blank'>cargo_bike</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cargo_bike%3Dyes' target='_blank'>yes</a>
+ - *This parking has designated (official) spots for cargo bikes.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cargo_bike' target='_blank'>cargo_bike</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cargo_bike%3Ddesignated' target='_blank'>designated</a>
+ - *You're not allowed to park cargo bikes or there are no places provided for cargo bikes* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cargo_bike' target='_blank'>cargo_bike</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cargo_bike%3Dno' target='_blank'>no</a>
 
-The question is  *Are these bicycle parkings free to use?*
 
 
+### this.id
 
+The question is `How many cargo bicycles fit in this bicycle parking?`
+This rendering asks information about the property 
+[capacity:cargo_bike](https://wiki.openstreetmap.org/wiki/Key:capacity:cargo_bike)
+This is rendered with `This parking fits {capacity:cargo_bike} cargo bikes`
+ - *There are no dedicated spaces for cargo bikes here or parking cargo bikes here is not allowed* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cargo_bike' target='_blank'>cargo_bike</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cargo_bike%3Dno' target='_blank'>no</a>
+This tagrendering is only visible in the popup if the following condition is met: capacity:cargo_bike~.+ | cargo_bike~^(designated|yes)$
 
 
-  - *One has to <b>pay</b> to use this bicycle parking*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>
-  - *Free to use*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno' target='_blank'>no</a>
+### this.id
 
+The question is `What is the maximum allowed parking duration?`
+This rendering asks information about the property 
+[maxstay](https://wiki.openstreetmap.org/wiki/Key:maxstay)
+This is rendered with `A bike can be parked here for at most {canonical(maxstay)}`
 
 
 
-### charge 
 
+### this.id
 
+_This tagrendering has no question and is thus read-only_
 
-The question is  *How much does it cost to park your bike here?*
 
-This rendering asks information about the property  [charge](https://wiki.openstreetmap.org/wiki/Key:charge) This is rendered with  `Parking your bike costs {charge}`
 
-This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>`
 
 
+### this.id
 
-### opening_hours_24_7 
+_This tagrendering has no question and is thus read-only_
 
 
 
-The question is  *What are the opening hours of {title()}?*
+This tagrendering has labels 
+`added_by_default`
 
-This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
-
-
-
-  - *24/7 opened (including holidays)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
-  - *Marked as closed for an unspecified time*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>
-  - _This option cannot be chosen as answer_
-
-
-
-
-### operator 
-
-
-
-The question is  *Who maintains this bicycle parking?*
-
-This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) This is rendered with  `This bicycle parking is maintained by {operator}`
-
-
-
-### operator_phone 
-
-
-
-The question is  *What is the phone number of the operator of this bicycle parking?*
-
-This rendering asks information about the property  [operator:phone](https://wiki.openstreetmap.org/wiki/Key:operator:phone) This is rendered with  `<a href='tel:{operator:phone}'>{operator:phone}</a>`
-
-
-
-  - *<a href='tel:{phone}'>{phone}</a>*  corresponds with  phone~.+
-  - _This option cannot be chosen as answer_
-  - *<a href='tel:{contact:phone}'>{contact:phone}</a>*  corresponds with  contact:phone~.+
-  - _This option cannot be chosen as answer_
-
-
-
-
-### operator_website 
-
-
-
-The question is  *What is the website number of the operator of this bicycle parking?*
-
-This rendering asks information about the property  [operator:website](https://wiki.openstreetmap.org/wiki/Key:operator:website) This is rendered with  `<a href='{operator:website}'>{operator:website}</a>`
-
-
-
-  - *<a href='{website}'>{website}</a>*  corresponds with  website~.+
-  - _This option cannot be chosen as answer_
-  - *<a href='{contact:website}'>{contact:website}</a>*  corresponds with  contact:website~.+
-  - _This option cannot be chosen as answer_
-
-
-
-
-### operator_email 
-
-
-
-The question is  *What is the email address of the operator of this bicycle parking?*
-
-This rendering asks information about the property  [operator:email](https://wiki.openstreetmap.org/wiki/Key:operator:email) This is rendered with  `<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>`
-
-
-
-### Cargo bike spaces? 
-
-
-
-The question is  *Does this bicycle parking have spots for cargo bikes?*
-
-
-
-
-
-  - *This parking has room for cargo bikes*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cargo_bike' target='_blank'>cargo_bike</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cargo_bike%3Dyes' target='_blank'>yes</a>
-  - *This parking has designated (official) spots for cargo bikes.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cargo_bike' target='_blank'>cargo_bike</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cargo_bike%3Ddesignated' target='_blank'>designated</a>
-  - *You're not allowed to park cargo bikes or there are no places provided for cargo bikes*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cargo_bike' target='_blank'>cargo_bike</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cargo_bike%3Dno' target='_blank'>no</a>
-
-
-
-
-### Cargo bike capacity? 
-
-
-
-The question is  *How many cargo bicycles fit in this bicycle parking?*
-
-This rendering asks information about the property  [capacity:cargo_bike](https://wiki.openstreetmap.org/wiki/Key:capacity:cargo_bike) This is rendered with  `This parking fits {capacity:cargo_bike} cargo bikes`
-
-
-
-  - *There are no dedicated spaces for cargo bikes here or parking cargo bikes here is not allowed*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cargo_bike' target='_blank'>cargo_bike</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cargo_bike%3Dno' target='_blank'>no</a>
-
-
-This tagrendering is only visible in the popup if the following condition is met: `capacity:cargo_bike~.+ | cargo_bike~^(designated|yes)$`
-
-
-
-### maxstay 
-
-
-
-The question is  *What is the maximum allowed parking duration?*
-
-This rendering asks information about the property  [maxstay](https://wiki.openstreetmap.org/wiki/Key:maxstay) This is rendered with  `A bike can be parked here for at most {canonical(maxstay)}`
-
-
-
-### leftover-questions 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### lod 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### minimap 
-
-
-
+### this.id
 Shows a small map with the feature. Added by default to every popup
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### move-button 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### delete-button 
+### this.id
 
-
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
 
 
-### last_edit 
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
+
+
+### this.id
 Gives some metainfo about the last edit and who did edit it - rendering only
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:changeset~.+ & _last_edit:contributor~.+
+This tagrendering has labels 
+`added_by_default`
 
-This tagrendering has labels  `added_by_default`
+### this.id
 
-
-
-### favourite_status 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### qr_code 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has no question and is thus read-only
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has labels  `added_by_default`
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
-
-### share 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### all-tags 
-
-
-
-This tagrendering has no question and is thus read-only
 
  
 

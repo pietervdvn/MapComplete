@@ -823,7 +823,7 @@
     },
     {
       "key": "inscription",
-      "description": "Layer 'Benches' shows inscription= with a fixed text, namely 'This bench <span class='subtle'>(probably)</span> does not not have an inscription' (in the mapcomplete.org theme 'Into nature') Picking this answer will delete the key inscription.",
+      "description": "Layer 'Benches' shows inscription= with a fixed text, namely 'This bench <span class='subtle'>probably</span> does not not have an inscription' (in the mapcomplete.org theme 'Into nature') Picking this answer will delete the key inscription.",
       "value": ""
     },
     {

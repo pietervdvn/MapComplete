@@ -67,7 +67,7 @@
     type = type.substring(0, type.length - 2)
   }
 
-  const configJson: QuestionableTagRenderingConfigJson & {questionHintIsMd: boolean} = {
+  const configJson: QuestionableTagRenderingConfigJson & { questionHintIsMd: boolean } = {
     id: path.join("_"),
     render: rendervalue,
     question: schema.hints.question,

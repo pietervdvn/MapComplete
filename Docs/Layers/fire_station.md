@@ -25,21 +25,21 @@ Map layer to show fire stations.
 1. [ Themes using this layer ](#-themes-using-this-layer-)
 2. [ Basic tags for this layer ](#-basic-tags-for-this-layer-)
 3. [ Supported attributes ](#-supported-attributes-)
-  - [just_created](#just_created)
-  - [station-name](#station-name)
-  - [station-street](#station-street)
-  - [station-place](#station-place)
-  - [station-agency](#station-agency)
-  - [station-operator](#station-operator)
-  - [images](#images)
-  - [leftover-questions](#leftover-questions)
-  - [lod](#lod)
-  - [minimap](#minimap)
-  - [last_edit](#last_edit)
-  - [favourite_status](#favourite_status)
-  - [qr_code](#qr_code)
-  - [share](#share)
-  - [all-tags](#all-tags)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
 
  Themes using this layer 
 -------------------------
@@ -86,193 +86,141 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/operator:type#values) [operator:type](https://wiki.openstreetmap.org/wiki/Key:operator:type) | [string](../SpecialInputElements.md#string) | [government](https://wiki.openstreetmap.org/wiki/Tag:operator:type%3Dgovernment) [community](https://wiki.openstreetmap.org/wiki/Tag:operator:type%3Dcommunity) [ngo](https://wiki.openstreetmap.org/wiki/Tag:operator:type%3Dngo) [private](https://wiki.openstreetmap.org/wiki/Tag:operator:type%3Dprivate)
 
 
-
-
-### just_created 
-
-
-
+### this.id
 This element shows a 'thank you' that the contributor has recently created this element
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
+ - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
+This tagrendering has labels 
+`added_by_default`
 
+### this.id
 
-
-
-
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
-
-
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### station-name 
-
-
-
-The question is  *What is the name of this fire station?*
-
-This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) This is rendered with  `This station is called {name}.`
-
-
-
-### station-street 
-
-
-
-The question is  * What is the street name where the station located?*
-
-This rendering asks information about the property  [addr:street](https://wiki.openstreetmap.org/wiki/Key:addr:street) This is rendered with  `This station is along a highway called {addr:street}.`
-
-
-
-### station-place 
-
-
-
-The question is  *Where is the station located? (e.g. name of neighborhood, villlage, or town)*
-
-This rendering asks information about the property  [addr:place](https://wiki.openstreetmap.org/wiki/Key:addr:place) This is rendered with  `This station is found within {addr:place}.`
-
-
-
-### station-agency 
-
-
-
-The question is  *What agency operates this station?*
-
-This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) This is rendered with  `This station is operated by {operator}.`
-
-
-
-  - *Bureau of Fire Protection*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:operator' target='_blank'>operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator%3DBureau of Fire Protection' target='_blank'>Bureau of Fire Protection</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:operator:type' target='_blank'>operator:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator:type%3Dgovernment' target='_blank'>government</a>
+The question is `What is the name of this fire station?`
+This rendering asks information about the property 
+[name](https://wiki.openstreetmap.org/wiki/Key:name)
+This is rendered with `This station is called {name}.`
 
 
 
 
-### station-operator 
+### this.id
 
-
-
-The question is  *How is the station operator classified?*
-
-This rendering asks information about the property  [operator:type](https://wiki.openstreetmap.org/wiki/Key:operator:type) This is rendered with  `The operator is a(n) {operator:type} entity.`
-
-
-
-  - *The station is operated by the government.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:operator:type' target='_blank'>operator:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator:type%3Dgovernment' target='_blank'>government</a>
-  - *The station is operated by a community-based, or informal organization.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:operator:type' target='_blank'>operator:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator:type%3Dcommunity' target='_blank'>community</a>
-  - *The station is operated by a formal group of volunteers.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:operator:type' target='_blank'>operator:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator:type%3Dngo' target='_blank'>ngo</a>
-  - *The station is privately operated.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:operator:type' target='_blank'>operator:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator:type%3Dprivate' target='_blank'>private</a>
+The question is ` What is the street name where the station located?`
+This rendering asks information about the property 
+[addr:street](https://wiki.openstreetmap.org/wiki/Key:addr:street)
+This is rendered with `This station is along a highway called {addr:street}.`
 
 
 
 
-### images 
+### this.id
+
+The question is `Where is the station located? (e.g. name of neighborhood, villlage, or town)`
+This rendering asks information about the property 
+[addr:place](https://wiki.openstreetmap.org/wiki/Key:addr:place)
+This is rendered with `This station is found within {addr:place}.`
 
 
 
+
+### this.id
+
+The question is `What agency operates this station?`
+This rendering asks information about the property 
+[operator](https://wiki.openstreetmap.org/wiki/Key:operator)
+This is rendered with `This station is operated by {operator}.`
+ - *Bureau of Fire Protection* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:operator' target='_blank'>operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator%3DBureau of Fire Protection' target='_blank'>Bureau of Fire Protection</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:operator:type' target='_blank'>operator:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator:type%3Dgovernment' target='_blank'>government</a>
+
+
+
+### this.id
+
+The question is `How is the station operator classified?`
+This rendering asks information about the property 
+[operator:type](https://wiki.openstreetmap.org/wiki/Key:operator:type)
+This is rendered with `The operator is a(n) {operator:type} entity.`
+ - *The station is operated by the government.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:operator:type' target='_blank'>operator:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator:type%3Dgovernment' target='_blank'>government</a>
+ - *The station is operated by a community-based, or informal organization.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:operator:type' target='_blank'>operator:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator:type%3Dcommunity' target='_blank'>community</a>
+ - *The station is operated by a formal group of volunteers.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:operator:type' target='_blank'>operator:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator:type%3Dngo' target='_blank'>ngo</a>
+ - *The station is privately operated.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:operator:type' target='_blank'>operator:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator:type%3Dprivate' target='_blank'>private</a>
+
+
+
+### this.id
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### leftover-questions 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### lod 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has no question and is thus read-only
+
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has labels  `added_by_default`
+This tagrendering has labels 
+`added_by_default`
 
-
-
-### minimap 
-
-
-
+### this.id
 Shows a small map with the feature. Added by default to every popup
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
 
 
-### last_edit 
 
-
-
+### this.id
 Gives some metainfo about the last edit and who did edit it - rendering only
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:changeset~.+ & _last_edit:contributor~.+
+This tagrendering has labels 
+`added_by_default`
 
-This tagrendering has labels  `added_by_default`
+### this.id
 
-
-
-### favourite_status 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### qr_code 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has no question and is thus read-only
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has labels  `added_by_default`
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
-
-### share 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### all-tags 
-
-
-
-This tagrendering has no question and is thus read-only
 
  
 

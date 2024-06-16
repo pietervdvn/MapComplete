@@ -509,7 +509,7 @@ export class ExtraFunctions {
     ): Record<ExtraFuncType, (feature: Feature) => Function> {
         const record: Record<string, (feature: Feature) => Function> = {}
         for (const f of ExtraFunctions.allFuncs) {
-            if ((<readonly string[]> this.types).indexOf(f._name) < 0) {
+            if ((<readonly string[]>this.types).indexOf(f._name) < 0) {
                 throw "Invalid extraFunc-type: " + f._name
             }
             record[f._name] = (feat) => f._f(params, feat)

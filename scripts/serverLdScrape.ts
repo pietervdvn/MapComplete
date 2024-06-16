@@ -4,23 +4,21 @@ import parse from "node-html-parser"
 import ScriptUtils from "./ScriptUtils"
 
 class ServerLdScrape extends Script {
-
     constructor() {
         super("Starts a server which fetches a webpage and returns embedded LD+JSON")
     }
 
     private static async attemptDownload(url: string) {
         const host = new URL(url).host
-        const random = Math.floor(Math.random()*100)
-        const random1 = Math.floor(Math.random()*100)
+        const random = Math.floor(Math.random() * 100)
+        const random1 = Math.floor(Math.random() * 100)
 
         const headers = [
             {
-                "User-Agent":
-                    `Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.${random}.${random1} Safari/537.36`,
-                "accept": "application/html"
-            }
-           /* {
+                "User-Agent": `Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.${random}.${random1} Safari/537.36`,
+                accept: "application/html",
+            },
+            /* {
                 "User-Agent": "MapComplete/openstreetmap scraper; pietervdvn@posteo.net; https://github.com/pietervdvn/MapComplete",
                 "accept": "application/html"
             },
@@ -44,12 +42,7 @@ class ServerLdScrape extends Script {
         ]
         for (let i = 0; i < headers.length; i++) {
             try {
-
-                return await ScriptUtils.Download(
-                    url,
-                    headers[i],
-                    10
-                )
+                return await ScriptUtils.Download(url, headers[i], 10)
             } catch (e) {
                 console.error("Could not download", url, "with headers", headers[i], "due to", e)
             }
@@ -64,7 +57,7 @@ class ServerLdScrape extends Script {
                 mustMatch: "extractgraph",
                 mimetype: "application/ld+json",
                 addHeaders: {
-                    "Cache-control": "max-age=3600, public"
+                    "Cache-control": "max-age=3600, public",
                 },
                 async handle(content, searchParams: URLSearchParams) {
                     const url = searchParams.get("url")
@@ -78,15 +71,15 @@ class ServerLdScrape extends Script {
                         }
                     }
                     let dloaded: { content: string } | { redirect: string } | "timeout" = {
-                        redirect: url
+                        redirect: url,
                     }
 
                     do {
                         dloaded = await ServerLdScrape.attemptDownload(dloaded["redirect"])
                         if (dloaded === "timeout") {
-                            return "{\"#\":\"timout reached\"}"
+                            return '{"#":"timout reached"}'
                         }
-                        if(dloaded === undefined){
+                        if (dloaded === undefined) {
                             return undefined
                         }
                     } while (dloaded["redirect"])
@@ -116,8 +109,8 @@ class ServerLdScrape extends Script {
                             console.error(e)
                         }
                     }
-                }
-            }
+                },
+            },
         ])
     }
 }

@@ -1,4 +1,4 @@
 import PrivacyGui from "./UI/PrivacyGui.svelte"
 new PrivacyGui({
-    target: document.getElementById("main")
+    target: document.getElementById("main"),
 })

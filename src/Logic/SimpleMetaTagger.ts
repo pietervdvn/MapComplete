@@ -126,7 +126,7 @@ class CountryTagger extends SimpleMetaTagger {
 
     applyMetaTagsOnFeature(feature: Feature, _, tagsSource) {
         const runningTasks = this.runningTasks
-        if(runningTasks.has(feature) || !!feature.properties._country){
+        if (runningTasks.has(feature) || !!feature.properties._country) {
             return
         }
         runningTasks.add(feature)
@@ -432,8 +432,11 @@ export default class SimpleMetaTaggers {
                         () => feature.properties["_country"]
                     )
                     const canonical =
-                        denomination?.canonicalValue(value, defaultDenom == denomination, unit.inverted) ??
-                        undefined
+                        denomination?.canonicalValue(
+                            value,
+                            defaultDenom == denomination,
+                            unit.inverted
+                        ) ?? undefined
                     if (canonical === value) {
                         break
                     }
@@ -511,7 +514,7 @@ export default class SimpleMetaTaggers {
                                     state: undefined,
                                 },
                             },
-                            <any> { tag_key: "opening_hours" }
+                            <any>{ tag_key: "opening_hours" }
                         )
 
                         // Recalculate!

@@ -81,8 +81,6 @@
   })
 
   let highlightedItem: UIEventSource<HighlightedTagRendering> = state.highlightedItem
-
-
 </script>
 
 <div class="flex h-screen flex-col">
@@ -136,7 +134,7 @@
           General properties
           <ErrorIndicatorForRegion firstPaths={firstPathsFor("Basic")} {state} />
         </div>
-        <div class="flex flex-col mb-8" slot="content0">
+        <div class="mb-8 flex flex-col" slot="content0">
           <Region {state} configs={perRegion["Basic"]} />
           <DeleteButton {state} {backToStudio} objectType="layer" />
         </div>
@@ -189,15 +187,15 @@
             Below, you'll find the raw configuration file in `.json`-format. This is mostly for
             debugging purposes, but you can also edit the file directly if you want.
           </div>
-          <div class="literal-code overflow-y-auto h-full" style="min-height: 75%">
+          <div class="literal-code h-full overflow-y-auto" style="min-height: 75%">
             <RawEditor {state} />
           </div>
           <ShowConversionMessages messages={$messages} />
 
           <div class="flex w-full flex-col">
             <div>
-              The testobject (which is used to render the questions in the 'information panel'
-              item has the following tags:
+              The testobject (which is used to render the questions in the 'information panel' item
+              has the following tags:
             </div>
 
             <AllTagsPanel tags={state.testTags} />

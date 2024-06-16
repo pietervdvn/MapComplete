@@ -63,7 +63,7 @@ export default class Validators {
         "slope",
         "velopark",
         "nsi",
-        "currency"
+        "currency",
     ] as const
 
     public static readonly AllValidators: ReadonlyArray<Validator> = [
@@ -94,7 +94,7 @@ export default class Validators {
         new SlopeValidator(),
         new VeloparkValidator(),
         new NameSuggestionIndexValidator(),
-        new CurrencyValidator()
+        new CurrencyValidator(),
     ]
 
     private static _byType = Validators._byTypeConstructor()

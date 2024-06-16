@@ -197,16 +197,19 @@
       "id": "post_offic_brand",
       "condition": "amenity=post_office",
       "question": {
-        "en": "To which brand does this post office belong?"
+        "en": "To which brand does this post office belong?",
+        "de": "Zu welcher Marke gehört die Poststelle?"
       },
       "render": {
-        "en": "This is a {brand} post office"
+        "en": "This is a {brand} post office",
+        "de": "Dies ist eine Poststelle von {brand}"
       },
       "freeform": {
         "type": "nsi",
         "key": "brand",
         "placeholder": {
-          "en": "Brand of the post office"
+          "en": "Brand of the post office",
+          "de": "Marke der Poststelle"
         },
         "helperArgs": [
           "amenity=post_office"

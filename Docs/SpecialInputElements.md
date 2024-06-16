@@ -43,7 +43,9 @@ The listed types here trigger a special input element. Use them in `tagrendering
 29. [id](#id)
 30. [slope](#slope)
 31. [velopark](#velopark)
-32. [currency](#currency)
+32. [nsi](#nsi)
+33. [Helper arguments](#helper-arguments)
+34. [currency](#currency)
 
 ### string 
 
@@ -352,6 +354,29 @@ Validates that the slope is a valid number.The accompanying input element uses t
 
 
 A special URL-validator that checks the domain name and rewrites to the correct velopark format.
+
+
+
+### nsi 
+
+
+
+Gives a list of possible suggestions for a brand or operator tag. 
+
+### Helper arguments 
+
+ 
+
+name | doc
+------ | -----
+options | A JSON-object of type `{ main: string, key: string }`.  
+
+subarg \| doc
+-------- \| -----
+main \| The main tag to give suggestions for, e.g. `amenity=restaurant`.
+addExtraTags \| Extra tags to add to the suggestions, e.g. `nobrand=yes`.
+
+
 
 
 

@@ -1,7 +1,8 @@
 {
   "id": "lighthouse",
   "name": {
-    "en": "lighthouse"
+    "en": "lighthouse",
+    "de": "Leuchtturm"
   },
   "source": {
     "osmTags": "man_made=lighthouse"
@@ -9,13 +10,15 @@
   "minzoom": 5,
   "title": {
     "render": {
-      "en": "lighthouse"
+      "en": "lighthouse",
+      "de": "Leuchtturm"
     },
     "mappings": [
       {
         "if": "name~*",
         "then": {
-          "en": "{name}"
+          "en": "{name}",
+          "de": "{name}"
         }
       }
     ]
@@ -25,10 +28,12 @@
     "wikipedia",
     {
       "render": {
-        "en": "The height of this lighthouse is {height} metres."
+        "en": "The height of this lighthouse is {height} metres.",
+        "de": "Die Höhe dieses Leuchtturms beträgt {height} Meter."
       },
       "question": {
-        "en": "What is the height of this lighthouse, in metres?"
+        "en": "What is the height of this lighthouse, in metres?",
+        "de": "Wie hoch ist dieser Leuchtturm in Metern?"
       },
       "freeform": {
         "key": "height",
@@ -43,7 +48,8 @@
         "man_made=lighthouse"
       ],
       "title": {
-        "en": "a lighthouse"
+        "en": "a lighthouse",
+        "de": "ein Leuchtturm"
       }
     }
   ],

@@ -25,20 +25,20 @@ Layer to mark any street as cyclestreet
 1. [ Themes using this layer ](#-themes-using-this-layer-)
 2. [ Basic tags for this layer ](#-basic-tags-for-this-layer-)
 3. [ Supported attributes ](#-supported-attributes-)
-  - [is_cyclestreet](#is_cyclestreet)
-  - [supplementary_sign](#supplementary_sign)
-  - [future_cyclestreet](#future_cyclestreet)
-  - [just_created](#just_created)
-  - [images](#images)
-  - [leftover-questions](#leftover-questions)
-  - [lod](#lod)
-  - [minimap](#minimap)
-  - [last_edit](#last_edit)
-  - [favourite_status](#favourite_status)
-  - [qr_code](#qr_code)
-  - [share](#share)
-  - [all-tags](#all-tags)
-  - [split-button](#split-button)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
 
  Themes using this layer 
 -------------------------
@@ -85,195 +85,133 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
 
 
+### this.id
 
+The question is `Is the street <b>{name}</b> a cyclestreet?`
 
-### is_cyclestreet 
-
-
-
-The question is  *Is the street <b>{name}</b> a cyclestreet?*
-
-
-
-
-
-  - *This street is a cyclestreet (and has a speed limit of 30 km/h)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cyclestreet' target='_blank'>cyclestreet</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cyclestreet%3Dyes' target='_blank'>yes</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:maxspeed' target='_blank'>maxspeed</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:maxspeed%3D30' target='_blank'>30</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:overtaking:motor_vehicle' target='_blank'>overtaking:motor_vehicle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:overtaking:motor_vehicle%3Dno' target='_blank'>no</a> & proposed:cyclestreet=
-  - *This street is a bicycle road*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_road' target='_blank'>bicycle_road</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_road%3Dyes' target='_blank'>yes</a>
-  - _This option cannot be chosen as answer_
-  - *This street is a bicycle road (has a speed limit of 30 km/h and vehicles are not allowed) (sign will be asked later)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_road' target='_blank'>bicycle_road</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_road%3Dyes' target='_blank'>yes</a> & proposed:bicycle_road= & <a href='https://wiki.openstreetmap.org/wiki/Key:maxspeed' target='_blank'>maxspeed</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:maxspeed%3D30' target='_blank'>30</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:source:maxspeed' target='_blank'>source:maxspeed</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:source:maxspeed%3DDE:bicycle_road' target='_blank'>DE:bicycle_road</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:vehicle' target='_blank'>vehicle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vehicle%3Dno' target='_blank'>no</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle' target='_blank'>bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle%3Ddesignated' target='_blank'>designated</a>
-  - *This street is a cyclestreet*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:cyclestreet' target='_blank'>cyclestreet</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cyclestreet%3Dyes' target='_blank'>yes</a> & proposed:cyclestreet=
-  - *This street will become a cyclestreet soon*  corresponds with  cyclestreet= & <a href='https://wiki.openstreetmap.org/wiki/Key:proposed:cyclestreet' target='_blank'>proposed:cyclestreet</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:proposed:cyclestreet%3Dyes' target='_blank'>yes</a>
-  - *This street will become a bicycle road soon*  corresponds with  bicycle_road= & <a href='https://wiki.openstreetmap.org/wiki/Key:proposed:bicycle_road' target='_blank'>proposed:bicycle_road</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:proposed:bicycle_road%3Dyes' target='_blank'>yes</a>
-  - *This street is not a cyclestreet*  corresponds with  cyclestreet= & proposed:cyclestreet= & bicycle_road= & proposed:bicycle_road= & overtaking:motor_vehicle=
+ - *This street is a cyclestreet (and has a speed limit of 30 km/h)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cyclestreet' target='_blank'>cyclestreet</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cyclestreet%3Dyes' target='_blank'>yes</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:maxspeed' target='_blank'>maxspeed</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:maxspeed%3D30' target='_blank'>30</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:overtaking:motor_vehicle' target='_blank'>overtaking:motor_vehicle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:overtaking:motor_vehicle%3Dno' target='_blank'>no</a> & proposed:cyclestreet=
+ - *This street is a bicycle road* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_road' target='_blank'>bicycle_road</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_road%3Dyes' target='_blank'>yes</a>
+ - _This option cannot be chosen as answer_
+ - *This street is a bicycle road (has a speed limit of 30 km/h and vehicles are not allowed) (sign will be asked later)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_road' target='_blank'>bicycle_road</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_road%3Dyes' target='_blank'>yes</a> & proposed:bicycle_road= & <a href='https://wiki.openstreetmap.org/wiki/Key:maxspeed' target='_blank'>maxspeed</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:maxspeed%3D30' target='_blank'>30</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:source:maxspeed' target='_blank'>source:maxspeed</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:source:maxspeed%3DDE:bicycle_road' target='_blank'>DE:bicycle_road</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:vehicle' target='_blank'>vehicle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vehicle%3Dno' target='_blank'>no</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle' target='_blank'>bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle%3Ddesignated' target='_blank'>designated</a>
+ - *This street is a cyclestreet* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cyclestreet' target='_blank'>cyclestreet</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cyclestreet%3Dyes' target='_blank'>yes</a> & proposed:cyclestreet=
+ - *This street will become a cyclestreet soon* corresponds with cyclestreet= & <a href='https://wiki.openstreetmap.org/wiki/Key:proposed:cyclestreet' target='_blank'>proposed:cyclestreet</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:proposed:cyclestreet%3Dyes' target='_blank'>yes</a>
+ - *This street will become a bicycle road soon* corresponds with bicycle_road= & <a href='https://wiki.openstreetmap.org/wiki/Key:proposed:bicycle_road' target='_blank'>proposed:bicycle_road</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:proposed:bicycle_road%3Dyes' target='_blank'>yes</a>
+ - *This street is not a cyclestreet* corresponds with cyclestreet= & proposed:cyclestreet= & bicycle_road= & proposed:bicycle_road= & overtaking:motor_vehicle=
 
 
 
+### this.id
 
-### supplementary_sign 
+The question is `What sign does this bicycle road have?`
 
-
-
-The question is  *What sign does this bicycle road have?*
-
-
-
-
-
-  - *Residents allowed*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:traffic_sign' target='_blank'>traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DDE:244.1,1020-30' target='_blank'>DE:244.1,1020-30</a>
-  - *Motor vehicles allowed*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:traffic_sign' target='_blank'>traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DDE:244.1,1022-12,1024-10' target='_blank'>DE:244.1,1022-12,1024-10</a>
-  - *Motorcycles allowed*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:traffic_sign' target='_blank'>traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DDE:244.1,1022-12' target='_blank'>DE:244.1,1022-12</a>
-  - *Cars allowed*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:traffic_sign' target='_blank'>traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DDE:244.1,1024-10' target='_blank'>DE:244.1,1024-10</a>
-  - *There are no supplementary signs at this bicycle road.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:traffic_sign' target='_blank'>traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DDE:244.1' target='_blank'>DE:244.1</a>
+ - *Residents allowed* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:traffic_sign' target='_blank'>traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DDE:244.1,1020-30' target='_blank'>DE:244.1,1020-30</a>
+ - *Motor vehicles allowed* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:traffic_sign' target='_blank'>traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DDE:244.1,1022-12,1024-10' target='_blank'>DE:244.1,1022-12,1024-10</a>
+ - *Motorcycles allowed* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:traffic_sign' target='_blank'>traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DDE:244.1,1022-12' target='_blank'>DE:244.1,1022-12</a>
+ - *Cars allowed* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:traffic_sign' target='_blank'>traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DDE:244.1,1024-10' target='_blank'>DE:244.1,1024-10</a>
+ - *There are no supplementary signs at this bicycle road.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:traffic_sign' target='_blank'>traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DDE:244.1' target='_blank'>DE:244.1</a>
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:_country' target='_blank'>_country</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_country%3Dde' target='_blank'>de</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_road' target='_blank'>bicycle_road</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_road%3Dyes' target='_blank'>yes</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:_country' target='_blank'>_country</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_country%3Dde' target='_blank'>de</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_road' target='_blank'>bicycle_road</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_road%3Dyes' target='_blank'>yes</a>`
+### this.id
+
+The question is `When will this street become a cyclestreet?`
+This rendering asks information about the property 
+[cyclestreet:start_date](https://wiki.openstreetmap.org/wiki/Key:cyclestreet:start_date)
+This is rendered with `This street will become a cyclestreet at {cyclestreet:start_date}`
+
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:proposed:cyclestreet' target='_blank'>proposed:cyclestreet</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:proposed:cyclestreet%3Dyes' target='_blank'>yes</a>
 
 
-
-### future_cyclestreet 
-
-
-
-The question is  *When will this street become a cyclestreet?*
-
-This rendering asks information about the property  [cyclestreet:start_date](https://wiki.openstreetmap.org/wiki/Key:cyclestreet:start_date) This is rendered with  `This street will become a cyclestreet at {cyclestreet:start_date}`
-
-This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:proposed:cyclestreet' target='_blank'>proposed:cyclestreet</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:proposed:cyclestreet%3Dyes' target='_blank'>yes</a>`
-
-
-
-### just_created 
-
-
-
+### this.id
 This element shows a 'thank you' that the contributor has recently created this element
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
+ - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
+This tagrendering has labels 
+`added_by_default`
 
-
-
-
-
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
-
-
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### images 
-
-
-
+### this.id
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### leftover-questions 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### lod 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has no question and is thus read-only
+
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has labels  `added_by_default`
+This tagrendering has labels 
+`added_by_default`
 
-
-
-### minimap 
-
-
-
+### this.id
 Shows a small map with the feature. Added by default to every popup
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
 
 
-### last_edit 
 
-
-
+### this.id
 Gives some metainfo about the last edit and who did edit it - rendering only
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:changeset~.+ & _last_edit:contributor~.+
+This tagrendering has labels 
+`added_by_default`
 
-This tagrendering has labels  `added_by_default`
+### this.id
 
-
-
-### favourite_status 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### qr_code 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has no question and is thus read-only
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has labels  `added_by_default`
+This tagrendering has labels 
+`added_by_default`
 
+### this.id
 
-
-### share 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### all-tags 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### split-button 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
-
-This tagrendering has no question and is thus read-only
 
  
 

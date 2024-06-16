@@ -117,7 +117,7 @@ If 'units' is defined in the layoutConfig, then this metatagger will rewrite the
 
 
 
-The country code of the property (with latlon2country)
+The country codes of the of the country/countries that the feature is located in (with latlon2country). Might contain _multiple_ countries, separated by a `;`
 
 
 

@@ -285,10 +285,12 @@
     {
       "id": "brand",
       "question": {
-        "en": "What is the brand of this shop?"
+        "en": "What is the brand of this shop?",
+        "de": "Zu welcher Marke gehört dieses Geschäft?"
       },
       "render": {
-        "en": "Part of <b>{brand}</b>"
+        "en": "Part of <b>{brand}</b>",
+        "de": "Teil von <b>{brand}</b>"
       },
       "freeform": {
         "key": "brand"
@@ -297,7 +299,8 @@
         {
           "if": "not:brand=yes",
           "then": {
-            "en": "This shop does not have a specific brand, it is not part of a bigger chain"
+            "en": "This shop does not have a specific brand, it is not part of a bigger chain",
+            "de": "Dieses Geschäft gehört zu keiner Marke oder Handelskette"
           }
         }
       ]

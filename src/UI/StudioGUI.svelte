@@ -44,11 +44,11 @@
   )
   let osmConnection = new OsmConnection({
     oauth_token,
-    checkOnlineRegularly: true
+    checkOnlineRegularly: true,
   })
   const expertMode = UIEventSource.asBoolean(
     osmConnection.GetPreference("studio-expert-mode", "false", {
-      documentation: "Indicates if more options are shown in mapcomplete studio"
+      documentation: "Indicates if more options are shown in mapcomplete studio",
     })
   )
   expertMode.addCallbackAndRunD((expert) => console.log("Expert mode is", expert))
@@ -165,18 +165,18 @@
           marker: [
             {
               icon: "circle",
-              color: "white"
-            }
-          ]
-        }
+              color: "white",
+            },
+          ],
+        },
       ],
       tagRenderings: ["images"],
       lineRendering: [
         {
           width: 1,
-          color: "blue"
-        }
-      ]
+          color: "blue",
+        },
+      ],
     }
     editLayerState.configuration.setData(initialLayerConfig)
     editLayerState.startSavingUpdates()
@@ -194,10 +194,11 @@
     const event = {
       detail: {
         id,
-        owner: uid.data
-      }
+        owner: uid.data,
+      },
     }
-    const statePromise: Promise<EditJsonState<any>> = mode === "layer" ? editLayer(event) : editTheme(event)
+    const statePromise: Promise<EditJsonState<any>> =
+      mode === "layer" ? editLayer(event) : editTheme(event)
     const state = await statePromise
     state.selectedTab.setData(Number(tab))
   }
@@ -221,8 +222,8 @@
       <li>Try again in a few minutes</li>
       <li>
         Contact <a href="https://app.element.io/#/room/#MapComplete:matrix.org">
-        the MapComplete community via the chat.
-      </a>
+          the MapComplete community via the chat.
+        </a>
         Someone might be able to help you
       </li>
       <li>
@@ -284,11 +285,7 @@
       </div>
     {:else if state === "edit_layer"}
       <div class="m-4 flex flex-col">
-        <BackButton
-          clss="small p-1"
-          imageClass="w-8 h-8"
-          on:click={() => backToStudio()}
-        >
+        <BackButton clss="small p-1" imageClass="w-8 h-8" on:click={() => backToStudio()}>
           MapComplete Studio
         </BackButton>
         <h2>Choose a layer to edit</h2>
@@ -331,11 +328,7 @@
       </div>
     {:else if state === "edit_theme"}
       <div class="m-4 flex flex-col">
-        <BackButton
-          clss="small p-1"
-          imageClass="w-8 h-8"
-          on:click={() => backToStudio()}
-        >
+        <BackButton clss="small p-1" imageClass="w-8 h-8" on:click={() => backToStudio()}>
           MapComplete Studio
         </BackButton>
         <h2>Choose a theme to edit</h2>
@@ -372,26 +365,20 @@
         <Loading />
       </div>
     {:else if state === "editing_layer"}
-      <EditLayer
-        state={editLayerState}
-        {backToStudio}
-      >
-        <BackButton
-          clss="small p-1"
-          imageClass="w-8 h-8"
-          on:click={() => backToStudio()}
-        >
+      <EditLayer state={editLayerState} {backToStudio}>
+        <BackButton clss="small p-1" imageClass="w-8 h-8" on:click={() => backToStudio()}>
           MapComplete Studio
         </BackButton>
       </EditLayer>
     {:else if state === "editing_theme"}
-      <EditTheme state={editThemeState} selfLayers={$selfLayers} otherLayers={$otherLayers} {osmConnection}
-                 {backToStudio}>
-        <BackButton
-          clss="small p-1"
-          imageClass="w-8 h-8"
-          on:click={() => backToStudio()}
-        >
+      <EditTheme
+        state={editThemeState}
+        selfLayers={$selfLayers}
+        otherLayers={$otherLayers}
+        {osmConnection}
+        {backToStudio}
+      >
+        <BackButton clss="small p-1" imageClass="w-8 h-8" on:click={() => backToStudio()}>
           MapComplete Studio
         </BackButton>
       </EditTheme>

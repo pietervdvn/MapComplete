@@ -25,35 +25,35 @@ A layer showing cafés and pubs where one can gather around a drink. The layer a
 1. [ Themes using this layer ](#-themes-using-this-layer-)
 2. [ Basic tags for this layer ](#-basic-tags-for-this-layer-)
 3. [ Supported attributes ](#-supported-attributes-)
-  - [just_created](#just_created)
-  - [images](#images)
-  - [repeated](#repeated)
-  - [single_level](#single_level)
-  - [Name](#name)
-  - [Classification](#classification)
-  - [opening_hours](#opening_hours)
-  - [website](#website)
-  - [email](#email)
-  - [phone](#phone)
-  - [payment-options](#payment-options)
-  - [wheelchair-access](#wheelchair-access)
-  - [smoking](#smoking)
-  - [service:electricity](#serviceelectricity)
-  - [dog-access](#dog-access)
-  - [internet](#internet)
-  - [internet-fee](#internet-fee)
-  - [internet-ssid](#internet-ssid)
-  - [reviews](#reviews)
-  - [leftover-questions](#leftover-questions)
-  - [lod](#lod)
-  - [minimap](#minimap)
-  - [move-button](#move-button)
-  - [delete-button](#delete-button)
-  - [last_edit](#last_edit)
-  - [favourite_status](#favourite_status)
-  - [qr_code](#qr_code)
-  - [share](#share)
-  - [all-tags](#all-tags)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
     + [Filters](#filters)
 
  Themes using this layer 
@@ -112,460 +112,309 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/wheelchair#values) [wheelchair](https://wiki.openstreetmap.org/wiki/Key:wheelchair) | Multiple choice | [designated](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Ddesignated) [yes](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dlimited) [no](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dno)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/smoking#values) [smoking](https://wiki.openstreetmap.org/wiki/Key:smoking) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:smoking%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:smoking%3Dno) [outside](https://wiki.openstreetmap.org/wiki/Tag:smoking%3Doutside)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:electricity#values) [service:electricity](https://wiki.openstreetmap.org/wiki/Key:service:electricity) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:electricity%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:service:electricity%3Dlimited) [ask](https://wiki.openstreetmap.org/wiki/Tag:service:electricity%3Dask) [no](https://wiki.openstreetmap.org/wiki/Tag:service:electricity%3Dno)
-[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/dog#values) [dog](https://wiki.openstreetmap.org/wiki/Key:dog) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:dog%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:dog%3Dno) [leashed](https://wiki.openstreetmap.org/wiki/Tag:dog%3Dleashed) [unleashed](https://wiki.openstreetmap.org/wiki/Tag:dog%3Dunleashed)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/dog#values) [dog](https://wiki.openstreetmap.org/wiki/Key:dog) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:dog%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:dog%3Dno) [leashed](https://wiki.openstreetmap.org/wiki/Tag:dog%3Dleashed) [unleashed](https://wiki.openstreetmap.org/wiki/Tag:dog%3Dunleashed) [outside](https://wiki.openstreetmap.org/wiki/Tag:dog%3Doutside)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/internet_access#values) [internet_access](https://wiki.openstreetmap.org/wiki/Key:internet_access) | Multiple choice | [wlan](https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwlan) [no](https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dno) [terminal](https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dterminal) [wired](https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwired)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/internet_access:fee#values) [internet_access:fee](https://wiki.openstreetmap.org/wiki/Key:internet_access:fee) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dno) [customers](https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dcustomers)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/internet_access:ssid#values) [internet_access:ssid](https://wiki.openstreetmap.org/wiki/Key:internet_access:ssid) | [string](../SpecialInputElements.md#string) | [Telekom](https://wiki.openstreetmap.org/wiki/Tag:internet_access:ssid%3DTelekom)
 
 
-
-
-### just_created 
-
-
-
+### this.id
 This element shows a 'thank you' that the contributor has recently created this element
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
+ - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
+This tagrendering has labels 
+`added_by_default`
 
-
-
-
-
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
-
-
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### images 
-
-
-
+### this.id
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
 
 
 
 
+### this.id
 
-### repeated 
+_This tagrendering has no question and is thus read-only_
 
 
+This tagrendering is only visible in the popup if the following condition is met: repeat_on~.+
+This tagrendering has labels 
+`level`
 
-This tagrendering has no question and is thus read-only
+### this.id
 
+The question is `On what level is this feature located?`
+This rendering asks information about the property 
+[level](https://wiki.openstreetmap.org/wiki/Key:level)
+This is rendered with `Located on the {level}th floor`
+ - *Located underground* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground' target='_blank'>underground</a>
+ - _This option cannot be chosen as answer_
+ - *Located on the ground floor* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D0' target='_blank'>0</a>
+ - *Located on the ground floor* corresponds with level=
+ - _This option cannot be chosen as answer_
+ - *Located on the first floor* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D1' target='_blank'>1</a>
+ - *Located on the first basement level* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D-1' target='_blank'>-1</a>
 
+This tagrendering has labels 
+`level`
 
-This tagrendering is only visible in the popup if the following condition is met: `repeat_on~.+`
+### this.id
 
-This tagrendering has labels  `level`
+The question is `What is the name of this business?`
+This rendering asks information about the property 
+[name](https://wiki.openstreetmap.org/wiki/Key:name)
+This is rendered with `This business is named {name}`
 
 
 
-### single_level 
 
+### this.id
 
+The question is `What kind of cafe is this?`
 
-The question is  *On what level is this feature located?*
+ - *A pub, mostly for drinking beers in a warm, relaxed interior* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dpub' target='_blank'>pub</a>
+ - *A more modern and commercial <b>bar</b>, possibly with a music and light installation* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbar' target='_blank'>bar</a>
+ - *A <b>cafe</b> to drink tea, coffee or an alcoholical bevarage in a quiet environment* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcafe' target='_blank'>cafe</a>
+ - *A <b>restaurant</b> where one can get a proper meal* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Drestaurant' target='_blank'>restaurant</a>
+ - *An open space where beer is served, typically seen in Germany* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbiergarten' target='_blank'>biergarten</a>
+ - *This is a <b>nightclub</b> or disco with a focus on dancing, music by a DJ with accompanying light show and a bar to get (alcoholic) drinks* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dnightclub' target='_blank'>nightclub</a>
 
-This rendering asks information about the property  [level](https://wiki.openstreetmap.org/wiki/Key:level) This is rendered with  `Located on the {level}th floor`
 
 
+### this.id
 
-  - *Located underground*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground' target='_blank'>underground</a>
-  - _This option cannot be chosen as answer_
-  - *Located on the ground floor*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D0' target='_blank'>0</a>
-  - *Located on the ground floor*  corresponds with  level=
-  - _This option cannot be chosen as answer_
-  - *Located on the first floor*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D1' target='_blank'>1</a>
-  - *Located on the first basement level*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D-1' target='_blank'>-1</a>
+The question is `What are the opening hours of {title()}?`
+This rendering asks information about the property 
+[opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours)
+This is rendered with `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
+ - *Marked as closed for an unspecified time* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>
+ - _This option cannot be chosen as answer_
 
 
-This tagrendering has labels  `level`
 
+### this.id
 
+The question is `What is the website of {title()}?`
+This rendering asks information about the property 
+[website](https://wiki.openstreetmap.org/wiki/Key:website)
+This is rendered with `<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>`
+ - *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>* corresponds with contact:website~.+
+ - _This option cannot be chosen as answer_
 
-### Name 
+This tagrendering has labels 
+`contact`
 
+### this.id
 
+The question is `What is the email address of {title()}?`
+This rendering asks information about the property 
+[email](https://wiki.openstreetmap.org/wiki/Key:email)
+This is rendered with `<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>`
+ - *<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>* corresponds with contact:email~.+
+ - _This option cannot be chosen as answer_
+ - *<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>* corresponds with operator:email~.+
+ - _This option cannot be chosen as answer_
 
-The question is  *What is the name of this business?*
+This tagrendering has labels 
+`contact`
 
-This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) This is rendered with  `This business is named {name}`
+### this.id
 
+The question is `What is the phone number of {title()}?`
+This rendering asks information about the property 
+[phone](https://wiki.openstreetmap.org/wiki/Key:phone)
+This is rendered with `<a href='tel:{phone}'>{phone}</a>`
+ - *<a href='tel:{contact:phone}'>{contact:phone}</a>* corresponds with contact:phone~.+
+ - _This option cannot be chosen as answer_
 
+This tagrendering has labels 
+`contact`
 
-### Classification 
+### this.id
 
+The question is `Which methods of payment are accepted here?`
 
+ - *Cash is accepted here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dyes' target='_blank'>yes</a>
+ - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dno' target='_blank'>no</a>
+ - *Payment cards are accepted here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dyes' target='_blank'>yes</a>
+ - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dno' target='_blank'>no</a>
+ - *Payment by QR-code is possible here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dyes' target='_blank'>yes</a>
+ - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dno' target='_blank'>no</a>
 
-The question is  *What kind of cafe is this?*
 
 
+### this.id
 
+The question is `Is this place accessible with a wheelchair?`
 
+ - *This place is specially adapted for wheelchair users* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Ddesignated' target='_blank'>designated</a>
+ - *This place is easily reachable with a wheelchair* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes' target='_blank'>yes</a>
+ - *It is possible to reach this place in a wheelchair, but it is not easy* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dlimited' target='_blank'>limited</a>
+ - *This place is not reachable with a wheelchair* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dno' target='_blank'>no</a>
 
-  - *A pub, mostly for drinking beers in a warm, relaxed interior*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dpub' target='_blank'>pub</a>
-  - *A more modern and commercial <b>bar</b>, possibly with a music and light installation*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbar' target='_blank'>bar</a>
-  - *A <b>cafe</b> to drink tea, coffee or an alcoholical bevarage in a quiet environment*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcafe' target='_blank'>cafe</a>
-  - *A <b>restaurant</b> where one can get a proper meal*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Drestaurant' target='_blank'>restaurant</a>
-  - *An open space where beer is served, typically seen in Germany*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbiergarten' target='_blank'>biergarten</a>
-  - *This is a <b>nightclub</b> or disco with a focus on dancing, music by a DJ with accompanying light show and a bar to get (alcoholic) drinks*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dnightclub' target='_blank'>nightclub</a>
 
 
+### this.id
 
+The question is `Is smoking allowed at {title()}?`
 
-### opening_hours 
+ - *Smoking is <b>allowed</b>* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:smoking' target='_blank'>smoking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:smoking%3Dyes' target='_blank'>yes</a>
+ - *Smoking is <b>not allowed</b>* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:smoking' target='_blank'>smoking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:smoking%3Dno' target='_blank'>no</a>
+ - *Smoking is <b>allowed outside</b>.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:smoking' target='_blank'>smoking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:smoking%3Doutside' target='_blank'>outside</a>
 
 
 
-The question is  *What are the opening hours of {title()}?*
+### this.id
 
-This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
+The question is `Does this amenity have electrical outlets, available to customers when they are inside?`
 
+ - *There are plenty of domestic sockets available to customers seated indoors, where they can charge their electronics* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:electricity' target='_blank'>service:electricity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:electricity%3Dyes' target='_blank'>yes</a>
+ - *There are a few domestic sockets available to customers seated indoors, where they can charge their electronics* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:electricity' target='_blank'>service:electricity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:electricity%3Dlimited' target='_blank'>limited</a>
+ - *There are no sockets available indoors to customers, but charging might be possible if the staff is asked* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:electricity' target='_blank'>service:electricity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:electricity%3Dask' target='_blank'>ask</a>
+ - *There are a no domestic sockets available to customers seated indoors* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:electricity' target='_blank'>service:electricity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:electricity%3Dno' target='_blank'>no</a>
 
 
-  - *Marked as closed for an unspecified time*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>
-  - _This option cannot be chosen as answer_
 
+### this.id
 
+The question is `Are dogs allowed in this business?`
 
+ - *Dogs are allowed* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:dog' target='_blank'>dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:dog%3Dyes' target='_blank'>yes</a>
+ - *Dogs are <b>not</b> allowed* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:dog' target='_blank'>dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:dog%3Dno' target='_blank'>no</a>
+ - *Dogs are allowed, but they have to be leashed* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:dog' target='_blank'>dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:dog%3Dleashed' target='_blank'>leashed</a>
+ - *Dogs are allowed and can run around freely* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:dog' target='_blank'>dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:dog%3Dunleashed' target='_blank'>unleashed</a>
+ - *Dogs are allowed only outside* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:dog' target='_blank'>dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:dog%3Doutside' target='_blank'>outside</a>
 
-### website 
 
 
+### this.id
 
-The question is  *What is the website of {title()}?*
+The question is `Does this place offer internet access?`
 
-This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) This is rendered with  `<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>`
+ - *This place offers wireless internet access* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwlan' target='_blank'>wlan</a>
+ - *This place <b>does not</b> offer internet access* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dno' target='_blank'>no</a>
+ - *This place offers internet access* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dyes' target='_blank'>yes</a>
+ - _This option cannot be chosen as answer_
+ - *This place offers internet access via a terminal or computer* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dterminal' target='_blank'>terminal</a>
+ - *This place offers wired internet access* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwired' target='_blank'>wired</a>
 
+This tagrendering has labels 
+`internet-all`
 
+### this.id
 
-  - *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>*  corresponds with  contact:website~.+
-  - _This option cannot be chosen as answer_
+The question is `Is there a fee for internet access?`
 
+ - *There is a fee for the internet access at this place* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:fee' target='_blank'>internet_access:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dyes' target='_blank'>yes</a>
+ - *Internet access is free at this place* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:fee' target='_blank'>internet_access:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dno' target='_blank'>no</a>
+ - *Internet access is free at this place, for customers only* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:fee' target='_blank'>internet_access:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dcustomers' target='_blank'>customers</a>
+This tagrendering is only visible in the popup if the following condition is met: internet_access!=no & internet_access~.+
+This tagrendering has labels 
+`internet-all`
 
-This tagrendering has labels  `contact`
+### this.id
 
+The question is `What is the network name for the wireless internet access?`
+This rendering asks information about the property 
+[internet_access:ssid](https://wiki.openstreetmap.org/wiki/Key:internet_access:ssid)
+This is rendered with `The network name is <b>{internet_access:ssid}</b>`
+ - *Telekom* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:ssid' target='_blank'>internet_access:ssid</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:ssid%3DTelekom' target='_blank'>Telekom</a>
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwlan' target='_blank'>wlan</a>
+This tagrendering has labels 
+`internet-all`
 
-
-### email 
-
-
-
-The question is  *What is the email address of {title()}?*
-
-This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) This is rendered with  `<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>`
-
-
-
-  - *<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>*  corresponds with  contact:email~.+
-  - _This option cannot be chosen as answer_
-  - *<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>*  corresponds with  operator:email~.+
-  - _This option cannot be chosen as answer_
-
-
-This tagrendering has labels  `contact`
-
-
-
-### phone 
-
-
-
-The question is  *What is the phone number of {title()}?*
-
-This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) This is rendered with  `<a href='tel:{phone}'>{phone}</a>`
-
-
-
-  - *<a href='tel:{contact:phone}'>{contact:phone}</a>*  corresponds with  contact:phone~.+
-  - _This option cannot be chosen as answer_
-
-
-This tagrendering has labels  `contact`
-
-
-
-### payment-options 
-
-
-
-The question is  *Which methods of payment are accepted here?*
-
-
-
-
-
-  - *Cash is accepted here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dyes' target='_blank'>yes</a>
-  - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dno' target='_blank'>no</a>
-  - *Payment cards are accepted here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dyes' target='_blank'>yes</a>
-  - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dno' target='_blank'>no</a>
-  - *Payment by QR-code is possible here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dyes' target='_blank'>yes</a>
-  - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dno' target='_blank'>no</a>
-
-
-
-
-### wheelchair-access 
-
-
-
-The question is  *Is this place accessible with a wheelchair?*
-
-
-
-
-
-  - *This place is specially adapted for wheelchair users*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Ddesignated' target='_blank'>designated</a>
-  - *This place is easily reachable with a wheelchair*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes' target='_blank'>yes</a>
-  - *It is possible to reach this place in a wheelchair, but it is not easy*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dlimited' target='_blank'>limited</a>
-  - *This place is not reachable with a wheelchair*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dno' target='_blank'>no</a>
-
-
-
-
-### smoking 
-
-
-
-The question is  *Is smoking allowed at {title()}?*
-
-
-
-
-
-  - *Smoking is <b>allowed</b>*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:smoking' target='_blank'>smoking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:smoking%3Dyes' target='_blank'>yes</a>
-  - *Smoking is <b>not allowed</b>*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:smoking' target='_blank'>smoking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:smoking%3Dno' target='_blank'>no</a>
-  - *Smoking is <b>allowed outside</b>.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:smoking' target='_blank'>smoking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:smoking%3Doutside' target='_blank'>outside</a>
-
-
-
-
-### service:electricity 
-
-
-
-The question is  *Does this amenity have electrical outlets, available to customers when they are inside?*
-
-
-
-
-
-  - *There are plenty of domestic sockets available to customers seated indoors, where they can charge their electronics*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:electricity' target='_blank'>service:electricity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:electricity%3Dyes' target='_blank'>yes</a>
-  - *There are a few domestic sockets available to customers seated indoors, where they can charge their electronics*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:electricity' target='_blank'>service:electricity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:electricity%3Dlimited' target='_blank'>limited</a>
-  - *There are no sockets available indoors to customers, but charging might be possible if the staff is asked*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:electricity' target='_blank'>service:electricity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:electricity%3Dask' target='_blank'>ask</a>
-  - *There are a no domestic sockets available to customers seated indoors*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:electricity' target='_blank'>service:electricity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:electricity%3Dno' target='_blank'>no</a>
-
-
-
-
-### dog-access 
-
-
-
-The question is  *Are dogs allowed in this business?*
-
-
-
-
-
-  - *Dogs are allowed*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:dog' target='_blank'>dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:dog%3Dyes' target='_blank'>yes</a>
-  - *Dogs are <b>not</b> allowed*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:dog' target='_blank'>dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:dog%3Dno' target='_blank'>no</a>
-  - *Dogs are allowed, but they have to be leashed*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:dog' target='_blank'>dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:dog%3Dleashed' target='_blank'>leashed</a>
-  - *Dogs are allowed and can run around freely*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:dog' target='_blank'>dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:dog%3Dunleashed' target='_blank'>unleashed</a>
-
-
-
-
-### internet 
-
-
-
-The question is  *Does this place offer internet access?*
-
-
-
-
-
-  - *This place offers wireless internet access*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwlan' target='_blank'>wlan</a>
-  - *This place <b>does not</b> offer internet access*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dno' target='_blank'>no</a>
-  - *This place offers internet access*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dyes' target='_blank'>yes</a>
-  - _This option cannot be chosen as answer_
-  - *This place offers internet access via a terminal or computer*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dterminal' target='_blank'>terminal</a>
-  - *This place offers wired internet access*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwired' target='_blank'>wired</a>
-
-
-This tagrendering has labels  `internet-all`
-
-
-
-### internet-fee 
-
-
-
-The question is  *Is there a fee for internet access?*
-
-
-
-
-
-  - *There is a fee for the internet access at this place*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:fee' target='_blank'>internet_access:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dyes' target='_blank'>yes</a>
-  - *Internet access is free at this place*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:fee' target='_blank'>internet_access:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dno' target='_blank'>no</a>
-  - *Internet access is free at this place, for customers only*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:fee' target='_blank'>internet_access:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dcustomers' target='_blank'>customers</a>
-
-
-This tagrendering is only visible in the popup if the following condition is met: `internet_access!=no & internet_access~.+`
-
-This tagrendering has labels  `internet-all`
-
-
-
-### internet-ssid 
-
-
-
-The question is  *What is the network name for the wireless internet access?*
-
-This rendering asks information about the property  [internet_access:ssid](https://wiki.openstreetmap.org/wiki/Key:internet_access:ssid) This is rendered with  `The network name is <b>{internet_access:ssid}</b>`
-
-
-
-  - *Telekom*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:ssid' target='_blank'>internet_access:ssid</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:ssid%3DTelekom' target='_blank'>Telekom</a>
-
-
-This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwlan' target='_blank'>wlan</a>`
-
-This tagrendering has labels  `internet-all`
-
-
-
-### reviews 
-
-
-
+### this.id
 Shows the reviews module (including the possibility to leave a review)
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### leftover-questions 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### lod 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has no question and is thus read-only
+
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has labels  `added_by_default`
+This tagrendering has labels 
+`added_by_default`
 
-
-
-### minimap 
-
-
-
+### this.id
 Shows a small map with the feature. Added by default to every popup
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### move-button 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### delete-button 
+### this.id
 
-
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
 
 
-### last_edit 
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
+
+
+### this.id
 Gives some metainfo about the last edit and who did edit it - rendering only
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:changeset~.+ & _last_edit:contributor~.+
+This tagrendering has labels 
+`added_by_default`
 
-This tagrendering has labels  `added_by_default`
+### this.id
 
-
-
-### favourite_status 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### qr_code 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has no question and is thus read-only
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has labels  `added_by_default`
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
-
-### share 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### all-tags 
-
-
-
-This tagrendering has no question and is thus read-only
 
 
 

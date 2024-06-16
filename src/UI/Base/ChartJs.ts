@@ -42,16 +42,16 @@ export default class ChartJs<
         this._config = config
     }
 
-    public static ConstructDoughnut(data: Record<string, number>){
+    public static ConstructDoughnut(data: Record<string, number>) {
         const borderColor = [
-           // ChartJsColours.unkownBorderColor,
-          //  ChartJsColours.otherBorderColor,
-          //  ChartJsColours.notApplicableBorderColor,
+            // ChartJsColours.unkownBorderColor,
+            //  ChartJsColours.otherBorderColor,
+            //  ChartJsColours.notApplicableBorderColor,
         ]
         const backgroundColor = [
-         //   ChartJsColours.unkownColor,
-         //   ChartJsColours.otherColor,
-         //   ChartJsColours.notApplicableColor,
+            //   ChartJsColours.unkownColor,
+            //   ChartJsColours.otherColor,
+            //   ChartJsColours.notApplicableColor,
         ]
 
         let i = 0
@@ -59,10 +59,10 @@ export default class ChartJs<
         const bg = ChartJsColours.backgroundColors
 
         for (const key in data) {
-            if(key === ""){
+            if (key === "") {
                 borderColor.push(ChartJsColours.unknownBorderColor)
                 backgroundColor.push(ChartJsColours.unknownColor)
-            }else{
+            } else {
                 borderColor.push(borders[i % borders.length])
                 backgroundColor.push(bg[i % bg.length])
                 i++

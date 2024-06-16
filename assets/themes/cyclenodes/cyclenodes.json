@@ -138,7 +138,8 @@
         "pa_PK": "نوڈ",
         "cs": "uzly",
         "eu": "nodoak",
-        "pl": "węzły"
+        "pl": "węzły",
+        "zh_Hant": "節點"
       },
       "source": {
         "osmTags": {
@@ -227,7 +228,8 @@
               "nl": "bijv. 1",
               "de": "z.B. 1",
               "cs": "e.g. 1",
-              "es": "Por ejemplo, 1"
+              "es": "Por ejemplo, 1",
+              "pl": "np. 1"
             }
           },
           "render": {
@@ -295,7 +297,8 @@
               "nl": "bijv. 3",
               "de": "z.B. 3",
               "cs": "e.g. 3",
-              "es": "Por ejemplo, 3"
+              "es": "Por ejemplo, 3",
+              "pl": "np. 3"
             }
           },
           "id": "node-expected_rcn_route_relations"

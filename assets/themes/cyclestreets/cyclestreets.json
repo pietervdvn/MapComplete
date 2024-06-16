@@ -231,7 +231,8 @@
           "da": "Fremtidig cykelgade",
           "pa_PK": "بھُوکھی سائیکل سڑک",
           "cs": "Budoucí cyklostezka",
-          "pl": "Przyszła ulica rowerowa"
+          "pl": "Przyszła ulica rowerowa",
+          "zh_Hant": "將來的單車街道"
         },
         "mappings": [
           {
@@ -307,7 +308,8 @@
         "da": "Alle gader",
         "pa_PK": "ساریاں سڑکاں",
         "cs": "Všechny ulice",
-        "pl": "Wszystkie ulice"
+        "pl": "Wszystkie ulice",
+        "zh_Hant": "所有道路"
       },
       "description": {
         "nl": "Laag waar je een straat als fietsstraat kan markeren",
@@ -352,7 +354,8 @@
           "pa_PK": "سڑک",
           "cs": "Ulice",
           "eu": "Kalea",
-          "pl": "Ulica"
+          "pl": "Ulica",
+          "zh_Hant": "街道"
         },
         "mappings": [
           {

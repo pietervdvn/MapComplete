@@ -87,14 +87,16 @@
           "then": {
             "en": "This is a swing",
             "nl": "Dit is een schommel",
-            "de": "Das ist eine Schaukel"
+            "de": "Das ist eine Schaukel",
+            "pl": "To jest huśtawka"
           }
         },
         {
           "if": "playground=structure",
           "then": {
             "en": "This is a structure consisting of several connected playground devices",
-            "de": "Dies ist eine Struktur aus mehreren angeschlossenen Spielgeräten"
+            "de": "Dies ist eine Struktur aus mehreren angeschlossenen Spielgeräten",
+            "pl": "To jest struktura składająca się z wielu połączonych urządzeń"
           },
           "icon": {
             "path": "./assets/layers/playground_equipment/SunwardCohousingPlayStructure2005.jpg",
@@ -105,7 +107,8 @@
           "if": "playground=slide",
           "then": {
             "en": "This is a slide",
-            "de": "Das ist eine Rutsche"
+            "de": "Das ist eine Rutsche",
+            "pl": "To jest zjeżdżalnia"
           }
         },
         {
@@ -113,7 +116,8 @@
           "then": {
             "en": "This is a sand pit",
             "nl": "Dit is een zandbak",
-            "de": "Dies ist ein Sandkasten"
+            "de": "Dies ist ein Sandkasten",
+            "pl": "To jest piaskownica"
           },
           "searchTerms": {
             "en": [
@@ -197,7 +201,8 @@
           "if": "playground=roundabout",
           "then": {
             "en": "This is a roundabout",
-            "de": "Dies ist ein Karussell"
+            "de": "Dies ist ein Karussell",
+            "pl": "To jest rondo"
           },
           "searchTerms": {
             "en": [
@@ -224,7 +229,8 @@
           "if": "playground=zipwire",
           "then": {
             "en": "This is a zip wire",
-            "de": "Dies ist ein Seilzug"
+            "de": "Dies ist ein Seilzug",
+            "pl": "To jest tyrolka"
           }
         },
         {
@@ -279,7 +285,8 @@
           "if": "playground=map",
           "then": {
             "en": "This is a map",
-            "de": "Das ist eine Karte"
+            "de": "Das ist eine Karte",
+            "pl": "To jest mapa"
           },
           "icon": {
             "path": "./assets/layers/playground_equipment/Playground_Map,_Washington_Elementary.jpg",

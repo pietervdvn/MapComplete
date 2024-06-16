@@ -12,7 +12,8 @@
     "nl": "Kaart van brandkranen",
     "es": "Mapa de bocas de incendios",
     "ca": "Mapa d'hidrants",
-    "cs": "Mapa hydrantů"
+    "cs": "Mapa hydrantů",
+    "pl": "Mapa hydrantów"
   },
   "description": {
     "en": "Map layer to show fire hydrants.",
@@ -26,7 +27,8 @@
     "nl": "Kaartlaag met brandkranen.",
     "es": "Un mapa que muestra bocas de incendios.",
     "ca": "Una capa que mostra hidrants.",
-    "cs": "Mapová vrstva zobrazující požární hydranty."
+    "cs": "Mapová vrstva zobrazující požární hydranty.",
+    "pl": "Warstwa mapy pokazująca hydranty."
   },
   "source": {
     "osmTags": {
@@ -49,7 +51,8 @@
       "ca": "Hidrant",
       "es": "Boca de incendios",
       "pa_PK": "ہائڈرنٹ",
-      "cs": "Hydrant"
+      "cs": "Hydrant",
+      "pl": "Hydrant"
     }
   },
   "pointRendering": [
@@ -89,7 +92,8 @@
         "nl": "een brandkraan",
         "es": "una boca de incendios",
         "ca": "un hidrant",
-        "cs": "požární hydrant"
+        "cs": "požární hydrant",
+        "pl": "hydrant"
       },
       "description": {
         "en": "A hydrant is a connection point where firefighters can tap water. It might be located underground.",
@@ -119,7 +123,8 @@
         "nl": "Welke kleur heeft de brandkraan?",
         "es": "¿De que color es la boca de incendios?",
         "ca": "De quin color es l'hidrant?",
-        "cs": "Jakou barvu má hydrant?"
+        "cs": "Jakou barvu má hydrant?",
+        "pl": "Jakiego koloru jest ten hydrant?"
       },
       "render": {
         "en": "The hydrant color is {colour}",
@@ -132,7 +137,8 @@
         "nl": "De brandkraan is {colour}",
         "es": "La boca de incendios es de color {colour}",
         "ca": "L'hidrant és de color {colour}",
-        "cs": "Barva hydrantu je {colour}"
+        "cs": "Barva hydrantu je {colour}",
+        "pl": "Kolor tego hydrantu to {colour}"
       },
       "freeform": {
         "key": "colour"
@@ -154,7 +160,8 @@
             "nl": "De brandkraan is geel.",
             "es": "La boca de incendios es amarilla.",
             "ca": "L'hidrant és de color groc.",
-            "cs": "Barva hydrantu je žlutá."
+            "cs": "Barva hydrantu je žlutá.",
+            "pl": "Ten hydrant ma żółty kolor."
           }
         },
         {
@@ -173,7 +180,8 @@
             "nl": "De brandkraan is rood.",
             "ca": "L'hidrant és de color roig.",
             "es": "La boca de incendios es roja.",
-            "cs": "Barva hydrantu je červená."
+            "cs": "Barva hydrantu je červená.",
+            "pl": "Ten hydrant ma czerwony kolor."
           }
         }
       ]
@@ -190,7 +198,8 @@
         "nl": "Wat voor soort brandkraan is dit?",
         "es": "¿De qué tipo es esta boca de incendios?",
         "ca": "Quin tipus d'hidrant és?",
-        "cs": "O jaký typ hydrantu se jedná?"
+        "cs": "O jaký typ hydrantu se jedná?",
+        "pl": "Jakiego rodzaju jest to hydrant?"
       },
       "freeform": {
         "key": "fire_hydrant:type"
@@ -315,7 +324,8 @@
         "es": "¿Todavía funciona esta boca de incendios?",
         "ca": "Encara funciona aquest hidrant?",
         "ru": "Этот гидрант в рабочем состоянии?",
-        "cs": "Je tento hydrant stále funkční?"
+        "cs": "Je tento hydrant stále funkční?",
+        "pl": "Czy ten hydrant dalej działa?"
       },
       "mappings": [
         {
@@ -334,7 +344,8 @@
             "nl": "De brandkraan werkt (minstens gedeeltelijk)",
             "es": "La boca de incendios funciona (total o parcialmente)",
             "ca": "L'hidrant funciona (total o parcialment)",
-            "cs": "Hydrant je (plně nebo částečně) funkční"
+            "cs": "Hydrant je (plně nebo částečně) funkční",
+            "pl": "Ten hydrant (w pełni lub częściowo) działa"
           }
         },
         {
@@ -354,7 +365,8 @@
             "es": "La boca de incendios no está disponible",
             "ca": "L'hidrant no està disponible",
             "ru": "К гидранту нет доступа",
-            "cs": "Hydrant je nedostupný"
+            "cs": "Hydrant je nedostupný",
+            "pl": "Ten hydrant jest niedostępny"
           }
         },
         {
@@ -374,7 +386,8 @@
             "nl": "Deze brandkraan is verwijderd",
             "es": "La boca de incendios se ha retirado",
             "ca": "L'hidrant s'ha retirat",
-            "cs": "Hydrant byl odstraněn"
+            "cs": "Hydrant byl odstraněn",
+            "pl": "Ten hydrant został usunięty"
           }
         }
       ]
@@ -398,7 +411,8 @@
           "nl": "Pijpdiameter",
           "ru": "Диаметр трубы",
           "ca": "Diàmetre de la canonada",
-          "cs": "Průměr trubky"
+          "cs": "Průměr trubky",
+          "pl": "Średnica rury"
         },
         "type": "int"
       },

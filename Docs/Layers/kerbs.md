@@ -28,19 +28,19 @@ A layer showing kerbs.
 1. [ Themes using this layer ](#-themes-using-this-layer-)
 2. [ Basic tags for this layer ](#-basic-tags-for-this-layer-)
 3. [ Supported attributes ](#-supported-attributes-)
-  - [just_created](#just_created)
-  - [images](#images)
-  - [kerb-type](#kerb-type)
-  - [tactile-paving](#tactile-paving)
-  - [kerb-height](#kerb-height)
-  - [leftover-questions](#leftover-questions)
-  - [lod](#lod)
-  - [minimap](#minimap)
-  - [last_edit](#last_edit)
-  - [favourite_status](#favourite_status)
-  - [qr_code](#qr_code)
-  - [share](#share)
-  - [all-tags](#all-tags)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
     + [Filters](#filters)
 
  Themes using this layer 
@@ -88,188 +88,123 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/kerb:height#values) [kerb:height](https://wiki.openstreetmap.org/wiki/Key:kerb:height) | [pnat](../SpecialInputElements.md#pnat) | [0](https://wiki.openstreetmap.org/wiki/Tag:kerb:height%3D0)
 
 
-
-
-### just_created 
-
-
-
+### this.id
 This element shows a 'thank you' that the contributor has recently created this element
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
+ - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
+This tagrendering has labels 
+`added_by_default`
 
-
-
-
-
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
-
-
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### images 
-
-
-
+### this.id
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### kerb-type 
-
-
-
-The question is  *What is the height of this kerb?*
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-  - *This kerb is raised (>3 cm)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:kerb' target='_blank'>kerb</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:kerb%3Draised' target='_blank'>raised</a>
-  - *This kerb is lowered (~3 cm)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:kerb' target='_blank'>kerb</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:kerb%3Dlowered' target='_blank'>lowered</a>
-  - *This kerb is flush (~0cm)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:kerb' target='_blank'>kerb</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:kerb%3Dflush' target='_blank'>flush</a>
-  - *There is no kerb here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:kerb' target='_blank'>kerb</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:kerb%3Dno' target='_blank'>no</a>
-  - _This option cannot be chosen as answer_
-  - *There is a kerb of unknown height*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:kerb' target='_blank'>kerb</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:kerb%3Dyes' target='_blank'>yes</a>
-  - _This option cannot be chosen as answer_
+### this.id
+
+The question is `What is the height of this kerb?`
+
+ - *This kerb is raised (>3 cm)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:kerb' target='_blank'>kerb</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:kerb%3Draised' target='_blank'>raised</a>
+ - *This kerb is lowered (~3 cm)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:kerb' target='_blank'>kerb</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:kerb%3Dlowered' target='_blank'>lowered</a>
+ - *This kerb is flush (~0cm)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:kerb' target='_blank'>kerb</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:kerb%3Dflush' target='_blank'>flush</a>
+ - *There is no kerb here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:kerb' target='_blank'>kerb</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:kerb%3Dno' target='_blank'>no</a>
+ - _This option cannot be chosen as answer_
+ - *There is a kerb of unknown height* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:kerb' target='_blank'>kerb</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:kerb%3Dyes' target='_blank'>yes</a>
+ - _This option cannot be chosen as answer_
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:_geometry:type' target='_blank'>_geometry:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_geometry:type%3DPoint' target='_blank'>Point</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:_geometry:type' target='_blank'>_geometry:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_geometry:type%3DPoint' target='_blank'>Point</a>`
+### this.id
+
+The question is `Is there tactile paving at this kerb?`
+
+ - *This kerb has tactile paving.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:tactile_paving' target='_blank'>tactile_paving</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tactile_paving%3Dyes' target='_blank'>yes</a>
+ - *This kerb does not have tactile paving.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:tactile_paving' target='_blank'>tactile_paving</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tactile_paving%3Dno' target='_blank'>no</a>
+ - *This kerb has tactile paving, but it is incorrect.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:tactile_paving' target='_blank'>tactile_paving</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tactile_paving%3Dincorrect' target='_blank'>incorrect</a>
+ - _This option cannot be chosen as answer_
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:_geometry:type' target='_blank'>_geometry:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_geometry:type%3DPoint' target='_blank'>Point</a>
 
 
+### this.id
 
-### tactile-paving 
-
-
-
-The question is  *Is there tactile paving at this kerb?*
-
-
-
-
-
-  - *This kerb has tactile paving.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:tactile_paving' target='_blank'>tactile_paving</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tactile_paving%3Dyes' target='_blank'>yes</a>
-  - *This kerb does not have tactile paving.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:tactile_paving' target='_blank'>tactile_paving</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tactile_paving%3Dno' target='_blank'>no</a>
-  - *This kerb has tactile paving, but it is incorrect.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:tactile_paving' target='_blank'>tactile_paving</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tactile_paving%3Dincorrect' target='_blank'>incorrect</a>
-  - _This option cannot be chosen as answer_
-
-
-This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:_geometry:type' target='_blank'>_geometry:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_geometry:type%3DPoint' target='_blank'>Point</a>`
-
-
-
-### kerb-height 
-
-
-
-The question is  *What is the height of this kerb?*
-
-This rendering asks information about the property  [kerb:height](https://wiki.openstreetmap.org/wiki/Key:kerb:height) This is rendered with  `Kerb height: {kerb:height}`
+The question is `What is the height of this kerb?`
+This rendering asks information about the property 
+[kerb:height](https://wiki.openstreetmap.org/wiki/Key:kerb:height)
+This is rendered with `Kerb height: {kerb:height}`
+ - *This kerb is flush and is lower than 1cm.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:kerb:height' target='_blank'>kerb:height</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:kerb:height%3D0' target='_blank'>0</a>
 
 
 
-  - *This kerb is flush and is lower than 1cm.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:kerb:height' target='_blank'>kerb:height</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:kerb:height%3D0' target='_blank'>0</a>
+### this.id
 
-
-
-
-### leftover-questions 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### lod 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has no question and is thus read-only
+This tagrendering has labels 
+`added_by_default`
 
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### minimap 
-
-
-
+### this.id
 Shows a small map with the feature. Added by default to every popup
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
 
 
-### last_edit 
 
-
-
+### this.id
 Gives some metainfo about the last edit and who did edit it - rendering only
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:changeset~.+ & _last_edit:contributor~.+
+This tagrendering has labels 
+`added_by_default`
 
-This tagrendering has labels  `added_by_default`
+### this.id
 
-
-
-### favourite_status 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### qr_code 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has no question and is thus read-only
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has labels  `added_by_default`
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
-
-### share 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### all-tags 
-
-
-
-This tagrendering has no question and is thus read-only
 
 
 

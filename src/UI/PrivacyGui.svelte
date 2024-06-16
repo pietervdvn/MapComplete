@@ -13,24 +13,25 @@
   const osmConnection = new OsmConnection()
   let state: SpecialVisualizationState = {
     osmConnection,
-    userRelatedState: new UserRelatedState(osmConnection)
+    userRelatedState: new UserRelatedState(osmConnection),
   }
 </script>
+
 <main>
-<div class="flex h-screen flex-col overflow-hidden px-4">
-  <div class="flex justify-between">
-    <h2 class="flex items-center">
-      <EyeIcon class="w-6 pr-2" />
-      <Tr t={Translations.t.privacy.title} />
-    </h2>
-    <LanguagePicker availableLanguages={Translations.t.privacy.intro.SupportedLanguages()} />
+  <div class="flex h-screen flex-col overflow-hidden px-4">
+    <div class="flex justify-between">
+      <h2 class="flex items-center">
+        <EyeIcon class="w-6 pr-2" />
+        <Tr t={Translations.t.privacy.title} />
+      </h2>
+      <LanguagePicker availableLanguages={Translations.t.privacy.intro.SupportedLanguages()} />
+    </div>
+    <div class="h-full overflow-auto border border-gray-500 p-4">
+      <PrivacyPolicy {state} />
+    </div>
+    <a class="button flex" href={Utils.HomepageLink()}>
+      <Add class="h-6 w-6" />
+      <Tr t={Translations.t.general.backToIndex} />
+    </a>
   </div>
-  <div class="h-full overflow-auto border border-gray-500 p-4">
-    <PrivacyPolicy {state} />
-  </div>
-  <a class="button flex" href={Utils.HomepageLink()}>
-    <Add class="h-6 w-6" />
-    <Tr t={Translations.t.general.backToIndex} />
-  </a>
-</div>
 </main>

@@ -6,25 +6,10 @@
         "zoomIn": "Zooma in för att visa eller redigera data"
     },
     "delete": {
-        "cancel": "Avbryt",
-        "explanations": {},
-        "reasons": {}
+        "cancel": "Avbryt"
     },
-    "favourite": {},
     "general": {
-        "add": {
-            "import": {}
-        },
-        "apply_button": {},
-        "attribution": {
-            "iconAttribution": {}
-        },
         "cancel": "Avbryt",
-        "download": {},
-        "histogram": {},
-        "layerSelection": {},
-        "levelSelection": {},
-        "morescreen": {},
         "opening_hours": {
             "closed_permanently": "Stängt tills vidare",
             "closed_until": "Stängt till {date}",
@@ -37,10 +22,6 @@
             "ph_not_known": " ",
             "ph_open": "öppet"
         },
-        "pdf": {},
-        "questions": {},
-        "search": {},
-        "sharescreen": {},
         "weekdays": {
             "abbreviations": {
                 "friday": "Fre",
@@ -58,10 +39,6 @@
             "thursday": "Torsdag",
             "tuesday": "Tisdag",
             "wednesday": "Onsdag"
-        },
-        "welcomeExplanation": {},
-        "wikipedia": {
-            "previewbox": {}
         }
     },
     "image": {
@@ -78,8 +55,6 @@
         "uploadingMultiple": "Laddar upp {count} bilder…",
         "uploadingPicture": "Laddar upp din bild…"
     },
-    "importInspector": {},
-    "importLayer": {},
     "index": {
         "#": "De här texterna visas ovanför tema-knapparna när inget tema är laddat",
         "featuredThemeTitle": "Utvalda den här veckan",
@@ -87,35 +62,8 @@
         "pickTheme": "Välj ett tema nedan för att börja.",
         "title": "Välkommen till MapComplete"
     },
-    "move": {
-        "inviteToMove": {},
-        "reasons": {}
-    },
-    "multi_apply": {},
-    "notes": {},
-    "privacy": {},
-    "reviews": {},
     "split": {
         "cancel": "Avbryt",
         "split": "Dela"
-    },
-    "translations": {},
-    "validation": {
-        "color": {},
-        "date": {},
-        "direction": {},
-        "distance": {},
-        "email": {},
-        "float": {},
-        "int": {},
-        "nat": {},
-        "opening_hours": {},
-        "pfloat": {},
-        "phone": {},
-        "pnat": {},
-        "string": {},
-        "text": {},
-        "url": {},
-        "wikidata": {}
     }
 }

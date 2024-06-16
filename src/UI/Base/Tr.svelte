@@ -17,7 +17,6 @@
     txt = t?.current
     lang = t?.currentLang
   }
-
 </script>
 
 {#if $txt}

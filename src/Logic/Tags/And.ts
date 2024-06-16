@@ -278,11 +278,11 @@ export class And extends TagsFilter {
         }
         const optimized = <TagsFilter[]>optimizedRaw
 
-        for (let i = 0; i <optimized.length; i++) {
+        for (let i = 0; i < optimized.length; i++) {
             for (let j = i + 1; j < optimized.length; j++) {
                 const ti = optimized[i]
                 const tj = optimized[j]
-                if(ti.shadows(tj)){
+                if (ti.shadows(tj)) {
                     // if 'ti' is true, this implies 'tj' is always true as well.
                     // if 'ti' is false, then 'tj' might be true or false
                     // (e.g. let 'ti' be 'count>0' and 'tj' be 'count>10'.
@@ -290,14 +290,13 @@ export class And extends TagsFilter {
                     // If 'ti' is true, then 'tj' will be true too and 'tj' can be ignored
                     // If 'ti' is false, then the entire expression will be false and it doesn't matter what 'tj' yields
                     optimized.splice(j, 1)
-                }else if (tj.shadows(ti)){
+                } else if (tj.shadows(ti)) {
                     optimized.splice(i, 1)
                     i--
                     continue
                 }
             }
         }
-
 
         {
             // Conflicting keys do return false
@@ -358,9 +357,9 @@ export class And extends TagsFilter {
                             i--
                         }
                     }
-                }else if(opt instanceof ComparingTag) {
+                } else if (opt instanceof ComparingTag) {
                     const ct = opt
-                    if(properties[ct.key] !== undefined && !ct.matchesProperties(properties)){
+                    if (properties[ct.key] !== undefined && !ct.matchesProperties(properties)) {
                         return false
                     }
                 }

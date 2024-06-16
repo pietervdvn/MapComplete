@@ -27,22 +27,22 @@ A single climbing route and its properties. Some properties are derived from the
 1. [ Themes using this layer ](#-themes-using-this-layer-)
 2. [ Basic tags for this layer ](#-basic-tags-for-this-layer-)
 3. [ Supported attributes ](#-supported-attributes-)
-  - [just_created](#just_created)
-  - [images](#images)
-  - [Name](#name)
-  - [Length](#length)
-  - [Difficulty](#difficulty)
-  - [bolts](#bolts)
-  - [description](#description)
-  - [Rock type via embedded feature](#rock-type-via-embedded-feature)
-  - [leftover-questions](#leftover-questions)
-  - [lod](#lod)
-  - [minimap](#minimap)
-  - [last_edit](#last_edit)
-  - [favourite_status](#favourite_status)
-  - [qr_code](#qr_code)
-  - [share](#share)
-  - [all-tags](#all-tags)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
 
  Themes using this layer 
 -------------------------
@@ -90,200 +90,148 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/_embedding_features_with_rock:rock#values) [_embedding_features_with_rock:rock](https://wiki.openstreetmap.org/wiki/Key:_embedding_features_with_rock:rock) | [string](../SpecialInputElements.md#string) | 
 
 
-
-
-### just_created 
-
-
-
+### this.id
 This element shows a 'thank you' that the contributor has recently created this element
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
+ - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
+This tagrendering has labels 
+`added_by_default`
 
-
-
-
-
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
-
-
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### images 
-
-
-
+### this.id
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
 
 
 
 
+### this.id
 
-### Name 
+The question is `What is the name of this climbing route?`
+This rendering asks information about the property 
+[name](https://wiki.openstreetmap.org/wiki/Key:name)
+This is rendered with `<strong>{name}</strong>`
+ - *This climbing route doesn't have a name* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:noname' target='_blank'>noname</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:noname%3Dyes' target='_blank'>yes</a> & name=
 
 
 
-The question is  *What is the name of this climbing route?*
+### this.id
 
-This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) This is rendered with  `<strong>{name}</strong>`
+The question is `How long is this climbing route (in meters)?`
+This rendering asks information about the property 
+[climbing:length](https://wiki.openstreetmap.org/wiki/Key:climbing:length)
+This is rendered with `This route is {canonical(climbing:length)} long`
 
 
 
-  - *This climbing route doesn't have a name*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:noname' target='_blank'>noname</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:noname%3Dyes' target='_blank'>yes</a> & name=
 
+### this.id
 
+The question is `What is the grade of this climbing route according to the french/belgian system?`
+This rendering asks information about the property 
+[climbing:grade:french](https://wiki.openstreetmap.org/wiki/Key:climbing:grade:french)
+This is rendered with `The grade is {climbing:grade:french} according to the french/belgian system`
 
 
-### Length 
 
 
+### this.id
 
-The question is  *How long is this climbing route (in meters)?*
+The question is `How many bolts does this route have before reaching the anchor?`
+This rendering asks information about the property 
+[climbing:bolts](https://wiki.openstreetmap.org/wiki/Key:climbing:bolts)
+This is rendered with `This route has {climbing:bolts} bolts <div class='subtle'>This is without relays and indicates how much quickdraws a climber needs</div>`
+ - *This route is not bolted* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:bolted' target='_blank'>climbing:bolted</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:bolted%3Dno' target='_blank'>no</a>
 
-This rendering asks information about the property  [climbing:length](https://wiki.openstreetmap.org/wiki/Key:climbing:length) This is rendered with  `This route is {canonical(climbing:length)} long`
 
 
+### this.id
 
-### Difficulty 
+The question is `Is there still some relevant info that the previous questions did not cover? Feel free to add it here.`
+This rendering asks information about the property 
+[description](https://wiki.openstreetmap.org/wiki/Key:description)
+This is rendered with `{description}`
 
 
 
-The question is  *What is the grade of this climbing route according to the french/belgian system?*
 
-This rendering asks information about the property  [climbing:grade:french](https://wiki.openstreetmap.org/wiki/Key:climbing:grade:french) This is rendered with  `The grade is {climbing:grade:french} according to the french/belgian system`
+### this.id
 
+_This tagrendering has no question and is thus read-only_
+This rendering asks information about the property 
+[_embedding_features_with_rock:rock](https://wiki.openstreetmap.org/wiki/Key:_embedding_features_with_rock:rock)
+This is rendered with `The rock type is {_embedding_features_with_rock:rock} as stated <a href='#{_embedding_features_with_rock:id}'>on the surrounding crag</a>`
 
 
-### bolts 
 
 
+### this.id
 
-The question is  *How many bolts does this route have before reaching the anchor?*
+_This tagrendering has no question and is thus read-only_
 
-This rendering asks information about the property  [climbing:bolts](https://wiki.openstreetmap.org/wiki/Key:climbing:bolts) This is rendered with  `This route has {climbing:bolts} bolts <div class='subtle'>This is without relays and indicates how much quickdraws a climber needs</div>`
 
 
 
-  - *This route is not bolted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:bolted' target='_blank'>climbing:bolted</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:bolted%3Dno' target='_blank'>no</a>
 
+### this.id
 
+_This tagrendering has no question and is thus read-only_
 
 
-### description 
 
+This tagrendering has labels 
+`added_by_default`
 
-
-The question is  *Is there still some relevant info that the previous questions did not cover? Feel free to add it here.*
-
-This rendering asks information about the property  [description](https://wiki.openstreetmap.org/wiki/Key:description) This is rendered with  `{description}`
-
-
-
-### Rock type via embedded feature 
-
-
-
-This tagrendering has no question and is thus read-only
-
-This rendering asks information about the property  [_embedding_features_with_rock:rock](https://wiki.openstreetmap.org/wiki/Key:_embedding_features_with_rock:rock) This is rendered with  `The rock type is {_embedding_features_with_rock:rock} as stated <a href='#{_embedding_features_with_rock:id}'>on the surrounding crag</a>`
-
-
-
-### leftover-questions 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### lod 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### minimap 
-
-
-
+### this.id
 Shows a small map with the feature. Added by default to every popup
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
 
 
-### last_edit 
 
-
-
+### this.id
 Gives some metainfo about the last edit and who did edit it - rendering only
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:changeset~.+ & _last_edit:contributor~.+
+This tagrendering has labels 
+`added_by_default`
 
-This tagrendering has labels  `added_by_default`
+### this.id
 
-
-
-### favourite_status 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### qr_code 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has no question and is thus read-only
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has labels  `added_by_default`
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
-
-### share 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### all-tags 
-
-
-
-This tagrendering has no question and is thus read-only
 
  
 

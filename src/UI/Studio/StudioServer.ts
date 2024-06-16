@@ -11,9 +11,13 @@ import { LayoutConfigJson } from "../../Models/ThemeConfig/Json/LayoutConfigJson
 export default class StudioServer {
     private readonly url: string
     private readonly _userId: Store<number>
-    private readonly overview: UIEventSource<{
-        success: { id: string; owner: number; category: "layers" | "themes" }[]
-    } | { error: any } | undefined>
+    private readonly overview: UIEventSource<
+        | {
+              success: { id: string; owner: number; category: "layers" | "themes" }[]
+          }
+        | { error: any }
+        | undefined
+    >
 
     constructor(url: string, userId: Store<number>) {
         this.url = url
@@ -21,9 +25,13 @@ export default class StudioServer {
         this.overview = UIEventSource.FromPromiseWithErr(this.fetchOverviewRaw())
     }
 
-    public fetchOverview(): Store<{
-        success: { id: string; owner: number; category: "layers" | "themes" }[]
-    } | { error } | undefined> {
+    public fetchOverview(): Store<
+        | {
+              success: { id: string; owner: number; category: "layers" | "themes" }[]
+          }
+        | { error }
+        | undefined
+    > {
         return this.overview
     }
 
@@ -80,11 +88,15 @@ export default class StudioServer {
             return
         }
         await fetch(this.urlFor(id, category), {
-            method: "DELETE"
+            method: "DELETE",
         })
-        const overview: { id: string; owner: number; category: "layers" | "themes" }[] = this.overview.data?.["success"]
+        const overview: { id: string; owner: number; category: "layers" | "themes" }[] =
+            this.overview.data?.["success"]
         if (overview) {
-            const index = overview.findIndex(obj => obj.id === id && obj.category === category && obj.owner === this._userId.data)
+            const index = overview.findIndex(
+                (obj) =>
+                    obj.id === id && obj.category === category && obj.owner === this._userId.data
+            )
             if (index >= 0) {
                 overview.splice(index, 1)
                 this.overview.ping()
@@ -99,9 +111,9 @@ export default class StudioServer {
         await fetch(this.urlFor(id, category), {
             method: "POST",
             headers: {
-                "Content-Type": "application/json;charset=utf-8"
+                "Content-Type": "application/json;charset=utf-8",
             },
-            body: config
+            body: config,
         })
     }
 

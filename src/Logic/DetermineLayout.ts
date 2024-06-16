@@ -17,7 +17,7 @@ import questions from "../assets/generated/layers/questions.json"
 import {
     DoesImageExist,
     PrevalidateTheme,
-    ValidateThemeAndLayers
+    ValidateThemeAndLayers,
 } from "../Models/ThemeConfig/Conversion/Validation"
 import { DesugaringContext } from "../Models/ThemeConfig/Conversion/Conversion"
 import { TagRenderingConfigJson } from "../Models/ThemeConfig/Json/TagRenderingConfigJson"
@@ -55,8 +55,10 @@ export default class DetermineLayout {
         return undefined
     }
 
-    private static async expandRemoteLayers(layoutConfig: LayoutConfigJson): Promise<LayoutConfigJson> {
-        if(!layoutConfig.layers){
+    private static async expandRemoteLayers(
+        layoutConfig: LayoutConfigJson
+    ): Promise<LayoutConfigJson> {
+        if (!layoutConfig.layers) {
             // This is probably a layer in 'layer-only-mode'
             return layoutConfig
         }
@@ -73,7 +75,6 @@ export default class DetermineLayout {
             } catch (_) {
                 continue
             }
-
         }
         return layoutConfig
     }
@@ -115,7 +116,9 @@ export default class DetermineLayout {
         return layout
     }
 
-    public static async LoadLayoutFromHash(userLayoutParam: UIEventSource<string>): Promise<LayoutConfig | null> {
+    public static async LoadLayoutFromHash(
+        userLayoutParam: UIEventSource<string>
+    ): Promise<LayoutConfig | null> {
         let hash = location.hash.substr(1)
         let json: any
 
@@ -175,11 +178,11 @@ export default class DetermineLayout {
                 id: json.id,
                 description: json.description,
                 descriptionTail: {
-                    en: "<div class='alert'>Layer only mode.</div> The loaded custom theme actually isn't a custom theme, but only contains a layer."
+                    en: "<div class='alert'>Layer only mode.</div> The loaded custom theme actually isn't a custom theme, but only contains a layer.",
                 },
                 icon,
                 title: json.name,
-                layers: [json]
+                layers: [json],
             }
         }
 
@@ -191,7 +194,7 @@ export default class DetermineLayout {
         const convertState: DesugaringContext = {
             tagRenderings: DetermineLayout.getSharedTagRenderings(),
             sharedLayers: knownLayersDict,
-            publicLayers: new Set<string>()
+            publicLayers: new Set<string>(),
         }
         json = new FixLegacyTheme().convertStrict(json)
         const raw = json
@@ -215,7 +218,7 @@ export default class DetermineLayout {
         }
         return new LayoutConfig(json, false, {
             definitionRaw: JSON.stringify(raw, null, "  "),
-            definedAtUrl: sourceUrl
+            definedAtUrl: sourceUrl,
         })
     }
 

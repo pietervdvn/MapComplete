@@ -224,7 +224,7 @@ export class ChangesetHandler {
             if (newMetaTag === undefined) {
                 extraMetaTags.push({
                     key: key,
-                    value: oldCsTags[key]
+                    value: oldCsTags[key],
                 })
                 continue
             }
@@ -360,15 +360,12 @@ export class ChangesetHandler {
             ["created_by", `MapComplete ${Constants.vNumber}`],
             ["locale", Locale.language.data],
             ["host", `${window.location.origin}${window.location.pathname}`],
-            [
-                "source",
-                setSourceAsSurvey                    ? "survey"                    : undefined
-            ],
-            ["imagery", this.changes.state["backgroundLayer"]?.data?.id]
+            ["source", setSourceAsSurvey ? "survey" : undefined],
+            ["imagery", this.changes.state["backgroundLayer"]?.data?.id],
         ].map(([key, value]) => ({
             key,
             value,
-            aggregate: false
+            aggregate: false,
         }))
     }
 

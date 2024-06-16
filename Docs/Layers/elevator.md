@@ -25,28 +25,28 @@ This layer show elevators and asks for operational status and elevator dimension
 1. [ Themes using this layer ](#-themes-using-this-layer-)
 2. [ Basic tags for this layer ](#-basic-tags-for-this-layer-)
 3. [ Supported attributes ](#-supported-attributes-)
-  - [just_created](#just_created)
-  - [images](#images)
-  - [multilevels](#multilevels)
-  - [operational_status](#operational_status)
-  - [door-width](#door-width)
-  - [elevator-shape](#elevator-shape)
-  - [elevator-width](#elevator-width)
-  - [elevator-depth](#elevator-depth)
-  - [elevator-diameter](#elevator-diameter)
-  - [induction-loop](#induction-loop)
-  - [tactile_writing_available](#tactile_writing_available)
-  - [tactile_writing_language](#tactile_writing_language)
-  - [speech_output_available](#speech_output_available)
-  - [speech_output](#speech_output)
-  - [leftover-questions](#leftover-questions)
-  - [lod](#lod)
-  - [minimap](#minimap)
-  - [last_edit](#last_edit)
-  - [favourite_status](#favourite_status)
-  - [qr_code](#qr_code)
-  - [share](#share)
-  - [all-tags](#all-tags)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
 
  Themes using this layer 
 -------------------------
@@ -101,302 +101,208 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/speech_output#values) [speech_output](https://wiki.openstreetmap.org/wiki/Key:speech_output) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:speech_output%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:speech_output%3Dno)
 
 
-
-
-### just_created 
-
-
-
+### this.id
 This element shows a 'thank you' that the contributor has recently created this element
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
+ - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
+This tagrendering has labels 
+`added_by_default`
 
-
-
-
-
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
-
-
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### images 
-
-
-
+### this.id
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
 
 
 
 
+### this.id
 
-### multilevels 
+The question is `What levels does this elevator go to?`
+This rendering asks information about the property 
+[level](https://wiki.openstreetmap.org/wiki/Key:level)
+This is rendered with `This elevator goes to floors {level}`
+ - *Located underground* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground' target='_blank'>underground</a>
+ - _This option cannot be chosen as answer_
+ - *Located on the ground floor* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D0' target='_blank'>0</a>
+ - *Located on the ground floor* corresponds with level=
+ - _This option cannot be chosen as answer_
+ - *Located on the first floor* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D1' target='_blank'>1</a>
+ - *Located on the first basement level* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D-1' target='_blank'>-1</a>
 
 
 
-The question is  *What levels does this elevator go to?*
+### this.id
 
-This rendering asks information about the property  [level](https://wiki.openstreetmap.org/wiki/Key:level) This is rendered with  `This elevator goes to floors {level}`
+The question is `Does this elevator work?`
 
+ - *This elevator is broken* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:operational_status' target='_blank'>operational_status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operational_status%3Dbroken' target='_blank'>broken</a>
+ - *This elevator is closed <span class='subtle'>e.g. because renovation works are going on</span>* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:operational_status' target='_blank'>operational_status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operational_status%3Dclosed' target='_blank'>closed</a>
+ - *This elevator works* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:operational_status' target='_blank'>operational_status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operational_status%3Dok' target='_blank'>ok</a>
+ - *This elevator works* corresponds with operational_status=
+ - _This option cannot be chosen as answer_
 
 
-  - *Located underground*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground' target='_blank'>underground</a>
-  - _This option cannot be chosen as answer_
-  - *Located on the ground floor*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D0' target='_blank'>0</a>
-  - *Located on the ground floor*  corresponds with  level=
-  - _This option cannot be chosen as answer_
-  - *Located on the first floor*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D1' target='_blank'>1</a>
-  - *Located on the first basement level*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D-1' target='_blank'>-1</a>
 
+### this.id
 
+The question is `What is the width of this elevator's entrance?`
+This rendering asks information about the property 
+[door:width](https://wiki.openstreetmap.org/wiki/Key:door:width)
+This is rendered with `This elevator's doors have a width of {canonical(door:width)}`
 
 
-### operational_status 
 
 
+### this.id
 
-The question is  *Does this elevator work?*
+The question is `What shape does this elevator have?`
 
+ - *This elevator has a rectangular shape* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:shape' target='_blank'>shape</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shape%3Drectangular' target='_blank'>rectangular</a>
+ - *This elevator has a circular shape* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:shape' target='_blank'>shape</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shape%3Dcircular' target='_blank'>circular</a>
 
 
 
+### this.id
 
-  - *This elevator is broken*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:operational_status' target='_blank'>operational_status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operational_status%3Dbroken' target='_blank'>broken</a>
-  - *This elevator is closed <span class='subtle'>e.g. because renovation works are going on</span>*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:operational_status' target='_blank'>operational_status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operational_status%3Dclosed' target='_blank'>closed</a>
-  - *This elevator works*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:operational_status' target='_blank'>operational_status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operational_status%3Dok' target='_blank'>ok</a>
-  - *This elevator works*  corresponds with  operational_status=
-  - _This option cannot be chosen as answer_
+The question is `What is the width of this elevator?`
+This rendering asks information about the property 
+[width](https://wiki.openstreetmap.org/wiki/Key:width)
+This is rendered with `This elevator has a width of {canonical(width)}`
 
 
 
 
-### door-width 
+### this.id
 
+The question is `What is the depth of this elevator?`
+This rendering asks information about the property 
+[length](https://wiki.openstreetmap.org/wiki/Key:length)
+This is rendered with `This elevator has a depth of {canonical(length)}`
 
 
-The question is  *What is the width of this elevator's entrance?*
 
-This rendering asks information about the property  [door:width](https://wiki.openstreetmap.org/wiki/Key:door:width) This is rendered with  `This elevator's doors have a width of {canonical(door:width)}`
 
+### this.id
 
+The question is `What is the diameter of this elevator?`
+This rendering asks information about the property 
+[diameter](https://wiki.openstreetmap.org/wiki/Key:diameter)
+This is rendered with `This elevator has a diameter of {canonical(diameter)}`
 
-### elevator-shape 
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:shape' target='_blank'>shape</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shape%3Dcircular' target='_blank'>circular</a>
 
 
-
-The question is  *What shape does this elevator have?*
-
-
-
-
-
-  - *This elevator has a rectangular shape*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:shape' target='_blank'>shape</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shape%3Drectangular' target='_blank'>rectangular</a>
-  - *This elevator has a circular shape*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:shape' target='_blank'>shape</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shape%3Dcircular' target='_blank'>circular</a>
-
-
-
-
-### elevator-width 
-
-
-
-The question is  *What is the width of this elevator?*
-
-This rendering asks information about the property  [width](https://wiki.openstreetmap.org/wiki/Key:width) This is rendered with  `This elevator has a width of {canonical(width)}`
-
-
-
-### elevator-depth 
-
-
-
-The question is  *What is the depth of this elevator?*
-
-This rendering asks information about the property  [length](https://wiki.openstreetmap.org/wiki/Key:length) This is rendered with  `This elevator has a depth of {canonical(length)}`
-
-
-
-### elevator-diameter 
-
-
-
-The question is  *What is the diameter of this elevator?*
-
-This rendering asks information about the property  [diameter](https://wiki.openstreetmap.org/wiki/Key:diameter) This is rendered with  `This elevator has a diameter of {canonical(diameter)}`
-
-This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:shape' target='_blank'>shape</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shape%3Dcircular' target='_blank'>circular</a>`
-
-
-
-### induction-loop 
-
-
-
+### this.id
 An accessibility feature: induction loops are for hard-hearing persons which have an FM-receiver.
+The question is `Does this place have an audio induction loop for people with reduced hearing?`
 
-The question is  *Does this place have an audio induction loop for people with reduced hearing?*
+ - *This place has an audio induction loop* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:hearing_loop' target='_blank'>hearing_loop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hearing_loop%3Dyes' target='_blank'>yes</a>
+ - *This place <b>does not</b> have an audio induction loop* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:hearing_loop' target='_blank'>hearing_loop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hearing_loop%3Dno' target='_blank'>no</a>
 
 
 
+### this.id
 
+The question is `Has this elevator tactile writing?`
 
-  - *This place has an audio induction loop*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:hearing_loop' target='_blank'>hearing_loop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hearing_loop%3Dyes' target='_blank'>yes</a>
-  - *This place <b>does not</b> have an audio induction loop*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:hearing_loop' target='_blank'>hearing_loop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hearing_loop%3Dno' target='_blank'>no</a>
+ - *This elevator has tactile writing in Braille* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:tactile_writing:braille' target='_blank'>tactile_writing:braille</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tactile_writing:braille%3Dyes' target='_blank'>yes</a>
+ - *This elevator does not have tactile writing* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:tactile_writing:braille' target='_blank'>tactile_writing:braille</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tactile_writing:braille%3Dno' target='_blank'>no</a>
 
 
 
+### this.id
 
-### tactile_writing_available 
+_This tagrendering has no question and is thus read-only_
 
 
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:tactile_writing:braille' target='_blank'>tactile_writing:braille</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tactile_writing:braille%3Dyes' target='_blank'>yes</a>
 
-The question is  *Has this elevator tactile writing?*
 
+### this.id
 
+The question is `Has this elevator speech output?`
 
+ - *This elevator has speech output* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:speech_output' target='_blank'>speech_output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:speech_output%3Dyes' target='_blank'>yes</a>
+ - *This elevator does not have speech output* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:speech_output' target='_blank'>speech_output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:speech_output%3Dno' target='_blank'>no</a>
 
 
-  - *This elevator has tactile writing in Braille*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:tactile_writing:braille' target='_blank'>tactile_writing:braille</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tactile_writing:braille%3Dyes' target='_blank'>yes</a>
-  - *This elevator does not have tactile writing*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:tactile_writing:braille' target='_blank'>tactile_writing:braille</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tactile_writing:braille%3Dno' target='_blank'>no</a>
 
+### this.id
 
+_This tagrendering has no question and is thus read-only_
 
 
-### tactile_writing_language 
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:speech_output' target='_blank'>speech_output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:speech_output%3Dyes' target='_blank'>yes</a>
 
 
+### this.id
 
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:tactile_writing:braille' target='_blank'>tactile_writing:braille</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tactile_writing:braille%3Dyes' target='_blank'>yes</a>`
 
 
+### this.id
 
-### speech_output_available 
+_This tagrendering has no question and is thus read-only_
 
 
 
-The question is  *Has this elevator speech output?*
+This tagrendering has labels 
+`added_by_default`
 
-
-
-
-
-  - *This elevator has speech output*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:speech_output' target='_blank'>speech_output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:speech_output%3Dyes' target='_blank'>yes</a>
-  - *This elevator does not have speech output*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:speech_output' target='_blank'>speech_output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:speech_output%3Dno' target='_blank'>no</a>
-
-
-
-
-### speech_output 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:speech_output' target='_blank'>speech_output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:speech_output%3Dyes' target='_blank'>yes</a>`
-
-
-
-### leftover-questions 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### lod 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### minimap 
-
-
-
+### this.id
 Shows a small map with the feature. Added by default to every popup
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
 
 
-### last_edit 
 
-
-
+### this.id
 Gives some metainfo about the last edit and who did edit it - rendering only
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:changeset~.+ & _last_edit:contributor~.+
+This tagrendering has labels 
+`added_by_default`
 
-This tagrendering has labels  `added_by_default`
+### this.id
 
-
-
-### favourite_status 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### qr_code 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has no question and is thus read-only
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has labels  `added_by_default`
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
-
-### share 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### all-tags 
-
-
-
-This tagrendering has no question and is thus read-only
 
  
 

@@ -165,13 +165,11 @@ export default class FeatureSwitchState extends OsmConnectionFeatureSwitches {
             "If true, shows some extra debugging help such as all the available tags on every object"
         )
 
-
         this.featureSwitchMorePrivacy = QueryParameters.GetBooleanQueryParameter(
             "moreprivacy",
             layoutToUse.enableMorePrivacy,
             "If true, the location distance indication will not be written to the changeset and other privacy enhancing measures might be taken."
         )
-
 
         this.overpassUrl = QueryParameters.GetQueryParameter(
             "overpassUrl",

@@ -25,25 +25,25 @@ A sport pitch
 1. [ Themes using this layer ](#-themes-using-this-layer-)
 2. [ Basic tags for this layer ](#-basic-tags-for-this-layer-)
 3. [ Supported attributes ](#-supported-attributes-)
-  - [just_created](#just_created)
-  - [images](#images)
-  - [sport_pitch-sport](#sport_pitch-sport)
-  - [basketball-hoops](#basketball-hoops)
-  - [sport_pitch-surface](#sport_pitch-surface)
-  - [sport-pitch-access](#sport-pitch-access)
-  - [sport-pitch-reservation](#sport-pitch-reservation)
-  - [sport_pitch-phone](#sport_pitch-phone)
-  - [sport_pitch-email](#sport_pitch-email)
-  - [sport_pitch-opening_hours](#sport_pitch-opening_hours)
-  - [questions](#questions)
-  - [sport-pitch-reviews](#sport-pitch-reviews)
-  - [lod](#lod)
-  - [minimap](#minimap)
-  - [last_edit](#last_edit)
-  - [favourite_status](#favourite_status)
-  - [qr_code](#qr_code)
-  - [share](#share)
-  - [all-tags](#all-tags)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
     + [Filters](#filters)
 
  Themes using this layer 
@@ -96,283 +96,197 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/opening_hours#values) [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | [24/7](https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7)
 
 
-
-
-### just_created 
-
-
-
+### this.id
 This element shows a 'thank you' that the contributor has recently created this element
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
+ - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
+This tagrendering has labels 
+`added_by_default`
 
-
-
-
-
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
-
-
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### images 
-
-
-
+### this.id
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
 
 
 
 
+### this.id
 
-### sport_pitch-sport 
+The question is `Which sport can be played here?`
+This rendering asks information about the property 
+[sport](https://wiki.openstreetmap.org/wiki/Key:sport)
+This is rendered with `{sport} is played here`
+ - *Basketball is played here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dbasketball' target='_blank'>basketball</a>
+ - *Soccer is played here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dsoccer' target='_blank'>soccer</a>
+ - *This is a pingpong table* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dtable_tennis' target='_blank'>table_tennis</a>
+ - *Tennis is played here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dtennis' target='_blank'>tennis</a>
+ - *Korfball is played here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dkorfball' target='_blank'>korfball</a>
+ - *Basketball is played here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dbasket' target='_blank'>basket</a>
+ - _This option cannot be chosen as answer_
+ - *This is a skatepark* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dskateboard' target='_blank'>skateboard</a>
 
 
 
-The question is  *Which sport can be played here?*
+### this.id
 
-This rendering asks information about the property  [sport](https://wiki.openstreetmap.org/wiki/Key:sport) This is rendered with  `{sport} is played here`
+The question is `How much basketball hoops does this pitch have?`
 
+ - *This basketball pitch has a single hoop* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:hoops' target='_blank'>hoops</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hoops%3D1' target='_blank'>1</a>
+ - *This basketball pitch has two hoops* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:hoops' target='_blank'>hoops</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hoops%3D2' target='_blank'>2</a>
+ - *This basketball pitch has four hoops* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:hoops' target='_blank'>hoops</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hoops%3D4' target='_blank'>4</a>
+ - *This basketball pitch has {hoops} hoops* corresponds with hoops~.+
+ - _This option cannot be chosen as answer_
+This tagrendering is only visible in the popup if the following condition is met: sport~^((^|.*;)basketball(;.*|$))$
 
 
-  - *Basketball is played here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dbasketball' target='_blank'>basketball</a>
-  - *Soccer is played here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dsoccer' target='_blank'>soccer</a>
-  - *This is a pingpong table*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dtable_tennis' target='_blank'>table_tennis</a>
-  - *Tennis is played here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dtennis' target='_blank'>tennis</a>
-  - *Korfball is played here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dkorfball' target='_blank'>korfball</a>
-  - *Basketball is played here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dbasket' target='_blank'>basket</a>
-  - _This option cannot be chosen as answer_
-  - *This is a skatepark*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dskateboard' target='_blank'>skateboard</a>
+### this.id
 
+The question is `Which is the surface of this sport pitch?`
+This rendering asks information about the property 
+[surface](https://wiki.openstreetmap.org/wiki/Key:surface)
+This is rendered with `The surface is <b>{surface}</b>`
+ - *The surface is <b>grass</b>* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dgrass' target='_blank'>grass</a>
+ - *The surface is <b>sand</b>* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dsand' target='_blank'>sand</a>
+ - *The surface is <b>paving stones</b>* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dpaving_stones' target='_blank'>paving_stones</a>
+ - *The surface is <b>asphalt</b>* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dasphalt' target='_blank'>asphalt</a>
+ - *The surface is <b>concrete</b>* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dconcrete' target='_blank'>concrete</a>
+ - *The surface is <b>fine gravel</b>* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dfine_gravel' target='_blank'>fine_gravel</a>
+ - *The surface of this track is Tartan, a synthetic, slightly springy, porous surface* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dtartan' target='_blank'>tartan</a>
 
 
 
-### basketball-hoops 
+### this.id
 
+The question is `Is this sport pitch publicly accessible?`
 
+ - *Public access* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>
+ - *Limited access (e.g. only with an appointment, during certain hours, …)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dlimited' target='_blank'>limited</a>
+ - *Only accessible for members of the club* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dmembers' target='_blank'>members</a>
+ - *Private - not accessible to the public* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate' target='_blank'>private</a>
+ - *Public access* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dpublic' target='_blank'>public</a>
+ - _This option cannot be chosen as answer_
 
-The question is  *How much basketball hoops does this pitch have?*
 
 
+### this.id
 
+The question is `Does one have to make an appointment to use this sport pitch?`
 
+ - *Making an appointment is obligatory to use this sport pitch* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:reservation' target='_blank'>reservation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:reservation%3Drequired' target='_blank'>required</a>
+ - *Making an appointment is recommended when using this sport pitch* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:reservation' target='_blank'>reservation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:reservation%3Drecommended' target='_blank'>recommended</a>
+ - *Making an appointment is possible, but not necessary to use this sport pitch* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:reservation' target='_blank'>reservation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:reservation%3Dyes' target='_blank'>yes</a>
+ - *Making an appointment is not possible* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:reservation' target='_blank'>reservation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:reservation%3Dno' target='_blank'>no</a>
 
-  - *This basketball pitch has a single hoop*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:hoops' target='_blank'>hoops</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hoops%3D1' target='_blank'>1</a>
-  - *This basketball pitch has two hoops*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:hoops' target='_blank'>hoops</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hoops%3D2' target='_blank'>2</a>
-  - *This basketball pitch has four hoops*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:hoops' target='_blank'>hoops</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hoops%3D4' target='_blank'>4</a>
-  - *This basketball pitch has {hoops} hoops*  corresponds with  hoops~.+
-  - _This option cannot be chosen as answer_
 
 
-This tagrendering is only visible in the popup if the following condition is met: `sport~^((^|.*;)basketball(;.*|$))$`
+### this.id
 
+The question is `What is the phone number of the operator?`
+This rendering asks information about the property 
+[phone](https://wiki.openstreetmap.org/wiki/Key:phone)
+This is rendered with `<a href='tel:{phone}'>{phone}</a>`
 
 
-### sport_pitch-surface 
 
 
+### this.id
 
-The question is  *Which is the surface of this sport pitch?*
+The question is `What is the email address of the operator?`
+This rendering asks information about the property 
+[email](https://wiki.openstreetmap.org/wiki/Key:email)
+This is rendered with `<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>`
 
-This rendering asks information about the property  [surface](https://wiki.openstreetmap.org/wiki/Key:surface) This is rendered with  `The surface is <b>{surface}</b>`
 
 
 
-  - *The surface is <b>grass</b>*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dgrass' target='_blank'>grass</a>
-  - *The surface is <b>sand</b>*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dsand' target='_blank'>sand</a>
-  - *The surface is <b>paving stones</b>*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dpaving_stones' target='_blank'>paving_stones</a>
-  - *The surface is <b>asphalt</b>*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dasphalt' target='_blank'>asphalt</a>
-  - *The surface is <b>concrete</b>*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dconcrete' target='_blank'>concrete</a>
-  - *The surface is <b>fine gravel</b>*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dfine_gravel' target='_blank'>fine_gravel</a>
-  - *The surface of this track is Tartan, a synthetic, slightly springy, porous surface*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dtartan' target='_blank'>tartan</a>
+### this.id
 
+The question is `When is this pitch accessible?`
+This rendering asks information about the property 
+[opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours)
+This is rendered with `Openingsuren: {opening_hours_table()}`
+ - *Always accessible* corresponds with opening_hours=
+ - _This option cannot be chosen as answer_
+ - *Always accessible* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
+This tagrendering is only visible in the popup if the following condition is met: access~.+
 
 
-
-### sport-pitch-access 
-
-
-
-The question is  *Is this sport pitch publicly accessible?*
-
-
-
-
-
-  - *Public access*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>
-  - *Limited access (e.g. only with an appointment, during certain hours, …)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dlimited' target='_blank'>limited</a>
-  - *Only accessible for members of the club*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dmembers' target='_blank'>members</a>
-  - *Private - not accessible to the public*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate' target='_blank'>private</a>
-  - *Public access*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dpublic' target='_blank'>public</a>
-  - _This option cannot be chosen as answer_
-
-
-
-
-### sport-pitch-reservation 
-
-
-
-The question is  *Does one have to make an appointment to use this sport pitch?*
-
-
-
-
-
-  - *Making an appointment is obligatory to use this sport pitch*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:reservation' target='_blank'>reservation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:reservation%3Drequired' target='_blank'>required</a>
-  - *Making an appointment is recommended when using this sport pitch*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:reservation' target='_blank'>reservation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:reservation%3Drecommended' target='_blank'>recommended</a>
-  - *Making an appointment is possible, but not necessary to use this sport pitch*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:reservation' target='_blank'>reservation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:reservation%3Dyes' target='_blank'>yes</a>
-  - *Making an appointment is not possible*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:reservation' target='_blank'>reservation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:reservation%3Dno' target='_blank'>no</a>
-
-
-
-
-### sport_pitch-phone 
-
-
-
-The question is  *What is the phone number of the operator?*
-
-This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) This is rendered with  `<a href='tel:{phone}'>{phone}</a>`
-
-
-
-### sport_pitch-email 
-
-
-
-The question is  *What is the email address of the operator?*
-
-This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) This is rendered with  `<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>`
-
-
-
-### sport_pitch-opening_hours 
-
-
-
-The question is  *When is this pitch accessible?*
-
-This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) This is rendered with  `Openingsuren: {opening_hours_table()}`
-
-
-
-  - *Always accessible*  corresponds with  opening_hours=
-  - _This option cannot be chosen as answer_
-  - *Always accessible*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
-
-
-This tagrendering is only visible in the popup if the following condition is met: `access~.+`
-
-
-
-### questions 
-
-
-
+### this.id
 Show the questions block at this location
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### sport-pitch-reviews 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### lod 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has no question and is thus read-only
+
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has labels  `added_by_default`
+This tagrendering has labels 
+`added_by_default`
 
-
-
-### minimap 
-
-
-
+### this.id
 Shows a small map with the feature. Added by default to every popup
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
 
 
-### last_edit 
 
-
-
+### this.id
 Gives some metainfo about the last edit and who did edit it - rendering only
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:changeset~.+ & _last_edit:contributor~.+
+This tagrendering has labels 
+`added_by_default`
 
-This tagrendering has labels  `added_by_default`
+### this.id
 
-
-
-### favourite_status 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### qr_code 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has no question and is thus read-only
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has labels  `added_by_default`
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
-
-### share 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### all-tags 
-
-
-
-This tagrendering has no question and is thus read-only
 
 
 

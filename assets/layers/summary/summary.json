@@ -5,7 +5,8 @@
   "title": {
     "render": {
       "en": "Summary",
-      "de": "Übersicht"
+      "de": "Übersicht",
+      "nl": "Samenvatting"
     }
   },
   "pointRendering": [

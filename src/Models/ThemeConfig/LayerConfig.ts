@@ -279,7 +279,7 @@ export default class LayerConfig extends WithContextLoader {
         }
         this.units = [].concat(
             ...(json.units ?? []).map((unitJson, i) =>
-                Unit.fromJson(unitJson, this.tagRenderings,`${context}.unit[${i}]`)
+                Unit.fromJson(unitJson, this.tagRenderings, `${context}.unit[${i}]`)
             )
         )
 

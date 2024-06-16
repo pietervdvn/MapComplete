@@ -6,7 +6,10 @@ import { And } from "../../Logic/Tags/And"
 import { Utils } from "../../Utils"
 import { Tag } from "../../Logic/Tags/Tag"
 import Link from "../../UI/Base/Link"
-import { MappingConfigJson, QuestionableTagRenderingConfigJson } from "./Json/QuestionableTagRenderingConfigJson"
+import {
+    MappingConfigJson,
+    QuestionableTagRenderingConfigJson,
+} from "./Json/QuestionableTagRenderingConfigJson"
 import Validators, { ValidatorType } from "../../UI/InputElement/Validators"
 import { TagRenderingConfigJson } from "./Json/TagRenderingConfigJson"
 import { RegexTag } from "../../Logic/Tags/RegexTag"
@@ -76,7 +79,10 @@ export default class TagRenderingConfig {
     public readonly classes: string[] | undefined
 
     constructor(
-        config: string | TagRenderingConfigJson | (QuestionableTagRenderingConfigJson & { questionHintIsMd?: boolean }),
+        config:
+            | string
+            | TagRenderingConfigJson
+            | (QuestionableTagRenderingConfigJson & { questionHintIsMd?: boolean }),
         context?: string
     ) {
         let json = <string | QuestionableTagRenderingConfigJson>config
@@ -196,7 +202,7 @@ export default class TagRenderingConfig {
                     ) ?? [],
                 inline: json.freeform.inline ?? false,
                 default: json.freeform.default,
-                postfixDistinguished: json.freeform.postfixDistinguished?.trim()
+                postfixDistinguished: json.freeform.postfixDistinguished?.trim(),
             }
             if (json.freeform["extraTags"] !== undefined) {
                 throw `Freeform.extraTags is defined. This should probably be 'freeform.addExtraTag' (at ${context})`
@@ -215,10 +221,18 @@ export default class TagRenderingConfig {
             }
             if (this.freeform.postfixDistinguished) {
                 if (this.multiAnswer) {
-                    throw "At " + context + ": a postfixDistinguished-value cannot be used with a multiAnswer"
+                    throw (
+                        "At " +
+                        context +
+                        ": a postfixDistinguished-value cannot be used with a multiAnswer"
+                    )
                 }
                 if (this.freeform.postfixDistinguished.startsWith("/")) {
-                    throw "At " + context + ": a postfixDistinguished-value should not start with `/`. This will be inserted automatically"
+                    throw (
+                        "At " +
+                        context +
+                        ": a postfixDistinguished-value should not start with `/`. This will be inserted automatically"
+                    )
                 }
             }
 
@@ -400,7 +414,7 @@ export default class TagRenderingConfig {
             iconClass,
             addExtraTags,
             searchTerms: mapping.searchTerms,
-            priorityIf: prioritySearch
+            priorityIf: prioritySearch,
         }
         if (isQuestionable) {
             if (hideInAnswer !== true && mp.if !== undefined && !mp.if.isUsableAsAnswer()) {
@@ -486,13 +500,12 @@ export default class TagRenderingConfig {
             })
         )
 
-
         if (freeformKeyDefined && tags[this.freeform.key] !== undefined) {
             const usedFreeformValues = new Set<string>(
                 applicableMappings
-                    ?.flatMap(m => m.if?.usedTags() ?? [])
-                    ?.filter(kv => kv.key === this.freeform.key)
-                    ?.map(kv => kv.value)
+                    ?.flatMap((m) => m.if?.usedTags() ?? [])
+                    ?.filter((kv) => kv.key === this.freeform.key)
+                    ?.map((kv) => kv.value)
             )
 
             const freeformValues = tags[this.freeform.key].split(";")
@@ -502,7 +515,7 @@ export default class TagRenderingConfig {
                     then: new TypedTranslation<object>(
                         this.render.replace("{" + this.freeform.key + "}", leftover).translations,
                         this.render.context
-                    )
+                    ),
                 })
             }
         }
@@ -544,7 +557,7 @@ export default class TagRenderingConfig {
         if (this.freeform?.key === undefined || tags[this.freeform.key] !== undefined) {
             const postfix = this.freeform?.postfixDistinguished
             if (postfix !== undefined) {
-                const allFreeforms = tags[this.freeform.key].split(";").map(s => s.trim())
+                const allFreeforms = tags[this.freeform.key].split(";").map((s) => s.trim())
                 for (const allFreeform of allFreeforms) {
                     if (allFreeform.endsWith(postfix)) {
                         const [v] = allFreeform.split("/")
@@ -552,7 +565,7 @@ export default class TagRenderingConfig {
                         return {
                             then: this.render.PartialSubs({ [this.freeform.key]: v.trim() }),
                             icon: this.renderIcon,
-                            iconClass: this.renderIconClass
+                            iconClass: this.renderIconClass,
                         }
                     }
                 }
@@ -607,7 +620,7 @@ export default class TagRenderingConfig {
                     key: commonKey,
                     values: Utils.NoNull(
                         values.map((arr) => arr.filter((item) => item.k === commonKey)[0]?.v)
-                    )
+                    ),
                 }
             }
 
@@ -622,7 +635,7 @@ export default class TagRenderingConfig {
             return {
                 key,
                 type: this.freeform.type,
-                values
+                values,
             }
         } catch (e) {
             console.error("Could not create FreeformValues for tagrendering", this.id)
@@ -692,7 +705,7 @@ export default class TagRenderingConfig {
             freeformValue = undefined
         }
         if (this.freeform?.postfixDistinguished && freeformValue !== undefined) {
-            const allValues = currentProperties[this.freeform.key].split(";").map(s => s.trim())
+            const allValues = currentProperties[this.freeform.key].split(";").map((s) => s.trim())
             const perPostfix: Record<string, string> = {}
             for (const value of allValues) {
                 const [v, postfix] = value.split("/")
@@ -701,7 +714,7 @@ export default class TagRenderingConfig {
             perPostfix[this.freeform.postfixDistinguished] = freeformValue
             const keys = Object.keys(perPostfix)
             keys.sort()
-            freeformValue = keys.map(k => perPostfix[k] + "/" + k).join("; ")
+            freeformValue = keys.map((k) => perPostfix[k] + "/" + k).join("; ")
         }
         if (
             freeformValue === undefined &&
@@ -728,7 +741,7 @@ export default class TagRenderingConfig {
             // Either no mappings, or this is a radio-button selected freeform value
             const tag = new And([
                 new Tag(this.freeform.key, freeformValue),
-                ...(this.freeform.addExtraTags ?? [])
+                ...(this.freeform.addExtraTags ?? []),
             ])
             const newProperties = tag.applyOn(currentProperties)
             if (this.invalidValues?.matchesProperties(newProperties)) {
@@ -752,7 +765,7 @@ export default class TagRenderingConfig {
                 selectedMappings.push(
                     new And([
                         new Tag(this.freeform.key, freeformValue),
-                        ...(this.freeform.addExtraTags ?? [])
+                        ...(this.freeform.addExtraTags ?? []),
                     ])
                 )
             }
@@ -778,15 +791,14 @@ export default class TagRenderingConfig {
                 !someMappingIsShown ||
                 singleSelectedMapping === undefined)
         if (useFreeform) {
-
             return new And([
                 new Tag(this.freeform.key, freeformValue),
-                ...(this.freeform.addExtraTags ?? [])
+                ...(this.freeform.addExtraTags ?? []),
             ])
         } else if (singleSelectedMapping !== undefined) {
             return new And([
                 this.mappings[singleSelectedMapping].if,
-                ...(this.mappings[singleSelectedMapping].addExtraTags ?? [])
+                ...(this.mappings[singleSelectedMapping].addExtraTags ?? []),
             ])
         } else {
             console.error("TagRenderingConfig.ConstructSpecification has a weird fallback for", {
@@ -794,7 +806,7 @@ export default class TagRenderingConfig {
                 singleSelectedMapping,
                 multiSelectedMapping,
                 currentProperties,
-                useFreeform
+                useFreeform,
             })
 
             return undefined
@@ -807,7 +819,7 @@ export default class TagRenderingConfig {
             withRender = [
                 `This rendering asks information about the property `,
                 Link.OsmWiki(this.freeform.key).AsMarkdown(),
-                "This is rendered with `" + this.render.txt + "`"
+                "This is rendered with `" + this.render.txt + "`",
             ]
         }
 
@@ -815,46 +827,56 @@ export default class TagRenderingConfig {
         if (this.mappings !== undefined) {
             mappings = MarkdownUtils.list(
                 this.mappings.flatMap((m) => {
-                        const msgs: (string)[] = [
-                            "*" + m.then.txt + "* corresponds with " +
-                            m.if.asHumanString(true, false, {})
-                        ]
-                        if (m.hideInAnswer === true) {
-                            msgs.push("_This option cannot be chosen as answer_")
-                        }
-                        if (m.ifnot !== undefined) {
-                            msgs.push(
-                                "Unselecting this answer will add " +
+                    const msgs: string[] = [
+                        "*" +
+                            m.then.txt +
+                            "* corresponds with " +
+                            m.if.asHumanString(true, false, {}),
+                    ]
+                    if (m.hideInAnswer === true) {
+                        msgs.push("_This option cannot be chosen as answer_")
+                    }
+                    if (m.ifnot !== undefined) {
+                        msgs.push(
+                            "Unselecting this answer will add " +
                                 m.ifnot.asHumanString(true, false, {})
-                            )
-                        }
-                        return msgs
-                    })
+                        )
+                    }
+                    return msgs
+                })
             )
         }
 
         let condition: string = undefined
         if (this.condition !== undefined && !this.condition?.matchesProperties({})) {
-            const conditionAsLink = (<TagsFilter>this.condition.optimize()).asHumanString(true, false, {})
-            condition = "This tagrendering is only visible in the popup if the following condition is met: " + conditionAsLink
+            const conditionAsLink = (<TagsFilter>this.condition.optimize()).asHumanString(
+                true,
+                false,
+                {}
+            )
+            condition =
+                "This tagrendering is only visible in the popup if the following condition is met: " +
+                conditionAsLink
         }
 
         let labels: string = undefined
         if (this.labels?.length > 0) {
             labels = [
                 "This tagrendering has labels ",
-                ...this.labels.map((label) => "`" + label + "`")
+                ...this.labels.map((label) => "`" + label + "`"),
             ].join("\n")
         }
 
         return [
             "### this.id",
             this.description,
-            this.question !== undefined ? ("The question is `" + this.question.txt + "`") : "_This tagrendering has no question and is thus read-only_",
+            this.question !== undefined
+                ? "The question is `" + this.question.txt + "`"
+                : "_This tagrendering has no question and is thus read-only_",
             withRender.join("\n"),
             mappings,
             condition,
-            labels
+            labels,
         ].join("\n")
     }
 
@@ -879,37 +901,45 @@ export default class TagRenderingConfig {
 
         return Utils.NoNull(tags)
     }
-
 }
 
 export class TagRenderingConfigUtils {
-
-    public static withNameSuggestionIndex(config: TagRenderingConfig, tags: UIEventSource<Record<string, string>>, feature?: Feature): Store<TagRenderingConfig> {
+    public static withNameSuggestionIndex(
+        config: TagRenderingConfig,
+        tags: UIEventSource<Record<string, string>>,
+        feature?: Feature
+    ): Store<TagRenderingConfig> {
         const isNSI = NameSuggestionIndex.supportedTypes().indexOf(config.freeform?.key) >= 0
         if (!isNSI) {
             return new ImmutableStore(config)
         }
-        const extraMappings = tags
-            .bindD(tags => {
-                const country = tags._country
-                if (country === undefined) {
-                    return undefined
-                }
-                const center = GeoOperations.centerpointCoordinates(feature)
-                return UIEventSource.FromPromise(NameSuggestionIndex.generateMappings(config.freeform.key, tags, country.split(";"), center))
-            })
-        return extraMappings.map(extraMappings => {
+        const extraMappings = tags.bindD((tags) => {
+            const country = tags._country
+            if (country === undefined) {
+                return undefined
+            }
+            const center = GeoOperations.centerpointCoordinates(feature)
+            return UIEventSource.FromPromise(
+                NameSuggestionIndex.generateMappings(
+                    config.freeform.key,
+                    tags,
+                    country.split(";"),
+                    center
+                )
+            )
+        })
+        return extraMappings.map((extraMappings) => {
             if (!extraMappings || extraMappings.length == 0) {
                 return config
             }
             const clone: TagRenderingConfig = Object.create(config)
-            const oldMappingsCloned = clone.mappings?.map(m => ({
-                ...m,
-                priorityIf: m.priorityIf ?? TagUtils.Tag("id~*")
-            })) ?? []
+            const oldMappingsCloned =
+                clone.mappings?.map((m) => ({
+                    ...m,
+                    priorityIf: m.priorityIf ?? TagUtils.Tag("id~*"),
+                })) ?? []
             clone.mappings = [...oldMappingsCloned, ...extraMappings]
             return clone
         })
     }
-
 }

@@ -263,7 +263,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return res
     }
 
-    public static NoNull<T>(array: T[] | undefined): (T[] | undefined)
+    public static NoNull<T>(array: T[] | undefined): T[] | undefined
     public static NoNull<T>(array: undefined): undefined
     public static NoNull<T>(array: T[]): T[]
     public static NoNull<T>(array: T[]): NonNullable<T>[] {
@@ -334,13 +334,13 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             configurable: true,
             get: () => {
                 delete object[name]
-                try{
+                try {
                     object[name] = init()
                     if (whenDone) {
                         whenDone()
                     }
                     return object[name]
-                }catch (e) {
+                } catch (e) {
                     console.error("Error while calculating a lazy property", e)
                     return undefined
                 }
@@ -520,10 +520,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
                 }
 
                 if (useLang !== undefined && v?.translations !== undefined) {
-                    v =
-                        v.translations[useLang] ??
-                        v.translations["*"] ??
-                        (v?.textFor(useLang) ?? v)
+                    v = v.translations[useLang] ?? v.translations["*"] ?? v?.textFor(useLang) ?? v
                 }
 
                 if (v.InnerConstructElement !== undefined) {
@@ -1046,10 +1043,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         url: string,
         headers?: Record<string, string>
     ): Promise<T>
-    public static async downloadJson<T>(
-        url: string,
-        headers?: Record<string, string>
-    ): Promise<T>
+    public static async downloadJson<T>(url: string, headers?: Record<string, string>): Promise<T>
     public static async downloadJson(
         url: string,
         headers?: Record<string, string>
@@ -1072,9 +1066,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
     public static async downloadJsonAdvanced<T = object | []>(
         url: string,
         headers?: Record<string, string>
-    ): Promise<
-        { content: T } | { error: string; url: string; statuscode?: number }
-    > {
+    ): Promise<{ content: T } | { error: string; url: string; statuscode?: number }> {
         const injected = Utils.injectedDownloads[url]
         if (injected !== undefined) {
             console.log("Using injected resource for test for URL", url)
@@ -1091,7 +1083,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         try {
             if (typeof data === "string") {
                 if (data === "") {
-                    return { content: <T> {} }
+                    return { content: <T>{} }
                 }
                 return { content: JSON.parse(data) }
             }
@@ -1285,7 +1277,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
     public static TransposeMap<K extends string, V extends string>(
         d: Record<K, V[]>
     ): Record<V, K[]> {
-        const newD: Record<V, K[]> = <any> {}
+        const newD: Record<V, K[]> = <any>{}
 
         for (const k in d) {
             const vs = d[k]
@@ -1660,9 +1652,9 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return n + Utils._metrixPrefixes[index]
     }
 
-    static NoNullInplace(layers: any[]):void {
+    static NoNullInplace(layers: any[]): void {
         for (let i = layers.length - 1; i >= 0; i--) {
-            if(layers[i] === null || layers[i] === undefined){
+            if (layers[i] === null || layers[i] === undefined) {
                 layers.splice(i, 1)
             }
         }

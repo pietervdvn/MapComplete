@@ -25,33 +25,33 @@ A layer showing (public) toilets located at different places.
 1. [ Themes using this layer ](#-themes-using-this-layer-)
 2. [ Basic tags for this layer ](#-basic-tags-for-this-layer-)
 3. [ Supported attributes ](#-supported-attributes-)
-  - [just_created](#just_created)
-  - [images](#images)
-  - [repeated](#repeated)
-  - [single_level](#single_level)
-  - [toilet-access](#toilet-access)
-  - [toilets-fee](#toilets-fee)
-  - [toilet-charge](#toilet-charge)
-  - [opening_hours](#opening_hours)
-  - [toilets-wheelchair](#toilets-wheelchair)
-  - [wheelchair-door-width](#wheelchair-door-width)
-  - [toilets-type](#toilets-type)
-  - [toilets-changing-table](#toilets-changing-table)
-  - [toilet-changing_table:location](#toilet-changing_tablelocation)
-  - [toilet-handwashing](#toilet-handwashing)
-  - [toilet-has-paper](#toilet-has-paper)
-  - [menstrual_products](#menstrual_products)
-  - [menstrual_products_location](#menstrual_products_location)
-  - [description](#description)
-  - [leftover-questions](#leftover-questions)
-  - [lod](#lod)
-  - [minimap](#minimap)
-  - [delete-button](#delete-button)
-  - [last_edit](#last_edit)
-  - [favourite_status](#favourite_status)
-  - [qr_code](#qr_code)
-  - [share](#share)
-  - [all-tags](#all-tags)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
     + [Filters](#filters)
 
  Themes using this layer 
@@ -109,412 +109,275 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/toilets:description#values) [toilets:description](https://wiki.openstreetmap.org/wiki/Key:toilets:description) | [string](../SpecialInputElements.md#string) | 
 
 
-
-
-### just_created 
-
-
-
+### this.id
 This element shows a 'thank you' that the contributor has recently created this element
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
+ - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
+This tagrendering has labels 
+`added_by_default`
 
-
-
-
-
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
-
-
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### images 
-
-
-
+### this.id
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
 
 
 
 
+### this.id
 
-### repeated 
+_This tagrendering has no question and is thus read-only_
 
 
+This tagrendering is only visible in the popup if the following condition is met: repeat_on~.+
+This tagrendering has labels 
+`level`
 
-This tagrendering has no question and is thus read-only
+### this.id
 
+The question is `On what level is this feature located?`
+This rendering asks information about the property 
+[level](https://wiki.openstreetmap.org/wiki/Key:level)
+This is rendered with `Located on the {level}th floor`
+ - *Located underground* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground' target='_blank'>underground</a>
+ - _This option cannot be chosen as answer_
+ - *Located on the ground floor* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D0' target='_blank'>0</a>
+ - *Located on the ground floor* corresponds with level=
+ - _This option cannot be chosen as answer_
+ - *Located on the first floor* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D1' target='_blank'>1</a>
+ - *Located on the first basement level* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D-1' target='_blank'>-1</a>
 
+This tagrendering has labels 
+`level`
 
-This tagrendering is only visible in the popup if the following condition is met: `repeat_on~.+`
+### this.id
 
-This tagrendering has labels  `level`
+The question is `Are these toilets publicly accessible?`
+This rendering asks information about the property 
+[toilets:access](https://wiki.openstreetmap.org/wiki/Key:toilets:access)
+This is rendered with `Access is {toilets:access}`
+ - *Public access* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:access' target='_blank'>toilets:access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:access%3Dyes' target='_blank'>yes</a>
+ - *Only access to customers of the amenity* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:access' target='_blank'>toilets:access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:access%3Dcustomers' target='_blank'>customers</a>
+ - *Not accessible, even for customers of the amenity* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:access' target='_blank'>toilets:access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:access%3Dno' target='_blank'>no</a>
+ - *Accessible, but one has to ask a key to enter* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:access' target='_blank'>toilets:access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:access%3Dkey' target='_blank'>key</a>
+ - *Public access* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:access' target='_blank'>toilets:access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:access%3Dpublic' target='_blank'>public</a>
+ - _This option cannot be chosen as answer_
 
 
 
-### single_level 
+### this.id
 
+The question is `Are these toilets free to use?`
 
+ - *These are paid toilets* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:fee' target='_blank'>toilets:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:fee%3Dyes' target='_blank'>yes</a>
+ - *Free to use* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:fee' target='_blank'>toilets:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:fee%3Dno' target='_blank'>no</a>
 
-The question is  *On what level is this feature located?*
 
-This rendering asks information about the property  [level](https://wiki.openstreetmap.org/wiki/Key:level) This is rendered with  `Located on the {level}th floor`
 
+### this.id
 
+The question is `How much does one have to pay for these toilets?`
+This rendering asks information about the property 
+[toilets:charge](https://wiki.openstreetmap.org/wiki/Key:toilets:charge)
+This is rendered with `The fee is {toilets:charge}`
 
-  - *Located underground*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground' target='_blank'>underground</a>
-  - _This option cannot be chosen as answer_
-  - *Located on the ground floor*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D0' target='_blank'>0</a>
-  - *Located on the ground floor*  corresponds with  level=
-  - _This option cannot be chosen as answer_
-  - *Located on the first floor*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D1' target='_blank'>1</a>
-  - *Located on the first basement level*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D-1' target='_blank'>-1</a>
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:fee' target='_blank'>toilets:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:fee%3Dyes' target='_blank'>yes</a>
 
 
-This tagrendering has labels  `level`
+### this.id
 
+The question is `When is the amenity where these toilets are located open?`
+This rendering asks information about the property 
+[opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours)
+This is rendered with `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
+ - *Marked as closed for an unspecified time* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>
+ - _This option cannot be chosen as answer_
 
 
-### toilet-access 
 
+### this.id
 
+The question is `Is there a dedicated toilet for wheelchair users?`
 
-The question is  *Are these toilets publicly accessible?*
+ - *There is a dedicated toilet for wheelchair users* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:wheelchair' target='_blank'>toilets:wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:wheelchair%3Dyes' target='_blank'>yes</a>
+ - *No wheelchair access* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:wheelchair' target='_blank'>toilets:wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:wheelchair%3Dno' target='_blank'>no</a>
+ - *There is only a dedicated toilet for wheelchair users* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:wheelchair' target='_blank'>toilets:wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:wheelchair%3Ddesignated' target='_blank'>designated</a>
 
-This rendering asks information about the property  [toilets:access](https://wiki.openstreetmap.org/wiki/Key:toilets:access) This is rendered with  `Access is {toilets:access}`
 
 
+### this.id
 
-  - *Public access*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:access' target='_blank'>toilets:access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:access%3Dyes' target='_blank'>yes</a>
-  - *Only access to customers of the amenity*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:access' target='_blank'>toilets:access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:access%3Dcustomers' target='_blank'>customers</a>
-  - *Not accessible, even for customers of the amenity*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:access' target='_blank'>toilets:access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:access%3Dno' target='_blank'>no</a>
-  - *Accessible, but one has to ask a key to enter*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:access' target='_blank'>toilets:access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:access%3Dkey' target='_blank'>key</a>
-  - *Public access*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:access' target='_blank'>toilets:access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:access%3Dpublic' target='_blank'>public</a>
-  - _This option cannot be chosen as answer_
+The question is `What is the width of the door to the wheelchair accessible toilet?`
+This rendering asks information about the property 
+[toilets:door:width](https://wiki.openstreetmap.org/wiki/Key:toilets:door:width)
+This is rendered with `The door to the wheelchair-accessible toilet is {canonical(toilets:door:width)} wide`
 
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:wheelchair' target='_blank'>toilets:wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:wheelchair%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:wheelchair' target='_blank'>toilets:wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:wheelchair%3Ddesignated' target='_blank'>designated</a>
 
 
+### this.id
 
-### toilets-fee 
+The question is `Which kind of toilets are these?`
 
+ - *There are only seated toilets* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:position' target='_blank'>toilets:position</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:position%3Dseated' target='_blank'>seated</a>
+ - *There are only urinals here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:position' target='_blank'>toilets:position</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:position%3Durinal' target='_blank'>urinal</a>
+ - *There are only squat toilets here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:position' target='_blank'>toilets:position</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:position%3Dsquat' target='_blank'>squat</a>
+ - *Both seated toilets and urinals are available here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:position' target='_blank'>toilets:position</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:position%3Dseated;urinal' target='_blank'>seated;urinal</a>
 
+This tagrendering has labels 
+`relevant-questions`
 
-The question is  *Are these toilets free to use?*
+### this.id
 
+The question is `Is a changing table (to change diapers) available?`
 
+ - *A changing table is available* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:changing_table' target='_blank'>changing_table</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:changing_table%3Dyes' target='_blank'>yes</a>
+ - *No changing table is available* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:changing_table' target='_blank'>changing_table</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:changing_table%3Dno' target='_blank'>no</a>
 
+This tagrendering has labels 
+`relevant-questions`
 
+### this.id
 
-  - *These are paid toilets*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:fee' target='_blank'>toilets:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:fee%3Dyes' target='_blank'>yes</a>
-  - *Free to use*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:fee' target='_blank'>toilets:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:fee%3Dno' target='_blank'>no</a>
+The question is `Where is the changing table located?`
+This rendering asks information about the property 
+[changing_table:location](https://wiki.openstreetmap.org/wiki/Key:changing_table:location)
+This is rendered with `A changing table is located at {changing_table:location}`
+ - *A changing table is in the toilet for women* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:changing_table:location' target='_blank'>changing_table:location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:changing_table:location%3Dfemale_toilet' target='_blank'>female_toilet</a>
+ - *A changing table is in the toilet for men* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:changing_table:location' target='_blank'>changing_table:location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:changing_table:location%3Dmale_toilet' target='_blank'>male_toilet</a>
+ - *A changing table is in the toilet for wheelchair users* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:changing_table:location' target='_blank'>changing_table:location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:changing_table:location%3Dwheelchair_toilet' target='_blank'>wheelchair_toilet</a>
+ - *A changing table is in a dedicated room* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:changing_table:location' target='_blank'>changing_table:location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:changing_table:location%3Ddedicated_room' target='_blank'>dedicated_room</a>
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:changing_table' target='_blank'>changing_table</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:changing_table%3Dyes' target='_blank'>yes</a>
+This tagrendering has labels 
+`relevant-questions`
 
+### this.id
 
+The question is `Do these toilets have a sink to wash your hands?`
 
+ - *These toilets have a sink to wash your hands* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:handwashing' target='_blank'>toilets:handwashing</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:handwashing%3Dyes' target='_blank'>yes</a>
+ - *These toilets <b>don't</b> have a sink to wash your hands* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:handwashing' target='_blank'>toilets:handwashing</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:handwashing%3Dno' target='_blank'>no</a>
 
-### toilet-charge 
+This tagrendering has labels 
+`relevant-questions`
 
+### this.id
 
+The question is `Does one have to bring their own toilet paper to this toilet?`
 
-The question is  *How much does one have to pay for these toilets?*
+ - *This toilet is equipped with toilet paper* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:paper_supplied' target='_blank'>toilets:paper_supplied</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:paper_supplied%3Dyes' target='_blank'>yes</a>
+ - *You have to bring your own toilet paper to this toilet* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:paper_supplied' target='_blank'>toilets:paper_supplied</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:paper_supplied%3Dno' target='_blank'>no</a>
 
-This rendering asks information about the property  [toilets:charge](https://wiki.openstreetmap.org/wiki/Key:toilets:charge) This is rendered with  `The fee is {toilets:charge}`
+This tagrendering has labels 
+`relevant-questions`
 
-This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:toilets:fee' target='_blank'>toilets:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:fee%3Dyes' target='_blank'>yes</a>`
+### this.id
 
+The question is `Are free, menstrual products distributed here?`
 
+ - *Free menstrual products are available to all visitors of these toilets* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:menstrual_products' target='_blank'>toilets:menstrual_products</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:menstrual_products%3Dyes' target='_blank'>yes</a>
+ - *Free menstrual products are available to some visitors of these toilets* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:menstrual_products' target='_blank'>toilets:menstrual_products</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:menstrual_products%3Dlimited' target='_blank'>limited</a>
+ - *No free menstrual products are available here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:menstrual_products' target='_blank'>toilets:menstrual_products</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:menstrual_products%3Dno' target='_blank'>no</a>
 
-### opening_hours 
 
 
+### this.id
 
-The question is  *When is the amenity where these toilets are located open?*
+The question is `Where are the free menstrual products located?`
+This rendering asks information about the property 
+[toilets:menstrual_products:location](https://wiki.openstreetmap.org/wiki/Key:toilets:menstrual_products:location)
+This is rendered with `The menstrual products are located in {toilets:menstrual_products:location}`
+ - *The free, menstrual products are located in the toilet for women* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:menstrual_products:location' target='_blank'>toilets:menstrual_products:location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:menstrual_products:location%3Dfemale_toilet' target='_blank'>female_toilet</a>
+ - *The free, menstrual products are located in the toilet for men* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:menstrual_products:location' target='_blank'>toilets:menstrual_products:location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:menstrual_products:location%3Dmale_toilet' target='_blank'>male_toilet</a>
+ - *The free, menstrual products are located in the toilet for wheelchair users* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:menstrual_products:location' target='_blank'>toilets:menstrual_products:location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:menstrual_products:location%3Dwheelchair_toilet' target='_blank'>wheelchair_toilet</a>
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:menstrual_products' target='_blank'>toilets:menstrual_products</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:menstrual_products%3Dlimited' target='_blank'>limited</a> | toilets:menstrual_products:location~.+
 
-This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
 
+### this.id
 
+The question is `Is there still some relevant info that the previous questions did not cover? Feel free to add it here.`
+This rendering asks information about the property 
+[toilets:description](https://wiki.openstreetmap.org/wiki/Key:toilets:description)
+This is rendered with `{toilets:description}`
 
-  - *Marked as closed for an unspecified time*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>
-  - _This option cannot be chosen as answer_
 
 
 
+### this.id
 
-### toilets-wheelchair 
+_This tagrendering has no question and is thus read-only_
 
 
 
-The question is  *Is there a dedicated toilet for wheelchair users?*
 
 
+### this.id
 
+_This tagrendering has no question and is thus read-only_
 
 
-  - *There is a dedicated toilet for wheelchair users*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:wheelchair' target='_blank'>toilets:wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:wheelchair%3Dyes' target='_blank'>yes</a>
-  - *No wheelchair access*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:wheelchair' target='_blank'>toilets:wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:wheelchair%3Dno' target='_blank'>no</a>
-  - *There is only a dedicated toilet for wheelchair users*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:wheelchair' target='_blank'>toilets:wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:wheelchair%3Ddesignated' target='_blank'>designated</a>
 
+This tagrendering has labels 
+`added_by_default`
 
-
-
-### wheelchair-door-width 
-
-
-
-The question is  *What is the width of the door to the wheelchair accessible toilet?*
-
-This rendering asks information about the property  [toilets:door:width](https://wiki.openstreetmap.org/wiki/Key:toilets:door:width) This is rendered with  `The door to the wheelchair-accessible toilet is {canonical(toilets:door:width)} wide`
-
-This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:toilets:wheelchair' target='_blank'>toilets:wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:wheelchair%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:wheelchair' target='_blank'>toilets:wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:wheelchair%3Ddesignated' target='_blank'>designated</a>`
-
-
-
-### toilets-type 
-
-
-
-The question is  *Which kind of toilets are these?*
-
-
-
-
-
-  - *There are only seated toilets*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:position' target='_blank'>toilets:position</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:position%3Dseated' target='_blank'>seated</a>
-  - *There are only urinals here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:position' target='_blank'>toilets:position</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:position%3Durinal' target='_blank'>urinal</a>
-  - *There are only squat toilets here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:position' target='_blank'>toilets:position</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:position%3Dsquat' target='_blank'>squat</a>
-  - *Both seated toilets and urinals are available here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:position' target='_blank'>toilets:position</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:position%3Dseated;urinal' target='_blank'>seated;urinal</a>
-
-
-This tagrendering has labels  `relevant-questions`
-
-
-
-### toilets-changing-table 
-
-
-
-The question is  *Is a changing table (to change diapers) available?*
-
-
-
-
-
-  - *A changing table is available*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:changing_table' target='_blank'>changing_table</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:changing_table%3Dyes' target='_blank'>yes</a>
-  - *No changing table is available*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:changing_table' target='_blank'>changing_table</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:changing_table%3Dno' target='_blank'>no</a>
-
-
-This tagrendering has labels  `relevant-questions`
-
-
-
-### toilet-changing_table:location 
-
-
-
-The question is  *Where is the changing table located?*
-
-This rendering asks information about the property  [changing_table:location](https://wiki.openstreetmap.org/wiki/Key:changing_table:location) This is rendered with  `A changing table is located at {changing_table:location}`
-
-
-
-  - *A changing table is in the toilet for women*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:changing_table:location' target='_blank'>changing_table:location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:changing_table:location%3Dfemale_toilet' target='_blank'>female_toilet</a>
-  - *A changing table is in the toilet for men*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:changing_table:location' target='_blank'>changing_table:location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:changing_table:location%3Dmale_toilet' target='_blank'>male_toilet</a>
-  - *A changing table is in the toilet for wheelchair users*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:changing_table:location' target='_blank'>changing_table:location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:changing_table:location%3Dwheelchair_toilet' target='_blank'>wheelchair_toilet</a>
-  - *A changing table is in a dedicated room*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:changing_table:location' target='_blank'>changing_table:location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:changing_table:location%3Ddedicated_room' target='_blank'>dedicated_room</a>
-
-
-This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:changing_table' target='_blank'>changing_table</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:changing_table%3Dyes' target='_blank'>yes</a>`
-
-This tagrendering has labels  `relevant-questions`
-
-
-
-### toilet-handwashing 
-
-
-
-The question is  *Do these toilets have a sink to wash your hands?*
-
-
-
-
-
-  - *These toilets have a sink to wash your hands*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:handwashing' target='_blank'>toilets:handwashing</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:handwashing%3Dyes' target='_blank'>yes</a>
-  - *These toilets <b>don't</b> have a sink to wash your hands*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:handwashing' target='_blank'>toilets:handwashing</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:handwashing%3Dno' target='_blank'>no</a>
-
-
-This tagrendering has labels  `relevant-questions`
-
-
-
-### toilet-has-paper 
-
-
-
-The question is  *Does one have to bring their own toilet paper to this toilet?*
-
-
-
-
-
-  - *This toilet is equipped with toilet paper*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:paper_supplied' target='_blank'>toilets:paper_supplied</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:paper_supplied%3Dyes' target='_blank'>yes</a>
-  - *You have to bring your own toilet paper to this toilet*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:paper_supplied' target='_blank'>toilets:paper_supplied</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:paper_supplied%3Dno' target='_blank'>no</a>
-
-
-This tagrendering has labels  `relevant-questions`
-
-
-
-### menstrual_products 
-
-
-
-The question is  *Are free, menstrual products distributed here?*
-
-
-
-
-
-  - *Free menstrual products are available to all visitors of these toilets*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:menstrual_products' target='_blank'>toilets:menstrual_products</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:menstrual_products%3Dyes' target='_blank'>yes</a>
-  - *Free menstrual products are available to some visitors of these toilets*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:menstrual_products' target='_blank'>toilets:menstrual_products</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:menstrual_products%3Dlimited' target='_blank'>limited</a>
-  - *No free menstrual products are available here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:menstrual_products' target='_blank'>toilets:menstrual_products</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:menstrual_products%3Dno' target='_blank'>no</a>
-
-
-
-
-### menstrual_products_location 
-
-
-
-The question is  *Where are the free menstrual products located?*
-
-This rendering asks information about the property  [toilets:menstrual_products:location](https://wiki.openstreetmap.org/wiki/Key:toilets:menstrual_products:location) This is rendered with  `The menstrual products are located in {toilets:menstrual_products:location}`
-
-
-
-  - *The free, menstrual products are located in the toilet for women*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:menstrual_products:location' target='_blank'>toilets:menstrual_products:location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:menstrual_products:location%3Dfemale_toilet' target='_blank'>female_toilet</a>
-  - *The free, menstrual products are located in the toilet for men*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:menstrual_products:location' target='_blank'>toilets:menstrual_products:location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:menstrual_products:location%3Dmale_toilet' target='_blank'>male_toilet</a>
-  - *The free, menstrual products are located in the toilet for wheelchair users*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:menstrual_products:location' target='_blank'>toilets:menstrual_products:location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:menstrual_products:location%3Dwheelchair_toilet' target='_blank'>wheelchair_toilet</a>
-
-
-This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:toilets:menstrual_products' target='_blank'>toilets:menstrual_products</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:menstrual_products%3Dlimited' target='_blank'>limited</a> | toilets:menstrual_products:location~.+`
-
-
-
-### description 
-
-
-
-The question is  *Is there still some relevant info that the previous questions did not cover? Feel free to add it here.*
-
-This rendering asks information about the property  [toilets:description](https://wiki.openstreetmap.org/wiki/Key:toilets:description) This is rendered with  `{toilets:description}`
-
-
-
-### leftover-questions 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### lod 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### minimap 
-
-
-
+### this.id
 Shows a small map with the feature. Added by default to every popup
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### delete-button 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### last_edit 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
+
+
+### this.id
 Gives some metainfo about the last edit and who did edit it - rendering only
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:changeset~.+ & _last_edit:contributor~.+
+This tagrendering has labels 
+`added_by_default`
 
-This tagrendering has labels  `added_by_default`
+### this.id
 
-
-
-### favourite_status 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### qr_code 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has no question and is thus read-only
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has labels  `added_by_default`
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
-
-### share 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### all-tags 
-
-
-
-This tagrendering has no question and is thus read-only
 
 
 

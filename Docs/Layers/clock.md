@@ -26,26 +26,26 @@ Layer with public clocks
 1. [ Themes using this layer ](#-themes-using-this-layer-)
 2. [ Basic tags for this layer ](#-basic-tags-for-this-layer-)
 3. [ Supported attributes ](#-supported-attributes-)
-  - [just_created](#just_created)
-  - [images](#images)
-  - [support](#support)
-  - [display](#display)
-  - [visibility](#visibility)
-  - [date](#date)
-  - [thermometer](#thermometer)
-  - [barometer](#barometer)
-  - [hygrometer](#hygrometer)
-  - [faces](#faces)
-  - [leftover-questions](#leftover-questions)
-  - [lod](#lod)
-  - [minimap](#minimap)
-  - [move-button](#move-button)
-  - [delete-button](#delete-button)
-  - [last_edit](#last_edit)
-  - [favourite_status](#favourite_status)
-  - [qr_code](#qr_code)
-  - [share](#share)
-  - [all-tags](#all-tags)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
 
  Themes using this layer 
 -------------------------
@@ -96,292 +96,192 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/faces#values) [faces](https://wiki.openstreetmap.org/wiki/Key:faces) | [pnat](../SpecialInputElements.md#pnat) | [1](https://wiki.openstreetmap.org/wiki/Tag:faces%3D1) [2](https://wiki.openstreetmap.org/wiki/Tag:faces%3D2) [4](https://wiki.openstreetmap.org/wiki/Tag:faces%3D4)
 
 
-
-
-### just_created 
-
-
-
+### this.id
 This element shows a 'thank you' that the contributor has recently created this element
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
+ - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
+This tagrendering has labels 
+`added_by_default`
 
-
-
-
-
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
-
-
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### images 
-
-
-
+### this.id
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
 
 
 
 
+### this.id
 
-### support 
+The question is `In what way is the clock mounted?`
 
+ - *This clock is mounted on a pole* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:support' target='_blank'>support</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:support%3Dpole' target='_blank'>pole</a>
+ - *This clock is mounted on a wall* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:support' target='_blank'>support</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:support%3Dwall_mounted' target='_blank'>wall_mounted</a>
+ - *This clock is part of a billboard* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:support' target='_blank'>support</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:support%3Dbillboard' target='_blank'>billboard</a>
+ - *This clock is on the ground* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:support' target='_blank'>support</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:support%3Dground' target='_blank'>ground</a>
 
 
-The question is  *In what way is the clock mounted?*
 
+### this.id
 
+The question is `How does this clock display the time?`
 
+ - *This clock displays the time with hands* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:display' target='_blank'>display</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:display%3Danalog' target='_blank'>analog</a>
+ - *This clock displays the time with digits* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:display' target='_blank'>display</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:display%3Ddigital' target='_blank'>digital</a>
+ - *This clock displays the time with a sundial* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:display' target='_blank'>display</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:display%3Dsundial' target='_blank'>sundial</a>
+ - *This clock displays the time in a non-standard way, e.g using binary, water or something else* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:display' target='_blank'>display</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:display%3Dunorthodox' target='_blank'>unorthodox</a>
 
 
-  - *This clock is mounted on a pole*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:support' target='_blank'>support</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:support%3Dpole' target='_blank'>pole</a>
-  - *This clock is mounted on a wall*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:support' target='_blank'>support</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:support%3Dwall_mounted' target='_blank'>wall_mounted</a>
-  - *This clock is part of a billboard*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:support' target='_blank'>support</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:support%3Dbillboard' target='_blank'>billboard</a>
-  - *This clock is on the ground*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:support' target='_blank'>support</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:support%3Dground' target='_blank'>ground</a>
 
+### this.id
 
+The question is `How visible is this clock?`
 
+ - *This clock is visible from about 5 meters away (small wall-mounted clock)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:visibility' target='_blank'>visibility</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:visibility%3Dhouse' target='_blank'>house</a>
+ - *This clock is visible from about 20 meters away (medium size billboard clock)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:visibility' target='_blank'>visibility</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:visibility%3Dstreet' target='_blank'>street</a>
+ - *This clock is visible from more than 20 meters away (e.g. a church clock or station clock)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:visibility' target='_blank'>visibility</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:visibility%3Darea' target='_blank'>area</a>
 
-### display 
 
 
+### this.id
 
-The question is  *How does this clock display the time?*
+The question is `Does this clock also display the date?`
 
+ - *This clock also displays the date* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:date' target='_blank'>date</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:date%3Dyes' target='_blank'>yes</a>
+ - *This clock does not display the date* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:date' target='_blank'>date</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:date%3Dno' target='_blank'>no</a>
+ - *This clock does probably not display the date* corresponds with date=
+ - _This option cannot be chosen as answer_
 
 
 
+### this.id
 
-  - *This clock displays the time with hands*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:display' target='_blank'>display</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:display%3Danalog' target='_blank'>analog</a>
-  - *This clock displays the time with digits*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:display' target='_blank'>display</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:display%3Ddigital' target='_blank'>digital</a>
-  - *This clock displays the time with a sundial*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:display' target='_blank'>display</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:display%3Dsundial' target='_blank'>sundial</a>
-  - *This clock displays the time in a non-standard way, e.g using binary, water or something else*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:display' target='_blank'>display</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:display%3Dunorthodox' target='_blank'>unorthodox</a>
+The question is `Does this clock also display the temperature?`
 
+ - *This clock also displays the temperature* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:thermometer' target='_blank'>thermometer</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:thermometer%3Dyes' target='_blank'>yes</a>
+ - *This clock does not display the temperature* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:thermometer' target='_blank'>thermometer</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:thermometer%3Dno' target='_blank'>no</a>
+ - *This clock does probably not display the temperature* corresponds with thermometer=
+ - _This option cannot be chosen as answer_
 
 
 
-### visibility 
+### this.id
 
+The question is `Does this clock also display the air pressure?`
 
+ - *This clock also displays the air pressure* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:barometer' target='_blank'>barometer</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barometer%3Dyes' target='_blank'>yes</a>
+ - *This clock does not display the air pressure* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:barometer' target='_blank'>barometer</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barometer%3Dno' target='_blank'>no</a>
+ - *This clock does probably not display the air pressure* corresponds with barometer=
+ - _This option cannot be chosen as answer_
 
-The question is  *How visible is this clock?*
 
 
+### this.id
 
+The question is `Does this clock also display the humidity?`
 
+ - *This clock also displays the humidity* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:hygrometer' target='_blank'>hygrometer</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hygrometer%3Dyes' target='_blank'>yes</a>
+ - *This clock does not display the humidity* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:hygrometer' target='_blank'>hygrometer</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hygrometer%3Dno' target='_blank'>no</a>
+ - *This clock does probably not display the humidity* corresponds with hygrometer=
+ - _This option cannot be chosen as answer_
 
-  - *This clock is visible from about 5 meters away (small wall-mounted clock)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:visibility' target='_blank'>visibility</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:visibility%3Dhouse' target='_blank'>house</a>
-  - *This clock is visible from about 20 meters away (medium size billboard clock)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:visibility' target='_blank'>visibility</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:visibility%3Dstreet' target='_blank'>street</a>
-  - *This clock is visible from more than 20 meters away (e.g. a church clock or station clock)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:visibility' target='_blank'>visibility</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:visibility%3Darea' target='_blank'>area</a>
 
 
+### this.id
 
+The question is `How many faces does this clock have?`
+This rendering asks information about the property 
+[faces](https://wiki.openstreetmap.org/wiki/Key:faces)
+This is rendered with `This clock has {faces} faces`
+ - *This clock has one face* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:faces' target='_blank'>faces</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:faces%3D1' target='_blank'>1</a>
+ - *This clock has two faces* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:faces' target='_blank'>faces</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:faces%3D2' target='_blank'>2</a>
+ - *This clock has four faces* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:faces' target='_blank'>faces</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:faces%3D4' target='_blank'>4</a>
 
-### date 
 
 
+### this.id
 
-The question is  *Does this clock also display the date?*
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-  - *This clock also displays the date*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:date' target='_blank'>date</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:date%3Dyes' target='_blank'>yes</a>
-  - *This clock does not display the date*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:date' target='_blank'>date</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:date%3Dno' target='_blank'>no</a>
-  - *This clock does probably not display the date*  corresponds with  date=
-  - _This option cannot be chosen as answer_
+### this.id
 
+_This tagrendering has no question and is thus read-only_
 
 
 
-### thermometer 
+This tagrendering has labels 
+`added_by_default`
 
-
-
-The question is  *Does this clock also display the temperature?*
-
-
-
-
-
-  - *This clock also displays the temperature*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:thermometer' target='_blank'>thermometer</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:thermometer%3Dyes' target='_blank'>yes</a>
-  - *This clock does not display the temperature*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:thermometer' target='_blank'>thermometer</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:thermometer%3Dno' target='_blank'>no</a>
-  - *This clock does probably not display the temperature*  corresponds with  thermometer=
-  - _This option cannot be chosen as answer_
-
-
-
-
-### barometer 
-
-
-
-The question is  *Does this clock also display the air pressure?*
-
-
-
-
-
-  - *This clock also displays the air pressure*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:barometer' target='_blank'>barometer</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barometer%3Dyes' target='_blank'>yes</a>
-  - *This clock does not display the air pressure*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:barometer' target='_blank'>barometer</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barometer%3Dno' target='_blank'>no</a>
-  - *This clock does probably not display the air pressure*  corresponds with  barometer=
-  - _This option cannot be chosen as answer_
-
-
-
-
-### hygrometer 
-
-
-
-The question is  *Does this clock also display the humidity?*
-
-
-
-
-
-  - *This clock also displays the humidity*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:hygrometer' target='_blank'>hygrometer</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hygrometer%3Dyes' target='_blank'>yes</a>
-  - *This clock does not display the humidity*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:hygrometer' target='_blank'>hygrometer</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hygrometer%3Dno' target='_blank'>no</a>
-  - *This clock does probably not display the humidity*  corresponds with  hygrometer=
-  - _This option cannot be chosen as answer_
-
-
-
-
-### faces 
-
-
-
-The question is  *How many faces does this clock have?*
-
-This rendering asks information about the property  [faces](https://wiki.openstreetmap.org/wiki/Key:faces) This is rendered with  `This clock has {faces} faces`
-
-
-
-  - *This clock has one face*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:faces' target='_blank'>faces</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:faces%3D1' target='_blank'>1</a>
-  - *This clock has two faces*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:faces' target='_blank'>faces</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:faces%3D2' target='_blank'>2</a>
-  - *This clock has four faces*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:faces' target='_blank'>faces</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:faces%3D4' target='_blank'>4</a>
-
-
-
-
-### leftover-questions 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### lod 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### minimap 
-
-
-
+### this.id
 Shows a small map with the feature. Added by default to every popup
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### move-button 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### delete-button 
+### this.id
 
-
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
 
 
-### last_edit 
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
+
+
+### this.id
 Gives some metainfo about the last edit and who did edit it - rendering only
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:changeset~.+ & _last_edit:contributor~.+
+This tagrendering has labels 
+`added_by_default`
 
-This tagrendering has labels  `added_by_default`
+### this.id
 
-
-
-### favourite_status 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### qr_code 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has no question and is thus read-only
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has labels  `added_by_default`
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
-
-### share 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### all-tags 
-
-
-
-This tagrendering has no question and is thus read-only
 
  
 

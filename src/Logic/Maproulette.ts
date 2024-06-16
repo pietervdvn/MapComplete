@@ -1,7 +1,7 @@
 import Constants from "../Models/Constants"
 export interface MaprouletteTask {
-    name: string,
-    description: string,
+    name: string
+    description: string
     instruction: string
 }
 export default class Maproulette {

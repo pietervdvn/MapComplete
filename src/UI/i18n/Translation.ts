@@ -19,10 +19,14 @@ export class Translation extends BaseUIElement {
      */
     private _strictLanguages: boolean
 
-    constructor(translations: string | Record<string, string>, context?: string, strictLanguages?: boolean) {
+    constructor(
+        translations: string | Record<string, string>,
+        context?: string,
+        strictLanguages?: boolean
+    ) {
         super()
         this._strictLanguages = strictLanguages
-        if(strictLanguages){
+        if (strictLanguages) {
             console.log(">>> strict:", translations)
         }
         if (translations === undefined) {
@@ -85,7 +89,7 @@ export class Translation extends BaseUIElement {
      * Indicates what language is effectively returned by `current`.
      * In most cases, this will be the language of choice, but if no translation is available, this will probably be `en`
      */
-    get currentLang(): Store<string>{
+    get currentLang(): Store<string> {
         if (!this._currentLanguage) {
             this._currentLanguage = Locale.language.map(
                 (l) => this.actualLanguage(l),
@@ -100,7 +104,7 @@ export class Translation extends BaseUIElement {
 
     get current(): Store<string> {
         if (!this._current) {
-            this._current = this.currentLang.map(l => this.translations[l])
+            this._current = this.currentLang.map((l) => this.translations[l])
         }
         return this._current
     }
@@ -164,10 +168,10 @@ export class Translation extends BaseUIElement {
             return "*"
         }
         const txt = this.translations[language]
-        if(txt === undefined && this._strictLanguages){
+        if (txt === undefined && this._strictLanguages) {
             return undefined
         }
-        if (txt !== undefined ) {
+        if (txt !== undefined) {
             return language
         }
         if (this.translations["en"] !== undefined) {
@@ -186,7 +190,7 @@ export class Translation extends BaseUIElement {
     InnerConstructElement(): HTMLElement {
         const el = document.createElement("span")
         const self = this
-        if(self.txt){
+        if (self.txt) {
             el.innerHTML = self.txt
         }
         if (self.translations["*"] !== undefined) {
@@ -197,9 +201,9 @@ export class Translation extends BaseUIElement {
             if (self.isDestroyed) {
                 return true
             }
-            if(self.txt === undefined){
+            if (self.txt === undefined) {
                 el.innerHTML = ""
-            }else{
+            } else {
                 el.innerHTML = self.txt
             }
         })

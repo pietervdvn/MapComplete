@@ -91,7 +91,8 @@
           "da": "{name}",
           "cs": "{name}",
           "eu": "{name}",
-          "pl": "{name}"
+          "pl": "{name}",
+          "zh_Hant": "{name}"
         },
         "mappings": [
           {

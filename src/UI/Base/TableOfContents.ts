@@ -6,13 +6,13 @@ import { default as turndown } from "turndown"
 import { Utils } from "../../Utils"
 
 export default class TableOfContents {
-
-
     private static asLinkableId(text: string): string {
-        return text
-            ?.replace(/ /g, "-")
-            ?.replace(/[?#.;:/]/, "")
-            ?.toLowerCase() ?? ""
+        return (
+            text
+                ?.replace(/ /g, "-")
+                ?.replace(/[?#.;:/]/, "")
+                ?.toLowerCase() ?? ""
+        )
     }
 
     private static mergeLevel(
@@ -33,7 +33,7 @@ export default class TableOfContents {
             if (running.length !== undefined) {
                 result.push({
                     content: new List(running),
-                    level: maxLevel - 1
+                    level: maxLevel - 1,
                 })
                 running = []
             }
@@ -42,7 +42,7 @@ export default class TableOfContents {
         if (running.length !== undefined) {
             result.push({
                 content: new List(running),
-                level: maxLevel - 1
+                level: maxLevel - 1,
             })
         }
 
@@ -56,13 +56,16 @@ export default class TableOfContents {
         const firstTitle = structure[1]
         let minDepth = undefined
         do {
-            minDepth = Math.min(...structure.map(s => s.depth))
-            const minDepthCount = structure.filter(s => s.depth === minDepth)
+            minDepth = Math.min(...structure.map((s) => s.depth))
+            const minDepthCount = structure.filter((s) => s.depth === minDepth)
             if (minDepthCount.length > 1) {
                 break
             }
             // Erase a single top level heading
-            structure.splice(structure.findIndex(s => s.depth === minDepth), 1)
+            structure.splice(
+                structure.findIndex((s) => s.depth === minDepth),
+                1
+            )
         } while (structure.length > 0)
 
         if (structure.length <= 1) {
@@ -71,7 +74,7 @@ export default class TableOfContents {
         const separators = {
             1: "  -",
             2: "    +",
-            3: "       *"
+            3: "       *",
         }
 
         let toc = ""
@@ -96,15 +99,16 @@ export default class TableOfContents {
         const splitPoint = intro.lastIndexOf("\n")
 
         return md.substring(0, splitPoint) + toc + md.substring(splitPoint)
-
     }
 
-    public static generateStructure(html: Element): { depth: number, title: string, el: Element }[] {
+    public static generateStructure(
+        html: Element
+    ): { depth: number; title: string; el: Element }[] {
         if (html === undefined) {
             return []
         }
-        return [].concat(...Array.from(html.childNodes ?? []).map(
-            child => {
+        return [].concat(
+            ...Array.from(html.childNodes ?? []).map((child) => {
                 const tag: string = child["tagName"]?.toLowerCase()
                 if (!tag) {
                     return []
@@ -114,7 +118,7 @@ export default class TableOfContents {
                     return [{ depth, title: child.textContent, el: child }]
                 }
                 return TableOfContents.generateStructure(<Element>child)
-            }
-        ))
+            })
+        )
     }
 }

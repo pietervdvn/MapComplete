@@ -504,7 +504,8 @@
           "if": "__featureSwitchMorePrivacy=true",
           "then": {
             "en": "This theme is sensitive. Making changes will not indicate if you were nearby explicitly.",
-            "de": "Dieses Thema ist sensibel. Wenn du Änderungen vornimmst, wird nicht angezeigt, ob du explizit in der Nähe warst."
+            "de": "Dieses Thema ist sensibel. Wenn du Änderungen vornimmst, wird nicht angezeigt, ob du explizit in der Nähe warst.",
+            "nl": "Dit thema ligt gevoelig. Wijzigingen aan objecten zullen niet aangeven of je in de buurt was."
           }
         }
       ]
@@ -513,25 +514,29 @@
       "id": "more_privacy",
       "question": {
         "en": "When making changes, should a rough indication be given how far away you were from the object?",
-        "de": "Sollte bei Änderungen eine grobe Angabe gemacht werden, wie weit du vom Objekt entfernt warst?"
+        "de": "Sollte bei Änderungen eine grobe Angabe gemacht werden, wie weit du vom Objekt entfernt warst?",
+        "nl": "Mag er opgeslaan worden hoever je je van een object bevindt wanneer je aanpassingen maakt aan dit object?"
       },
       "questionHint": {
         "en": "If you make a change to one or more objects and you enabled your location, a rough indication of where you made will be saved: it is indicated if you were closer then 25m, 500m, 5km or further away then 5km. This helps mappers understand your context when making changes, but gives an indication of where you were at this time. ",
-        "de": "Wenn du eine Änderung an einem oder mehreren Objekten vornimmst und deinen Standort aktivierst, wird eine ungefähre Angabe darüber gespeichert, wo du dich befunden hast: Es wird angezeigt, ob du näher als 25m, 500m, 5km oder weiter als 5km entfernt warst. Das hilft den Kartierern, deinen Kontext zu verstehen, wenn du Änderungen vornimmst, gibt aber auch einen Hinweis darauf, wo du zu diesem Zeitpunkt warst. "
+        "de": "Wenn du eine Änderung an einem oder mehreren Objekten vornimmst und deinen Standort aktivierst, wird eine ungefähre Angabe darüber gespeichert, wo du dich befunden hast: Es wird angezeigt, ob du näher als 25m, 500m, 5km oder weiter als 5km entfernt warst. Das hilft den Kartierern, deinen Kontext zu verstehen, wenn du Änderungen vornimmst, gibt aber auch einen Hinweis darauf, wo du zu diesem Zeitpunkt warst. ",
+        "nl": "Wanneer je een wijziging maakt aan één of meer interessepunten en als MapComplete toont waar je bent, dan kan opgeslaan worden hoever je je ongeveer van deze objecten bevindt. Er wordt aangeduid of je dichter dan 25m, 500m, 5km of verder dan 5km was. Dit helpt om andere bijdragers te begrijpen hoe je je bijdragen deed, maar geeft natuurlijk ook aan waar je op dat moment was. "
       },
       "mappings": [
         {
           "if": "mapcomplete-more_privacy=yes",
           "then": {
             "en": "When making changes to OpenStreetMap, do not indicate how far away you were from the changed objects.",
-            "de": "Wenn du Änderungen an OpenStreetMap vornimmst, gibst du nicht an, wie weit du von den geänderten Objekten entfernt warst."
+            "de": "Wenn du Änderungen an OpenStreetMap vornimmst, gibst du nicht an, wie weit du von den geänderten Objekten entfernt warst.",
+            "nl": "Geef niet aan hoever je je van de gewijzigde objecten bevindt wanneer je wijzigingen maakt met MapComplete."
           }
         },
         {
           "if": "mapcomplete-more_privacy=no",
           "then": {
             "en": "When making changes to OpenStreetMap, roughly indicate how far away you were from the changed objects. This helps other contributors to understand how you made the change",
-            "de": "Wenn du Änderungen an OpenStreetMap vornimmst, gib grob an, wie weit du von den geänderten Objekten entfernt warst. Das hilft anderen Mitwirkenden zu verstehen, wie du die Änderung vorgenommen hast."
+            "de": "Wenn du Änderungen an OpenStreetMap vornimmst, gib grob an, wie weit du von den geänderten Objekten entfernt warst. Das hilft anderen Mitwirkenden zu verstehen, wie du die Änderung vorgenommen hast.",
+            "nl": "Geef aan hoever je je ongeveer bevindt ten opzichte van objecten die je wijzigt in OpenStreetMap. Dit helpt andere bijdagers te begrijpen welke wijzigingen je waarom maakt."
           }
         }
       ]
@@ -575,7 +580,8 @@
         },
         "after": {
           "en": "Uploading a private key erases your current private key. If you made reviews with it, download your current private key first",
-          "de": "Wenn du einen privaten Schlüssel hochlädst, wird dein aktueller privater Schlüssel gelöscht. Wenn du damit Rezensionen geschrieben hast, lade zuerst deinen aktuellen privaten Schlüssel hoch"
+          "de": "Wenn du einen privaten Schlüssel hochlädst, wird dein aktueller privater Schlüssel gelöscht. Wenn du damit Rezensionen geschrieben hast, lade zuerst deinen aktuellen privaten Schlüssel hoch",
+          "nl": "Een private sleutel uploaden overschrijft je huidige private sleutel. Indien je beoordelingen maakte met je huidige private sleutel, download deze dan eerst"
         }
       }
     },

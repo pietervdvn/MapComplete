@@ -33,16 +33,16 @@ async function main(args: string[]) {
         const json = JSON.parse(rawContents)
         Utils.WalkPath(path, json, (found) => {
             removedLanguages.push(file)
-            console.log("Removing ",found)
+            console.log("Removing ", found)
             return undefined
         })
         const lastChar = rawContents.endsWith("\n") ? "\n" : ""
         fs.writeFileSync(file, JSON.stringify(json, null, "    ") + lastChar)
     }
-    if(removedLanguages.length === 0){
-     console.warn("No items removed. Doublecheck the paths")
-    }else{
-    console.log("Removed items in "+removedLanguages.join(", "))
+    if (removedLanguages.length === 0) {
+        console.warn("No items removed. Doublecheck the paths")
+    } else {
+        console.log("Removed items in " + removedLanguages.join(", "))
     }
 }
 

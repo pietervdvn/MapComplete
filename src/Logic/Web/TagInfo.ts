@@ -19,10 +19,10 @@ export interface TagInfoStats {
 }
 
 interface GeofabrikCountryProperties {
-    id: string,
-    parent: string | "europe" | "asia",
-    urls: string[],
-    name: string,
+    id: string
+    parent: string | "europe" | "asia"
+    urls: string[]
+    name: string
     "iso3166-1:alpha2": string[]
 }
 
@@ -38,7 +38,9 @@ export default class TagInfo {
     public async getStats(key: string, value?: string): Promise<TagInfoStats> {
         let url: string
         if (value) {
-            url = `${this._backend}api/4/tag/stats?key=${encodeURIComponent(key)}&value=${encodeURIComponent(value)}`
+            url = `${this._backend}api/4/tag/stats?key=${encodeURIComponent(
+                key
+            )}&value=${encodeURIComponent(value)}`
         } else {
             url = `${this._backend}api/4/key/stats?key=${encodeURIComponent(key)}`
         }
@@ -65,8 +67,13 @@ export default class TagInfo {
         if (TagInfo._geofabrikCountries) {
             return TagInfo._geofabrikCountries
         }
-        const countriesFC: FeatureCollection = await Utils.downloadJsonCached<FeatureCollection>("https://download.geofabrik.de/index-v1-nogeom.json", 24 * 1000 * 60 * 60)
-        TagInfo._geofabrikCountries = countriesFC.features.map(f => <GeofabrikCountryProperties>f.properties)
+        const countriesFC: FeatureCollection = await Utils.downloadJsonCached<FeatureCollection>(
+            "https://download.geofabrik.de/index-v1-nogeom.json",
+            24 * 1000 * 60 * 60
+        )
+        TagInfo._geofabrikCountries = countriesFC.features.map(
+            (f) => <GeofabrikCountryProperties>f.properties
+        )
         return TagInfo._geofabrikCountries
     }
 
@@ -80,7 +87,7 @@ export default class TagInfo {
     public static async getInstanceFor(countryCode: string) {
         const countries = await this.geofabrikCountries()
         countryCode = countryCode.toUpperCase()
-        const country = countries.find(c => c["iso3166-1:alpha2"]?.indexOf(countryCode) >= 0)
+        const country = countries.find((c) => c["iso3166-1:alpha2"]?.indexOf(countryCode) >= 0)
         if (!country || !country?.parent || !country?.id) {
             return undefined
         }
@@ -88,7 +95,11 @@ export default class TagInfo {
         return new TagInfo(url)
     }
 
-    private static async getDistributionsFor(countryCode: string, key: string, value?: string): Promise<TagInfoStats>{
+    private static async getDistributionsFor(
+        countryCode: string,
+        key: string,
+        value?: string
+    ): Promise<TagInfoStats> {
         if (!countryCode) {
             return undefined
         }
@@ -99,24 +110,30 @@ export default class TagInfo {
         try {
             return await ti.getStats(key, value)
         } catch (e) {
-            console.warn("Could not fetch info for", countryCode,key,value, "due to", e)
+            console.warn("Could not fetch info for", countryCode, key, value, "due to", e)
             return undefined
         }
     }
-    private static readonly blacklist =["VI","GF","PR"]
+    private static readonly blacklist = ["VI", "GF", "PR"]
 
-    public static async getGlobalDistributionsFor(key: string, value?: string): Promise<Record<string, TagInfoStats>> {
+    public static async getGlobalDistributionsFor(
+        key: string,
+        value?: string
+    ): Promise<Record<string, TagInfoStats>> {
         const countriesAll = await this.geofabrikCountries()
-        const countries = countriesAll.map(c => c["iso3166-1:alpha2"]?.[0]).filter(c => !!c && TagInfo.blacklist.indexOf(c) < 0)
+        const countries = countriesAll
+            .map((c) => c["iso3166-1:alpha2"]?.[0])
+            .filter((c) => !!c && TagInfo.blacklist.indexOf(c) < 0)
         const perCountry: Record<string, TagInfoStats> = {}
-        const results = await Promise.all(countries.map(country => TagInfo.getDistributionsFor(country, key, value)))
-        for (let i = 0; i < countries.length; i++){
+        const results = await Promise.all(
+            countries.map((country) => TagInfo.getDistributionsFor(country, key, value))
+        )
+        for (let i = 0; i < countries.length; i++) {
             const countryCode = countries[i]
-            if(results[i]){
-             perCountry[countryCode] = results[i]
+            if (results[i]) {
+                perCountry[countryCode] = results[i]
             }
         }
         return perCountry
     }
-
 }

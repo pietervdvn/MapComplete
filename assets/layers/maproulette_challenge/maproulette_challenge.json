@@ -114,7 +114,8 @@
             "de": "Aufgabe wurde erstellt",
             "nl": "Taak is aangemaakt",
             "ca": "La tasca s'ha creat",
-            "cs": "Úkol je vytvořen"
+            "cs": "Úkol je vytvořen",
+            "pl": "Zadanie jest stworzone"
           }
         },
         {
@@ -273,7 +274,8 @@
             "de": "Aufgaben anzeigen, die als zu schwierig markiert wurden",
             "nl": "Toon taken die als te moeilijk waren ervaren",
             "ca": "Mostra les tasques marcades com a massa difícils",
-            "cs": "Zobrazit úkoly, které jsou označeny jako příliš těžké"
+            "cs": "Zobrazit úkoly, které jsou označeny jako příliš těžké",
+            "pl": "Pokaż zadania, które są oznaczone jako zbyt trudne"
           },
           "osmTags": "mr_taskStatus=Too hard"
         },
@@ -283,7 +285,8 @@
             "de": "Aufgaben anzeigen, die deaktiviert wurden",
             "nl": "Toon taken die zijn uitgeschakeld",
             "ca": "Mostra tasques que s'han desactivat",
-            "cs": "Zobrazit úkoly, které jsou zakázány"
+            "cs": "Zobrazit úkoly, které jsou zakázány",
+            "pl": "Pokaż zadania, które są wyłączone"
           },
           "osmTags": "mr_taskStatus=Disabled"
         }

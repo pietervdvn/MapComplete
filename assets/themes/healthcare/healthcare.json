@@ -13,7 +13,8 @@
     "ru": "Здравоохранение",
     "es": "Atención sanitaria",
     "eu": "Osasun laguntza",
-    "pl": "Służba zdrowia"
+    "pl": "Służba zdrowia",
+    "zh_Hant": "醫療保健"
   },
   "description": {
     "en": "On this map, various healthcare related items are shown",
@@ -86,7 +87,8 @@
               "ca": "una òptica",
               "fr": "un opticien",
               "nl": "een optieker",
-              "pl": "optyk"
+              "pl": "optyk",
+              "zh_Hant": "配鏡師"
             },
             "tags": [
               "shop=optician"

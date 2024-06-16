@@ -93,7 +93,8 @@
         "nl": "Voetgangersoversteekplaats",
         "fr": "Passage piéton",
         "ca": "Pas de vianants",
-        "cs": "Přechod pro chodce"
+        "cs": "Přechod pro chodce",
+        "pl": "Przejście dla pieszych"
       },
       "snapToLayer": [
         "cycleways_and_roads"

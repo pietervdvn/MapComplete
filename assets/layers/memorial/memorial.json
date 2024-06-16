@@ -3,7 +3,8 @@
   "name": {
     "en": "Memorials",
     "de": "Denkmäler",
-    "fr": "Mémoriaux"
+    "fr": "Mémoriaux",
+    "nl": "Gedenktekens"
   },
   "description": "Layer showing memorial plaques, based upon a unofficial theme. Can be expanded to have multiple types of memorials later on",
   "source": {
@@ -76,10 +77,12 @@
       "title": {
         "en": "a memorial",
         "de": "ein Denkmal",
-        "fr": "un mémorial"
+        "fr": "un mémorial",
+        "nl": "een gedenkteken"
       },
       "description": {
-        "en": "A memorial is a physical object which remembers a person or event."
+        "en": "A memorial is a physical object which remembers a person or event.",
+        "de": "Ein Mahnmal ist ein physischer Gegenstand, der an eine Person oder ein Ereignis erinnert."
       },
       "tags": [
         "historic=memorial"
@@ -101,7 +104,8 @@
           "then": {
             "en": "This is a statue",
             "de": "Das ist eine Statue",
-            "fr": "C'est une statue"
+            "fr": "C'est une statue",
+            "nl": "Dit is een standbeeld"
           },
           "addExtraTags": [
             "tourism=artwork",
@@ -121,7 +125,8 @@
           "then": {
             "en": "This is a commemorative bench",
             "de": "Dies ist eine Gedenkbank",
-            "fr": "C'est un banc commémoratif"
+            "fr": "C'est un banc commémoratif",
+            "nl": "Dit is een zitbank die ook als herdenking dienst doet"
           },
           "addExtraTags": [
             "amenity=bench"
@@ -132,7 +137,8 @@
           "then": {
             "en": "This is a ghost bike - a bicycle painted white to remember a cyclist whom deceased because of a car crash",
             "de": "Dies ist ein Geisterrad - ein Fahrrad weiß lackiert, um an einen Radfahrer zu erinnern, der wegen eines Autounfalls verstorben ist",
-            "fr": "C'est un vélo fantôme - un vélo blanc peint en mémoire d'un cycliste mort à cet endroit suite à un accident avec une voiture"
+            "fr": "C'est un vélo fantôme - un vélo blanc peint en mémoire d'un cycliste mort à cet endroit suite à un accident avec une voiture",
+            "nl": "Dit is een witte fiets of spookfiets - een witgeschilderede fiets die een omgekomen fietsen herdenkt"
           }
         },
         {
@@ -141,7 +147,8 @@
           "then": {
             "en": "This is a stolperstein (stumbing stone)",
             "de": "Dies ist ein Stolperstein",
-            "fr": "C'est un stolperstein (pierre d'achoppement)"
+            "fr": "C'est un stolperstein (pierre d'achoppement)",
+            "nl": "Dit is een struikelsteen (stolperstein)"
           }
         },
         {
@@ -173,7 +180,8 @@
           "then": {
             "en": "This is a sculpture",
             "de": "Dies ist eine Skulptur",
-            "fr": "C'est une sculpture"
+            "fr": "C'est une sculpture",
+            "nl": "Dit is een sculptuur"
           }
         },
         {
@@ -191,7 +199,9 @@
             "en": "This is a cross",
             "de": "Das ist ein Kreuz",
             "es": "Es una cruz",
-            "fr": "C'est une croix"
+            "fr": "C'est une croix",
+            "nl": "Dit is een kruis",
+            "pl": "To jest krzyż"
           }
         },
         {
@@ -208,7 +218,8 @@
           "then": {
             "en": "This is a historic tank, permanently placed in public space as memorial",
             "de": "Dies ist ein historischer Panzer, der permanent in den öffentlichen Raum als Denkmal platziert wurde",
-            "fr": "C'est un char historique, placé de manière permanente dans l'espace public comme mémorial"
+            "fr": "C'est un char historique, placé de manière permanente dans l'espace public comme mémorial",
+            "nl": "Dit is een historische tank, permanent in de publieke ruimte geplaatst als gedenkteken"
           }
         },
         {
@@ -225,7 +236,8 @@
         {
           "if": "historic=tomb",
           "then": {
-            "en": "This is a gravestone; the person is buried here"
+            "en": "This is a gravestone; the person is buried here",
+            "de": "Dies ist ein Grabstein; die Person ist hier begraben"
           },
           "addExtraTags": [
             "memorial="
@@ -244,19 +256,20 @@
     {
       "id": "inscription",
       "question": {
-        "en": "What is the inscription of this plaque?",
+        "en": "What is the inscription on this memorial?",
         "ca": "Quina és la inscripció d'aquesta placa?",
         "cs": "Jaký je nápis na této desce?",
-        "de": "Wie lautet die Inschrift auf dieser Gedenktafel?",
-        "fr": "Quelle est l'inscription sur cette plaque ?"
+        "de": "Wie lautet die Inschrift auf diesem Denkmal?",
+        "fr": "Quelle est l'inscription sur cette plaque ?",
+        "nl": "Wat is het opschrift van dit gedenkteken?"
       },
       "#:condition": "Benches have a separate inscription question",
       "condition": "memorial!=bench",
       "render": {
-        "en": "The inscription on this plaque reads: <p><i>{inscription}<i></p>",
+        "en": "The inscription on this memorial reads: <p><i>{inscription}<i></p>",
         "ca": "La inscripció d'aquesta placa diu: <p><i>{inscription}<i></p>",
         "cs": "Nápis na této desce zní: <p><i>{inscription}<i></p>",
-        "de": "Die Inschrift auf dieser Gedenktafel lautet: <p><i>{inscription}<i></p>",
+        "de": "Die Inschrift auf diesem Denkmal lautet: <p><i>{inscription}<i></p>",
         "fr": "L'inscription sur cette plaque indique: <p><i>{inscription}<i></p>"
       },
       "freeform": {
@@ -269,7 +282,8 @@
           "then": {
             "en": "This memorial does not have an inscription",
             "de": "Dieses Denkmal hat keine Inschrift",
-            "fr": "Il n'y a aucune inscription sur cette plaque"
+            "fr": "Il n'y a aucune inscription sur cette plaque",
+            "nl": "Dit gedenkteken heeft geen opschrift"
           },
           "addExtraTags": [
             "inscription="

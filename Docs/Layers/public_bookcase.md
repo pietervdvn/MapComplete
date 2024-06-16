@@ -25,28 +25,28 @@ A streetside cabinet with books, accessible to anyone
 1. [ Themes using this layer ](#-themes-using-this-layer-)
 2. [ Basic tags for this layer ](#-basic-tags-for-this-layer-)
 3. [ Supported attributes ](#-supported-attributes-)
-  - [just_created](#just_created)
-  - [images](#images)
-  - [public_bookcase-name](#public_bookcase-name)
-  - [public_bookcase-capacity](#public_bookcase-capacity)
-  - [bookcase-booktypes](#bookcase-booktypes)
-  - [bookcase-is-indoors](#bookcase-is-indoors)
-  - [bookcase-is-accessible](#bookcase-is-accessible)
-  - [public_bookcase-operator](#public_bookcase-operator)
-  - [public_bookcase-brand](#public_bookcase-brand)
-  - [public_bookcase-ref](#public_bookcase-ref)
-  - [public_bookcase-start_date](#public_bookcase-start_date)
-  - [public_bookcase-website](#public_bookcase-website)
-  - [leftover-questions](#leftover-questions)
-  - [lod](#lod)
-  - [minimap](#minimap)
-  - [move-button](#move-button)
-  - [delete-button](#delete-button)
-  - [last_edit](#last_edit)
-  - [favourite_status](#favourite_status)
-  - [qr_code](#qr_code)
-  - [share](#share)
-  - [all-tags](#all-tags)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
     + [Filters](#filters)
 
  Themes using this layer 
@@ -93,296 +93,211 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/indoor#values) [indoor](https://wiki.openstreetmap.org/wiki/Key:indoor) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dno)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/access#values) [access](https://wiki.openstreetmap.org/wiki/Key:access) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes) [customers](https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/operator#values) [operator](https://wiki.openstreetmap.org/wiki/Key:operator) | [string](../SpecialInputElements.md#string) | 
-[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/brand#values) [brand](https://wiki.openstreetmap.org/wiki/Key:brand) | [string](../SpecialInputElements.md#string) | [Little Free Library](https://wiki.openstreetmap.org/wiki/Tag:brand%3DLittle Free Library) [](https://wiki.openstreetmap.org/wiki/Tag:brand%3D)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/brand#values) [brand](https://wiki.openstreetmap.org/wiki/Key:brand) | [string](../SpecialInputElements.md#string) | 
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/ref#values) [ref](https://wiki.openstreetmap.org/wiki/Key:ref) | [string](../SpecialInputElements.md#string) | [](https://wiki.openstreetmap.org/wiki/Tag:ref%3D)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/start_date#values) [start_date](https://wiki.openstreetmap.org/wiki/Key:start_date) | [date](../SpecialInputElements.md#date) | 
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/website#values) [website](https://wiki.openstreetmap.org/wiki/Key:website) | [url](../SpecialInputElements.md#url) | 
 
 
-
-
-### just_created 
-
-
-
+### this.id
 This element shows a 'thank you' that the contributor has recently created this element
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
+ - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
+This tagrendering has labels 
+`added_by_default`
 
-
-
-
-
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
-
-
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### images 
-
-
-
+### this.id
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
 
 
 
 
+### this.id
 
-### public_bookcase-name 
+The question is `What is the name of this public bookcase?`
+This rendering asks information about the property 
+[name](https://wiki.openstreetmap.org/wiki/Key:name)
+This is rendered with `The name of this bookcase is {name}`
+ - *This bookcase doesn't have a name* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:noname' target='_blank'>noname</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:noname%3Dyes' target='_blank'>yes</a> & name=
 
 
 
-The question is  *What is the name of this public bookcase?*
+### this.id
 
-This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) This is rendered with  `The name of this bookcase is {name}`
+The question is `How many books fit into this public bookcase?`
+This rendering asks information about the property 
+[capacity](https://wiki.openstreetmap.org/wiki/Key:capacity)
+This is rendered with `{capacity} books fit in this bookcase`
 
 
 
-  - *This bookcase doesn't have a name*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:noname' target='_blank'>noname</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:noname%3Dyes' target='_blank'>yes</a> & name=
 
+### this.id
 
+The question is `What kind of books can be found in this public bookcase?`
+This rendering asks information about the property 
+[books](https://wiki.openstreetmap.org/wiki/Key:books)
+This is rendered with `This place mostly serves {books}`
+ - *Mostly children books* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:books' target='_blank'>books</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:books%3Dchildren' target='_blank'>children</a>
+ - *Mostly books for adults* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:books' target='_blank'>books</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:books%3Dadults' target='_blank'>adults</a>
 
 
-### public_bookcase-capacity 
 
+### this.id
 
+The question is `Is this bookcase located outdoors?`
 
-The question is  *How many books fit into this public bookcase?*
+ - *This bookcase is located indoors* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dyes' target='_blank'>yes</a>
+ - *This bookcase is located outdoors* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dno' target='_blank'>no</a>
+ - *This bookcase is located outdoors* corresponds with indoor=
+ - _This option cannot be chosen as answer_
 
-This rendering asks information about the property  [capacity](https://wiki.openstreetmap.org/wiki/Key:capacity) This is rendered with  `{capacity} books fit in this bookcase`
 
 
+### this.id
 
-### bookcase-booktypes 
+The question is `Is this public bookcase freely accessible?`
 
+ - *Publicly accessible* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>
+ - *Only accessible to customers* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers' target='_blank'>customers</a>
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dyes' target='_blank'>yes</a>
 
 
-The question is  *What kind of books can be found in this public bookcase?*
+### this.id
 
-This rendering asks information about the property  [books](https://wiki.openstreetmap.org/wiki/Key:books) This is rendered with  `This place mostly serves {books}`
+The question is `Who maintains this public bookcase?`
+This rendering asks information about the property 
+[operator](https://wiki.openstreetmap.org/wiki/Key:operator)
+This is rendered with `Operated by {operator}`
 
 
 
-  - *Mostly children books*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:books' target='_blank'>books</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:books%3Dchildren' target='_blank'>children</a>
-  - *Mostly books for adults*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:books' target='_blank'>books</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:books%3Dadults' target='_blank'>adults</a>
 
+### this.id
 
+The question is `Is this public bookcase part of a bigger network?`
+This rendering asks information about the property 
+[brand](https://wiki.openstreetmap.org/wiki/Key:brand)
+This is rendered with `This public bookcase is part of {brand}`
+ - *This public bookcase is not part of a bigger network* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:nobrand' target='_blank'>nobrand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:nobrand%3Dyes' target='_blank'>yes</a>
 
 
-### bookcase-is-indoors 
 
+### this.id
 
+The question is `What is the reference number of this public bookcase?`
+This rendering asks information about the property 
+[ref](https://wiki.openstreetmap.org/wiki/Key:ref)
+This is rendered with `The reference number of this public bookcase within {brand} is {ref}`
+ - *This bookcase is not part of a bigger network* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:nobrand' target='_blank'>nobrand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:nobrand%3Dyes' target='_blank'>yes</a> & brand= & ref=
+This tagrendering is only visible in the popup if the following condition is met: brand~.+
 
-The question is  *Is this bookcase located outdoors?*
 
+### this.id
 
+The question is `When was this public bookcase installed?`
+This rendering asks information about the property 
+[start_date](https://wiki.openstreetmap.org/wiki/Key:start_date)
+This is rendered with `Installed on {start_date}`
 
 
 
-  - *This bookcase is located indoors*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dyes' target='_blank'>yes</a>
-  - *This bookcase is located outdoors*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dno' target='_blank'>no</a>
-  - *This bookcase is located outdoors*  corresponds with  indoor=
-  - _This option cannot be chosen as answer_
 
+### this.id
 
+The question is `Is there a website with more information about this public bookcase?`
+This rendering asks information about the property 
+[website](https://wiki.openstreetmap.org/wiki/Key:website)
+This is rendered with `{link(More info on the website,&LBRACEwebsite&RBRACE,,,)}`
 
 
-### bookcase-is-accessible 
 
 
+### this.id
 
-The question is  *Is this public bookcase freely accessible?*
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-  - *Publicly accessible*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>
-  - *Only accessible to customers*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers' target='_blank'>customers</a>
+### this.id
 
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dyes' target='_blank'>yes</a>`
 
 
+This tagrendering has labels 
+`added_by_default`
 
-### public_bookcase-operator 
-
-
-
-The question is  *Who maintains this public bookcase?*
-
-This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) This is rendered with  `Operated by {operator}`
-
-
-
-### public_bookcase-brand 
-
-
-
-The question is  *Is this public bookcase part of a bigger network?*
-
-This rendering asks information about the property  [brand](https://wiki.openstreetmap.org/wiki/Key:brand) This is rendered with  `This public bookcase is part of {brand}`
-
-
-
-  - *Part of the network 'Little Free Library'*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:brand' target='_blank'>brand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:brand%3DLittle Free Library' target='_blank'>Little Free Library</a> & nobrand=
-  - *This public bookcase is not part of a bigger network*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:nobrand' target='_blank'>nobrand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:nobrand%3Dyes' target='_blank'>yes</a> & brand=
-
-
-
-
-### public_bookcase-ref 
-
-
-
-The question is  *What is the reference number of this public bookcase?*
-
-This rendering asks information about the property  [ref](https://wiki.openstreetmap.org/wiki/Key:ref) This is rendered with  `The reference number of this public bookcase within {brand} is {ref}`
-
-
-
-  - *This bookcase is not part of a bigger network*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:nobrand' target='_blank'>nobrand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:nobrand%3Dyes' target='_blank'>yes</a> & brand= & ref=
-
-
-This tagrendering is only visible in the popup if the following condition is met: `brand~.+`
-
-
-
-### public_bookcase-start_date 
-
-
-
-The question is  *When was this public bookcase installed?*
-
-This rendering asks information about the property  [start_date](https://wiki.openstreetmap.org/wiki/Key:start_date) This is rendered with  `Installed on {start_date}`
-
-
-
-### public_bookcase-website 
-
-
-
-The question is  *Is there a website with more information about this public bookcase?*
-
-This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) This is rendered with  `{link(More info on the website,&LBRACEwebsite&RBRACE,,,)}`
-
-
-
-### leftover-questions 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### lod 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### minimap 
-
-
-
+### this.id
 Shows a small map with the feature. Added by default to every popup
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### move-button 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### delete-button 
+### this.id
 
-
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
 
 
-### last_edit 
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
+
+
+### this.id
 Gives some metainfo about the last edit and who did edit it - rendering only
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:changeset~.+ & _last_edit:contributor~.+
+This tagrendering has labels 
+`added_by_default`
 
-This tagrendering has labels  `added_by_default`
+### this.id
 
-
-
-### favourite_status 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### qr_code 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has no question and is thus read-only
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has labels  `added_by_default`
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
-
-### share 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### all-tags 
-
-
-
-This tagrendering has no question and is thus read-only
 
 
 

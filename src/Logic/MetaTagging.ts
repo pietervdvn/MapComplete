@@ -27,16 +27,16 @@ export default class MetaTagging {
         ((feature: Feature, propertiesStore: UIEventSource<any>) => void)[]
     >()
     private state: {
-        readonly selectedElement: Store<Feature>;
-        readonly layout: LayoutConfig;
-        readonly osmObjectDownloader: OsmObjectDownloader;
-        readonly perLayer: ReadonlyMap<string, GeoIndexedStoreForLayer>;
-        readonly indexedFeatures: IndexedFeatureSource;
+        readonly selectedElement: Store<Feature>
+        readonly layout: LayoutConfig
+        readonly osmObjectDownloader: OsmObjectDownloader
+        readonly perLayer: ReadonlyMap<string, GeoIndexedStoreForLayer>
+        readonly indexedFeatures: IndexedFeatureSource
         readonly featureProperties: FeaturePropertiesStore
     }
     private params: {
-        getFeatureById: (id) => Feature;
-        getFeaturesWithin: (layerId, bbox) => (Feature[][] | [Feature[]])
+        getFeatureById: (id) => Feature
+        getFeaturesWithin: (layerId, bbox) => Feature[][] | [Feature[]]
     }
 
     constructor(state: {
@@ -48,7 +48,7 @@ export default class MetaTagging {
         readonly featureProperties: FeaturePropertiesStore
     }) {
         this.state = state
-        const params = this.params = MetaTagging.createExtraFuncParams(state)
+        const params = (this.params = MetaTagging.createExtraFuncParams(state))
         for (const layer of state.layout.layers) {
             if (layer.source === null) {
                 continue
@@ -78,7 +78,7 @@ export default class MetaTagging {
         }
 
         // Force update the tags of the currently selected element
-        state.selectedElement.addCallbackAndRunD(feature => {
+        state.selectedElement.addCallbackAndRunD((feature) => {
             this.updateCurrentSelectedElement()
             let lastUpdateMoment = new Date()
             const tags = state?.featureProperties?.getStore(feature.properties.id)
@@ -86,22 +86,19 @@ export default class MetaTagging {
             tags?.addCallbackD(() => {
                 console.log("Received an update! Re-calculating the metatags")
 
-                if(feature !== state.selectedElement.data){
+                if (feature !== state.selectedElement.data) {
                     return true // Unregister, we are not the selected element anymore
                 }
-                if(new Date().getTime() - lastUpdateMoment.getTime() < 250){
+                if (new Date().getTime() - lastUpdateMoment.getTime() < 250) {
                     return
                 }
                 lastUpdateMoment = new Date()
                 window.requestIdleCallback(() => {
                     this.updateCurrentSelectedElement()
                     lastUpdateMoment = new Date()
-
                 })
             })
         })
-
-
     }
 
     /**
@@ -125,7 +122,7 @@ export default class MetaTagging {
             state.featureProperties,
             {
                 includeDates: !lightUpdate,
-                evaluateStrict: !lightUpdate
+                evaluateStrict: !lightUpdate,
             }
         )
     }
@@ -209,8 +206,13 @@ export default class MetaTagging {
                             // All keys are defined - lets skip!
                             continue
                         }
-                        const shouldPing = metatag.applyMetaTagsOnFeature(feature, layer, tags, state)
-                        if(!shouldPing){
+                        const shouldPing = metatag.applyMetaTagsOnFeature(
+                            feature,
+                            layer,
+                            tags,
+                            state
+                        )
+                        if (!shouldPing) {
                             continue
                         }
                         somethingChanged = true
@@ -291,7 +293,7 @@ export default class MetaTagging {
                     return []
                 }
                 return [state.perLayer.get(layerId).GetFeaturesWithin(bbox)]
-            }
+            },
         }
     }
 
@@ -336,8 +338,8 @@ export default class MetaTagging {
                 if (MetaTagging.errorPrintCount < MetaTagging.stopErrorOutputAt) {
                     console.warn(
                         "Could not calculate a " +
-                        (isStrict ? "strict " : "") +
-                        "calculated tag for key",
+                            (isStrict ? "strict " : "") +
+                            "calculated tag for key",
                         key,
                         "for feature",
                         feat.properties.id,
@@ -345,9 +347,9 @@ export default class MetaTagging {
                         code,
                         "(in layer",
                         layerId +
-                        ") due to \n" +
-                        e +
-                        "\n. Are you the theme creator? Doublecheck your code. Note that the metatags might not be stable on new features",
+                            ") due to \n" +
+                            e +
+                            "\n. Are you the theme creator? Doublecheck your code. Note that the metatags might not be stable on new features",
                         e,
                         e.stack,
                         { feat }

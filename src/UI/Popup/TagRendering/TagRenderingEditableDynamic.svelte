@@ -1,5 +1,7 @@
 <script lang="ts">
-  import TagRenderingConfig, { TagRenderingConfigUtils } from "../../../Models/ThemeConfig/TagRenderingConfig"
+  import TagRenderingConfig, {
+    TagRenderingConfigUtils,
+  } from "../../../Models/ThemeConfig/TagRenderingConfig"
   import { Store, UIEventSource } from "../../../Logic/UIEventSource"
   import type { Feature } from "geojson"
   import type { SpecialVisualizationState } from "../../SpecialVisualization"
@@ -19,8 +21,16 @@
   export let editMode = !config.IsKnown(tags.data)
 
   let dynamicConfig = TagRenderingConfigUtils.withNameSuggestionIndex(config, tags, selectedElement)
-
 </script>
 
-<TagRenderingEditable config={$dynamicConfig} {editMode} {clss} {highlightedRendering} {editingEnabled} {layer} {state}
-                      {selectedElement} {tags} />
+<TagRenderingEditable
+  config={$dynamicConfig}
+  {editMode}
+  {clss}
+  {highlightedRendering}
+  {editingEnabled}
+  {layer}
+  {state}
+  {selectedElement}
+  {tags}
+/>

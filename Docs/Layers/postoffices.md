@@ -25,25 +25,26 @@ A layer showing post offices.
 1. [ Themes using this layer ](#-themes-using-this-layer-)
 2. [ Basic tags for this layer ](#-basic-tags-for-this-layer-)
 3. [ Supported attributes ](#-supported-attributes-)
-  - [just_created](#just_created)
-  - [images](#images)
-  - [minimap](#minimap)
-  - [opening_hours](#opening_hours)
-  - [post_partner](#post_partner)
-  - [partner-brand](#partner-brand)
-  - [letter-from](#letter-from)
-  - [parcel-from](#parcel-from)
-  - [parcel-pickup](#parcel-pickup)
-  - [parcel-to](#parcel-to)
-  - [stamps](#stamps)
-  - [has_atm](#has_atm)
-  - [leftover-questions](#leftover-questions)
-  - [lod](#lod)
-  - [last_edit](#last_edit)
-  - [favourite_status](#favourite_status)
-  - [qr_code](#qr_code)
-  - [share](#share)
-  - [all-tags](#all-tags)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
     + [Filters](#filters)
 
  Themes using this layer 
@@ -90,6 +91,7 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/opening_hours#values) [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | 
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/post_office#values) [post_office](https://wiki.openstreetmap.org/wiki/Key:post_office) | Multiple choice | [post_partner](https://wiki.openstreetmap.org/wiki/Tag:post_office%3Dpost_partner) [](https://wiki.openstreetmap.org/wiki/Tag:post_office%3D)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/brand#values) [brand](https://wiki.openstreetmap.org/wiki/Key:brand) | [nsi](../SpecialInputElements.md#nsi) | 
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/post_office:brand#values) [post_office:brand](https://wiki.openstreetmap.org/wiki/Key:post_office:brand) | [string](../SpecialInputElements.md#string) | [DHL](https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DDHL) [DPD](https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DDPD) [GLS](https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DGLS) [UPS](https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DUPS) [DHL Paketshop](https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DDHL Paketshop) [Hermes PaketShop](https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DHermes PaketShop) [PostNL](https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DPostNL) [bpost](https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3Dbpost)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/post_office:letter_from#values) [post_office:letter_from](https://wiki.openstreetmap.org/wiki/Key:post_office:letter_from) | [string](../SpecialInputElements.md#string) | [yes](https://wiki.openstreetmap.org/wiki/Tag:post_office:letter_from%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:post_office:letter_from%3Dno)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/post_office:parcel_from#values) [post_office:parcel_from](https://wiki.openstreetmap.org/wiki/Key:post_office:parcel_from) | [string](../SpecialInputElements.md#string) | [yes](https://wiki.openstreetmap.org/wiki/Tag:post_office:parcel_from%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:post_office:parcel_from%3Dno)
@@ -99,283 +101,200 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/atm#values) [atm](https://wiki.openstreetmap.org/wiki/Key:atm) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:atm%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:atm%3Dno) [separate](https://wiki.openstreetmap.org/wiki/Tag:atm%3Dseparate)
 
 
-
-
-### just_created 
-
-
-
+### this.id
 This element shows a 'thank you' that the contributor has recently created this element
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
+ - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
+This tagrendering has labels 
+`added_by_default`
 
-
-
-
-
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
-
-
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### images 
-
-
-
+### this.id
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
 
 
 
 
+### this.id
 
-### minimap 
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has no question and is thus read-only
 
 
+### this.id
 
+The question is `What are the opening hours for this post office?`
+This rendering asks information about the property 
+[opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours)
+This is rendered with `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
+ - *Marked as closed for an unspecified time* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>
+ - _This option cannot be chosen as answer_
 
 
-### opening_hours 
 
+### this.id
 
+The question is `Is this a post partner?`
 
-The question is  *What are the opening hours for this post office?*
+ - *This shop is a post partner* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:post_office' target='_blank'>post_office</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office%3Dpost_partner' target='_blank'>post_partner</a>
+ - *This shop is not a post partner* corresponds with post_office=
 
-This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
 
 
+### this.id
 
-  - *Marked as closed for an unspecified time*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>
-  - _This option cannot be chosen as answer_
+The question is `To which brand does this post office belong?`
+This rendering asks information about the property 
+[brand](https://wiki.openstreetmap.org/wiki/Key:brand)
+This is rendered with `This is a {brand} post office`
 
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dpost_office' target='_blank'>post_office</a>
 
 
+### this.id
 
-### post_partner 
+The question is `For which brand does this location offer services?`
+This rendering asks information about the property 
+[post_office:brand](https://wiki.openstreetmap.org/wiki/Key:post_office:brand)
+This is rendered with `This location offers services for {post_office:brand}`
+ - *This location offers services for DHL* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:post_office:brand' target='_blank'>post_office:brand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DDHL' target='_blank'>DHL</a>
+ - *This location offers services for DPD* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:post_office:brand' target='_blank'>post_office:brand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DDPD' target='_blank'>DPD</a>
+ - *This location offers services for GLS* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:post_office:brand' target='_blank'>post_office:brand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DGLS' target='_blank'>GLS</a>
+ - *This location offers services for UPS* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:post_office:brand' target='_blank'>post_office:brand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DUPS' target='_blank'>UPS</a>
+ - *This location is a DHL Paketshop* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:post_office:brand' target='_blank'>post_office:brand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DDHL Paketshop' target='_blank'>DHL Paketshop</a>
+ - *This location is a Hermes PaketShop* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:post_office:brand' target='_blank'>post_office:brand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DHermes PaketShop' target='_blank'>Hermes PaketShop</a>
+ - *This location is a PostNL-point* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:post_office:brand' target='_blank'>post_office:brand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DPostNL' target='_blank'>PostNL</a>
+ - *This location offers services for bpost* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:post_office:brand' target='_blank'>post_office:brand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3Dbpost' target='_blank'>bpost</a>
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:post_office' target='_blank'>post_office</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office%3Dpost_partner' target='_blank'>post_partner</a>
 
 
+### this.id
 
-The question is  *Is this a post partner?*
+The question is `Can you post a letter here?`
+This rendering asks information about the property 
+[post_office:letter_from](https://wiki.openstreetmap.org/wiki/Key:post_office:letter_from)
+This is rendered with `You can post letters with these companies: {post_office:letter_from}`
+ - *You can post letters here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:post_office:letter_from' target='_blank'>post_office:letter_from</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:letter_from%3Dyes' target='_blank'>yes</a>
+ - *You can't post letters here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:post_office:letter_from' target='_blank'>post_office:letter_from</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:letter_from%3Dno' target='_blank'>no</a>
 
 
 
+### this.id
 
+The question is `Can you send a parcel here?`
+This rendering asks information about the property 
+[post_office:parcel_from](https://wiki.openstreetmap.org/wiki/Key:post_office:parcel_from)
+This is rendered with `You can post parcels with these companies: {post_office:parcel_from}`
+ - *You can send parcels here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:post_office:parcel_from' target='_blank'>post_office:parcel_from</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:parcel_from%3Dyes' target='_blank'>yes</a>
+ - *You can't send parcels here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:post_office:parcel_from' target='_blank'>post_office:parcel_from</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:parcel_from%3Dno' target='_blank'>no</a>
 
-  - *This shop is a post partner*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:post_office' target='_blank'>post_office</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office%3Dpost_partner' target='_blank'>post_partner</a>
-  - *This shop is not a post partner*  corresponds with  post_office=
 
 
-This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:post_office' target='_blank'>post_office</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office%3Dpost_partner' target='_blank'>post_partner</a>`
+### this.id
 
+The question is `Can you pick up missed parcels here?`
+This rendering asks information about the property 
+[post_office:parcel_pickup](https://wiki.openstreetmap.org/wiki/Key:post_office:parcel_pickup)
+This is rendered with `You can pick up parcels from these companies: {post_office:parcel_pickup}`
+ - *You can pick up missed parcels here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:post_office:parcel_pickup' target='_blank'>post_office:parcel_pickup</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:parcel_pickup%3Dyes' target='_blank'>yes</a>
+ - *You can't pick up missed parcels here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:post_office:parcel_pickup' target='_blank'>post_office:parcel_pickup</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:parcel_pickup%3Dno' target='_blank'>no</a>
 
 
-### partner-brand 
 
+### this.id
 
+The question is `Can you send parcels to here for pickup?`
+This rendering asks information about the property 
+[post_office:parcel_to](https://wiki.openstreetmap.org/wiki/Key:post_office:parcel_to)
+This is rendered with `You can send parcels to here for pickup with these companies: {post_office:parcel_to}`
+ - *You can send parcels to here for pickup* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:post_office:parcel_to' target='_blank'>post_office:parcel_to</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:parcel_to%3Dyes' target='_blank'>yes</a>
+ - *You can't send parcels to here for pickup* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:post_office:parcel_to' target='_blank'>post_office:parcel_to</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:parcel_to%3Dno' target='_blank'>no</a>
 
-The question is  *For which brand does this location offer services?*
 
-This rendering asks information about the property  [post_office:brand](https://wiki.openstreetmap.org/wiki/Key:post_office:brand) This is rendered with  `This location offers services for {post_office:brand}`
 
+### this.id
 
+The question is `Can you buy stamps here?`
+This rendering asks information about the property 
+[post_office:stamps](https://wiki.openstreetmap.org/wiki/Key:post_office:stamps)
+This is rendered with `You can buy stamps from companies: {post_office:stamps}`
+ - *You can buy stamps here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:post_office:stamps' target='_blank'>post_office:stamps</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:stamps%3Dyes' target='_blank'>yes</a>
+ - *You can't buy stamps here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:post_office:stamps' target='_blank'>post_office:stamps</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:stamps%3Dno' target='_blank'>no</a>
 
-  - *This location offers services for DHL*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:post_office:brand' target='_blank'>post_office:brand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DDHL' target='_blank'>DHL</a>
-  - *This location offers services for DPD*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:post_office:brand' target='_blank'>post_office:brand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DDPD' target='_blank'>DPD</a>
-  - *This location offers services for GLS*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:post_office:brand' target='_blank'>post_office:brand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DGLS' target='_blank'>GLS</a>
-  - *This location offers services for UPS*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:post_office:brand' target='_blank'>post_office:brand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DUPS' target='_blank'>UPS</a>
-  - *This location is a DHL Paketshop*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:post_office:brand' target='_blank'>post_office:brand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DDHL Paketshop' target='_blank'>DHL Paketshop</a>
-  - *This location is a Hermes PaketShop*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:post_office:brand' target='_blank'>post_office:brand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DHermes PaketShop' target='_blank'>Hermes PaketShop</a>
-  - *This location is a PostNL-point*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:post_office:brand' target='_blank'>post_office:brand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DPostNL' target='_blank'>PostNL</a>
-  - *This location offers services for bpost*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:post_office:brand' target='_blank'>post_office:brand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3Dbpost' target='_blank'>bpost</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:post_office' target='_blank'>post_office</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office%3Dpost_partner' target='_blank'>post_partner</a>`
+### this.id
 
+The question is `Does this post office have an ATM?`
 
+ - *This post office has an ATM* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:atm' target='_blank'>atm</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:atm%3Dyes' target='_blank'>yes</a>
+ - *This post office does <b>not</b> have an ATM* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:atm' target='_blank'>atm</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:atm%3Dno' target='_blank'>no</a>
+ - *This post office does have an ATM, but it is mapped as a different icon* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:atm' target='_blank'>atm</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:atm%3Dseparate' target='_blank'>separate</a>
 
-### letter-from 
 
 
+### this.id
 
-The question is  *Can you post a letter here?*
+_This tagrendering has no question and is thus read-only_
 
-This rendering asks information about the property  [post_office:letter_from](https://wiki.openstreetmap.org/wiki/Key:post_office:letter_from) This is rendered with  `You can post letters with these companies: {post_office:letter_from}`
 
 
 
-  - *You can post letters here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:post_office:letter_from' target='_blank'>post_office:letter_from</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:letter_from%3Dyes' target='_blank'>yes</a>
-  - *You can't post letters here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:post_office:letter_from' target='_blank'>post_office:letter_from</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:letter_from%3Dno' target='_blank'>no</a>
 
+### this.id
 
+_This tagrendering has no question and is thus read-only_
 
 
-### parcel-from 
 
+This tagrendering has labels 
+`added_by_default`
 
-
-The question is  *Can you send a parcel here?*
-
-This rendering asks information about the property  [post_office:parcel_from](https://wiki.openstreetmap.org/wiki/Key:post_office:parcel_from) This is rendered with  `You can post parcels with these companies: {post_office:parcel_from}`
-
-
-
-  - *You can send parcels here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:post_office:parcel_from' target='_blank'>post_office:parcel_from</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:parcel_from%3Dyes' target='_blank'>yes</a>
-  - *You can't send parcels here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:post_office:parcel_from' target='_blank'>post_office:parcel_from</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:parcel_from%3Dno' target='_blank'>no</a>
-
-
-
-
-### parcel-pickup 
-
-
-
-The question is  *Can you pick up missed parcels here?*
-
-This rendering asks information about the property  [post_office:parcel_pickup](https://wiki.openstreetmap.org/wiki/Key:post_office:parcel_pickup) This is rendered with  `You can pick up parcels from these companies: {post_office:parcel_pickup}`
-
-
-
-  - *You can pick up missed parcels here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:post_office:parcel_pickup' target='_blank'>post_office:parcel_pickup</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:parcel_pickup%3Dyes' target='_blank'>yes</a>
-  - *You can't pick up missed parcels here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:post_office:parcel_pickup' target='_blank'>post_office:parcel_pickup</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:parcel_pickup%3Dno' target='_blank'>no</a>
-
-
-
-
-### parcel-to 
-
-
-
-The question is  *Can you send parcels to here for pickup?*
-
-This rendering asks information about the property  [post_office:parcel_to](https://wiki.openstreetmap.org/wiki/Key:post_office:parcel_to) This is rendered with  `You can send parcels to here for pickup with these companies: {post_office:parcel_to}`
-
-
-
-  - *You can send parcels to here for pickup*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:post_office:parcel_to' target='_blank'>post_office:parcel_to</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:parcel_to%3Dyes' target='_blank'>yes</a>
-  - *You can't send parcels to here for pickup*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:post_office:parcel_to' target='_blank'>post_office:parcel_to</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:parcel_to%3Dno' target='_blank'>no</a>
-
-
-
-
-### stamps 
-
-
-
-The question is  *Can you buy stamps here?*
-
-This rendering asks information about the property  [post_office:stamps](https://wiki.openstreetmap.org/wiki/Key:post_office:stamps) This is rendered with  `You can buy stamps from companies: {post_office:stamps}`
-
-
-
-  - *You can buy stamps here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:post_office:stamps' target='_blank'>post_office:stamps</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:stamps%3Dyes' target='_blank'>yes</a>
-  - *You can't buy stamps here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:post_office:stamps' target='_blank'>post_office:stamps</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:stamps%3Dno' target='_blank'>no</a>
-
-
-
-
-### has_atm 
-
-
-
-The question is  *Does this post office have an ATM?*
-
-
-
-
-
-  - *This post office has an ATM*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:atm' target='_blank'>atm</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:atm%3Dyes' target='_blank'>yes</a>
-  - *This post office does <b>not</b> have an ATM*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:atm' target='_blank'>atm</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:atm%3Dno' target='_blank'>no</a>
-  - *This post office does have an ATM, but it is mapped as a different icon*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:atm' target='_blank'>atm</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:atm%3Dseparate' target='_blank'>separate</a>
-
-
-
-
-### leftover-questions 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### lod 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### last_edit 
-
-
-
+### this.id
 Gives some metainfo about the last edit and who did edit it - rendering only
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:changeset~.+ & _last_edit:contributor~.+
+This tagrendering has labels 
+`added_by_default`
 
-This tagrendering has labels  `added_by_default`
+### this.id
 
-
-
-### favourite_status 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### qr_code 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has no question and is thus read-only
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has labels  `added_by_default`
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
-
-### share 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### all-tags 
-
-
-
-This tagrendering has no question and is thus read-only
 
 
 

@@ -284,13 +284,16 @@ class LayerOverviewUtils extends Script {
         doesImageExist: DoesImageExist,
         bootstrapTagRenderings: Map<string, QuestionableTagRenderingConfigJson> = null
     ): Map<string, QuestionableTagRenderingConfigJson> {
-        const prepareLayer = new PrepareLayer({
-            tagRenderings: bootstrapTagRenderings,
-            sharedLayers: null,
-            publicLayers: null,
-        }, {
-            addTagRenderingsToContext: true
-        })
+        const prepareLayer = new PrepareLayer(
+            {
+                tagRenderings: bootstrapTagRenderings,
+                sharedLayers: null,
+                publicLayers: null,
+            },
+            {
+                addTagRenderingsToContext: true,
+            }
+        )
 
         const path = "assets/layers/questions/questions.json"
         const sharedQuestions = this.parseLayer(doesImageExist, prepareLayer, path).raw

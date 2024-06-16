@@ -46,12 +46,12 @@
   }
 </script>
 
-<div class="h-full flex flex-col">
+<div class="flex h-full flex-col">
   <h2 class="low-interaction m-0 flex items-center p-4 drop-shadow-md">
     <Filter class="h-6 w-6 pr-2" />
     <Tr t={Translations.t.general.menu.filter} />
   </h2>
-  <div class="flex h-full flex-col overflow-auto p-4 border-b-2">
+  <div class="flex h-full flex-col overflow-auto border-b-2 p-4">
     {#each layout.layers as layer}
       <Filterview
         zoomlevel={state.mapProperties.zoom}

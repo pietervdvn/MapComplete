@@ -1432,6 +1432,15 @@
       "value": "wine"
     },
     {
+      "key": "brand",
+      "description": "Layer 'Shop' shows and asks freeform values for key 'brand' (in the mapcomplete.org theme 'Sports')"
+    },
+    {
+      "key": "not:brand",
+      "description": "Layer 'Shop' shows not:brand=yes with a fixed text, namely 'This shop does not have a specific brand, it is not part of a bigger chain' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "yes"
+    },
+    {
       "key": "second_hand",
       "description": "Layer 'Shop' shows second_hand=only with a fixed text, namely 'This shop sells second-hand items <b>only</b>' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if shop=clothes | shop=car | shop=books | shop=charity | shop=car_repair | shop=furniture | shop=bicycle | shop=bicycle | shop=mobile_phone | shop=computer | shop=toys)",
       "value": "only"
@@ -1551,6 +1560,16 @@
       "key": "service:print:A0",
       "description": "Layer 'Shop' shows service:print:A0=yes with a fixed text, namely 'This shop can print on papers of size A0' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if shop~^(.*copyshop.*)$ | shop~^(.*stationery.*)$ | service:print=yes)",
       "value": "yes"
+    },
+    {
+      "key": "service:binding",
+      "description": "Layer 'Shop' shows service:binding=yes with a fixed text, namely 'This shop binds papers into a booklet' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if shop~^(.*copyshop.*)$ | shop~^(.*stationery.*)$ | service:print=yes)",
+      "value": "yes"
+    },
+    {
+      "key": "service:binding",
+      "description": "Layer 'Shop' shows service:binding=no with a fixed text, namely 'This shop does bind books' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if shop~^(.*copyshop.*)$ | shop~^(.*stationery.*)$ | service:print=yes)",
+      "value": "no"
     },
     {
       "key": "craft",

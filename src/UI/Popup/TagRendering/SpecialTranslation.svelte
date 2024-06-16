@@ -4,7 +4,7 @@
   import Locale from "../../i18n/Locale"
   import type {
     RenderingSpecification,
-    SpecialVisualizationState
+    SpecialVisualizationState,
   } from "../../SpecialVisualization"
   import { Utils } from "../../../Utils.js"
   import type { Feature } from "geojson"
@@ -67,7 +67,7 @@
   {#each specs as specpart}
     {#if typeof specpart === "string"}
       <span>
-        {@html Utils.purify(Utils.SubstituteKeys(specpart, $tags)) }
+        {@html Utils.purify(Utils.SubstituteKeys(specpart, $tags))}
         <WeblateLink context={t.context} />
       </span>
     {:else if $tags !== undefined}
@@ -79,7 +79,7 @@
     {#each specs as specpart}
       {#if typeof specpart === "string"}
         <span>
-          {@html Utils.purify(Utils.SubstituteKeys(specpart, $tags)) }
+          {@html Utils.purify(Utils.SubstituteKeys(specpart, $tags))}
           <WeblateLink context={t.context} />
         </span>
       {:else if $tags !== undefined}

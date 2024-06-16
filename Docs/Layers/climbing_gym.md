@@ -25,39 +25,39 @@ A climbing gym
 1. [ Themes using this layer ](#-themes-using-this-layer-)
 2. [ Basic tags for this layer ](#-basic-tags-for-this-layer-)
 3. [ Supported attributes ](#-supported-attributes-)
-  - [just_created](#just_created)
-  - [images](#images)
-  - [name](#name)
-  - [website](#website)
-  - [phone](#phone)
-  - [email](#email)
-  - [fee](#fee)
-  - [payment-options](#payment-options)
-  - [opening_hours](#opening_hours)
-  - [reviews](#reviews)
-  - [shoe_rental](#shoe_rental)
-  - [harness_rental](#harness_rental)
-  - [belay_device_rental](#belay_device_rental)
-  - [rope_rental](#rope_rental)
-  - [bouldering](#bouldering)
-  - [sportclimbing](#sportclimbing)
-  - [toprope](#toprope)
-  - [average_length](#average_length)
-  - [min_difficulty](#min_difficulty)
-  - [max_difficulty](#max_difficulty)
-  - [max_bolts](#max_bolts)
-  - [Speed climbing?](#speed-climbing)
-  - [internet](#internet)
-  - [internet-fee](#internet-fee)
-  - [internet-ssid](#internet-ssid)
-  - [leftover-questions](#leftover-questions)
-  - [lod](#lod)
-  - [minimap](#minimap)
-  - [last_edit](#last_edit)
-  - [favourite_status](#favourite_status)
-  - [qr_code](#qr_code)
-  - [share](#share)
-  - [all-tags](#all-tags)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
 
  Themes using this layer 
 -------------------------
@@ -122,514 +122,349 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/internet_access:ssid#values) [internet_access:ssid](https://wiki.openstreetmap.org/wiki/Key:internet_access:ssid) | [string](../SpecialInputElements.md#string) | [Telekom](https://wiki.openstreetmap.org/wiki/Tag:internet_access:ssid%3DTelekom)
 
 
-
-
-### just_created 
-
-
-
+### this.id
 This element shows a 'thank you' that the contributor has recently created this element
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
+ - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
+This tagrendering has labels 
+`added_by_default`
 
-
-
-
-
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
-
-
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### images 
-
-
-
+### this.id
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
 
 
 
 
+### this.id
 
-### name 
+The question is `What is the name of this climbing gym?`
+This rendering asks information about the property 
+[name](https://wiki.openstreetmap.org/wiki/Key:name)
+This is rendered with `<strong>{name}</strong>`
 
 
 
-The question is  *What is the name of this climbing gym?*
 
-This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) This is rendered with  `<strong>{name}</strong>`
+### this.id
 
+The question is `What is the website of {title()}?`
+This rendering asks information about the property 
+[website](https://wiki.openstreetmap.org/wiki/Key:website)
+This is rendered with `<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>`
+ - *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>* corresponds with contact:website~.+
+ - _This option cannot be chosen as answer_
 
+This tagrendering has labels 
+`contact`
 
-### website 
+### this.id
 
+The question is `What is the phone number of {title()}?`
+This rendering asks information about the property 
+[phone](https://wiki.openstreetmap.org/wiki/Key:phone)
+This is rendered with `<a href='tel:{phone}'>{phone}</a>`
+ - *<a href='tel:{contact:phone}'>{contact:phone}</a>* corresponds with contact:phone~.+
+ - _This option cannot be chosen as answer_
 
+This tagrendering has labels 
+`contact`
 
-The question is  *What is the website of {title()}?*
+### this.id
 
-This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) This is rendered with  `<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>`
+The question is `What is the email address of {title()}?`
+This rendering asks information about the property 
+[email](https://wiki.openstreetmap.org/wiki/Key:email)
+This is rendered with `<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>`
+ - *<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>* corresponds with contact:email~.+
+ - _This option cannot be chosen as answer_
+ - *<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>* corresponds with operator:email~.+
+ - _This option cannot be chosen as answer_
 
+This tagrendering has labels 
+`contact`
 
+### this.id
 
-  - *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>*  corresponds with  contact:website~.+
-  - _This option cannot be chosen as answer_
+The question is `Is a fee required to climb here?`
+This rendering asks information about the property 
+[charge](https://wiki.openstreetmap.org/wiki/Key:charge)
+This is rendered with `A fee of {charge} should be paid for climbing here`
+ - *Climbing here is free of charge* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno' target='_blank'>no</a>
+ - *Paying a fee is required to climb here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a> & charge=
 
 
-This tagrendering has labels  `contact`
 
+### this.id
 
+The question is `Which methods of payment are accepted here?`
 
-### phone 
+ - *Cash is accepted here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dyes' target='_blank'>yes</a>
+ - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dno' target='_blank'>no</a>
+ - *Payment cards are accepted here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dyes' target='_blank'>yes</a>
+ - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dno' target='_blank'>no</a>
+ - *Payment by QR-code is possible here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dyes' target='_blank'>yes</a>
+ - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dno' target='_blank'>no</a>
 
 
 
-The question is  *What is the phone number of {title()}?*
+### this.id
 
-This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) This is rendered with  `<a href='tel:{phone}'>{phone}</a>`
+The question is `What are the opening hours of {title()}?`
+This rendering asks information about the property 
+[opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours)
+This is rendered with `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
+ - *Marked as closed for an unspecified time* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>
+ - _This option cannot be chosen as answer_
 
 
 
-  - *<a href='tel:{contact:phone}'>{contact:phone}</a>*  corresponds with  contact:phone~.+
-  - _This option cannot be chosen as answer_
-
-
-This tagrendering has labels  `contact`
-
-
-
-### email 
-
-
-
-The question is  *What is the email address of {title()}?*
-
-This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) This is rendered with  `<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>`
-
-
-
-  - *<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>*  corresponds with  contact:email~.+
-  - _This option cannot be chosen as answer_
-  - *<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>*  corresponds with  operator:email~.+
-  - _This option cannot be chosen as answer_
-
-
-This tagrendering has labels  `contact`
-
-
-
-### fee 
-
-
-
-The question is  *Is a fee required to climb here?*
-
-This rendering asks information about the property  [charge](https://wiki.openstreetmap.org/wiki/Key:charge) This is rendered with  `A fee of {charge} should be paid for climbing here`
-
-
-
-  - *Climbing here is free of charge*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno' target='_blank'>no</a>
-  - *Paying a fee is required to climb here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a> & charge=
-
-
-
-
-### payment-options 
-
-
-
-The question is  *Which methods of payment are accepted here?*
-
-
-
-
-
-  - *Cash is accepted here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dyes' target='_blank'>yes</a>
-  - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dno' target='_blank'>no</a>
-  - *Payment cards are accepted here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dyes' target='_blank'>yes</a>
-  - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dno' target='_blank'>no</a>
-  - *Payment by QR-code is possible here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dyes' target='_blank'>yes</a>
-  - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dno' target='_blank'>no</a>
-
-
-
-
-### opening_hours 
-
-
-
-The question is  *What are the opening hours of {title()}?*
-
-This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
-
-
-
-  - *Marked as closed for an unspecified time*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>
-  - _This option cannot be chosen as answer_
-
-
-
-
-### reviews 
-
-
-
+### this.id
 Shows the reviews module (including the possibility to leave a review)
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
 
 
 
 
+### this.id
 
-### shoe_rental 
+The question is `Can one rent climbing shoes here?`
 
+ - *Climbing shoes can be borrowed for free here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_shoes:rental' target='_blank'>service:climbing_shoes:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_shoes:rental%3Dyes' target='_blank'>yes</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_shoes:rental:fee' target='_blank'>service:climbing_shoes:rental:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_shoes:rental:fee%3Dno' target='_blank'>no</a>
+ - *Climbing shoes can be rented here for {service:climbing_shoes:rental:charge}* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_shoes:rental' target='_blank'>service:climbing_shoes:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_shoes:rental%3Dyes' target='_blank'>yes</a> & service:climbing_shoes:rental:charge~.+
+ - _This option cannot be chosen as answer_
+ - *Climbing shoes can be rented here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_shoes:rental' target='_blank'>service:climbing_shoes:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_shoes:rental%3Dyes' target='_blank'>yes</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_shoes:rental:fee' target='_blank'>service:climbing_shoes:rental:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_shoes:rental:fee%3Dyes' target='_blank'>yes</a>
+ - *Climbing shoes can <b>not</b> be rented here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_shoes:rental' target='_blank'>service:climbing_shoes:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_shoes:rental%3Dno' target='_blank'>no</a>
 
 
-The question is  *Can one rent climbing shoes here?*
 
+### this.id
 
+The question is `Can one rent a climbing harness here?`
 
+ - *A climbing harness can be borrowed for free here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_harness:rental' target='_blank'>service:climbing_harness:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_harness:rental%3Dyes' target='_blank'>yes</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_harness:rental:fee' target='_blank'>service:climbing_harness:rental:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_harness:rental:fee%3Dno' target='_blank'>no</a>
+ - *A climbing harness can be rented here for {service:climbing_harness:rental:charge}* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_harness:rental' target='_blank'>service:climbing_harness:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_harness:rental%3Dyes' target='_blank'>yes</a> & service:climbing_harness:rental:charge~.+
+ - _This option cannot be chosen as answer_
+ - *A climbing harness can be rented here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_harness:rental' target='_blank'>service:climbing_harness:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_harness:rental%3Dyes' target='_blank'>yes</a>
+ - *A climbing harness can <b>not</b> be rented here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_harness:rental' target='_blank'>service:climbing_harness:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_harness:rental%3Dno' target='_blank'>no</a>
 
 
-  - *Climbing shoes can be borrowed for free here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_shoes:rental' target='_blank'>service:climbing_shoes:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_shoes:rental%3Dyes' target='_blank'>yes</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_shoes:rental:fee' target='_blank'>service:climbing_shoes:rental:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_shoes:rental:fee%3Dno' target='_blank'>no</a>
-  - *Climbing shoes can be rented here for {service:climbing_shoes:rental:charge}*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_shoes:rental' target='_blank'>service:climbing_shoes:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_shoes:rental%3Dyes' target='_blank'>yes</a> & service:climbing_shoes:rental:charge~.+
-  - _This option cannot be chosen as answer_
-  - *Climbing shoes can be rented here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_shoes:rental' target='_blank'>service:climbing_shoes:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_shoes:rental%3Dyes' target='_blank'>yes</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_shoes:rental:fee' target='_blank'>service:climbing_shoes:rental:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_shoes:rental:fee%3Dyes' target='_blank'>yes</a>
-  - *Climbing shoes can <b>not</b> be rented here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_shoes:rental' target='_blank'>service:climbing_shoes:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_shoes:rental%3Dno' target='_blank'>no</a>
 
+### this.id
 
+The question is `Can one rent a belay device here?`
 
+ - *Belay devices are provided at each rope* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_belay_device:provided_at_each_rope' target='_blank'>service:climbing_belay_device:provided_at_each_rope</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_belay_device:provided_at_each_rope%3Dyes' target='_blank'>yes</a>
+ - *A belay device can be borrowed for free here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_belay_device:rental' target='_blank'>service:climbing_belay_device:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_belay_device:rental%3Dyes' target='_blank'>yes</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_belay_device:rental:fee' target='_blank'>service:climbing_belay_device:rental:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_belay_device:rental:fee%3Dno' target='_blank'>no</a>
+ - *A belay device can be rented here for {service:climbing_belay_device:rental:charge}* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_belay_device:rental' target='_blank'>service:climbing_belay_device:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_belay_device:rental%3Dyes' target='_blank'>yes</a> & service:climbing_belay_device:rental:charge~.+
+ - _This option cannot be chosen as answer_
+ - *A belay device can be rented here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_belay_device:rental' target='_blank'>service:climbing_belay_device:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_belay_device:rental%3Dyes' target='_blank'>yes</a>
+ - *A belay device can <b>not</b> be rented here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_belay_device:rental' target='_blank'>service:climbing_belay_device:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_belay_device:rental%3Dno' target='_blank'>no</a>
 
-### harness_rental 
 
 
+### this.id
 
-The question is  *Can one rent a climbing harness here?*
+The question is `Can one rent a climbing rope here?`
 
+ - *A climbing rope can be borrowed for free here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_rope:rental' target='_blank'>service:climbing_rope:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_rope:rental%3Dyes' target='_blank'>yes</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_rope:rental:fee' target='_blank'>service:climbing_rope:rental:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_rope:rental:fee%3Dno' target='_blank'>no</a>
+ - *A climbing rope can be rented here for {service:climbing_rope:rental:charge}* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_rope:rental' target='_blank'>service:climbing_rope:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_rope:rental%3Dyes' target='_blank'>yes</a> & service:climbing_rope:rental:charge~.+
+ - _This option cannot be chosen as answer_
+ - *A climbing rope can be rented here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_rope:rental' target='_blank'>service:climbing_rope:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_rope:rental%3Dyes' target='_blank'>yes</a>
+ - *A climbing rope can <b>not</b> be rented here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_rope:rental' target='_blank'>service:climbing_rope:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_rope:rental%3Dno' target='_blank'>no</a>
 
 
 
+### this.id
 
-  - *A climbing harness can be borrowed for free here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_harness:rental' target='_blank'>service:climbing_harness:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_harness:rental%3Dyes' target='_blank'>yes</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_harness:rental:fee' target='_blank'>service:climbing_harness:rental:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_harness:rental:fee%3Dno' target='_blank'>no</a>
-  - *A climbing harness can be rented here for {service:climbing_harness:rental:charge}*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_harness:rental' target='_blank'>service:climbing_harness:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_harness:rental%3Dyes' target='_blank'>yes</a> & service:climbing_harness:rental:charge~.+
-  - _This option cannot be chosen as answer_
-  - *A climbing harness can be rented here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_harness:rental' target='_blank'>service:climbing_harness:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_harness:rental%3Dyes' target='_blank'>yes</a>
-  - *A climbing harness can <b>not</b> be rented here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_harness:rental' target='_blank'>service:climbing_harness:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_harness:rental%3Dno' target='_blank'>no</a>
+The question is `Is bouldering possible here?`
 
+ - *Bouldering is possible here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:boulder' target='_blank'>climbing:boulder</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dyes' target='_blank'>yes</a>
+ - *Bouldering is not possible here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:boulder' target='_blank'>climbing:boulder</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dno' target='_blank'>no</a>
+ - *Bouldering is possible, although there are only a few problems* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:boulder' target='_blank'>climbing:boulder</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dlimited' target='_blank'>limited</a>
+ - *There are {climbing:boulder} boulder problems* corresponds with climbing:boulder~.+
+ - _This option cannot be chosen as answer_
 
 
 
-### belay_device_rental 
+### this.id
 
+The question is `Is sport climbing possible here on fixed anchors?`
 
+ - *Sport climbing is possible here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:sport' target='_blank'>climbing:sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:sport%3Dyes' target='_blank'>yes</a>
+ - *Sport climbing is not possible here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:sport' target='_blank'>climbing:sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:sport%3Dno' target='_blank'>no</a>
+ - *There are {climbing:sport} sport climbing routes* corresponds with climbing:sport~.+
+ - _This option cannot be chosen as answer_
 
-The question is  *Can one rent a belay device here?*
 
 
+### this.id
 
+The question is `Is toprope climbing possible here?`
 
+ - *Toprope climbing is possible here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:toprope' target='_blank'>climbing:toprope</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:toprope%3Dyes' target='_blank'>yes</a>
+ - *Toprope climbing is not possible here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:toprope' target='_blank'>climbing:toprope</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:toprope%3Dno' target='_blank'>no</a>
+ - *There are {climbing:toprope} toprope routes* corresponds with climbing:toprope~.+
+ - _This option cannot be chosen as answer_
 
-  - *Belay devices are provided at each rope*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_belay_device:provided_at_each_rope' target='_blank'>service:climbing_belay_device:provided_at_each_rope</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_belay_device:provided_at_each_rope%3Dyes' target='_blank'>yes</a>
-  - *A belay device can be borrowed for free here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_belay_device:rental' target='_blank'>service:climbing_belay_device:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_belay_device:rental%3Dyes' target='_blank'>yes</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_belay_device:rental:fee' target='_blank'>service:climbing_belay_device:rental:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_belay_device:rental:fee%3Dno' target='_blank'>no</a>
-  - *A belay device can be rented here for {service:climbing_belay_device:rental:charge}*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_belay_device:rental' target='_blank'>service:climbing_belay_device:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_belay_device:rental%3Dyes' target='_blank'>yes</a> & service:climbing_belay_device:rental:charge~.+
-  - _This option cannot be chosen as answer_
-  - *A belay device can be rented here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_belay_device:rental' target='_blank'>service:climbing_belay_device:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_belay_device:rental%3Dyes' target='_blank'>yes</a>
-  - *A belay device can <b>not</b> be rented here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_belay_device:rental' target='_blank'>service:climbing_belay_device:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_belay_device:rental%3Dno' target='_blank'>no</a>
 
 
+### this.id
 
+The question is `What is the (average) length of the routes in meters?`
+This rendering asks information about the property 
+[climbing:length](https://wiki.openstreetmap.org/wiki/Key:climbing:length)
+This is rendered with `The routes are <b>{canonical(climbing:length)}</b> long on average`
 
-### rope_rental 
 
 
 
-The question is  *Can one rent a climbing rope here?*
+### this.id
 
+The question is `What is the grade of the easiest route here, according to the french classification system?`
+This rendering asks information about the property 
+[climbing:grade:french:min](https://wiki.openstreetmap.org/wiki/Key:climbing:grade:french:min)
+This is rendered with `The lowest grade is {climbing:grade:french:min} according to the french/belgian system`
 
 
 
 
-  - *A climbing rope can be borrowed for free here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_rope:rental' target='_blank'>service:climbing_rope:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_rope:rental%3Dyes' target='_blank'>yes</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_rope:rental:fee' target='_blank'>service:climbing_rope:rental:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_rope:rental:fee%3Dno' target='_blank'>no</a>
-  - *A climbing rope can be rented here for {service:climbing_rope:rental:charge}*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_rope:rental' target='_blank'>service:climbing_rope:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_rope:rental%3Dyes' target='_blank'>yes</a> & service:climbing_rope:rental:charge~.+
-  - _This option cannot be chosen as answer_
-  - *A climbing rope can be rented here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_rope:rental' target='_blank'>service:climbing_rope:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_rope:rental%3Dyes' target='_blank'>yes</a>
-  - *A climbing rope can <b>not</b> be rented here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_rope:rental' target='_blank'>service:climbing_rope:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_rope:rental%3Dno' target='_blank'>no</a>
+### this.id
 
+The question is `What is the highest grade route here, according to the french classification system?`
+This rendering asks information about the property 
+[climbing:grade:french:max](https://wiki.openstreetmap.org/wiki/Key:climbing:grade:french:max)
+This is rendered with `The highest grade is {climbing:grade:french:max} according to the french/belgian system`
 
+This tagrendering is only visible in the popup if the following condition is met: club= & office= & (<a href='https://wiki.openstreetmap.org/wiki/Key:climbing:sport' target='_blank'>climbing:sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:sport%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dclimbing' target='_blank'>climbing</a>) & climbing!~^(route)$
 
 
-### bouldering 
+### this.id
 
+The question is `How many bolts do routes in {title()} have at most?`
+This rendering asks information about the property 
+[climbing:bolts:max](https://wiki.openstreetmap.org/wiki/Key:climbing:bolts:max)
+This is rendered with `The sport climbing routes here have at most {climbing:bolts:max} bolts.<div class='subtle'>This is without relays and indicates how much quickdraws a climber needs</div>`
 
 
-The question is  *Is bouldering possible here?*
 
 
+### this.id
 
+The question is `Is there a speed climbing wall?`
 
+ - *There is a speed climbing wall* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:speed' target='_blank'>climbing:speed</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:speed%3Dyes' target='_blank'>yes</a>
+ - *There is no speed climbing wall* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:speed' target='_blank'>climbing:speed</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:speed%3Dno' target='_blank'>no</a>
+ - *There are {climbing:speed} speed climbing walls* corresponds with climbing:speed~.+
+ - _This option cannot be chosen as answer_
 
-  - *Bouldering is possible here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:boulder' target='_blank'>climbing:boulder</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dyes' target='_blank'>yes</a>
-  - *Bouldering is not possible here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:boulder' target='_blank'>climbing:boulder</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dno' target='_blank'>no</a>
-  - *Bouldering is possible, although there are only a few problems*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:boulder' target='_blank'>climbing:boulder</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dlimited' target='_blank'>limited</a>
-  - *There are {climbing:boulder} boulder problems*  corresponds with  climbing:boulder~.+
-  - _This option cannot be chosen as answer_
 
 
+### this.id
 
+The question is `Does this place offer internet access?`
 
-### sportclimbing 
+ - *This place offers wireless internet access* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwlan' target='_blank'>wlan</a>
+ - *This place <b>does not</b> offer internet access* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dno' target='_blank'>no</a>
+ - *This place offers internet access* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dyes' target='_blank'>yes</a>
+ - _This option cannot be chosen as answer_
+ - *This place offers internet access via a terminal or computer* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dterminal' target='_blank'>terminal</a>
+ - *This place offers wired internet access* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwired' target='_blank'>wired</a>
 
+This tagrendering has labels 
+`internet-all`
 
+### this.id
 
-The question is  *Is sport climbing possible here on fixed anchors?*
+The question is `Is there a fee for internet access?`
 
+ - *There is a fee for the internet access at this place* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:fee' target='_blank'>internet_access:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dyes' target='_blank'>yes</a>
+ - *Internet access is free at this place* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:fee' target='_blank'>internet_access:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dno' target='_blank'>no</a>
+ - *Internet access is free at this place, for customers only* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:fee' target='_blank'>internet_access:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dcustomers' target='_blank'>customers</a>
+This tagrendering is only visible in the popup if the following condition is met: internet_access!=no & internet_access~.+
+This tagrendering has labels 
+`internet-all`
 
+### this.id
 
+The question is `What is the network name for the wireless internet access?`
+This rendering asks information about the property 
+[internet_access:ssid](https://wiki.openstreetmap.org/wiki/Key:internet_access:ssid)
+This is rendered with `The network name is <b>{internet_access:ssid}</b>`
+ - *Telekom* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:ssid' target='_blank'>internet_access:ssid</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:ssid%3DTelekom' target='_blank'>Telekom</a>
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwlan' target='_blank'>wlan</a>
+This tagrendering has labels 
+`internet-all`
 
+### this.id
 
-  - *Sport climbing is possible here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:sport' target='_blank'>climbing:sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:sport%3Dyes' target='_blank'>yes</a>
-  - *Sport climbing is not possible here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:sport' target='_blank'>climbing:sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:sport%3Dno' target='_blank'>no</a>
-  - *There are {climbing:sport} sport climbing routes*  corresponds with  climbing:sport~.+
-  - _This option cannot be chosen as answer_
+_This tagrendering has no question and is thus read-only_
 
 
 
 
-### toprope 
 
+### this.id
 
+_This tagrendering has no question and is thus read-only_
 
-The question is  *Is toprope climbing possible here?*
 
 
+This tagrendering has labels 
+`added_by_default`
 
-
-
-  - *Toprope climbing is possible here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:toprope' target='_blank'>climbing:toprope</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:toprope%3Dyes' target='_blank'>yes</a>
-  - *Toprope climbing is not possible here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:toprope' target='_blank'>climbing:toprope</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:toprope%3Dno' target='_blank'>no</a>
-  - *There are {climbing:toprope} toprope routes*  corresponds with  climbing:toprope~.+
-  - _This option cannot be chosen as answer_
-
-
-
-
-### average_length 
-
-
-
-The question is  *What is the (average) length of the routes in meters?*
-
-This rendering asks information about the property  [climbing:length](https://wiki.openstreetmap.org/wiki/Key:climbing:length) This is rendered with  `The routes are <b>{canonical(climbing:length)}</b> long on average`
-
-
-
-### min_difficulty 
-
-
-
-The question is  *What is the grade of the easiest route here, according to the french classification system?*
-
-This rendering asks information about the property  [climbing:grade:french:min](https://wiki.openstreetmap.org/wiki/Key:climbing:grade:french:min) This is rendered with  `The lowest grade is {climbing:grade:french:min} according to the french/belgian system`
-
-
-
-### max_difficulty 
-
-
-
-The question is  *What is the highest grade route here, according to the french classification system?*
-
-This rendering asks information about the property  [climbing:grade:french:max](https://wiki.openstreetmap.org/wiki/Key:climbing:grade:french:max) This is rendered with  `The highest grade is {climbing:grade:french:max} according to the french/belgian system`
-
-This tagrendering is only visible in the popup if the following condition is met: `club= & office= & (<a href='https://wiki.openstreetmap.org/wiki/Key:climbing:sport' target='_blank'>climbing:sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:sport%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dclimbing' target='_blank'>climbing</a>) & climbing!~^(route)$`
-
-
-
-### max_bolts 
-
-
-
-The question is  *How many bolts do routes in {title()} have at most?*
-
-This rendering asks information about the property  [climbing:bolts:max](https://wiki.openstreetmap.org/wiki/Key:climbing:bolts:max) This is rendered with  `The sport climbing routes here have at most {climbing:bolts:max} bolts.<div class='subtle'>This is without relays and indicates how much quickdraws a climber needs</div>`
-
-
-
-### Speed climbing? 
-
-
-
-The question is  *Is there a speed climbing wall?*
-
-
-
-
-
-  - *There is a speed climbing wall*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:speed' target='_blank'>climbing:speed</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:speed%3Dyes' target='_blank'>yes</a>
-  - *There is no speed climbing wall*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:speed' target='_blank'>climbing:speed</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:speed%3Dno' target='_blank'>no</a>
-  - *There are {climbing:speed} speed climbing walls*  corresponds with  climbing:speed~.+
-  - _This option cannot be chosen as answer_
-
-
-
-
-### internet 
-
-
-
-The question is  *Does this place offer internet access?*
-
-
-
-
-
-  - *This place offers wireless internet access*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwlan' target='_blank'>wlan</a>
-  - *This place <b>does not</b> offer internet access*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dno' target='_blank'>no</a>
-  - *This place offers internet access*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dyes' target='_blank'>yes</a>
-  - _This option cannot be chosen as answer_
-  - *This place offers internet access via a terminal or computer*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dterminal' target='_blank'>terminal</a>
-  - *This place offers wired internet access*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwired' target='_blank'>wired</a>
-
-
-This tagrendering has labels  `internet-all`
-
-
-
-### internet-fee 
-
-
-
-The question is  *Is there a fee for internet access?*
-
-
-
-
-
-  - *There is a fee for the internet access at this place*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:fee' target='_blank'>internet_access:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dyes' target='_blank'>yes</a>
-  - *Internet access is free at this place*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:fee' target='_blank'>internet_access:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dno' target='_blank'>no</a>
-  - *Internet access is free at this place, for customers only*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:fee' target='_blank'>internet_access:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dcustomers' target='_blank'>customers</a>
-
-
-This tagrendering is only visible in the popup if the following condition is met: `internet_access!=no & internet_access~.+`
-
-This tagrendering has labels  `internet-all`
-
-
-
-### internet-ssid 
-
-
-
-The question is  *What is the network name for the wireless internet access?*
-
-This rendering asks information about the property  [internet_access:ssid](https://wiki.openstreetmap.org/wiki/Key:internet_access:ssid) This is rendered with  `The network name is <b>{internet_access:ssid}</b>`
-
-
-
-  - *Telekom*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:ssid' target='_blank'>internet_access:ssid</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:ssid%3DTelekom' target='_blank'>Telekom</a>
-
-
-This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwlan' target='_blank'>wlan</a>`
-
-This tagrendering has labels  `internet-all`
-
-
-
-### leftover-questions 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### lod 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### minimap 
-
-
-
+### this.id
 Shows a small map with the feature. Added by default to every popup
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
 
 
-### last_edit 
 
-
-
+### this.id
 Gives some metainfo about the last edit and who did edit it - rendering only
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:changeset~.+ & _last_edit:contributor~.+
+This tagrendering has labels 
+`added_by_default`
 
-This tagrendering has labels  `added_by_default`
+### this.id
 
-
-
-### favourite_status 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### qr_code 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has no question and is thus read-only
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has labels  `added_by_default`
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
-
-### share 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### all-tags 
-
-
-
-This tagrendering has no question and is thus read-only
 
  
 

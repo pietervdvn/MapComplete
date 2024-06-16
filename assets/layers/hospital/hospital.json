@@ -33,7 +33,8 @@
       "pa_PK": "ہسپتال",
       "ru": "Больница",
       "ca": "Hospital",
-      "cs": "Nemocnice"
+      "cs": "Nemocnice",
+      "pl": "Szpital"
     },
     "mappings": [
       {
@@ -76,7 +77,8 @@
         "de": "Der Name des Krankenhauses lautet {name}",
         "nl": "Dit ziekenhuis heet {name}",
         "ru": "Эта больница называется {name}",
-        "cs": "Tato nemocnice se jmenuje {name}"
+        "cs": "Tato nemocnice se jmenuje {name}",
+        "pl": "Nazwa tego szpitala to {name}"
       },
       "question": {
         "en": "What is the name of this hospital?",
@@ -84,7 +86,8 @@
         "nl": "Wat is de naam van dit ziekenhuis?",
         "ca": "Quin és el nom d'aquest hospital?",
         "ru": "Как называется эта больница?",
-        "cs": "Jak se jmenuje tato nemocnice?"
+        "cs": "Jak se jmenuje tato nemocnice?",
+        "pl": "Jak nazywa się ten szpital?"
       },
       "freeform": {
         "key": "name"

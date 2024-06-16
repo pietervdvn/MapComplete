@@ -31,7 +31,8 @@
       "nl": "Perron",
       "fr": "Quai",
       "ca": "Andana",
-      "cs": "Nástupiště"
+      "cs": "Nástupiště",
+      "pl": "Peron"
     },
     "mappings": [
       {
@@ -42,7 +43,8 @@
           "nl": "Perron {ref}",
           "fr": "Quai {ref}",
           "ca": "Andana {ref}",
-          "cs": "Nástupiště {ref}"
+          "cs": "Nástupiště {ref}",
+          "pl": "Peron {ref}"
         }
       }
     ]
@@ -82,7 +84,8 @@
         "nl": "Wat is het nummer van dit perron?",
         "fr": "Quel est le numéro de ce quai ?",
         "ca": "Quin és el número d'aquesta andana?",
-        "cs": "Jaké je číslo tohoto nástupiště?"
+        "cs": "Jaké je číslo tohoto nástupiště?",
+        "pl": "Jaki jest numer tego peronu?"
       },
       "freeform": {
         "key": "ref",
@@ -93,7 +96,8 @@
           "nl": "Perronnummer",
           "fr": "Numéro de quai",
           "ca": "Nombre d'andana",
-          "cs": "Číslo nástupiště"
+          "cs": "Číslo nástupiště",
+          "pl": "Numer peronu"
         }
       },
       "render": {
@@ -102,7 +106,8 @@
         "nl": "Perron {ref}",
         "fr": "Quai {ref}",
         "ca": "Andana {ref}",
-        "cs": "Nástupiště {ref}"
+        "cs": "Nástupiště {ref}",
+        "pl": "Peron {ref}"
       }
     },
     "level"

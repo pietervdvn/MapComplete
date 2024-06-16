@@ -27,25 +27,25 @@ Schools giving primary and secondary education and post-secondary, non-tertiary 
 1. [ Themes using this layer ](#-themes-using-this-layer-)
 2. [ Basic tags for this layer ](#-basic-tags-for-this-layer-)
 3. [ Supported attributes ](#-supported-attributes-)
-  - [just_created](#just_created)
-  - [school-name](#school-name)
-  - [capacity](#capacity)
-  - [education-level-belgium](#education-level-belgium)
-  - [gender](#gender)
-  - [target-audience](#target-audience)
-  - [website](#website)
-  - [phone](#phone)
-  - [email](#email)
-  - [school-language](#school-language)
-  - [leftover-questions](#leftover-questions)
-  - [lod](#lod)
-  - [minimap](#minimap)
-  - [move-button](#move-button)
-  - [last_edit](#last_edit)
-  - [favourite_status](#favourite_status)
-  - [qr_code](#qr_code)
-  - [share](#share)
-  - [all-tags](#all-tags)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
 
  Themes using this layer 
 -------------------------
@@ -95,281 +95,198 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/email#values) [email](https://wiki.openstreetmap.org/wiki/Key:email) | [email](../SpecialInputElements.md#email) | 
 
 
-
-
-### just_created 
-
-
-
+### this.id
 This element shows a 'thank you' that the contributor has recently created this element
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
+ - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
+This tagrendering has labels 
+`added_by_default`
 
+### this.id
 
+The question is `What is the name of this school?`
+This rendering asks information about the property 
+[name](https://wiki.openstreetmap.org/wiki/Key:name)
+This is rendered with `This school is named {name}`
 
 
 
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
 
+### this.id
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
+The question is `How much students can at most enroll in this school?`
+This rendering asks information about the property 
+[capacity](https://wiki.openstreetmap.org/wiki/Key:capacity)
+This is rendered with `This school can enroll at most {capacity} students`
 
-This tagrendering has labels  `added_by_default`
 
 
 
-### school-name 
+### this.id
 
+The question is `What level of education is given on this school?`
 
+ - *This is a school with a kindergarten section where young kids receive some education which prepares reading and writing.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:school' target='_blank'>school</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school%3Dkindergarten' target='_blank'>kindergarten</a>
+ - *This is a school where one learns primary skills such as basic literacy and numerical skills. <div class='subtle'>Pupils typically enroll from 6 years old till 12 years old</div>* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:school' target='_blank'>school</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school%3Dprimary' target='_blank'>primary</a>
+ - *This is a secondary school which offers all grades* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:school' target='_blank'>school</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school%3Dsecondary' target='_blank'>secondary</a>
+ - *This is a secondary school which does <i>not</i> have all grades, but offers <b>first and second</b> grade* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:school' target='_blank'>school</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school%3Dlower_secondary' target='_blank'>lower_secondary</a>
+ - *This is a secondary school which does <i>not</i> have all grades, but offers <b>third and fourth</b> grade* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:school' target='_blank'>school</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school%3Dmiddle_secondary' target='_blank'>middle_secondary</a>
+ - *This is a secondary school which does <i>not</i> have all grades, but offers <b>fifth and sixth</b> grade* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:school' target='_blank'>school</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school%3Dupper_secondary' target='_blank'>upper_secondary</a>
+ - *This school offers post-secondary education (e.g. a seventh or eight specialisation year)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:school' target='_blank'>school</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school%3Dpost_secondary' target='_blank'>post_secondary</a>
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:_country' target='_blank'>_country</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_country%3Dbe' target='_blank'>be</a>
 
-The question is  *What is the name of this school?*
 
-This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) This is rendered with  `This school is named {name}`
+### this.id
 
+The question is `Which genders can enroll at this school?`
 
+ - *Both boys and girls can enroll here and have classes together* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:school:gender' target='_blank'>school:gender</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:gender%3Dmixed' target='_blank'>mixed</a>
+ - *Both boys and girls can enroll here but they are separated (e.g. they have lessons in different classrooms or at different times)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:school:gender' target='_blank'>school:gender</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:gender%3Dseparated' target='_blank'>separated</a>
+ - *This is a boys only-school* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:school:gender' target='_blank'>school:gender</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:gender%3Dmale' target='_blank'>male</a>
+ - *This is a girls-only school* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:school:gender' target='_blank'>school:gender</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:gender%3Dfemale' target='_blank'>female</a>
 
-### capacity 
 
 
+### this.id
 
-The question is  *How much students can at most enroll in this school?*
+The question is `Does this school target students with a special need? Which structural facilities does this school have?`
+This rendering asks information about the property 
+[school:for](https://wiki.openstreetmap.org/wiki/Key:school:for)
+This is rendered with `This school has facilities for students with {school:for}`
+ - *This is a school where students study skills at their age-adequate level. <div>There are little or no special facilities to cater for students with special needs or facilities are ad-hoc</div>* corresponds with school:for=
+ - _This option cannot be chosen as answer_
+ - *This is a school for students without special needs<div class='subtle'>This includes students who can follow the courses with small, ad hoc measurements</div>* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:school:for' target='_blank'>school:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:for%3Dmainstream' target='_blank'>mainstream</a>
+ - *This is a school where adults are taught skills on the level as specified.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:school:for' target='_blank'>school:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:for%3Dadults' target='_blank'>adults</a>
+ - *This is a school for students with autism* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:school:for' target='_blank'>school:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:for%3Dautism' target='_blank'>autism</a>
+ - *This is a school for students with learning disabilities* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:school:for' target='_blank'>school:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:for%3Dlearning_disabilities' target='_blank'>learning_disabilities</a>
+ - *This is a school for blind students or students with sight impairments* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:school:for' target='_blank'>school:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:for%3Dblind' target='_blank'>blind</a>
+ - *This is a school for deaf students or students with hearing impairments* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:school:for' target='_blank'>school:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:for%3Ddeaf' target='_blank'>deaf</a>
+ - *This is a school for students with disabilities* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:school:for' target='_blank'>school:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:for%3Ddisabilities' target='_blank'>disabilities</a>
+ - *This is a school for students with special needs* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:school:for' target='_blank'>school:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:for%3Dspecial_needs' target='_blank'>special_needs</a>
+This tagrendering is only visible in the popup if the following condition is met: school:for~.+
 
-This rendering asks information about the property  [capacity](https://wiki.openstreetmap.org/wiki/Key:capacity) This is rendered with  `This school can enroll at most {capacity} students`
 
+### this.id
 
+The question is `What is the website of {title()}?`
+This rendering asks information about the property 
+[website](https://wiki.openstreetmap.org/wiki/Key:website)
+This is rendered with `<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>`
+ - *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>* corresponds with contact:website~.+
+ - _This option cannot be chosen as answer_
 
-### education-level-belgium 
+This tagrendering has labels 
+`contact`
 
+### this.id
 
+The question is `What is the phone number of {title()}?`
+This rendering asks information about the property 
+[phone](https://wiki.openstreetmap.org/wiki/Key:phone)
+This is rendered with `<a href='tel:{phone}'>{phone}</a>`
+ - *<a href='tel:{contact:phone}'>{contact:phone}</a>* corresponds with contact:phone~.+
+ - _This option cannot be chosen as answer_
 
-The question is  *What level of education is given on this school?*
+This tagrendering has labels 
+`contact`
 
+### this.id
 
+The question is `What is the email address of {title()}?`
+This rendering asks information about the property 
+[email](https://wiki.openstreetmap.org/wiki/Key:email)
+This is rendered with `<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>`
+ - *<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>* corresponds with contact:email~.+
+ - _This option cannot be chosen as answer_
+ - *<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>* corresponds with operator:email~.+
+ - _This option cannot be chosen as answer_
 
+This tagrendering has labels 
+`contact`
 
+### this.id
 
-  - *This is a school with a kindergarten section where young kids receive some education which prepares reading and writing.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:school' target='_blank'>school</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school%3Dkindergarten' target='_blank'>kindergarten</a>
-  - *This is a school where one learns primary skills such as basic literacy and numerical skills. <div class='subtle'>Pupils typically enroll from 6 years old till 12 years old</div>*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:school' target='_blank'>school</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school%3Dprimary' target='_blank'>primary</a>
-  - *This is a secondary school which offers all grades*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:school' target='_blank'>school</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school%3Dsecondary' target='_blank'>secondary</a>
-  - *This is a secondary school which does <i>not</i> have all grades, but offers <b>first and second</b> grade*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:school' target='_blank'>school</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school%3Dlower_secondary' target='_blank'>lower_secondary</a>
-  - *This is a secondary school which does <i>not</i> have all grades, but offers <b>third and fourth</b> grade*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:school' target='_blank'>school</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school%3Dmiddle_secondary' target='_blank'>middle_secondary</a>
-  - *This is a secondary school which does <i>not</i> have all grades, but offers <b>fifth and sixth</b> grade*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:school' target='_blank'>school</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school%3Dupper_secondary' target='_blank'>upper_secondary</a>
-  - *This school offers post-secondary education (e.g. a seventh or eight specialisation year)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:school' target='_blank'>school</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school%3Dpost_secondary' target='_blank'>post_secondary</a>
+_This tagrendering has no question and is thus read-only_
 
 
-This tagrendering is only visible in the popup if the following condition is met: `<a href='https://wiki.openstreetmap.org/wiki/Key:_country' target='_blank'>_country</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_country%3Dbe' target='_blank'>be</a>`
 
 
 
-### gender 
+### this.id
 
+_This tagrendering has no question and is thus read-only_
 
 
-The question is  *Which genders can enroll at this school?*
 
 
 
+### this.id
 
+_This tagrendering has no question and is thus read-only_
 
-  - *Both boys and girls can enroll here and have classes together*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:school:gender' target='_blank'>school:gender</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:gender%3Dmixed' target='_blank'>mixed</a>
-  - *Both boys and girls can enroll here but they are separated (e.g. they have lessons in different classrooms or at different times)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:school:gender' target='_blank'>school:gender</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:gender%3Dseparated' target='_blank'>separated</a>
-  - *This is a boys only-school*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:school:gender' target='_blank'>school:gender</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:gender%3Dmale' target='_blank'>male</a>
-  - *This is a girls-only school*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:school:gender' target='_blank'>school:gender</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:gender%3Dfemale' target='_blank'>female</a>
 
 
+This tagrendering has labels 
+`added_by_default`
 
-
-### target-audience 
-
-
-
-The question is  *Does this school target students with a special need? Which structural facilities does this school have?*
-
-This rendering asks information about the property  [school:for](https://wiki.openstreetmap.org/wiki/Key:school:for) This is rendered with  `This school has facilities for students with {school:for}`
-
-
-
-  - *This is a school where students study skills at their age-adequate level. <div>There are little or no special facilities to cater for students with special needs or facilities are ad-hoc</div>*  corresponds with  school:for=
-  - _This option cannot be chosen as answer_
-  - *This is a school for students without special needs<div class='subtle'>This includes students who can follow the courses with small, ad hoc measurements</div>*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:school:for' target='_blank'>school:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:for%3Dmainstream' target='_blank'>mainstream</a>
-  - *This is a school where adults are taught skills on the level as specified.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:school:for' target='_blank'>school:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:for%3Dadults' target='_blank'>adults</a>
-  - *This is a school for students with autism*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:school:for' target='_blank'>school:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:for%3Dautism' target='_blank'>autism</a>
-  - *This is a school for students with learning disabilities*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:school:for' target='_blank'>school:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:for%3Dlearning_disabilities' target='_blank'>learning_disabilities</a>
-  - *This is a school for blind students or students with sight impairments*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:school:for' target='_blank'>school:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:for%3Dblind' target='_blank'>blind</a>
-  - *This is a school for deaf students or students with hearing impairments*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:school:for' target='_blank'>school:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:for%3Ddeaf' target='_blank'>deaf</a>
-  - *This is a school for students with disabilities*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:school:for' target='_blank'>school:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:for%3Ddisabilities' target='_blank'>disabilities</a>
-  - *This is a school for students with special needs*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:school:for' target='_blank'>school:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:for%3Dspecial_needs' target='_blank'>special_needs</a>
-
-
-This tagrendering is only visible in the popup if the following condition is met: `school:for~.+`
-
-
-
-### website 
-
-
-
-The question is  *What is the website of {title()}?*
-
-This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) This is rendered with  `<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>`
-
-
-
-  - *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>*  corresponds with  contact:website~.+
-  - _This option cannot be chosen as answer_
-
-
-This tagrendering has labels  `contact`
-
-
-
-### phone 
-
-
-
-The question is  *What is the phone number of {title()}?*
-
-This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) This is rendered with  `<a href='tel:{phone}'>{phone}</a>`
-
-
-
-  - *<a href='tel:{contact:phone}'>{contact:phone}</a>*  corresponds with  contact:phone~.+
-  - _This option cannot be chosen as answer_
-
-
-This tagrendering has labels  `contact`
-
-
-
-### email 
-
-
-
-The question is  *What is the email address of {title()}?*
-
-This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) This is rendered with  `<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>`
-
-
-
-  - *<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>*  corresponds with  contact:email~.+
-  - _This option cannot be chosen as answer_
-  - *<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>*  corresponds with  operator:email~.+
-  - _This option cannot be chosen as answer_
-
-
-This tagrendering has labels  `contact`
-
-
-
-### school-language 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### leftover-questions 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### lod 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### minimap 
-
-
-
+### this.id
 Shows a small map with the feature. Added by default to every popup
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### move-button 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### last_edit 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
+
+
+### this.id
 Gives some metainfo about the last edit and who did edit it - rendering only
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:changeset~.+ & _last_edit:contributor~.+
+This tagrendering has labels 
+`added_by_default`
 
-This tagrendering has labels  `added_by_default`
+### this.id
 
-
-
-### favourite_status 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### qr_code 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has no question and is thus read-only
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has labels  `added_by_default`
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
-
-### share 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### all-tags 
-
-
-
-This tagrendering has no question and is thus read-only
 
  
 

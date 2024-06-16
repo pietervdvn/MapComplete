@@ -48,7 +48,7 @@ export interface NSIItem {
     displayName: string
     id: string
     locationSet: {
-        include: string[],
+        include: string[]
         exclude: string[]
     }
     tags: Record<string, string>
@@ -56,11 +56,15 @@ export interface NSIItem {
 }
 
 export default class NameSuggestionIndex {
-
     private static readonly nsiFile: Readonly<NSIFile> = <any>nsi
-    private static readonly nsiWdFile: Readonly<Record<string, {
-        logos: { wikidata?: string, facebook?: string }
-    }>> = <any>nsiWD["wikidata"]
+    private static readonly nsiWdFile: Readonly<
+        Record<
+            string,
+            {
+                logos: { wikidata?: string; facebook?: string }
+            }
+        >
+    > = <any>nsiWD["wikidata"]
 
     private static loco = new LocationConflation(nsiFeatures) // Some additional boundaries
 
@@ -71,16 +75,17 @@ export default class NameSuggestionIndex {
             return this._supportedTypes
         }
         const keys = Object.keys(NameSuggestionIndex.nsiFile.nsi)
-        const all = keys.map(k => NameSuggestionIndex.nsiFile.nsi[k].properties.path.split("/")[0])
-        this._supportedTypes = Utils.Dedup(all).map(s => {
-            if(s.endsWith("s")){
+        const all = keys.map(
+            (k) => NameSuggestionIndex.nsiFile.nsi[k].properties.path.split("/")[0]
+        )
+        this._supportedTypes = Utils.Dedup(all).map((s) => {
+            if (s.endsWith("s")) {
                 s = s.substring(0, s.length - 1)
             }
             return s
         })
         return this._supportedTypes
     }
-
 
     /**
      * Fetches the data files for a single country. Note that it contains _all_ entries having this brand, not for a single type of object
@@ -89,19 +94,24 @@ export default class NameSuggestionIndex {
      * @private
      */
     private static async fetchFrequenciesFor(type: string, countries: string[]) {
-        let stats = await Promise.all(countries.map(c => {
-            try {
-                return Utils.downloadJsonCached<Record<string, number>>(`./assets/data/nsi/stats/${type}.${c.toUpperCase()}.json`, 24 * 60 * 60 * 1000)
-            } catch (e) {
-                console.error("Could not fetch " + type + " statistics due to", e)
-                return undefined
-            }
-        }))
+        let stats = await Promise.all(
+            countries.map((c) => {
+                try {
+                    return Utils.downloadJsonCached<Record<string, number>>(
+                        `./assets/data/nsi/stats/${type}.${c.toUpperCase()}.json`,
+                        24 * 60 * 60 * 1000
+                    )
+                } catch (e) {
+                    console.error("Could not fetch " + type + " statistics due to", e)
+                    return undefined
+                }
+            })
+        )
         stats = Utils.NoNull(stats)
         if (stats.length === 1) {
             return stats[0]
         }
-        if(stats.length === 0){
+        if (stats.length === 0) {
             return {}
         }
         const merged = stats[0]
@@ -128,7 +138,12 @@ export default class NameSuggestionIndex {
         return false
     }
 
-    public static async generateMappings(type: string, tags: Record<string, string>, country: string[], location?: [number, number]): Promise<Mapping[]> {
+    public static async generateMappings(
+        type: string,
+        tags: Record<string, string>,
+        country: string[],
+        location?: [number, number]
+    ): Promise<Mapping[]> {
         const mappings: Mapping[] = []
         const frequencies = await NameSuggestionIndex.fetchFrequenciesFor(type, country)
         for (const key in tags) {
@@ -136,8 +151,14 @@ export default class NameSuggestionIndex {
                 continue
             }
             const value = tags[key]
-            const actualBrands = NameSuggestionIndex.getSuggestionsForKV(type, key, value, country.join(";"), location)
-            if(!actualBrands){
+            const actualBrands = NameSuggestionIndex.getSuggestionsForKV(
+                type,
+                key,
+                value,
+                country.join(";"),
+                location
+            )
+            if (!actualBrands) {
                 continue
             }
             for (const nsiItem of actualBrands) {
@@ -156,7 +177,9 @@ export default class NameSuggestionIndex {
                 }
                 mappings.push({
                     if: new Tag(type, tags[type]),
-                    addExtraTags: Object.keys(tags).filter(k => k !== type).map(k => new Tag(k, tags[k])),
+                    addExtraTags: Object.keys(tags)
+                        .filter((k) => k !== type)
+                        .map((k) => new Tag(k, tags[k])),
                     then: new TypedTranslation<Record<string, never>>({ "*": nsiItem.displayName }),
                     hideInAnswer: false,
                     ifnot: undefined,
@@ -164,22 +187,23 @@ export default class NameSuggestionIndex {
                     icon,
                     iconClass: "medium",
                     priorityIf: frequency > 0 ? new RegexTag("id", /.*/) : undefined,
-                    searchTerms: { "*": [nsiItem.displayName, nsiItem.id] }
+                    searchTerms: { "*": [nsiItem.displayName, nsiItem.id] },
                 })
             }
         }
         return mappings
     }
 
-    public static supportedTags(type: "operator" | "brand" | "flag" | "transit" | string): Record<string, string[]> {
-        const tags: Record<string, string []> = {}
+    public static supportedTags(
+        type: "operator" | "brand" | "flag" | "transit" | string
+    ): Record<string, string[]> {
+        const tags: Record<string, string[]> = {}
         const keys = Object.keys(NameSuggestionIndex.nsiFile.nsi)
         for (const key of keys) {
-
             const nsiItem = NameSuggestionIndex.nsiFile.nsi[key]
             const path = nsiItem.properties.path
             const [osmType, osmkey, osmvalue] = path.split("/")
-            if (type !== osmType && (type + "s" !== osmType)) {
+            if (type !== osmType && type + "s" !== osmType) {
                 continue
             }
             if (!tags[osmkey]) {
@@ -204,7 +228,7 @@ export default class NameSuggestionIndex {
                 options.push(...suggestions)
             }
         }
-        return (options)
+        return options
     }
 
     /**
@@ -212,8 +236,15 @@ export default class NameSuggestionIndex {
      * @param country: a string containing one or more country codes, separated by ";"
      * @param location: center point of the feature, should be [lon, lat]
      */
-    public static getSuggestionsFor(type: string, tags: {key: string, value: string}[], country: string = undefined, location: [number, number] = undefined): NSIItem[] {
-        return tags.flatMap(tag => this.getSuggestionsForKV(type, tag.key, tag.value, country, location))
+    public static getSuggestionsFor(
+        type: string,
+        tags: { key: string; value: string }[],
+        country: string = undefined,
+        location: [number, number] = undefined
+    ): NSIItem[] {
+        return tags.flatMap((tag) =>
+            this.getSuggestionsForKV(type, tag.key, tag.value, country, location)
+        )
     }
 
     /**
@@ -221,18 +252,26 @@ export default class NameSuggestionIndex {
      * @param country: a string containing one or more country codes, separated by ";"
      * @param location: center point of the feature, should be [lon, lat]
      */
-    public static getSuggestionsForKV(type: string, key: string, value: string, country: string = undefined, location: [number, number] = undefined): NSIItem[] {
+    public static getSuggestionsForKV(
+        type: string,
+        key: string,
+        value: string,
+        country: string = undefined,
+        location: [number, number] = undefined
+    ): NSIItem[] {
         const path = `${type}s/${key}/${value}`
         const entry = NameSuggestionIndex.nsiFile.nsi[path]
-        return entry?.items?.filter(i => {
+        return entry?.items?.filter((i) => {
             if (i.locationSet.include.indexOf("001") >= 0) {
                 return true
             }
 
-            if (country === undefined ||
+            if (
+                country === undefined ||
                 // We prefer the countries provided by lonlat2country, they are more precise
                 // Country might contain multiple countries, separated by ';'
-                i.locationSet.include.some(c => country.indexOf(c) >= 0)) {
+                i.locationSet.include.some((c) => country.indexOf(c) >= 0)
+            ) {
                 return true
             }
 

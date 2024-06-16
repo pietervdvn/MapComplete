@@ -41,7 +41,14 @@ describe("Unit", () => {
 
         const canonical = denomintion.canonicalValue("5", true, true)
         expect(canonical).toBe("5/year")
-        const unit = new Unit("quantity", ["key"], [denomintion], false, Validators.get("float"), true)
+        const unit = new Unit(
+            "quantity",
+            ["key"],
+            [denomintion],
+            false,
+            Validators.get("float"),
+            true
+        )
         const [detected, detectedDenom] = unit.findDenomination("5/year", () => "be")
         expect(detected).toBe("5")
         expect(detectedDenom).toBe(denomintion)

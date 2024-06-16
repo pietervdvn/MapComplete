@@ -29,7 +29,8 @@
     "ca": "Una capa que mostra on pots aparcar la teva bicicleta",
     "it": "Un livello che mostra dove puoi parcheggiare la tua bicicletta",
     "pt_BR": "Uma camada mostrado onde você pode estacionar sua bicicleta",
-    "pt": "Uma camada que mostra onde pode estacionar a sua bicicleta"
+    "pt": "Uma camada que mostra onde pode estacionar a sua bicicleta",
+    "pl": "Warstwa pokazująca gdzie można zaparkować rower"
   },
   "source": {
     "osmTags": {
@@ -170,7 +171,8 @@
             "ca": "Bastidors",
             "da": "Hæftestativer",
             "cs": "Stojany",
-            "pt_BR": "Racks para prender a bicicleta"
+            "pt_BR": "Racks para prender a bicicleta",
+            "pl": "Stojaki"
           },
           "icon": {
             "path": "./assets/layers/bike_parking/staple.svg",
@@ -284,7 +286,8 @@
             "ca": "cobert",
             "eu": "Etxola",
             "pt_BR": "Cabana",
-            "pt": "Cabana"
+            "pt": "Cabana",
+            "pl": "Wiata"
           },
           "icon": {
             "path": "./assets/layers/bike_parking/shed.svg",
@@ -519,12 +522,14 @@
         "cs": "Kolik jízdních kol se vejde na toto parkoviště (včetně případných nákladních kol)?",
         "ca": "Quantes bicicletes caben en aquest aparcament de bicicletes (incloent possibles bicicletes de càrrega)?",
         "pt_BR": "Quantas bicicletas cabem nesse estacionamento de bicicletas (incluindo possíveis bicicletas de carga)?",
-        "pt": "Quantas bicicletas cabem neste estacionamento de bicicletas (incluindo possíveis bicicletas de carga)?"
+        "pt": "Quantas bicicletas cabem neste estacionamento de bicicletas (incluindo possíveis bicicletas de carga)?",
+        "pl": "Ile rowerów mieści się na tym parkingu rowerowym?"
       },
       "questionHint": {
         "en": "This includes regular bicycles, cargo bikes, ebikes, ...",
         "nl": "Dit is het totaal aantal gewone fietsen, bakfietsen, elektrische fietsen, ...",
-        "de": "Dazu gehören reguläre Fahrräder, Lasträder, Ebikes,..."
+        "de": "Dazu gehören reguläre Fahrräder, Lasträder, Ebikes,...",
+        "pl": "To obejmuje zwykłe rowery, do transportu dóbr, elektryczne, ..."
       },
       "render": {
         "en": "Place for {capacity} bikes",
@@ -678,7 +683,8 @@
           "then": {
             "en": "One has to <b>pay</b> to use this bicycle parking",
             "nl": "<b>Betalende</b> fietsparking",
-            "de": "Man muss <b>zahlen</b>, um den Fahrradparkplatz zu nutzen"
+            "de": "Man muss <b>zahlen</b>, um den Fahrradparkplatz zu nutzen",
+            "fr": "L'utilisation de ce parking à vélo est <b>payant</b>"
           }
         },
         {
@@ -687,7 +693,8 @@
           "then": {
             "en": "Free to use",
             "nl": "Gratis te gebruiken",
-            "de": "Die Nutzung ist kostenlos"
+            "de": "Die Nutzung ist kostenlos",
+            "fr": "L'utilisation de ce parking à vélo est <b>gratuit</b>"
           }
         }
       ]
@@ -721,7 +728,8 @@
       "question": {
         "en": "Who maintains this bicycle parking?",
         "nl": "Wie beheert deze fietsenstalling?",
-        "de": "Wer unterhält diese Fahrradabstellplätze?"
+        "de": "Wer unterhält diese Fahrradabstellplätze?",
+        "fr": "Qui entretient ce parking à vélos ?"
       },
       "render": {
         "en": "This bicycle parking is maintained by {operator}",

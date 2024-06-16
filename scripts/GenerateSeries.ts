@@ -136,7 +136,7 @@ class StatsDownloader {
             ScriptUtils.erasableLog(
                 `Downloading stats for ${year}-${month}-${day}, page ${page} ${url}`
             )
-            const result = await Utils.downloadJson<{features: [], next: string}>(url, headers)
+            const result = await Utils.downloadJson<{ features: []; next: string }>(url, headers)
             page++
             allFeatures.push(...result.features)
             if (result.features === undefined) {
@@ -206,7 +206,7 @@ class GenerateSeries extends Script {
             targetDir + "/changeset-metadata",
             targetDir + "/mapcomplete-changes/",
             {
-                zoomlevel: 8
+                zoomlevel: 8,
             }
         )
     }
@@ -250,7 +250,7 @@ class GenerateSeries extends Script {
             (p) => p.startsWith("stats.") && p.endsWith(".json")
         )
         let allFeatures: ChangeSetData[] = allPaths.flatMap(
-                (path) => JSON.parse(readFileSync(sourceDir + "/" + path, "utf-8")).features
+            (path) => JSON.parse(readFileSync(sourceDir + "/" + path, "utf-8")).features
         )
         allFeatures = allFeatures.filter(
             (f) =>
@@ -269,7 +269,9 @@ class GenerateSeries extends Script {
                     f.properties.editor.toLowerCase().startsWith("mapcomplete"))
         )
 
-        allFeatures = allFeatures.filter((f) => f.properties.metadata?.theme !== "EMPTY CS" && f.geometry.coordinates.length > 0)
+        allFeatures = allFeatures.filter(
+            (f) => f.properties.metadata?.theme !== "EMPTY CS" && f.geometry.coordinates.length > 0
+        )
         const centerpointsAll = allFeatures.map((f) => {
             const centerpoint = GeoOperations.centerpoint(f)
             const c = centerpoint.geometry.coordinates
@@ -277,9 +279,9 @@ class GenerateSeries extends Script {
             centerpoint.geometry.coordinates = [c[1], c[0]]
             return centerpoint
         })
-        const centerpoints = centerpointsAll.filter(p => {
-            const bbox= BBox.get(p)
-            if(bbox.minLat === -90 && bbox.maxLat === -90){
+        const centerpoints = centerpointsAll.filter((p) => {
+            const bbox = BBox.get(p)
+            if (bbox.minLat === -90 && bbox.maxLat === -90) {
                 // Due to some bug somewhere, those invalid bboxes might appear if the latitude is < 90
                 // This crashes the 'spreadIntoBBoxes
                 // As workaround, we simply ignore them for now

@@ -40,11 +40,9 @@ export default class CopyrightPanel extends Combine {
         const t = Translations.t.general.attribution
         const layoutToUse = state.layout
 
-
-
-        const iconAttributions: BaseUIElement[] = (layoutToUse.getUsedImages()).map(
-            CopyrightPanel.IconAttribution
-        )
+        const iconAttributions: BaseUIElement[] = layoutToUse
+            .getUsedImages()
+            .map(CopyrightPanel.IconAttribution)
 
         let maintainer: BaseUIElement = undefined
         if (layoutToUse.credits !== undefined && layoutToUse.credits !== "") {

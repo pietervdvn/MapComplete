@@ -15,7 +15,7 @@
   export let state: ThemeViewState
   export let map: Store<MlMap> = undefined
   export let hideTooltip = false
-  export let htmlElem : UIEventSource<HTMLElement> = undefined
+  export let htmlElem: UIEventSource<HTMLElement> = undefined
 </script>
 
 <MapControlButton

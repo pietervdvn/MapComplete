@@ -3,7 +3,8 @@
   "name": {
     "en": "Mountain rescue stations",
     "de": "Bergrettungsstationen",
-    "fr": "Postes de secours en montagne"
+    "fr": "Postes de secours en montagne",
+    "pl": "Stacje ratownictwa górskiego"
   },
   "description": {
     "en": "A building where first aid responders store material and might be on watch",
@@ -18,7 +19,8 @@
     "render": {
       "en": "Mountain rescue station",
       "de": "Bergrettungsstation",
-      "fr": "Poste de secours en montagne"
+      "fr": "Poste de secours en montagne",
+      "pl": "Stacja ratownictwa górskiego"
     }
   },
   "pointRendering": [
@@ -50,7 +52,8 @@
       "title": {
         "en": "a mountain rescue station",
         "de": "eine Bergrettungsstation",
-        "fr": "un poste de secours en montagne"
+        "fr": "un poste de secours en montagne",
+        "pl": "stacja ratownictwa górskiego"
       },
       "tags": [
         "emergency=mountain_rescue"

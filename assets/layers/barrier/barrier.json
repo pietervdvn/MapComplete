@@ -500,7 +500,8 @@
         "pt": "Largura máxima: {maxwidth:physical} m",
         "nb_NO": "Maksimal bredde: {maxwidth:physical} m",
         "ca": "Amplada màxima: {maxwidth:physical} m",
-        "pt_BR": "Largura máxima: {maxwidth:physical} m"
+        "pt_BR": "Largura máxima: {maxwidth:physical} m",
+        "pl": "Maksymalna szerokość: {maxwidth:physical} m"
       },
       "question": {
         "en": "How wide is the gap left over besides the barrier?",

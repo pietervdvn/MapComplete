@@ -339,7 +339,8 @@
       "editButtonAriaLabel": {
         "en": "Edit website",
         "nl": "Pas website aan",
-        "de": "Webseite bearbeiten"
+        "de": "Webseite bearbeiten",
+        "pl": "Edytuj stronę internetową"
       }
     },
     {
@@ -2627,7 +2628,8 @@
       ],
       "question": {
         "en": "Does this place offer a vegan option?",
-        "de": "Bietet dieser Ort eine vegane Option an?"
+        "de": "Bietet dieser Ort eine vegane Option an?",
+        "pl": "Czy to miejsce oferuje opcję wegańską?"
       },
       "mappings": [
         {

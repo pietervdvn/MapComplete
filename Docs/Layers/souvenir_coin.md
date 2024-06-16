@@ -25,28 +25,28 @@ Layer showing machines selling souvenir coins
 1. [ Themes using this layer ](#-themes-using-this-layer-)
 2. [ Basic tags for this layer ](#-basic-tags-for-this-layer-)
 3. [ Supported attributes ](#-supported-attributes-)
-  - [just_created](#just_created)
-  - [images](#images)
-  - [opening_hours_24_7](#opening_hours_24_7)
-  - [designs](#designs)
-  - [payment-options-split](#payment-options-split)
-  - [website](#website)
-  - [charge](#charge)
-  - [denominations-coins](#denominations-coins)
-  - [indoor](#indoor)
-  - [repeated](#repeated)
-  - [single_level](#single_level)
-  - [check_date](#check_date)
-  - [leftover-questions](#leftover-questions)
-  - [lod](#lod)
-  - [minimap](#minimap)
-  - [move-button](#move-button)
-  - [delete-button](#delete-button)
-  - [last_edit](#last_edit)
-  - [favourite_status](#favourite_status)
-  - [qr_code](#qr_code)
-  - [share](#share)
-  - [all-tags](#all-tags)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
     + [Filters](#filters)
 
  Themes using this layer 
@@ -100,347 +100,241 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/check_date#values) [check_date](https://wiki.openstreetmap.org/wiki/Key:check_date) | [date](../SpecialInputElements.md#date) | [](https://wiki.openstreetmap.org/wiki/Tag:check_date%3D)
 
 
-
-
-### just_created 
-
-
-
+### this.id
 This element shows a 'thank you' that the contributor has recently created this element
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
+ - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
+This tagrendering has labels 
+`added_by_default`
 
-
-
-
-
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
-
-
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### images 
-
-
-
+### this.id
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
 
 
 
 
+### this.id
 
-### opening_hours_24_7 
+The question is `What are the opening hours of {title()}?`
+This rendering asks information about the property 
+[opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours)
+This is rendered with `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
+ - *24/7 opened (including holidays)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
+ - *Marked as closed for an unspecified time* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>
+ - _This option cannot be chosen as answer_
 
 
 
-The question is  *What are the opening hours of {title()}?*
+### this.id
 
-This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
+The question is `How many designs are available?`
+This rendering asks information about the property 
+[coin:design_count](https://wiki.openstreetmap.org/wiki/Key:coin:design_count)
+This is rendered with `This machine has {coin:design_count} designs available`
+ - *This machine has one design available* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:coin:design_count' target='_blank'>coin:design_count</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:coin:design_count%3D1' target='_blank'>1</a>
+ - *This machine has two designs available* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:coin:design_count' target='_blank'>coin:design_count</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:coin:design_count%3D2' target='_blank'>2</a>
+ - *This machine has three designs available* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:coin:design_count' target='_blank'>coin:design_count</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:coin:design_count%3D3' target='_blank'>3</a>
+ - *This machine has four designs available* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:coin:design_count' target='_blank'>coin:design_count</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:coin:design_count%3D4' target='_blank'>4</a>
 
 
 
-  - *24/7 opened (including holidays)*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
-  - *Marked as closed for an unspecified time*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>
-  - _This option cannot be chosen as answer_
+### this.id
 
+The question is `Which methods of payment are accepted here?`
 
+ - *Cash is accepted here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dyes' target='_blank'>yes</a>
+ - _This option cannot be chosen as answer_
+ - Unselecting this answer will add payment:cash=
+ - *Payment cards are accepted here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dyes' target='_blank'>yes</a>
+ - _This option cannot be chosen as answer_
+ - Unselecting this answer will add payment:cards=
+ - *Payment by QR-code is possible here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dyes' target='_blank'>yes</a>
+ - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dno' target='_blank'>no</a>
+ - *Coins are accepted here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins' target='_blank'>payment:coins</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins%3Dyes' target='_blank'>yes</a>
+ - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins' target='_blank'>payment:coins</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins%3Dno' target='_blank'>no</a>
+ - *Bank notes are accepted here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:notes' target='_blank'>payment:notes</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:notes%3Dyes' target='_blank'>yes</a>
+ - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:notes' target='_blank'>payment:notes</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:notes%3Dno' target='_blank'>no</a>
+ - *Debit cards are accepted here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:debit_cards' target='_blank'>payment:debit_cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:debit_cards%3Dyes' target='_blank'>yes</a>
+ - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:debit_cards' target='_blank'>payment:debit_cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:debit_cards%3Dno' target='_blank'>no</a>
+ - *Credit cards are accepted here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:credit_cards' target='_blank'>payment:credit_cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:credit_cards%3Dyes' target='_blank'>yes</a>
+ - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:credit_cards' target='_blank'>payment:credit_cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:credit_cards%3Dno' target='_blank'>no</a>
 
 
-### designs 
 
+### this.id
 
+The question is `What is the website of {title()}?`
+This rendering asks information about the property 
+[website](https://wiki.openstreetmap.org/wiki/Key:website)
+This is rendered with `<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>`
+ - *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>* corresponds with contact:website~.+
+ - _This option cannot be chosen as answer_
 
-The question is  *How many designs are available?*
+This tagrendering has labels 
+`contact`
 
-This rendering asks information about the property  [coin:design_count](https://wiki.openstreetmap.org/wiki/Key:coin:design_count) This is rendered with  `This machine has {coin:design_count} designs available`
+### this.id
 
+The question is `How much does a souvenir coin cost?`
+This rendering asks information about the property 
+[charge](https://wiki.openstreetmap.org/wiki/Key:charge)
+This is rendered with `A souvenir coins costs {charge}`
+ - *A souvenir coin costs 2 euro* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:charge' target='_blank'>charge</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:charge%3D2 EUR' target='_blank'>2 EUR</a>
 
 
-  - *This machine has one design available*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:coin:design_count' target='_blank'>coin:design_count</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:coin:design_count%3D1' target='_blank'>1</a>
-  - *This machine has two designs available*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:coin:design_count' target='_blank'>coin:design_count</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:coin:design_count%3D2' target='_blank'>2</a>
-  - *This machine has three designs available*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:coin:design_count' target='_blank'>coin:design_count</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:coin:design_count%3D3' target='_blank'>3</a>
-  - *This machine has four designs available*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:coin:design_count' target='_blank'>coin:design_count</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:coin:design_count%3D4' target='_blank'>4</a>
 
+### this.id
 
+The question is `What coins can you use to pay here?`
 
+ - *1 cent coins are accepted* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.01 EUR' target='_blank'>0.01 EUR</a>
+ - *2 cent coins are accepted* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.02 EUR' target='_blank'>0.02 EUR</a>
+ - *5 cent coins are accepted* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.05 EUR' target='_blank'>0.05 EUR</a>
+ - *10 cent coins are accepted* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.10 EUR' target='_blank'>0.10 EUR</a>
+ - *20 cent coins are accepted* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.20 EUR' target='_blank'>0.20 EUR</a>
+ - *50 cent coins are accepted* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.50 EUR' target='_blank'>0.50 EUR</a>
+ - *1 euro coins are accepted* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D1 EUR' target='_blank'>1 EUR</a>
+ - *2 euro coins are accepted* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D2 EUR' target='_blank'>2 EUR</a>
+ - *5 centimes coins are accepted* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.05 CHF' target='_blank'>0.05 CHF</a>
+ - *10 centimes coins are accepted* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.10 CHF' target='_blank'>0.10 CHF</a>
+ - *20 centimes coins are accepted* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.20 CHF' target='_blank'>0.20 CHF</a>
+ - *½ franc coins are accepted* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.50 CHF' target='_blank'>0.50 CHF</a>
+ - *1 franc coins are accepted* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D1 CHF' target='_blank'>1 CHF</a>
+ - *2 francs coins are accepted* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D2 CHF' target='_blank'>2 CHF</a>
+ - *5 francs coins are accepted* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D5 CHF' target='_blank'>5 CHF</a>
+This tagrendering is only visible in the popup if the following condition is met: (<a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins' target='_blank'>payment:coins</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins%3Dyes' target='_blank'>yes</a>) & (_currency~^(.*EUR.*)$ | _currency~^(.*CHF.*)$)
 
-### payment-options-split 
 
+### this.id
 
+The question is `Is this machine located indoors?`
 
-The question is  *Which methods of payment are accepted here?*
+ - *This machine is located indoors.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dyes' target='_blank'>yes</a>
+ - *This machine is located outdoors.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dno' target='_blank'>no</a>
 
 
 
+### this.id
 
+_This tagrendering has no question and is thus read-only_
 
-  - *Cash is accepted here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dyes' target='_blank'>yes</a>
-  - _This option cannot be chosen as answer_
-  - Unselecting this answer will add payment:cash=
-  - *Payment cards are accepted here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dyes' target='_blank'>yes</a>
-  - _This option cannot be chosen as answer_
-  - Unselecting this answer will add payment:cards=
-  - *Payment by QR-code is possible here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dyes' target='_blank'>yes</a>
-  - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dno' target='_blank'>no</a>
-  - *Coins are accepted here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins' target='_blank'>payment:coins</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins%3Dyes' target='_blank'>yes</a>
-  - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins' target='_blank'>payment:coins</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins%3Dno' target='_blank'>no</a>
-  - *Bank notes are accepted here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:notes' target='_blank'>payment:notes</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:notes%3Dyes' target='_blank'>yes</a>
-  - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:notes' target='_blank'>payment:notes</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:notes%3Dno' target='_blank'>no</a>
-  - *Debit cards are accepted here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:debit_cards' target='_blank'>payment:debit_cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:debit_cards%3Dyes' target='_blank'>yes</a>
-  - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:debit_cards' target='_blank'>payment:debit_cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:debit_cards%3Dno' target='_blank'>no</a>
-  - *Credit cards are accepted here*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:credit_cards' target='_blank'>payment:credit_cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:credit_cards%3Dyes' target='_blank'>yes</a>
-  - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:credit_cards' target='_blank'>payment:credit_cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:credit_cards%3Dno' target='_blank'>no</a>
 
+This tagrendering is only visible in the popup if the following condition is met: repeat_on~.+
+This tagrendering has labels 
+`level`
 
+### this.id
 
+The question is `On what level is this feature located?`
+This rendering asks information about the property 
+[level](https://wiki.openstreetmap.org/wiki/Key:level)
+This is rendered with `Located on the {level}th floor`
+ - *Located underground* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground' target='_blank'>underground</a>
+ - _This option cannot be chosen as answer_
+ - *Located on the ground floor* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D0' target='_blank'>0</a>
+ - *Located on the ground floor* corresponds with level=
+ - _This option cannot be chosen as answer_
+ - *Located on the first floor* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D1' target='_blank'>1</a>
+ - *Located on the first basement level* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D-1' target='_blank'>-1</a>
 
-### website 
+This tagrendering has labels 
+`level`
 
+### this.id
 
+The question is `When was this object last checked?`
+This rendering asks information about the property 
+[check_date](https://wiki.openstreetmap.org/wiki/Key:check_date)
+This is rendered with `This object was last checked on <b>{check_date}</b>`
+ - *This object was last checked today* corresponds with check_date=
 
-The question is  *What is the website of {title()}?*
 
-This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) This is rendered with  `<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>`
 
+### this.id
 
+_This tagrendering has no question and is thus read-only_
 
-  - *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>*  corresponds with  contact:website~.+
-  - _This option cannot be chosen as answer_
 
 
-This tagrendering has labels  `contact`
 
 
+### this.id
 
-### charge 
+_This tagrendering has no question and is thus read-only_
 
 
 
-The question is  *How much does a souvenir coin cost?*
+This tagrendering has labels 
+`added_by_default`
 
-This rendering asks information about the property  [charge](https://wiki.openstreetmap.org/wiki/Key:charge) This is rendered with  `A souvenir coins costs {charge}`
-
-
-
-  - *A souvenir coin costs 2 euro*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:charge' target='_blank'>charge</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:charge%3D2 EUR' target='_blank'>2 EUR</a>
-
-
-
-
-### denominations-coins 
-
-
-
-The question is  *What coins can you use to pay here?*
-
-
-
-
-
-  - *1 cent coins are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.01 EUR' target='_blank'>0.01 EUR</a>
-  - *2 cent coins are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.02 EUR' target='_blank'>0.02 EUR</a>
-  - *5 cent coins are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.05 EUR' target='_blank'>0.05 EUR</a>
-  - *10 cent coins are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.10 EUR' target='_blank'>0.10 EUR</a>
-  - *20 cent coins are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.20 EUR' target='_blank'>0.20 EUR</a>
-  - *50 cent coins are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.50 EUR' target='_blank'>0.50 EUR</a>
-  - *1 euro coins are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D1 EUR' target='_blank'>1 EUR</a>
-  - *2 euro coins are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D2 EUR' target='_blank'>2 EUR</a>
-  - *5 centimes coins are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.05 CHF' target='_blank'>0.05 CHF</a>
-  - *10 centimes coins are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.10 CHF' target='_blank'>0.10 CHF</a>
-  - *20 centimes coins are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.20 CHF' target='_blank'>0.20 CHF</a>
-  - *½ franc coins are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.50 CHF' target='_blank'>0.50 CHF</a>
-  - *1 franc coins are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D1 CHF' target='_blank'>1 CHF</a>
-  - *2 francs coins are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D2 CHF' target='_blank'>2 CHF</a>
-  - *5 francs coins are accepted*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D5 CHF' target='_blank'>5 CHF</a>
-
-
-This tagrendering is only visible in the popup if the following condition is met: `(<a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins' target='_blank'>payment:coins</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins%3Dyes' target='_blank'>yes</a>) & (_currency~^(.*EUR.*)$ | _currency~^(.*CHF.*)$)`
-
-
-
-### indoor 
-
-
-
-The question is  *Is this machine located indoors?*
-
-
-
-
-
-  - *This machine is located indoors.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dyes' target='_blank'>yes</a>
-  - *This machine is located outdoors.*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dno' target='_blank'>no</a>
-
-
-
-
-### repeated 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering is only visible in the popup if the following condition is met: `repeat_on~.+`
-
-This tagrendering has labels  `level`
-
-
-
-### single_level 
-
-
-
-The question is  *On what level is this feature located?*
-
-This rendering asks information about the property  [level](https://wiki.openstreetmap.org/wiki/Key:level) This is rendered with  `Located on the {level}th floor`
-
-
-
-  - *Located underground*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground' target='_blank'>underground</a>
-  - _This option cannot be chosen as answer_
-  - *Located on the ground floor*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D0' target='_blank'>0</a>
-  - *Located on the ground floor*  corresponds with  level=
-  - _This option cannot be chosen as answer_
-  - *Located on the first floor*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D1' target='_blank'>1</a>
-  - *Located on the first basement level*  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D-1' target='_blank'>-1</a>
-
-
-This tagrendering has labels  `level`
-
-
-
-### check_date 
-
-
-
-The question is  *When was this object last checked?*
-
-This rendering asks information about the property  [check_date](https://wiki.openstreetmap.org/wiki/Key:check_date) This is rendered with  `This object was last checked on <b>{check_date}</b>`
-
-
-
-  - *This object was last checked today*  corresponds with  check_date=
-
-
-
-
-### leftover-questions 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### lod 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### minimap 
-
-
-
+### this.id
 Shows a small map with the feature. Added by default to every popup
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### move-button 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### delete-button 
+### this.id
 
-
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
 
 
-### last_edit 
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
+
+
+### this.id
 Gives some metainfo about the last edit and who did edit it - rendering only
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:changeset~.+ & _last_edit:contributor~.+
+This tagrendering has labels 
+`added_by_default`
 
-This tagrendering has labels  `added_by_default`
+### this.id
 
-
-
-### favourite_status 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### qr_code 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has no question and is thus read-only
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has labels  `added_by_default`
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
-
-### share 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### all-tags 
-
-
-
-This tagrendering has no question and is thus read-only
 
 
 

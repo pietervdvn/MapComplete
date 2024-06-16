@@ -1,22 +1,20 @@
-
 export default class MarkdownUtils {
-
-    public static table(header: string[], contents: string[][]){
+    public static table(header: string[], contents: string[][]) {
         let result = ""
 
-        result += "\n\n| "+header.join(" | ") + " |\n"
+        result += "\n\n| " + header.join(" | ") + " |\n"
         result += header.map(() => "-----").join("|") + " |\n"
         for (const line of contents) {
-            if(!line){
+            if (!line) {
                 continue
             }
-            result += "| " + line.map(x => x ?? "").join(" | ") + " |\n"
+            result += "| " + line.map((x) => x ?? "").join(" | ") + " |\n"
         }
         result += "\n\n"
         return result
     }
 
     static list(strings: string[]): string {
-        return strings.map(item => " - "+item).join("\n")
+        return strings.map((item) => " - " + item).join("\n")
     }
 }

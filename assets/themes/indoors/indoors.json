@@ -12,7 +12,8 @@
     "cs": "Vnitřní prostory",
     "es": "En interiores",
     "eu": "Barnealdean",
-    "pl": "Wewnątrz"
+    "pl": "Wewnątrz",
+    "zh_Hant": "室內"
   },
   "description": {
     "en": "On this map, publicly accessible indoor places are shown",

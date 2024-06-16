@@ -162,7 +162,7 @@
             "intro": "You clicked somewhere where no data is known yet.<br/>",
             "layerNotEnabled": "The layer {layer} is not enabled. Enable this layer to add a feature",
             "openLayerControl": "Open the layer control box",
-            "pleaseLogin": "Please log in to add a new feature",
+            "pleaseLogin": "Please log in with OpenStreetMap to add a new feature",
             "presetInfo": "The new POI will have {tags}",
             "stillLoading": "The data is still loading. Please wait a bit before you add a new feature.",
             "title": "Add a new feature",
@@ -595,11 +595,11 @@
         "#": "These texts are shown above the theme buttons when no theme is loaded",
         "about": "About MapComplete",
         "featuredThemeTitle": "Featured this week",
-        "intro": "MapComplete is an OpenStreetMap-viewer and editor, which shows you information about features of a specific theme and allows to update it.",
+        "intro": "Maps about various topics which you contribute to",
         "learnMore": "Learn more",
         "logIn": "Log in to see other themes you previously visited",
         "pickTheme": "Pick a theme below to get started.",
-        "title": "Welcome to MapComplete"
+        "title": "MapComplete"
     },
     "move": {
         "cancel": "Cancel move",

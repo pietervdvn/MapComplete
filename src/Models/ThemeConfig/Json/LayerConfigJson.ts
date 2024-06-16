@@ -527,7 +527,16 @@ export interface LayerConfigJson {
      */
     units?: (
         | UnitConfigJson
-        | Record<string, string | { quantity: string; denominations: string[]; canonical?: string, inverted?: boolean }>
+        | Record<
+              string,
+              | string
+              | {
+                    quantity: string
+                    denominations: string[]
+                    canonical?: string
+                    inverted?: boolean
+                }
+          >
     )[]
 
     /**

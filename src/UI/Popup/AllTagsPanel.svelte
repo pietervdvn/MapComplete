@@ -21,15 +21,13 @@
   }
   let knownValues: UIEventSource<string[]> = new UIEventSource<string[]>([])
 
-  tags.addCallbackAndRunD(tags => {
+  tags.addCallbackAndRunD((tags) => {
     knownValues.setData(Object.keys(tags))
   })
 
-  function reEvalKnownValues(){
+  function reEvalKnownValues() {
     knownValues.setData(Object.keys(tags.data))
-
   }
-
 
   const metaKeys: string[] = [].concat(...SimpleMetaTaggers.metatags.map((k) => k.keys))
   let allCalculatedTags = new Set<string>([...calculatedTags, ...metaKeys])
@@ -54,7 +52,7 @@
             {:else if $tags[key] === ""}
               <i>Empty string</i>
             {:else if typeof $tags[key] === "object"}
-              <div class="literal-code" >{JSON.stringify($tags[key])}</div>
+              <div class="literal-code">{JSON.stringify($tags[key])}</div>
             {:else}
               {$tags[key]}
             {/if}

@@ -163,7 +163,8 @@
         "cs": "O jakou půjčovnu jízdních kol se jedná?",
         "ca": "Quin tipus de lloguer de bicicletes és aquest?",
         "pt_BR": "Qual tipo de aluguel de bicicletas é esse?",
-        "pt": "Qual tipo de aluguel de bicicletas é este?"
+        "pt": "Qual tipo de aluguel de bicicletas é este?",
+        "pl": "Jakiego rodzaju jest to wypożyczalnia rowerów?"
       },
       "mappings": [
         {
@@ -320,7 +321,8 @@
         "cs": "Jaká jízdní kola a příslušenství se zde půjčují?",
         "ca": "Quin tipus de bicicletes i accessoris es lloguen aquí?",
         "pt_BR": "Quais tipos de bicicleta e acessórios podem ser alugados aqui?",
-        "pt": "Quais tipos de bicicleta e acessórios podem ser alugados aqui?"
+        "pt": "Quais tipos de bicicleta e acessórios podem ser alugados aqui?",
+        "pl": "Jakiego rodzaju rowery i akcesoria są tutaj wypożyczane?"
       },
       "render": {
         "en": "{rental} is rented here",
@@ -367,7 +369,8 @@
             "cs": "Zde si můžete půjčit elektrokola",
             "ca": "Aquí es poden llogar bicicletes elèctriques",
             "pt_BR": "Bicicletas elétricas podem ser alugadas aqui",
-            "pt": "Bicicletas elétricas podem ser alugadas aqui"
+            "pt": "Bicicletas elétricas podem ser alugadas aqui",
+            "pl": "Można tutaj wypożyczyć rowery elektryczne"
           }
         },
         {
@@ -397,7 +400,8 @@
             "cs": "Zde si můžete půjčit horská kola",
             "ca": "Aquí es poden llogar bicicletes de muntanya",
             "pt_BR": "Bicicletas de montanha podem ser alugadas aqui",
-            "pt": "Bicicletas de montanha podem ser alugadas aqui"
+            "pt": "Bicicletas de montanha podem ser alugadas aqui",
+            "pl": "Można tutaj wypożyczyć rowery górskie"
           }
         },
         {
@@ -412,7 +416,8 @@
             "cs": "Zde si můžete půjčit dětská kola",
             "ca": "Aquí es poden llogar bicicletes infantils",
             "pt_BR": "Bicicletas para crianças podem ser alugadas aqui",
-            "pt": "Bicicletas para crianças podem ser alugadas aqui"
+            "pt": "Bicicletas para crianças podem ser alugadas aqui",
+            "pl": "Można tutaj wypożyczyć rowery dla dzieci"
           }
         },
         {
@@ -427,7 +432,8 @@
             "cs": "Zde si můžete půjčit tandemová kola",
             "ca": "Aquí es poden llogar tàndems",
             "pt_BR": "Bicicletas tandem podem ser alugadas aqui",
-            "pt": "Bicicletas tandem podem ser alugadas aqui"
+            "pt": "Bicicletas tandem podem ser alugadas aqui",
+            "pl": "Można tutaj wypożyczyć tandemy"
           }
         },
         {
@@ -457,7 +463,8 @@
             "cs": "Zde si můžete půjčit cyklistické přilby",
             "ca": "Aquí es poden llogar cascos de bicicleta",
             "pt_BR": "Capacetes de ciclismo podem ser alugados aqui",
-            "pt": "Capacetes de ciclismo podem ser alugados aqui"
+            "pt": "Capacetes de ciclismo podem ser alugados aqui",
+            "pl": "Można tutaj wypożyczyć kaski rowerowe"
           }
         }
       ],
@@ -571,7 +578,8 @@
               "cs": "brašny na kolo",
               "ca": "maletes de bicicletes",
               "pt_BR": "alforjes de bicicleta",
-              "pt": "alforjes de bicicleta"
+              "pt": "alforjes de bicicleta",
+              "pl": "sakwy rowerowe"
             }
           ],
           [

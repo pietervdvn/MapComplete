@@ -26,22 +26,22 @@ Layer showing bus lines
 1. [ Themes using this layer ](#-themes-using-this-layer-)
 2. [ Basic tags for this layer ](#-basic-tags-for-this-layer-)
 3. [ Supported attributes ](#-supported-attributes-)
-  - [just_created](#just_created)
-  - [name](#name)
-  - [from](#from)
-  - [via](#via)
-  - [to](#to)
-  - [colour](#colour)
-  - [network](#network)
-  - [operator](#operator)
-  - [leftover-questions](#leftover-questions)
-  - [lod](#lod)
-  - [minimap](#minimap)
-  - [last_edit](#last_edit)
-  - [favourite_status](#favourite_status)
-  - [qr_code](#qr_code)
-  - [share](#share)
-  - [all-tags](#all-tags)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
+  - [this.id](#thisid)
 
  Themes using this layer 
 -------------------------
@@ -93,188 +93,150 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/operator#values) [operator](https://wiki.openstreetmap.org/wiki/Key:operator) | [string](../SpecialInputElements.md#string) | 
 
 
-
-
-### just_created 
-
-
-
+### this.id
 This element shows a 'thank you' that the contributor has recently created this element
+_This tagrendering has no question and is thus read-only_
 
-This tagrendering has no question and is thus read-only
+ - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
+This tagrendering has labels 
+`added_by_default`
 
+### this.id
 
+The question is `What is the name for this bus line? (i.e. Bus XX: From => Via => To)`
+This rendering asks information about the property 
+[name](https://wiki.openstreetmap.org/wiki/Key:name)
+This is rendered with `{name}`
 
 
 
-  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  id~.+
 
+### this.id
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+`
+The question is `What is the starting point for this bus line?`
+This rendering asks information about the property 
+[from](https://wiki.openstreetmap.org/wiki/Key:from)
+This is rendered with `This bus line begins at {from}`
 
-This tagrendering has labels  `added_by_default`
 
 
 
-### name 
+### this.id
 
+The question is `What is the via point for this bus line?`
+This rendering asks information about the property 
+[via](https://wiki.openstreetmap.org/wiki/Key:via)
+This is rendered with `This bus line goes via {via}`
 
 
-The question is  *What is the name for this bus line? (i.e. Bus XX: From => Via => To)*
 
-This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) This is rendered with  `{name}`
 
+### this.id
 
+The question is `What is the ending point for this bus line?`
+This rendering asks information about the property 
+[to](https://wiki.openstreetmap.org/wiki/Key:to)
+This is rendered with `This bus line ends at {to}`
 
-### from 
 
 
 
-The question is  *What is the starting point for this bus line?*
+### this.id
 
-This rendering asks information about the property  [from](https://wiki.openstreetmap.org/wiki/Key:from) This is rendered with  `This bus line begins at {from}`
+The question is `What is the colour for this bus line?`
+This rendering asks information about the property 
+[colour](https://wiki.openstreetmap.org/wiki/Key:colour)
+This is rendered with `This bus line has the color {colour}`
 
 
 
-### via 
 
+### this.id
 
+The question is `What network does this bus line belong to?`
+This rendering asks information about the property 
+[network](https://wiki.openstreetmap.org/wiki/Key:network)
+This is rendered with `This bus line is part of the {network} network`
 
-The question is  *What is the via point for this bus line?*
 
-This rendering asks information about the property  [via](https://wiki.openstreetmap.org/wiki/Key:via) This is rendered with  `This bus line goes via {via}`
 
 
+### this.id
 
-### to 
+The question is `What company operates this bus line?`
+This rendering asks information about the property 
+[operator](https://wiki.openstreetmap.org/wiki/Key:operator)
+This is rendered with `This bus line is operated by {operator}`
 
 
 
-The question is  *What is the ending point for this bus line?*
 
-This rendering asks information about the property  [to](https://wiki.openstreetmap.org/wiki/Key:to) This is rendered with  `This bus line ends at {to}`
+### this.id
 
+_This tagrendering has no question and is thus read-only_
 
 
-### colour 
 
 
 
-The question is  *What is the colour for this bus line?*
+### this.id
 
-This rendering asks information about the property  [colour](https://wiki.openstreetmap.org/wiki/Key:colour) This is rendered with  `This bus line has the color {colour}`
+_This tagrendering has no question and is thus read-only_
 
 
 
-### network 
+This tagrendering has labels 
+`added_by_default`
 
-
-
-The question is  *What network does this bus line belong to?*
-
-This rendering asks information about the property  [network](https://wiki.openstreetmap.org/wiki/Key:network) This is rendered with  `This bus line is part of the {network} network`
-
-
-
-### operator 
-
-
-
-The question is  *What company operates this bus line?*
-
-This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) This is rendered with  `This bus line is operated by {operator}`
-
-
-
-### leftover-questions 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### lod 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### minimap 
-
-
-
+### this.id
 Shows a small map with the feature. Added by default to every popup
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
 
 
-### last_edit 
 
-
-
+### this.id
 Gives some metainfo about the last edit and who did edit it - rendering only
-
-This tagrendering has no question and is thus read-only
-
+_This tagrendering has no question and is thus read-only_
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:changeset~.+ & _last_edit:contributor~.+`
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:changeset~.+ & _last_edit:contributor~.+
+This tagrendering has labels 
+`added_by_default`
 
-This tagrendering has labels  `added_by_default`
+### this.id
 
-
-
-### favourite_status 
-
-
-
-This tagrendering has no question and is thus read-only
+_This tagrendering has no question and is thus read-only_
 
 
 
 
 
-### qr_code 
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has no question and is thus read-only
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
 
-This tagrendering has labels  `added_by_default`
+This tagrendering has labels 
+`added_by_default`
+
+### this.id
+
+_This tagrendering has no question and is thus read-only_
 
 
-
-### share 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering has labels  `added_by_default`
-
-
-
-### all-tags 
-
-
-
-This tagrendering has no question and is thus read-only
 
  
 
