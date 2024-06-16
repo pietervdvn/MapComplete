@@ -84,7 +84,7 @@
     </FileSelector>
     <div class="text-sm">
       <button
-        class="link small"
+        class="as-link"
         style="margin: 0; padding: 0"
         on:click={() => {
           state.guistate.openUsersettings("picture-license")

@@ -6,8 +6,8 @@ import { FixedUiElement } from "./UI/Base/FixedUiElement"
 import Combine from "./UI/Base/Combine"
 import { SubtleButton } from "./UI/Base/SubtleButton"
 import { Utils } from "./Utils"
-import Download from "./assets/svg/Download.svelte"
 import Constants from "./Models/Constants"
+import ArrowDownTray from "@babeard/svelte-heroicons/mini/ArrowDownTray"
 
 function webgl_support() {
     try {
@@ -66,7 +66,7 @@ async function main() {
             new FixedUiElement(err.toString().split("\n").join("<br/>")).SetClass("block alert"),
 
             customDefinition?.length > 0
-                ? new SubtleButton(new SvelteUIElement(Download), "Download the raw file").onClick(
+                ? new SubtleButton(new SvelteUIElement(ArrowDownTray), "Download the raw file").onClick(
                       () =>
                           Utils.offerContentsAsDownloadableFile(
                               DetermineLayout.getCustomDefinition(),

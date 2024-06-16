@@ -12,10 +12,10 @@
   import Translations from "../i18n/Translations"
   import { Utils } from "../../Utils"
   import { DocumentDuplicateIcon } from "@rgossiaux/svelte-heroicons/outline"
-  import Share from "../../assets/svg/Share.svelte"
   import ToSvelte from "../Base/ToSvelte.svelte"
   import Img from "../Base/Img"
   import Qr from "../../Utils/Qr"
+  import Share from "@babeard/svelte-heroicons/solid/Share"
 
   export let state: ThemeViewState
   const tr = Translations.t.general.sharescreen

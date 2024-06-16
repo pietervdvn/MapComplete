@@ -68,6 +68,9 @@
           <Community class="h-6 w-6" />
           Secondary action (disabled)
         </button>
+        <button class="as-link">
+          Mimick link
+        </button>
       </div>
       <input type="text" />
 

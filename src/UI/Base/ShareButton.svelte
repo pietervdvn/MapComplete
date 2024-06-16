@@ -1,7 +1,7 @@
 <script lang="ts">
-  import Share from "../../assets/svg/Share.svelte"
   import { ariaLabel } from "../../Utils/ariaLabel"
   import Translations from "../i18n/Translations"
+  import Share from "@babeard/svelte-heroicons/solid/Share"
 
   export let generateShareData: () => {
     text: string
@@ -38,8 +38,8 @@
     </slot>
   </button>
 {:else}
-  <button on:click={share}>
-    <Share class="h-8 w-8 pr-2" />
+  <button on:click={share} class="w-full">
+    <Share class="h-8 w-8" />
     {text}
   </button>
 {/if}

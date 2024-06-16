@@ -21,10 +21,21 @@
     selectedElement.properties.id
   )
 
-  let layer: LayerConfig =
-    selectedElement.properties.id === "settings"
-      ? UserRelatedState.usersettingsConfig
-      : state.layout.getMatchingLayer(tags.data)
+  function getLayer(properties: Record<string, string>){
+    if(properties.id === "settings"){
+     return UserRelatedState.usersettingsConfig
+    }
+    if (properties.id === "new_point_dialog") {
+      return state.layout.layers.find((l) => l.id === "last_click")
+    }
+    if (properties.id === "location_track") {
+      return state.layout.layers.find((l) => l.id === "gps_track")
+    }
+    return state.layout.getMatchingLayer(properties)
+  }
+
+  let layer: LayerConfig = getLayer(selectedElement.properties)
+
 
   let stillMatches = tags.map(
     (tags) => !layer?.source?.osmTags || layer.source.osmTags?.matchesProperties(tags)

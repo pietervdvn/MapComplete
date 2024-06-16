@@ -39,7 +39,7 @@
     ($byLoggedInUser ? "border-interactive" : "")}
 >
   {#if showSub}
-    <button class="link" on:click={() => selectFeature()}>
+    <button class="as-link" on:click={() => selectFeature()}>
       <h3>{sub}</h3>
     </button>
   {/if}

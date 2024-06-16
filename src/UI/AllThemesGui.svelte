@@ -148,15 +148,14 @@
       </ThemesList>
 
       <UnofficialThemeList search={themeSearchText} {state} />
-
-      <LoginButton osmConnection={state.osmConnection} />
+    </LoginToggle>
 
       <h3 id="about">
         <Tr t={Translations.t.index.about} />
       </h3>
       <Tr cls="link-underline" t={Translations.t.general.aboutMapComplete.intro} />
 
-      <span class="links-as-button flex flex-col gap-y-1">
+      <span class="link-underline flex flex-col gap-y-1">
         <a class="flex" href="https://github.com/pietervdvn/MapComplete/" target="_blank">
           <Github class="mr-2 h-6 w-6" />
           <Tr t={Translations.t.general.attribution.gotoSourceCode} />
@@ -192,7 +191,7 @@
           <Tr t={Translations.t.privacy.title} />
         </a>
       </span>
-    </LoginToggle>
+
 
     <Tr t={tr.streetcomplete} />
 

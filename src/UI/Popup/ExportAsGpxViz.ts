@@ -8,6 +8,9 @@ import { SpecialVisualization, SpecialVisualizationState } from "../SpecialVisua
 import { UIEventSource } from "../../Logic/UIEventSource"
 import { Feature, LineString } from "geojson"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
+import ToSvelte from "../Base/ToSvelte.svelte"
+import SvelteUIElement from "../Base/SvelteUIElement"
+import ArrowDownTray from "@babeard/svelte-heroicons/mini/ArrowDownTray"
 
 export class ExportAsGpxViz implements SpecialVisualization {
     funcName = "export_as_gpx"
@@ -26,7 +29,7 @@ export class ExportAsGpxViz implements SpecialVisualization {
             return undefined
         }
         return new SubtleButton(
-            Svg.download_svg(),
+            new SvelteUIElement(ArrowDownTray),
             new Combine([
                 t.downloadFeatureAsGpx.SetClass("font-bold text-lg"),
                 t.downloadGpxHelper.SetClass("subtle"),

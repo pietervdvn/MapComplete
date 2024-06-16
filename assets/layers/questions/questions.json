@@ -1627,41 +1627,6 @@
       ]
     },
     {
-      "id": "last_edit",
-      "labels": [
-        "added_by_default"
-      ],
-      "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
-      "condition": {
-        "and": [
-          "_last_edit:contributor~*",
-          "_last_edit:changeset~*"
-        ]
-      },
-      "metacondition": {
-        "or": [
-          "__featureSwitchIsTesting=true",
-          "__featureSwitchIsDebugging=true",
-          "mapcomplete-show_debug=yes",
-          "_csCount>=10"
-        ]
-      },
-      "render": {
-        "special": {
-          "type": "link",
-          "href": "{_backend}/changeset/{_last_edit:changeset}",
-          "text": {
-            "en": "Last edited on {_last_edit:timestamp} by {_last_edit:contributor}",
-            "nl": "Laatst gewijzigd op {_last_edit:timestamp} door {_last_edit:contributor} ",
-            "de": "Zuletzt bearbeitet am {_last_edit:timestamp} von {_last_edit:contributor}",
-            "ca": "Darrera edició el {_last_edit:timestamp} per {_last_edit:contributor}",
-            "cs": "Naposledy upravil {_last_edit:timestamp} {_last_edit:contributor}"
-          },
-          "class": "subtle font-small"
-        }
-      }
-    },
-    {
       "id": "all_tags",
       "description": "Shows a table with all the tags of the feature",
       "render": {
@@ -2672,6 +2637,24 @@
       }
     },
     {
+      "id": "share",
+      "labels": [
+        "added_by_default"
+      ],
+      "metacondition": "_supports_sharing=yes",
+      "render": {
+        "special": {
+          "type": "share_link",
+          "text": {
+            "en": "Share this location",
+            "nl": "Deel deze locatie",
+            "de": "Standort teilen"
+          }
+        }
+      }
+    },
+
+    {
       "id": "qr_code",
       "labels": [
         "added_by_default"
@@ -2690,19 +2673,37 @@
       }
     },
     {
-      "id": "share",
+      "id": "last_edit",
       "labels": [
         "added_by_default"
       ],
-      "metacondition": "_supports_sharing=yes",
+      "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+      "condition": {
+        "and": [
+          "_last_edit:contributor~*",
+          "_last_edit:changeset~*"
+        ]
+      },
+      "metacondition": {
+        "or": [
+          "__featureSwitchIsTesting=true",
+          "__featureSwitchIsDebugging=true",
+          "mapcomplete-show_debug=yes",
+          "_csCount>=10"
+        ]
+      },
       "render": {
         "special": {
-          "type": "share_link",
+          "type": "link",
+          "href": "{_backend}/changeset/{_last_edit:changeset}",
           "text": {
-            "en": "Share this location",
-            "nl": "Deel deze locatie",
-            "de": "Standort teilen"
-          }
+            "en": "Last edited on {_last_edit:timestamp} by {_last_edit:contributor}",
+            "nl": "Laatst gewijzigd op {_last_edit:timestamp} door {_last_edit:contributor} ",
+            "de": "Zuletzt bearbeitet am {_last_edit:timestamp} von {_last_edit:contributor}",
+            "ca": "Darrera edició el {_last_edit:timestamp} per {_last_edit:contributor}",
+            "cs": "Naposledy upravil {_last_edit:timestamp} {_last_edit:contributor}"
+          },
+          "class": "subtle font-small"
         }
       }
     }

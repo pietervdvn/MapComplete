@@ -35,8 +35,10 @@
   --interactive-foreground: black;
   --interactive-contrast: #ff00ff;
 
-  --button-background: black;
+  --button-background: #383838;
+  --button-background-hover: #686868;
   --button-foreground: white;
+    --disabled: #DBDBDB;
 
   /**
      * Base colour of interactive elements, mainly the 'subtle button'
@@ -57,6 +59,11 @@
   --svg-color: #000000;
 }
 
+@font-face{
+    font-family:"Source Sans Pro";
+    src:url("/assets/source-sans-pro.regular.ttf") format("woff");
+}
+
 /***********************************************************************\
 * Various tweaks and settings to make some behaviours more predictable *
 \***********************************************************************/
@@ -69,7 +76,12 @@ body {
   padding: 0;
   background-color: var(--background-color);
   color: var(--foreground-color);
-  font-family: "Helvetica Neue", Arial, sans-serif;
+
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
 }
 
 svg,
@@ -165,218 +177,91 @@ input[type="text"] {
  * This very important section defines what the various input elements look like within the 'low-interaction' and 'interactive'-blocks
  */
 
-button.small,
-.button.small {
-  line-height: 1rem;
-  margin: 0;
-  margin-left: 0.5rem;
-  padding: 0.25rem;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-  height: fit-content;
-  font-size: unset;
-  border: 2px solid var(--button-background);
-  border-radius: 0.5rem;
-  font-weight: normal;
-  transition: all 250ms;
-  --tw-text-opacity: 1;
-  --tw-bg-opacity: 1;
-  background: var(--low-interaction-background);
-  color: var(--low-interaction-foreground);
+/********* BUTTONS ***********/
+
+button, .button {
+    box-sizing: border-box;
+
+    /* Auto layout */
+    display: flex;
+    column-gap: 0.25rem;
+    justify-content: center;
+    align-items: center;
+    padding: 0.25rem 1rem;
+    margin: 0.25rem;
+
+    background: var(--background-color);
+    border: 1px solid var(--foreground-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 30px;
+
+    background: var(--background-color);
+    transition: all 200ms;
+
 }
 
-.button.theme-button {
-  margin: 0;
-  margin-top: 0.25rem;
-  margin-bottom: 0.25rem;
+button.w-full {
+    margin-left: 0;
+}
 
-  /* Margin should be removed on larger screens */
-  @media (min-width: 768px) {
+button:hover:not(.disabled):not(.as-link), .button:hover:not(.disabled):not(.as-link) {
+    background-color: var(--low-interaction-background);
+}
+
+
+button:focus, .button:focus {
+    border-color: var(--interactive-contrast);
+}
+
+button.primary, .button.primary {
+    color: var(--button-foreground);
+    background-color: var(--button-background);
+}
+
+button.primary:hover:not(.disabled), .button.primary:hover:not(.disabled) {
+    background-color: var(--button-background-hover);
+}
+
+button.disabled {
+    border-color: var(--disabled);
+    color: var(--disabled);
+}
+
+button.primary.disabled, .button.primary.disabled {
+    color: var(--button-foreground);
+    background-color: var(--disabled);
+}
+
+
+.low-interaction button:hover:not(.disabled):not(.as-link), .low-interaction .button:hover:not(.disabled):not(.as-link) {
+    box-sizing: border-box;
+    background-color: var(--interactive-background);
+}
+
+button.as-link {
+    background-color: unset;
+    display: inline-flex;
+    justify-content: start;
+    border: none;
+    border-radius: 0;
+    text-decoration: underline;
+    box-shadow: none;
     margin: 0;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-
-  /* Experimental support for foldable devices */
-  @media (horizontal-viewport-segments: 2) {
-    margin: 0;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
+    padding: 0;
 }
 
-button,
-.button {
-  align-items: center;
-  display: inline-flex;
-  line-height: 1.25rem;
-  margin: 0.2rem;
-  padding: 0.4rem;
-  padding-left: 0.6rem;
-  padding-right: 0.6rem;
-  font-size: large;
-  font-weight: bold;
-  border: 2px solid var(--button-background);
-  border-radius: 0.5rem;
-  transition: all 250ms;
-  --tw-text-opacity: 1;
-  --tw-bg-opacity: 1;
-  background: var(--low-interaction-background);
-  color: var(--low-interaction-foreground);
+/******* Other input elements ******/
+
+.hover-alert:hover {
+    color: var(--catch-detail-color-contrast)
 }
 
-.button-shadow {
-  box-shadow: 0 5px 10px #88888888;
-}
-
-button.selected,
-.button.selected {
-  background-color: var(--catch-detail-color);
-  border-color: var(--catch-detail-color);
-
-  color: var(--catch-detail-foregroundcolor);
-}
-
-button.selected svg path,
-.button.selected svg path {
-  fill: var(--catch-detail-foregroundcolor) !important;
-}
-
-button:not(.no-image-background):not(.soft) svg path,
-.button:not(.no-image-background):not(.soft) svg path {
-  fill: var(--interactive-foreground) !important;
-  transition: all 250ms;
-}
-
-.interactive button,
-.interactive .button {
-  background: var(--interactive-background);
-  color: var(--interactive-foreground);
-}
-
-button:hover,
-.button:hover {
-  background-color: var(--catch-detail-color);
-  color: var(--catch-detail-foregroundcolor);
-  border: 2px solid var(--catch-detail-color-contrast);
-}
-
-button:hover:not(.no-image-background) img,
-.button:hover:not(.no-image-background) img {
-  background: var(--low-interaction-background);
-  border-radius: 100rem;
-}
-
-button:hover:not(.no-image-background) svg path,
-.button:hover:not(.no-image-background) svg path {
-  fill: var(--catch-detail-foregroundcolor) !important;
-}
-
-button.disabled:hover:not(.no-image-background) svg path,
-.button.disabled:hover:not(.no-image-background) svg path {
-  fill: var(--low-interaction-foreground) !important;
-}
-
-button.primary,
-.button.primary {
-  color: var(--button-foreground);
-  background: var(--button-background);
-}
-
-button.primary:not(.no-image-background) svg path,
-.button.primary:not(.no-image-background) svg path {
-  fill: var(--button-foreground) !important;
-  transition: all 250ms;
-}
-
-button.disabled.low-interaction,
-.button.disabled.low-interaction {
-  background-color: var(--low-interaction-background-50);
-}
-
-button.disabled,
-.button.disabled {
-  cursor: default;
-  border: 2px dashed var(--button-background);
-  background: unset;
-  color: unset;
-  box-shadow: none;
-}
-
-button.disabled:hover,
-.button.disabled:hover {
-  cursor: default;
-  border: 2px dashed var(--button-background);
-  background: unset;
-  color: unset;
-}
-
-button.link {
-  border: none;
-  text-decoration: underline;
-  background-color: unset;
-}
-
-button.link:hover {
-  color: unset;
-}
-
-.interactive button.disabled svg path,
-.interactive .button.disabled svg path {
-  fill: var(--interactive-foreground) !important;
-}
-
-.low-interaction button.disabled svg path,
-.low-interaction .button.disabled svg path {
-  fill: var(--low-interaction-foreground) !important;
-}
-
-.normal-background button.disabled svg path,
-.normal-background .button.disabled svg path {
-  fill: var(--foreground-color) !important;
-}
-
-.links-w-full a:not(.weblate-link) {
+.links-w-full a:not(.weblate-link), .links-w-full button.as-link {
   display: flex;
   column-gap: 0.25rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   width: 100%;
-}
-
-button.soft,
-.button.soft {
-  border: 2px solid var(--interactive-background);
-  margin: 0;
-}
-
-button.soft:hover,
-.button.soft:hover {
-  background-color: var(--interactive-background);
-  color: var(--interactive-foreground);
-  border: 2px solid var(--catch-detail-color-contrast);
-}
-
-.links-as-button a {
-  /*
-    * Let a 'link' mimick a button, but not entirely
-    */
-  padding: 3px;
-  margin: 0;
-  background: var(--low-interaction-background);
-  color: var(--low-interaction-foreground);
-  border: 2px solid var(--interactive-background);
-  border-radius: 0.5rem;
-}
-
-.links-as-button a:hover {
-  background-color: var(--interactive-background);
-  color: var(--interactive-foregroundcolor);
-  border-color: var(--catch-detail-color-contrast);
-}
-
-.links-as-button a:hover svg path {
-  fill: var(--catch-detail-foregroundcolor) !important;
 }
 
 select {

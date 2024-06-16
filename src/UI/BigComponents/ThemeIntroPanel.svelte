@@ -12,10 +12,9 @@
   import { GeoLocationState } from "../../Logic/State/GeoLocationState"
   import If from "../Base/If.svelte"
   import { ExclamationTriangleIcon } from "@babeard/svelte-heroicons/mini"
-  import Add from "../../assets/svg/Add.svelte"
   import Location_refused from "../../assets/svg/Location_refused.svelte"
   import Location from "../../assets/svg/Location.svelte"
-  import SpecialTranslation from "../Popup/TagRendering/SpecialTranslation.svelte"
+  import ChevronDoubleLeft from "@babeard/svelte-heroicons/mini/ChevronDoubleLeft"
 
   /**
    * The theme introduction panel
@@ -150,11 +149,14 @@
     {/if}
   </div>
 
-  <div class="links-as-button links-w-full m-2 flex flex-col gap-y-1">
+  <If condition={state.featureSwitches.featureSwitchBackToThemeOverview}>
+
+  <div class="link-underline w-full m-2 mx-4 flex">
     <!-- bottom buttons, a bit hidden away: switch layout -->
-    <a class="flex" href={Utils.HomepageLink()}>
-      <Add class="h-6 w-6" />
+    <a class="flex justify-end items-center w-fit" href={Utils.HomepageLink()}>
+      <ChevronDoubleLeft class="w-4 h-4" />
       <Tr t={Translations.t.general.backToIndex} />
     </a>
   </div>
+  </If>
 </div>

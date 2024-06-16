@@ -6,10 +6,11 @@ import { FixedUiElement } from "../Base/FixedUiElement"
 import { Utils } from "../../Utils"
 import BaseUIElement from "../BaseUIElement"
 import SvelteUIElement from "../Base/SvelteUIElement"
-import Up from "../../assets/svg/Up.svelte"
 import Circle from "../../assets/svg/Circle.svelte"
+import ChevronUp from "@babeard/svelte-heroicons/solid/ChevronUp"
+import ChevronDown from "@babeard/svelte-heroicons/solid/ChevronDown"
 
-export default class Histogram<T> extends VariableUiElement {
+export default class Histogram extends VariableUiElement {
     private static defaultPalette = [
         "#ff5858",
         "#ffad48",
@@ -36,9 +37,9 @@ export default class Histogram<T> extends VariableUiElement {
             sortMode.map((m) => {
                 switch (m) {
                     case "name":
-                        return new SvelteUIElement(Up)
+                        return new SvelteUIElement(ChevronUp)
                     case "name-rev":
-                        return new SvelteUIElement(Up).SetStyle("transform: rotate(180deg)")
+                        return new SvelteUIElement(ChevronDown)
                     default:
                         return new SvelteUIElement(Circle)
                 }
@@ -58,9 +59,9 @@ export default class Histogram<T> extends VariableUiElement {
             sortMode.map((m) => {
                 switch (m) {
                     case "count":
-                        return new SvelteUIElement(Up)
+                        return new SvelteUIElement(ChevronUp)
                     case "count-rev":
-                        return new SvelteUIElement(Up).SetStyle("transform: rotate(180deg)")
+                        return new SvelteUIElement(ChevronDown)
                     default:
                         return new SvelteUIElement(Circle)
                 }
@@ -145,7 +146,7 @@ export default class Histogram<T> extends VariableUiElement {
                             ]).SetClass("block w-full"),
                         ]),
                         {
-                            contentStyle: keys.map((_) => ["width: 20%"]),
+                            contentStyle: keys.map(() => ["width: 20%"]),
                         }
                     ).SetClass("w-full zebra-table")
                 },

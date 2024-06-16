@@ -50,7 +50,7 @@ export default class FeatureSwitchState extends OsmConnectionFeatureSwitches {
     public readonly featureSwitchWelcomeMessage: UIEventSource<boolean>
     public readonly featureSwitchCommunityIndex: UIEventSource<boolean>
     public readonly featureSwitchExtraLinkEnabled: UIEventSource<boolean>
-    public readonly featureSwitchMoreQuests: UIEventSource<boolean>
+    public readonly featureSwitchBackToThemeOverview: UIEventSource<boolean>
     public readonly featureSwitchShareScreen: UIEventSource<boolean>
     public readonly featureSwitchGeolocation: UIEventSource<boolean>
     public readonly featureSwitchIsTesting: UIEventSource<boolean>
@@ -118,10 +118,10 @@ export default class FeatureSwitchState extends OsmConnectionFeatureSwitches {
             true,
             "Disables/Enables the extraLink button. By default, if in iframe mode and the welcome message is hidden, a popout button to the full mapcomplete instance is shown instead (unless disabled with this switch or another extraLink button is enabled)"
         )
-        this.featureSwitchMoreQuests = FeatureSwitchUtils.initSwitch(
-            "fs-more-quests",
+        this.featureSwitchBackToThemeOverview = FeatureSwitchUtils.initSwitch(
+            "fs-homepage-link",
             layoutToUse?.enableMoreQuests ?? true,
-            "Disables/Enables the 'More Quests'-tab in the welcome message"
+            "Disables/Enables the various links which go back to the index page with the theme overview"
         )
         this.featureSwitchShareScreen = FeatureSwitchUtils.initSwitch(
             "fs-share-screen",

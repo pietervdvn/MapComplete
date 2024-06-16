@@ -90,7 +90,7 @@
     </div>
   {:else if currentState === "start"}
     <button
-      class="flex items-center"
+      class="w-full"
       on:click={() => {
         currentState = "confirm"
       }}

@@ -59,8 +59,6 @@
   import Filter from "../assets/svg/Filter.svelte"
   import Add from "../assets/svg/Add.svelte"
   import Community from "../assets/svg/Community.svelte"
-  import Download from "../assets/svg/Download.svelte"
-  import Share from "../assets/svg/Share.svelte"
   import Favourites from "./Favourites/Favourites.svelte"
   import ImageOperations from "./Image/ImageOperations.svelte"
   import VisualFeedbackPanel from "./BigComponents/VisualFeedbackPanel.svelte"
@@ -76,6 +74,8 @@
   import CloseAnimation from "./Base/CloseAnimation.svelte"
   import { LastClickFeatureSource } from "../Logic/FeatureSource/Sources/LastClickFeatureSource"
   import Github from "../assets/svg/Github.svelte"
+  import ArrowDownTray from "@babeard/svelte-heroicons/mini/ArrowDownTray"
+  import Share from "@babeard/svelte-heroicons/solid/Share"
 
   export let state: ThemeViewState
   let layout = state.layout
@@ -496,7 +496,7 @@
 
         <div class="flex" slot="title1">
           <If condition={state.featureSwitches.featureSwitchEnableExport}>
-            <Download class="h-4 w-4" />
+            <ArrowDownTray class="h-4 w-4" />
             <Tr t={Translations.t.general.download.title} />
           </If>
         </div>
@@ -565,7 +565,7 @@
           <Tr t={Translations.t.general.menu.aboutMapComplete} />
         </div>
 
-        <div class="links-as-button links-w-full m-2 flex flex-col gap-y-1" slot="content0">
+        <div class="link-underline links-w-full m-2 flex flex-col gap-y-1" slot="content0">
           <Tr t={Translations.t.general.aboutMapComplete.intro} />
 
           <a class="flex" href={Utils.HomepageLink()}>
@@ -594,7 +594,7 @@
           </a>
 
           <button
-            class="small soft flex"
+            class="as-link"
             on:click={() => state.guistate.communityIndexPanelIsOpened.setData(true)}
           >
             <Community class="h-6 w-6" />
@@ -608,7 +608,7 @@
           </If>
 
           <button
-            class="small soft flex"
+            class="as-link"
             on:click={() => state.guistate.privacyPanelIsOpened.setData(true)}
           >
             <EyeIcon class="h-6 w-6 pr-1" />

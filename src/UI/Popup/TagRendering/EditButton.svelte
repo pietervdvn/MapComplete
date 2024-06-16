@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { PencilAltIcon } from "@rgossiaux/svelte-heroicons/solid"
   import { ariaLabel } from "../../../Utils/ariaLabel.js"
   import { Translation } from "../../i18n/Translation"
+  import Pencil from "@babeard/svelte-heroicons/solid/Pencil"
 
   /**
    * A small, round button with an edit-icon (and aria-labels etc)
@@ -15,9 +15,9 @@
 
 <button
   on:click
-  class="secondary h-8 w-8 shrink-0 self-start rounded-full p-1"
+  class="h-8 w-8 shrink-0 self-start rounded-full p-1 as-link"
   aria-labelledby={arialabel === undefined ? ariaLabelledBy : undefined}
   use:ariaLabel={arialabel}
 >
-  <PencilAltIcon />
+  <Pencil class="h-4 w-4 hover-alert" />
 </button>

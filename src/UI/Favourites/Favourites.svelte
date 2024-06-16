@@ -3,12 +3,12 @@
   import FavouriteSummary from "./FavouriteSummary.svelte"
   import Translations from "../i18n/Translations"
   import Tr from "../Base/Tr.svelte"
-  import { DownloadIcon } from "@rgossiaux/svelte-heroicons/solid"
   import { Utils } from "../../Utils"
   import { GeoOperations } from "../../Logic/GeoOperations"
   import type { Feature, Point } from "geojson"
   import LoginToggle from "../Base/LoginToggle.svelte"
   import LoginButton from "../Base/LoginButton.svelte"
+  import ArrowDownTray from "@babeard/svelte-heroicons/mini/ArrowDownTray"
 
   /**
    * A panel showing all your favourites
@@ -54,13 +54,13 @@
       <FavouriteSummary {feature} {state} />
     {/each}
 
-    <div class="mt-8">
-      <button class="flex p-2" on:click={() => downloadGeojson()}>
-        <DownloadIcon class="h-6 w-6" />
+    <div class="mt-8 flex">
+      <button on:click={() => downloadGeojson()}>
+        <ArrowDownTray class="h-6 w-6" />
         <Tr t={Translations.t.favouritePoi.downloadGeojson} />
       </button>
-      <button class="flex p-2" on:click={() => downloadGPX()}>
-        <DownloadIcon class="h-6 w-6" />
+      <button on:click={() => downloadGPX()}>
+        <ArrowDownTray class="h-6 w-6" />
         <Tr t={Translations.t.favouritePoi.downloadGpx} />
       </button>
     </div>

@@ -26,22 +26,23 @@
 <LoginToggle ignoreLoading={true} {state}>
   {#if $isFavourite}
     <div class="flex h-fit items-start">
-      <HeartSolidIcon class="mr-2 w-16 shrink-0" on:click={() => markFavourite(false)} />
-      <div class="flex w-full flex-col">
-        <button class="flex flex-col items-start" on:click={() => markFavourite(false)}>
+        <button  on:click={() => markFavourite(false)}>
+          <HeartSolidIcon class="mr-2 w-16 shrink-0" on:click={() => markFavourite(false)} />
+          <div class="flex flex-col items-start">
           <Tr t={t.button.unmark} />
           <Tr cls="normal-font subtle" t={t.button.unmarkNotDeleted} />
+          </div>
         </button>
       </div>
-    </div>
     <Tr cls="font-bold thanks m-2 p-2 block" t={t.button.isFavourite} />
   {:else}
-    <div class="flex items-start">
-      <HeartOutlineIcon class="mr-2 w-16 shrink-0" on:click={() => markFavourite(true)} />
-      <button class="flex w-full flex-col items-start" on:click={() => markFavourite(true)}>
+      <button on:click={() => markFavourite(true)}>
+        <HeartOutlineIcon class="mr-2 w-16 shrink-0" on:click={() => markFavourite(true)} />
+        <div class="flex w-full flex-col items-start">
+
         <Tr t={t.button.markAsFavouriteTitle} />
         <Tr cls="normal-font subtle" t={t.button.markDescription} />
+        </div>
       </button>
-    </div>
   {/if}
 </LoginToggle>

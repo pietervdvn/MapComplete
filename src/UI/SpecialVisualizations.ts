@@ -28,7 +28,6 @@ import { Translation } from "./i18n/Translation"
 import Translations from "./i18n/Translations"
 import OpeningHoursVisualization from "./OpeningHours/OpeningHoursVisualization"
 import { SubtleButton } from "./Base/SubtleButton"
-import Svg from "../Svg"
 import NoteCommentElement from "./Popup/Notes/NoteCommentElement"
 import List from "./Base/List"
 import StatisticsPanel from "./BigComponents/StatisticsPanel"
@@ -96,6 +95,8 @@ import DynLink from "./Base/DynLink.svelte"
 import Locale from "./i18n/Locale"
 import LanguageUtils from "../Utils/LanguageUtils"
 import MarkdownUtils from "../Utils/MarkdownUtils"
+import ArrowDownTray from "@babeard/svelte-heroicons/mini/ArrowDownTray"
+import Trash from "@babeard/svelte-heroicons/mini/Trash"
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -490,7 +491,7 @@ export default class SpecialVisualizations {
                         state,
                         feature,
                         layer,
-                    })
+                    }).SetClass("p-0 m-0")
                 },
             },
             new ShareLinkViz(),
@@ -878,7 +879,7 @@ export default class SpecialVisualizations {
                     const t = Translations.t.general.download
 
                     return new SubtleButton(
-                        Svg.download_svg(),
+                        new SvelteUIElement(ArrowDownTray),
                         new Combine([
                             t.downloadFeatureAsGeojson.SetClass("font-bold text-lg"),
                             t.downloadGeoJsonHelper.SetClass("subtle"),
@@ -930,7 +931,7 @@ export default class SpecialVisualizations {
 
                 constr: (state) => {
                     return new SubtleButton(
-                        Svg.delete_icon_svg().SetStyle("height: 1.5rem"),
+                        new SvelteUIElement(Trash).SetClass("h-6"),
                         Translations.t.general.removeLocationHistory
                     ).onClick(() => {
                         state.historicalUserLocations.features.setData([])

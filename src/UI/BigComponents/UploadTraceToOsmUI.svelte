@@ -8,12 +8,12 @@
   import Invalid from "../../assets/svg/Invalid.svelte"
   import Tr from "../Base/Tr.svelte"
   import Confirm from "../../assets/svg/Confirm.svelte"
-  import Upload from "../../assets/svg/Upload.svelte"
   import Loading from "../Base/Loading.svelte"
   import Close from "../../assets/svg/Close.svelte"
   import { placeholder } from "../../Utils/placeholder"
   import { ariaLabel } from "../../Utils/ariaLabel"
   import { selectDefault } from "../../Utils/selectDefault"
+  import ArrowUpTray from "@babeard/svelte-heroicons/solid/ArrowUpTray"
 
   export let trace: (title: string) => string
   export let state: {
@@ -113,7 +113,7 @@
         currentStep.setData("please_confirm")
       }}
     >
-      <Upload class="h-12 w-12" />
+      <ArrowUpTray class="h-12 w-12" />
       <Tr t={t.title} />
     </button>
   {:else if $currentStep === "please_confirm"}
@@ -170,7 +170,7 @@
         </button>
 
         <button class="primary flex flex-grow gap-x-2" on:click={() => uploadTrace()}>
-          <Upload class="h-8 w-8" />
+          <ArrowUpTray class="h-8 w-8" />
           <Tr t={t.confirm} />
         </button>
       </div>

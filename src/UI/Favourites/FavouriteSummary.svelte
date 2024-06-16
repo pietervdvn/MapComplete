@@ -36,7 +36,7 @@
   <div
     class="no-weblate my-1 flex grid-cols-2 flex-wrap items-center justify-between rounded border-2 border-dashed border-gray-300 px-1"
   >
-    <button class="link m-0 ml-1 cursor-pointer justify-self-start" on:click={() => select()}>
+    <button class="as-link" on:click={() => select()}>
       <TagRenderingAnswer
         {state}
         config={titleConfig}

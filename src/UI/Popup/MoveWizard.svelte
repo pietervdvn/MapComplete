@@ -64,7 +64,7 @@
     {:else if currentStep === "start"}
       {#if moveWizardState.reasons.length === 1}
         <button
-          class="flex"
+          class="w-full"
           on:click={() => {
             reason.setData(moveWizardState.reasons[0])
             currentStep = "pick_location"
@@ -77,7 +77,7 @@
         </button>
       {:else}
         <button
-          class="flex"
+          class="w-full"
           on:click={() => {
             currentStep = "reason"
           }}
@@ -127,13 +127,12 @@
             )}
           >
             <button
-              class="primary flex w-full"
+              class="primary  w-full"
               on:click={() => {
                 moveWizardState.moveFeature(newLocation.data, reason.data, featureToMove)
                 currentStep = "moved"
               }}
             >
-              <Move class="mr-2 h-6 w-6" />
               <Tr t={t.confirmMove} />
             </button>
 
