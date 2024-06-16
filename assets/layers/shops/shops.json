@@ -427,6 +427,36 @@
       ]
     },
     {
+      "id": "copyshop-binding",
+      "condition": {
+        "or": [
+          "shop~.*copyshop.*",
+          "shop~.*stationery.*",
+          "service:print=yes"
+        ]
+      },
+      "question": {
+        "en": "Does this shop offer a binding service?"
+      },
+      "questionHint": {
+        "en": "Does this shop bind a bundle of pages into a small book, e.g. with a comb, a spiral, wire or by gluing?"
+      },
+      "mappings": [
+        {
+          "if": "service:binding=yes",
+          "then": {
+            "en": "This shop binds papers into a booklet"
+          }
+        },
+        {
+          "if": "service:binding=no",
+          "then": {
+            "en": "This shop does bind books"
+          }
+        }
+      ]
+    },
+    {
       "id": "key_cutter",
       "question": {
         "en": "Does this shop offer key cutting?",

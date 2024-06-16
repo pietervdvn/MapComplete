@@ -16,6 +16,10 @@
    * If set, 'loading' will act as if we are already logged in.
    */
   export let ignoreLoading: boolean = false
+  /**
+   * Only show the 'successful' state, don't show loading or error messages
+   */
+  export let silentFail : boolean = false
   let loadingStatus = state?.osmConnection?.loadingStatus ?? new ImmutableStore("logged-in")
   let badge = state?.featureSwitches?.featureSwitchEnableLogin ?? new ImmutableStore(true)
   const t = Translations.t.general
@@ -30,11 +34,11 @@
 </script>
 
 {#if $badge}
-  {#if !ignoreLoading && $loadingStatus === "loading"}
+  {#if !ignoreLoading && !silentFail && $loadingStatus === "loading"}
     <slot name="loading">
       <Loading />
     </slot>
-  {:else if $loadingStatus === "error"}
+  {:else if !silentFail && $loadingStatus === "error"}
     <slot name="error">
       <div class="alert max-w-64 flex items-center">
         <Invalid class="m-2 h-8 w-8 shrink-0" />
@@ -43,7 +47,7 @@
     </slot>
   {:else if $loadingStatus === "logged-in"}
     <slot />
-  {:else if $loadingStatus === "not-attempted"}
+  {:else if !silentFail && $loadingStatus === "not-attempted"}
     <slot name="not-logged-in" />
   {/if}
 {/if}

@@ -1,5 +1,4 @@
 import ThemeViewState from "./src/Models/ThemeViewState"
-import SvelteUIElement from "./src/UI/Base/SvelteUIElement"
 import ThemeViewGUI from "./src/UI/ThemeViewGUI.svelte"
 import LayoutConfig from "./src/Models/ThemeConfig/LayoutConfig";
 import MetaTagging from "./src/Logic/MetaTagging";
@@ -47,8 +46,10 @@ async function main() {
         MetaTagging.setThemeMetatagging(new ThemeMetaTagging())
         // LAYOUT.ADD_LAYERS
         const state = new ThemeViewState(new LayoutConfig(<any> layout), availableLayers)
-        const main = new SvelteUIElement(ThemeViewGUI, { state })
-        main.AttachTo("maindiv")
+        new ThemeViewGUI({
+            target: document.getElementById("maindiv"),
+            props: {state}
+        })
         Array.from(document.getElementsByClassName("delete-on-load")).forEach(el => {
                     el.parentElement.removeChild(el)
                 })

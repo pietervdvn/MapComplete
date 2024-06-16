@@ -6,6 +6,7 @@
   import { UIEventSource } from "../Logic/UIEventSource"
 </script>
 
+<main>
 <div>
   <h1>Stylesheet testing grounds</h1>
 
@@ -167,3 +168,4 @@
     </select>
   </div>
 </div>
+</main>

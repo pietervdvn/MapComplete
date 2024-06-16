@@ -1,4 +1,5 @@
-import SvelteUIElement from "./UI/Base/SvelteUIElement"
 import StylesheetTestGui from "./UI/StylesheetTestGui.svelte"
 
-new SvelteUIElement(StylesheetTestGui, {}).AttachTo("main")
+new StylesheetTestGui({
+    target: document.getElementById("maindiv")
+})

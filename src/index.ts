@@ -28,7 +28,7 @@ async function timeout(timeMS: number): Promise<{ layers: string[] }> {
 
 async function getAvailableLayers(): Promise<Set<string>> {
     try {
-        const host = new URL(Constants.VectorTileServer).host
+        const host = new URL(Constants.SummaryServer).host
         const status: { layers: string[] } = await Promise.any([
             Utils.downloadJson<{layers}>("https://" + host + "/summary/status.json"),
             timeout(2500),
@@ -52,8 +52,10 @@ async function main() {
         ])
         console.log("The available layers on server are", Array.from(availableLayers))
         const state = new ThemeViewState(layout, availableLayers)
-        const main = new SvelteUIElement(ThemeViewGUI, { state })
-        main.AttachTo("maindiv")
+        new ThemeViewGUI({
+            target: document.getElementById("maindiv"),
+            props: {state}
+        })
         Array.from(document.getElementsByClassName("delete-on-load")).forEach((el) => {
             el.parentElement.removeChild(el)
         })

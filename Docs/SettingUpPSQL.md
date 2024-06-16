@@ -59,11 +59,13 @@ HP ProLiant DL360 G7 (1U): 2Rx4 DDR3-memory (PC3)
 
 ## Deploying a tile server
 
-pg_tileserv kan hier gedownload worden: https://github.com/CrunchyData/pg_tileserv
+pg_tileserv can be downloaded here: https://github.com/CrunchyData/pg_tileserv
+
+In the directory where it is downloaded (e.g. `~/data`), run
 
 ````
 export DATABASE_URL=postgresql://user:password@localhost:5444/osm-poi
-nohup ./pg_tileserv &
+nohup ./pg_tileserv > pg_tileserv.log &
 ````
 
 Tiles are available at: 
@@ -73,6 +75,10 @@ map.addSource("drinking_water", {
 "tiles": ["http://127.0.0.2:7800/public.drinking_water/{z}/{x}/{y}.pbf"] // http://127.0.0.2:7800/public.drinking_water.json",
 })
 ````
+
+# Starting the summary server
+
+`npm run summary-server` in the git repo
 
 # Rebooting:
 

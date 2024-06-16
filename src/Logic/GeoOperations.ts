@@ -734,7 +734,6 @@ export class GeoOperations {
             const splitted: Feature<LineString>[] = [].concat(...lines)
             const kept: Feature<LineString>[] = []
             for (const f of splitted) {
-                console.log("Checking", f)
                 if (!GeoOperations.inside(GeoOperations.centerpointCoordinates(f), boundary)) {
                     continue
                 }

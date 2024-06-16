@@ -16,6 +16,18 @@ export class BBox {
     /***
      * Coordinates should be [[lon, lat],[lon, lat]]
      * @param coordinates
+     *
+     * const bb = new BBox([[5,6]])
+     * bb.minLat // => 6
+     * bb.minLon // => 5
+     * bb.maxLat // => 6
+     * bb.maxLon // => 5
+     *
+     * const bb = new BBox([[-100,-100]])
+     * bb.minLat // => -90
+     * bb.minLon // => -100
+     * bb.maxLat // => -90
+     * bb.maxLon // => -100
      */
     constructor(coordinates: [number, number][]) {
         this.maxLat = -90
@@ -45,13 +57,24 @@ export class BBox {
         ])
     }
 
+    /**
+     * Gets the bbox from a feature and caches it (by monkeypatching) the relevant feature
+     *
+     *
+     * const f = {type:"Feature",properties: {}, geometry: {type: "Point", coordinates: [-100,45]}}
+     * const bb = BBox.get(f)
+     * bb.minLat // => 45
+     * bb.minLon // => -100
+     *
+     */
     static get(feature: Feature): BBox {
         const f = <any>feature
         if (f.bbox?.overlapsWith === undefined) {
-            const turfBbox: number[] = turf.bbox(feature)
+            const [minX, minY, maxX, maxY]: number[] = turf.bbox(feature)
+            // Note: x is longitude
             f["bbox"] = new BBox([
-                [turfBbox[0], turfBbox[1]],
-                [turfBbox[2], turfBbox[3]],
+                [minX, minY],
+                [maxX, maxY],
             ])
         }
         return f["bbox"]

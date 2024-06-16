@@ -28,4 +28,6 @@ if (layout !== "") {
     )
 }
 
-new SvelteUIElement(AllThemesGui, {}).AttachTo("main")
+new AllThemesGui({
+    target: document.getElementById("main")
+})

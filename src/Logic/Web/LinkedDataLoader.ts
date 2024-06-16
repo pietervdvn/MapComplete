@@ -316,13 +316,15 @@ export default class LinkedDataLoader {
         input: Record<string, Set<string>>
     ): Record<string, string[]> {
         const output: Record<string, string[]> = {}
-        console.log("Input for patchVelopark:", input)
         for (const k in input) {
             output[k] = Array.from(input[k])
         }
 
-        if (output["type"][0] === "https://data.velopark.be/openvelopark/terms#BicycleLocker") {
+        if (output["type"]?.[0] === "https://data.velopark.be/openvelopark/terms#BicycleLocker") {
             output["bicycle_parking"] = ["lockers"]
+        }
+        if(output["type"] === undefined){
+            console.error("No type given for", output)
         }
         delete output["type"]
 
@@ -506,7 +508,6 @@ export default class LinkedDataLoader {
             "  ?parking a <http://schema.mobivoc.org/BicycleParkingStation>",
             "?parking " + property + " " + (variable ?? "")
         )
-        console.log("Fetching a velopark property gave", property, results)
         return results
     }
 

@@ -63,7 +63,7 @@
   }
 </script>
 
-<span {lang}>
+{#if lang === "*"}
   {#each specs as specpart}
     {#if typeof specpart === "string"}
       <span>
@@ -74,4 +74,17 @@
       <ToSvelte construct={() => createVisualisation(specpart)} />
     {/if}
   {/each}
-</span>
+{:else}
+  <span {lang}>
+    {#each specs as specpart}
+      {#if typeof specpart === "string"}
+        <span>
+          {@html Utils.purify(Utils.SubstituteKeys(specpart, $tags)) }
+          <WeblateLink context={t.context} />
+        </span>
+      {:else if $tags !== undefined}
+        <ToSvelte construct={() => createVisualisation(specpart)} />
+      {/if}
+    {/each}
+  </span>
+{/if}

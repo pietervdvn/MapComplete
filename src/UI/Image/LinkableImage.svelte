@@ -13,6 +13,7 @@
   import type { ProvidedImage } from "../../Logic/ImageProviders/ImageProvider"
   import AttributedImage from "./AttributedImage.svelte"
   import SpecialTranslation from "../Popup/TagRendering/SpecialTranslation.svelte"
+  import LoginToggle from "../Base/LoginToggle.svelte"
 
   export let tags: UIEventSource<OsmTags>
   export let state: SpecialVisualizationState
@@ -68,10 +69,12 @@
       previewedImage={state.previewedImage}
     />
   </div>
+  <LoginToggle {state} silentFail={true} >
   {#if linkable}
     <label>
       <input bind:checked={$isLinked} type="checkbox" />
       <SpecialTranslation t={t.link} {tags} {state} {layer} {feature} />
     </label>
   {/if}
+  </LoginToggle>
 </div>
