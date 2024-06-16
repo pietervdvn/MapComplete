@@ -1,8 +1,6 @@
 <script lang="ts">
   import { createEventDispatcher } from "svelte"
   import { XCircleIcon } from "@rgossiaux/svelte-heroicons/solid"
-  import { twMerge } from "tailwind-merge"
-  import { trapFocus } from "trap-focus-svelte"
   import { ariaLabel } from "../../Utils/ariaLabel"
   import Translations from "../i18n/Translations"
 
@@ -25,7 +23,6 @@
 <div
   class={"absolute bottom-0 right-0 h-full w-screen p-4 md:p-6"}
   style="z-index: 21"
-  use:trapFocus
 >
   <div class="content normal-background h-full" on:click|stopPropagation={() => {}}>
     <div class="h-full rounded-xl">

@@ -1,7 +1,6 @@
 <script lang="ts">
   import { createEventDispatcher } from "svelte"
   import { XCircleIcon } from "@rgossiaux/svelte-heroicons/solid"
-  import { trapFocus } from "trap-focus-svelte"
 
   /**
    * The slotted element will be shown on the right side
@@ -17,7 +16,6 @@
   style="max-width: 100vw; max-height: 100vh"
   tabindex="-1"
   id="modal-right"
-  use:trapFocus
 >
   <slot name="close-button">
     <button

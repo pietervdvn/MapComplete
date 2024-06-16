@@ -452,7 +452,7 @@
 {/if}
 
 <If condition={state.previewedImage.map((i) => i !== undefined)}>
-  <FloatOver extraClasses="p-1" on:close={() => state.previewedImage.setData(undefined)}>
+  <FloatOver on:close={() => state.previewedImage.setData(undefined)}>
     <button
       class="absolute right-4 top-4 h-8 w-8 rounded-full p-0"
       on:click={() => previewedImage.setData(undefined)}
