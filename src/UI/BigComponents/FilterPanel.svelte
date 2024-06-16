@@ -9,8 +9,6 @@
   import Translations from "../i18n/Translations"
   import Tr from "../Base/Tr.svelte"
   import Filter from "../../assets/svg/Filter.svelte"
-  import { EyeIcon } from "@rgossiaux/svelte-heroicons/solid"
-  import { trapFocus } from "trap-focus-svelte"
 
   export let state: ThemeViewState
   let layout = state.layout
