@@ -56,6 +56,7 @@
   "layers": [
     {
       "id": "fietsstraat",
+      "allowSplit": true,
       "name": {
         "nl": "Fietsstraten",
         "en": "Cyclestreets",
@@ -175,6 +176,7 @@
     },
     {
       "id": "toekomstige_fietsstraat",
+      "allowSplit": true,
       "name": {
         "nl": "Toekomstige fietsstraat",
         "en": "Future cyclestreet",
@@ -311,6 +313,7 @@
         "pl": "Wszystkie ulice",
         "zh_Hant": "所有道路"
       },
+      "allowSplit": true,
       "description": {
         "nl": "Laag waar je een straat als fietsstraat kan markeren",
         "en": "Layer to mark any street as cyclestreet",
@@ -411,7 +414,6 @@
     }
   ],
   "overrideAll": {
-    "allowSplit": true,
     "+tagRenderings": [
       {
         "id": "is_cyclestreet",
