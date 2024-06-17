@@ -83,15 +83,18 @@ export default class MetaTagging {
             let lastUpdateMoment = new Date()
             const tags = state?.featureProperties?.getStore(feature.properties.id)
             console.log("Binding an updater to", feature)
+            let updateCount = 0
             tags?.addCallbackD(() => {
-                console.log("Received an update! Re-calculating the metatags")
+                console.log("Received an update! Re-calculating the metatags, timediff:", new Date().getTime() - lastUpdateMoment.getTime())
 
                 if (feature !== state.selectedElement.data) {
                     return true // Unregister, we are not the selected element anymore
                 }
-                if (new Date().getTime() - lastUpdateMoment.getTime() < 250) {
+                if (new Date().getTime() - lastUpdateMoment.getTime() < (250 + updateCount * 50)) {
                     return
                 }
+
+                updateCount ++
                 lastUpdateMoment = new Date()
                 window.requestIdleCallback(() => {
                     this.updateCurrentSelectedElement()

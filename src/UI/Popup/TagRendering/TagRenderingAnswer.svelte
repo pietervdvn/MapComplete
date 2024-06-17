@@ -28,9 +28,9 @@
 </script>
 
 {#if config !== undefined && (config?.condition === undefined || config.condition.matchesProperties($tags))}
-  <div {id} class={twMerge("link-underline inline-block w-full", config?.classes, extraClasses)}>
+  <div {id} class={twMerge("link-underline inline-block w-full h-full", extraClasses)}>
     {#if $trs.length === 1}
-      <TagRenderingMapping mapping={$trs[0]} {tags} {state} {selectedElement} {layer} />
+      <TagRenderingMapping mapping={$trs[0]} {tags} {state} {selectedElement} {layer} clss={config?.classes?.join(" ") ?? ""}/>
     {/if}
     {#if $trs.length > 1}
       <ul>

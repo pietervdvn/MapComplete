@@ -68,7 +68,7 @@
     {/if}
   </Loading>
 {:else}
-  <button class="flex w-full" on:click={clicked}>
+  <button class="w-full" style="justify-content: start" on:click={clicked}>
     <slot name="image">
       <ArrowDownTrayIcon class="mr-2 h-12 w-12 shrink-0" />
     </slot>

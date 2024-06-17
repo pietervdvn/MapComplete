@@ -12,6 +12,11 @@
   export let tags: UIEventSource<Record<string, string>>
   export let state: SpecialVisualizationState
   export let layer: LayerConfig
+
+  /**
+   * Css classes to apply
+   */
+  export let clss: string = ""
   export let mapping: {
     readonly then: Translation
     readonly searchTerms?: Record<string, string[]>
@@ -33,8 +38,8 @@
       icon={mapping.icon}
       clss={twJoin(`mapping-icon-${mapping.iconClass ?? "small"}`, "mr-2")}
     />
-    <SpecialTranslation t={mapping.then} {tags} {state} {layer} feature={selectedElement} />
+    <SpecialTranslation t={mapping.then} {tags} {state} {layer} feature={selectedElement} {clss} />
   </div>
 {:else if mapping.then !== undefined}
-  <SpecialTranslation t={mapping.then} {tags} {state} {layer} feature={selectedElement} />
+  <SpecialTranslation t={mapping.then} {tags} {state} {layer} feature={selectedElement} {clss} />
 {/if}

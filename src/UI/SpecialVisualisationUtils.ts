@@ -82,8 +82,8 @@ export default class SpecialVisualisationUtils {
                 }
 
                 const element: RenderingSpecification = {
-                    args: args,
-                    style: style,
+                    args,
+                    style,
                     func: knownSpecial,
                 }
                 return [...partBefore, element, ...partAfter]

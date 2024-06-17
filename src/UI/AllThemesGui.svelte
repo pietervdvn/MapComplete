@@ -84,22 +84,18 @@
         <Logo alt="MapComplete Logo" class="h-12 w-12 sm:h-24 sm:w-24" />
       </div>
 
-      <div class="flex flex-col">
+      <div class="flex flex-col link-underline">
         <h1 class="m-0 font-extrabold tracking-tight md:text-6xl">
           <Tr t={t.title} />
         </h1>
-        <p>
           <Tr
-            cls="my-4 mr-4 text-base font-semibold sm:text-lg md:mt-5 md:text-xl lg:mx-0"
+            cls="mr-4 text-base font-semibold sm:text-lg md:mt-5 md:text-xl lg:mx-0"
             t={Translations.t.index.intro}
           />
-          <span class="link-underline">
             <a href="#about">
               <Tr t={Translations.t.index.learnMore} />
               <ChevronDoubleRight class="inline h-4 w-4" />
             </a>
-          </span>
-        </p>
       </div>
     </div>
 

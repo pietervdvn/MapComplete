@@ -60,12 +60,13 @@
     }
     const highlighted = highlightedRendering.data
     if (config.id === highlighted) {
-      htmlElem.classList.add("glowing-shadow")
+      htmlElem.classList.add("focus")
       htmlElem.tabIndex = -1
       htmlElem.scrollIntoView({ behavior: "smooth" })
       Utils.focusOnFocusableChild(htmlElem)
     } else {
-      htmlElem.classList.remove("glowing-shadow")
+      htmlElem.classList.remove("focus")
+
     }
   }
 

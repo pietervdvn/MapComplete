@@ -79,7 +79,8 @@
   }}
 >
   <label
-    class={twMerge(cls, drawAttention ? "glowing-shadow" : "")}
+    class:focus={drawAttention}
+    class={cls}
     for={id}
     on:click|preventDefault={() => {
       inputElement.click()

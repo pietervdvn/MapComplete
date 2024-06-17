@@ -35,10 +35,11 @@
   --interactive-foreground: black;
   --interactive-contrast: #ff00ff;
 
-  --button-background: #383838;
+  --button-background: #282828;
   --button-background-hover: #686868;
   --button-foreground: white;
-    --disabled: #DBDBDB;
+  --button-border-color: #F7F7F7;
+  --disabled: #DBDBDB;
 
   /**
      * Base colour of interactive elements, mainly the 'subtle button'
@@ -191,9 +192,9 @@ button, .button {
     margin: 0.25rem;
 
     background: var(--background-color);
-    border: 1px solid var(--foreground-color);
+    border: 1px solid var(--button-background-hover);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    border-radius: 30px;
+    border-radius: 15px;
 
     background: var(--background-color);
     transition: all 200ms;
@@ -213,9 +214,14 @@ button:focus, .button:focus {
     border-color: var(--interactive-contrast);
 }
 
+.focus {
+    border: 2px solid var(--interactive-contrast);
+}
+
 button.primary, .button.primary {
     color: var(--button-foreground);
     background-color: var(--button-background);
+    border-color: var(--button-border-color);
 }
 
 button.primary:hover:not(.disabled), .button.primary:hover:not(.disabled) {
@@ -226,6 +232,14 @@ button.disabled {
     border-color: var(--disabled);
     color: var(--disabled);
 }
+button.disabled svg path {
+    transition: all 200ms;
+}
+button.disabled svg path {
+    fill: var(--disabled);
+    stroke: var(--disabled);
+}
+
 
 button.primary.disabled, .button.primary.disabled {
     color: var(--button-foreground);
@@ -284,12 +298,11 @@ label:not(.neutral-label):not(.button) {
   /**
      * Label should _contain_ the input element
      */
-  border: 2px solid var(--interactive-background);
   padding: 0.25rem;
   padding-right: 0.5rem;
   padding-left: 0.5rem;
+  margin:0.25rem;
   border-radius: 0.5rem;
-  background-color: var(--low-interaction-background);
   width: 100%;
   box-sizing: border-box;
   transition: all 250ms;
@@ -300,27 +313,13 @@ label.button {
 }
 
 label:hover:not(.neutral-label) {
-  background-color: var(--catch-detail-color);
-  color: var(--catch-detail-foregroundcolor);
-  border: 2px solid var(--interactive-contrast);
+  background-color: var(--low-interaction-background);
 }
 
-label:not(.no-image-background):not(.neutral-label) img {
-  padding: 0.25rem;
-  border-radius: 0.25rem;
-  background: var(--low-interaction-background);
-}
-
-label:not(.neutral-label) svg path {
-  transition: all 250ms;
-}
-
-label:hover:not(.no-image-background):not(.neutral-label) svg path {
-  fill: var(--catch-detail-foregroundcolor) !important;
-}
 
 label.checked:not(.neutral-label) {
-  border: 2px solid var(--foreground-color);
+    color: var(--foreground-color);
+    background-color: var(--low-interaction-background);
 }
 
 textarea {
@@ -566,20 +565,7 @@ svg.apply-fill path {
   }
 }
 
-.glowing-shadow {
-  -webkit-animation: glowing 1s ease-in-out infinite alternate;
-  -moz-animation: glowing 1s ease-in-out infinite alternate;
-  animation: glowing 1s ease-in-out infinite alternate;
-}
 
-@-webkit-keyframes glowing {
-  from {
-    box-shadow: 0 0 20px 10px #eaaf2588, inset 0 0 0px 1px #eaaf25;
-  }
-  to {
-    box-shadow: 0 0 20px 20px #eaaf2588, inset 0 0 5px 1px #eaaf25;
-  }
-}
 
 /************************* LEGACY MARKER - CLEANUP BELOW ********************************/
 

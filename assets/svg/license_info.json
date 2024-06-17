@@ -360,24 +360,6 @@
     "sources": []
   },
   {
-    "path": "download.svg",
-    "license": "CC0-1.0",
-    "authors": [
-      "Hannah Declerck"
-    ],
-    "sources": []
-  },
-  {
-    "path": "download.svg",
-    "license": "CC-BY-SA-4.0",
-    "authors": [
-      "Engr.eponce"
-    ],
-    "sources": [
-      "https://commons.wikimedia.org/wiki/File:Download-icon.svg"
-    ]
-  },
-  {
     "path": "duplicate.svg",
     "license": "CC0-1.0",
     "authors": [
@@ -731,18 +713,6 @@
   },
   {
     "path": "logo.svg",
-    "license": "TRIVIAL",
-    "authors": [],
-    "sources": []
-  },
-  {
-    "path": "logout.svg",
-    "license": "TRIVIAL",
-    "authors": [],
-    "sources": []
-  },
-  {
-    "path": "logout.svg",
     "license": "TRIVIAL",
     "authors": [],
     "sources": []
@@ -1118,18 +1088,6 @@
     ]
   },
   {
-    "path": "share.svg",
-    "license": "TRIVIAL",
-    "authors": [],
-    "sources": []
-  },
-  {
-    "path": "share.svg",
-    "license": "TRIVIAL",
-    "authors": [],
-    "sources": []
-  },
-  {
     "path": "speech_bubble.svg",
     "license": "CC-BY-4.0",
     "authors": [
@@ -1264,26 +1222,6 @@
     "license": "CC0-1.0",
     "authors": [
       "Robin van der Linde"
-    ],
-    "sources": []
-  },
-  {
-    "path": "up.svg",
-    "license": "TRIVIAL",
-    "authors": [],
-    "sources": []
-  },
-  {
-    "path": "up.svg",
-    "license": "TRIVIAL",
-    "authors": [],
-    "sources": []
-  },
-  {
-    "path": "upload.svg",
-    "license": "CC0-1.0",
-    "authors": [
-      "Pieter Vander Vennet"
     ],
     "sources": []
   },

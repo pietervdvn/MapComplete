@@ -73,7 +73,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
             this.location.setData({ ...this.location.data })
         }
         this.zoom = state?.zoom ?? new UIEventSource(1)
-        this.minzoom = state?.minzoom ?? new UIEventSource(0)
+        this.minzoom = state?.minzoom ?? new UIEventSource(0.5)// 0.5 is the maplibre minzoom
         this.maxzoom = state?.maxzoom ?? new UIEventSource(24)
         this.zoom.addCallbackAndRunD((z) => {
             if (z < this.minzoom.data) {

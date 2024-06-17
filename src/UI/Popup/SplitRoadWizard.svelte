@@ -4,7 +4,6 @@
   import type { SpecialVisualizationState } from "../SpecialVisualization"
   import LoginToggle from "../Base/LoginToggle.svelte"
   import Tr from "../Base/Tr.svelte"
-  import Scissors from "../../assets/svg/Scissors.svelte"
   import WaySplitMap from "../BigComponents/WaySplitMap.svelte"
   import BackButton from "../Base/BackButton.svelte"
   import SplitAction from "../../Logic/Osm/Actions/SplitAction"
@@ -13,7 +12,7 @@
   import Loading from "../Base/Loading.svelte"
   import { OsmWay } from "../../Logic/Osm/OsmObject"
   import type { WayId } from "../../Models/OsmFeature"
-  import { Utils } from "../../Utils"
+  import Scissors from "@babeard/svelte-heroicons/solid/Scissors"
 
   export let state: SpecialVisualizationState
   export let id: WayId
@@ -79,7 +78,7 @@
   {#if step === "deleted"}
     <!-- Empty -->
   {:else if step === "initial"}
-    <button on:click={() => downloadWay()}>
+    <button class="w-full" on:click={() => downloadWay()}>
       <Scissors class="h-6 w-6 shrink-0" />
       <Tr t={t.inviteToSplit} />
     </button>

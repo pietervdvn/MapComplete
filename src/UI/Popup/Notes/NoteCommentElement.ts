@@ -104,8 +104,7 @@ export default class NoteCommentElement extends Combine {
         ])
         this.SetClass("flex flex-col pb-2 mb-2 border-gray-500 border-b")
         if (comment.highlighted) {
-            this.SetClass("glowing-shadow")
-            console.log(">>>", index, totalNumberOfComments)
+            this.SetClass("focus")
             if (index + 2 === totalNumberOfComments) {
                 console.log("Scrolling into view")
                 requestAnimationFrame(() => {

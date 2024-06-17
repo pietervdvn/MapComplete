@@ -24,6 +24,8 @@
   export let feature: Feature
   export let layer: LayerConfig | undefined
 
+  export let clss: string = ""
+
   let language = Locale.language
   let lang = t.actualLanguage($language)
   let txt: string = t.textFor($language)
@@ -48,7 +50,7 @@
   function createVisualisation(specpart: Exclude<RenderingSpecification, string>): BaseUIElement {
     {
       try {
-        return specpart.func.constr(state, tags, specpart.args, feature, layer)
+        return specpart.func.constr(state, tags, specpart.args, feature, layer)?.SetClass(specpart.style)
       } catch (e) {
         console.error(
           "Could not construct a special visualisation with specification",
@@ -66,16 +68,16 @@
 {#if lang === "*"}
   {#each specs as specpart}
     {#if typeof specpart === "string"}
-      <span>
+      <span class={clss}>
         {@html Utils.purify(Utils.SubstituteKeys(specpart, $tags))}
         <WeblateLink context={t.context} />
       </span>
     {:else if $tags !== undefined}
-      <ToSvelte construct={() => createVisualisation(specpart)} />
+      <ToSvelte construct={() => createVisualisation(specpart)?.SetClass(clss)} />
     {/if}
   {/each}
 {:else}
-  <span {lang}>
+  <span {lang} class={clss}>
     {#each specs as specpart}
       {#if typeof specpart === "string"}
         <span>

@@ -653,17 +653,14 @@ export class AddEditingElements extends DesugaringStep<LayerConfigJson> {
         const specialVisualisations = ValidationUtils.getAllSpecialVisualisations(
             <any>json.tagRenderings
         )
+
         const usedSpecialFunctions = new Set(
             specialVisualisations.map((sv) =>
                 typeof sv === "string" ? undefined : sv.func.funcName
             )
         )
-        if (!allIds.has("lod")) {
-            json.tagRenderings.push(this._desugaring.tagRenderings.get("lod"))
-        }
-        if (!usedSpecialFunctions.has("minimap")) {
-            json.tagRenderings.push(this._desugaring.tagRenderings.get("minimap"))
-        }
+
+        /***** ADD TO TOP ****/
 
         if (
             this._desugaring.tagRenderings.has("just_created") &&
@@ -671,6 +668,26 @@ export class AddEditingElements extends DesugaringStep<LayerConfigJson> {
         ) {
             json.tagRenderings.unshift(this._desugaring.tagRenderings.get("just_created"))
         }
+
+        if (!allIds.has("nothing_known")) {
+            const indexFirstQuestion = json.tagRenderings.findIndex(tr => tr["question"] !== undefined)
+            json.tagRenderings.splice(indexFirstQuestion,
+                0,
+                this._desugaring.tagRenderings.get("nothing_known"))
+            console.log("aDDING",this._desugaring.tagRenderings.get("nothing_known"))
+        }
+
+
+        /***** ADD TO BOTTOM ****/
+
+
+        if (!allIds.has("lod")) {
+            json.tagRenderings.push(this._desugaring.tagRenderings.get("lod"))
+        }
+        if (!usedSpecialFunctions.has("minimap")) {
+            json.tagRenderings.push(this._desugaring.tagRenderings.get("minimap"))
+        }
+
 
         if (json.allowSplit && !usedSpecialFunctions.has("split_button")) {
             json.tagRenderings.push({
@@ -693,6 +710,19 @@ export class AddEditingElements extends DesugaringStep<LayerConfigJson> {
             })
         }
 
+        if (!usedSpecialFunctions.has("favourite_status")) {
+            json.tagRenderings.push({
+                id: "favourite_status",
+                render: { "*": "{favourite_status()}" },
+            })
+        }
+        if (!allIds.has("share")) {
+            json.tagRenderings.push(this._desugaring.tagRenderings.get("share"))
+        }
+
+        if (!allIds.has("qr_code")) {
+            json.tagRenderings.push(this._desugaring.tagRenderings.get("qr_code"))
+        }
         if (
             json.source !== "special" &&
             json.source !== "special:library" &&
@@ -703,20 +733,7 @@ export class AddEditingElements extends DesugaringStep<LayerConfigJson> {
             json.tagRenderings.push(this._desugaring.tagRenderings.get("last_edit"))
         }
 
-        if (!usedSpecialFunctions.has("favourite_status")) {
-            json.tagRenderings.push({
-                id: "favourite_status",
-                render: { "*": "{favourite_status()}" },
-            })
-        }
 
-        if (!allIds.has("qr_code")) {
-            json.tagRenderings.push(this._desugaring.tagRenderings.get("qr_code"))
-        }
-
-        if (!allIds.has("share")) {
-            json.tagRenderings.push(this._desugaring.tagRenderings.get("share"))
-        }
 
         if (!usedSpecialFunctions.has("all_tags")) {
             const trc: QuestionableTagRenderingConfigJson = {
@@ -768,6 +785,9 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
      * // should handle a simple special case
      * RewriteSpecial.convertIfNeeded({"special": {"type":"image_carousel"}}, ConversionContext.test()) // => {'*': "{image_carousel()}"}
      *
+     * // should add a class to the special element
+     * RewriteSpecial.convertIfNeeded({"special": {"type":"qr_code"}, class:"inline"}, ConversionContext.test()) // => {'*': "{qr_code():inline}"}
+     *
      * // should handle special case with a parameter
      * RewriteSpecial.convertIfNeeded({"special": {"type":"image_carousel", "image_key": "some_image_key"}}, ConversionContext.test()) // =>  {'*': "{image_carousel(some_image_key)}"}
      *
@@ -784,7 +804,7 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
      * // should warn for unexpected keys
      * const context = ConversionContext.test()
      * RewriteSpecial.convertIfNeeded({"special": {type: "image_carousel"}, "en": "xyz"}, context) // =>  {'*': "{image_carousel()}"}
-     * context.getAll("error")[0].message // => "The only keys allowed next to a 'special'-block are 'before' and 'after'. Perhaps you meant to put 'en' into the special block?"
+     * context.getAll("error")[0].message // => "The only keys allowed next to a 'special'-block are 'before', 'after' and 'class'. Perhaps you meant to put 'en' into the special block?"
      *
      * // should give an error on unknown visualisations
      * const context = ConversionContext.test()
@@ -863,9 +883,9 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
             return undefined
         }
         Array.from(Object.keys(input))
-            .filter((k) => k !== "special" && k !== "before" && k !== "after")
+            .filter((k) => k !== "special" && k !== "before" && k !== "after" && k !== "class")
             .map((k) => {
-                return `The only keys allowed next to a 'special'-block are 'before' and 'after'. Perhaps you meant to put '${k}' into the special block?`
+                return `The only keys allowed next to a 'special'-block are 'before', 'after' and 'class'. Perhaps you meant to put '${k}' into the special block?`
             })
             .forEach((e) => context.err(e))
 
@@ -917,6 +937,8 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
 
         const before = Translations.T(input.before)
         const after = Translations.T(input.after)
+        const clss: string = input.class !== undefined ? ":"+input.class : ""
+
 
         for (const ln of Object.keys(before?.translations ?? {})) {
             foundLanguages.add(ln)
@@ -930,7 +952,7 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
                 .map((nm) => RewriteSpecial.escapeStr(special[nm] ?? ""))
                 .join(",")
             return {
-                "*": `{${type}(${args})}`,
+                "*": `{${type}(${args})${clss}}`,
             }
         }
 
@@ -955,7 +977,7 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
             }
             const beforeText = before?.textFor(ln) ?? ""
             const afterText = after?.textFor(ln) ?? ""
-            result[ln] = `${beforeText}{${type}(${args.map((a) => a).join(",")})}${afterText}`
+            result[ln] = `${beforeText}{${type}(${args.map((a) => a).join(",")})${clss}}${afterText}`
         }
         return result
     }

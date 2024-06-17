@@ -130,7 +130,7 @@
     {/if}
   </div>
   {#if $tags[key] && $tags[key] !== externalProperties[key]}
-    <div class:glowing-shadow={onOverwrite}>
+    <div class:focus={onOverwrite}>
       <span class="subtle">
         <Tr t={t.currentInOsmIs} />
       </span>

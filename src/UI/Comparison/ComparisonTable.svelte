@@ -152,7 +152,7 @@
         {/if}
         {#if currentStep === "init"}
           {#each $missing as key (key)}
-            <div class:glowing-shadow={applyAllHovered} class="mx-2 rounded-2xl">
+            <div class:focus={applyAllHovered} class="mx-2 rounded-2xl">
               <ComparisonAction
                 {key}
                 {state}

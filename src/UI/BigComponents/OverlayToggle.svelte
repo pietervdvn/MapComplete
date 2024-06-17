@@ -27,9 +27,9 @@
   $: onDestroy(
     highlightedLayer.addCallbackAndRun((highlightedLayer) => {
       if (highlightedLayer === layerproperties.id) {
-        mainElem?.classList?.add("glowing-shadow")
+        mainElem?.classList?.add("focus")
       } else {
-        mainElem?.classList?.remove("glowing-shadow")
+        mainElem?.classList?.remove("focus")
       }
     })
   )

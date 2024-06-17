@@ -63,7 +63,7 @@
     </a>
   {/if}
   <div class="flex justify-end">
-    <Mangrove_logo class="h-12 w-12 shrink-0 p-1" />
+    <Mangrove_logo class="h-6 w-6 shrink-0 p-1" />
     <Tr cls="text-sm subtle" t={t.attribution} />
   </div>
 </LoginToggle>

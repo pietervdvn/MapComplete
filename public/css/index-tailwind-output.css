@@ -941,11 +941,6 @@ video {
   margin-bottom: 0.25rem;
 }
 
-.my-4 {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-
 .my-2 {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
@@ -954,6 +949,11 @@ video {
 .mx-1 {
   margin-left: 0.25rem;
   margin-right: 0.25rem;
+}
+
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .mx-4 {
@@ -2027,6 +2027,10 @@ video {
   row-gap: 0.25rem;
 }
 
+.gap-y-2 {
+  row-gap: 0.5rem;
+}
+
 .gap-x-4 {
   column-gap: 1rem;
 }
@@ -2037,10 +2041,6 @@ video {
 
 .gap-x-0 {
   column-gap: 0px;
-}
-
-.gap-y-2 {
-  row-gap: 0.5rem;
 }
 
 .gap-x-1 {
@@ -2256,10 +2256,6 @@ video {
 
 .self-stretch {
   align-self: stretch;
-}
-
-.justify-self-start {
-  justify-self: start;
 }
 
 .justify-self-end {
@@ -3453,10 +3449,6 @@ video {
   padding-right: 3rem;
 }
 
-.pl-1 {
-  padding-left: 0.25rem;
-}
-
 .pr-1 {
   padding-right: 0.25rem;
 }
@@ -3491,6 +3483,10 @@ video {
 
 .pl-3 {
   padding-left: 0.75rem;
+}
+
+.pl-1 {
+  padding-left: 0.25rem;
 }
 
 .pb-1\.5 {
@@ -4408,9 +4404,10 @@ video {
   --interactive-background: #dddddd;
   --interactive-foreground: black;
   --interactive-contrast: #ff00ff;
-  --button-background: #383838;
+  --button-background: #282828;
   --button-background-hover: #686868;
   --button-foreground: white;
+  --button-border-color: #F7F7F7;
   --disabled: #DBDBDB;
   /**
      * Base colour of interactive elements, mainly the 'subtle button'
@@ -4559,9 +4556,9 @@ button, .button {
   align-items: center;
   padding: 0.25rem 1rem;
   margin: 0.25rem;
-  border: 1px solid var(--foreground-color);
+  border: 1px solid var(--button-background-hover);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  border-radius: 30px;
+  border-radius: 15px;
   background: var(--background-color);
   transition: all 200ms;
 }
@@ -4578,9 +4575,14 @@ button:focus, .button:focus {
   border-color: var(--interactive-contrast);
 }
 
+.focus {
+  border: 2px solid var(--interactive-contrast);
+}
+
 button.primary, .button.primary {
   color: var(--button-foreground);
   background-color: var(--button-background);
+  border-color: var(--button-border-color);
 }
 
 button.primary:hover:not(.disabled), .button.primary:hover:not(.disabled) {
@@ -4590,6 +4592,12 @@ button.primary:hover:not(.disabled), .button.primary:hover:not(.disabled) {
 button.disabled {
   border-color: var(--disabled);
   color: var(--disabled);
+}
+
+button.disabled svg path {
+  transition: all 200ms;
+  fill: var(--disabled);
+  stroke: var(--disabled);
 }
 
 button.primary.disabled, .button.primary.disabled {
@@ -4648,12 +4656,11 @@ label:not(.neutral-label):not(.button) {
   /**
      * Label should _contain_ the input element
      */
-  border: 2px solid var(--interactive-background);
   padding: 0.25rem;
   padding-right: 0.5rem;
   padding-left: 0.5rem;
+  margin:0.25rem;
   border-radius: 0.5rem;
-  background-color: var(--low-interaction-background);
   width: 100%;
   box-sizing: border-box;
   transition: all 250ms;
@@ -4664,27 +4671,12 @@ label.button {
 }
 
 label:hover:not(.neutral-label) {
-  background-color: var(--catch-detail-color);
-  color: var(--catch-detail-foregroundcolor);
-  border: 2px solid var(--interactive-contrast);
-}
-
-label:not(.no-image-background):not(.neutral-label) img {
-  padding: 0.25rem;
-  border-radius: 0.25rem;
-  background: var(--low-interaction-background);
-}
-
-label:not(.neutral-label) svg path {
-  transition: all 250ms;
-}
-
-label:hover:not(.no-image-background):not(.neutral-label) svg path {
-  fill: var(--catch-detail-foregroundcolor) !important;
+  background-color: var(--low-interaction-background);
 }
 
 label.checked:not(.neutral-label) {
-  border: 2px solid var(--foreground-color);
+  color: var(--foreground-color);
+  background-color: var(--low-interaction-background);
 }
 
 textarea {
@@ -4922,10 +4914,6 @@ svg.apply-fill path {
   to {
     transform: translateX(calc(-100% + 42px));
   }
-}
-
-.glowing-shadow {
-  animation: glowing 1s ease-in-out infinite alternate;
 }
 
 /************************* LEGACY MARKER - CLEANUP BELOW ********************************/
@@ -7170,6 +7158,10 @@ svg.apply-fill path {
     margin-bottom: 0px;
   }
 
+  .sm\:inline {
+    display: inline;
+  }
+
   .sm\:flex {
     display: flex;
   }
@@ -7269,6 +7261,10 @@ svg.apply-fill path {
     padding-right: 1rem;
   }
 
+  .sm\:pr-2 {
+    padding-right: 0.5rem;
+  }
+
   .sm\:pt-1 {
     padding-top: 0.25rem;
   }
@@ -7333,6 +7329,10 @@ svg.apply-fill path {
 
   .md\:block {
     display: block;
+  }
+
+  .md\:inline {
+    display: inline;
   }
 
   .md\:flex {
@@ -7535,6 +7535,10 @@ svg.apply-fill path {
   .md\:py-8 {
     padding-top: 2rem;
     padding-bottom: 2rem;
+  }
+
+  .md\:pr-2 {
+    padding-right: 0.5rem;
   }
 
   .md\:text-6xl {

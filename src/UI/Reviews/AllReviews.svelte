@@ -26,7 +26,7 @@
   })
 </script>
 
-<div class="border-2 border-dashed border-gray-300">
+<div class="border-2 border-dashed border-gray-300 p-2">
   {#if _reviews.length > 1}
     <StarsBar score={$average} />
   {/if}
@@ -35,10 +35,11 @@
       <SingleReview {review} />
     {/each}
   {:else}
+    <div class="subtle italic m-2">
     <Tr t={Translations.t.reviews.no_reviews_yet} />
+    </div>
   {/if}
   <div class="flex justify-end">
-    <Mangrove_logo class="h-12 w-12 shrink-0 p-1" />
     <Tr cls="text-sm subtle" t={Translations.t.reviews.attribution} />
   </div>
 </div>

@@ -7,27 +7,24 @@
 </script>
 
 <main>
-  <div>
+  <div class="flex-col flex gap-y-2">
     <h1>Stylesheet testing grounds</h1>
 
     This document exists to explore the style hierarchy.
 
-    <div class="normal-background">
-      <h2>Normal background</h2>
-      There are a few styles, such as the
-      <span class="literal-code">normal-background</span>
-      -style which is used if there is nothing special going on. Some general information, with at most
-      <a href="https://example.com" target="_blank">a link to someplace</a>
-      <div class="subtle">Subtle</div>
+    <h2>Normal background</h2>
+    There are a few styles, such as the
+    <span class="literal-code">normal-background</span>
+    -style which is used if there is nothing special going on. Some general information, with at most
+    <a href="https://example.com" target="_blank">a link to someplace</a>
+    <div class="subtle">Subtle</div>
 
-      <div class="alert">Alert: something went wrong</div>
-      <div class="warning">Warning</div>
-      <div class="information">Some important information</div>
-      <div class="thanks">Thank you! Operation successful</div>
-
-      <Login class="h-12 w-12" />
-      <Loading>Loading...</Loading>
-    </div>
+    <div class="alert">Alert: something went wrong</div>
+    <div class="warning">Warning</div>
+    <div class="information">Some important information</div>
+    <div class="thanks">Thank you! Operation successful</div>
+    <Login class="h-12 w-12" />
+    <Loading>Loading...</Loading>
 
     <div class="low-interaction flex flex-col">
       <h2>Low interaction</h2>

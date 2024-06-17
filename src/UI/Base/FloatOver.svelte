@@ -14,13 +14,16 @@
 <div
   class="absolute top-0 left-0 h-screen w-screen"
   on:click={() => {
+    console.log("OnClose")
     dispatch("close")
   }}
   style="background-color: #00000088; z-index: 20"
 />
 <!-- draw a _second_ absolute div, placed using 'bottom' which will be above the navigation bar on mobile browsers -->
-<div class={"absolute bottom-0 right-0 h-full w-screen p-4 md:p-6"} style="z-index: 21">
-  <div class="content normal-background h-full" on:click|stopPropagation={() => {}}>
+<div class="absolute bottom-0 right-0 h-full w-screen p-4 md:p-6 pointer-events-none" style="z-index: 21" on:click={() =>{
+  console.log("Closing...")
+  dispatch("close")}}>
+  <div class="content normal-background h-full pointer-events-auto" on:click|stopPropagation={() => {}}>
     <div class="h-full rounded-xl">
       <slot />
     </div>

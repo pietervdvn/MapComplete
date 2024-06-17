@@ -9,7 +9,6 @@
   import FilterConfig from "../../Models/ThemeConfig/FilterConfig"
   import If from "../Base/If.svelte"
   import Dropdown from "../Base/Dropdown.svelte"
-  import { onDestroy } from "svelte"
   import { ImmutableStore, Store, UIEventSource } from "../../Logic/UIEventSource"
   import FilterviewWithFields from "./FilterviewWithFields.svelte"
   import Tr from "../Base/Tr.svelte"
@@ -40,20 +39,11 @@
     return filteredLayer.appliedFilters.get(option.id)
   }
 
-  let mainElem: HTMLElement
-  $: onDestroy(
-    highlightedLayer.addCallbackAndRun((highlightedLayer) => {
-      if (highlightedLayer === filteredLayer.layerDef.id) {
-        mainElem?.classList?.add("glowing-shadow")
-      } else {
-        mainElem?.classList?.remove("glowing-shadow")
-      }
-    })
-  )
+
 </script>
 
 {#if filteredLayer.layerDef.name}
-  <div bind:this={mainElem} class="mb-1.5">
+  <div class:focus={$highlightedLayer === filteredLayer.layerDef.id} class="mb-1.5">
     <Checkbox selected={isDisplayed}>
       <If condition={filteredLayer.isDisplayed}>
         <ToSvelte

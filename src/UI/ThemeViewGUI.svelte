@@ -76,6 +76,7 @@
   import Github from "../assets/svg/Github.svelte"
   import ArrowDownTray from "@babeard/svelte-heroicons/mini/ArrowDownTray"
   import Share from "@babeard/svelte-heroicons/solid/Share"
+  import ChevronRight from "@babeard/svelte-heroicons/solid/ChevronRight"
 
   export let state: ThemeViewState
   let layout = state.layout
@@ -255,12 +256,13 @@
           <img
             role="presentation"
             alt=""
-            class="mr-0.5 block h-6 w-6 sm:mr-1 md:mr-2 md:h-8 md:w-8"
+            class="mr-0.5 block h-4 w-4 sm:mr-1 md:mr-2 md:h-8 md:w-8"
             src={layout.icon}
           />
           <b class="mr-1">
             <Tr t={layout.title} />
           </b>
+          <ChevronRight class="w-4 h-4"/>
         </div>
       </MapControlButton>
       <MapControlButton
@@ -328,7 +330,7 @@
           {/if}
         </If>
 
-        <div class="flex">
+        <div class="flex items-center">
           <!-- bottom left elements -->
           <If condition={state.featureSwitches.featureSwitchFilter}>
             <MapControlButton
@@ -348,13 +350,13 @@
             />
           </If>
           <a
-            class="bg-black-transparent pointer-events-auto h-fit max-h-12 cursor-pointer self-end overflow-hidden rounded-2xl pl-1 pr-2 text-white opacity-50 hover:opacity-100"
+            class="self-center bg-black-transparent pointer-events-auto h-fit max-h-12 cursor-pointer self-end overflow-hidden rounded-2xl px-1 ml-1 text-white opacity-50 hover:opacity-100"
             on:click={() => {
               state.guistate.themeViewTab.setData("copyright")
               state.guistate.themeIsOpened.setData(true)
             }}
           >
-            © OpenStreetMap, <span class="w-24">{rasterLayerName}</span>
+            © <span class="hidden sm:inline sm:pr-2 "> OpenStreetMap<span class="hidden md:inline md:pr-2 w-24">, {rasterLayerName}</span></span>
           </a>
         </div>
       </div>
