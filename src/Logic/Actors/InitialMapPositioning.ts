@@ -6,6 +6,8 @@ import Hash from "../Web/Hash"
 import OsmObjectDownloader from "../Osm/OsmObjectDownloader"
 import { OsmObject } from "../Osm/OsmObject"
 import Constants from "../../Models/Constants"
+import { Utils } from "../../Utils"
+import { GeoLocationState } from "../State/GeoLocationState"
 
 /**
  * This actor is responsible to set the map location.
@@ -13,6 +15,7 @@ import Constants from "../../Models/Constants"
  * - Set the map to the position of the selected element
  * - Set the map to the position as passed in by the query parameters (if available)
  * - Set the map to the position remembered in LocalStorage (if available)
+ * - Set the map to what IP-info says (very coarse)
  * - Set the map to the layout default
  *
  * Additionally, it will save the map location to local storage
@@ -22,7 +25,7 @@ export default class InitialMapPositioning {
     public location: UIEventSource<{ lon: number; lat: number }>
     public useTerrain: Store<boolean>
 
-    constructor(layoutToUse: LayoutConfig) {
+    constructor(layoutToUse: LayoutConfig, geolocationState: GeoLocationState) {
         function localStorageSynced(
             key: string,
             deflt: number,
@@ -52,14 +55,16 @@ export default class InitialMapPositioning {
             layoutToUse?.startZoom ?? 1,
             "The initial/current zoom level"
         )
+        const defaultLat =layoutToUse?.startLat ?? 0
         const lat = localStorageSynced(
             "lat",
-            layoutToUse?.startLat ?? 0,
+           defaultLat ,
             "The initial/current latitude"
         )
+        const defaultLon = layoutToUse?.startLon ?? 0
         const lon = localStorageSynced(
             "lon",
-            layoutToUse?.startLon ?? 0,
+           defaultLon ,
             "The initial/current longitude of the app"
         )
 
@@ -72,6 +77,7 @@ export default class InitialMapPositioning {
         this.useTerrain = new ImmutableStore<boolean>(layoutToUse.enableTerrain)
 
         if (initialHash?.match(/^(node|way|relation)\/[0-9]+$/)) {
+            // We pan to the selected element
             const [type, id] = initialHash.split("/")
             OsmObjectDownloader.RawDownloadObjectAsync(
                 type,
@@ -85,6 +91,19 @@ export default class InitialMapPositioning {
                 this.zoom.setData(Math.max(this.zoom.data, targetLayer.minzoom))
                 const [lat, lon] = osmObject.centerpoint()
                 this.location.setData({ lon, lat })
+            })
+        } else if (Constants.GeoIpServer && lat.data === defaultLat && lon.data === defaultLon) {
+            console.log("Using geoip to determine start location...")
+            // We use geo-IP to zoom to some location
+            Utils.downloadJson<{ latitude: number, longitude: number }>(
+                Constants.GeoIpServer + "ip"
+            ).then(({ longitude, latitude }) => {
+                if(geolocationState.currentGPSLocation.data !== undefined){
+                    return // We got a geolocation by now, abort
+                }
+                console.log("Setting location based on geoip", longitude,  latitude)
+                this.zoom.setData(8)
+                this.location.setData({ lon: longitude, lat: latitude })
             })
         }
     }

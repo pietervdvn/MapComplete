@@ -163,6 +163,8 @@ export default class Constants {
      * This is a MapLibre/MapBox vector tile server which hosts vector tiles for every (official) layer
      */
     public static VectorTileServer: string | undefined = Constants.config.mvt_layer_server
+    public static GeoIpServer: string | undefined = Constants.config.geoip_server
+
     public static readonly maptilerApiKey = "GvoVAJgu46I5rZapJuAy"
     public static readonly SummaryServer: string = Constants.config.summary_server
 

@@ -158,10 +158,10 @@ export default class ThemeViewState implements SpecialVisualizationState {
             layout.id
         )
         this.map = new UIEventSource<MlMap>(undefined)
-        const initial = new InitialMapPositioning(layout)
+        const geolocationState = new GeoLocationState()
+        const initial = new InitialMapPositioning(layout, geolocationState)
         this.mapProperties = new MapLibreAdaptor(this.map, initial)
 
-        const geolocationState = new GeoLocationState()
 
         this.featureSwitchIsTesting = this.featureSwitches.featureSwitchIsTesting
         this.featureSwitchUserbadge = this.featureSwitches.featureSwitchEnableLogin

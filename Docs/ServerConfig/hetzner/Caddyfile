@@ -34,5 +34,7 @@ lod.mapcomplete.org {
 }
 
 ipinfo.mapcomplete.org {
-    reverse_proxy 127.0.0.1:2347
+    reverse_proxy {
+        to 127.0.0.1:2347
+    }
 }

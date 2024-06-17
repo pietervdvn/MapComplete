@@ -85,10 +85,11 @@
 </script>
 
 {#if theme.id !== personal.id || $unlockedPersonal}
-  <a class={"button theme-button w-full text-ellipsis"} style="justify-content: start" href={$href}>
-    <img src={theme.icon} class="m-1 mr-2 block h-11 w-11 sm:m-2 sm:mr-4" alt="" />
-    <span class="flex flex-col overflow-hidden text-ellipsis ">
-      <Tr t={title} />
+  <a class={"flex w-full items-center text-ellipsis rounded my-2"} href={$href}>
+    <img src={theme.icon} class="m-1 block h-11 w-11 sm:mr-2" alt="" />
+    <span class="flex flex-col overflow-hidden text-ellipsis font-bold text-xl">
+      <Tr cls="underline" t={title} />
+      <Tr cls="subtle text-base" t={description}/>
 
       {#if selected}
         <span class="thanks hidden-on-mobile" aria-hidden="true">
