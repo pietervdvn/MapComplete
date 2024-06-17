@@ -28,7 +28,6 @@
     <Tr t={t.editingTitle} />
   </h3>
   <Tr t={t.editingIntro} />
-  <Tr t={t.editingIntro} />
   <ul>
     <li>
       <Tr t={t.items.changesYouMake} />
