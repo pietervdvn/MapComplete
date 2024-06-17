@@ -32,3 +32,7 @@ lod.mapcomplete.org {
 		to http://127.0.0.1:2346
 	}
 }
+
+ipinfo.mapcomplete.org {
+    reverse_proxy 127.0.0.1:2347
+}
