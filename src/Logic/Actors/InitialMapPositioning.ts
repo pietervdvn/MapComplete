@@ -92,7 +92,7 @@ export default class InitialMapPositioning {
                 const [lat, lon] = osmObject.centerpoint()
                 this.location.setData({ lon, lat })
             })
-        } else if (Constants.GeoIpServer && lat.data === defaultLat && lon.data === defaultLon) {
+        } else if (Constants.GeoIpServer && lat.data === defaultLat && lon.data === defaultLon && !Utils.runningFromConsole) {
             console.log("Using geoip to determine start location...")
             // We use geo-IP to zoom to some location
             Utils.downloadJson<{ latitude: number, longitude: number }>(

@@ -6574,6 +6574,13 @@
                     "render": "Deze lift gaat naar de verdiepingen {level}"
                 }
             },
+            "nothing_known": {
+                "render": {
+                    "special": {
+                        "text": "Er is nog niets geweten. Help mee door de vragen te beantwoorden"
+                    }
+                }
+            },
             "opening_hours": {
                 "mappings": {
                     "0": {

@@ -7948,6 +7948,13 @@
                     "render": "This elevator goes to floors {level}"
                 }
             },
+            "nothing_known": {
+                "render": {
+                    "special": {
+                        "text": "Nothing is known about this place. Help by filling out the questions"
+                    }
+                }
+            },
             "opening_hours": {
                 "mappings": {
                     "0": {
