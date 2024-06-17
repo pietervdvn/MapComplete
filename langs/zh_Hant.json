@@ -703,7 +703,7 @@
     },
     "reviews": {
         "affiliated_reviewer_warning": "(關係者審核)",
-        "attribution": "評審系統由<a href=\"https://mangrove.reviews/\" target=\"_blank\">Mangrove Reviews</a>提供技術支援，採用<a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a>授權條款。",
+        "attribution": "透過 <a href='https://mangrove.reviews/' target='_blank'>Mangrove Reviews</a>",
         "averageRating": "平均評分 {n} 顆星",
         "i_am_affiliated": "我是這物件的相關關係者",
         "i_am_affiliated_explanation": "檢查你是否是店主、創造者或是員工…",
