@@ -645,7 +645,7 @@ export class AddEditingElements extends DesugaringStep<LayerConfigJson> {
         function getAddedByDefaultIds(key: string): QuestionableTagRenderingConfigJson[] {
             const addByDefault = builtinQuestions.filter(tr => tr.labels?.indexOf(key) >= 0)
             const ids = new Set(addByDefault.map(tr => tr.id))
-            const idsInOrder = desugaring.tagRenderingOrder.filter(id => ids.has(id))
+            const idsInOrder = desugaring.tagRenderingOrder?.filter(id => ids.has(id)) ?? []
             return Utils.NoNull(idsInOrder.map(id => desugaring.tagRenderings.get(id)))
         }
 
