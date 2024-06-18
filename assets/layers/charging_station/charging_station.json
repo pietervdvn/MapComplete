@@ -2403,7 +2403,8 @@
         "de": "Wie lange darf man hier maximal parken?"
       },
       "freeform": {
-        "key": "maxstay"
+        "key": "maxstay",
+        "type": "pfloat"
       },
       "render": {
         "en": "One can stay at most <b>{canonical(maxstay)}</b>",

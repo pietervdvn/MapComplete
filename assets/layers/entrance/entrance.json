@@ -515,7 +515,8 @@
         "cs": "Jaká je šířka těchto dveří/vchodu?"
       },
       "freeform": {
-        "key": "width"
+        "key": "width",
+        "type": "pfloat"
       }
     },
     {
