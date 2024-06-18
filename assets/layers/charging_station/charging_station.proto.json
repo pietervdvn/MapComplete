@@ -564,7 +564,8 @@
         "nl": "Hoelang mag een voertuig hier blijven staan?"
       },
       "freeform": {
-        "key": "maxstay"
+        "key": "maxstay",
+        "type": "pfloat"
       },
       "render": {
         "en": "One can stay at most <b>{canonical(maxstay)}</b>",
