@@ -25,24 +25,26 @@ Map layer to show fire hydrants.
 1. [ Themes using this layer ](#-themes-using-this-layer-)
 2. [ Basic tags for this layer ](#-basic-tags-for-this-layer-)
 3. [ Supported attributes ](#-supported-attributes-)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
+  - [just_created](#just_created)
+  - [nothing_known](#nothing_known)
+  - [hydrant-color](#hydrant-color)
+  - [hydrant-type](#hydrant-type)
+  - [hydrant-state](#hydrant-state)
+  - [hydrant-diameter](#hydrant-diameter)
+  - [hydrant-number-of-couplings](#hydrant-number-of-couplings)
+  - [hydrant-couplings](#hydrant-couplings)
+  - [hydrant-couplings-diameters](#hydrant-couplings-diameters)
+  - [images](#images)
+  - [leftover-questions](#leftover-questions)
+  - [minimap](#minimap)
+  - [nearby_images](#nearby_images)
+  - [move-button](#move-button)
+  - [lod](#lod)
+  - [favourite_status](#favourite_status)
+  - [share](#share)
+  - [qr_code](#qr_code)
+  - [last_edit](#last_edit)
+  - [all-tags](#all-tags)
 
  Themes using this layer 
 -------------------------
@@ -91,16 +93,25 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/couplings:diameters#values) [couplings:diameters](https://wiki.openstreetmap.org/wiki/Key:couplings:diameters) | [string](../SpecialInputElements.md#string) | 
 
 
-### this.id
+### just_created
 This element shows a 'thank you' that the contributor has recently created this element
 _This tagrendering has no question and is thus read-only_
 
  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
 This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
 This tagrendering has labels 
-`added_by_default`
+`added_by_default_top`
 
-### this.id
+### nothing_known
+
+_This tagrendering has no question and is thus read-only_
+
+
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time>=300 & _backend~.+
+This tagrendering has labels 
+`added_by_default_top`
+
+### hydrant-color
 
 The question is `What color is the hydrant?`
 This rendering asks information about the property 
@@ -111,7 +122,7 @@ This is rendered with `The hydrant color is {colour}`
 
 
 
-### this.id
+### hydrant-type
 
 The question is `What type of hydrant is it?`
 This rendering asks information about the property 
@@ -124,7 +135,7 @@ This is rendered with ` Hydrant type: {fire_hydrant:type}`
 
 
 
-### this.id
+### hydrant-state
 
 The question is `Is this hydrant still working?`
 
@@ -134,7 +145,7 @@ The question is `Is this hydrant still working?`
 
 
 
-### this.id
+### hydrant-diameter
 
 The question is `What is the pipe diameter of this hydrant?`
 This rendering asks information about the property 
@@ -144,7 +155,7 @@ This is rendered with `Pipe diameter: {canonical(fire_hydrant:diameter)}`
 
 
 
-### this.id
+### hydrant-number-of-couplings
 
 The question is `How many couplings does this fire hydrant have?`
 This rendering asks information about the property 
@@ -154,7 +165,7 @@ This is rendered with `Number of couplings: {couplings}`
 
 
 
-### this.id
+### hydrant-couplings
 
 The question is `What kind of couplings does this hydrant have?`
 This rendering asks information about the property 
@@ -166,7 +177,7 @@ This is rendered with `Couplings: {couplings:type}`
 
 
 
-### this.id
+### hydrant-couplings-diameters
 
 The question is `What diameter are the couplings of this hydrant?`
 This rendering asks information about the property 
@@ -176,7 +187,7 @@ This is rendered with `Coupling diameters: {couplings:diameters}`
 
 
 
-### this.id
+### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 
@@ -184,7 +195,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-### this.id
+### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 
@@ -192,7 +203,32 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-### this.id
+### minimap
+Shows a small map with the feature. Added by default to every popup
+_This tagrendering has no question and is thus read-only_
+
+
+
+
+
+### nearby_images
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+This tagrendering has labels 
+`added_by_default_conditional`
+
+### move-button
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+
+
+### lod
 
 _This tagrendering has no question and is thus read-only_
 
@@ -201,23 +237,34 @@ _This tagrendering has no question and is thus read-only_
 This tagrendering has labels 
 `added_by_default`
 
-### this.id
-Shows a small map with the feature. Added by default to every popup
-_This tagrendering has no question and is thus read-only_
-
-
-
-
-
-### this.id
+### favourite_status
 
 _This tagrendering has no question and is thus read-only_
 
 
 
+This tagrendering has labels 
+`added_by_default`
+
+### share
+
+_This tagrendering has no question and is thus read-only_
 
 
-### this.id
+
+This tagrendering has labels 
+`added_by_default`
+
+### qr_code
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+This tagrendering has labels 
+`added_by_default`
+
+### last_edit
 Gives some metainfo about the last edit and who did edit it - rendering only
 _This tagrendering has no question and is thus read-only_
 
@@ -226,33 +273,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `added_by_default`
 
-### this.id
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-
-
-### this.id
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### this.id
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### this.id
+### all-tags
 
 _This tagrendering has no question and is thus read-only_
 

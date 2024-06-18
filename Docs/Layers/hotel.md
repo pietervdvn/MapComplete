@@ -25,26 +25,28 @@ Layer showing all hotels
 1. [ Themes using this layer ](#-themes-using-this-layer-)
 2. [ Basic tags for this layer ](#-basic-tags-for-this-layer-)
 3. [ Supported attributes ](#-supported-attributes-)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
+  - [just_created](#just_created)
+  - [nothing_known](#nothing_known)
+  - [images](#images)
+  - [reviews](#reviews)
+  - [name](#name)
+  - [phone](#phone)
+  - [email](#email)
+  - [website](#website)
+  - [wheelchair-access](#wheelchair-access)
+  - [internet](#internet)
+  - [internet-fee](#internet-fee)
+  - [internet-ssid](#internet-ssid)
+  - [leftover-questions](#leftover-questions)
+  - [minimap](#minimap)
+  - [nearby_images](#nearby_images)
+  - [move-button](#move-button)
+  - [lod](#lod)
+  - [favourite_status](#favourite_status)
+  - [share](#share)
+  - [qr_code](#qr_code)
+  - [last_edit](#last_edit)
+  - [all-tags](#all-tags)
 
  Themes using this layer 
 -------------------------
@@ -96,16 +98,25 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/internet_access:ssid#values) [internet_access:ssid](https://wiki.openstreetmap.org/wiki/Key:internet_access:ssid) | [string](../SpecialInputElements.md#string) | [Telekom](https://wiki.openstreetmap.org/wiki/Tag:internet_access:ssid%3DTelekom)
 
 
-### this.id
+### just_created
 This element shows a 'thank you' that the contributor has recently created this element
 _This tagrendering has no question and is thus read-only_
 
  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
 This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
 This tagrendering has labels 
-`added_by_default`
+`added_by_default_top`
 
-### this.id
+### nothing_known
+
+_This tagrendering has no question and is thus read-only_
+
+
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time>=300 & _backend~.+
+This tagrendering has labels 
+`added_by_default_top`
+
+### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 
@@ -113,7 +124,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-### this.id
+### reviews
 Shows the reviews module (including the possibility to leave a review)
 _This tagrendering has no question and is thus read-only_
 
@@ -121,7 +132,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-### this.id
+### name
 
 The question is `What is the name of this hotel?`
 This rendering asks information about the property 
@@ -131,7 +142,7 @@ This is rendered with `This hotel is called {name}`
 
 
 
-### this.id
+### phone
 
 The question is `What is the phone number of {title()}?`
 This rendering asks information about the property 
@@ -143,7 +154,7 @@ This is rendered with `<a href='tel:{phone}'>{phone}</a>`
 This tagrendering has labels 
 `contact`
 
-### this.id
+### email
 
 The question is `What is the email address of {title()}?`
 This rendering asks information about the property 
@@ -157,7 +168,7 @@ This is rendered with `<a href='mailto:{email}' target='_blank' rel='noopener'>{
 This tagrendering has labels 
 `contact`
 
-### this.id
+### website
 
 The question is `What is the website of {title()}?`
 This rendering asks information about the property 
@@ -169,7 +180,7 @@ This is rendered with `<a href='{website}' rel='nofollow noopener noreferrer' ta
 This tagrendering has labels 
 `contact`
 
-### this.id
+### wheelchair-access
 
 The question is `Is this place accessible with a wheelchair?`
 
@@ -180,7 +191,7 @@ The question is `Is this place accessible with a wheelchair?`
 
 
 
-### this.id
+### internet
 
 The question is `Does this place offer internet access?`
 
@@ -194,7 +205,7 @@ The question is `Does this place offer internet access?`
 This tagrendering has labels 
 `internet-all`
 
-### this.id
+### internet-fee
 
 The question is `Is there a fee for internet access?`
 
@@ -205,7 +216,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `internet-all`
 
-### this.id
+### internet-ssid
 
 The question is `What is the network name for the wireless internet access?`
 This rendering asks information about the property 
@@ -216,7 +227,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `internet-all`
 
-### this.id
+### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 
@@ -224,7 +235,32 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-### this.id
+### minimap
+Shows a small map with the feature. Added by default to every popup
+_This tagrendering has no question and is thus read-only_
+
+
+
+
+
+### nearby_images
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+This tagrendering has labels 
+`added_by_default_conditional`
+
+### move-button
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+
+
+### lod
 
 _This tagrendering has no question and is thus read-only_
 
@@ -233,23 +269,34 @@ _This tagrendering has no question and is thus read-only_
 This tagrendering has labels 
 `added_by_default`
 
-### this.id
-Shows a small map with the feature. Added by default to every popup
-_This tagrendering has no question and is thus read-only_
-
-
-
-
-
-### this.id
+### favourite_status
 
 _This tagrendering has no question and is thus read-only_
 
 
 
+This tagrendering has labels 
+`added_by_default`
+
+### share
+
+_This tagrendering has no question and is thus read-only_
 
 
-### this.id
+
+This tagrendering has labels 
+`added_by_default`
+
+### qr_code
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+This tagrendering has labels 
+`added_by_default`
+
+### last_edit
 Gives some metainfo about the last edit and who did edit it - rendering only
 _This tagrendering has no question and is thus read-only_
 
@@ -258,33 +305,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `added_by_default`
 
-### this.id
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-
-
-### this.id
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### this.id
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### this.id
+### all-tags
 
 _This tagrendering has no question and is thus read-only_
 

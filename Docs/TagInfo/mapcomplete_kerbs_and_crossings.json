@@ -110,6 +110,22 @@
       "description": "Layer 'Cycleways and roads' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
     },
     {
+      "key": "image",
+      "description": "The layer 'Cycleways and roads allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Cycleways and roads allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Cycleways and roads allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Cycleways and roads allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
       "key": "cycleway",
       "description": "Layer 'Cycleways and roads' shows cycleway=shared_lane with a fixed text, namely 'There is a shared lane' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if highway!=cycleway & highway!=path & highway!=footway & highway!=pedestrian)",
       "value": "shared_lane"

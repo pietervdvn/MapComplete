@@ -27,54 +27,57 @@ This is a special layer - data is not sourced from OpenStreetMap
 
 ## Table of contents
 
-1. [this.id](#thisid)
-2. [this.id](#thisid)
-3. [this.id](#thisid)
-4. [this.id](#thisid)
-5. [this.id](#thisid)
-6. [this.id](#thisid)
-7. [this.id](#thisid)
-8. [this.id](#thisid)
-9. [this.id](#thisid)
-10. [this.id](#thisid)
-11. [this.id](#thisid)
-12. [this.id](#thisid)
-13. [this.id](#thisid)
-14. [this.id](#thisid)
-15. [this.id](#thisid)
-16. [this.id](#thisid)
-17. [this.id](#thisid)
-18. [this.id](#thisid)
-19. [this.id](#thisid)
-20. [this.id](#thisid)
-21. [this.id](#thisid)
-22. [this.id](#thisid)
-23. [this.id](#thisid)
-24. [this.id](#thisid)
-25. [this.id](#thisid)
-26. [this.id](#thisid)
-27. [this.id](#thisid)
-28. [this.id](#thisid)
-29. [this.id](#thisid)
-30. [this.id](#thisid)
-31. [this.id](#thisid)
-32. [this.id](#thisid)
-33. [this.id](#thisid)
-34. [this.id](#thisid)
-35. [this.id](#thisid)
-36. [this.id](#thisid)
-37. [this.id](#thisid)
-38. [this.id](#thisid)
-39. [this.id](#thisid)
-40. [this.id](#thisid)
-41. [this.id](#thisid)
-42. [this.id](#thisid)
-43. [this.id](#thisid)
-44. [this.id](#thisid)
-45. [this.id](#thisid)
-46. [this.id](#thisid)
-47. [this.id](#thisid)
-48. [this.id](#thisid)
+1. [questions](#questions)
+2. [images](#images)
+3. [mapillary](#mapillary)
+4. [export_as_gpx](#export_as_gpx)
+5. [export_as_geojson](#export_as_geojson)
+6. [wikipedia](#wikipedia)
+7. [reviews](#reviews)
+8. [minimap](#minimap)
+9. [phone](#phone)
+10. [mastodon](#mastodon)
+11. [osmlink](#osmlink)
+12. [email](#email)
+13. [website](#website)
+14. [wheelchair-access](#wheelchair-access)
+15. [dog-access](#dog-access)
+16. [description](#description)
+17. [opening_hours](#opening_hours)
+18. [opening_hours_24_7](#opening_hours_24_7)
+19. [opening_hours_24_7_default](#opening_hours_24_7_default)
+20. [opening_hours_by_appointment](#opening_hours_by_appointment)
+21. [service:electricity](#serviceelectricity)
+22. [payment-options](#payment-options)
+23. [payment-options-split](#payment-options-split)
+24. [payment-options-advanced](#payment-options-advanced)
+25. [denominations-coins](#denominations-coins)
+26. [denominations-notes](#denominations-notes)
+27. [all_tags](#all_tags)
+28. [multilevels](#multilevels)
+29. [repeated](#repeated)
+30. [single_level](#single_level)
+31. [smoking](#smoking)
+32. [induction-loop](#induction-loop)
+33. [internet](#internet)
+34. [internet-fee](#internet-fee)
+35. [internet-ssid](#internet-ssid)
+36. [luminous_or_lit](#luminous_or_lit)
+37. [survey_date](#survey_date)
+38. [check_date](#check_date)
+39. [sugar_free](#sugar_free)
+40. [lactose_free](#lactose_free)
+41. [gluten_free](#gluten_free)
+42. [vegan](#vegan)
+43. [just_created](#just_created)
+44. [nearby_images](#nearby_images)
+45. [lod](#lod)
+46. [split_button](#split_button)
+47. [favourite_status](#favourite_status)
+48. [share](#share)
+49. [qr_code](#qr_code)
+50. [last_edit](#last_edit)
+51. [nothing_known](#nothing_known)
 
  Supported attributes 
 ----------------------
@@ -105,7 +108,6 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:electricity#values) [service:electricity](https://wiki.openstreetmap.org/wiki/Key:service:electricity) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:electricity%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:service:electricity%3Dlimited) [ask](https://wiki.openstreetmap.org/wiki/Tag:service:electricity%3Dask) [no](https://wiki.openstreetmap.org/wiki/Tag:service:electricity%3Dno)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/payment:coins:denominations#values) [payment:coins:denominations](https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations) | Multiple choice | [0.01 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.01 EUR) [0.02 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.02 EUR) [0.05 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.05 EUR) [0.10 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.10 EUR) [0.20 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.20 EUR) [0.50 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.50 EUR) [1 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D1 EUR) [2 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D2 EUR) [0.05 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.05 CHF) [0.10 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.10 CHF) [0.20 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.20 CHF) [0.50 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.50 CHF) [1 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D1 CHF) [2 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D2 CHF) [5 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D5 CHF)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/payment:notes:denominations#values) [payment:notes:denominations](https://wiki.openstreetmap.org/wiki/Key:payment:notes:denominations) | Multiple choice | [5 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D5 EUR) [10 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D10 EUR) [20 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D20 EUR) [50 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D50 EUR) [100 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D100 EUR) [200 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D200 EUR) [500 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D500 EUR) [10 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D10 CHF) [20 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D20 CHF) [50 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D50 CHF) [100 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D100 CHF) [200 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D200 CHF) [1000 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D1000 CHF)
-[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/level#values) [level](https://wiki.openstreetmap.org/wiki/Key:level) | [string](../SpecialInputElements.md#string) | [0](https://wiki.openstreetmap.org/wiki/Tag:level%3D0) [1](https://wiki.openstreetmap.org/wiki/Tag:level%3D1) [-1](https://wiki.openstreetmap.org/wiki/Tag:level%3D-1)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/level#values) [level](https://wiki.openstreetmap.org/wiki/Key:level) | [float](../SpecialInputElements.md#float) | [0](https://wiki.openstreetmap.org/wiki/Tag:level%3D0) [1](https://wiki.openstreetmap.org/wiki/Tag:level%3D1) [-1](https://wiki.openstreetmap.org/wiki/Tag:level%3D-1)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/smoking#values) [smoking](https://wiki.openstreetmap.org/wiki/Key:smoking) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:smoking%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:smoking%3Dno) [outside](https://wiki.openstreetmap.org/wiki/Tag:smoking%3Doutside)
@@ -119,9 +121,10 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/diet:lactose_free#values) [diet:lactose_free](https://wiki.openstreetmap.org/wiki/Key:diet:lactose_free) | Multiple choice | [only](https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Donly) [yes](https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dlimited) [no](https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dno)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/diet:gluten_free#values) [diet:gluten_free](https://wiki.openstreetmap.org/wiki/Key:diet:gluten_free) | Multiple choice | [only](https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Donly) [yes](https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Dlimited) [no](https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Dno)
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/diet:vegan#values) [diet:vegan](https://wiki.openstreetmap.org/wiki/Key:diet:vegan) | Multiple choice | [only](https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Donly) [yes](https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dlimited) [no](https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dno)
+[<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
 
 
-### this.id
+### questions
 Show the questions block at this location
 _This tagrendering has no question and is thus read-only_
 
@@ -129,7 +132,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-### this.id
+### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 
@@ -137,7 +140,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-### this.id
+### mapillary
 Shows a button to open Mapillary on this location
 _This tagrendering has no question and is thus read-only_
 
@@ -145,7 +148,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-### this.id
+### export_as_gpx
 Shows a button to export this feature as GPX. Especially useful for route relations
 _This tagrendering has no question and is thus read-only_
 
@@ -153,7 +156,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-### this.id
+### export_as_geojson
 Shows a button to export this feature as geojson. Especially useful for debugging or using this in other programs
 _This tagrendering has no question and is thus read-only_
 
@@ -161,7 +164,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-### this.id
+### wikipedia
 Shows a wikipedia box with the corresponding wikipedia article; the wikidata-item link can be changed by a contributor
 The question is `What is the corresponding Wikidata entity?`
 This rendering asks information about the property 
@@ -174,7 +177,7 @@ This is rendered with `{wikipedia():max-height:25rem}`
 
 
 
-### this.id
+### reviews
 Shows the reviews module (including the possibility to leave a review)
 _This tagrendering has no question and is thus read-only_
 
@@ -182,7 +185,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-### this.id
+### minimap
 Shows a small map with the feature. Added by default to every popup
 _This tagrendering has no question and is thus read-only_
 
@@ -190,7 +193,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-### this.id
+### phone
 
 The question is `What is the phone number of {title()}?`
 This rendering asks information about the property 
@@ -202,7 +205,7 @@ This is rendered with `<a href='tel:{phone}'>{phone}</a>`
 This tagrendering has labels 
 `contact`
 
-### this.id
+### mastodon
 Shows and asks for the mastodon handle
 The question is `What is the Mastodon-handle of {title()}?`
 This rendering asks information about the property 
@@ -212,7 +215,7 @@ This is rendered with `{fediverse_link(contact:mastodon)}`
 
 
 
-### this.id
+### osmlink
 
 _This tagrendering has no question and is thus read-only_
 
@@ -220,7 +223,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-### this.id
+### email
 
 The question is `What is the email address of {title()}?`
 This rendering asks information about the property 
@@ -234,7 +237,7 @@ This is rendered with `<a href='mailto:{email}' target='_blank' rel='noopener'>{
 This tagrendering has labels 
 `contact`
 
-### this.id
+### website
 
 The question is `What is the website of {title()}?`
 This rendering asks information about the property 
@@ -246,7 +249,7 @@ This is rendered with `<a href='{website}' rel='nofollow noopener noreferrer' ta
 This tagrendering has labels 
 `contact`
 
-### this.id
+### wheelchair-access
 
 The question is `Is this place accessible with a wheelchair?`
 
@@ -257,7 +260,7 @@ The question is `Is this place accessible with a wheelchair?`
 
 
 
-### this.id
+### dog-access
 
 The question is `Are dogs allowed in this business?`
 
@@ -269,7 +272,7 @@ The question is `Are dogs allowed in this business?`
 
 
 
-### this.id
+### description
 
 The question is `Is there still some relevant info that the previous questions did not cover? Feel free to add it here.`
 This rendering asks information about the property 
@@ -279,7 +282,7 @@ This is rendered with `{description}`
 
 
 
-### this.id
+### opening_hours
 
 The question is `What are the opening hours of {title()}?`
 This rendering asks information about the property 
@@ -290,19 +293,7 @@ This is rendered with `<h3>Opening hours</h3>{opening_hours_table(opening_hours)
 
 
 
-### this.id
-
-The question is `What are the opening hours of {title()}?`
-This rendering asks information about the property 
-[opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours)
-This is rendered with `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
- - *24/7 opened (including holidays)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
- - *Marked as closed for an unspecified time* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>
- - _This option cannot be chosen as answer_
-
-
-
-### this.id
+### opening_hours_24_7
 
 The question is `What are the opening hours of {title()}?`
 This rendering asks information about the property 
@@ -314,7 +305,19 @@ This is rendered with `<h3>Opening hours</h3>{opening_hours_table(opening_hours)
 
 
 
-### this.id
+### opening_hours_24_7_default
+
+The question is `What are the opening hours of {title()}?`
+This rendering asks information about the property 
+[opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours)
+This is rendered with `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
+ - *24/7 opened (including holidays)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
+ - *Marked as closed for an unspecified time* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>
+ - _This option cannot be chosen as answer_
+
+
+
+### opening_hours_by_appointment
 
 The question is `What are the opening hours of {title()}?`
 This rendering asks information about the property 
@@ -327,7 +330,7 @@ This is rendered with `<h3>Opening hours</h3>{opening_hours_table(opening_hours)
 
 
 
-### this.id
+### service:electricity
 
 The question is `Does this amenity have electrical outlets, available to customers when they are inside?`
 
@@ -338,7 +341,7 @@ The question is `Does this amenity have electrical outlets, available to custome
 
 
 
-### this.id
+### payment-options
 
 The question is `Which methods of payment are accepted here?`
 
@@ -351,7 +354,7 @@ The question is `Which methods of payment are accepted here?`
 
 
 
-### this.id
+### payment-options-split
 
 The question is `Which methods of payment are accepted here?`
 
@@ -374,7 +377,7 @@ The question is `Which methods of payment are accepted here?`
 
 
 
-### this.id
+### payment-options-advanced
 
 The question is `Which methods of payment are accepted here?`
 
@@ -391,7 +394,7 @@ The question is `Which methods of payment are accepted here?`
 
 
 
-### this.id
+### denominations-coins
 
 The question is `What coins can you use to pay here?`
 
@@ -413,7 +416,7 @@ The question is `What coins can you use to pay here?`
 This tagrendering is only visible in the popup if the following condition is met: (<a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins' target='_blank'>payment:coins</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins%3Dyes' target='_blank'>yes</a>) & (_currency~^(.*EUR.*)$ | _currency~^(.*CHF.*)$)
 
 
-### this.id
+### denominations-notes
 
 The question is `what notes can you use to pay here?`
 
@@ -433,16 +436,7 @@ The question is `what notes can you use to pay here?`
 This tagrendering is only visible in the popup if the following condition is met: (<a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:payment:notes' target='_blank'>payment:notes</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:notes%3Dyes' target='_blank'>yes</a>) & (_currency~^(.*EUR.*)$ | _currency~^(.*CHF.*)$)
 
 
-### this.id
-Gives some metainfo about the last edit and who did edit it - rendering only
-_This tagrendering has no question and is thus read-only_
-
-
-This tagrendering is only visible in the popup if the following condition is met: _last_edit:changeset~.+ & _last_edit:contributor~.+
-This tagrendering has labels 
-`added_by_default`
-
-### this.id
+### all_tags
 Shows a table with all the tags of the feature
 _This tagrendering has no question and is thus read-only_
 
@@ -450,16 +444,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-### this.id
-This element shows a 'thank you' that the contributor has recently created this element
-_This tagrendering has no question and is thus read-only_
-
- - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
-This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
-This tagrendering has labels 
-`added_by_default`
-
-### this.id
+### multilevels
 
 The question is `What levels does this elevator go to?`
 This rendering asks information about the property 
@@ -475,7 +460,7 @@ This is rendered with `This elevator goes to floors {level}`
 
 
 
-### this.id
+### repeated
 
 _This tagrendering has no question and is thus read-only_
 
@@ -484,7 +469,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `level`
 
-### this.id
+### single_level
 
 The question is `On what level is this feature located?`
 This rendering asks information about the property 
@@ -501,7 +486,7 @@ This is rendered with `Located on the {level}th floor`
 This tagrendering has labels 
 `level`
 
-### this.id
+### smoking
 
 The question is `Is smoking allowed at {title()}?`
 
@@ -511,7 +496,7 @@ The question is `Is smoking allowed at {title()}?`
 
 
 
-### this.id
+### induction-loop
 An accessibility feature: induction loops are for hard-hearing persons which have an FM-receiver.
 The question is `Does this place have an audio induction loop for people with reduced hearing?`
 
@@ -520,7 +505,7 @@ The question is `Does this place have an audio induction loop for people with re
 
 
 
-### this.id
+### internet
 
 The question is `Does this place offer internet access?`
 
@@ -534,7 +519,7 @@ The question is `Does this place offer internet access?`
 This tagrendering has labels 
 `internet-all`
 
-### this.id
+### internet-fee
 
 The question is `Is there a fee for internet access?`
 
@@ -545,7 +530,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `internet-all`
 
-### this.id
+### internet-ssid
 
 The question is `What is the network name for the wireless internet access?`
 This rendering asks information about the property 
@@ -556,7 +541,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `internet-all`
 
-### this.id
+### luminous_or_lit
 
 The question is `Is this object lit or does it emit light?`
 
@@ -567,7 +552,7 @@ The question is `Is this object lit or does it emit light?`
 
 
 
-### this.id
+### survey_date
 
 The question is `When was this object last surveyed?`
 This rendering asks information about the property 
@@ -577,7 +562,7 @@ This is rendered with `This object was last surveyed on <b>{survey:date}</b>`
 
 
 
-### this.id
+### check_date
 
 The question is `When was this object last checked?`
 This rendering asks information about the property 
@@ -587,7 +572,7 @@ This is rendered with `This object was last checked on <b>{check_date}</b>`
 
 
 
-### this.id
+### sugar_free
 
 The question is `Does this shop have a sugar free offering?`
 
@@ -599,7 +584,7 @@ The question is `Does this shop have a sugar free offering?`
 This tagrendering has labels 
 `diets`
 
-### this.id
+### lactose_free
 
 The question is `Does {title()} have a lactose-free offering?`
 
@@ -611,7 +596,7 @@ The question is `Does {title()} have a lactose-free offering?`
 This tagrendering has labels 
 `diets`
 
-### this.id
+### gluten_free
 
 The question is `Does this shop have a gluten free offering?`
 
@@ -623,7 +608,7 @@ The question is `Does this shop have a gluten free offering?`
 This tagrendering has labels 
 `diets`
 
-### this.id
+### vegan
 
 The question is `Does this place offer a vegan option?`
 
@@ -635,7 +620,25 @@ The question is `Does this place offer a vegan option?`
 This tagrendering has labels 
 `diets`
 
-### this.id
+### just_created
+This element shows a 'thank you' that the contributor has recently created this element
+_This tagrendering has no question and is thus read-only_
+
+ - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
+This tagrendering has labels 
+`added_by_default_top`
+
+### nearby_images
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+This tagrendering has labels 
+`added_by_default_conditional`
+
+### lod
 
 _This tagrendering has no question and is thus read-only_
 
@@ -644,7 +647,15 @@ _This tagrendering has no question and is thus read-only_
 This tagrendering has labels 
 `added_by_default`
 
-### this.id
+### split_button
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+
+
+### favourite_status
 
 _This tagrendering has no question and is thus read-only_
 
@@ -653,7 +664,7 @@ _This tagrendering has no question and is thus read-only_
 This tagrendering has labels 
 `added_by_default`
 
-### this.id
+### share
 
 _This tagrendering has no question and is thus read-only_
 
@@ -662,12 +673,31 @@ _This tagrendering has no question and is thus read-only_
 This tagrendering has labels 
 `added_by_default`
 
-### this.id
+### qr_code
 
 _This tagrendering has no question and is thus read-only_
 
 
 
- 
+This tagrendering has labels 
+`added_by_default`
+
+### last_edit
+Gives some metainfo about the last edit and who did edit it - rendering only
+_This tagrendering has no question and is thus read-only_
+
+
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:changeset~.+ & _last_edit:contributor~.+
+This tagrendering has labels 
+`added_by_default`
+
+### nothing_known
+
+_This tagrendering has no question and is thus read-only_
+
+
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time>=300 & _backend~.+
+This tagrendering has labels 
+`added_by_default_top` 
 
 This document is autogenerated from [assets/layers/questions/questions.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/questions/questions.json)

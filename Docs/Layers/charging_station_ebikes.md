@@ -25,124 +25,126 @@ A charging station
 1. [ Themes using this layer ](#-themes-using-this-layer-)
 2. [ Basic tags for this layer ](#-basic-tags-for-this-layer-)
 3. [ Supported attributes ](#-supported-attributes-)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
+  - [just_created](#just_created)
+  - [nothing_known](#nothing_known)
+  - [images](#images)
+  - [Type](#type)
+  - [access](#access)
+  - [capacity](#capacity)
+  - [Available_charging_stations (generated)](#available_charging_stations-(generated))
+  - [plugs-amount-socket:schuko](#plugs-amount-socketschuko)
+  - [voltage-socket:schuko](#voltage-socketschuko)
+  - [current-socket:schuko](#current-socketschuko)
+  - [power-output-socket:schuko](#power-output-socketschuko)
+  - [plugs-amount-socket:typee](#plugs-amount-sockettypee)
+  - [voltage-socket:typee](#voltage-sockettypee)
+  - [current-socket:typee](#current-sockettypee)
+  - [power-output-socket:typee](#power-output-sockettypee)
+  - [plugs-amount-socket:chademo](#plugs-amount-socketchademo)
+  - [voltage-socket:chademo](#voltage-socketchademo)
+  - [current-socket:chademo](#current-socketchademo)
+  - [power-output-socket:chademo](#power-output-socketchademo)
+  - [plugs-amount-socket:type1_cable](#plugs-amount-sockettype1_cable)
+  - [voltage-socket:type1_cable](#voltage-sockettype1_cable)
+  - [current-socket:type1_cable](#current-sockettype1_cable)
+  - [power-output-socket:type1_cable](#power-output-sockettype1_cable)
+  - [plugs-amount-socket:type1](#plugs-amount-sockettype1)
+  - [voltage-socket:type1](#voltage-sockettype1)
+  - [current-socket:type1](#current-sockettype1)
+  - [power-output-socket:type1](#power-output-sockettype1)
+  - [plugs-amount-socket:type1_combo](#plugs-amount-sockettype1_combo)
+  - [voltage-socket:type1_combo](#voltage-sockettype1_combo)
+  - [current-socket:type1_combo](#current-sockettype1_combo)
+  - [power-output-socket:type1_combo](#power-output-sockettype1_combo)
+  - [plugs-amount-socket:tesla_supercharger](#plugs-amount-sockettesla_supercharger)
+  - [voltage-socket:tesla_supercharger](#voltage-sockettesla_supercharger)
+  - [current-socket:tesla_supercharger](#current-sockettesla_supercharger)
+  - [power-output-socket:tesla_supercharger](#power-output-sockettesla_supercharger)
+  - [plugs-amount-socket:type2](#plugs-amount-sockettype2)
+  - [voltage-socket:type2](#voltage-sockettype2)
+  - [current-socket:type2](#current-sockettype2)
+  - [power-output-socket:type2](#power-output-sockettype2)
+  - [plugs-amount-socket:type2_combo](#plugs-amount-sockettype2_combo)
+  - [voltage-socket:type2_combo](#voltage-sockettype2_combo)
+  - [current-socket:type2_combo](#current-sockettype2_combo)
+  - [power-output-socket:type2_combo](#power-output-sockettype2_combo)
+  - [plugs-amount-socket:type2_cable](#plugs-amount-sockettype2_cable)
+  - [voltage-socket:type2_cable](#voltage-sockettype2_cable)
+  - [current-socket:type2_cable](#current-sockettype2_cable)
+  - [power-output-socket:type2_cable](#power-output-sockettype2_cable)
+  - [plugs-amount-socket:tesla_supercharger_ccs](#plugs-amount-sockettesla_supercharger_ccs)
+  - [voltage-socket:tesla_supercharger_ccs](#voltage-sockettesla_supercharger_ccs)
+  - [current-socket:tesla_supercharger_ccs](#current-sockettesla_supercharger_ccs)
+  - [power-output-socket:tesla_supercharger_ccs](#power-output-sockettesla_supercharger_ccs)
+  - [plugs-amount-socket:tesla_destination_us](#plugs-amount-sockettesla_destination_us)
+  - [voltage-socket:tesla_destination_us](#voltage-sockettesla_destination_us)
+  - [current-socket:tesla_destination_us](#current-sockettesla_destination_us)
+  - [power-output-socket:tesla_destination_us](#power-output-sockettesla_destination_us)
+  - [plugs-amount-socket:tesla_destination](#plugs-amount-sockettesla_destination)
+  - [voltage-socket:tesla_destination](#voltage-sockettesla_destination)
+  - [current-socket:tesla_destination](#current-sockettesla_destination)
+  - [power-output-socket:tesla_destination](#power-output-sockettesla_destination)
+  - [plugs-amount-socket:USB-A](#plugs-amount-socketusb-a)
+  - [voltage-socket:USB-A](#voltage-socketusb-a)
+  - [current-socket:USB-A](#current-socketusb-a)
+  - [power-output-socket:USB-A](#power-output-socketusb-a)
+  - [plugs-amount-socket:bosch_3pin](#plugs-amount-socketbosch_3pin)
+  - [voltage-socket:bosch_3pin](#voltage-socketbosch_3pin)
+  - [current-socket:bosch_3pin](#current-socketbosch_3pin)
+  - [power-output-socket:bosch_3pin](#power-output-socketbosch_3pin)
+  - [plugs-amount-socket:bosch_5pin](#plugs-amount-socketbosch_5pin)
+  - [voltage-socket:bosch_5pin](#voltage-socketbosch_5pin)
+  - [current-socket:bosch_5pin](#current-socketbosch_5pin)
+  - [power-output-socket:bosch_5pin](#power-output-socketbosch_5pin)
+  - [plugs-amount-socket:bs1363](#plugs-amount-socketbs1363)
+  - [voltage-socket:bs1363](#voltage-socketbs1363)
+  - [current-socket:bs1363](#current-socketbs1363)
+  - [power-output-socket:bs1363](#power-output-socketbs1363)
+  - [plugs-amount-socket:nema5_15](#plugs-amount-socketnema5_15)
+  - [voltage-socket:nema5_15](#voltage-socketnema5_15)
+  - [current-socket:nema5_15](#current-socketnema5_15)
+  - [power-output-socket:nema5_15](#power-output-socketnema5_15)
+  - [plugs-amount-socket:sev1011_t23](#plugs-amount-socketsev1011_t23)
+  - [voltage-socket:sev1011_t23](#voltage-socketsev1011_t23)
+  - [current-socket:sev1011_t23](#current-socketsev1011_t23)
+  - [power-output-socket:sev1011_t23](#power-output-socketsev1011_t23)
+  - [plugs-amount-socket:as3112](#plugs-amount-socketas3112)
+  - [voltage-socket:as3112](#voltage-socketas3112)
+  - [current-socket:as3112](#current-socketas3112)
+  - [power-output-socket:as3112](#power-output-socketas3112)
+  - [plugs-amount-socket:nema_5_20](#plugs-amount-socketnema_5_20)
+  - [voltage-socket:nema_5_20](#voltage-socketnema_5_20)
+  - [current-socket:nema_5_20](#current-socketnema_5_20)
+  - [power-output-socket:nema_5_20](#power-output-socketnema_5_20)
+  - [OH](#oh)
+  - [fee](#fee)
+  - [charge](#charge)
+  - [payment-options](#payment-options)
+  - [Authentication](#authentication)
+  - [Auth phone](#auth-phone)
+  - [maxstay](#maxstay)
+  - [Network](#network)
+  - [Operator](#operator)
+  - [phone](#phone)
+  - [email](#email)
+  - [website](#website)
+  - [repeated](#repeated)
+  - [single_level](#single_level)
+  - [ref](#ref)
+  - [Operational status](#operational-status)
+  - [Parking:fee](#parkingfee)
+  - [questions](#questions)
+  - [questions-technical](#questions-technical)
+  - [minimap](#minimap)
+  - [nearby_images](#nearby_images)
+  - [move-button](#move-button)
+  - [delete-button](#delete-button)
+  - [lod](#lod)
+  - [favourite_status](#favourite_status)
+  - [share](#share)
+  - [qr_code](#qr_code)
+  - [last_edit](#last_edit)
+  - [all-tags](#all-tags)
 
  Themes using this layer 
 -------------------------
@@ -287,16 +289,25 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/parking:fee#values) [parking:fee](https://wiki.openstreetmap.org/wiki/Key:parking:fee) | Multiple choice | [no](https://wiki.openstreetmap.org/wiki/Tag:parking:fee%3Dno) [yes](https://wiki.openstreetmap.org/wiki/Tag:parking:fee%3Dyes)
 
 
-### this.id
+### just_created
 This element shows a 'thank you' that the contributor has recently created this element
 _This tagrendering has no question and is thus read-only_
 
  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
 This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
 This tagrendering has labels 
-`added_by_default`
+`added_by_default_top`
 
-### this.id
+### nothing_known
+
+_This tagrendering has no question and is thus read-only_
+
+
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time>=300 & _backend~.+
+This tagrendering has labels 
+`added_by_default_top`
+
+### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 
@@ -304,7 +315,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-### this.id
+### Type
 
 The question is `Which vehicles are allowed to charge here?`
 
@@ -321,7 +332,7 @@ The question is `Which vehicles are allowed to charge here?`
 
 
 
-### this.id
+### access
 
 The question is `Who is allowed to use this charging station?`
 This rendering asks information about the property 
@@ -337,7 +348,7 @@ This is rendered with `Access is {access}`
 
 
 
-### this.id
+### capacity
 
 The question is `How much vehicles can be charged here at the same time?`
 This rendering asks information about the property 
@@ -347,7 +358,7 @@ This is rendered with `{capacity} vehicles can be charged here at the same time`
 
 
 
-### this.id
+### Available_charging_stations (generated)
 
 The question is `Which charging connections are available here?`
 
@@ -438,7 +449,7 @@ The question is `Which charging connections are available here?`
 
 
 
-### this.id
+### plugs-amount-socket:schuko
 
 The question is `How much plugs of type <b>Schuko wall plug</b> without ground pin (CEE7/4 type F) are available here?`
 This rendering asks information about the property 
@@ -448,7 +459,7 @@ This is rendered with `There are <b class='text-xl'>{socket:schuko}</b> plugs of
 This tagrendering is only visible in the popup if the following condition is met: socket:schuko~.+ & socket:schuko!=0
 
 
-### this.id
+### voltage-socket:schuko
 
 The question is `What voltage do the plugs with <b>Schuko wall plug</b> without ground pin (CEE7/4 type F) offer?`
 This rendering asks information about the property 
@@ -459,7 +470,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### current-socket:schuko
 
 The question is `What current do the plugs with <b>Schuko wall plug</b> without ground pin (CEE7/4 type F) offer?`
 This rendering asks information about the property 
@@ -470,7 +481,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### power-output-socket:schuko
 
 The question is `What power output does a single plug of type <b>Schuko wall plug</b> without ground pin (CEE7/4 type F) offer?`
 This rendering asks information about the property 
@@ -481,7 +492,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### plugs-amount-socket:typee
 
 The question is `How much plugs of type <b>European wall plug</b> with ground pin (CEE7/4 type E) are available here?`
 This rendering asks information about the property 
@@ -491,7 +502,7 @@ This is rendered with `There are <b class='text-xl'>{socket:typee}</b> plugs of 
 This tagrendering is only visible in the popup if the following condition is met: socket:typee~.+ & socket:typee!=0
 
 
-### this.id
+### voltage-socket:typee
 
 The question is `What voltage do the plugs with <b>European wall plug</b> with ground pin (CEE7/4 type E) offer?`
 This rendering asks information about the property 
@@ -502,7 +513,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### current-socket:typee
 
 The question is `What current do the plugs with <b>European wall plug</b> with ground pin (CEE7/4 type E) offer?`
 This rendering asks information about the property 
@@ -513,7 +524,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### power-output-socket:typee
 
 The question is `What power output does a single plug of type <b>European wall plug</b> with ground pin (CEE7/4 type E) offer?`
 This rendering asks information about the property 
@@ -525,7 +536,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### plugs-amount-socket:chademo
 
 The question is `How much plugs of type <b>Chademo</b> are available here?`
 This rendering asks information about the property 
@@ -535,7 +546,7 @@ This is rendered with `There are <b class='text-xl'>{socket:chademo}</b> plugs o
 This tagrendering is only visible in the popup if the following condition is met: socket:chademo~.+ & socket:chademo!=0
 
 
-### this.id
+### voltage-socket:chademo
 
 The question is `What voltage do the plugs with <b>Chademo</b> offer?`
 This rendering asks information about the property 
@@ -546,7 +557,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### current-socket:chademo
 
 The question is `What current do the plugs with <b>Chademo</b> offer?`
 This rendering asks information about the property 
@@ -557,7 +568,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### power-output-socket:chademo
 
 The question is `What power output does a single plug of type <b>Chademo</b> offer?`
 This rendering asks information about the property 
@@ -568,7 +579,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### plugs-amount-socket:type1_cable
 
 The question is `How much plugs of type <b>Type 1 with cable</b> (J1772) are available here?`
 This rendering asks information about the property 
@@ -578,7 +589,7 @@ This is rendered with `There are <b class='text-xl'>{socket:type1_cable}</b> plu
 This tagrendering is only visible in the popup if the following condition is met: socket:type1_cable~.+ & socket:type1_cable!=0
 
 
-### this.id
+### voltage-socket:type1_cable
 
 The question is `What voltage do the plugs with <b>Type 1 with cable</b> (J1772) offer?`
 This rendering asks information about the property 
@@ -590,7 +601,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### current-socket:type1_cable
 
 The question is `What current do the plugs with <b>Type 1 with cable</b> (J1772) offer?`
 This rendering asks information about the property 
@@ -601,7 +612,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### power-output-socket:type1_cable
 
 The question is `What power output does a single plug of type <b>Type 1 with cable</b> (J1772) offer?`
 This rendering asks information about the property 
@@ -613,7 +624,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### plugs-amount-socket:type1
 
 The question is `How much plugs of type <b>Type 1 <i>without</i> cable</b> (J1772) are available here?`
 This rendering asks information about the property 
@@ -623,7 +634,7 @@ This is rendered with `There are <b class='text-xl'>{socket:type1}</b> plugs of 
 This tagrendering is only visible in the popup if the following condition is met: socket:type1~.+ & socket:type1!=0
 
 
-### this.id
+### voltage-socket:type1
 
 The question is `What voltage do the plugs with <b>Type 1 <i>without</i> cable</b> (J1772) offer?`
 This rendering asks information about the property 
@@ -635,7 +646,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### current-socket:type1
 
 The question is `What current do the plugs with <b>Type 1 <i>without</i> cable</b> (J1772) offer?`
 This rendering asks information about the property 
@@ -646,7 +657,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### power-output-socket:type1
 
 The question is `What power output does a single plug of type <b>Type 1 <i>without</i> cable</b> (J1772) offer?`
 This rendering asks information about the property 
@@ -660,7 +671,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### plugs-amount-socket:type1_combo
 
 The question is `How much plugs of type <b>Type 1 CCS</b> (aka Type 1 Combo) are available here?`
 This rendering asks information about the property 
@@ -670,7 +681,7 @@ This is rendered with `There are <b class='text-xl'>{socket:type1_combo}</b> plu
 This tagrendering is only visible in the popup if the following condition is met: socket:type1_combo~.+ & socket:type1_combo!=0
 
 
-### this.id
+### voltage-socket:type1_combo
 
 The question is `What voltage do the plugs with <b>Type 1 CCS</b> (aka Type 1 Combo) offer?`
 This rendering asks information about the property 
@@ -682,7 +693,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### current-socket:type1_combo
 
 The question is `What current do the plugs with <b>Type 1 CCS</b> (aka Type 1 Combo) offer?`
 This rendering asks information about the property 
@@ -694,7 +705,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### power-output-socket:type1_combo
 
 The question is `What power output does a single plug of type <b>Type 1 CCS</b> (aka Type 1 Combo) offer?`
 This rendering asks information about the property 
@@ -708,7 +719,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### plugs-amount-socket:tesla_supercharger
 
 The question is `How much plugs of type <b>Tesla Supercharger</b> are available here?`
 This rendering asks information about the property 
@@ -718,7 +729,7 @@ This is rendered with `There are <b class='text-xl'>{socket:tesla_supercharger}<
 This tagrendering is only visible in the popup if the following condition is met: socket:tesla_supercharger~.+ & socket:tesla_supercharger!=0
 
 
-### this.id
+### voltage-socket:tesla_supercharger
 
 The question is `What voltage do the plugs with <b>Tesla Supercharger</b> offer?`
 This rendering asks information about the property 
@@ -729,7 +740,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### current-socket:tesla_supercharger
 
 The question is `What current do the plugs with <b>Tesla Supercharger</b> offer?`
 This rendering asks information about the property 
@@ -741,7 +752,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### power-output-socket:tesla_supercharger
 
 The question is `What power output does a single plug of type <b>Tesla Supercharger</b> offer?`
 This rendering asks information about the property 
@@ -754,7 +765,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### plugs-amount-socket:type2
 
 The question is `How much plugs of type <b>Type 2</b> (mennekes) are available here?`
 This rendering asks information about the property 
@@ -764,7 +775,7 @@ This is rendered with `There are <b class='text-xl'>{socket:type2}</b> plugs of 
 This tagrendering is only visible in the popup if the following condition is met: socket:type2~.+ & socket:type2!=0
 
 
-### this.id
+### voltage-socket:type2
 
 The question is `What voltage do the plugs with <b>Type 2</b> (mennekes) offer?`
 This rendering asks information about the property 
@@ -776,7 +787,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### current-socket:type2
 
 The question is `What current do the plugs with <b>Type 2</b> (mennekes) offer?`
 This rendering asks information about the property 
@@ -788,7 +799,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### power-output-socket:type2
 
 The question is `What power output does a single plug of type <b>Type 2</b> (mennekes) offer?`
 This rendering asks information about the property 
@@ -800,7 +811,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### plugs-amount-socket:type2_combo
 
 The question is `How much plugs of type <b>Type 2 CCS</b> (mennekes) are available here?`
 This rendering asks information about the property 
@@ -810,7 +821,7 @@ This is rendered with `There are <b class='text-xl'>{socket:type2_combo}</b> plu
 This tagrendering is only visible in the popup if the following condition is met: socket:type2_combo~.+ & socket:type2_combo!=0
 
 
-### this.id
+### voltage-socket:type2_combo
 
 The question is `What voltage do the plugs with <b>Type 2 CCS</b> (mennekes) offer?`
 This rendering asks information about the property 
@@ -822,7 +833,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### current-socket:type2_combo
 
 The question is `What current do the plugs with <b>Type 2 CCS</b> (mennekes) offer?`
 This rendering asks information about the property 
@@ -834,7 +845,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### power-output-socket:type2_combo
 
 The question is `What power output does a single plug of type <b>Type 2 CCS</b> (mennekes) offer?`
 This rendering asks information about the property 
@@ -845,7 +856,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### plugs-amount-socket:type2_cable
 
 The question is `How much plugs of type <b>Type 2 with cable</b> (mennekes) are available here?`
 This rendering asks information about the property 
@@ -855,7 +866,7 @@ This is rendered with `There are <b class='text-xl'>{socket:type2_cable}</b> plu
 This tagrendering is only visible in the popup if the following condition is met: socket:type2_cable~.+ & socket:type2_cable!=0
 
 
-### this.id
+### voltage-socket:type2_cable
 
 The question is `What voltage do the plugs with <b>Type 2 with cable</b> (mennekes) offer?`
 This rendering asks information about the property 
@@ -867,7 +878,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### current-socket:type2_cable
 
 The question is `What current do the plugs with <b>Type 2 with cable</b> (mennekes) offer?`
 This rendering asks information about the property 
@@ -879,7 +890,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### power-output-socket:type2_cable
 
 The question is `What power output does a single plug of type <b>Type 2 with cable</b> (mennekes) offer?`
 This rendering asks information about the property 
@@ -891,7 +902,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### plugs-amount-socket:tesla_supercharger_ccs
 
 The question is `How much plugs of type <b>Tesla Supercharger CCS</b> (a branded type2_css) are available here?`
 This rendering asks information about the property 
@@ -901,7 +912,7 @@ This is rendered with `There are <b class='text-xl'>{socket:tesla_supercharger_c
 This tagrendering is only visible in the popup if the following condition is met: socket:tesla_supercharger_ccs~.+ & socket:tesla_supercharger_ccs!=0
 
 
-### this.id
+### voltage-socket:tesla_supercharger_ccs
 
 The question is `What voltage do the plugs with <b>Tesla Supercharger CCS</b> (a branded type2_css) offer?`
 This rendering asks information about the property 
@@ -913,7 +924,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### current-socket:tesla_supercharger_ccs
 
 The question is `What current do the plugs with <b>Tesla Supercharger CCS</b> (a branded type2_css) offer?`
 This rendering asks information about the property 
@@ -925,7 +936,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### power-output-socket:tesla_supercharger_ccs
 
 The question is `What power output does a single plug of type <b>Tesla Supercharger CCS</b> (a branded type2_css) offer?`
 This rendering asks information about the property 
@@ -936,7 +947,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### plugs-amount-socket:tesla_destination_us
 
 The question is `How much plugs of type <b>Tesla Supercharger (destination)</b> are available here?`
 This rendering asks information about the property 
@@ -946,7 +957,7 @@ This is rendered with `There are <b class='text-xl'>{socket:tesla_destination}</
 This tagrendering is only visible in the popup if the following condition is met: socket:tesla_destination~.+ & socket:tesla_destination!=0
 
 
-### this.id
+### voltage-socket:tesla_destination_us
 
 The question is `What voltage do the plugs with <b>Tesla Supercharger (destination)</b> offer?`
 This rendering asks information about the property 
@@ -957,7 +968,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### current-socket:tesla_destination_us
 
 The question is `What current do the plugs with <b>Tesla Supercharger (destination)</b> offer?`
 This rendering asks information about the property 
@@ -969,7 +980,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### power-output-socket:tesla_destination_us
 
 The question is `What power output does a single plug of type <b>Tesla Supercharger (destination)</b> offer?`
 This rendering asks information about the property 
@@ -982,7 +993,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### plugs-amount-socket:tesla_destination
 
 The question is `How much plugs of type <b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) are available here?`
 This rendering asks information about the property 
@@ -992,7 +1003,7 @@ This is rendered with `There are <b class='text-xl'>{socket:tesla_destination}</
 This tagrendering is only visible in the popup if the following condition is met: socket:tesla_destination~.+ & socket:tesla_destination!=0
 
 
-### this.id
+### voltage-socket:tesla_destination
 
 The question is `What voltage do the plugs with <b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) offer?`
 This rendering asks information about the property 
@@ -1004,7 +1015,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### current-socket:tesla_destination
 
 The question is `What current do the plugs with <b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) offer?`
 This rendering asks information about the property 
@@ -1016,7 +1027,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### power-output-socket:tesla_destination
 
 The question is `What power output does a single plug of type <b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) offer?`
 This rendering asks information about the property 
@@ -1028,7 +1039,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### plugs-amount-socket:USB-A
 
 The question is `How much plugs of type <b>USB</b> to charge phones and small electronics are available here?`
 This rendering asks information about the property 
@@ -1038,7 +1049,7 @@ This is rendered with `There are <b class='text-xl'>{socket:USB-A}</b> plugs of 
 This tagrendering is only visible in the popup if the following condition is met: socket:USB-A~.+ & socket:USB-A!=0
 
 
-### this.id
+### voltage-socket:USB-A
 
 The question is `What voltage do the plugs with <b>USB</b> to charge phones and small electronics offer?`
 This rendering asks information about the property 
@@ -1049,7 +1060,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### current-socket:USB-A
 
 The question is `What current do the plugs with <b>USB</b> to charge phones and small electronics offer?`
 This rendering asks information about the property 
@@ -1061,7 +1072,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### power-output-socket:USB-A
 
 The question is `What power output does a single plug of type <b>USB</b> to charge phones and small electronics offer?`
 This rendering asks information about the property 
@@ -1073,7 +1084,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### plugs-amount-socket:bosch_3pin
 
 The question is `How much plugs of type <b>Bosch Active Connect with 3 pins</b> and cable are available here?`
 This rendering asks information about the property 
@@ -1083,7 +1094,7 @@ This is rendered with `There are <b class='text-xl'>{socket:bosch_3pin}</b> plug
 This tagrendering is only visible in the popup if the following condition is met: socket:bosch_3pin~.+ & socket:bosch_3pin!=0
 
 
-### this.id
+### voltage-socket:bosch_3pin
 
 The question is `What voltage do the plugs with <b>Bosch Active Connect with 3 pins</b> and cable offer?`
 This rendering asks information about the property 
@@ -1094,7 +1105,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### current-socket:bosch_3pin
 
 The question is `What current do the plugs with <b>Bosch Active Connect with 3 pins</b> and cable offer?`
 This rendering asks information about the property 
@@ -1105,7 +1116,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### power-output-socket:bosch_3pin
 
 The question is `What power output does a single plug of type <b>Bosch Active Connect with 3 pins</b> and cable offer?`
 This rendering asks information about the property 
@@ -1116,7 +1127,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### plugs-amount-socket:bosch_5pin
 
 The question is `How much plugs of type <b>Bosch Active Connect with 5 pins</b> and cable are available here?`
 This rendering asks information about the property 
@@ -1126,7 +1137,7 @@ This is rendered with `There are <b class='text-xl'>{socket:bosch_5pin}</b> plug
 This tagrendering is only visible in the popup if the following condition is met: socket:bosch_5pin~.+ & socket:bosch_5pin!=0
 
 
-### this.id
+### voltage-socket:bosch_5pin
 
 The question is `What voltage do the plugs with <b>Bosch Active Connect with 5 pins</b> and cable offer?`
 This rendering asks information about the property 
@@ -1137,7 +1148,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### current-socket:bosch_5pin
 
 The question is `What current do the plugs with <b>Bosch Active Connect with 5 pins</b> and cable offer?`
 This rendering asks information about the property 
@@ -1148,7 +1159,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### power-output-socket:bosch_5pin
 
 The question is `What power output does a single plug of type <b>Bosch Active Connect with 5 pins</b> and cable offer?`
 This rendering asks information about the property 
@@ -1159,7 +1170,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### plugs-amount-socket:bs1363
 
 The question is `How much plugs of type <b>BS1363</b> (Type G) are available here?`
 This rendering asks information about the property 
@@ -1169,7 +1180,7 @@ This is rendered with `There are <b class='text-xl'>{socket:bs1363}</b> plugs of
 This tagrendering is only visible in the popup if the following condition is met: socket:bs1363~.+ & socket:bs1363!=0
 
 
-### this.id
+### voltage-socket:bs1363
 
 The question is `What voltage do the plugs with <b>BS1363</b> (Type G) offer?`
 This rendering asks information about the property 
@@ -1180,7 +1191,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### current-socket:bs1363
 
 The question is `What current do the plugs with <b>BS1363</b> (Type G) offer?`
 This rendering asks information about the property 
@@ -1191,7 +1202,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### power-output-socket:bs1363
 
 The question is `What power output does a single plug of type <b>BS1363</b> (Type G) offer?`
 This rendering asks information about the property 
@@ -1202,7 +1213,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### plugs-amount-socket:nema5_15
 
 The question is `How much plugs of type <b>NEMA 5-15</b> (Type B) are available here?`
 This rendering asks information about the property 
@@ -1212,7 +1223,7 @@ This is rendered with `There are <b class='text-xl'>{socket:nema5_15}</b> plugs 
 This tagrendering is only visible in the popup if the following condition is met: socket:nema5_15~.+ & socket:nema5_15!=0
 
 
-### this.id
+### voltage-socket:nema5_15
 
 The question is `What voltage do the plugs with <b>NEMA 5-15</b> (Type B) offer?`
 This rendering asks information about the property 
@@ -1223,7 +1234,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### current-socket:nema5_15
 
 The question is `What current do the plugs with <b>NEMA 5-15</b> (Type B) offer?`
 This rendering asks information about the property 
@@ -1234,7 +1245,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### power-output-socket:nema5_15
 
 The question is `What power output does a single plug of type <b>NEMA 5-15</b> (Type B) offer?`
 This rendering asks information about the property 
@@ -1245,7 +1256,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### plugs-amount-socket:sev1011_t23
 
 The question is `How much plugs of type <b>SEV 1011 T23</b> (Type J) are available here?`
 This rendering asks information about the property 
@@ -1255,7 +1266,7 @@ This is rendered with `There are <b class='text-xl'>{socket:sev1011_t23}</b> plu
 This tagrendering is only visible in the popup if the following condition is met: socket:sev1011_t23~.+ & socket:sev1011_t23!=0
 
 
-### this.id
+### voltage-socket:sev1011_t23
 
 The question is `What voltage do the plugs with <b>SEV 1011 T23</b> (Type J) offer?`
 This rendering asks information about the property 
@@ -1266,7 +1277,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### current-socket:sev1011_t23
 
 The question is `What current do the plugs with <b>SEV 1011 T23</b> (Type J) offer?`
 This rendering asks information about the property 
@@ -1277,7 +1288,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### power-output-socket:sev1011_t23
 
 The question is `What power output does a single plug of type <b>SEV 1011 T23</b> (Type J) offer?`
 This rendering asks information about the property 
@@ -1288,7 +1299,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### plugs-amount-socket:as3112
 
 The question is `How much plugs of type <b>AS3112</b> (Type I) are available here?`
 This rendering asks information about the property 
@@ -1298,7 +1309,7 @@ This is rendered with `There are <b class='text-xl'>{socket:as3112}</b> plugs of
 This tagrendering is only visible in the popup if the following condition is met: socket:as3112~.+ & socket:as3112!=0
 
 
-### this.id
+### voltage-socket:as3112
 
 The question is `What voltage do the plugs with <b>AS3112</b> (Type I) offer?`
 This rendering asks information about the property 
@@ -1309,7 +1320,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### current-socket:as3112
 
 The question is `What current do the plugs with <b>AS3112</b> (Type I) offer?`
 This rendering asks information about the property 
@@ -1320,7 +1331,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### power-output-socket:as3112
 
 The question is `What power output does a single plug of type <b>AS3112</b> (Type I) offer?`
 This rendering asks information about the property 
@@ -1331,7 +1342,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### plugs-amount-socket:nema_5_20
 
 The question is `How much plugs of type <b>NEMA 5-20</b> (Type B) are available here?`
 This rendering asks information about the property 
@@ -1341,7 +1352,7 @@ This is rendered with `There are <b class='text-xl'>{socket:nema_5_20}</b> plugs
 This tagrendering is only visible in the popup if the following condition is met: socket:nema_5_20~.+ & socket:nema_5_20!=0
 
 
-### this.id
+### voltage-socket:nema_5_20
 
 The question is `What voltage do the plugs with <b>NEMA 5-20</b> (Type B) offer?`
 This rendering asks information about the property 
@@ -1352,7 +1363,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### current-socket:nema_5_20
 
 The question is `What current do the plugs with <b>NEMA 5-20</b> (Type B) offer?`
 This rendering asks information about the property 
@@ -1363,7 +1374,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### power-output-socket:nema_5_20
 
 The question is `What power output does a single plug of type <b>NEMA 5-20</b> (Type B) offer?`
 This rendering asks information about the property 
@@ -1374,7 +1385,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `technical`
 
-### this.id
+### OH
 
 The question is `When is this charging station opened?`
 This rendering asks information about the property 
@@ -1386,7 +1397,7 @@ This is rendered with `<h3>Opening hours</h3>{opening_hours_table(opening_hours)
 
 
 
-### this.id
+### fee
 
 The question is `Does one have to pay to use this charging station?`
 
@@ -1399,7 +1410,7 @@ The question is `Does one have to pay to use this charging station?`
 
 
 
-### this.id
+### charge
 
 The question is `How much does one have to pay to use this charging station?`
 This rendering asks information about the property 
@@ -1409,7 +1420,7 @@ This is rendered with `Using this charging station costs <b>{charge}</b>`
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>
 
 
-### this.id
+### payment-options
 
 The question is `Which methods of payment are accepted here?`
 
@@ -1426,7 +1437,7 @@ The question is `Which methods of payment are accepted here?`
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a> | charge~.+
 
 
-### this.id
+### Authentication
 
 The question is `What kind of authentication is available at the charging station?`
 
@@ -1449,7 +1460,7 @@ The question is `What kind of authentication is available at the charging statio
 
 
 
-### this.id
+### Auth phone
 
 The question is `What's the phone number for authentication call or SMS?`
 This rendering asks information about the property 
@@ -1459,7 +1470,7 @@ This is rendered with `Authenticate by calling or SMS'ing to <a href='tel:{authe
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:authentication:phone_call' target='_blank'>authentication:phone_call</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:phone_call%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:authentication:short_message' target='_blank'>authentication:short_message</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:short_message%3Dyes' target='_blank'>yes</a>
 
 
-### this.id
+### maxstay
 
 The question is `What is the maximum amount of time one is allowed to stay here?`
 This rendering asks information about the property 
@@ -1469,7 +1480,7 @@ This is rendered with `One can stay at most <b>{canonical(maxstay)}</b>`
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:bus' target='_blank'>bus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bus%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:hgv' target='_blank'>hgv</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hgv%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:motorcar' target='_blank'>motorcar</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:motorcar%3Dyes' target='_blank'>yes</a> | maxstay~.+
 
 
-### this.id
+### Network
 
 The question is `Is this charging station part of a network?`
 This rendering asks information about the property 
@@ -1487,7 +1498,7 @@ This is rendered with `Part of the network <b>{network}</b>`
 
 
 
-### this.id
+### Operator
 
 The question is `Who is the operator of this charging station?`
 This rendering asks information about the property 
@@ -1497,7 +1508,7 @@ This is rendered with `This charging station is operated by {operator}`
 
 
 
-### this.id
+### phone
 
 The question is `What number can one call if there is a problem with this charging station?`
 This rendering asks information about the property 
@@ -1507,7 +1518,7 @@ This is rendered with `In case of problems, call <a href='tel:{phone}'>{phone}</
 
 
 
-### this.id
+### email
 
 The question is `What is the email address of the operator?`
 This rendering asks information about the property 
@@ -1517,7 +1528,7 @@ This is rendered with `In case of problems, send an email to <a href='mailto:{em
 
 
 
-### this.id
+### website
 
 The question is `What is the website where one can find more information about this charging station?`
 This rendering asks information about the property 
@@ -1527,7 +1538,7 @@ This is rendered with `More info on <a href='{website}'>{website}</a>`
 
 
 
-### this.id
+### repeated
 
 _This tagrendering has no question and is thus read-only_
 
@@ -1536,7 +1547,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `level`
 
-### this.id
+### single_level
 
 The question is `On what level is this feature located?`
 This rendering asks information about the property 
@@ -1553,7 +1564,7 @@ This is rendered with `Located on the {level}th floor`
 This tagrendering has labels 
 `level`
 
-### this.id
+### ref
 
 The question is `What is the reference number of this charging station?`
 This rendering asks information about the property 
@@ -1563,7 +1574,7 @@ This is rendered with `Reference number is <b>{ref}</b>`
 This tagrendering is only visible in the popup if the following condition is met: network~.+
 
 
-### this.id
+### Operational status
 
 The question is `Is this charging point in use?`
 
@@ -1575,7 +1586,7 @@ The question is `Is this charging point in use?`
 
 
 
-### this.id
+### Parking:fee
 
 The question is `Does one have to pay a parking fee while charging?`
 
@@ -1584,7 +1595,7 @@ The question is `Does one have to pay a parking fee while charging?`
 
 
 
-### this.id
+### questions
 Show the questions block at this location
 _This tagrendering has no question and is thus read-only_
 
@@ -1592,7 +1603,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-### this.id
+### questions-technical
 
 _This tagrendering has no question and is thus read-only_
 
@@ -1600,7 +1611,40 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-### this.id
+### minimap
+Shows a small map with the feature. Added by default to every popup
+_This tagrendering has no question and is thus read-only_
+
+
+
+
+
+### nearby_images
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+This tagrendering has labels 
+`added_by_default_conditional`
+
+### move-button
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+
+
+### delete-button
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+
+
+### lod
 
 _This tagrendering has no question and is thus read-only_
 
@@ -1609,31 +1653,34 @@ _This tagrendering has no question and is thus read-only_
 This tagrendering has labels 
 `added_by_default`
 
-### this.id
-Shows a small map with the feature. Added by default to every popup
-_This tagrendering has no question and is thus read-only_
-
-
-
-
-
-### this.id
+### favourite_status
 
 _This tagrendering has no question and is thus read-only_
 
 
 
+This tagrendering has labels 
+`added_by_default`
 
-
-### this.id
+### share
 
 _This tagrendering has no question and is thus read-only_
 
 
 
+This tagrendering has labels 
+`added_by_default`
+
+### qr_code
+
+_This tagrendering has no question and is thus read-only_
 
 
-### this.id
+
+This tagrendering has labels 
+`added_by_default`
+
+### last_edit
 Gives some metainfo about the last edit and who did edit it - rendering only
 _This tagrendering has no question and is thus read-only_
 
@@ -1642,33 +1689,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `added_by_default`
 
-### this.id
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-
-
-### this.id
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### this.id
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### this.id
+### all-tags
 
 _This tagrendering has no question and is thus read-only_
 

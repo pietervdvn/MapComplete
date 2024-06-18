@@ -25,26 +25,28 @@ A layer showing street lights
 1. [ Themes using this layer ](#-themes-using-this-layer-)
 2. [ Basic tags for this layer ](#-basic-tags-for-this-layer-)
 3. [ Supported attributes ](#-supported-attributes-)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
+  - [just_created](#just_created)
+  - [nothing_known](#nothing_known)
+  - [images](#images)
+  - [ref](#ref)
+  - [support](#support)
+  - [lamp_mount](#lamp_mount)
+  - [method](#method)
+  - [colour](#colour)
+  - [count](#count)
+  - [lit](#lit)
+  - [direction](#direction)
+  - [leftover-questions](#leftover-questions)
+  - [minimap](#minimap)
+  - [nearby_images](#nearby_images)
+  - [move-button](#move-button)
+  - [delete-button](#delete-button)
+  - [lod](#lod)
+  - [favourite_status](#favourite_status)
+  - [share](#share)
+  - [qr_code](#qr_code)
+  - [last_edit](#last_edit)
+  - [all-tags](#all-tags)
 
  Themes using this layer 
 -------------------------
@@ -95,16 +97,25 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/light:direction#values) [light:direction](https://wiki.openstreetmap.org/wiki/Key:light:direction) | [direction](../SpecialInputElements.md#direction) | 
 
 
-### this.id
+### just_created
 This element shows a 'thank you' that the contributor has recently created this element
 _This tagrendering has no question and is thus read-only_
 
  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
 This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
 This tagrendering has labels 
-`added_by_default`
+`added_by_default_top`
 
-### this.id
+### nothing_known
+
+_This tagrendering has no question and is thus read-only_
+
+
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time>=300 & _backend~.+
+This tagrendering has labels 
+`added_by_default_top`
+
+### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 
@@ -112,7 +123,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-### this.id
+### ref
 
 The question is `What is the reference number of this street lamp?`
 This rendering asks information about the property 
@@ -122,7 +133,7 @@ This is rendered with `This street lamp has the reference number {ref}`
 
 
 
-### this.id
+### support
 
 The question is `How is this street lamp mounted?`
 
@@ -136,7 +147,7 @@ The question is `How is this street lamp mounted?`
 
 
 
-### this.id
+### lamp_mount
 
 The question is `How is this lamp mounted to the pole?`
 
@@ -145,7 +156,7 @@ The question is `How is this lamp mounted to the pole?`
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:support' target='_blank'>support</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:support%3Dpole' target='_blank'>pole</a>
 
 
-### this.id
+### method
 
 The question is `What kind of lighting does this lamp use?`
 
@@ -165,7 +176,7 @@ The question is `What kind of lighting does this lamp use?`
 
 
 
-### this.id
+### colour
 
 The question is `What colour light does this lamp emit?`
 This rendering asks information about the property 
@@ -177,7 +188,7 @@ This is rendered with `This lamp emits {light:colour} light`
 
 
 
-### this.id
+### count
 
 The question is `How many fixtures does this light have?`
 This rendering asks information about the property 
@@ -188,7 +199,7 @@ This is rendered with `This lamp has {light:count} fixtures`
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:support' target='_blank'>support</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:support%3Dpole' target='_blank'>pole</a>
 
 
-### this.id
+### lit
 
 The question is `When is this lamp lit?`
 
@@ -199,7 +210,7 @@ The question is `When is this lamp lit?`
 
 
 
-### this.id
+### direction
 
 The question is `Where does this lamp point to?`
 This rendering asks information about the property 
@@ -209,7 +220,7 @@ This is rendered with `This lamp points towards {light:direction}`
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:light:count' target='_blank'>light:count</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:light:count%3D1' target='_blank'>1</a>
 
 
-### this.id
+### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 
@@ -217,7 +228,40 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-### this.id
+### minimap
+Shows a small map with the feature. Added by default to every popup
+_This tagrendering has no question and is thus read-only_
+
+
+
+
+
+### nearby_images
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+This tagrendering has labels 
+`added_by_default_conditional`
+
+### move-button
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+
+
+### delete-button
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+
+
+### lod
 
 _This tagrendering has no question and is thus read-only_
 
@@ -226,31 +270,34 @@ _This tagrendering has no question and is thus read-only_
 This tagrendering has labels 
 `added_by_default`
 
-### this.id
-Shows a small map with the feature. Added by default to every popup
-_This tagrendering has no question and is thus read-only_
-
-
-
-
-
-### this.id
+### favourite_status
 
 _This tagrendering has no question and is thus read-only_
 
 
 
+This tagrendering has labels 
+`added_by_default`
 
-
-### this.id
+### share
 
 _This tagrendering has no question and is thus read-only_
 
 
 
+This tagrendering has labels 
+`added_by_default`
+
+### qr_code
+
+_This tagrendering has no question and is thus read-only_
 
 
-### this.id
+
+This tagrendering has labels 
+`added_by_default`
+
+### last_edit
 Gives some metainfo about the last edit and who did edit it - rendering only
 _This tagrendering has no question and is thus read-only_
 
@@ -259,33 +306,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `added_by_default`
 
-### this.id
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-
-
-### this.id
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### this.id
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### this.id
+### all-tags
 
 _This tagrendering has no question and is thus read-only_
 

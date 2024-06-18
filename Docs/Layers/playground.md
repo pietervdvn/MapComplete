@@ -25,31 +25,33 @@ Playgrounds
 1. [ Themes using this layer ](#-themes-using-this-layer-)
 2. [ Basic tags for this layer ](#-basic-tags-for-this-layer-)
 3. [ Supported attributes ](#-supported-attributes-)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
+  - [just_created](#just_created)
+  - [nothing_known](#nothing_known)
+  - [images](#images)
+  - [reviews](#reviews)
+  - [playground-surface](#playground-surface)
+  - [playground-lit](#playground-lit)
+  - [playground-min_age](#playground-min_age)
+  - [playground-max_age](#playground-max_age)
+  - [playground-operator](#playground-operator)
+  - [playground-access](#playground-access)
+  - [website](#website)
+  - [playground-email](#playground-email)
+  - [playground-phone](#playground-phone)
+  - [Playground-wheelchair](#playground-wheelchair)
+  - [playground-opening_hours](#playground-opening_hours)
+  - [check_date](#check_date)
+  - [questions](#questions)
+  - [playground-reviews](#playground-reviews)
+  - [minimap](#minimap)
+  - [nearby_images](#nearby_images)
+  - [delete-button](#delete-button)
+  - [lod](#lod)
+  - [favourite_status](#favourite_status)
+  - [share](#share)
+  - [qr_code](#qr_code)
+  - [last_edit](#last_edit)
+  - [all-tags](#all-tags)
 
  Themes using this layer 
 -------------------------
@@ -107,16 +109,25 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/check_date#values) [check_date](https://wiki.openstreetmap.org/wiki/Key:check_date) | [date](../SpecialInputElements.md#date) | [](https://wiki.openstreetmap.org/wiki/Tag:check_date%3D)
 
 
-### this.id
+### just_created
 This element shows a 'thank you' that the contributor has recently created this element
 _This tagrendering has no question and is thus read-only_
 
  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
 This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
 This tagrendering has labels 
-`added_by_default`
+`added_by_default_top`
 
-### this.id
+### nothing_known
+
+_This tagrendering has no question and is thus read-only_
+
+
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time>=300 & _backend~.+
+This tagrendering has labels 
+`added_by_default_top`
+
+### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 
@@ -124,7 +135,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-### this.id
+### reviews
 Shows the reviews module (including the possibility to leave a review)
 _This tagrendering has no question and is thus read-only_
 
@@ -132,7 +143,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-### this.id
+### playground-surface
 
 The question is `Which is the surface of this playground?`
 This rendering asks information about the property 
@@ -153,7 +164,7 @@ This is rendered with `The surface is <b>{surface}</b>`
 
 
 
-### this.id
+### playground-lit
 
 The question is `Is this playground lit at night?`
 
@@ -163,7 +174,7 @@ The question is `Is this playground lit at night?`
 This tagrendering has labels 
 `extra`
 
-### this.id
+### playground-min_age
 
 The question is `What is the minimum age required to access this playground?`
 This rendering asks information about the property 
@@ -174,7 +185,7 @@ This is rendered with `Accessible to kids older than {min_age} years`
 This tagrendering has labels 
 `extra`
 
-### this.id
+### playground-max_age
 
 The question is `What is the maximum age allowed to access this playground?`
 This rendering asks information about the property 
@@ -185,7 +196,7 @@ This is rendered with `Accessible to kids of at most {max_age}`
 This tagrendering has labels 
 `extra`
 
-### this.id
+### playground-operator
 
 The question is `Who operates this playground?`
 This rendering asks information about the property 
@@ -195,7 +206,7 @@ This is rendered with `Operated by {operator}`
 
 
 
-### this.id
+### playground-access
 
 The question is `Is this playground accessible to the general public?`
 
@@ -209,7 +220,7 @@ The question is `Is this playground accessible to the general public?`
 
 
 
-### this.id
+### website
 
 The question is `What is the website of {title()}?`
 This rendering asks information about the property 
@@ -221,7 +232,7 @@ This is rendered with `<a href='{website}' rel='nofollow noopener noreferrer' ta
 This tagrendering has labels 
 `contact`
 
-### this.id
+### playground-email
 
 The question is `What is the email address of the playground maintainer?`
 This rendering asks information about the property 
@@ -231,7 +242,7 @@ This is rendered with `<a href='mailto:{email}'>{email}</a>`
 
 
 
-### this.id
+### playground-phone
 
 The question is `What is the phone number of the playground maintainer?`
 This rendering asks information about the property 
@@ -241,7 +252,7 @@ This is rendered with `<a href='tel:{phone}'>{phone}</a>`
 
 
 
-### this.id
+### Playground-wheelchair
 
 The question is `Is this playground accessible to wheelchair users?`
 
@@ -251,7 +262,7 @@ The question is `Is this playground accessible to wheelchair users?`
 
 
 
-### this.id
+### playground-opening_hours
 
 The question is `When is this playground accessible?`
 This rendering asks information about the property 
@@ -262,7 +273,7 @@ This is rendered with `{opening_hours_table(opening_hours)}`
 
 
 
-### this.id
+### check_date
 
 The question is `When was this object last checked?`
 This rendering asks information about the property 
@@ -272,7 +283,7 @@ This is rendered with `This object was last checked on <b>{check_date}</b>`
 
 
 
-### this.id
+### questions
 Show the questions block at this location
 _This tagrendering has no question and is thus read-only_
 
@@ -280,7 +291,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-### this.id
+### playground-reviews
 
 _This tagrendering has no question and is thus read-only_
 
@@ -288,7 +299,32 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-### this.id
+### minimap
+Shows a small map with the feature. Added by default to every popup
+_This tagrendering has no question and is thus read-only_
+
+
+
+
+
+### nearby_images
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+This tagrendering has labels 
+`added_by_default_conditional`
+
+### delete-button
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+
+
+### lod
 
 _This tagrendering has no question and is thus read-only_
 
@@ -297,23 +333,34 @@ _This tagrendering has no question and is thus read-only_
 This tagrendering has labels 
 `added_by_default`
 
-### this.id
-Shows a small map with the feature. Added by default to every popup
-_This tagrendering has no question and is thus read-only_
-
-
-
-
-
-### this.id
+### favourite_status
 
 _This tagrendering has no question and is thus read-only_
 
 
 
+This tagrendering has labels 
+`added_by_default`
+
+### share
+
+_This tagrendering has no question and is thus read-only_
 
 
-### this.id
+
+This tagrendering has labels 
+`added_by_default`
+
+### qr_code
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+This tagrendering has labels 
+`added_by_default`
+
+### last_edit
 Gives some metainfo about the last edit and who did edit it - rendering only
 _This tagrendering has no question and is thus read-only_
 
@@ -322,33 +369,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `added_by_default`
 
-### this.id
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-
-
-### this.id
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### this.id
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### this.id
+### all-tags
 
 _This tagrendering has no question and is thus read-only_
 

@@ -25,40 +25,42 @@ A shop
 1. [ Themes using this layer ](#-themes-using-this-layer-)
 2. [ Basic tags for this layer ](#-basic-tags-for-this-layer-)
 3. [ Supported attributes ](#-supported-attributes-)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
+  - [just_created](#just_created)
+  - [nothing_known](#nothing_known)
+  - [images](#images)
+  - [shops-name](#shops-name)
+  - [shop_types](#shop_types)
+  - [brand](#brand)
+  - [second_hand](#second_hand)
+  - [opening_hours](#opening_hours)
+  - [website](#website)
+  - [email](#email)
+  - [phone](#phone)
+  - [payment-options](#payment-options)
+  - [repeated](#repeated)
+  - [single_level](#single_level)
+  - [copyshop-print-sizes](#copyshop-print-sizes)
+  - [copyshop-binding](#copyshop-binding)
+  - [key_cutter](#key_cutter)
+  - [internet](#internet)
+  - [internet-fee](#internet-fee)
+  - [internet-ssid](#internet-ssid)
+  - [organic](#organic)
+  - [sugar_free](#sugar_free)
+  - [gluten_free](#gluten_free)
+  - [lactose_free](#lactose_free)
+  - [questions](#questions)
+  - [reviews](#reviews)
+  - [minimap](#minimap)
+  - [nearby_images](#nearby_images)
+  - [move-button](#move-button)
+  - [delete-button](#delete-button)
+  - [lod](#lod)
+  - [favourite_status](#favourite_status)
+  - [share](#share)
+  - [qr_code](#qr_code)
+  - [last_edit](#last_edit)
+  - [all-tags](#all-tags)
     + [Filters](#filters)
 
  Themes using this layer 
@@ -128,16 +130,25 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/diet:lactose_free#values) [diet:lactose_free](https://wiki.openstreetmap.org/wiki/Key:diet:lactose_free) | Multiple choice | [only](https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Donly) [yes](https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dlimited) [no](https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dno)
 
 
-### this.id
+### just_created
 This element shows a 'thank you' that the contributor has recently created this element
 _This tagrendering has no question and is thus read-only_
 
  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
 This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
 This tagrendering has labels 
-`added_by_default`
+`added_by_default_top`
 
-### this.id
+### nothing_known
+
+_This tagrendering has no question and is thus read-only_
+
+
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time>=300 & _backend~.+
+This tagrendering has labels 
+`added_by_default_top`
+
+### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 
@@ -145,7 +156,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-### this.id
+### shops-name
 
 The question is `What is the name of this shop?`
 This rendering asks information about the property 
@@ -155,7 +166,7 @@ This is rendered with `This shop is called <i>{name}</i>`
 
 
 
-### this.id
+### shop_types
 
 The question is `What kind of shop is this?`
 This rendering asks information about the property 
@@ -328,7 +339,7 @@ This is rendered with `This is a {shop}`
 
 
 
-### this.id
+### brand
 
 The question is `What is the brand of this shop?`
 This rendering asks information about the property 
@@ -338,7 +349,7 @@ This is rendered with `Part of <b>{brand}</b>`
 
 
 
-### this.id
+### second_hand
 
 The question is `Does this shop sell second-hand items?`
 
@@ -348,7 +359,7 @@ The question is `Does this shop sell second-hand items?`
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dclothes' target='_blank'>clothes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcar' target='_blank'>car</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbooks' target='_blank'>books</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcharity' target='_blank'>charity</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcar_repair' target='_blank'>car_repair</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dfurniture' target='_blank'>furniture</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbicycle' target='_blank'>bicycle</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbicycle' target='_blank'>bicycle</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dmobile_phone' target='_blank'>mobile_phone</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcomputer' target='_blank'>computer</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtoys' target='_blank'>toys</a>
 
 
-### this.id
+### opening_hours
 
 The question is `What are the opening hours of {title()}?`
 This rendering asks information about the property 
@@ -359,7 +370,7 @@ This is rendered with `<h3>Opening hours</h3>{opening_hours_table(opening_hours)
 
 
 
-### this.id
+### website
 
 The question is `What is the website of {title()}?`
 This rendering asks information about the property 
@@ -371,7 +382,7 @@ This is rendered with `<a href='{website}' rel='nofollow noopener noreferrer' ta
 This tagrendering has labels 
 `contact`
 
-### this.id
+### email
 
 The question is `What is the email address of {title()}?`
 This rendering asks information about the property 
@@ -385,7 +396,7 @@ This is rendered with `<a href='mailto:{email}' target='_blank' rel='noopener'>{
 This tagrendering has labels 
 `contact`
 
-### this.id
+### phone
 
 The question is `What is the phone number of {title()}?`
 This rendering asks information about the property 
@@ -397,7 +408,7 @@ This is rendered with `<a href='tel:{phone}'>{phone}</a>`
 This tagrendering has labels 
 `contact`
 
-### this.id
+### payment-options
 
 The question is `Which methods of payment are accepted here?`
 
@@ -410,7 +421,7 @@ The question is `Which methods of payment are accepted here?`
 
 
 
-### this.id
+### repeated
 
 _This tagrendering has no question and is thus read-only_
 
@@ -419,7 +430,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `level`
 
-### this.id
+### single_level
 
 The question is `On what level is this feature located?`
 This rendering asks information about the property 
@@ -436,7 +447,7 @@ This is rendered with `Located on the {level}th floor`
 This tagrendering has labels 
 `level`
 
-### this.id
+### copyshop-print-sizes
 
 The question is `What paper formats does this shop offer?`
 
@@ -453,7 +464,7 @@ The question is `What paper formats does this shop offer?`
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:service:print' target='_blank'>service:print</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:print%3Dyes' target='_blank'>yes</a> | shop~^(.*copyshop.*)$ | shop~^(.*stationery.*)$
 
 
-### this.id
+### copyshop-binding
 
 The question is `Does this shop offer a binding service?`
 
@@ -462,7 +473,7 @@ The question is `Does this shop offer a binding service?`
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:service:print' target='_blank'>service:print</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:print%3Dyes' target='_blank'>yes</a> | shop~^(.*copyshop.*)$ | shop~^(.*stationery.*)$
 
 
-### this.id
+### key_cutter
 
 The question is `Does this shop offer key cutting?`
 
@@ -472,7 +483,7 @@ The question is `Does this shop offer key cutting?`
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:craft' target='_blank'>craft</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:craft%3Dkey_cutting' target='_blank'>key_cutting</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dshoe_repair' target='_blank'>shoe_repair</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Ddiy' target='_blank'>diy</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Ddoityourself' target='_blank'>doityourself</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhome_improvement' target='_blank'>home_improvement</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhardware' target='_blank'>hardware</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dlocksmith' target='_blank'>locksmith</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Drepair' target='_blank'>repair</a> | service:key_cutting~.+
 
 
-### this.id
+### internet
 
 The question is `Does this place offer internet access?`
 
@@ -486,7 +497,7 @@ The question is `Does this place offer internet access?`
 This tagrendering has labels 
 `internet-all`
 
-### this.id
+### internet-fee
 
 The question is `Is there a fee for internet access?`
 
@@ -497,7 +508,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `internet-all`
 
-### this.id
+### internet-ssid
 
 The question is `What is the network name for the wireless internet access?`
 This rendering asks information about the property 
@@ -508,7 +519,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `internet-all`
 
-### this.id
+### organic
 
 The question is `Does this shop offer organic products?`
 
@@ -518,7 +529,7 @@ The question is `Does this shop offer organic products?`
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsupermarket' target='_blank'>supermarket</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dconvenience' target='_blank'>convenience</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dfarm' target='_blank'>farm</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dgreengrocer' target='_blank'>greengrocer</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhealth_food' target='_blank'>health_food</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dclothes' target='_blank'>clothes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dshoes' target='_blank'>shoes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbutcher' target='_blank'>butcher</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcosmetics' target='_blank'>cosmetics</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Ddeli' target='_blank'>deli</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbakery' target='_blank'>bakery</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dalcohol' target='_blank'>alcohol</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dseafood' target='_blank'>seafood</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbeverages' target='_blank'>beverages</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dflorist' target='_blank'>florist</a>
 
 
-### this.id
+### sugar_free
 
 The question is `Does this shop have a sugar free offering?`
 
@@ -530,7 +541,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `diets`
 
-### this.id
+### gluten_free
 
 The question is `Does this shop have a gluten free offering?`
 
@@ -542,7 +553,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `diets`
 
-### this.id
+### lactose_free
 
 The question is `Does {title()} have a lactose-free offering?`
 
@@ -554,7 +565,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `diets`
 
-### this.id
+### questions
 Show the questions block at this location
 _This tagrendering has no question and is thus read-only_
 
@@ -562,7 +573,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-### this.id
+### reviews
 Shows the reviews module (including the possibility to leave a review)
 _This tagrendering has no question and is thus read-only_
 
@@ -570,7 +581,40 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-### this.id
+### minimap
+Shows a small map with the feature. Added by default to every popup
+_This tagrendering has no question and is thus read-only_
+
+
+
+
+
+### nearby_images
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+This tagrendering has labels 
+`added_by_default_conditional`
+
+### move-button
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+
+
+### delete-button
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+
+
+### lod
 
 _This tagrendering has no question and is thus read-only_
 
@@ -579,31 +623,34 @@ _This tagrendering has no question and is thus read-only_
 This tagrendering has labels 
 `added_by_default`
 
-### this.id
-Shows a small map with the feature. Added by default to every popup
-_This tagrendering has no question and is thus read-only_
-
-
-
-
-
-### this.id
+### favourite_status
 
 _This tagrendering has no question and is thus read-only_
 
 
 
+This tagrendering has labels 
+`added_by_default`
 
-
-### this.id
+### share
 
 _This tagrendering has no question and is thus read-only_
 
 
 
+This tagrendering has labels 
+`added_by_default`
+
+### qr_code
+
+_This tagrendering has no question and is thus read-only_
 
 
-### this.id
+
+This tagrendering has labels 
+`added_by_default`
+
+### last_edit
 Gives some metainfo about the last edit and who did edit it - rendering only
 _This tagrendering has no question and is thus read-only_
 
@@ -612,33 +659,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `added_by_default`
 
-### this.id
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-
-
-### this.id
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### this.id
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### this.id
+### all-tags
 
 _This tagrendering has no question and is thus read-only_
 

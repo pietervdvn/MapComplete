@@ -27,25 +27,27 @@ Obstacles while cycling, such as bollards and cycle barriers
 1. [ Themes using this layer ](#-themes-using-this-layer-)
 2. [ Basic tags for this layer ](#-basic-tags-for-this-layer-)
 3. [ Supported attributes ](#-supported-attributes-)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
+  - [just_created](#just_created)
+  - [nothing_known](#nothing_known)
+  - [images](#images)
+  - [bicycle=yes/no](#bicycle=yesno)
+  - [barrier_type](#barrier_type)
+  - [Bollard type](#bollard-type)
+  - [Cycle barrier type](#cycle-barrier-type)
+  - [MaxWidth](#maxwidth)
+  - [Space between barrier (cyclebarrier)](#space-between-barrier-(cyclebarrier))
+  - [Width of opening (cyclebarrier)](#width-of-opening-(cyclebarrier))
+  - [Overlap (cyclebarrier)](#overlap-(cyclebarrier))
+  - [leftover-questions](#leftover-questions)
+  - [minimap](#minimap)
+  - [nearby_images](#nearby_images)
+  - [delete-button](#delete-button)
+  - [lod](#lod)
+  - [favourite_status](#favourite_status)
+  - [share](#share)
+  - [qr_code](#qr_code)
+  - [last_edit](#last_edit)
+  - [all-tags](#all-tags)
 
  Themes using this layer 
 -------------------------
@@ -98,16 +100,25 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/overlap#values) [overlap](https://wiki.openstreetmap.org/wiki/Key:overlap) | [distance](../SpecialInputElements.md#distance) | 
 
 
-### this.id
+### just_created
 This element shows a 'thank you' that the contributor has recently created this element
 _This tagrendering has no question and is thus read-only_
 
  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
 This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
 This tagrendering has labels 
-`added_by_default`
+`added_by_default_top`
 
-### this.id
+### nothing_known
+
+_This tagrendering has no question and is thus read-only_
+
+
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time>=300 & _backend~.+
+This tagrendering has labels 
+`added_by_default_top`
+
+### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 
@@ -115,7 +126,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-### this.id
+### bicycle=yes/no
 
 The question is `Can a bicycle go past this barrier?`
 
@@ -124,7 +135,7 @@ The question is `Can a bicycle go past this barrier?`
 This tagrendering is only visible in the popup if the following condition is met: _referencing_ways~.+
 
 
-### this.id
+### barrier_type
 
 _This tagrendering has no question and is thus read-only_
 
@@ -133,7 +144,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-### this.id
+### Bollard type
 
 The question is `What kind of bollard is this?`
 
@@ -145,7 +156,7 @@ The question is `What kind of bollard is this?`
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:barrier' target='_blank'>barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dbollard' target='_blank'>bollard</a>
 
 
-### this.id
+### Cycle barrier type
 
 The question is `What kind of cycling barrier is this?`
 
@@ -156,7 +167,7 @@ The question is `What kind of cycling barrier is this?`
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:barrier' target='_blank'>barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dcycle_barrier' target='_blank'>cycle_barrier</a>
 
 
-### this.id
+### MaxWidth
 
 The question is `How wide is the gap left over besides the barrier?`
 This rendering asks information about the property 
@@ -166,7 +177,7 @@ This is rendered with `Maximum width: {maxwidth:physical} m`
 This tagrendering is only visible in the popup if the following condition is met: _referencing_ways~.+ & cycle_barrier!=double & cycle_barrier!=triple
 
 
-### this.id
+### Space between barrier (cyclebarrier)
 
 The question is `How much space is there between the barriers (along the length of the road)?`
 This rendering asks information about the property 
@@ -176,7 +187,7 @@ This is rendered with `Space between barriers (along the length of the road): {w
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Ddouble' target='_blank'>double</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Dtriple' target='_blank'>triple</a>
 
 
-### this.id
+### Width of opening (cyclebarrier)
 
 The question is `How wide is the smallest opening next to the barriers?`
 This rendering asks information about the property 
@@ -186,7 +197,7 @@ This is rendered with `Width of opening: {width:opening} m`
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Ddouble' target='_blank'>double</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Dtriple' target='_blank'>triple</a>
 
 
-### this.id
+### Overlap (cyclebarrier)
 
 The question is `How much overlap do the barriers have?`
 This rendering asks information about the property 
@@ -196,7 +207,7 @@ This is rendered with `Overlap: {overlap} m`
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Ddouble' target='_blank'>double</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Dtriple' target='_blank'>triple</a>
 
 
-### this.id
+### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 
@@ -204,7 +215,32 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-### this.id
+### minimap
+Shows a small map with the feature. Added by default to every popup
+_This tagrendering has no question and is thus read-only_
+
+
+
+
+
+### nearby_images
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+This tagrendering has labels 
+`added_by_default_conditional`
+
+### delete-button
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+
+
+### lod
 
 _This tagrendering has no question and is thus read-only_
 
@@ -213,23 +249,34 @@ _This tagrendering has no question and is thus read-only_
 This tagrendering has labels 
 `added_by_default`
 
-### this.id
-Shows a small map with the feature. Added by default to every popup
-_This tagrendering has no question and is thus read-only_
-
-
-
-
-
-### this.id
+### favourite_status
 
 _This tagrendering has no question and is thus read-only_
 
 
 
+This tagrendering has labels 
+`added_by_default`
+
+### share
+
+_This tagrendering has no question and is thus read-only_
 
 
-### this.id
+
+This tagrendering has labels 
+`added_by_default`
+
+### qr_code
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+This tagrendering has labels 
+`added_by_default`
+
+### last_edit
 Gives some metainfo about the last edit and who did edit it - rendering only
 _This tagrendering has no question and is thus read-only_
 
@@ -238,33 +285,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `added_by_default`
 
-### this.id
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-
-
-### this.id
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### this.id
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### this.id
+### all-tags
 
 _This tagrendering has no question and is thus read-only_
 

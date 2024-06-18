@@ -25,31 +25,33 @@ Layer showing memorial plaques, based upon a unofficial theme. Can be expanded t
 1. [ Themes using this layer ](#-themes-using-this-layer-)
 2. [ Basic tags for this layer ](#-basic-tags-for-this-layer-)
 3. [ Supported attributes ](#-supported-attributes-)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
+  - [just_created](#just_created)
+  - [nothing_known](#nothing_known)
+  - [images](#images)
+  - [memorial-type](#memorial-type)
+  - [inscription](#inscription)
+  - [memorial-wikidata](#memorial-wikidata)
+  - [subject-wikidata](#subject-wikidata)
+  - [start_date](#start_date)
+  - [bench-backrest](#bench-backrest)
+  - [bench-seats](#bench-seats)
+  - [bench-material](#bench-material)
+  - [bench-direction](#bench-direction)
+  - [bench-colour](#bench-colour)
+  - [bench-survey:date](#bench-surveydate)
+  - [bench-inscription](#bench-inscription)
+  - [bench-memorial](#bench-memorial)
+  - [leftover-questions](#leftover-questions)
+  - [minimap](#minimap)
+  - [nearby_images](#nearby_images)
+  - [move-button](#move-button)
+  - [delete-button](#delete-button)
+  - [lod](#lod)
+  - [favourite_status](#favourite_status)
+  - [share](#share)
+  - [qr_code](#qr_code)
+  - [last_edit](#last_edit)
+  - [all-tags](#all-tags)
 
  Themes using this layer 
 -------------------------
@@ -107,16 +109,25 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/historic#values) [historic](https://wiki.openstreetmap.org/wiki/Key:historic) | Multiple choice | [memorial](https://wiki.openstreetmap.org/wiki/Tag:historic%3Dmemorial) [](https://wiki.openstreetmap.org/wiki/Tag:historic%3D)
 
 
-### this.id
+### just_created
 This element shows a 'thank you' that the contributor has recently created this element
 _This tagrendering has no question and is thus read-only_
 
  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
 This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
 This tagrendering has labels 
-`added_by_default`
+`added_by_default_top`
 
-### this.id
+### nothing_known
+
+_This tagrendering has no question and is thus read-only_
+
+
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time>=300 & _backend~.+
+This tagrendering has labels 
+`added_by_default_top`
+
+### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 
@@ -124,7 +135,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-### this.id
+### memorial-type
 
 The question is `What type of memorial is this?`
 This rendering asks information about the property 
@@ -148,7 +159,7 @@ This is rendered with `This is a {memorial}`
 
 
 
-### this.id
+### inscription
 
 The question is `What is the inscription on this memorial?`
 This rendering asks information about the property 
@@ -158,7 +169,7 @@ This is rendered with `The inscription on this memorial reads: <p><i>{inscriptio
 
 
 
-### this.id
+### memorial-wikidata
 
 The question is `What is the Wikipedia page about this memorial?`
 This rendering asks information about the property 
@@ -168,7 +179,7 @@ This is rendered with `<h3>Wikipedia page about the memorial</h3>{wikipedia(wiki
 
 
 
-### this.id
+### subject-wikidata
 
 The question is `What is the Wikipedia page about the person or event that is remembered here?`
 This rendering asks information about the property 
@@ -178,7 +189,7 @@ This is rendered with `<h3>Wikipedia page about the remembered event or person</
 
 
 
-### this.id
+### start_date
 
 The question is `When was this memorial installed?`
 This rendering asks information about the property 
@@ -188,7 +199,7 @@ This is rendered with `Placed on {start_date}`
 
 
 
-### this.id
+### bench-backrest
 
 The question is `Does this bench have a backrest?`
 
@@ -199,7 +210,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `bench-questions`
 
-### this.id
+### bench-seats
 
 The question is `How many seats does this bench have?`
 This rendering asks information about the property 
@@ -210,7 +221,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `bench-questions`
 
-### this.id
+### bench-material
 
 The question is `What is the bench (seating) made from?`
 This rendering asks information about the property 
@@ -226,7 +237,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `bench-questions`
 
-### this.id
+### bench-direction
 
 The question is `In which direction are you looking when sitting on the bench?`
 This rendering asks information about the property 
@@ -237,7 +248,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `bench-questions`
 
-### this.id
+### bench-colour
 
 The question is `Which colour does this bench have?`
 This rendering asks information about the property 
@@ -255,7 +266,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `bench-questions`
 
-### this.id
+### bench-survey:date
 
 The question is `When was this bench last surveyed?`
 This rendering asks information about the property 
@@ -266,7 +277,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `bench-questions`
 
-### this.id
+### bench-inscription
 
 The question is `Does this bench have an inscription?`
 This rendering asks information about the property 
@@ -279,7 +290,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `bench-questions`
 
-### this.id
+### bench-memorial
 
 The question is `Does this bench act as memorial for someone or something?`
 
@@ -289,7 +300,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `bench-questions`
 
-### this.id
+### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 
@@ -297,7 +308,40 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-### this.id
+### minimap
+Shows a small map with the feature. Added by default to every popup
+_This tagrendering has no question and is thus read-only_
+
+
+
+
+
+### nearby_images
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+This tagrendering has labels 
+`added_by_default_conditional`
+
+### move-button
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+
+
+### delete-button
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+
+
+### lod
 
 _This tagrendering has no question and is thus read-only_
 
@@ -306,31 +350,34 @@ _This tagrendering has no question and is thus read-only_
 This tagrendering has labels 
 `added_by_default`
 
-### this.id
-Shows a small map with the feature. Added by default to every popup
-_This tagrendering has no question and is thus read-only_
-
-
-
-
-
-### this.id
+### favourite_status
 
 _This tagrendering has no question and is thus read-only_
 
 
 
+This tagrendering has labels 
+`added_by_default`
 
-
-### this.id
+### share
 
 _This tagrendering has no question and is thus read-only_
 
 
 
+This tagrendering has labels 
+`added_by_default`
+
+### qr_code
+
+_This tagrendering has no question and is thus read-only_
 
 
-### this.id
+
+This tagrendering has labels 
+`added_by_default`
+
+### last_edit
 Gives some metainfo about the last edit and who did edit it - rendering only
 _This tagrendering has no question and is thus read-only_
 
@@ -339,33 +386,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `added_by_default`
 
-### this.id
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-
-
-### this.id
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### this.id
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### this.id
+### all-tags
 
 _This tagrendering has no question and is thus read-only_
 

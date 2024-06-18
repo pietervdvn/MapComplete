@@ -25,30 +25,32 @@ A layer showing trees
 1. [ Themes using this layer ](#-themes-using-this-layer-)
 2. [ Basic tags for this layer ](#-basic-tags-for-this-layer-)
 3. [ Supported attributes ](#-supported-attributes-)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
+  - [just_created](#just_created)
+  - [nothing_known](#nothing_known)
+  - [images](#images)
+  - [plantnet](#plantnet)
+  - [tree-species-wikidata](#tree-species-wikidata)
+  - [tree-wikipedia](#tree-wikipedia)
+  - [circumference](#circumference)
+  - [height](#height)
+  - [tree-denotation](#tree-denotation)
+  - [tree-leaf_type](#tree-leaf_type)
+  - [tree-decidouous](#tree-decidouous)
+  - [tree_node-name](#tree_node-name)
+  - [tree-heritage](#tree-heritage)
+  - [tree_node-ref:OnroerendErfgoed](#tree_node-refonroerenderfgoed)
+  - [tree_node-wikidata](#tree_node-wikidata)
+  - [leftover-questions](#leftover-questions)
+  - [minimap](#minimap)
+  - [nearby_images](#nearby_images)
+  - [move-button](#move-button)
+  - [delete-button](#delete-button)
+  - [lod](#lod)
+  - [favourite_status](#favourite_status)
+  - [share](#share)
+  - [qr_code](#qr_code)
+  - [last_edit](#last_edit)
+  - [all-tags](#all-tags)
 
  Themes using this layer 
 -------------------------
@@ -100,16 +102,25 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/wikidata#values) [wikidata](https://wiki.openstreetmap.org/wiki/Key:wikidata) | [wikidata](../SpecialInputElements.md#wikidata) | 
 
 
-### this.id
+### just_created
 This element shows a 'thank you' that the contributor has recently created this element
 _This tagrendering has no question and is thus read-only_
 
  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
 This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
 This tagrendering has labels 
-`added_by_default`
+`added_by_default_top`
 
-### this.id
+### nothing_known
+
+_This tagrendering has no question and is thus read-only_
+
+
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time>=300 & _backend~.+
+This tagrendering has labels 
+`added_by_default_top`
+
+### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 
@@ -117,7 +128,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-### this.id
+### plantnet
 
 _This tagrendering has no question and is thus read-only_
 
@@ -125,7 +136,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-### this.id
+### tree-species-wikidata
 
 The question is `What species is this tree?`
 This rendering asks information about the property 
@@ -135,7 +146,7 @@ This is rendered with `{wikipedia(species:wikidata):max-height: 25rem}`
 
 
 
-### this.id
+### tree-wikipedia
 
 _This tagrendering has no question and is thus read-only_
 
@@ -143,7 +154,7 @@ _This tagrendering has no question and is thus read-only_
 This tagrendering is only visible in the popup if the following condition is met: wikidata~.+ | wikipedia~.+
 
 
-### this.id
+### circumference
 
 The question is `What is the circumference of the tree trunk?`
 This rendering asks information about the property 
@@ -153,7 +164,7 @@ This is rendered with `The tree trunk has a circumference of {circumference} met
 
 
 
-### this.id
+### height
 
 The question is `What is the height of this tree?`
 This rendering asks information about the property 
@@ -163,7 +174,7 @@ This is rendered with `This tree is {height} meter high`
 
 
 
-### this.id
+### tree-denotation
 
 The question is `How significant is this tree? Choose the first answer that applies.`
 
@@ -178,7 +189,7 @@ The question is `How significant is this tree? Choose the first answer that appl
 
 
 
-### this.id
+### tree-leaf_type
 
 The question is `Is this a broadleaved or needleleaved tree?`
 
@@ -189,7 +200,7 @@ The question is `Is this a broadleaved or needleleaved tree?`
 
 
 
-### this.id
+### tree-decidouous
 
 The question is `Is this tree evergreen or deciduous?`
 
@@ -198,7 +209,7 @@ The question is `Is this tree evergreen or deciduous?`
 
 
 
-### this.id
+### tree_node-name
 
 The question is `Does the tree have a name?`
 This rendering asks information about the property 
@@ -208,7 +219,7 @@ This is rendered with `Name: {name}`
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:denotation' target='_blank'>denotation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:denotation%3Dlandmark' target='_blank'>landmark</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:denotation' target='_blank'>denotation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:denotation%3Dnatural_monument' target='_blank'>natural_monument</a> | name~.+
 
 
-### this.id
+### tree-heritage
 
 The question is `Is this tree registered heritage?`
 
@@ -221,7 +232,7 @@ The question is `Is this tree registered heritage?`
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:denotation' target='_blank'>denotation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:denotation%3Dlandmark' target='_blank'>landmark</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:denotation' target='_blank'>denotation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:denotation%3Dnatural_monument' target='_blank'>natural_monument</a>
 
 
-### this.id
+### tree_node-ref:OnroerendErfgoed
 
 The question is `What is the ID issued by Onroerend Erfgoed Flanders?`
 This rendering asks information about the property 
@@ -231,7 +242,7 @@ This is rendered with `<img src="./assets/layers/tree_node/Onroerend_Erfgoed_log
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:heritage' target='_blank'>heritage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:heritage%3D4' target='_blank'>4</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:heritage:operator' target='_blank'>heritage:operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:heritage:operator%3DOnroerendErfgoed' target='_blank'>OnroerendErfgoed</a>
 
 
-### this.id
+### tree_node-wikidata
 
 The question is `What is the Wikidata ID for this tree?`
 This rendering asks information about the property 
@@ -241,7 +252,7 @@ This is rendered with `<img src="./assets/svg/wikidata.svg" style="width:1em;hei
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:denotation' target='_blank'>denotation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:denotation%3Dlandmark' target='_blank'>landmark</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:denotation' target='_blank'>denotation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:denotation%3Dnatural_monument' target='_blank'>natural_monument</a> | wikidata~.+
 
 
-### this.id
+### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 
@@ -249,7 +260,40 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-### this.id
+### minimap
+Shows a small map with the feature. Added by default to every popup
+_This tagrendering has no question and is thus read-only_
+
+
+
+
+
+### nearby_images
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+This tagrendering has labels 
+`added_by_default_conditional`
+
+### move-button
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+
+
+### delete-button
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+
+
+### lod
 
 _This tagrendering has no question and is thus read-only_
 
@@ -258,31 +302,34 @@ _This tagrendering has no question and is thus read-only_
 This tagrendering has labels 
 `added_by_default`
 
-### this.id
-Shows a small map with the feature. Added by default to every popup
-_This tagrendering has no question and is thus read-only_
-
-
-
-
-
-### this.id
+### favourite_status
 
 _This tagrendering has no question and is thus read-only_
 
 
 
+This tagrendering has labels 
+`added_by_default`
 
-
-### this.id
+### share
 
 _This tagrendering has no question and is thus read-only_
 
 
 
+This tagrendering has labels 
+`added_by_default`
+
+### qr_code
+
+_This tagrendering has no question and is thus read-only_
 
 
-### this.id
+
+This tagrendering has labels 
+`added_by_default`
+
+### last_edit
 Gives some metainfo about the last edit and who did edit it - rendering only
 _This tagrendering has no question and is thus read-only_
 
@@ -291,33 +338,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `added_by_default`
 
-### this.id
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-
-
-### this.id
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### this.id
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### this.id
+### all-tags
 
 _This tagrendering has no question and is thus read-only_
 

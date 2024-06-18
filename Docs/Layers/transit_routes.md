@@ -26,22 +26,23 @@ Layer showing bus lines
 1. [ Themes using this layer ](#-themes-using-this-layer-)
 2. [ Basic tags for this layer ](#-basic-tags-for-this-layer-)
 3. [ Supported attributes ](#-supported-attributes-)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
+  - [just_created](#just_created)
+  - [nothing_known](#nothing_known)
+  - [name](#name)
+  - [from](#from)
+  - [via](#via)
+  - [to](#to)
+  - [colour](#colour)
+  - [network](#network)
+  - [operator](#operator)
+  - [leftover-questions](#leftover-questions)
+  - [minimap](#minimap)
+  - [lod](#lod)
+  - [favourite_status](#favourite_status)
+  - [share](#share)
+  - [qr_code](#qr_code)
+  - [last_edit](#last_edit)
+  - [all-tags](#all-tags)
 
  Themes using this layer 
 -------------------------
@@ -93,16 +94,25 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/operator#values) [operator](https://wiki.openstreetmap.org/wiki/Key:operator) | [string](../SpecialInputElements.md#string) | 
 
 
-### this.id
+### just_created
 This element shows a 'thank you' that the contributor has recently created this element
 _This tagrendering has no question and is thus read-only_
 
  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
 This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
 This tagrendering has labels 
-`added_by_default`
+`added_by_default_top`
 
-### this.id
+### nothing_known
+
+_This tagrendering has no question and is thus read-only_
+
+
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time>=300 & _backend~.+
+This tagrendering has labels 
+`added_by_default_top`
+
+### name
 
 The question is `What is the name for this bus line? (i.e. Bus XX: From => Via => To)`
 This rendering asks information about the property 
@@ -112,7 +122,7 @@ This is rendered with `{name}`
 
 
 
-### this.id
+### from
 
 The question is `What is the starting point for this bus line?`
 This rendering asks information about the property 
@@ -122,7 +132,7 @@ This is rendered with `This bus line begins at {from}`
 
 
 
-### this.id
+### via
 
 The question is `What is the via point for this bus line?`
 This rendering asks information about the property 
@@ -132,7 +142,7 @@ This is rendered with `This bus line goes via {via}`
 
 
 
-### this.id
+### to
 
 The question is `What is the ending point for this bus line?`
 This rendering asks information about the property 
@@ -142,7 +152,7 @@ This is rendered with `This bus line ends at {to}`
 
 
 
-### this.id
+### colour
 
 The question is `What is the colour for this bus line?`
 This rendering asks information about the property 
@@ -152,7 +162,7 @@ This is rendered with `This bus line has the color {colour}`
 
 
 
-### this.id
+### network
 
 The question is `What network does this bus line belong to?`
 This rendering asks information about the property 
@@ -162,7 +172,7 @@ This is rendered with `This bus line is part of the {network} network`
 
 
 
-### this.id
+### operator
 
 The question is `What company operates this bus line?`
 This rendering asks information about the property 
@@ -172,7 +182,7 @@ This is rendered with `This bus line is operated by {operator}`
 
 
 
-### this.id
+### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 
@@ -180,7 +190,15 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-### this.id
+### minimap
+Shows a small map with the feature. Added by default to every popup
+_This tagrendering has no question and is thus read-only_
+
+
+
+
+
+### lod
 
 _This tagrendering has no question and is thus read-only_
 
@@ -189,15 +207,34 @@ _This tagrendering has no question and is thus read-only_
 This tagrendering has labels 
 `added_by_default`
 
-### this.id
-Shows a small map with the feature. Added by default to every popup
+### favourite_status
+
 _This tagrendering has no question and is thus read-only_
 
 
 
+This tagrendering has labels 
+`added_by_default`
+
+### share
+
+_This tagrendering has no question and is thus read-only_
 
 
-### this.id
+
+This tagrendering has labels 
+`added_by_default`
+
+### qr_code
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+This tagrendering has labels 
+`added_by_default`
+
+### last_edit
 Gives some metainfo about the last edit and who did edit it - rendering only
 _This tagrendering has no question and is thus read-only_
 
@@ -206,33 +243,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `added_by_default`
 
-### this.id
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-
-
-### this.id
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### this.id
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### this.id
+### all-tags
 
 _This tagrendering has no question and is thus read-only_
 
