@@ -325,6 +325,8 @@
           </div>
 
           {#if config.questionhint}
+            <span class="italic">
+
             {#if config.questionHintIsMd}
               <Markdown srcWritable={config.questionhint.current} />
             {:else}
@@ -338,6 +340,7 @@
                 />
               </div>
             {/if}
+            </span>
           {/if}
         </legend>
 

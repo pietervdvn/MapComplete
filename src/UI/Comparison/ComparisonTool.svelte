@@ -13,6 +13,7 @@
   import Translations from "../i18n/Translations"
   import Tr from "../Base/Tr.svelte"
   import AccordionSingle from "../Flowbite/AccordionSingle.svelte"
+  import GlobeAlt from "@babeard/svelte-heroicons/mini/GlobeAlt"
 
   export let externalData: Store<
     | { success: { content: Record<string, string> } }
@@ -40,7 +41,10 @@
   </div>
 {:else if $externalData["success"] !== undefined}
   <AccordionSingle>
-    <span slot="header">Structured data from the website</span>
+    <span slot="header" class="flex">
+      <GlobeAlt class="w-6 h-6"/>
+      <Tr t={Translations.t.external.title}/>
+    </span>
   <ComparisonTable
     externalProperties={$externalData["success"]}
     {state}

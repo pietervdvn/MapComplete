@@ -22,6 +22,21 @@
     width: unset;
 }
 
+
+
+.mapping-icon-small-width {
+    width: 1.5rem;
+}
+
+.mapping-icon-medium-width {
+    width: 3rem;
+}
+
+.mapping-icon-large-width {
+    width: 5rem;
+}
+
+
 .mapping-icon-small {
     /* A mapping icon type */
     width: 1.5rem;

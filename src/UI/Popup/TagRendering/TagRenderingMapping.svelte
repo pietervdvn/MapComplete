@@ -7,6 +7,7 @@
   import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
   import { twJoin } from "tailwind-merge"
   import Icon from "../../Map/Icon.svelte"
+  import Marker from "../../Map/Marker.svelte"
 
   export let selectedElement: Feature
   export let tags: UIEventSource<Record<string, string>>
@@ -30,13 +31,22 @@
       | "large-height"
       | string
   }
+  function iconToMarker(spec: string) {
+    return spec.split(";").map(subspec => {
+      const [icon, color] = subspec.split(":")
+      return {
+        icon, color: color ?? "black"
+      }
+    })
+  }
 </script>
 
 {#if mapping.icon !== undefined}
   <div class="inline-flex items-center">
-    <Icon
-      icon={mapping.icon}
-      clss={twJoin(`mapping-icon-${mapping.iconClass ?? "small"}`, "mr-2")}
+    <Marker
+      icons={iconToMarker(mapping.icon)}
+      size={twJoin(`mapping-icon-${mapping.iconClass ?? "small"}-height mapping-icon-${mapping.iconClass ?? "small"}-width`, "mr-2", "shrink-0 mx-2")}
+      clss={`mapping-icon-${mapping.iconClass ?? "small"}`}
     />
     <SpecialTranslation t={mapping.then} {tags} {state} {layer} feature={selectedElement} {clss} />
   </div>

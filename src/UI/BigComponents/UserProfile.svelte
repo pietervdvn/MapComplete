@@ -41,13 +41,13 @@
         class="link-no-underline flex items-center self-end"
       >
         <PencilAltIcon slot="image" class="h-8 w-8 p-2" />
-        <Tr slot="message" t={Translations.t.userinfo.editDescription} />
+        <Tr t={Translations.t.userinfo.editDescription} />
       </a>
     {:else}
       <Tr t={Translations.t.userinfo.noDescription} />
       <a href={osmConnection.Backend() + "/profile/edit"} target="_blank" class="flex items-center">
-        <PencilAltIcon slot="image" class="h-8 w-8 p-2" />
-        <Tr slot="message" t={Translations.t.userinfo.noDescriptionCallToAction} />
+        <Pencil class="h-8 w-8 p-2" />
+        <Tr t={Translations.t.userinfo.noDescriptionCallToAction} />
       </a>
     {/if}
   </div>

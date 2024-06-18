@@ -93,7 +93,7 @@
         <Tr t={t.currentLicense.Subs({ license: $licenseStore })} />
       </button>
       <br />
-      <Tr t={t.respectPrivacy} />
+      <Tr cls="subtle italic" t={t.respectPrivacy} />
     </div>
   </div>
 </LoginToggle>

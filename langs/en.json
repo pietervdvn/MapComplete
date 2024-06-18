@@ -65,7 +65,8 @@
             "title": "Missing items"
         },
         "noDataLoaded": "The external website has no linked data that could be loaded",
-        "overwrite": "Overwrite in OpenStreetMap"
+        "overwrite": "Overwrite in OpenStreetMap",
+        "title": "Structured data loaded from the external website"
     },
     "favourite": {
         "loginNeeded": "<h3>Log in</h3>A personal layout is only available for OpenStreetMap users",
