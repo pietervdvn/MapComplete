@@ -77,6 +77,7 @@
   import ArrowDownTray from "@babeard/svelte-heroicons/mini/ArrowDownTray"
   import Share from "@babeard/svelte-heroicons/solid/Share"
   import ChevronRight from "@babeard/svelte-heroicons/solid/ChevronRight"
+  import DocumentChartBar from "@babeard/svelte-heroicons/outline/DocumentChartBar"
 
   export let state: ThemeViewState
   let layout = state.layout
@@ -583,6 +584,11 @@
           <a class="flex" href="https://github.com/pietervdvn/MapComplete/issues" target="_blank">
             <Bug class="h-6 w-6" />
             <Tr t={Translations.t.general.attribution.openIssueTracker} />
+          </a>
+
+          <a class="flex" href={"https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Themes/"+layout.id+".md"} target="_blank">
+            <DocumentChartBar class="h-6 w-6"/>
+            <Tr t={Translations.t.general.attribution.openThemeDocumentation.Subs({name: layout.title})}/>
           </a>
 
           <a class="flex" href="https://en.osm.town/@MapComplete" target="_blank">

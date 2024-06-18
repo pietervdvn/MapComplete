@@ -200,6 +200,7 @@
             "openIssueTracker": "File a bug",
             "openMapillary": "Open Mapillary here",
             "openOsmcha": "See latest edits made with {theme}",
+            "openThemeDocumentation": "Open the documentation for thematic map {name}",
             "seeOnMapillary": "See this image on Mapillary",
             "themeBy": "Theme maintained by {author}",
             "title": "Copyright and attribution",
