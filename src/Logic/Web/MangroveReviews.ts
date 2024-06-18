@@ -77,6 +77,9 @@ export class MangroveIdentity {
 
     private geoReviewsById: Store<(Review & { kid: string; signature: string })[]> = undefined
 
+    /**
+     * Subset of `getAllReviews()` which contains all reviews which use the `geo:` as URL
+     */
     public getGeoReviews(): Store<(Review & { kid: string; signature: string })[] | undefined> {
         if (!this.geoReviewsById) {
             this.geoReviewsById = this.getAllReviews().mapD((reviews) =>
@@ -205,19 +208,21 @@ export default class FeatureReviews {
 
         this.subjectUri.addCallbackAndRunD(async (sub) => {
             const reviews = await MangroveReviews.getReviews({ sub })
-            this.addReviews(reviews.reviews)
-        })
+            console.log("Got reviews for", feature, reviews, sub)
+            this.addReviews(reviews.reviews, this._name.data)
+        }, [this._name])
         /* We also construct all subject queries _without_ encoding the name to work around a previous bug
          * See https://github.com/giggls/opencampsitemap/issues/30
          */
-        this.ConstructSubjectUri(true).addCallbackAndRunD(async (sub) => {
+        this.ConstructSubjectUri(true).mapD(async (sub) => {
             try {
                 const reviews = await MangroveReviews.getReviews({ sub })
-                this.addReviews(reviews.reviews)
+                console.log("Got reviews (no-encode) for", feature, reviews, sub)
+                this.addReviews(reviews.reviews, this._name.data)
             } catch (e) {
                 console.log("Could not fetch reviews for partially incorrect query ", sub)
             }
-        })
+        }, [this._name])
         this.average = this._reviews.map((reviews) => {
             if (!reviews) {
                 return null
@@ -311,11 +316,12 @@ export default class FeatureReviews {
     }
 
     /**
-     * Adds given reviews to the 'reviews'-UI-eventsource
+     * Adds given reviews to the 'reviews'-UI-eventsource, if they match close enough.
+     * We assume only geo-reviews are passed in (as they should be queried using the 'geo'-part)
      * @param reviews
      * @private
      */
-    private addReviews(reviews: { payload: Review; kid: string; signature: string }[]) {
+    private addReviews(reviews: { payload: Review; kid: string; signature: string }[], expectedName: string) {
         const alreadyKnown = new Set(this._reviews.data.map((r) => r.rating + " " + r.opinion))
 
         let hasNew = false
@@ -324,21 +330,32 @@ export default class FeatureReviews {
 
             try {
                 const url = new URL(review.sub)
-                if (url.protocol === "geo:") {
-                    const coordinate = <[number, number]>(
-                        url.pathname.split(",").map((n) => Number(n))
-                    )
-                    const distance = GeoOperations.distanceBetween(
-                        [this._lat, this._lon],
-                        coordinate
-                    )
-                    if (distance > this._uncertainty) {
-                        continue
-                    }
+                if (url.protocol !== "geo:") {
+                    continue
+                }
+                const coordinate = <[number, number]>(
+                    url.pathname.split(",").map((n) => Number(n))
+                )
+                const distance = GeoOperations.distanceBetween(
+                    [this._lat, this._lon],
+                    coordinate
+                )
+                if (distance > this._uncertainty) {
+                    continue
+                }
+                const nameUrl =  url.searchParams.get("q")
+                const distanceName = Utils.levenshteinDistance(nameUrl.toLowerCase(), expectedName.toLowerCase()) / expectedName.length
+
+                if(distanceName > 0.25){
+                    // Then name is wildly different
+                    continue
                 }
             } catch (e) {
                 console.warn(e)
+                // Not a valid URL, ignore this review
+                continue
             }
+
 
             const key = review.rating + " " + review.opinion
             if (alreadyKnown.has(key)) {
