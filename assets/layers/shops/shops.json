@@ -439,22 +439,26 @@
         ]
       },
       "question": {
-        "en": "Does this shop offer a binding service?"
+        "en": "Does this shop offer a binding service?",
+        "de": "Bietet dieser Laden einen Bindeservice an?"
       },
       "questionHint": {
-        "en": "Does this shop bind a bundle of pages into a small book, e.g. with a comb, a spiral, wire or by gluing?"
+        "en": "Does this shop bind a bundle of pages into a small book, e.g. with a comb, a spiral, wire or by gluing?",
+        "de": "Bindet dieser Laden ein Bündel von Seiten zu einem kleinen Buch, z.B. mit einer Kamm-, Spiral-, Drahtbindung oder durch Kleben?"
       },
       "mappings": [
         {
           "if": "service:binding=yes",
           "then": {
-            "en": "This shop binds papers into a booklet"
+            "en": "This shop binds papers into a booklet",
+            "de": "Dieser Laden bindet Papiere zu einem Heft"
           }
         },
         {
           "if": "service:binding=no",
           "then": {
-            "en": "This shop does bind books"
+            "en": "This shop does bind books",
+            "de": "Dieser Laden bindet Bücher"
           }
         }
       ]
