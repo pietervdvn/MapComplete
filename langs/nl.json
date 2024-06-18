@@ -605,10 +605,10 @@
     },
     "reviews": {
         "affiliated_reviewer_warning": "(Review door betrokkene)",
-        "attribution": "De beoordelingen worden voorzien door <a href='https://mangrove.reviews/' target='_blank'>Mangrove Reviews</a> en zijn beschikbaar onder de<a href='https://mangrove.reviews/terms#8-licensing-of-content' target='_blank'>CC-BY 4.0-licentie</a>. ",
+        "attribution": "Via <a href='https://mangrove.reviews/' target='_blank'>Mangrove Reviews</a>",
         "i_am_affiliated": "<span>Ik ben persoonlijk betrokken</span><br/><span class='subtle'>Vink aan indien je de oprichter, maker, werknemer, ... of dergelijke bent</span>",
         "name_required": "De naam van dit object moet gekend zijn om een review te kunnen maken",
-        "no_reviews_yet": "Er zijn nog geen beoordelingen. Wees de eerste om een beoordeling te schrijven en help open data en het bedrijf!",
+        "no_reviews_yet": "Er zijn nog geen beoordelingen. Wees de eerste!",
         "save": "Opslaan",
         "saved": "Bedankt om je beoordeling te delen!",
         "saving_review": "Opslaan...",
