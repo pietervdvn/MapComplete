@@ -76,7 +76,7 @@
   </div>
 {:else}
   <div
-    class="selected-element-view flex h-full w-full flex-col gap-y-2 overflow-y-auto p-1 px-4"
+    class="selected-element-view flex h-full w-full flex-col gap-y-1 overflow-y-auto p-1 px-4"
     tabindex="-1"
   >
     {#each $knownTagRenderings as config (config.id)}

@@ -114,7 +114,7 @@
     <Tr t={t.allIncluded.Subs({ source: sourceUrl })} />
   </div>
 {:else}
-  <div class="low-interaction border-interactive p-1">
+  <div class="low-interaction p-1">
     {#if !readonly}
       <Tr t={t.loadedFrom.Subs({ url: sourceUrl, source: sourceUrl })} />
     {/if}

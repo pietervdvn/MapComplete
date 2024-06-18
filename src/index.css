@@ -17,6 +17,9 @@
     * For a custom styling, set 'customCss' in your layoutConfig and overwrite some of these.
     */
 
+    /* No support for dark mode yet, we disable it to prevent some elements to suddenly toggle */
+    color-scheme: only light;
+
   /* Main color of the application: the background and text colours */
   --background-color: white;
   /* Main text colour. Also styles some elements, such as the 'close popup'-button or 'back-arrow' (in mobile) */
@@ -112,7 +115,7 @@ h1 {
 h2 {
   font-size: x-large;
   margin-top: 0.5em;
-  margin-bottom: 0.3em;
+  margin-bottom: 0; /*Disable margin bottom to play nicely with accordeons from flowbite*/
   font-weight: bold;
 }
 
@@ -199,6 +202,10 @@ button, .button {
     background: var(--background-color);
     transition: all 200ms;
 
+}
+
+.group > button {
+    padding-right: 1rem !important; /*Flowbite workaround */
 }
 
 button.w-full {

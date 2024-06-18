@@ -130,30 +130,6 @@
     ]
   },
   {
-    "path": "camera-plus.svg",
-    "license": "CC-BY-SA-3.0",
-    "authors": [
-      "Dave Gandy",
-      "Pieter Vander Vennet"
-    ],
-    "sources": [
-      "https://fontawesome.com/",
-      "https://commons.wikimedia.org/wiki/File:Camera_font_awesome.svg"
-    ]
-  },
-  {
-    "path": "camera-plus.svg",
-    "license": "CC-BY-SA-3.0",
-    "authors": [
-      "Dave Gandy",
-      "Pieter Vander Vennet"
-    ],
-    "sources": [
-      "https://fontawesome.com/",
-      "https://commons.wikimedia.org/wiki/File:Camera_font_awesome.svg"
-    ]
-  },
-  {
     "path": "center.svg",
     "license": "CC0-1.0",
     "authors": [
@@ -322,14 +298,6 @@
     "sources": [
       "https://commons.wikimedia.org/wiki/File:Trash_font_awesome.svg\rT"
     ]
-  },
-  {
-    "path": "delete_not_allowed.svg",
-    "license": "CC0-1.0",
-    "authors": [
-      "Pieter Vander Vennet"
-    ],
-    "sources": []
   },
   {
     "path": "direction_gradient.svg",

@@ -18,6 +18,9 @@
   import Loading from "../../Base/Loading.svelte"
   import { DeleteFlowState } from "./DeleteFlowState"
   import { twJoin } from "tailwind-merge"
+  import AccordionSingle from "../../Flowbite/AccordionSingle.svelte"
+  import Trash from "@babeard/svelte-heroicons/mini/Trash"
+  import Invalid from "../../../assets/svg/Invalid.svelte"
 
   export let state: SpecialVisualizationState
   export let deleteConfig: DeleteConfig
@@ -35,7 +38,7 @@
   const canBeDeletedReason = deleteAbility.canBeDeletedReason
 
   const hasSoftDeletion = deleteConfig.softDeletionTags !== undefined
-  let currentState: "start" | "confirm" | "applying" | "deleted" = "start"
+  let currentState: "confirm" | "applying" | "deleted" = "confirm"
   $: {
     deleteAbility.CheckDeleteability(true)
   }
@@ -63,7 +66,7 @@
         deleteConfig.softDeletionTags,
         {
           theme: state?.layout?.id ?? "unknown",
-          specialMotivation: deleteReason,
+          specialMotivation: deleteReason
         },
         canBeDeleted.data
       )
@@ -71,7 +74,7 @@
       // no _delete_reason is given, which implies that this is _not_ a deletion but merely a retagging via a nonDeleteMapping
       actionToTake = new ChangeTagAction(featureId, selectedTags, tags.data, {
         theme: state?.layout?.id ?? "unkown",
-        changeType: "special-delete",
+        changeType: "special-delete"
       })
     }
 
@@ -84,23 +87,32 @@
 
 <LoginToggle ignoreLoading={true} {state}>
   {#if $canBeDeleted === false && !hasSoftDeletion}
-    <div class="low-interaction flex flex-col">
-      <Tr t={$canBeDeletedReason} />
-      <Tr cls="subtle" t={t.useSomethingElse} />
+    <div class="low-interaction rounded text-sm flex p-2 italic subtle gap-x-1">
+      <div class="relative h-fit">
+        <Trash class="w-8 h-8 pb-1" />
+        <Invalid class="absolute bottom-0 right-0 w-5 h-5"/>
+      </div>
+      <div class="flex flex-col">
+
+        <Tr t={t.cannotBeDeleted} />
+        <Tr t={$canBeDeletedReason} />
+        <Tr t={t.useSomethingElse} />
+      </div>
     </div>
-  {:else if currentState === "start"}
-    <button
-      class="w-full"
-      on:click={() => {
-        currentState = "confirm"
-      }}
-    >
+  {:else}
+
+
+    <AccordionSingle>
+      <span slot="header" class="flex">
+
       <TrashIcon class="h-6 w-6" />
       <Tr t={t.delete} />
-    </button>
-  {:else if currentState === "confirm"}
+      </span>
+      <span>
+          {#if currentState === "confirm"}
     <TagRenderingQuestion
       bind:selectedTags
+      clss=""
       {tags}
       config={deleteConfig.constructTagRendering()}
       {state}
@@ -123,11 +135,9 @@
         />
         <Tr t={t.delete} />
       </button>
-      <button slot="cancel" class="items-center" on:click={() => (currentState = "start")}>
-        <Tr t={t.cancel} />
-      </button>
 
-      <div slot="under-buttons">
+
+      <div slot="under-buttons" class="italic subtle">
         {#if selectedTags !== undefined}
           {#if canBeDeleted && isHardDelete}
             <!-- This is a hard delete - explain that this is a hard delete...-->
@@ -149,4 +159,9 @@
       <Tr t={t.isDeleted} />
     </div>
   {/if}
+      </span>
+    </AccordionSingle>
+
+  {/if}
+
 </LoginToggle>

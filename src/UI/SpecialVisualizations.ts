@@ -1776,6 +1776,11 @@ export default class SpecialVisualizations {
                     {
                         name: "mode",
                         doc: "If `display`, only show the data in tabular and readonly form, ignoring already existing tags. This is used to explicitly show all the tags. If unset or anything else, allow to apply/import on OSM"
+                    },
+                    {
+                        name: "collapsed",
+                        defaultValue: "yes",
+                        doc: "If the containing accordion should be closed"
                     }
                 ],
                 needsUrls: [Constants.linkedDataProxy, "http://www.schema.org"],
@@ -1789,6 +1794,7 @@ export default class SpecialVisualizations {
                     const key = argument[0] ?? "website"
                     const useProxy = argument[1] !== "no"
                     const readonly = argument[3] === "readonly"
+                    const isClosed = (arguments[4] ?? "yes") === "yes"
 
                     const url = tags
                         .mapD((tags) => {

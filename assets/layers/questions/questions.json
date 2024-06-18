@@ -16,7 +16,7 @@
       "id": "images",
       "description": "This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images",
       "render": {
-        "*": "{image_carousel()}{image_upload()}{nearby_images():my-4}"
+        "*": "{image_carousel()}{image_upload()}"
       },
       "classes": "my-4"
     },
@@ -1634,51 +1634,6 @@
       }
     },
     {
-      "id": "just_created",
-      "labels": [
-        "added_by_default"
-      ],
-      "description": "This element shows a 'thank you' that the contributor has recently created this element",
-      "classes": "rounded-xl thanks",
-      "mappings": [
-        {
-          "if": "id~*",
-          "icon": "./assets/svg/party.svg",
-          "then": {
-            "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
-            "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
-            "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
-            "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
-            "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
-            "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
-          }
-        }
-      ],
-      "condition": {
-        "and": [
-          "_backend~*",
-          "_last_edit:passed_time<300",
-          {
-            "or": [
-              "_version_number=",
-              "_version_number=1"
-            ]
-          }
-        ]
-      },
-      "metacondition": {
-        "and": [
-          {
-            "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
-            "or": [
-              "_last_edit:contributor:uid:={_uid}",
-              "_last_edit:contributor:uid="
-            ]
-          }
-        ]
-      }
-    },
-    {
       "id": "multilevels",
       "builtin": "single_level",
       "override": {
@@ -2628,12 +2583,82 @@
       ]
     },
     {
+      "id": "just_created",
+      "labels": [
+        "added_by_default_top"
+      ],
+      "description": "This element shows a 'thank you' that the contributor has recently created this element",
+      "classes": "rounded-xl thanks",
+      "mappings": [
+        {
+          "if": "id~*",
+          "icon": "./assets/svg/party.svg",
+          "then": {
+            "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+            "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+            "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+            "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+            "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
+            "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+          }
+        }
+      ],
+      "condition": {
+        "and": [
+          "_backend~*",
+          "_last_edit:passed_time<300",
+          {
+            "or": [
+              "_version_number=",
+              "_version_number=1"
+            ]
+          }
+        ]
+      },
+      "metacondition": {
+        "and": [
+          {
+            "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+            "or": [
+              "_last_edit:contributor:uid:={_uid}",
+              "_last_edit:contributor:uid="
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "nearby_images",
+      "labels": [
+        "added_by_default_conditional"
+      ],
+      "render": {
+        "*": "{nearby_images()}"
+      }
+    },
+    {
       "id": "lod",
       "labels": [
         "added_by_default"
       ],
       "render": {
         "*": "{linked_data_from_website()}"
+      }
+    },
+    {
+      "id": "split_button",
+      "#": "Added by syntactic sugar, no label needed",
+      "render": {
+        "*": "{split_button()}"
+      }
+    },
+    {
+      "id": "favourite_status",
+      "labels": [
+        "added_by_default"
+      ],
+      "render": {
+        "*": "{favourite_status()}"
       }
     },
     {
@@ -2709,7 +2734,7 @@
     {
       "id": "nothing_known",
       "labels": [
-        "added_by_default"
+        "added_by_default_top"
       ],
       "condition": {
         "and": [

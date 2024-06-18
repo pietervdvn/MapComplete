@@ -11,9 +11,9 @@
   import Tr from "../Base/Tr.svelte"
   import UploadingImageCounter from "./UploadingImageCounter.svelte"
   import FileSelector from "../Base/FileSelector.svelte"
-  import Camera_plus from "../../assets/svg/Camera_plus.svelte"
   import LoginButton from "../Base/LoginButton.svelte"
   import { Translation } from "../i18n/Translation"
+  import Camera from "@babeard/svelte-heroicons/solid/Camera"
 
   export let state: SpecialVisualizationState
 
@@ -73,7 +73,7 @@
         {#if image !== undefined}
           <img src={image} aria-hidden="true" />
         {:else}
-          <Camera_plus class="block h-12 w-12 p-1 text-4xl" aria-hidden="true" />
+          <Camera class="h-12 w-12 p-1" aria-hidden="true" />
         {/if}
         {#if labelText}
           {labelText}

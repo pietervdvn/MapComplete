@@ -52,10 +52,13 @@ async function main() {
         ])
         console.log("The available layers on server are", Array.from(availableLayers))
         const state = new ThemeViewState(layout, availableLayers)
+        const target =  document.getElementById("maindiv")
+        const childs = Array.from(target.children)
         new ThemeViewGUI({
-            target: document.getElementById("maindiv"),
+            target,
             props: { state },
         })
+        childs.forEach(ch => target.removeChild(ch))
         Array.from(document.getElementsByClassName("delete-on-load")).forEach((el) => {
             el.parentElement.removeChild(el)
         })

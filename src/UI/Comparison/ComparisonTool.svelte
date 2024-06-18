@@ -12,6 +12,7 @@
   import type { OsmTags } from "../../Models/OsmFeature"
   import Translations from "../i18n/Translations"
   import Tr from "../Base/Tr.svelte"
+  import AccordionSingle from "../Flowbite/AccordionSingle.svelte"
 
   export let externalData: Store<
     | { success: { content: Record<string, string> } }
@@ -25,6 +26,8 @@
   export let feature: Feature
   export let readonly = false
   export let sourceUrl: Store<string>
+
+  export let collapsed : boolean
 </script>
 
 {#if !$sourceUrl}
@@ -32,11 +35,12 @@
 {:else if $externalData === undefined}
   <Loading />
 {:else if $externalData["error"] !== undefined}
-  <div class="alert flex">
-    <Tr t={Translations.t.general.error} />
-    {$externalData["error"]}
+  <div class="subtle italic low-interaction p-2 px-4 rounded">
+    <Tr t={Translations.t.external.error} />
   </div>
 {:else if $externalData["success"] !== undefined}
+  <AccordionSingle>
+    <span slot="header">Structured data from the website</span>
   <ComparisonTable
     externalProperties={$externalData["success"]}
     {state}
@@ -46,4 +50,5 @@
     {readonly}
     sourceUrl={$sourceUrl}
   />
+  </AccordionSingle>
 {/if}

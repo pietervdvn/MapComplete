@@ -44,6 +44,8 @@
 
   export let allowDeleteOfFreeform: boolean = false
 
+  export let clss = "interactive border-interactive"
+
   let feedback: UIEventSource<Translation> = new UIEventSource<Translation>(undefined)
 
   let unit: Unit = layer?.units?.find((unit) => unit.appliesToKeys.has(config.freeform?.key))
@@ -308,9 +310,9 @@
 </script>
 
 {#if question !== undefined}
-  <div class="relative">
+  <div class={clss} >
     <form
-      class="interactive border-interactive relative flex flex-col overflow-y-auto px-2"
+      class="relative flex flex-col overflow-y-auto px-2"
       style="max-height: 75vh"
       on:submit|preventDefault={() => {
         /*onSave(); This submit is not needed and triggers to early, causing bugs: see #1808*/
@@ -318,7 +320,7 @@
     >
       <fieldset>
         <legend>
-          <div class="interactive sticky top-0 justify-between pt-1 font-bold" style="z-index: 11">
+          <div class="sticky top-0 justify-between pt-1 font-bold" style="z-index: 11">
             <SpecialTranslation t={question} {tags} {state} {layer} feature={selectedElement} />
           </div>
 
@@ -477,7 +479,7 @@
             </div>
           {/if}
           <div
-            class="interactive sticky bottom-0 flex flex-wrap-reverse items-stretch justify-end sm:flex-nowrap"
+            class="sticky bottom-0 flex flex-wrap-reverse items-stretch justify-end sm:flex-nowrap"
             style="z-index: 11"
           >
             <!-- TagRenderingQuestion-buttons -->

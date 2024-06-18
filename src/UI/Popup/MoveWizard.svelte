@@ -19,16 +19,21 @@
   import If from "../Base/If.svelte"
   import Constants from "../../Models/Constants"
   import LoginToggle from "../Base/LoginToggle.svelte"
+  import AccordionSingle from "../Flowbite/AccordionSingle.svelte"
+  import BackButton from "../Base/BackButton.svelte"
+  import ChevronLeft from "@babeard/svelte-heroicons/solid/ChevronLeft"
+  import ThemeViewState from "../../Models/ThemeViewState"
 
-  export let state: SpecialVisualizationState
+  export let state: ThemeViewState
 
   export let layer: LayerConfig
   export let featureToMove: Feature<Point>
 
   let id: string = featureToMove.properties.id
-  let currentStep: "start" | "reason" | "pick_location" | "moved" = "start"
+  let currentStep: "reason" | "pick_location" | "moved" = "reason"
   const t = Translations.t.move
-  const reason = new UIEventSource<MoveReason>(undefined)
+  let reason = new UIEventSource<MoveReason>(undefined)
+
   let [lon, lat] = GeoOperations.centerpointCoordinates(featureToMove)
 
   let newLocation = new UIEventSource<{ lon: number; lat: number }>(undefined)
@@ -42,11 +47,14 @@
       location: new UIEventSource({ lon, lat }),
       minzoom: new UIEventSource($reason.minZoom),
       rasterLayer: state.mapProperties.rasterLayer,
-      zoom: new UIEventSource($reason?.startZoom ?? 16),
+      zoom: new UIEventSource($reason?.startZoom ?? 16)
     }
   }
 
   let moveWizardState = new MoveWizardState(id, layer.allowMove, state)
+  if(moveWizardState.reasons.length === 1){
+    reason.setData(moveWizardState.reasons[0])
+  }
   let notAllowed = moveWizardState.moveDisallowedReason
   let currentMapProperties: MapProperties = undefined
 </script>
@@ -61,109 +69,91 @@
           <Tr t={$notAllowed} />
         </div>
       </div>
-    {:else if currentStep === "start"}
-      {#if moveWizardState.reasons.length === 1}
-        <button
-          class="w-full"
-          on:click={() => {
-            reason.setData(moveWizardState.reasons[0])
-            currentStep = "pick_location"
-          }}
-        >
-          <ToSvelte
-            construct={moveWizardState.reasons[0].icon.SetStyle("height: 1.5rem; width: 1.5rem;")}
-          />
-          <Tr t={Translations.T(moveWizardState.reasons[0].invitingText)} />
-        </button>
-      {:else}
-        <button
-          class="w-full"
-          on:click={() => {
-            currentStep = "reason"
-          }}
-        >
-          <Move class="h-6 w-6" />
-          <Tr t={t.inviteToMove.generic} />
-        </button>
-      {/if}
-    {:else if currentStep === "reason"}
-      <div class="interactive border-interactive flex flex-col p-2">
-        <Tr cls="text-lg font-bold" t={t.whyMove} />
-        {#each moveWizardState.reasons as reasonSpec}
-          <button
-            on:click={() => {
-              reason.setData(reasonSpec)
-              currentStep = "pick_location"
-            }}
-          >
-            <ToSvelte construct={reasonSpec.icon.SetClass("w-16 h-16 pr-2")} />
-            <Tr t={Translations.T(reasonSpec.text)} />
-          </button>
-        {/each}
-      </div>
-    {:else if currentStep === "pick_location"}
-      <div class="border-interactive interactive flex flex-col p-2">
-        <Tr cls="text-lg font-bold" t={t.moveTitle} />
-
-        <div class="relative h-64 w-full">
-          <LocationInput
-            mapProperties={(currentMapProperties = initMapProperties())}
-            value={newLocation}
-            initialCoordinate={{ lon, lat }}
-          />
-          <div class="absolute bottom-0 left-0">
-            <OpenBackgroundSelectorButton {state} />
-          </div>
-        </div>
-
-        {#if $reason.includeSearch}
-          <Geosearch bounds={currentMapProperties.bounds} clearAfterView={false} />
-        {/if}
-
-        <div class="flex flex-wrap">
-          <If
-            condition={currentMapProperties.zoom.mapD(
-              (zoom) => zoom >= Constants.minZoomLevelToAddNewPoint
-            )}
-          >
-            <button
-              class="primary  w-full"
-              on:click={() => {
-                moveWizardState.moveFeature(newLocation.data, reason.data, featureToMove)
-                currentStep = "moved"
+    {:else}
+      <AccordionSingle>
+        <span slot="header" class="flex">
+          {#if moveWizardState.reasons.length === 1}
+            <ToSvelte
+              construct={moveWizardState.reasons[0].icon.SetStyle("height: 1.5rem; width: 1.5rem;")}
+            />
+            <Tr t={Translations.T(moveWizardState.reasons[0].invitingText)} />
+          {:else}
+              <Move class="h-6 w-6" />
+              <Tr t={t.inviteToMove.generic} />
+          {/if}
+        </span>
+        <span class="flex flex-col p-2">
+          {#if currentStep === "reason" && moveWizardState.reasons.length > 1}
+            <Tr cls="text-lg font-bold" t={t.whyMove} />
+            {#each moveWizardState.reasons as reasonSpec}
+              <button
+                on:click={() => {
+                reason.setData(reasonSpec)
+                currentStep = "pick_location"
               }}
-            >
-              <Tr t={t.confirmMove} />
-            </button>
-
-            <div slot="else" class="alert">
-              <Tr t={t.zoomInFurther} />
+              >
+                <ToSvelte construct={reasonSpec.icon.SetClass("w-16 h-16 pr-2")} />
+                <Tr t={Translations.T(reasonSpec.text)} />
+              </button>
+            {/each}
+          {:else if currentStep === "pick_location" || currentStep === "reason"}
+            <div class="relative h-64 w-full">
+              <LocationInput
+                mapProperties={(currentMapProperties = initMapProperties())}
+                value={newLocation}
+                initialCoordinate={{ lon, lat }}
+              />
+              <div class="absolute bottom-0 left-0">
+                <OpenBackgroundSelectorButton {state} />
+              </div>
             </div>
-          </If>
 
-          <button
-            class="w-full"
-            on:click={() => {
-              currentStep = "start"
-            }}
-          >
-            <XCircleIcon class="mr-2 h-6 w-6" />
-            <Tr t={t.cancel} />
-          </button>
+            {#if $reason.includeSearch}
+              <Geosearch bounds={currentMapProperties.bounds} clearAfterView={false} />
+            {/if}
+
+            <div class="flex flex-wrap">
+              <If
+                condition={currentMapProperties.zoom.mapD(
+                (zoom) => zoom >= Constants.minZoomLevelToAddNewPoint
+              )}
+              >
+                <button
+                  class="primary  w-full"
+                  on:click={() => {
+                  moveWizardState.moveFeature(newLocation.data, reason.data, featureToMove)
+                  currentStep = "moved"
+                }}
+                >
+                  <Tr t={t.confirmMove} />
+                </button>
+
+                <div slot="else" class="alert w-full">
+                  <Tr t={t.zoomInFurther} />
+                </div>
+              </If>
+              {#if moveWizardState.reasons.length > 1}
+                <button class="w-full" on:click={() => {currentStep = "reason"}}>
+                  <ChevronLeft class="w-6 h-6" />
+                  <Tr t={t.cancel} />
+                </button>
+              {/if}
         </div>
-      </div>
-    {:else if currentStep === "moved"}
-      <div class="flex flex-col">
-        <Tr cls="thanks" t={t.pointIsMoved} />
-        <button
-          on:click={() => {
-            currentStep = "reason"
-          }}
-        >
-          <Move class="h-6 w-6 pr-2" />
-          <Tr t={t.inviteToMoveAgain} />
-        </button>
-      </div>
+          {:else if currentStep === "moved"}
+            <div class="flex flex-col">
+              <Tr cls="thanks" t={t.pointIsMoved} />
+              <button
+                on:click={() => {
+                currentStep = "reason"
+              }}
+              >
+                <Move class="h-6 w-6 pr-2" />
+                <Tr t={t.inviteToMoveAgain} />
+              </button>
+            </div>
+          {/if}
+        </span>
+      </AccordionSingle>
     {/if}
   {/if}
 </LoginToggle>

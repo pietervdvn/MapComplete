@@ -11,6 +11,8 @@
   import Camera_plus from "../../assets/svg/Camera_plus.svelte"
   import LoginToggle from "../Base/LoginToggle.svelte"
   import { ariaLabel } from "../../Utils/ariaLabel"
+  import { Accordion, AccordionItem } from "flowbite-svelte"
+  import AccordionSingle from "../Flowbite/AccordionSingle.svelte"
 
   export let tags: UIEventSource<OsmTags>
   export let state: SpecialVisualizationState
@@ -25,31 +27,10 @@
   let expanded = false
 </script>
 
-<div class="my-4">
-  {#if expanded}
-    <NearbyImages {tags} {state} {lon} {lat} {feature} {linkable} {layer}>
-      <button
-        slot="corner"
-        class="no-image-background h-6 w-6 cursor-pointer border-none p-0"
-        use:ariaLabel={t.close}
-        on:click={() => {
-          expanded = false
-        }}
-      >
-        <XCircleIcon />
-      </button>
-    </NearbyImages>
-  {:else}
-    <button
-      class="flex w-full items-center"
-      style="margin-left: 0; margin-right: 0"
-      on:click={() => {
-        expanded = true
-      }}
-      aria-expanded={expanded}
-    >
-      <Camera_plus class="mr-2 block h-8 w-8 p-1" />
+<AccordionSingle>
+   <span slot="header" class="text-base p-2">
       <Tr t={t.seeNearby} />
-    </button>
-  {/if}
-</div>
+    </span>
+  <NearbyImages {tags} {state} {lon} {lat} {feature} {linkable} {layer} />
+</AccordionSingle>
+

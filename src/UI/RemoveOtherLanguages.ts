@@ -22,6 +22,7 @@ function filterLangs(maindiv) {
             continue
         }
         if (childLang.value === lang) {
+            child.style.display = ""
             continue
         }
         child.parentElement.removeChild(child)

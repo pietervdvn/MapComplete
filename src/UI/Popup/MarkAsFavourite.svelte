@@ -26,7 +26,7 @@
 <LoginToggle ignoreLoading={true} {state}>
   {#if $isFavourite}
     <div class="flex h-fit items-start">
-        <button  on:click={() => markFavourite(false)}>
+        <button class="w-full"  on:click={() => markFavourite(false)}>
           <HeartSolidIcon class="mr-2 w-16 shrink-0" on:click={() => markFavourite(false)} />
           <div class="flex flex-col items-start">
           <Tr t={t.button.unmark} />
@@ -36,7 +36,7 @@
       </div>
     <Tr cls="font-bold thanks m-2 p-2 block" t={t.button.isFavourite} />
   {:else}
-      <button on:click={() => markFavourite(true)}>
+      <button class="w-full" on:click={() => markFavourite(true)}>
         <HeartOutlineIcon class="mr-2 w-16 shrink-0" on:click={() => markFavourite(true)} />
         <div class="flex w-full flex-col items-start">
 

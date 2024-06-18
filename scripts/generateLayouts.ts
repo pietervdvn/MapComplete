@@ -243,11 +243,17 @@ class GenerateLayouts extends Script {
 
     asLangSpan(t: Translation, tag = "span"): string {
         const values: string[] = []
+        let defaultSet = false
         for (const lang in t.translations) {
             if (lang === "_context") {
                 continue
             }
-            values.push(`<${tag} lang="${lang}">${t.translations[lang]}</${tag}>`)
+            let display = ' style="display: none"'
+            if(!defaultSet){
+                display = ""
+                defaultSet = true
+            }
+            values.push(`<${tag} lang="${lang}"${display}>${t.translations[lang]}</${tag}>`)
         }
         return values.join("\n")
     }

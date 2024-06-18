@@ -5,6 +5,10 @@ import { ConversionContext } from "./ConversionContext"
 
 export interface DesugaringContext {
     tagRenderings: Map<string, QuestionableTagRenderingConfigJson>
+    /**
+     * Order of appearance in questions.json
+     */
+    tagRenderingOrder: string[]
     sharedLayers: Map<string, LayerConfigJson>
     publicLayers?: Set<string>
 }
