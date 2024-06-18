@@ -13,7 +13,7 @@ export default {
       }
     },
     "multiAnswer": {
-      "description": "If true, use checkboxes instead of radio buttons when asking the question\n\nquestion: Should a contributor be allowed to select multiple mappings?\n\niftrue: allow to select multiple mappings\niffalse: only allow to select a single mapping\nifunset: only allow to select a single mapping",
+      "description": "question: Should a contributor be allowed to select multiple mappings?\n\nIf true, use checkboxes instead of radio buttons when asking the question.\n\niftrue: allow to select multiple mappings (and show a freeform-value as list if ';'-separated)\niffalse: only allow to select a single mapping\nifunset: only allow to select a single mapping",
       "type": "boolean"
     },
     "freeform": {
@@ -38,11 +38,6 @@ export default {
               "type": "string"
             }
           ]
-        },
-        "helperArgs": {
-          "description": "Extra parameters to initialize the input helper arguments.\nFor semantics, see the 'SpecialInputElements.md'\ngroup: expert",
-          "type": "array",
-          "items": {}
         },
         "addExtraTags": {
           "description": "If a value is added with the textfield, these extra tag is addded.\nUseful to add a 'fixme=freeform textfield used - to be checked'\ngroup: expert",
@@ -72,6 +67,10 @@ export default {
               "type": "string"
             }
           ]
+        },
+        "postfixDistinguished": {
+          "description": "question: If this key shared and distinguished by a postfix, what is the postfix?\nThis option is used specifically for `charge`, where the cost is indicated with `/item`.\n\nFor example, a vending machine might sell `bicycle_tube`.\nSetting this value to `bicycle_tube`, then answering this question will set `charge= €XX/bicycle_tube`.\nIf charge did already contain another value, e.g. `charge= €YY/some_item; €ZZ/other_item`, then `€XX/bicycle_tube`will be added.\nNote: those values are sorted alphabetically\nNote: no need to add the `/`\n\nifunset: Don't distinguish by postfix\ngroup: expert",
+          "type": "string"
         }
       }
     },
@@ -385,7 +384,7 @@ export default {
       "type": "object",
       "properties": {
         "icon": {
-          "description": "question: What icon should be used?\ntype: icon\nsuggestions: return Constants.defaultPinIcons.map(i => ({if: \"value=\"+i, then: i, icon: i}))",
+          "description": "question: What icon should be used?\ntype: icon\ntypes: Use a dynamic value ; icon\nsuggestions: return Constants.defaultPinIcons.map(i => ({if: \"value=\"+i, then: i, icon: i}))",
           "anyOf": [
             {
               "$ref": "#/definitions/MinimalTagRenderingConfigJson"
@@ -409,7 +408,7 @@ export default {
           ]
         },
         "color": {
-          "description": "question: What colour should the icon be?\nThis will only work for the default icons such as `pin`,`circle`,...\ntype: color",
+          "description": "question: What colour should the icon be?\nThis will only work for the default icons such as `pin`,`circle`,...\ntype: color\ntypes: Use a dynamic color ; icon",
           "anyOf": [
             {
               "$ref": "#/definitions/MinimalTagRenderingConfigJson"

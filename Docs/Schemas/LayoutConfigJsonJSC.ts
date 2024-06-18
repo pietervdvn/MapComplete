@@ -297,10 +297,15 @@ export default {
     "enableNodeDatabase": {
       "description": "Enables tracking of all nodes when data is loaded.\nThis is useful for the 'ImportWay' and 'ConflateWay'-buttons who need this database.\n\nNote: this flag will be automatically set and can thus be ignored.\ngroup: hidden",
       "type": "boolean"
+    },
+    "enableMorePrivacy": {
+      "description": "question: Should this theme leak some location info when making changes?\n\nWhen a changeset is made, a 'distance to object'-class is written to the changeset.\nFor some particular themes and layers, this might leak too much information, and we want to obfuscate this\n\nifunset: Write 'change_within_x_m' as usual and if GPS is enabled\niftrue: Do not write 'change_within_x_m' and do not indicate that this was done by survey",
+      "type": "boolean"
     }
   },
   "required": [
     "description",
+    "enableMorePrivacy",
     "icon",
     "id",
     "layers",
@@ -468,7 +473,7 @@ export default {
       "type": "object",
       "properties": {
         "icon": {
-          "description": "question: What icon should be used?\ntype: icon\nsuggestions: return Constants.defaultPinIcons.map(i => ({if: \"value=\"+i, then: i, icon: i}))",
+          "description": "question: What icon should be used?\ntype: icon\ntypes: Use a dynamic value ; icon\nsuggestions: return Constants.defaultPinIcons.map(i => ({if: \"value=\"+i, then: i, icon: i}))",
           "anyOf": [
             {
               "$ref": "#/definitions/MinimalTagRenderingConfigJson"
@@ -492,7 +497,7 @@ export default {
           ]
         },
         "color": {
-          "description": "question: What colour should the icon be?\nThis will only work for the default icons such as `pin`,`circle`,...\ntype: color",
+          "description": "question: What colour should the icon be?\nThis will only work for the default icons such as `pin`,`circle`,...\ntype: color\ntypes: Use a dynamic color ; icon",
           "anyOf": [
             {
               "$ref": "#/definitions/MinimalTagRenderingConfigJson"
@@ -1099,7 +1104,7 @@ export default {
           }
         },
         "multiAnswer": {
-          "description": "If true, use checkboxes instead of radio buttons when asking the question\n\nquestion: Should a contributor be allowed to select multiple mappings?\n\niftrue: allow to select multiple mappings\niffalse: only allow to select a single mapping\nifunset: only allow to select a single mapping",
+          "description": "question: Should a contributor be allowed to select multiple mappings?\n\nIf true, use checkboxes instead of radio buttons when asking the question.\n\niftrue: allow to select multiple mappings (and show a freeform-value as list if ';'-separated)\niffalse: only allow to select a single mapping\nifunset: only allow to select a single mapping",
           "type": "boolean"
         },
         "freeform": {
@@ -1124,11 +1129,6 @@ export default {
                   "type": "string"
                 }
               ]
-            },
-            "helperArgs": {
-              "description": "Extra parameters to initialize the input helper arguments.\nFor semantics, see the 'SpecialInputElements.md'\ngroup: expert",
-              "type": "array",
-              "items": {}
             },
             "addExtraTags": {
               "description": "If a value is added with the textfield, these extra tag is addded.\nUseful to add a 'fixme=freeform textfield used - to be checked'\ngroup: expert",
@@ -1158,6 +1158,10 @@ export default {
                   "type": "string"
                 }
               ]
+            },
+            "postfixDistinguished": {
+              "description": "question: If this key shared and distinguished by a postfix, what is the postfix?\nThis option is used specifically for `charge`, where the cost is indicated with `/item`.\n\nFor example, a vending machine might sell `bicycle_tube`.\nSetting this value to `bicycle_tube`, then answering this question will set `charge= €XX/bicycle_tube`.\nIf charge did already contain another value, e.g. `charge= €YY/some_item; €ZZ/other_item`, then `€XX/bicycle_tube`will be added.\nNote: those values are sorted alphabetically\nNote: no need to add the `/`\n\nifunset: Don't distinguish by postfix\ngroup: expert",
+              "type": "string"
             }
           }
         },
@@ -1324,7 +1328,7 @@ export default {
           }
         },
         "multiAnswer": {
-          "description": "If true, use checkboxes instead of radio buttons when asking the question\n\nquestion: Should a contributor be allowed to select multiple mappings?\n\niftrue: allow to select multiple mappings\niffalse: only allow to select a single mapping\nifunset: only allow to select a single mapping",
+          "description": "question: Should a contributor be allowed to select multiple mappings?\n\nIf true, use checkboxes instead of radio buttons when asking the question.\n\niftrue: allow to select multiple mappings (and show a freeform-value as list if ';'-separated)\niffalse: only allow to select a single mapping\nifunset: only allow to select a single mapping",
           "type": "boolean"
         },
         "freeform": {
@@ -1349,11 +1353,6 @@ export default {
                   "type": "string"
                 }
               ]
-            },
-            "helperArgs": {
-              "description": "Extra parameters to initialize the input helper arguments.\nFor semantics, see the 'SpecialInputElements.md'\ngroup: expert",
-              "type": "array",
-              "items": {}
             },
             "addExtraTags": {
               "description": "If a value is added with the textfield, these extra tag is addded.\nUseful to add a 'fixme=freeform textfield used - to be checked'\ngroup: expert",
@@ -1383,6 +1382,10 @@ export default {
                   "type": "string"
                 }
               ]
+            },
+            "postfixDistinguished": {
+              "description": "question: If this key shared and distinguished by a postfix, what is the postfix?\nThis option is used specifically for `charge`, where the cost is indicated with `/item`.\n\nFor example, a vending machine might sell `bicycle_tube`.\nSetting this value to `bicycle_tube`, then answering this question will set `charge= €XX/bicycle_tube`.\nIf charge did already contain another value, e.g. `charge= €YY/some_item; €ZZ/other_item`, then `€XX/bicycle_tube`will be added.\nNote: those values are sorted alphabetically\nNote: no need to add the `/`\n\nifunset: Don't distinguish by postfix\ngroup: expert",
+              "type": "string"
             }
           }
         },
@@ -1559,6 +1562,7 @@ export default {
           ]
         },
         "subexpand": {
+          "description": "Used to expand a sublist.\nE.g. a target `rendering` is:\n\ne.g.\n{\n    rewrite: [\"{{x}}\", \"{{y}}\"],\n    into:[\n        [\"{{x}}\": \"some X\"],\n        [\"{{y}}\", [\"option 1\", \"option 2\"]]\n    ],\n    renderings:[\n        {\n            \"question\":\"Is {{x}}\",\n            \"mappings\": [\"if={{y}}\",then: \"...\"]\n        }\n    ]\n    subExpand: {\n        // The list with the key\n        \"mappings\":\n        // will be taken and multiplied by all possible values of\n        \"{{y}}\"\n        // Note that this implies that `into.[*].[{{y}}]` should be a list of items\n    }\n}\n\nExpansion will result in:\n{\n    question: \"Is some X\",\n    mappings: [{\"if=option 1\", then: \"...\"}, {\"if=option 2\", then: \"...\"}]\n}",
           "$ref": "#/definitions/Record<string,string[]>"
         },
         "renderings": {
@@ -2262,7 +2266,7 @@ export default {
           }
         },
         "syncSelection": {
-          "description": "If set, synchronizes whether or not this layer is enabled.\n\ngroup: advanced\nquestion: Should enabling/disabling the layer be saved (locally or in the cloud)?\nsuggestions: return [{if: \"value=no\", then: \"Don't save, always revert to the default\"}, {if: \"value=local\", then: \"Save selection in local storage\"}, {if: \"value=theme-only\", then: \"Save the state in the OSM-usersettings, but apply on this theme only (default)\"}, {if: \"value=global\", then: \"Save in OSM-usersettings and toggle on _all_ themes using this layer\"}]",
+          "description": "If set, synchronizes whether this layer is enabled.\n\ngroup: advanced\nquestion: Should enabling/disabling the layer be saved (locally or in the cloud)?\nsuggestions: return [{if: \"value=no\", then: \"Don't save, always revert to the default\"}, {if: \"value=local\", then: \"Save selection in local storage\"}, {if: \"value=theme-only\", then: \"Save the state in the OSM-usersettings, but apply on this theme only (default)\"}, {if: \"value=global\", then: \"Save in OSM-usersettings and toggle on _all_ themes using this layer\"}]",
           "enum": [
             "global",
             "local",
@@ -2277,6 +2281,10 @@ export default {
         },
         "fullNodeDatabase": {
           "description": "_Set automatically by MapComplete, please ignore_\n\ngroup: hidden",
+          "type": "boolean"
+        },
+        "enableMorePrivacy": {
+          "description": "question: Should a theme using this layer leak some location info when making changes?\n\nWhen a changeset is made, a 'distance to object'-class is written to the changeset.\nFor some particular themes and layers, this might leak too much information, and we want to obfuscate this\n\nifunset: Write 'change_within_x_m' as usual and if GPS is enabled\niftrue: Do not write 'change_within_x_m' and do not indicate that this was done by survey",
           "type": "boolean"
         }
       },
@@ -2680,7 +2688,7 @@ export default {
           }
         },
         "syncSelection": {
-          "description": "If set, synchronizes whether or not this layer is enabled.\n\ngroup: advanced\nquestion: Should enabling/disabling the layer be saved (locally or in the cloud)?\nsuggestions: return [{if: \"value=no\", then: \"Don't save, always revert to the default\"}, {if: \"value=local\", then: \"Save selection in local storage\"}, {if: \"value=theme-only\", then: \"Save the state in the OSM-usersettings, but apply on this theme only (default)\"}, {if: \"value=global\", then: \"Save in OSM-usersettings and toggle on _all_ themes using this layer\"}]",
+          "description": "If set, synchronizes whether this layer is enabled.\n\ngroup: advanced\nquestion: Should enabling/disabling the layer be saved (locally or in the cloud)?\nsuggestions: return [{if: \"value=no\", then: \"Don't save, always revert to the default\"}, {if: \"value=local\", then: \"Save selection in local storage\"}, {if: \"value=theme-only\", then: \"Save the state in the OSM-usersettings, but apply on this theme only (default)\"}, {if: \"value=global\", then: \"Save in OSM-usersettings and toggle on _all_ themes using this layer\"}]",
           "enum": [
             "global",
             "local",
@@ -2695,6 +2703,10 @@ export default {
         },
         "fullNodeDatabase": {
           "description": "_Set automatically by MapComplete, please ignore_\n\ngroup: hidden",
+          "type": "boolean"
+        },
+        "enableMorePrivacy": {
+          "description": "question: Should a theme using this layer leak some location info when making changes?\n\nWhen a changeset is made, a 'distance to object'-class is written to the changeset.\nFor some particular themes and layers, this might leak too much information, and we want to obfuscate this\n\nifunset: Write 'change_within_x_m' as usual and if GPS is enabled\niftrue: Do not write 'change_within_x_m' and do not indicate that this was done by survey",
           "type": "boolean"
         }
       }
