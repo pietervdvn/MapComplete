@@ -101,7 +101,7 @@ attribute | type | values which are supported by this layer
 This element shows a 'thank you' that the contributor has recently created this element
 _This tagrendering has no question and is thus read-only_
 
- - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/party.svg' style='width: 3rem; height: 3rem'> *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
 This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
 This tagrendering has labels 
 `added_by_default_top`
@@ -121,7 +121,7 @@ The question is `What is the name of this stop?`
 This rendering asks information about the property 
 [name](https://wiki.openstreetmap.org/wiki/Key:name)
 This is rendered with `This stop is called <b>{name}</b>`
- - *This stop has no name* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:noname' target='_blank'>noname</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:noname%3Dyes' target='_blank'>yes</a> & name=
+ -  *This stop has no name* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:noname' target='_blank'>noname</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:noname%3Dyes' target='_blank'>yes</a> & name=
 
 
 
@@ -137,9 +137,9 @@ _This tagrendering has no question and is thus read-only_
 
 The question is `Does this stop have a shelter?`
 
- - *This stop has a shelter* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:shelter' target='_blank'>shelter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shelter%3Dyes' target='_blank'>yes</a>
- - *This stop does <b>not</b> have a shelter* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:shelter' target='_blank'>shelter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shelter%3Dno' target='_blank'>no</a>
- - *This stop has a shelter, that's separately mapped* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:shelter' target='_blank'>shelter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shelter%3Dseparate' target='_blank'>separate</a>
+ -  *This stop has a shelter* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:shelter' target='_blank'>shelter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shelter%3Dyes' target='_blank'>yes</a>
+ -  *This stop does <b>not</b> have a shelter* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:shelter' target='_blank'>shelter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shelter%3Dno' target='_blank'>no</a>
+ -  *This stop has a shelter, that's separately mapped* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:shelter' target='_blank'>shelter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shelter%3Dseparate' target='_blank'>separate</a>
  - _This option cannot be chosen as answer_
 
 
@@ -148,9 +148,9 @@ The question is `Does this stop have a shelter?`
 
 The question is `Does this stop have a bench?`
 
- - *This stop has a bench* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bench' target='_blank'>bench</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bench%3Dyes' target='_blank'>yes</a>
- - *This stop does <b>not</b> have a bench* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bench' target='_blank'>bench</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bench%3Dno' target='_blank'>no</a>
- - *This stop has a bench, that's separately mapped* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bench' target='_blank'>bench</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bench%3Dseparate' target='_blank'>separate</a>
+ -  *This stop has a bench* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bench' target='_blank'>bench</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bench%3Dyes' target='_blank'>yes</a>
+ -  *This stop does <b>not</b> have a bench* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bench' target='_blank'>bench</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bench%3Dno' target='_blank'>no</a>
+ -  *This stop has a bench, that's separately mapped* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bench' target='_blank'>bench</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bench%3Dseparate' target='_blank'>separate</a>
  - _This option cannot be chosen as answer_
 
 
@@ -159,9 +159,9 @@ The question is `Does this stop have a bench?`
 
 The question is `Does this stop have a bin?`
 
- - *This stop has a bin* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bin' target='_blank'>bin</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bin%3Dyes' target='_blank'>yes</a>
- - *This stop does <b>not</b> have a bin* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bin' target='_blank'>bin</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bin%3Dno' target='_blank'>no</a>
- - *This stop has a bin, that's separately mapped* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bin' target='_blank'>bin</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bin%3Dseparate' target='_blank'>separate</a>
+ -  *This stop has a bin* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bin' target='_blank'>bin</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bin%3Dyes' target='_blank'>yes</a>
+ -  *This stop does <b>not</b> have a bin* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bin' target='_blank'>bin</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bin%3Dno' target='_blank'>no</a>
+ -  *This stop has a bin, that's separately mapped* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bin' target='_blank'>bin</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bin%3Dseparate' target='_blank'>separate</a>
  - _This option cannot be chosen as answer_
 
 
@@ -170,10 +170,10 @@ The question is `Does this stop have a bin?`
 
 The question is `Is this place accessible with a wheelchair?`
 
- - *This place is specially adapted for wheelchair users* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Ddesignated' target='_blank'>designated</a>
- - *This place is easily reachable with a wheelchair* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes' target='_blank'>yes</a>
- - *It is possible to reach this place in a wheelchair, but it is not easy* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dlimited' target='_blank'>limited</a>
- - *This place is not reachable with a wheelchair* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dno' target='_blank'>no</a>
+ -  *This place is specially adapted for wheelchair users* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Ddesignated' target='_blank'>designated</a>
+ -  *This place is easily reachable with a wheelchair* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes' target='_blank'>yes</a>
+ -  *It is possible to reach this place in a wheelchair, but it is not easy* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dlimited' target='_blank'>limited</a>
+ -  *This place is not reachable with a wheelchair* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dno' target='_blank'>no</a>
 
 
 
@@ -181,8 +181,8 @@ The question is `Is this place accessible with a wheelchair?`
 
 The question is `Does this stop have tactile paving?`
 
- - *This stop has tactile paving* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:tactile_paving' target='_blank'>tactile_paving</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tactile_paving%3Dyes' target='_blank'>yes</a>
- - *This stop does <b>not</b> have tactile paving* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:tactile_paving' target='_blank'>tactile_paving</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tactile_paving%3Dno' target='_blank'>no</a>
+ -  *This stop has tactile paving* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:tactile_paving' target='_blank'>tactile_paving</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tactile_paving%3Dyes' target='_blank'>yes</a>
+ -  *This stop does <b>not</b> have tactile paving* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:tactile_paving' target='_blank'>tactile_paving</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tactile_paving%3Dno' target='_blank'>no</a>
 
 
 
@@ -190,8 +190,8 @@ The question is `Does this stop have tactile paving?`
 
 The question is `Is this stop lit?`
 
- - *This stop is lit* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:lit' target='_blank'>lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:lit%3Dyes' target='_blank'>yes</a>
- - *This stop is <b>not</b> lit* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:lit' target='_blank'>lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:lit%3Dno' target='_blank'>no</a>
+ -  *This stop is lit* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:lit' target='_blank'>lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:lit%3Dyes' target='_blank'>yes</a>
+ -  *This stop is <b>not</b> lit* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:lit' target='_blank'>lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:lit%3Dno' target='_blank'>no</a>
 
 
 
@@ -199,14 +199,14 @@ The question is `Is this stop lit?`
 
 _This tagrendering has no question and is thus read-only_
 
- - *This stop has a departures board of unknown type* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:departures_board' target='_blank'>departures_board</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:departures_board%3Dyes' target='_blank'>yes</a>
+ -  *This stop has a departures board of unknown type* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:departures_board' target='_blank'>departures_board</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:departures_board%3Dyes' target='_blank'>yes</a>
  - _This option cannot be chosen as answer_
- - *This stop has a board showing realtime departure information* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:departures_board' target='_blank'>departures_board</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:departures_board%3Drealtime' target='_blank'>realtime</a>
- - *This stop has a board showing realtime departure information* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:passenger_information_display' target='_blank'>passenger_information_display</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:passenger_information_display%3Dyes' target='_blank'>yes</a>
+ -  *This stop has a board showing realtime departure information* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:departures_board' target='_blank'>departures_board</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:departures_board%3Drealtime' target='_blank'>realtime</a>
+ -  *This stop has a board showing realtime departure information* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:passenger_information_display' target='_blank'>passenger_information_display</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:passenger_information_display%3Dyes' target='_blank'>yes</a>
  - _This option cannot be chosen as answer_
- - *This stop has a timetable showing regular departures* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:departures_board' target='_blank'>departures_board</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:departures_board%3Dtimetable' target='_blank'>timetable</a>
- - *This stop has a timetable containing just the interval between departures* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:departures_board' target='_blank'>departures_board</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:departures_board%3Dinterval' target='_blank'>interval</a>
- - *This stop does <b>not</b> have a departures board* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:departures_board' target='_blank'>departures_board</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:departures_board%3Dno' target='_blank'>no</a>
+ -  *This stop has a timetable showing regular departures* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:departures_board' target='_blank'>departures_board</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:departures_board%3Dtimetable' target='_blank'>timetable</a>
+ -  *This stop has a timetable containing just the interval between departures* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:departures_board' target='_blank'>departures_board</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:departures_board%3Dinterval' target='_blank'>interval</a>
+ -  *This stop does <b>not</b> have a departures board* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:departures_board' target='_blank'>departures_board</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:departures_board%3Dno' target='_blank'>no</a>
 
 
 

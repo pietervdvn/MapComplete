@@ -85,7 +85,7 @@ attribute | type | values which are supported by this layer
 This element shows a 'thank you' that the contributor has recently created this element
 _This tagrendering has no question and is thus read-only_
 
- - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/party.svg' style='width: 3rem; height: 3rem'> *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
 This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
 This tagrendering has labels 
 `added_by_default_top`
@@ -111,15 +111,15 @@ _This tagrendering has no question and is thus read-only_
 
 The question is `For what kind of route is this marker?`
 
- - *This is a route marker for a bicycle route.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle' target='_blank'>bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle%3Dyes' target='_blank'>yes</a>
+ -  *This is a route marker for a bicycle route.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle' target='_blank'>bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle%3Dyes' target='_blank'>yes</a>
  - Unselecting this answer will add biycle=
- - *This is a route marker for a hiking route.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:hiking' target='_blank'>hiking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hiking%3Dyes' target='_blank'>yes</a>
+ -  *This is a route marker for a hiking route.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:hiking' target='_blank'>hiking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hiking%3Dyes' target='_blank'>yes</a>
  - Unselecting this answer will add hiking=
- - *This is a route marker for a mountain bike route.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:mtb' target='_blank'>mtb</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mtb%3Dyes' target='_blank'>yes</a>
+ -  *This is a route marker for a mountain bike route.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:mtb' target='_blank'>mtb</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mtb%3Dyes' target='_blank'>yes</a>
  - Unselecting this answer will add mtb=
- - *This is a route marker for a horse riding route.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:horse' target='_blank'>horse</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:horse%3Dyes' target='_blank'>yes</a>
+ -  *This is a route marker for a horse riding route.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:horse' target='_blank'>horse</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:horse%3Dyes' target='_blank'>yes</a>
  - Unselecting this answer will add horse=
- - *This is a route marker for a ski route.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:ski' target='_blank'>ski</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:ski%3Dyes' target='_blank'>yes</a>
+ -  *This is a route marker for a ski route.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:ski' target='_blank'>ski</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:ski%3Dyes' target='_blank'>yes</a>
  - Unselecting this answer will add ski=
 
 

@@ -99,7 +99,7 @@ attribute | type | values which are supported by this layer
 This element shows a 'thank you' that the contributor has recently created this element
 _This tagrendering has no question and is thus read-only_
 
- - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/party.svg' style='width: 3rem; height: 3rem'> *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
 This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
 This tagrendering has labels 
 `added_by_default_top`
@@ -145,7 +145,7 @@ The question is `What is the website of {title()}?`
 This rendering asks information about the property 
 [website](https://wiki.openstreetmap.org/wiki/Key:website)
 This is rendered with `<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>`
- - *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>* corresponds with contact:website~.+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/icons/website.svg' style='width: 3rem; height: 3rem'> *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>* corresponds with contact:website~.+
  - _This option cannot be chosen as answer_
 
 This tagrendering has labels 
@@ -157,7 +157,7 @@ The question is `What is the phone number of {title()}?`
 This rendering asks information about the property 
 [phone](https://wiki.openstreetmap.org/wiki/Key:phone)
 This is rendered with `<a href='tel:{phone}'>{phone}</a>`
- - *<a href='tel:{contact:phone}'>{contact:phone}</a>* corresponds with contact:phone~.+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/phone.svg' style='width: 3rem; height: 3rem'> *<a href='tel:{contact:phone}'>{contact:phone}</a>* corresponds with contact:phone~.+
  - _This option cannot be chosen as answer_
 
 This tagrendering has labels 
@@ -169,9 +169,9 @@ The question is `What is the email address of {title()}?`
 This rendering asks information about the property 
 [email](https://wiki.openstreetmap.org/wiki/Key:email)
 This is rendered with `<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>`
- - *<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>* corresponds with contact:email~.+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/envelope.svg' style='width: 3rem; height: 3rem'> *<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>* corresponds with contact:email~.+
  - _This option cannot be chosen as answer_
- - *<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>* corresponds with operator:email~.+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/envelope.svg' style='width: 3rem; height: 3rem'> *<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>* corresponds with operator:email~.+
  - _This option cannot be chosen as answer_
 
 This tagrendering has labels 
@@ -181,9 +181,9 @@ This tagrendering has labels
 
 The question is `What is the purpose of the animal shelter?`
 
- - *Animals are kept here until adopted by a new owner* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:purpose' target='_blank'>purpose</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:purpose%3Dadoption' target='_blank'>adoption</a>
- - *Animals are taken care of for the rest of their lives* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:purpose' target='_blank'>purpose</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:purpose%3Dsanctuary' target='_blank'>sanctuary</a>
- - *Injured animals are rehabilitated here until they can be released in nature again * corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:purpose' target='_blank'>purpose</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:purpose%3Drelease' target='_blank'>release</a>
+ -  *Animals are kept here until adopted by a new owner* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:purpose' target='_blank'>purpose</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:purpose%3Dadoption' target='_blank'>adoption</a>
+ -  *Animals are taken care of for the rest of their lives* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:purpose' target='_blank'>purpose</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:purpose%3Dsanctuary' target='_blank'>sanctuary</a>
+ -  *Injured animals are rehabilitated here until they can be released in nature again * corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:purpose' target='_blank'>purpose</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:purpose%3Drelease' target='_blank'>release</a>
 
 
 
@@ -193,9 +193,9 @@ The question is `What are the opening hours of {title()}?`
 This rendering asks information about the property 
 [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours)
 This is rendered with `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
- - *Only by appointment* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D"by appointment"' target='_blank'>"by appointment"</a>
+ -  *Only by appointment* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D"by appointment"' target='_blank'>"by appointment"</a>
  - _This option cannot be chosen as answer_
- - *Only by appointment* corresponds with opening_hours~^("by appointment"|by appointment)$
+ -  *Only by appointment* corresponds with opening_hours~^("by appointment"|by appointment)$
  - _This option cannot be chosen as answer_
 
 
@@ -206,11 +206,11 @@ The question is `Which animals are accepted here?`
 This rendering asks information about the property 
 [animal_shelter](https://wiki.openstreetmap.org/wiki/Key:animal_shelter)
 This is rendered with `{animal_shelter} is kept here`
- - *Dogs are kept here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:animal_shelter' target='_blank'>animal_shelter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:animal_shelter%3Ddog' target='_blank'>dog</a>
- - *Cats are kept here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:animal_shelter' target='_blank'>animal_shelter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:animal_shelter%3Dcat' target='_blank'>cat</a>
- - *Horses are kept here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:animal_shelter' target='_blank'>animal_shelter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:animal_shelter%3Dhorse' target='_blank'>horse</a>
- - *Birds are kept here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:animal_shelter' target='_blank'>animal_shelter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:animal_shelter%3Dbird' target='_blank'>bird</a>
- - *Wild animals are kept here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:animal_shelter' target='_blank'>animal_shelter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:animal_shelter%3Dwildlife' target='_blank'>wildlife</a>
+ -  *Dogs are kept here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:animal_shelter' target='_blank'>animal_shelter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:animal_shelter%3Ddog' target='_blank'>dog</a>
+ -  *Cats are kept here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:animal_shelter' target='_blank'>animal_shelter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:animal_shelter%3Dcat' target='_blank'>cat</a>
+ -  *Horses are kept here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:animal_shelter' target='_blank'>animal_shelter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:animal_shelter%3Dhorse' target='_blank'>horse</a>
+ -  *Birds are kept here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:animal_shelter' target='_blank'>animal_shelter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:animal_shelter%3Dbird' target='_blank'>bird</a>
+ -  *Wild animals are kept here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:animal_shelter' target='_blank'>animal_shelter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:animal_shelter%3Dwildlife' target='_blank'>wildlife</a>
 
 
 

@@ -83,7 +83,7 @@ attribute | type | values which are supported by this layer
 This element shows a 'thank you' that the contributor has recently created this element
 _This tagrendering has no question and is thus read-only_
 
- - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/party.svg' style='width: 3rem; height: 3rem'> *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
 This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
 This tagrendering has labels 
 `added_by_default_top`
@@ -109,9 +109,9 @@ _This tagrendering has no question and is thus read-only_
 
 The question is `Does this crossing has rainbow paintings?`
 
- - *This crossing has rainbow paintings* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:surface:colour' target='_blank'>surface:colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface:colour%3Drainbow' target='_blank'>rainbow</a>
- - *No rainbow paintings here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:not:surface:colour' target='_blank'>not:surface:colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:not:surface:colour%3Drainbow' target='_blank'>rainbow</a>
- - *No rainbow paintings here* corresponds with surface:colour!=rainbow
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/themes/rainbow_crossings/logo.svg' style='width: 3rem; height: 3rem'> *This crossing has rainbow paintings* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:surface:colour' target='_blank'>surface:colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface:colour%3Drainbow' target='_blank'>rainbow</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/themes/rainbow_crossings/crossing.svg' style='width: 3rem; height: 3rem'> *No rainbow paintings here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:not:surface:colour' target='_blank'>not:surface:colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:not:surface:colour%3Drainbow' target='_blank'>rainbow</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/themes/rainbow_crossings/crossing.svg' style='width: 3rem; height: 3rem'> *No rainbow paintings here* corresponds with surface:colour!=rainbow
  - _This option cannot be chosen as answer_
 
 

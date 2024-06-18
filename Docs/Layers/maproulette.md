@@ -86,7 +86,7 @@ attribute | type | values which are supported by this layer
 This element shows a 'thank you' that the contributor has recently created this element
 _This tagrendering has no question and is thus read-only_
 
- - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/party.svg' style='width: 3rem; height: 3rem'> *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
 This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
 This tagrendering has labels 
 `added_by_default_top`
@@ -104,14 +104,14 @@ This tagrendering has labels
 
 _This tagrendering has no question and is thus read-only_
 
- - *Task is created* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:status' target='_blank'>status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:status%3D0' target='_blank'>0</a>
- - *Task is fixed* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:status' target='_blank'>status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:status%3D1' target='_blank'>1</a>
- - *Task is a false positive* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:status' target='_blank'>status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:status%3D2' target='_blank'>2</a>
- - *Task is skipped* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:status' target='_blank'>status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:status%3D3' target='_blank'>3</a>
- - *Task is deleted* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:status' target='_blank'>status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:status%3D4' target='_blank'>4</a>
- - *Task is already fixed* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:status' target='_blank'>status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:status%3D5' target='_blank'>5</a>
- - *Task is marked as too hard* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:status' target='_blank'>status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:status%3D6' target='_blank'>6</a>
- - *Task is disabled* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:status' target='_blank'>status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:status%3D9' target='_blank'>9</a>
+ -  *Task is created* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:status' target='_blank'>status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:status%3D0' target='_blank'>0</a>
+ -  *Task is fixed* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:status' target='_blank'>status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:status%3D1' target='_blank'>1</a>
+ -  *Task is a false positive* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:status' target='_blank'>status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:status%3D2' target='_blank'>2</a>
+ -  *Task is skipped* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:status' target='_blank'>status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:status%3D3' target='_blank'>3</a>
+ -  *Task is deleted* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:status' target='_blank'>status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:status%3D4' target='_blank'>4</a>
+ -  *Task is already fixed* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:status' target='_blank'>status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:status%3D5' target='_blank'>5</a>
+ -  *Task is marked as too hard* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:status' target='_blank'>status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:status%3D6' target='_blank'>6</a>
+ -  *Task is disabled* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:status' target='_blank'>status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:status%3D9' target='_blank'>9</a>
 
 
 

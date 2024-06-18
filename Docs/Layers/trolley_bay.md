@@ -90,7 +90,7 @@ attribute | type | values which are supported by this layer
 This element shows a 'thank you' that the contributor has recently created this element
 _This tagrendering has no question and is thus read-only_
 
- - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/party.svg' style='width: 3rem; height: 3rem'> *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
 This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
 This tagrendering has labels 
 `added_by_default_top`
@@ -108,8 +108,8 @@ This tagrendering has labels
 
 The question is `Is this trolley bay covered?`
 
- - *This trolley bay is covered* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:covered' target='_blank'>covered</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:covered%3Dyes' target='_blank'>yes</a>
- - *This trolley bay is not covered* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:covered' target='_blank'>covered</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:covered%3Dno' target='_blank'>no</a>
+ -  *This trolley bay is covered* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:covered' target='_blank'>covered</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:covered%3Dyes' target='_blank'>yes</a>
+ -  *This trolley bay is not covered* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:covered' target='_blank'>covered</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:covered%3Dno' target='_blank'>no</a>
 
 
 
@@ -117,8 +117,8 @@ The question is `Is this trolley bay covered?`
 
 The question is `Is a deposit (e.g. a coin) required for the trolleys?`
 
- - *A deposit is required for the trolleys* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:trolley:deposit' target='_blank'>trolley:deposit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:trolley:deposit%3Dyes' target='_blank'>yes</a>
- - *No deposit is required for the trolleys* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:trolley:deposit' target='_blank'>trolley:deposit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:trolley:deposit%3Dno' target='_blank'>no</a>
+ -  *A deposit is required for the trolleys* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:trolley:deposit' target='_blank'>trolley:deposit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:trolley:deposit%3Dyes' target='_blank'>yes</a>
+ -  *No deposit is required for the trolleys* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:trolley:deposit' target='_blank'>trolley:deposit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:trolley:deposit%3Dno' target='_blank'>no</a>
 
 
 
@@ -126,9 +126,9 @@ The question is `Is a deposit (e.g. a coin) required for the trolleys?`
 
 The question is `What coins are accepted for the deposit?`
 
- - *50 cent coins are accepted* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:trolley:deposit:denominations' target='_blank'>trolley:deposit:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:trolley:deposit:denominations%3D0.50 EUR' target='_blank'>0.50 EUR</a>
- - *1 euro coins are accepted* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:trolley:deposit:denominations' target='_blank'>trolley:deposit:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:trolley:deposit:denominations%3D1 EUR' target='_blank'>1 EUR</a>
- - *2 euro coins are accepted* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:trolley:deposit:denominations' target='_blank'>trolley:deposit:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:trolley:deposit:denominations%3D2 EUR' target='_blank'>2 EUR</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/denominations/eur/50cent.svg' style='width: 3rem; height: 3rem'> *50 cent coins are accepted* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:trolley:deposit:denominations' target='_blank'>trolley:deposit:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:trolley:deposit:denominations%3D0.50 EUR' target='_blank'>0.50 EUR</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/denominations/eur/1euro.svg' style='width: 3rem; height: 3rem'> *1 euro coins are accepted* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:trolley:deposit:denominations' target='_blank'>trolley:deposit:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:trolley:deposit:denominations%3D1 EUR' target='_blank'>1 EUR</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/denominations/eur/2euro.svg' style='width: 3rem; height: 3rem'> *2 euro coins are accepted* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:trolley:deposit:denominations' target='_blank'>trolley:deposit:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:trolley:deposit:denominations%3D2 EUR' target='_blank'>2 EUR</a>
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:trolley:deposit' target='_blank'>trolley:deposit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:trolley:deposit%3Dyes' target='_blank'>yes</a> & _currency~^(.*EUR.*)$
 
 
@@ -136,17 +136,17 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is `What kind of special trolleys are available?`
 
- - *Trolleys with a magnifier are available* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:trolley:magnifier' target='_blank'>trolley:magnifier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:trolley:magnifier%3Dyes' target='_blank'>yes</a>
+ -  *Trolleys with a magnifier are available* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:trolley:magnifier' target='_blank'>trolley:magnifier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:trolley:magnifier%3Dyes' target='_blank'>yes</a>
  - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:trolley:magnifier' target='_blank'>trolley:magnifier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:trolley:magnifier%3Dno' target='_blank'>no</a>
- - *Trolleys for wheelchair users are available* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:trolley:wheelchair' target='_blank'>trolley:wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:trolley:wheelchair%3Dyes' target='_blank'>yes</a>
+ -  *Trolleys for wheelchair users are available* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:trolley:wheelchair' target='_blank'>trolley:wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:trolley:wheelchair%3Dyes' target='_blank'>yes</a>
  - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:trolley:wheelchair' target='_blank'>trolley:wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:trolley:wheelchair%3Dno' target='_blank'>no</a>
- - *Trolleys for children are available* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:trolley:children' target='_blank'>trolley:children</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:trolley:children%3Dyes' target='_blank'>yes</a>
+ -  *Trolleys for children are available* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:trolley:children' target='_blank'>trolley:children</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:trolley:children%3Dyes' target='_blank'>yes</a>
  - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:trolley:children' target='_blank'>trolley:children</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:trolley:children%3Dno' target='_blank'>no</a>
- - *Trolleys with seats for children are available* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:trolley:seats' target='_blank'>trolley:seats</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:trolley:seats%3Dyes' target='_blank'>yes</a>
+ -  *Trolleys with seats for children are available* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:trolley:seats' target='_blank'>trolley:seats</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:trolley:seats%3Dyes' target='_blank'>yes</a>
  - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:trolley:seats' target='_blank'>trolley:seats</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:trolley:seats%3Dno' target='_blank'>no</a>
- - *Trolleys with a flatbed are available* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:trolley:flatbed' target='_blank'>trolley:flatbed</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:trolley:flatbed%3Dyes' target='_blank'>yes</a>
+ -  *Trolleys with a flatbed are available* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:trolley:flatbed' target='_blank'>trolley:flatbed</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:trolley:flatbed%3Dyes' target='_blank'>yes</a>
  - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:trolley:flatbed' target='_blank'>trolley:flatbed</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:trolley:flatbed%3Dno' target='_blank'>no</a>
- - *Vertical trolleys for sheet-like goods are available* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:trolley:vertical' target='_blank'>trolley:vertical</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:trolley:vertical%3Dyes' target='_blank'>yes</a>
+ -  *Vertical trolleys for sheet-like goods are available* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:trolley:vertical' target='_blank'>trolley:vertical</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:trolley:vertical%3Dyes' target='_blank'>yes</a>
  - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:trolley:vertical' target='_blank'>trolley:vertical</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:trolley:vertical%3Dno' target='_blank'>no</a>
 
 

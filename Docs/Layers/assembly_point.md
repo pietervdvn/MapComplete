@@ -88,7 +88,7 @@ attribute | type | values which are supported by this layer
 This element shows a 'thank you' that the contributor has recently created this element
 _This tagrendering has no question and is thus read-only_
 
- - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/party.svg' style='width: 3rem; height: 3rem'> *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
 This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
 This tagrendering has labels 
 `added_by_default_top`
@@ -134,13 +134,13 @@ This is rendered with `This assembly point is operated by <b>{operator}</b>`
 
 The question is `For which disaster type is this assembly point meant?`
 
- - *Earthquake* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:assembly_point:earthquake' target='_blank'>assembly_point:earthquake</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:assembly_point:earthquake%3Dyes' target='_blank'>yes</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/assembly_point/earthquake.svg' style='width: 3rem; height: 3rem'> *Earthquake* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:assembly_point:earthquake' target='_blank'>assembly_point:earthquake</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:assembly_point:earthquake%3Dyes' target='_blank'>yes</a>
  - Unselecting this answer will add assembly_point:earthquake=
- - *Flood* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:assembly_point:flood' target='_blank'>assembly_point:flood</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:assembly_point:flood%3Dyes' target='_blank'>yes</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/assembly_point/flood.svg' style='width: 3rem; height: 3rem'> *Flood* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:assembly_point:flood' target='_blank'>assembly_point:flood</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:assembly_point:flood%3Dyes' target='_blank'>yes</a>
  - Unselecting this answer will add assembly_point:flood=
- - *Fire* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:assembly_point:fire' target='_blank'>assembly_point:fire</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:assembly_point:fire%3Dyes' target='_blank'>yes</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/assembly_point/fire.svg' style='width: 3rem; height: 3rem'> *Fire* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:assembly_point:fire' target='_blank'>assembly_point:fire</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:assembly_point:fire%3Dyes' target='_blank'>yes</a>
  - Unselecting this answer will add assembly_point:fire=
- - *Landslide* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:assembly_point:landslide' target='_blank'>assembly_point:landslide</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:assembly_point:landslide%3Dyes' target='_blank'>yes</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/assembly_point/landslide.svg' style='width: 3rem; height: 3rem'> *Landslide* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:assembly_point:landslide' target='_blank'>assembly_point:landslide</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:assembly_point:landslide%3Dyes' target='_blank'>yes</a>
  - Unselecting this answer will add assembly_point:landslide=
 
 

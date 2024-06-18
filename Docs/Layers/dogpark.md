@@ -97,7 +97,7 @@ attribute | type | values which are supported by this layer
 This element shows a 'thank you' that the contributor has recently created this element
 _This tagrendering has no question and is thus read-only_
 
- - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/party.svg' style='width: 3rem; height: 3rem'> *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
 This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
 This tagrendering has labels 
 `added_by_default_top`
@@ -143,8 +143,8 @@ The question is `What are the opening hours of {title()}?`
 This rendering asks information about the property 
 [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours)
 This is rendered with `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
- - *24/7 opened (including holidays)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
- - *Marked as closed for an unspecified time* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/open24_7.svg' style='width: 3rem; height: 3rem'> *24/7 opened (including holidays)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
+ -  *Marked as closed for an unspecified time* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>
  - _This option cannot be chosen as answer_
 
 
@@ -155,7 +155,7 @@ The question is `What is the website of {title()}?`
 This rendering asks information about the property 
 [website](https://wiki.openstreetmap.org/wiki/Key:website)
 This is rendered with `<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>`
- - *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>* corresponds with contact:website~.+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/icons/website.svg' style='width: 3rem; height: 3rem'> *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>* corresponds with contact:website~.+
  - _This option cannot be chosen as answer_
 
 This tagrendering has labels 
@@ -165,8 +165,8 @@ This tagrendering has labels
 
 The question is `It this dog park fenced in?`
 
- - *This dogpark is fenced all around* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:barrier' target='_blank'>barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dfence' target='_blank'>fence</a>
- - *This dogpark is not fenced all around* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:barrier' target='_blank'>barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dno' target='_blank'>no</a>
+ -  *This dogpark is fenced all around* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:barrier' target='_blank'>barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dfence' target='_blank'>fence</a>
+ -  *This dogpark is not fenced all around* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:barrier' target='_blank'>barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dno' target='_blank'>no</a>
 
 
 
@@ -174,8 +174,8 @@ The question is `It this dog park fenced in?`
 
 The question is `Does this dog park have a separate fenced in area for small dogs and puppies?`
 
- - *Have separate area for puppies and small dogs* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:small_dog' target='_blank'>small_dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:small_dog%3Dseparate' target='_blank'>separate</a>
- - *Does <strong>not</strong> have a separate area for puppies and small dogs* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:small_dog' target='_blank'>small_dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:small_dog%3Dshared' target='_blank'>shared</a>
+ -  *Have separate area for puppies and small dogs* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:small_dog' target='_blank'>small_dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:small_dog%3Dseparate' target='_blank'>separate</a>
+ -  *Does <strong>not</strong> have a separate area for puppies and small dogs* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:small_dog' target='_blank'>small_dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:small_dog%3Dshared' target='_blank'>shared</a>
 
 
 

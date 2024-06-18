@@ -102,7 +102,7 @@ attribute | type | values which are supported by this layer
 This element shows a 'thank you' that the contributor has recently created this element
 _This tagrendering has no question and is thus read-only_
 
- - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/party.svg' style='width: 3rem; height: 3rem'> *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
 This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
 This tagrendering has labels 
 `added_by_default_top`
@@ -128,10 +128,10 @@ _This tagrendering has no question and is thus read-only_
 
 The question is `In what way is the clock mounted?`
 
- - *This clock is mounted on a pole* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:support' target='_blank'>support</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:support%3Dpole' target='_blank'>pole</a>
- - *This clock is mounted on a wall* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:support' target='_blank'>support</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:support%3Dwall_mounted' target='_blank'>wall_mounted</a>
- - *This clock is part of a billboard* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:support' target='_blank'>support</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:support%3Dbillboard' target='_blank'>billboard</a>
- - *This clock is on the ground* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:support' target='_blank'>support</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:support%3Dground' target='_blank'>ground</a>
+ -  *This clock is mounted on a pole* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:support' target='_blank'>support</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:support%3Dpole' target='_blank'>pole</a>
+ -  *This clock is mounted on a wall* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:support' target='_blank'>support</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:support%3Dwall_mounted' target='_blank'>wall_mounted</a>
+ -  *This clock is part of a billboard* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:support' target='_blank'>support</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:support%3Dbillboard' target='_blank'>billboard</a>
+ -  *This clock is on the ground* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:support' target='_blank'>support</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:support%3Dground' target='_blank'>ground</a>
 
 
 
@@ -139,10 +139,10 @@ The question is `In what way is the clock mounted?`
 
 The question is `How does this clock display the time?`
 
- - *This clock displays the time with hands* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:display' target='_blank'>display</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:display%3Danalog' target='_blank'>analog</a>
- - *This clock displays the time with digits* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:display' target='_blank'>display</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:display%3Ddigital' target='_blank'>digital</a>
- - *This clock displays the time with a sundial* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:display' target='_blank'>display</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:display%3Dsundial' target='_blank'>sundial</a>
- - *This clock displays the time in a non-standard way, e.g using binary, water or something else* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:display' target='_blank'>display</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:display%3Dunorthodox' target='_blank'>unorthodox</a>
+ -  *This clock displays the time with hands* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:display' target='_blank'>display</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:display%3Danalog' target='_blank'>analog</a>
+ -  *This clock displays the time with digits* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:display' target='_blank'>display</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:display%3Ddigital' target='_blank'>digital</a>
+ -  *This clock displays the time with a sundial* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:display' target='_blank'>display</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:display%3Dsundial' target='_blank'>sundial</a>
+ -  *This clock displays the time in a non-standard way, e.g using binary, water or something else* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:display' target='_blank'>display</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:display%3Dunorthodox' target='_blank'>unorthodox</a>
 
 
 
@@ -150,9 +150,9 @@ The question is `How does this clock display the time?`
 
 The question is `How visible is this clock?`
 
- - *This clock is visible from about 5 meters away (small wall-mounted clock)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:visibility' target='_blank'>visibility</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:visibility%3Dhouse' target='_blank'>house</a>
- - *This clock is visible from about 20 meters away (medium size billboard clock)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:visibility' target='_blank'>visibility</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:visibility%3Dstreet' target='_blank'>street</a>
- - *This clock is visible from more than 20 meters away (e.g. a church clock or station clock)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:visibility' target='_blank'>visibility</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:visibility%3Darea' target='_blank'>area</a>
+ -  *This clock is visible from about 5 meters away (small wall-mounted clock)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:visibility' target='_blank'>visibility</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:visibility%3Dhouse' target='_blank'>house</a>
+ -  *This clock is visible from about 20 meters away (medium size billboard clock)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:visibility' target='_blank'>visibility</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:visibility%3Dstreet' target='_blank'>street</a>
+ -  *This clock is visible from more than 20 meters away (e.g. a church clock or station clock)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:visibility' target='_blank'>visibility</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:visibility%3Darea' target='_blank'>area</a>
 
 
 
@@ -160,9 +160,9 @@ The question is `How visible is this clock?`
 
 The question is `Does this clock also display the date?`
 
- - *This clock also displays the date* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:date' target='_blank'>date</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:date%3Dyes' target='_blank'>yes</a>
- - *This clock does not display the date* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:date' target='_blank'>date</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:date%3Dno' target='_blank'>no</a>
- - *This clock does probably not display the date* corresponds with date=
+ -  *This clock also displays the date* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:date' target='_blank'>date</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:date%3Dyes' target='_blank'>yes</a>
+ -  *This clock does not display the date* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:date' target='_blank'>date</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:date%3Dno' target='_blank'>no</a>
+ -  *This clock does probably not display the date* corresponds with date=
  - _This option cannot be chosen as answer_
 
 
@@ -171,9 +171,9 @@ The question is `Does this clock also display the date?`
 
 The question is `Does this clock also display the temperature?`
 
- - *This clock also displays the temperature* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:thermometer' target='_blank'>thermometer</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:thermometer%3Dyes' target='_blank'>yes</a>
- - *This clock does not display the temperature* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:thermometer' target='_blank'>thermometer</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:thermometer%3Dno' target='_blank'>no</a>
- - *This clock does probably not display the temperature* corresponds with thermometer=
+ -  *This clock also displays the temperature* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:thermometer' target='_blank'>thermometer</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:thermometer%3Dyes' target='_blank'>yes</a>
+ -  *This clock does not display the temperature* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:thermometer' target='_blank'>thermometer</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:thermometer%3Dno' target='_blank'>no</a>
+ -  *This clock does probably not display the temperature* corresponds with thermometer=
  - _This option cannot be chosen as answer_
 
 
@@ -182,9 +182,9 @@ The question is `Does this clock also display the temperature?`
 
 The question is `Does this clock also display the air pressure?`
 
- - *This clock also displays the air pressure* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:barometer' target='_blank'>barometer</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barometer%3Dyes' target='_blank'>yes</a>
- - *This clock does not display the air pressure* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:barometer' target='_blank'>barometer</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barometer%3Dno' target='_blank'>no</a>
- - *This clock does probably not display the air pressure* corresponds with barometer=
+ -  *This clock also displays the air pressure* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:barometer' target='_blank'>barometer</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barometer%3Dyes' target='_blank'>yes</a>
+ -  *This clock does not display the air pressure* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:barometer' target='_blank'>barometer</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barometer%3Dno' target='_blank'>no</a>
+ -  *This clock does probably not display the air pressure* corresponds with barometer=
  - _This option cannot be chosen as answer_
 
 
@@ -193,9 +193,9 @@ The question is `Does this clock also display the air pressure?`
 
 The question is `Does this clock also display the humidity?`
 
- - *This clock also displays the humidity* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:hygrometer' target='_blank'>hygrometer</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hygrometer%3Dyes' target='_blank'>yes</a>
- - *This clock does not display the humidity* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:hygrometer' target='_blank'>hygrometer</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hygrometer%3Dno' target='_blank'>no</a>
- - *This clock does probably not display the humidity* corresponds with hygrometer=
+ -  *This clock also displays the humidity* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:hygrometer' target='_blank'>hygrometer</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hygrometer%3Dyes' target='_blank'>yes</a>
+ -  *This clock does not display the humidity* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:hygrometer' target='_blank'>hygrometer</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hygrometer%3Dno' target='_blank'>no</a>
+ -  *This clock does probably not display the humidity* corresponds with hygrometer=
  - _This option cannot be chosen as answer_
 
 
@@ -206,9 +206,9 @@ The question is `How many faces does this clock have?`
 This rendering asks information about the property 
 [faces](https://wiki.openstreetmap.org/wiki/Key:faces)
 This is rendered with `This clock has {faces} faces`
- - *This clock has one face* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:faces' target='_blank'>faces</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:faces%3D1' target='_blank'>1</a>
- - *This clock has two faces* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:faces' target='_blank'>faces</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:faces%3D2' target='_blank'>2</a>
- - *This clock has four faces* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:faces' target='_blank'>faces</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:faces%3D4' target='_blank'>4</a>
+ -  *This clock has one face* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:faces' target='_blank'>faces</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:faces%3D1' target='_blank'>1</a>
+ -  *This clock has two faces* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:faces' target='_blank'>faces</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:faces%3D2' target='_blank'>2</a>
+ -  *This clock has four faces* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:faces' target='_blank'>faces</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:faces%3D4' target='_blank'>4</a>
 
 
 

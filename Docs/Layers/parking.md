@@ -95,7 +95,7 @@ attribute | type | values which are supported by this layer
 This element shows a 'thank you' that the contributor has recently created this element
 _This tagrendering has no question and is thus read-only_
 
- - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/party.svg' style='width: 3rem; height: 3rem'> *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
 This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
 This tagrendering has labels 
 `added_by_default_top`
@@ -132,13 +132,13 @@ The question is `On what level is this feature located?`
 This rendering asks information about the property 
 [level](https://wiki.openstreetmap.org/wiki/Key:level)
 This is rendered with `Located on the {level}th floor`
- - *Located underground* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground' target='_blank'>underground</a>
+ -  *Located underground* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground' target='_blank'>underground</a>
  - _This option cannot be chosen as answer_
- - *Located on the ground floor* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D0' target='_blank'>0</a>
- - *Located on the ground floor* corresponds with level=
+ -  *Located on the ground floor* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D0' target='_blank'>0</a>
+ -  *Located on the ground floor* corresponds with level=
  - _This option cannot be chosen as answer_
- - *Located on the first floor* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D1' target='_blank'>1</a>
- - *Located on the first basement level* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D-1' target='_blank'>-1</a>
+ -  *Located on the first floor* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D1' target='_blank'>1</a>
+ -  *Located on the first basement level* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D-1' target='_blank'>-1</a>
 
 This tagrendering has labels 
 `level`
@@ -147,16 +147,16 @@ This tagrendering has labels
 
 The question is `What kind of parking is this?`
 
- - *This is a surface parking lot* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:parking' target='_blank'>parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking%3Dsurface' target='_blank'>surface</a>
- - *This is a parking bay next to a street* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:parking' target='_blank'>parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking%3Dstreet_side' target='_blank'>street_side</a>
- - *This is an underground parking garage* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:parking' target='_blank'>parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking%3Dunderground' target='_blank'>underground</a>
- - *This is a multi-storey parking garage* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:parking' target='_blank'>parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking%3Dmulti-storey' target='_blank'>multi-storey</a>
- - *This is a rooftop parking deck* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:parking' target='_blank'>parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking%3Drooftop' target='_blank'>rooftop</a>
- - *This is a lane for parking on the road* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:parking' target='_blank'>parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking%3Dlane' target='_blank'>lane</a>
- - *This is parking covered by carports* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:parking' target='_blank'>parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking%3Dcarports' target='_blank'>carports</a>
- - *This a parking consisting of garage boxes* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:parking' target='_blank'>parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking%3Dgarage_boxes' target='_blank'>garage_boxes</a>
- - *This is a parking on a layby* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:parking' target='_blank'>parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking%3Dlayby' target='_blank'>layby</a>
- - *This is a parking consisting of sheds* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:parking' target='_blank'>parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking%3Dsheds' target='_blank'>sheds</a>
+ -  *This is a surface parking lot* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:parking' target='_blank'>parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking%3Dsurface' target='_blank'>surface</a>
+ -  *This is a parking bay next to a street* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:parking' target='_blank'>parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking%3Dstreet_side' target='_blank'>street_side</a>
+ -  *This is an underground parking garage* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:parking' target='_blank'>parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking%3Dunderground' target='_blank'>underground</a>
+ -  *This is a multi-storey parking garage* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:parking' target='_blank'>parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking%3Dmulti-storey' target='_blank'>multi-storey</a>
+ -  *This is a rooftop parking deck* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:parking' target='_blank'>parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking%3Drooftop' target='_blank'>rooftop</a>
+ -  *This is a lane for parking on the road* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:parking' target='_blank'>parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking%3Dlane' target='_blank'>lane</a>
+ -  *This is parking covered by carports* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:parking' target='_blank'>parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking%3Dcarports' target='_blank'>carports</a>
+ -  *This a parking consisting of garage boxes* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:parking' target='_blank'>parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking%3Dgarage_boxes' target='_blank'>garage_boxes</a>
+ -  *This is a parking on a layby* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:parking' target='_blank'>parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking%3Dlayby' target='_blank'>layby</a>
+ -  *This is a parking consisting of sheds* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:parking' target='_blank'>parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking%3Dsheds' target='_blank'>sheds</a>
 
 
 
@@ -166,11 +166,11 @@ The question is `How many disabled parking spots are there at this parking?`
 This rendering asks information about the property 
 [capacity:disabled](https://wiki.openstreetmap.org/wiki/Key:capacity:disabled)
 This is rendered with `There are {capacity:disabled} disabled parking spots`
- - *There are disabled parking spots, but it is not known how many* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:capacity:disabled' target='_blank'>capacity:disabled</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:capacity:disabled%3Dyes' target='_blank'>yes</a>
+ -  *There are disabled parking spots, but it is not known how many* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:capacity:disabled' target='_blank'>capacity:disabled</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:capacity:disabled%3Dyes' target='_blank'>yes</a>
  - _This option cannot be chosen as answer_
- - *There are no disabled parking spots* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:capacity:disabled' target='_blank'>capacity:disabled</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:capacity:disabled%3Dno' target='_blank'>no</a>
+ -  *There are no disabled parking spots* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:capacity:disabled' target='_blank'>capacity:disabled</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:capacity:disabled%3Dno' target='_blank'>no</a>
  - _This option cannot be chosen as answer_
- - *There are no disabled parking spots* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:capacity:disabled' target='_blank'>capacity:disabled</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:capacity:disabled%3D0' target='_blank'>0</a>
+ -  *There are no disabled parking spots* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:capacity:disabled' target='_blank'>capacity:disabled</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:capacity:disabled%3D0' target='_blank'>0</a>
 
 
 

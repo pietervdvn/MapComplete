@@ -97,7 +97,7 @@ attribute | type | values which are supported by this layer
 This element shows a 'thank you' that the contributor has recently created this element
 _This tagrendering has no question and is thus read-only_
 
- - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/party.svg' style='width: 3rem; height: 3rem'> *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
 This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
 This tagrendering has labels 
 `added_by_default_top`
@@ -123,10 +123,10 @@ _This tagrendering has no question and is thus read-only_
 
 The question is `What type of map is shown?`
 
- - *Topographical map <p class='subtle'>The map contains contour lines. </p>* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:map_type' target='_blank'>map_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_type%3Dtopo' target='_blank'>topo</a>
- - *A map with all streets or ways of an area. <p class='subtle'>The streets are mostly named; the angles, distances etc. are accurate</p>* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:map_type' target='_blank'>map_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_type%3Dstreet' target='_blank'>street</a>
- - *This is a schematic map. <p class='subtle'>A sketched map with only important ways and POIs. The angles, distances etc. are merely illustrative, not accurate.</p> * corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:map_type' target='_blank'>map_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_type%3Dscheme' target='_blank'>scheme</a>
- - *This is a toposcope. <p class='subtle'>A marker erected on high places which indicates the direction to notable landscape features which can be seen from that point<p>* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:map_type' target='_blank'>map_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_type%3Dtoposcope' target='_blank'>toposcope</a>
+ -  *Topographical map <p class='subtle'>The map contains contour lines. </p>* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:map_type' target='_blank'>map_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_type%3Dtopo' target='_blank'>topo</a>
+ -  *A map with all streets or ways of an area. <p class='subtle'>The streets are mostly named; the angles, distances etc. are accurate</p>* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:map_type' target='_blank'>map_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_type%3Dstreet' target='_blank'>street</a>
+ -  *This is a schematic map. <p class='subtle'>A sketched map with only important ways and POIs. The angles, distances etc. are merely illustrative, not accurate.</p> * corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:map_type' target='_blank'>map_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_type%3Dscheme' target='_blank'>scheme</a>
+ -  *This is a toposcope. <p class='subtle'>A marker erected on high places which indicates the direction to notable landscape features which can be seen from that point<p>* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:map_type' target='_blank'>map_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_type%3Dtoposcope' target='_blank'>toposcope</a>
 
 
 
@@ -134,11 +134,11 @@ The question is `What type of map is shown?`
 
 The question is `What is the size of the shown area on the map?`
 
- - *A map of the rooms within a building* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:map_size' target='_blank'>map_size</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_size%3Dbuilding' target='_blank'>building</a>
- - *A map of special site, like of a historical castle, a park, a campus, a forest, ....* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:map_size' target='_blank'>map_size</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_size%3Dsite' target='_blank'>site</a>
- - *A map showing the village or town* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:map_size' target='_blank'>map_size</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_size%3Dvillage' target='_blank'>village</a>
- - * A map of a city* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:map_size' target='_blank'>map_size</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_size%3Dcity' target='_blank'>city</a>
- - *The map of an entire region, showing multiple cities and villages* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:map_size' target='_blank'>map_size</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_size%3Dregion' target='_blank'>region</a>
+ -  *A map of the rooms within a building* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:map_size' target='_blank'>map_size</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_size%3Dbuilding' target='_blank'>building</a>
+ -  *A map of special site, like of a historical castle, a park, a campus, a forest, ....* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:map_size' target='_blank'>map_size</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_size%3Dsite' target='_blank'>site</a>
+ -  *A map showing the village or town* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:map_size' target='_blank'>map_size</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_size%3Dvillage' target='_blank'>village</a>
+ -  * A map of a city* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:map_size' target='_blank'>map_size</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_size%3Dcity' target='_blank'>city</a>
+ -  *The map of an entire region, showing multiple cities and villages* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:map_size' target='_blank'>map_size</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_size%3Dregion' target='_blank'>region</a>
 
 
 
@@ -148,7 +148,7 @@ The question is `On which data is this map based?`
 This rendering asks information about the property 
 [map_source](https://wiki.openstreetmap.org/wiki/Key:map_source)
 This is rendered with `This map is based on {map_source}`
- - *This map is based on OpenStreetMap* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:map_source' target='_blank'>map_source</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_source%3DOpenStreetMap' target='_blank'>OpenStreetMap</a> & not:map_source=
+ -  *This map is based on OpenStreetMap* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:map_source' target='_blank'>map_source</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_source%3DOpenStreetMap' target='_blank'>OpenStreetMap</a> & not:map_source=
 
 This tagrendering has labels 
 `map`
@@ -157,11 +157,11 @@ This tagrendering has labels
 
 The question is `Is the OpenStreetMap-attribution given?`
 
- - *OpenStreetMap is clearly attributed, including the ODBL-license* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:map_source:attribution' target='_blank'>map_source:attribution</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_source:attribution%3Dyes' target='_blank'>yes</a>
- - *OpenStreetMap is clearly attributed, but the license is not mentioned* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:map_source:attribution' target='_blank'>map_source:attribution</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_source:attribution%3Dincomplete' target='_blank'>incomplete</a>
- - *OpenStreetMap wasn't mentioned, but someone put an OpenStreetMap-sticker on it* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:map_source:attribution' target='_blank'>map_source:attribution</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_source:attribution%3Dsticker' target='_blank'>sticker</a>
- - *There is no attribution at all* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:map_source:attribution' target='_blank'>map_source:attribution</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_source:attribution%3Dnone' target='_blank'>none</a>
- - *There is no attribution at all* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:map_source:attribution' target='_blank'>map_source:attribution</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_source:attribution%3Dno' target='_blank'>no</a>
+ -  *OpenStreetMap is clearly attributed, including the ODBL-license* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:map_source:attribution' target='_blank'>map_source:attribution</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_source:attribution%3Dyes' target='_blank'>yes</a>
+ -  *OpenStreetMap is clearly attributed, but the license is not mentioned* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:map_source:attribution' target='_blank'>map_source:attribution</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_source:attribution%3Dincomplete' target='_blank'>incomplete</a>
+ -  *OpenStreetMap wasn't mentioned, but someone put an OpenStreetMap-sticker on it* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:map_source:attribution' target='_blank'>map_source:attribution</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_source:attribution%3Dsticker' target='_blank'>sticker</a>
+ -  *There is no attribution at all* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:map_source:attribution' target='_blank'>map_source:attribution</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_source:attribution%3Dnone' target='_blank'>none</a>
+ -  *There is no attribution at all* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:map_source:attribution' target='_blank'>map_source:attribution</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_source:attribution%3Dno' target='_blank'>no</a>
  - _This option cannot be chosen as answer_
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:map_source' target='_blank'>map_source</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_source%3Dosm' target='_blank'>osm</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:map_source' target='_blank'>map_source</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_source%3DOSM' target='_blank'>OSM</a> | map_source~^((O|)pen(S|s)treet(M|m)ap)$
 This tagrendering has labels 

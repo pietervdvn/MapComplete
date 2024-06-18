@@ -101,7 +101,7 @@ attribute | type | values which are supported by this layer
 This element shows a 'thank you' that the contributor has recently created this element
 _This tagrendering has no question and is thus read-only_
 
- - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/party.svg' style='width: 3rem; height: 3rem'> *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
 This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
 This tagrendering has labels 
 `added_by_default_top`
@@ -139,7 +139,7 @@ The question is `What is the website of {title()}?`
 This rendering asks information about the property 
 [website](https://wiki.openstreetmap.org/wiki/Key:website)
 This is rendered with `<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>`
- - *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>* corresponds with contact:website~.+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/icons/website.svg' style='width: 3rem; height: 3rem'> *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>* corresponds with contact:website~.+
  - _This option cannot be chosen as answer_
 
 This tagrendering has labels 
@@ -151,7 +151,7 @@ The question is `What is the phone number of {title()}?`
 This rendering asks information about the property 
 [phone](https://wiki.openstreetmap.org/wiki/Key:phone)
 This is rendered with `<a href='tel:{phone}'>{phone}</a>`
- - *<a href='tel:{contact:phone}'>{contact:phone}</a>* corresponds with contact:phone~.+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/phone.svg' style='width: 3rem; height: 3rem'> *<a href='tel:{contact:phone}'>{contact:phone}</a>* corresponds with contact:phone~.+
  - _This option cannot be chosen as answer_
 
 This tagrendering has labels 
@@ -163,9 +163,9 @@ The question is `What is the email address of {title()}?`
 This rendering asks information about the property 
 [email](https://wiki.openstreetmap.org/wiki/Key:email)
 This is rendered with `<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>`
- - *<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>* corresponds with contact:email~.+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/envelope.svg' style='width: 3rem; height: 3rem'> *<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>* corresponds with contact:email~.+
  - _This option cannot be chosen as answer_
- - *<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>* corresponds with operator:email~.+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/envelope.svg' style='width: 3rem; height: 3rem'> *<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>* corresponds with operator:email~.+
  - _This option cannot be chosen as answer_
 
 This tagrendering has labels 
@@ -177,7 +177,7 @@ The question is `What are the opening hours of {title()}?`
 This rendering asks information about the property 
 [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours)
 This is rendered with `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
- - *Marked as closed for an unspecified time* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>
+ -  *Marked as closed for an unspecified time* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>
  - _This option cannot be chosen as answer_
 
 
@@ -188,8 +188,8 @@ The question is `How much does lending a bicycle cost?`
 This rendering asks information about the property 
 [charge](https://wiki.openstreetmap.org/wiki/Key:charge)
 This is rendered with `Lending a bicycle costs {charge}`
- - *Lending a bicycle is free* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno' target='_blank'>no</a> & charge=
- - *Lending a bicycle costs €20/year and €20 warranty* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:charge' target='_blank'>charge</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:charge%3D€20warranty + €20/year' target='_blank'>€20warranty + €20/year</a>
+ -  *Lending a bicycle is free* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno' target='_blank'>no</a> & charge=
+ -  *Lending a bicycle costs €20/year and €20 warranty* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:charge' target='_blank'>charge</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:charge%3D€20warranty + €20/year' target='_blank'>€20warranty + €20/year</a>
 
 
 
@@ -197,9 +197,9 @@ This is rendered with `Lending a bicycle costs {charge}`
 
 The question is `Who can loan bicycles here?`
 
- - *Bikes for children available* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_library:for' target='_blank'>bicycle_library:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_library:for%3Dchild' target='_blank'>child</a>
- - *Bikes for adult available* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_library:for' target='_blank'>bicycle_library:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_library:for%3Dadult' target='_blank'>adult</a>
- - *Bikes for disabled persons available* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_library:for' target='_blank'>bicycle_library:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_library:for%3Ddisabled' target='_blank'>disabled</a>
+ -  *Bikes for children available* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_library:for' target='_blank'>bicycle_library:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_library:for%3Dchild' target='_blank'>child</a>
+ -  *Bikes for adult available* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_library:for' target='_blank'>bicycle_library:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_library:for%3Dadult' target='_blank'>adult</a>
+ -  *Bikes for disabled persons available* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_library:for' target='_blank'>bicycle_library:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_library:for%3Ddisabled' target='_blank'>disabled</a>
 
 
 

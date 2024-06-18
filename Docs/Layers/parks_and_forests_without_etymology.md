@@ -92,7 +92,7 @@ attribute | type | values which are supported by this layer
 This element shows a 'thank you' that the contributor has recently created this element
 _This tagrendering has no question and is thus read-only_
 
- - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/party.svg' style='width: 3rem; height: 3rem'> *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
 This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
 This tagrendering has labels 
 `added_by_default_top`
@@ -138,7 +138,7 @@ The question is `What is this object named after?`
 This rendering asks information about the property 
 [name:etymology](https://wiki.openstreetmap.org/wiki/Key:name:etymology)
 This is rendered with `Named after {name:etymology}`
- - *The origin of this name is unknown in all literature* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:name:etymology' target='_blank'>name:etymology</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:name:etymology%3Dunknown' target='_blank'>unknown</a>
+ -  *The origin of this name is unknown in all literature* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:name:etymology' target='_blank'>name:etymology</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:name:etymology%3Dunknown' target='_blank'>unknown</a>
 
 
 

@@ -102,7 +102,7 @@ attribute | type | values which are supported by this layer
 This element shows a 'thank you' that the contributor has recently created this element
 _This tagrendering has no question and is thus read-only_
 
- - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/party.svg' style='width: 3rem; height: 3rem'> *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
 This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
 This tagrendering has labels 
 `added_by_default_top`
@@ -158,8 +158,8 @@ The question is `What are the opening hours of {title()}?`
 This rendering asks information about the property 
 [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours)
 This is rendered with `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
- - *24/7 opened (including holidays)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
- - *Marked as closed for an unspecified time* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/open24_7.svg' style='width: 3rem; height: 3rem'> *24/7 opened (including holidays)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
+ -  *Marked as closed for an unspecified time* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>
  - _This option cannot be chosen as answer_
 
 
@@ -168,10 +168,10 @@ This is rendered with `<h3>Opening hours</h3>{opening_hours_table(opening_hours)
 
 The question is `Can you withdraw cash from this ATM?`
 
- - *You can withdraw cash from this ATM* corresponds with cash_out=
+ -  *You can withdraw cash from this ATM* corresponds with cash_out=
  - _This option cannot be chosen as answer_
- - *You can withdraw cash from this ATM* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cash_out' target='_blank'>cash_out</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cash_out%3Dyes' target='_blank'>yes</a>
- - *You cannot withdraw cash from this ATM* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cash_out' target='_blank'>cash_out</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cash_out%3Dno' target='_blank'>no</a>
+ -  *You can withdraw cash from this ATM* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cash_out' target='_blank'>cash_out</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cash_out%3Dyes' target='_blank'>yes</a>
+ -  *You cannot withdraw cash from this ATM* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cash_out' target='_blank'>cash_out</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cash_out%3Dno' target='_blank'>no</a>
 
 
 
@@ -179,10 +179,10 @@ The question is `Can you withdraw cash from this ATM?`
 
 The question is `Can you deposit cash into this ATM?`
 
- - *You probably cannot deposit cash into this ATM* corresponds with cash_in=
+ -  *You probably cannot deposit cash into this ATM* corresponds with cash_in=
  - _This option cannot be chosen as answer_
- - *You can deposit cash into this ATM* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cash_in' target='_blank'>cash_in</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cash_in%3Dyes' target='_blank'>yes</a>
- - *You cannot deposit cash into this ATM* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cash_in' target='_blank'>cash_in</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cash_in%3Dno' target='_blank'>no</a>
+ -  *You can deposit cash into this ATM* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cash_in' target='_blank'>cash_in</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cash_in%3Dyes' target='_blank'>yes</a>
+ -  *You cannot deposit cash into this ATM* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cash_in' target='_blank'>cash_in</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cash_in%3Dno' target='_blank'>no</a>
 
 
 
@@ -190,13 +190,13 @@ The question is `Can you deposit cash into this ATM?`
 
 The question is `What notes can you withdraw here?`
 
- - *5 euro notes can be withdrawn* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cash_out:notes:denominations' target='_blank'>cash_out:notes:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cash_out:notes:denominations%3D5 EUR' target='_blank'>5 EUR</a>
- - *10 euro notes can be withdrawn* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cash_out:notes:denominations' target='_blank'>cash_out:notes:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cash_out:notes:denominations%3D10 EUR' target='_blank'>10 EUR</a>
- - *20 euro notes can be withdrawn* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cash_out:notes:denominations' target='_blank'>cash_out:notes:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cash_out:notes:denominations%3D20 EUR' target='_blank'>20 EUR</a>
- - *50 euro notes can be withdrawn* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cash_out:notes:denominations' target='_blank'>cash_out:notes:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cash_out:notes:denominations%3D50 EUR' target='_blank'>50 EUR</a>
- - *100 euro notes can be withdrawn* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cash_out:notes:denominations' target='_blank'>cash_out:notes:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cash_out:notes:denominations%3D100 EUR' target='_blank'>100 EUR</a>
- - *200 euro notes can be withdrawn* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cash_out:notes:denominations' target='_blank'>cash_out:notes:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cash_out:notes:denominations%3D200 EUR' target='_blank'>200 EUR</a>
- - *500 euro notes can be withdrawn* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cash_out:notes:denominations' target='_blank'>cash_out:notes:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cash_out:notes:denominations%3D500 EUR' target='_blank'>500 EUR</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/denominations/eur/5euro.svg' style='width: 3rem; height: 3rem'> *5 euro notes can be withdrawn* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cash_out:notes:denominations' target='_blank'>cash_out:notes:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cash_out:notes:denominations%3D5 EUR' target='_blank'>5 EUR</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/denominations/eur/10euro.svg' style='width: 3rem; height: 3rem'> *10 euro notes can be withdrawn* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cash_out:notes:denominations' target='_blank'>cash_out:notes:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cash_out:notes:denominations%3D10 EUR' target='_blank'>10 EUR</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/denominations/eur/20euro.svg' style='width: 3rem; height: 3rem'> *20 euro notes can be withdrawn* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cash_out:notes:denominations' target='_blank'>cash_out:notes:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cash_out:notes:denominations%3D20 EUR' target='_blank'>20 EUR</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/denominations/eur/50euro.svg' style='width: 3rem; height: 3rem'> *50 euro notes can be withdrawn* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cash_out:notes:denominations' target='_blank'>cash_out:notes:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cash_out:notes:denominations%3D50 EUR' target='_blank'>50 EUR</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/denominations/eur/100euro.svg' style='width: 3rem; height: 3rem'> *100 euro notes can be withdrawn* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cash_out:notes:denominations' target='_blank'>cash_out:notes:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cash_out:notes:denominations%3D100 EUR' target='_blank'>100 EUR</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/denominations/eur/200euro.svg' style='width: 3rem; height: 3rem'> *200 euro notes can be withdrawn* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cash_out:notes:denominations' target='_blank'>cash_out:notes:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cash_out:notes:denominations%3D200 EUR' target='_blank'>200 EUR</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/denominations/eur/500euro.svg' style='width: 3rem; height: 3rem'> *500 euro notes can be withdrawn* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cash_out:notes:denominations' target='_blank'>cash_out:notes:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cash_out:notes:denominations%3D500 EUR' target='_blank'>500 EUR</a>
 
 
 
@@ -204,8 +204,8 @@ The question is `What notes can you withdraw here?`
 
 The question is `Does this ATM have speech output for visually impaired users?`
 
- - *This ATM has speech output, usually available through a headphone jack* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:speech_output' target='_blank'>speech_output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:speech_output%3Dyes' target='_blank'>yes</a>
- - *This ATM does not have speech output* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:speech_output' target='_blank'>speech_output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:speech_output%3Dno' target='_blank'>no</a>
+ -  *This ATM has speech output, usually available through a headphone jack* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:speech_output' target='_blank'>speech_output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:speech_output%3Dyes' target='_blank'>yes</a>
+ -  *This ATM does not have speech output* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:speech_output' target='_blank'>speech_output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:speech_output%3Dno' target='_blank'>no</a>
 
 
 

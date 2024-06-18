@@ -24,7 +24,7 @@ This document gives an overview of which URL-parameters can be used to influence
 9. [ fs-welcome-message ](#-fs-welcome-message-)
 10. [ fs-community-index ](#-fs-community-index-)
 11. [ fs-iframe-popout ](#-fs-iframe-popout-)
-12. [ fs-more-quests ](#-fs-more-quests-)
+12. [ fs-homepage-link ](#-fs-homepage-link-)
 13. [ fs-share-screen ](#-fs-share-screen-)
 14. [ fs-geolocation ](#-fs-geolocation-)
 15. [ fs-all-questions ](#-fs-all-questions-)
@@ -217,10 +217,10 @@ This documentation is defined in the source code at [FeatureSwitchState.ts](/src
 
 
 
- fs-more-quests 
-----------------
+ fs-homepage-link 
+------------------
 
- Disables/Enables the 'More Quests'-tab in the welcome message
+ Disables/Enables the various links which go back to the index page with the theme overview
 
 This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L121)
 
@@ -365,7 +365,7 @@ This documentation is defined in the source code at [FeatureSwitchState.ts](/src
 
  The initial/current zoom level
 
-This documentation is defined in the source code at [InitialMapPositioning.ts](/src/Logic/Actors/InitialMapPositioning.ts#L34)
+This documentation is defined in the source code at [InitialMapPositioning.ts](/src/Logic/Actors/InitialMapPositioning.ts#L37)
 
  The default value is _1_
 
@@ -376,7 +376,7 @@ This documentation is defined in the source code at [InitialMapPositioning.ts](/
 
  The initial/current latitude
 
-This documentation is defined in the source code at [InitialMapPositioning.ts](/src/Logic/Actors/InitialMapPositioning.ts#L34)
+This documentation is defined in the source code at [InitialMapPositioning.ts](/src/Logic/Actors/InitialMapPositioning.ts#L37)
 
  The default value is _0_
 
@@ -387,7 +387,7 @@ This documentation is defined in the source code at [InitialMapPositioning.ts](/
 
  The initial/current longitude of the app
 
-This documentation is defined in the source code at [InitialMapPositioning.ts](/src/Logic/Actors/InitialMapPositioning.ts#L34)
+This documentation is defined in the source code at [InitialMapPositioning.ts](/src/Logic/Actors/InitialMapPositioning.ts#L37)
 
  The default value is _0_
 

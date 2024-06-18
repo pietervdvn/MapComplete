@@ -107,7 +107,7 @@ attribute | type | values which are supported by this layer
 This element shows a 'thank you' that the contributor has recently created this element
 _This tagrendering has no question and is thus read-only_
 
- - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/party.svg' style='width: 3rem; height: 3rem'> *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
 This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
 This tagrendering has labels 
 `added_by_default_top`
@@ -135,13 +135,13 @@ The question is `What levels does this elevator go to?`
 This rendering asks information about the property 
 [level](https://wiki.openstreetmap.org/wiki/Key:level)
 This is rendered with `This elevator goes to floors {level}`
- - *Located underground* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground' target='_blank'>underground</a>
+ -  *Located underground* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground' target='_blank'>underground</a>
  - _This option cannot be chosen as answer_
- - *Located on the ground floor* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D0' target='_blank'>0</a>
- - *Located on the ground floor* corresponds with level=
+ -  *Located on the ground floor* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D0' target='_blank'>0</a>
+ -  *Located on the ground floor* corresponds with level=
  - _This option cannot be chosen as answer_
- - *Located on the first floor* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D1' target='_blank'>1</a>
- - *Located on the first basement level* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D-1' target='_blank'>-1</a>
+ -  *Located on the first floor* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D1' target='_blank'>1</a>
+ -  *Located on the first basement level* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D-1' target='_blank'>-1</a>
 
 
 
@@ -149,10 +149,10 @@ This is rendered with `This elevator goes to floors {level}`
 
 The question is `Does this elevator work?`
 
- - *This elevator is broken* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:operational_status' target='_blank'>operational_status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operational_status%3Dbroken' target='_blank'>broken</a>
- - *This elevator is closed <span class='subtle'>e.g. because renovation works are going on</span>* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:operational_status' target='_blank'>operational_status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operational_status%3Dclosed' target='_blank'>closed</a>
- - *This elevator works* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:operational_status' target='_blank'>operational_status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operational_status%3Dok' target='_blank'>ok</a>
- - *This elevator works* corresponds with operational_status=
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/close:red' style='width: 3rem; height: 3rem'> *This elevator is broken* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:operational_status' target='_blank'>operational_status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operational_status%3Dbroken' target='_blank'>broken</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/invalid:red' style='width: 3rem; height: 3rem'> *This elevator is closed <span class='subtle'>e.g. because renovation works are going on</span>* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:operational_status' target='_blank'>operational_status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operational_status%3Dclosed' target='_blank'>closed</a>
+ -  *This elevator works* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:operational_status' target='_blank'>operational_status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operational_status%3Dok' target='_blank'>ok</a>
+ -  *This elevator works* corresponds with operational_status=
  - _This option cannot be chosen as answer_
 
 
@@ -171,8 +171,8 @@ This is rendered with `This elevator's doors have a width of {canonical(door:wid
 
 The question is `What shape does this elevator have?`
 
- - *This elevator has a rectangular shape* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:shape' target='_blank'>shape</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shape%3Drectangular' target='_blank'>rectangular</a>
- - *This elevator has a circular shape* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:shape' target='_blank'>shape</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shape%3Dcircular' target='_blank'>circular</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/square.svg' style='width: 3rem; height: 3rem'> *This elevator has a rectangular shape* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:shape' target='_blank'>shape</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shape%3Drectangular' target='_blank'>rectangular</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/circle.svg' style='width: 3rem; height: 3rem'> *This elevator has a circular shape* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:shape' target='_blank'>shape</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shape%3Dcircular' target='_blank'>circular</a>
 
 
 
@@ -210,8 +210,8 @@ This tagrendering is only visible in the popup if the following condition is met
 An accessibility feature: induction loops are for hard-hearing persons which have an FM-receiver.
 The question is `Does this place have an audio induction loop for people with reduced hearing?`
 
- - *This place has an audio induction loop* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:hearing_loop' target='_blank'>hearing_loop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hearing_loop%3Dyes' target='_blank'>yes</a>
- - *This place <b>does not</b> have an audio induction loop* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:hearing_loop' target='_blank'>hearing_loop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hearing_loop%3Dno' target='_blank'>no</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/audio_induction_loop.svg' style='width: 3rem; height: 3rem'> *This place has an audio induction loop* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:hearing_loop' target='_blank'>hearing_loop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hearing_loop%3Dyes' target='_blank'>yes</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/audio_induction_loop_missing.svg' style='width: 3rem; height: 3rem'> *This place <b>does not</b> have an audio induction loop* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:hearing_loop' target='_blank'>hearing_loop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hearing_loop%3Dno' target='_blank'>no</a>
 
 
 
@@ -219,8 +219,8 @@ The question is `Does this place have an audio induction loop for people with re
 
 The question is `Has this elevator tactile writing?`
 
- - *This elevator has tactile writing in Braille* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:tactile_writing:braille' target='_blank'>tactile_writing:braille</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tactile_writing:braille%3Dyes' target='_blank'>yes</a>
- - *This elevator does not have tactile writing* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:tactile_writing:braille' target='_blank'>tactile_writing:braille</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tactile_writing:braille%3Dno' target='_blank'>no</a>
+ -  *This elevator has tactile writing in Braille* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:tactile_writing:braille' target='_blank'>tactile_writing:braille</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tactile_writing:braille%3Dyes' target='_blank'>yes</a>
+ -  *This elevator does not have tactile writing* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:tactile_writing:braille' target='_blank'>tactile_writing:braille</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tactile_writing:braille%3Dno' target='_blank'>no</a>
 
 
 
@@ -236,8 +236,8 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is `Has this elevator speech output?`
 
- - *This elevator has speech output* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:speech_output' target='_blank'>speech_output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:speech_output%3Dyes' target='_blank'>yes</a>
- - *This elevator does not have speech output* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:speech_output' target='_blank'>speech_output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:speech_output%3Dno' target='_blank'>no</a>
+ -  *This elevator has speech output* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:speech_output' target='_blank'>speech_output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:speech_output%3Dyes' target='_blank'>yes</a>
+ -  *This elevator does not have speech output* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:speech_output' target='_blank'>speech_output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:speech_output%3Dno' target='_blank'>no</a>
 
 
 

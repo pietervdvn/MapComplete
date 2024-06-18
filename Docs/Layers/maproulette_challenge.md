@@ -88,7 +88,7 @@ attribute | type | values which are supported by this layer
 This element shows a 'thank you' that the contributor has recently created this element
 _This tagrendering has no question and is thus read-only_
 
- - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/party.svg' style='width: 3rem; height: 3rem'> *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
 This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
 This tagrendering has labels 
 `added_by_default_top`
@@ -114,14 +114,14 @@ _This tagrendering has no question and is thus read-only_
 
 _This tagrendering has no question and is thus read-only_
 
- - *Task is created* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:mr_taskStatus' target='_blank'>mr_taskStatus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DCreated' target='_blank'>Created</a>
- - *Task is fixed* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:mr_taskStatus' target='_blank'>mr_taskStatus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DFixed' target='_blank'>Fixed</a>
- - *Task is a false positive* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:mr_taskStatus' target='_blank'>mr_taskStatus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DFalse positive' target='_blank'>False positive</a>
- - *Task is skipped* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:mr_taskStatus' target='_blank'>mr_taskStatus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DSkipped' target='_blank'>Skipped</a>
- - *Task is deleted* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:mr_taskStatus' target='_blank'>mr_taskStatus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DDeleted' target='_blank'>Deleted</a>
- - *Task is already fixed* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:mr_taskStatus' target='_blank'>mr_taskStatus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DAlready fixed' target='_blank'>Already fixed</a>
- - *Task is marked as too hard* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:mr_taskStatus' target='_blank'>mr_taskStatus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DToo hard' target='_blank'>Too hard</a>
- - *Task is disabled* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:mr_taskStatus' target='_blank'>mr_taskStatus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DDisabled' target='_blank'>Disabled</a>
+ -  *Task is created* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:mr_taskStatus' target='_blank'>mr_taskStatus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DCreated' target='_blank'>Created</a>
+ -  *Task is fixed* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:mr_taskStatus' target='_blank'>mr_taskStatus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DFixed' target='_blank'>Fixed</a>
+ -  *Task is a false positive* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:mr_taskStatus' target='_blank'>mr_taskStatus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DFalse positive' target='_blank'>False positive</a>
+ -  *Task is skipped* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:mr_taskStatus' target='_blank'>mr_taskStatus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DSkipped' target='_blank'>Skipped</a>
+ -  *Task is deleted* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:mr_taskStatus' target='_blank'>mr_taskStatus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DDeleted' target='_blank'>Deleted</a>
+ -  *Task is already fixed* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:mr_taskStatus' target='_blank'>mr_taskStatus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DAlready fixed' target='_blank'>Already fixed</a>
+ -  *Task is marked as too hard* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:mr_taskStatus' target='_blank'>mr_taskStatus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DToo hard' target='_blank'>Too hard</a>
+ -  *Task is disabled* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:mr_taskStatus' target='_blank'>mr_taskStatus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DDisabled' target='_blank'>Disabled</a>
 
 
 

@@ -9,7 +9,7 @@
 
 In a tagrendering, some special values are substituted by an advanced UI-element. This allows advanced features and visualizations to be reused by custom themes or even to query third-party API's.
 
-General usage is `{func_name()}`, `{func_name(arg, someotherarg)}` or `{func_name(args):cssStyle}`. Note that you _do not_ need to use quotes around your arguments, the comma is enough to separate them. This also implies you cannot use a comma in your args
+General usage is `{func_name()}`, `{func_name(arg, someotherarg)}` or `{func_name(args):cssClasses}`. Note that you _do not_ need to use quotes around your arguments, the comma is enough to separate them. This also implies you cannot use a comma in your args
 
 
 #### Table of contents
@@ -1330,13 +1330,32 @@ Attempts to load (via a proxy) the specified website and parsed ld+json from the
 | useProxy | yes | If 'yes', uses the provided proxy server. This proxy server will scrape HTML and search for a script with `lang='ld+json'`. If `no`, the data will be downloaded and expects a linked-data-json directly |
 | host | _undefined_ | If not using a proxy, define what host the website is allowed to connect to |
 | mode | _undefined_ | If `display`, only show the data in tabular and readonly form, ignoring already existing tags. This is used to explicitly show all the tags. If unset or anything else, allow to apply/import on OSM |
+| collapsed | yes | If the containing accordion should be closed |
 
 
 
 
 #### Example usage of linked_data_from_website
 
-<code>`{linked_data_from_website(website,yes,,)}`</code>
+<code>`{linked_data_from_website(website,yes,,,yes)}`</code>
+
+### if_nothing_known
+
+Shows a 'nothing is currently known-message if there is at least one unanswered question and no known (answerable) question
+
+
+
+| name | default | description |
+-----|-----|----- |
+| text | _undefined_ | Text to show |
+| cssClasses | _undefined_ | Classes to apply onto the text |
+
+
+
+
+#### Example usage of if_nothing_known
+
+<code>`{if_nothing_known(,)}`</code>
 
 ### auto_apply
 
