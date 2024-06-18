@@ -12,7 +12,6 @@
   import ToSvelte from "../../Base/ToSvelte.svelte"
   import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
   import WeblateLink from "../../Base/WeblateLink.svelte"
-  import FromHtml from "../../Base/FromHtml.svelte"
   import BaseUIElement from "../../BaseUIElement"
 
   /**

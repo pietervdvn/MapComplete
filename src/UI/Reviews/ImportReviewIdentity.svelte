@@ -80,7 +80,7 @@
 
 <LoginToggle {state}>
   <div class="m-1 flex flex-col">
-    <FileSelector accept="application/json" multiple={false} on:submit={(e) => onImport(e.detail)}>
+    <FileSelector cls="button w-fit" accept="application/json" multiple={false} on:submit={(e) => onImport(e.detail)}>
       {text}
     </FileSelector>
     {#if error}

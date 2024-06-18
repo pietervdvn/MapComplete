@@ -16,6 +16,16 @@
     "sources": []
   },
   {
+    "path": "scale.svg",
+    "license": "MIT",
+    "authors": [
+      "Heroicons"
+    ],
+    "sources": [
+      "https://heroicons.com/"
+    ]
+  },
+  {
     "path": "translate_disabled.svg",
     "license": "CC-BY-SA-3.0",
     "authors": [

@@ -508,6 +508,16 @@
     ]
   },
   {
+    "path": "github.svg",
+    "license": "LOGO",
+    "authors": [
+      "Github"
+    ],
+    "sources": [
+      "https://github.com/logos"
+    ]
+  },
+  {
     "path": "gps_arrow.svg",
     "license": "CC0-1.0",
     "authors": [

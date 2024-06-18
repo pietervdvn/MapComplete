@@ -274,6 +274,7 @@
       "mappings": [
         {
           "if": "mapcomplete-pictures-license=",
+          "icon": "./assets/layers/usersettings/scale.svg",
           "then": {
             "en": "Pictures you take will be licensed with <b>CC0</b> and added to the public domain. This means that everyone can use your pictures for any purpose. <span class='subtle'>This is the default choice.</span>",
             "de": "Die von Ihnen aufgenommenen Bilder werden mit <b>CC0</b> lizenziert und der Public Domain hinzugefügt. Das bedeutet, dass jeder Ihre Bilder für jeden Zweck verwenden kann. <span class='subtle'>Dies ist die Standardeinstellung.</span>",
@@ -286,6 +287,7 @@
         },
         {
           "if": "mapcomplete-pictures-license=CC0",
+          "icon": "./assets/layers/usersettings/scale.svg",
           "then": {
             "en": "Pictures you take will be licensed with <b>CC0</b> and added to the public domain. This means that everyone can use your pictures for any purpose.",
             "de": "Ihre aufgenommenen Bilder werden mit <b>CC0</b> lizenziert und der Public Domain hinzugefügt. Das bedeutet, dass jeder Ihre Bilder für jeden Zweck verwenden kann.",
@@ -301,6 +303,7 @@
         },
         {
           "if": "mapcomplete-pictures-license=CC-BY 4.0",
+          "icon": "./assets/layers/usersettings/scale.svg",
           "then": {
             "en": "Pictures you take will be licensed with <b>CC-BY 4.0</b> which requires everyone using your picture that they have to attribute you",
             "ca": "Les fotografies que facis es publicaran sota <b>CC-BY 4.0</b> que requereix que qualsevol que utilitzi la vostra imatge us ha de donar crèdits",
@@ -312,6 +315,7 @@
         },
         {
           "if": "mapcomplete-pictures-license=CC-BY-SA 4.0",
+          "icon": "./assets/layers/usersettings/scale.svg",
           "then": {
             "en": "Pictures you take will be licensed with <b>CC-BY-SA 4.0</b> which means that everyone using your picture must attribute you and that derivatives of your picture must be reshared with the same license.",
             "de": "Die von Ihnen aufgenommenen Bilder werden mit <b>CC-BY-SA 4.0</b> lizenziert, was bedeutet, dass jeder, der Ihr Bild verwendet, Sie als Urheber nennen muss und dass Ableitungen Ihres Bildes mit der gleichen Lizenz weitergegeben werden müssen.",
@@ -474,6 +478,7 @@
       "mappings": [
         {
           "if": "mapcomplete-fixate-north=",
+          "icon": "./assets/svg/compass.svg",
           "then": {
             "en": "Allow to rotate the map",
             "de": "Drehen der Karte zulassen",
@@ -486,6 +491,7 @@
         },
         {
           "if": "mapcomplete-fixate-north=yes",
+          "icon": "./assets/svg/compass.svg",
           "then": {
             "en": "Always keep north pointing up",
             "de": "Norden immer nach oben zeigen lassen",
@@ -525,6 +531,7 @@
       "mappings": [
         {
           "if": "mapcomplete-more_privacy=yes",
+          "icon": "./assets/svg/eye.svg",
           "then": {
             "en": "When making changes to OpenStreetMap, do not indicate how far away you were from the changed objects.",
             "de": "Wenn du Änderungen an OpenStreetMap vornimmst, gibst du nicht an, wie weit du von den geänderten Objekten entfernt warst.",
@@ -533,6 +540,7 @@
         },
         {
           "if": "mapcomplete-more_privacy=no",
+          "icon": "./assets/svg/eye.svg",
           "then": {
             "en": "When making changes to OpenStreetMap, roughly indicate how far away you were from the changed objects. This helps other contributors to understand how you made the change",
             "de": "Wenn du Änderungen an OpenStreetMap vornimmst, gib grob an, wie weit du von den geänderten Objekten entfernt warst. Das hilft anderen Mitwirkenden zu verstehen, wie du die Änderung vorgenommen hast.",
@@ -543,6 +551,7 @@
     },
     {
       "id": "mangrove-keys",
+      "classes": "flex flex-col",
       "render": {
         "special": {
           "type": "link",
@@ -557,6 +566,7 @@
             "nl": "Download de private sleutel van je Mangrove-account"
           }
         },
+        "class": "button",
         "after": {
           "en": "Anyone possessing this file can make reviews with your identity",
           "de": "Jeder, der diese Datei besitzt, kann mit Ihrer Identität Rezensionen vornehmen",
