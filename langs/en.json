@@ -58,7 +58,7 @@
         },
         "currentInOsmIs": "At the moment, OpenStreetMap has the following value recorded:",
         "done": "Done",
-        "error": "Error",
+        "error": "Could not load linked data from the website",
         "loadedFrom": "The following data is loaded from <a href={url}>{source}</a> using the embedded JSON-LD",
         "missing": {
             "intro": "OpenStreetMap has no information about the following attributes",
@@ -602,7 +602,7 @@
         "title": "MapComplete"
     },
     "move": {
-        "cancel": "Cancel move",
+        "cancel": "Select a different reason",
         "cannotBeMoved": "This feature cannot be moved.",
         "confirmMove": "Move here",
         "inviteToMove": {
@@ -619,7 +619,7 @@
         "partOfRelation": "This feature is part of a relation. Use another editor to move it.",
         "pointIsMoved": "The point has been moved",
         "reasons": {
-            "reasonInaccurate": "The location of this object is inaccurate and should be moved a few meter",
+            "reasonInaccurate": "The location is inaccurate by a few meter",
             "reasonRelocation": "The object has been relocated to a totally different location"
         },
         "selectReason": "Why do you move this object?",
