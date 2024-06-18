@@ -25,39 +25,41 @@ A climbing gym
 1. [ Themes using this layer ](#-themes-using-this-layer-)
 2. [ Basic tags for this layer ](#-basic-tags-for-this-layer-)
 3. [ Supported attributes ](#-supported-attributes-)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
+  - [just_created](#just_created)
+  - [nothing_known](#nothing_known)
+  - [images](#images)
+  - [name](#name)
+  - [website](#website)
+  - [phone](#phone)
+  - [email](#email)
+  - [fee](#fee)
+  - [payment-options](#payment-options)
+  - [opening_hours](#opening_hours)
+  - [reviews](#reviews)
+  - [shoe_rental](#shoe_rental)
+  - [harness_rental](#harness_rental)
+  - [belay_device_rental](#belay_device_rental)
+  - [rope_rental](#rope_rental)
+  - [bouldering](#bouldering)
+  - [sportclimbing](#sportclimbing)
+  - [toprope](#toprope)
+  - [average_length](#average_length)
+  - [min_difficulty](#min_difficulty)
+  - [max_difficulty](#max_difficulty)
+  - [max_bolts](#max_bolts)
+  - [Speed climbing?](#speed-climbing)
+  - [internet](#internet)
+  - [internet-fee](#internet-fee)
+  - [internet-ssid](#internet-ssid)
+  - [leftover-questions](#leftover-questions)
+  - [minimap](#minimap)
+  - [nearby_images](#nearby_images)
+  - [lod](#lod)
+  - [favourite_status](#favourite_status)
+  - [share](#share)
+  - [qr_code](#qr_code)
+  - [last_edit](#last_edit)
+  - [all-tags](#all-tags)
 
  Themes using this layer 
 -------------------------
@@ -122,16 +124,25 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/internet_access:ssid#values) [internet_access:ssid](https://wiki.openstreetmap.org/wiki/Key:internet_access:ssid) | [string](../SpecialInputElements.md#string) | [Telekom](https://wiki.openstreetmap.org/wiki/Tag:internet_access:ssid%3DTelekom)
 
 
-### this.id
+### just_created
 This element shows a 'thank you' that the contributor has recently created this element
 _This tagrendering has no question and is thus read-only_
 
  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
 This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
 This tagrendering has labels 
-`added_by_default`
+`added_by_default_top`
 
-### this.id
+### nothing_known
+
+_This tagrendering has no question and is thus read-only_
+
+
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time>=300 & _backend~.+
+This tagrendering has labels 
+`added_by_default_top`
+
+### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 
@@ -139,7 +150,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-### this.id
+### name
 
 The question is `What is the name of this climbing gym?`
 This rendering asks information about the property 
@@ -149,7 +160,7 @@ This is rendered with `<strong>{name}</strong>`
 
 
 
-### this.id
+### website
 
 The question is `What is the website of {title()}?`
 This rendering asks information about the property 
@@ -161,7 +172,7 @@ This is rendered with `<a href='{website}' rel='nofollow noopener noreferrer' ta
 This tagrendering has labels 
 `contact`
 
-### this.id
+### phone
 
 The question is `What is the phone number of {title()}?`
 This rendering asks information about the property 
@@ -173,7 +184,7 @@ This is rendered with `<a href='tel:{phone}'>{phone}</a>`
 This tagrendering has labels 
 `contact`
 
-### this.id
+### email
 
 The question is `What is the email address of {title()}?`
 This rendering asks information about the property 
@@ -187,7 +198,7 @@ This is rendered with `<a href='mailto:{email}' target='_blank' rel='noopener'>{
 This tagrendering has labels 
 `contact`
 
-### this.id
+### fee
 
 The question is `Is a fee required to climb here?`
 This rendering asks information about the property 
@@ -198,7 +209,7 @@ This is rendered with `A fee of {charge} should be paid for climbing here`
 
 
 
-### this.id
+### payment-options
 
 The question is `Which methods of payment are accepted here?`
 
@@ -211,7 +222,7 @@ The question is `Which methods of payment are accepted here?`
 
 
 
-### this.id
+### opening_hours
 
 The question is `What are the opening hours of {title()}?`
 This rendering asks information about the property 
@@ -222,7 +233,7 @@ This is rendered with `<h3>Opening hours</h3>{opening_hours_table(opening_hours)
 
 
 
-### this.id
+### reviews
 Shows the reviews module (including the possibility to leave a review)
 _This tagrendering has no question and is thus read-only_
 
@@ -230,7 +241,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-### this.id
+### shoe_rental
 
 The question is `Can one rent climbing shoes here?`
 
@@ -242,7 +253,7 @@ The question is `Can one rent climbing shoes here?`
 
 
 
-### this.id
+### harness_rental
 
 The question is `Can one rent a climbing harness here?`
 
@@ -254,7 +265,7 @@ The question is `Can one rent a climbing harness here?`
 
 
 
-### this.id
+### belay_device_rental
 
 The question is `Can one rent a belay device here?`
 
@@ -267,7 +278,7 @@ The question is `Can one rent a belay device here?`
 
 
 
-### this.id
+### rope_rental
 
 The question is `Can one rent a climbing rope here?`
 
@@ -279,7 +290,7 @@ The question is `Can one rent a climbing rope here?`
 
 
 
-### this.id
+### bouldering
 
 The question is `Is bouldering possible here?`
 
@@ -291,7 +302,7 @@ The question is `Is bouldering possible here?`
 
 
 
-### this.id
+### sportclimbing
 
 The question is `Is sport climbing possible here on fixed anchors?`
 
@@ -302,7 +313,7 @@ The question is `Is sport climbing possible here on fixed anchors?`
 
 
 
-### this.id
+### toprope
 
 The question is `Is toprope climbing possible here?`
 
@@ -313,7 +324,7 @@ The question is `Is toprope climbing possible here?`
 
 
 
-### this.id
+### average_length
 
 The question is `What is the (average) length of the routes in meters?`
 This rendering asks information about the property 
@@ -323,7 +334,7 @@ This is rendered with `The routes are <b>{canonical(climbing:length)}</b> long o
 
 
 
-### this.id
+### min_difficulty
 
 The question is `What is the grade of the easiest route here, according to the french classification system?`
 This rendering asks information about the property 
@@ -333,7 +344,7 @@ This is rendered with `The lowest grade is {climbing:grade:french:min} according
 
 
 
-### this.id
+### max_difficulty
 
 The question is `What is the highest grade route here, according to the french classification system?`
 This rendering asks information about the property 
@@ -343,7 +354,7 @@ This is rendered with `The highest grade is {climbing:grade:french:max} accordin
 This tagrendering is only visible in the popup if the following condition is met: club= & office= & (<a href='https://wiki.openstreetmap.org/wiki/Key:climbing:sport' target='_blank'>climbing:sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:sport%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dclimbing' target='_blank'>climbing</a>) & climbing!~^(route)$
 
 
-### this.id
+### max_bolts
 
 The question is `How many bolts do routes in {title()} have at most?`
 This rendering asks information about the property 
@@ -353,7 +364,7 @@ This is rendered with `The sport climbing routes here have at most {climbing:bol
 
 
 
-### this.id
+### Speed climbing?
 
 The question is `Is there a speed climbing wall?`
 
@@ -364,7 +375,7 @@ The question is `Is there a speed climbing wall?`
 
 
 
-### this.id
+### internet
 
 The question is `Does this place offer internet access?`
 
@@ -378,7 +389,7 @@ The question is `Does this place offer internet access?`
 This tagrendering has labels 
 `internet-all`
 
-### this.id
+### internet-fee
 
 The question is `Is there a fee for internet access?`
 
@@ -389,7 +400,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `internet-all`
 
-### this.id
+### internet-ssid
 
 The question is `What is the network name for the wireless internet access?`
 This rendering asks information about the property 
@@ -400,7 +411,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `internet-all`
 
-### this.id
+### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 
@@ -408,7 +419,24 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-### this.id
+### minimap
+Shows a small map with the feature. Added by default to every popup
+_This tagrendering has no question and is thus read-only_
+
+
+
+
+
+### nearby_images
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+This tagrendering has labels 
+`added_by_default_conditional`
+
+### lod
 
 _This tagrendering has no question and is thus read-only_
 
@@ -417,15 +445,34 @@ _This tagrendering has no question and is thus read-only_
 This tagrendering has labels 
 `added_by_default`
 
-### this.id
-Shows a small map with the feature. Added by default to every popup
+### favourite_status
+
 _This tagrendering has no question and is thus read-only_
 
 
 
+This tagrendering has labels 
+`added_by_default`
+
+### share
+
+_This tagrendering has no question and is thus read-only_
 
 
-### this.id
+
+This tagrendering has labels 
+`added_by_default`
+
+### qr_code
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+This tagrendering has labels 
+`added_by_default`
+
+### last_edit
 Gives some metainfo about the last edit and who did edit it - rendering only
 _This tagrendering has no question and is thus read-only_
 
@@ -434,33 +481,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `added_by_default`
 
-### this.id
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-
-
-### this.id
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### this.id
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### this.id
+### all-tags
 
 _This tagrendering has no question and is thus read-only_
 

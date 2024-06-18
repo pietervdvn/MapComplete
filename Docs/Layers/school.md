@@ -27,25 +27,26 @@ Schools giving primary and secondary education and post-secondary, non-tertiary 
 1. [ Themes using this layer ](#-themes-using-this-layer-)
 2. [ Basic tags for this layer ](#-basic-tags-for-this-layer-)
 3. [ Supported attributes ](#-supported-attributes-)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
+  - [just_created](#just_created)
+  - [nothing_known](#nothing_known)
+  - [school-name](#school-name)
+  - [capacity](#capacity)
+  - [education-level-belgium](#education-level-belgium)
+  - [gender](#gender)
+  - [target-audience](#target-audience)
+  - [website](#website)
+  - [phone](#phone)
+  - [email](#email)
+  - [school-language](#school-language)
+  - [leftover-questions](#leftover-questions)
+  - [minimap](#minimap)
+  - [move-button](#move-button)
+  - [lod](#lod)
+  - [favourite_status](#favourite_status)
+  - [share](#share)
+  - [qr_code](#qr_code)
+  - [last_edit](#last_edit)
+  - [all-tags](#all-tags)
 
  Themes using this layer 
 -------------------------
@@ -95,16 +96,25 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/email#values) [email](https://wiki.openstreetmap.org/wiki/Key:email) | [email](../SpecialInputElements.md#email) | 
 
 
-### this.id
+### just_created
 This element shows a 'thank you' that the contributor has recently created this element
 _This tagrendering has no question and is thus read-only_
 
  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
 This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
 This tagrendering has labels 
-`added_by_default`
+`added_by_default_top`
 
-### this.id
+### nothing_known
+
+_This tagrendering has no question and is thus read-only_
+
+
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time>=300 & _backend~.+
+This tagrendering has labels 
+`added_by_default_top`
+
+### school-name
 
 The question is `What is the name of this school?`
 This rendering asks information about the property 
@@ -114,7 +124,7 @@ This is rendered with `This school is named {name}`
 
 
 
-### this.id
+### capacity
 
 The question is `How much students can at most enroll in this school?`
 This rendering asks information about the property 
@@ -124,7 +134,7 @@ This is rendered with `This school can enroll at most {capacity} students`
 
 
 
-### this.id
+### education-level-belgium
 
 The question is `What level of education is given on this school?`
 
@@ -138,7 +148,7 @@ The question is `What level of education is given on this school?`
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:_country' target='_blank'>_country</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_country%3Dbe' target='_blank'>be</a>
 
 
-### this.id
+### gender
 
 The question is `Which genders can enroll at this school?`
 
@@ -149,7 +159,7 @@ The question is `Which genders can enroll at this school?`
 
 
 
-### this.id
+### target-audience
 
 The question is `Does this school target students with a special need? Which structural facilities does this school have?`
 This rendering asks information about the property 
@@ -168,7 +178,7 @@ This is rendered with `This school has facilities for students with {school:for}
 This tagrendering is only visible in the popup if the following condition is met: school:for~.+
 
 
-### this.id
+### website
 
 The question is `What is the website of {title()}?`
 This rendering asks information about the property 
@@ -180,7 +190,7 @@ This is rendered with `<a href='{website}' rel='nofollow noopener noreferrer' ta
 This tagrendering has labels 
 `contact`
 
-### this.id
+### phone
 
 The question is `What is the phone number of {title()}?`
 This rendering asks information about the property 
@@ -192,7 +202,7 @@ This is rendered with `<a href='tel:{phone}'>{phone}</a>`
 This tagrendering has labels 
 `contact`
 
-### this.id
+### email
 
 The question is `What is the email address of {title()}?`
 This rendering asks information about the property 
@@ -206,7 +216,7 @@ This is rendered with `<a href='mailto:{email}' target='_blank' rel='noopener'>{
 This tagrendering has labels 
 `contact`
 
-### this.id
+### school-language
 
 _This tagrendering has no question and is thus read-only_
 
@@ -214,7 +224,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-### this.id
+### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 
@@ -222,7 +232,23 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-### this.id
+### minimap
+Shows a small map with the feature. Added by default to every popup
+_This tagrendering has no question and is thus read-only_
+
+
+
+
+
+### move-button
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+
+
+### lod
 
 _This tagrendering has no question and is thus read-only_
 
@@ -231,23 +257,34 @@ _This tagrendering has no question and is thus read-only_
 This tagrendering has labels 
 `added_by_default`
 
-### this.id
-Shows a small map with the feature. Added by default to every popup
-_This tagrendering has no question and is thus read-only_
-
-
-
-
-
-### this.id
+### favourite_status
 
 _This tagrendering has no question and is thus read-only_
 
 
 
+This tagrendering has labels 
+`added_by_default`
+
+### share
+
+_This tagrendering has no question and is thus read-only_
 
 
-### this.id
+
+This tagrendering has labels 
+`added_by_default`
+
+### qr_code
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+This tagrendering has labels 
+`added_by_default`
+
+### last_edit
 Gives some metainfo about the last edit and who did edit it - rendering only
 _This tagrendering has no question and is thus read-only_
 
@@ -256,33 +293,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `added_by_default`
 
-### this.id
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-
-
-### this.id
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### this.id
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### this.id
+### all-tags
 
 _This tagrendering has no question and is thus read-only_
 

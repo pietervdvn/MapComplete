@@ -25,26 +25,28 @@ A layer showing post offices.
 1. [ Themes using this layer ](#-themes-using-this-layer-)
 2. [ Basic tags for this layer ](#-basic-tags-for-this-layer-)
 3. [ Supported attributes ](#-supported-attributes-)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
+  - [just_created](#just_created)
+  - [nothing_known](#nothing_known)
+  - [images](#images)
+  - [minimap](#minimap)
+  - [opening_hours](#opening_hours)
+  - [post_partner](#post_partner)
+  - [post_offic_brand](#post_offic_brand)
+  - [partner-brand](#partner-brand)
+  - [letter-from](#letter-from)
+  - [parcel-from](#parcel-from)
+  - [parcel-pickup](#parcel-pickup)
+  - [parcel-to](#parcel-to)
+  - [stamps](#stamps)
+  - [has_atm](#has_atm)
+  - [leftover-questions](#leftover-questions)
+  - [nearby_images](#nearby_images)
+  - [lod](#lod)
+  - [favourite_status](#favourite_status)
+  - [share](#share)
+  - [qr_code](#qr_code)
+  - [last_edit](#last_edit)
+  - [all-tags](#all-tags)
     + [Filters](#filters)
 
  Themes using this layer 
@@ -99,16 +101,25 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/atm#values) [atm](https://wiki.openstreetmap.org/wiki/Key:atm) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:atm%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:atm%3Dno) [separate](https://wiki.openstreetmap.org/wiki/Tag:atm%3Dseparate)
 
 
-### this.id
+### just_created
 This element shows a 'thank you' that the contributor has recently created this element
 _This tagrendering has no question and is thus read-only_
 
  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
 This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
 This tagrendering has labels 
-`added_by_default`
+`added_by_default_top`
 
-### this.id
+### nothing_known
+
+_This tagrendering has no question and is thus read-only_
+
+
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time>=300 & _backend~.+
+This tagrendering has labels 
+`added_by_default_top`
+
+### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 
@@ -116,7 +127,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-### this.id
+### minimap
 
 _This tagrendering has no question and is thus read-only_
 
@@ -124,7 +135,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-### this.id
+### opening_hours
 
 The question is `What are the opening hours for this post office?`
 This rendering asks information about the property 
@@ -135,7 +146,7 @@ This is rendered with `<h3>Opening hours</h3>{opening_hours_table(opening_hours)
 
 
 
-### this.id
+### post_partner
 
 The question is `Is this a post partner?`
 
@@ -144,7 +155,7 @@ The question is `Is this a post partner?`
 
 
 
-### this.id
+### post_offic_brand
 
 The question is `To which brand does this post office belong?`
 This rendering asks information about the property 
@@ -154,7 +165,7 @@ This is rendered with `This is a {brand} post office`
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dpost_office' target='_blank'>post_office</a>
 
 
-### this.id
+### partner-brand
 
 The question is `For which brand does this location offer services?`
 This rendering asks information about the property 
@@ -171,7 +182,7 @@ This is rendered with `This location offers services for {post_office:brand}`
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:post_office' target='_blank'>post_office</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office%3Dpost_partner' target='_blank'>post_partner</a>
 
 
-### this.id
+### letter-from
 
 The question is `Can you post a letter here?`
 This rendering asks information about the property 
@@ -182,7 +193,7 @@ This is rendered with `You can post letters with these companies: {post_office:l
 
 
 
-### this.id
+### parcel-from
 
 The question is `Can you send a parcel here?`
 This rendering asks information about the property 
@@ -193,7 +204,7 @@ This is rendered with `You can post parcels with these companies: {post_office:p
 
 
 
-### this.id
+### parcel-pickup
 
 The question is `Can you pick up missed parcels here?`
 This rendering asks information about the property 
@@ -204,7 +215,7 @@ This is rendered with `You can pick up parcels from these companies: {post_offic
 
 
 
-### this.id
+### parcel-to
 
 The question is `Can you send parcels to here for pickup?`
 This rendering asks information about the property 
@@ -215,7 +226,7 @@ This is rendered with `You can send parcels to here for pickup with these compan
 
 
 
-### this.id
+### stamps
 
 The question is `Can you buy stamps here?`
 This rendering asks information about the property 
@@ -226,7 +237,7 @@ This is rendered with `You can buy stamps from companies: {post_office:stamps}`
 
 
 
-### this.id
+### has_atm
 
 The question is `Does this post office have an ATM?`
 
@@ -236,7 +247,7 @@ The question is `Does this post office have an ATM?`
 
 
 
-### this.id
+### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 
@@ -244,7 +255,16 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-### this.id
+### nearby_images
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+This tagrendering has labels 
+`added_by_default_conditional`
+
+### lod
 
 _This tagrendering has no question and is thus read-only_
 
@@ -253,7 +273,34 @@ _This tagrendering has no question and is thus read-only_
 This tagrendering has labels 
 `added_by_default`
 
-### this.id
+### favourite_status
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+This tagrendering has labels 
+`added_by_default`
+
+### share
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+This tagrendering has labels 
+`added_by_default`
+
+### qr_code
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+This tagrendering has labels 
+`added_by_default`
+
+### last_edit
 Gives some metainfo about the last edit and who did edit it - rendering only
 _This tagrendering has no question and is thus read-only_
 
@@ -262,33 +309,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `added_by_default`
 
-### this.id
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-
-
-### this.id
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### this.id
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### this.id
+### all-tags
 
 _This tagrendering has no question and is thus read-only_
 

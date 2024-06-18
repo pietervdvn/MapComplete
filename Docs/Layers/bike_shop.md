@@ -25,42 +25,44 @@ A shop specifically selling bicycles or related items
 1. [ Themes using this layer ](#-themes-using-this-layer-)
 2. [ Basic tags for this layer ](#-basic-tags-for-this-layer-)
 3. [ Supported attributes ](#-supported-attributes-)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
+  - [just_created](#just_created)
+  - [nothing_known](#nothing_known)
+  - [images](#images)
+  - [bike_shop-is-bicycle_shop](#bike_shop-is-bicycle_shop)
+  - [bike_shop-name](#bike_shop-name)
+  - [website](#website)
+  - [phone](#phone)
+  - [email](#email)
+  - [opening_hours](#opening_hours)
+  - [bike_shop-access](#bike_shop-access)
+  - [bike_repair_sells-bikes](#bike_repair_sells-bikes)
+  - [bike_repair_repairs-bikes](#bike_repair_repairs-bikes)
+  - [bike_repair_rents-bikes](#bike_repair_rents-bikes)
+  - [bicycle-types](#bicycle-types)
+  - [rental-capacity-city_bike](#rental-capacity-city_bike)
+  - [rental-capacity-ebike](#rental-capacity-ebike)
+  - [rental-capacity-kid_bike](#rental-capacity-kid_bike)
+  - [rental-capacity-bmx](#rental-capacity-bmx)
+  - [rental-capacity-mtb](#rental-capacity-mtb)
+  - [rental-capacity-bicycle_pannier](#rental-capacity-bicycle_pannier)
+  - [rental-capacity-tandem_bicycle](#rental-capacity-tandem_bicycle)
+  - [bike_repair_second-hand-bikes](#bike_repair_second-hand-bikes)
+  - [bike_repair_bike-pump-service](#bike_repair_bike-pump-service)
+  - [bike_repair_tools-service](#bike_repair_tools-service)
+  - [bike_repair_bike-wash](#bike_repair_bike-wash)
+  - [bike_cleaning-service:bicycle:cleaning:charge](#bike_cleaning-servicebicycle:cleaning:charge)
+  - [description](#description)
+  - [leftover-questions](#leftover-questions)
+  - [minimap](#minimap)
+  - [nearby_images](#nearby_images)
+  - [move-button](#move-button)
+  - [delete-button](#delete-button)
+  - [lod](#lod)
+  - [favourite_status](#favourite_status)
+  - [share](#share)
+  - [qr_code](#qr_code)
+  - [last_edit](#last_edit)
+  - [all-tags](#all-tags)
     + [Filters](#filters)
 
  Themes using this layer 
@@ -130,16 +132,25 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/description#values) [description](https://wiki.openstreetmap.org/wiki/Key:description) | [string](../SpecialInputElements.md#string) | 
 
 
-### this.id
+### just_created
 This element shows a 'thank you' that the contributor has recently created this element
 _This tagrendering has no question and is thus read-only_
 
  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
 This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
 This tagrendering has labels 
-`added_by_default`
+`added_by_default_top`
 
-### this.id
+### nothing_known
+
+_This tagrendering has no question and is thus read-only_
+
+
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time>=300 & _backend~.+
+This tagrendering has labels 
+`added_by_default_top`
+
+### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 
@@ -147,7 +158,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-### this.id
+### bike_shop-is-bicycle_shop
 
 _This tagrendering has no question and is thus read-only_
 
@@ -155,7 +166,7 @@ _This tagrendering has no question and is thus read-only_
 This tagrendering is only visible in the popup if the following condition is met: shop~.+ & shop!~^(bicycle)$ & shop!~^(sports)$
 
 
-### this.id
+### bike_shop-name
 
 The question is `What is the name of this bicycle shop?`
 This rendering asks information about the property 
@@ -165,7 +176,7 @@ This is rendered with `This bicycle shop is called {name}`
 
 
 
-### this.id
+### website
 
 The question is `What is the website of {title()}?`
 This rendering asks information about the property 
@@ -177,7 +188,7 @@ This is rendered with `<a href='{website}' rel='nofollow noopener noreferrer' ta
 This tagrendering has labels 
 `contact`
 
-### this.id
+### phone
 
 The question is `What is the phone number of {title()}?`
 This rendering asks information about the property 
@@ -189,7 +200,7 @@ This is rendered with `<a href='tel:{phone}'>{phone}</a>`
 This tagrendering has labels 
 `contact`
 
-### this.id
+### email
 
 The question is `What is the email address of {title()}?`
 This rendering asks information about the property 
@@ -203,7 +214,7 @@ This is rendered with `<a href='mailto:{email}' target='_blank' rel='noopener'>{
 This tagrendering has labels 
 `contact`
 
-### this.id
+### opening_hours
 
 The question is `What are the opening hours of {title()}?`
 This rendering asks information about the property 
@@ -214,7 +225,7 @@ This is rendered with `<h3>Opening hours</h3>{opening_hours_table(opening_hours)
 
 
 
-### this.id
+### bike_shop-access
 
 _This tagrendering has no question and is thus read-only_
 This rendering asks information about the property 
@@ -224,7 +235,7 @@ This is rendered with `Only accessible to {access}`
 
 
 
-### this.id
+### bike_repair_sells-bikes
 
 The question is `Does this shop sell bikes?`
 
@@ -233,7 +244,7 @@ The question is `Does this shop sell bikes?`
 
 
 
-### this.id
+### bike_repair_repairs-bikes
 
 The question is `Does this shop repair bikes?`
 
@@ -244,7 +255,7 @@ The question is `Does this shop repair bikes?`
 
 
 
-### this.id
+### bike_repair_rents-bikes
 
 The question is `Does this shop rent out bikes?`
 
@@ -253,7 +264,7 @@ The question is `Does this shop rent out bikes?`
 
 
 
-### this.id
+### bicycle-types
 
 The question is `What kind of bicycles and accessories are rented here?`
 This rendering asks information about the property 
@@ -271,7 +282,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `bicycle_rental`
 
-### this.id
+### rental-capacity-city_bike
 
 The question is `How many city bikes can be rented here?`
 This rendering asks information about the property 
@@ -282,7 +293,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `bicycle_rental`
 
-### this.id
+### rental-capacity-ebike
 
 The question is `How many electrical bikes can be rented here?`
 This rendering asks information about the property 
@@ -293,7 +304,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `bicycle_rental`
 
-### this.id
+### rental-capacity-kid_bike
 
 The question is `How many bikes for children can be rented here?`
 This rendering asks information about the property 
@@ -304,7 +315,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `bicycle_rental`
 
-### this.id
+### rental-capacity-bmx
 
 The question is `How many BMX bikes can be rented here?`
 This rendering asks information about the property 
@@ -315,7 +326,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `bicycle_rental`
 
-### this.id
+### rental-capacity-mtb
 
 The question is `How many mountainbikes can be rented here?`
 This rendering asks information about the property 
@@ -326,7 +337,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `bicycle_rental`
 
-### this.id
+### rental-capacity-bicycle_pannier
 
 The question is `How many bicycle panniers can be rented here?`
 This rendering asks information about the property 
@@ -337,7 +348,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `bicycle_rental`
 
-### this.id
+### rental-capacity-tandem_bicycle
 
 The question is `How many tandem can be rented here?`
 This rendering asks information about the property 
@@ -348,7 +359,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `bicycle_rental`
 
-### this.id
+### bike_repair_second-hand-bikes
 
 The question is `Does this shop sell second-hand bikes?`
 
@@ -358,7 +369,7 @@ The question is `Does this shop sell second-hand bikes?`
 
 
 
-### this.id
+### bike_repair_bike-pump-service
 
 The question is `Does this shop offer a bike pump for use by anyone?`
 
@@ -368,7 +379,7 @@ The question is `Does this shop offer a bike pump for use by anyone?`
 
 
 
-### this.id
+### bike_repair_tools-service
 
 The question is `Are there tools here to repair your own bike?`
 
@@ -378,7 +389,7 @@ The question is `Are there tools here to repair your own bike?`
 
 
 
-### this.id
+### bike_repair_bike-wash
 
 The question is `Are bicycles washed here?`
 
@@ -388,7 +399,7 @@ The question is `Are bicycles washed here?`
 
 
 
-### this.id
+### bike_cleaning-service:bicycle:cleaning:charge
 
 The question is `How much does it cost to use the cleaning service?`
 This rendering asks information about the property 
@@ -400,7 +411,7 @@ This is rendered with `Using the cleaning service costs {service:bicycle:cleanin
 This tagrendering is only visible in the popup if the following condition is met: amenity!=bike_wash & amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+
 
 
-### this.id
+### description
 
 The question is `Is there still some relevant info that the previous questions did not cover? Feel free to add it here.`
 This rendering asks information about the property 
@@ -410,7 +421,7 @@ This is rendered with `{description}`
 
 
 
-### this.id
+### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 
@@ -418,7 +429,40 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-### this.id
+### minimap
+Shows a small map with the feature. Added by default to every popup
+_This tagrendering has no question and is thus read-only_
+
+
+
+
+
+### nearby_images
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+This tagrendering has labels 
+`added_by_default_conditional`
+
+### move-button
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+
+
+### delete-button
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+
+
+### lod
 
 _This tagrendering has no question and is thus read-only_
 
@@ -427,31 +471,34 @@ _This tagrendering has no question and is thus read-only_
 This tagrendering has labels 
 `added_by_default`
 
-### this.id
-Shows a small map with the feature. Added by default to every popup
-_This tagrendering has no question and is thus read-only_
-
-
-
-
-
-### this.id
+### favourite_status
 
 _This tagrendering has no question and is thus read-only_
 
 
 
+This tagrendering has labels 
+`added_by_default`
 
-
-### this.id
+### share
 
 _This tagrendering has no question and is thus read-only_
 
 
 
+This tagrendering has labels 
+`added_by_default`
+
+### qr_code
+
+_This tagrendering has no question and is thus read-only_
 
 
-### this.id
+
+This tagrendering has labels 
+`added_by_default`
+
+### last_edit
 Gives some metainfo about the last edit and who did edit it - rendering only
 _This tagrendering has no question and is thus read-only_
 
@@ -460,33 +507,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `added_by_default`
 
-### this.id
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-
-
-### this.id
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### this.id
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### this.id
+### all-tags
 
 _This tagrendering has no question and is thus read-only_
 

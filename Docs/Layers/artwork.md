@@ -26,33 +26,35 @@ An open map of statues, busts, graffitis and other artwork all over the world
 1. [ Themes using this layer ](#-themes-using-this-layer-)
 2. [ Basic tags for this layer ](#-basic-tags-for-this-layer-)
 3. [ Supported attributes ](#-supported-attributes-)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
+  - [just_created](#just_created)
+  - [nothing_known](#nothing_known)
+  - [images](#images)
+  - [artwork-artwork_type](#artwork-artwork_type)
+  - [artwork-artist-wikidata](#artwork-artist-wikidata)
+  - [artwork-artist_name](#artwork-artist_name)
+  - [artwork-website](#artwork-website)
+  - [wikipedia](#wikipedia)
+  - [artwork_subject](#artwork_subject)
+  - [doubles_as_bench](#doubles_as_bench)
+  - [bench-backrest](#bench-backrest)
+  - [bench-seats](#bench-seats)
+  - [bench-material](#bench-material)
+  - [bench-direction](#bench-direction)
+  - [bench-colour](#bench-colour)
+  - [bench-survey:date](#bench-surveydate)
+  - [bench-inscription](#bench-inscription)
+  - [bench-memorial](#bench-memorial)
+  - [leftover-questions](#leftover-questions)
+  - [minimap](#minimap)
+  - [nearby_images](#nearby_images)
+  - [move-button](#move-button)
+  - [delete-button](#delete-button)
+  - [lod](#lod)
+  - [favourite_status](#favourite_status)
+  - [share](#share)
+  - [qr_code](#qr_code)
+  - [last_edit](#last_edit)
+  - [all-tags](#all-tags)
     + [Filters](#filters)
 
  Themes using this layer 
@@ -111,16 +113,25 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/historic#values) [historic](https://wiki.openstreetmap.org/wiki/Key:historic) | Multiple choice | [memorial](https://wiki.openstreetmap.org/wiki/Tag:historic%3Dmemorial) [](https://wiki.openstreetmap.org/wiki/Tag:historic%3D)
 
 
-### this.id
+### just_created
 This element shows a 'thank you' that the contributor has recently created this element
 _This tagrendering has no question and is thus read-only_
 
  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
 This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
 This tagrendering has labels 
-`added_by_default`
+`added_by_default_top`
 
-### this.id
+### nothing_known
+
+_This tagrendering has no question and is thus read-only_
+
+
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time>=300 & _backend~.+
+This tagrendering has labels 
+`added_by_default_top`
+
+### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 
@@ -128,7 +139,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-### this.id
+### artwork-artwork_type
 
 The question is `What is the type of this artwork?`
 This rendering asks information about the property 
@@ -151,7 +162,7 @@ This is rendered with `This is a {artwork_type}`
 This tagrendering has labels 
 `artwork-question`
 
-### this.id
+### artwork-artist-wikidata
 
 The question is `Who made this artwork?`
 This rendering asks information about the property 
@@ -162,7 +173,7 @@ This is rendered with `This artwork was made by {wikidata_label(artist:wikidata)
 This tagrendering has labels 
 `artwork-question`
 
-### this.id
+### artwork-artist_name
 
 The question is `Which artist created this?`
 This rendering asks information about the property 
@@ -173,7 +184,7 @@ This is rendered with `Created by {artist_name}`
 This tagrendering has labels 
 `artwork-question`
 
-### this.id
+### artwork-website
 
 The question is `Is there a website with more information about this artwork?`
 This rendering asks information about the property 
@@ -184,7 +195,7 @@ This is rendered with `{link(More information on this website,&LBRACEwebsite&RBR
 This tagrendering has labels 
 `artwork-question`
 
-### this.id
+### wikipedia
 Shows a wikipedia box with the corresponding wikipedia article; the wikidata-item link can be changed by a contributor
 The question is `What is the corresponding Wikidata entity?`
 This rendering asks information about the property 
@@ -197,7 +208,7 @@ This is rendered with `{wikipedia():max-height:25rem}`
 
 
 
-### this.id
+### artwork_subject
 
 The question is `What does this artwork depict?`
 This rendering asks information about the property 
@@ -208,7 +219,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `artwork-question`
 
-### this.id
+### doubles_as_bench
 
 The question is `Does this artwork serve as a bench?`
 
@@ -219,7 +230,7 @@ The question is `Does this artwork serve as a bench?`
 
 
 
-### this.id
+### bench-backrest
 
 The question is `Does this bench have a backrest?`
 
@@ -230,7 +241,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `bench-questions`
 
-### this.id
+### bench-seats
 
 The question is `How many seats does this bench have?`
 This rendering asks information about the property 
@@ -241,7 +252,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `bench-questions`
 
-### this.id
+### bench-material
 
 The question is `What is the bench (seating) made from?`
 This rendering asks information about the property 
@@ -257,7 +268,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `bench-questions`
 
-### this.id
+### bench-direction
 
 The question is `In which direction are you looking when sitting on the bench?`
 This rendering asks information about the property 
@@ -268,7 +279,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `bench-questions`
 
-### this.id
+### bench-colour
 
 The question is `Which colour does this bench have?`
 This rendering asks information about the property 
@@ -286,7 +297,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `bench-questions`
 
-### this.id
+### bench-survey:date
 
 The question is `When was this bench last surveyed?`
 This rendering asks information about the property 
@@ -297,7 +308,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `bench-questions`
 
-### this.id
+### bench-inscription
 
 The question is `Does this bench have an inscription?`
 This rendering asks information about the property 
@@ -310,7 +321,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `bench-questions`
 
-### this.id
+### bench-memorial
 
 The question is `Does this bench act as memorial for someone or something?`
 
@@ -320,7 +331,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `bench-questions`
 
-### this.id
+### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 
@@ -328,7 +339,40 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-### this.id
+### minimap
+Shows a small map with the feature. Added by default to every popup
+_This tagrendering has no question and is thus read-only_
+
+
+
+
+
+### nearby_images
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+This tagrendering has labels 
+`added_by_default_conditional`
+
+### move-button
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+
+
+### delete-button
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+
+
+### lod
 
 _This tagrendering has no question and is thus read-only_
 
@@ -337,31 +381,34 @@ _This tagrendering has no question and is thus read-only_
 This tagrendering has labels 
 `added_by_default`
 
-### this.id
-Shows a small map with the feature. Added by default to every popup
-_This tagrendering has no question and is thus read-only_
-
-
-
-
-
-### this.id
+### favourite_status
 
 _This tagrendering has no question and is thus read-only_
 
 
 
+This tagrendering has labels 
+`added_by_default`
 
-
-### this.id
+### share
 
 _This tagrendering has no question and is thus read-only_
 
 
 
+This tagrendering has labels 
+`added_by_default`
+
+### qr_code
+
+_This tagrendering has no question and is thus read-only_
 
 
-### this.id
+
+This tagrendering has labels 
+`added_by_default`
+
+### last_edit
 Gives some metainfo about the last edit and who did edit it - rendering only
 _This tagrendering has no question and is thus read-only_
 
@@ -370,33 +417,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `added_by_default`
 
-### this.id
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-
-
-### this.id
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### this.id
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### this.id
+### all-tags
 
 _This tagrendering has no question and is thus read-only_
 

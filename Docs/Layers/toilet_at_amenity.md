@@ -25,33 +25,35 @@ A layer showing (public) toilets located at different places.
 1. [ Themes using this layer ](#-themes-using-this-layer-)
 2. [ Basic tags for this layer ](#-basic-tags-for-this-layer-)
 3. [ Supported attributes ](#-supported-attributes-)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
+  - [just_created](#just_created)
+  - [nothing_known](#nothing_known)
+  - [images](#images)
+  - [repeated](#repeated)
+  - [single_level](#single_level)
+  - [toilet-access](#toilet-access)
+  - [toilets-fee](#toilets-fee)
+  - [toilet-charge](#toilet-charge)
+  - [opening_hours](#opening_hours)
+  - [toilets-wheelchair](#toilets-wheelchair)
+  - [wheelchair-door-width](#wheelchair-door-width)
+  - [toilets-type](#toilets-type)
+  - [toilets-changing-table](#toilets-changing-table)
+  - [toilet-changing_table:location](#toilet-changing_tablelocation)
+  - [toilet-handwashing](#toilet-handwashing)
+  - [toilet-has-paper](#toilet-has-paper)
+  - [menstrual_products](#menstrual_products)
+  - [menstrual_products_location](#menstrual_products_location)
+  - [description](#description)
+  - [leftover-questions](#leftover-questions)
+  - [minimap](#minimap)
+  - [nearby_images](#nearby_images)
+  - [delete-button](#delete-button)
+  - [lod](#lod)
+  - [favourite_status](#favourite_status)
+  - [share](#share)
+  - [qr_code](#qr_code)
+  - [last_edit](#last_edit)
+  - [all-tags](#all-tags)
     + [Filters](#filters)
 
  Themes using this layer 
@@ -109,16 +111,25 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/toilets:description#values) [toilets:description](https://wiki.openstreetmap.org/wiki/Key:toilets:description) | [string](../SpecialInputElements.md#string) | 
 
 
-### this.id
+### just_created
 This element shows a 'thank you' that the contributor has recently created this element
 _This tagrendering has no question and is thus read-only_
 
  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
 This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
 This tagrendering has labels 
-`added_by_default`
+`added_by_default_top`
 
-### this.id
+### nothing_known
+
+_This tagrendering has no question and is thus read-only_
+
+
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time>=300 & _backend~.+
+This tagrendering has labels 
+`added_by_default_top`
+
+### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 
@@ -126,7 +137,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-### this.id
+### repeated
 
 _This tagrendering has no question and is thus read-only_
 
@@ -135,7 +146,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `level`
 
-### this.id
+### single_level
 
 The question is `On what level is this feature located?`
 This rendering asks information about the property 
@@ -152,7 +163,7 @@ This is rendered with `Located on the {level}th floor`
 This tagrendering has labels 
 `level`
 
-### this.id
+### toilet-access
 
 The question is `Are these toilets publicly accessible?`
 This rendering asks information about the property 
@@ -167,7 +178,7 @@ This is rendered with `Access is {toilets:access}`
 
 
 
-### this.id
+### toilets-fee
 
 The question is `Are these toilets free to use?`
 
@@ -176,7 +187,7 @@ The question is `Are these toilets free to use?`
 
 
 
-### this.id
+### toilet-charge
 
 The question is `How much does one have to pay for these toilets?`
 This rendering asks information about the property 
@@ -186,7 +197,7 @@ This is rendered with `The fee is {toilets:charge}`
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:fee' target='_blank'>toilets:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:fee%3Dyes' target='_blank'>yes</a>
 
 
-### this.id
+### opening_hours
 
 The question is `When is the amenity where these toilets are located open?`
 This rendering asks information about the property 
@@ -197,7 +208,7 @@ This is rendered with `<h3>Opening hours</h3>{opening_hours_table(opening_hours)
 
 
 
-### this.id
+### toilets-wheelchair
 
 The question is `Is there a dedicated toilet for wheelchair users?`
 
@@ -207,7 +218,7 @@ The question is `Is there a dedicated toilet for wheelchair users?`
 
 
 
-### this.id
+### wheelchair-door-width
 
 The question is `What is the width of the door to the wheelchair accessible toilet?`
 This rendering asks information about the property 
@@ -217,7 +228,7 @@ This is rendered with `The door to the wheelchair-accessible toilet is {canonica
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:wheelchair' target='_blank'>toilets:wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:wheelchair%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:wheelchair' target='_blank'>toilets:wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:wheelchair%3Ddesignated' target='_blank'>designated</a>
 
 
-### this.id
+### toilets-type
 
 The question is `Which kind of toilets are these?`
 
@@ -229,7 +240,7 @@ The question is `Which kind of toilets are these?`
 This tagrendering has labels 
 `relevant-questions`
 
-### this.id
+### toilets-changing-table
 
 The question is `Is a changing table (to change diapers) available?`
 
@@ -239,7 +250,7 @@ The question is `Is a changing table (to change diapers) available?`
 This tagrendering has labels 
 `relevant-questions`
 
-### this.id
+### toilet-changing_table:location
 
 The question is `Where is the changing table located?`
 This rendering asks information about the property 
@@ -253,7 +264,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `relevant-questions`
 
-### this.id
+### toilet-handwashing
 
 The question is `Do these toilets have a sink to wash your hands?`
 
@@ -263,7 +274,7 @@ The question is `Do these toilets have a sink to wash your hands?`
 This tagrendering has labels 
 `relevant-questions`
 
-### this.id
+### toilet-has-paper
 
 The question is `Does one have to bring their own toilet paper to this toilet?`
 
@@ -273,7 +284,7 @@ The question is `Does one have to bring their own toilet paper to this toilet?`
 This tagrendering has labels 
 `relevant-questions`
 
-### this.id
+### menstrual_products
 
 The question is `Are free, menstrual products distributed here?`
 
@@ -283,7 +294,7 @@ The question is `Are free, menstrual products distributed here?`
 
 
 
-### this.id
+### menstrual_products_location
 
 The question is `Where are the free menstrual products located?`
 This rendering asks information about the property 
@@ -295,7 +306,7 @@ This is rendered with `The menstrual products are located in {toilets:menstrual_
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:menstrual_products' target='_blank'>toilets:menstrual_products</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:menstrual_products%3Dlimited' target='_blank'>limited</a> | toilets:menstrual_products:location~.+
 
 
-### this.id
+### description
 
 The question is `Is there still some relevant info that the previous questions did not cover? Feel free to add it here.`
 This rendering asks information about the property 
@@ -305,7 +316,7 @@ This is rendered with `{toilets:description}`
 
 
 
-### this.id
+### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 
@@ -313,7 +324,32 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-### this.id
+### minimap
+Shows a small map with the feature. Added by default to every popup
+_This tagrendering has no question and is thus read-only_
+
+
+
+
+
+### nearby_images
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+This tagrendering has labels 
+`added_by_default_conditional`
+
+### delete-button
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+
+
+### lod
 
 _This tagrendering has no question and is thus read-only_
 
@@ -322,23 +358,34 @@ _This tagrendering has no question and is thus read-only_
 This tagrendering has labels 
 `added_by_default`
 
-### this.id
-Shows a small map with the feature. Added by default to every popup
-_This tagrendering has no question and is thus read-only_
-
-
-
-
-
-### this.id
+### favourite_status
 
 _This tagrendering has no question and is thus read-only_
 
 
 
+This tagrendering has labels 
+`added_by_default`
+
+### share
+
+_This tagrendering has no question and is thus read-only_
 
 
-### this.id
+
+This tagrendering has labels 
+`added_by_default`
+
+### qr_code
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+This tagrendering has labels 
+`added_by_default`
+
+### last_edit
 Gives some metainfo about the last edit and who did edit it - rendering only
 _This tagrendering has no question and is thus read-only_
 
@@ -347,33 +394,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `added_by_default`
 
-### this.id
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-
-
-### this.id
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### this.id
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### this.id
+### all-tags
 
 _This tagrendering has no question and is thus read-only_
 

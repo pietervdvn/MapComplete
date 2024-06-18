@@ -37,6 +37,7 @@
  - climbing_route
  - clock
  - crossings
+ - cycleways_and_roads
  - defibrillator
  - dentist
  - disaster_response

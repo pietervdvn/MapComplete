@@ -26,26 +26,28 @@ An area where climbing is possible, e.g. a crag, site, boulder, … Contains agg
 1. [ Themes using this layer ](#-themes-using-this-layer-)
 2. [ Basic tags for this layer ](#-basic-tags-for-this-layer-)
 3. [ Supported attributes ](#-supported-attributes-)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
-  - [this.id](#thisid)
+  - [just_created](#just_created)
+  - [nothing_known](#nothing_known)
+  - [images](#images)
+  - [minimap](#minimap)
+  - [Contained routes length hist](#contained-routes-length-hist)
+  - [Contained routes hist](#contained-routes-hist)
+  - [Contained_climbing_routes](#contained_climbing_routes)
+  - [name](#name)
+  - [Type](#type)
+  - [Rock type (crag/rock/cliff only)](#rock-type-(cragrock/cliff-only))
+  - [reviews](#reviews)
+  - [website](#website)
+  - [fee](#fee)
+  - [bouldering](#bouldering)
+  - [leftover-questions](#leftover-questions)
+  - [nearby_images](#nearby_images)
+  - [lod](#lod)
+  - [favourite_status](#favourite_status)
+  - [share](#share)
+  - [qr_code](#qr_code)
+  - [last_edit](#last_edit)
+  - [all-tags](#all-tags)
 
  Themes using this layer 
 -------------------------
@@ -99,16 +101,25 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/climbing:boulder#values) [climbing:boulder](https://wiki.openstreetmap.org/wiki/Key:climbing:boulder) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dno) [limited](https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dlimited)
 
 
-### this.id
+### just_created
 This element shows a 'thank you' that the contributor has recently created this element
 _This tagrendering has no question and is thus read-only_
 
  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
 This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
 This tagrendering has labels 
-`added_by_default`
+`added_by_default_top`
 
-### this.id
+### nothing_known
+
+_This tagrendering has no question and is thus read-only_
+
+
+This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time>=300 & _backend~.+
+This tagrendering has labels 
+`added_by_default_top`
+
+### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 
@@ -116,7 +127,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-### this.id
+### minimap
 
 _This tagrendering has no question and is thus read-only_
 
@@ -124,7 +135,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-### this.id
+### Contained routes length hist
 
 _This tagrendering has no question and is thus read-only_
 
@@ -132,7 +143,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-### this.id
+### Contained routes hist
 
 _This tagrendering has no question and is thus read-only_
 
@@ -140,7 +151,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-### this.id
+### Contained_climbing_routes
 
 _This tagrendering has no question and is thus read-only_
 
@@ -148,7 +159,7 @@ _This tagrendering has no question and is thus read-only_
 This tagrendering is only visible in the popup if the following condition is met: _contained_climbing_routes~.+
 
 
-### this.id
+### name
 
 The question is `What is the name of this climbing opportunity?`
 This rendering asks information about the property 
@@ -158,7 +169,7 @@ This is rendered with `<strong>{name}</strong>`
 
 
 
-### this.id
+### Type
 
 The question is `What kind of climbing opportunity is this?`
 
@@ -168,7 +179,7 @@ The question is `What kind of climbing opportunity is this?`
 
 
 
-### this.id
+### Rock type (crag/rock/cliff only)
 
 The question is `What is the rock type here?`
 This rendering asks information about the property 
@@ -178,7 +189,7 @@ This is rendered with `The rock type is {rock}`
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:climbing' target='_blank'>climbing</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing%3Dcrag' target='_blank'>crag</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:natural' target='_blank'>natural</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:natural%3Dcliff' target='_blank'>cliff</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:natural' target='_blank'>natural</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:natural%3Dbare_rock' target='_blank'>bare_rock</a>
 
 
-### this.id
+### reviews
 Shows the reviews module (including the possibility to leave a review)
 _This tagrendering has no question and is thus read-only_
 
@@ -186,7 +197,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-### this.id
+### website
 
 The question is `Is there a (unofficial) website with more informations (e.g. topos)?`
 This rendering asks information about the property 
@@ -196,7 +207,7 @@ This is rendered with `<a href='{url}' target='_blank' rel='noopener'>{url}</a>`
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dclimbing' target='_blank'>climbing</a> & club= & office= & leisure!~^(sports_centre)$
 
 
-### this.id
+### fee
 
 The question is `Is a fee required to climb here?`
 This rendering asks information about the property 
@@ -207,7 +218,7 @@ This is rendered with `A fee of {charge} should be paid for climbing here`
 
 
 
-### this.id
+### bouldering
 
 The question is `Is bouldering possible here?`
 
@@ -219,7 +230,7 @@ The question is `Is bouldering possible here?`
 
 
 
-### this.id
+### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 
@@ -227,7 +238,16 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-### this.id
+### nearby_images
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+This tagrendering has labels 
+`added_by_default_conditional`
+
+### lod
 
 _This tagrendering has no question and is thus read-only_
 
@@ -236,7 +256,34 @@ _This tagrendering has no question and is thus read-only_
 This tagrendering has labels 
 `added_by_default`
 
-### this.id
+### favourite_status
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+This tagrendering has labels 
+`added_by_default`
+
+### share
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+This tagrendering has labels 
+`added_by_default`
+
+### qr_code
+
+_This tagrendering has no question and is thus read-only_
+
+
+
+This tagrendering has labels 
+`added_by_default`
+
+### last_edit
 Gives some metainfo about the last edit and who did edit it - rendering only
 _This tagrendering has no question and is thus read-only_
 
@@ -245,33 +292,7 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `added_by_default`
 
-### this.id
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-
-
-### this.id
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### this.id
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### this.id
+### all-tags
 
 _This tagrendering has no question and is thus read-only_
 

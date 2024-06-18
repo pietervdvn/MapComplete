@@ -703,7 +703,7 @@
     },
     "reviews": {
         "affiliated_reviewer_warning": "(Partner-Rezension)",
-        "attribution": "Rezensionen von <a href=\"https://mangrove.reviews/\" target=\"_blank\">Mangrove Reviews</a> sind unter <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a> verfügbar.",
+        "attribution": "Von <a href=\"https://mangrove.reviews/\" target=\"_blank\">Mangrove Reviews</a>",
         "averageRating": "Mittlere Bewertung von {n} Sternen",
         "i_am_affiliated": "Ich bin mit diesem Objekt vertraut",
         "i_am_affiliated_explanation": "Prüfung, ob Sie der Eigentümer, Ersteller, Angestellter, … sind",
