@@ -5,6 +5,7 @@ export interface IconConfigJson {
     /**
      * question: What icon should be used?
      * type: icon
+     * types: Use a dynamic value ; icon
      * suggestions: return Constants.defaultPinIcons.map(i => ({if: "value="+i, then: i, icon: i}))
      */
     icon: string | MinimalTagRenderingConfigJson | { builtin: string; override: any }
@@ -12,6 +13,7 @@ export interface IconConfigJson {
      * question: What colour should the icon be?
      * This will only work for the default icons such as `pin`,`circle`,...
      * type: color
+     * types: Use a dynamic color ; icon
      */
     color?: string | MinimalTagRenderingConfigJson | { builtin: string; override: any }
 }

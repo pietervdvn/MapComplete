@@ -381,10 +381,6 @@
           "then": "<b>bicycle_rental</b> (builtin) - Bicycle rental stations"
         },
         {
-          "if": "value=bicycle_tube_vending_machine",
-          "then": "<b>bicycle_tube_vending_machine</b> (builtin) - A layer showing vending machines for bicycle tubes (either purpose-built bicycle tube vending machines or classical vending machines with bicycle tubes and optionally additional bicycle related objects such as lights, gloves, locks, …)"
-        },
-        {
           "if": "value=bike_cafe",
           "then": "<b>bike_cafe</b> (builtin) - A bike café is a café geared towards cyclists, for example with services such as a pump, with lots of bicycle-related decoration, …"
         },
@@ -581,6 +577,10 @@
           "then": "<b>gps_track</b> (builtin) - Meta layer showing the previous locations of the user as single line with controls, e.g. to erase, upload or download this track. Add this to your theme and override the maprendering to change the appearance of the travelled track."
         },
         {
+          "if": "value=grave",
+          "then": "<b>grave</b> (builtin) - Tombstones (and graves) indicate where a person was buried. On this map, those can be recorded and a link to Wikipedia can be made"
+        },
+        {
           "if": "value=guidepost",
           "then": "<b>guidepost</b> (builtin) - Guideposts (also known as fingerposts or finger posts) are often found along official hiking/cycling/riding/skiing routes to indicate the directions to different destinations"
         },
@@ -643,6 +643,10 @@
         {
           "if": "value=last_click",
           "then": "<b>last_click</b> (builtin) - This 'layer' is not really a layer, but contains part of the code how the popup to 'add a new marker' is displayed"
+        },
+        {
+          "if": "value=lighthouse",
+          "then": "<b>lighthouse</b> (builtin) - undefined"
         },
         {
           "if": "value=love_hotel",
@@ -1402,7 +1406,7 @@
                       }
                     },
                     "multiAnswer": {
-                      "description": "If true, use checkboxes instead of radio buttons when asking the question\n\nquestion: Should a contributor be allowed to select multiple mappings?\n\niftrue: allow to select multiple mappings\niffalse: only allow to select a single mapping\nifunset: only allow to select a single mapping",
+                      "description": "question: Should a contributor be allowed to select multiple mappings?\n\nIf true, use checkboxes instead of radio buttons when asking the question.\n\niftrue: allow to select multiple mappings (and show a freeform-value as list if ';'-separated)\niffalse: only allow to select a single mapping\nifunset: only allow to select a single mapping",
                       "type": "boolean"
                     },
                     "freeform": {
@@ -1427,11 +1431,6 @@
                               "type": "string"
                             }
                           ]
-                        },
-                        "helperArgs": {
-                          "description": "Extra parameters to initialize the input helper arguments.\nFor semantics, see the 'SpecialInputElements.md'\ngroup: expert",
-                          "type": "array",
-                          "items": {}
                         },
                         "addExtraTags": {
                           "description": "If a value is added with the textfield, these extra tag is addded.\nUseful to add a 'fixme=freeform textfield used - to be checked'\ngroup: expert",
@@ -1461,6 +1460,10 @@
                               "type": "string"
                             }
                           ]
+                        },
+                        "postfixDistinguished": {
+                          "description": "question: If this key shared and distinguished by a postfix, what is the postfix?\nThis option is used specifically for `charge`, where the cost is indicated with `/item`.\n\nFor example, a vending machine might sell `bicycle_tube`.\nSetting this value to `bicycle_tube`, then answering this question will set `charge= €XX/bicycle_tube`.\nIf charge did already contain another value, e.g. `charge= €YY/some_item; €ZZ/other_item`, then `€XX/bicycle_tube`will be added.\nNote: those values are sorted alphabetically\nNote: no need to add the `/`\n\nifunset: Don't distinguish by postfix\ngroup: expert",
+                          "type": "string"
                         }
                       }
                     },
@@ -1855,7 +1858,7 @@
             }
           },
           "syncSelection": {
-            "description": "If set, synchronizes whether or not this layer is enabled.\n\ngroup: advanced\nquestion: Should enabling/disabling the layer be saved (locally or in the cloud)?\nsuggestions: return [{if: \"value=no\", then: \"Don't save, always revert to the default\"}, {if: \"value=local\", then: \"Save selection in local storage\"}, {if: \"value=theme-only\", then: \"Save the state in the OSM-usersettings, but apply on this theme only (default)\"}, {if: \"value=global\", then: \"Save in OSM-usersettings and toggle on _all_ themes using this layer\"}]",
+            "description": "If set, synchronizes whether this layer is enabled.\n\ngroup: advanced\nquestion: Should enabling/disabling the layer be saved (locally or in the cloud)?\nsuggestions: return [{if: \"value=no\", then: \"Don't save, always revert to the default\"}, {if: \"value=local\", then: \"Save selection in local storage\"}, {if: \"value=theme-only\", then: \"Save the state in the OSM-usersettings, but apply on this theme only (default)\"}, {if: \"value=global\", then: \"Save in OSM-usersettings and toggle on _all_ themes using this layer\"}]",
             "enum": [
               "global",
               "local",
@@ -1870,6 +1873,10 @@
           },
           "fullNodeDatabase": {
             "description": "_Set automatically by MapComplete, please ignore_\n\ngroup: hidden",
+            "type": "boolean"
+          },
+          "enableMorePrivacy": {
+            "description": "question: Should a theme using this layer leak some location info when making changes?\n\nWhen a changeset is made, a 'distance to object'-class is written to the changeset.\nFor some particular themes and layers, this might leak too much information, and we want to obfuscate this\n\nifunset: Write 'change_within_x_m' as usual and if GPS is enabled\niftrue: Do not write 'change_within_x_m' and do not indicate that this was done by survey",
             "type": "boolean"
           }
         },
@@ -3638,6 +3645,7 @@
     "required": true,
     "hints": {
       "typehint": "icon",
+      "types": "Use a dynamic value ; icon",
       "question": "What icon should be used?",
       "suggestions": [
         {
@@ -3976,6 +3984,7 @@
     "required": false,
     "hints": {
       "typehint": "color",
+      "types": "Use a dynamic color ; icon",
       "question": "What colour should the icon be?"
     },
     "type": [
@@ -12355,10 +12364,6 @@
           "then": "bicycle_rental - Bicycle rental stations"
         },
         {
-          "if": "value=bicycle_tube_vending_machine",
-          "then": "bicycle_tube_vending_machine - A layer showing vending machines for bicycle tubes (either purpose-built bicycle tube vending machines or classical vending machines with bicycle tubes and optionally additional bicycle related objects such as lights, gloves, locks, …)"
-        },
-        {
           "if": "value=bike_cafe",
           "then": "bike_cafe - A bike café is a café geared towards cyclists, for example with services such as a pump, with lots of bicycle-related decoration, …"
         },
@@ -12555,6 +12560,10 @@
           "then": "gps_track - Meta layer showing the previous locations of the user as single line with controls, e.g. to erase, upload or download this track. Add this to your theme and override the maprendering to change the appearance of the travelled track."
         },
         {
+          "if": "value=grave",
+          "then": "grave - Tombstones (and graves) indicate where a person was buried. On this map, those can be recorded and a link to Wikipedia can be made"
+        },
+        {
           "if": "value=guidepost",
           "then": "guidepost - Guideposts (also known as fingerposts or finger posts) are often found along official hiking/cycling/riding/skiing routes to indicate the directions to different destinations"
         },
@@ -12617,6 +12626,10 @@
         {
           "if": "value=last_click",
           "then": "last_click - This 'layer' is not really a layer, but contains part of the code how the popup to 'add a new marker' is displayed"
+        },
+        {
+          "if": "value=lighthouse",
+          "then": "lighthouse - undefined"
         },
         {
           "if": "value=love_hotel",
@@ -12965,7 +12978,7 @@
             }
           },
           "multiAnswer": {
-            "description": "If true, use checkboxes instead of radio buttons when asking the question\n\nquestion: Should a contributor be allowed to select multiple mappings?\n\niftrue: allow to select multiple mappings\niffalse: only allow to select a single mapping\nifunset: only allow to select a single mapping",
+            "description": "question: Should a contributor be allowed to select multiple mappings?\n\nIf true, use checkboxes instead of radio buttons when asking the question.\n\niftrue: allow to select multiple mappings (and show a freeform-value as list if ';'-separated)\niffalse: only allow to select a single mapping\nifunset: only allow to select a single mapping",
             "type": "boolean"
           },
           "freeform": {
@@ -12990,11 +13003,6 @@
                     "type": "string"
                   }
                 ]
-              },
-              "helperArgs": {
-                "description": "Extra parameters to initialize the input helper arguments.\nFor semantics, see the 'SpecialInputElements.md'\ngroup: expert",
-                "type": "array",
-                "items": {}
               },
               "addExtraTags": {
                 "description": "If a value is added with the textfield, these extra tag is addded.\nUseful to add a 'fixme=freeform textfield used - to be checked'\ngroup: expert",
@@ -13024,6 +13032,10 @@
                     "type": "string"
                   }
                 ]
+              },
+              "postfixDistinguished": {
+                "description": "question: If this key shared and distinguished by a postfix, what is the postfix?\nThis option is used specifically for `charge`, where the cost is indicated with `/item`.\n\nFor example, a vending machine might sell `bicycle_tube`.\nSetting this value to `bicycle_tube`, then answering this question will set `charge= €XX/bicycle_tube`.\nIf charge did already contain another value, e.g. `charge= €YY/some_item; €ZZ/other_item`, then `€XX/bicycle_tube`will be added.\nNote: those values are sorted alphabetically\nNote: no need to add the `/`\n\nifunset: Don't distinguish by postfix\ngroup: expert",
+                "type": "string"
               }
             }
           },
@@ -13809,12 +13821,12 @@
     "required": false,
     "hints": {
       "question": "Should a contributor be allowed to select multiple mappings?",
-      "iftrue": "allow to select multiple mappings",
+      "iftrue": "allow to select multiple mappings (and show a freeform-value as list if ';'-separated)",
       "iffalse": "only allow to select a single mapping",
       "ifunset": "only allow to select a single mapping"
     },
     "type": "boolean",
-    "description": "If true, use checkboxes instead of radio buttons when asking the question"
+    "description": "If true, use checkboxes instead of radio buttons when asking the question."
   },
   {
     "path": [
@@ -13939,6 +13951,10 @@
           "then": "<b>velopark</b> A special URL-validator that checks the domain name and rewrites to the correct velopark format."
         },
         {
+          "if": "value=nsi",
+          "then": "<b>nsi</b> Gives a list of possible suggestions for a brand or operator tag. "
+        },
+        {
           "if": "value=currency",
           "then": "<b>currency</b> Validates monetary amounts"
         }
@@ -13970,20 +13986,6 @@
       }
     ],
     "description": "A (translated) text that is shown (as gray text) within the textfield"
-  },
-  {
-    "path": [
-      "layers",
-      "tagRenderings",
-      "freeform",
-      "helperArgs"
-    ],
-    "required": false,
-    "hints": {
-      "group": "expert"
-    },
-    "type": "array",
-    "description": "Extra parameters to initialize the input helper arguments.\nFor semantics, see the 'SpecialInputElements.md'"
   },
   {
     "path": [
@@ -14129,6 +14131,22 @@
       }
     ],
     "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "freeform",
+      "postfixDistinguished"
+    ],
+    "required": false,
+    "hints": {
+      "group": "expert",
+      "question": "If this key shared and distinguished by a postfix, what is the postfix?",
+      "ifunset": "Don't distinguish by postfix"
+    },
+    "type": "string",
+    "description": "This option is used specifically for `charge`, where the cost is indicated with `/item`.\nFor example, a vending machine might sell `bicycle_tube`.\nSetting this value to `bicycle_tube`, then answering this question will set `charge= €XX/bicycle_tube`.\nIf charge did already contain another value, e.g. `charge= €YY/some_item; €ZZ/other_item`, then `€XX/bicycle_tube`will be added.\nNote: those values are sorted alphabetically\nNote: no need to add the `/`"
   },
   {
     "path": [
@@ -15133,12 +15151,12 @@
     "required": false,
     "hints": {
       "question": "Should a contributor be allowed to select multiple mappings?",
-      "iftrue": "allow to select multiple mappings",
+      "iftrue": "allow to select multiple mappings (and show a freeform-value as list if ';'-separated)",
       "iffalse": "only allow to select a single mapping",
       "ifunset": "only allow to select a single mapping"
     },
     "type": "boolean",
-    "description": "If true, use checkboxes instead of radio buttons when asking the question"
+    "description": "If true, use checkboxes instead of radio buttons when asking the question."
   },
   {
     "path": [
@@ -15266,6 +15284,10 @@
           "then": "<b>velopark</b> A special URL-validator that checks the domain name and rewrites to the correct velopark format."
         },
         {
+          "if": "value=nsi",
+          "then": "<b>nsi</b> Gives a list of possible suggestions for a brand or operator tag. "
+        },
+        {
           "if": "value=currency",
           "then": "<b>currency</b> Validates monetary amounts"
         }
@@ -15298,21 +15320,6 @@
       }
     ],
     "description": "A (translated) text that is shown (as gray text) within the textfield"
-  },
-  {
-    "path": [
-      "layers",
-      "tagRenderings",
-      "override",
-      "freeform",
-      "helperArgs"
-    ],
-    "required": false,
-    "hints": {
-      "group": "expert"
-    },
-    "type": "array",
-    "description": "Extra parameters to initialize the input helper arguments.\nFor semantics, see the 'SpecialInputElements.md'"
   },
   {
     "path": [
@@ -15464,6 +15471,23 @@
       }
     ],
     "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "override",
+      "freeform",
+      "postfixDistinguished"
+    ],
+    "required": false,
+    "hints": {
+      "group": "expert",
+      "question": "If this key shared and distinguished by a postfix, what is the postfix?",
+      "ifunset": "Don't distinguish by postfix"
+    },
+    "type": "string",
+    "description": "This option is used specifically for `charge`, where the cost is indicated with `/item`.\nFor example, a vending machine might sell `bicycle_tube`.\nSetting this value to `bicycle_tube`, then answering this question will set `charge= €XX/bicycle_tube`.\nIf charge did already contain another value, e.g. `charge= €YY/some_item; €ZZ/other_item`, then `€XX/bicycle_tube`will be added.\nNote: those values are sorted alphabetically\nNote: no need to add the `/`"
   },
   {
     "path": [
@@ -15896,6 +15920,19 @@
     "path": [
       "layers",
       "tagRenderings",
+      "subexpand"
+    ],
+    "required": false,
+    "hints": {
+      "question": "ion: \"Is some X\","
+    },
+    "type": "object",
+    "description": "Used to expand a sublist.\nE.g. a target `rendering` is:\ne.g.\n{\n    rewrite: [\"{{x}}\", \"{{y}}\"],\n    into:[\n        [\"{{x}}\": \"some X\"],\n        [\"{{y}}\", [\"option 1\", \"option 2\"]]\n    ],\n    renderings:[\n        {\n            \"question\":\"Is {{x}}\",\n            \"mappings\": [\"if={{y}}\",then: \"...\"]\n        }\n    ]\n    subExpand: {\n        // The list with the key\n        \"mappings\":\n        // will be taken and multiplied by all possible values of\n        \"{{y}}\"\n        // Note that this implies that `into.[*].[{{y}}]` should be a list of items\n    }\n}\nExpansion will result in:\n{\n    mappings: [{\"if=option 1\", then: \"...\"}, {\"if=option 2\", then: \"...\"}]\n}"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
       "renderings",
       "mappings"
     ],
@@ -16494,12 +16531,12 @@
     "required": false,
     "hints": {
       "question": "Should a contributor be allowed to select multiple mappings?",
-      "iftrue": "allow to select multiple mappings",
+      "iftrue": "allow to select multiple mappings (and show a freeform-value as list if ';'-separated)",
       "iffalse": "only allow to select a single mapping",
       "ifunset": "only allow to select a single mapping"
     },
     "type": "boolean",
-    "description": "If true, use checkboxes instead of radio buttons when asking the question"
+    "description": "If true, use checkboxes instead of radio buttons when asking the question."
   },
   {
     "path": [
@@ -16627,6 +16664,10 @@
           "then": "<b>velopark</b> A special URL-validator that checks the domain name and rewrites to the correct velopark format."
         },
         {
+          "if": "value=nsi",
+          "then": "<b>nsi</b> Gives a list of possible suggestions for a brand or operator tag. "
+        },
+        {
           "if": "value=currency",
           "then": "<b>currency</b> Validates monetary amounts"
         }
@@ -16659,21 +16700,6 @@
       }
     ],
     "description": "A (translated) text that is shown (as gray text) within the textfield"
-  },
-  {
-    "path": [
-      "layers",
-      "tagRenderings",
-      "renderings",
-      "freeform",
-      "helperArgs"
-    ],
-    "required": false,
-    "hints": {
-      "group": "expert"
-    },
-    "type": "array",
-    "description": "Extra parameters to initialize the input helper arguments.\nFor semantics, see the 'SpecialInputElements.md'"
   },
   {
     "path": [
@@ -16825,6 +16851,23 @@
       }
     ],
     "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "renderings",
+      "freeform",
+      "postfixDistinguished"
+    ],
+    "required": false,
+    "hints": {
+      "group": "expert",
+      "question": "If this key shared and distinguished by a postfix, what is the postfix?",
+      "ifunset": "Don't distinguish by postfix"
+    },
+    "type": "string",
+    "description": "This option is used specifically for `charge`, where the cost is indicated with `/item`.\nFor example, a vending machine might sell `bicycle_tube`.\nSetting this value to `bicycle_tube`, then answering this question will set `charge= €XX/bicycle_tube`.\nIf charge did already contain another value, e.g. `charge= €YY/some_item; €ZZ/other_item`, then `€XX/bicycle_tube`will be added.\nNote: those values are sorted alphabetically\nNote: no need to add the `/`"
   },
   {
     "path": [
@@ -17867,12 +17910,12 @@
     "required": false,
     "hints": {
       "question": "Should a contributor be allowed to select multiple mappings?",
-      "iftrue": "allow to select multiple mappings",
+      "iftrue": "allow to select multiple mappings (and show a freeform-value as list if ';'-separated)",
       "iffalse": "only allow to select a single mapping",
       "ifunset": "only allow to select a single mapping"
     },
     "type": "boolean",
-    "description": "If true, use checkboxes instead of radio buttons when asking the question"
+    "description": "If true, use checkboxes instead of radio buttons when asking the question."
   },
   {
     "path": [
@@ -18003,6 +18046,10 @@
           "then": "<b>velopark</b> A special URL-validator that checks the domain name and rewrites to the correct velopark format."
         },
         {
+          "if": "value=nsi",
+          "then": "<b>nsi</b> Gives a list of possible suggestions for a brand or operator tag. "
+        },
+        {
           "if": "value=currency",
           "then": "<b>currency</b> Validates monetary amounts"
         }
@@ -18036,22 +18083,6 @@
       }
     ],
     "description": "A (translated) text that is shown (as gray text) within the textfield"
-  },
-  {
-    "path": [
-      "layers",
-      "tagRenderings",
-      "renderings",
-      "override",
-      "freeform",
-      "helperArgs"
-    ],
-    "required": false,
-    "hints": {
-      "group": "expert"
-    },
-    "type": "array",
-    "description": "Extra parameters to initialize the input helper arguments.\nFor semantics, see the 'SpecialInputElements.md'"
   },
   {
     "path": [
@@ -18209,6 +18240,24 @@
       }
     ],
     "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "renderings",
+      "override",
+      "freeform",
+      "postfixDistinguished"
+    ],
+    "required": false,
+    "hints": {
+      "group": "expert",
+      "question": "If this key shared and distinguished by a postfix, what is the postfix?",
+      "ifunset": "Don't distinguish by postfix"
+    },
+    "type": "string",
+    "description": "This option is used specifically for `charge`, where the cost is indicated with `/item`.\nFor example, a vending machine might sell `bicycle_tube`.\nSetting this value to `bicycle_tube`, then answering this question will set `charge= €XX/bicycle_tube`.\nIf charge did already contain another value, e.g. `charge= €YY/some_item; €ZZ/other_item`, then `€XX/bicycle_tube`will be added.\nNote: those values are sorted alphabetically\nNote: no need to add the `/`"
   },
   {
     "path": [
@@ -19245,12 +19294,12 @@
     "required": false,
     "hints": {
       "question": "Should a contributor be allowed to select multiple mappings?",
-      "iftrue": "allow to select multiple mappings",
+      "iftrue": "allow to select multiple mappings (and show a freeform-value as list if ';'-separated)",
       "iffalse": "only allow to select a single mapping",
       "ifunset": "only allow to select a single mapping"
     },
     "type": "boolean",
-    "description": "If true, use checkboxes instead of radio buttons when asking the question"
+    "description": "If true, use checkboxes instead of radio buttons when asking the question."
   },
   {
     "path": [
@@ -19378,6 +19427,10 @@
           "then": "<b>velopark</b> A special URL-validator that checks the domain name and rewrites to the correct velopark format."
         },
         {
+          "if": "value=nsi",
+          "then": "<b>nsi</b> Gives a list of possible suggestions for a brand or operator tag. "
+        },
+        {
           "if": "value=currency",
           "then": "<b>currency</b> Validates monetary amounts"
         }
@@ -19410,21 +19463,6 @@
       }
     ],
     "description": "A (translated) text that is shown (as gray text) within the textfield"
-  },
-  {
-    "path": [
-      "layers",
-      "tagRenderings",
-      "renderings",
-      "freeform",
-      "helperArgs"
-    ],
-    "required": false,
-    "hints": {
-      "group": "expert"
-    },
-    "type": "array",
-    "description": "Extra parameters to initialize the input helper arguments.\nFor semantics, see the 'SpecialInputElements.md'"
   },
   {
     "path": [
@@ -19576,6 +19614,23 @@
       }
     ],
     "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "renderings",
+      "freeform",
+      "postfixDistinguished"
+    ],
+    "required": false,
+    "hints": {
+      "group": "expert",
+      "question": "If this key shared and distinguished by a postfix, what is the postfix?",
+      "ifunset": "Don't distinguish by postfix"
+    },
+    "type": "string",
+    "description": "This option is used specifically for `charge`, where the cost is indicated with `/item`.\nFor example, a vending machine might sell `bicycle_tube`.\nSetting this value to `bicycle_tube`, then answering this question will set `charge= €XX/bicycle_tube`.\nIf charge did already contain another value, e.g. `charge= €YY/some_item; €ZZ/other_item`, then `€XX/bicycle_tube`will be added.\nNote: those values are sorted alphabetically\nNote: no need to add the `/`"
   },
   {
     "path": [
@@ -20618,12 +20673,12 @@
     "required": false,
     "hints": {
       "question": "Should a contributor be allowed to select multiple mappings?",
-      "iftrue": "allow to select multiple mappings",
+      "iftrue": "allow to select multiple mappings (and show a freeform-value as list if ';'-separated)",
       "iffalse": "only allow to select a single mapping",
       "ifunset": "only allow to select a single mapping"
     },
     "type": "boolean",
-    "description": "If true, use checkboxes instead of radio buttons when asking the question"
+    "description": "If true, use checkboxes instead of radio buttons when asking the question."
   },
   {
     "path": [
@@ -20754,6 +20809,10 @@
           "then": "<b>velopark</b> A special URL-validator that checks the domain name and rewrites to the correct velopark format."
         },
         {
+          "if": "value=nsi",
+          "then": "<b>nsi</b> Gives a list of possible suggestions for a brand or operator tag. "
+        },
+        {
           "if": "value=currency",
           "then": "<b>currency</b> Validates monetary amounts"
         }
@@ -20787,22 +20846,6 @@
       }
     ],
     "description": "A (translated) text that is shown (as gray text) within the textfield"
-  },
-  {
-    "path": [
-      "layers",
-      "tagRenderings",
-      "renderings",
-      "override",
-      "freeform",
-      "helperArgs"
-    ],
-    "required": false,
-    "hints": {
-      "group": "expert"
-    },
-    "type": "array",
-    "description": "Extra parameters to initialize the input helper arguments.\nFor semantics, see the 'SpecialInputElements.md'"
   },
   {
     "path": [
@@ -20960,6 +21003,24 @@
       }
     ],
     "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "renderings",
+      "override",
+      "freeform",
+      "postfixDistinguished"
+    ],
+    "required": false,
+    "hints": {
+      "group": "expert",
+      "question": "If this key shared and distinguished by a postfix, what is the postfix?",
+      "ifunset": "Don't distinguish by postfix"
+    },
+    "type": "string",
+    "description": "This option is used specifically for `charge`, where the cost is indicated with `/item`.\nFor example, a vending machine might sell `bicycle_tube`.\nSetting this value to `bicycle_tube`, then answering this question will set `charge= €XX/bicycle_tube`.\nIf charge did already contain another value, e.g. `charge= €YY/some_item; €ZZ/other_item`, then `€XX/bicycle_tube`will be added.\nNote: those values are sorted alphabetically\nNote: no need to add the `/`"
   },
   {
     "path": [
@@ -22240,7 +22301,7 @@
       ]
     },
     "type": "string",
-    "description": "If set, synchronizes whether or not this layer is enabled."
+    "description": "If set, synchronizes whether this layer is enabled."
   },
   {
     "path": [
@@ -22265,6 +22326,20 @@
     },
     "type": "boolean",
     "description": "_Set automatically by MapComplete, please ignore_"
+  },
+  {
+    "path": [
+      "layers",
+      "enableMorePrivacy"
+    ],
+    "required": false,
+    "hints": {
+      "question": "Should a theme using this layer leak some location info when making changes?",
+      "iftrue": "Do not write 'change_within_x_m' and do not indicate that this was done by survey",
+      "ifunset": "Write 'change_within_x_m' as usual and if GPS is enabled"
+    },
+    "type": "boolean",
+    "description": "When a changeset is made, a 'distance to object'-class is written to the changeset.\nFor some particular themes and layers, this might leak too much information, and we want to obfuscate this"
   },
   {
     "path": [
@@ -24052,6 +24127,7 @@
     "required": true,
     "hints": {
       "typehint": "icon",
+      "types": "Use a dynamic value ; icon",
       "question": "What icon should be used?",
       "suggestions": [
         {
@@ -24395,6 +24471,7 @@
     "required": false,
     "hints": {
       "typehint": "color",
+      "types": "Use a dynamic color ; icon",
       "question": "What colour should the icon be?"
     },
     "type": [
@@ -33034,10 +33111,6 @@
           "then": "bicycle_rental - Bicycle rental stations"
         },
         {
-          "if": "value=bicycle_tube_vending_machine",
-          "then": "bicycle_tube_vending_machine - A layer showing vending machines for bicycle tubes (either purpose-built bicycle tube vending machines or classical vending machines with bicycle tubes and optionally additional bicycle related objects such as lights, gloves, locks, …)"
-        },
-        {
           "if": "value=bike_cafe",
           "then": "bike_cafe - A bike café is a café geared towards cyclists, for example with services such as a pump, with lots of bicycle-related decoration, …"
         },
@@ -33234,6 +33307,10 @@
           "then": "gps_track - Meta layer showing the previous locations of the user as single line with controls, e.g. to erase, upload or download this track. Add this to your theme and override the maprendering to change the appearance of the travelled track."
         },
         {
+          "if": "value=grave",
+          "then": "grave - Tombstones (and graves) indicate where a person was buried. On this map, those can be recorded and a link to Wikipedia can be made"
+        },
+        {
           "if": "value=guidepost",
           "then": "guidepost - Guideposts (also known as fingerposts or finger posts) are often found along official hiking/cycling/riding/skiing routes to indicate the directions to different destinations"
         },
@@ -33296,6 +33373,10 @@
         {
           "if": "value=last_click",
           "then": "last_click - This 'layer' is not really a layer, but contains part of the code how the popup to 'add a new marker' is displayed"
+        },
+        {
+          "if": "value=lighthouse",
+          "then": "lighthouse - undefined"
         },
         {
           "if": "value=love_hotel",
@@ -33646,7 +33727,7 @@
             }
           },
           "multiAnswer": {
-            "description": "If true, use checkboxes instead of radio buttons when asking the question\n\nquestion: Should a contributor be allowed to select multiple mappings?\n\niftrue: allow to select multiple mappings\niffalse: only allow to select a single mapping\nifunset: only allow to select a single mapping",
+            "description": "question: Should a contributor be allowed to select multiple mappings?\n\nIf true, use checkboxes instead of radio buttons when asking the question.\n\niftrue: allow to select multiple mappings (and show a freeform-value as list if ';'-separated)\niffalse: only allow to select a single mapping\nifunset: only allow to select a single mapping",
             "type": "boolean"
           },
           "freeform": {
@@ -33671,11 +33752,6 @@
                     "type": "string"
                   }
                 ]
-              },
-              "helperArgs": {
-                "description": "Extra parameters to initialize the input helper arguments.\nFor semantics, see the 'SpecialInputElements.md'\ngroup: expert",
-                "type": "array",
-                "items": {}
               },
               "addExtraTags": {
                 "description": "If a value is added with the textfield, these extra tag is addded.\nUseful to add a 'fixme=freeform textfield used - to be checked'\ngroup: expert",
@@ -33705,6 +33781,10 @@
                     "type": "string"
                   }
                 ]
+              },
+              "postfixDistinguished": {
+                "description": "question: If this key shared and distinguished by a postfix, what is the postfix?\nThis option is used specifically for `charge`, where the cost is indicated with `/item`.\n\nFor example, a vending machine might sell `bicycle_tube`.\nSetting this value to `bicycle_tube`, then answering this question will set `charge= €XX/bicycle_tube`.\nIf charge did already contain another value, e.g. `charge= €YY/some_item; €ZZ/other_item`, then `€XX/bicycle_tube`will be added.\nNote: those values are sorted alphabetically\nNote: no need to add the `/`\n\nifunset: Don't distinguish by postfix\ngroup: expert",
+                "type": "string"
               }
             }
           },
@@ -34512,12 +34592,12 @@
     "required": false,
     "hints": {
       "question": "Should a contributor be allowed to select multiple mappings?",
-      "iftrue": "allow to select multiple mappings",
+      "iftrue": "allow to select multiple mappings (and show a freeform-value as list if ';'-separated)",
       "iffalse": "only allow to select a single mapping",
       "ifunset": "only allow to select a single mapping"
     },
     "type": "boolean",
-    "description": "If true, use checkboxes instead of radio buttons when asking the question"
+    "description": "If true, use checkboxes instead of radio buttons when asking the question."
   },
   {
     "path": [
@@ -34645,6 +34725,10 @@
           "then": "<b>velopark</b> A special URL-validator that checks the domain name and rewrites to the correct velopark format."
         },
         {
+          "if": "value=nsi",
+          "then": "<b>nsi</b> Gives a list of possible suggestions for a brand or operator tag. "
+        },
+        {
           "if": "value=currency",
           "then": "<b>currency</b> Validates monetary amounts"
         }
@@ -34677,21 +34761,6 @@
       }
     ],
     "description": "A (translated) text that is shown (as gray text) within the textfield"
-  },
-  {
-    "path": [
-      "layers",
-      "override",
-      "tagRenderings",
-      "freeform",
-      "helperArgs"
-    ],
-    "required": false,
-    "hints": {
-      "group": "expert"
-    },
-    "type": "array",
-    "description": "Extra parameters to initialize the input helper arguments.\nFor semantics, see the 'SpecialInputElements.md'"
   },
   {
     "path": [
@@ -34843,6 +34912,23 @@
       }
     ],
     "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
+  },
+  {
+    "path": [
+      "layers",
+      "override",
+      "tagRenderings",
+      "freeform",
+      "postfixDistinguished"
+    ],
+    "required": false,
+    "hints": {
+      "group": "expert",
+      "question": "If this key shared and distinguished by a postfix, what is the postfix?",
+      "ifunset": "Don't distinguish by postfix"
+    },
+    "type": "string",
+    "description": "This option is used specifically for `charge`, where the cost is indicated with `/item`.\nFor example, a vending machine might sell `bicycle_tube`.\nSetting this value to `bicycle_tube`, then answering this question will set `charge= €XX/bicycle_tube`.\nIf charge did already contain another value, e.g. `charge= €YY/some_item; €ZZ/other_item`, then `€XX/bicycle_tube`will be added.\nNote: those values are sorted alphabetically\nNote: no need to add the `/`"
   },
   {
     "path": [
@@ -35885,12 +35971,12 @@
     "required": false,
     "hints": {
       "question": "Should a contributor be allowed to select multiple mappings?",
-      "iftrue": "allow to select multiple mappings",
+      "iftrue": "allow to select multiple mappings (and show a freeform-value as list if ';'-separated)",
       "iffalse": "only allow to select a single mapping",
       "ifunset": "only allow to select a single mapping"
     },
     "type": "boolean",
-    "description": "If true, use checkboxes instead of radio buttons when asking the question"
+    "description": "If true, use checkboxes instead of radio buttons when asking the question."
   },
   {
     "path": [
@@ -36021,6 +36107,10 @@
           "then": "<b>velopark</b> A special URL-validator that checks the domain name and rewrites to the correct velopark format."
         },
         {
+          "if": "value=nsi",
+          "then": "<b>nsi</b> Gives a list of possible suggestions for a brand or operator tag. "
+        },
+        {
           "if": "value=currency",
           "then": "<b>currency</b> Validates monetary amounts"
         }
@@ -36054,22 +36144,6 @@
       }
     ],
     "description": "A (translated) text that is shown (as gray text) within the textfield"
-  },
-  {
-    "path": [
-      "layers",
-      "override",
-      "tagRenderings",
-      "override",
-      "freeform",
-      "helperArgs"
-    ],
-    "required": false,
-    "hints": {
-      "group": "expert"
-    },
-    "type": "array",
-    "description": "Extra parameters to initialize the input helper arguments.\nFor semantics, see the 'SpecialInputElements.md'"
   },
   {
     "path": [
@@ -36227,6 +36301,24 @@
       }
     ],
     "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
+  },
+  {
+    "path": [
+      "layers",
+      "override",
+      "tagRenderings",
+      "override",
+      "freeform",
+      "postfixDistinguished"
+    ],
+    "required": false,
+    "hints": {
+      "group": "expert",
+      "question": "If this key shared and distinguished by a postfix, what is the postfix?",
+      "ifunset": "Don't distinguish by postfix"
+    },
+    "type": "string",
+    "description": "This option is used specifically for `charge`, where the cost is indicated with `/item`.\nFor example, a vending machine might sell `bicycle_tube`.\nSetting this value to `bicycle_tube`, then answering this question will set `charge= €XX/bicycle_tube`.\nIf charge did already contain another value, e.g. `charge= €YY/some_item; €ZZ/other_item`, then `€XX/bicycle_tube`will be added.\nNote: those values are sorted alphabetically\nNote: no need to add the `/`"
   },
   {
     "path": [
@@ -36677,6 +36769,20 @@
       "layers",
       "override",
       "tagRenderings",
+      "subexpand"
+    ],
+    "required": false,
+    "hints": {
+      "question": "ion: \"Is some X\","
+    },
+    "type": "object",
+    "description": "Used to expand a sublist.\nE.g. a target `rendering` is:\ne.g.\n{\n    rewrite: [\"{{x}}\", \"{{y}}\"],\n    into:[\n        [\"{{x}}\": \"some X\"],\n        [\"{{y}}\", [\"option 1\", \"option 2\"]]\n    ],\n    renderings:[\n        {\n            \"question\":\"Is {{x}}\",\n            \"mappings\": [\"if={{y}}\",then: \"...\"]\n        }\n    ]\n    subExpand: {\n        // The list with the key\n        \"mappings\":\n        // will be taken and multiplied by all possible values of\n        \"{{y}}\"\n        // Note that this implies that `into.[*].[{{y}}]` should be a list of items\n    }\n}\nExpansion will result in:\n{\n    mappings: [{\"if=option 1\", then: \"...\"}, {\"if=option 2\", then: \"...\"}]\n}"
+  },
+  {
+    "path": [
+      "layers",
+      "override",
+      "tagRenderings",
       "renderings",
       "mappings"
     ],
@@ -37296,12 +37402,12 @@
     "required": false,
     "hints": {
       "question": "Should a contributor be allowed to select multiple mappings?",
-      "iftrue": "allow to select multiple mappings",
+      "iftrue": "allow to select multiple mappings (and show a freeform-value as list if ';'-separated)",
       "iffalse": "only allow to select a single mapping",
       "ifunset": "only allow to select a single mapping"
     },
     "type": "boolean",
-    "description": "If true, use checkboxes instead of radio buttons when asking the question"
+    "description": "If true, use checkboxes instead of radio buttons when asking the question."
   },
   {
     "path": [
@@ -37432,6 +37538,10 @@
           "then": "<b>velopark</b> A special URL-validator that checks the domain name and rewrites to the correct velopark format."
         },
         {
+          "if": "value=nsi",
+          "then": "<b>nsi</b> Gives a list of possible suggestions for a brand or operator tag. "
+        },
+        {
           "if": "value=currency",
           "then": "<b>currency</b> Validates monetary amounts"
         }
@@ -37465,22 +37575,6 @@
       }
     ],
     "description": "A (translated) text that is shown (as gray text) within the textfield"
-  },
-  {
-    "path": [
-      "layers",
-      "override",
-      "tagRenderings",
-      "renderings",
-      "freeform",
-      "helperArgs"
-    ],
-    "required": false,
-    "hints": {
-      "group": "expert"
-    },
-    "type": "array",
-    "description": "Extra parameters to initialize the input helper arguments.\nFor semantics, see the 'SpecialInputElements.md'"
   },
   {
     "path": [
@@ -37638,6 +37732,24 @@
       }
     ],
     "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
+  },
+  {
+    "path": [
+      "layers",
+      "override",
+      "tagRenderings",
+      "renderings",
+      "freeform",
+      "postfixDistinguished"
+    ],
+    "required": false,
+    "hints": {
+      "group": "expert",
+      "question": "If this key shared and distinguished by a postfix, what is the postfix?",
+      "ifunset": "Don't distinguish by postfix"
+    },
+    "type": "string",
+    "description": "This option is used specifically for `charge`, where the cost is indicated with `/item`.\nFor example, a vending machine might sell `bicycle_tube`.\nSetting this value to `bicycle_tube`, then answering this question will set `charge= €XX/bicycle_tube`.\nIf charge did already contain another value, e.g. `charge= €YY/some_item; €ZZ/other_item`, then `€XX/bicycle_tube`will be added.\nNote: those values are sorted alphabetically\nNote: no need to add the `/`"
   },
   {
     "path": [
@@ -38718,12 +38830,12 @@
     "required": false,
     "hints": {
       "question": "Should a contributor be allowed to select multiple mappings?",
-      "iftrue": "allow to select multiple mappings",
+      "iftrue": "allow to select multiple mappings (and show a freeform-value as list if ';'-separated)",
       "iffalse": "only allow to select a single mapping",
       "ifunset": "only allow to select a single mapping"
     },
     "type": "boolean",
-    "description": "If true, use checkboxes instead of radio buttons when asking the question"
+    "description": "If true, use checkboxes instead of radio buttons when asking the question."
   },
   {
     "path": [
@@ -38857,6 +38969,10 @@
           "then": "<b>velopark</b> A special URL-validator that checks the domain name and rewrites to the correct velopark format."
         },
         {
+          "if": "value=nsi",
+          "then": "<b>nsi</b> Gives a list of possible suggestions for a brand or operator tag. "
+        },
+        {
           "if": "value=currency",
           "then": "<b>currency</b> Validates monetary amounts"
         }
@@ -38891,23 +39007,6 @@
       }
     ],
     "description": "A (translated) text that is shown (as gray text) within the textfield"
-  },
-  {
-    "path": [
-      "layers",
-      "override",
-      "tagRenderings",
-      "renderings",
-      "override",
-      "freeform",
-      "helperArgs"
-    ],
-    "required": false,
-    "hints": {
-      "group": "expert"
-    },
-    "type": "array",
-    "description": "Extra parameters to initialize the input helper arguments.\nFor semantics, see the 'SpecialInputElements.md'"
   },
   {
     "path": [
@@ -39071,6 +39170,25 @@
       }
     ],
     "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
+  },
+  {
+    "path": [
+      "layers",
+      "override",
+      "tagRenderings",
+      "renderings",
+      "override",
+      "freeform",
+      "postfixDistinguished"
+    ],
+    "required": false,
+    "hints": {
+      "group": "expert",
+      "question": "If this key shared and distinguished by a postfix, what is the postfix?",
+      "ifunset": "Don't distinguish by postfix"
+    },
+    "type": "string",
+    "description": "This option is used specifically for `charge`, where the cost is indicated with `/item`.\nFor example, a vending machine might sell `bicycle_tube`.\nSetting this value to `bicycle_tube`, then answering this question will set `charge= €XX/bicycle_tube`.\nIf charge did already contain another value, e.g. `charge= €YY/some_item; €ZZ/other_item`, then `€XX/bicycle_tube`will be added.\nNote: those values are sorted alphabetically\nNote: no need to add the `/`"
   },
   {
     "path": [
@@ -40145,12 +40263,12 @@
     "required": false,
     "hints": {
       "question": "Should a contributor be allowed to select multiple mappings?",
-      "iftrue": "allow to select multiple mappings",
+      "iftrue": "allow to select multiple mappings (and show a freeform-value as list if ';'-separated)",
       "iffalse": "only allow to select a single mapping",
       "ifunset": "only allow to select a single mapping"
     },
     "type": "boolean",
-    "description": "If true, use checkboxes instead of radio buttons when asking the question"
+    "description": "If true, use checkboxes instead of radio buttons when asking the question."
   },
   {
     "path": [
@@ -40281,6 +40399,10 @@
           "then": "<b>velopark</b> A special URL-validator that checks the domain name and rewrites to the correct velopark format."
         },
         {
+          "if": "value=nsi",
+          "then": "<b>nsi</b> Gives a list of possible suggestions for a brand or operator tag. "
+        },
+        {
           "if": "value=currency",
           "then": "<b>currency</b> Validates monetary amounts"
         }
@@ -40314,22 +40436,6 @@
       }
     ],
     "description": "A (translated) text that is shown (as gray text) within the textfield"
-  },
-  {
-    "path": [
-      "layers",
-      "override",
-      "tagRenderings",
-      "renderings",
-      "freeform",
-      "helperArgs"
-    ],
-    "required": false,
-    "hints": {
-      "group": "expert"
-    },
-    "type": "array",
-    "description": "Extra parameters to initialize the input helper arguments.\nFor semantics, see the 'SpecialInputElements.md'"
   },
   {
     "path": [
@@ -40487,6 +40593,24 @@
       }
     ],
     "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
+  },
+  {
+    "path": [
+      "layers",
+      "override",
+      "tagRenderings",
+      "renderings",
+      "freeform",
+      "postfixDistinguished"
+    ],
+    "required": false,
+    "hints": {
+      "group": "expert",
+      "question": "If this key shared and distinguished by a postfix, what is the postfix?",
+      "ifunset": "Don't distinguish by postfix"
+    },
+    "type": "string",
+    "description": "This option is used specifically for `charge`, where the cost is indicated with `/item`.\nFor example, a vending machine might sell `bicycle_tube`.\nSetting this value to `bicycle_tube`, then answering this question will set `charge= €XX/bicycle_tube`.\nIf charge did already contain another value, e.g. `charge= €YY/some_item; €ZZ/other_item`, then `€XX/bicycle_tube`will be added.\nNote: those values are sorted alphabetically\nNote: no need to add the `/`"
   },
   {
     "path": [
@@ -41567,12 +41691,12 @@
     "required": false,
     "hints": {
       "question": "Should a contributor be allowed to select multiple mappings?",
-      "iftrue": "allow to select multiple mappings",
+      "iftrue": "allow to select multiple mappings (and show a freeform-value as list if ';'-separated)",
       "iffalse": "only allow to select a single mapping",
       "ifunset": "only allow to select a single mapping"
     },
     "type": "boolean",
-    "description": "If true, use checkboxes instead of radio buttons when asking the question"
+    "description": "If true, use checkboxes instead of radio buttons when asking the question."
   },
   {
     "path": [
@@ -41706,6 +41830,10 @@
           "then": "<b>velopark</b> A special URL-validator that checks the domain name and rewrites to the correct velopark format."
         },
         {
+          "if": "value=nsi",
+          "then": "<b>nsi</b> Gives a list of possible suggestions for a brand or operator tag. "
+        },
+        {
           "if": "value=currency",
           "then": "<b>currency</b> Validates monetary amounts"
         }
@@ -41740,23 +41868,6 @@
       }
     ],
     "description": "A (translated) text that is shown (as gray text) within the textfield"
-  },
-  {
-    "path": [
-      "layers",
-      "override",
-      "tagRenderings",
-      "renderings",
-      "override",
-      "freeform",
-      "helperArgs"
-    ],
-    "required": false,
-    "hints": {
-      "group": "expert"
-    },
-    "type": "array",
-    "description": "Extra parameters to initialize the input helper arguments.\nFor semantics, see the 'SpecialInputElements.md'"
   },
   {
     "path": [
@@ -41920,6 +42031,25 @@
       }
     ],
     "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
+  },
+  {
+    "path": [
+      "layers",
+      "override",
+      "tagRenderings",
+      "renderings",
+      "override",
+      "freeform",
+      "postfixDistinguished"
+    ],
+    "required": false,
+    "hints": {
+      "group": "expert",
+      "question": "If this key shared and distinguished by a postfix, what is the postfix?",
+      "ifunset": "Don't distinguish by postfix"
+    },
+    "type": "string",
+    "description": "This option is used specifically for `charge`, where the cost is indicated with `/item`.\nFor example, a vending machine might sell `bicycle_tube`.\nSetting this value to `bicycle_tube`, then answering this question will set `charge= €XX/bicycle_tube`.\nIf charge did already contain another value, e.g. `charge= €YY/some_item; €ZZ/other_item`, then `€XX/bicycle_tube`will be added.\nNote: those values are sorted alphabetically\nNote: no need to add the `/`"
   },
   {
     "path": [
@@ -43255,7 +43385,7 @@
       ]
     },
     "type": "string",
-    "description": "If set, synchronizes whether or not this layer is enabled."
+    "description": "If set, synchronizes whether this layer is enabled."
   },
   {
     "path": [
@@ -43282,6 +43412,21 @@
     },
     "type": "boolean",
     "description": "_Set automatically by MapComplete, please ignore_"
+  },
+  {
+    "path": [
+      "layers",
+      "override",
+      "enableMorePrivacy"
+    ],
+    "required": false,
+    "hints": {
+      "question": "Should a theme using this layer leak some location info when making changes?",
+      "iftrue": "Do not write 'change_within_x_m' and do not indicate that this was done by survey",
+      "ifunset": "Write 'change_within_x_m' as usual and if GPS is enabled"
+    },
+    "type": "boolean",
+    "description": "When a changeset is made, a 'distance to object'-class is written to the changeset.\nFor some particular themes and layers, this might leak too much information, and we want to obfuscate this"
   },
   {
     "path": [
@@ -43652,5 +43797,18 @@
     },
     "type": "boolean",
     "description": "Enables tracking of all nodes when data is loaded.\nThis is useful for the 'ImportWay' and 'ConflateWay'-buttons who need this database.\nNote: this flag will be automatically set and can thus be ignored."
+  },
+  {
+    "path": [
+      "enableMorePrivacy"
+    ],
+    "required": true,
+    "hints": {
+      "question": "Should this theme leak some location info when making changes?",
+      "iftrue": "Do not write 'change_within_x_m' and do not indicate that this was done by survey",
+      "ifunset": "Write 'change_within_x_m' as usual and if GPS is enabled"
+    },
+    "type": "boolean",
+    "description": "When a changeset is made, a 'distance to object'-class is written to the changeset.\nFor some particular themes and layers, this might leak too much information, and we want to obfuscate this"
   }
 ]

@@ -542,12 +542,12 @@
     "required": false,
     "hints": {
       "question": "Should a contributor be allowed to select multiple mappings?",
-      "iftrue": "allow to select multiple mappings",
+      "iftrue": "allow to select multiple mappings (and show a freeform-value as list if ';'-separated)",
       "iffalse": "only allow to select a single mapping",
       "ifunset": "only allow to select a single mapping"
     },
     "type": "boolean",
-    "description": "If true, use checkboxes instead of radio buttons when asking the question"
+    "description": "If true, use checkboxes instead of radio buttons when asking the question."
   },
   {
     "path": [
@@ -666,6 +666,10 @@
           "then": "<b>velopark</b> A special URL-validator that checks the domain name and rewrites to the correct velopark format."
         },
         {
+          "if": "value=nsi",
+          "then": "<b>nsi</b> Gives a list of possible suggestions for a brand or operator tag. "
+        },
+        {
           "if": "value=currency",
           "then": "<b>currency</b> Validates monetary amounts"
         }
@@ -695,18 +699,6 @@
       }
     ],
     "description": "A (translated) text that is shown (as gray text) within the textfield"
-  },
-  {
-    "path": [
-      "freeform",
-      "helperArgs"
-    ],
-    "required": false,
-    "hints": {
-      "group": "expert"
-    },
-    "type": "array",
-    "description": "Extra parameters to initialize the input helper arguments.\nFor semantics, see the 'SpecialInputElements.md'"
   },
   {
     "path": [
@@ -840,6 +832,20 @@
       }
     ],
     "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
+  },
+  {
+    "path": [
+      "freeform",
+      "postfixDistinguished"
+    ],
+    "required": false,
+    "hints": {
+      "group": "expert",
+      "question": "If this key shared and distinguished by a postfix, what is the postfix?",
+      "ifunset": "Don't distinguish by postfix"
+    },
+    "type": "string",
+    "description": "This option is used specifically for `charge`, where the cost is indicated with `/item`.\nFor example, a vending machine might sell `bicycle_tube`.\nSetting this value to `bicycle_tube`, then answering this question will set `charge= €XX/bicycle_tube`.\nIf charge did already contain another value, e.g. `charge= €YY/some_item; €ZZ/other_item`, then `€XX/bicycle_tube`will be added.\nNote: those values are sorted alphabetically\nNote: no need to add the `/`"
   },
   {
     "path": [
