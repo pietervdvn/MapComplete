@@ -3,7 +3,11 @@ import StudioGUI from "./StudioGUI.svelte"
 
 export default class StudioGui {
     public setup() {
-        new SvelteUIElement(StudioGUI, {}).SetClass("h-full").AttachTo("main")
+        new StudioGUI(
+            {
+                target: document.getElementById("main")
+            }
+        )
     }
 }
 

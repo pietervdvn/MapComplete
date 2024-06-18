@@ -9,6 +9,7 @@
   import SchemaBasedMultiType from "./SchemaBasedMultiType.svelte"
   import ShowConversionMessage from "./ShowConversionMessage.svelte"
   import Markdown from "../Base/Markdown.svelte"
+  import AccordionSingle from "../Flowbite/AccordionSingle.svelte"
 
   export let state: EditLayerState
   export let schema: ConfigMeta
@@ -125,20 +126,24 @@
     {/each}
   {:else}
     {#each $currentValue as value, i}
-      {#if !isTagRenderingBlock}
-        <div class="flex items-center justify-between">
-          <h3 class="m-0">{singular} {i}</h3>
-          <button
-            class="h-fit w-fit rounded-full border border-black p-1"
-            on:click={() => {
-              del(i)
-            }}
-          >
-            <TrashIcon class="h-4 w-4" />
-          </button>
-        </div>
-      {/if}
-      <div class="border border-black">
+      <AccordionSingle>
+        <span slot="header">
+          {#if !isTagRenderingBlock}
+            <div class="flex items-center justify-between">
+              <h3 class="m-0">{singular} {i}</h3>
+              <button
+                class="h-fit w-fit rounded-full border border-black p-1"
+                on:click={() => {
+                  del(i)
+                }}
+              >
+                <TrashIcon class="h-4 w-4" />
+              </button>
+            </div>
+          {/if}
+        </span>
+        <div class="normal-background p-2">
+
         {#if isTagRenderingBlock}
           <QuestionPreview {state} path={fusePath(i, [])} {schema}>
             <button
@@ -191,7 +196,10 @@
             <SchemaBasedInput {state} path={fusePath(i, [subpart.path.at(-1)])} schema={subpart} />
           {/each}
         {/if}
-      </div>
+
+        </div>
+      </AccordionSingle>
+
     {/each}
   {/if}
   <div class="flex">
