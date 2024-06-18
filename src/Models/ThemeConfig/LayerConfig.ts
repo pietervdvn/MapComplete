@@ -277,10 +277,9 @@ export default class LayerConfig extends WithContextLoader {
                 ".units: the 'units'-section should be a list; you probably have an object there"
             )
         }
-        this.units = [].concat(
-            ...(json.units ?? []).map((unitJson, i) =>
+        this.units = (json.units ?? []).flatMap((unitJson, i) =>
                 Unit.fromJson(unitJson, this.tagRenderings, `${context}.unit[${i}]`)
-            )
+
         )
 
         if (
