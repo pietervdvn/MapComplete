@@ -5,11 +5,30 @@
   /**
    * Renders a 'marker', which consists of multiple 'icons'
    */
-  export let icons: { icon: string; color: string }[]
+  export let icons: string | { icon: string; color: string }[]
+
+  if(typeof icons === "string") {
+    icons = icons.split(";").map(subspec => {
+      if(subspec.startsWith("http://") || subspec.startsWith("https://")){
+        return {
+          icon: subspec, color: "black"
+        }
+      }
+      const [icon, color] = subspec.split(":")
+      return {
+        icon, color: color ?? "black"
+      }
+    })
+  }
+
   /**
    * Class which is applied onto the individual icons
    */
   export let clss = ""
+
+  /**
+   * Class applied onto the entire element
+   */
   export let size = "w-full h-full"
 </script>
 

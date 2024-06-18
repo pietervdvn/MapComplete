@@ -8,6 +8,7 @@
   import Tr from "../Base/Tr.svelte"
   import Translations from "../i18n/Translations"
   import { LocalStorageSource } from "../../Logic/Web/LocalStorageSource"
+  import Marker from "../Map/Marker.svelte"
 
   export let theme: LayoutInformation
   export let isCustom: boolean = false
@@ -86,7 +87,8 @@
 
 {#if theme.id !== personal.id || $unlockedPersonal}
   <a class={"flex w-full items-center text-ellipsis rounded my-2"} href={$href}>
-    <img src={theme.icon} class="m-1 block h-11 w-11 sm:mr-2" alt="" />
+    <Marker icons={theme.icon} size="m-1 block h-11 w-11 sm:mr-2"/>
+
     <span class="flex flex-col overflow-hidden text-ellipsis font-bold text-xl">
       <Tr cls="underline" t={title} />
       <Tr cls="subtle text-base" t={description}/>

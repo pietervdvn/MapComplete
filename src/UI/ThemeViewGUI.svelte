@@ -78,6 +78,7 @@
   import Share from "@babeard/svelte-heroicons/solid/Share"
   import ChevronRight from "@babeard/svelte-heroicons/solid/ChevronRight"
   import DocumentChartBar from "@babeard/svelte-heroicons/outline/DocumentChartBar"
+  import Marker from "./Map/Marker.svelte"
 
   export let state: ThemeViewState
   let layout = state.layout
@@ -254,12 +255,7 @@
         htmlElem={openMapButton}
       >
         <div class="m-0.5 mx-1 flex cursor-pointer items-center max-[480px]:w-full sm:mx-1 md:mx-2">
-          <img
-            role="presentation"
-            alt=""
-            class="mr-0.5 block h-4 w-4 sm:mr-1 md:mr-2 md:h-8 md:w-8"
-            src={layout.icon}
-          />
+          <Marker icons={layout.icon} size="h-4 w-4 md:h-8 md:w-8 mr-0.5 sm:mr-1 md:mr-2" ></Marker>
           <b class="mr-1">
             <Tr t={layout.title} />
           </b>
@@ -489,7 +485,8 @@
         </div>
 
         <div class="flex" slot="title0">
-          <img class="block h-4 w-4" src={layout.icon} />
+          <Marker icons={layout.icon} size="h-4 w-4"/>
+
           <Tr t={layout.title} />
         </div>
 

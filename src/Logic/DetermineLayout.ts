@@ -162,18 +162,26 @@ export default class DetermineLayout {
 
         return dict
     }
+    private static getSharedTagRenderingOrder(): string[] {
+        return questions.tagRenderings.map(tr => tr.id)
+    }
 
     private static prepCustomTheme(json: any, sourceUrl?: string, forceId?: string): LayoutConfig {
         if (json.layers === undefined && json.tagRenderings !== undefined) {
             // We got fed a layer instead of a theme
             const layerConfig = <LayerConfigJson>json
-            const iconTr: string | TagRenderingConfigJson =
-                <any>(
-                    layerConfig.pointRendering
-                        .map((mr) => mr?.marker?.find((icon) => icon.icon !== undefined)?.icon)
-                        .find((i) => i !== undefined)
-                ) ?? "bug"
-            const icon = new TagRenderingConfig(iconTr)?.render?.txt ?? "./assets/svg/bug.svg"
+            const icon = Utils.NoNull(layerConfig.pointRendering.flatMap(
+                pr => pr.marker
+            ).map(iconSpec => {
+                const icon = new TagRenderingConfig(<TagRenderingConfigJson>iconSpec.icon).render.txt
+                if(iconSpec.color === undefined || icon.startsWith("http:") || icon.startsWith("https:")){
+                    return icon
+                }
+                const color = new TagRenderingConfig(<TagRenderingConfigJson>iconSpec.color).render.txt
+                return icon+":"+color
+
+            })).join(";")
+
             json = {
                 id: json.id,
                 description: json.description,
@@ -193,6 +201,7 @@ export default class DetermineLayout {
         }
         const convertState: DesugaringContext = {
             tagRenderings: DetermineLayout.getSharedTagRenderings(),
+            tagRenderingOrder: DetermineLayout.getSharedTagRenderingOrder(),
             sharedLayers: knownLayersDict,
             publicLayers: new Set<string>(),
         }
@@ -211,7 +220,7 @@ export default class DetermineLayout {
         }
         {
             new ValidateThemeAndLayers(
-                new DoesImageExist(new Set<string>(), (_) => true),
+                new DoesImageExist(new Set<string>(), () => true),
                 "",
                 false
             ).convertStrict(json)

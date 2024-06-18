@@ -183,7 +183,10 @@ export interface TagRenderingConfigJson {
          * ifunset: Do not show an extra icon next to the render value
          *
          * An icon supporting this mapping; typically shown pretty small.
-         * This can be used to show a 'phone'-icon next to the phone number
+         * This can be used to show a e.g. 'phone'-icon next to the phone number
+         *
+         * This supports patterns, you can e.g. have `close:red;some/other/icon.svg`
+         *
          * inline: <img src='{icon}' class="w-8 h-8" /> {icon}
          * Type: icon
          */
