@@ -1,6 +1,6 @@
 <script lang="ts">
   import LinkableImage from "../Image/LinkableImage.svelte"
-  import { Store, UIEventSource } from "../../Logic/UIEventSource"
+  import { UIEventSource } from "../../Logic/UIEventSource"
   import type { OsmTags } from "../../Models/OsmFeature"
   import type { SpecialVisualizationState } from "../SpecialVisualization"
   import type { Feature } from "geojson"
@@ -14,10 +14,10 @@
   import AttributedImage from "../Image/AttributedImage.svelte"
   import Translations from "../i18n/Translations"
   import Tr from "../Base/Tr.svelte"
+  import { ComparisonState } from "./ComparisonState"
 
   export let externalProperties: Record<string, string>
   delete externalProperties["@context"]
-  console.log("External properties are", externalProperties)
   export let sourceUrl: string
 
   export let tags: UIEventSource<OsmTags>
@@ -27,65 +27,13 @@
 
   export let readonly = false
 
+  export let comparisonState : ComparisonState
+  let missing = comparisonState.missing
+  let unknownImages = comparisonState.unknownImages
+  let knownImages = comparisonState.knownImages
+  let different =comparisonState.different
+
   const t = Translations.t.external
-
-  let externalKeys: string[] = Object.keys(externalProperties).sort()
-
-  const imageKeyRegex = /image|image:[0-9]+/
-  let knownImages: Store<Set<string>> = tags.map(
-    (osmProperties) =>
-      new Set(
-        Object.keys(osmProperties)
-          .filter((k) => k.match(imageKeyRegex))
-          .map((k) => osmProperties[k])
-      )
-  )
-  let unknownImages: Store<string[]> = knownImages.map((images) =>
-    externalKeys
-      .filter((k) => k.match(imageKeyRegex))
-      .map((k) => externalProperties[k])
-      .filter((i) => !images.has(i))
-  )
-
-  let propertyKeysExternal = externalKeys.filter((k) => k.match(imageKeyRegex) === null)
-  let missing: Store<string[]> = tags.map((osmProperties) =>
-    propertyKeysExternal.filter((k) => {
-      if (k.startsWith("_")) {
-        return false
-      }
-      return osmProperties[k] === undefined && typeof externalProperties[k] === "string"
-    })
-  )
-  // let same = propertyKeysExternal.filter((key) => osmProperties[key] === externalProperties[key])
-  let different: Store<string[]> = tags.map((osmProperties) =>
-    propertyKeysExternal.filter((key) => {
-      if (key.startsWith("_")) {
-        return false
-      }
-      if (osmProperties[key] === undefined) {
-        return false
-      }
-      if (typeof externalProperties[key] !== "string") {
-        return false
-      }
-      if (osmProperties[key] === externalProperties[key]) {
-        return false
-      }
-
-      if (key === "website") {
-        const osmCanon = new URL(osmProperties[key]).toString()
-        const externalCanon = new URL(externalProperties[key]).toString()
-        if (osmCanon === externalCanon) {
-          return false
-        }
-      }
-
-      return true
-    })
-  )
-
-  let hasDifferencesAtStart =
-    different.data.length + missing.data.length + unknownImages.data.length > 0
 
   let currentStep: "init" | "applying_all" | "all_applied" = "init"
   let applyAllHovered = false
@@ -102,19 +50,13 @@
   }
 </script>
 
-{#if propertyKeysExternal.length === 0 && $knownImages.size + $unknownImages.length === 0}
-  <Tr cls="subtle" t={t.noDataLoaded} />
-{:else if !hasDifferencesAtStart}
-  <span class="subtle text-sm">
-    <Tr t={t.allIncluded.Subs({ source: sourceUrl })} />
-  </span>
-{:else if $unknownImages.length === 0 && $missing.length === 0 && $different.length === 0}
+
+{#if $unknownImages.length === 0 && $missing.length === 0 && $different.length === 0}
   <div class="thanks m-0 flex items-center gap-x-2 px-2">
     <Party class="h-8 w-8 shrink-0" />
     <Tr t={t.allIncluded.Subs({ source: sourceUrl })} />
   </div>
 {:else}
-  <div class="low-interaction p-1">
     {#if !readonly}
       <Tr t={t.loadedFrom.Subs({ url: sourceUrl, source: sourceUrl })} />
     {/if}
@@ -218,9 +160,8 @@
       {/if}
     {/if}
     {#if externalProperties["_last_edit_timestamp"] !== undefined}
-      <span class="subtle text-sm">
-        External data has been last modified on {externalProperties["_last_edit_timestamp"]}
+      <span class="subtle text-sm flex flex-end justify-end mt-2 mr-4">
+        <Tr t={t.lastModified.Subs({date: new Date(externalProperties["_last_edit_timestamp"]).toLocaleString() })}/>
       </span>
     {/if}
-  </div>
 {/if}

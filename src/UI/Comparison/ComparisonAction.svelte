@@ -66,7 +66,7 @@
 </script>
 
 <div>
-  <div class="interactive flex w-full justify-between py-1 px-2">
+  <div class:interactive={!readonly} class="flex w-full justify-between py-1 px-2">
     <div class="flex flex-col">
       <div>
         {#if renderingExternal}

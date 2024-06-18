@@ -748,7 +748,11 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
         )
     }
 
-    private static escapeStr(v: string): string {
+    private static escapeStr(v: string, context: ConversionContext): string {
+        if(typeof v !== "string"){
+            context.err("Detected a non-string value where one expected a string: "+v)
+            return RewriteSpecial.escapeStr(""+v, context)
+        }
         return v
             .replace(/,/g, "&COMMA")
             .replace(/\{/g, "&LBRACE")
@@ -930,7 +934,7 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
 
         if (foundLanguages.size === 0) {
             const args = argNamesList
-                .map((nm) => RewriteSpecial.escapeStr(special[nm] ?? ""))
+                .map((nm) => RewriteSpecial.escapeStr(special[nm] ?? "", context))
                 .join(",")
             return {
                 "*": `{${type}(${args})${clss}}`
@@ -949,7 +953,7 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
                 }
 
                 if (typeof v === "string") {
-                    args.push(RewriteSpecial.escapeStr(v))
+                    args.push(RewriteSpecial.escapeStr(v, context))
                 } else if (typeof v === "object") {
                     args.push(JSON.stringify(v))
                 } else {

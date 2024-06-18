@@ -97,6 +97,15 @@ class SingleBackgroundHandler {
         }
     }
 
+    private tryEnableSafe(): boolean{
+        try {
+            return this.tryEnable()
+        }catch (e) {
+            console.log("Error: could not enable due to error", e)
+            return false
+        }
+    }
+
     /**
      * Returns 'false' if should be attempted again
      * @private

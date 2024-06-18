@@ -59,6 +59,7 @@
         "currentInOsmIs": "At the moment, OpenStreetMap has the following value recorded:",
         "done": "Done",
         "error": "Could not load linked data from the website",
+        "lastModified": "External data has been last modified on {date}",
         "loadedFrom": "The following data is loaded from <a href={url}>{source}</a> using the embedded JSON-LD",
         "missing": {
             "intro": "OpenStreetMap has no information about the following attributes",

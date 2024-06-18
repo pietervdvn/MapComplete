@@ -419,7 +419,7 @@ export default class MetaTagging {
             "Static MetataggingObject for theme is not set; using `new Function` (aka `eval`) to get calculated tags. This might trip up the CSP"
         )
 
-        const calculatedTags: [string, string, boolean][] = layer.calculatedTags
+        const calculatedTags: [string, string, boolean][] = layer?.calculatedTags ?? []
         if (calculatedTags === undefined || calculatedTags.length === 0) {
             return undefined
         }

@@ -99,7 +99,8 @@
               "key": "ref:velopark",
               "useProxy": "no",
               "host": "https://data.velopark.be",
-              "mode": "readonly"
+              "mode": "readonly",
+              "collapsed": "no"
             }
           }
         },
@@ -485,7 +486,7 @@
           "path": "./assets/themes/velopark/velopark.svg",
           "class": "medium"
         },
-        "classes": "flex w-full ",
+        "classes": "flex flex-col m-2",
         "render": {
           "special": {
             "type": "link",
@@ -511,7 +512,8 @@
             "type": "linked_data_from_website",
             "key": "ref:velopark",
             "useProxy": "no",
-            "host": "https://data.velopark.be"
+            "host": "https://data.velopark.be",
+            "collapsed": "no"
           }
         }
       }

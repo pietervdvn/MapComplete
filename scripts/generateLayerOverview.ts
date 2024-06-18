@@ -515,7 +515,6 @@ class LayerOverviewUtils extends Script {
         // At the same time, an index of available layers is built.
         console.log("------------- VALIDATING THE BUILTIN QUESTIONS ---------------")
         const sharedTagRenderings = this.getSharedTagRenderings(doesImageExist)
-        console.log("Shared questions are:", Array.from(sharedTagRenderings.keys()).join(", "))
         console.log("   ---------- VALIDATING BUILTIN LAYERS ---------")
         const state: DesugaringContext = {
             tagRenderings: LayerOverviewUtils.asDict(sharedTagRenderings),
