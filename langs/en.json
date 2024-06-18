@@ -708,7 +708,7 @@
     },
     "reviews": {
         "affiliated_reviewer_warning": "(Affiliated review)",
-        "attribution": "Reviews are powered by <a href='https://mangrove.reviews/' target='_blank'>Mangrove Reviews</a> and are available under <a href='https://mangrove.reviews/terms#8-licensing-of-content' target='_blank'>CC-BY 4.0</a>.",
+        "attribution": "By <a href='https://mangrove.reviews/' target='_blank'>Mangrove Reviews</a>",
         "averageRating": "Average rating of {n} stars",
         "i_am_affiliated": "I am affiliated with this object",
         "i_am_affiliated_explanation": "Check if you are an owner, creator, employee, …",

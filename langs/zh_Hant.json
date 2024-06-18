@@ -162,7 +162,7 @@
             "intro": "您點擊處目前未有已知的資料。<br/>",
             "layerNotEnabled": "圖層 {layer} 目前無法使用，請先啟用這圖層再加新的圖徵",
             "openLayerControl": "開啟圖層控制框",
-            "pleaseLogin": "請先登入來新增圖徵",
+            "pleaseLogin": "請先使用 OpenStreetMap 登入來新增圖徵",
             "presetInfo": "新的興趣點有 {tags}",
             "stillLoading": "目前仍在載入資料，請稍後再來新增圖徵。",
             "title": "新增新的圖徵",
@@ -593,10 +593,10 @@
     "index": {
         "#": "當沒有載入主題時，這些文字會在主題按鈕上面顯示",
         "featuredThemeTitle": "這週的焦點",
-        "intro": "MapComplete 是開放街圖能夠顯示特定主題的檢視器與編輯器，能夠顯示與允許更新特定主題的地圖。",
+        "intro": "關於您貢獻的各種主題的地圖",
         "logIn": "登入來看其他你先前查看的主題",
         "pickTheme": "請挑選主題來開始。",
-        "title": "歡迎使用 MapComplete"
+        "title": "MapComplete"
     },
     "move": {
         "cancel": "取消移動",
@@ -703,7 +703,7 @@
     },
     "reviews": {
         "affiliated_reviewer_warning": "(關係者審核)",
-        "attribution": "評審系統由<a href=\"https://mangrove.reviews/\" target=\"_blank\">Mangrove Reviews</a>提供技術支援，採用<a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a>授權條款。",
+        "attribution": "透過 <a href='https://mangrove.reviews/' target='_blank'>Mangrove Reviews</a>",
         "averageRating": "平均評分 {n} 顆星",
         "i_am_affiliated": "我是這物件的相關關係者",
         "i_am_affiliated_explanation": "檢查你是否是店主、創造者或是員工…",
