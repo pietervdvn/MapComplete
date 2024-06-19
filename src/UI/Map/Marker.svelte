@@ -7,8 +7,9 @@
    */
   export let icons: string | { icon: string; color: string }[]
 
+  let iconsParsed: { icon: string; color: string }[]
   if(typeof icons === "string") {
-    icons = icons.split(";").map(subspec => {
+    iconsParsed = icons.split(";").map(subspec => {
       if(subspec.startsWith("http://") || subspec.startsWith("https://")){
         return {
           icon: subspec, color: "black"
@@ -19,6 +20,8 @@
         icon, color: color ?? "black"
       }
     })
+  }else{
+    iconsParsed = icons
   }
 
   /**
@@ -32,9 +35,9 @@
   export let size = "w-full h-full"
 </script>
 
-{#if icons !== undefined && icons.length > 0}
+{#if iconsParsed !== undefined && iconsParsed.length > 0}
   <div class={twMerge("relative", size)}>
-    {#each icons as icon}
+    {#each iconsParsed as icon}
       <div class="absolute top-0 left-0 h-full w-full">
         <Icon icon={icon.icon} color={icon.color} {clss} />
       </div>
