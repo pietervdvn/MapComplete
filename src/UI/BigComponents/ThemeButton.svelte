@@ -87,7 +87,7 @@
 
 {#if theme.id !== personal.id || $unlockedPersonal}
   <a class={"flex w-full items-center text-ellipsis rounded my-2"} href={$href}>
-    <Marker icons={theme.icon} size="m-1 block h-11 w-11 sm:mr-2"/>
+    <Marker icons={theme.icon} size="m-1 block h-11 w-11 sm:mr-2 shrink-0"/>
 
     <span class="flex flex-col overflow-hidden text-ellipsis font-bold text-xl">
       <Tr cls="underline" t={title} />
