@@ -441,7 +441,8 @@
             "li0": "prenez une photo montant l'arbre au centre avec un peu d'élément à l'arrière plan",
             "li1": "prenez une photo montrant une feuille seule",
             "li2": "prenez une photo montant l'écorce",
-            "li3": "prenez une photo des fleurs"
+            "li3": "prenez une photo des fleurs",
+            "li4": "prenez une photo des fruits"
         },
         "loadingWikidata": "Chargement des infos sur {species}",
         "matchPercentage": "Correspondance {match} %",

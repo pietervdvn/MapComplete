@@ -536,7 +536,8 @@
             "li0": "feu una foto que mostri l'arbre al centre sense gaire fons",
             "li1": "feu una foto que mostri una sola fulla",
             "li2": "feu una foto que mostri l'escorça",
-            "li3": "feu una foto de les flors"
+            "li3": "feu una foto de les flors",
+            "li4": "feu una foto de les fruites"
         },
         "loadingWikidata": "Carregant informació sobre {species}…",
         "matchPercentage": "{match}% de coincidència",

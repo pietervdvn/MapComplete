@@ -526,7 +526,8 @@
             "li0": "zrób zdjęcie, które pokaże drzewo pośrodku, bez większego tła",
             "li1": "zrób zdjęcie, na którym widać pojedynczy liść",
             "li2": "zrób zdjęcie, na którym widać korę",
-            "li3": "zrób zdjęcie kwiatów"
+            "li3": "zrób zdjęcie kwiatów",
+            "li4": "zrób zdjęcie owoców"
         },
         "loadingWikidata": "Wczytywanie informacji o {species}…",
         "matchPercentage": "{match}% dopasowania",

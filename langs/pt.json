@@ -665,7 +665,8 @@
             "li0": "tire uma fotografia que mostre a árvore no centro, sem muito fundo",
             "li1": "tire uma fotografia que mostre uma única folha",
             "li2": "tire uma fotografia que mostre a casca",
-            "li3": "tire uma fotografia das flores"
+            "li3": "tire uma fotografia das flores",
+            "li4": "tire uma fotografia das frutas"
         },
         "loadingWikidata": "A carregar informações sobre {species}…",
         "matchPercentage": "{match}% correspondência",

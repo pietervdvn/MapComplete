@@ -378,7 +378,8 @@
             "li0": "ta et bilde med treet i midten uten for mye bakgrunn",
             "li1": "ta et bilde som viser ett løvblad",
             "li2": "ta et bilde som viser barken",
-            "li3": "ta et bilde av blomstene"
+            "li3": "ta et bilde av blomstene",
+            "li4": "ta et bilde av fruktene"
         },
         "loadingWikidata": "Laster inn info om {species} …",
         "matchPercentage": "{match}% treff",
