@@ -124,7 +124,7 @@ export default class LinkedDataLoader {
      * // Weird data format from C&A
      * LinkedDataLoader.ohStringToOsmFormat("MO 09:30-18:00 TU 09:30-18:00 WE 09:30-18:00 TH 09:30-18:00 FR 09:30-18:00 SA 09:30-18:00") // => "Mo-Sa 09:30-18:00"
      * LinkedDataLoader.ohStringToOsmFormat("MO 09:30-18:00 TU 09:30-18:00 WE 09:30-18:00 TH 09:30-18:00 FR 09:30-18:00 SA 09:30-18:00 SU 09:30-18:00") // => "09:30-18:00"
-     * LinkedDataLoader.ohStringToOsmFormat("MO 09:30-18:00 TU 09:30-18:00 WE 09:30-18:00 TH 09:30-18:00 FR 09:30-18:00 SA 09:30-18:00 SU 00:00-00:00") // => "Mo-Sa 09:30"
+     * LinkedDataLoader.ohStringToOsmFormat("MO 09:30-18:00 TU 09:30-18:00 WE 09:30-18:00 TH 09:30-18:00 FR 09:30-18:00 SA 09:30-18:00 SU 00:00-00:00") // => "Mo-Sa 09:30-18:00"
      */
     static ohStringToOsmFormat(oh: string) {
         oh = oh.toLowerCase()
