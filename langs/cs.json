@@ -526,7 +526,8 @@
             "li0": "pořídit snímek, na kterém je strom uprostřed bez velkého pozadí",
             "li1": "pořídit snímek, na kterém je zobrazen jeden list",
             "li2": "pořídit snímek, na kterém je vidět kůra",
-            "li3": "vyfotit květiny"
+            "li3": "vyfotit květiny",
+            "li4": "vyfotit ovoce"
         },
         "loadingWikidata": "Načítání informací o {species}…",
         "matchPercentage": "{match}% shoda",

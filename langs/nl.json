@@ -568,7 +568,8 @@
             "li0": "neem een foto waar de boom in het midden staat zonder te veel achtergrond",
             "li1": "neem een foto met een enkel blad",
             "li2": "neem een foto die de schors toont",
-            "li3": "neem een foto van de bloesems"
+            "li3": "neem een foto van de bloesems",
+            "li4": "neem een foto van de fruits"
         },
         "loadingWikidata": "Informatie over {species} aan het laden",
         "matchPercentage": "{match}% overeenkomst",

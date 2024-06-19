@@ -671,7 +671,8 @@
             "li0": "take a picture which show the tree in the center without much background",
             "li1": "take a picture which shows a single leaf",
             "li2": "take a picture which shows the bark",
-            "li3": "take a picture of the flowers"
+            "li3": "take a picture of the flowers",
+            "li4": "take a picture of the fruits"
         },
         "loadingWikidata": "Loading information about {species}…",
         "matchPercentage": "{match}% match",

@@ -592,7 +592,8 @@
         "done": "Laji on valittu",
         "howTo": {
             "li2": "ota kuva, jossa näkyy kaarna",
-            "li3": "ota kuva kukista"
+            "li3": "ota kuva kukista",
+            "li4": "ota kuva hedelmistä"
         },
         "loadingWikidata": "Lataa tietoja lajista {species}…",
         "matchPercentage": "{match} % osuma",

@@ -86,6 +86,9 @@
         <li>
           <Tr t={t.howTo.li3} />
         </li>
+        <li>
+          <Tr t={t.howTo.li4} />
+        </li>
       </ul>
     </div>
   {:else if selectedOption === undefined}

@@ -665,7 +665,8 @@
             "li0": "machen Sie ein Foto, das den Baum in der Mitte ohne viel Hintergrund zeigt",
             "li1": "machen Sie ein Foto, das ein einzelnes Blatt zeigt",
             "li2": "machen Sie ein Foto, das die Rinde zeigt",
-            "li3": "machen Sie ein Foto von den Blüten"
+            "li3": "machen Sie ein Foto von den Blüten",
+            "li4": "machen Sie ein Foto von den Früchten"
         },
         "loadingWikidata": "Informationen über {species} werden geladen…",
         "matchPercentage": "{match}% Übereinstimmung",
