@@ -124,7 +124,7 @@ export default class LinkedDataLoader {
      * // Weird data format from C&A
      * LinkedDataLoader.ohStringToOsmFormat("MO 09:30-18:00 TU 09:30-18:00 WE 09:30-18:00 TH 09:30-18:00 FR 09:30-18:00 SA 09:30-18:00") // => "Mo-Sa 09:30-18:00"
      * LinkedDataLoader.ohStringToOsmFormat("MO 09:30-18:00 TU 09:30-18:00 WE 09:30-18:00 TH 09:30-18:00 FR 09:30-18:00 SA 09:30-18:00 SU 09:30-18:00") // => "09:30-18:00"
-     *
+     * LinkedDataLoader.ohStringToOsmFormat("MO 09:30-18:00 TU 09:30-18:00 WE 09:30-18:00 TH 09:30-18:00 FR 09:30-18:00 SA 09:30-18:00 SU 00:00-00:00") // => "Mo-Sa 09:30"
      */
     static ohStringToOsmFormat(oh: string) {
         oh = oh.toLowerCase()
@@ -133,7 +133,7 @@ export default class LinkedDataLoader {
         }
         const regex = /([a-z]+ [0-9:]+-[0-9:]+) (.*)/
         let match = oh.match(regex)
-        const parts: string[] = []
+        let parts: string[] = []
         while (match) {
             parts.push(match[1])
             oh = match[2]
@@ -141,6 +141,11 @@ export default class LinkedDataLoader {
         }
         parts.push(oh)
 
+        /* omit expressions as "su 00:00-00:00". This _can_ be interpreted as 'all day long', but will, in practice, indicate that it is closed
+        Looking at you, C&A!
+        view-source:https://www.c-and-a.com/stores/be-en/oost-vlaanderen/sint-niklaas/stationsstraat-100.html
+        * */
+        parts = parts.filter(p => !p.match(/.. 00:00-00:00/))
         // actually the same as OSM-oh
         return OH.simplify(parts.join(";"))
     }
