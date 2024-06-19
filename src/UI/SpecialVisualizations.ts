@@ -1833,8 +1833,15 @@ export default class SpecialVisualizations {
                                     })()
                                 )
                             }
-                            return Stores.FromPromiseWithErr(
-                                LinkedDataLoader.fetchJsonLd(url, { country }, useProxy)
+                            return Stores.FromPromiseWithErr((async () => {
+                                    try {
+
+                                        return await LinkedDataLoader.fetchJsonLd(url, { country }, useProxy ? "proxy" : "fetch-lod")
+                                    } catch (e) {
+                                        console.log("Could not get with proxy/download LOD, attempting to download directly. Error for ",url,"is",e)
+                                        return await LinkedDataLoader.fetchJsonLd(url, { country }, "fetch-raw")
+                                    }
+                                })()
                             )
                         })
 
@@ -1850,7 +1857,8 @@ export default class SpecialVisualizations {
                             layer,
                             externalData,
                             sourceUrl,
-                            readonly
+                            readonly,
+                            collapsed: isClosed
                         }),
                         undefined,
                         url.map((url) => !!url)

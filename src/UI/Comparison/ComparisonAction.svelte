@@ -66,24 +66,22 @@
 </script>
 
 <div>
-  <div class:interactive={!readonly} class="flex w-full justify-between py-1 px-2">
-    <div class="flex flex-col">
-      <div>
-        {#if renderingExternal}
-          <TagRenderingAnswer
-            tags={new UIEventSource(mockPropertiesExternal)}
-            selectedElement={feature}
-            config={renderingExternal}
-            {layer}
-            {state}
-          />
-        {:else}
-          <div class="flex items-center gap-x-1">
-            <b>{key}</b>
-            {externalProperties[key]}
-          </div>
-        {/if}
-      </div>
+  <div class:interactive={!readonly} class="flex flex-col items-end py-1 px-2">
+    <div class="flex flex-col w-full">
+      {#if renderingExternal}
+        <TagRenderingAnswer
+          tags={new UIEventSource(mockPropertiesExternal)}
+          selectedElement={feature}
+          config={renderingExternal}
+          {layer}
+          {state}
+        />
+      {:else}
+        <div class="flex items-center gap-x-1">
+          <b>{key}</b>
+          {externalProperties[key]}
+        </div>
+      {/if}
 
       {#if !readonly && ($isTesting || $isDebug || $showTags === "yes" || $showTags === "always" || $showTags === "full")}
         <div class="subtle text-sm">
@@ -103,7 +101,7 @@
     {#if !readonly}
       {#if currentStep === "init"}
         <button
-          class="small"
+          class="w-fit"
           on:click={() => apply(key)}
           on:mouseover={() => (onOverwrite = true)}
           on:focus={() => (onOverwrite = true)}
