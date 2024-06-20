@@ -873,6 +873,8 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 stacktrace,
                 message: ""+message,
                 layout: this.layout.id,
+                version: Constants.vNumber,
+                language: this.userRelatedState.language.data,
                 username: this.osmConnection.userDetails.data?.name,
                 userid: this.osmConnection.userDetails.data?.uid,
                 pendingChanges: this.changes.pendingChanges.data,
