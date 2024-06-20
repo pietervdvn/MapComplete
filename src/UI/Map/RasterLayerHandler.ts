@@ -122,7 +122,7 @@ class SingleBackgroundHandler {
             console.warn(
                 "Layer",
                 addLayerBeforeId,
-                "not foundhttp://127.0.0.1:1234/theme.html?layout=cyclofix&z=14.8&lat=51.05282501324558&lon=3.720591622281745&layer-range=true"
+                "not found"
             )
             addLayerBeforeId = undefined
         }

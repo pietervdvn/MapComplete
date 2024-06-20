@@ -27,6 +27,7 @@
 
   let _map: Map
   onMount(() => {
+
     const { lon, lat } = mapProperties?.location?.data ?? { lon: 0, lat: 0 }
 
     const rasterLayer: RasterLayerProperties = mapProperties?.rasterLayer?.data?.properties
@@ -72,8 +73,13 @@
   })
   onDestroy(async () => {
     await Utils.waitFor(250)
+    try{
+
     if (_map) _map.remove()
     map = null
+    }catch (e) {
+      console.error("Could not destroy map")
+    }
   })
 </script>
 

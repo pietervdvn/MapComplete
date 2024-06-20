@@ -236,8 +236,9 @@ export default class LinkedDataLoader {
     static async fetchJsonLd(
         url: string,
         options?: JsonLdLoaderOptions,
-        mode: "fetch-lod" | "fetch-raw" | "proxy"
+        mode?: "fetch-lod" | "fetch-raw" | "proxy"
     ): Promise<object> {
+        mode ??= "fetch-lod"
         if (mode === "proxy") {
             url = Constants.linkedDataProxy.replace("{url}", encodeURIComponent(url))
         }

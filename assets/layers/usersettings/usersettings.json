@@ -540,7 +540,7 @@
         },
         {
           "if": "mapcomplete-more_privacy=no",
-          "icon": "./assets/svg/eye.svg",
+          "icon": "cross_bottom_right:red;./assets/svg/eye.svg",
           "then": {
             "en": "When making changes to OpenStreetMap, roughly indicate how far away you were from the changed objects. This helps other contributors to understand how you made the change",
             "de": "Wenn du Änderungen an OpenStreetMap vornimmst, gib grob an, wie weit du von den geänderten Objekten entfernt warst. Das hilft anderen Mitwirkenden zu verstehen, wie du die Änderung vorgenommen hast.",
@@ -619,7 +619,7 @@
       "mappings": [
         {
           "if": "mapcomplete-translation-mode=false",
-          "icon": "./assets/layers/usersettings/translate_disabled.svg",
+          "icon": "cross_bottom_right:red;./assets/svg/translate.svg",
           "then": {
             "en": "Don't show a button to quickly change translations",
             "de": "Keine Schaltfläche zum schnellen Wechseln von Übersetzungen anzeigen",
@@ -856,6 +856,7 @@
         },
         {
           "if": "mapcomplete-show_debug=no",
+          "icon": "cross_bottom_right:red;./assets/svg/bug.svg",
           "then": {
             "en": "Don't show debug info",
             "de": "Keine Debug-Informationen anzeigen",

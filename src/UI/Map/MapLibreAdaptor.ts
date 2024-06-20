@@ -1,7 +1,5 @@
 import { ImmutableStore, Store, UIEventSource } from "../../Logic/UIEventSource"
-import { Map as MLMap } from "maplibre-gl"
-import { Map as MlMap, SourceSpecification } from "maplibre-gl"
-import maplibregl from "maplibre-gl"
+import maplibregl, { Map as MLMap, Map as MlMap, SourceSpecification } from "maplibre-gl"
 import { RasterLayerPolygon } from "../../Models/RasterLayers"
 import { Utils } from "../../Utils"
 import { BBox } from "../../Logic/BBox"
@@ -13,7 +11,6 @@ import * as htmltoimage from "html-to-image"
 import RasterLayerHandler from "./RasterLayerHandler"
 import Constants from "../../Models/Constants"
 import { Protocol } from "pmtiles"
-import { bool } from "sharp"
 
 /**
  * The 'MapLibreAdaptor' bridges 'MapLibre' with the various properties of the `MapProperties`
@@ -42,7 +39,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
     readonly allowMoving: UIEventSource<true | boolean | undefined>
     readonly allowRotating: UIEventSource<true | boolean | undefined>
     readonly allowZooming: UIEventSource<true | boolean | undefined>
-    readonly lastClickLocation: Store<undefined | { lon: number; lat: number }>
+    readonly lastClickLocation: Store<undefined | { lon: number; lat: number, mode : "left" | "right" | "middle" }>
     readonly minzoom: UIEventSource<number>
     readonly maxzoom: UIEventSource<number>
     readonly rotation: UIEventSource<number>
@@ -95,20 +92,24 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         this.rasterLayer =
             state?.rasterLayer ?? new UIEventSource<RasterLayerPolygon | undefined>(undefined)
 
-        const lastClickLocation = new UIEventSource<{ lon: number; lat: number }>(undefined)
+        const lastClickLocation = new UIEventSource<{lat:number,lon:number,mode: "left" | "right" | "middle"}>(undefined)
         this.lastClickLocation = lastClickLocation
         const self = this
 
         new RasterLayerHandler(this._maplibreMap, this.rasterLayer)
 
-        function handleClick(e) {
+        const clickmodes = ["left" , "middle", "right"] as const
+        function handleClick(e: maplibregl.MapMouseEvent, mode?: "left" | "right" | "middle") {
             if (e.originalEvent["consumed"]) {
                 // Workaround, 'ShowPointLayer' sets this flag
                 return
             }
             const lon = e.lngLat.lng
             const lat = e.lngLat.lat
-            lastClickLocation.setData({ lon, lat })
+            const mouseEvent: MouseEvent = e.originalEvent
+            mode = mode ?? clickmodes[mouseEvent.button]
+
+            lastClickLocation.setData({ lon, lat, mode })
         }
 
         maplibreMap.addCallbackAndRunD((map) => {
@@ -142,10 +143,19 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
                 handleClick(e)
             })
             map.on("contextmenu", (e) => {
-                handleClick(e)
+                // This one only works on desktop
+                handleClick(e, "right")
+            })
+
+            map._container.addEventListener("contextmenu", (e) => {
+                 const lngLat =  map.unproject([e.x, e.y])
+                lastClickLocation.setData({lon: lngLat.lng, lat: lngLat.lat, mode: "right"})
             })
             map.on("dblclick", (e) => {
-                handleClick(e)
+                handleClick(e, "left")
+            })
+            map.on("touchend", (e) => {
+                const touchEvent = e.originalEvent
             })
             map.on("rotateend", (_) => {
                 this.updateStores()
@@ -665,4 +675,5 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
             }
         }
     }
+
 }

@@ -1,24 +1,24 @@
 import LayoutConfig from "../../../Models/ThemeConfig/LayoutConfig"
-import { WritableFeatureSource } from "../FeatureSource"
-import { ImmutableStore, Store, UIEventSource } from "../../UIEventSource"
+import { ImmutableStore, Store } from "../../UIEventSource"
 import { Feature, Point } from "geojson"
 import { TagUtils } from "../../Tags/TagUtils"
 import BaseUIElement from "../../../UI/BaseUIElement"
 import { Utils } from "../../../Utils"
 import { OsmTags } from "../../../Models/OsmFeature"
+import { FeatureSource } from "../FeatureSource"
 
 /**
  * Highly specialized feature source.
  * Based on a lon/lat UIEVentSource, will generate the corresponding feature with the correct properties
  */
-export class LastClickFeatureSource {
+export class LastClickFeatureSource implements FeatureSource{
     public readonly renderings: string[]
     private i: number = 0
     private readonly hasPresets: boolean
     private readonly hasNoteLayer: boolean
     public static readonly newPointElementId = "new_point_dialog"
-
-    constructor(layout: LayoutConfig) {
+    public readonly features: Store<Feature[]>
+    constructor(layout: LayoutConfig, clickSource: Store<{lon:number,lat:number,mode:"left"|"right"|"middle"}> ) {
         this.hasNoteLayer = layout.hasNoteLayer()
         this.hasPresets = layout.hasPresets()
         const allPresets: BaseUIElement[] = []
@@ -33,7 +33,7 @@ export class LastClickFeatureSource {
                 }
                 const { html } = rendering.RenderIcon(tags, {
                     noSize: true,
-                    includeBadges: false,
+                    includeBadges: false
                 })
                 allPresets.push(html)
             }
@@ -43,16 +43,21 @@ export class LastClickFeatureSource {
                 Utils.runningFromConsole ? "" : uiElem.ConstructElement().innerHTML
             )
         )
+
+        this.features = clickSource.mapD(({lon, lat,mode}) =>
+            [this.createFeature(lon, lat, mode)])
+
     }
 
-    public createFeature(lon: number, lat: number): Feature<Point, OsmTags> {
+    public createFeature(lon: number, lat: number, mode?: "left" | "right" | "middle"): Feature<Point, OsmTags> {
         const properties: OsmTags = {
-            id: LastClickFeatureSource.newPointElementId,
+            id: LastClickFeatureSource.newPointElementId + "_" + this.i,
             has_note_layer: this.hasNoteLayer ? "yes" : "no",
             has_presets: this.hasPresets ? "yes" : "no",
             renderings: this.renderings.join(""),
             number_of_presets: "" + this.renderings.length,
             first_preset: this.renderings[0],
+            mouse_button: mode ?? "none"
         }
         this.i++
 
@@ -61,8 +66,8 @@ export class LastClickFeatureSource {
             properties,
             geometry: {
                 type: "Point",
-                coordinates: [lon, lat],
-            },
+                coordinates: [lon, lat]
+            }
         }
     }
 }

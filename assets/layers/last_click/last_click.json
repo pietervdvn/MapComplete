@@ -56,6 +56,7 @@
   },
   "popupInFloatover": true,
   "titleIcons": [],
+  "isShown": "mouse_button=right",
   "pointRendering": [
     {
       "marker": [
@@ -168,6 +169,11 @@
       "render": {
         "*": "{open_note()}"
       }
+    },
+    {
+      "id": "debug",
+      "metacondition": "__featureSwitchIsDebugging=true",
+      "render": "{all_tags()}"
     }
   ],
   "filter": [

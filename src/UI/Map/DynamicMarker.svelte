@@ -15,7 +15,7 @@
   /**
    * Only used in case of emoji
    */
-  export let emojiHeight: number
+  export let emojiHeight: number = undefined
   let _rotation: Store<string> = rotation
     ? tags.map((tags) => rotation.GetRenderValue(tags).Subs(tags).txt)
     : new ImmutableStore("0deg")
