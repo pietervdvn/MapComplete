@@ -25,6 +25,7 @@
     "#summary_server": "Should be the endpoint; appending status.json should work",
     "summary_server": "https://cache.mapcomplete.org/",
     "geoip_server": "https://ipinfo.mapcomplete.org/",
+    "error_server": "https://report.mapcomplete.org/report",
     "disabled:oauth_credentials": {
       "##": "DEV",
       "#": "This client-id is registered by 'MapComplete' on https://master.apis.dev.openstreetmap.org/",
@@ -114,8 +115,10 @@
     "dloadVelopark": "vite-node scripts/velopark/veloParkToGeojson.ts ",
     "compareVelopark": "vite-node scripts/velopark/compare.ts -- velopark_nonsynced_.geojson ~/Projecten/OSM/Fietsberaad/2024-02-02\\ Fietsenstallingen_OSM_met_velopark_ref.geojson\n",
     "scrapeWebsites": "vite-node scripts/importscripts/compareWebsiteData.ts -- ~/Downloads/ShopsWithWebsiteNodes.csv ~/data/scraped_websites/",
-    "summary-server": "vite-node scripts/osm2pgsql/tilecountServer.ts",
-    "ldjson-server": "vite-node scripts/serverLdScrape.ts",
+    "server:summary": "vite-node scripts/osm2pgsql/tilecountServer.ts",
+    "server:ldjson": "vite-node scripts/serverLdScrape.ts",
+    "sever:studio": "vite-node scripts/studioServer -- /root/git/MapComplete/assets",
+    "server:errorreport": "vite-node scripts/serverErrorReport.ts -- /root/error_reports/",
     "generate:buildDbScript": "vite-node scripts/osm2pgsql/generateBuildDbScript.ts"
   },
   "keywords": [

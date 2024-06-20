@@ -95,6 +95,7 @@ export interface SpecialVisualizationState {
     readonly geolocation: GeoLocationHandler
 
     showCurrentLocationOn(map: Store<MlMap>): ShowDataLayer
+    reportError(message: string): Promise<void>
 }
 
 export interface SpecialVisualization {

@@ -43,6 +43,7 @@ export class Changes {
     private readonly previouslyCreated: OsmObject[] = []
     private readonly _leftRightSensitive: boolean
     private readonly _changesetHandler: ChangesetHandler
+    private readonly _reportError?: (string: string | Error) => void
 
     constructor(
         state: {
@@ -53,7 +54,8 @@ export class Changes {
             historicalUserLocations?: FeatureSource
             featureSwitches?: FeatureSwitchState
         },
-        leftRightSensitive: boolean = false
+        leftRightSensitive: boolean = false,
+        reportError?: (string: string | Error) => void,
     ) {
         this._leftRightSensitive = leftRightSensitive
         // We keep track of all changes just as well
@@ -62,11 +64,13 @@ export class Changes {
         this._nextId = Math.min(-1, ...(this.pendingChanges.data?.map((pch) => pch.id) ?? []))
         this.state = state
         this.backend = state.osmConnection.Backend()
+        this._reportError = reportError
         this._changesetHandler = new ChangesetHandler(
             state.dryRun,
             state.osmConnection,
             state.featurePropertiesStore,
-            this
+            this,
+            e => this._reportError(e)
         )
         this.historicalUserLocations = state.historicalUserLocations
 
@@ -234,6 +238,7 @@ export class Changes {
             console.log("Changes flushed. Your changeset is " + csNumber)
             this.errors.setData([])
         } catch (e) {
+            this._reportError(e)
             this.isUploading.setData(false)
             this.errors.data.push(e)
             this.errors.ping()
@@ -518,6 +523,9 @@ export class Changes {
                     const osmObj = await downloader.DownloadObjectAsync(id, 0)
                     return { id, osmObj }
                 } catch (e) {
+                    this._reportError( "Could not download OSM-object"+
+                        id+
+                        " dropping it from the changes (" + e + ")")
                     console.error(
                         "Could not download OSM-object",
                         id,
@@ -685,6 +693,7 @@ export class Changes {
                         }
                         return result
                     } catch (e) {
+                        this._reportError(e)
                         console.error("Could not upload some changes:", e)
                         this.errors.data.push(e)
                         this.errors.ping()

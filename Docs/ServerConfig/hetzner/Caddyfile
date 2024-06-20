@@ -17,7 +17,7 @@ countrycoder.mapcomplete.org {
 
 report.mapcomplete.org {
 	reverse_proxy {
-		to http://127.0.0.1:2600
+		to http://127.0.0.1:2348
 	}
 }
 

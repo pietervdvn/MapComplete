@@ -7,6 +7,7 @@
   import Tr from "./Tr.svelte"
   import { ImmutableStore, UIEventSource } from "../../Logic/UIEventSource"
   import Invalid from "../../assets/svg/Invalid.svelte"
+  import ArrowPath from "@babeard/svelte-heroicons/mini/ArrowPath"
 
   export let state: {
     osmConnection: OsmConnection
@@ -40,9 +41,13 @@
     </slot>
   {:else if !silentFail && $loadingStatus === "error"}
     <slot name="error">
-      <div class="alert max-w-64 flex items-center">
+      <div class="alert max-w-64 flex items-center ">
         <Invalid class="m-2 h-8 w-8 shrink-0" />
-        <Tr t={offlineModes[$apiState]} />
+        <Tr t={offlineModes[$apiState] ?? t.loginFailedOfflineOther} />
+        <button class="justify-self-end" on:click={() => state.osmConnection.AttemptLogin()}>
+          <ArrowPath class="w-6 h-6"/>
+          Retry
+        </button>
       </div>
     </slot>
   {:else if $loadingStatus === "logged-in"}
