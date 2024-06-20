@@ -170,10 +170,13 @@ export default class DetermineLayout {
         if (json.layers === undefined && json.tagRenderings !== undefined) {
             // We got fed a layer instead of a theme
             const layerConfig = <LayerConfigJson>json
-            const icon = Utils.NoNull(
+            let icon = Utils.NoNull(
                 layerConfig.pointRendering
                     .flatMap((pr) => pr.marker)
                     .map((iconSpec) => {
+                        if(!iconSpec){
+                            return undefined
+                        }
                         const icon = new TagRenderingConfig(<TagRenderingConfigJson>iconSpec.icon)
                             .render.txt
                         if (
@@ -188,6 +191,10 @@ export default class DetermineLayout {
                         return icon + ":" + color
                     })
             ).join(";")
+
+            if(!icon){
+                icon = "./assets/svg/bug.svg"
+            }
 
             json = {
                 id: json.id,
