@@ -26,6 +26,7 @@ export class ChangesetHandler {
      * @private
      */
     private readonly _remappings = new Map<string, string>()
+    private readonly _reportError: (e: (string | Error)) => void
 
     constructor(
         dryRun: Store<boolean>,
@@ -34,9 +35,11 @@ export class ChangesetHandler {
             | FeaturePropertiesStore
             | { addAlias: (id0: string, id1: string) => void }
             | undefined,
-        changes: Changes
+        changes: Changes,
+        reportError: (e: string | Error) => void
     ) {
         this.osmConnection = osmConnection
+        this._reportError = reportError
         this.allElements = <FeaturePropertiesStore>allElements
         this.changes = changes
         this._dryRun = dryRun
@@ -148,8 +151,13 @@ export class ChangesetHandler {
                     await this.UpdateTags(csId, extraMetaTags)
                 }
             } catch (e) {
-                console.error("Could not open/upload changeset due to ", e)
+                if(this._reportError){
+                    this._reportError(e)
+                }
+                console.warn("Could not open/upload changeset due to ", e,"trying t")
                 openChangeset.setData(undefined)
+
+                throw e
             }
         } else {
             // There still exists an open changeset (or at least we hope so)
@@ -178,8 +186,12 @@ export class ChangesetHandler {
                 )
                 await this.UpdateTags(csId, rewrittenTags)
             } catch (e) {
+                if(this._reportError){
+                    this._reportError(e)
+                }
                 console.warn("Could not upload, changeset is probably closed: ", e)
                 openChangeset.setData(undefined)
+                throw e
             }
         }
     }

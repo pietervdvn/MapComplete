@@ -288,6 +288,7 @@
         "loadingTheme": "Loading {theme}…",
         "loginFailed": "Logging in into OpenStreetMap failed",
         "loginFailedOfflineMode": "OpenStreetMap.org is currently not available due to maintenance. Making edits will be possible soon",
+        "loginFailedOfflineOther": "OpenStreetMap.org could not be reached",
         "loginFailedReadonlyMode": "OpenStreetMap.org is currently in readonly mode due to maintenance. Making edits will be possible soon",
         "loginFailedUnreachableMode": "OpenStreetMap.org is currently not reachable. Are you connected to the internet or do you block third parties? Try again later",
         "loginOnlyNeededToEdit": "if you want to make changes",

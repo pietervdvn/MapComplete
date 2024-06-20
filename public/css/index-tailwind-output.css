@@ -1229,12 +1229,12 @@ video {
   height: 6rem;
 }
 
-.h-screen {
-  height: 100vh;
-}
-
 .h-full {
   height: 100%;
+}
+
+.h-screen {
+  height: 100vh;
 }
 
 .h-fit {
