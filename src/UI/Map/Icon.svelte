@@ -34,7 +34,8 @@
   import { LinkIcon } from "@babeard/svelte-heroicons/mini"
   import Square_rounded from "../../assets/svg/Square_rounded.svelte"
   import Bug from "../../assets/svg/Bug.svelte"
-  import Pop_out from "../../assets/svg/Pop_out.svelte"
+  import Cross_bottom_right from "../../assets/svg/Cross_bottom_right.svelte"
+  import { Utils } from "../../Utils"
 
   /**
    * Renders a single icon.
@@ -45,6 +46,7 @@
   export let icon: string | undefined
   export let color: string | undefined = undefined
   export let clss: string | undefined = undefined
+  export let emojiHeight = 40
 </script>
 
 {#if icon}
@@ -120,12 +122,18 @@
     <Mastodon {color} class={clss} />
   {:else if icon === "party"}
     <Party {color} class={clss} />
+  {:else if icon === "cross_bottom_right"}
+    <Cross_bottom_right {color} class={clss} />
   {:else if icon === "addSmall"}
     <AddSmall {color} class={clss} />
   {:else if icon === "link"}
     <LinkIcon style="--svg-color: {color}" class={twMerge(clss, "apply-fill")} />
   {:else if icon === "popout"}
     <LinkIcon style="--svg-color: {color}" />
+  {:else if Utils.isEmoji(icon)}
+    <span style={`font-size: ${emojiHeight}px; line-height: ${emojiHeight}px`}>
+      {icon}
+    </span>
   {:else}
     <img class={clss ?? "h-full w-full"} src={icon} aria-hidden="true" alt="" />
   {/if}

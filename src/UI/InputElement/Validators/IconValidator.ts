@@ -16,6 +16,9 @@ export default class IconValidator extends Validator {
     }
 
     getFeedback(s: string, getCountry, sloppy?: boolean): Translation | undefined {
+        if(Utils.isEmoji(s)){
+            return undefined
+        }
         s = this.reformat(s)
         if (!s.startsWith("http")) {
             if (!IconValidator.allLicenses.has(s)) {

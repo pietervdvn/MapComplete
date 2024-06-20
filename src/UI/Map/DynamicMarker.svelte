@@ -11,6 +11,11 @@
   export let marker: IconConfig[]
   export let tags: Store<Record<string, string>>
   export let rotation: TagRenderingConfig = undefined
+
+  /**
+   * Only used in case of emoji
+   */
+  export let emojiHeight: number
   let _rotation: Store<string> = rotation
     ? tags.map((tags) => rotation.GetRenderValue(tags).Subs(tags).txt)
     : new ImmutableStore("0deg")
@@ -23,7 +28,7 @@
   <div class="relative h-full w-full" style={`transform: rotate(${$_rotation})`}>
     {#each marker as icon}
       <div class="absolute top-0 left-0 h-full w-full">
-        <DynamicIcon {icon} {tags} />
+        <DynamicIcon {icon} {tags} {emojiHeight} />
       </div>
     {/each}
   </div>
