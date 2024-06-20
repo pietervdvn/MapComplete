@@ -1,17 +1,36 @@
 import http from "node:http"
 
+export interface Handler {
+    mustMatch: string | RegExp
+    mimetype: string
+    addHeaders?: Record<string, string>
+    handle: (path: string, queryParams: URLSearchParams, req: http.IncomingMessage) => Promise<string>
+
+}
+
+class ServerUtils {
+
+    public static getBody(req: http.IncomingMessage): Promise<string> {
+        return new Promise<string>((resolve) => {
+            let body = '';
+            req.on('data', (chunk) => {
+                body += chunk;
+            });
+            req.on('end', () => {
+                resolve(body)
+            });
+        })
+    }
+
+}
+
 export class Server {
     constructor(
         port: number,
         options: {
             ignorePathPrefix?: string[]
         },
-        handle: {
-            mustMatch: string | RegExp
-            mimetype: string
-            addHeaders?: Record<string, string>
-            handle: (path: string, queryParams: URLSearchParams) => Promise<string>
-        }[]
+        handle: Handler[]
     ) {
         handle.push({
             mustMatch: "",
@@ -81,8 +100,9 @@ export class Server {
                     res.end()
                     return
                 }
+                let body = undefined
                 if (req.method === "POST" || req.method === "UPDATE") {
-                    return
+                    body = await ServerUtils.getBody(req)
                 }
 
                 if (req.method === "DELETE") {
@@ -90,7 +110,7 @@ export class Server {
                 }
 
                 try {
-                    const result = await handler.handle(path, url.searchParams)
+                    const result = await handler.handle(path, url.searchParams, req, body)
                     if (result === undefined) {
                         res.writeHead(500)
                         res.write("Could not fetch this website, probably blocked by them")
