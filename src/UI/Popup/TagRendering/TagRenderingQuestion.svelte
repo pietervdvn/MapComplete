@@ -310,7 +310,7 @@
 </script>
 
 {#if question !== undefined}
-  <div class={clss} >
+  <div class={clss}>
     <form
       class="relative flex flex-col overflow-y-auto px-2"
       style="max-height: 75vh"
@@ -326,20 +326,19 @@
 
           {#if config.questionhint}
             <span class="italic">
-
-            {#if config.questionHintIsMd}
-              <Markdown srcWritable={config.questionhint.current} />
-            {:else}
-              <div class="max-h-60 overflow-y-auto">
-                <SpecialTranslation
-                  t={config.questionhint}
-                  {tags}
-                  {state}
-                  {layer}
-                  feature={selectedElement}
-                />
-              </div>
-            {/if}
+              {#if config.questionHintIsMd}
+                <Markdown srcWritable={config.questionhint.current} />
+              {:else}
+                <div class="max-h-60 overflow-y-auto">
+                  <SpecialTranslation
+                    t={config.questionhint}
+                    {tags}
+                    {state}
+                    {layer}
+                    feature={selectedElement}
+                  />
+                </div>
+              {/if}
             </span>
           {/if}
         </legend>

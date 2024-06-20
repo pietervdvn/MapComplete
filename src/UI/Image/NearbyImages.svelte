@@ -30,7 +30,7 @@
       lon,
       lat,
       allowSpherical: new UIEventSource<boolean>(false),
-      blacklist: AllImageProviders.LoadImagesFor(tags)
+      blacklist: AllImageProviders.LoadImagesFor(tags),
     },
     state.indexedFeatures
   )
@@ -38,7 +38,6 @@
   let images: Store<P4CPicture[]> = imagesProvider.store.map((images) => images.slice(0, 20))
   let allDone = imagesProvider.allDone
 </script>
-
 
 <div class="flex justify-between">
   <h4>
@@ -53,9 +52,9 @@
 {:else}
   <div class="flex w-full space-x-1 overflow-x-auto" style="scroll-snap-type: x proximity">
     {#each $images as image (image.pictureUrl)}
-        <span class="w-fit shrink-0" style="scroll-snap-align: start">
-          <LinkableImage {tags} {image} {state} {feature} {layer} {linkable} />
-        </span>
+      <span class="w-fit shrink-0" style="scroll-snap-align: start">
+        <LinkableImage {tags} {image} {state} {feature} {layer} {linkable} />
+      </span>
     {/each}
   </div>
 {/if}

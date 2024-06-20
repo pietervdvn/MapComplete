@@ -32,17 +32,16 @@
   export let collapsed: boolean
   const t = Translations.t.external
 
-  let comparisonState: Store<ComparisonState | undefined> = externalData.mapD(external => {
+  let comparisonState: Store<ComparisonState | undefined> = externalData.mapD((external) => {
     if (external["success"]) {
       return new ComparisonState(tags, external["success"])
     }
     return undefined
   })
-  let unknownImages = comparisonState.bindD(ct => ct.unknownImages)
-  let knownImages = comparisonState.bindD(ct => ct.knownImages)
-  let propertyKeysExternal = comparisonState.mapD(ct => ct.propertyKeysExternal)
-  let hasDifferencesAtStart = comparisonState.mapD(ct => ct.hasDifferencesAtStart)
-
+  let unknownImages = comparisonState.bindD((ct) => ct.unknownImages)
+  let knownImages = comparisonState.bindD((ct) => ct.knownImages)
+  let propertyKeysExternal = comparisonState.mapD((ct) => ct.propertyKeysExternal)
+  let hasDifferencesAtStart = comparisonState.mapD((ct) => ct.hasDifferencesAtStart)
 </script>
 
 {#if !$sourceUrl}
@@ -50,7 +49,7 @@
 {:else if $externalData === undefined}
   <Loading />
 {:else if $externalData["error"] !== undefined}
-  <div class="subtle italic low-interaction p-2 px-4 rounded">
+  <div class="subtle low-interaction rounded p-2 px-4 italic">
     <Tr t={Translations.t.external.error} />
   </div>
 {:else if $propertyKeysExternal.length === 0 && $knownImages.size + $unknownImages.length === 0}
@@ -62,7 +61,7 @@
 {:else if $comparisonState !== undefined}
   <AccordionSingle expanded={!collapsed}>
     <span slot="header" class="flex">
-      <GlobeAlt class="w-6 h-6" />
+      <GlobeAlt class="h-6 w-6" />
       <Tr t={Translations.t.external.title} />
     </span>
     <ComparisonTable

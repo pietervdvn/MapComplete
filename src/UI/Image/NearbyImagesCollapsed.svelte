@@ -28,9 +28,8 @@
 </script>
 
 <AccordionSingle>
-   <span slot="header" class="text-base p-2">
-      <Tr t={t.seeNearby} />
-    </span>
+  <span slot="header" class="p-2 text-base">
+    <Tr t={t.seeNearby} />
+  </span>
   <NearbyImages {tags} {state} {lon} {lat} {feature} {linkable} {layer} />
 </AccordionSingle>
-

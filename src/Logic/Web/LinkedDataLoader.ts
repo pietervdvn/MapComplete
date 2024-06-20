@@ -27,23 +27,23 @@ export default class LinkedDataLoader {
         opening_hours: { "@id": "http://schema.org/openingHoursSpecification" },
         openingHours: { "@id": "http://schema.org/openingHours", "@container": "@set" },
         geo: { "@id": "http://schema.org/geo" },
-        alt_name: { "@id": "http://schema.org/alternateName" }
+        alt_name: { "@id": "http://schema.org/alternateName" },
     }
     private static COMPACTING_CONTEXT_OH = {
         dayOfWeek: { "@id": "http://schema.org/dayOfWeek", "@container": "@set" },
         closes: {
             "@id": "http://schema.org/closes",
-            "@type": "http://www.w3.org/2001/XMLSchema#time"
+            "@type": "http://www.w3.org/2001/XMLSchema#time",
         },
         opens: {
             "@id": "http://schema.org/opens",
-            "@type": "http://www.w3.org/2001/XMLSchema#time"
-        }
+            "@type": "http://www.w3.org/2001/XMLSchema#time",
+        },
     }
     private static formatters: Record<"phone" | "email" | "website", Validator> = {
         phone: new PhoneValidator(),
         email: new EmailValidator(),
-        website: new UrlValidator(undefined, undefined, true)
+        website: new UrlValidator(undefined, undefined, true),
     }
     private static ignoreKeys = [
         "http://schema.org/logo",
@@ -56,7 +56,7 @@ export default class LinkedDataLoader {
         "http://schema.org/description",
         "http://schema.org/hasMap",
         "http://schema.org/priceRange",
-        "http://schema.org/contactPoint"
+        "http://schema.org/contactPoint",
     ]
 
     private static shapeToPolygon(str: string): Polygon {
@@ -69,8 +69,8 @@ export default class LinkedDataLoader {
                         .trim()
                         .split(" ")
                         .map((n) => Number(n))
-                )
-            ]
+                ),
+            ],
         }
     }
 
@@ -92,18 +92,18 @@ export default class LinkedDataLoader {
             const context = {
                 lat: {
                     "@id": "http://schema.org/latitude",
-                    "@type": "http://www.w3.org/2001/XMLSchema#double"
+                    "@type": "http://www.w3.org/2001/XMLSchema#double",
                 },
                 lon: {
                     "@id": "http://schema.org/longitude",
-                    "@type": "http://www.w3.org/2001/XMLSchema#double"
-                }
+                    "@type": "http://www.w3.org/2001/XMLSchema#double",
+                },
             }
             const flattened = await jsonld.compact(geo, context)
 
             return {
                 type: "Point",
-                coordinates: [Number(flattened.lon), Number(flattened.lat)]
+                coordinates: [Number(flattened.lon), Number(flattened.lat)],
             }
         }
 
@@ -145,7 +145,7 @@ export default class LinkedDataLoader {
         Looking at you, C&A!
         view-source:https://www.c-and-a.com/stores/be-en/oost-vlaanderen/sint-niklaas/stationsstraat-100.html
         * */
-        parts = parts.filter(p => !p.match(/.. 00:00-00:00/))
+        parts = parts.filter((p) => !p.match(/.. 00:00-00:00/))
         // actually the same as OSM-oh
         return OH.simplify(parts.join(";"))
     }
@@ -247,18 +247,16 @@ export default class LinkedDataLoader {
             return await LinkedDataLoader.compact(data, options)
         }
 
-
         let htmlContent = await Utils.download(url)
         const div = document.createElement("div")
         div.innerHTML = htmlContent
-        const script = Array.from(div.getElementsByTagName("script"))
-            .find(script => script.type === "application/ld+json")
-
+        const script = Array.from(div.getElementsByTagName("script")).find(
+            (script) => script.type === "application/ld+json"
+        )
 
         const snippet = JSON.parse(script.textContent)
         snippet["@base"] = url
         return await LinkedDataLoader.compact(snippet, options)
-
     }
 
     /**
@@ -309,7 +307,7 @@ export default class LinkedDataLoader {
         if (properties["latitude"] && properties["longitude"]) {
             geometry = {
                 type: "Point",
-                coordinates: [Number(properties["longitude"]), Number(properties["latitude"])]
+                coordinates: [Number(properties["longitude"]), Number(properties["latitude"])],
             }
             delete properties["latitude"]
             delete properties["longitude"]
@@ -321,7 +319,7 @@ export default class LinkedDataLoader {
         const geo: GeoJSON = {
             type: "Feature",
             properties,
-            geometry
+            geometry,
         }
         delete linkedData.geo
         delete properties.shape
@@ -439,7 +437,7 @@ export default class LinkedDataLoader {
                     "brede publiek",
                     "iedereen",
                     "bezoekers",
-                    "iedereen - vooral bezoekers gemeentehuis of bibliotheek."
+                    "iedereen - vooral bezoekers gemeentehuis of bibliotheek.",
                 ].indexOf(audience.toLowerCase()) >= 0
             ) {
                 return "yes"
@@ -522,7 +520,7 @@ export default class LinkedDataLoader {
                 mv: "http://schema.mobivoc.org/",
                 gr: "http://purl.org/goodrelations/v1#",
                 vp: "https://data.velopark.be/openvelopark/vocabulary#",
-                vpt: "https://data.velopark.be/openvelopark/terms#"
+                vpt: "https://data.velopark.be/openvelopark/terms#",
             },
             [url],
             undefined,
@@ -543,7 +541,7 @@ export default class LinkedDataLoader {
                 mv: "http://schema.mobivoc.org/",
                 gr: "http://purl.org/goodrelations/v1#",
                 vp: "https://data.velopark.be/openvelopark/vocabulary#",
-                vpt: "https://data.velopark.be/openvelopark/terms#"
+                vpt: "https://data.velopark.be/openvelopark/terms#",
             },
             [url],
             "g",
@@ -686,20 +684,20 @@ export default class LinkedDataLoader {
         const withProxyUrl = Constants.linkedDataProxy.replace("{url}", encodeURIComponent(url))
         const optionalPaths: Record<string, string | Record<string, string>> = {
             "schema:interactionService": {
-                "schema:url": "website"
+                "schema:url": "website",
             },
             "mv:operatedBy": {
-                "gr:legalName": "operator"
+                "gr:legalName": "operator",
             },
             "schema:contactPoint": {
                 "schema:email": "email",
-                "schema:telephone": "phone"
+                "schema:telephone": "phone",
             },
-            "schema:dateModified": "_last_edit_timestamp"
+            "schema:dateModified": "_last_edit_timestamp",
         }
         if (includeExtras) {
             optionalPaths["schema:address"] = {
-                "schema:streetAddress": "addr"
+                "schema:streetAddress": "addr",
             }
             optionalPaths["schema:name"] = "name"
             optionalPaths["schema:description"] = "description"
@@ -717,19 +715,19 @@ export default class LinkedDataLoader {
             "schema:geo": {
                 "schema:latitude": "latitude",
                 "schema:longitude": "longitude",
-                "schema:polygon": "shape"
+                "schema:polygon": "shape",
             },
             "schema:priceSpecification": {
                 "mv:freeOfCharge": "fee",
-                "schema:price": "charge"
-            }
+                "schema:price": "charge",
+            },
         }
 
         const extra = [
             "schema:priceSpecification [ mv:dueForTime [ mv:timeStartValue ?chargeStart; mv:timeEndValue ?chargeEnd; mv:timeUnit ?timeUnit ]  ]",
             "vp:allows [vp:bicycleType <https://data.velopark.be/openvelopark/terms#CargoBicycle>; vp:bicyclesAmount ?capacityCargobike; vp:bicycleType ?cargoBikeType]",
             "vp:allows [vp:bicycleType <https://data.velopark.be/openvelopark/terms#ElectricBicycle>; vp:bicyclesAmount ?capacityElectric; vp:bicycleType ?electricBikeType]",
-            "vp:allows [vp:bicycleType <https://data.velopark.be/openvelopark/terms#TandemBicycle>; vp:bicyclesAmount ?capacityTandem; vp:bicycleType ?tandemBikeType]"
+            "vp:allows [vp:bicycleType <https://data.velopark.be/openvelopark/terms#TandemBicycle>; vp:bicyclesAmount ?capacityTandem; vp:bicycleType ?tandemBikeType]",
         ]
 
         const unpatched = await this.fetchEntry(

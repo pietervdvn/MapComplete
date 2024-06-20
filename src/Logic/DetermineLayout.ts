@@ -163,24 +163,31 @@ export default class DetermineLayout {
         return dict
     }
     private static getSharedTagRenderingOrder(): string[] {
-        return questions.tagRenderings.map(tr => tr.id)
+        return questions.tagRenderings.map((tr) => tr.id)
     }
 
     private static prepCustomTheme(json: any, sourceUrl?: string, forceId?: string): LayoutConfig {
         if (json.layers === undefined && json.tagRenderings !== undefined) {
             // We got fed a layer instead of a theme
             const layerConfig = <LayerConfigJson>json
-            const icon = Utils.NoNull(layerConfig.pointRendering.flatMap(
-                pr => pr.marker
-            ).map(iconSpec => {
-                const icon = new TagRenderingConfig(<TagRenderingConfigJson>iconSpec.icon).render.txt
-                if(iconSpec.color === undefined || icon.startsWith("http:") || icon.startsWith("https:")){
-                    return icon
-                }
-                const color = new TagRenderingConfig(<TagRenderingConfigJson>iconSpec.color).render.txt
-                return icon+":"+color
-
-            })).join(";")
+            const icon = Utils.NoNull(
+                layerConfig.pointRendering
+                    .flatMap((pr) => pr.marker)
+                    .map((iconSpec) => {
+                        const icon = new TagRenderingConfig(<TagRenderingConfigJson>iconSpec.icon)
+                            .render.txt
+                        if (
+                            iconSpec.color === undefined ||
+                            icon.startsWith("http:") ||
+                            icon.startsWith("https:")
+                        ) {
+                            return icon
+                        }
+                        const color = new TagRenderingConfig(<TagRenderingConfigJson>iconSpec.color)
+                            .render.txt
+                        return icon + ":" + color
+                    })
+            ).join(";")
 
             json = {
                 id: json.id,

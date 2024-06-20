@@ -66,7 +66,6 @@
       Utils.focusOnFocusableChild(htmlElem)
     } else {
       htmlElem.classList.remove("focus")
-
     }
   }
 

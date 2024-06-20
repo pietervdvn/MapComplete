@@ -31,14 +31,19 @@
       | "large-height"
       | string
   }
-
 </script>
 
 {#if mapping.icon !== undefined}
   <div class="inline-flex items-center">
     <Marker
       icons={mapping.icon}
-      size={twJoin(`mapping-icon-${mapping.iconClass ?? "small"}-height mapping-icon-${mapping.iconClass ?? "small"}-width`, "mr-2", "shrink-0 mx-2")}
+      size={twJoin(
+        `mapping-icon-${mapping.iconClass ?? "small"}-height mapping-icon-${
+          mapping.iconClass ?? "small"
+        }-width`,
+        "mr-2",
+        "shrink-0 mx-2"
+      )}
       clss={`mapping-icon-${mapping.iconClass ?? "small"}`}
     />
     <SpecialTranslation t={mapping.then} {tags} {state} {layer} feature={selectedElement} {clss} />

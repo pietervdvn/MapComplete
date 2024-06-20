@@ -143,63 +143,64 @@
           {/if}
         </span>
         <div class="normal-background p-2">
-
-        {#if isTagRenderingBlock}
-          <QuestionPreview {state} path={fusePath(i, [])} {schema}>
-            <button
-              on:click={() => {
-                del(i)
-              }}
-            >
-              <TrashIcon class="h-4 w-4" />
-              Delete this question
-            </button>
-
-            {#if i > 0}
+          {#if isTagRenderingBlock}
+            <QuestionPreview {state} path={fusePath(i, [])} {schema}>
               <button
                 on:click={() => {
-                  moveTo(i, 0)
+                  del(i)
                 }}
               >
-                Move to front
+                <TrashIcon class="h-4 w-4" />
+                Delete this question
               </button>
 
-              <button
-                on:click={() => {
-                  swap(i, i - 1)
-                }}
-              >
-                Move up
-              </button>
-            {/if}
-            {#if i + 1 < $currentValue.length}
-              <button
-                on:click={() => {
-                  swap(i, i + 1)
-                }}
-              >
-                Move down
-              </button>
-              <button
-                on:click={() => {
-                  moveTo(i, $currentValue.length - 1)
-                }}
-              >
-                Move to back
-              </button>
-            {/if}
-          </QuestionPreview>
-        {:else if schema.hints.types}
-          <SchemaBasedMultiType {state} path={fusePath(i, [])} schema={schemaForMultitype()} />
-        {:else}
-          {#each subparts as subpart}
-            <SchemaBasedInput {state} path={fusePath(i, [subpart.path.at(-1)])} schema={subpart} />
-          {/each}
-        {/if}
+              {#if i > 0}
+                <button
+                  on:click={() => {
+                    moveTo(i, 0)
+                  }}
+                >
+                  Move to front
+                </button>
 
+                <button
+                  on:click={() => {
+                    swap(i, i - 1)
+                  }}
+                >
+                  Move up
+                </button>
+              {/if}
+              {#if i + 1 < $currentValue.length}
+                <button
+                  on:click={() => {
+                    swap(i, i + 1)
+                  }}
+                >
+                  Move down
+                </button>
+                <button
+                  on:click={() => {
+                    moveTo(i, $currentValue.length - 1)
+                  }}
+                >
+                  Move to back
+                </button>
+              {/if}
+            </QuestionPreview>
+          {:else if schema.hints.types}
+            <SchemaBasedMultiType {state} path={fusePath(i, [])} schema={schemaForMultitype()} />
+          {:else}
+            {#each subparts as subpart}
+              <SchemaBasedInput
+                {state}
+                path={fusePath(i, [subpart.path.at(-1)])}
+                schema={subpart}
+              />
+            {/each}
+          {/if}
         </div>
       </AccordionSingle>
-
     {/each}
   {/if}
   <div class="flex">

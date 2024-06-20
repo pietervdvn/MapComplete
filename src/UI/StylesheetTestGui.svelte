@@ -7,7 +7,7 @@
 </script>
 
 <main>
-  <div class="flex-col flex gap-y-2">
+  <div class="flex flex-col gap-y-2">
     <h1>Stylesheet testing grounds</h1>
 
     This document exists to explore the style hierarchy.
@@ -65,9 +65,7 @@
           <Community class="h-6 w-6" />
           Secondary action (disabled)
         </button>
-        <button class="as-link">
-          Mimick link
-        </button>
+        <button class="as-link">Mimick link</button>
       </div>
       <input type="text" />
 

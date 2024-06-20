@@ -35,8 +35,8 @@
       <SingleReview {review} />
     {/each}
   {:else}
-    <div class="subtle italic m-2">
-    <Tr t={Translations.t.reviews.no_reviews_yet} />
+    <div class="subtle m-2 italic">
+      <Tr t={Translations.t.reviews.no_reviews_yet} />
     </div>
   {/if}
   <div class="flex justify-end">

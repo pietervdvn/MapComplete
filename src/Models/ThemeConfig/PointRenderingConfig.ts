@@ -205,7 +205,7 @@ export default class PointRenderingConfig extends WithContextLoader {
                       marker: this.marker,
                       rotation: this.rotation,
                       tags,
-                        emojiHeight: iconH
+                      emojiHeight: iconH,
                   }).SetClass("w-full h-full")
                 : undefined
         let badges = undefined

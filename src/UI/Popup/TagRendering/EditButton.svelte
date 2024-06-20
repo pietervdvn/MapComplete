@@ -15,9 +15,9 @@
 
 <button
   on:click
-  class="h-8 w-8 shrink-0 self-start rounded-full p-1 as-link"
+  class="as-link h-8 w-8 shrink-0 self-start rounded-full p-1"
   aria-labelledby={arialabel === undefined ? ariaLabelledBy : undefined}
   use:ariaLabel={arialabel}
 >
-  <Pencil class="h-4 w-4 hover-alert" />
+  <Pencil class="hover-alert h-4 w-4" />
 </button>

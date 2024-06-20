@@ -38,8 +38,6 @@
   function getStateFor(option: FilterConfig): UIEventSource<number | string> {
     return filteredLayer.appliedFilters.get(option.id)
   }
-
-
 </script>
 
 {#if filteredLayer.layerDef.name}

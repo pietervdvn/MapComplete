@@ -278,8 +278,7 @@ export default class LayerConfig extends WithContextLoader {
             )
         }
         this.units = (json.units ?? []).flatMap((unitJson, i) =>
-                Unit.fromJson(unitJson, this.tagRenderings, `${context}.unit[${i}]`)
-
+            Unit.fromJson(unitJson, this.tagRenderings, `${context}.unit[${i}]`)
         )
 
         if (

@@ -38,7 +38,7 @@
 {:else}
   <button
     use:ariaLabel={Translations.t.reviews.rate.Subs({ n: i + 1 })}
-    class="rounded-full as-link"
+    class="as-link rounded-full"
     style="padding: 0; border: none;"
     bind:this={container}
     on:click={(e) => {

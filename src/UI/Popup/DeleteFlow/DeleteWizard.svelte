@@ -66,7 +66,7 @@
         deleteConfig.softDeletionTags,
         {
           theme: state?.layout?.id ?? "unknown",
-          specialMotivation: deleteReason
+          specialMotivation: deleteReason,
         },
         canBeDeleted.data
       )
@@ -74,7 +74,7 @@
       // no _delete_reason is given, which implies that this is _not_ a deletion but merely a retagging via a nonDeleteMapping
       actionToTake = new ChangeTagAction(featureId, selectedTags, tags.data, {
         theme: state?.layout?.id ?? "unkown",
-        changeType: "special-delete"
+        changeType: "special-delete",
       })
     }
 
@@ -87,81 +87,74 @@
 
 <LoginToggle ignoreLoading={true} {state}>
   {#if $canBeDeleted === false && !hasSoftDeletion}
-    <div class="low-interaction rounded text-sm flex p-2 italic subtle gap-x-1">
+    <div class="low-interaction subtle flex gap-x-1 rounded p-2 text-sm italic">
       <div class="relative h-fit">
-        <Trash class="w-8 h-8 pb-1" />
-        <Invalid class="absolute bottom-0 right-0 w-5 h-5"/>
+        <Trash class="h-8 w-8 pb-1" />
+        <Invalid class="absolute bottom-0 right-0 h-5 w-5" />
       </div>
       <div class="flex flex-col">
-
         <Tr t={t.cannotBeDeleted} />
         <Tr t={$canBeDeletedReason} />
         <Tr t={t.useSomethingElse} />
       </div>
     </div>
   {:else}
-
-
     <AccordionSingle>
       <span slot="header" class="flex">
-
-      <TrashIcon class="h-6 w-6" />
-      <Tr t={t.delete} />
+        <TrashIcon class="h-6 w-6" />
+        <Tr t={t.delete} />
       </span>
       <span>
-          {#if currentState === "confirm"}
-    <TagRenderingQuestion
-      bind:selectedTags
-      clss=""
-      {tags}
-      config={deleteConfig.constructTagRendering()}
-      {state}
-      selectedElement={feature}
-      {layer}
-    >
-      <button
-        slot="save-button"
-        on:click={onDelete}
-        class={twJoin(
-          selectedTags === undefined && "disabled",
-          "primary flex items-center bg-red-600"
-        )}
-      >
-        <TrashIcon
-          class={twJoin(
-            "ml-1 mr-2 h-6 w-6 rounded-full p-1",
-            selectedTags !== undefined && "bg-red-600"
-          )}
-        />
-        <Tr t={t.delete} />
-      </button>
+        {#if currentState === "confirm"}
+          <TagRenderingQuestion
+            bind:selectedTags
+            clss=""
+            {tags}
+            config={deleteConfig.constructTagRendering()}
+            {state}
+            selectedElement={feature}
+            {layer}
+          >
+            <button
+              slot="save-button"
+              on:click={onDelete}
+              class={twJoin(
+                selectedTags === undefined && "disabled",
+                "primary flex items-center bg-red-600"
+              )}
+            >
+              <TrashIcon
+                class={twJoin(
+                  "ml-1 mr-2 h-6 w-6 rounded-full p-1",
+                  selectedTags !== undefined && "bg-red-600"
+                )}
+              />
+              <Tr t={t.delete} />
+            </button>
 
+            <div slot="under-buttons" class="subtle italic">
+              {#if selectedTags !== undefined}
+                {#if canBeDeleted && isHardDelete}
+                  <!-- This is a hard delete - explain that this is a hard delete...-->
+                  <Tr t={t.explanations.hardDelete} />
+                {:else}
+                  <!-- This is a soft deletion: we explain _why_ the deletion is soft -->
+                  <Tr t={t.explanations.softDelete.Subs({ reason: $canBeDeletedReason })} />
+                {/if}
+              {/if}
+            </div>
+          </TagRenderingQuestion>
+        {:else if currentState === "applying"}
+          <Loading />
+        {:else}
+          <!-- currentState === 'deleted' -->
 
-      <div slot="under-buttons" class="italic subtle">
-        {#if selectedTags !== undefined}
-          {#if canBeDeleted && isHardDelete}
-            <!-- This is a hard delete - explain that this is a hard delete...-->
-            <Tr t={t.explanations.hardDelete} />
-          {:else}
-            <!-- This is a soft deletion: we explain _why_ the deletion is soft -->
-            <Tr t={t.explanations.softDelete.Subs({ reason: $canBeDeletedReason })} />
-          {/if}
+          <div class="low-interaction flex">
+            <TrashIcon class="h-6 w-6" />
+            <Tr t={t.isDeleted} />
+          </div>
         {/if}
-      </div>
-    </TagRenderingQuestion>
-  {:else if currentState === "applying"}
-    <Loading />
-  {:else}
-    <!-- currentState === 'deleted' -->
-
-    <div class="low-interaction flex">
-      <TrashIcon class="h-6 w-6" />
-      <Tr t={t.isDeleted} />
-    </div>
-  {/if}
       </span>
     </AccordionSingle>
-
   {/if}
-
 </LoginToggle>

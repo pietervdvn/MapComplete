@@ -6,12 +6,11 @@
 
 <Accordion>
   <AccordionItem open={expanded} paddingDefault="p-0" inactiveClass="text-black">
-    <span slot="header" class="text-base p-2 ">
+    <span slot="header" class="p-2 text-base">
       <slot name="header" />
     </span>
-    <div class="low-interaction p-2 rounded-b">
+    <div class="low-interaction rounded-b p-2">
       <slot />
     </div>
   </AccordionItem>
 </Accordion>
-

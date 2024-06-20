@@ -67,7 +67,7 @@
 
 <div>
   <div class:interactive={!readonly} class="flex flex-col items-end py-1 px-2">
-    <div class="flex flex-col w-full">
+    <div class="flex w-full flex-col">
       {#if renderingExternal}
         <TagRenderingAnswer
           tags={new UIEventSource(mockPropertiesExternal)}

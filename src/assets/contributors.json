@@ -1,7 +1,7 @@
 {
   "contributors": [
     {
-      "commits": 7549,
+      "commits": 7596,
       "contributor": "Pieter Vander Vennet"
     },
     {
@@ -17,7 +17,7 @@
       "contributor": "Win Olario"
     },
     {
-      "commits": 35,
+      "commits": 36,
       "contributor": "dependabot[bot]"
     },
     {
@@ -130,6 +130,10 @@
     },
     {
       "commits": 8,
+      "contributor": "Binnette"
+    },
+    {
+      "commits": 8,
       "contributor": "pelderson"
     },
     {
@@ -143,10 +147,6 @@
     {
       "commits": 7,
       "contributor": "OliNau"
-    },
-    {
-      "commits": 7,
-      "contributor": "Binnette"
     },
     {
       "commits": 6,

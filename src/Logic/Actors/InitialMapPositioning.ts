@@ -55,16 +55,12 @@ export default class InitialMapPositioning {
             layoutToUse?.startZoom ?? 1,
             "The initial/current zoom level"
         )
-        const defaultLat =layoutToUse?.startLat ?? 0
-        const lat = localStorageSynced(
-            "lat",
-           defaultLat ,
-            "The initial/current latitude"
-        )
+        const defaultLat = layoutToUse?.startLat ?? 0
+        const lat = localStorageSynced("lat", defaultLat, "The initial/current latitude")
         const defaultLon = layoutToUse?.startLon ?? 0
         const lon = localStorageSynced(
             "lon",
-           defaultLon ,
+            defaultLon,
             "The initial/current longitude of the app"
         )
 
@@ -92,16 +88,21 @@ export default class InitialMapPositioning {
                 const [lat, lon] = osmObject.centerpoint()
                 this.location.setData({ lon, lat })
             })
-        } else if (Constants.GeoIpServer && lat.data === defaultLat && lon.data === defaultLon && !Utils.runningFromConsole) {
+        } else if (
+            Constants.GeoIpServer &&
+            lat.data === defaultLat &&
+            lon.data === defaultLon &&
+            !Utils.runningFromConsole
+        ) {
             console.log("Using geoip to determine start location...")
             // We use geo-IP to zoom to some location
-            Utils.downloadJson<{ latitude: number, longitude: number }>(
+            Utils.downloadJson<{ latitude: number; longitude: number }>(
                 Constants.GeoIpServer + "ip"
             ).then(({ longitude, latitude }) => {
-                if(geolocationState.currentGPSLocation.data !== undefined){
+                if (geolocationState.currentGPSLocation.data !== undefined) {
                     return // We got a geolocation by now, abort
                 }
-                console.log("Setting location based on geoip", longitude,  latitude)
+                console.log("Setting location based on geoip", longitude, latitude)
                 this.zoom.setData(8)
                 this.location.setData({ lon: longitude, lat: latitude })
             })

@@ -97,10 +97,10 @@ class SingleBackgroundHandler {
         }
     }
 
-    private tryEnableSafe(): boolean{
+    private tryEnableSafe(): boolean {
         try {
             return this.tryEnable()
-        }catch (e) {
+        } catch (e) {
             console.log("Error: could not enable due to error", e)
             return false
         }
@@ -119,11 +119,7 @@ class SingleBackgroundHandler {
         console.debug("Enabling", background.id)
         let addLayerBeforeId = "transit_pier" // this is the first non-landuse item in the stylesheet, we add the raster layer before the roads but above the landuse
         if (!map.getLayer(addLayerBeforeId)) {
-            console.warn(
-                "Layer",
-                addLayerBeforeId,
-                "not found"
-            )
+            console.warn("Layer", addLayerBeforeId, "not found")
             addLayerBeforeId = undefined
         }
         if (background.category === "osmbasedmap" || background.category === "map") {

@@ -28,12 +28,18 @@
 </script>
 
 {#if config !== undefined && (config?.condition === undefined || config.condition.matchesProperties($tags))}
-  <div {id} class={twMerge("link-underline flex flex-col w-full", extraClasses)}>
+  <div {id} class={twMerge("link-underline flex w-full flex-col", extraClasses)}>
     {#if $trs.length === 1}
-      <TagRenderingMapping mapping={$trs[0]} {tags} {state} {selectedElement} {layer}
-                           clss={config?.classes?.join(" ") ?? ""} />
+      <TagRenderingMapping
+        mapping={$trs[0]}
+        {tags}
+        {state}
+        {selectedElement}
+        {layer}
+        clss={config?.classes?.join(" ") ?? ""}
+      />
     {/if}
-        {#if $trs.length > 1}
+    {#if $trs.length > 1}
       <ul>
         {#each $trs as mapping}
           <li>

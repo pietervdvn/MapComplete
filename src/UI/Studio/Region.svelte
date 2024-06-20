@@ -27,13 +27,13 @@
   Bug: Region received empty list as configuration at {path.join(".")}
 {:else if title}
   <AccordionSingle>
-      <div slot="header">{title}</div>
-      <div class="flex w-full flex-col gap-y-1 border border-black pl-2">
-        <slot name="description" />
-        {#each configsFiltered as config}
-          <SchemaBasedInput {state} path={config.path} schema={config} />
-        {/each}
-      </div>
+    <div slot="header">{title}</div>
+    <div class="flex w-full flex-col gap-y-1 border border-black pl-2">
+      <slot name="description" />
+      {#each configsFiltered as config}
+        <SchemaBasedInput {state} path={config.path} schema={config} />
+      {/each}
+    </div>
   </AccordionSingle>
 {:else}
   <div class="flex w-full flex-col gap-y-1 pl-2">

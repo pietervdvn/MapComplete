@@ -8,19 +8,21 @@
   export let icons: string | { icon: string; color: string }[]
 
   let iconsParsed: { icon: string; color: string }[]
-  if(typeof icons === "string") {
-    iconsParsed = icons.split(";").map(subspec => {
-      if(subspec.startsWith("http://") || subspec.startsWith("https://")){
+  if (typeof icons === "string") {
+    iconsParsed = icons.split(";").map((subspec) => {
+      if (subspec.startsWith("http://") || subspec.startsWith("https://")) {
         return {
-          icon: subspec, color: "black"
+          icon: subspec,
+          color: "black",
         }
       }
       const [icon, color] = subspec.split(":")
       return {
-        icon, color: color ?? "black"
+        icon,
+        color: color ?? "black",
       }
     })
-  }else{
+  } else {
     iconsParsed = icons
   }
 

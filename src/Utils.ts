@@ -1660,13 +1660,13 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         }
     }
 
-        private static emojiRegex  = /^\p{Extended_Pictographic}+$/u
+    private static emojiRegex = /^\p{Extended_Pictographic}+$/u
 
     /**
      * Returns 'true' if the given string contains at least one and only emoji characters
      * @param string
      */
-    public static isEmoji(string: string){
+    public static isEmoji(string: string) {
         return Utils.emojiRegex.test(string)
     }
 }

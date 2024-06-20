@@ -3,12 +3,7 @@
   "name": null,
   "description": "This 'layer' is not really a layer, but contains part of the code how the popup to 'add a new marker' is displayed",
   "source": "special",
-  "isShown": {
-    "or": [
-      "has_presets=yes",
-      "has_note_layer=yes"
-    ]
-  },
+  "isShown": "mouse_button=right",
   "title": {
     "mappings": [
       {
@@ -56,7 +51,6 @@
   },
   "popupInFloatover": true,
   "titleIcons": [],
-  "isShown": "mouse_button=right",
   "pointRendering": [
     {
       "marker": [

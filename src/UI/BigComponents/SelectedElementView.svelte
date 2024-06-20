@@ -21,9 +21,9 @@
     selectedElement.properties.id
   )
 
-  function getLayer(properties: Record<string, string>){
-    if(properties.id === "settings"){
-     return UserRelatedState.usersettingsConfig
+  function getLayer(properties: Record<string, string>) {
+    if (properties.id === "settings") {
+      return UserRelatedState.usersettingsConfig
     }
     if (properties.id === "new_point_dialog") {
       return state.layout.layers.find((l) => l.id === "last_click")
@@ -35,7 +35,6 @@
   }
 
   let layer: LayerConfig = getLayer(selectedElement.properties)
-
 
   let stillMatches = tags.map(
     (tags) => !layer?.source?.osmTags || layer.source.osmTags?.matchesProperties(tags)

@@ -11,13 +11,12 @@
   export let layer: LayerConfig
   export let text: string
   export let cssClasses: string = ""
-  let knowableRenderings = layer.tagRenderings.filter(tr => tr.question !== undefined)
-  let hasKnownQuestion = tags.mapD(t => knowableRenderings.some(tr => tr.IsKnown(t)))
-
+  let knowableRenderings = layer.tagRenderings.filter((tr) => tr.question !== undefined)
+  let hasKnownQuestion = tags.mapD((t) => knowableRenderings.some((tr) => tr.IsKnown(t)))
 </script>
 
 {#if !$hasKnownQuestion}
   <span class={cssClasses}>
-  {text}
+    {text}
   </span>
 {/if}

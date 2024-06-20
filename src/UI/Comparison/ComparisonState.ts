@@ -11,7 +11,6 @@ export class ComparisonState {
     public readonly knownImages: Store<Set<string>>
 
     constructor(tags: UIEventSource<OsmTags>, externalProperties: Record<string, string>) {
-
         externalProperties = { ...externalProperties }
         delete externalProperties["@context"]
 
@@ -74,7 +73,7 @@ export class ComparisonState {
         )
 
         this.hasDifferencesAtStart =
-         this.   different.data.length + this.missing.data.length + this.unknownImages.data.length > 0
-
+            this.different.data.length + this.missing.data.length + this.unknownImages.data.length >
+            0
     }
 }

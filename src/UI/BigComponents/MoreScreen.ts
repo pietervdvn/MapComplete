@@ -27,9 +27,8 @@ export default class MoreScreen {
         if (searchTerm === "osmcha" || searchTerm === "stats") {
             window.location.href = Utils.OsmChaLinkFor(7)
         }
-        if (searchTerm === "studio" ) {
+        if (searchTerm === "studio") {
             window.location.href = "./studio.html"
-
         }
         // Enter pressed -> search the first _official_ matchin theme and open it
         const publicTheme = MoreScreen.officialThemes.find(

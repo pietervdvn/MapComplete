@@ -7,12 +7,12 @@ import {
     FirstOf,
     Fuse,
     On,
-    SetDefault
+    SetDefault,
 } from "./Conversion"
 import { LayerConfigJson } from "../Json/LayerConfigJson"
 import {
     MinimalTagRenderingConfigJson,
-    TagRenderingConfigJson
+    TagRenderingConfigJson,
 } from "../Json/TagRenderingConfigJson"
 import { Utils } from "../../../Utils"
 import RewritableConfigJson from "../Json/RewritableConfigJson"
@@ -85,17 +85,17 @@ class ExpandFilter extends DesugaringStep<LayerConfigJson> {
                 }
                 const options = matchingTr.mappings.map((mapping) => ({
                     question: mapping.then,
-                    osmTags: mapping.if
+                    osmTags: mapping.if,
                 }))
                 options.unshift({
                     question: {
-                        en: "All types"
+                        en: "All types",
                     },
-                    osmTags: undefined
+                    osmTags: undefined,
                 })
                 newFilters.push({
                     id: filter,
-                    options
+                    options,
                 })
                 continue
             }
@@ -134,9 +134,9 @@ class ExpandFilter extends DesugaringStep<LayerConfigJson> {
                     .enter(filter)
                     .err(
                         "While searching for predefined filter " +
-                        filter +
-                        ": this filter is not found. Perhaps you meant one of: " +
-                        suggestions
+                            filter +
+                            ": this filter is not found. Perhaps you meant one of: " +
+                            suggestions
                     )
             }
             newFilters.push(found)
@@ -149,9 +149,9 @@ class ExpandTagRendering extends Conversion<
     | string
     | TagRenderingConfigJson
     | {
-    builtin: string | string[]
-    override: any
-},
+          builtin: string | string[]
+          override: any
+      },
     TagRenderingConfigJson[]
 > {
     private readonly _state: DesugaringContext
@@ -340,25 +340,25 @@ class ExpandTagRendering extends Conversion<
                     ctx.warn(
                         `A literal rendering was detected: ${tr}
                       Did you perhaps forgot to add a layer name as 'layername.${tr}'? ` +
-                        Array.from(state.sharedLayers.keys()).join(", ")
+                            Array.from(state.sharedLayers.keys()).join(", ")
                     )
                 }
 
                 if (this._options?.noHardcodedStrings && this._state?.sharedLayers?.size > 0) {
                     ctx.err(
                         "Detected an invocation to a builtin tagRendering, but this tagrendering was not found: " +
-                        tr +
-                        " \n    Did you perhaps forget to add the layer as prefix, such as `icons." +
-                        tr +
-                        "`? "
+                            tr +
+                            " \n    Did you perhaps forget to add the layer as prefix, such as `icons." +
+                            tr +
+                            "`? "
                     )
                 }
 
                 return [
                     <any>{
                         render: tr,
-                        id: tr.replace(/[^a-zA-Z0-9]/g, "")
-                    }
+                        id: tr.replace(/[^a-zA-Z0-9]/g, ""),
+                    },
                 ]
             }
             return lookup
@@ -385,9 +385,9 @@ class ExpandTagRendering extends Conversion<
                 }
                 ctx.err(
                     "An object calling a builtin can only have keys `builtin` or `override`, but a key with name `" +
-                    key +
-                    "` was found. This won't be picked up! The full object is: " +
-                    JSON.stringify(tr)
+                        key +
+                        "` was found. This won't be picked up! The full object is: " +
+                        JSON.stringify(tr)
                 )
             }
 
@@ -411,19 +411,19 @@ class ExpandTagRendering extends Conversion<
                             if (state.sharedLayers.size === 0) {
                                 ctx.warn(
                                     "BOOTSTRAPPING. Rerun generate layeroverview. While reusing tagrendering: " +
-                                    name +
-                                    ": layer " +
-                                    layerName +
-                                    " not found for now, but ignoring as this is a bootstrapping run. "
+                                        name +
+                                        ": layer " +
+                                        layerName +
+                                        " not found for now, but ignoring as this is a bootstrapping run. "
                                 )
                             } else {
                                 ctx.err(
                                     ": While reusing tagrendering: " +
-                                    name +
-                                    ": layer " +
-                                    layerName +
-                                    " not found. Maybe you meant one of " +
-                                    candidates.slice(0, 3).join(", ")
+                                        name +
+                                        ": layer " +
+                                        layerName +
+                                        " not found. Maybe you meant one of " +
+                                        candidates.slice(0, 3).join(", ")
                                 )
                             }
                             continue
@@ -435,10 +435,10 @@ class ExpandTagRendering extends Conversion<
                     candidates = Utils.sortedByLevenshteinDistance(name, candidates, (i) => i)
                     ctx.err(
                         "The tagRendering with identifier " +
-                        name +
-                        " was not found.\n\tDid you mean one of " +
-                        candidates.join(", ") +
-                        "?\n(Hint: did you add a new label and are you trying to use this label at the same time? Run 'reset:layeroverview' first"
+                            name +
+                            " was not found.\n\tDid you mean one of " +
+                            candidates.join(", ") +
+                            "?\n(Hint: did you add a new label and are you trying to use this label at the same time? Run 'reset:layeroverview' first"
                     )
                     continue
                 }
@@ -492,7 +492,7 @@ class DetectInline extends DesugaringStep<QuestionableTagRenderingConfigJson> {
                 if (json.freeform.inline === true) {
                     context.err(
                         "'inline' is set, but the rendering contains a special visualisation...\n    " +
-                        spec[key]
+                            spec[key]
                     )
                 }
                 json = JSON.parse(JSON.stringify(json))
@@ -578,20 +578,20 @@ export class AddQuestionBox extends DesugaringStep<LayerConfigJson> {
             if (blacklisted?.length > 0 && used?.length > 0) {
                 context.err(
                     "The {questions()}-special rendering only supports either a blacklist OR a whitelist, but not both." +
-                    "\n    Whitelisted: " +
-                    used.join(", ") +
-                    "\n    Blacklisted: " +
-                    blacklisted.join(", ")
+                        "\n    Whitelisted: " +
+                        used.join(", ") +
+                        "\n    Blacklisted: " +
+                        blacklisted.join(", ")
                 )
             }
             for (const usedLabel of used) {
                 if (!allLabels.has(usedLabel)) {
                     context.err(
                         "This layers specifies a special question element for label `" +
-                        usedLabel +
-                        "`, but this label doesn't exist.\n" +
-                        "    Available labels are " +
-                        Array.from(allLabels).join(", ")
+                            usedLabel +
+                            "`, but this label doesn't exist.\n" +
+                            "    Available labels are " +
+                            Array.from(allLabels).join(", ")
                     )
                 }
                 seen.add(usedLabel)
@@ -605,8 +605,8 @@ export class AddQuestionBox extends DesugaringStep<LayerConfigJson> {
             const question: QuestionableTagRenderingConfigJson = {
                 id: "leftover-questions",
                 render: {
-                    "*": `{questions( ,${Array.from(seen).join(";")})}`
-                }
+                    "*": `{questions( ,${Array.from(seen).join(";")})}`,
+                },
             }
             json.tagRenderings.push(question)
         }
@@ -626,11 +626,11 @@ export class AddEditingElements extends DesugaringStep<LayerConfigJson> {
         "all_tags",
         "qr_code",
         "nearby_images",
-        "linked_open_data"
+        "linked_open_data",
     ]
 
     private readonly _desugaring: DesugaringContext
-    private readonly _addedByDefaultAtTop : QuestionableTagRenderingConfigJson[]
+    private readonly _addedByDefaultAtTop: QuestionableTagRenderingConfigJson[]
     private readonly _addedByDefault: QuestionableTagRenderingConfigJson[]
     constructor(desugaring: DesugaringContext) {
         super(
@@ -643,17 +643,14 @@ export class AddEditingElements extends DesugaringStep<LayerConfigJson> {
         const builtinQuestions = Array.from(this._desugaring.tagRenderings?.values() ?? [])
 
         function getAddedByDefaultIds(key: string): QuestionableTagRenderingConfigJson[] {
-            const addByDefault = builtinQuestions.filter(tr => tr.labels?.indexOf(key) >= 0)
-            const ids = new Set(addByDefault.map(tr => tr.id))
-            const idsInOrder = desugaring.tagRenderingOrder?.filter(id => ids.has(id)) ?? []
-            return Utils.NoNull(idsInOrder.map(id => desugaring.tagRenderings.get(id)))
+            const addByDefault = builtinQuestions.filter((tr) => tr.labels?.indexOf(key) >= 0)
+            const ids = new Set(addByDefault.map((tr) => tr.id))
+            const idsInOrder = desugaring.tagRenderingOrder?.filter((id) => ids.has(id)) ?? []
+            return Utils.NoNull(idsInOrder.map((id) => desugaring.tagRenderings.get(id)))
         }
 
         this._addedByDefaultAtTop = getAddedByDefaultIds("added_by_default_top")
         this._addedByDefault = getAddedByDefaultIds("added_by_default")
-
-
-
     }
 
     convert(json: LayerConfigJson, _: ConversionContext): LayerConfigJson {
@@ -681,7 +678,7 @@ export class AddEditingElements extends DesugaringStep<LayerConfigJson> {
 
         /***** ADD TO TOP ****/
 
-        json.tagRenderings.unshift(...this._addedByDefaultAtTop.filter(tr => !allIds.has(tr.id)))
+        json.tagRenderings.unshift(...this._addedByDefaultAtTop.filter((tr) => !allIds.has(tr.id)))
 
         /***** ADD TO BOTTOM ****/
 
@@ -689,10 +686,11 @@ export class AddEditingElements extends DesugaringStep<LayerConfigJson> {
             json.tagRenderings.push(this._desugaring.tagRenderings.get("minimap"))
         }
 
-        if(usedSpecialFunctions.has("image_upload") &&
-        !usedSpecialFunctions.has("nearby_images")){
+        if (
+            usedSpecialFunctions.has("image_upload") &&
+            !usedSpecialFunctions.has("nearby_images")
+        ) {
             json.tagRenderings.push(this._desugaring.tagRenderings.get("nearby_images"))
-
         }
 
         if (json.allowSplit && !usedSpecialFunctions.has("split_button")) {
@@ -703,18 +701,17 @@ export class AddEditingElements extends DesugaringStep<LayerConfigJson> {
         if (json.allowMove && !usedSpecialFunctions.has("move_button")) {
             json.tagRenderings.push({
                 id: "move-button",
-                render: { "*": "{move_button()}" }
+                render: { "*": "{move_button()}" },
             })
         }
         if (json.deletion && !usedSpecialFunctions.has("delete_button")) {
             json.tagRenderings.push({
                 id: "delete-button",
-                render: { "*": "{delete_button()}" }
+                render: { "*": "{delete_button()}" },
             })
         }
 
-
-        json.tagRenderings.push(...this._addedByDefault.filter(tr => !allIds.has(tr.id)))
+        json.tagRenderings.push(...this._addedByDefault.filter((tr) => !allIds.has(tr.id)))
 
         if (!usedSpecialFunctions.has("all_tags")) {
             const trc: QuestionableTagRenderingConfigJson = {
@@ -725,9 +722,9 @@ export class AddEditingElements extends DesugaringStep<LayerConfigJson> {
                     or: [
                         "__featureSwitchIsDebugging=true",
                         "mapcomplete-show_tags=full",
-                        "mapcomplete-show_debug=yes"
-                    ]
-                }
+                        "mapcomplete-show_debug=yes",
+                    ],
+                },
             }
             json.tagRenderings?.push(trc)
         }
@@ -749,9 +746,9 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
     }
 
     private static escapeStr(v: string, context: ConversionContext): string {
-        if(typeof v !== "string"){
-            context.err("Detected a non-string value where one expected a string: "+v)
-            return RewriteSpecial.escapeStr(""+v, context)
+        if (typeof v !== "string") {
+            context.err("Detected a non-string value where one expected a string: " + v)
+            return RewriteSpecial.escapeStr("" + v, context)
         }
         return v
             .replace(/,/g, "&COMMA")
@@ -835,10 +832,10 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
     private static convertIfNeeded(
         input:
             | (object & {
-            special: {
-                type: string
-            }
-        })
+                  special: {
+                      type: string
+                  }
+              })
             | any,
         context: ConversionContext
     ): any {
@@ -924,7 +921,6 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
         const after = Translations.T(input.after)
         const clss: string = input.class !== undefined ? ":" + input.class : ""
 
-
         for (const ln of Object.keys(before?.translations ?? {})) {
             foundLanguages.add(ln)
         }
@@ -937,7 +933,7 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
                 .map((nm) => RewriteSpecial.escapeStr(special[nm] ?? "", context))
                 .join(",")
             return {
-                "*": `{${type}(${args})${clss}}`
+                "*": `{${type}(${args})${clss}}`,
             }
         }
 
@@ -962,7 +958,9 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
             }
             const beforeText = before?.textFor(ln) ?? ""
             const afterText = after?.textFor(ln) ?? ""
-            result[ln] = `${beforeText}{${type}(${args.map((a) => a).join(",")})${clss}}${afterText}`
+            result[ln] = `${beforeText}{${type}(${args
+                .map((a) => a)
+                .join(",")})${clss}}${afterText}`
         }
         return result
     }
@@ -1049,7 +1047,7 @@ class ExpandIconBadges extends DesugaringStep<PointRenderingConfigJson> {
             iconBadges.push(
                 ...expanded.map((resolved) => ({
                     if: iconBadge.if,
-                    then: <MinimalTagRenderingConfigJson>resolved
+                    then: <MinimalTagRenderingConfigJson>resolved,
                 }))
             )
         }
@@ -1186,7 +1184,7 @@ export class AddRatingBadge extends DesugaringStep<LayerConfigJson> {
 
         const specialVis: Exclude<RenderingSpecification, string>[] = <
             Exclude<RenderingSpecification, string>[]
-            >ValidationUtils.getAllSpecialVisualisations(<any>json.tagRenderings).filter(
+        >ValidationUtils.getAllSpecialVisualisations(<any>json.tagRenderings).filter(
             (rs) => typeof rs !== "string"
         )
         const funcs = new Set<string>(specialVis.map((rs) => rs.func.funcName))
@@ -1222,7 +1220,7 @@ export class AutoTitleIcon extends DesugaringStep<LayerConfigJson> {
         }
         return <TagRenderingConfigJson>{
             id: "title_icon_auto_" + tr.id,
-            mappings
+            mappings,
         }
     }
 
@@ -1267,8 +1265,8 @@ export class AutoTitleIcon extends DesugaringStep<LayerConfigJson> {
                     .enters("titleIcons", i)
                     .warn(
                         "TagRendering with id " +
-                        trId +
-                        " does not have any icons, not generating an icon for this"
+                            trId +
+                            " does not have any icons, not generating an icon for this"
                     )
                 continue
             }
@@ -1292,7 +1290,7 @@ export class PrepareLayer extends Fuse<LayerConfigJson> {
                 (layer) =>
                     new Concat(
                         new ExpandTagRendering(state, layer, {
-                            addToContext: options?.addTagRenderingsToContext ?? false
+                            addToContext: options?.addTagRenderingsToContext ?? false,
                         })
                     )
             ),

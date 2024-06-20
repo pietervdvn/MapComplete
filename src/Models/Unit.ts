@@ -27,9 +27,19 @@ export class Unit {
     ) {
         this.quantity = quantity
         this._validator = validator
-        if(!inverted && ["string","text","key","icon","translation","fediverse","id"].indexOf(validator.name) >= 0){
+        if (
+            !inverted &&
+            ["string", "text", "key", "icon", "translation", "fediverse", "id"].indexOf(
+                validator.name
+            ) >= 0
+        ) {
             console.trace("Unit error")
-            throw "Invalid unit configuration. The validator is of a forbidden type: "+validator.name+"; set a (number) type to your freeform key or set inverted. Hint: this unit is applied onto keys: "+appliesToKeys.join("; ")
+            throw (
+                "Invalid unit configuration. The validator is of a forbidden type: " +
+                validator.name +
+                "; set a (number) type to your freeform key or set inverted. Hint: this unit is applied onto keys: " +
+                appliesToKeys.join("; ")
+            )
         }
         this.inverted = inverted
         this.appliesToKeys = new Set(appliesToKeys)

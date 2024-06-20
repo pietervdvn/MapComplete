@@ -86,12 +86,12 @@
 </script>
 
 {#if theme.id !== personal.id || $unlockedPersonal}
-  <a class={"flex w-full items-center text-ellipsis rounded my-2"} href={$href}>
-    <Marker icons={theme.icon} size="m-1 block h-11 w-11 sm:mr-2 shrink-0"/>
+  <a class={"my-2 flex w-full items-center text-ellipsis rounded"} href={$href}>
+    <Marker icons={theme.icon} size="m-1 block h-11 w-11 sm:mr-2 shrink-0" />
 
-    <span class="flex flex-col overflow-hidden text-ellipsis font-bold text-xl">
+    <span class="flex flex-col overflow-hidden text-ellipsis text-xl font-bold">
       <Tr cls="underline" t={title} />
-      <Tr cls="subtle text-base" t={description}/>
+      <Tr cls="subtle text-base" t={description} />
 
       {#if selected}
         <span class="thanks hidden-on-mobile" aria-hidden="true">

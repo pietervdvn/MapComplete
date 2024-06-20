@@ -49,7 +49,9 @@
   function createVisualisation(specpart: Exclude<RenderingSpecification, string>): BaseUIElement {
     {
       try {
-        return specpart.func.constr(state, tags, specpart.args, feature, layer)?.SetClass(specpart.style)
+        return specpart.func
+          .constr(state, tags, specpart.args, feature, layer)
+          ?.SetClass(specpart.style)
       } catch (e) {
         console.error(
           "Could not construct a special visualisation with specification",

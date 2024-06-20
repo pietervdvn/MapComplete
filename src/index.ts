@@ -52,13 +52,13 @@ async function main() {
         ])
         console.log("The available layers on server are", Array.from(availableLayers))
         const state = new ThemeViewState(layout, availableLayers)
-        const target =  document.getElementById("maindiv")
+        const target = document.getElementById("maindiv")
         const childs = Array.from(target.children)
         new ThemeViewGUI({
             target,
             props: { state },
         })
-        childs.forEach(ch => target.removeChild(ch))
+        childs.forEach((ch) => target.removeChild(ch))
         Array.from(document.getElementsByClassName("delete-on-load")).forEach((el) => {
             el.parentElement.removeChild(el)
         })
@@ -69,13 +69,15 @@ async function main() {
             new FixedUiElement(err.toString().split("\n").join("<br/>")).SetClass("block alert"),
 
             customDefinition?.length > 0
-                ? new SubtleButton(new SvelteUIElement(ArrowDownTray), "Download the raw file").onClick(
-                      () =>
-                          Utils.offerContentsAsDownloadableFile(
-                              DetermineLayout.getCustomDefinition(),
-                              "mapcomplete-theme.json",
-                              { mimetype: "application/json" }
-                          )
+                ? new SubtleButton(
+                      new SvelteUIElement(ArrowDownTray),
+                      "Download the raw file"
+                  ).onClick(() =>
+                      Utils.offerContentsAsDownloadableFile(
+                          DetermineLayout.getCustomDefinition(),
+                          "mapcomplete-theme.json",
+                          { mimetype: "application/json" }
+                      )
                   )
                 : undefined,
         ]).AttachTo("maindiv")

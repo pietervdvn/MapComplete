@@ -39,7 +39,9 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
     readonly allowMoving: UIEventSource<true | boolean | undefined>
     readonly allowRotating: UIEventSource<true | boolean | undefined>
     readonly allowZooming: UIEventSource<true | boolean | undefined>
-    readonly lastClickLocation: Store<undefined | { lon: number; lat: number, mode : "left" | "right" | "middle" }>
+    readonly lastClickLocation: Store<
+        undefined | { lon: number; lat: number; mode: "left" | "right" | "middle" }
+    >
     readonly minzoom: UIEventSource<number>
     readonly maxzoom: UIEventSource<number>
     readonly rotation: UIEventSource<number>
@@ -70,7 +72,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
             this.location.setData({ ...this.location.data })
         }
         this.zoom = state?.zoom ?? new UIEventSource(1)
-        this.minzoom = state?.minzoom ?? new UIEventSource(0.5)// 0.5 is the maplibre minzoom
+        this.minzoom = state?.minzoom ?? new UIEventSource(0.5) // 0.5 is the maplibre minzoom
         this.maxzoom = state?.maxzoom ?? new UIEventSource(24)
         this.zoom.addCallbackAndRunD((z) => {
             if (z < this.minzoom.data) {
@@ -92,13 +94,17 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         this.rasterLayer =
             state?.rasterLayer ?? new UIEventSource<RasterLayerPolygon | undefined>(undefined)
 
-        const lastClickLocation = new UIEventSource<{lat:number,lon:number,mode: "left" | "right" | "middle"}>(undefined)
+        const lastClickLocation = new UIEventSource<{
+            lat: number
+            lon: number
+            mode: "left" | "right" | "middle"
+        }>(undefined)
         this.lastClickLocation = lastClickLocation
         const self = this
 
         new RasterLayerHandler(this._maplibreMap, this.rasterLayer)
 
-        const clickmodes = ["left" , "middle", "right"] as const
+        const clickmodes = ["left", "middle", "right"] as const
         function handleClick(e: maplibregl.MapMouseEvent, mode?: "left" | "right" | "middle") {
             if (e.originalEvent["consumed"]) {
                 // Workaround, 'ShowPointLayer' sets this flag
@@ -148,8 +154,8 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
             })
 
             map._container.addEventListener("contextmenu", (e) => {
-                 const lngLat =  map.unproject([e.x, e.y])
-                lastClickLocation.setData({lon: lngLat.lng, lat: lngLat.lat, mode: "right"})
+                const lngLat = map.unproject([e.x, e.y])
+                lastClickLocation.setData({ lon: lngLat.lng, lat: lngLat.lat, mode: "right" })
             })
             map.on("dblclick", (e) => {
                 handleClick(e, "left")
@@ -675,5 +681,4 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
             }
         }
     }
-
 }

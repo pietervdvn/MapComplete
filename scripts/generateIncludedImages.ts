@@ -107,7 +107,7 @@ function genImages(dryrun = false) {
         "wikimedia-commons-white",
         "wikimedia_commons_white",
         "wikipedia",
-        "github"
+        "github",
     ].map((s) => s.toLowerCase())
     const dir = fs.readdirSync("./assets/svg")
 

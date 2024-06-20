@@ -150,13 +150,12 @@
   </div>
 
   <If condition={state.featureSwitches.featureSwitchBackToThemeOverview}>
-
-  <div class="link-underline w-full m-2 mx-4 flex">
-    <!-- bottom buttons, a bit hidden away: switch layout -->
-    <a class="flex justify-end items-center w-fit" href={Utils.HomepageLink()}>
-      <ChevronDoubleLeft class="w-4 h-4" />
-      <Tr t={Translations.t.general.backToIndex} />
-    </a>
-  </div>
+    <div class="link-underline m-2 mx-4 flex w-full">
+      <!-- bottom buttons, a bit hidden away: switch layout -->
+      <a class="flex w-fit items-center justify-end" href={Utils.HomepageLink()}>
+        <ChevronDoubleLeft class="h-4 w-4" />
+        <Tr t={Translations.t.general.backToIndex} />
+      </a>
+    </div>
   </If>
 </div>

@@ -249,7 +249,7 @@ class GenerateLayouts extends Script {
                 continue
             }
             let display = ' style="display: none"'
-            if(!defaultSet){
+            if (!defaultSet) {
                 display = ""
                 defaultSet = true
             }

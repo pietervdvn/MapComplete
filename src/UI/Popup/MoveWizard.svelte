@@ -47,12 +47,12 @@
       location: new UIEventSource({ lon, lat }),
       minzoom: new UIEventSource($reason.minZoom),
       rasterLayer: state.mapProperties.rasterLayer,
-      zoom: new UIEventSource($reason?.startZoom ?? 16)
+      zoom: new UIEventSource($reason?.startZoom ?? 16),
     }
   }
 
   let moveWizardState = new MoveWizardState(id, layer.allowMove, state)
-  if(moveWizardState.reasons.length === 1){
+  if (moveWizardState.reasons.length === 1) {
     reason.setData(moveWizardState.reasons[0])
   }
   let notAllowed = moveWizardState.moveDisallowedReason
@@ -78,8 +78,8 @@
             />
             <Tr t={Translations.T(moveWizardState.reasons[0].invitingText)} />
           {:else}
-              <Move class="h-6 w-6" />
-              <Tr t={t.inviteToMove.generic} />
+            <Move class="h-6 w-6" />
+            <Tr t={t.inviteToMove.generic} />
           {/if}
         </span>
         <span class="flex flex-col p-2">
@@ -88,9 +88,9 @@
             {#each moveWizardState.reasons as reasonSpec}
               <button
                 on:click={() => {
-                reason.setData(reasonSpec)
-                currentStep = "pick_location"
-              }}
+                  reason.setData(reasonSpec)
+                  currentStep = "pick_location"
+                }}
               >
                 <ToSvelte construct={reasonSpec.icon.SetClass("w-16 h-16 pr-2")} />
                 <Tr t={Translations.T(reasonSpec.text)} />
@@ -115,15 +115,15 @@
             <div class="flex flex-wrap">
               <If
                 condition={currentMapProperties.zoom.mapD(
-                (zoom) => zoom >= Constants.minZoomLevelToAddNewPoint
-              )}
+                  (zoom) => zoom >= Constants.minZoomLevelToAddNewPoint
+                )}
               >
                 <button
-                  class="primary  w-full"
+                  class="primary w-full"
                   on:click={() => {
-                  moveWizardState.moveFeature(newLocation.data, reason.data, featureToMove)
-                  currentStep = "moved"
-                }}
+                    moveWizardState.moveFeature(newLocation.data, reason.data, featureToMove)
+                    currentStep = "moved"
+                  }}
                 >
                   <Tr t={t.confirmMove} />
                 </button>
@@ -133,19 +133,24 @@
                 </div>
               </If>
               {#if moveWizardState.reasons.length > 1}
-                <button class="w-full" on:click={() => {currentStep = "reason"}}>
-                  <ChevronLeft class="w-6 h-6" />
+                <button
+                  class="w-full"
+                  on:click={() => {
+                    currentStep = "reason"
+                  }}
+                >
+                  <ChevronLeft class="h-6 w-6" />
                   <Tr t={t.cancel} />
                 </button>
               {/if}
-        </div>
+            </div>
           {:else if currentStep === "moved"}
             <div class="flex flex-col">
               <Tr cls="thanks" t={t.pointIsMoved} />
               <button
                 on:click={() => {
-                currentStep = "reason"
-              }}
+                  currentStep = "reason"
+                }}
               >
                 <Move class="h-6 w-6 pr-2" />
                 <Tr t={t.inviteToMoveAgain} />

@@ -255,11 +255,11 @@
         htmlElem={openMapButton}
       >
         <div class="m-0.5 mx-1 flex cursor-pointer items-center max-[480px]:w-full sm:mx-1 md:mx-2">
-          <Marker icons={layout.icon} size="h-4 w-4 md:h-8 md:w-8 mr-0.5 sm:mr-1 md:mr-2" ></Marker>
+          <Marker icons={layout.icon} size="h-4 w-4 md:h-8 md:w-8 mr-0.5 sm:mr-1 md:mr-2" />
           <b class="mr-1">
             <Tr t={layout.title} />
           </b>
-          <ChevronRight class="w-4 h-4"/>
+          <ChevronRight class="h-4 w-4" />
         </div>
       </MapControlButton>
       <MapControlButton
@@ -347,13 +347,16 @@
             />
           </If>
           <a
-            class="self-center bg-black-transparent pointer-events-auto h-fit max-h-12 cursor-pointer self-end overflow-hidden rounded-2xl px-1 ml-1 text-white opacity-50 hover:opacity-100"
+            class="bg-black-transparent pointer-events-auto ml-1 h-fit max-h-12 cursor-pointer self-end self-center overflow-hidden rounded-2xl px-1 text-white opacity-50 hover:opacity-100"
             on:click={() => {
               state.guistate.themeViewTab.setData("copyright")
               state.guistate.themeIsOpened.setData(true)
             }}
           >
-            © <span class="hidden sm:inline sm:pr-2 "> OpenStreetMap<span class="hidden md:inline md:pr-2 w-24">, {rasterLayerName}</span></span>
+            © <span class="hidden sm:inline sm:pr-2">
+              OpenStreetMap
+              <span class="hidden w-24 md:inline md:pr-2">, {rasterLayerName}</span>
+            </span>
           </a>
         </div>
       </div>
@@ -485,7 +488,7 @@
         </div>
 
         <div class="flex" slot="title0">
-          <Marker icons={layout.icon} size="h-4 w-4"/>
+          <Marker icons={layout.icon} size="h-4 w-4" />
 
           <Tr t={layout.title} />
         </div>
@@ -583,9 +586,19 @@
             <Tr t={Translations.t.general.attribution.openIssueTracker} />
           </a>
 
-          <a class="flex" href={"https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Themes/"+layout.id+".md"} target="_blank">
-            <DocumentChartBar class="h-6 w-6"/>
-            <Tr t={Translations.t.general.attribution.openThemeDocumentation.Subs({name: layout.title})}/>
+          <a
+            class="flex"
+            href={"https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Themes/" +
+              layout.id +
+              ".md"}
+            target="_blank"
+          >
+            <DocumentChartBar class="h-6 w-6" />
+            <Tr
+              t={Translations.t.general.attribution.openThemeDocumentation.Subs({
+                name: layout.title,
+              })}
+            />
           </a>
 
           <a class="flex" href="https://en.osm.town/@MapComplete" target="_blank">
