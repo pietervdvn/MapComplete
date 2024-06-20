@@ -715,7 +715,7 @@
         "i_am_affiliated": "I am affiliated with this object",
         "i_am_affiliated_explanation": "Check if you are an owner, creator, employee, …",
         "name_required": "A name is required in order to display and create reviews",
-        "no_reviews_yet": "There are no reviews yet. Be the first to write one and help open data and the business!",
+        "no_reviews_yet": "There are no reviews yet. Be the first one!",
         "non_place_review": "One review is not about a place and is not shown here.",
         "non_place_reviews": "{n} reviews are not about a place and are not shown here.",
         "question": "How would you rate {title()}?",
