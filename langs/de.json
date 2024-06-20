@@ -58,14 +58,16 @@
         },
         "currentInOsmIs": "Momentan hat OpenStreetMap den folgenden Wert erfasst:",
         "done": "Fertig",
-        "error": "Fehler",
+        "error": "Verknüpfte Daten konnten nicht von der Website geladen werden",
+        "lastModified": "Die externen Daten wurden zuletzt am {Datum} geändert",
         "loadedFrom": "Die folgenden Daten werden von <a href={url}>{source}</a> unter Verwendung des eingebetteten JSON-LD geladen",
         "missing": {
             "intro": "OpenStreetMap hat keine Informationen über die folgenden Attribute",
             "title": "Fehlende Objekte"
         },
         "noDataLoaded": "Die externe Website hat keine verlinkten Daten, die geladen werden könnten",
-        "overwrite": "In OpenStreetMap überschreiben"
+        "overwrite": "In OpenStreetMap überschreiben",
+        "title": "Strukturierte Daten, die von der externen Website geladen werden"
     },
     "favourite": {
         "loginNeeded": "<h3>Anmelden</h3>Ein persönliches Layout ist nur für OpenStreetMap-Benutzer verfügbar",
@@ -185,6 +187,7 @@
             "editId": "Den OpenStreetMap Editor öffnen",
             "editJosm": "Mit JOSM bearbeiten",
             "followOnMastodon": "MapComplete auf Mastodon folgen",
+            "gotoSourceCode": "Quellcode anzeigen",
             "iconAttribution": {
                 "title": "Verwendete Symbole"
             },
@@ -197,6 +200,7 @@
             "openIssueTracker": "Fehler melden",
             "openMapillary": "Mapillary öffnen",
             "openOsmcha": "Neueste Bearbeitungen mit {theme} ansehen",
+            "openThemeDocumentation": "Öffne die Dokumentation für die thematische Karte {name}",
             "seeOnMapillary": "Dieses Bild auf Mapillary ansehen",
             "themeBy": "Dieses Thema wurde erstellt von {author}",
             "title": "Copyright und Urheberrechtsangabe",
@@ -592,14 +596,16 @@
     },
     "index": {
         "#": "Dieser Text wird über der Thema-Auswahlschaltfläche gezeigt, wenn kein Thema geladen ist",
+        "about": "Über MapComplete",
         "featuredThemeTitle": "Diese Woche im Blickpunkt",
         "intro": "Karten zu verschiedenen Themen, zu denen Sie beitragen können",
+        "learnMore": "Mehr erfahren",
         "logIn": "Anmelden, um Themen anzuzeigen, die Sie bereits besucht haben",
         "pickTheme": "Eines der folgenden Themen auswählen, um zu starten.",
         "title": "MapComplete"
     },
     "move": {
-        "cancel": "Verschieben abbrechen",
+        "cancel": "Einen anderen Grund auswählen",
         "cannotBeMoved": "Dieses Element kann nicht verschoben werden.",
         "confirmMove": "Hierhin verschieben",
         "inviteToMove": {
@@ -616,7 +622,7 @@
         "partOfRelation": "Dieses Element ist Teil einer Relation. Verwenden Sie einen anderen Editor, um es zu verschieben.",
         "pointIsMoved": "Der Punkt wurde verschoben",
         "reasons": {
-            "reasonInaccurate": "Der Standort dieses Elements ist ungenau und sollte um einige Meter verschoben werden",
+            "reasonInaccurate": "Der Standort ist um ein paar Meter ungenau",
             "reasonRelocation": "Das Element wurde an einen völlig anderen Ort verlegt"
         },
         "selectReason": "Warum verschieben Sie dieses Element?",
