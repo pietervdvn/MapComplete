@@ -41,12 +41,14 @@
     </slot>
   {:else if !silentFail && $loadingStatus === "error"}
     <slot name="error">
-      <div class="alert max-w-64 flex items-center ">
+      <div class="alert flex items-center flex-col">
+      <div class="max-w-64 flex items-center ">
         <Invalid class="m-2 h-8 w-8 shrink-0" />
-        <Tr t={offlineModes[$apiState] ?? t.loginFailedOfflineOther} />
-        <button class="justify-self-end" on:click={() => state.osmConnection.AttemptLogin()}>
+        <Tr t={offlineModes[$apiState] ?? t.loginFailedUnreachableMode} />
+      </div>
+        <button class="h-fit" on:click={() => state.osmConnection.AttemptLogin()}>
           <ArrowPath class="w-6 h-6"/>
-          Retry
+          <Tr t={t.retry}/>
         </button>
       </div>
     </slot>
