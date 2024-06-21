@@ -25,6 +25,8 @@
   import Liberapay from "../assets/svg/Liberapay.svelte"
   import Bug from "../assets/svg/Bug.svelte"
   import Github from "../assets/svg/Github.svelte"
+  import { Utils } from "../Utils"
+  import { ArrowTrendingUp } from "@babeard/svelte-heroicons/solid/ArrowTrendingUp"
 
   const featureSwitches = new OsmConnectionFeatureSwitches()
   const osmConnection = new OsmConnection({
@@ -146,6 +148,15 @@
       <UnofficialThemeList search={themeSearchText} {state} />
     </LoginToggle>
 
+    <a
+      class="flex button"
+      href={window.location.protocol + "//" + window.location.host + "/studio.html"}
+    >
+      <Pencil class="mr-2 h-6 w-6" />
+      <Tr t={Translations.t.general.morescreen.createYourOwnTheme} />
+    </a>
+
+
     <h3 id="about">
       <Tr t={Translations.t.index.about} />
     </h3>
@@ -161,6 +172,11 @@
         <Tr t={Translations.t.general.attribution.openIssueTracker} />
       </a>
 
+      <a class="flex" href={Utils.OsmChaLinkFor(7)} target="_blank">
+        <ArrowTrendingUp class="mr-2 h-6 w-6"/>
+        <Tr t={Translations.t.general.attribution.openOsmchaLastWeek}/>
+      </a>
+
       <a class="flex" href="https://en.osm.town/@MapComplete" target="_blank">
         <Mastodon class="mr-2 h-6 w-6" />
         <Tr t={Translations.t.general.attribution.followOnMastodon} />
@@ -169,14 +185,6 @@
       <a class="flex" href="https://liberapay.com/pietervdvn/" target="_blank">
         <Liberapay class="mr-2 h-6 w-6" />
         <Tr t={Translations.t.general.attribution.donate} />
-      </a>
-
-      <a
-        class="flex"
-        href={window.location.protocol + "//" + window.location.host + "/studio.html"}
-      >
-        <Pencil class="mr-2 h-6 w-6" />
-        <Tr t={Translations.t.general.morescreen.createYourOwnTheme} />
       </a>
 
       <a

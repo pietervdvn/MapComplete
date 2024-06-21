@@ -200,6 +200,7 @@
             "openIssueTracker": "File a bug",
             "openMapillary": "Open Mapillary here",
             "openOsmcha": "See latest edits made with {theme}",
+            "openOsmchaLastWeek": "See edits from the last 7 days",
             "openThemeDocumentation": "Open the documentation for thematic map {name}",
             "seeOnMapillary": "See this image on Mapillary",
             "themeBy": "Theme maintained by {author}",
