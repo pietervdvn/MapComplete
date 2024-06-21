@@ -19,6 +19,7 @@
   import AddSmall from "../../../assets/svg/AddSmall.svelte"
   import type { OsmTags } from "../../../Models/OsmFeature"
   import Loading from "../../Base/Loading.svelte"
+  import NextButton from "../../Base/NextButton.svelte"
 
   export let coordinate: UIEventSource<{ lon: number; lat: number }>
   export let state: SpecialVisualizationState
@@ -109,7 +110,7 @@
         </SubtleButton>
       </div>
     {:else}
-      <form class="border-grey-500 rounded-sm border" on:submit|preventDefault={uploadNote}>
+      <form class="low-interaction rounded-sm p-2 flex flex-col" on:submit|preventDefault={uploadNote}>
         <label class="neutral-label">
           <Tr t={Translations.t.notes.createNoteIntro} />
           <div class="w-full p-1">
@@ -133,10 +134,10 @@
         </LoginToggle>
 
         {#if $comment?.length >= 3}
-          <SubtleButton on:click={uploadNote}>
+          <NextButton on:click={uploadNote} clss="self-end primary">
             <AddSmall slot="image" class="mr-4 h-8 w-8" />
-            <Tr slot="message" t={Translations.t.notes.createNote} />
-          </SubtleButton>
+            <Tr t={Translations.t.notes.createNote} />
+          </NextButton>
         {:else}
           <div class="alert">
             <Tr t={Translations.t.notes.textNeeded} />
