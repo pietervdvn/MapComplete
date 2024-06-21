@@ -19,12 +19,15 @@ export class LastClickFeatureSource implements FeatureSource {
     public static readonly newPointElementId = "new_point_dialog"
     public readonly features: Store<Feature[]>
     private _usermode: UIEventSource<string>
+    private _enabledAddMorePoints: UIEventSource<boolean>
     constructor(
         layout: LayoutConfig,
         clickSource: Store<{ lon: number; lat: number; mode: "left" | "right" | "middle" }>,
-        usermode?: UIEventSource<string>
+        usermode?: UIEventSource<string>,
+        enabledAddMorePoints?: UIEventSource<boolean>
     ) {
         this._usermode = usermode
+        this._enabledAddMorePoints = enabledAddMorePoints
         this.hasNoteLayer = layout.hasNoteLayer()
         this.hasPresets = layout.hasPresets()
         const allPresets: BaseUIElement[] = []
@@ -68,7 +71,8 @@ export class LastClickFeatureSource implements FeatureSource {
             number_of_presets: "" + this.renderings.length,
             first_preset: this.renderings[0],
             mouse_button: mode ?? "none",
-            _usermode: this._usermode?.data
+            _usermode: this._usermode?.data,
+            _addNewEnabled: (this._enabledAddMorePoints?.data ?? true) ? "yes" : "no"
         }
         this.i++
 

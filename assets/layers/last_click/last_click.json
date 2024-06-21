@@ -4,19 +4,34 @@
   "description": "This 'layer' is not really a layer, but contains part of the code how the popup to 'add a new marker' is displayed",
   "source": "special",
   "isShown": {
-    "or": [
+    "and": [
       {
-        "and": [
-          "mouse_button=right",
-          "_usermode=button_click_right"
+        "or": [
+          "has_note_layer=yes",
+          {
+            "and": [
+              "has_presets=yes",
+              "_addNewEnabled=yes"
+            ]
+          }
         ]
       },
-      "_usermode=button_click",
-      "_usermode=click",
       {
-        "and": [
-          "mouse_button=right",
-          "_usermode=click_right"
+        "or": [
+          {
+            "and": [
+              "mouse_button=right",
+              "_usermode=button_click_right"
+            ]
+          },
+          "_usermode=button_click",
+          "_usermode=click",
+          {
+            "and": [
+              "mouse_button=right",
+              "_usermode=click_right"
+            ]
+          }
         ]
       }
     ]
@@ -118,7 +133,7 @@
             "if": {
               "and": [
                 "has_note_layer=yes",
-                "has_presets=yesno"
+                "has_presets=no"
               ]
             },
             "then": {
@@ -168,7 +183,7 @@
   "tagRenderings": [
     {
       "id": "add_new",
-      "classes": "h-full flex",
+      "classes": "h-full flex special-add-new-point",
       "condition": "has_presets=yes",
       "render": {
         "*": "{add_new_point()}"

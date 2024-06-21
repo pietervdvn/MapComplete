@@ -28,7 +28,7 @@
 </script>
 
 {#if config !== undefined && (config?.condition === undefined || config.condition.matchesProperties($tags))}
-  <div {id} class={twMerge("link-underline flex w-full flex-col", extraClasses)}>
+  <div {id} class={twMerge("link-underline flex w-full h-full flex-col", extraClasses)}>
     {#if $trs.length === 1}
       <TagRenderingMapping
         mapping={$trs[0]}
