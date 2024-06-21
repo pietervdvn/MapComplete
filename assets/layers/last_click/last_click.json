@@ -3,7 +3,24 @@
   "name": null,
   "description": "This 'layer' is not really a layer, but contains part of the code how the popup to 'add a new marker' is displayed",
   "source": "special",
-  "isShown": "mouse_button=right",
+  "isShown": {
+    "or": [
+      {
+        "and": [
+          "mouse_button=right",
+          "_usermode=button_click_right"
+        ]
+      },
+      "_usermode=button_click",
+      "_usermode=click",
+      {
+        "and": [
+          "mouse_button=right",
+          "_usermode=click_right"
+        ]
+      }
+    ]
+  },
   "title": {
     "mappings": [
       {

@@ -467,6 +467,44 @@
       ]
     },
     {
+      "id": "add-new-feature",
+      "question": {
+        "en": "How should the menu to add a new feature be opened?"
+      },
+      "mappings": [
+        {
+          "if": "mapcomplete-preferences-add-new-mode=button",
+          "then": {
+            "en": "Adding a new feature is done with the button at the bottom left. Clicking the map does nothing"
+          }
+        },
+        {
+          "if": "mapcomplete-preferences-add-new-mode=click",
+          "then": {
+            "en": "When clicking or tapping the map, a marker pops up where a new feature is added"
+          }
+        },
+        {
+          "if": "mapcomplete-preferences-add-new-mode=click_right",
+          "then": {
+            "en": "When right-clicking or long-pressing the map, a marker pops up where a new feature can be added"
+          }
+        },
+        {
+          "if": "mapcomplete-preferences-add-new-mode=button_click",
+          "then": {
+            "en": "When clicking or tapping the map, a marker pops up where a new feature can be added. Additionally, a button at the bottom left is shown"
+          }
+        },
+        {
+          "if": "mapcomplete-preferences-add-new-mode=button_click_right",
+          "then": {
+            "en": "When right-clicking or long-pressing the map, a marker pops up where a new feature can be added. Additionally, a button at the bottom left is shown"
+          }
+        }
+      ]
+    },
+    {
       "id": "fixate-north",
       "question": {
         "en": "Should north always be up?",

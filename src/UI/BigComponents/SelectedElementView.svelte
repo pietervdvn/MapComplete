@@ -12,6 +12,7 @@
   import Delete_icon from "../../assets/svg/Delete_icon.svelte"
   import BackButton from "../Base/BackButton.svelte"
   import TagRenderingEditableDynamic from "../Popup/TagRendering/TagRenderingEditableDynamic.svelte"
+  import { LastClickFeatureSource } from "../../Logic/FeatureSource/Sources/LastClickFeatureSource"
 
   export let state: SpecialVisualizationState
   export let selectedElement: Feature
@@ -25,7 +26,7 @@
     if (properties.id === "settings") {
       return UserRelatedState.usersettingsConfig
     }
-    if (properties.id === "new_point_dialog") {
+    if (properties.id.startsWith(LastClickFeatureSource.newPointElementId)) {
       return state.layout.layers.find((l) => l.id === "last_click")
     }
     if (properties.id === "location_track") {

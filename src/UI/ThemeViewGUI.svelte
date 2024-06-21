@@ -108,7 +108,7 @@
     if (element.properties.id.startsWith("current_view")) {
       return currentViewLayer
     }
-    if (element.properties.id === "new_point_dialog") {
+    if (element.properties.id.startsWith(LastClickFeatureSource.newPointElementId)) {
       return layout.layers.find((l) => l.id === "last_click")
     }
     if (element.properties.id === "location_track") {
@@ -206,6 +206,7 @@
   }
   let openFilterButton: UIEventSource<HTMLElement> = new UIEventSource<HTMLElement>(undefined)
   let openBackgroundButton: UIEventSource<HTMLElement> = new UIEventSource<HTMLElement>(undefined)
+  let addNewFeatureMode = state.userRelatedState.addNewFeatureMode
 </script>
 
 <main>
@@ -306,7 +307,7 @@
     <div class="flex w-full items-end justify-between px-4">
       <div class="flex flex-col">
         <If condition={featureSwitches.featureSwitchEnableLogin}>
-          {#if (state.layout.hasPresets() && state.layout.enableAddNewPoints) || state.layout.hasNoteLayer()}
+          {#if $addNewFeatureMode.indexOf("button") >= 0 && ((state.layout.hasPresets() && state.layout.enableAddNewPoints) || state.layout.hasNoteLayer())}
             <button
               class="low-interaction pointer-events-auto w-fit"
               class:disabled={$currentZoom < Constants.minZoomLevelToAddNewPoint}

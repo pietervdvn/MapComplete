@@ -331,6 +331,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
         this.lastClickObject = new LastClickFeatureSource(
             this.layout,
             this.mapProperties.lastClickLocation,
+            this.userRelatedState.addNewFeatureMode
         )
 
         this.osmObjectDownloader = new OsmObjectDownloader(

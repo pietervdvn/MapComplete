@@ -148,10 +148,8 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
             map.on("click", (e) => {
                 handleClick(e)
             })
-            map.on("contextmenu", (e) => {
-                // This one only works on desktop
-                handleClick(e, "right")
-            })
+
+            // map.on("contextmenu", ...) only works on desktop, hence we listen to the container:
 
             map._container.addEventListener("contextmenu", (e) => {
                 const lngLat = map.unproject([e.x, e.y])

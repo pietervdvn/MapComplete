@@ -1,5 +1,5 @@
 import LayoutConfig from "../../../Models/ThemeConfig/LayoutConfig"
-import { ImmutableStore, Store } from "../../UIEventSource"
+import { ImmutableStore, Store, UIEventSource } from "../../UIEventSource"
 import { Feature, Point } from "geojson"
 import { TagUtils } from "../../Tags/TagUtils"
 import BaseUIElement from "../../../UI/BaseUIElement"
@@ -18,10 +18,13 @@ export class LastClickFeatureSource implements FeatureSource {
     private readonly hasNoteLayer: boolean
     public static readonly newPointElementId = "new_point_dialog"
     public readonly features: Store<Feature[]>
+    private _usermode: UIEventSource<string>
     constructor(
         layout: LayoutConfig,
-        clickSource: Store<{ lon: number; lat: number; mode: "left" | "right" | "middle" }>
+        clickSource: Store<{ lon: number; lat: number; mode: "left" | "right" | "middle" }>,
+        usermode?: UIEventSource<string>
     ) {
+        this._usermode = usermode
         this.hasNoteLayer = layout.hasNoteLayer()
         this.hasPresets = layout.hasPresets()
         const allPresets: BaseUIElement[] = []
@@ -65,6 +68,7 @@ export class LastClickFeatureSource implements FeatureSource {
             number_of_presets: "" + this.renderings.length,
             first_preset: this.renderings[0],
             mouse_button: mode ?? "none",
+            _usermode: this._usermode?.data
         }
         this.i++
 

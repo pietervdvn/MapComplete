@@ -61,6 +61,9 @@ export default class UserRelatedState {
         7 * 24 * 60 * 60,
         "gps_location_retention"
     )
+
+    public readonly addNewFeatureMode = new UIEventSource<"button" | "button_click_right" | "button_click" | "click" | "click_right">("button_click_right")
+
     /**
      * Preferences as tags exposes many preferences and state properties as record.
      * This is used to bridge the internal state with the usersettings.json layerconfig file
@@ -124,6 +127,14 @@ export default class UserRelatedState {
             {
                 documentation:
                     "The ID of a layer or layer category that MapComplete uses by default",
+            }
+        )
+
+        this.addNewFeatureMode = this.osmConnection.GetPreference(
+            "preferences-add-new-mode",
+            "button_click_right",
+            {
+                documentation: "How adding a new feature is done"
             }
         )
 
