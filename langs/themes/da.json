@@ -1,16 +1,25 @@
 {
+    "advertising": {
+        "title": "Reklamer"
+    },
     "aed": {
         "description": "På dette kort kan man finde og markere defibrillatorer i nærheden",
-        "title": "Åben AED Kort"
+        "title": "Hjertestartere"
     },
     "artwork": {
         "description": "Et åbent kort over statuer, buster, graffitis og andre kunstværker over hele verden",
-        "title": "Åbn illustrationskort"
+        "title": "Kunstværker"
+    },
+    "atm": {
+        "title": "Hæveautomater"
     },
     "benches": {
         "description": "Dette kort viser alle bænke, der er registreret i OpenStreetMap: Individuelle bænke og bænke, der hører til offentlige transportpladser eller shelters. Med en OpenStreetMap-konto kan du kortlægge nye bænke eller redigere detaljer om eksisterende bænke.",
         "shortDescription": "Et kort over bænke",
         "title": "Bænke"
+    },
+    "bicycle_parkings": {
+        "title": "Cykelparkering"
     },
     "bicycle_rental": {
         "description": "På dette kort finder du de mange cykeludlejningsstationer, som OpenStreetMap kender dem",
@@ -26,8 +35,12 @@
         "shortDescription": "Et kort over fastgjorte kikkerter",
         "title": "Kikkerter"
     },
+    "blind_osm": {
+        "title": "OSM for blinde"
+    },
     "bookcases": {
-        "description": "Et offentligt bogskab er et lille skab, en kasse, en gammel telefonboks eller andre steder, hvor bøger opbevares. Alle kan lægge eller tage en bog. Dette kort har til formål at samle alle disse bogskabe. Du kan opdage nye bogkasser i nærheden og med en gratis OpenStreetMap-konto hurtigt tilføje dine yndlingsbogkasser."
+        "description": "Et bogbytteskab er et lille skab, en kasse, en gammel telefonboks eller andre steder, hvor bøger opbevares. Enhver kan lægge eller tage en bog. Dette kort har til formål at samle alle disse bogbytteskabe.",
+        "title": "Bogbytteskabe"
     },
     "cafes_and_pubs": {
         "description": "Pubber og barer",
@@ -302,6 +315,9 @@
         },
         "title": "Åbn klatrekort"
     },
+    "clock": {
+        "title": "Ure"
+    },
     "cycle_highways": {
         "description": "Dette kort viser cykelmotorveje",
         "layers": {
@@ -381,6 +397,9 @@
         "description": "Målet med dette kort er at præsentere cyklister for en letanvendelig løsning til at finde den passende infrastruktur til deres behov.<br><br>Du kan spore din præcise placering (kun mobil) og vælge lag, der er relevante for dig i nederste venstre hjørne. Du kan også bruge dette værktøj til at tilføje eller redigere pins (points of interest) til kortet og give flere data ved at besvare spørgsmålene.<br><br>Alle ændringer, du foretager, vil automatisk blive gemt i den globale database af OpenStreetMap og kan kan frit genbruges af andre.<br><br>For mere information om cyclofix-projektet, gå til <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a> .",
         "title": "Cyclofix - et åbent kort for cyklister"
     },
+    "disaster_response": {
+        "title": "Beredskab"
+    },
     "drinking_water": {
         "description": "På dette kort er offentligt tilgængelige drikkevandsteder vist og kan nemt tilføjes",
         "title": "Drikkevand"
@@ -429,7 +448,7 @@
             }
         },
         "shortDescription": "Hvad er oprindelsen af et stednavn?",
-        "title": "Åbn oprindelseskort"
+        "title": "Etymology - hvad er et sted opkaldt efter?"
     },
     "facadegardens": {
         "description": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>Facadehaver</a>, grønne facader og træer i byen bringer ikke kun fred og ro, men også en smukkere by , større biodiversitet, en kølende effekt og bedre luftkvalitet. <br/> Klimaan VZW og Mechelen Klimaatneutraal ønsker at kortlægge eksisterende og nye facadehaver som et eksempel for folk, der vil bygge deres egen have eller for byvandrere, der elsker naturen.<br/>Mere info om projektet på <a href ='https://klimaan.be/' target=_blank>klimaan.be</a>.",
@@ -527,11 +546,11 @@
         "layers": {
             "0": {
                 "override": {
-                    "name": "Pommes frites butik"
+                    "name": "Pomfritbutik"
                 }
             }
         },
-        "title": "Pommes frites butik"
+        "title": "Pomfritbutikker"
     },
     "ghostbikes": {
         "description": "En <b>spøgelsescykel</b> er et mindesmærke for en cyklist, der døde i en trafikulykke, i form af en hvid cykel placeret permanent i nærheden af ulykkesstedet.<br/><br/>På dette kort er en kan se alle de spøgelsescykler, som er kendt af OpenStreetMap. Mangler der en spøgelsescykel? Alle kan tilføje eller opdatere oplysninger her - du behøver kun at have en (gratis) OpenStreetMap-konto.",
@@ -581,6 +600,9 @@
         "description": "På dette kort finder du hoteller i dit område",
         "title": "Hoteller"
     },
+    "icecream": {
+        "title": "Is"
+    },
     "indoors": {
         "description": "På dette kort er offentligt tilgængelige indendørs steder vist",
         "title": "Indendørs"
@@ -601,6 +623,9 @@
         },
         "title": "Kantsten og overgange"
     },
+    "lighthouses": {
+        "title": "Fyrtårne"
+    },
     "maproulette": {
         "description": "Tema, der viser MapRoulette-opgaver, så du kan søge, filtrere og rette dem.",
         "title": "KortRoulette-opgaver"
@@ -612,7 +637,10 @@
     "maxspeed": {
         "description": "Dette kort viser den lovligt tilladte maksimale hastighed på hver vej. Hvis en maxspeed mangler eller er forkert, kan du rette den her.",
         "shortDescription": "Dette kort viser den lovligt tilladte maksimale hastighed på hver vej.",
-        "title": "Højeste hastighed"
+        "title": "Fartgrænser"
+    },
+    "memorials": {
+        "title": "Mindesmærker"
     },
     "nature": {
         "description": "På dette kort kan man finde interessant information for turister og naturelskere, som f.eks ",
@@ -631,6 +659,33 @@
     "onwheels": {
         "description": "På dette kort vises steder, der er offentligt tilgængelige for kørestolsbrugere, og de kan nemt tilføjes",
         "layers": {
+            "19": {
+                "override": {
+                    "=title": {
+                        "render": "Statistikker"
+                    }
+                }
+            },
+            "20": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "Importere"
+                                }
+                            }
+                        },
+                        "1": {
+                            "render": {
+                                "special": {
+                                    "message": "Tilføj alle de foreslåede tags"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "4": {
                 "override": {
                     "filter": {
@@ -669,29 +724,20 @@
                     }
                 }
             },
-            "19": {
+            "8": {
                 "override": {
-                    "=title": {
-                        "render": "Statistikker"
-                    }
+                    "name": "Handikapparkeringspladser"
                 }
-            },
-            "20": {
+            }
+        }
+    },
+    "openlovemap": {
+        "layers": {
+            "4": {
                 "override": {
-                    "+tagRenderings": {
+                    "=presets": {
                         "0": {
-                            "render": {
-                                "special": {
-                                    "text": "Importere"
-                                }
-                            }
-                        },
-                        "1": {
-                            "render": {
-                                "special": {
-                                    "message": "Tilføj alle de foreslåede tags"
-                                }
-                            }
+                            "title": "en kondomautomat"
                         }
                     }
                 }
@@ -699,7 +745,8 @@
         }
     },
     "openwindpowermap": {
-        "description": "Et kort til visning og redigering af vindmøller."
+        "description": "Et kort til visning og redigering af vindmøller.",
+        "title": "Vindmøller"
     },
     "parkings": {
         "description": "Dette kort viser forskellige parkeringspladser",
@@ -737,7 +784,7 @@
                 }
             }
         },
-        "title": "hundesteder"
+        "title": "Dyrlæger, hundeparker og andre faciliteter for kæledyr"
     },
     "playgrounds": {
         "description": "På dette kort finder du legepladser og kan tilføje flere oplysninger",
@@ -771,16 +818,16 @@
     "postboxes": {
         "description": "På dette kort kan du finde og tilføje data for posthuse og postkasser. Du kan bruge dette kort til at finde, hvor du kan sende dit næste postkort! :)<br/>Har du fundet en fejl, eller mangler der en postboks? Du kan redigere dette kort med en gratis OpenStreetMap-konto. ",
         "shortDescription": "Et kort med postkasser og posthuse",
-        "title": "Postkasse- og Posthus-Kort"
+        "title": "Postkasser og posthuse"
     },
     "rainbow_crossings": {
         "description": "På dette kort er regnbuemalede fodgængerfelter vist og kan nemt tilføjes",
-        "title": "Regnbue fodgængerfelter"
+        "title": "Regnbuemalede fodgængerfelter"
     },
     "shops": {
         "description": "På dette kort kan man markere grundlæggende informationer om butikker, tilføje åbningstider og telefonnumre",
         "shortDescription": "Et redigerbart kort med grundlæggende butiksoplysninger",
-        "title": "Åbn butikskort"
+        "title": "Butikker"
     },
     "sidewalks": {
         "description": "Eksperimentelt tema",
@@ -822,6 +869,9 @@
         },
         "shortDescription": "Kortlægning af fortov",
         "title": "Fortove"
+    },
+    "ski": {
+        "title": "Skiløjper og skilifte"
     },
     "sport_pitches": {
         "description": "En sportsplads er et område, hvor der dyrkes sport",
@@ -891,7 +941,7 @@
     },
     "toilets": {
         "description": "Et kort over offentlige toiletter",
-        "title": "Åbn toiletkort"
+        "title": "Offentlige toiletter"
     },
     "transit": {
         "description": "Planlæg din rejse ved hjælp af det offentlige transportsystem.",
@@ -902,17 +952,20 @@
         "shortDescription": "Kortlæg alle træer",
         "title": "Træer"
     },
+    "vending_machine": {
+        "title": "Salgsautomater"
+    },
     "walls_and_buildings": {
         "description": "Specielt indbygget lag giver alle vægge og bygninger. Dette lag er nyttigt i forudindstillinger til objekter, der kan placeres mod vægge (f.eks. AED'er, postkasser, indgange, adresser, overvågningskameraer, …). Dette lag er usynligt som standard og kan ikke skiftes af brugeren.",
         "title": "Mure og bygninger"
     },
     "waste": {
-        "description": "Kort over affaldskurve og genbrugsanlæg.",
+        "description": "Kort over skraldespande og genbrugsanlæg.",
         "title": "Affald"
     },
     "waste_basket": {
-        "description": "På dette kort finder du affaldskurve i nærheden af dig. Hvis der mangler en affaldskurv på dette kort, kan du selv tilføje den",
-        "shortDescription": "Et kort med affaldskurve",
-        "title": "Affaldskurv"
+        "description": "På dette kort finder du skraldespande i nærheden af dig. Hvis der mangler en skraldespand på dette kort, kan du selv tilføje den",
+        "shortDescription": "Et kort over skraldespande",
+        "title": "Skraldespande"
     }
 }
