@@ -89,6 +89,9 @@
     "general": {
         "404": "Denne side findes ikke",
         "about": "Ret og tilføj nemt til Openstreetmap for et bestemt tema",
+        "aboutMapComplete": {
+            "intro": "Brug MapComplete til at tilføje OpenStreetMap-oplysninger for et  <b>særligt tema</b>. Besvar spørgsmål, og dine bidrag er synlige overalt indenfor få minutter. I de fleste temaer kan du tilføje billeder og endda skrive en anmeldelse. Den <b>temaansvarlige</b> vedligeholder elementer, spørgsmål og sprog."
+        },
         "add": {
             "addNew": "Tilføj {category}",
             "backToSelect": "Vælg en anden kategori",
@@ -110,14 +113,14 @@
             "importTags": "Dette element modtager {tags}",
             "intro": "Du klikkede et sted, hvor der endnu ikke er kendt data.<br>",
             "layerNotEnabled": "Laget {layer} er ikke slået til. Slå laget til for at tilføje et punkt",
-            "openLayerControl": "Åben kontrolboksen for lag",
+            "openLayerControl": "Åbn kontrolboksen for lag",
             "pleaseLogin": "Log venligst ind for at tilføje et nyt punkt",
             "presetInfo": "Det nye POI vil have {tags}",
             "stillLoading": "Data indlæses stadig. Vent venligt lidt før du tilføjer et nyt punkt.",
             "title": "Tilføj et nyt punkt?",
             "warnVisibleForEveryone": "Din tilføjelse vil være synlig for alle",
             "wrongType": "Dette element er ikke et punkt eller en vej og kan ikke importeres",
-            "zoomInFurther": "Zoom mere ind fore at tilføje et punkt.",
+            "zoomInFurther": "Zoom mere ind fore at tilføje et element",
             "zoomInMore": "Zoom mere ind for at importere dette element"
         },
         "apply_button": {
@@ -131,9 +134,10 @@
             "attributionTitle": "Meddelelse om tilskrivning",
             "codeContributionsBy": "MapComplete er lavet af {contributors} og <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} flere bidragsydere</a>",
             "donate": "Støt MapComplete økonomisk",
-            "editId": "Åben OpenStreetMap onlineeditoren her",
+            "editId": "Åbn OpenStreetMap-onlineeditoren her",
             "editJosm": "Rediger her med JOSM",
             "followOnMastodon": "Følg MapComplete på Mastodon",
+            "gotoSourceCode": "Se kildeteksten",
             "iconAttribution": {
                 "title": "Brugte ikoner"
             },
@@ -146,12 +150,13 @@
             "openIssueTracker": "Rapporter en fejl",
             "openMapillary": "Åbn Mapillary her",
             "openOsmcha": "De de seneste rettelser lavet med {theme}",
+            "openThemeDocumentation": "Åbn dokumentationen for temakortet {name}",
             "themeBy": "Tema vedligeholdt af {author}",
             "translatedBy": "MapComplete er oversat af {contributors} og <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} flere bidragsydere</a>"
         },
         "back": "Tilbage",
-        "backToIndex": "Gå tilbage til oversigten med alle tema-kort",
-        "backgroundMap": "Baggrundskort",
+        "backToIndex": "Gå tilbage til oversigten med alle temakort",
+        "backgroundMap": "Vælg et baggrundslag",
         "backgroundSwitch": "Skift baggrund",
         "cancel": "Afbryd",
         "confirm": "Bekræft",
@@ -182,13 +187,19 @@
         "error": "Noget gik galt",
         "example": "Eksempel",
         "examples": "Eksempler",
-        "fewChangesBefore": "Besvar venligst nogle få spørgsmål om eksisterende punkter før du tilføjer et nyt punkt.",
+        "fewChangesBefore": "Besvar venligst nogle få spørgsmål om eksisterende elementer, før du tilføjer et nyt element.",
         "geopermissionDenied": "Brug af geolokalitet var nægtet",
         "getStartedLogin": "Log in med OpenStreetMap for at komme i gang",
         "getStartedNewAccount": " eller <a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">lav en ny konto</a>",
         "goToInbox": "Åbn indboks",
         "histogram": {
             "error_loading": "Kunne ikke indlæse histogrammet"
+        },
+        "labels": {
+            "background": "Skift baggrund",
+            "jumpToLocation": "Gå til din nuværende position",
+            "zoomIn": "Zoomind",
+            "zoomOut": "Zoom ud"
         },
         "layerSelection": {
             "title": "Vælg lag",
@@ -265,9 +276,9 @@
             "skippedOne": "Du sprang over ét spørgsmål"
         },
         "questions": {
-            "emailIs": "Emailadressen på denne {category} er <a href=\"mailto:{email}\" target=\"_blank\">{email}</a>",
-            "emailOf": "Hvad er emailadressen på {category}?",
-            "phoneNumberIs": "Telefonnummeret på denne/dette {category} er <a target=\"_blank\">{phone}</a>",
+            "emailIs": "E-mailadressen for denne {category} er <a href=\"mailto:{email}\" target=\"_blank\">{email}</a>",
+            "emailOf": "Hvad er e-mailadressen for {category}?",
+            "phoneNumberIs": "Telefonnummeret for denne/dette {category} er <a target=\"_blank\">{phone}</a>",
             "phoneNumberOf": "Hvad er telefonnummeret for {category}?",
             "websiteIs": "Hjemmeside: <a href=\"{website}\" target=\"_blank\">{website}</a>",
             "websiteOf": "Hvad er hjemmesiden for {category}?"
@@ -280,7 +291,7 @@
         "search": {
             "error": "Noget gik galt…",
             "nothing": "Intet fundet…",
-            "search": "Vælg en sted",
+            "search": "Søg efter sted",
             "searchShort": "Søg …",
             "searching": "Søger…"
         },
@@ -369,7 +380,9 @@
         "action": "Handling",
         "closeSidebar": "Luk sidemenuen",
         "intro": "MapComplete understøtter følgende genvejstaster:",
-        "key": "Tastekombination"
+        "key": "Tastekombination",
+        "openLayersPanel": "Åbner panelet for baggrundslag",
+        "selectMapnik": "Sæt baggrundslag til OpenStreetMap-carto"
     },
     "image": {
         "addPicture": "Tilføj Billede",
@@ -467,7 +480,7 @@
         "editingOutro": "Se <a href=\"https://wiki.osmfoundation.org/wiki/Privacy_Policy\" target=\"_blank\">privatlivspolitikken på OpenStreetMap.org</a> for detaljerede oplysninger. Vi minder dig om, at du kan bruge et fiktivt navn, når du tilmelder dig.",
         "editingTitle": "Når du foretager ændringer",
         "geodata": "Når MapComplete får din geolokalisering, forbliver din geolokalisering og tidligere besøgte steder på din enhed. Dine lokaliseringsdata sendes aldrig automatisk til andre steder - medmindre en funktionalitet klart angiver noget andet.",
-        "geodataTitle": "Din placering",
+        "geodataTitle": "Din position",
         "intro": "Privatliv er vigtigt - både for den enkelte og for samfundet. MapComplete forsøger at respektere dit privatliv så meget som muligt - så vidt muligt uden et irriterende cookie-banner. Vi vil dog stadig gerne informere dig om, hvilke oplysninger der indsamles og deles, under hvilke omstændigheder, og hvorfor disse afvejninger foretages.",
         "items": {
             "changesYouMake": "De ændringer, du har foretaget",
@@ -513,7 +526,9 @@
         "notImmediate": "Oversættelser opdateres ikke direkte. Det tager typisk et par dage"
     },
     "userinfo": {
-        "editDescription": "Ret din profilbeskrivelse"
+        "editDescription": "Ret din profilbeskrivelse",
+        "gotoInbox": "Åbn din indbakke",
+        "gotoSettings": "Gå til dine indstillinger på OpenStreetMap.org"
     },
     "validation": {
         "color": {
