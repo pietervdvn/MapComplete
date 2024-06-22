@@ -94,6 +94,12 @@
                     "1": {
                         "then": "Vægmaleri"
                     },
+                    "10": {
+                        "then": "Azulejo (spansk dekorativt flisebeklædning)"
+                    },
+                    "11": {
+                        "then": "flisebeklædning"
+                    },
                     "2": {
                         "then": "Maleri"
                     },
@@ -117,12 +123,6 @@
                     },
                     "9": {
                         "then": "Relief"
-                    },
-                    "10": {
-                        "then": "Azulejo (spansk dekorativt flisebeklædning)"
-                    },
-                    "11": {
-                        "then": "flisebeklædning"
                     }
                 },
                 "question": "Hvilken slags kunstværk er det?",
@@ -1433,14 +1433,30 @@
         }
     },
     "etymology": {
+        "description": "Alle objekter med kendt etymologi",
+        "name": "Har etymologi",
         "tagRenderings": {
+            "etymology_multi_apply": {
+                "render": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etymology, Tilføjer automatisk til alle segmenter med samme navn, true)}"
+            },
             "simple etymology": {
                 "mappings": {
                     "0": {
                         "then": "Oprindelsen af dette navn er ukendt i al litteratur"
                     }
                 },
+                "question": "Hvad er dette objekt opkaldt efter?",
                 "render": "Opkaldt efter {name:etymology}"
+            },
+            "street-name-sign-image": {
+                "render": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Tilføj foto af gadenavneskilt)}"
+            },
+            "wikipedia": {
+                "render": "Der findes en Wikipedia-artikel om denne <b>gade</b>:<br/>{wikipedia():max-height:25rem}"
+            },
+            "wikipedia-etymology": {
+                "question": "Hvilket Wikidata-emne er dette objekt opkaldt efter?",
+                "render": "<h3>Wikipedia-artikel om navnets ophav</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}"
             }
         }
     },
@@ -1499,12 +1515,48 @@
     "gps_track": {
         "name": "Dit tilbagelagte spor"
     },
+    "icons": {
+        "tagRenderings": {
+            "osmlink": {
+                "mappings": {
+                    "1": {
+                        "then": {
+                            "special": {
+                                "arialabel": "Åbn på openstreetmap.org"
+                            }
+                        }
+                    }
+                },
+                "render": {
+                    "special": {
+                        "arialabel": "Åbn på openstreetmap.org"
+                    }
+                }
+            }
+        }
+    },
     "last_click": {
         "pointRendering": {
             "0": {
                 "label": {
                     "render": "Klik her for at tilføje et nyt punkt"
                 }
+            }
+        }
+    },
+    "note": {
+        "filter": {
+            "4": {
+                "options": {
+                    "0": {
+                        "question": "Senest redigeret af bidragsyder {search}"
+                    }
+                }
+            }
+        },
+        "titleIcons": {
+            "0": {
+                "ariaLabel": "Se på OpenStreetMap.org"
             }
         }
     },
@@ -1586,6 +1638,13 @@
                 "question": "Hvad er netværksnavnet for den trådløse internetadgang?",
                 "render": "Netværksnavnet er <b>{internet_access:ssid}</b>"
             },
+            "last_edit": {
+                "render": {
+                    "special": {
+                        "text": "Senest redigeret {_last_edit:timestamp} af {_last_edit:contributor}"
+                    }
+                }
+            },
             "multilevels": {
                 "override": {
                     "question": "Hvilke niveauer går denne elevator til?",
@@ -1621,6 +1680,11 @@
             },
             "phone": {
                 "question": "Hvad er telefonnummeret til {title()}?"
+            },
+            "qr_code": {
+                "render": {
+                    "after": "Skan denne kode for at åbne dette sted på en anden enhed"
+                }
             },
             "service:electricity": {
                 "mappings": {
@@ -2406,6 +2470,13 @@
                     }
                 }
             },
+            "settings-link": {
+                "render": {
+                    "special": {
+                        "text": "Åbn dine indstillinger på OpenStreetMap.org"
+                    }
+                }
+            },
             "show_debug": {
                 "mappings": {
                     "2": {
@@ -2428,7 +2499,8 @@
                     "1": {
                         "then": "Vis en knap for hurtigt at åbne oversættelser, når du bruger MapComplete på en stor skærm"
                     }
-                }
+                },
+                "question": "Vil du hjælpe med at oversætte MapComplete?"
             }
         },
         "title": {
