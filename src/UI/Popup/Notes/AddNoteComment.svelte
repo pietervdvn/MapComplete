@@ -47,12 +47,14 @@
   async function closeNote() {
     await state.osmConnection.closeNote(id, txt.data)
     tags.data["closed_at"] = new Date().toISOString()
+    NoteCommentElement.addCommentTo(txt.data, tags, state)
     tags.ping()
   }
 
   async function reopenNote() {
     await state.osmConnection.reopenNote(id, txt.data)
     tags.data["closed_at"] = undefined
+    NoteCommentElement.addCommentTo(txt.data, tags, state)
     tags.ping()
   }
 </script>

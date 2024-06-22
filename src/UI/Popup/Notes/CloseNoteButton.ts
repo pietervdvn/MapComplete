@@ -10,6 +10,8 @@ import { UIEventSource } from "../../../Logic/UIEventSource"
 import Constants from "../../../Models/Constants"
 import SvelteUIElement from "../../Base/SvelteUIElement"
 import Checkmark from "../../../assets/svg/Checkmark.svelte"
+import NoteCommentElement from "./NoteCommentElement"
+import Icon from "../../Map/Icon.svelte"
 
 export class CloseNoteButton implements SpecialVisualization {
     public readonly funcName = "close_note"
@@ -62,10 +64,7 @@ export class CloseNoteButton implements SpecialVisualization {
             zoomButton: string
         } = <any>Utils.ParseVisArgs(this.args, args)
 
-        let icon: BaseUIElement = new SvelteUIElement(Checkmark)
-        if (params.icon !== "checkmark.svg" && (args[2] ?? "") !== "") {
-            icon = new Img(args[1])
-        }
+        let icon: BaseUIElement = new SvelteUIElement(Icon, {icon: params.icon ?? "checkmark.svg"})
         let textToShow = t.closeNote
         if ((params.text ?? "") !== "") {
             textToShow = Translations.T(args[0])
@@ -75,7 +74,9 @@ export class CloseNoteButton implements SpecialVisualization {
         const isClosed = tags.map((tags) => (tags["closed_at"] ?? "") !== "")
         closeButton.onClick(() => {
             const id = tags.data[args[2] ?? "id"]
-            state.osmConnection.closeNote(id, args[3])?.then((_) => {
+            const text = args[3]
+            state.osmConnection.closeNote(id, text)?.then((_) => {
+                NoteCommentElement.addCommentTo(text, tags, state)
                 tags.data["closed_at"] = new Date().toISOString()
                 tags.ping()
             })

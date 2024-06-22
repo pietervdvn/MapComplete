@@ -6,8 +6,7 @@ import Translations from "../../i18n/Translations"
 import { Utils } from "../../../Utils"
 import Img from "../../Base/Img"
 import { SlideShow } from "../../Image/SlideShow"
-import { Stores, UIEventSource } from "../../../Logic/UIEventSource"
-import { OsmConnection } from "../../../Logic/Osm/OsmConnection"
+import { Store, Stores, UIEventSource } from "../../../Logic/UIEventSource"
 import { VariableUiElement } from "../../Base/VariableUIElement"
 import { SpecialVisualizationState } from "../../SpecialVisualization"
 import SvelteUIElement from "../../Base/SvelteUIElement"
@@ -50,7 +49,7 @@ export default class NoteCommentElement extends Combine {
         }
 
         const userinfo = Stores.FromPromise(
-            Utils.downloadJsonCached(
+            Utils.downloadJsonCached<{user: { img: { href: string } }}>(
                 "https://api.openstreetmap.org/api/0.6/user/" + comment.uid,
                 24 * 60 * 60 * 1000
             )
@@ -114,10 +113,16 @@ export default class NoteCommentElement extends Combine {
         }
     }
 
+    /**
+     * Adds the comment to the _visualisation_ of the given note; doesn't _actually_ upload
+     * @param txt
+     * @param tags
+     * @param state
+     */
     public static addCommentTo(
         txt: string,
         tags: UIEventSource<any>,
-        state: { osmConnection: OsmConnection }
+        state: { osmConnection: {userDetails: Store<{ name: string, uid: number }>} }
     ) {
         const comments: any[] = JSON.parse(tags.data["comments"])
         const username = state.osmConnection.userDetails.data.name
