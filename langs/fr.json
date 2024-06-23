@@ -45,6 +45,12 @@
         "useSomethingElse": "Utilisez un autre éditeur OpenStreetMap pour le supprimer",
         "whyDelete": "Pourquoi cet élément devrait-il être supprimé ?"
     },
+    "external": {
+        "done": "Fait",
+        "missing": {
+            "title": "Éléments manquants"
+        }
+    },
     "favourite": {
         "loginNeeded": "<h3>Connexion</h3>La mise en forme personnalisée requiert un compte OpenStreetMap",
         "panelIntro": "<h3>Votre thème personnel</h3>Activer vos couches favorites depuis les thèmes officiels",
@@ -52,8 +58,9 @@
     },
     "favouritePoi": {
         "button": {
-            "markAsFavouriteTitle": "Sauvegarder ce lieu comme favoris",
-            "markDescription": "Ajouter ce lieu à votre liste personnelle de favoris"
+            "markAsFavouriteTitle": "Sauvegarder ce lieu comme favori",
+            "markDescription": "Ajouter ce lieu à votre liste personnelle de favoris",
+            "unmark": "Supprimer de votre liste de favoris"
         },
         "downloadGeojson": "Télécharger vos lieux favoris en geojson",
         "downloadGpx": "Télécharger vos lieux favoris en GPX",
@@ -133,6 +140,7 @@
             "editId": "Ouvrir l’éditeur en ligne OpenStreetMap ici",
             "editJosm": "Modifier ici avec JOSM",
             "followOnMastodon": "Suivre MapComplete sur Mastodon",
+            "gotoSourceCode": "Voir le code source",
             "iconAttribution": {
                 "title": "Icônes utilisées"
             },
@@ -145,6 +153,7 @@
             "openIssueTracker": "Signaler un problème",
             "openMapillary": "Ouvrir Mapillary ici",
             "openOsmcha": "Voir les dernières modifications faites avec {theme}",
+            "openThemeDocumentation": "Ouvrir la documentation pour la carte thématique {name}",
             "themeBy": "Thème maintenu par {author}",
             "title": "Droits d'auteur et attribution",
             "translatedBy": "MapComplete est traduite par {contributors} et <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} autres personnes</a>"
@@ -231,7 +240,7 @@
             "not_all_rules_parsed": "Les heures d'ouvertures de ce magasin sont trop compliquées. Les informations suivantes ont été ignorées :",
             "openTill": "jusqu'à",
             "open_24_7": "Ouvert en permanence",
-            "open_during_ph": "Pendant les congés, cet élément est",
+            "open_during_ph": "Pendant les jours fériés, cet élément est",
             "opensAt": "à partir de",
             "ph_closed": "fermé",
             "ph_not_known": " ",
