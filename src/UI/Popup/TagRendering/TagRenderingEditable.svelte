@@ -83,7 +83,7 @@
       {config.id}
     </span>
   {/if}
-  {#if config.question && (!editingEnabled || $editingEnabled)}
+  {#if config.question}
     {#if editMode}
       <TagRenderingQuestion
         {config}
@@ -106,19 +106,19 @@
       </TagRenderingQuestion>
     {:else}
       <div class="low-interaction flex items-center justify-between overflow-hidden rounded pl-2">
-        <TagRenderingAnswer id={answerId} {config} {tags} {selectedElement} {state} {layer} />
-        <EditButton
-          arialabel={config.editButtonAriaLabel}
-          ariaLabelledBy={answerId}
-          on:click={() => {
-            editMode = true
-          }}
-        />
+        <TagRenderingAnswer id={answerId} {config} {tags} {selectedElement} {state} {layer} extraClasses="my-2"/>
+        {#if (!editingEnabled || $editingEnabled)}
+          <EditButton
+            arialabel={config.editButtonAriaLabel}
+            ariaLabelledBy={answerId}
+            on:click={() => {
+              editMode = true
+            }}
+          />
+        {/if}
       </div>
     {/if}
   {:else}
-    <div class="h-full w-full overflow-auto">
-      <TagRenderingAnswer {config} {tags} {selectedElement} {state} {layer} />
-    </div>
+    <TagRenderingAnswer {config} {tags} {selectedElement} {state} {layer} />
   {/if}
 </div>

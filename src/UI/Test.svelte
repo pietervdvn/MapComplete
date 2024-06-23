@@ -1,4 +1,7 @@
 <script lang="ts">
+import OpeningHoursVisualization from "./OpeningHours/OpeningHoursVisualization"
 </script>
 
-<main />
+<main >
+  <ToSvelte construct={new OpeningHoursVisualization()}
+</main>

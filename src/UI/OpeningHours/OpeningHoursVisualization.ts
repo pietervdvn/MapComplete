@@ -26,7 +26,6 @@ export default class OpeningHoursVisualization extends Toggle {
 
     constructor(
         tags: UIEventSource<Record<string, string>>,
-        state: { osmConnection?: OsmConnection },
         key: string,
         prefix = "",
         postfix = ""
@@ -56,7 +55,7 @@ export default class OpeningHoursVisualization extends Toggle {
                 )
                 Locale.language.mapD((lng) => {
                     console.debug("Setting OH description to", lng, textual)
-                    vis.ConstructElement().ariaLabel = textual.textFor(lng)
+                    vis.ConstructElement().ariaLabel = textual?.textFor(lng)
                 })
                 return vis
             })
@@ -75,17 +74,13 @@ export default class OpeningHoursVisualization extends Toggle {
         ranges: OpeningRange[][],
         lastMonday: Date
     ): BaseUIElement {
-        /* First, a small sanity check. The business might be permanently closed, 24/7 opened or something other special
-         * So, we have to handle the case that ranges is completely empty*/
-        if (ranges.filter((range) => range.length > 0).length === 0) {
-            return OpeningHoursVisualization.ShowSpecialCase(oh).SetClass(
-                "p-4 rounded-full block bg-gray-200"
-            )
+        // First, a small sanity check. The business might be permanently closed, 24/7 opened or something other special
+        if (ranges.some((range) => range.length > 0)) {
+            // The normal case: we have items for the coming days
+            return OpeningHoursVisualization.ConstructVizTable(oh, ranges, lastMonday)
         }
-
-        /** With all the edge cases handled, we can actually construct the table! **/
-
-        return OpeningHoursVisualization.ConstructVizTable(oh, ranges, lastMonday)
+         // The special case that range is completely empty
+        return OpeningHoursVisualization.ShowSpecialCase(oh)
     }
 
     private static ConstructVizTable(
@@ -308,6 +303,6 @@ export default class OpeningHoursVisualization extends Toggle {
             opensAtDate.getHours(),
             opensAtDate.getMinutes()
         )}`
-        return Translations.t.general.opening_hours.closed_until.Subs({ date: willOpenAt })
+        return Translations.t.general.opening_hours.closed_until.Subs({ date: opensAtDate.toLocaleString() })
     }
 }

@@ -200,6 +200,7 @@
             "openIssueTracker": "File a bug",
             "openMapillary": "Open Mapillary here",
             "openOsmcha": "See latest edits made with {theme}",
+            "openOsmchaLastWeek": "See edits from the last 7 days",
             "openThemeDocumentation": "Open the documentation for thematic map {name}",
             "seeOnMapillary": "See this image on Mapillary",
             "themeBy": "Theme maintained by {author}",
@@ -324,7 +325,7 @@
         "opening_hours": {
             "all_days_from": "Opened every day {ranges}",
             "closed_permanently": "Closed for an unknown duration",
-            "closed_until": "Closed until {date}",
+            "closed_until": "Opens at {date}",
             "error": "Could not parse the opening hours",
             "error_loading": "Error: could not visualize these opening hours.",
             "friday": "On friday {ranges}",
@@ -358,6 +359,7 @@
             "versionInfo": "v{version} - generated on {date}"
         },
         "pickLanguage": "Select language",
+        "poweredByMapComplete": "Powered by MapComplete - crowdsourced, thematic maps with OpenStreetMap",
         "poweredByOsm": "Powered by OpenStreetMap",
         "questionBox": {
             "answeredMultiple": "You answered {answered} questions",
@@ -393,6 +395,7 @@
             "searching": "Searching…"
         },
         "searchAnswer": "Search an option…",
+        "seeIndex": "See the overview with all thematic maps",
         "share": "Share",
         "sharescreen": {
             "copiedToClipboard": "Link copied to clipboard",

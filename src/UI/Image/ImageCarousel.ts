@@ -54,10 +54,9 @@ export class ImageCarousel extends Toggle {
         )
 
         super(
-            new SlideShow(uiElements).SetClass("w-full"),
+            new SlideShow(uiElements).SetClass("w-full block w-full my-4"),
             undefined,
             uiElements.map((els) => els.length > 0)
         )
-        this.SetClass("block w-full")
     }
 }
