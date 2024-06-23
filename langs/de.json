@@ -325,7 +325,7 @@
         "opening_hours": {
             "all_days_from": "Geöffnet täglich {ranges}",
             "closed_permanently": "Geschlossen auf unbestimmte Zeit",
-            "closed_until": "Geschlossen bis {date}",
+            "closed_until": "Öffnet um {date}",
             "error": "Öffnungszeiten können nicht ausgewertet werden",
             "error_loading": "Fehler: Diese Öffnungszeiten können nicht angezeigt werden.",
             "friday": "Am Freitag {ranges}",
@@ -359,6 +359,7 @@
             "versionInfo": "v{version} - erstellt am {date}"
         },
         "pickLanguage": "Sprache auswählen",
+        "poweredByMapComplete": "Mit Hilfe von MapComplete - thematische Karten mit OpenStreetMap von vielen Menschen zusammengestellt",
         "poweredByOsm": "Unterstützt von OpenStreetMap",
         "questionBox": {
             "answeredMultiple": "Du hast {answered} Fragen beantwortet",
@@ -394,6 +395,7 @@
             "searching": "Suchen …"
         },
         "searchAnswer": "Option suchen…",
+        "seeIndex": "Siehe Übersicht mit allen thematischen Karten",
         "share": "Teilen",
         "sharescreen": {
             "copiedToClipboard": "Verknüpfung in Zwischenablage kopiert",
