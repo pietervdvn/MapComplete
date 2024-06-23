@@ -200,6 +200,7 @@
             "openIssueTracker": "Fehler melden",
             "openMapillary": "Mapillary öffnen",
             "openOsmcha": "Neueste Bearbeitungen mit {theme} ansehen",
+            "openOsmchaLastWeek": "Bearbeitungen der letzten 7 Tage anzeigen",
             "openThemeDocumentation": "Öffne die Dokumentation für die thematische Karte {name}",
             "seeOnMapillary": "Dieses Bild auf Mapillary ansehen",
             "themeBy": "Dieses Thema wurde erstellt von {author}",
