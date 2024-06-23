@@ -10754,6 +10754,26 @@
                 },
                 "question": "What accessibility features should be applied?"
             },
+            "add-new-feature": {
+                "mappings": {
+                    "0": {
+                        "then": "Adding a new feature is done with the button at the bottom left. Clicking the map does nothing"
+                    },
+                    "1": {
+                        "then": "When clicking or tapping the map, a marker pops up where a new feature is added"
+                    },
+                    "2": {
+                        "then": "When right-clicking or long-pressing the map, a marker pops up where a new feature can be added"
+                    },
+                    "3": {
+                        "then": "When clicking or tapping the map, a marker pops up where a new feature can be added. Additionally, a button at the bottom left is shown"
+                    },
+                    "4": {
+                        "then": "When right-clicking or long-pressing the map, a marker pops up where a new feature can be added. Additionally, a button at the bottom left is shown"
+                    }
+                },
+                "question": "How should the menu to add a new feature be opened?"
+            },
             "all-questions-at-once": {
                 "mappings": {
                     "0": {

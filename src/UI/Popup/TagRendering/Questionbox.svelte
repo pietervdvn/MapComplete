@@ -94,6 +94,8 @@
   let answered: number = 0
   let skipped: number = 0
 
+  let loginEnabled = state.featureSwitches.featureSwitchEnableLogin
+
   function skip(question: { id: string }, didAnswer: boolean = false) {
     skippedQuestions.data.add(question.id) // Must use ID, the config object might be a copy of the original
     skippedQuestions.ping()
@@ -108,6 +110,7 @@
   }
 </script>
 
+{#if $loginEnabled}
 <div
   bind:this={questionboxElem}
   aria-live="polite"
@@ -197,3 +200,4 @@
     </div>
   {/if}
 </div>
+  {/if}

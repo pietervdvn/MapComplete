@@ -297,6 +297,7 @@ export default class UserRelatedState {
             _applicationOpened: new Date().toISOString(),
             _supports_sharing:
                 typeof window === "undefined" ? "no" : window.navigator.share ? "yes" : "no",
+            _iframe: Utils.isIframe ? "yes" : "no"
         })
 
         for (const key in Constants.userJourney) {

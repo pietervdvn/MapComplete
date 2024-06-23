@@ -15,6 +15,7 @@
   import Location_refused from "../../assets/svg/Location_refused.svelte"
   import Location from "../../assets/svg/Location.svelte"
   import ChevronDoubleLeft from "@babeard/svelte-heroicons/mini/ChevronDoubleLeft"
+  import Constants from "../../Models/Constants"
 
   /**
    * The theme introduction panel
@@ -149,13 +150,20 @@
     {/if}
   </div>
 
-  <If condition={state.featureSwitches.featureSwitchBackToThemeOverview}>
-    <div class="link-underline m-2 mx-4 flex w-full">
-      <!-- bottom buttons, a bit hidden away: switch layout -->
-      <a class="flex w-fit items-center justify-end" href={Utils.HomepageLink()}>
-        <ChevronDoubleLeft class="h-4 w-4" />
-        <Tr t={Translations.t.general.backToIndex} />
-      </a>
+  {#if Utils.isIframe}
+    <div  class="flex justify-end link-underline">
+    <a href="https://mapcomplete.org" target="_blank">
+      <Tr t={Translations.t.general.poweredByMapComplete}/>
+    </a>
     </div>
-  </If>
+  {:else}
+    <If condition={state.featureSwitches.featureSwitchBackToThemeOverview}>
+      <div class="link-underline m-2 mx-4 flex w-full">
+        <a class="flex w-fit items-center justify-end" href={Utils.HomepageLink()}>
+          <ChevronDoubleLeft class="h-4 w-4" />
+          <Tr t={Translations.t.general.backToIndex} />
+        </a>
+      </div>
+    </If>
+  {/if}
 </div>

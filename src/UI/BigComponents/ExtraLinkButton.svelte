@@ -11,10 +11,9 @@
   export let state: SpecialVisualizationState
   let theme = state.layout?.id ?? ""
   let config: ExtraLinkConfig = state.layout.extraLink
-  const isIframe = window !== window.top
   let basepath = window.location.host
   let showWelcomeMessageSwitch = state.featureSwitches.featureSwitchWelcomeMessage
-
+  const isIframe = Utils.isIframe
   const t = Translations.t.general
   const href = state.mapProperties.location.map(
     (loc) => {
@@ -36,7 +35,7 @@
       href={$href}
       target={config.newTab ? "_blank" : ""}
       rel="noopener"
-      class="pointer-events-auto flex rounded-full border-black"
+      class="button pointer-events-auto flex rounded-full border-black"
     >
       <Icon icon={config.icon} clss="w-6 h-6 m-2" />
 

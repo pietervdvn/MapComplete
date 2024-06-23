@@ -25,11 +25,14 @@
   const t = Translations.t.image.nearby
 
   let expanded = false
+  let enableLogin = state.featureSwitches.featureSwitchEnableLogin
 </script>
 
+{#if enableLogin.data}
 <AccordionSingle>
   <span slot="header" class="p-2 text-base">
     <Tr t={t.seeNearby} />
   </span>
   <NearbyImages {tags} {state} {lon} {lat} {feature} {linkable} {layer} />
 </AccordionSingle>
+  {/if}

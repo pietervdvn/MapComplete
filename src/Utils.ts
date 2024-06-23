@@ -1,4 +1,3 @@
-import colors from "./assets/colors.json"
 import DOMPurify from "dompurify"
 
 export class Utils {
@@ -8,7 +7,6 @@ export class Utils {
      * This is a workaround and yet another hack
      */
     public static runningFromConsole = typeof window === "undefined"
-    public static readonly assets_path = "./assets/svg/"
     public static externalDownloadFunction: (
         url: string,
         headers?: any
@@ -145,6 +143,9 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             timestamp: number
         }
     >()
+
+    public static readonly isIframe = !Utils.runningFromConsole && window !== window.top
+
 
     public static initDomPurify() {
         if (Utils.runningFromConsole) {

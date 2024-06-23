@@ -932,9 +932,11 @@ export class ToTextualDescription {
     public static createTextualDescriptionFor(
         oh: opening_hours,
         ranges: OpeningRange[][]
-    ): Translation {
+    ): Translation | undefined {
         const t = Translations.t.general.opening_hours
-
+        if(!ranges){
+            return undefined
+        }
         if (!ranges?.some((r) => r.length > 0)) {
             // <!-- No changes to the opening hours in the next week; probably open 24/7, permanently closed, opening far in the future or unkown -->
             if (oh.getNextChange() === undefined) {
@@ -1029,9 +1031,9 @@ export class ToTextualDescription {
         })
     }
 
-    private static createRangesFor(ranges: OpeningRange[]): Translation {
+    private static createRangesFor(ranges: OpeningRange[]): Translation | undefined {
         if (ranges.length === 0) {
-            //    return undefined
+            return undefined
         }
         let tr = ToTextualDescription.createRangeFor(ranges[0])
         for (let i = 1; i < ranges.length; i++) {

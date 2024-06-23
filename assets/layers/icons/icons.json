@@ -292,6 +292,7 @@
           }
         }
       },
+      "metacondition": "_loggedIn=true",
       "mappings": [
         {
           "if": "id~.*/-.*",

@@ -42,9 +42,10 @@
   let knownImages = comparisonState.bindD((ct) => ct.knownImages)
   let propertyKeysExternal = comparisonState.mapD((ct) => ct.propertyKeysExternal)
   let hasDifferencesAtStart = comparisonState.mapD((ct) => ct.hasDifferencesAtStart)
+  let enableLogin=  state.featureSwitches.featureSwitchEnableLogin
 </script>
 
-{#if !$sourceUrl}
+{#if !$sourceUrl || !$enableLogin}
   <!-- empty block -->
 {:else if $externalData === undefined}
   <Loading />

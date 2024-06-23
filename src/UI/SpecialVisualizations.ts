@@ -794,7 +794,7 @@ export default class SpecialVisualizations {
                     "A normal opening hours table can be invoked with `{opening_hours_table()}`. A table for e.g. conditional access with opening hours can be `{opening_hours_table(access:conditional, no @ &LPARENS, &RPARENS)}`",
                 constr: (state, tagSource: UIEventSource<any>, args) => {
                     const [key, prefix, postfix] = args
-                    return new OpeningHoursVisualization(tagSource, state, key, prefix, postfix)
+                    return new OpeningHoursVisualization(tagSource, key, prefix, postfix)
                 },
             },
             {
