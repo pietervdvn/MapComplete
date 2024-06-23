@@ -11,6 +11,32 @@
         "title": "Kunstværker"
     },
     "atm": {
+        "description": "Dette kort viser hæveautomater, hvor du kan hæve og indsætte kontanter",
+        "layers": {
+            "3": {
+                "override": {
+                    "=tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "Importer denne hæveautomat"
+                                }
+                            }
+                        },
+                        "1": {
+                            "render": "OpenStreetMap kender <a href='#{_closest_osm_poi}'>en hæveautomatet, som ligger {_closest_osm_poi_distance} meter væk.</a> "
+                        },
+                        "2": {
+                            "render": {
+                                "special": {
+                                    "message": "Tilføj alle foreslåede tags til den nærmeste hæveautomat"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "title": "Hæveautomater"
     },
     "benches": {
@@ -311,11 +337,51 @@
                         }
                     }
                 }
+            },
+            "1": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "Denne butik reparerer klatresko"
+                                },
+                                "1": {
+                                    "then": "Denne butik reparerer ikke klatresko"
+                                }
+                            },
+                            "question": "Reparerer denne butik klatresko?"
+                        }
+                    }
+                }
+            },
+            "2": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "Denne butik reparerer klatresko"
+                                },
+                                "1": {
+                                    "then": "Denne butik reparerer ikke klatresko"
+                                }
+                            },
+                            "question": "Reparerer denne skomager klatresko?"
+                        }
+                    },
+                    "=presets": {
+                        "0": {
+                            "title": "en skomager"
+                        }
+                    }
+                }
             }
         },
         "title": "Åbn klatrekort"
     },
     "clock": {
+        "description": "Kort over alle ure i det offentlige rum",
         "title": "Ure"
     },
     "cycle_highways": {
@@ -336,7 +402,23 @@
         "title": "Cykelinfrastruktur"
     },
     "cyclenodes": {
-        "description": "Dette kort viser cykel netværk og giver dig mulighed for nemt at tilføje nye punkter"
+        "description": "Dette kort viser cykel netværk og giver dig mulighed for nemt at tilføje nye punkter",
+        "layers": {
+            "1": {
+                "tagRenderings": {
+                    "node-expected_rcn_route_relations": {
+                        "freeform": {
+                            "placeholder": "fx 3"
+                        }
+                    },
+                    "node-rxn_ref": {
+                        "freeform": {
+                            "placeholder": "fx 1"
+                        }
+                    }
+                }
+            }
+        }
     },
     "cyclestreets": {
         "description": "En cykelgade er en gade, hvor <b>motoriseret trafik ikke må overhale cyklister</b>. De er skiltet med et særligt trafikskilt. Cykelgader findes i Holland og Belgien, men også i Tyskland og Frankrig. ",
@@ -383,6 +465,22 @@
                         }
                     },
                     "question": "Er gaden <b>{name}</b> en cykelgade?"
+                },
+                "1": {
+                    "mappings": {
+                        "0": {
+                            "then": "Beboere tilladt"
+                        },
+                        "1": {
+                            "then": "Motorkøretøjer tilladt"
+                        },
+                        "2": {
+                            "then": "Motorcykler tilladt"
+                        },
+                        "3": {
+                            "then": "Biler tilladt"
+                        }
+                    }
                 },
                 "2": {
                     "question": "Hvornår bliver denne gade en cykelgade?",
@@ -625,6 +723,69 @@
     },
     "lighthouses": {
         "title": "Fyrtårne"
+    },
+    "mapcomplete-changes": {
+        "description": "Dette kort viser alle ændringer foretaget med MapComplete",
+        "layers": {
+            "0": {
+                "description": "Vis alle MapComplete-ændringer",
+                "filter": {
+                    "0": {
+                        "options": {
+                            "0": {
+                                "question": "Temanavn indeholder {search}"
+                            }
+                        }
+                    },
+                    "1": {
+                        "options": {
+                            "0": {
+                                "question": "Temanavn indeholder <b>ikke</b> {search}"
+                            }
+                        }
+                    },
+                    "2": {
+                        "options": {
+                            "0": {
+                                "question": "Lavet af bidragsyder {search}"
+                            }
+                        }
+                    },
+                    "3": {
+                        "options": {
+                            "0": {
+                                "question": "<b>Ikke</b> lavet af bidragsyder {search}"
+                            }
+                        }
+                    },
+                    "4": {
+                        "options": {
+                            "0": {
+                                "question": "Lavet før {search}"
+                            }
+                        }
+                    },
+                    "5": {
+                        "options": {
+                            "0": {
+                                "question": "Lavet efter {search}"
+                            }
+                        }
+                    }
+                },
+                "tagRenderings": {
+                    "contributor": {
+                        "question": "Hvilke bidragsydere lavede denne ændring?",
+                        "render": "Ændring lavet af <a href='https://openstreetmap.org/user/{user}' target='_blank'>{user}</a>"
+                    },
+                    "version": {
+                        "render": "Lavet med {editor}"
+                    }
+                }
+            }
+        },
+        "shortDescription": "Vis ændringer lavet med MapComplete",
+        "title": "Ændringer lavet med MapComplete"
     },
     "maproulette": {
         "description": "Tema, der viser MapRoulette-opgaver, så du kan søge, filtrere og rette dem.",
@@ -877,6 +1038,30 @@
         "description": "En sportsplads er et område, hvor der dyrkes sport",
         "shortDescription": "Et kort, der viser sportspladser",
         "title": "Sportspladser"
+    },
+    "stations": {
+        "layers": {
+            "16": {
+                "name": "Afgangstavler",
+                "presets": {
+                    "0": {
+                        "title": "en afgangstavle"
+                    }
+                },
+                "tagRenderings": {
+                    "type": {
+                        "question": "Hvilken type afgangstavle er dette?"
+                    }
+                },
+                "title": {
+                    "render": "Afgangstavle"
+                }
+            },
+            "3": {
+                "name": "Togstationer"
+            }
+        },
+        "title": "Togstationer"
     },
     "street_lighting": {
         "description": "På dette kort kan du finde alt om gadebelysning",
