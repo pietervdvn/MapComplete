@@ -5,7 +5,7 @@
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 347,
+      "commits": 351,
       "contributor": "kjon"
     },
     {
@@ -21,7 +21,7 @@
       "contributor": "Robin van der Linde"
     },
     {
-      "commits": 67,
+      "commits": 69,
       "contributor": "mcliquid"
     },
     {
@@ -114,6 +114,10 @@
     },
     {
       "commits": 12,
+      "contributor": "Patchanka64"
+    },
+    {
+      "commits": 12,
       "contributor": "Ettore Atalan"
     },
     {
@@ -151,10 +155,6 @@
     {
       "commits": 10,
       "contributor": "Irina"
-    },
-    {
-      "commits": 9,
-      "contributor": "Patchanka64"
     },
     {
       "commits": 9,
@@ -255,6 +255,10 @@
     {
       "commits": 6,
       "contributor": "lvgx"
+    },
+    {
+      "commits": 5,
+      "contributor": "Christian Schmidt"
     },
     {
       "commits": 5,

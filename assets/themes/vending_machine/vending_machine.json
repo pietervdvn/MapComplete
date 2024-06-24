@@ -9,7 +9,8 @@
     "cs": "Prodejní automaty",
     "es": "Máquinas expendedoras",
     "pl": "Automaty sprzedające",
-    "zh_Hant": "自動販賣機"
+    "zh_Hant": "自動販賣機",
+    "da": "Salgsautomater"
   },
   "description": {
     "en": "Find vending machines for everything",

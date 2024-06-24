@@ -14,7 +14,8 @@
     "zh_Hant": "自動櫃員機",
     "eu": "Kutxazain automatikoa",
     "it": "Sportelli bancomat",
-    "pl": "Bankomaty"
+    "pl": "Bankomaty",
+    "da": "Hæveautomater"
   },
   "description": {
     "en": "This map shows ATMs to withdraw or deposit money",
@@ -29,7 +30,8 @@
     "zh_Hant": "此地圖顯示了提款或存款的 ATM",
     "eu": "Mapa honek dirua atera edo sartzeko kutxazain automatikoak erakusten ditu",
     "it": "Questa mappa mostra gli sportelli Bancomat per ritirare o depositare del denaro",
-    "pl": "Ta mapa pokazuje bankomaty, w których można wypłacać lub wpłacać pieniądze"
+    "pl": "Ta mapa pokazuje bankomaty, w których można wypłacać lub wpłacać pieniądze",
+    "da": "Dette kort viser hæveautomater, hvor du kan hæve og indsætte kontanter"
   },
   "icon": "./assets/themes/atm/logo.svg",
   "layers": [
@@ -96,7 +98,8 @@
                   "eu": "Inportatu kutxazain automatiko hau",
                   "it": "Importa questo sportello bancomat",
                   "pl": "Importuj ten bankomat",
-                  "cs": "Importovat tento bankomat"
+                  "cs": "Importovat tento bankomat",
+                  "da": "Importer denne hæveautomat"
                 },
                 "icon": "./assets/svg/addSmall.svg"
               }
@@ -112,7 +115,8 @@
               "ca": "OpenStreetMap sap sobre <a href='#{_closest_osm_poi}'>un caixer automàtic que està a {_closest_osm_poi_distance} de distància.</a> ",
               "cs": "OpenStreetMap ví o <a href='#{_closest_osm_poi}'> bankomatu, který je {_closest_osm_poi_distance} metr daleko.</a> ",
               "pl": "OpenStreetMap wie o <a href='#{_closest_osm_poi}'>bankomacie oddalonym o {_closest_osm_poi_distance} metry.</a> ",
-              "nl": "OpenStreetMap kent <a href='#{_closest_osm_poi}'>een geldautomaat die {_closest_osm_poi_distance} meter weg is</a> "
+              "nl": "OpenStreetMap kent <a href='#{_closest_osm_poi}'>een geldautomaat die {_closest_osm_poi_distance} meter weg is</a> ",
+              "da": "OpenStreetMap kender <a href='#{_closest_osm_poi}'>en hæveautomatet, som ligger {_closest_osm_poi_distance} meter væk.</a> "
             }
           },
           {
@@ -132,7 +136,8 @@
                   "eu": "Gehitu iradokitako etiketa guztiak hurbilen dagoen kutxazainari",
                   "pl": "Dodaj wszystkie sugerowane znaczniki do najbliższego bankomatu",
                   "cs": "Přidání všech navrhovaných značek do nejbližšího bankomatu",
-                  "nl": "Voeg alle gesuggereerde tags toe aan de dichtstbijzijnde geldautomaat"
+                  "nl": "Voeg alle gesuggereerde tags toe aan de dichtstbijzijnde geldautomaat",
+                  "da": "Tilføj alle foreslåede tags til den nærmeste hæveautomat"
                 },
                 "image": "./assets/svg/addSmall.svg",
                 "maproulette_id": "mr_taskId"

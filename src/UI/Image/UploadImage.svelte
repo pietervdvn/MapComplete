@@ -58,7 +58,7 @@
   <LoginButton clss="small w-full" osmConnection={state.osmConnection} slot="not-logged-in">
     <Tr t={Translations.t.image.pleaseLogin} />
   </LoginButton>
-  <div class="flex flex-col my-4">
+  <div class="my-4 flex flex-col">
     <UploadingImageCounter {state} {tags} />
     {#each $errors as error}
       <Tr t={error} cls="alert" />

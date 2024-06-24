@@ -9,7 +9,8 @@
     "cs": "Hodiny",
     "fr": "Horloges",
     "eu": "Erlojuak",
-    "pl": "Zegary"
+    "pl": "Zegary",
+    "da": "Ure"
   },
   "description": {
     "en": "Map showing all public clocks",
@@ -19,7 +20,8 @@
     "es": "Mapa con todos los relojes públicos",
     "cs": "Mapa zobrazující veřejné hodiny",
     "fr": "Carte affichant toutes les horloges publiques",
-    "pl": "Mapa pokazująca wszystkie zegary publiczne"
+    "pl": "Mapa pokazująca wszystkie zegary publiczne",
+    "da": "Kort over alle ure i det offentlige rum"
   },
   "icon": "./assets/layers/clock/clock.svg",
   "layers": [

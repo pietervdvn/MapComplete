@@ -174,7 +174,7 @@ export default class DetermineLayout {
                 layerConfig.pointRendering
                     .flatMap((pr) => pr.marker)
                     .map((iconSpec) => {
-                        if(!iconSpec){
+                        if (!iconSpec) {
                             return undefined
                         }
                         const icon = new TagRenderingConfig(<TagRenderingConfigJson>iconSpec.icon)
@@ -192,7 +192,7 @@ export default class DetermineLayout {
                     })
             ).join(";")
 
-            if(!icon){
+            if (!icon) {
                 icon = "./assets/svg/bug.svg"
             }
 

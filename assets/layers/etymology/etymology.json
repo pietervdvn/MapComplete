@@ -6,7 +6,8 @@
     "de": "Objekte mit Namensherkunft",
     "fr": "A une étymologie",
     "ca": "Té etimologia",
-    "cs": "Má etymologii"
+    "cs": "Má etymologii",
+    "da": "Har etymologi"
   },
   "description": {
     "en": "All objects which have an etymology known",
@@ -15,7 +16,8 @@
     "hu": "Minden olyan objektum, amelynél ismert a nevének az eredete",
     "fr": "Tous les objets dont l’étymologie est connue",
     "ca": "Tots els objectes que tenen una etimologia coneguda",
-    "cs": "Všechny objekty, které mají známou etymologii"
+    "cs": "Všechny objekty, které mají známou etymologii",
+    "da": "Alle objekter med kendt etymologi"
   },
   "source": {
     "osmTags": {
@@ -113,7 +115,8 @@
         "nl": "Wat is het Wikidata-item van hetgeen dit object is naar vernoemd?",
         "de": "Was ist das Wikidata-Element, nach dem dieses Objekt benannt ist?",
         "fr": "Quel est l'Item Wikidata auquel l'objet fait référence ?",
-        "cs": "Po jaké položce Wikidat je tento objekt pojmenován?"
+        "cs": "Po jaké položce Wikidat je tento objekt pojmenován?",
+        "da": "Hvilket Wikidata-emne er dette objekt opkaldt efter?"
       },
       "freeform": {
         "key": "name:etymology:wikidata",
@@ -248,7 +251,8 @@
         "de": "<h3>Wikipedia Artikel zur Namensherkunft</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}",
         "fr": "<h3>Article Wikipedia de la référence au nom</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}",
         "ca": "<h3> Article de la Viquipèdia del nom donant</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}",
-        "cs": "<h3>Článek autora jména na Wikipedii</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}"
+        "cs": "<h3>Článek autora jména na Wikipedii</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}",
+        "da": "<h3>Wikipedia-artikel om navnets ophav</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}"
       }
     },
     {
@@ -270,7 +274,8 @@
         "de": "Wonach ist dieses Objekt benannt?",
         "fr": "En référence à quoi cet objet est-il nommé ?",
         "pl": "Po czym nazwany jest ten obiekt?",
-        "cs": "Po čem je tento objekt pojmenován?"
+        "cs": "Po čem je tento objekt pojmenován?",
+        "da": "Hvad er dette objekt opkaldt efter?"
       },
       "render": {
         "en": "Named after {name:etymology}",
@@ -322,7 +327,8 @@
         "de": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Bild eines Straßenschildes hinzufügen)}",
         "fr": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Ajouter une photo de la plaque de rue)}",
         "ca": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Afegeix una imatge de la placa amb el nom del carrer)}",
-        "cs": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Add image of a street name sign)}"
+        "cs": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Add image of a street name sign)}",
+        "da": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Tilføj foto af gadenavneskilt)}"
       }
     },
     {
@@ -339,7 +345,8 @@
         "de": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etymology, Automatische Datenübernahme auf alle Segmente mit demselben Namen, true)}",
         "fr": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etymology, Appliquer automatiquement aux segments avec le même nom, true)}",
         "ca": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etimology, aplicació automàtica de dades a tots els segments amb el mateix nom, vertader)}",
-        "cs": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etymology, Auto-applying data on all segments with the same name, true)}"
+        "cs": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etymology, Auto-applying data on all segments with the same name, true)}",
+        "da": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etymology, Tilføjer automatisk til alle segmenter med samme navn, true)}"
       }
     },
     {
@@ -352,7 +359,8 @@
         "fr": "Un article Wikipédia à propos de cette <b>rue</b> existe :<br/>{wikipedia():max-height:25rem}",
         "pl": "Istnieje artykuł Wikipedii na temat tej <b>ulicy</b>:<br/>{wikipedia():max-height:25rem}",
         "ca": "Existeix un article de la Viquipèdia sobre aquest <b>carrer</b>:<br/>{wikipedia():max-height:25rem}",
-        "cs": "Článek na Wikipedii o této <b>ulici</b> existuje:<br/>{wikipedia():max-height:25rem}"
+        "cs": "Článek na Wikipedii o této <b>ulici</b> existuje:<br/>{wikipedia():max-height:25rem}",
+        "da": "Der findes en Wikipedia-artikel om denne <b>gade</b>:<br/>{wikipedia():max-height:25rem}"
       },
       "condition": "wikidata~*"
     }

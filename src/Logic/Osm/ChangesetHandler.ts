@@ -26,7 +26,7 @@ export class ChangesetHandler {
      * @private
      */
     private readonly _remappings = new Map<string, string>()
-    private readonly _reportError: (e: (string | Error)) => void
+    private readonly _reportError: (e: string | Error) => void
 
     constructor(
         dryRun: Store<boolean>,
@@ -151,10 +151,10 @@ export class ChangesetHandler {
                     await this.UpdateTags(csId, extraMetaTags)
                 }
             } catch (e) {
-                if(this._reportError){
+                if (this._reportError) {
                     this._reportError(e)
                 }
-                console.warn("Could not open/upload changeset due to ", e,"trying t")
+                console.warn("Could not open/upload changeset due to ", e, "trying t")
                 openChangeset.setData(undefined)
 
                 throw e
@@ -186,7 +186,7 @@ export class ChangesetHandler {
                 )
                 await this.UpdateTags(csId, rewrittenTags)
             } catch (e) {
-                if(this._reportError){
+                if (this._reportError) {
                     this._reportError(e)
                 }
                 console.warn("Could not upload, changeset is probably closed: ", e)

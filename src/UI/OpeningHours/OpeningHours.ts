@@ -934,7 +934,7 @@ export class ToTextualDescription {
         ranges: OpeningRange[][]
     ): Translation | undefined {
         const t = Translations.t.general.opening_hours
-        if(!ranges){
+        if (!ranges) {
             return undefined
         }
         if (!ranges?.some((r) => r.length > 0)) {

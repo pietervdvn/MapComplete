@@ -146,7 +146,6 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
 
     public static readonly isIframe = !Utils.runningFromConsole && window !== window.top
 
-
     public static initDomPurify() {
         if (Utils.runningFromConsole) {
             return

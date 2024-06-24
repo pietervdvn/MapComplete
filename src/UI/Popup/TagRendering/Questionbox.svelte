@@ -111,93 +111,97 @@
 </script>
 
 {#if $loginEnabled}
-<div
-  bind:this={questionboxElem}
-  aria-live="polite"
-  class="marker-questionbox-root"
-  class:hidden={$questionsToAsk.length === 0 && skipped === 0 && answered === 0}
->
-  {#if $allQuestionsToAsk.length === 0}
-    {#if skipped + answered > 0}
-      <div class="thanks">
-        <Tr t={Translations.t.general.questionBox.done} />
-      </div>
-      {#if answered === 0}
-        {#if skipped === 1}
-          <Tr t={Translations.t.general.questionBox.skippedOne} />
-        {:else}
-          <Tr t={Translations.t.general.questionBox.skippedMultiple.Subs({ skipped })} />
-        {/if}
-      {:else if answered === 1}
-        {#if skipped === 0}
-          <Tr t={Translations.t.general.questionBox.answeredOne} />
-        {:else if skipped === 1}
-          <Tr t={Translations.t.general.questionBox.answeredOneSkippedOne} />
-        {:else}
-          <Tr t={Translations.t.general.questionBox.answeredOneSkippedMultiple.Subs({ skipped })} />
-        {/if}
-      {:else if skipped === 0}
-        <Tr t={Translations.t.general.questionBox.answeredMultiple.Subs({ answered })} />
-      {:else if skipped === 1}
-        <Tr t={Translations.t.general.questionBox.answeredMultipleSkippedOne.Subs({ answered })} />
-      {:else}
-        <Tr
-          t={Translations.t.general.questionBox.answeredMultipleSkippedMultiple.Subs({
-            answered,
-            skipped,
-          })}
-        />
-      {/if}
-
-      {#if skipped > 0}
-        <button
-          class="w-full"
-          on:click={() => {
-            skippedQuestions.setData(new Set())
-            skipped = 0
-          }}
-        >
-          <Tr t={Translations.t.general.questionBox.reactivate} />
-        </button>
-      {/if}
-    {/if}
-  {:else}
-    <div>
-      {#if $showAllQuestionsAtOnce}
-        <div class="flex flex-col gap-y-1">
-          {#each $allQuestionsToAsk as question (question.id)}
-            <TagRenderingQuestionDynamic
-              config={question}
-              {tags}
-              {selectedElement}
-              {state}
-              {layer}
-            />
-          {/each}
+  <div
+    bind:this={questionboxElem}
+    aria-live="polite"
+    class="marker-questionbox-root"
+    class:hidden={$questionsToAsk.length === 0 && skipped === 0 && answered === 0}
+  >
+    {#if $allQuestionsToAsk.length === 0}
+      {#if skipped + answered > 0}
+        <div class="thanks">
+          <Tr t={Translations.t.general.questionBox.done} />
         </div>
-      {:else if $firstQuestion !== undefined}
-        <TagRenderingQuestionDynamic
-          config={$firstQuestion}
-          {layer}
-          {selectedElement}
-          {state}
-          {tags}
-          on:saved={() => {
-            skip($firstQuestion, true)
-          }}
-        >
+        {#if answered === 0}
+          {#if skipped === 1}
+            <Tr t={Translations.t.general.questionBox.skippedOne} />
+          {:else}
+            <Tr t={Translations.t.general.questionBox.skippedMultiple.Subs({ skipped })} />
+          {/if}
+        {:else if answered === 1}
+          {#if skipped === 0}
+            <Tr t={Translations.t.general.questionBox.answeredOne} />
+          {:else if skipped === 1}
+            <Tr t={Translations.t.general.questionBox.answeredOneSkippedOne} />
+          {:else}
+            <Tr
+              t={Translations.t.general.questionBox.answeredOneSkippedMultiple.Subs({ skipped })}
+            />
+          {/if}
+        {:else if skipped === 0}
+          <Tr t={Translations.t.general.questionBox.answeredMultiple.Subs({ answered })} />
+        {:else if skipped === 1}
+          <Tr
+            t={Translations.t.general.questionBox.answeredMultipleSkippedOne.Subs({ answered })}
+          />
+        {:else}
+          <Tr
+            t={Translations.t.general.questionBox.answeredMultipleSkippedMultiple.Subs({
+              answered,
+              skipped,
+            })}
+          />
+        {/if}
+
+        {#if skipped > 0}
           <button
-            class="secondary"
+            class="w-full"
             on:click={() => {
-              skip($firstQuestion)
+              skippedQuestions.setData(new Set())
+              skipped = 0
             }}
-            slot="cancel"
           >
-            <Tr t={Translations.t.general.skip} />
+            <Tr t={Translations.t.general.questionBox.reactivate} />
           </button>
-        </TagRenderingQuestionDynamic>
+        {/if}
       {/if}
-    </div>
-  {/if}
-</div>
-  {/if}
+    {:else}
+      <div>
+        {#if $showAllQuestionsAtOnce}
+          <div class="flex flex-col gap-y-1">
+            {#each $allQuestionsToAsk as question (question.id)}
+              <TagRenderingQuestionDynamic
+                config={question}
+                {tags}
+                {selectedElement}
+                {state}
+                {layer}
+              />
+            {/each}
+          </div>
+        {:else if $firstQuestion !== undefined}
+          <TagRenderingQuestionDynamic
+            config={$firstQuestion}
+            {layer}
+            {selectedElement}
+            {state}
+            {tags}
+            on:saved={() => {
+              skip($firstQuestion, true)
+            }}
+          >
+            <button
+              class="secondary"
+              on:click={() => {
+                skip($firstQuestion)
+              }}
+              slot="cancel"
+            >
+              <Tr t={Translations.t.general.skip} />
+            </button>
+          </TagRenderingQuestionDynamic>
+        {/if}
+      </div>
+    {/if}
+  </div>
+{/if}

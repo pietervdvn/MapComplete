@@ -229,7 +229,8 @@
               "de": "z.B. 1",
               "cs": "e.g. 1",
               "es": "Por ejemplo, 1",
-              "pl": "np. 1"
+              "pl": "np. 1",
+              "da": "fx 1"
             }
           },
           "render": {
@@ -298,7 +299,8 @@
               "de": "z.B. 3",
               "cs": "e.g. 3",
               "es": "Por ejemplo, 3",
-              "pl": "np. 3"
+              "pl": "np. 3",
+              "da": "fx 3"
             }
           },
           "id": "node-expected_rcn_route_relations"

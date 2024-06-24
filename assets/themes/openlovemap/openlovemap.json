@@ -111,7 +111,8 @@
             "title": {
               "en": "a condom vending machine",
               "de": "ein Kondomautomat",
-              "es": "una máquina de venta de condones"
+              "es": "una máquina de venta de condones",
+              "da": "en kondomautomat"
             },
             "tags": [
               "amenity=vending_machine",

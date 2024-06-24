@@ -55,7 +55,7 @@ export class Changes {
             featureSwitches?: FeatureSwitchState
         },
         leftRightSensitive: boolean = false,
-        reportError?: (string: string | Error) => void,
+        reportError?: (string: string | Error) => void
     ) {
         this._leftRightSensitive = leftRightSensitive
         // We keep track of all changes just as well
@@ -70,7 +70,7 @@ export class Changes {
             state.osmConnection,
             state.featurePropertiesStore,
             this,
-            e => this._reportError(e)
+            (e) => this._reportError(e)
         )
         this.historicalUserLocations = state.historicalUserLocations
 
@@ -523,9 +523,13 @@ export class Changes {
                     const osmObj = await downloader.DownloadObjectAsync(id, 0)
                     return { id, osmObj }
                 } catch (e) {
-                    this._reportError( "Could not download OSM-object"+
-                        id+
-                        " dropping it from the changes (" + e + ")")
+                    this._reportError(
+                        "Could not download OSM-object" +
+                            id +
+                            " dropping it from the changes (" +
+                            e +
+                            ")"
+                    )
                     console.error(
                         "Could not download OSM-object",
                         id,

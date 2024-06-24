@@ -110,7 +110,10 @@
         </SubtleButton>
       </div>
     {:else}
-      <form class="low-interaction rounded-sm p-2 flex flex-col" on:submit|preventDefault={uploadNote}>
+      <form
+        class="low-interaction flex flex-col rounded-sm p-2"
+        on:submit|preventDefault={uploadNote}
+      >
         <label class="neutral-label">
           <Tr t={Translations.t.notes.createNoteIntro} />
           <div class="w-full p-1">

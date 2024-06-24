@@ -17,25 +17,34 @@ class ServerErrorReport extends Script {
             console.log("Created this directory")
         }
         let errorReport = 0
-        new Server(2348, {},
-            [<Handler>{
+        new Server(2348, {}, [
+            <Handler>{
                 mustMatch: "report",
                 mimetype: "application/json",
                 handle: async (_, queryParams, req, body) => {
                     if (!body) {
-                        throw "{\"error\": \"No body; use a post request\"}"
+                        throw '{"error": "No body; use a post request"}'
                     }
                     console.log(body)
                     const ip = <string>req.headers["x-forwarded-for"]
                     const d = new Date()
                     const date = d.toISOString()
-                    const file = logDirectory + "/" + d.getUTCFullYear() + "_" + d.getUTCMonth() + "_" + d.getUTCDay() + ".lines.json"
-                    try{
+                    const file =
+                        logDirectory +
+                        "/" +
+                        d.getUTCFullYear() +
+                        "_" +
+                        d.getUTCMonth() +
+                        "_" +
+                        d.getUTCDay() +
+                        ".lines.json"
+                    try {
                         body = JSON.parse(body)
-                    }catch (e) {
+                    } catch (e) {
                         // could not parse, we'll save it as is
                     }
-                    const contents = "\n"+JSON.stringify({ ip, index: errorReport, date, message: body })
+                    const contents =
+                        "\n" + JSON.stringify({ ip, index: errorReport, date, message: body })
                     if (!existsSync(file)) {
                         writeFileSync(file, contents)
                     } else {
@@ -44,8 +53,8 @@ class ServerErrorReport extends Script {
                     errorReport++
                     return `{"status":"ok", "nr": ${errorReport}}`
                 },
-
-            }])
+            },
+        ])
     }
 }
 

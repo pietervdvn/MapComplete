@@ -106,8 +106,16 @@
       </TagRenderingQuestion>
     {:else}
       <div class="low-interaction flex items-center justify-between overflow-hidden rounded pl-2">
-        <TagRenderingAnswer id={answerId} {config} {tags} {selectedElement} {state} {layer} extraClasses="my-2"/>
-        {#if (!editingEnabled || $editingEnabled)}
+        <TagRenderingAnswer
+          id={answerId}
+          {config}
+          {tags}
+          {selectedElement}
+          {state}
+          {layer}
+          extraClasses="my-2"
+        />
+        {#if !editingEnabled || $editingEnabled}
           <EditButton
             arialabel={config.editButtonAriaLabel}
             ariaLabelledBy={answerId}

@@ -151,10 +151,10 @@
   </div>
 
   {#if Utils.isIframe}
-    <div  class="flex justify-end link-underline">
-    <a href="https://mapcomplete.org" target="_blank">
-      <Tr t={Translations.t.general.poweredByMapComplete}/>
-    </a>
+    <div class="link-underline flex justify-end">
+      <a href="https://mapcomplete.org" target="_blank">
+        <Tr t={Translations.t.general.poweredByMapComplete} />
+      </a>
     </div>
   {:else}
     <If condition={state.featureSwitches.featureSwitchBackToThemeOverview}>

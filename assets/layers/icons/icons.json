@@ -288,7 +288,8 @@
             "en": "Open on openstreetmap.org",
             "nl": "Bekijk op openstreetmap.org",
             "de": "Auf openstreetmap.org öffnen",
-            "pl": "Otwórz na openstreetmap.org"
+            "pl": "Otwórz na openstreetmap.org",
+            "da": "Åbn på openstreetmap.org"
           }
         }
       },
@@ -310,7 +311,8 @@
                 "en": "Open on openstreetmap.org",
                 "nl": "Bekijk op openstreetmap.org",
                 "de": "Auf openstreetmap.org öffnen",
-                "pl": "Otwórz na openstreetmap.org"
+                "pl": "Otwórz na openstreetmap.org",
+                "da": "Åbn på openstreetmap.org"
               }
             }
           }

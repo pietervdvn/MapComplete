@@ -118,7 +118,7 @@ export default class MetaTagging {
         }
         const state = this.state
         const layer = state.layout.getMatchingLayer(feature.properties)
-        if(!layer){
+        if (!layer) {
             return
         }
         // Force update if the tags of the element changed

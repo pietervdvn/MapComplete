@@ -177,7 +177,7 @@
           "then": {
             "en": "Public access",
             "de": "Der Zugang ist öffentlich",
-            "fr": "Accès publique",
+            "fr": "Accès public",
             "nl": "Publiek toegankelijk",
             "it": "Accesso pubblico",
             "ru": "Свободный доступ",
@@ -603,7 +603,8 @@
           "then": {
             "en": "Free menstrual products are available to all visitors of these toilets",
             "nl": "Er zijn gratis menstruatieprocten beschikbaar voor alle bezoekers van deze toiletten",
-            "de": "Für alle Besucher dieser Toiletten stehen kostenlose Menstruationsprodukte zur Verfügung"
+            "de": "Für alle Besucher dieser Toiletten stehen kostenlose Menstruationsprodukte zur Verfügung",
+            "fr": "Protections menstruelles gratuites disponibles dans ces toilettes, pour tout le monde"
           }
         },
         {
@@ -611,7 +612,8 @@
           "then": {
             "en": "Free menstrual products are available to some visitors of these toilets",
             "nl": "De gratis menstruatieproducten zijn enkel beschikbaar in een deel van de toiletten",
-            "de": "Für einige Besucher dieser Toiletten gibt es kostenlose Menstruationsprodukte"
+            "de": "Für einige Besucher dieser Toiletten gibt es kostenlose Menstruationsprodukte",
+            "fr": "Protections menstruelles gratuites disponibles dans ces toilettes, réservées à certains visiteurs"
           },
           "hideInAnswer": "gender_segregated=yes"
         },
@@ -621,7 +623,8 @@
           "then": {
             "en": "No free menstrual products are available here",
             "nl": "Er zijn geen gratis menstruatieproducten beschikbaar",
-            "de": "Hier gibt es keine kostenlosen Menstruationsprodukte"
+            "de": "Hier gibt es keine kostenlosen Menstruationsprodukte",
+            "fr": "Pas protection menstruelle disponible ici"
           }
         }
       ]

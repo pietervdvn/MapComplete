@@ -72,7 +72,7 @@ export class LastClickFeatureSource implements FeatureSource {
             first_preset: this.renderings[0],
             mouse_button: mode ?? "none",
             _usermode: this._usermode?.data,
-            _addNewEnabled: (this._enabledAddMorePoints?.data ?? true) ? "yes" : "no"
+            _addNewEnabled: this._enabledAddMorePoints?.data ?? true ? "yes" : "no",
         }
         this.i++
 

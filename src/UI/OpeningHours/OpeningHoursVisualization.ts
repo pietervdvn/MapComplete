@@ -79,7 +79,7 @@ export default class OpeningHoursVisualization extends Toggle {
             // The normal case: we have items for the coming days
             return OpeningHoursVisualization.ConstructVizTable(oh, ranges, lastMonday)
         }
-         // The special case that range is completely empty
+        // The special case that range is completely empty
         return OpeningHoursVisualization.ShowSpecialCase(oh)
     }
 
@@ -303,6 +303,8 @@ export default class OpeningHoursVisualization extends Toggle {
             opensAtDate.getHours(),
             opensAtDate.getMinutes()
         )}`
-        return Translations.t.general.opening_hours.closed_until.Subs({ date: opensAtDate.toLocaleString() })
+        return Translations.t.general.opening_hours.closed_until.Subs({
+            date: opensAtDate.toLocaleString(),
+        })
     }
 }

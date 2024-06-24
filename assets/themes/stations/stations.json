@@ -10,7 +10,8 @@
     "es": "Estaciones de tren",
     "cs": "Vlaková nádraží",
     "zh_Hant": "火車站",
-    "pl": "Stacje Kolejowe"
+    "pl": "Stacje Kolejowe",
+    "da": "Togstationer"
   },
   "description": {
     "en": "View, edit and add details to a train station",
@@ -72,7 +73,8 @@
         "cs": "Vlaková nádraží",
         "it": "Stazioni ferroviarie",
         "pl": "Stacje Kolejowe",
-        "zh_Hant": "火車站"
+        "zh_Hant": "火車站",
+        "da": "Togstationer"
       },
       "description": {
         "en": "Layer showing train stations",
@@ -294,7 +296,8 @@
         "es": "Tableros de salidas",
         "cs": "Odjezdové tabule",
         "pl": "Tablice odjazdów",
-        "zh_Hant": "出發板"
+        "zh_Hant": "出發板",
+        "da": "Afgangstavler"
       },
       "description": {
         "en": "Displays showing the trains that will leave from this station",
@@ -316,7 +319,8 @@
           "es": "Tablero de salidas",
           "cs": "Odjezdová tabule",
           "zh_Hant": "時刻表",
-          "pl": "Tablica odjazdów"
+          "pl": "Tablica odjazdów",
+          "da": "Afgangstavle"
         }
       },
       "minzoom": 18,
@@ -342,7 +346,8 @@
             "es": "¿Qué tipo de tablero de salidas es éste?",
             "cs": "Co je to za odjezdovou tabuli?",
             "zh_Hant": "這是那種類型的時刻表？",
-            "pl": "Co to za tablica odjazdów?"
+            "pl": "Co to za tablica odjazdów?",
+            "da": "Hvilken type afgangstavle er dette?"
           },
           "mappings": [
             {
@@ -417,7 +422,8 @@
             "es": "un tablero de salidas",
             "cs": "odjezdová tabule",
             "zh_Hant": "時刻表",
-            "pl": "tablica odjazdów"
+            "pl": "tablica odjazdów",
+            "da": "en afgangstavle"
           },
           "description": {
             "en": "Add a board showing departures, either electronic or paper",

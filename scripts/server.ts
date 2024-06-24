@@ -4,24 +4,25 @@ export interface Handler {
     mustMatch: string | RegExp
     mimetype: string
     addHeaders?: Record<string, string>
-    handle: (path: string, queryParams: URLSearchParams, req: http.IncomingMessage) => Promise<string>
-
+    handle: (
+        path: string,
+        queryParams: URLSearchParams,
+        req: http.IncomingMessage
+    ) => Promise<string>
 }
 
 class ServerUtils {
-
     public static getBody(req: http.IncomingMessage): Promise<string> {
         return new Promise<string>((resolve) => {
-            let body = '';
-            req.on('data', (chunk) => {
-                body += chunk;
-            });
-            req.on('end', () => {
+            let body = ""
+            req.on("data", (chunk) => {
+                body += chunk
+            })
+            req.on("end", () => {
                 resolve(body)
-            });
+            })
         })
     }
-
 }
 
 export class Server {

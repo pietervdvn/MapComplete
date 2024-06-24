@@ -624,7 +624,8 @@
               "ca": "Residents permesos",
               "es": "Residentes autorizados",
               "cs": "Přístup povolen obyvatelům",
-              "pl": "Mieszkańcy dopuszczeni"
+              "pl": "Mieszkańcy dopuszczeni",
+              "da": "Beboere tilladt"
             },
             "icon": {
               "path": "./assets/themes/cyclestreets/Zeichen_244_1020-30.svg",
@@ -647,7 +648,8 @@
               "cs": "Vjezd motorových vozidel povolen",
               "ca": "Vehicles a motor permesos",
               "es": "Vehículos a motor permitidos",
-              "pl": "Pojazdy silnikowe dozwolone"
+              "pl": "Pojazdy silnikowe dozwolone",
+              "da": "Motorkøretøjer tilladt"
             },
             "icon": {
               "path": "./assets/themes/cyclestreets/Zeichen_244_KFZ_frei.svg",
@@ -671,7 +673,8 @@
               "cs": "Vjezd motocyklů povolen",
               "ca": "Motos permeses",
               "es": "Motocicletas permitidas",
-              "pl": "Motocykle dozwolone"
+              "pl": "Motocykle dozwolone",
+              "da": "Motorcykler tilladt"
             },
             "icon": {
               "path": "./assets/themes/cyclestreets/Zeichen_244_1022-12.svg",
@@ -696,7 +699,8 @@
               "nb_NO": "Biler tillatt",
               "ca": "Cotxes permesos",
               "es": "Coches permitidos",
-              "pl": "Samochody dozwolone"
+              "pl": "Samochody dozwolone",
+              "da": "Biler tilladt"
             },
             "icon": {
               "path": "./assets/themes/cyclestreets/Zeichen_244_1024-10.svg",

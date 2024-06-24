@@ -49,7 +49,7 @@ export default class NoteCommentElement extends Combine {
         }
 
         const userinfo = Stores.FromPromise(
-            Utils.downloadJsonCached<{user: { img: { href: string } }}>(
+            Utils.downloadJsonCached<{ user: { img: { href: string } } }>(
                 "https://api.openstreetmap.org/api/0.6/user/" + comment.uid,
                 24 * 60 * 60 * 1000
             )
@@ -122,7 +122,7 @@ export default class NoteCommentElement extends Combine {
     public static addCommentTo(
         txt: string,
         tags: UIEventSource<any>,
-        state: { osmConnection: {userDetails: Store<{ name: string, uid: number }>} }
+        state: { osmConnection: { userDetails: Store<{ name: string; uid: number }> } }
     ) {
         const comments: any[] = JSON.parse(tags.data["comments"])
         const username = state.osmConnection.userDetails.data.name

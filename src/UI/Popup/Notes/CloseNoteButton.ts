@@ -64,7 +64,9 @@ export class CloseNoteButton implements SpecialVisualization {
             zoomButton: string
         } = <any>Utils.ParseVisArgs(this.args, args)
 
-        let icon: BaseUIElement = new SvelteUIElement(Icon, {icon: params.icon ?? "checkmark.svg"})
+        let icon: BaseUIElement = new SvelteUIElement(Icon, {
+            icon: params.icon ?? "checkmark.svg",
+        })
         let textToShow = t.closeNote
         if ((params.text ?? "") !== "") {
             textToShow = Translations.T(args[0])

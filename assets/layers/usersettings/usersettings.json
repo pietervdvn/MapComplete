@@ -53,7 +53,8 @@
             "de": "Die Sprache wurde über einen URL-Parameter gesetzt und kann nicht vom Benutzer eingestellt werden.",
             "ca": "L'idioma es va establir mitjançant un paràmetre d'URL i l'usuari no pot definir-lo.",
             "cs": "Jazyk byl nastaven pomocí parametru URL a uživatel jej nemůže nastavit.²",
-            "nl": "De taal werd ingesteld via een URL-parameter en kan niet manueel ingesteld worden."
+            "nl": "De taal werd ingesteld via een URL-parameter en kan niet manueel ingesteld worden.",
+            "da": "Sproget er angivet vha. en URL-parameter og kan ikke angives af brugeren."
           }
         }
       ]
@@ -72,7 +73,8 @@
                 "nl": "Ga naar je inbox",
                 "de": "Deinen Posteingang öffnen",
                 "ca": "Obre la teva safata d'entrada",
-                "cs": "Otevřít schránku"
+                "cs": "Otevřít schránku",
+                "da": "Åbn din indbakke"
               }
             }
           }
@@ -87,7 +89,8 @@
                 "de": "<b class='alert'>Sie haben {_unreadMessages} Nachrichten</b><br/>Posteingang öffnen",
                 "ca": "<b class='alert'>Tens {_unreadMessages} missatges </b><br/>Obri la safata d'entrada",
                 "cs": "<b class='alert'>Máte {_unreadMessages}</b><br/>Otevřít schránku",
-                "nl": "<b class='alert'>Je hebt {_unreadMessages} ongelezen berichten</b><br/>Ga naar je inbox"
+                "nl": "<b class='alert'>Je hebt {_unreadMessages} ongelezen berichten</b><br/>Ga naar je inbox",
+                "da": "<b class='alert'>Du har {_unreadMessages} beskeder</b><br/>Åbn din indbakke"
               },
               "href": "{_backend}/messages/inbox"
             }
@@ -105,7 +108,8 @@
             "de": "Öffne Deine Einstellungen auf OpenStreetMap.org",
             "ca": "Obriu la vostra configuració a OpenStreetMap.org",
             "cs": "Otevřít vaše nastavení na OpenStreetMap.org",
-            "nl": "Open je instellingen op OpenStreetMap.org"
+            "nl": "Open je instellingen op OpenStreetMap.org",
+            "da": "Åbn dine indstillinger på OpenStreetMap.org"
           },
           "href": "{_backend}/account/edit"
         }
@@ -122,7 +126,8 @@
       "question": {
         "en": "What accessibility features should be applied?",
         "nl": "Wanneer moet de toegankelijkheidsmode ingeschakeld worden?",
-        "de": "Welche Barrierefrei-Funktionen sollen angewendet werden?"
+        "de": "Welche Barrierefrei-Funktionen sollen angewendet werden?",
+        "da": "Hvilke tilgængelighedsfunktioner skal anvendes?"
       },
       "mappings": [
         {
@@ -132,7 +137,8 @@
             "en": "Enable accessibility features when arrow keys are used to navigate the map",
             "ca": "Activar les funcions d'accessibilitat quan s'utilitzen les tecles de fletxa per navegar pel mapa",
             "nl": "Schakel toegankelijkheidsmode aan wanneer op de pijltjestoetsen wordt geduwd om de kaart te bewegen",
-            "de": "Barrierefrei-Modus aktivieren, wenn Pfeiltasten zum Navigieren in der Karte verwendet werden"
+            "de": "Barrierefrei-Modus aktivieren, wenn Pfeiltasten zum Navigieren in der Karte verwendet werden",
+            "da": "Aktiver tilgængelighedsfunktioner, når piletaster anvendes til at navigere i kortet"
           }
         },
         {
@@ -141,7 +147,8 @@
             "en": "Always enable accessibility features",
             "ca": "Sempre habilita les característiques d'accessibilitat",
             "nl": "Schakel de toegankelijkheidsmode altijd aan",
-            "de": "Barrierefrei-Modus immer aktivieren"
+            "de": "Barrierefrei-Modus immer aktivieren",
+            "da": "Aktiver altid tilgængelighedsfunktioner"
           }
         },
         {
@@ -149,7 +156,8 @@
           "then": {
             "en": "Never enable accessibility features",
             "nl": "Gebruik geen toegankelijkheidsmode",
-            "de": "Barrierefrei-Modus niemals aktivieren"
+            "de": "Barrierefrei-Modus niemals aktivieren",
+            "da": "Aktiver aldrig tilgængelighedsfunktioner"
           }
         }
       ]
@@ -168,7 +176,8 @@
         "ca": "Aquest mapa temàtic té un conjunt de capes de fons predefinides. La configuració predeterminada del tema no s'aplica",
         "de": "Diese thematische Karte hat einen vordefinierten Hintergrund. Ihr Standardhintergrund wird nicht angewendet",
         "cs": "Tato tematická mapa má předdefinovanou sadu podkladových vrstev. Vaše výchozí nastavení tématu se nepoužije",
-        "nl": "Deze kaart heeft een achtegrondlaag instgesteld. Je instellingen worden niet gebruikt"
+        "nl": "Deze kaart heeft een achtegrondlaag instgesteld. Je instellingen worden niet gebruikt",
+        "da": "Dette temakort har angivet et foruddefineret baggrundslag. Dine standardindstillinger benyttes ikke"
       }
     },
     {
@@ -179,7 +188,8 @@
         "de": "Welche Hintergrundebene soll als Standard verwendet werden?",
         "cs": "Jaká vrstva pozadí by se měla zobrazovat ve výchozím nastavení?",
         "nl": "Welke achtergrondlaag moet altijd gebruikt worden?",
-        "fr": "Quel fond souhaitez-vous utiliser par défaut ?"
+        "fr": "Quel fond souhaitez-vous utiliser par défaut ?",
+        "da": "Hvilket baggrundslag skal vises som standard?"
       },
       "condition": "_theme:backgroundLayer=",
       "mappings": [
@@ -192,7 +202,8 @@
             "de": "Standardhintergrund verwenden",
             "cs": "Použití výchozí vrstvu pozadí",
             "nl": "Gebruik de standaard achtergrondlaag",
-            "fr": "Utiliser le fond par défaut"
+            "fr": "Utiliser le fond par défaut",
+            "da": "Vis standardbaggrundslaget"
           }
         },
         {
@@ -203,7 +214,8 @@
             "de": "OpenStreetMap-carto als Standardhintergrund verwenden",
             "cs": "Použít OpenStreetMap-carto jako výchozí vrstvu",
             "nl": "Gebruik OpenStreetMap-carto altijd als achtergrondlaag",
-            "fr": "Utiliser le fond OpenStreetMap-carto par défaut"
+            "fr": "Utiliser le fond OpenStreetMap-carto par défaut",
+            "da": "Brug OpenStreetMap-carto som standardlag"
           }
         },
         {
@@ -214,7 +226,8 @@
             "de": "Satellitenbilder als Standardhintergrund verwenden",
             "cs": "Použít letecké snímky jako výchozí pozadí",
             "nl": "Gebruik luchtfoto's als standaard achtergrondlaag",
-            "fr": "Utiliser le fond imagerie aérienne par défaut"
+            "fr": "Utiliser le fond imagerie aérienne par défaut",
+            "da": "Brug luftfoto som standardbaggrund"
           }
         },
         {
@@ -225,7 +238,8 @@
             "de": "Eine eigene Karte als Standardhintergrund verwenden",
             "cs": "Použití mapy, která není založena na mapě openstreetmap, jako výchozího pozadí",
             "nl": "Gebruik altijd een kaart di niet op OpenStreetMap gebaseerd is als achtergrond",
-            "fr": "Utiliser un fond non basé sur OpenStreetMap par défaut"
+            "fr": "Utiliser un fond non basé sur OpenStreetMap par défaut",
+            "da": "Brug et ikke-OpenSreetMap-baseret kort som standardbaggrund"
           }
         },
         {
@@ -236,7 +250,8 @@
             "de": "Aktuelle Hintergrundebene (<span class='code'>{__current_background}</span>) als Standardhintergrund verwenden",
             "cs": "Použít aktuální vrstvu pozadí (<span class='code'>{__current_background}</span>) jako výchozí pozadí",
             "nl": "Gebruik altijd <span class='code'>{__current_background}</span> als achtergrondlaag. Dit is de huidige achtergrond.",
-            "fr": "Utiliser le fond actuel (<span class='code'>{__current_background}</span>) par défaut"
+            "fr": "Utiliser le fond actuel (<span class='code'>{__current_background}</span>) par défaut",
+            "da": "Brug det nuværende baggrundslag (<span class='code'>{__current_background}</span>) som standardbaggrund"
           },
           "hideInAnswer": {
             "or": [
@@ -254,7 +269,8 @@
             "de": "Hintergrundebene <span class='code'>{mapcomplete-preferred-background-layer}</span> als Standardhintergrund verwenden",
             "cs": "Použít vrstvu pozadí <span class='code'>{mapcomplete-preferred-background-layer}</span> jako výchozí pozadí",
             "nl": "Gebruik <span class='code'>{mapcomplete-preferred-background-layer}</span> altijd als achtergrondlaag",
-            "fr": "Utiliser le fond (<span class='code'>{mapcomplete-preferred-background-layer}</span>)par défaut"
+            "fr": "Utiliser le fond (<span class='code'>{mapcomplete-preferred-background-layer}</span>)par défaut",
+            "da": "Brug baggrundslaget <span class='code'>{mapcomplete-preferred-background-layer}</span> som standardbaggrund"
           },
           "hideInAnswer": true
         }
@@ -269,7 +285,8 @@
         "nl": "Met welke licentie wil je je afbeeldingen toevoegen?",
         "ca": "Sota quina llicència vols publicar les teves fotos?",
         "pt": "Sob que licença você deseja publicar suas fotos?",
-        "cs": "Pod jakou licencí chcete své fotografie zveřejnit?"
+        "cs": "Pod jakou licencí chcete své fotografie zveřejnit?",
+        "da": "Under hvilken licens vil du frigive dine billeder?"
       },
       "mappings": [
         {
@@ -402,7 +419,8 @@
         "pt": "As perguntas para campos de dados desconhecidos devem aparecer uma a uma ou juntas?",
         "ca": "Les preguntes amb camps de dades desconeguts haurien d'aparèixer una per una o juntes?",
         "nl": "Moeten onbeantwoorde vragen om beurt of allemaal samen getoond worden?",
-        "cs": "Mají se otázky pro neznámá datová pole zobrazovat jednotlivě, nebo společně?"
+        "cs": "Mají se otázky pro neznámá datová pole zobrazovat jednotlivě, nebo společně?",
+        "da": "Skal spørgsmål for ukendte oplysninger vises ét ad gangen eller alle på én gang?"
       },
       "mappings": [
         {
@@ -414,7 +432,8 @@
             "fr": "Afficher toutes les question en même temps dans l'infobox",
             "pt": "Mostrar todas as perguntas na caixa de informações juntas",
             "nl": "Toon alle onbeantwoorde vragen",
-            "cs": "Zobrazit všechny otázky v infoboxu dohromady"
+            "cs": "Zobrazit všechny otázky v infoboxu dohromady",
+            "da": "Vis alle spørgsmål i infoboksen på én gang"
           }
         },
         {
@@ -426,7 +445,8 @@
             "fr": "Afficher les questions une à une",
             "pt": "Mostrar perguntas uma a uma",
             "nl": "Toon de vragen één per één",
-            "cs": "Zobrazit otázky jednu po druhé"
+            "cs": "Zobrazit otázky jednu po druhé",
+            "da": "Vis spørgsmål ét ad gangen"
           }
         }
       ]
@@ -469,37 +489,43 @@
     {
       "id": "add-new-feature",
       "question": {
-        "en": "How should the menu to add a new feature be opened?"
+        "en": "How should the menu to add a new feature be opened?",
+        "de": "Wie soll das Menü zum Hinzufügen eines neuen Objekts geöffnet werden?"
       },
       "mappings": [
         {
           "if": "mapcomplete-preferences-add-new-mode=button",
           "then": {
-            "en": "Adding a new feature is done with the button at the bottom left. Clicking the map does nothing"
+            "en": "Adding a new feature is done with the button at the bottom left. Clicking the map does nothing",
+            "de": "Das Hinzufügen eines neuen Objekts erfolgt über die Schaltfläche unten links. Ein Klick auf die Karte bewirkt nichts"
           }
         },
         {
           "if": "mapcomplete-preferences-add-new-mode=click",
           "then": {
-            "en": "When clicking or tapping the map, a marker pops up where a new feature is added"
+            "en": "When clicking or tapping the map, a marker pops up where a new feature is added",
+            "de": "Wenn Sie auf die Karte klicken oder tippen, wird eine Markierung eingeblendet, an der ein neues Objekt hinzugefügt wird"
           }
         },
         {
           "if": "mapcomplete-preferences-add-new-mode=click_right",
           "then": {
-            "en": "When right-clicking or long-pressing the map, a marker pops up where a new feature can be added"
+            "en": "When right-clicking or long-pressing the map, a marker pops up where a new feature can be added",
+            "de": "Beim Rechtsklick oder einem langen Druck auf die Karte erscheint eine Markierung, mit der ein neues Objekt hinzugefügt werden kann"
           }
         },
         {
           "if": "mapcomplete-preferences-add-new-mode=button_click",
           "then": {
-            "en": "When clicking or tapping the map, a marker pops up where a new feature can be added. Additionally, a button at the bottom left is shown"
+            "en": "When clicking or tapping the map, a marker pops up where a new feature can be added. Additionally, a button at the bottom left is shown",
+            "de": "Beim Klicken oder Tippen auf die Karte wird eine Markierung eingeblendet, an der ein neues Objekt hinzugefügt werden kann. Zusätzlich wird unten links eine Schaltfläche angezeigt"
           }
         },
         {
           "if": "mapcomplete-preferences-add-new-mode=button_click_right",
           "then": {
-            "en": "When right-clicking or long-pressing the map, a marker pops up where a new feature can be added. Additionally, a button at the bottom left is shown"
+            "en": "When right-clicking or long-pressing the map, a marker pops up where a new feature can be added. Additionally, a button at the bottom left is shown",
+            "de": "Beim Rechtsklick oder einem langen Druck auf die Karte erscheint eine Markierung, an der ein neues Objekt hinzugefügt werden kann. Zusätzlich wird unten links eine Schaltfläche angezeigt"
           }
         }
       ]
@@ -511,7 +537,8 @@
         "de": "Soll Norden immer oben sein?",
         "ca": "El nord hauria d'estar sempre amunt?",
         "cs": "Měl by být sever vždy nahoře?",
-        "nl": "Moet het noorden altijd naar boven getoond worden?"
+        "nl": "Moet het noorden altijd naar boven getoond worden?",
+        "da": "Skal nord altid pege opad?"
       },
       "mappings": [
         {
@@ -536,7 +563,8 @@
             "fr": "Toujours garder le nord en haut",
             "ca": "Mantingueu sempre el nord apuntant cap amunt",
             "cs": "Sever vždy směřujte nahoru",
-            "nl": "Hou het noorden altijd naar boven"
+            "nl": "Hou het noorden altijd naar boven",
+            "da": "Nord peger altid opad"
           }
         }
       ]
@@ -623,13 +651,15 @@
           "text": {
             "en": "Import a mangrove private key from backup",
             "nl": "Herstel een Mangrove Private sleutel van backup",
-            "de": "Privaten Mangrove-Schlüssel aus Backup importieren"
+            "de": "Privaten Mangrove-Schlüssel aus Backup importieren",
+            "da": "Indlæs en privat Mangrove-nøgle fra backup"
           }
         },
         "after": {
           "en": "Uploading a private key erases your current private key. If you made reviews with it, download your current private key first",
           "de": "Wenn du einen privaten Schlüssel hochlädst, wird dein aktueller privater Schlüssel gelöscht. Wenn du damit Rezensionen geschrieben hast, lade zuerst deinen aktuellen privaten Schlüssel hoch",
-          "nl": "Een private sleutel uploaden overschrijft je huidige private sleutel. Indien je beoordelingen maakte met je huidige private sleutel, download deze dan eerst"
+          "nl": "Een private sleutel uploaden overschrijft je huidige private sleutel. Indien je beoordelingen maakte met je huidige private sleutel, download deze dan eerst",
+          "da": "Når du uploader en privat nøgle, slettes din nuværende private nøgle. Hvis du har brugt den til at lave anmeldelser, kan du downloade din private nøgle først"
         }
       }
     },
@@ -652,7 +682,8 @@
         "ca": "Vols ajudar a traduir MapComplete?",
         "fr": "Voulez-vous aider à traduire MapComplete ?",
         "pt": "Quer ajudar na tradução do MapComplete?",
-        "nl": "Wil je MapComplete helpen vertalen?"
+        "nl": "Wil je MapComplete helpen vertalen?",
+        "da": "Vil du hjælpe med at oversætte MapComplete?"
       },
       "mappings": [
         {
@@ -862,7 +893,8 @@
             "de": "Sie haben Code zu MapComplete mit {_code_contributions} Commits beigetragen! Das ist großartig!",
             "nl": "Je hebt mee geprogrammeerd aan MapComplete met {_code_contributions} commits! Das supercool van je! Bedankt hiervoor!",
             "ca": "Heu aportat codi a MapComplete amb {_code_contributions} commits! Això és increïble!",
-            "cs": "Přispěli jste do MapComplete kódem s {_code_contributions} revizemi! To je úžasné!"
+            "cs": "Přispěli jste do MapComplete kódem s {_code_contributions} revizemi! To je úžasné!",
+            "da": "Du har bidraget kode til MapComplete med {_code_contributions} commits! Det er fantastisk!"
           },
           "icon": "party",
           "hideInAnswer": true

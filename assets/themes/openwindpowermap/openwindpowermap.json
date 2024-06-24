@@ -15,7 +15,8 @@
     "pa_PK": "اوپن‌ونڈ‌پاور‌میپ",
     "es": "Generadores de energía eólica",
     "cs": "Větrné elektrárny",
-    "pl": "Generatory wiatrowe"
+    "pl": "Generatory wiatrowe",
+    "da": "Vindmøller"
   },
   "description": {
     "en": "A map for showing and editing wind turbines.",

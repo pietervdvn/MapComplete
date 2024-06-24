@@ -277,7 +277,8 @@
           "then": {
             "en": "The surface is tartan - a synthetic, springy surface typically seen on athletic pistes",
             "nl": "De ondergrond bestaat uit Tartan - een synthetisch, elastisch en poreus materiaal dat je ook vindt op atletiekpistes",
-            "de": "Der Belag ist aus Tartan - ein synthetischer, federnder Belag, der typischerweise auf Sportbahnen zu finden ist"
+            "de": "Der Belag ist aus Tartan - ein synthetischer, federnder Belag, der typischerweise auf Sportbahnen zu finden ist",
+            "fr": "La surface est en tartan - un revêtement synthétique typiquement utilisé sur les pistes d'athlétisme"
           }
         },
         {
@@ -285,7 +286,8 @@
           "then": {
             "en": "The surface is made from rubber, such as rubber tiles, rubber mulch or a big rubber area",
             "nl": "De ondergrond bestaat uit rubber, zoals rubberen tegels, rubber snippers of een groot rubberen oppervlak",
-            "de": "Die Oberfläche besteht aus Gummi, z. B. aus Gummifliesen, Gummimulch oder einer großen Gummifläche"
+            "de": "Die Oberfläche besteht aus Gummi, z. B. aus Gummifliesen, Gummimulch oder einer großen Gummifläche",
+            "fr": "La surface est en caoutchouc, comme des dalles de caoutchouc, des copeaux de caoutchouc ou une grande surface en caoutchouc"
           }
         }
       ],

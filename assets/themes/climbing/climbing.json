@@ -348,7 +348,8 @@
               "es": "¿Esta tienda de reparación de zapatos repara zapatos de escalada?",
               "ca": "Aquesta botiga de reparació de calçat repara sabates d'escalada?",
               "cs": "Opravuje tato opravna obuvy horolezecké boty?",
-              "pl": "Czy ten warsztat szewski naprawia buty wspinaczkowe?"
+              "pl": "Czy ten warsztat szewski naprawia buty wspinaczkowe?",
+              "da": "Reparerer denne butik klatresko?"
             },
             "mappings": [
               {
@@ -360,7 +361,8 @@
                   "es": "Esta tienda repara zapatos de escalada",
                   "ca": "Aquesta botiga repara sabates d'escalada",
                   "cs": "Tento obchod opravuje lezeckou obuv",
-                  "pl": "Ten warsztat naprawia buty wspinaczkowe"
+                  "pl": "Ten warsztat naprawia buty wspinaczkowe",
+                  "da": "Denne butik reparerer klatresko"
                 }
               },
               {
@@ -372,7 +374,8 @@
                   "es": "Esta tienda no repara zapatos de escalada",
                   "ca": "Aquesta botiga no repara sabates d'escalada",
                   "cs": "Tento obchod neopravuje lezeckou obuv",
-                  "pl": "Ten warsztat nie naprawia butów wspinaczkowych"
+                  "pl": "Ten warsztat nie naprawia butów wspinaczkowych",
+                  "da": "Denne butik reparerer ikke klatresko"
                 }
               }
             ]
@@ -404,7 +407,8 @@
               "es": "¿Esta tienda de reparación de zapatos también repara zapatos de escalada?",
               "ca": "Aquesta botiga de reparació de calçat també repara sabates d'escalada?",
               "cs": "Opravuje tato opravna obuvy také lezeckou obuv?",
-              "pl": "Czy ten warsztat obuwniczy naprawia również buty wspinaczkowe?"
+              "pl": "Czy ten warsztat obuwniczy naprawia również buty wspinaczkowe?",
+              "da": "Reparerer denne skomager klatresko?"
             },
             "mappings": [
               {
@@ -416,7 +420,8 @@
                   "es": "Esta tienda repara zapatos de escalada",
                   "ca": "Aquesta botiga repara sabates d'escalada",
                   "cs": "Tento obchod opravuje lezeckou obuv",
-                  "pl": "Ten warsztat naprawia buty wspinaczkowe"
+                  "pl": "Ten warsztat naprawia buty wspinaczkowe",
+                  "da": "Denne butik reparerer klatresko"
                 }
               },
               {
@@ -428,7 +433,8 @@
                   "es": "Esta tienda no repara zapatos de escalada",
                   "ca": "Aquesta botiga no repara sabates d'escalada",
                   "cs": "Tento obchod neopravuje lezeckou obuv",
-                  "pl": "Ten warsztat nie naprawia butów wspinaczkowych"
+                  "pl": "Ten warsztat nie naprawia butów wspinaczkowych",
+                  "da": "Denne butik reparerer ikke klatresko"
                 }
               }
             ]
@@ -446,7 +452,8 @@
               "es": "una tienda de reparación de zapatos",
               "ca": "una botiga de reparació de calçat",
               "cs": "opravna bot",
-              "pl": "warsztat szewski"
+              "pl": "warsztat szewski",
+              "da": "en skomager"
             }
           }
         ]

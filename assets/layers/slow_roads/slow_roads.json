@@ -3,13 +3,15 @@
   "name": {
     "en": "Paths, carfree and slow roads",
     "nl": "Paadjes, trage wegen en autoluwe straten",
-    "de": "Pfade, autofreie und geschwindigkeitsreduzierte Straßen"
+    "de": "Pfade, autofreie und geschwindigkeitsreduzierte Straßen",
+    "fr": "Chemins, routes non carrossables et routes à vitesse réduite"
   },
   "description": {
     "en": "All carfree roads",
     "nl": "Alle verkeersvrije wegen",
     "de": "Alle autofreien Straßen",
-    "ca": "Totes les carreteres sense cotxe"
+    "ca": "Totes les carreteres sense cotxe",
+    "fr": "Toutes les routes non carrossables"
   },
   "source": {
     "osmTags": {
@@ -115,7 +117,8 @@
           "then": {
             "en": "This is a living street",
             "nl": "<div> Dit is een woonerf: <ul><li>Voetgangers mogen hier de volledige breedte van de straat gebruiken</li><li>Gemotoriseerd verkeer mag maximaal <b>20km/h</b> rijden</li></ul></div>",
-            "de": "Dies ist eine Wohnstraße"
+            "de": "Dies ist eine Wohnstraße",
+            "fr": "C'est une zone de rencontre"
           },
           "icon": {
             "path": "./assets/layers/slow_roads/woonerf.svg",
@@ -135,7 +138,8 @@
           "then": {
             "en": "This is a footway",
             "nl": "Dit is een voetpaadje",
-            "de": "Dies ist ein Fußweg"
+            "de": "Dies ist ein Fußweg",
+            "fr": "C'est un chemin piéton"
           }
         },
         {
@@ -143,7 +147,8 @@
           "then": {
             "en": "This is a small path",
             "nl": "Dit is een wegeltje of bospad",
-            "de": "Dies ist ein schmaler Pfad"
+            "de": "Dies ist ein schmaler Pfad",
+            "fr": "C'est un petit sentier"
           }
         },
         {
@@ -151,7 +156,8 @@
           "then": {
             "en": "This is a bridleway",
             "nl": "Dit is een ruiterswegel",
-            "de": "Dies ist ein Reitweg"
+            "de": "Dies ist ein Reitweg",
+            "fr": "C'est une voie équestre"
           }
         },
         {
@@ -307,7 +313,8 @@
       "question": {
         "en": "Is this road lit at night?",
         "nl": "Is deze weg 's nachts verlicht?",
-        "de": "Ist diese Straße nachts beleuchtet?"
+        "de": "Ist diese Straße nachts beleuchtet?",
+        "fr": "Cette route est-elle éclairée la nuit ?"
       },
       "mappings": [
         {

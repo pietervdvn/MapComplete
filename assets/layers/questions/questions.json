@@ -2691,7 +2691,8 @@
           "en": "Scan this code to open this location on another device",
           "nl": "Scan deze code om deze locatie op een ander apparaat te zien",
           "de": "Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen",
-          "sl": "Skenirajte to kodo, da odprete ta kraj na drugi napravi"
+          "sl": "Skenirajte to kodo, da odprete ta kraj na drugi napravi",
+          "da": "Skan denne kode for at åbne dette sted på en anden enhed"
         }
       }
     },
@@ -2724,7 +2725,8 @@
             "nl": "Laatst gewijzigd op {_last_edit:timestamp} door {_last_edit:contributor} ",
             "de": "Zuletzt bearbeitet am {_last_edit:timestamp} von {_last_edit:contributor}",
             "ca": "Darrera edició el {_last_edit:timestamp} per {_last_edit:contributor}",
-            "cs": "Naposledy upravil {_last_edit:timestamp} {_last_edit:contributor}"
+            "cs": "Naposledy upravil {_last_edit:timestamp} {_last_edit:contributor}",
+            "da": "Senest redigeret {_last_edit:timestamp} af {_last_edit:contributor}"
           },
           "class": "subtle font-small"
         }
@@ -2746,7 +2748,8 @@
           "type": "if_nothing_known",
           "text": {
             "en": "Nothing is known about this place. Help by filling out the questions",
-            "nl": "Er is nog niets geweten. Help mee door de vragen te beantwoorden"
+            "nl": "Er is nog niets geweten. Help mee door de vragen te beantwoorden",
+            "de": "Über diesen Ort ist nichts bekannt. Hilf mit, indem du die Fragen ausfüllst"
           },
           "cssClasses": "subtle m-4 italic flex items-center justify-center"
         }

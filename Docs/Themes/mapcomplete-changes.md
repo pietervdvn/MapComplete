@@ -31,6 +31,7 @@ Available languages:
 
 
   - en
+  - da
   - de
  
 

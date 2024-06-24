@@ -2,11 +2,13 @@
   "id": "ski_piste",
   "name": {
     "en": "Ski and snowboard pistes",
-    "de": "Ski- und Snowboardpisten"
+    "de": "Ski- und Snowboardpisten",
+    "fr": "Pistes de ski et de snowboard"
   },
   "description": {
     "en": "Ski and snowboard pistes",
-    "de": "Ski- und Snowboardpisten"
+    "de": "Ski- und Snowboardpisten",
+    "fr": "Pistes de ski et de snowboard"
   },
   "source": {
     "osmTags": {
@@ -25,7 +27,8 @@
   "title": {
     "render": {
       "en": "Ski piste {name}",
-      "de": "Skipiste {name}"
+      "de": "Skipiste {name}",
+      "fr": "Piste de ski {name}"
     }
   },
   "pointRendering": [
@@ -80,7 +83,8 @@
     {
       "question": {
         "en": "What is the difficulty of this piste?",
-        "de": "Was ist der Schwierigkeitsgrad der Piste?"
+        "de": "Was ist der Schwierigkeitsgrad der Piste?",
+        "fr": "Quelle est la difficulté de cette piste ?"
       },
       "id": "piste_difficulty",
       "condition": "piste:type!=connection",
@@ -89,42 +93,48 @@
           "if": "piste:difficulty=novice",
           "then": {
             "en": "Novice (green)",
-            "de": "Anfänger (grün)"
+            "de": "Anfänger (grün)",
+            "fr": "Débutant (vert)"
           }
         },
         {
           "if": "piste:difficulty=easy",
           "then": {
             "en": "Easy (blue)",
-            "de": "Einfach (blau)"
+            "de": "Einfach (blau)",
+            "fr": "Facile (bleu)"
           }
         },
         {
           "if": "piste:difficulty=intermediate",
           "then": {
             "en": "Intermediate (red)",
-            "de": "Mittel (rot)"
+            "de": "Mittel (rot)",
+            "fr": "Intermédiaire (rouge)"
           }
         },
         {
           "if": "piste:difficulty=advanced",
           "then": {
             "en": "Advanced (black)",
-            "de": "Fortgeschritten (schwarz)"
+            "de": "Fortgeschritten (schwarz)",
+            "fr": "Avancé (noir)"
           }
         },
         {
           "if": "piste:difficulty=expert",
           "then": {
             "en": "Expert (orange/double black)",
-            "de": "Experte (orange/doppel schwarz)"
+            "de": "Experte (orange/doppel schwarz)",
+            "fr": "Expert (orange/double noir)"
           }
         },
         {
           "if": "piste:difficulty=freeride",
           "then": {
             "en": "Freeride",
-            "de": "Freeride"
+            "de": "Freeride",
+            "fr": "Hors piste"
           }
         }
       ]
@@ -133,7 +143,8 @@
       "id": "length",
       "render": {
         "en": "This part of the ski piste is {_length:km} kilometer long",
-        "de": "Dieser Teil der Skipiste hat eine Länge von {_length:km} km"
+        "de": "Dieser Teil der Skipiste hat eine Länge von {_length:km} km",
+        "fr": "Ce tronçon de piste de ski mesure {_length:km} kilomètres de long"
       }
     }
   ]
