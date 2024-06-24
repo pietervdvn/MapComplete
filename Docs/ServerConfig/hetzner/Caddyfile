@@ -38,3 +38,9 @@ ipinfo.mapcomplete.org {
         to 127.0.0.1:2347
     }
 }
+
+proxy.mapcomplete.org {
+    reverse_proxy {
+        to 109.128.57.178:2345
+    }
+}
