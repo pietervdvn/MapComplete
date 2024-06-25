@@ -44,3 +44,9 @@ proxy0.mapcomplete.org {
         to 109.128.57.178:2345
     }
 }
+
+proxy.mapcomplete.org {
+    reverse_proxy {
+        to 109.128.57.178:7800
+    }
+}

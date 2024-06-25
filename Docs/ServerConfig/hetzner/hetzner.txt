@@ -14,7 +14,10 @@ To update caddy
 
 Debug logs with: `journalctl -u caddy --no-pager | less +G`
 
-Services:
+In case of weird errors: wipe /var/lib/caddy/.local/share/caddy
+
+
+## Services
 
 
 ### studio + theme sync
