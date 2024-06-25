@@ -21,9 +21,9 @@
       "oauth_secret": "NBWGhWDrD3QDB35xtVuxv4aExnmIt4FA_WgeLtwxasg",
       "url": "https://www.openstreetmap.org"
     },
-    "mvt_layer_server": "https://cache.mapcomplete.org/public.{type}_{layer}/{z}/{x}/{y}.pbf",
+    "mvt_layer_server": "https://proxy.mapcomplete.org/public.{type}_{layer}/{z}/{x}/{y}.pbf",
     "#summary_server": "Should be the endpoint; appending status.json should work",
-    "summary_server": "https://cache.mapcomplete.org/",
+    "summary_server": "https://proxy0.mapcomplete.org/",
     "geoip_server": "https://ipinfo.mapcomplete.org/",
     "error_server": "https://report.mapcomplete.org/report",
     "disabled:oauth_credentials": {
