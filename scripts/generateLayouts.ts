@@ -333,6 +333,8 @@ class GenerateLayouts extends Script {
             "https://api.openstreetmap.org",
             "https://pietervdvn.goatcounter.com",
             "https://cache.mapcomplete.org",
+            "https://proxy.mapcomplete.org",
+            "https://proxy0.mapcomplete.org",
         ].concat(...(await this.eliUrls()))
 
         SpecialVisualizations.specialVisualizations.forEach((sv) => {
