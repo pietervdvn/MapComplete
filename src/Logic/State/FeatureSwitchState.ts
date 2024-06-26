@@ -68,6 +68,7 @@ export default class FeatureSwitchState extends OsmConnectionFeatureSwitches {
     public readonly osmApiTileSize: UIEventSource<number>
     public readonly backgroundLayerId: UIEventSource<string>
     public readonly featureSwitchMorePrivacy: UIEventSource<boolean>
+    public readonly featureSwitchLayerDefault: UIEventSource<boolean>
 
     public constructor(layoutToUse?: LayoutConfig) {
         super()
@@ -234,5 +235,9 @@ export default class FeatureSwitchState extends OsmConnectionFeatureSwitches {
             layoutToUse?.defaultBackgroundId,
             "The id of the background layer to start with"
         )
+
+        this.featureSwitchLayerDefault = QueryParameters.GetBooleanQueryParameter("fs-layers-enabled",true,
+            "If set to false, all layers will be disabled - except the explicitly enabled layers"
+            )
     }
 }

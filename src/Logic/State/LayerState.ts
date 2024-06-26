@@ -1,4 +1,4 @@
-import { UIEventSource } from "../UIEventSource"
+import { Store, UIEventSource } from "../UIEventSource"
 import { GlobalFilter } from "../../Models/GlobalFilter"
 import FilteredLayer from "../../Models/FilteredLayer"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
@@ -32,15 +32,16 @@ export default class LayerState {
      *
      * @param osmConnection
      * @param layers
-     * @param context: the context, probably the name of the theme. Used to disambiguate the upstream user preference
+     * @param context
+     * @param layersEnabledByDefault
      */
-    constructor(osmConnection: OsmConnection, layers: LayerConfig[], context: string) {
+    constructor(osmConnection: OsmConnection, layers: LayerConfig[], context: string, layersEnabledByDefault: Store<boolean>) {
         this.osmConnection = osmConnection
         const filteredLayers = new Map()
         for (const layer of layers) {
             filteredLayers.set(
                 layer.id,
-                FilteredLayer.initLinkedState(layer, context, this.osmConnection)
+                FilteredLayer.initLinkedState(layer, context, this.osmConnection, layersEnabledByDefault)
             )
         }
         this.filteredLayers = filteredLayers

@@ -202,7 +202,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
         )
 
         const self = this
-        this.layerState = new LayerState(this.osmConnection, layout.layers, layout.id)
+        this.layerState = new LayerState(this.osmConnection, layout.layers, layout.id, this.featureSwitches.featureSwitchLayerDefault)
 
         {
             const overlayLayerStates = new Map<string, { isDisplayed: UIEventSource<boolean> }>()
