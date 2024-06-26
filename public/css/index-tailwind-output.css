@@ -7150,16 +7150,17 @@ svg.apply-fill path {
     margin-right: 0.25rem;
   }
 
+  .sm\:mx-2 {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
   .sm\:mt-2 {
     margin-top: 0.5rem;
   }
 
   .sm\:mr-1 {
     margin-right: 0.25rem;
-  }
-
-  .sm\:mr-2 {
-    margin-right: 0.5rem;
   }
 
   .sm\:mb-0 {
@@ -7180,6 +7181,10 @@ svg.apply-fill path {
 
   .sm\:h-24 {
     height: 6rem;
+  }
+
+  .sm\:h-11 {
+    height: 2.75rem;
   }
 
   .sm\:h-64 {
@@ -7204,6 +7209,10 @@ svg.apply-fill path {
 
   .sm\:w-1\/2 {
     width: 50%;
+  }
+
+  .sm\:w-11 {
+    width: 2.75rem;
   }
 
   .sm\:w-auto {
@@ -7317,6 +7326,11 @@ svg.apply-fill path {
   .md\:mx-2 {
     margin-left: 0.5rem;
     margin-right: 0.5rem;
+  }
+
+  .md\:mx-4 {
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
 
   .md\:mt-5 {
