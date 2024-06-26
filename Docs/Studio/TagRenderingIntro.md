@@ -15,7 +15,7 @@ In OpenStreetMap, this is encoded with the tag `lit=yes` or `lit=no`. We might w
 
 This is what this will look like in the interface:
 
-<img class="w-1/2" src="../../public/assets/docs/PredefinedOption.png"/>
+<img class="h-fit" src="../../public/assets/docs/PredefinedOption.png"/>
 
 # Substituting attributes
 
@@ -52,8 +52,8 @@ A text field and predefined options can be combined. The contributor can then ch
 
 One can set a question to allow multiple answers. This works with predefined options or a freeform text field.
 
-<img  class="w-1/2" src="../../public/assets/docs/QuestionMulti.png"/>
+<img  class="w-1/2 h-fit" src="../../public/assets/docs/QuestionMulti.png"/>
 
 Note that these will be rendered as a list:
 
-<img class="w-1/2" src="../../public/assets/docs/RenderMulti.png"/>
+<img class="w-1/2 h-fit" src="../../public/assets/docs/RenderMulti.png"/>

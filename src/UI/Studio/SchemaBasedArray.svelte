@@ -10,11 +10,15 @@
   import ShowConversionMessage from "./ShowConversionMessage.svelte"
   import Markdown from "../Base/Markdown.svelte"
   import AccordionSingle from "../Flowbite/AccordionSingle.svelte"
+  import Icon from "../Map/Icon.svelte"
+  import Tr from "../Base/Tr.svelte"
+  import Translations from "../i18n/Translations"
 
   export let state: EditLayerState
   export let schema: ConfigMeta
 
   let title = schema.path.at(-1)
+  console.log(">>>", schema)
   let singular = title
   if (title?.endsWith("s")) {
     singular = title.slice(0, title.length - 1)
@@ -92,6 +96,28 @@
     currentValue.data.splice(target, 0, x)
     currentValue.ping()
   }
+
+  function genTitle(value: any, singular: string, i: number) {
+    if (schema.hints.title) {
+      return Function("value", "return " + schema.hints.title)(value)
+    }
+    return `${singular} ${i}`
+  }
+
+  let genIconF: (x: any) => ({ icon: string, color: string }) = <any>Function("value", "return " + schema.hints.icon)
+  console.log("Icon lambda is", schema.hints.icon, path, genIconF("test"))
+
+  function genIcon(value: any): string {
+    return genIconF(value)?.icon
+  }
+
+  function genColor(value: any): string {
+    if (!schema.hints.icon) {
+      return undefined
+    }
+    return genIconF(value)?.color
+  }
+
 </script>
 
 <div class="pl-2">
@@ -126,11 +152,22 @@
     {/each}
   {:else}
     {#each $currentValue as value, i}
-      <AccordionSingle>
+      <AccordionSingle expanded={false}>
         <span slot="header">
           {#if !isTagRenderingBlock}
             <div class="flex items-center justify-between">
-              <h3 class="m-0">{singular} {i}</h3>
+              <h3 class="m-0 flex">
+                {#if schema.hints.icon}
+                  <Icon clss="w-6 h-6" icon={genIcon(value)} color={genColor(value)} />
+                {/if}
+                {singular} {i}
+
+                {#if schema.hints.title}
+                  <div class="subtle ml-2">
+                    <Tr t={Translations.T(genTitle(value, singular, i))}/>
+                  </div>
+                  {/if}
+              </h3>
               <button
                 class="h-fit w-fit rounded-full border border-black p-1"
                 on:click={() => {
@@ -140,6 +177,10 @@
                 <TrashIcon class="h-4 w-4" />
               </button>
             </div>
+            {:else if typeof value === "string"}
+            Builtin: <b>{value}</b>
+            {:else}
+            <Tr cls="font-bold" t={Translations.T(value.question ?? value.render)}/>
           {/if}
         </span>
         <div class="normal-background p-2">

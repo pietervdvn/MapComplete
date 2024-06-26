@@ -65,10 +65,8 @@
 </script>
 
 <div class="flex">
-  <div class="interactive border-interactive m-4 flex w-full flex-col">
-    {#if $id}
-      TagRendering {$id}
-    {/if}
+  <div class="m-4 flex w-full flex-col">
+
     <NextButton clss="primary" on:click={() => state.highlightedItem.setData({ path, schema })}>
       {#if schema.hints.question}
         {schema.hints.question}

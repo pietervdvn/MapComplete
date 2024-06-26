@@ -183,18 +183,18 @@
     state = "editing_layer"
   }
 
-  async function selectStateBasedOnHash() {
+  async function selectStateBasedOnHash(uid: number) {
     const hash = Hash.hash.data
     if (!hash) {
       return
     }
-    console.log("Selecting state based on ", hash)
+    console.log("Selecting state based on ", hash, uid)
     const [mode, id, tab] = hash.split("/")
     // Not really an event, we just set the 'detail'
     const event = {
       detail: {
         id,
-        owner: uid.data,
+        owner: uid,
       },
     }
     const statePromise: Promise<EditJsonState<any>> =
@@ -203,7 +203,9 @@
     state.selectedTab.setData(Number(tab))
   }
 
-  selectStateBasedOnHash()
+  uid.AsPromise().then(
+    uid => selectStateBasedOnHash(uid)
+  )
 
   function backToStudio() {
     console.log("Back to studio")

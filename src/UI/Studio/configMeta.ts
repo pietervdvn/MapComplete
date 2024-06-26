@@ -23,7 +23,8 @@ export interface ConfigMeta {
         typesdefault?: string
         suggestions?: []
         title?: string
-        multianswer?: "true" | string
+        multianswer?: "true" | string,
+        icon?: string
     }
     required: boolean
     description: string

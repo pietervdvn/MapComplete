@@ -24,6 +24,7 @@ const metainfo = {
     suggestions:
         'a javascript expression generating mappings; executed in an environment which has access to `layers: Map<string, LayerConfig>` and `themes: Map<string, ThemeConfig>`. Should return an array of type `{if: \'value=*\', then: string}[]`. Example: `return Array.from(layers.keys()).map(key => ({if: "value="+key, then: key+" - "+layers.get(key).description}))`. This code is executed at compile time, so no CSP is needed  ',
     title: "a title that is given to a MultiType",
+    icon: "The icon that should be shown, a function body from a function which receives one argument, namely `value`. Value is the entire object when used in a list",
     multianswer: "set to 'true' if multiple options should be selectable",
 }
 

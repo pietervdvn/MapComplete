@@ -403,7 +403,7 @@
         "type": "string"
       }
     ],
-    "description": "An icon supporting this mapping; typically shown pretty small.\nThis can be used to show a 'phone'-icon next to the phone number"
+    "description": "An icon supporting this mapping; typically shown pretty small.\nThis can be used to show a e.g. 'phone'-icon next to the phone number\nThis supports patterns, you can e.g. have `close:red;some/other/icon.svg`"
   },
   {
     "path": [

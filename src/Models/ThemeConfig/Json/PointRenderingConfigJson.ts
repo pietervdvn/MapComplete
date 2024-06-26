@@ -52,6 +52,8 @@ export default interface PointRenderingConfigJson {
      * - ...
      *
      * As a result, on could use a generic icon (`pin`, `circle`, `square`) with a color, then overlay it with a specific icon.
+     * icon: value
+     * title: value.icon
      */
     marker?: IconConfigJson[]
 

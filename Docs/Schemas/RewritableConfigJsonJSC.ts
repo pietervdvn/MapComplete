@@ -385,7 +385,7 @@ export default {
                 ]
               },
               "icon": {
-                "description": "question: What icon should be added to this mapping?\nifunset: Do not show an extra icon next to the render value\n\nAn icon supporting this mapping; typically shown pretty small.\nThis can be used to show a 'phone'-icon next to the phone number\ninline: <img src='{icon}' class=\"w-8 h-8\" /> {icon}\nType: icon",
+                "description": "question: What icon should be added to this mapping?\nifunset: Do not show an extra icon next to the render value\n\nAn icon supporting this mapping; typically shown pretty small.\nThis can be used to show a e.g. 'phone'-icon next to the phone number\n\nThis supports patterns, you can e.g. have `close:red;some/other/icon.svg`\n\ninline: <img src='{icon}' class=\"w-8 h-8\" /> {icon}\nType: icon",
                 "anyOf": [
                   {
                     "type": "object",

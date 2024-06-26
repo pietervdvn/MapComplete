@@ -311,6 +311,7 @@ export interface LayerConfigJson {
      *</div>
      *
      * group: presets
+     * title: value.title
      */
     presets?: {
         /**

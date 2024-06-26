@@ -1197,7 +1197,7 @@
                           ]
                         },
                         "icon": {
-                          "description": "question: What icon should be added to this mapping?\nifunset: Do not show an extra icon next to the render value\n\nAn icon supporting this mapping; typically shown pretty small.\nThis can be used to show a 'phone'-icon next to the phone number\ninline: <img src='{icon}' class=\"w-8 h-8\" /> {icon}\nType: icon",
+                          "description": "question: What icon should be added to this mapping?\nifunset: Do not show an extra icon next to the render value\n\nAn icon supporting this mapping; typically shown pretty small.\nThis can be used to show a e.g. 'phone'-icon next to the phone number\n\nThis supports patterns, you can e.g. have `close:red;some/other/icon.svg`\n\ninline: <img src='{icon}' class=\"w-8 h-8\" /> {icon}\nType: icon",
                           "anyOf": [
                             {
                               "type": "object",
@@ -1327,7 +1327,7 @@
             "type": "boolean"
           },
           "presets": {
-            "description": "<div class='flex'>\n    <div>\nPresets for this layer.\n\nA preset consists of one or more attributes (tags), a title and optionally a description and optionally example images.\n\nWhen the contributor wishes to add a point to OpenStreetMap, they'll:\n\n1. Press the 'add new point'-button\n2. Choose a preset from the list of all presets\n3. Confirm the choice. In this step, the `description` (if set) and `exampleImages` (if given) will be shown\n4. Confirm the location\n5. A new point will be created with the attributes that were defined in the preset\n\nIf no presets are defined, the button which invites to add a new preset will not be shown.\n</div>\n<video controls autoplay muted src='./Docs/Screenshots/AddNewItemScreencast.webm' class='w-64'/>\n</div>\n\ngroup: presets",
+            "description": "<div class='flex'>\n    <div>\nPresets for this layer.\n\nA preset consists of one or more attributes (tags), a title and optionally a description and optionally example images.\n\nWhen the contributor wishes to add a point to OpenStreetMap, they'll:\n\n1. Press the 'add new point'-button\n2. Choose a preset from the list of all presets\n3. Confirm the choice. In this step, the `description` (if set) and `exampleImages` (if given) will be shown\n4. Confirm the location\n5. A new point will be created with the attributes that were defined in the preset\n\nIf no presets are defined, the button which invites to add a new preset will not be shown.\n</div>\n<video controls autoplay muted src='./Docs/Screenshots/AddNewItemScreencast.webm' class='w-64'/>\n</div>\n\ngroup: presets\ntitle: value.title",
             "type": "array",
             "items": {
               "type": "object",
@@ -2441,7 +2441,7 @@
                   ]
                 },
                 "icon": {
-                  "description": "question: What icon should be added to this mapping?\nifunset: Do not show an extra icon next to the render value\n\nAn icon supporting this mapping; typically shown pretty small.\nThis can be used to show a 'phone'-icon next to the phone number\ninline: <img src='{icon}' class=\"w-8 h-8\" /> {icon}\nType: icon",
+                  "description": "question: What icon should be added to this mapping?\nifunset: Do not show an extra icon next to the render value\n\nAn icon supporting this mapping; typically shown pretty small.\nThis can be used to show a e.g. 'phone'-icon next to the phone number\n\nThis supports patterns, you can e.g. have `close:red;some/other/icon.svg`\n\ninline: <img src='{icon}' class=\"w-8 h-8\" /> {icon}\nType: icon",
                   "anyOf": [
                     {
                       "type": "object",
@@ -2924,7 +2924,7 @@
         "type": "string"
       }
     ],
-    "description": "An icon supporting this mapping; typically shown pretty small.\nThis can be used to show a 'phone'-icon next to the phone number"
+    "description": "An icon supporting this mapping; typically shown pretty small.\nThis can be used to show a e.g. 'phone'-icon next to the phone number\nThis supports patterns, you can e.g. have `close:red;some/other/icon.svg`"
   },
   {
     "path": [
@@ -3501,7 +3501,7 @@
         "type": "string"
       }
     ],
-    "description": "An icon supporting this mapping; typically shown pretty small.\nThis can be used to show a 'phone'-icon next to the phone number"
+    "description": "An icon supporting this mapping; typically shown pretty small.\nThis can be used to show a e.g. 'phone'-icon next to the phone number\nThis supports patterns, you can e.g. have `close:red;some/other/icon.svg`"
   },
   {
     "path": [
@@ -3631,7 +3631,10 @@
       "marker"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "title": "value.icon",
+      "icon": "value"
+    },
     "type": "array",
     "description": "The marker for an element.\nNote that this also defines the icon for this layer (rendered with the overpass-tags) <i>and</i> the icon in the presets.\nThe result of the icon is rendered as follows:\n- The first icon is rendered on the map\n- The second entry is overlayed on top of it\n- ...\nAs a result, on could use a generic icon (`pin`, `circle`, `square`) with a color, then overlay it with a specific icon."
   },
@@ -4438,7 +4441,7 @@
                   ]
                 },
                 "icon": {
-                  "description": "question: What icon should be added to this mapping?\nifunset: Do not show an extra icon next to the render value\n\nAn icon supporting this mapping; typically shown pretty small.\nThis can be used to show a 'phone'-icon next to the phone number\ninline: <img src='{icon}' class=\"w-8 h-8\" /> {icon}\nType: icon",
+                  "description": "question: What icon should be added to this mapping?\nifunset: Do not show an extra icon next to the render value\n\nAn icon supporting this mapping; typically shown pretty small.\nThis can be used to show a e.g. 'phone'-icon next to the phone number\n\nThis supports patterns, you can e.g. have `close:red;some/other/icon.svg`\n\ninline: <img src='{icon}' class=\"w-8 h-8\" /> {icon}\nType: icon",
                   "anyOf": [
                     {
                       "type": "object",
@@ -4937,7 +4940,7 @@
         "type": "string"
       }
     ],
-    "description": "An icon supporting this mapping; typically shown pretty small.\nThis can be used to show a 'phone'-icon next to the phone number"
+    "description": "An icon supporting this mapping; typically shown pretty small.\nThis can be used to show a e.g. 'phone'-icon next to the phone number\nThis supports patterns, you can e.g. have `close:red;some/other/icon.svg`"
   },
   {
     "path": [
@@ -5161,7 +5164,7 @@
                   ]
                 },
                 "icon": {
-                  "description": "question: What icon should be added to this mapping?\nifunset: Do not show an extra icon next to the render value\n\nAn icon supporting this mapping; typically shown pretty small.\nThis can be used to show a 'phone'-icon next to the phone number\ninline: <img src='{icon}' class=\"w-8 h-8\" /> {icon}\nType: icon",
+                  "description": "question: What icon should be added to this mapping?\nifunset: Do not show an extra icon next to the render value\n\nAn icon supporting this mapping; typically shown pretty small.\nThis can be used to show a e.g. 'phone'-icon next to the phone number\n\nThis supports patterns, you can e.g. have `close:red;some/other/icon.svg`\n\ninline: <img src='{icon}' class=\"w-8 h-8\" /> {icon}\nType: icon",
                   "anyOf": [
                     {
                       "type": "object",
@@ -5660,7 +5663,7 @@
         "type": "string"
       }
     ],
-    "description": "An icon supporting this mapping; typically shown pretty small.\nThis can be used to show a 'phone'-icon next to the phone number"
+    "description": "An icon supporting this mapping; typically shown pretty small.\nThis can be used to show a e.g. 'phone'-icon next to the phone number\nThis supports patterns, you can e.g. have `close:red;some/other/icon.svg`"
   },
   {
     "path": [
@@ -5862,7 +5865,7 @@
                   ]
                 },
                 "icon": {
-                  "description": "question: What icon should be added to this mapping?\nifunset: Do not show an extra icon next to the render value\n\nAn icon supporting this mapping; typically shown pretty small.\nThis can be used to show a 'phone'-icon next to the phone number\ninline: <img src='{icon}' class=\"w-8 h-8\" /> {icon}\nType: icon",
+                  "description": "question: What icon should be added to this mapping?\nifunset: Do not show an extra icon next to the render value\n\nAn icon supporting this mapping; typically shown pretty small.\nThis can be used to show a e.g. 'phone'-icon next to the phone number\n\nThis supports patterns, you can e.g. have `close:red;some/other/icon.svg`\n\ninline: <img src='{icon}' class=\"w-8 h-8\" /> {icon}\nType: icon",
                   "anyOf": [
                     {
                       "type": "object",
@@ -6361,7 +6364,7 @@
         "type": "string"
       }
     ],
-    "description": "An icon supporting this mapping; typically shown pretty small.\nThis can be used to show a 'phone'-icon next to the phone number"
+    "description": "An icon supporting this mapping; typically shown pretty small.\nThis can be used to show a e.g. 'phone'-icon next to the phone number\nThis supports patterns, you can e.g. have `close:red;some/other/icon.svg`"
   },
   {
     "path": [
@@ -6565,7 +6568,7 @@
                   ]
                 },
                 "icon": {
-                  "description": "question: What icon should be added to this mapping?\nifunset: Do not show an extra icon next to the render value\n\nAn icon supporting this mapping; typically shown pretty small.\nThis can be used to show a 'phone'-icon next to the phone number\ninline: <img src='{icon}' class=\"w-8 h-8\" /> {icon}\nType: icon",
+                  "description": "question: What icon should be added to this mapping?\nifunset: Do not show an extra icon next to the render value\n\nAn icon supporting this mapping; typically shown pretty small.\nThis can be used to show a e.g. 'phone'-icon next to the phone number\n\nThis supports patterns, you can e.g. have `close:red;some/other/icon.svg`\n\ninline: <img src='{icon}' class=\"w-8 h-8\" /> {icon}\nType: icon",
                   "anyOf": [
                     {
                       "type": "object",
@@ -7064,7 +7067,7 @@
         "type": "string"
       }
     ],
-    "description": "An icon supporting this mapping; typically shown pretty small.\nThis can be used to show a 'phone'-icon next to the phone number"
+    "description": "An icon supporting this mapping; typically shown pretty small.\nThis can be used to show a e.g. 'phone'-icon next to the phone number\nThis supports patterns, you can e.g. have `close:red;some/other/icon.svg`"
   },
   {
     "path": [
@@ -7269,7 +7272,7 @@
                   ]
                 },
                 "icon": {
-                  "description": "question: What icon should be added to this mapping?\nifunset: Do not show an extra icon next to the render value\n\nAn icon supporting this mapping; typically shown pretty small.\nThis can be used to show a 'phone'-icon next to the phone number\ninline: <img src='{icon}' class=\"w-8 h-8\" /> {icon}\nType: icon",
+                  "description": "question: What icon should be added to this mapping?\nifunset: Do not show an extra icon next to the render value\n\nAn icon supporting this mapping; typically shown pretty small.\nThis can be used to show a e.g. 'phone'-icon next to the phone number\n\nThis supports patterns, you can e.g. have `close:red;some/other/icon.svg`\n\ninline: <img src='{icon}' class=\"w-8 h-8\" /> {icon}\nType: icon",
                   "anyOf": [
                     {
                       "type": "object",
@@ -7768,7 +7771,7 @@
         "type": "string"
       }
     ],
-    "description": "An icon supporting this mapping; typically shown pretty small.\nThis can be used to show a 'phone'-icon next to the phone number"
+    "description": "An icon supporting this mapping; typically shown pretty small.\nThis can be used to show a e.g. 'phone'-icon next to the phone number\nThis supports patterns, you can e.g. have `close:red;some/other/icon.svg`"
   },
   {
     "path": [
@@ -7978,7 +7981,7 @@
                   ]
                 },
                 "icon": {
-                  "description": "question: What icon should be added to this mapping?\nifunset: Do not show an extra icon next to the render value\n\nAn icon supporting this mapping; typically shown pretty small.\nThis can be used to show a 'phone'-icon next to the phone number\ninline: <img src='{icon}' class=\"w-8 h-8\" /> {icon}\nType: icon",
+                  "description": "question: What icon should be added to this mapping?\nifunset: Do not show an extra icon next to the render value\n\nAn icon supporting this mapping; typically shown pretty small.\nThis can be used to show a e.g. 'phone'-icon next to the phone number\n\nThis supports patterns, you can e.g. have `close:red;some/other/icon.svg`\n\ninline: <img src='{icon}' class=\"w-8 h-8\" /> {icon}\nType: icon",
                   "anyOf": [
                     {
                       "type": "object",
@@ -8477,7 +8480,7 @@
         "type": "string"
       }
     ],
-    "description": "An icon supporting this mapping; typically shown pretty small.\nThis can be used to show a 'phone'-icon next to the phone number"
+    "description": "An icon supporting this mapping; typically shown pretty small.\nThis can be used to show a e.g. 'phone'-icon next to the phone number\nThis supports patterns, you can e.g. have `close:red;some/other/icon.svg`"
   },
   {
     "path": [
@@ -8682,7 +8685,7 @@
                   ]
                 },
                 "icon": {
-                  "description": "question: What icon should be added to this mapping?\nifunset: Do not show an extra icon next to the render value\n\nAn icon supporting this mapping; typically shown pretty small.\nThis can be used to show a 'phone'-icon next to the phone number\ninline: <img src='{icon}' class=\"w-8 h-8\" /> {icon}\nType: icon",
+                  "description": "question: What icon should be added to this mapping?\nifunset: Do not show an extra icon next to the render value\n\nAn icon supporting this mapping; typically shown pretty small.\nThis can be used to show a e.g. 'phone'-icon next to the phone number\n\nThis supports patterns, you can e.g. have `close:red;some/other/icon.svg`\n\ninline: <img src='{icon}' class=\"w-8 h-8\" /> {icon}\nType: icon",
                   "anyOf": [
                     {
                       "type": "object",
@@ -9181,7 +9184,7 @@
         "type": "string"
       }
     ],
-    "description": "An icon supporting this mapping; typically shown pretty small.\nThis can be used to show a 'phone'-icon next to the phone number"
+    "description": "An icon supporting this mapping; typically shown pretty small.\nThis can be used to show a e.g. 'phone'-icon next to the phone number\nThis supports patterns, you can e.g. have `close:red;some/other/icon.svg`"
   },
   {
     "path": [
@@ -9386,7 +9389,7 @@
                   ]
                 },
                 "icon": {
-                  "description": "question: What icon should be added to this mapping?\nifunset: Do not show an extra icon next to the render value\n\nAn icon supporting this mapping; typically shown pretty small.\nThis can be used to show a 'phone'-icon next to the phone number\ninline: <img src='{icon}' class=\"w-8 h-8\" /> {icon}\nType: icon",
+                  "description": "question: What icon should be added to this mapping?\nifunset: Do not show an extra icon next to the render value\n\nAn icon supporting this mapping; typically shown pretty small.\nThis can be used to show a e.g. 'phone'-icon next to the phone number\n\nThis supports patterns, you can e.g. have `close:red;some/other/icon.svg`\n\ninline: <img src='{icon}' class=\"w-8 h-8\" /> {icon}\nType: icon",
                   "anyOf": [
                     {
                       "type": "object",
@@ -9885,7 +9888,7 @@
         "type": "string"
       }
     ],
-    "description": "An icon supporting this mapping; typically shown pretty small.\nThis can be used to show a 'phone'-icon next to the phone number"
+    "description": "An icon supporting this mapping; typically shown pretty small.\nThis can be used to show a e.g. 'phone'-icon next to the phone number\nThis supports patterns, you can e.g. have `close:red;some/other/icon.svg`"
   },
   {
     "path": [
@@ -10097,7 +10100,7 @@
                   ]
                 },
                 "icon": {
-                  "description": "question: What icon should be added to this mapping?\nifunset: Do not show an extra icon next to the render value\n\nAn icon supporting this mapping; typically shown pretty small.\nThis can be used to show a 'phone'-icon next to the phone number\ninline: <img src='{icon}' class=\"w-8 h-8\" /> {icon}\nType: icon",
+                  "description": "question: What icon should be added to this mapping?\nifunset: Do not show an extra icon next to the render value\n\nAn icon supporting this mapping; typically shown pretty small.\nThis can be used to show a e.g. 'phone'-icon next to the phone number\n\nThis supports patterns, you can e.g. have `close:red;some/other/icon.svg`\n\ninline: <img src='{icon}' class=\"w-8 h-8\" /> {icon}\nType: icon",
                   "anyOf": [
                     {
                       "type": "object",
@@ -10600,7 +10603,7 @@
         "type": "string"
       }
     ],
-    "description": "An icon supporting this mapping; typically shown pretty small.\nThis can be used to show a 'phone'-icon next to the phone number"
+    "description": "An icon supporting this mapping; typically shown pretty small.\nThis can be used to show a e.g. 'phone'-icon next to the phone number\nThis supports patterns, you can e.g. have `close:red;some/other/icon.svg`"
   },
   {
     "path": [
@@ -10813,7 +10816,7 @@
                   ]
                 },
                 "icon": {
-                  "description": "question: What icon should be added to this mapping?\nifunset: Do not show an extra icon next to the render value\n\nAn icon supporting this mapping; typically shown pretty small.\nThis can be used to show a 'phone'-icon next to the phone number\ninline: <img src='{icon}' class=\"w-8 h-8\" /> {icon}\nType: icon",
+                  "description": "question: What icon should be added to this mapping?\nifunset: Do not show an extra icon next to the render value\n\nAn icon supporting this mapping; typically shown pretty small.\nThis can be used to show a e.g. 'phone'-icon next to the phone number\n\nThis supports patterns, you can e.g. have `close:red;some/other/icon.svg`\n\ninline: <img src='{icon}' class=\"w-8 h-8\" /> {icon}\nType: icon",
                   "anyOf": [
                     {
                       "type": "object",
@@ -11316,7 +11319,7 @@
         "type": "string"
       }
     ],
-    "description": "An icon supporting this mapping; typically shown pretty small.\nThis can be used to show a 'phone'-icon next to the phone number"
+    "description": "An icon supporting this mapping; typically shown pretty small.\nThis can be used to show a e.g. 'phone'-icon next to the phone number\nThis supports patterns, you can e.g. have `close:red;some/other/icon.svg`"
   },
   {
     "path": [
@@ -12221,7 +12224,8 @@
     ],
     "required": false,
     "hints": {
-      "group": "presets"
+      "group": "presets",
+      "title": "value.title"
     },
     "type": "array",
     "description": "<div class='flex'>\n    <div>\nPresets for this layer.\nA preset consists of one or more attributes (tags), a title and optionally a description and optionally example images.\nWhen the contributor wishes to add a point to OpenStreetMap, they'll:\n1. Press the 'add new point'-button\n2. Choose a preset from the list of all presets\n3. Confirm the choice. In this step, the `description` (if set) and `exampleImages` (if given) will be shown\n4. Confirm the location\n5. A new point will be created with the attributes that were defined in the preset\nIf no presets are defined, the button which invites to add a new preset will not be shown.\n</div>\n<video controls autoplay muted src='./Docs/Screenshots/AddNewItemScreencast.webm' class='w-64'/>\n</div>"
@@ -22875,7 +22879,7 @@
                   ]
                 },
                 "icon": {
-                  "description": "question: What icon should be added to this mapping?\nifunset: Do not show an extra icon next to the render value\n\nAn icon supporting this mapping; typically shown pretty small.\nThis can be used to show a 'phone'-icon next to the phone number\ninline: <img src='{icon}' class=\"w-8 h-8\" /> {icon}\nType: icon",
+                  "description": "question: What icon should be added to this mapping?\nifunset: Do not show an extra icon next to the render value\n\nAn icon supporting this mapping; typically shown pretty small.\nThis can be used to show a e.g. 'phone'-icon next to the phone number\n\nThis supports patterns, you can e.g. have `close:red;some/other/icon.svg`\n\ninline: <img src='{icon}' class=\"w-8 h-8\" /> {icon}\nType: icon",
                   "anyOf": [
                     {
                       "type": "object",
@@ -23374,7 +23378,7 @@
         "type": "string"
       }
     ],
-    "description": "An icon supporting this mapping; typically shown pretty small.\nThis can be used to show a 'phone'-icon next to the phone number"
+    "description": "An icon supporting this mapping; typically shown pretty small.\nThis can be used to show a e.g. 'phone'-icon next to the phone number\nThis supports patterns, you can e.g. have `close:red;some/other/icon.svg`"
   },
   {
     "path": [
@@ -23974,7 +23978,7 @@
         "type": "string"
       }
     ],
-    "description": "An icon supporting this mapping; typically shown pretty small.\nThis can be used to show a 'phone'-icon next to the phone number"
+    "description": "An icon supporting this mapping; typically shown pretty small.\nThis can be used to show a e.g. 'phone'-icon next to the phone number\nThis supports patterns, you can e.g. have `close:red;some/other/icon.svg`"
   },
   {
     "path": [
@@ -24112,7 +24116,10 @@
       "marker"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "title": "value.icon",
+      "icon": "value"
+    },
     "type": "array",
     "description": "The marker for an element.\nNote that this also defines the icon for this layer (rendered with the overpass-tags) <i>and</i> the icon in the presets.\nThe result of the icon is rendered as follows:\n- The first icon is rendered on the map\n- The second entry is overlayed on top of it\n- ...\nAs a result, on could use a generic icon (`pin`, `circle`, `square`) with a color, then overlay it with a specific icon."
   },
@@ -24937,7 +24944,7 @@
                   ]
                 },
                 "icon": {
-                  "description": "question: What icon should be added to this mapping?\nifunset: Do not show an extra icon next to the render value\n\nAn icon supporting this mapping; typically shown pretty small.\nThis can be used to show a 'phone'-icon next to the phone number\ninline: <img src='{icon}' class=\"w-8 h-8\" /> {icon}\nType: icon",
+                  "description": "question: What icon should be added to this mapping?\nifunset: Do not show an extra icon next to the render value\n\nAn icon supporting this mapping; typically shown pretty small.\nThis can be used to show a e.g. 'phone'-icon next to the phone number\n\nThis supports patterns, you can e.g. have `close:red;some/other/icon.svg`\n\ninline: <img src='{icon}' class=\"w-8 h-8\" /> {icon}\nType: icon",
                   "anyOf": [
                     {
                       "type": "object",
@@ -25452,7 +25459,7 @@
         "type": "string"
       }
     ],
-    "description": "An icon supporting this mapping; typically shown pretty small.\nThis can be used to show a 'phone'-icon next to the phone number"
+    "description": "An icon supporting this mapping; typically shown pretty small.\nThis can be used to show a e.g. 'phone'-icon next to the phone number\nThis supports patterns, you can e.g. have `close:red;some/other/icon.svg`"
   },
   {
     "path": [
@@ -25681,7 +25688,7 @@
                   ]
                 },
                 "icon": {
-                  "description": "question: What icon should be added to this mapping?\nifunset: Do not show an extra icon next to the render value\n\nAn icon supporting this mapping; typically shown pretty small.\nThis can be used to show a 'phone'-icon next to the phone number\ninline: <img src='{icon}' class=\"w-8 h-8\" /> {icon}\nType: icon",
+                  "description": "question: What icon should be added to this mapping?\nifunset: Do not show an extra icon next to the render value\n\nAn icon supporting this mapping; typically shown pretty small.\nThis can be used to show a e.g. 'phone'-icon next to the phone number\n\nThis supports patterns, you can e.g. have `close:red;some/other/icon.svg`\n\ninline: <img src='{icon}' class=\"w-8 h-8\" /> {icon}\nType: icon",
                   "anyOf": [
                     {
                       "type": "object",
@@ -26196,7 +26203,7 @@
         "type": "string"
       }
     ],
-    "description": "An icon supporting this mapping; typically shown pretty small.\nThis can be used to show a 'phone'-icon next to the phone number"
+    "description": "An icon supporting this mapping; typically shown pretty small.\nThis can be used to show a e.g. 'phone'-icon next to the phone number\nThis supports patterns, you can e.g. have `close:red;some/other/icon.svg`"
   },
   {
     "path": [
@@ -26403,7 +26410,7 @@
                   ]
                 },
                 "icon": {
-                  "description": "question: What icon should be added to this mapping?\nifunset: Do not show an extra icon next to the render value\n\nAn icon supporting this mapping; typically shown pretty small.\nThis can be used to show a 'phone'-icon next to the phone number\ninline: <img src='{icon}' class=\"w-8 h-8\" /> {icon}\nType: icon",
+                  "description": "question: What icon should be added to this mapping?\nifunset: Do not show an extra icon next to the render value\n\nAn icon supporting this mapping; typically shown pretty small.\nThis can be used to show a e.g. 'phone'-icon next to the phone number\n\nThis supports patterns, you can e.g. have `close:red;some/other/icon.svg`\n\ninline: <img src='{icon}' class=\"w-8 h-8\" /> {icon}\nType: icon",
                   "anyOf": [
                     {
                       "type": "object",
@@ -26918,7 +26925,7 @@
         "type": "string"
       }
     ],
-    "description": "An icon supporting this mapping; typically shown pretty small.\nThis can be used to show a 'phone'-icon next to the phone number"
+    "description": "An icon supporting this mapping; typically shown pretty small.\nThis can be used to show a e.g. 'phone'-icon next to the phone number\nThis supports patterns, you can e.g. have `close:red;some/other/icon.svg`"
   },
   {
     "path": [
@@ -27127,7 +27134,7 @@
                   ]
                 },
                 "icon": {
-                  "description": "question: What icon should be added to this mapping?\nifunset: Do not show an extra icon next to the render value\n\nAn icon supporting this mapping; typically shown pretty small.\nThis can be used to show a 'phone'-icon next to the phone number\ninline: <img src='{icon}' class=\"w-8 h-8\" /> {icon}\nType: icon",
+                  "description": "question: What icon should be added to this mapping?\nifunset: Do not show an extra icon next to the render value\n\nAn icon supporting this mapping; typically shown pretty small.\nThis can be used to show a e.g. 'phone'-icon next to the phone number\n\nThis supports patterns, you can e.g. have `close:red;some/other/icon.svg`\n\ninline: <img src='{icon}' class=\"w-8 h-8\" /> {icon}\nType: icon",
                   "anyOf": [
                     {
                       "type": "object",
@@ -27642,7 +27649,7 @@
         "type": "string"
       }
     ],
-    "description": "An icon supporting this mapping; typically shown pretty small.\nThis can be used to show a 'phone'-icon next to the phone number"
+    "description": "An icon supporting this mapping; typically shown pretty small.\nThis can be used to show a e.g. 'phone'-icon next to the phone number\nThis supports patterns, you can e.g. have `close:red;some/other/icon.svg`"
   },
   {
     "path": [
@@ -27852,7 +27859,7 @@
                   ]
                 },
                 "icon": {
-                  "description": "question: What icon should be added to this mapping?\nifunset: Do not show an extra icon next to the render value\n\nAn icon supporting this mapping; typically shown pretty small.\nThis can be used to show a 'phone'-icon next to the phone number\ninline: <img src='{icon}' class=\"w-8 h-8\" /> {icon}\nType: icon",
+                  "description": "question: What icon should be added to this mapping?\nifunset: Do not show an extra icon next to the render value\n\nAn icon supporting this mapping; typically shown pretty small.\nThis can be used to show a e.g. 'phone'-icon next to the phone number\n\nThis supports patterns, you can e.g. have `close:red;some/other/icon.svg`\n\ninline: <img src='{icon}' class=\"w-8 h-8\" /> {icon}\nType: icon",
                   "anyOf": [
                     {
                       "type": "object",
@@ -28367,7 +28374,7 @@
         "type": "string"
       }
     ],
-    "description": "An icon supporting this mapping; typically shown pretty small.\nThis can be used to show a 'phone'-icon next to the phone number"
+    "description": "An icon supporting this mapping; typically shown pretty small.\nThis can be used to show a e.g. 'phone'-icon next to the phone number\nThis supports patterns, you can e.g. have `close:red;some/other/icon.svg`"
   },
   {
     "path": [
@@ -28582,7 +28589,7 @@
                   ]
                 },
                 "icon": {
-                  "description": "question: What icon should be added to this mapping?\nifunset: Do not show an extra icon next to the render value\n\nAn icon supporting this mapping; typically shown pretty small.\nThis can be used to show a 'phone'-icon next to the phone number\ninline: <img src='{icon}' class=\"w-8 h-8\" /> {icon}\nType: icon",
+                  "description": "question: What icon should be added to this mapping?\nifunset: Do not show an extra icon next to the render value\n\nAn icon supporting this mapping; typically shown pretty small.\nThis can be used to show a e.g. 'phone'-icon next to the phone number\n\nThis supports patterns, you can e.g. have `close:red;some/other/icon.svg`\n\ninline: <img src='{icon}' class=\"w-8 h-8\" /> {icon}\nType: icon",
                   "anyOf": [
                     {
                       "type": "object",
@@ -29097,7 +29104,7 @@
         "type": "string"
       }
     ],
-    "description": "An icon supporting this mapping; typically shown pretty small.\nThis can be used to show a 'phone'-icon next to the phone number"
+    "description": "An icon supporting this mapping; typically shown pretty small.\nThis can be used to show a e.g. 'phone'-icon next to the phone number\nThis supports patterns, you can e.g. have `close:red;some/other/icon.svg`"
   },
   {
     "path": [
@@ -29307,7 +29314,7 @@
                   ]
                 },
                 "icon": {
-                  "description": "question: What icon should be added to this mapping?\nifunset: Do not show an extra icon next to the render value\n\nAn icon supporting this mapping; typically shown pretty small.\nThis can be used to show a 'phone'-icon next to the phone number\ninline: <img src='{icon}' class=\"w-8 h-8\" /> {icon}\nType: icon",
+                  "description": "question: What icon should be added to this mapping?\nifunset: Do not show an extra icon next to the render value\n\nAn icon supporting this mapping; typically shown pretty small.\nThis can be used to show a e.g. 'phone'-icon next to the phone number\n\nThis supports patterns, you can e.g. have `close:red;some/other/icon.svg`\n\ninline: <img src='{icon}' class=\"w-8 h-8\" /> {icon}\nType: icon",
                   "anyOf": [
                     {
                       "type": "object",
@@ -29822,7 +29829,7 @@
         "type": "string"
       }
     ],
-    "description": "An icon supporting this mapping; typically shown pretty small.\nThis can be used to show a 'phone'-icon next to the phone number"
+    "description": "An icon supporting this mapping; typically shown pretty small.\nThis can be used to show a e.g. 'phone'-icon next to the phone number\nThis supports patterns, you can e.g. have `close:red;some/other/icon.svg`"
   },
   {
     "path": [
@@ -30032,7 +30039,7 @@
                   ]
                 },
                 "icon": {
-                  "description": "question: What icon should be added to this mapping?\nifunset: Do not show an extra icon next to the render value\n\nAn icon supporting this mapping; typically shown pretty small.\nThis can be used to show a 'phone'-icon next to the phone number\ninline: <img src='{icon}' class=\"w-8 h-8\" /> {icon}\nType: icon",
+                  "description": "question: What icon should be added to this mapping?\nifunset: Do not show an extra icon next to the render value\n\nAn icon supporting this mapping; typically shown pretty small.\nThis can be used to show a e.g. 'phone'-icon next to the phone number\n\nThis supports patterns, you can e.g. have `close:red;some/other/icon.svg`\n\ninline: <img src='{icon}' class=\"w-8 h-8\" /> {icon}\nType: icon",
                   "anyOf": [
                     {
                       "type": "object",
@@ -30547,7 +30554,7 @@
         "type": "string"
       }
     ],
-    "description": "An icon supporting this mapping; typically shown pretty small.\nThis can be used to show a 'phone'-icon next to the phone number"
+    "description": "An icon supporting this mapping; typically shown pretty small.\nThis can be used to show a e.g. 'phone'-icon next to the phone number\nThis supports patterns, you can e.g. have `close:red;some/other/icon.svg`"
   },
   {
     "path": [
@@ -30764,7 +30771,7 @@
                   ]
                 },
                 "icon": {
-                  "description": "question: What icon should be added to this mapping?\nifunset: Do not show an extra icon next to the render value\n\nAn icon supporting this mapping; typically shown pretty small.\nThis can be used to show a 'phone'-icon next to the phone number\ninline: <img src='{icon}' class=\"w-8 h-8\" /> {icon}\nType: icon",
+                  "description": "question: What icon should be added to this mapping?\nifunset: Do not show an extra icon next to the render value\n\nAn icon supporting this mapping; typically shown pretty small.\nThis can be used to show a e.g. 'phone'-icon next to the phone number\n\nThis supports patterns, you can e.g. have `close:red;some/other/icon.svg`\n\ninline: <img src='{icon}' class=\"w-8 h-8\" /> {icon}\nType: icon",
                   "anyOf": [
                     {
                       "type": "object",
@@ -31283,7 +31290,7 @@
         "type": "string"
       }
     ],
-    "description": "An icon supporting this mapping; typically shown pretty small.\nThis can be used to show a 'phone'-icon next to the phone number"
+    "description": "An icon supporting this mapping; typically shown pretty small.\nThis can be used to show a e.g. 'phone'-icon next to the phone number\nThis supports patterns, you can e.g. have `close:red;some/other/icon.svg`"
   },
   {
     "path": [
@@ -31501,7 +31508,7 @@
                   ]
                 },
                 "icon": {
-                  "description": "question: What icon should be added to this mapping?\nifunset: Do not show an extra icon next to the render value\n\nAn icon supporting this mapping; typically shown pretty small.\nThis can be used to show a 'phone'-icon next to the phone number\ninline: <img src='{icon}' class=\"w-8 h-8\" /> {icon}\nType: icon",
+                  "description": "question: What icon should be added to this mapping?\nifunset: Do not show an extra icon next to the render value\n\nAn icon supporting this mapping; typically shown pretty small.\nThis can be used to show a e.g. 'phone'-icon next to the phone number\n\nThis supports patterns, you can e.g. have `close:red;some/other/icon.svg`\n\ninline: <img src='{icon}' class=\"w-8 h-8\" /> {icon}\nType: icon",
                   "anyOf": [
                     {
                       "type": "object",
@@ -32020,7 +32027,7 @@
         "type": "string"
       }
     ],
-    "description": "An icon supporting this mapping; typically shown pretty small.\nThis can be used to show a 'phone'-icon next to the phone number"
+    "description": "An icon supporting this mapping; typically shown pretty small.\nThis can be used to show a e.g. 'phone'-icon next to the phone number\nThis supports patterns, you can e.g. have `close:red;some/other/icon.svg`"
   },
   {
     "path": [
@@ -32963,7 +32970,8 @@
     ],
     "required": false,
     "hints": {
-      "group": "presets"
+      "group": "presets",
+      "title": "value.title"
     },
     "type": "array",
     "description": "<div class='flex'>\n    <div>\nPresets for this layer.\nA preset consists of one or more attributes (tags), a title and optionally a description and optionally example images.\nWhen the contributor wishes to add a point to OpenStreetMap, they'll:\n1. Press the 'add new point'-button\n2. Choose a preset from the list of all presets\n3. Confirm the choice. In this step, the `description` (if set) and `exampleImages` (if given) will be shown\n4. Confirm the location\n5. A new point will be created with the attributes that were defined in the preset\nIf no presets are defined, the button which invites to add a new preset will not be shown.\n</div>\n<video controls autoplay muted src='./Docs/Screenshots/AddNewItemScreencast.webm' class='w-64'/>\n</div>"

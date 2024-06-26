@@ -112,21 +112,21 @@ export default class Translations {
             }
         }
 
-        const langaugeCounts = {}
+        const languageCounts = {}
         for (const translation of tr) {
             for (const language in translation.translations) {
-                if (langaugeCounts[language] === undefined) {
-                    langaugeCounts[language] = 1
+                if (languageCounts[language] === undefined) {
+                    languageCounts[language] = 1
                 } else {
-                    langaugeCounts[language]++
+                    languageCounts[language]++
                 }
             }
         }
-        for (const language in langaugeCounts) {
+        for (const language in languageCounts) {
             console.log(
                 "Total translations in ",
                 language,
-                langaugeCounts[language],
+                languageCounts[language],
                 "/",
                 tr.length
             )
