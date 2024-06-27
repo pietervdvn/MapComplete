@@ -326,15 +326,12 @@ class GenerateLayouts extends Script {
         }
     ): Promise<string> {
         const apiUrls: string[] = [
-            ...Constants.defaultOverpassUrls,
+            ...Constants.allServers,
             Constants.countryCoderEndpoint,
             Constants.nominatimEndpoint,
             "https://www.openstreetmap.org",
             "https://api.openstreetmap.org",
             "https://pietervdvn.goatcounter.com",
-            "https://cache.mapcomplete.org",
-            "https://proxy.mapcomplete.org",
-            "https://proxy0.mapcomplete.org",
         ].concat(...(await this.eliUrls()))
 
         SpecialVisualizations.specialVisualizations.forEach((sv) => {
