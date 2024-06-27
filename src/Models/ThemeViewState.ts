@@ -210,7 +210,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 const isDisplayed = QueryParameters.GetBooleanQueryParameter(
                     "overlay-" + rasterInfo.id,
                     rasterInfo.defaultState ?? true,
-                    "Wether or not overlayer layer " + rasterInfo.id + " is shown"
+                    "Whether or not overlayer layer " + rasterInfo.id + " is shown"
                 )
                 const state = { isDisplayed }
                 overlayLayerStates.set(rasterInfo.id, state)
@@ -220,8 +220,8 @@ export default class ThemeViewState implements SpecialVisualizationState {
         }
 
         {
-            /* Setup the layout source
-             * A bit tricky, as this is heavily intertwined with the 'changes'-element, which generate a stream of new and changed features too
+            /* Set up the layout source
+             * A bit tricky, as this is heavily intertwined with the 'changes'-element, which generates a stream of new and changed features too
              */
 
             if (this.layout.layers.some((l) => l._needsFullNodeDatabase)) {
@@ -704,7 +704,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
             this.mapProperties.zoom.map((z) => Math.max(Math.floor(z), 0)),
             this.mapProperties,
             {
-                isActive: this.mapProperties.zoom.map((z) => z <= maxzoom),
+                isActive: this.mapProperties.zoom.map((z) => z < maxzoom),
             }
         )
         return new SummaryTileSourceRewriter(summaryTileSource, this.layerState.filteredLayers)
