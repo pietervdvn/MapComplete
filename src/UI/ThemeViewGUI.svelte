@@ -31,8 +31,6 @@
   import CopyrightPanel from "./BigComponents/CopyrightPanel"
   import DownloadPanel from "./DownloadFlow/DownloadPanel.svelte"
   import ModalRight from "./Base/ModalRight.svelte"
-  import { Utils } from "../Utils"
-  import Hotkeys from "./Base/Hotkeys"
   import LevelSelector from "./BigComponents/LevelSelector.svelte"
   import SelectedElementTitle from "./BigComponents/SelectedElementTitle.svelte"
   import ThemeIntroPanel from "./BigComponents/ThemeIntroPanel.svelte"
@@ -41,8 +39,6 @@
   import RasterLayerOverview from "./Map/RasterLayerOverview.svelte"
   import IfHidden from "./Base/IfHidden.svelte"
   import { onDestroy } from "svelte"
-  import MapillaryLink from "./BigComponents/MapillaryLink.svelte"
-  import OpenIdEditor from "./BigComponents/OpenIdEditor.svelte"
   import OpenBackgroundSelectorButton from "./BigComponents/OpenBackgroundSelectorButton.svelte"
   import StateIndicator from "./BigComponents/StateIndicator.svelte"
   import ShareScreen from "./BigComponents/ShareScreen.svelte"
@@ -50,14 +46,10 @@
   import PendingChangesIndicator from "./BigComponents/PendingChangesIndicator.svelte"
   import Cross from "../assets/svg/Cross.svelte"
   import LanguagePicker from "./InputElement/LanguagePicker.svelte"
-  import Mastodon from "../assets/svg/Mastodon.svelte"
   import Bug from "../assets/svg/Bug.svelte"
-  import Liberapay from "../assets/svg/Liberapay.svelte"
-  import OpenJosm from "./Base/OpenJosm.svelte"
   import Min from "../assets/svg/Min.svelte"
   import Plus from "../assets/svg/Plus.svelte"
   import Filter from "../assets/svg/Filter.svelte"
-  import Add from "../assets/svg/Add.svelte"
   import Community from "../assets/svg/Community.svelte"
   import Favourites from "./Favourites/Favourites.svelte"
   import ImageOperations from "./Image/ImageOperations.svelte"
@@ -79,6 +71,9 @@
   import ChevronRight from "@babeard/svelte-heroicons/solid/ChevronRight"
   import DocumentChartBar from "@babeard/svelte-heroicons/outline/DocumentChartBar"
   import Marker from "./Map/Marker.svelte"
+  import AboutMapComplete from "./BigComponents/AboutMapComplete.svelte"
+  import IfNot from "./Base/IfNot.svelte"
+  import Hotkeys from "./Base/Hotkeys"
 
   export let state: ThemeViewState
   let layout = state.layout
@@ -124,11 +119,11 @@
   state.mapProperties.installCustomKeyboardHandler(viewport)
   let canZoomIn = mapproperties.maxzoom.map(
     (mz) => mapproperties.zoom.data < mz,
-    [mapproperties.zoom]
+    [mapproperties.zoom],
   )
   let canZoomOut = mapproperties.minzoom.map(
     (mz) => mapproperties.zoom.data > mz,
-    [mapproperties.zoom]
+    [mapproperties.zoom],
   )
 
   function updateViewport() {
@@ -165,7 +160,7 @@
   onDestroy(
     rasterLayer.addCallbackAndRunD((l) => {
       rasterLayerName = l.properties.name
-    })
+    }),
   )
   let previewedImage = state.previewedImage
 
@@ -196,7 +191,7 @@
   let openMapButton: UIEventSource<HTMLElement> = new UIEventSource<HTMLElement>(undefined)
   let openMenuButton: UIEventSource<HTMLElement> = new UIEventSource<HTMLElement>(undefined)
   let openCurrentViewLayerButton: UIEventSource<HTMLElement> = new UIEventSource<HTMLElement>(
-    undefined
+    undefined,
   )
   let _openNewElementButton: HTMLButtonElement
   let openNewElementButton: UIEventSource<HTMLElement> = new UIEventSource<HTMLElement>(undefined)
@@ -250,27 +245,30 @@
       </If>
     </div>
     <div class="float-left m-1 flex flex-col sm:mt-2">
-      <MapControlButton
-        on:click={() => state.guistate.themeIsOpened.setData(true)}
-        on:keydown={forwardEventToMap}
-        htmlElem={openMapButton}
-      >
-        <div class="m-0.5 mx-1 flex cursor-pointer items-center max-[480px]:w-full sm:mx-1 md:mx-2">
-          <Marker icons={layout.icon} size="h-4 w-4 md:h-8 md:w-8 mr-0.5 sm:mr-1 md:mr-2" />
-          <b class="mr-1">
-            <Tr t={layout.title} />
-          </b>
-          <ChevronRight class="h-4 w-4" />
-        </div>
-      </MapControlButton>
-      <MapControlButton
-        arialabel={Translations.t.general.labels.menu}
-        on:click={() => state.guistate.menuIsOpened.setData(true)}
-        on:keydown={forwardEventToMap}
-        htmlElem={openMenuButton}
-      >
-        <MenuIcon class="h-8 w-8 cursor-pointer" />
-      </MapControlButton>
+      <If condition={state.featureSwitches.featureSwitchWelcomeMessage}>
+        <MapControlButton
+          on:click={() => state.guistate.themeIsOpened.setData(true)}
+          on:keydown={forwardEventToMap}
+          htmlElem={openMapButton}
+        >
+          <div class="m-0.5 mx-1 flex cursor-pointer items-center max-[480px]:w-full sm:mx-1 md:mx-2">
+            <Marker icons={layout.icon} size="h-4 w-4 md:h-8 md:w-8 mr-0.5 sm:mr-1 md:mr-2" />
+            <b class="mr-1">
+              <Tr t={layout.title} />
+            </b>
+            <ChevronRight class="h-4 w-4" />
+          </div>
+        </MapControlButton>
+
+        <MapControlButton
+          arialabel={Translations.t.general.labels.menu}
+          on:click={() => state.guistate.menuIsOpened.setData(true)}
+          on:keydown={forwardEventToMap}
+          htmlElem={openMenuButton}
+        >
+          <MenuIcon class="h-8 w-8 cursor-pointer" />
+        </MapControlButton>
+      </If>
       {#if currentViewLayer?.tagRenderings && currentViewLayer.defaultIcon()}
         <MapControlButton
           on:click={() => {
@@ -350,8 +348,12 @@
           <a
             class="bg-black-transparent pointer-events-auto ml-1 h-fit max-h-12 cursor-pointer self-end self-center overflow-hidden rounded-2xl px-1 text-white opacity-50 hover:opacity-100"
             on:click={() => {
+              if(featureSwitches.featureSwitchWelcomeMessage.data){
               state.guistate.themeViewTab.setData("copyright")
               state.guistate.themeIsOpened.setData(true)
+              }else{
+                state.guistate.copyrightPanelIsOpened.setData(true)
+              }
             }}
           >
             © <span class="hidden sm:inline sm:pr-2">
@@ -512,7 +514,10 @@
           <Tr t={Translations.t.general.attribution.title} />
         </div>
 
-        <ToSvelte construct={() => new CopyrightPanel(state)} slot="content2" />
+        <div slot="content2" class="flex flex-col m-2">
+          <ToSvelte construct={() => new CopyrightPanel(state)} />
+        </div>
+
 
         <div class="flex" slot="title3">
           <Share class="h-4 w-4" />
@@ -569,78 +574,11 @@
           <Tr t={Translations.t.general.menu.aboutMapComplete} />
         </div>
 
-        <div class="link-underline links-w-full m-2 flex flex-col gap-y-1" slot="content0">
-          <Tr t={Translations.t.general.aboutMapComplete.intro} />
-
-          <a class="flex" href={Utils.HomepageLink()}>
-            <Add class="h-6 w-6" />
-            {#if Utils.isIframe}
-              <Tr t={Translations.t.general.seeIndex} />
-            {:else}
-              <Tr t={Translations.t.general.backToIndex} />
-            {/if}
-          </a>
-
-          <a class="flex" href="https://github.com/pietervdvn/MapComplete/" target="_blank">
-            <Github class="h-6 w-6" />
-            <Tr t={Translations.t.general.attribution.gotoSourceCode} />
-          </a>
-
-          <a class="flex" href="https://github.com/pietervdvn/MapComplete/issues" target="_blank">
-            <Bug class="h-6 w-6" />
-            <Tr t={Translations.t.general.attribution.openIssueTracker} />
-          </a>
-
-          <a
-            class="flex"
-            href={"https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Themes/" +
-              layout.id +
-              ".md"}
-            target="_blank"
-          >
-            <DocumentChartBar class="h-6 w-6" />
-            <Tr
-              t={Translations.t.general.attribution.openThemeDocumentation.Subs({
-                name: layout.title,
-              })}
-            />
-          </a>
-
-          <a class="flex" href="https://en.osm.town/@MapComplete" target="_blank">
-            <Mastodon class="h-6 w-6" />
-            <Tr t={Translations.t.general.attribution.followOnMastodon} />
-          </a>
-
-          <a class="flex" href="https://liberapay.com/pietervdvn/" target="_blank">
-            <Liberapay class="h-6 w-6" />
-            <Tr t={Translations.t.general.attribution.donate} />
-          </a>
-
-          <button
-            class="as-link"
-            on:click={() => state.guistate.communityIndexPanelIsOpened.setData(true)}
-          >
-            <Community class="h-6 w-6" />
-            <Tr t={Translations.t.communityIndex.title} />
-          </button>
-
-          <If condition={featureSwitches.featureSwitchEnableLogin}>
-            <OpenIdEditor mapProperties={state.mapProperties} />
-            <OpenJosm {state} />
-            <MapillaryLink large={false} mapProperties={state.mapProperties} />
-          </If>
-
-          <button
-            class="as-link"
-            on:click={() => state.guistate.privacyPanelIsOpened.setData(true)}
-          >
-            <EyeIcon class="h-6 w-6 pr-1" />
-            <Tr t={Translations.t.privacy.title} />
-          </button>
+        <div slot="content0" class="flex flex-col">
+          <AboutMapComplete {state} />
           <div class="m-2 flex flex-col">
             <ToSvelte construct={Hotkeys.generateDocumentationDynamic} />
           </div>
-          {Constants.vNumber}
         </div>
 
         <div class="flex" slot="title1">
@@ -697,6 +635,24 @@
         </h2>
         <div class="overflow-auto p-4">
           <PrivacyPolicy {state} />
+        </div>
+      </div>
+    </FloatOver>
+  </If>
+
+  <If condition={state.guistate.copyrightPanelIsOpened}>
+    <FloatOver on:close={() => state.guistate.privacyPanelIsOpened.setData(false)}>
+      <div class="flex h-full flex-col overflow-hidden">
+        <h1 class="low-interaction m-0 flex items-center p-4 drop-shadow-md">
+         <Tr t= {Translations.t.general.attribution.title}/>
+        </h1>
+        <div class="overflow-auto p-4">
+          <h2>
+
+          <Tr t={Translations.t.general.menu.aboutMapComplete} />
+          </h2>
+        <AboutMapComplete {state} />
+        <ToSvelte construct={() => new CopyrightPanel(state)} />
         </div>
       </div>
     </FloatOver>

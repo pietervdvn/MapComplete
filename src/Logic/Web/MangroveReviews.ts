@@ -206,10 +206,10 @@ export default class FeatureReviews {
 
         this.subjectUri = this.ConstructSubjectUri()
 
-        this.subjectUri.addCallbackAndRunD(
+        this.subjectUri.mapD(
             async (sub) => {
                 const reviews = await MangroveReviews.getReviews({ sub })
-                console.log("Got reviews for", feature, reviews, sub)
+                console.debug("Got reviews for", feature, reviews, sub)
                 this.addReviews(reviews.reviews, this._name.data)
             },
             [this._name]
@@ -221,7 +221,7 @@ export default class FeatureReviews {
             async (sub) => {
                 try {
                     const reviews = await MangroveReviews.getReviews({ sub })
-                    console.log("Got reviews (no-encode) for", feature, reviews, sub)
+                    console.debug("Got reviews (no-encode) for", feature, reviews, sub)
                     this.addReviews(reviews.reviews, this._name.data)
                 } catch (e) {
                     console.log("Could not fetch reviews for partially incorrect query ", sub)

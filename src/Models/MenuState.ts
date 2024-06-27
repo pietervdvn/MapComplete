@@ -36,6 +36,11 @@ export class MenuState {
 
     public readonly filtersPanelIsOpened: UIEventSource<boolean> = new UIEventSource<boolean>(false)
     public readonly privacyPanelIsOpened: UIEventSource<boolean> = new UIEventSource<boolean>(false)
+    /**
+     * Standalone copyright panel
+     */
+    public readonly copyrightPanelIsOpened: UIEventSource<boolean> = new UIEventSource<boolean>(false)
+
     public readonly communityIndexPanelIsOpened: UIEventSource<boolean> = new UIEventSource(false)
     public readonly allToggles: {
         toggle: UIEventSource<boolean>
@@ -103,6 +108,11 @@ export class MenuState {
             {
                 toggle: this.privacyPanelIsOpened,
                 name: "privacy",
+                showOverOthers: true,
+            },
+            {
+                toggle: this.copyrightPanelIsOpened,
+                name: "copyright",
                 showOverOthers: true,
             },
             {
