@@ -401,7 +401,7 @@
             "copiedToClipboard": "Link copied to clipboard",
             "documentation": "For more information on available URL-parameters, <a href='https://github.com/pietervdvn/MapComplete/blob/develop/Docs/URL_Parameters.md' target='_blank'>consult the documentation</a>",
             "embedIntro": "<h3>Embed on your website</h3>Please, embed this map into your website. <br/>We encourage you to do it - you don't even have to ask permission. <br/> It is free, and always will be. The more people are using this, the more valuable it becomes.",
-            "fsUserbadge": "Enable the login button",
+            "fsUserbadge": "Enable the login button and thus the possibility to make changes",
             "fsWelcomeMessage": "Show the welcome message popup and associated tabs",
             "intro": "<h3>Share this map</h3> Share this map by copying the link below and sending it to friends and family:",
             "thanksForSharing": "Thanks for sharing!",
