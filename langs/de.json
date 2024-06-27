@@ -386,7 +386,7 @@
         "retry": "Wiederholen",
         "returnToTheMap": "Zurück zur Karte",
         "save": "Speichern",
-        "screenToSmall": "{theme} in einem neuen Fenster öffnen",
+        "screenToSmall": "<i>{theme}</i> in einem neuen Fenster öffnen",
         "search": {
             "error": "Etwas ist schief gelaufen…",
             "nothing": "Nichts gefunden…",
