@@ -10,7 +10,7 @@ export default class Constants {
     /**
      * API key for Maproulette
      *
-     * Currently there is no user-friendly way to get the user's API key.
+     * There is no user-friendly way to get the user's API key currently.
      * See https://github.com/maproulette/maproulette2/issues/476 for more information.
      * Using an empty string however does work for most actions, but will attribute all actions to the Superuser.
      */
@@ -168,6 +168,8 @@ export default class Constants {
 
     public static readonly maptilerApiKey = "GvoVAJgu46I5rZapJuAy"
     public static readonly SummaryServer: string = Constants.config.summary_server
+
+    public static allServers: string[] = [Constants.SummaryServer, Constants.VectorTileServer, Constants.GeoIpServer, Constants.ErrorReportServer,  Constants.countryCoderEndpoint, Constants.osmAuthConfig.url, Constants.nominatimEndpoint, Constants.linkedDataProxy, ...Constants.defaultOverpassUrls]
 
     private static isRetina(): boolean {
         if (Utils.runningFromConsole) {

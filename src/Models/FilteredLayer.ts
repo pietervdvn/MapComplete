@@ -81,7 +81,8 @@ export default class FilteredLayer {
     public static initLinkedState(
         layer: LayerConfig,
         context: string,
-        osmConnection: OsmConnection
+        osmConnection: OsmConnection,
+        enabledByDefault?: Store<boolean>
     ) {
         let isDisplayed: UIEventSource<boolean>
         if (layer.syncSelection === "local") {
@@ -102,9 +103,13 @@ export default class FilteredLayer {
                 layer
             )
         } else {
+            let isShown = layer.shownByDefault
+            if(enabledByDefault !== undefined && enabledByDefault.data === false){
+                isShown = false
+            }
             isDisplayed = QueryParameters.GetBooleanQueryParameter(
                 FilteredLayer.queryParameterKey(layer),
-                layer.shownByDefault,
+                isShown ,
                 "Whether or not layer " + layer.id + " is shown"
             )
         }
