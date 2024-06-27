@@ -405,7 +405,7 @@
             "fsBackground": "Enable switching backgrounds",
             "fsFilter": "Enable the possibility to toggle layers and filters",
             "fsGeolocation": "Enable geolocation",
-            "fsUserbadge": "Enable the login button",
+            "fsUserbadge": "Enable the login button and thus the possibility to make changes",
             "fsWelcomeMessage": "Show the welcome message popup and associated tabs",
             "intro": "<h3>Share this map</h3> Share this map by copying the link below and sending it to friends and family:",
             "openLayers": "Open the layers and filters menu",
