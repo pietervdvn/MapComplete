@@ -322,6 +322,7 @@
         "openStreetMapIntro": "<h3>An Open Map</h3><p>One that everyone can use and edit freely. A single place to store all geo-info. Different, small, incompatible and outdated maps are not needed anywhere.</p><p><b><a href='https://OpenStreetMap.org' target='_blank'>OpenStreetMap</a></b> is not the enemy map. The map data can be used freely (with <a href='https://osm.org/copyright' target='_blank'>attribution and publication of changes to that data</a>). Everyone can add new data and fix errors. This website uses OpenStreetMap. All the data is from there, and your answers and corrections are used all over.</p><p>Many people and apps already use OpenStreetMap: <a href='https://organicmaps.app/' target='_blank'>Organic Maps</a>, <a href='https://osmAnd.net' target='_blank'>OsmAnd</a>, but also the maps at Facebook, Instagram, Apple-maps and Bing-maps are (partly) powered by OpenStreetMap.</p>",
         "openTheMap": "Open the map",
         "openTheMapAtGeolocation": "Zoom to your location",
+        "openTheMapReason": "to view, edit and add information",
         "opening_hours": {
             "all_days_from": "Opened every day {ranges}",
             "closed_permanently": "Closed for an unknown duration",
@@ -401,9 +402,15 @@
             "copiedToClipboard": "Link copied to clipboard",
             "documentation": "For more information on available URL-parameters, <a href='https://github.com/pietervdvn/MapComplete/blob/develop/Docs/URL_Parameters.md' target='_blank'>consult the documentation</a>",
             "embedIntro": "<h3>Embed on your website</h3>Please, embed this map into your website. <br/>We encourage you to do it - you don't even have to ask permission. <br/> It is free, and always will be. The more people are using this, the more valuable it becomes.",
+            "fsBackground": "Enable switching backgrounds",
+            "fsFilter": "Enable the possibility to toggle layers and filters",
+            "fsGeolocation": "Enable geolocation",
             "fsUserbadge": "Enable the login button",
             "fsWelcomeMessage": "Show the welcome message popup and associated tabs",
             "intro": "<h3>Share this map</h3> Share this map by copying the link below and sending it to friends and family:",
+            "openLayers": "Open the layers and filters menu",
+            "options": "Sharing options",
+            "stateIsIncluded": "The current state of the layers and filters is included in the shared link and iframe.",
             "thanksForSharing": "Thanks for sharing!",
             "title": "Share this map"
         },

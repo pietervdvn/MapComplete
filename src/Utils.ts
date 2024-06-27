@@ -1643,7 +1643,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
      *
      * Supported metric prefixes are: [k, M, G, T, P, E]
      */
-    public static numberWithMetrixPrefix(n: number) {
+    public static numberWithMetricPrefix(n: number) {
         let index = 0
         while (n > 1000) {
             n = Math.round(n / 1000)

@@ -59,7 +59,7 @@
         "currentInOsmIs": "Momentan hat OpenStreetMap den folgenden Wert erfasst:",
         "done": "Fertig",
         "error": "Verknüpfte Daten konnten nicht von der Website geladen werden",
-        "lastModified": "Die externen Daten wurden zuletzt am {Datum} geändert",
+        "lastModified": "Die externen Daten wurden zuletzt am {date} geändert",
         "loadedFrom": "Die folgenden Daten werden von <a href={url}>{source}</a> unter Verwendung des eingebetteten JSON-LD geladen",
         "missing": {
             "intro": "OpenStreetMap hat keine Informationen über die folgenden Attribute",

@@ -51,7 +51,7 @@ export class SummaryTileSourceRewriter implements FeatureSource {
                     ...f.properties,
                     id: f.properties.id + bitmap,
                     total: newTotal,
-                    total_metric: Utils.numberWithMetrixPrefix(newTotal),
+                    total_metric: Utils.numberWithMetricPrefix(newTotal),
                 },
             })
             fullTotal += newTotal
@@ -101,12 +101,12 @@ export class SummaryTileSource extends DynamicTileSource {
                         return SummaryTileSource.empty
                     }
                     const counts = count["success"]
-                    if (counts === undefined || counts["total"] === 0) {
+                    const total = Number(counts?.["total"] ?? 0)
+                    if (total === 0) {
                         return SummaryTileSource.empty
                     }
                     const lat = counts["lat"]
                     const lon = counts["lon"]
-                    const total = Number(counts["total"])
                     const tileBbox = new BBox(Tiles.tile_bounds_lon_lat(z, x, y))
                     if (!tileBbox.contains([lon, lat])) {
                         console.error(
@@ -128,7 +128,7 @@ export class SummaryTileSource extends DynamicTileSource {
                                 summary: "yes",
                                 ...counts,
                                 total,
-                                total_metric: Utils.numberWithMetrixPrefix(total),
+                                total_metric: Utils.numberWithMetricPrefix(total),
                                 layers: layersSummed,
                             },
                             geometry: {

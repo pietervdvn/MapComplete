@@ -365,7 +365,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
         )
         this.favourites = new FavouritesFeatureSource(this)
 
-        this.featureSummary = this.setupSummaryLayer()
+        this.featureSummary = this.setupSummaryLayer(new LayerConfig(<LayerConfigJson> summaryLayer, "summaryLayer", true))
         this.toCacheSavers = this.initSaveToLocalStorage()
         this.initActors()
         this.drawSpecialLayers()
@@ -681,7 +681,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
         )
     }
 
-    private setupSummaryLayer(): SummaryTileSourceRewriter {
+    private setupSummaryLayer(summaryLayerConfig: LayerConfig): SummaryTileSourceRewriter {
         /**
          * MaxZoom for the summary layer
          */
@@ -707,7 +707,9 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 isActive: this.mapProperties.zoom.map((z) => z < maxzoom),
             }
         )
-        return new SummaryTileSourceRewriter(summaryTileSource, this.layerState.filteredLayers)
+
+        const src =new SummaryTileSourceRewriter(summaryTileSource, this.layerState.filteredLayers)
+        return src
     }
 
     /**
@@ -793,10 +795,10 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 selectedElement: this.selectedElement,
             })
         })
-
+      const summaryLayerConfig =  new LayerConfig(<LayerConfigJson>summaryLayer, "summaryLayer")
         new ShowDataLayer(this.map, {
             features: specialLayers.summary,
-            layer: new LayerConfig(<LayerConfigJson>summaryLayer, "summaryLayer"),
+            layer: summaryLayerConfig,
             // doShowLayer: this.mapProperties.zoom.map((z) => z < maxzoom),
             selectedElement: this.selectedElement,
         })

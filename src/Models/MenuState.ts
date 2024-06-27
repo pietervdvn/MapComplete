@@ -121,6 +121,11 @@ export class MenuState {
                 showOverOthers: true,
             },
             {
+                toggle: this.filtersPanelIsOpened,
+                name: "filters",
+                showOverOthers: true,
+            },
+            {
                 toggle: this.menuIsOpened,
                 name: "menu",
                 submenu: this.menuViewTab,
@@ -135,11 +140,7 @@ export class MenuState {
                 name: "background",
                 showOverOthers: true,
             },
-            {
-                toggle: this.filtersPanelIsOpened,
-                name: "filters",
-                showOverOthers: true,
-            },
+
         ]
         for (const toggle of this.allToggles) {
             toggle.toggle.addCallback((isOpen) => {

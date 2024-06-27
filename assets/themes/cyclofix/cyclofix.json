@@ -116,7 +116,8 @@
               "centroid"
             ]
           }
-        ]
+        ],
+        "isCounted": false
       }
     },
     {
@@ -152,7 +153,8 @@
         "filter": {
           "sameAs": "charging_station_ebikes"
         },
-        "minzoom": 18
+        "minzoom": 18,
+        "isCounted": false
       }
     },
     {
@@ -178,7 +180,8 @@
         "filter": {
           "sameAs": "vending_machine_bicycle"
         },
-        "minzoom": 18
+        "minzoom": 18,
+        "isCounted": false
       }
     }
   ],

@@ -63,8 +63,13 @@
 
     <!-- Buttons: open map, go to location, search -->
     <NextButton clss="primary w-full" on:click={() => state.guistate.themeIsOpened.setData(false)}>
-      <div class="flex w-full justify-center text-2xl">
-        <Tr t={Translations.t.general.openTheMap} />
+      <div class="flex flex-col w-full items-center">
+        <div class="flex w-full justify-center text-2xl">
+          <Tr t={Translations.t.general.openTheMap} />
+        </div>
+        <If condition={state.featureSwitches.featureSwitchEnableLogin}>
+          <Tr t={Translations.t.general.openTheMapReason} />
+        </If>
       </div>
     </NextButton>
 

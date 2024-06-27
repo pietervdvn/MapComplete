@@ -2743,6 +2743,7 @@
           "_last_edit:passed_time>=300"
         ]
       },
+      "metacondition": "__featureSwitchEnableLogin=true",
       "render": {
         "special": {
           "type": "if_nothing_known",

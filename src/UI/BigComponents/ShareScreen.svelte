@@ -15,7 +15,10 @@
   import ToSvelte from "../Base/ToSvelte.svelte"
   import Img from "../Base/Img"
   import Qr from "../../Utils/Qr"
+  import AccordionSingle from "../Flowbite/AccordionSingle.svelte"
   import Share from "@babeard/svelte-heroicons/solid/Share"
+  import Constants from "../../Models/Constants"
+  import Copyable from "../Base/Copyable.svelte"
 
   export let state: ThemeViewState
   const tr = Translations.t.general.sharescreen
@@ -24,98 +27,106 @@
   let linkToShare: string = undefined
   /**
    * In some cases (local deploys, custom themes), we need to set the URL to `/theme.html?layout=xyz` instead of `/xyz?...`
+   * Note that the 'layout='-param will be included automatically
    */
   let needsThemeRedirect = url.port !== "" || url.hostname.match(/^[0-9]/) || !state.layout.official
   let layoutId = state.layout.id
   let baseLink =
-    url.protocol +
-    "//" +
-    url.host +
-    "/" +
-    (needsThemeRedirect ? "theme.html?layout=" + layoutId + "&" : layoutId + "?")
+    `${url.protocol}//${url.host}/${needsThemeRedirect ? "theme.html" : layoutId}?`
 
   let showWelcomeMessage = true
   let enableLogin = true
-  $: {
+  let enableFilters = true
+  let enableBackground = true
+  let enableGeolocation = true
+
+  function calculateLinkToShare(
+    showWelcomeMessage: boolean,
+    enableLogin: boolean,
+    enableFilters: boolean,
+    enableBackground: boolean,
+    enableGeolocation: boolean) {
     const layout = state.layout
     let excluded = Utils.NoNull([
       showWelcomeMessage ? undefined : "fs-welcome-message",
       enableLogin ? undefined : "fs-enable-login",
+      enableFilters ? undefined : "fs-filter",
+      enableBackground ? undefined : "fs-background",
+      enableGeolocation ? undefined : "fs-geolocation",
+
     ])
-    linkToShare =
-      baseLink +
-      QueryParameters.GetParts(new Set(excluded))
-        .concat(excluded.map((k) => k + "=" + false))
-        .join("&")
+    const layerParamsWhitelist: string[] = ["fs-layers-enabled=false"]
+    const layerParamsBlacklist: string[] = []
+
+    for (const flayer of state.layerState.filteredLayers.values()) {
+      const id = flayer.layerDef.id
+      if (flayer.layerDef.filterIsSameAs) {
+        continue
+      }
+      if (id.indexOf("note_import") >= 0) {
+        continue
+      }
+      if (Constants.added_by_default.indexOf(<any>id) >= 0) {
+        continue
+      }
+      const enabled = flayer.isDisplayed.data
+      if (enabled) {
+        layerParamsWhitelist.push("layer-" + id + "=true")
+      } else {
+        layerParamsBlacklist.push("layer-" + id + "=false")
+      }
+    }
+
+    const layersBlack = layerParamsBlacklist.join("&")
+    const layersWhite = layerParamsWhitelist.join("&")
+    const layers = layersBlack.length < layersWhite.length ? layerParamsBlacklist : layerParamsWhitelist
+    const params = QueryParameters.GetParts(new Set(excluded))
+      .filter(part => !part.startsWith("layer-"))
+      .concat(...layers)
+      .concat(excluded.map((k) => k + "=" + false))
+    linkToShare = baseLink + Utils.Dedup(params).join("&")
+
     if (layout.definitionRaw !== undefined) {
       linkToShare += "&userlayout=" + (layout.definedAtUrl ?? layout.id)
     }
   }
 
-  async function shareCurrentLink() {
-    await navigator.share({
-      title: Translations.W(state.layout.title)?.ConstructElement().textContent ?? "MapComplete",
-      text: Translations.W(state.layout.description)?.ConstructElement().textContent ?? "",
-      url: linkToShare,
-    })
-  }
+  $: calculateLinkToShare(showWelcomeMessage, enableLogin, enableFilters, enableBackground, enableGeolocation)
 
-  let isCopied = false
+  let iframeCode: string
+  $: iframeCode = `<iframe src="${linkToShare}"
+    ${enableGeolocation ? 'allow="geolocation"' : ""} width="100%" height="100%" style="min-width: 250px; min-height: 250px"
+    title="${state.layout.title?.txt ?? "MapComplete"} with MapComplete">
+    </iframe>`
 
-  async function copyCurrentLink() {
-    await navigator.clipboard.writeText(linkToShare)
-    isCopied = true
-    await Utils.waitFor(5000)
-    isCopied = false
-  }
+  Array.from(state.layerState.filteredLayers.values()).forEach(flayer => flayer.isDisplayed.addCallbackAndRunD(_ => {
+    calculateLinkToShare(showWelcomeMessage, enableLogin, enableFilters, enableBackground, enableGeolocation)
+  }))
+
 </script>
 
 <div class="flex flex-col">
-  <div class="flex items-start justify-between">
-    <div class="flex flex-col">
-      <Tr t={tr.intro} />
-      <div class="flex">
-        {#if typeof navigator?.share === "function"}
-          <button class="h-8 w-8 shrink-0 p-1" on:click={shareCurrentLink}>
-            <Share />
-          </button>
-        {/if}
-        {#if navigator.clipboard !== undefined}
-          <button class="no-image-background h-8 w-8 shrink-0 p-1" on:click={copyCurrentLink}>
-            <DocumentDuplicateIcon />
-          </button>
-        {/if}
-        <div class="literal-code" on:click={(e) => Utils.selectTextIn(e.target)}>
-          {linkToShare}
-        </div>
-      </div>
-    </div>
+  <div class="flex flex-col">
+    <Tr t={tr.intro} />
+
+    <Copyable {state} text={linkToShare}/>
+
+
+  </div>
+  <div class="flex justify-center">
 
     <ToSvelte
       construct={() => new Img(new Qr(linkToShare).toImageElement(125)).SetStyle("width: 125px")}
     />
   </div>
 
-  <div class="flex justify-center">
-    {#if isCopied}
-      <Tr t={tr.copiedToClipboard} cls="thanks m-2" />
-    {/if}
-  </div>
-
   <Tr t={tr.embedIntro} />
 
-  <div class="interactive flex flex-col p-1">
-    <div class="literal-code m-1">
-      &lt;span class="literal-code iframe-code-block"&gt; <br />
-      &lt;iframe src="{linkToShare}"
-      <br />
-      allow="geolocation" width="100%" height="100%" style="min-width: 250px; min-height: 250px"
-      <br />
-      title="{state.layout.title?.txt ?? "MapComplete"} with MapComplete"&gt;
-      <br />
-      &lt;/iframe&gt;
-      <br />
-      &lt;/span&gt;
+  <Copyable text={iframeCode}/>
+
+  <AccordionSingle>
+    <div slot="header">
+      <Tr t={tr.options}/>
     </div>
     <div class="link-underline my-1 flex flex-col">
       <label>
@@ -127,7 +138,34 @@
         <input bind:checked={enableLogin} type="checkbox" id="share_enable_login" />
         <Tr t={tr.fsUserbadge} />
       </label>
+
+
+      <label>
+        <input bind:checked={enableFilters} type="checkbox" id="share_enable_filter" />
+        <Tr t={tr.fsFilter} />
+      </label>
+
+
+      <label>
+        <input bind:checked={enableBackground} type="checkbox" id="share_enable_background" />
+        <Tr t={tr.fsBackground} />
+      </label>
+
+      <label>
+        <input bind:checked={enableGeolocation} type="checkbox" id="share_enable_geolocation" />
+        <Tr t={tr.fsGeolocation} />
+      </label>
+
+      <span>
+
+      <Tr t={tr.stateIsIncluded}/>
+      <a class="inline-block w-fit cursor-pointer" on:click={() => state.guistate.filtersPanelIsOpened.set(true)}>
+        <Tr t={tr.openLayers}/>
+      </a>
+      </span>
+
+      <Tr cls="link-underline" t={tr.documentation} />
+
     </div>
-  </div>
-  <Tr cls="link-underline" t={tr.documentation} />
+  </AccordionSingle>
 </div>

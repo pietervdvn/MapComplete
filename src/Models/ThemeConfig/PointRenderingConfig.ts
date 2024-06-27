@@ -328,7 +328,7 @@ export default class PointRenderingConfig extends WithContextLoader {
                     ?.SetClass("flex items-center justify-center absolute marker-label")
                     ?.SetClass(cssClassesLabel)
                 if (cssLabel) {
-                    label.SetStyle(cssLabel)
+                    label?.SetStyle(cssLabel)
                 } else if (labelOnly) {
                     return label?.SetStyle("transform: translate(-50%, -50%);")
                 }
