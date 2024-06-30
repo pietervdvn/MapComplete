@@ -16,8 +16,12 @@
                 "render": "門牌號碼是 <b>{addr:housenumber}</b>"
             },
             "street": {
-                "question": "地址所在的道路是？"
+                "question": "地址所在的道路是？",
+                "render": "此地址位於街道 <b>{addr:street}</b>"
             }
+        },
+        "title": {
+            "render": "已知的地址"
         }
     },
     "advertising": {
@@ -52,6 +56,12 @@
                     "1": {
                         "then": "壁畫"
                     },
+                    "10": {
+                        "then": "Azulejo (西班牙雕塑作品名稱)"
+                    },
+                    "11": {
+                        "then": "瓷磚"
+                    },
                     "2": {
                         "then": "繪畫"
                     },
@@ -75,12 +85,6 @@
                     },
                     "9": {
                         "then": "寬慰"
-                    },
-                    "10": {
-                        "then": "Azulejo (西班牙雕塑作品名稱)"
-                    },
-                    "11": {
-                        "then": "瓷磚"
                     }
                 },
                 "question": "這是什麼類型的藝術品？",
@@ -103,6 +107,9 @@
             },
             "render": "藝術品"
         }
+    },
+    "atm": {
+        "description": "自動櫃員機以提款"
     },
     "barrier": {
         "tagRenderings": {
@@ -132,7 +139,7 @@
                         "then": "靠背：有"
                     },
                     "2": {
-                        "then": "靠背：無"
+                        "then": "此長椅<b>沒有</b>靠背"
                     }
                 },
                 "question": "這個長椅是否有靠背？"
@@ -576,6 +583,9 @@
             }
         }
     },
+    "maxspeed": {
+        "description": "顯示每條道路的允許速度"
+    },
     "postboxes": {
         "description": "這圖層顯示郵筒。",
         "name": "郵筒",
@@ -808,10 +818,84 @@
             }
         }
     },
+    "visitor_information_centre": {
+        "title": {
+            "mappings": {
+                "1": {
+                    "then": "{name}"
+                }
+            },
+            "render": "{name}"
+        }
+    },
     "walls_and_buildings": {
         "description": "特殊的內建圖層顯示所有牆壁與建築。這個圖層對於規畫要靠牆的東西 (例如 AED、郵筒、入口、地址、監視器等) 相當實用。這個圖層預設顯示而且無法由使用者開關。"
     },
+    "waste_basket": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "所有類型"
+                    }
+                }
+            }
+        }
+    },
+    "waste_disposal": {
+        "presets": {
+            "0": {
+                "title": "廢棄物處理桶"
+            }
+        },
+        "tagRenderings": {
+            "access": {
+                "mappings": {
+                    "0": {
+                        "then": "這個桶可以給任何人使用"
+                    },
+                    "1": {
+                        "then": "這個桶是私人的"
+                    },
+                    "2": {
+                        "then": "這個桶僅供居民使用"
+                    }
+                },
+                "question": "誰可以使用這個廢棄物處理桶？",
+                "render": "存取：{access}"
+            },
+            "disposal-location": {
+                "mappings": {
+                    "0": {
+                        "then": "這是一個地下容器"
+                    },
+                    "1": {
+                        "then": "這個容器位於室內"
+                    },
+                    "2": {
+                        "then": "這個容器位於室外"
+                    }
+                },
+                "question": "這個容器位於哪裡？"
+            },
+            "type": {
+                "mappings": {
+                    "0": {
+                        "then": "這是一個中型至大型的桶，用於處理（家庭）廢棄物"
+                    },
+                    "1": {
+                        "then": "這實際上是一個回收容器"
+                    }
+                },
+                "question": "這是甚麼種類的廢棄物處理箱？"
+            }
+        },
+        "title": {
+            "render": "廢棄物處理"
+        }
+    },
     "windturbine": {
+        "description": "現代風車產生電力",
         "name": "風機",
         "presets": {
             "0": {
@@ -838,6 +922,9 @@
             "turbine-start-date": {
                 "question": "這個風機何時開始營運？",
                 "render": "這個風機從 {start_date} 開始運轉。"
+            },
+            "windturbine-fixme": {
+                "render": "為 OpenStreetMap 專家提供的額外資訊：{fixme}"
             }
         },
         "title": {
