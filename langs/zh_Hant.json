@@ -58,14 +58,16 @@
         },
         "currentInOsmIs": "目前，OpenStreetMap 記錄了以下值：",
         "done": "完成",
-        "error": "錯誤",
+        "error": "無法從網站載入已連結的資料",
+        "lastModified": "外部資料已經最近修改於 {date}",
         "loadedFrom": "下列資料透過內嵌 JSON-LD 由 <a href={url}>{source}</a> 載入",
         "missing": {
             "intro": "開放街圖沒有下列屬性的資訊",
             "title": "遺失的物件"
         },
         "noDataLoaded": "外部網站沒有可以載入的已連結資料",
-        "overwrite": "在 OpenStreetMap 中覆寫"
+        "overwrite": "在 OpenStreetMap 中覆寫",
+        "title": "已從外部網站載入結構化資料"
     },
     "favourite": {
         "loginNeeded": "<h3>登入</h3>只有開放街圖使用者才有個人化樣式",
@@ -185,6 +187,7 @@
             "editId": "開啟開放街圖線上編輯器",
             "editJosm": "採用 JOSM 編輯",
             "followOnMastodon": "在 Mastodon 追蹤 MapComplete",
+            "gotoSourceCode": "檢視原始碼",
             "iconAttribution": {
                 "title": "使用的圖示"
             },
@@ -197,6 +200,8 @@
             "openIssueTracker": "提出臭蟲報告",
             "openMapillary": "開啟 Mapillary",
             "openOsmcha": "請見 {theme} 的最新編輯",
+            "openOsmchaLastWeek": "檢視最近 7 天的編輯",
+            "openThemeDocumentation": "開啟專題地圖 {name} 的文件",
             "seeOnMapillary": "在 Mapillary 觀看這張影像",
             "themeBy": "由 {author} 維護主題",
             "title": "版權與署名",
@@ -317,10 +322,11 @@
         "openStreetMapIntro": "<h3>開放的地圖</h3><p>如果有一份地圖，任何人都能使用與自由編輯，單一的地圖能夠儲存所有地理相關資訊。不同的、範圍小的，不相容甚至過時不再被需要的地圖。</p><p><b><a href=\"https://OpenStreetMap.org\" target=\"_blank\">開放街圖</a></b>不是敵人的地圖，人人都能自由使用這些圖資， (只要<a href=\"https://osm.org/copyright\" target=\"_blank\">署名與公開變動這資料</a>)。任何人都能新增新資料與修正錯誤，這些網站也用開放街圖，資料也都來自開放街圖，你的答案與修正也會加被用到/p&gt;</p><p>許多人與應用程式已經採用開放街圖了：<a href=\"https://organicmaps.app//\" target=\"_blank\">Organic Maps</a>、<a href=\"https://osmAnd.net\" target=\"_blank\">OsmAnd</a>，還有 Facebook、Instagram，蘋果地圖、Bing 地圖(部分)採用開放街圖。</p>",
         "openTheMap": "開啟地圖",
         "openTheMapAtGeolocation": "縮放到你的位置",
+        "openTheMapReason": "以檢視、編輯和增加資訊",
         "opening_hours": {
             "all_days_from": "每天都有營業 {ranges}",
             "closed_permanently": "不清楚關閉多久了",
-            "closed_until": "{date} 起關閉",
+            "closed_until": "開放於 {date}",
             "error": "無法解析營業時間",
             "error_loading": "錯誤：無法視覺化開放時間。",
             "friday": "星期五時 {ranges}",
@@ -354,6 +360,7 @@
             "versionInfo": "v{version} - {date} 產生的"
         },
         "pickLanguage": "選擇語言",
+        "poweredByMapComplete": "由 MapComplete 提供支援—群眾外包，OpenStreetMap 的專題地圖",
         "poweredByOsm": "由開放街圖資料驅動",
         "questionBox": {
             "answeredMultiple": "你回答 {answered} 問題",
@@ -377,9 +384,10 @@
         },
         "readYourMessages": "請先閱讀開放街圖訊息之前再來新增新圖徵。",
         "removeLocationHistory": "刪除位置歷史",
+        "retry": "重試",
         "returnToTheMap": "回到地圖",
         "save": "儲存",
-        "screenToSmall": "在新視窗開啟 {theme}",
+        "screenToSmall": "在新視窗中開啟 <i>{theme}</i>",
         "search": {
             "error": "有狀況發生了…",
             "nothing": "沒有找到…",
@@ -388,14 +396,21 @@
             "searching": "搜尋中…"
         },
         "searchAnswer": "搜尋選項…",
+        "seeIndex": "查看所有專題地圖的概覽",
         "share": "分享",
         "sharescreen": {
             "copiedToClipboard": "複製連結到簡貼簿",
             "documentation": "要知道更多可以用的網址參數，<a href='https://github.com/pietervdvn/MapComplete/blob/develop/Docs/URL_Parameters.md' target='_blank'>參考這份文章</a>",
             "embedIntro": "<h3>嵌入到你的網站</h3>請考慮將這份地圖嵌入您的網站。<br/>地圖毋須額外授權，非常歡迎您多加利用。<br/>一切都是免費的，而且之後也是免費的，越有更多人使用，則越顯得它的價值。",
-            "fsUserbadge": "啟用登入按鈕",
+            "fsBackground": "啟用切換背景",
+            "fsFilter": "啟用切換圖層和過濾器的可能性",
+            "fsGeolocation": "啟用地理定位",
+            "fsUserbadge": "啟用登入按鈕，從而可以進行變更",
             "fsWelcomeMessage": "顯示歡迎訊息以及相關頁籤",
             "intro": "<h3>分享這地圖</h3>複製下面的連結來向朋友與家人分享這份地圖：",
+            "openLayers": "開啟圖層和過濾器選單",
+            "options": "分享選項",
+            "stateIsIncluded": "目前的圖層和過濾器狀態已包含在分享連結和 iframe 中。",
             "thanksForSharing": "感謝分享！",
             "title": "分享這份地圖"
         },
@@ -592,14 +607,16 @@
     },
     "index": {
         "#": "當沒有載入主題時，這些文字會在主題按鈕上面顯示",
+        "about": "關於 MapComplete",
         "featuredThemeTitle": "這週的焦點",
         "intro": "關於您貢獻的各種主題的地圖",
+        "learnMore": "瞭解更多",
         "logIn": "登入來看其他你先前查看的主題",
         "pickTheme": "請挑選主題來開始。",
         "title": "MapComplete"
     },
     "move": {
-        "cancel": "取消移動",
+        "cancel": "選擇不同的原因",
         "cannotBeMoved": "這個圖徵無法移動。",
         "confirmMove": "移動至這裏",
         "inviteToMove": {
@@ -616,7 +633,7 @@
         "partOfRelation": "這個圖徵是關聯的一部分，請用其他編輯器來移動。",
         "pointIsMoved": "這個點已經被移動了",
         "reasons": {
-            "reasonInaccurate": "這個物件的位置並不準確，應該移動個幾公尺",
+            "reasonInaccurate": "位置不準確，誤差幾公尺",
             "reasonRelocation": "你的物件已經移動到完全不同的位置"
         },
         "selectReason": "為什麼你移動這個物件？",
@@ -709,7 +726,7 @@
         "i_am_affiliated": "我是這物件的相關關係者",
         "i_am_affiliated_explanation": "檢查你是否是店主、創造者或是員工…",
         "name_required": "需要有名稱才能顯示和創造審核",
-        "no_reviews_yet": "還沒有審核，當第一個撰寫者來幫助開放資料與商家吧！",
+        "no_reviews_yet": "還沒有評論。成為第一個！",
         "non_place_review": "並未顯示一篇與地點無關的評論。",
         "non_place_reviews": "並未顯示 {n} 篇與地點無關的評論。",
         "question": "你會怎麼評分 {title()} ？",
