@@ -13,7 +13,7 @@
         "title": "藝術品"
     },
     "atm": {
-        "description": "此地圖顯示了提款或存款的 ATM",
+        "description": "此地圖顯示了提款或存款的自動櫃員機",
         "layers": {
             "3": {
                 "override": {
@@ -597,10 +597,6 @@
     },
     "stations": {
         "layers": {
-            "3": {
-                "description": "顯示火車站的圖層",
-                "name": "火車站"
-            },
             "16": {
                 "name": "出發板",
                 "presets": {
@@ -621,6 +617,10 @@
                 "title": {
                     "render": "時刻表"
                 }
+            },
+            "3": {
+                "description": "顯示火車站的圖層",
+                "name": "火車站"
             }
         },
         "title": "火車站"

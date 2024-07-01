@@ -20,6 +20,7 @@
         "cancel": "Cancelar",
         "cannotBeDeleted": "Esta función no puede ser eliminada",
         "delete": "Eliminar",
+        "deletedTitle": "Característica eliminada",
         "explanations": {
             "hardDelete": "Este elemento será eliminado en OpenStreetMap. Puede ser recuperado por un colaborador experimentado",
             "retagNoOtherThemes": "Esta característica será reclasificada y ocultada en esta aplicación",
@@ -27,6 +28,7 @@
             "selectReason": "Por favor, seleccione el motivo por el que esta característica debe ser eliminada",
             "softDelete": "Esta característica se actualizará y se ocultará de esta aplicación. <span class='subtle'>{reason}</span>"
         },
+        "isChanged": "Esta característica ha sido cambiada y ya no coincide con esta capa",
         "isDeleted": "Esta función se ha eliminado",
         "isntAPoint": "Solo los nodos pueden ser eliminados, esta característica es una vía, área o relación.",
         "loading": "Inspeccionando las propiedades para comprobar si esta característica puede ser eliminada.",
@@ -44,6 +46,18 @@
         "safeDelete": "Este elemento puede ser eliminado con seguridad.",
         "useSomethingElse": "Utilice otro editor de OpenStreetMap para eliminarlo",
         "whyDelete": "¿Por qué debería eliminarse este elemento?"
+    },
+    "external": {
+        "allAreApplied": "Todos los valores externos desaparecidos han sido copiados en OpenStreetMap",
+        "allIncluded": "El dato cargado desde {source} está contenida en OpenStreetMap",
+        "apply": "Aplicar",
+        "applyAll": "Aplicar todos los valores perdidos",
+        "conflicting": {
+            "intro": "OpenStreetMap tiene un valor diferente al sitio web de origen para los siguientes valores.",
+            "title": "Elementos conflictivos"
+        },
+        "currentInOsmIs": "Por el momento, OpenStreetMap tiene el siguiente valor registrado:",
+        "done": "Listo"
     },
     "favourite": {
         "loginNeeded": "<h3>Entrar</h3>El diseño personalizado sólo está disponible para los usuarios de OpenStreetMap",
@@ -136,7 +150,7 @@
             "intro": "Has marcado un lugar del que no conocemos los datos.<br/>",
             "layerNotEnabled": "La capa {layer} no está habilitada. Activa esta capa para poder añadir un elemento",
             "openLayerControl": "Abrir el control de capas",
-            "pleaseLogin": "Por favor inicia sesión para añadir un nuevo elemento",
+            "pleaseLogin": "Por favor inicia sesión con OpenStreetMap para añadir un nuevo elemento",
             "presetInfo": "El nuevo POI tendrá {tags}",
             "stillLoading": "Los datos se siguen cargando. Espera un poco antes de añadir una nueva función.",
             "title": "Añadir un elemento nuevo",
@@ -242,7 +256,7 @@
         "openTheMap": "Abrir el mapa",
         "opening_hours": {
             "closed_permanently": "Cerrado - sin día de apertura conocido",
-            "closed_until": "Cerrado hasta {date}",
+            "closed_until": "Abierto el {date}",
             "error_loading": "Error: no se han podido visualizar esos horarios de apertura.",
             "loadingCountry": "Determinando país…",
             "not_all_rules_parsed": "El horario de esta tienda es complejo. Las normas siguientes serán ignoradas en la entrada:",
@@ -275,7 +289,7 @@
         "removeLocationHistory": "Eliminar el historial de ubicaciones",
         "returnToTheMap": "Volver al mapa",
         "save": "Guardar",
-        "screenToSmall": "Abrir {theme} en una ventana nueva",
+        "screenToSmall": "Abrir <i>{theme}</i> en una ventana nueva",
         "search": {
             "error": "Alguna cosa no ha ido bien…",
             "nothing": "Nada encontrado…",
@@ -285,7 +299,7 @@
         "sharescreen": {
             "copiedToClipboard": "Enlace copiado en el portapapeles",
             "embedIntro": "<h3>Inclúyelo en tu página web</h3>Incluye este mapa en tu página web. <br/> Te animamos a que lo hagas, no hace falta que pidas permiso. <br/> Es gratis, y siempre lo será. A más gente que lo use más valioso será.",
-            "fsUserbadge": "Activar el botón de entrada",
+            "fsUserbadge": "Activa el botón de inicio de sesión y por lo tanto la posibilidad de hacer cambios",
             "fsWelcomeMessage": "Muestra el mensaje emergente de bienvenida y pestañas asociadas",
             "intro": "<h3>Comparte este mapa</h3> Comparte este mapa copiando el enlace de debajo y enviándolo a amigos y familia:",
             "thanksForSharing": "Gracias por compartir!",
@@ -318,7 +332,7 @@
         },
         "welcomeBack": "¡Bienvenido de nuevo!",
         "welcomeExplanation": {
-            "addNew": "Toque el mapa para añadir un nuevo POI.",
+            "addNew": "¿Un artículo falta? Utilice el botón en la parte inferior izquierda para añadir un nuevo punto de interés.",
             "general": "En este mapa, puedes ver, editar y agregar <i>puntos de interés</i>. Haz zoom para ver los POI, toca uno para ver o editar la información. Todos los datos proceden y se guardan en OpenStreetMap, que puede reutilizarse libremente."
         },
         "wikipedia": {
@@ -370,13 +384,13 @@
     "index": {
         "#": "Estos textos son mostrados sobre los botones del tema cuando no hay un tema cargado",
         "featuredThemeTitle": "Esta semana destacamos",
-        "intro": "MapComplete a un visor y editor de OpenStreetMap, que te muestra información sobre un tema específico.",
+        "intro": "Mapas sobre diversos temas a los que contribuye",
         "logIn": "Inicia sesión para ver otros temas que visitaste anteriormente",
         "pickTheme": "Elige un tema de abajo para empezar.",
-        "title": "Le damos la bienvenida a MapComplete"
+        "title": "MapComplete"
     },
     "move": {
-        "cancel": "Cancelar movimiento",
+        "cancel": "Elige una razón diferente",
         "cannotBeMoved": "Esta característica no se puede mover.",
         "confirmMove": "Mover aquí",
         "inviteToMove": {
@@ -393,7 +407,7 @@
         "partOfRelation": "Esta característica es parte de una relación. Utiliza otro editor para moverla.",
         "pointIsMoved": "Este punto ha sido eliminado",
         "reasons": {
-            "reasonInaccurate": "La localización de este objeto no es precisa y debe de ser movida algunos metros",
+            "reasonInaccurate": "La ubicación es inexacta por unos pocos metros",
             "reasonRelocation": "El objeto a sido relocalizado a una localización completamente diferente"
         },
         "selectReason": "¿Por qué has movido este objeto?",
@@ -441,7 +455,7 @@
         "geodataTitle": "Tu geoubicación",
         "intro": "La privacidad es importante - tanto para el individual como para la sociedad. MapComplete intenta respetar tu privacidad tanto como sea posible - hasta el punto de que no se necesita ningún banner de cookies molesto es necesario. De todas formas, nos gustaría informarte de qué información se recolecta y se comparte, bajo que circunstancias y por qué se hacen estos compromisos.",
         "items": {
-            "changesYouMake": " Los cambios que has hecho",
+            "changesYouMake": "Los cambios que has hecho",
             "date": "Cuándo se efectuó el cambio",
             "distanceIndicator": "Una indicación de como de cerca estabas a los objetos cambiados. Otros mapeadores pueden utilizar esta información para determina si un cambio se hizo basándose en un sondeo o en una investigación remota",
             "language": "El idioma de la interfaz de usuario",
@@ -459,7 +473,7 @@
     "reviews": {
         "affiliated_reviewer_warning": "(Revisión afiliada)",
         "name_required": "Se requiere un nombre para mostrar y crear comentarios",
-        "no_reviews_yet": "Aún no hay reseñas. ¡Sé el primero en escribir una y ayuda a los datos abiertos y a los negocios!",
+        "no_reviews_yet": "Todavía no hay comentarios. ¡Sé el primero!",
         "saved": "Reseña guardada. ¡Gracias por compartir!",
         "saving_review": "Guardando…",
         "title": "{count} comentarios",
