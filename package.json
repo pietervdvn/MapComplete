@@ -119,7 +119,8 @@
     "server:ldjson": "vite-node scripts/serverLdScrape.ts",
     "sever:studio": "vite-node scripts/studioServer -- /root/git/MapComplete/assets",
     "server:errorreport": "vite-node scripts/serverErrorReport.ts -- /root/error_reports/",
-    "generate:buildDbScript": "vite-node scripts/osm2pgsql/generateBuildDbScript.ts"
+    "generate:buildDbScript": "vite-node scripts/osm2pgsql/generateBuildDbScript.ts",
+    "generate:summaryCache": "vite-node scripts/generateSummaryTileCache.ts"
   },
   "keywords": [
     "OpenStreetMap",
