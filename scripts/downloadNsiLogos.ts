@@ -15,7 +15,7 @@ class DownloadNsiLogos extends Script {
             return await this.downloadLogoUnsafe(nsiItem, type, basePath)
         } catch (e) {
             console.error("Could not download", nsiItem.displayName, "due to", e)
-            return false
+            return "error"
         }
     }
 
@@ -39,7 +39,7 @@ class DownloadNsiLogos extends Script {
             return false
         }
         if (logos.facebook) {
-            // Facebook logo's are generally better and square
+            // Facebook's logos are generally better and square
             await ScriptUtils.DownloadFileTo(logos.facebook, path)
             return true
         }
@@ -88,19 +88,32 @@ class DownloadNsiLogos extends Script {
         const items = NameSuggestionIndex.allPossible(type)
         const basePath = "./public/assets/data/nsi/logos/"
         let downloadCount = 0
-        const stepcount = 100
+        const stepcount = 5
         for (let i = 0; i < items.length; i += stepcount) {
-            if (i % 100 === 0) {
+            if (downloadCount > 0 || i % 200 === 0) {
                 console.log(i + "/" + items.length, "downloaded " + downloadCount)
             }
-            await Promise.all(
+
+            const results = await Promise.all(
                 Utils.TimesT(stepcount, (j) => j).map(async (j) => {
                     const downloaded = await this.downloadLogo(items[i + j], type, basePath)
                     if (downloaded) {
                         downloadCount++
                     }
+                    return downloaded
                 })
             )
+            for (let j = 0; j < results.length; j++) {
+                let didDownload = results[j]
+                if(didDownload !== "error"){
+                    continue
+                }
+                console.log("Retrying", items[i + j].id, type)
+                didDownload = await this.downloadLogo(items[i + j], type, basePath)
+                if(didDownload === "error"){
+                    console.log("Failed again:", items[i + j].id)
+                }
+            }
         }
     }
 }
