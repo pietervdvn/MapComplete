@@ -6,6 +6,8 @@
   import { TagUtils } from "../../../Logic/Tags/TagUtils"
   import TagInfoStats from "../TagInfoStats.svelte"
   import { Translation } from "../../i18n/Translation"
+  import InformationCircle from "@babeard/svelte-heroicons/outline/InformationCircle"
+  import QuestionMarkCircle from "@babeard/svelte-heroicons/outline/QuestionMarkCircle"
 
   export let tag: UIEventSource<string> = new UIEventSource<string>(undefined)
   export let uploadableOnly: boolean
@@ -126,6 +128,9 @@
       on:submit
     />
   </div>
+  <a target="_blank" href="https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md">
+    <QuestionMarkCircle class="w-6 h-6"/>
+  </a>
 
   {#if $feedbackKey}
     <Tr cls="alert" t={$feedbackKey} />
