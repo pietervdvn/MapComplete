@@ -27,6 +27,7 @@ import { ConversionContext } from "./ConversionContext"
 import { AvailableRasterLayers } from "../../RasterLayers"
 import PointRenderingConfigJson from "../Json/PointRenderingConfigJson"
 import NameSuggestionIndex from "../../../Logic/Web/NameSuggestionIndex"
+import { Tag } from "../../../Logic/Tags/Tag"
 
 class ValidateLanguageCompleteness extends DesugaringStep<LayoutConfig> {
     private readonly _languages: string[]
@@ -1111,7 +1112,7 @@ class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
                         .enters("freeform", "type")
                         .err(
                             "No entry found in the 'Name Suggestion Index'. None of the 'osmSource'-tags match an entry in the NSI.\n\tOsmSource-tags are " +
-                                tags.map((t) => t.asHumanString()).join(" ; ")
+                                tags.map((t) => new Tag(t.key, t.value).asHumanString()).join(" ; ")
                         )
                 }
             } else if (json.freeform.type === "nsi") {
