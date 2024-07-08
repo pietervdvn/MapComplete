@@ -65,7 +65,7 @@ In the directory where it is downloaded (e.g. `~/data`), run
 
 ````
 export DATABASE_URL=postgresql://user:password@localhost:5444/osm-poi
-nohup ./pg_tileserv > pg_tileserv.log &
+nohup ./pg_tileserv >> pg_tileserv.log &
 ````
 
 Tiles are available at: 
