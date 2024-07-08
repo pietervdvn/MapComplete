@@ -1,0 +1,468 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<!-- http://www.rwe.com/web/cms/mediablob/en/451526/data/279638/1/rwe-npower/corporate-responsibility/2009-cr-report/RWE-npower-CR-summary-report-2009.pdf -->
+<svg
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   version="1.0"
+   width="197.612"
+   height="69.8051"
+   id="svg4344">
+  <defs
+     id="defs4346">
+    <linearGradient
+       x1="-0.261719"
+       y1="0"
+       x2="1.25781"
+       y2="0"
+       id="linear2"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(-103.962,0,0,-103.962,201.572,63.8405)">
+      <stop
+         id="stop3798"
+         style="stop-color:#0066b3;stop-opacity:1"
+         offset="0.173206" />
+      <stop
+         id="stop3800"
+         style="stop-color:#0066b3;stop-opacity:1"
+         offset="0.25" />
+      <stop
+         id="stop3802"
+         style="stop-color:#0066b3;stop-opacity:1"
+         offset="0.28125" />
+      <stop
+         id="stop3804"
+         style="stop-color:#0066b2;stop-opacity:1"
+         offset="0.285156" />
+      <stop
+         id="stop3806"
+         style="stop-color:#0066b2;stop-opacity:1"
+         offset="0.289062" />
+      <stop
+         id="stop3808"
+         style="stop-color:#0065b2;stop-opacity:1"
+         offset="0.296875" />
+      <stop
+         id="stop3810"
+         style="stop-color:#0064b1;stop-opacity:1"
+         offset="0.300781" />
+      <stop
+         id="stop3812"
+         style="stop-color:#0064b1;stop-opacity:1"
+         offset="0.304688" />
+      <stop
+         id="stop3814"
+         style="stop-color:#0064b0;stop-opacity:1"
+         offset="0.308594" />
+      <stop
+         id="stop3816"
+         style="stop-color:#0063b0;stop-opacity:1"
+         offset="0.3125" />
+      <stop
+         id="stop3818"
+         style="stop-color:#0063b0;stop-opacity:1"
+         offset="0.320312" />
+      <stop
+         id="stop3820"
+         style="stop-color:#0262af;stop-opacity:1"
+         offset="0.324219" />
+      <stop
+         id="stop3822"
+         style="stop-color:#0562af;stop-opacity:1"
+         offset="0.328125" />
+      <stop
+         id="stop3824"
+         style="stop-color:#0d62ae;stop-opacity:1"
+         offset="0.332031" />
+      <stop
+         id="stop3826"
+         style="stop-color:#1561ae;stop-opacity:1"
+         offset="0.335938" />
+      <stop
+         id="stop3828"
+         style="stop-color:#1a61ae;stop-opacity:1"
+         offset="0.339844" />
+      <stop
+         id="stop3830"
+         style="stop-color:#1f61ae;stop-opacity:1"
+         offset="0.34375" />
+      <stop
+         id="stop3832"
+         style="stop-color:#2360ad;stop-opacity:1"
+         offset="0.347656" />
+      <stop
+         id="stop3834"
+         style="stop-color:#2760ad;stop-opacity:1"
+         offset="0.351562" />
+      <stop
+         id="stop3836"
+         style="stop-color:#2a5fac;stop-opacity:1"
+         offset="0.355469" />
+      <stop
+         id="stop3838"
+         style="stop-color:#2d5fac;stop-opacity:1"
+         offset="0.359375" />
+      <stop
+         id="stop3840"
+         style="stop-color:#305eac;stop-opacity:1"
+         offset="0.363281" />
+      <stop
+         id="stop3842"
+         style="stop-color:#335eac;stop-opacity:1"
+         offset="0.367188" />
+      <stop
+         id="stop3844"
+         style="stop-color:#355eab;stop-opacity:1"
+         offset="0.371094" />
+      <stop
+         id="stop3846"
+         style="stop-color:#375dab;stop-opacity:1"
+         offset="0.375" />
+      <stop
+         id="stop3848"
+         style="stop-color:#3a5daa;stop-opacity:1"
+         offset="0.378906" />
+      <stop
+         id="stop3850"
+         style="stop-color:#3c5daa;stop-opacity:1"
+         offset="0.382812" />
+      <stop
+         id="stop3852"
+         style="stop-color:#3f5caa;stop-opacity:1"
+         offset="0.386719" />
+      <stop
+         id="stop3854"
+         style="stop-color:#415caa;stop-opacity:1"
+         offset="0.390625" />
+      <stop
+         id="stop3856"
+         style="stop-color:#435ba9;stop-opacity:1"
+         offset="0.394531" />
+      <stop
+         id="stop3858"
+         style="stop-color:#455ba9;stop-opacity:1"
+         offset="0.398438" />
+      <stop
+         id="stop3860"
+         style="stop-color:#475aa8;stop-opacity:1"
+         offset="0.402344" />
+      <stop
+         id="stop3862"
+         style="stop-color:#485aa8;stop-opacity:1"
+         offset="0.40625" />
+      <stop
+         id="stop3864"
+         style="stop-color:#4b59a8;stop-opacity:1"
+         offset="0.410156" />
+      <stop
+         id="stop3866"
+         style="stop-color:#4d59a7;stop-opacity:1"
+         offset="0.414062" />
+      <stop
+         id="stop3868"
+         style="stop-color:#4e58a7;stop-opacity:1"
+         offset="0.417969" />
+      <stop
+         id="stop3870"
+         style="stop-color:#5058a7;stop-opacity:1"
+         offset="0.421875" />
+      <stop
+         id="stop3872"
+         style="stop-color:#5258a6;stop-opacity:1"
+         offset="0.425781" />
+      <stop
+         id="stop3874"
+         style="stop-color:#5358a6;stop-opacity:1"
+         offset="0.429687" />
+      <stop
+         id="stop3876"
+         style="stop-color:#5557a6;stop-opacity:1"
+         offset="0.433594" />
+      <stop
+         id="stop3878"
+         style="stop-color:#5756a5;stop-opacity:1"
+         offset="0.4375" />
+      <stop
+         id="stop3880"
+         style="stop-color:#5856a5;stop-opacity:1"
+         offset="0.441406" />
+      <stop
+         id="stop3882"
+         style="stop-color:#5a56a5;stop-opacity:1"
+         offset="0.445313" />
+      <stop
+         id="stop3884"
+         style="stop-color:#5c55a4;stop-opacity:1"
+         offset="0.449219" />
+      <stop
+         id="stop3886"
+         style="stop-color:#5d54a4;stop-opacity:1"
+         offset="0.453125" />
+      <stop
+         id="stop3888"
+         style="stop-color:#5f54a4;stop-opacity:1"
+         offset="0.457031" />
+      <stop
+         id="stop3890"
+         style="stop-color:#6053a3;stop-opacity:1"
+         offset="0.460938" />
+      <stop
+         id="stop3892"
+         style="stop-color:#6253a3;stop-opacity:1"
+         offset="0.464844" />
+      <stop
+         id="stop3894"
+         style="stop-color:#6353a3;stop-opacity:1"
+         offset="0.46875" />
+      <stop
+         id="stop3896"
+         style="stop-color:#6552a2;stop-opacity:1"
+         offset="0.472656" />
+      <stop
+         id="stop3898"
+         style="stop-color:#6651a2;stop-opacity:1"
+         offset="0.476562" />
+      <stop
+         id="stop3900"
+         style="stop-color:#6851a1;stop-opacity:1"
+         offset="0.480469" />
+      <stop
+         id="stop3902"
+         style="stop-color:#6950a1;stop-opacity:1"
+         offset="0.484375" />
+      <stop
+         id="stop3904"
+         style="stop-color:#6d509e;stop-opacity:1"
+         offset="0.488281" />
+      <stop
+         id="stop3906"
+         style="stop-color:#714f9b;stop-opacity:1"
+         offset="0.492188" />
+      <stop
+         id="stop3908"
+         style="stop-color:#744f99;stop-opacity:1"
+         offset="0.496094" />
+      <stop
+         id="stop3910"
+         style="stop-color:#774e97;stop-opacity:1"
+         offset="0.5" />
+      <stop
+         id="stop3912"
+         style="stop-color:#7a4d95;stop-opacity:1"
+         offset="0.503906" />
+      <stop
+         id="stop3914"
+         style="stop-color:#7e4d93;stop-opacity:1"
+         offset="0.507812" />
+      <stop
+         id="stop3916"
+         style="stop-color:#804c92;stop-opacity:1"
+         offset="0.511719" />
+      <stop
+         id="stop3918"
+         style="stop-color:#834c90;stop-opacity:1"
+         offset="0.515625" />
+      <stop
+         id="stop3920"
+         style="stop-color:#864b8e;stop-opacity:1"
+         offset="0.519531" />
+      <stop
+         id="stop3922"
+         style="stop-color:#8a4a8b;stop-opacity:1"
+         offset="0.523438" />
+      <stop
+         id="stop3924"
+         style="stop-color:#8c4a8a;stop-opacity:1"
+         offset="0.527344" />
+      <stop
+         id="stop3926"
+         style="stop-color:#8f4988;stop-opacity:1"
+         offset="0.53125" />
+      <stop
+         id="stop3928"
+         style="stop-color:#924886;stop-opacity:1"
+         offset="0.535156" />
+      <stop
+         id="stop3930"
+         style="stop-color:#944884;stop-opacity:1"
+         offset="0.539062" />
+      <stop
+         id="stop3932"
+         style="stop-color:#984782;stop-opacity:1"
+         offset="0.542969" />
+      <stop
+         id="stop3934"
+         style="stop-color:#9b4680;stop-opacity:1"
+         offset="0.546875" />
+      <stop
+         id="stop3936"
+         style="stop-color:#9e467e;stop-opacity:1"
+         offset="0.550781" />
+      <stop
+         id="stop3938"
+         style="stop-color:#a0457c;stop-opacity:1"
+         offset="0.554688" />
+      <stop
+         id="stop3940"
+         style="stop-color:#a3447a;stop-opacity:1"
+         offset="0.558594" />
+      <stop
+         id="stop3942"
+         style="stop-color:#a64379;stop-opacity:1"
+         offset="0.5625" />
+      <stop
+         id="stop3944"
+         style="stop-color:#a84277;stop-opacity:1"
+         offset="0.566406" />
+      <stop
+         id="stop3946"
+         style="stop-color:#ab4175;stop-opacity:1"
+         offset="0.570312" />
+      <stop
+         id="stop3948"
+         style="stop-color:#ae4073;stop-opacity:1"
+         offset="0.574219" />
+      <stop
+         id="stop3950"
+         style="stop-color:#b13f71;stop-opacity:1"
+         offset="0.578125" />
+      <stop
+         id="stop3952"
+         style="stop-color:#b33e6f;stop-opacity:1"
+         offset="0.582031" />
+      <stop
+         id="stop3954"
+         style="stop-color:#b63d6d;stop-opacity:1"
+         offset="0.585938" />
+      <stop
+         id="stop3956"
+         style="stop-color:#b93d6b;stop-opacity:1"
+         offset="0.589844" />
+      <stop
+         id="stop3958"
+         style="stop-color:#bc3c69;stop-opacity:1"
+         offset="0.59375" />
+      <stop
+         id="stop3960"
+         style="stop-color:#be3a68;stop-opacity:1"
+         offset="0.597656" />
+      <stop
+         id="stop3962"
+         style="stop-color:#c13966;stop-opacity:1"
+         offset="0.601562" />
+      <stop
+         id="stop3964"
+         style="stop-color:#c43864;stop-opacity:1"
+         offset="0.605469" />
+      <stop
+         id="stop3966"
+         style="stop-color:#c63662;stop-opacity:1"
+         offset="0.609375" />
+      <stop
+         id="stop3968"
+         style="stop-color:#c93560;stop-opacity:1"
+         offset="0.613281" />
+      <stop
+         id="stop3970"
+         style="stop-color:#cc345e;stop-opacity:1"
+         offset="0.617188" />
+      <stop
+         id="stop3972"
+         style="stop-color:#ce325c;stop-opacity:1"
+         offset="0.621094" />
+      <stop
+         id="stop3974"
+         style="stop-color:#d0305b;stop-opacity:1"
+         offset="0.625" />
+      <stop
+         id="stop3976"
+         style="stop-color:#d32e58;stop-opacity:1"
+         offset="0.628906" />
+      <stop
+         id="stop3978"
+         style="stop-color:#d62c56;stop-opacity:1"
+         offset="0.632812" />
+      <stop
+         id="stop3980"
+         style="stop-color:#d92a54;stop-opacity:1"
+         offset="0.636719" />
+      <stop
+         id="stop3982"
+         style="stop-color:#db2853;stop-opacity:1"
+         offset="0.640625" />
+      <stop
+         id="stop3984"
+         style="stop-color:#de2651;stop-opacity:1"
+         offset="0.644531" />
+      <stop
+         id="stop3986"
+         style="stop-color:#e1244f;stop-opacity:1"
+         offset="0.648438" />
+      <stop
+         id="stop3988"
+         style="stop-color:#e3224d;stop-opacity:1"
+         offset="0.652344" />
+      <stop
+         id="stop3990"
+         style="stop-color:#e61f4b;stop-opacity:1"
+         offset="0.65625" />
+      <stop
+         id="stop3992"
+         style="stop-color:#e91c49;stop-opacity:1"
+         offset="0.660156" />
+      <stop
+         id="stop3994"
+         style="stop-color:#ec1947;stop-opacity:1"
+         offset="0.664063" />
+      <stop
+         id="stop3996"
+         style="stop-color:#ed1847;stop-opacity:1"
+         offset="0.671875" />
+      <stop
+         id="stop3998"
+         style="stop-color:#ed1847;stop-opacity:1"
+         offset="0.6875" />
+      <stop
+         id="stop4000"
+         style="stop-color:#ed1847;stop-opacity:1"
+         offset="0.75" />
+      <stop
+         id="stop4002"
+         style="stop-color:#ed1847;stop-opacity:1"
+         offset="1" />
+    </linearGradient>
+    <clipPath
+       id="clip6">
+      <path
+         d="M 98.5391,35.918 C 83.2383,36.0547 70.8633,48.5 70.8633,63.8438 L 70.8633,63.8438 C 70.8633,79.2617 83.3672,91.7617 98.7891,91.7617 L 98.7891,91.7617 L 201.031,91.7617 C 216.371,91.7617 228.82,79.3984 228.953,64.0938 L 228.953,64.0938 L 228.953,63.5938 C 228.82,48.3672 216.504,36.0508 201.281,35.918 L 201.281,35.918 L 98.5391,35.918 z M 73.6016,63.8438 C 73.6016,49.9297 84.8789,38.6562 98.7891,38.6562 L 98.7891,38.6562 L 201.031,38.6562 C 214.941,38.6562 226.215,49.9297 226.215,63.8438 L 226.215,63.8438 C 226.215,77.75 214.941,89.0273 201.031,89.0273 L 201.031,89.0273 L 98.7891,89.0273 C 84.8789,89.0273 73.6016,77.75 73.6016,63.8438 M 169.914,57.0352 L 169.918,64.8281 C 169.918,66.4609 168.875,67.7109 166.969,67.7109 L 166.969,67.7109 C 165.059,67.7109 164.02,66.3281 164.02,64.7969 L 164.02,64.7969 L 164.02,55.5117 C 164.02,55.2344 163.793,55.0078 163.516,55.0078 L 163.516,55.0078 L 161.867,55.0078 C 160.746,55.0078 159.844,55.9141 159.844,57.0352 L 159.844,57.0352 L 159.848,64.8125 C 159.848,66.4414 158.805,67.7109 156.898,67.7109 L 156.898,67.7109 C 155.082,67.7109 153.949,66.4414 153.949,64.8125 L 153.949,64.8125 L 153.945,55.5117 C 153.945,55.2344 153.719,55.0078 153.445,55.0078 L 153.445,55.0078 L 151.797,55.0078 C 150.68,55.0078 149.773,55.9141 149.773,57.0352 L 149.773,57.0352 L 149.773,64.7656 C 149.773,68.7305 152.328,71.7812 156.762,71.7812 L 156.762,71.7812 C 158.734,71.7812 160.648,70.9922 161.938,69.707 L 161.938,69.707 C 163.234,70.9922 165.211,71.7812 167.18,71.7812 L 167.18,71.7812 C 171.797,71.7812 174.094,68.457 174.094,64.7695 L 174.094,64.7695 L 174.086,55.5117 C 174.086,55.2344 173.863,55.0078 173.586,55.0078 L 173.586,55.0078 L 171.938,55.0078 C 170.82,55.0078 169.914,55.9141 169.914,57.0352 M 201.312,55.0195 C 197.535,55.0195 194.629,57.7734 194.629,62.0234 L 194.629,62.0234 L 194.629,69.7461 C 194.629,70.8633 195.531,71.7656 196.648,71.7656 L 196.648,71.7656 L 198.301,71.7656 C 198.578,71.7656 198.805,71.543 198.805,71.2656 L 198.805,71.2656 L 198.805,61.9062 C 198.805,60.2422 200.098,59.0625 201.566,59.0859 L 201.566,59.0859 L 206.984,59.0859 C 208.102,59.0859 209.008,58.1836 209.008,57.0664 L 209.008,57.0664 L 209.008,55.5156 C 209.008,55.2422 208.781,55.0195 208.5,55.0195 L 208.5,55.0195 L 201.312,55.0195 z M 137.164,55.0195 C 133.102,55.0195 130.477,58.1094 130.477,61.8906 L 130.477,61.8906 L 130.477,64.7695 C 130.477,68.9258 133.289,71.7617 137.164,71.7617 L 137.164,71.7617 L 141.648,71.7617 C 145.426,71.7617 148.336,69.0195 148.336,64.7695 L 148.336,64.7695 L 148.336,61.8906 C 148.336,58.1094 145.707,55.0195 141.648,55.0195 L 141.648,55.0195 L 137.164,55.0195 z M 134.652,64.7695 L 134.652,62.0117 C 134.652,60.3438 135.758,59.0859 137.418,59.0859 L 137.418,59.0859 L 141.398,59.0859 C 142.961,59.0859 144.16,60.25 144.16,62.0117 L 144.16,62.0117 L 144.16,64.7695 C 144.16,66.5234 142.961,67.6914 141.398,67.6914 L 141.398,67.6914 L 137.418,67.6914 C 135.758,67.6914 134.652,66.4297 134.652,64.7695 M 112.426,55.0195 L 112.426,69.7578 C 112.426,70.875 113.328,71.7656 114.449,71.7656 L 114.449,71.7656 L 116.098,71.7656 C 116.375,71.7656 116.602,71.5469 116.602,71.2734 L 116.602,71.2734 L 116.602,67.4062 L 123.305,67.4062 C 126.75,67.4062 129.227,65.0469 129.227,61.2578 L 129.227,61.2578 C 129.227,57.5039 126.75,55.0195 123.305,55.0195 L 123.305,55.0195 L 112.426,55.0195 z M 116.602,59.0938 L 123.156,59.0938 C 124.301,59.0938 125.055,60.0352 125.055,61.1758 L 125.055,61.1758 C 125.055,62.3242 124.301,63.3281 123.156,63.3281 L 123.156,63.3281 L 116.602,63.3281 L 116.602,59.0938 z M 112.426,55.0195 L 112.426,55.0195 L 112.426,55.0195 z M 99.5625,55.0195 C 95.6875,55.0195 92.875,57.8711 92.875,62.0234 L 92.875,62.0234 L 92.875,69.7461 C 92.875,70.8633 93.7812,71.7656 94.8984,71.7656 L 94.8984,71.7656 L 96.5469,71.7656 C 96.8281,71.7656 97.0508,71.543 97.0508,71.2656 L 97.0508,71.2656 L 97.0508,62.0117 C 97.0508,60.2578 98.2461,59.0977 99.8125,59.0977 L 99.8125,59.0977 L 106.164,59.0977 L 106.164,69.7461 C 106.164,70.8633 107.066,71.7656 108.184,71.7656 L 108.184,71.7656 L 109.836,71.7656 C 110.113,71.7656 110.336,71.543 110.336,71.2656 L 110.336,71.2656 L 110.336,55.0195 L 99.5625,55.0195 z M 182.297,55.0195 C 178.516,55.0195 175.609,57.7812 175.609,62.0312 L 175.609,62.0312 L 175.609,64.7969 C 175.609,68.9492 178.477,71.7617 182.258,71.7617 L 182.258,71.7617 L 190.609,71.7617 C 191.727,71.7617 192.633,70.9023 192.633,69.7852 L 192.633,69.7852 L 192.625,68.1953 C 192.625,67.9141 192.402,67.6914 192.125,67.6914 L 192.125,67.6914 L 182.305,67.6914 C 180.922,67.6914 179.789,66.7773 179.789,65.6875 L 179.789,65.6875 L 187.781,65.6875 C 190.785,65.6875 193.109,63.2656 193.109,60.2148 L 193.109,60.2148 C 193.109,57.4023 190.648,55.0195 187.781,55.0195 L 187.781,55.0195 L 182.297,55.0195 z M 182.305,59.0859 L 187.656,59.0859 C 188.352,59.0859 188.926,59.6562 188.926,60.3711 L 188.926,60.3711 C 188.926,61.0352 188.383,61.6445 187.656,61.6445 L 187.656,61.6445 L 179.797,61.6484 C 179.797,60.1094 180.66,59.0859 182.305,59.0859"
+         id="path3792" />
+    </clipPath>
+    <linearGradient
+       x1="-0.261719"
+       y1="0"
+       x2="1.25781"
+       y2="0"
+       id="linearGradient4483"
+       xlink:href="#linear2"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(-103.962,0,0,-103.962,201.572,63.8405)" />
+  </defs>
+  <path
+     d="M 0.004875,34.9071 C 0.004875,15.6251 15.6299,-5.68434e-14 34.9073,-5.68434e-14 L 162.715,-5.68434e-14 C 181.987,-5.68434e-14 197.612,15.6251 197.612,34.9071 C 197.612,54.1801 181.987,69.8051 162.715,69.8051 L 34.9073,69.8051 C 15.6299,69.8051 0.004875,54.1801 0.004875,34.9071"
+     id="path4206"
+     style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none" />
+  <path
+     d="M 162.71,69.4141 L 34.9073,69.4141 C 15.874,69.4141 0.390675,53.9351 0.390675,34.9071 C 0.390675,15.8691 15.874,0.3906 34.9073,0.3906 L 162.71,0.3906 C 181.744,0.3906 197.222,15.8691 197.222,34.9071 C 197.222,53.9351 181.744,69.4141 162.71,69.4141"
+     id="path4208"
+     style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none" />
+  <g
+     transform="matrix(1.25,0,0,1.25,-88.5791,-44.8975)"
+     clip-path="url(#clip6)"
+     id="g4210">
+    <path
+       d="M 228.953,91.7617 L 228.953,35.918 L 70.8633,35.918 L 70.8633,91.7617 L 228.953,91.7617 z"
+       id="path4214"
+       style="fill:url(#linearGradient4483);fill-rule:nonzero;stroke:none" />
+  </g>
+</svg>

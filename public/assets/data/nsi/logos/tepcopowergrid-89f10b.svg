@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-210 -160 420 320">
+<polygon points="0,0 50,-50 100,0 50,50 100,100 200,0 50,-150 -50,-50" fill="rgb(235,30,30)" />
+<polygon points="0,0 -50,50 -100,0 -50,-50 -100,-100 -200,0 -50,150 50,50" fill="rgb(235,30,30)" />
+</svg>

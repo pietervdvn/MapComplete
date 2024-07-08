@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="starlink-logo" width="1032" height="524" version="1.1" viewBox="0 0 1032 524" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+ <metadata id="metadata31">
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <clipPath id="mask_x1">
+  <circle id="circle2" cx="275" cy="85" r="200"/>
+ </clipPath>
+ <clipPath id="mask_x2">
+  <circle id="circle5" cx="230" cy="90" r="80"/>
+ </clipPath>
+ <g id="g853" transform="matrix(3.3784 0 0 3.3784 -530.93 7.7532)">
+  <g id="letters" visibility="inherit">
+   <path id="letter-s" class="letter" d="m164 142.2h2.8c0.1 0.9 0.4 1.5 0.8 1.8 0.4 0.4 1.1 0.5 2 0.5 1.7 0 2.5-0.7 2.5-2 0-0.6-0.2-1.1-0.5-1.4s-0.9-0.5-1.6-0.7l-1.5-0.2c-2.8-0.5-4.2-1.9-4.2-4.3 0-1.4 0.5-2.6 1.4-3.4 1-0.8 2.2-1.3 3.8-1.3 1.5 0 2.7 0.4 3.6 1.2s1.4 2 1.5 3.4h-2.8c0-0.8-0.3-1.3-0.7-1.6s-1-0.5-1.7-0.5c-0.8 0-1.3 0.2-1.7 0.5s-0.6 0.8-0.6 1.5c0 0.5 0.2 1 0.5 1.3s0.9 0.5 1.6 0.7l1.6 0.3c2.7 0.5 4 1.9 4 4.4 0 1.6-0.5 2.8-1.5 3.6s-2.3 1.2-4 1.2-3-0.4-3.9-1.2c-0.8-1-1.3-2.2-1.4-3.8z"/>
+   <path id="letter-t" class="letter" d="m188.5 134v13h-3v-13h-4v-2.6h10.9v2.6z"/>
+   <path id="letter-a" class="letter" d="m200.9 143.9-0.9 3h-3.1l5.5-15.5h2.4l5.5 15.5h-3.1l-0.9-3zm2.7-8.4-1.9 6h3.8z"/>
+   <path id="letter-r" class="letter" d="m220.3 140.7v6.3h-2.9v-15.5h5.9c1.5 0 2.7 0.4 3.6 1.2s1.4 2 1.4 3.4c0 1-0.2 1.9-0.7 2.6s-1.2 1.2-2 1.6l3.4 6.8h-3.4l-2.9-6.3h-2.4zm2.8-2.5c0.7 0 1.2-0.2 1.6-0.6s0.6-0.9 0.6-1.6c0-0.6-0.2-1.1-0.6-1.5s-0.9-0.6-1.6-0.6h-2.8v4.2h2.8z"/>
+   <path id="letter-l" class="letter" d="m239.2 131.4v13h6.8v2.6h-9.7v-15.5h2.9z"/>
+   <path id="letter-i" class="letter" d="m256.6 131.4v15.6h-2.9v-15.5h2.9z"/>
+   <path id="letter-n" class="letter" d="m276.7 147h-2.9l-5.7-9.7v9.7h-3.1v-15.5h2.9l5.7 9.7v-9.7h2.9v15.5z"/>
+   <path id="letter-k" class="letter" d="m287.9 142.6v4.3h-2.9v-15.5h2.9v7.2l5.4-7.2h3.5l-5 6.2 5.4 9.3h-3.4l-3.8-6.9z"/>
+  </g>
+  <g id="logo">
+   <g id="x1" clip-path="url(#mask_x1)">
+    <path id="path17" class="logo_x" d="m168.4 112.2-3.9 3.8h34.5c93-93.4 226.9-110 261-112.8v-0.1c-186.1 10.7-272.1 90.3-291.6 109.1" visibility="inherit"/>
+   </g>
+   <g id="x2" clip-path="url(#mask_x2)" visibility="inherit">
+    <path id="path20" class="logo_x" d="m263.2 116h34.1l-47.2-34.8c-5.7 3.9-11.6 8.3-17.2 12.7z"/>
+    <path id="path22" class="logo_x" d="m200.9 44.6h-34.1l40 29.3c5.8-3.9 12.5-8.1 18.7-11.7z"/>
+   </g>
+  </g>
+ </g>
+</svg>
