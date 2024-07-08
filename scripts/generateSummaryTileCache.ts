@@ -49,7 +49,7 @@ class GenerateSummaryTileCache extends Script {
         } else {
             const parts = [
                await this.fetchTileRecursive(z + 1, x * 2, y * 2, layersSummed),
-               await this.fetchTileRecursive(z + 1, x * 2 + 1, y * 2, layersSummeawait d),
+               await this.fetchTileRecursive(z + 1, x * 2 + 1, y * 2, layersSummed),
                await this.fetchTileRecursive(z + 1, x * 2, y * 2 + 1, layersSummed),
                await this.fetchTileRecursive(z + 1, x * 2 + 1, y * 2 + 1, layersSummed)]
             const sum = this.sumTotals(parts.map(f => f.properties))
