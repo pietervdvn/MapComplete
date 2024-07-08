@@ -79,7 +79,7 @@ class GenerateSummaryTileCache extends Script {
 
         const layers = await Utils.downloadJson<{ layers: string[], meta: object }>(this.url + "/status.json")
         const layersSummed = layers.layers.map(l => encodeURIComponent(l)).join("+")
-        const r = await this.fetchTileRecursive(12, 2084, 1367, layersSummed)
+        const r = await this.fetchTileRecursive(0, 0, 0, layersSummed)
         console.log(r)
 
     }
