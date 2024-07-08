@@ -9,6 +9,8 @@
   import Resolved from "../../../assets/svg/Resolved.svelte"
   import Note from "../../../assets/svg/Note.svelte"
   import LoginToggle from "../../Base/LoginToggle.svelte"
+  import { writable } from "svelte/store"
+  import Loading from "../../Base/Loading.svelte"
 
   export let state: SpecialVisualizationState
   export let tags: UIEventSource<Record<string, string>>
@@ -29,10 +31,13 @@
 
   let isClosed: Store<boolean> = tags.map((tags) => (tags?.["closed_at"] ?? "") !== "")
 
+  let isProcessing = writable(false)
   async function addComment() {
     if ((txt.data ?? "") == "") {
       return
     }
+
+    isProcessing.set(true)
 
     if (isClosed.data) {
       await state.osmConnection.reopenNote(id, txt.data)
@@ -42,20 +47,27 @@
     }
     NoteCommentElement.addCommentTo(txt.data, tags, state)
     txt.setData("")
+    isProcessing.set(false)
   }
 
   async function closeNote() {
+    isProcessing.set(true)
     await state.osmConnection.closeNote(id, txt.data)
     tags.data["closed_at"] = new Date().toISOString()
     NoteCommentElement.addCommentTo(txt.data, tags, state)
     tags.ping()
+    isProcessing.set(false)
+
   }
 
   async function reopenNote() {
+    isProcessing.set(true)
     await state.osmConnection.reopenNote(id, txt.data)
     tags.data["closed_at"] = undefined
     NoteCommentElement.addCommentTo(txt.data, tags, state)
     tags.ping()
+    isProcessing.set(false)
+
   }
 </script>
 
@@ -76,6 +88,9 @@
       />
     </label>
 
+    {#if $isProcessing}
+      <Loading/>
+      {:else}
     <div class="flex flex-col">
       {#if $txt?.length > 0}
         <button class="primary flex" on:click|preventDefault={() => addComment()}>
@@ -111,5 +126,6 @@
         </button>
       {/if}
     </div>
+      {/if}
   </form>
 </LoginToggle>
