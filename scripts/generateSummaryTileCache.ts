@@ -34,21 +34,24 @@ class GenerateSummaryTileCache extends Script {
         return feature
     }
 
-    async fetchTileRecursive(z: number, x: number, y: number, layersSummed: string): Promise<Feature<Point>> {
+    async fetchTileRecursive(z: number, x: number, y: number, layersSummed: string, sleepMs = 0): Promise<Feature<Point>> {
         const index = Tiles.tile_index(z, x, y)
         const path = this.cacheDir + "tile_" + z + "_" + x + "_" + y + ".json"
         if (existsSync(path)) {
             return JSON.parse(readFileSync(path, "utf8"))
+        }
+        if(sleepMs > 0){
+            await ScriptUtils.sleep(sleepMs)
         }
         let feature: Feature<Point>
         if (z >= 14) {
             feature = await this.fetchTile(z, x, y, layersSummed)
         } else {
             const parts = await Promise.all([
-                this.fetchTileRecursive(z + 1, x * 2, y * 2, layersSummed),
-                this.fetchTileRecursive(z + 1, x * 2 + 1, y * 2, layersSummed),
-                this.fetchTileRecursive(z + 1, x * 2, y * 2 + 1, layersSummed),
-                this.fetchTileRecursive(z + 1, x * 2 + 1, y * 2 + 1, layersSummed)])
+                this.fetchTileRecursive(z + 1, x * 2, y * 2, layersSummed, 50),
+                this.fetchTileRecursive(z + 1, x * 2 + 1, y * 2, layersSummed,100),
+                this.fetchTileRecursive(z + 1, x * 2, y * 2 + 1, layersSummed,250),
+                this.fetchTileRecursive(z + 1, x * 2 + 1, y * 2 + 1, layersSummed, 500)])
             const sum = this.sumTotals(parts.map(f => f.properties))
             feature = <Feature<Point>>{
                 type: "Feature",
