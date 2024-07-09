@@ -4600,6 +4600,7 @@ button.primary:hover:not(.disabled), .button.primary:hover:not(.disabled) {
 button.disabled {
   border-color: var(--disabled);
   color: var(--disabled);
+  cursor: unset;
 }
 
 button.disabled svg path {
