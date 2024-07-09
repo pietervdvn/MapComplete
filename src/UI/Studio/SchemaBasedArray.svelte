@@ -180,7 +180,7 @@
             {:else if typeof value === "string"}
             Builtin: <b>{value}</b>
             {:else}
-            <Tr cls="font-bold" t={Translations.T(value.question ?? value.render)}/>
+            <Tr cls="font-bold" t={Translations.T(value?.question ?? value?.render)}/>
           {/if}
         </span>
         <div class="normal-background p-2">
