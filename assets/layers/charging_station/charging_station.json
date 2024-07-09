@@ -3145,8 +3145,8 @@
       "socket:schuko:output": {
         "quantity": "power",
         "denominations": [
-          "mW",
-          "kW"
+          "kW",
+          "MW"
         ]
       },
       "socket:typee:voltage": "voltage",
@@ -3154,8 +3154,8 @@
       "socket:typee:output": {
         "quantity": "power",
         "denominations": [
-          "mW",
-          "kW"
+          "kW",
+          "MW"
         ]
       },
       "socket:chademo:voltage": "voltage",
@@ -3163,8 +3163,8 @@
       "socket:chademo:output": {
         "quantity": "power",
         "denominations": [
-          "mW",
-          "kW"
+          "kW",
+          "MW"
         ]
       },
       "socket:type1_cable:voltage": "voltage",
@@ -3172,8 +3172,8 @@
       "socket:type1_cable:output": {
         "quantity": "power",
         "denominations": [
-          "mW",
-          "kW"
+          "kW",
+          "MW"
         ]
       },
       "socket:type1:voltage": "voltage",
@@ -3181,8 +3181,8 @@
       "socket:type1:output": {
         "quantity": "power",
         "denominations": [
-          "mW",
-          "kW"
+          "kW",
+          "MW"
         ]
       },
       "socket:type1_combo:voltage": "voltage",
@@ -3190,8 +3190,8 @@
       "socket:type1_combo:output": {
         "quantity": "power",
         "denominations": [
-          "mW",
-          "kW"
+          "kW",
+          "MW"
         ]
       },
       "socket:tesla_supercharger:voltage": "voltage",
@@ -3199,8 +3199,8 @@
       "socket:tesla_supercharger:output": {
         "quantity": "power",
         "denominations": [
-          "mW",
-          "kW"
+          "kW",
+          "MW"
         ]
       },
       "socket:type2:voltage": "voltage",
@@ -3208,8 +3208,8 @@
       "socket:type2:output": {
         "quantity": "power",
         "denominations": [
-          "mW",
-          "kW"
+          "kW",
+          "MW"
         ]
       },
       "socket:type2_combo:voltage": "voltage",
@@ -3217,8 +3217,8 @@
       "socket:type2_combo:output": {
         "quantity": "power",
         "denominations": [
-          "mW",
-          "kW"
+          "kW",
+          "MW"
         ]
       },
       "socket:type2_cable:voltage": "voltage",
@@ -3226,8 +3226,8 @@
       "socket:type2_cable:output": {
         "quantity": "power",
         "denominations": [
-          "mW",
-          "kW"
+          "kW",
+          "MW"
         ]
       },
       "socket:tesla_supercharger_ccs:voltage": "voltage",
@@ -3235,8 +3235,8 @@
       "socket:tesla_supercharger_ccs:output": {
         "quantity": "power",
         "denominations": [
-          "mW",
-          "kW"
+          "kW",
+          "MW"
         ]
       },
       "socket:tesla_destination:voltage": "voltage",
@@ -3244,8 +3244,8 @@
       "socket:tesla_destination:output": {
         "quantity": "power",
         "denominations": [
-          "mW",
-          "kW"
+          "kW",
+          "MW"
         ]
       },
       "socket:USB-A:voltage": "voltage",
@@ -3253,8 +3253,8 @@
       "socket:USB-A:output": {
         "quantity": "power",
         "denominations": [
-          "mW",
-          "kW"
+          "kW",
+          "MW"
         ]
       },
       "socket:bosch_3pin:voltage": "voltage",
@@ -3262,8 +3262,8 @@
       "socket:bosch_3pin:output": {
         "quantity": "power",
         "denominations": [
-          "mW",
-          "kW"
+          "kW",
+          "MW"
         ]
       },
       "socket:bosch_5pin:voltage": "voltage",
@@ -3271,8 +3271,8 @@
       "socket:bosch_5pin:output": {
         "quantity": "power",
         "denominations": [
-          "mW",
-          "kW"
+          "kW",
+          "MW"
         ]
       },
       "socket:bs1363:voltage": "voltage",
@@ -3280,8 +3280,8 @@
       "socket:bs1363:output": {
         "quantity": "power",
         "denominations": [
-          "mW",
-          "kW"
+          "kW",
+          "MW"
         ]
       },
       "socket:nema5_15:voltage": "voltage",
@@ -3289,8 +3289,8 @@
       "socket:nema5_15:output": {
         "quantity": "power",
         "denominations": [
-          "mW",
-          "kW"
+          "kW",
+          "MW"
         ]
       },
       "socket:sev1011_t23:voltage": "voltage",
@@ -3298,8 +3298,8 @@
       "socket:sev1011_t23:output": {
         "quantity": "power",
         "denominations": [
-          "mW",
-          "kW"
+          "kW",
+          "MW"
         ]
       },
       "socket:as3112:voltage": "voltage",
@@ -3307,8 +3307,8 @@
       "socket:as3112:output": {
         "quantity": "power",
         "denominations": [
-          "mW",
-          "kW"
+          "kW",
+          "MW"
         ]
       },
       "socket:nema_5_20:voltage": "voltage",
@@ -3316,8 +3316,8 @@
       "socket:nema_5_20:output": {
         "quantity": "power",
         "denominations": [
-          "mW",
-          "kW"
+          "kW",
+          "MW"
         ]
       }
     }
