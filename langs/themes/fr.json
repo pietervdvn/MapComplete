@@ -833,6 +833,9 @@
         },
         "title": "Ressauts et traversées"
     },
+    "mapcomplete-changes": {
+        "title": "Modifications faites avec MapComplete"
+    },
     "maproulette": {
         "description": "Thème MapRoulette permettant d’afficher, rechercher, filtrer et résoudre les tâches.",
         "title": "Tâches MapRoulette"

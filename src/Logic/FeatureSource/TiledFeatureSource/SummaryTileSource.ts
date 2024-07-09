@@ -84,7 +84,11 @@ export class SummaryTileSource extends DynamicTileSource {
             zoomRounded,
             0, // minzoom
             (tileIndex) => {
-                const features = SummaryTileSource.downloadTile(tileIndex, cacheserver, layersSummed)
+                const features = SummaryTileSource.downloadTile(
+                    tileIndex,
+                    cacheserver,
+                    layersSummed
+                )
                 const [z] = Tiles.tile_from_index(tileIndex)
                 return new StaticFeatureSource(
                     features.map(
@@ -103,7 +107,11 @@ export class SummaryTileSource extends DynamicTileSource {
         )
     }
 
-    public static downloadTile(tileIndex: number, cacheserver: string, layersSummed: string): Store<Feature<Point>[]>{
+    public static downloadTile(
+        tileIndex: number,
+        cacheserver: string,
+        layersSummed: string
+    ): Store<Feature<Point>[]> {
         const [z, x, y] = Tiles.tile_from_index(tileIndex)
         let coordinates = Tiles.centerPointOf(z, x, y)
         const url = `${cacheserver}/${layersSummed}/${z}/${x}/${y}.json`

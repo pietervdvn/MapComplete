@@ -35,13 +35,23 @@ export default class LayerState {
      * @param context
      * @param layersEnabledByDefault
      */
-    constructor(osmConnection: OsmConnection, layers: LayerConfig[], context: string, layersEnabledByDefault: Store<boolean>) {
+    constructor(
+        osmConnection: OsmConnection,
+        layers: LayerConfig[],
+        context: string,
+        layersEnabledByDefault: Store<boolean>
+    ) {
         this.osmConnection = osmConnection
         const filteredLayers = new Map()
         for (const layer of layers) {
             filteredLayers.set(
                 layer.id,
-                FilteredLayer.initLinkedState(layer, context, this.osmConnection, layersEnabledByDefault)
+                FilteredLayer.initLinkedState(
+                    layer,
+                    context,
+                    this.osmConnection,
+                    layersEnabledByDefault
+                )
             )
         }
         this.filteredLayers = filteredLayers

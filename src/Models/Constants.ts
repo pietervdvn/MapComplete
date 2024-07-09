@@ -169,7 +169,17 @@ export default class Constants {
     public static readonly maptilerApiKey = "GvoVAJgu46I5rZapJuAy"
     public static readonly SummaryServer: string = Constants.config.summary_server
 
-    public static allServers: string[] = [Constants.SummaryServer, Constants.VectorTileServer, Constants.GeoIpServer, Constants.ErrorReportServer,  Constants.countryCoderEndpoint, Constants.osmAuthConfig.url, Constants.nominatimEndpoint, Constants.linkedDataProxy, ...Constants.defaultOverpassUrls]
+    public static allServers: string[] = [
+        Constants.SummaryServer,
+        Constants.VectorTileServer,
+        Constants.GeoIpServer,
+        Constants.ErrorReportServer,
+        Constants.countryCoderEndpoint,
+        Constants.osmAuthConfig.url,
+        Constants.nominatimEndpoint,
+        Constants.linkedDataProxy,
+        ...Constants.defaultOverpassUrls,
+    ]
 
     private static isRetina(): boolean {
         if (Utils.runningFromConsole) {

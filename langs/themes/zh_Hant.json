@@ -13,7 +13,7 @@
         "title": "藝術品"
     },
     "atm": {
-        "description": "此地圖顯示了提款或存款的 ATM",
+        "description": "此地圖顯示了提款或存款的自動櫃員機",
         "layers": {
             "3": {
                 "override": {

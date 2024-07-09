@@ -7,7 +7,8 @@
     "zh_Hans": "动物收容所",
     "pt": "Abrigo para animais",
     "ca": "Refugis d'animals",
-    "pl": "Schroniska dla zwierząt"
+    "pl": "Schroniska dla zwierząt",
+    "fr": "Abri pour animaux"
   },
   "description": {
     "en": "An animal shelter is a facility where animals in trouble are brought and facility's staff (volunteers or not) feeds them and cares of them, rehabilitating and healing them if necessary. This definition includes kennels for abandoned dogs, catteries for abandoned cats, shelters for other abandoned pets and wildlife recovery centres. ",
@@ -26,7 +27,8 @@
       "zh_Hans": "动物收容所",
       "pt": "Abrigo para animais",
       "ca": "Refugi d'animals",
-      "pl": "Schronisko dla zwierząt"
+      "pl": "Schronisko dla zwierząt",
+      "fr": "Un refuge animalier"
     },
     "mappings": [
       {
@@ -75,7 +77,8 @@
         "zh_Hans": "动物收容所",
         "pt": "um abrigo para animais",
         "ca": "un refugi d'animals",
-        "pl": "schronisko dla zwierząt"
+        "pl": "schronisko dla zwierząt",
+        "fr": "refuge animalier"
       },
       "tags": [
         "amenity=animal_shelter"
@@ -96,14 +99,16 @@
         "es": "¿Cómo se llama este refugio de animales?",
         "zh_Hans": "这个动物收容所叫什么名字？",
         "ca": "Quin nom té aquest refugi d'animals?",
-        "pl": "Jak nazywa się to schronisko dla zwierząt?"
+        "pl": "Jak nazywa się to schronisko dla zwierząt?",
+        "fr": "Quel est le nom de ce refuge animalier ?"
       },
       "render": {
         "en": "This animal shelter is named <b>{name}</b>",
         "de": "Der Name des Tierheims lautet <b>{name}</b>",
         "es": "Este refugio de animales se llama <b>{name}</b>",
         "zh_Hans": "这个动物收容所叫 <b>{name}</b>",
-        "pl": "To schronisko dla zwierząt nazywa się <b>{name}</b>"
+        "pl": "To schronisko dla zwierząt nazywa się <b>{name}</b>",
+        "fr": "Ce refuge s'appelle <b>{name}</b>"
       }
     },
     "website",
@@ -127,7 +132,8 @@
             "es": "Los animales permanecen aquí hasta que son adoptados por un nuevo propietario",
             "zh_Hans": "动物被饲养在这里直到被新主人收养",
             "ca": "Els animals romanen ací fins que son adoptats per un nou propietari",
-            "pl": "Zwierzęta są tutaj dopóki nie znajdą nowego właściciela"
+            "pl": "Zwierzęta są tutaj dopóki nie znajdą nowego właściciela",
+            "fr": "Les animaux sont gardés jusqu'à ce qu'ils soient adoptés par un nouveau maître"
           },
           "if": "purpose=adoption"
         },
@@ -137,7 +143,8 @@
             "de": "Tiere werden hier bis zum Ende Ihres Lebens untergebracht",
             "es": "Los animales reciben cuidados para el resto de su vida",
             "zh_Hans": "动物的余生都得到照顾",
-            "ca": "Els animals reben cures per a la resta de la seva vida"
+            "ca": "Els animals reben cures per a la resta de la seva vida",
+            "fr": "Les animaux sont recueillis pour le reste de leur vie"
           },
           "if": "purpose=sanctuary"
         },
@@ -148,7 +155,8 @@
             "es": "Los animales heridos se rehabilitan aquí hasta que pueden ser liberados de nuevo en la naturaleza ",
             "zh_Hans": "受伤的动物在这里康复，直到它们可以再次被释放到大自然中 ",
             "ca": "Els animals ferits es rehabiliten aquí fins que puguen ser alliberats de nou a la natura ",
-            "pl": "Ranne zwierzęta przechodzą tutaj rehabilitację do momentu, kiedy mogą zostać wypuszczone na wolność "
+            "pl": "Ranne zwierzęta przechodzą tutaj rehabilitację do momentu, kiedy mogą zostać wypuszczone na wolność ",
+            "fr": "Les animaux blessés sont soignés jusqu'à ce qu'ils soient en état d'être relâchés dans la nature "
           },
           "if": "purpose=release"
         }

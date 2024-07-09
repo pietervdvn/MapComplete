@@ -549,7 +549,6 @@ export class Changes {
         pending: ChangeDescription[],
         openChangeset: UIEventSource<number>,
     ): Promise<ChangeDescription[]> {
-        const self = this
         const neededIds = Changes.GetNeededIds(pending)
         // We _do not_ pass in the Changes object itself - we want the data from OSM directly in order to apply the changes
         const downloader = new OsmObjectDownloader(this.backend, undefined)
@@ -602,7 +601,7 @@ export class Changes {
 
         const distances = Utils.NoNull(pending.map((descr) => descr.meta.distanceToObject))
         distances.sort((a, b) => a - b)
-        const perBinCount = Constants.distanceToChangeObjectBins.map((_) => 0)
+        const perBinCount = Constants.distanceToChangeObjectBins.map(() => 0)
 
         let j = 0
         const maxDistances = Constants.distanceToChangeObjectBins
@@ -680,7 +679,7 @@ export class Changes {
                     newObjects: OsmObject[]
                     modifiedObjects: OsmObject[]
                     deletedObjects: OsmObject[]
-                } = self.CreateChangesetObjects(toUpload, objects)
+                } = this.CreateChangesetObjects(toUpload, objects)
 
                 return Changes.createChangesetFor("" + csId, changes)
             },

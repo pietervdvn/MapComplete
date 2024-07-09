@@ -4417,6 +4417,14 @@
                         "question": "Montrer uniquement les notes ouvertes"
                     }
                 }
+            },
+            "10": {
+                "options": {
+                    "0": {
+                        "question": "Toutes les notes"
+                    }
+                }
+
             }
         },
         "name": "Notes OpenStreetMap",

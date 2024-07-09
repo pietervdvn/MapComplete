@@ -1,11 +1,11 @@
 {
   "contributors": [
     {
-      "commits": 378,
+      "commits": 382,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 351,
+      "commits": 352,
       "contributor": "kjon"
     },
     {
@@ -21,7 +21,7 @@
       "contributor": "Robin van der Linde"
     },
     {
-      "commits": 69,
+      "commits": 70,
       "contributor": "mcliquid"
     },
     {
@@ -86,6 +86,10 @@
     },
     {
       "commits": 15,
+      "contributor": "Patchanka64"
+    },
+    {
+      "commits": 15,
       "contributor": "macpac"
     },
     {
@@ -114,10 +118,6 @@
     },
     {
       "commits": 12,
-      "contributor": "Patchanka64"
-    },
-    {
-      "commits": 12,
       "contributor": "Ettore Atalan"
     },
     {
@@ -131,6 +131,10 @@
     {
       "commits": 11,
       "contributor": "Túllio Franca"
+    },
+    {
+      "commits": 10,
+      "contributor": "Manuel Tassi"
     },
     {
       "commits": 10,
@@ -158,7 +162,7 @@
     },
     {
       "commits": 9,
-      "contributor": "Manuel Tassi"
+      "contributor": "hugoalh"
     },
     {
       "commits": 9,
@@ -214,10 +218,6 @@
     },
     {
       "commits": 6,
-      "contributor": "hugoalh"
-    },
-    {
-      "commits": 6,
       "contributor": "Juele juele"
     },
     {
@@ -255,6 +255,10 @@
     {
       "commits": 6,
       "contributor": "lvgx"
+    },
+    {
+      "commits": 5,
+      "contributor": "Franco"
     },
     {
       "commits": 5,
@@ -327,10 +331,6 @@
     {
       "commits": 3,
       "contributor": "Paolo Mauri"
-    },
-    {
-      "commits": 3,
-      "contributor": "Franco"
     },
     {
       "commits": 3,

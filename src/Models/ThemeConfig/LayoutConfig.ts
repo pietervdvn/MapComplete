@@ -336,13 +336,12 @@ export default class LayoutConfig implements LayoutInformation {
             ...json,
             layers: json.layers.filter((l) => l["id"] !== "favourite"),
         }
-        const usedImages =
-            new ExtractImages(this.official, undefined)
-                .convertStrict(
-                    jsonNoFavourites,
-                    ConversionContext.construct([json.id], ["ExtractImages"])
-                )
-                .flatMap((i) => i.path)
+        const usedImages = new ExtractImages(this.official, undefined)
+            .convertStrict(
+                jsonNoFavourites,
+                ConversionContext.construct([json.id], ["ExtractImages"])
+            )
+            .flatMap((i) => i.path)
         usedImages.sort()
 
         this.usedImages = Utils.Dedup(usedImages)

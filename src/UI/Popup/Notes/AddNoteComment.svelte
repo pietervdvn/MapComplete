@@ -57,7 +57,6 @@
     tags.data["closed_at"] = new Date().toISOString()
     NoteCommentElement.addCommentTo(txt.data, tags, state)
     tags.ping()
-
   }
 
   async function reopenNote() {
@@ -67,7 +66,6 @@
     NoteCommentElement.addCommentTo(txt.data, tags, state)
     tags.ping()
     isProcessing.set(false)
-
   }
 </script>
 
@@ -89,43 +87,43 @@
     </label>
 
     {#if $isProcessing}
-      <Loading/>
-      {:else}
-    <div class="flex flex-col">
-      {#if $txt?.length > 0}
-        <button class="primary flex" on:click|preventDefault={() => addComment()}>
-          <!-- Add a comment -->
-          <Speech_bubble class="h-7 w-7 pr-2" />
-          <Tr t={t.addCommentPlaceholder} />
-        </button>
-      {:else}
-        <div class="alert w-full">
-          <Tr t={t.typeText} />
-        </div>
-      {/if}
+      <Loading />
+    {:else}
+      <div class="flex flex-col">
+        {#if $txt?.length > 0}
+          <button class="primary flex" on:click|preventDefault={() => addComment()}>
+            <!-- Add a comment -->
+            <Speech_bubble class="h-7 w-7 pr-2" />
+            <Tr t={t.addCommentPlaceholder} />
+          </button>
+        {:else}
+          <div class="alert w-full">
+            <Tr t={t.typeText} />
+          </div>
+        {/if}
 
-      {#if !$isClosed}
-        <button class="flex items-center" on:click|preventDefault={() => closeNote()}>
-          <Resolved class="h-8 w-8 pr-2" />
-          <!-- Close note -->
-          {#if $txt === undefined || $txt === ""}
-            <Tr t={t.closeNote} />
-          {:else}
-            <Tr t={t.addCommentAndClose} />
-          {/if}
-        </button>
-      {:else}
-        <button class="flex items-center" on:click|preventDefault={() => reopenNote()}>
-          <!-- Reopen -->
-          <Note class="h-7 w-7 pr-2" />
-          {#if $txt === undefined || $txt === ""}
-            <Tr t={t.reopenNote} />
-          {:else}
-            <Tr t={t.reopenNoteAndComment} />
-          {/if}
-        </button>
-      {/if}
-    </div>
-      {/if}
+        {#if !$isClosed}
+          <button class="flex items-center" on:click|preventDefault={() => closeNote()}>
+            <Resolved class="h-8 w-8 pr-2" />
+            <!-- Close note -->
+            {#if $txt === undefined || $txt === ""}
+              <Tr t={t.closeNote} />
+            {:else}
+              <Tr t={t.addCommentAndClose} />
+            {/if}
+          </button>
+        {:else}
+          <button class="flex items-center" on:click|preventDefault={() => reopenNote()}>
+            <!-- Reopen -->
+            <Note class="h-7 w-7 pr-2" />
+            {#if $txt === undefined || $txt === ""}
+              <Tr t={t.reopenNote} />
+            {:else}
+              <Tr t={t.reopenNoteAndComment} />
+            {/if}
+          </button>
+        {/if}
+      </div>
+    {/if}
   </form>
 </LoginToggle>

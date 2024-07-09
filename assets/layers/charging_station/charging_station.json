@@ -2293,7 +2293,8 @@
           "then": {
             "en": "Authentication by a membership card",
             "nl": "Aanmelden met een lidkaart is mogelijk",
-            "de": "Authentifizierung durch eine Mitgliedskarte"
+            "de": "Authentifizierung durch eine Mitgliedskarte",
+            "fr": "Authentification par carte de membre"
           }
         },
         {
@@ -2302,7 +2303,8 @@
           "then": {
             "en": "Authentication by an app",
             "nl": "Aanmelden via een applicatie is mogelijk",
-            "de": "Authentifizierung per App"
+            "de": "Authentifizierung per App",
+            "fr": "Authentification par une application"
           }
         },
         {
@@ -2311,7 +2313,8 @@
           "then": {
             "en": "Authentication via phone call is available",
             "nl": "Aanmelden door te bellen naar een telefoonnummer is mogelijk",
-            "de": "Authentifizierung per Anruf ist möglich"
+            "de": "Authentifizierung per Anruf ist möglich",
+            "fr": "Authentification possible par appel téléphonique"
           }
         },
         {
@@ -2320,7 +2323,8 @@
           "then": {
             "en": "Authentication via SMS is available",
             "nl": "Aanmelden via SMS is mogelijk",
-            "de": "Authentifizierung per SMS ist möglich"
+            "de": "Authentifizierung per SMS ist möglich",
+            "fr": "Authentification possible par SMS"
           }
         },
         {
@@ -2650,6 +2654,7 @@
             "nl": "Dit oplaadpunt werkt",
             "ca": "Aquesta estació de càrrega funciona",
             "de": "Die Station ist in Betrieb",
+            "fr": "Cette station de recharge fonctionne",
             "pl": "Ta stacja ładowania działa"
           }
         },
