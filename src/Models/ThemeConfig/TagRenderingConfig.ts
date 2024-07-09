@@ -911,6 +911,24 @@ export default class TagRenderingConfig {
 
         return Utils.NoNull(tags)
     }
+
+    /**
+     * The keys that should be erased if one has to revert to 'unknown'.
+     * Might give undefined
+     */
+    public settableKeys(): string[] | undefined {
+        const toDelete = new Set<string>()
+        if(this.freeform){
+            toDelete.add(this.freeform.key)
+        }
+        for (const mapping of this.mappings) {
+            for (const usedKey of mapping.if.usedKeys()) {
+                toDelete.add(usedKey)
+            }
+        }
+
+        return Array.from(toDelete)
+    }
 }
 
 export class TagRenderingConfigUtils {

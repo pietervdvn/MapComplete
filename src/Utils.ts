@@ -382,13 +382,15 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
 
     /**
      * Creates a new array with all elements from 'arr' in such a way that every element will be kept only once
-     * Elements are returned in the same order as they appear in the lists
-     * @param arr
-     * @constructor
+     * Elements are returned in the same order as they appear in the lists.
+     * Null/Undefined is returned as is. If an emtpy array is given, a new empty array will be returned
      */
+    public static Dedup(arr: NonNullable<string[]>): NonNullable<string[]>
+    public static Dedup(arr: undefined):undefined
+    public static Dedup(arr: string[] | undefined): string[] | undefined
     public static Dedup(arr: string[]): string[] {
-        if (arr === undefined) {
-            return undefined
+        if (arr === undefined || arr === null) {
+            return arr
         }
         const newArr = []
         for (const string of arr) {
