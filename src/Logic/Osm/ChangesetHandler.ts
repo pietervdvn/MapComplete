@@ -154,7 +154,7 @@ export class ChangesetHandler {
                 if (this._reportError) {
                     this._reportError(e)
                 }
-                console.warn("Could not open/upload changeset due to ", e, "trying t")
+                console.warn("Could not open/upload changeset due to ", e, "trying again with a another fresh changeset ")
                 openChangeset.setData(undefined)
 
                 throw e
@@ -187,7 +187,7 @@ export class ChangesetHandler {
                 await this.UpdateTags(csId, rewrittenTags)
             } catch (e) {
                 if (this._reportError) {
-                    this._reportError(e)
+                    this._reportError("Could not reuse changeset, might be closed: "  + e.stacktrace ?? "" + e)
                 }
                 console.warn("Could not upload, changeset is probably closed: ", e)
                 openChangeset.setData(undefined)
