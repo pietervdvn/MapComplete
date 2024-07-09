@@ -523,18 +523,12 @@ export class Changes {
                     const osmObj = await downloader.DownloadObjectAsync(id, 0)
                     return { id, osmObj }
                 } catch (e) {
-                    this._reportError(
-                        "Could not download OSM-object" +
-                            id +
-                            " dropping it from the changes (" +
-                            e +
-                            ")"
-                    )
-                    console.error(
-                        "Could not download OSM-object",
-                        id,
-                        " dropping it from the changes (" + e + ")"
-                    )
+                    const msg = "Could not download OSM-object" +
+                        id +
+                        " dropping it from the changes (" +
+                        e +
+                        ")"
+                    this._reportError(msg)
                     this.errors.data.push(e)
                     this.errors.ping()
                     return undefined

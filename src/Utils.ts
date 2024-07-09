@@ -976,7 +976,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
                 }
             }
             xhr.send(content)
-            xhr.onerror = reject
+            xhr.onerror = (ev: ProgressEvent<EventTarget>) => reject("Could not get "+url+", xhr status code is "+xhr.status+" ("+xhr.statusText+")")
         })
     }
 
@@ -1069,8 +1069,8 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
     ): Promise<{ content: T } | { error: string; url: string; statuscode?: number }> {
         const injected = Utils.injectedDownloads[url]
         if (injected !== undefined) {
-            console.log("Using injected resource for test for URL", url)
-            return new Promise((resolve) => resolve({ content: injected }))
+            console.debug("Using injected resource for test for URL", url)
+            return {content: injected}
         }
         const result = await Utils.downloadAdvanced(
             url,
