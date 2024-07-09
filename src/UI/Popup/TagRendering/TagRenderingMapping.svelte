@@ -17,7 +17,7 @@
   /**
    * Css classes to apply
    */
-  export let clss: string = ""
+  export let clss: string = "ml-2"
   export let mapping: {
     readonly then: Translation
     readonly searchTerms?: Record<string, string[]>
@@ -41,8 +41,7 @@
         `mapping-icon-${mapping.iconClass ?? "small"}-height mapping-icon-${
           mapping.iconClass ?? "small"
         }-width`,
-        "mr-2",
-        "shrink-0 mx-2"
+        "shrink-0"
       )}
       clss={`mapping-icon-${mapping.iconClass ?? "small"}`}
     />
