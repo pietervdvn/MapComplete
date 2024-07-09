@@ -1,5 +1,4 @@
 <script lang="ts">
-
   import { Utils } from "../../Utils"
   import Share from "@babeard/svelte-heroicons/solid/Share"
   import { DocumentDuplicateIcon } from "@rgossiaux/svelte-heroicons/outline"
@@ -30,8 +29,7 @@
   }
 </script>
 
-<div class="flex flex-col w-full">
-
+<div class="flex w-full flex-col">
   <div class="flex w-full">
     <div class="literal-code w-full" on:click={(e) => Utils.selectTextIn(e.target)}>
       {text}
@@ -48,10 +46,7 @@
         </button>
       {/if}
     </div>
-
-
   </div>
-
 
   <div class="flex justify-center">
     {#if isCopied}

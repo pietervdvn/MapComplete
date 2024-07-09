@@ -39,7 +39,9 @@ export class MenuState {
     /**
      * Standalone copyright panel
      */
-    public readonly copyrightPanelIsOpened: UIEventSource<boolean> = new UIEventSource<boolean>(false)
+    public readonly copyrightPanelIsOpened: UIEventSource<boolean> = new UIEventSource<boolean>(
+        false
+    )
 
     public readonly communityIndexPanelIsOpened: UIEventSource<boolean> = new UIEventSource(false)
     public readonly allToggles: {
@@ -140,7 +142,6 @@ export class MenuState {
                 name: "background",
                 showOverOthers: true,
             },
-
         ]
         for (const toggle of this.allToggles) {
             toggle.toggle.addCallback((isOpen) => {

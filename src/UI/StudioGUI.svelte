@@ -203,9 +203,7 @@
     state.selectedTab.setData(Number(tab))
   }
 
-  uid.AsPromise().then(
-    uid => selectStateBasedOnHash(uid)
-  )
+  uid.AsPromise().then((uid) => selectStateBasedOnHash(uid))
 
   function backToStudio() {
     console.log("Back to studio")

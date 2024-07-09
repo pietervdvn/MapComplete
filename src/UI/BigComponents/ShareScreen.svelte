@@ -31,8 +31,7 @@
    */
   let needsThemeRedirect = url.port !== "" || url.hostname.match(/^[0-9]/) || !state.layout.official
   let layoutId = state.layout.id
-  let baseLink =
-    `${url.protocol}//${url.host}/${needsThemeRedirect ? "theme.html" : layoutId}?`
+  let baseLink = `${url.protocol}//${url.host}/${needsThemeRedirect ? "theme.html" : layoutId}?`
 
   let showWelcomeMessage = true
   let enableLogin = true
@@ -45,7 +44,8 @@
     enableLogin: boolean,
     enableFilters: boolean,
     enableBackground: boolean,
-    enableGeolocation: boolean) {
+    enableGeolocation: boolean
+  ) {
     const layout = state.layout
     let excluded = Utils.NoNull([
       showWelcomeMessage ? undefined : "fs-welcome-message",
@@ -53,7 +53,6 @@
       enableFilters ? undefined : "fs-filter",
       enableBackground ? undefined : "fs-background",
       enableGeolocation ? undefined : "fs-geolocation",
-
     ])
     const layerParamsWhitelist: string[] = ["fs-layers-enabled=false"]
     const layerParamsBlacklist: string[] = []
@@ -79,9 +78,10 @@
 
     const layersBlack = layerParamsBlacklist.join("&")
     const layersWhite = layerParamsWhitelist.join("&")
-    const layers = layersBlack.length < layersWhite.length ? layerParamsBlacklist : layerParamsWhitelist
+    const layers =
+      layersBlack.length < layersWhite.length ? layerParamsBlacklist : layerParamsWhitelist
     const params = QueryParameters.GetParts(new Set(excluded))
-      .filter(part => !part.startsWith("layer-"))
+      .filter((part) => !part.startsWith("layer-"))
       .concat(...layers)
       .concat(excluded.map((k) => k + "=" + false))
     linkToShare = baseLink + Utils.Dedup(params).join("&")
@@ -91,30 +91,42 @@
     }
   }
 
-  $: calculateLinkToShare(showWelcomeMessage, enableLogin, enableFilters, enableBackground, enableGeolocation)
+  $: calculateLinkToShare(
+    showWelcomeMessage,
+    enableLogin,
+    enableFilters,
+    enableBackground,
+    enableGeolocation
+  )
 
   let iframeCode: string
   $: iframeCode = `<iframe src="${linkToShare}"
-    ${enableGeolocation ? 'allow="geolocation"' : ""} width="100%" height="100%" style="min-width: 250px; min-height: 250px"
+    ${
+      enableGeolocation ? 'allow="geolocation"' : ""
+    } width="100%" height="100%" style="min-width: 250px; min-height: 250px"
     title="${state.layout.title?.txt ?? "MapComplete"} with MapComplete">
     </iframe>`
 
-  Array.from(state.layerState.filteredLayers.values()).forEach(flayer => flayer.isDisplayed.addCallbackAndRunD(_ => {
-    calculateLinkToShare(showWelcomeMessage, enableLogin, enableFilters, enableBackground, enableGeolocation)
-  }))
-
+  Array.from(state.layerState.filteredLayers.values()).forEach((flayer) =>
+    flayer.isDisplayed.addCallbackAndRunD((_) => {
+      calculateLinkToShare(
+        showWelcomeMessage,
+        enableLogin,
+        enableFilters,
+        enableBackground,
+        enableGeolocation
+      )
+    })
+  )
 </script>
 
 <div class="flex flex-col">
   <div class="flex flex-col">
     <Tr t={tr.intro} />
 
-    <Copyable {state} text={linkToShare}/>
-
-
+    <Copyable {state} text={linkToShare} />
   </div>
   <div class="flex justify-center">
-
     <ToSvelte
       construct={() => new Img(new Qr(linkToShare).toImageElement(125)).SetStyle("width: 125px")}
     />
@@ -122,11 +134,11 @@
 
   <Tr t={tr.embedIntro} />
 
-  <Copyable text={iframeCode}/>
+  <Copyable text={iframeCode} />
 
   <AccordionSingle>
     <div slot="header">
-      <Tr t={tr.options}/>
+      <Tr t={tr.options} />
     </div>
     <div class="link-underline my-1 flex flex-col">
       <label>
@@ -139,12 +151,10 @@
         <Tr t={tr.fsUserbadge} />
       </label>
 
-
       <label>
         <input bind:checked={enableFilters} type="checkbox" id="share_enable_filter" />
         <Tr t={tr.fsFilter} />
       </label>
-
 
       <label>
         <input bind:checked={enableBackground} type="checkbox" id="share_enable_background" />
@@ -157,15 +167,16 @@
       </label>
 
       <span>
-
-      <Tr t={tr.stateIsIncluded}/>
-      <a class="inline-block w-fit cursor-pointer" on:click={() => state.guistate.filtersPanelIsOpened.set(true)}>
-        <Tr t={tr.openLayers}/>
-      </a>
+        <Tr t={tr.stateIsIncluded} />
+        <a
+          class="inline-block w-fit cursor-pointer"
+          on:click={() => state.guistate.filtersPanelIsOpened.set(true)}
+        >
+          <Tr t={tr.openLayers} />
+        </a>
       </span>
 
       <Tr cls="link-underline" t={tr.documentation} />
-
     </div>
   </AccordionSingle>
 </div>

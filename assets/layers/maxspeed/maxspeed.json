@@ -19,7 +19,8 @@
     "ca": "Mostra la velocitat permesa per a cada carretera",
     "fr": "Affiche les vitesses autorisées sur toutes les routes",
     "pl": "Pokazuje dozwoloną prędkość na każdej drodze",
-    "es": "Muestra la velocidad permitida para cada carretera"
+    "es": "Muestra la velocidad permitida para cada carretera",
+    "zh_Hant": "顯示每條道路的允許速度"
   },
   "source": {
     "osmTags": {

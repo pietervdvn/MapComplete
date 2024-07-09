@@ -1,5 +1,4 @@
 <script lang="ts">
-
   import Translations from "../i18n/Translations"
   import { Utils } from "../../Utils"
   import Hotkeys from "../Base/Hotkeys"
@@ -24,7 +23,6 @@
 
   let layout = state.layout
   let featureSwitches = state.featureSwitches
-
 </script>
 
 <div class="link-underline links-w-full m-2 flex flex-col gap-y-1">
@@ -51,16 +49,14 @@
 
   <a
     class="flex"
-    href={"https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Themes/" +
-              layout.id +
-              ".md"}
+    href={"https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Themes/" + layout.id + ".md"}
     target="_blank"
   >
     <DocumentChartBar class="h-6 w-6" />
     <Tr
       t={Translations.t.general.attribution.openThemeDocumentation.Subs({
-                name: layout.title,
-              })}
+        name: layout.title,
+      })}
     />
   </a>
 
@@ -74,10 +70,7 @@
     <Tr t={Translations.t.general.attribution.donate} />
   </a>
 
-  <button
-    class="as-link"
-    on:click={() => state.guistate.communityIndexPanelIsOpened.setData(true)}
-  >
+  <button class="as-link" on:click={() => state.guistate.communityIndexPanelIsOpened.setData(true)}>
     <Community class="h-6 w-6" />
     <Tr t={Translations.t.communityIndex.title} />
   </button>
@@ -88,10 +81,7 @@
     <MapillaryLink large={false} mapProperties={state.mapProperties} />
   </If>
 
-  <button
-    class="as-link"
-    on:click={() => state.guistate.privacyPanelIsOpened.setData(true)}
-  >
+  <button class="as-link" on:click={() => state.guistate.privacyPanelIsOpened.setData(true)}>
     <EyeIcon class="h-6 w-6 pr-1" />
     <Tr t={Translations.t.privacy.title} />
   </button>

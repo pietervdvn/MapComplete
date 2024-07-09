@@ -19,7 +19,8 @@
     "da": "Moderne vindmøller til produktion af elektricitet",
     "ca": "Molins de vent moderns que generen electricitat",
     "cs": "Moderní větrné mlýny vyrábějící elektřinu",
-    "pl": "Nowoczesne wiatraki wytwarzające energię elektryczną"
+    "pl": "Nowoczesne wiatraki wytwarzające energię elektryczną",
+    "zh_Hant": "現代風車產生電力"
   },
   "source": {
     "osmTags": "generator:source=wind"
@@ -281,7 +282,8 @@
         "sl": "Dodatne informacije za OpenStreetMap strokovnjake: {fixme}",
         "es": "Información extra para expertos en OpenStreetMap: {fixme}",
         "ca": "Informació addicional per als experts en OpenStreetMap: {fixme}",
-        "cs": "Další informace pro odborníky na OpenStreetMap: {fixme}"
+        "cs": "Další informace pro odborníky na OpenStreetMap: {fixme}",
+        "zh_Hant": "為 OpenStreetMap 專家提供的額外資訊：{fixme}"
       },
       "question": {
         "en": "Is there something wrong with how this is mapped, that you weren't able to fix here? (leave a note to OpenStreetMap experts)",
