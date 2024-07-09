@@ -597,10 +597,6 @@
     },
     "stations": {
         "layers": {
-            "3": {
-                "description": "顯示火車站的圖層",
-                "name": "火車站"
-            },
             "16": {
                 "name": "出發板",
                 "presets": {
@@ -621,6 +617,10 @@
                 "title": {
                     "render": "時刻表"
                 }
+            },
+            "3": {
+                "description": "顯示火車站的圖層",
+                "name": "火車站"
             }
         },
         "title": "火車站"
