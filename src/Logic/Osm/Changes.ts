@@ -20,6 +20,7 @@ import Table from "../../UI/Base/Table"
 import ChangeLocationAction from "./Actions/ChangeLocationAction"
 import ChangeTagAction from "./Actions/ChangeTagAction"
 import FeatureSwitchState from "../State/FeatureSwitchState"
+import DeleteAction from "./Actions/DeleteAction"
 
 /**
  * Handles all changes made to OSM.
@@ -177,6 +178,7 @@ export class Changes {
             ),
             ...addSource(ChangeTagAction.metatags, "ChangeTag"),
             ...addSource(ChangeLocationAction.metatags, "ChangeLocation"),
+            ...addSource(DeleteAction.metatags, "DeleteAction")
             // TODO
             /*
             ...DeleteAction.metatags,

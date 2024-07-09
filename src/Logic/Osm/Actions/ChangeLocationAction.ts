@@ -14,7 +14,7 @@ export default class ChangeLocationAction extends OsmChangeAction {
     }[] = [
         {
             value: "relocated|improve_accuraccy|...",
-            docs: "Will appear if the ",
+            docs: "Will appear if the point has been moved",
             changeType: ["move"],
             specialMotivation: true,
         },
