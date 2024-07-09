@@ -211,7 +211,7 @@ function run(file, protojson) {
     for (const entry of entries) {
         importedUnits[entry.key + ":voltage"] = "voltage"
         importedUnits[entry.key + ":current"] = "current"
-        importedUnits[entry.key + ":output"] = { quantity: "power", "denominations": ["mW", "kW"] }
+        importedUnits[entry.key + ":output"] = { quantity: "power", "denominations": ["kW", "MW"] }
     }
 
     const extraUnits = [importedUnits,

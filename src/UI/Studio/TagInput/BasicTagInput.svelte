@@ -128,8 +128,11 @@
       on:submit
     />
   </div>
-  <a target="_blank" href="https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md">
-    <QuestionMarkCircle class="w-6 h-6"/>
+  <a
+    target="_blank"
+    href="https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md"
+  >
+    <QuestionMarkCircle class="h-6 w-6" />
   </a>
 
   {#if $feedbackKey}

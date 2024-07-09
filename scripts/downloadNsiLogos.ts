@@ -105,12 +105,12 @@ class DownloadNsiLogos extends Script {
             )
             for (let j = 0; j < results.length; j++) {
                 let didDownload = results[j]
-                if(didDownload !== "error"){
+                if (didDownload !== "error") {
                     continue
                 }
                 console.log("Retrying", items[i + j].id, type)
                 didDownload = await this.downloadLogo(items[i + j], type, basePath)
-                if(didDownload === "error"){
+                if (didDownload === "error") {
                     console.log("Failed again:", items[i + j].id)
                 }
             }

@@ -66,7 +66,6 @@
 
 <div class="flex">
   <div class="m-4 flex w-full flex-col">
-
     <NextButton clss="primary" on:click={() => state.highlightedItem.setData({ path, schema })}>
       {#if schema.hints.question}
         {schema.hints.question}

@@ -104,7 +104,9 @@
     return `${singular} ${i}`
   }
 
-  let genIconF: (x: any) => ({ icon: string, color: string }) = <any>Function("value", "return " + schema.hints.icon)
+  let genIconF: (x: any) => { icon: string; color: string } = <any>(
+    Function("value", "return " + schema.hints.icon)
+  )
   console.log("Icon lambda is", schema.hints.icon, path, genIconF("test"))
 
   function genIcon(value: any): string {
@@ -117,7 +119,6 @@
     }
     return genIconF(value)?.color
   }
-
 </script>
 
 <div class="pl-2">
@@ -160,13 +161,14 @@
                 {#if schema.hints.icon}
                   <Icon clss="w-6 h-6" icon={genIcon(value)} color={genColor(value)} />
                 {/if}
-                {singular} {i}
+                {singular}
+                {i}
 
                 {#if schema.hints.title}
                   <div class="subtle ml-2">
-                    <Tr t={Translations.T(genTitle(value, singular, i))}/>
+                    <Tr t={Translations.T(genTitle(value, singular, i))} />
                   </div>
-                  {/if}
+                {/if}
               </h3>
               <button
                 class="h-fit w-fit rounded-full border border-black p-1"
@@ -177,9 +179,9 @@
                 <TrashIcon class="h-4 w-4" />
               </button>
             </div>
-            {:else if typeof value === "string"}
+          {:else if typeof value === "string"}
             Builtin: <b>{value}</b>
-            {:else}
+          {:else}
             <Tr cls="font-bold" t={Translations.T(value?.question ?? value?.render)}/>
           {/if}
         </span>

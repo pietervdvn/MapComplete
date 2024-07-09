@@ -6,7 +6,8 @@
     "de": "OpenStreetMap-Hinweise",
     "es": "Notas de OpenStreetMap",
     "ca": "Notes d'OpenStreetMap",
-    "cs": "Poznámky OpenStreetMap"
+    "cs": "Poznámky OpenStreetMap",
+    "fr": "Notes OpenStreetMap"
   },
   "description": "This layer shows notes on OpenStreetMap. Having this layer in your theme will trigger the 'add new note' functionality in the 'addNewPoint'-popup (or if your theme has no presets, it'll enable adding notes)",
   "source": {
@@ -33,7 +34,8 @@
       "es": "Nota",
       "pa_PK": "نوٹ",
       "pl": "Notatka",
-      "cs": "Poznámka"
+      "cs": "Poznámka",
+      "fr": "Note"
     },
     "mappings": [
       {
@@ -45,7 +47,8 @@
           "es": "Nota cerrada",
           "pl": "Zamknięta notatka",
           "ca": "Nota tancada",
-          "cs": "Uzavřená poznámka"
+          "cs": "Uzavřená poznámka",
+          "fr": "Note fermée"
         }
       }
     ]
@@ -56,7 +59,8 @@
         "en": "See on OpenStreetMap.org",
         "nl": "Bekijk op OpenStreetMap.org",
         "de": "Auf OpenStreetMap.org ansehen",
-        "da": "Se på OpenStreetMap.org"
+        "da": "Se på OpenStreetMap.org",
+        "fr": "Voir sur OpenStreetMap.org"
       },
       "render": "<a href='https://openstreetmap.org/note/{id}' target='_blank'><img src='./assets/svg/osm-logo-us.svg'></a>"
     }
@@ -118,7 +122,8 @@
           "es": "<h3>Imágenes cercanas</h3>Las imágenes de debajo son imágenes geoetiquetadas cercanas y pueden ser útiles para encargarse de esta nota.",
           "nl": "<h3>Afbeeldingen in de buurt</h3>Onderstaande afbeeldingen zijn afbeeldingen met geo-referentie en die in de buurt genomen zijn. Mogelijks zijn ze nuttig om deze kaartnota af te handelen.",
           "ca": "<h3>Imatges properes</h3>Les imatges de sota són imatges geoetiquetades properes i poden ser útils per a encarregar-se d'aquesta nota.",
-          "cs": "<h3>Obrázky v okolí</h3>Obrázky níže jsou obrázky s geografickými značkami v okolí a mohou vám pomoci s touto poznámkou."
+          "cs": "<h3>Obrázky v okolí</h3>Obrázky níže jsou obrázky s geografickými značkami v okolí a mohou vám pomoci s touto poznámkou.",
+          "fr": "<h3>Images à proximité</h3>Les images suivantes sont dans les environs de cette note et pourraient aider à sa résolution."
         },
         "special": {
           "type": "nearby_images",
@@ -134,7 +139,8 @@
         "de": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle' {_first_user} für Spam oder unangemessene Nachrichten melden</a>",
         "es": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle'>Reportar {_first_user} por spam o mensajes inapropiados</a>",
         "ca": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle'>Reporta {_first_user} per spam o missatges inapropiats</a>",
-        "cs": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle'>Nahlásit uživateli {_first_user} spam nebo nevhodné zprávy</ a>"
+        "cs": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle'>Nahlásit uživateli {_first_user} spam nebo nevhodné zprávy</ a>",
+        "fr": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle'>Signaler {_first_user} pour du spam ou des messages inapropriés</a>"
       },
       "condition": "_opened_by_anonymous_user=false"
     },
@@ -146,7 +152,8 @@
         "de": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Notiz als Spam oder unangemessen melden</a>",
         "es": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Reporta esta nota como spam o inapropiada</a>",
         "ca": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Reporta aquesta nota com spam o inapropiada</a>",
-        "cs": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Nahlásit tuto poznámku jako spam nebo nevhodnou</a>"
+        "cs": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Nahlásit tuto poznámku jako spam nebo nevhodnou</a>",
+        "fr": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Signaler cette note comme spam ou contenu inapproprié</a>"
       }
     }
   ],
@@ -231,7 +238,8 @@
             "de": "<b>Nicht</b> erstellt von {search}",
             "es": "<b>No</b> abierto por el contributor {search}",
             "ca": "<b>No</b> obert pel contribuïdor {search}",
-            "cs": "<b>Není</b> otevřeno přispěvatelem {search}"
+            "cs": "<b>Není</b> otevřeno přispěvatelem {search}",
+            "fr": "<b>Exclure</b>les notes ouvertes par {search}"
           }
         }
       ]
@@ -253,7 +261,8 @@
             "es": "Editada por última vez por el contributor {search}",
             "ca": "Editat per última vega pel contribuïdor {search}",
             "cs": "Naposledy upravil přispěvatel {search}",
-            "da": "Senest redigeret af bidragsyder {search}"
+            "da": "Senest redigeret af bidragsyder {search}",
+            "fr": "Dernière modification par {search}"
           }
         }
       ]
@@ -274,7 +283,8 @@
             "de": "Zuletzt bearbeitet nach dem {search}",
             "es": "Abierta después de {search}",
             "ca": "Oberta després de {search}",
-            "cs": "Otevřeno po {search}"
+            "cs": "Otevřeno po {search}",
+            "fr": "Ouverte après le {search}"
           }
         }
       ]
@@ -296,7 +306,8 @@
             "de": "Erstellt vor dem {search}",
             "es": "Creada antes de {search}",
             "ca": "Creada abans de {search}",
-            "cs": "Vytvořeno před {search}"
+            "cs": "Vytvořeno před {search}",
+            "fr": "Créée avant le {search}"
           }
         }
       ]
@@ -318,7 +329,8 @@
             "de": "Erstellt nach dem {search}",
             "es": "Creada después de {search}",
             "ca": "Creada després de {search}",
-            "cs": "Vytvořeno po {search}"
+            "cs": "Vytvořeno po {search}",
+            "fr": "Créée après le {search}"
           }
         }
       ]
@@ -334,7 +346,8 @@
             "de": "Nur Notizen anzeigen, die anonym erstellt wurden",
             "es": "Solo mostrar las notas abiertas por contributores anómimos",
             "ca": "Sols mostrar les notes obertes per contribuïdors anònims",
-            "cs": "Zobrazovat pouze poznámky otevřené anonymním přispěvatelem"
+            "cs": "Zobrazovat pouze poznámky otevřené anonymním přispěvatelem",
+            "fr": "Montrer uniquement les notes ouvertes par un contributeur anonyme"
           }
         }
       ]
@@ -350,7 +363,8 @@
             "de": "Nur offene Notizen anzeigen",
             "es": "Solo mostrar las notas abiertas",
             "ca": "Sols mostra les notes obertes",
-            "cs": "Zobrazit pouze otevřené poznámky"
+            "cs": "Zobrazit pouze otevřené poznámky",
+            "fr": "Montrer uniquement les notes ouvertes"
           }
         }
       ]
@@ -365,7 +379,8 @@
             "de": "Alle Notizen",
             "es": "Todas las notas",
             "ca": "Totes les notes",
-            "cs": "Všechny poznámky"
+            "cs": "Všechny poznámky",
+            "fr": "Toutes les notes"
           }
         },
         {

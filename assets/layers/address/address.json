@@ -84,7 +84,8 @@
       "pt_BR": "Endereço conhecido",
       "he": "כתובת ידועה",
       "eu": "Helbide ezaguna",
-      "it": "Indirizzo conosciuto"
+      "it": "Indirizzo conosciuto",
+      "zh_Hant": "已知的地址"
     }
   },
   "pointRendering": [
@@ -255,7 +256,8 @@
         "pt_BR": "Este endereço fica na rua <b>{addr:street}</b>",
         "he": "כתובת זו נמצאת ברחוב <b>{addr:street}</b>",
         "eu": "Helbide hau <b>{addr:street}</b> kalean dago",
-        "it": "L’indirizzo è in via <b>{addr:street}</b>"
+        "it": "L’indirizzo è in via <b>{addr:street}</b>",
+        "zh_Hant": "此地址位於街道 <b>{addr:street}</b>"
       },
       "question": {
         "en": "What street is this address located in?",

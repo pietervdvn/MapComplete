@@ -19,9 +19,16 @@ class GenerateSummaryTileCache extends Script {
         }
     }
 
-    async fetchTile(z: number, x: number, y: number, layersSummed: string): Promise<Feature<Point>> {
+    async fetchTile(
+        z: number,
+        x: number,
+        y: number,
+        layersSummed: string
+    ): Promise<Feature<Point>> {
         const index = Tiles.tile_index(z, x, y)
-        let feature: Feature<Point> | any = (await SummaryTileSource.downloadTile(index, this.url, layersSummed).AsPromise())[0]
+        let feature: Feature<Point> | any = (
+            await SummaryTileSource.downloadTile(index, this.url, layersSummed).AsPromise()
+        )[0]
         if (!feature) {
             feature = { properties: { total: 0 } }
         }
@@ -34,7 +41,13 @@ class GenerateSummaryTileCache extends Script {
         return feature
     }
 
-    async fetchTileRecursive(z: number, x: number, y: number, layersSummed: string, sleepMs = 0): Promise<Feature<Point>> {
+    async fetchTileRecursive(
+        z: number,
+        x: number,
+        y: number,
+        layersSummed: string,
+        sleepMs = 0
+    ): Promise<Feature<Point>> {
         const index = Tiles.tile_index(z, x, y)
         const path = this.cacheDir + "tile_" + z + "_" + x + "_" + y + ".json"
         if (existsSync(path)) {
@@ -48,11 +61,12 @@ class GenerateSummaryTileCache extends Script {
             feature = await this.fetchTile(z, x, y, layersSummed)
         } else {
             const parts = [
-               await this.fetchTileRecursive(z + 1, x * 2, y * 2, layersSummed),
-               await this.fetchTileRecursive(z + 1, x * 2 + 1, y * 2, layersSummed),
-               await this.fetchTileRecursive(z + 1, x * 2, y * 2 + 1, layersSummed),
-               await this.fetchTileRecursive(z + 1, x * 2 + 1, y * 2 + 1, layersSummed)]
-            const sum = this.sumTotals(parts.map(f => f.properties))
+                await this.fetchTileRecursive(z + 1, x * 2, y * 2, layersSummed),
+                await this.fetchTileRecursive(z + 1, x * 2 + 1, y * 2, layersSummed),
+                await this.fetchTileRecursive(z + 1, x * 2, y * 2 + 1, layersSummed),
+                await this.fetchTileRecursive(z + 1, x * 2 + 1, y * 2 + 1, layersSummed),
+            ]
+            const sum = this.sumTotals(parts.map((f) => f.properties))
             feature = <Feature<Point>>{
                 type: "Feature",
                 properties: sum,
@@ -77,14 +91,13 @@ class GenerateSummaryTileCache extends Script {
         return sum
     }
 
-
     async main(args: string[]): Promise<void> {
-
-        const layers = await Utils.downloadJson<{ layers: string[], meta: object }>(this.url + "/status.json")
-        const layersSummed = layers.layers.map(l => encodeURIComponent(l)).join("+")
+        const layers = await Utils.downloadJson<{ layers: string[]; meta: object }>(
+            this.url + "/status.json"
+        )
+        const layersSummed = layers.layers.map((l) => encodeURIComponent(l)).join("+")
         const r = await this.fetchTileRecursive(0, 0, 0, layersSummed)
         console.log(r)
-
     }
 }
 

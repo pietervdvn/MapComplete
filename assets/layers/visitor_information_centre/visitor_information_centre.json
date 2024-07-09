@@ -43,7 +43,8 @@
       "id": "{name}",
       "es": "{name}",
       "da": "{name}",
-      "cs": "{name}"
+      "cs": "{name}",
+      "zh_Hant": "{name}"
     },
     "mappings": [
       {
@@ -73,7 +74,8 @@
           "id": "{name}",
           "es": "{name}",
           "da": "{name}",
-          "cs": "{name}"
+          "cs": "{name}",
+          "zh_Hant": "{name}"
         }
       }
     ]
