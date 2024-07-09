@@ -943,6 +943,7 @@ export class TagRenderingConfigUtils {
                 return config
             }
             const clone: TagRenderingConfig = Object.create(config)
+            // The original mappings get "priorityIf" set
             const oldMappingsCloned =
                 clone.mappings?.map((m) => ({
                     ...m,

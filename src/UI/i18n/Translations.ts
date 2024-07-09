@@ -16,6 +16,9 @@ export default class Translations {
         throw "Translations is static. If you want to intitialize a new translation, use the singular form"
     }
 
+    /**
+     * @deprecated
+     */
     public static W(s: string | number | boolean | BaseUIElement): BaseUIElement {
         if (typeof s === "string") {
             return new FixedUiElement(s)

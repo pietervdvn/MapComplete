@@ -53,10 +53,10 @@
   async function closeNote() {
     isProcessing.set(true)
     await state.osmConnection.closeNote(id, txt.data)
+    isProcessing.set(false)
     tags.data["closed_at"] = new Date().toISOString()
     NoteCommentElement.addCommentTo(txt.data, tags, state)
     tags.ping()
-    isProcessing.set(false)
 
   }
 

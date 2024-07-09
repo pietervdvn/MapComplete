@@ -186,6 +186,8 @@ export default class NameSuggestionIndex {
                     alsoShowIf: undefined,
                     icon,
                     iconClass: "medium",
+                    // The 'frequency' is already for the country of the object we are working with
+                    // As such, it should be "true" but this is not supported
                     priorityIf: frequency > 0 ? new RegexTag("id", /.*/) : undefined,
                     searchTerms: { "*": [nsiItem.displayName, nsiItem.id] },
                 })

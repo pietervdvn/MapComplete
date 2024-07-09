@@ -488,9 +488,7 @@ export class OsmConnection {
     public addCommentToNote(id: number | string, text: string): Promise<void> {
         if (this._dryRun.data) {
             console.warn("Dryrun enabled - not actually adding comment ", text, "to  note ", id)
-            return new Promise((ok) => {
-                ok()
-            })
+            return Utils.waitFor(1000)
         }
         if ((text ?? "") === "") {
             throw "Invalid text!"
