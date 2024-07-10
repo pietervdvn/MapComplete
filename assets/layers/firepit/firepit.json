@@ -105,13 +105,6 @@
             "de": "Zugang nur für Berechtigte",
             "en": "Access only for authorized"
           }
-        },
-        {
-          "if": "access=unknown",
-          "then": {
-            "de": "unbekannt",
-            "en": "Unknown"
-          }
         }
       ]
     },

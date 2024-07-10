@@ -836,6 +836,9 @@
                     },
                     "7": {
                         "then": "Fietshelmen kunnen hier gehuurd worden"
+                    },
+                    "8": {
+                        "then": "Bakfietsen kunnen hier gehuurd worden"
                     }
                 },
                 "question": "Wat voor soort fietsen en fietstoebehoren worden hier verhuurd?",
@@ -3640,18 +3643,9 @@
                 "render": "<a href='#{_closest_other_drinking_water_id}'>Er bevindt zich een ander drinkwaterpunt op {_closest_other_drinking_water_distance} meter</a>"
             },
             "seasonal": {
-                "mappings": {
-                    "0": {
-                        "then": "Dit drinkwaterpunt is heel het jaar door beschikbaar"
-                    },
-                    "1": {
-                        "then": "Dit drinkwaterpunt is enkel in de zomer beschikbaar"
-                    },
-                    "2": {
-                        "then": "Dit drinkwaterpunt is gesloten in de winter"
-                    }
-                },
-                "question": "Is dit drinkwaterpunt heel het jaar door beschikbaar?"
+                "override": {
+                    "question": "Is dit drinkwaterpunt heel het jaar door beschikbaar?"
+                }
             },
             "type": {
                 "mappings": {
@@ -4039,6 +4033,15 @@
         },
         "title": {
             "render": "Brandweerstation"
+        }
+    },
+    "firepit": {
+        "tagRenderings": {
+            "seasonal": {
+                "override": {
+                    "question": "Is deze kampvuurplaats heel het jaar door beschikbaar?"
+                }
+            }
         }
     },
     "fitness_centre": {
@@ -6673,6 +6676,20 @@
             },
             "repeated": {
                 "render": "Er zijn verschillende, identieke objecten op verdiepingen {repeat_on}."
+            },
+            "seasonal": {
+                "mappings": {
+                    "0": {
+                        "then": "Heel het jaar door beschikbaar"
+                    },
+                    "1": {
+                        "then": "Enkel in de zomer beschikbaar"
+                    },
+                    "2": {
+                        "then": "Gesloten in de winter"
+                    }
+                },
+                "question": "Is {title()} heel het jaar beschikbaar?"
             },
             "service:electricity": {
                 "mappings": {

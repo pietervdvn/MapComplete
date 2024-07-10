@@ -724,69 +724,6 @@
     "lighthouses": {
         "title": "Fyrtårne"
     },
-    "mapcomplete-changes": {
-        "description": "Dette kort viser alle ændringer foretaget med MapComplete",
-        "layers": {
-            "0": {
-                "description": "Vis alle MapComplete-ændringer",
-                "filter": {
-                    "0": {
-                        "options": {
-                            "0": {
-                                "question": "Temanavn indeholder {search}"
-                            }
-                        }
-                    },
-                    "1": {
-                        "options": {
-                            "0": {
-                                "question": "Temanavn indeholder <b>ikke</b> {search}"
-                            }
-                        }
-                    },
-                    "2": {
-                        "options": {
-                            "0": {
-                                "question": "Lavet af bidragsyder {search}"
-                            }
-                        }
-                    },
-                    "3": {
-                        "options": {
-                            "0": {
-                                "question": "<b>Ikke</b> lavet af bidragsyder {search}"
-                            }
-                        }
-                    },
-                    "4": {
-                        "options": {
-                            "0": {
-                                "question": "Lavet før {search}"
-                            }
-                        }
-                    },
-                    "5": {
-                        "options": {
-                            "0": {
-                                "question": "Lavet efter {search}"
-                            }
-                        }
-                    }
-                },
-                "tagRenderings": {
-                    "contributor": {
-                        "question": "Hvilke bidragsydere lavede denne ændring?",
-                        "render": "Ændring lavet af <a href='https://openstreetmap.org/user/{user}' target='_blank'>{user}</a>"
-                    },
-                    "version": {
-                        "render": "Lavet med {editor}"
-                    }
-                }
-            }
-        },
-        "shortDescription": "Vis ændringer lavet med MapComplete",
-        "title": "Ændringer lavet med MapComplete"
-    },
     "maproulette": {
         "description": "Tema, der viser MapRoulette-opgaver, så du kan søge, filtrere og rette dem.",
         "title": "KortRoulette-opgaver"

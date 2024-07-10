@@ -814,6 +814,72 @@
             "render": "Barrier"
         }
     },
+    "bbq": {
+        "description": "A permanently installed barbecue, typically accessible to the public.",
+        "name": "BBQ",
+        "presets": {
+            "0": {
+                "description": "A permanently installed barbecue, typically accessible to the public.",
+                "title": "BBQ"
+            }
+        },
+        "tagRenderings": {
+            "access": {
+                "mappings": {
+                    "0": {
+                        "then": "Public"
+                    },
+                    "1": {
+                        "then": "No access"
+                    },
+                    "2": {
+                        "then": "Private"
+                    },
+                    "3": {
+                        "then": "Access until revoked"
+                    },
+                    "4": {
+                        "then": "Access only for customers"
+                    },
+                    "5": {
+                        "then": "Access only for authorized persons"
+                    }
+                },
+                "question": "What is the permitted access?"
+            },
+            "covered": {
+                "mappings": {
+                    "0": {
+                        "then": "The grill is not covered"
+                    },
+                    "1": {
+                        "then": "The grill is covered"
+                    }
+                },
+                "question": "Is the grill covered?"
+            },
+            "fuel": {
+                "mappings": {
+                    "0": {
+                        "then": "Wood"
+                    },
+                    "1": {
+                        "then": "Charcoal"
+                    },
+                    "2": {
+                        "then": "Electric"
+                    },
+                    "3": {
+                        "then": "Gas"
+                    }
+                },
+                "question": "How ist the grill fueled?"
+            }
+        },
+        "title": {
+            "render": "BBQ"
+        }
+    },
     "bench": {
         "description": "A bench is a wooden, metal, stone, … surface where a human can sit. This layers visualises them and asks a few questions about them.",
         "filter": {
@@ -1120,6 +1186,9 @@
                     },
                     "7": {
                         "then": "Bike helmets can be rented here"
+                    },
+                    "8": {
+                        "then": "Cargo bikes can be rented here"
                     }
                 },
                 "question": "What kind of bicycles and accessories are rented here?",
@@ -4003,18 +4072,9 @@
                 "render": "<a href='#{_closest_other_drinking_water_id}'>There is another drinking water fountain at {_closest_other_drinking_water_distance} meters</a>"
             },
             "seasonal": {
-                "mappings": {
-                    "0": {
-                        "then": "This drinking water point is available all around the year"
-                    },
-                    "1": {
-                        "then": "This drinking water point is only available in summer"
-                    },
-                    "2": {
-                        "then": "This drinking water point is closed during the winter"
-                    }
-                },
-                "question": "Is this drinking water point available all year round?"
+                "override": {
+                    "question": "Is this drinking water point available all year round?"
+                }
             },
             "type": {
                 "mappings": {
@@ -4613,6 +4673,49 @@
         },
         "title": {
             "render": "Fire Station"
+        }
+    },
+    "firepit": {
+        "description": "An outdoor place to make a fire, typically open to the public.",
+        "name": "Firepitd",
+        "presets": {
+            "0": {
+                "description": "An outdoor place to make a fire, typically open to the public.",
+                "title": "Firepit"
+            }
+        },
+        "tagRenderings": {
+            "access": {
+                "mappings": {
+                    "0": {
+                        "then": "Public"
+                    },
+                    "1": {
+                        "then": "No access"
+                    },
+                    "2": {
+                        "then": "Private"
+                    },
+                    "3": {
+                        "then": "Access until revoked"
+                    },
+                    "4": {
+                        "then": "Access only for customers"
+                    },
+                    "5": {
+                        "then": "Access only for authorized"
+                    }
+                },
+                "question": "What is the permitted access?"
+            },
+            "seasonal": {
+                "override": {
+                    "question": "Is the firepit available all around the year?"
+                }
+            }
+        },
+        "title": {
+            "render": "Firepit"
         }
     },
     "fitness_centre": {
@@ -8041,6 +8144,20 @@
             "repeated": {
                 "render": "Multiple, identical objects can be found on floors {repeat_on}."
             },
+            "seasonal": {
+                "mappings": {
+                    "0": {
+                        "then": "Available all around the year"
+                    },
+                    "1": {
+                        "then": "Only available in summer"
+                    },
+                    "2": {
+                        "then": "Closed during the winter"
+                    }
+                },
+                "question": "Is {title()} available all around the year?"
+            },
             "service:electricity": {
                 "mappings": {
                     "0": {
@@ -8596,6 +8713,39 @@
                     }
                 },
                 "question": "Which genders can enroll at this school?"
+            },
+            "pedagogy": {
+                "mappings": {
+                    "0": {
+                        "then": "This school does not use a specific pedagogy"
+                    },
+                    "1": {
+                        "then": "This school uses the Montessori method of education"
+                    },
+                    "2": {
+                        "then": "This school is associated with the Freinet Modern School Movement"
+                    },
+                    "3": {
+                        "then": "This school uses the Jenaplan teaching concept"
+                    },
+                    "4": {
+                        "then": "This school uses the Steiner/Waldorf educational philosophy"
+                    },
+                    "5": {
+                        "then": "This school uses the Dalton plan teaching concept"
+                    },
+                    "6": {
+                        "then": "This school uses outdoor learning"
+                    },
+                    "7": {
+                        "then": "This school uses the Reggio Emilia approach"
+                    },
+                    "8": {
+                        "then": "This school uses the Sudbury system"
+                    }
+                },
+                "question": "What educational theory is applied on this school?",
+                "render": "This school uses {pedagogy}"
             },
             "school-language": {
                 "render": {

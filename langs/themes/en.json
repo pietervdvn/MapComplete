@@ -780,6 +780,10 @@
         "shortDescription": "This map shows facade gardens with pictures and useful info about orientation, sunshine and plant types.",
         "title": "Facade gardens"
     },
+    "fireplace": {
+        "description": "Stelle im Freien zum Feuermachen oder ein ortsfest installierter Grill an einer offizielle Stelle.",
+        "title": "Fireplaces and BBQ"
+    },
     "food": {
         "description": "Restaurants and fast food",
         "title": "Restaurants and fast food"
