@@ -24,6 +24,10 @@
 
 {#if iconItem?.startsWith("<")}
   {@html iconItem}
+{:else if color === "white"}
+  <span class="light-icon">
+    <Icon icon={iconItem} {color} {emojiHeight} />
+  </span>
 {:else}
   <Icon icon={iconItem} {color} {emojiHeight} />
 {/if}
