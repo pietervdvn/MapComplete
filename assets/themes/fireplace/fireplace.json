@@ -1,12 +1,12 @@
 {
   "id": "fireplace",
   "title": {
-    "en": "Fireplaces and BBQ",
+    "en": "Fireplaces and barbeques",
     "de": "Feuerstellen und Grillstellen"
   },
   "description": {
-    "en": "Stelle im Freien zum Feuermachen oder ein ortsfest installierter Grill an einer offizielle Stelle.",
-    "de": "Outdoor place to make a fire or a fixed barbecue in an official place."
+    "de": "Stelle im Freien zum Feuermachen oder ein ortsfest installierter Grill an einer offizielle Stelle.",
+    "en": "Outdoor place to make a fire or a fixed barbecue in an official place."
   },
   "icon": "./assets/layers/assembly_point/fire.svg",
   "layers": [
