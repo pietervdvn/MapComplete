@@ -13,8 +13,6 @@
 
 <script lang="ts">
   import { UIEventSource } from "../../Logic/UIEventSource"
-  import Svg from "../../Svg"
-  import ToSvelte from "../Base/ToSvelte.svelte"
   import Translations from "../i18n/Translations"
   import Tr from "../Base/Tr.svelte"
   import Search_disable from "../../assets/svg/Search_disable.svelte"
