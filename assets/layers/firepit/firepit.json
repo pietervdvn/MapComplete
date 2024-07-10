@@ -11,7 +11,7 @@
   "source": {
     "osmTags": "leisure=firepit"
   },
-  "minzoom": 12,
+  "minzoom": 8,
   "title": {
     "render": {
       "en": "Firepit",
@@ -31,8 +31,8 @@
       "anchor": "bottom",
       "marker": [
         {
-          "icon": "square_rounded",
-          "color": "#f00000"
+          "icon": "circle",
+          "color": "white"
         },
         {
           "icon": "./assets/layers/assembly_point/fire.svg"
@@ -116,39 +116,17 @@
       ]
     },
     {
-      "id": "seasonal",
-      "question": {
-        "en": "Is the firepit seasonal?",
-        "de": "Ist die Feuerstelle saisonal?"
-      },
-      "mappings": [
-        {
-          "if": "seasonal=no",
-          "then": {
-            "de": "Die Feuerstelle ist nicht saisonal",
-            "en": "The firepit is not seasonal"
-          }
-        },
-        {
-          "if": "seasonal=yes",
-          "then": {
-            "de": "Die Feuerstelle ist saisonal",
-            "en": "The firepit is seasonal"
-          }
-        },
-        {
-          "if": "seasonal=unknown",
-          "then": {
-            "de": "unbekannt",
-            "en": "Unknown"
-          }
+      "builtin": "seasonal",
+      "override": {
+        "question": {
+          "en": "Is the firepit available all around the year?",
+          "nl": "Is deze kampvuurplaats heel het jaar door beschikbaar?"
         }
-      ]
+      }
     }
   ],
   "allowMove": {
     "enableRelocation": false,
     "enableImproveAccuracy": true
-  },
-  "passAllFeatures": false
+  }
 }

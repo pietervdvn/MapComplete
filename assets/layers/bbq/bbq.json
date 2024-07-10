@@ -11,16 +11,13 @@
   "source": {
     "osmTags": "amenity=bbq"
   },
-  "minzoom": 12,
+  "minzoom": 8,
   "title": {
     "render": {
       "en": "BBQ",
       "de": "Grillstelle"
     }
   },
-  "titleIcons": [
-    "icons.defaults"
-  ],
   "pointRendering": [
     {
       "iconSize": "40,40",
@@ -31,11 +28,11 @@
       "anchor": "bottom",
       "marker": [
         {
-          "icon": "square_rounded",
-          "color": "#66332B"
+          "icon": "circle",
+          "color": "white"
         },
         {
-          "icon": "./assets/layers/assembly_point/fire.svg"
+          "icon": "./assets/layers/bbq/bbq.svg"
         }
       ]
     }
@@ -103,14 +100,7 @@
           "if": "access=permit",
           "then": {
             "de": "Zugang nur für Berechtigte",
-            "en": "Access only for authorized"
-          }
-        },
-        {
-          "if": "access=unknown",
-          "then": {
-            "de": "unbekannt",
-            "en": "Unknown"
+            "en": "Access only for authorized persons"
           }
         }
       ]
@@ -134,13 +124,6 @@
           "then": {
             "de": "Die Grillstelle ist überdacht",
             "en": "The grill is covered"
-          }
-        },
-        {
-          "if": "covered=unknown",
-          "then": {
-            "de": "unbekannt",
-            "en": "Unknown"
           }
         }
       ]
@@ -186,6 +169,5 @@
   "allowMove": {
     "enableRelocation": false,
     "enableImproveAccuracy": true
-  },
-  "passAllFeatures": false
+  }
 }

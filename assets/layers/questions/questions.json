@@ -2755,6 +2755,40 @@
           "cssClasses": "subtle m-4 italic flex items-center justify-center"
         }
       }
+    },
+    {
+      "id": "seasonal",
+      "question": {
+        "en": "Is {title()} available all around the year?",
+        "nl": "Is {title()} heel het jaar beschikbaar?"
+      },
+      "mappings": [
+        {
+          "if": "seasonal=no",
+          "then": {
+            "en": "Available all around the year",
+            "nl": "Heel het jaar door beschikbaar",
+            "de": "Ganzjährig in Betrieb"
+          }
+        },
+        {
+          "if": "seasonal=summer",
+          "then": {
+            "en": "Only available in summer",
+            "nl": "Enkel in de zomer beschikbaar",
+            "de": "Nur im Sommer in Betrieb"
+          }
+        },
+        {
+          "if": "seasonal=spring;summer;autumn",
+          "icon": "./assets/layers/drinking_water/no_winter.svg",
+          "then": {
+            "en": "Closed during the winter",
+            "nl": "Gesloten in de winter",
+            "de": "Im Winter nicht in Betrieb"
+          }
+        }
+      ]
     }
   ]
 }
