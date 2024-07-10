@@ -1,6 +1,5 @@
 import { SubtleButton } from "../Base/SubtleButton"
 import BaseUIElement from "../BaseUIElement"
-import Svg from "../../Svg"
 import { OsmConnection, OsmServiceState } from "../../Logic/Osm/OsmConnection"
 import { VariableUiElement } from "../Base/VariableUIElement"
 import Loading from "../Base/Loading"
@@ -8,6 +7,9 @@ import Translations from "../i18n/Translations"
 import { ImmutableStore, Store } from "../../Logic/UIEventSource"
 import Combine from "../Base/Combine"
 import { Translation } from "../i18n/Translation"
+import SvelteUIElement from "../Base/SvelteUIElement"
+import Login from "../../assets/svg/Login.svelte"
+import Invalid from "../../assets/svg/Invalid.svelte"
 
 class LoginButton extends SubtleButton {
     constructor(
@@ -17,7 +19,7 @@ class LoginButton extends SubtleButton {
         },
         icon?: BaseUIElement | string
     ) {
-        super(icon ?? Svg.login_svg(), text)
+        super(icon ?? new SvelteUIElement(Login), text)
         this.onClick(() => {
             state.osmConnection?.AttemptLogin()
         })
@@ -65,7 +67,7 @@ export class LoginToggle extends VariableUiElement {
                     const apiTranslation = offlineModes[apiState]
                     if (apiTranslation !== undefined) {
                         return new Combine([
-                            Svg.invalid_svg().SetClass("w-8 h-8 m-2 shrink-0"),
+                            new SvelteUIElement(Invalid).SetClass("w-8 h-8 m-2 shrink-0"),
                             apiTranslation,
                         ]).SetClass("flex items-center alert max-w-64")
                     }
@@ -84,7 +86,7 @@ export class LoginToggle extends VariableUiElement {
                     return new LoginButton(
                         Translations.t.general.loginFailed,
                         state,
-                        Svg.invalid_svg()
+                        new SvelteUIElement(Invalid)
                     )
                 },
                 [state.featureSwitchUserbadge, state.osmConnection?.apiIsOnline]
