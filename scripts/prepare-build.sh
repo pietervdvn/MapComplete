@@ -13,7 +13,7 @@ mkdir dist/assets 2> /dev/null
 export NODE_OPTIONS="--max-old-space-size=16384"
 
 # This script ends every line with '&&' to chain everything. A failure will thus stop the build
-npm run generate:editor-layer-index &&
+npm run download:editor-layer-index &&
 npm run prep:layeroverview &&
 npm run generate && # includes a single "refresh:layeroverview". Resetting the files is unnecessary as they are not in there in the first place
 npm run generate:mapcomplete-changes-theme  &&
