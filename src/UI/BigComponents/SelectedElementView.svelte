@@ -22,6 +22,8 @@
     selectedElement.properties.id
   )
 
+  let isAddNew = tags.mapD(t => t.id.startsWith(LastClickFeatureSource.newPointElementId))
+
   function getLayer(properties: Record<string, string>) {
     if (properties.id === "settings") {
       return UserRelatedState.usersettingsConfig
@@ -76,7 +78,10 @@
   </div>
 {:else}
   <div
-    class="selected-element-view flex h-full w-full flex-col gap-y-1 overflow-y-auto p-1 px-4"
+    class="selected-element-view flex h-full w-full flex-col gap-y-1 overflow-y-auto"
+    class:p1={!$isAddNew}
+    class:px-4={!$isAddNew}
+
     tabindex="-1"
   >
     {#each $knownTagRenderings as config (config.id)}

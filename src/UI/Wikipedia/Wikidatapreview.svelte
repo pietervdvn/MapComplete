@@ -15,15 +15,15 @@
 
 </script>
 
-<div class="flex w-full p-2">
+<div class="flex w-full p-2 flex-wrap">
 
   {#if imageUrl}
     <img src={imageUrl} style={imageStyle} class="mr-2" />
   {/if}
 
-  <div class="flex flex-col w-full">
+  <div class="flex flex-col flex-grow">
 
-    <div class="flex w-full justify-between">
+    <div class="flex w-full justify-between flex-wrap">
       <Tr cls="font-bold" t={ Translation.fromMap(wikidata.labels) } />
       <a href={Wikidata.IdToArticle(wikidata.id)} target="_blank" class="flex must-link items-center">
         <Wikidata_icon class="w-10" /> {wikidata.id}

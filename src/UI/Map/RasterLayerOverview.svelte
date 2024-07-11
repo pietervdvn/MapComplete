@@ -11,6 +11,7 @@
   import UserRelatedState from "../../Logic/State/UserRelatedState"
   import Translations from "../i18n/Translations"
   import Tr from "../Base/Tr.svelte"
+  import TitledPanel from "../Base/TitledPanel.svelte"
 
   export let availableLayers: Store<RasterLayerPolygon[]>
   export let mapproperties: MapProperties
@@ -50,12 +51,8 @@
   }
 </script>
 
-<div class="flex h-full flex-col">
-  <slot name="title">
-    <h2>
-      <Tr t={Translations.t.general.backgroundMap} />
-    </h2>
-  </slot>
+<TitledPanel>
+      <Tr slot="title" t={Translations.t.general.backgroundMap} />
 
   <div class="grid h-full w-full grid-cols-1 gap-2 md:grid-cols-2">
     <RasterLayerPicker
@@ -91,4 +88,4 @@
       {visible}
     />
   </div>
-</div>
+</TitledPanel>

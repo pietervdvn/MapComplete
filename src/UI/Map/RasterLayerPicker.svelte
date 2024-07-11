@@ -77,7 +77,7 @@
 
 {#if hasLayers}
   <form class="flex h-full w-full flex-col" on:submit|preventDefault={() => {}}>
-    <button tabindex="-1" on:click={() => apply()} class="m-0 h-full w-full cursor-pointer p-1">
+    <button tabindex="-1" on:click={() => apply()} class="m-0 p-0 rounded-none h-full w-full cursor-pointer border-none">
       <span class="pointer-events-none relative h-full w-full">
         <OverlayMap
           interactive={false}
