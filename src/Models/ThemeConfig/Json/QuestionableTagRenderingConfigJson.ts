@@ -289,6 +289,11 @@ export interface QuestionableTagRenderingConfigJson extends TagRenderingConfigJs
          * group: expert
          */
         postfixDistinguished?: string
+        /**
+         * Extra arguments to configure the input element
+         * group: hidden
+         */
+        helperArgs: any
     }
 
     /**

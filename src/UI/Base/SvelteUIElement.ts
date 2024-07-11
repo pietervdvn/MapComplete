@@ -26,7 +26,7 @@ export default class SvelteUIElement<
 
     constructor(svelteElement, props?: Props, events?: Events, slots?: Slots) {
         super()
-        this._svelteComponent = svelteElement
+        this._svelteComponent = <any> svelteElement
         this._props = props ?? <Props>{}
         this._events = events
         this._slots = slots

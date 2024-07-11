@@ -19,6 +19,8 @@
   import OpeningHoursInput from "./Helpers/OpeningHoursInput.svelte"
   import SlopeInput from "./Helpers/SlopeInput.svelte"
   import type { SpecialVisualizationState } from "../SpecialVisualization"
+  import WikidataInput from "./Helpers/WikidataInput.svelte"
+  import WikidataInputHelper from "./WikidataInputHelper.svelte"
 
   export let type: ValidatorType
   export let value: UIEventSource<string | object>
@@ -26,17 +28,13 @@
   export let feature: Feature
   export let args: (string | number | boolean)[] = undefined
   export let state: SpecialVisualizationState
-  export let helperArgs: (string | number | boolean)[]
-  export let key: string
-  export let extraTags: UIEventSource<Record<string, string>>
 
-  let properties = { feature, args: args ?? [] }
 </script>
 
 {#if type === "translation"}
   <TranslationInput {value} on:submit {args} />
 {:else if type === "direction"}
-  <DirectionInput {value} mapProperties={InputHelpers.constructMapProperties(properties)} />
+  <DirectionInput {value} mapProperties={InputHelpers.constructMapProperties( { feature, args: args ?? [] })} />
 {:else if type === "date"}
   <DateInput {value} />
 {:else if type === "color"}
@@ -52,5 +50,5 @@
 {:else if type === "slope"}
   <SlopeInput {value} {feature} {state} />
 {:else if type === "wikidata"}
-  <ToSvelte construct={() => InputHelpers.constructWikidataHelper(value, properties)} />
+  <WikidataInputHelper {value} {feature} {state} {args}/>
 {/if}

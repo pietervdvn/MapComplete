@@ -10,6 +10,7 @@
   import Tr from "../Base/Tr.svelte"
   import Translations from "../i18n/Translations"
   import Wikipedia from "../../assets/svg/Wikipedia.svelte"
+  import Wikidatapreview from "./Wikidatapreview.svelte"
 
   /**
    * Shows a wikipedia-article + wikidata preview for the given item
@@ -31,9 +32,7 @@
 {/if}
 
 {#if $wikipediaDetails.wikidata}
-  <ToSvelte
-    construct={() => WikidataPreviewBox.WikidataResponsePreview($wikipediaDetails.wikidata)}
-  />
+  <Wikidatapreview wikidata={$wikipediaDetails.wikidata} />
 {/if}
 
 {#if $wikipediaDetails.articleUrl}
