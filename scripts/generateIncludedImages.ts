@@ -42,7 +42,7 @@ function genImages(dryrun = false) {
             svg
                 .replace(
                     "<svg ",
-                    "<svg {...$$$$restProps} on:click on:mouseover on:mouseenter on:mouseleave on:keydown ",
+                    "<svg {...$$$$restProps} on:click on:mouseover on:mouseenter on:mouseleave on:keydown on:focus ",
                 )
                 .replace(/\\"/g, "\"")
                 .replace(/(rgb\(0%,0%,0%\)|#000000|#000)/g, "{color}")
