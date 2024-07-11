@@ -45,6 +45,9 @@
         "useSomethingElse": "Gebruik een ander OpenStreetMap-bewerkprogramma om dit object te verwijderen",
         "whyDelete": "Waarom moet dit object van de kaart verwijderd worden?"
     },
+    "external": {
+        "error": "Kon geen gestructureerde informatie uit de website ophalen"
+    },
     "favourite": {
         "loginNeeded": "<h3>Log in</h3>Je moet je aanmelden met OpenStreetMap om een persoonlijk thema te gebruiken",
         "panelIntro": "<h3>Jouw persoonlijke thema</h3>Activeer je favorite lagen van alle andere themas",
