@@ -329,7 +329,7 @@
       ]
     },
     {
-      "builtin":  "seasonal",
+      "builtin": "seasonal",
       "override": {
         "question": {
           "en": "Is this drinking water point available all year round?",
@@ -338,7 +338,7 @@
         }
       }
     },
-     {
+    {
       "builtin": "opening_hours_24_7",
       "override": {
         "questionHint": {
