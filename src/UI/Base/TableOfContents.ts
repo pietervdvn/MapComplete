@@ -98,7 +98,7 @@ export default class TableOfContents {
         const intro = md.substring(0, firstTitleIndex)
         const splitPoint = intro.lastIndexOf("\n")
 
-        return md.substring(0, splitPoint) + toc + md.substring(splitPoint)
+        return md.substring(0, splitPoint) +"\n" toc + md.substring(splitPoint)
     }
 
     public static generateStructure(

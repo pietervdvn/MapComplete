@@ -1,11 +1,11 @@
 import Combine from "../../Base/Combine"
 import Wikidata, { WikidataResponse } from "../../../Logic/Web/Wikidata"
-import WikidataSearchBox from "../../Wikipedia/WikidataSearchBox"
 import { Validator } from "../Validator"
 import { Translation } from "../../i18n/Translation"
 import Translations from "../../i18n/Translations"
 import Title from "../../Base/Title"
 import Table from "../../Base/Table"
+import MarkdownUtils from "../../../Utils/MarkdownUtils"
 
 export default class WikidataValidator extends Validator {
     public static readonly _searchCache = new Map<string, Promise<WikidataResponse[]>>()
@@ -23,7 +23,7 @@ export default class WikidataValidator extends Validator {
                     "options",
                     new Combine([
                         "A JSON-object of type `{ removePrefixes: string[], removePostfixes: string[] }`.",
-                        new Table(
+                        MarkdownUtils.table(
                             ["subarg", "doc"],
                             [
                                 [

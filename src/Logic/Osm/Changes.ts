@@ -21,6 +21,7 @@ import ChangeLocationAction from "./Actions/ChangeLocationAction"
 import ChangeTagAction from "./Actions/ChangeTagAction"
 import FeatureSwitchState from "../State/FeatureSwitchState"
 import DeleteAction from "./Actions/DeleteAction"
+import MarkdownUtils from "../../Utils/MarkdownUtils"
 
 /**
  * Handles all changes made to OSM.
@@ -116,7 +117,7 @@ export class Changes {
         return changes
     }
 
-    public static getDocs(): BaseUIElement {
+    public static getDocs(): string {
         function addSource(items: any[], src: string) {
             items.forEach((i) => {
                 i["source"] = src
@@ -188,24 +189,24 @@ export class Changes {
             ...ReplaceGeometryAction.metatags,
             ...SplitAction.metatags,*/
         ]
-        return new Combine([
-            new Title("Metatags on a changeset", 1),
+        return [
+            "# Metatags on a changeset",
             "You might encounter the following metatags on a changeset:",
-            new Table(
+            MarkdownUtils.table(
                 ["key", "value", "explanation", "source"],
                 metatagsDocs.map(({ key, value, docs, source, changeType, specialMotivation }) => [
                     key ?? changeType?.join(", ") ?? "",
                     value,
-                    new Combine([
+                   [
                         docs,
                         specialMotivation
                             ? "This might give a reason per modified node or way"
                             : "",
-                    ]),
+                    ].join("\n"),
                     source,
                 ]),
             ),
-        ])
+        ].join("\n\n")
     }
 
     private static GetNeededIds(changes: ChangeDescription[]) {

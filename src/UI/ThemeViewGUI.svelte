@@ -74,6 +74,7 @@
   import AboutMapComplete from "./BigComponents/AboutMapComplete.svelte"
   import IfNot from "./Base/IfNot.svelte"
   import Hotkeys from "./Base/Hotkeys"
+  import HotkeyTable from "./BigComponents/HotkeyTable.svelte"
 
   export let state: ThemeViewState
   let layout = state.layout
@@ -575,7 +576,7 @@
         <div slot="content0" class="flex flex-col">
           <AboutMapComplete {state} />
           <div class="m-2 flex flex-col">
-            <ToSvelte construct={Hotkeys.generateDocumentationDynamic} />
+            <HotkeyTable/>
           </div>
         </div>
 

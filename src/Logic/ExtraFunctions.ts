@@ -5,6 +5,7 @@ import List from "../UI/Base/List"
 import Title from "../UI/Base/Title"
 import { BBox } from "./BBox"
 import { Feature, Geometry, MultiPolygon, Polygon } from "geojson"
+import MarkdownUtils from "../Utils/MarkdownUtils"
 
 export interface ExtraFuncParams {
     /**
@@ -517,16 +518,16 @@ export class ExtraFunctions {
         return record
     }
 
-    public static HelpText(): BaseUIElement {
-        const elems = []
+    public static HelpText(): string {
+        const elems: string[] = []
         for (const func of ExtraFunctions.allFuncs) {
-            elems.push(new Title(func._name, 3), func._doc, new List(func._args ?? [], true))
+            elems.push("### "+func._name, func._doc, MarkdownUtils.list(func._args))
         }
 
-        return new Combine([
+        return [
             ExtraFunctions.intro,
-            new List(ExtraFunctions.allFuncs.map((func) => `[${func._name}](#${func._name})`)),
+            MarkdownUtils.list(ExtraFunctions.allFuncs.map((func) => `[${func._name}](#${func._name})`)),
             ...elems,
-        ])
+        ].join("\n")
     }
 }

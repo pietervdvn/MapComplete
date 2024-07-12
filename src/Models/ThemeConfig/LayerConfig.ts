@@ -14,13 +14,9 @@ import WithContextLoader from "./WithContextLoader"
 import LineRenderingConfig from "./LineRenderingConfig"
 import { TagRenderingConfigJson } from "./Json/TagRenderingConfigJson"
 import BaseUIElement from "../../UI/BaseUIElement"
-import Combine from "../../UI/Base/Combine"
-import Title from "../../UI/Base/Title"
-import List from "../../UI/Base/List"
 import Link from "../../UI/Base/Link"
 import { Utils } from "../../Utils"
 import { TagsFilter } from "../../Logic/Tags/TagsFilter"
-import Table from "../../UI/Base/Table"
 import FilterConfigJson from "./Json/FilterConfigJson"
 import { Overpass } from "../../Logic/Osm/Overpass"
 import { FixedUiElement } from "../../UI/Base/FixedUiElement"
@@ -28,6 +24,7 @@ import { ImmutableStore } from "../../Logic/UIEventSource"
 import { OsmTags } from "../OsmFeature"
 import Constants from "../Constants"
 import { QuestionableTagRenderingConfigJson } from "./Json/QuestionableTagRenderingConfigJson"
+import MarkdownUtils from "../../Utils/MarkdownUtils"
 
 export default class LayerConfig extends WithContextLoader {
     public static readonly syncSelectionAllowed = ["no", "local", "theme-only", "global"] as const
@@ -90,7 +87,7 @@ export default class LayerConfig extends WithContextLoader {
                     overpassScript: json.source["overpassScript"],
                     isOsmCache: json.source["isOsmCache"],
                     mercatorCrs: json.source["mercatorCrs"],
-                    idKey: json.source["idKey"],
+                    idKey: json.source["idKey"]
                 },
                 json.id
             )
@@ -159,7 +156,7 @@ export default class LayerConfig extends WithContextLoader {
             let preciseInput: PreciseInput = {
                 preferredBackground: ["photo"],
                 snapToLayers: undefined,
-                maxSnapDistance: undefined,
+                maxSnapDistance: undefined
             }
             if (pr["preciseInput"] !== undefined) {
                 throw (
@@ -172,7 +169,7 @@ export default class LayerConfig extends WithContextLoader {
                 let snapToLayers = pr.snapToLayer
                 preciseInput = {
                     snapToLayers,
-                    maxSnapDistance: pr.maxSnapDistance ?? 10,
+                    maxSnapDistance: pr.maxSnapDistance ?? 10
                 }
             }
 
@@ -184,7 +181,7 @@ export default class LayerConfig extends WithContextLoader {
                     `${translationContext}.presets.${i}.description`
                 ),
                 preciseInput: preciseInput,
-                exampleImages: pr.exampleImages,
+                exampleImages: pr.exampleImages
             }
             return config
         })
@@ -306,7 +303,7 @@ export default class LayerConfig extends WithContextLoader {
         }
 
         this.titleIcons = this.ParseTagRenderings(<TagRenderingConfigJson[]>json.titleIcons ?? [], {
-            readOnlyMode: true,
+            readOnlyMode: true
         })
 
         this.title = this.tr("title", undefined, translationContext)
@@ -366,8 +363,8 @@ export default class LayerConfig extends WithContextLoader {
         }[] = [],
         addedByDefault = false,
         canBeIncluded = true
-    ): BaseUIElement {
-        const extraProps: (string | BaseUIElement)[] = []
+    ): string {
+        const extraProps: string[] = []
         extraProps.push("This layer is shown at zoomlevel **" + this.minzoom + "** and higher")
 
         if (canBeIncluded) {
@@ -404,13 +401,11 @@ export default class LayerConfig extends WithContextLoader {
 
             if (this.source?.geojsonSource !== undefined) {
                 extraProps.push(
-                    new Combine([
-                        Utils.runningFromConsole
-                            ? "<img src='../warning.svg' height='1rem'/>"
-                            : undefined,
+                    [
+                        "<img src='../warning.svg' height='1rem'/>",
                         "This layer is loaded from an external source, namely ",
-                        new FixedUiElement(this.source.geojsonSource).SetClass("code"),
-                    ])
+                        "`" + this.source.geojsonSource + "`"
+                    ].join("\n\n")
                 )
             }
         } else {
@@ -419,44 +414,44 @@ export default class LayerConfig extends WithContextLoader {
             )
         }
 
-        let usingLayer: BaseUIElement[] = []
+        let usingLayer: string[] = []
         if (!addedByDefault) {
             if (usedInThemes?.length > 0) {
                 usingLayer = [
-                    new Title("Themes using this layer", 2),
-                    new List(
+                    "## Themes using this layer",
+                    MarkdownUtils.list(
                         (usedInThemes ?? []).map(
-                            (id) => new Link(id, "https://mapcomplete.org/" + id)
+                            (id) => (`[${id}](https://mapcomplete.org/${id})`)
                         )
-                    ),
+                    )
                 ]
             } else if (this.source !== null) {
-                usingLayer = [new FixedUiElement("No themes use this layer")]
+                usingLayer = ["No themes use this layer"]
             }
         }
 
         for (const dep of dependencies) {
             extraProps.push(
-                new Combine([
+                [
                     "This layer will automatically load ",
-                    new Link(dep.neededLayer, "./" + dep.neededLayer + ".md"),
+                    (`[${dep.neededLayer}](./${dep.neededLayer}.md)`),
                     " into the layout as it depends on it: ",
                     dep.reason,
-                    "(" + dep.context + ")",
-                ])
+                    "(" + dep.context + ")"
+                ].join(" ")
             )
         }
 
         for (const revDep of Utils.Dedup(layerIsNeededBy?.get(this.id) ?? [])) {
             extraProps.push(
-                new Combine([
+                [
                     "This layer is needed as dependency for layer",
-                    new Link(revDep, "#" + revDep),
-                ])
+                    (`[${revDep}](#${revDep})`)
+                ].join(" ")
             )
         }
 
-        const tableRows = Utils.NoNull(
+        const tableRows: string[][] = Utils.NoNull(
             this.tagRenderings
                 .map((tr) => tr.FreeformValues())
                 .map((values) => {
@@ -467,32 +462,28 @@ export default class LayerConfig extends WithContextLoader {
                         Link.OsmWiki(values.key, v, true).SetClass("mr-2")
                     ) ?? ["_no preset options defined, or no values in them_"]
                     return [
-                        new Combine([
-                            new Link(
-                                "<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>",
-                                "https://taginfo.openstreetmap.org/keys/" + values.key + "#values",
-                                true
-                            ),
-                            Link.OsmWiki(values.key),
-                        ]).SetClass("flex"),
+                        [
+                            `<a target="_blank" href='https://taginfo.openstreetmap.org/keys/${ values.key}#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>]`,
+                            Link.OsmWiki(values.key)
+                        ].join(" "),
                         values.type === undefined
                             ? "Multiple choice"
-                            : new Link(values.type, "../SpecialInputElements.md#" + values.type),
-                        new Combine(embedded).SetClass("flex"),
+                            : `[${values.type}](../SpecialInputElements.md#${values.type})`,
+                        embedded.join(" ")
                     ]
                 })
         )
 
-        let quickOverview: BaseUIElement = undefined
+        let quickOverview: string[] = []
         if (tableRows.length > 0) {
-            quickOverview = new Combine([
-                new FixedUiElement("Warning: ").SetClass("bold"),
+            quickOverview = [
+                ("**Warning:**"),
                 "this quick overview is incomplete",
-                new Table(
+                MarkdownUtils.table(
                     ["attribute", "type", "values which are supported by this layer"],
                     tableRows
-                ).SetClass("zebra-table"),
-            ]).SetClass("flex-col flex")
+                )
+            ]
         }
 
         let iconImg: BaseUIElement = new FixedUiElement("")
@@ -503,35 +494,36 @@ export default class LayerConfig extends WithContextLoader {
                 .map(
                     (mr) =>
                         mr.RenderIcon(new ImmutableStore<OsmTags>({ id: "node/-1" }), {
-                            includeBadges: false,
+                            includeBadges: false
                         }).html
                 )
                 .find((i) => i !== undefined)
         }
 
-        let overpassLink: BaseUIElement = undefined
+        let overpassLink: string = undefined
         if (this.source !== undefined) {
             try {
-                overpassLink = new Link(
-                    "Execute on overpass",
+                overpassLink = (
+                    "[Execute on overpass](" +
                     Overpass.AsOverpassTurboLink(<TagsFilter>this.source.osmTags.optimize())
                         .replaceAll("(", "%28")
                         .replaceAll(")", "%29")
+                    + ")"
                 )
             } catch (e) {
                 console.error("Could not generate overpasslink for " + this.id)
             }
         }
 
-        const filterDocs: (string | BaseUIElement)[] = []
+        const filterDocs: (string)[] = []
         if (this.filters.length > 0) {
-            filterDocs.push(new Title("Filters", 4))
+            filterDocs.push("#### Filters")
             filterDocs.push(...this.filters.map((filter) => filter.GenerateDocs()))
         }
 
-        const tagsDescription = []
+        const tagsDescription: string[] = []
         if (this.source !== null) {
-            tagsDescription.push(new Title("Basic tags for this layer", 2))
+            tagsDescription.push("## Basic tags for this layer")
 
             const neededTags = <TagsFilter>this.source.osmTags.optimize()
             if (neededTags["and"]) {
@@ -549,8 +541,8 @@ export default class LayerConfig extends WithContextLoader {
             } else {
                 tagsDescription.push(
                     "Elements must match the expression **" +
-                        neededTags.asHumanString(true, false, {}) +
-                        "**"
+                    neededTags.asHumanString(true, false, {}) +
+                    "**"
                 )
             }
 
@@ -559,20 +551,19 @@ export default class LayerConfig extends WithContextLoader {
             tagsDescription.push("This is a special layer - data is not sourced from OpenStreetMap")
         }
 
-        return new Combine([
-            new Combine([new Title(this.id, 1), iconImg, this.description, "\n"]).SetClass(
-                "flex flex-col"
-            ),
-            new List(extraProps),
+        return [
+            [
+                "# " + this.id+"\n",
+                iconImg,
+                this.description, "\n"].join("\n\n"),
+            MarkdownUtils.list(extraProps),
             ...usingLayer,
             ...tagsDescription,
-            new Title("Supported attributes", 2),
+            "## Supported attributes",
             quickOverview,
             ...this.tagRenderings.map((tr) => tr.GenerateDocumentation()),
-            ...filterDocs,
-        ])
-            .SetClass("flex-col")
-            .SetClass("link-underline")
+            ...filterDocs
+        ]          .join("\n\n")
     }
 
     public CustomCodeSnippets(): string[] {

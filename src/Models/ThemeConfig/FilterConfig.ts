@@ -11,6 +11,7 @@ import { RegexTag } from "../../Logic/Tags/RegexTag"
 import BaseUIElement from "../../UI/BaseUIElement"
 import Table from "../../UI/Base/Table"
 import Combine from "../../UI/Base/Combine"
+import MarkdownUtils from "../../Utils/MarkdownUtils"
 export type FilterConfigOption = {
     question: Translation
     osmTags: TagsFilter | undefined
@@ -199,20 +200,20 @@ export default class FilterConfig {
         )
     }
 
-    public GenerateDocs(): BaseUIElement {
+    public GenerateDocs(): string {
         const hasField = this.options.some((opt) => opt.fields?.length > 0)
-        return new Table(
+        return MarkdownUtils.table(
             Utils.NoNull(["id", "question", "osmTags", hasField ? "fields" : undefined]),
             this.options.map((opt, i) => {
                 const isDefault = this.options.length > 1 && (this.defaultSelection ?? 0) == i
-                return Utils.NoNull([
+                return <string[]> Utils.NoNull([
                     this.id + "." + i,
                     isDefault
-                        ? new Combine([opt.question.SetClass("font-bold"), "(default)"])
+                        ? `*${opt.question.txt}* (default)`
                         : opt.question,
-                    opt.osmTags?.asHumanString(false, false, {}) ?? "",
+                    opt.osmTags?.asHumanString() ?? "",
                     opt.fields?.length > 0
-                        ? new Combine(opt.fields.map((f) => f.name + " (" + f.type + ")"))
+                        ? (opt.fields.map((f) => f.name + " (" + f.type + ")")).join(" ")
                         : undefined,
                 ])
             })

@@ -22,7 +22,7 @@
     selectedElement.properties.id
   )
 
-  let isAddNew = tags.mapD(t => t.id.startsWith(LastClickFeatureSource.newPointElementId))
+  let isAddNew = tags.mapD(t => t?.id?.startsWith(LastClickFeatureSource.newPointElementId) ?? false)
 
   function getLayer(properties: Record<string, string>) {
     if (properties.id === "settings") {

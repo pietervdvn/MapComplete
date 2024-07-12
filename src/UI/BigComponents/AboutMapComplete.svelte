@@ -1,15 +1,12 @@
 <script lang="ts">
   import Translations from "../i18n/Translations"
   import { Utils } from "../../Utils"
-  import Hotkeys from "../Base/Hotkeys"
   import Constants from "../../Models/Constants"
   import Tr from "../Base/Tr.svelte"
   import Add from "../../assets/svg/Add.svelte"
   import Github from "../../assets/svg/Github.svelte"
-  import DocumentChartBar from "@babeard/svelte-heroicons/outline/DocumentChartBar"
   import Mastodon from "../../assets/svg/Mastodon.svelte"
   import Liberapay from "../../assets/svg/Liberapay.svelte"
-  import ToSvelte from "../Base/ToSvelte.svelte"
   import { EyeIcon } from "@rgossiaux/svelte-heroicons/solid"
   import MapillaryLink from "./MapillaryLink.svelte"
   import OpenJosm from "../Base/OpenJosm.svelte"
@@ -18,6 +15,7 @@
   import Community from "../../assets/svg/Community.svelte"
   import Bug from "../../assets/svg/Bug.svelte"
   import ThemeViewState from "../../Models/ThemeViewState"
+  import DocumentChartBar from "@babeard/svelte-heroicons/outline/DocumentChartBar"
 
   export let state: ThemeViewState
 
