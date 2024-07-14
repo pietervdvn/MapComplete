@@ -27,7 +27,7 @@
 <div class="link-underline links-w-full m-2 flex flex-col gap-y-1">
   <Tr t={Translations.t.general.aboutMapComplete.intro} />
 
-  {#if ²$showHome}
+  {#if $showHome}
     <a class="flex" href={Utils.HomepageLink()}>
       <Add class="h-6 w-6" />
       {#if Utils.isIframe}
