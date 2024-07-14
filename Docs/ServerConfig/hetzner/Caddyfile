@@ -16,37 +16,17 @@ countrycoder.mapcomplete.org {
 }
 
 report.mapcomplete.org {
-	reverse_proxy {
-		to http://127.0.0.1:2348
-	}
+	reverse_proxy http://127.0.0.1:2348
 }
 
 studio.mapcomplete.org {
-	reverse_proxy {
-		to http://127.0.0.1:1235
-	}
+	reverse_proxy http://127.0.0.1:1235
 }
 
 lod.mapcomplete.org {
-	reverse_proxy /extractgraph {
-		to http://127.0.0.1:2346
-	}
+	reverse_proxy http://127.0.0.1:2346
 }
 
 ipinfo.mapcomplete.org {
-    reverse_proxy {
-        to 127.0.0.1:2347
-    }
-}
-
-proxy0.mapcomplete.org {
-    reverse_proxy {
-        to 109.128.57.178:2345
-    }
-}
-
-proxy.mapcomplete.org {
-    reverse_proxy {
-        to 109.128.57.178:7800
-    }
+    reverse_proxy 127.0.0.1:2347
 }
