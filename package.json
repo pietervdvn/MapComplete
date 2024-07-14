@@ -21,9 +21,9 @@
       "oauth_secret": "NBWGhWDrD3QDB35xtVuxv4aExnmIt4FA_WgeLtwxasg",
       "url": "https://www.openstreetmap.org"
     },
-    "mvt_layer_server": "https://proxy.mapcomplete.org/public.{type}_{layer}/{z}/{x}/{y}.pbf",
+    "mvt_layer_server": "https://cache.mapcomplete.org/public.{type}_{layer}/{z}/{x}/{y}.pbf",
     "#summary_server": "Should be the endpoint; appending status.json should work",
-    "summary_server": "https://proxy0.mapcomplete.org/",
+    "summary_server": "https://cache.mapcomplete.org/",
     "geoip_server": "https://ipinfo.mapcomplete.org/",
     "error_server": "https://report.mapcomplete.org/report",
     "disabled:oauth_credentials": {
@@ -93,7 +93,7 @@
     "generate:charging-stations": "cd ./assets/layers/charging_station && vite-node csvToJson.ts && cd -",
 
     "clean:tests": "find . -type f -name \"*.doctest.ts\" | xargs -r rm",
-    "clean": "rm -rf .cache/ && (find *.html | grep -v \"^\\(404\\|index\\|land\\|privacy\\|test\\|studio\\|theme\\|style_test\\|statistics\\|leaderboard\\).html\" | xargs -r rm) && (ls | grep \"^index_[a-zA-Z_-]\\+\\.ts$\" | xargs -r rm)",
+    "clean": "rm -rf .cache/ && (find *.html | grep -v \"^\\(404\\|index\\|land\\|privacy\\|test\\|studio\\|theme\\|style_test\\|statistics\\|status\\|leaderboard\\).html\" | xargs -r rm) && (ls | grep \"^index_[a-zA-Z_-]\\+\\.ts$\" | xargs -r rm)",
 
     "generate:dependency-graph": "node_modules/.bin/depcruise --exclude \"^node_modules\" --output-type dot Logic/State/MapState.ts > dependencies.dot && dot dependencies.dot -T svg -o dependencies.svg && rm dependencies.dot",
     "scrapeWebsites": "vite-node scripts/importscripts/compareWebsiteData.ts -- ~/Downloads/ShopsWithWebsiteNodes.csv ~/data/scraped_websites/",
