@@ -67,6 +67,7 @@
     "strt": "vite --host | sed 's/localhost:/127.0.0.1:/g'",
     "build": "./scripts/build.sh",
     "build:single": "./scripts/single_build.sh",
+    "build:dbscript": "vite-node ./scripts/osm2pgsql/generateBuildDbScript.ts",
     "prepare-deploy": "npm run generate:service-worker && ./scripts/prepare-build.sh && npm run build",
 
     "watch:css": "tailwindcss -i src/index.css -o public/css/index-tailwind-output.css --watch",
