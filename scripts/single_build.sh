@@ -91,4 +91,8 @@ then
 fi
 
 echo "BUILD COMPLETED"
-echo "Deploying on github pages? Don't forget to add a CNAME file (containing your domain name verbatim, without protocol) and a .nojekyll file (which is empty)"
+echo "On what domain will you deploy?"
+echo "  ! Don't forget to add `https://yourdomain.tld/land.html` to the Redirect URIs on https://www.openstreetmap.org/oauth2/applications/"
+echo "Deploying on github pages?"
+echo " 1. Don't forget to add a CNAME file (containing your domain name verbatim, without protocol)"
+echo " 2 .nojekyll file (which is empty)"
