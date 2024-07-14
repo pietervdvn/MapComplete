@@ -30,7 +30,7 @@ rm index.html
 cp "$THEME.html" index.html
 
 sed -i "s/input,/input: {index:\".\/index.html\", land: \".\/land.html\"}/" vite_single.config.js
-sed -i "s/\/\/ LAYOUT.ADD_CONFIG/layout.enableMoreQuests = false" index_"$1".ts
+sed -i "s/\/\/ LAYOUT.ADD_CONFIG/layout.enableMoreQuests = false/" index_"$THEME".ts
 
 
 
@@ -105,18 +105,19 @@ then
   echo "Assuming github pages, add \".nojekyll\""
   touch $2/.nojekyll
   echo $CNAME > $2/CNAME
+  rm -r "$2/assets/*"
   echo "  ! Don't forget to add `https://$CNAME/land.html` to the Redirect URIs on https://www.openstreetmap.org/oauth2/applications/"
-  cp -r "dist_$1/"* "$2"/
+  cp -r "dist_$THEME/"* "$2"/
 
   if [ -d "$2"/.git ]
   then
     cd $2
     git add *
-    git commit -m "Add new version of MapComplete with single-page build of $1"
+    git commit -m "Add new version of MapComplete with single-page build of $THEME"
     git push
     cd -
   fi
-  rm "dist_$1"
+  rm "dist_$THEME"
 else
   echo "BUILD COMPLETED"
   echo "On what domain will you deploy?"
