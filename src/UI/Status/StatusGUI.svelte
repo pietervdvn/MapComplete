@@ -1,6 +1,6 @@
 <script lang="ts">
 
-  import { Store, UIEventSource } from "../../Logic/UIEventSource"
+  import { Store, Stores, UIEventSource } from "../../Logic/UIEventSource"
   import StatusIcon from "./StatusIcon.svelte"
   import type { MCService } from "./MCService"
   import ServiceIndicator from "./ServiceIndicator.svelte"
@@ -8,11 +8,36 @@
   import Constants from "../../Models/Constants"
   import { Utils } from "../../Utils"
   import Loading from "../Base/Loading.svelte"
+  import Checkbox from "../Base/Checkbox.svelte"
 
 
   let services: MCService[] = []
 
-  let states = [undefined, "online", "degraded", "offline"]
+  let recheckSignal: UIEventSource<any> = new UIEventSource<any>(undefined)
+  let checkSignal = Stores.Chronic(10000)
+  let autoCheckAgain = new UIEventSource<boolean>(false)
+
+  function testDownload(url: string, raw: boolean = false): Store<{ success } | { error }> {
+    const src = new UIEventSource(undefined)
+
+    function check() {
+      const promise = raw ? Utils.download(url) : Utils.downloadJson(url)
+      promise
+        ?.then((d) => src.setData({ success: d }))
+        ?.catch((err) => src.setData({ error: err }))
+    }
+
+    check()
+    recheckSignal.addCallback(_ => check())
+    checkSignal.addCallback(_ => {
+      if (autoCheckAgain.data) {
+        check()
+      }
+    })
+    return src
+
+  }
+
 
   function simpleMessage(s: Store<{ success: any } | { error: any }>): Store<string> {
     return s.mapD(s => {
@@ -42,15 +67,13 @@
             return "offline"
         }
       }),
-      message: osmApi
+      message: osmApi,
     })
   }
 
   {
     const s = "https://studio.mapcomplete.org"
-    const status = UIEventSource.FromPromiseWithErr(
-      Utils.downloadJson(s + "/overview")
-    )
+    const status = testDownload(s + "/overview")
     services.push({
       name: s,
       status: status.mapD(s => {
@@ -67,21 +90,19 @@
         return "online"
       }),
       message: status.mapD(s => {
-        if(s["error"]){
+        if (s["error"]) {
           return s["error"]
         }
         const files: string[] = s["success"]["allFiles"]
-        return "Contains "+(files.length ?? "no")+" files"
-      })
+        return "Contains " + (files.length ?? "no") + " files"
+      }),
     })
   }
   {
     services.push(
       {
         name: Constants.GeoIpServer,
-        status: UIEventSource.FromPromiseWithErr(
-          Utils.downloadJson(Constants.GeoIpServer + "/status")
-        ).mapD(result => {
+        status: testDownload(Constants.GeoIpServer + "/status").mapD(result => {
           if (result["success"].online) {
             return "online"
           }
@@ -91,18 +112,16 @@
             return "degraded"
           }
         }),
-        message: simpleMessage(UIEventSource.FromPromiseWithErr(
-          Utils.downloadJson(Constants.GeoIpServer + "/ip")
-        ))
-      }
+        message: simpleMessage(
+          testDownload(Constants.GeoIpServer + "/ip"),
+        ),
+      },
     )
   }
 
   {
     const s = Constants.ErrorReportServer
-    const status = UIEventSource.FromPromiseWithErr(
-      Utils.downloadJson(s.replace(/\/report$/, "/status"))
-    )
+    const status = testDownload(s.replace(/\/report$/, "/status"))
     services.push({
       name: s,
       status: status.mapD(s => {
@@ -115,15 +134,13 @@
         }
         return "degraded"
       }),
-      message: simpleMessage(status)
+      message: simpleMessage(status),
     })
   }
 
   {
     const s = Constants.linkedDataProxy.replace(/\/[^/]*$/, "")
-    const status = UIEventSource.FromPromiseWithErr(
-      Utils.downloadJson(s + "/status")
-    )
+    const status = testDownload(s + "/status")
     services.push({
       name: s,
       status: status.mapD(s => {
@@ -136,15 +153,13 @@
         }
         return "online"
       }),
-      message: simpleMessage(status)
+      message: simpleMessage(status),
     })
   }
 
   {
     const s = Constants.SummaryServer
-    const status = UIEventSource.FromPromiseWithErr(
-      Utils.downloadJson(s + "/summary/status.json")
-    )
+    const status = testDownload(s + "/summary/status.json")
     services.push({
       name: s,
       status: status.mapD(s => {
@@ -177,15 +192,13 @@
 
         const json = JSON.stringify(s["success"], null, "  ")
         return "Database is " + Math.floor(timediffDays) + " days out of sync\n\n" + json
-      })
+      }),
     })
   }
 
   {
     const s = Constants.countryCoderEndpoint
-    const status = UIEventSource.FromPromiseWithErr(
-      Utils.downloadJson(s + "/0.0.0.json")
-    )
+    const status = testDownload(s + "/0.0.0.json")
     services.push({
       name: s,
       status: status.mapD(s => {
@@ -198,7 +211,7 @@
         }
         return "degraded"
       }),
-      message: status.map(s => JSON.stringify(s))
+      message: status.map(s => JSON.stringify(s)),
     })
 
   }
@@ -207,9 +220,7 @@
   {
     for (const defaultOverpassUrl of Constants.defaultOverpassUrls) {
       const statusUrl = defaultOverpassUrl.replace(/\/interpreter$/, "/status")
-      const status = UIEventSource.FromPromiseWithErr(
-        Utils.download(statusUrl)
-      )
+      const status = testDownload(statusUrl, true)
 
       services.push({
         name: "Overpass-server: " + defaultOverpassUrl,
@@ -228,7 +239,7 @@
 
           return "online"
         }),
-        message: simpleMessage(status)
+        message: simpleMessage(status),
       })
     }
   }
@@ -236,14 +247,12 @@
   {
     services.push({
       name: "Mangrove reviews",
-      status: UIEventSource.FromPromiseWithErr(
-        Utils.download("https://api.mangrove.reviews")
-      ).mapD(r => {
+      status: testDownload("https://api.mangrove.reviews", true).mapD(r => {
         if (r["success"]) {
           return "online"
         }
         return "offline"
-      })
+      }),
     })
   }
 
@@ -271,14 +280,72 @@
     })
   }
 
+  const trafficLightUrl = "http://traffic_light_bicycle.local/"
+  let trafficLightIsOnline = testDownload(trafficLightUrl + "/status", true)
+  let enableTrafficLight = new UIEventSource(true)
+
+  /**
+   * So... IN my room, there is a traffic light. Like, an actual traffic light with bicycles.
+   * I put in an ESP32 and can now control it remotely - which is precisely what this code does.
+   * @param state
+   */
+  async function setTrafficLight(state: "online" | "degraded" | "offline") {
+    try {
+
+      const url = trafficLightUrl
+      const status = await Utils.downloadJson(url + "status")
+      console.log(status)
+      if (!enableTrafficLight.data) {
+        await Utils.download(url + "configure?mode=0")
+        return
+      }
+      switch (state) {
+
+        case "offline":
+          await Utils.download(url + "configure?mode=3")
+          break
+        case "degraded":
+          await Utils.download(url + "configure?mode=2")
+          break
+        case "online":
+          await Utils.download(url + "configure?mode=1")
+          break
+        default:
+          await Utils.download(url + "configure?mode=7")
+          break
+
+      }
+    } catch (e) {
+      console.log("Could not connect to the traffic light")
+    }
+  }
+
+  all.addCallbackAndRunD(state => {
+    setTrafficLight(state)
+  })
+  enableTrafficLight.addCallbackAndRunD(_ => {
+    setTrafficLight(all.data)
+  })
+
 </script>
 
 <h1>MapComplete status indicators</h1>
 
-{#if $someLoading}
-  <Loading />
+<div class="flex">
+
+  {#if $someLoading}
+    <Loading />
+  {/if}
+  <StatusIcon status={$all} cls="w-16 h-16" />
+  <button on:click={() => recheckSignal.ping()}>Check again</button>
+  <Checkbox selected={autoCheckAgain}>
+    Automatically check again every 10s
+  </Checkbox>
+</div>
+
+{#if $trafficLightIsOnline?.["success"] }
+  <Checkbox selected={enableTrafficLight}>Enable traffic light</Checkbox>
 {/if}
-<StatusIcon status={$all} cls="w-16 h-16" />
 
 {#each services as service}
   <ServiceIndicator {service} />
