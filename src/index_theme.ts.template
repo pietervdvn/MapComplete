@@ -45,6 +45,7 @@ async function main() {
         const availableLayers = await getAvailableLayers()
         MetaTagging.setThemeMetatagging(new ThemeMetaTagging())
         // LAYOUT.ADD_LAYERS
+        // LAYOUT.ADD_CONFIG
         const state = new ThemeViewState(new LayoutConfig(<any> layout), availableLayers)
         const target =  document.getElementById("maindiv")
         const childs = Array.from(target.children)

@@ -1,5 +1,5 @@
 THEME=$1
-
+npm run generate:layouts
 if [ $# -eq 0 ]
   then
     echo "No arguments given. Expected a themename"
@@ -29,8 +29,8 @@ fi
 rm index.html
 cp "$THEME.html" index.html
 
-sed -i "s/input,/input: {index:\".\/index.html\"}/" vite_single.config.js
-
+sed -i "s/input,/input: {index:\".\/index.html\", land: \".\/land.html\"}/" vite_single.config.js
+sed -i "s/\/\/ LAYOUT.ADD_CONFIG/layout.enableMoreQuests = false" index_"$1".ts
 
 
 
@@ -89,10 +89,39 @@ then
   rm index.html
   mv index.bu.html index.html
 fi
+npm run clean
 
 echo "BUILD COMPLETED"
-echo "On what domain will you deploy?"
-echo "  ! Don't forget to add `https://yourdomain.tld/land.html` to the Redirect URIs on https://www.openstreetmap.org/oauth2/applications/"
-echo "Deploying on github pages?"
-echo " 1. Don't forget to add a CNAME file (containing your domain name verbatim, without protocol)"
-echo " 2 .nojekyll file (which is empty)"
+
+if [ $# -eq 2 ]
+then
+  echo "DEPLOY TO $2"
+
+  if [ -f "$2"/CNAME ]
+  then
+    CNAME=$(cat "$2"/CNAME)
+    echo "Found a CNAME"
+  fi
+  echo "Assuming github pages, add \".nojekyll\""
+  touch $2/.nojekyll
+  echo $CNAME > $2/CNAME
+  echo "  ! Don't forget to add `https://$CNAME/land.html` to the Redirect URIs on https://www.openstreetmap.org/oauth2/applications/"
+  cp -r "dist_$1/"* "$2"/
+
+  if [ -d "$2"/.git ]
+  then
+    cd $2
+    git add *
+    git commit -m "Add new version of MapComplete with single-page build of $1"
+    git push
+    cd -
+  fi
+  rm "dist_$1"
+else
+  echo "BUILD COMPLETED"
+  echo "On what domain will you deploy?"
+  echo "  ! Don't forget to add `https://yourdomain.tld/land.html` to the Redirect URIs on https://www.openstreetmap.org/oauth2/applications/"
+  echo "Deploying on github pages?"
+  echo " 1. Don't forget to add a CNAME file (containing your domain name verbatim, without protocol)"
+  echo " 2 .nojekyll file (which is empty)"
+fi
