@@ -60,7 +60,7 @@
   },
   "scripts": {
 
-    "init": "npm ci && npm run prep:layeroverview && npm run generate && npm run download:editor-layer-index && npm run generate:layouts && npm run clean && npm run weblate-add-upstream",
+    "init": "npm ci && npm run prep:layeroverview && npm run generate && npm run download:editor-layer-index && npm run generate:layouts && npm run clean && npm run weblate:add-upstream",
     "start": "npm run generate:layeroverview && npm run strt",
     "#strt:https": "Start in HTTPS mode. Makes a few things a bit harder, but allows to debug on Android with logging in",
     "strt:https": "vite --host | sed 's/localhost:/127.0.0.1:/g'",
