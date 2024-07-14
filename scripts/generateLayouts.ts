@@ -630,7 +630,7 @@ class GenerateLayouts extends Script {
             const layout = new LayoutConfig(layoutConfigJson, true)
             const layoutName = layout.id
             if (blacklist.indexOf(layoutName.toLowerCase()) >= 0) {
-                console.log(`Skipping a layout with name${layoutName}, it is on the blacklist`)
+                console.log(`Skipping a layout with name ${layoutName}, it is on the blacklist`)
                 continue
             }
             const err = (err) => {
