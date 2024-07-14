@@ -13,10 +13,6 @@ import { ChangesetHandler, ChangesetTag } from "./ChangesetHandler"
 import { OsmConnection } from "./OsmConnection"
 import FeaturePropertiesStore from "../FeatureSource/Actors/FeaturePropertiesStore"
 import OsmObjectDownloader from "./OsmObjectDownloader"
-import Combine from "../../UI/Base/Combine"
-import BaseUIElement from "../../UI/BaseUIElement"
-import Title from "../../UI/Base/Title"
-import Table from "../../UI/Base/Table"
 import ChangeLocationAction from "./Actions/ChangeLocationAction"
 import ChangeTagAction from "./Actions/ChangeTagAction"
 import FeatureSwitchState from "../State/FeatureSwitchState"
@@ -44,7 +40,7 @@ export class Changes {
     private _nextId: number = -1 // Newly assigned ID's are negative
     private readonly previouslyCreated: OsmObject[] = []
     private readonly _leftRightSensitive: boolean
-    private readonly _changesetHandler: ChangesetHandler
+    public readonly _changesetHandler: ChangesetHandler
     private readonly _reportError?: (string: string | Error) => void
 
     constructor(
@@ -209,7 +205,7 @@ export class Changes {
         ].join("\n\n")
     }
 
-    private static GetNeededIds(changes: ChangeDescription[]) {
+    public static GetNeededIds(changes: ChangeDescription[]) {
         return Utils.Dedup(changes.filter((c) => c.id >= 0).map((c) => c.type + "/" + c.id))
     }
 
@@ -520,7 +516,7 @@ export class Changes {
                 const osmObj = await downloader.DownloadObjectAsync(id, 0)
                 return { id, osmObj }
             } catch (e) {
-                const msg = "Could not download OSM-object" +
+                const msg = "Could not download OSM-object " +
                     id +
                     " trying again before dropping it from the changes (" +
                     e +
@@ -530,7 +526,7 @@ export class Changes {
                 return { id, osmObj }
             }
         } catch (e) {
-            const msg = "Could not download OSM-object" +
+            const msg = "Could not download OSM-object " +
                 id +
                 " dropping it from the changes (" +
                 e +

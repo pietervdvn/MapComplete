@@ -1267,13 +1267,21 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return track[str2.length][str1.length]
     }
 
+    public static MapToObj<V>(
+        d: Map<string, V>
+    ): Record<string, V>;
     public static MapToObj<V, T>(
         d: Map<string, V>,
         onValue: (t: V, key: string) => T
+    ): Record<string, T>
+    public static MapToObj<V, T>(
+        d: Map<string, V>,
+        onValue: (t: V, key: string) => T = undefined
     ): Record<string, T> {
         const o = {}
         const keys = Array.from(d.keys())
         keys.sort()
+        onValue ??= (v => <any> v)
         for (const key of keys) {
             o[key] = onValue(d.get(key), key)
         }
