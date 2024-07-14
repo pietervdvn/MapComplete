@@ -21,19 +21,22 @@
 
   let layout = state.layout
   let featureSwitches = state.featureSwitches
+  let showHome = featureSwitches.featureSwitchBackToThemeOverview
 </script>
 
 <div class="link-underline links-w-full m-2 flex flex-col gap-y-1">
   <Tr t={Translations.t.general.aboutMapComplete.intro} />
 
-  <a class="flex" href={Utils.HomepageLink()}>
-    <Add class="h-6 w-6" />
-    {#if Utils.isIframe}
-      <Tr t={Translations.t.general.seeIndex} />
-    {:else}
-      <Tr t={Translations.t.general.backToIndex} />
-    {/if}
-  </a>
+  {#if ²$showHome}
+    <a class="flex" href={Utils.HomepageLink()}>
+      <Add class="h-6 w-6" />
+      {#if Utils.isIframe}
+        <Tr t={Translations.t.general.seeIndex} />
+      {:else}
+        <Tr t={Translations.t.general.backToIndex} />
+      {/if}
+    </a>
+  {/if}
 
   <a class="flex" href="https://github.com/pietervdvn/MapComplete/" target="_blank">
     <Github class="h-6 w-6" />

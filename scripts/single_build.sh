@@ -117,7 +117,7 @@ then
     git push
     cd -
   fi
-  rm "dist_$THEME"
+  rm -r "dist_$THEME"
 else
   echo "BUILD COMPLETED"
   echo "On what domain will you deploy?"
