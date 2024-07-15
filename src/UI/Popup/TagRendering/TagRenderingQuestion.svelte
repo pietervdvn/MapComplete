@@ -32,6 +32,7 @@
   import { And } from "../../../Logic/Tags/And"
   import { get } from "svelte/store"
   import Markdown from "../../Base/Markdown.svelte"
+  import { Utils } from "../../../Utils"
 
   export let config: TagRenderingConfig
   export let tags: UIEventSource<Record<string, string>>
@@ -42,7 +43,7 @@
   export let selectedTags: UploadableTag = undefined
   export let extraTags: UIEventSource<Record<string, string>> = new UIEventSource({})
 
-  export let allowDeleteOfFreeform: boolean = false
+  export let allowDeleteOfFreeform: boolean = true
 
   export let clss = "interactive border-interactive"
 
@@ -141,7 +142,9 @@
     feedback.setData(undefined)
   }
 
-  let usedKeys: string[] = config.usedTags().flatMap((t) => t.usedKeys())
+  let usedKeys: string[] = Utils.Dedup(config.usedTags().flatMap((t) => t.usedKeys()))
+
+  let keysToDeleteOnUnknown = config.settableKeys()
   /**
    * The 'minimalTags' is a subset of the tags of the feature, only containing the values relevant for this object.
    * The main goal is to be stable and only 'ping' when an actual change is relevant
@@ -193,10 +196,12 @@
 
   $: {
     if (
+      config.freeform?.key &&
       allowDeleteOfFreeform &&
-      $freeformInput === undefined &&
-      $freeformInputUnvalidated === "" &&
-      (config?.mappings?.length ?? 0) === 0
+      !$freeformInput &&
+      !$freeformInputUnvalidated &&
+      !checkedMappings?.some(m => m) &&
+      $tags[config.freeform.key] // We need to have a current value in order to delete it
     ) {
       selectedTags = new Tag(config.freeform.key, "")
     } else {
@@ -360,7 +365,7 @@
           {/if}
         {/if}
 
-        {#if config.freeform?.key && !(config?.mappings?.filter((m) => m.hideInAnswer != true)?.length > 0)}
+        {#if config?.freeform?.key && !(config?.mappings?.filter((m) => m.hideInAnswer != true)?.length > 0)}
           <!-- There are no options to choose from, simply show the input element: fill out the text field -->
           <FreeformInput
             {config}
@@ -480,6 +485,9 @@
               <Tr t={$feedback} />
             </div>
           {/if}
+          <!--{#if keysToDeleteOnUnknown?.some(k => !! $tags[k])}
+            Mark as unknown (delete {keysToDeleteOnUnknown?.filter(k => !! $tags[k]).join(";")})
+            {/if}-->
           <div
             class="sticky bottom-0 flex flex-wrap-reverse items-stretch justify-end sm:flex-nowrap"
             style="z-index: 11"
@@ -487,7 +495,7 @@
             <!-- TagRenderingQuestion-buttons -->
             <slot name="cancel" />
             <slot name="save-button" {selectedTags}>
-              {#if allowDeleteOfFreeform && (config?.mappings?.length ?? 0) === 0 && $freeformInput === undefined && $freeformInputUnvalidated === ""}
+              {#if config.freeform?.key && allowDeleteOfFreeform && !checkedMappings?.some(m => m) && !$freeformInput && !$freeformInputUnvalidated && $tags[config.freeform.key]}
                 <button
                   class="primary flex"
                   on:click|stopPropagation|preventDefault={() => onSave()}
@@ -513,12 +521,14 @@
               <TagHint {state} tags={selectedTags} currentProperties={$tags} />
               <span class="flex flex-wrap">
                 {#if $featureSwitchIsTesting}
-                  <button class="small" on:click={() => console.log("Configuration is ", config)}>
+                  <div class="alert">
                     Testmode &nbsp;
-                  </button>
+                  </div>
                 {/if}
                 {#if $featureSwitchIsTesting || $featureSwitchIsDebugging}
-                  <span class="subtle">{config.id}</span>
+                  <a class="small" on:click={() => console.log("Configuration is ", config)}>
+                  {config.id}
+                  </a>
                 {/if}
               </span>
             </span>

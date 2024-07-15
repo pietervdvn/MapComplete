@@ -766,29 +766,27 @@ export default class SimpleMetaTaggers {
         return somethingChanged
     }
 
-    public static HelpText(): BaseUIElement {
-        const subElements: (string | BaseUIElement)[] = [
-            new Combine([
+    public static HelpText(): string {
+        const subElements: string[] = [
+            [
                 "Metatags are extra tags available, in order to display more data or to give better questions.",
                 "They are calculated automatically on every feature when the data arrives in the webbrowser. This document gives an overview of the available metatags.",
                 "**Hint:** when using metatags, add the [query parameter](URL_Parameters.md) `debug=true` to the URL. This will include a box in the popup for features which shows all the properties of the object",
-            ]).SetClass("flex-col"),
+            ].join("\n"),
         ]
 
-        subElements.push(new Title("Metatags calculated by MapComplete", 2))
+        subElements.push("## Metatags calculated by MapComplete")
         subElements.push(
-            new FixedUiElement(
                 "The following values are always calculated, by default, by MapComplete and are available automatically on all elements in every theme"
-            )
         )
         for (const metatag of SimpleMetaTaggers.metatags) {
             subElements.push(
-                new Title(metatag.keys.join(", "), 3),
+                "### "+metatag.keys.join(", "),
                 metatag.doc,
                 metatag.isLazy ? "This is a lazy metatag and is only calculated when needed" : ""
             )
         }
 
-        return new Combine(subElements).SetClass("flex-col")
+        return subElements.join("\n\n")
     }
 }

@@ -466,6 +466,13 @@
             "pt": "Capacetes de ciclismo podem ser alugados aqui",
             "pl": "Można tutaj wypożyczyć kaski rowerowe"
           }
+        },
+        {
+          "if": "rental=cargo_bike",
+          "then": {
+            "en": "Cargo bikes can be rented here",
+            "nl": "Bakfietsen kunnen hier gehuurd worden"
+          }
         }
       ],
       "condition": {

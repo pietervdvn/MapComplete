@@ -814,6 +814,72 @@
             "render": "Hindernis"
         }
     },
+    "bbq": {
+        "description": "Ein ortsfest installierter Grill, typischerweise öffentlich zugänglich.",
+        "name": "Grillstelle",
+        "presets": {
+            "0": {
+                "description": "Ein ortsfest installierter Grill, typischerweise öffentlich zugänglich.",
+                "title": "Grillstelle"
+            }
+        },
+        "tagRenderings": {
+            "access": {
+                "mappings": {
+                    "0": {
+                        "then": "Öffentlich"
+                    },
+                    "1": {
+                        "then": "Kein Zugang"
+                    },
+                    "2": {
+                        "then": "Privat"
+                    },
+                    "3": {
+                        "then": "Zugang bis auf Widerruf"
+                    },
+                    "4": {
+                        "then": "Zugang nur für Kunden"
+                    },
+                    "5": {
+                        "then": "Zugang nur für Berechtigte"
+                    }
+                },
+                "question": "Was ist der erlaubte Zugang?"
+            },
+            "covered": {
+                "mappings": {
+                    "0": {
+                        "then": "Die Grillstelle ist nicht überdacht"
+                    },
+                    "1": {
+                        "then": "Die Grillstelle ist überdacht"
+                    }
+                },
+                "question": "Ist die Grillstelle überdacht?"
+            },
+            "fuel": {
+                "mappings": {
+                    "0": {
+                        "then": "Holz"
+                    },
+                    "1": {
+                        "then": "Kohle"
+                    },
+                    "2": {
+                        "then": "Elektronisch"
+                    },
+                    "3": {
+                        "then": "Gas"
+                    }
+                },
+                "question": "Mit was wird die Grillstelle angefeuert?"
+            }
+        },
+        "title": {
+            "render": "Grillstelle"
+        }
+    },
     "bench": {
         "description": "Diese Karte stellt Sitzbänke aus Holz, Metall, Stein, … dar und stellt ein paar Fragen, um weitere Informationen zu ergänzen.",
         "filter": {
@@ -4003,18 +4069,9 @@
                 "render": "<a href='#{_closest_other_drinking_water_id}'>Eine weitere Trinkwasserstelle befindet sich in {_closest_other_drinking_water_distance} Meter</a>"
             },
             "seasonal": {
-                "mappings": {
-                    "0": {
-                        "then": "Die Trinkwasserstelle ist ganzjährig in Betrieb"
-                    },
-                    "1": {
-                        "then": "Die Trinkwasserstelle ist nur im Sommer in Betrieb"
-                    },
-                    "2": {
-                        "then": "Die Trinkwasserstelle ist im Winter nicht in Betrieb"
-                    }
-                },
-                "question": "Ist die Trinkwasserstelle ganzjährig in Betrieb?"
+                "override": {
+                    "question": "Ist die Trinkwasserstelle ganzjährig in Betrieb?"
+                }
             },
             "type": {
                 "mappings": {
@@ -4613,6 +4670,44 @@
         },
         "title": {
             "render": "Feuerwache"
+        }
+    },
+    "firepit": {
+        "description": "Eine Stelle im Freien zum Feuermachen, typischerweise öffentlich zugänglich.",
+        "name": "Feuerstelle",
+        "presets": {
+            "0": {
+                "description": "Eine Stelle im Freien zum Feuermachen, typischerweise öffentlich zugänglich.",
+                "title": "Feuerstelle"
+            }
+        },
+        "tagRenderings": {
+            "access": {
+                "mappings": {
+                    "0": {
+                        "then": "Öffentlich"
+                    },
+                    "1": {
+                        "then": "Kein Zugang"
+                    },
+                    "2": {
+                        "then": "Privat"
+                    },
+                    "3": {
+                        "then": "Zugang bis auf Widerruf"
+                    },
+                    "4": {
+                        "then": "Zugang nur für Kunden"
+                    },
+                    "5": {
+                        "then": "Zugang nur für Berechtigte"
+                    }
+                },
+                "question": "Was ist der erlaubte Zugang?"
+            }
+        },
+        "title": {
+            "render": "Feuerstelle"
         }
     },
     "fitness_centre": {
@@ -8040,6 +8135,19 @@
             },
             "repeated": {
                 "render": "Mehrere identische Objekte können in Geschossen {repeat_on} gefunden werden."
+            },
+            "seasonal": {
+                "mappings": {
+                    "0": {
+                        "then": "Ganzjährig in Betrieb"
+                    },
+                    "1": {
+                        "then": "Nur im Sommer in Betrieb"
+                    },
+                    "2": {
+                        "then": "Im Winter nicht in Betrieb"
+                    }
+                }
             },
             "service:electricity": {
                 "mappings": {

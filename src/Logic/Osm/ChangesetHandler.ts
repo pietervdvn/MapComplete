@@ -25,7 +25,7 @@ export class ChangesetHandler {
      * Contains previously rewritten IDs
      * @private
      */
-    private readonly _remappings = new Map<string, string>()
+    public readonly _remappings = new Map<string, string>()
     private readonly _reportError: (e: string | Error) => void
 
     constructor(
@@ -187,7 +187,7 @@ export class ChangesetHandler {
                 await this.UpdateTags(csId, rewrittenTags)
             } catch (e) {
                 if (this._reportError) {
-                    this._reportError("Could not reuse changeset, might be closed: "  + e.stacktrace ?? "" + e)
+                    this._reportError("Could not reuse changeset "+csId+", might be closed: "  + (e.stacktrace ?? ("" + e)))
                 }
                 console.warn("Could not upload, changeset is probably closed: ", e)
                 openChangeset.setData(undefined)

@@ -1,6 +1,6 @@
 {
   "name": "mapcomplete",
-  "version": "0.44.4",
+  "version": "0.44.5",
   "repository": "https://github.com/pietervdvn/MapComplete",
   "description": "A small website to edit OSM easily",
   "bugs": "https://github.com/pietervdvn/MapComplete/issues",
@@ -59,17 +59,22 @@
     }
   },
   "scripts": {
+
+    "init": "npm ci && npm run prep:layeroverview && npm run generate && npm run download:editor-layer-index && npm run generate:layouts && npm run clean && npm run weblate:add-upstream",
     "start": "npm run generate:layeroverview && npm run strt",
     "#strt:https": "Start in HTTPS mode. Makes a few things a bit harder, but allows to debug on Android with logging in",
     "strt:https": "vite --host | sed 's/localhost:/127.0.0.1:/g'",
     "strt": "vite --host | sed 's/localhost:/127.0.0.1:/g'",
+    "build": "./scripts/build.sh",
+    "build:single": "./scripts/single_build.sh",
+    "build:dbscript": "vite-node ./scripts/osm2pgsql/generateBuildDbScript.ts",
+    "prepare-deploy": "npm run generate:service-worker && ./scripts/prepare-build.sh && npm run build",
+
     "watch:css": "tailwindcss -i src/index.css -o public/css/index-tailwind-output.css --watch",
     "generate:css": "tailwindcss -i src/index.css -o public/css/index-tailwind-output.css",
     "generate:doctests": "doctest-ts-improved . --ignore .*.spec.ts --ignore .*ConfigJson.ts",
     "test:run-only": "vitest --run test",
     "test": " export NODE_OPTIONS=\"--max-old-space-size=8192\" && npm run clean:tests && (npm run generate:doctests 2>&1 | grep -v \"No doctests found in\") && npm run test:run-only && npm run clean:tests",
-    "init": "npm ci && npm run prep:layeroverview && npm run generate && npm run generate:editor-layer-index && npm run generate:layouts && npm run clean && npm run weblate-add-upstream",
-    "generate:editor-layer-index": "vite-node scripts/downloadEli.ts",
     "generate:polygon-features": "vite-node scripts/downloadFile.ts -- https://raw.githubusercontent.com/tyrasd/osm-polygon-features/master/polygon-features.json assets/polygon-features.json",
     "generate:images": "vite-node scripts/generateIncludedImages.ts",
     "generate:translations": "vite-node scripts/generateTranslations.ts",
@@ -77,48 +82,64 @@
     "generate:layouts": "vite-node scripts/generateLayouts.ts",
     "generate:docs": "rm -rf Docs/Themes/* && rm -rf Docs/Layers/* && rm -rf Docs/TagInfo && mkdir Docs/TagInfo && vite-node scripts/generateDocs.ts && vite-node scripts/generateTaginfoProjectFiles.ts",
     "generate:layeroverview": "export NODE_OPTIONS=\"--max-old-space-size=8192\" && vite-node scripts/generateLayerOverview.ts",
-    "velopark": "export NODE_OPTIONS=\"--max-old-space-size=8192\" && vite-node scripts/generateLayerOverview.ts -- --force --themes=velopark --layers=bike_parking,maproulette_challenge",
     "generate:mapcomplete-changes-theme": "export NODE_OPTIONS=\"--max-old-space-size=8192\" && vite-node scripts/generateLayerOverview.ts -- --generate-change-map",
     "refresh:layeroverview": "export NODE_OPTIONS=\"--max-old-space-size=8192\" && vite-node scripts/generateLayerOverview.ts -- --force",
     "generate:licenses": "vite-node scripts/generateLicenseInfo.ts -- --no-fail",
     "query:licenses": "vite-node scripts/generateLicenseInfo.ts -- --query",
     "generate:contributor-list": "vite-node scripts/generateContributors.ts",
-    "generate:schemas": "ts2json-schema -p src/Models/ThemeConfig/Json/ -o Docs/Schemas/ -t tsconfig.json -R . -m \".*ConfigJson\" && echo 'tsjson is done' && vite-node scripts/fixSchemas.ts ",
-    "fix:schemas": "vite-node scripts/fixSchemas.ts ",
-    "watch:schemas": "cd Models/ThemeConfig/Json  & ls | entr -s 'npm run generate:schemas' ",
     "generate:service-worker": "tsc src/service-worker.ts --outFile public/service-worker.js && git_hash=$(git rev-parse HEAD) && sed -i.bak \"s/GITHUB-COMMIT/$git_hash/\" public/service-worker.js && rm public/service-worker.js.bak",
-    "optimize-images-png": "cd assets/generated/ &&  find -name '*.png' -exec optipng '{}' \\; && echo 'PNGs are optimized'",
-    "optimize-images-jpg": "cd assets/ &&  find . -regextype sed -regex \".*/.*.\\(jpg\\|JPG\\|JPEG\\|jpeg\\)\" -exec jpegoptim '{}' \\; && echo 'JPGs are optimized'",
-    "optimize-images-scaledown-jpg": "cd assets/ &&  find . -regextype sed -regex \".*/.*.\\(jpg\\|JPG\\|JPEG\\|jpeg\\)\" -exec mogrify -resize 640x640\\> '{}' \\; && echo 'JPGs are optimized'",
-    "generate:stats": "vite-node scripts/GenerateSeries.ts",
+
     "reset:layeroverview": "npm run prep:layeroverview && npm run generate:layeroverview && npm run refresh:layeroverview",
     "prep:layeroverview": "mkdir -p ./src/assets/generated/layers; echo {\\\"themes\\\":[]} > ./src/assets/generated/known_themes.json && echo {\\\"layers\\\": []} > ./src/assets/generated/known_layers.json && rm -f ./src/assets/generated/layers/*.json && rm -f ./src/assets/generated/themes/*.json && cp ./assets/layers/usersettings/usersettings.json ./src/assets/generated/layers/usersettings.json && echo '{}' > ./src/assets/generated/layers/favourite.json && echo '{}' > ./src/assets/generated/layers/summary.json && echo '{}' > ./src/assets/generated/layers/last_click.json",
     "generate": "npm run generate:licenses && npm run generate:images && npm run generate:charging-stations && npm run generate:translations && npm run refresh:layeroverview && npm run generate:service-worker",
     "generate:charging-stations": "cd ./assets/layers/charging_station && vite-node csvToJson.ts && cd -",
-    "prepare-deploy": "npm run generate:service-worker && ./scripts/prepare-build.sh && npm run build",
-    "build": "./scripts/build.sh",
+
+    "clean:tests": "find . -type f -name \"*.doctest.ts\" | xargs -r rm",
+    "clean": "rm -rf .cache/ && (find *.html | grep -v \"^\\(404\\|index\\|land\\|privacy\\|test\\|studio\\|theme\\|style_test\\|statistics\\|status\\|leaderboard\\).html\" | xargs -r rm) && (ls | grep \"^index_[a-zA-Z_-]\\+\\.ts$\" | xargs -r rm)",
+
+    "generate:dependency-graph": "node_modules/.bin/depcruise --exclude \"^node_modules\" --output-type dot Logic/State/MapState.ts > dependencies.dot && dot dependencies.dot -T svg -o dependencies.svg && rm dependencies.dot",
+    "scrapeWebsites": "vite-node scripts/importscripts/compareWebsiteData.ts -- ~/Downloads/ShopsWithWebsiteNodes.csv ~/data/scraped_websites/",
+
+    "### 0": "VELOPARK",
+    "velopark:compare": "vite-node scripts/velopark/compare.ts -- velopark_nonsynced_.geojson ~/Projecten/OSM/Fietsberaad/2024-02-02\\ Fietsenstallingen_OSM_met_velopark_ref.geojson\n",
+    "velopark:download": "vite-node scripts/velopark/veloParkToGeojson.ts ",
+
+    "### 1": "CODE AND DATA MAINTAINENCE",
+
+    "download:nsi-logos": "vite-node scripts/downloadNsiLogos.ts || npm run downloadNsiLogos # This script crashes often without the possibility to correct - hence the auto retry with OR",
+    "download:editor-layer-index": "vite-node scripts/downloadEli.ts",
+    "download:stats": "vite-node scripts/GenerateSeries.ts",
+    "download:images": "vite-node scripts/generateImageAnalysis.ts -- ~/data/imgur-image-backup/",
+
+
+    "weblate:add-upstream": "git remote add weblate-github git@github.com:weblate/MapComplete.git && git remote add weblate-hosted-core https://hosted.weblate.org/git/mapcomplete/core/ && git remote add weblate-hosted-layers https://hosted.weblate.org/git/mapcomplete/layers/",
+    "weblate:merge": "git remote update weblate-github; git merge weblate-github/weblate-mapcomplete-core weblate-github/weblate-mapcomplete-layers weblate-github/weblate-mapcomplete-layer-translations",
+    "weblate:merge-heavy": "git fetch weblate-hosted-layers; git fetch weblate-hosted-core; git merge weblate-hosted-layers/master weblate-hosted-core/master ",
+
     "lint": "npm run lint:prettier && npm run lint:eslint && npm run lint:themes",
     "lint:eslint": "eslint ./src",
     "lint:prettier": "prettier  --check '**/*.ts' '**/*.svelte'",
     "lint:themes": "vite-node scripts/lint.ts",
     "format": "prettier --write '**/*.ts' '**/*.svelte'",
-    "clean:tests": "find . -type f -name \"*.doctest.ts\" | xargs -r rm",
-    "clean": "rm -rf .cache/ && (find *.html | grep -v \"^\\(404\\|index\\|land\\|privacy\\|test\\|studio\\|theme\\|style_test\\|statistics\\|leaderboard\\).html\" | xargs -r rm) && (ls | grep \"^index_[a-zA-Z_-]\\+\\.ts$\" | xargs -r rm)",
-    "generate:dependency-graph": "node_modules/.bin/depcruise --exclude \"^node_modules\" --output-type dot Logic/State/MapState.ts > dependencies.dot && dot dependencies.dot -T svg -o dependencies.svg && rm dependencies.dot",
-    "weblate-add-upstream": "git remote add weblate-github git@github.com:weblate/MapComplete.git && git remote add weblate-hosted-core https://hosted.weblate.org/git/mapcomplete/core/ && git remote add weblate-hosted-layers https://hosted.weblate.org/git/mapcomplete/layers/",
-    "weblate-merge": "git remote update weblate-github; git merge weblate-github/weblate-mapcomplete-core weblate-github/weblate-mapcomplete-layers weblate-github/weblate-mapcomplete-layer-translations",
-    "weblate-fix-heavy": "git fetch weblate-hosted-layers; git fetch weblate-hosted-core; git merge weblate-hosted-layers/master weblate-hosted-core/master ",
-    "housekeeping": "git pull && npx update-browserslist-db@latest && npm run weblate-fix-heavy && npm run generate && npm run generate:docs && npm run generate:contributor-list && vite-node scripts/fetchLanguages.ts && vite-node scripts/generateSunnyUnlabeled.ts && npm run format && git add assets/ langs/ Docs/ **/*.ts Docs/* src/* && git commit -m 'chore: automated housekeeping...'",
+
+
+    "optimize-images-png": "cd assets/generated/ &&  find -name '*.png' -exec optipng '{}' \\; && echo 'PNGs are optimized'",
+    "optimize-images-jpg": "cd assets/ &&  find . -regextype sed -regex \".*/.*.\\(jpg\\|JPG\\|JPEG\\|jpeg\\)\" -exec jpegoptim '{}' \\; && echo 'JPGs are optimized'",
+    "optimize-images-scaledown-jpg": "cd assets/ &&  find . -regextype sed -regex \".*/.*.\\(jpg\\|JPG\\|JPEG\\|jpeg\\)\" -exec mogrify -resize 640x640\\> '{}' \\; && echo 'JPGs are optimized'",
+
+    "generate:schemas": "ts2json-schema -p src/Models/ThemeConfig/Json/ -o Docs/Schemas/ -t tsconfig.json -R . -m \".*ConfigJson\" && echo 'tsjson is done' && vite-node scripts/fixSchemas.ts ",
+
     "reuse-compliance": "reuse lint",
-    "backup:images": "vite-node scripts/generateImageAnalysis.ts -- ~/data/imgur-image-backup/",
-    "downloadNsiLogos": "vite-node scripts/downloadNsiLogos.ts || npm run downloadNsiLogos # This script crashes often without the possibility to correct - hence the auto retry with OR",
-    "dloadVelopark": "vite-node scripts/velopark/veloParkToGeojson.ts ",
-    "compareVelopark": "vite-node scripts/velopark/compare.ts -- velopark_nonsynced_.geojson ~/Projecten/OSM/Fietsberaad/2024-02-02\\ Fietsenstallingen_OSM_met_velopark_ref.geojson\n",
-    "scrapeWebsites": "vite-node scripts/importscripts/compareWebsiteData.ts -- ~/Downloads/ShopsWithWebsiteNodes.csv ~/data/scraped_websites/",
+
+    "housekeeping": "git pull && npx update-browserslist-db@latest && npm run weblate:merge-heavy && npm run generate && npm run generate:docs && npm run generate:schemas && npm run generate:contributor-list && vite-node scripts/fetchLanguages.ts && vite-node scripts/generateSunnyUnlabeled.ts && npm run format && git add assets/ langs/ Docs/ **/*.ts Docs/* src/* && git commit -m 'chore: automated housekeeping...'",
+
+    "###": "MICROSERVICES AND SERVER MAINTAINENCE",
+
     "server:summary": "vite-node scripts/osm2pgsql/tilecountServer.ts",
     "server:ldjson": "vite-node scripts/serverLdScrape.ts",
     "sever:studio": "vite-node scripts/studioServer -- /root/git/MapComplete/assets",
     "server:errorreport": "vite-node scripts/serverErrorReport.ts -- /root/error_reports/",
+
     "generate:buildDbScript": "vite-node scripts/osm2pgsql/generateBuildDbScript.ts",
     "generate:summaryCache": "vite-node scripts/generateSummaryTileCache.ts"
   },

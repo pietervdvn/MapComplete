@@ -5,6 +5,8 @@
  */
 import { Utils } from "../Utils"
 
+/* @deprecated
+ */
 export default abstract class BaseUIElement {
     protected _constructedHtmlElement: HTMLElement
     protected isDestroyed = false

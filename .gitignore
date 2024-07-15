@@ -1,4 +1,5 @@
 dist/*
+dist_*/*
 node_modules
 .cache/*
 .idea/*

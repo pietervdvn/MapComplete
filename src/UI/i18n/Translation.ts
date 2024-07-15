@@ -26,9 +26,7 @@ export class Translation extends BaseUIElement {
     ) {
         super()
         this._strictLanguages = strictLanguages
-        if (strictLanguages) {
-            console.log(">>> strict:", translations)
-        }
+
         if (translations === undefined) {
             console.error("Translation without content at " + context)
             throw `Translation without content (${context})`
@@ -138,7 +136,6 @@ export class Translation extends BaseUIElement {
 
     static fromMap(transl: Map<string, string>, strictLanguages: boolean = false) {
         const translations = {}
-        console.log("Strict:", strictLanguages)
         let hasTranslation = false
         transl?.forEach((value, key) => {
             translations[key] = value

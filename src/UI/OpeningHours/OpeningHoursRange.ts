@@ -1,12 +1,13 @@
 /**
  * A single opening hours range, shown on top of the OH-picker table
  */
-import Svg from "../../Svg"
 import { Utils } from "../../Utils"
 import Combine from "../Base/Combine"
 import { OH, OpeningHour } from "./OpeningHours"
 import BaseUIElement from "../BaseUIElement"
 import { FixedUiElement } from "../Base/FixedUiElement"
+import SvelteUIElement from "../Base/SvelteUIElement"
+import Delete_icon from "../../assets/svg/Delete_icon.svelte"
 
 export default class OpeningHoursRange extends BaseUIElement {
     private _oh: OpeningHour
@@ -30,7 +31,7 @@ export default class OpeningHoursRange extends BaseUIElement {
             Utils.TwoDigits(oh.endHour) + ":" + Utils.TwoDigits(oh.endMinutes)
         )
 
-        const deleteRange = Svg.delete_icon_svg()
+        const deleteRange = new SvelteUIElement(Delete_icon)
             .SetClass("rounded-full w-6 h-6 block bg-black pointer-events-auto  ")
             .onClick(() => {
                 this._onDelete()

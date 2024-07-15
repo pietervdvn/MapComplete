@@ -13,13 +13,12 @@
   import LoginToggle from "../../Base/LoginToggle.svelte"
   import FilteredLayer from "../../../Models/FilteredLayer"
   import NewPointLocationInput from "../../BigComponents/NewPointLocationInput.svelte"
-  import ToSvelte from "../../Base/ToSvelte.svelte"
-  import Svg from "../../../Svg"
   import Layers from "../../../assets/svg/Layers.svelte"
   import AddSmall from "../../../assets/svg/AddSmall.svelte"
   import type { OsmTags } from "../../../Models/OsmFeature"
   import Loading from "../../Base/Loading.svelte"
   import NextButton from "../../Base/NextButton.svelte"
+  import Note from "../../../assets/svg/Note.svelte"
 
   export let coordinate: UIEventSource<{ lon: number; lat: number }>
   export let state: SpecialVisualizationState
@@ -124,7 +123,7 @@
         <div class="h-56 w-full">
           <NewPointLocationInput value={coordinate} {state}>
             <div class="h-20 w-full pb-10" slot="image">
-              <ToSvelte construct={Svg.note_svg().SetClass("h-10 w-full")} />
+              <Note class="h-10 w-full"/>
             </div>
           </NewPointLocationInput>
         </div>

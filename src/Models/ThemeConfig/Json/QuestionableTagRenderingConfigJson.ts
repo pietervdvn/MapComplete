@@ -133,7 +133,16 @@ export interface MappingConfigJson {
      * question: What extra tags should be added to the object if this object is chosen?
      * type: simple_tag
      *
-     * If chosen as answer, these tags will be applied onto the object, together with the tags from the `if`
+     * If chosen as answer, these tags will be applied onto the object, together with the tags from the `if`.
+     * Note that if the contributor picks this mapping, saves and then changes their mind and uses a different mapping,
+     * the extraTags will reside.
+     * E.g. when picking `memorial:type=bench`, then `amenity=bench` will also be applied.
+     * If someone later on changes the type to `memorial:statue`, `amenity=bench` will stay onto the object
+     * (which is the desired behaviour, see e.g. for https://www.openstreetmap.org/node/5620038478)
+     * Use 'ifNot' to explicitly remove an tag if this is important
+     *
+     * If someone marks the question as 'unknown', the extra tags will not be erased
+     *
      * Not compatible with multiAnswer.
      *
      * This can be used e.g. to erase other keys which indicate the 'not' value:
@@ -280,6 +289,11 @@ export interface QuestionableTagRenderingConfigJson extends TagRenderingConfigJs
          * group: expert
          */
         postfixDistinguished?: string
+        /**
+         * Extra arguments to configure the input element
+         * group: hidden
+         */
+        helperArgs: any
     }
 
     /**

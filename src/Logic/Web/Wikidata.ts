@@ -119,6 +119,8 @@ export interface WikidataAdvancedSearchoptions extends WikidataSearchoptions {
     notInstanceOf?: number[]
 }
 
+interface SparqlResult {results: { bindings: {item, label, description, num}[] }}
+
 /**
  * Utility functions around wikidata
  */
@@ -202,7 +204,7 @@ export default class Wikidata {
         } ORDER BY ASC(?num) LIMIT ${options?.maxCount ?? 20}`
         const url = wds.sparqlQuery(sparql)
 
-        const result = await Utils.downloadJson(url)
+        const result = await Utils.downloadJson<SparqlResult>(url)
         /*The full uri of the wikidata-item*/
 
         return result.results.bindings.map(({ item, label, description, num }) => ({
@@ -389,7 +391,7 @@ export default class Wikidata {
             '  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE]". }\n' +
             "}"
         const url = wds.sparqlQuery(query)
-        const result = await Utils.downloadJsonCached(url, 24 * 60 * 60 * 1000)
+        const result = await Utils.downloadJsonCached<SparqlResult>(url, 24 * 60 * 60 * 1000)
         return result.results.bindings
     }
 
@@ -420,7 +422,7 @@ export default class Wikidata {
         }
 
         const url = "https://www.wikidata.org/wiki/Special:EntityData/" + id + ".json"
-        const entities = (await Utils.downloadJsonCached(url, 10000)).entities
+        const entities = (await Utils.downloadJsonCached<{entities}>(url, 10000)).entities
         const firstKey = <string>Array.from(Object.keys(entities))[0] // Roundabout way to fetch the entity; it might have been a redirect
         const response = entities[firstKey]
 

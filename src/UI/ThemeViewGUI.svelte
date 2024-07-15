@@ -74,6 +74,7 @@
   import AboutMapComplete from "./BigComponents/AboutMapComplete.svelte"
   import IfNot from "./Base/IfNot.svelte"
   import Hotkeys from "./Base/Hotkeys"
+  import HotkeyTable from "./BigComponents/HotkeyTable.svelte"
 
   export let state: ThemeViewState
   let layout = state.layout
@@ -472,13 +473,6 @@
 
   <If condition={state.previewedImage.map((i) => i !== undefined)}>
     <FloatOver on:close={() => state.previewedImage.setData(undefined)}>
-      <button
-        class="absolute right-4 top-4 h-8 w-8 rounded-full p-0"
-        on:click={() => previewedImage.setData(undefined)}
-        slot="close-button"
-      >
-        <XCircleIcon />
-      </button>
       <ImageOperations image={$previewedImage} />
     </FloatOver>
   </If>
@@ -550,7 +544,6 @@
         state.guistate.backgroundLayerSelectionIsOpened.setData(false)
       }}
     >
-      <div class="h-full p-2">
         <RasterLayerOverview
           {availableLayers}
           map={state.map}
@@ -558,7 +551,6 @@
           userstate={state.userRelatedState}
           visible={state.guistate.backgroundLayerSelectionIsOpened}
         />
-      </div>
     </FloatOver>
   </IfHidden>
 
@@ -584,7 +576,7 @@
         <div slot="content0" class="flex flex-col">
           <AboutMapComplete {state} />
           <div class="m-2 flex flex-col">
-            <ToSvelte construct={Hotkeys.generateDocumentationDynamic} />
+            <HotkeyTable/>
           </div>
         </div>
 

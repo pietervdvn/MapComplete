@@ -3,11 +3,13 @@ import Combine from "./Combine"
 import BaseUIElement from "../BaseUIElement"
 import Title from "./Title"
 import Table from "./Table"
-import { UIEventSource } from "../../Logic/UIEventSource"
+import { Store, UIEventSource } from "../../Logic/UIEventSource"
 import { VariableUiElement } from "./VariableUIElement"
 import { Translation } from "../i18n/Translation"
 import { FixedUiElement } from "./FixedUiElement"
 import Translations from "../i18n/Translations"
+import MarkdownUtils from "../../Utils/MarkdownUtils"
+import Locale from "../i18n/Locale"
 
 export default class Hotkeys {
     public static readonly _docs: UIEventSource<
@@ -28,18 +30,18 @@ export default class Hotkeys {
     public static RegisterHotkey(
         key: (
             | {
-                  ctrl: string
-              }
+            ctrl: string
+        }
             | {
-                  shift: string
-              }
+            shift: string
+        }
             | {
-                  alt: string
-              }
+            alt: string
+        }
             | {
-                  nomod: string
-              }
-        ) & {
+            nomod: string
+        }
+            ) & {
             onUp?: boolean
         },
         documentation: string | Translation,
@@ -61,7 +63,7 @@ export default class Hotkeys {
             return
         }
         if (key["ctrl"] !== undefined) {
-            document.addEventListener("keydown", function (event) {
+            document.addEventListener("keydown", function(event) {
                 if (event.ctrlKey && event.key === keycode) {
                     if (action() !== false) {
                         event.preventDefault()
@@ -69,7 +71,7 @@ export default class Hotkeys {
                 }
             })
         } else if (key["shift"] !== undefined) {
-            document.addEventListener(type, function (event) {
+            document.addEventListener(type, function(event) {
                 if (Hotkeys.textElementSelected(event)) {
                     // A text element is selected, we don't do anything special
                     return
@@ -81,7 +83,7 @@ export default class Hotkeys {
                 }
             })
         } else if (key["alt"] !== undefined) {
-            document.addEventListener(type, function (event) {
+            document.addEventListener(type, function(event) {
                 if (event.altKey && event.key === keycode) {
                     if (action() !== false) {
                         event.preventDefault()
@@ -89,7 +91,7 @@ export default class Hotkeys {
                 }
             })
         } else if (key["nomod"] !== undefined) {
-            document.addEventListener(type, function (event) {
+            document.addEventListener(type, function(event) {
                 if (Hotkeys.textElementSelected(event) && keycode !== "Escape") {
                     // A text element is selected, we don't do anything special
                     return
@@ -104,61 +106,71 @@ export default class Hotkeys {
         }
     }
 
-    static generateDocumentation(): BaseUIElement {
-        return new VariableUiElement(
-            Hotkeys._docs.mapD((docs) => {
-                let byKey: [string, string | Translation, Translation[] | undefined][] = docs
-                    .map(({ key, documentation, alsoTriggeredBy }) => {
-                        const modifiers = Object.keys(key).filter(
-                            (k) => k !== "nomod" && k !== "onUp"
-                        )
-                        let keycode: string =
-                            key["ctrl"] ?? key["shift"] ?? key["alt"] ?? key["nomod"]
-                        if (keycode.length == 1) {
-                            keycode = keycode.toUpperCase()
-                        }
-                        if (keycode === " ") {
-                            keycode = "Spacebar"
-                        }
-                        modifiers.push(keycode)
-                        return <[string, string | Translation, Translation[] | undefined]>[
-                            modifiers.join("+"),
-                            documentation,
-                            alsoTriggeredBy,
-                        ]
-                    })
-                    .sort()
-                byKey = Utils.NoNull(byKey)
-                for (let i = byKey.length - 1; i > 0; i--) {
-                    if (byKey[i - 1][0] === byKey[i][0]) {
-                        byKey.splice(i, 1)
-                    }
+    static prepareDocumentation(docs: {
+        key: { ctrl?: string; shift?: string; alt?: string; nomod?: string; onUp?: boolean }
+        documentation: string | Translation
+        alsoTriggeredBy: Translation[]
+    }[]){
+        let byKey: [string, string | Translation, Translation[] | undefined][] = docs
+            .map(({ key, documentation, alsoTriggeredBy }) => {
+                const modifiers = Object.keys(key).filter(
+                    (k) => k !== "nomod" && k !== "onUp"
+                )
+                let keycode: string =
+                    key["ctrl"] ?? key["shift"] ?? key["alt"] ?? key["nomod"]
+                if (keycode.length == 1) {
+                    keycode = keycode.toUpperCase()
                 }
-                const t = Translations.t.hotkeyDocumentation
-                return new Combine([
-                    new Title(t.title, 1),
-                    t.intro,
-                    new Table(
-                        [t.key, t.action],
-                        byKey.map(([key, doc, alsoTriggeredBy]) => {
-                            let keyEl: BaseUIElement = new FixedUiElement(key).SetClass(
-                                "literal-code w-fit h-fit"
-                            )
-                            if (alsoTriggeredBy?.length > 0) {
-                                keyEl = new Combine([keyEl, ...alsoTriggeredBy]).SetClass(
-                                    "flex gap-x-4 items-center"
-                                )
-                            }
-                            return [keyEl, doc]
-                        })
-                    ),
-                ])
+                if (keycode === " ") {
+                    keycode = "Spacebar"
+                }
+                modifiers.push(keycode)
+                return <[string, string | Translation, Translation[] | undefined]>[
+                    modifiers.join("+"),
+                    documentation,
+                    alsoTriggeredBy
+                ]
             })
-        )
+            .sort()
+        byKey = Utils.NoNull(byKey)
+        for (let i = byKey.length - 1; i > 0; i--) {
+            if (byKey[i - 1][0] === byKey[i][0]) {
+                byKey.splice(i, 1)
+            }
+        }
+        return byKey
     }
 
-    static generateDocumentationDynamic(): BaseUIElement {
-        return new VariableUiElement(Hotkeys._docs.map((_) => Hotkeys.generateDocumentation()))
+    static generateDocumentationFor(docs: {
+        key: { ctrl?: string; shift?: string; alt?: string; nomod?: string; onUp?: boolean }
+        documentation: string | Translation
+        alsoTriggeredBy: Translation[]
+    }[], language: string): string {
+
+        const tr = Translations.t.hotkeyDocumentation
+        function t(t: Translation | string){
+            if(typeof t === "string"){
+                return t
+            }
+            return t.textFor(language)
+        }
+        const contents: string[][] =  this.prepareDocumentation(docs)
+            .map(([key, doc, alsoTriggeredBy]) => {
+            let keyEl: string = [key, ...(alsoTriggeredBy??[])].map(k => "`"+t(k)+"`").join(" ")
+            return [keyEl, t(doc)]
+        })
+        return [
+            "# "+t(tr.title),
+            t(tr.intro),
+            MarkdownUtils.table(
+                [t(tr.key), t(tr.action)],
+                contents
+            )
+            ].join("\n")
+    }
+
+    public static generateDocumentation(language?: string){
+        return Hotkeys.generateDocumentationFor(Hotkeys._docs.data, language?? Locale.language.data)
     }
 
     private static textElementSelected(event: KeyboardEvent): boolean {

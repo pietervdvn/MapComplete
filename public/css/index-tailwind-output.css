@@ -4600,6 +4600,7 @@ button.primary:hover:not(.disabled), .button.primary:hover:not(.disabled) {
 button.disabled {
   border-color: var(--disabled);
   color: var(--disabled);
+  cursor: unset;
 }
 
 button.disabled svg path {
@@ -4888,6 +4889,11 @@ a.link-underline {
   stroke-width: 20px !important;
   overflow: visible !important;
   animation: glowing-drop-shadow 1s ease-in-out infinite alternate;
+}
+
+.selected .light-icon svg:not(.noselect *) path.selectable {
+  stroke: #4a4a4a !important;
+  stroke-width: 10px !important;
 }
 
 .selected svg {

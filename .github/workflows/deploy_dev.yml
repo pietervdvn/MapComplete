@@ -26,7 +26,7 @@ jobs:
         shell: bash
 
       - name: create dependencies
-        run: npm run generate:licenses; npm run generate:images; npm run generate:charging-stations; npm run generate:service-worker; npm run generate:editor-layer-index
+        run: npm run generate:licenses; npm run generate:images; npm run generate:charging-stations; npm run generate:service-worker; npm run download:editor-layer-index
         shell: bash
 
       - name: sync translations

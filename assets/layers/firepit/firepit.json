@@ -1,0 +1,126 @@
+{
+  "id": "firepit",
+  "name": {
+    "en": "Firepitd",
+    "de": "Feuerstelle"
+  },
+  "description": {
+    "en": "An outdoor place to make a fire, typically open to the public.",
+    "de": "Eine Stelle im Freien zum Feuermachen, typischerweise öffentlich zugänglich."
+  },
+  "source": {
+    "osmTags": "leisure=firepit"
+  },
+  "minzoom": 8,
+  "title": {
+    "render": {
+      "en": "Firepit",
+      "de": "Feuerstelle"
+    }
+  },
+  "titleIcons": [
+    "icons.defaults"
+  ],
+  "pointRendering": [
+    {
+      "iconSize": "40,40",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "bottom",
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/assembly_point/fire.svg"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "Firepit",
+        "de": "Feuerstelle"
+      },
+      "description": {
+        "de": "Eine Stelle im Freien zum Feuermachen, typischerweise öffentlich zugänglich.",
+        "en": "An outdoor place to make a fire, typically open to the public."
+      },
+      "tags": [
+        "leisure=firepit"
+      ]
+    }
+  ],
+  "tagRenderings": [
+    "images",
+    {
+      "id": "access",
+      "question": {
+        "en": "What is the permitted access?",
+        "de": "Was ist der erlaubte Zugang?"
+      },
+      "mappings": [
+        {
+          "if": "access=yes",
+          "then": {
+            "de": "Öffentlich",
+            "en": "Public"
+          }
+        },
+        {
+          "if": "access=no",
+          "then": {
+            "de": "Kein Zugang",
+            "en": "No access"
+          }
+        },
+        {
+          "if": "access=private",
+          "then": {
+            "de": "Privat",
+            "en": "Private"
+          }
+        },
+        {
+          "if": "access=permissive",
+          "then": {
+            "de": "Zugang bis auf Widerruf",
+            "en": "Access until revoked"
+          }
+        },
+        {
+          "if": "access=customers",
+          "then": {
+            "de": "Zugang nur für Kunden",
+            "en": "Access only for customers"
+          }
+        },
+        {
+          "if": "access=permit",
+          "then": {
+            "de": "Zugang nur für Berechtigte",
+            "en": "Access only for authorized"
+          }
+        }
+      ]
+    },
+    {
+      "builtin": "seasonal",
+      "override": {
+        "question": {
+          "en": "Is the firepit available all around the year?",
+          "nl": "Is deze kampvuurplaats heel het jaar door beschikbaar?"
+        }
+      }
+    }
+  ],
+  "allowMove": {
+    "enableRelocation": false,
+    "enableImproveAccuracy": true
+  },
+  "deletion": true
+}

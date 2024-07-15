@@ -242,6 +242,10 @@
                     "then": "./assets/themes/facadegardens/geveltuin.svg"
                   },
                   {
+                    "if": "theme=fireplace",
+                    "then": "./assets/layers/assembly_point/fire.svg"
+                  },
+                  {
                     "if": "theme=food",
                     "then": "./assets/layers/food/restaurant.svg"
                   },

@@ -69,6 +69,7 @@ export default class TagRenderingConfig {
         readonly inline: boolean
         readonly default?: string
         readonly postfixDistinguished?: string
+        readonly args?: any
     }
 
     public readonly multiAnswer: boolean
@@ -203,6 +204,7 @@ export default class TagRenderingConfig {
                 inline: json.freeform.inline ?? false,
                 default: json.freeform.default,
                 postfixDistinguished: json.freeform.postfixDistinguished?.trim(),
+                args: json.freeform.helperArgs
             }
             if (json.freeform["extraTags"] !== undefined) {
                 throw `Freeform.extraTags is defined. This should probably be 'freeform.addExtraTag' (at ${context})`
@@ -910,6 +912,24 @@ export default class TagRenderingConfig {
         }
 
         return Utils.NoNull(tags)
+    }
+
+    /**
+     * The keys that should be erased if one has to revert to 'unknown'.
+     * Might give undefined
+     */
+    public settableKeys(): string[] | undefined {
+        const toDelete = new Set<string>()
+        if(this.freeform){
+            toDelete.add(this.freeform.key)
+        }
+        for (const mapping of this.mappings) {
+            for (const usedKey of mapping.if.usedKeys()) {
+                toDelete.add(usedKey)
+            }
+        }
+
+        return Array.from(toDelete)
     }
 }
 

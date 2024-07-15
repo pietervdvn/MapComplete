@@ -1,0 +1,174 @@
+{
+  "id": "bbq",
+  "name": {
+    "en": "BBQ",
+    "de": "Grillstelle"
+  },
+  "description": {
+    "de": "Ein ortsfest installierter Grill, typischerweise öffentlich zugänglich.",
+    "en": "A permanently installed barbecue, typically accessible to the public."
+  },
+  "source": {
+    "osmTags": "amenity=bbq"
+  },
+  "minzoom": 8,
+  "title": {
+    "render": {
+      "en": "BBQ",
+      "de": "Grillstelle"
+    }
+  },
+  "pointRendering": [
+    {
+      "iconSize": "40,40",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "bottom",
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/bbq/bbq.svg"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "BBQ",
+        "de": "Grillstelle"
+      },
+      "description": {
+        "de": "Ein ortsfest installierter Grill, typischerweise öffentlich zugänglich.",
+        "en": "A permanently installed barbecue, typically accessible to the public."
+      },
+      "tags": [
+        "amenity=bbq"
+      ]
+    }
+  ],
+  "tagRenderings": [
+    "images",
+    {
+      "id": "access",
+      "question": {
+        "en": "What is the permitted access?",
+        "de": "Was ist der erlaubte Zugang?"
+      },
+      "mappings": [
+        {
+          "if": "access=yes",
+          "then": {
+            "de": "Öffentlich",
+            "en": "Public"
+          }
+        },
+        {
+          "if": "access=no",
+          "then": {
+            "de": "Kein Zugang",
+            "en": "No access"
+          }
+        },
+        {
+          "if": "access=private",
+          "then": {
+            "de": "Privat",
+            "en": "Private"
+          }
+        },
+        {
+          "if": "access=permissive",
+          "then": {
+            "de": "Zugang bis auf Widerruf",
+            "en": "Access until revoked"
+          }
+        },
+        {
+          "if": "access=customers",
+          "then": {
+            "de": "Zugang nur für Kunden",
+            "en": "Access only for customers"
+          }
+        },
+        {
+          "if": "access=permit",
+          "then": {
+            "de": "Zugang nur für Berechtigte",
+            "en": "Access only for authorized persons"
+          }
+        }
+      ]
+    },
+    {
+      "id": "covered",
+      "question": {
+        "en": "Is the grill covered?",
+        "de": "Ist die Grillstelle überdacht?"
+      },
+      "mappings": [
+        {
+          "if": "covered=no",
+          "then": {
+            "de": "Die Grillstelle ist nicht überdacht",
+            "en": "The grill is not covered"
+          }
+        },
+        {
+          "if": "covered=yes",
+          "then": {
+            "de": "Die Grillstelle ist überdacht",
+            "en": "The grill is covered"
+          }
+        }
+      ]
+    },
+    {
+      "id": "fuel",
+      "question": {
+        "en": "How ist the grill fueled?",
+        "de": "Mit was wird die Grillstelle angefeuert?"
+      },
+      "mappings": [
+        {
+          "if": "fuel=wood",
+          "then": {
+            "de": "Holz",
+            "en": "Wood"
+          }
+        },
+        {
+          "if": "fuel=charcoal",
+          "then": {
+            "de": "Kohle",
+            "en": "Charcoal"
+          }
+        },
+        {
+          "if": "fuel=electric",
+          "then": {
+            "de": "Elektronisch",
+            "en": "Electric"
+          }
+        },
+        {
+          "if": "fuel=gas",
+          "then": {
+            "de": "Gas",
+            "en": "Gas"
+          }
+        }
+      ]
+    }
+  ],
+  "allowMove": {
+    "enableRelocation": false,
+    "enableImproveAccuracy": true
+  },
+  "deletion": true
+}

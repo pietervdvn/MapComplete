@@ -78,7 +78,14 @@ export class WikimediaImageProvider extends ImageProvider {
         return new SvelteUIElement(Wikimedia_commons_white).SetStyle("width:2em;height: 2em")
     }
 
-    public PrepUrl(value: string): ProvidedImage {
+    public PrepUrl(value: NonNullable<string>): ProvidedImage
+    public PrepUrl(value: undefined): undefined
+
+    public PrepUrl(value: string): ProvidedImage
+    public PrepUrl(value: string | undefined): ProvidedImage | undefined{
+        if(value === undefined){
+            return undefined
+        }
         value = WikimediaImageProvider.removeCommonsPrefix(value)
 
         if (value.startsWith("File:")) {

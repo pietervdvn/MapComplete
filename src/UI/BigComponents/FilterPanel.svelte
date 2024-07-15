@@ -9,6 +9,7 @@
   import Translations from "../i18n/Translations"
   import Tr from "../Base/Tr.svelte"
   import Filter from "../../assets/svg/Filter.svelte"
+  import TitledPanel from "../Base/TitledPanel.svelte"
 
   export let state: ThemeViewState
   let layout = state.layout
@@ -46,12 +47,12 @@
   }
 </script>
 
-<div class="flex h-full flex-col">
-  <h2 class="low-interaction m-0 flex items-center p-4 drop-shadow-md">
+<TitledPanel>
+  <div class="flex" slot="title">
     <Filter class="h-6 w-6 pr-2" />
     <Tr t={Translations.t.general.menu.filter} />
-  </h2>
-  <div class="flex h-full flex-col overflow-auto border-b-2 p-4">
+  </div>
+
     {#each layout.layers as layer}
       <Filterview
         zoomlevel={state.mapProperties.zoom}
@@ -76,5 +77,7 @@
         zoomlevel={state.mapProperties.zoom}
       />
     {/each}
-  </div>
-</div>
+
+</TitledPanel>
+
+

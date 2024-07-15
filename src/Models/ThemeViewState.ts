@@ -900,6 +900,8 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 username: this.osmConnection.userDetails.data?.name,
                 userid: this.osmConnection.userDetails.data?.uid,
                 pendingChanges: this.changes.pendingChanges.data,
+                previousChanges: this.changes.allChanges.data,
+                changeRewrites: Utils.MapToObj(this.changes._changesetHandler._remappings)
             }),
         })
     }

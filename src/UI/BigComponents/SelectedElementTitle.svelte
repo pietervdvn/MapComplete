@@ -72,14 +72,14 @@
     {/if}
   </div>
   <slot name="close-button">
-    <button
-      class="mt-2 h-fit shrink-0 rounded-full border-none p-0"
+    <div
+      class="mt-2 h-fit shrink-0 rounded-full border-none p-0 cursor-pointer"
       on:click={() => state.selectedElement.setData(undefined)}
       style="border: 0 !important; padding: 0 !important;"
       use:ariaLabel={Translations.t.general.backToMap}
     >
       <XCircleIcon aria-hidden={true} class="h-8 w-8" />
-    </button>
+    </div>
   </slot>
 </div>
 

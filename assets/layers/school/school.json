@@ -281,6 +281,74 @@
       ]
     },
     {
+      "id": "pedagogy",
+      "question": {
+        "en": "What educational theory is applied on this school?"
+      },
+      "mappings": [
+        {
+          "if": "pedagogy=mainstream",
+          "then": {
+            "en": "This school does not use a specific pedagogy"
+          }
+        },
+        {
+          "if": "pedagogy=montessori",
+          "then": {
+            "en": "This school uses the Montessori method of education"
+          }
+        },
+        {
+          "if": "pedagogy=freinet",
+          "then": {
+            "en": "This school is associated with the Freinet Modern School Movement"
+          }
+        },
+        {
+          "if": "pedagogy=jenaplan",
+          "then": {
+            "en": "This school uses the Jenaplan teaching concept"
+          }
+        },
+        {
+          "if": "pedagogy=waldorf",
+          "then": {
+            "en": "This school uses the Steiner/Waldorf educational philosophy"
+          }
+        },
+        {
+          "if": "pedagogy=dalton",
+          "then": {
+            "en": "This school uses the Dalton plan teaching concept"
+          }
+        },
+        {
+          "if": "pedagogy=outdoor",
+          "then": {
+            "en": "This school uses outdoor learning"
+          }
+        },
+        {
+          "if": "pedagogy=reggio_emilia",
+          "then": {
+            "en": "This school uses the Reggio Emilia approach"
+          }
+        },
+        {
+          "if": "pedagogy=sudbury",
+          "then": {
+            "en": "This school uses the Sudbury system"
+          }
+        }
+      ],
+      "render": {
+        "en": "This school uses {pedagogy}"
+      },
+      "freeform": {
+        "key": "pedagogy"
+      }
+    },
+    {
       "id": "target-audience",
       "condition": "school:for~*",
       "question": {
@@ -461,6 +529,9 @@
         }
       }
     }
+  ],
+  "filter": [
+    "pedagogy"
   ],
   "allowMove": {
     "enableImproveAccuracy": true,

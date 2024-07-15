@@ -2,12 +2,13 @@ import { Store } from "../../Logic/UIEventSource"
 import Translations from "../i18n/Translations"
 import Toggle, { ClickableToggle } from "../Input/Toggle"
 import Combine from "../Base/Combine"
-import Svg from "../../Svg"
 import { Tag } from "../../Logic/Tags/Tag"
 import ChangeTagAction from "../../Logic/Osm/Actions/ChangeTagAction"
 import { Changes } from "../../Logic/Osm/Changes"
 import { OsmConnection } from "../../Logic/Osm/OsmConnection"
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
+import SvelteUIElement from "../Base/SvelteUIElement"
+import Delete_icon from "../../assets/svg/Delete_icon.svelte"
 
 export default class DeleteImage extends Toggle {
     constructor(
@@ -48,7 +49,7 @@ export default class DeleteImage extends Toggle {
             .Clone()
             .SetClass("bg-white pl-4 pr-4")
             .SetStyle("border-bottom-left-radius:30rem; border-bottom-right-radius: 30rem;")
-        const openDelete = Svg.delete_icon_svg().SetStyle("width: 2em; height: 2em; display:block;")
+        const openDelete = new SvelteUIElement(Delete_icon).SetStyle("width: 2em; height: 2em; display:block;")
         const deleteDialog = new ClickableToggle(
             new Combine([deleteButton, cancelButton]).SetClass("flex flex-col background-black"),
             openDelete

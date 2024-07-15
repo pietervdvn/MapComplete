@@ -36,6 +36,7 @@
   import { Translation } from "../../i18n/Translation"
   import ToSvelte from "../../Base/ToSvelte.svelte"
   import BaseUIElement from "../../BaseUIElement"
+  import TitledPanel from "../../Base/TitledPanel.svelte"
 
   export let coordinate: { lon: number; lat: number }
   export let state: SpecialVisualizationState
@@ -116,7 +117,7 @@
       theme: state.layout?.id ?? "unkown",
       changeType: "create",
       snapOnto: snapToWay,
-      reusePointWithinMeters: 1,
+      reusePointWithinMeters: 1
     })
     await state.changes.applyAction(newElementAction)
     state.newFeatures.features.ping()
@@ -186,40 +187,50 @@
       />
     {:else if !$layerIsDisplayed}
       <!-- Check that the layer is enabled, so that we don't add a duplicate -->
-      <div class="alert flex items-center justify-center">
-        <EyeOffIcon class="w-8" />
-        <Tr
-          t={Translations.t.general.add.layerNotEnabled.Subs({ layer: selectedPreset.layer.name })}
-        />
-      </div>
+      <TitledPanel>
+        <Tr slot="title" t={Translations.t.general.add.intro} />
 
-      <div class="flex flex-wrap-reverse md:flex-nowrap">
-        <button
-          class="flex w-full gap-x-1"
-          on:click={() => {
+
+        <div class="alert flex items-center justify-center">
+          <EyeOffIcon class="w-8" />
+          <Tr
+            t={Translations.t.general.add.layerNotEnabled.Subs({ layer: selectedPreset.layer.name })}
+          />
+        </div>
+
+        <div class="flex flex-wrap-reverse md:flex-nowrap">
+          <button
+            class="flex w-full gap-x-1"
+            on:click={() => {
             abort()
             state.guistate.openFilterView(selectedPreset.layer)
           }}
-        >
-          <Layers class="w-12" />
-          <Tr t={Translations.t.general.add.openLayerControl} />
-        </button>
+          >
+            <Layers class="w-12" />
+            <Tr t={Translations.t.general.add.openLayerControl} />
+          </button>
 
-        <button
-          class="primary flex w-full gap-x-1"
-          on:click={() => {
+          <button
+            class="primary flex w-full gap-x-1"
+            on:click={() => {
             layerIsDisplayed.setData(true)
             abort()
           }}
-        >
-          <EyeIcon class="w-12" />
-          <Tr
-            t={Translations.t.general.add.enableLayer.Subs({ name: selectedPreset.layer.name })}
-          />
-        </button>
-      </div>
+          >
+            <EyeIcon class="w-12" />
+            <Tr
+              t={Translations.t.general.add.enableLayer.Subs({ name: selectedPreset.layer.name })}
+            />
+          </button>
+        </div>
+      </TitledPanel>
+
     {:else if $layerHasFilters}
-      <!-- Some filters are enabled. The feature to add might already be mapped, but hidden -->
+      <TitledPanel>
+        <Tr slot="title" t={Translations.t.general.add.intro} />
+
+
+        <!-- Some filters are enabled. The feature to add might already be mapped, but hidden -->
       <div class="alert flex items-center justify-center">
         <EyeOffIcon class="w-8" />
         <Tr t={Translations.t.general.add.disableFiltersExplanation} />
@@ -246,13 +257,14 @@
           <Tr t={Translations.t.general.add.openLayerControl} />
         </button>
       </div>
+      </TitledPanel>
     {:else if !confirmedCategory}
       <!-- Second, confirm the category -->
-      <h2 class="mr-12">
-        <Tr
+      <TitledPanel>
+
+        <Tr slot="title"
           t={Translations.t.general.add.confirmTitle.Subs({ title: selectedPreset.preset.title })}
         />
-      </h2>
 
       {#if selectedPreset.preset.description}
         <Tr t={selectedPreset.preset.description} />
@@ -293,6 +305,8 @@
           </div>
         </NextButton>
       </div>
+      </TitledPanel>
+
     {:else if _globalFilter?.length > 0 && _globalFilter?.length > checkedOfGlobalFilters}
       <Tr t={_globalFilter[checkedOfGlobalFilters].onNewPoint?.safetyCheck} cls="mx-12" />
       <SubtleButton
@@ -366,7 +380,9 @@
         </div>
       </div>
     {:else}
-      <Loading><Tr t={Translations.t.general.add.creating} /></Loading>
+      <Loading>
+        <Tr t={Translations.t.general.add.creating} />
+      </Loading>
     {/if}
   </div>
 </LoginToggle>
