@@ -288,7 +288,8 @@
         "cs": "Pojmenováno po {name:etymology}"
       },
       "freeform": {
-        "key": "name:etymology"
+        "key": "name:etymology",
+        "type": "text"
       },
       "mappings": [
         {
