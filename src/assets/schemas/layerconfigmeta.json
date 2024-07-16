@@ -1662,7 +1662,6 @@
     ],
     "required": true,
     "hints": {
-      "typehint": "icon",
       "types": "<span class=\"text-lg font-bold\">Use a different icon depending on the value of some attributes</span> ; icon",
       "question": "What icon should be used?",
       "suggestions": [

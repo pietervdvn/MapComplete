@@ -4,7 +4,6 @@ import { TagConfigJson } from "./TagConfigJson"
 export interface IconConfigJson {
     /**
      * question: What icon should be used?
-     * type: icon
      * types: <span class="text-lg font-bold">Use a different icon depending on the value of some attributes</span> ; icon
      * suggestions: return Constants.defaultPinIcons.map(i => ({if: "value="+i, then: i, icon: i}))
      */
