@@ -38,7 +38,6 @@ camper sites
   - [lod](#lod)
   - [operator](#operator)
   - [power_supply](#power_supply)
-  - [all-tags](#all-tags)
 
 ## Themes using this layer
 
@@ -250,14 +249,6 @@ The question is `Does this place have a power supply?`
  -  *This place has a power supply* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:power_supply' target='_blank'>power_supply</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:power_supply%3Dyes' target='_blank'>yes</a>
  -  *This place does not have power supply* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:power_supply' target='_blank'>power_supply</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:power_supply%3Dno' target='_blank'>no</a>
 
-
-
-
-
-### all-tags
-
-_This tagrendering has no question and is thus read-only_
-*{all_tags()}*
 
 
 

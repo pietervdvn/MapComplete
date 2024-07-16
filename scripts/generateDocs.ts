@@ -470,7 +470,7 @@ export class GenerateDocs extends Script {
             MarkdownUtils.list(theme.language.filter((ln) => ln !== "_context")),
             "# Layers defined in this theme configuration file",
             "These layers can not be reused in different themes.",
-            ...layersToInline.map(l => l.GenerateDocumentation([]))
+            ...layersToInline.map(l => l.GenerateDocumentation(null))
         ].join("\n")
         this.WriteMarkdownFile(
             "./Docs/Themes/" + theme.id + ".md",

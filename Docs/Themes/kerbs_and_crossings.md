@@ -52,7 +52,6 @@ Available languages:
     + [crossing-continue-through-red](#crossing-continue-through-red)
     + [leftover-questions](#leftover-questions)
     + [lod](#lod)
-    + [all-tags](#all-tags)
   - [Filters](#filters)
 
 # Layers defined in this theme configuration file
@@ -290,14 +289,6 @@ _This tagrendering has no question and is thus read-only_
 
 This tagrendering has labels 
 `added_by_default`
-
-### all-tags
-
-_This tagrendering has no question and is thus read-only_
-*{all_tags()}*
-
-
-
 
 ## Filters
 

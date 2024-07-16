@@ -58,7 +58,6 @@ Available languages:
     + [no_save_needed](#no_save_needed)
     + [leftover-questions](#leftover-questions)
     + [lod](#lod)
-    + [all-tags](#all-tags)
   - [Filters](#filters)
 3. [bike_parking_with_velopark_ref](#bike_parking_with_velopark_ref)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
@@ -90,7 +89,6 @@ Available languages:
     + [delete-button](#delete-button)
     + [lod](#lod)
     + [no_save_needed](#no_save_needed)
-    + [all-tags](#all-tags)
   - [Filters](#filters)
 
 # Layers defined in this theme configuration file
@@ -301,14 +299,6 @@ _This tagrendering has no question and is thus read-only_
 
 This tagrendering has labels 
 `added_by_default`
-
-### all-tags
-
-_This tagrendering has no question and is thus read-only_
-*{all_tags()}*
-
-
-
 
 ## Filters
 
@@ -642,14 +632,6 @@ _This tagrendering has no question and is thus read-only_
 *Changes are automatically saved. You can simply close this popup with the cross at the upper-right*
 
 This tagrendering is only visible in the popup if the following condition is met: id~^(node\/*)$ | id~^(way\/*)$ | id~^(relation\/*)$
-
-
-### all-tags
-
-_This tagrendering has no question and is thus read-only_
-*{all_tags()}*
-
-
 
 
 ## Filters

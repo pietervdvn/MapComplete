@@ -65,7 +65,6 @@ Available languages:
     + [delete-button](#delete-button)
     + [lod](#lod)
     + [has_video_booth](#has_video_booth)
-    + [all-tags](#all-tags)
   - [Filters](#filters)
 3. [condom_vending_machine](#condom_vending_machine)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
@@ -93,7 +92,6 @@ Available languages:
     + [move-button](#move-button)
     + [delete-button](#delete-button)
     + [lod](#lod)
-    + [all-tags](#all-tags)
   - [Filters](#filters)
 4. [erotic_cinema](#erotic_cinema)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
@@ -109,7 +107,6 @@ Available languages:
     + [has_video_booth](#has_video_booth)
     + [leftover-questions](#leftover-questions)
     + [lod](#lod)
-    + [all-tags](#all-tags)
   - [Filters](#filters)
 
 # Layers defined in this theme configuration file
@@ -679,14 +676,6 @@ The question is `Does {title()} have a private video booth?`
 
 
 
-### all-tags
-
-_This tagrendering has no question and is thus read-only_
-*{all_tags()}*
-
-
-
-
 ## Filters
 
 
@@ -1048,14 +1037,6 @@ _This tagrendering has no question and is thus read-only_
 This tagrendering has labels 
 `added_by_default`
 
-### all-tags
-
-_This tagrendering has no question and is thus read-only_
-*{all_tags()}*
-
-
-
-
 ## Filters
 
 
@@ -1219,14 +1200,6 @@ _This tagrendering has no question and is thus read-only_
 
 This tagrendering has labels 
 `added_by_default`
-
-### all-tags
-
-_This tagrendering has no question and is thus read-only_
-*{all_tags()}*
-
-
-
 
 ## Filters
 

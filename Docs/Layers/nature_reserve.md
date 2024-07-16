@@ -36,7 +36,6 @@ A nature reserve is an area where nature can take its course
   - [wikipedia](#wikipedia)
   - [leftover-questions](#leftover-questions)
   - [lod](#lod)
-  - [all-tags](#all-tags)
 4. [Filters](#filters)
 
 ## Themes using this layer
@@ -233,14 +232,6 @@ _This tagrendering has no question and is thus read-only_
 
 This tagrendering has labels 
 `added_by_default`
-
-### all-tags
-
-_This tagrendering has no question and is thus read-only_
-*{all_tags()}*
-
-
-
 
 ## Filters
 

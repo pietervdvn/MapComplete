@@ -35,7 +35,6 @@ A layer showing (public) showers
   - [move-button](#move-button)
   - [delete-button](#delete-button)
   - [lod](#lod)
-  - [all-tags](#all-tags)
 4. [Filters](#filters)
 
 ## Themes using this layer
@@ -214,14 +213,6 @@ _This tagrendering has no question and is thus read-only_
 
 This tagrendering has labels 
 `added_by_default`
-
-### all-tags
-
-_This tagrendering has no question and is thus read-only_
-*{all_tags()}*
-
-
-
 
 ## Filters
 

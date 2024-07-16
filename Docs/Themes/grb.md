@@ -59,13 +59,11 @@ Available languages:
     + [apply-building-type](#apply-building-type)
     + [leftover-questions](#leftover-questions)
     + [lod](#lod)
-    + [all-tags](#all-tags)
 4. [service_ways](#service_ways)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
     + [leftover-questions](#leftover-questions)
     + [lod](#lod)
-    + [all-tags](#all-tags)
 5. [generic_osm_object](#generic_osm_object)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
@@ -381,14 +379,6 @@ _This tagrendering has no question and is thus read-only_
 
 This tagrendering has labels 
 `added_by_default`
-
-### all-tags
-
-_This tagrendering has no question and is thus read-only_
-*{all_tags()}*
-
-
-
 # service_ways
 
 
@@ -434,14 +424,6 @@ _This tagrendering has no question and is thus read-only_
 
 This tagrendering has labels 
 `added_by_default`
-
-### all-tags
-
-_This tagrendering has no question and is thus read-only_
-*{all_tags()}*
-
-
-
 # generic_osm_object
 
 

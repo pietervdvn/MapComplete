@@ -74,7 +74,6 @@ Available languages:
     + [move-button](#move-button)
     + [delete-button](#delete-button)
     + [lod](#lod)
-    + [all-tags](#all-tags)
 3. [charging_station_ebikes](#charging_station_ebikes)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
@@ -191,7 +190,6 @@ Available languages:
     + [move-button](#move-button)
     + [delete-button](#delete-button)
     + [lod](#lod)
-    + [all-tags](#all-tags)
 4. [vending_machine_bicycle](#vending_machine_bicycle)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
@@ -217,7 +215,6 @@ Available languages:
     + [move-button](#move-button)
     + [delete-button](#delete-button)
     + [lod](#lod)
-    + [all-tags](#all-tags)
   - [Filters](#filters)
 
 # Layers defined in this theme configuration file
@@ -494,14 +491,6 @@ _This tagrendering has no question and is thus read-only_
 
 This tagrendering has labels 
 `added_by_default`
-
-### all-tags
-
-_This tagrendering has no question and is thus read-only_
-*{all_tags()}*
-
-
-
 # charging_station_ebikes
 
 
@@ -1987,14 +1976,6 @@ _This tagrendering has no question and is thus read-only_
 
 This tagrendering has labels 
 `added_by_default`
-
-### all-tags
-
-_This tagrendering has no question and is thus read-only_
-*{all_tags()}*
-
-
-
 # vending_machine_bicycle
 
 
@@ -2332,14 +2313,6 @@ _This tagrendering has no question and is thus read-only_
 
 This tagrendering has labels 
 `added_by_default`
-
-### all-tags
-
-_This tagrendering has no question and is thus read-only_
-*{all_tags()}*
-
-
-
 
 ## Filters
 
