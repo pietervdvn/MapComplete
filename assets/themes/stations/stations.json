@@ -52,7 +52,7 @@
     },
     {
       "id": "train_station",
-      "minzoom": 12,
+      "minzoom": 8,
       "minzoomVisible": 17,
       "source": {
         "osmTags": {
