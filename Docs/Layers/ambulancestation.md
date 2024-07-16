@@ -3,21 +3,24 @@
 # ambulancestation
 
 
-[object Object]
+
 
 An ambulance station is an area for storage of ambulance vehicles, medical equipment, personal protective equipment, and other medical supplies.
 
 
 
 
+
+
  - This layer is shown at zoomlevel **12** and higher
+
+
+
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
 2. [Basic tags for this layer](#basic-tags-for-this-layer)
 3. [Supported attributes](#supported-attributes)
-  - [just_created](#just_created)
-  - [nothing_known](#nothing_known)
   - [ambulance-name](#ambulance-name)
   - [ambulance-street](#ambulance-street)
   - [ambulance-place](#ambulance-place)
@@ -25,19 +28,17 @@ An ambulance station is an area for storage of ambulance vehicles, medical equip
   - [ambulance-operator-type](#ambulance-operator-type)
   - [images](#images)
   - [leftover-questions](#leftover-questions)
-  - [minimap](#minimap)
-  - [nearby_images](#nearby_images)
   - [lod](#lod)
-  - [favourite_status](#favourite_status)
-  - [share](#share)
-  - [qr_code](#qr_code)
-  - [last_edit](#last_edit)
   - [all-tags](#all-tags)
 
 ## Themes using this layer
 
+
+
  - [hailhydrant](https://mapcomplete.org/hailhydrant)
  - [personal](https://mapcomplete.org/personal)
+
+
 
 ## Basic tags for this layer
 
@@ -51,40 +52,19 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 
 | attribute | type | values which are supported by this layer |
 -----|-----|----- |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/id#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/name#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [string](../SpecialInputElements.md#string) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/addr:street#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [string](../SpecialInputElements.md#string) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/addr:place#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [string](../SpecialInputElements.md#string) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/operator#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [string](../SpecialInputElements.md#string) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/operator:type#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [string](../SpecialInputElements.md#string) | [object Object] [object Object] [object Object] [object Object] |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/name#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/name/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [name](https://wiki.openstreetmap.org/wiki/Key:name) | [string](../SpecialInputElements.md#string) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/addr:street#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/addr%3Astreet/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [addr:street](https://wiki.openstreetmap.org/wiki/Key:addr:street) | [string](../SpecialInputElements.md#string) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/addr:place#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/addr%3Aplace/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [addr:place](https://wiki.openstreetmap.org/wiki/Key:addr:place) | [string](../SpecialInputElements.md#string) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/operator#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/operator/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [operator](https://wiki.openstreetmap.org/wiki/Key:operator) | [string](../SpecialInputElements.md#string) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/operator:type#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/operator%3Atype/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [operator:type](https://wiki.openstreetmap.org/wiki/Key:operator:type) | [string](../SpecialInputElements.md#string) | [government](https://wiki.openstreetmap.org/wiki/Tag:operator:type%3Dgovernment) [community](https://wiki.openstreetmap.org/wiki/Tag:operator:type%3Dcommunity) [ngo](https://wiki.openstreetmap.org/wiki/Tag:operator:type%3Dngo) [private](https://wiki.openstreetmap.org/wiki/Tag:operator:type%3Dprivate) |
 
 
 
-
-### just_created
-This element shows a 'thank you' that the contributor has recently created this element
-_This tagrendering has no question and is thus read-only_
-
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/party.svg' style='width: 3rem; height: 3rem'> *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
-This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
-This tagrendering has labels 
-`added_by_default_top`
-
-### nothing_known
-
-_This tagrendering has no question and is thus read-only_
-
-
-This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time>=300 & _backend~.+
-This tagrendering has labels 
-`added_by_default_top`
 
 ### ambulance-name
 
 The question is `What is the name of this ambulance station?`
-This rendering asks information about the property 
-[name](https://wiki.openstreetmap.org/wiki/Key:name)
-This is rendered with `This station is called {name}.`
+*This station is called {name}.* is shown if `name` is set
 
 
 
@@ -92,9 +72,7 @@ This is rendered with `This station is called {name}.`
 ### ambulance-street
 
 The question is `What is the street name where the station located?`
-This rendering asks information about the property 
-[addr:street](https://wiki.openstreetmap.org/wiki/Key:addr:street)
-This is rendered with `This station is along a highway called {addr:street}.`
+*This station is along a highway called {addr:street}.* is shown if `addr:street` is set
 
 
 
@@ -102,9 +80,7 @@ This is rendered with `This station is along a highway called {addr:street}.`
 ### ambulance-place
 
 The question is `Where is the station located? (e.g. name of neighborhood, villlage, or town)`
-This rendering asks information about the property 
-[addr:place](https://wiki.openstreetmap.org/wiki/Key:addr:place)
-This is rendered with `This station is found within {addr:place}.`
+*This station is found within {addr:place}.* is shown if `addr:place` is set
 
 
 
@@ -112,9 +88,7 @@ This is rendered with `This station is found within {addr:place}.`
 ### ambulance-agency
 
 The question is `What agency operates this station?`
-This rendering asks information about the property 
-[operator](https://wiki.openstreetmap.org/wiki/Key:operator)
-This is rendered with `This station is operated by {operator}.`
+*This station is operated by {operator}.* is shown if `operator` is set
 
 
 
@@ -122,20 +96,22 @@ This is rendered with `This station is operated by {operator}.`
 ### ambulance-operator-type
 
 The question is `How is the station operator classified?`
-This rendering asks information about the property 
-[operator:type](https://wiki.openstreetmap.org/wiki/Key:operator:type)
-This is rendered with `The operator is a(n) {operator:type} entity.`
- -  *The station is operated by the government.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:operator:type' target='_blank'>operator:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator:type%3Dgovernment' target='_blank'>government</a>
- -  *The station is operated by a community-based, or informal organization.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:operator:type' target='_blank'>operator:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator:type%3Dcommunity' target='_blank'>community</a>
- -  *The station is operated by a formal group of volunteers.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:operator:type' target='_blank'>operator:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator:type%3Dngo' target='_blank'>ngo</a>
- -  *The station is privately operated.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:operator:type' target='_blank'>operator:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator:type%3Dprivate' target='_blank'>private</a>
+*The operator is a(n) {operator:type} entity.* is shown if `operator:type` is set
+
+
+ -  *The station is operated by the government.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:operator:type' target='_blank'>operator:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator:type%3Dgovernment' target='_blank'>government</a>
+ -  *The station is operated by a community-based, or informal organization.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:operator:type' target='_blank'>operator:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator:type%3Dcommunity' target='_blank'>community</a>
+ -  *The station is operated by a formal group of volunteers.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:operator:type' target='_blank'>operator:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator:type%3Dngo' target='_blank'>ngo</a>
+ -  *The station is privately operated.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:operator:type' target='_blank'>operator:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator:type%3Dprivate' target='_blank'>private</a>
+
+
 
 
 
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
-
+*{image_carousel()}{image_upload()}*
 
 
 
@@ -143,77 +119,24 @@ _This tagrendering has no question and is thus read-only_
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
+*{questions( ,)}*
 
 
 
-
-
-### minimap
-Shows a small map with the feature. Added by default to every popup
-_This tagrendering has no question and is thus read-only_
-
-
-
-
-
-### nearby_images
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default_conditional`
 
 ### lod
 
 _This tagrendering has no question and is thus read-only_
+*{linked_data_from_website()}*
 
 
-
-This tagrendering has labels 
-`added_by_default`
-
-### favourite_status
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### share
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### qr_code
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### last_edit
-Gives some metainfo about the last edit and who did edit it - rendering only
-_This tagrendering has no question and is thus read-only_
-
-
-This tagrendering is only visible in the popup if the following condition is met: _last_edit:changeset~.+ & _last_edit:contributor~.+
 This tagrendering has labels 
 `added_by_default`
 
 ### all-tags
 
 _This tagrendering has no question and is thus read-only_
-
+*{all_tags()}*
 
 
 

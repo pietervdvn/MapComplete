@@ -3,21 +3,24 @@
 # parking
 
 
-[object Object]
+
 
 A layer showing car parkings
 
 
 
 
+
+
  - This layer is shown at zoomlevel **12** and higher
+
+
+
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
 2. [Basic tags for this layer](#basic-tags-for-this-layer)
 3. [Supported attributes](#supported-attributes)
-  - [just_created](#just_created)
-  - [nothing_known](#nothing_known)
   - [images](#images)
   - [repeated](#repeated)
   - [single_level](#single_level)
@@ -25,23 +28,21 @@ A layer showing car parkings
   - [capacity-disabled](#capacity-disabled)
   - [capacity](#capacity)
   - [leftover-questions](#leftover-questions)
-  - [minimap](#minimap)
-  - [nearby_images](#nearby_images)
   - [move-button](#move-button)
   - [delete-button](#delete-button)
   - [lod](#lod)
-  - [favourite_status](#favourite_status)
-  - [share](#share)
-  - [qr_code](#qr_code)
-  - [last_edit](#last_edit)
   - [all-tags](#all-tags)
 
 ## Themes using this layer
+
+
 
  - [onwheels](https://mapcomplete.org/onwheels)
  - [parkings](https://mapcomplete.org/parkings)
  - [personal](https://mapcomplete.org/personal)
  - [transit](https://mapcomplete.org/transit)
+
+
 
 ## Basic tags for this layer
 
@@ -55,37 +56,18 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 
 | attribute | type | values which are supported by this layer |
 -----|-----|----- |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/id#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/level#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [float](../SpecialInputElements.md#float) | [object Object] [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/parking#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice | [object Object] [object Object] [object Object] [object Object] [object Object] [object Object] [object Object] [object Object] [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/capacity:disabled#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pnat](../SpecialInputElements.md#pnat) | [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/capacity#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pnat](../SpecialInputElements.md#pnat) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/level#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/level/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [level](https://wiki.openstreetmap.org/wiki/Key:level) | [float](../SpecialInputElements.md#float) | [0](https://wiki.openstreetmap.org/wiki/Tag:level%3D0) [1](https://wiki.openstreetmap.org/wiki/Tag:level%3D1) [-1](https://wiki.openstreetmap.org/wiki/Tag:level%3D-1) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/parking#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/parking/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [parking](https://wiki.openstreetmap.org/wiki/Key:parking) | Multiple choice | [surface](https://wiki.openstreetmap.org/wiki/Tag:parking%3Dsurface) [street_side](https://wiki.openstreetmap.org/wiki/Tag:parking%3Dstreet_side) [underground](https://wiki.openstreetmap.org/wiki/Tag:parking%3Dunderground) [multi-storey](https://wiki.openstreetmap.org/wiki/Tag:parking%3Dmulti-storey) [rooftop](https://wiki.openstreetmap.org/wiki/Tag:parking%3Drooftop) [lane](https://wiki.openstreetmap.org/wiki/Tag:parking%3Dlane) [carports](https://wiki.openstreetmap.org/wiki/Tag:parking%3Dcarports) [garage_boxes](https://wiki.openstreetmap.org/wiki/Tag:parking%3Dgarage_boxes) [layby](https://wiki.openstreetmap.org/wiki/Tag:parking%3Dlayby) [sheds](https://wiki.openstreetmap.org/wiki/Tag:parking%3Dsheds) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/capacity:disabled#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/capacity%3Adisabled/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [capacity:disabled](https://wiki.openstreetmap.org/wiki/Key:capacity:disabled) | [pnat](../SpecialInputElements.md#pnat) | [0](https://wiki.openstreetmap.org/wiki/Tag:capacity:disabled%3D0) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/capacity#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/capacity/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [capacity](https://wiki.openstreetmap.org/wiki/Key:capacity) | [pnat](../SpecialInputElements.md#pnat) |  |
 
 
 
-
-### just_created
-This element shows a 'thank you' that the contributor has recently created this element
-_This tagrendering has no question and is thus read-only_
-
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/party.svg' style='width: 3rem; height: 3rem'> *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
-This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
-This tagrendering has labels 
-`added_by_default_top`
-
-### nothing_known
-
-_This tagrendering has no question and is thus read-only_
-
-
-This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time>=300 & _backend~.+
-This tagrendering has labels 
-`added_by_default_top`
 
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
-
+*{image_carousel()}{image_upload()}*
 
 
 
@@ -93,7 +75,7 @@ _This tagrendering has no question and is thus read-only_
 ### repeated
 
 _This tagrendering has no question and is thus read-only_
-
+*Multiple, identical objects can be found on floors {repeat_on}.*
 
 This tagrendering is only visible in the popup if the following condition is met: repeat_on~.+
 This tagrendering has labels 
@@ -102,16 +84,16 @@ This tagrendering has labels
 ### single_level
 
 The question is `On what level is this feature located?`
-This rendering asks information about the property 
-[level](https://wiki.openstreetmap.org/wiki/Key:level)
-This is rendered with `Located on the {level}th floor`
- -  *Located underground* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground' target='_blank'>underground</a>
- - _This option cannot be chosen as answer_
- -  *Located on the ground floor* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D0' target='_blank'>0</a>
- -  *Located on the ground floor* corresponds with level=
- - _This option cannot be chosen as answer_
- -  *Located on the first floor* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D1' target='_blank'>1</a>
- -  *Located on the first basement level* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D-1' target='_blank'>-1</a>
+*Located on the {level}th floor* is shown if `level` is set
+
+
+ -  *Located underground* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground' target='_blank'>underground</a>. _This option cannot be chosen as answer_
+ -  *Located on the ground floor* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D0' target='_blank'>0</a>
+ -  *Located on the ground floor* is shown if with level=. _This option cannot be chosen as answer_
+ -  *Located on the first floor* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D1' target='_blank'>1</a>
+ -  *Located on the first basement level* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D-1' target='_blank'>-1</a>
+
+
 
 This tagrendering has labels 
 `level`
@@ -120,39 +102,41 @@ This tagrendering has labels
 
 The question is `What kind of parking is this?`
 
- -  *This is a surface parking lot* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:parking' target='_blank'>parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking%3Dsurface' target='_blank'>surface</a>
- -  *This is a parking bay next to a street* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:parking' target='_blank'>parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking%3Dstreet_side' target='_blank'>street_side</a>
- -  *This is an underground parking garage* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:parking' target='_blank'>parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking%3Dunderground' target='_blank'>underground</a>
- -  *This is a multi-storey parking garage* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:parking' target='_blank'>parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking%3Dmulti-storey' target='_blank'>multi-storey</a>
- -  *This is a rooftop parking deck* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:parking' target='_blank'>parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking%3Drooftop' target='_blank'>rooftop</a>
- -  *This is a lane for parking on the road* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:parking' target='_blank'>parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking%3Dlane' target='_blank'>lane</a>
- -  *This is parking covered by carports* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:parking' target='_blank'>parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking%3Dcarports' target='_blank'>carports</a>
- -  *This a parking consisting of garage boxes* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:parking' target='_blank'>parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking%3Dgarage_boxes' target='_blank'>garage_boxes</a>
- -  *This is a parking on a layby* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:parking' target='_blank'>parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking%3Dlayby' target='_blank'>layby</a>
- -  *This is a parking consisting of sheds* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:parking' target='_blank'>parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking%3Dsheds' target='_blank'>sheds</a>
+
+
+ -  *This is a surface parking lot* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:parking' target='_blank'>parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking%3Dsurface' target='_blank'>surface</a>
+ -  *This is a parking bay next to a street* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:parking' target='_blank'>parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking%3Dstreet_side' target='_blank'>street_side</a>
+ -  *This is an underground parking garage* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:parking' target='_blank'>parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking%3Dunderground' target='_blank'>underground</a>
+ -  *This is a multi-storey parking garage* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:parking' target='_blank'>parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking%3Dmulti-storey' target='_blank'>multi-storey</a>
+ -  *This is a rooftop parking deck* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:parking' target='_blank'>parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking%3Drooftop' target='_blank'>rooftop</a>
+ -  *This is a lane for parking on the road* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:parking' target='_blank'>parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking%3Dlane' target='_blank'>lane</a>
+ -  *This is parking covered by carports* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:parking' target='_blank'>parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking%3Dcarports' target='_blank'>carports</a>
+ -  *This a parking consisting of garage boxes* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:parking' target='_blank'>parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking%3Dgarage_boxes' target='_blank'>garage_boxes</a>
+ -  *This is a parking on a layby* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:parking' target='_blank'>parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking%3Dlayby' target='_blank'>layby</a>
+ -  *This is a parking consisting of sheds* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:parking' target='_blank'>parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking%3Dsheds' target='_blank'>sheds</a>
+
+
 
 
 
 ### capacity-disabled
 
 The question is `How many disabled parking spots are there at this parking?`
-This rendering asks information about the property 
-[capacity:disabled](https://wiki.openstreetmap.org/wiki/Key:capacity:disabled)
-This is rendered with `There are {capacity:disabled} disabled parking spots`
- -  *There are disabled parking spots, but it is not known how many* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:capacity:disabled' target='_blank'>capacity:disabled</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:capacity:disabled%3Dyes' target='_blank'>yes</a>
- - _This option cannot be chosen as answer_
- -  *There are no disabled parking spots* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:capacity:disabled' target='_blank'>capacity:disabled</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:capacity:disabled%3Dno' target='_blank'>no</a>
- - _This option cannot be chosen as answer_
- -  *There are no disabled parking spots* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:capacity:disabled' target='_blank'>capacity:disabled</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:capacity:disabled%3D0' target='_blank'>0</a>
+*There are {capacity:disabled} disabled parking spots* is shown if `capacity:disabled` is set
+
+
+ -  *There are disabled parking spots, but it is not known how many* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:capacity:disabled' target='_blank'>capacity:disabled</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:capacity:disabled%3Dyes' target='_blank'>yes</a>. _This option cannot be chosen as answer_
+ -  *There are no disabled parking spots* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:capacity:disabled' target='_blank'>capacity:disabled</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:capacity:disabled%3Dno' target='_blank'>no</a>. _This option cannot be chosen as answer_
+ -  *There are no disabled parking spots* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:capacity:disabled' target='_blank'>capacity:disabled</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:capacity:disabled%3D0' target='_blank'>0</a>
+
+
 
 
 
 ### capacity
 
 The question is `How many parking spots are there at this parking?`
-This rendering asks information about the property 
-[capacity](https://wiki.openstreetmap.org/wiki/Key:capacity)
-This is rendered with `There are {capacity} parking spots`
+*There are {capacity} parking spots* is shown if `capacity` is set
 
 
 
@@ -160,32 +144,15 @@ This is rendered with `There are {capacity} parking spots`
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
+*{questions( ,)}*
 
 
 
-
-
-### minimap
-Shows a small map with the feature. Added by default to every popup
-_This tagrendering has no question and is thus read-only_
-
-
-
-
-
-### nearby_images
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default_conditional`
 
 ### move-button
 
 _This tagrendering has no question and is thus read-only_
-
+*{move_button()}*
 
 
 
@@ -193,7 +160,7 @@ _This tagrendering has no question and is thus read-only_
 ### delete-button
 
 _This tagrendering has no question and is thus read-only_
-
+*{delete_button()}*
 
 
 
@@ -201,52 +168,16 @@ _This tagrendering has no question and is thus read-only_
 ### lod
 
 _This tagrendering has no question and is thus read-only_
+*{linked_data_from_website()}*
 
 
-
-This tagrendering has labels 
-`added_by_default`
-
-### favourite_status
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### share
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### qr_code
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### last_edit
-Gives some metainfo about the last edit and who did edit it - rendering only
-_This tagrendering has no question and is thus read-only_
-
-
-This tagrendering is only visible in the popup if the following condition is met: _last_edit:changeset~.+ & _last_edit:contributor~.+
 This tagrendering has labels 
 `added_by_default`
 
 ### all-tags
 
 _This tagrendering has no question and is thus read-only_
-
+*{all_tags()}*
 
 
 

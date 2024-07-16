@@ -26,7 +26,6 @@ let searchFor: string =
     .find((foundValue) => !!foundValue) ?? ""
 
 const options: any = args[1]
-console.log(">>>", args)
 
 let searchForValue: UIEventSource<string> = new UIEventSource(searchFor)
 

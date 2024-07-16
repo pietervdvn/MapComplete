@@ -3,9 +3,11 @@
 # maproulette
 
 
-[object Object]
+
 
 Layer showing all tasks in MapRoulette
+
+
 
 
 
@@ -16,30 +18,30 @@ Layer showing all tasks in MapRoulette
 This layer is loaded from an external source, namely 
 
 `https://maproulette.org/api/v2/tasks/box/{x_min}/{y_min}/{x_max}/{y_max}`
+
+
+
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
 2. [Basic tags for this layer](#basic-tags-for-this-layer)
 3. [Supported attributes](#supported-attributes)
-  - [just_created](#just_created)
-  - [nothing_known](#nothing_known)
   - [status](#status)
   - [mark_fixed](#mark_fixed)
   - [mark_duplicate](#mark_duplicate)
   - [mark_too_hard](#mark_too_hard)
   - [leftover-questions](#leftover-questions)
-  - [minimap](#minimap)
   - [lod](#lod)
-  - [favourite_status](#favourite_status)
-  - [share](#share)
-  - [qr_code](#qr_code)
-  - [last_edit](#last_edit)
   - [all-tags](#all-tags)
-    + [Filters](#filters)
+4. [Filters](#filters)
 
 ## Themes using this layer
 
+
+
  - [maproulette](https://mapcomplete.org/maproulette)
+
+
 
 ## Basic tags for this layer
 
@@ -53,49 +55,34 @@ Elements must match the expression **title~.+**
 
 | attribute | type | values which are supported by this layer |
 -----|-----|----- |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/id#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/status#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice | [object Object] [object Object] [object Object] [object Object] [object Object] [object Object] [object Object] [object Object] |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/status#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/status/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [status](https://wiki.openstreetmap.org/wiki/Key:status) | Multiple choice | [0](https://wiki.openstreetmap.org/wiki/Tag:status%3D0) [1](https://wiki.openstreetmap.org/wiki/Tag:status%3D1) [2](https://wiki.openstreetmap.org/wiki/Tag:status%3D2) [3](https://wiki.openstreetmap.org/wiki/Tag:status%3D3) [4](https://wiki.openstreetmap.org/wiki/Tag:status%3D4) [5](https://wiki.openstreetmap.org/wiki/Tag:status%3D5) [6](https://wiki.openstreetmap.org/wiki/Tag:status%3D6) [9](https://wiki.openstreetmap.org/wiki/Tag:status%3D9) |
 
 
 
-
-### just_created
-This element shows a 'thank you' that the contributor has recently created this element
-_This tagrendering has no question and is thus read-only_
-
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/party.svg' style='width: 3rem; height: 3rem'> *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
-This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
-This tagrendering has labels 
-`added_by_default_top`
-
-### nothing_known
-
-_This tagrendering has no question and is thus read-only_
-
-
-This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time>=300 & _backend~.+
-This tagrendering has labels 
-`added_by_default_top`
 
 ### status
 
 _This tagrendering has no question and is thus read-only_
 
- -  *Task is created* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:status' target='_blank'>status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:status%3D0' target='_blank'>0</a>
- -  *Task is fixed* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:status' target='_blank'>status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:status%3D1' target='_blank'>1</a>
- -  *Task is a false positive* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:status' target='_blank'>status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:status%3D2' target='_blank'>2</a>
- -  *Task is skipped* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:status' target='_blank'>status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:status%3D3' target='_blank'>3</a>
- -  *Task is deleted* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:status' target='_blank'>status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:status%3D4' target='_blank'>4</a>
- -  *Task is already fixed* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:status' target='_blank'>status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:status%3D5' target='_blank'>5</a>
- -  *Task is marked as too hard* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:status' target='_blank'>status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:status%3D6' target='_blank'>6</a>
- -  *Task is disabled* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:status' target='_blank'>status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:status%3D9' target='_blank'>9</a>
+
+
+ -  *Task is created* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:status' target='_blank'>status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:status%3D0' target='_blank'>0</a>
+ -  *Task is fixed* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:status' target='_blank'>status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:status%3D1' target='_blank'>1</a>
+ -  *Task is a false positive* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:status' target='_blank'>status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:status%3D2' target='_blank'>2</a>
+ -  *Task is skipped* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:status' target='_blank'>status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:status%3D3' target='_blank'>3</a>
+ -  *Task is deleted* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:status' target='_blank'>status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:status%3D4' target='_blank'>4</a>
+ -  *Task is already fixed* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:status' target='_blank'>status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:status%3D5' target='_blank'>5</a>
+ -  *Task is marked as too hard* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:status' target='_blank'>status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:status%3D6' target='_blank'>6</a>
+ -  *Task is disabled* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:status' target='_blank'>status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:status%3D9' target='_blank'>9</a>
+
+
 
 
 
 ### mark_fixed
 
 _This tagrendering has no question and is thus read-only_
-
+*{maproulette_set_status(Mark as fixed,,,,,)}*
 
 
 This tagrendering has labels 
@@ -104,7 +91,7 @@ This tagrendering has labels
 ### mark_duplicate
 
 _This tagrendering has no question and is thus read-only_
-
+*{maproulette_set_status(Mark as not found or false positive,close,,2,,)}*
 
 
 This tagrendering has labels 
@@ -113,7 +100,7 @@ This tagrendering has labels
 ### mark_too_hard
 
 _This tagrendering has no question and is thus read-only_
-
+*{maproulette_set_status(Mark as too hard,./assets/svg/not_found.svg,,6,,)}*
 
 
 This tagrendering has labels 
@@ -122,15 +109,7 @@ This tagrendering has labels
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
-
-
-
-
-
-### minimap
-Shows a small map with the feature. Added by default to every popup
-_This tagrendering has no question and is thus read-only_
-
+*{questions( ,)}*
 
 
 
@@ -138,57 +117,21 @@ _This tagrendering has no question and is thus read-only_
 ### lod
 
 _This tagrendering has no question and is thus read-only_
+*{linked_data_from_website()}*
 
 
-
-This tagrendering has labels 
-`added_by_default`
-
-### favourite_status
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### share
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### qr_code
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### last_edit
-Gives some metainfo about the last edit and who did edit it - rendering only
-_This tagrendering has no question and is thus read-only_
-
-
-This tagrendering is only visible in the popup if the following condition is met: _last_edit:changeset~.+ & _last_edit:contributor~.+
 This tagrendering has labels 
 `added_by_default`
 
 ### all-tags
 
 _This tagrendering has no question and is thus read-only_
+*{all_tags()}*
 
 
 
 
-
-#### Filters
+## Filters
 
 
 

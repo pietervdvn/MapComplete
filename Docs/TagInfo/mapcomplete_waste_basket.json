@@ -82,22 +82,22 @@
     },
     {
       "key": "vending",
-      "description": "Layer 'Waste Basket' shows vending=dog_excrement_bag & not:vending= with a fixed text, namely 'This waste basket has a dispenser for (dog) excrement bags' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste Baskets') (This is only shown if waste~^(.*dog_excrement.*)$ | waste~^(.*trash.*)$ | waste=)",
-      "value": "dog_excrement_bag"
+      "description": "Layer 'Waste Basket' shows vending=excrement_bags & not:vending= with a fixed text, namely 'This waste basket has a dispenser for (dog) excrement bags' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste Baskets') (This is only shown if waste~^(.*dog_excrement.*)$ | waste~^(.*trash.*)$ | waste=)",
+      "value": "excrement_bags"
     },
     {
       "key": "not:vending",
-      "description": "Layer 'Waste Basket' shows vending=dog_excrement_bag & not:vending= with a fixed text, namely 'This waste basket has a dispenser for (dog) excrement bags' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste Baskets') Picking this answer will delete the key not:vending. (This is only shown if waste~^(.*dog_excrement.*)$ | waste~^(.*trash.*)$ | waste=)",
+      "description": "Layer 'Waste Basket' shows vending=excrement_bags & not:vending= with a fixed text, namely 'This waste basket has a dispenser for (dog) excrement bags' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste Baskets') Picking this answer will delete the key not:vending. (This is only shown if waste~^(.*dog_excrement.*)$ | waste~^(.*trash.*)$ | waste=)",
       "value": ""
     },
     {
       "key": "not:vending",
-      "description": "Layer 'Waste Basket' shows not:vending=dog_excrement_bag & vending= with a fixed text, namely 'This waste basket <b>does not</b> have a dispenser for (dog) excrement bags' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste Baskets') (This is only shown if waste~^(.*dog_excrement.*)$ | waste~^(.*trash.*)$ | waste=)",
-      "value": "dog_excrement_bag"
+      "description": "Layer 'Waste Basket' shows not:vending=excrement_bags & vending= with a fixed text, namely 'This waste basket <b>does not</b> have a dispenser for (dog) excrement bags' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste Baskets') (This is only shown if waste~^(.*dog_excrement.*)$ | waste~^(.*trash.*)$ | waste=)",
+      "value": "excrement_bags"
     },
     {
       "key": "vending",
-      "description": "Layer 'Waste Basket' shows not:vending=dog_excrement_bag & vending= with a fixed text, namely 'This waste basket <b>does not</b> have a dispenser for (dog) excrement bags' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste Baskets') Picking this answer will delete the key vending. (This is only shown if waste~^(.*dog_excrement.*)$ | waste~^(.*trash.*)$ | waste=)",
+      "description": "Layer 'Waste Basket' shows not:vending=excrement_bags & vending= with a fixed text, namely 'This waste basket <b>does not</b> have a dispenser for (dog) excrement bags' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste Baskets') Picking this answer will delete the key vending. (This is only shown if waste~^(.*dog_excrement.*)$ | waste~^(.*trash.*)$ | waste=)",
       "value": ""
     },
     {

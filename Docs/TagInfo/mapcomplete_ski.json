@@ -768,17 +768,17 @@
     },
     {
       "key": "seasonal",
-      "description": "Layer 'Drinking water' shows seasonal=no with a fixed text, namely 'This drinking water point is available all around the year' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "description": "Layer 'Drinking water' shows seasonal=no with a fixed text, namely 'Available all around the year' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
       "value": "no"
     },
     {
       "key": "seasonal",
-      "description": "Layer 'Drinking water' shows seasonal=summer with a fixed text, namely 'This drinking water point is only available in summer' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "description": "Layer 'Drinking water' shows seasonal=summer with a fixed text, namely 'Only available in summer' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
       "value": "summer"
     },
     {
       "key": "seasonal",
-      "description": "Layer 'Drinking water' shows seasonal=spring;summer;autumn with a fixed text, namely 'This drinking water point is closed during the winter' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "description": "Layer 'Drinking water' shows seasonal=spring;summer;autumn with a fixed text, namely 'Closed during the winter' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
       "value": "spring;summer;autumn"
     },
     {

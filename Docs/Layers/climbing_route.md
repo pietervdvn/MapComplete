@@ -3,9 +3,11 @@
 # climbing_route
 
 
-[object Object]
+
 
 A single climbing route and its properties. Some properties are derived from the containing features
+
+
 
 
 
@@ -13,13 +15,14 @@ A single climbing route and its properties. Some properties are derived from the
  - This layer is shown at zoomlevel **18** and higher
  - This layer will automatically load  [climbing_opportunity](./climbing_opportunity.md)  into the layout as it depends on it:  a preset snaps to this layer (presets[0])
  - This layer is needed as dependency for layer [climbing_area](#climbing_area)
+
+
+
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
 2. [Basic tags for this layer](#basic-tags-for-this-layer)
 3. [Supported attributes](#supported-attributes)
-  - [just_created](#just_created)
-  - [nothing_known](#nothing_known)
   - [images](#images)
   - [Name](#name)
   - [Length](#length)
@@ -28,19 +31,17 @@ A single climbing route and its properties. Some properties are derived from the
   - [description](#description)
   - [Rock type via embedded feature](#rock-type-via-embedded-feature)
   - [leftover-questions](#leftover-questions)
-  - [minimap](#minimap)
-  - [nearby_images](#nearby_images)
   - [lod](#lod)
-  - [favourite_status](#favourite_status)
-  - [share](#share)
-  - [qr_code](#qr_code)
-  - [last_edit](#last_edit)
   - [all-tags](#all-tags)
 
 ## Themes using this layer
 
+
+
  - [climbing](https://mapcomplete.org/climbing)
  - [personal](https://mapcomplete.org/personal)
+
+
 
 ## Basic tags for this layer
 
@@ -54,39 +55,20 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 
 | attribute | type | values which are supported by this layer |
 -----|-----|----- |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/id#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/name#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [string](../SpecialInputElements.md#string) | [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/climbing:length#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pnat](../SpecialInputElements.md#pnat) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/climbing:grade:french#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [string](../SpecialInputElements.md#string) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/climbing:bolts#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pnat](../SpecialInputElements.md#pnat) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/description#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [string](../SpecialInputElements.md#string) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/_embedding_features_with_rock:rock#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [string](../SpecialInputElements.md#string) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/name#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/name/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [name](https://wiki.openstreetmap.org/wiki/Key:name) | [string](../SpecialInputElements.md#string) | [](https://wiki.openstreetmap.org/wiki/Tag:name%3D) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/climbing:length#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/climbing%3Alength/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [climbing:length](https://wiki.openstreetmap.org/wiki/Key:climbing:length) | [pnat](../SpecialInputElements.md#pnat) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/climbing:grade:french#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/climbing%3Agrade%3Afrench/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [climbing:grade:french](https://wiki.openstreetmap.org/wiki/Key:climbing:grade:french) | [string](../SpecialInputElements.md#string) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/climbing:bolts#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/climbing%3Abolts/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [climbing:bolts](https://wiki.openstreetmap.org/wiki/Key:climbing:bolts) | [pnat](../SpecialInputElements.md#pnat) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/description#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/description/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [description](https://wiki.openstreetmap.org/wiki/Key:description) | [string](../SpecialInputElements.md#string) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/_embedding_features_with_rock:rock#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/_embedding_features_with_rock%3Arock/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [_embedding_features_with_rock:rock](https://wiki.openstreetmap.org/wiki/Key:_embedding_features_with_rock:rock) | [string](../SpecialInputElements.md#string) |  |
 
 
 
-
-### just_created
-This element shows a 'thank you' that the contributor has recently created this element
-_This tagrendering has no question and is thus read-only_
-
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/party.svg' style='width: 3rem; height: 3rem'> *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
-This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
-This tagrendering has labels 
-`added_by_default_top`
-
-### nothing_known
-
-_This tagrendering has no question and is thus read-only_
-
-
-This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time>=300 & _backend~.+
-This tagrendering has labels 
-`added_by_default_top`
 
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
-
+*{image_carousel()}{image_upload()}*
 
 
 
@@ -94,19 +76,19 @@ _This tagrendering has no question and is thus read-only_
 ### Name
 
 The question is `What is the name of this climbing route?`
-This rendering asks information about the property 
-[name](https://wiki.openstreetmap.org/wiki/Key:name)
-This is rendered with `<strong>{name}</strong>`
- -  *This climbing route doesn't have a name* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:noname' target='_blank'>noname</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:noname%3Dyes' target='_blank'>yes</a> & name=
+*<strong>{name}</strong>* is shown if `name` is set
+
+
+ -  *This climbing route doesn't have a name* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:noname' target='_blank'>noname</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:noname%3Dyes' target='_blank'>yes</a> & name=
+
+
 
 
 
 ### Length
 
 The question is `How long is this climbing route (in meters)?`
-This rendering asks information about the property 
-[climbing:length](https://wiki.openstreetmap.org/wiki/Key:climbing:length)
-This is rendered with `This route is {canonical(climbing:length)} long`
+*This route is {canonical(climbing:length)} long* is shown if `climbing:length` is set
 
 
 
@@ -114,9 +96,7 @@ This is rendered with `This route is {canonical(climbing:length)} long`
 ### Difficulty
 
 The question is `What is the grade of this climbing route according to the french/belgian system?`
-This rendering asks information about the property 
-[climbing:grade:french](https://wiki.openstreetmap.org/wiki/Key:climbing:grade:french)
-This is rendered with `The grade is {climbing:grade:french} according to the french/belgian system`
+*The grade is {climbing:grade:french} according to the french/belgian system* is shown if `climbing:grade:french` is set
 
 
 
@@ -124,19 +104,19 @@ This is rendered with `The grade is {climbing:grade:french} according to the fre
 ### bolts
 
 The question is `How many bolts does this route have before reaching the anchor?`
-This rendering asks information about the property 
-[climbing:bolts](https://wiki.openstreetmap.org/wiki/Key:climbing:bolts)
-This is rendered with `This route has {climbing:bolts} bolts <div class='subtle'>This is without relays and indicates how much quickdraws a climber needs</div>`
- -  *This route is not bolted* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:bolted' target='_blank'>climbing:bolted</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:bolted%3Dno' target='_blank'>no</a>
+*This route has {climbing:bolts} bolts <div class='subtle'>This is without relays and indicates how much quickdraws a climber needs</div>* is shown if `climbing:bolts` is set
+
+
+ -  *This route is not bolted* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:bolted' target='_blank'>climbing:bolted</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:bolted%3Dno' target='_blank'>no</a>
+
+
 
 
 
 ### description
 
 The question is `Is there still some relevant info that the previous questions did not cover? Feel free to add it here.`
-This rendering asks information about the property 
-[description](https://wiki.openstreetmap.org/wiki/Key:description)
-This is rendered with `{description}`
+*{description}* is shown if `description` is set
 
 
 
@@ -144,9 +124,7 @@ This is rendered with `{description}`
 ### Rock type via embedded feature
 
 _This tagrendering has no question and is thus read-only_
-This rendering asks information about the property 
-[_embedding_features_with_rock:rock](https://wiki.openstreetmap.org/wiki/Key:_embedding_features_with_rock:rock)
-This is rendered with `The rock type is {_embedding_features_with_rock:rock} as stated <a href='#{_embedding_features_with_rock:id}'>on the surrounding crag</a>`
+*The rock type is {_embedding_features_with_rock:rock} as stated <a href='#{_embedding_features_with_rock:id}'>on the surrounding crag</a>* is shown if `_embedding_features_with_rock:rock` is set
 
 
 
@@ -154,77 +132,24 @@ This is rendered with `The rock type is {_embedding_features_with_rock:rock} as 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
+*{questions( ,)}*
 
 
 
-
-
-### minimap
-Shows a small map with the feature. Added by default to every popup
-_This tagrendering has no question and is thus read-only_
-
-
-
-
-
-### nearby_images
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default_conditional`
 
 ### lod
 
 _This tagrendering has no question and is thus read-only_
+*{linked_data_from_website()}*
 
 
-
-This tagrendering has labels 
-`added_by_default`
-
-### favourite_status
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### share
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### qr_code
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### last_edit
-Gives some metainfo about the last edit and who did edit it - rendering only
-_This tagrendering has no question and is thus read-only_
-
-
-This tagrendering is only visible in the popup if the following condition is met: _last_edit:changeset~.+ & _last_edit:contributor~.+
 This tagrendering has labels 
 `added_by_default`
 
 ### all-tags
 
 _This tagrendering has no question and is thus read-only_
-
+*{all_tags()}*
 
 
 

@@ -17,7 +17,7 @@
 
   const t = Translations.t.general.wikipedia
 
-  export let searchValue = new UIEventSource("Tom boonen")
+  export let searchValue = new UIEventSource(undefined)
   export let placeholder = t.searchWikidata
   export let allowMultiple = false
 
@@ -37,7 +37,6 @@
   }
 
   $:{
-    console.log(selectedMany)
     const v = []
     for (const id in selectedMany) {
       if (selectedMany[id]) {
@@ -72,7 +71,6 @@
 
   let selectedWithoutSearch: Store<WikidataResponse[]> = searchResult.map(sr => {
     for (const wikidataItem of sr?.success ?? []) {
-      console.log("Saving", wikidataItem.id)
       previouslySeen.set(wikidataItem.id, wikidataItem)
     }
     let knownIds: Set<string> = new Set(sr?.success?.map(item => item.id))

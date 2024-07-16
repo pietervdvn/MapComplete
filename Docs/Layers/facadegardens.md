@@ -3,22 +3,25 @@
 # facadegardens
 
 
-[object Object]
+
 
 Facade gardens
 
 
 
 
+
+
  - This layer is shown at zoomlevel **12** and higher
  - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  a preset snaps to this layer (presets[0])
+
+
+
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
 2. [Basic tags for this layer](#basic-tags-for-this-layer)
 3. [Supported attributes](#supported-attributes)
-  - [just_created](#just_created)
-  - [nothing_known](#nothing_known)
   - [images](#images)
   - [facadegardens-direction](#facadegardens-direction)
   - [facadegardens-sunshine](#facadegardens-sunshine)
@@ -28,20 +31,18 @@ Facade gardens
   - [facadegardens-plants](#facadegardens-plants)
   - [facadegardens-description](#facadegardens-description)
   - [leftover-questions](#leftover-questions)
-  - [minimap](#minimap)
-  - [nearby_images](#nearby_images)
   - [move-button](#move-button)
   - [delete-button](#delete-button)
   - [lod](#lod)
-  - [favourite_status](#favourite_status)
-  - [share](#share)
-  - [qr_code](#qr_code)
-  - [last_edit](#last_edit)
   - [all-tags](#all-tags)
 
 ## Themes using this layer
 
+
+
  - [facadegardens](https://mapcomplete.org/facadegardens)
+
+
 
 ## Basic tags for this layer
 
@@ -58,40 +59,21 @@ Elements must match **all** of the following expressions:
 
 | attribute | type | values which are supported by this layer |
 -----|-----|----- |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/id#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/direction#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [direction](../SpecialInputElements.md#direction) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/direct_sunlight#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice | [object Object] [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/rain_barrel#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice | [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/start_date#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [text](../SpecialInputElements.md#text) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/edible#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice | [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/plant#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice | [object Object] [object Object] [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/description#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [text](../SpecialInputElements.md#text) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/direction#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/direction/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [direction](https://wiki.openstreetmap.org/wiki/Key:direction) | [direction](../SpecialInputElements.md#direction) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/direct_sunlight#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/direct_sunlight/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [direct_sunlight](https://wiki.openstreetmap.org/wiki/Key:direct_sunlight) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:direct_sunlight%3Dyes) [partial](https://wiki.openstreetmap.org/wiki/Tag:direct_sunlight%3Dpartial) [no](https://wiki.openstreetmap.org/wiki/Tag:direct_sunlight%3Dno) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/rain_barrel#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/rain_barrel/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [rain_barrel](https://wiki.openstreetmap.org/wiki/Key:rain_barrel) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:rain_barrel%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:rain_barrel%3Dno) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/start_date#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/start_date/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [start_date](https://wiki.openstreetmap.org/wiki/Key:start_date) | [text](../SpecialInputElements.md#text) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/edible#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/edible/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [edible](https://wiki.openstreetmap.org/wiki/Key:edible) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:edible%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:edible%3Dno) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/plant#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/plant/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [plant](https://wiki.openstreetmap.org/wiki/Key:plant) | Multiple choice | [vine](https://wiki.openstreetmap.org/wiki/Tag:plant%3Dvine) [flower](https://wiki.openstreetmap.org/wiki/Tag:plant%3Dflower) [shrub](https://wiki.openstreetmap.org/wiki/Tag:plant%3Dshrub) [groundcover](https://wiki.openstreetmap.org/wiki/Tag:plant%3Dgroundcover) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/description#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/description/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [description](https://wiki.openstreetmap.org/wiki/Key:description) | [text](../SpecialInputElements.md#text) |  |
 
 
 
-
-### just_created
-This element shows a 'thank you' that the contributor has recently created this element
-_This tagrendering has no question and is thus read-only_
-
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/party.svg' style='width: 3rem; height: 3rem'> *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
-This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
-This tagrendering has labels 
-`added_by_default_top`
-
-### nothing_known
-
-_This tagrendering has no question and is thus read-only_
-
-
-This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time>=300 & _backend~.+
-This tagrendering has labels 
-`added_by_default_top`
 
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
-
+*{image_carousel()}{image_upload()}*
 
 
 
@@ -99,9 +81,7 @@ _This tagrendering has no question and is thus read-only_
 ### facadegardens-direction
 
 The question is `What is the orientation of the garden?`
-This rendering asks information about the property 
-[direction](https://wiki.openstreetmap.org/wiki/Key:direction)
-This is rendered with `Orientation: {direction} (where 0=N and 90=O)`
+*Orientation: {direction} (where 0=N and 90=O)* is shown if `direction` is set
 
 
 
@@ -110,9 +90,13 @@ This is rendered with `Orientation: {direction} (where 0=N and 90=O)`
 
 The question is `Is the garden shaded or sunny?`
 
- -  *The garden is in full sun* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:direct_sunlight' target='_blank'>direct_sunlight</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:direct_sunlight%3Dyes' target='_blank'>yes</a>
- -  *The garden is in partial shade* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:direct_sunlight' target='_blank'>direct_sunlight</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:direct_sunlight%3Dpartial' target='_blank'>partial</a>
- -  *The garden is in the shade* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:direct_sunlight' target='_blank'>direct_sunlight</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:direct_sunlight%3Dno' target='_blank'>no</a>
+
+
+ -  *The garden is in full sun* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:direct_sunlight' target='_blank'>direct_sunlight</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:direct_sunlight%3Dyes' target='_blank'>yes</a>
+ -  *The garden is in partial shade* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:direct_sunlight' target='_blank'>direct_sunlight</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:direct_sunlight%3Dpartial' target='_blank'>partial</a>
+ -  *The garden is in the shade* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:direct_sunlight' target='_blank'>direct_sunlight</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:direct_sunlight%3Dno' target='_blank'>no</a>
+
+
 
 
 
@@ -120,17 +104,19 @@ The question is `Is the garden shaded or sunny?`
 
 The question is `Is there a water barrel installed for the garden?`
 
- -  *There is a rain barrel* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:rain_barrel' target='_blank'>rain_barrel</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rain_barrel%3Dyes' target='_blank'>yes</a>
- -  *There is no rain barrel* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:rain_barrel' target='_blank'>rain_barrel</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rain_barrel%3Dno' target='_blank'>no</a>
+
+
+ -  *There is a rain barrel* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:rain_barrel' target='_blank'>rain_barrel</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rain_barrel%3Dyes' target='_blank'>yes</a>
+ -  *There is no rain barrel* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:rain_barrel' target='_blank'>rain_barrel</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rain_barrel%3Dno' target='_blank'>no</a>
+
+
 
 
 
 ### facadegardens-start_date
 
 The question is `When was the garden constructed? (a year is sufficient)`
-This rendering asks information about the property 
-[start_date](https://wiki.openstreetmap.org/wiki/Key:start_date)
-This is rendered with `Construction date of the garden: {start_date}`
+*Construction date of the garden: {start_date}* is shown if `start_date` is set
 
 
 
@@ -139,8 +125,12 @@ This is rendered with `Construction date of the garden: {start_date}`
 
 The question is `Are there any edible plants?`
 
- -  *There are edible plants* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:edible' target='_blank'>edible</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:edible%3Dyes' target='_blank'>yes</a>
- -  *There are no edible plants* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:edible' target='_blank'>edible</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:edible%3Dno' target='_blank'>no</a>
+
+
+ -  *There are edible plants* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:edible' target='_blank'>edible</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:edible%3Dyes' target='_blank'>yes</a>
+ -  *There are no edible plants* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:edible' target='_blank'>edible</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:edible%3Dno' target='_blank'>no</a>
+
+
 
 
 
@@ -148,19 +138,21 @@ The question is `Are there any edible plants?`
 
 The question is `What kinds of plants grow here?`
 
- -  *There are vines* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:plant' target='_blank'>plant</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:plant%3Dvine' target='_blank'>vine</a>
- -  *There are flowering plants* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:plant' target='_blank'>plant</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:plant%3Dflower' target='_blank'>flower</a>
- -  *There are shrubs* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:plant' target='_blank'>plant</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:plant%3Dshrub' target='_blank'>shrub</a>
- -  *There are groundcovering plants* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:plant' target='_blank'>plant</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:plant%3Dgroundcover' target='_blank'>groundcover</a>
+
+
+ -  *There are vines* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:plant' target='_blank'>plant</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:plant%3Dvine' target='_blank'>vine</a>
+ -  *There are flowering plants* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:plant' target='_blank'>plant</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:plant%3Dflower' target='_blank'>flower</a>
+ -  *There are shrubs* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:plant' target='_blank'>plant</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:plant%3Dshrub' target='_blank'>shrub</a>
+ -  *There are groundcovering plants* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:plant' target='_blank'>plant</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:plant%3Dgroundcover' target='_blank'>groundcover</a>
+
+
 
 
 
 ### facadegardens-description
 
 The question is `Extra describing info about the garden (if needed and not yet described above)`
-This rendering asks information about the property 
-[description](https://wiki.openstreetmap.org/wiki/Key:description)
-This is rendered with `More details: {description}`
+*More details: {description}* is shown if `description` is set
 
 
 
@@ -168,32 +160,15 @@ This is rendered with `More details: {description}`
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
+*{questions( ,)}*
 
 
 
-
-
-### minimap
-Shows a small map with the feature. Added by default to every popup
-_This tagrendering has no question and is thus read-only_
-
-
-
-
-
-### nearby_images
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default_conditional`
 
 ### move-button
 
 _This tagrendering has no question and is thus read-only_
-
+*{move_button()}*
 
 
 
@@ -201,7 +176,7 @@ _This tagrendering has no question and is thus read-only_
 ### delete-button
 
 _This tagrendering has no question and is thus read-only_
-
+*{delete_button()}*
 
 
 
@@ -209,52 +184,16 @@ _This tagrendering has no question and is thus read-only_
 ### lod
 
 _This tagrendering has no question and is thus read-only_
+*{linked_data_from_website()}*
 
 
-
-This tagrendering has labels 
-`added_by_default`
-
-### favourite_status
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### share
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### qr_code
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### last_edit
-Gives some metainfo about the last edit and who did edit it - rendering only
-_This tagrendering has no question and is thus read-only_
-
-
-This tagrendering is only visible in the popup if the following condition is met: _last_edit:changeset~.+ & _last_edit:contributor~.+
 This tagrendering has labels 
 `added_by_default`
 
 ### all-tags
 
 _This tagrendering has no question and is thus read-only_
-
+*{all_tags()}*
 
 
 

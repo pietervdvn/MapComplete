@@ -15,6 +15,9 @@ export default class MarkdownUtils {
     }
 
     static list(strings: string[]): string {
-        return strings.map((item) => " - " + item).join("\n")
+        if(strings.length === 0){
+            return ""
+        }
+        return "\n\n"+strings.map((item) => " - " + item).join("\n")+"\n\n"
     }
 }

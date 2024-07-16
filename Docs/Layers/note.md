@@ -3,9 +3,11 @@
 # note
 
 
-[object Object]
+
 
 This layer shows notes on OpenStreetMap. Having this layer in your theme will trigger the 'add new note' functionality in the 'addNewPoint'-popup (or if your theme has no presets, it'll enable adding notes)
+
+
 
 
 
@@ -16,33 +18,34 @@ This layer shows notes on OpenStreetMap. Having this layer in your theme will tr
 This layer is loaded from an external source, namely 
 
 `https://api.openstreetmap.org/api/0.6/notes.json?limit=10000&closed=7&bbox={x_min},{y_min},{x_max},{y_max}`
+
+
+
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
 2. [Basic tags for this layer](#basic-tags-for-this-layer)
 3. [Supported attributes](#supported-attributes)
-  - [just_created](#just_created)
-  - [nothing_known](#nothing_known)
   - [conversation](#conversation)
   - [add_image](#add_image)
   - [comment](#comment)
   - [nearby-images](#nearby-images)
+  - [Nearby images](#nearby-images)
   - [report-contributor](#report-contributor)
   - [report-note](#report-note)
   - [leftover-questions](#leftover-questions)
-  - [minimap](#minimap)
   - [lod](#lod)
-  - [favourite_status](#favourite_status)
-  - [share](#share)
-  - [qr_code](#qr_code)
-  - [last_edit](#last_edit)
   - [all-tags](#all-tags)
-    + [Filters](#filters)
+4. [Filters](#filters)
 
 ## Themes using this layer
 
+
+
  - [notes](https://mapcomplete.org/notes)
  - [personal](https://mapcomplete.org/personal)
+
+
 
 ## Basic tags for this layer
 
@@ -52,37 +55,12 @@ Elements must match the expression **date_created~.+**
 
 ## Supported attributes
 
-**Warning:**,this quick overview is incomplete,
 
-| attribute | type | values which are supported by this layer |
------|-----|----- |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/id#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice |  |
-
-
-
-
-### just_created
-This element shows a 'thank you' that the contributor has recently created this element
-_This tagrendering has no question and is thus read-only_
-
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/party.svg' style='width: 3rem; height: 3rem'> *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
-This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
-This tagrendering has labels 
-`added_by_default_top`
-
-### nothing_known
-
-_This tagrendering has no question and is thus read-only_
-
-
-This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time>=300 & _backend~.+
-This tagrendering has labels 
-`added_by_default_top`
 
 ### conversation
 
 _This tagrendering has no question and is thus read-only_
-
+*{visualize_note_comments()}*
 
 
 
@@ -90,7 +68,7 @@ _This tagrendering has no question and is thus read-only_
 ### add_image
 
 _This tagrendering has no question and is thus read-only_
-
+*{add_image_to_note()}*
 
 
 
@@ -98,7 +76,7 @@ _This tagrendering has no question and is thus read-only_
 ### comment
 
 _This tagrendering has no question and is thus read-only_
-
+*{add_note_comment()}*
 
 
 
@@ -106,7 +84,7 @@ _This tagrendering has no question and is thus read-only_
 ### nearby-images
 
 _This tagrendering has no question and is thus read-only_
-
+*<h3>Nearby images</h3>The pictures below are nearby geotagged images and might be helpful to handle this note.{nearby_images(open,)}*
 
 
 
@@ -114,7 +92,7 @@ _This tagrendering has no question and is thus read-only_
 ### report-contributor
 
 _This tagrendering has no question and is thus read-only_
-
+*<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle'>Report {_first_user} for spam or inappropriate messages</a>*
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:_opened_by_anonymous_user' target='_blank'>_opened_by_anonymous_user</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_opened_by_anonymous_user%3Dfalse' target='_blank'>false</a>
 
@@ -122,7 +100,7 @@ This tagrendering is only visible in the popup if the following condition is met
 ### report-note
 
 _This tagrendering has no question and is thus read-only_
-
+*<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Report this note as spam or inappropriate</a>*
 
 
 
@@ -130,15 +108,7 @@ _This tagrendering has no question and is thus read-only_
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
-
-
-
-
-
-### minimap
-Shows a small map with the feature. Added by default to every popup
-_This tagrendering has no question and is thus read-only_
-
+*{questions( ,)}*
 
 
 
@@ -146,57 +116,21 @@ _This tagrendering has no question and is thus read-only_
 ### lod
 
 _This tagrendering has no question and is thus read-only_
+*{linked_data_from_website()}*
 
 
-
-This tagrendering has labels 
-`added_by_default`
-
-### favourite_status
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### share
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### qr_code
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### last_edit
-Gives some metainfo about the last edit and who did edit it - rendering only
-_This tagrendering has no question and is thus read-only_
-
-
-This tagrendering is only visible in the popup if the following condition is met: _last_edit:changeset~.+ & _last_edit:contributor~.+
 This tagrendering has labels 
 `added_by_default`
 
 ### all-tags
 
 _This tagrendering has no question and is thus read-only_
+*{all_tags()}*
 
 
 
 
-
-#### Filters
+## Filters
 
 
 

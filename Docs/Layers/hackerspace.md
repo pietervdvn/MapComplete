@@ -3,21 +3,24 @@
 # hackerspace
 
 
-[object Object]
+
 
 Hackerspace
 
 
 
 
+
+
  - This layer is shown at zoomlevel **8** and higher
+
+
+
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
 2. [Basic tags for this layer](#basic-tags-for-this-layer)
 3. [Supported attributes](#supported-attributes)
-  - [just_created](#just_created)
-  - [nothing_known](#nothing_known)
   - [images](#images)
   - [reviews](#reviews)
   - [is_makerspace](#is_makerspace)
@@ -29,6 +32,7 @@ Hackerspace
   - [phone](#phone)
   - [mastodon](#mastodon)
   - [opening_hours_24_7](#opening_hours_24_7)
+  - [Opening hours](#opening-hours)
   - [hackerspaces-service-3dprinter](#hackerspaces-service-3dprinter)
   - [hackerspaces-service-lasercutter](#hackerspaces-service-lasercutter)
   - [hackerspaces-service-cnc_drilling_machine](#hackerspaces-service-cnc_drilling_machine)
@@ -45,21 +49,19 @@ Hackerspace
   - [internet-fee](#internet-fee)
   - [internet-ssid](#internet-ssid)
   - [questions](#questions)
-  - [minimap](#minimap)
-  - [nearby_images](#nearby_images)
   - [move-button](#move-button)
   - [delete-button](#delete-button)
   - [lod](#lod)
-  - [favourite_status](#favourite_status)
-  - [share](#share)
-  - [qr_code](#qr_code)
-  - [last_edit](#last_edit)
   - [all-tags](#all-tags)
 
 ## Themes using this layer
 
+
+
  - [hackerspaces](https://mapcomplete.org/hackerspaces)
  - [personal](https://mapcomplete.org/personal)
+
+
 
 ## Basic tags for this layer
 
@@ -73,56 +75,37 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 
 | attribute | type | values which are supported by this layer |
 -----|-----|----- |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/id#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/hackerspace#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice | [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/name#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [string](../SpecialInputElements.md#string) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/level#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [float](../SpecialInputElements.md#float) | [object Object] [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/website#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [url](../SpecialInputElements.md#url) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/email#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [email](../SpecialInputElements.md#email) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/phone#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [phone](../SpecialInputElements.md#phone) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/contact:mastodon#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [fediverse](../SpecialInputElements.md#fediverse) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/opening_hours#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [opening_hours](../SpecialInputElements.md#opening_hours) | [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:3dprinter#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice | [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:lasercutter#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice | [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:cnc_drilling_machine#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice | [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:media_studio#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice | [object Object] [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:sewing_machine#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice | [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:workshop:wood#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice | [object Object] [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:workshop:ceramics#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice | [object Object] [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:workshop:metal#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice | [object Object] [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:bicycle:diy#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice | [object Object] [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/wheelchair#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice | [object Object] [object Object] [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/drink:club-mate#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice | [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/start_date#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [date](../SpecialInputElements.md#date) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/internet_access#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice | [object Object] [object Object] [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/internet_access:fee#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice | [object Object] [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/internet_access:ssid#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [string](../SpecialInputElements.md#string) | [object Object] |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/hackerspace#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/hackerspace/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [hackerspace](https://wiki.openstreetmap.org/wiki/Key:hackerspace) | Multiple choice | [makerspace](https://wiki.openstreetmap.org/wiki/Tag:hackerspace%3Dmakerspace) [](https://wiki.openstreetmap.org/wiki/Tag:hackerspace%3D) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/name#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/name/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [name](https://wiki.openstreetmap.org/wiki/Key:name) | [string](../SpecialInputElements.md#string) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/level#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/level/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [level](https://wiki.openstreetmap.org/wiki/Key:level) | [float](../SpecialInputElements.md#float) | [0](https://wiki.openstreetmap.org/wiki/Tag:level%3D0) [1](https://wiki.openstreetmap.org/wiki/Tag:level%3D1) [-1](https://wiki.openstreetmap.org/wiki/Tag:level%3D-1) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/website#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/website/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [website](https://wiki.openstreetmap.org/wiki/Key:website) | [url](../SpecialInputElements.md#url) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/email#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/email/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [email](https://wiki.openstreetmap.org/wiki/Key:email) | [email](../SpecialInputElements.md#email) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/phone#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/phone/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [phone](https://wiki.openstreetmap.org/wiki/Key:phone) | [phone](../SpecialInputElements.md#phone) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/contact:mastodon#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/contact%3Amastodon/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [contact:mastodon](https://wiki.openstreetmap.org/wiki/Key:contact:mastodon) | [fediverse](../SpecialInputElements.md#fediverse) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/opening_hours#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/opening_hours/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | [24/7](https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:3dprinter#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/service%3A3dprinter/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [service:3dprinter](https://wiki.openstreetmap.org/wiki/Key:service:3dprinter) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:3dprinter%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:3dprinter%3Dno) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:lasercutter#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/service%3Alasercutter/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [service:lasercutter](https://wiki.openstreetmap.org/wiki/Key:service:lasercutter) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:lasercutter%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:lasercutter%3Dno) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:cnc_drilling_machine#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/service%3Acnc_drilling_machine/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [service:cnc_drilling_machine](https://wiki.openstreetmap.org/wiki/Key:service:cnc_drilling_machine) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:cnc_drilling_machine%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:cnc_drilling_machine%3Dno) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:media_studio#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/service%3Amedia_studio/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [service:media_studio](https://wiki.openstreetmap.org/wiki/Key:service:media_studio) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:media_studio%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:media_studio%3Dno) [limited](https://wiki.openstreetmap.org/wiki/Tag:service:media_studio%3Dlimited) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:sewing_machine#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/service%3Asewing_machine/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [service:sewing_machine](https://wiki.openstreetmap.org/wiki/Key:service:sewing_machine) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:sewing_machine%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:sewing_machine%3Dno) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:workshop:wood#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/service%3Aworkshop%3Awood/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [service:workshop:wood](https://wiki.openstreetmap.org/wiki/Key:service:workshop:wood) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:workshop:wood%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:workshop:wood%3Dno) [limited](https://wiki.openstreetmap.org/wiki/Tag:service:workshop:wood%3Dlimited) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:workshop:ceramics#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/service%3Aworkshop%3Aceramics/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [service:workshop:ceramics](https://wiki.openstreetmap.org/wiki/Key:service:workshop:ceramics) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:workshop:ceramics%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:workshop:ceramics%3Dno) [limited](https://wiki.openstreetmap.org/wiki/Tag:service:workshop:ceramics%3Dlimited) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:workshop:metal#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/service%3Aworkshop%3Ametal/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [service:workshop:metal](https://wiki.openstreetmap.org/wiki/Key:service:workshop:metal) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:workshop:metal%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:workshop:metal%3Dno) [limited](https://wiki.openstreetmap.org/wiki/Tag:service:workshop:metal%3Dlimited) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:bicycle:diy#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/service%3Abicycle%3Adiy/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [service:bicycle:diy](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:diy) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Dno) [limited](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Dlimited) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/wheelchair#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/wheelchair/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [wheelchair](https://wiki.openstreetmap.org/wiki/Key:wheelchair) | Multiple choice | [designated](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Ddesignated) [yes](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dlimited) [no](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dno) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/drink:club-mate#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/drink%3Aclub-mate/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [drink:club-mate](https://wiki.openstreetmap.org/wiki/Key:drink:club-mate) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:drink:club-mate%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:drink:club-mate%3Dno) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/start_date#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/start_date/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [start_date](https://wiki.openstreetmap.org/wiki/Key:start_date) | [date](../SpecialInputElements.md#date) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/internet_access#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/internet_access/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [internet_access](https://wiki.openstreetmap.org/wiki/Key:internet_access) | Multiple choice | [wlan](https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwlan) [no](https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dno) [terminal](https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dterminal) [wired](https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwired) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/internet_access:fee#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/internet_access%3Afee/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [internet_access:fee](https://wiki.openstreetmap.org/wiki/Key:internet_access:fee) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dno) [customers](https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dcustomers) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/internet_access:ssid#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/internet_access%3Assid/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [internet_access:ssid](https://wiki.openstreetmap.org/wiki/Key:internet_access:ssid) | [string](../SpecialInputElements.md#string) | [Telekom](https://wiki.openstreetmap.org/wiki/Tag:internet_access:ssid%3DTelekom) |
 
 
 
-
-### just_created
-This element shows a 'thank you' that the contributor has recently created this element
-_This tagrendering has no question and is thus read-only_
-
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/party.svg' style='width: 3rem; height: 3rem'> *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
-This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
-This tagrendering has labels 
-`added_by_default_top`
-
-### nothing_known
-
-_This tagrendering has no question and is thus read-only_
-
-
-This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time>=300 & _backend~.+
-This tagrendering has labels 
-`added_by_default_top`
 
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
-
+*{image_carousel()}{image_upload()}*
 
 
 
@@ -130,7 +113,7 @@ _This tagrendering has no question and is thus read-only_
 ### reviews
 Shows the reviews module (including the possibility to leave a review)
 _This tagrendering has no question and is thus read-only_
-
+*{create_review()}{list_reviews()}*
 
 
 
@@ -139,17 +122,19 @@ _This tagrendering has no question and is thus read-only_
 
 The question is `Is this a hackerspace or a makerspace?`
 
- -  *This is a makerspace* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:hackerspace' target='_blank'>hackerspace</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hackerspace%3Dmakerspace' target='_blank'>makerspace</a>
- -  *This is a traditional (software oriented) hackerspace* corresponds with hackerspace=
+
+
+ -  *This is a makerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:hackerspace' target='_blank'>hackerspace</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hackerspace%3Dmakerspace' target='_blank'>makerspace</a>
+ -  *This is a traditional (software oriented) hackerspace* is shown if with hackerspace=
+
+
 
 
 
 ### hackerspaces-name
 
 The question is `What is the name of this hackerspace?`
-This rendering asks information about the property 
-[name](https://wiki.openstreetmap.org/wiki/Key:name)
-This is rendered with `This hackerspace is named <b>{name}</b>`
+*This hackerspace is named <b>{name}</b>* is shown if `name` is set
 
 
 
@@ -157,7 +142,7 @@ This is rendered with `This hackerspace is named <b>{name}</b>`
 ### repeated
 
 _This tagrendering has no question and is thus read-only_
-
+*Multiple, identical objects can be found on floors {repeat_on}.*
 
 This tagrendering is only visible in the popup if the following condition is met: repeat_on~.+
 This tagrendering has labels 
@@ -166,16 +151,16 @@ This tagrendering has labels
 ### single_level
 
 The question is `On what level is this feature located?`
-This rendering asks information about the property 
-[level](https://wiki.openstreetmap.org/wiki/Key:level)
-This is rendered with `Located on the {level}th floor`
- -  *Located underground* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground' target='_blank'>underground</a>
- - _This option cannot be chosen as answer_
- -  *Located on the ground floor* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D0' target='_blank'>0</a>
- -  *Located on the ground floor* corresponds with level=
- - _This option cannot be chosen as answer_
- -  *Located on the first floor* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D1' target='_blank'>1</a>
- -  *Located on the first basement level* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D-1' target='_blank'>-1</a>
+*Located on the {level}th floor* is shown if `level` is set
+
+
+ -  *Located underground* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground' target='_blank'>underground</a>. _This option cannot be chosen as answer_
+ -  *Located on the ground floor* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D0' target='_blank'>0</a>
+ -  *Located on the ground floor* is shown if with level=. _This option cannot be chosen as answer_
+ -  *Located on the first floor* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D1' target='_blank'>1</a>
+ -  *Located on the first basement level* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D-1' target='_blank'>-1</a>
+
+
 
 This tagrendering has labels 
 `level`
@@ -183,11 +168,12 @@ This tagrendering has labels
 ### website
 
 The question is `What is the website of {title()}?`
-This rendering asks information about the property 
-[website](https://wiki.openstreetmap.org/wiki/Key:website)
-This is rendered with `<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>`
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/icons/website.svg' style='width: 3rem; height: 3rem'> *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>* corresponds with contact:website~.+
- - _This option cannot be chosen as answer_
+*<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>* is shown if `website` is set
+
+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/icons/website.svg' style='width: 3rem; height: 3rem'> *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>* is shown if with contact:website~.+. _This option cannot be chosen as answer_
+
+
 
 This tagrendering has labels 
 `contact`
@@ -195,13 +181,13 @@ This tagrendering has labels
 ### email
 
 The question is `What is the email address of {title()}?`
-This rendering asks information about the property 
-[email](https://wiki.openstreetmap.org/wiki/Key:email)
-This is rendered with `<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>`
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/envelope.svg' style='width: 3rem; height: 3rem'> *<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>* corresponds with contact:email~.+
- - _This option cannot be chosen as answer_
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/envelope.svg' style='width: 3rem; height: 3rem'> *<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>* corresponds with operator:email~.+
- - _This option cannot be chosen as answer_
+*<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>* is shown if `email` is set
+
+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/envelope.svg' style='width: 3rem; height: 3rem'> *<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>* is shown if with contact:email~.+. _This option cannot be chosen as answer_
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/envelope.svg' style='width: 3rem; height: 3rem'> *<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>* is shown if with operator:email~.+. _This option cannot be chosen as answer_
+
+
 
 This tagrendering has labels 
 `contact`
@@ -209,11 +195,12 @@ This tagrendering has labels
 ### phone
 
 The question is `What is the phone number of {title()}?`
-This rendering asks information about the property 
-[phone](https://wiki.openstreetmap.org/wiki/Key:phone)
-This is rendered with `<a href='tel:{phone}'>{phone}</a>`
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/phone.svg' style='width: 3rem; height: 3rem'> *<a href='tel:{contact:phone}'>{contact:phone}</a>* corresponds with contact:phone~.+
- - _This option cannot be chosen as answer_
+*<a href='tel:{phone}'>{phone}</a>* is shown if `phone` is set
+
+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/phone.svg' style='width: 3rem; height: 3rem'> *<a href='tel:{contact:phone}'>{contact:phone}</a>* is shown if with contact:phone~.+. _This option cannot be chosen as answer_
+
+
 
 This tagrendering has labels 
 `contact`
@@ -221,9 +208,7 @@ This tagrendering has labels
 ### mastodon
 Shows and asks for the mastodon handle
 The question is `What is the Mastodon-handle of {title()}?`
-This rendering asks information about the property 
-[contact:mastodon](https://wiki.openstreetmap.org/wiki/Key:contact:mastodon)
-This is rendered with `{fediverse_link(contact:mastodon)}`
+*{fediverse_link(contact:mastodon)}* is shown if `contact:mastodon` is set
 
 
 
@@ -231,12 +216,13 @@ This is rendered with `{fediverse_link(contact:mastodon)}`
 ### opening_hours_24_7
 
 The question is `When is this hackerspace opened?`
-This rendering asks information about the property 
-[opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours)
-This is rendered with `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/open24_7.svg' style='width: 3rem; height: 3rem'> *24/7 opened (including holidays)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
- -  *Marked as closed for an unspecified time* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>
- - _This option cannot be chosen as answer_
+*<h3>Opening hours</h3>{opening_hours_table(opening_hours)}* is shown if `opening_hours` is set
+
+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/open24_7.svg' style='width: 3rem; height: 3rem'> *24/7 opened (including holidays)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
+ -  *Marked as closed for an unspecified time* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>. _This option cannot be chosen as answer_
+
+
 
 
 
@@ -244,10 +230,13 @@ This is rendered with `<h3>Opening hours</h3>{opening_hours_table(opening_hours)
 
 The question is `Is a 3D-printer available at this hackerspace?`
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/hackerspace/3d_printer.svg' style='width: 3rem; height: 3rem'> *There is a 3D-printer available at this hackerspace* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:3dprinter' target='_blank'>service:3dprinter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:3dprinter%3Dyes' target='_blank'>yes</a>
- -  *There is no 3D-printer available at this hackerspace* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:3dprinter' target='_blank'>service:3dprinter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:3dprinter%3Dno' target='_blank'>no</a>
- -  *There is a limited 3D-printer available at this hackerspace* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:3dprinter' target='_blank'>service:3dprinter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:3dprinter%3Dlimited' target='_blank'>limited</a>
- - _This option cannot be chosen as answer_
+
+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/hackerspace/3d_printer.svg' style='width: 3rem; height: 3rem'> *There is a 3D-printer available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:3dprinter' target='_blank'>service:3dprinter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:3dprinter%3Dyes' target='_blank'>yes</a>
+ -  *There is no 3D-printer available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:3dprinter' target='_blank'>service:3dprinter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:3dprinter%3Dno' target='_blank'>no</a>
+ -  *There is a limited 3D-printer available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:3dprinter' target='_blank'>service:3dprinter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:3dprinter%3Dlimited' target='_blank'>limited</a>. _This option cannot be chosen as answer_
+
+
 
 
 
@@ -255,10 +244,13 @@ The question is `Is a 3D-printer available at this hackerspace?`
 
 The question is `Is a laser cutter available at this hackerspace?`
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/hackerspace/lasercutter.svg' style='width: 3rem; height: 3rem'> *There is a laser cutter available at this hackerspace* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:lasercutter' target='_blank'>service:lasercutter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:lasercutter%3Dyes' target='_blank'>yes</a>
- -  *There is no laser cutter available at this hackerspace* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:lasercutter' target='_blank'>service:lasercutter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:lasercutter%3Dno' target='_blank'>no</a>
- -  *There is a limited laser cutter available at this hackerspace* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:lasercutter' target='_blank'>service:lasercutter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:lasercutter%3Dlimited' target='_blank'>limited</a>
- - _This option cannot be chosen as answer_
+
+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/hackerspace/lasercutter.svg' style='width: 3rem; height: 3rem'> *There is a laser cutter available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:lasercutter' target='_blank'>service:lasercutter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:lasercutter%3Dyes' target='_blank'>yes</a>
+ -  *There is no laser cutter available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:lasercutter' target='_blank'>service:lasercutter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:lasercutter%3Dno' target='_blank'>no</a>
+ -  *There is a limited laser cutter available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:lasercutter' target='_blank'>service:lasercutter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:lasercutter%3Dlimited' target='_blank'>limited</a>. _This option cannot be chosen as answer_
+
+
 
 
 
@@ -266,10 +258,13 @@ The question is `Is a laser cutter available at this hackerspace?`
 
 The question is `Is a CNC drill available at this hackerspace?`
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/hackerspace/cnc.svg' style='width: 3rem; height: 3rem'> *There is a CNC drill available at this hackerspace* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:cnc_drilling_machine' target='_blank'>service:cnc_drilling_machine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:cnc_drilling_machine%3Dyes' target='_blank'>yes</a>
- -  *There is no CNC drill available at this hackerspace* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:cnc_drilling_machine' target='_blank'>service:cnc_drilling_machine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:cnc_drilling_machine%3Dno' target='_blank'>no</a>
- -  *There is a limited CNC drill available at this hackerspace* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:cnc_drilling_machine' target='_blank'>service:cnc_drilling_machine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:cnc_drilling_machine%3Dlimited' target='_blank'>limited</a>
- - _This option cannot be chosen as answer_
+
+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/hackerspace/cnc.svg' style='width: 3rem; height: 3rem'> *There is a CNC drill available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:cnc_drilling_machine' target='_blank'>service:cnc_drilling_machine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:cnc_drilling_machine%3Dyes' target='_blank'>yes</a>
+ -  *There is no CNC drill available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:cnc_drilling_machine' target='_blank'>service:cnc_drilling_machine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:cnc_drilling_machine%3Dno' target='_blank'>no</a>
+ -  *There is a limited CNC drill available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:cnc_drilling_machine' target='_blank'>service:cnc_drilling_machine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:cnc_drilling_machine%3Dlimited' target='_blank'>limited</a>. _This option cannot be chosen as answer_
+
+
 
 
 
@@ -277,9 +272,13 @@ The question is `Is a CNC drill available at this hackerspace?`
 
 The question is `Is a multimedia studio available at this hackerspace?`
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/hackerspace/media_studio.svg' style='width: 3rem; height: 3rem'> *There is a multimedia studio available at this hackerspace* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:media_studio' target='_blank'>service:media_studio</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:media_studio%3Dyes' target='_blank'>yes</a>
- -  *There is no multimedia studio available at this hackerspace* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:media_studio' target='_blank'>service:media_studio</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:media_studio%3Dno' target='_blank'>no</a>
- -  *There is a limited multimedia studio available at this hackerspace* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:media_studio' target='_blank'>service:media_studio</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:media_studio%3Dlimited' target='_blank'>limited</a>
+
+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/hackerspace/media_studio.svg' style='width: 3rem; height: 3rem'> *There is a multimedia studio available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:media_studio' target='_blank'>service:media_studio</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:media_studio%3Dyes' target='_blank'>yes</a>
+ -  *There is no multimedia studio available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:media_studio' target='_blank'>service:media_studio</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:media_studio%3Dno' target='_blank'>no</a>
+ -  *There is a limited multimedia studio available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:media_studio' target='_blank'>service:media_studio</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:media_studio%3Dlimited' target='_blank'>limited</a>
+
+
 
 
 
@@ -287,10 +286,13 @@ The question is `Is a multimedia studio available at this hackerspace?`
 
 The question is `Is a sewing machine available at this hackerspace?`
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/hackerspace/sewing_machine.svg' style='width: 3rem; height: 3rem'> *There is a sewing machine available at this hackerspace* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:sewing_machine' target='_blank'>service:sewing_machine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:sewing_machine%3Dyes' target='_blank'>yes</a>
- -  *There is no sewing machine available at this hackerspace* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:sewing_machine' target='_blank'>service:sewing_machine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:sewing_machine%3Dno' target='_blank'>no</a>
- -  *There is a limited sewing machine available at this hackerspace* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:sewing_machine' target='_blank'>service:sewing_machine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:sewing_machine%3Dlimited' target='_blank'>limited</a>
- - _This option cannot be chosen as answer_
+
+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/hackerspace/sewing_machine.svg' style='width: 3rem; height: 3rem'> *There is a sewing machine available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:sewing_machine' target='_blank'>service:sewing_machine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:sewing_machine%3Dyes' target='_blank'>yes</a>
+ -  *There is no sewing machine available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:sewing_machine' target='_blank'>service:sewing_machine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:sewing_machine%3Dno' target='_blank'>no</a>
+ -  *There is a limited sewing machine available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:sewing_machine' target='_blank'>service:sewing_machine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:sewing_machine%3Dlimited' target='_blank'>limited</a>. _This option cannot be chosen as answer_
+
+
 
 
 
@@ -298,9 +300,13 @@ The question is `Is a sewing machine available at this hackerspace?`
 
 The question is `Is a woodworking workshop available at this hackerspace?`
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/hackerspace/woodworking.svg' style='width: 3rem; height: 3rem'> *There is a woodworking workshop available at this hackerspace* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:workshop:wood' target='_blank'>service:workshop:wood</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:workshop:wood%3Dyes' target='_blank'>yes</a>
- -  *There is no woodworking workshop available at this hackerspace* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:workshop:wood' target='_blank'>service:workshop:wood</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:workshop:wood%3Dno' target='_blank'>no</a>
- -  *There is a limited woodworking workshop available at this hackerspace* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:workshop:wood' target='_blank'>service:workshop:wood</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:workshop:wood%3Dlimited' target='_blank'>limited</a>
+
+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/hackerspace/woodworking.svg' style='width: 3rem; height: 3rem'> *There is a woodworking workshop available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:workshop:wood' target='_blank'>service:workshop:wood</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:workshop:wood%3Dyes' target='_blank'>yes</a>
+ -  *There is no woodworking workshop available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:workshop:wood' target='_blank'>service:workshop:wood</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:workshop:wood%3Dno' target='_blank'>no</a>
+ -  *There is a limited woodworking workshop available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:workshop:wood' target='_blank'>service:workshop:wood</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:workshop:wood%3Dlimited' target='_blank'>limited</a>
+
+
 
 
 
@@ -308,9 +314,13 @@ The question is `Is a woodworking workshop available at this hackerspace?`
 
 The question is `Is a ceramics workshop available at this hackerspace?`
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/hackerspace/ceramics.svg' style='width: 3rem; height: 3rem'> *There is a ceramics workshop available at this hackerspace* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:workshop:ceramics' target='_blank'>service:workshop:ceramics</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:workshop:ceramics%3Dyes' target='_blank'>yes</a>
- -  *There is no ceramics workshop available at this hackerspace* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:workshop:ceramics' target='_blank'>service:workshop:ceramics</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:workshop:ceramics%3Dno' target='_blank'>no</a>
- -  *There is a limited ceramics workshop available at this hackerspace* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:workshop:ceramics' target='_blank'>service:workshop:ceramics</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:workshop:ceramics%3Dlimited' target='_blank'>limited</a>
+
+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/hackerspace/ceramics.svg' style='width: 3rem; height: 3rem'> *There is a ceramics workshop available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:workshop:ceramics' target='_blank'>service:workshop:ceramics</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:workshop:ceramics%3Dyes' target='_blank'>yes</a>
+ -  *There is no ceramics workshop available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:workshop:ceramics' target='_blank'>service:workshop:ceramics</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:workshop:ceramics%3Dno' target='_blank'>no</a>
+ -  *There is a limited ceramics workshop available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:workshop:ceramics' target='_blank'>service:workshop:ceramics</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:workshop:ceramics%3Dlimited' target='_blank'>limited</a>
+
+
 
 
 
@@ -318,9 +328,13 @@ The question is `Is a ceramics workshop available at this hackerspace?`
 
 The question is `Is a metal workshop available at this hackerspace?`
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/hackerspace/metal.svg' style='width: 3rem; height: 3rem'> *There is a metal workshop available at this hackerspace* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:workshop:metal' target='_blank'>service:workshop:metal</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:workshop:metal%3Dyes' target='_blank'>yes</a>
- -  *There is no metal workshop available at this hackerspace* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:workshop:metal' target='_blank'>service:workshop:metal</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:workshop:metal%3Dno' target='_blank'>no</a>
- -  *There is a limited metal workshop available at this hackerspace* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:workshop:metal' target='_blank'>service:workshop:metal</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:workshop:metal%3Dlimited' target='_blank'>limited</a>
+
+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/hackerspace/metal.svg' style='width: 3rem; height: 3rem'> *There is a metal workshop available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:workshop:metal' target='_blank'>service:workshop:metal</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:workshop:metal%3Dyes' target='_blank'>yes</a>
+ -  *There is no metal workshop available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:workshop:metal' target='_blank'>service:workshop:metal</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:workshop:metal%3Dno' target='_blank'>no</a>
+ -  *There is a limited metal workshop available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:workshop:metal' target='_blank'>service:workshop:metal</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:workshop:metal%3Dlimited' target='_blank'>limited</a>
+
+
 
 
 
@@ -328,9 +342,13 @@ The question is `Is a metal workshop available at this hackerspace?`
 
 The question is `Is a bicycle repair workshop available at this hackerspace?`
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/hackerspace/bicycle.svg' style='width: 3rem; height: 3rem'> *There is a bicycle repair workshop available at this hackerspace* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:diy' target='_blank'>service:bicycle:diy</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Dyes' target='_blank'>yes</a>
- -  *There is no bicycle repair workshop available at this hackerspace* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:diy' target='_blank'>service:bicycle:diy</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Dno' target='_blank'>no</a>
- -  *There is a limited bicycle repair workshop available at this hackerspace* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:diy' target='_blank'>service:bicycle:diy</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Dlimited' target='_blank'>limited</a>
+
+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/hackerspace/bicycle.svg' style='width: 3rem; height: 3rem'> *There is a bicycle repair workshop available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:diy' target='_blank'>service:bicycle:diy</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Dyes' target='_blank'>yes</a>
+ -  *There is no bicycle repair workshop available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:diy' target='_blank'>service:bicycle:diy</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Dno' target='_blank'>no</a>
+ -  *There is a limited bicycle repair workshop available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:diy' target='_blank'>service:bicycle:diy</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Dlimited' target='_blank'>limited</a>
+
+
 
 
 
@@ -338,10 +356,14 @@ The question is `Is a bicycle repair workshop available at this hackerspace?`
 
 The question is `Is this place accessible with a wheelchair?`
 
- -  *This place is specially adapted for wheelchair users* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Ddesignated' target='_blank'>designated</a>
- -  *This place is easily reachable with a wheelchair* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes' target='_blank'>yes</a>
- -  *It is possible to reach this place in a wheelchair, but it is not easy* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dlimited' target='_blank'>limited</a>
- -  *This place is not reachable with a wheelchair* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dno' target='_blank'>no</a>
+
+
+ -  *This place is specially adapted for wheelchair users* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Ddesignated' target='_blank'>designated</a>
+ -  *This place is easily reachable with a wheelchair* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes' target='_blank'>yes</a>
+ -  *It is possible to reach this place in a wheelchair, but it is not easy* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dlimited' target='_blank'>limited</a>
+ -  *This place is not reachable with a wheelchair* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dno' target='_blank'>no</a>
+
+
 
 
 
@@ -349,17 +371,19 @@ The question is `Is this place accessible with a wheelchair?`
 
 The question is `Does this hackerspace serve Club-Mate?`
 
- -  *This hackerspace serves Club-Mate* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:drink:club-mate' target='_blank'>drink:club-mate</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:drink:club-mate%3Dyes' target='_blank'>yes</a>
- -  *This hackerspace does not serve Club-Mate* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:drink:club-mate' target='_blank'>drink:club-mate</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:drink:club-mate%3Dno' target='_blank'>no</a>
+
+
+ -  *This hackerspace serves Club-Mate* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:drink:club-mate' target='_blank'>drink:club-mate</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:drink:club-mate%3Dyes' target='_blank'>yes</a>
+ -  *This hackerspace does not serve Club-Mate* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:drink:club-mate' target='_blank'>drink:club-mate</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:drink:club-mate%3Dno' target='_blank'>no</a>
+
+
 
 
 
 ### hackerspaces-start_date
 
 The question is `When was this hackerspace founded?`
-This rendering asks information about the property 
-[start_date](https://wiki.openstreetmap.org/wiki/Key:start_date)
-This is rendered with `This hackerspace was founded at {start_date}`
+*This hackerspace was founded at {start_date}* is shown if `start_date` is set
 
 
 
@@ -368,12 +392,15 @@ This is rendered with `This hackerspace was founded at {start_date}`
 
 The question is `Does this place offer internet access?`
 
- -  *This place offers wireless internet access* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwlan' target='_blank'>wlan</a>
- -  *This place <b>does not</b> offer internet access* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dno' target='_blank'>no</a>
- -  *This place offers internet access* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dyes' target='_blank'>yes</a>
- - _This option cannot be chosen as answer_
- -  *This place offers internet access via a terminal or computer* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dterminal' target='_blank'>terminal</a>
- -  *This place offers wired internet access* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwired' target='_blank'>wired</a>
+
+
+ -  *This place offers wireless internet access* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwlan' target='_blank'>wlan</a>
+ -  *This place <b>does not</b> offer internet access* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dno' target='_blank'>no</a>
+ -  *This place offers internet access* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dyes' target='_blank'>yes</a>. _This option cannot be chosen as answer_
+ -  *This place offers internet access via a terminal or computer* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dterminal' target='_blank'>terminal</a>
+ -  *This place offers wired internet access* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwired' target='_blank'>wired</a>
+
+
 
 This tagrendering has labels 
 `internet-all`
@@ -382,9 +409,13 @@ This tagrendering has labels
 
 The question is `Is there a fee for internet access?`
 
- -  *There is a fee for the internet access at this place* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:fee' target='_blank'>internet_access:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dyes' target='_blank'>yes</a>
- -  *Internet access is free at this place* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:fee' target='_blank'>internet_access:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dno' target='_blank'>no</a>
- -  *Internet access is free at this place, for customers only* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:fee' target='_blank'>internet_access:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dcustomers' target='_blank'>customers</a>
+
+
+ -  *There is a fee for the internet access at this place* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:fee' target='_blank'>internet_access:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dyes' target='_blank'>yes</a>
+ -  *Internet access is free at this place* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:fee' target='_blank'>internet_access:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dno' target='_blank'>no</a>
+ -  *Internet access is free at this place, for customers only* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:fee' target='_blank'>internet_access:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dcustomers' target='_blank'>customers</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: internet_access!=no & internet_access~.+
 This tagrendering has labels 
 `internet-all`
@@ -392,10 +423,12 @@ This tagrendering has labels
 ### internet-ssid
 
 The question is `What is the network name for the wireless internet access?`
-This rendering asks information about the property 
-[internet_access:ssid](https://wiki.openstreetmap.org/wiki/Key:internet_access:ssid)
-This is rendered with `The network name is <b>{internet_access:ssid}</b>`
- -  *Telekom* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:ssid' target='_blank'>internet_access:ssid</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:ssid%3DTelekom' target='_blank'>Telekom</a>
+*The network name is <b>{internet_access:ssid}</b>* is shown if `internet_access:ssid` is set
+
+
+ -  *Telekom* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:ssid' target='_blank'>internet_access:ssid</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:ssid%3DTelekom' target='_blank'>Telekom</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwlan' target='_blank'>wlan</a>
 This tagrendering has labels 
 `internet-all`
@@ -403,32 +436,15 @@ This tagrendering has labels
 ### questions
 Show the questions block at this location
 _This tagrendering has no question and is thus read-only_
+*{questions()}*
 
 
 
-
-
-### minimap
-Shows a small map with the feature. Added by default to every popup
-_This tagrendering has no question and is thus read-only_
-
-
-
-
-
-### nearby_images
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default_conditional`
 
 ### move-button
 
 _This tagrendering has no question and is thus read-only_
-
+*{move_button()}*
 
 
 
@@ -436,7 +452,7 @@ _This tagrendering has no question and is thus read-only_
 ### delete-button
 
 _This tagrendering has no question and is thus read-only_
-
+*{delete_button()}*
 
 
 
@@ -444,52 +460,16 @@ _This tagrendering has no question and is thus read-only_
 ### lod
 
 _This tagrendering has no question and is thus read-only_
+*{linked_data_from_website()}*
 
 
-
-This tagrendering has labels 
-`added_by_default`
-
-### favourite_status
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### share
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### qr_code
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### last_edit
-Gives some metainfo about the last edit and who did edit it - rendering only
-_This tagrendering has no question and is thus read-only_
-
-
-This tagrendering is only visible in the popup if the following condition is met: _last_edit:changeset~.+ & _last_edit:contributor~.+
 This tagrendering has labels 
 `added_by_default`
 
 ### all-tags
 
 _This tagrendering has no question and is thus read-only_
-
+*{all_tags()}*
 
 
 

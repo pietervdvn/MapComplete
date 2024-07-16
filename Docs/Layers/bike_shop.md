@@ -3,21 +3,24 @@
 # bike_shop
 
 
-[object Object]
+
 
 A shop specifically selling bicycles or related items
 
 
 
 
+
+
  - This layer is shown at zoomlevel **13** and higher
+
+
+
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
 2. [Basic tags for this layer](#basic-tags-for-this-layer)
 3. [Supported attributes](#supported-attributes)
-  - [just_created](#just_created)
-  - [nothing_known](#nothing_known)
   - [images](#images)
   - [bike_shop-is-bicycle_shop](#bike_shop-is-bicycle_shop)
   - [bike_shop-name](#bike_shop-name)
@@ -25,6 +28,7 @@ A shop specifically selling bicycles or related items
   - [phone](#phone)
   - [email](#email)
   - [opening_hours](#opening_hours)
+  - [Opening hours](#opening-hours)
   - [bike_shop-access](#bike_shop-access)
   - [bike_repair_sells-bikes](#bike_repair_sells-bikes)
   - [bike_repair_repairs-bikes](#bike_repair_repairs-bikes)
@@ -44,22 +48,20 @@ A shop specifically selling bicycles or related items
   - [bike_cleaning-service:bicycle:cleaning:charge](#bike_cleaning-servicebicycle:cleaning:charge)
   - [description](#description)
   - [leftover-questions](#leftover-questions)
-  - [minimap](#minimap)
-  - [nearby_images](#nearby_images)
   - [move-button](#move-button)
   - [delete-button](#delete-button)
   - [lod](#lod)
-  - [favourite_status](#favourite_status)
-  - [share](#share)
-  - [qr_code](#qr_code)
-  - [last_edit](#last_edit)
   - [all-tags](#all-tags)
-    + [Filters](#filters)
+4. [Filters](#filters)
 
 ## Themes using this layer
 
+
+
  - [cyclofix](https://mapcomplete.org/cyclofix)
  - [personal](https://mapcomplete.org/personal)
+
+
 
 ## Basic tags for this layer
 
@@ -76,57 +78,38 @@ Elements must match **any** of the following expressions:
 
 | attribute | type | values which are supported by this layer |
 -----|-----|----- |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/id#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/shop#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice | [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/name#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [string](../SpecialInputElements.md#string) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/website#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [url](../SpecialInputElements.md#url) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/phone#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [phone](../SpecialInputElements.md#phone) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/email#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [email](../SpecialInputElements.md#email) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/opening_hours#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [opening_hours](../SpecialInputElements.md#opening_hours) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/access#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [string](../SpecialInputElements.md#string) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:bicycle:retail#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice | [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:bicycle:repair#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice | [object Object] [object Object] [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:bicycle:rental#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice | [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/rental#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [string](../SpecialInputElements.md#string) | [object Object] [object Object] [object Object] [object Object] [object Object] [object Object] [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/capacity:city_bike#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pnat](../SpecialInputElements.md#pnat) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/capacity:ebike#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pnat](../SpecialInputElements.md#pnat) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/capacity:kid_bike#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pnat](../SpecialInputElements.md#pnat) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/capacity:bmx#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pnat](../SpecialInputElements.md#pnat) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/capacity:mtb#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pnat](../SpecialInputElements.md#pnat) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/capacity:bicycle_pannier#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pnat](../SpecialInputElements.md#pnat) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/capacity:tandem_bicycle#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pnat](../SpecialInputElements.md#pnat) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:bicycle:second_hand#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice | [object Object] [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:bicycle:pump#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice | [object Object] [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:bicycle:diy#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice | [object Object] [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:bicycle:cleaning#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice | [object Object] [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:bicycle:cleaning:charge#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [string](../SpecialInputElements.md#string) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/description#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [string](../SpecialInputElements.md#string) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/shop#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/shop/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [shop](https://wiki.openstreetmap.org/wiki/Key:shop) | Multiple choice | [rental](https://wiki.openstreetmap.org/wiki/Tag:shop%3Drental) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/name#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/name/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [name](https://wiki.openstreetmap.org/wiki/Key:name) | [string](../SpecialInputElements.md#string) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/website#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/website/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [website](https://wiki.openstreetmap.org/wiki/Key:website) | [url](../SpecialInputElements.md#url) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/phone#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/phone/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [phone](https://wiki.openstreetmap.org/wiki/Key:phone) | [phone](../SpecialInputElements.md#phone) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/email#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/email/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [email](https://wiki.openstreetmap.org/wiki/Key:email) | [email](../SpecialInputElements.md#email) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/opening_hours#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/opening_hours/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/access#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/access/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [access](https://wiki.openstreetmap.org/wiki/Key:access) | [string](../SpecialInputElements.md#string) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:bicycle:retail#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/service%3Abicycle%3Aretail/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [service:bicycle:retail](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:retail) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:retail%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:retail%3Dno) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:bicycle:repair#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/service%3Abicycle%3Arepair/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [service:bicycle:repair](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:repair) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Dno) [only_sold](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Donly_sold) [brand](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Dbrand) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:bicycle:rental#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/service%3Abicycle%3Arental/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [service:bicycle:rental](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:rental) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:rental%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:rental%3Dno) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/rental#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/rental/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [rental](https://wiki.openstreetmap.org/wiki/Key:rental) | [string](../SpecialInputElements.md#string) | [city_bike](https://wiki.openstreetmap.org/wiki/Tag:rental%3Dcity_bike) [ebike](https://wiki.openstreetmap.org/wiki/Tag:rental%3Debike) [bmx](https://wiki.openstreetmap.org/wiki/Tag:rental%3Dbmx) [mtb](https://wiki.openstreetmap.org/wiki/Tag:rental%3Dmtb) [kid_bike](https://wiki.openstreetmap.org/wiki/Tag:rental%3Dkid_bike) [tandem](https://wiki.openstreetmap.org/wiki/Tag:rental%3Dtandem) [racebike](https://wiki.openstreetmap.org/wiki/Tag:rental%3Dracebike) [bike_helmet](https://wiki.openstreetmap.org/wiki/Tag:rental%3Dbike_helmet) [cargo_bike](https://wiki.openstreetmap.org/wiki/Tag:rental%3Dcargo_bike) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/capacity:city_bike#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/capacity%3Acity_bike/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [capacity:city_bike](https://wiki.openstreetmap.org/wiki/Key:capacity:city_bike) | [pnat](../SpecialInputElements.md#pnat) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/capacity:ebike#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/capacity%3Aebike/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [capacity:ebike](https://wiki.openstreetmap.org/wiki/Key:capacity:ebike) | [pnat](../SpecialInputElements.md#pnat) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/capacity:kid_bike#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/capacity%3Akid_bike/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [capacity:kid_bike](https://wiki.openstreetmap.org/wiki/Key:capacity:kid_bike) | [pnat](../SpecialInputElements.md#pnat) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/capacity:bmx#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/capacity%3Abmx/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [capacity:bmx](https://wiki.openstreetmap.org/wiki/Key:capacity:bmx) | [pnat](../SpecialInputElements.md#pnat) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/capacity:mtb#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/capacity%3Amtb/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [capacity:mtb](https://wiki.openstreetmap.org/wiki/Key:capacity:mtb) | [pnat](../SpecialInputElements.md#pnat) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/capacity:bicycle_pannier#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/capacity%3Abicycle_pannier/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [capacity:bicycle_pannier](https://wiki.openstreetmap.org/wiki/Key:capacity:bicycle_pannier) | [pnat](../SpecialInputElements.md#pnat) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/capacity:tandem_bicycle#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/capacity%3Atandem_bicycle/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [capacity:tandem_bicycle](https://wiki.openstreetmap.org/wiki/Key:capacity:tandem_bicycle) | [pnat](../SpecialInputElements.md#pnat) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:bicycle:second_hand#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/service%3Abicycle%3Asecond_hand/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [service:bicycle:second_hand](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:second_hand) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:second_hand%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:second_hand%3Dno) [only](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:second_hand%3Donly) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:bicycle:pump#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/service%3Abicycle%3Apump/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [service:bicycle:pump](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dno) [separate](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dseparate) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:bicycle:diy#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/service%3Abicycle%3Adiy/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [service:bicycle:diy](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:diy) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Dno) [only_sold](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Donly_sold) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:bicycle:cleaning#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/service%3Abicycle%3Acleaning/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [service:bicycle:cleaning](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:cleaning) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:cleaning%3Dyes) [diy](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:cleaning%3Ddiy) [no](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:cleaning%3Dno) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:bicycle:cleaning:charge#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/service%3Abicycle%3Acleaning%3Acharge/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [service:bicycle:cleaning:charge](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:cleaning:charge) | [string](../SpecialInputElements.md#string) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/description#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/description/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [description](https://wiki.openstreetmap.org/wiki/Key:description) | [string](../SpecialInputElements.md#string) |  |
 
 
 
-
-### just_created
-This element shows a 'thank you' that the contributor has recently created this element
-_This tagrendering has no question and is thus read-only_
-
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/party.svg' style='width: 3rem; height: 3rem'> *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
-This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
-This tagrendering has labels 
-`added_by_default_top`
-
-### nothing_known
-
-_This tagrendering has no question and is thus read-only_
-
-
-This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time>=300 & _backend~.+
-This tagrendering has labels 
-`added_by_default_top`
 
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
-
+*{image_carousel()}{image_upload()}*
 
 
 
@@ -134,17 +117,19 @@ _This tagrendering has no question and is thus read-only_
 ### bike_shop-is-bicycle_shop
 
 _This tagrendering has no question and is thus read-only_
+*This shop is specialized in selling {shop} and does bicycle related activities*
 
- -  *This business focuses on rental* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Drental' target='_blank'>rental</a>
+
+ -  *This business focuses on rental* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Drental' target='_blank'>rental</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: shop~.+ & shop!~^(bicycle)$ & shop!~^(sports)$
 
 
 ### bike_shop-name
 
 The question is `What is the name of this bicycle shop?`
-This rendering asks information about the property 
-[name](https://wiki.openstreetmap.org/wiki/Key:name)
-This is rendered with `This bicycle shop is called {name}`
+*This bicycle shop is called {name}* is shown if `name` is set
 
 
 
@@ -152,11 +137,12 @@ This is rendered with `This bicycle shop is called {name}`
 ### website
 
 The question is `What is the website of {title()}?`
-This rendering asks information about the property 
-[website](https://wiki.openstreetmap.org/wiki/Key:website)
-This is rendered with `<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>`
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/icons/website.svg' style='width: 3rem; height: 3rem'> *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>* corresponds with contact:website~.+
- - _This option cannot be chosen as answer_
+*<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>* is shown if `website` is set
+
+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/icons/website.svg' style='width: 3rem; height: 3rem'> *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>* is shown if with contact:website~.+. _This option cannot be chosen as answer_
+
+
 
 This tagrendering has labels 
 `contact`
@@ -164,11 +150,12 @@ This tagrendering has labels
 ### phone
 
 The question is `What is the phone number of {title()}?`
-This rendering asks information about the property 
-[phone](https://wiki.openstreetmap.org/wiki/Key:phone)
-This is rendered with `<a href='tel:{phone}'>{phone}</a>`
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/phone.svg' style='width: 3rem; height: 3rem'> *<a href='tel:{contact:phone}'>{contact:phone}</a>* corresponds with contact:phone~.+
- - _This option cannot be chosen as answer_
+*<a href='tel:{phone}'>{phone}</a>* is shown if `phone` is set
+
+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/phone.svg' style='width: 3rem; height: 3rem'> *<a href='tel:{contact:phone}'>{contact:phone}</a>* is shown if with contact:phone~.+. _This option cannot be chosen as answer_
+
+
 
 This tagrendering has labels 
 `contact`
@@ -176,13 +163,13 @@ This tagrendering has labels
 ### email
 
 The question is `What is the email address of {title()}?`
-This rendering asks information about the property 
-[email](https://wiki.openstreetmap.org/wiki/Key:email)
-This is rendered with `<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>`
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/envelope.svg' style='width: 3rem; height: 3rem'> *<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>* corresponds with contact:email~.+
- - _This option cannot be chosen as answer_
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/envelope.svg' style='width: 3rem; height: 3rem'> *<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>* corresponds with operator:email~.+
- - _This option cannot be chosen as answer_
+*<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>* is shown if `email` is set
+
+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/envelope.svg' style='width: 3rem; height: 3rem'> *<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>* is shown if with contact:email~.+. _This option cannot be chosen as answer_
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/envelope.svg' style='width: 3rem; height: 3rem'> *<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>* is shown if with operator:email~.+. _This option cannot be chosen as answer_
+
+
 
 This tagrendering has labels 
 `contact`
@@ -190,20 +177,19 @@ This tagrendering has labels
 ### opening_hours
 
 The question is `What are the opening hours of {title()}?`
-This rendering asks information about the property 
-[opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours)
-This is rendered with `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
- -  *Marked as closed for an unspecified time* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>
- - _This option cannot be chosen as answer_
+*<h3>Opening hours</h3>{opening_hours_table(opening_hours)}* is shown if `opening_hours` is set
+
+
+ -  *Marked as closed for an unspecified time* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>. _This option cannot be chosen as answer_
+
+
 
 
 
 ### bike_shop-access
 
 _This tagrendering has no question and is thus read-only_
-This rendering asks information about the property 
-[access](https://wiki.openstreetmap.org/wiki/Key:access)
-This is rendered with `Only accessible to {access}`
+*Only accessible to {access}* is shown if `access` is set
 
 
 
@@ -212,8 +198,12 @@ This is rendered with `Only accessible to {access}`
 
 The question is `Does this shop sell bikes?`
 
- -  *This shop sells bikes* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:retail' target='_blank'>service:bicycle:retail</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:retail%3Dyes' target='_blank'>yes</a>
- -  *This shop doesn't sell bikes* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:retail' target='_blank'>service:bicycle:retail</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:retail%3Dno' target='_blank'>no</a>
+
+
+ -  *This shop sells bikes* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:retail' target='_blank'>service:bicycle:retail</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:retail%3Dyes' target='_blank'>yes</a>
+ -  *This shop doesn't sell bikes* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:retail' target='_blank'>service:bicycle:retail</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:retail%3Dno' target='_blank'>no</a>
+
+
 
 
 
@@ -221,10 +211,14 @@ The question is `Does this shop sell bikes?`
 
 The question is `Does this shop repair bikes?`
 
- -  *This shop repairs bikes* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:repair' target='_blank'>service:bicycle:repair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Dyes' target='_blank'>yes</a>
- -  *This shop doesn't repair bikes* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:repair' target='_blank'>service:bicycle:repair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Dno' target='_blank'>no</a>
- -  *This shop only repairs bikes bought here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:repair' target='_blank'>service:bicycle:repair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Donly_sold' target='_blank'>only_sold</a>
- -  *This shop only repairs bikes of a certain brand* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:repair' target='_blank'>service:bicycle:repair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Dbrand' target='_blank'>brand</a>
+
+
+ -  *This shop repairs bikes* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:repair' target='_blank'>service:bicycle:repair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Dyes' target='_blank'>yes</a>
+ -  *This shop doesn't repair bikes* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:repair' target='_blank'>service:bicycle:repair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Dno' target='_blank'>no</a>
+ -  *This shop only repairs bikes bought here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:repair' target='_blank'>service:bicycle:repair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Donly_sold' target='_blank'>only_sold</a>
+ -  *This shop only repairs bikes of a certain brand* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:repair' target='_blank'>service:bicycle:repair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Dbrand' target='_blank'>brand</a>
+
+
 
 
 
@@ -232,25 +226,32 @@ The question is `Does this shop repair bikes?`
 
 The question is `Does this shop rent out bikes?`
 
- -  *This shop rents out bikes* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:rental' target='_blank'>service:bicycle:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:rental%3Dyes' target='_blank'>yes</a>
- -  *This shop doesn't rent out bikes* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:rental' target='_blank'>service:bicycle:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:rental%3Dno' target='_blank'>no</a>
+
+
+ -  *This shop rents out bikes* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:rental' target='_blank'>service:bicycle:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:rental%3Dyes' target='_blank'>yes</a>
+ -  *This shop doesn't rent out bikes* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:rental' target='_blank'>service:bicycle:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:rental%3Dno' target='_blank'>no</a>
+
+
 
 
 
 ### bicycle-types
 
 The question is `What kind of bicycles and accessories are rented here?`
-This rendering asks information about the property 
-[rental](https://wiki.openstreetmap.org/wiki/Key:rental)
-This is rendered with `{rental} is rented here`
- -  *Normal city bikes can be rented here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dcity_bike' target='_blank'>city_bike</a>
- -  *Electrical bikes can be rented here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Debike' target='_blank'>ebike</a>
- -  *BMX bikes can be rented here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dbmx' target='_blank'>bmx</a>
- -  *Mountainbikes can be rented here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dmtb' target='_blank'>mtb</a>
- -  *Bikes for children can be rented here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dkid_bike' target='_blank'>kid_bike</a>
- -  *Tandem bicycles can be rented here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dtandem' target='_blank'>tandem</a>
- -  *Race bicycles can be rented here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dracebike' target='_blank'>racebike</a>
- -  *Bike helmets can be rented here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dbike_helmet' target='_blank'>bike_helmet</a>
+*{rental} is rented here* is shown if `rental` is set
+
+
+ -  *Normal city bikes can be rented here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dcity_bike' target='_blank'>city_bike</a>
+ -  *Electrical bikes can be rented here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Debike' target='_blank'>ebike</a>
+ -  *BMX bikes can be rented here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dbmx' target='_blank'>bmx</a>
+ -  *Mountainbikes can be rented here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dmtb' target='_blank'>mtb</a>
+ -  *Bikes for children can be rented here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dkid_bike' target='_blank'>kid_bike</a>
+ -  *Tandem bicycles can be rented here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dtandem' target='_blank'>tandem</a>
+ -  *Race bicycles can be rented here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dracebike' target='_blank'>racebike</a>
+ -  *Bike helmets can be rented here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dbike_helmet' target='_blank'>bike_helmet</a>
+ -  *Cargo bikes can be rented here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dcargo_bike' target='_blank'>cargo_bike</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:rental' target='_blank'>service:bicycle:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:rental%3Dyes' target='_blank'>yes</a>
 This tagrendering has labels 
 `bicycle_rental`
@@ -258,9 +259,7 @@ This tagrendering has labels
 ### rental-capacity-city_bike
 
 The question is `How many city bikes can be rented here?`
-This rendering asks information about the property 
-[capacity:city_bike](https://wiki.openstreetmap.org/wiki/Key:capacity:city_bike)
-This is rendered with `{capacity:city_bike} city bikes can be rented here`
+*{capacity:city_bike} city bikes can be rented here* is shown if `capacity:city_bike` is set
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:rental' target='_blank'>service:bicycle:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:rental%3Dyes' target='_blank'>yes</a> & rental~^(.*city_bike.*)$
 This tagrendering has labels 
@@ -269,9 +268,7 @@ This tagrendering has labels
 ### rental-capacity-ebike
 
 The question is `How many electrical bikes can be rented here?`
-This rendering asks information about the property 
-[capacity:ebike](https://wiki.openstreetmap.org/wiki/Key:capacity:ebike)
-This is rendered with `{capacity:ebike} electrical bikes can be rented here`
+*{capacity:ebike} electrical bikes can be rented here* is shown if `capacity:ebike` is set
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:rental' target='_blank'>service:bicycle:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:rental%3Dyes' target='_blank'>yes</a> & rental~^(.*ebike.*)$
 This tagrendering has labels 
@@ -280,9 +277,7 @@ This tagrendering has labels
 ### rental-capacity-kid_bike
 
 The question is `How many bikes for children can be rented here?`
-This rendering asks information about the property 
-[capacity:kid_bike](https://wiki.openstreetmap.org/wiki/Key:capacity:kid_bike)
-This is rendered with `{capacity:kid_bike} bikes for children can be rented here`
+*{capacity:kid_bike} bikes for children can be rented here* is shown if `capacity:kid_bike` is set
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:rental' target='_blank'>service:bicycle:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:rental%3Dyes' target='_blank'>yes</a> & rental~^(.*kid_bike.*)$
 This tagrendering has labels 
@@ -291,9 +286,7 @@ This tagrendering has labels
 ### rental-capacity-bmx
 
 The question is `How many BMX bikes can be rented here?`
-This rendering asks information about the property 
-[capacity:bmx](https://wiki.openstreetmap.org/wiki/Key:capacity:bmx)
-This is rendered with `{capacity:bmx} BMX bikes can be rented here`
+*{capacity:bmx} BMX bikes can be rented here* is shown if `capacity:bmx` is set
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:rental' target='_blank'>service:bicycle:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:rental%3Dyes' target='_blank'>yes</a> & rental~^(.*bmx.*)$
 This tagrendering has labels 
@@ -302,9 +295,7 @@ This tagrendering has labels
 ### rental-capacity-mtb
 
 The question is `How many mountainbikes can be rented here?`
-This rendering asks information about the property 
-[capacity:mtb](https://wiki.openstreetmap.org/wiki/Key:capacity:mtb)
-This is rendered with `{capacity:mtb} mountainbikes can be rented here`
+*{capacity:mtb} mountainbikes can be rented here* is shown if `capacity:mtb` is set
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:rental' target='_blank'>service:bicycle:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:rental%3Dyes' target='_blank'>yes</a> & rental~^(.*mtb.*)$
 This tagrendering has labels 
@@ -313,9 +304,7 @@ This tagrendering has labels
 ### rental-capacity-bicycle_pannier
 
 The question is `How many bicycle panniers can be rented here?`
-This rendering asks information about the property 
-[capacity:bicycle_pannier](https://wiki.openstreetmap.org/wiki/Key:capacity:bicycle_pannier)
-This is rendered with `{capacity:bicycle_pannier} bicycle panniers can be rented here`
+*{capacity:bicycle_pannier} bicycle panniers can be rented here* is shown if `capacity:bicycle_pannier` is set
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:rental' target='_blank'>service:bicycle:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:rental%3Dyes' target='_blank'>yes</a> & rental~^(.*bicycle_pannier.*)$
 This tagrendering has labels 
@@ -324,9 +313,7 @@ This tagrendering has labels
 ### rental-capacity-tandem_bicycle
 
 The question is `How many tandem can be rented here?`
-This rendering asks information about the property 
-[capacity:tandem_bicycle](https://wiki.openstreetmap.org/wiki/Key:capacity:tandem_bicycle)
-This is rendered with `{capacity:tandem_bicycle} tandem can be rented here`
+*{capacity:tandem_bicycle} tandem can be rented here* is shown if `capacity:tandem_bicycle` is set
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:rental' target='_blank'>service:bicycle:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:rental%3Dyes' target='_blank'>yes</a> & rental~^(.*tandem_bicycle.*)$
 This tagrendering has labels 
@@ -336,9 +323,13 @@ This tagrendering has labels
 
 The question is `Does this shop sell second-hand bikes?`
 
- -  *This shop sells second-hand bikes* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:second_hand' target='_blank'>service:bicycle:second_hand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:second_hand%3Dyes' target='_blank'>yes</a>
- -  *This shop doesn't sell second-hand bikes* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:second_hand' target='_blank'>service:bicycle:second_hand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:second_hand%3Dno' target='_blank'>no</a>
- -  *This shop only sells second-hand bikes* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:second_hand' target='_blank'>service:bicycle:second_hand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:second_hand%3Donly' target='_blank'>only</a>
+
+
+ -  *This shop sells second-hand bikes* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:second_hand' target='_blank'>service:bicycle:second_hand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:second_hand%3Dyes' target='_blank'>yes</a>
+ -  *This shop doesn't sell second-hand bikes* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:second_hand' target='_blank'>service:bicycle:second_hand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:second_hand%3Dno' target='_blank'>no</a>
+ -  *This shop only sells second-hand bikes* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:second_hand' target='_blank'>service:bicycle:second_hand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:second_hand%3Donly' target='_blank'>only</a>
+
+
 
 
 
@@ -346,9 +337,13 @@ The question is `Does this shop sell second-hand bikes?`
 
 The question is `Does this shop offer a bike pump for use by anyone?`
 
- -  *This shop offers a bike pump for anyone* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump' target='_blank'>service:bicycle:pump</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dyes' target='_blank'>yes</a>
- -  *This shop doesn't offer a bike pump for anyone* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump' target='_blank'>service:bicycle:pump</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dno' target='_blank'>no</a>
- -  *There is bicycle pump, it is shown as a separate point* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump' target='_blank'>service:bicycle:pump</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dseparate' target='_blank'>separate</a>
+
+
+ -  *This shop offers a bike pump for anyone* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump' target='_blank'>service:bicycle:pump</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dyes' target='_blank'>yes</a>
+ -  *This shop doesn't offer a bike pump for anyone* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump' target='_blank'>service:bicycle:pump</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dno' target='_blank'>no</a>
+ -  *There is bicycle pump, it is shown as a separate point* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump' target='_blank'>service:bicycle:pump</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dseparate' target='_blank'>separate</a>
+
+
 
 
 
@@ -356,9 +351,13 @@ The question is `Does this shop offer a bike pump for use by anyone?`
 
 The question is `Are there tools here to repair your own bike?`
 
- -  *This shop offers tools for DIY repair* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:diy' target='_blank'>service:bicycle:diy</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Dyes' target='_blank'>yes</a>
- -  *This shop doesn't offer tools for DIY repair* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:diy' target='_blank'>service:bicycle:diy</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Dno' target='_blank'>no</a>
- -  *Tools for DIY repair are only available if you bought/hire the bike in the shop* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:diy' target='_blank'>service:bicycle:diy</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Donly_sold' target='_blank'>only_sold</a>
+
+
+ -  *This shop offers tools for DIY repair* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:diy' target='_blank'>service:bicycle:diy</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Dyes' target='_blank'>yes</a>
+ -  *This shop doesn't offer tools for DIY repair* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:diy' target='_blank'>service:bicycle:diy</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Dno' target='_blank'>no</a>
+ -  *Tools for DIY repair are only available if you bought/hire the bike in the shop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:diy' target='_blank'>service:bicycle:diy</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Donly_sold' target='_blank'>only_sold</a>
+
+
 
 
 
@@ -366,30 +365,33 @@ The question is `Are there tools here to repair your own bike?`
 
 The question is `Are bicycles washed here?`
 
- -  *This shop cleans bicycles* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:cleaning' target='_blank'>service:bicycle:cleaning</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:cleaning%3Dyes' target='_blank'>yes</a>
- -  *This shop has an installation where one can clean bicycles themselves* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:cleaning' target='_blank'>service:bicycle:cleaning</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:cleaning%3Ddiy' target='_blank'>diy</a>
- -  *This shop doesn't offer bicycle cleaning* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:cleaning' target='_blank'>service:bicycle:cleaning</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:cleaning%3Dno' target='_blank'>no</a>
+
+
+ -  *This shop cleans bicycles* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:cleaning' target='_blank'>service:bicycle:cleaning</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:cleaning%3Dyes' target='_blank'>yes</a>
+ -  *This shop has an installation where one can clean bicycles themselves* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:cleaning' target='_blank'>service:bicycle:cleaning</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:cleaning%3Ddiy' target='_blank'>diy</a>
+ -  *This shop doesn't offer bicycle cleaning* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:cleaning' target='_blank'>service:bicycle:cleaning</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:cleaning%3Dno' target='_blank'>no</a>
+
+
 
 
 
 ### bike_cleaning-service:bicycle:cleaning:charge
 
 The question is `How much does it cost to use the cleaning service?`
-This rendering asks information about the property 
-[service:bicycle:cleaning:charge](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:cleaning:charge)
-This is rendered with `Using the cleaning service costs {service:bicycle:cleaning:charge}`
- -  *The cleaning service is free to use* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:cleaning:fee' target='_blank'>service:bicycle:cleaning:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:cleaning:fee%3Dno' target='_blank'>no</a>
- -  *Free to use* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:cleaning:fee' target='_blank'>service:bicycle:cleaning:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:cleaning:fee%3Dyes' target='_blank'>yes</a> & service:bicycle:cleaning:charge=
- - _This option cannot be chosen as answer_
+*Using the cleaning service costs {service:bicycle:cleaning:charge}* is shown if `service:bicycle:cleaning:charge` is set
+
+
+ -  *The cleaning service is free to use* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:cleaning:fee' target='_blank'>service:bicycle:cleaning:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:cleaning:fee%3Dno' target='_blank'>no</a>
+ -  *Free to use* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:cleaning:fee' target='_blank'>service:bicycle:cleaning:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:cleaning:fee%3Dyes' target='_blank'>yes</a> & service:bicycle:cleaning:charge=. _This option cannot be chosen as answer_
+
+
 This tagrendering is only visible in the popup if the following condition is met: amenity!=bike_wash & amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+
 
 
 ### description
 
 The question is `Is there still some relevant info that the previous questions did not cover? Feel free to add it here.`
-This rendering asks information about the property 
-[description](https://wiki.openstreetmap.org/wiki/Key:description)
-This is rendered with `{description}`
+*{description}* is shown if `description` is set
 
 
 
@@ -397,32 +399,15 @@ This is rendered with `{description}`
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
+*{questions( ,)}*
 
 
 
-
-
-### minimap
-Shows a small map with the feature. Added by default to every popup
-_This tagrendering has no question and is thus read-only_
-
-
-
-
-
-### nearby_images
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default_conditional`
 
 ### move-button
 
 _This tagrendering has no question and is thus read-only_
-
+*{move_button()}*
 
 
 
@@ -430,7 +415,7 @@ _This tagrendering has no question and is thus read-only_
 ### delete-button
 
 _This tagrendering has no question and is thus read-only_
-
+*{delete_button()}*
 
 
 
@@ -438,57 +423,21 @@ _This tagrendering has no question and is thus read-only_
 ### lod
 
 _This tagrendering has no question and is thus read-only_
+*{linked_data_from_website()}*
 
 
-
-This tagrendering has labels 
-`added_by_default`
-
-### favourite_status
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### share
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### qr_code
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### last_edit
-Gives some metainfo about the last edit and who did edit it - rendering only
-_This tagrendering has no question and is thus read-only_
-
-
-This tagrendering is only visible in the popup if the following condition is met: _last_edit:changeset~.+ & _last_edit:contributor~.+
 This tagrendering has labels 
 `added_by_default`
 
 ### all-tags
 
 _This tagrendering has no question and is thus read-only_
+*{all_tags()}*
 
 
 
 
-
-#### Filters
+## Filters
 
 
 

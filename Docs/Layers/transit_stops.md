@@ -3,21 +3,24 @@
 # transit_stops
 
 
-[object Object]
+
 
 Layer showing different types of transit stops.
 
 
 
 
+
+
  - This layer is shown at zoomlevel **15** and higher
+
+
+
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
 2. [Basic tags for this layer](#basic-tags-for-this-layer)
 3. [Supported attributes](#supported-attributes)
-  - [just_created](#just_created)
-  - [nothing_known](#nothing_known)
   - [stop_name](#stop_name)
   - [images](#images)
   - [shelter](#shelter)
@@ -28,22 +31,21 @@ Layer showing different types of transit stops.
   - [lit](#lit)
   - [departures_board](#departures_board)
   - [contained_routes](#contained_routes)
+  - [{_contained_routes_count} routes stop at this stop](#{_contained_routes_count}-routes-stop-at-this-stop)
   - [leftover-questions](#leftover-questions)
-  - [minimap](#minimap)
-  - [nearby_images](#nearby_images)
   - [lod](#lod)
-  - [favourite_status](#favourite_status)
-  - [share](#share)
-  - [qr_code](#qr_code)
-  - [last_edit](#last_edit)
   - [all-tags](#all-tags)
-    + [Filters](#filters)
+4. [Filters](#filters)
 
 ## Themes using this layer
+
+
 
  - [blind_osm](https://mapcomplete.org/blind_osm)
  - [personal](https://mapcomplete.org/personal)
  - [transit](https://mapcomplete.org/transit)
+
+
 
 ## Basic tags for this layer
 
@@ -57,51 +59,34 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 
 | attribute | type | values which are supported by this layer |
 -----|-----|----- |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/id#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/name#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [string](../SpecialInputElements.md#string) | [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/shelter#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice | [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/bench#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice | [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/bin#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice | [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/wheelchair#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice | [object Object] [object Object] [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/tactile_paving#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice | [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/lit#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice | [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/departures_board#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice | [object Object] [object Object] [object Object] [object Object] |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/name#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/name/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [name](https://wiki.openstreetmap.org/wiki/Key:name) | [string](../SpecialInputElements.md#string) | [](https://wiki.openstreetmap.org/wiki/Tag:name%3D) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/shelter#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/shelter/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [shelter](https://wiki.openstreetmap.org/wiki/Key:shelter) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:shelter%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:shelter%3Dno) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/bench#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/bench/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [bench](https://wiki.openstreetmap.org/wiki/Key:bench) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:bench%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:bench%3Dno) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/bin#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/bin/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [bin](https://wiki.openstreetmap.org/wiki/Key:bin) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:bin%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:bin%3Dno) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/wheelchair#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/wheelchair/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [wheelchair](https://wiki.openstreetmap.org/wiki/Key:wheelchair) | Multiple choice | [designated](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Ddesignated) [yes](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dlimited) [no](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dno) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/tactile_paving#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/tactile_paving/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [tactile_paving](https://wiki.openstreetmap.org/wiki/Key:tactile_paving) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:tactile_paving%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:tactile_paving%3Dno) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/lit#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/lit/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [lit](https://wiki.openstreetmap.org/wiki/Key:lit) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:lit%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:lit%3Dno) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/departures_board#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/departures_board/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [departures_board](https://wiki.openstreetmap.org/wiki/Key:departures_board) | Multiple choice | [realtime](https://wiki.openstreetmap.org/wiki/Tag:departures_board%3Drealtime) [timetable](https://wiki.openstreetmap.org/wiki/Tag:departures_board%3Dtimetable) [interval](https://wiki.openstreetmap.org/wiki/Tag:departures_board%3Dinterval) [no](https://wiki.openstreetmap.org/wiki/Tag:departures_board%3Dno) |
 
 
 
-
-### just_created
-This element shows a 'thank you' that the contributor has recently created this element
-_This tagrendering has no question and is thus read-only_
-
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/party.svg' style='width: 3rem; height: 3rem'> *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
-This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
-This tagrendering has labels 
-`added_by_default_top`
-
-### nothing_known
-
-_This tagrendering has no question and is thus read-only_
-
-
-This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time>=300 & _backend~.+
-This tagrendering has labels 
-`added_by_default_top`
 
 ### stop_name
 
 The question is `What is the name of this stop?`
-This rendering asks information about the property 
-[name](https://wiki.openstreetmap.org/wiki/Key:name)
-This is rendered with `This stop is called <b>{name}</b>`
- -  *This stop has no name* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:noname' target='_blank'>noname</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:noname%3Dyes' target='_blank'>yes</a> & name=
+*This stop is called <b>{name}</b>* is shown if `name` is set
+
+
+ -  *This stop has no name* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:noname' target='_blank'>noname</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:noname%3Dyes' target='_blank'>yes</a> & name=
+
+
 
 
 
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
-
+*{image_carousel()}{image_upload()}*
 
 
 
@@ -110,10 +95,13 @@ _This tagrendering has no question and is thus read-only_
 
 The question is `Does this stop have a shelter?`
 
- -  *This stop has a shelter* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:shelter' target='_blank'>shelter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shelter%3Dyes' target='_blank'>yes</a>
- -  *This stop does <b>not</b> have a shelter* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:shelter' target='_blank'>shelter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shelter%3Dno' target='_blank'>no</a>
- -  *This stop has a shelter, that's separately mapped* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:shelter' target='_blank'>shelter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shelter%3Dseparate' target='_blank'>separate</a>
- - _This option cannot be chosen as answer_
+
+
+ -  *This stop has a shelter* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shelter' target='_blank'>shelter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shelter%3Dyes' target='_blank'>yes</a>
+ -  *This stop does <b>not</b> have a shelter* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shelter' target='_blank'>shelter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shelter%3Dno' target='_blank'>no</a>
+ -  *This stop has a shelter, that's separately mapped* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shelter' target='_blank'>shelter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shelter%3Dseparate' target='_blank'>separate</a>. _This option cannot be chosen as answer_
+
+
 
 
 
@@ -121,10 +109,13 @@ The question is `Does this stop have a shelter?`
 
 The question is `Does this stop have a bench?`
 
- -  *This stop has a bench* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bench' target='_blank'>bench</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bench%3Dyes' target='_blank'>yes</a>
- -  *This stop does <b>not</b> have a bench* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bench' target='_blank'>bench</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bench%3Dno' target='_blank'>no</a>
- -  *This stop has a bench, that's separately mapped* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bench' target='_blank'>bench</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bench%3Dseparate' target='_blank'>separate</a>
- - _This option cannot be chosen as answer_
+
+
+ -  *This stop has a bench* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:bench' target='_blank'>bench</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bench%3Dyes' target='_blank'>yes</a>
+ -  *This stop does <b>not</b> have a bench* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:bench' target='_blank'>bench</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bench%3Dno' target='_blank'>no</a>
+ -  *This stop has a bench, that's separately mapped* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:bench' target='_blank'>bench</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bench%3Dseparate' target='_blank'>separate</a>. _This option cannot be chosen as answer_
+
+
 
 
 
@@ -132,10 +123,13 @@ The question is `Does this stop have a bench?`
 
 The question is `Does this stop have a bin?`
 
- -  *This stop has a bin* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bin' target='_blank'>bin</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bin%3Dyes' target='_blank'>yes</a>
- -  *This stop does <b>not</b> have a bin* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bin' target='_blank'>bin</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bin%3Dno' target='_blank'>no</a>
- -  *This stop has a bin, that's separately mapped* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bin' target='_blank'>bin</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bin%3Dseparate' target='_blank'>separate</a>
- - _This option cannot be chosen as answer_
+
+
+ -  *This stop has a bin* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:bin' target='_blank'>bin</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bin%3Dyes' target='_blank'>yes</a>
+ -  *This stop does <b>not</b> have a bin* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:bin' target='_blank'>bin</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bin%3Dno' target='_blank'>no</a>
+ -  *This stop has a bin, that's separately mapped* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:bin' target='_blank'>bin</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bin%3Dseparate' target='_blank'>separate</a>. _This option cannot be chosen as answer_
+
+
 
 
 
@@ -143,10 +137,14 @@ The question is `Does this stop have a bin?`
 
 The question is `Is this place accessible with a wheelchair?`
 
- -  *This place is specially adapted for wheelchair users* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Ddesignated' target='_blank'>designated</a>
- -  *This place is easily reachable with a wheelchair* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes' target='_blank'>yes</a>
- -  *It is possible to reach this place in a wheelchair, but it is not easy* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dlimited' target='_blank'>limited</a>
- -  *This place is not reachable with a wheelchair* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dno' target='_blank'>no</a>
+
+
+ -  *This place is specially adapted for wheelchair users* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Ddesignated' target='_blank'>designated</a>
+ -  *This place is easily reachable with a wheelchair* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes' target='_blank'>yes</a>
+ -  *It is possible to reach this place in a wheelchair, but it is not easy* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dlimited' target='_blank'>limited</a>
+ -  *This place is not reachable with a wheelchair* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dno' target='_blank'>no</a>
+
+
 
 
 
@@ -154,8 +152,12 @@ The question is `Is this place accessible with a wheelchair?`
 
 The question is `Does this stop have tactile paving?`
 
- -  *This stop has tactile paving* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:tactile_paving' target='_blank'>tactile_paving</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tactile_paving%3Dyes' target='_blank'>yes</a>
- -  *This stop does <b>not</b> have tactile paving* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:tactile_paving' target='_blank'>tactile_paving</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tactile_paving%3Dno' target='_blank'>no</a>
+
+
+ -  *This stop has tactile paving* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:tactile_paving' target='_blank'>tactile_paving</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tactile_paving%3Dyes' target='_blank'>yes</a>
+ -  *This stop does <b>not</b> have tactile paving* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:tactile_paving' target='_blank'>tactile_paving</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tactile_paving%3Dno' target='_blank'>no</a>
+
+
 
 
 
@@ -163,8 +165,12 @@ The question is `Does this stop have tactile paving?`
 
 The question is `Is this stop lit?`
 
- -  *This stop is lit* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:lit' target='_blank'>lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:lit%3Dyes' target='_blank'>yes</a>
- -  *This stop is <b>not</b> lit* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:lit' target='_blank'>lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:lit%3Dno' target='_blank'>no</a>
+
+
+ -  *This stop is lit* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:lit' target='_blank'>lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:lit%3Dyes' target='_blank'>yes</a>
+ -  *This stop is <b>not</b> lit* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:lit' target='_blank'>lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:lit%3Dno' target='_blank'>no</a>
+
+
 
 
 
@@ -172,21 +178,23 @@ The question is `Is this stop lit?`
 
 _This tagrendering has no question and is thus read-only_
 
- -  *This stop has a departures board of unknown type* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:departures_board' target='_blank'>departures_board</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:departures_board%3Dyes' target='_blank'>yes</a>
- - _This option cannot be chosen as answer_
- -  *This stop has a board showing realtime departure information* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:departures_board' target='_blank'>departures_board</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:departures_board%3Drealtime' target='_blank'>realtime</a>
- -  *This stop has a board showing realtime departure information* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:passenger_information_display' target='_blank'>passenger_information_display</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:passenger_information_display%3Dyes' target='_blank'>yes</a>
- - _This option cannot be chosen as answer_
- -  *This stop has a timetable showing regular departures* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:departures_board' target='_blank'>departures_board</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:departures_board%3Dtimetable' target='_blank'>timetable</a>
- -  *This stop has a timetable containing just the interval between departures* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:departures_board' target='_blank'>departures_board</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:departures_board%3Dinterval' target='_blank'>interval</a>
- -  *This stop does <b>not</b> have a departures board* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:departures_board' target='_blank'>departures_board</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:departures_board%3Dno' target='_blank'>no</a>
+
+
+ -  *This stop has a departures board of unknown type* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:departures_board' target='_blank'>departures_board</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:departures_board%3Dyes' target='_blank'>yes</a>. _This option cannot be chosen as answer_
+ -  *This stop has a board showing realtime departure information* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:departures_board' target='_blank'>departures_board</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:departures_board%3Drealtime' target='_blank'>realtime</a>
+ -  *This stop has a board showing realtime departure information* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:passenger_information_display' target='_blank'>passenger_information_display</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:passenger_information_display%3Dyes' target='_blank'>yes</a>. _This option cannot be chosen as answer_
+ -  *This stop has a timetable showing regular departures* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:departures_board' target='_blank'>departures_board</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:departures_board%3Dtimetable' target='_blank'>timetable</a>
+ -  *This stop has a timetable containing just the interval between departures* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:departures_board' target='_blank'>departures_board</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:departures_board%3Dinterval' target='_blank'>interval</a>
+ -  *This stop does <b>not</b> have a departures board* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:departures_board' target='_blank'>departures_board</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:departures_board%3Dno' target='_blank'>no</a>
+
+
 
 
 
 ### contained_routes
 
 _This tagrendering has no question and is thus read-only_
-
+*<h3>{_contained_routes_count} routes stop at this stop</h3> <ul>{_contained_routes}</ul>*
 
 This tagrendering is only visible in the popup if the following condition is met: _contained_routes~.+
 
@@ -194,82 +202,29 @@ This tagrendering is only visible in the popup if the following condition is met
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
+*{questions( ,)}*
 
 
 
-
-
-### minimap
-Shows a small map with the feature. Added by default to every popup
-_This tagrendering has no question and is thus read-only_
-
-
-
-
-
-### nearby_images
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default_conditional`
 
 ### lod
 
 _This tagrendering has no question and is thus read-only_
+*{linked_data_from_website()}*
 
 
-
-This tagrendering has labels 
-`added_by_default`
-
-### favourite_status
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### share
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### qr_code
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### last_edit
-Gives some metainfo about the last edit and who did edit it - rendering only
-_This tagrendering has no question and is thus read-only_
-
-
-This tagrendering is only visible in the popup if the following condition is met: _last_edit:changeset~.+ & _last_edit:contributor~.+
 This tagrendering has labels 
 `added_by_default`
 
 ### all-tags
 
 _This tagrendering has no question and is thus read-only_
+*{all_tags()}*
 
 
 
 
-
-#### Filters
+## Filters
 
 
 

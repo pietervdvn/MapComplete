@@ -210,6 +210,11 @@
       "value": "bike_helmet"
     },
     {
+      "key": "rental",
+      "description": "Layer 'Bicycle rental' shows rental=cargo_bike with a fixed text, namely 'Cargo bikes can be rented here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle rental')",
+      "value": "cargo_bike"
+    },
+    {
       "key": "capacity:city_bike",
       "description": "Layer 'Bicycle rental' shows and asks freeform values for key 'capacity:city_bike' (in the mapcomplete.org theme 'Bicycle rental') (This is only shown if rental~^(.*city_bike.*)$)"
     },

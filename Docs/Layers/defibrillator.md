@@ -3,22 +3,25 @@
 # defibrillator
 
 
-[object Object]
+
 
 A layer showing defibrillators which can be used in case of emergency. This contains public defibrillators, but also defibrillators which might need staff to fetch the actual device
 
 
 
 
+
+
  - This layer is shown at zoomlevel **12** and higher
  - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  a preset snaps to this layer (presets[1])
+
+
+
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
 2. [Basic tags for this layer](#basic-tags-for-this-layer)
 3. [Supported attributes](#supported-attributes)
-  - [just_created](#just_created)
-  - [nothing_known](#nothing_known)
   - [images](#images)
   - [defibrillator-indoors](#defibrillator-indoors)
   - [defibrillator-access](#defibrillator-access)
@@ -32,26 +35,25 @@ A layer showing defibrillators which can be used in case of emergency. This cont
   - [defibrillator-email](#defibrillator-email)
   - [defibrillator-phone](#defibrillator-phone)
   - [opening_hours_24_7](#opening_hours_24_7)
+  - [Opening hours](#opening-hours)
   - [defibrillator-description](#defibrillator-description)
   - [defibrillator-survey:date](#defibrillator-surveydate)
   - [defibrillator-fixme](#defibrillator-fixme)
   - [leftover-questions](#leftover-questions)
-  - [minimap](#minimap)
-  - [nearby_images](#nearby_images)
   - [move-button](#move-button)
   - [delete-button](#delete-button)
   - [lod](#lod)
-  - [favourite_status](#favourite_status)
-  - [share](#share)
-  - [qr_code](#qr_code)
-  - [last_edit](#last_edit)
   - [all-tags](#all-tags)
-    + [Filters](#filters)
+4. [Filters](#filters)
 
 ## Themes using this layer
 
+
+
  - [aed](https://mapcomplete.org/aed)
  - [personal](https://mapcomplete.org/personal)
+
+
 
 ## Basic tags for this layer
 
@@ -65,48 +67,29 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 
 | attribute | type | values which are supported by this layer |
 -----|-----|----- |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/id#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/indoor#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice | [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/access#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [string](../SpecialInputElements.md#string) | [object Object] [object Object] [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/defibrillator#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice | [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/level#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [int](../SpecialInputElements.md#int) | [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/defibrillator:location#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [text](../SpecialInputElements.md#text) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/defibrillator:location:en#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [text](../SpecialInputElements.md#text) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/defibrillator:location:fr#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [text](../SpecialInputElements.md#text) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/wheelchair#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice | [object Object] [object Object] [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/ref#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [text](../SpecialInputElements.md#text) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/email#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [email](../SpecialInputElements.md#email) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/phone#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [phone](../SpecialInputElements.md#phone) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/opening_hours#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [opening_hours](../SpecialInputElements.md#opening_hours) | [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/description#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [text](../SpecialInputElements.md#text) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/survey:date#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [date](../SpecialInputElements.md#date) | [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/fixme#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [text](../SpecialInputElements.md#text) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/indoor#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/indoor/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [indoor](https://wiki.openstreetmap.org/wiki/Key:indoor) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dno) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/access#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/access/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [access](https://wiki.openstreetmap.org/wiki/Key:access) | [string](../SpecialInputElements.md#string) | [yes](https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes) [customers](https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers) [private](https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate) [no](https://wiki.openstreetmap.org/wiki/Tag:access%3Dno) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/defibrillator#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/defibrillator/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [defibrillator](https://wiki.openstreetmap.org/wiki/Key:defibrillator) | Multiple choice | [manual](https://wiki.openstreetmap.org/wiki/Tag:defibrillator%3Dmanual) [automatic](https://wiki.openstreetmap.org/wiki/Tag:defibrillator%3Dautomatic) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/level#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/level/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [level](https://wiki.openstreetmap.org/wiki/Key:level) | [int](../SpecialInputElements.md#int) | [0](https://wiki.openstreetmap.org/wiki/Tag:level%3D0) [1](https://wiki.openstreetmap.org/wiki/Tag:level%3D1) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/defibrillator:location#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/defibrillator%3Alocation/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [defibrillator:location](https://wiki.openstreetmap.org/wiki/Key:defibrillator:location) | [text](../SpecialInputElements.md#text) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/defibrillator:location:en#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/defibrillator%3Alocation%3Aen/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [defibrillator:location:en](https://wiki.openstreetmap.org/wiki/Key:defibrillator:location:en) | [text](../SpecialInputElements.md#text) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/defibrillator:location:fr#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/defibrillator%3Alocation%3Afr/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [defibrillator:location:fr](https://wiki.openstreetmap.org/wiki/Key:defibrillator:location:fr) | [text](../SpecialInputElements.md#text) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/wheelchair#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/wheelchair/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [wheelchair](https://wiki.openstreetmap.org/wiki/Key:wheelchair) | Multiple choice | [designated](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Ddesignated) [yes](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dlimited) [no](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dno) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/ref#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/ref/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [ref](https://wiki.openstreetmap.org/wiki/Key:ref) | [text](../SpecialInputElements.md#text) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/email#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/email/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [email](https://wiki.openstreetmap.org/wiki/Key:email) | [email](../SpecialInputElements.md#email) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/phone#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/phone/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [phone](https://wiki.openstreetmap.org/wiki/Key:phone) | [phone](../SpecialInputElements.md#phone) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/opening_hours#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/opening_hours/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | [24/7](https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/description#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/description/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [description](https://wiki.openstreetmap.org/wiki/Key:description) | [text](../SpecialInputElements.md#text) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/survey:date#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/survey%3Adate/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [survey:date](https://wiki.openstreetmap.org/wiki/Key:survey:date) | [date](../SpecialInputElements.md#date) | [](https://wiki.openstreetmap.org/wiki/Tag:survey:date%3D) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/fixme#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/fixme/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [fixme](https://wiki.openstreetmap.org/wiki/Key:fixme) | [text](../SpecialInputElements.md#text) |  |
 
 
 
-
-### just_created
-This element shows a 'thank you' that the contributor has recently created this element
-_This tagrendering has no question and is thus read-only_
-
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/party.svg' style='width: 3rem; height: 3rem'> *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
-This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
-This tagrendering has labels 
-`added_by_default_top`
-
-### nothing_known
-
-_This tagrendering has no question and is thus read-only_
-
-
-This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time>=300 & _backend~.+
-This tagrendering has labels 
-`added_by_default_top`
 
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
-
+*{image_carousel()}{image_upload()}*
 
 
 
@@ -115,23 +98,28 @@ _This tagrendering has no question and is thus read-only_
 
 The question is `Is this defibrillator located indoors?`
 
- -  *This defibrillator is located indoors* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dyes' target='_blank'>yes</a>
- -  *This defibrillator is located outdoors* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dno' target='_blank'>no</a>
+
+
+ -  *This defibrillator is located indoors* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dyes' target='_blank'>yes</a>
+ -  *This defibrillator is located outdoors* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dno' target='_blank'>no</a>
+
+
 
 
 
 ### defibrillator-access
 
 The question is `Is this defibrillator freely accessible?`
-This rendering asks information about the property 
-[access](https://wiki.openstreetmap.org/wiki/Key:access)
-This is rendered with `Access is {access}`
- -  *Publicly accessible* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>
- -  *Publicly accessible* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dpublic' target='_blank'>public</a>
- - _This option cannot be chosen as answer_
- -  *Only accessible to customers* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers' target='_blank'>customers</a>
- -  *Not accessible to the general public (e.g. only accesible to staff, the owners, …)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate' target='_blank'>private</a>
- -  *Not accessible, possibly only for professional use* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dno' target='_blank'>no</a>
+*Access is {access}* is shown if `access` is set
+
+
+ -  *Publicly accessible* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>
+ -  *Publicly accessible* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dpublic' target='_blank'>public</a>. _This option cannot be chosen as answer_
+ -  *Only accessible to customers* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers' target='_blank'>customers</a>
+ -  *Not accessible to the general public (e.g. only accesible to staff, the owners, …)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate' target='_blank'>private</a>
+ -  *Not accessible, possibly only for professional use* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dno' target='_blank'>no</a>
+
+
 
 
 
@@ -139,32 +127,34 @@ This is rendered with `Access is {access}`
 
 The question is `Is this a a regular automatic defibrillator or a manual defibrillator for professionals only?`
 
- -  *There is no info about the type of device* corresponds with defibrillator=
- - _This option cannot be chosen as answer_
- -  *This is a manual defibrillator for professionals* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:defibrillator' target='_blank'>defibrillator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:defibrillator%3Dmanual' target='_blank'>manual</a>
- -  *This is a normal automatic defibrillator* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:defibrillator' target='_blank'>defibrillator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:defibrillator%3Dautomatic' target='_blank'>automatic</a>
- -  *This is a special type of defibrillator: {defibrillator}* corresponds with defibrillator~.+
- - _This option cannot be chosen as answer_
+
+
+ -  *There is no info about the type of device* is shown if with defibrillator=. _This option cannot be chosen as answer_
+ -  *This is a manual defibrillator for professionals* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:defibrillator' target='_blank'>defibrillator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:defibrillator%3Dmanual' target='_blank'>manual</a>
+ -  *This is a normal automatic defibrillator* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:defibrillator' target='_blank'>defibrillator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:defibrillator%3Dautomatic' target='_blank'>automatic</a>
+ -  *This is a special type of defibrillator: {defibrillator}* is shown if with defibrillator~.+. _This option cannot be chosen as answer_
+
+
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dno' target='_blank'>no</a>
 
 
 ### defibrillator-level
 
 The question is `On which floor is this defibrillator located?`
-This rendering asks information about the property 
-[level](https://wiki.openstreetmap.org/wiki/Key:level)
-This is rendered with `This defibrillator is on floor {level}`
- -  *This defibrillator is on the <b>ground floor</b>* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D0' target='_blank'>0</a>
- -  *This defibrillator is on the <b>first floor</b>* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D1' target='_blank'>1</a>
+*This defibrillator is on floor {level}* is shown if `level` is set
+
+
+ -  *This defibrillator is on the <b>ground floor</b>* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D0' target='_blank'>0</a>
+ -  *This defibrillator is on the <b>first floor</b>* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D1' target='_blank'>1</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dyes' target='_blank'>yes</a>
 
 
 ### defibrillator-defibrillator:location
 
 The question is `Please give some explanation on where the defibrillator can be found (in the local language)`
-This rendering asks information about the property 
-[defibrillator:location](https://wiki.openstreetmap.org/wiki/Key:defibrillator:location)
-This is rendered with `<i>Extra information about the location (in the local language):</i><br/>{defibrillator:location}`
+*<i>Extra information about the location (in the local language):</i><br/>{defibrillator:location}* is shown if `defibrillator:location` is set
 
 
 
@@ -172,9 +162,7 @@ This is rendered with `<i>Extra information about the location (in the local lan
 ### defibrillator-defibrillator:location:en
 
 The question is `Please give some explanation on where the defibrillator can be found (in English)`
-This rendering asks information about the property 
-[defibrillator:location:en](https://wiki.openstreetmap.org/wiki/Key:defibrillator:location:en)
-This is rendered with `<i>Extra information about the location (in English):</i><br/>{defibrillator:location:en}`
+*<i>Extra information about the location (in English):</i><br/>{defibrillator:location:en}* is shown if `defibrillator:location:en` is set
 
 
 
@@ -182,9 +170,7 @@ This is rendered with `<i>Extra information about the location (in English):</i>
 ### defibrillator-defibrillator:location:fr
 
 The question is `Please give some explanation on where the defibrillator can be found (in French)`
-This rendering asks information about the property 
-[defibrillator:location:fr](https://wiki.openstreetmap.org/wiki/Key:defibrillator:location:fr)
-This is rendered with `<i>Extra information about the location (in French):</i><br/>{defibrillator:location:fr}`
+*<i>Extra information about the location (in French):</i><br/>{defibrillator:location:fr}* is shown if `defibrillator:location:fr` is set
 
 
 
@@ -193,19 +179,21 @@ This is rendered with `<i>Extra information about the location (in French):</i><
 
 The question is `Is this place accessible with a wheelchair?`
 
- -  *This place is specially adapted for wheelchair users* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Ddesignated' target='_blank'>designated</a>
- -  *This place is easily reachable with a wheelchair* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes' target='_blank'>yes</a>
- -  *It is possible to reach this place in a wheelchair, but it is not easy* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dlimited' target='_blank'>limited</a>
- -  *This place is not reachable with a wheelchair* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dno' target='_blank'>no</a>
+
+
+ -  *This place is specially adapted for wheelchair users* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Ddesignated' target='_blank'>designated</a>
+ -  *This place is easily reachable with a wheelchair* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes' target='_blank'>yes</a>
+ -  *It is possible to reach this place in a wheelchair, but it is not easy* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dlimited' target='_blank'>limited</a>
+ -  *This place is not reachable with a wheelchair* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dno' target='_blank'>no</a>
+
+
 
 
 
 ### defibrillator-ref
 
 The question is `What is the official identification number of the device? (if visible on device)`
-This rendering asks information about the property 
-[ref](https://wiki.openstreetmap.org/wiki/Key:ref)
-This is rendered with `Official identification number of the device: <i>{ref}</i>`
+*Official identification number of the device: <i>{ref}</i>* is shown if `ref` is set
 
 
 
@@ -213,9 +201,7 @@ This is rendered with `Official identification number of the device: <i>{ref}</i
 ### defibrillator-email
 
 The question is `What is the email for questions about this defibrillator?`
-This rendering asks information about the property 
-[email](https://wiki.openstreetmap.org/wiki/Key:email)
-This is rendered with `Email for questions about this defibrillator: <a href='mailto:{email}'>{email}</a>`
+*Email for questions about this defibrillator: <a href='mailto:{email}'>{email}</a>* is shown if `email` is set
 
 
 
@@ -223,9 +209,7 @@ This is rendered with `Email for questions about this defibrillator: <a href='ma
 ### defibrillator-phone
 
 The question is `What is the phone number for questions about this defibrillator?`
-This rendering asks information about the property 
-[phone](https://wiki.openstreetmap.org/wiki/Key:phone)
-This is rendered with `Telephone for questions about this defibrillator: <a href='tel:{phone}'>{phone}</a>`
+*Telephone for questions about this defibrillator: <a href='tel:{phone}'>{phone}</a>* is shown if `phone` is set
 
 
 
@@ -233,21 +217,20 @@ This is rendered with `Telephone for questions about this defibrillator: <a href
 ### opening_hours_24_7
 
 The question is `At what times is this defibrillator available?`
-This rendering asks information about the property 
-[opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours)
-This is rendered with `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/open24_7.svg' style='width: 3rem; height: 3rem'> *24/7 opened (including holidays)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
- -  *Marked as closed for an unspecified time* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>
- - _This option cannot be chosen as answer_
+*<h3>Opening hours</h3>{opening_hours_table(opening_hours)}* is shown if `opening_hours` is set
+
+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/open24_7.svg' style='width: 3rem; height: 3rem'> *24/7 opened (including holidays)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
+ -  *Marked as closed for an unspecified time* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>. _This option cannot be chosen as answer_
+
+
 
 
 
 ### defibrillator-description
 
 The question is `Is there any useful information for users that you haven't been able to describe above? (leave blank if no)`
-This rendering asks information about the property 
-[description](https://wiki.openstreetmap.org/wiki/Key:description)
-This is rendered with `Additional information: {description}`
+*Additional information: {description}* is shown if `description` is set
 
 
 
@@ -255,19 +238,19 @@ This is rendered with `Additional information: {description}`
 ### defibrillator-survey:date
 
 The question is `When was this defibrillator last surveyed?`
-This rendering asks information about the property 
-[survey:date](https://wiki.openstreetmap.org/wiki/Key:survey:date)
-This is rendered with `This defibrillator was last surveyed on {survey:date}`
- -  *Checked today!* corresponds with survey:date=
+*This defibrillator was last surveyed on {survey:date}* is shown if `survey:date` is set
+
+
+ -  *Checked today!* is shown if with survey:date=
+
+
 
 
 
 ### defibrillator-fixme
 
 The question is `Is there something wrong with how this is mapped, that you weren't able to fix here? (leave a note to OpenStreetMap experts)`
-This rendering asks information about the property 
-[fixme](https://wiki.openstreetmap.org/wiki/Key:fixme)
-This is rendered with `Extra information for OpenStreetMap experts: {fixme}`
+*Extra information for OpenStreetMap experts: {fixme}* is shown if `fixme` is set
 
 
 
@@ -275,32 +258,15 @@ This is rendered with `Extra information for OpenStreetMap experts: {fixme}`
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
+*{questions( ,)}*
 
 
 
-
-
-### minimap
-Shows a small map with the feature. Added by default to every popup
-_This tagrendering has no question and is thus read-only_
-
-
-
-
-
-### nearby_images
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default_conditional`
 
 ### move-button
 
 _This tagrendering has no question and is thus read-only_
-
+*{move_button()}*
 
 
 
@@ -308,7 +274,7 @@ _This tagrendering has no question and is thus read-only_
 ### delete-button
 
 _This tagrendering has no question and is thus read-only_
-
+*{delete_button()}*
 
 
 
@@ -316,57 +282,21 @@ _This tagrendering has no question and is thus read-only_
 ### lod
 
 _This tagrendering has no question and is thus read-only_
+*{linked_data_from_website()}*
 
 
-
-This tagrendering has labels 
-`added_by_default`
-
-### favourite_status
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### share
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### qr_code
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### last_edit
-Gives some metainfo about the last edit and who did edit it - rendering only
-_This tagrendering has no question and is thus read-only_
-
-
-This tagrendering is only visible in the popup if the following condition is met: _last_edit:changeset~.+ & _last_edit:contributor~.+
 This tagrendering has labels 
 `added_by_default`
 
 ### all-tags
 
 _This tagrendering has no question and is thus read-only_
+*{all_tags()}*
 
 
 
 
-
-#### Filters
+## Filters
 
 
 

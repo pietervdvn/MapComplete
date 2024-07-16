@@ -19,7 +19,6 @@ import { Utils } from "../../Utils"
 import { TagsFilter } from "../../Logic/Tags/TagsFilter"
 import FilterConfigJson from "./Json/FilterConfigJson"
 import { Overpass } from "../../Logic/Osm/Overpass"
-import { FixedUiElement } from "../../UI/Base/FixedUiElement"
 import { ImmutableStore } from "../../Logic/UIEventSource"
 import { OsmTags } from "../OsmFeature"
 import Constants from "../Constants"
@@ -66,11 +65,18 @@ export default class LayerConfig extends WithContextLoader {
     public readonly popupInFloatover: boolean | string
     public readonly enableMorePrivacy: boolean
 
+    /**
+     * If this layer is based on another layer, this might be indicated here
+     * @private
+     */
+    private readonly _basedOn: string | undefined
+
     constructor(json: LayerConfigJson, context?: string, official: boolean = true) {
         context = context + "." + json.id
         const translationContext = "layers:" + json.id
         super(json, context)
         this.id = json.id
+        this._basedOn = json["_basedOn"]
 
         if (json.source === "special" || json.source === "special:library") {
             this.source = null
@@ -454,17 +460,20 @@ export default class LayerConfig extends WithContextLoader {
         const tableRows: string[][] = Utils.NoNull(
             this.tagRenderings
                 .map((tr) => tr.FreeformValues())
+                .filter(values => values !== undefined)
+                .filter(values => values.key !== "id")
                 .map((values) => {
-                    if (values == undefined) {
-                        return undefined
-                    }
-                    const embedded: (Link | string)[] = values.values?.map((v) =>
-                        Link.OsmWiki(values.key, v, true).SetClass("mr-2")
+                    const embedded: (string)[] = values.values?.map((v) =>
+                        Link.OsmWiki(values.key, v, true).SetClass("mr-2").AsMarkdown()
                     ) ?? ["_no preset options defined, or no values in them_"]
+                    const statistics = `https://taghistory.raifer.tech/?#***/${encodeURIComponent(values.key)}/`
+                    const tagInfo = `https://taginfo.openstreetmap.org/keys/${values.key}#values`
                     return [
                         [
-                            `<a target="_blank" href='https://taginfo.openstreetmap.org/keys/${ values.key}#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>]`,
-                            Link.OsmWiki(values.key)
+                            `<a target="_blank" href='${tagInfo}'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a>`,
+                            `<a target="_blank" href='${statistics}'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>`,
+
+                            Link.OsmWiki(values.key).AsMarkdown()
                         ].join(" "),
                         values.type === undefined
                             ? "Multiple choice"
@@ -486,20 +495,6 @@ export default class LayerConfig extends WithContextLoader {
             ]
         }
 
-        let iconImg: BaseUIElement = new FixedUiElement("")
-
-        if (!Utils.runningFromConsole) {
-            iconImg = this.mapRendering
-                .filter((mr) => mr.location.has("point"))
-                .map(
-                    (mr) =>
-                        mr.RenderIcon(new ImmutableStore<OsmTags>({ id: "node/-1" }), {
-                            includeBadges: false
-                        }).html
-                )
-                .find((i) => i !== undefined)
-        }
-
         let overpassLink: string = undefined
         if (this.source !== undefined) {
             try {
@@ -517,7 +512,7 @@ export default class LayerConfig extends WithContextLoader {
 
         const filterDocs: (string)[] = []
         if (this.filters.length > 0) {
-            filterDocs.push("#### Filters")
+            filterDocs.push("## Filters")
             filterDocs.push(...this.filters.map((filter) => filter.GenerateDocs()))
         }
 
@@ -553,17 +548,19 @@ export default class LayerConfig extends WithContextLoader {
 
         return [
             [
-                "# " + this.id+"\n",
-                iconImg,
+                "# " + this.id + "\n",
+                this._basedOn ? `This layer is based on [${this._basedOn}](../Layers/${this._basedOn}.md)` : "",
                 this.description, "\n"].join("\n\n"),
             MarkdownUtils.list(extraProps),
             ...usingLayer,
             ...tagsDescription,
             "## Supported attributes",
             quickOverview,
-            ...this.tagRenderings.map((tr) => tr.GenerateDocumentation()),
+            ...this.tagRenderings
+                .filter(tr => tr.labels.indexOf("ignore_docs") < 0)
+                .map((tr) => tr.GenerateDocumentation()),
             ...filterDocs
-        ]          .join("\n\n")
+        ].join("\n\n")
     }
 
     public CustomCodeSnippets(): string[] {

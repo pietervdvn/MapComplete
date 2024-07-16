@@ -3,27 +3,33 @@
 # climbing_area
 
 
-[object Object]
+
 
 An area where climbing is possible, e.g. a crag, site, boulder, … Contains aggregation of routes
 
 
 
 
+
+
  - This layer is shown at zoomlevel **10** and higher
  - This layer will automatically load  [climbing_route](./climbing_route.md)  into the layout as it depends on it:  a calculated tag loads features from this layer (calculatedTag[0] which calculates the value for _contained_climbing_routes_properties)
+
+
+
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
 2. [Basic tags for this layer](#basic-tags-for-this-layer)
 3. [Supported attributes](#supported-attributes)
-  - [just_created](#just_created)
-  - [nothing_known](#nothing_known)
   - [images](#images)
   - [minimap](#minimap)
   - [Contained routes length hist](#contained-routes-length-hist)
+  - [Length overview](#length-overview)
   - [Contained routes hist](#contained-routes-hist)
+  - [Grades overview](#grades-overview)
   - [Contained_climbing_routes](#contained_climbing_routes)
+  - [Contains {_contained_climbing_routes_count} routes](#contains-{_contained_climbing_routes_count}-routes)
   - [name](#name)
   - [Type](#type)
   - [Rock type (crag/rock/cliff only)](#rock-type-(cragrock/cliff-only))
@@ -32,18 +38,17 @@ An area where climbing is possible, e.g. a crag, site, boulder, … Contains agg
   - [fee](#fee)
   - [bouldering](#bouldering)
   - [leftover-questions](#leftover-questions)
-  - [nearby_images](#nearby_images)
   - [lod](#lod)
-  - [favourite_status](#favourite_status)
-  - [share](#share)
-  - [qr_code](#qr_code)
-  - [last_edit](#last_edit)
   - [all-tags](#all-tags)
 
 ## Themes using this layer
 
+
+
  - [climbing](https://mapcomplete.org/climbing)
  - [personal](https://mapcomplete.org/personal)
+
+
 
 ## Basic tags for this layer
 
@@ -63,39 +68,20 @@ Elements must match **all** of the following expressions:
 
 | attribute | type | values which are supported by this layer |
 -----|-----|----- |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/id#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/name#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [string](../SpecialInputElements.md#string) | [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/climbing#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice | [object Object] [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/rock#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [string](../SpecialInputElements.md#string) | [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/url#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [url](../SpecialInputElements.md#url) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/charge#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [string](../SpecialInputElements.md#string) | [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/climbing:boulder#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice | [object Object] [object Object] [object Object] |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/name#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/name/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [name](https://wiki.openstreetmap.org/wiki/Key:name) | [string](../SpecialInputElements.md#string) | [](https://wiki.openstreetmap.org/wiki/Tag:name%3D) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/climbing#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/climbing/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [climbing](https://wiki.openstreetmap.org/wiki/Key:climbing) | Multiple choice | [boulder](https://wiki.openstreetmap.org/wiki/Tag:climbing%3Dboulder) [crag](https://wiki.openstreetmap.org/wiki/Tag:climbing%3Dcrag) [area](https://wiki.openstreetmap.org/wiki/Tag:climbing%3Darea) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/rock#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/rock/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [rock](https://wiki.openstreetmap.org/wiki/Key:rock) | [string](../SpecialInputElements.md#string) | [limestone](https://wiki.openstreetmap.org/wiki/Tag:rock%3Dlimestone) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/url#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/url/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [url](https://wiki.openstreetmap.org/wiki/Key:url) | [url](../SpecialInputElements.md#url) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/charge#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/charge/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [charge](https://wiki.openstreetmap.org/wiki/Key:charge) | [string](../SpecialInputElements.md#string) | [](https://wiki.openstreetmap.org/wiki/Tag:charge%3D) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/climbing:boulder#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/climbing%3Aboulder/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [climbing:boulder](https://wiki.openstreetmap.org/wiki/Key:climbing:boulder) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dno) [limited](https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dlimited) |
 
 
 
-
-### just_created
-This element shows a 'thank you' that the contributor has recently created this element
-_This tagrendering has no question and is thus read-only_
-
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/party.svg' style='width: 3rem; height: 3rem'> *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
-This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
-This tagrendering has labels 
-`added_by_default_top`
-
-### nothing_known
-
-_This tagrendering has no question and is thus read-only_
-
-
-This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time>=300 & _backend~.+
-This tagrendering has labels 
-`added_by_default_top`
 
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
-
+*{image_carousel()}{image_upload()}*
 
 
 
@@ -103,7 +89,7 @@ _This tagrendering has no question and is thus read-only_
 ### minimap
 
 _This tagrendering has no question and is thus read-only_
-
+*{minimap(18, id, _contained_climbing_route_ids): height: 9rem; overflow: hidden; border-radius:3rem; }*
 
 
 
@@ -111,7 +97,7 @@ _This tagrendering has no question and is thus read-only_
 ### Contained routes length hist
 
 _This tagrendering has no question and is thus read-only_
-
+*<h3>Length overview</h3>{histogram(_length_hist)}*
 
 
 
@@ -119,7 +105,7 @@ _This tagrendering has no question and is thus read-only_
 ### Contained routes hist
 
 _This tagrendering has no question and is thus read-only_
-
+*<h3>Grades overview</h3>{histogram(_difficulty_hist)}*
 
 
 
@@ -127,7 +113,7 @@ _This tagrendering has no question and is thus read-only_
 ### Contained_climbing_routes
 
 _This tagrendering has no question and is thus read-only_
-
+*<h3>Contains {_contained_climbing_routes_count} routes</h3> <ul>{_contained_climbing_routes}</ul>*
 
 This tagrendering is only visible in the popup if the following condition is met: _contained_climbing_routes~.+
 
@@ -135,10 +121,12 @@ This tagrendering is only visible in the popup if the following condition is met
 ### name
 
 The question is `What is the name of this climbing opportunity?`
-This rendering asks information about the property 
-[name](https://wiki.openstreetmap.org/wiki/Key:name)
-This is rendered with `<strong>{name}</strong>`
- -  *This climbing opportunity doesn't have a name* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:noname' target='_blank'>noname</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:noname%3Dyes' target='_blank'>yes</a> & name=
+*<strong>{name}</strong>* is shown if `name` is set
+
+
+ -  *This climbing opportunity doesn't have a name* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:noname' target='_blank'>noname</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:noname%3Dyes' target='_blank'>yes</a> & name=
+
+
 
 
 
@@ -146,26 +134,32 @@ This is rendered with `<strong>{name}</strong>`
 
 The question is `What kind of climbing opportunity is this?`
 
- -  *A climbing boulder - a single rock or cliff with one or a few climbing routes which can be climbed safely without rope* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing' target='_blank'>climbing</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing%3Dboulder' target='_blank'>boulder</a>
- -  *A climbing crag - a single rock or cliff with at least a few climbing routes* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing' target='_blank'>climbing</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing%3Dcrag' target='_blank'>crag</a>
- -  *A climbing area with one or more climbing crags and/or boulders* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing' target='_blank'>climbing</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing%3Darea' target='_blank'>area</a>
+
+
+ -  *A climbing boulder - a single rock or cliff with one or a few climbing routes which can be climbed safely without rope* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing' target='_blank'>climbing</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing%3Dboulder' target='_blank'>boulder</a>
+ -  *A climbing crag - a single rock or cliff with at least a few climbing routes* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing' target='_blank'>climbing</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing%3Dcrag' target='_blank'>crag</a>
+ -  *A climbing area with one or more climbing crags and/or boulders* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing' target='_blank'>climbing</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing%3Darea' target='_blank'>area</a>
+
+
 
 
 
 ### Rock type (crag/rock/cliff only)
 
 The question is `What is the rock type here?`
-This rendering asks information about the property 
-[rock](https://wiki.openstreetmap.org/wiki/Key:rock)
-This is rendered with `The rock type is {rock}`
- -  *Limestone* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:rock' target='_blank'>rock</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rock%3Dlimestone' target='_blank'>limestone</a>
+*The rock type is {rock}* is shown if `rock` is set
+
+
+ -  *Limestone* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:rock' target='_blank'>rock</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rock%3Dlimestone' target='_blank'>limestone</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:climbing' target='_blank'>climbing</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing%3Dcrag' target='_blank'>crag</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:natural' target='_blank'>natural</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:natural%3Dcliff' target='_blank'>cliff</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:natural' target='_blank'>natural</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:natural%3Dbare_rock' target='_blank'>bare_rock</a>
 
 
 ### reviews
 Shows the reviews module (including the possibility to leave a review)
 _This tagrendering has no question and is thus read-only_
-
+*{create_review()}{list_reviews()}*
 
 
 
@@ -173,9 +167,7 @@ _This tagrendering has no question and is thus read-only_
 ### website
 
 The question is `Is there a (unofficial) website with more informations (e.g. topos)?`
-This rendering asks information about the property 
-[url](https://wiki.openstreetmap.org/wiki/Key:url)
-This is rendered with `<a href='{url}' target='_blank' rel='noopener'>{url}</a>`
+*<a href='{url}' target='_blank' rel='noopener'>{url}</a>* is shown if `url` is set
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dclimbing' target='_blank'>climbing</a> & club= & office= & leisure!~^(sports_centre)$
 
@@ -183,11 +175,13 @@ This tagrendering is only visible in the popup if the following condition is met
 ### fee
 
 The question is `Is a fee required to climb here?`
-This rendering asks information about the property 
-[charge](https://wiki.openstreetmap.org/wiki/Key:charge)
-This is rendered with `A fee of {charge} should be paid for climbing here`
- -  *Climbing here is free of charge* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno' target='_blank'>no</a>
- -  *Paying a fee is required to climb here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a> & charge=
+*A fee of {charge} should be paid for climbing here* is shown if `charge` is set
+
+
+ -  *Climbing here is free of charge* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno' target='_blank'>no</a>
+ -  *Paying a fee is required to climb here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a> & charge=
+
+
 
 
 
@@ -195,80 +189,38 @@ This is rendered with `A fee of {charge} should be paid for climbing here`
 
 The question is `Is bouldering possible here?`
 
- -  *Bouldering is possible here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:boulder' target='_blank'>climbing:boulder</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dyes' target='_blank'>yes</a>
- -  *Bouldering is not possible here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:boulder' target='_blank'>climbing:boulder</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dno' target='_blank'>no</a>
- -  *Bouldering is possible, although there are only a few problems* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:boulder' target='_blank'>climbing:boulder</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dlimited' target='_blank'>limited</a>
- -  *There are {climbing:boulder} boulder problems* corresponds with climbing:boulder~.+
- - _This option cannot be chosen as answer_
+
+
+ -  *Bouldering is possible here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:boulder' target='_blank'>climbing:boulder</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dyes' target='_blank'>yes</a>
+ -  *Bouldering is not possible here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:boulder' target='_blank'>climbing:boulder</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dno' target='_blank'>no</a>
+ -  *Bouldering is possible, although there are only a few problems* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:boulder' target='_blank'>climbing:boulder</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dlimited' target='_blank'>limited</a>
+ -  *There are {climbing:boulder} boulder problems* is shown if with climbing:boulder~.+. _This option cannot be chosen as answer_
+
+
 
 
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
+*{questions( ,)}*
 
 
 
-
-
-### nearby_images
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default_conditional`
 
 ### lod
 
 _This tagrendering has no question and is thus read-only_
+*{linked_data_from_website()}*
 
 
-
-This tagrendering has labels 
-`added_by_default`
-
-### favourite_status
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### share
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### qr_code
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### last_edit
-Gives some metainfo about the last edit and who did edit it - rendering only
-_This tagrendering has no question and is thus read-only_
-
-
-This tagrendering is only visible in the popup if the following condition is met: _last_edit:changeset~.+ & _last_edit:contributor~.+
 This tagrendering has labels 
 `added_by_default`
 
 ### all-tags
 
 _This tagrendering has no question and is thus read-only_
-
+*{all_tags()}*
 
 
 

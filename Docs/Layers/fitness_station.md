@@ -3,42 +3,44 @@
 # fitness_station
 
 
-[object Object]
+
 
 Find a fitness station near you, and add missing ones.
 
 
 
 
+
+
  - This layer is shown at zoomlevel **12** and higher
+
+
+
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
 2. [Basic tags for this layer](#basic-tags-for-this-layer)
 3. [Supported attributes](#supported-attributes)
-  - [just_created](#just_created)
-  - [nothing_known](#nothing_known)
   - [images](#images)
   - [name](#name)
   - [type](#type)
   - [operator](#operator)
   - [opening_hours_24_7](#opening_hours_24_7)
+  - [Opening hours](#opening-hours)
   - [leftover-questions](#leftover-questions)
-  - [minimap](#minimap)
-  - [nearby_images](#nearby_images)
   - [move-button](#move-button)
   - [lod](#lod)
-  - [favourite_status](#favourite_status)
-  - [share](#share)
-  - [qr_code](#qr_code)
-  - [last_edit](#last_edit)
   - [all-tags](#all-tags)
-    + [Filters](#filters)
+4. [Filters](#filters)
 
 ## Themes using this layer
 
+
+
  - [personal](https://mapcomplete.org/personal)
  - [sports](https://mapcomplete.org/sports)
+
+
 
 ## Basic tags for this layer
 
@@ -52,37 +54,18 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 
 | attribute | type | values which are supported by this layer |
 -----|-----|----- |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/id#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/name#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [string](../SpecialInputElements.md#string) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/fitness_station#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice | [object Object] [object Object] [object Object] [object Object] [object Object] [object Object] [object Object] [object Object] [object Object] [object Object] [object Object] [object Object] [object Object] [object Object] [object Object] [object Object] [object Object] [object Object] [object Object] [object Object] [object Object] [object Object] [object Object] [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/operator#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [string](../SpecialInputElements.md#string) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/opening_hours#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [opening_hours](../SpecialInputElements.md#opening_hours) | [object Object] |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/name#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/name/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [name](https://wiki.openstreetmap.org/wiki/Key:name) | [string](../SpecialInputElements.md#string) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/fitness_station#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/fitness_station/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [fitness_station](https://wiki.openstreetmap.org/wiki/Key:fitness_station) | Multiple choice | [horizontal_bar](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dhorizontal_bar) [sign](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dsign) [sit-up](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dsit-up) [push-up](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dpush-up) [stretch_bars](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dstretch_bars) [hyperextension](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dhyperextension) [rings](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Drings) [horizontal_ladder](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dhorizontal_ladder) [wall_bars](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dwall_bars) [slalom](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dslalom) [stepping_stones](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dstepping_stones) [leapfrog](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dleapfrog) [beam_jump](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dbeam_jump) [hurdling](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dhurdling) [wall](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dwall) [balance_beam](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dbalance_beam) [log_lifting](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dlog_lifting) [captains_chair](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dcaptains_chair) [box](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dbox) [battling_ropes](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dbattling_ropes) [excercise_bike](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dexcercise_bike) [elliptical_trainer](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Delliptical_trainer) [air_walker](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dair_walker) [rower](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Drower) [slackline](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dslackline) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/operator#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/operator/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [operator](https://wiki.openstreetmap.org/wiki/Key:operator) | [string](../SpecialInputElements.md#string) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/opening_hours#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/opening_hours/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | [24/7](https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7) |
 
 
 
-
-### just_created
-This element shows a 'thank you' that the contributor has recently created this element
-_This tagrendering has no question and is thus read-only_
-
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/party.svg' style='width: 3rem; height: 3rem'> *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
-This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
-This tagrendering has labels 
-`added_by_default_top`
-
-### nothing_known
-
-_This tagrendering has no question and is thus read-only_
-
-
-This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time>=300 & _backend~.+
-This tagrendering has labels 
-`added_by_default_top`
 
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
-
+*{image_carousel()}{image_upload()}*
 
 
 
@@ -90,10 +73,12 @@ _This tagrendering has no question and is thus read-only_
 ### name
 
 The question is `What is the name of this fitness station?`
-This rendering asks information about the property 
-[name](https://wiki.openstreetmap.org/wiki/Key:name)
-This is rendered with `This fitness station is called {name}`
- -  *This fitness station doesn't have a name* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:noname' target='_blank'>noname</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:noname%3Dyes' target='_blank'>yes</a>
+*This fitness station is called {name}* is shown if `name` is set
+
+
+ -  *This fitness station doesn't have a name* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:noname' target='_blank'>noname</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:noname%3Dyes' target='_blank'>yes</a>
+
+
 
 
 
@@ -101,40 +86,42 @@ This is rendered with `This fitness station is called {name}`
 
 The question is `What kind of equipment does this fitness station have?`
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/fitness_station/Trimm-Dich-Pfad_Grünwalder_Forst_Klimmzüge.jpg' style='width: 3rem; height: 3rem'> *This fitness station has a horizontal bar, high enough for pull-ups.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dhorizontal_bar' target='_blank'>horizontal_bar</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/fitness_station/Outdoor_fitness_station_sign.jpg' style='width: 3rem; height: 3rem'> *This fitness station has a sign with instructions for a specific exercise.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dsign' target='_blank'>sign</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/fitness_station/Inclined_sit-up_bench.jpg' style='width: 3rem; height: 3rem'> *This fitness station has a facility for sit-ups.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dsit-up' target='_blank'>sit-up</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/fitness_station/Push-up_bars.jpg' style='width: 3rem; height: 3rem'> *This fitness station has a facility for push-ups. Usually consists of one or more low horizontal bars.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dpush-up' target='_blank'>push-up</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/fitness_station/Fitness_station_stretch_bars.jpg' style='width: 3rem; height: 3rem'> *This fitness station has bars for stretching.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dstretch_bars' target='_blank'>stretch_bars</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/fitness_station/Inclined_sit-up_and_hyperextension_bench.jpg' style='width: 3rem; height: 3rem'> *This fitness station has a station for making hyperextensions.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dhyperextension' target='_blank'>hyperextension</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/fitness_station/Exercise9159.jpg' style='width: 3rem; height: 3rem'> *This fitness station has rings for gymnastic exercises.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Drings' target='_blank'>rings</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/fitness_station/Horizontal_ladder.jpg' style='width: 3rem; height: 3rem'> *This fitness station has a horizontal ladder, also known as monkey bars.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dhorizontal_ladder' target='_blank'>horizontal_ladder</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/fitness_station/RIAN_archive_493268_Sports_at_a_kindergarten.jpg' style='width: 3rem; height: 3rem'> *This fitness station has wall bars to climb on.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dwall_bars' target='_blank'>wall_bars</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/fitness_station/Fitness_station_slalom.jpg' style='width: 3rem; height: 3rem'> *This fitness station has posts for performing slalom exercises.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dslalom' target='_blank'>slalom</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/fitness_station/Fitness_station_stepping_stone.jpg' style='width: 3rem; height: 3rem'> *This fitness station has stepping stones.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dstepping_stones' target='_blank'>stepping_stones</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/fitness_station/Fitness_station_leapfrog.jpg' style='width: 3rem; height: 3rem'> *This fitness station has cones for performing leapfrog jumps.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dleapfrog' target='_blank'>leapfrog</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/fitness_station/Fitness_station_beam_jump.jpg' style='width: 3rem; height: 3rem'> *This fitness station has beams to jump over.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dbeam_jump' target='_blank'>beam_jump</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/fitness_station/Fitness_station_hurdling.jpg' style='width: 3rem; height: 3rem'> *This fitness station has hurdles to cross.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dhurdling' target='_blank'>hurdling</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/fitness_station/Fitness_station_wall.jpg' style='width: 3rem; height: 3rem'> *This fitness station has a wall to climb on.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dwall' target='_blank'>wall</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/fitness_station/Exercise9170.jpg' style='width: 3rem; height: 3rem'> *This fitness station has a balance beam.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dbalance_beam' target='_blank'>balance_beam</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/fitness_station/Log_lifting_exercise.jpg' style='width: 3rem; height: 3rem'> *This fitness station has a log with a handle on the end to lift.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dlog_lifting' target='_blank'>log_lifting</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/fitness_station/Captains_chair.jpg' style='width: 3rem; height: 3rem'> *This fitness station has a chair with only elbow supports and a rear (without seat), for performing leg raises.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dcaptains_chair' target='_blank'>captains_chair</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/fitness_station/Exercise_Box.jpg' style='width: 3rem; height: 3rem'> *This fitness station has a box that can be used for jumping.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dbox' target='_blank'>box</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/fitness_station/Battling_ropes.jpg' style='width: 3rem; height: 3rem'> *This fitness station has battling ropes.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dbattling_ropes' target='_blank'>battling_ropes</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/fitness_station/Outdoor_stationary_bicycle.jpg' style='width: 3rem; height: 3rem'> *This fitness station has a stationary bicycle.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dexcercise_bike' target='_blank'>excercise_bike</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/fitness_station/07-12-2016,_Fitness_trail,_Parque_da_Alfarrobeira,_Albufeira_2.jpg' style='width: 3rem; height: 3rem'> *This fitness station has a cross-trainer.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Delliptical_trainer' target='_blank'>elliptical_trainer</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/fitness_station/Ansan_Park_beind_the_city_hall_022.jpg' style='width: 3rem; height: 3rem'> *This fitness station has an air walker.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dair_walker' target='_blank'>air_walker</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/fitness_station/Annecy_-_rower.jpg' style='width: 3rem; height: 3rem'> *This fitness station has a rower.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Drower' target='_blank'>rower</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/fitness_station/Slacklineanlage_im_Dietenbachpark.jpg' style='width: 3rem; height: 3rem'> *This fitness station has a slackline.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dslackline' target='_blank'>slackline</a>
+
+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/fitness_station/Trimm-Dich-Pfad_Grünwalder_Forst_Klimmzüge.jpg' style='width: 3rem; height: 3rem'> *This fitness station has a horizontal bar, high enough for pull-ups.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dhorizontal_bar' target='_blank'>horizontal_bar</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/fitness_station/Outdoor_fitness_station_sign.jpg' style='width: 3rem; height: 3rem'> *This fitness station has a sign with instructions for a specific exercise.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dsign' target='_blank'>sign</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/fitness_station/Inclined_sit-up_bench.jpg' style='width: 3rem; height: 3rem'> *This fitness station has a facility for sit-ups.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dsit-up' target='_blank'>sit-up</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/fitness_station/Push-up_bars.jpg' style='width: 3rem; height: 3rem'> *This fitness station has a facility for push-ups. Usually consists of one or more low horizontal bars.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dpush-up' target='_blank'>push-up</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/fitness_station/Fitness_station_stretch_bars.jpg' style='width: 3rem; height: 3rem'> *This fitness station has bars for stretching.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dstretch_bars' target='_blank'>stretch_bars</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/fitness_station/Inclined_sit-up_and_hyperextension_bench.jpg' style='width: 3rem; height: 3rem'> *This fitness station has a station for making hyperextensions.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dhyperextension' target='_blank'>hyperextension</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/fitness_station/Exercise9159.jpg' style='width: 3rem; height: 3rem'> *This fitness station has rings for gymnastic exercises.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Drings' target='_blank'>rings</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/fitness_station/Horizontal_ladder.jpg' style='width: 3rem; height: 3rem'> *This fitness station has a horizontal ladder, also known as monkey bars.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dhorizontal_ladder' target='_blank'>horizontal_ladder</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/fitness_station/RIAN_archive_493268_Sports_at_a_kindergarten.jpg' style='width: 3rem; height: 3rem'> *This fitness station has wall bars to climb on.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dwall_bars' target='_blank'>wall_bars</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/fitness_station/Fitness_station_slalom.jpg' style='width: 3rem; height: 3rem'> *This fitness station has posts for performing slalom exercises.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dslalom' target='_blank'>slalom</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/fitness_station/Fitness_station_stepping_stone.jpg' style='width: 3rem; height: 3rem'> *This fitness station has stepping stones.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dstepping_stones' target='_blank'>stepping_stones</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/fitness_station/Fitness_station_leapfrog.jpg' style='width: 3rem; height: 3rem'> *This fitness station has cones for performing leapfrog jumps.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dleapfrog' target='_blank'>leapfrog</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/fitness_station/Fitness_station_beam_jump.jpg' style='width: 3rem; height: 3rem'> *This fitness station has beams to jump over.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dbeam_jump' target='_blank'>beam_jump</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/fitness_station/Fitness_station_hurdling.jpg' style='width: 3rem; height: 3rem'> *This fitness station has hurdles to cross.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dhurdling' target='_blank'>hurdling</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/fitness_station/Fitness_station_wall.jpg' style='width: 3rem; height: 3rem'> *This fitness station has a wall to climb on.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dwall' target='_blank'>wall</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/fitness_station/Exercise9170.jpg' style='width: 3rem; height: 3rem'> *This fitness station has a balance beam.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dbalance_beam' target='_blank'>balance_beam</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/fitness_station/Log_lifting_exercise.jpg' style='width: 3rem; height: 3rem'> *This fitness station has a log with a handle on the end to lift.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dlog_lifting' target='_blank'>log_lifting</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/fitness_station/Captains_chair.jpg' style='width: 3rem; height: 3rem'> *This fitness station has a chair with only elbow supports and a rear (without seat), for performing leg raises.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dcaptains_chair' target='_blank'>captains_chair</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/fitness_station/Exercise_Box.jpg' style='width: 3rem; height: 3rem'> *This fitness station has a box that can be used for jumping.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dbox' target='_blank'>box</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/fitness_station/Battling_ropes.jpg' style='width: 3rem; height: 3rem'> *This fitness station has battling ropes.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dbattling_ropes' target='_blank'>battling_ropes</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/fitness_station/Outdoor_stationary_bicycle.jpg' style='width: 3rem; height: 3rem'> *This fitness station has a stationary bicycle.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dexcercise_bike' target='_blank'>excercise_bike</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/fitness_station/07-12-2016,_Fitness_trail,_Parque_da_Alfarrobeira,_Albufeira_2.jpg' style='width: 3rem; height: 3rem'> *This fitness station has a cross-trainer.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Delliptical_trainer' target='_blank'>elliptical_trainer</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/fitness_station/Ansan_Park_beind_the_city_hall_022.jpg' style='width: 3rem; height: 3rem'> *This fitness station has an air walker.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dair_walker' target='_blank'>air_walker</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/fitness_station/Annecy_-_rower.jpg' style='width: 3rem; height: 3rem'> *This fitness station has a rower.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Drower' target='_blank'>rower</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/fitness_station/Slacklineanlage_im_Dietenbachpark.jpg' style='width: 3rem; height: 3rem'> *This fitness station has a slackline.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dslackline' target='_blank'>slackline</a>
+
+
 
 
 
 ### operator
 
 The question is `Who maintains this fitness station?`
-This rendering asks information about the property 
-[operator](https://wiki.openstreetmap.org/wiki/Key:operator)
-This is rendered with `The fitness station is maintained by {operator}.`
+*The fitness station is maintained by {operator}.* is shown if `operator` is set
 
 
 
@@ -142,44 +129,28 @@ This is rendered with `The fitness station is maintained by {operator}.`
 ### opening_hours_24_7
 
 The question is `What are the opening hours of {title()}?`
-This rendering asks information about the property 
-[opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours)
-This is rendered with `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/open24_7.svg' style='width: 3rem; height: 3rem'> *24/7 opened (including holidays)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
- -  *Marked as closed for an unspecified time* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>
- - _This option cannot be chosen as answer_
+*<h3>Opening hours</h3>{opening_hours_table(opening_hours)}* is shown if `opening_hours` is set
+
+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/open24_7.svg' style='width: 3rem; height: 3rem'> *24/7 opened (including holidays)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
+ -  *Marked as closed for an unspecified time* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>. _This option cannot be chosen as answer_
+
+
 
 
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
+*{questions( ,)}*
 
 
 
-
-
-### minimap
-Shows a small map with the feature. Added by default to every popup
-_This tagrendering has no question and is thus read-only_
-
-
-
-
-
-### nearby_images
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default_conditional`
 
 ### move-button
 
 _This tagrendering has no question and is thus read-only_
-
+*{move_button()}*
 
 
 
@@ -187,57 +158,21 @@ _This tagrendering has no question and is thus read-only_
 ### lod
 
 _This tagrendering has no question and is thus read-only_
+*{linked_data_from_website()}*
 
 
-
-This tagrendering has labels 
-`added_by_default`
-
-### favourite_status
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### share
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### qr_code
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### last_edit
-Gives some metainfo about the last edit and who did edit it - rendering only
-_This tagrendering has no question and is thus read-only_
-
-
-This tagrendering is only visible in the popup if the following condition is met: _last_edit:changeset~.+ & _last_edit:contributor~.+
 This tagrendering has labels 
 `added_by_default`
 
 ### all-tags
 
 _This tagrendering has no question and is thus read-only_
+*{all_tags()}*
 
 
 
 
-
-#### Filters
+## Filters
 
 
 

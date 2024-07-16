@@ -17,7 +17,7 @@
     "nl": "Een hulpmiddel om data van velopark.be in OpenStreetMap in te laden"
   },
   "descriptionTail": {
-    "*": "<h3>Maintainer tools</h3><ul><li><a class='link-underline' href='https://maproulette.org/api/v2/challenge/view/43282' download='Velopark_sync_2024-01-15.geojson'>Download the first sync results</a></li></ul>"
+    "*": "<h3>Maintainer tools</h3><ul class='link-underline'><li><a target='_blank' href='https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Themes/velopark.md'>See documentation and links to Overpass</a></li><li><a  href='https://maproulette.org/api/v2/challenge/view/43282' download='Velopark_sync_2024-01-15.geojson'>Download the first sync results</a></li></ul>"
   },
   "icon": "./assets/themes/velopark/velopark.svg",
   "startZoom": 18,

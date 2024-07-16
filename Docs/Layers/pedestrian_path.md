@@ -3,9 +3,11 @@
 # pedestrian_path
 
 
-[object Object]
+
 
 Pedestrian footpaths, especially used for indoor navigation and snapping entrances to this layer
+
+
 
 
 
@@ -13,6 +15,9 @@ Pedestrian footpaths, especially used for indoor navigation and snapping entranc
  - This layer is shown at zoomlevel **18** and higher
  - Elements don't have a title set and cannot be toggled nor will they show up in the dashboard. If you import this layer in your theme, override `title` to make this toggleable.
  - This layer is needed as dependency for layer [entrance](#entrance)
+
+
+
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
@@ -21,11 +26,15 @@ Pedestrian footpaths, especially used for indoor navigation and snapping entranc
 
 ## Themes using this layer
 
+
+
  - [indoors](https://mapcomplete.org/indoors)
  - [onwheels](https://mapcomplete.org/onwheels)
  - [personal](https://mapcomplete.org/personal)
  - [stations](https://mapcomplete.org/stations)
  - [walls_and_buildings](https://mapcomplete.org/walls_and_buildings)
+
+
 
 ## Basic tags for this layer
 
