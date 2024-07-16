@@ -469,6 +469,9 @@ export default class ThemeViewState implements SpecialVisualizationState {
     public showCurrentLocationOn(map: Store<MlMap>): ShowDataLayer {
         const id = "gps_location"
         const flayerGps = this.layerState.filteredLayers.get(id)
+        if(flayerGps === undefined){
+            return
+        }
         const features = this.geolocation.currentUserLocation
         return new ShowDataLayer(map, {
             features,

@@ -213,7 +213,7 @@
 
 <main>
   <div class="absolute top-0 left-0 h-screen w-screen overflow-hidden">
-    <MaplibreMap map={maplibremap} mapProperties={mapproperties} />
+    <MaplibreMap map={maplibremap} mapProperties={mapproperties} autorecovery={true}/>
   </div>
 
   {#if $visualFeedback}
@@ -286,9 +286,11 @@
           on:keydown={forwardEventToMap}
           htmlElem={openCurrentViewLayerButton}
         >
+          <div class="w-8 h-8 cursor-pointer">
           <ToSvelte
-            construct={() => currentViewLayer.defaultIcon().SetClass("w-8 h-8 cursor-pointer")}
+            construct={() => currentViewLayer.defaultIcon()}
           />
+          </div>
         </MapControlButton>
       {/if}
       <ExtraLinkButton {state} />
