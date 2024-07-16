@@ -1,4 +1,4 @@
-const version = "0.0.8-GITHUB-COMMIT"
+const version = "0.0.0"
 
 interface ServiceWorkerFetchEvent extends Event {
     request: RequestInfo & { url: string }
@@ -23,20 +23,27 @@ async function activate() {
         .catch(console.error)
 }
 
-const cacheFirst = async (event) => {
+function fetchAndCache(event){
+    return fetch(event.request).then((networkResponse) => {
+        return caches.open(version).then((cache) => {
+            cache.put(event.request, networkResponse.clone())
+            console.log("Cached", event.request)
+            return networkResponse
+        })
+    })
+}
+
+const cacheFirst = async (event, attemptUpdate: boolean = false) => {
     await event.respondWith(
         caches.match(event.request, { ignoreSearch: true }).then((cacheResponse) => {
             if (cacheResponse !== undefined) {
-                console.log("Loaded from cache: ", event.request)
+                console.debug("Loaded from cache: ", event.request)
+                if(attemptUpdate){
+                    fetchAndCache(event)
+                }
                 return cacheResponse
             }
-            return fetch(event.request).then((networkResponse) => {
-                return caches.open(version).then((cache) => {
-                    cache.put(event.request, networkResponse.clone())
-                    console.log("Cached", event.request)
-                    return networkResponse
-                })
-            })
+            return fetchAndCache(event)
         })
     )
 }
@@ -59,9 +66,10 @@ self.addEventListener("fetch", async (e) => {
             origin.hostname !== "127.0.0.1" &&
             origin.hostname !== "localhost" &&
             !origin.hostname.endsWith(".local") &&
-            !origin.host.endsWith(".gitpod.io")
+            !origin.host.endsWith(".gitpod.io") &&
+            origin.pathname.indexOf("service-worker") < 0
         if (!shouldBeCached) {
-            console.log("Not intercepting ", requestUrl.toString(), origin.host, requestUrl.host)
+            console.debug("Not intercepting ", requestUrl.toString(), origin.host, requestUrl.host)
             // We return _without_ calling event.respondWith, which signals the browser that it'll have to handle it himself
             return
         }
