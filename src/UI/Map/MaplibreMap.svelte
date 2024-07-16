@@ -50,13 +50,13 @@
       center: { lng: lon, lat },
       maxZoom: 24,
       interactive: true,
-      attributionControl: false,
+      attributionControl: false
     }
     _map = new maplibre.Map(options)
     window.requestAnimationFrame(() => {
       _map.resize()
     })
-    _map.on("load", function () {
+    _map.on("load", function() {
       _map.resize()
       const canvas = _map.getCanvas()
       if (interactive) {
@@ -71,13 +71,18 @@
     map.set(_map)
   })
   onDestroy(async () => {
-    await Utils.waitFor(250)
-    try {
-      if (_map) _map.remove()
-      map = null
-    } catch (e) {
-      console.error("Could not destroy map")
-    }
+    await Utils.waitFor(100)
+    requestAnimationFrame(
+      () => {
+        try {
+          _map?.remove()
+          console.log("Removed map")
+          map = null
+        } catch (e) {
+          console.error("Could not destroy map")
+        }
+      }
+    )
   })
 </script>
 
