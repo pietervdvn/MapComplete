@@ -154,6 +154,7 @@
             "editId": "Hier bewerken met de OpenStreetMap online editor",
             "editJosm": "Hier bewerken met JOSM",
             "followOnMastodon": "Volg MapComplete op Mastodon",
+            "gotoSourceCode": "Bekijk de broncode",
             "iconAttribution": {
                 "title": "Iconen en afbeeldingen"
             },
@@ -166,6 +167,7 @@
             "openIssueTracker": "Geef een fout in de software door",
             "openMapillary": "Open Mapillary op deze locatie",
             "openOsmcha": "Bekijk de laatste bijdragen gemaakt met {theme}",
+            "openOsmchaLastWeek": "Bekijk aanpassingen van de voorbije 7 dagen",
             "themeBy": "Thema gemaakt door {author}",
             "title": "Copyright en attributie",
             "translatedBy": "MapComplete werd vertaald door {contributors} en <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} meer vertalers</a>"
