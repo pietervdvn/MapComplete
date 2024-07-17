@@ -45,6 +45,9 @@
         "useSomethingElse": "Gebruik een ander OpenStreetMap-bewerkprogramma om dit object te verwijderen",
         "whyDelete": "Waarom moet dit object van de kaart verwijderd worden?"
     },
+    "external": {
+        "error": "Kon geen gestructureerde informatie uit de website ophalen"
+    },
     "favourite": {
         "loginNeeded": "<h3>Log in</h3>Je moet je aanmelden met OpenStreetMap om een persoonlijk thema te gebruiken",
         "panelIntro": "<h3>Jouw persoonlijke thema</h3>Activeer je favorite lagen van alle andere themas",
@@ -151,6 +154,7 @@
             "editId": "Hier bewerken met de OpenStreetMap online editor",
             "editJosm": "Hier bewerken met JOSM",
             "followOnMastodon": "Volg MapComplete op Mastodon",
+            "gotoSourceCode": "Bekijk de broncode",
             "iconAttribution": {
                 "title": "Iconen en afbeeldingen"
             },
@@ -163,6 +167,7 @@
             "openIssueTracker": "Geef een fout in de software door",
             "openMapillary": "Open Mapillary op deze locatie",
             "openOsmcha": "Bekijk de laatste bijdragen gemaakt met {theme}",
+            "openOsmchaLastWeek": "Bekijk aanpassingen van de voorbije 7 dagen",
             "themeBy": "Thema gemaakt door {author}",
             "title": "Copyright en attributie",
             "translatedBy": "MapComplete werd vertaald door {contributors} en <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} meer vertalers</a>"

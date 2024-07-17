@@ -245,7 +245,7 @@
             "licenseInfo": "<h3>Copyright notice</h3>The provided data is available under ODbL. Reusing it is gratis for any purpose, but <ul><li>the attribution <b>© OpenStreetMap contributors</b> must be shown<li><li>Any change must be published under the same license</li></ul> Please read the full <a href='https://www.openstreetmap.org/copyright' target='_blank'>copyright notice</a> for details.",
             "noDataLoaded": "No data is loaded yet. Download will be available soon",
             "pdf": {
-                "current_view_generic": "Export a PDF off the current view for {paper_size} in {orientation} orientation"
+                "current_view_generic": "Export a PDF of the current view for {paper_size} in {orientation} orientation"
             },
             "title": "Download",
             "toMuch": "There are to many features to download them all",
