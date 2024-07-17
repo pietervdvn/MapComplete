@@ -12,6 +12,7 @@ In some cases, not every type of tags-filter can be used. For example,  _renderi
 fine (`"if": "brand~[Bb]randname", "then":" The brand is Brandname"`); but this regex can not be used to write a value
 into the database. The theme loader will however refuse to work with such inconsistencies and notify you of this while
 you are building your theme.
+
 ## Table of contents
 
 1. [Example](#example)

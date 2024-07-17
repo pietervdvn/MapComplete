@@ -290,6 +290,15 @@
 |genre= POI, editor, facadegardens
 }}
 {{service_item
+|name= [https://mapcomplete.org/fireplace fireplace]
+|region= Worldwide
+|lang= {{#language:de|en}}, {{#language:en|en}}
+|descr= A MapComplete theme: Outdoor place to make a fire or a fixed barbecue in an official place
+|material= {{yes|[https://mapcomplete.org/ Yes]}}
+|image= MapComplete_Screenshot.png
+|genre= POI, editor, fireplace
+}}
+{{service_item
 |name= [https://mapcomplete.org/fritures fritures]
 |region= Worldwide
 |lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:ca|en}}, {{#language:es|en}}, {{#language:pl|en}}

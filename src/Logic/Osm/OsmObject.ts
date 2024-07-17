@@ -3,10 +3,11 @@ import polygon_features from "../../assets/polygon-features.json"
 import { OsmFeature, OsmId, OsmTags, WayId } from "../../Models/OsmFeature"
 import OsmToGeoJson from "osmtogeojson"
 import { Feature, LineString, Polygon } from "geojson"
+import Constants from "../../Models/Constants"
 
 export abstract class OsmObject {
     private static defaultBackend = "https://api.openstreetmap.org/"
-    protected static backendURL = OsmObject.defaultBackend
+    private static backendURL = Constants.osmAuthConfig.url ?? OsmObject.defaultBackend
     public static polygonFeatures = OsmObject.constructPolygonFeatures()
     type: "node" | "way" | "relation"
     id: number

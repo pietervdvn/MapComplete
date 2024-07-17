@@ -136,6 +136,9 @@
     },
     {
       "id": "minimap",
+      "labels": [
+        "ignore_docs"
+      ],
       "description": "Shows a small map with the feature. Added by default to every popup",
       "render": {
         "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
@@ -2584,7 +2587,8 @@
     {
       "id": "just_created",
       "labels": [
-        "added_by_default_top"
+        "added_by_default_top",
+        "ignore_docs"
       ],
       "description": "This element shows a 'thank you' that the contributor has recently created this element",
       "classes": "rounded-xl thanks",
@@ -2629,7 +2633,8 @@
     {
       "id": "nearby_images",
       "labels": [
-        "added_by_default_conditional"
+        "added_by_default_conditional",
+        "ignore_docs"
       ],
       "render": {
         "*": "{nearby_images()}"
@@ -2654,7 +2659,8 @@
     {
       "id": "favourite_status",
       "labels": [
-        "added_by_default"
+        "added_by_default",
+        "ignore_docs"
       ],
       "render": {
         "*": "{favourite_status()}"
@@ -2663,7 +2669,8 @@
     {
       "id": "share",
       "labels": [
-        "added_by_default"
+        "added_by_default",
+        "ignore_docs"
       ],
       "metacondition": "_supports_sharing=yes",
       "render": {
@@ -2680,7 +2687,8 @@
     {
       "id": "qr_code",
       "labels": [
-        "added_by_default"
+        "added_by_default",
+        "ignore_docs"
       ],
       "classes": "flex items-center gap-x-2",
       "render": {
@@ -2699,7 +2707,8 @@
     {
       "id": "last_edit",
       "labels": [
-        "added_by_default"
+        "added_by_default",
+        "ignore_docs"
       ],
       "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
       "condition": {
@@ -2735,7 +2744,8 @@
     {
       "id": "nothing_known",
       "labels": [
-        "added_by_default_top"
+        "added_by_default_top",
+        "ignore_docs"
       ],
       "condition": {
         "and": [

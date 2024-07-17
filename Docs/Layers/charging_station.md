@@ -3,21 +3,24 @@
 # charging_station
 
 
-[object Object]
+
 
 A charging station
 
 
 
 
+
+
  - This layer is shown at zoomlevel **10** and higher
+
+
+
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
 2. [Basic tags for this layer](#basic-tags-for-this-layer)
 3. [Supported attributes](#supported-attributes)
-  - [just_created](#just_created)
-  - [nothing_known](#nothing_known)
   - [images](#images)
   - [Type](#type)
   - [access](#access)
@@ -108,6 +111,7 @@ A charging station
   - [current-socket:nema_5_20](#current-socketnema_5_20)
   - [power-output-socket:nema_5_20](#power-output-socketnema_5_20)
   - [OH](#oh)
+  - [Opening hours](#opening-hours)
   - [fee](#fee)
   - [charge](#charge)
   - [payment-options](#payment-options)
@@ -126,25 +130,23 @@ A charging station
   - [Parking:fee](#parkingfee)
   - [questions](#questions)
   - [questions-technical](#questions-technical)
-  - [minimap](#minimap)
-  - [nearby_images](#nearby_images)
+  - [Technical questions](#technical-questions)
   - [move-button](#move-button)
   - [delete-button](#delete-button)
   - [lod](#lod)
-  - [favourite_status](#favourite_status)
-  - [share](#share)
-  - [qr_code](#qr_code)
-  - [last_edit](#last_edit)
-  - [all-tags](#all-tags)
-    + [Filters](#filters)
+4. [Filters](#filters)
 
 ## Themes using this layer
+
+
 
  - [charging_stations](https://mapcomplete.org/charging_stations)
  - [cyclofix](https://mapcomplete.org/cyclofix)
  - [parkings](https://mapcomplete.org/parkings)
  - [personal](https://mapcomplete.org/personal)
  - [toerisme_vlaanderen](https://mapcomplete.org/toerisme_vlaanderen)
+
+
 
 ## Basic tags for this layer
 
@@ -163,133 +165,114 @@ Elements must match **any** of the following expressions:
 
 | attribute | type | values which are supported by this layer |
 -----|-----|----- |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/id#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/access#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [string](../SpecialInputElements.md#string) | [object Object] [object Object] [object Object] [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/capacity#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pnat](../SpecialInputElements.md#pnat) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:schuko#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pnat](../SpecialInputElements.md#pnat) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:schuko:voltage#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) | [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:schuko:current#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) | [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:schuko:output#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) | [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:typee#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pnat](../SpecialInputElements.md#pnat) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:typee:voltage#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) | [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:typee:current#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) | [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:typee:output#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) | [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:chademo#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pnat](../SpecialInputElements.md#pnat) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:chademo:voltage#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) | [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:chademo:current#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) | [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:chademo:output#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) | [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:type1_cable#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pnat](../SpecialInputElements.md#pnat) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:type1_cable:voltage#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) | [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:type1_cable:current#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) | [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:type1_cable:output#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) | [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:type1#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pnat](../SpecialInputElements.md#pnat) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:type1:voltage#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) | [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:type1:current#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) | [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:type1:output#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) | [object Object] [object Object] [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:type1_combo#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pnat](../SpecialInputElements.md#pnat) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:type1_combo:voltage#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) | [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:type1_combo:current#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) | [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:type1_combo:output#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) | [object Object] [object Object] [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:tesla_supercharger#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pnat](../SpecialInputElements.md#pnat) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:tesla_supercharger:voltage#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) | [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:tesla_supercharger:current#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) | [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:tesla_supercharger:output#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) | [object Object] [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:type2#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pnat](../SpecialInputElements.md#pnat) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:type2:voltage#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) | [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:type2:current#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) | [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:type2:output#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) | [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:type2_combo#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pnat](../SpecialInputElements.md#pnat) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:type2_combo:voltage#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) | [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:type2_combo:current#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) | [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:type2_combo:output#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) | [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:type2_cable#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pnat](../SpecialInputElements.md#pnat) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:type2_cable:voltage#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) | [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:type2_cable:current#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) | [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:type2_cable:output#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) | [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:tesla_supercharger_ccs#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pnat](../SpecialInputElements.md#pnat) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:tesla_supercharger_ccs:voltage#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) | [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:tesla_supercharger_ccs:current#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) | [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:tesla_supercharger_ccs:output#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) | [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:tesla_destination#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pnat](../SpecialInputElements.md#pnat) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:tesla_destination:voltage#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) | [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:tesla_destination:current#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) | [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:tesla_destination:output#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) | [object Object] [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:tesla_destination#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pnat](../SpecialInputElements.md#pnat) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:tesla_destination:voltage#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) | [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:tesla_destination:current#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) | [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:tesla_destination:output#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) | [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:USB-A#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pnat](../SpecialInputElements.md#pnat) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:USB-A:voltage#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) | [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:USB-A:current#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) | [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:USB-A:output#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) | [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:bosch_3pin#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pnat](../SpecialInputElements.md#pnat) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:bosch_3pin:voltage#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:bosch_3pin:current#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:bosch_3pin:output#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:bosch_5pin#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pnat](../SpecialInputElements.md#pnat) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:bosch_5pin:voltage#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:bosch_5pin:current#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:bosch_5pin:output#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:bs1363#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pnat](../SpecialInputElements.md#pnat) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:bs1363:voltage#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) | [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:bs1363:current#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) | [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:bs1363:output#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) | [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:nema5_15#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pnat](../SpecialInputElements.md#pnat) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:nema5_15:voltage#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) | [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:nema5_15:current#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) | [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:nema5_15:output#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) | [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:sev1011_t23#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pnat](../SpecialInputElements.md#pnat) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:sev1011_t23:voltage#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) | [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:sev1011_t23:current#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) | [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:sev1011_t23:output#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) | [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:as3112#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pnat](../SpecialInputElements.md#pnat) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:as3112:voltage#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) | [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:as3112:current#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) | [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:as3112:output#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) | [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:nema_5_20#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pnat](../SpecialInputElements.md#pnat) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:nema_5_20:voltage#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) | [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:nema_5_20:current#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) | [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:nema_5_20:output#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) | [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/opening_hours#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [opening_hours](../SpecialInputElements.md#opening_hours) | [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/fee#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice | [object Object] [object Object] [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/charge#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [string](../SpecialInputElements.md#string) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/authentication:phone_call:number#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [phone](../SpecialInputElements.md#phone) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/maxstay#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) | [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/network#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [string](../SpecialInputElements.md#string) | [object Object] [object Object] [object Object] [object Object] [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/operator#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [string](../SpecialInputElements.md#string) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/phone#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [phone](../SpecialInputElements.md#phone) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/email#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [email](../SpecialInputElements.md#email) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/website#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [url](../SpecialInputElements.md#url) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/level#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [float](../SpecialInputElements.md#float) | [object Object] [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/ref#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [string](../SpecialInputElements.md#string) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/planned:amenity#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice | [object Object] [object Object] [object Object] [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/parking:fee#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice | [object Object] [object Object] |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/access#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/access/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [access](https://wiki.openstreetmap.org/wiki/Key:access) | [string](../SpecialInputElements.md#string) | [yes](https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes) [customers](https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers) [key](https://wiki.openstreetmap.org/wiki/Tag:access%3Dkey) [private](https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate) [permissive](https://wiki.openstreetmap.org/wiki/Tag:access%3Dpermissive) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/capacity#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/capacity/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [capacity](https://wiki.openstreetmap.org/wiki/Key:capacity) | [pnat](../SpecialInputElements.md#pnat) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:schuko#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Aschuko/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:schuko](https://wiki.openstreetmap.org/wiki/Key:socket:schuko) | [pnat](../SpecialInputElements.md#pnat) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:schuko:voltage#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Aschuko%3Avoltage/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:schuko:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:schuko:voltage) | [pfloat](../SpecialInputElements.md#pfloat) | [230 V](https://wiki.openstreetmap.org/wiki/Tag:socket:schuko:voltage%3D230 V) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:schuko:current#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Aschuko%3Acurrent/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:schuko:current](https://wiki.openstreetmap.org/wiki/Key:socket:schuko:current) | [pfloat](../SpecialInputElements.md#pfloat) | [16 A](https://wiki.openstreetmap.org/wiki/Tag:socket:schuko:current%3D16 A) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:schuko:output#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Aschuko%3Aoutput/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:schuko:output](https://wiki.openstreetmap.org/wiki/Key:socket:schuko:output) | [pfloat](../SpecialInputElements.md#pfloat) | [3.6 kW](https://wiki.openstreetmap.org/wiki/Tag:socket:schuko:output%3D3.6 kW) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:typee#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Atypee/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:typee](https://wiki.openstreetmap.org/wiki/Key:socket:typee) | [pnat](../SpecialInputElements.md#pnat) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:typee:voltage#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Atypee%3Avoltage/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:typee:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:typee:voltage) | [pfloat](../SpecialInputElements.md#pfloat) | [230 V](https://wiki.openstreetmap.org/wiki/Tag:socket:typee:voltage%3D230 V) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:typee:current#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Atypee%3Acurrent/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:typee:current](https://wiki.openstreetmap.org/wiki/Key:socket:typee:current) | [pfloat](../SpecialInputElements.md#pfloat) | [16 A](https://wiki.openstreetmap.org/wiki/Tag:socket:typee:current%3D16 A) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:typee:output#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Atypee%3Aoutput/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:typee:output](https://wiki.openstreetmap.org/wiki/Key:socket:typee:output) | [pfloat](../SpecialInputElements.md#pfloat) | [3 kW](https://wiki.openstreetmap.org/wiki/Tag:socket:typee:output%3D3 kW) [22 kW](https://wiki.openstreetmap.org/wiki/Tag:socket:typee:output%3D22 kW) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:chademo#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Achademo/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:chademo](https://wiki.openstreetmap.org/wiki/Key:socket:chademo) | [pnat](../SpecialInputElements.md#pnat) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:chademo:voltage#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Achademo%3Avoltage/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:chademo:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:chademo:voltage) | [pfloat](../SpecialInputElements.md#pfloat) | [500 V](https://wiki.openstreetmap.org/wiki/Tag:socket:chademo:voltage%3D500 V) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:chademo:current#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Achademo%3Acurrent/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:chademo:current](https://wiki.openstreetmap.org/wiki/Key:socket:chademo:current) | [pfloat](../SpecialInputElements.md#pfloat) | [120 A](https://wiki.openstreetmap.org/wiki/Tag:socket:chademo:current%3D120 A) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:chademo:output#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Achademo%3Aoutput/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:chademo:output](https://wiki.openstreetmap.org/wiki/Key:socket:chademo:output) | [pfloat](../SpecialInputElements.md#pfloat) | [50 kW](https://wiki.openstreetmap.org/wiki/Tag:socket:chademo:output%3D50 kW) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:type1_cable#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Atype1_cable/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:type1_cable](https://wiki.openstreetmap.org/wiki/Key:socket:type1_cable) | [pnat](../SpecialInputElements.md#pnat) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:type1_cable:voltage#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Atype1_cable%3Avoltage/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:type1_cable:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:type1_cable:voltage) | [pfloat](../SpecialInputElements.md#pfloat) | [200 V](https://wiki.openstreetmap.org/wiki/Tag:socket:type1_cable:voltage%3D200 V) [240 V](https://wiki.openstreetmap.org/wiki/Tag:socket:type1_cable:voltage%3D240 V) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:type1_cable:current#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Atype1_cable%3Acurrent/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:type1_cable:current](https://wiki.openstreetmap.org/wiki/Key:socket:type1_cable:current) | [pfloat](../SpecialInputElements.md#pfloat) | [32 A](https://wiki.openstreetmap.org/wiki/Tag:socket:type1_cable:current%3D32 A) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:type1_cable:output#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Atype1_cable%3Aoutput/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:type1_cable:output](https://wiki.openstreetmap.org/wiki/Key:socket:type1_cable:output) | [pfloat](../SpecialInputElements.md#pfloat) | [3.7 kW](https://wiki.openstreetmap.org/wiki/Tag:socket:type1_cable:output%3D3.7 kW) [7 kW](https://wiki.openstreetmap.org/wiki/Tag:socket:type1_cable:output%3D7 kW) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:type1#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Atype1/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:type1](https://wiki.openstreetmap.org/wiki/Key:socket:type1) | [pnat](../SpecialInputElements.md#pnat) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:type1:voltage#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Atype1%3Avoltage/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:type1:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:type1:voltage) | [pfloat](../SpecialInputElements.md#pfloat) | [200 V](https://wiki.openstreetmap.org/wiki/Tag:socket:type1:voltage%3D200 V) [240 V](https://wiki.openstreetmap.org/wiki/Tag:socket:type1:voltage%3D240 V) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:type1:current#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Atype1%3Acurrent/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:type1:current](https://wiki.openstreetmap.org/wiki/Key:socket:type1:current) | [pfloat](../SpecialInputElements.md#pfloat) | [32 A](https://wiki.openstreetmap.org/wiki/Tag:socket:type1:current%3D32 A) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:type1:output#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Atype1%3Aoutput/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:type1:output](https://wiki.openstreetmap.org/wiki/Key:socket:type1:output) | [pfloat](../SpecialInputElements.md#pfloat) | [3.7 kW](https://wiki.openstreetmap.org/wiki/Tag:socket:type1:output%3D3.7 kW) [6.6 kW](https://wiki.openstreetmap.org/wiki/Tag:socket:type1:output%3D6.6 kW) [7 kW](https://wiki.openstreetmap.org/wiki/Tag:socket:type1:output%3D7 kW) [7.2 kW](https://wiki.openstreetmap.org/wiki/Tag:socket:type1:output%3D7.2 kW) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:type1_combo#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Atype1_combo/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:type1_combo](https://wiki.openstreetmap.org/wiki/Key:socket:type1_combo) | [pnat](../SpecialInputElements.md#pnat) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:type1_combo:voltage#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Atype1_combo%3Avoltage/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:type1_combo:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:type1_combo:voltage) | [pfloat](../SpecialInputElements.md#pfloat) | [400 V](https://wiki.openstreetmap.org/wiki/Tag:socket:type1_combo:voltage%3D400 V) [1000 V](https://wiki.openstreetmap.org/wiki/Tag:socket:type1_combo:voltage%3D1000 V) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:type1_combo:current#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Atype1_combo%3Acurrent/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:type1_combo:current](https://wiki.openstreetmap.org/wiki/Key:socket:type1_combo:current) | [pfloat](../SpecialInputElements.md#pfloat) | [50 A](https://wiki.openstreetmap.org/wiki/Tag:socket:type1_combo:current%3D50 A) [125 A](https://wiki.openstreetmap.org/wiki/Tag:socket:type1_combo:current%3D125 A) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:type1_combo:output#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Atype1_combo%3Aoutput/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:type1_combo:output](https://wiki.openstreetmap.org/wiki/Key:socket:type1_combo:output) | [pfloat](../SpecialInputElements.md#pfloat) | [50 kW](https://wiki.openstreetmap.org/wiki/Tag:socket:type1_combo:output%3D50 kW) [62.5 kW](https://wiki.openstreetmap.org/wiki/Tag:socket:type1_combo:output%3D62.5 kW) [150 kW](https://wiki.openstreetmap.org/wiki/Tag:socket:type1_combo:output%3D150 kW) [350 kW](https://wiki.openstreetmap.org/wiki/Tag:socket:type1_combo:output%3D350 kW) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:tesla_supercharger#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Atesla_supercharger/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:tesla_supercharger](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger) | [pnat](../SpecialInputElements.md#pnat) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:tesla_supercharger:voltage#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Atesla_supercharger%3Avoltage/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:tesla_supercharger:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger:voltage) | [pfloat](../SpecialInputElements.md#pfloat) | [480 V](https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger:voltage%3D480 V) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:tesla_supercharger:current#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Atesla_supercharger%3Acurrent/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:tesla_supercharger:current](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger:current) | [pfloat](../SpecialInputElements.md#pfloat) | [125 A](https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger:current%3D125 A) [350 A](https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger:current%3D350 A) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:tesla_supercharger:output#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Atesla_supercharger%3Aoutput/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:tesla_supercharger:output](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger:output) | [pfloat](../SpecialInputElements.md#pfloat) | [120 kW](https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger:output%3D120 kW) [150 kW](https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger:output%3D150 kW) [250 kW](https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger:output%3D250 kW) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:type2#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Atype2/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:type2](https://wiki.openstreetmap.org/wiki/Key:socket:type2) | [pnat](../SpecialInputElements.md#pnat) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:type2:voltage#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Atype2%3Avoltage/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:type2:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:type2:voltage) | [pfloat](../SpecialInputElements.md#pfloat) | [230 V](https://wiki.openstreetmap.org/wiki/Tag:socket:type2:voltage%3D230 V) [400 V](https://wiki.openstreetmap.org/wiki/Tag:socket:type2:voltage%3D400 V) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:type2:current#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Atype2%3Acurrent/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:type2:current](https://wiki.openstreetmap.org/wiki/Key:socket:type2:current) | [pfloat](../SpecialInputElements.md#pfloat) | [16 A](https://wiki.openstreetmap.org/wiki/Tag:socket:type2:current%3D16 A) [32 A](https://wiki.openstreetmap.org/wiki/Tag:socket:type2:current%3D32 A) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:type2:output#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Atype2%3Aoutput/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:type2:output](https://wiki.openstreetmap.org/wiki/Key:socket:type2:output) | [pfloat](../SpecialInputElements.md#pfloat) | [11 kW](https://wiki.openstreetmap.org/wiki/Tag:socket:type2:output%3D11 kW) [22 kW](https://wiki.openstreetmap.org/wiki/Tag:socket:type2:output%3D22 kW) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:type2_combo#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Atype2_combo/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:type2_combo](https://wiki.openstreetmap.org/wiki/Key:socket:type2_combo) | [pnat](../SpecialInputElements.md#pnat) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:type2_combo:voltage#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Atype2_combo%3Avoltage/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:type2_combo:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:type2_combo:voltage) | [pfloat](../SpecialInputElements.md#pfloat) | [500 V](https://wiki.openstreetmap.org/wiki/Tag:socket:type2_combo:voltage%3D500 V) [920 V](https://wiki.openstreetmap.org/wiki/Tag:socket:type2_combo:voltage%3D920 V) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:type2_combo:current#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Atype2_combo%3Acurrent/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:type2_combo:current](https://wiki.openstreetmap.org/wiki/Key:socket:type2_combo:current) | [pfloat](../SpecialInputElements.md#pfloat) | [125 A](https://wiki.openstreetmap.org/wiki/Tag:socket:type2_combo:current%3D125 A) [350 A](https://wiki.openstreetmap.org/wiki/Tag:socket:type2_combo:current%3D350 A) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:type2_combo:output#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Atype2_combo%3Aoutput/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:type2_combo:output](https://wiki.openstreetmap.org/wiki/Key:socket:type2_combo:output) | [pfloat](../SpecialInputElements.md#pfloat) | [50 kW](https://wiki.openstreetmap.org/wiki/Tag:socket:type2_combo:output%3D50 kW) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:type2_cable#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Atype2_cable/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:type2_cable](https://wiki.openstreetmap.org/wiki/Key:socket:type2_cable) | [pnat](../SpecialInputElements.md#pnat) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:type2_cable:voltage#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Atype2_cable%3Avoltage/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:type2_cable:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:type2_cable:voltage) | [pfloat](../SpecialInputElements.md#pfloat) | [230 V](https://wiki.openstreetmap.org/wiki/Tag:socket:type2_cable:voltage%3D230 V) [400 V](https://wiki.openstreetmap.org/wiki/Tag:socket:type2_cable:voltage%3D400 V) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:type2_cable:current#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Atype2_cable%3Acurrent/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:type2_cable:current](https://wiki.openstreetmap.org/wiki/Key:socket:type2_cable:current) | [pfloat](../SpecialInputElements.md#pfloat) | [16 A](https://wiki.openstreetmap.org/wiki/Tag:socket:type2_cable:current%3D16 A) [32 A](https://wiki.openstreetmap.org/wiki/Tag:socket:type2_cable:current%3D32 A) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:type2_cable:output#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Atype2_cable%3Aoutput/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:type2_cable:output](https://wiki.openstreetmap.org/wiki/Key:socket:type2_cable:output) | [pfloat](../SpecialInputElements.md#pfloat) | [11 kW](https://wiki.openstreetmap.org/wiki/Tag:socket:type2_cable:output%3D11 kW) [22 kW](https://wiki.openstreetmap.org/wiki/Tag:socket:type2_cable:output%3D22 kW) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:tesla_supercharger_ccs#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Atesla_supercharger_ccs/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:tesla_supercharger_ccs](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger_ccs) | [pnat](../SpecialInputElements.md#pnat) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:tesla_supercharger_ccs:voltage#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Atesla_supercharger_ccs%3Avoltage/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:tesla_supercharger_ccs:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger_ccs:voltage) | [pfloat](../SpecialInputElements.md#pfloat) | [500 V](https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger_ccs:voltage%3D500 V) [920 V](https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger_ccs:voltage%3D920 V) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:tesla_supercharger_ccs:current#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Atesla_supercharger_ccs%3Acurrent/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:tesla_supercharger_ccs:current](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger_ccs:current) | [pfloat](../SpecialInputElements.md#pfloat) | [125 A](https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger_ccs:current%3D125 A) [350 A](https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger_ccs:current%3D350 A) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:tesla_supercharger_ccs:output#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Atesla_supercharger_ccs%3Aoutput/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:tesla_supercharger_ccs:output](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger_ccs:output) | [pfloat](../SpecialInputElements.md#pfloat) | [50 kW](https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger_ccs:output%3D50 kW) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:tesla_destination#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Atesla_destination/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:tesla_destination](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination) | [pnat](../SpecialInputElements.md#pnat) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:tesla_destination:voltage#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Atesla_destination%3Avoltage/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:tesla_destination:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:voltage) | [pfloat](../SpecialInputElements.md#pfloat) | [480 V](https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:voltage%3D480 V) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:tesla_destination:current#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Atesla_destination%3Acurrent/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:tesla_destination:current](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:current) | [pfloat](../SpecialInputElements.md#pfloat) | [125 A](https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:current%3D125 A) [350 A](https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:current%3D350 A) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:tesla_destination:output#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Atesla_destination%3Aoutput/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:tesla_destination:output](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:output) | [pfloat](../SpecialInputElements.md#pfloat) | [120 kW](https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:output%3D120 kW) [150 kW](https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:output%3D150 kW) [250 kW](https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:output%3D250 kW) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:tesla_destination#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Atesla_destination/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:tesla_destination](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination) | [pnat](../SpecialInputElements.md#pnat) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:tesla_destination:voltage#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Atesla_destination%3Avoltage/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:tesla_destination:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:voltage) | [pfloat](../SpecialInputElements.md#pfloat) | [230 V](https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:voltage%3D230 V) [400 V](https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:voltage%3D400 V) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:tesla_destination:current#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Atesla_destination%3Acurrent/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:tesla_destination:current](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:current) | [pfloat](../SpecialInputElements.md#pfloat) | [16 A](https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:current%3D16 A) [32 A](https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:current%3D32 A) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:tesla_destination:output#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Atesla_destination%3Aoutput/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:tesla_destination:output](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:output) | [pfloat](../SpecialInputElements.md#pfloat) | [11 kW](https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:output%3D11 kW) [22 kW](https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:output%3D22 kW) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:USB-A#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3AUSB-A/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:USB-A](https://wiki.openstreetmap.org/wiki/Key:socket:USB-A) | [pnat](../SpecialInputElements.md#pnat) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:USB-A:voltage#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3AUSB-A%3Avoltage/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:USB-A:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:USB-A:voltage) | [pfloat](../SpecialInputElements.md#pfloat) | [5 V](https://wiki.openstreetmap.org/wiki/Tag:socket:USB-A:voltage%3D5 V) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:USB-A:current#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3AUSB-A%3Acurrent/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:USB-A:current](https://wiki.openstreetmap.org/wiki/Key:socket:USB-A:current) | [pfloat](../SpecialInputElements.md#pfloat) | [1 A](https://wiki.openstreetmap.org/wiki/Tag:socket:USB-A:current%3D1 A) [2 A](https://wiki.openstreetmap.org/wiki/Tag:socket:USB-A:current%3D2 A) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:USB-A:output#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3AUSB-A%3Aoutput/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:USB-A:output](https://wiki.openstreetmap.org/wiki/Key:socket:USB-A:output) | [pfloat](../SpecialInputElements.md#pfloat) | [5W](https://wiki.openstreetmap.org/wiki/Tag:socket:USB-A:output%3D5W) [10W](https://wiki.openstreetmap.org/wiki/Tag:socket:USB-A:output%3D10W) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:bosch_3pin#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Abosch_3pin/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:bosch_3pin](https://wiki.openstreetmap.org/wiki/Key:socket:bosch_3pin) | [pnat](../SpecialInputElements.md#pnat) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:bosch_3pin:voltage#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Abosch_3pin%3Avoltage/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:bosch_3pin:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:bosch_3pin:voltage) | [pfloat](../SpecialInputElements.md#pfloat) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:bosch_3pin:current#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Abosch_3pin%3Acurrent/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:bosch_3pin:current](https://wiki.openstreetmap.org/wiki/Key:socket:bosch_3pin:current) | [pfloat](../SpecialInputElements.md#pfloat) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:bosch_3pin:output#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Abosch_3pin%3Aoutput/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:bosch_3pin:output](https://wiki.openstreetmap.org/wiki/Key:socket:bosch_3pin:output) | [pfloat](../SpecialInputElements.md#pfloat) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:bosch_5pin#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Abosch_5pin/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:bosch_5pin](https://wiki.openstreetmap.org/wiki/Key:socket:bosch_5pin) | [pnat](../SpecialInputElements.md#pnat) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:bosch_5pin:voltage#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Abosch_5pin%3Avoltage/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:bosch_5pin:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:bosch_5pin:voltage) | [pfloat](../SpecialInputElements.md#pfloat) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:bosch_5pin:current#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Abosch_5pin%3Acurrent/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:bosch_5pin:current](https://wiki.openstreetmap.org/wiki/Key:socket:bosch_5pin:current) | [pfloat](../SpecialInputElements.md#pfloat) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:bosch_5pin:output#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Abosch_5pin%3Aoutput/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:bosch_5pin:output](https://wiki.openstreetmap.org/wiki/Key:socket:bosch_5pin:output) | [pfloat](../SpecialInputElements.md#pfloat) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:bs1363#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Abs1363/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:bs1363](https://wiki.openstreetmap.org/wiki/Key:socket:bs1363) | [pnat](../SpecialInputElements.md#pnat) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:bs1363:voltage#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Abs1363%3Avoltage/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:bs1363:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:bs1363:voltage) | [pfloat](../SpecialInputElements.md#pfloat) | [230 V](https://wiki.openstreetmap.org/wiki/Tag:socket:bs1363:voltage%3D230 V) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:bs1363:current#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Abs1363%3Acurrent/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:bs1363:current](https://wiki.openstreetmap.org/wiki/Key:socket:bs1363:current) | [pfloat](../SpecialInputElements.md#pfloat) | [13 A](https://wiki.openstreetmap.org/wiki/Tag:socket:bs1363:current%3D13 A) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:bs1363:output#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Abs1363%3Aoutput/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:bs1363:output](https://wiki.openstreetmap.org/wiki/Key:socket:bs1363:output) | [pfloat](../SpecialInputElements.md#pfloat) | [3kW](https://wiki.openstreetmap.org/wiki/Tag:socket:bs1363:output%3D3kW) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:nema5_15#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Anema5_15/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:nema5_15](https://wiki.openstreetmap.org/wiki/Key:socket:nema5_15) | [pnat](../SpecialInputElements.md#pnat) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:nema5_15:voltage#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Anema5_15%3Avoltage/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:nema5_15:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:nema5_15:voltage) | [pfloat](../SpecialInputElements.md#pfloat) | [120 V](https://wiki.openstreetmap.org/wiki/Tag:socket:nema5_15:voltage%3D120 V) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:nema5_15:current#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Anema5_15%3Acurrent/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:nema5_15:current](https://wiki.openstreetmap.org/wiki/Key:socket:nema5_15:current) | [pfloat](../SpecialInputElements.md#pfloat) | [15 A](https://wiki.openstreetmap.org/wiki/Tag:socket:nema5_15:current%3D15 A) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:nema5_15:output#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Anema5_15%3Aoutput/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:nema5_15:output](https://wiki.openstreetmap.org/wiki/Key:socket:nema5_15:output) | [pfloat](../SpecialInputElements.md#pfloat) | [1.8 kW](https://wiki.openstreetmap.org/wiki/Tag:socket:nema5_15:output%3D1.8 kW) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:sev1011_t23#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Asev1011_t23/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:sev1011_t23](https://wiki.openstreetmap.org/wiki/Key:socket:sev1011_t23) | [pnat](../SpecialInputElements.md#pnat) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:sev1011_t23:voltage#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Asev1011_t23%3Avoltage/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:sev1011_t23:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:sev1011_t23:voltage) | [pfloat](../SpecialInputElements.md#pfloat) | [230 V](https://wiki.openstreetmap.org/wiki/Tag:socket:sev1011_t23:voltage%3D230 V) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:sev1011_t23:current#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Asev1011_t23%3Acurrent/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:sev1011_t23:current](https://wiki.openstreetmap.org/wiki/Key:socket:sev1011_t23:current) | [pfloat](../SpecialInputElements.md#pfloat) | [16 A](https://wiki.openstreetmap.org/wiki/Tag:socket:sev1011_t23:current%3D16 A) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:sev1011_t23:output#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Asev1011_t23%3Aoutput/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:sev1011_t23:output](https://wiki.openstreetmap.org/wiki/Key:socket:sev1011_t23:output) | [pfloat](../SpecialInputElements.md#pfloat) | [3.7 kW](https://wiki.openstreetmap.org/wiki/Tag:socket:sev1011_t23:output%3D3.7 kW) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:as3112#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Aas3112/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:as3112](https://wiki.openstreetmap.org/wiki/Key:socket:as3112) | [pnat](../SpecialInputElements.md#pnat) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:as3112:voltage#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Aas3112%3Avoltage/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:as3112:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:as3112:voltage) | [pfloat](../SpecialInputElements.md#pfloat) | [230 V](https://wiki.openstreetmap.org/wiki/Tag:socket:as3112:voltage%3D230 V) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:as3112:current#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Aas3112%3Acurrent/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:as3112:current](https://wiki.openstreetmap.org/wiki/Key:socket:as3112:current) | [pfloat](../SpecialInputElements.md#pfloat) | [10 A](https://wiki.openstreetmap.org/wiki/Tag:socket:as3112:current%3D10 A) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:as3112:output#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Aas3112%3Aoutput/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:as3112:output](https://wiki.openstreetmap.org/wiki/Key:socket:as3112:output) | [pfloat](../SpecialInputElements.md#pfloat) | [2.3 kW](https://wiki.openstreetmap.org/wiki/Tag:socket:as3112:output%3D2.3 kW) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:nema_5_20#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Anema_5_20/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:nema_5_20](https://wiki.openstreetmap.org/wiki/Key:socket:nema_5_20) | [pnat](../SpecialInputElements.md#pnat) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:nema_5_20:voltage#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Anema_5_20%3Avoltage/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:nema_5_20:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:nema_5_20:voltage) | [pfloat](../SpecialInputElements.md#pfloat) | [120 V](https://wiki.openstreetmap.org/wiki/Tag:socket:nema_5_20:voltage%3D120 V) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:nema_5_20:current#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Anema_5_20%3Acurrent/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:nema_5_20:current](https://wiki.openstreetmap.org/wiki/Key:socket:nema_5_20:current) | [pfloat](../SpecialInputElements.md#pfloat) | [20 A](https://wiki.openstreetmap.org/wiki/Tag:socket:nema_5_20:current%3D20 A) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/socket:nema_5_20:output#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/socket%3Anema_5_20%3Aoutput/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [socket:nema_5_20:output](https://wiki.openstreetmap.org/wiki/Key:socket:nema_5_20:output) | [pfloat](../SpecialInputElements.md#pfloat) | [2.4 kW](https://wiki.openstreetmap.org/wiki/Tag:socket:nema_5_20:output%3D2.4 kW) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/opening_hours#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/opening_hours/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | [24/7](https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/fee#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/fee/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [fee](https://wiki.openstreetmap.org/wiki/Key:fee) | Multiple choice | [no](https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno) [no](https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno) [yes](https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes) [yes](https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/charge#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/charge/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [charge](https://wiki.openstreetmap.org/wiki/Key:charge) | [string](../SpecialInputElements.md#string) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/authentication:phone_call:number#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/authentication%3Aphone_call%3Anumber/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [authentication:phone_call:number](https://wiki.openstreetmap.org/wiki/Key:authentication:phone_call:number) | [phone](../SpecialInputElements.md#phone) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/maxstay#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/maxstay/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [maxstay](https://wiki.openstreetmap.org/wiki/Key:maxstay) | [pfloat](../SpecialInputElements.md#pfloat) | [unlimited](https://wiki.openstreetmap.org/wiki/Tag:maxstay%3Dunlimited) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/network#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/network/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [network](https://wiki.openstreetmap.org/wiki/Key:network) | [string](../SpecialInputElements.md#string) | [AeroVironment](https://wiki.openstreetmap.org/wiki/Tag:network%3DAeroVironment) [Blink](https://wiki.openstreetmap.org/wiki/Tag:network%3DBlink) [EVgo](https://wiki.openstreetmap.org/wiki/Tag:network%3DEVgo) [Allego](https://wiki.openstreetmap.org/wiki/Tag:network%3DAllego) [Blue Corner](https://wiki.openstreetmap.org/wiki/Tag:network%3DBlue Corner) [Tesla](https://wiki.openstreetmap.org/wiki/Tag:network%3DTesla) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/operator#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/operator/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [operator](https://wiki.openstreetmap.org/wiki/Key:operator) | [string](../SpecialInputElements.md#string) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/phone#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/phone/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [phone](https://wiki.openstreetmap.org/wiki/Key:phone) | [phone](../SpecialInputElements.md#phone) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/email#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/email/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [email](https://wiki.openstreetmap.org/wiki/Key:email) | [email](../SpecialInputElements.md#email) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/website#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/website/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [website](https://wiki.openstreetmap.org/wiki/Key:website) | [url](../SpecialInputElements.md#url) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/level#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/level/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [level](https://wiki.openstreetmap.org/wiki/Key:level) | [float](../SpecialInputElements.md#float) | [0](https://wiki.openstreetmap.org/wiki/Tag:level%3D0) [1](https://wiki.openstreetmap.org/wiki/Tag:level%3D1) [-1](https://wiki.openstreetmap.org/wiki/Tag:level%3D-1) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/ref#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/ref/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [ref](https://wiki.openstreetmap.org/wiki/Key:ref) | [string](../SpecialInputElements.md#string) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/planned:amenity#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/planned%3Aamenity/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [planned:amenity](https://wiki.openstreetmap.org/wiki/Key:planned:amenity) | Multiple choice | [](https://wiki.openstreetmap.org/wiki/Tag:planned:amenity%3D) [](https://wiki.openstreetmap.org/wiki/Tag:planned:amenity%3D) [charging_station](https://wiki.openstreetmap.org/wiki/Tag:planned:amenity%3Dcharging_station) [](https://wiki.openstreetmap.org/wiki/Tag:planned:amenity%3D) [](https://wiki.openstreetmap.org/wiki/Tag:planned:amenity%3D) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/parking:fee#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/parking%3Afee/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [parking:fee](https://wiki.openstreetmap.org/wiki/Key:parking:fee) | Multiple choice | [no](https://wiki.openstreetmap.org/wiki/Tag:parking:fee%3Dno) [yes](https://wiki.openstreetmap.org/wiki/Tag:parking:fee%3Dyes) |
 
 
 
-
-### just_created
-This element shows a 'thank you' that the contributor has recently created this element
-_This tagrendering has no question and is thus read-only_
-
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/party.svg' style='width: 3rem; height: 3rem'> *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
-This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
-This tagrendering has labels 
-`added_by_default_top`
-
-### nothing_known
-
-_This tagrendering has no question and is thus read-only_
-
-
-This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time>=300 & _backend~.+
-This tagrendering has labels 
-`added_by_default_top`
 
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
-
+*{image_carousel()}{image_upload()}*
 
 
 
@@ -298,41 +281,39 @@ _This tagrendering has no question and is thus read-only_
 
 The question is `Which vehicles are allowed to charge here?`
 
- -  *<b>Bicycles</b> can be charged here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle' target='_blank'>bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle%3Dyes' target='_blank'>yes</a>
- - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle' target='_blank'>bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle%3Dno' target='_blank'>no</a>
- -  *<b>Cars</b> can be charged here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:motorcar' target='_blank'>motorcar</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:motorcar%3Dyes' target='_blank'>yes</a>
- - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:motorcar' target='_blank'>motorcar</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:motorcar%3Dno' target='_blank'>no</a>
- -  *<b>Scooters</b> can be charged here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:scooter' target='_blank'>scooter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:scooter%3Dyes' target='_blank'>yes</a>
- - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:scooter' target='_blank'>scooter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:scooter%3Dno' target='_blank'>no</a>
- -  *<b>Heavy good vehicles</b> (such as trucks) can be charged here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:hgv' target='_blank'>hgv</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hgv%3Dyes' target='_blank'>yes</a>
- - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:hgv' target='_blank'>hgv</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hgv%3Dno' target='_blank'>no</a>
- -  *<b>Buses</b> can be charged here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bus' target='_blank'>bus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bus%3Dyes' target='_blank'>yes</a>
- - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:bus' target='_blank'>bus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bus%3Dno' target='_blank'>no</a>
+
+
+ -  *<b>Bicycles</b> can be charged here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle' target='_blank'>bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle' target='_blank'>bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle%3Dno' target='_blank'>no</a>
+ -  *<b>Cars</b> can be charged here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:motorcar' target='_blank'>motorcar</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:motorcar%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:motorcar' target='_blank'>motorcar</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:motorcar%3Dno' target='_blank'>no</a>
+ -  *<b>Scooters</b> can be charged here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:scooter' target='_blank'>scooter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:scooter%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:scooter' target='_blank'>scooter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:scooter%3Dno' target='_blank'>no</a>
+ -  *<b>Heavy good vehicles</b> (such as trucks) can be charged here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:hgv' target='_blank'>hgv</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hgv%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:hgv' target='_blank'>hgv</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hgv%3Dno' target='_blank'>no</a>
+ -  *<b>Buses</b> can be charged here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:bus' target='_blank'>bus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bus%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:bus' target='_blank'>bus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bus%3Dno' target='_blank'>no</a>
+
+
 
 
 
 ### access
 
 The question is `Who is allowed to use this charging station?`
-This rendering asks information about the property 
-[access](https://wiki.openstreetmap.org/wiki/Key:access)
-This is rendered with `Access is {access}`
- -  *Anyone can use this charging station (payment might be needed)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>
- -  *Anyone can use this charging station (payment might be needed)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dpublic' target='_blank'>public</a>
- - _This option cannot be chosen as answer_
- -  *Only customers of the place this station belongs to can use this charging station<br/><span class='subtle'>E.g. a charging station operated by hotel which is only usable by their guests</span>* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers' target='_blank'>customers</a>
- -  *A <b>key</b> must be requested to access this charging station<br/><span class='subtle'>E.g. a charging station operated by hotel which is only usable by their guests, which receive a key from the reception to unlock the charging station</span>* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dkey' target='_blank'>key</a>
- -  *Not accessible to the general public (e.g. only accessible to the owners, employees, ...)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate' target='_blank'>private</a>
- -  *This charging station is accessible to the public during certain hours or conditions. Restrictions might apply, but general use is allowed.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dpermissive' target='_blank'>permissive</a>
+*Access is {access}* is shown if `access` is set
+
+
+ -  *Anyone can use this charging station (payment might be needed)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>
+ -  *Anyone can use this charging station (payment might be needed)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dpublic' target='_blank'>public</a>. _This option cannot be chosen as answer_
+ -  *Only customers of the place this station belongs to can use this charging station<br/><span class='subtle'>E.g. a charging station operated by hotel which is only usable by their guests</span>* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers' target='_blank'>customers</a>
+ -  *A <b>key</b> must be requested to access this charging station<br/><span class='subtle'>E.g. a charging station operated by hotel which is only usable by their guests, which receive a key from the reception to unlock the charging station</span>* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dkey' target='_blank'>key</a>
+ -  *Not accessible to the general public (e.g. only accessible to the owners, employees, ...)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate' target='_blank'>private</a>
+ -  *This charging station is accessible to the public during certain hours or conditions. Restrictions might apply, but general use is allowed.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dpermissive' target='_blank'>permissive</a>
+
+
 
 
 
 ### capacity
 
 The question is `How much vehicles can be charged here at the same time?`
-This rendering asks information about the property 
-[capacity](https://wiki.openstreetmap.org/wiki/Key:capacity)
-This is rendered with `{capacity} vehicles can be charged here at the same time`
+*{capacity} vehicles can be charged here at the same time* is shown if `capacity` is set
 
 
 
@@ -341,99 +322,59 @@ This is rendered with `{capacity} vehicles can be charged here at the same time`
 
 The question is `Which charging connections are available here?`
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/CEE7_4F.svg' style='width: 3rem; height: 3rem'> *<b>Schuko wall plug</b> without ground pin (CEE7/4 type F)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:schuko' target='_blank'>socket:schuko</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:schuko%3D1' target='_blank'>1</a>
- - Unselecting this answer will add socket:schuko=
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/CEE7_4F.svg' style='width: 3rem; height: 3rem'> *<b>Schuko wall plug</b> without ground pin (CEE7/4 type F)* corresponds with socket:schuko~.+ & socket:schuko!=1
- - _This option cannot be chosen as answer_
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/TypeE.svg' style='width: 3rem; height: 3rem'> *<b>European wall plug</b> with ground pin (CEE7/4 type E)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:typee' target='_blank'>socket:typee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:typee%3D1' target='_blank'>1</a>
- - Unselecting this answer will add socket:typee=
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/TypeE.svg' style='width: 3rem; height: 3rem'> *<b>European wall plug</b> with ground pin (CEE7/4 type E)* corresponds with socket:typee~.+ & socket:typee!=1
- - _This option cannot be chosen as answer_
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/Chademo_type4.svg' style='width: 3rem; height: 3rem'> *<b>Chademo</b>* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:chademo' target='_blank'>socket:chademo</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:chademo%3D1' target='_blank'>1</a>
- - Unselecting this answer will add socket:chademo=
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/Chademo_type4.svg' style='width: 3rem; height: 3rem'> *<b>Chademo</b>* corresponds with socket:chademo~.+ & socket:chademo!=1
- - _This option cannot be chosen as answer_
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/Type1_J1772.svg' style='width: 3rem; height: 3rem'> *<b>Type 1 with cable</b> (J1772)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_cable' target='_blank'>socket:type1_cable</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_cable%3D1' target='_blank'>1</a>
- - Unselecting this answer will add socket:type1_cable=
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/Type1_J1772.svg' style='width: 3rem; height: 3rem'> *<b>Type 1 with cable</b> (J1772)* corresponds with socket:type1_cable~.+ & socket:type1_cable!=1
- - _This option cannot be chosen as answer_
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/Type1_J1772.svg' style='width: 3rem; height: 3rem'> *<b>Type 1 <i>without</i> cable</b> (J1772)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1' target='_blank'>socket:type1</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1%3D1' target='_blank'>1</a>
- - Unselecting this answer will add socket:type1=
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/Type1_J1772.svg' style='width: 3rem; height: 3rem'> *<b>Type 1 <i>without</i> cable</b> (J1772)* corresponds with socket:type1~.+ & socket:type1!=1
- - _This option cannot be chosen as answer_
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/Type1-ccs.svg' style='width: 3rem; height: 3rem'> *<b>Type 1 CCS</b> (aka Type 1 Combo)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_combo' target='_blank'>socket:type1_combo</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_combo%3D1' target='_blank'>1</a>
- - Unselecting this answer will add socket:type1_combo=
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/Type1-ccs.svg' style='width: 3rem; height: 3rem'> *<b>Type 1 CCS</b> (aka Type 1 Combo)* corresponds with socket:type1_combo~.+ & socket:type1_combo!=1
- - _This option cannot be chosen as answer_
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/Tesla-hpwc-model-s.svg' style='width: 3rem; height: 3rem'> *<b>Tesla Supercharger</b>* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger' target='_blank'>socket:tesla_supercharger</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger%3D1' target='_blank'>1</a>
- - Unselecting this answer will add socket:tesla_supercharger=
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/Tesla-hpwc-model-s.svg' style='width: 3rem; height: 3rem'> *<b>Tesla Supercharger</b>* corresponds with socket:tesla_supercharger~.+ & socket:tesla_supercharger!=1
- - _This option cannot be chosen as answer_
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/Type2_socket.svg' style='width: 3rem; height: 3rem'> *<b>Type 2</b> (mennekes)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2' target='_blank'>socket:type2</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2%3D1' target='_blank'>1</a>
- - Unselecting this answer will add socket:type2=
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/Type2_socket.svg' style='width: 3rem; height: 3rem'> *<b>Type 2</b> (mennekes)* corresponds with socket:type2~.+ & socket:type2!=1
- - _This option cannot be chosen as answer_
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/Type2_CCS.svg' style='width: 3rem; height: 3rem'> *<b>Type 2 CCS</b> (mennekes)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2_combo' target='_blank'>socket:type2_combo</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2_combo%3D1' target='_blank'>1</a>
- - Unselecting this answer will add socket:type2_combo=
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/Type2_CCS.svg' style='width: 3rem; height: 3rem'> *<b>Type 2 CCS</b> (mennekes)* corresponds with socket:type2_combo~.+ & socket:type2_combo!=1
- - _This option cannot be chosen as answer_
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/Type2_tethered.svg' style='width: 3rem; height: 3rem'> *<b>Type 2 with cable</b> (mennekes)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2_cable' target='_blank'>socket:type2_cable</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2_cable%3D1' target='_blank'>1</a>
- - Unselecting this answer will add socket:type2_cable=
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/Type2_tethered.svg' style='width: 3rem; height: 3rem'> *<b>Type 2 with cable</b> (mennekes)* corresponds with socket:type2_cable~.+ & socket:type2_cable!=1
- - _This option cannot be chosen as answer_
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/Type2_CCS.svg' style='width: 3rem; height: 3rem'> *<b>Tesla Supercharger CCS</b> (a branded type2_css)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger_ccs' target='_blank'>socket:tesla_supercharger_ccs</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger_ccs%3D1' target='_blank'>1</a>
- - Unselecting this answer will add socket:tesla_supercharger_ccs=
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/Type2_CCS.svg' style='width: 3rem; height: 3rem'> *<b>Tesla Supercharger CCS</b> (a branded type2_css)* corresponds with socket:tesla_supercharger_ccs~.+ & socket:tesla_supercharger_ccs!=1
- - _This option cannot be chosen as answer_
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/Tesla-hpwc-model-s.svg' style='width: 3rem; height: 3rem'> *<b>Tesla Supercharger (destination)</b>* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination' target='_blank'>socket:tesla_destination</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination%3D1' target='_blank'>1</a>
- - Unselecting this answer will add socket:tesla_destination=
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/Tesla-hpwc-model-s.svg' style='width: 3rem; height: 3rem'> *<b>Tesla Supercharger (destination)</b>* corresponds with socket:tesla_destination~.+ & socket:tesla_destination!=1 & <a href='https://wiki.openstreetmap.org/wiki/Key:_country' target='_blank'>_country</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_country%3Dus' target='_blank'>us</a>
- - _This option cannot be chosen as answer_
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/Type2_tethered.svg' style='width: 3rem; height: 3rem'> *<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination' target='_blank'>socket:tesla_destination</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination%3D1' target='_blank'>1</a>
- - Unselecting this answer will add socket:tesla_destination=
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/Type2_tethered.svg' style='width: 3rem; height: 3rem'> *<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)* corresponds with socket:tesla_destination~.+ & socket:tesla_destination!=1 & _country!=us
- - _This option cannot be chosen as answer_
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/usb_port.svg' style='width: 3rem; height: 3rem'> *<b>USB</b> to charge phones and small electronics* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:USB-A' target='_blank'>socket:USB-A</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:USB-A%3D1' target='_blank'>1</a>
- - Unselecting this answer will add socket:USB-A=
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/usb_port.svg' style='width: 3rem; height: 3rem'> *<b>USB</b> to charge phones and small electronics* corresponds with socket:USB-A~.+ & socket:USB-A!=1
- - _This option cannot be chosen as answer_
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/bosch-3pin.svg' style='width: 3rem; height: 3rem'> *<b>Bosch Active Connect with 3 pins</b> and cable* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:bosch_3pin' target='_blank'>socket:bosch_3pin</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:bosch_3pin%3D1' target='_blank'>1</a>
- - Unselecting this answer will add socket:bosch_3pin=
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/bosch-3pin.svg' style='width: 3rem; height: 3rem'> *<b>Bosch Active Connect with 3 pins</b> and cable* corresponds with socket:bosch_3pin~.+ & socket:bosch_3pin!=1
- - _This option cannot be chosen as answer_
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/bosch-5pin.svg' style='width: 3rem; height: 3rem'> *<b>Bosch Active Connect with 5 pins</b> and cable* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:bosch_5pin' target='_blank'>socket:bosch_5pin</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:bosch_5pin%3D1' target='_blank'>1</a>
- - Unselecting this answer will add socket:bosch_5pin=
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/bosch-5pin.svg' style='width: 3rem; height: 3rem'> *<b>Bosch Active Connect with 5 pins</b> and cable* corresponds with socket:bosch_5pin~.+ & socket:bosch_5pin!=1
- - _This option cannot be chosen as answer_
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/bs1363.svg' style='width: 3rem; height: 3rem'> *<b>BS1363</b> (Type G)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:bs1363' target='_blank'>socket:bs1363</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:bs1363%3D1' target='_blank'>1</a>
- - Unselecting this answer will add socket:bs1363=
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/bs1363.svg' style='width: 3rem; height: 3rem'> *<b>BS1363</b> (Type G)* corresponds with socket:bs1363~.+ & socket:bs1363!=1
- - _This option cannot be chosen as answer_
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/nema-5-15.svg' style='width: 3rem; height: 3rem'> *<b>NEMA 5-15</b> (Type B)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:nema5_15' target='_blank'>socket:nema5_15</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:nema5_15%3D1' target='_blank'>1</a>
- - Unselecting this answer will add socket:nema5_15=
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/nema-5-15.svg' style='width: 3rem; height: 3rem'> *<b>NEMA 5-15</b> (Type B)* corresponds with socket:nema5_15~.+ & socket:nema5_15!=1
- - _This option cannot be chosen as answer_
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/typej.svg' style='width: 3rem; height: 3rem'> *<b>SEV 1011 T23</b> (Type J)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:sev1011_t23' target='_blank'>socket:sev1011_t23</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:sev1011_t23%3D1' target='_blank'>1</a>
- - Unselecting this answer will add socket:sev1011_t23=
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/typej.svg' style='width: 3rem; height: 3rem'> *<b>SEV 1011 T23</b> (Type J)* corresponds with socket:sev1011_t23~.+ & socket:sev1011_t23!=1
- - _This option cannot be chosen as answer_
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/as3112.svg' style='width: 3rem; height: 3rem'> *<b>AS3112</b> (Type I)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:as3112' target='_blank'>socket:as3112</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:as3112%3D1' target='_blank'>1</a>
- - Unselecting this answer will add socket:as3112=
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/as3112.svg' style='width: 3rem; height: 3rem'> *<b>AS3112</b> (Type I)* corresponds with socket:as3112~.+ & socket:as3112!=1
- - _This option cannot be chosen as answer_
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/nema-5-20.svg' style='width: 3rem; height: 3rem'> *<b>NEMA 5-20</b> (Type B)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:nema_5_20' target='_blank'>socket:nema_5_20</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:nema_5_20%3D1' target='_blank'>1</a>
- - Unselecting this answer will add socket:nema_5_20=
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/nema-5-20.svg' style='width: 3rem; height: 3rem'> *<b>NEMA 5-20</b> (Type B)* corresponds with socket:nema_5_20~.+ & socket:nema_5_20!=1
- - _This option cannot be chosen as answer_
+
+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/CEE7_4F.svg' style='width: 3rem; height: 3rem'> *<b>Schuko wall plug</b> without ground pin (CEE7/4 type F)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:schuko' target='_blank'>socket:schuko</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:schuko%3D1' target='_blank'>1</a>. Unselecting this answer will add socket:schuko=
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/CEE7_4F.svg' style='width: 3rem; height: 3rem'> *<b>Schuko wall plug</b> without ground pin (CEE7/4 type F)* is shown if with socket:schuko~.+ & socket:schuko!=1. _This option cannot be chosen as answer_
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/TypeE.svg' style='width: 3rem; height: 3rem'> *<b>European wall plug</b> with ground pin (CEE7/4 type E)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:typee' target='_blank'>socket:typee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:typee%3D1' target='_blank'>1</a>. Unselecting this answer will add socket:typee=
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/TypeE.svg' style='width: 3rem; height: 3rem'> *<b>European wall plug</b> with ground pin (CEE7/4 type E)* is shown if with socket:typee~.+ & socket:typee!=1. _This option cannot be chosen as answer_
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/Chademo_type4.svg' style='width: 3rem; height: 3rem'> *<b>Chademo</b>* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:chademo' target='_blank'>socket:chademo</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:chademo%3D1' target='_blank'>1</a>. Unselecting this answer will add socket:chademo=
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/Chademo_type4.svg' style='width: 3rem; height: 3rem'> *<b>Chademo</b>* is shown if with socket:chademo~.+ & socket:chademo!=1. _This option cannot be chosen as answer_
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/Type1_J1772.svg' style='width: 3rem; height: 3rem'> *<b>Type 1 with cable</b> (J1772)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_cable' target='_blank'>socket:type1_cable</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_cable%3D1' target='_blank'>1</a>. Unselecting this answer will add socket:type1_cable=
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/Type1_J1772.svg' style='width: 3rem; height: 3rem'> *<b>Type 1 with cable</b> (J1772)* is shown if with socket:type1_cable~.+ & socket:type1_cable!=1. _This option cannot be chosen as answer_
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/Type1_J1772.svg' style='width: 3rem; height: 3rem'> *<b>Type 1 <i>without</i> cable</b> (J1772)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1' target='_blank'>socket:type1</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1%3D1' target='_blank'>1</a>. Unselecting this answer will add socket:type1=
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/Type1_J1772.svg' style='width: 3rem; height: 3rem'> *<b>Type 1 <i>without</i> cable</b> (J1772)* is shown if with socket:type1~.+ & socket:type1!=1. _This option cannot be chosen as answer_
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/Type1-ccs.svg' style='width: 3rem; height: 3rem'> *<b>Type 1 CCS</b> (aka Type 1 Combo)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_combo' target='_blank'>socket:type1_combo</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_combo%3D1' target='_blank'>1</a>. Unselecting this answer will add socket:type1_combo=
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/Type1-ccs.svg' style='width: 3rem; height: 3rem'> *<b>Type 1 CCS</b> (aka Type 1 Combo)* is shown if with socket:type1_combo~.+ & socket:type1_combo!=1. _This option cannot be chosen as answer_
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/Tesla-hpwc-model-s.svg' style='width: 3rem; height: 3rem'> *<b>Tesla Supercharger</b>* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger' target='_blank'>socket:tesla_supercharger</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger%3D1' target='_blank'>1</a>. Unselecting this answer will add socket:tesla_supercharger=
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/Tesla-hpwc-model-s.svg' style='width: 3rem; height: 3rem'> *<b>Tesla Supercharger</b>* is shown if with socket:tesla_supercharger~.+ & socket:tesla_supercharger!=1. _This option cannot be chosen as answer_
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/Type2_socket.svg' style='width: 3rem; height: 3rem'> *<b>Type 2</b> (mennekes)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2' target='_blank'>socket:type2</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2%3D1' target='_blank'>1</a>. Unselecting this answer will add socket:type2=
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/Type2_socket.svg' style='width: 3rem; height: 3rem'> *<b>Type 2</b> (mennekes)* is shown if with socket:type2~.+ & socket:type2!=1. _This option cannot be chosen as answer_
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/Type2_CCS.svg' style='width: 3rem; height: 3rem'> *<b>Type 2 CCS</b> (mennekes)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2_combo' target='_blank'>socket:type2_combo</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2_combo%3D1' target='_blank'>1</a>. Unselecting this answer will add socket:type2_combo=
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/Type2_CCS.svg' style='width: 3rem; height: 3rem'> *<b>Type 2 CCS</b> (mennekes)* is shown if with socket:type2_combo~.+ & socket:type2_combo!=1. _This option cannot be chosen as answer_
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/Type2_tethered.svg' style='width: 3rem; height: 3rem'> *<b>Type 2 with cable</b> (mennekes)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2_cable' target='_blank'>socket:type2_cable</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2_cable%3D1' target='_blank'>1</a>. Unselecting this answer will add socket:type2_cable=
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/Type2_tethered.svg' style='width: 3rem; height: 3rem'> *<b>Type 2 with cable</b> (mennekes)* is shown if with socket:type2_cable~.+ & socket:type2_cable!=1. _This option cannot be chosen as answer_
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/Type2_CCS.svg' style='width: 3rem; height: 3rem'> *<b>Tesla Supercharger CCS</b> (a branded type2_css)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger_ccs' target='_blank'>socket:tesla_supercharger_ccs</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger_ccs%3D1' target='_blank'>1</a>. Unselecting this answer will add socket:tesla_supercharger_ccs=
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/Type2_CCS.svg' style='width: 3rem; height: 3rem'> *<b>Tesla Supercharger CCS</b> (a branded type2_css)* is shown if with socket:tesla_supercharger_ccs~.+ & socket:tesla_supercharger_ccs!=1. _This option cannot be chosen as answer_
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/Tesla-hpwc-model-s.svg' style='width: 3rem; height: 3rem'> *<b>Tesla Supercharger (destination)</b>* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination' target='_blank'>socket:tesla_destination</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination%3D1' target='_blank'>1</a>. Unselecting this answer will add socket:tesla_destination=
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/Tesla-hpwc-model-s.svg' style='width: 3rem; height: 3rem'> *<b>Tesla Supercharger (destination)</b>* is shown if with socket:tesla_destination~.+ & socket:tesla_destination!=1 & <a href='https://wiki.openstreetmap.org/wiki/Key:_country' target='_blank'>_country</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_country%3Dus' target='_blank'>us</a>. _This option cannot be chosen as answer_
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/Type2_tethered.svg' style='width: 3rem; height: 3rem'> *<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination' target='_blank'>socket:tesla_destination</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination%3D1' target='_blank'>1</a>. Unselecting this answer will add socket:tesla_destination=
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/Type2_tethered.svg' style='width: 3rem; height: 3rem'> *<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)* is shown if with socket:tesla_destination~.+ & socket:tesla_destination!=1 & _country!=us. _This option cannot be chosen as answer_
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/usb_port.svg' style='width: 3rem; height: 3rem'> *<b>USB</b> to charge phones and small electronics* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:USB-A' target='_blank'>socket:USB-A</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:USB-A%3D1' target='_blank'>1</a>. Unselecting this answer will add socket:USB-A=
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/usb_port.svg' style='width: 3rem; height: 3rem'> *<b>USB</b> to charge phones and small electronics* is shown if with socket:USB-A~.+ & socket:USB-A!=1. _This option cannot be chosen as answer_
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/bosch-3pin.svg' style='width: 3rem; height: 3rem'> *<b>Bosch Active Connect with 3 pins</b> and cable* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:bosch_3pin' target='_blank'>socket:bosch_3pin</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:bosch_3pin%3D1' target='_blank'>1</a>. Unselecting this answer will add socket:bosch_3pin=
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/bosch-3pin.svg' style='width: 3rem; height: 3rem'> *<b>Bosch Active Connect with 3 pins</b> and cable* is shown if with socket:bosch_3pin~.+ & socket:bosch_3pin!=1. _This option cannot be chosen as answer_
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/bosch-5pin.svg' style='width: 3rem; height: 3rem'> *<b>Bosch Active Connect with 5 pins</b> and cable* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:bosch_5pin' target='_blank'>socket:bosch_5pin</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:bosch_5pin%3D1' target='_blank'>1</a>. Unselecting this answer will add socket:bosch_5pin=
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/bosch-5pin.svg' style='width: 3rem; height: 3rem'> *<b>Bosch Active Connect with 5 pins</b> and cable* is shown if with socket:bosch_5pin~.+ & socket:bosch_5pin!=1. _This option cannot be chosen as answer_
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/bs1363.svg' style='width: 3rem; height: 3rem'> *<b>BS1363</b> (Type G)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:bs1363' target='_blank'>socket:bs1363</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:bs1363%3D1' target='_blank'>1</a>. Unselecting this answer will add socket:bs1363=
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/bs1363.svg' style='width: 3rem; height: 3rem'> *<b>BS1363</b> (Type G)* is shown if with socket:bs1363~.+ & socket:bs1363!=1. _This option cannot be chosen as answer_
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/nema-5-15.svg' style='width: 3rem; height: 3rem'> *<b>NEMA 5-15</b> (Type B)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:nema5_15' target='_blank'>socket:nema5_15</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:nema5_15%3D1' target='_blank'>1</a>. Unselecting this answer will add socket:nema5_15=
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/nema-5-15.svg' style='width: 3rem; height: 3rem'> *<b>NEMA 5-15</b> (Type B)* is shown if with socket:nema5_15~.+ & socket:nema5_15!=1. _This option cannot be chosen as answer_
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/typej.svg' style='width: 3rem; height: 3rem'> *<b>SEV 1011 T23</b> (Type J)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:sev1011_t23' target='_blank'>socket:sev1011_t23</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:sev1011_t23%3D1' target='_blank'>1</a>. Unselecting this answer will add socket:sev1011_t23=
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/typej.svg' style='width: 3rem; height: 3rem'> *<b>SEV 1011 T23</b> (Type J)* is shown if with socket:sev1011_t23~.+ & socket:sev1011_t23!=1. _This option cannot be chosen as answer_
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/as3112.svg' style='width: 3rem; height: 3rem'> *<b>AS3112</b> (Type I)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:as3112' target='_blank'>socket:as3112</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:as3112%3D1' target='_blank'>1</a>. Unselecting this answer will add socket:as3112=
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/as3112.svg' style='width: 3rem; height: 3rem'> *<b>AS3112</b> (Type I)* is shown if with socket:as3112~.+ & socket:as3112!=1. _This option cannot be chosen as answer_
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/nema-5-20.svg' style='width: 3rem; height: 3rem'> *<b>NEMA 5-20</b> (Type B)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:nema_5_20' target='_blank'>socket:nema_5_20</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:nema_5_20%3D1' target='_blank'>1</a>. Unselecting this answer will add socket:nema_5_20=
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/charging_station/nema-5-20.svg' style='width: 3rem; height: 3rem'> *<b>NEMA 5-20</b> (Type B)* is shown if with socket:nema_5_20~.+ & socket:nema_5_20!=1. _This option cannot be chosen as answer_
+
+
 
 
 
 ### plugs-amount-socket:schuko
 
 The question is `How much plugs of type <b>Schuko wall plug</b> without ground pin (CEE7/4 type F) are available here?`
-This rendering asks information about the property 
-[socket:schuko](https://wiki.openstreetmap.org/wiki/Key:socket:schuko)
-This is rendered with `There are <b class='text-xl'>{socket:schuko}</b> plugs of type <b>Schuko wall plug</b> without ground pin (CEE7/4 type F) available here`
+*There are <b class='text-xl'>{socket:schuko}</b> plugs of type <b>Schuko wall plug</b> without ground pin (CEE7/4 type F) available here* is shown if `socket:schuko` is set
 
 This tagrendering is only visible in the popup if the following condition is met: socket:schuko~.+ & socket:schuko!=0
 
@@ -441,10 +382,12 @@ This tagrendering is only visible in the popup if the following condition is met
 ### voltage-socket:schuko
 
 The question is `What voltage do the plugs with <b>Schuko wall plug</b> without ground pin (CEE7/4 type F) offer?`
-This rendering asks information about the property 
-[socket:schuko:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:schuko:voltage)
-This is rendered with `<b>Schuko wall plug</b> without ground pin (CEE7/4 type F) outputs {canonical(socket:schuko:voltage)}`
- -  *<b>Schuko wall plug</b> without ground pin (CEE7/4 type F) outputs 230 volt* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:schuko:voltage' target='_blank'>socket:schuko:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:schuko:voltage%3D230 V' target='_blank'>230 V</a>
+*<b>Schuko wall plug</b> without ground pin (CEE7/4 type F) outputs {canonical(socket:schuko:voltage)}* is shown if `socket:schuko:voltage` is set
+
+
+ -  *<b>Schuko wall plug</b> without ground pin (CEE7/4 type F) outputs 230 volt* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:schuko:voltage' target='_blank'>socket:schuko:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:schuko:voltage%3D230 V' target='_blank'>230 V</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: socket:schuko~.+ & socket:schuko!=0
 This tagrendering has labels 
 `technical`
@@ -452,10 +395,12 @@ This tagrendering has labels
 ### current-socket:schuko
 
 The question is `What current do the plugs with <b>Schuko wall plug</b> without ground pin (CEE7/4 type F) offer?`
-This rendering asks information about the property 
-[socket:schuko:current](https://wiki.openstreetmap.org/wiki/Key:socket:schuko:current)
-This is rendered with `<b>Schuko wall plug</b> without ground pin (CEE7/4 type F) outputs at most {canonical(socket:schuko:current)}`
- -  *<b>Schuko wall plug</b> without ground pin (CEE7/4 type F) outputs at most 16 A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:schuko:current' target='_blank'>socket:schuko:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:schuko:current%3D16 A' target='_blank'>16 A</a>
+*<b>Schuko wall plug</b> without ground pin (CEE7/4 type F) outputs at most {canonical(socket:schuko:current)}* is shown if `socket:schuko:current` is set
+
+
+ -  *<b>Schuko wall plug</b> without ground pin (CEE7/4 type F) outputs at most 16 A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:schuko:current' target='_blank'>socket:schuko:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:schuko:current%3D16 A' target='_blank'>16 A</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: socket:schuko~.+ & socket:schuko!=0
 This tagrendering has labels 
 `technical`
@@ -463,10 +408,12 @@ This tagrendering has labels
 ### power-output-socket:schuko
 
 The question is `What power output does a single plug of type <b>Schuko wall plug</b> without ground pin (CEE7/4 type F) offer?`
-This rendering asks information about the property 
-[socket:schuko:output](https://wiki.openstreetmap.org/wiki/Key:socket:schuko:output)
-This is rendered with `<b>Schuko wall plug</b> without ground pin (CEE7/4 type F) outputs at most {canonical(socket:schuko:output)}`
- -  *<b>Schuko wall plug</b> without ground pin (CEE7/4 type F) outputs at most 3.6 kW A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:schuko:output' target='_blank'>socket:schuko:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:schuko:output%3D3.6 kW' target='_blank'>3.6 kW</a>
+*<b>Schuko wall plug</b> without ground pin (CEE7/4 type F) outputs at most {canonical(socket:schuko:output)}* is shown if `socket:schuko:output` is set
+
+
+ -  *<b>Schuko wall plug</b> without ground pin (CEE7/4 type F) outputs at most 3.6 kW A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:schuko:output' target='_blank'>socket:schuko:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:schuko:output%3D3.6 kW' target='_blank'>3.6 kW</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: socket:schuko~.+ & socket:schuko!=0
 This tagrendering has labels 
 `technical`
@@ -474,9 +421,7 @@ This tagrendering has labels
 ### plugs-amount-socket:typee
 
 The question is `How much plugs of type <b>European wall plug</b> with ground pin (CEE7/4 type E) are available here?`
-This rendering asks information about the property 
-[socket:typee](https://wiki.openstreetmap.org/wiki/Key:socket:typee)
-This is rendered with `There are <b class='text-xl'>{socket:typee}</b> plugs of type <b>European wall plug</b> with ground pin (CEE7/4 type E) available here`
+*There are <b class='text-xl'>{socket:typee}</b> plugs of type <b>European wall plug</b> with ground pin (CEE7/4 type E) available here* is shown if `socket:typee` is set
 
 This tagrendering is only visible in the popup if the following condition is met: socket:typee~.+ & socket:typee!=0
 
@@ -484,10 +429,12 @@ This tagrendering is only visible in the popup if the following condition is met
 ### voltage-socket:typee
 
 The question is `What voltage do the plugs with <b>European wall plug</b> with ground pin (CEE7/4 type E) offer?`
-This rendering asks information about the property 
-[socket:typee:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:typee:voltage)
-This is rendered with `<b>European wall plug</b> with ground pin (CEE7/4 type E) outputs {canonical(socket:typee:voltage)}`
- -  *<b>European wall plug</b> with ground pin (CEE7/4 type E) outputs 230 volt* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:typee:voltage' target='_blank'>socket:typee:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:typee:voltage%3D230 V' target='_blank'>230 V</a>
+*<b>European wall plug</b> with ground pin (CEE7/4 type E) outputs {canonical(socket:typee:voltage)}* is shown if `socket:typee:voltage` is set
+
+
+ -  *<b>European wall plug</b> with ground pin (CEE7/4 type E) outputs 230 volt* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:typee:voltage' target='_blank'>socket:typee:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:typee:voltage%3D230 V' target='_blank'>230 V</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: socket:typee~.+ & socket:typee!=0
 This tagrendering has labels 
 `technical`
@@ -495,10 +442,12 @@ This tagrendering has labels
 ### current-socket:typee
 
 The question is `What current do the plugs with <b>European wall plug</b> with ground pin (CEE7/4 type E) offer?`
-This rendering asks information about the property 
-[socket:typee:current](https://wiki.openstreetmap.org/wiki/Key:socket:typee:current)
-This is rendered with `<b>European wall plug</b> with ground pin (CEE7/4 type E) outputs at most {canonical(socket:typee:current)}`
- -  *<b>European wall plug</b> with ground pin (CEE7/4 type E) outputs at most 16 A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:typee:current' target='_blank'>socket:typee:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:typee:current%3D16 A' target='_blank'>16 A</a>
+*<b>European wall plug</b> with ground pin (CEE7/4 type E) outputs at most {canonical(socket:typee:current)}* is shown if `socket:typee:current` is set
+
+
+ -  *<b>European wall plug</b> with ground pin (CEE7/4 type E) outputs at most 16 A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:typee:current' target='_blank'>socket:typee:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:typee:current%3D16 A' target='_blank'>16 A</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: socket:typee~.+ & socket:typee!=0
 This tagrendering has labels 
 `technical`
@@ -506,11 +455,13 @@ This tagrendering has labels
 ### power-output-socket:typee
 
 The question is `What power output does a single plug of type <b>European wall plug</b> with ground pin (CEE7/4 type E) offer?`
-This rendering asks information about the property 
-[socket:typee:output](https://wiki.openstreetmap.org/wiki/Key:socket:typee:output)
-This is rendered with `<b>European wall plug</b> with ground pin (CEE7/4 type E) outputs at most {canonical(socket:typee:output)}`
- -  *<b>European wall plug</b> with ground pin (CEE7/4 type E) outputs at most 3 kW A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:typee:output' target='_blank'>socket:typee:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:typee:output%3D3 kW' target='_blank'>3 kW</a>
- -  *<b>European wall plug</b> with ground pin (CEE7/4 type E) outputs at most 22 kW A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:typee:output' target='_blank'>socket:typee:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:typee:output%3D22 kW' target='_blank'>22 kW</a>
+*<b>European wall plug</b> with ground pin (CEE7/4 type E) outputs at most {canonical(socket:typee:output)}* is shown if `socket:typee:output` is set
+
+
+ -  *<b>European wall plug</b> with ground pin (CEE7/4 type E) outputs at most 3 kW A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:typee:output' target='_blank'>socket:typee:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:typee:output%3D3 kW' target='_blank'>3 kW</a>
+ -  *<b>European wall plug</b> with ground pin (CEE7/4 type E) outputs at most 22 kW A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:typee:output' target='_blank'>socket:typee:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:typee:output%3D22 kW' target='_blank'>22 kW</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: socket:typee~.+ & socket:typee!=0
 This tagrendering has labels 
 `technical`
@@ -518,9 +469,7 @@ This tagrendering has labels
 ### plugs-amount-socket:chademo
 
 The question is `How much plugs of type <b>Chademo</b> are available here?`
-This rendering asks information about the property 
-[socket:chademo](https://wiki.openstreetmap.org/wiki/Key:socket:chademo)
-This is rendered with `There are <b class='text-xl'>{socket:chademo}</b> plugs of type <b>Chademo</b> available here`
+*There are <b class='text-xl'>{socket:chademo}</b> plugs of type <b>Chademo</b> available here* is shown if `socket:chademo` is set
 
 This tagrendering is only visible in the popup if the following condition is met: socket:chademo~.+ & socket:chademo!=0
 
@@ -528,10 +477,12 @@ This tagrendering is only visible in the popup if the following condition is met
 ### voltage-socket:chademo
 
 The question is `What voltage do the plugs with <b>Chademo</b> offer?`
-This rendering asks information about the property 
-[socket:chademo:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:chademo:voltage)
-This is rendered with `<b>Chademo</b> outputs {canonical(socket:chademo:voltage)}`
- -  *<b>Chademo</b> outputs 500 volt* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:chademo:voltage' target='_blank'>socket:chademo:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:chademo:voltage%3D500 V' target='_blank'>500 V</a>
+*<b>Chademo</b> outputs {canonical(socket:chademo:voltage)}* is shown if `socket:chademo:voltage` is set
+
+
+ -  *<b>Chademo</b> outputs 500 volt* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:chademo:voltage' target='_blank'>socket:chademo:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:chademo:voltage%3D500 V' target='_blank'>500 V</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: socket:chademo~.+ & socket:chademo!=0
 This tagrendering has labels 
 `technical`
@@ -539,10 +490,12 @@ This tagrendering has labels
 ### current-socket:chademo
 
 The question is `What current do the plugs with <b>Chademo</b> offer?`
-This rendering asks information about the property 
-[socket:chademo:current](https://wiki.openstreetmap.org/wiki/Key:socket:chademo:current)
-This is rendered with `<b>Chademo</b> outputs at most {canonical(socket:chademo:current)}`
- -  *<b>Chademo</b> outputs at most 120 A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:chademo:current' target='_blank'>socket:chademo:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:chademo:current%3D120 A' target='_blank'>120 A</a>
+*<b>Chademo</b> outputs at most {canonical(socket:chademo:current)}* is shown if `socket:chademo:current` is set
+
+
+ -  *<b>Chademo</b> outputs at most 120 A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:chademo:current' target='_blank'>socket:chademo:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:chademo:current%3D120 A' target='_blank'>120 A</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: socket:chademo~.+ & socket:chademo!=0
 This tagrendering has labels 
 `technical`
@@ -550,10 +503,12 @@ This tagrendering has labels
 ### power-output-socket:chademo
 
 The question is `What power output does a single plug of type <b>Chademo</b> offer?`
-This rendering asks information about the property 
-[socket:chademo:output](https://wiki.openstreetmap.org/wiki/Key:socket:chademo:output)
-This is rendered with `<b>Chademo</b> outputs at most {canonical(socket:chademo:output)}`
- -  *<b>Chademo</b> outputs at most 50 kW A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:chademo:output' target='_blank'>socket:chademo:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:chademo:output%3D50 kW' target='_blank'>50 kW</a>
+*<b>Chademo</b> outputs at most {canonical(socket:chademo:output)}* is shown if `socket:chademo:output` is set
+
+
+ -  *<b>Chademo</b> outputs at most 50 kW A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:chademo:output' target='_blank'>socket:chademo:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:chademo:output%3D50 kW' target='_blank'>50 kW</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: socket:chademo~.+ & socket:chademo!=0
 This tagrendering has labels 
 `technical`
@@ -561,9 +516,7 @@ This tagrendering has labels
 ### plugs-amount-socket:type1_cable
 
 The question is `How much plugs of type <b>Type 1 with cable</b> (J1772) are available here?`
-This rendering asks information about the property 
-[socket:type1_cable](https://wiki.openstreetmap.org/wiki/Key:socket:type1_cable)
-This is rendered with `There are <b class='text-xl'>{socket:type1_cable}</b> plugs of type <b>Type 1 with cable</b> (J1772) available here`
+*There are <b class='text-xl'>{socket:type1_cable}</b> plugs of type <b>Type 1 with cable</b> (J1772) available here* is shown if `socket:type1_cable` is set
 
 This tagrendering is only visible in the popup if the following condition is met: socket:type1_cable~.+ & socket:type1_cable!=0
 
@@ -571,11 +524,13 @@ This tagrendering is only visible in the popup if the following condition is met
 ### voltage-socket:type1_cable
 
 The question is `What voltage do the plugs with <b>Type 1 with cable</b> (J1772) offer?`
-This rendering asks information about the property 
-[socket:type1_cable:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:type1_cable:voltage)
-This is rendered with `<b>Type 1 with cable</b> (J1772) outputs {canonical(socket:type1_cable:voltage)}`
- -  *<b>Type 1 with cable</b> (J1772) outputs 200 volt* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_cable:voltage' target='_blank'>socket:type1_cable:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_cable:voltage%3D200 V' target='_blank'>200 V</a>
- -  *<b>Type 1 with cable</b> (J1772) outputs 240 volt* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_cable:voltage' target='_blank'>socket:type1_cable:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_cable:voltage%3D240 V' target='_blank'>240 V</a>
+*<b>Type 1 with cable</b> (J1772) outputs {canonical(socket:type1_cable:voltage)}* is shown if `socket:type1_cable:voltage` is set
+
+
+ -  *<b>Type 1 with cable</b> (J1772) outputs 200 volt* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_cable:voltage' target='_blank'>socket:type1_cable:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_cable:voltage%3D200 V' target='_blank'>200 V</a>
+ -  *<b>Type 1 with cable</b> (J1772) outputs 240 volt* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_cable:voltage' target='_blank'>socket:type1_cable:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_cable:voltage%3D240 V' target='_blank'>240 V</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: socket:type1_cable~.+ & socket:type1_cable!=0
 This tagrendering has labels 
 `technical`
@@ -583,10 +538,12 @@ This tagrendering has labels
 ### current-socket:type1_cable
 
 The question is `What current do the plugs with <b>Type 1 with cable</b> (J1772) offer?`
-This rendering asks information about the property 
-[socket:type1_cable:current](https://wiki.openstreetmap.org/wiki/Key:socket:type1_cable:current)
-This is rendered with `<b>Type 1 with cable</b> (J1772) outputs at most {canonical(socket:type1_cable:current)}`
- -  *<b>Type 1 with cable</b> (J1772) outputs at most 32 A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_cable:current' target='_blank'>socket:type1_cable:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_cable:current%3D32 A' target='_blank'>32 A</a>
+*<b>Type 1 with cable</b> (J1772) outputs at most {canonical(socket:type1_cable:current)}* is shown if `socket:type1_cable:current` is set
+
+
+ -  *<b>Type 1 with cable</b> (J1772) outputs at most 32 A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_cable:current' target='_blank'>socket:type1_cable:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_cable:current%3D32 A' target='_blank'>32 A</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: socket:type1_cable~.+ & socket:type1_cable!=0
 This tagrendering has labels 
 `technical`
@@ -594,11 +551,13 @@ This tagrendering has labels
 ### power-output-socket:type1_cable
 
 The question is `What power output does a single plug of type <b>Type 1 with cable</b> (J1772) offer?`
-This rendering asks information about the property 
-[socket:type1_cable:output](https://wiki.openstreetmap.org/wiki/Key:socket:type1_cable:output)
-This is rendered with `<b>Type 1 with cable</b> (J1772) outputs at most {canonical(socket:type1_cable:output)}`
- -  *<b>Type 1 with cable</b> (J1772) outputs at most 3.7 kW A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_cable:output' target='_blank'>socket:type1_cable:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_cable:output%3D3.7 kW' target='_blank'>3.7 kW</a>
- -  *<b>Type 1 with cable</b> (J1772) outputs at most 7 kW A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_cable:output' target='_blank'>socket:type1_cable:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_cable:output%3D7 kW' target='_blank'>7 kW</a>
+*<b>Type 1 with cable</b> (J1772) outputs at most {canonical(socket:type1_cable:output)}* is shown if `socket:type1_cable:output` is set
+
+
+ -  *<b>Type 1 with cable</b> (J1772) outputs at most 3.7 kW A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_cable:output' target='_blank'>socket:type1_cable:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_cable:output%3D3.7 kW' target='_blank'>3.7 kW</a>
+ -  *<b>Type 1 with cable</b> (J1772) outputs at most 7 kW A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_cable:output' target='_blank'>socket:type1_cable:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_cable:output%3D7 kW' target='_blank'>7 kW</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: socket:type1_cable~.+ & socket:type1_cable!=0
 This tagrendering has labels 
 `technical`
@@ -606,9 +565,7 @@ This tagrendering has labels
 ### plugs-amount-socket:type1
 
 The question is `How much plugs of type <b>Type 1 <i>without</i> cable</b> (J1772) are available here?`
-This rendering asks information about the property 
-[socket:type1](https://wiki.openstreetmap.org/wiki/Key:socket:type1)
-This is rendered with `There are <b class='text-xl'>{socket:type1}</b> plugs of type <b>Type 1 <i>without</i> cable</b> (J1772) available here`
+*There are <b class='text-xl'>{socket:type1}</b> plugs of type <b>Type 1 <i>without</i> cable</b> (J1772) available here* is shown if `socket:type1` is set
 
 This tagrendering is only visible in the popup if the following condition is met: socket:type1~.+ & socket:type1!=0
 
@@ -616,11 +573,13 @@ This tagrendering is only visible in the popup if the following condition is met
 ### voltage-socket:type1
 
 The question is `What voltage do the plugs with <b>Type 1 <i>without</i> cable</b> (J1772) offer?`
-This rendering asks information about the property 
-[socket:type1:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:type1:voltage)
-This is rendered with `<b>Type 1 <i>without</i> cable</b> (J1772) outputs {canonical(socket:type1:voltage)}`
- -  *<b>Type 1 <i>without</i> cable</b> (J1772) outputs 200 volt* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1:voltage' target='_blank'>socket:type1:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1:voltage%3D200 V' target='_blank'>200 V</a>
- -  *<b>Type 1 <i>without</i> cable</b> (J1772) outputs 240 volt* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1:voltage' target='_blank'>socket:type1:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1:voltage%3D240 V' target='_blank'>240 V</a>
+*<b>Type 1 <i>without</i> cable</b> (J1772) outputs {canonical(socket:type1:voltage)}* is shown if `socket:type1:voltage` is set
+
+
+ -  *<b>Type 1 <i>without</i> cable</b> (J1772) outputs 200 volt* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1:voltage' target='_blank'>socket:type1:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1:voltage%3D200 V' target='_blank'>200 V</a>
+ -  *<b>Type 1 <i>without</i> cable</b> (J1772) outputs 240 volt* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1:voltage' target='_blank'>socket:type1:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1:voltage%3D240 V' target='_blank'>240 V</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: socket:type1~.+ & socket:type1!=0
 This tagrendering has labels 
 `technical`
@@ -628,10 +587,12 @@ This tagrendering has labels
 ### current-socket:type1
 
 The question is `What current do the plugs with <b>Type 1 <i>without</i> cable</b> (J1772) offer?`
-This rendering asks information about the property 
-[socket:type1:current](https://wiki.openstreetmap.org/wiki/Key:socket:type1:current)
-This is rendered with `<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most {canonical(socket:type1:current)}`
- -  *<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most 32 A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1:current' target='_blank'>socket:type1:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1:current%3D32 A' target='_blank'>32 A</a>
+*<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most {canonical(socket:type1:current)}* is shown if `socket:type1:current` is set
+
+
+ -  *<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most 32 A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1:current' target='_blank'>socket:type1:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1:current%3D32 A' target='_blank'>32 A</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: socket:type1~.+ & socket:type1!=0
 This tagrendering has labels 
 `technical`
@@ -639,13 +600,15 @@ This tagrendering has labels
 ### power-output-socket:type1
 
 The question is `What power output does a single plug of type <b>Type 1 <i>without</i> cable</b> (J1772) offer?`
-This rendering asks information about the property 
-[socket:type1:output](https://wiki.openstreetmap.org/wiki/Key:socket:type1:output)
-This is rendered with `<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most {canonical(socket:type1:output)}`
- -  *<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most 3.7 kW A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1:output' target='_blank'>socket:type1:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1:output%3D3.7 kW' target='_blank'>3.7 kW</a>
- -  *<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most 6.6 kW A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1:output' target='_blank'>socket:type1:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1:output%3D6.6 kW' target='_blank'>6.6 kW</a>
- -  *<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most 7 kW A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1:output' target='_blank'>socket:type1:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1:output%3D7 kW' target='_blank'>7 kW</a>
- -  *<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most 7.2 kW A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1:output' target='_blank'>socket:type1:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1:output%3D7.2 kW' target='_blank'>7.2 kW</a>
+*<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most {canonical(socket:type1:output)}* is shown if `socket:type1:output` is set
+
+
+ -  *<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most 3.7 kW A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1:output' target='_blank'>socket:type1:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1:output%3D3.7 kW' target='_blank'>3.7 kW</a>
+ -  *<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most 6.6 kW A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1:output' target='_blank'>socket:type1:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1:output%3D6.6 kW' target='_blank'>6.6 kW</a>
+ -  *<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most 7 kW A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1:output' target='_blank'>socket:type1:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1:output%3D7 kW' target='_blank'>7 kW</a>
+ -  *<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most 7.2 kW A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1:output' target='_blank'>socket:type1:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1:output%3D7.2 kW' target='_blank'>7.2 kW</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: socket:type1~.+ & socket:type1!=0
 This tagrendering has labels 
 `technical`
@@ -653,9 +616,7 @@ This tagrendering has labels
 ### plugs-amount-socket:type1_combo
 
 The question is `How much plugs of type <b>Type 1 CCS</b> (aka Type 1 Combo) are available here?`
-This rendering asks information about the property 
-[socket:type1_combo](https://wiki.openstreetmap.org/wiki/Key:socket:type1_combo)
-This is rendered with `There are <b class='text-xl'>{socket:type1_combo}</b> plugs of type <b>Type 1 CCS</b> (aka Type 1 Combo) available here`
+*There are <b class='text-xl'>{socket:type1_combo}</b> plugs of type <b>Type 1 CCS</b> (aka Type 1 Combo) available here* is shown if `socket:type1_combo` is set
 
 This tagrendering is only visible in the popup if the following condition is met: socket:type1_combo~.+ & socket:type1_combo!=0
 
@@ -663,11 +624,13 @@ This tagrendering is only visible in the popup if the following condition is met
 ### voltage-socket:type1_combo
 
 The question is `What voltage do the plugs with <b>Type 1 CCS</b> (aka Type 1 Combo) offer?`
-This rendering asks information about the property 
-[socket:type1_combo:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:type1_combo:voltage)
-This is rendered with `<b>Type 1 CCS</b> (aka Type 1 Combo) outputs {canonical(socket:type1_combo:voltage)}`
- -  *<b>Type 1 CCS</b> (aka Type 1 Combo) outputs 400 volt* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_combo:voltage' target='_blank'>socket:type1_combo:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_combo:voltage%3D400 V' target='_blank'>400 V</a>
- -  *<b>Type 1 CCS</b> (aka Type 1 Combo) outputs 1000 volt* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_combo:voltage' target='_blank'>socket:type1_combo:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_combo:voltage%3D1000 V' target='_blank'>1000 V</a>
+*<b>Type 1 CCS</b> (aka Type 1 Combo) outputs {canonical(socket:type1_combo:voltage)}* is shown if `socket:type1_combo:voltage` is set
+
+
+ -  *<b>Type 1 CCS</b> (aka Type 1 Combo) outputs 400 volt* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_combo:voltage' target='_blank'>socket:type1_combo:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_combo:voltage%3D400 V' target='_blank'>400 V</a>
+ -  *<b>Type 1 CCS</b> (aka Type 1 Combo) outputs 1000 volt* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_combo:voltage' target='_blank'>socket:type1_combo:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_combo:voltage%3D1000 V' target='_blank'>1000 V</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: socket:type1_combo~.+ & socket:type1_combo!=0
 This tagrendering has labels 
 `technical`
@@ -675,11 +638,13 @@ This tagrendering has labels
 ### current-socket:type1_combo
 
 The question is `What current do the plugs with <b>Type 1 CCS</b> (aka Type 1 Combo) offer?`
-This rendering asks information about the property 
-[socket:type1_combo:current](https://wiki.openstreetmap.org/wiki/Key:socket:type1_combo:current)
-This is rendered with `<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most {canonical(socket:type1_combo:current)}`
- -  *<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 50 A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_combo:current' target='_blank'>socket:type1_combo:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_combo:current%3D50 A' target='_blank'>50 A</a>
- -  *<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 125 A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_combo:current' target='_blank'>socket:type1_combo:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_combo:current%3D125 A' target='_blank'>125 A</a>
+*<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most {canonical(socket:type1_combo:current)}* is shown if `socket:type1_combo:current` is set
+
+
+ -  *<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 50 A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_combo:current' target='_blank'>socket:type1_combo:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_combo:current%3D50 A' target='_blank'>50 A</a>
+ -  *<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 125 A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_combo:current' target='_blank'>socket:type1_combo:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_combo:current%3D125 A' target='_blank'>125 A</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: socket:type1_combo~.+ & socket:type1_combo!=0
 This tagrendering has labels 
 `technical`
@@ -687,13 +652,15 @@ This tagrendering has labels
 ### power-output-socket:type1_combo
 
 The question is `What power output does a single plug of type <b>Type 1 CCS</b> (aka Type 1 Combo) offer?`
-This rendering asks information about the property 
-[socket:type1_combo:output](https://wiki.openstreetmap.org/wiki/Key:socket:type1_combo:output)
-This is rendered with `<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most {canonical(socket:type1_combo:output)}`
- -  *<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 50 kW A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_combo:output' target='_blank'>socket:type1_combo:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_combo:output%3D50 kW' target='_blank'>50 kW</a>
- -  *<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 62.5 kW A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_combo:output' target='_blank'>socket:type1_combo:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_combo:output%3D62.5 kW' target='_blank'>62.5 kW</a>
- -  *<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 150 kW A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_combo:output' target='_blank'>socket:type1_combo:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_combo:output%3D150 kW' target='_blank'>150 kW</a>
- -  *<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 350 kW A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_combo:output' target='_blank'>socket:type1_combo:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_combo:output%3D350 kW' target='_blank'>350 kW</a>
+*<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most {canonical(socket:type1_combo:output)}* is shown if `socket:type1_combo:output` is set
+
+
+ -  *<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 50 kW A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_combo:output' target='_blank'>socket:type1_combo:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_combo:output%3D50 kW' target='_blank'>50 kW</a>
+ -  *<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 62.5 kW A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_combo:output' target='_blank'>socket:type1_combo:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_combo:output%3D62.5 kW' target='_blank'>62.5 kW</a>
+ -  *<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 150 kW A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_combo:output' target='_blank'>socket:type1_combo:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_combo:output%3D150 kW' target='_blank'>150 kW</a>
+ -  *<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 350 kW A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type1_combo:output' target='_blank'>socket:type1_combo:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type1_combo:output%3D350 kW' target='_blank'>350 kW</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: socket:type1_combo~.+ & socket:type1_combo!=0
 This tagrendering has labels 
 `technical`
@@ -701,9 +668,7 @@ This tagrendering has labels
 ### plugs-amount-socket:tesla_supercharger
 
 The question is `How much plugs of type <b>Tesla Supercharger</b> are available here?`
-This rendering asks information about the property 
-[socket:tesla_supercharger](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger)
-This is rendered with `There are <b class='text-xl'>{socket:tesla_supercharger}</b> plugs of type <b>Tesla Supercharger</b> available here`
+*There are <b class='text-xl'>{socket:tesla_supercharger}</b> plugs of type <b>Tesla Supercharger</b> available here* is shown if `socket:tesla_supercharger` is set
 
 This tagrendering is only visible in the popup if the following condition is met: socket:tesla_supercharger~.+ & socket:tesla_supercharger!=0
 
@@ -711,10 +676,12 @@ This tagrendering is only visible in the popup if the following condition is met
 ### voltage-socket:tesla_supercharger
 
 The question is `What voltage do the plugs with <b>Tesla Supercharger</b> offer?`
-This rendering asks information about the property 
-[socket:tesla_supercharger:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger:voltage)
-This is rendered with `<b>Tesla Supercharger</b> outputs {canonical(socket:tesla_supercharger:voltage)}`
- -  *<b>Tesla Supercharger</b> outputs 480 volt* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger:voltage' target='_blank'>socket:tesla_supercharger:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger:voltage%3D480 V' target='_blank'>480 V</a>
+*<b>Tesla Supercharger</b> outputs {canonical(socket:tesla_supercharger:voltage)}* is shown if `socket:tesla_supercharger:voltage` is set
+
+
+ -  *<b>Tesla Supercharger</b> outputs 480 volt* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger:voltage' target='_blank'>socket:tesla_supercharger:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger:voltage%3D480 V' target='_blank'>480 V</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: socket:tesla_supercharger~.+ & socket:tesla_supercharger!=0
 This tagrendering has labels 
 `technical`
@@ -722,11 +689,13 @@ This tagrendering has labels
 ### current-socket:tesla_supercharger
 
 The question is `What current do the plugs with <b>Tesla Supercharger</b> offer?`
-This rendering asks information about the property 
-[socket:tesla_supercharger:current](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger:current)
-This is rendered with `<b>Tesla Supercharger</b> outputs at most {canonical(socket:tesla_supercharger:current)}`
- -  *<b>Tesla Supercharger</b> outputs at most 125 A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger:current' target='_blank'>socket:tesla_supercharger:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger:current%3D125 A' target='_blank'>125 A</a>
- -  *<b>Tesla Supercharger</b> outputs at most 350 A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger:current' target='_blank'>socket:tesla_supercharger:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger:current%3D350 A' target='_blank'>350 A</a>
+*<b>Tesla Supercharger</b> outputs at most {canonical(socket:tesla_supercharger:current)}* is shown if `socket:tesla_supercharger:current` is set
+
+
+ -  *<b>Tesla Supercharger</b> outputs at most 125 A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger:current' target='_blank'>socket:tesla_supercharger:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger:current%3D125 A' target='_blank'>125 A</a>
+ -  *<b>Tesla Supercharger</b> outputs at most 350 A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger:current' target='_blank'>socket:tesla_supercharger:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger:current%3D350 A' target='_blank'>350 A</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: socket:tesla_supercharger~.+ & socket:tesla_supercharger!=0
 This tagrendering has labels 
 `technical`
@@ -734,12 +703,14 @@ This tagrendering has labels
 ### power-output-socket:tesla_supercharger
 
 The question is `What power output does a single plug of type <b>Tesla Supercharger</b> offer?`
-This rendering asks information about the property 
-[socket:tesla_supercharger:output](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger:output)
-This is rendered with `<b>Tesla Supercharger</b> outputs at most {canonical(socket:tesla_supercharger:output)}`
- -  *<b>Tesla Supercharger</b> outputs at most 120 kW A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger:output' target='_blank'>socket:tesla_supercharger:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger:output%3D120 kW' target='_blank'>120 kW</a>
- -  *<b>Tesla Supercharger</b> outputs at most 150 kW A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger:output' target='_blank'>socket:tesla_supercharger:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger:output%3D150 kW' target='_blank'>150 kW</a>
- -  *<b>Tesla Supercharger</b> outputs at most 250 kW A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger:output' target='_blank'>socket:tesla_supercharger:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger:output%3D250 kW' target='_blank'>250 kW</a>
+*<b>Tesla Supercharger</b> outputs at most {canonical(socket:tesla_supercharger:output)}* is shown if `socket:tesla_supercharger:output` is set
+
+
+ -  *<b>Tesla Supercharger</b> outputs at most 120 kW A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger:output' target='_blank'>socket:tesla_supercharger:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger:output%3D120 kW' target='_blank'>120 kW</a>
+ -  *<b>Tesla Supercharger</b> outputs at most 150 kW A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger:output' target='_blank'>socket:tesla_supercharger:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger:output%3D150 kW' target='_blank'>150 kW</a>
+ -  *<b>Tesla Supercharger</b> outputs at most 250 kW A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger:output' target='_blank'>socket:tesla_supercharger:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger:output%3D250 kW' target='_blank'>250 kW</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: socket:tesla_supercharger~.+ & socket:tesla_supercharger!=0
 This tagrendering has labels 
 `technical`
@@ -747,9 +718,7 @@ This tagrendering has labels
 ### plugs-amount-socket:type2
 
 The question is `How much plugs of type <b>Type 2</b> (mennekes) are available here?`
-This rendering asks information about the property 
-[socket:type2](https://wiki.openstreetmap.org/wiki/Key:socket:type2)
-This is rendered with `There are <b class='text-xl'>{socket:type2}</b> plugs of type <b>Type 2</b> (mennekes) available here`
+*There are <b class='text-xl'>{socket:type2}</b> plugs of type <b>Type 2</b> (mennekes) available here* is shown if `socket:type2` is set
 
 This tagrendering is only visible in the popup if the following condition is met: socket:type2~.+ & socket:type2!=0
 
@@ -757,11 +726,13 @@ This tagrendering is only visible in the popup if the following condition is met
 ### voltage-socket:type2
 
 The question is `What voltage do the plugs with <b>Type 2</b> (mennekes) offer?`
-This rendering asks information about the property 
-[socket:type2:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:type2:voltage)
-This is rendered with `<b>Type 2</b> (mennekes) outputs {canonical(socket:type2:voltage)}`
- -  *<b>Type 2</b> (mennekes) outputs 230 volt* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2:voltage' target='_blank'>socket:type2:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2:voltage%3D230 V' target='_blank'>230 V</a>
- -  *<b>Type 2</b> (mennekes) outputs 400 volt* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2:voltage' target='_blank'>socket:type2:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2:voltage%3D400 V' target='_blank'>400 V</a>
+*<b>Type 2</b> (mennekes) outputs {canonical(socket:type2:voltage)}* is shown if `socket:type2:voltage` is set
+
+
+ -  *<b>Type 2</b> (mennekes) outputs 230 volt* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2:voltage' target='_blank'>socket:type2:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2:voltage%3D230 V' target='_blank'>230 V</a>
+ -  *<b>Type 2</b> (mennekes) outputs 400 volt* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2:voltage' target='_blank'>socket:type2:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2:voltage%3D400 V' target='_blank'>400 V</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: socket:type2~.+ & socket:type2!=0
 This tagrendering has labels 
 `technical`
@@ -769,11 +740,13 @@ This tagrendering has labels
 ### current-socket:type2
 
 The question is `What current do the plugs with <b>Type 2</b> (mennekes) offer?`
-This rendering asks information about the property 
-[socket:type2:current](https://wiki.openstreetmap.org/wiki/Key:socket:type2:current)
-This is rendered with `<b>Type 2</b> (mennekes) outputs at most {canonical(socket:type2:current)}`
- -  *<b>Type 2</b> (mennekes) outputs at most 16 A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2:current' target='_blank'>socket:type2:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2:current%3D16 A' target='_blank'>16 A</a>
- -  *<b>Type 2</b> (mennekes) outputs at most 32 A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2:current' target='_blank'>socket:type2:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2:current%3D32 A' target='_blank'>32 A</a>
+*<b>Type 2</b> (mennekes) outputs at most {canonical(socket:type2:current)}* is shown if `socket:type2:current` is set
+
+
+ -  *<b>Type 2</b> (mennekes) outputs at most 16 A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2:current' target='_blank'>socket:type2:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2:current%3D16 A' target='_blank'>16 A</a>
+ -  *<b>Type 2</b> (mennekes) outputs at most 32 A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2:current' target='_blank'>socket:type2:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2:current%3D32 A' target='_blank'>32 A</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: socket:type2~.+ & socket:type2!=0
 This tagrendering has labels 
 `technical`
@@ -781,11 +754,13 @@ This tagrendering has labels
 ### power-output-socket:type2
 
 The question is `What power output does a single plug of type <b>Type 2</b> (mennekes) offer?`
-This rendering asks information about the property 
-[socket:type2:output](https://wiki.openstreetmap.org/wiki/Key:socket:type2:output)
-This is rendered with `<b>Type 2</b> (mennekes) outputs at most {canonical(socket:type2:output)}`
- -  *<b>Type 2</b> (mennekes) outputs at most 11 kW A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2:output' target='_blank'>socket:type2:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2:output%3D11 kW' target='_blank'>11 kW</a>
- -  *<b>Type 2</b> (mennekes) outputs at most 22 kW A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2:output' target='_blank'>socket:type2:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2:output%3D22 kW' target='_blank'>22 kW</a>
+*<b>Type 2</b> (mennekes) outputs at most {canonical(socket:type2:output)}* is shown if `socket:type2:output` is set
+
+
+ -  *<b>Type 2</b> (mennekes) outputs at most 11 kW A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2:output' target='_blank'>socket:type2:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2:output%3D11 kW' target='_blank'>11 kW</a>
+ -  *<b>Type 2</b> (mennekes) outputs at most 22 kW A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2:output' target='_blank'>socket:type2:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2:output%3D22 kW' target='_blank'>22 kW</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: socket:type2~.+ & socket:type2!=0
 This tagrendering has labels 
 `technical`
@@ -793,9 +768,7 @@ This tagrendering has labels
 ### plugs-amount-socket:type2_combo
 
 The question is `How much plugs of type <b>Type 2 CCS</b> (mennekes) are available here?`
-This rendering asks information about the property 
-[socket:type2_combo](https://wiki.openstreetmap.org/wiki/Key:socket:type2_combo)
-This is rendered with `There are <b class='text-xl'>{socket:type2_combo}</b> plugs of type <b>Type 2 CCS</b> (mennekes) available here`
+*There are <b class='text-xl'>{socket:type2_combo}</b> plugs of type <b>Type 2 CCS</b> (mennekes) available here* is shown if `socket:type2_combo` is set
 
 This tagrendering is only visible in the popup if the following condition is met: socket:type2_combo~.+ & socket:type2_combo!=0
 
@@ -803,11 +776,13 @@ This tagrendering is only visible in the popup if the following condition is met
 ### voltage-socket:type2_combo
 
 The question is `What voltage do the plugs with <b>Type 2 CCS</b> (mennekes) offer?`
-This rendering asks information about the property 
-[socket:type2_combo:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:type2_combo:voltage)
-This is rendered with `<b>Type 2 CCS</b> (mennekes) outputs {canonical(socket:type2_combo:voltage)}`
- -  *<b>Type 2 CCS</b> (mennekes) outputs 500 volt* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2_combo:voltage' target='_blank'>socket:type2_combo:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2_combo:voltage%3D500 V' target='_blank'>500 V</a>
- -  *<b>Type 2 CCS</b> (mennekes) outputs 920 volt* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2_combo:voltage' target='_blank'>socket:type2_combo:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2_combo:voltage%3D920 V' target='_blank'>920 V</a>
+*<b>Type 2 CCS</b> (mennekes) outputs {canonical(socket:type2_combo:voltage)}* is shown if `socket:type2_combo:voltage` is set
+
+
+ -  *<b>Type 2 CCS</b> (mennekes) outputs 500 volt* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2_combo:voltage' target='_blank'>socket:type2_combo:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2_combo:voltage%3D500 V' target='_blank'>500 V</a>
+ -  *<b>Type 2 CCS</b> (mennekes) outputs 920 volt* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2_combo:voltage' target='_blank'>socket:type2_combo:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2_combo:voltage%3D920 V' target='_blank'>920 V</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: socket:type2_combo~.+ & socket:type2_combo!=0
 This tagrendering has labels 
 `technical`
@@ -815,11 +790,13 @@ This tagrendering has labels
 ### current-socket:type2_combo
 
 The question is `What current do the plugs with <b>Type 2 CCS</b> (mennekes) offer?`
-This rendering asks information about the property 
-[socket:type2_combo:current](https://wiki.openstreetmap.org/wiki/Key:socket:type2_combo:current)
-This is rendered with `<b>Type 2 CCS</b> (mennekes) outputs at most {canonical(socket:type2_combo:current)}`
- -  *<b>Type 2 CCS</b> (mennekes) outputs at most 125 A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2_combo:current' target='_blank'>socket:type2_combo:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2_combo:current%3D125 A' target='_blank'>125 A</a>
- -  *<b>Type 2 CCS</b> (mennekes) outputs at most 350 A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2_combo:current' target='_blank'>socket:type2_combo:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2_combo:current%3D350 A' target='_blank'>350 A</a>
+*<b>Type 2 CCS</b> (mennekes) outputs at most {canonical(socket:type2_combo:current)}* is shown if `socket:type2_combo:current` is set
+
+
+ -  *<b>Type 2 CCS</b> (mennekes) outputs at most 125 A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2_combo:current' target='_blank'>socket:type2_combo:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2_combo:current%3D125 A' target='_blank'>125 A</a>
+ -  *<b>Type 2 CCS</b> (mennekes) outputs at most 350 A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2_combo:current' target='_blank'>socket:type2_combo:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2_combo:current%3D350 A' target='_blank'>350 A</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: socket:type2_combo~.+ & socket:type2_combo!=0
 This tagrendering has labels 
 `technical`
@@ -827,10 +804,12 @@ This tagrendering has labels
 ### power-output-socket:type2_combo
 
 The question is `What power output does a single plug of type <b>Type 2 CCS</b> (mennekes) offer?`
-This rendering asks information about the property 
-[socket:type2_combo:output](https://wiki.openstreetmap.org/wiki/Key:socket:type2_combo:output)
-This is rendered with `<b>Type 2 CCS</b> (mennekes) outputs at most {canonical(socket:type2_combo:output)}`
- -  *<b>Type 2 CCS</b> (mennekes) outputs at most 50 kW A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2_combo:output' target='_blank'>socket:type2_combo:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2_combo:output%3D50 kW' target='_blank'>50 kW</a>
+*<b>Type 2 CCS</b> (mennekes) outputs at most {canonical(socket:type2_combo:output)}* is shown if `socket:type2_combo:output` is set
+
+
+ -  *<b>Type 2 CCS</b> (mennekes) outputs at most 50 kW A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2_combo:output' target='_blank'>socket:type2_combo:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2_combo:output%3D50 kW' target='_blank'>50 kW</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: socket:type2_combo~.+ & socket:type2_combo!=0
 This tagrendering has labels 
 `technical`
@@ -838,9 +817,7 @@ This tagrendering has labels
 ### plugs-amount-socket:type2_cable
 
 The question is `How much plugs of type <b>Type 2 with cable</b> (mennekes) are available here?`
-This rendering asks information about the property 
-[socket:type2_cable](https://wiki.openstreetmap.org/wiki/Key:socket:type2_cable)
-This is rendered with `There are <b class='text-xl'>{socket:type2_cable}</b> plugs of type <b>Type 2 with cable</b> (mennekes) available here`
+*There are <b class='text-xl'>{socket:type2_cable}</b> plugs of type <b>Type 2 with cable</b> (mennekes) available here* is shown if `socket:type2_cable` is set
 
 This tagrendering is only visible in the popup if the following condition is met: socket:type2_cable~.+ & socket:type2_cable!=0
 
@@ -848,11 +825,13 @@ This tagrendering is only visible in the popup if the following condition is met
 ### voltage-socket:type2_cable
 
 The question is `What voltage do the plugs with <b>Type 2 with cable</b> (mennekes) offer?`
-This rendering asks information about the property 
-[socket:type2_cable:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:type2_cable:voltage)
-This is rendered with `<b>Type 2 with cable</b> (mennekes) outputs {canonical(socket:type2_cable:voltage)}`
- -  *<b>Type 2 with cable</b> (mennekes) outputs 230 volt* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2_cable:voltage' target='_blank'>socket:type2_cable:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2_cable:voltage%3D230 V' target='_blank'>230 V</a>
- -  *<b>Type 2 with cable</b> (mennekes) outputs 400 volt* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2_cable:voltage' target='_blank'>socket:type2_cable:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2_cable:voltage%3D400 V' target='_blank'>400 V</a>
+*<b>Type 2 with cable</b> (mennekes) outputs {canonical(socket:type2_cable:voltage)}* is shown if `socket:type2_cable:voltage` is set
+
+
+ -  *<b>Type 2 with cable</b> (mennekes) outputs 230 volt* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2_cable:voltage' target='_blank'>socket:type2_cable:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2_cable:voltage%3D230 V' target='_blank'>230 V</a>
+ -  *<b>Type 2 with cable</b> (mennekes) outputs 400 volt* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2_cable:voltage' target='_blank'>socket:type2_cable:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2_cable:voltage%3D400 V' target='_blank'>400 V</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: socket:type2_cable~.+ & socket:type2_cable!=0
 This tagrendering has labels 
 `technical`
@@ -860,11 +839,13 @@ This tagrendering has labels
 ### current-socket:type2_cable
 
 The question is `What current do the plugs with <b>Type 2 with cable</b> (mennekes) offer?`
-This rendering asks information about the property 
-[socket:type2_cable:current](https://wiki.openstreetmap.org/wiki/Key:socket:type2_cable:current)
-This is rendered with `<b>Type 2 with cable</b> (mennekes) outputs at most {canonical(socket:type2_cable:current)}`
- -  *<b>Type 2 with cable</b> (mennekes) outputs at most 16 A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2_cable:current' target='_blank'>socket:type2_cable:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2_cable:current%3D16 A' target='_blank'>16 A</a>
- -  *<b>Type 2 with cable</b> (mennekes) outputs at most 32 A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2_cable:current' target='_blank'>socket:type2_cable:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2_cable:current%3D32 A' target='_blank'>32 A</a>
+*<b>Type 2 with cable</b> (mennekes) outputs at most {canonical(socket:type2_cable:current)}* is shown if `socket:type2_cable:current` is set
+
+
+ -  *<b>Type 2 with cable</b> (mennekes) outputs at most 16 A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2_cable:current' target='_blank'>socket:type2_cable:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2_cable:current%3D16 A' target='_blank'>16 A</a>
+ -  *<b>Type 2 with cable</b> (mennekes) outputs at most 32 A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2_cable:current' target='_blank'>socket:type2_cable:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2_cable:current%3D32 A' target='_blank'>32 A</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: socket:type2_cable~.+ & socket:type2_cable!=0
 This tagrendering has labels 
 `technical`
@@ -872,11 +853,13 @@ This tagrendering has labels
 ### power-output-socket:type2_cable
 
 The question is `What power output does a single plug of type <b>Type 2 with cable</b> (mennekes) offer?`
-This rendering asks information about the property 
-[socket:type2_cable:output](https://wiki.openstreetmap.org/wiki/Key:socket:type2_cable:output)
-This is rendered with `<b>Type 2 with cable</b> (mennekes) outputs at most {canonical(socket:type2_cable:output)}`
- -  *<b>Type 2 with cable</b> (mennekes) outputs at most 11 kW A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2_cable:output' target='_blank'>socket:type2_cable:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2_cable:output%3D11 kW' target='_blank'>11 kW</a>
- -  *<b>Type 2 with cable</b> (mennekes) outputs at most 22 kW A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2_cable:output' target='_blank'>socket:type2_cable:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2_cable:output%3D22 kW' target='_blank'>22 kW</a>
+*<b>Type 2 with cable</b> (mennekes) outputs at most {canonical(socket:type2_cable:output)}* is shown if `socket:type2_cable:output` is set
+
+
+ -  *<b>Type 2 with cable</b> (mennekes) outputs at most 11 kW A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2_cable:output' target='_blank'>socket:type2_cable:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2_cable:output%3D11 kW' target='_blank'>11 kW</a>
+ -  *<b>Type 2 with cable</b> (mennekes) outputs at most 22 kW A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:type2_cable:output' target='_blank'>socket:type2_cable:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:type2_cable:output%3D22 kW' target='_blank'>22 kW</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: socket:type2_cable~.+ & socket:type2_cable!=0
 This tagrendering has labels 
 `technical`
@@ -884,9 +867,7 @@ This tagrendering has labels
 ### plugs-amount-socket:tesla_supercharger_ccs
 
 The question is `How much plugs of type <b>Tesla Supercharger CCS</b> (a branded type2_css) are available here?`
-This rendering asks information about the property 
-[socket:tesla_supercharger_ccs](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger_ccs)
-This is rendered with `There are <b class='text-xl'>{socket:tesla_supercharger_ccs}</b> plugs of type <b>Tesla Supercharger CCS</b> (a branded type2_css) available here`
+*There are <b class='text-xl'>{socket:tesla_supercharger_ccs}</b> plugs of type <b>Tesla Supercharger CCS</b> (a branded type2_css) available here* is shown if `socket:tesla_supercharger_ccs` is set
 
 This tagrendering is only visible in the popup if the following condition is met: socket:tesla_supercharger_ccs~.+ & socket:tesla_supercharger_ccs!=0
 
@@ -894,11 +875,13 @@ This tagrendering is only visible in the popup if the following condition is met
 ### voltage-socket:tesla_supercharger_ccs
 
 The question is `What voltage do the plugs with <b>Tesla Supercharger CCS</b> (a branded type2_css) offer?`
-This rendering asks information about the property 
-[socket:tesla_supercharger_ccs:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger_ccs:voltage)
-This is rendered with `<b>Tesla Supercharger CCS</b> (a branded type2_css) outputs {canonical(socket:tesla_supercharger_ccs:voltage)}`
- -  *<b>Tesla Supercharger CCS</b> (a branded type2_css) outputs 500 volt* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger_ccs:voltage' target='_blank'>socket:tesla_supercharger_ccs:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger_ccs:voltage%3D500 V' target='_blank'>500 V</a>
- -  *<b>Tesla Supercharger CCS</b> (a branded type2_css) outputs 920 volt* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger_ccs:voltage' target='_blank'>socket:tesla_supercharger_ccs:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger_ccs:voltage%3D920 V' target='_blank'>920 V</a>
+*<b>Tesla Supercharger CCS</b> (a branded type2_css) outputs {canonical(socket:tesla_supercharger_ccs:voltage)}* is shown if `socket:tesla_supercharger_ccs:voltage` is set
+
+
+ -  *<b>Tesla Supercharger CCS</b> (a branded type2_css) outputs 500 volt* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger_ccs:voltage' target='_blank'>socket:tesla_supercharger_ccs:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger_ccs:voltage%3D500 V' target='_blank'>500 V</a>
+ -  *<b>Tesla Supercharger CCS</b> (a branded type2_css) outputs 920 volt* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger_ccs:voltage' target='_blank'>socket:tesla_supercharger_ccs:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger_ccs:voltage%3D920 V' target='_blank'>920 V</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: socket:tesla_supercharger_ccs~.+ & socket:tesla_supercharger_ccs!=0
 This tagrendering has labels 
 `technical`
@@ -906,11 +889,13 @@ This tagrendering has labels
 ### current-socket:tesla_supercharger_ccs
 
 The question is `What current do the plugs with <b>Tesla Supercharger CCS</b> (a branded type2_css) offer?`
-This rendering asks information about the property 
-[socket:tesla_supercharger_ccs:current](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger_ccs:current)
-This is rendered with `<b>Tesla Supercharger CCS</b> (a branded type2_css) outputs at most {canonical(socket:tesla_supercharger_ccs:current)}`
- -  *<b>Tesla Supercharger CCS</b> (a branded type2_css) outputs at most 125 A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger_ccs:current' target='_blank'>socket:tesla_supercharger_ccs:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger_ccs:current%3D125 A' target='_blank'>125 A</a>
- -  *<b>Tesla Supercharger CCS</b> (a branded type2_css) outputs at most 350 A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger_ccs:current' target='_blank'>socket:tesla_supercharger_ccs:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger_ccs:current%3D350 A' target='_blank'>350 A</a>
+*<b>Tesla Supercharger CCS</b> (a branded type2_css) outputs at most {canonical(socket:tesla_supercharger_ccs:current)}* is shown if `socket:tesla_supercharger_ccs:current` is set
+
+
+ -  *<b>Tesla Supercharger CCS</b> (a branded type2_css) outputs at most 125 A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger_ccs:current' target='_blank'>socket:tesla_supercharger_ccs:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger_ccs:current%3D125 A' target='_blank'>125 A</a>
+ -  *<b>Tesla Supercharger CCS</b> (a branded type2_css) outputs at most 350 A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger_ccs:current' target='_blank'>socket:tesla_supercharger_ccs:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger_ccs:current%3D350 A' target='_blank'>350 A</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: socket:tesla_supercharger_ccs~.+ & socket:tesla_supercharger_ccs!=0
 This tagrendering has labels 
 `technical`
@@ -918,10 +903,12 @@ This tagrendering has labels
 ### power-output-socket:tesla_supercharger_ccs
 
 The question is `What power output does a single plug of type <b>Tesla Supercharger CCS</b> (a branded type2_css) offer?`
-This rendering asks information about the property 
-[socket:tesla_supercharger_ccs:output](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger_ccs:output)
-This is rendered with `<b>Tesla Supercharger CCS</b> (a branded type2_css) outputs at most {canonical(socket:tesla_supercharger_ccs:output)}`
- -  *<b>Tesla Supercharger CCS</b> (a branded type2_css) outputs at most 50 kW A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger_ccs:output' target='_blank'>socket:tesla_supercharger_ccs:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger_ccs:output%3D50 kW' target='_blank'>50 kW</a>
+*<b>Tesla Supercharger CCS</b> (a branded type2_css) outputs at most {canonical(socket:tesla_supercharger_ccs:output)}* is shown if `socket:tesla_supercharger_ccs:output` is set
+
+
+ -  *<b>Tesla Supercharger CCS</b> (a branded type2_css) outputs at most 50 kW A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_supercharger_ccs:output' target='_blank'>socket:tesla_supercharger_ccs:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_supercharger_ccs:output%3D50 kW' target='_blank'>50 kW</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: socket:tesla_supercharger_ccs~.+ & socket:tesla_supercharger_ccs!=0
 This tagrendering has labels 
 `technical`
@@ -929,9 +916,7 @@ This tagrendering has labels
 ### plugs-amount-socket:tesla_destination_us
 
 The question is `How much plugs of type <b>Tesla Supercharger (destination)</b> are available here?`
-This rendering asks information about the property 
-[socket:tesla_destination](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination)
-This is rendered with `There are <b class='text-xl'>{socket:tesla_destination}</b> plugs of type <b>Tesla Supercharger (destination)</b> available here`
+*There are <b class='text-xl'>{socket:tesla_destination}</b> plugs of type <b>Tesla Supercharger (destination)</b> available here* is shown if `socket:tesla_destination` is set
 
 This tagrendering is only visible in the popup if the following condition is met: socket:tesla_destination~.+ & socket:tesla_destination!=0
 
@@ -939,10 +924,12 @@ This tagrendering is only visible in the popup if the following condition is met
 ### voltage-socket:tesla_destination_us
 
 The question is `What voltage do the plugs with <b>Tesla Supercharger (destination)</b> offer?`
-This rendering asks information about the property 
-[socket:tesla_destination:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:voltage)
-This is rendered with `<b>Tesla Supercharger (destination)</b> outputs {canonical(socket:tesla_destination:voltage)}`
- -  *<b>Tesla Supercharger (destination)</b> outputs 480 volt* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:voltage' target='_blank'>socket:tesla_destination:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:voltage%3D480 V' target='_blank'>480 V</a>
+*<b>Tesla Supercharger (destination)</b> outputs {canonical(socket:tesla_destination:voltage)}* is shown if `socket:tesla_destination:voltage` is set
+
+
+ -  *<b>Tesla Supercharger (destination)</b> outputs 480 volt* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:voltage' target='_blank'>socket:tesla_destination:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:voltage%3D480 V' target='_blank'>480 V</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: socket:tesla_destination~.+ & socket:tesla_destination!=0
 This tagrendering has labels 
 `technical`
@@ -950,11 +937,13 @@ This tagrendering has labels
 ### current-socket:tesla_destination_us
 
 The question is `What current do the plugs with <b>Tesla Supercharger (destination)</b> offer?`
-This rendering asks information about the property 
-[socket:tesla_destination:current](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:current)
-This is rendered with `<b>Tesla Supercharger (destination)</b> outputs at most {canonical(socket:tesla_destination:current)}`
- -  *<b>Tesla Supercharger (destination)</b> outputs at most 125 A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:current' target='_blank'>socket:tesla_destination:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:current%3D125 A' target='_blank'>125 A</a>
- -  *<b>Tesla Supercharger (destination)</b> outputs at most 350 A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:current' target='_blank'>socket:tesla_destination:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:current%3D350 A' target='_blank'>350 A</a>
+*<b>Tesla Supercharger (destination)</b> outputs at most {canonical(socket:tesla_destination:current)}* is shown if `socket:tesla_destination:current` is set
+
+
+ -  *<b>Tesla Supercharger (destination)</b> outputs at most 125 A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:current' target='_blank'>socket:tesla_destination:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:current%3D125 A' target='_blank'>125 A</a>
+ -  *<b>Tesla Supercharger (destination)</b> outputs at most 350 A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:current' target='_blank'>socket:tesla_destination:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:current%3D350 A' target='_blank'>350 A</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: socket:tesla_destination~.+ & socket:tesla_destination!=0
 This tagrendering has labels 
 `technical`
@@ -962,12 +951,14 @@ This tagrendering has labels
 ### power-output-socket:tesla_destination_us
 
 The question is `What power output does a single plug of type <b>Tesla Supercharger (destination)</b> offer?`
-This rendering asks information about the property 
-[socket:tesla_destination:output](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:output)
-This is rendered with `<b>Tesla Supercharger (destination)</b> outputs at most {canonical(socket:tesla_destination:output)}`
- -  *<b>Tesla Supercharger (destination)</b> outputs at most 120 kW A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:output' target='_blank'>socket:tesla_destination:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:output%3D120 kW' target='_blank'>120 kW</a>
- -  *<b>Tesla Supercharger (destination)</b> outputs at most 150 kW A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:output' target='_blank'>socket:tesla_destination:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:output%3D150 kW' target='_blank'>150 kW</a>
- -  *<b>Tesla Supercharger (destination)</b> outputs at most 250 kW A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:output' target='_blank'>socket:tesla_destination:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:output%3D250 kW' target='_blank'>250 kW</a>
+*<b>Tesla Supercharger (destination)</b> outputs at most {canonical(socket:tesla_destination:output)}* is shown if `socket:tesla_destination:output` is set
+
+
+ -  *<b>Tesla Supercharger (destination)</b> outputs at most 120 kW A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:output' target='_blank'>socket:tesla_destination:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:output%3D120 kW' target='_blank'>120 kW</a>
+ -  *<b>Tesla Supercharger (destination)</b> outputs at most 150 kW A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:output' target='_blank'>socket:tesla_destination:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:output%3D150 kW' target='_blank'>150 kW</a>
+ -  *<b>Tesla Supercharger (destination)</b> outputs at most 250 kW A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:output' target='_blank'>socket:tesla_destination:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:output%3D250 kW' target='_blank'>250 kW</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: socket:tesla_destination~.+ & socket:tesla_destination!=0
 This tagrendering has labels 
 `technical`
@@ -975,9 +966,7 @@ This tagrendering has labels
 ### plugs-amount-socket:tesla_destination
 
 The question is `How much plugs of type <b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) are available here?`
-This rendering asks information about the property 
-[socket:tesla_destination](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination)
-This is rendered with `There are <b class='text-xl'>{socket:tesla_destination}</b> plugs of type <b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) available here`
+*There are <b class='text-xl'>{socket:tesla_destination}</b> plugs of type <b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) available here* is shown if `socket:tesla_destination` is set
 
 This tagrendering is only visible in the popup if the following condition is met: socket:tesla_destination~.+ & socket:tesla_destination!=0
 
@@ -985,11 +974,13 @@ This tagrendering is only visible in the popup if the following condition is met
 ### voltage-socket:tesla_destination
 
 The question is `What voltage do the plugs with <b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) offer?`
-This rendering asks information about the property 
-[socket:tesla_destination:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:voltage)
-This is rendered with `<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs {canonical(socket:tesla_destination:voltage)}`
- -  *<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs 230 volt* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:voltage' target='_blank'>socket:tesla_destination:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:voltage%3D230 V' target='_blank'>230 V</a>
- -  *<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs 400 volt* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:voltage' target='_blank'>socket:tesla_destination:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:voltage%3D400 V' target='_blank'>400 V</a>
+*<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs {canonical(socket:tesla_destination:voltage)}* is shown if `socket:tesla_destination:voltage` is set
+
+
+ -  *<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs 230 volt* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:voltage' target='_blank'>socket:tesla_destination:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:voltage%3D230 V' target='_blank'>230 V</a>
+ -  *<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs 400 volt* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:voltage' target='_blank'>socket:tesla_destination:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:voltage%3D400 V' target='_blank'>400 V</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: socket:tesla_destination~.+ & socket:tesla_destination!=0
 This tagrendering has labels 
 `technical`
@@ -997,11 +988,13 @@ This tagrendering has labels
 ### current-socket:tesla_destination
 
 The question is `What current do the plugs with <b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) offer?`
-This rendering asks information about the property 
-[socket:tesla_destination:current](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:current)
-This is rendered with `<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs at most {canonical(socket:tesla_destination:current)}`
- -  *<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs at most 16 A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:current' target='_blank'>socket:tesla_destination:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:current%3D16 A' target='_blank'>16 A</a>
- -  *<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs at most 32 A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:current' target='_blank'>socket:tesla_destination:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:current%3D32 A' target='_blank'>32 A</a>
+*<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs at most {canonical(socket:tesla_destination:current)}* is shown if `socket:tesla_destination:current` is set
+
+
+ -  *<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs at most 16 A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:current' target='_blank'>socket:tesla_destination:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:current%3D16 A' target='_blank'>16 A</a>
+ -  *<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs at most 32 A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:current' target='_blank'>socket:tesla_destination:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:current%3D32 A' target='_blank'>32 A</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: socket:tesla_destination~.+ & socket:tesla_destination!=0
 This tagrendering has labels 
 `technical`
@@ -1009,11 +1002,13 @@ This tagrendering has labels
 ### power-output-socket:tesla_destination
 
 The question is `What power output does a single plug of type <b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) offer?`
-This rendering asks information about the property 
-[socket:tesla_destination:output](https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:output)
-This is rendered with `<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs at most {canonical(socket:tesla_destination:output)}`
- -  *<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs at most 11 kW A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:output' target='_blank'>socket:tesla_destination:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:output%3D11 kW' target='_blank'>11 kW</a>
- -  *<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs at most 22 kW A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:output' target='_blank'>socket:tesla_destination:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:output%3D22 kW' target='_blank'>22 kW</a>
+*<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs at most {canonical(socket:tesla_destination:output)}* is shown if `socket:tesla_destination:output` is set
+
+
+ -  *<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs at most 11 kW A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:output' target='_blank'>socket:tesla_destination:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:output%3D11 kW' target='_blank'>11 kW</a>
+ -  *<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs at most 22 kW A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:tesla_destination:output' target='_blank'>socket:tesla_destination:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:tesla_destination:output%3D22 kW' target='_blank'>22 kW</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: socket:tesla_destination~.+ & socket:tesla_destination!=0
 This tagrendering has labels 
 `technical`
@@ -1021,9 +1016,7 @@ This tagrendering has labels
 ### plugs-amount-socket:USB-A
 
 The question is `How much plugs of type <b>USB</b> to charge phones and small electronics are available here?`
-This rendering asks information about the property 
-[socket:USB-A](https://wiki.openstreetmap.org/wiki/Key:socket:USB-A)
-This is rendered with `There are <b class='text-xl'>{socket:USB-A}</b> plugs of type <b>USB</b> to charge phones and small electronics available here`
+*There are <b class='text-xl'>{socket:USB-A}</b> plugs of type <b>USB</b> to charge phones and small electronics available here* is shown if `socket:USB-A` is set
 
 This tagrendering is only visible in the popup if the following condition is met: socket:USB-A~.+ & socket:USB-A!=0
 
@@ -1031,10 +1024,12 @@ This tagrendering is only visible in the popup if the following condition is met
 ### voltage-socket:USB-A
 
 The question is `What voltage do the plugs with <b>USB</b> to charge phones and small electronics offer?`
-This rendering asks information about the property 
-[socket:USB-A:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:USB-A:voltage)
-This is rendered with `<b>USB</b> to charge phones and small electronics outputs {canonical(socket:USB-A:voltage)}`
- -  *<b>USB</b> to charge phones and small electronics outputs 5 volt* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:USB-A:voltage' target='_blank'>socket:USB-A:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:USB-A:voltage%3D5 V' target='_blank'>5 V</a>
+*<b>USB</b> to charge phones and small electronics outputs {canonical(socket:USB-A:voltage)}* is shown if `socket:USB-A:voltage` is set
+
+
+ -  *<b>USB</b> to charge phones and small electronics outputs 5 volt* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:USB-A:voltage' target='_blank'>socket:USB-A:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:USB-A:voltage%3D5 V' target='_blank'>5 V</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: socket:USB-A~.+ & socket:USB-A!=0
 This tagrendering has labels 
 `technical`
@@ -1042,11 +1037,13 @@ This tagrendering has labels
 ### current-socket:USB-A
 
 The question is `What current do the plugs with <b>USB</b> to charge phones and small electronics offer?`
-This rendering asks information about the property 
-[socket:USB-A:current](https://wiki.openstreetmap.org/wiki/Key:socket:USB-A:current)
-This is rendered with `<b>USB</b> to charge phones and small electronics outputs at most {canonical(socket:USB-A:current)}`
- -  *<b>USB</b> to charge phones and small electronics outputs at most 1 A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:USB-A:current' target='_blank'>socket:USB-A:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:USB-A:current%3D1 A' target='_blank'>1 A</a>
- -  *<b>USB</b> to charge phones and small electronics outputs at most 2 A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:USB-A:current' target='_blank'>socket:USB-A:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:USB-A:current%3D2 A' target='_blank'>2 A</a>
+*<b>USB</b> to charge phones and small electronics outputs at most {canonical(socket:USB-A:current)}* is shown if `socket:USB-A:current` is set
+
+
+ -  *<b>USB</b> to charge phones and small electronics outputs at most 1 A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:USB-A:current' target='_blank'>socket:USB-A:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:USB-A:current%3D1 A' target='_blank'>1 A</a>
+ -  *<b>USB</b> to charge phones and small electronics outputs at most 2 A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:USB-A:current' target='_blank'>socket:USB-A:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:USB-A:current%3D2 A' target='_blank'>2 A</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: socket:USB-A~.+ & socket:USB-A!=0
 This tagrendering has labels 
 `technical`
@@ -1054,11 +1051,13 @@ This tagrendering has labels
 ### power-output-socket:USB-A
 
 The question is `What power output does a single plug of type <b>USB</b> to charge phones and small electronics offer?`
-This rendering asks information about the property 
-[socket:USB-A:output](https://wiki.openstreetmap.org/wiki/Key:socket:USB-A:output)
-This is rendered with `<b>USB</b> to charge phones and small electronics outputs at most {canonical(socket:USB-A:output)}`
- -  *<b>USB</b> to charge phones and small electronics outputs at most 5W A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:USB-A:output' target='_blank'>socket:USB-A:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:USB-A:output%3D5W' target='_blank'>5W</a>
- -  *<b>USB</b> to charge phones and small electronics outputs at most 10W A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:USB-A:output' target='_blank'>socket:USB-A:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:USB-A:output%3D10W' target='_blank'>10W</a>
+*<b>USB</b> to charge phones and small electronics outputs at most {canonical(socket:USB-A:output)}* is shown if `socket:USB-A:output` is set
+
+
+ -  *<b>USB</b> to charge phones and small electronics outputs at most 5W A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:USB-A:output' target='_blank'>socket:USB-A:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:USB-A:output%3D5W' target='_blank'>5W</a>
+ -  *<b>USB</b> to charge phones and small electronics outputs at most 10W A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:USB-A:output' target='_blank'>socket:USB-A:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:USB-A:output%3D10W' target='_blank'>10W</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: socket:USB-A~.+ & socket:USB-A!=0
 This tagrendering has labels 
 `technical`
@@ -1066,9 +1065,7 @@ This tagrendering has labels
 ### plugs-amount-socket:bosch_3pin
 
 The question is `How much plugs of type <b>Bosch Active Connect with 3 pins</b> and cable are available here?`
-This rendering asks information about the property 
-[socket:bosch_3pin](https://wiki.openstreetmap.org/wiki/Key:socket:bosch_3pin)
-This is rendered with `There are <b class='text-xl'>{socket:bosch_3pin}</b> plugs of type <b>Bosch Active Connect with 3 pins</b> and cable available here`
+*There are <b class='text-xl'>{socket:bosch_3pin}</b> plugs of type <b>Bosch Active Connect with 3 pins</b> and cable available here* is shown if `socket:bosch_3pin` is set
 
 This tagrendering is only visible in the popup if the following condition is met: socket:bosch_3pin~.+ & socket:bosch_3pin!=0
 
@@ -1076,9 +1073,7 @@ This tagrendering is only visible in the popup if the following condition is met
 ### voltage-socket:bosch_3pin
 
 The question is `What voltage do the plugs with <b>Bosch Active Connect with 3 pins</b> and cable offer?`
-This rendering asks information about the property 
-[socket:bosch_3pin:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:bosch_3pin:voltage)
-This is rendered with `<b>Bosch Active Connect with 3 pins</b> and cable outputs {canonical(socket:bosch_3pin:voltage)}`
+*<b>Bosch Active Connect with 3 pins</b> and cable outputs {canonical(socket:bosch_3pin:voltage)}* is shown if `socket:bosch_3pin:voltage` is set
 
 This tagrendering is only visible in the popup if the following condition is met: socket:bosch_3pin~.+ & socket:bosch_3pin!=0
 This tagrendering has labels 
@@ -1087,9 +1082,7 @@ This tagrendering has labels
 ### current-socket:bosch_3pin
 
 The question is `What current do the plugs with <b>Bosch Active Connect with 3 pins</b> and cable offer?`
-This rendering asks information about the property 
-[socket:bosch_3pin:current](https://wiki.openstreetmap.org/wiki/Key:socket:bosch_3pin:current)
-This is rendered with `<b>Bosch Active Connect with 3 pins</b> and cable outputs at most {canonical(socket:bosch_3pin:current)}`
+*<b>Bosch Active Connect with 3 pins</b> and cable outputs at most {canonical(socket:bosch_3pin:current)}* is shown if `socket:bosch_3pin:current` is set
 
 This tagrendering is only visible in the popup if the following condition is met: socket:bosch_3pin~.+ & socket:bosch_3pin!=0
 This tagrendering has labels 
@@ -1098,9 +1091,7 @@ This tagrendering has labels
 ### power-output-socket:bosch_3pin
 
 The question is `What power output does a single plug of type <b>Bosch Active Connect with 3 pins</b> and cable offer?`
-This rendering asks information about the property 
-[socket:bosch_3pin:output](https://wiki.openstreetmap.org/wiki/Key:socket:bosch_3pin:output)
-This is rendered with `<b>Bosch Active Connect with 3 pins</b> and cable outputs at most {canonical(socket:bosch_3pin:output)}`
+*<b>Bosch Active Connect with 3 pins</b> and cable outputs at most {canonical(socket:bosch_3pin:output)}* is shown if `socket:bosch_3pin:output` is set
 
 This tagrendering is only visible in the popup if the following condition is met: socket:bosch_3pin~.+ & socket:bosch_3pin!=0
 This tagrendering has labels 
@@ -1109,9 +1100,7 @@ This tagrendering has labels
 ### plugs-amount-socket:bosch_5pin
 
 The question is `How much plugs of type <b>Bosch Active Connect with 5 pins</b> and cable are available here?`
-This rendering asks information about the property 
-[socket:bosch_5pin](https://wiki.openstreetmap.org/wiki/Key:socket:bosch_5pin)
-This is rendered with `There are <b class='text-xl'>{socket:bosch_5pin}</b> plugs of type <b>Bosch Active Connect with 5 pins</b> and cable available here`
+*There are <b class='text-xl'>{socket:bosch_5pin}</b> plugs of type <b>Bosch Active Connect with 5 pins</b> and cable available here* is shown if `socket:bosch_5pin` is set
 
 This tagrendering is only visible in the popup if the following condition is met: socket:bosch_5pin~.+ & socket:bosch_5pin!=0
 
@@ -1119,9 +1108,7 @@ This tagrendering is only visible in the popup if the following condition is met
 ### voltage-socket:bosch_5pin
 
 The question is `What voltage do the plugs with <b>Bosch Active Connect with 5 pins</b> and cable offer?`
-This rendering asks information about the property 
-[socket:bosch_5pin:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:bosch_5pin:voltage)
-This is rendered with `<b>Bosch Active Connect with 5 pins</b> and cable outputs {canonical(socket:bosch_5pin:voltage)}`
+*<b>Bosch Active Connect with 5 pins</b> and cable outputs {canonical(socket:bosch_5pin:voltage)}* is shown if `socket:bosch_5pin:voltage` is set
 
 This tagrendering is only visible in the popup if the following condition is met: socket:bosch_5pin~.+ & socket:bosch_5pin!=0
 This tagrendering has labels 
@@ -1130,9 +1117,7 @@ This tagrendering has labels
 ### current-socket:bosch_5pin
 
 The question is `What current do the plugs with <b>Bosch Active Connect with 5 pins</b> and cable offer?`
-This rendering asks information about the property 
-[socket:bosch_5pin:current](https://wiki.openstreetmap.org/wiki/Key:socket:bosch_5pin:current)
-This is rendered with `<b>Bosch Active Connect with 5 pins</b> and cable outputs at most {canonical(socket:bosch_5pin:current)}`
+*<b>Bosch Active Connect with 5 pins</b> and cable outputs at most {canonical(socket:bosch_5pin:current)}* is shown if `socket:bosch_5pin:current` is set
 
 This tagrendering is only visible in the popup if the following condition is met: socket:bosch_5pin~.+ & socket:bosch_5pin!=0
 This tagrendering has labels 
@@ -1141,9 +1126,7 @@ This tagrendering has labels
 ### power-output-socket:bosch_5pin
 
 The question is `What power output does a single plug of type <b>Bosch Active Connect with 5 pins</b> and cable offer?`
-This rendering asks information about the property 
-[socket:bosch_5pin:output](https://wiki.openstreetmap.org/wiki/Key:socket:bosch_5pin:output)
-This is rendered with `<b>Bosch Active Connect with 5 pins</b> and cable outputs at most {canonical(socket:bosch_5pin:output)}`
+*<b>Bosch Active Connect with 5 pins</b> and cable outputs at most {canonical(socket:bosch_5pin:output)}* is shown if `socket:bosch_5pin:output` is set
 
 This tagrendering is only visible in the popup if the following condition is met: socket:bosch_5pin~.+ & socket:bosch_5pin!=0
 This tagrendering has labels 
@@ -1152,9 +1135,7 @@ This tagrendering has labels
 ### plugs-amount-socket:bs1363
 
 The question is `How much plugs of type <b>BS1363</b> (Type G) are available here?`
-This rendering asks information about the property 
-[socket:bs1363](https://wiki.openstreetmap.org/wiki/Key:socket:bs1363)
-This is rendered with `There are <b class='text-xl'>{socket:bs1363}</b> plugs of type <b>BS1363</b> (Type G) available here`
+*There are <b class='text-xl'>{socket:bs1363}</b> plugs of type <b>BS1363</b> (Type G) available here* is shown if `socket:bs1363` is set
 
 This tagrendering is only visible in the popup if the following condition is met: socket:bs1363~.+ & socket:bs1363!=0
 
@@ -1162,10 +1143,12 @@ This tagrendering is only visible in the popup if the following condition is met
 ### voltage-socket:bs1363
 
 The question is `What voltage do the plugs with <b>BS1363</b> (Type G) offer?`
-This rendering asks information about the property 
-[socket:bs1363:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:bs1363:voltage)
-This is rendered with `<b>BS1363</b> (Type G) outputs {canonical(socket:bs1363:voltage)}`
- -  *<b>BS1363</b> (Type G) outputs 230 volt* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:bs1363:voltage' target='_blank'>socket:bs1363:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:bs1363:voltage%3D230 V' target='_blank'>230 V</a>
+*<b>BS1363</b> (Type G) outputs {canonical(socket:bs1363:voltage)}* is shown if `socket:bs1363:voltage` is set
+
+
+ -  *<b>BS1363</b> (Type G) outputs 230 volt* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:bs1363:voltage' target='_blank'>socket:bs1363:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:bs1363:voltage%3D230 V' target='_blank'>230 V</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: socket:bs1363~.+ & socket:bs1363!=0
 This tagrendering has labels 
 `technical`
@@ -1173,10 +1156,12 @@ This tagrendering has labels
 ### current-socket:bs1363
 
 The question is `What current do the plugs with <b>BS1363</b> (Type G) offer?`
-This rendering asks information about the property 
-[socket:bs1363:current](https://wiki.openstreetmap.org/wiki/Key:socket:bs1363:current)
-This is rendered with `<b>BS1363</b> (Type G) outputs at most {canonical(socket:bs1363:current)}`
- -  *<b>BS1363</b> (Type G) outputs at most 13 A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:bs1363:current' target='_blank'>socket:bs1363:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:bs1363:current%3D13 A' target='_blank'>13 A</a>
+*<b>BS1363</b> (Type G) outputs at most {canonical(socket:bs1363:current)}* is shown if `socket:bs1363:current` is set
+
+
+ -  *<b>BS1363</b> (Type G) outputs at most 13 A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:bs1363:current' target='_blank'>socket:bs1363:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:bs1363:current%3D13 A' target='_blank'>13 A</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: socket:bs1363~.+ & socket:bs1363!=0
 This tagrendering has labels 
 `technical`
@@ -1184,10 +1169,12 @@ This tagrendering has labels
 ### power-output-socket:bs1363
 
 The question is `What power output does a single plug of type <b>BS1363</b> (Type G) offer?`
-This rendering asks information about the property 
-[socket:bs1363:output](https://wiki.openstreetmap.org/wiki/Key:socket:bs1363:output)
-This is rendered with `<b>BS1363</b> (Type G) outputs at most {canonical(socket:bs1363:output)}`
- -  *<b>BS1363</b> (Type G) outputs at most 3kW A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:bs1363:output' target='_blank'>socket:bs1363:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:bs1363:output%3D3kW' target='_blank'>3kW</a>
+*<b>BS1363</b> (Type G) outputs at most {canonical(socket:bs1363:output)}* is shown if `socket:bs1363:output` is set
+
+
+ -  *<b>BS1363</b> (Type G) outputs at most 3kW A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:bs1363:output' target='_blank'>socket:bs1363:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:bs1363:output%3D3kW' target='_blank'>3kW</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: socket:bs1363~.+ & socket:bs1363!=0
 This tagrendering has labels 
 `technical`
@@ -1195,9 +1182,7 @@ This tagrendering has labels
 ### plugs-amount-socket:nema5_15
 
 The question is `How much plugs of type <b>NEMA 5-15</b> (Type B) are available here?`
-This rendering asks information about the property 
-[socket:nema5_15](https://wiki.openstreetmap.org/wiki/Key:socket:nema5_15)
-This is rendered with `There are <b class='text-xl'>{socket:nema5_15}</b> plugs of type <b>NEMA 5-15</b> (Type B) available here`
+*There are <b class='text-xl'>{socket:nema5_15}</b> plugs of type <b>NEMA 5-15</b> (Type B) available here* is shown if `socket:nema5_15` is set
 
 This tagrendering is only visible in the popup if the following condition is met: socket:nema5_15~.+ & socket:nema5_15!=0
 
@@ -1205,10 +1190,12 @@ This tagrendering is only visible in the popup if the following condition is met
 ### voltage-socket:nema5_15
 
 The question is `What voltage do the plugs with <b>NEMA 5-15</b> (Type B) offer?`
-This rendering asks information about the property 
-[socket:nema5_15:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:nema5_15:voltage)
-This is rendered with `<b>NEMA 5-15</b> (Type B) outputs {canonical(socket:nema5_15:voltage)}`
- -  *<b>NEMA 5-15</b> (Type B) outputs 120 volt* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:nema5_15:voltage' target='_blank'>socket:nema5_15:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:nema5_15:voltage%3D120 V' target='_blank'>120 V</a>
+*<b>NEMA 5-15</b> (Type B) outputs {canonical(socket:nema5_15:voltage)}* is shown if `socket:nema5_15:voltage` is set
+
+
+ -  *<b>NEMA 5-15</b> (Type B) outputs 120 volt* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:nema5_15:voltage' target='_blank'>socket:nema5_15:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:nema5_15:voltage%3D120 V' target='_blank'>120 V</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: socket:nema5_15~.+ & socket:nema5_15!=0
 This tagrendering has labels 
 `technical`
@@ -1216,10 +1203,12 @@ This tagrendering has labels
 ### current-socket:nema5_15
 
 The question is `What current do the plugs with <b>NEMA 5-15</b> (Type B) offer?`
-This rendering asks information about the property 
-[socket:nema5_15:current](https://wiki.openstreetmap.org/wiki/Key:socket:nema5_15:current)
-This is rendered with `<b>NEMA 5-15</b> (Type B) outputs at most {canonical(socket:nema5_15:current)}`
- -  *<b>NEMA 5-15</b> (Type B) outputs at most 15 A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:nema5_15:current' target='_blank'>socket:nema5_15:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:nema5_15:current%3D15 A' target='_blank'>15 A</a>
+*<b>NEMA 5-15</b> (Type B) outputs at most {canonical(socket:nema5_15:current)}* is shown if `socket:nema5_15:current` is set
+
+
+ -  *<b>NEMA 5-15</b> (Type B) outputs at most 15 A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:nema5_15:current' target='_blank'>socket:nema5_15:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:nema5_15:current%3D15 A' target='_blank'>15 A</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: socket:nema5_15~.+ & socket:nema5_15!=0
 This tagrendering has labels 
 `technical`
@@ -1227,10 +1216,12 @@ This tagrendering has labels
 ### power-output-socket:nema5_15
 
 The question is `What power output does a single plug of type <b>NEMA 5-15</b> (Type B) offer?`
-This rendering asks information about the property 
-[socket:nema5_15:output](https://wiki.openstreetmap.org/wiki/Key:socket:nema5_15:output)
-This is rendered with `<b>NEMA 5-15</b> (Type B) outputs at most {canonical(socket:nema5_15:output)}`
- -  *<b>NEMA 5-15</b> (Type B) outputs at most 1.8 kW A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:nema5_15:output' target='_blank'>socket:nema5_15:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:nema5_15:output%3D1.8 kW' target='_blank'>1.8 kW</a>
+*<b>NEMA 5-15</b> (Type B) outputs at most {canonical(socket:nema5_15:output)}* is shown if `socket:nema5_15:output` is set
+
+
+ -  *<b>NEMA 5-15</b> (Type B) outputs at most 1.8 kW A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:nema5_15:output' target='_blank'>socket:nema5_15:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:nema5_15:output%3D1.8 kW' target='_blank'>1.8 kW</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: socket:nema5_15~.+ & socket:nema5_15!=0
 This tagrendering has labels 
 `technical`
@@ -1238,9 +1229,7 @@ This tagrendering has labels
 ### plugs-amount-socket:sev1011_t23
 
 The question is `How much plugs of type <b>SEV 1011 T23</b> (Type J) are available here?`
-This rendering asks information about the property 
-[socket:sev1011_t23](https://wiki.openstreetmap.org/wiki/Key:socket:sev1011_t23)
-This is rendered with `There are <b class='text-xl'>{socket:sev1011_t23}</b> plugs of type <b>SEV 1011 T23</b> (Type J) available here`
+*There are <b class='text-xl'>{socket:sev1011_t23}</b> plugs of type <b>SEV 1011 T23</b> (Type J) available here* is shown if `socket:sev1011_t23` is set
 
 This tagrendering is only visible in the popup if the following condition is met: socket:sev1011_t23~.+ & socket:sev1011_t23!=0
 
@@ -1248,10 +1237,12 @@ This tagrendering is only visible in the popup if the following condition is met
 ### voltage-socket:sev1011_t23
 
 The question is `What voltage do the plugs with <b>SEV 1011 T23</b> (Type J) offer?`
-This rendering asks information about the property 
-[socket:sev1011_t23:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:sev1011_t23:voltage)
-This is rendered with `<b>SEV 1011 T23</b> (Type J) outputs {canonical(socket:sev1011_t23:voltage)}`
- -  *<b>SEV 1011 T23</b> (Type J) outputs 230 volt* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:sev1011_t23:voltage' target='_blank'>socket:sev1011_t23:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:sev1011_t23:voltage%3D230 V' target='_blank'>230 V</a>
+*<b>SEV 1011 T23</b> (Type J) outputs {canonical(socket:sev1011_t23:voltage)}* is shown if `socket:sev1011_t23:voltage` is set
+
+
+ -  *<b>SEV 1011 T23</b> (Type J) outputs 230 volt* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:sev1011_t23:voltage' target='_blank'>socket:sev1011_t23:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:sev1011_t23:voltage%3D230 V' target='_blank'>230 V</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: socket:sev1011_t23~.+ & socket:sev1011_t23!=0
 This tagrendering has labels 
 `technical`
@@ -1259,10 +1250,12 @@ This tagrendering has labels
 ### current-socket:sev1011_t23
 
 The question is `What current do the plugs with <b>SEV 1011 T23</b> (Type J) offer?`
-This rendering asks information about the property 
-[socket:sev1011_t23:current](https://wiki.openstreetmap.org/wiki/Key:socket:sev1011_t23:current)
-This is rendered with `<b>SEV 1011 T23</b> (Type J) outputs at most {canonical(socket:sev1011_t23:current)}`
- -  *<b>SEV 1011 T23</b> (Type J) outputs at most 16 A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:sev1011_t23:current' target='_blank'>socket:sev1011_t23:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:sev1011_t23:current%3D16 A' target='_blank'>16 A</a>
+*<b>SEV 1011 T23</b> (Type J) outputs at most {canonical(socket:sev1011_t23:current)}* is shown if `socket:sev1011_t23:current` is set
+
+
+ -  *<b>SEV 1011 T23</b> (Type J) outputs at most 16 A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:sev1011_t23:current' target='_blank'>socket:sev1011_t23:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:sev1011_t23:current%3D16 A' target='_blank'>16 A</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: socket:sev1011_t23~.+ & socket:sev1011_t23!=0
 This tagrendering has labels 
 `technical`
@@ -1270,10 +1263,12 @@ This tagrendering has labels
 ### power-output-socket:sev1011_t23
 
 The question is `What power output does a single plug of type <b>SEV 1011 T23</b> (Type J) offer?`
-This rendering asks information about the property 
-[socket:sev1011_t23:output](https://wiki.openstreetmap.org/wiki/Key:socket:sev1011_t23:output)
-This is rendered with `<b>SEV 1011 T23</b> (Type J) outputs at most {canonical(socket:sev1011_t23:output)}`
- -  *<b>SEV 1011 T23</b> (Type J) outputs at most 3.7 kW A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:sev1011_t23:output' target='_blank'>socket:sev1011_t23:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:sev1011_t23:output%3D3.7 kW' target='_blank'>3.7 kW</a>
+*<b>SEV 1011 T23</b> (Type J) outputs at most {canonical(socket:sev1011_t23:output)}* is shown if `socket:sev1011_t23:output` is set
+
+
+ -  *<b>SEV 1011 T23</b> (Type J) outputs at most 3.7 kW A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:sev1011_t23:output' target='_blank'>socket:sev1011_t23:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:sev1011_t23:output%3D3.7 kW' target='_blank'>3.7 kW</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: socket:sev1011_t23~.+ & socket:sev1011_t23!=0
 This tagrendering has labels 
 `technical`
@@ -1281,9 +1276,7 @@ This tagrendering has labels
 ### plugs-amount-socket:as3112
 
 The question is `How much plugs of type <b>AS3112</b> (Type I) are available here?`
-This rendering asks information about the property 
-[socket:as3112](https://wiki.openstreetmap.org/wiki/Key:socket:as3112)
-This is rendered with `There are <b class='text-xl'>{socket:as3112}</b> plugs of type <b>AS3112</b> (Type I) available here`
+*There are <b class='text-xl'>{socket:as3112}</b> plugs of type <b>AS3112</b> (Type I) available here* is shown if `socket:as3112` is set
 
 This tagrendering is only visible in the popup if the following condition is met: socket:as3112~.+ & socket:as3112!=0
 
@@ -1291,10 +1284,12 @@ This tagrendering is only visible in the popup if the following condition is met
 ### voltage-socket:as3112
 
 The question is `What voltage do the plugs with <b>AS3112</b> (Type I) offer?`
-This rendering asks information about the property 
-[socket:as3112:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:as3112:voltage)
-This is rendered with `<b>AS3112</b> (Type I) outputs {canonical(socket:as3112:voltage)}`
- -  *<b>AS3112</b> (Type I) outputs 230 volt* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:as3112:voltage' target='_blank'>socket:as3112:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:as3112:voltage%3D230 V' target='_blank'>230 V</a>
+*<b>AS3112</b> (Type I) outputs {canonical(socket:as3112:voltage)}* is shown if `socket:as3112:voltage` is set
+
+
+ -  *<b>AS3112</b> (Type I) outputs 230 volt* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:as3112:voltage' target='_blank'>socket:as3112:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:as3112:voltage%3D230 V' target='_blank'>230 V</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: socket:as3112~.+ & socket:as3112!=0
 This tagrendering has labels 
 `technical`
@@ -1302,10 +1297,12 @@ This tagrendering has labels
 ### current-socket:as3112
 
 The question is `What current do the plugs with <b>AS3112</b> (Type I) offer?`
-This rendering asks information about the property 
-[socket:as3112:current](https://wiki.openstreetmap.org/wiki/Key:socket:as3112:current)
-This is rendered with `<b>AS3112</b> (Type I) outputs at most {canonical(socket:as3112:current)}`
- -  *<b>AS3112</b> (Type I) outputs at most 10 A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:as3112:current' target='_blank'>socket:as3112:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:as3112:current%3D10 A' target='_blank'>10 A</a>
+*<b>AS3112</b> (Type I) outputs at most {canonical(socket:as3112:current)}* is shown if `socket:as3112:current` is set
+
+
+ -  *<b>AS3112</b> (Type I) outputs at most 10 A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:as3112:current' target='_blank'>socket:as3112:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:as3112:current%3D10 A' target='_blank'>10 A</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: socket:as3112~.+ & socket:as3112!=0
 This tagrendering has labels 
 `technical`
@@ -1313,10 +1310,12 @@ This tagrendering has labels
 ### power-output-socket:as3112
 
 The question is `What power output does a single plug of type <b>AS3112</b> (Type I) offer?`
-This rendering asks information about the property 
-[socket:as3112:output](https://wiki.openstreetmap.org/wiki/Key:socket:as3112:output)
-This is rendered with `<b>AS3112</b> (Type I) outputs at most {canonical(socket:as3112:output)}`
- -  *<b>AS3112</b> (Type I) outputs at most 2.3 kW A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:as3112:output' target='_blank'>socket:as3112:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:as3112:output%3D2.3 kW' target='_blank'>2.3 kW</a>
+*<b>AS3112</b> (Type I) outputs at most {canonical(socket:as3112:output)}* is shown if `socket:as3112:output` is set
+
+
+ -  *<b>AS3112</b> (Type I) outputs at most 2.3 kW A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:as3112:output' target='_blank'>socket:as3112:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:as3112:output%3D2.3 kW' target='_blank'>2.3 kW</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: socket:as3112~.+ & socket:as3112!=0
 This tagrendering has labels 
 `technical`
@@ -1324,9 +1323,7 @@ This tagrendering has labels
 ### plugs-amount-socket:nema_5_20
 
 The question is `How much plugs of type <b>NEMA 5-20</b> (Type B) are available here?`
-This rendering asks information about the property 
-[socket:nema_5_20](https://wiki.openstreetmap.org/wiki/Key:socket:nema_5_20)
-This is rendered with `There are <b class='text-xl'>{socket:nema_5_20}</b> plugs of type <b>NEMA 5-20</b> (Type B) available here`
+*There are <b class='text-xl'>{socket:nema_5_20}</b> plugs of type <b>NEMA 5-20</b> (Type B) available here* is shown if `socket:nema_5_20` is set
 
 This tagrendering is only visible in the popup if the following condition is met: socket:nema_5_20~.+ & socket:nema_5_20!=0
 
@@ -1334,10 +1331,12 @@ This tagrendering is only visible in the popup if the following condition is met
 ### voltage-socket:nema_5_20
 
 The question is `What voltage do the plugs with <b>NEMA 5-20</b> (Type B) offer?`
-This rendering asks information about the property 
-[socket:nema_5_20:voltage](https://wiki.openstreetmap.org/wiki/Key:socket:nema_5_20:voltage)
-This is rendered with `<b>NEMA 5-20</b> (Type B) outputs {canonical(socket:nema_5_20:voltage)}`
- -  *<b>NEMA 5-20</b> (Type B) outputs 120 volt* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:nema_5_20:voltage' target='_blank'>socket:nema_5_20:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:nema_5_20:voltage%3D120 V' target='_blank'>120 V</a>
+*<b>NEMA 5-20</b> (Type B) outputs {canonical(socket:nema_5_20:voltage)}* is shown if `socket:nema_5_20:voltage` is set
+
+
+ -  *<b>NEMA 5-20</b> (Type B) outputs 120 volt* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:nema_5_20:voltage' target='_blank'>socket:nema_5_20:voltage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:nema_5_20:voltage%3D120 V' target='_blank'>120 V</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: socket:nema_5_20~.+ & socket:nema_5_20!=0
 This tagrendering has labels 
 `technical`
@@ -1345,10 +1344,12 @@ This tagrendering has labels
 ### current-socket:nema_5_20
 
 The question is `What current do the plugs with <b>NEMA 5-20</b> (Type B) offer?`
-This rendering asks information about the property 
-[socket:nema_5_20:current](https://wiki.openstreetmap.org/wiki/Key:socket:nema_5_20:current)
-This is rendered with `<b>NEMA 5-20</b> (Type B) outputs at most {canonical(socket:nema_5_20:current)}`
- -  *<b>NEMA 5-20</b> (Type B) outputs at most 20 A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:nema_5_20:current' target='_blank'>socket:nema_5_20:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:nema_5_20:current%3D20 A' target='_blank'>20 A</a>
+*<b>NEMA 5-20</b> (Type B) outputs at most {canonical(socket:nema_5_20:current)}* is shown if `socket:nema_5_20:current` is set
+
+
+ -  *<b>NEMA 5-20</b> (Type B) outputs at most 20 A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:nema_5_20:current' target='_blank'>socket:nema_5_20:current</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:nema_5_20:current%3D20 A' target='_blank'>20 A</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: socket:nema_5_20~.+ & socket:nema_5_20!=0
 This tagrendering has labels 
 `technical`
@@ -1356,10 +1357,12 @@ This tagrendering has labels
 ### power-output-socket:nema_5_20
 
 The question is `What power output does a single plug of type <b>NEMA 5-20</b> (Type B) offer?`
-This rendering asks information about the property 
-[socket:nema_5_20:output](https://wiki.openstreetmap.org/wiki/Key:socket:nema_5_20:output)
-This is rendered with `<b>NEMA 5-20</b> (Type B) outputs at most {canonical(socket:nema_5_20:output)}`
- -  *<b>NEMA 5-20</b> (Type B) outputs at most 2.4 kW A* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:nema_5_20:output' target='_blank'>socket:nema_5_20:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:nema_5_20:output%3D2.4 kW' target='_blank'>2.4 kW</a>
+*<b>NEMA 5-20</b> (Type B) outputs at most {canonical(socket:nema_5_20:output)}* is shown if `socket:nema_5_20:output` is set
+
+
+ -  *<b>NEMA 5-20</b> (Type B) outputs at most 2.4 kW A* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:socket:nema_5_20:output' target='_blank'>socket:nema_5_20:output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:socket:nema_5_20:output%3D2.4 kW' target='_blank'>2.4 kW</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: socket:nema_5_20~.+ & socket:nema_5_20!=0
 This tagrendering has labels 
 `technical`
@@ -1367,12 +1370,13 @@ This tagrendering has labels
 ### OH
 
 The question is `When is this charging station opened?`
-This rendering asks information about the property 
-[opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours)
-This is rendered with `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/open24_7.svg' style='width: 3rem; height: 3rem'> *24/7 opened (including holidays)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
- -  *Marked as closed for an unspecified time* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>
- - _This option cannot be chosen as answer_
+*<h3>Opening hours</h3>{opening_hours_table(opening_hours)}* is shown if `opening_hours` is set
+
+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/open24_7.svg' style='width: 3rem; height: 3rem'> *24/7 opened (including holidays)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
+ -  *Marked as closed for an unspecified time* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>. _This option cannot be chosen as answer_
+
+
 
 
 
@@ -1380,21 +1384,22 @@ This is rendered with `<h3>Opening hours</h3>{opening_hours_table(opening_hours)
 
 The question is `Does one have to pay to use this charging station?`
 
- -  *Free to use (without authenticating)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno' target='_blank'>no</a> & fee:conditional= & charge= & <a href='https://wiki.openstreetmap.org/wiki/Key:authentication:none' target='_blank'>authentication:none</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:none%3Dyes' target='_blank'>yes</a>
- -  *Free to use, but one has to authenticate* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno' target='_blank'>no</a> & fee:conditional= & charge= & <a href='https://wiki.openstreetmap.org/wiki/Key:authentication:none' target='_blank'>authentication:none</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:none%3Dno' target='_blank'>no</a>
- -  *Free to use* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno' target='_blank'>no</a>
- - _This option cannot be chosen as answer_
- -  *Paid use, but free for customers of the hotel/pub/hospital/... who operates the charging station* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:fee:conditional' target='_blank'>fee:conditional</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee:conditional%3Dno @ customers' target='_blank'>no @ customers</a>
- -  *Paid use* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a> & fee:conditional=
+
+
+ -  *Free to use (without authenticating)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno' target='_blank'>no</a> & fee:conditional= & charge= & <a href='https://wiki.openstreetmap.org/wiki/Key:authentication:none' target='_blank'>authentication:none</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:none%3Dyes' target='_blank'>yes</a>
+ -  *Free to use, but one has to authenticate* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno' target='_blank'>no</a> & fee:conditional= & charge= & <a href='https://wiki.openstreetmap.org/wiki/Key:authentication:none' target='_blank'>authentication:none</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:none%3Dno' target='_blank'>no</a>
+ -  *Free to use* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno' target='_blank'>no</a>. _This option cannot be chosen as answer_
+ -  *Paid use, but free for customers of the hotel/pub/hospital/... who operates the charging station* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:fee:conditional' target='_blank'>fee:conditional</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee:conditional%3Dno @ customers' target='_blank'>no @ customers</a>
+ -  *Paid use* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a> & fee:conditional=
+
+
 
 
 
 ### charge
 
 The question is `How much does one have to pay to use this charging station?`
-This rendering asks information about the property 
-[charge](https://wiki.openstreetmap.org/wiki/Key:charge)
-This is rendered with `Using this charging station costs <b>{charge}</b>`
+*Using this charging station costs <b>{charge}</b>* is shown if `charge` is set
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>
 
@@ -1403,16 +1408,15 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is `Which methods of payment are accepted here?`
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/cash.svg' style='width: 3rem; height: 3rem'> *Cash is accepted here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dyes' target='_blank'>yes</a>
- - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dno' target='_blank'>no</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/payment_card.svg' style='width: 3rem; height: 3rem'> *Payment cards are accepted here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dyes' target='_blank'>yes</a>
- - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dno' target='_blank'>no</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/qrcode.svg' style='width: 3rem; height: 3rem'> *Payment by QR-code is possible here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dyes' target='_blank'>yes</a>
- - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dno' target='_blank'>no</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/smartphone.svg' style='width: 3rem; height: 3rem'> *Payment is done using a dedicated app* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:app' target='_blank'>payment:app</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:app%3Dyes' target='_blank'>yes</a>
- - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:app' target='_blank'>payment:app</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:app%3Dno' target='_blank'>no</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/nfc_card.svg' style='width: 3rem; height: 3rem'> *Payment is done using a membership card* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:membership_card' target='_blank'>payment:membership_card</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:membership_card%3Dyes' target='_blank'>yes</a>
- - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:membership_card' target='_blank'>payment:membership_card</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:membership_card%3Dno' target='_blank'>no</a>
+
+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/cash.svg' style='width: 3rem; height: 3rem'> *Cash is accepted here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dno' target='_blank'>no</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/payment_card.svg' style='width: 3rem; height: 3rem'> *Payment cards are accepted here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dno' target='_blank'>no</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/qrcode.svg' style='width: 3rem; height: 3rem'> *Payment by QR-code is possible here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dno' target='_blank'>no</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/smartphone.svg' style='width: 3rem; height: 3rem'> *Payment is done using a dedicated app* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:app' target='_blank'>payment:app</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:app%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:app' target='_blank'>payment:app</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:app%3Dno' target='_blank'>no</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/nfc_card.svg' style='width: 3rem; height: 3rem'> *Payment is done using a membership card* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:membership_card' target='_blank'>payment:membership_card</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:membership_card%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:membership_card' target='_blank'>payment:membership_card</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:membership_card%3Dno' target='_blank'>no</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a> | charge~.+
 
 
@@ -1420,31 +1424,25 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is `What kind of authentication is available at the charging station?`
 
- -  *Authentication by a membership card* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:authentication:membership_card' target='_blank'>authentication:membership_card</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:membership_card%3Dyes' target='_blank'>yes</a>
- - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:authentication:membership_card' target='_blank'>authentication:membership_card</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:membership_card%3Dno' target='_blank'>no</a>
- -  *Authentication by an app* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:authentication:app' target='_blank'>authentication:app</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:app%3Dyes' target='_blank'>yes</a>
- - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:authentication:app' target='_blank'>authentication:app</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:app%3Dno' target='_blank'>no</a>
- -  *Authentication via phone call is available* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:authentication:phone_call' target='_blank'>authentication:phone_call</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:phone_call%3Dyes' target='_blank'>yes</a>
- - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:authentication:phone_call' target='_blank'>authentication:phone_call</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:phone_call%3Dno' target='_blank'>no</a>
- -  *Authentication via SMS is available* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:authentication:short_message' target='_blank'>authentication:short_message</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:short_message%3Dyes' target='_blank'>yes</a>
- - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:authentication:short_message' target='_blank'>authentication:short_message</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:short_message%3Dno' target='_blank'>no</a>
- -  *Authentication via NFC is available* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:authentication:nfc' target='_blank'>authentication:nfc</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:nfc%3Dyes' target='_blank'>yes</a>
- - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:authentication:nfc' target='_blank'>authentication:nfc</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:nfc%3Dno' target='_blank'>no</a>
- -  *Authentication via Money Card is available* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:authentication:money_card' target='_blank'>authentication:money_card</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:money_card%3Dyes' target='_blank'>yes</a>
- - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:authentication:money_card' target='_blank'>authentication:money_card</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:money_card%3Dno' target='_blank'>no</a>
- -  *Authentication via debit card is available* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:authentication:debit_card' target='_blank'>authentication:debit_card</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:debit_card%3Dyes' target='_blank'>yes</a>
- - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:authentication:debit_card' target='_blank'>authentication:debit_card</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:debit_card%3Dno' target='_blank'>no</a>
- -  *Charging here is (also) possible without authentication* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:authentication:none' target='_blank'>authentication:none</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:none%3Dyes' target='_blank'>yes</a>
- - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:authentication:none' target='_blank'>authentication:none</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:none%3Dno' target='_blank'>no</a>
+
+
+ -  *Authentication by a membership card* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:authentication:membership_card' target='_blank'>authentication:membership_card</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:membership_card%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:authentication:membership_card' target='_blank'>authentication:membership_card</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:membership_card%3Dno' target='_blank'>no</a>
+ -  *Authentication by an app* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:authentication:app' target='_blank'>authentication:app</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:app%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:authentication:app' target='_blank'>authentication:app</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:app%3Dno' target='_blank'>no</a>
+ -  *Authentication via phone call is available* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:authentication:phone_call' target='_blank'>authentication:phone_call</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:phone_call%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:authentication:phone_call' target='_blank'>authentication:phone_call</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:phone_call%3Dno' target='_blank'>no</a>
+ -  *Authentication via SMS is available* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:authentication:short_message' target='_blank'>authentication:short_message</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:short_message%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:authentication:short_message' target='_blank'>authentication:short_message</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:short_message%3Dno' target='_blank'>no</a>
+ -  *Authentication via NFC is available* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:authentication:nfc' target='_blank'>authentication:nfc</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:nfc%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:authentication:nfc' target='_blank'>authentication:nfc</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:nfc%3Dno' target='_blank'>no</a>
+ -  *Authentication via Money Card is available* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:authentication:money_card' target='_blank'>authentication:money_card</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:money_card%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:authentication:money_card' target='_blank'>authentication:money_card</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:money_card%3Dno' target='_blank'>no</a>
+ -  *Authentication via debit card is available* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:authentication:debit_card' target='_blank'>authentication:debit_card</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:debit_card%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:authentication:debit_card' target='_blank'>authentication:debit_card</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:debit_card%3Dno' target='_blank'>no</a>
+ -  *Charging here is (also) possible without authentication* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:authentication:none' target='_blank'>authentication:none</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:none%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:authentication:none' target='_blank'>authentication:none</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:none%3Dno' target='_blank'>no</a>
+
+
 
 
 
 ### Auth phone
 
 The question is `What's the phone number for authentication call or SMS?`
-This rendering asks information about the property 
-[authentication:phone_call:number](https://wiki.openstreetmap.org/wiki/Key:authentication:phone_call:number)
-This is rendered with `Authenticate by calling or SMS'ing to <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>`
+*Authenticate by calling or SMS'ing to <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>* is shown if `authentication:phone_call:number` is set
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:authentication:phone_call' target='_blank'>authentication:phone_call</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:phone_call%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:authentication:short_message' target='_blank'>authentication:short_message</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:authentication:short_message%3Dyes' target='_blank'>yes</a>
 
@@ -1452,47 +1450,50 @@ This tagrendering is only visible in the popup if the following condition is met
 ### maxstay
 
 The question is `What is the maximum amount of time one is allowed to stay here?`
-This rendering asks information about the property 
-[maxstay](https://wiki.openstreetmap.org/wiki/Key:maxstay)
-This is rendered with `One can stay at most <b>{canonical(maxstay)}</b>`
- -  *No timelimit on leaving your vehicle here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:maxstay' target='_blank'>maxstay</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:maxstay%3Dunlimited' target='_blank'>unlimited</a>
+*One can stay at most <b>{canonical(maxstay)}</b>* is shown if `maxstay` is set
+
+
+ -  *No timelimit on leaving your vehicle here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:maxstay' target='_blank'>maxstay</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:maxstay%3Dunlimited' target='_blank'>unlimited</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:bus' target='_blank'>bus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bus%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:hgv' target='_blank'>hgv</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hgv%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:motorcar' target='_blank'>motorcar</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:motorcar%3Dyes' target='_blank'>yes</a> | maxstay~.+
 
 
 ### Network
 
 The question is `Is this charging station part of a network?`
-This rendering asks information about the property 
-[network](https://wiki.openstreetmap.org/wiki/Key:network)
-This is rendered with `Part of the network <b>{network}</b>`
- -  *Not part of a bigger network, e.g. because the charging station is maintained by a local business* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:no:network' target='_blank'>no:network</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:no:network%3Dyes' target='_blank'>yes</a>
- -  *Not part of a bigger network* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:network' target='_blank'>network</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:network%3Dnone' target='_blank'>none</a>
- - _This option cannot be chosen as answer_
- -  *AeroVironment* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:network' target='_blank'>network</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:network%3DAeroVironment' target='_blank'>AeroVironment</a>
- -  *Blink* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:network' target='_blank'>network</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:network%3DBlink' target='_blank'>Blink</a>
- -  *EVgo* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:network' target='_blank'>network</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:network%3DEVgo' target='_blank'>EVgo</a>
- -  *Allego* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:network' target='_blank'>network</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:network%3DAllego' target='_blank'>Allego</a>
- -  *Blue Corner* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:network' target='_blank'>network</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:network%3DBlue Corner' target='_blank'>Blue Corner</a>
- -  *Tesla* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:network' target='_blank'>network</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:network%3DTesla' target='_blank'>Tesla</a>
+*Part of the network <b>{network}</b>* is shown if `network` is set
+
+
+ -  *Not part of a bigger network, e.g. because the charging station is maintained by a local business* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:no:network' target='_blank'>no:network</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:no:network%3Dyes' target='_blank'>yes</a>
+ -  *Not part of a bigger network* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:network' target='_blank'>network</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:network%3Dnone' target='_blank'>none</a>. _This option cannot be chosen as answer_
+ -  *AeroVironment* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:network' target='_blank'>network</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:network%3DAeroVironment' target='_blank'>AeroVironment</a>
+ -  *Blink* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:network' target='_blank'>network</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:network%3DBlink' target='_blank'>Blink</a>
+ -  *EVgo* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:network' target='_blank'>network</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:network%3DEVgo' target='_blank'>EVgo</a>
+ -  *Allego* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:network' target='_blank'>network</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:network%3DAllego' target='_blank'>Allego</a>
+ -  *Blue Corner* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:network' target='_blank'>network</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:network%3DBlue Corner' target='_blank'>Blue Corner</a>
+ -  *Tesla* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:network' target='_blank'>network</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:network%3DTesla' target='_blank'>Tesla</a>
+
+
 
 
 
 ### Operator
 
 The question is `Who is the operator of this charging station?`
-This rendering asks information about the property 
-[operator](https://wiki.openstreetmap.org/wiki/Key:operator)
-This is rendered with `This charging station is operated by {operator}`
- -  *Actually, {operator} is the network* corresponds with network=
+*This charging station is operated by {operator}* is shown if `operator` is set
+
+
+ -  *Actually, {operator} is the network* is shown if with network=
+
+
 
 
 
 ### phone
 
 The question is `What number can one call if there is a problem with this charging station?`
-This rendering asks information about the property 
-[phone](https://wiki.openstreetmap.org/wiki/Key:phone)
-This is rendered with `In case of problems, call <a href='tel:{phone}'>{phone}</a>`
+*In case of problems, call <a href='tel:{phone}'>{phone}</a>* is shown if `phone` is set
 
 
 
@@ -1500,9 +1501,7 @@ This is rendered with `In case of problems, call <a href='tel:{phone}'>{phone}</
 ### email
 
 The question is `What is the email address of the operator?`
-This rendering asks information about the property 
-[email](https://wiki.openstreetmap.org/wiki/Key:email)
-This is rendered with `In case of problems, send an email to <a href='mailto:{email}'>{email}</a>`
+*In case of problems, send an email to <a href='mailto:{email}'>{email}</a>* is shown if `email` is set
 
 
 
@@ -1510,9 +1509,7 @@ This is rendered with `In case of problems, send an email to <a href='mailto:{em
 ### website
 
 The question is `What is the website where one can find more information about this charging station?`
-This rendering asks information about the property 
-[website](https://wiki.openstreetmap.org/wiki/Key:website)
-This is rendered with `More info on <a href='{website}'>{website}</a>`
+*More info on <a href='{website}'>{website}</a>* is shown if `website` is set
 
 
 
@@ -1520,7 +1517,7 @@ This is rendered with `More info on <a href='{website}'>{website}</a>`
 ### repeated
 
 _This tagrendering has no question and is thus read-only_
-
+*Multiple, identical objects can be found on floors {repeat_on}.*
 
 This tagrendering is only visible in the popup if the following condition is met: repeat_on~.+
 This tagrendering has labels 
@@ -1529,16 +1526,16 @@ This tagrendering has labels
 ### single_level
 
 The question is `On what level is this feature located?`
-This rendering asks information about the property 
-[level](https://wiki.openstreetmap.org/wiki/Key:level)
-This is rendered with `Located on the {level}th floor`
- -  *Located underground* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground' target='_blank'>underground</a>
- - _This option cannot be chosen as answer_
- -  *Located on the ground floor* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D0' target='_blank'>0</a>
- -  *Located on the ground floor* corresponds with level=
- - _This option cannot be chosen as answer_
- -  *Located on the first floor* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D1' target='_blank'>1</a>
- -  *Located on the first basement level* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D-1' target='_blank'>-1</a>
+*Located on the {level}th floor* is shown if `level` is set
+
+
+ -  *Located underground* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground' target='_blank'>underground</a>. _This option cannot be chosen as answer_
+ -  *Located on the ground floor* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D0' target='_blank'>0</a>
+ -  *Located on the ground floor* is shown if with level=. _This option cannot be chosen as answer_
+ -  *Located on the first floor* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D1' target='_blank'>1</a>
+ -  *Located on the first basement level* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D-1' target='_blank'>-1</a>
+
+
 
 This tagrendering has labels 
 `level`
@@ -1546,9 +1543,7 @@ This tagrendering has labels
 ### ref
 
 The question is `What is the reference number of this charging station?`
-This rendering asks information about the property 
-[ref](https://wiki.openstreetmap.org/wiki/Key:ref)
-This is rendered with `Reference number is <b>{ref}</b>`
+*Reference number is <b>{ref}</b>* is shown if `ref` is set
 
 This tagrendering is only visible in the popup if the following condition is met: network~.+
 
@@ -1557,11 +1552,15 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is `Is this charging point in use?`
 
- -  *This charging station works* corresponds with planned:amenity= & construction:amenity= & disused:amenity= & operational_status= & <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcharging_station' target='_blank'>charging_station</a>
- -  *This charging station is broken* corresponds with planned:amenity= & construction:amenity= & disused:amenity= & <a href='https://wiki.openstreetmap.org/wiki/Key:operational_status' target='_blank'>operational_status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operational_status%3Dbroken' target='_blank'>broken</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcharging_station' target='_blank'>charging_station</a>
- -  *A charging station is planned here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:planned:amenity' target='_blank'>planned:amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:planned:amenity%3Dcharging_station' target='_blank'>charging_station</a> & construction:amenity= & disused:amenity= & operational_status= & amenity=
- -  *A charging station is constructed here* corresponds with planned:amenity= & <a href='https://wiki.openstreetmap.org/wiki/Key:construction:amenity' target='_blank'>construction:amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:construction:amenity%3Dcharging_station' target='_blank'>charging_station</a> & disused:amenity= & operational_status= & amenity=
- -  *This charging station has beed permanently disabled and is not in use anymore but is still visible* corresponds with planned:amenity= & construction:amenity= & <a href='https://wiki.openstreetmap.org/wiki/Key:disused:amenity' target='_blank'>disused:amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:disused:amenity%3Dcharging_station' target='_blank'>charging_station</a> & operational_status= & amenity=
+
+
+ -  *This charging station works* is shown if with planned:amenity= & construction:amenity= & disused:amenity= & operational_status= & <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcharging_station' target='_blank'>charging_station</a>
+ -  *This charging station is broken* is shown if with planned:amenity= & construction:amenity= & disused:amenity= & <a href='https://wiki.openstreetmap.org/wiki/Key:operational_status' target='_blank'>operational_status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operational_status%3Dbroken' target='_blank'>broken</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcharging_station' target='_blank'>charging_station</a>
+ -  *A charging station is planned here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:planned:amenity' target='_blank'>planned:amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:planned:amenity%3Dcharging_station' target='_blank'>charging_station</a> & construction:amenity= & disused:amenity= & operational_status= & amenity=
+ -  *A charging station is constructed here* is shown if with planned:amenity= & <a href='https://wiki.openstreetmap.org/wiki/Key:construction:amenity' target='_blank'>construction:amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:construction:amenity%3Dcharging_station' target='_blank'>charging_station</a> & disused:amenity= & operational_status= & amenity=
+ -  *This charging station has beed permanently disabled and is not in use anymore but is still visible* is shown if with planned:amenity= & construction:amenity= & <a href='https://wiki.openstreetmap.org/wiki/Key:disused:amenity' target='_blank'>disused:amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:disused:amenity%3Dcharging_station' target='_blank'>charging_station</a> & operational_status= & amenity=
+
+
 
 
 
@@ -1569,15 +1568,19 @@ The question is `Is this charging point in use?`
 
 The question is `Does one have to pay a parking fee while charging?`
 
- -  *No additional parking cost while charging* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:parking:fee' target='_blank'>parking:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking:fee%3Dno' target='_blank'>no</a>
- -  *An additional parking fee should be paid while charging* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:parking:fee' target='_blank'>parking:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking:fee%3Dyes' target='_blank'>yes</a>
+
+
+ -  *No additional parking cost while charging* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:parking:fee' target='_blank'>parking:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking:fee%3Dno' target='_blank'>no</a>
+ -  *An additional parking fee should be paid while charging* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:parking:fee' target='_blank'>parking:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking:fee%3Dyes' target='_blank'>yes</a>
+
+
 
 
 
 ### questions
 Show the questions block at this location
 _This tagrendering has no question and is thus read-only_
-
+*{questions()}*
 
 
 
@@ -1585,32 +1588,15 @@ _This tagrendering has no question and is thus read-only_
 ### questions-technical
 
 _This tagrendering has no question and is thus read-only_
+*<h3>Technical questions</h3>The questions below are very technical. Feel free to ignore them<br/>{questions(technical)}*
 
 
 
-
-
-### minimap
-Shows a small map with the feature. Added by default to every popup
-_This tagrendering has no question and is thus read-only_
-
-
-
-
-
-### nearby_images
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default_conditional`
 
 ### move-button
 
 _This tagrendering has no question and is thus read-only_
-
+*{move_button()}*
 
 
 
@@ -1618,7 +1604,7 @@ _This tagrendering has no question and is thus read-only_
 ### delete-button
 
 _This tagrendering has no question and is thus read-only_
-
+*{delete_button()}*
 
 
 
@@ -1626,57 +1612,13 @@ _This tagrendering has no question and is thus read-only_
 ### lod
 
 _This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### favourite_status
-
-_This tagrendering has no question and is thus read-only_
-
+*{linked_data_from_website()}*
 
 
 This tagrendering has labels 
 `added_by_default`
 
-### share
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### qr_code
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### last_edit
-Gives some metainfo about the last edit and who did edit it - rendering only
-_This tagrendering has no question and is thus read-only_
-
-
-This tagrendering is only visible in the popup if the following condition is met: _last_edit:changeset~.+ & _last_edit:contributor~.+
-This tagrendering has labels 
-`added_by_default`
-
-### all-tags
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-
-
-#### Filters
+## Filters
 
 
 

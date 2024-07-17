@@ -321,6 +321,11 @@
       "value": "bike_helmet"
     },
     {
+      "key": "rental",
+      "description": "Layer 'Bike repair/shop' shows rental=cargo_bike with a fixed text, namely 'Cargo bikes can be rented here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if service:bicycle:rental=yes)",
+      "value": "cargo_bike"
+    },
+    {
       "key": "capacity:city_bike",
       "description": "Layer 'Bike repair/shop' shows and asks freeform values for key 'capacity:city_bike' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if rental~^(.*city_bike.*)$ & service:bicycle:rental=yes)"
     },
@@ -731,17 +736,17 @@
     },
     {
       "key": "seasonal",
-      "description": "Layer 'Drinking water' shows seasonal=no with a fixed text, namely 'This drinking water point is available all around the year' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "description": "Layer 'Drinking water' shows seasonal=no with a fixed text, namely 'Available all around the year' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
       "value": "no"
     },
     {
       "key": "seasonal",
-      "description": "Layer 'Drinking water' shows seasonal=summer with a fixed text, namely 'This drinking water point is only available in summer' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "description": "Layer 'Drinking water' shows seasonal=summer with a fixed text, namely 'Only available in summer' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
       "value": "summer"
     },
     {
       "key": "seasonal",
-      "description": "Layer 'Drinking water' shows seasonal=spring;summer;autumn with a fixed text, namely 'This drinking water point is closed during the winter' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "description": "Layer 'Drinking water' shows seasonal=spring;summer;autumn with a fixed text, namely 'Closed during the winter' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
       "value": "spring;summer;autumn"
     },
     {
@@ -1239,6 +1244,11 @@
       "key": "rental",
       "description": "Layer 'Bicycle rental' shows rental=bike_helmet with a fixed text, namely 'Bike helmets can be rented here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
       "value": "bike_helmet"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Bicycle rental' shows rental=cargo_bike with a fixed text, namely 'Cargo bikes can be rented here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "value": "cargo_bike"
     },
     {
       "key": "capacity:city_bike",

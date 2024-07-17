@@ -7,13 +7,10 @@ import {
     FirstOf,
     Fuse,
     On,
-    SetDefault,
+    SetDefault
 } from "./Conversion"
 import { LayerConfigJson } from "../Json/LayerConfigJson"
-import {
-    MinimalTagRenderingConfigJson,
-    TagRenderingConfigJson,
-} from "../Json/TagRenderingConfigJson"
+import { MinimalTagRenderingConfigJson, TagRenderingConfigJson } from "../Json/TagRenderingConfigJson"
 import { Utils } from "../../../Utils"
 import RewritableConfigJson from "../Json/RewritableConfigJson"
 import SpecialVisualizations from "../../../UI/SpecialVisualizations"
@@ -615,23 +612,11 @@ export class AddQuestionBox extends DesugaringStep<LayerConfigJson> {
 }
 
 export class AddEditingElements extends DesugaringStep<LayerConfigJson> {
-    static addedElements: string[] = [
-        "minimap",
-        "just_created",
-        "split_button",
-        "move_button",
-        "delete_button",
-        "last_edit",
-        "favourite_state",
-        "all_tags",
-        "qr_code",
-        "nearby_images",
-        "linked_open_data",
-    ]
 
     private readonly _desugaring: DesugaringContext
     private readonly _addedByDefaultAtTop: QuestionableTagRenderingConfigJson[]
     private readonly _addedByDefault: QuestionableTagRenderingConfigJson[]
+    private readonly builtinQuestions: QuestionableTagRenderingConfigJson[]
     constructor(desugaring: DesugaringContext) {
         super(
             "Add some editing elements, such as the delete button or the move button if they are configured. These used to be handled by the feature info box, but this has been replaced by special visualisation elements",
@@ -639,19 +624,19 @@ export class AddEditingElements extends DesugaringStep<LayerConfigJson> {
             "AddEditingElements"
         )
         this._desugaring = desugaring
+        this.builtinQuestions = Array.from(this._desugaring.tagRenderings?.values() ?? [])
 
-        const builtinQuestions = Array.from(this._desugaring.tagRenderings?.values() ?? [])
-
-        function getAddedByDefaultIds(key: string): QuestionableTagRenderingConfigJson[] {
-            const addByDefault = builtinQuestions.filter((tr) => tr.labels?.indexOf(key) >= 0)
-            const ids = new Set(addByDefault.map((tr) => tr.id))
-            const idsInOrder = desugaring.tagRenderingOrder?.filter((id) => ids.has(id)) ?? []
-            return Utils.NoNull(idsInOrder.map((id) => desugaring.tagRenderings.get(id)))
-        }
-
-        this._addedByDefaultAtTop = getAddedByDefaultIds("added_by_default_top")
-        this._addedByDefault = getAddedByDefaultIds("added_by_default")
+        this._addedByDefaultAtTop = this.getAddedByDefaultIds("added_by_default_top")
+        this._addedByDefault = this.getAddedByDefaultIds("added_by_default")
     }
+
+    public getAddedByDefaultIds(key: string): QuestionableTagRenderingConfigJson[] {
+        const addByDefault = this.builtinQuestions.filter((tr) => tr.labels?.indexOf(key) >= 0)
+        const ids = new Set(addByDefault.map((tr) => tr.id))
+        const idsInOrder = this._desugaring.tagRenderingOrder?.filter((id) => ids.has(id)) ?? []
+        return Utils.NoNull(idsInOrder.map((id) => this._desugaring.tagRenderings.get(id)))
+    }
+
 
     convert(json: LayerConfigJson, _: ConversionContext): LayerConfigJson {
         if (this._desugaring.tagRenderings === null) {
@@ -717,7 +702,7 @@ export class AddEditingElements extends DesugaringStep<LayerConfigJson> {
             const trc: QuestionableTagRenderingConfigJson = {
                 id: "all-tags",
                 render: { "*": "{all_tags()}" },
-
+                labels:["ignore_docs"],
                 metacondition: {
                     or: [
                         "__featureSwitchIsDebugging=true",

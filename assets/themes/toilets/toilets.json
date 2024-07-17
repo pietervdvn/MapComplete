@@ -43,5 +43,8 @@
     "toilet_at_amenity",
     "shower"
   ],
+  "overrideAll": {
+    "minzoom": 10
+  },
   "widenFactor": 3
 }

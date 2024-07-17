@@ -12,6 +12,7 @@ In a tagrendering, some special values are substituted by an advanced UI-element
 General usage is `{func_name()}`, `{func_name(arg, someotherarg)}` or `{func_name(args):cssClasses}`. Note that you _do not_ need to use quotes around your arguments, the comma is enough to separate them. This also implies you cannot use a comma in your args
 
 
+
 #### Table of contents
 
   - [Using expanded syntax](#using-expanded-syntax)
@@ -264,7 +265,7 @@ A small map showing the selected feature.
 
 #### Example usage of minimap
 
-<code>`{minimap(18,id)}`</code>
+<code>`{minimap()}`, `{minimap(17, id, _list_of_embedded_feature_ids_calculated_by_calculated_tag):height:10rem; border: 2px solid black}`</code>
 
 ### split_button
 

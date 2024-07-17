@@ -82,10 +82,9 @@ export default class MetaTagging {
             this.updateCurrentSelectedElement()
             let lastUpdateMoment = new Date()
             const tags = state?.featureProperties?.getStore(feature.properties.id)
-            console.log("Binding an updater to", feature)
             let updateCount = 0
             tags?.addCallbackD(() => {
-                console.log(
+                console.debug(
                     "Received an update! Re-calculating the metatags, timediff:",
                     new Date().getTime() - lastUpdateMoment.getTime()
                 )

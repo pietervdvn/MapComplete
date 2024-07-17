@@ -63,7 +63,7 @@ export default abstract class BaseUIElement {
     /**
      * Adds all the relevant classes, space separated
      */
-    public SetClass(clss: string) {
+    public SetClass(clss: string): this {
         if (clss == undefined) {
             return this
         }
@@ -101,7 +101,7 @@ export default abstract class BaseUIElement {
         return this.clss.has(clss)
     }
 
-    public SetStyle(style: string): BaseUIElement {
+    public SetStyle(style: string): this {
         this.style = style
         if (this._constructedHtmlElement !== undefined) {
             this._constructedHtmlElement.style.cssText = style

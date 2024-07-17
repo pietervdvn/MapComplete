@@ -3,25 +3,29 @@
 # bike_repair_station
 
 
-[object Object]
+
 
 A layer showing bicycle pumps and bicycle repair tool stands
 
 
 
 
+
+
  - This layer is shown at zoomlevel **13** and higher
+
+
+
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
 2. [Basic tags for this layer](#basic-tags-for-this-layer)
 3. [Supported attributes](#supported-attributes)
-  - [just_created](#just_created)
-  - [nothing_known](#nothing_known)
   - [images](#images)
   - [bike_repair_station-available-services](#bike_repair_station-available-services)
   - [Operational status](#operational-status)
   - [opening_hours_24_7](#opening_hours_24_7)
+  - [Opening hours](#opening-hours)
   - [access](#access)
   - [bike_repair_station-operator](#bike_repair_station-operator)
   - [bike_repair_station-email](#bike_repair_station-email)
@@ -35,23 +39,20 @@ A layer showing bicycle pumps and bicycle repair tool stands
   - [repeated](#repeated)
   - [single_level](#single_level)
   - [leftover-questions](#leftover-questions)
-  - [minimap](#minimap)
-  - [nearby_images](#nearby_images)
   - [move-button](#move-button)
   - [delete-button](#delete-button)
   - [lod](#lod)
-  - [favourite_status](#favourite_status)
-  - [share](#share)
-  - [qr_code](#qr_code)
-  - [last_edit](#last_edit)
-  - [all-tags](#all-tags)
 
 ## Themes using this layer
+
+
 
  - [cyclofix](https://mapcomplete.org/cyclofix)
  - [personal](https://mapcomplete.org/personal)
  - [toerisme_vlaanderen](https://mapcomplete.org/toerisme_vlaanderen)
  - [velopark](https://mapcomplete.org/velopark)
+
+
 
 ## Basic tags for this layer
 
@@ -65,46 +66,27 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 
 | attribute | type | values which are supported by this layer |
 -----|-----|----- |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/id#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:bicycle:tools#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice | [object Object] [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:bicycle:pump:operational_status#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice | [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/opening_hours#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [opening_hours](../SpecialInputElements.md#opening_hours) | [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/access#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice | [object Object] [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/operator#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [string](../SpecialInputElements.md#string) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/email#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [email](../SpecialInputElements.md#email) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/phone#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [phone](../SpecialInputElements.md#phone) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:bicycle:chain_tool#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice | [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:bicycle:stand#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice | [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/valves#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [string](../SpecialInputElements.md#string) | [object Object] [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/manual#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice | [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/manometer#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice | [object Object] [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/level#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [float](../SpecialInputElements.md#float) | [object Object] [object Object] [object Object] |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:bicycle:tools#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/service%3Abicycle%3Atools/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [service:bicycle:tools](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:tools) | Multiple choice | [no](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:tools%3Dno) [yes](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:tools%3Dyes) [yes](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:tools%3Dyes) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:bicycle:pump:operational_status#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/service%3Abicycle%3Apump%3Aoperational_status/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [service:bicycle:pump:operational_status](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump:operational_status) | Multiple choice | [broken](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump:operational_status%3Dbroken) [operational](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump:operational_status%3Doperational) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/opening_hours#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/opening_hours/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | [24/7](https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/access#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/access/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [access](https://wiki.openstreetmap.org/wiki/Key:access) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes) [customers](https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers) [private](https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/operator#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/operator/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [operator](https://wiki.openstreetmap.org/wiki/Key:operator) | [string](../SpecialInputElements.md#string) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/email#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/email/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [email](https://wiki.openstreetmap.org/wiki/Key:email) | [email](../SpecialInputElements.md#email) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/phone#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/phone/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [phone](https://wiki.openstreetmap.org/wiki/Key:phone) | [phone](../SpecialInputElements.md#phone) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:bicycle:chain_tool#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/service%3Abicycle%3Achain_tool/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [service:bicycle:chain_tool](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:chain_tool) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:chain_tool%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:chain_tool%3Dno) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:bicycle:stand#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/service%3Abicycle%3Astand/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [service:bicycle:stand](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:stand) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:stand%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:stand%3Dno) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/valves#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/valves/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [valves](https://wiki.openstreetmap.org/wiki/Key:valves) | [string](../SpecialInputElements.md#string) | [sclaverand](https://wiki.openstreetmap.org/wiki/Tag:valves%3Dsclaverand) [dunlop](https://wiki.openstreetmap.org/wiki/Tag:valves%3Ddunlop) [schrader](https://wiki.openstreetmap.org/wiki/Tag:valves%3Dschrader) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/manual#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/manual/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [manual](https://wiki.openstreetmap.org/wiki/Key:manual) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:manual%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:manual%3Dno) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/manometer#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/manometer/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [manometer](https://wiki.openstreetmap.org/wiki/Key:manometer) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:manometer%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:manometer%3Dno) [broken](https://wiki.openstreetmap.org/wiki/Tag:manometer%3Dbroken) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/level#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/level/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [level](https://wiki.openstreetmap.org/wiki/Key:level) | [float](../SpecialInputElements.md#float) | [0](https://wiki.openstreetmap.org/wiki/Tag:level%3D0) [1](https://wiki.openstreetmap.org/wiki/Tag:level%3D1) [-1](https://wiki.openstreetmap.org/wiki/Tag:level%3D-1) |
 
 
 
-
-### just_created
-This element shows a 'thank you' that the contributor has recently created this element
-_This tagrendering has no question and is thus read-only_
-
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/party.svg' style='width: 3rem; height: 3rem'> *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
-This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
-This tagrendering has labels 
-`added_by_default_top`
-
-### nothing_known
-
-_This tagrendering has no question and is thus read-only_
-
-
-This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time>=300 & _backend~.+
-This tagrendering has labels 
-`added_by_default_top`
 
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
-
+*{image_carousel()}{image_upload()}*
 
 
 
@@ -113,9 +95,13 @@ _This tagrendering has no question and is thus read-only_
 
 The question is `Which services are available at this location?`
 
- -  *There is only a pump present* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:tools' target='_blank'>service:bicycle:tools</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:tools%3Dno' target='_blank'>no</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump' target='_blank'>service:bicycle:pump</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dyes' target='_blank'>yes</a>
- -  *There are only tools (screwdrivers, pliers, …) present* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:tools' target='_blank'>service:bicycle:tools</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:tools%3Dyes' target='_blank'>yes</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump' target='_blank'>service:bicycle:pump</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dno' target='_blank'>no</a>
- -  *There are both tools and a pump present* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:tools' target='_blank'>service:bicycle:tools</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:tools%3Dyes' target='_blank'>yes</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump' target='_blank'>service:bicycle:pump</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dyes' target='_blank'>yes</a>
+
+
+ -  *There is only a pump present* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:tools' target='_blank'>service:bicycle:tools</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:tools%3Dno' target='_blank'>no</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump' target='_blank'>service:bicycle:pump</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dyes' target='_blank'>yes</a>
+ -  *There are only tools (screwdrivers, pliers, …) present* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:tools' target='_blank'>service:bicycle:tools</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:tools%3Dyes' target='_blank'>yes</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump' target='_blank'>service:bicycle:pump</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dno' target='_blank'>no</a>
+ -  *There are both tools and a pump present* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:tools' target='_blank'>service:bicycle:tools</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:tools%3Dyes' target='_blank'>yes</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump' target='_blank'>service:bicycle:pump</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dyes' target='_blank'>yes</a>
+
+
 
 
 
@@ -123,20 +109,25 @@ The question is `Which services are available at this location?`
 
 The question is `Is the bike pump still operational?`
 
- -  *The bike pump is broken* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump:operational_status' target='_blank'>service:bicycle:pump:operational_status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump:operational_status%3Dbroken' target='_blank'>broken</a>
- -  *The bike pump is operational* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump:operational_status' target='_blank'>service:bicycle:pump:operational_status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump:operational_status%3Doperational' target='_blank'>operational</a>
+
+
+ -  *The bike pump is broken* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump:operational_status' target='_blank'>service:bicycle:pump:operational_status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump:operational_status%3Dbroken' target='_blank'>broken</a>
+ -  *The bike pump is operational* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump:operational_status' target='_blank'>service:bicycle:pump:operational_status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump:operational_status%3Doperational' target='_blank'>operational</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump' target='_blank'>service:bicycle:pump</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dyes' target='_blank'>yes</a>
 
 
 ### opening_hours_24_7
 
 The question is `When is this bicycle repair point open?`
-This rendering asks information about the property 
-[opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours)
-This is rendered with `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/open24_7.svg' style='width: 3rem; height: 3rem'> *24/7 opened (including holidays)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
- -  *Marked as closed for an unspecified time* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>
- - _This option cannot be chosen as answer_
+*<h3>Opening hours</h3>{opening_hours_table(opening_hours)}* is shown if `opening_hours` is set
+
+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/open24_7.svg' style='width: 3rem; height: 3rem'> *24/7 opened (including holidays)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
+ -  *Marked as closed for an unspecified time* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>. _This option cannot be chosen as answer_
+
+
 
 
 
@@ -144,22 +135,22 @@ This is rendered with `<h3>Opening hours</h3>{opening_hours_table(opening_hours)
 
 The question is `Who is allowed to use this repair station?`
 
- -  *Publicly accessible* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>
- -  *Publicly accessible* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dpublic' target='_blank'>public</a>
- - _This option cannot be chosen as answer_
- -  *Only for customers* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers' target='_blank'>customers</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/invalid.svg' style='width: 3rem; height: 3rem'> *Not accessible to the general public* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate' target='_blank'>private</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/invalid.svg' style='width: 3rem; height: 3rem'> *Not accessible to the general public* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dno' target='_blank'>no</a>
- - _This option cannot be chosen as answer_
+
+
+ -  *Publicly accessible* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>
+ -  *Publicly accessible* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dpublic' target='_blank'>public</a>. _This option cannot be chosen as answer_
+ -  *Only for customers* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers' target='_blank'>customers</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/invalid.svg' style='width: 3rem; height: 3rem'> *Not accessible to the general public* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate' target='_blank'>private</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/invalid.svg' style='width: 3rem; height: 3rem'> *Not accessible to the general public* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dno' target='_blank'>no</a>. _This option cannot be chosen as answer_
+
+
 
 
 
 ### bike_repair_station-operator
 
 The question is `Who maintains this cycle pump?`
-This rendering asks information about the property 
-[operator](https://wiki.openstreetmap.org/wiki/Key:operator)
-This is rendered with `Maintained by {operator}`
+*Maintained by {operator}* is shown if `operator` is set
 
 
 This tagrendering has labels 
@@ -168,9 +159,7 @@ This tagrendering has labels
 ### bike_repair_station-email
 
 The question is `What is the email address of the maintainer?`
-This rendering asks information about the property 
-[email](https://wiki.openstreetmap.org/wiki/Key:email)
-This is rendered with `<a href='mailto:{email}'>{email}</a>`
+*<a href='mailto:{email}'>{email}</a>* is shown if `email` is set
 
 
 This tagrendering has labels 
@@ -179,9 +168,7 @@ This tagrendering has labels
 ### bike_repair_station-phone
 
 The question is `What is the phone number of the maintainer?`
-This rendering asks information about the property 
-[phone](https://wiki.openstreetmap.org/wiki/Key:phone)
-This is rendered with `<a href='tel:{phone}'>{phone}</a>`
+*<a href='tel:{phone}'>{phone}</a>* is shown if `phone` is set
 
 
 This tagrendering has labels 
@@ -191,8 +178,12 @@ This tagrendering has labels
 
 The question is `Does this bike repair station have a special tool to repair your bike chain?`
 
- -  *There is a chain tool* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:chain_tool' target='_blank'>service:bicycle:chain_tool</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:chain_tool%3Dyes' target='_blank'>yes</a>
- -  *There is no chain tool* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:chain_tool' target='_blank'>service:bicycle:chain_tool</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:chain_tool%3Dno' target='_blank'>no</a>
+
+
+ -  *There is a chain tool* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:chain_tool' target='_blank'>service:bicycle:chain_tool</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:chain_tool%3Dyes' target='_blank'>yes</a>
+ -  *There is no chain tool* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:chain_tool' target='_blank'>service:bicycle:chain_tool</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:chain_tool%3Dno' target='_blank'>no</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:tools' target='_blank'>service:bicycle:tools</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:tools%3Dyes' target='_blank'>yes</a>
 
 
@@ -200,15 +191,23 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is `Does this bike station have a hook to hang your bike on or a stand to raise it?`
 
- -  *There is a hook or stand* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:stand' target='_blank'>service:bicycle:stand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:stand%3Dyes' target='_blank'>yes</a>
- -  *There is no hook or stand* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:stand' target='_blank'>service:bicycle:stand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:stand%3Dno' target='_blank'>no</a>
+
+
+ -  *There is a hook or stand* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:stand' target='_blank'>service:bicycle:stand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:stand%3Dyes' target='_blank'>yes</a>
+ -  *There is no hook or stand* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:stand' target='_blank'>service:bicycle:stand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:stand%3Dno' target='_blank'>no</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:tools' target='_blank'>service:bicycle:tools</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:tools%3Dyes' target='_blank'>yes</a>
 
 
 ### send_email_about_broken_pump
 
 _This tagrendering has no question and is thus read-only_
+*{send_email(&LBRACEemail&RBRACE,Broken bicycle pump,Hello&COMMA
 
+With this email&COMMA I'd like to inform you that the bicycle pump located at https://mapcomplete.org/cyclofix?lat=&LBRACE_lat&RBRACE&lon=&LBRACE_lon&RBRACE&z=18#&LBRACEid&RBRACE is broken.
+
+ Kind regards,Report this bicycle pump as broken)}*
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump:operational_status' target='_blank'>service:bicycle:pump:operational_status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump:operational_status%3Dbroken' target='_blank'>broken</a> & email~.+
 
@@ -216,12 +215,14 @@ This tagrendering is only visible in the popup if the following condition is met
 ### bike_repair_station-valves
 
 The question is `What valves are supported?`
-This rendering asks information about the property 
-[valves](https://wiki.openstreetmap.org/wiki/Key:valves)
-This is rendered with `This pump supports the following valves: {valves}`
- -  *Sclaverand/Presta (narrow-width bike tires)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:valves' target='_blank'>valves</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:valves%3Dsclaverand' target='_blank'>sclaverand</a>
- -  *Dunlop* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:valves' target='_blank'>valves</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:valves%3Ddunlop' target='_blank'>dunlop</a>
- -  *Schrader (cars and mountainbikes)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:valves' target='_blank'>valves</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:valves%3Dschrader' target='_blank'>schrader</a>
+*This pump supports the following valves: {valves}* is shown if `valves` is set
+
+
+ -  *Sclaverand/Presta (narrow-width bike tires)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:valves' target='_blank'>valves</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:valves%3Dsclaverand' target='_blank'>sclaverand</a>
+ -  *Dunlop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:valves' target='_blank'>valves</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:valves%3Ddunlop' target='_blank'>dunlop</a>
+ -  *Schrader (cars and mountainbikes)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:valves' target='_blank'>valves</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:valves%3Dschrader' target='_blank'>schrader</a>
+
+
 
 
 
@@ -229,8 +230,12 @@ This is rendered with `This pump supports the following valves: {valves}`
 
 The question is `Is this an electric bike pump?`
 
- -  *Manual pump* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:manual' target='_blank'>manual</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:manual%3Dyes' target='_blank'>yes</a>
- -  *Electrical pump* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:manual' target='_blank'>manual</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:manual%3Dno' target='_blank'>no</a>
+
+
+ -  *Manual pump* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:manual' target='_blank'>manual</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:manual%3Dyes' target='_blank'>yes</a>
+ -  *Electrical pump* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:manual' target='_blank'>manual</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:manual%3Dno' target='_blank'>no</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump' target='_blank'>service:bicycle:pump</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dyes' target='_blank'>yes</a>
 
 
@@ -238,16 +243,20 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is `Does the pump have a pressure indicator or manometer?`
 
- -  *There is a manometer* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:manometer' target='_blank'>manometer</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:manometer%3Dyes' target='_blank'>yes</a>
- -  *There is no manometer* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:manometer' target='_blank'>manometer</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:manometer%3Dno' target='_blank'>no</a>
- -  *There is manometer but it is broken* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:manometer' target='_blank'>manometer</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:manometer%3Dbroken' target='_blank'>broken</a>
+
+
+ -  *There is a manometer* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:manometer' target='_blank'>manometer</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:manometer%3Dyes' target='_blank'>yes</a>
+ -  *There is no manometer* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:manometer' target='_blank'>manometer</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:manometer%3Dno' target='_blank'>no</a>
+ -  *There is manometer but it is broken* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:manometer' target='_blank'>manometer</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:manometer%3Dbroken' target='_blank'>broken</a>
+
+
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump' target='_blank'>service:bicycle:pump</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dyes' target='_blank'>yes</a>
 
 
 ### repeated
 
 _This tagrendering has no question and is thus read-only_
-
+*Multiple, identical objects can be found on floors {repeat_on}.*
 
 This tagrendering is only visible in the popup if the following condition is met: repeat_on~.+
 This tagrendering has labels 
@@ -256,16 +265,16 @@ This tagrendering has labels
 ### single_level
 
 The question is `On what level is this feature located?`
-This rendering asks information about the property 
-[level](https://wiki.openstreetmap.org/wiki/Key:level)
-This is rendered with `Located on the {level}th floor`
- -  *Located underground* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground' target='_blank'>underground</a>
- - _This option cannot be chosen as answer_
- -  *Located on the ground floor* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D0' target='_blank'>0</a>
- -  *Located on the ground floor* corresponds with level=
- - _This option cannot be chosen as answer_
- -  *Located on the first floor* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D1' target='_blank'>1</a>
- -  *Located on the first basement level* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D-1' target='_blank'>-1</a>
+*Located on the {level}th floor* is shown if `level` is set
+
+
+ -  *Located underground* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground' target='_blank'>underground</a>. _This option cannot be chosen as answer_
+ -  *Located on the ground floor* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D0' target='_blank'>0</a>
+ -  *Located on the ground floor* is shown if with level=. _This option cannot be chosen as answer_
+ -  *Located on the first floor* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D1' target='_blank'>1</a>
+ -  *Located on the first basement level* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D-1' target='_blank'>-1</a>
+
+
 
 This tagrendering has labels 
 `level`
@@ -273,32 +282,15 @@ This tagrendering has labels
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
+*{questions( ,)}*
 
 
 
-
-
-### minimap
-Shows a small map with the feature. Added by default to every popup
-_This tagrendering has no question and is thus read-only_
-
-
-
-
-
-### nearby_images
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default_conditional`
 
 ### move-button
 
 _This tagrendering has no question and is thus read-only_
-
+*{move_button()}*
 
 
 
@@ -306,7 +298,7 @@ _This tagrendering has no question and is thus read-only_
 ### delete-button
 
 _This tagrendering has no question and is thus read-only_
-
+*{delete_button()}*
 
 
 
@@ -314,54 +306,11 @@ _This tagrendering has no question and is thus read-only_
 ### lod
 
 _This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### favourite_status
-
-_This tagrendering has no question and is thus read-only_
-
+*{linked_data_from_website()}*
 
 
 This tagrendering has labels 
 `added_by_default`
-
-### share
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### qr_code
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### last_edit
-Gives some metainfo about the last edit and who did edit it - rendering only
-_This tagrendering has no question and is thus read-only_
-
-
-This tagrendering is only visible in the popup if the following condition is met: _last_edit:changeset~.+ & _last_edit:contributor~.+
-This tagrendering has labels 
-`added_by_default`
-
-### all-tags
-
-_This tagrendering has no question and is thus read-only_
-
-
-
 
 
 This document is autogenerated from [assets/layers/bike_repair_station/bike_repair_station.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/bike_repair_station/bike_repair_station.json)

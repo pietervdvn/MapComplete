@@ -325,7 +325,7 @@
         "key": "subject:wikidata",
         "type": "wikidata",
         "helperArgs": [
-          "subject;memorial:conflict"
+          "subject;memorial:conflict;name"
         ]
       },
       "question": {

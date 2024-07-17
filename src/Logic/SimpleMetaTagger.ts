@@ -635,6 +635,9 @@ export default class SimpleMetaTaggers {
             isLazy: true,
         },
         (feature: Feature, layer: LayerConfig, tagsStore: UIEventSource<OsmTags>) => {
+            if(tagsStore === undefined){
+                return
+            }
             Utils.AddLazyPropertyAsync(feature.properties, "_currency", async () => {
                 // Wait until _country is actually set
                 const tags = await tagsStore.AsPromise((tags) => !!tags._country)

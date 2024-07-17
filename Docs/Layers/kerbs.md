@@ -3,9 +3,11 @@
 # kerbs
 
 
-[object Object]
+
 
 A layer showing kerbs.
+
+
 
 
 
@@ -14,34 +16,32 @@ A layer showing kerbs.
  - This layer will automatically load  [cycleways_and_roads](./cycleways_and_roads.md)  into the layout as it depends on it:  a preset snaps to this layer (presets[0])
  - This layer will automatically load  [kerbs](./kerbs.md)  into the layout as it depends on it:  a preset snaps to this layer (presets[0])
  - This layer is needed as dependency for layer [kerbs](#kerbs)
+
+
+
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
 2. [Basic tags for this layer](#basic-tags-for-this-layer)
 3. [Supported attributes](#supported-attributes)
-  - [just_created](#just_created)
-  - [nothing_known](#nothing_known)
   - [images](#images)
   - [kerb-type](#kerb-type)
   - [tactile-paving](#tactile-paving)
   - [kerb-height](#kerb-height)
   - [leftover-questions](#leftover-questions)
-  - [minimap](#minimap)
-  - [nearby_images](#nearby_images)
   - [lod](#lod)
-  - [favourite_status](#favourite_status)
-  - [share](#share)
-  - [qr_code](#qr_code)
-  - [last_edit](#last_edit)
-  - [all-tags](#all-tags)
-    + [Filters](#filters)
+4. [Filters](#filters)
 
 ## Themes using this layer
+
+
 
  - [blind_osm](https://mapcomplete.org/blind_osm)
  - [kerbs_and_crossings](https://mapcomplete.org/kerbs_and_crossings)
  - [onwheels](https://mapcomplete.org/onwheels)
  - [personal](https://mapcomplete.org/personal)
+
+
 
 ## Basic tags for this layer
 
@@ -55,36 +55,17 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 
 | attribute | type | values which are supported by this layer |
 -----|-----|----- |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/id#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/kerb#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice | [object Object] [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/tactile_paving#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice | [object Object] [object Object] |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/kerb:height#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pnat](../SpecialInputElements.md#pnat) | [object Object] |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/kerb#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/kerb/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [kerb](https://wiki.openstreetmap.org/wiki/Key:kerb) | Multiple choice | [raised](https://wiki.openstreetmap.org/wiki/Tag:kerb%3Draised) [lowered](https://wiki.openstreetmap.org/wiki/Tag:kerb%3Dlowered) [flush](https://wiki.openstreetmap.org/wiki/Tag:kerb%3Dflush) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/tactile_paving#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/tactile_paving/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [tactile_paving](https://wiki.openstreetmap.org/wiki/Key:tactile_paving) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:tactile_paving%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:tactile_paving%3Dno) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/kerb:height#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/kerb%3Aheight/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [kerb:height](https://wiki.openstreetmap.org/wiki/Key:kerb:height) | [pnat](../SpecialInputElements.md#pnat) | [0](https://wiki.openstreetmap.org/wiki/Tag:kerb:height%3D0) |
 
 
 
-
-### just_created
-This element shows a 'thank you' that the contributor has recently created this element
-_This tagrendering has no question and is thus read-only_
-
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/party.svg' style='width: 3rem; height: 3rem'> *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
-This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
-This tagrendering has labels 
-`added_by_default_top`
-
-### nothing_known
-
-_This tagrendering has no question and is thus read-only_
-
-
-This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time>=300 & _backend~.+
-This tagrendering has labels 
-`added_by_default_top`
 
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
-
+*{image_carousel()}{image_upload()}*
 
 
 
@@ -93,13 +74,15 @@ _This tagrendering has no question and is thus read-only_
 
 The question is `What is the height of this kerb?`
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/kerbs/raised.svg' style='width: 3rem; height: 3rem'> *This kerb is raised (>3 cm)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:kerb' target='_blank'>kerb</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:kerb%3Draised' target='_blank'>raised</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/kerbs/lowered.svg' style='width: 3rem; height: 3rem'> *This kerb is lowered (~3 cm)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:kerb' target='_blank'>kerb</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:kerb%3Dlowered' target='_blank'>lowered</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/kerbs/flush.svg' style='width: 3rem; height: 3rem'> *This kerb is flush (~0cm)* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:kerb' target='_blank'>kerb</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:kerb%3Dflush' target='_blank'>flush</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/kerbs/no.svg' style='width: 3rem; height: 3rem'> *There is no kerb here* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:kerb' target='_blank'>kerb</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:kerb%3Dno' target='_blank'>no</a>
- - _This option cannot be chosen as answer_
- -  *There is a kerb of unknown height* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:kerb' target='_blank'>kerb</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:kerb%3Dyes' target='_blank'>yes</a>
- - _This option cannot be chosen as answer_
+
+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/kerbs/raised.svg' style='width: 3rem; height: 3rem'> *This kerb is raised (>3 cm)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:kerb' target='_blank'>kerb</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:kerb%3Draised' target='_blank'>raised</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/kerbs/lowered.svg' style='width: 3rem; height: 3rem'> *This kerb is lowered (~3 cm)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:kerb' target='_blank'>kerb</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:kerb%3Dlowered' target='_blank'>lowered</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/kerbs/flush.svg' style='width: 3rem; height: 3rem'> *This kerb is flush (~0cm)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:kerb' target='_blank'>kerb</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:kerb%3Dflush' target='_blank'>flush</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/kerbs/no.svg' style='width: 3rem; height: 3rem'> *There is no kerb here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:kerb' target='_blank'>kerb</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:kerb%3Dno' target='_blank'>no</a>. _This option cannot be chosen as answer_
+ -  *There is a kerb of unknown height* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:kerb' target='_blank'>kerb</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:kerb%3Dyes' target='_blank'>yes</a>. _This option cannot be chosen as answer_
+
+
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:_geometry:type' target='_blank'>_geometry:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_geometry:type%3DPoint' target='_blank'>Point</a>
 
 
@@ -107,102 +90,46 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is `Is there tactile paving at this kerb?`
 
- -  *This kerb has tactile paving.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:tactile_paving' target='_blank'>tactile_paving</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tactile_paving%3Dyes' target='_blank'>yes</a>
- -  *This kerb does not have tactile paving.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:tactile_paving' target='_blank'>tactile_paving</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tactile_paving%3Dno' target='_blank'>no</a>
- -  *This kerb has tactile paving, but it is incorrect.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:tactile_paving' target='_blank'>tactile_paving</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tactile_paving%3Dincorrect' target='_blank'>incorrect</a>
- - _This option cannot be chosen as answer_
+
+
+ -  *This kerb has tactile paving.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:tactile_paving' target='_blank'>tactile_paving</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tactile_paving%3Dyes' target='_blank'>yes</a>
+ -  *This kerb does not have tactile paving.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:tactile_paving' target='_blank'>tactile_paving</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tactile_paving%3Dno' target='_blank'>no</a>
+ -  *This kerb has tactile paving, but it is incorrect.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:tactile_paving' target='_blank'>tactile_paving</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tactile_paving%3Dincorrect' target='_blank'>incorrect</a>. _This option cannot be chosen as answer_
+
+
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:_geometry:type' target='_blank'>_geometry:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_geometry:type%3DPoint' target='_blank'>Point</a>
 
 
 ### kerb-height
 
 The question is `What is the height of this kerb?`
-This rendering asks information about the property 
-[kerb:height](https://wiki.openstreetmap.org/wiki/Key:kerb:height)
-This is rendered with `Kerb height: {kerb:height}`
- -  *This kerb is flush and is lower than 1cm.* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:kerb:height' target='_blank'>kerb:height</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:kerb:height%3D0' target='_blank'>0</a>
+*Kerb height: {kerb:height}* is shown if `kerb:height` is set
+
+
+ -  *This kerb is flush and is lower than 1cm.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:kerb:height' target='_blank'>kerb:height</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:kerb:height%3D0' target='_blank'>0</a>
+
+
 
 
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
+*{questions( ,)}*
 
 
 
-
-
-### minimap
-Shows a small map with the feature. Added by default to every popup
-_This tagrendering has no question and is thus read-only_
-
-
-
-
-
-### nearby_images
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default_conditional`
 
 ### lod
 
 _This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### favourite_status
-
-_This tagrendering has no question and is thus read-only_
-
+*{linked_data_from_website()}*
 
 
 This tagrendering has labels 
 `added_by_default`
 
-### share
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### qr_code
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### last_edit
-Gives some metainfo about the last edit and who did edit it - rendering only
-_This tagrendering has no question and is thus read-only_
-
-
-This tagrendering is only visible in the popup if the following condition is met: _last_edit:changeset~.+ & _last_edit:contributor~.+
-This tagrendering has labels 
-`added_by_default`
-
-### all-tags
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-
-
-#### Filters
+## Filters
 
 
 

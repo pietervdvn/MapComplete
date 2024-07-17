@@ -4,7 +4,6 @@ import { existsSync, readFileSync, writeFileSync } from "fs"
 import { AllSharedLayers } from "../src/Customizations/AllSharedLayers"
 import { AllKnownLayoutsLazy } from "../src/Customizations/AllKnownLayouts"
 import { Utils } from "../src/Utils"
-import { AddEditingElements } from "../src/Models/ThemeConfig/Conversion/PrepareLayer"
 import {
     MappingConfigJson,
     QuestionableTagRenderingConfigJson,
@@ -13,7 +12,7 @@ import { TagConfigJson } from "../src/Models/ThemeConfig/Json/TagConfigJson"
 import { TagUtils } from "../src/Logic/Tags/TagUtils"
 import { TagRenderingConfigJson } from "../src/Models/ThemeConfig/Json/TagRenderingConfigJson"
 import { Translatable } from "../src/Models/ThemeConfig/Json/Translatable"
-
+import * as questions from "../assets/layers/questions/questions.json"
 export class GenerateFavouritesLayer extends Script {
     private readonly layers: LayerConfigJson[] = []
 
@@ -74,6 +73,9 @@ export class GenerateFavouritesLayer extends Script {
     }
 
     private addTagRenderings(proto: LayerConfigJson) {
+        const addedByDefault = (<{labels: string[], id: string}[]> questions.tagRenderings)
+            .filter(tr => tr?.["labels"]?.indexOf("added_by_default") > 0 || tr?.["labels"]?.indexOf("added_by_default_top") > 0 )
+            .map(tr => tr.id)
         const blacklistedIds = new Set([
             "images",
             "questions",
@@ -85,7 +87,7 @@ export class GenerateFavouritesLayer extends Script {
             "delete-button",
             "all-tags",
             "all_tags",
-            ...AddEditingElements.addedElements,
+                ...addedByDefault
         ])
 
         const generatedTagRenderings: (string | QuestionableTagRenderingConfigJson)[] = []
@@ -189,7 +191,7 @@ export class GenerateFavouritesLayer extends Script {
      * JSON.stringify(titleIcons).indexOf("icons.defaults") // => -1
      * */
     private generateTitleIcons(): TagRenderingConfigJson[] {
-        let iconsLibrary: Map<string, TagRenderingConfigJson[]> = new Map<
+        const iconsLibrary: Map<string, TagRenderingConfigJson[]> = new Map<
             string,
             TagRenderingConfigJson[]
         >()
@@ -210,7 +212,7 @@ export class GenerateFavouritesLayer extends Script {
                 }
             }
         }
-        let titleIcons: TagRenderingConfigJson[] = []
+        const titleIcons: TagRenderingConfigJson[] = []
         const seenTitleIcons = new Set<string>()
         for (const layer of this.layers) {
             for (const titleIcon of layer.titleIcons) {

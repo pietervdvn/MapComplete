@@ -11,6 +11,8 @@ mkdir dist/assets 2> /dev/null
 
 
 export NODE_OPTIONS="--max-old-space-size=16384"
+VERSION=$(cat package.json | grep '"version": ' | sed "s/^.*://" | tr -d " \",")
+sed "s/= \"0.0.0\"/= \"$VERSION\"/" -i public/service-worker.js
 
 # This script ends every line with '&&' to chain everything. A failure will thus stop the build
 npm run download:editor-layer-index &&
@@ -31,6 +33,7 @@ fi
 
 BRANCH=`git rev-parse --abbrev-ref HEAD`
 echo "The branch name is $BRANCH"
+
 
 if [ $BRANCH = "master" ] || [ $BRANCH = "develop" ]
 then

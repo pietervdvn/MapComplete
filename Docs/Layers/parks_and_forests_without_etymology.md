@@ -3,23 +3,27 @@
 # parks_and_forests_without_etymology
 
 
-[object Object]
+This layer is based on [etymology](../Layers/etymology.md)
 
 All objects which have an etymology known
 
 
 
 
+
+
  - This layer is shown at zoomlevel **18** and higher
+
+
+
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
 2. [Basic tags for this layer](#basic-tags-for-this-layer)
 3. [Supported attributes](#supported-attributes)
-  - [just_created](#just_created)
-  - [nothing_known](#nothing_known)
   - [etymology-images-from-wikipedia](#etymology-images-from-wikipedia)
   - [wikipedia-etymology](#wikipedia-etymology)
+  - [Wikipedia article of the name giver](#wikipedia-article-of-the-name-giver)
   - [zoeken op inventaris onroerend erfgoed](#zoeken-op-inventaris-onroerend-erfgoed)
   - [simple etymology](#simple-etymology)
   - [questions](#questions)
@@ -27,17 +31,15 @@ All objects which have an etymology known
   - [minimap](#minimap)
   - [etymology_multi_apply](#etymology_multi_apply)
   - [wikipedia](#wikipedia)
-  - [nearby_images](#nearby_images)
   - [lod](#lod)
-  - [favourite_status](#favourite_status)
-  - [share](#share)
-  - [qr_code](#qr_code)
-  - [last_edit](#last_edit)
-  - [all-tags](#all-tags)
 
 ## Themes using this layer
 
+
+
  - [etymology](https://mapcomplete.org/etymology)
+
+
 
 ## Basic tags for this layer
 
@@ -54,35 +56,16 @@ Elements must match **all** of the following expressions:
 
 | attribute | type | values which are supported by this layer |
 -----|-----|----- |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/id#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/name:etymology:wikidata#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [wikidata](../SpecialInputElements.md#wikidata) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/name:etymology#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [string](../SpecialInputElements.md#string) | [object Object] |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/name:etymology:wikidata#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/name%3Aetymology%3Awikidata/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [name:etymology:wikidata](https://wiki.openstreetmap.org/wiki/Key:name:etymology:wikidata) | [wikidata](../SpecialInputElements.md#wikidata) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/name:etymology#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/name%3Aetymology/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [name:etymology](https://wiki.openstreetmap.org/wiki/Key:name:etymology) | [string](../SpecialInputElements.md#string) | [unknown](https://wiki.openstreetmap.org/wiki/Tag:name:etymology%3Dunknown) |
 
 
 
-
-### just_created
-This element shows a 'thank you' that the contributor has recently created this element
-_This tagrendering has no question and is thus read-only_
-
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/party.svg' style='width: 3rem; height: 3rem'> *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
-This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
-This tagrendering has labels 
-`added_by_default_top`
-
-### nothing_known
-
-_This tagrendering has no question and is thus read-only_
-
-
-This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time>=300 & _backend~.+
-This tagrendering has labels 
-`added_by_default_top`
 
 ### etymology-images-from-wikipedia
 
 _This tagrendering has no question and is thus read-only_
-
+*{image_carousel(name:etymology:wikidata)}*
 
 
 
@@ -90,9 +73,7 @@ _This tagrendering has no question and is thus read-only_
 ### wikipedia-etymology
 
 The question is `What is the Wikidata-item that this object is named after?`
-This rendering asks information about the property 
-[name:etymology:wikidata](https://wiki.openstreetmap.org/wiki/Key:name:etymology:wikidata)
-This is rendered with `<h3>Wikipedia article of the name giver</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}`
+*<h3>Wikipedia article of the name giver</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}* is shown if `name:etymology:wikidata` is set
 
 
 
@@ -100,7 +81,7 @@ This is rendered with `<h3>Wikipedia article of the name giver</h3>{wikipedia(na
 ### zoeken op inventaris onroerend erfgoed
 
 _This tagrendering has no question and is thus read-only_
-
+*<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='_blank'>Search on inventaris onroerend erfgoed</a>*
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:_country' target='_blank'>_country</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_country%3Dbe' target='_blank'>be</a>
 
@@ -108,17 +89,19 @@ This tagrendering is only visible in the popup if the following condition is met
 ### simple etymology
 
 The question is `What is this object named after?`
-This rendering asks information about the property 
-[name:etymology](https://wiki.openstreetmap.org/wiki/Key:name:etymology)
-This is rendered with `Named after {name:etymology}`
- -  *The origin of this name is unknown in all literature* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:name:etymology' target='_blank'>name:etymology</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:name:etymology%3Dunknown' target='_blank'>unknown</a>
+*Named after {name:etymology}* is shown if `name:etymology` is set
+
+
+ -  *The origin of this name is unknown in all literature* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:name:etymology' target='_blank'>name:etymology</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:name:etymology%3Dunknown' target='_blank'>unknown</a>
+
+
 
 
 
 ### questions
 Show the questions block at this location
 _This tagrendering has no question and is thus read-only_
-
+*{questions()}*
 
 
 
@@ -126,7 +109,7 @@ _This tagrendering has no question and is thus read-only_
 ### street-name-sign-image
 
 _This tagrendering has no question and is thus read-only_
-
+*{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Add image of a street name sign)}*
 
 
 
@@ -134,7 +117,7 @@ _This tagrendering has no question and is thus read-only_
 ### minimap
 
 _This tagrendering has no question and is thus read-only_
-
+*{minimap(18, id, _same_name_ids):height:10rem}*
 
 
 
@@ -142,7 +125,7 @@ _This tagrendering has no question and is thus read-only_
 ### etymology_multi_apply
 
 _This tagrendering has no question and is thus read-only_
-
+*{multi_apply(_same_name_ids, name:etymology:wikidata;name:etymology, Auto-applying data on all segments with the same name, true)}*
 
 
 
@@ -150,71 +133,19 @@ _This tagrendering has no question and is thus read-only_
 ### wikipedia
 
 _This tagrendering has no question and is thus read-only_
-
+*A Wikipedia article about this <b>street</b> exists:<br/>{wikipedia():max-height:25rem}*
 
 This tagrendering is only visible in the popup if the following condition is met: wikidata~.+
 
 
-### nearby_images
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default_conditional`
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### favourite_status
-
-_This tagrendering has no question and is thus read-only_
-
+*{linked_data_from_website()}*
 
 
 This tagrendering has labels 
 `added_by_default`
-
-### share
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### qr_code
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### last_edit
-Gives some metainfo about the last edit and who did edit it - rendering only
-_This tagrendering has no question and is thus read-only_
-
-
-This tagrendering is only visible in the popup if the following condition is met: _last_edit:changeset~.+ & _last_edit:contributor~.+
-This tagrendering has labels 
-`added_by_default`
-
-### all-tags
-
-_This tagrendering has no question and is thus read-only_
-
-
-
 
 
 This document is autogenerated from [assets/themes/etymology/etymology.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/themes/etymology/etymology.json)

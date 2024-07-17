@@ -3,21 +3,24 @@
 # windturbine
 
 
-[object Object]
+
 
 Modern windmills generating electricity
 
 
 
 
+
+
  - This layer is shown at zoomlevel **10** and higher
+
+
+
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
 2. [Basic tags for this layer](#basic-tags-for-this-layer)
 3. [Supported attributes](#supported-attributes)
-  - [just_created](#just_created)
-  - [nothing_known](#nothing_known)
   - [turbine-output](#turbine-output)
   - [turbine-operator](#turbine-operator)
   - [turbine-height](#turbine-height)
@@ -26,19 +29,16 @@ Modern windmills generating electricity
   - [windturbine-fixme](#windturbine-fixme)
   - [images](#images)
   - [leftover-questions](#leftover-questions)
-  - [minimap](#minimap)
-  - [nearby_images](#nearby_images)
   - [lod](#lod)
-  - [favourite_status](#favourite_status)
-  - [share](#share)
-  - [qr_code](#qr_code)
-  - [last_edit](#last_edit)
-  - [all-tags](#all-tags)
 
 ## Themes using this layer
 
+
+
  - [openwindpowermap](https://mapcomplete.org/openwindpowermap)
  - [personal](https://mapcomplete.org/personal)
+
+
 
 ## Basic tags for this layer
 
@@ -52,41 +52,20 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 
 | attribute | type | values which are supported by this layer |
 -----|-----|----- |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/id#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/generator:output:electricity#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/operator#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [string](../SpecialInputElements.md#string) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/height#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [pfloat](../SpecialInputElements.md#pfloat) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/rotor:diameter#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [float](../SpecialInputElements.md#float) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/start_date#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [date](../SpecialInputElements.md#date) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/fixme#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | [text](../SpecialInputElements.md#text) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/generator:output:electricity#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/generator%3Aoutput%3Aelectricity/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [generator:output:electricity](https://wiki.openstreetmap.org/wiki/Key:generator:output:electricity) | [pfloat](../SpecialInputElements.md#pfloat) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/operator#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/operator/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [operator](https://wiki.openstreetmap.org/wiki/Key:operator) | [string](../SpecialInputElements.md#string) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/height#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/height/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [height](https://wiki.openstreetmap.org/wiki/Key:height) | [pfloat](../SpecialInputElements.md#pfloat) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/rotor:diameter#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/rotor%3Adiameter/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [rotor:diameter](https://wiki.openstreetmap.org/wiki/Key:rotor:diameter) | [float](../SpecialInputElements.md#float) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/start_date#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/start_date/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [start_date](https://wiki.openstreetmap.org/wiki/Key:start_date) | [date](../SpecialInputElements.md#date) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/fixme#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/fixme/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [fixme](https://wiki.openstreetmap.org/wiki/Key:fixme) | [text](../SpecialInputElements.md#text) |  |
 
 
 
-
-### just_created
-This element shows a 'thank you' that the contributor has recently created this element
-_This tagrendering has no question and is thus read-only_
-
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/party.svg' style='width: 3rem; height: 3rem'> *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
-This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
-This tagrendering has labels 
-`added_by_default_top`
-
-### nothing_known
-
-_This tagrendering has no question and is thus read-only_
-
-
-This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time>=300 & _backend~.+
-This tagrendering has labels 
-`added_by_default_top`
 
 ### turbine-output
 
 The question is `What is the power output of this wind turbine? (e.g. 2.3 MW)`
-This rendering asks information about the property 
-[generator:output:electricity](https://wiki.openstreetmap.org/wiki/Key:generator:output:electricity)
-This is rendered with `The power output of this wind turbine is {generator:output:electricity}.`
+*The power output of this wind turbine is {generator:output:electricity}.* is shown if `generator:output:electricity` is set
 
 
 
@@ -94,9 +73,7 @@ This is rendered with `The power output of this wind turbine is {generator:outpu
 ### turbine-operator
 
 The question is `Who operates this wind turbine?`
-This rendering asks information about the property 
-[operator](https://wiki.openstreetmap.org/wiki/Key:operator)
-This is rendered with `This wind turbine is operated by {operator}.`
+*This wind turbine is operated by {operator}.* is shown if `operator` is set
 
 
 
@@ -104,9 +81,7 @@ This is rendered with `This wind turbine is operated by {operator}.`
 ### turbine-height
 
 The question is `What is the total height of this wind turbine (including rotor radius), in metres?`
-This rendering asks information about the property 
-[height](https://wiki.openstreetmap.org/wiki/Key:height)
-This is rendered with `The total height (including rotor radius) of this wind turbine is {height} metres.`
+*The total height (including rotor radius) of this wind turbine is {height} metres.* is shown if `height` is set
 
 
 
@@ -114,9 +89,7 @@ This is rendered with `The total height (including rotor radius) of this wind tu
 ### turbine-diameter
 
 The question is `What is the rotor diameter of this wind turbine, in metres?`
-This rendering asks information about the property 
-[rotor:diameter](https://wiki.openstreetmap.org/wiki/Key:rotor:diameter)
-This is rendered with `The rotor diameter of this wind turbine is {rotor:diameter} metres.`
+*The rotor diameter of this wind turbine is {rotor:diameter} metres.* is shown if `rotor:diameter` is set
 
 
 
@@ -124,9 +97,7 @@ This is rendered with `The rotor diameter of this wind turbine is {rotor:diamete
 ### turbine-start-date
 
 The question is `When did this wind turbine go into operation?`
-This rendering asks information about the property 
-[start_date](https://wiki.openstreetmap.org/wiki/Key:start_date)
-This is rendered with `This wind turbine went into operation on/in {start_date}.`
+*This wind turbine went into operation on/in {start_date}.* is shown if `start_date` is set
 
 
 
@@ -134,9 +105,7 @@ This is rendered with `This wind turbine went into operation on/in {start_date}.
 ### windturbine-fixme
 
 The question is `Is there something wrong with how this is mapped, that you weren't able to fix here? (leave a note to OpenStreetMap experts)`
-This rendering asks information about the property 
-[fixme](https://wiki.openstreetmap.org/wiki/Key:fixme)
-This is rendered with `Extra information for OpenStreetMap experts: {fixme}`
+*Extra information for OpenStreetMap experts: {fixme}* is shown if `fixme` is set
 
 
 
@@ -144,7 +113,7 @@ This is rendered with `Extra information for OpenStreetMap experts: {fixme}`
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
-
+*{image_carousel()}{image_upload()}*
 
 
 
@@ -152,79 +121,19 @@ _This tagrendering has no question and is thus read-only_
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
+*{questions( ,)}*
 
 
 
-
-
-### minimap
-Shows a small map with the feature. Added by default to every popup
-_This tagrendering has no question and is thus read-only_
-
-
-
-
-
-### nearby_images
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default_conditional`
 
 ### lod
 
 _This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### favourite_status
-
-_This tagrendering has no question and is thus read-only_
-
+*{linked_data_from_website()}*
 
 
 This tagrendering has labels 
 `added_by_default`
-
-### share
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### qr_code
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### last_edit
-Gives some metainfo about the last edit and who did edit it - rendering only
-_This tagrendering has no question and is thus read-only_
-
-
-This tagrendering is only visible in the popup if the following condition is met: _last_edit:changeset~.+ & _last_edit:contributor~.+
-This tagrendering has labels 
-`added_by_default`
-
-### all-tags
-
-_This tagrendering has no question and is thus read-only_
-
-
-
 
 
 This document is autogenerated from [assets/layers/windturbine/windturbine.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/windturbine/windturbine.json)

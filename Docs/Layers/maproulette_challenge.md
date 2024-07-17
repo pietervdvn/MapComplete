@@ -3,9 +3,11 @@
 # maproulette_challenge
 
 
-[object Object]
+
 
 Layer showing tasks of a single MapRoulette challenge. This layer is intended to be reused and extended in themes; refer to [the documentation](https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Integrating_Maproulette.md) on how to do this.
+
+
 
 
 
@@ -17,31 +19,30 @@ Layer showing tasks of a single MapRoulette challenge. This layer is intended to
 This layer is loaded from an external source, namely 
 
 `https://maproulette.org/api/v2/challenge/view/27971`
+
+
+
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
 2. [Basic tags for this layer](#basic-tags-for-this-layer)
 3. [Supported attributes](#supported-attributes)
-  - [just_created](#just_created)
-  - [nothing_known](#nothing_known)
   - [details](#details)
   - [status](#status)
   - [leftover-questions](#leftover-questions)
-  - [minimap](#minimap)
   - [lod](#lod)
-  - [favourite_status](#favourite_status)
-  - [share](#share)
-  - [qr_code](#qr_code)
-  - [last_edit](#last_edit)
-  - [all-tags](#all-tags)
-    + [Filters](#filters)
+4. [Filters](#filters)
 
 ## Themes using this layer
+
+
 
  - [atm](https://mapcomplete.org/atm)
  - [onwheels](https://mapcomplete.org/onwheels)
  - [personal](https://mapcomplete.org/personal)
  - [street_lighting_assen](https://mapcomplete.org/street_lighting_assen)
+
+
 
 ## Basic tags for this layer
 
@@ -55,34 +56,15 @@ Elements must match the expression **mr_taskId~.+**
 
 | attribute | type | values which are supported by this layer |
 -----|-----|----- |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/id#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/mr_taskStatus#values'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>] [object Object] | Multiple choice | [object Object] [object Object] [object Object] [object Object] [object Object] [object Object] [object Object] [object Object] |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/mr_taskStatus#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/mr_taskStatus/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [mr_taskStatus](https://wiki.openstreetmap.org/wiki/Key:mr_taskStatus) | Multiple choice | [Created](https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DCreated) [Fixed](https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DFixed) [False positive](https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DFalse positive) [Skipped](https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DSkipped) [Deleted](https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DDeleted) [Already fixed](https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DAlready fixed) [Too hard](https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DToo hard) [Disabled](https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DDisabled) |
 
 
 
-
-### just_created
-This element shows a 'thank you' that the contributor has recently created this element
-_This tagrendering has no question and is thus read-only_
-
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/party.svg' style='width: 3rem; height: 3rem'> *You just created this element! Thanks for sharing this info with the world and helping people worldwide.* corresponds with id~.+
-This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time<300 & (_version_number= | <a href='https://wiki.openstreetmap.org/wiki/Key:_version_number' target='_blank'>_version_number</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_version_number%3D1' target='_blank'>1</a>) & _backend~.+
-This tagrendering has labels 
-`added_by_default_top`
-
-### nothing_known
-
-_This tagrendering has no question and is thus read-only_
-
-
-This tagrendering is only visible in the popup if the following condition is met: _last_edit:passed_time>=300 & _backend~.+
-This tagrendering has labels 
-`added_by_default_top`
 
 ### details
 
 _This tagrendering has no question and is thus read-only_
-
+*{maproulette_task()}*
 
 
 
@@ -91,29 +73,25 @@ _This tagrendering has no question and is thus read-only_
 
 _This tagrendering has no question and is thus read-only_
 
- -  *Task is created* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:mr_taskStatus' target='_blank'>mr_taskStatus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DCreated' target='_blank'>Created</a>
- -  *Task is fixed* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:mr_taskStatus' target='_blank'>mr_taskStatus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DFixed' target='_blank'>Fixed</a>
- -  *Task is a false positive* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:mr_taskStatus' target='_blank'>mr_taskStatus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DFalse positive' target='_blank'>False positive</a>
- -  *Task is skipped* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:mr_taskStatus' target='_blank'>mr_taskStatus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DSkipped' target='_blank'>Skipped</a>
- -  *Task is deleted* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:mr_taskStatus' target='_blank'>mr_taskStatus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DDeleted' target='_blank'>Deleted</a>
- -  *Task is already fixed* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:mr_taskStatus' target='_blank'>mr_taskStatus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DAlready fixed' target='_blank'>Already fixed</a>
- -  *Task is marked as too hard* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:mr_taskStatus' target='_blank'>mr_taskStatus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DToo hard' target='_blank'>Too hard</a>
- -  *Task is disabled* corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:mr_taskStatus' target='_blank'>mr_taskStatus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DDisabled' target='_blank'>Disabled</a>
+
+
+ -  *Task is created* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:mr_taskStatus' target='_blank'>mr_taskStatus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DCreated' target='_blank'>Created</a>
+ -  *Task is fixed* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:mr_taskStatus' target='_blank'>mr_taskStatus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DFixed' target='_blank'>Fixed</a>
+ -  *Task is a false positive* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:mr_taskStatus' target='_blank'>mr_taskStatus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DFalse positive' target='_blank'>False positive</a>
+ -  *Task is skipped* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:mr_taskStatus' target='_blank'>mr_taskStatus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DSkipped' target='_blank'>Skipped</a>
+ -  *Task is deleted* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:mr_taskStatus' target='_blank'>mr_taskStatus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DDeleted' target='_blank'>Deleted</a>
+ -  *Task is already fixed* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:mr_taskStatus' target='_blank'>mr_taskStatus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DAlready fixed' target='_blank'>Already fixed</a>
+ -  *Task is marked as too hard* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:mr_taskStatus' target='_blank'>mr_taskStatus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DToo hard' target='_blank'>Too hard</a>
+ -  *Task is disabled* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:mr_taskStatus' target='_blank'>mr_taskStatus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DDisabled' target='_blank'>Disabled</a>
+
+
 
 
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
-
-
-
-
-
-### minimap
-Shows a small map with the feature. Added by default to every popup
-_This tagrendering has no question and is thus read-only_
-
+*{questions( ,)}*
 
 
 
@@ -121,57 +99,13 @@ _This tagrendering has no question and is thus read-only_
 ### lod
 
 _This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### favourite_status
-
-_This tagrendering has no question and is thus read-only_
-
+*{linked_data_from_website()}*
 
 
 This tagrendering has labels 
 `added_by_default`
 
-### share
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### qr_code
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-This tagrendering has labels 
-`added_by_default`
-
-### last_edit
-Gives some metainfo about the last edit and who did edit it - rendering only
-_This tagrendering has no question and is thus read-only_
-
-
-This tagrendering is only visible in the popup if the following condition is met: _last_edit:changeset~.+ & _last_edit:contributor~.+
-This tagrendering has labels 
-`added_by_default`
-
-### all-tags
-
-_This tagrendering has no question and is thus read-only_
-
-
-
-
-
-#### Filters
+## Filters
 
 
 

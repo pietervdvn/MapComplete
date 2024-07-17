@@ -53,7 +53,7 @@ export class Changes {
             featureSwitches?: FeatureSwitchState
         },
         leftRightSensitive: boolean = false,
-        reportError?: (string: string | Error) => void,
+        reportError?: (string: string | Error) => void
     ) {
         this._leftRightSensitive = leftRightSensitive
         // We keep track of all changes just as well
@@ -68,7 +68,7 @@ export class Changes {
             state.osmConnection,
             state.featurePropertiesStore,
             this,
-            (e) => this._reportError(e),
+            (e) => this._reportError(e)
         )
         this.historicalUserLocations = state.historicalUserLocations
 
@@ -82,7 +82,7 @@ export class Changes {
             modifiedObjects: OsmObject[]
             newObjects: OsmObject[]
             deletedObjects: OsmObject[]
-        },
+        }
     ): string {
         const changedElements = allChanges.modifiedObjects ?? []
         const newElements = allChanges.newObjects ?? []
@@ -120,6 +120,7 @@ export class Changes {
             })
             return items
         }
+
         const metatagsDocs: {
             key?: string
             value?: string
@@ -132,46 +133,46 @@ export class Changes {
                 [
                     {
                         key: "comment",
-                        docs: "The changeset comment. Will be a fixed string, mentioning the theme",
+                        docs: "The changeset comment. Will be a fixed string, mentioning the theme"
                     },
                     {
                         key: "theme",
-                        docs: "The name of the theme that was used to create this change. ",
+                        docs: "The name of the theme that was used to create this change. "
                     },
                     {
                         key: "source",
                         value: "survey",
-                        docs: "The contributor had their geolocation enabled while making changes",
+                        docs: "The contributor had their geolocation enabled while making changes"
                     },
                     {
                         key: "change_within_{distance}",
-                        docs: "If the contributor enabled their geolocation, this will hint how far away they were from the objects they edited. This gives an indication of proximity and if they truly surveyed or were armchair-mapping",
+                        docs: "If the contributor enabled their geolocation, this will hint how far away they were from the objects they edited. This gives an indication of proximity and if they truly surveyed or were armchair-mapping"
                     },
                     {
                         key: "change_over_{distance}",
-                        docs: "If the contributor enabled their geolocation, this will hint how far away they were from the objects they edited. If they were over 5000m away, the might have been armchair-mapping",
+                        docs: "If the contributor enabled their geolocation, this will hint how far away they were from the objects they edited. If they were over 5000m away, the might have been armchair-mapping"
                     },
                     {
                         key: "created_by",
                         value: "MapComplete <version>",
-                        docs: "The piece of software used to create this changeset; will always start with MapComplete, followed by the version number",
+                        docs: "The piece of software used to create this changeset; will always start with MapComplete, followed by the version number"
                     },
                     {
                         key: "locale",
                         value: "en|nl|de|...",
-                        docs: "The code of the language that the contributor used MapComplete in. Hints what language the user speaks.",
+                        docs: "The code of the language that the contributor used MapComplete in. Hints what language the user speaks."
                     },
                     {
                         key: "host",
                         value: "https://mapcomplete.org/<theme>",
-                        docs: "The URL that the contributor used to make changes. One can see the used instance with this",
+                        docs: "The URL that the contributor used to make changes. One can see the used instance with this"
                     },
                     {
                         key: "imagery",
-                        docs: "The identifier of the used background layer, this will probably be an identifier from the [editor layer index](https://github.com/osmlab/editor-layer-index)",
-                    },
+                        docs: "The identifier of the used background layer, this will probably be an identifier from the [editor layer index](https://github.com/osmlab/editor-layer-index)"
+                    }
                 ],
-                "default",
+                "default"
             ),
             ...addSource(ChangeTagAction.metatags, "ChangeTag"),
             ...addSource(ChangeLocationAction.metatags, "ChangeLocation"),
@@ -193,15 +194,15 @@ export class Changes {
                 metatagsDocs.map(({ key, value, docs, source, changeType, specialMotivation }) => [
                     key ?? changeType?.join(", ") ?? "",
                     value,
-                   [
+                    [
                         docs,
                         specialMotivation
                             ? "This might give a reason per modified node or way"
-                            : "",
+                            : ""
                     ].join("\n"),
-                    source,
-                ]),
-            ),
+                    source
+                ])
+            )
         ].join("\n\n")
     }
 
@@ -247,11 +248,13 @@ export class Changes {
 
     public async applyAction(action: OsmChangeAction): Promise<void> {
         const changeDescriptions = await action.Perform(this)
-        changeDescriptions[0].meta.distanceToObject = this.calculateDistanceToChanges(
+        const remapped = ChangeDescriptionTools.rewriteAllIds(changeDescriptions, this._changesetHandler._remappings)
+
+        remapped[0].meta.distanceToObject = this.calculateDistanceToChanges(
             action,
-            changeDescriptions,
+            remapped
         )
-        this.applyChanges(changeDescriptions)
+        this.applyChanges(remapped)
     }
 
     public applyChanges(changes: ChangeDescription[]) {
@@ -263,14 +266,30 @@ export class Changes {
 
     public CreateChangesetObjects(
         changes: ChangeDescription[],
-        downloadedOsmObjects: OsmObject[],
+        downloadedOsmObjects: OsmObject[]
     ): {
         newObjects: OsmObject[]
         modifiedObjects: OsmObject[]
         deletedObjects: OsmObject[]
     } {
-        const objects: Map<string, OsmObject> = new Map<string, OsmObject>()
+        /**
+         * This is a rather complicated method which does a lot of stuff.
+         *
+         * Our main important data is `state` and `objects` which will determine what is returned.
+         * First init all those states, then we actually apply the changes.
+         * At last, we sort them for easy handling, which is rather boring
+         */
+
+        // ------------------ INIT -------------------------
+
+        /**
+         * Keeps track of every object what actually happened with it
+         */
         const states: Map<string, "unchanged" | "created" | "modified" | "deleted"> = new Map()
+        /**
+         * Keeps track of the _new_ state of the objects, how they should end up on the database
+         */
+        const objects: Map<string, OsmObject> = new Map<string, OsmObject>()
 
         for (const o of downloadedOsmObjects) {
             objects.set(o.type + "/" + o.id, o)
@@ -281,6 +300,8 @@ export class Changes {
             objects.set(o.type + "/" + o.id, o)
             states.set(o.type + "/" + o.id, "unchanged")
         }
+
+        // -------------- APPLY INTERMEDIATE CHANGES -----------------
 
         for (const change of changes) {
             let changed = false
@@ -293,7 +314,7 @@ export class Changes {
                 }
                 if (change.changes === undefined) {
                     // This object is a change to a newly created object. However, we have not seen the creation changedescription yet!
-                    throw "Not a creation of the object"
+                    throw "Not a creation of the object: " + JSON.stringify(change)
                 }
                 // This is a new object that should be created
                 states.set(id, "created")
@@ -399,10 +420,12 @@ export class Changes {
             }
         }
 
+
+        // ----------------- SORT OBJECTS -------------------
         const result = {
             newObjects: [],
             modifiedObjects: [],
-            deletedObjects: [],
+            deletedObjects: []
         }
 
         objects.forEach((v, id) => {
@@ -425,14 +448,14 @@ export class Changes {
             result.modifiedObjects.length,
             "modified;",
             result.deletedObjects,
-            "deleted",
+            "deleted"
         )
         return result
     }
 
     private calculateDistanceToChanges(
         change: OsmChangeAction,
-        changeDescriptions: ChangeDescription[],
+        changeDescriptions: ChangeDescription[]
     ) {
         const locations = this.historicalUserLocations?.features?.data
         if (locations === undefined) {
@@ -452,7 +475,7 @@ export class Changes {
             .filter((feat) => feat.geometry.type === "Point")
             .filter((feat) => {
                 const visitTime = new Date(
-                    (<GeoLocationPointProperties>(<any>feat.properties)).date,
+                    (<GeoLocationPointProperties>(<any>feat.properties)).date
                 )
                 // In seconds
                 const diff = (now.getTime() - visitTime.getTime()) / 1000
@@ -499,9 +522,9 @@ export class Changes {
                     ...recentLocationPoints.map((gpsPoint) => {
                         const otherCoor = GeoOperations.centerpointCoordinates(gpsPoint)
                         return GeoOperations.distanceBetween(coor, otherCoor)
-                    }),
-                ),
-            ),
+                    })
+                )
+            )
         )
     }
 
@@ -538,19 +561,50 @@ export class Changes {
         }
     }
 
+    public static fragmentChanges(pending: ChangeDescription[], objects: OsmObject[]): {
+        refused: ChangeDescription[];
+        toUpload: ChangeDescription[]
+    } {
+        const refused: ChangeDescription[] = []
+        const toUpload: ChangeDescription[] = []
+
+        // All ids which have an 'update'
+        const createdIds =
+            new Set(pending.filter(cd => cd.type === "node" && cd.changes !== undefined).map(cd => cd.id))
+        pending.forEach(c => {
+            if (c.id < 0) {
+                if (createdIds.has(c.id)) {
+                    toUpload.push(c)
+                } else {
+                    reportError(`Got an orphaned change. The 'creation'-change description for ${c.type}/${c.id} got lost. Permanently dropping this change:`+JSON.stringify(c))
+                }
+                return
+            }
+            const matchFound = !!objects.find(o => o.id === c.id && o.type === c.type)
+            if (matchFound) {
+                toUpload.push(c)
+            } else {
+                refused.push(c)
+            }
+        })
+
+        return {refused, toUpload}
+
+    }
+
     /**
      * Upload the selected changes to OSM. This is typically called with changes for a single theme
      * @return pending changes which could not be uploaded for some reason; undefined or empty array if successful
      */
     private async flushSelectChanges(
         pending: ChangeDescription[],
-        openChangeset: UIEventSource<number>,
+        openChangeset: UIEventSource<number>
     ): Promise<ChangeDescription[]> {
         const neededIds = Changes.GetNeededIds(pending)
         // We _do not_ pass in the Changes object itself - we want the data from OSM directly in order to apply the changes
         const downloader = new OsmObjectDownloader(this.backend, undefined)
         let osmObjects = await Promise.all<{ id: string; osmObj: OsmObject | "deleted" }>(
-            neededIds.map(id => this.getOsmObject(id, downloader)),
+            neededIds.map(id => this.getOsmObject(id, downloader))
         )
 
         osmObjects = Utils.NoNull(osmObjects)
@@ -579,21 +633,21 @@ export class Changes {
                 pending
                     .filter(
                         (descr) =>
-                            descr.meta.changeType !== undefined && descr.meta.changeType !== null,
+                            descr.meta.changeType !== undefined && descr.meta.changeType !== null
                     )
-                    .map((descr) => descr.meta.changeType),
+                    .map((descr) => descr.meta.changeType)
             ),
             ([key, count]) => ({
                 key: key,
                 value: count,
-                aggregate: true,
-            }),
+                aggregate: true
+            })
         )
         const motivations = pending
             .filter((descr) => descr.meta.specialMotivation !== undefined)
             .map((descr) => ({
                 key: descr.meta.changeType + ":" + descr.type + "/" + descr.id,
-                value: descr.meta.specialMotivation,
+                value: descr.meta.specialMotivation
             }))
 
         const distances = Utils.NoNull(pending.map((descr) => descr.meta.distanceToObject))
@@ -624,9 +678,9 @@ export class Changes {
                 return {
                     key,
                     value: count,
-                    aggregate: true,
+                    aggregate: true
                 }
-            }),
+            })
         )
 
         // This method is only called with changedescriptions for this theme
@@ -639,32 +693,21 @@ export class Changes {
         const metatags: ChangesetTag[] = [
             {
                 key: "comment",
-                value: comment,
+                value: comment
             },
             {
                 key: "theme",
-                value: theme,
+                value: theme
             },
             ...perType,
             ...motivations,
-            ...perBinMessage,
+            ...perBinMessage
         ]
 
-        const refused: ChangeDescription[] = []
-        let toUpload: ChangeDescription[] = []
 
-        pending.forEach(c => {
-            if (c.id < 0) {
-                toUpload.push(c)
-                return
-            }
-            const matchFound = !!objects.find(o => o.id === c.id && o.type === c.type)
-            if (matchFound) {
-                toUpload.push(c)
-            } else {
-                refused.push(c)
-            }
-        })
+        let {toUpload, refused} = Changes.fragmentChanges(
+            pending, objects
+        )
 
         await this._changesetHandler.UploadChangeset(
             (csId, remappings) => {
@@ -681,10 +724,10 @@ export class Changes {
                 return Changes.createChangesetFor("" + csId, changes)
             },
             metatags,
-            openChangeset,
+            openChangeset
         )
 
-        console.log("Upload successful! Refused changes are",refused)
+        console.log("Upload successful! Refused changes are", refused)
         return refused
     }
 
@@ -708,14 +751,14 @@ export class Changes {
                     try {
                         const openChangeset = UIEventSource.asInt(
                             this.state.osmConnection.GetPreference(
-                                "current-open-changeset-" + theme,
-                            ),
+                                "current-open-changeset-" + theme
+                            )
                         )
                         console.log(
                             "Using current-open-changeset-" +
                             theme +
                             " from the preferences, got " +
-                            openChangeset.data,
+                            openChangeset.data
                         )
 
                         const refused = await self.flushSelectChanges(pendingChanges, openChangeset)
@@ -730,7 +773,7 @@ export class Changes {
                         this.errors.ping()
                         return pendingChanges
                     }
-                }),
+                })
             )
 
             // We keep all the refused changes to try them again
@@ -738,7 +781,7 @@ export class Changes {
         } catch (e) {
             console.error(
                 "Could not handle changes - probably an old, pending changeset in localstorage with an invalid format; erasing those",
-                e,
+                e
             )
             this.errors.data.push(e)
             this.errors.ping()

@@ -8,7 +8,7 @@ import {
     SpecialVisualizationState,
 } from "./SpecialVisualization"
 import { HistogramViz } from "./Popup/HistogramViz"
-import { MinimapViz } from "./Popup/MinimapViz"
+import MinimapViz from "./Popup/MinimapViz.svelte"
 import { ShareLinkViz } from "./Popup/ShareLinkViz"
 import { UploadToOsmViz } from "./Popup/UploadToOsmViz"
 import { MultiApplyViz } from "./Popup/MultiApplyViz"
@@ -125,7 +125,7 @@ class NearbyImageVis implements SpecialVisualization {
         args: string[],
         feature: Feature,
         layer: LayerConfig
-    ): BaseUIElement {
+    ): SvelteUIElement {
         const isOpen = args[0] === "open"
         const readonly = args[1] === "readonly"
         const [lon, lat] = GeoOperations.centerpointCoordinates(feature)
@@ -240,7 +240,7 @@ export class QuestionViz implements SpecialVisualization {
         args: string[],
         feature: Feature,
         layer: LayerConfig
-    ): BaseUIElement {
+    ): SvelteUIElement {
         const labels = args[0]
             ?.split(";")
             ?.map((s) => s.trim())
@@ -346,26 +346,6 @@ export default class SpecialVisualizations {
         return firstPart + "\n\n" + helpTexts.join("\n\n")
     }
 
-    // noinspection JSUnusedGlobalSymbols
-    public static renderExampleOfSpecial(
-        state: SpecialVisualizationState,
-        s: SpecialVisualization
-    ): BaseUIElement {
-        const examples =
-            s.structuredExamples === undefined
-                ? []
-                : s.structuredExamples().map((e) => {
-                      return s.constr(
-                          state,
-                          new UIEventSource<Record<string, string>>(e.feature.properties),
-                          e.args,
-                          e.feature,
-                          undefined
-                      )
-                  })
-        return new Combine([new Title(s.funcName), s.docs, ...examples])
-    }
-
     private static initList(): SpecialVisualization[] {
         const specialVisualizations: SpecialVisualization[] = [
             new QuestionViz(),
@@ -426,7 +406,34 @@ export default class SpecialVisualizations {
             },
             new HistogramViz(),
             new StealViz(),
-            new MinimapViz(),
+            {
+                funcName : "minimap",
+                docs :"A small map showing the selected feature.",
+                needsUrls : [],
+                args : [
+                    {
+                        doc: "The (maximum) zoomlevel: the target zoomlevel after fitting the entire feature. The minimap will fit the entire feature, then zoom out to this zoom level. The higher, the more zoomed in with 1 being the entire world and 19 being really close",
+                        name: "zoomlevel",
+                        defaultValue: "18",
+                    },
+                    {
+                        doc: "(Matches all resting arguments) This argument should be the key of a property of the feature. The corresponding value is interpreted as either the id or the a list of ID's. The features with these ID's will be shown on this minimap. (Note: if the key is 'id', list interpration is disabled)",
+                        name: "idKey",
+                        defaultValue: "id",
+                    },
+                ],
+                example: "`{minimap()}`, `{minimap(17, id, _list_of_embedded_feature_ids_calculated_by_calculated_tag):height:10rem; border: 2px solid black}`",
+
+                constr(
+                    state: SpecialVisualizationState,
+                    tagSource: UIEventSource<Record<string, string>>,
+                    args: string[],
+                    feature: Feature
+
+                ): SvelteUIElement {
+                    return new SvelteUIElement(MinimapViz, {state, args, feature, tagSource})
+                }
+            },
             {
                 funcName: "split_button",
                 docs: "Adds a button which allows to split a way",

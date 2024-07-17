@@ -214,7 +214,7 @@ export class OsmConnection {
         this.auth.xhr(
             {
                 method: "GET",
-                path: "/api/0.6/user/details",
+                path: "/api/0.6/user/details"
             },
             (err, details: XMLDocument) => {
                 if (err != null) {
@@ -326,9 +326,9 @@ export class OsmConnection {
                     method,
                     headers: header,
                     content,
-                    path: `/api/0.6/${path}`,
+                    path: `/api/0.6/${path}`
                 },
-                function (err, response) {
+                function(err, response) {
                     if (err !== null) {
                         error(err)
                     } else {
@@ -339,7 +339,7 @@ export class OsmConnection {
         })
     }
 
-    public async post<T extends string>(
+    public async post<T = string>(
         path: string,
         content?: string,
         header?: Record<string, string>,
@@ -408,7 +408,7 @@ export class OsmConnection {
             "notes.json",
             content,
             {
-                "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+                "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"
             },
             true
         )
@@ -449,7 +449,7 @@ export class OsmConnection {
             file: gpx,
             description: options.description,
             tags: options.labels?.join(",") ?? "",
-            visibility: options.visibility,
+            visibility: options.visibility
         }
 
         if (!contents.description) {
@@ -457,9 +457,9 @@ export class OsmConnection {
         }
         const extras = {
             file:
-                '; filename="' +
+                "; filename=\"" +
                 (options.filename ?? "gpx_track_mapcomplete_" + new Date().toISOString()) +
-                '"\r\nContent-Type: application/gpx+xml',
+                "\"\r\nContent-Type: application/gpx+xml"
         }
 
         const boundary = "987654"
@@ -467,7 +467,7 @@ export class OsmConnection {
         let body = ""
         for (const key in contents) {
             body += "--" + boundary + "\r\n"
-            body += 'Content-Disposition: form-data; name="' + key + '"'
+            body += "Content-Disposition: form-data; name=\"" + key + "\""
             if (extras[key] !== undefined) {
                 body += extras[key]
             }
@@ -478,7 +478,7 @@ export class OsmConnection {
 
         const response = await this.post("gpx/create", body, {
             "Content-Type": "multipart/form-data; boundary=" + boundary,
-            "Content-Length": "" + body.length,
+            "Content-Length": "" + body.length
         })
         const parsed = JSON.parse(response)
         console.log("Uploaded GPX track", parsed)
@@ -499,9 +499,9 @@ export class OsmConnection {
                 {
                     method: "POST",
 
-                    path: `/api/0.6/notes/${id}/comment?text=${encodeURIComponent(text)}`,
+                    path: `/api/0.6/notes/${id}/comment?text=${encodeURIComponent(text)}`
                 },
-                function (err) {
+                function(err) {
                     if (err !== null) {
                         error(err)
                     } else {
@@ -516,7 +516,7 @@ export class OsmConnection {
      * To be called by land.html
      */
     public finishLogin(callback: (previousURL: string) => void) {
-        this.auth.authenticate(function () {
+        this.auth.authenticate(function() {
             // Fully authed at this point
             console.log("Authentication successful!")
             const previousLocation = LocalStorageSource.Get("location_before_login")
@@ -534,6 +534,7 @@ export class OsmConnection {
                 : window.location.protocol + "//" + window.location.host + "/land.html",
             singlepage: true, // We always use 'singlePage', it is the most stable - including in PWA
             auto: true,
+            apiUrl: this._oauth_config.api_url ?? this._oauth_config.url
         })
     }
 

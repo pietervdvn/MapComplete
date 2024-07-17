@@ -97,11 +97,17 @@
     currentValue.ping()
   }
 
-  function genTitle(value: any, singular: string, i: number) {
-    if (schema.hints.title) {
-      return Function("value", "return " + schema.hints.title)(value)
+  function genTitle(value: any, singular: string, i: number): Translation {
+    try {
+
+      if (schema.hints.title) {
+        const v = Function("value", "return " + schema.hints.title)(value)
+        return Translations.T(v)
+      }
+    } catch (e) {
+      console.log("Warning: could not translate a title for " + `${singular} ${i} with function ` + schema.hints.title + " and value " + JSON.stringify(value))
     }
-    return `${singular} ${i}`
+    return Translations.T(`${singular} ${i}`)
   }
 
   let genIconF: (x: any) => { icon: string; color: string } = <any>(
@@ -166,7 +172,7 @@
 
                 {#if schema.hints.title}
                   <div class="subtle ml-2">
-                    <Tr t={Translations.T(genTitle(value, singular, i))} />
+                    <Tr t={genTitle(value, singular, i)} />
                   </div>
                 {/if}
               </h3>
@@ -182,7 +188,7 @@
           {:else if typeof value === "string"}
             Builtin: <b>{value}</b>
           {:else}
-            <Tr cls="font-bold" t={Translations.T(value?.question ?? value?.render)}/>
+            <Tr cls="font-bold" t={Translations.T(value?.question ?? value?.render)} />
           {/if}
         </span>
         <div class="normal-background p-2">

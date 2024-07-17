@@ -3,6 +3,7 @@
 # URL-parameters and URL-hash
 
 This document gives an overview of which URL-parameters can be used to influence MapComplete.
+
 ## Table of contents
 
 1. [What is a URL parameter?](#what-is-a-url-parameter)
@@ -50,10 +51,14 @@ This document gives an overview of which URL-parameters can be used to influence
 
 For example, if the url is `https://mapcomplete.org/cyclofix?lat=51.0&lon=4.3&z=5&test=true#node/1234`, the URL-parameters are stated in the part between the `?` and the `#`. There are multiple, all separated by `&`, namely: 
 
+
+
  - The url-parameter `lat` is `51.0` in this instance
  - The url-parameter `lon` is `4.3` in this instance
  - The url-parameter `z` is `5` in this instance
  - The url-parameter `test` is `true` in this instance
+
+
 
 Finally, the URL-hash is the part after the `#`. It is `node/1234` in this case.
 
@@ -437,7 +442,7 @@ The default value is _true_
 
 The mode the application starts in, e.g. 'map', 'dashboard' or 'statistics'
 
-This documentation is defined in the source code at [generateDocs.ts](ervdvn/git2/MapComplete/scripts/generateDocs.ts#L420)
+This documentation is defined in the source code at [generateDocs.ts](ervdvn/git2/MapComplete/scripts/generateDocs.ts#L418)
 
 
 
@@ -445,7 +450,7 @@ The default value is _map_
 
 ## layer-&lt;layer-id&gt;
 
-Wether or not the layer with id <layer-id> is shown
+Whether the layer with id <layer-id> is shown
 
 This documentation is defined in the source code at [QueryParameterDocumentation.ts](/src/UI/QueryParameterDocumentation.ts#L60)
 

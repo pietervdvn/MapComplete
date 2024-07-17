@@ -1116,6 +1116,91 @@
     },
     {
       "key": "amenity",
+      "description": "The MapComplete theme Personal theme has a layer BBQ showing features with this tag",
+      "value": "bbq"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'BBQ' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Personal theme') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'BBQ allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'BBQ allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'BBQ allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'BBQ allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'BBQ' shows access=yes with a fixed text, namely 'Public' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'BBQ' shows access=no with a fixed text, namely 'No access' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'BBQ' shows access=private with a fixed text, namely 'Private' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "private"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'BBQ' shows access=permissive with a fixed text, namely 'Access until revoked' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "permissive"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'BBQ' shows access=customers with a fixed text, namely 'Access only for customers' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "customers"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'BBQ' shows access=permit with a fixed text, namely 'Access only for authorized persons' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "permit"
+    },
+    {
+      "key": "covered",
+      "description": "Layer 'BBQ' shows covered=no with a fixed text, namely 'The grill is not covered' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "covered",
+      "description": "Layer 'BBQ' shows covered=yes with a fixed text, namely 'The grill is covered' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "fuel",
+      "description": "Layer 'BBQ' shows fuel=wood with a fixed text, namely 'Wood' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "wood"
+    },
+    {
+      "key": "fuel",
+      "description": "Layer 'BBQ' shows fuel=charcoal with a fixed text, namely 'Charcoal' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "charcoal"
+    },
+    {
+      "key": "fuel",
+      "description": "Layer 'BBQ' shows fuel=electric with a fixed text, namely 'Electric' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "electric"
+    },
+    {
+      "key": "fuel",
+      "description": "Layer 'BBQ' shows fuel=gas with a fixed text, namely 'Gas' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "gas"
+    },
+    {
+      "key": "amenity",
       "description": "The MapComplete theme Personal theme has a layer Benches showing features with this tag",
       "value": "bench"
     },
@@ -1749,6 +1834,11 @@
       "key": "rental",
       "description": "Layer 'Bicycle rental' shows rental=bike_helmet with a fixed text, namely 'Bike helmets can be rented here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "bike_helmet"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Bicycle rental' shows rental=cargo_bike with a fixed text, namely 'Cargo bikes can be rented here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "cargo_bike"
     },
     {
       "key": "capacity:city_bike",
@@ -2589,6 +2679,11 @@
       "key": "rental",
       "description": "Layer 'Bike repair/shop' shows rental=bike_helmet with a fixed text, namely 'Bike helmets can be rented here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if service:bicycle:rental=yes)",
       "value": "bike_helmet"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Bike repair/shop' shows rental=cargo_bike with a fixed text, namely 'Cargo bikes can be rented here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if service:bicycle:rental=yes)",
+      "value": "cargo_bike"
     },
     {
       "key": "capacity:city_bike",
@@ -6841,17 +6936,17 @@
     },
     {
       "key": "seasonal",
-      "description": "Layer 'Drinking water' shows seasonal=no with a fixed text, namely 'This drinking water point is available all around the year' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "description": "Layer 'Drinking water' shows seasonal=no with a fixed text, namely 'Available all around the year' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "no"
     },
     {
       "key": "seasonal",
-      "description": "Layer 'Drinking water' shows seasonal=summer with a fixed text, namely 'This drinking water point is only available in summer' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "description": "Layer 'Drinking water' shows seasonal=summer with a fixed text, namely 'Only available in summer' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "summer"
     },
     {
       "key": "seasonal",
-      "description": "Layer 'Drinking water' shows seasonal=spring;summer;autumn with a fixed text, namely 'This drinking water point is closed during the winter' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "description": "Layer 'Drinking water' shows seasonal=spring;summer;autumn with a fixed text, namely 'Closed during the winter' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "spring;summer;autumn"
     },
     {
@@ -7818,6 +7913,76 @@
     {
       "key": "wikipedia",
       "description": "The layer 'Map of fire stations allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "leisure",
+      "description": "The MapComplete theme Personal theme has a layer Firepitd showing features with this tag",
+      "value": "firepit"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Firepitd' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Personal theme') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Firepitd allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Firepitd allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Firepitd allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Firepitd allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Firepitd' shows access=yes with a fixed text, namely 'Public' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Firepitd' shows access=no with a fixed text, namely 'No access' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Firepitd' shows access=private with a fixed text, namely 'Private' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "private"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Firepitd' shows access=permissive with a fixed text, namely 'Access until revoked' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "permissive"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Firepitd' shows access=customers with a fixed text, namely 'Access only for customers' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "customers"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Firepitd' shows access=permit with a fixed text, namely 'Access only for authorized' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "permit"
+    },
+    {
+      "key": "seasonal",
+      "description": "Layer 'Firepitd' shows seasonal=no with a fixed text, namely 'Available all around the year' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "seasonal",
+      "description": "Layer 'Firepitd' shows seasonal=summer with a fixed text, namely 'Only available in summer' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "summer"
+    },
+    {
+      "key": "seasonal",
+      "description": "Layer 'Firepitd' shows seasonal=spring;summer;autumn with a fixed text, namely 'Closed during the winter' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "spring;summer;autumn"
     },
     {
       "key": "leisure",
@@ -13410,6 +13575,55 @@
       "value": "female"
     },
     {
+      "key": "pedagogy",
+      "description": "Layer 'Primary and secondary schools' shows and asks freeform values for key 'pedagogy' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "pedagogy",
+      "description": "Layer 'Primary and secondary schools' shows pedagogy=mainstream with a fixed text, namely 'This school does not use a specific pedagogy' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "mainstream"
+    },
+    {
+      "key": "pedagogy",
+      "description": "Layer 'Primary and secondary schools' shows pedagogy=montessori with a fixed text, namely 'This school uses the Montessori method of education' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "montessori"
+    },
+    {
+      "key": "pedagogy",
+      "description": "Layer 'Primary and secondary schools' shows pedagogy=freinet with a fixed text, namely 'This school is associated with the Freinet Modern School Movement' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "freinet"
+    },
+    {
+      "key": "pedagogy",
+      "description": "Layer 'Primary and secondary schools' shows pedagogy=jenaplan with a fixed text, namely 'This school uses the Jenaplan teaching concept' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "jenaplan"
+    },
+    {
+      "key": "pedagogy",
+      "description": "Layer 'Primary and secondary schools' shows pedagogy=waldorf with a fixed text, namely 'This school uses the Steiner/Waldorf educational philosophy' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "waldorf"
+    },
+    {
+      "key": "pedagogy",
+      "description": "Layer 'Primary and secondary schools' shows pedagogy=dalton with a fixed text, namely 'This school uses the Dalton plan teaching concept' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "dalton"
+    },
+    {
+      "key": "pedagogy",
+      "description": "Layer 'Primary and secondary schools' shows pedagogy=outdoor with a fixed text, namely 'This school uses outdoor learning' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "outdoor"
+    },
+    {
+      "key": "pedagogy",
+      "description": "Layer 'Primary and secondary schools' shows pedagogy=reggio_emilia with a fixed text, namely 'This school uses the Reggio Emilia approach' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "reggio_emilia"
+    },
+    {
+      "key": "pedagogy",
+      "description": "Layer 'Primary and secondary schools' shows pedagogy=sudbury with a fixed text, namely 'This school uses the Sudbury system' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "sudbury"
+    },
+    {
       "key": "school:for",
       "description": "Layer 'Primary and secondary schools' shows and asks freeform values for key 'school:for' (in the mapcomplete.org theme 'Personal theme') (This is only shown if school:for~.+)"
     },
@@ -18116,22 +18330,22 @@
     },
     {
       "key": "vending",
-      "description": "Layer 'Waste Basket' shows vending=dog_excrement_bag & not:vending= with a fixed text, namely 'This waste basket has a dispenser for (dog) excrement bags' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if waste~^(.*dog_excrement.*)$ | waste~^(.*trash.*)$ | waste=)",
-      "value": "dog_excrement_bag"
+      "description": "Layer 'Waste Basket' shows vending=excrement_bags & not:vending= with a fixed text, namely 'This waste basket has a dispenser for (dog) excrement bags' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if waste~^(.*dog_excrement.*)$ | waste~^(.*trash.*)$ | waste=)",
+      "value": "excrement_bags"
     },
     {
       "key": "not:vending",
-      "description": "Layer 'Waste Basket' shows vending=dog_excrement_bag & not:vending= with a fixed text, namely 'This waste basket has a dispenser for (dog) excrement bags' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') Picking this answer will delete the key not:vending. (This is only shown if waste~^(.*dog_excrement.*)$ | waste~^(.*trash.*)$ | waste=)",
+      "description": "Layer 'Waste Basket' shows vending=excrement_bags & not:vending= with a fixed text, namely 'This waste basket has a dispenser for (dog) excrement bags' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') Picking this answer will delete the key not:vending. (This is only shown if waste~^(.*dog_excrement.*)$ | waste~^(.*trash.*)$ | waste=)",
       "value": ""
     },
     {
       "key": "not:vending",
-      "description": "Layer 'Waste Basket' shows not:vending=dog_excrement_bag & vending= with a fixed text, namely 'This waste basket <b>does not</b> have a dispenser for (dog) excrement bags' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if waste~^(.*dog_excrement.*)$ | waste~^(.*trash.*)$ | waste=)",
-      "value": "dog_excrement_bag"
+      "description": "Layer 'Waste Basket' shows not:vending=excrement_bags & vending= with a fixed text, namely 'This waste basket <b>does not</b> have a dispenser for (dog) excrement bags' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if waste~^(.*dog_excrement.*)$ | waste~^(.*trash.*)$ | waste=)",
+      "value": "excrement_bags"
     },
     {
       "key": "vending",
-      "description": "Layer 'Waste Basket' shows not:vending=dog_excrement_bag & vending= with a fixed text, namely 'This waste basket <b>does not</b> have a dispenser for (dog) excrement bags' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') Picking this answer will delete the key vending. (This is only shown if waste~^(.*dog_excrement.*)$ | waste~^(.*trash.*)$ | waste=)",
+      "description": "Layer 'Waste Basket' shows not:vending=excrement_bags & vending= with a fixed text, namely 'This waste basket <b>does not</b> have a dispenser for (dog) excrement bags' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') Picking this answer will delete the key vending. (This is only shown if waste~^(.*dog_excrement.*)$ | waste~^(.*trash.*)$ | waste=)",
       "value": ""
     },
     {

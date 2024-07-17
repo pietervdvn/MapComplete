@@ -128,6 +128,9 @@ export class ImageUploadManager {
             targetKey,
             tags?.data?.["_orig_theme"]
         )
+
+
+
         if (!action) {
             return
         }
@@ -169,13 +172,13 @@ export class ImageUploadManager {
                 return undefined
             }
         }
-        console.log("Uploading done, creating action for", featureId)
+        console.log("Uploading image done, creating action for", featureId)
         key = targetKey ?? key
+        this.increaseCountFor(this._uploadFinished, featureId)
         const action = new LinkImageAction(featureId, key, value, properties, {
             theme: theme ?? this._layout.id,
             changeType: "add-image",
         })
-        this.increaseCountFor(this._uploadFinished, featureId)
         return action
     }
 

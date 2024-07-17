@@ -21,6 +21,9 @@ class HandleErrors extends Script {
         const path = args[0]
         const lines = readFileSync(path, "utf8").split("\n")
 
+        let createdChangesets = new Set<string>()
+        let refusedFiles: Set<string> = new Set<string>()
+
         for (const line of lines) {
             if (!line?.trim()) {
                 continue
@@ -41,7 +44,8 @@ class HandleErrors extends Script {
                     }
                 } = JSON.parse(line)
                 const e = parsed.message
-                if (e.layout !== "grb") {
+                if (e.layout === "grb") {
+                    console.log("Filtering on GRB!")
                     continue
                 }
                 console.log(e.username, e.layout, e.message, parsed.date)
@@ -52,43 +56,48 @@ class HandleErrors extends Script {
 
                 const neededIds = Changes.GetNeededIds(e.pendingChanges)
                 // We _do not_ pass in the Changes object itself - we want the data from OSM directly in order to apply the changes
-                let osmObjects: { id: string, osmObj: OsmObject | "deleted" }[] = await Promise.all<{
+                const osmObjects: { id: string, osmObj: OsmObject | "deleted" }[] = await Promise.all<{
                     id: string;
                     osmObj: OsmObject | "deleted"
                 }>(
-                    neededIds.map(async id => ({ id, osmObj: await downloader.DownloadObjectAsync(id) })),
+                    neededIds.map(async id => ({ id, osmObj: await downloader.DownloadObjectAsync(id) }))
                 )
 
                 const objects = osmObjects
                     .filter((obj) => obj.osmObj !== "deleted")
                     .map((obj) => <OsmObject>obj.osmObj)
 
-                const perType = Array.from(
-                    Utils.Hist(
-                        e.pendingChanges
-                            .filter(
-                                (descr) =>
-                                    descr.meta.changeType !== undefined && descr.meta.changeType !== null,
-                            )
-                            .map((descr) => descr.meta.changeType),
-                    ),
-                    ([key, count]) => ({
-                        key: key,
-                        value: count,
-                        aggregate: true,
-                    }),
-                )
+                const { toUpload, refused } = Changes.fragmentChanges(e.pendingChanges, objects)
+
+
                 const changes: {
                     newObjects: OsmObject[]
                     modifiedObjects: OsmObject[]
                     deletedObjects: OsmObject[]
                 } = new Changes({
                     dryRun: new ImmutableStore(true),
-                    osmConnection,
-                }).CreateChangesetObjects(e.pendingChanges, objects)
+                    osmConnection
+                }).CreateChangesetObjects(toUpload, objects)
 
-                const changeset = Changes.createChangesetFor("" + parsed.index, changes)
-                writeFileSync("error_changeset_"+parsed.index+".osc", changeset, "utf8")
+                const changeset = Changes.createChangesetFor("", changes)
+                const path = "error_changeset_" + parsed.index + "_" + e.layout + "_" + e.username + ".osc"
+                if(changeset === "<osmChange version='0.6' generator='Mapcomplete 0.44.7'></osmChange>"){
+                    console.log("Changes for "+parsed.index+": empty changeset, not creating a file for it")
+                }else                 if (createdChangesets.has(changeset)) {
+                    console.log("Changeset " + parsed.index + " is identical to previously seen changeset, not writing to file")
+                } else {
+                    writeFileSync(path, changeset, "utf8")
+                    createdChangesets.add(changeset)
+                }
+                const refusedContent = JSON.stringify(refused)
+                if (refusedFiles.has(refusedContent)) {
+                    console.log("Refused changes for " + parsed.index + " is identical to previously seen changeset, not writing to file")
+                } else {
+                    writeFileSync(path + ".refused.json", refusedContent, "utf8")
+                    refusedFiles.add(refusedContent)
+                }
+                console.log("Written", path, "with " + e.pendingChanges.length + " changes")
+
             } catch (e) {
                 console.log("Parsing line failed:", e)
             }

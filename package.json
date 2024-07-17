@@ -1,6 +1,6 @@
 {
   "name": "mapcomplete",
-  "version": "0.44.5",
+  "version": "0.44.8",
   "repository": "https://github.com/pietervdvn/MapComplete",
   "description": "A small website to edit OSM easily",
   "bugs": "https://github.com/pietervdvn/MapComplete/issues",
@@ -19,20 +19,23 @@
       "#": "This client-id is registered by 'MapComplete' on OpenStreetMap.org",
       "oauth_client_id": "K93H1d8ve7p-tVLE1ZwsQ4lAFLQk8INx5vfTLMu5DWk",
       "oauth_secret": "NBWGhWDrD3QDB35xtVuxv4aExnmIt4FA_WgeLtwxasg",
-      "url": "https://www.openstreetmap.org"
+      "url": "https://www.openstreetmap.org",
+      "api_url": "https://api.openstreetmap.org"
+    },
+    "disabled:oauth_credentials": {
+      "##": "DEV",
+      "#": "This client-id is registered by 'MapComplete' on https://master.apis.dev.openstreetmap.org/",
+      "oauth_client_id": "BAPPMRuojjFsY__0APmScr1hbebYj1GlDbV6S5TsUbo",
+      "oauth_secret": "Lq1UKYAySRfQfwgFctGvlGrfxbGHQwggheE52HIGrO8",
+      "url": "https://master.apis.dev.openstreetmap.org",
+      "api_url": "https://master.apis.dev.openstreetmap.org"
     },
     "mvt_layer_server": "https://cache.mapcomplete.org/public.{type}_{layer}/{z}/{x}/{y}.pbf",
     "#summary_server": "Should be the endpoint; appending status.json should work",
     "summary_server": "https://cache.mapcomplete.org/",
     "geoip_server": "https://ipinfo.mapcomplete.org/",
     "error_server": "https://report.mapcomplete.org/report",
-    "disabled:oauth_credentials": {
-      "##": "DEV",
-      "#": "This client-id is registered by 'MapComplete' on https://master.apis.dev.openstreetmap.org/",
-      "oauth_client_id": "BAPPMRuojjFsY__0APmScr1hbebYj1GlDbV6S5TsUbo",
-      "oauth_secret": "Lq1UKYAySRfQfwgFctGvlGrfxbGHQwggheE52HIGrO8",
-      "url": "https://master.apis.dev.openstreetmap.org"
-    },
+
     "api_keys": {
       "#": "Various API-keys for various services. Feel free to reuse those in another MapComplete-hosted version",
       "imgur": "7070e7167f0a25a",

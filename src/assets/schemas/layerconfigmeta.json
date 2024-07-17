@@ -1662,8 +1662,7 @@
     ],
     "required": true,
     "hints": {
-      "typehint": "icon",
-      "types": "Use a dynamic value ; icon",
+      "types": "<span class=\"text-lg font-bold\">Use a different icon depending on the value of some attributes</span> ; icon",
       "question": "What icon should be used?",
       "suggestions": [
         {
@@ -1996,8 +1995,7 @@
     ],
     "required": false,
     "hints": {
-      "typehint": "color",
-      "types": "Use a dynamic color ; icon",
+      "types": "<span class=\"text-lg font-bold\">Use a different color depending on the value of some attributes</span> ; color",
       "question": "What colour should the icon be?"
     },
     "type": [
@@ -10102,6 +10100,10 @@
           "then": "barrier - Obstacles while cycling, such as bollards and cycle barriers"
         },
         {
+          "if": "value=bbq",
+          "then": "bbq - A permanently installed barbecue, typically accessible to the public."
+        },
+        {
           "if": "value=bench",
           "then": "bench - A bench is a wooden, metal, stone, … surface where a human can sit. This layers visualises them and asks a few questions about them."
         },
@@ -10272,6 +10274,10 @@
         {
           "if": "value=fire_station",
           "then": "fire_station - Map layer to show fire stations."
+        },
+        {
+          "if": "value=firepit",
+          "then": "firepit - An outdoor place to make a fire, typically open to the public."
         },
         {
           "if": "value=fitness_centre",
@@ -10595,7 +10601,7 @@
         },
         {
           "if": "value=summary",
-          "then": "summary - Special layer which shows `count`"
+          "then": "summary - Special layer which shows `count`, probably provided by the clustering server or some clustering algorithm"
         },
         {
           "if": "value=surveillance_camera",
@@ -10788,8 +10794,14 @@
               "postfixDistinguished": {
                 "description": "question: If this key shared and distinguished by a postfix, what is the postfix?\nThis option is used specifically for `charge`, where the cost is indicated with `/item`.\n\nFor example, a vending machine might sell `bicycle_tube`.\nSetting this value to `bicycle_tube`, then answering this question will set `charge= €XX/bicycle_tube`.\nIf charge did already contain another value, e.g. `charge= €YY/some_item; €ZZ/other_item`, then `€XX/bicycle_tube`will be added.\nNote: those values are sorted alphabetically\nNote: no need to add the `/`\n\nifunset: Don't distinguish by postfix\ngroup: expert",
                 "type": "string"
+              },
+              "helperArgs": {
+                "description": "Extra arguments to configure the input element\ngroup: hidden"
               }
-            }
+            },
+            "required": [
+              "helperArgs"
+            ]
           },
           "question": {
             "description": "question: What question should be shown to the contributor?\n\nA question is presented ot the user if no mapping matches and the 'freeform' key is not set as well.\n\nifunset: This tagrendering will be shown if it is known, but cannot be edited by the contributor, effectively resutling in a read-only rendering",
@@ -11421,7 +11433,7 @@
       "question": "What extra tags should be added to the object if this object is chosen?"
     },
     "type": "array",
-    "description": "If chosen as answer, these tags will be applied onto the object, together with the tags from the `if`\nNot compatible with multiAnswer.\nThis can be used e.g. to erase other keys which indicate the 'not' value:\n```json\n{\n    \"if\": \"crossing:marking=rainbow\",\n    \"then\": \"This is a rainbow crossing\",\n    \"addExtraTags\": [\"not:crossing:marking=\"]\n}\n```"
+    "description": "If chosen as answer, these tags will be applied onto the object, together with the tags from the `if`.\nNote that if the contributor picks this mapping, saves and then changes their mind and uses a different mapping,\nthe extraTags will reside.\nE.g. when picking `memorial:type=bench`, then `amenity=bench` will also be applied.\nIf someone later on changes the type to `memorial:statue`, `amenity=bench` will stay onto the object\n(which is the desired behaviour, see e.g. for https://www.openstreetmap.org/node/5620038478)\nUse 'ifNot' to explicitly remove an tag if this is important\nIf someone marks the question as 'unknown', the extra tags will not be erased\nNot compatible with multiAnswer.\nThis can be used e.g. to erase other keys which indicate the 'not' value:\n```json\n{\n    \"if\": \"crossing:marking=rainbow\",\n    \"then\": \"This is a rainbow crossing\",\n    \"addExtraTags\": [\"not:crossing:marking=\"]\n}\n```"
   },
   {
     "path": [
@@ -11866,6 +11878,18 @@
     },
     "type": "string",
     "description": "This option is used specifically for `charge`, where the cost is indicated with `/item`.\nFor example, a vending machine might sell `bicycle_tube`.\nSetting this value to `bicycle_tube`, then answering this question will set `charge= €XX/bicycle_tube`.\nIf charge did already contain another value, e.g. `charge= €YY/some_item; €ZZ/other_item`, then `€XX/bicycle_tube`will be added.\nNote: those values are sorted alphabetically\nNote: no need to add the `/`"
+  },
+  {
+    "path": [
+      "tagRenderings",
+      "freeform",
+      "helperArgs"
+    ],
+    "required": true,
+    "hints": {
+      "group": "hidden"
+    },
+    "description": "Extra arguments to configure the input element"
   },
   {
     "path": [
@@ -12696,7 +12720,7 @@
       "question": "What extra tags should be added to the object if this object is chosen?"
     },
     "type": "array",
-    "description": "If chosen as answer, these tags will be applied onto the object, together with the tags from the `if`\nNot compatible with multiAnswer.\nThis can be used e.g. to erase other keys which indicate the 'not' value:\n```json\n{\n    \"if\": \"crossing:marking=rainbow\",\n    \"then\": \"This is a rainbow crossing\",\n    \"addExtraTags\": [\"not:crossing:marking=\"]\n}\n```"
+    "description": "If chosen as answer, these tags will be applied onto the object, together with the tags from the `if`.\nNote that if the contributor picks this mapping, saves and then changes their mind and uses a different mapping,\nthe extraTags will reside.\nE.g. when picking `memorial:type=bench`, then `amenity=bench` will also be applied.\nIf someone later on changes the type to `memorial:statue`, `amenity=bench` will stay onto the object\n(which is the desired behaviour, see e.g. for https://www.openstreetmap.org/node/5620038478)\nUse 'ifNot' to explicitly remove an tag if this is important\nIf someone marks the question as 'unknown', the extra tags will not be erased\nNot compatible with multiAnswer.\nThis can be used e.g. to erase other keys which indicate the 'not' value:\n```json\n{\n    \"if\": \"crossing:marking=rainbow\",\n    \"then\": \"This is a rainbow crossing\",\n    \"addExtraTags\": [\"not:crossing:marking=\"]\n}\n```"
   },
   {
     "path": [
@@ -13158,6 +13182,19 @@
     },
     "type": "string",
     "description": "This option is used specifically for `charge`, where the cost is indicated with `/item`.\nFor example, a vending machine might sell `bicycle_tube`.\nSetting this value to `bicycle_tube`, then answering this question will set `charge= €XX/bicycle_tube`.\nIf charge did already contain another value, e.g. `charge= €YY/some_item; €ZZ/other_item`, then `€XX/bicycle_tube`will be added.\nNote: those values are sorted alphabetically\nNote: no need to add the `/`"
+  },
+  {
+    "path": [
+      "tagRenderings",
+      "override",
+      "freeform",
+      "helperArgs"
+    ],
+    "required": true,
+    "hints": {
+      "group": "hidden"
+    },
+    "description": "Extra arguments to configure the input element"
   },
   {
     "path": [
@@ -14025,7 +14062,7 @@
       "question": "What extra tags should be added to the object if this object is chosen?"
     },
     "type": "array",
-    "description": "If chosen as answer, these tags will be applied onto the object, together with the tags from the `if`\nNot compatible with multiAnswer.\nThis can be used e.g. to erase other keys which indicate the 'not' value:\n```json\n{\n    \"if\": \"crossing:marking=rainbow\",\n    \"then\": \"This is a rainbow crossing\",\n    \"addExtraTags\": [\"not:crossing:marking=\"]\n}\n```"
+    "description": "If chosen as answer, these tags will be applied onto the object, together with the tags from the `if`.\nNote that if the contributor picks this mapping, saves and then changes their mind and uses a different mapping,\nthe extraTags will reside.\nE.g. when picking `memorial:type=bench`, then `amenity=bench` will also be applied.\nIf someone later on changes the type to `memorial:statue`, `amenity=bench` will stay onto the object\n(which is the desired behaviour, see e.g. for https://www.openstreetmap.org/node/5620038478)\nUse 'ifNot' to explicitly remove an tag if this is important\nIf someone marks the question as 'unknown', the extra tags will not be erased\nNot compatible with multiAnswer.\nThis can be used e.g. to erase other keys which indicate the 'not' value:\n```json\n{\n    \"if\": \"crossing:marking=rainbow\",\n    \"then\": \"This is a rainbow crossing\",\n    \"addExtraTags\": [\"not:crossing:marking=\"]\n}\n```"
   },
   {
     "path": [
@@ -14487,6 +14524,19 @@
     },
     "type": "string",
     "description": "This option is used specifically for `charge`, where the cost is indicated with `/item`.\nFor example, a vending machine might sell `bicycle_tube`.\nSetting this value to `bicycle_tube`, then answering this question will set `charge= €XX/bicycle_tube`.\nIf charge did already contain another value, e.g. `charge= €YY/some_item; €ZZ/other_item`, then `€XX/bicycle_tube`will be added.\nNote: those values are sorted alphabetically\nNote: no need to add the `/`"
+  },
+  {
+    "path": [
+      "tagRenderings",
+      "renderings",
+      "freeform",
+      "helperArgs"
+    ],
+    "required": true,
+    "hints": {
+      "group": "hidden"
+    },
+    "description": "Extra arguments to configure the input element"
   },
   {
     "path": [
@@ -15349,7 +15399,7 @@
       "question": "What extra tags should be added to the object if this object is chosen?"
     },
     "type": "array",
-    "description": "If chosen as answer, these tags will be applied onto the object, together with the tags from the `if`\nNot compatible with multiAnswer.\nThis can be used e.g. to erase other keys which indicate the 'not' value:\n```json\n{\n    \"if\": \"crossing:marking=rainbow\",\n    \"then\": \"This is a rainbow crossing\",\n    \"addExtraTags\": [\"not:crossing:marking=\"]\n}\n```"
+    "description": "If chosen as answer, these tags will be applied onto the object, together with the tags from the `if`.\nNote that if the contributor picks this mapping, saves and then changes their mind and uses a different mapping,\nthe extraTags will reside.\nE.g. when picking `memorial:type=bench`, then `amenity=bench` will also be applied.\nIf someone later on changes the type to `memorial:statue`, `amenity=bench` will stay onto the object\n(which is the desired behaviour, see e.g. for https://www.openstreetmap.org/node/5620038478)\nUse 'ifNot' to explicitly remove an tag if this is important\nIf someone marks the question as 'unknown', the extra tags will not be erased\nNot compatible with multiAnswer.\nThis can be used e.g. to erase other keys which indicate the 'not' value:\n```json\n{\n    \"if\": \"crossing:marking=rainbow\",\n    \"then\": \"This is a rainbow crossing\",\n    \"addExtraTags\": [\"not:crossing:marking=\"]\n}\n```"
   },
   {
     "path": [
@@ -15828,6 +15878,20 @@
     },
     "type": "string",
     "description": "This option is used specifically for `charge`, where the cost is indicated with `/item`.\nFor example, a vending machine might sell `bicycle_tube`.\nSetting this value to `bicycle_tube`, then answering this question will set `charge= €XX/bicycle_tube`.\nIf charge did already contain another value, e.g. `charge= €YY/some_item; €ZZ/other_item`, then `€XX/bicycle_tube`will be added.\nNote: those values are sorted alphabetically\nNote: no need to add the `/`"
+  },
+  {
+    "path": [
+      "tagRenderings",
+      "renderings",
+      "override",
+      "freeform",
+      "helperArgs"
+    ],
+    "required": true,
+    "hints": {
+      "group": "hidden"
+    },
+    "description": "Extra arguments to configure the input element"
   },
   {
     "path": [
@@ -16690,7 +16754,7 @@
       "question": "What extra tags should be added to the object if this object is chosen?"
     },
     "type": "array",
-    "description": "If chosen as answer, these tags will be applied onto the object, together with the tags from the `if`\nNot compatible with multiAnswer.\nThis can be used e.g. to erase other keys which indicate the 'not' value:\n```json\n{\n    \"if\": \"crossing:marking=rainbow\",\n    \"then\": \"This is a rainbow crossing\",\n    \"addExtraTags\": [\"not:crossing:marking=\"]\n}\n```"
+    "description": "If chosen as answer, these tags will be applied onto the object, together with the tags from the `if`.\nNote that if the contributor picks this mapping, saves and then changes their mind and uses a different mapping,\nthe extraTags will reside.\nE.g. when picking `memorial:type=bench`, then `amenity=bench` will also be applied.\nIf someone later on changes the type to `memorial:statue`, `amenity=bench` will stay onto the object\n(which is the desired behaviour, see e.g. for https://www.openstreetmap.org/node/5620038478)\nUse 'ifNot' to explicitly remove an tag if this is important\nIf someone marks the question as 'unknown', the extra tags will not be erased\nNot compatible with multiAnswer.\nThis can be used e.g. to erase other keys which indicate the 'not' value:\n```json\n{\n    \"if\": \"crossing:marking=rainbow\",\n    \"then\": \"This is a rainbow crossing\",\n    \"addExtraTags\": [\"not:crossing:marking=\"]\n}\n```"
   },
   {
     "path": [
@@ -17152,6 +17216,19 @@
     },
     "type": "string",
     "description": "This option is used specifically for `charge`, where the cost is indicated with `/item`.\nFor example, a vending machine might sell `bicycle_tube`.\nSetting this value to `bicycle_tube`, then answering this question will set `charge= €XX/bicycle_tube`.\nIf charge did already contain another value, e.g. `charge= €YY/some_item; €ZZ/other_item`, then `€XX/bicycle_tube`will be added.\nNote: those values are sorted alphabetically\nNote: no need to add the `/`"
+  },
+  {
+    "path": [
+      "tagRenderings",
+      "renderings",
+      "freeform",
+      "helperArgs"
+    ],
+    "required": true,
+    "hints": {
+      "group": "hidden"
+    },
+    "description": "Extra arguments to configure the input element"
   },
   {
     "path": [
@@ -18014,7 +18091,7 @@
       "question": "What extra tags should be added to the object if this object is chosen?"
     },
     "type": "array",
-    "description": "If chosen as answer, these tags will be applied onto the object, together with the tags from the `if`\nNot compatible with multiAnswer.\nThis can be used e.g. to erase other keys which indicate the 'not' value:\n```json\n{\n    \"if\": \"crossing:marking=rainbow\",\n    \"then\": \"This is a rainbow crossing\",\n    \"addExtraTags\": [\"not:crossing:marking=\"]\n}\n```"
+    "description": "If chosen as answer, these tags will be applied onto the object, together with the tags from the `if`.\nNote that if the contributor picks this mapping, saves and then changes their mind and uses a different mapping,\nthe extraTags will reside.\nE.g. when picking `memorial:type=bench`, then `amenity=bench` will also be applied.\nIf someone later on changes the type to `memorial:statue`, `amenity=bench` will stay onto the object\n(which is the desired behaviour, see e.g. for https://www.openstreetmap.org/node/5620038478)\nUse 'ifNot' to explicitly remove an tag if this is important\nIf someone marks the question as 'unknown', the extra tags will not be erased\nNot compatible with multiAnswer.\nThis can be used e.g. to erase other keys which indicate the 'not' value:\n```json\n{\n    \"if\": \"crossing:marking=rainbow\",\n    \"then\": \"This is a rainbow crossing\",\n    \"addExtraTags\": [\"not:crossing:marking=\"]\n}\n```"
   },
   {
     "path": [
@@ -18493,6 +18570,20 @@
     },
     "type": "string",
     "description": "This option is used specifically for `charge`, where the cost is indicated with `/item`.\nFor example, a vending machine might sell `bicycle_tube`.\nSetting this value to `bicycle_tube`, then answering this question will set `charge= €XX/bicycle_tube`.\nIf charge did already contain another value, e.g. `charge= €YY/some_item; €ZZ/other_item`, then `€XX/bicycle_tube`will be added.\nNote: those values are sorted alphabetically\nNote: no need to add the `/`"
+  },
+  {
+    "path": [
+      "tagRenderings",
+      "renderings",
+      "override",
+      "freeform",
+      "helperArgs"
+    ],
+    "required": true,
+    "hints": {
+      "group": "hidden"
+    },
+    "description": "Extra arguments to configure the input element"
   },
   {
     "path": [

@@ -4,16 +4,15 @@ import { TagConfigJson } from "./TagConfigJson"
 export interface IconConfigJson {
     /**
      * question: What icon should be used?
-     * type: icon
-     * types: Use a dynamic value ; icon
+     * types: <span class="text-lg font-bold">Use a different icon depending on the value of some attributes</span> ; icon
      * suggestions: return Constants.defaultPinIcons.map(i => ({if: "value="+i, then: i, icon: i}))
      */
     icon: string | MinimalTagRenderingConfigJson | { builtin: string; override: any }
     /**
      * question: What colour should the icon be?
      * This will only work for the default icons such as `pin`,`circle`,...
-     * type: color
-     * types: Use a dynamic color ; icon
+     * types: <span class="text-lg font-bold">Use a different color depending on the value of some attributes</span> ; color
+     *
      */
     color?: string | MinimalTagRenderingConfigJson | { builtin: string; override: any }
 }
