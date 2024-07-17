@@ -299,6 +299,11 @@
       <If condition={state.featureSwitchIsTesting}>
         <div class="alert w-fit">Testmode</div>
       </If>
+      {#if state.osmConnection.Backend().startsWith("https://master.apis.dev.openstreetmap.org")}
+        <div class="thanks">
+          Testserver
+        </div>
+        {/if}
       <If condition={state.featureSwitches.featureSwitchFakeUser}>
         <div class="alert w-fit">Faking a user (Testmode)</div>
       </If>

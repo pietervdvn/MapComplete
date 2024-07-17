@@ -136,7 +136,7 @@ export class ChangeDescriptionTools {
         mappings: Map<string, string>
     ): ChangeDescription {
         const key = change.type + "/" + change.id
-
+console.log("Checking remapping ", change.id, mappings, change)
         const wayHasChangedNode = ((change.changes ?? {})["nodes"] ?? []).some((id) =>
             mappings.has("node/" + id)
         )
@@ -198,5 +198,12 @@ export class ChangeDescriptionTools {
                 r.members = change.changes["members"]
                 return r.asGeoJson().geometry
         }
+    }
+
+    public static rewriteAllIds(
+        changes: ChangeDescription[],
+        mappings: Map<string, string>
+    ): ChangeDescription[] {
+        return changes.map(c =>ChangeDescriptionTools.rewriteIds(c, mappings))
     }
 }

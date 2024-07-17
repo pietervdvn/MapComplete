@@ -137,7 +137,7 @@
     {
       "id": "minimap",
       "labels": [
-      "ignore_docs"
+        "ignore_docs"
       ],
       "description": "Shows a small map with the feature. Added by default to every popup",
       "render": {

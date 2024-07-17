@@ -70,7 +70,7 @@
         try{
           _map?.remove()
         }catch (e) {
-          console.log("Could not remove map due to", e)
+          console.debug("Could not remove map due to", e)
         }
         if(autorecovery){
           requestAnimationFrame(() => {
