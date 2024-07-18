@@ -62,8 +62,37 @@ class ExpandFilter extends DesugaringStep<LayerConfigJson> {
 
         const newFilters: FilterConfigJson[] = []
         const filters = <(FilterConfigJson | string)[]>json.filter
+
+        for (let i = 0; i < json.tagRenderings?.length; i++){
+            const tagRendering = <TagRenderingConfigJson> json.tagRenderings[i]
+            if(!tagRendering.filter){
+                continue
+            }
+            for (const filterName of tagRendering.filter ?? []) {
+                if(typeof filterName !== "string"){
+                    context.enters("tagRenderings",i,"filter").err("Not a string: "+ filterName)
+                }
+                const exists = filters.some(existing => {
+                    const id : string =  existing["id"] ?? existing
+                    return filterName === id || (filterName.startsWith("filters.") && filterName.endsWith("."+id))
+                })
+                if(exists){
+                    continue
+                }
+                if(!filterName){
+                    context.err("Got undefined as filter expansion in "+tagRendering["id"])
+                    continue
+                }
+                console.log("Adding filter",filterName," due to", tagRendering["id"])
+                filters.push(filterName)
+            }
+        }
+
         for (let i = 0; i < filters.length; i++) {
             const filter = filters[i]
+            if(filter === undefined){
+                continue
+            }
             if (typeof filter !== "string") {
                 newFilters.push(filter)
                 continue
@@ -85,7 +114,7 @@ class ExpandFilter extends DesugaringStep<LayerConfigJson> {
                     osmTags: mapping.if,
                 }))
                 options.unshift({
-                    question: {
+                    question: matchingTr["question"] ?? {
                         en: "All types",
                     },
                     osmTags: undefined,
@@ -113,7 +142,11 @@ class ExpandFilter extends DesugaringStep<LayerConfigJson> {
                     const expandedFilter = (<(FilterConfigJson | string)[]>layer.filter).find(
                         (f) => typeof f !== "string" && f.id === expectedId
                     )
-                    newFilters.push(<FilterConfigJson>expandedFilter)
+                    if(expandedFilter === undefined){
+                        context.err("Did not find filter with name "+filter)
+                    }else{
+                        newFilters.push(<FilterConfigJson>expandedFilter)
+                    }
                 } else {
                     // This is a bootstrapping-run, we can safely ignore this
                 }

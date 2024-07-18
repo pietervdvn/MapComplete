@@ -632,7 +632,8 @@
             "de": "Hunde sind nur draußen erlaubt"
           }
         }
-      ]
+      ],
+      "filter": ["filters.dogs"]
     },
     {
       "id": "description",
@@ -756,7 +757,8 @@
           },
           "hideInAnswer": true
         }
-      ]
+      ],
+      "filter": ["filters.open_now"]
     },
     {
       "id": "opening_hours_24_7",
@@ -1040,7 +1042,8 @@
             "cs": "Platba QR kódem je zde možná"
           }
         }
-      ]
+      ],
+      "filter": ["filters.accepts_cash","filters.accepts_cards"]
     },
     {
       "id": "payment-options-split",
@@ -2120,7 +2123,8 @@
             "pl": "To miejsce oferuje przewodowy dostęp do Internetu"
           }
         }
-      ]
+      ],
+      "filter": ["filters.has_internet"]
     },
     {
       "id": "internet-fee",
@@ -2451,7 +2455,8 @@
             "cs": "Tento obchod nemá žádnou nabídku bez cukru"
           }
         }
-      ]
+      ],
+      "filter": ["filters.sugar_free"]
     },
     {
       "id": "lactose_free",
@@ -2496,7 +2501,9 @@
             "cs": "Žádná nabídka bez laktózy"
           }
         }
-      ]
+      ],
+      "filter": ["filters.lactose_free"]
+
     },
     {
       "id": "gluten_free",
@@ -2541,7 +2548,9 @@
             "cs": "Tento obchod nemá bezlepkovou nabídku"
           }
         }
-      ]
+      ],
+      "filter": ["filters.gluten_free"]
+
     },
     {
       "id": "vegan",

@@ -663,9 +663,6 @@
         }
       ]
     },
-    "accepts_cash",
-    "accepts_cards",
-    "has_organic",
     {
       "id": "second_hand",
       "options": [
@@ -686,9 +683,7 @@
         }
       ]
     },
-    "sugar_free",
-    "gluten_free",
-    "lactose_free"
+    "filters.has_organic"
   ],
   "deletion": {
     "softDeletionTags": {

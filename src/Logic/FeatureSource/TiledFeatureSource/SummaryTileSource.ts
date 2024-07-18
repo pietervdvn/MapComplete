@@ -114,7 +114,7 @@ export class SummaryTileSource extends DynamicTileSource {
     ): Store<Feature<Point>[]> {
         const [z, x, y] = Tiles.tile_from_index(tileIndex)
         let coordinates = Tiles.centerPointOf(z, x, y)
-        const url = `${cacheserver}/${layersSummed}/${z}/${x}/${y}.json`
+        const url = `${cacheserver}/summary/${layersSummed}/${z}/${x}/${y}.json`
         const count = UIEventSource.FromPromiseWithErr(Utils.downloadJson(url))
         return count.mapD((count) => {
             if (count["error"] !== undefined) {

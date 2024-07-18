@@ -236,8 +236,11 @@ export class GenerateFavouritesLayer extends Script {
                 if (seenTitleIcons.has(titleIcon.id)) {
                     continue
                 }
+                if(titleIcon.id === undefined){
+                   continue
+                }
                 seenTitleIcons.add(titleIcon.id)
-                console.log("Adding ", titleIcon.id)
+                console.log("Adding title icon", titleIcon.id)
                 titleIcons.push(titleIcon)
             }
         }

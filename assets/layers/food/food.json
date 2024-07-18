@@ -1304,10 +1304,10 @@
         }
       ]
     },
-    "has_organic",
-    "sugar_free",
-    "gluten_free",
-    "lactose_free",
+    "filters.has_organic",
+    "filters.sugar_free",
+    "filters.gluten_free",
+    "filters.lactose_free",
     "accepts_cash",
     "accepts_cards",
     "dogs"

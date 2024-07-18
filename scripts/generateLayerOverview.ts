@@ -332,6 +332,7 @@ class LayerOverviewUtils extends Script {
             return <QuestionableTagRenderingConfigJson[]>sharedQuestions.tagRenderings
         }
 
+
         return this.getSharedTagRenderings(
             doesImageExist,
             dict,
