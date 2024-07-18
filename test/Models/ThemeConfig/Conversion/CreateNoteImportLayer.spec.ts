@@ -17,7 +17,7 @@ describe("CreateNoteImportLayer", () => {
         }
         const layerPrepare = new PrepareLayer(desugaringState)
         const layer = layerPrepare.convertStrict(
-            bookcases,
+            <any> bookcases,
             ConversionContext.test("parse bookcases")
         )
         const generator = new CreateNoteImportLayer()
