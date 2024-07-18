@@ -23,16 +23,16 @@
   export let assignTo: UIEventSource<string> = Locale.language
   export let preferredLanguages: Store<string[]> = undefined
   let preferredFiltered: string[] = undefined
+
   preferredLanguages?.addCallbackAndRunD((preferredLanguages) => {
-    let lng = navigator.language
-    if (lng === "en-US") {
-      lng = "en"
-    }
+    const lng = Locale.getBestSupportedLanguage()
     if (preferredLanguages?.indexOf(lng) < 0) {
       preferredLanguages?.push(lng)
     }
     preferredFiltered = preferredLanguages?.filter((l) => availableLanguages.indexOf(l) >= 0)
   })
+
+
   export let clss: string = undefined
   let current = Locale.language
 </script>

@@ -35,7 +35,15 @@ export abstract class Conversion<TIn, TOut> {
     public convertStrict(json: TIn, context?: ConversionContext): TOut {
         context ??= ConversionContext.construct([], [])
         context = context.inOperation(this.name)
-        const fixed = this.convert(json, context)
+
+        let fixed: TOut
+        try {
+            fixed = this.convert(json, context)
+        } catch (e) {
+            console.error(e)
+            context.err("ERROR WHILE RUNNING STEP " + this.name+": "+e)
+            fixed = undefined
+        }
         for (const msg of context.messages) {
             if (msg.level === "debug") {
                 continue
@@ -46,11 +54,12 @@ export abstract class Conversion<TIn, TOut> {
             throw new Error(
                 [
                     "Detected one or more errors, stopping now:",
-                    context.getAll("error").map((e) => e.context.path.join(".") + ": " + e.message),
+                    context.getAll("error").map((e) => e.context.path.join(".") + ": " + e.message)
                 ].join("\n\t")
             )
         }
         return fixed
+
     }
 
     public andThenF<X>(f: (tout: TOut) => X): Conversion<TIn, X> {
@@ -60,7 +69,8 @@ export abstract class Conversion<TIn, TOut> {
     public abstract convert(json: TIn, context: ConversionContext): TOut
 }
 
-export abstract class DesugaringStep<T> extends Conversion<T, T> {}
+export abstract class DesugaringStep<T> extends Conversion<T, T> {
+}
 
 export class Pipe<TIn, TInter, TOut> extends Conversion<TIn, TOut> {
     private readonly _step0: Conversion<TIn, TInter>
@@ -247,7 +257,7 @@ export class Cached<TIn, TOut> extends Conversion<TIn, TOut> {
         const converted = this._step.convert(json, context)
         Object.defineProperty(json, this.key, {
             value: converted,
-            enumerable: false,
+            enumerable: false
         })
         return converted
     }
@@ -260,8 +270,8 @@ export class Fuse<T> extends DesugaringStep<T> {
     constructor(doc: string, ...steps: DesugaringStep<T>[]) {
         super(
             (doc ?? "") +
-                "This fused pipeline of the following steps: " +
-                steps.map((s) => s.name).join(", "),
+            "This fused pipeline of the following steps: " +
+            steps.map((s) => s.name).join(", "),
             Utils.Dedup([].concat(...steps.map((step) => step.modifiedAttributes))),
             "Fuse(" + steps.map((s) => s.name).join(", ") + ")"
         )

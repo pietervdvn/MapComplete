@@ -72,7 +72,7 @@ export default class LayerConfig extends WithContextLoader {
     private readonly _basedOn: string | undefined
 
     constructor(json: LayerConfigJson, context?: string, official: boolean = true) {
-        context = context + "." + json.id
+        context = context + "." + json?.id
         const translationContext = "layers:" + json.id
         super(json, context)
         this.id = json.id
@@ -292,7 +292,9 @@ export default class LayerConfig extends WithContextLoader {
             this.filterIsSameAs = json.filter["sameAs"]
             this.filters = []
         } else {
-            this.filters = (<FilterConfigJson[]>json.filter ?? []).map((option, i) => {
+            this.filters = (<FilterConfigJson[]>json.filter ?? [])
+                .filter(f => typeof f !== "string")
+                .map((option, i) => {
                 return new FilterConfig(option, `layers:${this.id}.filter.${i}`)
             })
         }

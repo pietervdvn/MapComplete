@@ -2,6 +2,7 @@ import { UIEventSource } from "../../Logic/UIEventSource"
 import { LocalStorageSource } from "../../Logic/Web/LocalStorageSource"
 import { Utils } from "../../Utils"
 import { QueryParameters } from "../../Logic/Web/QueryParameters"
+import native from "../../assets/language_native.json"
 
 export default class Locale {
     public static showLinkToWeblate: UIEventSource<boolean> = new UIEventSource<boolean>(false)
@@ -10,6 +11,23 @@ export default class Locale {
      */
     public static showLinkOnMobile: UIEventSource<boolean> = new UIEventSource<boolean>(false)
     public static language: UIEventSource<string> = Locale.setup()
+
+    public static getBestSupportedLanguage(browserLanguage?: string){
+        browserLanguage ??= navigator.languages?.[0] ?? navigator.language ?? "en"
+        console.log("Browser language is", browserLanguage)
+        const availableLanguages = Object.keys(native)
+        const hasBrowserLang = availableLanguages.indexOf(browserLanguage) >= 0
+        if (hasBrowserLang) {
+            return browserLanguage
+        }
+        browserLanguage = browserLanguage.replace(/[-_].*/g, "")
+        const hasBrowserLangFallback = availableLanguages.indexOf(browserLanguage) >= 0
+        if(hasBrowserLangFallback){
+           return browserLanguage
+        }
+        console.log("Language",browserLanguage,"not supported, defaulting to english")
+        return "en"
+    }
 
     /**
      * Creates the UIEventSource containing the identifier of the current language
@@ -54,11 +72,7 @@ export default class Locale {
         } else {
             let browserLanguage = "en"
             if (typeof navigator !== "undefined") {
-                browserLanguage = navigator.languages?.[0] ?? navigator.language ?? "en"
-                console.log("Browser language is", browserLanguage)
-                if (browserLanguage === "en-US") {
-                    browserLanguage = "en"
-                }
+               browserLanguage = Locale.getBestSupportedLanguage()
             }
             source = LocalStorageSource.Get("language", browserLanguage)
         }

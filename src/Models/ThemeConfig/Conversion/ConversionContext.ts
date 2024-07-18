@@ -124,9 +124,9 @@ export class ConversionContext {
         this.messages.push({ context: this, level: "warning", message })
     }
 
-    err(message: string) {
+    err(...message: string[]) {
         this._hasErrors = true
-        this.messages.push({ context: this, level: "error", message })
+        this.messages.push({ context: this, level: "error", message: message.join(" ") })
     }
 
     info(message: string) {
