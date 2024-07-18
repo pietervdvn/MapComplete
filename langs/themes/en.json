@@ -883,6 +883,10 @@
         },
         "title": "Ghost Signs"
     },
+    "glutenfree": {
+        "description": "A crowdsourced map with glutenfree items",
+        "title": "Glutenfree"
+    },
     "grb": {
         "description": "This theme is an attempt to help automating the GRB import.",
         "layers": {

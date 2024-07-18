@@ -284,7 +284,7 @@
     "atm": {
         "description": "Geldautomaten om geld op te nemen",
         "filter": {
-            "1": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "Heeft spraak"
@@ -1344,14 +1344,14 @@
     "bike_shop": {
         "description": "Een winkel die hoofdzakelijk fietsen en fietstoebehoren verkoopt",
         "filter": {
-            "1": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "Verkoopt tweedehands fietsen"
                     }
                 }
             },
-            "2": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "Biedt doe-het-zelfreparaties aan"

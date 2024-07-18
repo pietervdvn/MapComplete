@@ -568,7 +568,7 @@
     "atm": {
         "description": "ATMs to withdraw money",
         "filter": {
-            "1": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "With speech output"
@@ -1694,14 +1694,14 @@
     "bike_shop": {
         "description": "A shop specifically selling bicycles or related items",
         "filter": {
-            "1": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "Sells second-hand bicycles"
                     }
                 }
             },
-            "2": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "Offers DIY bike repair"
@@ -8860,7 +8860,7 @@
                     }
                 }
             },
-            "6": {
+            "3": {
                 "options": {
                     "0": {
                         "question": "Only show shops selling second-hand items"

@@ -388,7 +388,7 @@
     "atm": {
         "description": "Bankomaty pro výběr peněz",
         "filter": {
-            "1": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "S hlasovým výstupem"
@@ -1401,14 +1401,14 @@
     "bike_shop": {
         "description": "Obchod zaměřený na prodej jízdních kol nebo souvisejících předmětů",
         "filter": {
-            "1": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "Prodává použitá jízdní kola"
                     }
                 }
             },
-            "2": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "Nabízí opravy kol \"Udělej si sám\""
@@ -7127,7 +7127,7 @@
                     }
                 }
             },
-            "6": {
+            "3": {
                 "options": {
                     "0": {
                         "question": "Zobrazit pouze obchody prodávající použité zboží"

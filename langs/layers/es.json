@@ -434,7 +434,7 @@
     "atm": {
         "description": "Cajeros automáticos para retirar dinero",
         "filter": {
-            "1": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "Con salida de audio"
@@ -1378,14 +1378,14 @@
     "bike_shop": {
         "description": "Una tiene que vende específicamente bicis u objetos relacionados",
         "filter": {
-            "1": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "Vende bicicletas de segunda mano"
                     }
                 }
             },
-            "2": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "Ofrece herramientas para autorreparación de bicis"

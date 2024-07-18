@@ -1385,14 +1385,14 @@
     "bike_shop": {
         "description": "Un magasin vendant spécifiquement des vélos ou des objets en lien",
         "filter": {
-            "1": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "Vend des vélos usagés"
                     }
                 }
             },
-            "2": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "Offre des services DIY"

@@ -423,7 +423,7 @@
     "atm": {
         "description": "Caixers automàtics per a retirar diners",
         "filter": {
-            "1": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "Amb sortida de veu"
@@ -1436,14 +1436,14 @@
     "bike_shop": {
         "description": "Una botiga que ven específicament bicicletes o articles relacionats",
         "filter": {
-            "1": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "Ven bicicletes de segona mà"
                     }
                 }
             },
-            "2": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "Ofereix reparar un mateix la bici"

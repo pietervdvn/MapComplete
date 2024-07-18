@@ -388,7 +388,7 @@
     "atm": {
         "description": "Caixas eletrônicos para sacar dinheiro",
         "filter": {
-            "1": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "Com saída de fala"

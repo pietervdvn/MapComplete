@@ -830,14 +830,14 @@
     "bike_shop": {
         "description": "Un negozio che vende specificatamente biciclette o articoli similari",
         "filter": {
-            "1": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "Vende biciclette usate"
                     }
                 }
             },
-            "2": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "Offre riparazioni fai da te"

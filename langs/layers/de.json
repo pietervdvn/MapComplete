@@ -568,7 +568,7 @@
     "atm": {
         "description": "Geldautomaten zum Geld abheben",
         "filter": {
-            "1": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "Mit Sprachausgabe"
@@ -1694,14 +1694,14 @@
     "bike_shop": {
         "description": "Ein Geschäft, das speziell Fahrräder oder verwandte Artikel verkauft",
         "filter": {
-            "1": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "Verkauft gebrauchte Fahrräder"
                     }
                 }
             },
-            "2": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "Bietet Selbstreparatur an"
@@ -8860,7 +8860,7 @@
                     }
                 }
             },
-            "6": {
+            "3": {
                 "options": {
                     "0": {
                         "question": "Nur Second-Hand-Geschäfte anzeigen"
