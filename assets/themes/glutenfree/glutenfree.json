@@ -1,0 +1,93 @@
+{
+  "id": "glutenfree",
+  "title": {
+    "en": "Glutenfree"
+  },
+  "description": {
+    "en": "A crowdsourced map with glutenfree items"
+  },
+  "icon": "./assets/themes/glutenfree/glutenfree.svg",
+  "layers": [
+    {
+      "builtin": "food",
+      "override": {
+        "source": {
+          "osmTags": {
+            "and+": [
+              "diet:gluten_free!=",
+              "diet:gluten_free!~no"
+            ]
+          }
+        },
+        "id": "food_glutenfree",
+        "minzoom": 4,
+        "presets": null
+      }
+    },
+    {
+      "builtin": "food",
+      "override": {
+        "name": null,
+        "minzoom": 17,
+        "isCounted": false,
+        "filter": {
+          "sameAs": "food_glutenfree"
+        }
+      }
+    },
+    {
+      "builtin": "ice_cream",
+      "override": {
+        "source": {
+          "osmTags": {
+            "and+": [
+              "diet:gluten_free!=",
+              "diet:gluten_free!~no"
+            ]
+          }
+        },
+        "id": "icecream_glutenfree",
+        "minzoom": 4,
+        "presets": null
+      }
+    },
+    {
+      "builtin": "ice_cream",
+      "override": {
+        "name": null,
+        "minzoom": 17,
+        "isCounted": false,
+        "filter": {
+          "sameAs": "icecream_glutenfree"
+        }
+      }
+    },
+    {
+      "builtin": "shops",
+      "override": {
+        "source": {
+          "osmTags": {
+            "and+": [
+              "diet:gluten_free!=",
+              "diet:gluten_free!~no"
+            ]
+          }
+        },
+        "id": "shops_glutenfree",
+        "minzoom": 4,
+        "presets": null
+      }
+    },
+    {
+      "builtin": "shops",
+      "override": {
+        "name": null,
+        "minzoom": 17,
+        "isCounted": false,
+        "filter": {
+          "sameAs": "shops_glutenfree"
+        }
+      }
+    }
+  ]
+}
