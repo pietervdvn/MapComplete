@@ -83,7 +83,6 @@ class ExpandFilter extends DesugaringStep<LayerConfigJson> {
                     context.err("Got undefined as filter expansion in "+tagRendering["id"])
                     continue
                 }
-                console.log("Adding filter",filterName," due to", tagRendering["id"])
                 filters.push(filterName)
             }
         }

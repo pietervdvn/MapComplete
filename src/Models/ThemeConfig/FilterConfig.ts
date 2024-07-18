@@ -25,8 +25,11 @@ export default class FilterConfig {
     public readonly defaultSelection?: number
 
     constructor(json: FilterConfigJson, context: string) {
+        if(typeof json === "string"){
+            throw "Got a non-expanded filter, just a string: "+json
+        }
         if (json.options === undefined) {
-            throw `A filter without options was given at ${context}`
+            throw `A filter without options was given at ${context}. The ID is ${JSON.stringify(json)}`
         }
         if (json.id === undefined) {
             throw `A filter without id was found at ${context}`
