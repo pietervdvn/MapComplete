@@ -1761,6 +1761,10 @@ export class ValidateFilter extends DesugaringStep<FilterConfigJson> {
             // Calling another filter, we skip
             return filter
         }
+        if(filter === undefined){
+            context.err("Trying to validate a filter, but this filter is undefined")
+            return undefined
+        }
         for (const option of filter.options) {
             for (let i = 0; i < option.fields?.length ?? 0; i++) {
                 const field = option.fields[i]

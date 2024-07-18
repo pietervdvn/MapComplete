@@ -613,7 +613,6 @@
     }
   ],
   "filter": [
-    "open_now",
     {
       "id": "speech_output",
       "options": [
