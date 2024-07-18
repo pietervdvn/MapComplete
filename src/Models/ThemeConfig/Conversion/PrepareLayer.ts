@@ -65,7 +65,7 @@ class ExpandFilter extends DesugaringStep<LayerConfigJson> {
 
         for (let i = 0; i < json.tagRenderings?.length; i++){
             const tagRendering = <TagRenderingConfigJson> json.tagRenderings[i]
-            if(!tagRendering.filter){
+            if(!tagRendering?.filter){
                 continue
             }
             for (const filterName of tagRendering.filter ?? []) {
