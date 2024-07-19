@@ -45,7 +45,7 @@ class HandleErrors extends Script {
                 } = JSON.parse(line)
                 const e = parsed.message
                 if (e.layout === "grb") {
-                    console.log("Filtering on GRB!")
+                    console.log("Skipping GRB ")
                     continue
                 }
                 console.log(e.username, e.layout, e.message, parsed.date)
