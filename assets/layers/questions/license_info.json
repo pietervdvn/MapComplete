@@ -72,6 +72,26 @@
     ]
   },
   {
+    "path": "glutenfree.svg",
+    "license": "CC-BY-SA-4.0",
+    "authors": [
+      "vladi1081384728"
+    ],
+    "sources": [
+      "https://www.vecteezy.com/vector-art/7225296-gluten-free-vector-label"
+    ]
+  },
+  {
+    "path": "lactose_free.svg",
+    "license": "CC-BY 3.0",
+    "authors": [
+      "rihlsul"
+    ],
+    "sources": [
+      "https://game-icons.net/1x1/rihlsul/milk-carton.html"
+    ]
+  },
+  {
     "path": "nfc_card.svg",
     "license": "CC0-1.0",
     "authors": [

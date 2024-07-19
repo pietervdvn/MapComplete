@@ -1,98 +1,98 @@
 {
-  "id": "glutenfree",
+  "id": "lactosefree",
   "title": {
-    "en": "Glutenfree"
+    "en": "Lactose free shops and restaurants"
   },
   "description": {
-    "en": "A crowdsourced map with glutenfree items"
+    "en": "A crowdsourced map with lactose free shops and restaurants"
   },
-  "icon": "./assets/layers/questions/glutenfree.svg",
+  "icon": "./assets/layers/questions/lactose_free.svg",
   "layers": [
     {
       "builtin": "food",
-      "hideTagRenderingsWithLabels": ["gluten_free","images","reviews"],
+      "hideTagRenderingsWithLabels": ["lactose_free","images","reviews"],
       "override": {
         "source": {
           "osmTags": {
             "and+": [
-              "diet:gluten_free!=",
-              "diet:gluten_free!~no"
+              "diet:lactose_free!=",
+              "diet:lactose_free!~no"
             ]
           }
         },
-        "id": "food_glutenfree",
+        "id": "food_lactosefree",
         "minzoom": 4,
         "presets": null
       }
     },
     {
       "builtin": "food",
-      "hideTagRenderingsWithLabels": ["gluten_free","images","reviews"],
+      "hideTagRenderingsWithLabels": ["lactose_free","images","reviews"],
       "override": {
         "name": null,
         "minzoom": 17,
 
         "isCounted": false,
         "filter": {
-          "sameAs": "food_glutenfree"
+          "sameAs": "food_lactosefree"
         }
       }
     },
     {
       "builtin": "ice_cream",
-      "hideTagRenderingsWithLabels": ["gluten_free","images","reviews"],
+      "hideTagRenderingsWithLabels": ["lactose_free","images","reviews"],
       "override": {
         "source": {
           "osmTags": {
             "and+": [
-              "diet:gluten_free!=",
-              "diet:gluten_free!~no"
+              "diet:lactose_free!=",
+              "diet:lactose_free!~no"
             ]
           }
         },
-        "id": "icecream_glutenfree",
+        "id": "icecream_lactosefree",
         "minzoom": 4,
         "presets": null
       }
     },
     {
       "builtin": "ice_cream",
-      "hideTagRenderingsWithLabels": ["gluten_free","images","reviews"],
+      "hideTagRenderingsWithLabels": ["lactose_free","images","reviews"],
       "override": {
         "name": null,
         "minzoom": 17,
         "isCounted": false,
         "filter": {
-          "sameAs": "icecream_glutenfree"
+          "sameAs": "icecream_lactosefree"
         }
       }
     },
     {
       "builtin": "shops",
-      "hideTagRenderingsWithLabels": ["gluten_free","images","reviews"],
+      "hideTagRenderingsWithLabels": ["lactose_free","images","reviews"],
       "override": {
         "source": {
           "osmTags": {
             "and+": [
-              "diet:gluten_free!=",
-              "diet:gluten_free!~no"
+              "diet:lactose_free!=",
+              "diet:lactose_free!~no"
             ]
           }
         },
-        "id": "shops_glutenfree",
+        "id": "shops_lactosefree",
         "minzoom": 4,
         "presets": null
       }
     },
     {
       "builtin": "shops",
-      "hideTagRenderingsWithLabels": ["gluten_free","images","reviews"],
+      "hideTagRenderingsWithLabels": ["lactose_free","images","reviews"],
       "override": {
         "name": null,
         "minzoom": 17,
         "isCounted": false,
         "filter": {
-          "sameAs": "shops_glutenfree"
+          "sameAs": "shops_lactosefree"
         }
       }
     }
@@ -101,7 +101,7 @@
     "+tagRenderings": [
       "images",
       "reviews",
-      "gluten_free"
+      "lactose_free"
     ]
   }
 }
