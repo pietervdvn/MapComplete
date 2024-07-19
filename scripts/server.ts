@@ -7,7 +7,8 @@ export interface Handler {
     handle: (
         path: string,
         queryParams: URLSearchParams,
-        req: http.IncomingMessage
+        req: http.IncomingMessage,
+        body: string | undefined
     ) => Promise<string>
 }
 
@@ -101,7 +102,7 @@ export class Server {
                     res.end()
                     return
                 }
-                let body = undefined
+                let body: string | undefined = undefined
                 if (req.method === "POST" || req.method === "UPDATE") {
                     body = await ServerUtils.getBody(req)
                 }
