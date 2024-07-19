@@ -215,6 +215,9 @@ class MapillaryFetcher implements ImageFetcher {
         for (const img of response.data) {
 
             const c = img.computed_geometry.coordinates
+            if(img.thumb_original_url === undefined){
+                continue
+            }
             pics.push({
                 pictureUrl: img.thumb_original_url,
                 provider: "Mapillary",
@@ -269,7 +272,20 @@ export class CombinedFetcher {
                     if (src.data === undefined) {
                         src.setData(pics)
                     } else {
-                        const newList = [...src.data, ...pics]
+                        const newList = []
+                        const seenIds = new Set<string>()
+                        for (const p4CPicture of [...src.data, ...pics]) {
+                            const id = p4CPicture.pictureUrl
+                            if(seenIds.has(id)){
+                                continue
+                            }
+                            newList.push(p4CPicture)
+                            seenIds.add(id)
+                            if(id === undefined){
+
+                            console.log("Img:", p4CPicture)
+                            }
+                        }
                         NearbyImageUtils.sortByDistance(newList, lon, lat)
                         src.setData(newList)
                     }

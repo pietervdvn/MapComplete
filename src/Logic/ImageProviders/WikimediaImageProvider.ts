@@ -120,7 +120,7 @@ export class WikimediaImageProvider extends ImageProvider {
         return [Promise.resolve(this.UrlForImage("File:" + value))]
     }
 
-    public async DownloadAttribution(img: ProvidedImage): Promise<LicenseInfo> {
+    public async DownloadAttribution(img: {url: string}): Promise<LicenseInfo> {
         const filename = WikimediaImageProvider.ExtractFileName(img.url)
 
         if (filename === "") {
