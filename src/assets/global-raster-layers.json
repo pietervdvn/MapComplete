@@ -120,7 +120,7 @@
 
     {
       "name": "Americana",
-      "url": "https://zelonewolf.github.io/openstreetmap-americana/style.json",
+      "url": "https://americanamap.org/style.json",
       "category": "osmbasedmap",
       "id": "americana",
       "type": "vector",
