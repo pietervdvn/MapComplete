@@ -314,6 +314,10 @@
                     "then": "./assets/themes/lighthouses/lighthouse.svg"
                   },
                   {
+                    "if": "theme=mapcomplete-changes",
+                    "then": "./assets/svg/logo.svg"
+                  },
+                  {
                     "if": "theme=maproulette",
                     "then": "./assets/layers/maproulette/logomark.svg"
                   },
