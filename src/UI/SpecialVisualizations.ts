@@ -59,7 +59,6 @@ import { Imgur } from "../Logic/ImageProviders/Imgur"
 import Constants from "../Models/Constants"
 import { MangroveReviews } from "mangrove-reviews-typescript"
 import Wikipedia from "../Logic/Web/Wikipedia"
-import NearbyImagesSearch from "../Logic/Web/NearbyImagesSearch"
 import AllReviews from "./Reviews/AllReviews.svelte"
 import StarsBarIcon from "./Reviews/StarsBarIcon.svelte"
 import ReviewForm from "./Reviews/ReviewForm.svelte"
@@ -98,6 +97,7 @@ import MarkdownUtils from "../Utils/MarkdownUtils"
 import ArrowDownTray from "@babeard/svelte-heroicons/mini/ArrowDownTray"
 import Trash from "@babeard/svelte-heroicons/mini/Trash"
 import NothingKnown from "./Popup/NothingKnown.svelte"
+import { CombinedFetcher } from "../Logic/Web/NearbyImagesSearch"
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -116,7 +116,7 @@ class NearbyImageVis implements SpecialVisualization {
     docs =
         "A component showing nearby images loaded from various online services such as Mapillary. In edit mode and when used on a feature, the user can select an image to add to the feature"
     funcName = "nearby_images"
-    needsUrls = NearbyImagesSearch.apiUrls
+    needsUrls = CombinedFetcher.apiUrls
     svelteBased = true
 
     constr(

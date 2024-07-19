@@ -562,6 +562,7 @@
         "isDeleted": "Deleted",
         "nearby": {
             "close": "Collapse panel with nearby images",
+            "failed": "Fetching images from {service} failed",
             "link": "This picture shows the object",
             "noNearbyImages": "No nearby images were found",
             "seeNearby": "Browse and link nearby pictures",

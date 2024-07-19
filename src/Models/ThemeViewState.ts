@@ -73,6 +73,7 @@ import { LayerConfigJson } from "./ThemeConfig/Json/LayerConfigJson"
 import Locale from "../UI/i18n/Locale"
 import Hash from "../Logic/Web/Hash"
 import { GeoOperations } from "../Logic/GeoOperations"
+import { CombinedFetcher } from "../Logic/Web/NearbyImagesSearch"
 
 /**
  *
@@ -151,6 +152,8 @@ export default class ThemeViewState implements SpecialVisualizationState {
      */
     public readonly visualFeedback: UIEventSource<boolean> = new UIEventSource<boolean>(false)
     public readonly toCacheSavers: ReadonlyMap<string, SaveFeatureSourceToLocalStorage>
+
+    public readonly nearbyImageSearcher
 
     constructor(layout: LayoutConfig, mvtAvailableLayers: Set<string>) {
         Utils.initDomPurify()
@@ -369,6 +372,9 @@ export default class ThemeViewState implements SpecialVisualizationState {
             this.changes,
         )
         this.favourites = new FavouritesFeatureSource(this)
+        const longAgo = new Date()
+        longAgo.setTime(new Date().getTime() - 5 * 365 * 24 * 60 * 60 * 1000 )
+        this.nearbyImageSearcher = new CombinedFetcher(50, longAgo, this.indexedFeatures)
 
         this.featureSummary = this.setupSummaryLayer(
             new LayerConfig(<LayerConfigJson>summaryLayer, "summaryLayer", true),

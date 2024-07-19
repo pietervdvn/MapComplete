@@ -1,21 +1,48 @@
 import { IndexedFeatureSource } from "../FeatureSource/FeatureSource"
 import { GeoOperations } from "../GeoOperations"
-import { ImmutableStore, Store, Stores, UIEventSource } from "../UIEventSource"
+import { Store, UIEventSource } from "../UIEventSource"
 import P4C from "pic4carto"
+import { Tiles } from "../../Models/TileRange"
+import { BBox } from "../BBox"
+import Constants from "../../Models/Constants"
 import { Utils } from "../../Utils"
+import { Point } from "geojson"
 
-export interface NearbyImageOptions {
-    lon: number
-    lat: number
-    // Radius of the upstream search
-    searchRadius?: 500 | number
-    maxDaysOld?: 1095 | number
-    blacklist: Store<{ url: string }[]>
-    shownImagesCount?: UIEventSource<number>
-    towardscenter?: UIEventSource<boolean>
-    allowSpherical?: UIEventSource<boolean>
-    // Radius of what is shown. Useless to select a value > searchRadius; defaults to searchRadius
-    shownRadius?: UIEventSource<number>
+interface ImageFetcher {
+    /**
+     * Returns images, null if an error happened
+     * @param lat
+     * @param lon
+     */
+    fetchImages(lat: number, lon: number): Promise<P4CPicture[]>
+
+    readonly name: string
+
+}
+
+
+class CachedFetcher implements ImageFetcher {
+    private readonly _fetcher: ImageFetcher
+    private readonly _zoomlevel: number
+    private readonly cache: Map<number, Promise<P4CPicture[]>> = new Map<number, Promise<P4CPicture[]>>()
+    public readonly name: string
+
+    constructor(fetcher: ImageFetcher, zoomlevel: number = 19) {
+        this._fetcher = fetcher
+        this._zoomlevel = zoomlevel
+        this.name = fetcher.name
+    }
+
+    fetchImages(lat: number, lon: number): Promise<P4CPicture[]> {
+        const tile = Tiles.embedded_tile(lat, lon, this._zoomlevel)
+        const tileIndex = Tiles.tile_index(tile.z, tile.x, tile.y)
+        if (this.cache.has(tileIndex)) {
+            return this.cache.get(tileIndex)
+        }
+        const call = this._fetcher.fetchImages(lat, lon)
+        this.cache.set(tileIndex, call)
+        return call
+    }
 }
 
 export interface P4CPicture {
@@ -34,181 +61,72 @@ export interface P4CPicture {
     }
 }
 
-/**
- * Uses Pic4Carto to fetch nearby images from various providers
- */
-export default class NearbyImagesSearch {
-    public static readonly services = ["mapillary", "flickr", "kartaview", "wikicommons"] as const
-    public static readonly apiUrls = ["https://api.flickr.com"]
-    private readonly individualStores: Store<
-        { images: P4CPicture[]; beforeFilter: number } | undefined
-    >[]
-    private readonly _store: UIEventSource<P4CPicture[]> = new UIEventSource<P4CPicture[]>([])
-    public readonly store: Store<P4CPicture[]> = this._store
-    public readonly allDone: Store<boolean>
-    private readonly _options: NearbyImageOptions
-
-    constructor(options: NearbyImageOptions, features: IndexedFeatureSource) {
-        this.individualStores = NearbyImagesSearch.services
-            .filter((s) => s !== "kartaview" /*DEAD*/)
-            .map((s) => NearbyImagesSearch.buildPictureFetcher(options, s))
-
-        const allDone = new UIEventSource(false)
-        this.allDone = allDone
-        const self = this
-        function updateAllDone() {
-            const stillRunning = self.individualStores.some((store) => store.data === undefined)
-            allDone.setData(!stillRunning)
-        }
-        self.individualStores.forEach((s) => s.addCallback((_) => updateAllDone()))
-
-        this._options = options
-        if (features !== undefined) {
-            const osmImages = new ImagesInLoadedDataFetcher(features).fetchAround({
-                lat: options.lat,
-                lon: options.lon,
-                searchRadius: options.searchRadius ?? 100,
-            })
-            this.individualStores.push(
-                new ImmutableStore({ images: osmImages, beforeFilter: osmImages.length })
-            )
-        }
-        for (const source of this.individualStores) {
-            source.addCallback(() => this.update())
-        }
-        this.update()
-    }
-
-    private static async fetchImages(
-        options: NearbyImageOptions,
-        fetcher: P4CService
-    ): Promise<P4CPicture[]> {
-        const picManager = new P4C.PicturesManager({ usefetchers: [fetcher] })
-        const maxAgeSeconds = (options.maxDaysOld ?? 3 * 365) * 24 * 60 * 60 * 1000
-        const searchRadius = options.searchRadius ?? 100
-
-        try {
-            const pics: P4CPicture[] = await picManager.startPicsRetrievalAround(
-                new P4C.LatLng(options.lat, options.lon),
-                searchRadius,
-                {
-                    mindate: new Date().getTime() - maxAgeSeconds,
-                    towardscenter: false,
-                }
-            )
-            return pics
-        } catch (e) {
-            console.warn("Could not fetch images from service", fetcher, e)
-            return []
-        }
-    }
-
-    private static buildPictureFetcher(
-        options: NearbyImageOptions,
-        fetcher: P4CService
-    ): Store<{ images: P4CPicture[]; beforeFilter: number } | null | undefined> {
-        const p4cStore = Stores.FromPromiseWithErr<P4CPicture[]>(
-            NearbyImagesSearch.fetchImages(options, fetcher)
-        )
-        const searchRadius = options.searchRadius ?? 100
-        return p4cStore.mapD(
-            (imagesState) => {
-                if (imagesState["error"]) {
-                    return null
-                }
-                let images = imagesState["success"]
-                if (images === undefined) {
-                    return undefined
-                }
-                const beforeFilterCount = images.length
-                if (!options?.allowSpherical?.data) {
-                    images = images?.filter((i) => i.details.isSpherical !== true)
-                }
-
-                const shownRadius = options?.shownRadius?.data ?? searchRadius
-                if (shownRadius !== searchRadius) {
-                    images = images.filter((i) => {
-                        const d = GeoOperations.distanceBetween(
-                            [i.coordinates.lng, i.coordinates.lat],
-                            [options.lon, options.lat]
-                        )
-                        return d <= shownRadius
-                    })
-                }
-                if (options.towardscenter?.data) {
-                    images = images.filter((i) => {
-                        if (i.direction === undefined || isNaN(i.direction)) {
-                            return false
-                        }
-                        const bearing = GeoOperations.bearing(
-                            [i.coordinates.lng, i.coordinates.lat],
-                            [options.lon, options.lat]
-                        )
-                        const diff = Math.abs((i.direction - bearing) % 360)
-                        return diff < 40
-                    })
-                }
-
-                images?.sort((a, b) => {
-                    const distanceA = GeoOperations.distanceBetween(
-                        [a.coordinates.lng, a.coordinates.lat],
-                        [options.lon, options.lat]
-                    )
-                    const distanceB = GeoOperations.distanceBetween(
-                        [b.coordinates.lng, b.coordinates.lat],
-                        [options.lon, options.lat]
-                    )
-                    return distanceA - distanceB
-                })
-
-                return { images, beforeFilter: beforeFilterCount }
-            },
-            [options.blacklist, options.allowSpherical, options.towardscenter, options.shownRadius]
-        )
-    }
-
-    private update() {
-        const seen: Set<string> = new Set<string>(this._options.blacklist.data.map((d) => d.url))
-        let beforeFilter = 0
-        let result: P4CPicture[] = []
-        for (const source of this.individualStores) {
-            const imgs = source.data
-            if (imgs === undefined) {
-                continue
-            }
-            beforeFilter = beforeFilter + imgs.beforeFilter
-            for (const img of imgs.images) {
-                if (seen.has(img.pictureUrl)) {
-                    continue
-                }
-                seen.add(img.pictureUrl)
-                result.push(img)
-            }
-        }
-        const c = [this._options.lon, this._options.lat]
+class NearbyImageUtils {
+    /**
+     * In place sorting of the given array, by distance. Closest element will be first
+     */
+    public static sortByDistance(result: P4CPicture[], lon: number, lat: number) {
+        const c = [lon, lat]
         result.sort((a, b) => {
             const da = GeoOperations.distanceBetween([a.coordinates.lng, a.coordinates.lat], c)
             const db = GeoOperations.distanceBetween([b.coordinates.lng, b.coordinates.lat], c)
             return da - db
+
         })
-        if (Utils.sameList(result, this._store.data)) {
-            //   return
-        }
-        this._store.setData(result)
     }
+}
+
+
+class P4CImageFetcher implements ImageFetcher {
+
+    public static readonly services = ["mapillary", "flickr", "kartaview", "wikicommons"] as const
+    public static readonly apiUrls = ["https://api.flickr.com"]
+    private _options: { maxDaysOld: number, searchRadius: number }
+    public readonly name: P4CService
+
+    constructor(service: P4CService, options?: { maxDaysOld: number, searchRadius: number }) {
+        this.name = service
+        this._options = options
+    }
+
+    async fetchImages(lat: number, lon: number): Promise<P4CPicture[]> {
+        const picManager = new P4C.PicturesManager({ usefetchers: [this.name] })
+        const maxAgeSeconds = (this._options?.maxDaysOld ?? 3 * 365) * 24 * 60 * 60 * 1000
+        const searchRadius = this._options?.searchRadius ?? 100
+
+        try {
+
+            return await picManager.startPicsRetrievalAround(
+                new P4C.LatLng(lat, lon),
+                searchRadius,
+                {
+                    mindate: new Date().getTime() - maxAgeSeconds,
+                    towardscenter: false,
+
+                },
+            )
+        } catch (e) {
+            console.log("P4C image fetcher failed with", e)
+            throw e
+        }
+    }
+
 }
 
 /**
  * Extracts pictures from currently loaded features
  */
-class ImagesInLoadedDataFetcher {
+class ImagesInLoadedDataFetcher implements ImageFetcher {
     private indexedFeatures: IndexedFeatureSource
+    private readonly _searchRadius: number
+    public readonly name = "inLoadedData"
 
-    constructor(indexedFeatures: IndexedFeatureSource) {
+    constructor(indexedFeatures: IndexedFeatureSource, searchRadius: number = 500) {
         this.indexedFeatures = indexedFeatures
+        this._searchRadius = searchRadius
     }
 
-    public fetchAround(loc: { lon: number; lat: number; searchRadius?: number }): P4CPicture[] {
+    async fetchImages(lat: number, lon: number): Promise<P4CPicture[]> {
         const foundImages: P4CPicture[] = []
         this.indexedFeatures.features.data.forEach((feature) => {
             const props = feature.properties
@@ -225,8 +143,8 @@ class ImagesInLoadedDataFetcher {
                 return
             }
             const centerpoint = GeoOperations.centerpointCoordinates(feature)
-            const d = GeoOperations.distanceBetween(centerpoint, [loc.lon, loc.lat])
-            if (loc.searchRadius !== undefined && d > loc.searchRadius) {
+            const d = GeoOperations.distanceBetween(centerpoint, [lon, lat])
+            if (this._searchRadius !== undefined && d > this._searchRadius) {
                 return
             }
             for (const image of images) {
@@ -247,4 +165,122 @@ class ImagesInLoadedDataFetcher {
     }
 }
 
-type P4CService = (typeof NearbyImagesSearch.services)[number]
+
+class MapillaryFetcher implements ImageFetcher {
+
+    public readonly name = "mapillary_new"
+    private readonly _panoramas: "only" | "no" | undefined
+    private readonly _max_images: 100 | number
+
+    private readonly start_captured_at?: Date
+    private readonly end_captured_at?: Date
+
+    constructor(options?: {
+        panoramas: undefined | "only" | "no",
+        max_images?: 100 | number,
+        start_captured_at?: Date,
+        end_captured_at?: Date
+    }) {
+        this._panoramas = options?.panoramas
+        this._max_images = options?.max_images ?? 100
+        this.start_captured_at = options?.start_captured_at
+        this.end_captured_at = options?.end_captured_at
+    }
+
+    async fetchImages(lat: number, lon: number): Promise<P4CPicture[]> {
+
+        const boundingBox = new BBox([[lon, lat]]).padAbsolute(0.003)
+        let url = "https://graph.mapillary.com/images?fields=computed_geometry,creator,id,thumb_256_url,thumb_original_url,compass_angle&bbox="
+            + [boundingBox.getWest(), boundingBox.getSouth(), boundingBox.getEast(), boundingBox.getNorth()].join(",")
+            + "&access_token=" + encodeURIComponent(Constants.mapillary_client_token_v4)
+            + "&limit=" + this._max_images
+        {
+            if (this._panoramas === "no") {
+                url += "&is_pano=false"
+            } else if (this._panoramas === "only") {
+                url += "&is_pano=true"
+            }
+            if (this.start_captured_at) {
+                url += "&start_captured_at="+ this.start_captured_at?.toISOString()
+            }
+            if (this.end_captured_at) {
+                url += "&end_captured_at="+ this.end_captured_at?.toISOString()
+            }
+        }
+
+        const response = await Utils.downloadJson<{
+            data: { id: string, creator: string, computed_geometry: Point, is_pano: boolean,thumb_256_url: string, thumb_original_url: string, compass_angle: number }[]
+        }>(url)
+        const pics: P4CPicture[] = []
+        for (const img of response.data) {
+
+            const c = img.computed_geometry.coordinates
+            pics.push({
+                pictureUrl: img.thumb_original_url,
+                provider: "Mapillary",
+                coordinates: { lng: c[0], lat: c[1] },
+                thumbUrl: img.thumb_256_url,
+                osmTags: {
+                    "mapillary":img.id
+                },
+                details: {
+                    isSpherical: img.is_pano,
+                },
+            })
+        }
+        return pics
+    }
+}
+
+type P4CService = (typeof P4CImageFetcher.services)[number]
+
+export class CombinedFetcher {
+    private readonly sources: ReadonlyArray<CachedFetcher>
+    public static apiUrls = P4CImageFetcher.apiUrls
+
+
+    constructor(radius: number, maxage: Date, indexedFeatures: IndexedFeatureSource) {
+        this.sources = [
+            new ImagesInLoadedDataFetcher(indexedFeatures, radius),
+            new MapillaryFetcher({
+                panoramas: "no",
+                max_images: 25,
+                start_captured_at : maxage
+            }),
+            new P4CImageFetcher("mapillary"),
+            new P4CImageFetcher("wikicommons"),
+        ].map(f => new CachedFetcher(f))
+    }
+
+    public getImagesAround(lon: number, lat: number): {
+        images: Store<P4CPicture[]>,
+        state: Store<Record<string, "loading" | "done" | "error">>
+    } {
+        const src = new UIEventSource<P4CPicture[]>([])
+        const state = new UIEventSource<Record<string, "loading" | "done" | "error">>({})
+        for (const source of this.sources) {
+            state.data[source.name] = "loading"
+            state.ping()
+            source.fetchImages(lat, lon)
+                .then(pics => {
+                    console.log(source.name,"==>>",pics)
+                    state.data[source.name] = "done"
+                    state.ping()
+                    if (src.data === undefined) {
+                        src.setData(pics)
+                    } else {
+                        const newList = [...src.data, ...pics]
+                        NearbyImageUtils.sortByDistance(newList, lon, lat)
+                        src.setData(newList)
+                    }
+                }, err => {
+                    console.error("Could not load images from", source.name, "due to", err)
+                    state.data[source.name] = "error"
+                    state.ping()
+                })
+        }
+        return { images: src, state }
+    }
+
+}
+

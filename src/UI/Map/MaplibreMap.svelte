@@ -97,6 +97,7 @@
 
 
   onDestroy(async () => {
+<<<<<<< HEAD
     await Utils.waitFor(100)
     requestAnimationFrame(
       () => {
@@ -109,6 +110,15 @@
         }
       }
     )
+=======
+    await Utils.waitFor(250)
+    try {
+      _map?.remove()
+      map = null
+    } catch (e) {
+      console.error("Could not destroy map")
+    }
+>>>>>>> 6093ac3ea (Refactoring: rework image fetching code, improve nearby images UI. Fix #2026, #2027)
   })
 </script>
 
