@@ -89,8 +89,8 @@ class GenerateLayouts extends Script {
 
         try {
             // We already read to file, in order to crash here if the file is not found
-            let img = await sharp(iconPath)
-            let resized = await img.resize(size)
+            const img = await sharp(iconPath)
+            const resized = await img.resize(size)
             await resized.toFile(targetpath)
             console.log("Created png version at ", newname)
         } catch (e) {
@@ -457,16 +457,29 @@ class GenerateLayouts extends Script {
         let ogImage = layout.socialImage
         let twitterImage = ogImage
         if (ogImage === LayoutConfig.defaultSocialImage && layout.official) {
-            ogImage = (await this.createSocialImage(layout, "")) ?? layout.socialImage
-            twitterImage = (await this.createSocialImage(layout, "Wide")) ?? layout.socialImage
+            try{
+                ogImage = (await this.createSocialImage(layout, "")) ?? layout.socialImage
+                twitterImage = (await this.createSocialImage(layout, "Wide")) ?? layout.socialImage
+            }catch (e) {
+                console.error("Could not generate image:", e)
+            }
         }
         if (twitterImage.endsWith(".svg")) {
+            try{
+
             // svgs are badly supported as social image, we use a generated svg instead
             twitterImage = await this.createIcon(twitterImage, 512, alreadyWritten)
+            }catch (e) {
+                console.error("Could not generate image:", e)
+            }
         }
 
         if (ogImage.endsWith(".svg")) {
-            ogImage = await this.createIcon(ogImage, 512, alreadyWritten)
+            try{
+                ogImage = await this.createIcon(ogImage, 512, alreadyWritten)
+            }catch (e) {
+                console.error("Could not generate image:", e)
+            }
         }
 
         let customCss = ""
@@ -506,7 +519,7 @@ class GenerateLayouts extends Script {
             apple_icons.push(`<link rel="apple-touch-icon" sizes="${size}x${size}" href="${icon}">`)
         }
 
-        let themeSpecific = [
+        const themeSpecific = [
             `<title>${ogTitle}</title>`,
             `<link rel="manifest" href="${this.enc(layout.id)}.webmanifest">`,
             og,

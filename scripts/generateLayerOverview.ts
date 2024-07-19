@@ -806,6 +806,9 @@ class LayerOverviewUtils extends Script {
                     try {
                         ScriptUtils.ReadSvgSync(themeFile.icon, (svg) => {
                             const width: string = svg["$"].width
+                            if (width === undefined) {
+                                throw "The logo at " + themeFile.icon + " does not have a defined width"
+                            }
                             const height: string = svg["$"].height
                             const err = themeFile.hideFromOverview ? console.warn : console.error
                             if (width !== height) {
@@ -813,6 +816,11 @@ class LayerOverviewUtils extends Script {
                                     `the icon for theme ${themeFile.id} is not square. Please square the icon at ${themeFile.icon}` +
                                     ` Width = ${width} height = ${height}`
                                 err(e)
+                            }
+
+
+                            if (width?.endsWith("%")) {
+                                throw "The logo at " + themeFile.icon + " has a relative width; this is not supported"
                             }
 
                             const w = parseInt(width)
