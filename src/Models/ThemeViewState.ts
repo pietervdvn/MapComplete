@@ -853,6 +853,8 @@ export default class ThemeViewState implements SpecialVisualizationState {
         this.selectedElement.addCallback((selected) => {
             if (selected === undefined) {
                 this.focusOnMap()
+            }else{
+                this.lastClickObject.clear()
             }
         })
         this.guistate.allToggles.forEach((toggle) => {
