@@ -1990,6 +1990,9 @@ export class ValidateThemeEnsemble extends Conversion<
         >()
 
         for (const theme of json) {
+            if(theme.id === "personal"){
+                continue
+            }
             for (const layer of theme.layers) {
                 if (typeof layer.source === "string") {
                     continue

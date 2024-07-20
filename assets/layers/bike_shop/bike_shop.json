@@ -34,6 +34,8 @@
       "#": "We select all bicycle shops, sports shops (but we try to weed out non-bicycle related shops), and any shop with a bicycle related tag",
       "or": [
         "shop=bicycle",
+        "service:bicycle:retail=yes",
+        "service:bicycle:repair=yes",
         {
           "#": "if sport is defined and is not bicycle, it is not matched; if bicycle retail/repair is marked as 'no', it is not shown to too.",
           "##": "There will be a few false-positives with this. They will get filtered out by people marking both 'not selling bikes' and 'not repairing bikes'. Furthermore, the OSMers will add a sports-subcategory on it",
