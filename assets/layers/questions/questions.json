@@ -2475,7 +2475,9 @@
             "en": "<b>Only sells lactose free</b> products",
             "de": "<b>Ausschließlich</b> laktosefreie Produkte",
             "cs": "<b>Prodává pouze výrobky bez laktózy</b>"
-          }
+          },
+          "icon": "./assets/layers/questions/lactose_free.svg"
+
         },
         {
           "if": "diet:lactose_free=yes",
@@ -2483,7 +2485,9 @@
             "en": "Big lactose free offering",
             "de": "Viele laktosefreie Produkte",
             "cs": "Velká nabídka bez laktózy"
-          }
+          },
+          "icon": "./assets/layers/questions/lactose_free.svg"
+
         },
         {
           "if": "diet:lactose_free=limited",
@@ -2522,7 +2526,8 @@
             "en": "This shop <b>only sells gluten free</b> products",
             "de": "Das Geschäft verkauft <b>ausschließlich glutenfreie</b> Produkte",
             "cs": "Tento obchod <b>prodává pouze bezlepkové</b> produkty"
-          }
+          },
+          "icon": "./assets/layers/questions/glutenfree.svg"
         },
         {
           "if": "diet:gluten_free=yes",
@@ -2530,7 +2535,8 @@
             "en": "This shop has a big gluten free offering",
             "de": "Das Geschäft verkauft viele glutenfreie Produkte",
             "cs": "Tento obchod má velkou bezlepkovou nabídku"
-          }
+          },
+          "icon": "./assets/layers/questions/glutenfree.svg"
         },
         {
           "if": "diet:gluten_free=limited",

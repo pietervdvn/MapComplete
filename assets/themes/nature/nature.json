@@ -53,7 +53,9 @@
         "picnic_table",
         "toilet",
         "guidepost",
-        "shelter"
+        "shelter",
+        "bbq",
+        "firepit"
       ],
       "override": {
         "minzoom": 16

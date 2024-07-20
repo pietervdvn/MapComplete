@@ -263,7 +263,7 @@
                   },
                   {
                     "if": "theme=glutenfree",
-                    "then": "./assets/themes/glutenfree/glutenfree.svg"
+                    "then": "./assets/layers/questions/glutenfree.svg"
                   },
                   {
                     "if": "theme=grb",
@@ -304,6 +304,10 @@
                   {
                     "if": "theme=kerbs_and_crossings",
                     "then": "./assets/layers/kerbs/KerbIcon.svg"
+                  },
+                  {
+                    "if": "theme=lactosefree",
+                    "then": "./assets/layers/questions/lactose_free.svg"
                   },
                   {
                     "if": "theme=lighthouses",
