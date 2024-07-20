@@ -2808,6 +2808,43 @@
           }
         }
       ]
+    },
+    {
+      "id": "shower",
+      "question": {
+        "en": "Does this facility offer showers?"
+      },
+      "mappings": [
+        {
+          "if": "shower=hot",
+          "icon": "./assets/layers/shower/shower.svg",
+          "then": {
+            "en": "This facility does have showers with warm water"
+          }
+        },
+        {
+          "if": "shower=cold",
+          "icon": "./assets/layers/shower/shower.svg",
+          "then": {
+            "en": "This facility does have showers, but the water is not heated"
+          }
+        },
+        {
+          "if": "shower=yes",
+          "icon": "./assets/layers/shower/shower.svg",
+          "then": {
+            "en": "This facility does have showers"
+          }
+        },
+
+        {
+          "if": "shower=no",
+          "icon": "invalid;./assets/layers/shower/shower.svg",
+          "then": {
+            "en": "This facility does not offer a shower"
+          }
+        }
+      ]
     }
   ]
 }

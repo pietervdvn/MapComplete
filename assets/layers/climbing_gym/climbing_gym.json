@@ -87,6 +87,7 @@
     }
   ],
   "lineRendering": [],
+  "titleIcons": ["icons.defaults"],
   "presets": [
     {
       "title": {
@@ -130,6 +131,9 @@
     "payment-options",
     "opening_hours",
     "reviews",
+    "climbing.bouldering",
+    "climbing.sportclimbing",
+    "climbing.toprope",
     {
       "id": "shoe_rental",
       "question": {
@@ -464,9 +468,6 @@
         }
       ]
     },
-    "climbing.bouldering",
-    "climbing.sportclimbing",
-    "climbing.toprope",
     {
       "builtin": "climbing.average_length",
       "override": {
@@ -537,6 +538,7 @@
         }
       ]
     },
+    "shower",
     "internet",
     "internet-fee",
     "internet-ssid"
