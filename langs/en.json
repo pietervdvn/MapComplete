@@ -180,7 +180,7 @@
         "attribution": {
             "attributionBackgroundLayer": "The current background layer is {name}",
             "attributionBackgroundLayerWithCopyright": "The current background layer is {name}: {copyright}",
-            "attributionContent": "<p>All data is provided by <a href='https://osm.org' target='_blank'>OpenStreetMap</a>, freely reusable under <a href='https://osm.org/copyright' target='_blank'>the Open DataBase License</a>.</p>",
+            "attributionContent": "<p>All data is provided by <a href='https://www.openstreetmap.org' target='_blank'>OpenStreetMap</a>, freely reusable under <a href='https://www.openstreetmap.org/copyright' target='_blank'>the Open DataBase License</a>.</p>",
             "attributionTitle": "Attribution notice",
             "codeContributionsBy": "MapComplete has been built by {contributors} and <a href='https://github.com/pietervdvn/MapComplete/graphs/contributors' target='_blank'>{hiddenCount} more contributors</a>",
             "donate": "Support MapComplete financially",
