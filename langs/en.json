@@ -337,7 +337,7 @@
             "on_weekends": "Opened on weekends {ranges}",
             "openTill": "till",
             "open_24_7": "Open around the clock",
-            "open_during_ph": "During a public holiday, this is",
+            "open_during_ph": "During a public holiday, it is",
             "opensAt": "from",
             "ph_closed": "closed",
             "ph_not_known": " ",
