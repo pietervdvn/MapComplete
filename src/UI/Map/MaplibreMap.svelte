@@ -46,7 +46,7 @@
       styleUrl = defaultLayer.style ?? defaultLayer.url
     }
 
-    console.log("Initing mapLIbremap with style", styleUrl)
+    console.log("Initiating mapLIbremap with style", styleUrl)
 
     const options: MapOptions = {
       container,

@@ -88,7 +88,7 @@ export default class TagRenderingConfig {
     ) {
         let json = <string | QuestionableTagRenderingConfigJson>config
         if (json === undefined) {
-            throw "Initing a TagRenderingConfig with undefined in " + context
+            throw "Initiating a TagRenderingConfig with undefined in " + context
         }
 
         if (typeof json === "number") {
