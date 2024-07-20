@@ -235,6 +235,32 @@
       ]
     },
     {
+      "mappings": [
+        {
+          "if": "armrest=yes",
+          "then": {
+            "en": "This bench does have one or more armrests",
+            "de": "Diese Sitzbank hat eine oder mehrere Armlehnen"
+          }
+        },
+        {
+          "if": "armrest=no",
+          "then": {
+            "en": "This bench does <b>not</b> have any armrests",
+            "de": "Diese Sitzbank hat <b>keine</b> Armlehnen"
+          }
+        }
+      ],
+      "question": {
+        "en": "Does this bench have one or more armrests?",
+        "de": "Hat diese Sitzbank eine oder mehrere Armlehnen?"
+      },
+      "id": "bench-armrest",
+      "labels": [
+        "bench-questions"
+      ]
+    },
+    {
       "render": {
         "en": "This bench has {seats} seats",
         "de": "Diese Sitzbank hat {seats} Sitzplätze",
