@@ -350,3 +350,13 @@
 {#each services as service}
   <ServiceIndicator {service} />
 {/each}
+
+<button on:click={() => {
+    fetch(Constants.ErrorReportServer, {
+                method: "POST",
+                body: JSON.stringify({
+                    message: "Test via the status page, not an actual error",
+                    version: Constants.vNumber,
+                }),
+            })
+}}>Test error report function</button>
