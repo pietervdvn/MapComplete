@@ -24,7 +24,7 @@ class ServerErrorReport extends Script {
             ".lines.json"
     }
 
-    public reportError(path: string, queryParams: URLSearchParams, req: IncomingMessage, body: string | undefined, logDirectory: string) {
+    public reportError(path: string, queryParams: URLSearchParams, req: IncomingMessage, body: string | undefined, logDirectory: string): string {
         if (!body) {
             throw "{\"error\": \"No body; use a post request\"}"
         }
@@ -83,15 +83,15 @@ class ServerErrorReport extends Script {
             {
                 mustMatch: "report",
                 mimetype: "application/json",
-                handle(path: string, queryParams: URLSearchParams, req: IncomingMessage, body: string | undefined) {
-                    return this.reportError(queryParams, req, body, logDirectory)
+                handle: async (path: string, queryParams: URLSearchParams, req: IncomingMessage, body: string | undefined) => {
+                    return this.reportError(path, queryParams, req, body, logDirectory)
                 },
             },
             {
                 mustMatch: "csp",
                 mimetype: "application/json",
-                handle(path: string, queryParams: URLSearchParams, req: IncomingMessage, body: string | undefined) {
-                    return this.reportError(queryParams, req, body, logDirectory+"/csp")
+                handle: async (path: string, queryParams: URLSearchParams, req: IncomingMessage, body: string | undefined) => {
+                    return this.reportError(path, queryParams, req, body, logDirectory+"/csp")
                 },
             },
         ])
