@@ -7,6 +7,7 @@
   import FromHtml from "../Base/FromHtml.svelte"
   import Tr from "../Base/Tr.svelte"
   import Translations from "../i18n/Translations.js"
+  import Pencil from "@babeard/svelte-heroicons/solid/Pencil"
 
   /**
    * This panel shows information about the logged-in user, showing account name, profile pick, description and an edit-button
