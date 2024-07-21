@@ -48,9 +48,22 @@
 </script>
 
 <TitledPanel>
-  <div class="flex" slot="title">
-    <Filter class="h-6 w-6 pr-2" />
-    <Tr t={Translations.t.general.menu.filter} />
+  <div class="flex items-center justify-between w-full mr-10" slot="title">
+    <div class="flex">
+      <Filter class="h-6 w-6 pr-2" />
+      <Tr t={Translations.t.general.menu.filter} />
+    </div>
+
+
+    <div class="flex self-end text-sm gap-x-2">
+      <button class="small as-link" class:disabled={allEnabled} on:click={() => enableAll(true)}>
+        <Tr t={Translations.t.general.filterPanel.enableAll} />
+      </button>
+      <button class="small as-link" class:disabled={allDisabled} on:click={() => enableAll(false)}>
+        <Tr t={Translations.t.general.filterPanel.disableAll} />
+      </button>
+    </div>
+
   </div>
 
     {#each layout.layers as layer}
@@ -60,14 +73,6 @@
         highlightedLayer={state.guistate.highlightedLayerInFilters}
       />
     {/each}
-    <div class="mt-1 flex self-end">
-      <button class="small" class:disabled={allEnabled} on:click={() => enableAll(true)}>
-        <Tr t={Translations.t.general.filterPanel.enableAll} />
-      </button>
-      <button class="small" class:disabled={allDisabled} on:click={() => enableAll(false)}>
-        <Tr t={Translations.t.general.filterPanel.disableAll} />
-      </button>
-    </div>
 
     {#each layout.tileLayerSources as tilesource}
       <OverlayToggle
