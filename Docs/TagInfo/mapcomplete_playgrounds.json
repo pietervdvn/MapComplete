@@ -399,6 +399,16 @@
       "value": "no"
     },
     {
+      "key": "armrest",
+      "description": "Layer 'Benches' shows armrest=yes with a fixed text, namely 'This bench does have one or more armrests' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
+      "value": "yes"
+    },
+    {
+      "key": "armrest",
+      "description": "Layer 'Benches' shows armrest=no with a fixed text, namely 'This bench does <b>not</b> have any armrests' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
+      "value": "no"
+    },
+    {
       "key": "seats",
       "description": "Layer 'Benches' shows and asks freeform values for key 'seats' (in the mapcomplete.org theme 'Playgrounds')"
     },

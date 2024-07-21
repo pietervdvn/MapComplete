@@ -499,6 +499,10 @@
 
              - climbing_gym
             
+            ### shower
+
+             - climbing_gym
+            
             ### seasonal
 
              - drinking_water

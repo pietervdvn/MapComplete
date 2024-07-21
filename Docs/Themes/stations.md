@@ -81,7 +81,7 @@ Layer showing train stations
 
 
 
- - This layer is shown at zoomlevel **12** and higher
+ - This layer is shown at zoomlevel **8** and higher
  - Elements don't have a title set and cannot be toggled nor will they show up in the dashboard. If you import this layer in your theme, override `title` to make this toggleable.
 
 

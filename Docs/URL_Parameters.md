@@ -102,7 +102,7 @@ Note that the _loading_ screen will always use the navigator language.
 
 Translations are never complete. If a translation in a certain language is missing, English is used as fallback.
 
-This documentation is defined in the source code at [Locale.ts](/src/UI/i18n/Locale.ts#L35)
+This documentation is defined in the source code at [Locale.ts](/src/UI/i18n/Locale.ts#L53)
 
 
 
@@ -112,7 +112,7 @@ No default value set
 
 If set, will show a translation button next to every string.
 
-This documentation is defined in the source code at [Locale.ts](/src/UI/i18n/Locale.ts#L78)
+This documentation is defined in the source code at [Locale.ts](/src/UI/i18n/Locale.ts#L92)
 
 
 
@@ -262,7 +262,7 @@ The default value is _true_
 
 If true, 'dryrun' mode is activated. The app will behave as normal, except that changes to OSM will be printed onto the console instead of actually uploaded to osm.org
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L187)
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L188)
 
 
 
@@ -272,7 +272,7 @@ The default value is _false_
 
 If true, shows some extra debugging help such as all the available tags on every object
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L193)
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L194)
 
 
 
@@ -282,7 +282,7 @@ The default value is _false_
 
 If true, the location distance indication will not be written to the changeset and other privacy enhancing measures might be taken.
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L199)
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L200)
 
 
 
@@ -292,7 +292,7 @@ The default value is _false_
 
 Point mapcomplete to a different overpass-instance. Example: https://overpass-api.de/api/interpreter
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L205)
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L206)
 
 
 
@@ -302,7 +302,7 @@ The default value is _https://overpass-api.de/api/interpreter,https://overpass.k
 
 Set a different timeout (in seconds) for queries in overpass
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L216)
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L217)
 
 
 
@@ -312,7 +312,7 @@ The default value is _30_
 
  point to switch between OSM-api and overpass
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L224)
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L225)
 
 
 
@@ -322,7 +322,7 @@ The default value is _16_
 
 Tilesize when the OSM-API is used to fetch data within a BBOX
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L232)
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L233)
 
 
 
@@ -332,7 +332,7 @@ The default value is _17_
 
 The id of the background layer to start with
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L239)
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L240)
 
 
 
@@ -372,7 +372,7 @@ The default value is _0_
 
 Used to complete the login
 
-This documentation is defined in the source code at [ThemeViewState.ts](/src/Models/ThemeViewState.ts#L174)
+This documentation is defined in the source code at [ThemeViewState.ts](/src/Models/ThemeViewState.ts#L177)
 
 
 
@@ -392,7 +392,7 @@ The default value is _true_
 
 State of filter kid-books
 
-This documentation is defined in the source code at [FilterConfig.ts](/src/Models/ThemeConfig/FilterConfig.ts#L162)
+This documentation is defined in the source code at [FilterConfig.ts](/src/Models/ThemeConfig/FilterConfig.ts#L165)
 
 
 
@@ -402,7 +402,7 @@ The default value is _false_
 
 State of filter adult-books
 
-This documentation is defined in the source code at [FilterConfig.ts](/src/Models/ThemeConfig/FilterConfig.ts#L162)
+This documentation is defined in the source code at [FilterConfig.ts](/src/Models/ThemeConfig/FilterConfig.ts#L165)
 
 
 
@@ -412,7 +412,7 @@ The default value is _false_
 
 State of filter inside
 
-This documentation is defined in the source code at [FilterConfig.ts](/src/Models/ThemeConfig/FilterConfig.ts#L162)
+This documentation is defined in the source code at [FilterConfig.ts](/src/Models/ThemeConfig/FilterConfig.ts#L165)
 
 
 
@@ -422,7 +422,7 @@ The default value is _0_
 
 State of filter has_image
 
-This documentation is defined in the source code at [FilterConfig.ts](/src/Models/ThemeConfig/FilterConfig.ts#L162)
+This documentation is defined in the source code at [FilterConfig.ts](/src/Models/ThemeConfig/FilterConfig.ts#L165)
 
 
 
@@ -442,7 +442,7 @@ The default value is _true_
 
 The mode the application starts in, e.g. 'map', 'dashboard' or 'statistics'
 
-This documentation is defined in the source code at [generateDocs.ts](ervdvn/git2/MapComplete/scripts/generateDocs.ts#L418)
+This documentation is defined in the source code at [generateDocs.ts](ervdvn/git/MapComplete/scripts/generateDocs.ts#L418)
 
 
 

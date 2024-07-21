@@ -19,6 +19,8 @@ This theme contains the following layers:
  - [toilet](../Layers/toilet.md)
  - [guidepost](../Layers/guidepost.md)
  - [shelter](../Layers/shelter.md)
+ - [bbq](../Layers/bbq.md)
+ - [firepit](../Layers/firepit.md)
 
 
 Available languages:

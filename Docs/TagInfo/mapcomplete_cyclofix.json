@@ -147,6 +147,16 @@
       "value": "bicycle"
     },
     {
+      "key": "service:bicycle:retail",
+      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Bike repair/shop showing features with this tag",
+      "value": "yes"
+    },
+    {
+      "key": "service:bicycle:repair",
+      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Bike repair/shop showing features with this tag",
+      "value": "yes"
+    },
+    {
       "key": "shop",
       "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Bike repair/shop showing features with this tag",
       "value": "sports"

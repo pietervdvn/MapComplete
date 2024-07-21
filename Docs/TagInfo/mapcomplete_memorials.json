@@ -210,6 +210,16 @@
       "value": "no"
     },
     {
+      "key": "armrest",
+      "description": "Layer 'Memorials' shows armrest=yes with a fixed text, namely 'This bench does have one or more armrests' and allows to pick this as a default answer (in the mapcomplete.org theme 'Memorials') (This is only shown if amenity=bench)",
+      "value": "yes"
+    },
+    {
+      "key": "armrest",
+      "description": "Layer 'Memorials' shows armrest=no with a fixed text, namely 'This bench does <b>not</b> have any armrests' and allows to pick this as a default answer (in the mapcomplete.org theme 'Memorials') (This is only shown if amenity=bench)",
+      "value": "no"
+    },
+    {
       "key": "seats",
       "description": "Layer 'Memorials' shows and asks freeform values for key 'seats' (in the mapcomplete.org theme 'Memorials') (This is only shown if amenity=bench)"
     },
@@ -414,6 +424,16 @@
     {
       "key": "backrest",
       "description": "Layer 'Benches' shows backrest=no with a fixed text, namely 'This bench does <b>not</b> have a backrest' and allows to pick this as a default answer (in the mapcomplete.org theme 'Memorials')",
+      "value": "no"
+    },
+    {
+      "key": "armrest",
+      "description": "Layer 'Benches' shows armrest=yes with a fixed text, namely 'This bench does have one or more armrests' and allows to pick this as a default answer (in the mapcomplete.org theme 'Memorials')",
+      "value": "yes"
+    },
+    {
+      "key": "armrest",
+      "description": "Layer 'Benches' shows armrest=no with a fixed text, namely 'This bench does <b>not</b> have any armrests' and allows to pick this as a default answer (in the mapcomplete.org theme 'Memorials')",
       "value": "no"
     },
     {
@@ -796,6 +816,16 @@
     {
       "key": "backrest",
       "description": "Layer 'Artworks' shows backrest=no with a fixed text, namely 'This bench does <b>not</b> have a backrest' and allows to pick this as a default answer (in the mapcomplete.org theme 'Memorials') (This is only shown if amenity=bench)",
+      "value": "no"
+    },
+    {
+      "key": "armrest",
+      "description": "Layer 'Artworks' shows armrest=yes with a fixed text, namely 'This bench does have one or more armrests' and allows to pick this as a default answer (in the mapcomplete.org theme 'Memorials') (This is only shown if amenity=bench)",
+      "value": "yes"
+    },
+    {
+      "key": "armrest",
+      "description": "Layer 'Artworks' shows armrest=no with a fixed text, namely 'This bench does <b>not</b> have any armrests' and allows to pick this as a default answer (in the mapcomplete.org theme 'Memorials') (This is only shown if amenity=bench)",
       "value": "no"
     },
     {

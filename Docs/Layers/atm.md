@@ -222,7 +222,7 @@ This tagrendering has labels
 
 | id | question | osmTags |
 -----|-----|----- |
-| open_now.0 | Open now | _isOpen=yes |
+| speech_output.0 | With speech output | speech_output=yes |
 
 
 
@@ -231,7 +231,7 @@ This tagrendering has labels
 
 | id | question | osmTags |
 -----|-----|----- |
-| speech_output.0 | With speech output | speech_output=yes |
+| open_now.0 | Open now | _isOpen=yes |
 
 
 

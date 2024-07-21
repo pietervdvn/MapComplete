@@ -58,7 +58,7 @@ Elements must match **all** of the following expressions:
 | attribute | type | values which are supported by this layer |
 -----|-----|----- |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/name:etymology:wikidata#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/name%3Aetymology%3Awikidata/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [name:etymology:wikidata](https://wiki.openstreetmap.org/wiki/Key:name:etymology:wikidata) | [wikidata](../SpecialInputElements.md#wikidata) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/name:etymology#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/name%3Aetymology/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [name:etymology](https://wiki.openstreetmap.org/wiki/Key:name:etymology) | [string](../SpecialInputElements.md#string) | [unknown](https://wiki.openstreetmap.org/wiki/Tag:name:etymology%3Dunknown) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/name:etymology#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/name%3Aetymology/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [name:etymology](https://wiki.openstreetmap.org/wiki/Key:name:etymology) | [text](../SpecialInputElements.md#text) | [unknown](https://wiki.openstreetmap.org/wiki/Tag:name:etymology%3Dunknown) |
 
 
 

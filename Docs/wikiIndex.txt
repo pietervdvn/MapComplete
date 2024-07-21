@@ -326,6 +326,15 @@
 |genre= POI, editor, ghostsigns
 }}
 {{service_item
+|name= [https://mapcomplete.org/glutenfree glutenfree]
+|region= Worldwide
+|lang= {{#language:en|en}}
+|descr= A MapComplete theme: A crowdsourced map with glutenfree items
+|material= {{yes|[https://mapcomplete.org/ Yes]}}
+|image= MapComplete_Screenshot.png
+|genre= POI, editor, glutenfree
+}}
+{{service_item
 |name= [https://mapcomplete.org/guideposts guideposts]
 |region= Worldwide
 |lang= {{#language:en|en}}, {{#language:cs|en}}, {{#language:de|en}}, {{#language:es|en}}, {{#language:pl|en}}
@@ -389,6 +398,15 @@ The position of a signpost can be used by a hiker/biker/rider/s…
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
 |genre= POI, editor, kerbs_and_crossings
+}}
+{{service_item
+|name= [https://mapcomplete.org/lactosefree lactosefree]
+|region= Worldwide
+|lang= {{#language:en|en}}
+|descr= A MapComplete theme: A crowdsourced map with lactose free shops and restaurants
+|material= {{yes|[https://mapcomplete.org/ Yes]}}
+|image= MapComplete_Screenshot.png
+|genre= POI, editor, lactosefree
 }}
 {{service_item
 |name= [https://mapcomplete.org/lighthouses lighthouses]

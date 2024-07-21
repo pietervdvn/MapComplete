@@ -40,7 +40,7 @@ The listed types here trigger a special input element. Use them in `tagrendering
 34. [currency](#currency)
 
 ### string
-A simple piece of text
+A simple piece of text which is at most 255 characters long
 ### text
 A longer piece of text. Uses an textArea instead of a textField
 ### date

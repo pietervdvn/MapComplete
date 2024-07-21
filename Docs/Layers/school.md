@@ -240,7 +240,7 @@ This tagrendering has labels
 
 | id | question | osmTags |
 -----|-----|----- |
-| pedagogy.0 | *All types* (default) |  |
+| pedagogy.0 | *What educational theory is applied on this school?* (default) |  |
 | pedagogy.1 | This school does not use a specific pedagogy | pedagogy=mainstream |
 | pedagogy.2 | This school uses the Montessori method of education | pedagogy=montessori |
 | pedagogy.3 | This school is associated with the Freinet Modern School Movement | pedagogy=freinet |

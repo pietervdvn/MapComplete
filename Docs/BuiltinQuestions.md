@@ -71,6 +71,7 @@ This is a special layer - data is not sourced from OpenStreetMap
 46. [lod](#lod)
 47. [split_button](#split_button)
 48. [seasonal](#seasonal)
+49. [shower](#shower)
 
 ## Supported attributes
 
@@ -107,6 +108,7 @@ This is a special layer - data is not sourced from OpenStreetMap
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/diet:gluten_free#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/diet%3Agluten_free/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [diet:gluten_free](https://wiki.openstreetmap.org/wiki/Key:diet:gluten_free) | Multiple choice | [only](https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Donly) [yes](https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Dlimited) [no](https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Dno) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/diet:vegan#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/diet%3Avegan/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [diet:vegan](https://wiki.openstreetmap.org/wiki/Key:diet:vegan) | Multiple choice | [only](https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Donly) [yes](https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dlimited) [no](https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dno) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/seasonal#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/seasonal/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [seasonal](https://wiki.openstreetmap.org/wiki/Key:seasonal) | Multiple choice | [no](https://wiki.openstreetmap.org/wiki/Tag:seasonal%3Dno) [summer](https://wiki.openstreetmap.org/wiki/Tag:seasonal%3Dsummer) [spring;summer;autumn](https://wiki.openstreetmap.org/wiki/Tag:seasonal%3Dspring;summer;autumn) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/shower#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/shower/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [shower](https://wiki.openstreetmap.org/wiki/Key:shower) | Multiple choice | [hot](https://wiki.openstreetmap.org/wiki/Tag:shower%3Dhot) [cold](https://wiki.openstreetmap.org/wiki/Tag:shower%3Dcold) [yes](https://wiki.openstreetmap.org/wiki/Tag:shower%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:shower%3Dno) |
 
 
 
@@ -618,8 +620,8 @@ The question is `Does {title()} have a lactose-free offering?`
 
 
 
- -  *<b>Only sells lactose free</b> products* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:lactose_free' target='_blank'>diet:lactose_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Donly' target='_blank'>only</a>
- -  *Big lactose free offering* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:lactose_free' target='_blank'>diet:lactose_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dyes' target='_blank'>yes</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/lactose_free.svg' style='width: 3rem; height: 3rem'> *<b>Only sells lactose free</b> products* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:lactose_free' target='_blank'>diet:lactose_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Donly' target='_blank'>only</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/lactose_free.svg' style='width: 3rem; height: 3rem'> *Big lactose free offering* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:lactose_free' target='_blank'>diet:lactose_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dyes' target='_blank'>yes</a>
  -  *<b>Limited lactose free</b> offering* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:lactose_free' target='_blank'>diet:lactose_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dlimited' target='_blank'>limited</a>
  -  *No lactose free offering* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:lactose_free' target='_blank'>diet:lactose_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dno' target='_blank'>no</a>
 
@@ -634,8 +636,8 @@ The question is `Does this shop have a gluten free offering?`
 
 
 
- -  *This shop <b>only sells gluten free</b> products* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:gluten_free' target='_blank'>diet:gluten_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Donly' target='_blank'>only</a>
- -  *This shop has a big gluten free offering* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:gluten_free' target='_blank'>diet:gluten_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Dyes' target='_blank'>yes</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/glutenfree.svg' style='width: 3rem; height: 3rem'> *This shop <b>only sells gluten free</b> products* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:gluten_free' target='_blank'>diet:gluten_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Donly' target='_blank'>only</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/glutenfree.svg' style='width: 3rem; height: 3rem'> *This shop has a big gluten free offering* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:gluten_free' target='_blank'>diet:gluten_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Dyes' target='_blank'>yes</a>
  -  *This shop has a <b>limited gluten free</b> offering* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:gluten_free' target='_blank'>diet:gluten_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Dlimited' target='_blank'>limited</a>
  -  *This shop has no gluten free offering* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:gluten_free' target='_blank'>diet:gluten_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Dno' target='_blank'>no</a>
 
@@ -686,6 +688,21 @@ The question is `Is {title()} available all around the year?`
  -  *Available all around the year* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:seasonal' target='_blank'>seasonal</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:seasonal%3Dno' target='_blank'>no</a>
  -  *Only available in summer* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:seasonal' target='_blank'>seasonal</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:seasonal%3Dsummer' target='_blank'>summer</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/drinking_water/no_winter.svg' style='width: 3rem; height: 3rem'> *Closed during the winter* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:seasonal' target='_blank'>seasonal</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:seasonal%3Dspring;summer;autumn' target='_blank'>spring;summer;autumn</a>
+
+
+
+
+
+### shower
+
+The question is `Does this facility offer showers?`
+
+
+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/shower/shower.svg' style='width: 3rem; height: 3rem'> *This facility does have showers with warm water* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shower' target='_blank'>shower</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shower%3Dhot' target='_blank'>hot</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/shower/shower.svg' style='width: 3rem; height: 3rem'> *This facility does have showers, but the water is not heated* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shower' target='_blank'>shower</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shower%3Dcold' target='_blank'>cold</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/shower/shower.svg' style='width: 3rem; height: 3rem'> *This facility does have showers* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shower' target='_blank'>shower</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shower%3Dyes' target='_blank'>yes</a>
+ -  *This facility does not offer a shower* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shower' target='_blank'>shower</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shower%3Dno' target='_blank'>no</a>
 
 
 

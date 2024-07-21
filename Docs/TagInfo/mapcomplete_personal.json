@@ -660,6 +660,16 @@
       "value": "no"
     },
     {
+      "key": "armrest",
+      "description": "Layer 'Artworks' shows armrest=yes with a fixed text, namely 'This bench does have one or more armrests' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if amenity=bench)",
+      "value": "yes"
+    },
+    {
+      "key": "armrest",
+      "description": "Layer 'Artworks' shows armrest=no with a fixed text, namely 'This bench does <b>not</b> have any armrests' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if amenity=bench)",
+      "value": "no"
+    },
+    {
       "key": "seats",
       "description": "Layer 'Artworks' shows and asks freeform values for key 'seats' (in the mapcomplete.org theme 'Personal theme') (This is only shown if amenity=bench)"
     },
@@ -1242,6 +1252,16 @@
     {
       "key": "backrest",
       "description": "Layer 'Benches' shows backrest=no with a fixed text, namely 'This bench does <b>not</b> have a backrest' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "armrest",
+      "description": "Layer 'Benches' shows armrest=yes with a fixed text, namely 'This bench does have one or more armrests' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "armrest",
+      "description": "Layer 'Benches' shows armrest=no with a fixed text, namely 'This bench does <b>not</b> have any armrests' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "no"
     },
     {
@@ -2505,6 +2525,16 @@
       "key": "shop",
       "description": "The MapComplete theme Personal theme has a layer Bike repair/shop showing features with this tag",
       "value": "bicycle"
+    },
+    {
+      "key": "service:bicycle:retail",
+      "description": "The MapComplete theme Personal theme has a layer Bike repair/shop showing features with this tag",
+      "value": "yes"
+    },
+    {
+      "key": "service:bicycle:repair",
+      "description": "The MapComplete theme Personal theme has a layer Bike repair/shop showing features with this tag",
+      "value": "yes"
     },
     {
       "key": "shop",
@@ -5094,6 +5124,53 @@
       "value": "closed"
     },
     {
+      "key": "climbing:boulder",
+      "description": "Layer 'Climbing gyms' shows climbing:boulder=yes with a fixed text, namely 'Bouldering is possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "climbing:boulder",
+      "description": "Layer 'Climbing gyms' shows climbing:boulder=no with a fixed text, namely 'Bouldering is not possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "climbing:boulder",
+      "description": "Layer 'Climbing gyms' shows climbing:boulder=limited with a fixed text, namely 'Bouldering is possible, although there are only a few problems' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "limited"
+    },
+    {
+      "key": "climbing:boulder",
+      "description": "Layer 'Climbing gyms' shows climbing:boulder~.+ with a fixed text, namely 'There are {climbing:boulder} boulder problems' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "climbing:sport",
+      "description": "Layer 'Climbing gyms' shows climbing:sport=yes with a fixed text, namely 'Sport climbing is possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "climbing:sport",
+      "description": "Layer 'Climbing gyms' shows climbing:sport=no with a fixed text, namely 'Sport climbing is not possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "climbing:sport",
+      "description": "Layer 'Climbing gyms' shows climbing:sport~.+ with a fixed text, namely 'There are {climbing:sport} sport climbing routes' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "climbing:toprope",
+      "description": "Layer 'Climbing gyms' shows climbing:toprope=yes with a fixed text, namely 'Toprope climbing is possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "climbing:toprope",
+      "description": "Layer 'Climbing gyms' shows climbing:toprope=no with a fixed text, namely 'Toprope climbing is not possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "climbing:toprope",
+      "description": "Layer 'Climbing gyms' shows climbing:toprope~.+ with a fixed text, namely 'There are {climbing:toprope} toprope routes' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
       "key": "service:climbing_shoes:rental",
       "description": "Layer 'Climbing gyms' shows service:climbing_shoes:rental=yes & service:climbing_shoes:rental:fee=no with a fixed text, namely 'Climbing shoes can be borrowed for free here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "yes"
@@ -5220,53 +5297,6 @@
       "value": "no"
     },
     {
-      "key": "climbing:boulder",
-      "description": "Layer 'Climbing gyms' shows climbing:boulder=yes with a fixed text, namely 'Bouldering is possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
-      "value": "yes"
-    },
-    {
-      "key": "climbing:boulder",
-      "description": "Layer 'Climbing gyms' shows climbing:boulder=no with a fixed text, namely 'Bouldering is not possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
-      "value": "no"
-    },
-    {
-      "key": "climbing:boulder",
-      "description": "Layer 'Climbing gyms' shows climbing:boulder=limited with a fixed text, namely 'Bouldering is possible, although there are only a few problems' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
-      "value": "limited"
-    },
-    {
-      "key": "climbing:boulder",
-      "description": "Layer 'Climbing gyms' shows climbing:boulder~.+ with a fixed text, namely 'There are {climbing:boulder} boulder problems' (in the mapcomplete.org theme 'Personal theme')"
-    },
-    {
-      "key": "climbing:sport",
-      "description": "Layer 'Climbing gyms' shows climbing:sport=yes with a fixed text, namely 'Sport climbing is possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
-      "value": "yes"
-    },
-    {
-      "key": "climbing:sport",
-      "description": "Layer 'Climbing gyms' shows climbing:sport=no with a fixed text, namely 'Sport climbing is not possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
-      "value": "no"
-    },
-    {
-      "key": "climbing:sport",
-      "description": "Layer 'Climbing gyms' shows climbing:sport~.+ with a fixed text, namely 'There are {climbing:sport} sport climbing routes' (in the mapcomplete.org theme 'Personal theme')"
-    },
-    {
-      "key": "climbing:toprope",
-      "description": "Layer 'Climbing gyms' shows climbing:toprope=yes with a fixed text, namely 'Toprope climbing is possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
-      "value": "yes"
-    },
-    {
-      "key": "climbing:toprope",
-      "description": "Layer 'Climbing gyms' shows climbing:toprope=no with a fixed text, namely 'Toprope climbing is not possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
-      "value": "no"
-    },
-    {
-      "key": "climbing:toprope",
-      "description": "Layer 'Climbing gyms' shows climbing:toprope~.+ with a fixed text, namely 'There are {climbing:toprope} toprope routes' (in the mapcomplete.org theme 'Personal theme')"
-    },
-    {
       "key": "climbing:length",
       "description": "Layer 'Climbing gyms' shows and asks freeform values for key 'climbing:length' (in the mapcomplete.org theme 'Personal theme') (This is only shown if climbing:sport!=no | climbing:toprope!=no)"
     },
@@ -5295,6 +5325,26 @@
     {
       "key": "climbing:speed",
       "description": "Layer 'Climbing gyms' shows climbing:speed~.+ with a fixed text, namely 'There are {climbing:speed} speed climbing walls' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "shower",
+      "description": "Layer 'Climbing gyms' shows shower=hot with a fixed text, namely 'This facility does have showers with warm water' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "hot"
+    },
+    {
+      "key": "shower",
+      "description": "Layer 'Climbing gyms' shows shower=cold with a fixed text, namely 'This facility does have showers, but the water is not heated' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "cold"
+    },
+    {
+      "key": "shower",
+      "description": "Layer 'Climbing gyms' shows shower=yes with a fixed text, namely 'This facility does have showers' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "shower",
+      "description": "Layer 'Climbing gyms' shows shower=no with a fixed text, namely 'This facility does not offer a shower' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "no"
     },
     {
       "key": "internet_access",
@@ -6502,7 +6552,7 @@
     },
     {
       "key": "defibrillator:location:fr",
-      "description": "Layer 'Defibrillators' shows and asks freeform values for key 'defibrillator:location:fr' (in the mapcomplete.org theme 'Personal theme')"
+      "description": "Layer 'Defibrillators' shows and asks freeform values for key 'defibrillator:location:fr' (in the mapcomplete.org theme 'Personal theme') (This is only shown if _country=be | defibrillator:location:fr~.+)"
     },
     {
       "key": "wheelchair",
@@ -7916,72 +7966,72 @@
     },
     {
       "key": "leisure",
-      "description": "The MapComplete theme Personal theme has a layer Firepitd showing features with this tag",
+      "description": "The MapComplete theme Personal theme has a layer Firepit showing features with this tag",
       "value": "firepit"
     },
     {
       "key": "id",
-      "description": "Layer 'Firepitd' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Personal theme') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+      "description": "Layer 'Firepit' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Personal theme') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
     },
     {
       "key": "image",
-      "description": "The layer 'Firepitd allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Firepit allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Firepitd allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Firepit allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Firepitd allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Firepit allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Firepitd allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Firepit allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "access",
-      "description": "Layer 'Firepitd' shows access=yes with a fixed text, namely 'Public' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "description": "Layer 'Firepit' shows access=yes with a fixed text, namely 'Public' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "yes"
     },
     {
       "key": "access",
-      "description": "Layer 'Firepitd' shows access=no with a fixed text, namely 'No access' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "description": "Layer 'Firepit' shows access=no with a fixed text, namely 'No access' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "no"
     },
     {
       "key": "access",
-      "description": "Layer 'Firepitd' shows access=private with a fixed text, namely 'Private' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "description": "Layer 'Firepit' shows access=private with a fixed text, namely 'Private' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "private"
     },
     {
       "key": "access",
-      "description": "Layer 'Firepitd' shows access=permissive with a fixed text, namely 'Access until revoked' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "description": "Layer 'Firepit' shows access=permissive with a fixed text, namely 'Access until revoked' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "permissive"
     },
     {
       "key": "access",
-      "description": "Layer 'Firepitd' shows access=customers with a fixed text, namely 'Access only for customers' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "description": "Layer 'Firepit' shows access=customers with a fixed text, namely 'Access only for customers' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "customers"
     },
     {
       "key": "access",
-      "description": "Layer 'Firepitd' shows access=permit with a fixed text, namely 'Access only for authorized' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "description": "Layer 'Firepit' shows access=permit with a fixed text, namely 'Access only for authorized' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "permit"
     },
     {
       "key": "seasonal",
-      "description": "Layer 'Firepitd' shows seasonal=no with a fixed text, namely 'Available all around the year' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "description": "Layer 'Firepit' shows seasonal=no with a fixed text, namely 'Available all around the year' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "no"
     },
     {
       "key": "seasonal",
-      "description": "Layer 'Firepitd' shows seasonal=summer with a fixed text, namely 'Only available in summer' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "description": "Layer 'Firepit' shows seasonal=summer with a fixed text, namely 'Only available in summer' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "summer"
     },
     {
       "key": "seasonal",
-      "description": "Layer 'Firepitd' shows seasonal=spring;summer;autumn with a fixed text, namely 'Closed during the winter' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "description": "Layer 'Firepit' shows seasonal=spring;summer;autumn with a fixed text, namely 'Closed during the winter' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "spring;summer;autumn"
     },
     {
@@ -10998,6 +11048,16 @@
     {
       "key": "backrest",
       "description": "Layer 'Memorials' shows backrest=no with a fixed text, namely 'This bench does <b>not</b> have a backrest' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if amenity=bench)",
+      "value": "no"
+    },
+    {
+      "key": "armrest",
+      "description": "Layer 'Memorials' shows armrest=yes with a fixed text, namely 'This bench does have one or more armrests' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if amenity=bench)",
+      "value": "yes"
+    },
+    {
+      "key": "armrest",
+      "description": "Layer 'Memorials' shows armrest=no with a fixed text, namely 'This bench does <b>not</b> have any armrests' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if amenity=bench)",
       "value": "no"
     },
     {

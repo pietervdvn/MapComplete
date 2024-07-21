@@ -35,6 +35,7 @@ A permanently installed barbecue, typically accessible to the public.
 
 
  - [fireplace](https://mapcomplete.org/fireplace)
+ - [nature](https://mapcomplete.org/nature)
  - [personal](https://mapcomplete.org/personal)
 
 

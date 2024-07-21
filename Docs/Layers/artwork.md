@@ -31,6 +31,7 @@ An open map of statues, busts, graffitis and other artwork all over the world
   - [artwork_subject](#artwork_subject)
   - [doubles_as_bench](#doubles_as_bench)
   - [bench-backrest](#bench-backrest)
+  - [bench-armrest](#bench-armrest)
   - [bench-seats](#bench-seats)
   - [bench-material](#bench-material)
   - [bench-direction](#bench-direction)
@@ -74,6 +75,7 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/subject:wikidata#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/subject%3Awikidata/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [subject:wikidata](https://wiki.openstreetmap.org/wiki/Key:subject:wikidata) | [wikidata](../SpecialInputElements.md#wikidata) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/amenity#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/amenity/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [amenity](https://wiki.openstreetmap.org/wiki/Key:amenity) | Multiple choice | [bench](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbench) [](https://wiki.openstreetmap.org/wiki/Tag:amenity%3D) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/backrest#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/backrest/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [backrest](https://wiki.openstreetmap.org/wiki/Key:backrest) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:backrest%3Dyes) [yes](https://wiki.openstreetmap.org/wiki/Tag:backrest%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:backrest%3Dno) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/armrest#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/armrest/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [armrest](https://wiki.openstreetmap.org/wiki/Key:armrest) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:armrest%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:armrest%3Dno) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/seats#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/seats/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [seats](https://wiki.openstreetmap.org/wiki/Key:seats) | [nat](../SpecialInputElements.md#nat) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/material#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/material/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [material](https://wiki.openstreetmap.org/wiki/Key:material) | [string](../SpecialInputElements.md#string) | [wood](https://wiki.openstreetmap.org/wiki/Tag:material%3Dwood) [metal](https://wiki.openstreetmap.org/wiki/Tag:material%3Dmetal) [stone](https://wiki.openstreetmap.org/wiki/Tag:material%3Dstone) [concrete](https://wiki.openstreetmap.org/wiki/Tag:material%3Dconcrete) [plastic](https://wiki.openstreetmap.org/wiki/Tag:material%3Dplastic) [steel](https://wiki.openstreetmap.org/wiki/Tag:material%3Dsteel) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/direction#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/direction/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [direction](https://wiki.openstreetmap.org/wiki/Key:direction) | [direction](../SpecialInputElements.md#direction) |  |
@@ -190,6 +192,20 @@ The question is `Does this bench have a backrest?`
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/bench/two_sided.svg' style='width: 3rem; height: 3rem'> *This bench is two-sided and shares the backrest* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:backrest' target='_blank'>backrest</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:backrest%3Dyes' target='_blank'>yes</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:two_sided' target='_blank'>two_sided</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:two_sided%3Dyes' target='_blank'>yes</a>
  -  *This bench does have a backrest* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:backrest' target='_blank'>backrest</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:backrest%3Dyes' target='_blank'>yes</a>
  -  *This bench does <b>not</b> have a backrest* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:backrest' target='_blank'>backrest</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:backrest%3Dno' target='_blank'>no</a>
+
+
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbench' target='_blank'>bench</a>
+This tagrendering has labels 
+`bench-questions`
+
+### bench-armrest
+
+The question is `Does this bench have one or more armrests?`
+
+
+
+ -  *This bench does have one or more armrests* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:armrest' target='_blank'>armrest</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:armrest%3Dyes' target='_blank'>yes</a>
+ -  *This bench does <b>not</b> have any armrests* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:armrest' target='_blank'>armrest</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:armrest%3Dno' target='_blank'>no</a>
 
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbench' target='_blank'>bench</a>
@@ -347,7 +363,7 @@ This tagrendering has labels
 
 | id | question | osmTags |
 -----|-----|----- |
-| artwork-artwork_type.0 | *All types* (default) |  |
+| artwork-artwork_type.0 | *What is the type of this artwork?* (default) |  |
 | artwork-artwork_type.1 | Architecture | artwork_type=architecture |
 | artwork-artwork_type.2 | Mural | artwork_type=mural |
 | artwork-artwork_type.3 | Painting | artwork_type=painting |

@@ -310,15 +310,6 @@ This tagrendering has labels
 
 | id | question | osmTags |
 -----|-----|----- |
-| open_now.0 | Open now | _isOpen=yes |
-
-
-
-
-
-
-| id | question | osmTags |
------|-----|----- |
 | accepts_debit_cards.0 | Accepts debit cards | payment:debit_cards=yes |
 
 
@@ -329,6 +320,33 @@ This tagrendering has labels
 | id | question | osmTags |
 -----|-----|----- |
 | accepts_credit_cards.0 | Accepts credit cards | payment:credit_cards=yes |
+
+
+
+
+
+
+| id | question | osmTags |
+-----|-----|----- |
+| open_now.0 | Open now | _isOpen=yes |
+
+
+
+
+
+
+| id | question | osmTags |
+-----|-----|----- |
+| accepts_cash.0 | Accepts cash | payment:cash=yes |
+
+
+
+
+
+
+| id | question | osmTags |
+-----|-----|----- |
+| accepts_cards.0 | Accepts payment cards | payment:cards=yes |
 
 
 

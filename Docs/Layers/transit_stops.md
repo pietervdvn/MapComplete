@@ -248,7 +248,7 @@ This tagrendering has labels
 
 | id | question | osmTags |
 -----|-----|----- |
-| tactile_paving.0 | *All types* (default) |  |
+| tactile_paving.0 | *Does this stop have tactile paving?* (default) |  |
 | tactile_paving.1 | This stop has tactile paving | tactile_paving=yes |
 | tactile_paving.2 | This stop does <b>not</b> have tactile paving | tactile_paving=no |
 

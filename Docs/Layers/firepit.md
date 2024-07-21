@@ -34,6 +34,7 @@ An outdoor place to make a fire, typically open to the public.
 
 
  - [fireplace](https://mapcomplete.org/fireplace)
+ - [nature](https://mapcomplete.org/nature)
  - [personal](https://mapcomplete.org/personal)
 
 

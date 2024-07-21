@@ -171,7 +171,7 @@ The question is `Please give some explanation on where the defibrillator can be 
 The question is `Please give some explanation on where the defibrillator can be found (in French)`
 *<i>Extra information about the location (in French):</i><br/>{defibrillator:location:fr}* is shown if `defibrillator:location:fr` is set
 
-
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:_country' target='_blank'>_country</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_country%3Dbe' target='_blank'>be</a> | defibrillator:location:fr~.+
 
 
 ### wheelchair-access

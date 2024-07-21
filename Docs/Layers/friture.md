@@ -400,8 +400,8 @@ The question is `Does this shop have a gluten free offering?`
 
 
 
- -  *This shop <b>only sells gluten free</b> products* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:gluten_free' target='_blank'>diet:gluten_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Donly' target='_blank'>only</a>
- -  *This shop has a big gluten free offering* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:gluten_free' target='_blank'>diet:gluten_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Dyes' target='_blank'>yes</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/glutenfree.svg' style='width: 3rem; height: 3rem'> *This shop <b>only sells gluten free</b> products* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:gluten_free' target='_blank'>diet:gluten_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Donly' target='_blank'>only</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/glutenfree.svg' style='width: 3rem; height: 3rem'> *This shop has a big gluten free offering* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:gluten_free' target='_blank'>diet:gluten_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Dyes' target='_blank'>yes</a>
  -  *This shop has a <b>limited gluten free</b> offering* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:gluten_free' target='_blank'>diet:gluten_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Dlimited' target='_blank'>limited</a>
  -  *This shop has no gluten free offering* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:gluten_free' target='_blank'>diet:gluten_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Dno' target='_blank'>no</a>
 
@@ -416,8 +416,8 @@ The question is `Does {title()} have a lactose-free offering?`
 
 
 
- -  *<b>Only sells lactose free</b> products* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:lactose_free' target='_blank'>diet:lactose_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Donly' target='_blank'>only</a>
- -  *Big lactose free offering* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:lactose_free' target='_blank'>diet:lactose_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dyes' target='_blank'>yes</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/lactose_free.svg' style='width: 3rem; height: 3rem'> *<b>Only sells lactose free</b> products* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:lactose_free' target='_blank'>diet:lactose_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Donly' target='_blank'>only</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/lactose_free.svg' style='width: 3rem; height: 3rem'> *Big lactose free offering* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:lactose_free' target='_blank'>diet:lactose_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dyes' target='_blank'>yes</a>
  -  *<b>Limited lactose free</b> offering* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:lactose_free' target='_blank'>diet:lactose_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dlimited' target='_blank'>limited</a>
  -  *No lactose free offering* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:lactose_free' target='_blank'>diet:lactose_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dno' target='_blank'>no</a>
 
@@ -703,11 +703,7 @@ This tagrendering has labels
 
 | id | question | osmTags |
 -----|-----|----- |
-| sugar_free.0 | *All types* (default) |  |
-| sugar_free.1 | This shop <b>only sells sugar free</b> products | diet:sugar_free=only |
-| sugar_free.2 | This shop has a big sugar free offering | diet:sugar_free=yes |
-| sugar_free.3 | This shop has a <b>limited sugar free</b> offering | diet:sugar_free=limited |
-| sugar_free.4 | This shop has no sugar free offering | diet:sugar_free=no |
+| sugar_free.0 | Has a sugar-free offering | diet:sugar_free=yes | diet:sugar_free=only | diet:sugar_free=limited |
 
 
 
@@ -716,11 +712,7 @@ This tagrendering has labels
 
 | id | question | osmTags |
 -----|-----|----- |
-| gluten_free.0 | *All types* (default) |  |
-| gluten_free.1 | This shop <b>only sells gluten free</b> products | diet:gluten_free=only |
-| gluten_free.2 | This shop has a big gluten free offering | diet:gluten_free=yes |
-| gluten_free.3 | This shop has a <b>limited gluten free</b> offering | diet:gluten_free=limited |
-| gluten_free.4 | This shop has no gluten free offering | diet:gluten_free=no |
+| gluten_free.0 | Has a gluten free offering | diet:gluten_free=yes | diet:gluten_free=only | diet:gluten_free=limited |
 
 
 
@@ -729,11 +721,7 @@ This tagrendering has labels
 
 | id | question | osmTags |
 -----|-----|----- |
-| lactose_free.0 | *All types* (default) |  |
-| lactose_free.1 | <b>Only sells lactose free</b> products | diet:lactose_free=only |
-| lactose_free.2 | Big lactose free offering | diet:lactose_free=yes |
-| lactose_free.3 | <b>Limited lactose free</b> offering | diet:lactose_free=limited |
-| lactose_free.4 | No lactose free offering | diet:lactose_free=no |
+| lactose_free.0 | Has a lactose free offering | diet:lactose_free=yes | diet:lactose_free=only | diet:lactose_free=limited |
 
 
 
@@ -763,6 +751,15 @@ This tagrendering has labels
 | dogs.0 | *No preference towards dogs* (default) |  |
 | dogs.1 | Dogs allowed | dog=unleashed | dog=yes |
 | dogs.2 | No dogs allowed | dog=no |
+
+
+
+
+
+
+| id | question | osmTags |
+-----|-----|----- |
+| has_internet.0 | Offers internet | internet_access=wlan | internet_access=yes | internet_access=wired |
 
 
 

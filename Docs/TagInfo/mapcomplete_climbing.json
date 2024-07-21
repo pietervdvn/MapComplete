@@ -208,6 +208,53 @@
       "value": "closed"
     },
     {
+      "key": "climbing:boulder",
+      "description": "Layer 'Climbing gyms' shows climbing:boulder=yes with a fixed text, namely 'Bouldering is possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "value": "yes"
+    },
+    {
+      "key": "climbing:boulder",
+      "description": "Layer 'Climbing gyms' shows climbing:boulder=no with a fixed text, namely 'Bouldering is not possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "value": "no"
+    },
+    {
+      "key": "climbing:boulder",
+      "description": "Layer 'Climbing gyms' shows climbing:boulder=limited with a fixed text, namely 'Bouldering is possible, although there are only a few problems' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "value": "limited"
+    },
+    {
+      "key": "climbing:boulder",
+      "description": "Layer 'Climbing gyms' shows climbing:boulder~.+ with a fixed text, namely 'There are {climbing:boulder} boulder problems' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')"
+    },
+    {
+      "key": "climbing:sport",
+      "description": "Layer 'Climbing gyms' shows climbing:sport=yes with a fixed text, namely 'Sport climbing is possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "value": "yes"
+    },
+    {
+      "key": "climbing:sport",
+      "description": "Layer 'Climbing gyms' shows climbing:sport=no with a fixed text, namely 'Sport climbing is not possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "value": "no"
+    },
+    {
+      "key": "climbing:sport",
+      "description": "Layer 'Climbing gyms' shows climbing:sport~.+ with a fixed text, namely 'There are {climbing:sport} sport climbing routes' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')"
+    },
+    {
+      "key": "climbing:toprope",
+      "description": "Layer 'Climbing gyms' shows climbing:toprope=yes with a fixed text, namely 'Toprope climbing is possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "value": "yes"
+    },
+    {
+      "key": "climbing:toprope",
+      "description": "Layer 'Climbing gyms' shows climbing:toprope=no with a fixed text, namely 'Toprope climbing is not possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "value": "no"
+    },
+    {
+      "key": "climbing:toprope",
+      "description": "Layer 'Climbing gyms' shows climbing:toprope~.+ with a fixed text, namely 'There are {climbing:toprope} toprope routes' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')"
+    },
+    {
       "key": "service:climbing_shoes:rental",
       "description": "Layer 'Climbing gyms' shows service:climbing_shoes:rental=yes & service:climbing_shoes:rental:fee=no with a fixed text, namely 'Climbing shoes can be borrowed for free here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
       "value": "yes"
@@ -334,53 +381,6 @@
       "value": "no"
     },
     {
-      "key": "climbing:boulder",
-      "description": "Layer 'Climbing gyms' shows climbing:boulder=yes with a fixed text, namely 'Bouldering is possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
-      "value": "yes"
-    },
-    {
-      "key": "climbing:boulder",
-      "description": "Layer 'Climbing gyms' shows climbing:boulder=no with a fixed text, namely 'Bouldering is not possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
-      "value": "no"
-    },
-    {
-      "key": "climbing:boulder",
-      "description": "Layer 'Climbing gyms' shows climbing:boulder=limited with a fixed text, namely 'Bouldering is possible, although there are only a few problems' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
-      "value": "limited"
-    },
-    {
-      "key": "climbing:boulder",
-      "description": "Layer 'Climbing gyms' shows climbing:boulder~.+ with a fixed text, namely 'There are {climbing:boulder} boulder problems' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')"
-    },
-    {
-      "key": "climbing:sport",
-      "description": "Layer 'Climbing gyms' shows climbing:sport=yes with a fixed text, namely 'Sport climbing is possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
-      "value": "yes"
-    },
-    {
-      "key": "climbing:sport",
-      "description": "Layer 'Climbing gyms' shows climbing:sport=no with a fixed text, namely 'Sport climbing is not possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
-      "value": "no"
-    },
-    {
-      "key": "climbing:sport",
-      "description": "Layer 'Climbing gyms' shows climbing:sport~.+ with a fixed text, namely 'There are {climbing:sport} sport climbing routes' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')"
-    },
-    {
-      "key": "climbing:toprope",
-      "description": "Layer 'Climbing gyms' shows climbing:toprope=yes with a fixed text, namely 'Toprope climbing is possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
-      "value": "yes"
-    },
-    {
-      "key": "climbing:toprope",
-      "description": "Layer 'Climbing gyms' shows climbing:toprope=no with a fixed text, namely 'Toprope climbing is not possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
-      "value": "no"
-    },
-    {
-      "key": "climbing:toprope",
-      "description": "Layer 'Climbing gyms' shows climbing:toprope~.+ with a fixed text, namely 'There are {climbing:toprope} toprope routes' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')"
-    },
-    {
       "key": "climbing:length",
       "description": "Layer 'Climbing gyms' shows and asks freeform values for key 'climbing:length' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if climbing:sport!=no | climbing:toprope!=no)"
     },
@@ -409,6 +409,26 @@
     {
       "key": "climbing:speed",
       "description": "Layer 'Climbing gyms' shows climbing:speed~.+ with a fixed text, namely 'There are {climbing:speed} speed climbing walls' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')"
+    },
+    {
+      "key": "shower",
+      "description": "Layer 'Climbing gyms' shows shower=hot with a fixed text, namely 'This facility does have showers with warm water' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "value": "hot"
+    },
+    {
+      "key": "shower",
+      "description": "Layer 'Climbing gyms' shows shower=cold with a fixed text, namely 'This facility does have showers, but the water is not heated' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "value": "cold"
+    },
+    {
+      "key": "shower",
+      "description": "Layer 'Climbing gyms' shows shower=yes with a fixed text, namely 'This facility does have showers' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "value": "yes"
+    },
+    {
+      "key": "shower",
+      "description": "Layer 'Climbing gyms' shows shower=no with a fixed text, namely 'This facility does not offer a shower' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "value": "no"
     },
     {
       "key": "internet_access",
