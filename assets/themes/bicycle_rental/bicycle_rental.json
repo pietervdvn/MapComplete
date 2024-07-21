@@ -14,7 +14,8 @@
     "cs": "Půjčovna kol",
     "zh_Hant": "單車租借站",
     "eu": "Bizikleta alokairua",
-    "pl": "Wypożyczanie rowerów"
+    "pl": "Wypożyczanie rowerów",
+    "zh_Hans": "自行车租赁"
   },
   "description": {
     "en": "On this map, you'll find the many bicycle rental stations as they are known by OpenStreetMap",
@@ -28,7 +29,8 @@
     "cs": "Na této mapě najdete půjčovny jízdních kol, jak jsou uvedeny v OpenStreetMap",
     "eu": "Mapa honetan aurkituko dituzu bizikletak alokatzeko OpenStreetMap-ek ezagutzen dituen estazio ugari",
     "it": "In questa mappa trovi i luoghi conosciuti da OpenStreetMap dove puoi noleggiare delle biciclette",
-    "pl": "Na tej mapie znajdziesz wiele stacji wynajmu rowerów, znanych w OpenStreetMap"
+    "pl": "Na tej mapie znajdziesz wiele stacji wynajmu rowerów, znanych w OpenStreetMap",
+    "zh_Hans": "在这张地图上，你可以找到许多由 OpenStreetMap 记录的自行车租赁站点"
   },
   "shortDescription": {
     "en": "A map with bicycle rental stations and bicycle rental shops",
@@ -42,7 +44,8 @@
     "da": "Et kort med cykeludlejningsstationer og cykeludlejningsbutikker",
     "cs": "Mapa se stanicemi a obchody pro vypůjčení kol",
     "eu": "Bizikletak alokatzeko estazioen eta bizikletak alokatzeko denden mapa",
-    "pl": "Mapa ze stacjami wypożyczania rowerów i wypożyczalniami rowerów"
+    "pl": "Mapa ze stacjami wypożyczania rowerów i wypożyczalniami rowerów",
+    "zh_Hans": "一张包含自行车租赁站点和自行车租赁商店的地图"
   },
   "icon": "./assets/themes/bicycle_rental/logo.svg",
   "layers": [

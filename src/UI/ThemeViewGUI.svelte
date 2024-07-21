@@ -213,7 +213,7 @@
 
 <main>
   <div class="absolute top-0 left-0 h-screen w-screen overflow-hidden">
-    <MaplibreMap map={maplibremap} mapProperties={mapproperties} autorecovery={true}/>
+    <MaplibreMap map={maplibremap} mapProperties={mapproperties} autorecovery={true} />
   </div>
 
   {#if $visualFeedback}
@@ -286,10 +286,8 @@
           on:keydown={forwardEventToMap}
           htmlElem={openCurrentViewLayerButton}
         >
-          <div class="w-8 h-8 cursor-pointer">
-          <ToSvelte
-            construct={() => currentViewLayer.defaultIcon()}
-          />
+          <div class="h-8 w-8 cursor-pointer">
+            <ToSvelte construct={() => currentViewLayer.defaultIcon()} />
           </div>
         </MapControlButton>
       {/if}
@@ -300,10 +298,8 @@
         <div class="alert w-fit">Testmode</div>
       </If>
       {#if state.osmConnection.Backend().startsWith("https://master.apis.dev.openstreetmap.org")}
-        <div class="thanks">
-          Testserver
-        </div>
-        {/if}
+        <div class="thanks">Testserver</div>
+      {/if}
       <If condition={state.featureSwitches.featureSwitchFakeUser}>
         <div class="alert w-fit">Faking a user (Testmode)</div>
       </If>
@@ -551,13 +547,13 @@
         state.guistate.backgroundLayerSelectionIsOpened.setData(false)
       }}
     >
-        <RasterLayerOverview
-          {availableLayers}
-          map={state.map}
-          mapproperties={state.mapProperties}
-          userstate={state.userRelatedState}
-          visible={state.guistate.backgroundLayerSelectionIsOpened}
-        />
+      <RasterLayerOverview
+        {availableLayers}
+        map={state.map}
+        mapproperties={state.mapProperties}
+        userstate={state.userRelatedState}
+        visible={state.guistate.backgroundLayerSelectionIsOpened}
+      />
     </FloatOver>
   </IfHidden>
 
@@ -583,7 +579,7 @@
         <div slot="content0" class="flex flex-col">
           <AboutMapComplete {state} />
           <div class="m-2 flex flex-col">
-            <HotkeyTable/>
+            <HotkeyTable />
           </div>
         </div>
 

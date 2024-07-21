@@ -80,7 +80,7 @@
         text: Translations.t.general.add.addNew.Subs(
           { category: preset.title },
           preset.title["context"]
-        )
+        ),
       }
       presets.push(simplified)
     }
@@ -99,7 +99,6 @@
 
 <TitledPanel>
   <Tr slot="title" t={Translations.t.general.add.intro} />
-
 
   {#each presets as preset}
     <NextButton on:click={() => dispatch("select", preset)}>

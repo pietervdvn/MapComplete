@@ -6,7 +6,6 @@ import ScriptUtils from "./ScriptUtils"
 import { IncomingMessage } from "node:http"
 
 class ServerErrorReport extends Script {
-
     private errorReport = 0
 
     constructor() {
@@ -14,7 +13,8 @@ class ServerErrorReport extends Script {
     }
 
     private getFilename(logDirectory: string, d: Date): string {
-        return logDirectory +
+        return (
+            logDirectory +
             "/" +
             d.getUTCFullYear() +
             "_" +
@@ -22,11 +22,18 @@ class ServerErrorReport extends Script {
             "_" +
             d.getUTCDate() +
             ".lines.json"
+        )
     }
 
-    public reportError(path: string, queryParams: URLSearchParams, req: IncomingMessage, body: string | undefined, logDirectory: string): string {
+    public reportError(
+        path: string,
+        queryParams: URLSearchParams,
+        req: IncomingMessage,
+        body: string | undefined,
+        logDirectory: string
+    ): string {
         if (!body) {
-            throw "{\"error\": \"No body; use a post request\"}"
+            throw '{"error": "No body; use a post request"}'
         }
         console.log(body)
         const ip = <string>req.headers["x-forwarded-for"]
@@ -39,14 +46,13 @@ class ServerErrorReport extends Script {
         const d = new Date()
         const file = this.getFilename(logDirectory, d)
         const date = d.toISOString()
-        const contents =
-            "\n" + JSON.stringify({ ip, index: this.errorReport, date, message: body })
+        const contents = "\n" + JSON.stringify({ ip, index: this.errorReport, date, message: body })
         if (!existsSync(file)) {
             writeFileSync(file, contents)
         } else {
             appendFileSync(file, contents)
         }
-       this. errorReport++
+        this.errorReport++
         return `{"status":"ok", "nr": ${this.errorReport}}`
     }
 
@@ -58,8 +64,8 @@ class ServerErrorReport extends Script {
             console.log("Created this directory")
         }
 
-        if (!existsSync(logDirectory+"/csp")) {
-            mkdirSync(logDirectory+"/csp")
+        if (!existsSync(logDirectory + "/csp")) {
+            mkdirSync(logDirectory + "/csp")
             console.log("Created this directory")
         }
 
@@ -75,23 +81,33 @@ class ServerErrorReport extends Script {
                         errorsToday = contents.split("\n").length
                     }
                     return JSON.stringify({
-                        "online": true,
-                        "errors_today": errorsToday,
+                        online: true,
+                        errors_today: errorsToday,
                     })
                 },
             },
             {
                 mustMatch: "report",
                 mimetype: "application/json",
-                handle: async (path: string, queryParams: URLSearchParams, req: IncomingMessage, body: string | undefined) => {
+                handle: async (
+                    path: string,
+                    queryParams: URLSearchParams,
+                    req: IncomingMessage,
+                    body: string | undefined
+                ) => {
                     return this.reportError(path, queryParams, req, body, logDirectory)
                 },
             },
             {
                 mustMatch: "csp",
                 mimetype: "application/json",
-                handle: async (path: string, queryParams: URLSearchParams, req: IncomingMessage, body: string | undefined) => {
-                    return this.reportError(path, queryParams, req, body, logDirectory+"/csp")
+                handle: async (
+                    path: string,
+                    queryParams: URLSearchParams,
+                    req: IncomingMessage,
+                    body: string | undefined
+                ) => {
+                    return this.reportError(path, queryParams, req, body, logDirectory + "/csp")
                 },
             },
         ])

@@ -12,7 +12,7 @@ export default class Locale {
     public static showLinkOnMobile: UIEventSource<boolean> = new UIEventSource<boolean>(false)
     public static language: UIEventSource<string> = Locale.setup()
 
-    public static getBestSupportedLanguage(browserLanguage?: string){
+    public static getBestSupportedLanguage(browserLanguage?: string) {
         browserLanguage ??= navigator.languages?.[0] ?? navigator.language ?? "en"
         console.log("Browser language is", browserLanguage)
         const availableLanguages = Object.keys(native)
@@ -22,10 +22,10 @@ export default class Locale {
         }
         browserLanguage = browserLanguage.replace(/[-_].*/g, "")
         const hasBrowserLangFallback = availableLanguages.indexOf(browserLanguage) >= 0
-        if(hasBrowserLangFallback){
-           return browserLanguage
+        if (hasBrowserLangFallback) {
+            return browserLanguage
         }
-        console.log("Language",browserLanguage,"not supported, defaulting to english")
+        console.log("Language", browserLanguage, "not supported, defaulting to english")
         return "en"
     }
 
@@ -72,7 +72,7 @@ export default class Locale {
         } else {
             let browserLanguage = "en"
             if (typeof navigator !== "undefined") {
-               browserLanguage = Locale.getBestSupportedLanguage()
+                browserLanguage = Locale.getBestSupportedLanguage()
             }
             source = LocalStorageSource.Get("language", browserLanguage)
         }

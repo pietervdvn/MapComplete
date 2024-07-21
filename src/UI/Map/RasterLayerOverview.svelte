@@ -52,7 +52,7 @@
 </script>
 
 <TitledPanel>
-      <Tr slot="title" t={Translations.t.general.backgroundMap} />
+  <Tr slot="title" t={Translations.t.general.backgroundMap} />
 
   <div class="grid h-full w-full grid-cols-1 gap-2 md:grid-cols-2">
     <RasterLayerPicker

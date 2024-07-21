@@ -97,7 +97,9 @@ export class Imgur extends ImageProvider implements ImageUploader {
         const hash = url.substr("https://i.imgur.com/".length).split(/\.jpe?g/i)[0]
 
         const apiUrl = "https://api.imgur.com/3/image/" + hash
-        const response = await Utils.downloadJsonCached<{data: {description: string, datetime: string, views: number}}>(apiUrl, 365 * 24 * 60 * 60, {
+        const response = await Utils.downloadJsonCached<{
+            data: { description: string; datetime: string; views: number }
+        }>(apiUrl, 365 * 24 * 60 * 60, {
             Authorization: "Client-ID " + Constants.ImgurApiKey,
         })
 

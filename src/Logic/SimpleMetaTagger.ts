@@ -635,7 +635,7 @@ export default class SimpleMetaTaggers {
             isLazy: true,
         },
         (feature: Feature, layer: LayerConfig, tagsStore: UIEventSource<OsmTags>) => {
-            if(tagsStore === undefined){
+            if (tagsStore === undefined) {
                 return
             }
             Utils.AddLazyPropertyAsync(feature.properties, "_currency", async () => {
@@ -780,11 +780,11 @@ export default class SimpleMetaTaggers {
 
         subElements.push("## Metatags calculated by MapComplete")
         subElements.push(
-                "The following values are always calculated, by default, by MapComplete and are available automatically on all elements in every theme"
+            "The following values are always calculated, by default, by MapComplete and are available automatically on all elements in every theme"
         )
         for (const metatag of SimpleMetaTaggers.metatags) {
             subElements.push(
-                "### "+metatag.keys.join(", "),
+                "### " + metatag.keys.join(", "),
                 metatag.doc,
                 metatag.isLazy ? "This is a lazy metatag and is only calculated when needed" : ""
             )

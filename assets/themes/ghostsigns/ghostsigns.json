@@ -45,18 +45,21 @@
           "id": "historic",
           "question": {
             "en": "Is this a ghost sign?",
-            "de": "Ist das ein Geisterzeichen?"
+            "de": "Ist das ein Geisterzeichen?",
+            "es": "¿Es esto una señal fantasma?"
           },
           "questionHint": {
             "en": "Is this sign for a business that no longer exists or no longer being maintained?",
-            "de": "Ist dieses Schild für ein Geschäft, das nicht mehr existiert oder nicht mehr gepflegt wird?"
+            "de": "Ist dieses Schild für ein Geschäft, das nicht mehr existiert oder nicht mehr gepflegt wird?",
+            "es": "¿Este cartel es para una empresa que ya no existe o que ya no recibe mantenimiento?"
           },
           "mappings": [
             {
               "if": "historic=advertising",
               "then": {
                 "en": "This is a ghost sign",
-                "de": "Das ist ein Geisterzeichen"
+                "de": "Das ist ein Geisterzeichen",
+                "es": "Esta es una señal fantasma"
               },
               "alsoShowIf": "historic=yes"
             },
@@ -64,7 +67,8 @@
               "if": "historic=",
               "then": {
                 "en": "This is not a ghost sign, answering this will hide the sign from the map",
-                "de": "Dies ist kein Geisterzeichen, die Antwort darauf wird das Schild von der Karte verstecken"
+                "de": "Dies ist kein Geisterzeichen, die Antwort darauf wird das Schild von der Karte verstecken",
+                "es": "Esta no es una señal fantasma, al responder esto se ocultará la señal del mapa"
               }
             }
           ]
@@ -81,19 +85,22 @@
           "id": "inscription",
           "question": {
             "en": "What is the text on the sign?",
-            "de": "Was ist der Text auf dem Schild?"
+            "de": "Was ist der Text auf dem Schild?",
+            "es": "¿Cuál es el texto del cartel?"
           },
           "freeform": {
             "key": "inscription",
             "type": "string",
             "placeholder": {
               "en": "Text on the sign",
-              "de": "Text auf dem Schild"
+              "de": "Text auf dem Schild",
+              "es": "Texto en el cartel"
             }
           },
           "render": {
             "en": "The text on the sign is: {inscription}",
-            "de": "Der Text auf dem Schild ist: {inscription}"
+            "de": "Der Text auf dem Schild ist: {inscription}",
+            "es": "El texto del cartel es: {inscription}"
           }
         },
         {

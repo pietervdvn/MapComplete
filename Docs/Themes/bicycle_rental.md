@@ -29,6 +29,7 @@ Available languages:
  - zh_Hant
  - eu
  - pl
+ - zh_Hans
 
 
 # Layers defined in this theme configuration file

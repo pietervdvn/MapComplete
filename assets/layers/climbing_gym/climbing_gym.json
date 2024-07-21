@@ -87,7 +87,9 @@
     }
   ],
   "lineRendering": [],
-  "titleIcons": ["icons.defaults"],
+  "titleIcons": [
+    "icons.defaults"
+  ],
   "presets": [
     {
       "title": {

@@ -63,6 +63,4 @@ export default class InputHelpers {
         }
         return mapProperties
     }
-
-
 }

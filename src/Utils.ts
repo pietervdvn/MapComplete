@@ -386,7 +386,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
      * Null/Undefined is returned as is. If an emtpy array is given, a new empty array will be returned
      */
     public static Dedup(arr: NonNullable<string[]>): NonNullable<string[]>
-    public static Dedup(arr: undefined):undefined
+    public static Dedup(arr: undefined): undefined
     public static Dedup(arr: string[] | undefined): string[] | undefined
     public static Dedup(arr: string[]): string[] {
         if (arr === undefined || arr === null) {
@@ -1267,9 +1267,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return track[str2.length][str1.length]
     }
 
-    public static MapToObj<V>(
-        d: Map<string, V>
-    ): Record<string, V>;
+    public static MapToObj<V>(d: Map<string, V>): Record<string, V>
     public static MapToObj<V, T>(
         d: Map<string, V>,
         onValue: (t: V, key: string) => T
@@ -1281,7 +1279,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         const o = {}
         const keys = Array.from(d.keys())
         keys.sort()
-        onValue ??= (v => <any> v)
+        onValue ??= (v) => <any>v
         for (const key of keys) {
             o[key] = onValue(d.get(key), key)
         }

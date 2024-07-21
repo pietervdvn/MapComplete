@@ -457,27 +457,26 @@ class GenerateLayouts extends Script {
         let ogImage = layout.socialImage
         let twitterImage = ogImage
         if (ogImage === LayoutConfig.defaultSocialImage && layout.official) {
-            try{
+            try {
                 ogImage = (await this.createSocialImage(layout, "")) ?? layout.socialImage
                 twitterImage = (await this.createSocialImage(layout, "Wide")) ?? layout.socialImage
-            }catch (e) {
+            } catch (e) {
                 console.error("Could not generate image:", e)
             }
         }
         if (twitterImage.endsWith(".svg")) {
-            try{
-
-            // svgs are badly supported as social image, we use a generated svg instead
-            twitterImage = await this.createIcon(twitterImage, 512, alreadyWritten)
-            }catch (e) {
+            try {
+                // svgs are badly supported as social image, we use a generated svg instead
+                twitterImage = await this.createIcon(twitterImage, 512, alreadyWritten)
+            } catch (e) {
                 console.error("Could not generate image:", e)
             }
         }
 
         if (ogImage.endsWith(".svg")) {
-            try{
+            try {
                 ogImage = await this.createIcon(ogImage, 512, alreadyWritten)
-            }catch (e) {
+            } catch (e) {
                 console.error("Could not generate image:", e)
             }
         }

@@ -983,6 +983,10 @@
         },
         "title": "Kerbs and crossings"
     },
+    "lactosefree": {
+        "description": "A crowdsourced map with lactose free shops and restaurants",
+        "title": "Lactose free shops and restaurants"
+    },
     "lighthouses": {
         "description": "Lighthouses are tall buildings with a light on top to guide marine traffic.",
         "title": "Lighthouses"

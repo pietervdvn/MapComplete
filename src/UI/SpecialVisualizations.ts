@@ -407,10 +407,10 @@ export default class SpecialVisualizations {
             new HistogramViz(),
             new StealViz(),
             {
-                funcName : "minimap",
-                docs :"A small map showing the selected feature.",
-                needsUrls : [],
-                args : [
+                funcName: "minimap",
+                docs: "A small map showing the selected feature.",
+                needsUrls: [],
+                args: [
                     {
                         doc: "The (maximum) zoomlevel: the target zoomlevel after fitting the entire feature. The minimap will fit the entire feature, then zoom out to this zoom level. The higher, the more zoomed in with 1 being the entire world and 19 being really close",
                         name: "zoomlevel",
@@ -422,17 +422,17 @@ export default class SpecialVisualizations {
                         defaultValue: "id",
                     },
                 ],
-                example: "`{minimap()}`, `{minimap(17, id, _list_of_embedded_feature_ids_calculated_by_calculated_tag):height:10rem; border: 2px solid black}`",
+                example:
+                    "`{minimap()}`, `{minimap(17, id, _list_of_embedded_feature_ids_calculated_by_calculated_tag):height:10rem; border: 2px solid black}`",
 
                 constr(
                     state: SpecialVisualizationState,
                     tagSource: UIEventSource<Record<string, string>>,
                     args: string[],
                     feature: Feature
-
                 ): SvelteUIElement {
-                    return new SvelteUIElement(MinimapViz, {state, args, feature, tagSource})
-                }
+                    return new SvelteUIElement(MinimapViz, { state, args, feature, tagSource })
+                },
             },
             {
                 funcName: "split_button",

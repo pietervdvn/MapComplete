@@ -152,8 +152,8 @@ class PointRenderingLayer {
         }
         const el = html.ConstructElement()
 
-        store.addCallbackAndRunD(tags => {
-            if(tags._deleted === "yes"){
+        store.addCallbackAndRunD((tags) => {
+            if (tags._deleted === "yes") {
                 html.SetClass("grayscale")
             }
         })

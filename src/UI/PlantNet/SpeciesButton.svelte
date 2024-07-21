@@ -45,11 +45,15 @@
       />
     </Loading>
   {:else}
-
-    <WikidatapreviewWithLoading wikidataId={wikidataId} imageStyle="max-width: 8rem; width: unset; height: 8rem">
+    <WikidatapreviewWithLoading
+      {wikidataId}
+      imageStyle="max-width: 8rem; width: unset; height: 8rem"
+    >
       <div slot="extra">
-        <Tr cls="thanks w-fit self-center" t={ t.matchPercentage
-        .Subs({ match: Math.round(species.score * 100) })}/>
+        <Tr
+          cls="thanks w-fit self-center"
+          t={t.matchPercentage.Subs({ match: Math.round(species.score * 100) })}
+        />
       </div>
     </WikidatapreviewWithLoading>
   {/if}

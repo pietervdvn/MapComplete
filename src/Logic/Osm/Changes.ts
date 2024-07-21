@@ -133,50 +133,50 @@ export class Changes {
                 [
                     {
                         key: "comment",
-                        docs: "The changeset comment. Will be a fixed string, mentioning the theme"
+                        docs: "The changeset comment. Will be a fixed string, mentioning the theme",
                     },
                     {
                         key: "theme",
-                        docs: "The name of the theme that was used to create this change. "
+                        docs: "The name of the theme that was used to create this change. ",
                     },
                     {
                         key: "source",
                         value: "survey",
-                        docs: "The contributor had their geolocation enabled while making changes"
+                        docs: "The contributor had their geolocation enabled while making changes",
                     },
                     {
                         key: "change_within_{distance}",
-                        docs: "If the contributor enabled their geolocation, this will hint how far away they were from the objects they edited. This gives an indication of proximity and if they truly surveyed or were armchair-mapping"
+                        docs: "If the contributor enabled their geolocation, this will hint how far away they were from the objects they edited. This gives an indication of proximity and if they truly surveyed or were armchair-mapping",
                     },
                     {
                         key: "change_over_{distance}",
-                        docs: "If the contributor enabled their geolocation, this will hint how far away they were from the objects they edited. If they were over 5000m away, the might have been armchair-mapping"
+                        docs: "If the contributor enabled their geolocation, this will hint how far away they were from the objects they edited. If they were over 5000m away, the might have been armchair-mapping",
                     },
                     {
                         key: "created_by",
                         value: "MapComplete <version>",
-                        docs: "The piece of software used to create this changeset; will always start with MapComplete, followed by the version number"
+                        docs: "The piece of software used to create this changeset; will always start with MapComplete, followed by the version number",
                     },
                     {
                         key: "locale",
                         value: "en|nl|de|...",
-                        docs: "The code of the language that the contributor used MapComplete in. Hints what language the user speaks."
+                        docs: "The code of the language that the contributor used MapComplete in. Hints what language the user speaks.",
                     },
                     {
                         key: "host",
                         value: "https://mapcomplete.org/<theme>",
-                        docs: "The URL that the contributor used to make changes. One can see the used instance with this"
+                        docs: "The URL that the contributor used to make changes. One can see the used instance with this",
                     },
                     {
                         key: "imagery",
-                        docs: "The identifier of the used background layer, this will probably be an identifier from the [editor layer index](https://github.com/osmlab/editor-layer-index)"
-                    }
+                        docs: "The identifier of the used background layer, this will probably be an identifier from the [editor layer index](https://github.com/osmlab/editor-layer-index)",
+                    },
                 ],
                 "default"
             ),
             ...addSource(ChangeTagAction.metatags, "ChangeTag"),
             ...addSource(ChangeLocationAction.metatags, "ChangeLocation"),
-            ...addSource(DeleteAction.metatags, "DeleteAction")
+            ...addSource(DeleteAction.metatags, "DeleteAction"),
             // TODO
             /*
             ...DeleteAction.metatags,
@@ -198,11 +198,11 @@ export class Changes {
                         docs,
                         specialMotivation
                             ? "This might give a reason per modified node or way"
-                            : ""
+                            : "",
                     ].join("\n"),
-                    source
+                    source,
                 ])
-            )
+            ),
         ].join("\n\n")
     }
 
@@ -248,12 +248,12 @@ export class Changes {
 
     public async applyAction(action: OsmChangeAction): Promise<void> {
         const changeDescriptions = await action.Perform(this)
-        const remapped = ChangeDescriptionTools.rewriteAllIds(changeDescriptions, this._changesetHandler._remappings)
-
-        remapped[0].meta.distanceToObject = this.calculateDistanceToChanges(
-            action,
-            remapped
+        const remapped = ChangeDescriptionTools.rewriteAllIds(
+            changeDescriptions,
+            this._changesetHandler._remappings
         )
+
+        remapped[0].meta.distanceToObject = this.calculateDistanceToChanges(action, remapped)
         this.applyChanges(remapped)
     }
 
@@ -420,12 +420,11 @@ export class Changes {
             }
         }
 
-
         // ----------------- SORT OBJECTS -------------------
         const result = {
             newObjects: [],
             modifiedObjects: [],
-            deletedObjects: []
+            deletedObjects: [],
         }
 
         objects.forEach((v, id) => {
@@ -534,12 +533,12 @@ export class Changes {
     private async getOsmObject(id: string, downloader: OsmObjectDownloader) {
         try {
             try {
-
                 // Important: we do **not** cache this request, we _always_ need a fresh version!
                 const osmObj = await downloader.DownloadObjectAsync(id, 0)
                 return { id, osmObj }
             } catch (e) {
-                const msg = "Could not download OSM-object " +
+                const msg =
+                    "Could not download OSM-object " +
                     id +
                     " trying again before dropping it from the changes (" +
                     e +
@@ -549,11 +548,8 @@ export class Changes {
                 return { id, osmObj }
             }
         } catch (e) {
-            const msg = "Could not download OSM-object " +
-                id +
-                " dropping it from the changes (" +
-                e +
-                ")"
+            const msg =
+                "Could not download OSM-object " + id + " dropping it from the changes (" + e + ")"
             this._reportError(msg)
             this.errors.data.push(e)
             this.errors.ping()
@@ -561,26 +557,33 @@ export class Changes {
         }
     }
 
-    public static fragmentChanges(pending: ChangeDescription[], objects: OsmObject[]): {
-        refused: ChangeDescription[];
+    public static fragmentChanges(
+        pending: ChangeDescription[],
+        objects: OsmObject[]
+    ): {
+        refused: ChangeDescription[]
         toUpload: ChangeDescription[]
     } {
         const refused: ChangeDescription[] = []
         const toUpload: ChangeDescription[] = []
 
         // All ids which have an 'update'
-        const createdIds =
-            new Set(pending.filter(cd => cd.changes !== undefined).map(cd => cd.id))
-        pending.forEach(c => {
+        const createdIds = new Set(
+            pending.filter((cd) => cd.changes !== undefined).map((cd) => cd.id)
+        )
+        pending.forEach((c) => {
             if (c.id < 0) {
                 if (createdIds.has(c.id)) {
                     toUpload.push(c)
                 } else {
-                    reportError(`Got an orphaned change. The 'creation'-change description for ${c.type}/${c.id} got lost. Permanently dropping this change:`+JSON.stringify(c))
+                    reportError(
+                        `Got an orphaned change. The 'creation'-change description for ${c.type}/${c.id} got lost. Permanently dropping this change:` +
+                            JSON.stringify(c)
+                    )
                 }
                 return
             }
-            const matchFound = !!objects.find(o => o.id === c.id && o.type === c.type)
+            const matchFound = !!objects.find((o) => o.id === c.id && o.type === c.type)
             if (matchFound) {
                 toUpload.push(c)
             } else {
@@ -588,8 +591,7 @@ export class Changes {
             }
         })
 
-        return {refused, toUpload}
-
+        return { refused, toUpload }
     }
 
     /**
@@ -604,7 +606,7 @@ export class Changes {
         // We _do not_ pass in the Changes object itself - we want the data from OSM directly in order to apply the changes
         const downloader = new OsmObjectDownloader(this.backend, undefined)
         let osmObjects = await Promise.all<{ id: string; osmObj: OsmObject | "deleted" }>(
-            neededIds.map(id => this.getOsmObject(id, downloader))
+            neededIds.map((id) => this.getOsmObject(id, downloader))
         )
 
         osmObjects = Utils.NoNull(osmObjects)
@@ -640,14 +642,14 @@ export class Changes {
             ([key, count]) => ({
                 key: key,
                 value: count,
-                aggregate: true
+                aggregate: true,
             })
         )
         const motivations = pending
             .filter((descr) => descr.meta.specialMotivation !== undefined)
             .map((descr) => ({
                 key: descr.meta.changeType + ":" + descr.type + "/" + descr.id,
-                value: descr.meta.specialMotivation
+                value: descr.meta.specialMotivation,
             }))
 
         const distances = Utils.NoNull(pending.map((descr) => descr.meta.distanceToObject))
@@ -678,7 +680,7 @@ export class Changes {
                 return {
                     key,
                     value: count,
-                    aggregate: true
+                    aggregate: true,
                 }
             })
         )
@@ -693,26 +695,25 @@ export class Changes {
         const metatags: ChangesetTag[] = [
             {
                 key: "comment",
-                value: comment
+                value: comment,
             },
             {
                 key: "theme",
-                value: theme
+                value: theme,
             },
             ...perType,
             ...motivations,
-            ...perBinMessage
+            ...perBinMessage,
         ]
 
-
-        let {toUpload, refused} = Changes.fragmentChanges(
-            pending, objects
-        )
+        let { toUpload, refused } = Changes.fragmentChanges(pending, objects)
 
         await this._changesetHandler.UploadChangeset(
             (csId, remappings) => {
                 if (remappings.size > 0) {
-                    toUpload = toUpload.map((ch) => ChangeDescriptionTools.rewriteIds(ch, remappings))
+                    toUpload = toUpload.map((ch) =>
+                        ChangeDescriptionTools.rewriteIds(ch, remappings)
+                    )
                 }
 
                 const changes: {
@@ -756,9 +757,9 @@ export class Changes {
                         )
                         console.log(
                             "Using current-open-changeset-" +
-                            theme +
-                            " from the preferences, got " +
-                            openChangeset.data
+                                theme +
+                                " from the preferences, got " +
+                                openChangeset.data
                         )
 
                         const refused = await self.flushSelectChanges(pendingChanges, openChangeset)
@@ -777,7 +778,7 @@ export class Changes {
             )
 
             // We keep all the refused changes to try them again
-            this.pendingChanges.setData(refusedChanges.flatMap(c => c))
+            this.pendingChanges.setData(refusedChanges.flatMap((c) => c))
         } catch (e) {
             console.error(
                 "Could not handle changes - probably an old, pending changeset in localstorage with an invalid format; erasing those",

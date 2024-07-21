@@ -21,6 +21,8 @@ Available languages:
  - fr
  - pl
  - da
+ - es
+ - zh_Hans
 
 
 # Layers defined in this theme configuration file

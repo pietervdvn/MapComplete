@@ -49,7 +49,9 @@ export default class DeleteImage extends Toggle {
             .Clone()
             .SetClass("bg-white pl-4 pr-4")
             .SetStyle("border-bottom-left-radius:30rem; border-bottom-right-radius: 30rem;")
-        const openDelete = new SvelteUIElement(Delete_icon).SetStyle("width: 2em; height: 2em; display:block;")
+        const openDelete = new SvelteUIElement(Delete_icon).SetStyle(
+            "width: 2em; height: 2em; display:block;"
+        )
         const deleteDialog = new ClickableToggle(
             new Combine([deleteButton, cancelButton]).SetClass("flex flex-col background-black"),
             openDelete

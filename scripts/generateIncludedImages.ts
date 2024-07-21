@@ -24,7 +24,7 @@ function genImages(dryrun = false) {
             .replace(/\n/g, " ")
             .replace(/\r/g, "")
             .replace(/\\/g, "\\")
-            .replace(/"/g, "\\\"")
+            .replace(/"/g, '\\"')
             .replaceAll(" ", " ")
 
         let hasNonAsciiChars = Array.from(svg)
@@ -38,19 +38,17 @@ function genImages(dryrun = false) {
 
         const nameUC = name.toUpperCase().at(0) + name.substring(1)
         const svelteCode =
-            "<script>\nexport let color = \"#000000\"\n</script>\n" +
+            '<script>\nexport let color = "#000000"\n</script>\n' +
             svg
                 .replace(
                     "<svg ",
-                    "<svg {...$$$$restProps} on:click on:mouseover on:mouseenter on:mouseleave on:keydown on:focus ",
+                    "<svg {...$$$$restProps} on:click on:mouseover on:mouseenter on:mouseleave on:keydown on:focus "
                 )
-                .replace(/\\"/g, "\"")
+                .replace(/\\"/g, '"')
                 .replace(/(rgb\(0%,0%,0%\)|#000000|#000)/g, "{color}")
         fs.writeFileSync("./src/assets/svg/" + nameUC + ".svelte", svelteCode, "utf8")
-
     }
 }
-
 
 class GenerateIncludedImages extends Script {
     constructor() {
@@ -59,7 +57,6 @@ class GenerateIncludedImages extends Script {
 
     async main(args: string[]): Promise<void> {
         genImages()
-
     }
 }
 

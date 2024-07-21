@@ -43,12 +43,9 @@
 {#if filteredLayer.layerDef.name}
   <div class:focus={$highlightedLayer === filteredLayer.layerDef.id} class="mb-1.5">
     <Checkbox selected={isDisplayed}>
-      <div class="block h-6 w-6 no-image-background" class:opacity-50={!$isDisplayed}>
-        <ToSvelte
-          construct={() => layer.defaultIcon()}
-        />
+      <div class="no-image-background block h-6 w-6" class:opacity-50={!$isDisplayed}>
+        <ToSvelte construct={() => layer.defaultIcon()} />
       </div>
-
 
       <Tr t={filteredLayer.layerDef.name} />
 

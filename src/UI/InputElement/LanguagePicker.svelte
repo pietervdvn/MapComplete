@@ -32,7 +32,6 @@
     preferredFiltered = preferredLanguages?.filter((l) => availableLanguages.indexOf(l) >= 0)
   })
 
-
   export let clss: string = undefined
   let current = Locale.language
 </script>

@@ -200,7 +200,7 @@
       allowDeleteOfFreeform &&
       !$freeformInput &&
       !$freeformInputUnvalidated &&
-      !checkedMappings?.some(m => m) &&
+      !checkedMappings?.some((m) => m) &&
       $tags[config.freeform.key] // We need to have a current value in order to delete it
     ) {
       selectedTags = new Tag(config.freeform.key, "")
@@ -495,7 +495,7 @@
             <!-- TagRenderingQuestion-buttons -->
             <slot name="cancel" />
             <slot name="save-button" {selectedTags}>
-              {#if config.freeform?.key && allowDeleteOfFreeform && !checkedMappings?.some(m => m) && !$freeformInput && !$freeformInputUnvalidated && $tags[config.freeform.key]}
+              {#if config.freeform?.key && allowDeleteOfFreeform && !checkedMappings?.some((m) => m) && !$freeformInput && !$freeformInputUnvalidated && $tags[config.freeform.key]}
                 <button
                   class="primary flex"
                   on:click|stopPropagation|preventDefault={() => onSave()}
@@ -521,13 +521,11 @@
               <TagHint {state} tags={selectedTags} currentProperties={$tags} />
               <span class="flex flex-wrap">
                 {#if $featureSwitchIsTesting}
-                  <div class="alert">
-                    Testmode &nbsp;
-                  </div>
+                  <div class="alert">Testmode &nbsp;</div>
                 {/if}
                 {#if $featureSwitchIsTesting || $featureSwitchIsDebugging}
                   <a class="small" on:click={() => console.log("Configuration is ", config)}>
-                  {config.id}
+                    {config.id}
                   </a>
                 {/if}
               </span>

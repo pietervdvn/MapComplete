@@ -34,7 +34,8 @@
     "da": "Denne side samler alle officielle camper-stopsteder og steder, hvor du kan dumpe gråt og sort vand. Du kan tilføje detaljer om de leverede tjenester og omkostningerne. Tilføj billeder og anmeldelser. Dette er en hjemmeside og en webapp. Dataene gemmes i OpenStreetMap, så de vil være gratis for evigt og kan genbruges af enhver app.",
     "cs": "Na této stránce jsou shromážděna všechna oficiální místa pro zastavení karavanů a místa, kde můžete vypouštět šedou a černou vodu. Můžete přidat podrobnosti o poskytovaných službách a cenách. Přidávejte fotografie a recenze.",
     "eu": "Karabanak gelditzeko leku ofizial guztiak eta ur gris eta beltzak botatzeko lekuak biltzen ditu. Emandako zerbitzuei eta kostuari buruzko xehetasunak gehitu ditzakezu. Erantsi argazkiak eta aipamenak.",
-    "pl": "Na tej stronie zebrano wszystkie oficjalne miejsca postoju kamperów oraz miejsca, w których można wylać zanieczyszczoną wodę. Możesz dodać szczegóły dotyczące świadczonych usług i kosztów. Dodaj zdjęcia i recenzje."
+    "pl": "Na tej stronie zebrano wszystkie oficjalne miejsca postoju kamperów oraz miejsca, w których można wylać zanieczyszczoną wodę. Możesz dodać szczegóły dotyczące świadczonych usług i kosztów. Dodaj zdjęcia i recenzje.",
+    "zh_Hans": "该网站汇总了所有官方的露营车停留点以及可以倾倒灰水和黑水的地点。你可以添加有关提供的服务和费用的详细信息，并且可以上传图片和撰写评论。"
   },
   "shortDescription": {
     "en": "Find sites to spend the night with your camper",
@@ -83,7 +84,8 @@
         "pa_PK": "کیمب‌سائیٹاں",
         "cs": "Kempovací místa",
         "eu": "Akanpatzeko tokiak",
-        "pl": "Miejsca kamperowe"
+        "pl": "Miejsca kamperowe",
+        "zh_Hans": "露营地"
       },
       "minzoom": 7,
       "source": {
@@ -159,7 +161,8 @@
         "pa_PK": "کیمب‌سائیٹاں",
         "cs": "kempovací místa",
         "eu": "Kanpatzeko tokiak",
-        "pl": "miejsca dla kamperów"
+        "pl": "miejsca dla kamperów",
+        "zh_Hans": "露营地"
       },
       "tagRenderings": [
         "images",
@@ -226,7 +229,8 @@
             "cs": "Účtuje si toto místo poplatek?",
             "eu": "Leku horrek kuota bat kobratzen du?",
             "pl": "Czy to miejsce pobiera opłatę?",
-            "pt": "Este lugar cobra alguma taxa?"
+            "pt": "Este lugar cobra alguma taxa?",
+            "zh_Hans": "这个地方是否收费？"
           },
           "mappings": [
             {
@@ -253,7 +257,8 @@
                 "cs": "Použití je zpoplatněno",
                 "eu": "Erabiltzeko ordaindu behar duzu",
                 "pl": "Wymagana jest opłata, aby skorzystać",
-                "pt": "Deve pagar para usar"
+                "pt": "Deve pagar para usar",
+                "zh_Hans": "需要付费使用"
               }
             },
             {
@@ -275,7 +280,8 @@
                 "ca": "Es pot utilitzar gratuïtament",
                 "cs": "Lze použít zdarma",
                 "pl": "Można skorzystać za darmo",
-                "pt": "Pode ser usado de graça"
+                "pt": "Pode ser usado de graça",
+                "zh_Hans": "可免费使用"
               },
               "addExtraTags": [
                 "charge="
@@ -301,7 +307,8 @@
             "cs": "Toto místo si účtuje {charge}",
             "eu": "Leku honek {charge} kobratzen du",
             "pl": "To miejsce pobiera opłatę w wysokości {charge}",
-            "pt": "Este lugar cobra {charge}"
+            "pt": "Este lugar cobra {charge}",
+            "zh_Hans": "这个地方收费 {charge}"
           },
           "question": {
             "en": "How much does this place charge?",
@@ -320,7 +327,8 @@
             "cs": "Kolik si toto místo účtuje?",
             "eu": "Zenbat kobratzen du leku honek?",
             "pl": "Ile kosztuje to miejsce?",
-            "pt": "Quanto este lugar cobra?"
+            "pt": "Quanto este lugar cobra?",
+            "zh_Hans": "这个地方的收费是多少？"
           },
           "freeform": {
             "key": "charge"
@@ -422,7 +430,8 @@
             "cs": "{capacity} táborníků může toto místo využívat současně",
             "eu": "{capacity} kanpinlariek aldi berean erabil dezakete leku hau",
             "pl": "{capacity} kamperów może z tego miejsca korzystać jednocześnie",
-            "pt": "{capacity} campistas podem usar este lugar ao mesmo tempo"
+            "pt": "{capacity} campistas podem usar este lugar ao mesmo tempo",
+            "zh_Hans": "{capacity} 名露营者可以同时使用这个地方"
           },
           "question": {
             "en": "How many campers can stay here? (skip if there is no obvious number of spaces or allowed vehicles)",
@@ -440,7 +449,8 @@
             "cs": "Kolik táborníků zde může zůstat? (přeskočte, pokud není zjevný počet míst nebo povolených vozidel)",
             "eu": "Zenbat kanpinlari gera daitezke hemen? (jauzi egin leku edo ibilgailu kopuru nabaririk ez badago)",
             "pl": "Ile kamperów może tu przebywać? (pomiń, jeśli nie ma oczywistej liczby miejsc lub dozwolonych pojazdów)",
-            "pt": "Quantos campistas podem ficar aqui? (pule se não houver um número óbvio de vagas ou veículos permitidos)"
+            "pt": "Quantos campistas podem ficar aqui? (pule se não houver um número óbvio de vagas ou veículos permitidos)",
+            "zh_Hans": "这里可以容纳多少辆露营车？（如果没有明显的车位数量或允许的车辆数，请跳过）"
           },
           "freeform": {
             "key": "capacity",
@@ -468,7 +478,8 @@
             "cs": "Poskytuje toto místo připojení k internetu?",
             "eu": "Leku honek Interneterako sarbidea eskaintzen du?",
             "pl": "Czy to miejsce oferuje dostęp do internetu?",
-            "pt": "Este lugar fornece acesso a internet?"
+            "pt": "Este lugar fornece acesso a internet?",
+            "zh_Hans": "这里有网络连接吗？"
           },
           "mappings": [
             {
@@ -494,7 +505,8 @@
                 "nb_NO": "Det finnes tilgang til Internett",
                 "cs": "Připojení k internetu je k dispozici",
                 "pl": "Jest dostęp do internetu",
-                "pt": "Há acesso à internet"
+                "pt": "Há acesso à internet",
+                "zh_Hans": "这里有网络连接"
               }
             },
             {
@@ -521,7 +533,8 @@
                 "ca": "Hi ha accés a Internet",
                 "cs": "Připojení k internetu je k dispozici",
                 "pl": "Jest dostęp do internetu",
-                "pt": "Há acesso à Internet"
+                "pt": "Há acesso à Internet",
+                "zh_Hans": "这里有网络连接"
               },
               "hideInAnswer": true
             },
@@ -548,7 +561,8 @@
                 "ca": "No hi ha accés a Internet",
                 "cs": "Připojení k internetu není k dispozici",
                 "pl": "Nie ma dostępu do internetu",
-                "pt": "Não há acesso à internet"
+                "pt": "Não há acesso à internet",
+                "zh_Hans": "这里没有网络连接"
               }
             }
           ]
@@ -596,7 +610,8 @@
                 "ca": "Heu de pagar un extra per accedir a Internet",
                 "cs": "Přístup k internetu je možný za poplatek",
                 "pl": "Dostęp do internetu jest dodatkowo płatny",
-                "pt": "Deve pagar um suplemento pelo acesso à internet"
+                "pt": "Deve pagar um suplemento pelo acesso à internet",
+                "zh_Hans": "互联网访问需要额外付费"
               }
             },
             {
@@ -621,7 +636,8 @@
                 "ca": "No cal pagar extra per l'accés a Internet",
                 "cs": "Přístup k internetu je možný bez poplatku",
                 "pl": "Dostęp do internetu nie jest dodatkowo płatny",
-                "pt": "Não precisa pagar um suplemento pelo acesso à internet"
+                "pt": "Não precisa pagar um suplemento pelo acesso à internet",
+                "zh_Hans": "互联网访问无需额外付费"
               }
             }
           ],
@@ -868,7 +884,8 @@
             "ca": "Més detalls sobre aquest lloc: {description}",
             "cs": "Další podrobnosti o tomto místě: {description}",
             "pl": "Więcej szczegółów o tym miejscu: {description}",
-            "pt": "Mais pormenores sobre este lugar: {description}"
+            "pt": "Mais pormenores sobre este lugar: {description}",
+            "zh_Hans": "关于此地的更多细节：{description}"
           },
           "question": {
             "en": "Would you like to add a general description of this place? (Do not repeat information previously asked or shown above. Please keep it objective - opinions go into the reviews)",
@@ -885,7 +902,8 @@
             "nb_NO": "Vil du legge til en generell beskrivelse av dette stedet? (Ikke gjenta info det har blitt spurt om eller som vises ovenfor. Hold det objektivt. Meninger henvises til vurderingene.)",
             "cs": "Chcete přidat obecný popis tohoto místa? (Neopakujte informace, na které jsme se ptali dříve, nebo které byly uvedeny výše. Zachovejte prosím objektivitu - názory patří do hodnocení)",
             "eu": "Gustatuko litzaizuke toki honen deskribapen orokorra gehitzea? (Ez errepikatu aurretik eskatutako edo adierazitako informazioa. Mesedez, eutsi helburuari - berrikuspenetarako iritziak)",
-            "pl": "Chcesz dodać ogólny opis tego miejsca? (Nie powtarzaj informacji zadanych wcześniej lub pokazanych powyżej. Zachowaj obiektywizm – opinie trafiają do recenzji)"
+            "pl": "Chcesz dodać ogólny opis tego miejsca? (Nie powtarzaj informacji zadanych wcześniej lub pokazanych powyżej. Zachowaj obiektywizm – opinie trafiają do recenzji)",
+            "zh_Hans": "您想添加一个关于此地的一般描述吗？（请勿重复之前询问或显示的信息。请保持客观——意见和评价请在评论中提供）"
           },
           "freeform": {
             "key": "description",
@@ -919,7 +937,8 @@
             "cs": "kempovací místa",
             "eu": "Kanpin bat",
             "pl": "miejsce dla kampera",
-            "pt": "uma local de acampamento"
+            "pt": "uma local de acampamento",
+            "zh_Hans": "露营地"
           },
           "description": {
             "en": "Add a new official camper site. These are designated places to stay overnight with your camper. They might look like a real camping or just look like a parking. They might not be signposted at all, but just be defined in a municipal decision. A regular parking intended for campers where it is not expected to spend the night, is -not- a camper site ",
@@ -936,7 +955,8 @@
             "da": "Tilføj en ny officiel campingplads. Disse er udpegede steder at overnatte med din autocamper. De kan ligne en rigtig campingplads eller bare ligne en parkeringsplads. De er måske slet ikke skiltet, men er blot defineret i en kommunal beslutning. En almindelig parkering beregnet til campister, hvor det ikke forventes at overnatte, er -ikke- en autocamperplads ",
             "cs": "Přidejte nové oficiální kempovací místo. Jedná se o místa, určená pro přenocování s karavanem. Mohou vypadat jako skutečný kemp nebo jen jako parkoviště. Takováto místa nemusí být označena, ale stačí, pokud jsou pouze definována v rozhodnutí obce. Běžné parkoviště určené pro táborníky, kde se nepovažuje za kempovací místo. ",
             "eu": "Kanpaleku ofizialeko beste leku bat gehitu du. Gaua zure karabanarekin igarotzeko lekuak dira. Benetako kanpin baten edo, besterik gabe, aparkaleku baten itxura izan dezakete. Baliteke ez egotea inola ere seinaleztatuta, baizik eta udal erabaki batean definitzea. Kanpinlarientzako aparkaleku arrunt bat ez da kanpin bat, gaua bertan pasatzea espero ez bada ere. ",
-            "pl": "Dodaj nowe oficjalne miejsce dla kamperów. Są to wyznaczone miejsca, w których można przenocować w swoim kamperze. Mogą wyglądać jak prawdziwy kemping lub po prostu wyglądać jak parking. Mogą one w ogóle nie być oznakowane, a jedynie określone w decyzji gminy. Zwykły parking przeznaczony dla kamperów, na którym nie przewiduje się nocowania, nie jest miejscem dla kamperów "
+            "pl": "Dodaj nowe oficjalne miejsce dla kamperów. Są to wyznaczone miejsca, w których można przenocować w swoim kamperze. Mogą wyglądać jak prawdziwy kemping lub po prostu wyglądać jak parking. Mogą one w ogóle nie być oznakowane, a jedynie określone w decyzji gminy. Zwykły parking przeznaczony dla kamperów, na którym nie przewiduje się nocowania, nie jest miejscem dla kamperów ",
+            "zh_Hans": "添加一个新的官方露营车场地。这些是专门设置的供露营车过夜的地点。它们可能看起来像真正的露营地，也可能只是看起来像一个停车场。它们可能没有任何标识，仅在市政决策中定义。普通的停车场，尽管可能供露营车使用，但不期望在其中过夜的，不算作露营车场地 "
           }
         }
       ],

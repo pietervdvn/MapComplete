@@ -633,7 +633,9 @@
           }
         }
       ],
-      "filter": ["filters.dogs"]
+      "filter": [
+        "filters.dogs"
+      ]
     },
     {
       "id": "description",
@@ -758,7 +760,9 @@
           "hideInAnswer": true
         }
       ],
-      "filter": ["filters.open_now"]
+      "filter": [
+        "filters.open_now"
+      ]
     },
     {
       "id": "opening_hours_24_7",
@@ -1043,7 +1047,10 @@
           }
         }
       ],
-      "filter": ["filters.accepts_cash","filters.accepts_cards"]
+      "filter": [
+        "filters.accepts_cash",
+        "filters.accepts_cards"
+      ]
     },
     {
       "id": "payment-options-split",
@@ -2124,7 +2131,9 @@
           }
         }
       ],
-      "filter": ["filters.has_internet"]
+      "filter": [
+        "filters.has_internet"
+      ]
     },
     {
       "id": "internet-fee",
@@ -2456,7 +2465,9 @@
           }
         }
       ],
-      "filter": ["filters.sugar_free"]
+      "filter": [
+        "filters.sugar_free"
+      ]
     },
     {
       "id": "lactose_free",
@@ -2477,7 +2488,6 @@
             "cs": "<b>Prodává pouze výrobky bez laktózy</b>"
           },
           "icon": "./assets/layers/questions/lactose_free.svg"
-
         },
         {
           "if": "diet:lactose_free=yes",
@@ -2487,7 +2497,6 @@
             "cs": "Velká nabídka bez laktózy"
           },
           "icon": "./assets/layers/questions/lactose_free.svg"
-
         },
         {
           "if": "diet:lactose_free=limited",
@@ -2506,8 +2515,9 @@
           }
         }
       ],
-      "filter": ["filters.lactose_free"]
-
+      "filter": [
+        "filters.lactose_free"
+      ]
     },
     {
       "id": "gluten_free",
@@ -2555,8 +2565,9 @@
           }
         }
       ],
-      "filter": ["filters.gluten_free"]
-
+      "filter": [
+        "filters.gluten_free"
+      ]
     },
     {
       "id": "vegan",
@@ -2785,7 +2796,8 @@
       "id": "seasonal",
       "question": {
         "en": "Is {title()} available all around the year?",
-        "nl": "Is {title()} heel het jaar beschikbaar?"
+        "nl": "Is {title()} heel het jaar beschikbaar?",
+        "de": "Ist {title()} rund um das Jahr nutzbar?"
       },
       "mappings": [
         {
@@ -2842,7 +2854,6 @@
             "en": "This facility does have showers"
           }
         },
-
         {
           "if": "shower=no",
           "icon": "invalid;./assets/layers/shower/shower.svg",

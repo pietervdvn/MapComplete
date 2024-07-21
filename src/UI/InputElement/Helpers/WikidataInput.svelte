@@ -3,7 +3,6 @@
    * Allows to search through wikidata and to select one value
    */
 
-
   import Translations from "../../i18n/Translations"
   import Tr from "../../Base/Tr.svelte"
   import { ImmutableStore, Store, Stores, UIEventSource } from "../../../Logic/UIEventSource"
@@ -30,13 +29,13 @@
   let selectedMany: Record<string, boolean> = {}
   let previouslySeen = new Map<string, WikidataResponse>()
 
-  $:{
+  $: {
     if (selectedWikidataSingle) {
       value.setData(selectedWikidataSingle.id)
     }
   }
 
-  $:{
+  $: {
     const v = []
     for (const id in selectedMany) {
       if (selectedMany[id]) {
@@ -46,11 +45,10 @@
     value.setData(v.join(";"))
   }
 
-
   let tooShort = new ImmutableStore<{ success: WikidataResponse[] }>({ success: undefined })
 
-  let searchResult: Store<{ success?: WikidataResponse[]; error?: any }> = searchValue
-    .bind((searchText) => {
+  let searchResult: Store<{ success?: WikidataResponse[]; error?: any }> = searchValue.bind(
+    (searchText) => {
       if (searchText.length < 3 && !searchText.match(/[qQ][0-9]+/)) {
         return tooShort
       }
@@ -62,18 +60,19 @@
           lang,
           maxCount: 5,
           notInstanceOf,
-          instanceOf
+          instanceOf,
         })
         WikidataValidator._searchCache.set(key, promise)
       }
       return Stores.FromPromiseWithErr(promise)
-    })
+    }
+  )
 
-  let selectedWithoutSearch: Store<WikidataResponse[]> = searchResult.map(sr => {
+  let selectedWithoutSearch: Store<WikidataResponse[]> = searchResult.map((sr) => {
     for (const wikidataItem of sr?.success ?? []) {
       previouslySeen.set(wikidataItem.id, wikidataItem)
     }
-    let knownIds: Set<string> = new Set(sr?.success?.map(item => item.id))
+    let knownIds: Set<string> = new Set(sr?.success?.map((item) => item.id))
     const seen = [selectedWikidataSingle]
     for (const id in selectedMany) {
       if (selectedMany[id]) {
@@ -81,9 +80,8 @@
         seen.push(item)
       }
     }
-    return Utils.NoNull(seen).filter(i => !knownIds.has(i.id))
+    return Utils.NoNull(seen).filter((i) => !knownIds.has(i.id))
   })
-
 </script>
 
 <h3>
@@ -91,33 +89,37 @@
 </h3>
 
 <form>
-  <SearchField {searchValue} placeholderText={placeholder}></SearchField>
+  <SearchField {searchValue} placeholderText={placeholder} />
 
   {#if $searchValue.trim().length === 0}
-    <Tr cls="w-full flex justify-center p-4" t={ t.doSearch} />
+    <Tr cls="w-full flex justify-center p-4" t={t.doSearch} />
   {:else if $searchValue.trim().length < 3}
-    <Tr t={ t.searchToShort} />
+    <Tr t={t.searchToShort} />
   {:else if $searchResult === undefined}
-    <div class="w-full flex justify-center p-4">
+    <div class="flex w-full justify-center p-4">
       <Loading>
         <Tr t={Translations.t.general.loading} />
       </Loading>
     </div>
   {:else if $searchResult.error !== undefined}
-    <div class="w-full flex justify-center p-4">
+    <div class="flex w-full justify-center p-4">
       <Tr cls="alert" t={t.failed} />
     </div>
   {:else if $searchResult.success}
     {#if $searchResult.success.length === 0}
-      <Tr cls="w-full flex justify-center p-4"  t={ t.noResults.Subs({search: $searchValue})} />
+      <Tr cls="w-full flex justify-center p-4" t={t.noResults.Subs({ search: $searchValue })} />
     {:else}
       {#each $searchResult.success as wikidata}
-
-        <label class="low-interaction m-4 p-2 rounded-xl flex items-center">
+        <label class="low-interaction m-4 flex items-center rounded-xl p-2">
           {#if allowMultiple}
             <input type="checkbox" bind:checked={selectedMany[wikidata.id]} />
           {:else}
-            <input type="radio" name="selectedWikidata" value={wikidata} bind:group={selectedWikidataSingle} />
+            <input
+              type="radio"
+              name="selectedWikidata"
+              value={wikidata}
+              bind:group={selectedWikidataSingle}
+            />
           {/if}
 
           <Wikidatapreview {wikidata} />
@@ -127,17 +129,19 @@
   {/if}
 
   {#each $selectedWithoutSearch as wikidata}
-
-    <label class="low-interaction m-4 p-2 rounded-xl flex items-center">
+    <label class="low-interaction m-4 flex items-center rounded-xl p-2">
       {#if allowMultiple}
         <input type="checkbox" bind:checked={selectedMany[wikidata.id]} />
       {:else}
-        <input type="radio" name="selectedWikidata" value={wikidata} bind:group={selectedWikidataSingle} />
+        <input
+          type="radio"
+          name="selectedWikidata"
+          value={wikidata}
+          bind:group={selectedWikidataSingle}
+        />
       {/if}
 
       <Wikidatapreview {wikidata} />
     </label>
   {/each}
-
 </form>
-

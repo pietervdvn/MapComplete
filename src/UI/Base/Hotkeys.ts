@@ -30,18 +30,18 @@ export default class Hotkeys {
     public static RegisterHotkey(
         key: (
             | {
-            ctrl: string
-        }
+                  ctrl: string
+              }
             | {
-            shift: string
-        }
+                  shift: string
+              }
             | {
-            alt: string
-        }
+                  alt: string
+              }
             | {
-            nomod: string
-        }
-            ) & {
+                  nomod: string
+              }
+        ) & {
             onUp?: boolean
         },
         documentation: string | Translation,
@@ -63,7 +63,7 @@ export default class Hotkeys {
             return
         }
         if (key["ctrl"] !== undefined) {
-            document.addEventListener("keydown", function(event) {
+            document.addEventListener("keydown", function (event) {
                 if (event.ctrlKey && event.key === keycode) {
                     if (action() !== false) {
                         event.preventDefault()
@@ -71,7 +71,7 @@ export default class Hotkeys {
                 }
             })
         } else if (key["shift"] !== undefined) {
-            document.addEventListener(type, function(event) {
+            document.addEventListener(type, function (event) {
                 if (Hotkeys.textElementSelected(event)) {
                     // A text element is selected, we don't do anything special
                     return
@@ -83,7 +83,7 @@ export default class Hotkeys {
                 }
             })
         } else if (key["alt"] !== undefined) {
-            document.addEventListener(type, function(event) {
+            document.addEventListener(type, function (event) {
                 if (event.altKey && event.key === keycode) {
                     if (action() !== false) {
                         event.preventDefault()
@@ -91,7 +91,7 @@ export default class Hotkeys {
                 }
             })
         } else if (key["nomod"] !== undefined) {
-            document.addEventListener(type, function(event) {
+            document.addEventListener(type, function (event) {
                 if (Hotkeys.textElementSelected(event) && keycode !== "Escape") {
                     // A text element is selected, we don't do anything special
                     return
@@ -106,18 +106,17 @@ export default class Hotkeys {
         }
     }
 
-    static prepareDocumentation(docs: {
-        key: { ctrl?: string; shift?: string; alt?: string; nomod?: string; onUp?: boolean }
-        documentation: string | Translation
-        alsoTriggeredBy: Translation[]
-    }[]){
+    static prepareDocumentation(
+        docs: {
+            key: { ctrl?: string; shift?: string; alt?: string; nomod?: string; onUp?: boolean }
+            documentation: string | Translation
+            alsoTriggeredBy: Translation[]
+        }[]
+    ) {
         let byKey: [string, string | Translation, Translation[] | undefined][] = docs
             .map(({ key, documentation, alsoTriggeredBy }) => {
-                const modifiers = Object.keys(key).filter(
-                    (k) => k !== "nomod" && k !== "onUp"
-                )
-                let keycode: string =
-                    key["ctrl"] ?? key["shift"] ?? key["alt"] ?? key["nomod"]
+                const modifiers = Object.keys(key).filter((k) => k !== "nomod" && k !== "onUp")
+                let keycode: string = key["ctrl"] ?? key["shift"] ?? key["alt"] ?? key["nomod"]
                 if (keycode.length == 1) {
                     keycode = keycode.toUpperCase()
                 }
@@ -128,7 +127,7 @@ export default class Hotkeys {
                 return <[string, string | Translation, Translation[] | undefined]>[
                     modifiers.join("+"),
                     documentation,
-                    alsoTriggeredBy
+                    alsoTriggeredBy,
                 ]
             })
             .sort()
@@ -141,36 +140,41 @@ export default class Hotkeys {
         return byKey
     }
 
-    static generateDocumentationFor(docs: {
-        key: { ctrl?: string; shift?: string; alt?: string; nomod?: string; onUp?: boolean }
-        documentation: string | Translation
-        alsoTriggeredBy: Translation[]
-    }[], language: string): string {
-
+    static generateDocumentationFor(
+        docs: {
+            key: { ctrl?: string; shift?: string; alt?: string; nomod?: string; onUp?: boolean }
+            documentation: string | Translation
+            alsoTriggeredBy: Translation[]
+        }[],
+        language: string
+    ): string {
         const tr = Translations.t.hotkeyDocumentation
-        function t(t: Translation | string){
-            if(typeof t === "string"){
+        function t(t: Translation | string) {
+            if (typeof t === "string") {
                 return t
             }
             return t.textFor(language)
         }
-        const contents: string[][] =  this.prepareDocumentation(docs)
-            .map(([key, doc, alsoTriggeredBy]) => {
-            let keyEl: string = [key, ...(alsoTriggeredBy??[])].map(k => "`"+t(k)+"`").join(" ")
-            return [keyEl, t(doc)]
-        })
+        const contents: string[][] = this.prepareDocumentation(docs).map(
+            ([key, doc, alsoTriggeredBy]) => {
+                let keyEl: string = [key, ...(alsoTriggeredBy ?? [])]
+                    .map((k) => "`" + t(k) + "`")
+                    .join(" ")
+                return [keyEl, t(doc)]
+            }
+        )
         return [
-            "# "+t(tr.title),
+            "# " + t(tr.title),
             t(tr.intro),
-            MarkdownUtils.table(
-                [t(tr.key), t(tr.action)],
-                contents
-            )
-            ].join("\n")
+            MarkdownUtils.table([t(tr.key), t(tr.action)], contents),
+        ].join("\n")
     }
 
-    public static generateDocumentation(language?: string){
-        return Hotkeys.generateDocumentationFor(Hotkeys._docs.data, language?? Locale.language.data)
+    public static generateDocumentation(language?: string) {
+        return Hotkeys.generateDocumentationFor(
+            Hotkeys._docs.data,
+            language ?? Locale.language.data
+        )
     }
 
     private static textElementSelected(event: KeyboardEvent): boolean {

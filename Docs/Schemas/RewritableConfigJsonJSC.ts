@@ -429,6 +429,13 @@ export default {
         "classes": {
           "description": "question: What css-classes should be applied to showing this attribute?\n\nA list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\n\nValues are split on ` `  (space)",
           "type": "string"
+        },
+        "filter": {
+          "description": "This tagRendering can introduce this builtin filter",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },

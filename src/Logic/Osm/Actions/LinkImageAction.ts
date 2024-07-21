@@ -55,6 +55,4 @@ export default class LinkImageAction extends OsmChangeAction {
         this._currentTags.ping()
         return tagChangeAction.CreateChangeDescriptions()
     }
-
-
 }

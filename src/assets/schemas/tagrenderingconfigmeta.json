@@ -455,5 +455,14 @@
     },
     "type": "string",
     "description": "A list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\nValues are split on ` `  (space)"
+  },
+  {
+    "path": [
+      "filter"
+    ],
+    "required": false,
+    "hints": {},
+    "type": "array",
+    "description": "This tagRendering can introduce this builtin filter"
   }
 ]

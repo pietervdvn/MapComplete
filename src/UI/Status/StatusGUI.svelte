@@ -1,5 +1,4 @@
 <script lang="ts">
-
   import { Store, Stores, UIEventSource } from "../../Logic/UIEventSource"
   import StatusIcon from "./StatusIcon.svelte"
   import type { MCService } from "./MCService"
@@ -9,7 +8,6 @@
   import { Utils } from "../../Utils"
   import Loading from "../Base/Loading.svelte"
   import Checkbox from "../Base/Checkbox.svelte"
-
 
   let services: MCService[] = []
 
@@ -22,25 +20,21 @@
 
     function check() {
       const promise = raw ? Utils.download(url) : Utils.downloadJson(url)
-      promise
-        ?.then((d) => src.setData({ success: d }))
-        ?.catch((err) => src.setData({ error: err }))
+      promise?.then((d) => src.setData({ success: d }))?.catch((err) => src.setData({ error: err }))
     }
 
     check()
-    recheckSignal.addCallback(_ => check())
-    checkSignal.addCallback(_ => {
+    recheckSignal.addCallback((_) => check())
+    checkSignal.addCallback((_) => {
       if (autoCheckAgain.data) {
         check()
       }
     })
     return src
-
   }
 
-
   function simpleMessage(s: Store<{ success: any } | { error: any }>): Store<string> {
-    return s.mapD(s => {
+    return s.mapD((s) => {
       if (s["success"]) {
         return JSON.stringify(s["success"])
       }
@@ -53,7 +47,7 @@
     const osmApi = connection.apiIsOnline
     services.push({
       name: connection.Backend(),
-      status: osmApi.mapD(serviceState => {
+      status: osmApi.mapD((serviceState) => {
         switch (serviceState) {
           case "offline":
             return "offline"
@@ -76,7 +70,7 @@
     const status = testDownload(s + "/overview")
     services.push({
       name: s,
-      status: status.mapD(s => {
+      status: status.mapD((s) => {
         if (s["error"]) {
           return "offline"
         }
@@ -89,7 +83,7 @@
         }
         return "online"
       }),
-      message: status.mapD(s => {
+      message: status.mapD((s) => {
         if (s["error"]) {
           return s["error"]
         }
@@ -99,24 +93,20 @@
     })
   }
   {
-    services.push(
-      {
-        name: Constants.GeoIpServer,
-        status: testDownload(Constants.GeoIpServer + "/status").mapD(result => {
-          if (result["success"].online) {
-            return "online"
-          }
-          if (result["error"]) {
-            return "offline"
-          } else {
-            return "degraded"
-          }
-        }),
-        message: simpleMessage(
-          testDownload(Constants.GeoIpServer + "/ip"),
-        ),
-      },
-    )
+    services.push({
+      name: Constants.GeoIpServer,
+      status: testDownload(Constants.GeoIpServer + "/status").mapD((result) => {
+        if (result["success"].online) {
+          return "online"
+        }
+        if (result["error"]) {
+          return "offline"
+        } else {
+          return "degraded"
+        }
+      }),
+      message: simpleMessage(testDownload(Constants.GeoIpServer + "/ip")),
+    })
   }
 
   {
@@ -124,7 +114,7 @@
     const status = testDownload(s.replace(/\/report$/, "/status"))
     services.push({
       name: s,
-      status: status.mapD(s => {
+      status: status.mapD((s) => {
         if (s["error"]) {
           return "offline"
         }
@@ -143,7 +133,7 @@
     const status = testDownload(s + "/status")
     services.push({
       name: s,
-      status: status.mapD(s => {
+      status: status.mapD((s) => {
         if (s["error"]) {
           return "offline"
         }
@@ -162,7 +152,7 @@
     const status = testDownload(s + "/summary/status.json")
     services.push({
       name: s,
-      status: status.mapD(s => {
+      status: status.mapD((s) => {
         if (s["error"]) {
           return "offline"
         }
@@ -180,7 +170,7 @@
 
         return "online"
       }),
-      message: status.mapD(s => {
+      message: status.mapD((s) => {
         if (s["error"]) {
           return s["error"]
         }
@@ -201,7 +191,7 @@
     const status = testDownload(s + "/0.0.0.json")
     services.push({
       name: s,
-      status: status.mapD(s => {
+      status: status.mapD((s) => {
         if (s["error"]) {
           return "offline"
         }
@@ -211,11 +201,9 @@
         }
         return "degraded"
       }),
-      message: status.map(s => JSON.stringify(s)),
+      message: status.map((s) => JSON.stringify(s)),
     })
-
   }
-
 
   {
     for (const defaultOverpassUrl of Constants.defaultOverpassUrls) {
@@ -224,7 +212,7 @@
 
       services.push({
         name: "Overpass-server: " + defaultOverpassUrl,
-        status: status.mapD(result => {
+        status: status.mapD((result) => {
           if (result["error"]) {
             return "offline"
           }
@@ -247,7 +235,7 @@
   {
     services.push({
       name: "Mangrove reviews",
-      status: testDownload("https://api.mangrove.reviews", true).mapD(r => {
+      status: testDownload("https://api.mangrove.reviews", true).mapD((r) => {
         if (r["success"]) {
           return "online"
         }
@@ -256,18 +244,17 @@
     })
   }
 
-
   let all = new UIEventSource<"online" | "degraded" | "offline">("online")
   let someLoading = new UIEventSource(true)
 
   function setAll() {
-    const data = Utils.NoNull(services.map(s => s.status.data))
+    const data = Utils.NoNull(services.map((s) => s.status.data))
     someLoading.setData(data.length !== services.length)
-    if (data.some(d => d === "offline")) {
+    if (data.some((d) => d === "offline")) {
       all.setData("offline")
-    } else if (data.some(d => d === "degraded")) {
+    } else if (data.some((d) => d === "degraded")) {
       all.setData("degraded")
-    } else if (data.some(d => d === "online")) {
+    } else if (data.some((d) => d === "online")) {
       all.setData("online")
     } else {
       all.setData(undefined)
@@ -291,7 +278,6 @@
    */
   async function setTrafficLight(state: "online" | "degraded" | "offline") {
     try {
-
       const url = trafficLightUrl
       const status = await Utils.downloadJson(url + "status")
       console.log(status)
@@ -300,7 +286,6 @@
         return
       }
       switch (state) {
-
         case "offline":
           await Utils.download(url + "configure?mode=3")
           break
@@ -313,37 +298,32 @@
         default:
           await Utils.download(url + "configure?mode=7")
           break
-
       }
     } catch (e) {
       console.log("Could not connect to the traffic light")
     }
   }
 
-  all.addCallbackAndRunD(state => {
+  all.addCallbackAndRunD((state) => {
     setTrafficLight(state)
   })
-  enableTrafficLight.addCallbackAndRunD(_ => {
+  enableTrafficLight.addCallbackAndRunD((_) => {
     setTrafficLight(all.data)
   })
-
 </script>
 
 <h1>MapComplete status indicators</h1>
 
 <div class="flex">
-
   {#if $someLoading}
     <Loading />
   {/if}
   <StatusIcon status={$all} cls="w-16 h-16" />
   <button on:click={() => recheckSignal.ping()}>Check again</button>
-  <Checkbox selected={autoCheckAgain}>
-    Automatically check again every 10s
-  </Checkbox>
+  <Checkbox selected={autoCheckAgain}>Automatically check again every 10s</Checkbox>
 </div>
 
-{#if $trafficLightIsOnline?.["success"] }
+{#if $trafficLightIsOnline?.["success"]}
   <Checkbox selected={enableTrafficLight}>Enable traffic light</Checkbox>
 {/if}
 
@@ -351,12 +331,16 @@
   <ServiceIndicator {service} />
 {/each}
 
-<button on:click={() => {
+<button
+  on:click={() => {
     fetch(Constants.ErrorReportServer, {
-                method: "POST",
-                body: JSON.stringify({
-                    message: "Test via the status page, not an actual error",
-                    version: Constants.vNumber,
-                }),
-            })
-}}>Test error report function</button>
+      method: "POST",
+      body: JSON.stringify({
+        message: "Test via the status page, not an actual error",
+        version: Constants.vNumber,
+      }),
+    })
+  }}
+>
+  Test error report function
+</button>

@@ -18,11 +18,10 @@
   )
 </script>
 
-<div class="low-interaction border-gray-300 border-dashed rounded-xl p-2 flex flex-col">
+<div class="low-interaction flex flex-col rounded-xl border-dashed border-gray-300 p-2">
   {#if $titleOnly}
     <Loading>{$wikipediaDetails.title}</Loading>
   {/if}
-
 
   {#if $wikipediaDetails.wikidata}
     <Wikidatapreview wikidata={$wikipediaDetails.wikidata} />
@@ -36,7 +35,12 @@
     {:else}
       <FromHtml clss="wikipedia-article" src={$wikipediaDetails.firstParagraph} />
       {#if $wikipediaDetails.articleUrl}
-        <a class="flex self-end my-2" href={$wikipediaDetails.articleUrl} rel="noreferrer" target="_blank">
+        <a
+          class="my-2 flex self-end"
+          href={$wikipediaDetails.articleUrl}
+          rel="noreferrer"
+          target="_blank"
+        >
           <Wikipedia class="h-6 w-6" />
           <Tr t={Translations.t.general.wikipedia.fromWikipedia} />
         </a>

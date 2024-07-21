@@ -117,7 +117,7 @@
       theme: state.layout?.id ?? "unkown",
       changeType: "create",
       snapOnto: snapToWay,
-      reusePointWithinMeters: 1
+      reusePointWithinMeters: 1,
     })
     await state.changes.applyAction(newElementAction)
     state.newFeatures.features.ping()
@@ -190,11 +190,12 @@
       <TitledPanel>
         <Tr slot="title" t={Translations.t.general.add.intro} />
 
-
         <div class="alert flex items-center justify-center">
           <EyeOffIcon class="w-8" />
           <Tr
-            t={Translations.t.general.add.layerNotEnabled.Subs({ layer: selectedPreset.layer.name })}
+            t={Translations.t.general.add.layerNotEnabled.Subs({
+              layer: selectedPreset.layer.name,
+            })}
           />
         </div>
 
@@ -202,9 +203,9 @@
           <button
             class="flex w-full gap-x-1"
             on:click={() => {
-            abort()
-            state.guistate.openFilterView(selectedPreset.layer)
-          }}
+              abort()
+              state.guistate.openFilterView(selectedPreset.layer)
+            }}
           >
             <Layers class="w-12" />
             <Tr t={Translations.t.general.add.openLayerControl} />
@@ -213,9 +214,9 @@
           <button
             class="primary flex w-full gap-x-1"
             on:click={() => {
-            layerIsDisplayed.setData(true)
-            abort()
-          }}
+              layerIsDisplayed.setData(true)
+              abort()
+            }}
           >
             <EyeIcon class="w-12" />
             <Tr
@@ -224,89 +225,86 @@
           </button>
         </div>
       </TitledPanel>
-
     {:else if $layerHasFilters}
       <TitledPanel>
         <Tr slot="title" t={Translations.t.general.add.intro} />
 
-
         <!-- Some filters are enabled. The feature to add might already be mapped, but hidden -->
-      <div class="alert flex items-center justify-center">
-        <EyeOffIcon class="w-8" />
-        <Tr t={Translations.t.general.add.disableFiltersExplanation} />
-      </div>
-      <div class="flex flex-wrap-reverse md:flex-nowrap">
-        <button
-          class="primary flex w-full gap-x-1"
-          on:click={() => {
-            abort()
-            state.layerState.filteredLayers.get(selectedPreset.layer.id).disableAllFilters()
-          }}
-        >
-          <EyeOffIcon class="w-12" />
-          <Tr t={Translations.t.general.add.disableFilters} />
-        </button>
-        <button
-          class="flex w-full gap-x-1"
-          on:click={() => {
-            abort()
-            state.guistate.openFilterView(selectedPreset.layer)
-          }}
-        >
-          <Layers class="w-12" />
-          <Tr t={Translations.t.general.add.openLayerControl} />
-        </button>
-      </div>
+        <div class="alert flex items-center justify-center">
+          <EyeOffIcon class="w-8" />
+          <Tr t={Translations.t.general.add.disableFiltersExplanation} />
+        </div>
+        <div class="flex flex-wrap-reverse md:flex-nowrap">
+          <button
+            class="primary flex w-full gap-x-1"
+            on:click={() => {
+              abort()
+              state.layerState.filteredLayers.get(selectedPreset.layer.id).disableAllFilters()
+            }}
+          >
+            <EyeOffIcon class="w-12" />
+            <Tr t={Translations.t.general.add.disableFilters} />
+          </button>
+          <button
+            class="flex w-full gap-x-1"
+            on:click={() => {
+              abort()
+              state.guistate.openFilterView(selectedPreset.layer)
+            }}
+          >
+            <Layers class="w-12" />
+            <Tr t={Translations.t.general.add.openLayerControl} />
+          </button>
+        </div>
       </TitledPanel>
     {:else if !confirmedCategory}
       <!-- Second, confirm the category -->
       <TitledPanel>
-
-        <Tr slot="title"
+        <Tr
+          slot="title"
           t={Translations.t.general.add.confirmTitle.Subs({ title: selectedPreset.preset.title })}
         />
 
-      {#if selectedPreset.preset.description}
-        <Tr t={selectedPreset.preset.description} />
-      {/if}
+        {#if selectedPreset.preset.description}
+          <Tr t={selectedPreset.preset.description} />
+        {/if}
 
-      {#if selectedPreset.preset.exampleImages}
-        <h3>
-          {#if selectedPreset.preset.exampleImages.length === 1}
-            <Tr t={Translations.t.general.example} />
-          {:else}
-            <Tr t={Translations.t.general.examples} />
-          {/if}
-        </h3>
-        <span class="flex flex-wrap items-stretch">
-          {#each selectedPreset.preset.exampleImages as src}
-            <img {src} class="m-1 h-64 w-auto rounded-lg" />
-          {/each}
-        </span>
-      {/if}
-      <TagHint
-        embedIn={(tags) => t.presetInfo.Subs({ tags })}
-        {state}
-        tags={new And(selectedPreset.preset.tags)}
-      />
+        {#if selectedPreset.preset.exampleImages}
+          <h3>
+            {#if selectedPreset.preset.exampleImages.length === 1}
+              <Tr t={Translations.t.general.example} />
+            {:else}
+              <Tr t={Translations.t.general.examples} />
+            {/if}
+          </h3>
+          <span class="flex flex-wrap items-stretch">
+            {#each selectedPreset.preset.exampleImages as src}
+              <img {src} class="m-1 h-64 w-auto rounded-lg" />
+            {/each}
+          </span>
+        {/if}
+        <TagHint
+          embedIn={(tags) => t.presetInfo.Subs({ tags })}
+          {state}
+          tags={new And(selectedPreset.preset.tags)}
+        />
 
-      <div class="flex w-full flex-wrap-reverse md:flex-nowrap">
-        <BackButton on:click={() => (selectedPreset = undefined)} clss="w-full">
-          <Tr t={t.backToSelect} />
-        </BackButton>
+        <div class="flex w-full flex-wrap-reverse md:flex-nowrap">
+          <BackButton on:click={() => (selectedPreset = undefined)} clss="w-full">
+            <Tr t={t.backToSelect} />
+          </BackButton>
 
-        <NextButton on:click={() => (confirmedCategory = true)} clss="primary w-full">
-          <div slot="image" class="relative">
-            <ToSvelte construct={selectedPreset.icon} />
-            <Confirm class="absolute bottom-0 right-0 h-4 w-4" />
-          </div>
-          <div class="w-full">
-            <Tr t={selectedPreset.text} />
-          </div>
-        </NextButton>
-      </div>
+          <NextButton on:click={() => (confirmedCategory = true)} clss="primary w-full">
+            <div slot="image" class="relative">
+              <ToSvelte construct={selectedPreset.icon} />
+              <Confirm class="absolute bottom-0 right-0 h-4 w-4" />
+            </div>
+            <div class="w-full">
+              <Tr t={selectedPreset.text} />
+            </div>
+          </NextButton>
+        </div>
       </TitledPanel>
-
     {:else if _globalFilter?.length > 0 && _globalFilter?.length > checkedOfGlobalFilters}
       <Tr t={_globalFilter[checkedOfGlobalFilters].onNewPoint?.safetyCheck} cls="mx-12" />
       <SubtleButton

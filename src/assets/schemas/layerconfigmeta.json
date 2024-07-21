@@ -548,6 +548,13 @@
           "classes": {
             "description": "question: What css-classes should be applied to showing this attribute?\n\nA list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\n\nValues are split on ` `  (space)",
             "type": "string"
+          },
+          "filter": {
+            "description": "This tagRendering can introduce this builtin filter",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         },
         "additionalProperties": false
@@ -1027,6 +1034,16 @@
     },
     "type": "string",
     "description": "A list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\nValues are split on ` `  (space)"
+  },
+  {
+    "path": [
+      "title",
+      "filter"
+    ],
+    "required": false,
+    "hints": {},
+    "type": "array",
+    "description": "This tagRendering can introduce this builtin filter"
   },
   {
     "path": [
@@ -1581,6 +1598,16 @@
     },
     "type": "string",
     "description": "A list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\nValues are split on ` `  (space)"
+  },
+  {
+    "path": [
+      "titleIcons",
+      "filter"
+    ],
+    "required": false,
+    "hints": {},
+    "type": "array",
+    "description": "This tagRendering can introduce this builtin filter"
   },
   {
     "path": [
@@ -2481,6 +2508,13 @@
           "classes": {
             "description": "question: What css-classes should be applied to showing this attribute?\n\nA list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\n\nValues are split on ` `  (space)",
             "type": "string"
+          },
+          "filter": {
+            "description": "This tagRendering can introduce this builtin filter",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         },
         "additionalProperties": false
@@ -2984,6 +3018,17 @@
   {
     "path": [
       "pointRendering",
+      "iconSize",
+      "filter"
+    ],
+    "required": false,
+    "hints": {},
+    "type": "array",
+    "description": "This tagRendering can introduce this builtin filter"
+  },
+  {
+    "path": [
+      "pointRendering",
       "anchor"
     ],
     "required": false,
@@ -3183,6 +3228,13 @@
           "classes": {
             "description": "question: What css-classes should be applied to showing this attribute?\n\nA list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\n\nValues are split on ` `  (space)",
             "type": "string"
+          },
+          "filter": {
+            "description": "This tagRendering can introduce this builtin filter",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         },
         "additionalProperties": false
@@ -3686,6 +3738,17 @@
   {
     "path": [
       "pointRendering",
+      "anchor",
+      "filter"
+    ],
+    "required": false,
+    "hints": {},
+    "type": "array",
+    "description": "This tagRendering can introduce this builtin filter"
+  },
+  {
+    "path": [
+      "pointRendering",
       "rotation"
     ],
     "required": false,
@@ -3863,6 +3926,13 @@
           "classes": {
             "description": "question: What css-classes should be applied to showing this attribute?\n\nA list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\n\nValues are split on ` `  (space)",
             "type": "string"
+          },
+          "filter": {
+            "description": "This tagRendering can introduce this builtin filter",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         },
         "additionalProperties": false
@@ -4366,6 +4436,17 @@
   {
     "path": [
       "pointRendering",
+      "rotation",
+      "filter"
+    ],
+    "required": false,
+    "hints": {},
+    "type": "array",
+    "description": "This tagRendering can introduce this builtin filter"
+  },
+  {
+    "path": [
+      "pointRendering",
       "label"
     ],
     "required": false,
@@ -4545,6 +4626,13 @@
           "classes": {
             "description": "question: What css-classes should be applied to showing this attribute?\n\nA list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\n\nValues are split on ` `  (space)",
             "type": "string"
+          },
+          "filter": {
+            "description": "This tagRendering can introduce this builtin filter",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         },
         "additionalProperties": false
@@ -5048,6 +5136,17 @@
   {
     "path": [
       "pointRendering",
+      "label",
+      "filter"
+    ],
+    "required": false,
+    "hints": {},
+    "type": "array",
+    "description": "This tagRendering can introduce this builtin filter"
+  },
+  {
+    "path": [
+      "pointRendering",
       "labelCss"
     ],
     "required": false,
@@ -5228,6 +5327,13 @@
           "classes": {
             "description": "question: What css-classes should be applied to showing this attribute?\n\nA list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\n\nValues are split on ` `  (space)",
             "type": "string"
+          },
+          "filter": {
+            "description": "This tagRendering can introduce this builtin filter",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         },
         "additionalProperties": false
@@ -5731,6 +5837,17 @@
   {
     "path": [
       "pointRendering",
+      "labelCss",
+      "filter"
+    ],
+    "required": false,
+    "hints": {},
+    "type": "array",
+    "description": "This tagRendering can introduce this builtin filter"
+  },
+  {
+    "path": [
+      "pointRendering",
       "labelCssClasses"
     ],
     "required": false,
@@ -5916,6 +6033,13 @@
           "classes": {
             "description": "question: What css-classes should be applied to showing this attribute?\n\nA list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\n\nValues are split on ` `  (space)",
             "type": "string"
+          },
+          "filter": {
+            "description": "This tagRendering can introduce this builtin filter",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         },
         "additionalProperties": false
@@ -6419,6 +6543,17 @@
   {
     "path": [
       "pointRendering",
+      "labelCssClasses",
+      "filter"
+    ],
+    "required": false,
+    "hints": {},
+    "type": "array",
+    "description": "This tagRendering can introduce this builtin filter"
+  },
+  {
+    "path": [
+      "pointRendering",
       "css"
     ],
     "required": false,
@@ -6599,6 +6734,13 @@
           "classes": {
             "description": "question: What css-classes should be applied to showing this attribute?\n\nA list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\n\nValues are split on ` `  (space)",
             "type": "string"
+          },
+          "filter": {
+            "description": "This tagRendering can introduce this builtin filter",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         },
         "additionalProperties": false
@@ -7102,6 +7244,17 @@
   {
     "path": [
       "pointRendering",
+      "css",
+      "filter"
+    ],
+    "required": false,
+    "hints": {},
+    "type": "array",
+    "description": "This tagRendering can introduce this builtin filter"
+  },
+  {
+    "path": [
+      "pointRendering",
       "cssClasses"
     ],
     "required": false,
@@ -7282,6 +7435,13 @@
           "classes": {
             "description": "question: What css-classes should be applied to showing this attribute?\n\nA list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\n\nValues are split on ` `  (space)",
             "type": "string"
+          },
+          "filter": {
+            "description": "This tagRendering can introduce this builtin filter",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         },
         "additionalProperties": false
@@ -7785,6 +7945,17 @@
   {
     "path": [
       "pointRendering",
+      "cssClasses",
+      "filter"
+    ],
+    "required": false,
+    "hints": {},
+    "type": "array",
+    "description": "This tagRendering can introduce this builtin filter"
+  },
+  {
+    "path": [
+      "pointRendering",
       "pitchAlignment"
     ],
     "required": false,
@@ -7972,6 +8143,13 @@
           "classes": {
             "description": "question: What css-classes should be applied to showing this attribute?\n\nA list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\n\nValues are split on ` `  (space)",
             "type": "string"
+          },
+          "filter": {
+            "description": "This tagRendering can introduce this builtin filter",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         },
         "additionalProperties": false
@@ -8475,6 +8653,17 @@
     },
     "type": "string",
     "description": "A list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\nValues are split on ` `  (space)"
+  },
+  {
+    "path": [
+      "pointRendering",
+      "pitchAlignment",
+      "filter"
+    ],
+    "required": false,
+    "hints": {},
+    "type": "array",
+    "description": "This tagRendering can introduce this builtin filter"
   },
   {
     "path": [
@@ -8667,6 +8856,13 @@
           "classes": {
             "description": "question: What css-classes should be applied to showing this attribute?\n\nA list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\n\nValues are split on ` `  (space)",
             "type": "string"
+          },
+          "filter": {
+            "description": "This tagRendering can introduce this builtin filter",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         },
         "additionalProperties": false
@@ -9170,6 +9366,17 @@
     },
     "type": "string",
     "description": "A list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\nValues are split on ` `  (space)"
+  },
+  {
+    "path": [
+      "pointRendering",
+      "rotationAlignment",
+      "filter"
+    ],
+    "required": false,
+    "hints": {},
+    "type": "array",
+    "description": "This tagRendering can introduce this builtin filter"
   },
   {
     "path": [
@@ -10946,6 +11153,13 @@
           "classes": {
             "description": "question: What css-classes should be applied to showing this attribute?\n\nA list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\n\nValues are split on ` `  (space)",
             "type": "string"
+          },
+          "filter": {
+            "description": "This tagRendering can introduce this builtin filter",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         },
         "required": [
@@ -11607,7 +11821,7 @@
       "suggestions": [
         {
           "if": "value=string",
-          "then": "<b>string</b> A simple piece of text"
+          "then": "<b>string</b> A simple piece of text which is at most 255 characters long"
         },
         {
           "if": "value=text",
@@ -12275,6 +12489,16 @@
     },
     "type": "string",
     "description": "A list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\nValues are split on ` `  (space)"
+  },
+  {
+    "path": [
+      "tagRenderings",
+      "filter"
+    ],
+    "required": false,
+    "hints": {},
+    "type": "array",
+    "description": "This tagRendering can introduce this builtin filter"
   },
   {
     "path": [
@@ -12903,7 +13127,7 @@
       "suggestions": [
         {
           "if": "value=string",
-          "then": "<b>string</b> A simple piece of text"
+          "then": "<b>string</b> A simple piece of text which is at most 255 characters long"
         },
         {
           "if": "value=text",
@@ -13596,6 +13820,17 @@
     },
     "type": "string",
     "description": "A list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\nValues are split on ` `  (space)"
+  },
+  {
+    "path": [
+      "tagRenderings",
+      "override",
+      "filter"
+    ],
+    "required": false,
+    "hints": {},
+    "type": "array",
+    "description": "This tagRendering can introduce this builtin filter"
   },
   {
     "path": [
@@ -14245,7 +14480,7 @@
       "suggestions": [
         {
           "if": "value=string",
-          "then": "<b>string</b> A simple piece of text"
+          "then": "<b>string</b> A simple piece of text which is at most 255 characters long"
         },
         {
           "if": "value=text",
@@ -14938,6 +15173,17 @@
     },
     "type": "string",
     "description": "A list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\nValues are split on ` `  (space)"
+  },
+  {
+    "path": [
+      "tagRenderings",
+      "renderings",
+      "filter"
+    ],
+    "required": false,
+    "hints": {},
+    "type": "array",
+    "description": "This tagRendering can introduce this builtin filter"
   },
   {
     "path": [
@@ -15591,7 +15837,7 @@
       "suggestions": [
         {
           "if": "value=string",
-          "then": "<b>string</b> A simple piece of text"
+          "then": "<b>string</b> A simple piece of text which is at most 255 characters long"
         },
         {
           "if": "value=text",
@@ -16309,6 +16555,18 @@
     },
     "type": "string",
     "description": "A list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\nValues are split on ` `  (space)"
+  },
+  {
+    "path": [
+      "tagRenderings",
+      "renderings",
+      "override",
+      "filter"
+    ],
+    "required": false,
+    "hints": {},
+    "type": "array",
+    "description": "This tagRendering can introduce this builtin filter"
   },
   {
     "path": [
@@ -16937,7 +17195,7 @@
       "suggestions": [
         {
           "if": "value=string",
-          "then": "<b>string</b> A simple piece of text"
+          "then": "<b>string</b> A simple piece of text which is at most 255 characters long"
         },
         {
           "if": "value=text",
@@ -17630,6 +17888,17 @@
     },
     "type": "string",
     "description": "A list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\nValues are split on ` `  (space)"
+  },
+  {
+    "path": [
+      "tagRenderings",
+      "renderings",
+      "filter"
+    ],
+    "required": false,
+    "hints": {},
+    "type": "array",
+    "description": "This tagRendering can introduce this builtin filter"
   },
   {
     "path": [
@@ -18283,7 +18552,7 @@
       "suggestions": [
         {
           "if": "value=string",
-          "then": "<b>string</b> A simple piece of text"
+          "then": "<b>string</b> A simple piece of text which is at most 255 characters long"
         },
         {
           "if": "value=text",
@@ -19001,6 +19270,18 @@
     },
     "type": "string",
     "description": "A list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\nValues are split on ` `  (space)"
+  },
+  {
+    "path": [
+      "tagRenderings",
+      "renderings",
+      "override",
+      "filter"
+    ],
+    "required": false,
+    "hints": {},
+    "type": "array",
+    "description": "This tagRendering can introduce this builtin filter"
   },
   {
     "path": [

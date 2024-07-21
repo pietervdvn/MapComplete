@@ -583,7 +583,7 @@
       "suggestions": [
         {
           "if": "value=string",
-          "then": "<b>string</b> A simple piece of text"
+          "then": "<b>string</b> A simple piece of text which is at most 255 characters long"
         },
         {
           "if": "value=text",
@@ -1226,5 +1226,14 @@
     },
     "type": "string",
     "description": "A list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\nValues are split on ` `  (space)"
+  },
+  {
+    "path": [
+      "filter"
+    ],
+    "required": false,
+    "hints": {},
+    "type": "array",
+    "description": "This tagRendering can introduce this builtin filter"
   }
 ]

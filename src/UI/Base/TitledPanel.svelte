@@ -1,5 +1,4 @@
 <script lang="ts">
-
   import Translations from "../i18n/Translations"
 </script>
 

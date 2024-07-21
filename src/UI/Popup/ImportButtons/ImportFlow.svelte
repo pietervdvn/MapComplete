@@ -76,7 +76,7 @@
           state.guistate.openFilterView(filteredLayer.layerDef)
         }}
       >
-        <Layers class="w-12"/>
+        <Layers class="w-12" />
         <Tr t={Translations.t.general.add.openLayerControl} />
       </button>
 
@@ -119,7 +119,7 @@
           state.guistate.openFilterView(filteredLayer.layerDef)
         }}
       >
-        <Layers class="w-12"/>
+        <Layers class="w-12" />
         <Tr t={Translations.t.general.add.openLayerControl} />
       </button>
     </div>

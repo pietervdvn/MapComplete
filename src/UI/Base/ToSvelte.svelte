@@ -7,14 +7,14 @@
   let elem: HTMLElement
   let html: HTMLElement
   let isSvelte = false
-  let uiElement : BaseUIElement | SvelteUIElement | undefined
+  let uiElement: BaseUIElement | SvelteUIElement | undefined
   let svelteElem: SvelteUIElement
   onMount(() => {
     uiElement = typeof construct === "function" ? construct() : construct
 
     if (uiElement?.["isSvelte"]) {
       isSvelte = true
-      svelteElem = <SvelteUIElement> uiElement
+      svelteElem = <SvelteUIElement>uiElement
       return
     }
 
@@ -32,7 +32,12 @@
 </script>
 
 {#if isSvelte}
-  <svelte:component this={svelteElem?._svelteComponent} {...svelteElem._props} class={svelteElem.getClass()} style={svelteElem.getStyle()}/>
+  <svelte:component
+    this={svelteElem?._svelteComponent}
+    {...svelteElem._props}
+    class={svelteElem.getClass()}
+    style={svelteElem.getStyle()}
+  />
 {:else}
   <span bind:this={elem} />
 {/if}

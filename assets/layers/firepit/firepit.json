@@ -113,7 +113,8 @@
       "override": {
         "question": {
           "en": "Is the firepit available all around the year?",
-          "nl": "Is deze kampvuurplaats heel het jaar door beschikbaar?"
+          "nl": "Is deze kampvuurplaats heel het jaar door beschikbaar?",
+          "de": "Ist diese Feuerstelle rund um das Jahr nutzbar?"
         }
       }
     }

@@ -256,7 +256,8 @@
         }
       ]
     },
-    {"id": "lactosefree",
+    {
+      "id": "lactosefree",
       "labels": [
         "defaults",
         "in_favourite"
@@ -264,14 +265,19 @@
       "mappings": [
         {
           "if": {
-            "or":["diet:lactose_free=only","diet:lactose_free=yes","diet:lactose_free=limited"]
+            "or": [
+              "diet:lactose_free=only",
+              "diet:lactose_free=yes",
+              "diet:lactose_free=limited"
+            ]
           },
           "#": "ignore-image-in-then",
           "then": "<img alt='lactose free' src='./assets/layers/questions/lactose_free.svg'>"
         }
       ]
     },
-    {"id": "glutenfree",
+    {
+      "id": "glutenfree",
       "labels": [
         "defaults",
         "in_favourite"
@@ -279,14 +285,17 @@
       "mappings": [
         {
           "if": {
-            "or":["diet:gluten_free=only","diet:gluten_free=yes","diet:gluten_free=limited"]
+            "or": [
+              "diet:gluten_free=only",
+              "diet:gluten_free=yes",
+              "diet:gluten_free=limited"
+            ]
           },
           "#": "ignore-image-in-then",
           "then": "<img alt='gluten free' src='./assets/layers/questions/glutenfree.svg'>"
         }
       ]
     },
-
     {
       "id": "sharelink",
       "labels": [

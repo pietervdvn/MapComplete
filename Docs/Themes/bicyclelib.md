@@ -35,6 +35,7 @@ Available languages:
  - es
  - eu
  - pt
+ - zh_Hans
 
 
 # Layers defined in this theme configuration file

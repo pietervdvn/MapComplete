@@ -31,11 +31,7 @@
         let idList = [value]
         if (Array.isArray(value)) {
           idList = value
-        } else if (
-          key !== "id" &&
-          typeof value === "string" &&
-          value?.startsWith("[")
-        ) {
+        } else if (key !== "id" && typeof value === "string" && value?.startsWith("[")) {
           // This is a list of values
           idList = JSON.parse(value)
         }
@@ -59,7 +55,7 @@
   let mla = new MapLibreAdaptor(mlmap, {
     rasterLayer: state.mapProperties.rasterLayer,
     zoom: new UIEventSource<number>(17),
-    maxzoom: new UIEventSource<number>(17)
+    maxzoom: new UIEventSource<number>(17),
   })
 
   mla.allowMoving.setData(false)

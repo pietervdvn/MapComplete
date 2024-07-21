@@ -42,8 +42,10 @@ export default class WikidataValidator extends Validator {
                                     "notInstanceof",
                                     "A list of Q-identifiers which indicates that the search results _must not_ be an entity of this type, e.g. [`Q79007`](https://www.wikidata.org/wiki/Q79007) to filter away all streets from the search results",
                                 ],
-                                ["multiple",
-                                "If 'yes' or 'true', will allow to select multiple values at once"]
+                                [
+                                    "multiple",
+                                    "If 'yes' or 'true', will allow to select multiple values at once",
+                                ],
                             ]
                         ),
                     ]),
@@ -145,7 +147,12 @@ Another example is to search for species and trees:
      * WikidataValidator.removePostAndPrefixes("Elf-Julistraat", [], {"nl":["straat", "laan"], "en": ["street"]}, "nl") // => "Elf-Juli"
      * WikidataValidator.removePostAndPrefixes("Elf-Julistraat", [], {"nl":["straat", "laan"], "en": ["street"]}, "en") // => "Elf-Julistraat"
      */
-    public static removePostAndPrefixes(searchTerm: string,  prefixesToRemove: string[] | Record<string, string[]>, postfixesToRemove: string[] | Record<string, string[]>, language: string): string {
+    public static removePostAndPrefixes(
+        searchTerm: string,
+        prefixesToRemove: string[] | Record<string, string[]>,
+        postfixesToRemove: string[] | Record<string, string[]>,
+        language: string
+    ): string {
         const prefixes = prefixesToRemove
         const postfixes = postfixesToRemove
         const prefixesUnwrapped: RegExp[] = (
@@ -155,7 +162,6 @@ Another example is to search for species and trees:
         const postfixesUnwrapped: RegExp[] = (
             Array.isArray(postfixes) ? postfixes : postfixes[language] ?? []
         ).map((s) => new RegExp(s + "$", "i"))
-
 
         let clipped = searchTerm.trim()
 

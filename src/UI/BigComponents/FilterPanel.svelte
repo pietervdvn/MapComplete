@@ -53,31 +53,28 @@
     <Tr t={Translations.t.general.menu.filter} />
   </div>
 
-    {#each layout.layers as layer}
-      <Filterview
-        zoomlevel={state.mapProperties.zoom}
-        filteredLayer={state.layerState.filteredLayers.get(layer.id)}
-        highlightedLayer={state.guistate.highlightedLayerInFilters}
-      />
-    {/each}
-    <div class="mt-1 flex self-end">
-      <button class="small" class:disabled={allEnabled} on:click={() => enableAll(true)}>
-        <Tr t={Translations.t.general.filterPanel.enableAll} />
-      </button>
-      <button class="small" class:disabled={allDisabled} on:click={() => enableAll(false)}>
-        <Tr t={Translations.t.general.filterPanel.disableAll} />
-      </button>
-    </div>
+  {#each layout.layers as layer}
+    <Filterview
+      zoomlevel={state.mapProperties.zoom}
+      filteredLayer={state.layerState.filteredLayers.get(layer.id)}
+      highlightedLayer={state.guistate.highlightedLayerInFilters}
+    />
+  {/each}
+  <div class="mt-1 flex self-end">
+    <button class="small" class:disabled={allEnabled} on:click={() => enableAll(true)}>
+      <Tr t={Translations.t.general.filterPanel.enableAll} />
+    </button>
+    <button class="small" class:disabled={allDisabled} on:click={() => enableAll(false)}>
+      <Tr t={Translations.t.general.filterPanel.disableAll} />
+    </button>
+  </div>
 
-    {#each layout.tileLayerSources as tilesource}
-      <OverlayToggle
-        layerproperties={tilesource}
-        state={state.overlayLayerStates.get(tilesource.id)}
-        highlightedLayer={state.guistate.highlightedLayerInFilters}
-        zoomlevel={state.mapProperties.zoom}
-      />
-    {/each}
-
+  {#each layout.tileLayerSources as tilesource}
+    <OverlayToggle
+      layerproperties={tilesource}
+      state={state.overlayLayerStates.get(tilesource.id)}
+      highlightedLayer={state.guistate.highlightedLayerInFilters}
+      zoomlevel={state.mapProperties.zoom}
+    />
+  {/each}
 </TitledPanel>
-
-
