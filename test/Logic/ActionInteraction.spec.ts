@@ -14,15 +14,27 @@ describe("Changes", () => {
         const osmConnection = new OsmConnection({ dryRun })
         const changes = new Changes({ osmConnection, dryRun })
         const id = "node/42"
-        const tags = new UIEventSource({ id, "amenity": "shop" })
-        const addImage = new LinkImageAction(id, "image", "https://example.org/uploaded_image", tags, {
-            theme: "test",
-            changeType: "add-image",
-        })
-        const linkImage = new LinkImageAction(id, "image", "https://example.org/image_to_link", tags, {
-            theme: "test",
-            changeType: "link-image",
-        })
+        const tags = new UIEventSource({ id, amenity: "shop" })
+        const addImage = new LinkImageAction(
+            id,
+            "image",
+            "https://example.org/uploaded_image",
+            tags,
+            {
+                theme: "test",
+                changeType: "add-image",
+            }
+        )
+        const linkImage = new LinkImageAction(
+            id,
+            "image",
+            "https://example.org/image_to_link",
+            tags,
+            {
+                theme: "test",
+                changeType: "link-image",
+            }
+        )
 
         await changes.applyAction(linkImage)
         await changes.applyAction(addImage)
@@ -40,6 +52,5 @@ describe("Changes", () => {
         const change1 = pending[1].tags[0]
         expect(change1.k).toBe("image:0")
         expect(change1.v).toBe("https://example.org/uploaded_image")
-
     })
 })
