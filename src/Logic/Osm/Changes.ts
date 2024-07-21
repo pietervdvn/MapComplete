@@ -570,7 +570,7 @@ export class Changes {
 
         // All ids which have an 'update'
         const createdIds =
-            new Set(pending.filter(cd => cd.type === "node" && cd.changes !== undefined).map(cd => cd.id))
+            new Set(pending.filter(cd => cd.changes !== undefined).map(cd => cd.id))
         pending.forEach(c => {
             if (c.id < 0) {
                 if (createdIds.has(c.id)) {

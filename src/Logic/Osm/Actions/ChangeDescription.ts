@@ -136,7 +136,6 @@ export class ChangeDescriptionTools {
         mappings: Map<string, string>
     ): ChangeDescription {
         const key = change.type + "/" + change.id
-console.log("Checking remapping ", change.id, mappings, change)
         const wayHasChangedNode = ((change.changes ?? {})["nodes"] ?? []).some((id) =>
             mappings.has("node/" + id)
         )
