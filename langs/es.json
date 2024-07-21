@@ -164,7 +164,7 @@
             "isApplied": "Los cambios serán aplicados"
         },
         "attribution": {
-            "attributionContent": "<p>Todos los datos son proporcionados por <a href=\"https://osm.org\" target=\"_blank\">OpenStreetMap</a>, reutilizables libremente bajo <a href=\"https://osm.org/copyright\" target=\"_blank\">la Licencia Abierta de Bases de Datos (ODL)</a>.</p>",
+            "attributionContent": "<p>Todos los datos son proporcionados por <a href='https://www.openstreetmap.org' target='_blank'>OpenStreetMap</a>, reutilizables libremente bajo <a href='https://www.openstreetmap.org/copyright' target='_blank'>la Licencia Abierta de Bases de Datos (ODL)</a>.</p>",
             "attributionTitle": "Aviso de atribución",
             "codeContributionsBy": "MapComplete ha sido construido por {contributors} y <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} más contribuidores</a>",
             "donate": "Apoya a MapComplete de manera financiera",
