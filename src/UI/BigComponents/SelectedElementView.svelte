@@ -3,12 +3,10 @@
   import { Store, UIEventSource } from "../../Logic/UIEventSource"
   import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
   import type { SpecialVisualizationState } from "../SpecialVisualization"
-  import TagRenderingEditable from "../Popup/TagRendering/TagRenderingEditable.svelte"
   import { onDestroy } from "svelte"
   import Translations from "../i18n/Translations"
   import Tr from "../Base/Tr.svelte"
   import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig"
-  import UserRelatedState from "../../Logic/State/UserRelatedState"
   import Delete_icon from "../../assets/svg/Delete_icon.svelte"
   import BackButton from "../Base/BackButton.svelte"
   import TagRenderingEditableDynamic from "../Popup/TagRendering/TagRenderingEditableDynamic.svelte"
@@ -24,24 +22,8 @@
 
   let isAddNew = tags.mapD(t => t?.id?.startsWith(LastClickFeatureSource.newPointElementId) ?? false)
 
-  function getLayer(properties: Record<string, string>) {
-    if (properties.id === "settings") {
-      return UserRelatedState.usersettingsConfig
-    }
-    if (properties.id.startsWith(LastClickFeatureSource.newPointElementId)) {
-      return state.layout.layers.find((l) => l.id === "last_click")
-    }
-    if (properties.id === "location_track") {
-      return state.layout.layers.find((l) => l.id === "gps_track")
-    }
-    return state.layout.getMatchingLayer(properties)
-  }
 
-  let layer: LayerConfig = getLayer(selectedElement.properties)
-
-  let stillMatches = tags.map(
-    (tags) => !layer?.source?.osmTags || layer.source.osmTags?.matchesProperties(tags)
-  )
+  export let layer: LayerConfig
 
   let _metatags: Record<string, string>
   if (state?.userRelatedState?.preferencesAsTags) {
@@ -53,7 +35,7 @@
   }
 
   let knownTagRenderings: Store<TagRenderingConfig[]> = tags.mapD((tgs) =>
-    layer.tagRenderings.filter(
+    layer?.tagRenderings?.filter(
       (config) =>
         (config.condition?.matchesProperties(tgs) ?? true) &&
         (config.metacondition?.matchesProperties({ ...tgs, ..._metatags }) ?? true) &&
@@ -62,11 +44,7 @@
   )
 </script>
 
-{#if !$stillMatches}
-  <div class="alert" aria-live="assertive">
-    <Tr t={Translations.t.delete.isChanged} />
-  </div>
-{:else if $tags._deleted === "yes"}
+{#if $tags._deleted === "yes"}
   <div class="flex w-full flex-col p-2">
     <div aria-live="assertive" class="alert flex items-center justify-center self-stretch">
       <Delete_icon class="m-2 h-8 w-8" />

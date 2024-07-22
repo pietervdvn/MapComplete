@@ -18,7 +18,7 @@
     EyeIcon,
     HeartIcon,
     MenuIcon,
-    XCircleIcon,
+    XCircleIcon
   } from "@rgossiaux/svelte-heroicons/solid"
   import Tr from "./Base/Tr.svelte"
   import CommunityIndexView from "./BigComponents/CommunityIndexView.svelte"
@@ -72,9 +72,8 @@
   import DocumentChartBar from "@babeard/svelte-heroicons/outline/DocumentChartBar"
   import Marker from "./Map/Marker.svelte"
   import AboutMapComplete from "./BigComponents/AboutMapComplete.svelte"
-  import IfNot from "./Base/IfNot.svelte"
-  import Hotkeys from "./Base/Hotkeys"
   import HotkeyTable from "./BigComponents/HotkeyTable.svelte"
+  import SelectedElementPanel from "./Base/SelectedElementPanel.svelte"
 
   export let state: ThemeViewState
   let layout = state.layout
@@ -146,7 +145,7 @@
     const bottomRight = mlmap.unproject([rect.right, rect.bottom])
     const bbox = new BBox([
       [topLeft.lng, topLeft.lat],
-      [bottomRight.lng, bottomRight.lat],
+      [bottomRight.lng, bottomRight.lat]
     ])
     state.visualFeedbackViewportBounds.setData(bbox)
   }
@@ -213,7 +212,7 @@
 
 <main>
   <div class="absolute top-0 left-0 h-screen w-screen overflow-hidden">
-    <MaplibreMap map={maplibremap} mapProperties={mapproperties} autorecovery={true}/>
+    <MaplibreMap map={maplibremap} mapProperties={mapproperties} autorecovery={true} />
   </div>
 
   {#if $visualFeedback}
@@ -287,9 +286,9 @@
           htmlElem={openCurrentViewLayerButton}
         >
           <div class="w-8 h-8 cursor-pointer">
-          <ToSvelte
-            construct={() => currentViewLayer.defaultIcon()}
-          />
+            <ToSvelte
+              construct={() => currentViewLayer.defaultIcon()}
+            />
           </div>
         </MapControlButton>
       {/if}
@@ -303,7 +302,7 @@
         <div class="thanks">
           Testserver
         </div>
-        {/if}
+      {/if}
       <If condition={state.featureSwitches.featureSwitchFakeUser}>
         <div class="alert w-fit">Faking a user (Testmode)</div>
       </If>
@@ -453,29 +452,32 @@
       }}
     >
       <div slot="close-button" />
-      <div class="normal-background absolute flex h-full w-full flex-col">
-        <SelectedElementTitle {state} layer={$selectedLayer} selectedElement={$selectedElement} />
-        <SelectedElementView {state} selectedElement={$selectedElement} />
-      </div>
+      <SelectedElementPanel {state} selected={$selectedElement} />
     </ModalRight>
   {/if}
 
   {#if $selectedElement !== undefined && $selectedLayer !== undefined && $selectedLayer.popupInFloatover}
     <!-- Floatover with the selected element, if applicable -->
-    <FloatOver
-      on:close={() => {
+
+    {#if $selectedLayer.popupInFloatover === "title"}
+      <FloatOver
+        on:close={() => {
         state.selectedElement.setData(undefined)
       }}
-    >
-      <div class="flex h-full w-full flex-col">
-        {#if $selectedLayer.popupInFloatover === "title"}
-          <SelectedElementTitle {state} layer={$selectedLayer} selectedElement={$selectedElement}>
-            <span slot="close-button" />
-          </SelectedElementTitle>
-        {/if}
-        <SelectedElementView {state} selectedElement={$selectedElement} />
-      </div>
-    </FloatOver>
+      >
+        <span slot="close-button" />
+         <SelectedElementPanel absolute={false} {state} selected={$selectedElement} />
+      </FloatOver>
+    {:else}
+      <FloatOver
+        on:close={() => {
+        state.selectedElement.setData(undefined)
+      }}
+      >
+        <SelectedElementView {state} layer={$selectedLayer} selectedElement={$selectedElement} />
+      </FloatOver>
+    {/if}
+
   {/if}
 
   <If condition={state.previewedImage.map((i) => i !== undefined)}>
@@ -551,13 +553,13 @@
         state.guistate.backgroundLayerSelectionIsOpened.setData(false)
       }}
     >
-        <RasterLayerOverview
-          {availableLayers}
-          map={state.map}
-          mapproperties={state.mapProperties}
-          userstate={state.userRelatedState}
-          visible={state.guistate.backgroundLayerSelectionIsOpened}
-        />
+      <RasterLayerOverview
+        {availableLayers}
+        map={state.map}
+        mapproperties={state.mapProperties}
+        userstate={state.userRelatedState}
+        visible={state.guistate.backgroundLayerSelectionIsOpened}
+      />
     </FloatOver>
   </IfHidden>
 
@@ -583,7 +585,7 @@
         <div slot="content0" class="flex flex-col">
           <AboutMapComplete {state} />
           <div class="m-2 flex flex-col">
-            <HotkeyTable/>
+            <HotkeyTable />
           </div>
         </div>
 
