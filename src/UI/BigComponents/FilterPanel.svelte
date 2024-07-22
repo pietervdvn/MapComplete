@@ -48,14 +48,14 @@
 </script>
 
 <TitledPanel>
-  <div class="flex items-center justify-between w-full mr-10" slot="title">
+  <div class="flex flex-wrap items-center justify-between w-full mr-10" slot="title">
     <div class="flex">
       <Filter class="h-6 w-6 pr-2" />
       <Tr t={Translations.t.general.menu.filter} />
     </div>
 
 
-    <div class="flex self-end text-sm gap-x-2">
+    <div class="flex self-end text-sm gap-x-2 ml-2 self-end">
       <button class="small as-link" class:disabled={allEnabled} on:click={() => enableAll(true)}>
         <Tr t={Translations.t.general.filterPanel.enableAll} />
       </button>
