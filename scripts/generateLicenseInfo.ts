@@ -344,11 +344,11 @@ export class GenerateLicenseInfo extends Script {
             mkdirSync("./src/assets/generated")
         }
 
-        let contents = ScriptUtils.readDirRecSync("./assets").filter(
+        const contents = ScriptUtils.readDirRecSync("./assets").filter(
             (entry) => entry.indexOf("./assets/generated") != 0
         )
-        let licensePaths = contents.filter((entry) => entry.indexOf("license_info.json") >= 0)
-        let licenseInfos = this.generateLicenseInfos(licensePaths)
+        const licensePaths = contents.filter((entry) => entry.indexOf("license_info.json") >= 0)
+        const licenseInfos = this.generateLicenseInfos(licensePaths)
 
         const artwork = contents.filter(
             (pth) => pth.match(/(.svg|.png|.jpg|.ttf|.otf|.woff|.jpeg)$/i) != null
@@ -363,14 +363,12 @@ export class GenerateLicenseInfo extends Script {
             .filter((l) => (l.license ?? "") === "")
             .map((l) => `License for artwork ${l.path} is empty string or undefined`)
 
-        let invalid = 0
         for (const licenseInfo of licenseInfos) {
             const isTrivial = licenseInfo.license
                 .split(";")
                 .map((l) => l.trim().toLowerCase())
                 .some((s) => s.endsWith("trivial"))
             if (licenseInfo.sources.length + licenseInfo.authors.length == 0 && !isTrivial) {
-                invalid++
                 invalidLicenses.push(
                     "Invalid license: No sources nor authors given in the license for " +
                         JSON.stringify(licenseInfo)
