@@ -22,7 +22,7 @@
   "source": {
     "osmTags": "amenity=doctors"
   },
-  "minzoom": 13,
+  "minzoom": 10,
   "title": {
     "render": {
       "en": "Doctors Office {name}",
@@ -174,7 +174,8 @@
     }
   ],
   "filter": [
-    "open_now"
+    "open_now",
+    "specialty"
   ],
   "deletion": true,
   "allowMove": true
