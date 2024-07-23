@@ -123,7 +123,7 @@ export default class ScriptUtils {
         return ScriptUtils.DownloadJSON(url)
     }
 
-    public static async ReadSvg(path: string): Promise<any> {
+    public static async ReadSvg(path: string): Promise<SVGElement> {
         if (!existsSync(path)) {
             throw "File not found: " + path
         }

@@ -28,11 +28,10 @@
   import UserRelatedState from "../Logic/State/UserRelatedState"
   import LoginToggle from "./Base/LoginToggle.svelte"
   import LoginButton from "./Base/LoginButton.svelte"
-  import CopyrightPanel from "./BigComponents/CopyrightPanel"
+  import CopyrightPanel from "./BigComponents/CopyrightPanel.svelte"
   import DownloadPanel from "./DownloadFlow/DownloadPanel.svelte"
   import ModalRight from "./Base/ModalRight.svelte"
   import LevelSelector from "./BigComponents/LevelSelector.svelte"
-  import SelectedElementTitle from "./BigComponents/SelectedElementTitle.svelte"
   import ThemeIntroPanel from "./BigComponents/ThemeIntroPanel.svelte"
   import type { RasterLayerPolygon } from "../Models/RasterLayers"
   import { AvailableRasterLayers } from "../Models/RasterLayers"
@@ -526,7 +525,7 @@
         </div>
 
         <div slot="content2" class="m-2 flex flex-col">
-          <ToSvelte construct={() => new CopyrightPanel(state)} />
+          <CopyrightPanel {state}/>
         </div>
 
         <div class="flex" slot="title3">

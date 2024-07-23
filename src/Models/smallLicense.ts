@@ -3,4 +3,5 @@ export default interface SmallLicense {
     authors: string[]
     license: string
     sources: string[]
+    mostly_white?: boolean
 }

@@ -1329,11 +1329,24 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return "#" + componentToHex(c.r) + componentToHex(c.g) + componentToHex(c.b)
     }
 
+    private static percentageToNumber(v: string){
+        v = v.trim()
+        if(v.endsWith("%")){
+            return Math.round((parseInt(v) * 255) / 100)
+        }
+        const n = Number(v)
+        if(!isNaN(n)){
+            return n
+        }
+
+    }
+
     /**
      *
      * Utils.color("#ff8000") // => {r: 255, g:128, b: 0}
      * Utils.color(" rgba  (12,34,56) ") // => {r: 12, g:34, b: 56}
      * Utils.color(" rgba  (12,34,56,0.5) ") // => {r: 12, g:34, b: 56}
+     * Utils.color("rgb(100%,100%,100%)") // => {r: 255, g: 255, b: 255}
      * Utils.color(undefined) // => undefined
      */
     public static color(hex: string): { r: number; g: number; b: number } {
@@ -1341,13 +1354,15 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             return undefined
         }
         hex = hex.replace(/[ \t]/g, "")
-        if (hex.startsWith("rgba(")) {
-            const match = hex.match(/rgba\(([0-9.]+),([0-9.]+),([0-9.]+)(,[0-9.]*)?\)/)
+        if (hex.startsWith("rgba(") || hex.startsWith("rgb(")) {
+            const match = hex.match(/rgba?\(([0-9.]+%?),([0-9.]+%?),([0-9.]+%?)(,[0-9.]+%?)?\)/);
             if (match == undefined) {
                 return undefined
             }
-            return { r: Number(match[1]), g: Number(match[2]), b: Number(match[3]) }
+
+            return { r: Utils.percentageToNumber (match[1]), g: Utils.percentageToNumber (match[2]), b: Utils.percentageToNumber (match[3]) }
         }
+
 
         if (!hex.startsWith("#")) {
             return undefined
