@@ -24,7 +24,10 @@
         },
         "minzoom": 6,
         "=filter": [
-          "open_now"
+          "open_now",
+          "fetish",
+          "accepts_cash",
+          "accepts_cards"
         ],
         "name": {
           "en": "Erotic shops",
@@ -40,6 +43,53 @@
             },
             "tags": [
               "shop=erotic"
+            ]
+          }
+        ],
+        "tagRenderings+": [
+          {
+            "id": "fetish",
+            "multiAnswer": true,
+            "question": {
+              "en": "Does this shop offer fetish gear?"
+            },
+            "mappings": [
+              {
+                "if": "fetish:bdsm:soft=yes",
+                "ifnot": "fetish:bdsm:soft=no",
+                "then": {
+                  "en": "This shop offers <b>soft BDSM-gear</b>, such as fluffy handcuffs, a 'fifty-shade-of-grey'-starterset, ..."
+                }
+              },
+              {
+                "if": "fetish:bdsm:specialized=yes",
+                "ifnot": "fetish:bdsm:specialized=no",
+                "then":{
+                  "en": "This shop offers <b>specialized BDSM-gear</b>, such as spreader bars, supplies for needle play, medical bondage supplies, impact tools, shackles, metal colors, cuffs, nipple clamps, shibari accessories, ..."
+                }
+              },
+              {
+                "if": "fetish:pet_play=yes",
+                "ifnot": "fetish:pet_play=no",
+                "then": {
+                  "en": "This shop offers <b>pet play</b> accessories, such as puppy masks, animal masks, pony play, tails, hoof shoes, ..."
+                }
+              },
+              {
+                "if": "fetish:leather=yes",
+                "ifnot": "fetish:leather=no",
+                "then": {
+                  "en": "This shop offers <b>leather gear</b>, including pants and shirts usable in daily life up till leather harnesses"
+                }
+              },
+              {
+                "if": "fetish:uniform=yes",
+                "ifnot": "fetish:uniform=no",
+                "then": {
+                  "en": "This shop offers <b>uniforms</b> for roleplay, such nurse uniforms, military uniforms, police, school girl, french maid, ..."
+                }
+              }
+
             ]
           }
         ]

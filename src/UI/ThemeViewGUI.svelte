@@ -13,6 +13,7 @@
   import type { MapProperties } from "../Models/MapProperties"
   import Geosearch from "./BigComponents/Geosearch.svelte"
   import Translations from "./i18n/Translations"
+  import usersettings from "../assets/generated/layers/usersettings.json"
   import {
     CogIcon,
     EyeIcon,
@@ -73,6 +74,7 @@
   import AboutMapComplete from "./BigComponents/AboutMapComplete.svelte"
   import HotkeyTable from "./BigComponents/HotkeyTable.svelte"
   import SelectedElementPanel from "./Base/SelectedElementPanel.svelte"
+  import { LayerConfigJson } from "../Models/ThemeConfig/Json/LayerConfigJson"
 
   export let state: ThemeViewState
   let layout = state.layout
@@ -121,6 +123,7 @@
   let visualFeedback = state.visualFeedback
   let viewport: UIEventSource<HTMLDivElement> = new UIEventSource<HTMLDivElement>(undefined)
   let mapproperties: MapProperties = state.mapProperties
+  let usersettingslayer = new LayerConfig(<LayerConfigJson> usersettings, "usersettings", true)
   state.mapProperties.installCustomKeyboardHandler(viewport)
   let canZoomIn = mapproperties.maxzoom.map(
     (mz) => mapproperties.zoom.data < mz,
@@ -603,6 +606,7 @@
             </div>
             <SelectedElementView
               highlightedRendering={state.guistate.highlightedUserSetting}
+              layer={usersettingslayer}
               selectedElement={{
                 type: "Feature",
                 properties: { id: "settings" },
