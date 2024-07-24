@@ -145,20 +145,20 @@
       <Tr t={$bgMapAttribution} />
     </div>
   {/if}
-  <div class="flex items-center gap-x-2">
-    <Marker icons={state.layout.icon} size="h-8 w-8 shrink-0" />
-    <Tr t={maintainer} />
-  </div>
+  {#if maintainer !== undefined}
+    <div class="flex items-center gap-x-2">
+      <Marker icons={state.layout.icon} size="h-8 w-8 shrink-0" />
+      <Tr t={maintainer} />
+    </div>
+  {/if}
 
 
-  <div class="flex items-center gap-x-2">
-    <UserGroupIcon class="w-8 h-8 shrink-0" />
-    {#if $datacontributions !== undefined}
+  {#if $datacontributions !== undefined}
+    <div class="flex items-center gap-x-2">
+      <UserGroupIcon class="w-8 h-8 shrink-0" />
       <Tr t={$datacontributions} />
-    {:else}
-      <Loading />
-    {/if}
-  </div>
+    </div>
+  {/if}
 
   <div class="flex items-center gap-x-2">
 

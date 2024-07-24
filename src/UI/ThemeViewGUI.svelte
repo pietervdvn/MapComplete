@@ -65,16 +65,14 @@
   import ExtraLinkButton from "./BigComponents/ExtraLinkButton.svelte"
   import CloseAnimation from "./Base/CloseAnimation.svelte"
   import { LastClickFeatureSource } from "../Logic/FeatureSource/Sources/LastClickFeatureSource"
-  import Github from "../assets/svg/Github.svelte"
   import ArrowDownTray from "@babeard/svelte-heroicons/mini/ArrowDownTray"
   import Share from "@babeard/svelte-heroicons/solid/Share"
   import ChevronRight from "@babeard/svelte-heroicons/solid/ChevronRight"
-  import DocumentChartBar from "@babeard/svelte-heroicons/outline/DocumentChartBar"
   import Marker from "./Map/Marker.svelte"
   import AboutMapComplete from "./BigComponents/AboutMapComplete.svelte"
   import HotkeyTable from "./BigComponents/HotkeyTable.svelte"
   import SelectedElementPanel from "./Base/SelectedElementPanel.svelte"
-  import { LayerConfigJson } from "../Models/ThemeConfig/Json/LayerConfigJson"
+  import type { LayerConfigJson } from "../Models/ThemeConfig/Json/LayerConfigJson"
 
   export let state: ThemeViewState
   let layout = state.layout
