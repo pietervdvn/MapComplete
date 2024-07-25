@@ -21,8 +21,9 @@ class HandleErrors extends Script {
         const path = args[0]
         const lines = readFileSync(path, "utf8").split("\n")
 
-        let createdChangesets = new Set<string>()
-        let refusedFiles: Set<string> = new Set<string>()
+        const createdChangesets = new Set<string>()
+        const refusedFiles: Set<string> = new Set<string>()
+        refusedFiles.add("[]")
 
         for (const line of lines) {
             if (!line?.trim()) {
