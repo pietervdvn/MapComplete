@@ -267,6 +267,7 @@ button.as-link {
     border: none;
     border-radius: 0;
     text-decoration: underline;
+    -webkite-text-decoration: underline;
     box-shadow: none;
     margin: 0;
     padding: 0;
@@ -413,6 +414,7 @@ textarea {
 
 .link-underline .subtle a {
   text-decoration: underline 1px #7193bb88;
+  -webkit-text-decoration: underline;
   color: #7193bb;
 }
 
@@ -486,10 +488,13 @@ code {
 
 .link-underline a {
   text-decoration: underline 1px var(--foreground-color);
+  -webkit-text-decoration: underline;
+
 }
 
 a.link-underline {
   text-decoration: underline 1px var(--foreground-color);
+  -webkit-text-decoration: underline;
 }
 
 .link-no-underline a {
@@ -505,6 +510,7 @@ a.link-underline {
 .enable-links a {
   pointer-events: unset;
   text-decoration: underline !important;
+  -webkit-text-decoration: underline !important;
   color: unset !important;
 }
 

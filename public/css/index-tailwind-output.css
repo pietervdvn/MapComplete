@@ -1037,10 +1037,6 @@ video {
   margin-left: 0.5rem;
 }
 
-.mb-2 {
-  margin-bottom: 0.5rem;
-}
-
 .mr-10 {
   margin-right: 2.5rem;
 }
@@ -1055,6 +1051,10 @@ video {
 
 .ml-4 {
   margin-left: 1rem;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
 }
 
 .mt-2 {
@@ -1221,12 +1221,12 @@ video {
   height: 6rem;
 }
 
-.h-screen {
-  height: 100vh;
-}
-
 .h-full {
   height: 100%;
+}
+
+.h-screen {
+  height: 100vh;
 }
 
 .h-fit {
@@ -2023,6 +2023,10 @@ video {
   row-gap: 0.5rem;
 }
 
+.gap-y-4 {
+  row-gap: 1rem;
+}
+
 .gap-x-2 {
   column-gap: 0.5rem;
 }
@@ -2041,10 +2045,6 @@ video {
 
 .gap-y-8 {
   row-gap: 2rem;
-}
-
-.gap-y-4 {
-  row-gap: 1rem;
 }
 
 .space-x-0\.5 > :not([hidden]) ~ :not([hidden]) {
@@ -2548,14 +2548,14 @@ video {
   border-color: rgb(219 234 254 / var(--tw-border-opacity));
 }
 
-.border-gray-300 {
-  --tw-border-opacity: 1;
-  border-color: rgb(209 213 219 / var(--tw-border-opacity));
-}
-
 .border-gray-200 {
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
+}
+
+.border-gray-300 {
+  --tw-border-opacity: 1;
+  border-color: rgb(209 213 219 / var(--tw-border-opacity));
 }
 
 .border-gray-600 {
@@ -4619,6 +4619,7 @@ button.as-link {
   border: none;
   border-radius: 0;
   text-decoration: underline;
+  -webkite-text-decoration: underline;
   box-shadow: none;
   margin: 0;
   padding: 0;
@@ -4763,8 +4764,8 @@ textarea {
 }
 
 .link-underline .subtle a {
-  -webkit-text-decoration: underline 1px #7193bb88;
-          text-decoration: underline 1px #7193bb88;
+  text-decoration: underline 1px #7193bb88;
+  -webkit-text-decoration: underline;
   color: #7193bb;
 }
 
@@ -4838,13 +4839,13 @@ code {
 }
 
 .link-underline a {
-  -webkit-text-decoration: underline 1px var(--foreground-color);
-          text-decoration: underline 1px var(--foreground-color);
+  text-decoration: underline 1px var(--foreground-color);
+  -webkit-text-decoration: underline;
 }
 
 a.link-underline {
-  -webkit-text-decoration: underline 1px var(--foreground-color);
-          text-decoration: underline 1px var(--foreground-color);
+  text-decoration: underline 1px var(--foreground-color);
+  -webkit-text-decoration: underline;
 }
 
 .link-no-underline a {
@@ -4860,6 +4861,7 @@ a.link-underline {
 .enable-links a {
   pointer-events: unset;
   text-decoration: underline !important;
+  -webkit-text-decoration: underline !important;
   color: unset !important;
 }
 
