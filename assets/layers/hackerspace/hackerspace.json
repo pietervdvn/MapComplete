@@ -513,6 +513,34 @@
     "internet-all",
     "questions"
   ],
-  "deletion": true,
+  "deletion": {
+    "nonDeleteMappings": [
+      {
+        "if": {
+          "and": [
+            "leisure=",
+            "hackerspace=",
+            "amenity=workshop",
+            "repair=assisted_self_service"
+          ]
+        },
+        "then": {
+          "en": "This is an workshop for assisted self service, such as a repair café"
+        }
+      },
+      {
+        "if": {
+          "and": [
+            "leisure=",
+            "hackerspace=",
+            "office=coworking"
+          ]
+        },
+        "then": {
+          "en": "This is a coworking office"
+        }
+      }
+    ]
+  },
   "allowMove": true
 }
