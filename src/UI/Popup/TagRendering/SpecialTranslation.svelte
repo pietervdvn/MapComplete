@@ -26,8 +26,8 @@
   export let clss: string = ""
 
   let language = Locale.language
-  let lang = t.actualLanguage($language)
-  let txt: string = t.textFor($language)
+  let lang = t?.actualLanguage($language)
+  let txt: string = t?.textFor($language)
   let specs: RenderingSpecification[] = []
   $: {
     try {
