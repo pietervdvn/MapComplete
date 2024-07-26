@@ -217,6 +217,29 @@
       "icon": "./assets/svg/mastodon.svg"
     },
     {
+      "id": "facebook",
+      "description": "Shows and asks for the facebook handle",
+      "question": {
+        "en": "What is the facebook page of of {title()}?"
+      },
+      "freeform": {
+        "key": "contact:facebook",
+        "type": "url"
+      },
+      "render": {
+        "special": {
+          "type": "link",
+          "href": "{contact:facebook}",
+          "text": {
+            "en": "Facebook page"
+          }
+        },
+        "after": {
+          "en": "<div class='subtle text-sm'>Facebook is known to harm mental health, manipulate public opinion and cause hate. Try to use healthier alternatives</div>"
+        }
+      }
+    },
+    {
       "id": "osmlink",
       "render": {
         "*": "<a href='https://openstreetmap.org/{id}' target='_blank' rel='noopener'F><img src='./assets/svg/osm-logo-us.svg'/></a>"
@@ -633,7 +656,9 @@
           }
         }
       ],
-      "filter": ["filters.dogs"]
+      "filter": [
+        "filters.dogs"
+      ]
     },
     {
       "id": "description",
@@ -758,7 +783,9 @@
           "hideInAnswer": true
         }
       ],
-      "filter": ["filters.open_now"]
+      "filter": [
+        "filters.open_now"
+      ]
     },
     {
       "id": "opening_hours_24_7",
@@ -802,7 +829,7 @@
       "id": "opening_hours_by_appointment",
       "builtin": "opening_hours",
       "override": {
-        "mappings": [
+        "+mappings": [
           {
             "if": "opening_hours=\"by appointment\"",
             "then": {
@@ -1043,7 +1070,10 @@
           }
         }
       ],
-      "filter": ["filters.accepts_cash","filters.accepts_cards"]
+      "filter": [
+        "filters.accepts_cash",
+        "filters.accepts_cards"
+      ]
     },
     {
       "id": "payment-options-split",
@@ -2124,7 +2154,9 @@
           }
         }
       ],
-      "filter": ["filters.has_internet"]
+      "filter": [
+        "filters.has_internet"
+      ]
     },
     {
       "id": "internet-fee",
@@ -2456,7 +2488,9 @@
           }
         }
       ],
-      "filter": ["filters.sugar_free"]
+      "filter": [
+        "filters.sugar_free"
+      ]
     },
     {
       "id": "lactose_free",
@@ -2477,7 +2511,6 @@
             "cs": "<b>Prodává pouze výrobky bez laktózy</b>"
           },
           "icon": "./assets/layers/questions/lactose_free.svg"
-
         },
         {
           "if": "diet:lactose_free=yes",
@@ -2487,7 +2520,6 @@
             "cs": "Velká nabídka bez laktózy"
           },
           "icon": "./assets/layers/questions/lactose_free.svg"
-
         },
         {
           "if": "diet:lactose_free=limited",
@@ -2506,8 +2538,9 @@
           }
         }
       ],
-      "filter": ["filters.lactose_free"]
-
+      "filter": [
+        "filters.lactose_free"
+      ]
     },
     {
       "id": "gluten_free",
@@ -2555,8 +2588,9 @@
           }
         }
       ],
-      "filter": ["filters.gluten_free"]
-
+      "filter": [
+        "filters.gluten_free"
+      ]
     },
     {
       "id": "vegan",
@@ -2842,7 +2876,6 @@
             "en": "This facility does have showers"
           }
         },
-
         {
           "if": "shower=no",
           "icon": "invalid;./assets/layers/shower/shower.svg",
