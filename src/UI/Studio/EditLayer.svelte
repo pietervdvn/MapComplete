@@ -17,8 +17,6 @@
   import QuestionPreview from "./QuestionPreview.svelte"
   import ShowConversionMessages from "./ShowConversionMessages.svelte"
   import RawEditor from "./RawEditor.svelte"
-  import NextButton from "../Base/NextButton.svelte"
-  import BackButton from "../Base/BackButton.svelte"
   import DeleteButton from "./DeleteButton.svelte"
   import StudioHashSetter from "./StudioHashSetter"
 
@@ -84,7 +82,7 @@
 </script>
 
 <div class="flex h-screen flex-col">
-  <div class="my-2 flex w-full justify-between">
+  <div class="my-2 flex flex-wrap w-full justify-between">
     <slot />
     {#if $title === undefined}
       <h3>Creating a new layer</h3>

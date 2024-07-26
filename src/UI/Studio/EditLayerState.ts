@@ -292,7 +292,7 @@ class ContextRewritingStep<T> extends Conversion<LayerConfigJson, T> {
                 return undefined
             }
             const newPath = [...path]
-            const idToSearch = newTagRenderings[newPath[1]].id
+            const idToSearch = newTagRenderings[newPath[1]]?.id ?? ""
             const oldIndex = originalIds.indexOf(idToSearch)
             if (oldIndex < 0) {
                 console.warn("Original ID was not found: ", idToSearch)

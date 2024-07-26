@@ -367,7 +367,7 @@
     {:else if state === "editing_layer"}
       <EditLayer state={editLayerState} {backToStudio}>
         <BackButton clss="small p-1" imageClass="w-8 h-8" on:click={() => backToStudio()}>
-          MapComplete Studio
+            Studio
         </BackButton>
       </EditLayer>
     {:else if state === "editing_theme"}

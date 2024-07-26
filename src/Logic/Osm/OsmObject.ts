@@ -214,7 +214,7 @@ export class OsmNode extends OsmObject {
      * @constructor
      */
     ChangesetXML(changesetId: string, header?: string): string {
-        let tags = this.TagsXML()
+        const tags = this.TagsXML()
         return `    <node id="${this.id}" ${header ?? ""} ${
             changesetId ? ' changeset="' + changesetId + '" ' : ""
         }${this.VersionXML()} lat="${this.lat}" lon="${this.lon}">
@@ -265,7 +265,7 @@ export class OsmWay extends OsmObject {
      * obj.ChangesetXML("123").trim() // => '<way id="1234"  changeset="123"  >\n        <tag k="key" v="value"/>\n    </way>'
      */
     ChangesetXML(changesetId: string, header?: string): string {
-        let tags = this.TagsXML()
+        const tags = this.TagsXML()
         let nds = ""
         for (const node in this.nodes) {
             nds += '      <nd ref="' + this.nodes[node] + '"/>\n'
@@ -302,14 +302,14 @@ ${nds}${tags}    </way>
             latSum += node.lat
             lonSum += node.lon
         }
-        let count = this.coordinates.length
+        const count = this.coordinates.length
         this.lat = latSum / count
         this.lon = lonSum / count
         this.nodes = element.nodes
     }
 
     public asGeoJson(): Feature<Polygon | LineString> & { properties: { id: WayId } } {
-        let coordinates: [number, number][] | [number, number][][] = this.coordinates.map(
+        const coordinates: [number, number][] | [number, number][][] = this.coordinates.map(
             ([lat, lon]) => [lon, lat]
         )
         let geometry: LineString | Polygon
@@ -375,9 +375,9 @@ export class OsmRelation extends OsmObject {
                 '"/>\n'
         }
 
-        let tags = this.TagsXML()
+        const tags = this.TagsXML()
         let cs = ""
-        if (changesetId !== undefined) {
+        if (changesetId) {
             cs = `changeset="${changesetId}"`
         }
         return `    <relation id="${this.id}" ${header ?? ""} ${cs} ${this.VersionXML()}>
