@@ -1093,11 +1093,23 @@ class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
                             .err(
                                 `The rendering for language ${ln} does not contain \`{${json.freeform.key}}\`. Did you perhaps forget to set "freeform.type: 'wikidata'"?`
                             )
+                        continue
                     }
+
+                    if(txt.indexOf(json.freeform.key) >= 0 && txt.indexOf("{"+json.freeform.key+"}") < 0){
+                        context
+                            .enter("render")
+                            .err(
+                                `The rendering for language ${ln} does not contain \`{${json.freeform.key}}\`. However, it does contain ${json.freeform.key} without braces. Did you forget the braces?\n\tThe current text is ${txt}`
+                            )
+                        continue
+                    }
+
+
                     context
                         .enter("render")
                         .err(
-                            `The rendering for language ${ln} does not contain \`{${json.freeform.key}}\`. This is a bug, as this rendering should show exactly this freeform key!`
+                            `The rendering for language ${ln} does not contain \`{${json.freeform.key}}\`. This is a bug, as this rendering should show exactly this freeform key!\n\tThe current text is ${txt}`
                         )
                 }
             }
