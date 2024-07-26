@@ -82,9 +82,6 @@ export abstract class OsmObject {
      * */
     protected static isPolygon(tags: any): boolean {
         for (const tagsKey in tags) {
-            if (!tags.hasOwnProperty(tagsKey)) {
-                continue
-            }
             const polyGuide: { values: Set<string>; blacklist: boolean } =
                 OsmObject.polygonFeatures.get(tagsKey)
             if (polyGuide === undefined) {
