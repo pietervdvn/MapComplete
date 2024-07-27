@@ -127,6 +127,7 @@ export default class Constants {
         "clock",
         "close",
         "crosshair",
+        "gear",
         "help",
         "home",
         "invalid",

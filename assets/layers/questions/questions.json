@@ -2884,6 +2884,12 @@
           }
         }
       ]
+    },
+    {
+      "id": "preset_description",
+      "render": {
+        "*": "{preset_description()}"
+      }
     }
   ]
 }

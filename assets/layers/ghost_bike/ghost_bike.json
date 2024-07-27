@@ -141,12 +141,7 @@
     }
   ],
   "tagRenderings": [
-    {
-      "id": "ghost-bike-explanation",
-      "render": {
-        "*": "{preset_description()}"
-      }
-    },
+    "preset_description",
     "images",
     {
       "question": {

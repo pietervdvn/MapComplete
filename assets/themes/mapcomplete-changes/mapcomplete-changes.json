@@ -190,6 +190,10 @@
                     "then": "./assets/themes/charging_stations/logo.svg"
                   },
                   {
+                    "if": "theme=circular_economy",
+                    "then": "./assets/themes/circular_economy/circular.svg"
+                  },
+                  {
                     "if": "theme=climbing",
                     "then": "./assets/themes/climbing/climbing_icon.svg"
                   },

@@ -630,7 +630,13 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
 
         for (const key in source) {
             if (key.startsWith("=")) {
-                const trimmedKey = key.substr(1)
+                const trimmedKey = key.substring(1)
+                target[trimmedKey] = source[key]
+                continue
+            }
+
+            if (key.endsWith("=")) {
+                const trimmedKey = key.substring(0, key.length - 1)
                 target[trimmedKey] = source[key]
                 continue
             }

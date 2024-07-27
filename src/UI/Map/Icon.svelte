@@ -36,6 +36,7 @@
   import Bug from "../../assets/svg/Bug.svelte"
   import Cross_bottom_right from "../../assets/svg/Cross_bottom_right.svelte"
   import { Utils } from "../../Utils"
+  import Gear from "../../assets/svg/Gear.svelte"
 
   /**
    * Renders a single icon.
@@ -126,6 +127,8 @@
     <Cross_bottom_right {color} class={clss} />
   {:else if icon === "addSmall"}
     <AddSmall {color} class={clss} />
+  {:else if icon === "gear"}
+    <Gear {color} class={clss} />
   {:else if icon === "link"}
     <LinkIcon style="--svg-color: {color}" class={twMerge(clss, "apply-fill")} />
   {:else if icon === "popout"}
