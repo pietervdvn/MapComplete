@@ -174,7 +174,7 @@
         const timediffSec = (new Date().getTime() - lastUpdate.getTime()) / 1000
         const timediffDays = timediffSec / (60 * 60 * 26)
 
-        if (timediffDays > 7) {
+        if (timediffDays > 30) {
           return "degraded"
         }
 
