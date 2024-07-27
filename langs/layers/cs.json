@@ -4207,13 +4207,11 @@
         "name": "Kola duchů",
         "presets": {
             "0": {
+                "description": "<b>kolo duchů</b> je památník cyklisty, který zemřel při dopravní nehodě, v podobě bílého kola umístěného trvale v blízkosti místa nehody.",
                 "title": "kola duchů"
             }
         },
         "tagRenderings": {
-            "ghost-bike-explanation": {
-                "render": "<b>kolo duchů</b> je památník cyklisty, který zemřel při dopravní nehodě, v podobě bílého kola umístěného trvale v blízkosti místa nehody."
-            },
             "ghost_bike-inscription": {
                 "question": "Jaký je nápis na tomto kole duchů?",
                 "render": "<i>{inscription}</i>"
@@ -6464,7 +6462,7 @@
             },
             "opening_hours_by_appointment": {
                 "override": {
-                    "mappings": {
+                    "+mappings": {
                         "0": {
                             "then": "Pouze po domluvě"
                         },

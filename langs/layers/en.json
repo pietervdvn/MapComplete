@@ -565,6 +565,53 @@
             "render": "Assembly point during emergencies"
         }
     },
+    "assisted_repair": {
+        "description": "A self-assisted workshop is a location where people can come and repair their goods with help of volunteers and with the tools available at the given location.  A repair café is a type of event organized regularly along the same principles.",
+        "name": "Repair cafés and assisted repair workshops",
+        "presets": {
+            "0": {
+                "description": "A location with a permanent workshop where people can come to repair items with the help of volunteers.",
+                "title": "an assisted repair workshop"
+            }
+        },
+        "tagRenderings": {
+            "item:repair": {
+                "mappings": {
+                    "0": {
+                        "then": "Mobile phones are repaired here"
+                    },
+                    "1": {
+                        "then": "Computers are repaired here"
+                    },
+                    "2": {
+                        "then": "Bicycles are repaired here"
+                    },
+                    "3": {
+                        "then": "Electronic devices are repaired here"
+                    },
+                    "4": {
+                        "then": "Furniture is repaired here"
+                    },
+                    "5": {
+                        "then": "Clothes are repaired here"
+                    }
+                },
+                "question": "What type of items are repaired here?"
+            },
+            "name": {
+                "question": "What is the name of this repair workshop?",
+                "render": "This workshop is called <b>{name}</b>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
+            "render": "Workshop for assisted repair"
+        }
+    },
     "atm": {
         "description": "ATMs to withdraw money",
         "filter": {
@@ -911,6 +958,17 @@
             }
         },
         "tagRenderings": {
+            "bench-armrest": {
+                "mappings": {
+                    "0": {
+                        "then": "This bench does have one or more armrests"
+                    },
+                    "1": {
+                        "then": "This bench does <b>not</b> have any armrests"
+                    }
+                },
+                "question": "Does this bench have one or more armrests?"
+            },
             "bench-artwork": {
                 "mappings": {
                     "0": {
@@ -4677,7 +4735,7 @@
     },
     "firepit": {
         "description": "An outdoor place to make a fire, typically open to the public.",
-        "name": "Firepitd",
+        "name": "Firepit",
         "presets": {
             "0": {
                 "description": "An outdoor place to make a fire, typically open to the public.",
@@ -5242,13 +5300,11 @@
         "name": "Ghost bikes",
         "presets": {
             "0": {
+                "description": "A <b>ghost bike</b> is a memorial for a cyclist who died in a traffic accident, in the form of a white bicycle placed permanently near the accident location.",
                 "title": "a ghost bike"
             }
         },
         "tagRenderings": {
-            "ghost-bike-explanation": {
-                "render": "A <b>ghost bike</b> is a memorial for a cyclist who died in a traffic accident, in the form of a white bicycle placed permanently near the accident location."
-            },
             "ghost_bike-inscription": {
                 "question": "What is the inscription on this Ghost bike?",
                 "render": "<i>{inscription}</i>"
@@ -5397,6 +5453,16 @@
         "title": "Guideposts"
     },
     "hackerspace": {
+        "deletion": {
+            "nonDeleteMappings": {
+                "0": {
+                    "then": "This is an workshop for assisted self service, such as a repair café"
+                },
+                "1": {
+                    "then": "This is a coworking office"
+                }
+            }
+        },
         "description": "Hackerspace",
         "name": "Hackerspace",
         "presets": {
@@ -7925,6 +7991,15 @@
                 "editButtonAriaLabel": "Edit email address",
                 "question": "What is the email address of {title()}?"
             },
+            "facebook": {
+                "question": "What is the facebook page of of {title()}?",
+                "render": {
+                    "after": "<div class='subtle text-sm'>Facebook is known to harm mental health, manipulate public opinion and cause hate. Try to use healthier alternatives</div>",
+                    "special": {
+                        "text": "Facebook page"
+                    }
+                }
+            },
             "gluten_free": {
                 "mappings": {
                     "0": {
@@ -8078,7 +8153,7 @@
             },
             "opening_hours_by_appointment": {
                 "override": {
-                    "mappings": {
+                    "+mappings": {
                         "0": {
                             "then": "Only by appointment"
                         },
@@ -8181,6 +8256,23 @@
                         "text": "Share this location"
                     }
                 }
+            },
+            "shower": {
+                "mappings": {
+                    "0": {
+                        "then": "This facility does have showers with warm water"
+                    },
+                    "1": {
+                        "then": "This facility does have showers, but the water is not heated"
+                    },
+                    "2": {
+                        "then": "This facility does have showers"
+                    },
+                    "3": {
+                        "then": "This facility does not offer a shower"
+                    }
+                },
+                "question": "Does this facility offer showers?"
             },
             "single_level": {
                 "mappings": {
@@ -10346,6 +10438,63 @@
                 }
             },
             "render": "Toilet at amenity"
+        }
+    },
+    "tool_library": {
+        "description": "A tool library is a place where people from the general public can borrow tools",
+        "name": "Tool libraries",
+        "pointRendering": {
+            "0": {
+                "label": {
+                    "mappings": {
+                        "0": {
+                            "then": "{name}"
+                        }
+                    }
+                }
+            }
+        },
+        "presets": {
+            "0": {
+                "description": "A tool library is a place where people from the general public can borrow tools",
+                "title": "a tool library"
+            }
+        },
+        "tagRenderings": {
+            "fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Borrowing tools is free"
+                    },
+                    "1": {
+                        "then": "A fee is asked when borrowing tools"
+                    },
+                    "2": {
+                        "then": "A donation can be given when borrowing tools"
+                    }
+                },
+                "question": "Is a fee asked to borrow tools?",
+                "questionHint": "If a membership is required, we assume that the membership is already paid for."
+            },
+            "membership": {
+                "mappings": {
+                    "0": {
+                        "then": "No membership is required to borrow tools here"
+                    },
+                    "1": {
+                        "then": "A <b>membership is required</b> to use this tool library"
+                    }
+                },
+                "question": "Is a membership required to borrow tools here?"
+            },
+            "membership_charge": {
+                "question": "How much does a membership cost?",
+                "questionHint": "There might be many formulas. In case of doubt, pick the most common one",
+                "render": "A membership costs {charge:membership}"
+            }
+        },
+        "title": {
+            "render": "Tool library {name}"
         }
     },
     "trail": {

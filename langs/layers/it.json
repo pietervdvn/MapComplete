@@ -1569,13 +1569,11 @@
         "name": "Bici fantasma",
         "presets": {
             "0": {
+                "description": "Una <b>bici fantasma</b> è il memoriale di un ciclista che è morto in un incidente stradale e che ha la forma di una bicicletta bianca piazzata in maniera stabile vicino al luogo dell’incidente.",
                 "title": "una bici fantasma"
             }
         },
         "tagRenderings": {
-            "ghost-bike-explanation": {
-                "render": "Una <b>bici fantasma</b> è il memoriale di un ciclista che è morto in un incidente stradale e che ha la forma di una bicicletta bianca piazzata in maniera stabile vicino al luogo dell’incidente."
-            },
             "ghost_bike-inscription": {
                 "question": "Che cosa è scritto sulla bici fantasma?",
                 "render": "<i>{inscription}</i>"

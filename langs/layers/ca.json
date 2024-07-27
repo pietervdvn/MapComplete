@@ -4089,13 +4089,11 @@
         "name": "Bicicleta fantasma",
         "presets": {
             "0": {
+                "description": "Una <b>bicicleta fantasma</b> és un memorial per a un ciclista que va morir en un accident de trànsit, en forma de bicicleta blanca col·locada permanentment a prop del lloc de l'accident.",
                 "title": "una bicicleta fantasma"
             }
         },
         "tagRenderings": {
-            "ghost-bike-explanation": {
-                "render": "Una <b>bicicleta fantasma</b> és un memorial per a un ciclista que va morir en un accident de trànsit, en forma de bicicleta blanca col·locada permanentment a prop del lloc de l'accident."
-            },
             "ghost_bike-inscription": {
                 "question": "Quina és la inscripció d'aquesta bicicleta fantasma?",
                 "render": "<i>{inscription}</i>"
@@ -6234,7 +6232,7 @@
             },
             "opening_hours_by_appointment": {
                 "override": {
-                    "mappings": {
+                    "+mappings": {
                         "0": {
                             "then": "Sols amb cita prèvia"
                         },

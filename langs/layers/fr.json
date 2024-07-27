@@ -3706,13 +3706,11 @@
         "name": "Vélos fantômes",
         "presets": {
             "0": {
+                "description": "Un <b>vélo fantôme</b> est un monument commémoratif pour un cycliste décédé dans un accident de la route, sous la forme d'un vélo blanc placé en permanence près du lieu de l'accident.",
                 "title": "une vélo fantôme"
             }
         },
         "tagRenderings": {
-            "ghost-bike-explanation": {
-                "render": "Un <b>vélo fantôme</b> est un monument commémoratif pour un cycliste décédé dans un accident de la route, sous la forme d'un vélo blanc placé en permanence près du lieu de l'accident."
-            },
             "ghost_bike-inscription": {
                 "question": "Quelle est l'inscription sur ce vélo fantôme ?",
                 "render": "<i>{inscription}</i>"
@@ -5173,7 +5171,7 @@
             },
             "opening_hours_by_appointment": {
                 "override": {
-                    "mappings": {
+                    "+mappings": {
                         "0": {
                             "then": "Uniquement sur rendez-vous"
                         },

@@ -358,6 +358,17 @@
         "shortDescription": "A worldwide map of charging stations",
         "title": "Charging stations"
     },
+    "circular_economy": {
+        "description": "Various items which help people to share, reuse or recycle.",
+        "layers": {
+            "5": {
+                "override": {
+                    "=name": "Second hand shops"
+                }
+            }
+        },
+        "title": "Circular economy"
+    },
     "climbing": {
         "description": "On this map you will find various climbing opportunities such as climbing gyms, bouldering halls and rocks in nature.",
         "descriptionTail": "The climbing map was originally made by <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Please <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>get in touch</a> if you have feedback or questions.</p><p>The project uses data of the <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a> project.</p>",
@@ -983,6 +994,10 @@
         },
         "title": "Kerbs and crossings"
     },
+    "lactosefree": {
+        "description": "A crowdsourced map with lactose free shops and restaurants",
+        "title": "Lactose free shops and restaurants"
+    },
     "lighthouses": {
         "description": "Lighthouses are tall buildings with a light on top to guide marine traffic.",
         "title": "Lighthouses"
@@ -1232,7 +1247,29 @@
                             "title": "an erotic shop"
                         }
                     },
-                    "name": "Erotic shops"
+                    "name": "Erotic shops",
+                    "tagRenderings+": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "This shop offers <b>soft BDSM-gear</b>, such as fluffy handcuffs, a 'fifty-shade-of-grey'-starterset, ..."
+                                },
+                                "1": {
+                                    "then": "This shop offers <b>specialized BDSM-gear</b>, such as spreader bars, supplies for needle play, medical bondage supplies, impact tools, shackles, metal colors, cuffs, nipple clamps, shibari accessories, ..."
+                                },
+                                "2": {
+                                    "then": "This shop offers <b>pet play</b> accessories, such as puppy masks, animal masks, pony play, tails, hoof shoes, ..."
+                                },
+                                "3": {
+                                    "then": "This shop offers <b>leather gear</b>, including pants and shirts usable in daily life up till leather harnesses"
+                                },
+                                "4": {
+                                    "then": "This shop offers <b>uniforms</b> for roleplay, such nurse uniforms, military uniforms, police, school girl, french maid, ..."
+                                }
+                            },
+                            "question": "Does this shop offer fetish gear?"
+                        }
+                    }
                 }
             },
             "4": {
