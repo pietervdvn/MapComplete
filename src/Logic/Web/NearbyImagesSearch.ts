@@ -341,15 +341,15 @@ export class CombinedFetcher {
 
     constructor(radius: number, maxage: Date, indexedFeatures: IndexedFeatureSource) {
         this.sources = [
-            // new ImagesInLoadedDataFetcher(indexedFeatures, radius),
-            new ImagesFromCacheServerFetcher(radius)
-            /* new MapillaryFetcher({
+            new ImagesInLoadedDataFetcher(indexedFeatures, radius),
+            new ImagesFromCacheServerFetcher(radius),
+            new MapillaryFetcher({
                  panoramas: "no",
                  max_images: 25,
                  start_captured_at : maxage
              }),
              new P4CImageFetcher("mapillary"),
-             new P4CImageFetcher("wikicommons"), //*/
+             new P4CImageFetcher("wikicommons"),
         ].map(f => new CachedFetcher(f))
     }
 
