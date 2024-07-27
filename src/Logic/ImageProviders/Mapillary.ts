@@ -8,6 +8,8 @@ import MapillaryIcon from "./MapillaryIcon.svelte"
 
 export class Mapillary extends ImageProvider {
     public static readonly singleton = new Mapillary()
+    public readonly name = "Mapillary"
+
     private static readonly valuePrefix = "https://a.mapillary.com"
     public static readonly valuePrefixes = [
         Mapillary.valuePrefix,

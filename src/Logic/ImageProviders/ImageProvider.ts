@@ -15,6 +15,8 @@ export interface ProvidedImage {
 export default abstract class ImageProvider {
     public abstract readonly defaultKeyPrefixes: string[]
 
+    public abstract readonly name: string
+
     public abstract SourceIcon(id?: string, location?: { lon: number; lat: number }): BaseUIElement
 
     /**

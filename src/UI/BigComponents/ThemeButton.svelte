@@ -28,11 +28,11 @@
     return true
   })
 
-  $: title = new Translation(
+  $: title = Translations.T(
     theme.title,
     !isCustom && !theme.mustHaveLanguage ? "themes:" + theme.id + ".title" : undefined
   )
-  $: description = new Translation(theme.shortDescription)
+  $: description = Translations.T(theme.shortDescription)
 
   // TODO: Improve this function
   function createUrl(

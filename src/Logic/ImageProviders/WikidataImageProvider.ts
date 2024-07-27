@@ -8,6 +8,7 @@ import * as Wikidata_icon from "../../assets/svg/Wikidata.svelte"
 export class WikidataImageProvider extends ImageProvider {
     public static readonly singleton = new WikidataImageProvider()
     public readonly defaultKeyPrefixes = ["wikidata"]
+    public readonly name = "Wikidata"
 
     private constructor() {
         super()

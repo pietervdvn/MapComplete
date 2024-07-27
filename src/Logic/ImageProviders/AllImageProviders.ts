@@ -12,19 +12,23 @@ import { WikidataImageProvider } from "./WikidataImageProvider"
 export default class AllImageProviders {
     private static dontLoadFromPrefixes = ["https://photos.app.goo.gl/"]
 
-    public static ImageAttributionSource: ImageProvider[] = [
+    /**
+     * The 'genericImageProvider' is a fallback that scans various other tags for tags, unless the URL starts with one of the given prefixes
+     */
+    public static genericImageProvider = new GenericImageProvider([
+        ...Imgur.defaultValuePrefix,
+        ...WikimediaImageProvider.commonsPrefixes,
+        ...Mapillary.valuePrefixes,
+        ...AllImageProviders.dontLoadFromPrefixes,
+        "Category:",
+    ])
+
+    private static ImageAttributionSource: ImageProvider[] = [
         Imgur.singleton,
         Mapillary.singleton,
         WikidataImageProvider.singleton,
         WikimediaImageProvider.singleton,
-        // The 'genericImageProvider' is a fallback that scans various other tags for tags, unless the URL starts with one of the given prefixes
-        new GenericImageProvider([
-            ...Imgur.defaultValuePrefix,
-            ...WikimediaImageProvider.commonsPrefixes,
-            ...Mapillary.valuePrefixes,
-            ...AllImageProviders.dontLoadFromPrefixes,
-            "Category:",
-        ]),
+        AllImageProviders.genericImageProvider
     ]
     public static apiUrls: string[] = [].concat(
         ...AllImageProviders.ImageAttributionSource.map((src) => src.apiUrls())
@@ -47,6 +51,23 @@ export default class AllImageProviders {
         return AllImageProviders.providersByName[name.toLowerCase()]
     }
 
+    public static async selectBestProvider(key: string, value: string): Promise<ImageProvider> {
+
+        for (const imageProvider of AllImageProviders.ImageAttributionSource) {
+            try{
+
+            const extracted = await Promise.all(await imageProvider.ExtractUrls(key, value))
+            if(extracted?.length > 0){
+                return imageProvider
+            }
+            }catch (e) {
+                console.warn("Provider gave an error while trying to determine a match:", e)
+            }
+        }
+
+        return AllImageProviders.genericImageProvider
+    }
+
     public static LoadImagesFor(
         tags: Store<Record<string, string>>,
         tagKey?: string[]
@@ -63,7 +84,7 @@ export default class AllImageProviders {
 
         const source = new UIEventSource([])
         this._cache.set(cacheKey, source)
-        const allSources = []
+        const allSources: Store<ProvidedImage[]>[] = []
         for (const imageProvider of AllImageProviders.ImageAttributionSource) {
             let prefixes = imageProvider.defaultKeyPrefixes
             if (tagKey !== undefined) {

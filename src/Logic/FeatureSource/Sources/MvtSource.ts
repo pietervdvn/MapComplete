@@ -135,12 +135,12 @@ class MvtFeatureBuilder {
     private encodeGeometry(geometry: number[]): Coords[] {
         let cX = 0
         let cY = 0
-        let coordss: Coords[] = []
+        const coordss: Coords[] = []
         let currentRing: Coords = []
         for (let i = 0; i < geometry.length; i++) {
-            let commandInteger = geometry[i]
-            let commandId = commandInteger & 0x7
-            let commandCount = commandInteger >> 3
+            const commandInteger = geometry[i]
+            const commandId = commandInteger & 0x7
+            const commandCount = commandInteger >> 3
             /*
             Command 	Id 	Parameters 	Parameter Count
                         MoveTo 	1 	dX, dY 	2
@@ -165,7 +165,11 @@ class MvtFeatureBuilder {
                 i += commandCount * 2
             }
             if (commandId === 7) {
-                currentRing.push([...currentRing[0]])
+                if(currentRing.length === 0){
+                    console.error("Invalid MVT file: got a 'closePath', but the currentRing is empty. Full command:", commandInteger)
+                }else{
+                    currentRing.push([...currentRing[0]])
+                }
                 i++
             }
         }
@@ -434,7 +438,7 @@ export default class MvtSource implements FeatureSourceForTile, UpdatableFeature
             }
             this._features.setData(features)
         } catch (e) {
-            console.error("Could not download MVT tile due to", e)
+            console.error("Could not download MVT "+this._url+" tile due to", e)
         }
     }
 
