@@ -13,7 +13,8 @@
     "es": "Educación",
     "eu": "Hezkuntza",
     "pl": "Edukacja",
-    "zh_Hant": "教育"
+    "zh_Hant": "教育",
+    "it": "Istruzione"
   },
   "description": {
     "en": "On this map, you'll find information about all types of schools and education and can easily add more information",
@@ -24,7 +25,8 @@
     "da": "På dette kort finder du information om alle typer skoler og uddannelse og kan nemt tilføje flere oplysninger",
     "cs": "Na této mapě najdete informace o všech typech škol a vzdělávání a můžete snadno přidat další informace",
     "es": "En este mapa, encontrará información sobre todos los tipos de escuelas y centros de educación y puede añadir fácilmente más información",
-    "pl": "Na tej mapie znajdziesz informacje o wszystkich typach szkół i edukacji, a także możesz łatwo dodać więcej informacji"
+    "pl": "Na tej mapie znajdziesz informacje o wszystkich typach szkół i edukacji, a także możesz łatwo dodać więcej informacji",
+    "it": "In questa mappa troverai informazioni su tutti i tipi di scuole e istituti di istruzione e puoi aggiungere facilmente ulteriori informazioni"
   },
   "icon": "./assets/layers/school/college.svg",
   "layers": [

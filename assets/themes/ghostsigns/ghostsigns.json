@@ -116,7 +116,8 @@
             "placeholder": {
               "en": "Business name",
               "de": "Unternehmensname",
-              "es": "Nombre comercial"
+              "es": "Nombre comercial",
+              "it": "Nome dell'attività"
             }
           },
           "render": {

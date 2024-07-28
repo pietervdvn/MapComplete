@@ -468,7 +468,8 @@
               "ca": "Aquest carrer és una pista ciclable",
               "cs": "Tato ulice je cyklistickou silnicí",
               "es": "Esta calle tiene ciclovías",
-              "pl": "To jest droga dla rowerów"
+              "pl": "To jest droga dla rowerów",
+              "it": "Questa strada è una strada per biciclette"
             },
             "hideInAnswer": true
           },
@@ -491,7 +492,8 @@
               "ca": "Aquest carrer és una carretera ciclista (té un límit de velocitat de 30km/h i els vehicles no estan permesos)(el senyal es preguntarà més tard)",
               "cs": "Tato ulice je cyklistická (rychlost je zde omezena na 30 km/h vozidla sem mají zákaz vjezdu) (na značku se zeptáme později)",
               "es": "Esta calle es una vía ciclista (tiene un límite de velocidad de 30 km/h y no se permiten vehículos) (se pedirá señal más adelante)",
-              "pl": "Ulica ta jest drogą rowerową (ograniczona prędkość wynosi 30 km/h i nie wolno wjeżdżać pojazdom) (znak zostanie poproszony później)"
+              "pl": "Ulica ta jest drogą rowerową (ograniczona prędkość wynosi 30 km/h i nie wolno wjeżdżać pojazdom) (znak zostanie poproszony później)",
+              "it": "Questa strada è una strada per biciclette (ha un limite di velocità di 30 km/h e i veicoli non sono ammessi)(il segnale verrà richiesto più tardi)"
             },
             "hideInAnswer": "_country!=de"
           },
@@ -625,7 +627,8 @@
               "es": "Residentes autorizados",
               "cs": "Přístup povolen obyvatelům",
               "pl": "Mieszkańcy dopuszczeni",
-              "da": "Beboere tilladt"
+              "da": "Beboere tilladt",
+              "it": "Permesso l'accesso ai residenti"
             },
             "icon": {
               "path": "./assets/themes/cyclestreets/Zeichen_244_1020-30.svg",
@@ -649,7 +652,8 @@
               "ca": "Vehicles a motor permesos",
               "es": "Vehículos a motor permitidos",
               "pl": "Pojazdy silnikowe dozwolone",
-              "da": "Motorkøretøjer tilladt"
+              "da": "Motorkøretøjer tilladt",
+              "it": "Permesso l'accesso ai veicoli a motore"
             },
             "icon": {
               "path": "./assets/themes/cyclestreets/Zeichen_244_KFZ_frei.svg",
@@ -674,7 +678,8 @@
               "ca": "Motos permeses",
               "es": "Motocicletas permitidas",
               "pl": "Motocykle dozwolone",
-              "da": "Motorcykler tilladt"
+              "da": "Motorcykler tilladt",
+              "it": "Permesso l'accesso ai motocicli"
             },
             "icon": {
               "path": "./assets/themes/cyclestreets/Zeichen_244_1022-12.svg",
@@ -700,7 +705,8 @@
               "ca": "Cotxes permesos",
               "es": "Coches permitidos",
               "pl": "Samochody dozwolone",
-              "da": "Biler tilladt"
+              "da": "Biler tilladt",
+              "it": "Permesso l'accesso alle auto"
             },
             "icon": {
               "path": "./assets/themes/cyclestreets/Zeichen_244_1024-10.svg",

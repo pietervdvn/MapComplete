@@ -10,7 +10,8 @@
     "es": "Veterinarios, parques para perros y otros servicios para mascotas",
     "cs": "Veterináři, psí parky a další služby pro domácí zvířata",
     "zh_Hant": "獸醫院、寵物公園以及其他寵物設施",
-    "pl": "Kliniki weterynaryjne, parki dla psów i inne obiekty dla zwierząt"
+    "pl": "Kliniki weterynaryjne, parki dla psów i inne obiekty dla zwierząt",
+    "it": "Veterinari, parchi accessibili ai cani e altri servizi per animali domestici"
   },
   "description": {
     "en": "On this map, you'll find various interesting places for you pets: veterinarians, dog parks, pet shops, dog-friendly restaurants, ...",
@@ -47,7 +48,8 @@
           "es": "Restaurantes que admiten perros",
           "cs": "Restaurace vhodné pro vstup se psy",
           "zh_Hant": "寵物友善餐廳",
-          "pl": "Restauracje przyjazne psom"
+          "pl": "Restauracje przyjazne psom",
+          "it": "Ristoranti che accettano i cani"
         },
         "pointRendering": [
           {
@@ -102,7 +104,8 @@
           "es": "Tiendas aptas para perros",
           "cs": "Obchody vhodné pro vstup se psy",
           "zh_Hant": "寵物友善商家",
-          "pl": "Sklepy przyjazne psom"
+          "pl": "Sklepy przyjazne psom",
+          "it": "Negozi che accettano i cani"
         },
         "title": {
           "render": {
@@ -117,7 +120,8 @@
             "es": "Tiendas aptas para perros",
             "cs": "Obchody vhodné pro vstup se psy",
             "zh_Hant": "寵物友善商家",
-            "pl": "Sklepy przyjazne psom"
+            "pl": "Sklepy przyjazne psom",
+            "it": "Negozi che accettano i cani"
           },
           "mappings": [
             {

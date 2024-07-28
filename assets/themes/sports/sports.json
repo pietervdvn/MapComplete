@@ -11,7 +11,8 @@
     "cs": "Sport",
     "zh_Hant": "運動",
     "eu": "Kirolak",
-    "pl": "Sporty"
+    "pl": "Sporty",
+    "it": "Sport"
   },
   "description": {
     "en": "All about sports, find sport pitches, fitness centres and more.",
@@ -21,7 +22,8 @@
     "es": "Todo sobre deportes, encuentra campos de deporte, gimnasios y mucho más.",
     "cs": "Vše o sportu, sportovní hřiště, fitness centra a další.",
     "fr": "Tout sur les sports, trouver les terrains de sport, les salles de sport et plus encore.",
-    "pl": "Wszystko o sporcie, znajdź boiska sportowe, centra fitness i nie tylko."
+    "pl": "Wszystko o sporcie, znajdź boiska sportowe, centra fitness i nie tylko.",
+    "it": "Tutto sullo sport, trova campi sportivi, centri fitness e molto altro."
   },
   "shortDescription": {
     "en": "Map showing sport facilities.",
@@ -32,7 +34,8 @@
     "es": "Mapa con instalaciones deportivas.",
     "cs": "Mapa se sportovními zařízeními.",
     "zh_Hant": "顯示運動設施的地圖。",
-    "pl": "Mapa pokazująca obiekty sportowe."
+    "pl": "Mapa pokazująca obiekty sportowe.",
+    "it": "Mappa che mostra gli impianti sportivi."
   },
   "icon": "./assets/themes/sports/sport.svg",
   "layers": [

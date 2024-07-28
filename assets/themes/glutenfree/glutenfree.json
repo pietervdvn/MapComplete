@@ -1,10 +1,14 @@
 {
   "id": "glutenfree",
   "title": {
-    "en": "Glutenfree"
+    "en": "Glutenfree",
+    "de": "Glutenfrei",
+    "it": "Senza glutine"
   },
   "description": {
-    "en": "A crowdsourced map with glutenfree items"
+    "en": "A crowdsourced map with glutenfree items",
+    "de": "Eine gemeinschaftliche Karte mit glutenfreien Produkten",
+    "it": "Una mappa in crowdsourcing per articoli senza glutine"
   },
   "icon": "./assets/layers/questions/glutenfree.svg",
   "layers": [

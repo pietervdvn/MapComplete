@@ -11,7 +11,8 @@
     "cs": "Vlaková nádraží",
     "zh_Hant": "火車站",
     "pl": "Stacje Kolejowe",
-    "da": "Togstationer"
+    "da": "Togstationer",
+    "it": "Stazioni ferroviarie"
   },
   "description": {
     "en": "View, edit and add details to a train station",
@@ -21,7 +22,8 @@
     "ca": "Veure, editar i afegir detalls a una estació de tren",
     "es": "Ver, editar y añadir detalles a una estación de tren",
     "cs": "Zobrazení, úprava a přidání podrobností o vlakovém nádraží",
-    "pl": "Przeglądaj, edytuj i dodawaj szczegóły do stacji kolejowej"
+    "pl": "Przeglądaj, edytuj i dodawaj szczegóły do stacji kolejowej",
+    "it": "Visualizza, modifica e aggiungi informazioni su una stazione ferroviaria"
   },
   "icon": "./assets/themes/stations/rail-light.svg",
   "defaultBackgroundId": "protomaps.white",

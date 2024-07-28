@@ -2830,35 +2830,40 @@
     {
       "id": "shower",
       "question": {
-        "en": "Does this facility offer showers?"
+        "en": "Does this facility offer showers?",
+        "de": "Gibt es in dieser Einrichtung Duschen?"
       },
       "mappings": [
         {
           "if": "shower=hot",
           "icon": "./assets/layers/shower/shower.svg",
           "then": {
-            "en": "This facility does have showers with warm water"
+            "en": "This facility does have showers with warm water",
+            "de": "Diese Einrichtung verfügt über Duschen mit warmem Wasser"
           }
         },
         {
           "if": "shower=cold",
           "icon": "./assets/layers/shower/shower.svg",
           "then": {
-            "en": "This facility does have showers, but the water is not heated"
+            "en": "This facility does have showers, but the water is not heated",
+            "de": "Diese Einrichtung verfügt zwar über Duschen, aber das Wasser ist nicht beheizt"
           }
         },
         {
           "if": "shower=yes",
           "icon": "./assets/layers/shower/shower.svg",
           "then": {
-            "en": "This facility does have showers"
+            "en": "This facility does have showers",
+            "de": "Diese Einrichtung hat Duschen"
           }
         },
         {
           "if": "shower=no",
           "icon": "invalid;./assets/layers/shower/shower.svg",
           "then": {
-            "en": "This facility does not offer a shower"
+            "en": "This facility does not offer a shower",
+            "de": "Diese Einrichtung hat keine Duschen"
           }
         }
       ]

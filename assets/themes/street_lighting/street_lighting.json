@@ -29,7 +29,8 @@
     "ca": "En aquest mapa pots trobar tot el relacionat amb l'enllumenat públic",
     "nb_NO": "Alt om gatebelysning",
     "cs": "Na této mapě najdete vše o pouličním osvětlení",
-    "pl": "Na tej mapie możesz znaleźć wszystko o oświetleniu ulicznym"
+    "pl": "Na tej mapie możesz znaleźć wszystko o oświetleniu ulicznym",
+    "it": "Su questa mappa puoi trovare tutto ciò che riguarda l'illuminazione stradale"
   },
   "icon": "./assets/layers/street_lamps/street_lamp.svg",
   "startZoom": 19,
