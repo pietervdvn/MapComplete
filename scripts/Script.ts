@@ -22,7 +22,7 @@ export default abstract class Script {
                 const green = (s) => "\x1b[92m" + s + "\x1b[0m"
                 console.log(green("All done! (" + millisNeeded + " ms)"))
             })
-            .catch((e) => console.log("ERROR in script:", e))
+            .catch((e) => console.log(`ERROR in script ${process.argv[1]}:`, e))
     }
 
     public printHelp() {
