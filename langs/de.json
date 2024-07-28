@@ -180,7 +180,7 @@
         "attribution": {
             "attributionBackgroundLayer": "Die aktuelle Hintergrundebene ist {name}",
             "attributionBackgroundLayerWithCopyright": "Die aktuelle Hintergrundebene ist {name}: {copyright}",
-            "attributionContent": "<p>Alle Daten werden bereitgestellt von <a href='https://osm.org' target='_blank'>OpenStreetMap</a>, frei verwendbar unter der <a href='https://osm.org/copyright' target='_blank'>Open Database License</a>.</p>",
+            "attributionContent": "<p>Alle Daten werden bereitgestellt von <a href='https://www.openstreetmap.org' target='_blank'>OpenStreetMap</a>, frei verwendbar unter der <a href='https://openstreetmap.org/copyright' target='_blank'>Open Database License</a>.</p>",
             "attributionTitle": "Danke",
             "codeContributionsBy": "MapComplete wurde erstellt von {contributors} und <a href='https://github.com/pietervdvn/MapComplete/graphs/contributors' target='_blank'>{hiddenCount} weiteren Personen</a>",
             "donate": "MapComplete finanziell unterstützen",
@@ -562,6 +562,7 @@
         "isDeleted": "Gelöscht",
         "nearby": {
             "close": "Übersicht mit nahegelegenen Bildern ausklappen",
+            "failed": "Abruf von Bildern von {service} fehlgeschlagen",
             "link": "Dieses Bild zeigt das Objekt",
             "noNearbyImages": "Keine nahegelegenen Bilder gefunden",
             "seeNearby": "Bilder in der Nähe durchsuchen und verlinken",
