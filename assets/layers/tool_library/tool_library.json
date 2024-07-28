@@ -52,6 +52,12 @@
           "then": {
             "en": "A <b>membership is required</b> to use this tool library"
           }
+        },
+        {
+          "if": "membership=optional",
+          "then": {
+            "en": "A <b>membership is possible</b> but not required to use this tool library"
+          }
         }
       ]
     },
@@ -72,7 +78,6 @@
         "en": "A membership costs {charge:membership}"
       }
     },
-
     {
       "question": {
         "en": "Is a fee asked to borrow tools?"
@@ -80,10 +85,23 @@
       "id": "fee",
       "mappings": [
         {
+          "if": {
+            "and": [
+              "fee=no",
+              "membership=required"
+            ]
+          },
+          "then": {
+            "en": "Borrowing tools is free if one has a membership"
+          },
+          "hideInAnswer": "membership!=required"
+        },
+        {
           "if": "fee=no",
           "then": {
             "en": "Borrowing tools is free"
-          }
+          },
+          "hideInAnswer": "membership=required"
         },
         {
           "if": "fee=yes",
@@ -144,7 +162,11 @@
       "charge:membership": {
         "inverted": true,
         "quantity": "duration",
-        "denominations": ["years","months","weeks"]
+        "denominations": [
+          "years",
+          "months",
+          "weeks"
+        ]
       }
     }
   ]
