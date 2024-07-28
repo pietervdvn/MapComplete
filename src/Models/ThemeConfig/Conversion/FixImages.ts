@@ -55,13 +55,12 @@ export class ExtractImages extends Conversion<
     }
 
     static isImageType(metapath: any): boolean {
-        if (metapath.hints.typehint === "icon" ||
-            metapath.hints.typehint === "image") {
+        if (metapath.hints.typehint === "icon" || metapath.hints.typehint === "image") {
             return true
         }
 
-        const types = metapath.hints.types?.split(";").map(x => x.trim())
-        if (types?.some(t => t === "icon" || t === "image")) {
+        const types = metapath.hints.types?.split(";").map((x) => x.trim())
+        if (types?.some((t) => t === "icon" || t === "image")) {
             return true
         }
 
@@ -120,7 +119,7 @@ export class ExtractImages extends Conversion<
             const allRenderedValuesAreImages = ExtractImages.isImageType(metapath)
 
             const found = Utils.CollectPath(metapath.path, json)
-            if(found.length === 0){
+            if (found.length === 0) {
                 continue
             }
 
@@ -177,7 +176,7 @@ export class ExtractImages extends Conversion<
                                     } else {
                                         allFoundImages.push({
                                             path: img.leaf,
-                                            context: context + "." + path
+                                            context: context + "." + path,
                                         })
                                     }
                                 }
@@ -191,7 +190,7 @@ export class ExtractImages extends Conversion<
                                             .ExtractImages(false)
                                             .map((path) => ({
                                                 path,
-                                                context: context + "." + path
+                                                context: context + "." + path,
                                             }))
                                     )
                                 }
@@ -211,7 +210,7 @@ export class ExtractImages extends Conversion<
                     }
                     allFoundImages.push({
                         context: context.path.join(".") + "." + foundElement.path.join("."),
-                        path: foundElement.leaf
+                        path: foundElement.leaf,
                     })
                 }
             }

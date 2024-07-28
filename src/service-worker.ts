@@ -23,7 +23,7 @@ async function activate() {
         .catch(console.error)
 }
 
-function fetchAndCache(event){
+function fetchAndCache(event) {
     return fetch(event.request).then((networkResponse) => {
         return caches.open(version).then((cache) => {
             cache.put(event.request, networkResponse.clone())
@@ -38,7 +38,7 @@ const cacheFirst = async (event, attemptUpdate: boolean = false) => {
         caches.match(event.request, { ignoreSearch: true }).then((cacheResponse) => {
             if (cacheResponse !== undefined) {
                 console.debug("Loaded from cache: ", event.request)
-                if(attemptUpdate){
+                if (attemptUpdate) {
                     fetchAndCache(event)
                 }
                 return cacheResponse

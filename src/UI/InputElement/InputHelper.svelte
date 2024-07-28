@@ -28,13 +28,15 @@
   export let feature: Feature
   export let args: (string | number | boolean)[] = undefined
   export let state: SpecialVisualizationState
-
 </script>
 
 {#if type === "translation"}
   <TranslationInput {value} on:submit {args} />
 {:else if type === "direction"}
-  <DirectionInput {value} mapProperties={InputHelpers.constructMapProperties( { feature, args: args ?? [] })} />
+  <DirectionInput
+    {value}
+    mapProperties={InputHelpers.constructMapProperties({ feature, args: args ?? [] })}
+  />
 {:else if type === "date"}
   <DateInput {value} />
 {:else if type === "color"}
@@ -50,5 +52,5 @@
 {:else if type === "slope"}
   <SlopeInput {value} {feature} {state} />
 {:else if type === "wikidata"}
-  <WikidataInputHelper {value} {feature} {state} {args}/>
+  <WikidataInputHelper {value} {feature} {state} {args} />
 {/if}

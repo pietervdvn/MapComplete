@@ -2,7 +2,7 @@ import Combine from "./Combine"
 import Translations from "../i18n/Translations"
 import BaseUIElement from "../BaseUIElement"
 import SvelteUIElement from "./SvelteUIElement"
-import {default as LoadingSvg} from "../../assets/svg/Loading.svelte"
+import { default as LoadingSvg } from "../../assets/svg/Loading.svelte"
 export default class Loading extends Combine {
     constructor(msg?: BaseUIElement | string) {
         const t = Translations.W(msg) ?? Translations.t.general.loading

@@ -28,6 +28,7 @@ Available languages:
  - cs
  - zh_Hant
  - pl
+ - zh_Hans
 
 
 # Table of contents

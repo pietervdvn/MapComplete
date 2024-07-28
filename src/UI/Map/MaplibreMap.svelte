@@ -55,24 +55,24 @@
       center: { lng: lon, lat },
       maxZoom: 24,
       interactive: true,
-      attributionControl: false
+      attributionControl: false,
     }
     _map = new maplibre.Map(options)
     window.requestAnimationFrame(() => {
       _map.resize()
     })
 
-    _map.on("load", function() {
+    _map.on("load", function () {
       _map.resize()
       const canvas = _map.getCanvas()
       canvas.addEventListener("webglcontextlost", (e) => {
         console.warn("A MapLibreMap lost their context. Recovery is", autorecovery, e)
-        try{
+        try {
           _map?.remove()
-        }catch (e) {
+        } catch (e) {
           console.debug("Could not remove map due to", e)
         }
-        if(autorecovery){
+        if (autorecovery) {
           requestAnimationFrame(() => {
             console.warn("Attempting map recovery")
             _map = new maplibre.Map(options)
@@ -92,23 +92,19 @@
     map.set(_map)
   }
 
-
   onMount(() => initMap())
-
 
   onDestroy(async () => {
     await Utils.waitFor(100)
-    requestAnimationFrame(
-      () => {
-        try {
-          _map?.remove()
-          console.log("Removed map")
-          map = null
-        } catch (e) {
-          console.error("Could not destroy map")
-        }
+    requestAnimationFrame(() => {
+      try {
+        _map?.remove()
+        console.log("Removed map")
+        map = null
+      } catch (e) {
+        console.error("Could not destroy map")
       }
-    )
+    })
   })
 </script>
 

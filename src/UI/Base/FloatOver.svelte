@@ -38,12 +38,12 @@
     <slot name="close-button">
       <!-- The close button is placed _after_ the default slot in order to always paint it on top -->
       <div
-        class="absolute right-10 top-10 cursor-pointer border-none p-0 m-0 bg-white rounded-full border-0"
+        class="absolute right-10 top-10 m-0 cursor-pointer rounded-full border-0 border-none bg-white p-0"
         style="margin: -0.25rem"
         on:click={() => dispatch("close")}
         use:ariaLabel={Translations.t.general.backToMap}
       >
-        <XCircleIcon class="w-8 h-8" />
+        <XCircleIcon class="h-8 w-8" />
       </div>
     </slot>
   </div>

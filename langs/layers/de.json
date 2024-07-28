@@ -8182,6 +8182,23 @@
                     }
                 }
             },
+            "shower": {
+                "mappings": {
+                    "0": {
+                        "then": "Diese Einrichtung verfügt über Duschen mit warmem Wasser"
+                    },
+                    "1": {
+                        "then": "Diese Einrichtung verfügt zwar über Duschen, aber das Wasser ist nicht beheizt"
+                    },
+                    "2": {
+                        "then": "Diese Einrichtung hat Duschen"
+                    },
+                    "3": {
+                        "then": "Diese Einrichtung hat keine Duschen"
+                    }
+                },
+                "question": "Gibt es in dieser Einrichtung Duschen?"
+            },
             "single_level": {
                 "mappings": {
                     "0": {

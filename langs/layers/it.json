@@ -139,7 +139,7 @@
         }
     },
     "artwork": {
-        "description": "Diverse opere d’arte",
+        "description": "Una mappa libera delle statue, i busti, i graffiti e le altre opere d'arte di tutto il mondo",
         "name": "Opere d’arte",
         "presets": {
             "0": {

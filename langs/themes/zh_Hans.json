@@ -1,4 +1,9 @@
 {
+    "advertising": {
+        "description": "你是否曾经想过我们的街道和道路上有多少广告？通过这张地图，你可以查找并添加有关街道上所有广告特征的信息",
+        "shortDescription": "我可以在哪里找到广告功能？",
+        "title": "广告"
+    },
     "aed": {
         "description": "在这份地图上可以寻找和标记附近的除颤器",
         "title": "Open AED Map"
@@ -7,8 +12,182 @@
         "description": "一个雕塑、半身像、涂鸦和其他全球艺术品的地图",
         "title": "Open Artwork Map"
     },
+    "atm": {
+        "description": "这张地图显示了可以取款或存款的自动取款机",
+        "layers": {
+            "3": {
+                "override": {
+                    "=tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "导入这个ATM"
+                                }
+                            }
+                        },
+                        "1": {
+                            "render": "OpenStreetMap 知道有一个<a href='#{_closest_osm_poi}'>自动取款机，它距离你 {_closest_osm_poi_distance} 米。</a> "
+                        },
+                        "2": {
+                            "render": {
+                                "special": {
+                                    "message": "将所有建议的标签添加到距离最近的自动取款机"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "title": "自动取款机"
+    },
+    "bag": {
+        "description": "这个主题帮助导入来自BAG的数据",
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "Reference": {
+                        "mappings": {
+                            "0": {
+                                "then": "这栋建筑在BAG中没有参考信息"
+                            }
+                        },
+                        "render": "在 BAG 中的参考是 <b>{ref:bag}</b>"
+                    }
+                }
+            },
+            "2": {
+                "description": "BAG 注册中的建筑物",
+                "tagRenderings": {
+                    "Build year": {
+                        "mappings": {
+                            "0": {
+                                "then": "该建筑始建于 <b>{_bag_obj:start_date}</b>"
+                            }
+                        },
+                        "render": "这座建筑建于 <b>{_bag_obj:start_date}</b>"
+                    },
+                    "Building type": {
+                        "mappings": {
+                            "0": {
+                                "then": "建筑类型将是 <b>{_bag_obj:construction}</b>"
+                            }
+                        },
+                        "render": "建筑类型是 <b>{_bag_obj:building}</b>"
+                    },
+                    "Import button": {
+                        "mappings": {
+                            "0": {
+                                "then": "尚未计算出正确的值。请刷新此页面"
+                            }
+                        }
+                    },
+                    "Reference": {
+                        "render": "在 BAG 中的参考文献是 <b>{_bag_obj:ref:bag}</b>"
+                    }
+                }
+            }
+        },
+        "shortDescription": "BAG 导入辅助工具",
+        "title": "BAG 导入助手"
+    },
     "benches": {
+        "description": "这张地图显示了所有记录在 OpenStreetMap 中的长椅：包括独立长椅和属于公共交通站点或候车亭的长椅。",
         "shortDescription": "长椅地图",
         "title": "长椅"
+    },
+    "bicycle_parkings": {
+        "description": "一张显示所有类型自行车停车设施的地图",
+        "title": "自行车停车场"
+    },
+    "bicycle_rental": {
+        "description": "在这张地图上，你可以找到许多由 OpenStreetMap 记录的自行车租赁站点",
+        "shortDescription": "一张包含自行车租赁站点和自行车租赁商店的地图",
+        "title": "自行车租赁"
+    },
+    "bicyclelib": {
+        "description": "自行车图书馆是一个可以借用自行车的地方，通常需要支付小额的年度费用。一个显著的使用场景是儿童自行车图书馆，这允许孩子们在长大后更换成更大的自行车",
+        "title": "自行车图书馆"
+    },
+    "binoculars": {
+        "description": "一张显示固定在杆子上的望远镜的地图。这种望远镜通常可以在旅游景点、观景点、全景塔顶部或偶尔在自然保护区找到。",
+        "shortDescription": "一张显示固定望远镜的地图",
+        "title": "望远镜"
+    },
+    "blind_osm": {
+        "description": "帮助绘制与盲人相关的设施",
+        "title": "为盲人设计的OSM"
+    },
+    "bookcases": {
+        "description": "公共书柜是一个小型街边橱柜、盒子、旧电话亭或其他储存书籍的物品。任何人都可以放置或取走一本书。这张地图旨在收集所有这些书柜。",
+        "title": "公共书柜"
+    },
+    "cafes_and_pubs": {
+        "description": "咖啡馆、酒吧和酒吧",
+        "title": "咖啡馆和酒吧"
+    },
+    "campersite": {
+        "description": "该网站汇总了所有官方的露营车停留点以及可以倾倒灰水和黑水的地点。你可以添加有关提供的服务和费用的详细信息，并且可以上传图片和撰写评论。",
+        "layers": {
+            "0": {
+                "description": "露营地",
+                "name": "露营地",
+                "presets": {
+                    "0": {
+                        "description": "添加一个新的官方露营车场地。这些是专门设置的供露营车过夜的地点。它们可能看起来像真正的露营地，也可能只是看起来像一个停车场。它们可能没有任何标识，仅在市政决策中定义。普通的停车场，尽管可能供露营车使用，但不期望在其中过夜的，不算作露营车场地 ",
+                        "title": "露营地"
+                    }
+                },
+                "tagRenderings": {
+                    "caravansites-capacity": {
+                        "question": "这里可以容纳多少辆露营车？（如果没有明显的车位数量或允许的车辆数，请跳过）",
+                        "render": "{capacity} 名露营者可以同时使用这个地方"
+                    },
+                    "caravansites-charge": {
+                        "question": "这个地方的收费是多少？",
+                        "render": "这个地方收费 {charge}"
+                    },
+                    "caravansites-description": {
+                        "question": "您想添加一个关于此地的一般描述吗？（请勿重复之前询问或显示的信息。请保持客观——意见和评价请在评论中提供）",
+                        "render": "关于此地的更多细节：{description}"
+                    },
+                    "caravansites-fee": {
+                        "mappings": {
+                            "0": {
+                                "then": "需要付费使用"
+                            },
+                            "1": {
+                                "then": "可免费使用"
+                            }
+                        },
+                        "question": "这个地方是否收费？"
+                    },
+                    "caravansites-internet": {
+                        "mappings": {
+                            "0": {
+                                "then": "这里有网络连接"
+                            },
+                            "1": {
+                                "then": "这里有网络连接"
+                            },
+                            "2": {
+                                "then": "这里没有网络连接"
+                            }
+                        },
+                        "question": "这里有网络连接吗？"
+                    },
+                    "caravansites-internet-fee": {
+                        "mappings": {
+                            "0": {
+                                "then": "互联网访问需要额外付费"
+                            },
+                            "1": {
+                                "then": "互联网访问无需额外付费"
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }

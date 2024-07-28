@@ -135,7 +135,7 @@ export class Mapillary extends ImageProvider {
         return [this.PrepareUrlAsync(key, value)]
     }
 
-    public async DownloadAttribution(providedImage: {id: string}): Promise<LicenseInfo> {
+    public async DownloadAttribution(providedImage: { id: string }): Promise<LicenseInfo> {
         const mapillaryId = providedImage.id
         const metadataUrl =
             "https://graph.mapillary.com/" +

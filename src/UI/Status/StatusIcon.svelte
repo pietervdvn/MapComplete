@@ -13,16 +13,15 @@
 </script>
 
 {#if status === "online"}
-  <CheckCircle class={twJoin(cls,"rounded-full shrink-0")} style="color: #22cc22" />
+  <CheckCircle class={twJoin(cls, "shrink-0 rounded-full")} style="color: #22cc22" />
 {:else if status === "degraded"}
-  <Exclamation class={twJoin(cls,"rounded-full  shrink-0")} style="color: #eecc22" />
+  <Exclamation class={twJoin(cls, "shrink-0  rounded-full")} style="color: #eecc22" />
 {:else if status === "offline"}
-  <XCircleIcon class={twJoin(cls,"rounded-full shrink-0")} style="color: #bb2222" />
+  <XCircleIcon class={twJoin(cls, "shrink-0 rounded-full")} style="color: #bb2222" />
 {:else if status === undefined}
-  <div class={twJoin(cls,"rounded-full shrink-0")}>
+  <div class={twJoin(cls, "shrink-0 rounded-full")}>
     <Loading />
   </div>
 {:else}
   ? {status}
 {/if}
-

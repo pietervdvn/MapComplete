@@ -93,7 +93,7 @@ export default class LayerConfig extends WithContextLoader {
                     overpassScript: json.source["overpassScript"],
                     isOsmCache: json.source["isOsmCache"],
                     mercatorCrs: json.source["mercatorCrs"],
-                    idKey: json.source["idKey"]
+                    idKey: json.source["idKey"],
                 },
                 json.id
             )
@@ -162,7 +162,7 @@ export default class LayerConfig extends WithContextLoader {
             let preciseInput: PreciseInput = {
                 preferredBackground: ["photo"],
                 snapToLayers: undefined,
-                maxSnapDistance: undefined
+                maxSnapDistance: undefined,
             }
             if (pr["preciseInput"] !== undefined) {
                 throw (
@@ -175,7 +175,7 @@ export default class LayerConfig extends WithContextLoader {
                 let snapToLayers = pr.snapToLayer
                 preciseInput = {
                     snapToLayers,
-                    maxSnapDistance: pr.maxSnapDistance ?? 10
+                    maxSnapDistance: pr.maxSnapDistance ?? 10,
                 }
             }
 
@@ -187,7 +187,7 @@ export default class LayerConfig extends WithContextLoader {
                     `${translationContext}.presets.${i}.description`
                 ),
                 preciseInput: preciseInput,
-                exampleImages: pr.exampleImages
+                exampleImages: pr.exampleImages,
             }
             return config
         })
@@ -293,10 +293,10 @@ export default class LayerConfig extends WithContextLoader {
             this.filters = []
         } else {
             this.filters = (<FilterConfigJson[]>json.filter ?? [])
-                .filter(f => typeof f !== "string")
+                .filter((f) => typeof f !== "string")
                 .map((option, i) => {
-                return new FilterConfig(option, `layers:${this.id}.filter.${i}`)
-            })
+                    return new FilterConfig(option, `layers:${this.id}.filter.${i}`)
+                })
         }
 
         {
@@ -311,7 +311,7 @@ export default class LayerConfig extends WithContextLoader {
         }
 
         this.titleIcons = this.ParseTagRenderings(<TagRenderingConfigJson[]>json.titleIcons ?? [], {
-            readOnlyMode: true
+            readOnlyMode: true,
         })
 
         this.title = this.tr("title", undefined, translationContext)
@@ -412,7 +412,7 @@ export default class LayerConfig extends WithContextLoader {
                     [
                         "<img src='../warning.svg' height='1rem'/>",
                         "This layer is loaded from an external source, namely ",
-                        "`" + this.source.geojsonSource + "`"
+                        "`" + this.source.geojsonSource + "`",
                     ].join("\n\n")
                 )
             }
@@ -428,10 +428,8 @@ export default class LayerConfig extends WithContextLoader {
                 usingLayer = [
                     "## Themes using this layer",
                     MarkdownUtils.list(
-                        (usedInThemes ?? []).map(
-                            (id) => (`[${id}](https://mapcomplete.org/${id})`)
-                        )
-                    )
+                        (usedInThemes ?? []).map((id) => `[${id}](https://mapcomplete.org/${id})`)
+                    ),
                 ]
             } else if (this.source !== null) {
                 usingLayer = ["No themes use this layer"]
@@ -442,45 +440,46 @@ export default class LayerConfig extends WithContextLoader {
             extraProps.push(
                 [
                     "This layer will automatically load ",
-                    (`[${dep.neededLayer}](./${dep.neededLayer}.md)`),
+                    `[${dep.neededLayer}](./${dep.neededLayer}.md)`,
                     " into the layout as it depends on it: ",
                     dep.reason,
-                    "(" + dep.context + ")"
+                    "(" + dep.context + ")",
                 ].join(" ")
             )
         }
 
         for (const revDep of Utils.Dedup(layerIsNeededBy?.get(this.id) ?? [])) {
             extraProps.push(
-                [
-                    "This layer is needed as dependency for layer",
-                    (`[${revDep}](#${revDep})`)
-                ].join(" ")
+                ["This layer is needed as dependency for layer", `[${revDep}](#${revDep})`].join(
+                    " "
+                )
             )
         }
 
         const tableRows: string[][] = Utils.NoNull(
             this.tagRenderings
                 .map((tr) => tr.FreeformValues())
-                .filter(values => values !== undefined)
-                .filter(values => values.key !== "id")
+                .filter((values) => values !== undefined)
+                .filter((values) => values.key !== "id")
                 .map((values) => {
-                    const embedded: (string)[] = values.values?.map((v) =>
+                    const embedded: string[] = values.values?.map((v) =>
                         Link.OsmWiki(values.key, v, true).SetClass("mr-2").AsMarkdown()
                     ) ?? ["_no preset options defined, or no values in them_"]
-                    const statistics = `https://taghistory.raifer.tech/?#***/${encodeURIComponent(values.key)}/`
+                    const statistics = `https://taghistory.raifer.tech/?#***/${encodeURIComponent(
+                        values.key
+                    )}/`
                     const tagInfo = `https://taginfo.openstreetmap.org/keys/${values.key}#values`
                     return [
                         [
                             `<a target="_blank" href='${tagInfo}'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a>`,
                             `<a target="_blank" href='${statistics}'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>`,
 
-                            Link.OsmWiki(values.key).AsMarkdown()
+                            Link.OsmWiki(values.key).AsMarkdown(),
                         ].join(" "),
                         values.type === undefined
                             ? "Multiple choice"
                             : `[${values.type}](../SpecialInputElements.md#${values.type})`,
-                        embedded.join(" ")
+                        embedded.join(" "),
                     ]
                 })
         )
@@ -488,31 +487,30 @@ export default class LayerConfig extends WithContextLoader {
         let quickOverview: string[] = []
         if (tableRows.length > 0) {
             quickOverview = [
-                ("**Warning:**"),
+                "**Warning:**",
                 "this quick overview is incomplete",
                 MarkdownUtils.table(
                     ["attribute", "type", "values which are supported by this layer"],
                     tableRows
-                )
+                ),
             ]
         }
 
         let overpassLink: string = undefined
         if (this.source !== undefined) {
             try {
-                overpassLink = (
+                overpassLink =
                     "[Execute on overpass](" +
                     Overpass.AsOverpassTurboLink(<TagsFilter>this.source.osmTags.optimize())
                         .replaceAll("(", "%28")
-                        .replaceAll(")", "%29")
-                    + ")"
-                )
+                        .replaceAll(")", "%29") +
+                    ")"
             } catch (e) {
                 console.error("Could not generate overpasslink for " + this.id)
             }
         }
 
-        const filterDocs: (string)[] = []
+        const filterDocs: string[] = []
         if (this.filters.length > 0) {
             filterDocs.push("## Filters")
             filterDocs.push(...this.filters.map((filter) => filter.GenerateDocs()))
@@ -538,8 +536,8 @@ export default class LayerConfig extends WithContextLoader {
             } else {
                 tagsDescription.push(
                     "Elements must match the expression **" +
-                    neededTags.asHumanString(true, false, {}) +
-                    "**"
+                        neededTags.asHumanString(true, false, {}) +
+                        "**"
                 )
             }
 
@@ -551,17 +549,21 @@ export default class LayerConfig extends WithContextLoader {
         return [
             [
                 "# " + this.id + "\n",
-                this._basedOn ? `This layer is based on [${this._basedOn}](../Layers/${this._basedOn}.md)` : "",
-                this.description, "\n"].join("\n\n"),
+                this._basedOn
+                    ? `This layer is based on [${this._basedOn}](../Layers/${this._basedOn}.md)`
+                    : "",
+                this.description,
+                "\n",
+            ].join("\n\n"),
             MarkdownUtils.list(extraProps),
             ...usingLayer,
             ...tagsDescription,
             "## Supported attributes",
             quickOverview,
             ...this.tagRenderings
-                .filter(tr => tr.labels.indexOf("ignore_docs") < 0)
+                .filter((tr) => tr.labels.indexOf("ignore_docs") < 0)
                 .map((tr) => tr.GenerateDocumentation()),
-            ...filterDocs
+            ...filterDocs,
         ].join("\n\n")
     }
 

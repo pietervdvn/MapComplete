@@ -25,11 +25,13 @@ export default class FilterConfig {
     public readonly defaultSelection?: number
 
     constructor(json: FilterConfigJson, context: string) {
-        if(typeof json === "string"){
-            throw "Got a non-expanded filter, just a string: "+json
+        if (typeof json === "string") {
+            throw "Got a non-expanded filter, just a string: " + json
         }
         if (json.options === undefined) {
-            throw `A filter without options was given at ${context}. The ID is ${JSON.stringify(json)}`
+            throw `A filter without options was given at ${context}. The ID is ${JSON.stringify(
+                json
+            )}`
         }
         if (json.id === undefined) {
             throw `A filter without id was found at ${context}`
@@ -209,16 +211,16 @@ export default class FilterConfig {
             Utils.NoNull(["id", "question", "osmTags", hasField ? "fields" : undefined]),
             this.options.map((opt, i) => {
                 const isDefault = this.options.length > 1 && (this.defaultSelection ?? 0) == i
-                return <string[]> Utils.NoNull([
-                    this.id + "." + i,
-                    isDefault
-                        ? `*${opt.question.txt}* (default)`
-                        : opt.question,
-                    opt.osmTags?.asHumanString() ?? "",
-                    opt.fields?.length > 0
-                        ? (opt.fields.map((f) => f.name + " (" + f.type + ")")).join(" ")
-                        : undefined,
-                ])
+                return <string[]>(
+                    Utils.NoNull([
+                        this.id + "." + i,
+                        isDefault ? `*${opt.question.txt}* (default)` : opt.question,
+                        opt.osmTags?.asHumanString() ?? "",
+                        opt.fields?.length > 0
+                            ? opt.fields.map((f) => f.name + " (" + f.type + ")").join(" ")
+                            : undefined,
+                    ])
+                )
             })
         )
     }

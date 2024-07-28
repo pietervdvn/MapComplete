@@ -123,7 +123,7 @@
         <div class="h-56 w-full">
           <NewPointLocationInput value={coordinate} {state}>
             <div class="h-20 w-full pb-10" slot="image">
-              <Note class="h-10 w-full"/>
+              <Note class="h-10 w-full" />
             </div>
           </NewPointLocationInput>
         </div>

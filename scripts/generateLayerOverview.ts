@@ -332,7 +332,6 @@ class LayerOverviewUtils extends Script {
             return <QuestionableTagRenderingConfigJson[]>sharedQuestions.tagRenderings
         }
 
-
         return this.getSharedTagRenderings(
             doesImageExist,
             dict,
@@ -807,7 +806,11 @@ class LayerOverviewUtils extends Script {
                         ScriptUtils.ReadSvgSync(themeFile.icon, (svg) => {
                             const width: string = svg["$"].width
                             if (width === undefined) {
-                                throw "The logo at " + themeFile.icon + " does not have a defined width"
+                                throw (
+                                    "The logo at " +
+                                    themeFile.icon +
+                                    " does not have a defined width"
+                                )
                             }
                             const height: string = svg["$"].height
                             const err = themeFile.hideFromOverview ? console.warn : console.error
@@ -818,9 +821,12 @@ class LayerOverviewUtils extends Script {
                                 err(e)
                             }
 
-
                             if (width?.endsWith("%")) {
-                                throw "The logo at " + themeFile.icon + " has a relative width; this is not supported"
+                                throw (
+                                    "The logo at " +
+                                    themeFile.icon +
+                                    " has a relative width; this is not supported"
+                                )
                             }
 
                             const w = parseInt(width)

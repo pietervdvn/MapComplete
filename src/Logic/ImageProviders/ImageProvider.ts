@@ -70,7 +70,10 @@ export default abstract class ImageProvider {
 
     public abstract ExtractUrls(key: string, value: string): Promise<Promise<ProvidedImage>[]>
 
-    public abstract DownloadAttribution(providedImage: {url: string, id: string}): Promise<LicenseInfo>
+    public abstract DownloadAttribution(providedImage: {
+        url: string
+        id: string
+    }): Promise<LicenseInfo>
 
     public abstract apiUrls(): string[]
 }

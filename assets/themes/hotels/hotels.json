@@ -13,7 +13,8 @@
     "es": "Hoteles",
     "eu": "Hotelak",
     "pl": "Hotele",
-    "zh_Hant": "飯店"
+    "zh_Hant": "飯店",
+    "it": "Hotel"
   },
   "description": {
     "en": "On this map, you'll find hotels in your area",
@@ -25,7 +26,8 @@
     "cs": "Na této mapě najdete hotely ve vašem okolí",
     "es": "En este mapa encontrarás hoteles en tu zona",
     "ca": "En aquest mapa trobareu hotels a la vostra zona",
-    "pl": "Na tej mapie znajdziesz hotele w Twojej okolicy"
+    "pl": "Na tej mapie znajdziesz hotele w Twojej okolicy",
+    "it": "Su questa mappa, troverai gli hotel della tua zona"
   },
   "icon": "./assets/layers/hotel/hotel.svg",
   "startZoom": 13,

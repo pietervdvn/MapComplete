@@ -8,7 +8,7 @@
     "ja": "登山地図を開く",
     "zh_Hant": "攀岩館、俱樂部和場所",
     "nb_NO": "Åpent klatrekart",
-    "it": "Mappa aperta per le arrampicate",
+    "it": "Palestre, club e luoghi attrezzati per l'arrampicata",
     "fr": "Escalade : gymnases, clubs et spots",
     "hu": "Mászótérkép",
     "ca": "Gimnasos, clubs i llocs d'escalada",
@@ -349,7 +349,8 @@
               "ca": "Aquesta botiga de reparació de calçat repara sabates d'escalada?",
               "cs": "Opravuje tato opravna obuvy horolezecké boty?",
               "pl": "Czy ten warsztat szewski naprawia buty wspinaczkowe?",
-              "da": "Reparerer denne butik klatresko?"
+              "da": "Reparerer denne butik klatresko?",
+              "it": "Questo negozio ripara scarpe da arrampicata?"
             },
             "mappings": [
               {
@@ -362,7 +363,8 @@
                   "ca": "Aquesta botiga repara sabates d'escalada",
                   "cs": "Tento obchod opravuje lezeckou obuv",
                   "pl": "Ten warsztat naprawia buty wspinaczkowe",
-                  "da": "Denne butik reparerer klatresko"
+                  "da": "Denne butik reparerer klatresko",
+                  "it": "Questo negozio ripara scarpe da arrampicata"
                 }
               },
               {
@@ -375,7 +377,8 @@
                   "ca": "Aquesta botiga no repara sabates d'escalada",
                   "cs": "Tento obchod neopravuje lezeckou obuv",
                   "pl": "Ten warsztat nie naprawia butów wspinaczkowych",
-                  "da": "Denne butik reparerer ikke klatresko"
+                  "da": "Denne butik reparerer ikke klatresko",
+                  "it": "Questo negozio non ripara scarpe da arrampicata"
                 }
               }
             ]
@@ -408,7 +411,8 @@
               "ca": "Aquesta botiga de reparació de calçat també repara sabates d'escalada?",
               "cs": "Opravuje tato opravna obuvy také lezeckou obuv?",
               "pl": "Czy ten warsztat obuwniczy naprawia również buty wspinaczkowe?",
-              "da": "Reparerer denne skomager klatresko?"
+              "da": "Reparerer denne skomager klatresko?",
+              "it": "Questo negozio ripara scarpe da arrampicata?"
             },
             "mappings": [
               {
@@ -421,7 +425,8 @@
                   "ca": "Aquesta botiga repara sabates d'escalada",
                   "cs": "Tento obchod opravuje lezeckou obuv",
                   "pl": "Ten warsztat naprawia buty wspinaczkowe",
-                  "da": "Denne butik reparerer klatresko"
+                  "da": "Denne butik reparerer klatresko",
+                  "it": "Questo negozio ripara scarpe da arrampicata"
                 }
               },
               {
@@ -434,7 +439,8 @@
                   "ca": "Aquesta botiga no repara sabates d'escalada",
                   "cs": "Tento obchod neopravuje lezeckou obuv",
                   "pl": "Ten warsztat nie naprawia butów wspinaczkowych",
-                  "da": "Denne butik reparerer ikke klatresko"
+                  "da": "Denne butik reparerer ikke klatresko",
+                  "it": "Questo negozio non ripara scarpe da arrampicata"
                 }
               }
             ]
@@ -453,7 +459,8 @@
               "ca": "una botiga de reparació de calçat",
               "cs": "opravna bot",
               "pl": "warsztat szewski",
-              "da": "en skomager"
+              "da": "en skomager",
+              "it": "un calzolaio"
             }
           }
         ]

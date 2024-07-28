@@ -10,7 +10,8 @@
     "es": "Máquinas expendedoras",
     "pl": "Automaty sprzedające",
     "zh_Hant": "自動販賣機",
-    "da": "Salgsautomater"
+    "da": "Salgsautomater",
+    "it": "Distributori automatici"
   },
   "description": {
     "en": "Find vending machines for everything",
@@ -20,7 +21,8 @@
     "ca": "Troba màquines expenedores per a tot",
     "cs": "Najít prodejní automaty na vše",
     "es": "Encontrar máquinas expendedoras para todo",
-    "pl": "Znajdź wszelakie automaty sprzedające"
+    "pl": "Znajdź wszelakie automaty sprzedające",
+    "it": "Trova distributori automatici per ogni cosa"
   },
   "icon": "./assets/layers/vending_machine/vending_machine.svg",
   "startZoom": 19,

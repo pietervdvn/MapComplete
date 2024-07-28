@@ -22,7 +22,7 @@ export class Translation extends BaseUIElement {
     constructor(
         translations: string | Record<string, string>,
         context?: string,
-        strictLanguages?: boolean,
+        strictLanguages?: boolean
     ) {
         super()
         this._strictLanguages = strictLanguages
@@ -62,7 +62,7 @@ export class Translation extends BaseUIElement {
                     `. The offending object is: `,
                     translations[translationsKey],
                     "\n    current translations are: ",
-                    translations,
+                    translations
                 )
                 throw (
                     "Error in an object depicting a translation: a non-string object was found. (" +
@@ -75,7 +75,7 @@ export class Translation extends BaseUIElement {
         if (count === 0) {
             console.error(
                 "Constructing a translation, but the object containing translations is empty " +
-                (context ?? "No context given"),
+                    (context ?? "No context given")
             )
         }
     }
@@ -94,7 +94,7 @@ export class Translation extends BaseUIElement {
                 [],
                 (f) => {
                     this.onDestroy = f
-                },
+                }
             )
         }
         return this._currentLanguage
@@ -113,7 +113,7 @@ export class Translation extends BaseUIElement {
 
     static ExtractAllTranslationsFrom(
         object: any,
-        context = "",
+        context = ""
     ): { context: string; tr: Translation }[] {
         const allTranslations: { context: string; tr: Translation }[] = []
         for (const key in object) {
@@ -127,7 +127,7 @@ export class Translation extends BaseUIElement {
             }
             if (typeof v === "object") {
                 allTranslations.push(
-                    ...Translation.ExtractAllTranslationsFrom(v, context + "." + key),
+                    ...Translation.ExtractAllTranslationsFrom(v, context + "." + key)
                 )
             }
         }
@@ -254,7 +254,7 @@ export class Translation extends BaseUIElement {
      */
     public OnEveryLanguage(
         f: (s: string, language: string) => string,
-        context?: string,
+        context?: string
     ): Translation {
         const newTranslations = {}
         for (const lang in this.translations) {
@@ -337,7 +337,7 @@ export class Translation extends BaseUIElement {
                 const htmlElement = document.createElement("div")
                 htmlElement.innerHTML = render
                 const images = Array.from(htmlElement.getElementsByTagName("img")).map(
-                    (img) => img.src,
+                    (img) => img.src
                 )
                 allIcons.push(...images)
             } else {
@@ -350,7 +350,7 @@ export class Translation extends BaseUIElement {
                             .map((img) => img.match(/src=("[^"]+"|'[^']+'|[^/ ]+)/))
                             .filter((match) => match != null)
                             .map((match) =>
-                                match[1].trim().replace(/^['"]/, "").replace(/['"]$/, ""),
+                                match[1].trim().replace(/^['"]/, "").replace(/['"]$/, "")
                             )
                         allIcons.push(...sources)
                     }
@@ -398,7 +398,7 @@ export class TypedTranslation<T extends Record<string, any>> extends Translation
     }
 
     PartialSubs<X extends string>(
-        text: Partial<T> & Record<X, string>,
+        text: Partial<T> & Record<X, string>
     ): TypedTranslation<Omit<T, X>> {
         const newTranslations: Record<string, string> = {}
         for (const lang in this.translations) {
@@ -415,7 +415,7 @@ export class TypedTranslation<T extends Record<string, any>> extends Translation
 
     PartialSubsTr<K extends string>(
         key: string,
-        replaceWith: Translation,
+        replaceWith: Translation
     ): TypedTranslation<Omit<T, K>> {
         const newTranslations: Record<string, string> = {}
         const toSearch = "{" + key + "}"
@@ -434,7 +434,7 @@ export class TypedTranslation<T extends Record<string, any>> extends Translation
         for (const missingLanguage of missingLanguages) {
             newTranslations[missingLanguage] = baseTemplate.replaceAll(
                 toSearch,
-                replaceWith.textFor(missingLanguage),
+                replaceWith.textFor(missingLanguage)
             )
         }
 

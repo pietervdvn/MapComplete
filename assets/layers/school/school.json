@@ -283,66 +283,77 @@
     {
       "id": "pedagogy",
       "question": {
-        "en": "What educational theory is applied on this school?"
+        "en": "What educational theory is applied on this school?",
+        "de": "Welche Bildungstheorie wird auf dieser Schule angewendet?"
       },
       "mappings": [
         {
           "if": "pedagogy=mainstream",
           "then": {
-            "en": "This school does not use a specific pedagogy"
+            "en": "This school does not use a specific pedagogy",
+            "de": "Diese Schule benutzt keine spezifische Pädagogik"
           }
         },
         {
           "if": "pedagogy=montessori",
           "then": {
-            "en": "This school uses the Montessori method of education"
+            "en": "This school uses the Montessori method of education",
+            "de": "Diese Schule nutzt die Montessori Methode der Bildung"
           }
         },
         {
           "if": "pedagogy=freinet",
           "then": {
-            "en": "This school is associated with the Freinet Modern School Movement"
+            "en": "This school is associated with the Freinet Modern School Movement",
+            "de": "Diese Schule ist mit der Freinet Modern School Movement verbunden"
           }
         },
         {
           "if": "pedagogy=jenaplan",
           "then": {
-            "en": "This school uses the Jenaplan teaching concept"
+            "en": "This school uses the Jenaplan teaching concept",
+            "de": "Diese Schule nutzt das Lehrkonzept von Jenaplan"
           }
         },
         {
           "if": "pedagogy=waldorf",
           "then": {
-            "en": "This school uses the Steiner/Waldorf educational philosophy"
+            "en": "This school uses the Steiner/Waldorf educational philosophy",
+            "de": "Diese Schule nutzt die Steiner/Waldorfer Bildungsphilosophie"
           }
         },
         {
           "if": "pedagogy=dalton",
           "then": {
-            "en": "This school uses the Dalton plan teaching concept"
+            "en": "This school uses the Dalton plan teaching concept",
+            "de": "Diese Schule nutzt das Dalton Plan Lehrkonzept"
           }
         },
         {
           "if": "pedagogy=outdoor",
           "then": {
-            "en": "This school uses outdoor learning"
+            "en": "This school uses outdoor learning",
+            "de": "Diese Schule nutzt Outdoor-Lernen"
           }
         },
         {
           "if": "pedagogy=reggio_emilia",
           "then": {
-            "en": "This school uses the Reggio Emilia approach"
+            "en": "This school uses the Reggio Emilia approach",
+            "de": "Diese Schule nutzt den Reggio Emilia-Ansatz"
           }
         },
         {
           "if": "pedagogy=sudbury",
           "then": {
-            "en": "This school uses the Sudbury system"
+            "en": "This school uses the Sudbury system",
+            "de": "Diese Schule nutzt das Sudbury-System"
           }
         }
       ],
       "render": {
-        "en": "This school uses {pedagogy}"
+        "en": "This school uses {pedagogy}",
+        "de": "Diese Schule benutzt {pedagogy}"
       },
       "freeform": {
         "key": "pedagogy"

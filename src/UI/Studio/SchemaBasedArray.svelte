@@ -99,13 +99,18 @@
 
   function genTitle(value: any, singular: string, i: number): Translation {
     try {
-
       if (schema.hints.title) {
         const v = Function("value", "return " + schema.hints.title)(value)
         return Translations.T(v)
       }
     } catch (e) {
-      console.log("Warning: could not translate a title for " + `${singular} ${i} with function ` + schema.hints.title + " and value " + JSON.stringify(value))
+      console.log(
+        "Warning: could not translate a title for " +
+          `${singular} ${i} with function ` +
+          schema.hints.title +
+          " and value " +
+          JSON.stringify(value)
+      )
     }
     return Translations.T(`${singular} ${i}`)
   }

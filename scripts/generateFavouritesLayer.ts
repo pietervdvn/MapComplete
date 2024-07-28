@@ -73,9 +73,13 @@ export class GenerateFavouritesLayer extends Script {
     }
 
     private addTagRenderings(proto: LayerConfigJson) {
-        const addedByDefault = (<{labels: string[], id: string}[]> questions.tagRenderings)
-            .filter(tr => tr?.["labels"]?.indexOf("added_by_default") > 0 || tr?.["labels"]?.indexOf("added_by_default_top") > 0 )
-            .map(tr => tr.id)
+        const addedByDefault = (<{ labels: string[]; id: string }[]>questions.tagRenderings)
+            .filter(
+                (tr) =>
+                    tr?.["labels"]?.indexOf("added_by_default") > 0 ||
+                    tr?.["labels"]?.indexOf("added_by_default_top") > 0
+            )
+            .map((tr) => tr.id)
         const blacklistedIds = new Set([
             "images",
             "questions",
@@ -87,7 +91,7 @@ export class GenerateFavouritesLayer extends Script {
             "delete-button",
             "all-tags",
             "all_tags",
-                ...addedByDefault
+            ...addedByDefault,
         ])
 
         const generatedTagRenderings: (string | QuestionableTagRenderingConfigJson)[] = []
@@ -236,8 +240,8 @@ export class GenerateFavouritesLayer extends Script {
                 if (seenTitleIcons.has(titleIcon.id)) {
                     continue
                 }
-                if(titleIcon.id === undefined){
-                   continue
+                if (titleIcon.id === undefined) {
+                    continue
                 }
                 seenTitleIcons.add(titleIcon.id)
                 console.log("Adding title icon", titleIcon.id)

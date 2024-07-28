@@ -71,8 +71,8 @@ class SubstituteLayer extends Conversion<string | LayerConfigJson, LayerConfigJs
 
         for (const name of names) {
             const found = Utils.Clone(state.sharedLayers.get(name))
-            if(found === undefined){
-                context.err("Layer with name "+name+" not found")
+            if (found === undefined) {
+                context.err("Layer with name " + name + " not found")
                 continue
             }
             found["_basedOn"] = name
@@ -393,7 +393,6 @@ class AddDependencyLayersToTheme extends DesugaringStep<LayoutConfigJson> {
             }[] = []
 
             for (const layerConfig of alreadyLoaded) {
-
                 try {
                     const layerDeps = DependencyCalculator.getLayerDependencies(
                         new LayerConfig(layerConfig, themeId + "(dependencies)")
@@ -402,7 +401,10 @@ class AddDependencyLayersToTheme extends DesugaringStep<LayoutConfigJson> {
                 } catch (e) {
                     console.error(e)
                     throw (
-                        "Detecting layer dependencies for " + layerConfig?.id + " failed due to " + e
+                        "Detecting layer dependencies for " +
+                        layerConfig?.id +
+                        " failed due to " +
+                        e
                     )
                 }
             }

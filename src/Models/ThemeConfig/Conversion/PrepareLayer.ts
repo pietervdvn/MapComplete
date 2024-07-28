@@ -7,10 +7,13 @@ import {
     FirstOf,
     Fuse,
     On,
-    SetDefault
+    SetDefault,
 } from "./Conversion"
 import { LayerConfigJson } from "../Json/LayerConfigJson"
-import { MinimalTagRenderingConfigJson, TagRenderingConfigJson } from "../Json/TagRenderingConfigJson"
+import {
+    MinimalTagRenderingConfigJson,
+    TagRenderingConfigJson,
+} from "../Json/TagRenderingConfigJson"
 import { Utils } from "../../../Utils"
 import RewritableConfigJson from "../Json/RewritableConfigJson"
 import SpecialVisualizations from "../../../UI/SpecialVisualizations"
@@ -63,24 +66,27 @@ class ExpandFilter extends DesugaringStep<LayerConfigJson> {
         const newFilters: FilterConfigJson[] = []
         const filters = <(FilterConfigJson | string)[]>json.filter
 
-        for (let i = 0; i < json.tagRenderings?.length; i++){
-            const tagRendering = <TagRenderingConfigJson> json.tagRenderings[i]
-            if(!tagRendering?.filter){
+        for (let i = 0; i < json.tagRenderings?.length; i++) {
+            const tagRendering = <TagRenderingConfigJson>json.tagRenderings[i]
+            if (!tagRendering?.filter) {
                 continue
             }
             for (const filterName of tagRendering.filter ?? []) {
-                if(typeof filterName !== "string"){
-                    context.enters("tagRenderings",i,"filter").err("Not a string: "+ filterName)
+                if (typeof filterName !== "string") {
+                    context.enters("tagRenderings", i, "filter").err("Not a string: " + filterName)
                 }
-                const exists = filters.some(existing => {
-                    const id : string =  existing["id"] ?? existing
-                    return filterName === id || (filterName.startsWith("filters.") && filterName.endsWith("."+id))
+                const exists = filters.some((existing) => {
+                    const id: string = existing["id"] ?? existing
+                    return (
+                        filterName === id ||
+                        (filterName.startsWith("filters.") && filterName.endsWith("." + id))
+                    )
                 })
-                if(exists){
+                if (exists) {
                     continue
                 }
-                if(!filterName){
-                    context.err("Got undefined as filter expansion in "+tagRendering["id"])
+                if (!filterName) {
+                    context.err("Got undefined as filter expansion in " + tagRendering["id"])
                     continue
                 }
                 filters.push(filterName)
@@ -89,7 +95,7 @@ class ExpandFilter extends DesugaringStep<LayerConfigJson> {
 
         for (let i = 0; i < filters.length; i++) {
             const filter = filters[i]
-            if(filter === undefined){
+            if (filter === undefined) {
                 continue
             }
             if (typeof filter !== "string") {
@@ -141,9 +147,9 @@ class ExpandFilter extends DesugaringStep<LayerConfigJson> {
                     const expandedFilter = (<(FilterConfigJson | string)[]>layer.filter).find(
                         (f) => typeof f !== "string" && f.id === expectedId
                     )
-                    if(expandedFilter === undefined){
-                        context.err("Did not find filter with name "+filter)
-                    }else{
+                    if (expandedFilter === undefined) {
+                        context.err("Did not find filter with name " + filter)
+                    } else {
                         newFilters.push(<FilterConfigJson>expandedFilter)
                     }
                 } else {
@@ -644,7 +650,6 @@ export class AddQuestionBox extends DesugaringStep<LayerConfigJson> {
 }
 
 export class AddEditingElements extends DesugaringStep<LayerConfigJson> {
-
     private readonly _desugaring: DesugaringContext
     private readonly _addedByDefaultAtTop: QuestionableTagRenderingConfigJson[]
     private readonly _addedByDefault: QuestionableTagRenderingConfigJson[]
@@ -668,7 +673,6 @@ export class AddEditingElements extends DesugaringStep<LayerConfigJson> {
         const idsInOrder = this._desugaring.tagRenderingOrder?.filter((id) => ids.has(id)) ?? []
         return Utils.NoNull(idsInOrder.map((id) => this._desugaring.tagRenderings.get(id)))
     }
-
 
     convert(json: LayerConfigJson, _: ConversionContext): LayerConfigJson {
         if (this._desugaring.tagRenderings === null) {
@@ -734,7 +738,7 @@ export class AddEditingElements extends DesugaringStep<LayerConfigJson> {
             const trc: QuestionableTagRenderingConfigJson = {
                 id: "all-tags",
                 render: { "*": "{all_tags()}" },
-                labels:["ignore_docs"],
+                labels: ["ignore_docs"],
                 metacondition: {
                     or: [
                         "__featureSwitchIsDebugging=true",

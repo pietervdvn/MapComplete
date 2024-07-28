@@ -1773,7 +1773,7 @@ export class ValidateFilter extends DesugaringStep<FilterConfigJson> {
             // Calling another filter, we skip
             return filter
         }
-        if(filter === undefined){
+        if (filter === undefined) {
             context.err("Trying to validate a filter, but this filter is undefined")
             return undefined
         }
@@ -2002,7 +2002,7 @@ export class ValidateThemeEnsemble extends Conversion<
         >()
 
         for (const theme of json) {
-            if(theme.id === "personal"){
+            if (theme.id === "personal") {
                 continue
             }
             for (const layer of theme.layers) {

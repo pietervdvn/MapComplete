@@ -31,7 +31,8 @@
     "pa_PK": "ڈاک کوڈ",
     "cs": "Poštovní směrovací čísla",
     "zh_Hant": "郵遞區號",
-    "pl": "Kody pocztowe"
+    "pl": "Kody pocztowe",
+    "it": "Codici postali"
   },
   "shortDescription": {
     "en": "Postal codes",
@@ -69,7 +70,8 @@
         "pa_PK": "ڈاک کوڈ",
         "cs": "poštovní směrovací čísla",
         "zh_Hant": "郵遞區號",
-        "pl": "kody pocztowe"
+        "pl": "kody pocztowe",
+        "it": "codici postali"
       },
       "minzoom": 8,
       "title": {
@@ -86,7 +88,8 @@
           "ca": "Codi postal {postal_code}",
           "cs": "Poštovní směrovací číslo {postal_code}",
           "zh_Hant": "郵遞區號 {postal_code}",
-          "pl": "Kod pocztowy {postal_code}"
+          "pl": "Kod pocztowy {postal_code}",
+          "it": "Codice postale {postal_code}"
         }
       },
       "description": {},
@@ -106,7 +109,8 @@
             "ca": "El codi postal és {postal_code}",
             "cs": "Poštovní směrovací číslo je {postal_code}",
             "zh_Hant": "郵遞區號是 {postal_code}",
-            "pl": "Kod pocztowy to {postal_code}"
+            "pl": "Kod pocztowy to {postal_code}",
+            "it": "Ilcodice postale è {postal_code}"
           }
         }
       ],
@@ -176,7 +180,8 @@
         "es": "Municipios",
         "cs": "radnice",
         "zh_Hant": "城鎮",
-        "pl": "ratusz"
+        "pl": "ratusz",
+        "it": "municipi"
       },
       "minzoom": 12,
       "title": {
@@ -193,7 +198,8 @@
           "es": "Municipio {name}",
           "cs": "Radnice {name}",
           "zh_Hant": "城鎮 {name}",
-          "pl": "Ratusz {name}"
+          "pl": "Ratusz {name}",
+          "it": "Municipio {name}"
         }
       },
       "calculatedTags": [

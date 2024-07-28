@@ -57,9 +57,7 @@ export class LastClickFeatureSource implements FeatureSource {
         this._features = new UIEventSource<Feature[]>([])
         this.features = this._features
         clickSource.addCallbackAndRunD(({ lon, lat, mode }) => {
-            this._features.setData([
-                this.createFeature(lon, lat, mode)
-            ])
+            this._features.setData([this.createFeature(lon, lat, mode)])
         })
     }
 

@@ -521,12 +521,14 @@ export class ExtraFunctions {
     public static HelpText(): string {
         const elems: string[] = []
         for (const func of ExtraFunctions.allFuncs) {
-            elems.push("### "+func._name, func._doc, MarkdownUtils.list(func._args))
+            elems.push("### " + func._name, func._doc, MarkdownUtils.list(func._args))
         }
 
         return [
             ExtraFunctions.intro,
-            MarkdownUtils.list(ExtraFunctions.allFuncs.map((func) => `[${func._name}](#${func._name})`)),
+            MarkdownUtils.list(
+                ExtraFunctions.allFuncs.map((func) => `[${func._name}](#${func._name})`)
+            ),
             ...elems,
         ].join("\n")
     }

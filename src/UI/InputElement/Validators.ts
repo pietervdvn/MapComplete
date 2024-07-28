@@ -100,9 +100,10 @@ export default class Validators {
     private static _byType = Validators._byTypeConstructor()
 
     public static HelpText(): string {
-        const explanations: string[] = Validators.AllValidators.flatMap((type) =>
-            ["### "+type.name, type.explanation]
-        )
+        const explanations: string[] = Validators.AllValidators.flatMap((type) => [
+            "### " + type.name,
+            type.explanation,
+        ])
         return [
             "# Available types for text fields",
             "The listed types here trigger a special input element. Use them in `tagrendering.freeform.type` of your tagrendering to activate them",

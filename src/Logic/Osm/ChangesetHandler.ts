@@ -94,7 +94,6 @@ export class ChangesetHandler {
         return hasChange
     }
 
-
     /**
      * The full logic to upload a change to one or more elements.
      *
@@ -155,7 +154,11 @@ export class ChangesetHandler {
                 if (this._reportError) {
                     this._reportError(e)
                 }
-                console.warn("Could not open/upload changeset due to ", e, "trying again with a another fresh changeset ")
+                console.warn(
+                    "Could not open/upload changeset due to ",
+                    e,
+                    "trying again with a another fresh changeset "
+                )
                 openChangeset.setData(undefined)
 
                 throw e
@@ -188,7 +191,12 @@ export class ChangesetHandler {
                 await this.UpdateTags(csId, rewrittenTags)
             } catch (e) {
                 if (this._reportError) {
-                    this._reportError("Could not reuse changeset " + csId + ", might be closed: " + (e.stacktrace ?? ("" + e)))
+                    this._reportError(
+                        "Could not reuse changeset " +
+                            csId +
+                            ", might be closed: " +
+                            (e.stacktrace ?? "" + e)
+                    )
                 }
                 console.warn("Could not upload, changeset is probably closed: ", e)
                 openChangeset.setData(undefined)
@@ -237,7 +245,7 @@ export class ChangesetHandler {
             if (newMetaTag === undefined) {
                 extraMetaTags.push({
                     key: key,
-                    value: oldCsTags[key]
+                    value: oldCsTags[key],
                 })
                 continue
             }
@@ -374,11 +382,11 @@ export class ChangesetHandler {
             ["locale", Locale.language.data],
             ["host", `${window.location.origin}${window.location.pathname}`],
             ["source", setSourceAsSurvey ? "survey" : undefined],
-            ["imagery", this.changes.state["backgroundLayer"]?.data?.id]
+            ["imagery", this.changes.state["backgroundLayer"]?.data?.id],
         ].map(([key, value]) => ({
             key,
             value,
-            aggregate: false
+            aggregate: false,
         }))
     }
 

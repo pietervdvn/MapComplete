@@ -35,6 +35,7 @@ Available languages:
  - it
  - pl
  - da
+ - zh_Hans
 
 
 # Table of contents

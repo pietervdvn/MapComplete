@@ -83,8 +83,8 @@ export class WikimediaImageProvider extends ImageProvider {
     public PrepUrl(value: undefined): undefined
 
     public PrepUrl(value: string): ProvidedImage
-    public PrepUrl(value: string | undefined): ProvidedImage | undefined{
-        if(value === undefined){
+    public PrepUrl(value: string | undefined): ProvidedImage | undefined {
+        if (value === undefined) {
             return undefined
         }
         value = WikimediaImageProvider.removeCommonsPrefix(value)
@@ -121,7 +121,7 @@ export class WikimediaImageProvider extends ImageProvider {
         return [Promise.resolve(this.UrlForImage("File:" + value))]
     }
 
-    public async DownloadAttribution(img: {url: string}): Promise<LicenseInfo> {
+    public async DownloadAttribution(img: { url: string }): Promise<LicenseInfo> {
         const filename = WikimediaImageProvider.ExtractFileName(img.url)
 
         if (filename === "") {

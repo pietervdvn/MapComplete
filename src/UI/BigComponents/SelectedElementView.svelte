@@ -20,7 +20,9 @@
     selectedElement.properties.id
   )
 
-  let isAddNew = tags.mapD(t => t?.id?.startsWith(LastClickFeatureSource.newPointElementId) ?? false)
+  let isAddNew = tags.mapD(
+    (t) => t?.id?.startsWith(LastClickFeatureSource.newPointElementId) ?? false
+  )
 
 
   export let layer: LayerConfig
@@ -59,7 +61,6 @@
     class="selected-element-view flex h-full w-full flex-col gap-y-1 overflow-y-auto"
     class:p1={!$isAddNew}
     class:px-4={!$isAddNew}
-
     tabindex="-1"
   >
     {#each $knownTagRenderings as config (config.id)}

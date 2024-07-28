@@ -9,7 +9,6 @@ import { Utils } from "../../Utils"
 import { Point } from "geojson"
 import MvtSource from "../FeatureSource/Sources/MvtSource"
 import AllImageProviders from "../ImageProviders/AllImageProviders"
-import { contains } from "@rgossiaux/svelte-headlessui/internal/dom-containers"
 
 interface ImageFetcher {
     /**
@@ -20,14 +19,15 @@ interface ImageFetcher {
     fetchImages(lat: number, lon: number): Promise<P4CPicture[]>
 
     readonly name: string
-
 }
-
 
 class CachedFetcher implements ImageFetcher {
     private readonly _fetcher: ImageFetcher
     private readonly _zoomlevel: number
-    private readonly cache: Map<number, Promise<P4CPicture[]>> = new Map<number, Promise<P4CPicture[]>>()
+    private readonly cache: Map<number, Promise<P4CPicture[]>> = new Map<
+        number,
+        Promise<P4CPicture[]>
+    >()
     public readonly name: string
 
     constructor(fetcher: ImageFetcher, zoomlevel: number = 19) {
@@ -74,20 +74,17 @@ class NearbyImageUtils {
             const da = GeoOperations.distanceBetween([a.coordinates.lng, a.coordinates.lat], c)
             const db = GeoOperations.distanceBetween([b.coordinates.lng, b.coordinates.lat], c)
             return da - db
-
         })
     }
 }
 
-
 class P4CImageFetcher implements ImageFetcher {
-
     public static readonly services = ["mapillary", "flickr", "kartaview", "wikicommons"] as const
     public static readonly apiUrls = ["https://api.flickr.com"]
-    private _options: { maxDaysOld: number, searchRadius: number }
+    private _options: { maxDaysOld: number; searchRadius: number }
     public readonly name: P4CService
 
-    constructor(service: P4CService, options?: { maxDaysOld: number, searchRadius: number }) {
+    constructor(service: P4CService, options?: { maxDaysOld: number; searchRadius: number }) {
         this.name = service
         this._options = options
     }
@@ -98,14 +95,12 @@ class P4CImageFetcher implements ImageFetcher {
         const searchRadius = this._options?.searchRadius ?? 100
 
         try {
-
             return await picManager.startPicsRetrievalAround(
                 new P4C.LatLng(lat, lon),
                 searchRadius,
                 {
                     mindate: new Date().getTime() - maxAgeSeconds,
-                    towardscenter: false
-
+                    towardscenter: false,
                 }
             )
         } catch (e) {
@@ -113,7 +108,6 @@ class P4CImageFetcher implements ImageFetcher {
             throw e
         }
     }
-
 }
 
 /**
@@ -256,7 +250,6 @@ class ImagesFromCacheServerFetcher implements ImageFetcher {
 }
 
 class MapillaryFetcher implements ImageFetcher {
-
     public readonly name = "mapillary_new"
     private readonly _panoramas: "only" | "no" | undefined
     private readonly _max_images: 100 | number
@@ -265,9 +258,9 @@ class MapillaryFetcher implements ImageFetcher {
     private readonly end_captured_at?: Date
 
     constructor(options?: {
-        panoramas: undefined | "only" | "no",
-        max_images?: 100 | number,
-        start_captured_at?: Date,
+        panoramas: undefined | "only" | "no"
+        max_images?: 100 | number
+        start_captured_at?: Date
         end_captured_at?: Date
     }) {
         this._panoramas = options?.panoramas
@@ -277,12 +270,19 @@ class MapillaryFetcher implements ImageFetcher {
     }
 
     async fetchImages(lat: number, lon: number): Promise<P4CPicture[]> {
-
         const boundingBox = new BBox([[lon, lat]]).padAbsolute(0.003)
-        let url = "https://graph.mapillary.com/images?fields=computed_geometry,creator,id,thumb_256_url,thumb_original_url,compass_angle&bbox="
-            + [boundingBox.getWest(), boundingBox.getSouth(), boundingBox.getEast(), boundingBox.getNorth()].join(",")
-            + "&access_token=" + encodeURIComponent(Constants.mapillary_client_token_v4)
-            + "&limit=" + this._max_images
+        let url =
+            "https://graph.mapillary.com/images?fields=computed_geometry,creator,id,thumb_256_url,thumb_original_url,compass_angle&bbox=" +
+            [
+                boundingBox.getWest(),
+                boundingBox.getSouth(),
+                boundingBox.getEast(),
+                boundingBox.getNorth(),
+            ].join(",") +
+            "&access_token=" +
+            encodeURIComponent(Constants.mapillary_client_token_v4) +
+            "&limit=" +
+            this._max_images
         {
             if (this._panoramas === "no") {
                 url += "&is_pano=false"
@@ -310,7 +310,6 @@ class MapillaryFetcher implements ImageFetcher {
         }>(url)
         const pics: P4CPicture[] = []
         for (const img of response.data) {
-
             const c = img.computed_geometry.coordinates
             if (img.thumb_original_url === undefined) {
                 continue
@@ -321,7 +320,7 @@ class MapillaryFetcher implements ImageFetcher {
                 coordinates: { lng: c[0], lat: c[1] },
                 thumbUrl: img.thumb_256_url,
                 osmTags: {
-                    "mapillary": img.id
+                    mapillary: img.id,
                 },
                 details: {
                     isSpherical: img.is_pano
@@ -337,7 +336,6 @@ type P4CService = (typeof P4CImageFetcher.services)[number]
 export class CombinedFetcher {
     private readonly sources: ReadonlyArray<CachedFetcher>
     public static apiUrls = P4CImageFetcher.apiUrls
-
 
     constructor(radius: number, maxage: Date, indexedFeatures: IndexedFeatureSource) {
         this.sources = [
@@ -398,6 +396,4 @@ export class CombinedFetcher {
         }
         return { images: sink, state }
     }
-
 }
-

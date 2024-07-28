@@ -17,14 +17,12 @@ export default class QueryParameterDocumentation {
         '"URL-parameters are extra parts of the URL used to set the state.',
         "For example, if the url is `https://mapcomplete.org/cyclofix?lat=51.0&lon=4.3&z=5&test=true#node/1234`, " +
             "the URL-parameters are stated in the part between the `?` and the `#`. There are multiple, all separated by `&`, namely: ",
-        MarkdownUtils.list(
-            [
-                "The url-parameter `lat` is `51.0` in this instance",
-                "The url-parameter `lon` is `4.3` in this instance",
-                "The url-parameter `z` is `5` in this instance",
-                "The url-parameter `test` is `true` in this instance",
-            ]
-        ),
+        MarkdownUtils.list([
+            "The url-parameter `lat` is `51.0` in this instance",
+            "The url-parameter `lon` is `4.3` in this instance",
+            "The url-parameter `z` is `5` in this instance",
+            "The url-parameter `test` is `true` in this instance",
+        ]),
         "Finally, the URL-hash is the part after the `#`. It is `node/1234` in this case.",
     ]
 
@@ -72,7 +70,7 @@ export default class QueryParameterDocumentation {
         ]
         this.UrlParamDocs().forEach((value, key) => {
             const c = [
-                "## "+key,
+                "## " + key,
                 value,
                 QueryParameters.defaults[key] === undefined
                     ? "No default value set"

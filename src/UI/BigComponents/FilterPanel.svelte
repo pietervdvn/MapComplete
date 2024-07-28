@@ -84,5 +84,3 @@
     {/each}
 
 </TitledPanel>
-
-

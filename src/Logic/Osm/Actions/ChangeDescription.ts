@@ -203,6 +203,6 @@ export class ChangeDescriptionTools {
         changes: ChangeDescription[],
         mappings: Map<string, string>
     ): ChangeDescription[] {
-        return changes.map(c =>ChangeDescriptionTools.rewriteIds(c, mappings))
+        return changes.map((c) => ChangeDescriptionTools.rewriteIds(c, mappings))
     }
 }

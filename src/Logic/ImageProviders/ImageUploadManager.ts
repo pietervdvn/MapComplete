@@ -129,8 +129,6 @@ export class ImageUploadManager {
             tags?.data?.["_orig_theme"]
         )
 
-
-
         if (!action) {
             return
         }

@@ -22,7 +22,8 @@
     "cs": "Na této mapě jsou zobrazena veřejně přístupná místa pro vozíčkáře, a lze je také snadno přidat",
     "es": "En este mapa se muestran los lugares accesibles al público en silla de ruedas, que pueden añadirse fácilmente",
     "ca": "En aquest mapa, es mostren llocs públics accessibles per a cadira de rodes i es poden afegir fàcilment",
-    "pl": "Na tej mapie pokazane są miejsca publicznie dostępne dla wózków inwalidzkich, które można łatwo dodać"
+    "pl": "Na tej mapie pokazane są miejsca publicznie dostępne dla wózków inwalidzkich, które można łatwo dodać",
+    "it": "Su questa mappa sono indicati i luoghi pubblici accessibili con sedia a rotelle e possono essere facilmente aggiunti"
   },
   "icon": "./assets/themes/onwheels/crest.svg",
   "startZoom": 17,
@@ -280,7 +281,8 @@
           "es": "Plazas de aparcamiento para discapacitados",
           "ca": "Places d'aparcament per a minusvàlids",
           "pl": "Miejsca parkingowe dla niepełnosprawnych",
-          "da": "Handikapparkeringspladser"
+          "da": "Handikapparkeringspladser",
+          "it": "Parcheggi per disabili"
         }
       },
       "hideTagRenderingsWithLabels": [
@@ -484,7 +486,8 @@
             "es": "Estadísticas",
             "eu": "Estatistika",
             "pl": "Statystyki",
-            "zh_Hant": "統計數據"
+            "zh_Hant": "統計數據",
+            "it": "Statistiche"
           }
         },
         "tagRenderings+": [

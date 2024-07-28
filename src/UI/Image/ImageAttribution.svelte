@@ -8,7 +8,7 @@
   /**
    * A small element showing the attribution of a single image
    */
-  export let image: Partial<ProvidedImage> & {id: string, url: string}
+  export let image: Partial<ProvidedImage> & { id: string; url: string }
   let license: Store<LicenseInfo> = UIEventSource.FromPromise(
     image.provider?.DownloadAttribution(image)
   )
@@ -16,9 +16,9 @@
 </script>
 
 {#if $license !== undefined}
-  <div class="no-images flex rounded-lg bg-black p-0.5 pl-3 pr-3 text-sm text-white items-center">
+  <div class="no-images flex items-center rounded-lg bg-black p-0.5 pl-3 pr-3 text-sm text-white">
     {#if icon !== undefined}
-      <div class="w-6 h-6 mr-2">
+      <div class="mr-2 h-6 w-6">
         <ToSvelte construct={icon} />
       </div>
     {/if}

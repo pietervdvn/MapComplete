@@ -10,13 +10,14 @@
   export let wikidataId: Store<string>
   export let imageStyle: string = undefined
 
-  let wikidata: Store<{ success: WikidataResponse } | { error: any }> = wikidataId.stabilized(100).bind((id) => {
-    if (id === undefined || id === "" || id === "Q") {
-      return null
-    }
-    return Wikidata.LoadWikidataEntry(id)
-  })
-
+  let wikidata: Store<{ success: WikidataResponse } | { error: any }> = wikidataId
+    .stabilized(100)
+    .bind((id) => {
+      if (id === undefined || id === "" || id === "Q") {
+        return null
+      }
+      return Wikidata.LoadWikidataEntry(id)
+    })
 </script>
 
 {#if $wikidata === undefined}
@@ -28,7 +29,6 @@
     {$wikidata["error"]}
   </div>
 {:else}
-
   <Wikidatapreview {imageStyle} wikidata={$wikidata["success"]}>
     <slot name="extra" slot="extra" />
   </Wikidatapreview>

@@ -96,6 +96,10 @@
         "shortDescription": "Un mapa de bancos",
         "title": "Bancos"
     },
+    "bicycle_parkings": {
+        "description": "Un mapa que muestra todos los tipos de aparcamientos de bicicletas",
+        "title": "Aparcamiento de bicicletas"
+    },
     "bicycle_rental": {
         "description": "En este mapa, encontrará las numerosas estaciones de alquiler de bicicletas tal y como las conoce OpenStreetMap",
         "shortDescription": "Un mapa con estaciones de alquiler de bicicletas y tiendas de alquiler de bicicletas",
@@ -687,7 +691,7 @@
             }
         },
         "shortDescription": "¿Cual es el origen de un topónimo?",
-        "title": "Etimología - a qué se debe el nombre de una calle?"
+        "title": "Etimología: ¿De qué recibe el nombre un lugar?"
     },
     "facadegardens": {
         "description": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>Los jardines de fachada</a>, las fachadas verdes y los árboles en la ciudad no sólo aportan paz y tranquilidad, sino también una ciudad más bella, una mayor biodiversidad, un efecto refrescante y una mejor calidad del aire. <br/> Klimaan VZW y Mechelen Klimaatneutraal quieren trazar un mapa de los jardines de fachada existentes y nuevos como ejemplo para las personas que quieran construir su propio jardín o para los paseantes urbanos amantes de la naturaleza. <br/>Más información sobre el proyecto en <a href='https://klimaan.be/' target=_blank>klimaan.be</a>.",
@@ -828,6 +832,25 @@
                         },
                         "question": "¿Para qué negocio se hizo este cartel?",
                         "render": "Este cartel se hizo para: {brand}"
+                    },
+                    "historic": {
+                        "mappings": {
+                            "0": {
+                                "then": "Esta es una señal fantasma"
+                            },
+                            "1": {
+                                "then": "Esta no es una señal fantasma, al responder esto se ocultará la señal del mapa"
+                            }
+                        },
+                        "question": "¿Es esto una señal fantasma?",
+                        "questionHint": "¿Este cartel es para una empresa que ya no existe o que ya no recibe mantenimiento?"
+                    },
+                    "inscription": {
+                        "freeform": {
+                            "placeholder": "Texto en el cartel"
+                        },
+                        "question": "¿Cuál es el texto del cartel?",
+                        "render": "El texto del cartel es: {inscription}"
                     }
                 }
             }

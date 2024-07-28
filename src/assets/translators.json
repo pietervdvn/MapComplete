@@ -1,7 +1,7 @@
 {
   "contributors": [
     {
-      "commits": 382,
+      "commits": 387,
       "contributor": "Pieter Vander Vennet"
     },
     {
@@ -21,11 +21,11 @@
       "contributor": "Robin van der Linde"
     },
     {
-      "commits": 70,
+      "commits": 72,
       "contributor": "mcliquid"
     },
     {
-      "commits": 61,
+      "commits": 63,
       "contributor": "danieldegroot2"
     },
     {
@@ -69,8 +69,12 @@
       "contributor": "Marco"
     },
     {
-      "commits": 18,
+      "commits": 20,
       "contributor": "gallegonovato"
+    },
+    {
+      "commits": 18,
+      "contributor": "Patchanka64"
     },
     {
       "commits": 18,
@@ -83,10 +87,6 @@
     {
       "commits": 18,
       "contributor": "el_libre como el chaval"
-    },
-    {
-      "commits": 15,
-      "contributor": "Patchanka64"
     },
     {
       "commits": 15,
@@ -118,6 +118,10 @@
     },
     {
       "commits": 12,
+      "contributor": "hugoalh"
+    },
+    {
+      "commits": 12,
       "contributor": "Ettore Atalan"
     },
     {
@@ -126,15 +130,15 @@
     },
     {
       "commits": 11,
+      "contributor": "Manuel Tassi"
+    },
+    {
+      "commits": 11,
       "contributor": "Jaime Marquínez Ferrándiz"
     },
     {
       "commits": 11,
       "contributor": "Túllio Franca"
-    },
-    {
-      "commits": 10,
-      "contributor": "Manuel Tassi"
     },
     {
       "commits": 10,
@@ -162,7 +166,7 @@
     },
     {
       "commits": 9,
-      "contributor": "hugoalh"
+      "contributor": "Jeff Huang"
     },
     {
       "commits": 9,
@@ -190,15 +194,15 @@
     },
     {
       "commits": 8,
-      "contributor": "Jeff Huang"
-    },
-    {
-      "commits": 8,
       "contributor": "Krzysztof Chorzempa"
     },
     {
       "commits": 8,
       "contributor": "Vinicius"
+    },
+    {
+      "commits": 7,
+      "contributor": "Franco"
     },
     {
       "commits": 7,
@@ -255,10 +259,6 @@
     {
       "commits": 6,
       "contributor": "lvgx"
-    },
-    {
-      "commits": 5,
-      "contributor": "Franco"
     },
     {
       "commits": 5,
@@ -402,6 +402,10 @@
     },
     {
       "commits": 2,
+      "contributor": "Beardhatcode"
+    },
+    {
+      "commits": 2,
       "contributor": "yhr"
     },
     {
@@ -515,6 +519,10 @@
     {
       "commits": 2,
       "contributor": "Leo Alcaraz"
+    },
+    {
+      "commits": 1,
+      "contributor": "Onnar Rick"
     },
     {
       "commits": 1,
@@ -635,10 +643,6 @@
     {
       "commits": 1,
       "contributor": "Iváns"
-    },
-    {
-      "commits": 1,
-      "contributor": "Beardhatcode"
     },
     {
       "commits": 1,

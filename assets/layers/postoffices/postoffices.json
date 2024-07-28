@@ -439,7 +439,8 @@
             "en": "You can pick up missed parcels here",
             "de": "Hier können Sie verpasste Pakete abholen",
             "ca": "Podeu recollir els paquets perduts aquí",
-            "cs": "Zmeškané zásilky si můžete vyzvednout zde"
+            "cs": "Zmeškané zásilky si můžete vyzvednout zde",
+            "nl": "Je kunt hier gemiste pakjes ophalen"
           }
         },
         {
@@ -463,7 +464,8 @@
       "question": {
         "en": "Can you send parcels to here for pickup?",
         "de": "Können Sie Pakete zur Abholung hierher schicken?",
-        "ca": "Pots enviar paquets aquí per a arreplegar-los?"
+        "ca": "Pots enviar paquets aquí per a arreplegar-los?",
+        "nl": "Kun je deze plaats gebruiken als afhaalpunt?"
       },
       "freeform": {
         "key": "post_office:parcel_to",

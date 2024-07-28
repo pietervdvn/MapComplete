@@ -12,7 +12,8 @@
     "eu": "Publizitatea",
     "pl": "Reklamy",
     "it": "Pubblicità",
-    "da": "Reklamer"
+    "da": "Reklamer",
+    "zh_Hans": "广告"
   },
   "description": {
     "ca": "Alguna vegada t'has preguntat quanta publictat hi ha als nostres carrers i carreteres? Amb aquest mapa podràs trobar i afegir informació de tots els elements publictaris que t'hi trobes pel carrer",
@@ -27,7 +28,8 @@
     "eu": "Inoiz pentsatu duzu zenbat iragarki dauden gure kale eta errepideetan? Mapa honekin, kalean aurki ditzakezun publizitate-ezaugarri guztiei buruzko informazioa aurkitu eta erants dezakezu",
     "pl": "Czy zastanawiałeś się kiedyś, ile reklam jest na naszych ulicach i drogach? Dzięki tej mapie możesz znaleźć i dodać informacje o wszystkich funkcjach reklamowych, które możesz znaleźć na ulicy",
     "pt": "Já se perguntou quantas propagandas existem nas nossas ruas e estradas? Com este mapa pode encontrar e adicionar informações sobre todos os recursos de publicidade que pode encontrar na rua",
-    "it": "Vi siete mai chiesti quante pubblicità ci sono nelle nostre strade e strade? Con questa mappa è possibile trovare e aggiungere informazioni su tutte le caratteristiche pubblicitarie che si possono trovare sulla strada"
+    "it": "Vi siete mai chiesti quante pubblicità ci sono nelle nostre strade e strade? Con questa mappa è possibile trovare e aggiungere informazioni su tutte le caratteristiche pubblicitarie che si possono trovare sulla strada",
+    "zh_Hans": "你是否曾经想过我们的街道和道路上有多少广告？通过这张地图，你可以查找并添加有关街道上所有广告特征的信息"
   },
   "shortDescription": {
     "ca": "On puc trobar elements publicitaris?",
@@ -39,7 +41,8 @@
     "nl": "Waar zijn er reclameborden?",
     "zh_Hant": "我能夠在那裡找到廣告物件？",
     "eu": "Non aurki ditzaket publizitate ezaugarriak?",
-    "pl": "Gdzie mogę znaleźć obiekty reklamowe?"
+    "pl": "Gdzie mogę znaleźć obiekty reklamowe?",
+    "zh_Hans": "我可以在哪里找到广告功能？"
   },
   "icon": "./assets/themes/advertising/icon.svg",
   "credits": [
