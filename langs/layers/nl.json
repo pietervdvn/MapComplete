@@ -1003,7 +1003,7 @@
                 "question": "Hoeveel kost het gebruik van het fietsschoonmaakpunt?",
                 "render": "Het gebruik van het fietsschoonmaakpunt kost {charge}"
             },
-            "bike_cleaning-service:bicycle:cleaning:charge": {
+            "bike_cleaning-service_bicycle_cleaning_charge": {
                 "mappings": {
                     "0": {
                         "then": "Het fietsschoonmaakpunt is gratis"
@@ -1376,125 +1376,10 @@
                 "title": "een fietszaak"
             }
         },
-        "tagRenderings": {
-            "bike_repair_bike-pump-service": {
-                "mappings": {
-                    "0": {
-                        "then": "Deze winkel biedt een fietspomp aan voor iedereen"
-                    },
-                    "1": {
-                        "then": "Deze winkel biedt geen fietspomp aan voor eender wie"
-                    },
-                    "2": {
-                        "then": "Er is een fietspomp, deze is apart aangeduid"
-                    }
-                },
-                "question": "Biedt deze winkel een fietspomp aan voor iedereen?"
-            },
-            "bike_repair_bike-wash": {
-                "mappings": {
-                    "0": {
-                        "then": "Deze winkel biedt fietsschoonmaak aan"
-                    },
-                    "1": {
-                        "then": "Deze winkel biedt een installatie aan om zelf je fiets schoon te maken"
-                    },
-                    "2": {
-                        "then": "Deze winkel biedt geen fietsschoonmaak aan"
-                    }
-                },
-                "question": "Biedt deze winkel een fietsschoonmaak aan?"
-            },
-            "bike_repair_rents-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "Deze winkel verhuurt fietsen"
-                    },
-                    "1": {
-                        "then": "Deze winkel verhuurt geen fietsen"
-                    }
-                },
-                "question": "Verhuurt deze winkel fietsen?"
-            },
-            "bike_repair_repairs-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "Deze winkel herstelt fietsen"
-                    },
-                    "1": {
-                        "then": "Deze winkel herstelt geen fietsen"
-                    },
-                    "2": {
-                        "then": "Deze winkel herstelt enkel fietsen die hier werden gekocht"
-                    },
-                    "3": {
-                        "then": "Deze winkel herstelt enkel fietsen van een bepaald merk"
-                    }
-                },
-                "question": "Herstelt deze winkel fietsen?"
-            },
-            "bike_repair_second-hand-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "Deze winkel verkoopt tweedehands fietsen"
-                    },
-                    "1": {
-                        "then": "Deze winkel verkoopt geen tweedehands fietsen"
-                    },
-                    "2": {
-                        "then": "Deze winkel verkoopt enkel tweedehands fietsen"
-                    }
-                },
-                "question": "Verkoopt deze winkel tweedehands fietsen?"
-            },
-            "bike_repair_sells-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "Deze winkel verkoopt fietsen"
-                    },
-                    "1": {
-                        "then": "Deze winkel verkoopt geen fietsen"
-                    }
-                },
-                "question": "Verkoopt deze fietszaak fietsen?"
-            },
-            "bike_repair_tools-service": {
-                "mappings": {
-                    "0": {
-                        "then": "Deze winkel biedt gereedschap aan om je fiets zelf te herstellen"
-                    },
-                    "1": {
-                        "then": "Deze winkel biedt geen gereedschap aan om je fiets zelf te herstellen"
-                    },
-                    "2": {
-                        "then": "Het gereedschap aan om je fiets zelf te herstellen is enkel voor als je de fiets er kocht of huurt"
-                    }
-                },
-                "question": "Biedt deze winkel gereedschap aan om je fiets zelf te herstellen?"
-            },
-            "bike_shop-access": {
-                "render": "Enkel voor {access}"
-            },
-            "bike_shop-is-bicycle_shop": {
-                "mappings": {
-                    "0": {
-                        "then": "Deze zaak focust op verhuur"
-                    }
-                },
-                "render": "Deze winkel verkoopt {shop} en heeft fiets-gerelateerde activiteiten."
-            },
-            "bike_shop-name": {
-                "question": "Wat is de naam van deze fietszaak?",
-                "render": "Deze fietszaak heet {name}"
-            }
-        },
         "title": {
             "mappings": {
                 "0": {
                     "then": "Sportwinkel <i>{name}</i>"
-                },
-                "1": {
-                    "then": "Shop"
                 },
                 "2": {
                     "then": "Fietsverhuur <i>{name}</i>"
@@ -1506,6 +1391,9 @@
                     "then": "Fietswinkel <i>{name}</i>"
                 },
                 "5": {
+                    "then": "Fietszaak <i>{name}</i>"
+                },
+                "6": {
                     "then": "Fietszaak <i>{name}</i>"
                 }
             },
@@ -6215,6 +6103,16 @@
                 "question": "Kan je hier pakketten versturen?",
                 "render": "Je kan pakketten versturen met deze bedrijven: {post_office:parcel_from}"
             },
+            "parcel-pickup": {
+                "mappings": {
+                    "0": {
+                        "then": "Je kunt hier gemiste pakjes ophalen"
+                    }
+                }
+            },
+            "parcel-to": {
+                "question": "Kun je deze plaats gebruiken als afhaalpunt?"
+            },
             "partner-brand": {
                 "mappings": {
                     "0": {
@@ -7243,6 +7141,73 @@
             }
         },
         "tagRenderings": {
+            "bicycle_rental": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze winkel verhuurt fietsen"
+                    },
+                    "1": {
+                        "then": "Deze winkel verhuurt geen fietsen"
+                    }
+                },
+                "question": "Verhuurt deze winkel fietsen?"
+            },
+            "bike_pump_service": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze winkel biedt een fietspomp aan voor iedereen"
+                    },
+                    "1": {
+                        "then": "Deze winkel biedt geen fietspomp aan voor eender wie"
+                    },
+                    "2": {
+                        "then": "Er is een fietspomp, deze is apart aangeduid"
+                    }
+                },
+                "question": "Biedt deze winkel een fietspomp aan voor iedereen?"
+            },
+            "bike_repair_tools": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze winkel biedt gereedschap aan om je fiets zelf te herstellen"
+                    },
+                    "1": {
+                        "then": "Deze winkel biedt geen gereedschap aan om je fiets zelf te herstellen"
+                    },
+                    "2": {
+                        "then": "Het gereedschap aan om je fiets zelf te herstellen is enkel voor als je de fiets er kocht of huurt"
+                    }
+                },
+                "question": "Biedt deze winkel gereedschap aan om je fiets zelf te herstellen?"
+            },
+            "bike_second_hand": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze winkel verkoopt tweedehands fietsen"
+                    },
+                    "1": {
+                        "then": "Deze winkel verkoopt geen tweedehands fietsen"
+                    },
+                    "2": {
+                        "then": "Deze winkel verkoopt enkel tweedehands fietsen"
+                    }
+                },
+                "question": "Verkoopt deze winkel tweedehands fietsen?"
+            },
+            "bike_wash": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze winkel biedt fietsschoonmaak aan"
+                    },
+                    "1": {
+                        "then": "Deze winkel biedt een installatie aan om zelf je fiets schoon te maken"
+                    },
+                    "2": {
+                        "then": "Deze winkel biedt geen fietsschoonmaak aan"
+                    }
+                },
+                "question": "Biedt deze winkel een fietsschoonmaak aan?"
+            },
             "copyshop-print-sizes": {
                 "mappings": {
                     "0": {
@@ -7265,6 +7230,11 @@
             },
             "id_presets.shop_types": {
                 "override": {
+                    "+mappings": {
+                        "0": {
+                            "then": "Fietsverhuurzaak"
+                        }
+                    },
                     "question": "Wat voor soort winkel is dit?",
                     "render": "Dit is een {shop}"
                 }
@@ -7282,6 +7252,34 @@
                     }
                 },
                 "question": "Biedt deze winkel biologische producten aan?"
+            },
+            "repairs_bikes": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze winkel herstelt fietsen"
+                    },
+                    "1": {
+                        "then": "Deze winkel herstelt geen fietsen"
+                    },
+                    "2": {
+                        "then": "Deze winkel herstelt enkel fietsen die hier werden gekocht"
+                    },
+                    "3": {
+                        "then": "Deze winkel herstelt enkel fietsen van een bepaald merk"
+                    }
+                },
+                "question": "Herstelt deze winkel fietsen?"
+            },
+            "sells_new_bikes": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze winkel verkoopt nieuwe fietsen"
+                    },
+                    "1": {
+                        "then": "Deze winkel verkoopt geen nieuwe fietsen"
+                    }
+                },
+                "question": "Verkoopt deze fietszaak fietsen?"
             },
             "shops-name": {
                 "question": "Wat is de naam van deze winkel?",

@@ -851,110 +851,6 @@
                 "title": "una negozio/riparatore di bici"
             }
         },
-        "tagRenderings": {
-            "bike_repair_bike-pump-service": {
-                "mappings": {
-                    "0": {
-                        "then": "Questo negozio offre l’uso pubblico di una pompa per bici"
-                    },
-                    "1": {
-                        "then": "Questo negozio non offre l’uso pubblico di una pompa per bici"
-                    },
-                    "2": {
-                        "then": "C’è una pompa per bici, è mostrata come punto separato"
-                    }
-                },
-                "question": "Questo negozio offre l’uso a chiunque di una pompa per bici?"
-            },
-            "bike_repair_bike-wash": {
-                "mappings": {
-                    "0": {
-                        "then": "Questo negozio lava le biciclette"
-                    },
-                    "1": {
-                        "then": "Questo negozio ha una struttura dove è possibile pulire la propria bici"
-                    },
-                    "2": {
-                        "then": "Questo negozio non offre la pulizia della bicicletta"
-                    }
-                },
-                "question": "Vengono lavate le bici qua?"
-            },
-            "bike_repair_rents-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "Questo negozio noleggia le bici"
-                    },
-                    "1": {
-                        "then": "Questo negozio non noleggia le bici"
-                    }
-                },
-                "question": "Questo negozio noleggia le bici?"
-            },
-            "bike_repair_repairs-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "Questo negozio ripara bici"
-                    },
-                    "1": {
-                        "then": "Questo negozio non ripara bici"
-                    },
-                    "2": {
-                        "then": "Questo negozio ripara solo le bici che sono state acquistate qua"
-                    },
-                    "3": {
-                        "then": "Questo negozio ripara solo le biciclette di una certa marca"
-                    }
-                },
-                "question": "Questo negozio ripara bici?"
-            },
-            "bike_repair_second-hand-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "Questo negozio vende bici usate"
-                    },
-                    "1": {
-                        "then": "Questo negozio non vende bici usate"
-                    },
-                    "2": {
-                        "then": "Questo negozio vende solamente bici usate"
-                    }
-                },
-                "question": "Questo negozio vende bici usate?"
-            },
-            "bike_repair_sells-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "Questo negozio vende bici"
-                    },
-                    "1": {
-                        "then": "Questo negozio non vende bici"
-                    }
-                },
-                "question": "Questo negozio vende bici?"
-            },
-            "bike_repair_tools-service": {
-                "mappings": {
-                    "0": {
-                        "then": "Questo negozio offre degli attrezzi per la riparazione fai da te"
-                    },
-                    "1": {
-                        "then": "Questo negozio non offre degli attrezzi per la riparazione fai da te"
-                    },
-                    "2": {
-                        "then": "Gli attrezzi per la riparazione fai da te sono disponibili solamente se hai acquistato/noleggiato la bici nel negozio"
-                    }
-                },
-                "question": "Sono presenti degli attrezzi per riparare la propria bici?"
-            },
-            "bike_shop-is-bicycle_shop": {
-                "render": "Questo negozio è specializzato nella vendita di {shop} ed effettua attività relative alle biciclette"
-            },
-            "bike_shop-name": {
-                "question": "Come si chiama questo negozio di biciclette?",
-                "render": "Questo negozio di biciclette si chiama {name}"
-            }
-        },
         "title": {
             "mappings": {
                 "0": {
@@ -970,6 +866,9 @@
                     "then": "Negozio di biciclette <i>{name}</i>"
                 },
                 "5": {
+                    "then": "Venditore/riparatore di biciclette <i>{name}</i>"
+                },
+                "6": {
                     "then": "Venditore/riparatore di biciclette <i>{name}</i>"
                 }
             },
@@ -2351,6 +2250,97 @@
                 }
             },
             "render": "Impianti di riciclo"
+        }
+    },
+    "shops": {
+        "tagRenderings": {
+            "bicycle_rental": {
+                "mappings": {
+                    "0": {
+                        "then": "Questo negozio noleggia le bici"
+                    },
+                    "1": {
+                        "then": "Questo negozio non noleggia le bici"
+                    }
+                },
+                "question": "Questo negozio noleggia le bici?"
+            },
+            "bike_pump_service": {
+                "mappings": {
+                    "0": {
+                        "then": "Questo negozio offre l’uso pubblico di una pompa per bici"
+                    },
+                    "1": {
+                        "then": "Questo negozio non offre l’uso pubblico di una pompa per bici"
+                    },
+                    "2": {
+                        "then": "C’è una pompa per bici, è mostrata come punto separato"
+                    }
+                },
+                "question": "Questo negozio offre l’uso a chiunque di una pompa per bici?"
+            },
+            "bike_repair_tools": {
+                "mappings": {
+                    "0": {
+                        "then": "Questo negozio offre degli attrezzi per la riparazione fai da te"
+                    },
+                    "1": {
+                        "then": "Questo negozio non offre degli attrezzi per la riparazione fai da te"
+                    },
+                    "2": {
+                        "then": "Gli attrezzi per la riparazione fai da te sono disponibili solamente se hai acquistato/noleggiato la bici nel negozio"
+                    }
+                },
+                "question": "Sono presenti degli attrezzi per riparare la propria bici?"
+            },
+            "bike_second_hand": {
+                "mappings": {
+                    "0": {
+                        "then": "Questo negozio vende bici usate"
+                    },
+                    "1": {
+                        "then": "Questo negozio non vende bici usate"
+                    },
+                    "2": {
+                        "then": "Questo negozio vende solamente bici usate"
+                    }
+                },
+                "question": "Questo negozio vende bici usate?"
+            },
+            "bike_wash": {
+                "mappings": {
+                    "0": {
+                        "then": "Questo negozio lava le biciclette"
+                    },
+                    "1": {
+                        "then": "Questo negozio ha una struttura dove è possibile pulire la propria bici"
+                    },
+                    "2": {
+                        "then": "Questo negozio non offre la pulizia della bicicletta"
+                    }
+                },
+                "question": "Vengono lavate le bici qua?"
+            },
+            "repairs_bikes": {
+                "mappings": {
+                    "0": {
+                        "then": "Questo negozio ripara bici"
+                    },
+                    "1": {
+                        "then": "Questo negozio non ripara bici"
+                    },
+                    "2": {
+                        "then": "Questo negozio ripara solo le bici che sono state acquistate qua"
+                    },
+                    "3": {
+                        "then": "Questo negozio ripara solo le biciclette di una certa marca"
+                    }
+                },
+                "question": "Questo negozio ripara bici?"
+            },
+            "sells_new_bikes": {
+                "question": "Questo negozio vende bici?"
+            }
         }
     },
     "slow_roads": {

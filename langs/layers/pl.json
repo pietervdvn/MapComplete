@@ -810,7 +810,7 @@
             }
         },
         "tagRenderings": {
-            "bike_cleaning-service:bicycle:cleaning:charge": {
+            "bike_cleaning-service_bicycle_cleaning_charge": {
                 "mappings": {
                     "1": {
                         "then": "Darmowa"
@@ -954,13 +954,6 @@
                 "4": {
                     "then": "Pompka do rowerów"
                 }
-            }
-        }
-    },
-    "bike_shop": {
-        "tagRenderings": {
-            "bike_shop-access": {
-                "render": "Dostępne tylko dla {access}"
             }
         }
     },

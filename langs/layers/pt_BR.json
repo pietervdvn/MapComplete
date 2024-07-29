@@ -1093,7 +1093,7 @@
                 "question": "Quanto custa para usar esse serviço de limpeza?",
                 "render": "Usar o serviço de limpeza custa {charge}"
             },
-            "bike_cleaning-service:bicycle:cleaning:charge": {
+            "bike_cleaning-service_bicycle_cleaning_charge": {
                 "mappings": {
                     "0": {
                         "then": "O serviço de limpeza é grátis para usar"
@@ -1326,54 +1326,6 @@
     "bike_shop": {
         "description": "Uma loja que vende especificamente bicicletas ou itens relacionados",
         "name": "Reparo/loja de bicicletas",
-        "tagRenderings": {
-            "bike_repair_rents-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "Esta loja aluga bicicletas"
-                    },
-                    "1": {
-                        "then": "Esta loja não aluga bicicletas"
-                    }
-                },
-                "question": "Esta loja aluga bicicletas?"
-            },
-            "bike_repair_repairs-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "Esta loja conserta bicicletas"
-                    },
-                    "1": {
-                        "then": "Esta loja não conserta bicicletas"
-                    },
-                    "2": {
-                        "then": "Esta loja conserta bicicletas compradas aqui"
-                    },
-                    "3": {
-                        "then": "Esta loja conserta bicicletas de uma certa marca"
-                    }
-                },
-                "question": "Esta loja conserta bicicletas?"
-            },
-            "bike_repair_sells-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "Esta loja vende bicicletas"
-                    },
-                    "1": {
-                        "then": "Esta loja não vende bicicletas"
-                    }
-                },
-                "question": "Esta loja vende bicicletas?"
-            },
-            "bike_shop-is-bicycle_shop": {
-                "render": "Esta loja é especializada em vender {shop} e faz atividades relacionadas à bicicletas"
-            },
-            "bike_shop-name": {
-                "question": "Qual o nome desta loja de bicicletas?",
-                "render": "Esta loja de bicicletas se chama {name}"
-            }
-        },
         "title": {
             "mappings": {
                 "0": {
@@ -1389,6 +1341,9 @@
                     "then": "Loja de bicicletas <i>{name}</i>"
                 },
                 "5": {
+                    "then": "Loja/reparo de bicicletas <i>{name}</i>"
+                },
+                "6": {
                     "then": "Loja/reparo de bicicletas <i>{name}</i>"
                 }
             },
@@ -1470,6 +1425,41 @@
                     }
                 },
                 "question": "Este lugar é acessível com uma cadeira de rodas?"
+            }
+        }
+    },
+    "shops": {
+        "tagRenderings": {
+            "bicycle_rental": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta loja aluga bicicletas"
+                    },
+                    "1": {
+                        "then": "Esta loja não aluga bicicletas"
+                    }
+                },
+                "question": "Esta loja aluga bicicletas?"
+            },
+            "repairs_bikes": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta loja conserta bicicletas"
+                    },
+                    "1": {
+                        "then": "Esta loja não conserta bicicletas"
+                    },
+                    "2": {
+                        "then": "Esta loja conserta bicicletas compradas aqui"
+                    },
+                    "3": {
+                        "then": "Esta loja conserta bicicletas de uma certa marca"
+                    }
+                },
+                "question": "Esta loja conserta bicicletas?"
+            },
+            "sells_new_bikes": {
+                "question": "Esta loja vende bicicletas?"
             }
         }
     },

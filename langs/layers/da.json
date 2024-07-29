@@ -611,7 +611,7 @@
                 "question": "Hvor meget koster det at bruge rengøringsservicen?",
                 "render": "Brug af rengøringsservice koster {charge}"
             },
-            "bike_cleaning-service:bicycle:cleaning:charge": {
+            "bike_cleaning-service_bicycle_cleaning_charge": {
                 "mappings": {
                     "0": {
                         "then": "Rengøringsservicen er gratis at bruge"
@@ -924,125 +924,10 @@
                 "title": "en cykelværksted/butik"
             }
         },
-        "tagRenderings": {
-            "bike_repair_bike-pump-service": {
-                "mappings": {
-                    "0": {
-                        "then": "Denne butik tilbyder en cykelpumpe til alle"
-                    },
-                    "1": {
-                        "then": "Denne butik tilbyder ikke en cykelpumpe til nogen"
-                    },
-                    "2": {
-                        "then": "Der er cykelpumpe, den er vist som et separat punkt"
-                    }
-                },
-                "question": "Tilbyder denne butik en cykelpumpe til brug for alle?"
-            },
-            "bike_repair_bike-wash": {
-                "mappings": {
-                    "0": {
-                        "then": "Denne butik rengør cykler"
-                    },
-                    "1": {
-                        "then": "Denne butik har et anlæg, hvor man selv kan rengøre cykler"
-                    },
-                    "2": {
-                        "then": "Denne butik tilbyder ikke rengøring af cykler"
-                    }
-                },
-                "question": "Vaskes cykler her?"
-            },
-            "bike_repair_rents-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "Denne butik udlejer cykler"
-                    },
-                    "1": {
-                        "then": "Denne butik udlejer ikke cykler"
-                    }
-                },
-                "question": "Udlejer denne butik cykler?"
-            },
-            "bike_repair_repairs-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "Denne butik reparerer cykler"
-                    },
-                    "1": {
-                        "then": "Denne butik reparerer ikke cykler"
-                    },
-                    "2": {
-                        "then": "Denne butik reparerer kun cykler købt her"
-                    },
-                    "3": {
-                        "then": "Dette værksted reparerer kun cykler af et bestemt mærke"
-                    }
-                },
-                "question": "Reparerer denne butik cykler?"
-            },
-            "bike_repair_second-hand-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "Denne butik sælger brugte cykler"
-                    },
-                    "1": {
-                        "then": "Denne butik sælger ikke brugte cykler"
-                    },
-                    "2": {
-                        "then": "Denne butik sælger kun brugte cykler"
-                    }
-                },
-                "question": "Sælger denne butik brugte cykler?"
-            },
-            "bike_repair_sells-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "Denne butik sælger cykler"
-                    },
-                    "1": {
-                        "then": "Denne butik sælger ikke cykler"
-                    }
-                },
-                "question": "Sælger denne butik cykler?"
-            },
-            "bike_repair_tools-service": {
-                "mappings": {
-                    "0": {
-                        "then": "Denne butik tilbyder værktøj til gør-det-selv-reparation"
-                    },
-                    "1": {
-                        "then": "Denne butik tilbyder ikke værktøj til gør-det-selv reparation"
-                    },
-                    "2": {
-                        "then": "Værktøj til gør-det-selv-reparation er kun tilgængeligt, hvis du har købt/lejet cyklen i butikken"
-                    }
-                },
-                "question": "Er der værktøj her til at reparere din egen cykel?"
-            },
-            "bike_shop-access": {
-                "render": "Kun tilgængelig for {access}"
-            },
-            "bike_shop-is-bicycle_shop": {
-                "mappings": {
-                    "0": {
-                        "then": "Denne virksomhed fokuserer på udlejning"
-                    }
-                },
-                "render": "Denne butik er specialiseret i at sælge {shop} og udfører aktiviteter i forbindelse med cykler"
-            },
-            "bike_shop-name": {
-                "question": "Hvad hedder denne cykelbutik?",
-                "render": "Denne cykelbutik hedder {name}"
-            }
-        },
         "title": {
             "mappings": {
                 "0": {
                     "then": "Butik med sportsudstyr <i>{name}</i>"
-                },
-                "1": {
-                    "then": "Winkel"
                 },
                 "2": {
                     "then": "Cykeludlejning <i>{name}</i>"
@@ -1054,6 +939,9 @@
                     "then": "Cykelforretning <i>{name}</i>"
                 },
                 "5": {
+                    "then": "Cykelværksted<i>{name}</i>"
+                },
+                "6": {
                     "then": "Cykelværksted<i>{name}</i>"
                 }
             },
@@ -1779,6 +1667,97 @@
                         "question": "Kun offentlig adgang"
                     }
                 }
+            }
+        }
+    },
+    "shops": {
+        "tagRenderings": {
+            "bicycle_rental": {
+                "mappings": {
+                    "0": {
+                        "then": "Denne butik udlejer cykler"
+                    },
+                    "1": {
+                        "then": "Denne butik udlejer ikke cykler"
+                    }
+                },
+                "question": "Udlejer denne butik cykler?"
+            },
+            "bike_pump_service": {
+                "mappings": {
+                    "0": {
+                        "then": "Denne butik tilbyder en cykelpumpe til alle"
+                    },
+                    "1": {
+                        "then": "Denne butik tilbyder ikke en cykelpumpe til nogen"
+                    },
+                    "2": {
+                        "then": "Der er cykelpumpe, den er vist som et separat punkt"
+                    }
+                },
+                "question": "Tilbyder denne butik en cykelpumpe til brug for alle?"
+            },
+            "bike_repair_tools": {
+                "mappings": {
+                    "0": {
+                        "then": "Denne butik tilbyder værktøj til gør-det-selv-reparation"
+                    },
+                    "1": {
+                        "then": "Denne butik tilbyder ikke værktøj til gør-det-selv reparation"
+                    },
+                    "2": {
+                        "then": "Værktøj til gør-det-selv-reparation er kun tilgængeligt, hvis du har købt/lejet cyklen i butikken"
+                    }
+                },
+                "question": "Er der værktøj her til at reparere din egen cykel?"
+            },
+            "bike_second_hand": {
+                "mappings": {
+                    "0": {
+                        "then": "Denne butik sælger brugte cykler"
+                    },
+                    "1": {
+                        "then": "Denne butik sælger ikke brugte cykler"
+                    },
+                    "2": {
+                        "then": "Denne butik sælger kun brugte cykler"
+                    }
+                },
+                "question": "Sælger denne butik brugte cykler?"
+            },
+            "bike_wash": {
+                "mappings": {
+                    "0": {
+                        "then": "Denne butik rengør cykler"
+                    },
+                    "1": {
+                        "then": "Denne butik har et anlæg, hvor man selv kan rengøre cykler"
+                    },
+                    "2": {
+                        "then": "Denne butik tilbyder ikke rengøring af cykler"
+                    }
+                },
+                "question": "Vaskes cykler her?"
+            },
+            "repairs_bikes": {
+                "mappings": {
+                    "0": {
+                        "then": "Denne butik reparerer cykler"
+                    },
+                    "1": {
+                        "then": "Denne butik reparerer ikke cykler"
+                    },
+                    "2": {
+                        "then": "Denne butik reparerer kun cykler købt her"
+                    },
+                    "3": {
+                        "then": "Dette værksted reparerer kun cykler af et bestemt mærke"
+                    }
+                },
+                "question": "Reparerer denne butik cykler?"
+            },
+            "sells_new_bikes": {
+                "question": "Sælger denne butik cykler?"
             }
         }
     },

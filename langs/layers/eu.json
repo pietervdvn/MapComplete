@@ -235,15 +235,6 @@
             }
         }
     },
-    "bike_shop": {
-        "title": {
-            "mappings": {
-                "1": {
-                    "then": "Winkela"
-                }
-            }
-        }
-    },
     "binocular": {
         "description": "Prismatikoak",
         "name": "Prismatikoak",

@@ -55,6 +55,18 @@
     },
     {
       "builtin": [
+        "shops"
+      ],
+      "override": {
+        "name=": null,
+        "minzoom": 17,
+        "filter": {
+          "sameAs": "bike_shop"
+        }
+      }
+    },
+    {
+      "builtin": [
         "bicycle_rental"
       ],
       "override": {

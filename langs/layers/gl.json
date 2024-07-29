@@ -269,87 +269,6 @@
                 "title": "Tenda/arranxo de bicicletas"
             }
         },
-        "tagRenderings": {
-            "bike_repair_bike-pump-service": {
-                "mappings": {
-                    "0": {
-                        "then": "Esta tenda ofrece unha bomba de ar para uso de calquera persoa"
-                    },
-                    "1": {
-                        "then": "Esta tenda non ofrece unha bomba de ar para uso de calquera persoa"
-                    }
-                },
-                "question": "Esta tenda ofrece unha bomba de ar para uso de calquera persoa?"
-            },
-            "bike_repair_rents-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "Esta tenda aluga bicicletas"
-                    },
-                    "1": {
-                        "then": "Esta tenda non aluga bicicletas"
-                    }
-                },
-                "question": "Esta tenda aluga bicicletas?"
-            },
-            "bike_repair_repairs-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "Esta tenda arranxa bicicletas"
-                    },
-                    "1": {
-                        "then": "Esta tenda non arranxa bicicletas"
-                    },
-                    "2": {
-                        "then": "Esta tenda só arranxa bicicletas mercadas aquí"
-                    },
-                    "3": {
-                        "then": "Esta tenda só arranxa bicicletas dunha certa marca"
-                    }
-                },
-                "question": "Esta tenda arranxa bicicletas?"
-            },
-            "bike_repair_second-hand-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "Esta tenda vende bicicletas de segunda man"
-                    },
-                    "1": {
-                        "then": "Esta tenda non vende bicicletas de segunda man"
-                    },
-                    "2": {
-                        "then": "Esta tenda só vende bicicletas de segunda man"
-                    }
-                },
-                "question": "Esta tenda vende bicicletas de segunda man?"
-            },
-            "bike_repair_sells-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "Esta tenda vende bicicletas"
-                    },
-                    "1": {
-                        "then": "Esta tenda non vende bicicletas"
-                    }
-                },
-                "question": "Esta tenda vende bicicletas?"
-            },
-            "bike_repair_tools-service": {
-                "mappings": {
-                    "0": {
-                        "then": "Hai ferramentas aquí para arranxar a túa propia bicicleta"
-                    },
-                    "1": {
-                        "then": "Non hai ferramentas aquí para arranxar a túa propia bicicleta"
-                    }
-                },
-                "question": "Hai ferramentas aquí para arranxar a túa propia bicicleta?"
-            },
-            "bike_shop-name": {
-                "question": "Cal é o nome desta tenda de bicicletas?",
-                "render": "Esta tenda de bicicletas chámase {name}"
-            }
-        },
         "title": {
             "mappings": {
                 "3": {
@@ -359,6 +278,9 @@
                     "then": "Tenda de bicicletas <i>{name}</i>"
                 },
                 "5": {
+                    "then": "Tenda/arranxo de bicicletas <i>{name}</i>"
+                },
+                "6": {
                     "then": "Tenda/arranxo de bicicletas <i>{name}</i>"
                 }
             },
@@ -391,6 +313,77 @@
         "tagRenderings": {
             "website": {
                 "question": "Cal é a páxina web de {title()}?"
+            }
+        }
+    },
+    "shops": {
+        "tagRenderings": {
+            "bicycle_rental": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta tenda aluga bicicletas"
+                    },
+                    "1": {
+                        "then": "Esta tenda non aluga bicicletas"
+                    }
+                },
+                "question": "Esta tenda aluga bicicletas?"
+            },
+            "bike_pump_service": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta tenda ofrece unha bomba de ar para uso de calquera persoa"
+                    },
+                    "1": {
+                        "then": "Esta tenda non ofrece unha bomba de ar para uso de calquera persoa"
+                    }
+                },
+                "question": "Esta tenda ofrece unha bomba de ar para uso de calquera persoa?"
+            },
+            "bike_repair_tools": {
+                "mappings": {
+                    "0": {
+                        "then": "Hai ferramentas aquí para arranxar a túa propia bicicleta"
+                    },
+                    "1": {
+                        "then": "Non hai ferramentas aquí para arranxar a túa propia bicicleta"
+                    }
+                },
+                "question": "Hai ferramentas aquí para arranxar a túa propia bicicleta?"
+            },
+            "bike_second_hand": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta tenda vende bicicletas de segunda man"
+                    },
+                    "1": {
+                        "then": "Esta tenda non vende bicicletas de segunda man"
+                    },
+                    "2": {
+                        "then": "Esta tenda só vende bicicletas de segunda man"
+                    }
+                },
+                "question": "Esta tenda vende bicicletas de segunda man?"
+            },
+            "repairs_bikes": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta tenda arranxa bicicletas"
+                    },
+                    "1": {
+                        "then": "Esta tenda non arranxa bicicletas"
+                    },
+                    "2": {
+                        "then": "Esta tenda só arranxa bicicletas mercadas aquí"
+                    },
+                    "3": {
+                        "then": "Esta tenda só arranxa bicicletas dunha certa marca"
+                    }
+                },
+                "question": "Esta tenda arranxa bicicletas?"
+            },
+            "sells_new_bikes": {
+                "question": "Esta tenda vende bicicletas?"
             }
         }
     }

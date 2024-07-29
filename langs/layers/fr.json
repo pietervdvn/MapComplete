@@ -1064,7 +1064,7 @@
                 "question": "Combien cela coûte-t-il d'utiliser le service de nettoyage ?",
                 "render": "L’utilisation du service de nettoyage coûte {charge}"
             },
-            "bike_cleaning-service:bicycle:cleaning:charge": {
+            "bike_cleaning-service_bicycle_cleaning_charge": {
                 "mappings": {
                     "0": {
                         "then": "Le service de nettoyage est gratuit"
@@ -1406,125 +1406,10 @@
                 "title": "une magasin et réparateur de vélo"
             }
         },
-        "tagRenderings": {
-            "bike_repair_bike-pump-service": {
-                "mappings": {
-                    "0": {
-                        "then": "Ce magasin offre une pompe en acces libre"
-                    },
-                    "1": {
-                        "then": "Ce magasin n'offre pas de pompe en libre accès"
-                    },
-                    "2": {
-                        "then": "Il y a une pompe à vélo, c'est indiqué comme un point séparé"
-                    }
-                },
-                "question": "Est-ce que ce magasin offre une pompe en accès libre ?"
-            },
-            "bike_repair_bike-wash": {
-                "mappings": {
-                    "0": {
-                        "then": "Ce magasin lave les vélos"
-                    },
-                    "1": {
-                        "then": "Ce magasin a une installation pour laver soi même des vélos"
-                    },
-                    "2": {
-                        "then": "Ce magasin ne fait pas le nettoyage de vélo"
-                    }
-                },
-                "question": "Lave-t-on les vélos ici ?"
-            },
-            "bike_repair_rents-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "Ce magasin loue des vélos"
-                    },
-                    "1": {
-                        "then": "Ce magasin ne loue pas de vélos"
-                    }
-                },
-                "question": "Est-ce ce magasin loue des vélos ?"
-            },
-            "bike_repair_repairs-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "Ce magasin répare des vélos"
-                    },
-                    "1": {
-                        "then": "Ce magasin ne répare pas les vélos"
-                    },
-                    "2": {
-                        "then": "Ce magasin ne répare seulement les vélos achetés là-bas"
-                    },
-                    "3": {
-                        "then": "Ce magasin ne répare seulement des marques spécifiques"
-                    }
-                },
-                "question": "Est-ce que ce magasin répare des vélos ?"
-            },
-            "bike_repair_second-hand-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "Ce magasin vend des vélos d'occasion"
-                    },
-                    "1": {
-                        "then": "Ce magasin ne vend pas de vélos d'occasion"
-                    },
-                    "2": {
-                        "then": "Ce magasin vend seulement des vélos d'occasion"
-                    }
-                },
-                "question": "Est-ce ce magasin vend des vélos d'occasion ?"
-            },
-            "bike_repair_sells-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "Ce magasin vend des vélos"
-                    },
-                    "1": {
-                        "then": "Ce magasin ne vend pas de vélo"
-                    }
-                },
-                "question": "Est-ce que ce magasin vend des vélos ?"
-            },
-            "bike_repair_tools-service": {
-                "mappings": {
-                    "0": {
-                        "then": "Ce magasin offre des outils pour réparer son vélo soi-même"
-                    },
-                    "1": {
-                        "then": "Ce magasin n'offre pas des outils pour réparer son vélo soi-même"
-                    },
-                    "2": {
-                        "then": "Des outils d'auto-réparation sont disponibles uniquement si vous avez acheté ou loué le vélo dans ce magasin"
-                    }
-                },
-                "question": "Est-ce qu'il y a des outils pour réparer son vélo dans ce magasin ?"
-            },
-            "bike_shop-access": {
-                "render": "Seulement accessible à {access}"
-            },
-            "bike_shop-is-bicycle_shop": {
-                "mappings": {
-                    "0": {
-                        "then": "Ce commerce est spécialisé dans la location"
-                    }
-                },
-                "render": "Ce magasin est spécialisé dans la vente de {shop} et a des activités liées au vélo"
-            },
-            "bike_shop-name": {
-                "question": "Quel est le nom du magasin de vélos ?",
-                "render": "Ce magasin s'appelle {name}"
-            }
-        },
         "title": {
             "mappings": {
                 "0": {
                     "then": "Magasin d'équipements de sport <i>{name}</i>"
-                },
-                "1": {
-                    "then": "Magasin"
                 },
                 "2": {
                     "then": "Magasin de location de vélo <i>{name}</i>"
@@ -1536,6 +1421,9 @@
                     "then": "Magasin de vélo <i>{name}</i>"
                 },
                 "5": {
+                    "then": "Magasin ou réparateur de vélo <i>{name}</i>"
+                },
+                "6": {
                     "then": "Magasin ou réparateur de vélo <i>{name}</i>"
                 }
             },
@@ -5774,6 +5662,73 @@
             }
         },
         "tagRenderings": {
+            "bicycle_rental": {
+                "mappings": {
+                    "0": {
+                        "then": "Ce magasin loue des vélos"
+                    },
+                    "1": {
+                        "then": "Ce magasin ne loue pas de vélos"
+                    }
+                },
+                "question": "Est-ce ce magasin loue des vélos ?"
+            },
+            "bike_pump_service": {
+                "mappings": {
+                    "0": {
+                        "then": "Ce magasin offre une pompe en acces libre"
+                    },
+                    "1": {
+                        "then": "Ce magasin n'offre pas de pompe en libre accès"
+                    },
+                    "2": {
+                        "then": "Il y a une pompe à vélo, c'est indiqué comme un point séparé"
+                    }
+                },
+                "question": "Est-ce que ce magasin offre une pompe en accès libre ?"
+            },
+            "bike_repair_tools": {
+                "mappings": {
+                    "0": {
+                        "then": "Ce magasin offre des outils pour réparer son vélo soi-même"
+                    },
+                    "1": {
+                        "then": "Ce magasin n'offre pas des outils pour réparer son vélo soi-même"
+                    },
+                    "2": {
+                        "then": "Des outils d'auto-réparation sont disponibles uniquement si vous avez acheté ou loué le vélo dans ce magasin"
+                    }
+                },
+                "question": "Est-ce qu'il y a des outils pour réparer son vélo dans ce magasin ?"
+            },
+            "bike_second_hand": {
+                "mappings": {
+                    "0": {
+                        "then": "Ce magasin vend des vélos d'occasion"
+                    },
+                    "1": {
+                        "then": "Ce magasin ne vend pas de vélos d'occasion"
+                    },
+                    "2": {
+                        "then": "Ce magasin vend seulement des vélos d'occasion"
+                    }
+                },
+                "question": "Est-ce ce magasin vend des vélos d'occasion ?"
+            },
+            "bike_wash": {
+                "mappings": {
+                    "0": {
+                        "then": "Ce magasin lave les vélos"
+                    },
+                    "1": {
+                        "then": "Ce magasin a une installation pour laver soi même des vélos"
+                    },
+                    "2": {
+                        "then": "Ce magasin ne fait pas le nettoyage de vélo"
+                    }
+                },
+                "question": "Lave-t-on les vélos ici ?"
+            },
             "copyshop-print-sizes": {
                 "mappings": {
                     "0": {
@@ -5813,6 +5768,34 @@
                     }
                 },
                 "question": "Ce commerce propose-t-il des produits bio ?"
+            },
+            "repairs_bikes": {
+                "mappings": {
+                    "0": {
+                        "then": "Ce magasin répare des vélos"
+                    },
+                    "1": {
+                        "then": "Ce magasin ne répare pas les vélos"
+                    },
+                    "2": {
+                        "then": "Ce magasin ne répare seulement les vélos achetés là-bas"
+                    },
+                    "3": {
+                        "then": "Ce magasin ne répare seulement des marques spécifiques"
+                    }
+                },
+                "question": "Est-ce que ce magasin répare des vélos ?"
+            },
+            "sells_new_bikes": {
+                "mappings": {
+                    "0": {
+                        "then": "Ce magasin vend des vélos nouveaux"
+                    },
+                    "1": {
+                        "then": "Ce magasin ne vend pas de vélo nouveaux"
+                    }
+                },
+                "question": "Est-ce que ce magasin vend des vélos ?"
             },
             "shops-name": {
                 "question": "Qu'est-ce que le nom de ce magasin ?",

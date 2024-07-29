@@ -1400,7 +1400,7 @@
                 "question": "How much does it cost to use the cleaning service?",
                 "render": "Using the cleaning service costs {charge}"
             },
-            "bike_cleaning-service:bicycle:cleaning:charge": {
+            "bike_cleaning-service_bicycle_cleaning_charge": {
                 "mappings": {
                     "0": {
                         "then": "The cleaning service is free to use"
@@ -1773,125 +1773,10 @@
                 "title": "a bike repair/shop"
             }
         },
-        "tagRenderings": {
-            "bike_repair_bike-pump-service": {
-                "mappings": {
-                    "0": {
-                        "then": "This shop offers a bike pump for anyone"
-                    },
-                    "1": {
-                        "then": "This shop doesn't offer a bike pump for anyone"
-                    },
-                    "2": {
-                        "then": "There is bicycle pump, it is shown as a separate point"
-                    }
-                },
-                "question": "Does this shop offer a bike pump for use by anyone?"
-            },
-            "bike_repair_bike-wash": {
-                "mappings": {
-                    "0": {
-                        "then": "This shop cleans bicycles"
-                    },
-                    "1": {
-                        "then": "This shop has an installation where one can clean bicycles themselves"
-                    },
-                    "2": {
-                        "then": "This shop doesn't offer bicycle cleaning"
-                    }
-                },
-                "question": "Are bicycles washed here?"
-            },
-            "bike_repair_rents-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "This shop rents out bikes"
-                    },
-                    "1": {
-                        "then": "This shop doesn't rent out bikes"
-                    }
-                },
-                "question": "Does this shop rent out bikes?"
-            },
-            "bike_repair_repairs-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "This shop repairs bikes"
-                    },
-                    "1": {
-                        "then": "This shop doesn't repair bikes"
-                    },
-                    "2": {
-                        "then": "This shop only repairs bikes bought here"
-                    },
-                    "3": {
-                        "then": "This shop only repairs bikes of a certain brand"
-                    }
-                },
-                "question": "Does this shop repair bikes?"
-            },
-            "bike_repair_second-hand-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "This shop sells second-hand bikes"
-                    },
-                    "1": {
-                        "then": "This shop doesn't sell second-hand bikes"
-                    },
-                    "2": {
-                        "then": "This shop only sells second-hand bikes"
-                    }
-                },
-                "question": "Does this shop sell second-hand bikes?"
-            },
-            "bike_repair_sells-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "This shop sells bikes"
-                    },
-                    "1": {
-                        "then": "This shop doesn't sell bikes"
-                    }
-                },
-                "question": "Does this shop sell bikes?"
-            },
-            "bike_repair_tools-service": {
-                "mappings": {
-                    "0": {
-                        "then": "This shop offers tools for DIY repair"
-                    },
-                    "1": {
-                        "then": "This shop doesn't offer tools for DIY repair"
-                    },
-                    "2": {
-                        "then": "Tools for DIY repair are only available if you bought/hire the bike in the shop"
-                    }
-                },
-                "question": "Are there tools here to repair your own bike?"
-            },
-            "bike_shop-access": {
-                "render": "Only accessible to {access}"
-            },
-            "bike_shop-is-bicycle_shop": {
-                "mappings": {
-                    "0": {
-                        "then": "This business focuses on rental"
-                    }
-                },
-                "render": "This shop is specialized in selling {shop} and does bicycle related activities"
-            },
-            "bike_shop-name": {
-                "question": "What is the name of this bicycle shop?",
-                "render": "This bicycle shop is called {name}"
-            }
-        },
         "title": {
             "mappings": {
                 "0": {
                     "then": "Sports gear shop <i>{name}</i>"
-                },
-                "1": {
-                    "then": "Winkel"
                 },
                 "2": {
                     "then": "Bicycle rental shop <i>{name}</i>"
@@ -1903,6 +1788,9 @@
                     "then": "Bike shop <i>{name}</i>"
                 },
                 "5": {
+                    "then": "Bike repair/shop <i>{name}</i>"
+                },
+                "6": {
                     "then": "Bike repair/shop <i>{name}</i>"
                 }
             },
@@ -8968,6 +8856,74 @@
             }
         },
         "tagRenderings": {
+            "bicycle_rental": {
+                "mappings": {
+                    "0": {
+                        "then": "This shop rents out bikes"
+                    },
+                    "1": {
+                        "then": "This shop doesn't rent out bikes"
+                    }
+                },
+                "question": "Does this shop rent out bikes?",
+                "questionHint": "This is about rental for e.g. tourists who need a bike. Some bicycle repair shops offer a bicycle to use while your bicycle is being repaired but this is not considered rental for this question."
+            },
+            "bike_pump_service": {
+                "mappings": {
+                    "0": {
+                        "then": "This shop offers a bike pump for anyone"
+                    },
+                    "1": {
+                        "then": "This shop doesn't offer a bike pump for anyone"
+                    },
+                    "2": {
+                        "then": "There is bicycle pump, it is shown as a separate point"
+                    }
+                },
+                "question": "Does this shop offer a bike pump for use by anyone?"
+            },
+            "bike_repair_tools": {
+                "mappings": {
+                    "0": {
+                        "then": "This shop offers tools for DIY bicycle repair"
+                    },
+                    "1": {
+                        "then": "This shop doesn't offer tools for DIY bicycle repair"
+                    },
+                    "2": {
+                        "then": "Tools for DIY bicycle repair are only available if you bought/hire the bike in the shop"
+                    }
+                },
+                "question": "Are there tools here to repair your own bike?"
+            },
+            "bike_second_hand": {
+                "mappings": {
+                    "0": {
+                        "then": "This shop sells second-hand bikes"
+                    },
+                    "1": {
+                        "then": "This shop doesn't sell second-hand bikes"
+                    },
+                    "2": {
+                        "then": "This shop only sells second-hand bikes"
+                    }
+                },
+                "question": "Does this shop sell second-hand bikes?"
+            },
+            "bike_wash": {
+                "mappings": {
+                    "0": {
+                        "then": "This shop cleans bicycles"
+                    },
+                    "1": {
+                        "then": "This shop has an installation where one can clean bicycles themselves"
+                    },
+                    "2": {
+                        "then": "This shop doesn't offer bicycle cleaning"
+                    }
+                },
+                "question": "Are bicycles washed here?"
+            },
             "brand": {
                 "mappings": {
                     "0": {
@@ -9011,6 +8967,11 @@
             },
             "id_presets.shop_types": {
                 "override": {
+                    "+mappings": {
+                        "0": {
+                            "then": "Bicycle rental shop"
+                        }
+                    },
                     "question": "What kind of shop is this?",
                     "render": "This is a {shop}"
                 }
@@ -9043,8 +9004,36 @@
                 },
                 "question": "Does this shop offer organic products?"
             },
+            "repairs_bikes": {
+                "mappings": {
+                    "0": {
+                        "then": "This shop repairs bikes"
+                    },
+                    "1": {
+                        "then": "This shop doesn't repair bikes"
+                    },
+                    "2": {
+                        "then": "This shop only repairs bikes bought here"
+                    },
+                    "3": {
+                        "then": "This shop only repairs bikes of a certain brand"
+                    }
+                },
+                "question": "Does this shop repair bikes?"
+            },
             "second_hand": {
                 "question": "Does this shop sell second-hand items?"
+            },
+            "sells_new_bikes": {
+                "mappings": {
+                    "0": {
+                        "then": "This shop sells new bikes"
+                    },
+                    "1": {
+                        "then": "This shop doesn't sell new bikes"
+                    }
+                },
+                "question": "Does this shop sell bikes?"
             },
             "shops-name": {
                 "question": "What is the name of this shop?",
@@ -10464,12 +10453,15 @@
             "fee": {
                 "mappings": {
                     "0": {
-                        "then": "Borrowing tools is free"
+                        "then": "Borrowing tools is free (if one has a membership)"
                     },
                     "1": {
-                        "then": "A fee is asked when borrowing tools"
+                        "then": "Borrowing tools is free"
                     },
                     "2": {
+                        "then": "A fee is asked when borrowing tools"
+                    },
+                    "3": {
                         "then": "A donation can be given when borrowing tools"
                     }
                 },
@@ -10483,6 +10475,9 @@
                     },
                     "1": {
                         "then": "A <b>membership is required</b> to use this tool library"
+                    },
+                    "2": {
+                        "then": "A <b>membership is possible</b> but not required to use this tool library"
                     }
                 },
                 "question": "Is a membership required to borrow tools here?"

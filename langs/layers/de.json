@@ -1197,6 +1197,9 @@
                     },
                     "7": {
                         "then": "Fahrradhelme können ausgeliehen werden"
+                    },
+                    "8": {
+                        "then": "Lastenräder können hier gemietet werden"
                     }
                 },
                 "question": "Welche Fahrräder und welches Zubehör kann hier geliehen werden?",
@@ -1350,7 +1353,7 @@
                 "question": "Wie viel kostet die Nutzung des Reinigungsdienstes?",
                 "render": "Die Nutzung des Reinigungsdienstes kostet {charge}"
             },
-            "bike_cleaning-service:bicycle:cleaning:charge": {
+            "bike_cleaning-service_bicycle_cleaning_charge": {
                 "mappings": {
                     "0": {
                         "then": "Der Reinigungsservice ist kostenlos"
@@ -1723,125 +1726,10 @@
                 "title": "eine Fahrradwerkstatt bzw. ein Fahrradgeschäft"
             }
         },
-        "tagRenderings": {
-            "bike_repair_bike-pump-service": {
-                "mappings": {
-                    "0": {
-                        "then": "Im Geschäft gibt es eine öffentlich nutzbare Luftpumpe"
-                    },
-                    "1": {
-                        "then": "Im Geschäft gibt es keine öffentlich nutzbare Luftpumpe"
-                    },
-                    "2": {
-                        "then": "Es gibt eine Luftpumpe, sie ist als separater Punkt eingetragen"
-                    }
-                },
-                "question": "Gibt es in diesem Geschäft eine öffentlich nutzbare Luftpumpe?"
-            },
-            "bike_repair_bike-wash": {
-                "mappings": {
-                    "0": {
-                        "then": "Das Geschäft bietet Fahrradreinigungen an"
-                    },
-                    "1": {
-                        "then": "Im Geschäft können Fahrräder selbst gereinigt werden"
-                    },
-                    "2": {
-                        "then": "Das Geschäft bietet keine Fahrradreinigungen an"
-                    }
-                },
-                "question": "Bietet dieses Geschäft Fahrradreinigungen an?"
-            },
-            "bike_repair_rents-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "Das Geschäft vermietet Fahrräder"
-                    },
-                    "1": {
-                        "then": "Das Geschäft vermietet keine Fahrräder"
-                    }
-                },
-                "question": "Vermietet dieses Geschäft Fahrräder?"
-            },
-            "bike_repair_repairs-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "Das Geschäft repariert Fahrräder"
-                    },
-                    "1": {
-                        "then": "Das Geschäft repariert keine Fahrräder"
-                    },
-                    "2": {
-                        "then": "Das Geschäft repariert nur hier gekaufte Fahrräder"
-                    },
-                    "3": {
-                        "then": "Das Geschäft repariert nur Fahrräder einer bestimmten Marke"
-                    }
-                },
-                "question": "Repariert dieses Geschäft Fahrräder?"
-            },
-            "bike_repair_second-hand-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "Das Geschäft verkauft auch gebrauchte Fahrräder"
-                    },
-                    "1": {
-                        "then": "Das Geschäft verkauft keine gebrauchten Fahrräder"
-                    },
-                    "2": {
-                        "then": "Das Geschäft verkauft ausschließlich gebrauchte Fahrräder"
-                    }
-                },
-                "question": "Verkauft dieses Geschäft gebrauchte Fahrräder?"
-            },
-            "bike_repair_sells-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "Das Geschäft verkauft Fahrräder"
-                    },
-                    "1": {
-                        "then": "Das Geschäft verkauft keine Fahrräder"
-                    }
-                },
-                "question": "Verkauft dieses Geschäft Fahrräder?"
-            },
-            "bike_repair_tools-service": {
-                "mappings": {
-                    "0": {
-                        "then": "Das Geschäft bietet Werkzeug an, um das eigene Fahrrad zu reparieren"
-                    },
-                    "1": {
-                        "then": "Das Geschäft bietet kein Werkzeug an, um das eigene Fahrrad zu reparieren"
-                    },
-                    "2": {
-                        "then": "Das Geschäft bietet nur Werkzeug an, um das eigene Fahrrad zu reparieren, wenn es dort gekauft/gemietet wurde"
-                    }
-                },
-                "question": "Gibt es hier Werkzeug, um das eigene Fahrrad zu reparieren?"
-            },
-            "bike_shop-access": {
-                "render": "Nur zugänglich für {access}"
-            },
-            "bike_shop-is-bicycle_shop": {
-                "mappings": {
-                    "0": {
-                        "then": "Dieses Geschäft konzentriert sich auf die Vermietung"
-                    }
-                },
-                "render": "Dieses Geschäft ist auf den Verkauf von {shop} spezialisiert und im Bereich Fahrrad tätig"
-            },
-            "bike_shop-name": {
-                "question": "Wie heißt dieses Geschäft?",
-                "render": "Das Geschäft heißt {name}"
-            }
-        },
         "title": {
             "mappings": {
                 "0": {
                     "then": "Sportartikelgeschäft <i>{name}</i>"
-                },
-                "1": {
-                    "then": "Geschäfte"
                 },
                 "2": {
                     "then": "Fahrradverleih <i>{name}</i>"
@@ -1853,6 +1741,9 @@
                     "then": "Fahrradgeschäft <i>{name}</i>"
                 },
                 "5": {
+                    "then": "Fahrradwerkstatt/-geschäft <i>{name}</i>"
+                },
+                "6": {
                     "then": "Fahrradwerkstatt/-geschäft <i>{name}</i>"
                 }
             },
@@ -4715,6 +4606,11 @@
                     }
                 },
                 "question": "Was ist der erlaubte Zugang?"
+            },
+            "seasonal": {
+                "override": {
+                    "question": "Ist diese Feuerstelle rund um das Jahr nutzbar?"
+                }
             }
         },
         "title": {
@@ -8156,7 +8052,8 @@
                     "2": {
                         "then": "Im Winter nicht in Betrieb"
                     }
-                }
+                },
+                "question": "Ist {title()} rund um das Jahr nutzbar?"
             },
             "service:electricity": {
                 "mappings": {
@@ -8731,6 +8628,39 @@
                 },
                 "question": "Welche Geschlechter können sich an dieser Schule anmelden?"
             },
+            "pedagogy": {
+                "mappings": {
+                    "0": {
+                        "then": "Diese Schule benutzt keine spezifische Pädagogik"
+                    },
+                    "1": {
+                        "then": "Diese Schule nutzt die Montessori Methode der Bildung"
+                    },
+                    "2": {
+                        "then": "Diese Schule ist mit der Freinet Modern School Movement verbunden"
+                    },
+                    "3": {
+                        "then": "Diese Schule nutzt das Lehrkonzept von Jenaplan"
+                    },
+                    "4": {
+                        "then": "Diese Schule nutzt die Steiner/Waldorfer Bildungsphilosophie"
+                    },
+                    "5": {
+                        "then": "Diese Schule nutzt das Dalton Plan Lehrkonzept"
+                    },
+                    "6": {
+                        "then": "Diese Schule nutzt Outdoor-Lernen"
+                    },
+                    "7": {
+                        "then": "Diese Schule nutzt den Reggio Emilia-Ansatz"
+                    },
+                    "8": {
+                        "then": "Diese Schule nutzt das Sudbury-System"
+                    }
+                },
+                "question": "Welche Bildungstheorie wird auf dieser Schule angewendet?",
+                "render": "Diese Schule benutzt {pedagogy}"
+            },
             "school-language": {
                 "render": {
                     "special": {
@@ -8860,6 +8790,73 @@
             }
         },
         "tagRenderings": {
+            "bicycle_rental": {
+                "mappings": {
+                    "0": {
+                        "then": "Das Geschäft vermietet Fahrräder"
+                    },
+                    "1": {
+                        "then": "Das Geschäft vermietet keine Fahrräder"
+                    }
+                },
+                "question": "Vermietet dieses Geschäft Fahrräder?"
+            },
+            "bike_pump_service": {
+                "mappings": {
+                    "0": {
+                        "then": "Im Geschäft gibt es eine öffentlich nutzbare Luftpumpe"
+                    },
+                    "1": {
+                        "then": "Im Geschäft gibt es keine öffentlich nutzbare Luftpumpe"
+                    },
+                    "2": {
+                        "then": "Es gibt eine Luftpumpe, sie ist als separater Punkt eingetragen"
+                    }
+                },
+                "question": "Gibt es in diesem Geschäft eine öffentlich nutzbare Luftpumpe?"
+            },
+            "bike_repair_tools": {
+                "mappings": {
+                    "0": {
+                        "then": "Das Geschäft bietet Werkzeug an, um das eigene Fahrrad zu reparieren"
+                    },
+                    "1": {
+                        "then": "Das Geschäft bietet kein Werkzeug an, um das eigene Fahrrad zu reparieren"
+                    },
+                    "2": {
+                        "then": "Das Geschäft bietet nur Werkzeug an, um das eigene Fahrrad zu reparieren, wenn es dort gekauft/gemietet wurde"
+                    }
+                },
+                "question": "Gibt es hier Werkzeug, um das eigene Fahrrad zu reparieren?"
+            },
+            "bike_second_hand": {
+                "mappings": {
+                    "0": {
+                        "then": "Das Geschäft verkauft auch gebrauchte Fahrräder"
+                    },
+                    "1": {
+                        "then": "Das Geschäft verkauft keine gebrauchten Fahrräder"
+                    },
+                    "2": {
+                        "then": "Das Geschäft verkauft ausschließlich gebrauchte Fahrräder"
+                    }
+                },
+                "question": "Verkauft dieses Geschäft gebrauchte Fahrräder?"
+            },
+            "bike_wash": {
+                "mappings": {
+                    "0": {
+                        "then": "Das Geschäft bietet Fahrradreinigungen an"
+                    },
+                    "1": {
+                        "then": "Im Geschäft können Fahrräder selbst gereinigt werden"
+                    },
+                    "2": {
+                        "then": "Das Geschäft bietet keine Fahrradreinigungen an"
+                    }
+                },
+                "question": "Bietet dieses Geschäft Fahrradreinigungen an?"
+            },
             "brand": {
                 "mappings": {
                     "0": {
@@ -8935,8 +8932,28 @@
                 },
                 "question": "Bietet dieses Geschäft Bioprodukte an?"
             },
+            "repairs_bikes": {
+                "mappings": {
+                    "0": {
+                        "then": "Das Geschäft repariert Fahrräder"
+                    },
+                    "1": {
+                        "then": "Das Geschäft repariert keine Fahrräder"
+                    },
+                    "2": {
+                        "then": "Das Geschäft repariert nur hier gekaufte Fahrräder"
+                    },
+                    "3": {
+                        "then": "Das Geschäft repariert nur Fahrräder einer bestimmten Marke"
+                    }
+                },
+                "question": "Repariert dieses Geschäft Fahrräder?"
+            },
             "second_hand": {
                 "question": "Verlauft das Geschäft auch Second-Hand-Produkte?"
+            },
+            "sells_new_bikes": {
+                "question": "Verkauft dieses Geschäft Fahrräder?"
             },
             "shops-name": {
                 "question": "Wie ist der Name dieses Geschäfts?",

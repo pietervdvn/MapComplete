@@ -1085,7 +1085,7 @@
                 "question": "¿Cuánto cuesta utilizar el servicio de limpieza?",
                 "render": "Utilizar el servicio de limpieza cuesta {charge}"
             },
-            "bike_cleaning-service:bicycle:cleaning:charge": {
+            "bike_cleaning-service_bicycle_cleaning_charge": {
                 "mappings": {
                     "0": {
                         "then": "El servicio de limpieza es gratuito"
@@ -1399,125 +1399,10 @@
                 "title": "un taller/tienda de bicis"
             }
         },
-        "tagRenderings": {
-            "bike_repair_bike-pump-service": {
-                "mappings": {
-                    "0": {
-                        "then": "Esta tienda ofrece una bomba para cualquiera"
-                    },
-                    "1": {
-                        "then": "Esta tienda no ofrece una bomba para cualquiera"
-                    },
-                    "2": {
-                        "then": "Hay una bomba para bicicletas, se muestra como un punto separado"
-                    }
-                },
-                "question": "¿Esta tienda ofrece una bomba para que la utilice cualquiera?"
-            },
-            "bike_repair_bike-wash": {
-                "mappings": {
-                    "0": {
-                        "then": "Esta tienda limpia bicicletas"
-                    },
-                    "1": {
-                        "then": "Esta tienda tiene una instalación donde uno puede limpiar bicicletas por si mismo"
-                    },
-                    "2": {
-                        "then": "Esta tienda no ofrece limpieza de bicicletas"
-                    }
-                },
-                "question": "¿Aquí se lavan bicicletas?"
-            },
-            "bike_repair_rents-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "Esta tienda alquila bicis"
-                    },
-                    "1": {
-                        "then": "Esta tienda no alquila bicis"
-                    }
-                },
-                "question": "¿Alquila bicicis esta tienda?"
-            },
-            "bike_repair_repairs-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "Esta tienda repara bicis"
-                    },
-                    "1": {
-                        "then": "Esta tienda no repara bicis"
-                    },
-                    "2": {
-                        "then": "Esta tienda solo repara bicis compradas aquí"
-                    },
-                    "3": {
-                        "then": "Esta tienda solo repara bicis de una cierta marca"
-                    }
-                },
-                "question": "¿Repara bicis esta tienda?"
-            },
-            "bike_repair_second-hand-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "Esta tienda vende bicis de segunda mano"
-                    },
-                    "1": {
-                        "then": "Esta tienda no vende bicis de segunda mano"
-                    },
-                    "2": {
-                        "then": "Esta tienda solo vende bicis de segunda mano"
-                    }
-                },
-                "question": "¿Vende bicis de segunda mano esta tienda?"
-            },
-            "bike_repair_sells-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "Esta tienda vende bicis"
-                    },
-                    "1": {
-                        "then": "Esta tienda no vende bicis"
-                    }
-                },
-                "question": "¿Vende bicis esta tienda?"
-            },
-            "bike_repair_tools-service": {
-                "mappings": {
-                    "0": {
-                        "then": "Esta tienda ofrece herramientas para la reparación DIY"
-                    },
-                    "1": {
-                        "then": "Esta tienda no ofrece herramientas para la reparación DIY"
-                    },
-                    "2": {
-                        "then": "Las herramientas para reparaciones DIT solo están disponibles si compraste/alquilaste la bicicleta en la tienda"
-                    }
-                },
-                "question": "¿Hay herramientas para reparar tu propia bici?"
-            },
-            "bike_shop-access": {
-                "render": "Solo accesible a {access}"
-            },
-            "bike_shop-is-bicycle_shop": {
-                "mappings": {
-                    "0": {
-                        "then": "Este negocio se centra en el alquiler"
-                    }
-                },
-                "render": "Esta tienda está especializada en vender {shop} y hace actividades relacionadas con bicicletas"
-            },
-            "bike_shop-name": {
-                "question": "¿Cual es el nombre de esta tienda de bicicletas?",
-                "render": "Esta tienda de bicicletas se llama {name}"
-            }
-        },
         "title": {
             "mappings": {
                 "0": {
                     "then": "Tienda de material deportivo <i>{name}</i>"
-                },
-                "1": {
-                    "then": "Winkel"
                 },
                 "2": {
                     "then": "Tienda de alquiler de bicicletas <i>{name}</i>"
@@ -1529,6 +1414,9 @@
                     "then": "Tienda de bicis <i>{name}</i>"
                 },
                 "5": {
+                    "then": "Taller/tienda de bicis <i>{name}</i>"
+                },
+                "6": {
                     "then": "Taller/tienda de bicis <i>{name}</i>"
                 }
             },
@@ -3909,6 +3797,93 @@
             }
         },
         "tagRenderings": {
+            "bicycle_rental": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta tienda alquila bicis"
+                    },
+                    "1": {
+                        "then": "Esta tienda no alquila bicis"
+                    }
+                },
+                "question": "¿Alquila bicicis esta tienda?"
+            },
+            "bike_pump_service": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta tienda ofrece una bomba para cualquiera"
+                    },
+                    "1": {
+                        "then": "Esta tienda no ofrece una bomba para cualquiera"
+                    },
+                    "2": {
+                        "then": "Hay una bomba para bicicletas, se muestra como un punto separado"
+                    }
+                },
+                "question": "¿Esta tienda ofrece una bomba para que la utilice cualquiera?"
+            },
+            "bike_repair_tools": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta tienda ofrece herramientas para la reparación DIY"
+                    },
+                    "1": {
+                        "then": "Esta tienda no ofrece herramientas para la reparación DIY"
+                    },
+                    "2": {
+                        "then": "Las herramientas para reparaciones DIT solo están disponibles si compraste/alquilaste la bicicleta en la tienda"
+                    }
+                },
+                "question": "¿Hay herramientas para reparar tu propia bici?"
+            },
+            "bike_second_hand": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta tienda vende bicis de segunda mano"
+                    },
+                    "1": {
+                        "then": "Esta tienda no vende bicis de segunda mano"
+                    },
+                    "2": {
+                        "then": "Esta tienda solo vende bicis de segunda mano"
+                    }
+                },
+                "question": "¿Vende bicis de segunda mano esta tienda?"
+            },
+            "bike_wash": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta tienda limpia bicicletas"
+                    },
+                    "1": {
+                        "then": "Esta tienda tiene una instalación donde uno puede limpiar bicicletas por si mismo"
+                    },
+                    "2": {
+                        "then": "Esta tienda no ofrece limpieza de bicicletas"
+                    }
+                },
+                "question": "¿Aquí se lavan bicicletas?"
+            },
+            "repairs_bikes": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta tienda repara bicis"
+                    },
+                    "1": {
+                        "then": "Esta tienda no repara bicis"
+                    },
+                    "2": {
+                        "then": "Esta tienda solo repara bicis compradas aquí"
+                    },
+                    "3": {
+                        "then": "Esta tienda solo repara bicis de una cierta marca"
+                    }
+                },
+                "question": "¿Repara bicis esta tienda?"
+            },
+            "sells_new_bikes": {
+                "question": "¿Vende bicis esta tienda?"
+            },
             "shops-name": {
                 "question": "¿Cual es el nombre de esta tienda?"
             }

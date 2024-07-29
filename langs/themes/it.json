@@ -695,30 +695,6 @@
         "description": "I fari sono edifici alti con una luce in cima per guidare il traffico marittimo.",
         "title": "Fari"
     },
-    "mapcomplete-changes": {
-        "description": "Questa mappa mostra tutte le modifiche fatte con MapComplete",
-        "layers": {
-            "0": {
-                "description": "Mostra tutte le modifiche fatte con MapComplete",
-                "filter": {
-                    "0": {
-                        "options": {
-                            "0": {
-                                "question": "Il nome del tema contiene {search}"
-                            }
-                        }
-                    },
-                    "1": {
-                        "options": {
-                            "0": {
-                                "question": "Il nome del tema <b>not</b> contiene {search}"
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    },
     "maps": {
         "description": "In questa carta puoi trovare tutte le mappe conosciute da OpenStreetMap (tipicamente una grossa mappa su di un pannello informativo che mostra l’area, la città o la regione, ad es. una mappa turistica dietro a un manifesto, la mappa di una riserva naturale, la mappa della rete ciclistica regionale, etc.)<br/><br/>Se manca una mappa, puoi aggiungerla facilmente a questa su OpenStreetMap.",
         "shortDescription": "Questo tema mostra tutte le mappe (turistiche) di cui OpenStreetMap dispone",

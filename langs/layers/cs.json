@@ -1093,7 +1093,7 @@
                 "question": "Kolik stojí využívání služby mytí?",
                 "render": "Využití služby mytí stojí {charge}"
             },
-            "bike_cleaning-service:bicycle:cleaning:charge": {
+            "bike_cleaning-service_bicycle_cleaning_charge": {
                 "mappings": {
                     "0": {
                         "then": "Služba mytí je k dispozici zdarma"
@@ -1422,125 +1422,10 @@
                 "title": "opravna/obchod s jízdními koly"
             }
         },
-        "tagRenderings": {
-            "bike_repair_bike-pump-service": {
-                "mappings": {
-                    "0": {
-                        "then": "Tento obchod nabízí pumpu na kolo pro každého"
-                    },
-                    "1": {
-                        "then": "Tento obchod nenabízí pumpičku na kolo pro každého"
-                    },
-                    "2": {
-                        "then": "K dispozici je pumpa na jízdní kola, je zobrazena jako samostatný bod"
-                    }
-                },
-                "question": "Nabízí tento obchod pumpu na kolo k použití pro kohokoli?"
-            },
-            "bike_repair_bike-wash": {
-                "mappings": {
-                    "0": {
-                        "then": "Tento obchod čistí jízdní kola"
-                    },
-                    "1": {
-                        "then": "Tento obchod má zařízení, kde si můžete sami vyčistit jízdní kola"
-                    },
-                    "2": {
-                        "then": "Tento obchod nenabízí čištění jízdních kol"
-                    }
-                },
-                "question": "Myjí se zde jízdní kola?"
-            },
-            "bike_repair_rents-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "Tento obchod pronajímá jízdní kola"
-                    },
-                    "1": {
-                        "then": "Tento obchod nepronajímá kola"
-                    }
-                },
-                "question": "Pronajímá tento obchod kola?"
-            },
-            "bike_repair_repairs-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "Tento obchod opravuje jízdní kola"
-                    },
-                    "1": {
-                        "then": "Tento obchod neopravuje jízdní kola"
-                    },
-                    "2": {
-                        "then": "Tento obchod opravuje pouze zde zakoupená kola"
-                    },
-                    "3": {
-                        "then": "Tento obchod opravuje pouze kola určité značky"
-                    }
-                },
-                "question": "Opravuje tento obchod jízdní kola?"
-            },
-            "bike_repair_second-hand-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "Tento obchod prodává použitá jízdní kola"
-                    },
-                    "1": {
-                        "then": "Tento obchod neprodává kola z druhé ruky"
-                    },
-                    "2": {
-                        "then": "Tento obchod prodává pouze kola z druhé ruky"
-                    }
-                },
-                "question": "Prodává tento obchod použitá jízdní kola?"
-            },
-            "bike_repair_sells-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "Tento obchod prodává jízdní kola"
-                    },
-                    "1": {
-                        "then": "Tento obchod neprodává jízdní kola"
-                    }
-                },
-                "question": "Prodává tento obchod jízdní kola?"
-            },
-            "bike_repair_tools-service": {
-                "mappings": {
-                    "0": {
-                        "then": "Tento obchod nabízí nářadí pro kutilské opravy"
-                    },
-                    "1": {
-                        "then": "Tento obchod nenabízí nářadí pro opravy svépomocí"
-                    },
-                    "2": {
-                        "then": "Nářadí pro opravy svépomocí je k dispozici pouze v případě, že jste si kolo koupili/pronajali v prodejně"
-                    }
-                },
-                "question": "Jsou zde nástroje na opravu vlastního kola?"
-            },
-            "bike_shop-access": {
-                "render": "Přístupné pouze pro {access}"
-            },
-            "bike_shop-is-bicycle_shop": {
-                "mappings": {
-                    "0": {
-                        "then": "Tato firma se zaměřuje na pronájem"
-                    }
-                },
-                "render": "Tento obchod se specializuje na prodej {shop} a provádí činnosti související s jízdními koly"
-            },
-            "bike_shop-name": {
-                "question": "Jak se jmenuje tento obchod s jízdními koly?",
-                "render": "Tento obchod s jízdními koly se jmenuje {name}"
-            }
-        },
         "title": {
             "mappings": {
                 "0": {
                     "then": "Obchod se sportovním vybavením <i>{name}</i>"
-                },
-                "1": {
-                    "then": "Winkel"
                 },
                 "2": {
                     "then": "Půjčovna kol <i>{name}</i>"
@@ -1552,6 +1437,9 @@
                     "then": "Prodejna kol <i>{name}</i>"
                 },
                 "5": {
+                    "then": "Oprava kol/obchod <i>{name}</i>"
+                },
+                "6": {
                     "then": "Oprava kol/obchod <i>{name}</i>"
                 }
             },
@@ -7141,6 +7029,73 @@
             }
         },
         "tagRenderings": {
+            "bicycle_rental": {
+                "mappings": {
+                    "0": {
+                        "then": "Tento obchod pronajímá jízdní kola"
+                    },
+                    "1": {
+                        "then": "Tento obchod nepronajímá kola"
+                    }
+                },
+                "question": "Pronajímá tento obchod kola?"
+            },
+            "bike_pump_service": {
+                "mappings": {
+                    "0": {
+                        "then": "Tento obchod nabízí pumpu na kolo pro každého"
+                    },
+                    "1": {
+                        "then": "Tento obchod nenabízí pumpičku na kolo pro každého"
+                    },
+                    "2": {
+                        "then": "K dispozici je pumpa na jízdní kola, je zobrazena jako samostatný bod"
+                    }
+                },
+                "question": "Nabízí tento obchod pumpu na kolo k použití pro kohokoli?"
+            },
+            "bike_repair_tools": {
+                "mappings": {
+                    "0": {
+                        "then": "Tento obchod nabízí nářadí pro kutilské opravy"
+                    },
+                    "1": {
+                        "then": "Tento obchod nenabízí nářadí pro opravy svépomocí"
+                    },
+                    "2": {
+                        "then": "Nářadí pro opravy svépomocí je k dispozici pouze v případě, že jste si kolo koupili/pronajali v prodejně"
+                    }
+                },
+                "question": "Jsou zde nástroje na opravu vlastního kola?"
+            },
+            "bike_second_hand": {
+                "mappings": {
+                    "0": {
+                        "then": "Tento obchod prodává použitá jízdní kola"
+                    },
+                    "1": {
+                        "then": "Tento obchod neprodává kola z druhé ruky"
+                    },
+                    "2": {
+                        "then": "Tento obchod prodává pouze kola z druhé ruky"
+                    }
+                },
+                "question": "Prodává tento obchod použitá jízdní kola?"
+            },
+            "bike_wash": {
+                "mappings": {
+                    "0": {
+                        "then": "Tento obchod čistí jízdní kola"
+                    },
+                    "1": {
+                        "then": "Tento obchod má zařízení, kde si můžete sami vyčistit jízdní kola"
+                    },
+                    "2": {
+                        "then": "Tento obchod nenabízí čištění jízdních kol"
+                    }
+                },
+                "question": "Myjí se zde jízdní kola?"
+            },
             "copyshop-print-sizes": {
                 "mappings": {
                     "0": {
@@ -7181,8 +7136,28 @@
                 },
                 "question": "Nabízí tento obchod bio produkty?"
             },
+            "repairs_bikes": {
+                "mappings": {
+                    "0": {
+                        "then": "Tento obchod opravuje jízdní kola"
+                    },
+                    "1": {
+                        "then": "Tento obchod neopravuje jízdní kola"
+                    },
+                    "2": {
+                        "then": "Tento obchod opravuje pouze zde zakoupená kola"
+                    },
+                    "3": {
+                        "then": "Tento obchod opravuje pouze kola určité značky"
+                    }
+                },
+                "question": "Opravuje tento obchod jízdní kola?"
+            },
             "second_hand": {
                 "question": "Prodává tento obchod použité zboží?"
+            },
+            "sells_new_bikes": {
+                "question": "Prodává tento obchod jízdní kola?"
             },
             "shops-name": {
                 "question": "Jak se jmenuje tento obchod?",

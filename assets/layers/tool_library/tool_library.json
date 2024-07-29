@@ -92,7 +92,7 @@
             ]
           },
           "then": {
-            "en": "Borrowing tools is free if one has a membership"
+            "en": "Borrowing tools is free (if one has a membership)"
           },
           "hideInAnswer": "membership!=required"
         },
