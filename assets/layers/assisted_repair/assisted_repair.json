@@ -58,7 +58,9 @@
         {
           "if": "service:mobile_phone:repair=yes",
           "alsoShowIf": "mobile_phone:repair=yes",
-          "addExtraTags": ["mobile_phone:repair="],
+          "addExtraTags": [
+            "mobile_phone:repair="
+          ],
           "then": {
             "en": "Mobile phones are repaired here"
           },
@@ -67,7 +69,9 @@
         {
           "if": "service:computer:repair=yes",
           "alsoShowIf": "computer:repair=yes",
-          "addExtraTags": ["computer:repair="],
+          "addExtraTags": [
+            "computer:repair="
+          ],
           "then": {
             "en": "Computers are repaired here"
           },
@@ -76,7 +80,9 @@
         {
           "if": "service:bicycle:repair=yes",
           "alsoShowIf": "bicycle:repair=yes",
-          "addExtraTags": ["bicycle:repair="],
+          "addExtraTags": [
+            "bicycle:repair="
+          ],
           "then": {
             "en": "Bicycles are repaired here"
           },
@@ -85,29 +91,33 @@
         {
           "if": "service:electronics:repair=yes",
           "alsoShowIf": "bicycle:repair=yes",
-          "addExtraTags": ["bicycle:repair="],
+          "addExtraTags": [
+            "bicycle:repair="
+          ],
           "then": {
             "en": "Electronic devices are repaired here"
           },
           "ifnot": "service:electronics:repair=no",
           "icon": "./assets/layers/recycling/small_electrical_appliances.svg"
-
         },
         {
           "if": "service:furniture:repair=yes",
           "alsoShowIf": "furniture:repair=yes",
-          "addExtraTags": ["furniture:repair="],
+          "addExtraTags": [
+            "furniture:repair="
+          ],
           "then": {
             "en": "Furniture is repaired here"
           },
           "ifnot": "service:furniture:repair=no",
           "icon": "./assets/layers/recycling/furniture.svg"
-
         },
         {
           "if": "service:clothes:repair=yes",
           "alsoShowIf": "clothes:repair=yes",
-          "addExtraTags": ["clothes:repair="],
+          "addExtraTags": [
+            "clothes:repair="
+          ],
           "then": {
             "en": "Clothes are repaired here"
           },
