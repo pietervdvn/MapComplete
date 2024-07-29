@@ -64,7 +64,7 @@
               {
                 "if": "fetish:bdsm:specialized=yes",
                 "ifnot": "fetish:bdsm:specialized=no",
-                "then":{
+                "then": {
                   "en": "This shop offers <b>specialized BDSM-gear</b>, such as spreader bars, supplies for needle play, medical bondage supplies, impact tools, shackles, metal colors, cuffs, nipple clamps, shibari accessories, ..."
                 }
               },
@@ -89,7 +89,6 @@
                   "en": "This shop offers <b>uniforms</b> for roleplay, such nurse uniforms, military uniforms, police, school girl, french maid, ..."
                 }
               }
-
             ]
           }
         ]
