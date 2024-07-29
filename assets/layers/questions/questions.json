@@ -2069,6 +2069,7 @@
       "mappings": [
         {
           "if": "internet_access=wlan",
+          "icon": "wifi",
           "then": {
             "en": "This place offers wireless internet access",
             "nl": "Deze plaats biedt draadloze internettoegang aan",
@@ -2086,6 +2087,8 @@
         },
         {
           "if": "internet_access=no",
+          "icon": "wifi;cross_bottom_right:red",
+
           "then": {
             "en": "This place <b>does not</b> offer internet access",
             "nl": "Deze plaats biedt <b>geen</b> internettoegang aan",
@@ -2121,6 +2124,7 @@
         },
         {
           "if": "internet_access=terminal",
+          "icon": "computer",
           "then": {
             "en": "This place offers internet access via a terminal or computer",
             "nl": "Deze plaats biedt internettoegang via een terminal of computer aan",

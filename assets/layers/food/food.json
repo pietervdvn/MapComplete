@@ -111,7 +111,7 @@
             ]
           },
           "then": {
-            "render": "circle:white;./assets/layers/food/Vegetarian-mark.svg"
+            "render": "./assets/layers/food/Vegetarian-mark.svg"
           }
         },
         {
@@ -684,6 +684,7 @@
       "mappings": [
         {
           "if": "diet:vegetarian=no",
+          "icon": "./assets/layers/food/Vegetarian-mark.svg;cross_bottom_right:red",
           "then": {
             "en": "No vegetarian options are available",
             "nl": "Geen vegetarische opties beschikbaar",
@@ -710,6 +711,7 @@
         },
         {
           "if": "diet:vegetarian=yes",
+          "icon": "./assets/layers/food/Vegetarian-mark.svg",
           "then": {
             "en": "Vegetarian options are available",
             "nl": "Vegetarische opties zijn beschikbaar",
@@ -723,6 +725,7 @@
         },
         {
           "if": "diet:vegetarian=only",
+          "icon": "./assets/layers/food/Vegetarian-mark.svg",
           "then": {
             "en": "All dishes are vegetarian",
             "nl": "Enkel vegetarische opties zijn beschikbaar",
