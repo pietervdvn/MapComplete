@@ -55,7 +55,7 @@ export class Or extends TagsFilter {
         return choices
     }
 
-    asHumanString(linkToWiki: boolean, shorten: boolean, properties: Record<string, string>) {
+    asHumanString(linkToWiki: boolean = false, shorten: boolean = false, properties: Record<string, string> = {}) {
         return this.or
             .map((t) => {
                 let e = t.asHumanString(linkToWiki, shorten, properties)
@@ -76,7 +76,7 @@ export class Or extends TagsFilter {
             for (const selfTag of this.or) {
                 let matchFound = false
                 for (let i = 0; i < other.or.length && !matchFound; i++) {
-                    let otherTag = other.or[i]
+                    const otherTag = other.or[i]
                     matchFound = selfTag.shadows(otherTag)
                 }
                 if (!matchFound) {
@@ -121,7 +121,7 @@ export class Or extends TagsFilter {
         const newOrs: TagsFilter[] = []
         for (const tag of this.or) {
             if (tag instanceof Or) {
-                throw "Optimize expressions before using removePhraseConsideredKnown"
+                throw "Optimize expressions before using removePhraseConsideredKnown. Found an OR in an OR: "+this.asHumanString(false, false, {})
             }
             if (tag instanceof And) {
                 const r = tag.removePhraseConsideredKnown(knownExpression, value)

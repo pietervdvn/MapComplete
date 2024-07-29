@@ -191,7 +191,7 @@ export class And extends TagsFilter {
         const newAnds: TagsFilter[] = []
         for (const tag of this.and) {
             if (tag instanceof And) {
-                throw "Optimize expressions before using removePhraseConsideredKnown"
+                throw "Optimize expressions before using removePhraseConsideredKnown. Found an AND in an AND: "+this.asHumanString()
             }
             if (tag instanceof Or) {
                 const r = tag.removePhraseConsideredKnown(knownExpression, value)
