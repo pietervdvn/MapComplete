@@ -7,6 +7,7 @@ import known_languages from "../../src/assets/language_native.json"
 import { LayerConfigJson } from "../../src/Models/ThemeConfig/Json/LayerConfigJson"
 import { MappingConfigJson } from "../../src/Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
 import SmallLicense from "../../src/Models/smallLicense"
+import Script from "../Script"
 
 interface IconThief {
     steal(iconName: string): boolean
@@ -25,7 +26,7 @@ interface IdPresetJson {
 }
 
 class IdPreset implements IdPresetJson {
-    private _preset: IdPresetJson
+    private readonly _preset: IdPresetJson
 
     constructor(preset: IdPresetJson) {
         this._preset = preset
@@ -212,6 +213,11 @@ class IdThief {
                 continue
             }
 
+            if(preset.tags["shop"] === "vacant") {
+                console.log("Skipping 'vacant'")
+                continue
+            }
+
             console.log(`     ${name} (shop=${preset.tags["shop"]}), ${preset.icon}`)
 
             const thenClause: Record<string, string> = {
@@ -239,7 +245,7 @@ class IdThief {
                 }
             }
 
-            let tag = preset.parseTags()
+            const tag = preset.parseTags()
             const mapping: MappingConfigJson = {
                 if: tag,
                 then: thenClause,
@@ -276,57 +282,72 @@ class IdThief {
     }
 }
 
-const targetDir = "./assets/layers/id_presets/"
 
-const makiThief = new MakiThief(
-    "../maki/icons/",
-    targetDir + "maki-",
-    {
-        authors: ["Maki icon set"],
-        license: "CC0",
-        path: null,
-        sources: ["https://github.com/mapbox/maki"],
-    },
-    "maki-"
-)
+class ReadIdPresets extends Script{
+    constructor() {
+        super("Reads the id-tagging-schema repository and steals the presets; which will be written into 'id_presets.json'\n\nArguments: [path-to-repository] [path-to-target]\n" +
+            "Note that default arguments are used")
+    }
 
-const temakiThief = new MakiThief(
-    "../temaki/icons/",
-    targetDir + "temaki-",
-    {
-        authors: ["Temaki icon set"],
-        license: "CC0",
-        path: null,
-        sources: ["https://github.com/ideditor/temaki"],
-    },
-    "temaki-"
-)
-const fasThief = new MakiThief(
-    "../Font-Awesome/svgs/solid/",
-    targetDir + "fas-",
-    {
-        authors: ["Font-Awesome icon set"],
-        license: "CC-BY 4.0",
-        path: null,
-        sources: ["https://github.com/FortAwesome/Font-Awesome"],
-    },
-    "fas-"
-)
-const iconThief = new AggregateIconThief([makiThief, temakiThief, fasThief])
+    async main(args: string[]): Promise<void> {
 
-const thief = new IdThief("../id-tagging-schema/", iconThief)
+        const targetDir = args[1] ?? "./assets/layers/id_presets/"
 
-const id_presets_path = targetDir + "id_presets.json"
-const idPresets = <LayerConfigJson>JSON.parse(readFileSync(id_presets_path, "utf8"))
-idPresets.tagRenderings = [
-    {
-        id: "shop_types",
-        mappings: thief.readShopPresets(),
-    },
-    {
-        id: "shop_rendering",
-        mappings: thief.readShopIcons(),
-    },
-]
-console.log("Writing id presets to", id_presets_path)
-writeFileSync(id_presets_path, JSON.stringify(idPresets, null, "  "), "utf8")
+        const makiThief = new MakiThief(
+            "../maki/icons/",
+            targetDir + "maki-",
+            {
+                authors: ["Maki icon set"],
+                license: "CC0",
+                path: null,
+                sources: ["https://github.com/mapbox/maki"],
+            },
+            "maki-"
+        )
+
+        const temakiThief = new MakiThief(
+            "../temaki/icons/",
+            targetDir + "temaki-",
+            {
+                authors: ["Temaki icon set"],
+                license: "CC0",
+                path: null,
+                sources: ["https://github.com/ideditor/temaki"],
+            },
+            "temaki-"
+        )
+        const fasThief = new MakiThief(
+            "../Font-Awesome/svgs/solid/",
+            targetDir + "fas-",
+            {
+                authors: ["Font-Awesome icon set"],
+                license: "CC-BY 4.0",
+                path: null,
+                sources: ["https://github.com/FortAwesome/Font-Awesome"],
+            },
+            "fas-"
+        )
+        const iconThief = new AggregateIconThief([makiThief, temakiThief, fasThief])
+
+        const thief = new IdThief(args[0] ?? "../id-tagging-schema/", iconThief)
+
+        const id_presets_path = targetDir + "id_presets.json"
+        const idPresets = <LayerConfigJson>JSON.parse(readFileSync(id_presets_path, "utf8"))
+        idPresets.tagRenderings = [
+            {
+                id: "shop_types",
+                mappings: thief.readShopPresets(),
+            },
+            {
+                id: "shop_rendering",
+                mappings: thief.readShopIcons(),
+            },
+        ]
+        console.log("Writing id presets to", id_presets_path)
+        writeFileSync(id_presets_path, JSON.stringify(idPresets, null, "  "), "utf8")
+
+    }
+}
+
+
+new ReadIdPresets().run()
