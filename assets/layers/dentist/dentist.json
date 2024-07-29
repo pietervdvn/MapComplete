@@ -20,7 +20,7 @@
   "source": {
     "osmTags": "amenity=dentist"
   },
-  "minzoom": 13,
+  "minzoom": 8,
   "title": {
     "render": {
       "en": "Dentist Office {name}",
@@ -47,7 +47,18 @@
         {
           "icon": "./assets/layers/dentist/dentist.svg"
         }
-      ]
+      ],
+      "labelCssClasses": "bg-white rounded px-2",
+      "label": {
+        "mappings": [
+          {
+            "if": "name~*",
+            "then": {
+              "en": "{name}"
+            }
+          }
+        ]
+      }
     }
   ],
   "lineRendering": [],
