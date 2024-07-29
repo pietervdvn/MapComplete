@@ -1,1 +1,0 @@
-{"error":{"message":"Unsupported get request. Object with ID 'nextbike.by.TIER' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https:\/\/developers.facebook.com\/docs\/graph-api","type":"GraphMethodException","code":100,"error_subcode":33,"fbtrace_id":"AbXjCs-lSj-8cXt6iZ8B360"}}
