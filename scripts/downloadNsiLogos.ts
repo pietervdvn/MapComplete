@@ -1,7 +1,7 @@
 import Script from "./Script"
 import NameSuggestionIndex, { NSIItem } from "../src/Logic/Web/NameSuggestionIndex"
 import * as nsiWD from "../node_modules/name-suggestion-index/dist/wikidata.min.json"
-import { existsSync, writeFileSync } from "fs"
+import { existsSync, readFileSync, unlinkSync, writeFileSync } from "fs"
 import ScriptUtils from "./ScriptUtils"
 import { Utils } from "../src/Utils"
 
@@ -41,7 +41,14 @@ class DownloadNsiLogos extends Script {
         if (logos.facebook) {
             // Facebook's logos are generally better and square
             await ScriptUtils.DownloadFileTo(logos.facebook, path)
-            return true
+            // Validate
+            const content = readFileSync(path, "utf8")
+            if(content.startsWith('{"error"')){
+                unlinkSync(path)
+                console.error("Attempted to fetch",logos.facebook," but this gave an error")
+            }else{
+                return true
+            }
         }
         if (logos.wikidata) {
             let url: string = logos.wikidata
