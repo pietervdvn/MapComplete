@@ -19,6 +19,7 @@
     const src = new UIEventSource(undefined)
 
     function check() {
+      src.setData(undefined)
       const promise = raw ? Utils.download(url) : Utils.downloadJson(url)
       promise?.then((d) => src.setData({ success: d }))?.catch((err) => src.setData({ error: err }))
     }
