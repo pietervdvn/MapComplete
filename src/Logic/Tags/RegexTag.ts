@@ -2,6 +2,7 @@ import { Tag } from "./Tag"
 import { TagsFilter } from "./TagsFilter"
 import { TagConfigJson } from "../../Models/ThemeConfig/Json/TagConfigJson"
 import { ExpressionSpecification } from "maplibre-gl"
+import { OptimizedTag } from "./TagTypes"
 
 export class RegexTag extends TagsFilter {
     public readonly key: RegExp | string
@@ -354,8 +355,8 @@ export class RegexTag extends TagsFilter {
         return []
     }
 
-    optimize(): TagsFilter | boolean {
-        return this
+    optimize(): (RegexTag & OptimizedTag) | boolean {
+        return <any> this
     }
 
     isNegative(): boolean {

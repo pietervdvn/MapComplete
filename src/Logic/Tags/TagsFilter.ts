@@ -1,5 +1,6 @@
 import { TagConfigJson } from "../../Models/ThemeConfig/Json/TagConfigJson"
 import { ExpressionSpecification } from "maplibre-gl"
+import { OptimizedTag, TagsFilterClosed } from "./TagTypes"
 
 export abstract class TagsFilter {
     abstract asOverpass(): string[]
@@ -50,7 +51,7 @@ export abstract class TagsFilter {
     /**
      * Returns an optimized version (or self) of this tagsFilter
      */
-    abstract optimize(): TagsFilter | boolean
+    abstract optimize(): (OptimizedTag & TagsFilterClosed) | boolean
 
     /**
      * Returns 'true' if the tagsfilter might select all features (i.e. the filter will return everything from OSM, except a few entries).

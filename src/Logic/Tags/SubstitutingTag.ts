@@ -3,6 +3,7 @@ import { Tag } from "./Tag"
 import { Utils } from "../../Utils"
 import { TagConfigJson } from "../../Models/ThemeConfig/Json/TagConfigJson"
 import { ExpressionSpecification } from "maplibre-gl"
+import { OptimizedTag } from "./TagTypes"
 
 /**
  * The substituting-tag uses the tags of a feature a variables and replaces them.
@@ -111,8 +112,8 @@ export default class SubstitutingTag extends TagsFilter {
         return [{ k: this._key, v: v }]
     }
 
-    optimize(): TagsFilter | boolean {
-        return this
+    optimize(): (SubstitutingTag & OptimizedTag) | boolean {
+        return <any> this
     }
 
     isNegative(): boolean {

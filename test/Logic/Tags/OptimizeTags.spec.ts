@@ -31,7 +31,7 @@ describe("Tag optimalization", () => {
             const t = new And([
                 new Tag("foo", "bar"),
                 new Or([new Tag("x", "y"), new Tag("a", "b")]),
-                new Or([new Tag("x", "y"), new Tag("c", "d")]),
+                new Or([new Tag("x", "y"), new Tag("c", "d")])
             ])
             const opt = <TagsFilter>t.optimize()
             expect(TagUtils.toString(opt)).toBe("foo=bar& (x=y| (a=b&c=d) )")
@@ -42,7 +42,7 @@ describe("Tag optimalization", () => {
             const t = new And([
                 new Tag("foo", "bar"),
                 new Or([new RegexTag("x", "y"), new RegexTag("a", "b")]),
-                new Or([new RegexTag("x", "y"), new RegexTag("c", "d")]),
+                new Or([new RegexTag("x", "y"), new RegexTag("c", "d")])
             ])
             const opt = <TagsFilter>t.optimize()
             expect(TagUtils.toString(opt)).toBe("foo=bar& ( (a=b&c=d) |x=y)")
@@ -53,7 +53,7 @@ describe("Tag optimalization", () => {
             const t = new And([
                 new Tag("foo", "bar"),
                 new Or([new RegexTag("x", "y"), new RegexTag("a", "b")]),
-                new Or([new RegexTag("x", "y", true), new RegexTag("c", "d")]),
+                new Or([new RegexTag("x", "y", true), new RegexTag("c", "d")])
             ])
             const opt = <TagsFilter>t.optimize()
             expect(TagUtils.toString(opt)).toBe("foo=bar& (a=b|x=y) & (c=d|x!=y)")
@@ -86,12 +86,12 @@ describe("Tag optimalization", () => {
                     {
                         and: [
                             {
-                                or: ["X=Y", "FOO=BAR"],
+                                or: ["X=Y", "FOO=BAR"]
                             },
-                            "bicycle=yes",
-                        ],
-                    },
-                ],
+                            "bicycle=yes"
+                        ]
+                    }
+                ]
             })
             // (X=Y | FOO=BAR | (bicycle=yes & (X=Y | FOO=BAR)) )
             // This is equivalent to (X=Y | FOO=BAR)
@@ -109,11 +109,11 @@ describe("Tag optimalization", () => {
                                     "amenity=charging_station",
                                     "disused:amenity=charging_station",
                                     "planned:amenity=charging_station",
-                                    "construction:amenity=charging_station",
-                                ],
+                                    "construction:amenity=charging_station"
+                                ]
                             },
-                            "bicycle=yes",
-                        ],
+                            "bicycle=yes"
+                        ]
                     },
                     {
                         and: [
@@ -122,19 +122,19 @@ describe("Tag optimalization", () => {
                                     "amenity=charging_station",
                                     "disused:amenity=charging_station",
                                     "planned:amenity=charging_station",
-                                    "construction:amenity=charging_station",
-                                ],
-                            },
-                        ],
+                                    "construction:amenity=charging_station"
+                                ]
+                            }
+                        ]
                     },
                     "amenity=toilets",
                     "amenity=bench",
                     "leisure=picnic_table",
                     {
-                        and: ["tower:type=observation"],
+                        and: ["tower:type=observation"]
                     },
                     {
-                        and: ["amenity=bicycle_repair_station"],
+                        and: ["amenity=bicycle_repair_station"]
                     },
                     {
                         and: [
@@ -143,16 +143,16 @@ describe("Tag optimalization", () => {
                                     "amenity=bicycle_rental",
                                     "bicycle_rental~*",
                                     "service:bicycle:rental=yes",
-                                    "rental~.*bicycle.*",
-                                ],
+                                    "rental~.*bicycle.*"
+                                ]
                             },
-                            "bicycle_rental!=docking_station",
-                        ],
+                            "bicycle_rental!=docking_station"
+                        ]
                     },
                     {
-                        and: ["leisure=playground", "playground!=forest"],
-                    },
-                ],
+                        and: ["leisure=playground", "playground!=forest"]
+                    }
+                ]
             })
             const opt = <TagsFilter>filter.optimize()
             const expected = [
@@ -166,7 +166,7 @@ describe("Tag optimalization", () => {
                 "planned:amenity=charging_station",
                 "tower:type=observation",
                 "(amenity=bicycle_rental|service:bicycle:rental=yes|bicycle_rental~.+|rental~^(.*bicycle.*)$) &bicycle_rental!=docking_station",
-                "leisure=playground&playground!=forest",
+                "leisure=playground&playground!=forest"
             ]
 
             expect((<Or>opt).or.map((f) => TagUtils.toString(f))).toEqual(expected)
@@ -187,7 +187,7 @@ describe("Tag optimalization", () => {
         it("with nested And which has a common property should be dropped", () => {
             const t = new Or([
                 new Tag("foo", "bar"),
-                new And([new Tag("foo", "bar"), new Tag("x", "y")]),
+                new And([new Tag("foo", "bar"), new Tag("x", "y")])
             ])
             const opt = <TagsFilter>t.optimize()
             expect(TagUtils.toString(opt)).toBe("foo=bar")
@@ -212,14 +212,14 @@ describe("Tag optimalization", () => {
                     and: [
                         "sport=climbing",
                         {
-                            or: ["office~*", "club~*"],
-                        },
-                    ],
-                },
-            ],
+                            or: ["office~*", "club~*"]
+                        }
+                    ]
+                }
+            ]
         })
         const gym_tags = TagUtils.Tag({
-            and: ["sport=climbing", "leisure=sports_centre"],
+            and: ["sport=climbing", "leisure=sports_centre"]
         })
         const other_climbing = TagUtils.Tag({
             and: [
@@ -227,8 +227,8 @@ describe("Tag optimalization", () => {
                 "climbing!~route",
                 "leisure!~sports_centre",
                 "climbing!=route_top",
-                "climbing!=route_bottom",
-            ],
+                "climbing!=route_bottom"
+            ]
         })
         const together = new Or([club_tags, gym_tags, other_climbing])
         const opt = together.optimize()
@@ -270,7 +270,7 @@ describe("Tag optimalization", () => {
                 or: [
                     "club=climbing",
                     {
-                        and: ["sport=climbing", { or: ["club~*", "office~*"] }],
+                        and: ["sport=climbing", { or: ["club~*", "office~*"] }]
                     },
                     {
                         and: [
@@ -283,15 +283,70 @@ describe("Tag optimalization", () => {
                                             "climbing!~route",
                                             "climbing!=route_top",
                                             "climbing!=route_bottom",
-                                            "leisure!~sports_centre",
-                                        ],
-                                    },
-                                ],
-                            },
-                        ],
-                    },
-                ],
+                                            "leisure!~sports_centre"
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             })
         )
+    })
+
+    it("should optimize a complicated nested case", () => {
+        const spec = {
+            "and":
+                ["service:bicycle:retail=yes",
+                    {
+                        "or": [
+                            {
+                                "and": [
+                                    { "or": ["shop=outdoor", "shop=sport", "shop=diy", "shop=doityourself"] },
+                                    {
+                                        "or": ["service:bicycle:repair=yes", "shop=bicycle",
+                                            {
+                                                "and": ["shop=sports",
+                                                    { "or": ["sport=bicycle", "sport=cycling", "sport="] },
+                                                    "service:bicycle:retail!=no",
+                                                    "service:bicycle:repair!=no"]
+                                            }]
+                                    }]
+                            }, {
+                                "and":
+                                    [
+                                        {
+                                            "or":
+                                                ["shop=outdoor", "shop=sport", "shop=diy", "shop=doityourself"]
+                                        },
+                                        {
+                                            "or": ["service:bicycle:repair=yes", "shop=bicycle",
+                                                {
+                                                    "and": ["shop=sports",
+                                                        { "or": ["sport=bicycle", "sport=cycling", "sport="] },
+                                                        "service:bicycle:retail!=no", "service:bicycle:repair!=no"]
+                                                }]
+                                        }]
+                            }, {
+                                "and":
+                                    [{
+                                        "or":
+                                            ["craft=shoe_repair", "craft=key_cutter", "shop~.+"]
+                                    },
+                                        { "or": ["shop=outdoor", "shop=sport", "shop=diy", "shop=doityourself"] },
+                                        "shop!=mall"]
+                            },
+                            "service:bicycle:retail~.+",
+                            "service:bicycle:retail~.+"]
+                    }]
+        }
+
+        const tag = TagUtils.Tag(spec)
+        const opt = tag.optimize()
+        if (opt === false || opt === true) {
+            throw "Did not expect a boolean"
+        }
+        console.log(opt)
     })
 })

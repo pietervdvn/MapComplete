@@ -3,6 +3,7 @@ import { TagsFilter } from "./TagsFilter"
 import { TagConfigJson } from "../../Models/ThemeConfig/Json/TagConfigJson"
 import { ExpressionSpecification } from "maplibre-gl"
 import { RegexTag } from "./RegexTag"
+import { OptimizedTag } from "./TagTypes"
 
 export class Tag extends TagsFilter {
     public key: string
@@ -66,7 +67,7 @@ export class Tag extends TagsFilter {
     asOverpass(): string[] {
         if (this.value === "") {
             // NOT having this key
-            return ['[!"' + this.key + '"]']
+            return ["[!\"" + this.key + "\"]"]
         }
         return [`["${this.key}"="${this.value}"]`]
     }
@@ -164,8 +165,8 @@ export class Tag extends TagsFilter {
         return [{ k: this.key, v: this.value }]
     }
 
-    optimize(): TagsFilter | boolean {
-        return this
+    optimize(): (Tag & OptimizedTag) | boolean {
+        return <any>this
     }
 
     isNegative(): boolean {

@@ -10,9 +10,9 @@ import { TagConfigJson } from "../../Models/ThemeConfig/Json/TagConfigJson"
 import key_counts from "../../assets/key_totals.json"
 
 import { ConversionContext } from "../../Models/ThemeConfig/Conversion/ConversionContext"
+import { TagsFilterClosed, UploadableTag } from "./TagTypes"
 
 type Tags = Record<string, string>
-export type UploadableTag = Tag | SubstitutingTag | And
 
 export class TagUtils {
     public static readonly comparators: ReadonlyArray<
@@ -476,7 +476,7 @@ export class TagUtils {
      * regex.matchesProperties({maxspeed: "50 mph"}) // => true
      */
 
-    public static Tag(json: TagConfigJson, context: string | ConversionContext = ""): TagsFilter {
+    public static Tag(json: TagConfigJson, context: string | ConversionContext = ""): TagsFilterClosed {
         try {
             const ctx = typeof context === "string" ? context : context.path.join(".")
             return this.ParseTagUnsafe(json, ctx)
@@ -712,7 +712,7 @@ export class TagUtils {
         return Utils.NoNull(spec)
     }
 
-    private static ParseTagUnsafe(json: TagConfigJson, context: string = ""): TagsFilter {
+    private static ParseTagUnsafe(json: TagConfigJson, context: string = ""): TagsFilterClosed {
         if (json === undefined) {
             throw new Error(
                 `Error while parsing a tag: 'json' is undefined in ${context}. Make sure all the tags are defined and at least one tag is present in a complex expression`
