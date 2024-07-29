@@ -181,6 +181,16 @@ describe("Tag optimalization", () => {
             const q = new And([new Tag("key", "value"), new RegexTag("key", /value/, true)])
             expect(q.optimize()).toBe(false)
         })
+        it("should optimize regexes in the key", () => {
+            const spec = TagUtils.Tag({
+                and: [
+                    "service:bicycle:retail=yes",
+                    "service:bicycle:.+~~yes"
+                ]
+            })
+            const tag = <TagsFilter> spec.optimize()
+            expect(tag.asJson()).to.eq("service:bicycle:retail=yes")
+        })
     })
 
     describe("Or", () => {
