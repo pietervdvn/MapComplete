@@ -943,14 +943,39 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return result["content"]
     }
 
-    /**
-     * Download function which also indicates advanced options, such as redirects
-     */
-    public static downloadAdvanced(
+    public static async downloadAdvanced(
         url: string,
         headers?: Record<string, string>,
         method: "POST" | "GET" | "PUT" | "UPDATE" | "DELETE" | "OPTIONS" = "GET",
-        content?: string
+        content?: string,
+        maxAttempts: number = 3
+    ): Promise<
+        | { content: string }
+        | { redirect: string }
+        | { error: string; url: string; statuscode?: number }
+    >{
+
+        let result = undefined
+        for (let i = 0; i < maxAttempts; i++) {
+            result = await Utils.downloadAdvanced(url, headers, method, content)
+            if(!result["error"] ){
+                return result
+            }
+            console.log(`Request to ${url} failed, Trying again in a moment. Attempt ${i+1}/${maxAttempts}`)
+            await Utils.waitFor((i+1) * 500)
+        }
+        return result
+
+    }
+
+    /**
+     * Download function which also indicates advanced options, such as redirects
+     */
+    public static downloadAdvancedTryOnce(
+        url: string,
+        headers?: Record<string, string>,
+        method: "POST" | "GET" | "PUT" | "UPDATE" | "DELETE" | "OPTIONS" = "GET",
+        content?: string,
     ): Promise<
         | { content: string }
         | { redirect: string }
