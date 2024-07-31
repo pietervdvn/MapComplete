@@ -557,7 +557,7 @@ export class Changes {
         }
     }
 
-    public static fragmentChanges(
+    public fragmentChanges(
         pending: ChangeDescription[],
         objects: OsmObject[]
     ): {
@@ -576,7 +576,7 @@ export class Changes {
                 if (createdIds.has(c.id)) {
                     toUpload.push(c)
                 } else {
-                    reportError(
+                    (this._reportError)(
                         `Got an orphaned change. The 'creation'-change description for ${c.type}/${c.id} got lost. Permanently dropping this change:` +
                             JSON.stringify(c)
                     )
@@ -706,7 +706,7 @@ export class Changes {
             ...perBinMessage,
         ]
 
-        let { toUpload, refused } = Changes.fragmentChanges(pending, objects)
+        let { toUpload, refused } = this.fragmentChanges(pending, objects)
 
         await this._changesetHandler.UploadChangeset(
             (csId, remappings) => {

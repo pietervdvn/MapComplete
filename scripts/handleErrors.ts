@@ -24,6 +24,11 @@ class HandleErrors extends Script {
         const refusedFiles: Set<string> = new Set<string>()
         refusedFiles.add("[]")
 
+        const changesObj = new Changes({
+            dryRun: new ImmutableStore(true),
+            osmConnection,
+        }, false, err => console.error(err))
+
         for (const line of lines) {
             if (!line?.trim()) {
                 continue
@@ -75,7 +80,7 @@ class HandleErrors extends Script {
                     .filter((obj) => obj.osmObj !== "deleted")
                     .map((obj) => <OsmObject>obj.osmObj)
 
-                const { toUpload, refused } = Changes.fragmentChanges(e.pendingChanges, objects)
+                const { toUpload, refused } = changesObj.fragmentChanges(e.pendingChanges, objects)
 
                 const changes: {
                     newObjects: OsmObject[]
