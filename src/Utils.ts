@@ -957,7 +957,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
 
         let result = undefined
         for (let i = 0; i < maxAttempts; i++) {
-            result = await Utils.downloadAdvanced(url, headers, method, content)
+            result = await Utils.downloadAdvancedTryOnce(url, headers, method, content)
             if(!result["error"] ){
                 return result
             }
@@ -971,7 +971,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
     /**
      * Download function which also indicates advanced options, such as redirects
      */
-    public static downloadAdvancedTryOnce(
+    private static downloadAdvancedTryOnce(
         url: string,
         headers?: Record<string, string>,
         method: "POST" | "GET" | "PUT" | "UPDATE" | "DELETE" | "OPTIONS" = "GET",
