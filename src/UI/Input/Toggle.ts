@@ -1,7 +1,6 @@
 import { Store, UIEventSource } from "../../Logic/UIEventSource"
 import BaseUIElement from "../BaseUIElement"
 import { VariableUiElement } from "../Base/VariableUIElement"
-import Lazy from "../Base/Lazy"
 
 /**
  * The 'Toggle' is a UIElement showing either one of two elements, depending on the state.
@@ -19,12 +18,6 @@ export default class Toggle extends VariableUiElement {
         this.isEnabled = isEnabled
     }
 
-    public static If(condition: Store<boolean>, constructor: () => BaseUIElement): BaseUIElement {
-        if (constructor === undefined) {
-            return undefined
-        }
-        return new Toggle(new Lazy(constructor), undefined, condition)
-    }
 }
 
 /**
@@ -42,11 +35,4 @@ export class ClickableToggle extends Toggle {
         this.isEnabled = isEnabled
     }
 
-    public ToggleOnClick(): ClickableToggle {
-        const self = this
-        this.onClick(() => {
-            self.isEnabled.setData(!self.isEnabled.data)
-        })
-        return this
-    }
 }

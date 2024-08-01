@@ -2,7 +2,6 @@ import BaseUIElement from "../BaseUIElement"
 import List from "./List"
 import { marked } from "marked"
 import { parse as parse_html } from "node-html-parser"
-import { default as turndown } from "turndown"
 import { Utils } from "../../Utils"
 
 export default class TableOfContents {
