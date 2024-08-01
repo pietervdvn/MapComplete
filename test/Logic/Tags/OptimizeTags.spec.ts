@@ -181,6 +181,17 @@ describe("Tag optimalization", () => {
             const q = new And([new Tag("key", "value"), new RegexTag("key", /value/, true)])
             expect(q.optimize()).toBe(false)
         })
+
+        it("should optimize comparing tags", () => {
+            const spec = TagUtils.Tag({
+                and:[
+                    "x=5",
+                    "x>5"
+                ]
+            })
+            const opt = spec.optimize()
+            expect(opt).to.eq(false)
+        })
         it("should optimize regexes in the key", () => {
             const spec = TagUtils.Tag({
                 and: [
