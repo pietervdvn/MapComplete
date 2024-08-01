@@ -2,11 +2,7 @@ import Combine from "./Base/Combine"
 import { FixedUiElement } from "./Base/FixedUiElement"
 import BaseUIElement from "./BaseUIElement"
 import Title from "./Base/Title"
-import {
-    RenderingSpecification,
-    SpecialVisualization,
-    SpecialVisualizationState
-} from "./SpecialVisualization"
+import { RenderingSpecification, SpecialVisualization, SpecialVisualizationState } from "./SpecialVisualization"
 import { HistogramViz } from "./Popup/HistogramViz"
 import MinimapViz from "./Popup/MinimapViz.svelte"
 import { ShareLinkViz } from "./Popup/ShareLinkViz"
@@ -15,7 +11,6 @@ import { MultiApplyViz } from "./Popup/MultiApplyViz"
 import { AddNoteCommentViz } from "./Popup/Notes/AddNoteCommentViz"
 import { PlantNetDetectionViz } from "./Popup/PlantNetDetectionViz"
 import TagApplyButton from "./Popup/TagApplyButton"
-import { CloseNoteButton } from "./Popup/Notes/CloseNoteButton"
 import { MapillaryLinkVis } from "./Popup/MapillaryLinkVis"
 import { ImmutableStore, Store, Stores, UIEventSource } from "../Logic/UIEventSource"
 import AllTagsPanel from "./Popup/AllTagsPanel.svelte"
@@ -99,6 +94,7 @@ import Trash from "@babeard/svelte-heroicons/mini/Trash"
 import NothingKnown from "./Popup/NothingKnown.svelte"
 import { CombinedFetcher } from "../Logic/Web/NearbyImagesSearch"
 import { And } from "../Logic/Tags/And"
+import CloseNoteButton from "./Popup/Notes/CloseNoteButton.svelte"
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -212,6 +208,66 @@ class StealViz implements SpecialVisualization {
         }
         const [layerId] = tagRenderingId.split(".")
         return [layerId]
+    }
+}
+
+class CloseNoteViz implements SpecialVisualization {
+    public readonly funcName = "close_note"
+    public readonly needsUrls = [Constants.osmAuthConfig.url]
+    public readonly docs =
+        "Button to close a note. A predefined text can be defined to close the note with. If the note is already closed, will show a small text."
+    public readonly args = [
+        {
+            name: "text",
+            doc: "Text to show on this button",
+            required: true,
+        },
+        {
+            name: "icon",
+            doc: "Icon to show",
+            defaultValue: "checkmark.svg",
+        },
+        {
+            name: "idkey",
+            doc: "The property name where the ID of the note to close can be found",
+            defaultValue: "id",
+        },
+        {
+            name: "comment",
+            doc: "Text to add onto the note when closing",
+        },
+        {
+            name: "minZoom",
+            doc: "If set, only show the closenote button if zoomed in enough",
+        },
+        {
+            name: "zoomButton",
+            doc: "Text to show if not zoomed in enough",
+        },
+    ]
+
+    public constr(state: SpecialVisualizationState, tags: UIEventSource<Record<string, string>>, args: string[], feature: Feature, layer: LayerConfig): SvelteUIElement {
+
+        const {
+            text,
+            icon,
+            idkey,
+            comment,
+            minZoom,
+            zoomButton
+        } = Utils.ParseVisArgs(this.args, args)
+
+
+        return new SvelteUIElement(CloseNoteButton, {
+            state,
+            tags,
+            icon,
+            idkey,
+            message: comment,
+            text: Translations.T(text),
+            minzoom: minZoom,
+            zoomMoreMessage: zoomButton
+        })
     }
 }
 
@@ -525,7 +581,7 @@ export default class SpecialVisualizations {
                     })
                 }
             },
-            new CloseNoteButton(),
+            new CloseNoteViz(),
             new PlantNetDetectionViz(),
 
             new TagApplyButton(),
@@ -533,7 +589,6 @@ export default class SpecialVisualizations {
             new PointImportButtonViz(),
             new WayImportButtonViz(),
             new ConflateImportButtonViz(),
-
             new NearbyImageVis(),
 
             {
@@ -1938,7 +1993,7 @@ export default class SpecialVisualizations {
                                     mostShadowed = undefined
                                     break
                                 }
-                            }else if(!prTags.shadows(mostShadowedTags)) {
+                            } else if (!prTags.shadows(mostShadowedTags)) {
                                 // The new contender does not win, but it might defeat the current contender
                                 mostShadowed = undefined
                                 break

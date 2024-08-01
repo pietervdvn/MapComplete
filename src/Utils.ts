@@ -170,10 +170,10 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
     /**
      * Parses the arguments for special visualisations
      */
-    public static ParseVisArgs(
+    public static ParseVisArgs<T extends Record<string, string>>(
         specs: { name: string; defaultValue?: string }[],
         args: string[]
-    ): Record<string, string> {
+    ): T {
         const parsed: Record<string, string> = {}
         if (args.length > specs.length) {
             throw (
@@ -193,7 +193,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             parsed[spec.name] = arg
         }
 
-        return parsed
+        return <T> parsed
     }
 
     static EncodeXmlValue(str) {
