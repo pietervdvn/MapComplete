@@ -23,6 +23,7 @@
   import BackButton from "../Base/BackButton.svelte"
   import ChevronLeft from "@babeard/svelte-heroicons/solid/ChevronLeft"
   import ThemeViewState from "../../Models/ThemeViewState"
+  import Icon from "../Map/Icon.svelte"
 
   export let state: ThemeViewState
 
@@ -47,7 +48,7 @@
       location: new UIEventSource({ lon, lat }),
       minzoom: new UIEventSource($reason.minZoom),
       rasterLayer: state.mapProperties.rasterLayer,
-      zoom: new UIEventSource($reason?.startZoom ?? 16),
+      zoom: new UIEventSource($reason?.startZoom ?? 16)
     }
   }
 
@@ -84,7 +85,6 @@
         </span>
         <span class="flex flex-col p-2">
           {#if currentStep === "reason" && moveWizardState.reasons.length > 1}
-            <Tr cls="text-lg font-bold" t={t.whyMove} />
             {#each moveWizardState.reasons as reasonSpec}
               <button
                 on:click={() => {
@@ -92,7 +92,7 @@
                   currentStep = "pick_location"
                 }}
               >
-                <ToSvelte construct={reasonSpec.icon.SetClass("w-16 h-16 pr-2")} />
+                <Icon icon={reasonSpec.icon} clss="w-12 h-12"/>
                 <Tr t={Translations.T(reasonSpec.text)} />
               </button>
             {/each}

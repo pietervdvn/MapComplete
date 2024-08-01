@@ -38,6 +38,7 @@
   import { Utils } from "../../Utils"
   import Gear from "../../assets/svg/Gear.svelte"
   import { DesktopComputerIcon } from "@rgossiaux/svelte-heroicons/solid"
+  import Relocation from "../../assets/svg/Relocation.svelte"
 
   /**
    * Renders a single icon.
@@ -139,6 +140,8 @@
     <WifiIcon class={"m-0 " + clss} {color} />
   {:else if icon === "computer"}
     <DesktopComputerIcon class={"m-0 " + clss} {color} />
+  {:else if icon === "relocation"}
+    <Relocation class={clss} {color} />
   {:else if Utils.isEmoji(icon)}
     <span style={`font-size: ${emojiHeight}px; line-height: ${emojiHeight}px`}>
       {icon}

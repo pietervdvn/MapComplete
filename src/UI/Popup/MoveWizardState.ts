@@ -16,7 +16,7 @@ import Location from "../../assets/svg/Location.svelte"
 export interface MoveReason {
     text: Translation | string
     invitingText: Translation | string
-    icon: BaseUIElement
+    icon: string
     changesetCommentValue: string
     lockBounds: true | boolean
     includeSearch: false | boolean
@@ -48,7 +48,7 @@ export class MoveWizardState {
             reasons.push({
                 text: t.reasons.reasonRelocation,
                 invitingText: t.inviteToMove.reasonRelocation,
-                icon: new SvelteUIElement(Relocation),
+                icon: "relocation",
                 changesetCommentValue: "relocated",
                 lockBounds: false,
                 background: undefined,
@@ -62,7 +62,7 @@ export class MoveWizardState {
             reasons.push({
                 text: t.reasons.reasonInaccurate,
                 invitingText: t.inviteToMove.reasonInaccurate,
-                icon: new SvelteUIElement(Location),
+                icon: "location",
                 changesetCommentValue: "improve_accuracy",
                 lockBounds: true,
                 includeSearch: false,
