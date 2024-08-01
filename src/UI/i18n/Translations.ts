@@ -34,12 +34,6 @@ export default class Translations {
                 return s
             }
             const v = JSON.stringify(s)
-            if (v.length > 100) {
-                const shortened = v.substring(0, 100) + "..."
-                return new ClickableToggle(v, shortened)
-                    .ToggleOnClick()
-                    .SetClass("literal-code button")
-            }
             return new FixedUiElement(v).SetClass("literal-code")
         }
         return s
