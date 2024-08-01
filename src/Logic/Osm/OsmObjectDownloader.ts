@@ -239,7 +239,7 @@ export default class OsmObjectDownloader {
         if (rawData["error"] !== undefined && rawData["statuscode"] === 410) {
             return "deleted"
         }
-        // A full query might contain more then just the requested object (e.g. nodes that are part of a way, where we only want the way)
+        // A full query might contain more than just the requested object (e.g. nodes that are part of a way, where we only want the way)
         const parsed = OsmObject.ParseObjects(rawData["content"].elements)
         // Let us fetch the object we need
         for (const osmObject of parsed) {
