@@ -524,6 +524,44 @@
       "id": "Cuisine"
     },
     {
+      "id": "show-menu-image",
+      "render": {
+        "*": "{image_carousel(image:menu)}"
+      }
+    },
+    {
+      "id": "add-menu-image",
+      "render": {
+        "special": {
+          "type": "image_upload",
+          "image-key": "image:menu",
+          "label": {
+            "en": "Add an image from the menu",
+            "nl": "Voeg een foto van het menu toe"
+          }
+        }
+      }
+    },
+    {
+      "id": "menu-website",
+      "question": {
+        "en": "On what webpage is the menu published?"
+      },
+      "render": {
+        "special": {
+          "type": "link",
+          "href": "{website:menu}",
+          "text": {
+            "en": "Consult the menu"
+          }
+        }
+      },
+      "freeform": {
+        "key": "website:menu",
+        "type": "url"
+      }
+    },
+    {
       "id": "Reservation",
       "condition": "takeaway!=only",
       "question": {
