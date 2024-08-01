@@ -14,11 +14,7 @@ import licenses from "../assets/generated/license_info.json"
 import TagRenderingConfig from "../Models/ThemeConfig/TagRenderingConfig"
 import { FixImages } from "../Models/ThemeConfig/Conversion/FixImages"
 import questions from "../assets/generated/layers/questions.json"
-import {
-    DoesImageExist,
-    PrevalidateTheme,
-    ValidateThemeAndLayers,
-} from "../Models/ThemeConfig/Conversion/Validation"
+import { DoesImageExist, PrevalidateTheme, ValidateThemeAndLayers } from "../Models/ThemeConfig/Conversion/Validation"
 import { DesugaringContext } from "../Models/ThemeConfig/Conversion/Conversion"
 import { TagRenderingConfigJson } from "../Models/ThemeConfig/Json/TagRenderingConfigJson"
 import Hash from "./Web/Hash"
@@ -109,11 +105,14 @@ export default class DetermineLayout {
             layoutId,
             "The layout to load into MapComplete"
         ).data
-        const layout = AllKnownLayouts.allKnownLayouts.get(layoutId?.toLowerCase())
-        if (layout === undefined) {
-            throw "No builtin map theme with name " + layoutId + " exists"
+        const id = layoutId?.toLowerCase()
+        const layouts = AllKnownLayouts.allKnownLayouts
+        if (layouts.getConfig(id) === undefined) {
+            const alternatives = Utils.sortedByLevenshteinDistance(id, Array.from(layouts.keys()), i => i).slice(0, 3)
+            const msg = (`No builtin map theme with name ${layoutId} exists. Perhaps you meant one of ${alternatives.join(", ")}`)
+            throw msg
         }
-        return layout
+        return layouts.get(id)
     }
 
     public static async LoadLayoutFromHash(
@@ -162,6 +161,7 @@ export default class DetermineLayout {
 
         return dict
     }
+
     private static getSharedTagRenderingOrder(): string[] {
         return questions.tagRenderings.map((tr) => tr.id)
     }
@@ -200,11 +200,11 @@ export default class DetermineLayout {
                 id: json.id,
                 description: json.description,
                 descriptionTail: {
-                    en: "<div class='alert'>Layer only mode.</div> The loaded custom theme actually isn't a custom theme, but only contains a layer.",
+                    en: "<div class='alert'>Layer only mode.</div> The loaded custom theme actually isn't a custom theme, but only contains a layer."
                 },
                 icon,
                 title: json.name,
-                layers: [json],
+                layers: [json]
             }
         }
 
@@ -217,7 +217,7 @@ export default class DetermineLayout {
             tagRenderings: DetermineLayout.getSharedTagRenderings(),
             tagRenderingOrder: DetermineLayout.getSharedTagRenderingOrder(),
             sharedLayers: knownLayersDict,
-            publicLayers: new Set<string>(),
+            publicLayers: new Set<string>()
         }
         json = new FixLegacyTheme().convertStrict(json)
         const raw = json
@@ -241,7 +241,7 @@ export default class DetermineLayout {
         }
         return new LayoutConfig(json, false, {
             definitionRaw: JSON.stringify(raw, null, "  "),
-            definedAtUrl: sourceUrl,
+            definedAtUrl: sourceUrl
         })
     }
 
