@@ -1,5 +1,4 @@
 import { QueryParameters } from "./Logic/Web/QueryParameters"
-import SvelteUIElement from "./UI/Base/SvelteUIElement"
 import AllThemesGui from "./UI/AllThemesGui.svelte"
 
 const layout = QueryParameters.GetQueryParameter("layout", undefined).data ?? ""

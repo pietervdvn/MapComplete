@@ -41,7 +41,6 @@ async function getAvailableLayers(): Promise<Set<string>> {
 }
 
 async function main() {
-    // @ts-ignore
     try {
         if (!webgl_support()) {
             throw "WebGL is not supported or not enabled. This is essential for MapComplete to function, please enable this."
