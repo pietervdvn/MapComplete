@@ -216,6 +216,56 @@
         ],
         "isCounted": false
       }
+    },
+    {
+      "builtin": "artwork",
+      "override": {
+        "minzoom": 16,
+        "presets=": null,
+        "id": "artwork_on_wall",
+        "+tagRenderings": [
+          {
+            "id": "historic_or_not",
+            "question": {
+              "en": "Is this artwork a historic advertisement?"
+            },
+            "mappings": [
+              {
+                "if": "historic=advertising",
+                "addExtraTags": [
+                  "advertising=wall_painting"
+                ],
+                "then": {
+                  "en": "This artwork is a historic advertisement"
+                }
+              },
+              {
+                "if": "historic=",
+                "addExtraTags": [
+                  "advertising="
+                ],
+                "then": {
+                  "en": "This artwork is not a historic advertisement"
+                }
+              }
+            ]
+          }
+        ],
+        "source": {
+          "osmTags": {
+            "and+": {
+              "or": [
+                "artwork_type=mural",
+                "artwork_type=graffiti",
+                "artwork_type=mosaic",
+                "artwork_type=relief",
+                "artwork_type=painting",
+                "artwork_type=mural_painting"
+              ]
+            }
+          }
+        }
+      }
     }
   ]
 }
