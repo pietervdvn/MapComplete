@@ -13,11 +13,10 @@
   import ContributorCount from "../../Logic/ContributorCount"
   import BaseUIElement from "../BaseUIElement"
   import Github from "../../assets/svg/Github.svelte"
-  import { DatabaseIcon, TranslateIcon } from "@rgossiaux/svelte-heroicons/solid"
+  import { TranslateIcon } from "@rgossiaux/svelte-heroicons/solid"
   import Osm_logo from "../../assets/svg/Osm_logo.svelte"
   import Generic_map from "../../assets/svg/Generic_map.svelte"
-  import { PencilIcon, UserGroupIcon, UsersIcon } from "@babeard/svelte-heroicons/solid"
-  import Loading from "../Base/Loading.svelte"
+  import { UserGroupIcon} from "@babeard/svelte-heroicons/solid"
   import Marker from "../Map/Marker.svelte"
 
   export let state: SpecialVisualizationState

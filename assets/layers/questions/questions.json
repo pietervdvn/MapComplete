@@ -2088,7 +2088,6 @@
         {
           "if": "internet_access=no",
           "icon": "wifi;cross_bottom_right:red",
-
           "then": {
             "en": "This place <b>does not</b> offer internet access",
             "nl": "Deze plaats biedt <b>geen</b> internettoegang aan",

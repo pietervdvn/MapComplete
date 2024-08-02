@@ -46,7 +46,6 @@
   import PendingChangesIndicator from "./BigComponents/PendingChangesIndicator.svelte"
   import Cross from "../assets/svg/Cross.svelte"
   import LanguagePicker from "./InputElement/LanguagePicker.svelte"
-  import Bug from "../assets/svg/Bug.svelte"
   import Min from "../assets/svg/Min.svelte"
   import Plus from "../assets/svg/Plus.svelte"
   import Filter from "../assets/svg/Filter.svelte"
@@ -650,7 +649,7 @@
   </If>
 
   <If condition={state.guistate.copyrightPanelIsOpened}>
-    <FloatOver on:close={() => state.guistate.privacyPanelIsOpened.setData(false)}>
+    <FloatOver on:close={() => state.guistate.copyrightPanelIsOpened.setData(false)}>
       <div class="flex h-full flex-col overflow-hidden">
         <h1 class="low-interaction m-0 flex items-center p-4 drop-shadow-md">
           <Tr t={Translations.t.general.attribution.title} />
@@ -660,7 +659,7 @@
             <Tr t={Translations.t.general.menu.aboutMapComplete} />
           </h2>
           <AboutMapComplete {state} />
-          <ToSvelte construct={() => new CopyrightPanel(state)} />
+          <CopyrightPanel {state}/>
         </div>
       </div>
     </FloatOver>
