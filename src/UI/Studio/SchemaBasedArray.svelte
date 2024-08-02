@@ -92,7 +92,7 @@
         <ShowConversionMessage {message} />
       {/each}
     {/if}
-  {:else if subparts.length === 0}
+    {:else if subparts.length === 0}
     <!-- We need an array of values, so we use the typehint of the _parent_ element as field -->
     {#each $currentValue as value, i}
       <div class="flex w-full">

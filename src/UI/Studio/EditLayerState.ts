@@ -92,14 +92,14 @@ export abstract class EditJsonState<T> {
                 await this.server.update(id, config, this.category)
             })
         this.messages = this.createMessagesStore()
-        this.register(["credits"], this.osmConnection.userDetails.mapD(u => u.name), false)
-        this.register(["credits:uid"], this.osmConnection.userDetails.mapD(u => u.uid), false)
 
 
     }
 
     public startSavingUpdates(enabled = true) {
         this.sendingUpdates = enabled
+        this.register(["credits"], this.osmConnection.userDetails.mapD(u => u.name), false)
+        this.register(["credits:uid"], this.osmConnection.userDetails.mapD(u => u.uid), false)
         if (enabled) {
             this.configuration.ping()
         }

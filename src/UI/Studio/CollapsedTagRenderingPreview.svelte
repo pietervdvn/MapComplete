@@ -193,13 +193,12 @@
         {/if}
       </QuestionPreview>
     {:else if schema.hints.types}
-      <SchemaBasedMultiType {state} path={fusePath(i, [])} schema={schemaForMultitype()} />
+      <SchemaBasedMultiType {state} {path} schema={schemaForMultitype()} />
     {:else}
       {#each subparts as subpart}
         <SchemaBasedInput
           {state}
-          path={fusePath(i, [subpart.path.at(-1)])}
-          schema={subpart}
+          {path}
         />
       {/each}
     {/if}
