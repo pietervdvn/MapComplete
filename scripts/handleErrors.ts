@@ -7,6 +7,7 @@ import OsmObjectDownloader from "../src/Logic/Osm/OsmObjectDownloader"
 import { OsmConnection } from "../src/Logic/Osm/OsmConnection"
 import { ImmutableStore } from "../src/Logic/UIEventSource"
 import { Utils } from "../src/Utils"
+import Constants from "../src/Models/Constants"
 
 type ErrorMessage = {
     ip: string
@@ -111,7 +112,7 @@ class HandleErrors extends Script {
                 "error_changeset_" + parsed.index + "_" + e.layout + "_" + e.username + ".osc"
             if (
                 changeset ===
-                "<osmChange version='0.6' generator='Mapcomplete 0.44.7'></osmChange>"
+                `<osmChange version='0.6' generator='Mapcomplete ${Constants.vNumber}'></osmChange>`
             ) {
                 console.log(
                     "Changes for " +
