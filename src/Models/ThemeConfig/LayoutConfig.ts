@@ -81,6 +81,7 @@ export default class LayoutConfig implements LayoutInformation {
 
     private readonly layersDict: Map<string, LayerConfig>
     private readonly source: LayoutConfigJson
+    public readonly enableCache: boolean
 
     constructor(
         json: LayoutConfigJson,
@@ -98,6 +99,7 @@ export default class LayoutConfig implements LayoutInformation {
         this.id = json.id
         this.definedAtUrl = options?.definedAtUrl
         this.definitionRaw = options?.definitionRaw
+        this.enableCache = json.enableCache ?? true
         if (official) {
             if (json.id.toLowerCase() !== json.id) {
                 throw "The id of a theme should be lowercase: " + json.id

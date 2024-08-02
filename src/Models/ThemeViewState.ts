@@ -204,7 +204,6 @@ export default class ThemeViewState implements SpecialVisualizationState {
             this.osmConnection.isLoggedIn
         )
 
-        const self = this
         this.layerState = new LayerState(
             this.osmConnection,
             layout.layers,
@@ -241,7 +240,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 this.featureSwitches,
                 this.mapProperties,
                 this.osmConnection.Backend(),
-                (id) => self.layerState.filteredLayers.get(id).isDisplayed,
+                (id) => this.layerState.filteredLayers.get(id).isDisplayed,
                 mvtAvailableLayers,
                 this.fullNodeDatabase
             )
@@ -316,7 +315,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
             }
             const floors = new Set<string>()
             for (const feature of features) {
-                let level = feature.properties["_level"]
+                const level = feature.properties["_level"]
                 if (level) {
                     const levels = level.split(";")
                     for (const l of levels) {
@@ -379,7 +378,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
         this.featureSummary = this.setupSummaryLayer(
             new LayerConfig(<LayerConfigJson>summaryLayer, "summaryLayer", true)
         )
-        this.toCacheSavers = this.initSaveToLocalStorage()
+        this.toCacheSavers = layout.enableCache ? this.initSaveToLocalStorage() : undefined
         this.initActors()
         this.drawSpecialLayers()
         this.initHotkeys()

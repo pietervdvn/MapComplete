@@ -450,4 +450,14 @@ export interface LayoutConfigJson {
      * iftrue: Do not write 'change_within_x_m' and do not indicate that this was done by survey
      */
     enableMorePrivacy: boolean
+    /**
+     * question: Should this theme have the cache enabled?
+     *
+     * Should only be dissabled in highly specific cases, such as the GRB-theme
+     *
+     * ifunset: Cache is enabled
+     * iffalse: Do not cache data
+     * group: hidden
+     */
+    enableCache?: true | boolean
 }

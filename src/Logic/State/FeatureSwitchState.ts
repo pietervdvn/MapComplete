@@ -57,6 +57,8 @@ export default class FeatureSwitchState extends OsmConnectionFeatureSwitches {
     public readonly featureSwitchBackToThemeOverview: UIEventSource<boolean>
     public readonly featureSwitchShareScreen: UIEventSource<boolean>
     public readonly featureSwitchGeolocation: UIEventSource<boolean>
+    public readonly featureSwitchCache: UIEventSource<boolean>
+
     public readonly featureSwitchIsTesting: UIEventSource<boolean>
     public readonly featureSwitchIsDebugging: UIEventSource<boolean>
     public readonly featureSwitchShowAllQuestions: UIEventSource<boolean>
@@ -175,6 +177,13 @@ export default class FeatureSwitchState extends OsmConnectionFeatureSwitches {
             layoutToUse?.enableExportButton ?? true,
             "Enable the export as GeoJSON and CSV button"
         )
+
+        this.featureSwitchCache = FeatureSwitchUtils.initSwitch(
+            "fs-cache",
+            layoutToUse?.enableCache ?? true,
+            "Enable/disable caching from localStorage"
+        )
+
 
         let testingDefaultValue = false
         if (
