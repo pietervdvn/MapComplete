@@ -6,7 +6,7 @@ import { OsmObject } from "../src/Logic/Osm/OsmObject"
 import OsmObjectDownloader from "../src/Logic/Osm/OsmObjectDownloader"
 import { OsmConnection } from "../src/Logic/Osm/OsmConnection"
 import { ImmutableStore } from "../src/Logic/UIEventSource"
-import { Utils } from "../src/Utils"
+import Constants from "../src/Models/Constants"
 
 type ErrorMessage = {
     ip: string
@@ -28,9 +28,6 @@ class HandleErrors extends Script {
     constructor() {
         super("Inspects the errors made on a given day. Argument: path to errors")
     }
-
-    parseLine() {}
-
     async main(args: string[]): Promise<void> {
         const osmConnection = new OsmConnection()
         const downloader = new OsmObjectDownloader(osmConnection.Backend(), undefined)
@@ -110,7 +107,8 @@ class HandleErrors extends Script {
             const path =
                 "error_changeset_" + parsed.index + "_" + e.layout + "_" + e.username + ".osc"
             if (
-                changeset === "<osmChange version='0.6' generator='Mapcomplete 0.44.7'></osmChange>"
+                changeset ===
+                `<osmChange version='0.6' generator='Mapcomplete ${Constants.vNumber}'></osmChange>`
             ) {
                 console.log(
                     "Changes for " + parsed.index + ": empty changeset, not creating a file for it"
