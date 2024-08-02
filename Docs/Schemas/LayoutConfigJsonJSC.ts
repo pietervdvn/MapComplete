@@ -58,7 +58,7 @@ export default {
       ]
     },
     "icon": {
-      "description": "question: What icon should be used to represent this theme?\n\nUsed as logo in the more-screen and (for official themes) as favicon, webmanifest logo, ...\n\nEither a URL or a base64 encoded value (which should include 'data:image/svg+xml;base64)\n\nType: icon\ngroup: basic",
+      "description": "question: What icon should be used to represent this theme?\n\nUsed as logo in the more-screen and (for official themes) as favicon, webmanifest logo, ...\n\nEither a URL or a base64 encoded value (which should include 'data:image/svg+xml;base64)\n\nType: icon\nsuggestions: return Constants.defaultPinIcons.map(i => ({if: \"value=\"+i, then: i, icon: i}))\ngroup: basic",
       "type": "string"
     },
     "socialImage": {
@@ -104,7 +104,7 @@ export default {
       "type": "boolean"
     },
     "layers": {
-      "description": "question: What layers should this map show?\ntype: layer[]\ntypes: hidden | layer | hidden\ngroup: layers\nsuggestions: return Array.from(layers.keys()).map(key => ({if: \"value=\"+key, then: \"<b>\"+key+\"</b> (builtin) - \"+layers.get(key).description}))\n\nA theme must contain at least one layer.\n\nA layer contains all features of a single type, for example \"shops\", \"bicycle pumps\", \"benches\".\nNote that every layer contains a specification of attributes that it should match. MapComplete will fetch the relevant data from either overpass, the OSM-API or the cache server.\nIf a feature can match multiple layers, the first matching layer in the list will be used.\nThis implies that the _order_ of the layers is important.\n\n\n<div class='hidden-in-studio'>\nNote that builtin layers can be reused. Either put in the name of the layer to reuse, or use {builtin: \"layername\", override: ...}\n\nThe 'override'-object will be copied over the original values of the layer, which allows to change certain aspects of the layer\n\nFor example: If you would like to use layer nature reserves, but only from a specific operator (eg. Natuurpunt) you would use the following in your theme:\n\n```\n\"layer\": {\n \"builtin\": \"nature_reserve\",\n \"override\": {\"source\":\n {\"osmTags\": {\n \"+and\":[\"operator=Natuurpunt\"]\n   }\n  }\n }\n}\n```\n\nIt's also possible to load multiple layers at once, for example, if you would like for both drinking water and benches to start at the zoomlevel at 12, you would use the following:\n\n```\n\"layer\": {\n \"builtin\": [\"benches\", \"drinking_water\"],\n \"override\": {\"minzoom\": 12}\n}\n```\n</div>",
+      "description": "question: What layers should this map show?\ntype: layer[]\ntypes: hidden | layer | hidden\ngroup: layers\ntitle: value[\"builtin\"] ?? value[\"id\"] ?? value\nsuggestions: return Array.from(layers.keys()).map(key => ({if: \"value=\"+key, then: \"<b>\"+key+\"</b> (builtin) - \"+layers.get(key).description}))\n\nA theme must contain at least one layer.\n\nA layer contains all features of a single type, for example \"shops\", \"bicycle pumps\", \"benches\".\nNote that every layer contains a specification of attributes that it should match. MapComplete will fetch the relevant data from either overpass, the OSM-API or the cache server.\nIf a feature can match multiple layers, the first matching layer in the list will be used.\nThis implies that the _order_ of the layers is important.\n\n\n<div class='hidden-in-studio'>\nNote that builtin layers can be reused. Either put in the name of the layer to reuse, or use {builtin: \"layername\", override: ...}\n\nThe 'override'-object will be copied over the original values of the layer, which allows to change certain aspects of the layer\n\nFor example: If you would like to use layer nature reserves, but only from a specific operator (eg. Natuurpunt) you would use the following in your theme:\n\n```\n\"layer\": {\n \"builtin\": \"nature_reserve\",\n \"override\": {\"source\":\n {\"osmTags\": {\n \"+and\":[\"operator=Natuurpunt\"]\n   }\n  }\n }\n}\n```\n\nIt's also possible to load multiple layers at once, for example, if you would like for both drinking water and benches to start at the zoomlevel at 12, you would use the following:\n\n```\n\"layer\": {\n \"builtin\": [\"benches\", \"drinking_water\"],\n \"override\": {\"minzoom\": 12}\n}\n```\n</div>",
       "type": "array",
       "items": {
         "anyOf": [
@@ -351,6 +351,9 @@ export default {
         "and"
       ]
     },
+    "Record<string,string>": {
+      "type": "object"
+    },
     "{or:TagConfigJson[];}": {
       "type": "object",
       "properties": {
@@ -364,9 +367,6 @@ export default {
       "required": [
         "or"
       ]
-    },
-    "Record<string,string>": {
-      "type": "object"
     },
     "Record<string,string|Record<string,string>>": {
       "type": "object"
@@ -1770,7 +1770,15 @@ export default {
                 "description": "The tags that will be given to the object.\nThis must remove tags so that the 'source/osmTags' won't match anymore\n\nquestion: What tags should be applied to the object?"
               },
               "then": {
-                "description": "The human explanation for the options\n\nquestion: What text should be shown to the contributor for this reason?"
+                "description": "The human explanation for the options\n\nquestion: What text should be shown to the contributor for this reason?",
+                "anyOf": [
+                  {
+                    "$ref": "#/definitions/Record<string,string>"
+                  },
+                  {
+                    "type": "string"
+                  }
+                ]
               }
             },
             "required": [
