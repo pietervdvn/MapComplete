@@ -112,7 +112,7 @@ export default class SelectedElementTagsUpdater {
     private invalidateCache(s: Feature) {
         const state = this.state
         const wasPartOfLayer = state.layout.getMatchingLayer(s.properties)
-        state.toCacheSavers.get(wasPartOfLayer.id).invalidateCacheAround(BBox.get(s))
+        state.toCacheSavers?.get(wasPartOfLayer.id)?.invalidateCacheAround(BBox.get(s))
     }
     private installCallback() {
         const state = this.state

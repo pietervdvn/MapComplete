@@ -75,14 +75,7 @@ export default class ChangeGeometryApplicator implements FeatureSource {
                 newFeatures.push(feature)
                 continue
             }
-            console.log(
-                "Applying a geometry change onto:",
-                feature,
-                "The change is:",
-                change,
-                "which becomes:",
-                copy
-            )
+
             newFeatures.push(copy)
         }
         this.features.setData(newFeatures)

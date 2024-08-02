@@ -27,6 +27,7 @@ export default class LayoutSource extends FeatureSourceMerger {
     private readonly supportsForceDownload: UpdatableFeatureSource[]
 
     public static readonly fromCacheZoomLevel = 15
+
     constructor(
         layers: LayerConfig[],
         featureSwitches: FeatureSwitchState,
@@ -45,20 +46,22 @@ export default class LayoutSource extends FeatureSourceMerger {
         const geojsonlayers = layers.filter((layer) => layer.source.geojsonSource !== undefined)
         const osmLayers = layers.filter((layer) => layer.source.geojsonSource === undefined)
         const fromCache = new Map<string, LocalStorageFeatureSource>()
-        for (const layer of osmLayers) {
-            const src = new LocalStorageFeatureSource(
-                backend,
-                layer,
-                LayoutSource.fromCacheZoomLevel,
-                mapProperties,
-                {
-                    isActive: isDisplayed(layer.id),
-                    maxAge: layer.maxAgeOfCache,
-                }
-            )
-            fromCache.set(layer.id, src)
-        }
+        if (featureSwitches.featureSwitchCache.data) {
+            for (const layer of osmLayers) {
+                const src = new LocalStorageFeatureSource(
+                    backend,
+                    layer,
+                    LayoutSource.fromCacheZoomLevel,
+                    mapProperties,
+                    {
+                        isActive: isDisplayed(layer.id),
+                        maxAge: layer.maxAgeOfCache
+                    }
+                )
+                fromCache.set(layer.id, src)
+            }
 
+        }
         const mvtSources: UpdatableFeatureSource[] = osmLayers
             .filter((f) => mvtAvailableLayers.has(f.id))
             .map((l) => LayoutSource.setupMvtSource(l, mapProperties, isDisplayed(l.id)))
@@ -104,7 +107,6 @@ export default class LayoutSource extends FeatureSourceMerger {
         super(...geojsonSources, ...Array.from(fromCache.values()), ...mvtSources, ...nonMvtSources)
 
         this.isLoading = isLoading
-        this.fromCache = fromCache
         supportsForceDownload.push(...geojsonSources)
         supportsForceDownload.push(...mvtSources) // Non-mvt sources are handled by overpass
         this.supportsForceDownload = supportsForceDownload
@@ -168,7 +170,7 @@ export default class LayoutSource extends FeatureSourceMerger {
             backend,
             isActive,
             patchRelations: true,
-            fullNodeDatabase,
+            fullNodeDatabase
         })
     }
 
@@ -200,11 +202,11 @@ export default class LayoutSource extends FeatureSourceMerger {
                 widenFactor: featureSwitches.layoutToUse.widenFactor,
                 overpassUrl: featureSwitches.overpassUrl,
                 overpassTimeout: featureSwitches.overpassTimeout,
-                overpassMaxZoom: featureSwitches.overpassMaxZoom,
+                overpassMaxZoom: featureSwitches.overpassMaxZoom
             },
             {
                 padToTiles: zoom.map((zoom) => Math.min(15, zoom + 1)),
-                isActive,
+                isActive
             }
         )
     }
