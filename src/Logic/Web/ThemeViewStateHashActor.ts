@@ -17,7 +17,7 @@ export default class ThemeViewStateHashActor {
         "The possible hashes are:",
         "",
         MenuState._menuviewTabs.map((tab) => "`menu:" + tab + "`").join(","),
-        MenuState._themeviewTabs.map((tab) => "`theme-menu:" + tab + "`").join(","),
+        MenuState._themeviewTabs.map((tab) => "`theme-menu:" + tab + "`").join(",")
     ]
 
     /**
@@ -120,27 +120,30 @@ export default class ThemeViewStateHashActor {
 
     private loadStateFromHash(hash: string) {
         const state = this._state
-        const parts = hash.split(":")
-        outer: for (const { toggle, name, submenu } of state.guistate.allToggles) {
-            for (const part of parts) {
-                if (part === name) {
+        for (const superpart of hash.split(";")) {
+            const parts = superpart.at(-1)?.split(":") ?? []
+
+            outer: for (const { toggle, name, submenu } of state.guistate.allToggles) {
+                for (const part of parts) {
+                    if (part.indexOf(":") < 0) {
+                        if (part === name) {
+                            toggle.setData(true)
+                            continue outer
+                        }
+                        continue
+                    }
+                    const [main, submenuValue] = part.split(":")
+                    if (part !== main) {
+                        continue
+                    }
                     toggle.setData(true)
+                    submenu?.setData(submenuValue)
                     continue outer
                 }
-                if (part.indexOf(":") < 0) {
-                    continue
-                }
-                const [main, submenuValue] = part.split(":")
-                if (part !== main) {
-                    continue
-                }
-                toggle.setData(true)
-                submenu?.setData(submenuValue)
-                continue outer
-            }
 
-            // If we arrive here, the loop above has not found any match
-            toggle.setData(false)
+                // If we arrive here, the loop above has not found any match
+                toggle.setData(false)
+            }
         }
     }
 
