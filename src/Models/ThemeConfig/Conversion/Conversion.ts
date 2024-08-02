@@ -73,15 +73,20 @@ export abstract class DesugaringStep<T> extends Conversion<T, T> {}
 export class Pipe<TIn, TInter, TOut> extends Conversion<TIn, TOut> {
     private readonly _step0: Conversion<TIn, TInter>
     private readonly _step1: Conversion<TInter, TOut>
+    private readonly _failfast: boolean
 
-    constructor(step0: Conversion<TIn, TInter>, step1: Conversion<TInter, TOut>) {
+    constructor(step0: Conversion<TIn, TInter>, step1: Conversion<TInter, TOut>, failfast = false) {
         super("Merges two steps with different types", [], `Pipe(${step0.name}, ${step1.name})`)
         this._step0 = step0
         this._step1 = step1
+        this._failfast = failfast
     }
 
     convert(json: TIn, context: ConversionContext): TOut {
         const r0 = this._step0.convert(json, context.inOperation(this._step0.name))
+        if(context.hasErrors() && this._failfast){
+            return undefined
+        }
         return this._step1.convert(r0, context.inOperation(this._step1.name))
     }
 }

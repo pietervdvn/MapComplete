@@ -80,6 +80,7 @@ export interface LayoutConfigJson {
      * Either a URL or a base64 encoded value (which should include 'data:image/svg+xml;base64)
      *
      * Type: icon
+     * suggestions: return Constants.defaultPinIcons.map(i => ({if: "value="+i, then: i, icon: i}))
      * group: basic
      *
      */
@@ -156,6 +157,7 @@ export interface LayoutConfigJson {
      * type: layer[]
      * types: hidden | layer | hidden
      * group: layers
+     * title: value["builtin"] ?? value["id"] ?? value
      * suggestions: return Array.from(layers.keys()).map(key => ({if: "value="+key, then: "<b>"+key+"</b> (builtin) - "+layers.get(key).description}))
      *
      * A theme must contain at least one layer.

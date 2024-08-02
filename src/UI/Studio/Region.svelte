@@ -4,9 +4,10 @@
    * They will typically be a subset of some properties
    */
   import type { ConfigMeta } from "./configMeta"
-  import EditLayerState from "./EditLayerState"
+  import EditLayerState, { EditJsonState } from "./EditLayerState"
   import SchemaBasedInput from "./SchemaBasedInput.svelte"
   import AccordionSingle from "../Flowbite/AccordionSingle.svelte"
+  import { Utils } from "../../Utils"
 
   export let state: EditLayerState
   export let configs: ConfigMeta[]
@@ -30,8 +31,8 @@
     <div slot="header">{title}</div>
     <div class="flex w-full flex-col gap-y-1 pl-2">
       <slot name="description" />
-      {#each configsFiltered as config}
-        <SchemaBasedInput {state} path={config.path} schema={config} />
+      {#each configsFiltered as config (config.path)}
+        <SchemaBasedInput {state} path={config.path} } />
       {/each}
     </div>
   </AccordionSingle>

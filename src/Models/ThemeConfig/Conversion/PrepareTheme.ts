@@ -21,6 +21,7 @@ import DependencyCalculator from "../DependencyCalculator"
 import { AddContextToTranslations } from "./AddContextToTranslations"
 import ValidationUtils from "./ValidationUtils"
 import { ConversionContext } from "./ConversionContext"
+import { PrevalidateTheme } from "./Validation"
 
 class SubstituteLayer extends Conversion<string | LayerConfigJson, LayerConfigJson[]> {
     private readonly _state: DesugaringContext
@@ -664,7 +665,6 @@ export class PrepareTheme extends Fuse<LayoutConfigJson> {
     ) {
         super(
             "Fully prepares and expands a theme",
-
             new AddContextToTranslationsInLayout(),
             new PreparePersonalTheme(state),
             new WarnForUnsubstitutedLayersInTheme(),

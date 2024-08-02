@@ -1,14 +1,15 @@
 <script lang="ts">
   import type { ConfigMeta } from "./configMeta"
   import SchemaBasedField from "./SchemaBasedField.svelte"
-  import EditLayerState from "./EditLayerState"
+  import { EditJsonState } from "./EditLayerState"
   import SchemaBasedArray from "./SchemaBasedArray.svelte"
   import SchemaBasedMultiType from "./SchemaBasedMultiType.svelte"
   import ArrayMultiAnswer from "./ArrayMultiAnswer.svelte"
 
-  export let schema: ConfigMeta
-  export let state: EditLayerState
+  export let state: EditJsonState<any>
   export let path: (string | number)[] = []
+  console.log("Fetched schema:", path, state.getSchema(<any> path))
+  let schema: ConfigMeta = state.getSchema(<any> path)[0]
   let expertMode = state.expertMode
 </script>
 
