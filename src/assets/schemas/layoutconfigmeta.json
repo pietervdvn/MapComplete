@@ -110,7 +110,224 @@
     "hints": {
       "typehint": "icon",
       "group": "basic",
-      "question": "What icon should be used to represent this theme?"
+      "question": "What icon should be used to represent this theme?",
+      "suggestions": [
+        {
+          "if": "value=addSmall",
+          "then": "addSmall",
+          "icon": "addSmall"
+        },
+        {
+          "if": "value=brick_wall_round",
+          "then": "brick_wall_round",
+          "icon": "brick_wall_round"
+        },
+        {
+          "if": "value=brick_wall_square",
+          "then": "brick_wall_square",
+          "icon": "brick_wall_square"
+        },
+        {
+          "if": "value=bug",
+          "then": "bug",
+          "icon": "bug"
+        },
+        {
+          "if": "value=checkmark",
+          "then": "checkmark",
+          "icon": "checkmark"
+        },
+        {
+          "if": "value=checkmark",
+          "then": "checkmark",
+          "icon": "checkmark"
+        },
+        {
+          "if": "value=circle",
+          "then": "circle",
+          "icon": "circle"
+        },
+        {
+          "if": "value=clock",
+          "then": "clock",
+          "icon": "clock"
+        },
+        {
+          "if": "value=close",
+          "then": "close",
+          "icon": "close"
+        },
+        {
+          "if": "value=close",
+          "then": "close",
+          "icon": "close"
+        },
+        {
+          "if": "value=confirm",
+          "then": "confirm",
+          "icon": "confirm"
+        },
+        {
+          "if": "value=computer",
+          "then": "computer",
+          "icon": "computer"
+        },
+        {
+          "if": "value=cross_bottom_right",
+          "then": "cross_bottom_right",
+          "icon": "cross_bottom_right"
+        },
+        {
+          "if": "value=crosshair",
+          "then": "crosshair",
+          "icon": "crosshair"
+        },
+        {
+          "if": "value=desktop",
+          "then": "desktop",
+          "icon": "desktop"
+        },
+        {
+          "if": "value=direction",
+          "then": "direction",
+          "icon": "direction"
+        },
+        {
+          "if": "value=gear",
+          "then": "gear",
+          "icon": "gear"
+        },
+        {
+          "if": "value=gps_arrow",
+          "then": "gps_arrow",
+          "icon": "gps_arrow"
+        },
+        {
+          "if": "value=heart",
+          "then": "heart",
+          "icon": "heart"
+        },
+        {
+          "if": "value=heart_outline",
+          "then": "heart_outline",
+          "icon": "heart_outline"
+        },
+        {
+          "if": "value=help",
+          "then": "help",
+          "icon": "help"
+        },
+        {
+          "if": "value=help",
+          "then": "help",
+          "icon": "help"
+        },
+        {
+          "if": "value=home",
+          "then": "home",
+          "icon": "home"
+        },
+        {
+          "if": "value=invalid",
+          "then": "invalid",
+          "icon": "invalid"
+        },
+        {
+          "if": "value=invalid",
+          "then": "invalid",
+          "icon": "invalid"
+        },
+        {
+          "if": "value=link",
+          "then": "link",
+          "icon": "link"
+        },
+        {
+          "if": "value=location",
+          "then": "location",
+          "icon": "location"
+        },
+        {
+          "if": "value=location_empty",
+          "then": "location_empty",
+          "icon": "location_empty"
+        },
+        {
+          "if": "value=location_locked",
+          "then": "location_locked",
+          "icon": "location_locked"
+        },
+        {
+          "if": "value=mastodon",
+          "then": "mastodon",
+          "icon": "mastodon"
+        },
+        {
+          "if": "value=not_found",
+          "then": "not_found",
+          "icon": "not_found"
+        },
+        {
+          "if": "value=note",
+          "then": "note",
+          "icon": "note"
+        },
+        {
+          "if": "value=party",
+          "then": "party",
+          "icon": "party"
+        },
+        {
+          "if": "value=pin",
+          "then": "pin",
+          "icon": "pin"
+        },
+        {
+          "if": "value=resolved",
+          "then": "resolved",
+          "icon": "resolved"
+        },
+        {
+          "if": "value=ring",
+          "then": "ring",
+          "icon": "ring"
+        },
+        {
+          "if": "value=scissors",
+          "then": "scissors",
+          "icon": "scissors"
+        },
+        {
+          "if": "value=square",
+          "then": "square",
+          "icon": "square"
+        },
+        {
+          "if": "value=square_rounded",
+          "then": "square_rounded",
+          "icon": "square_rounded"
+        },
+        {
+          "if": "value=teardrop",
+          "then": "teardrop",
+          "icon": "teardrop"
+        },
+        {
+          "if": "value=teardrop_with_hole_green",
+          "then": "teardrop_with_hole_green",
+          "icon": "teardrop_with_hole_green"
+        },
+        {
+          "if": "value=triangle",
+          "then": "triangle",
+          "icon": "triangle"
+        },
+        {
+          "if": "value=wifi",
+          "then": "wifi",
+          "icon": "wifi"
+        }
+      ]
     },
     "type": "string",
     "description": "Used as logo in the more-screen and (for official themes) as favicon, webmanifest logo, ...\nEither a URL or a base64 encoded value (which should include 'data:image/svg+xml;base64)"
@@ -964,7 +1181,8 @@
           "if": "value=windturbine",
           "then": "<b>windturbine</b> (builtin) - Modern windmills generating electricity"
         }
-      ]
+      ],
+      "title": "value[\"builtin\"] ?? value[\"id\"] ?? value"
     },
     "type": [
       {
