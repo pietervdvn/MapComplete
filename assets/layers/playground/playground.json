@@ -289,6 +289,12 @@
             "de": "Die Oberfläche besteht aus Gummi, z. B. aus Gummifliesen, Gummimulch oder einer großen Gummifläche",
             "fr": "La surface est en caoutchouc, comme des dalles de caoutchouc, des copeaux de caoutchouc ou une grande surface en caoutchouc"
           }
+        },{
+          "if": "surface=fine_gravel",
+          "then": {
+            "en": "The surface is <b>fine gravel</b> (less then 2 cm per stone)",
+            "nl": "De ondergrond bestaat uit <b>kleine grindsteentjes</b> (steentjes kleiner dan 2 cm)"
+          }
         }
       ],
       "id": "playground-surface",
