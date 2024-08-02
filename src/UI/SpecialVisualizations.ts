@@ -95,6 +95,7 @@ import NothingKnown from "./Popup/NothingKnown.svelte"
 import { CombinedFetcher } from "../Logic/Web/NearbyImagesSearch"
 import { And } from "../Logic/Tags/And"
 import CloseNoteButton from "./Popup/Notes/CloseNoteButton.svelte"
+import PendingChangesIndicator from "./BigComponents/PendingChangesIndicator.svelte"
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -2002,6 +2003,14 @@ export default class SpecialVisualizations {
                         return mostShadowed?.description ?? matchingPresets[0]?.description
                     })
                     return new VariableUiElement(translation)
+                }
+            },
+            {
+                funcName:"pending_changes",
+                docs: "A module showing the pending changes, with the option to clear the pending changes",
+                args:[],
+                constr(state: SpecialVisualizationState, tagSource: UIEventSource<Record<string, string>>, argument: string[], feature: Feature, layer: LayerConfig): BaseUIElement {
+                    return new SvelteUIElement(PendingChangesIndicator, {state, compact: false})
                 }
             }
         ]
