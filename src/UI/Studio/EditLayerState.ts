@@ -8,7 +8,7 @@ import {
     Pipe,
 } from "../../Models/ThemeConfig/Conversion/Conversion"
 import { PrepareLayer } from "../../Models/ThemeConfig/Conversion/PrepareLayer"
-import { ValidateLayer, ValidateTheme } from "../../Models/ThemeConfig/Conversion/Validation"
+import { PrevalidateTheme, ValidateLayer, ValidateTheme } from "../../Models/ThemeConfig/Conversion/Validation"
 import { AllSharedLayers } from "../../Customizations/AllSharedLayers"
 import { QuestionableTagRenderingConfigJson } from "../../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
 import { TagUtils } from "../../Logic/Tags/TagUtils"
@@ -33,6 +33,8 @@ export abstract class EditJsonState<T> {
     public readonly schema: ConfigMeta[]
     public readonly category: "layers" | "themes"
     public readonly server: StudioServer
+    public readonly osmConnection: OsmConnection
+
     public readonly showIntro: UIEventSource<"no" | "intro" | "tagrenderings"> = <any>(
         LocalStorageSource.Get("studio-show-intro", "intro")
     )
@@ -51,7 +53,7 @@ export abstract class EditJsonState<T> {
      * The EditLayerUI shows a 'schemaBasedInput' for this path to pop advanced questions out
      */
     public readonly highlightedItem: UIEventSource<HighlightedTagRendering> = new UIEventSource(
-        undefined
+        undefined,
     )
     private sendingUpdates = false
     private readonly _stores = new Map<string, UIEventSource<any>>()
@@ -60,10 +62,12 @@ export abstract class EditJsonState<T> {
         schema: ConfigMeta[],
         server: StudioServer,
         category: "layers" | "themes",
+        osmConnection: OsmConnection,
         options?: {
             expertMode?: UIEventSource<boolean>
-        }
+        },
     ) {
+        this.osmConnection = osmConnection
         this.schema = schema
         this.server = server
         this.category = category
@@ -88,6 +92,10 @@ export abstract class EditJsonState<T> {
                 await this.server.update(id, config, this.category)
             })
         this.messages = this.createMessagesStore()
+        this.register(["credits"], this.osmConnection.userDetails.mapD(u => u.name), false)
+        this.register(["credits:uid"], this.osmConnection.userDetails.mapD(u => u.uid), false)
+
+
     }
 
     public startSavingUpdates(enabled = true) {
@@ -132,7 +140,7 @@ export abstract class EditJsonState<T> {
     public register(
         path: ReadonlyArray<string | number>,
         value: Store<any>,
-        noInitialSync: boolean = true
+        noInitialSync: boolean = true,
     ): () => void {
         const unsync = value.addCallback((v) => {
             this.setValueAt(path, v)
@@ -146,7 +154,7 @@ export abstract class EditJsonState<T> {
     public getSchemaStartingWith(path: string[]) {
         return this.schema.filter(
             (sch) =>
-                !path.some((part, i) => !(sch.path.length > path.length && sch.path[i] === part))
+                !path.some((part, i) => !(sch.path.length > path.length && sch.path[i] === part)),
         )
     }
 
@@ -167,7 +175,7 @@ export abstract class EditJsonState<T> {
         const schemas = this.schema.filter(
             (sch) =>
                 sch !== undefined &&
-                !path.some((part, i) => !(sch.path.length == path.length && sch.path[i] === part))
+                !path.some((part, i) => !(sch.path.length == path.length && sch.path[i] === part)),
         )
         if (schemas.length == 0) {
             console.warn("No schemas found for path", path.join("."))
@@ -257,12 +265,12 @@ class ContextRewritingStep<T> extends Conversion<LayerConfigJson, T> {
     constructor(
         state: DesugaringContext,
         step: Conversion<LayerConfigJson, T>,
-        getTagRenderings: (t: T) => TagRenderingConfigJson[]
+        getTagRenderings: (t: T) => TagRenderingConfigJson[],
     ) {
         super(
             "When validating a layer, the tagRenderings are first expanded. Some builtin tagRendering-calls (e.g. `contact`) will introduce _multiple_ tagRenderings, causing the count to be off. This class rewrites the error messages to fix this",
             [],
-            "ContextRewritingStep"
+            "ContextRewritingStep",
         )
         this._state = state
         this._step = step
@@ -272,7 +280,7 @@ class ContextRewritingStep<T> extends Conversion<LayerConfigJson, T> {
     convert(json: LayerConfigJson, context: ConversionContext): T {
         const converted = this._step.convert(json, context)
         const originalIds = json.tagRenderings?.map(
-            (tr) => (<QuestionableTagRenderingConfigJson>tr)["id"]
+            (tr) => (<QuestionableTagRenderingConfigJson>tr)["id"],
         )
         if (!originalIds) {
             return converted
@@ -307,7 +315,6 @@ class ContextRewritingStep<T> extends Conversion<LayerConfigJson, T> {
 
 export default class EditLayerState extends EditJsonState<LayerConfigJson> {
     // Needed for the special visualisations
-    public readonly osmConnection: OsmConnection
     public readonly imageUploadManager = {
         getCountsFor() {
             return 0
@@ -335,10 +342,9 @@ export default class EditLayerState extends EditJsonState<LayerConfigJson> {
         schema: ConfigMeta[],
         server: StudioServer,
         osmConnection: OsmConnection,
-        options: { expertMode: UIEventSource<boolean> }
+        options: { expertMode: UIEventSource<boolean> },
     ) {
-        super(schema, server, "layers", options)
-        this.osmConnection = osmConnection
+        super(schema, server, "layers", osmConnection, options)
         this.layout = {
             getMatchingLayer: () => {
                 try {
@@ -393,7 +399,7 @@ export default class EditLayerState extends EditJsonState<LayerConfigJson> {
         return new ContextRewritingStep(
             state,
             new Pipe(new PrepareLayer(state), new ValidateLayer("dynamic", false, undefined, true)),
-            (t) => <TagRenderingConfigJson[]>t.raw.tagRenderings
+            (t) => <TagRenderingConfigJson[]>t.raw.tagRenderings,
         )
     }
 
@@ -427,7 +433,7 @@ export default class EditLayerState extends EditJsonState<LayerConfigJson> {
     }
 
     protected async validate(
-        configuration: Partial<LayerConfigJson>
+        configuration: Partial<LayerConfigJson>,
     ): Promise<ConversionMessage[]> {
         const layers = AllSharedLayers.getSharedLayersConfigs()
 
@@ -456,16 +462,19 @@ export class EditThemeState extends EditJsonState<LayoutConfigJson> {
     constructor(
         schema: ConfigMeta[],
         server: StudioServer,
-        options: { expertMode: UIEventSource<boolean> }
+        osmConnection: OsmConnection,
+        options: { expertMode: UIEventSource<boolean> },
     ) {
-        super(schema, server, "themes", options)
+        super(schema, server, "themes", osmConnection, options)
         this.setupFixers()
     }
 
     protected buildValidation(state: DesugaringContext): Conversion<LayoutConfigJson, any> {
-        return new Pipe(
-            new PrepareTheme(state),
-            new ValidateTheme(undefined, "", false, new Set(state.tagRenderings.keys()))
+        return new Pipe(new PrevalidateTheme(),
+            new Pipe(
+                new PrepareTheme(state),
+                new ValidateTheme(undefined, "", false, new Set(state.tagRenderings.keys())),
+            ), true,
         )
     }
 

@@ -335,6 +335,17 @@ textarea {
   color: black;
 }
 
+h2.group {
+    /* For flowbite accordions */
+    margin: 0;
+}
+
+.group button {
+    /* For flowbite accordions */
+
+    border-radius: 0;
+}
+
 /************************* OTHER CATEGORIES ********************************/
 
 /**

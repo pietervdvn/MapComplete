@@ -42,9 +42,11 @@
     undefined,
     "Used to complete the login"
   )
+  const fakeUser = UIEventSource.asBoolean( QueryParameters.GetQueryParameter("fake-user", "Test switch for fake login"))
   let osmConnection = new OsmConnection({
     oauth_token,
     checkOnlineRegularly: true,
+    fakeUser: fakeUser.data
   })
   const expertMode = UIEventSource.asBoolean(
     osmConnection.GetPreference("studio-expert-mode", "false", {
@@ -129,7 +131,7 @@
   let showIntro = editLayerState.showIntro
 
   const layoutSchema: ConfigMeta[] = <any>layoutSchemaRaw
-  let editThemeState = new EditThemeState(layoutSchema, studio, { expertMode })
+  let editThemeState = new EditThemeState(layoutSchema, studio, osmConnection, { expertMode })
 
   const version = meta.version
 

@@ -4,13 +4,13 @@
   import TagRenderingEditable from "../Popup/TagRendering/TagRenderingEditable.svelte"
   import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig"
   import type { QuestionableTagRenderingConfigJson } from "../../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
-  import EditLayerState from "./EditLayerState"
+  import { EditJsonState } from "./EditLayerState"
   import { onDestroy } from "svelte"
   import type { JsonSchemaType } from "./jsonSchema"
   import { ConfigMetaUtils } from "./configMeta"
   import ShowConversionMessage from "./ShowConversionMessage.svelte"
 
-  export let state: EditLayerState
+  export let state: EditJsonState<any>
   export let path: (string | number)[] = []
   export let schema: ConfigMeta
   export let startInEditModeIfUnset: boolean = schema.hints && !schema.hints.ifunset

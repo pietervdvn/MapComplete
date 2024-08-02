@@ -373,7 +373,6 @@
             {feedback}
             {unit}
             {state}
-            {extraTags}
             feature={selectedElement}
             value={freeformInput}
             unvalidatedText={freeformInputUnvalidated}
@@ -418,7 +417,6 @@
                   {feedback}
                   {unit}
                   {state}
-                  {extraTags}
                   feature={selectedElement}
                   value={freeformInput}
                   unvalidatedText={freeformInputUnvalidated}
@@ -464,7 +462,6 @@
                   {feedback}
                   {unit}
                   {state}
-                  {extraTags}
                   feature={selectedElement}
                   value={freeformInput}
                   unvalidatedText={freeformInputUnvalidated}

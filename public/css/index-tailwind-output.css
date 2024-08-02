@@ -993,10 +993,6 @@ video {
   margin-right: 4rem;
 }
 
-.mb-4 {
-  margin-bottom: 1rem;
-}
-
 .mt-4 {
   margin-top: 1rem;
 }
@@ -1027,6 +1023,10 @@ video {
 
 .mr-1 {
   margin-right: 0.25rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
 }
 
 .ml-1 {
@@ -4684,6 +4684,16 @@ label.checked:not(.neutral-label) {
 
 textarea {
   color: black;
+}
+
+h2.group {
+  /* For flowbite accordions */
+  margin: 0;
+}
+
+.group button {
+  /* For flowbite accordions */
+  border-radius: 0;
 }
 
 /************************* OTHER CATEGORIES ********************************/

@@ -6,7 +6,7 @@
 
 <Accordion>
   <AccordionItem open={expanded} paddingDefault="p-0" inactiveClass="text-black">
-    <span slot="header" class="p-2 text-base">
+    <span slot="header" class="p-2 text-base w-full">
       <slot name="header" />
     </span>
     <div class="low-interaction rounded-b p-2">
