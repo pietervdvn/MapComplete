@@ -9,7 +9,6 @@ import { IndexedFeatureSource } from "./FeatureSource/FeatureSource"
 import OsmObjectDownloader from "./Osm/OsmObjectDownloader"
 import { Utils } from "../Utils"
 import { Store, UIEventSource } from "./UIEventSource"
-import { selectDefault } from "../Utils/selectDefault"
 
 /**
  * Metatagging adds various tags to the elements, e.g. lat, lon, surface area, ...
@@ -130,7 +129,7 @@ export default class MetaTagging {
             state.featureProperties,
             {
                 includeDates: !lightUpdate,
-                evaluateStrict: !lightUpdate,
+                evaluateStrict: !lightUpdate
             }
         )
     }
@@ -281,7 +280,9 @@ export default class MetaTagging {
                 atLeastOneFeatureChanged = true
             }
         }
-        console.debug("Strictly evaluated ", strictlyEvaluated, " values") // Do not remove this
+        if (strictlyEvaluated > 0) {
+            console.debug("Strictly evaluated ", strictlyEvaluated, " values") // Do not remove this
+        }
         return atLeastOneFeatureChanged
     }
 
@@ -304,7 +305,7 @@ export default class MetaTagging {
                     return []
                 }
                 return [state.perLayer.get(layerId).GetFeaturesWithin(bbox)]
-            },
+            }
         }
     }
 
@@ -349,8 +350,8 @@ export default class MetaTagging {
                 if (MetaTagging.errorPrintCount < MetaTagging.stopErrorOutputAt) {
                     console.warn(
                         "Could not calculate a " +
-                            (isStrict ? "strict " : "") +
-                            "calculated tag for key",
+                        (isStrict ? "strict " : "") +
+                        "calculated tag for key",
                         key,
                         "for feature",
                         feat.properties.id,
@@ -358,9 +359,9 @@ export default class MetaTagging {
                         code,
                         "(in layer",
                         layerId +
-                            ") due to \n" +
-                            e +
-                            "\n. Are you the theme creator? Doublecheck your code. Note that the metatags might not be stable on new features",
+                        ") due to \n" +
+                        e +
+                        "\n. Are you the theme creator? Doublecheck your code. Note that the metatags might not be stable on new features",
                         e,
                         e.stack,
                         { feat }
