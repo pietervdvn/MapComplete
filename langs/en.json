@@ -213,6 +213,7 @@
         "backgroundMap": "Select a background layer",
         "backgroundSwitch": "Switch background",
         "cancel": "Cancel",
+        "clearPendingChanges": "Clear pending changes",
         "confirm": "Confirm",
         "customThemeIntro": "These are previously visited user-generated themes.",
         "customThemeTitle": "Custom themes",

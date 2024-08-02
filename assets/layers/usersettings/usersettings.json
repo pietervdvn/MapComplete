@@ -902,6 +902,12 @@
       ]
     },
     {
+      "id": "pending_changes",
+      "render": {
+        "*": "{pending_changes()}"
+      }
+    },
+    {
       "id": "show_debug",
       "question": {
         "en": "Show user settings debug info?",

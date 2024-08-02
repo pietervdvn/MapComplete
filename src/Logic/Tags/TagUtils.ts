@@ -218,10 +218,18 @@ export class TagUtils {
      *
      * TagUtils.KVtoProperties([new Tag("a","b"), new Tag("c","d")] // => {a: "b", c: "d"}
      */
-    static KVtoProperties(tags: Tag[]): Record<string, string> {
+    static KVtoProperties(tags: {key: string, value: string}[]): Record<string, string> {
         const properties: Record<string, string> = {}
         for (const tag of tags) {
             properties[tag.key] = tag.value
+        }
+        return properties
+    }
+
+    static KVObjtoProperties(tags: {k: string, v: string}[]): Record<string, string> {
+        const properties: Record<string, string> = {}
+        for (const tag of tags) {
+            properties[tag.k] = tag.v
         }
         return properties
     }

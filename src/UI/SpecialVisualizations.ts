@@ -99,6 +99,7 @@ import NothingKnown from "./Popup/NothingKnown.svelte"
 import { CombinedFetcher } from "../Logic/Web/NearbyImagesSearch"
 import { And } from "../Logic/Tags/And"
 import CloseNoteButton from "./Popup/Notes/CloseNoteButton.svelte"
+import PendingChangesIndicator from "./BigComponents/PendingChangesIndicator.svelte"
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -118,7 +119,6 @@ class NearbyImageVis implements SpecialVisualization {
         "A component showing nearby images loaded from various online services such as Mapillary. In edit mode and when used on a feature, the user can select an image to add to the feature"
     funcName = "nearby_images"
     needsUrls = CombinedFetcher.apiUrls
-    svelteBased = true
 
     constr(
         state: SpecialVisualizationState,
@@ -2014,8 +2014,16 @@ export default class SpecialVisualizations {
                         return mostShadowed?.description ?? matchingPresets[0]?.description
                     })
                     return new VariableUiElement(translation)
-                },
+                }
             },
+            {
+                funcName:"pending_changes",
+                docs: "A module showing the pending changes, with the option to clear the pending changes",
+                args:[],
+                constr(state: SpecialVisualizationState, tagSource: UIEventSource<Record<string, string>>, argument: string[], feature: Feature, layer: LayerConfig): BaseUIElement {
+                    return new SvelteUIElement(PendingChangesIndicator, {state, compact: false})
+                }
+            }
         ]
 
         specialVisualizations.push(new AutoApplyButton(specialVisualizations))
