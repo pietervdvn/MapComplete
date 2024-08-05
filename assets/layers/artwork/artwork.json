@@ -790,6 +790,37 @@
       ]
     },
     {
+      "id": "doubles_as_memorial",
+      "question": {
+        "en": "Does this artwork serve as a memorial?"
+      },
+      "mappings": [
+        {
+          "if": "historic=memorial",
+          "then": {
+            "en": "This artwork also serves as a memorial"
+          }
+        },
+        {
+          "if": "historic=",
+          "alsoShowIf": "historic!=memorial",
+          "then": {
+            "en": "This artwork does not serve as a bench"
+          }
+        }
+      ]
+    },
+    {
+      "builtin": "memorial.memorial-questions",
+      "override": {
+        "condition": {
+          "and": [
+            "historic=memorial"
+          ]
+        }
+      }
+    },
+    {
       "id": "doubles_as_bench",
       "question": {
         "en": "Does this artwork serve as a bench?",

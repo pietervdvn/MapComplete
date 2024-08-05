@@ -51,6 +51,15 @@
   "icon": "./assets/themes/artwork/artwork.svg",
   "startZoom": 12,
   "layers": [
-    "artwork"
+    "artwork",
+    {
+      "builtin": [
+        "memorial",
+        "bench"
+      ],
+      "override": {
+        "minzoom": 18
+      }
+    }
   ]
 }
