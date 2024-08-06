@@ -11177,7 +11177,7 @@
                         "then": "Wenn du Änderungen an OpenStreetMap vornimmst, gibst du nicht an, wie weit du von den geänderten Objekten entfernt warst."
                     },
                     "1": {
-                        "then": "Wenn du Änderungen an OpenStreetMap vornimmst, gib grob an, wie weit du von den geänderten Objekten entfernt warst. Das hilft anderen Mitwirkenden zu verstehen, wie du die Änderung vorgenommen hast."
+                        "then": "Gebe bei Änderungen an OpenStreetMap an, wie weit du ungefähr von den geänderten Objekten entfernt warst. Das hilft anderen Mitwirkenden zu verstehen, wie du die Änderung vorgenommen hast"
                     }
                 },
                 "question": "Sollte bei Änderungen eine grobe Angabe gemacht werden, wie weit du vom Objekt entfernt warst?",
@@ -11238,7 +11238,7 @@
                         "then": "Tags nie anzeigen."
                     },
                     "1": {
-                        "then": "Tags anzeigen sobald ich {__userjourney_tagsVisibleAt} Changesets erstellt habe"
+                        "then": "Tags anzeigen, sobald ich {__userjourney_tagsVisibleAt} Änderungssätze erstellt habe"
                     },
                     "2": {
                         "then": "Tags anzeigen, die bei der Änderung hinzugefügt werden"
