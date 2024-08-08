@@ -814,7 +814,7 @@
       "builtin": "memorial.memorial-questions",
       "override": {
         "condition": {
-          "and": [
+          "and+": [
             "historic=memorial"
           ]
         }
@@ -898,7 +898,7 @@
       "builtin": "bench.bench-questions",
       "override": {
         "condition": {
-          "and": [
+          "and+": [
             "amenity=bench"
           ]
         }
