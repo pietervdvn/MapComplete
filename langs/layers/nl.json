@@ -6111,6 +6111,11 @@
                 }
             },
             "parcel-to": {
+                "mappings": {
+                    "0": {
+                        "then": "Je kunt pakketten naar dit afhaalpunt sturen"
+                    }
+                },
                 "question": "Kun je deze plaats gebruiken als afhaalpunt?"
             },
             "partner-brand": {
@@ -6134,6 +6139,14 @@
                         "then": "Deze locatie biedt diensten aan voor bpost"
                     }
                 }
+            },
+            "post_partner": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze winkel is een geen postkantoor, maar heeft een post- en/of pakketpunt"
+                    }
+                },
+                "question": "Is dit een postkantoor?"
             },
             "stamps": {
                 "mappings": {
