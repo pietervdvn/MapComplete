@@ -791,6 +791,9 @@
         "shortDescription": "Este mapa muestra jardines de fachada con fotografías e información útil sobre la orientación, la luz del sol y los tipos de plantas.",
         "title": "Jardines de fachada"
     },
+    "fireplace": {
+        "title": "Chimenea y barbacoas"
+    },
     "food": {
         "description": "Restaurantes y Comida rápida",
         "title": "Restaurantes y comida rápida"
@@ -863,6 +866,9 @@
                         "question": "¿Cuál es el texto del cartel?",
                         "render": "El texto del cartel es: {inscription}"
                     }
+                },
+                "title": {
+                    "render": "Publicidad en una fachada"
                 }
             }
         }
