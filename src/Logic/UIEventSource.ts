@@ -352,6 +352,10 @@ export class ImmutableStore<T> extends Store<T> {
         }
         return new ImmutableStore<J>(f(this.data))
     }
+
+    bind<X>(f: (t: T) => Store<X>): Store<X> {
+        return f(this.data)
+    }
 }
 
 /**
