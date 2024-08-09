@@ -186,7 +186,7 @@ export default class NameSuggestionIndex {
                     addExtraTags: Object.keys(tags)
                         .filter((k) => k !== type)
                         .map((k) => new Tag(k, tags[k])),
-                    then: new TypedTranslation<Record<string, never>>({ "*": nsiItem.displayName +" "+(frequency) }),
+                    then: new TypedTranslation<Record<string, never>>({ "*": nsiItem.displayName }),
                     hideInAnswer: false,
                     ifnot: undefined,
                     alsoShowIf: undefined,
