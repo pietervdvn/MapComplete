@@ -1,6 +1,5 @@
 import { IdbLocalStorage } from "../../Web/IdbLocalStorage"
 import { UIEventSource } from "../../UIEventSource"
-import { Tiles } from "../../../Models/TileRange"
 
 /**
  * A class which allows to read/write a tile to local storage.

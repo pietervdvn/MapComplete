@@ -93,6 +93,9 @@
     "images",
     {
       "id": "memorial-type",
+      "labels": [
+        "memorial-questions"
+      ],
       "question": {
         "en": "What type of memorial is this?",
         "de": "Was für eine Art von Denkmal ist das?",
@@ -255,6 +258,9 @@
     },
     {
       "id": "inscription",
+      "labels": [
+        "memorial-questions"
+      ],
       "question": {
         "en": "What is the inscription on this memorial?",
         "ca": "Quina és la inscripció d'aquesta placa?",
@@ -264,7 +270,11 @@
         "nl": "Wat is het opschrift van dit gedenkteken?"
       },
       "#:condition": "Benches have a separate inscription question",
-      "condition": "memorial!=bench",
+      "condition": {
+        "and": [
+          "memorial!=bench"
+        ]
+      },
       "render": {
         "en": "The inscription on this memorial reads: <p><i>{inscription}<i></p>",
         "ca": "La inscripció d'aquesta placa diu: <p><i>{inscription}<i></p>",

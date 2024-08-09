@@ -415,6 +415,11 @@ class LayerOverviewUtils extends Script {
         sharedLayers.forEach((_, key) => {
             priviliged.delete(key)
         })
+
+        // These two get a free pass
+        priviliged.delete("summary")
+        priviliged.delete("last_click")
+
         if (priviliged.size > 0) {
             throw (
                 "Priviliged layer " +

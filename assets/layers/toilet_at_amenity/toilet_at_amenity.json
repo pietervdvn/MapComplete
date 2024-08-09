@@ -15,7 +15,12 @@
     "cs": "Vrstva zobrazující (veřejné) toalety umístěné na různých místech."
   },
   "source": {
-    "osmTags": "toilets=yes"
+    "osmTags": {
+      "and": [
+        "toilets=yes",
+        "type!=route"
+      ]
+    }
   },
   "minzoom": 12,
   "title": {
