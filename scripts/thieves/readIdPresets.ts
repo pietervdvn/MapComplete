@@ -213,7 +213,7 @@ class IdThief {
                 continue
             }
 
-            if(preset.tags["shop"] === "vacant") {
+            if (preset.tags["shop"] === "vacant") {
                 console.log("Skipping 'vacant'")
                 continue
             }
@@ -282,15 +282,15 @@ class IdThief {
     }
 }
 
-
-class ReadIdPresets extends Script{
+class ReadIdPresets extends Script {
     constructor() {
-        super("Reads the id-tagging-schema repository and steals the presets; which will be written into 'id_presets.json'\n\nArguments: [path-to-repository] [path-to-target]\n" +
-            "Note that default arguments are used")
+        super(
+            "Reads the id-tagging-schema repository and steals the presets; which will be written into 'id_presets.json'\n\nArguments: [path-to-repository] [path-to-target]\n" +
+                "Note that default arguments are used"
+        )
     }
 
     async main(args: string[]): Promise<void> {
-
         const targetDir = args[1] ?? "./assets/layers/id_presets/"
 
         const makiThief = new MakiThief(
@@ -345,9 +345,7 @@ class ReadIdPresets extends Script{
         ]
         console.log("Writing id presets to", id_presets_path)
         writeFileSync(id_presets_path, JSON.stringify(idPresets, null, "  "), "utf8")
-
     }
 }
-
 
 new ReadIdPresets().run()
