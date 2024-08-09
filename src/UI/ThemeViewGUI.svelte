@@ -208,7 +208,8 @@
   let openBackgroundButton: UIEventSource<HTMLElement> = new UIEventSource<HTMLElement>(undefined)
   let addNewFeatureMode = state.userRelatedState.addNewFeatureMode
 
-  let gpsButtonAriaLabel = state.geolocation.geolocationState.gpsAvailable.map(available => {
+  let gpsAvailable = state.geolocation.geolocationState.gpsAvailable
+  let gpsButtonAriaLabel = gpsAvailable.map(available => {
     if (!available) {
       return Translations.t.general.labels.locationNotAvailable
     }
@@ -433,6 +434,7 @@
         <If condition={featureSwitches.featureSwitchGeolocation}>
           <div class="relative m-0">
             <MapControlButton
+              enabled={gpsAvailable}
               arialabelDynamic={gpsButtonAriaLabel}
               on:click={() => state.geolocationControl.handleClick()}
               on:keydown={forwardEventToMap}
