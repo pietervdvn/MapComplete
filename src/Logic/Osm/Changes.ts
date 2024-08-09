@@ -587,6 +587,7 @@ export class Changes {
             if (matchFound) {
                 toUpload.push(c)
             } else {
+                console.log("Refusing change about "+c.type+"/"+ c.id+" as not in the objects. No internet?")
                 refused.push(c)
             }
         })
@@ -708,6 +709,9 @@ export class Changes {
 
         let { toUpload, refused } = this.fragmentChanges(pending, objects)
 
+        if(toUpload.length === 0){
+            return refused
+        }
         await this._changesetHandler.UploadChangeset(
             (csId, remappings) => {
                 if (remappings.size > 0) {
