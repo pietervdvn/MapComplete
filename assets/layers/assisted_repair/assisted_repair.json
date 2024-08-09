@@ -35,11 +35,13 @@
     "preset_description",
     {
       "question": {
-        "en": "What is the name of this repair workshop?"
+        "en": "What is the name of this repair workshop?",
+        "de": "Wie heißt diese Reparaturwerkstatt?"
       },
       "id": "name",
       "render": {
-        "en": "This workshop is called <b>{name}</b>"
+        "en": "This workshop is called <b>{name}</b>",
+        "de": "Diese Werkstatt heißt <b>{name}</b>"
       },
       "freeform": {
         "key": "name"
@@ -51,7 +53,8 @@
     "facebook",
     {
       "question": {
-        "en": "What type of items are repaired here?"
+        "en": "What type of items are repaired here?",
+        "de": "Welche Art von Gegenständen wird hier repariert?"
       },
       "id": "item:repair",
       "mappings": [
@@ -62,7 +65,8 @@
             "mobile_phone:repair="
           ],
           "then": {
-            "en": "Mobile phones are repaired here"
+            "en": "Mobile phones are repaired here",
+            "de": "Mobiltelefone werden hier repariert"
           },
           "ifnot": "service:mobile_phone:repair=no"
         },
@@ -73,7 +77,8 @@
             "computer:repair="
           ],
           "then": {
-            "en": "Computers are repaired here"
+            "en": "Computers are repaired here",
+            "de": "Computer werden hier repariert"
           },
           "ifnot": "service:computer:repair=no"
         },
@@ -84,7 +89,8 @@
             "bicycle:repair="
           ],
           "then": {
-            "en": "Bicycles are repaired here"
+            "en": "Bicycles are repaired here",
+            "de": "Fahrräder werden hier repariert"
           },
           "ifnot": "service:bicycle:repair=no"
         },
@@ -95,7 +101,8 @@
             "bicycle:repair="
           ],
           "then": {
-            "en": "Electronic devices are repaired here"
+            "en": "Electronic devices are repaired here",
+            "de": "Elektronische Geräte werden hier repariert"
           },
           "ifnot": "service:electronics:repair=no",
           "icon": "./assets/layers/recycling/small_electrical_appliances.svg"
@@ -107,7 +114,8 @@
             "furniture:repair="
           ],
           "then": {
-            "en": "Furniture is repaired here"
+            "en": "Furniture is repaired here",
+            "de": "Möbel werden hier repariert"
           },
           "ifnot": "service:furniture:repair=no",
           "icon": "./assets/layers/recycling/furniture.svg"
@@ -119,7 +127,8 @@
             "clothes:repair="
           ],
           "then": {
-            "en": "Clothes are repaired here"
+            "en": "Clothes are repaired here",
+            "de": "Kleidung wird hier repariert"
           },
           "ifnot": "service:clothes:repair=no",
           "icon": "./assets/layers/recycling/clothes.svg"
@@ -136,23 +145,27 @@
   ],
   "id": "assisted_repair",
   "name": {
-    "en": "Repair cafés and assisted repair workshops"
+    "en": "Repair cafés and assisted repair workshops",
+    "de": "Repair-Cafés und unterstützte Reparaturwerkstätten"
   },
   "description": {
-    "en": "A self-assisted workshop is a location where people can come and repair their goods with help of volunteers and with the tools available at the given location.  A repair café is a type of event organized regularly along the same principles."
+    "en": "A self-assisted workshop is a location where people can come and repair their goods with help of volunteers and with the tools available at the given location.  A repair café is a type of event organized regularly along the same principles.",
+    "de": "Eine Selbsthilfewerkstatt ist ein Ort, an dem Menschen ihre Gegenstände mit Hilfe von Freiwilligen und den vor Ort verfügbaren Werkzeugen reparieren können. Ein Repair-Café ist eine Art von Veranstaltung, die regelmäßig nach denselben Prinzipien organisiert wird."
   },
   "source": {
     "osmTags": "repair=assisted_self_service"
   },
   "title": {
     "render": {
-      "en": "Workshop for assisted repair"
+      "en": "Workshop for assisted repair",
+      "de": "Werkstatt für unterstützte Reparaturen"
     },
     "mappings": [
       {
         "if": "name~*",
         "then": {
-          "en": "{name}"
+          "en": "{name}",
+          "de": "{name}"
         }
       }
     ]
@@ -162,14 +175,16 @@
   "presets": [
     {
       "title": {
-        "en": "an assisted repair workshop"
+        "en": "an assisted repair workshop",
+        "de": "Eine unterstützte Reparaturwerkstatt"
       },
       "tags": [
         "amenity=workshop",
         "repair=assisted_self_service"
       ],
       "description": {
-        "en": "A location with a permanent workshop where people can come to repair items with the help of volunteers."
+        "en": "A location with a permanent workshop where people can come to repair items with the help of volunteers.",
+        "de": "Ein Ort mit einer festen Werkstatt, in der Menschen mit Hilfe von Freiwilligen Gegenstände reparieren können."
       }
     }
   ]

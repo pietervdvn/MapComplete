@@ -953,19 +953,21 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         | { content: string }
         | { redirect: string }
         | { error: string; url: string; statuscode?: number }
-    >{
-
+    > {
         let result = undefined
         for (let i = 0; i < maxAttempts; i++) {
             result = await Utils.downloadAdvancedTryOnce(url, headers, method, content)
-            if(!result["error"] ){
+            if (!result["error"]) {
                 return result
             }
-            console.log(`Request to ${url} failed, Trying again in a moment. Attempt ${i+1}/${maxAttempts}`)
-            await Utils.waitFor((i+1) * 500)
+            console.log(
+                `Request to ${url} failed, Trying again in a moment. Attempt ${
+                    i + 1
+                }/${maxAttempts}`
+            )
+            await Utils.waitFor((i + 1) * 500)
         }
         return result
-
     }
 
     /**
@@ -975,7 +977,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         url: string,
         headers?: Record<string, string>,
         method: "POST" | "GET" | "PUT" | "UPDATE" | "DELETE" | "OPTIONS" = "GET",
-        content?: string,
+        content?: string
     ): Promise<
         | { content: string }
         | { redirect: string }
@@ -1358,16 +1360,15 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return "#" + componentToHex(c.r) + componentToHex(c.g) + componentToHex(c.b)
     }
 
-    private static percentageToNumber(v: string){
+    private static percentageToNumber(v: string) {
         v = v.trim()
-        if(v.endsWith("%")){
+        if (v.endsWith("%")) {
             return Math.round((parseInt(v) * 255) / 100)
         }
         const n = Number(v)
-        if(!isNaN(n)){
+        if (!isNaN(n)) {
             return n
         }
-
     }
 
     /**
@@ -1384,14 +1385,17 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         }
         hex = hex.replace(/[ \t]/g, "")
         if (hex.startsWith("rgba(") || hex.startsWith("rgb(")) {
-            const match = hex.match(/rgba?\(([0-9.]+%?),([0-9.]+%?),([0-9.]+%?)(,[0-9.]+%?)?\)/);
+            const match = hex.match(/rgba?\(([0-9.]+%?),([0-9.]+%?),([0-9.]+%?)(,[0-9.]+%?)?\)/)
             if (match == undefined) {
                 return undefined
             }
 
-            return { r: Utils.percentageToNumber (match[1]), g: Utils.percentageToNumber (match[2]), b: Utils.percentageToNumber (match[3]) }
+            return {
+                r: Utils.percentageToNumber(match[1]),
+                g: Utils.percentageToNumber(match[2]),
+                b: Utils.percentageToNumber(match[3]),
+            }
         }
-
 
         if (!hex.startsWith("#")) {
             return undefined

@@ -28,7 +28,7 @@ export default class AllImageProviders {
         Mapillary.singleton,
         WikidataImageProvider.singleton,
         WikimediaImageProvider.singleton,
-        AllImageProviders.genericImageProvider
+        AllImageProviders.genericImageProvider,
     ]
     public static apiUrls: string[] = [].concat(
         ...AllImageProviders.ImageAttributionSource.map((src) => src.apiUrls())
@@ -52,15 +52,13 @@ export default class AllImageProviders {
     }
 
     public static async selectBestProvider(key: string, value: string): Promise<ImageProvider> {
-
         for (const imageProvider of AllImageProviders.ImageAttributionSource) {
-            try{
-
-            const extracted = await Promise.all(await imageProvider.ExtractUrls(key, value))
-            if(extracted?.length > 0){
-                return imageProvider
-            }
-            }catch (e) {
+            try {
+                const extracted = await Promise.all(await imageProvider.ExtractUrls(key, value))
+                if (extracted?.length > 0) {
+                    return imageProvider
+                }
+            } catch (e) {
                 console.warn("Provider gave an error while trying to determine a match:", e)
             }
         }

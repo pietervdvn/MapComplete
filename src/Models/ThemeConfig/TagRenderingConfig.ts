@@ -366,17 +366,15 @@ export default class TagRenderingConfig {
             throw `${ctx}: Invalid mapping: "if" is defined as an array. Use {"and": <your conditions>} or {"or": <your conditions>} instead`
         }
 
-        if(mapping.addExtraTags !== undefined && !Array.isArray(mapping.addExtraTags)){
+        if (mapping.addExtraTags !== undefined && !Array.isArray(mapping.addExtraTags)) {
             throw `${ctx}.addExtraTags: expected a list, but got a ${typeof mapping.addExtraTags}`
-
         }
         if (mapping.addExtraTags !== undefined && multiAnswer) {
-            const usedKeys = mapping.addExtraTags?.flatMap(et => TagUtils.Tag(et).usedKeys())
-            if(usedKeys.some(key => TagUtils.Tag(mapping.if).usedKeys().indexOf(key ) > 0)){
+            const usedKeys = mapping.addExtraTags?.flatMap((et) => TagUtils.Tag(et).usedKeys())
+            if (usedKeys.some((key) => TagUtils.Tag(mapping.if).usedKeys().indexOf(key) > 0)) {
                 throw `${ctx}: Invalid mapping: got a multi-Answer with addExtraTags which also modifies one of the keys; this is not allowed`
             }
         }
-
 
         let hideInAnswer: boolean | TagsFilter = false
         if (typeof mapping.hideInAnswer === "boolean") {

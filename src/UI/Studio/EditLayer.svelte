@@ -82,7 +82,7 @@
 </script>
 
 <div class="flex h-screen flex-col">
-  <div class="my-2 flex flex-wrap w-full justify-between">
+  <div class="my-2 flex w-full flex-wrap justify-between">
     <slot />
     {#if $title === undefined}
       <h3>Creating a new layer</h3>

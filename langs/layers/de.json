@@ -565,6 +565,53 @@
             "render": "Sammelplatz bei Notfällen"
         }
     },
+    "assisted_repair": {
+        "description": "Eine Selbsthilfewerkstatt ist ein Ort, an dem Menschen ihre Gegenstände mit Hilfe von Freiwilligen und den vor Ort verfügbaren Werkzeugen reparieren können. Ein Repair-Café ist eine Art von Veranstaltung, die regelmäßig nach denselben Prinzipien organisiert wird.",
+        "name": "Repair-Cafés und unterstützte Reparaturwerkstätten",
+        "presets": {
+            "0": {
+                "description": "Ein Ort mit einer festen Werkstatt, in der Menschen mit Hilfe von Freiwilligen Gegenstände reparieren können.",
+                "title": "Eine unterstützte Reparaturwerkstatt"
+            }
+        },
+        "tagRenderings": {
+            "item:repair": {
+                "mappings": {
+                    "0": {
+                        "then": "Mobiltelefone werden hier repariert"
+                    },
+                    "1": {
+                        "then": "Computer werden hier repariert"
+                    },
+                    "2": {
+                        "then": "Fahrräder werden hier repariert"
+                    },
+                    "3": {
+                        "then": "Elektronische Geräte werden hier repariert"
+                    },
+                    "4": {
+                        "then": "Möbel werden hier repariert"
+                    },
+                    "5": {
+                        "then": "Kleidung wird hier repariert"
+                    }
+                },
+                "question": "Welche Art von Gegenständen wird hier repariert?"
+            },
+            "name": {
+                "question": "Wie heißt diese Reparaturwerkstatt?",
+                "render": "Diese Werkstatt heißt <b>{name}</b>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
+            "render": "Werkstatt für unterstützte Reparaturen"
+        }
+    },
     "atm": {
         "description": "Geldautomaten zum Geld abheben",
         "filter": {
@@ -5294,6 +5341,16 @@
         "title": "Wegweiser"
     },
     "hackerspace": {
+        "deletion": {
+            "nonDeleteMappings": {
+                "0": {
+                    "then": "Dies ist eine Werkstatt für unterstützten Selbstservice, wie ein Repair-Café"
+                },
+                "1": {
+                    "then": "Dies ist ein Coworking-Büro"
+                }
+            }
+        },
         "description": "Hackerspace",
         "name": "Hackerspaces",
         "presets": {
@@ -7822,6 +7879,15 @@
                 "editButtonAriaLabel": "E-Mail Adresse bearbeiten",
                 "question": "Wie lautet die Mail-Adresse von {title()}?"
             },
+            "facebook": {
+                "question": "Was ist die Facebook-Seite von {title()}?",
+                "render": {
+                    "after": "<div class='subtle text-sm'>Facebook ist bekannt dafür, die psychische Gesundheit zu beeinträchtigen, die öffentliche Meinung zu manipulieren und Hass zu verursachen. Versuche, gesündere Alternativen zu nutzen.</div>",
+                    "special": {
+                        "text": "Facebook Seite"
+                    }
+                }
+            },
             "gluten_free": {
                 "mappings": {
                     "0": {
@@ -8799,7 +8865,8 @@
                         "then": "Das Geschäft vermietet keine Fahrräder"
                     }
                 },
-                "question": "Vermietet dieses Geschäft Fahrräder?"
+                "question": "Vermietet dieses Geschäft Fahrräder?",
+                "questionHint": "Es geht um die Vermietung, z.B. an Touristen, die ein Fahrrad benötigen. Einige Fahrradwerkstätten bieten ein Fahrrad an, das man benutzen kann, während das eigene Fahrrad repariert wird, aber dies wird für diese Frage nicht als Vermietung betrachtet."
             },
             "bike_pump_service": {
                 "mappings": {
@@ -8900,6 +8967,11 @@
             },
             "id_presets.shop_types": {
                 "override": {
+                    "+mappings": {
+                        "0": {
+                            "then": "Fahrradverleih"
+                        }
+                    },
                     "question": "Um was für ein Geschäft handelt es sich?",
                     "render": "Das ist ein {shop}"
                 }
@@ -8953,6 +9025,14 @@
                 "question": "Verlauft das Geschäft auch Second-Hand-Produkte?"
             },
             "sells_new_bikes": {
+                "mappings": {
+                    "0": {
+                        "then": "Dieses Geschäft verkauft neue Fahrräder"
+                    },
+                    "1": {
+                        "then": "Dieses Geschäft verkauft keine neuen Fahrräder"
+                    }
+                },
                 "question": "Verkauft dieses Geschäft Fahrräder?"
             },
             "shops-name": {
@@ -10349,6 +10429,69 @@
             "render": "Toilette in Einrichtung"
         }
     },
+    "tool_library": {
+        "description": "Eine Werkzeugbibliothek ist ein Ort, an dem Menschen aus der Öffentlichkeit Werkzeuge ausleihen können",
+        "name": "Werkzeugbibliothek",
+        "pointRendering": {
+            "0": {
+                "label": {
+                    "mappings": {
+                        "0": {
+                            "then": "{name}"
+                        }
+                    }
+                }
+            }
+        },
+        "presets": {
+            "0": {
+                "description": "Eine Werkzeugbibliothek ist ein Ort, an dem Menschen aus der Öffentlichkeit Werkzeuge ausleihen können",
+                "title": "Eine Werkzeugbibliothek"
+            }
+        },
+        "tagRenderings": {
+            "fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Werkzeuge ausleihen ist kostenlos (wenn man eine Mitgliedschaft hat)"
+                    },
+                    "1": {
+                        "then": "Werkzeuge ausleihen ist kostenlos"
+                    },
+                    "2": {
+                        "then": "Es wird eine Gebühr erhoben, wenn man Werkzeuge ausleiht"
+                    },
+                    "3": {
+                        "then": "Eine Spende kann gegeben werden, wenn man Werkzeuge ausleiht"
+                    }
+                },
+                "question": "Wird eine Gebühr erhoben, um Werkzeuge auszuleihen?",
+                "questionHint": "Wenn eine Mitgliedschaft erforderlich ist, gehen wir davon aus, dass die Mitgliedschaft bereits bezahlt ist."
+            },
+            "membership": {
+                "mappings": {
+                    "0": {
+                        "then": "Keine Mitgliedschaft ist erforderlich, um hier Werkzeuge auszuleihen"
+                    },
+                    "1": {
+                        "then": "Eine <b>Mitgliedschaft ist erforderlich</b>, um diese Werkzeugbibliothek zu nutzen"
+                    },
+                    "2": {
+                        "then": "Eine <b> Mitgliedschaft ist möglich</b> , aber nicht erforderlich, um diese Werkzeugbibliothek zu nutzen"
+                    }
+                },
+                "question": "Ist eine Mitgliedschaft erforderlich, um hier Werkzeuge auszuleihen?"
+            },
+            "membership_charge": {
+                "question": "Wie viel kostet eine Mitgliedschaft?",
+                "questionHint": "Es gibt möglicherweise viele Modelle. Im Zweifelsfall wähle das häufigste",
+                "render": "Eine Mitgliedschaft kostet {charge:membership}"
+            }
+        },
+        "title": {
+            "render": "Werkzeugbibliothek {name}"
+        }
+    },
     "trail": {
         "description": "Markierte Wanderwege",
         "name": "Wanderwege",
@@ -11034,7 +11177,7 @@
                         "then": "Wenn du Änderungen an OpenStreetMap vornimmst, gibst du nicht an, wie weit du von den geänderten Objekten entfernt warst."
                     },
                     "1": {
-                        "then": "Wenn du Änderungen an OpenStreetMap vornimmst, gib grob an, wie weit du von den geänderten Objekten entfernt warst. Das hilft anderen Mitwirkenden zu verstehen, wie du die Änderung vorgenommen hast."
+                        "then": "Gebe bei Änderungen an OpenStreetMap an, wie weit du ungefähr von den geänderten Objekten entfernt warst. Das hilft anderen Mitwirkenden zu verstehen, wie du die Änderung vorgenommen hast"
                     }
                 },
                 "question": "Sollte bei Änderungen eine grobe Angabe gemacht werden, wie weit du vom Objekt entfernt warst?",
@@ -11095,7 +11238,7 @@
                         "then": "Tags nie anzeigen."
                     },
                     "1": {
-                        "then": "Tags anzeigen sobald ich {__userjourney_tagsVisibleAt} Changesets erstellt habe"
+                        "then": "Tags anzeigen, sobald ich {__userjourney_tagsVisibleAt} Änderungssätze erstellt habe"
                     },
                     "2": {
                         "then": "Tags anzeigen, die bei der Änderung hinzugefügt werden"

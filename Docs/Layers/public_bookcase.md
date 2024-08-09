@@ -43,6 +43,7 @@ A streetside cabinet with books, accessible to anyone
 
 
  - [bookcases](https://mapcomplete.org/bookcases)
+ - [circular_economy](https://mapcomplete.org/circular_economy)
  - [personal](https://mapcomplete.org/personal)
 
 

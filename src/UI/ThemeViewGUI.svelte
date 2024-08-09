@@ -310,10 +310,8 @@
           on:keydown={forwardEventToMap}
           htmlElem={openCurrentViewLayerButton}
         >
-          <div class="w-8 h-8 cursor-pointer">
-            <ToSvelte
-              construct={() => currentViewLayer.defaultIcon()}
-            />
+          <div class="h-8 w-8 cursor-pointer">
+            <ToSvelte construct={() => currentViewLayer.defaultIcon()} />
           </div>
         </MapControlButton>
       {/if}
@@ -324,9 +322,7 @@
         <div class="alert w-fit">Testmode</div>
       </If>
       {#if state.osmConnection.Backend().startsWith("https://master.apis.dev.openstreetmap.org")}
-        <div class="thanks">
-          Testserver
-        </div>
+        <div class="thanks">Testserver</div>
       {/if}
       <If condition={state.featureSwitches.featureSwitchFakeUser}>
         <div class="alert w-fit">Faking a user (Testmode)</div>
@@ -488,8 +484,8 @@
     {#if $selectedLayer.popupInFloatover === "title"}
       <FloatOver
         on:close={() => {
-        state.selectedElement.setData(undefined)
-      }}
+          state.selectedElement.setData(undefined)
+        }}
       >
         <span slot="close-button" />
         <SelectedElementPanel absolute={false} {state} selected={$selectedElement} />
@@ -497,13 +493,12 @@
     {:else}
       <FloatOver
         on:close={() => {
-        state.selectedElement.setData(undefined)
-      }}
+          state.selectedElement.setData(undefined)
+        }}
       >
         <SelectedElementView {state} layer={$selectedLayer} selectedElement={$selectedElement} />
       </FloatOver>
     {/if}
-
   {/if}
 
   <If condition={state.previewedImage.map((i) => i !== undefined)}>

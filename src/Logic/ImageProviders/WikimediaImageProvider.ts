@@ -134,7 +134,9 @@ export class WikimediaImageProvider extends ImageProvider {
             "titles=" +
             filename +
             "&format=json&origin=*"
-        const data = await Utils.downloadJsonCached<{query: {pages: {title: string, imageinfo: { extmetadata} []}[]}}>(url, 365 * 24 * 60 * 60)
+        const data = await Utils.downloadJsonCached<{
+            query: { pages: { title: string; imageinfo: { extmetadata }[] }[] }
+        }>(url, 365 * 24 * 60 * 60)
         const licenseInfo = new LicenseInfo()
         const pageInfo = data.query.pages.at(-1)
         if (pageInfo === undefined) {

@@ -392,7 +392,7 @@ The default value is _true_
 
 State of filter kid-books
 
-This documentation is defined in the source code at [FilterConfig.ts](/src/Models/ThemeConfig/FilterConfig.ts#L165)
+This documentation is defined in the source code at [FilterConfig.ts](/src/Models/ThemeConfig/FilterConfig.ts#L167)
 
 
 
@@ -402,7 +402,7 @@ The default value is _false_
 
 State of filter adult-books
 
-This documentation is defined in the source code at [FilterConfig.ts](/src/Models/ThemeConfig/FilterConfig.ts#L165)
+This documentation is defined in the source code at [FilterConfig.ts](/src/Models/ThemeConfig/FilterConfig.ts#L167)
 
 
 
@@ -412,7 +412,7 @@ The default value is _false_
 
 State of filter inside
 
-This documentation is defined in the source code at [FilterConfig.ts](/src/Models/ThemeConfig/FilterConfig.ts#L165)
+This documentation is defined in the source code at [FilterConfig.ts](/src/Models/ThemeConfig/FilterConfig.ts#L167)
 
 
 
@@ -422,7 +422,7 @@ The default value is _0_
 
 State of filter has_image
 
-This documentation is defined in the source code at [FilterConfig.ts](/src/Models/ThemeConfig/FilterConfig.ts#L165)
+This documentation is defined in the source code at [FilterConfig.ts](/src/Models/ThemeConfig/FilterConfig.ts#L167)
 
 
 
@@ -442,7 +442,7 @@ The default value is _true_
 
 The mode the application starts in, e.g. 'map', 'dashboard' or 'statistics'
 
-This documentation is defined in the source code at [generateDocs.ts](ervdvn/git/MapComplete/scripts/generateDocs.ts#L418)
+This documentation is defined in the source code at [generateDocs.ts](ervdvn/git/MapComplete/scripts/generateDocs.ts#L415)
 
 
 
@@ -452,7 +452,7 @@ The default value is _map_
 
 Whether the layer with id <layer-id> is shown
 
-This documentation is defined in the source code at [QueryParameterDocumentation.ts](/src/UI/QueryParameterDocumentation.ts#L60)
+This documentation is defined in the source code at [QueryParameterDocumentation.ts](/src/UI/QueryParameterDocumentation.ts#L58)
 
 
 

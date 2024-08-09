@@ -283,7 +283,7 @@
         <div class="flex justify-between">
           <Checkbox selected={expertMode}>Enable more options (expert mode)</Checkbox>
           <span class="subtle">MapComplete version {version}</span>
-        <div>{$uid}</div>
+          <div>{$uid}</div>
         </div>
       </div>
     {:else if state === "edit_layer"}
@@ -371,7 +371,7 @@
     {:else if state === "editing_layer"}
       <EditLayer state={editLayerState} {backToStudio}>
         <BackButton clss="small p-1" imageClass="w-8 h-8" on:click={() => backToStudio()}>
-            Studio
+          Studio
         </BackButton>
       </EditLayer>
     {:else if state === "editing_theme"}

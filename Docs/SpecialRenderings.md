@@ -1358,6 +1358,16 @@ Shows a 'nothing is currently known-message if there is at least one unanswered 
 
 <code>`{if_nothing_known(,)}`</code>
 
+### preset_description
+
+Shows the extra description from the presets of the layer, if one matches. It will pick the most specific one (e.g. if preset `A` implies `B`, but `B` does not imply `A`, it'll pick B) or the first one if no ordering can be made. Might be empty
+
+
+
+#### Example usage of preset_description
+
+<code>`{preset_description()}`</code>
+
 ### auto_apply
 
 A button to run many actions for many features at once. To effectively use this button, you'll need some ingredients: 

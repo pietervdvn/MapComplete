@@ -26,6 +26,7 @@ Available languages:
  - eu
  - pl
  - da
+ - it
 
 
 # Layers defined in this theme configuration file

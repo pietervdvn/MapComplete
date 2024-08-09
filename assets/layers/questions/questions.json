@@ -220,7 +220,8 @@
       "id": "facebook",
       "description": "Shows and asks for the facebook handle",
       "question": {
-        "en": "What is the facebook page of of {title()}?"
+        "en": "What is the facebook page of of {title()}?",
+        "de": "Was ist die Facebook-Seite von {title()}?"
       },
       "freeform": {
         "key": "contact:facebook",
@@ -231,11 +232,13 @@
           "type": "link",
           "href": "{contact:facebook}",
           "text": {
-            "en": "Facebook page"
+            "en": "Facebook page",
+            "de": "Facebook Seite"
           }
         },
         "after": {
-          "en": "<div class='subtle text-sm'>Facebook is known to harm mental health, manipulate public opinion and cause hate. Try to use healthier alternatives</div>"
+          "en": "<div class='subtle text-sm'>Facebook is known to harm mental health, manipulate public opinion and cause hate. Try to use healthier alternatives</div>",
+          "de": "<div class='subtle text-sm'>Facebook ist bekannt dafür, die psychische Gesundheit zu beeinträchtigen, die öffentliche Meinung zu manipulieren und Hass zu verursachen. Versuche, gesündere Alternativen zu nutzen.</div>"
         }
       }
     },

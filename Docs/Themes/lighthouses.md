@@ -18,6 +18,7 @@ Available languages:
  - en
  - de
  - da
+ - it
 
 
 # Layers defined in this theme configuration file

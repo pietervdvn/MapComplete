@@ -43,10 +43,10 @@ class DownloadNsiLogos extends Script {
             await ScriptUtils.DownloadFileTo(logos.facebook, path)
             // Validate
             const content = readFileSync(path, "utf8")
-            if(content.startsWith('{"error"')){
+            if (content.startsWith('{"error"')) {
                 unlinkSync(path)
-                console.error("Attempted to fetch",logos.facebook," but this gave an error")
-            }else{
+                console.error("Attempted to fetch", logos.facebook, " but this gave an error")
+            } else {
                 return true
             }
         }

@@ -23,9 +23,14 @@
 </script>
 
 {#if license != undefined && license.license.indexOf("trivial") < 0}
-  <div class="flex flex-wrap border-b border-gray-300 m-2 border-box">
-    <img class={twJoin( "w-12 min-h-12 mr-2 mb-2", license["mostly_white"] && "bg-slate-400 rounded-full h-12" )}
-         src={iconPath} />
+  <div class="border-box m-2 flex flex-wrap border-b border-gray-300">
+    <img
+      class={twJoin(
+        "min-h-12 mr-2 mb-2 w-12",
+        license["mostly_white"] && "h-12 rounded-full bg-slate-400"
+      )}
+      src={iconPath}
+    />
 
     <div class="flex flex-col" style="width: calc(100% - 50px - 0.5em); min-width: 12rem;">
       <div class="font-bold">
@@ -36,7 +41,5 @@
         <a href={source} target="_blank">{sourceName(source)}</a>
       {/each}
     </div>
-
   </div>
 {/if}
-

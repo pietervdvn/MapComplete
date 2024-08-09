@@ -41,6 +41,7 @@ A facility where bicycles can be lent for longer period of times
 
 
  - [bicyclelib](https://mapcomplete.org/bicyclelib)
+ - [circular_economy](https://mapcomplete.org/circular_economy)
  - [cyclofix](https://mapcomplete.org/cyclofix)
  - [personal](https://mapcomplete.org/personal)
 

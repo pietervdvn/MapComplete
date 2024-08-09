@@ -36,6 +36,9 @@ A layer showing restaurants and fast-food amenities (with a special rendering fo
   - [single_level](#single_level)
   - [wheelchair-access](#wheelchair-access)
   - [Cuisine](#cuisine)
+  - [show-menu-image](#show-menu-image)
+  - [add-menu-image](#add-menu-image)
+  - [menu-website](#menu-website)
   - [Reservation](#reservation)
   - [Takeaway](#takeaway)
   - [delivery](#delivery)
@@ -96,6 +99,7 @@ Elements must match **all** of the following expressions:
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/level#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/level/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [level](https://wiki.openstreetmap.org/wiki/Key:level) | [float](../SpecialInputElements.md#float) | [0](https://wiki.openstreetmap.org/wiki/Tag:level%3D0) [1](https://wiki.openstreetmap.org/wiki/Tag:level%3D1) [-1](https://wiki.openstreetmap.org/wiki/Tag:level%3D-1) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/wheelchair#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/wheelchair/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [wheelchair](https://wiki.openstreetmap.org/wiki/Key:wheelchair) | Multiple choice | [designated](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Ddesignated) [yes](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dlimited) [no](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dno) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/cuisine#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/cuisine/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [cuisine](https://wiki.openstreetmap.org/wiki/Key:cuisine) | [string](../SpecialInputElements.md#string) | [pizza](https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dpizza) [friture](https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dfriture) [pasta](https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dpasta) [kebab](https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dkebab) [sandwich](https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dsandwich) [burger](https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dburger) [sushi](https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dsushi) [coffee](https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dcoffee) [italian](https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Ditalian) [french](https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dfrench) [chinese](https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dchinese) [greek](https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dgreek) [indian](https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dindian) [turkish](https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dturkish) [thai](https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dthai) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/website:menu#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/website%3Amenu/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [website:menu](https://wiki.openstreetmap.org/wiki/Key:website:menu) | [url](../SpecialInputElements.md#url) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/reservation#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/reservation/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [reservation](https://wiki.openstreetmap.org/wiki/Key:reservation) | Multiple choice | [required](https://wiki.openstreetmap.org/wiki/Tag:reservation%3Drequired) [recommended](https://wiki.openstreetmap.org/wiki/Tag:reservation%3Drecommended) [yes](https://wiki.openstreetmap.org/wiki/Tag:reservation%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:reservation%3Dno) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/takeaway#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/takeaway/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [takeaway](https://wiki.openstreetmap.org/wiki/Key:takeaway) | Multiple choice | [only](https://wiki.openstreetmap.org/wiki/Tag:takeaway%3Donly) [yes](https://wiki.openstreetmap.org/wiki/Tag:takeaway%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:takeaway%3Dno) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/delivery#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/delivery/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [delivery](https://wiki.openstreetmap.org/wiki/Key:delivery) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:delivery%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:delivery%3Dno) |
@@ -306,6 +310,30 @@ The question is `What kind of food is served here?`
 
 
 
+### show-menu-image
+
+_This tagrendering has no question and is thus read-only_
+*{image_carousel(image:menu)}*
+
+
+
+
+### add-menu-image
+
+_This tagrendering has no question and is thus read-only_
+*{image_upload(image:menu,Add an image from the menu)}*
+
+
+
+
+### menu-website
+
+The question is `On what webpage is the menu published?`
+*{link(Consult the menu,&LBRACEwebsite:menu&RBRACE,,,)}* is shown if `website:menu` is set
+
+
+
+
 ### Reservation
 
 The question is `Is a reservation required for this place?`
@@ -356,8 +384,8 @@ The question is `Does this restaurant have a vegetarian option?`
 
  -  *No vegetarian options are available* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegetarian' target='_blank'>diet:vegetarian</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Dno' target='_blank'>no</a>
  -  *Some vegetarian options are available* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegetarian' target='_blank'>diet:vegetarian</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Dlimited' target='_blank'>limited</a>
- -  *Vegetarian options are available* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegetarian' target='_blank'>diet:vegetarian</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Dyes' target='_blank'>yes</a>
- -  *All dishes are vegetarian* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegetarian' target='_blank'>diet:vegetarian</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Donly' target='_blank'>only</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/food/Vegetarian-mark.svg' style='width: 3rem; height: 3rem'> *Vegetarian options are available* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegetarian' target='_blank'>diet:vegetarian</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Dyes' target='_blank'>yes</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/food/Vegetarian-mark.svg' style='width: 3rem; height: 3rem'> *All dishes are vegetarian* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegetarian' target='_blank'>diet:vegetarian</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Donly' target='_blank'>only</a>
  -  *Some dishes might be adapted to a vegetarian version, but this should be demanded* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegetarian' target='_blank'>diet:vegetarian</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Don_demand' target='_blank'>on_demand</a>
 
 
@@ -561,10 +589,10 @@ The question is `Does this place offer internet access?`
 
 
 
- -  *This place offers wireless internet access* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwlan' target='_blank'>wlan</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/wifi' style='width: 3rem; height: 3rem'> *This place offers wireless internet access* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwlan' target='_blank'>wlan</a>
  -  *This place <b>does not</b> offer internet access* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dno' target='_blank'>no</a>
  -  *This place offers internet access* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dyes' target='_blank'>yes</a>. _This option cannot be chosen as answer_
- -  *This place offers internet access via a terminal or computer* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dterminal' target='_blank'>terminal</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/computer' style='width: 3rem; height: 3rem'> *This place offers internet access via a terminal or computer* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dterminal' target='_blank'>terminal</a>
  -  *This place offers wired internet access* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwired' target='_blank'>wired</a>
 
 

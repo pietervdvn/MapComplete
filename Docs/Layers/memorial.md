@@ -47,6 +47,7 @@ Layer showing memorial plaques, based upon a unofficial theme. Can be expanded t
 
 
 
+ - [artwork](https://mapcomplete.org/artwork)
  - [memorials](https://mapcomplete.org/memorials)
  - [personal](https://mapcomplete.org/personal)
 
@@ -117,7 +118,8 @@ The question is `What type of memorial is this?`
 
 
 
-
+This tagrendering has labels 
+`memorial-questions`
 
 ### inscription
 
@@ -129,7 +131,8 @@ The question is `What is the inscription on this memorial?`
 
 
 
-
+This tagrendering has labels 
+`memorial-questions`
 
 ### memorial-wikidata
 

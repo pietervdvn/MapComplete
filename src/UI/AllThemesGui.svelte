@@ -124,7 +124,7 @@
 
     <LoginToggle {state}>
       <LoginButton clss="primary" {osmConnection} slot="not-logged-in">
-        <Tr t={t.logIn}/>
+        <Tr t={t.logIn} />
       </LoginButton>
       <ThemesList
         hideThemes={false}

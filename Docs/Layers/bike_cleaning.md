@@ -22,7 +22,7 @@ A layer showing facilities where one can clean their bike
 2. [Basic tags for this layer](#basic-tags-for-this-layer)
 3. [Supported attributes](#supported-attributes)
   - [images](#images)
-  - [bike_cleaning-service:bicycle:cleaning:charge](#bike_cleaning-servicebicycle:cleaning:charge)
+  - [bike_cleaning-service_bicycle_cleaning_charge](#bike_cleaning-service_bicycle_cleaning_charge)
   - [bike_cleaning-charge](#bike_cleaning-charge)
   - [leftover-questions](#leftover-questions)
   - [move-button](#move-button)
@@ -69,7 +69,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-### bike_cleaning-service:bicycle:cleaning:charge
+### bike_cleaning-service_bicycle_cleaning_charge
 
 The question is `How much does it cost to use the cleaning service?`
 *Using the cleaning service costs {service:bicycle:cleaning:charge}* is shown if `service:bicycle:cleaning:charge` is set

@@ -298,7 +298,8 @@
             },
             "then": {
               "en": "Bicycle rental shop",
-              "nl": "Fietsverhuurzaak"
+              "nl": "Fietsverhuurzaak",
+              "de": "Fahrradverleih"
             }
           }
         ],
@@ -508,7 +509,8 @@
           "icon": "./assets/layers/id_presets/fas-key.svg",
           "then": {
             "en": "This shop offers key cutting as a service",
-            "de": "Dieser Laden bietet Schlüsselschneiden als Dienstleistung an"
+            "de": "Dieser Laden bietet Schlüsselschneiden als Dienstleistung an",
+            "nl": "Deze winkel kopieert sleutels"
           }
         },
         {
@@ -571,7 +573,8 @@
           "then": {
             "en": "This shop sells new bikes",
             "nl": "Deze winkel verkoopt nieuwe fietsen",
-            "fr": "Ce magasin vend des vélos nouveaux"
+            "fr": "Ce magasin vend des vélos nouveaux",
+            "de": "Dieses Geschäft verkauft neue Fahrräder"
           }
         },
         {
@@ -579,7 +582,8 @@
           "then": {
             "en": "This shop doesn't sell new bikes",
             "nl": "Deze winkel verkoopt geen nieuwe fietsen",
-            "fr": "Ce magasin ne vend pas de vélo nouveaux"
+            "fr": "Ce magasin ne vend pas de vélo nouveaux",
+            "de": "Dieses Geschäft verkauft keine neuen Fahrräder"
           }
         }
       ]
@@ -795,7 +799,8 @@
         "cs": "Pronajímá tento obchod kola?"
       },
       "questionHint": {
-        "en": "This is about rental for e.g. tourists who need a bike. Some bicycle repair shops offer a bicycle to use while your bicycle is being repaired but this is not considered rental for this question."
+        "en": "This is about rental for e.g. tourists who need a bike. Some bicycle repair shops offer a bicycle to use while your bicycle is being repaired but this is not considered rental for this question.",
+        "de": "Es geht um die Vermietung, z.B. an Touristen, die ein Fahrrad benötigen. Einige Fahrradwerkstätten bieten ein Fahrrad an, das man benutzen kann, während das eigene Fahrrad repariert wird, aber dies wird für diese Frage nicht als Vermietung betrachtet."
       },
       "mappings": [
         {

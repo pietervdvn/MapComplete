@@ -21,6 +21,7 @@ Available languages:
  - ca
  - es
  - da
+ - it
 
 
 # Layers defined in this theme configuration file

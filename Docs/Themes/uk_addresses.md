@@ -333,7 +333,7 @@ The question is `What is the place or locality for this address?`
  -  *<div class='subtle'>Place (e.g. Castle Mews, West Business Park)</div>* is shown if with addr:substreet=. _This option cannot be chosen as answer_
 
 
-This tagrendering is only visible in the popup if the following condition is met: addr:parentstreet~.+ & (addr:street= | (addr:street~.+ & addr:substreet~.+))
+This tagrendering is only visible in the popup if the following condition is met: (addr:street= | (addr:street~.+ & addr:substreet~.+)) & addr:parentstreet~.+
 
 
 ### uk_addresses_street

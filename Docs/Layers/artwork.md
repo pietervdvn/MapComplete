@@ -29,6 +29,9 @@ An open map of statues, busts, graffitis and other artwork all over the world
   - [artwork-website](#artwork-website)
   - [wikipedia](#wikipedia)
   - [artwork_subject](#artwork_subject)
+  - [doubles_as_memorial](#doubles_as_memorial)
+  - [memorial-type](#memorial-type)
+  - [inscription](#inscription)
   - [doubles_as_bench](#doubles_as_bench)
   - [bench-backrest](#bench-backrest)
   - [bench-armrest](#bench-armrest)
@@ -73,6 +76,9 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/website#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/website/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [website](https://wiki.openstreetmap.org/wiki/Key:website) | [url](../SpecialInputElements.md#url) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/wikidata#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/wikidata/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [wikidata](https://wiki.openstreetmap.org/wiki/Key:wikidata) | [wikidata](../SpecialInputElements.md#wikidata) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/subject:wikidata#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/subject%3Awikidata/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [subject:wikidata](https://wiki.openstreetmap.org/wiki/Key:subject:wikidata) | [wikidata](../SpecialInputElements.md#wikidata) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/historic#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/historic/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [historic](https://wiki.openstreetmap.org/wiki/Key:historic) | Multiple choice | [memorial](https://wiki.openstreetmap.org/wiki/Tag:historic%3Dmemorial) [](https://wiki.openstreetmap.org/wiki/Tag:historic%3D) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/memorial#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/memorial/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [memorial](https://wiki.openstreetmap.org/wiki/Key:memorial) | [string](../SpecialInputElements.md#string) | [statue](https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dstatue) [plaque](https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dplaque) [bench](https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dbench) [ghost_bike](https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dghost_bike) [stolperstein](https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dstolperstein) [stele](https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dstele) [stone](https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dstone) [bust](https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dbust) [sculpture](https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dsculpture) [obelisk](https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dobelisk) [cross](https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dcross) [blue_plaque](https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dblue_plaque) [tank](https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dtank) [tree](https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dtree) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/inscription#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/inscription/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [inscription](https://wiki.openstreetmap.org/wiki/Key:inscription) | [text](../SpecialInputElements.md#text) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/amenity#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/amenity/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [amenity](https://wiki.openstreetmap.org/wiki/Key:amenity) | Multiple choice | [bench](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbench) [](https://wiki.openstreetmap.org/wiki/Tag:amenity%3D) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/backrest#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/backrest/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [backrest](https://wiki.openstreetmap.org/wiki/Key:backrest) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:backrest%3Dyes) [yes](https://wiki.openstreetmap.org/wiki/Tag:backrest%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:backrest%3Dno) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/armrest#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/armrest/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [armrest](https://wiki.openstreetmap.org/wiki/Key:armrest) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:armrest%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:armrest%3Dno) |
@@ -169,6 +175,59 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `artwork-question`
 
+### doubles_as_memorial
+
+The question is `Does this artwork serve as a memorial?`
+
+
+
+ -  *This artwork also serves as a memorial* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:historic' target='_blank'>historic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:historic%3Dmemorial' target='_blank'>memorial</a>
+ -  *This artwork does not serve as a bench* is shown if with historic=
+
+
+
+
+
+### memorial-type
+
+The question is `What type of memorial is this?`
+*This is a {memorial}* is shown if `memorial` is set
+
+
+ -  *This is a statue* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:memorial' target='_blank'>memorial</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dstatue' target='_blank'>statue</a>
+ -  *This is a plaque* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:memorial' target='_blank'>memorial</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dplaque' target='_blank'>plaque</a>
+ -  *This is a commemorative bench* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:memorial' target='_blank'>memorial</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dbench' target='_blank'>bench</a>
+ -  *This is a ghost bike - a bicycle painted white to remember a cyclist whom deceased because of a car crash* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:memorial' target='_blank'>memorial</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dghost_bike' target='_blank'>ghost_bike</a>
+ -  *This is a stolperstein (stumbing stone)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:memorial' target='_blank'>memorial</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dstolperstein' target='_blank'>stolperstein</a>
+ -  *This is a stele* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:memorial' target='_blank'>memorial</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dstele' target='_blank'>stele</a>
+ -  *This is a memorial stone* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:memorial' target='_blank'>memorial</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dstone' target='_blank'>stone</a>
+ -  *This is a bust* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:memorial' target='_blank'>memorial</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dbust' target='_blank'>bust</a>
+ -  *This is a sculpture* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:memorial' target='_blank'>memorial</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dsculpture' target='_blank'>sculpture</a>
+ -  *This is an obelisk* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:memorial' target='_blank'>memorial</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dobelisk' target='_blank'>obelisk</a>
+ -  *This is a cross* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:memorial' target='_blank'>memorial</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dcross' target='_blank'>cross</a>
+ -  *This is a blue plaque* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:memorial' target='_blank'>memorial</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dblue_plaque' target='_blank'>blue_plaque</a>
+ -  *This is a historic tank, permanently placed in public space as memorial* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:memorial' target='_blank'>memorial</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dtank' target='_blank'>tank</a>
+ -  *This is a memorial tree* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:memorial' target='_blank'>memorial</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dtree' target='_blank'>tree</a>
+ -  *This is a gravestone; the person is buried here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:historic' target='_blank'>historic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:historic%3Dtomb' target='_blank'>tomb</a>
+
+
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:historic' target='_blank'>historic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:historic%3Dmemorial' target='_blank'>memorial</a>
+This tagrendering has labels 
+`memorial-questions`
+
+### inscription
+
+The question is `What is the inscription on this memorial?`
+*The inscription on this memorial reads: <p><i>{inscription}<i></p>* is shown if `inscription` is set
+
+
+ -  *This memorial does not have an inscription* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:not:inscription' target='_blank'>not:inscription</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:not:inscription%3Dyes' target='_blank'>yes</a>
+
+
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:historic' target='_blank'>historic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:historic%3Dmemorial' target='_blank'>memorial</a> & memorial!=bench
+This tagrendering has labels 
+`memorial-questions`
+
 ### doubles_as_bench
 
 The question is `Does this artwork serve as a bench?`
@@ -248,7 +307,7 @@ This tagrendering has labels
 The question is `In which direction are you looking when sitting on the bench?`
 *When sitting on the bench, one looks towards {direction}°.* is shown if `direction` is set
 
-This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbench' target='_blank'>bench</a>
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbench' target='_blank'>bench</a> & two_sided!=yes
 This tagrendering has labels 
 `bench-questions`
 
@@ -309,7 +368,7 @@ The question is `Does this bench act as memorial for someone or something?`
  -  *This bench is a <b>not</b> a memorial for someone or something* is shown if with historic= & <a href='https://wiki.openstreetmap.org/wiki/Key:not:historic' target='_blank'>not:historic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:not:historic%3Dmemorial' target='_blank'>memorial</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbench' target='_blank'>bench</a>
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbench' target='_blank'>bench</a> & (<a href='https://wiki.openstreetmap.org/wiki/Key:historic' target='_blank'>historic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:historic%3Dmemorial' target='_blank'>memorial</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:memorial' target='_blank'>memorial</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dbench' target='_blank'>bench</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:tourism' target='_blank'>tourism</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tourism%3Dartwork' target='_blank'>artwork</a> | inscription~.+)
 This tagrendering has labels 
 `bench-questions`
 

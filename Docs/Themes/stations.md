@@ -48,6 +48,7 @@ Available languages:
  - zh_Hant
  - pl
  - da
+ - it
 
 
 # Table of contents

@@ -358,6 +358,17 @@
         "shortDescription": "Un mapa mundial de estaciones de carga",
         "title": "Estaciones de carga"
     },
+    "circular_economy": {
+        "description": "Varios elementos que ayudan a la gente a compartir, reutilizar o reciclar.",
+        "layers": {
+            "5": {
+                "override": {
+                    "=name": "Tiendas de segunda mano"
+                }
+            }
+        },
+        "title": "Economía circular"
+    },
     "climbing": {
         "description": "En este mapa encontrará diversas posibilidades de escalada, como rocódromos, salas de búlder y rocas en la naturaleza.",
         "descriptionTail": "El mapa de escalada fue realizado originalmente por <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Por favor, <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>ponte en contacto</a> si tienes comentarios o preguntas.</p><p>El proyecto utiliza datos del proyecto <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a>.</p>",
@@ -780,6 +791,9 @@
         "shortDescription": "Este mapa muestra jardines de fachada con fotografías e información útil sobre la orientación, la luz del sol y los tipos de plantas.",
         "title": "Jardines de fachada"
     },
+    "fireplace": {
+        "title": "Chimenea y barbacoas"
+    },
     "food": {
         "description": "Restaurantes y Comida rápida",
         "title": "Restaurantes y comida rápida"
@@ -852,6 +866,9 @@
                         "question": "¿Cuál es el texto del cartel?",
                         "render": "El texto del cartel es: {inscription}"
                     }
+                },
+                "title": {
+                    "render": "Publicidad en una fachada"
                 }
             }
         }

@@ -1,11 +1,11 @@
 {
   "contributors": [
     {
-      "commits": 387,
+      "commits": 388,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 352,
+      "commits": 356,
       "contributor": "kjon"
     },
     {
@@ -21,7 +21,7 @@
       "contributor": "Robin van der Linde"
     },
     {
-      "commits": 72,
+      "commits": 76,
       "contributor": "mcliquid"
     },
     {
@@ -69,7 +69,7 @@
       "contributor": "Marco"
     },
     {
-      "commits": 20,
+      "commits": 22,
       "contributor": "gallegonovato"
     },
     {
@@ -142,6 +142,10 @@
     },
     {
       "commits": 10,
+      "contributor": "Jeff Huang"
+    },
+    {
+      "commits": 10,
       "contributor": "brunnerpaul"
     },
     {
@@ -166,10 +170,6 @@
     },
     {
       "commits": 9,
-      "contributor": "Jeff Huang"
-    },
-    {
-      "commits": 9,
       "contributor": "Lasse Liehu"
     },
     {
@@ -191,6 +191,10 @@
     {
       "commits": 9,
       "contributor": "Jacque Fresco"
+    },
+    {
+      "commits": 8,
+      "contributor": "nilocram"
     },
     {
       "commits": 8,
@@ -267,10 +271,6 @@
     {
       "commits": 5,
       "contributor": "Emory Shaw"
-    },
-    {
-      "commits": 5,
-      "contributor": "nilocram"
     },
     {
       "commits": 5,
@@ -519,6 +519,14 @@
     {
       "commits": 2,
       "contributor": "Leo Alcaraz"
+    },
+    {
+      "commits": 1,
+      "contributor": "aTarom"
+    },
+    {
+      "commits": 1,
+      "contributor": "Martien Sch"
     },
     {
       "commits": 1,

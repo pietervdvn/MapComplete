@@ -13,7 +13,6 @@ type Brand<B> = { [__is_optimized]: B }
  */
 export type OptimizedTag = Brand<TagsFilter>
 
-
 export type UploadableTag = Tag | SubstitutingTag | And
 /**
  * Not nested
@@ -21,15 +20,12 @@ export type UploadableTag = Tag | SubstitutingTag | And
 export type FlatTag = Tag | RegexTag | SubstitutingTag | ComparingTag
 export type TagsFilterClosed = FlatTag | And | Or
 
-
 export class TagTypes {
-
-    static safeAnd(and: And & OptimizedTag): ((FlatTag | (Or & OptimizedTag)) & OptimizedTag)[]{
-        return <any> and.and
+    static safeAnd(and: And & OptimizedTag): ((FlatTag | (Or & OptimizedTag)) & OptimizedTag)[] {
+        return <any>and.and
     }
 
-    static safeOr(or: Or & OptimizedTag): ((FlatTag | (And & OptimizedTag)) & OptimizedTag)[]{
-        return <any> or.or
+    static safeOr(or: Or & OptimizedTag): ((FlatTag | (And & OptimizedTag)) & OptimizedTag)[] {
+        return <any>or.or
     }
-
 }

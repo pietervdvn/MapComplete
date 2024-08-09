@@ -379,7 +379,7 @@
           "if": "mapcomplete-show_tags=",
           "then": {
             "en": "Show the tags that will be applied once I have made {__userjourney_tagsVisibleAt} changesets",
-            "de": "Tags anzeigen sobald ich {__userjourney_tagsVisibleAt} Changesets erstellt habe",
+            "de": "Tags anzeigen, sobald ich {__userjourney_tagsVisibleAt} Änderungssätze erstellt habe",
             "ca": "Mostra les etiquetes que s'aplicaran un cop hagi fet {__userjourney_tagsVisibleAt} conjunts de canvis",
             "cs": "Zobrazit tagy, které budou použity, jakmile provedu {__userjourney_tagsVisibleAt} sady změn",
             "nl": "Toon data-attributen bij wijzigingen indien je meer dan {__userjourney_tagsVisibleAt} changesets hebt gemaakt",
@@ -609,7 +609,7 @@
           "icon": "cross_bottom_right:red;./assets/svg/eye.svg",
           "then": {
             "en": "When making changes to OpenStreetMap, roughly indicate how far away you were from the changed objects. This helps other contributors to understand how you made the change",
-            "de": "Wenn du Änderungen an OpenStreetMap vornimmst, gib grob an, wie weit du von den geänderten Objekten entfernt warst. Das hilft anderen Mitwirkenden zu verstehen, wie du die Änderung vorgenommen hast.",
+            "de": "Gebe bei Änderungen an OpenStreetMap an, wie weit du ungefähr von den geänderten Objekten entfernt warst. Das hilft anderen Mitwirkenden zu verstehen, wie du die Änderung vorgenommen hast",
             "nl": "Geef aan hoever je je ongeveer bevindt ten opzichte van objecten die je wijzigt in OpenStreetMap. Dit helpt andere bijdagers te begrijpen welke wijzigingen je waarom maakt."
           }
         }

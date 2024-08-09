@@ -789,6 +789,104 @@
       "description": "Layer 'Artworks' shows and asks freeform values for key 'subject:wikidata' (in the mapcomplete.org theme 'Memorials') (This is only shown if subject:wikidata~.+)"
     },
     {
+      "key": "historic",
+      "description": "Layer 'Artworks' shows historic=memorial with a fixed text, namely 'This artwork also serves as a memorial' and allows to pick this as a default answer (in the mapcomplete.org theme 'Memorials')",
+      "value": "memorial"
+    },
+    {
+      "key": "historic",
+      "description": "Layer 'Artworks' shows historic= with a fixed text, namely 'This artwork does not serve as a bench' and allows to pick this as a default answer (in the mapcomplete.org theme 'Memorials') Picking this answer will delete the key historic.",
+      "value": ""
+    },
+    {
+      "key": "memorial",
+      "description": "Layer 'Artworks' shows and asks freeform values for key 'memorial' (in the mapcomplete.org theme 'Memorials') (This is only shown if historic=memorial)"
+    },
+    {
+      "key": "memorial",
+      "description": "Layer 'Artworks' shows memorial=statue with a fixed text, namely 'This is a statue' and allows to pick this as a default answer (in the mapcomplete.org theme 'Memorials') (This is only shown if historic=memorial)",
+      "value": "statue"
+    },
+    {
+      "key": "memorial",
+      "description": "Layer 'Artworks' shows memorial=plaque with a fixed text, namely 'This is a plaque' and allows to pick this as a default answer (in the mapcomplete.org theme 'Memorials') (This is only shown if historic=memorial)",
+      "value": "plaque"
+    },
+    {
+      "key": "memorial",
+      "description": "Layer 'Artworks' shows memorial=bench with a fixed text, namely 'This is a commemorative bench' and allows to pick this as a default answer (in the mapcomplete.org theme 'Memorials') (This is only shown if historic=memorial)",
+      "value": "bench"
+    },
+    {
+      "key": "memorial",
+      "description": "Layer 'Artworks' shows memorial=ghost_bike with a fixed text, namely 'This is a ghost bike - a bicycle painted white to remember a cyclist whom deceased because of a car crash' and allows to pick this as a default answer (in the mapcomplete.org theme 'Memorials') (This is only shown if historic=memorial)",
+      "value": "ghost_bike"
+    },
+    {
+      "key": "memorial",
+      "description": "Layer 'Artworks' shows memorial=stolperstein with a fixed text, namely 'This is a stolperstein (stumbing stone)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Memorials') (This is only shown if historic=memorial)",
+      "value": "stolperstein"
+    },
+    {
+      "key": "memorial",
+      "description": "Layer 'Artworks' shows memorial=stele with a fixed text, namely 'This is a stele' and allows to pick this as a default answer (in the mapcomplete.org theme 'Memorials') (This is only shown if historic=memorial)",
+      "value": "stele"
+    },
+    {
+      "key": "memorial",
+      "description": "Layer 'Artworks' shows memorial=stone with a fixed text, namely 'This is a memorial stone' and allows to pick this as a default answer (in the mapcomplete.org theme 'Memorials') (This is only shown if historic=memorial)",
+      "value": "stone"
+    },
+    {
+      "key": "memorial",
+      "description": "Layer 'Artworks' shows memorial=bust with a fixed text, namely 'This is a bust' and allows to pick this as a default answer (in the mapcomplete.org theme 'Memorials') (This is only shown if historic=memorial)",
+      "value": "bust"
+    },
+    {
+      "key": "memorial",
+      "description": "Layer 'Artworks' shows memorial=sculpture with a fixed text, namely 'This is a sculpture' and allows to pick this as a default answer (in the mapcomplete.org theme 'Memorials') (This is only shown if historic=memorial)",
+      "value": "sculpture"
+    },
+    {
+      "key": "memorial",
+      "description": "Layer 'Artworks' shows memorial=obelisk with a fixed text, namely 'This is an obelisk' and allows to pick this as a default answer (in the mapcomplete.org theme 'Memorials') (This is only shown if historic=memorial)",
+      "value": "obelisk"
+    },
+    {
+      "key": "memorial",
+      "description": "Layer 'Artworks' shows memorial=cross with a fixed text, namely 'This is a cross' and allows to pick this as a default answer (in the mapcomplete.org theme 'Memorials') (This is only shown if historic=memorial)",
+      "value": "cross"
+    },
+    {
+      "key": "memorial",
+      "description": "Layer 'Artworks' shows memorial=blue_plaque with a fixed text, namely 'This is a blue plaque' and allows to pick this as a default answer (in the mapcomplete.org theme 'Memorials') (This is only shown if historic=memorial)",
+      "value": "blue_plaque"
+    },
+    {
+      "key": "memorial",
+      "description": "Layer 'Artworks' shows memorial=tank with a fixed text, namely 'This is a historic tank, permanently placed in public space as memorial' and allows to pick this as a default answer (in the mapcomplete.org theme 'Memorials') (This is only shown if historic=memorial)",
+      "value": "tank"
+    },
+    {
+      "key": "memorial",
+      "description": "Layer 'Artworks' shows memorial=tree with a fixed text, namely 'This is a memorial tree' and allows to pick this as a default answer (in the mapcomplete.org theme 'Memorials') (This is only shown if historic=memorial)",
+      "value": "tree"
+    },
+    {
+      "key": "historic",
+      "description": "Layer 'Artworks' shows historic=tomb with a fixed text, namely 'This is a gravestone; the person is buried here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Memorials') (This is only shown if historic=memorial)",
+      "value": "tomb"
+    },
+    {
+      "key": "inscription",
+      "description": "Layer 'Artworks' shows and asks freeform values for key 'inscription' (in the mapcomplete.org theme 'Memorials') (This is only shown if memorial!=bench & historic=memorial)"
+    },
+    {
+      "key": "not:inscription",
+      "description": "Layer 'Artworks' shows not:inscription=yes with a fixed text, namely 'This memorial does not have an inscription' and allows to pick this as a default answer (in the mapcomplete.org theme 'Memorials') (This is only shown if memorial!=bench & historic=memorial)",
+      "value": "yes"
+    },
+    {
       "key": "amenity",
       "description": "Layer 'Artworks' shows amenity=bench with a fixed text, namely 'This artwork also serves as a bench' and allows to pick this as a default answer (in the mapcomplete.org theme 'Memorials')",
       "value": "bench"
@@ -873,7 +971,7 @@
     },
     {
       "key": "direction",
-      "description": "Layer 'Artworks' shows and asks freeform values for key 'direction' (in the mapcomplete.org theme 'Memorials') (This is only shown if amenity=bench)"
+      "description": "Layer 'Artworks' shows and asks freeform values for key 'direction' (in the mapcomplete.org theme 'Memorials') (This is only shown if two_sided!=yes & amenity=bench)"
     },
     {
       "key": "colour",
@@ -944,17 +1042,17 @@
     },
     {
       "key": "historic",
-      "description": "Layer 'Artworks' shows historic=memorial with a fixed text, namely 'This bench is a memorial for someone or something' and allows to pick this as a default answer (in the mapcomplete.org theme 'Memorials') (This is only shown if amenity=bench)",
+      "description": "Layer 'Artworks' shows historic=memorial with a fixed text, namely 'This bench is a memorial for someone or something' and allows to pick this as a default answer (in the mapcomplete.org theme 'Memorials') (This is only shown if (historic=memorial | inscription~.+ | memorial=bench | tourism=artwork) & amenity=bench)",
       "value": "memorial"
     },
     {
       "key": "historic",
-      "description": "Layer 'Artworks' shows historic= & not:historic=memorial with a fixed text, namely 'This bench is a <b>not</b> a memorial for someone or something' and allows to pick this as a default answer (in the mapcomplete.org theme 'Memorials') Picking this answer will delete the key historic. (This is only shown if amenity=bench)",
+      "description": "Layer 'Artworks' shows historic= & not:historic=memorial with a fixed text, namely 'This bench is a <b>not</b> a memorial for someone or something' and allows to pick this as a default answer (in the mapcomplete.org theme 'Memorials') Picking this answer will delete the key historic. (This is only shown if (historic=memorial | inscription~.+ | memorial=bench | tourism=artwork) & amenity=bench)",
       "value": ""
     },
     {
       "key": "not:historic",
-      "description": "Layer 'Artworks' shows historic= & not:historic=memorial with a fixed text, namely 'This bench is a <b>not</b> a memorial for someone or something' and allows to pick this as a default answer (in the mapcomplete.org theme 'Memorials') (This is only shown if amenity=bench)",
+      "description": "Layer 'Artworks' shows historic= & not:historic=memorial with a fixed text, namely 'This bench is a <b>not</b> a memorial for someone or something' and allows to pick this as a default answer (in the mapcomplete.org theme 'Memorials') (This is only shown if (historic=memorial | inscription~.+ | memorial=bench | tourism=artwork) & amenity=bench)",
       "value": "memorial"
     }
   ]

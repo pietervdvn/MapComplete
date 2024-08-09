@@ -24,7 +24,9 @@ export class Geocoding {
         const b = bbox ?? BBox.global
         const url = `${
             Geocoding.host
-        }search?format=json&limit=1&viewbox=${b.getEast()},${b.getNorth()},${b.getWest()},${b.getSouth()}&accept-language=${Locale.language.data}&q=${query}`
+        }search?format=json&limit=1&viewbox=${b.getEast()},${b.getNorth()},${b.getWest()},${b.getSouth()}&accept-language=${
+            Locale.language.data
+        }&q=${query}`
         return Utils.downloadJson(url)
     }
 

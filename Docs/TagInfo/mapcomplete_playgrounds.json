@@ -90,6 +90,11 @@
       "value": "rubber"
     },
     {
+      "key": "surface",
+      "description": "Layer 'Playgrounds' shows surface=fine_gravel with a fixed text, namely 'The surface is <b>fine gravel</b> (less then 2 cm per stone)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
+      "value": "fine_gravel"
+    },
+    {
       "key": "lit",
       "description": "Layer 'Playgrounds' shows lit=yes with a fixed text, namely 'This playground is lit at night' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "yes"

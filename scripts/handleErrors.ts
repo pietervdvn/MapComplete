@@ -6,7 +6,6 @@ import { OsmObject } from "../src/Logic/Osm/OsmObject"
 import OsmObjectDownloader from "../src/Logic/Osm/OsmObjectDownloader"
 import { OsmConnection } from "../src/Logic/Osm/OsmConnection"
 import { ImmutableStore } from "../src/Logic/UIEventSource"
-import { Utils } from "../src/Utils"
 import Constants from "../src/Models/Constants"
 
 type ErrorMessage = {
@@ -30,10 +29,6 @@ class HandleErrors extends Script {
         super("Inspects the errors made on a given day. Argument: path to errors")
     }
 
-    parseLine() {
-
-    }
-
     async main(args: string[]): Promise<void> {
         const osmConnection = new OsmConnection()
         const downloader = new OsmObjectDownloader(osmConnection.Backend(), undefined)
@@ -45,10 +40,14 @@ class HandleErrors extends Script {
         const refusedFiles: Set<string> = new Set<string>()
         refusedFiles.add("[]")
 
-        const changesObj = new Changes({
-            dryRun: new ImmutableStore(true),
-            osmConnection,
-        }, false, err => console.error(err))
+        const changesObj = new Changes(
+            {
+                dryRun: new ImmutableStore(true),
+                osmConnection,
+            },
+            false,
+            (err) => console.error(err)
+        )
 
         const all: ErrorMessage[] = []
         for (const line of lines) {
@@ -67,11 +66,10 @@ class HandleErrors extends Script {
                     console.log(
                         "\t https://osm.org/" + pendingChange.type + "/" + pendingChange.id,
                         pendingChange.meta.changeType,
-                        pendingChange.doDelete ? "DELETE" : "",
+                        pendingChange.doDelete ? "DELETE" : ""
                     )
                 }
                 all.push(parsed)
-
             } catch (e) {
                 console.log("Parsing line failed:", e)
             }
@@ -81,16 +79,15 @@ class HandleErrors extends Script {
             const e = parsed.message
             const neededIds = Changes.GetNeededIds(e.pendingChanges)
             // We _do not_ pass in the Changes object itself - we want the data from OSM directly in order to apply the changes
-            const osmObjects: { id: string; osmObj: OsmObject | "deleted" }[] =
-                await Promise.all<{
-                    id: string
-                    osmObj: OsmObject | "deleted"
-                }>(
-                    neededIds.map(async (id) => ({
-                        id,
-                        osmObj: await downloader.DownloadObjectAsync(id),
-                    })),
-                )
+            const osmObjects: { id: string; osmObj: OsmObject | "deleted" }[] = await Promise.all<{
+                id: string
+                osmObj: OsmObject | "deleted"
+            }>(
+                neededIds.map(async (id) => ({
+                    id,
+                    osmObj: await downloader.DownloadObjectAsync(id),
+                }))
+            )
 
             const objects = osmObjects
                 .filter((obj) => obj.osmObj !== "deleted")
@@ -115,15 +112,13 @@ class HandleErrors extends Script {
                 `<osmChange version='0.6' generator='Mapcomplete ${Constants.vNumber}'></osmChange>`
             ) {
                 console.log(
-                    "Changes for " +
-                    parsed.index +
-                    ": empty changeset, not creating a file for it",
+                    "Changes for " + parsed.index + ": empty changeset, not creating a file for it"
                 )
             } else if (createdChangesets.has(changeset)) {
                 console.log(
                     "Changeset " +
-                    parsed.index +
-                    " is identical to previously seen changeset, not writing to file",
+                        parsed.index +
+                        " is identical to previously seen changeset, not writing to file"
                 )
             } else {
                 writeFileSync(path, changeset, "utf8")
@@ -133,21 +128,16 @@ class HandleErrors extends Script {
             if (refusedFiles.has(refusedContent)) {
                 console.log(
                     "Refused changes for " +
-                    parsed.index +
-                    " is identical to previously seen changeset, not writing to file",
+                        parsed.index +
+                        " is identical to previously seen changeset, not writing to file"
                 )
             } else {
                 writeFileSync(path + ".refused.json", refusedContent, "utf8")
                 refusedFiles.add(refusedContent)
             }
             console.log("Written", path, "with " + e.pendingChanges.length + " changes")
-
         }
     }
 }
 
-new
-
-HandleErrors()
-
-    .run()
+new HandleErrors().run()

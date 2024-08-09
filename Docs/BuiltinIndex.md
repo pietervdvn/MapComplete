@@ -12,6 +12,7 @@
  - animal_shelter
  - artwork
  - assembly_point
+ - assisted_repair
  - atm
  - bank
  - barrier
@@ -24,7 +25,6 @@
  - bike_cleaning
  - bike_parking
  - bike_repair_station
- - bike_shop
  - bike_themed_object
  - binocular
  - birdhide
@@ -111,6 +111,7 @@
  - ticket_validator
  - toilet
  - toilet_at_amenity
+ - tool_library
  - trail
  - transit_stops
  - tree_node
@@ -131,7 +132,6 @@
  - bicycle_library
  - bicycle_rental
  - bike_cafe
- - bike_shop
  - bike_themed_object
  - brothel
  - cafe_pub
@@ -183,7 +183,6 @@
  - bicycle_library
  - bicycle_rental
  - bike_cafe
- - bike_shop
  - bike_themed_object
  - cafe_pub
  - car_rental
@@ -223,7 +222,6 @@
  - bicycle_library
  - bicycle_rental
  - bike_cafe
- - bike_shop
  - bike_themed_object
  - cafe_pub
  - car_rental
@@ -254,7 +252,6 @@
  - bicycle_library
  - bicycle_rental
  - bike_cafe
- - bike_shop
  - bike_themed_object
  - cafe_pub
  - car_rental
@@ -279,8 +276,10 @@
             ### opening_hours_by_appointment
 
              - animal_shelter
+ - assisted_repair
  - doctors
  - physiotherapist
+ - tool_library
             
             ### wikipedia
 
@@ -290,10 +289,40 @@
  - nature_reserve
  - observation_tower
             
+            ### memorial.memorial-questions
+
+             - artwork
+            
             ### bench.bench-questions
 
              - artwork
  - memorial
+            
+            ### preset_description
+
+             - assisted_repair
+ - ghost_bike
+            
+            ### contact
+
+             - assisted_repair
+ - brothel
+ - cinema
+ - hospital
+ - ice_cream
+ - love_hotel
+ - stripclub
+ - tool_library
+            
+            ### mastodon
+
+             - assisted_repair
+ - hackerspace
+            
+            ### facebook
+
+             - assisted_repair
+ - tool_library
             
             ### opening_hours_24_7
 
@@ -323,9 +352,9 @@
             ### description
 
              - bicycle_library
- - bike_shop
  - bike_themed_object
  - climbing_route
+ - shops
  - toilet
  - toilet_at_amenity
             
@@ -376,22 +405,9 @@
  - toilet_at_amenity
  - vending_machine
             
-            ### bicycle_rental.*bicycle_rental
+            ### shops.*
 
              - bike_shop
-            
-            ### bike_cleaning.bike_cleaning-service:bicycle:cleaning:charge
-
-             - bike_shop
-            
-            ### contact
-
-             - brothel
- - cinema
- - hospital
- - ice_cream
- - love_hotel
- - stripclub
             
             ### wheelchair-access
 
@@ -458,7 +474,6 @@
  - hackerspace
  - play_forest
  - playground
- - shops
  - sport_pitch
             
             ### climbing.website
@@ -577,10 +592,6 @@
 
              - gps_track
             
-            ### mastodon
-
-             - hackerspace
-            
             ### internet-all
 
              - hackerspace
@@ -613,6 +624,14 @@
              - recycling
             
             ### id_presets.shop_types
+
+             - shops
+            
+            ### bicycle_rental.*bicycle_rental
+
+             - shops
+            
+            ### bike_cleaning.bike_cleaning-service_bicycle_cleaning_charge
 
              - shops
             

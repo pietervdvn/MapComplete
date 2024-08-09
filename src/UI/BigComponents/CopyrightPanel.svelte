@@ -38,28 +38,19 @@
 
     let bgAttr: BaseUIElement | string = undefined
     if (attrText && attrUrl) {
-      bgAttr =
-        "<a href='" +
-        attrUrl +
-        "' target='_blank' rel='noopener'>" +
-        attrText +
-        "</a>"
+      bgAttr = "<a href='" + attrUrl + "' target='_blank' rel='noopener'>" + attrText + "</a>"
     } else if (attrUrl) {
       bgAttr = attrUrl
     } else {
       bgAttr = attrText
     }
     if (bgAttr) {
-      return Translations.t.general.attribution.attributionBackgroundLayerWithCopyright.Subs(
-        {
-          name: props.name,
-          copyright: bgAttr
-        }
-      )
+      return Translations.t.general.attribution.attributionBackgroundLayerWithCopyright.Subs({
+        name: props.name,
+        copyright: bgAttr,
+      })
     }
-    return Translations.t.general.attribution.attributionBackgroundLayer.Subs(
-      props
-    )
+    return Translations.t.general.attribution.attributionBackgroundLayer.Subs(props)
   })
 
   const allLicenses = {}
@@ -68,14 +59,13 @@
     allLicenses[license.path] = license
   }
 
-
   function calculateDataContributions(contributions: Map<string, number>): Translation {
     if (contributions === undefined) {
       return undefined
     }
     const sorted = Array.from(contributions, ([name, value]) => ({
       name,
-      value
+      value,
     })).filter((x) => x.name !== undefined && x.name !== "undefined")
     if (sorted.length === 0) {
       return undefined
@@ -87,29 +77,30 @@
       sorted.splice(10, sorted.length - 10)
     }
     const links = sorted.map(
-      (kv) =>
-        `<a href="https://openstreetmap.org/user/${kv.name}" target="_blank">${kv.name}</a>`
+      (kv) => `<a href="https://openstreetmap.org/user/${kv.name}" target="_blank">${kv.name}</a>`
     )
     const contribs = links.join(", ")
 
     if (hiddenCount <= 0) {
       return t.mapContributionsBy.Subs({
-        contributors: contribs
+        contributors: contribs,
       })
     } else {
       return t.mapContributionsByAndHidden.Subs({
         contributors: contribs,
-        hiddenCount: hiddenCount
+        hiddenCount: hiddenCount,
       })
     }
   }
 
-  const datacontributions = new ContributorCount(state).Contributors.map(counts => calculateDataContributions(counts))
+  const datacontributions = new ContributorCount(state).Contributors.map((counts) =>
+    calculateDataContributions(counts)
+  )
 
-
-  function codeContributors(contributors,
-                            translation: TypedTranslation<{ contributors; hiddenCount }>): Translation {
-
+  function codeContributors(
+    contributors,
+    translation: TypedTranslation<{ contributors; hiddenCount }>
+  ): Translation {
     const total = contributors.contributors.length
     let filtered = [...contributors.contributors]
 
@@ -124,23 +115,23 @@
 
     return translation.Subs({
       contributors: contribsStr,
-      hiddenCount: total - 10
+      hiddenCount: total - 10,
     })
   }
 </script>
 
-<div class="flex flex-col gap-y-4 link-underline">
+<div class="link-underline flex flex-col gap-y-4">
   <h3>
     <Tr t={t.attributionTitle} />
   </h3>
   <div class="flex items-center gap-x-2">
-    <Osm_logo class="w-8 h-8 shrink-0" />
+    <Osm_logo class="h-8 w-8 shrink-0" />
     <Tr t={t.attributionContent} />
   </div>
 
   {#if $bgMapAttribution !== undefined}
     <div class="flex items-center gap-x-2">
-      <Generic_map class="w-8 h-8 shrink-0" />
+      <Generic_map class="h-8 w-8 shrink-0" />
       <Tr t={$bgMapAttribution} />
     </div>
   {/if}
@@ -151,23 +142,20 @@
     </div>
   {/if}
 
-
   {#if $datacontributions !== undefined}
     <div class="flex items-center gap-x-2">
-      <UserGroupIcon class="w-8 h-8 shrink-0" />
+      <UserGroupIcon class="h-8 w-8 shrink-0" />
       <Tr t={$datacontributions} />
     </div>
   {/if}
 
   <div class="flex items-center gap-x-2">
-
-
-    <Github class="w-8 h-8 shrink-0" />
+    <Github class="h-8 w-8 shrink-0" />
     <Tr t={codeContributors(contributors, t.codeContributionsBy)} />
   </div>
 
   <div class="flex items-center gap-x-2">
-    <TranslateIcon class="w-8 h-8 shrink-0" />
+    <TranslateIcon class="h-8 w-8 shrink-0" />
     <Tr t={codeContributors(translators, t.translatedBy)} />
   </div>
 
@@ -179,7 +167,6 @@
       <IconCopyrightPanel iconPath={iconAttribution} license={allLicenses[iconAttribution]} />
     {/each}
   </AccordionSingle>
-
 
   <div class="self-end">
     MapComplete {Constants.vNumber}

@@ -239,6 +239,42 @@
       "value": "thai"
     },
     {
+      "key": "image",
+      "description": "The layer 'Fries shop shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Fries shop shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Fries shop shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Fries shop shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Fries shop allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Fries shop allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Fries shop allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Fries shop allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "website:menu",
+      "description": "Layer 'Fries shop' shows and asks freeform values for key 'website:menu' (in the mapcomplete.org theme 'Fries shops')"
+    },
+    {
       "key": "reservation",
       "description": "Layer 'Fries shop' shows reservation=required with a fixed text, namely 'A reservation is required at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'Fries shops') (This is only shown if takeaway!=only)",
       "value": "required"

@@ -29,6 +29,7 @@ Available languages:
  - pl
  - zh_Hant
  - da
+ - it
 
 
 # Table of contents

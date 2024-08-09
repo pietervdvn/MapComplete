@@ -48,14 +48,13 @@
 </script>
 
 <TitledPanel>
-  <div class="flex flex-wrap items-center justify-between w-full mr-10" slot="title">
+  <div class="mr-10 flex w-full flex-wrap items-center justify-between" slot="title">
     <div class="flex">
       <Filter class="h-6 w-6 pr-2" />
       <Tr t={Translations.t.general.menu.filter} />
     </div>
 
-
-    <div class="flex self-end text-sm gap-x-2 ml-2 self-end">
+    <div class="ml-2 flex gap-x-2 self-end self-end text-sm">
       <button class="small as-link" class:disabled={allEnabled} on:click={() => enableAll(true)}>
         <Tr t={Translations.t.general.filterPanel.enableAll} />
       </button>
@@ -63,24 +62,22 @@
         <Tr t={Translations.t.general.filterPanel.disableAll} />
       </button>
     </div>
-
   </div>
 
-    {#each layout.layers as layer}
-      <Filterview
-        zoomlevel={state.mapProperties.zoom}
-        filteredLayer={state.layerState.filteredLayers.get(layer.id)}
-        highlightedLayer={state.guistate.highlightedLayerInFilters}
-      />
-    {/each}
+  {#each layout.layers as layer}
+    <Filterview
+      zoomlevel={state.mapProperties.zoom}
+      filteredLayer={state.layerState.filteredLayers.get(layer.id)}
+      highlightedLayer={state.guistate.highlightedLayerInFilters}
+    />
+  {/each}
 
-    {#each layout.tileLayerSources as tilesource}
-      <OverlayToggle
-        layerproperties={tilesource}
-        state={state.overlayLayerStates.get(tilesource.id)}
-        highlightedLayer={state.guistate.highlightedLayerInFilters}
-        zoomlevel={state.mapProperties.zoom}
-      />
-    {/each}
-
+  {#each layout.tileLayerSources as tilesource}
+    <OverlayToggle
+      layerproperties={tilesource}
+      state={state.overlayLayerStates.get(tilesource.id)}
+      highlightedLayer={state.guistate.highlightedLayerInFilters}
+      zoomlevel={state.mapProperties.zoom}
+    />
+  {/each}
 </TitledPanel>

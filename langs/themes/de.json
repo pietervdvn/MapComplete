@@ -10,7 +10,7 @@
     },
     "artwork": {
         "description": "Eine freie Karte mit Statuen, Büsten, Graffitis und anderen Kunstwerken auf der ganzen Welt",
-        "title": "Kunstwerk"
+        "title": "Kunstwerke"
     },
     "atm": {
         "description": "Diese Karte zeigt Geldautomaten zum Abheben oder Einzahlen von Geld",
@@ -441,7 +441,7 @@
                 }
             }
         },
-        "title": "Kletterhallen, Vereine und Kletterstellen"
+        "title": "Kletterkarte"
     },
     "clock": {
         "description": "Eine Karte mit öffentlichen Uhren",
@@ -782,7 +782,7 @@
     },
     "fireplace": {
         "description": "Stelle im Freien zum Feuermachen oder ein ortsfest installierter Grill an einer offizielle Stelle.",
-        "title": "Feuerstellen und Grillstellen"
+        "title": "Feuerstellen und Grillplätze"
     },
     "food": {
         "description": "Restaurants und Schnellimbisse",
@@ -927,8 +927,8 @@
     },
     "hailhydrant": {
         "description": "Auf dieser Karte können Sie Hydranten, Feuerwachen, Krankenwagen und Feuerlöscher in Ihren bevorzugten Stadtvierteln finden und aktualisieren.",
-        "shortDescription": "Hydranten, Feuerlöscher, Feuerwachen und Rettungswachen.",
-        "title": "Hydranten, Feuerlöscher, Feuerwachen und Rettungswachen"
+        "shortDescription": "Eine Karte mit Hydranten, Feuerlöschern, Feuerwachen und Rettungswachen.",
+        "title": "Brandschutz"
     },
     "healthcare": {
         "description": "Auf dieser Karte werden verschiedene Gesundheitseinrichtungen angezeigt",
@@ -1191,7 +1191,7 @@
                 }
             }
         },
-        "title": "Tierärzte, Hundeparks und andere Einrichtungen für Haustiere"
+        "title": "Haustiere"
     },
     "playgrounds": {
         "description": "Auf dieser Karte finden Sie Spielplätze und können weitere Informationen hinzufügen",

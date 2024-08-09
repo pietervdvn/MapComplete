@@ -67,7 +67,7 @@ export class Tag extends TagsFilter {
     asOverpass(): string[] {
         if (this.value === "") {
             // NOT having this key
-            return ["[!\"" + this.key + "\"]"]
+            return ['[!"' + this.key + '"]']
         }
         return [`["${this.key}"="${this.value}"]`]
     }
@@ -141,7 +141,7 @@ export class Tag extends TagsFilter {
             return other.key === this.key && other.value === this.value
         }
         if (other instanceof RegexTag) {
-            if(other.key === this.key || !other.invert){
+            if (other.key === this.key || !other.invert) {
                 return other.matchesProperties({ [this.key]: this.value })
             }
         }
