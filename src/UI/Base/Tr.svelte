@@ -20,10 +20,17 @@
 </script>
 
 {#if $txt}
+  {#if cls}
   <span class={cls}>
     <span lang={$lang}>
       {@html Utils.purify($txt)}
     </span>
     <WeblateLink context={t?.context} />
   </span>
+  {:else}
+     <span lang={$lang}>
+      {@html Utils.purify($txt)}
+    </span>
+    <WeblateLink context={t?.context} />
+  {/if}
 {/if}

@@ -11,12 +11,8 @@
   import Tr from "../Base/Tr.svelte"
   import Translations from "../i18n/Translations"
   import { Utils } from "../../Utils"
-  import { DocumentDuplicateIcon } from "@rgossiaux/svelte-heroicons/outline"
-  import ToSvelte from "../Base/ToSvelte.svelte"
-  import Img from "../Base/Img"
   import Qr from "../../Utils/Qr"
   import AccordionSingle from "../Flowbite/AccordionSingle.svelte"
-  import Share from "@babeard/svelte-heroicons/solid/Share"
   import Constants from "../../Models/Constants"
   import Copyable from "../Base/Copyable.svelte"
 
@@ -127,9 +123,7 @@
     <Copyable {state} text={linkToShare} />
   </div>
   <div class="flex justify-center">
-    <ToSvelte
-      construct={() => new Img(new Qr(linkToShare).toImageElement(125)).SetStyle("width: 125px")}
-    />
+    <img src={new Qr(linkToShare).toImageElement(125)} style="width: 125px"/>
   </div>
 
   <Tr t={tr.embedIntro} />
