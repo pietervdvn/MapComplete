@@ -35,6 +35,23 @@
             "1": {
                 "title": "un mupi"
             },
+            "10": {
+                "description": "Una pieza de tela impermeable con un mensaje impreso, anclada permanentemente en una pared",
+                "title": "una lona"
+            },
+            "11": {
+                "title": "un tótem"
+            },
+            "12": {
+                "description": "Se utiliza para carteles publicitarios, letreros de neón, logotipos y carteles en entradas institucionales",
+                "title": "un señal"
+            },
+            "13": {
+                "title": "una escultura"
+            },
+            "14": {
+                "title": "una pared pintada"
+            },
             "2": {
                 "title": "un mupi sobre la pared"
             },
@@ -60,23 +77,6 @@
             },
             "9": {
                 "title": "una pantalla montada en una marquesina de tránsito"
-            },
-            "10": {
-                "description": "Una pieza de tela impermeable con un mensaje impreso, anclada permanentemente en una pared",
-                "title": "una lona"
-            },
-            "11": {
-                "title": "un tótem"
-            },
-            "12": {
-                "description": "Se utiliza para carteles publicitarios, letreros de neón, logotipos y carteles en entradas institucionales",
-                "title": "un señal"
-            },
-            "13": {
-                "title": "una escultura"
-            },
-            "14": {
-                "title": "una pared pintada"
             }
         },
         "tagRenderings": {
@@ -171,6 +171,9 @@
                     "1": {
                         "then": "Esto es un tablón de anuncios"
                     },
+                    "10": {
+                        "then": "Esto es una pared pintada"
+                    },
                     "2": {
                         "then": "Esto es una columna"
                     },
@@ -194,9 +197,6 @@
                     },
                     "9": {
                         "then": "Esto es un tótem"
-                    },
-                    "10": {
-                        "then": "Esto es una pared pintada"
                     }
                 },
                 "question": "¿Qué tipo de elemento publicitario es?",
@@ -210,6 +210,9 @@
                 },
                 "1": {
                     "then": "Tablon de anuncios"
+                },
+                "10": {
+                    "then": "Pared Pintada"
                 },
                 "2": {
                     "then": "Mupi"
@@ -234,15 +237,29 @@
                 },
                 "9": {
                     "then": "Tótem"
-                },
-                "10": {
-                    "then": "Pared Pintada"
                 }
             }
         }
     },
     "aerialway": {
-        "description": "Diversas formas de transporte de pasajeros y mercancías que utilizan cables, como teleféricos, telecabinas, telesillas, telesquíes y tirolinas. "
+        "description": "Diversas formas de transporte de pasajeros y mercancías que utilizan cables, como teleféricos, telecabinas, telesillas, telesquíes y tirolinas. ",
+        "pointRendering": {
+            "1": {
+                "label": {
+                    "render": "{name}"
+                }
+            }
+        },
+        "tagRenderings": {
+            "duration": {
+                "question": "¿Cuánto dura un viaje en este ascensor?",
+                "questionHint": "Esto elimina el tiempo de espera.",
+                "render": "Un viaje dura {duration} minutos"
+            },
+            "occupancy": {
+                "question": "¿Cuál es la capacidad de la cabina?"
+            }
+        }
     },
     "ambulancestation": {
         "description": "Una estación de ambulancias es una zona para almacenar vehículos de ambulancia, equipamiento médico, equipos de protección personal y otros suministros médicos.",
@@ -358,6 +375,15 @@
                     "1": {
                         "then": "Mural"
                     },
+                    "10": {
+                        "then": "Azulejo (Baldosas decorativas Españolas y Portuguesas)"
+                    },
+                    "11": {
+                        "then": "Cerámica"
+                    },
+                    "12": {
+                        "then": "Tallado en madera"
+                    },
                     "2": {
                         "then": "Pintura"
                     },
@@ -381,15 +407,6 @@
                     },
                     "9": {
                         "then": "Relieve"
-                    },
-                    "10": {
-                        "then": "Azulejo (Baldosas decorativas Españolas y Portuguesas)"
-                    },
-                    "11": {
-                        "then": "Cerámica"
-                    },
-                    "12": {
-                        "then": "Tallado en madera"
                     }
                 },
                 "question": "¿Qué tipo de obra es esta pieza?",
@@ -1765,6 +1782,12 @@
                     "1": {
                         "then": "Este carril bici está pavimentado"
                     },
+                    "10": {
+                        "then": "Este carril bici está hecho de gravilla"
+                    },
+                    "12": {
+                        "then": "Este carril bici está hecho de tierra natural"
+                    },
                     "2": {
                         "then": "Este carril bici está hecho de asfalto"
                     },
@@ -1779,12 +1802,6 @@
                     },
                     "9": {
                         "then": "Este carril bici está hecho de grava"
-                    },
-                    "10": {
-                        "then": "Este carril bici está hecho de gravilla"
-                    },
-                    "12": {
-                        "then": "Este carril bici está hecho de tierra natural"
                     }
                 },
                 "question": "¿De qué superficie está hecho este carril bici?",
@@ -1830,6 +1847,9 @@
                     "1": {
                         "then": "Este carril bici está pavimentado"
                     },
+                    "10": {
+                        "then": "Este carril bici está hecho de gravilla"
+                    },
                     "2": {
                         "then": "Este carril bici está hecho de asfalto"
                     },
@@ -1841,9 +1861,6 @@
                     },
                     "9": {
                         "then": "Este carril bici está hecho de grava"
-                    },
-                    "10": {
-                        "then": "Este carril bici está hecho de gravilla"
                     }
                 },
                 "question": "¿De qué esta hecha la superficie de esta calle?",
@@ -2485,6 +2502,18 @@
                     "0": {
                         "then": "Esto es una pizzería"
                     },
+                    "10": {
+                        "then": "Aquí se sirven platos Chinos"
+                    },
+                    "11": {
+                        "then": "Aquí se sirven platos Griegos"
+                    },
+                    "12": {
+                        "then": "Aquí se sirven platos Indios"
+                    },
+                    "13": {
+                        "then": "Aquí se sirven platos Turcos"
+                    },
                     "2": {
                         "then": "Principalmente sirve pasta"
                     },
@@ -2505,18 +2534,6 @@
                     },
                     "9": {
                         "then": "Aquí se sirven platos Franceses"
-                    },
-                    "10": {
-                        "then": "Aquí se sirven platos Chinos"
-                    },
-                    "11": {
-                        "then": "Aquí se sirven platos Griegos"
-                    },
-                    "12": {
-                        "then": "Aquí se sirven platos Indios"
-                    },
-                    "13": {
-                        "then": "Aquí se sirven platos Turcos"
                     }
                 },
                 "question": "¿Qué tipo de comida sirven aquí?",
@@ -2827,11 +2844,11 @@
         "tagRenderings": {
             "memorial-type": {
                 "mappings": {
-                    "9": {
-                        "then": "Es un obelisco"
-                    },
                     "10": {
                         "then": "Es una cruz"
+                    },
+                    "9": {
+                        "then": "Es un obelisco"
                     }
                 }
             }
@@ -2922,6 +2939,19 @@
                     }
                 }
             },
+            "10": {
+                "options": {
+                    "0": {
+                        "question": "Todas las notas"
+                    },
+                    "1": {
+                        "question": "Ocultar las notas de importación"
+                    },
+                    "2": {
+                        "question": "Solo mostrar las notas de importación"
+                    }
+                }
+            },
             "2": {
                 "options": {
                     "0": {
@@ -2975,19 +3005,6 @@
                 "options": {
                     "0": {
                         "question": "Solo mostrar las notas abiertas"
-                    }
-                }
-            },
-            "10": {
-                "options": {
-                    "0": {
-                        "question": "Todas las notas"
-                    },
-                    "1": {
-                        "question": "Ocultar las notas de importación"
-                    },
-                    "2": {
-                        "question": "Solo mostrar las notas de importación"
                     }
                 }
             }
@@ -3592,24 +3609,6 @@
                     "1": {
                         "question": "Reciclaje de baterías"
                     },
-                    "3": {
-                        "question": "Reciclaje de latas"
-                    },
-                    "4": {
-                        "question": "Reciclaje de ropa"
-                    },
-                    "5": {
-                        "question": "Reciclaje de aceite de cocina"
-                    },
-                    "6": {
-                        "question": "Reciclaje de aceite de motor"
-                    },
-                    "8": {
-                        "question": "Reciclaje de residuos orgánicos"
-                    },
-                    "9": {
-                        "question": "Reciclaje de botellas de cristal"
-                    },
                     "10": {
                         "question": "Reciclaje de cristal"
                     },
@@ -3636,6 +3635,24 @@
                     },
                     "18": {
                         "question": "Reciclaje de pequeños electrodomésticos"
+                    },
+                    "3": {
+                        "question": "Reciclaje de latas"
+                    },
+                    "4": {
+                        "question": "Reciclaje de ropa"
+                    },
+                    "5": {
+                        "question": "Reciclaje de aceite de cocina"
+                    },
+                    "6": {
+                        "question": "Reciclaje de aceite de motor"
+                    },
+                    "8": {
+                        "question": "Reciclaje de residuos orgánicos"
+                    },
+                    "9": {
+                        "question": "Reciclaje de botellas de cristal"
                     }
                 }
             }
@@ -3678,27 +3695,6 @@
                     "0": {
                         "then": "Aquí se pueden reciclar baterías"
                     },
-                    "2": {
-                        "then": "Aquí se pueden reciclar latas"
-                    },
-                    "3": {
-                        "then": "Aquí se puede reciclar ropa"
-                    },
-                    "4": {
-                        "then": "Aquí se puede reciclar aceite de cocina"
-                    },
-                    "5": {
-                        "then": "Aquí se puede reciclar aceite de motor"
-                    },
-                    "7": {
-                        "then": "Los residuos orgánicos pueden reciclarse aquí"
-                    },
-                    "8": {
-                        "then": "Aquí se pueden reciclar residuos orgánicos"
-                    },
-                    "9": {
-                        "then": "Aquí se pueden reciclar botellas de cristal"
-                    },
                     "10": {
                         "then": "Aquí se puede reciclar cristal"
                     },
@@ -3723,8 +3719,29 @@
                     "19": {
                         "then": "Aquí se puede reciclar chatarra"
                     },
+                    "2": {
+                        "then": "Aquí se pueden reciclar latas"
+                    },
                     "20": {
                         "then": "El calzado se puede reciclar aquí"
+                    },
+                    "3": {
+                        "then": "Aquí se puede reciclar ropa"
+                    },
+                    "4": {
+                        "then": "Aquí se puede reciclar aceite de cocina"
+                    },
+                    "5": {
+                        "then": "Aquí se puede reciclar aceite de motor"
+                    },
+                    "7": {
+                        "then": "Los residuos orgánicos pueden reciclarse aquí"
+                    },
+                    "8": {
+                        "then": "Aquí se pueden reciclar residuos orgánicos"
+                    },
+                    "9": {
+                        "then": "Aquí se pueden reciclar botellas de cristal"
                     }
                 },
                 "question": "¿Qué se puede reciclar aquí?"
@@ -4145,6 +4162,12 @@
                     "1": {
                         "then": "Esta lámpara utiliza LEDs"
                     },
+                    "10": {
+                        "then": "Esta lámpara utiliza lámparas de sodio de alta presión (naranja con blanco)"
+                    },
+                    "11": {
+                        "then": "Esta lampara se ilumina con gas"
+                    },
                     "2": {
                         "then": "Esta lámpara utiliza iluminación incandescente"
                     },
@@ -4165,12 +4188,6 @@
                     },
                     "9": {
                         "then": "Esta lámpara utiliza lámparas de sodio de baja presión (naranja monocromo)"
-                    },
-                    "10": {
-                        "then": "Esta lámpara utiliza lámparas de sodio de alta presión (naranja con blanco)"
-                    },
-                    "11": {
-                        "then": "Esta lampara se ilumina con gas"
                     }
                 },
                 "question": "¿Qué tipo de iluminación utiliza esta lámpara?"
@@ -4751,9 +4768,6 @@
             },
             "vending": {
                 "mappings": {
-                    "8": {
-                        "then": "Aquí se venden cámaras de aire para bicicletas"
-                    },
                     "22": {
                         "then": "Las luces para bicicletas se venden aquí"
                     },
@@ -4768,6 +4782,9 @@
                     },
                     "26": {
                         "then": "Aquí se venden candados para bicicletas"
+                    },
+                    "8": {
+                        "then": "Aquí se venden cámaras de aire para bicicletas"
                     }
                 }
             }
