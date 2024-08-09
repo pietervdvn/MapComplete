@@ -107,6 +107,7 @@ export class OsmConnection {
             ud.name = "Fake user"
             ud.totalMessages = 42
             ud.languages = ["en"]
+            ud.description = "The 'fake-user' is a URL-parameter which allows to test features without needing an OSM account or even internet connection."
             this.loadingStatus.setData("logged-in")
         }
         this.UpdateCapabilities()
