@@ -19,7 +19,7 @@
     EyeIcon,
     HeartIcon,
     MenuIcon,
-    XCircleIcon
+    XCircleIcon,
   } from "@rgossiaux/svelte-heroicons/solid"
   import Tr from "./Base/Tr.svelte"
   import CommunityIndexView from "./BigComponents/CommunityIndexView.svelte"
@@ -120,15 +120,15 @@
   let visualFeedback = state.visualFeedback
   let viewport: UIEventSource<HTMLDivElement> = new UIEventSource<HTMLDivElement>(undefined)
   let mapproperties: MapProperties = state.mapProperties
-  let usersettingslayer = new LayerConfig(<LayerConfigJson> usersettings, "usersettings", true)
+  let usersettingslayer = new LayerConfig(<LayerConfigJson>usersettings, "usersettings", true)
   state.mapProperties.installCustomKeyboardHandler(viewport)
   let canZoomIn = mapproperties.maxzoom.map(
     (mz) => mapproperties.zoom.data < mz,
-    [mapproperties.zoom]
+    [mapproperties.zoom],
   )
   let canZoomOut = mapproperties.minzoom.map(
     (mz) => mapproperties.zoom.data > mz,
-    [mapproperties.zoom]
+    [mapproperties.zoom],
   )
 
   function updateViewport() {
@@ -144,7 +144,7 @@
     const bottomRight = mlmap.unproject([rect.right, rect.bottom])
     const bbox = new BBox([
       [topLeft.lng, topLeft.lat],
-      [bottomRight.lng, bottomRight.lat]
+      [bottomRight.lng, bottomRight.lat],
     ])
     state.visualFeedbackViewportBounds.setData(bbox)
   }
@@ -165,7 +165,7 @@
   onDestroy(
     rasterLayer.addCallbackAndRunD((l) => {
       rasterLayerName = l.properties.name
-    })
+    }),
   )
   let previewedImage = state.previewedImage
 
@@ -196,7 +196,7 @@
   let openMapButton: UIEventSource<HTMLElement> = new UIEventSource<HTMLElement>(undefined)
   let openMenuButton: UIEventSource<HTMLElement> = new UIEventSource<HTMLElement>(undefined)
   let openCurrentViewLayerButton: UIEventSource<HTMLElement> = new UIEventSource<HTMLElement>(
-    undefined
+    undefined,
   )
   let _openNewElementButton: HTMLButtonElement
   let openNewElementButton: UIEventSource<HTMLElement> = new UIEventSource<HTMLElement>(undefined)
@@ -207,6 +207,31 @@
   let openFilterButton: UIEventSource<HTMLElement> = new UIEventSource<HTMLElement>(undefined)
   let openBackgroundButton: UIEventSource<HTMLElement> = new UIEventSource<HTMLElement>(undefined)
   let addNewFeatureMode = state.userRelatedState.addNewFeatureMode
+
+  let gpsButtonAriaLabel = state.geolocation.geolocationState.gpsAvailable.map(available => {
+    if (!available) {
+      return Translations.t.general.labels.locationNotAvailable
+    }
+    if (state.geolocation.geolocationState.permission.data === "denied") {
+      return Translations.t.general.geopermissionDenied
+    }
+
+    if (state.geolocation.geolocationState.permission.data === "requested") {
+      return Translations.t.general.waitingForGeopermission
+    }
+
+
+    if (!state.geolocation.geolocationState.allowMoving.data) {
+      return Translations.t.general.visualFeedback.islocked
+    }
+
+    if (state.geolocation.geolocationState.currentGPSLocation.data === undefined) {
+      return Translations.t.general.waitingForLocation
+    }
+
+    return Translations.t.general.labels.jumpToLocation
+  }, [state.geolocation.geolocationState.allowMoving, state.geolocation.geolocationState.permission])
+
 </script>
 
 <main>
@@ -408,7 +433,7 @@
         <If condition={featureSwitches.featureSwitchGeolocation}>
           <div class="relative m-0">
             <MapControlButton
-              arialabel={Translations.t.general.labels.jumpToLocation}
+              arialabelDynamic={gpsButtonAriaLabel}
               on:click={() => state.geolocationControl.handleClick()}
               on:keydown={forwardEventToMap}
             >
@@ -465,7 +490,7 @@
       }}
       >
         <span slot="close-button" />
-         <SelectedElementPanel absolute={false} {state} selected={$selectedElement} />
+        <SelectedElementPanel absolute={false} {state} selected={$selectedElement} />
       </FloatOver>
     {:else}
       <FloatOver
@@ -525,7 +550,7 @@
         </div>
 
         <div slot="content2" class="m-2 flex flex-col">
-          <CopyrightPanel {state}/>
+          <CopyrightPanel {state} />
         </div>
 
         <div class="flex" slot="title3">
@@ -659,7 +684,7 @@
             <Tr t={Translations.t.general.menu.aboutMapComplete} />
           </h2>
           <AboutMapComplete {state} />
-          <CopyrightPanel {state}/>
+          <CopyrightPanel {state} />
         </div>
       </div>
     </FloatOver>

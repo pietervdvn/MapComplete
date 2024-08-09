@@ -274,6 +274,7 @@
             "background": "Change background",
             "filter": "Filter data",
             "jumpToLocation": "Go to your current location",
+            "locationNotAvailable": "GPS location not available. Does this device have location or are you in a tunnel?",
             "menu": "Menu",
             "zoomIn": "Zoom in",
             "zoomOut": "Zoom out"
