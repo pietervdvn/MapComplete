@@ -99,7 +99,8 @@ export default class InitialMapPositioning {
             Utils.downloadJson<{ latitude: number; longitude: number }>(
                 Constants.GeoIpServer + "ip"
             ).then(({ longitude, latitude }) => {
-                if (geolocationState.currentGPSLocation.data !== undefined) {
+                const gpsLoc = geolocationState.currentGPSLocation.data
+                if (gpsLoc !== undefined) {
                     return // We got a geolocation by now, abort
                 }
                 console.log("Setting location based on geoip", longitude, latitude)

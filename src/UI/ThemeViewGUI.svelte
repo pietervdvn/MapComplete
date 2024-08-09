@@ -124,11 +124,11 @@
   state.mapProperties.installCustomKeyboardHandler(viewport)
   let canZoomIn = mapproperties.maxzoom.map(
     (mz) => mapproperties.zoom.data < mz,
-    [mapproperties.zoom]
+    [mapproperties.zoom],
   )
   let canZoomOut = mapproperties.minzoom.map(
     (mz) => mapproperties.zoom.data > mz,
-    [mapproperties.zoom]
+    [mapproperties.zoom],
   )
 
   function updateViewport() {
@@ -165,7 +165,7 @@
   onDestroy(
     rasterLayer.addCallbackAndRunD((l) => {
       rasterLayerName = l.properties.name
-    })
+    }),
   )
   let previewedImage = state.previewedImage
 
@@ -196,7 +196,7 @@
   let openMapButton: UIEventSource<HTMLElement> = new UIEventSource<HTMLElement>(undefined)
   let openMenuButton: UIEventSource<HTMLElement> = new UIEventSource<HTMLElement>(undefined)
   let openCurrentViewLayerButton: UIEventSource<HTMLElement> = new UIEventSource<HTMLElement>(
-    undefined
+    undefined,
   )
   let _openNewElementButton: HTMLButtonElement
   let openNewElementButton: UIEventSource<HTMLElement> = new UIEventSource<HTMLElement>(undefined)
@@ -207,6 +207,31 @@
   let openFilterButton: UIEventSource<HTMLElement> = new UIEventSource<HTMLElement>(undefined)
   let openBackgroundButton: UIEventSource<HTMLElement> = new UIEventSource<HTMLElement>(undefined)
   let addNewFeatureMode = state.userRelatedState.addNewFeatureMode
+
+  let gpsButtonAriaLabel = state.geolocation.geolocationState.gpsAvailable.map(available => {
+    if (!available) {
+      return Translations.t.general.labels.locationNotAvailable
+    }
+    if (state.geolocation.geolocationState.permission.data === "denied") {
+      return Translations.t.general.geopermissionDenied
+    }
+
+    if (state.geolocation.geolocationState.permission.data === "requested") {
+      return Translations.t.general.waitingForGeopermission
+    }
+
+
+    if (!state.geolocation.geolocationState.allowMoving.data) {
+      return Translations.t.general.visualFeedback.islocked
+    }
+
+    if (state.geolocation.geolocationState.currentGPSLocation.data === undefined) {
+      return Translations.t.general.waitingForLocation
+    }
+
+    return Translations.t.general.labels.jumpToLocation
+  }, [state.geolocation.geolocationState.allowMoving, state.geolocation.geolocationState.permission])
+
 </script>
 
 <main>
@@ -404,7 +429,7 @@
         <If condition={featureSwitches.featureSwitchGeolocation}>
           <div class="relative m-0">
             <MapControlButton
-              arialabel={Translations.t.general.labels.jumpToLocation}
+              arialabelDynamic={gpsButtonAriaLabel}
               on:click={() => state.geolocationControl.handleClick()}
               on:keydown={forwardEventToMap}
             >
@@ -654,7 +679,7 @@
             <Tr t={Translations.t.general.menu.aboutMapComplete} />
           </h2>
           <AboutMapComplete {state} />
-          <CopyrightPanel {state}/>
+          <CopyrightPanel {state} />
         </div>
       </div>
     </FloatOver>

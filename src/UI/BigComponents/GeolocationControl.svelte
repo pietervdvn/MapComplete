@@ -14,6 +14,7 @@
   let allowMoving = geolocationstate.allowMoving
   let currentGPSLocation = state.geolocation.geolocationState.currentGPSLocation
   let geolocationControlState = state.geolocationControl
+  let isAvailable = state.geolocation.geolocationState.gpsAvailable
   let lastClickWasRecent = geolocationControlState.lastClickWithinThreeSecs
 </script>
 
@@ -31,7 +32,7 @@
 {:else if $geopermission === "requested"}
   <!-- Even though disabled, when clicking we request the location again in case the contributor dismissed the location popup -->
   <Location class="h-8 w-8" style="animation: 3s linear 0s infinite normal none running spin;" />
-{:else if $geopermission === "denied"}
+{:else if $geopermission === "denied" || !$isAvailable}
   <Location_refused class="h-8 w-8" />
 {:else}
   <Location class="h-8 w-8" style="animation: 3s linear 0s infinite normal none running spin;" />
