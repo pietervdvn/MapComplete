@@ -154,6 +154,10 @@ export class ChangesetHandler {
                 if (this._reportError) {
                     this._reportError(e)
                 }
+                if((<XMLHttpRequest> e).status === 400){
+                    // This request is invalid. We simply drop the changes and hope that someone will analyze what went wrong with it in the upload; we pretend everything went fine
+                    return
+                }
                 console.warn(
                     "Could not open/upload changeset due to ",
                     e,
@@ -195,7 +199,7 @@ export class ChangesetHandler {
                         "Could not reuse changeset " +
                             csId +
                             ", might be closed: " +
-                            (e.stacktrace ?? "" + e)
+                            (e.stacktrace ?? e.status ?? "" + e)
                     )
                 }
                 console.warn("Could not upload, changeset is probably closed: ", e)

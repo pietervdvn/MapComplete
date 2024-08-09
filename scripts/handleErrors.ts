@@ -61,7 +61,6 @@ class HandleErrors extends Script {
                     console.log("Skipping GRB ")
                     continue
                 }
-                console.log(e.username, e.layout, e.message, parsed.date)
                 for (const pendingChange of e.pendingChanges) {
                     console.log(
                         "\t https://osm.org/" + pendingChange.type + "/" + pendingChange.id,
@@ -76,6 +75,8 @@ class HandleErrors extends Script {
         }
 
         for (const parsed of all) {
+            console.log(parsed.message.username, parsed.message.layout, parsed.message.message, parsed.date)
+
             const e = parsed.message
             const neededIds = Changes.GetNeededIds(e.pendingChanges)
             // We _do not_ pass in the Changes object itself - we want the data from OSM directly in order to apply the changes
@@ -99,10 +100,7 @@ class HandleErrors extends Script {
                 newObjects: OsmObject[]
                 modifiedObjects: OsmObject[]
                 deletedObjects: OsmObject[]
-            } = new Changes({
-                dryRun: new ImmutableStore(true),
-                osmConnection,
-            }).CreateChangesetObjects(toUpload, objects)
+            } = changesObj.CreateChangesetObjects(toUpload, objects)
 
             const changeset = Changes.createChangesetFor("", changes)
             const path =
@@ -111,31 +109,34 @@ class HandleErrors extends Script {
                 changeset ===
                 `<osmChange version='0.6' generator='Mapcomplete ${Constants.vNumber}'></osmChange>`
             ) {
-                console.log(
+                /*console.log(
                     "Changes for " + parsed.index + ": empty changeset, not creating a file for it"
-                )
+                )*/
             } else if (createdChangesets.has(changeset)) {
-                console.log(
+               /* console.log(
                     "Changeset " +
                         parsed.index +
                         " is identical to previously seen changeset, not writing to file"
-                )
+                )*/
             } else {
-                writeFileSync(path, changeset, "utf8")
+                const changesetWithMsg = `<!-- User: ${parsed.message.username} (${parsed.message.userid}) ${parsed.message.layout}; Version ${parsed.message.version}; Not uploaded due to ${parsed.message.message} -->
+${changeset}`
+                writeFileSync(path, changesetWithMsg, "utf8")
                 createdChangesets.add(changeset)
+                console.log("Written", path, "with " + e.pendingChanges.length + " changes")
             }
             const refusedContent = JSON.stringify(refused)
             if (refusedFiles.has(refusedContent)) {
-                console.log(
+               /* console.log(
                     "Refused changes for " +
                         parsed.index +
                         " is identical to previously seen changeset, not writing to file"
-                )
+                )*/
             } else {
                 writeFileSync(path + ".refused.json", refusedContent, "utf8")
                 refusedFiles.add(refusedContent)
+                console.log("Written refused", path)
             }
-            console.log("Written", path, "with " + e.pendingChanges.length + " changes")
         }
     }
 }
