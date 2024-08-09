@@ -32,12 +32,19 @@
 </script>
 
 {#if isSvelte}
-  <svelte:component
-    this={svelteElem?._svelteComponent}
-    {...svelteElem._props}
-    class={svelteElem.getClass()}
-    style={svelteElem.getStyle()}
-  />
+  {#if svelteElem.getClass() || svelteElem.getStyle()}
+    <svelte:component
+      this={svelteElem?._svelteComponent}
+      {...svelteElem._props}
+      class={svelteElem.getClass()}
+      style={svelteElem.getStyle()}
+    />
+  {:else}
+    <svelte:component
+      this={svelteElem?._svelteComponent}
+      {...svelteElem._props}
+    />
+  {/if}
 {:else}
   <span bind:this={elem} />
 {/if}

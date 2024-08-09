@@ -617,12 +617,14 @@
     },
     {
       "id": "mangrove-keys",
-      "classes": "flex flex-col",
+      "classes": "link-no-underline low-interaction p-2",
       "render": {
         "special": {
           "type": "link",
           "href": "data:application/json,{mangroveidentity}",
           "download": "mangrove_private_key_{_name}",
+          "class": "button",
+
           "text": {
             "en": "Download the private key for your Mangrove Account",
             "de": "Laden Sie den privaten Schlüssel für Ihr Mangrove-Konto herunter",
@@ -645,6 +647,7 @@
     },
     {
       "id": "mangrove-key-import",
+      "classes": "low-interaction p-2",
       "render": {
         "special": {
           "type": "import_mangrove_key",
@@ -900,6 +903,27 @@
           "hideInAnswer": true
         }
       ]
+    },
+    {
+      "id": "debug-title",
+      "render": {
+        "en": "<h3>Debugging options</h3>"
+      }
+    },
+    {
+      "id": "clear_cache",
+      "classes": "low-interaction p-2",
+      "render": {
+        "special": {
+          "type": "clear_caches",
+          "text": {
+            "en": "Clear caches"
+          }
+        },
+        "after": {
+          "en": "Clearing the caches will delete locally downloaded data and code. You will remain logged in and your settings will be preserved. No data should be lost"
+        }
+      }
     },
     {
       "id": "pending_changes",

@@ -620,7 +620,7 @@
           <Tr t={UserRelatedState.usersettingsConfig.title.GetRenderValue({})} />
         </div>
 
-        <div class="links-as-button" slot="content1">
+        <div class="links-as-button py-8" slot="content1">
           <!-- All shown components are set by 'usersettings.json', which happily uses some special visualisations created specifically for it -->
           <LoginToggle {state}>
             <div class="flex flex-col" slot="not-logged-in">

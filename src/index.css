@@ -508,7 +508,7 @@ a.link-underline {
   -webkit-text-decoration: underline;
 }
 
-.link-no-underline a {
+.link-no-underline a, a.link-no-underline {
   text-decoration: none;
 }
 
