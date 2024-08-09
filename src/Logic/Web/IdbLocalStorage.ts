@@ -10,7 +10,7 @@ export class IdbLocalStorage {
 
     public static Get<T>(
         key: string,
-        options?: { defaultValue?: T; whenLoaded?: (t: T | null) => void }
+        options?: { defaultValue?: T; whenLoaded?: (t: T | null) => void },
     ): UIEventSource<T> {
         if (IdbLocalStorage._sourceCache[key] !== undefined) {
             return IdbLocalStorage._sourceCache[key]
@@ -39,11 +39,14 @@ export class IdbLocalStorage {
     }
 
     public static SetDirectly(key: string, value: any): Promise<void> {
-        const copy = Utils.Clone(value)
-        return idb.set(key, copy)
+        return idb.set(key, value)
     }
 
     static GetDirectly(key: string): Promise<any> {
         return idb.get(key)
+    }
+
+    static clearAll() {
+        return idb.clear()
     }
 }
