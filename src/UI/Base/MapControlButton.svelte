@@ -27,6 +27,7 @@
   on:click={(e) => dispatch("click", e)}
   on:keydown
   use:ariaLabelStore={arialabelString}
+  disabled={!$enabled}
   class={twJoin(
     "pointer-events-auto relative h-fit w-fit rounded-full",
     cls,
