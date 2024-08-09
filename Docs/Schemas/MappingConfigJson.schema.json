@@ -160,6 +160,10 @@
       ],
       "additionalProperties": false
     },
+    "Record<string,string>": {
+      "type": "object",
+      "additionalProperties": false
+    },
     "{or:TagConfigJson[];}": {
       "type": "object",
       "properties": {
@@ -173,10 +177,6 @@
       "required": [
         "or"
       ],
-      "additionalProperties": false
-    },
-    "Record<string,string>": {
-      "type": "object",
       "additionalProperties": false
     },
     "Record<string,string|Record<string,string>>": {

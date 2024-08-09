@@ -576,7 +576,7 @@ export class Changes {
                 if (createdIds.has(c.id)) {
                     toUpload.push(c)
                 } else {
-                    (this._reportError)(
+                    this._reportError(
                         `Got an orphaned change. The 'creation'-change description for ${c.type}/${c.id} got lost. Permanently dropping this change:` +
                             JSON.stringify(c)
                     )

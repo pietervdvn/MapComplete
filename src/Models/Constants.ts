@@ -160,7 +160,7 @@ export default class Constants {
         "teardrop",
         "teardrop_with_hole_green",
         "triangle",
-        "wifi"
+        "wifi",
     ] as const
     public static readonly defaultPinIcons: string[] = <any>Constants._defaultPinIcons
     /**

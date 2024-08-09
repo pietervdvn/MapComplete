@@ -24,7 +24,6 @@
     (t) => t?.id?.startsWith(LastClickFeatureSource.newPointElementId) ?? false
   )
 
-
   export let layer: LayerConfig
 
   let _metatags: Record<string, string>

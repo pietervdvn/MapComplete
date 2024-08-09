@@ -12,7 +12,7 @@ This layer shows dentist offices
 
 
 
- - This layer is shown at zoomlevel **13** and higher
+ - This layer is shown at zoomlevel **8** and higher
 
 
 

@@ -167,7 +167,8 @@
         "en": "Is this a post partner?",
         "de": "Ist dies ein Post-Partner?",
         "ca": "Aquesta botiga és un col·laborador postal?",
-        "cs": "Jedná se o partnerskou poštu?"
+        "cs": "Jedná se o partnerskou poštu?",
+        "nl": "Is dit een postkantoor?"
       },
       "mappings": [
         {
@@ -176,7 +177,8 @@
             "en": "This shop is a post partner",
             "de": "Dieses Geschäft ist ein Post-Partner",
             "ca": "Aquesta botiga és un col·laborador postal",
-            "cs": "Tento obchod je poštovním partnerem"
+            "cs": "Tento obchod je poštovním partnerem",
+            "nl": "Deze winkel is een geen postkantoor, maar heeft een post- en/of pakketpunt"
           }
         },
         {
@@ -477,7 +479,8 @@
           "then": {
             "en": "You can send parcels to here for pickup",
             "de": "Sie können Pakete zur Abholung hierher schicken",
-            "ca": "Pots enviar paquets aquí per a arreplegar-los"
+            "ca": "Pots enviar paquets aquí per a arreplegar-los",
+            "nl": "Je kunt pakketten naar dit afhaalpunt sturen"
           }
         },
         {

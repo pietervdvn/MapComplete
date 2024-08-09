@@ -113,7 +113,7 @@ export default class SubstitutingTag extends TagsFilter {
     }
 
     optimize(): (SubstitutingTag & OptimizedTag) | boolean {
-        return <any> this
+        return <any>this
     }
 
     isNegative(): boolean {

@@ -25,7 +25,7 @@ export class GenerateLicenseInfo extends Script {
             authors: ["Pieter Vander Vennet"],
             path: undefined,
             license: "CC0",
-            sources: []
+            sources: [],
         })
         knownLicenses.set("streetcomplete", {
             authors: ["Tobias Zwick (westnordost)"],
@@ -33,8 +33,8 @@ export class GenerateLicenseInfo extends Script {
             license: "CC0",
             sources: [
                 "https://github.com/streetcomplete/StreetComplete/tree/master/res/graphics",
-                "https://f-droid.org/packages/de.westnordost.streetcomplete/"
-            ]
+                "https://f-droid.org/packages/de.westnordost.streetcomplete/",
+            ],
         })
 
         knownLicenses.set("temaki", {
@@ -43,34 +43,34 @@ export class GenerateLicenseInfo extends Script {
             license: "CC0",
             sources: [
                 "https://github.com/ideditor/temaki",
-                "https://ideditor.github.io/temaki/docs/"
-            ]
+                "https://ideditor.github.io/temaki/docs/",
+            ],
         })
 
         knownLicenses.set("maki", {
             authors: ["Maki"],
             path: undefined,
             license: "CC0",
-            sources: ["https://labs.mapbox.com/maki-icons/"]
+            sources: ["https://labs.mapbox.com/maki-icons/"],
         })
 
         knownLicenses.set("t", {
             authors: [],
             path: undefined,
             license: "CC0; trivial",
-            sources: []
+            sources: [],
         })
         knownLicenses.set("na", {
             authors: [],
             path: undefined,
             license: "CC0",
-            sources: []
+            sources: [],
         })
         knownLicenses.set("carto", {
             authors: ["OSM-Carto"],
             path: undefined,
             license: "CC0",
-            sources: [""]
+            sources: [""],
         })
         knownLicenses.set("tv", {
             authors: ["Toerisme Vlaanderen"],
@@ -78,20 +78,20 @@ export class GenerateLicenseInfo extends Script {
             license: "CC0",
             sources: [
                 "https://toerismevlaanderen.be/pinjepunt",
-                "https://mapcomplete.org/toerisme_vlaanderenn"
-            ]
+                "https://mapcomplete.org/toerisme_vlaanderenn",
+            ],
         })
         knownLicenses.set("tvf", {
             authors: ["Jo De Baerdemaeker "],
             path: undefined,
             license: "All rights reserved",
-            sources: ["https://www.studiotype.be/fonts/flandersart"]
+            sources: ["https://www.studiotype.be/fonts/flandersart"],
         })
         knownLicenses.set("twemoji", {
             authors: ["Twemoji"],
             path: undefined,
             license: "CC-BY 4.0",
-            sources: ["https://github.com/twitter/twemoji"]
+            sources: ["https://github.com/twitter/twemoji"],
         })
         return knownLicenses
     }
@@ -147,36 +147,39 @@ export class GenerateLicenseInfo extends Script {
             const svg = await ScriptUtils.ReadSvg(icon)
 
             const colours = new Set<string>()
-            Utils.WalkObject(svg, leaf => {
-                const style = leaf["style"].split(";")
-                for (const styleElement of style) {
-                    const [key, value] = styleElement.split(":").map(x => x.trim())
-                    if (value === "none") {
-                        continue
+            Utils.WalkObject(
+                svg,
+                (leaf) => {
+                    const style = leaf["style"].split(";")
+                    for (const styleElement of style) {
+                        const [key, value] = styleElement.split(":").map((x) => x.trim())
+                        if (value === "none") {
+                            continue
+                        }
+                        if (key === "fill" || key === "stroke") {
+                            colours.add(value)
+                        }
+                        return colours
                     }
-                    if (key === "fill" || key === "stroke") {
-                        colours.add(value)
-                    }
-                    return colours
-                }
-            }, leaf => typeof leaf["style"] === "string" )
-            if(colours.size === 0){
+                },
+                (leaf) => typeof leaf["style"] === "string"
+            )
+            if (colours.size === 0) {
                 continue
             }
-            const whiteColours = Array.from(colours).map(c => {
+            const whiteColours = Array.from(colours).map((c) => {
                 const rgb = Utils.color(c)
-                if(!rgb){
+                if (!rgb) {
                     console.log("Could not parse ", c)
                     return false
                 }
-                const {r,g,b} = rgb
-                return (r > 245 && g > 245 && b > 245)
+                const { r, g, b } = rgb
+                return r > 245 && g > 245 && b > 245
             })
-            const hasDark = whiteColours.some(isWhite => !isWhite)
-            if(!hasDark){
+            const hasDark = whiteColours.some((isWhite) => !isWhite)
+            if (!hasDark) {
                 whitePaths.add(icon)
             }
-
         }
         return whitePaths
     }
@@ -228,7 +231,7 @@ export class GenerateLicenseInfo extends Script {
             authors: author.split(";"),
             path: path,
             license: prompt("What is the license for artwork " + path + "?  > "),
-            sources: prompt("Where was this artwork found?  > ").split(";")
+            sources: prompt("Where was this artwork found?  > ").split(";"),
         }
     }
 
@@ -261,7 +264,7 @@ export class GenerateLicenseInfo extends Script {
             "ISC-LICENSE": "ISC",
             "LOGO-BY-THE-GOVERNMENT": "LOGO",
             PD: "PUBLIC-DOMAIN",
-            "LOGO-(ALL-RIGHTS-RESERVED)": "LOGO"
+            "LOGO-(ALL-RIGHTS-RESERVED)": "LOGO",
             /*  ALL-RIGHTS-RESERVED:
             PD:
                 PUBLIC-DOMAIN:
@@ -292,7 +295,7 @@ export class GenerateLicenseInfo extends Script {
                 path: license.path,
                 license: license.license,
                 authors: license.authors,
-                sources: license.sources
+                sources: license.sources,
             }
 
             cloned.license = Utils.Dedup(
@@ -335,7 +338,7 @@ export class GenerateLicenseInfo extends Script {
     }
 
     queryMissingLicenses(missingLicenses: string[]) {
-        process.on("SIGINT", function() {
+        process.on("SIGINT", function () {
             console.log("Aborting... Bye!")
             process.exit()
         })
@@ -373,7 +376,7 @@ export class GenerateLicenseInfo extends Script {
                     licensePath.length - "license_info.json".length
                 )
                 license.path = dir + license.path
-                if(mostlyWhite.some(l => license.path === l)){
+                if (mostlyWhite.some((l) => license.path === l)) {
                     license["mostly_white"] = true
                 }
                 allLicenses.push(license)
@@ -421,7 +424,7 @@ export class GenerateLicenseInfo extends Script {
             if (licenseInfo.sources.length + licenseInfo.authors.length == 0 && !isTrivial) {
                 invalidLicenses.push(
                     "Invalid license: No sources nor authors given in the license for " +
-                    JSON.stringify(licenseInfo)
+                        JSON.stringify(licenseInfo)
                 )
                 continue
             }
@@ -444,10 +447,10 @@ export class GenerateLicenseInfo extends Script {
             const spdxContent = [
                 "SPDX-FileCopyrightText: " + licenseInfo.authors.join("; "),
                 "SPDX-License-Identifier: " +
-                licenseInfo.license
-                    .split(" AND ")
-                    .map((s) => this.addLicenseRef(s))
-                    .join(" AND ")
+                    licenseInfo.license
+                        .split(" AND ")
+                        .map((s) => this.addLicenseRef(s))
+                        .join(" AND "),
             ]
             writeFileSync(spdxPath, spdxContent.join("\n"))
         }

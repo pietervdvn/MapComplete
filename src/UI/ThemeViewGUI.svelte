@@ -19,7 +19,7 @@
     EyeIcon,
     HeartIcon,
     MenuIcon,
-    XCircleIcon
+    XCircleIcon,
   } from "@rgossiaux/svelte-heroicons/solid"
   import Tr from "./Base/Tr.svelte"
   import CommunityIndexView from "./BigComponents/CommunityIndexView.svelte"
@@ -121,7 +121,7 @@
   let visualFeedback = state.visualFeedback
   let viewport: UIEventSource<HTMLDivElement> = new UIEventSource<HTMLDivElement>(undefined)
   let mapproperties: MapProperties = state.mapProperties
-  let usersettingslayer = new LayerConfig(<LayerConfigJson> usersettings, "usersettings", true)
+  let usersettingslayer = new LayerConfig(<LayerConfigJson>usersettings, "usersettings", true)
   state.mapProperties.installCustomKeyboardHandler(viewport)
   let canZoomIn = mapproperties.maxzoom.map(
     (mz) => mapproperties.zoom.data < mz,
@@ -145,7 +145,7 @@
     const bottomRight = mlmap.unproject([rect.right, rect.bottom])
     const bbox = new BBox([
       [topLeft.lng, topLeft.lat],
-      [bottomRight.lng, bottomRight.lat]
+      [bottomRight.lng, bottomRight.lat],
     ])
     state.visualFeedbackViewportBounds.setData(bbox)
   }
@@ -285,10 +285,8 @@
           on:keydown={forwardEventToMap}
           htmlElem={openCurrentViewLayerButton}
         >
-          <div class="w-8 h-8 cursor-pointer">
-            <ToSvelte
-              construct={() => currentViewLayer.defaultIcon()}
-            />
+          <div class="h-8 w-8 cursor-pointer">
+            <ToSvelte construct={() => currentViewLayer.defaultIcon()} />
           </div>
         </MapControlButton>
       {/if}
@@ -299,9 +297,7 @@
         <div class="alert w-fit">Testmode</div>
       </If>
       {#if state.osmConnection.Backend().startsWith("https://master.apis.dev.openstreetmap.org")}
-        <div class="thanks">
-          Testserver
-        </div>
+        <div class="thanks">Testserver</div>
       {/if}
       <If condition={state.featureSwitches.featureSwitchFakeUser}>
         <div class="alert w-fit">Faking a user (Testmode)</div>
@@ -462,22 +458,21 @@
     {#if $selectedLayer.popupInFloatover === "title"}
       <FloatOver
         on:close={() => {
-        state.selectedElement.setData(undefined)
-      }}
+          state.selectedElement.setData(undefined)
+        }}
       >
         <span slot="close-button" />
-         <SelectedElementPanel absolute={false} {state} selected={$selectedElement} />
+        <SelectedElementPanel absolute={false} {state} selected={$selectedElement} />
       </FloatOver>
     {:else}
       <FloatOver
         on:close={() => {
-        state.selectedElement.setData(undefined)
-      }}
+          state.selectedElement.setData(undefined)
+        }}
       >
         <SelectedElementView {state} layer={$selectedLayer} selectedElement={$selectedElement} />
       </FloatOver>
     {/if}
-
   {/if}
 
   <If condition={state.previewedImage.map((i) => i !== undefined)}>
@@ -526,7 +521,7 @@
         </div>
 
         <div slot="content2" class="m-2 flex flex-col">
-          <CopyrightPanel {state}/>
+          <CopyrightPanel {state} />
         </div>
 
         <div class="flex" slot="title3">

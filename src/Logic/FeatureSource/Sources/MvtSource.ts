@@ -165,9 +165,12 @@ class MvtFeatureBuilder {
                 i += commandCount * 2
             }
             if (commandId === 7) {
-                if(currentRing.length === 0){
-                    console.error("Invalid MVT file: got a 'closePath', but the currentRing is empty. Full command:", commandInteger)
-                }else{
+                if (currentRing.length === 0) {
+                    console.error(
+                        "Invalid MVT file: got a 'closePath', but the currentRing is empty. Full command:",
+                        commandInteger
+                    )
+                } else {
                     currentRing.push([...currentRing[0]])
                 }
                 i++
@@ -438,7 +441,7 @@ export default class MvtSource implements FeatureSourceForTile, UpdatableFeature
             }
             this._features.setData(features)
         } catch (e) {
-            console.error("Could not download MVT "+this._url+" tile due to", e)
+            console.error("Could not download MVT " + this._url + " tile due to", e)
         }
     }
 

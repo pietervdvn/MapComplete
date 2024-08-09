@@ -331,6 +331,42 @@
       "value": "thai"
     },
     {
+      "key": "image",
+      "description": "The layer 'Dog friendly eateries shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Dog friendly eateries shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Dog friendly eateries shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Dog friendly eateries shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Dog friendly eateries allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Dog friendly eateries allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Dog friendly eateries allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Dog friendly eateries allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "website:menu",
+      "description": "Layer 'Dog friendly eateries' shows and asks freeform values for key 'website:menu' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
+    },
+    {
       "key": "reservation",
       "description": "Layer 'Dog friendly eateries' shows reservation=required with a fixed text, namely 'A reservation is required at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if takeaway!=only)",
       "value": "required"
@@ -748,8 +784,8 @@
     },
     {
       "key": "shop",
-      "description": "Layer 'Dog-friendly shops' shows shop=vacant with a fixed text, namely 'Vacant Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if craft=)",
-      "value": "vacant"
+      "description": "Layer 'Dog-friendly shops' shows shop=bicycle_rental with a fixed text, namely 'Bicycle rental shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if craft=)",
+      "value": "bicycle_rental"
     },
     {
       "key": "shop",
@@ -1577,17 +1613,17 @@
     },
     {
       "key": "second_hand",
-      "description": "Layer 'Dog-friendly shops' shows second_hand=only with a fixed text, namely 'This shop sells second-hand items <b>only</b>' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if shop=clothes | shop=car | shop=books | shop=charity | shop=car_repair | shop=furniture | shop=bicycle | shop=bicycle | shop=mobile_phone | shop=computer | shop=toys)",
+      "description": "Layer 'Dog-friendly shops' shows second_hand=only with a fixed text, namely 'This shop sells second-hand items <b>only</b>' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if shop=clothes | shop=books | shop=charity | shop=furniture | shop=mobile_phone | shop=computer | shop=toys)",
       "value": "only"
     },
     {
       "key": "second_hand",
-      "description": "Layer 'Dog-friendly shops' shows second_hand=yes with a fixed text, namely 'This shop sells second-hand items along with new items' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if shop=clothes | shop=car | shop=books | shop=charity | shop=car_repair | shop=furniture | shop=bicycle | shop=bicycle | shop=mobile_phone | shop=computer | shop=toys)",
+      "description": "Layer 'Dog-friendly shops' shows second_hand=yes with a fixed text, namely 'This shop sells second-hand items along with new items' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if shop=clothes | shop=books | shop=charity | shop=furniture | shop=mobile_phone | shop=computer | shop=toys)",
       "value": "yes"
     },
     {
       "key": "second_hand",
-      "description": "Layer 'Dog-friendly shops' shows second_hand=no with a fixed text, namely 'This shop only sells brand-new items' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if shop=clothes | shop=car | shop=books | shop=charity | shop=car_repair | shop=furniture | shop=bicycle | shop=bicycle | shop=mobile_phone | shop=computer | shop=toys)",
+      "description": "Layer 'Dog-friendly shops' shows second_hand=no with a fixed text, namely 'This shop only sells brand-new items' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if shop=clothes | shop=books | shop=charity | shop=furniture | shop=mobile_phone | shop=computer | shop=toys)",
       "value": "no"
     },
     {
@@ -1727,6 +1763,202 @@
       "value": "no"
     },
     {
+      "key": "service:bicycle:retail",
+      "description": "Layer 'Dog-friendly shops' shows service:bicycle:retail=yes with a fixed text, namely 'This shop sells new bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if service:bicycle:retail~.+ | shop=outdoor | shop=sport | shop=diy | shop=doityourself)",
+      "value": "yes"
+    },
+    {
+      "key": "service:bicycle:retail",
+      "description": "Layer 'Dog-friendly shops' shows service:bicycle:retail=no with a fixed text, namely 'This shop doesn't sell new bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if service:bicycle:retail~.+ | shop=outdoor | shop=sport | shop=diy | shop=doityourself)",
+      "value": "no"
+    },
+    {
+      "key": "service:bicycle:second_hand",
+      "description": "Layer 'Dog-friendly shops' shows service:bicycle:second_hand=yes with a fixed text, namely 'This shop sells second-hand bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if service:bicycle:second_hand~.+ | shop=bicycle | shop=charity | shop=second_hand | shop=bicycle_repair)",
+      "value": "yes"
+    },
+    {
+      "key": "service:bicycle:second_hand",
+      "description": "Layer 'Dog-friendly shops' shows service:bicycle:second_hand=no with a fixed text, namely 'This shop doesn't sell second-hand bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if service:bicycle:second_hand~.+ | shop=bicycle | shop=charity | shop=second_hand | shop=bicycle_repair)",
+      "value": "no"
+    },
+    {
+      "key": "service:bicycle:second_hand",
+      "description": "Layer 'Dog-friendly shops' shows service:bicycle:second_hand=only with a fixed text, namely 'This shop only sells second-hand bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if service:bicycle:second_hand~.+ | shop=bicycle | shop=charity | shop=second_hand | shop=bicycle_repair)",
+      "value": "only"
+    },
+    {
+      "key": "service:bicycle:repair",
+      "description": "Layer 'Dog-friendly shops' shows service:bicycle:repair=yes with a fixed text, namely 'This shop repairs bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if service:bicycle:repair~.+ | shop=sport | shop=outdoor | shop=bicycle | service:bicycle:retail=yes | service:bicycle:second_hand=yes | service:bicycle:second_hand=only)",
+      "value": "yes"
+    },
+    {
+      "key": "service:bicycle:repair",
+      "description": "Layer 'Dog-friendly shops' shows service:bicycle:repair=no with a fixed text, namely 'This shop doesn't repair bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if service:bicycle:repair~.+ | shop=sport | shop=outdoor | shop=bicycle | service:bicycle:retail=yes | service:bicycle:second_hand=yes | service:bicycle:second_hand=only)",
+      "value": "no"
+    },
+    {
+      "key": "service:bicycle:repair",
+      "description": "Layer 'Dog-friendly shops' shows service:bicycle:repair=only_sold with a fixed text, namely 'This shop only repairs bikes bought here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if service:bicycle:repair~.+ | shop=sport | shop=outdoor | shop=bicycle | service:bicycle:retail=yes | service:bicycle:second_hand=yes | service:bicycle:second_hand=only)",
+      "value": "only_sold"
+    },
+    {
+      "key": "service:bicycle:repair",
+      "description": "Layer 'Dog-friendly shops' shows service:bicycle:repair=brand with a fixed text, namely 'This shop only repairs bikes of a certain brand' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if service:bicycle:repair~.+ | shop=sport | shop=outdoor | shop=bicycle | service:bicycle:retail=yes | service:bicycle:second_hand=yes | service:bicycle:second_hand=only)",
+      "value": "brand"
+    },
+    {
+      "key": "service:bicycle:rental",
+      "description": "Layer 'Dog-friendly shops' shows service:bicycle:rental=yes with a fixed text, namely 'This shop rents out bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if service:bicycle:rental~.+ | shop=bicycle | shop=sport | shop=bicycle_repair | shop=outdoor | shop=rental)",
+      "value": "yes"
+    },
+    {
+      "key": "service:bicycle:rental",
+      "description": "Layer 'Dog-friendly shops' shows service:bicycle:rental=no with a fixed text, namely 'This shop doesn't rent out bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if service:bicycle:rental~.+ | shop=bicycle | shop=sport | shop=bicycle_repair | shop=outdoor | shop=rental)",
+      "value": "no"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Dog-friendly shops' shows and asks freeform values for key 'rental' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if (service:bicycle:rental=yes | bicycle_rental~.+))"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Dog-friendly shops' shows rental=city_bike with a fixed text, namely 'Normal city bikes can be rented here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if (service:bicycle:rental=yes | bicycle_rental~.+))",
+      "value": "city_bike"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Dog-friendly shops' shows rental=ebike with a fixed text, namely 'Electrical bikes can be rented here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if (service:bicycle:rental=yes | bicycle_rental~.+))",
+      "value": "ebike"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Dog-friendly shops' shows rental=bmx with a fixed text, namely 'BMX bikes can be rented here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if (service:bicycle:rental=yes | bicycle_rental~.+))",
+      "value": "bmx"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Dog-friendly shops' shows rental=mtb with a fixed text, namely 'Mountainbikes can be rented here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if (service:bicycle:rental=yes | bicycle_rental~.+))",
+      "value": "mtb"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Dog-friendly shops' shows rental=kid_bike with a fixed text, namely 'Bikes for children can be rented here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if (service:bicycle:rental=yes | bicycle_rental~.+))",
+      "value": "kid_bike"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Dog-friendly shops' shows rental=tandem with a fixed text, namely 'Tandem bicycles can be rented here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if (service:bicycle:rental=yes | bicycle_rental~.+))",
+      "value": "tandem"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Dog-friendly shops' shows rental=racebike with a fixed text, namely 'Race bicycles can be rented here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if (service:bicycle:rental=yes | bicycle_rental~.+))",
+      "value": "racebike"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Dog-friendly shops' shows rental=bike_helmet with a fixed text, namely 'Bike helmets can be rented here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if (service:bicycle:rental=yes | bicycle_rental~.+))",
+      "value": "bike_helmet"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Dog-friendly shops' shows rental=cargo_bike with a fixed text, namely 'Cargo bikes can be rented here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if (service:bicycle:rental=yes | bicycle_rental~.+))",
+      "value": "cargo_bike"
+    },
+    {
+      "key": "capacity:city_bike",
+      "description": "Layer 'Dog-friendly shops' shows and asks freeform values for key 'capacity:city_bike' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if rental~^(.*city_bike.*)$ & (service:bicycle:rental=yes | bicycle_rental~.+))"
+    },
+    {
+      "key": "capacity:ebike",
+      "description": "Layer 'Dog-friendly shops' shows and asks freeform values for key 'capacity:ebike' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if rental~^(.*ebike.*)$ & (service:bicycle:rental=yes | bicycle_rental~.+))"
+    },
+    {
+      "key": "capacity:kid_bike",
+      "description": "Layer 'Dog-friendly shops' shows and asks freeform values for key 'capacity:kid_bike' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if rental~^(.*kid_bike.*)$ & (service:bicycle:rental=yes | bicycle_rental~.+))"
+    },
+    {
+      "key": "capacity:bmx",
+      "description": "Layer 'Dog-friendly shops' shows and asks freeform values for key 'capacity:bmx' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if rental~^(.*bmx.*)$ & (service:bicycle:rental=yes | bicycle_rental~.+))"
+    },
+    {
+      "key": "capacity:mtb",
+      "description": "Layer 'Dog-friendly shops' shows and asks freeform values for key 'capacity:mtb' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if rental~^(.*mtb.*)$ & (service:bicycle:rental=yes | bicycle_rental~.+))"
+    },
+    {
+      "key": "capacity:bicycle_pannier",
+      "description": "Layer 'Dog-friendly shops' shows and asks freeform values for key 'capacity:bicycle_pannier' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if rental~^(.*bicycle_pannier.*)$ & (service:bicycle:rental=yes | bicycle_rental~.+))"
+    },
+    {
+      "key": "capacity:tandem_bicycle",
+      "description": "Layer 'Dog-friendly shops' shows and asks freeform values for key 'capacity:tandem_bicycle' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if rental~^(.*tandem_bicycle.*)$ & (service:bicycle:rental=yes | bicycle_rental~.+))"
+    },
+    {
+      "key": "service:bicycle:pump",
+      "description": "Layer 'Dog-friendly shops' shows service:bicycle:pump=yes with a fixed text, namely 'This shop offers a bike pump for anyone' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if service:bicycle:pump~.+ | shop=bicycle | shop=bicycle_repair | service:bicycle:retail=yes | ^(service:bicycle:.+)$~~^(yes)$)",
+      "value": "yes"
+    },
+    {
+      "key": "service:bicycle:pump",
+      "description": "Layer 'Dog-friendly shops' shows service:bicycle:pump=no with a fixed text, namely 'This shop doesn't offer a bike pump for anyone' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if service:bicycle:pump~.+ | shop=bicycle | shop=bicycle_repair | service:bicycle:retail=yes | ^(service:bicycle:.+)$~~^(yes)$)",
+      "value": "no"
+    },
+    {
+      "key": "service:bicycle:pump",
+      "description": "Layer 'Dog-friendly shops' shows service:bicycle:pump=separate with a fixed text, namely 'There is bicycle pump, it is shown as a separate point' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if service:bicycle:pump~.+ | shop=bicycle | shop=bicycle_repair | service:bicycle:retail=yes | ^(service:bicycle:.+)$~~^(yes)$)",
+      "value": "separate"
+    },
+    {
+      "key": "service:bicycle:diy",
+      "description": "Layer 'Dog-friendly shops' shows service:bicycle:diy=yes with a fixed text, namely 'This shop offers tools for DIY bicycle repair' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if service:bicycle:diy~.+ | shop=bicycle | shop=bicycle_repair | service:bicycle:repair~^(yes|only)$)",
+      "value": "yes"
+    },
+    {
+      "key": "service:bicycle:diy",
+      "description": "Layer 'Dog-friendly shops' shows service:bicycle:diy=no with a fixed text, namely 'This shop doesn't offer tools for DIY bicycle repair' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if service:bicycle:diy~.+ | shop=bicycle | shop=bicycle_repair | service:bicycle:repair~^(yes|only)$)",
+      "value": "no"
+    },
+    {
+      "key": "service:bicycle:diy",
+      "description": "Layer 'Dog-friendly shops' shows service:bicycle:diy=only_sold with a fixed text, namely 'Tools for DIY bicycle repair are only available if you bought/hire the bike in the shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if service:bicycle:diy~.+ | shop=bicycle | shop=bicycle_repair | service:bicycle:repair~^(yes|only)$)",
+      "value": "only_sold"
+    },
+    {
+      "key": "service:bicycle:cleaning",
+      "description": "Layer 'Dog-friendly shops' shows service:bicycle:cleaning=yes with a fixed text, namely 'This shop cleans bicycles' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if service:bicycle:cleaning~.+ | shop=bicycle | shop=bicycle_repair | ^(service:bicycle:.*)$~~^(yes|only)$)",
+      "value": "yes"
+    },
+    {
+      "key": "service:bicycle:cleaning",
+      "description": "Layer 'Dog-friendly shops' shows service:bicycle:cleaning=diy with a fixed text, namely 'This shop has an installation where one can clean bicycles themselves' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if service:bicycle:cleaning~.+ | shop=bicycle | shop=bicycle_repair | ^(service:bicycle:.*)$~~^(yes|only)$)",
+      "value": "diy"
+    },
+    {
+      "key": "service:bicycle:cleaning",
+      "description": "Layer 'Dog-friendly shops' shows service:bicycle:cleaning=no with a fixed text, namely 'This shop doesn't offer bicycle cleaning' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if service:bicycle:cleaning~.+ | shop=bicycle | shop=bicycle_repair | ^(service:bicycle:.*)$~~^(yes|only)$)",
+      "value": "no"
+    },
+    {
+      "key": "service:bicycle:cleaning:charge",
+      "description": "Layer 'Dog-friendly shops' shows and asks freeform values for key 'service:bicycle:cleaning:charge' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if amenity!=bike_wash & amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+)"
+    },
+    {
+      "key": "service:bicycle:cleaning:fee",
+      "description": "Layer 'Dog-friendly shops' shows service:bicycle:cleaning:fee=no with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if amenity!=bike_wash & amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+)",
+      "value": "no"
+    },
+    {
+      "key": "service:bicycle:cleaning:fee",
+      "description": "Layer 'Dog-friendly shops' shows service:bicycle:cleaning:fee=yes & service:bicycle:cleaning:charge= with a fixed text, namely 'Free to use' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if amenity!=bike_wash & amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+)",
+      "value": "yes"
+    },
+    {
+      "key": "service:bicycle:cleaning:charge",
+      "description": "Layer 'Dog-friendly shops' shows service:bicycle:cleaning:fee=yes & service:bicycle:cleaning:charge= with a fixed text, namely 'Free to use' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') Picking this answer will delete the key service:bicycle:cleaning:charge. (This is only shown if amenity!=bike_wash & amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+)",
+      "value": ""
+    },
+    {
       "key": "internet_access",
       "description": "Layer 'Dog-friendly shops' shows internet_access=wlan with a fixed text, namely 'This place offers wireless internet access' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
       "value": "wlan"
@@ -1851,6 +2083,10 @@
       "value": "no"
     },
     {
+      "key": "description",
+      "description": "Layer 'Dog-friendly shops' shows and asks freeform values for key 'description' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
+    },
+    {
       "key": "amenity",
       "description": "The MapComplete theme Veterinarians, dog parks and other pet-amenities has a layer veterinary showing features with this tag",
       "value": "veterinary"
@@ -1966,12 +2202,17 @@
     },
     {
       "key": "opening_hours",
-      "description": "Layer 'Animal shelters' shows opening_hours=\"by appointment\" with a fixed text, namely 'Only by appointment' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
+      "description": "Layer 'Animal shelters' shows opening_hours=\"by appointment\" with a fixed text, namely 'Only by appointment' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
       "value": "\"by appointment\""
     },
     {
       "key": "opening_hours",
       "description": "Layer 'Animal shelters' shows opening_hours~^(\"by appointment\"|by appointment)$ with a fixed text, namely 'Only by appointment' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Animal shelters' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "closed"
     },
     {
       "key": "animal_shelter",

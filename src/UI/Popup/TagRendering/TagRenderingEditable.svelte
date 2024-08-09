@@ -105,7 +105,9 @@
         </button>
       </TagRenderingQuestion>
     {:else}
-      <div class="low-interaction flex items-center justify-between overflow-hidden rounded pl-2 answer">
+      <div
+        class="low-interaction answer flex items-center justify-between overflow-hidden rounded pl-2"
+      >
         <TagRenderingAnswer
           id={answerId}
           {config}
@@ -130,14 +132,13 @@
     <TagRenderingAnswer {config} {tags} {selectedElement} {state} {layer} />
   {/if}
 </div>
+
 <style>
+  .answer {
+    border: 1px solid #00000000;
+  }
 
-    .answer {
-        border: 1px solid #00000000;
-    }
-
-    .answer:has(.edit-button:hover) {
-        border: 1px solid var(--catch-detail-color-contrast);
-    }
-
+  .answer:has(.edit-button:hover) {
+    border: 1px solid var(--catch-detail-color-contrast);
+  }
 </style>

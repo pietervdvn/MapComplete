@@ -198,7 +198,7 @@ export default class MetaTagging {
         for (let i = 0; i < features.length; i++) {
             const feature = features[i]
             const tags = featurePropertiesStores?.getStore(feature.properties.id)
-            if(!tags){
+            if (!tags) {
                 continue
             }
             let somethingChanged = false

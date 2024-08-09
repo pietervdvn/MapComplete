@@ -126,7 +126,7 @@
   {:else if icon === "party"}
     <Party {color} class={clss} />
   {:else if icon === "cross_bottom_right"}
-    <Cross_bottom_right {color} class={"m-0 "+clss} />
+    <Cross_bottom_right {color} class={"m-0 " + clss} />
   {:else if icon === "addSmall"}
     <AddSmall {color} class={clss} />
   {:else if icon === "gear"}
@@ -136,9 +136,9 @@
   {:else if icon === "popout"}
     <LinkIcon style="--svg-color: {color}" />
   {:else if icon === "wifi"}
-    <WifiIcon class={"m-0 " +clss} {color} />
-    {:else if icon === "computer"}
-    <DesktopComputerIcon class={"m-0 "+clss} {color} />
+    <WifiIcon class={"m-0 " + clss} {color} />
+  {:else if icon === "computer"}
+    <DesktopComputerIcon class={"m-0 " + clss} {color} />
   {:else if Utils.isEmoji(icon)}
     <span style={`font-size: ${emojiHeight}px; line-height: ${emojiHeight}px`}>
       {icon}

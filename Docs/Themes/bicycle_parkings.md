@@ -23,6 +23,7 @@ Available languages:
  - da
  - es
  - zh_Hans
+ - it
 
 
 # Layers defined in this theme configuration file

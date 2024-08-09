@@ -1,5 +1,4 @@
 <script lang="ts">
-
   import { UIEventSource } from "../../Logic/UIEventSource"
   import Dropdown from "../Base/Dropdown.svelte"
   import Tr from "../Base/Tr.svelte"
@@ -14,7 +13,6 @@
 
   const t = Translations.t.general.opening_hours
   let mode = new UIEventSource("")
-
 
   value
     .map((ph) => OH.ParsePHRule(ph))
@@ -47,11 +45,9 @@
   startValue.addCallbackAndRunD(() => updateValue())
   endValue.addCallbackAndRunD(() => updateValue())
   mode.addCallbackAndRunD(() => updateValue())
-
 </script>
 
 <label>
-
   <Tr t={t.open_during_ph} />
 
   <Dropdown value={mode}>
@@ -67,7 +63,8 @@
       <Tr t={t.ph_open_as_usual} />
     </option>
 
-    <option value={" "}> <!-- Yes, the value is a single space-->
+    <option value={" "}>
+      <!-- Yes, the value is a single space-->
       <Tr t={t.ph_open} />
     </option>
   </Dropdown>
@@ -76,20 +73,20 @@
 {#if $mode === " "}
   <div class="flex">
     <Tr t={t.opensAt} />
-    <ToSvelte construct={
-
-    new TextField({
-    value: startValue,
-    placeholder: "starthour",
-    htmlType: "time",
-  }).SetClass("inline-block")
-    } />
+    <ToSvelte
+      construct={new TextField({
+        value: startValue,
+        placeholder: "starthour",
+        htmlType: "time",
+      }).SetClass("inline-block")}
+    />
     <Tr t={t.openTill} />
-    <ToSvelte construct={    new TextField({
-    value: endValue,
-    placeholder: "endhour",
-    htmlType: "time",
-  }).SetClass("inline-block")
-    } />
+    <ToSvelte
+      construct={new TextField({
+        value: endValue,
+        placeholder: "endhour",
+        htmlType: "time",
+      }).SetClass("inline-block")}
+    />
   </div>
 {/if}

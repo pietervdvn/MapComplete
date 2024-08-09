@@ -123,7 +123,7 @@ export default class ComparingTag extends TagsFilter {
     }
 
     optimize(): (ComparingTag & OptimizedTag) | boolean {
-        return <any> this
+        return <any>this
     }
 
     isNegative(): boolean {

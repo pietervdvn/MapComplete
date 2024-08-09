@@ -54,8 +54,14 @@ export class Overpass {
         return `${this._interpreterUrl}?data=${encodeURIComponent(query)}`
     }
 
-    private async ExecuteQuery(query: string): Promise<[FeatureCollection<Geometry, OsmTags>, Date]> {
-        const json = await Utils.downloadJson<{elements: [], remark, osm3s: {timestamp_osm_base: string}}>(this.buildUrl(query))
+    private async ExecuteQuery(
+        query: string
+    ): Promise<[FeatureCollection<Geometry, OsmTags>, Date]> {
+        const json = await Utils.downloadJson<{
+            elements: []
+            remark
+            osm3s: { timestamp_osm_base: string }
+        }>(this.buildUrl(query))
 
         if (json.elements.length === 0 && json.remark !== undefined) {
             console.warn("Timeout or other runtime error while querying overpass", json.remark)

@@ -139,7 +139,11 @@ export default class OpeningHoursInput extends InputElement<string> {
 
         const ohPicker = new OpeningHoursPicker(rulesFromOhPicker)
 
-        this._element = new Combine([leftoverWarning, ohPicker, new SvelteUIElement(PublicHolidaySelector, {value: phSelectorValue})])
+        this._element = new Combine([
+            leftoverWarning,
+            ohPicker,
+            new SvelteUIElement(PublicHolidaySelector, { value: phSelectorValue }),
+        ])
     }
 
     GetValue(): UIEventSource<string> {

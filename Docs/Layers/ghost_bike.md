@@ -21,7 +21,7 @@ A layer showing memorials for cyclists, killed in road accidents
 1. [Themes using this layer](#themes-using-this-layer)
 2. [Basic tags for this layer](#basic-tags-for-this-layer)
 3. [Supported attributes](#supported-attributes)
-  - [ghost-bike-explanation](#ghost-bike-explanation)
+  - [preset_description](#preset_description)
   - [images](#images)
   - [ghost_bike-name](#ghost_bike-name)
   - [ghost_bike-source](#ghost_bike-source)
@@ -64,10 +64,10 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 
 
 
-### ghost-bike-explanation
+### preset_description
 
 _This tagrendering has no question and is thus read-only_
-*A <b>ghost bike</b> is a memorial for a cyclist who died in a traffic accident, in the form of a white bicycle placed permanently near the accident location.*
+*{preset_description()}*
 
 
 

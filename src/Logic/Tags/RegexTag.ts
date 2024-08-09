@@ -356,7 +356,7 @@ export class RegexTag extends TagsFilter {
     }
 
     optimize(): (RegexTag & OptimizedTag) | boolean {
-        return <any> this
+        return <any>this
     }
 
     isNegative(): boolean {

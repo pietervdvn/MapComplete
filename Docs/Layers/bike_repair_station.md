@@ -47,6 +47,7 @@ A layer showing bicycle pumps and bicycle repair tool stands
 
 
 
+ - [circular_economy](https://mapcomplete.org/circular_economy)
  - [cyclofix](https://mapcomplete.org/cyclofix)
  - [personal](https://mapcomplete.org/personal)
  - [toerisme_vlaanderen](https://mapcomplete.org/toerisme_vlaanderen)

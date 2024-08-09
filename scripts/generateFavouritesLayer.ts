@@ -164,7 +164,9 @@ export class GenerateFavouritesLayer extends Script {
                 continue
             }
             if (optimized === false) {
-                throw `Optimized ${TagUtils.Tag({or: conditions}).asHumanString()} into 'false', this is weird...`
+                throw `Optimized ${TagUtils.Tag({
+                    or: conditions,
+                }).asHumanString()} into 'false', this is weird...`
             }
             tr.condition = optimized
         }

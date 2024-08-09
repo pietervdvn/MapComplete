@@ -10,6 +10,8 @@ This theme contains the following layers:
 
 
  - [artwork](../Layers/artwork.md)
+ - [memorial](../Layers/memorial.md)
+ - [bench](../Layers/bench.md)
  - [walls_and_buildings](../Layers/walls_and_buildings.md)
 
 

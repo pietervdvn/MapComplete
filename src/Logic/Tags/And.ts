@@ -194,11 +194,17 @@ export class And extends TagsFilter {
      * const expr = <And> TagUtils.Tag({and: ["sport=climbing", {or:["club~*", "office~*"]}]} )
      * expr.removePhraseConsideredKnown(new Tag("club","climbing"), false) // => expr
      */
-    removePhraseConsideredKnown(knownExpression: TagsFilter, value: boolean): (TagsFilterClosed & OptimizedTag) | boolean {
+    removePhraseConsideredKnown(
+        knownExpression: TagsFilter,
+        value: boolean
+    ): (TagsFilterClosed & OptimizedTag) | boolean {
         const newAnds: TagsFilter[] = []
         for (const tag of this.and) {
             if (tag instanceof And) {
-                throw "Optimize expressions before using removePhraseConsideredKnown. Found an AND in an AND: " + this.asHumanString()
+                throw (
+                    "Optimize expressions before using removePhraseConsideredKnown. Found an AND in an AND: " +
+                    this.asHumanString()
+                )
             }
             if (tag instanceof Or) {
                 // Second try
@@ -449,9 +455,9 @@ export class And extends TagsFilter {
             } else {
                 const newOrs: TagsFilterClosed[] = []
                 for (const containedOr of containedOrs) {
-                    const elements: (FlatTag | (And & OptimizedTag))[] = TagTypes.safeOr( containedOr).filter(
-                        (candidate) => !commonValues.some((cv) => cv.shadows(candidate))
-                    )
+                    const elements: (FlatTag | (And & OptimizedTag))[] = TagTypes.safeOr(
+                        containedOr
+                    ).filter((candidate) => !commonValues.some((cv) => cv.shadows(candidate)))
                     if (elements.length > 0) {
                         newOrs.push(Or.construct(elements))
                     }
@@ -464,7 +470,7 @@ export class And extends TagsFilter {
                     return false
                 } else if (result === true) {
                     // neutral element: skip
-                }else if(result instanceof And) {
+                } else if (result instanceof And) {
                     newAnds.push(...TagTypes.safeAnd(result))
                 } else {
                     newAnds.push(result)

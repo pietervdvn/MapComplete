@@ -351,6 +351,9 @@ export default {
         "and"
       ]
     },
+    "Record<string,string>": {
+      "type": "object"
+    },
     "{or:TagConfigJson[];}": {
       "type": "object",
       "properties": {
@@ -364,9 +367,6 @@ export default {
       "required": [
         "or"
       ]
-    },
-    "Record<string,string>": {
-      "type": "object"
     },
     "Record<string,string|Record<string,string>>": {
       "type": "object"
@@ -1770,7 +1770,15 @@ export default {
                 "description": "The tags that will be given to the object.\nThis must remove tags so that the 'source/osmTags' won't match anymore\n\nquestion: What tags should be applied to the object?"
               },
               "then": {
-                "description": "The human explanation for the options\n\nquestion: What text should be shown to the contributor for this reason?"
+                "description": "The human explanation for the options\n\nquestion: What text should be shown to the contributor for this reason?",
+                "anyOf": [
+                  {
+                    "$ref": "#/definitions/Record<string,string>"
+                  },
+                  {
+                    "type": "string"
+                  }
+                ]
               }
             },
             "required": [

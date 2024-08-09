@@ -1096,7 +1096,10 @@ class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
                         continue
                     }
 
-                    if(txt.indexOf(json.freeform.key) >= 0 && txt.indexOf("{"+json.freeform.key+"}") < 0){
+                    if (
+                        txt.indexOf(json.freeform.key) >= 0 &&
+                        txt.indexOf("{" + json.freeform.key + "}") < 0
+                    ) {
                         context
                             .enter("render")
                             .err(
@@ -1104,7 +1107,6 @@ class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
                             )
                         continue
                     }
-
 
                     context
                         .enter("render")

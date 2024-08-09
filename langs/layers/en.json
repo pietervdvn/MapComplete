@@ -515,6 +515,17 @@
                     }
                 },
                 "question": "Does this artwork serve as a bench?"
+            },
+            "doubles_as_memorial": {
+                "mappings": {
+                    "0": {
+                        "then": "This artwork also serves as a memorial"
+                    },
+                    "1": {
+                        "then": "This artwork does not serve as a bench"
+                    }
+                },
+                "question": "Does this artwork serve as a memorial?"
             }
         },
         "title": {
@@ -3813,6 +3824,17 @@
     "dentist": {
         "description": "This layer shows dentist offices",
         "name": "Dentist",
+        "pointRendering": {
+            "0": {
+                "label": {
+                    "mappings": {
+                        "0": {
+                            "then": "{name}"
+                        }
+                    }
+                }
+            }
+        },
         "presets": {
             "0": {
                 "title": "a dentists office"
@@ -5042,6 +5064,13 @@
                 },
                 "question": "Does this restaurant have a vegetarian option?"
             },
+            "add-menu-image": {
+                "render": {
+                    "special": {
+                        "label": "Add an image from the menu"
+                    }
+                }
+            },
             "delivery": {
                 "mappings": {
                     "0": {
@@ -5136,6 +5165,14 @@
                     }
                 },
                 "question": "Does this restaurant offer a halal menu?"
+            },
+            "menu-website": {
+                "question": "On what webpage is the menu published?",
+                "render": {
+                    "special": {
+                        "text": "Consult the menu"
+                    }
+                }
             },
             "organic (no friture)": {
                 "mappings": {
@@ -7302,6 +7339,9 @@
                     },
                     "9": {
                         "then": "The surface is made from rubber, such as rubber tiles, rubber mulch or a big rubber area"
+                    },
+                    "10": {
+                        "then": "The surface is <b>fine gravel</b> (less then 2 cm per stone)"
                     }
                 },
                 "question": "Which is the surface of this playground?",

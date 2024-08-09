@@ -30,6 +30,7 @@ Available languages:
  - eu
  - pl
  - zh_Hans
+ - it
 
 
 # Layers defined in this theme configuration file

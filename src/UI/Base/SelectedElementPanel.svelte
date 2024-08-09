@@ -26,14 +26,13 @@
     return state.layout.getMatchingLayer(properties)
   }
 
-
   let layer = getLayer(selected.properties)
 
   let stillMatches = tags.map(
     (tags) => !layer?.source?.osmTags || layer?.source?.osmTags?.matchesProperties(tags)
   )
   onDestroy(
-    stillMatches.addCallbackAndRunD(matches => {
+    stillMatches.addCallbackAndRunD((matches) => {
       if (matches) {
         return
       }
@@ -42,7 +41,7 @@
        * However, because there are quite some legacy elements and some elements have a different layer calculation,
        * we simply close the popup and open it again.
        * See #1956
-      */
+       */
       state.selectedElement.setData(undefined)
       requestAnimationFrame(() => {
         state.selectedElement.setData(selected)
@@ -51,11 +50,10 @@
   )
 </script>
 
-
 {#if !$stillMatches}
   <Loading />
 {:else}
-  <div class="normal-background flex h-full w-full flex-col" class:absolute={absolute}>
+  <div class="normal-background flex h-full w-full flex-col" class:absolute>
     <SelectedElementTitle {state} {layer} selectedElement={selected} />
     <SelectedElementView {state} {layer} selectedElement={selected} />
   </div>

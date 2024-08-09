@@ -476,7 +476,10 @@ export class TagUtils {
      * regex.matchesProperties({maxspeed: "50 mph"}) // => true
      */
 
-    public static Tag(json: TagConfigJson, context: string | ConversionContext = ""): TagsFilterClosed {
+    public static Tag(
+        json: TagConfigJson,
+        context: string | ConversionContext = ""
+    ): TagsFilterClosed {
         try {
             const ctx = typeof context === "string" ? context : context.path.join(".")
             return this.ParseTagUnsafe(json, ctx)

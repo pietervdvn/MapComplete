@@ -353,6 +353,10 @@
           "then": "<b>assembly_point</b> (builtin) - This layer contains assembly points and waiting areas where all employees, passengers or a large crowd assemble in case of an emergency."
         },
         {
+          "if": "value=assisted_repair",
+          "then": "<b>assisted_repair</b> (builtin) - A self-assisted workshop is a location where people can come and repair their goods with help of volunteers and with the tools available at the given location.  A repair café is a type of event organized regularly along the same principles."
+        },
+        {
           "if": "value=atm",
           "then": "<b>atm</b> (builtin) - ATMs to withdraw money"
         },
@@ -891,6 +895,10 @@
         {
           "if": "value=toilet_at_amenity",
           "then": "<b>toilet_at_amenity</b> (builtin) - A layer showing (public) toilets located at different places."
+        },
+        {
+          "if": "value=tool_library",
+          "then": "<b>tool_library</b> (builtin) - A tool library is a place where people from the general public can borrow tools"
         },
         {
           "if": "value=trail",
@@ -1767,7 +1775,15 @@
                           "description": "The tags that will be given to the object.\nThis must remove tags so that the 'source/osmTags' won't match anymore\n\nquestion: What tags should be applied to the object?"
                         },
                         "then": {
-                          "description": "The human explanation for the options\n\nquestion: What text should be shown to the contributor for this reason?"
+                          "description": "The human explanation for the options\n\nquestion: What text should be shown to the contributor for this reason?",
+                          "anyOf": [
+                            {
+                              "$ref": "#/definitions/Record<string,string>"
+                            },
+                            {
+                              "type": "string"
+                            }
+                          ]
                         }
                       },
                       "required": [
@@ -3708,9 +3724,19 @@
       "question": "What icon should be used?",
       "suggestions": [
         {
-          "if": "value=pin",
-          "then": "pin",
-          "icon": "pin"
+          "if": "value=addSmall",
+          "then": "addSmall",
+          "icon": "addSmall"
+        },
+        {
+          "if": "value=brick_wall_round",
+          "then": "brick_wall_round",
+          "icon": "brick_wall_round"
+        },
+        {
+          "if": "value=brick_wall_square",
+          "then": "brick_wall_square",
+          "icon": "brick_wall_square"
         },
         {
           "if": "value=bug",
@@ -3718,24 +3744,19 @@
           "icon": "bug"
         },
         {
-          "if": "value=square",
-          "then": "square",
-          "icon": "square"
-        },
-        {
-          "if": "value=square_rounded",
-          "then": "square_rounded",
-          "icon": "square_rounded"
-        },
-        {
-          "if": "value=circle",
-          "then": "circle",
-          "icon": "circle"
+          "if": "value=checkmark",
+          "then": "checkmark",
+          "icon": "checkmark"
         },
         {
           "if": "value=checkmark",
           "then": "checkmark",
           "icon": "checkmark"
+        },
+        {
+          "if": "value=circle",
+          "then": "circle",
+          "icon": "circle"
         },
         {
           "if": "value=clock",
@@ -3748,9 +3769,64 @@
           "icon": "close"
         },
         {
+          "if": "value=close",
+          "then": "close",
+          "icon": "close"
+        },
+        {
+          "if": "value=confirm",
+          "then": "confirm",
+          "icon": "confirm"
+        },
+        {
+          "if": "value=computer",
+          "then": "computer",
+          "icon": "computer"
+        },
+        {
+          "if": "value=cross_bottom_right",
+          "then": "cross_bottom_right",
+          "icon": "cross_bottom_right"
+        },
+        {
           "if": "value=crosshair",
           "then": "crosshair",
           "icon": "crosshair"
+        },
+        {
+          "if": "value=desktop",
+          "then": "desktop",
+          "icon": "desktop"
+        },
+        {
+          "if": "value=direction",
+          "then": "direction",
+          "icon": "direction"
+        },
+        {
+          "if": "value=gear",
+          "then": "gear",
+          "icon": "gear"
+        },
+        {
+          "if": "value=gps_arrow",
+          "then": "gps_arrow",
+          "icon": "gps_arrow"
+        },
+        {
+          "if": "value=heart",
+          "then": "heart",
+          "icon": "heart"
+        },
+        {
+          "if": "value=heart_outline",
+          "then": "heart_outline",
+          "icon": "heart_outline"
+        },
+        {
+          "if": "value=help",
+          "then": "help",
+          "icon": "help"
         },
         {
           "if": "value=help",
@@ -3768,6 +3844,16 @@
           "icon": "invalid"
         },
         {
+          "if": "value=invalid",
+          "then": "invalid",
+          "icon": "invalid"
+        },
+        {
+          "if": "value=link",
+          "then": "link",
+          "icon": "link"
+        },
+        {
           "if": "value=location",
           "then": "location",
           "icon": "location"
@@ -3783,9 +3869,29 @@
           "icon": "location_locked"
         },
         {
+          "if": "value=mastodon",
+          "then": "mastodon",
+          "icon": "mastodon"
+        },
+        {
+          "if": "value=not_found",
+          "then": "not_found",
+          "icon": "not_found"
+        },
+        {
           "if": "value=note",
           "then": "note",
           "icon": "note"
+        },
+        {
+          "if": "value=party",
+          "then": "party",
+          "icon": "party"
+        },
+        {
+          "if": "value=pin",
+          "then": "pin",
+          "icon": "pin"
         },
         {
           "if": "value=resolved",
@@ -3803,6 +3909,16 @@
           "icon": "scissors"
         },
         {
+          "if": "value=square",
+          "then": "square",
+          "icon": "square"
+        },
+        {
+          "if": "value=square_rounded",
+          "then": "square_rounded",
+          "icon": "square_rounded"
+        },
+        {
           "if": "value=teardrop",
           "then": "teardrop",
           "icon": "teardrop"
@@ -3818,84 +3934,9 @@
           "icon": "triangle"
         },
         {
-          "if": "value=brick_wall_square",
-          "then": "brick_wall_square",
-          "icon": "brick_wall_square"
-        },
-        {
-          "if": "value=brick_wall_round",
-          "then": "brick_wall_round",
-          "icon": "brick_wall_round"
-        },
-        {
-          "if": "value=gps_arrow",
-          "then": "gps_arrow",
-          "icon": "gps_arrow"
-        },
-        {
-          "if": "value=checkmark",
-          "then": "checkmark",
-          "icon": "checkmark"
-        },
-        {
-          "if": "value=help",
-          "then": "help",
-          "icon": "help"
-        },
-        {
-          "if": "value=close",
-          "then": "close",
-          "icon": "close"
-        },
-        {
-          "if": "value=invalid",
-          "then": "invalid",
-          "icon": "invalid"
-        },
-        {
-          "if": "value=heart",
-          "then": "heart",
-          "icon": "heart"
-        },
-        {
-          "if": "value=heart_outline",
-          "then": "heart_outline",
-          "icon": "heart_outline"
-        },
-        {
-          "if": "value=link",
-          "then": "link",
-          "icon": "link"
-        },
-        {
-          "if": "value=confirm",
-          "then": "confirm",
-          "icon": "confirm"
-        },
-        {
-          "if": "value=direction",
-          "then": "direction",
-          "icon": "direction"
-        },
-        {
-          "if": "value=not_found",
-          "then": "not_found",
-          "icon": "not_found"
-        },
-        {
-          "if": "value=mastodon",
-          "then": "mastodon",
-          "icon": "mastodon"
-        },
-        {
-          "if": "value=party",
-          "then": "party",
-          "icon": "party"
-        },
-        {
-          "if": "value=addSmall",
-          "then": "addSmall",
-          "icon": "addSmall"
+          "if": "value=wifi",
+          "then": "wifi",
+          "icon": "wifi"
         }
       ]
     },
@@ -12585,6 +12626,10 @@
           "then": "assembly_point - This layer contains assembly points and waiting areas where all employees, passengers or a large crowd assemble in case of an emergency."
         },
         {
+          "if": "value=assisted_repair",
+          "then": "assisted_repair - A self-assisted workshop is a location where people can come and repair their goods with help of volunteers and with the tools available at the given location.  A repair café is a type of event organized regularly along the same principles."
+        },
+        {
           "if": "value=atm",
           "then": "atm - ATMs to withdraw money"
         },
@@ -13123,6 +13168,10 @@
         {
           "if": "value=toilet_at_amenity",
           "then": "toilet_at_amenity - A layer showing (public) toilets located at different places."
+        },
+        {
+          "if": "value=tool_library",
+          "then": "tool_library - A tool library is a place where people from the general public can borrow tools"
         },
         {
           "if": "value=trail",
@@ -22114,7 +22163,15 @@
                   "description": "The tags that will be given to the object.\nThis must remove tags so that the 'source/osmTags' won't match anymore\n\nquestion: What tags should be applied to the object?"
                 },
                 "then": {
-                  "description": "The human explanation for the options\n\nquestion: What text should be shown to the contributor for this reason?"
+                  "description": "The human explanation for the options\n\nquestion: What text should be shown to the contributor for this reason?",
+                  "anyOf": [
+                    {
+                      "$ref": "#/definitions/Record<string,string>"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
                 }
               },
               "required": [
@@ -22270,6 +22327,14 @@
     "hints": {
       "question": "What text should be shown to the contributor for this reason?"
     },
+    "type": [
+      {
+        "$ref": "#/definitions/Record<string,string>"
+      },
+      {
+        "type": "string"
+      }
+    ],
     "description": "The human explanation for the options"
   },
   {
@@ -24592,9 +24657,19 @@
       "question": "What icon should be used?",
       "suggestions": [
         {
-          "if": "value=pin",
-          "then": "pin",
-          "icon": "pin"
+          "if": "value=addSmall",
+          "then": "addSmall",
+          "icon": "addSmall"
+        },
+        {
+          "if": "value=brick_wall_round",
+          "then": "brick_wall_round",
+          "icon": "brick_wall_round"
+        },
+        {
+          "if": "value=brick_wall_square",
+          "then": "brick_wall_square",
+          "icon": "brick_wall_square"
         },
         {
           "if": "value=bug",
@@ -24602,24 +24677,19 @@
           "icon": "bug"
         },
         {
-          "if": "value=square",
-          "then": "square",
-          "icon": "square"
-        },
-        {
-          "if": "value=square_rounded",
-          "then": "square_rounded",
-          "icon": "square_rounded"
-        },
-        {
-          "if": "value=circle",
-          "then": "circle",
-          "icon": "circle"
+          "if": "value=checkmark",
+          "then": "checkmark",
+          "icon": "checkmark"
         },
         {
           "if": "value=checkmark",
           "then": "checkmark",
           "icon": "checkmark"
+        },
+        {
+          "if": "value=circle",
+          "then": "circle",
+          "icon": "circle"
         },
         {
           "if": "value=clock",
@@ -24632,9 +24702,64 @@
           "icon": "close"
         },
         {
+          "if": "value=close",
+          "then": "close",
+          "icon": "close"
+        },
+        {
+          "if": "value=confirm",
+          "then": "confirm",
+          "icon": "confirm"
+        },
+        {
+          "if": "value=computer",
+          "then": "computer",
+          "icon": "computer"
+        },
+        {
+          "if": "value=cross_bottom_right",
+          "then": "cross_bottom_right",
+          "icon": "cross_bottom_right"
+        },
+        {
           "if": "value=crosshair",
           "then": "crosshair",
           "icon": "crosshair"
+        },
+        {
+          "if": "value=desktop",
+          "then": "desktop",
+          "icon": "desktop"
+        },
+        {
+          "if": "value=direction",
+          "then": "direction",
+          "icon": "direction"
+        },
+        {
+          "if": "value=gear",
+          "then": "gear",
+          "icon": "gear"
+        },
+        {
+          "if": "value=gps_arrow",
+          "then": "gps_arrow",
+          "icon": "gps_arrow"
+        },
+        {
+          "if": "value=heart",
+          "then": "heart",
+          "icon": "heart"
+        },
+        {
+          "if": "value=heart_outline",
+          "then": "heart_outline",
+          "icon": "heart_outline"
+        },
+        {
+          "if": "value=help",
+          "then": "help",
+          "icon": "help"
         },
         {
           "if": "value=help",
@@ -24652,6 +24777,16 @@
           "icon": "invalid"
         },
         {
+          "if": "value=invalid",
+          "then": "invalid",
+          "icon": "invalid"
+        },
+        {
+          "if": "value=link",
+          "then": "link",
+          "icon": "link"
+        },
+        {
           "if": "value=location",
           "then": "location",
           "icon": "location"
@@ -24667,9 +24802,29 @@
           "icon": "location_locked"
         },
         {
+          "if": "value=mastodon",
+          "then": "mastodon",
+          "icon": "mastodon"
+        },
+        {
+          "if": "value=not_found",
+          "then": "not_found",
+          "icon": "not_found"
+        },
+        {
           "if": "value=note",
           "then": "note",
           "icon": "note"
+        },
+        {
+          "if": "value=party",
+          "then": "party",
+          "icon": "party"
+        },
+        {
+          "if": "value=pin",
+          "then": "pin",
+          "icon": "pin"
         },
         {
           "if": "value=resolved",
@@ -24687,6 +24842,16 @@
           "icon": "scissors"
         },
         {
+          "if": "value=square",
+          "then": "square",
+          "icon": "square"
+        },
+        {
+          "if": "value=square_rounded",
+          "then": "square_rounded",
+          "icon": "square_rounded"
+        },
+        {
           "if": "value=teardrop",
           "then": "teardrop",
           "icon": "teardrop"
@@ -24702,84 +24867,9 @@
           "icon": "triangle"
         },
         {
-          "if": "value=brick_wall_square",
-          "then": "brick_wall_square",
-          "icon": "brick_wall_square"
-        },
-        {
-          "if": "value=brick_wall_round",
-          "then": "brick_wall_round",
-          "icon": "brick_wall_round"
-        },
-        {
-          "if": "value=gps_arrow",
-          "then": "gps_arrow",
-          "icon": "gps_arrow"
-        },
-        {
-          "if": "value=checkmark",
-          "then": "checkmark",
-          "icon": "checkmark"
-        },
-        {
-          "if": "value=help",
-          "then": "help",
-          "icon": "help"
-        },
-        {
-          "if": "value=close",
-          "then": "close",
-          "icon": "close"
-        },
-        {
-          "if": "value=invalid",
-          "then": "invalid",
-          "icon": "invalid"
-        },
-        {
-          "if": "value=heart",
-          "then": "heart",
-          "icon": "heart"
-        },
-        {
-          "if": "value=heart_outline",
-          "then": "heart_outline",
-          "icon": "heart_outline"
-        },
-        {
-          "if": "value=link",
-          "then": "link",
-          "icon": "link"
-        },
-        {
-          "if": "value=confirm",
-          "then": "confirm",
-          "icon": "confirm"
-        },
-        {
-          "if": "value=direction",
-          "then": "direction",
-          "icon": "direction"
-        },
-        {
-          "if": "value=not_found",
-          "then": "not_found",
-          "icon": "not_found"
-        },
-        {
-          "if": "value=mastodon",
-          "then": "mastodon",
-          "icon": "mastodon"
-        },
-        {
-          "if": "value=party",
-          "then": "party",
-          "icon": "party"
-        },
-        {
-          "if": "value=addSmall",
-          "then": "addSmall",
-          "icon": "addSmall"
+          "if": "value=wifi",
+          "then": "wifi",
+          "icon": "wifi"
         }
       ]
     },
@@ -33744,6 +33834,10 @@
           "then": "assembly_point - This layer contains assembly points and waiting areas where all employees, passengers or a large crowd assemble in case of an emergency."
         },
         {
+          "if": "value=assisted_repair",
+          "then": "assisted_repair - A self-assisted workshop is a location where people can come and repair their goods with help of volunteers and with the tools available at the given location.  A repair café is a type of event organized regularly along the same principles."
+        },
+        {
           "if": "value=atm",
           "then": "atm - ATMs to withdraw money"
         },
@@ -34282,6 +34376,10 @@
         {
           "if": "value=toilet_at_amenity",
           "then": "toilet_at_amenity - A layer showing (public) toilets located at different places."
+        },
+        {
+          "if": "value=tool_library",
+          "then": "tool_library - A tool library is a place where people from the general public can borrow tools"
         },
         {
           "if": "value=trail",
@@ -43592,7 +43690,15 @@
                   "description": "The tags that will be given to the object.\nThis must remove tags so that the 'source/osmTags' won't match anymore\n\nquestion: What tags should be applied to the object?"
                 },
                 "then": {
-                  "description": "The human explanation for the options\n\nquestion: What text should be shown to the contributor for this reason?"
+                  "description": "The human explanation for the options\n\nquestion: What text should be shown to the contributor for this reason?",
+                  "anyOf": [
+                    {
+                      "$ref": "#/definitions/Record<string,string>"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
                 }
               },
               "required": [
@@ -43755,6 +43861,14 @@
     "hints": {
       "question": "What text should be shown to the contributor for this reason?"
     },
+    "type": [
+      {
+        "$ref": "#/definitions/Record<string,string>"
+      },
+      {
+        "type": "string"
+      }
+    ],
     "description": "The human explanation for the options"
   },
   {

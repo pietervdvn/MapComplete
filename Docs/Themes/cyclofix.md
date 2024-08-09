@@ -15,6 +15,7 @@ This theme contains the following layers:
  - [drinking_water](../Layers/drinking_water.md)
  - [bike_themed_object](../Layers/bike_themed_object.md)
  - [bike_cleaning](../Layers/bike_cleaning.md)
+ - [shops](../Layers/shops.md)
  - [bicycle_rental_non_docking (defined in this theme)](#bicycle_rental_non_docking)
  - [bicycle_rental](../Layers/bicycle_rental.md)
  - [bicycle_library](../Layers/bicycle_library.md)

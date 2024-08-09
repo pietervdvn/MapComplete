@@ -151,9 +151,9 @@ class ImagesInLoadedDataFetcher implements ImageFetcher {
                     coordinates: { lng: centerpoint[0], lat: centerpoint[1] },
                     provider: "OpenStreetMap",
                     details: {
-                        isSpherical: false
+                        isSpherical: false,
                     },
-                    osmTags: { image }
+                    osmTags: { image },
                 })
             }
         })
@@ -173,46 +173,64 @@ class ImagesFromCacheServerFetcher implements ImageFetcher {
     }
 
     async fetchImages(lat: number, lon: number): Promise<P4CPicture[]> {
-        return (await Promise.all([
-            this.fetchImagesForType(lat, lon, "lines"),
-            this.fetchImagesForType(lat, lon, "pois"),
-            this.fetchImagesForType(lat, lon, "polygons")
-
-        ])).flatMap(x => x)
+        return (
+            await Promise.all([
+                this.fetchImagesForType(lat, lon, "lines"),
+                this.fetchImagesForType(lat, lon, "pois"),
+                this.fetchImagesForType(lat, lon, "polygons"),
+            ])
+        ).flatMap((x) => x)
     }
 
-    async fetchImagesForType(targetlat: number, targetlon: number, type: "lines" | "pois" | "polygons"): Promise<P4CPicture[]> {
+    async fetchImagesForType(
+        targetlat: number,
+        targetlon: number,
+        type: "lines" | "pois" | "polygons"
+    ): Promise<P4CPicture[]> {
         const { x, y, z } = Tiles.embedded_tile(targetlat, targetlon, 14)
 
         const url = this._serverUrl
 
         async function getFeatures(x: number, y: number) {
-            const src = new MvtSource(Utils.SubstituteKeys(url, {
-                type, x, y, z, layer: "item_with_image"
-            }), x, y, z)
+            const src = new MvtSource(
+                Utils.SubstituteKeys(url, {
+                    type,
+                    x,
+                    y,
+                    z,
+                    layer: "item_with_image",
+                }),
+                x,
+                y,
+                z
+            )
             await src.updateAsync()
             return src.features.data
         }
 
-        const features = (await Promise.all([
-            getFeatures(x, y),
-            getFeatures(x, y + 1),
-            getFeatures(x, y - 1),
+        const features = (
+            await Promise.all([
+                getFeatures(x, y),
+                getFeatures(x, y + 1),
+                getFeatures(x, y - 1),
 
-            getFeatures(x + 1, y + 1),
-            getFeatures(x + 1, y),
-            getFeatures(x + 1, y - 1),
+                getFeatures(x + 1, y + 1),
+                getFeatures(x + 1, y),
+                getFeatures(x + 1, y - 1),
 
-            getFeatures(x - 1, y - 1),
-            getFeatures(x - 1, y),
-            getFeatures(x - 1, y + 1)
-        ])).flatMap(x => x)
+                getFeatures(x - 1, y - 1),
+                getFeatures(x - 1, y),
+                getFeatures(x - 1, y + 1),
+            ])
+        ).flatMap((x) => x)
 
         const pics: P4CPicture[] = []
         for (const f of features) {
-
             const [lng, lat] = GeoOperations.centerpointCoordinates(f)
-            if (GeoOperations.distanceBetween([targetlon, targetlat], [lng, lat]) > this._searchRadius) {
+            if (
+                GeoOperations.distanceBetween([targetlon, targetlat], [lng, lat]) >
+                this._searchRadius
+            ) {
                 return []
             }
             for (let i = -1; i < 50; i++) {
@@ -235,13 +253,13 @@ class ImagesFromCacheServerFetcher implements ImageFetcher {
                     pictureUrl: v,
                     coordinates: { lat, lng },
                     details: {
-                        isSpherical: false
+                        isSpherical: false,
                     },
                     osmTags: {
-                        image: v
+                        image: v,
                     },
                     thumbUrl: v,
-                    provider
+                    provider,
                 })
             }
         }
@@ -299,12 +317,12 @@ class MapillaryFetcher implements ImageFetcher {
 
         const response = await Utils.downloadJson<{
             data: {
-                id: string,
-                creator: string,
-                computed_geometry: Point,
-                is_pano: boolean,
-                thumb_256_url: string,
-                thumb_original_url: string,
+                id: string
+                creator: string
+                computed_geometry: Point
+                is_pano: boolean
+                thumb_256_url: string
+                thumb_original_url: string
                 compass_angle: number
             }[]
         }>(url)
@@ -323,8 +341,8 @@ class MapillaryFetcher implements ImageFetcher {
                     mapillary: img.id,
                 },
                 details: {
-                    isSpherical: img.is_pano
-                }
+                    isSpherical: img.is_pano,
+                },
             })
         }
         return pics
@@ -342,23 +360,27 @@ export class CombinedFetcher {
             new ImagesInLoadedDataFetcher(indexedFeatures, radius),
             new ImagesFromCacheServerFetcher(radius),
             new MapillaryFetcher({
-                 panoramas: "no",
-                 max_images: 25,
-                 start_captured_at : maxage
-             }),
-             new P4CImageFetcher("mapillary"),
-             new P4CImageFetcher("wikicommons"),
-        ].map(f => new CachedFetcher(f))
+                panoramas: "no",
+                max_images: 25,
+                start_captured_at: maxage,
+            }),
+            new P4CImageFetcher("mapillary"),
+            new P4CImageFetcher("wikicommons"),
+        ].map((f) => new CachedFetcher(f))
     }
 
-    private async fetchImage(source: CachedFetcher, lat: number, lon: number, state: UIEventSource<Record<string, "loading" | "done" | "error">>, sink: UIEventSource<P4CPicture[]>): Promise<void> {
+    private async fetchImage(
+        source: CachedFetcher,
+        lat: number,
+        lon: number,
+        state: UIEventSource<Record<string, "loading" | "done" | "error">>,
+        sink: UIEventSource<P4CPicture[]>
+    ): Promise<void> {
         try {
-
             const pics = await source.fetchImages(lat, lon)
             console.log(source.name, "==>>", pics)
             state.data[source.name] = "done"
             state.ping()
-
 
             if (sink.data === undefined) {
                 sink.setData(pics)
@@ -383,8 +405,11 @@ export class CombinedFetcher {
         }
     }
 
-    public getImagesAround(lon: number, lat: number): {
-        images: Store<P4CPicture[]>,
+    public getImagesAround(
+        lon: number,
+        lat: number
+    ): {
+        images: Store<P4CPicture[]>
         state: Store<Record<string, "loading" | "done" | "error">>
     } {
         const sink = new UIEventSource<P4CPicture[]>([])

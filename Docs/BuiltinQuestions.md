@@ -32,46 +32,48 @@ This is a special layer - data is not sourced from OpenStreetMap
 7. [reviews](#reviews)
 8. [phone](#phone)
 9. [mastodon](#mastodon)
-10. [osmlink](#osmlink)
-11. [email](#email)
-12. [website](#website)
-13. [wheelchair-access](#wheelchair-access)
-14. [dog-access](#dog-access)
-15. [description](#description)
-16. [opening_hours](#opening_hours)
-17. [Opening hours](#opening-hours)
-18. [opening_hours_24_7](#opening_hours_24_7)
-19. [Opening hours](#opening-hours)
-20. [opening_hours_24_7_default](#opening_hours_24_7_default)
-21. [Opening hours](#opening-hours)
-22. [opening_hours_by_appointment](#opening_hours_by_appointment)
-23. [Opening hours](#opening-hours)
-24. [service:electricity](#serviceelectricity)
-25. [payment-options](#payment-options)
-26. [payment-options-split](#payment-options-split)
-27. [payment-options-advanced](#payment-options-advanced)
-28. [denominations-coins](#denominations-coins)
-29. [denominations-notes](#denominations-notes)
-30. [all_tags](#all_tags)
-31. [multilevels](#multilevels)
-32. [repeated](#repeated)
-33. [single_level](#single_level)
-34. [smoking](#smoking)
-35. [induction-loop](#induction-loop)
-36. [internet](#internet)
-37. [internet-fee](#internet-fee)
-38. [internet-ssid](#internet-ssid)
-39. [luminous_or_lit](#luminous_or_lit)
-40. [survey_date](#survey_date)
-41. [check_date](#check_date)
-42. [sugar_free](#sugar_free)
-43. [lactose_free](#lactose_free)
-44. [gluten_free](#gluten_free)
-45. [vegan](#vegan)
-46. [lod](#lod)
-47. [split_button](#split_button)
-48. [seasonal](#seasonal)
-49. [shower](#shower)
+10. [facebook](#facebook)
+11. [osmlink](#osmlink)
+12. [email](#email)
+13. [website](#website)
+14. [wheelchair-access](#wheelchair-access)
+15. [dog-access](#dog-access)
+16. [description](#description)
+17. [opening_hours](#opening_hours)
+18. [Opening hours](#opening-hours)
+19. [opening_hours_24_7](#opening_hours_24_7)
+20. [Opening hours](#opening-hours)
+21. [opening_hours_24_7_default](#opening_hours_24_7_default)
+22. [Opening hours](#opening-hours)
+23. [opening_hours_by_appointment](#opening_hours_by_appointment)
+24. [Opening hours](#opening-hours)
+25. [service:electricity](#serviceelectricity)
+26. [payment-options](#payment-options)
+27. [payment-options-split](#payment-options-split)
+28. [payment-options-advanced](#payment-options-advanced)
+29. [denominations-coins](#denominations-coins)
+30. [denominations-notes](#denominations-notes)
+31. [all_tags](#all_tags)
+32. [multilevels](#multilevels)
+33. [repeated](#repeated)
+34. [single_level](#single_level)
+35. [smoking](#smoking)
+36. [induction-loop](#induction-loop)
+37. [internet](#internet)
+38. [internet-fee](#internet-fee)
+39. [internet-ssid](#internet-ssid)
+40. [luminous_or_lit](#luminous_or_lit)
+41. [survey_date](#survey_date)
+42. [check_date](#check_date)
+43. [sugar_free](#sugar_free)
+44. [lactose_free](#lactose_free)
+45. [gluten_free](#gluten_free)
+46. [vegan](#vegan)
+47. [lod](#lod)
+48. [split_button](#split_button)
+49. [seasonal](#seasonal)
+50. [shower](#shower)
+51. [preset_description](#preset_description)
 
 ## Supported attributes
 
@@ -82,6 +84,7 @@ This is a special layer - data is not sourced from OpenStreetMap
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/wikidata#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/wikidata/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [wikidata](https://wiki.openstreetmap.org/wiki/Key:wikidata) | [wikidata](../SpecialInputElements.md#wikidata) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/phone#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/phone/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [phone](https://wiki.openstreetmap.org/wiki/Key:phone) | [phone](../SpecialInputElements.md#phone) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/contact:mastodon#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/contact%3Amastodon/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [contact:mastodon](https://wiki.openstreetmap.org/wiki/Key:contact:mastodon) | [fediverse](../SpecialInputElements.md#fediverse) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/contact:facebook#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/contact%3Afacebook/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [contact:facebook](https://wiki.openstreetmap.org/wiki/Key:contact:facebook) | [url](../SpecialInputElements.md#url) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/email#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/email/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [email](https://wiki.openstreetmap.org/wiki/Key:email) | [email](../SpecialInputElements.md#email) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/website#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/website/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [website](https://wiki.openstreetmap.org/wiki/Key:website) | [url](../SpecialInputElements.md#url) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/wheelchair#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/wheelchair/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [wheelchair](https://wiki.openstreetmap.org/wiki/Key:wheelchair) | Multiple choice | [designated](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Ddesignated) [yes](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dlimited) [no](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dno) |
@@ -90,7 +93,7 @@ This is a special layer - data is not sourced from OpenStreetMap
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/opening_hours#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/opening_hours/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/opening_hours#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/opening_hours/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | [24/7](https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/opening_hours#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/opening_hours/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | [24/7](https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7) |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/opening_hours#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/opening_hours/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/opening_hours#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/opening_hours/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | ["by appointment"](https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D"by appointment") |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:electricity#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/service%3Aelectricity/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [service:electricity](https://wiki.openstreetmap.org/wiki/Key:service:electricity) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:electricity%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:service:electricity%3Dlimited) [ask](https://wiki.openstreetmap.org/wiki/Tag:service:electricity%3Dask) [no](https://wiki.openstreetmap.org/wiki/Tag:service:electricity%3Dno) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/payment:coins:denominations#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/payment%3Acoins%3Adenominations/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [payment:coins:denominations](https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations) | Multiple choice | [0.01 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.01 EUR) [0.02 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.02 EUR) [0.05 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.05 EUR) [0.10 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.10 EUR) [0.20 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.20 EUR) [0.50 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.50 EUR) [1 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D1 EUR) [2 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D2 EUR) [0.05 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.05 CHF) [0.10 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.10 CHF) [0.20 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.20 CHF) [0.50 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.50 CHF) [1 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D1 CHF) [2 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D2 CHF) [5 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D5 CHF) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/payment:notes:denominations#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/payment%3Anotes%3Adenominations/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [payment:notes:denominations](https://wiki.openstreetmap.org/wiki/Key:payment:notes:denominations) | Multiple choice | [5 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D5 EUR) [10 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D10 EUR) [20 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D20 EUR) [50 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D50 EUR) [100 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D100 EUR) [200 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D200 EUR) [500 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D500 EUR) [10 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D10 CHF) [20 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D20 CHF) [50 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D50 CHF) [100 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D100 CHF) [200 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D200 CHF) [1000 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D1000 CHF) |
@@ -191,6 +194,14 @@ This tagrendering has labels
 Shows and asks for the mastodon handle
 The question is `What is the Mastodon-handle of {title()}?`
 *{fediverse_link(contact:mastodon)}* is shown if `contact:mastodon` is set
+
+
+
+
+### facebook
+Shows and asks for the facebook handle
+The question is `What is the facebook page of of {title()}?`
+*{link(Facebook page,&LBRACEcontact:facebook&RBRACE,,,)}<div class='subtle text-sm'>Facebook is known to harm mental health, manipulate public opinion and cause hate. Try to use healthier alternatives</div>* is shown if `contact:facebook` is set
 
 
 
@@ -317,8 +328,9 @@ The question is `What are the opening hours of {title()}?`
 *<h3>Opening hours</h3>{opening_hours_table(opening_hours)}* is shown if `opening_hours` is set
 
 
- -  *Only by appointment* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D"by appointment"' target='_blank'>"by appointment"</a>. _This option cannot be chosen as answer_
+ -  *Only by appointment* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D"by appointment"' target='_blank'>"by appointment"</a>
  -  *Only by appointment* is shown if with opening_hours~^("by appointment"|by appointment)$. _This option cannot be chosen as answer_
+ -  *Marked as closed for an unspecified time* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>. _This option cannot be chosen as answer_
 
 
 
@@ -520,10 +532,10 @@ The question is `Does this place offer internet access?`
 
 
 
- -  *This place offers wireless internet access* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwlan' target='_blank'>wlan</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/wifi' style='width: 3rem; height: 3rem'> *This place offers wireless internet access* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwlan' target='_blank'>wlan</a>
  -  *This place <b>does not</b> offer internet access* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dno' target='_blank'>no</a>
  -  *This place offers internet access* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dyes' target='_blank'>yes</a>. _This option cannot be chosen as answer_
- -  *This place offers internet access via a terminal or computer* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dterminal' target='_blank'>terminal</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/computer' style='width: 3rem; height: 3rem'> *This place offers internet access via a terminal or computer* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dterminal' target='_blank'>terminal</a>
  -  *This place offers wired internet access* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwired' target='_blank'>wired</a>
 
 
@@ -704,6 +716,14 @@ The question is `Does this facility offer showers?`
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/shower/shower.svg' style='width: 3rem; height: 3rem'> *This facility does have showers* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shower' target='_blank'>shower</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shower%3Dyes' target='_blank'>yes</a>
  -  *This facility does not offer a shower* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shower' target='_blank'>shower</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shower%3Dno' target='_blank'>no</a>
 
+
+
+
+
+### preset_description
+
+_This tagrendering has no question and is thus read-only_
+*{preset_description()}*
 
 
 
