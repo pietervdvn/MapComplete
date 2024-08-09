@@ -100,8 +100,8 @@ import { CombinedFetcher } from "../Logic/Web/NearbyImagesSearch"
 import { And } from "../Logic/Tags/And"
 import CloseNoteButton from "./Popup/Notes/CloseNoteButton.svelte"
 import PendingChangesIndicator from "./BigComponents/PendingChangesIndicator.svelte"
-import Loading from "./Base/Loading"
 import QrCode from "./Popup/QrCode.svelte"
+import ClearCaches from "./Popup/ClearCaches.svelte"
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -1309,6 +1309,10 @@ export default class SpecialVisualizations {
                         name: "arialabel",
                         doc: "If set, this text will be used as aria-label",
                     },
+                    {
+                        name: "icon",
+                        doc: "If set, show this icon next to the link. You might want to combine this with `class: button`"
+                    }
                 ],
 
                 constr(
@@ -1316,7 +1320,7 @@ export default class SpecialVisualizations {
                     tagSource: UIEventSource<Record<string, string>>,
                     args: string[]
                 ): BaseUIElement {
-                    let [text, href, classnames, download, ariaLabel] = args
+                    let [text, href, classnames, download, ariaLabel, icon] = args
                     if (download === "") {
                         download = undefined
                     }
@@ -1684,7 +1688,6 @@ export default class SpecialVisualizations {
             {
                 funcName: "qr_code",
                 args: [],
-
                 docs: "Generates a QR-code to share the selected object",
                 constr(
                     state: SpecialVisualizationState,
@@ -1989,6 +1992,20 @@ export default class SpecialVisualizations {
                 args:[],
                 constr(state: SpecialVisualizationState, tagSource: UIEventSource<Record<string, string>>, argument: string[], feature: Feature, layer: LayerConfig): BaseUIElement {
                     return new SvelteUIElement(PendingChangesIndicator, {state, compact: false})
+                }
+            },
+            {
+                funcName: "clear_caches",
+                docs: "A button which clears the locally downloaded data and the service worker. Login status etc will be kept",
+                args:[
+                    {
+                        name: "text",
+                        required: true,
+                        doc: "The text to show on the button"
+                    }
+                ],
+                constr(state: SpecialVisualizationState, tagSource: UIEventSource<Record<string, string>>, argument: string[], feature: Feature, layer: LayerConfig): SvelteUIElement {
+                    return new SvelteUIElement<any, any, any>(ClearCaches, {msg: argument[0] ?? "Clear local caches"})
                 }
             }
         ]

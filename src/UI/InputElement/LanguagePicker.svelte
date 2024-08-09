@@ -46,7 +46,7 @@
       <LanguageIcon class="mr-1 h-4 w-4 shrink-0" aria-hidden="true" />
     </label>
 
-    <Dropdown cls="max-w-full" value={assignTo} id="pick-language">
+    <Dropdown cls="max-w-full" value={assignTo}>
       {#if preferredFiltered}
         {#each preferredFiltered as language}
           <option value={language} class="font-bold">
