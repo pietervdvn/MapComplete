@@ -100,6 +100,8 @@ import { CombinedFetcher } from "../Logic/Web/NearbyImagesSearch"
 import { And } from "../Logic/Tags/And"
 import CloseNoteButton from "./Popup/Notes/CloseNoteButton.svelte"
 import PendingChangesIndicator from "./BigComponents/PendingChangesIndicator.svelte"
+import Loading from "./Base/Loading"
+import QrCode from "./Popup/QrCode.svelte"
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -1686,47 +1688,12 @@ export default class SpecialVisualizations {
                 docs: "Generates a QR-code to share the selected object",
                 constr(
                     state: SpecialVisualizationState,
-                    tagSource: UIEventSource<Record<string, string>>,
+                    tags: UIEventSource<Record<string, string>>,
                     argument: string[],
                     feature: Feature
-                ): BaseUIElement {
-                    const smallSize = 100
-                    const bigSize = 200
-                    const size = new UIEventSource(smallSize)
-                    return new VariableUiElement(
-                        tagSource
-                            .map((tags) => tags.id)
-                            .map(
-                                (id) => {
-                                    if (id.startsWith("node/-")) {
-                                        // Not yet uploaded
-                                        return undefined
-                                    }
-                                    const [lon, lat] = GeoOperations.centerpointCoordinates(feature)
-                                    const includeLayout = window.location.pathname
-                                        .split("/")
-                                        .at(-1)
-                                        .startsWith("theme")
-                                    const layout = includeLayout
-                                        ? "layout=" + state.layout.id + "&"
-                                        : ""
-                                    const url =
-                                        `${window.location.protocol}//${window.location.host}${window.location.pathname}?${layout}lat=${lat}&lon=${lon}&z=15` +
-                                        `#${id}`
-                                    return new Img(new Qr(url).toImageElement(size.data)).SetStyle(
-                                        `width: ${size.data}px`
-                                    )
-                                },
-                                [size]
-                            )
-                    ).onClick(() => {
-                        if (size.data !== bigSize) {
-                            size.setData(bigSize)
-                        } else {
-                            size.setData(smallSize)
-                        }
-                    })
-                },
+                ): SvelteUIElement {
+                    return new SvelteUIElement(QrCode , {state, tags, feature}   )
+                }
             },
             {
                 funcName: "direction_absolute",
