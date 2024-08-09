@@ -176,7 +176,6 @@ export class GeoLocationState {
             },
             function (e) {
                 if(e.code === 2 || e.code === 3){
-                    console.log("Could not get location with navigator.geolocation due to unavailable or timeout", e)
                     self._gpsAvailable.set(false)
                     return
                 }
