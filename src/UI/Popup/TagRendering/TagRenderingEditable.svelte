@@ -27,11 +27,24 @@
    * Indicates if this tagRendering currently shows the attribute or asks the question to _change_ the property
    */
   export let editMode = !config.IsKnown(tags.data)
+  let knownAtTheStart = config.IsKnown(tags.data)
   if (tags) {
     onDestroy(
       tags.addCallbackD((tags) => {
-        editMode = !config.IsKnown(tags)
-      })
+        const knownNow = config.IsKnown(tags)
+        if(!knownNow){
+          editMode = true
+          return
+        }
+        if(knownNow && !knownAtTheStart) {
+          // Some other question might have set this to 'known', so we close the 'editMode'
+          editMode = false
+
+          // well, not really 'known at the start', but it is known at this point in time, so it should not set 'editMode' to false automatically anymore
+          knownAtTheStart = true
+        }
+
+      }),
     )
   }
 
