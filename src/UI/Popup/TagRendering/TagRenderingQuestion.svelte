@@ -21,7 +21,6 @@
   import { Unit } from "../../../Models/Unit"
   import UserRelatedState from "../../../Logic/State/UserRelatedState"
   import { twJoin } from "tailwind-merge"
-  import type { UploadableTag } from "../../../Logic/Tags/TagUtils"
   import { TagUtils } from "../../../Logic/Tags/TagUtils"
 
   import Search from "../../../assets/svg/Search.svelte"
@@ -33,6 +32,7 @@
   import { get } from "svelte/store"
   import Markdown from "../../Base/Markdown.svelte"
   import { Utils } from "../../../Utils"
+  import type { UploadableTag } from "../../../Logic/Tags/TagTypes"
 
   export let config: TagRenderingConfig
   export let tags: UIEventSource<Record<string, string>>
@@ -303,8 +303,10 @@
   let numberOfCs = state?.osmConnection?.userDetails?.data?.csCount ?? 0
   let question = config.question
   let hideMappingsUnlessSearchedFor =
-    config.mappings.length > 8 && config.mappings.some((m) => m.priorityIf)
+    config.mappings.length > 8 && config.mappings.some((m) => m.priorityIf !== undefined)
   $: question = config.question
+  $: hideMappingsUnlessSearchedFor = config.mappings.length > 8 && config.mappings.some((m) => m.priorityIf !== undefined)
+
   if (state?.osmConnection) {
     onDestroy(
       state.osmConnection?.userDetails?.addCallbackAndRun((ud) => {
@@ -359,7 +361,7 @@
             />
           </div>
           {#if hideMappingsUnlessSearchedFor}
-            <div class="m-1 rounded border border-dashed border-black p-1 px-2">
+            <div class="m-1 rounded border border-dashed border-black p-1 px-2 flex items-center">
               <Tr t={Translations.t.general.mappingsAreHidden} />
             </div>
           {/if}

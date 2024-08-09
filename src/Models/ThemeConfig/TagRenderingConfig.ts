@@ -1,11 +1,10 @@
 import { Translation, TypedTranslation } from "../../UI/i18n/Translation"
 import { TagsFilter } from "../../Logic/Tags/TagsFilter"
 import Translations from "../../UI/i18n/Translations"
-import { TagUtils, UploadableTag } from "../../Logic/Tags/TagUtils"
+import { TagUtils } from "../../Logic/Tags/TagUtils"
 import { And } from "../../Logic/Tags/And"
 import { Utils } from "../../Utils"
 import { Tag } from "../../Logic/Tags/Tag"
-import Link from "../../UI/Base/Link"
 import {
     MappingConfigJson,
     QuestionableTagRenderingConfigJson,
@@ -18,6 +17,7 @@ import NameSuggestionIndex from "../../Logic/Web/NameSuggestionIndex"
 import { GeoOperations } from "../../Logic/GeoOperations"
 import { Feature } from "geojson"
 import MarkdownUtils from "../../Utils/MarkdownUtils"
+import { UploadableTag } from "../../Logic/Tags/TagTypes"
 
 export interface Mapping {
     readonly if: UploadableTag
@@ -926,9 +926,7 @@ export default class TagRenderingConfig {
      * The keys that should be erased if one has to revert to 'unknown'.
      * Might give undefined
      */
-    public
-
-    settableKeys(): string[] | undefined {
+    public settableKeys(): string[] | undefined {
         const toDelete = new Set<string>()
         if (this.freeform) {
             toDelete.add(this.freeform.key)
@@ -964,7 +962,8 @@ export class TagRenderingConfigUtils {
                     config.freeform.key,
                     tags,
                     country.split(";"),
-                    center
+                    center,
+                    {sortByFrequency: true}
                 )
             )
         })
