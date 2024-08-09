@@ -440,15 +440,17 @@ export class Changes {
             }
         })
 
-        console.debug(
-            "Calculated the pending changes: ",
-            result.newObjects.length,
-            "new; ",
-            result.modifiedObjects.length,
-            "modified;",
-            result.deletedObjects,
-            "deleted"
-        )
+        if(!(result.newObjects.length === 0 && result.modifiedObjects.length === 0 && result.deletedObjects.length === 0)) {
+            console.debug(
+                "Calculated the pending changes: ",
+                result.newObjects.length,
+                "new; ",
+                result.modifiedObjects.length,
+                "modified;",
+                result.deletedObjects.length,
+                "deleted"
+            )
+        }
         return result
     }
 
