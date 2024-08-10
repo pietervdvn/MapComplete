@@ -271,6 +271,7 @@
         feedback.setData(undefined)
       }
       tags.ping()
+      dispatch("saved", { config, applied: selectedTags })
       return
     }
     dispatch("saved", { config, applied: selectedTags })

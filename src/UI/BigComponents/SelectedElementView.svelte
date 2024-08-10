@@ -17,31 +17,44 @@
   export let highlightedRendering: UIEventSource<string> = undefined
 
   export let tags: UIEventSource<Record<string, string>> = state?.featureProperties?.getStore(
-    selectedElement.properties.id
+    selectedElement.properties.id,
   )
 
   let isAddNew = tags.mapD(
-    (t) => t?.id?.startsWith(LastClickFeatureSource.newPointElementId) ?? false
+    (t) => t?.id?.startsWith(LastClickFeatureSource.newPointElementId) ?? false,
   )
 
   export let layer: LayerConfig
-
+  export let mustMatchLabels: Set<string> | undefined = undefined
+  export let dontMatchLabels: Set<string> | undefined = new Set(["hidden"])
   let _metatags: Record<string, string>
   if (state?.userRelatedState?.preferencesAsTags) {
     onDestroy(
       state.userRelatedState.preferencesAsTags.addCallbackAndRun((tags) => {
         _metatags = tags
-      })
+      }),
     )
   }
 
   let knownTagRenderings: Store<TagRenderingConfig[]> = tags.mapD((tgs) =>
     layer?.tagRenderings?.filter(
-      (config) =>
-        (config.condition?.matchesProperties(tgs) ?? true) &&
-        (config.metacondition?.matchesProperties({ ...tgs, ..._metatags }) ?? true) &&
-        config.IsKnown(tgs)
-    )
+      (config) => {
+        if (mustMatchLabels !== undefined) {
+          if (!mustMatchLabels.has(config.id) && !config?.labels?.some(l => mustMatchLabels.has(l))) {
+            return false
+          }
+        } else if (dontMatchLabels) {
+          if (dontMatchLabels.has(config.id) || config?.labels?.some(l => dontMatchLabels.has(l))) {
+            return false
+          }
+        }
+        if (!config.IsKnown(tgs)) {
+          return false
+        }
+        return (config.condition?.matchesProperties(tgs) ?? true) &&
+          (config.metacondition?.matchesProperties({ ...tgs, ..._metatags }) ?? true)
+      },
+    ),
   )
 </script>
 

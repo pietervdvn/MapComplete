@@ -22,7 +22,7 @@
   import Brick_wall_square from "../../assets/svg/Brick_wall_square.svelte"
   import Brick_wall_round from "../../assets/svg/Brick_wall_round.svelte"
   import Gps_arrow from "../../assets/svg/Gps_arrow.svelte"
-  import { HeartIcon, WifiIcon } from "@babeard/svelte-heroicons/solid"
+  import { HeartIcon, PencilIcon, WifiIcon } from "@babeard/svelte-heroicons/solid"
   import { HeartIcon as HeartOutlineIcon } from "@babeard/svelte-heroicons/outline"
   import Confirm from "../../assets/svg/Confirm.svelte"
   import Not_found from "../../assets/svg/Not_found.svelte"
@@ -37,7 +37,7 @@
   import Cross_bottom_right from "../../assets/svg/Cross_bottom_right.svelte"
   import { Utils } from "../../Utils"
   import Gear from "../../assets/svg/Gear.svelte"
-  import { DesktopComputerIcon } from "@rgossiaux/svelte-heroicons/solid"
+  import { DesktopComputerIcon, UserCircleIcon } from "@rgossiaux/svelte-heroicons/solid"
   import Relocation from "../../assets/svg/Relocation.svelte"
 
   /**
@@ -142,9 +142,13 @@
     <DesktopComputerIcon class={"m-0 " + clss} {color} />
   {:else if icon === "relocation"}
     <Relocation class={clss} {color} />
+  {:else if icon === "pencil"}
+    <PencilIcon class={clss} {color} />
+  {:else if icon === "user_circle"}
+    <UserCircleIcon class={clss} {color} />
   {:else if Utils.isEmoji(icon)}
     <span style={`font-size: ${emojiHeight}px; line-height: ${emojiHeight}px`}>
-      {icon}
+    {icon}
     </span>
   {:else}
     <img class={clss ?? "h-full w-full"} src={icon} aria-hidden="true" alt="" />
