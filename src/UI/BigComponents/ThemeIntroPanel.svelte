@@ -14,8 +14,8 @@
   import { ExclamationTriangleIcon } from "@babeard/svelte-heroicons/mini"
   import Location_refused from "../../assets/svg/Location_refused.svelte"
   import Location from "../../assets/svg/Location.svelte"
-  import ChevronDoubleLeft from "@babeard/svelte-heroicons/mini/ChevronDoubleLeft"
-  import Constants from "../../Models/Constants"
+  import ChevronDoubleLeft from "@babeard/svelte-heroicons/solid/ChevronDoubleLeft"
+  import GeolocationIndicator from "./GeolocationIndicator.svelte"
 
   /**
    * The theme introduction panel
@@ -27,9 +27,11 @@
   let triggerSearch: UIEventSource<any> = new UIEventSource<any>(undefined)
   let searchEnabled = false
 
-  let geopermission: Store<GeolocationPermissionState> =
-    state.geolocation.geolocationState.permission
-  let currentGPSLocation = state.geolocation.geolocationState.currentGPSLocation
+  let geolocation = state.geolocation.geolocationState
+  let geopermission: Store<GeolocationPermissionState> = geolocation.permission
+  let currentGPSLocation = geolocation.currentGPSLocation
+  let gpsExplanation = geolocation.gpsStateExplanation
+  let gpsAvailable = geolocation.gpsAvailable
 
   function jumpToCurrentLocation() {
     const glstate = state.geolocation.geolocationState
@@ -75,38 +77,12 @@
 
     <div class="flex w-full flex-wrap sm:flex-nowrap">
       <If condition={state.featureSwitches.featureSwitchGeolocation}>
-        {#if $currentGPSLocation !== undefined || $geopermission === "prompt"}
-          <button class="flex w-full items-center gap-x-2" on:click={jumpToCurrentLocation}>
-            <Location class="h-8 w-8" />
-            <Tr t={Translations.t.general.openTheMapAtGeolocation} />
-          </button>
-          <!-- No geolocation granted - we don't show the button -->
-        {:else if $geopermission === "requested"}
-          <button
-            class="disabled flex w-full items-center gap-x-2"
-            on:click={jumpToCurrentLocation}
-          >
-            <!-- Even though disabled, when clicking we request the location again in case the contributor dismissed the location popup -->
-            <Location
-              class="h-8 w-8"
-              style="animation: 3s linear 0s infinite normal none running spin;"
-            />
-            <Tr t={Translations.t.general.waitingForGeopermission} />
-          </button>
-        {:else if $geopermission === "denied"}
-          <button class="disabled flex w-full items-center gap-x-2">
-            <Location_refused class="h-8 w-8" />
-            <Tr t={Translations.t.general.geopermissionDenied} />
-          </button>
-        {:else}
-          <button class="disabled flex w-full items-center gap-x-2">
-            <Location
-              class="h-8 w-8"
-              style="animation: 3s linear 0s infinite normal none running spin;"
-            />
-            <Tr t={Translations.t.general.waitingForLocation} />
-          </button>
-        {/if}
+
+        <button disabled={!$gpsAvailable} class:disabled={!$gpsAvailable} class="flex w-full items-center gap-x-2" on:click={jumpToCurrentLocation}>
+
+          <GeolocationIndicator {state} />
+          <Tr t={$gpsExplanation} />
+        </button>
       </If>
 
       <If condition={state.featureSwitches.featureSwitchSearch}>

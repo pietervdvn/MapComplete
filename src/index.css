@@ -39,10 +39,13 @@
   --interactive-contrast: #ff00ff;
 
   --button-background: #282828;
-  --button-background-hover: #686868;
+  --button-background-hover: #484848;
+    --button-primary-background-hover: #353535;
+
   --button-foreground: white;
   --button-border-color: #F7F7F7;
-  --disabled: #DBDBDB;
+  --disabled: #B8B8B8;
+    --disabled-font: #B8B8B8;
 
   /**
      * Base colour of interactive elements, mainly the 'subtle button'
@@ -232,20 +235,20 @@ button.primary, .button.primary {
 }
 
 button.primary:hover:not(.disabled), .button.primary:hover:not(.disabled) {
-    background-color: var(--button-background-hover);
+    background-color: var(--button-primary-background-hover);
 }
 
 button.disabled {
-    border-color: var(--disabled);
-    color: var(--disabled);
+    border-color: var(--disabled-font);
+    color: var(--disabled-font);
     cursor: unset;
 }
 button.disabled svg path {
     transition: all 200ms;
 }
 button.disabled svg path {
-    fill: var(--disabled);
-    stroke: var(--disabled);
+    fill: var(--disabled-font);
+    stroke: var(--disabled-font);
 }
 
 

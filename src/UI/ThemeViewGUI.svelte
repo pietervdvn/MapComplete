@@ -54,7 +54,7 @@
   import ImageOperations from "./Image/ImageOperations.svelte"
   import VisualFeedbackPanel from "./BigComponents/VisualFeedbackPanel.svelte"
   import { Orientation } from "../Sensors/Orientation"
-  import GeolocationControl from "./BigComponents/GeolocationControl.svelte"
+  import GeolocationIndicator from "./BigComponents/GeolocationIndicator.svelte"
   import Compass_arrow from "../assets/svg/Compass_arrow.svelte"
   import ReverseGeocoding from "./BigComponents/ReverseGeocoding.svelte"
   import FilterPanel from "./BigComponents/FilterPanel.svelte"
@@ -209,30 +209,7 @@
   let addNewFeatureMode = state.userRelatedState.addNewFeatureMode
 
   let gpsAvailable = state.geolocation.geolocationState.gpsAvailable
-  let gpsButtonAriaLabel = gpsAvailable.map(available => {
-    if (!available) {
-      return Translations.t.general.labels.locationNotAvailable
-    }
-    if (state.geolocation.geolocationState.permission.data === "denied") {
-      return Translations.t.general.geopermissionDenied
-    }
-
-    if (state.geolocation.geolocationState.permission.data === "requested") {
-      return Translations.t.general.waitingForGeopermission
-    }
-
-
-    if (!state.geolocation.geolocationState.allowMoving.data) {
-      return Translations.t.general.visualFeedback.islocked
-    }
-
-    if (state.geolocation.geolocationState.currentGPSLocation.data === undefined) {
-      return Translations.t.general.waitingForLocation
-    }
-
-    return Translations.t.general.labels.jumpToLocation
-  }, [state.geolocation.geolocationState.allowMoving, state.geolocation.geolocationState.permission])
-
+  let gpsButtonAriaLabel = state.geolocation.geolocationState.gpsStateExplanation
 </script>
 
 <main>
@@ -435,7 +412,7 @@
               on:click={() => state.geolocationControl.handleClick()}
               on:keydown={forwardEventToMap}
             >
-              <GeolocationControl {state} />
+              <GeolocationIndicator {state} />
               <!-- h-8 w-8 + p-0.5 sm:p-1 + 2px border => 9 sm: 10 in total-->
             </MapControlButton>
             {#if $compassLoaded}
@@ -501,14 +478,15 @@
     {/if}
   {/if}
 
+  <!-- Image preview -->
   <If condition={state.previewedImage.map((i) => i !== undefined)}>
     <FloatOver on:close={() => state.previewedImage.setData(undefined)}>
       <ImageOperations image={$previewedImage} />
     </FloatOver>
   </If>
 
+  <!-- big theme menu -->
   <If condition={state.guistate.themeIsOpened}>
-    <!-- Theme menu -->
     <FloatOver on:close={() => state.guistate.themeIsOpened.setData(false)}>
       <span slot="close-button"><!-- Disable the close button --></span>
       <TabbedGroup
@@ -524,7 +502,6 @@
 
         <div class="flex" slot="title0">
           <Marker icons={layout.icon} size="h-4 w-4" />
-
           <Tr t={layout.title} />
         </div>
 
@@ -561,14 +538,15 @@
     </FloatOver>
   </If>
 
+  <!-- Filterpane -->
   <If condition={state.guistate.filtersPanelIsOpened}>
     <FloatOver on:close={() => state.guistate.filtersPanelIsOpened.setData(false)}>
       <FilterPanel {state} />
     </FloatOver>
   </If>
 
+  <!-- background layer selector -->
   <IfHidden condition={state.guistate.backgroundLayerSelectionIsOpened}>
-    <!-- background layer selector -->
     <FloatOver
       on:close={() => {
         state.guistate.backgroundLayerSelectionIsOpened.setData(false)
@@ -584,8 +562,8 @@
     </FloatOver>
   </IfHidden>
 
+  <!-- Menu page -->
   <If condition={state.guistate.menuIsOpened}>
-    <!-- Menu page -->
     <FloatOver on:close={() => state.guistate.menuIsOpened.setData(false)}>
       <span slot="close-button"><!-- Hide the default close button --></span>
       <TabbedGroup
@@ -656,6 +634,7 @@
     </FloatOver>
   </If>
 
+  <!-- Privacy policy -->
   <If condition={state.guistate.privacyPanelIsOpened}>
     <FloatOver on:close={() => state.guistate.privacyPanelIsOpened.setData(false)}>
       <div class="flex h-full flex-col overflow-hidden">
@@ -670,6 +649,7 @@
     </FloatOver>
   </If>
 
+  <!-- Attribution, copyright and about MapComplete (no menu case) -->
   <If condition={state.guistate.copyrightPanelIsOpened}>
     <FloatOver on:close={() => state.guistate.copyrightPanelIsOpened.setData(false)}>
       <div class="flex h-full flex-col overflow-hidden">
@@ -687,6 +667,7 @@
     </FloatOver>
   </If>
 
+  <!-- Community index -->
   <If condition={state.guistate.communityIndexPanelIsOpened}>
     <FloatOver on:close={() => state.guistate.communityIndexPanelIsOpened.setData(false)}>
       <div class="flex h-full flex-col overflow-hidden">

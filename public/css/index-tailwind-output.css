@@ -1221,12 +1221,12 @@ video {
   height: 6rem;
 }
 
-.h-screen {
-  height: 100vh;
-}
-
 .h-full {
   height: 100%;
+}
+
+.h-screen {
+  height: 100vh;
 }
 
 .h-fit {
@@ -2043,6 +2043,10 @@ video {
   column-gap: 0px;
 }
 
+.gap-x-4 {
+  column-gap: 1rem;
+}
+
 .gap-y-8 {
   row-gap: 2rem;
 }
@@ -2336,10 +2340,6 @@ video {
   border-radius: 1rem;
 }
 
-.rounded-md {
-  border-radius: 0.375rem;
-}
-
 .rounded-lg {
   border-radius: 0.5rem;
 }
@@ -2556,11 +2556,6 @@ video {
 .border-gray-300 {
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
-}
-
-.border-gray-600 {
-  --tw-border-opacity: 1;
-  border-color: rgb(75 85 99 / var(--tw-border-opacity));
 }
 
 .border-gray-800 {
@@ -4405,10 +4400,12 @@ video {
   --interactive-foreground: black;
   --interactive-contrast: #ff00ff;
   --button-background: #282828;
-  --button-background-hover: #686868;
+  --button-background-hover: #484848;
+  --button-primary-background-hover: #353535;
   --button-foreground: white;
   --button-border-color: #F7F7F7;
-  --disabled: #DBDBDB;
+  --disabled: #B8B8B8;
+  --disabled-font: #B8B8B8;
   /**
      * Base colour of interactive elements, mainly the 'subtle button'
      * @deprecated
@@ -4592,19 +4589,19 @@ button.primary, .button.primary {
 }
 
 button.primary:hover:not(.disabled), .button.primary:hover:not(.disabled) {
-  background-color: var(--button-background-hover);
+  background-color: var(--button-primary-background-hover);
 }
 
 button.disabled {
-  border-color: var(--disabled);
-  color: var(--disabled);
+  border-color: var(--disabled-font);
+  color: var(--disabled-font);
   cursor: unset;
 }
 
 button.disabled svg path {
   transition: all 200ms;
-  fill: var(--disabled);
-  stroke: var(--disabled);
+  fill: var(--disabled-font);
+  stroke: var(--disabled-font);
 }
 
 button.primary.disabled, .button.primary.disabled {

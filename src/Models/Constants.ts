@@ -151,6 +151,7 @@ export default class Constants {
         "not_found",
         "note",
         "party",
+        "pencil",
         "pin",
         "resolved",
         "ring",

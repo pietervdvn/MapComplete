@@ -40,7 +40,6 @@ import { Feature, GeoJsonProperties } from "geojson"
 import { GeoOperations } from "../Logic/GeoOperations"
 import CreateNewNote from "./Popup/Notes/CreateNewNote.svelte"
 import AddNewPoint from "./Popup/AddNewPoint/AddNewPoint.svelte"
-import UserProfile from "./BigComponents/UserProfile.svelte"
 import LayerConfig from "../Models/ThemeConfig/LayerConfig"
 import TagRenderingConfig from "../Models/ThemeConfig/TagRenderingConfig"
 import { ExportAsGpxViz } from "./Popup/ExportAsGpxViz"
@@ -102,6 +101,7 @@ import CloseNoteButton from "./Popup/Notes/CloseNoteButton.svelte"
 import PendingChangesIndicator from "./BigComponents/PendingChangesIndicator.svelte"
 import QrCode from "./Popup/QrCode.svelte"
 import ClearCaches from "./Popup/ClearCaches.svelte"
+import GroupedView from "./Popup/GroupedView.svelte"
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -423,17 +423,6 @@ export default class SpecialVisualizations {
                         state,
                         coordinate: { lon, lat },
                     }).SetClass("w-full h-full overflow-auto")
-                },
-            },
-            {
-                funcName: "user_profile",
-                args: [],
-
-                docs: "A component showing information about the currently logged in user (username, profile description, profile picture + link to edit them). Mostly meant to be used in the 'user-settings'",
-                constr(state: SpecialVisualizationState): BaseUIElement {
-                    return new SvelteUIElement(UserProfile, {
-                        osmConnection: state.osmConnection,
-                    })
                 },
             },
             {
@@ -1340,6 +1329,7 @@ export default class SpecialVisualizations {
                         download: tagSource.map((tags) => Utils.SubstituteKeys(download, tags)),
                         ariaLabel: tagSource.map((tags) => Utils.SubstituteKeys(ariaLabel, tags)),
                         newTab: new ImmutableStore(newTab),
+                        icon: tagSource.map((tags) => Utils.SubstituteKeys(icon, tags))
                     }).setSpan()
                 },
             },
@@ -2006,6 +1996,27 @@ export default class SpecialVisualizations {
                 ],
                 constr(state: SpecialVisualizationState, tagSource: UIEventSource<Record<string, string>>, argument: string[], feature: Feature, layer: LayerConfig): SvelteUIElement {
                     return new SvelteUIElement<any, any, any>(ClearCaches, {msg: argument[0] ?? "Clear local caches"})
+                },
+            },
+            {
+                funcName: "group",
+                docs: "A collapsable group (accordion)",
+                args: [
+                    {
+                        name: "header",
+                        doc: "The _identifier_ of a single tagRendering. This will be used as header"
+                    },
+                    {
+                        name: "labels",
+                        doc: "A `;`-separated list of either identifiers or label names. All tagRenderings matching this value will be shown in the accordion"
+                    }
+                ],
+                constr(state: SpecialVisualizationState, tags: UIEventSource<Record<string, string>>, argument: string[], selectedElement: Feature, layer: LayerConfig): SvelteUIElement {
+                    const [header, labelsStr] = argument
+                    const labels = labelsStr.split(";").map(x => x.trim())
+                    return new SvelteUIElement<any, any, any>(GroupedView, {
+                        state, tags, selectedElement, layer, header, labels
+                    })
                 }
             }
         ]

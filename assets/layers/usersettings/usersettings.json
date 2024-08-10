@@ -34,10 +34,186 @@
   "lineRendering": null,
   "tagRenderings": [
     {
-      "id": "profile",
+      "id": "profile-group",
       "render": {
-        "*": "{user_profile()}"
+        "special": {
+          "type": "group",
+          "header": "profile-title",
+          "labels": "profile-content"
+        }
       }
+    },
+    {
+      "id": "profile-title",
+      "labels": ["hidden"],
+      "icon": "user_circle",
+      "render": {
+        "*": "<h3>{_name}</h3>"
+      },
+      "mappings": [
+        {
+          "if": "_img!=",
+          "#": "ignore-image-in-then",
+          "then": {
+            "*": "<div class='flex'><img src={_img} class='w-12 h-12 rounded-full' style='margin-right: 0.75rem'/> <h3>{_name}</h3></div>"
+          }
+        }
+      ]
+    },
+    {
+      "id": "profile-description",
+      "labels": [
+        "profile-content","hidden"
+      ],
+      "render": {
+        "*": "{_description_html}"
+      },
+      "mappings": [
+        {
+          "if": "_description=",
+
+          "then": {
+            "special": {
+              "type": "link",
+              "class": "button link-no-underline",
+              "icon": "pencil",
+              "href": "{_backend}/profile/edit",
+              "text": {
+                "ca": "Afegeix una descripció del perfil",
+                "cs": "Přidat popis profilu",
+                "de": "Profilbeschreibung hinzufügen",
+                "en": "Add a profile description",
+                "fi": "Lisää profiilin kuvaus",
+                "nb_NO": "Legg til profilbeskrivelse",
+                "nl": "Voeg een profielbeschrijving toe",
+                "pl": "Dodaj opis profilu",
+                "pt": "Adicionar uma descrição do perfil",
+                "zh_Hant": "新增個人檔敘述"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "edit-profile",
+      "labels": [
+        "profile-content","hidden"
+      ],
+      "condition": "_description!=",
+      "render": {
+        "special": {
+          "type": "link",
+          "href": "{_backend}/profile/edit",
+          "class": "button link-no-underline",
+          "icon": "pencil",
+          "text": {
+            "ca": "Editeu la descripció del vostre perfil",
+            "cs": "Úprava popisu vašeho profilu",
+            "da": "Ret din profilbeskrivelse",
+            "de": "Eigene Profilbeschreibung bearbeiten",
+            "en": "Edit your profile description",
+            "fi": "Muokkaa profiilin kuvausta",
+            "fr": "Modifier ton profil",
+            "nl": "Pas je profielbeschrijving aan",
+            "pl": "Edytuj opis swojego profilu",
+            "pt": "Editar a descrição do seu perfil",
+            "zh_Hant": "編輯你的個人檔敘述"
+          }
+        }
+      }
+    },
+    {
+      "id": "verified-mastodon",
+      "labels": [
+        "profile-content","hidden"
+      ],
+      "mappings": [
+        {
+          "if": "_mastodon_link~*",
+          "then": {
+            "en": "A link to your Mastodon-profile has been been found: <a href='{_mastodon_link}' target='_blank' rel='noopener'>{_mastodon_link}</a>",
+            "de": "Es wurde ein Link zu deinem Mastodon-Profil gefunden: <a href='{_mastodon_link}' target='_blank' rel='noopener'>{_mastodon_link}</a>",
+            "nl": "Een link naar je Mastodon-profiel werd gevonden: <a href='{_mastodon_link}' target='_blank' rel='noopener'>{_mastodon_link}</a>",
+            "fr": "Un lien vers votre profil Mastodon a été trouvé : <a href='{_mastodon_link}' target='_blank' rel='noopener'>{_mastodon_link}</a>",
+            "ca": "S'ha trobat un enllaç al vostre perfil de Mastodon: <a href='{_mastodon_link}' target='_blank' rel='noopener'>{_mastodon_link}</a>",
+            "cs": "Byl nalezen odkaz na váš profil Mastodon: <a href='{_mastodon_link}' target='_blank' rel='noopener'>{_mastodon_link}</a>"
+          },
+          "icon": "mastodon"
+        },
+        {
+          "if": "_mastodon_candidate~*",
+          "then": {
+            "en": "We found a link to what looks to be a mastodon account, but it is unverified. <a href='https://www.openstreetmap.org/profile/edit' target='_blank' rel='noopener'>Edit your profile description</a> and place the following there: <span class='code'>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt",
+            "de": "Wir haben einen Link gefunden, der aussieht wie ein Mastodon-Konto, aber nicht verifiziert ist. <a href='https://www.openstreetmap.org/profile/edit' target='_blank' rel='noopener'>Bearbeiten Sie Ihre Profilbeschreibung</a> und fügen Sie dort Folgendes ein: <span class='code'>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt",
+            "nl": "Je profielbeschrijving bevat een link die vermoedelijk naar je Mastodon gaat, maar deze link is niet verifieerdbaar voor Mastodon.<a href='https://www.openstreetmap.org/profile/edit' target='_blank' rel='noopener'>Pas je profielbeschrijving aan</a> en plaats er de volgende code: <span class='code'>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt",
+            "ca": "Hem trobat un enllaç al que sembla ser un compte de mastodon, però no està verificat. <a href='https://www.openstreetmap.org/profile/edit' target='_blank' rel='noopener'>Editeu la descripció del vostre perfil</a> i col·loqueu-hi el següent: <span class='code '>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt",
+            "cs": "Našli jsme odkaz na to, co vypadá jako účet mastodon, ale je neověřený. <a href='https://www.openstreetmap.org/profile/edit' target='_blank' rel='noopener'>Upravte popis svého profilu</a> a umístěte tam následující: <span class='code '>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt"
+          },
+          "icon": "invalid"
+        }
+      ]
+    },
+    {
+      "id": "cscount-thanks",
+      "labels": [
+        "profile-content","hidden"
+      ],
+      "mappings": [
+        {
+          "if": "_csCount>0",
+          "then": {
+            "en": "You have made changes on {_csCount} different occasions! That is awesome!",
+            "de": "Sie haben bei {_csCount} verschiedenen Gelegenheiten Änderungen vorgenommen! Das ist großartig!",
+            "ca": "Has fet {_csCount} en diferents ocasions! Això és sorprenent!",
+            "fr": "Vous avez fait {_csCount} modifications ! C'est génial !",
+            "pt": "Você fez alterações em {_csCount} ocasiões diferentes! Isso é incrível!",
+            "nl": "Je hebt {_csCount} verschillende keren bijgedragen! Dat is indrukwekkend!",
+            "da": "Du har lavet ændringer ved {_csCount} forskellige begivenheder! Det er fantastisk!",
+            "es": "Has hecho cambios en {_csCount} ocasiones diferentes. ¡Es alucinante!",
+            "cs": "Změny jste provedli při {_csCount} různých příležitostech! To je úžasné!"
+          },
+          "icon": "party"
+        }
+      ]
+    },
+    {
+      "id": "translation-thanks",
+      "labels": [
+        "profile-content","hidden"
+      ],
+      "mappings": [
+        {
+          "if": "_translation_contributions>0",
+          "then": {
+            "en": "You have contributed to translating MapComplete with {_translation_contributions} commits! That's awesome!",
+            "nl": "Je hebt MapComplete helpen vertalen met {_translation_contributions} commits! Dat is fantastisch! Bedankt hiervoor!",
+            "de": "Du hast mit {_translation_contributions} Änderungen zur Übersetzung von MapComplete beigetragen! Das ist großartig!"
+          },
+          "icon": "party"
+        }
+      ]
+    },
+    {
+      "id": "contributor-thanks",
+      "labels": [
+        "profile-content","hidden"
+      ],
+      "mappings": [
+        {
+          "if": "_code_contributions>0",
+          "then": {
+            "en": "You have contributed code to MapComplete with {_code_contributions} commits! That's awesome!",
+            "de": "Sie haben Code zu MapComplete mit {_code_contributions} Commits beigetragen! Das ist großartig!",
+            "nl": "Je hebt mee geprogrammeerd aan MapComplete met {_code_contributions} commits! Das supercool van je! Bedankt hiervoor!",
+            "ca": "Heu aportat codi a MapComplete amb {_code_contributions} commits! Això és increïble!",
+            "cs": "Přispěli jste do MapComplete kódem s {_code_contributions} revizemi! To je úžasné!",
+            "da": "Du har bidraget kode til MapComplete med {_code_contributions} commits! Det er fantastisk!"
+          },
+          "icon": "party",
+          "hideInAnswer": true
+        }
+      ]
     },
     {
       "id": "language_picker",
@@ -624,7 +800,6 @@
           "href": "data:application/json,{mangroveidentity}",
           "download": "mangrove_private_key_{_name}",
           "class": "button",
-
           "text": {
             "en": "Download the private key for your Mangrove Account",
             "de": "Laden Sie den privaten Schlüssel für Ihr Mangrove-Konto herunter",
@@ -823,86 +998,6 @@
           "tagrendering": "<a href='{link}' target='_blank' rel='noopener'>Translate entries of {id}</a>"
         }
       }
-    },
-    {
-      "id": "verified-mastodon",
-      "mappings": [
-        {
-          "if": "_mastodon_link~*",
-          "then": {
-            "en": "A link to your Mastodon-profile has been been found: <a href='{_mastodon_link}' target='_blank' rel='noopener'>{_mastodon_link}</a>",
-            "de": "Es wurde ein Link zu deinem Mastodon-Profil gefunden: <a href='{_mastodon_link}' target='_blank' rel='noopener'>{_mastodon_link}</a>",
-            "nl": "Een link naar je Mastodon-profiel werd gevonden: <a href='{_mastodon_link}' target='_blank' rel='noopener'>{_mastodon_link}</a>",
-            "fr": "Un lien vers votre profil Mastodon a été trouvé : <a href='{_mastodon_link}' target='_blank' rel='noopener'>{_mastodon_link}</a>",
-            "ca": "S'ha trobat un enllaç al vostre perfil de Mastodon: <a href='{_mastodon_link}' target='_blank' rel='noopener'>{_mastodon_link}</a>",
-            "cs": "Byl nalezen odkaz na váš profil Mastodon: <a href='{_mastodon_link}' target='_blank' rel='noopener'>{_mastodon_link}</a>"
-          },
-          "icon": "mastodon"
-        },
-        {
-          "if": "_mastodon_candidate~*",
-          "then": {
-            "en": "We found a link to what looks to be a mastodon account, but it is unverified. <a href='https://www.openstreetmap.org/profile/edit' target='_blank' rel='noopener'>Edit your profile description</a> and place the following there: <span class='code'>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt",
-            "de": "Wir haben einen Link gefunden, der aussieht wie ein Mastodon-Konto, aber nicht verifiziert ist. <a href='https://www.openstreetmap.org/profile/edit' target='_blank' rel='noopener'>Bearbeiten Sie Ihre Profilbeschreibung</a> und fügen Sie dort Folgendes ein: <span class='code'>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt",
-            "nl": "Je profielbeschrijving bevat een link die vermoedelijk naar je Mastodon gaat, maar deze link is niet verifieerdbaar voor Mastodon.<a href='https://www.openstreetmap.org/profile/edit' target='_blank' rel='noopener'>Pas je profielbeschrijving aan</a> en plaats er de volgende code: <span class='code'>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt",
-            "ca": "Hem trobat un enllaç al que sembla ser un compte de mastodon, però no està verificat. <a href='https://www.openstreetmap.org/profile/edit' target='_blank' rel='noopener'>Editeu la descripció del vostre perfil</a> i col·loqueu-hi el següent: <span class='code '>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt",
-            "cs": "Našli jsme odkaz na to, co vypadá jako účet mastodon, ale je neověřený. <a href='https://www.openstreetmap.org/profile/edit' target='_blank' rel='noopener'>Upravte popis svého profilu</a> a umístěte tam následující: <span class='code '>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt"
-          },
-          "icon": "invalid"
-        }
-      ]
-    },
-    {
-      "id": "cscount-thanks",
-      "mappings": [
-        {
-          "if": "_csCount>0",
-          "then": {
-            "en": "You have made changes on {_csCount} different occasions! That is awesome!",
-            "de": "Sie haben bei {_csCount} verschiedenen Gelegenheiten Änderungen vorgenommen! Das ist großartig!",
-            "ca": "Has fet {_csCount} en diferents ocasions! Això és sorprenent!",
-            "fr": "Vous avez fait {_csCount} modifications ! C'est génial !",
-            "pt": "Você fez alterações em {_csCount} ocasiões diferentes! Isso é incrível!",
-            "nl": "Je hebt {_csCount} verschillende keren bijgedragen! Dat is indrukwekkend!",
-            "da": "Du har lavet ændringer ved {_csCount} forskellige begivenheder! Det er fantastisk!",
-            "es": "Has hecho cambios en {_csCount} ocasiones diferentes. ¡Es alucinante!",
-            "cs": "Změny jste provedli při {_csCount} různých příležitostech! To je úžasné!"
-          },
-          "icon": "party"
-        }
-      ]
-    },
-    {
-      "id": "translation-thanks",
-      "mappings": [
-        {
-          "if": "_translation_contributions>0",
-          "then": {
-            "en": "You have contributed to translating MapComplete with {_translation_contributions} commits! That's awesome!",
-            "nl": "Je hebt MapComplete helpen vertalen met {_translation_contributions} commits! Dat is fantastisch! Bedankt hiervoor!",
-            "de": "Du hast mit {_translation_contributions} Änderungen zur Übersetzung von MapComplete beigetragen! Das ist großartig!"
-          },
-          "icon": "party"
-        }
-      ]
-    },
-    {
-      "id": "contributor-thanks",
-      "mappings": [
-        {
-          "if": "_code_contributions>0",
-          "then": {
-            "en": "You have contributed code to MapComplete with {_code_contributions} commits! That's awesome!",
-            "de": "Sie haben Code zu MapComplete mit {_code_contributions} Commits beigetragen! Das ist großartig!",
-            "nl": "Je hebt mee geprogrammeerd aan MapComplete met {_code_contributions} commits! Das supercool van je! Bedankt hiervoor!",
-            "ca": "Heu aportat codi a MapComplete amb {_code_contributions} commits! Això és increïble!",
-            "cs": "Přispěli jste do MapComplete kódem s {_code_contributions} revizemi! To je úžasné!",
-            "da": "Du har bidraget kode til MapComplete med {_code_contributions} commits! Det er fantastisk!"
-          },
-          "icon": "party",
-          "hideInAnswer": true
-        }
-      ]
     },
     {
       "id": "debug-title",
