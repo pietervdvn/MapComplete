@@ -19,6 +19,7 @@
   import RawEditor from "./RawEditor.svelte"
   import DeleteButton from "./DeleteButton.svelte"
   import StudioHashSetter from "./StudioHashSetter"
+  import TitledPanel from "../Base/TitledPanel.svelte"
 
   const layerSchema: ConfigMeta[] = <any>layerSchemaRaw
 
@@ -203,9 +204,11 @@
     </div>
     {#if $highlightedItem !== undefined}
       <FloatOver on:close={() => highlightedItem.setData(undefined)}>
-        <div>
+        <TitledPanel>
+          <h3 slot="title">Select a builtin question below</h3>
+
           <TagRenderingInput path={$highlightedItem.path} {state} />
-        </div>
+        </TitledPanel>
       </FloatOver>
     {/if}
   {/if}
