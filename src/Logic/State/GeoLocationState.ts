@@ -1,6 +1,8 @@
 import { Store, UIEventSource } from "../UIEventSource"
 import { LocalStorageSource } from "../Web/LocalStorageSource"
 import { QueryParameters } from "../Web/QueryParameters"
+import { Translation } from "../../UI/i18n/Translation"
+import Translations from "../../UI/i18n/Translations"
 
 export type GeolocationPermissionState = "prompt" | "requested" | "granted" | "denied"
 
@@ -62,7 +64,11 @@ export class GeoLocationState {
      */
     private readonly _grantedThisSession: UIEventSource<boolean> = new UIEventSource<boolean>(false)
 
-    constructor() {
+    /**
+     * A human explanation of the current gps state, to be shown on the home screen or as tooltip
+     */
+    public readonly gpsStateExplanation  : Store<Translation>
+     constructor() {
         const self = this
 
         this.permission.addCallbackAndRunD(async (state) => {
@@ -96,7 +102,34 @@ export class GeoLocationState {
             }
             this.requestPermission()
         }
-    }
+
+
+        this.gpsStateExplanation = this.gpsAvailable.map(available => {
+            if (!available) {
+                return Translations.t.general.labels.locationNotAvailable
+            }
+            if (this.permission.data === "denied") {
+                return Translations.t.general.geopermissionDenied
+            }
+            if (this.permission.data === "prompt") {
+                return Translations.t.general.labels.jumpToLocation
+            }
+            if (this.permission.data === "requested") {
+                return Translations.t.general.waitingForGeopermission
+            }
+
+
+            if (!this.allowMoving.data) {
+                return Translations.t.general.visualFeedback.islocked
+            }
+
+            if (this.currentGPSLocation.data !== undefined) {
+                return Translations.t.general.labels.jumpToLocation
+            }
+            return Translations.t.general.waitingForLocation
+        }, [this.allowMoving, this.permission])
+
+     }
 
     /**
      * Requests the user to allow access to their position.
