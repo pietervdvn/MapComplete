@@ -387,7 +387,10 @@ class MiscThemeChecks extends DesugaringStep<LayoutConfigJson> {
         if (json["clustering"]) {
             context.warn("Obsolete field `clustering` is still around")
         }
-        {
+
+        if(json.layers === undefined){
+            context.err("This theme has no layers defined")
+        }else{
             for (let i = 0; i < json.layers.length; i++) {
                 const l = json.layers[i]
                 if (l["override"]?.["source"] === undefined) {
