@@ -766,11 +766,9 @@
         "notImmediate": "翻譯不會直接更新，通常會需要幾天時間"
     },
     "userinfo": {
-        "editDescription": "編輯你的個人檔敘述",
         "gotoInbox": "開啟你的收件夾",
         "gotoSettings": "到你的 OpenStreetMap.org 設定",
         "noDescription": "你的個人檔還沒有敘述",
-        "noDescriptionCallToAction": "新增個人檔敘述",
         "notLoggedIn": "你已經登出了"
     },
     "validation": {

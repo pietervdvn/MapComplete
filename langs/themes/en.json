@@ -890,6 +890,23 @@
                     },
                     "name": "All advertentie wall paintings"
                 }
+            },
+            "2": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "This artwork is a historic advertisement"
+                                },
+                                "1": {
+                                    "then": "This artwork is not a historic advertisement"
+                                }
+                            },
+                            "question": "Is this artwork a historic advertisement?"
+                        }
+                    }
+                }
             }
         },
         "title": "Ghost Signs"

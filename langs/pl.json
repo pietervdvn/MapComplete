@@ -598,11 +598,9 @@
         "notImmediate": "Tłumaczenia nie są aktualizowane bezpośrednio. Zwykle trwa to kilka dni"
     },
     "userinfo": {
-        "editDescription": "Edytuj opis swojego profilu",
         "gotoInbox": "Otwórz swoją skrzynkę odbiorczą",
         "gotoSettings": "Przejdź do swoich ustawień na OpenStreetMap.org",
         "noDescription": "Nie masz jeszcze opisu w swoim profilu",
-        "noDescriptionCallToAction": "Dodaj opis profilu",
         "notLoggedIn": "Wylogowałeś się"
     },
     "validation": {

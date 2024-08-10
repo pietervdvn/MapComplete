@@ -766,11 +766,9 @@
         "notImmediate": "Die Übersetzung wird nicht direkt aktualisiert. Dies dauert in der Regel ein paar Tage"
     },
     "userinfo": {
-        "editDescription": "Eigene Profilbeschreibung bearbeiten",
         "gotoInbox": "Deinen Posteingang öffnen",
         "gotoSettings": "Einstellungen auf OpenStreetMap.org öffnen",
         "noDescription": "Noch keine Profilbeschreibung vorhanden",
-        "noDescriptionCallToAction": "Profilbeschreibung hinzufügen",
         "notLoggedIn": "Du hast Dich abgemeldet"
     },
     "validation": {

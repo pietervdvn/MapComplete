@@ -768,11 +768,9 @@
         "notImmediate": "Translations are not updated directly. This typically takes a few days"
     },
     "userinfo": {
-        "editDescription": "Edit your profile description",
         "gotoInbox": "Open your inbox",
         "gotoSettings": "Go to your settings on OpenStreetMap.org",
         "noDescription": "You don't have a description on your profile yet",
-        "noDescriptionCallToAction": "Add a profile description",
         "notLoggedIn": "You have logged out"
     },
     "validation": {

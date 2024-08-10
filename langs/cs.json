@@ -598,11 +598,9 @@
         "notImmediate": "Překlady nejsou aktualizovány přímo. Obvykle to trvá několik dní"
     },
     "userinfo": {
-        "editDescription": "Úprava popisu vašeho profilu",
         "gotoInbox": "Otevřít poštu",
         "gotoSettings": "Přejít do vašich nastavení na OpenStreetMap.org",
         "noDescription": "Na svém profilu zatím nemáte popis",
-        "noDescriptionCallToAction": "Přidat popis profilu",
         "notLoggedIn": "Odhlásili jste se"
     },
     "validation": {
