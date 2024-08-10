@@ -609,11 +609,9 @@
         "notImmediate": "Les traduccions no s'actualitzen directament. Això sol trigar uns quants dies"
     },
     "userinfo": {
-        "editDescription": "Editeu la descripció del vostre perfil",
         "gotoInbox": "Obre la teva safata d'entrada",
         "gotoSettings": "Aneu a la vostra configuració a OpenStreetMap.org",
         "noDescription": "Encara no tens una descripció al teu perfil",
-        "noDescriptionCallToAction": "Afegeix una descripció del perfil",
         "notLoggedIn": "Heu tancat la sessió"
     },
     "validation": {

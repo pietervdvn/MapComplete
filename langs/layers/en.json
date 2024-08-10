@@ -11145,6 +11145,14 @@
             "background-layer-readonly": {
                 "render": "This thematic map has a predefined background layer set. Your default theme setting does not apply"
             },
+            "clear_cache": {
+                "render": {
+                    "after": "Clearing the caches will delete locally downloaded data and code. You will remain logged in and your settings will be preserved. No data should be lost",
+                    "special": {
+                        "text": "Clear caches"
+                    }
+                }
+            },
             "contributor-thanks": {
                 "mappings": {
                     "0": {
@@ -11158,6 +11166,9 @@
                         "then": "You have made changes on {_csCount} different occasions! That is awesome!"
                     }
                 }
+            },
+            "debug-title": {
+                "render": "<h3>Debugging options</h3>"
             },
             "fixate-north": {
                 "mappings": {

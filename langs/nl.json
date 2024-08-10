@@ -641,11 +641,9 @@
         "notImmediate": "Vertalingen worden niet onmiddelijk geupdate. Dit duurt gemiddeld enkele dagen"
     },
     "userinfo": {
-        "editDescription": "Pas je profielbeschrijving aan",
         "gotoInbox": "Open je inbox",
         "gotoSettings": "Ga naar je instellingen op OpenStreetMap.org",
         "noDescription": "Je hebt nog geen beschrijving op je profiel",
-        "noDescriptionCallToAction": "Voeg een profielbeschrijving toe",
         "notLoggedIn": "Je bent afgemeld"
     },
     "validation": {

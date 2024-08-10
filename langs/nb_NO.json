@@ -428,8 +428,7 @@
     "userinfo": {
         "gotoInbox": "Åpne innboksen din",
         "gotoSettings": "Gå til innstillingene dine på OpenStreetMap.org",
-        "noDescription": "Du har ikke noen profilbeskrivelse enda",
-        "noDescriptionCallToAction": "Legg til profilbeskrivelse"
+        "noDescription": "Du har ikke noen profilbeskrivelse enda"
     },
     "validation": {
         "color": {
