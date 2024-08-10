@@ -4,8 +4,8 @@ import Constants from "../../Models/Constants"
 import { MapProperties } from "../../Models/MapProperties"
 
 /**
- * Displays an icon depending on the state of the geolocation.
- * Will set the 'lock' if clicked twice
+ * Does the user interaction state with a geolocation button, such as keeping track of the last click,
+ * and lock status + moving the map when clicked
  */
 export class GeolocationControlState {
     public readonly lastClick = new UIEventSource<Date>(undefined)
