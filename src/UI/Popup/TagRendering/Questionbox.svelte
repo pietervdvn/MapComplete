@@ -4,7 +4,7 @@
    * The questions can either be shown all at once or one at a time (in which case they can be skipped)
    */
   import TagRenderingConfig from "../../../Models/ThemeConfig/TagRenderingConfig"
-  import { UIEventSource } from "../../../Logic/UIEventSource"
+  import { ImmutableStore, Store, UIEventSource } from "../../../Logic/UIEventSource"
   import type { Feature } from "geojson"
   import type { SpecialVisualizationState } from "../../SpecialVisualization"
   import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
@@ -31,7 +31,7 @@
    */
   export let notForLabels: string[] | undefined = undefined
   const _notForLabels = new Set(notForLabels)
-  let showAllQuestionsAtOnce = state.userRelatedState.showAllQuestionsAtOnce
+  let showAllQuestionsAtOnce : Store<boolean>= state.userRelatedState?.showAllQuestionsAtOnce ?? new ImmutableStore(false)
 
   function allowed(labels: string[]) {
     if (onlyForLabels?.length > 0 && !labels.some((l) => _onlyForLabels.has(l))) {
@@ -42,7 +42,7 @@
     }
     return true
   }
-  const baseQuestions = (layer.tagRenderings ?? [])?.filter(
+  const baseQuestions = (layer?.tagRenderings ?? [])?.filter(
     (tr) => allowed(tr.labels) && tr.question !== undefined
   )
 
