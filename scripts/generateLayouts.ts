@@ -368,7 +368,7 @@ class GenerateLayouts extends Script {
         hosts.add("https://schema.org")
         const eliLayers: RasterLayerPolygon[] = AvailableRasterLayers.layersAvailableAt(
             new ImmutableStore({ lon: 0, lat: 0 })
-        ).data
+        ).store.data
         {
             const vectorLayers = eliLayers.filter((l) => l.properties.type === "vector")
             const vectorSources = vectorLayers.map((l) => l.properties.url)
