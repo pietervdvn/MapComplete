@@ -451,7 +451,7 @@ export interface LayoutConfigJson {
      * ifunset: Write 'change_within_x_m' as usual and if GPS is enabled
      * iftrue: Do not write 'change_within_x_m' and do not indicate that this was done by survey
      */
-    enableMorePrivacy: boolean
+    enableMorePrivacy?: boolean
     /**
      * question: Should this theme have the cache enabled?
      *
@@ -462,4 +462,10 @@ export interface LayoutConfigJson {
      * group: hidden
      */
     enableCache?: true | boolean
+
+    /**
+     * Set by the preprocessor
+     * group: hidden
+     */
+    _usedImages?: string[]
 }

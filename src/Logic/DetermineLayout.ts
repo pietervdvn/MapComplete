@@ -14,12 +14,13 @@ import licenses from "../assets/generated/license_info.json"
 import TagRenderingConfig from "../Models/ThemeConfig/TagRenderingConfig"
 import { FixImages } from "../Models/ThemeConfig/Conversion/FixImages"
 import questions from "../assets/generated/layers/questions.json"
-import { DoesImageExist, PrevalidateTheme, ValidateThemeAndLayers } from "../Models/ThemeConfig/Conversion/Validation"
+import { DoesImageExist, PrevalidateTheme } from "../Models/ThemeConfig/Conversion/Validation"
 import { DesugaringContext } from "../Models/ThemeConfig/Conversion/Conversion"
 import { TagRenderingConfigJson } from "../Models/ThemeConfig/Json/TagRenderingConfigJson"
 import Hash from "./Web/Hash"
 import { QuestionableTagRenderingConfigJson } from "../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
 import { LayoutConfigJson } from "../Models/ThemeConfig/Json/LayoutConfigJson"
+import { ValidateThemeAndLayers } from "../Models/ThemeConfig/Conversion/ValidateThemeAndLayers"
 
 export default class DetermineLayout {
     private static readonly _knownImages = new Set(Array.from(licenses).map((l) => l.path))
