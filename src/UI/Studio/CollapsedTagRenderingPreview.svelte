@@ -39,8 +39,8 @@
     return sch
   }
 
-  function fusePath(i: number, subpartPath: string[]): (string | number)[] {
-    const newPath = [...path, i]
+  function fusePath(subpartPath: string[]): (string | number)[] {
+    const newPath = [...path]
     const toAdd = [...subpartPath]
     for (const part of path) {
       if (toAdd[0] === part) {
@@ -146,7 +146,7 @@
       <Tr cls="font-bold" t={Translations.T(value?.question ?? value?.render)} />
     {/if}
   </div>
-  <div class="normal-background p-2">
+  <div class="normal-background p-2 border border-gray-300">
     {#if isTagRenderingBlock}
       <QuestionPreview {state} {path} {schema}>
         <button
@@ -193,12 +193,13 @@
         {/if}
       </QuestionPreview>
     {:else if schema.hints.types}
-      <SchemaBasedMultiType {state} {path} schema={schemaForMultitype()} />
+      <SchemaBasedMultiType {state} path={[...path,i]} schema={schemaForMultitype()} />
     {:else}
       {#each subparts as subpart}
         <SchemaBasedInput
           {state}
-          {path}
+          path={fusePath(subpart.path)}
+          schema={subpart}
         />
       {/each}
     {/if}

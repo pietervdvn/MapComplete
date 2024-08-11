@@ -301,11 +301,21 @@
     "enableMorePrivacy": {
       "description": "question: Should this theme leak some location info when making changes?\n\nWhen a changeset is made, a 'distance to object'-class is written to the changeset.\nFor some particular themes and layers, this might leak too much information, and we want to obfuscate this\n\nifunset: Write 'change_within_x_m' as usual and if GPS is enabled\niftrue: Do not write 'change_within_x_m' and do not indicate that this was done by survey",
       "type": "boolean"
+    },
+    "enableCache": {
+      "description": "question: Should this theme have the cache enabled?\n\nShould only be dissabled in highly specific cases, such as the GRB-theme\n\nifunset: Cache is enabled\niffalse: Do not cache data\ngroup: hidden",
+      "type": "boolean"
+    },
+    "_usedImages": {
+      "description": "Set by the preprocessor\ngroup: hidden",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
     }
   },
   "required": [
     "description",
-    "enableMorePrivacy",
     "icon",
     "id",
     "layers",
@@ -912,7 +922,7 @@
           ]
         },
         "rotation": {
-          "description": "question: What rotation should be applied on the icon?\nThis is mostly useful for items that face a specific direction, such as surveillance cameras\nThis is interpreted as css property for 'rotate', thus has to end with 'deg', e.g. `90deg`, `{direction}deg`, `calc(90deg - {camera:direction}deg)``\nifunset: Do not rotate",
+          "description": "question: What rotation should be applied on the icon?\nThis is mostly useful for items that face a specific direction, such as surveillance cameras\nThis is interpreted as css property for 'rotate', thus has to end with 'deg', e.g. `90deg`, `{direction}deg`, `calc(90deg - {camera:direction}deg)`\n\nIf the icon is shown on the projected centerpoint of a way, one can also use `_direction:centerpoint`\n\ntypes: Dynamic value ; string\nsuggestions:  return [{if: \"value={_direction:centerpoint}deg\", then: \"Point the top of the icon towards the end of the way\"}, {if: \"value=calc( {_direction:centerpoint}deg + 90deg )\", then: \"Point the left of the icon towards the end of the way\"}, {if: \"value=calc( {_direction:centerpoint}deg - 90deg )\", then: \"Point the right of the icon towards the end of the way\"}, {if: \"value=calc( {_direction:centerpoint}deg + 180deg )\", then: \"Point the bottom of the icon towards the end of the way\"}]\nifunset: Do not rotate",
           "anyOf": [
             {
               "$ref": "#/definitions/TagRenderingConfigJson"
@@ -967,7 +977,7 @@
           ]
         },
         "cssClasses": {
-          "description": "question: Which CSS-classes should be applied to the entire marker?\nThis will be applied to the _container_ containing both the marker and the label\n\nThe classes should be separated by a space (` `)\nYou can use most Tailwind-css classes, see https://tailwindcss.com/ for more information\nFor example: `center bg-gray-500 mx-2 my-1 rounded-full`\ninline: Apply CSS-classes <b>{value}</b> to the entire container\nifunset: Do not apply extra CSS-classes to the label\ntypes: Dynamic value ; string\nifunset: Do not apply extra CSS-classes to the entire marker\ngroup: expert",
+          "description": "question: Which CSS-classes should be applied to the entire marker?\nThis will be applied to the _container_ containing both the marker and the label\n\nThe classes should be separated by a space (` `)\nYou can use most Tailwind-css classes, see https://tailwindcss.com/ for more information\nFor example: `center bg-gray-500 mx-2 my-1 rounded-full`\ninline: Apply CSS-classes <b>{value}</b> to the entire container\ntypes: Dynamic value ; string\nifunset: Do not apply extra CSS-classes to the entire marker\ngroup: expert",
           "anyOf": [
             {
               "$ref": "#/definitions/TagRenderingConfigJson"
@@ -978,7 +988,7 @@
           ]
         },
         "pitchAlignment": {
-          "description": "question: If the map is pitched, should the icon stay parallel to the screen or to the groundplane?\nsuggestions: return [{if: \"value=canvas\", then: \"The icon will stay upward and not be transformed as if it sticks to the screen\"}, {if: \"value=map\", then: \"The icon will be transformed as if it were painted onto the ground. (Automatically sets rotationAlignment)\"}]\ngroup: expert",
+          "description": "question: If the map is pitched, should the icon stay parallel to the screen or to the groundplane?\nsuggestions: return [{if: \"value=canvas\", alsoShowIf: \"value=\", then: \"The icon will stay upward and not be transformed as if it sticks to the screen\"}, {if: \"value=map\", then: \"The icon will be transformed as if it were painted onto the ground. (Automatically sets rotationAlignment)\"}]\ngroup: expert",
           "anyOf": [
             {
               "$ref": "#/definitions/TagRenderingConfigJson"
@@ -2114,7 +2124,7 @@
           ]
         },
         "pointRendering": {
-          "description": "Creates points to render on the map.\nThis can render points for point-objects, lineobjects or areaobjects; use 'location' to indicate where it should be rendered\n\ngroup: pointrendering",
+          "description": "Creates points to render on the map.\nThis can render points for point-objects, lineobjects or areaobjects; use 'location' to indicate where it should be rendered.\n\nNote that all attributes - including [the calculated tags](https://github.com/pietervdvn/MapComplete/blob/develop/Docs/CalculatedTags.md) can be used to create the markers and lines\n\ngroup: pointrendering",
           "type": "array",
           "items": {
             "$ref": "#/definitions/default_4"
@@ -2537,7 +2547,7 @@
           ]
         },
         "pointRendering": {
-          "description": "Creates points to render on the map.\nThis can render points for point-objects, lineobjects or areaobjects; use 'location' to indicate where it should be rendered\n\ngroup: pointrendering",
+          "description": "Creates points to render on the map.\nThis can render points for point-objects, lineobjects or areaobjects; use 'location' to indicate where it should be rendered.\n\nNote that all attributes - including [the calculated tags](https://github.com/pietervdvn/MapComplete/blob/develop/Docs/CalculatedTags.md) can be used to create the markers and lines\n\ngroup: pointrendering",
           "type": "array",
           "items": {
             "$ref": "#/definitions/default_4"
