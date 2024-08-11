@@ -22,7 +22,7 @@ class SingleBackgroundHandler {
     constructor(
         map: Store<MLMap>,
         targetLayer: RasterLayerPolygon,
-        background: UIEventSource<RasterLayerPolygon | undefined>
+        background: UIEventSource<RasterLayerPolygon | undefined>,
     ) {
         this._targetLayer = targetLayer
         this._map = map
@@ -57,10 +57,15 @@ class SingleBackgroundHandler {
             "Removing raster layer",
             this._targetLayer.properties.id,
             "map moved and not been used for",
-            SingleBackgroundHandler.DEACTIVATE_AFTER
+            SingleBackgroundHandler.DEACTIVATE_AFTER,
         )
-        if (map.getLayer(<string>this._targetLayer.properties.id)) {
-            map.removeLayer(<string>this._targetLayer.properties.id)
+        try {
+
+            if (map.getLayer(<string>this._targetLayer.properties.id)) {
+                map.removeLayer(<string>this._targetLayer.properties.id)
+            }
+        } catch (e) {
+            console.warn("Could not (try to) remove the raster layer", e)
         }
     }
 
@@ -152,7 +157,7 @@ class SingleBackgroundHandler {
                             "raster-opacity": 0,
                         },
                     },
-                    addLayerBeforeId
+                    addLayerBeforeId,
                 )
                 this.opacity.addCallbackAndRun((o) => {
                     try {
@@ -170,14 +175,14 @@ class SingleBackgroundHandler {
     private fadeOut() {
         Stores.Chronic(
             8,
-            () => this.opacity.data > 0 && this._deactivationTime !== undefined
+            () => this.opacity.data > 0 && this._deactivationTime !== undefined,
         ).addCallback((_) => this.opacity.setData(Math.max(0, this.opacity.data - this.fadeStep)))
     }
 
     private fadeIn() {
         Stores.Chronic(
             8,
-            () => this.opacity.data < 1.0 && this._deactivationTime === undefined
+            () => this.opacity.data < 1.0 && this._deactivationTime === undefined,
         ).addCallback((_) => this.opacity.setData(Math.min(1.0, this.opacity.data + this.fadeStep)))
     }
 }
@@ -195,7 +200,7 @@ export default class RasterLayerHandler {
     }
 
     public static prepareSource(
-        layer: RasterLayerProperties
+        layer: RasterLayerProperties,
     ): RasterSourceSpecification | VectorSourceSpecification {
         if (layer.type === "vector") {
             const vs: VectorSourceSpecification = {

@@ -1,5 +1,5 @@
 import { Store, UIEventSource } from "../UIEventSource"
-import { RasterLayerPolygon } from "../../Models/RasterLayers"
+import { AvailableRasterLayers, RasterLayerPolygon } from "../../Models/RasterLayers"
 
 /**
  * Selects the appropriate raster layer as background for the given query parameter, theme setting, user preference or default value.
@@ -8,7 +8,7 @@ import { RasterLayerPolygon } from "../../Models/RasterLayers"
  */
 export class PreferredRasterLayerSelector {
     private readonly _rasterLayerSetting: UIEventSource<RasterLayerPolygon>
-    private readonly _availableLayers: Store<RasterLayerPolygon[]>
+    private readonly _availableLayers: { store: Store<RasterLayerPolygon[]> }
     private readonly _preferredBackgroundLayer: UIEventSource<
         string | "photo" | "map" | "osmbasedmap" | undefined
     >
@@ -16,11 +16,11 @@ export class PreferredRasterLayerSelector {
 
     constructor(
         rasterLayerSetting: UIEventSource<RasterLayerPolygon>,
-        availableLayers: Store<RasterLayerPolygon[]>,
+        availableLayers: { store: Store<RasterLayerPolygon[]> },
         queryParameter: UIEventSource<string>,
         preferredBackgroundLayer: UIEventSource<
             string | "photo" | "map" | "osmbasedmap" | undefined
-        >
+        >,
     ) {
         this._rasterLayerSetting = rasterLayerSetting
         this._availableLayers = availableLayers
@@ -47,7 +47,13 @@ export class PreferredRasterLayerSelector {
 
         this._preferredBackgroundLayer.addCallbackD((_) => self.updateLayer())
 
-        this._availableLayers.addCallbackD((_) => self.updateLayer())
+        rasterLayerSetting.addCallbackAndRunD(layer => {
+            if (AvailableRasterLayers.globalLayers.find(l => l.id === layer.properties.id)) {
+                return
+            }
+            this._availableLayers.store.addCallbackD((_) => self.updateLayer())
+            return true // unregister
+        })
         self.updateLayer()
     }
 
@@ -58,9 +64,17 @@ export class PreferredRasterLayerSelector {
     private updateLayer() {
         // What is the ID of the layer we have to (try to) load?
         const targetLayerId = this._queryParameter.data ?? this._preferredBackgroundLayer.data
-        const available = this._availableLayers.data
+        if (targetLayerId === undefined || targetLayerId === "default") {
+            return
+        }
+        const global = AvailableRasterLayers.globalLayers.find(l => l.properties.id === targetLayerId)
+        if (global) {
+            this._rasterLayerSetting.setData(global)
+            return
+        }
         const isCategory =
             targetLayerId === "photo" || targetLayerId === "osmbasedmap" || targetLayerId === "map"
+        const available = this._availableLayers.store.data
         const foundLayer = isCategory
             ? available.find((l) => l.properties.category === targetLayerId)
             : available.find((l) => l.properties.id === targetLayerId)

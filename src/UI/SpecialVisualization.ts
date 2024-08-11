@@ -88,8 +88,6 @@ export interface SpecialVisualizationState {
         readonly language: UIEventSource<string>
     }
 
-    readonly availableLayers: Store<RasterLayerPolygon[]>
-
     readonly imageUploadManager: ImageUploadManager
 
     readonly previewedImage: UIEventSource<ProvidedImage>
