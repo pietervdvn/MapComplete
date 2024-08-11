@@ -5,6 +5,7 @@
   import type * as Monaco from "monaco-editor/esm/vs/editor/editor.api"
   import layerSchemaJSON from "../../../Docs/Schemas/LayerConfigJson.schema.json"
   import layoutSchemaJSON from "../../../Docs/Schemas/LayoutConfigJson.schema.json"
+  import Loading from "../Base/Loading.svelte"
 
   export let state: EditLayerState | EditThemeState
 
@@ -44,6 +45,7 @@
   })
 
   let useFallback = false
+  let isLoaded = false
   onMount(async () => {
     const monacoEditor = await import("monaco-editor")
     loader.config({
@@ -106,6 +108,7 @@
         save()
       }, 500)
     })
+    isLoaded = true
   })
 
   onDestroy(() => {
@@ -121,5 +124,11 @@
 {#if useFallback}
   <textarea class="w-full" rows="25" bind:value={$rawConfig} />
 {:else}
-  <div bind:this={container} class="h-full w-full" />
+  <div bind:this={container} class="h-full w-full">
+    {#if !isLoaded}
+      <div class="h-full w-full flex items-center align-center">
+        <Loading />
+      </div>
+    {/if}
+  </div>
 {/if}

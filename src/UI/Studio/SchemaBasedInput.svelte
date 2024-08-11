@@ -8,8 +8,7 @@
 
   export let state: EditJsonState<any>
   export let path: (string | number)[] = []
-  console.log("Fetched schema:", path, state.getSchema(<any> path))
-  let schema: ConfigMeta = state.getSchema(<any> path)[0]
+  export let schema: ConfigMeta = state.getSchema(<any> path)[0]
   let expertMode = state.expertMode
 </script>
 {#if schema === undefined}

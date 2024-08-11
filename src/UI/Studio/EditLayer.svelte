@@ -82,7 +82,7 @@
   let highlightedItem: UIEventSource<HighlightedTagRendering> = state.highlightedItem
 </script>
 
-<div class="flex h-screen flex-col">
+<div class="flex h-screen flex-col link-underline">
   <div class="my-2 flex w-full flex-wrap justify-between">
     <slot />
     {#if $title === undefined}

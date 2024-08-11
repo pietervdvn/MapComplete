@@ -1618,7 +1618,7 @@
       "group": "pointrendering"
     },
     "type": "array",
-    "description": "Creates points to render on the map.\nThis can render points for point-objects, lineobjects or areaobjects; use 'location' to indicate where it should be rendered"
+    "description": "Creates points to render on the map.\nThis can render points for point-objects, lineobjects or areaobjects; use 'location' to indicate where it should be rendered.\nNote that all attributes - including [the calculated tags](https://github.com/pietervdvn/MapComplete/blob/develop/Docs/CalculatedTags.md) can be used to create the markers and lines"
   },
   {
     "path": [
@@ -1856,6 +1856,11 @@
           "if": "value=party",
           "then": "party",
           "icon": "party"
+        },
+        {
+          "if": "value=pencil",
+          "then": "pencil",
+          "icon": "pencil"
         },
         {
           "if": "value=pin",
@@ -3778,8 +3783,27 @@
     ],
     "required": false,
     "hints": {
+      "types": "Dynamic value ; string",
       "question": "What rotation should be applied on the icon?",
-      "ifunset": "Do not rotate"
+      "ifunset": "Do not rotate",
+      "suggestions": [
+        {
+          "if": "value={_direction:centerpoint}deg",
+          "then": "Point the top of the icon towards the end of the way"
+        },
+        {
+          "if": "value=calc( {_direction:centerpoint}deg + 90deg )",
+          "then": "Point the left of the icon towards the end of the way"
+        },
+        {
+          "if": "value=calc( {_direction:centerpoint}deg - 90deg )",
+          "then": "Point the right of the icon towards the end of the way"
+        },
+        {
+          "if": "value=calc( {_direction:centerpoint}deg + 180deg )",
+          "then": "Point the bottom of the icon towards the end of the way"
+        }
+      ]
     },
     "type": [
       {
@@ -3966,7 +3990,7 @@
         "type": "string"
       }
     ],
-    "description": "This is mostly useful for items that face a specific direction, such as surveillance cameras\nThis is interpreted as css property for 'rotate', thus has to end with 'deg', e.g. `90deg`, `{direction}deg`, `calc(90deg - {camera:direction}deg)``"
+    "description": "This is mostly useful for items that face a specific direction, such as surveillance cameras\nThis is interpreted as css property for 'rotate', thus has to end with 'deg', e.g. `90deg`, `{direction}deg`, `calc(90deg - {camera:direction}deg)`\nIf the icon is shown on the projected centerpoint of a way, one can also use `_direction:centerpoint`"
   },
   {
     "path": [
@@ -7287,7 +7311,7 @@
       "types": "Dynamic value ; string",
       "group": "expert",
       "question": "Which CSS-classes should be applied to the entire marker?",
-      "ifunset": "Do not apply extra CSS-classes to the label",
+      "ifunset": "Do not apply extra CSS-classes to the entire marker",
       "inline": "Apply CSS-classes <b>{value}</b> to the entire container"
     },
     "type": [
@@ -7990,6 +8014,7 @@
       "suggestions": [
         {
           "if": "value=canvas",
+          "alsoShowIf": "value=",
           "then": "The icon will stay upward and not be transformed as if it sticks to the screen"
         },
         {
