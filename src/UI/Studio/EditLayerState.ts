@@ -172,7 +172,8 @@ export abstract class EditJsonState<T> {
         }
     }
 
-    public getSchema(path: string[]): ConfigMeta[] {
+    public getSchema(path: (string | number)[]): ConfigMeta[] {
+        path = path.filter(p => typeof p === "string")
         const schemas = this.schema.filter(
             (sch) =>
                 sch !== undefined &&
