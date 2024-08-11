@@ -8,7 +8,7 @@ import {
     Pipe,
 } from "../../Models/ThemeConfig/Conversion/Conversion"
 import { PrepareLayer } from "../../Models/ThemeConfig/Conversion/PrepareLayer"
-import { PrevalidateTheme, ValidateLayer, ValidateTheme } from "../../Models/ThemeConfig/Conversion/Validation"
+import { PrevalidateTheme, ValidateLayer } from "../../Models/ThemeConfig/Conversion/Validation"
 import { AllSharedLayers } from "../../Customizations/AllSharedLayers"
 import { QuestionableTagRenderingConfigJson } from "../../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
 import { TagUtils } from "../../Logic/Tags/TagUtils"
@@ -23,6 +23,7 @@ import { PrepareTheme } from "../../Models/ThemeConfig/Conversion/PrepareTheme"
 import { ConversionContext } from "../../Models/ThemeConfig/Conversion/ConversionContext"
 import { LocalStorageSource } from "../../Logic/Web/LocalStorageSource"
 import { TagRenderingConfigJson } from "../../Models/ThemeConfig/Json/TagRenderingConfigJson"
+import { ValidateTheme } from "../../Models/ThemeConfig/Conversion/ValidateTheme"
 
 export interface HighlightedTagRendering {
     path: ReadonlyArray<string | number>

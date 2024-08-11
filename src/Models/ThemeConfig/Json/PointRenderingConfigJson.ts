@@ -93,6 +93,10 @@ export default interface PointRenderingConfigJson {
      * question: What rotation should be applied on the icon?
      * This is mostly useful for items that face a specific direction, such as surveillance cameras
      * This is interpreted as css property for 'rotate', thus has to end with 'deg', e.g. `90deg`, `{direction}deg`, `calc(90deg - {camera:direction}deg)``
+     *
+     * If the icon is shown on the projected centerpoint of a way, one can also use `_direction:centerpoint`
+     *
+     * suggestions:  return [{if: "value={_direction:centerpoint}deg", then: "Point north if the icon is pointing up"}, {if: "value=calc( {_direction:centerpoint}deg + 90deg)", then: "Point east if the icon is pointing up"}, {if: "value=calc( {_direction:centerpoint}deg + 180deg)", then: "Point south if the icon is pointing up"},{if: "value=calc( {_direction:centerpoint}deg + 270deg)", then: "Point west if the icon is pointing up"}]
      * ifunset: Do not rotate
      */
     rotation?: string | TagRenderingConfigJson
