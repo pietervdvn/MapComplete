@@ -5,16 +5,16 @@
   import { TrashIcon } from "@babeard/svelte-heroicons/mini"
   import ShowConversionMessage from "./ShowConversionMessage.svelte"
   import Markdown from "../Base/Markdown.svelte"
-  import { Utils } from "../../Utils"
-  import type { QuestionableTagRenderingConfigJson } from "../../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
+  import type {
+    QuestionableTagRenderingConfigJson,
+  } from "../../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
   import CollapsedTagRenderingPreview from "./CollapsedTagRenderingPreview.svelte"
   import { Accordion } from "flowbite-svelte"
 
   export let state: EditJsonState<any>
   export let path: (string | number)[] = []
-  export let schema: ConfigMeta
+  let schema: ConfigMeta = state.getSchema(path)[0]
 
-  schema = Utils.Clone(schema)
   let title = schema.path.at(-1)
   let singular = title
   if (title?.endsWith("s")) {
@@ -37,7 +37,8 @@
     .filter((part) => part.path.length - 1 === schema.path.length)
   let messages = state.messagesFor(path)
 
-  const currentValue = state.getStoreFor<(string | QuestionableTagRenderingConfigJson)[]>(path)
+  let datapath = path
+  const currentValue = state.getStoreFor<(string | QuestionableTagRenderingConfigJson)[]>(datapath)
   if (currentValue.data === undefined) {
     currentValue.setData([])
   }
@@ -54,25 +55,14 @@
     }
   }
 
-  function fusePath(i: number, subpartPath: string[]): (string | number)[] {
-    const newPath = [...path, i]
-    const toAdd = [...subpartPath]
-    for (const part of path) {
-      if (toAdd[0] === part) {
-        toAdd.splice(0, 1)
-      } else {
-        break
-      }
-    }
-    newPath.push(...toAdd)
-    return newPath
+  function fusePath(i: number): (string | number)[] {
+    return [...path, i]
   }
 
   function del(i: number) {
     currentValue.data.splice(i, 1)
     currentValue.ping()
   }
-
 
 
 </script>
@@ -85,18 +75,20 @@
   {/if}
   {#if $currentValue === undefined}
     No array defined
-  {:else if $currentValue.length === 0}
+  {:else if !Array.isArray($currentValue)}
+    Not an array: {typeof $currentValue} {JSON.stringify(path)} {JSON.stringify($currentValue).slice(0,120)}
+  {:else if $currentValue?.length === 0}
     No values are defined
     {#if $messages.length > 0}
       {#each $messages as message}
         <ShowConversionMessage {message} />
       {/each}
     {/if}
-    {:else if subparts.length === 0}
+  {:else if subparts.length === 0}
     <!-- We need an array of values, so we use the typehint of the _parent_ element as field -->
     {#each $currentValue as value, i}
       <div class="flex w-full">
-        <SchemaBasedField {state} {schema} path={fusePath(i, [])} />
+        <SchemaBasedField {state} {schema} path={fusePath(i)} />
         <button
           class="h-fit w-fit rounded-full border border-black p-1"
           on:click={() => {
@@ -109,9 +101,9 @@
     {/each}
   {:else}
     <Accordion>
-    {#each $currentValue as value, i  (value)}
-      <CollapsedTagRenderingPreview {state} {isTagRenderingBlock} {schema} {currentValue} {value} {i} {singular} path={fusePath(i, [])}/>
-    {/each}
+      {#each $currentValue as value, i (value)}
+        <CollapsedTagRenderingPreview {state} {isTagRenderingBlock} {schema} {currentValue} {value} {i} {singular} path={fusePath(i)} />
+      {/each}
     </Accordion>
   {/if}
   <div class="flex">

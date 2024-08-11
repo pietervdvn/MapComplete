@@ -12,15 +12,16 @@
   let schema: ConfigMeta = state.getSchema(<any> path)[0]
   let expertMode = state.expertMode
 </script>
-
-{#if (schema.hints?.group !== "expert" || $expertMode) && schema.hints.group !== "hidden"}
+{#if schema === undefined}
+  <div>ERROR: no schema found for {path.join(".")}</div>
+{:else if (schema.hints?.group !== "expert" || $expertMode) && schema.hints.group !== "hidden"}
   {#if schema.hints?.typehint?.endsWith("[]")}
     <!-- We cheat a bit here by matching this 'magical' type... -->
-    <SchemaBasedArray {path} {state} {schema} />
+    <SchemaBasedArray {path} {state} />
   {:else if schema.type === "array" && schema.hints.multianswer === "true"}
     <ArrayMultiAnswer {path} {state} {schema} />
   {:else if schema.type === "array"}
-    <SchemaBasedArray {path} {state} {schema} />
+    <SchemaBasedArray {path} {state} />
   {:else if schema.hints?.types}
     <SchemaBasedMultiType {path} {state} {schema} />
   {:else}

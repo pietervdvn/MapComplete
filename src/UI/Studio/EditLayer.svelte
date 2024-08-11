@@ -124,7 +124,7 @@
 
   {#if $currentlyMissing.length > 0}
     {#each requiredFields as required}
-      <SchemaBasedInput {state} schema={configForRequiredField(required)} path={[required]} />
+      <SchemaBasedInput {state} path={[required]} />
     {/each}
   {:else}
     <div class="m4 h-full overflow-y-auto">
