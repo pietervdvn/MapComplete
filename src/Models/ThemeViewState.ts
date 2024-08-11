@@ -2,11 +2,7 @@ import LayoutConfig from "./ThemeConfig/LayoutConfig"
 import { SpecialVisualizationState } from "../UI/SpecialVisualization"
 import { Changes } from "../Logic/Osm/Changes"
 import { Store, UIEventSource } from "../Logic/UIEventSource"
-import {
-    FeatureSource,
-    IndexedFeatureSource,
-    WritableFeatureSource,
-} from "../Logic/FeatureSource/FeatureSource"
+import { FeatureSource, IndexedFeatureSource, WritableFeatureSource } from "../Logic/FeatureSource/FeatureSource"
 import { OsmConnection } from "../Logic/Osm/OsmConnection"
 import { ExportableMap, MapProperties } from "./MapProperties"
 import LayerState from "../Logic/State/LayerState"
@@ -50,9 +46,7 @@ import BackgroundLayerResetter from "../Logic/Actors/BackgroundLayerResetter"
 import SaveFeatureSourceToLocalStorage from "../Logic/FeatureSource/Actors/SaveFeatureSourceToLocalStorage"
 import BBoxFeatureSource from "../Logic/FeatureSource/Sources/TouchesBboxFeatureSource"
 import ThemeViewStateHashActor from "../Logic/Web/ThemeViewStateHashActor"
-import NoElementsInViewDetector, {
-    FeatureViewState,
-} from "../Logic/Actors/NoElementsInViewDetector"
+import NoElementsInViewDetector, { FeatureViewState } from "../Logic/Actors/NoElementsInViewDetector"
 import FilteredLayer from "./FilteredLayer"
 import { PreferredRasterLayerSelector } from "../Logic/Actors/PreferredRasterLayerSelector"
 import { ImageUploadManager } from "../Logic/ImageProviders/ImageUploadManager"
@@ -122,7 +116,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
     readonly perLayer: ReadonlyMap<string, GeoIndexedStoreForLayer>
     readonly perLayerFiltered: ReadonlyMap<string, FilteringFeatureSource>
 
-    readonly availableLayers: Store<RasterLayerPolygon[]>
+    readonly availableLayers:  {store: Store<RasterLayerPolygon[]>}
     readonly userRelatedState: UserRelatedState
     readonly geolocation: GeoLocationHandler
     readonly geolocationControl: GeolocationControlState
@@ -153,7 +147,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
     public readonly visualFeedback: UIEventSource<boolean> = new UIEventSource<boolean>(false)
     public readonly toCacheSavers: ReadonlyMap<string, SaveFeatureSourceToLocalStorage>
 
-    public readonly nearbyImageSearcher
+    public readonly nearbyImageSearcher: CombinedFetcher
 
     constructor(layout: LayoutConfig, mvtAvailableLayers: Set<string>) {
         Utils.initDomPurify()
@@ -375,9 +369,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
         longAgo.setTime(new Date().getTime() - 5 * 365 * 24 * 60 * 60 * 1000)
         this.nearbyImageSearcher = new CombinedFetcher(50, longAgo, this.indexedFeatures)
 
-        this.featureSummary = this.setupSummaryLayer(
-            new LayerConfig(<LayerConfigJson>summaryLayer, "summaryLayer", true)
-        )
+        this.featureSummary = this.setupSummaryLayer()
         this.toCacheSavers = layout.enableCache ? this.initSaveToLocalStorage() : undefined
         this.initActors()
         this.drawSpecialLayers()
@@ -647,7 +639,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 }
             )
             const setLayerCategory = (category: EliCategory) => {
-                const available = this.availableLayers.data
+                const available = this.availableLayers.store.data
                 const current = this.mapProperties.rasterLayer
                 const best = RasterLayerUtils.SelectBestLayerAccordingTo(
                     available,
@@ -696,7 +688,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
         )
     }
 
-    private setupSummaryLayer(summaryLayerConfig: LayerConfig): SummaryTileSourceRewriter {
+    private setupSummaryLayer(): SummaryTileSourceRewriter {
         /**
          * MaxZoom for the summary layer
          */
@@ -723,8 +715,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
             }
         )
 
-        const src = new SummaryTileSourceRewriter(summaryTileSource, this.layerState.filteredLayers)
-        return src
+        return new SummaryTileSourceRewriter(summaryTileSource, this.layerState.filteredLayers)
     }
 
     /**

@@ -8,7 +8,6 @@ import { Utils } from "../../../Utils"
 import { DetectDuplicatePresets, DoesImageExist, ValidateLanguageCompleteness } from "./Validation"
 
 export class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
-    private static readonly _availableLayers = AvailableRasterLayers.allIds()
     /**
      * The paths where this layer is originally saved. Triggers some extra checks
      * @private
@@ -150,6 +149,8 @@ export class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
         }
 
         if (json.defaultBackgroundId) {
+            /*
+            TODO re-enable this check
             const backgroundId = json.defaultBackgroundId
 
             const isCategory =
@@ -165,7 +166,7 @@ export class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
                             .slice(0, 5)
                             .join(", ")}`,
                     )
-            }
+            }*/
         }
 
         for (let i = 0; i < theme.layers.length; i++) {
