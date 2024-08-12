@@ -34,6 +34,7 @@
   let gpsAvailable = geolocation.gpsAvailable
 
   function jumpToCurrentLocation() {
+    state.geolocationControl.handleClick()
     const glstate = state.geolocation.geolocationState
     if (glstate.currentGPSLocation.data !== undefined) {
       const c: GeolocationCoordinates = glstate.currentGPSLocation.data
