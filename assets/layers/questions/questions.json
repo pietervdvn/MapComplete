@@ -2902,6 +2902,31 @@
       "render": {
         "*": "{preset_description()}"
       }
+    },
+    {
+      "id": "brand",
+      "question": {
+        "en": "Is this part of a bigger brand?"
+      },
+      "render": {
+        "en": "Part of {brand}"
+      },
+      "freeform": {
+        "key": "brand",
+        "addExtraTags": ["nobrand="]
+      },
+      "mappings": [
+        {
+          "if": "nobrand=yes",
+          "addExtraTags": [
+            "brand=",
+            "brand:wikidata="
+          ],
+          "then": {
+            "en": "Not part of a bigger brand"
+          }
+        }
+      ]
     }
   ]
 }
