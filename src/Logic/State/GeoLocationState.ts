@@ -105,6 +105,9 @@ export class GeoLocationState {
 
 
         this.gpsStateExplanation = this.gpsAvailable.map(available => {
+            if (this.currentGPSLocation.data !== undefined) {
+                return Translations.t.general.labels.jumpToLocation
+            }
             if (!available) {
                 return Translations.t.general.labels.locationNotAvailable
             }
@@ -123,9 +126,7 @@ export class GeoLocationState {
                 return Translations.t.general.visualFeedback.islocked
             }
 
-            if (this.currentGPSLocation.data !== undefined) {
-                return Translations.t.general.labels.jumpToLocation
-            }
+
             return Translations.t.general.waitingForLocation
         }, [this.allowMoving, this.permission, this.currentGPSLocation])
 
