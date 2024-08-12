@@ -35,6 +35,7 @@
   "startLon": 4.3755,
   "layers": [
     "hotel",
+    "hostel",
     {
       "builtin": [
         "love_hotel"

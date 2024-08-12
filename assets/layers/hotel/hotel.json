@@ -125,13 +125,18 @@
         "pl": "Nazwa tego hotelu to {name}"
       }
     },
-    "phone",
-    "email",
-    "website",
+    {
+      "builtin": "brand",
+      "override": {
+        "question": {
+          "en": "Is this hotel part of a bigger brand?"
+        }
+      }
+    },
+    "contact",
     "wheelchair-access",
-    "internet",
-    "internet-fee",
-    "internet-ssid"
+    "internet-all",
+    "dog-access"
   ],
   "allowMove": {
     "enableImproveAccuracy": true,
