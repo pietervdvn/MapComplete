@@ -81,13 +81,13 @@ export class GeolocationControlState {
             return
         }
 
-        // A location _is_ known! Let's move to this location
         const currentLocation = geolocationState.currentGPSLocation.data
         if (currentLocation === undefined) {
             // No location is known yet, not much we can do
             lastClick.setData(new Date())
             return
         }
+        // A location _is_ known! Let's move to this location
         const inBounds = state.bounds.data.contains([
             currentLocation.longitude,
             currentLocation.latitude,
