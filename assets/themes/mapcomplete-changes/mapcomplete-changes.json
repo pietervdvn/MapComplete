@@ -291,7 +291,7 @@
                   },
                   {
                     "if": "theme=hotels",
-                    "then": "./assets/layers/hotel/hotel.svg"
+                    "then": "./assets/layers/tourism_accomodation/hotel.svg"
                   },
                   {
                     "if": "theme=icecream",
@@ -316,10 +316,6 @@
                   {
                     "if": "theme=lighthouses",
                     "then": "./assets/themes/lighthouses/lighthouse.svg"
-                  },
-                  {
-                    "if": "theme=mapcomplete-changes",
-                    "then": "./assets/svg/logo.svg"
                   },
                   {
                     "if": "theme=maproulette",

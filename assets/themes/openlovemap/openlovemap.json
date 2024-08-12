@@ -261,7 +261,7 @@
     },
     "love_hotel",
     {
-      "builtin": "hotel",
+      "builtin": "tourism_accomodation",
       "override": {
         "minzoom": 17,
         "+tagRenderings": [

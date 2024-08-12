@@ -122,6 +122,26 @@
         }
     },
     "usersettings": {
+        "tagRenderings": {
+            "edit-profile": {
+                "render": {
+                    "special": {
+                        "text": "Muokkaa profiilin kuvausta"
+                    }
+                }
+            },
+            "profile-description": {
+                "mappings": {
+                    "0": {
+                        "then": {
+                            "special": {
+                                "text": "Lisää profiilin kuvaus"
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "title": {
             "render": "Asetukset"
         }

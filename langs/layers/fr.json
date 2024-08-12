@@ -3676,32 +3676,6 @@
             }
         }
     },
-    "hotel": {
-        "description": "Couche affichant les hôtels",
-        "name": "Hôtels",
-        "presets": {
-            "0": {
-                "title": "un hôtel"
-            }
-        },
-        "tagRenderings": {
-            "name": {
-                "freeform": {
-                    "placeholder": "Nom de l'hôtel"
-                },
-                "question": "Quel est le nom de cet hôtel ?",
-                "render": "Cet hôtel s'appelle {name}"
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Hôtel {name}"
-                }
-            },
-            "render": "Hôtel"
-        }
-    },
     "hydrant": {
         "description": "Couche des bornes incendie.",
         "name": "Carte des bornes incendie",
@@ -6524,6 +6498,20 @@
             }
         }
     },
+    "tourism_accomodation": {
+        "presets": {
+            "0": {
+                "title": "un hôtel"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Hôtel {name}"
+                }
+            }
+        }
+    },
     "trail": {
         "name": "Sentiers",
         "tagRenderings": {
@@ -6922,6 +6910,13 @@
                 "mappings": {
                     "0": {
                         "then": "Vous avez fait {_csCount} modifications ! C'est génial !"
+                    }
+                }
+            },
+            "edit-profile": {
+                "render": {
+                    "special": {
+                        "text": "Modifier ton profil"
                     }
                 }
             },

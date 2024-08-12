@@ -1768,6 +1768,13 @@
                     }
                 }
             },
+            "edit-profile": {
+                "render": {
+                    "special": {
+                        "text": "Editar a descrição do seu perfil"
+                    }
+                }
+            },
             "picture-license": {
                 "mappings": {
                     "0": {
@@ -1784,6 +1791,17 @@
                     }
                 },
                 "question": "Sob que licença você deseja publicar suas fotos?"
+            },
+            "profile-description": {
+                "mappings": {
+                    "0": {
+                        "then": {
+                            "special": {
+                                "text": "Adicionar uma descrição do perfil"
+                            }
+                        }
+                    }
+                }
             },
             "show_debug": {
                 "mappings": {

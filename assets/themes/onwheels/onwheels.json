@@ -422,7 +422,7 @@
       }
     },
     {
-      "builtin": "hotel",
+      "builtin": "tourism_accomodation",
       "override": {
         "minzoom": 15,
         "shownByDefault": false,
@@ -505,7 +505,7 @@
           "geoJson": "https://maproulette.org/api/v2/challenge/view/28012"
         },
         "calculatedTags": [
-          "_closest_osm_hotel=closest(feat)('hotel')?.properties?.id",
+          "_closest_osm_hotel=closest(feat)('tourism_accomodation')?.properties?.id",
           "_closest_osm_hotel_distance=distanceTo(feat)(feat.properties._closest_osm_hotel)",
           "_has_closeby_feature=Number(feat.properties._closest_osm_hotel_distance) < 50 ? 'yes' : 'no'"
         ],
@@ -516,7 +516,7 @@
             "render": {
               "special": {
                 "type": "import_button",
-                "targetLayer": "hotel",
+                "targetLayer": "tourism_accomodation",
                 "tags": "tags",
                 "text": {
                   "en": "Import",

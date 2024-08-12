@@ -4542,32 +4542,6 @@
             "render": "Ziekenhuis"
         }
     },
-    "hotel": {
-        "description": "Laag die alle hotels toont",
-        "name": "Hotels",
-        "presets": {
-            "0": {
-                "title": "een hotel"
-            }
-        },
-        "tagRenderings": {
-            "name": {
-                "freeform": {
-                    "placeholder": "Naam van het hotel"
-                },
-                "question": "Wat is de naam van dit hotel?",
-                "render": "Dit hotel heet {name}"
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Hotel {name}"
-                }
-            },
-            "render": "Hotel"
-        }
-    },
     "hydrant": {
         "description": "Kaartlaag met brandkranen.",
         "name": "Kaart van brandkranen",
@@ -8367,6 +8341,20 @@
             "render": "Toilet in een voorziening"
         }
     },
+    "tourism_accomodation": {
+        "presets": {
+            "0": {
+                "title": "een hotel"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Hotel {name}"
+                }
+            }
+        }
+    },
     "trail": {
         "description": "Aangeduide wandeltochten",
         "name": "Wandeltochten",
@@ -8871,6 +8859,13 @@
                     }
                 }
             },
+            "edit-profile": {
+                "render": {
+                    "special": {
+                        "text": "Pas je profielbeschrijving aan"
+                    }
+                }
+            },
             "fixate-north": {
                 "mappings": {
                     "0": {
@@ -8958,6 +8953,17 @@
                     }
                 },
                 "question": "Met welke licentie wil je je afbeeldingen toevoegen?"
+            },
+            "profile-description": {
+                "mappings": {
+                    "0": {
+                        "then": {
+                            "special": {
+                                "text": "Voeg een profielbeschrijving toe"
+                            }
+                        }
+                    }
+                }
             },
             "settings-link": {
                 "render": {

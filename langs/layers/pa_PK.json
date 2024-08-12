@@ -135,12 +135,6 @@
             "render": "ہسپتال"
         }
     },
-    "hotel": {
-        "name": "ہوٹل",
-        "title": {
-            "render": "ہوٹل"
-        }
-    },
     "hydrant": {
         "title": {
             "render": "ہائڈرنٹ"

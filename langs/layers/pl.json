@@ -1875,32 +1875,6 @@
             "render": "Szpital"
         }
     },
-    "hotel": {
-        "description": "Warstwa pokazująca wszystkie hotele",
-        "name": "Hotele",
-        "presets": {
-            "0": {
-                "title": "hotel"
-            }
-        },
-        "tagRenderings": {
-            "name": {
-                "freeform": {
-                    "placeholder": "Nazwa hotelu"
-                },
-                "question": "Jak nazywa się ten hotel?",
-                "render": "Nazwa tego hotelu to {name}"
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Hotel {name}"
-                }
-            },
-            "render": "Hotel"
-        }
-    },
     "hydrant": {
         "description": "Warstwa mapy pokazująca hydranty.",
         "name": "Mapa hydrantów",
@@ -3304,6 +3278,20 @@
             }
         }
     },
+    "tourism_accomodation": {
+        "presets": {
+            "0": {
+                "title": "hotel"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Hotel {name}"
+                }
+            }
+        }
+    },
     "trolley_bay": {
         "tagRenderings": {
             "denominations": {
@@ -3333,6 +3321,28 @@
                     },
                     "3": {
                         "human": "{quantity} stopy"
+                    }
+                }
+            }
+        }
+    },
+    "usersettings": {
+        "tagRenderings": {
+            "edit-profile": {
+                "render": {
+                    "special": {
+                        "text": "Edytuj opis swojego profilu"
+                    }
+                }
+            },
+            "profile-description": {
+                "mappings": {
+                    "0": {
+                        "then": {
+                            "special": {
+                                "text": "Dodaj opis profilu"
+                            }
+                        }
                     }
                 }
             }
