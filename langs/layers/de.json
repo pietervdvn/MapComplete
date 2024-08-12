@@ -5497,32 +5497,6 @@
             "render": "Krankenhaus"
         }
     },
-    "hotel": {
-        "description": "Eine Ebene mit Hotels",
-        "name": "Hotels",
-        "presets": {
-            "0": {
-                "title": "ein Hotel"
-            }
-        },
-        "tagRenderings": {
-            "name": {
-                "freeform": {
-                    "placeholder": "Name des Hotels"
-                },
-                "question": "Wie lautet der Name des Hotels?",
-                "render": "Der Name des Hotels lautet {name}"
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Hotel {name}"
-                }
-            },
-            "render": "Hotel"
-        }
-    },
     "hydrant": {
         "description": "Kartenebene zur Anzeige von Hydranten.",
         "name": "Hydranten",
@@ -10492,6 +10466,20 @@
             "render": "Werkzeugbibliothek {name}"
         }
     },
+    "tourism_accomodation": {
+        "presets": {
+            "0": {
+                "title": "ein Hotel"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Hotel {name}"
+                }
+            }
+        }
+    },
     "trail": {
         "description": "Markierte Wanderwege",
         "name": "Wanderwege",
@@ -11119,6 +11107,13 @@
                     }
                 }
             },
+            "edit-profile": {
+                "render": {
+                    "special": {
+                        "text": "Eigene Profilbeschreibung bearbeiten"
+                    }
+                }
+            },
             "fixate-north": {
                 "mappings": {
                     "0": {
@@ -11206,6 +11201,17 @@
                     }
                 },
                 "question": "Unter welcher Lizenz möchten Sie Ihre Bilder veröffentlichen?"
+            },
+            "profile-description": {
+                "mappings": {
+                    "0": {
+                        "then": {
+                            "special": {
+                                "text": "Profilbeschreibung hinzufügen"
+                            }
+                        }
+                    }
+                }
             },
             "settings-link": {
                 "render": {

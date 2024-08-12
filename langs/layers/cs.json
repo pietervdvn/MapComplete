@@ -4301,32 +4301,6 @@
             "render": "Nemocnice"
         }
     },
-    "hotel": {
-        "description": "Vrstva zobrazující všechny hotely",
-        "name": "Hotely",
-        "presets": {
-            "0": {
-                "title": "hotel"
-            }
-        },
-        "tagRenderings": {
-            "name": {
-                "freeform": {
-                    "placeholder": "Název hotelu"
-                },
-                "question": "Jak se tento hotel jmenuje?",
-                "render": "Tento hotel se jmenuje {name}"
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Hotel {name}"
-                }
-            },
-            "render": "Hotel"
-        }
-    },
     "hydrant": {
         "description": "Mapová vrstva zobrazující požární hydranty.",
         "name": "Mapa hydrantů",
@@ -8272,6 +8246,20 @@
             "render": "Toaleta v objektu"
         }
     },
+    "tourism_accomodation": {
+        "presets": {
+            "0": {
+                "title": "hotel"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Hotel {name}"
+                }
+            }
+        }
+    },
     "trail": {
         "name": "Stezky",
         "tagRenderings": {
@@ -8723,6 +8711,13 @@
                     }
                 }
             },
+            "edit-profile": {
+                "render": {
+                    "special": {
+                        "text": "Úprava popisu vašeho profilu"
+                    }
+                }
+            },
             "fixate-north": {
                 "mappings": {
                     "0": {
@@ -8783,6 +8778,17 @@
                     }
                 },
                 "question": "Pod jakou licencí chcete své fotografie zveřejnit?"
+            },
+            "profile-description": {
+                "mappings": {
+                    "0": {
+                        "then": {
+                            "special": {
+                                "text": "Přidat popis profilu"
+                            }
+                        }
+                    }
+                }
             },
             "settings-link": {
                 "render": {

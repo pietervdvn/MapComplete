@@ -2906,14 +2906,16 @@
     {
       "id": "brand",
       "question": {
-        "en": "Is this part of a bigger brand?"
+        "en": "Is {title()} part of a bigger brand?"
       },
       "render": {
         "en": "Part of {brand}"
       },
       "freeform": {
         "key": "brand",
-        "addExtraTags": ["nobrand="]
+        "addExtraTags": [
+          "nobrand="
+        ]
       },
       "mappings": [
         {

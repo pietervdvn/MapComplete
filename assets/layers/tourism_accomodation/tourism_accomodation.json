@@ -1,0 +1,130 @@
+{
+  "minzoom": 12,
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": {
+            "mappings": [
+              {
+                "if": "tourism=hostel",
+                "then": "./assets/layers/tourism_accomodation/hostel.svg"
+              },
+              {
+                "if": "tourism=hotel",
+                "then": "./assets/layers/tourism_accomodation/hotel.svg"
+              }
+            ],
+            "render": "./assets/layers/tourism_accomodation/hostel.svg"
+          }
+        }
+      ]
+    }
+  ],
+  "tagRenderings": [
+    "images",
+    "reviews",
+    {
+      "id": "name",
+      "question": {
+        "en": "What is the name of this {title()}?"
+      },
+      "render": {
+        "en": "{name}"
+      },
+      "freeform": {
+        "key": "name"
+      }
+    },
+    "{preset_type_select()}",
+    "brand",
+    "contact",
+    "wheelchair-access",
+    "internet-all",
+    "dog-access"
+  ],
+  "lineRendering": [
+    {
+      "width": 1,
+      "color": "blue"
+    }
+  ],
+  "name": {
+    "en": "Tourism accomodation"
+  },
+  "id": "tourism_accomodation",
+  "description": {},
+  "presets": [
+    {
+      "title": {
+        "en": "a hotel",
+        "nl": "een hotel",
+        "de": "ein Hotel",
+        "ca": "un hotel",
+        "ru": "гостиница",
+        "fr": "un hôtel",
+        "cs": "hotel",
+        "pl": "hotel"
+      },
+      "description": {
+        "en": "A  hotel is an establishment that provides paid lodging, usually on a short-term basis. Rooms are not shared with strangers."
+      },
+      "tags": [
+        "tourism=hotel"
+      ]
+    },
+    {
+      "tags": [
+        "tourism=hostel"
+      ],
+      "title": {
+        "en": "a hostel"
+      },
+      "description": {
+        "en": "A hostel is a type of tourist accommodation where people can sleep in a room shared with strangers"
+      }
+    }
+  ],
+  "source": {
+    "osmTags": {
+      "or": [
+        "tourism=hostel",
+        "tourism=hotel"
+      ]
+    }
+  },
+  "title": {
+    "mappings": [
+      {
+        "if": "tourism=hotel",
+        "then": {
+          "en": "Hotel {name}",
+          "nl": "Hotel {name}",
+          "de": "Hotel {name}",
+          "fr": "Hôtel {name}",
+          "ca": "Hotel {name}",
+          "cs": "Hotel {name}",
+          "pl": "Hotel {name}"
+        }
+      },
+      {
+        "if": "tourism=hostel",
+        "then": {
+          "en": "Hostel {name}"
+        }
+      }
+    ],
+    "render": {
+      "en": "Tourist accomodation {name}"
+    }
+  },
+  "allowMove": true
+}

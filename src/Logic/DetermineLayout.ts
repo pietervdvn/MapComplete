@@ -108,6 +108,9 @@ export default class DetermineLayout {
         ).data
         const id = layoutId?.toLowerCase()
         const layouts = AllKnownLayouts.allKnownLayouts
+        if(layouts.size() == 0){
+            throw "Build failed or running, no layouts are known at all"
+        }
         if (layouts.getConfig(id) === undefined) {
             const alternatives = Utils.sortedByLevenshteinDistance(id, Array.from(layouts.keys()), i => i).slice(0, 3)
             const msg = (`No builtin map theme with name ${layoutId} exists. Perhaps you meant one of ${alternatives.join(", ")}`)

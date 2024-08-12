@@ -4162,32 +4162,6 @@
             "render": "Hospital"
         }
     },
-    "hotel": {
-        "description": "Capa que mostra tots els hotels",
-        "name": "Hotels",
-        "presets": {
-            "0": {
-                "title": "un hotel"
-            }
-        },
-        "tagRenderings": {
-            "name": {
-                "freeform": {
-                    "placeholder": "Nom de l'hotel"
-                },
-                "question": "Quin és el nom d'aquest hotel?",
-                "render": "Aquest hotel es diu {name}"
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Hotel {name}"
-                }
-            },
-            "render": "Hotel"
-        }
-    },
     "hydrant": {
         "description": "Una capa que mostra hidrants.",
         "name": "Mapa d'hidrants",
@@ -7972,6 +7946,20 @@
             "render": "Lavabo a la instal·lació"
         }
     },
+    "tourism_accomodation": {
+        "presets": {
+            "0": {
+                "title": "un hotel"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Hotel {name}"
+                }
+            }
+        }
+    },
     "trail": {
         "description": "Rutes marcades",
         "name": "Camins",
@@ -8468,6 +8456,13 @@
                     }
                 }
             },
+            "edit-profile": {
+                "render": {
+                    "special": {
+                        "text": "Editeu la descripció del vostre perfil"
+                    }
+                }
+            },
             "fixate-north": {
                 "mappings": {
                     "0": {
@@ -8528,6 +8523,17 @@
                     }
                 },
                 "question": "Sota quina llicència vols publicar les teves fotos?"
+            },
+            "profile-description": {
+                "mappings": {
+                    "0": {
+                        "then": {
+                            "special": {
+                                "text": "Afegeix una descripció del perfil"
+                            }
+                        }
+                    }
+                }
             },
             "settings-link": {
                 "render": {

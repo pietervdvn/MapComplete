@@ -782,6 +782,24 @@
     },
     "usersettings": {
         "tagRenderings": {
+            "edit-profile": {
+                "render": {
+                    "special": {
+                        "text": "編輯你的個人檔敘述"
+                    }
+                }
+            },
+            "profile-description": {
+                "mappings": {
+                    "0": {
+                        "then": {
+                            "special": {
+                                "text": "新增個人檔敘述"
+                            }
+                        }
+                    }
+                }
+            },
             "translation-completeness": {
                 "render": "{_theme} 的 {_language} 翻譯目前是 {_translation_percentage}%：{_translation_total} 中的 {_translation_translated_count} 已經翻譯了"
             },
