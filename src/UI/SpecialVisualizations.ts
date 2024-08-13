@@ -2,11 +2,7 @@ import Combine from "./Base/Combine"
 import { FixedUiElement } from "./Base/FixedUiElement"
 import BaseUIElement from "./BaseUIElement"
 import Title from "./Base/Title"
-import {
-    RenderingSpecification,
-    SpecialVisualization,
-    SpecialVisualizationState,
-} from "./SpecialVisualization"
+import { RenderingSpecification, SpecialVisualization, SpecialVisualizationState } from "./SpecialVisualization"
 import { HistogramViz } from "./Popup/HistogramViz"
 import MinimapViz from "./Popup/MinimapViz.svelte"
 import { ShareLinkViz } from "./Popup/ShareLinkViz"
@@ -23,7 +19,7 @@ import { ImageCarousel } from "./Image/ImageCarousel"
 import { VariableUiElement } from "./Base/VariableUIElement"
 import { Utils } from "../Utils"
 import Wikidata, { WikidataResponse } from "../Logic/Web/Wikidata"
-import { Translation, TypedTranslation } from "./i18n/Translation"
+import { Translation } from "./i18n/Translation"
 import Translations from "./i18n/Translations"
 import OpeningHoursVisualization from "./OpeningHours/OpeningHoursVisualization"
 import { SubtleButton } from "./Base/SubtleButton"
@@ -326,6 +322,13 @@ export class QuestionViz implements SpecialVisualization {
 
 export default class SpecialVisualizations {
     public static specialVisualizations: SpecialVisualization[] = SpecialVisualizations.initList()
+    public static specialVisualisationsDict: Map<string, SpecialVisualization> = new Map<string, SpecialVisualization>()
+
+    static {
+        for (const specialVisualization of SpecialVisualizations.specialVisualizations) {
+            SpecialVisualizations.specialVisualisationsDict.set(specialVisualization.funcName, specialVisualization)
+        }
+    }
 
     public static DocumentationFor(viz: string | SpecialVisualization): string {
         if (typeof viz === "string") {
@@ -361,7 +364,7 @@ export default class SpecialVisualizations {
         template: string,
         extraMappings: SpecialVisualization[] = [],
     ): RenderingSpecification[] {
-        return SpecialVisualisationUtils.constructSpecification(template, extraMappings)
+        return SpecialVisualisationUtils.constructSpecification(template, SpecialVisualizations.specialVisualisationsDict,  extraMappings)
     }
 
     public static HelpMessage(): string {
@@ -2055,18 +2058,18 @@ export default class SpecialVisualizations {
 
         specialVisualizations.push(new AutoApplyButton(specialVisualizations))
 
+        const regex= /[a-zA-Z_]+/
         const invalid = specialVisualizations
             .map((sp, i) => ({ sp, i }))
-            .filter((sp) => sp.sp.funcName === undefined)
+            .filter((sp) => sp.sp.funcName === undefined || !sp.sp.funcName.match(regex))
         if (invalid.length > 0) {
             throw (
-                "Invalid special visualisation found: funcName is undefined for " +
+                "Invalid special visualisation found: funcName is undefined or doesn't match "+regex +
                 invalid.map((sp) => sp.i).join(", ") +
                 ". Did you perhaps type \n  funcName: \"funcname\" // type declaration uses COLON\ninstead of:\n  funcName = \"funcName\" // value definition uses EQUAL"
             )
         }
 
-        SpecialVisualisationUtils.specialVisualizations = Utils.NoNull(specialVisualizations)
         return specialVisualizations
     }
 }
