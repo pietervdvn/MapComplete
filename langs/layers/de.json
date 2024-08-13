@@ -7762,6 +7762,15 @@
     },
     "questions": {
         "tagRenderings": {
+            "brand": {
+                "mappings": {
+                    "0": {
+                        "then": "Nicht Teil einer großen Marke"
+                    }
+                },
+                "question": "Ist {title()} Teil einer großen Marke?",
+                "render": "Teil von {brand}"
+            },
             "check_date": {
                 "mappings": {
                     "0": {
@@ -10507,17 +10516,33 @@
         }
     },
     "tourism_accomodation": {
+        "name": "Touristische Unterkunft",
         "presets": {
             "0": {
+                "description": "Ein Hotel ist eine Einrichtung, die eine bezahlte Unterkunft anbietet, in der Regel für einen kurzen Zeitraum. Die Zimmer werden nicht mit Fremden geteilt.",
                 "title": "ein Hotel"
+            },
+            "1": {
+                "description": "Ein Hostel ist eine Art von Touristenherberge, in der man in einem Zimmer schlafen kann, das man mit Fremden teilt",
+                "title": "Ein Hostel"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "question": "Wie lautet der Name von {title()}?",
+                "render": "{name}"
             }
         },
         "title": {
             "mappings": {
                 "0": {
                     "then": "Hotel {name}"
+                },
+                "1": {
+                    "then": "Hostel {name}"
                 }
-            }
+            },
+            "render": "Touristenunterkunft {name}"
         }
     },
     "trail": {
@@ -11133,6 +11158,14 @@
             "background-layer-readonly": {
                 "render": "Diese thematische Karte hat einen vordefinierten Hintergrund. Ihr Standardhintergrund wird nicht angewendet"
             },
+            "clear_cache": {
+                "render": {
+                    "after": "Wenn du die Caches löschst, werden lokal heruntergeladene Daten und Code gelöscht. Du bleibst eingeloggt und deine Einstellungen bleiben erhalten. Es sollten keine Daten verloren gehen",
+                    "special": {
+                        "text": "Caches löschen"
+                    }
+                }
+            },
             "contributor-thanks": {
                 "mappings": {
                     "0": {
@@ -11146,6 +11179,9 @@
                         "then": "Sie haben bei {_csCount} verschiedenen Gelegenheiten Änderungen vorgenommen! Das ist großartig!"
                     }
                 }
+            },
+            "debug-title": {
+                "render": "<h3>Debugging-Optionen</h3>"
             },
             "edit-profile": {
                 "render": {
