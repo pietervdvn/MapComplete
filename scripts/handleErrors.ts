@@ -28,7 +28,6 @@ class HandleErrors extends Script {
     constructor() {
         super("Inspects the errors made on a given day. Argument: path to errors")
     }
-
     async main(args: string[]): Promise<void> {
         const osmConnection = new OsmConnection()
         const downloader = new OsmObjectDownloader(osmConnection.Backend(), undefined)

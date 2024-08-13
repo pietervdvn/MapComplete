@@ -116,7 +116,6 @@ class NearbyImageVis implements SpecialVisualization {
         "A component showing nearby images loaded from various online services such as Mapillary. In edit mode and when used on a feature, the user can select an image to add to the feature"
     funcName = "nearby_images"
     needsUrls = CombinedFetcher.apiUrls
-    svelteBased = true
 
     constr(
         state: SpecialVisualizationState,
@@ -1303,7 +1302,7 @@ export default class SpecialVisualizations {
                     },
                     {
                         name: "icon",
-                        doc: "If set, show this icon next to the link. You might want to combine this with `class: button`",
+                        doc: "If set, show this icon next to the link. You might want to combine this with `class: button`"
                     },
                 ],
 
@@ -1681,7 +1680,6 @@ export default class SpecialVisualizations {
             {
                 funcName: "qr_code",
                 args: [],
-
                 docs: "Generates a QR-code to share the selected object",
                 constr(
                     state: SpecialVisualizationState,
@@ -1978,6 +1976,75 @@ export default class SpecialVisualizations {
                         return mostShadowed?.description ?? matchingPresets[0]?.description
                     })
                     return new VariableUiElement(translation)
+                }
+            },
+            {
+                funcName: "preset_type_select",
+                docs: "An editable tag rendering which allows to change the type",
+                args: [],
+                constr(state: SpecialVisualizationState, tags: UIEventSource<Record<string, string>>, argument: string[], selectedElement: Feature, layer: LayerConfig): SvelteUIElement {
+                    const t = Translations.t.preset_type
+                    const question: QuestionableTagRenderingConfigJson = {
+                        id: layer.id + "-type",
+                        question: t.question.translations,
+                        mappings: layer.presets.map(pr => {
+                            return {
+                                if: new And(pr.tags).asJson(),
+                                then: (pr.description ? t.typeDescription : t.typeTitle).Subs({
+                                    title: pr.title,
+                                    description: pr.description,
+                                }).translations,
+                            }
+                        }),
+                    }
+                    const config = new TagRenderingConfig(question)
+                    return new SvelteUIElement(TagRenderingEditable, {
+                        config,
+                        tags, selectedElement, state, layer,
+                    })
+                },
+            },
+            {
+                funcName: "pending_changes",
+                docs: "A module showing the pending changes, with the option to clear the pending changes",
+                args: [],
+                constr(state: SpecialVisualizationState, tagSource: UIEventSource<Record<string, string>>, argument: string[], feature: Feature, layer: LayerConfig): BaseUIElement {
+                    return new SvelteUIElement(PendingChangesIndicator, { state, compact: false })
+                },
+            },
+            {
+                funcName: "clear_caches",
+                docs: "A button which clears the locally downloaded data and the service worker. Login status etc will be kept",
+                args: [
+                    {
+                        name: "text",
+                        required: true,
+                        doc: "The text to show on the button",
+                    },
+                ],
+                constr(state: SpecialVisualizationState, tagSource: UIEventSource<Record<string, string>>, argument: string[], feature: Feature, layer: LayerConfig): SvelteUIElement {
+                    return new SvelteUIElement<any, any, any>(ClearCaches, { msg: argument[0] ?? "Clear local caches" })
+                },
+            },
+            {
+                funcName: "group",
+                docs: "A collapsable group (accordion)",
+                args: [
+                    {
+                        name: "header",
+                        doc: "The _identifier_ of a single tagRendering. This will be used as header",
+                    },
+                    {
+                        name: "labels",
+                        doc: "A `;`-separated list of either identifiers or label names. All tagRenderings matching this value will be shown in the accordion",
+                    },
+                ],
+                constr(state: SpecialVisualizationState, tags: UIEventSource<Record<string, string>>, argument: string[], selectedElement: Feature, layer: LayerConfig): SvelteUIElement {
+                    const [header, labelsStr] = argument
+                    const labels = labelsStr.split(";").map(x => x.trim())
+                    return new SvelteUIElement<any, any, any>(GroupedView, {
+                        state, tags, selectedElement, layer, header, labels,
+                    })
                 },
             },
             {
