@@ -10519,6 +10519,7 @@
         "name": "Tourism accomodation",
         "presets": {
             "0": {
+                "description": "A  hotel is an establishment that provides paid lodging, usually on a short-term basis. Rooms are not shared with strangers.",
                 "title": "a hotel"
             },
             "1": {
