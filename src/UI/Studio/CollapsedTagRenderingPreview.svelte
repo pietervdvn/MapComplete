@@ -33,6 +33,8 @@
     .getSchemaStartingWith(schema.path)
     .filter((part) => part.path.length - 1 === schema.path.length)
 
+  let usesOverride = value["builtin"] !== undefined
+
   function schemaForMultitype() {
     const sch = { ...schema }
     sch.hints.typehint = undefined
@@ -147,7 +149,10 @@
     {/if}
   </div>
   <div class="normal-background p-2 border border-gray-300">
-    {#if isTagRenderingBlock}
+    {#if usesOverride}
+      This block uses an builtin/override construction and cannot be edited in Studio.
+      Edit the code directly
+    {:else if isTagRenderingBlock}
       <QuestionPreview {state} {path} {schema}>
         <button
           on:click={() => {
