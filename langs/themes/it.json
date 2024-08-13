@@ -796,38 +796,6 @@
         "shortDescription": "Una cartina modificabile con informazioni di base dei negozi",
         "title": "Negozi"
     },
-    "sidewalks": {
-        "description": "Tema sperimentale",
-        "layers": {
-            "0": {
-                "name": "Marciapiedi",
-                "tagRenderings": {
-                    "left-right-questions": {
-                        "renderings": {
-                            "1": {
-                                "mappings": {
-                                    "0": {
-                                        "then": "C'è un marciapiede su questo lato della strada"
-                                    },
-                                    "1": {
-                                        "then": "Non c'è un marciapiede su cui camminare"
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "streetname": {
-                        "render": "La strada si chiama {name}"
-                    }
-                },
-                "title": {
-                    "render": "{name}"
-                }
-            }
-        },
-        "shortDescription": "Mappatura del marciapiede",
-        "title": "Marciapiedi"
-    },
     "sport_pitches": {
         "description": "Un campo sportivo è un'area dove vengono praticati degli sport",
         "shortDescription": "Una cartina che mostra i campi sportivi",

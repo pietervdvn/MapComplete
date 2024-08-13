@@ -1262,47 +1262,6 @@
         "shortDescription": "Eine bearbeitbare Karte mit grundlegenden Geschäftsinformationen",
         "title": "Geschäfte"
     },
-    "sidewalks": {
-        "description": "Experimentelles Thema",
-        "layers": {
-            "0": {
-                "description": "Ebene mit Bürgersteigen",
-                "name": "Gehwege",
-                "tagRenderings": {
-                    "left-right-questions": {
-                        "renderings": {
-                            "1": {
-                                "mappings": {
-                                    "0": {
-                                        "then": "Es gibt einen Bürgersteig auf dieser Straßenseite"
-                                    },
-                                    "1": {
-                                        "then": "Es gibt keinen Bürgersteig für Fußgänger"
-                                    },
-                                    "2": {
-                                        "then": "Es gibt einen separat kartierten Bürgersteig für Fußgänger"
-                                    }
-                                },
-                                "question": "Gibt es auf dieser Straßenseite einen Bürgersteig?"
-                            },
-                            "2": {
-                                "question": "Wie breit ist der Bürgersteig auf dieser Straßenseite?",
-                                "render": "Dieser Bürgersteig ist {sidewalk:left|right:width}m breit"
-                            }
-                        }
-                    },
-                    "streetname": {
-                        "render": "Diese Straße heißt {name}"
-                    }
-                },
-                "title": {
-                    "render": "{name}"
-                }
-            }
-        },
-        "shortDescription": "Kartierung von Bürgersteigen",
-        "title": "Gehwege"
-    },
     "ski": {
         "description": "Alles, was Sie zum Skifahren brauchen",
         "title": "Skipisten und Seilbahnen"

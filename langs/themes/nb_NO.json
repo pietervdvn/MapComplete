@@ -610,20 +610,6 @@
     "shops": {
         "title": "Kart over åpne butikker"
     },
-    "sidewalks": {
-        "description": "Eksperimentelt tema",
-        "layers": {
-            "0": {
-                "name": "Fortau",
-                "tagRenderings": {
-                    "streetname": {
-                        "render": "Denne gaten heter {name}"
-                    }
-                }
-            }
-        },
-        "title": "Fortau"
-    },
     "stations": {
         "layers": {
             "3": {

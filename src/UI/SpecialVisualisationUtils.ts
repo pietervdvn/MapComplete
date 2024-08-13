@@ -56,7 +56,7 @@ export default class SpecialVisualisationUtils {
             knownSpecial = extraMappings.find(em => em.funcName === fName)
         }
         if(!knownSpecial){
-            throw "Didn't find a special visualisation: "+fName
+            throw "Didn't find a special visualisation: "+fName+" in "+template
         }
 
         // Always a boring string

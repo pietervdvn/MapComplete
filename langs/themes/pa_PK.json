@@ -219,16 +219,6 @@
         "shortDescription": "ڈاک کوڈ",
         "title": "ڈاک کوڈ"
     },
-    "sidewalks": {
-        "description": "آزمائش تھیم",
-        "layers": {
-            "0": {
-                "name": "فُٹ‌پاتھ"
-            }
-        },
-        "shortDescription": "فُت‌پیتھ دا نقشہ بݨاؤݨ",
-        "title": "فُٹ‌پاتھ"
-    },
     "sports": {
         "title": "کھیڈاں"
     },

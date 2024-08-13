@@ -1443,47 +1443,6 @@
         "shortDescription": "An editable map with basic shop information",
         "title": "Shops"
     },
-    "sidewalks": {
-        "description": "Experimental theme",
-        "layers": {
-            "0": {
-                "description": "Layer showing sidewalks of highways",
-                "name": "Sidewalks",
-                "tagRenderings": {
-                    "left-right-questions": {
-                        "renderings": {
-                            "1": {
-                                "mappings": {
-                                    "0": {
-                                        "then": "There is a sidewalk on this side of the road"
-                                    },
-                                    "1": {
-                                        "then": "There is no sidewalk to walk on"
-                                    },
-                                    "2": {
-                                        "then": "There is a separately mapped sidewalk to walk on"
-                                    }
-                                },
-                                "question": "Is there a sidewalk on this side of the road?"
-                            },
-                            "2": {
-                                "question": "What is the width of the sidewalk on this side of the road?",
-                                "render": "This sidewalk is {sidewalk:left|right:width}m wide"
-                            }
-                        }
-                    },
-                    "streetname": {
-                        "render": "This street is named {name}"
-                    }
-                },
-                "title": {
-                    "render": "{name}"
-                }
-            }
-        },
-        "shortDescription": "Sidewalk mapping",
-        "title": "Sidewalks"
-    },
     "ski": {
         "description": "Everything you need to go skiing",
         "title": "Ski pistes and aerialways"

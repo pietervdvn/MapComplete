@@ -781,9 +781,7 @@ export default class SpecialVisualizations {
                 funcName: "list_reviews",
                 docs: "Adds an overview of the mangrove-reviews of this object. Mangrove.Reviews needs - in order to identify the reviewed object - a coordinate and a name. By default, the name of the object is given, but this can be overwritten",
                 needsUrls: [MangroveReviews.ORIGINAL_API],
-                example:
-                    "`{reviews()}` for a vanilla review, `{reviews(name, play_forest)}` to review a play forest. If a name is known, the name will be used as identifier, otherwise 'play_forest' is used",
-                args: [
+                  args: [
                     {
                         name: "subjectKey",
                         defaultValue: "name",
@@ -809,6 +807,32 @@ export default class SpecialVisualizations {
                     )
                     return new SvelteUIElement(AllReviews, { reviews, state, tags, feature, layer })
                 },
+            },
+            {
+                funcName:"reviews",
+                example:
+                    "`{reviews()}` for a vanilla review, `{reviews(name, play_forest)}` to review a play forest. If a name is known, the name will be used as identifier, otherwise 'play_forest' is used",
+                docs:"A pragmatic combination of `create_review` and `list_reviews`",
+                args: [
+                    {
+                        name: "subjectKey",
+                        defaultValue: "name",
+                        doc: "The key to use to determine the subject. If specified, the subject will be <b>tags[subjectKey]</b>",
+                    },
+                    {
+                        name: "fallback",
+                        doc: "The identifier to use, if <i>tags[subjectKey]</i> as specified above is not available. This is effectively a fallback value",
+                    },
+                ],
+                constr(state: SpecialVisualizationState, tagSource: UIEventSource<Record<string, string>>, args: string[], feature: Feature, layer: LayerConfig): BaseUIElement {
+                    return new Combine([
+                        SpecialVisualizations.specialVisualisationsDict["create_review"].constr(state, tagSource, args, feature, layer),
+                        SpecialVisualizations.specialVisualisationsDict["list_reviews"].constr(state, tagSource, args, feature, layer)
+
+
+                    ])
+                }
+
             },
             {
                 funcName: "import_mangrove_key",

@@ -1031,47 +1031,6 @@
         "shortDescription": "Carte modifiable affichant les informations de base des magasins",
         "title": "Commerces"
     },
-    "sidewalks": {
-        "description": "Thème expérimental",
-        "layers": {
-            "0": {
-                "description": "Calque montrant les trottoirs",
-                "name": "Trottoirs",
-                "tagRenderings": {
-                    "left-right-questions": {
-                        "renderings": {
-                            "1": {
-                                "mappings": {
-                                    "0": {
-                                        "then": "Il y a un trottoir de ce côté de la route"
-                                    },
-                                    "1": {
-                                        "then": "Il n'y a pas de trottoir où marcher"
-                                    },
-                                    "2": {
-                                        "then": "Il y a un trottoir où marcher cartographié séparément"
-                                    }
-                                },
-                                "question": "Y a-t-il un trottoir de ce côté de la route ?"
-                            },
-                            "2": {
-                                "question": "Quelle est la largeur du trottoir de ce côté de la route ?",
-                                "render": "Ce trottoir fait {sidewalk:left|right:width} m de large"
-                            }
-                        }
-                    },
-                    "streetname": {
-                        "render": "Cette rue s’appelle {name}"
-                    }
-                },
-                "title": {
-                    "render": "{name}"
-                }
-            }
-        },
-        "shortDescription": "Cartographier des trottoirs",
-        "title": "Trottoirs"
-    },
     "ski": {
         "title": "Pistes de ski et remontées mécaniques"
     },

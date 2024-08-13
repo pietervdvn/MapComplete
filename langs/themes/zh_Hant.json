@@ -555,19 +555,6 @@
         "shortDescription": "有基本商家資訊的可編輯性的地圖",
         "title": "商店"
     },
-    "sidewalks": {
-        "description": "實驗性的主題",
-        "layers": {
-            "0": {
-                "description": "顯示道路的人行穿越道的圖層",
-                "name": "人行道",
-                "title": {
-                    "render": "{name}"
-                }
-            }
-        },
-        "title": "人行道"
-    },
     "sport_pitches": {
         "description": "運動場地是進行運動的地方",
         "shortDescription": "顯示運動場地的地圖",

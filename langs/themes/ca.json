@@ -1068,47 +1068,6 @@
         "shortDescription": "Un mapa editable amb informació bàsica sobre botigues",
         "title": "Botigues"
     },
-    "sidewalks": {
-        "description": "Petició experimental",
-        "layers": {
-            "0": {
-                "description": "Una capa que mostra les voreres de les vies",
-                "name": "Voreres",
-                "tagRenderings": {
-                    "left-right-questions": {
-                        "renderings": {
-                            "1": {
-                                "mappings": {
-                                    "0": {
-                                        "then": "Hi ha una vorera a aquest costat del carrer"
-                                    },
-                                    "1": {
-                                        "then": "No hi ha vorera per la que caminar"
-                                    },
-                                    "2": {
-                                        "then": "Hi ha una vorera mapejada separadament per on caminar"
-                                    }
-                                },
-                                "question": "Hi ha una vorera a aquest costat del carrer?"
-                            },
-                            "2": {
-                                "question": "Quina és l'amplada de la vorera a aquest costat de la calçada?",
-                                "render": "Aquesta vorera té {sidewalk:left|right:width} m d'ample"
-                            }
-                        }
-                    },
-                    "streetname": {
-                        "render": "El carrer s'anomena {name}"
-                    }
-                },
-                "title": {
-                    "render": "{name}"
-                }
-            }
-        },
-        "shortDescription": "Mapejat de voreres",
-        "title": "Voreres"
-    },
     "sport_pitches": {
         "description": "Una pista d'esports és un àrea on es practiquen esports",
         "shortDescription": "Un mapa que mostra pistes d'esports",

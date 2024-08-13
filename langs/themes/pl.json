@@ -1049,47 +1049,6 @@
         "shortDescription": "Edytowalna mapa z podstawowymi informacjami o sklepach",
         "title": "Sklepy"
     },
-    "sidewalks": {
-        "description": "Temat eksperymentalny",
-        "layers": {
-            "0": {
-                "description": "Warstwa pokazująca chodniki przy drogach",
-                "name": "Chodniki",
-                "tagRenderings": {
-                    "left-right-questions": {
-                        "renderings": {
-                            "1": {
-                                "mappings": {
-                                    "0": {
-                                        "then": "Jest chodnik z boku drogi"
-                                    },
-                                    "1": {
-                                        "then": "Nie ma chodnika, którym można chodzić"
-                                    },
-                                    "2": {
-                                        "then": "Jest oddzielnie oznaczony chodnik"
-                                    }
-                                },
-                                "question": "Czy po tej stronie drogi jest chodnik?"
-                            },
-                            "2": {
-                                "question": "Jaka jest szerokość chodnika po tej stronie drogi?",
-                                "render": "Ten chodnik ma {sidewalk:left|right:width}m szerokości"
-                            }
-                        }
-                    },
-                    "streetname": {
-                        "render": "Nazwa ulicy to {name}"
-                    }
-                },
-                "title": {
-                    "render": "{name}"
-                }
-            }
-        },
-        "shortDescription": "Mapowanie chodnika",
-        "title": "Chodniki"
-    },
     "sport_pitches": {
         "description": "Boisko sportowe to teren, na którym uprawia się sport",
         "shortDescription": "Mapa przedstawiająca boiska sportowe",

@@ -23,7 +23,7 @@
       "id": "mapillary",
       "description": "Shows a button to open Mapillary on this location",
       "render": {
-        "*": "{mapillary()}"
+        "*": "{mapillary_link()}"
       }
     },
     {

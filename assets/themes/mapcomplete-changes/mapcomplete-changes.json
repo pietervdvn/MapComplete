@@ -318,6 +318,10 @@
                     "then": "./assets/themes/lighthouses/lighthouse.svg"
                   },
                   {
+                    "if": "theme=mapcomplete-changes",
+                    "then": "./assets/svg/logo.svg"
+                  },
+                  {
                     "if": "theme=maproulette",
                     "then": "./assets/layers/maproulette/logomark.svg"
                   },
@@ -396,10 +400,6 @@
                   {
                     "if": "theme=shops",
                     "then": "./assets/themes/shops/shop.svg"
-                  },
-                  {
-                    "if": "theme=sidewalks",
-                    "then": "./assets/svg/bug.svg"
                   },
                   {
                     "if": "theme=ski",
