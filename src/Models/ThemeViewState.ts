@@ -74,6 +74,11 @@ import Locale from "../UI/i18n/Locale"
 import Hash from "../Logic/Web/Hash"
 import { GeoOperations } from "../Logic/GeoOperations"
 import { CombinedFetcher } from "../Logic/Web/NearbyImagesSearch"
+import GeocodingProvider from "../Logic/Geocoding/GeocodingProvider"
+import CombinedSearcher from "../Logic/Geocoding/CombinedSearcher"
+import { NominatimGeocoding } from "../Logic/Geocoding/NominatimGeocoding"
+import CoordinateSearch from "../Logic/Geocoding/CoordinateSearch"
+import LocalElementSearch from "../Logic/Geocoding/LocalElementSearch"
 
 /**
  *
@@ -153,7 +158,8 @@ export default class ThemeViewState implements SpecialVisualizationState {
     public readonly visualFeedback: UIEventSource<boolean> = new UIEventSource<boolean>(false)
     public readonly toCacheSavers: ReadonlyMap<string, SaveFeatureSourceToLocalStorage>
 
-    public readonly nearbyImageSearcher
+    public readonly nearbyImageSearcher: CombinedFetcher
+    public readonly geosearch: GeocodingProvider
 
     constructor(layout: LayoutConfig, mvtAvailableLayers: Set<string>) {
         Utils.initDomPurify()
@@ -379,6 +385,14 @@ export default class ThemeViewState implements SpecialVisualizationState {
             new LayerConfig(<LayerConfigJson>summaryLayer, "summaryLayer", true)
         )
         this.toCacheSavers = layout.enableCache ? this.initSaveToLocalStorage() : undefined
+
+        this.geosearch = new CombinedSearcher(
+            new NominatimGeocoding(),
+            new CoordinateSearch(),
+            new LocalElementSearch(this)
+        )
+
+
         this.initActors()
         this.drawSpecialLayers()
         this.initHotkeys()

@@ -679,4 +679,11 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
             }
         }
     }
+
+    public flyTo(lon: number, lat: number, zoom: number){
+        this._maplibreMap.data?.flyTo({
+            zoom,
+            center: [lon, lat],
+        })
+    }
 }

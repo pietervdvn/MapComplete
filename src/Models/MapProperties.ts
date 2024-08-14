@@ -29,6 +29,9 @@ export interface MapProperties {
      * @param f
      */
     onKeyNavigationEvent(f: (event: KeyNavigationEvent) => void | boolean): () => void
+
+    flyTo(lon: number, lat: number, zoom: number): void
+
 }
 
 export interface ExportableMap {

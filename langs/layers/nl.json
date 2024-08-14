@@ -8871,6 +8871,13 @@
                     }
                 }
             },
+            "edit-profile": {
+                "render": {
+                    "special": {
+                        "text": "Pas je profielbeschrijving aan"
+                    }
+                }
+            },
             "fixate-north": {
                 "mappings": {
                     "0": {
@@ -8958,6 +8965,17 @@
                     }
                 },
                 "question": "Met welke licentie wil je je afbeeldingen toevoegen?"
+            },
+            "profile-description": {
+                "mappings": {
+                    "0": {
+                        "then": {
+                            "special": {
+                                "text": "Voeg een profielbeschrijving toe"
+                            }
+                        }
+                    }
+                }
             },
             "settings-link": {
                 "render": {

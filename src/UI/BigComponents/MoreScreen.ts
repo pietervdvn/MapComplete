@@ -60,7 +60,7 @@ export default class MoreScreen {
         if (search === undefined) {
             return true
         }
-        search = Utils.RemoveDiacritics(search.toLocaleLowerCase())
+        search = Utils.RemoveDiacritics(search.toLocaleLowerCase()) // See #1729
         if (search.length > 3 && layout.id.toLowerCase().indexOf(search) >= 0) {
             return true
         }

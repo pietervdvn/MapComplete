@@ -104,7 +104,8 @@
             </div>
 
             {#if $reason.includeSearch}
-              <Geosearch bounds={currentMapProperties.bounds} clearAfterView={false} />
+              searcher={state.geosearch}
+              <Geosearch bounds={currentMapProperties.bounds} clearAfterView={false} searcher={state.geosearch} {state}/>
             {/if}
 
             <div class="flex flex-wrap">

@@ -8468,6 +8468,13 @@
                     }
                 }
             },
+            "edit-profile": {
+                "render": {
+                    "special": {
+                        "text": "Editeu la descripció del vostre perfil"
+                    }
+                }
+            },
             "fixate-north": {
                 "mappings": {
                     "0": {
@@ -8528,6 +8535,17 @@
                     }
                 },
                 "question": "Sota quina llicència vols publicar les teves fotos?"
+            },
+            "profile-description": {
+                "mappings": {
+                    "0": {
+                        "then": {
+                            "special": {
+                                "text": "Afegeix una descripció del perfil"
+                            }
+                        }
+                    }
+                }
             },
             "settings-link": {
                 "render": {

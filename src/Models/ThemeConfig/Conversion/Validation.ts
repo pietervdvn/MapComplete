@@ -1701,7 +1701,8 @@ export class ValidateLayer extends Conversion<
         try {
             layerConfig = new LayerConfig(json, "validation", true)
         } catch (e) {
-            context.err("Could not parse layer due to:" + e)
+            console.error("Could not parse layer due to", e)
+            context.err("Could not parse layer due to: " + e)
             return undefined
         }
 

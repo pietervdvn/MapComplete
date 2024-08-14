@@ -28,10 +28,10 @@ export class SummaryTileSourceRewriter implements FeatureSource {
                 !l.layerDef.id.startsWith("note_import")
         )
         this._summarySource = summarySource
-        filteredLayers.forEach((v, k) => {
-            v.isDisplayed.addCallback((_) => this.update())
+        filteredLayers.forEach((v) => {
+            v.isDisplayed.addCallback(() => this.update())
         })
-        this._summarySource.features.addCallbackAndRunD((_) => this.update())
+        this._summarySource.features.addCallbackAndRunD(() => this.update())
     }
 
     private update() {
@@ -78,6 +78,9 @@ export class SummaryTileSource extends DynamicTileSource {
             isActive?: Store<boolean>
         }
     ) {
+        if(layers.length === 0){
+            return
+        }
         const layersSummed = layers.join("+")
         const zDiff = 2
         super(

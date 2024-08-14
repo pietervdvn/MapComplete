@@ -100,6 +100,8 @@
               {selectedElement}
               {triggerSearch}
               geolocationState={state.geolocation.geolocationState}
+              searcher={state.geosearch}
+              {state}
             />
           </div>
           <button

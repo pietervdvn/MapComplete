@@ -1277,8 +1277,8 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return withDistance.map((n) => n[0])
     }
 
-    public static levenshteinDistance(str1: string, str2: string) {
-        const track = Array(str2.length + 1)
+    public static levenshteinDistance(str1: string, str2: string): number {
+        const track: number[][] = Array(str2.length + 1)
             .fill(null)
             .map(() => Array(str1.length + 1).fill(null))
         for (let i = 0; i <= str1.length; i += 1) {
@@ -1590,11 +1590,29 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         }
     }
 
+    /**
+     * Removes accents from a string
+     * @param str
+     * @constructor
+     *
+     * Utils.RemoveDiacritics("bâtiments") // => "batiments"
+     */
     public static RemoveDiacritics(str?: string): string {
+        // See #1729
         if (!str) {
             return str
         }
         return str.normalize("NFD").replace(/\p{Diacritic}/gu, "")
+    }
+
+    /**
+     * Simplifies a string to increase the chance of a match
+     * @param str
+     * Utils.simplifyStringForSearch("abc def; ghi 564") // => "abcdefghi564"
+     * Utils.simplifyStringForSearch("âbc déf; ghi 564") // => "abcdefghi564"
+     */
+    public static simplifyStringForSearch(str: string): string{
+        return Utils.RemoveDiacritics(str) .toLowerCase().replace(/[^a-z0-9]/g, "")
     }
 
     public static randomString(length: number): string {

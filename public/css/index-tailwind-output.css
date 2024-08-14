@@ -711,6 +711,14 @@ video {
   top: 2.5rem;
 }
 
+.top-2 {
+  top: 0.5rem;
+}
+
+.right-2 {
+  right: 0.5rem;
+}
+
 .left-1\/4 {
   left: 25%;
 }
@@ -777,10 +785,6 @@ video {
 
 .top-1 {
   top: 0.25rem;
-}
-
-.top-2 {
-  top: 0.5rem;
 }
 
 .top-\[calc\(100\%\+1rem\)\] {
@@ -1221,12 +1225,12 @@ video {
   height: 6rem;
 }
 
-.h-full {
-  height: 100%;
-}
-
 .h-screen {
   height: 100vh;
+}
+
+.h-full {
+  height: 100%;
 }
 
 .h-fit {
@@ -1278,6 +1282,10 @@ video {
 
 .h-11 {
   height: 2.75rem;
+}
+
+.h-2\/3 {
+  height: 66.666667%;
 }
 
 .h-5 {
@@ -2041,10 +2049,6 @@ video {
 
 .gap-x-0 {
   column-gap: 0px;
-}
-
-.gap-x-4 {
-  column-gap: 1rem;
 }
 
 .gap-y-8 {
@@ -4627,6 +4631,17 @@ button.as-link {
   padding: 0;
 }
 
+button.unstyled {
+  background-color: unset;
+  display: inline-flex;
+  justify-content: start;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+}
+
 /******* Other input elements ******/
 
 .hover-alert:hover {
@@ -5282,6 +5297,11 @@ svg.apply-fill path {
 .hover\:border-gray-300:hover {
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
+}
+
+.hover\:bg-stone-200:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(231 229 228 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-indigo-200:hover {

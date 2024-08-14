@@ -207,6 +207,7 @@ button, .button {
 
 }
 
+
 .group > button {
     padding-right: 1rem !important; /*Flowbite workaround */
 }
@@ -271,6 +272,16 @@ button.as-link {
     border-radius: 0;
     text-decoration: underline;
     -webkite-text-decoration: underline;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+}
+
+button.unstyled {
+    background-color: unset;
+    display: inline-flex;
+    justify-content: start;
+    border: none;
     box-shadow: none;
     margin: 0;
     padding: 0;

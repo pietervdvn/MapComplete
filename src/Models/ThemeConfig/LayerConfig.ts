@@ -19,11 +19,10 @@ import { Utils } from "../../Utils"
 import { TagsFilter } from "../../Logic/Tags/TagsFilter"
 import FilterConfigJson from "./Json/FilterConfigJson"
 import { Overpass } from "../../Logic/Osm/Overpass"
-import { ImmutableStore } from "../../Logic/UIEventSource"
-import { OsmTags } from "../OsmFeature"
 import Constants from "../Constants"
 import { QuestionableTagRenderingConfigJson } from "./Json/QuestionableTagRenderingConfigJson"
 import MarkdownUtils from "../../Utils/MarkdownUtils"
+import Combine from "../../UI/Base/Combine"
 
 export default class LayerConfig extends WithContextLoader {
     public static readonly syncSelectionAllowed = ["no", "local", "theme-only", "global"] as const
@@ -344,15 +343,17 @@ export default class LayerConfig extends WithContextLoader {
         this.popupInFloatover = json.popupInFloatover ?? false
     }
 
-    public defaultIcon(): BaseUIElement | undefined {
+    public defaultIcon(tags?: Record<string, string>): BaseUIElement | undefined {
         if (this.mapRendering === undefined || this.mapRendering === null) {
             return undefined
         }
-        const mapRendering = this.mapRendering.filter((r) => r.location.has("point"))[0]
-        if (mapRendering === undefined) {
+        const mapRenderings = this.mapRendering.filter((r) => r.location.has("point"))
+        if (mapRenderings.length === 0) {
             return undefined
         }
-        return mapRendering.GetBaseIcon(this.GetBaseTags())
+        return new Combine(mapRenderings.map(
+            mr => mr.GetBaseIcon(tags ?? this.GetBaseTags()).SetClass("absolute left-0 top-0 w-full h-full"))
+        ).SetClass("relative block w-full h-full")
     }
 
     public GetBaseTags(): Record<string, string> {

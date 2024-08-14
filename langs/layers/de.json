@@ -11119,6 +11119,13 @@
                     }
                 }
             },
+            "edit-profile": {
+                "render": {
+                    "special": {
+                        "text": "Eigene Profilbeschreibung bearbeiten"
+                    }
+                }
+            },
             "fixate-north": {
                 "mappings": {
                     "0": {
@@ -11206,6 +11213,17 @@
                     }
                 },
                 "question": "Unter welcher Lizenz möchten Sie Ihre Bilder veröffentlichen?"
+            },
+            "profile-description": {
+                "mappings": {
+                    "0": {
+                        "then": {
+                            "special": {
+                                "text": "Profilbeschreibung hinzufügen"
+                            }
+                        }
+                    }
+                }
             },
             "settings-link": {
                 "render": {

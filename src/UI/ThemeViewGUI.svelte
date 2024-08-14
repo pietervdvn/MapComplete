@@ -249,6 +249,8 @@
           perLayer={state.perLayer}
           selectedElement={state.selectedElement}
           geolocationState={state.geolocation.geolocationState}
+          searcher={state.geosearch}
+          {state}
         />
       </If>
     </div>

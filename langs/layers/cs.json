@@ -8723,6 +8723,13 @@
                     }
                 }
             },
+            "edit-profile": {
+                "render": {
+                    "special": {
+                        "text": "Úprava popisu vašeho profilu"
+                    }
+                }
+            },
             "fixate-north": {
                 "mappings": {
                     "0": {
@@ -8783,6 +8790,17 @@
                     }
                 },
                 "question": "Pod jakou licencí chcete své fotografie zveřejnit?"
+            },
+            "profile-description": {
+                "mappings": {
+                    "0": {
+                        "then": {
+                            "special": {
+                                "text": "Přidat popis profilu"
+                            }
+                        }
+                    }
+                }
             },
             "settings-link": {
                 "render": {

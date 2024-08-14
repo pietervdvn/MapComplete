@@ -45,7 +45,9 @@
     },
     {
       "id": "profile-title",
-      "labels": ["hidden"],
+      "labels": [
+        "hidden"
+      ],
       "icon": "user_circle",
       "render": {
         "*": "<h3>{_name}</h3>"
@@ -63,7 +65,8 @@
     {
       "id": "profile-description",
       "labels": [
-        "profile-content","hidden"
+        "profile-content",
+        "hidden"
       ],
       "render": {
         "*": "{_description_html}"
@@ -71,7 +74,6 @@
       "mappings": [
         {
           "if": "_description=",
-
           "then": {
             "special": {
               "type": "link",
@@ -98,7 +100,8 @@
     {
       "id": "edit-profile",
       "labels": [
-        "profile-content","hidden"
+        "profile-content",
+        "hidden"
       ],
       "condition": "_description!=",
       "render": {
@@ -126,7 +129,8 @@
     {
       "id": "verified-mastodon",
       "labels": [
-        "profile-content","hidden"
+        "profile-content",
+        "hidden"
       ],
       "mappings": [
         {
@@ -157,7 +161,8 @@
     {
       "id": "cscount-thanks",
       "labels": [
-        "profile-content","hidden"
+        "profile-content",
+        "hidden"
       ],
       "mappings": [
         {
@@ -180,7 +185,8 @@
     {
       "id": "translation-thanks",
       "labels": [
-        "profile-content","hidden"
+        "profile-content",
+        "hidden"
       ],
       "mappings": [
         {
@@ -197,7 +203,8 @@
     {
       "id": "contributor-thanks",
       "labels": [
-        "profile-content","hidden"
+        "profile-content",
+        "hidden"
       ],
       "mappings": [
         {

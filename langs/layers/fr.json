@@ -6925,6 +6925,13 @@
                     }
                 }
             },
+            "edit-profile": {
+                "render": {
+                    "special": {
+                        "text": "Modifier ton profil"
+                    }
+                }
+            },
             "fixate-north": {
                 "mappings": {
                     "0": {

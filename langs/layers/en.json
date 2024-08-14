@@ -11170,6 +11170,13 @@
             "debug-title": {
                 "render": "<h3>Debugging options</h3>"
             },
+            "edit-profile": {
+                "render": {
+                    "special": {
+                        "text": "Edit your profile description"
+                    }
+                }
+            },
             "fixate-north": {
                 "mappings": {
                     "0": {
@@ -11257,6 +11264,17 @@
                     }
                 },
                 "question": "Under what license do you want to publish your pictures?"
+            },
+            "profile-description": {
+                "mappings": {
+                    "0": {
+                        "then": {
+                            "special": {
+                                "text": "Add a profile description"
+                            }
+                        }
+                    }
+                }
             },
             "settings-link": {
                 "render": {

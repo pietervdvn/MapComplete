@@ -4,7 +4,6 @@
   import Translations from "../i18n/Translations"
   import Loading from "../Base/Loading.svelte"
   import Hotkeys from "../Base/Hotkeys"
-  import { Geocoding } from "../../Logic/Osm/Geocoding"
   import { BBox } from "../../Logic/BBox"
   import { GeoIndexedStoreForLayer } from "../../Logic/FeatureSource/Actors/GeoIndexedStore"
   import { createEventDispatcher, onDestroy } from "svelte"
@@ -12,6 +11,12 @@
   import { SearchIcon } from "@rgossiaux/svelte-heroicons/solid"
   import { ariaLabel } from "../../Utils/ariaLabel"
   import { GeoLocationState } from "../../Logic/State/GeoLocationState"
+  import { NominatimGeocoding } from "../../Logic/Geocoding/NominatimGeocoding"
+  import type GeocodingProvider from "../../Logic/Geocoding/GeocodingProvider"
+  import type { GeoCodeResult } from "../../Logic/Geocoding/GeocodingProvider"
+
+  import SearchResults from "./SearchResults.svelte"
+  import type { SpecialVisualizationState } from "../SpecialVisualization"
 
   export let perLayer: ReadonlyMap<string, GeoIndexedStoreForLayer> | undefined = undefined
   export let bounds: UIEventSource<BBox>
@@ -19,6 +24,8 @@
 
   export let geolocationState: GeoLocationState | undefined = undefined
   export let clearAfterView: boolean = true
+  export let searcher : GeocodingProvider = new NominatimGeocoding()
+  export let state : SpecialVisualizationState
   let searchContents: string = ""
   export let triggerSearch: UIEventSource<any> = new UIEventSource<any>(undefined)
   onDestroy(
@@ -54,6 +61,7 @@
     }
   }
 
+
   async function performSearch() {
     try {
       isRunning = true
@@ -64,7 +72,8 @@
       if (searchContents === "") {
         return
       }
-      const result = await Geocoding.Search(searchContents, bounds.data)
+      const result = await searcher.search(searchContents, { bbox: bounds.data, limit: 10 })
+      console.log("Results are", result)
       if (result.length == 0) {
         feedback = Translations.t.general.search.nothing.txt
         focusOnSearch()
@@ -104,6 +113,16 @@
       isRunning = false
     }
   }
+
+  let suggestions: GeoCodeResult[] = []
+
+  async function updateSuggestions(search){
+
+    suggestions = await searcher.suggest(search, {limit: 5})
+  }
+
+  $: updateSuggestions(searchContents)
+
 </script>
 
 <div class="normal-background flex justify-between rounded-full pl-2">
@@ -132,4 +151,8 @@
     {/if}
   </form>
   <SearchIcon aria-hidden="true" class="h-6 w-6 self-end" on:click={performSearch} />
+</div>
+
+<div class="h-2/3 ">
+  <SearchResults {state} results={suggestions}/>
 </div>
