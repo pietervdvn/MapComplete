@@ -10601,10 +10601,6 @@
           "then": "hospital - A layer showing hospital grounds"
         },
         {
-          "if": "value=hotel",
-          "then": "hotel - Layer showing all hotels"
-        },
-        {
           "if": "value=hydrant",
           "then": "hydrant - Map layer to show fire hydrants."
         },
@@ -10891,6 +10887,10 @@
         {
           "if": "value=tool_library",
           "then": "tool_library - A tool library is a place where people from the general public can borrow tools"
+        },
+        {
+          "if": "value=tourism_accomodation",
+          "then": "tourism_accomodation - undefined"
         },
         {
           "if": "value=trail",

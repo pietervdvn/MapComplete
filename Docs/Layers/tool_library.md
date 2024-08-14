@@ -120,7 +120,7 @@ This tagrendering has labels
 ### facebook
 Shows and asks for the facebook handle
 The question is `What is the facebook page of of {title()}?`
-*{link(Facebook page,&LBRACEcontact:facebook&RBRACE,,,)}<div class='subtle text-sm'>Facebook is known to harm mental health, manipulate public opinion and cause hate. Try to use healthier alternatives</div>* is shown if `contact:facebook` is set
+*{link(Facebook page,&LBRACEcontact:facebook&RBRACE,,,,)}<div class='subtle text-sm'>Facebook is known to harm mental health, manipulate public opinion and cause hate. Try to use healthier alternatives</div>* is shown if `contact:facebook` is set
 
 
 

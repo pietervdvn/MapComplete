@@ -22,7 +22,7 @@ export class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
         doesImageExist: DoesImageExist,
         path: string,
         isBuiltin: boolean,
-        sharedTagRenderings?: Set<string>,
+        sharedTagRenderings?: Set<string>
     ) {
         super("Doesn't change anything, but emits warnings and errors", [], "ValidateTheme")
         this._validateImage = doesImageExist
@@ -41,15 +41,15 @@ export class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
                 if (json["units"] !== undefined) {
                     context.err(
                         "The theme " +
-                        json.id +
-                        " has units defined - these should be defined on the layer instead. (Hint: use overrideAll: { '+units': ... }) ",
+                            json.id +
+                            " has units defined - these should be defined on the layer instead. (Hint: use overrideAll: { '+units': ... }) "
                     )
                 }
                 if (json["roamingRenderings"] !== undefined) {
                     context.err(
                         "Theme " +
-                        json.id +
-                        " contains an old 'roamingRenderings'. Use an 'overrideAll' instead",
+                            json.id +
+                            " contains an old 'roamingRenderings'. Use an 'overrideAll' instead"
                     )
                 }
             }
@@ -67,10 +67,10 @@ export class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
             for (const remoteImage of remoteImages) {
                 context.err(
                     "Found a remote image: " +
-                    remoteImage.path +
-                    " in theme " +
-                    json.id +
-                    ", please download it.",
+                        remoteImage.path +
+                        " in theme " +
+                        json.id +
+                        ", please download it."
                 )
             }
             for (const image of images) {
@@ -86,17 +86,17 @@ export class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
 
                 const filename = this._path.substring(
                     this._path.lastIndexOf("/") + 1,
-                    this._path.length - 5,
+                    this._path.length - 5
                 )
                 if (theme.id !== filename) {
                     context.err(
                         "Theme ids should be the same as the name.json, but we got id: " +
-                        theme.id +
-                        " and filename " +
-                        filename +
-                        " (" +
-                        this._path +
-                        ")",
+                            theme.id +
+                            " and filename " +
+                            filename +
+                            " (" +
+                            this._path +
+                            ")"
                     )
                 }
                 this._validateImage.convert(theme.icon, context.enter("icon"))
@@ -104,13 +104,13 @@ export class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
             const dups = Utils.Duplicates(json.layers.map((layer) => layer["id"]))
             if (dups.length > 0) {
                 context.err(
-                    `The theme ${json.id} defines multiple layers with id ${dups.join(", ")}`,
+                    `The theme ${json.id} defines multiple layers with id ${dups.join(", ")}`
                 )
             }
             if (json["mustHaveLanguage"] !== undefined) {
                 new ValidateLanguageCompleteness(...json["mustHaveLanguage"]).convert(
                     theme,
-                    context,
+                    context
                 )
             }
             if (!json.hideFromOverview && theme.id !== "personal" && this._isBuiltin) {
@@ -118,7 +118,7 @@ export class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
                 const targetLanguage = theme.title.SupportedLanguages()[0]
                 if (targetLanguage !== "en") {
                     context.err(
-                        `TargetLanguage is not 'en' for public theme ${theme.id}, it is ${targetLanguage}. Move 'en' up in the title of the theme and set it as the first key`,
+                        `TargetLanguage is not 'en' for public theme ${theme.id}, it is ${targetLanguage}. Move 'en' up in the title of the theme and set it as the first key`
                     )
                 }
 

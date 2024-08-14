@@ -26,7 +26,7 @@ export class ValidateTagRenderings extends Fuse<TagRenderingConfigJson> {
             new On("question", new ValidatePossibleLinks()),
             new On("questionHint", new ValidatePossibleLinks()),
             new On("mappings", new Each(new On("then", new ValidatePossibleLinks()))),
-            new MiscTagRenderingChecks(layerConfig),
+            new MiscTagRenderingChecks(layerConfig)
         )
     }
 }

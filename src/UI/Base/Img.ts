@@ -2,7 +2,7 @@ import { Utils } from "../../Utils"
 import BaseUIElement from "../BaseUIElement"
 /**
  * @deprecated
-*/
+ */
 export default class Img extends BaseUIElement {
     private readonly _src: string
     private readonly _rawSvg: boolean

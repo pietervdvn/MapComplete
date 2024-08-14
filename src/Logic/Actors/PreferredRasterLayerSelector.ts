@@ -20,7 +20,7 @@ export class PreferredRasterLayerSelector {
         queryParameter: UIEventSource<string>,
         preferredBackgroundLayer: UIEventSource<
             string | "photo" | "map" | "osmbasedmap" | undefined
-        >,
+        >
     ) {
         this._rasterLayerSetting = rasterLayerSetting
         this._availableLayers = availableLayers
@@ -47,8 +47,8 @@ export class PreferredRasterLayerSelector {
 
         this._preferredBackgroundLayer.addCallbackD((_) => self.updateLayer())
 
-        rasterLayerSetting.addCallbackAndRunD(layer => {
-            if (AvailableRasterLayers.globalLayers.find(l => l.id === layer.properties.id)) {
+        rasterLayerSetting.addCallbackAndRunD((layer) => {
+            if (AvailableRasterLayers.globalLayers.find((l) => l.id === layer.properties.id)) {
                 return
             }
             this._availableLayers.store.addCallbackD((_) => self.updateLayer())
@@ -67,7 +67,9 @@ export class PreferredRasterLayerSelector {
         if (targetLayerId === undefined || targetLayerId === "default") {
             return
         }
-        const global = AvailableRasterLayers.globalLayers.find(l => l.properties.id === targetLayerId)
+        const global = AvailableRasterLayers.globalLayers.find(
+            (l) => l.properties.id === targetLayerId
+        )
         if (global) {
             this._rasterLayerSetting.setData(global)
             return

@@ -306,7 +306,8 @@
   let hideMappingsUnlessSearchedFor =
     config.mappings.length > 8 && config.mappings.some((m) => m.priorityIf !== undefined)
   $: question = config.question
-  $: hideMappingsUnlessSearchedFor = config.mappings.length > 8 && config.mappings.some((m) => m.priorityIf !== undefined)
+  $: hideMappingsUnlessSearchedFor =
+    config.mappings.length > 8 && config.mappings.some((m) => m.priorityIf !== undefined)
 
   if (state?.osmConnection) {
     onDestroy(
@@ -362,7 +363,7 @@
             />
           </div>
           {#if hideMappingsUnlessSearchedFor}
-            <div class="m-1 rounded border border-dashed border-black p-1 px-2 flex items-center">
+            <div class="m-1 flex items-center rounded border border-dashed border-black p-1 px-2">
               <Tr t={Translations.t.general.mappingsAreHidden} />
             </div>
           {/if}

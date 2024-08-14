@@ -394,7 +394,7 @@ _This tagrendering has no question and is thus read-only_
 ### menu-website
 
 The question is `On what webpage is the menu published?`
-*{link(Consult the menu,&LBRACEwebsite:menu&RBRACE,,,)}* is shown if `website:menu` is set
+*{link(Consult the menu,&LBRACEwebsite:menu&RBRACE,,,,)}* is shown if `website:menu` is set
 
 
 

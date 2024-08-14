@@ -18,7 +18,6 @@
   export let minzoom: number
   export let zoomMoreMessage: string
 
-
   let curZoom = state.mapProperties.zoom
   const isClosed = tags.map((tags) => (tags["closed_at"] ?? "") !== "")
 
@@ -29,14 +28,12 @@
     tags.data["closed_at"] = new Date().toISOString()
     tags.ping()
   }
-
 </script>
 
 <LoginToggle {state}>
   <div slot="not-logged-in">
     <Tr t={t.loginToClose} />
   </div>
-
 
   {#if $isClosed}
     <Tr cls="thanks" t={t.isClosed} />
@@ -50,5 +47,4 @@
   {:else if zoomMoreMessage}
     {zoomMoreMessage}
   {/if}
-
 </LoginToggle>

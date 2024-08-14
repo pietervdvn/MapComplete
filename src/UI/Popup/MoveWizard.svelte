@@ -45,7 +45,7 @@
       location: new UIEventSource({ lon, lat }),
       minzoom: new UIEventSource($reason.minZoom),
       rasterLayer: state.mapProperties.rasterLayer,
-      zoom: new UIEventSource($reason?.startZoom ?? 16)
+      zoom: new UIEventSource($reason?.startZoom ?? 16),
     }
   }
 
@@ -71,7 +71,7 @@
       <AccordionSingle>
         <span slot="header" class="flex">
           {#if moveWizardState.reasons.length === 1}
-            <Icon icon={moveWizardState.reasons[0].icon} clss="w-6 h-6"/>
+            <Icon icon={moveWizardState.reasons[0].icon} clss="w-6 h-6" />
             <Tr t={Translations.T(moveWizardState.reasons[0].invitingText)} />
           {:else}
             <Move class="h-6 w-6" />
@@ -87,7 +87,7 @@
                   currentStep = "pick_location"
                 }}
               >
-                <Icon icon={reasonSpec.icon} clss="w-12 h-12"/>
+                <Icon icon={reasonSpec.icon} clss="w-12 h-12" />
                 <Tr t={Translations.T(reasonSpec.text)} />
               </button>
             {/each}

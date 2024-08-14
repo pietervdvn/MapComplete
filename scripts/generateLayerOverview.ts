@@ -273,7 +273,6 @@ class LayerOverviewUtils extends Script {
             JSON.stringify(theme, null, "  "),
             { encoding: "utf8" }
         )
-
     }
 
     writeLayer(layer: LayerConfigJson) {
@@ -852,7 +851,11 @@ class LayerOverviewUtils extends Script {
                     }
                 }
 
-                const usedImages = Utils.Dedup(new ExtractImages(true, knownTagRenderings).convertStrict(themeFile).map(x => x.path))
+                const usedImages = Utils.Dedup(
+                    new ExtractImages(true, knownTagRenderings)
+                        .convertStrict(themeFile)
+                        .map((x) => x.path)
+                )
                 usedImages.sort()
 
                 themeFile["_usedImages"] = usedImages

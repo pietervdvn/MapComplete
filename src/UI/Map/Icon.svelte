@@ -148,7 +148,7 @@
     <UserCircleIcon class={clss} {color} />
   {:else if Utils.isEmoji(icon)}
     <span style={`font-size: ${emojiHeight}px; line-height: ${emojiHeight}px`}>
-    {icon}
+      {icon}
     </span>
   {:else}
     <img class={clss ?? "h-full w-full"} src={icon} aria-hidden="true" alt="" />

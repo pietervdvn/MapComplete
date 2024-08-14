@@ -108,12 +108,18 @@ export default class DetermineLayout {
         ).data
         const id = layoutId?.toLowerCase()
         const layouts = AllKnownLayouts.allKnownLayouts
-        if(layouts.size() == 0){
+        if (layouts.size() == 0) {
             throw "Build failed or running, no layouts are known at all"
         }
         if (layouts.getConfig(id) === undefined) {
-            const alternatives = Utils.sortedByLevenshteinDistance(id, Array.from(layouts.keys()), i => i).slice(0, 3)
-            const msg = (`No builtin map theme with name ${layoutId} exists. Perhaps you meant one of ${alternatives.join(", ")}`)
+            const alternatives = Utils.sortedByLevenshteinDistance(
+                id,
+                Array.from(layouts.keys()),
+                (i) => i
+            ).slice(0, 3)
+            const msg = `No builtin map theme with name ${layoutId} exists. Perhaps you meant one of ${alternatives.join(
+                ", "
+            )}`
             throw msg
         }
         return layouts.get(id)
@@ -204,11 +210,11 @@ export default class DetermineLayout {
                 id: json.id,
                 description: json.description,
                 descriptionTail: {
-                    en: "<div class='alert'>Layer only mode.</div> The loaded custom theme actually isn't a custom theme, but only contains a layer."
+                    en: "<div class='alert'>Layer only mode.</div> The loaded custom theme actually isn't a custom theme, but only contains a layer.",
                 },
                 icon,
                 title: json.name,
-                layers: [json]
+                layers: [json],
             }
         }
 
@@ -221,7 +227,7 @@ export default class DetermineLayout {
             tagRenderings: DetermineLayout.getSharedTagRenderings(),
             tagRenderingOrder: DetermineLayout.getSharedTagRenderingOrder(),
             sharedLayers: knownLayersDict,
-            publicLayers: new Set<string>()
+            publicLayers: new Set<string>(),
         }
         json = new FixLegacyTheme().convertStrict(json)
         const raw = json
@@ -245,7 +251,7 @@ export default class DetermineLayout {
         }
         return new LayoutConfig(json, false, {
             definitionRaw: JSON.stringify(raw, null, "  "),
-            definedAtUrl: sourceUrl
+            definedAtUrl: sourceUrl,
         })
     }
 

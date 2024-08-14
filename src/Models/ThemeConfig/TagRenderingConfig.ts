@@ -963,7 +963,7 @@ export class TagRenderingConfigUtils {
                     tags,
                     country.split(";"),
                     center,
-                    {sortByFrequency: true}
+                    { sortByFrequency: true }
                 )
             )
         })

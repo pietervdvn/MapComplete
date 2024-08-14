@@ -100,14 +100,17 @@ class DownloadEli extends Script {
 
         const contents =
             '{"type":"FeatureCollection",\n  "features": [\n' +
-            keptLayers.filter(l => l.properties.id !== "Bing").map((l) => JSON.stringify(l)).join(",\n") +
+            keptLayers
+                .filter((l) => l.properties.id !== "Bing")
+                .map((l) => JSON.stringify(l))
+                .join(",\n") +
             "\n]}"
 
-        const bing = keptLayers.find(l => l.properties.id === "Bing")
-        if(bing){
+        const bing = keptLayers.find((l) => l.properties.id === "Bing")
+        if (bing) {
             fs.writeFileSync(targetBing, JSON.stringify(bing), { encoding: "utf8" })
             console.log("Written", targetBing)
-        }else{
+        } else {
             console.log("No bing entry found")
         }
         fs.writeFileSync(target, contents, { encoding: "utf8" })

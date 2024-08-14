@@ -31,7 +31,8 @@
    */
   export let notForLabels: string[] | undefined = undefined
   const _notForLabels = new Set(notForLabels)
-  let showAllQuestionsAtOnce : Store<boolean>= state.userRelatedState?.showAllQuestionsAtOnce ?? new ImmutableStore(false)
+  let showAllQuestionsAtOnce: Store<boolean> =
+    state.userRelatedState?.showAllQuestionsAtOnce ?? new ImmutableStore(false)
 
   function allowed(labels: string[]) {
     if (onlyForLabels?.length > 0 && !labels.some((l) => _onlyForLabels.has(l))) {

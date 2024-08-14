@@ -14,7 +14,7 @@
   import TitledPanel from "../Base/TitledPanel.svelte"
   import Loading from "../Base/Loading.svelte"
 
-  export let availableLayers: {store: Store<RasterLayerPolygon[]>}
+  export let availableLayers: { store: Store<RasterLayerPolygon[]> }
   export let mapproperties: MapProperties
   export let userstate: UserRelatedState
   export let map: Store<MlMap>
@@ -35,7 +35,7 @@
   function availableForCategory(type: CategoryType): Store<RasterLayerPolygon[]> {
     const keywords = categories[type]
     return _availableLayers.mapD((available) =>
-      available.filter((layer) => keywords.indexOf(<EliCategory>layer.properties.category) >= 0),
+      available.filter((layer) => keywords.indexOf(<EliCategory>layer.properties.category) >= 0)
     )
   }
 
@@ -57,7 +57,7 @@
   <Tr slot="title" t={Translations.t.general.backgroundMap} />
   {#if $_availableLayers?.length < 1}
     <Loading />
-  {:else }
+  {:else}
     <div class="grid h-full w-full grid-cols-1 gap-2 md:grid-cols-2">
       <RasterLayerPicker
         availableLayers={$photoLayers}

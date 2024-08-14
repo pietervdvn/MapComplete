@@ -5,9 +5,7 @@
   import { TrashIcon } from "@babeard/svelte-heroicons/mini"
   import ShowConversionMessage from "./ShowConversionMessage.svelte"
   import Markdown from "../Base/Markdown.svelte"
-  import type {
-    QuestionableTagRenderingConfigJson,
-  } from "../../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
+  import type { QuestionableTagRenderingConfigJson } from "../../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
   import CollapsedTagRenderingPreview from "./CollapsedTagRenderingPreview.svelte"
   import { Accordion } from "flowbite-svelte"
 
@@ -63,8 +61,6 @@
     currentValue.data.splice(i, 1)
     currentValue.ping()
   }
-
-
 </script>
 
 <div class="pl-2">
@@ -76,7 +72,9 @@
   {#if $currentValue === undefined}
     No array defined
   {:else if !Array.isArray($currentValue)}
-    Not an array: {typeof $currentValue} {JSON.stringify(path)} {JSON.stringify($currentValue).slice(0,120)}
+    Not an array: {typeof $currentValue}
+    {JSON.stringify(path)}
+    {JSON.stringify($currentValue).slice(0, 120)}
   {:else if $currentValue?.length === 0}
     No values are defined
     {#if $messages.length > 0}
@@ -102,7 +100,16 @@
   {:else}
     <Accordion>
       {#each $currentValue as value, i (value)}
-        <CollapsedTagRenderingPreview {state} {isTagRenderingBlock} {schema} {currentValue} {value} {i} {singular} path={fusePath(i)} />
+        <CollapsedTagRenderingPreview
+          {state}
+          {isTagRenderingBlock}
+          {schema}
+          {currentValue}
+          {value}
+          {i}
+          {singular}
+          path={fusePath(i)}
+        />
       {/each}
     </Accordion>
   {/if}

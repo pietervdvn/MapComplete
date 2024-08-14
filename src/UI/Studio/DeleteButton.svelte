@@ -23,10 +23,9 @@
 
   <div class="flex flex-col">
     <div>
-      Deleting this layer will delete your version. If you clicked a layer made by someone else, their version will
-      remain.
-
-      If you ever accidentally delete a layer, contact Pietervdvn. He might have a backup
+      Deleting this layer will delete your version. If you clicked a layer made by someone else,
+      their version will remain. If you ever accidentally delete a layer, contact Pietervdvn. He
+      might have a backup
     </div>
 
     <NextButton clss="primary" on:click={() => deleteLayer()}>
@@ -35,8 +34,5 @@
         Do delete this {objectType}
       </div>
     </NextButton>
-
   </div>
-
 </AccordionSingle>
-

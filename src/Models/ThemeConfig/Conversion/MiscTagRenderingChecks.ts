@@ -1,7 +1,10 @@
 import { DesugaringStep } from "./Conversion"
 import { TagRenderingConfigJson } from "../Json/TagRenderingConfigJson"
 import { LayerConfigJson } from "../Json/LayerConfigJson"
-import { MappingConfigJson, QuestionableTagRenderingConfigJson } from "../Json/QuestionableTagRenderingConfigJson"
+import {
+    MappingConfigJson,
+    QuestionableTagRenderingConfigJson,
+} from "../Json/QuestionableTagRenderingConfigJson"
 import { ConversionContext } from "./ConversionContext"
 import { Translation } from "../../../UI/i18n/Translation"
 import NameSuggestionIndex from "../../../Logic/Web/NameSuggestionIndex"
@@ -20,17 +23,17 @@ export class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJso
 
     convert(
         json: TagRenderingConfigJson | QuestionableTagRenderingConfigJson,
-        context: ConversionContext,
+        context: ConversionContext
     ): TagRenderingConfigJson {
         if (json["special"] !== undefined) {
             context.err(
-                "Detected `special` on the top level. Did you mean `{\"render\":{ \"special\": ... }}`",
+                'Detected `special` on the top level. Did you mean `{"render":{ "special": ... }}`'
             )
         }
 
         if (Object.keys(json).length === 1 && typeof json["render"] === "string") {
             context.warn(
-                `use the content directly instead of {render: ${JSON.stringify(json["render"])}}`,
+                `use the content directly instead of {render: ${JSON.stringify(json["render"])}}`
             )
         }
 
@@ -42,7 +45,7 @@ export class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJso
                 const mapping: MappingConfigJson = json.mappings[i]
                 CheckTranslation.noUndefined.convert(
                     mapping.then,
-                    context.enters("mappings", i, "then"),
+                    context.enters("mappings", i, "then")
                 )
                 if (!mapping.if) {
                     console.log(
@@ -51,7 +54,7 @@ export class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJso
                         "if",
                         mapping.if,
                         context.path.join("."),
-                        mapping.then,
+                        mapping.then
                     )
                     context.enters("mappings", i, "if").err("No `if` is defined")
                 }
@@ -61,7 +64,7 @@ export class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJso
                             context
                                 .enters("mappings", i, "addExtraTags", j)
                                 .err(
-                                    "Detected a 'null' or 'undefined' value. Either specify a tag or delete this item",
+                                    "Detected a 'null' or 'undefined' value. Either specify a tag or delete this item"
                                 )
                         }
                     }
@@ -72,18 +75,18 @@ export class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJso
                     context
                         .enters("mappings", i, "then")
                         .warn(
-                            "A mapping should not start with 'yes' or 'no'. If the attribute is known, it will only show 'yes' or 'no' <i>without</i> the question, resulting in a weird phrasing in the information box",
+                            "A mapping should not start with 'yes' or 'no'. If the attribute is known, it will only show 'yes' or 'no' <i>without</i> the question, resulting in a weird phrasing in the information box"
                         )
                 }
             }
         }
         if (json["group"]) {
-            context.err("Groups are deprecated, use `\"label\": [\"" + json["group"] + "\"]` instead")
+            context.err('Groups are deprecated, use `"label": ["' + json["group"] + '"]` instead')
         }
 
         if (json["question"] && json.freeform?.key === undefined && json.mappings === undefined) {
             context.err(
-                "A question is defined, but no mappings nor freeform (key) are. Add at least one of them",
+                "A question is defined, but no mappings nor freeform (key) are. Add at least one of them"
             )
         }
         if (json["question"] && !json.freeform && (json.mappings?.length ?? 0) == 1) {
@@ -93,7 +96,7 @@ export class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJso
             context
                 .enter("questionHint")
                 .err(
-                    "A questionHint is defined, but no question is given. As such, the questionHint will never be shown",
+                    "A questionHint is defined, but no question is given. As such, the questionHint will never be shown"
                 )
         }
 
@@ -101,7 +104,7 @@ export class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJso
             context
                 .enters("icon", "size")
                 .err(
-                    "size is not a valid attribute. Did you mean 'class'? Class can be one of `small`, `medium` or `large`",
+                    "size is not a valid attribute. Did you mean 'class'? Class can be one of `small`, `medium` or `large`"
                 )
         }
 
@@ -111,10 +114,10 @@ export class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJso
                     .enter("render")
                     .err(
                         "This tagRendering allows to set a value to key " +
-                        json.freeform.key +
-                        ", but does not define a `render`. Please, add a value here which contains `{" +
-                        json.freeform.key +
-                        "}`",
+                            json.freeform.key +
+                            ", but does not define a `render`. Please, add a value here which contains `{" +
+                            json.freeform.key +
+                            "}`"
                     )
             } else {
                 const render = new Translation(<any>json.render)
@@ -145,7 +148,7 @@ export class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJso
                     const keyFirstArg = ["canonical", "fediverse_link", "translated"]
                     if (
                         keyFirstArg.some(
-                            (funcName) => txt.indexOf(`{${funcName}(${json.freeform.key}`) >= 0,
+                            (funcName) => txt.indexOf(`{${funcName}(${json.freeform.key}`) >= 0
                         )
                     ) {
                         continue
@@ -169,7 +172,7 @@ export class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJso
                         context
                             .enter("render")
                             .err(
-                                `The rendering for language ${ln} does not contain \`{${json.freeform.key}}\`. Did you perhaps forget to set "freeform.type: 'wikidata'"?`,
+                                `The rendering for language ${ln} does not contain \`{${json.freeform.key}}\`. Did you perhaps forget to set "freeform.type: 'wikidata'"?`
                             )
                         continue
                     }
@@ -181,7 +184,7 @@ export class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJso
                         context
                             .enter("render")
                             .err(
-                                `The rendering for language ${ln} does not contain \`{${json.freeform.key}}\`. However, it does contain ${json.freeform.key} without braces. Did you forget the braces?\n\tThe current text is ${txt}`,
+                                `The rendering for language ${ln} does not contain \`{${json.freeform.key}}\`. However, it does contain ${json.freeform.key} without braces. Did you forget the braces?\n\tThe current text is ${txt}`
                             )
                         continue
                     }
@@ -189,7 +192,7 @@ export class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJso
                     context
                         .enter("render")
                         .err(
-                            `The rendering for language ${ln} does not contain \`{${json.freeform.key}}\`. This is a bug, as this rendering should show exactly this freeform key!\n\tThe current text is ${txt}`,
+                            `The rendering for language ${ln} does not contain \`{${json.freeform.key}}\`. This is a bug, as this rendering should show exactly this freeform key!\n\tThe current text is ${txt}`
                         )
                 }
             }
@@ -204,22 +207,22 @@ export class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJso
                         .enters("freeform", "type")
                         .err(
                             "No entry found in the 'Name Suggestion Index'. None of the 'osmSource'-tags match an entry in the NSI.\n\tOsmSource-tags are " +
-                            tags.map((t) => new Tag(t.key, t.value).asHumanString()).join(" ; "),
+                                tags.map((t) => new Tag(t.key, t.value).asHumanString()).join(" ; ")
                         )
                 }
             } else if (json.freeform.type === "nsi") {
                 context
                     .enters("freeform", "type")
                     .warn(
-                        "No need to explicitly set type to 'NSI', autodetected based on freeform type",
+                        "No need to explicitly set type to 'NSI', autodetected based on freeform type"
                     )
             }
         }
         if (json.render && json["question"] && json.freeform === undefined) {
             context.err(
                 `Detected a tagrendering which takes input without freeform key in ${context}; the question is ${new Translation(
-                    json["question"],
-                ).textFor("en")}`,
+                    json["question"]
+                ).textFor("en")}`
             )
         }
 
@@ -230,9 +233,9 @@ export class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJso
                     .enters("freeform", "type")
                     .err(
                         "Unknown type: " +
-                        freeformType +
-                        "; try one of " +
-                        Validators.availableTypes.join(", "),
+                            freeformType +
+                            "; try one of " +
+                            Validators.availableTypes.join(", ")
                     )
             }
         }

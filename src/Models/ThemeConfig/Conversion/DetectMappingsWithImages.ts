@@ -12,7 +12,7 @@ export class DetectMappingsWithImages extends DesugaringStep<TagRenderingConfigJ
         super(
             "Checks that 'then'clauses in mappings don't have images, but use 'icon' instead",
             [],
-            "DetectMappingsWithImages",
+            "DetectMappingsWithImages"
         )
         this._doesImageExist = doesImageExist
     }
@@ -52,14 +52,14 @@ export class DetectMappingsWithImages extends DesugaringStep<TagRenderingConfigJ
                 if (!ignore) {
                     ctx.err(
                         `A mapping has an image in the 'then'-clause. Remove the image there and use \`"icon": <your-image>\` instead. The images found are ${images.join(
-                            ", ",
-                        )}. (This check can be turned of by adding "#": "${ignoreToken}" in the mapping, but this is discouraged`,
+                            ", "
+                        )}. (This check can be turned of by adding "#": "${ignoreToken}" in the mapping, but this is discouraged`
                     )
                 } else {
                     ctx.info(
                         `Ignored image ${images.join(
-                            ", ",
-                        )} in 'then'-clause of a mapping as this check has been disabled`,
+                            ", "
+                        )} in 'then'-clause of a mapping as this check has been disabled`
                     )
 
                     for (const image of images) {

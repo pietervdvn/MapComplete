@@ -18,7 +18,7 @@ This theme contains the following layers:
  - [erotic_cinema (defined in this theme)](#erotic_cinema)
  - [cinema](../Layers/cinema.md)
  - [love_hotel](../Layers/love_hotel.md)
- - [hotel](../Layers/hotel.md)
+ - [tourism_accomodation](../Layers/tourism_accomodation.md)
 
 
 Available languages:

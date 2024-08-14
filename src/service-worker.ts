@@ -44,7 +44,7 @@ const cacheFirst = async (event, attemptUpdate: boolean = false) => {
                 return cacheResponse
             }
             return fetchAndCache(event)
-        }),
+        })
     )
 }
 
@@ -57,13 +57,13 @@ self.addEventListener("fetch", async (e) => {
         if (requestUrl.pathname.endsWith("service-worker-version")) {
             console.log("Sending version number...")
             await event.respondWith(
-                new Response(JSON.stringify({ "service-worker-version": version })),
+                new Response(JSON.stringify({ "service-worker-version": version }))
             )
             return
         }
         if (requestUrl.pathname.endsWith("/service-worker-clear")) {
             const keys = await caches.keys()
-            await Promise.all(keys.map(k => caches.delete(k)))
+            await Promise.all(keys.map((k) => caches.delete(k)))
             console.log("Cleared caches")
             return
         }

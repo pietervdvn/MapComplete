@@ -15,13 +15,12 @@
   export let header: string
   export let layer: LayerConfig
 
-  let headerTr = layer.tagRenderings.find(tr => tr.id === header)
-
+  let headerTr = layer.tagRenderings.find((tr) => tr.id === header)
 </script>
 
 <AccordionSingle>
   <div slot="header">
     <TagRenderingAnswer {tags} {layer} config={headerTr} {state} {selectedElement} />
   </div>
-  <SelectedElementView mustMatchLabels={new Set(labels)} {state} {layer} {tags} {selectedElement}/>
+  <SelectedElementView mustMatchLabels={new Set(labels)} {state} {layer} {tags} {selectedElement} />
 </AccordionSingle>

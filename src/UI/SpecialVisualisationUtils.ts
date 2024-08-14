@@ -1,8 +1,6 @@
 import { RenderingSpecification, SpecialVisualization } from "./SpecialVisualization"
 
 export default class SpecialVisualisationUtils {
-
-
     /**
      *
      * For a given string, returns a specification what parts are fixed and what parts are special renderings.
@@ -27,7 +25,7 @@ export default class SpecialVisualisationUtils {
     public static constructSpecification(
         template: string,
         specialVisualisations: Map<string, SpecialVisualization>,
-        extraMappings: SpecialVisualization[] = [],
+        extraMappings: SpecialVisualization[] = []
     ): RenderingSpecification[] {
         if (template === "") {
             return []
@@ -36,15 +34,13 @@ export default class SpecialVisualisationUtils {
         if (template["type"] !== undefined) {
             console.trace(
                 "Got a non-expanded template while constructing the specification, it still has a 'special-key':",
-                template,
+                template
             )
             throw "Got a non-expanded template while constructing the specification"
         }
 
         // Note: the '.*?' in the regex reads as 'any character, but in a non-greedy way'
-        const matched = template.match(
-            new RegExp(`(.*){\([a-zA-Z_]+\)\\((.*?)\\)(:.*)?}(.*)`, "s"),
-        )
+        const matched = template.match(new RegExp(`(.*){\([a-zA-Z_]+\)\\((.*?)\\)(:.*)?}(.*)`, "s"))
         if (matched === null) {
             // IF we end up here, no changes have to be made - except to remove any resting {}
             return [template]
@@ -52,11 +48,11 @@ export default class SpecialVisualisationUtils {
 
         const fName = matched[2]
         let knownSpecial = specialVisualisations.get(fName)
-        if(!knownSpecial && extraMappings?.length > 0){
-            knownSpecial = extraMappings.find(em => em.funcName === fName)
+        if (!knownSpecial && extraMappings?.length > 0) {
+            knownSpecial = extraMappings.find((em) => em.funcName === fName)
         }
-        if(!knownSpecial){
-            throw "Didn't find a special visualisation: "+fName+" in "+template
+        if (!knownSpecial) {
+            throw "Didn't find a special visualisation: " + fName + " in " + template
         }
 
         // Always a boring string
@@ -64,13 +60,12 @@ export default class SpecialVisualisationUtils {
         const argument: string =
             matched[3] /* .trim()  // We don't trim, as spaces might be relevant, e.g. "what is ... of {title()}"*/
         const style: string = matched[4]?.substring(1) ?? ""
-        const partAfter: RenderingSpecification[] = SpecialVisualisationUtils.constructSpecification(
-            matched[5],
-            specialVisualisations,
-            extraMappings,
-        )
-
-
+        const partAfter: RenderingSpecification[] =
+            SpecialVisualisationUtils.constructSpecification(
+                matched[5],
+                specialVisualisations,
+                extraMappings
+            )
 
         const args: string[] = knownSpecial.args.map((arg) => arg.defaultValue ?? "")
         if (argument.length > 0) {
@@ -92,12 +87,10 @@ export default class SpecialVisualisationUtils {
             func: knownSpecial,
         }
         partAfter.unshift(element)
-        if(partBefore.length > 0){
+        if (partBefore.length > 0) {
             partAfter.unshift(partBefore)
-
         }
         return partAfter
-
     }
 
     private static undoEncoding(str: string) {
