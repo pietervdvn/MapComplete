@@ -391,12 +391,14 @@ export default class UserRelatedState {
             for (const k in userDetails) {
                 amendedPrefs.data["_" + k] = "" + userDetails[k]
             }
-            if(userDetails.description){
-                amendedPrefs.data["_description_html"] =  Utils.purify(new Showdown.Converter()
-                    .makeHtml(userDetails.description)
-                    ?.replace(/&gt;/g, ">")
-                    ?.replace(/&lt;/g, "<")
-                    ?.replace(/\n/g, ""))
+            if (userDetails.description) {
+                amendedPrefs.data["_description_html"] = Utils.purify(
+                    new Showdown.Converter()
+                        .makeHtml(userDetails.description)
+                        ?.replace(/&gt;/g, ">")
+                        ?.replace(/&lt;/g, "<")
+                        ?.replace(/\n/g, "")
+                )
             }
 
             usersettingMetaTagging.metaTaggging_for_usersettings({ properties: amendedPrefs.data })

@@ -26,7 +26,7 @@ This theme contains the following layers:
  - [reception_desk](../Layers/reception_desk.md)
  - [walls_and_buildings](../Layers/walls_and_buildings.md)
  - [elevator](../Layers/elevator.md)
- - [hotel](../Layers/hotel.md)
+ - [tourism_accomodation](../Layers/tourism_accomodation.md)
  - [governments](../Layers/governments.md)
  - [current_view](../Layers/current_view.md)
  - [maproulette_challenge](../Layers/maproulette_challenge.md)

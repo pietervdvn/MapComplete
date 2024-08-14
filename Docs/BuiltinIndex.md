@@ -61,7 +61,6 @@
  - grave
  - guidepost
  - hackerspace
- - hotel
  - hydrant
  - ice_cream
  - indoors
@@ -112,6 +111,7 @@
  - toilet
  - toilet_at_amenity
  - tool_library
+ - tourism_accomodation
  - trail
  - transit_stops
  - tree_node
@@ -168,13 +168,13 @@
  - food
  - food_courts
  - hackerspace
- - hotel
  - ice_cream
  - love_hotel
  - pharmacy
  - playground
  - shops
  - stripclub
+ - tourism_accomodation
  - veterinary
             
             ### website
@@ -198,7 +198,6 @@
  - food_courts
  - governments
  - hackerspace
- - hotel
  - kindergarten_childcare
  - nature_reserve
  - observation_tower
@@ -234,7 +233,6 @@
  - food_courts
  - governments
  - hackerspace
- - hotel
  - kindergarten_childcare
  - pharmacy
  - physiotherapist
@@ -263,7 +261,6 @@
  - food
  - governments
  - hackerspace
- - hotel
  - kindergarten_childcare
  - pharmacy
  - physiotherapist
@@ -313,6 +310,7 @@
  - love_hotel
  - stripclub
  - tool_library
+ - tourism_accomodation
             
             ### mastodon
 
@@ -417,12 +415,12 @@
  - food
  - food_courts
  - hackerspace
- - hotel
  - ice_cream
  - observation_tower
  - outdoor_seating
  - playground_equipment
  - sports_centre
+ - tourism_accomodation
  - transit_stops
             
             ### smoking
@@ -441,13 +439,13 @@
 
              - cafe_pub
  - food
+ - tourism_accomodation
             
             ### internet
 
              - cafe_pub
  - climbing_gym
  - food
- - hotel
  - shops
             
             ### internet-fee
@@ -455,7 +453,6 @@
              - cafe_pub
  - climbing_gym
  - food
- - hotel
  - shops
             
             ### internet-ssid
@@ -463,7 +460,6 @@
              - cafe_pub
  - climbing_gym
  - food
- - hotel
  - shops
             
             ### questions
@@ -596,6 +592,7 @@
 
              - hackerspace
  - outdoor_seating
+ - tourism_accomodation
             
             ### diets
 
@@ -674,6 +671,14 @@
             ### toilet.menstrual_products_location
 
              - toilet_at_amenity
+            
+            ### {preset_type_select()}
+
+             - tourism_accomodation
+            
+            ### brand
+
+             - tourism_accomodation
             
 
 

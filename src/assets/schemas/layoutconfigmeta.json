@@ -831,10 +831,6 @@
           "then": "<b>hospital</b> (builtin) - A layer showing hospital grounds"
         },
         {
-          "if": "value=hotel",
-          "then": "<b>hotel</b> (builtin) - Layer showing all hotels"
-        },
-        {
           "if": "value=hydrant",
           "then": "<b>hydrant</b> (builtin) - Map layer to show fire hydrants."
         },
@@ -1121,6 +1117,10 @@
         {
           "if": "value=tool_library",
           "then": "<b>tool_library</b> (builtin) - A tool library is a place where people from the general public can borrow tools"
+        },
+        {
+          "if": "value=tourism_accomodation",
+          "then": "<b>tourism_accomodation</b> (builtin) - undefined"
         },
         {
           "if": "value=trail",
@@ -13130,10 +13130,6 @@
           "then": "hospital - A layer showing hospital grounds"
         },
         {
-          "if": "value=hotel",
-          "then": "hotel - Layer showing all hotels"
-        },
-        {
           "if": "value=hydrant",
           "then": "hydrant - Map layer to show fire hydrants."
         },
@@ -13420,6 +13416,10 @@
         {
           "if": "value=tool_library",
           "then": "tool_library - A tool library is a place where people from the general public can borrow tools"
+        },
+        {
+          "if": "value=tourism_accomodation",
+          "then": "tourism_accomodation - undefined"
         },
         {
           "if": "value=trail",
@@ -34363,10 +34363,6 @@
           "then": "hospital - A layer showing hospital grounds"
         },
         {
-          "if": "value=hotel",
-          "then": "hotel - Layer showing all hotels"
-        },
-        {
           "if": "value=hydrant",
           "then": "hydrant - Map layer to show fire hydrants."
         },
@@ -34653,6 +34649,10 @@
         {
           "if": "value=tool_library",
           "then": "tool_library - A tool library is a place where people from the general public can borrow tools"
+        },
+        {
+          "if": "value=tourism_accomodation",
+          "then": "tourism_accomodation - undefined"
         },
         {
           "if": "value=trail",

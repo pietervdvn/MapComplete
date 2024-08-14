@@ -10,7 +10,7 @@ export class IdbLocalStorage {
 
     public static Get<T>(
         key: string,
-        options?: { defaultValue?: T; whenLoaded?: (t: T | null) => void },
+        options?: { defaultValue?: T; whenLoaded?: (t: T | null) => void }
     ): UIEventSource<T> {
         if (IdbLocalStorage._sourceCache[key] !== undefined) {
             return IdbLocalStorage._sourceCache[key]

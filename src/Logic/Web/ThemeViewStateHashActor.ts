@@ -17,7 +17,7 @@ export default class ThemeViewStateHashActor {
         "The possible hashes are:",
         "",
         MenuState._menuviewTabs.map((tab) => "`menu:" + tab + "`").join(","),
-        MenuState._themeviewTabs.map((tab) => "`theme-menu:" + tab + "`").join(",")
+        MenuState._themeviewTabs.map((tab) => "`theme-menu:" + tab + "`").join(","),
     ]
 
     /**

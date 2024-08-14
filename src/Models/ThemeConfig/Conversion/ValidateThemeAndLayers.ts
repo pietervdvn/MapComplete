@@ -9,7 +9,7 @@ export class ValidateThemeAndLayers extends Fuse<LayoutConfigJson> {
         doesImageExist: DoesImageExist,
         path: string,
         isBuiltin: boolean,
-        sharedTagRenderings?: Set<string>,
+        sharedTagRenderings?: Set<string>
     ) {
         super(
             "Validates a theme and the contained layers",
@@ -19,10 +19,10 @@ export class ValidateThemeAndLayers extends Fuse<LayoutConfigJson> {
                 new Each(
                     new Bypass(
                         (layer) => Constants.added_by_default.indexOf(<any>layer.id) < 0,
-                        new ValidateLayerConfig(undefined, isBuiltin, doesImageExist, false, true),
-                    ),
-                ),
-            ),
+                        new ValidateLayerConfig(undefined, isBuiltin, doesImageExist, false, true)
+                    )
+                )
+            )
         )
     }
 }

@@ -124,11 +124,11 @@
   state.mapProperties.installCustomKeyboardHandler(viewport)
   let canZoomIn = mapproperties.maxzoom.map(
     (mz) => mapproperties.zoom.data < mz,
-    [mapproperties.zoom],
+    [mapproperties.zoom]
   )
   let canZoomOut = mapproperties.minzoom.map(
     (mz) => mapproperties.zoom.data > mz,
-    [mapproperties.zoom],
+    [mapproperties.zoom]
   )
 
   function updateViewport() {
@@ -165,7 +165,7 @@
   onDestroy(
     rasterLayer.addCallbackAndRunD((l) => {
       rasterLayerName = l.properties.name
-    }),
+    })
   )
   let previewedImage = state.previewedImage
 
@@ -196,7 +196,7 @@
   let openMapButton: UIEventSource<HTMLElement> = new UIEventSource<HTMLElement>(undefined)
   let openMenuButton: UIEventSource<HTMLElement> = new UIEventSource<HTMLElement>(undefined)
   let openCurrentViewLayerButton: UIEventSource<HTMLElement> = new UIEventSource<HTMLElement>(
-    undefined,
+    undefined
   )
   let _openNewElementButton: HTMLButtonElement
   let openNewElementButton: UIEventSource<HTMLElement> = new UIEventSource<HTMLElement>(undefined)

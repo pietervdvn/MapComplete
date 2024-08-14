@@ -440,7 +440,13 @@ export class Changes {
             }
         })
 
-        if(!(result.newObjects.length === 0 && result.modifiedObjects.length === 0 && result.deletedObjects.length === 0)) {
+        if (
+            !(
+                result.newObjects.length === 0 &&
+                result.modifiedObjects.length === 0 &&
+                result.deletedObjects.length === 0
+            )
+        ) {
             console.debug(
                 "Calculated the pending changes: ",
                 result.newObjects.length,
@@ -589,7 +595,13 @@ export class Changes {
             if (matchFound) {
                 toUpload.push(c)
             } else {
-                console.log("Refusing change about "+c.type+"/"+ c.id+" as not in the objects. No internet?")
+                console.log(
+                    "Refusing change about " +
+                        c.type +
+                        "/" +
+                        c.id +
+                        " as not in the objects. No internet?"
+                )
                 refused.push(c)
             }
         })
@@ -711,7 +723,7 @@ export class Changes {
 
         let { toUpload, refused } = this.fragmentChanges(pending, objects)
 
-        if(toUpload.length === 0){
+        if (toUpload.length === 0) {
             return refused
         }
         await this._changesetHandler.UploadChangeset(

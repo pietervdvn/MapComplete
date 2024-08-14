@@ -143,14 +143,14 @@ export default class NameSuggestionIndex {
         tags: Record<string, string>,
         country: string[],
         location?: [number, number],
-        options?:{
+        options?: {
             /**
              * If set, sort by frequency instead of alphabetically
              */
             sortByFrequency: boolean
         }
     ): Promise<Mapping[]> {
-        const mappings: (Mapping & {frequency: number})[] = []
+        const mappings: (Mapping & { frequency: number })[] = []
         const frequencies = await NameSuggestionIndex.fetchFrequenciesFor(type, country)
         for (const key in tags) {
             if (key.startsWith("_")) {
@@ -196,11 +196,11 @@ export default class NameSuggestionIndex {
                     // As such, it should be "true" but this is not supported
                     priorityIf: frequency > 0 ? new RegexTag("id", /.*/) : undefined,
                     searchTerms: { "*": [nsiItem.displayName, nsiItem.id] },
-                    frequency: frequency ?? -1
+                    frequency: frequency ?? -1,
                 })
             }
         }
-        if(options?.sortByFrequency){
+        if (options?.sortByFrequency) {
             mappings.sort((a, b) => b.frequency - a.frequency)
         }
 

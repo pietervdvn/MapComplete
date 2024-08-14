@@ -154,7 +154,7 @@ export class ChangesetHandler {
                 if (this._reportError) {
                     this._reportError(e)
                 }
-                if((<XMLHttpRequest> e).status === 400){
+                if ((<XMLHttpRequest>e).status === 400) {
                     // This request is invalid. We simply drop the changes and hope that someone will analyze what went wrong with it in the upload; we pretend everything went fine
                     return
                 }

@@ -123,7 +123,7 @@
     <Copyable {state} text={linkToShare} />
   </div>
   <div class="flex justify-center">
-    <img src={new Qr(linkToShare).toImageElement(125)} style="width: 125px"/>
+    <img src={new Qr(linkToShare).toImageElement(125)} style="width: 125px" />
   </div>
 
   <Tr t={tr.embedIntro} />

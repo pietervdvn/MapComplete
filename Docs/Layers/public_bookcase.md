@@ -185,7 +185,7 @@ The question is `When was this public bookcase installed?`
 ### public_bookcase-website
 
 The question is `Is there a website with more information about this public bookcase?`
-*{link(More info on the website,&LBRACEwebsite&RBRACE,,,)}* is shown if `website` is set
+*{link(More info on the website,&LBRACEwebsite&RBRACE,,,,)}* is shown if `website` is set
 
 
 

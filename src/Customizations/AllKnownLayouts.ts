@@ -36,7 +36,7 @@ export class AllKnownLayoutsLazy {
         return this.raw.get(key)
     }
 
-    public size(){
+    public size() {
         return this.raw.size
     }
 

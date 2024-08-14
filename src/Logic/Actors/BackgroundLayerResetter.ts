@@ -1,6 +1,10 @@
 import { Store, UIEventSource } from "../UIEventSource"
 import { Utils } from "../../Utils"
-import { AvailableRasterLayers, RasterLayerPolygon, RasterLayerUtils } from "../../Models/RasterLayers"
+import {
+    AvailableRasterLayers,
+    RasterLayerPolygon,
+    RasterLayerUtils,
+} from "../../Models/RasterLayers"
 
 /**
  * When a user pans around on the map, they might pan out of the range of the current background raster layer.
@@ -9,24 +13,32 @@ import { AvailableRasterLayers, RasterLayerPolygon, RasterLayerUtils } from "../
 export default class BackgroundLayerResetter {
     constructor(
         currentBackgroundLayer: UIEventSource<RasterLayerPolygon | undefined>,
-        availableLayers: {store: Store<RasterLayerPolygon[]>}
+        availableLayers: { store: Store<RasterLayerPolygon[]> }
     ) {
         if (Utils.runningFromConsole) {
             return
         }
 
-        currentBackgroundLayer.addCallbackAndRunD(l => {
-            if(l.geometry !== undefined && AvailableRasterLayers.globalLayers.find(global => global.properties.id !== l.properties.id)){
-                BackgroundLayerResetter.installHandler(currentBackgroundLayer, availableLayers.store)
+        currentBackgroundLayer.addCallbackAndRunD((l) => {
+            if (
+                l.geometry !== undefined &&
+                AvailableRasterLayers.globalLayers.find(
+                    (global) => global.properties.id !== l.properties.id
+                )
+            ) {
+                BackgroundLayerResetter.installHandler(
+                    currentBackgroundLayer,
+                    availableLayers.store
+                )
                 return true // unregister
             }
         })
-
     }
 
-    private static installHandler( currentBackgroundLayer: UIEventSource<RasterLayerPolygon | undefined>,
-                                   availableLayers: Store<RasterLayerPolygon[]>
-    ){
+    private static installHandler(
+        currentBackgroundLayer: UIEventSource<RasterLayerPolygon | undefined>,
+        availableLayers: Store<RasterLayerPolygon[]>
+    ) {
         // Change the baseLayer back to OSM if we go out of the current range of the layer
         availableLayers.addCallbackAndRunD((availableLayers) => {
             // We only check on move/on change of the availableLayers

@@ -52,7 +52,9 @@
   {#if layout.official}
     <a
       class="flex"
-      href={"https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Themes/" + layout.id + ".md"}
+      href={"https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Themes/" +
+        layout.id +
+        ".md"}
       target="_blank"
     >
       <DocumentMagnifyingGlass class="h-6 w-6" />
@@ -65,7 +67,7 @@
 
     <a class="flex" href={Utils.OsmChaLinkFor(31, layout.id)}>
       <DocumentChartBar class="h-6 w-6" />
-      <Tr t={Translations.t.general.attribution.openOsmcha.Subs({theme: layout.title})}/>
+      <Tr t={Translations.t.general.attribution.openOsmcha.Subs({ theme: layout.title })} />
     </a>
   {/if}
 

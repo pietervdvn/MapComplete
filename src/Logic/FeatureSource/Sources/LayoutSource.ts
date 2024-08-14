@@ -55,12 +55,11 @@ export default class LayoutSource extends FeatureSourceMerger {
                     mapProperties,
                     {
                         isActive: isDisplayed(layer.id),
-                        maxAge: layer.maxAgeOfCache
+                        maxAge: layer.maxAgeOfCache,
                     }
                 )
                 fromCache.set(layer.id, src)
             }
-
         }
         const mvtSources: UpdatableFeatureSource[] = osmLayers
             .filter((f) => mvtAvailableLayers.has(f.id))
@@ -170,7 +169,7 @@ export default class LayoutSource extends FeatureSourceMerger {
             backend,
             isActive,
             patchRelations: true,
-            fullNodeDatabase
+            fullNodeDatabase,
         })
     }
 
@@ -202,11 +201,11 @@ export default class LayoutSource extends FeatureSourceMerger {
                 widenFactor: featureSwitches.layoutToUse.widenFactor,
                 overpassUrl: featureSwitches.overpassUrl,
                 overpassTimeout: featureSwitches.overpassTimeout,
-                overpassMaxZoom: featureSwitches.overpassMaxZoom
+                overpassMaxZoom: featureSwitches.overpassMaxZoom,
             },
             {
                 padToTiles: zoom.map((zoom) => Math.min(15, zoom + 1)),
-                isActive
+                isActive,
             }
         )
     }

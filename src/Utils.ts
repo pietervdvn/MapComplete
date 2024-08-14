@@ -193,7 +193,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             parsed[spec.name] = arg
         }
 
-        return <T> parsed
+        return <T>parsed
     }
 
     static EncodeXmlValue(str) {

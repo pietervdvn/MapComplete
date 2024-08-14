@@ -96,7 +96,7 @@ The question is `Whom is remembered by this ghost bike?`
 ### ghost_bike-source
 
 The question is `On what webpage can one find more info about the ghost bike or the accident?`
-*{link(More info available,&LBRACEsource&RBRACE,,,)}* is shown if `source` is set
+*{link(More info available,&LBRACEsource&RBRACE,,,,)}* is shown if `source` is set
 
 
 

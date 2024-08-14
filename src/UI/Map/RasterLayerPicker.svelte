@@ -20,7 +20,11 @@
   export let favourite: UIEventSource<string> | undefined = undefined
 
   let rasterLayer = new UIEventSource<RasterLayerPolygon>(availableLayers[0])
-  let rasterLayerId = rasterLayer.sync(l => l?.properties?.id, [], id => availableLayers.find(l => l.properties.id === id))
+  let rasterLayerId = rasterLayer.sync(
+    (l) => l?.properties?.id,
+    [],
+    (id) => availableLayers.find((l) => l.properties.id === id)
+  )
   rasterLayer.setData(availableLayers[0])
   $: rasterLayer.setData(availableLayers[0])
 
@@ -32,13 +36,13 @@
           return
         }
         rasterLayer.setData(fav)
-      }),
+      })
     )
 
     onDestroy(
       rasterLayer.addCallbackAndRunD((selected) => {
         favourite?.setData(selected.properties.id)
-      }),
+      })
     )
   }
 
@@ -52,7 +56,7 @@
         } else {
           rasterLayerOnMap.setData(undefined)
         }
-      }),
+      })
     )
   }
 

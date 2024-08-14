@@ -16,18 +16,14 @@
 
   let [lon, lat] = GeoOperations.centerpointCoordinates(feature)
 
-  const includeLayout = window.location.pathname
-    .split("/")
-    .at(-1)
-    .startsWith("theme")
-  const layout = includeLayout
-    ? "layout=" + state.layout.id + "&"
-    : ""
-  let id: Store<string> = tags.mapD(tags => tags.id)
-  let url = id.mapD(id =>    `${window.location.protocol}//${window.location.host}${window.location.pathname}?${layout}lat=${lat}&lon=${lon}&z=15` +
-    `#${id}`)
-
-
+  const includeLayout = window.location.pathname.split("/").at(-1).startsWith("theme")
+  const layout = includeLayout ? "layout=" + state.layout.id + "&" : ""
+  let id: Store<string> = tags.mapD((tags) => tags.id)
+  let url = id.mapD(
+    (id) =>
+      `${window.location.protocol}//${window.location.host}${window.location.pathname}?${layout}lat=${lat}&lon=${lon}&z=15` +
+      `#${id}`
+  )
 
   function toggleSize() {
     if (size.data !== bigSize) {
@@ -42,5 +38,9 @@
   <!-- Not yet uploaded, doesn't have a fixed ID -->
   <Loading />
 {:else}
-  <img on:click={() => toggleSize()} src={new Qr($url).toImageElement($size)} style={`width: ${$size}px; height: ${$size}px`} />
+  <img
+    on:click={() => toggleSize()}
+    src={new Qr($url).toImageElement($size)}
+    style={`width: ${$size}px; height: ${$size}px`}
+  />
 {/if}
