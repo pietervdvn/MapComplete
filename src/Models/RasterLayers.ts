@@ -1,6 +1,6 @@
 import { Feature, Polygon } from "geojson"
 import * as globallayers from "../assets/global-raster-layers.json"
-import * as bingJson from "../assets/editor-layer-index.bing.json"
+import * as bingJson from "../assets/bing.json"
 
 import { BBox } from "../Logic/BBox"
 import { Store, Stores, UIEventSource } from "../Logic/UIEventSource"
@@ -20,7 +20,7 @@ export class AvailableRasterLayers {
             return AvailableRasterLayers._editorLayerIndex
         }
         console.debug("Downloading ELI")
-        const eli = await Utils.downloadJson<{ features: EditorLayerIndex }>("./src/assets/editor-layer-index.json")
+        const eli = await Utils.downloadJson<{ features: EditorLayerIndex }>("./assets/data/editor-layer-index.json")
         this._editorLayerIndex = eli.features.filter(l => l.properties.id !== "Bing")
         this._editorLayerIndexStore.set(this._editorLayerIndex)
         return this._editorLayerIndex

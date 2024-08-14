@@ -12,7 +12,8 @@ class DownloadEli extends Script {
     async main(args: string[]): Promise<void> {
         const url = "https://osmlab.github.io/editor-layer-index/imagery.geojson"
         // Target should use '.json' instead of '.geojson', as the latter cannot be imported by the build systems
-        const target = args[0] ?? "src/assets/editor-layer-index.json"
+        const target = args[0] ?? "public/assets/data/editor-layer-index.json"
+        const targetBing = args[0] ?? "src/assets/bing.json"
 
         const eli: Eli = await Utils.downloadJson(url)
         const keptLayers: EliEntry[] = []
@@ -104,9 +105,8 @@ class DownloadEli extends Script {
 
         const bing = keptLayers.find(l => l.properties.id === "Bing")
         if(bing){
-            const pth = target.replace(/.json$/, ".bing.json")
-            fs.writeFileSync(pth, JSON.stringify(bing), { encoding: "utf8" })
-            console.log("Written", pth)
+            fs.writeFileSync(targetBing, JSON.stringify(bing), { encoding: "utf8" })
+            console.log("Written", targetBing)
         }else{
             console.log("No bing entry found")
         }
