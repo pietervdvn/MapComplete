@@ -21,6 +21,12 @@ export default class SpecialVisualisationUtils {
      * const templ = <Exclude<RenderingSpecification, string>> templates[0]
      * templ.func.funcName // => "send_email"
      * templ.args[0] = "{email}"
+     *
+     * // Regression test - multiple special functions should all be found
+     * const spec = "{create_review()}{list_reviews()}"
+     * const parsed = SpecialVisualisationUtils.constructSpecification(spec, SpecialVisualisations.specialVisualisationsDict)
+     * parsed[0].func.funcName // => "create_review"
+     * parsed[1].func.funcName // => "list_reviews"
      */
     public static constructSpecification(
         template: string,
@@ -40,7 +46,7 @@ export default class SpecialVisualisationUtils {
         }
 
         // Note: the '.*?' in the regex reads as 'any character, but in a non-greedy way'
-        const matched = template.match(new RegExp(`(.*){\([a-zA-Z_]+\)\\((.*?)\\)(:.*)?}(.*)`, "s"))
+        const matched = template.match(new RegExp(`(.*?){\([a-zA-Z_]+\)\\((.*?)\\)(:.*)?}(.*)`, "s"))
         if (matched === null) {
             // IF we end up here, no changes have to be made - except to remove any resting {}
             return [template]
