@@ -12,11 +12,12 @@
     "it": "I fari sono edifici alti con una luce in cima per guidare il traffico marittimo."
   },
   "icon": "./assets/themes/lighthouses/lighthouse.svg",
-  "startZoom": 0,
   "startLat": 51.33884,
   "startLon": 3.14154,
   "defaultBackgroundId": "protomaps.white",
-  "credits": "Seppe Santens",
+  "credits": [
+    "Seppe Santens"
+  ],
   "layers": [
     "lighthouse"
   ]

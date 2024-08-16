@@ -1009,7 +1009,8 @@
     {
       "id": "debug-title",
       "render": {
-        "en": "<h3>Debugging options</h3>"
+        "en": "<h3>Debugging options</h3>",
+        "de": "<h3>Debugging-Optionen</h3>"
       }
     },
     {
@@ -1019,11 +1020,13 @@
         "special": {
           "type": "clear_caches",
           "text": {
-            "en": "Clear caches"
+            "en": "Clear caches",
+            "de": "Caches löschen"
           }
         },
         "after": {
-          "en": "Clearing the caches will delete locally downloaded data and code. You will remain logged in and your settings will be preserved. No data should be lost"
+          "en": "Clearing the caches will delete locally downloaded data and code. You will remain logged in and your settings will be preserved. No data should be lost",
+          "de": "Wenn du die Caches löschst, werden lokal heruntergeladene Daten und Code gelöscht. Du bleibst eingeloggt und deine Einstellungen bleiben erhalten. Es sollten keine Daten verloren gehen"
         }
       }
     },

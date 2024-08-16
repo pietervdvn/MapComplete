@@ -4,11 +4,11 @@
     "en": "Circular economy",
     "es": "Economía circular"
   },
-  "icon": "./assets/themes/circular_economy/circular.svg",
   "description": {
     "en": "Various items which help people to share, reuse or recycle.",
     "es": "Varios elementos que ayudan a la gente a compartir, reutilizar o reciclar."
   },
+  "icon": "./assets/themes/circular_economy/circular.svg",
   "layers": [
     {
       "builtin": "public_bookcase",

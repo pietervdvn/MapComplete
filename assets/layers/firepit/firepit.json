@@ -119,9 +119,9 @@
       }
     }
   ],
+  "deletion": true,
   "allowMove": {
     "enableRelocation": false,
     "enableImproveAccuracy": true
-  },
-  "deletion": true
+  }
 }

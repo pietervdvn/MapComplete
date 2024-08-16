@@ -294,7 +294,8 @@
           "if": "surface=fine_gravel",
           "then": {
             "en": "The surface is <b>fine gravel</b> (less then 2 cm per stone)",
-            "nl": "De ondergrond bestaat uit <b>kleine grindsteentjes</b> (steentjes kleiner dan 2 cm)"
+            "nl": "De ondergrond bestaat uit <b>kleine grindsteentjes</b> (steentjes kleiner dan 2 cm)",
+            "de": "Die Oberfläche ist <b>feiner Kies</b> (weniger als 2 cm pro Stein)"
           }
         }
       ],
