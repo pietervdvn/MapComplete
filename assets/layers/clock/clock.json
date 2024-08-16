@@ -47,6 +47,10 @@
               {
                 "if": "display=digital",
                 "then": "./assets/layers/clock/clock_digital.svg"
+              },
+              {
+                "if": "display=sundial",
+                "then": "./assets/layers/clock/sundial.svg"
               }
             ]
           }
@@ -561,6 +565,9 @@
         }
       ]
     }
+  ],
+  "filter": [
+    "display"
   ],
   "deletion": true,
   "allowMove": true
