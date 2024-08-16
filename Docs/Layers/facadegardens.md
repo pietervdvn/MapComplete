@@ -13,7 +13,7 @@ Facade gardens
 
 
  - This layer is shown at zoomlevel **12** and higher
- - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  a preset snaps to this layer (presets[0])
+ - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  preset `a facade garden` snaps to this layer (facadegardens.presets[0])
 
 
 

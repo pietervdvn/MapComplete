@@ -13,8 +13,8 @@ This layer shows surveillance cameras and allows a contributor to update informa
 
 
  - This layer is shown at zoomlevel **12** and higher
- - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  a preset snaps to this layer (presets[1])
- - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  a preset snaps to this layer (presets[3])
+ - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  preset `a surveillance camera mounted on a wall` snaps to this layer (surveillance_camera.presets[1])
+ - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  preset `an ALPR camera (Automatic Number Plate Reader) mounted on a wall` snaps to this layer (surveillance_camera.presets[3])
 
 
 

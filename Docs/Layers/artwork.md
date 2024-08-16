@@ -13,7 +13,7 @@ An open map of statues, busts, graffitis and other artwork all over the world
 
 
  - This layer is shown at zoomlevel **12** and higher
- - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  a preset snaps to this layer (presets[1])
+ - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  preset `an artwork on a wall` snaps to this layer (artwork.presets[1])
 
 
 

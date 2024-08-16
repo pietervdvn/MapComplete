@@ -3463,12 +3463,32 @@
     {
       "key": "tourism",
       "description": "The MapComplete theme OnWheels has a layer Tourism accomodation showing features with this tag",
+      "value": "hotel"
+    },
+    {
+      "key": "tourism",
+      "description": "The MapComplete theme OnWheels has a layer Tourism accomodation showing features with this tag",
       "value": "hostel"
     },
     {
       "key": "tourism",
       "description": "The MapComplete theme OnWheels has a layer Tourism accomodation showing features with this tag",
-      "value": "hotel"
+      "value": "apartment"
+    },
+    {
+      "key": "tourism",
+      "description": "The MapComplete theme OnWheels has a layer Tourism accomodation showing features with this tag",
+      "value": "chalet"
+    },
+    {
+      "key": "tourism",
+      "description": "The MapComplete theme OnWheels has a layer Tourism accomodation showing features with this tag",
+      "value": "motel"
+    },
+    {
+      "key": "tourism",
+      "description": "The MapComplete theme OnWheels has a layer Tourism accomodation showing features with this tag",
+      "value": "guest_house"
     },
     {
       "key": "id",

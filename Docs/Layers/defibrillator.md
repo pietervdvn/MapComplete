@@ -13,7 +13,7 @@ A layer showing defibrillators which can be used in case of emergency. This cont
 
 
  - This layer is shown at zoomlevel **12** and higher
- - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  a preset snaps to this layer (presets[1])
+ - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  preset `a defibrillator mounted on a wall` snaps to this layer (defibrillator.presets[1])
 
 
 

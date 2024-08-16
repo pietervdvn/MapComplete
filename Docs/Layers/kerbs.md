@@ -13,8 +13,8 @@ A layer showing kerbs.
 
 
  - This layer is shown at zoomlevel **13** and higher
- - This layer will automatically load  [cycleways_and_roads](./cycleways_and_roads.md)  into the layout as it depends on it:  a preset snaps to this layer (presets[0])
- - This layer will automatically load  [kerbs](./kerbs.md)  into the layout as it depends on it:  a preset snaps to this layer (presets[0])
+ - This layer will automatically load  [cycleways_and_roads](./cycleways_and_roads.md)  into the layout as it depends on it:  preset `a kerb` snaps to this layer (kerbs.presets[0])
+ - This layer will automatically load  [kerbs](./kerbs.md)  into the layout as it depends on it:  preset `a kerb` snaps to this layer (kerbs.presets[0])
  - This layer is needed as dependency for layer [kerbs](#kerbs)
 
 
