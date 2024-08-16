@@ -1,106 +1,13 @@
 {
-  "minzoom": 12,
-  "pointRendering": [
-    {
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "marker": [
-        {
-          "icon": "circle",
-          "color": "white"
-        },
-        {
-          "icon": {
-            "mappings": [
-              {
-                "if": "tourism=hostel",
-                "then": "./assets/layers/tourism_accomodation/hostel.svg"
-              },
-              {
-                "if": "tourism=hotel",
-                "then": "./assets/layers/tourism_accomodation/hotel.svg"
-              }
-            ],
-            "render": "./assets/layers/tourism_accomodation/hostel.svg"
-          }
-        }
-      ]
-    }
-  ],
-  "tagRenderings": [
-    "images",
-    "reviews",
-    {
-      "id": "name",
-      "question": {
-        "en": "What is the name of this {title()}?"
-      },
-      "render": {
-        "en": "{name}"
-      },
-      "freeform": {
-        "key": "name"
-      }
-    },
-    "{preset_type_select()}",
-    "brand",
-    "contact",
-    "wheelchair-access",
-    "internet-all",
-    "dog-access"
-  ],
-  "lineRendering": [
-    {
-      "width": 1,
-      "color": "blue"
-    }
-  ],
-  "name": {
-    "en": "Tourism accomodation"
-  },
   "id": "tourism_accomodation",
-  "description": {},
-  "presets": [
-    {
-      "title": {
-        "en": "a hotel",
-        "nl": "een hotel",
-        "de": "ein Hotel",
-        "ca": "un hotel",
-        "ru": "гостиница",
-        "fr": "un hôtel",
-        "cs": "hotel",
-        "pl": "hotel"
-      },
-      "description": {
-        "en": "A  hotel is an establishment that provides paid lodging, usually on a short-term basis. Rooms are not shared with strangers."
-      },
-      "tags": [
-        "tourism=hotel"
-      ]
-    },
-    {
-      "tags": [
-        "tourism=hostel"
-      ],
-      "title": {
-        "en": "a hostel"
-      },
-      "description": {
-        "en": "A hostel is a type of tourist accommodation where people can sleep in a room shared with strangers"
-      }
-    }
-  ],
-  "source": {
-    "osmTags": {
-      "or": [
-        "tourism=hostel",
-        "tourism=hotel"
-      ]
-    }
+  "name": {
+    "en": "Tourism accomodation",
+    "de": "Touristische Unterkunft"
   },
+  "description": {
+    "en": "Various types of lodging facilities"
+  },
+  "minzoom": 12,
   "title": {
     "mappings": [
       {
@@ -118,13 +25,256 @@
       {
         "if": "tourism=hostel",
         "then": {
-          "en": "Hostel {name}"
+          "en": "Hostel {name}",
+          "de": "Hostel {name}"
+        }
+      },
+      {
+        "if": "guest_house=bed_and_breakfast",
+        "then": {
+          "en": "B&B {name}"
+        }
+      },
+      {
+        "if": "tourism=guest_house",
+        "then": {
+          "en": "Guest house {name}"
+        }
+      },
+      {
+        "if": "tourism=motel",
+        "then": {
+          "en": "Motel {name}"
+        }
+      },
+      {
+        "if": "tourism=apartment",
+        "then": {
+          "en": "Apartment {name}"
+        }
+      },
+      {
+        "if": "tourism=chalet",
+        "then": {
+          "en": "Vacation home {name}"
         }
       }
     ],
     "render": {
-      "en": "Tourist accomodation {name}"
+      "en": "Tourist accomodation {name}",
+      "de": "Touristenunterkunft {name}"
     }
   },
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "square",
+          "color": "white"
+        },
+        {
+          "icon": {
+            "mappings": [
+              {
+                "if": "tourism=hostel",
+                "then": "./assets/layers/tourism_accomodation/hostel.svg"
+              },
+              {
+                "if": "tourism=hotel",
+                "then": "./assets/layers/tourism_accomodation/hotel.svg"
+              },
+              {
+                "if": "tourism=apartment",
+                "then": "./assets/layers/tourism_accomodation/apartment.svg"
+              },
+              {
+                "if": "tourism=motel",
+                "then": "./assets/layers/tourism_accomodation/motel.svg"
+              },
+              {
+                "if": "tourism=guest_house",
+                "then": "./assets/layers/tourism_accomodation/guest_house.svg"
+              }
+            ],
+            "render": "./assets/layers/tourism_accomodation/hostel.svg"
+          }
+        }
+      ],
+      "label": {
+        "condition": "name~*",
+        "render": "{name}"
+      },
+      "labelCssClasses": "bg-white rounded px-2"
+    }
+  ],
+  "lineRendering": [
+    {
+      "width": 1,
+      "color": "blue"
+    }
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "a hotel",
+        "nl": "een hotel",
+        "de": "ein Hotel",
+        "ca": "un hotel",
+        "ru": "гостиница",
+        "fr": "un hôtel",
+        "cs": "hotel",
+        "pl": "hotel"
+      },
+      "description": {
+        "en": "A  hotel is an establishment that provides paid lodging, usually on a short-term basis. Rooms are not shared with strangers.",
+        "de": "Ein Hotel ist eine Einrichtung, die eine bezahlte Unterkunft anbietet, in der Regel für einen kurzen Zeitraum. Die Zimmer werden nicht mit Fremden geteilt."
+      },
+      "tags": [
+        "tourism=hotel"
+      ]
+    },
+    {
+      "tags": [
+        "tourism=hostel"
+      ],
+      "title": {
+        "en": "a hostel",
+        "de": "Ein Hostel"
+      },
+      "description": {
+        "en": "A hostel is a type of tourist accommodation where people can sleep in a room shared with strangers",
+        "de": "Ein Hostel ist eine Art von Touristenherberge, in der man in einem Zimmer schlafen kann, das man mit Fremden teilt"
+      }
+    },
+    {
+      "tags": [
+        "tourism=apartment"
+      ],
+      "title": {
+        "en": "a vacation apartment"
+      },
+      "description": {
+        "en": "A furnished apartment or flat with cooking and bathroom facilities in a shared building that can be rented for vacations, typically without breakfast or reception desk"
+      }
+    },
+    {
+      "tags": [
+        "tourism=chalet"
+      ],
+      "title": {
+        "en": "a vacation chalet"
+      },
+      "description": {
+        "en": "A holiday cottage or vacation home with cooking and bathroom facilities that can be rented for holiday vacations, typically without breakfast or reception desk"
+      }
+    },
+    {
+      "tags": [
+        "tourism=motel"
+      ],
+      "title": {
+        "en": "a motel"
+      },
+      "description": {
+        "en": "A motel is an establishment that provides paid lodging, usually on a short-term basis, with convenient parking for motor cars at or close to the room. They are typically cheaper then a hotel"
+      }
+    },
+    {
+      "tags": [
+        "tourism=guest_house",
+        "guest_house=bed_and_breakfast"
+      ],
+      "title": {
+        "en": "a bed-and-breakfast"
+      },
+      "description": {
+        "en": "A bed-and-breakfast in a guesthouse is a small lodging establishment. These are often a few rooms within a private family home where the owners also accommodate the guests. There is no reception desk, nor is there staff at all times. In some cases, check-in happens remotely by sharing a code to get in."
+      }
+    },
+    {
+      "tags": [
+        "tourism=guest_house"
+      ],
+      "title": {
+        "en": "a small-scale lodging facility, typically operated by the owner"
+      }
+    }
+  ],
+  "tagRenderings": [
+    "images",
+    "reviews",
+    {
+      "id": "name",
+      "question": {
+        "en": "What is the name of this {title()}?",
+        "de": "Wie lautet der Name von {title()}?"
+      },
+      "render": {
+        "en": "{name}",
+        "de": "{name}"
+      },
+      "freeform": {
+        "key": "name"
+      }
+    },
+    "{preset_type_select()}",
+    "brand",
+    "contact",
+    "wheelchair-access",
+    "internet-all",
+    "dog-access"
+  ],
+  "filter": [
+    {
+      "id": "type",
+      "options": [
+        {
+          "question": {
+            "en": "All types"
+          }
+        },
+        {
+          "osmTags": "tourism=hotel",
+          "question": {
+            "en": "Hotels"
+          }
+        },
+        {
+          "osmTags": "tourism=hostel",
+          "question": {
+            "en": "Hostels"
+          }
+        },
+        {
+          "osmTags": "tourism=guest_house",
+          "question": {
+            "en": "Guest houses and Bed&Breakfasts"
+          }
+        },
+        {
+          "osmTags": "tourism=motel",
+          "question": {
+            "en": "Motels"
+          }
+        },
+        {
+          "osmTags": "tourism=chalet",
+          "question": {
+            "en": "Vacation home"
+          }
+        },
+        {
+          "osmTags": "tourism=apartment",
+          "question": {
+            "en": "Vacation apartment"
+          }
+        }
+      ]
+    }
+  ],
   "allowMove": true
 }
