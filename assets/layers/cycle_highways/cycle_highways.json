@@ -87,14 +87,14 @@
   "source": {
     "osmTags": "cycle_network=BE-VLG:cycle_highway"
   },
-  "minzoom": 8,
+  "minzoom": 6,
   "title": {
     "render": {
-      "en": "cycle highway",
+      "en": "Cycle highway",
       "de": "Radschnellweg",
-      "ca": "via ciclista",
+      "ca": "Via ciclista",
       "fr": "Aménagement cyclable",
-      "nl": "fietssnelweg",
+      "nl": "Fietssnelweg",
       "es": "autovía ciclista",
       "nb_NO": "sykkelmotorvei",
       "da": "cykelmotorvej",

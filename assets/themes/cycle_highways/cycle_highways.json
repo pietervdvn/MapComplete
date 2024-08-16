@@ -38,6 +38,43 @@
   ],
   "hideFromOverview": true,
   "layers": [
+    {
+      "builtin": "cycle_highways",
+      "override": {
+        "source": {
+          "osmTags": {
+            "and+": [
+              "note:state=has_highway_no"
+            ]
+          }
+        },
+        "id": "cycle_highways_no_highway",
+        "lineRendering": [
+          {
+            "dashArray": "0.25 2"
+          }
+        ]
+      }
+    },
+    {
+      "builtin": "cycle_highways",
+      "override": {
+        "source": {
+          "osmTags": {
+            "and+": [
+              "note:state=has_highway_under_construction"
+            ]
+          }
+        },
+        "id": "cycle_highways_under-construction",
+        "lineRendering": [
+          {
+            "dashArray": "0.75 2"
+          }
+        ]
+      }
+    },
+
     "cycle_highways"
   ],
   "overpassTimeout": 60,
