@@ -63,9 +63,11 @@ export interface LayerConfigJson {
      *
      * types: Load data with specific tags from OpenStreetMap ; Load data from an external geojson source ;
      * typesdefault: 0
+     * ifunset: Determine the tags automatically based on the presets
      * group: Basic
      */
     source:
+        | undefined
         | "special"
         | "special:library"
         | {
