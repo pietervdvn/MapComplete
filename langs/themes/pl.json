@@ -448,14 +448,6 @@
     },
     "cycle_highways": {
         "description": "Ta mapa pokazuje ścieżki rowerowe",
-        "layers": {
-            "0": {
-                "name": "ścieżki rowerowe",
-                "title": {
-                    "render": "ścieżka rowerowa"
-                }
-            }
-        },
         "title": "Ścieżki rowerowe"
     },
     "cycle_infra": {

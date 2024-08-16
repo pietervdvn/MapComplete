@@ -3303,6 +3303,12 @@
             "render": "Crossing"
         }
     },
+    "cycle_highways": {
+        "name": "cycle highways",
+        "title": {
+            "render": "cycle highway"
+        }
+    },
     "cycleways_and_roads": {
         "description": "All infrastructure that someone can cycle over, accompanied with questions about this infrastructure",
         "name": "Cycleways and roads",
@@ -10516,6 +10522,34 @@
         }
     },
     "tourism_accomodation": {
+        "description": "Various types of lodging facilities",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "All types"
+                    },
+                    "1": {
+                        "question": "Hotels"
+                    },
+                    "2": {
+                        "question": "Hostels"
+                    },
+                    "3": {
+                        "question": "Guest houses and Bed&Breakfasts"
+                    },
+                    "4": {
+                        "question": "Motels"
+                    },
+                    "5": {
+                        "question": "Vacation home"
+                    },
+                    "6": {
+                        "question": "Vacation apartment"
+                    }
+                }
+            }
+        },
         "name": "Tourism accomodation",
         "presets": {
             "0": {
@@ -10525,6 +10559,25 @@
             "1": {
                 "description": "A hostel is a type of tourist accommodation where people can sleep in a room shared with strangers",
                 "title": "a hostel"
+            },
+            "2": {
+                "description": "A furnished apartment or flat with cooking and bathroom facilities in a shared building that can be rented for vacations, typically without breakfast or reception desk",
+                "title": "a vacation apartment"
+            },
+            "3": {
+                "description": "A holiday cottage or vacation home with cooking and bathroom facilities that can be rented for holiday vacations, typically without breakfast or reception desk",
+                "title": "a vacation chalet"
+            },
+            "4": {
+                "description": "A motel is an establishment that provides paid lodging, usually on a short-term basis, with convenient parking for motor cars at or close to the room. They are typically cheaper then a hotel",
+                "title": "a motel"
+            },
+            "5": {
+                "description": "A bed-and-breakfast in a guesthouse is a small lodging establishment. These are often a few rooms within a private family home where the owners also accommodate the guests. There is no reception desk, nor is there staff at all times. In some cases, check-in happens remotely by sharing a code to get in.",
+                "title": "a bed-and-breakfast"
+            },
+            "6": {
+                "title": "a small-scale lodging facility, typically operated by the owner"
             }
         },
         "tagRenderings": {
@@ -10540,6 +10593,21 @@
                 },
                 "1": {
                     "then": "Hostel {name}"
+                },
+                "2": {
+                    "then": "B&B {name}"
+                },
+                "3": {
+                    "then": "Guest house {name}"
+                },
+                "4": {
+                    "then": "Motel {name}"
+                },
+                "5": {
+                    "then": "Apartment {name}"
+                },
+                "6": {
+                    "then": "Vacation home {name}"
                 }
             },
             "render": "Tourist accomodation {name}"

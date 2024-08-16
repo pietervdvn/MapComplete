@@ -386,14 +386,6 @@
     },
     "cycle_highways": {
         "description": "Dette kort viser cykelmotorveje",
-        "layers": {
-            "0": {
-                "name": "cykelmotorveje",
-                "title": {
-                    "render": "cykelmotorvej"
-                }
-            }
-        },
         "title": "Cykelmotorveje"
     },
     "cycle_infra": {

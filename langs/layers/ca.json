@@ -2404,6 +2404,12 @@
             "render": "Encreuament"
         }
     },
+    "cycle_highways": {
+        "name": "vies ciclistes",
+        "title": {
+            "render": "via ciclista"
+        }
+    },
     "cycleways_and_roads": {
         "description": "Totes les infraestructures per les quals algú pot ciclar, acompanyades de preguntes sobre aquesta infraestructura",
         "name": "Vies ciclistes i carreteres",

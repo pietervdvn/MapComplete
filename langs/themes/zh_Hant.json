@@ -286,14 +286,6 @@
         "title": "攀岩館、俱樂部和場所"
     },
     "cycle_highways": {
-        "layers": {
-            "0": {
-                "name": "單車高速公路",
-                "title": {
-                    "render": "單車高速公路"
-                }
-            }
-        },
         "title": "單車高速公路"
     },
     "cycle_infra": {

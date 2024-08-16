@@ -1269,6 +1269,12 @@
             }
         }
     },
+    "cycle_highways": {
+        "name": "ścieżki rowerowe",
+        "title": {
+            "render": "ścieżka rowerowa"
+        }
+    },
     "cycleways_and_roads": {
         "tagRenderings": {
             "Maxspeed (for road)": {

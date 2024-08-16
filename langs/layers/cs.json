@@ -2374,6 +2374,12 @@
             "render": "Přechod"
         }
     },
+    "cycle_highways": {
+        "name": "cyklodálnice",
+        "title": {
+            "render": "cyklodálnice"
+        }
+    },
     "cycleways_and_roads": {
         "description": "Veškerá infrastruktura, kterou může někdo projet na kole, doplněná o otázky týkající se této infrastruktury",
         "name": "Cyklostezky a silnice",

@@ -2839,6 +2839,12 @@
             "render": "Oversteekplaats"
         }
     },
+    "cycle_highways": {
+        "name": "fietssnelwegen",
+        "title": {
+            "render": "fietssnelweg"
+        }
+    },
     "cycleways_and_roads": {
         "description": "Alle infrastructuur waar je over kunt fietsen, met vragen over die infrastructuur",
         "name": "Fietspaden, straten en wegen",

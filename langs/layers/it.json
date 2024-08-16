@@ -1192,6 +1192,12 @@
             "render": "Via di arrampicata"
         }
     },
+    "cycle_highways": {
+        "name": "strade per biciclette",
+        "title": {
+            "render": "strada per bicilette"
+        }
+    },
     "defibrillator": {
         "name": "Defibrillatori",
         "presets": {

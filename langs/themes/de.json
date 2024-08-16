@@ -449,14 +449,6 @@
     },
     "cycle_highways": {
         "description": "Diese Karte zeigt Radschnellwege",
-        "layers": {
-            "0": {
-                "name": "Radschnellwege",
-                "title": {
-                    "render": "Radschnellweg"
-                }
-            }
-        },
         "title": "Radschnellwege"
     },
     "cycle_infra": {

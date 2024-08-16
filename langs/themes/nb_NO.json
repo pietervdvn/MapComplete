@@ -252,14 +252,6 @@
     },
     "cycle_highways": {
         "description": "Kart som viser sykkelmotorveier",
-        "layers": {
-            "0": {
-                "name": "sykkelmotorveier",
-                "title": {
-                    "render": "sykkelmotorvei"
-                }
-            }
-        },
         "title": "Sykkelmotorveier"
     },
     "cycle_infra": {

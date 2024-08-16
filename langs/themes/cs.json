@@ -445,14 +445,6 @@
     },
     "cycle_highways": {
         "description": "Tato mapa zobrazuje cyklostezky",
-        "layers": {
-            "0": {
-                "name": "cyklodálnice",
-                "title": {
-                    "render": "cyklodálnice"
-                }
-            }
-        },
         "title": "Cyklodálnice"
     },
     "cycle_infra": {

@@ -388,14 +388,6 @@
     },
     "cycle_highways": {
         "description": "Questa cartina mostra le strade per velocipedi",
-        "layers": {
-            "0": {
-                "name": "strade per biciclette",
-                "title": {
-                    "render": "strada per bicilette"
-                }
-            }
-        },
         "title": "Strade per velocipedi"
     },
     "cycle_infra": {

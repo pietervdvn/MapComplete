@@ -460,14 +460,6 @@
     },
     "cycle_highways": {
         "description": "This map shows cycle highways",
-        "layers": {
-            "0": {
-                "name": "cycle highways",
-                "title": {
-                    "render": "cycle highway"
-                }
-            }
-        },
         "title": "Cycle highways"
     },
     "cycle_infra": {

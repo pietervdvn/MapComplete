@@ -460,14 +460,6 @@
     },
     "cycle_highways": {
         "description": "Este mapa muestra autovías ciclistas",
-        "layers": {
-            "0": {
-                "name": "autovías ciclistas",
-                "title": {
-                    "render": "autovía ciclista"
-                }
-            }
-        },
         "title": "Autovías ciclistas"
     },
     "cycle_infra": {

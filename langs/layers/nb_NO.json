@@ -444,6 +444,12 @@
             "render": "Klatrerute"
         }
     },
+    "cycle_highways": {
+        "name": "sykkelmotorveier",
+        "title": {
+            "render": "sykkelmotorvei"
+        }
+    },
     "extinguisher": {
         "description": "Kartlag for å vise brannslokkere.",
         "name": "Kart over brannhydranter",

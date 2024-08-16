@@ -2330,6 +2330,12 @@
             "render": "Traversée"
         }
     },
+    "cycle_highways": {
+        "name": "Aménagements cyclables",
+        "title": {
+            "render": "Aménagement cyclable"
+        }
+    },
     "cycleways_and_roads": {
         "description": "Toutes les infrastructures sur lesquelles quelqu'un peut rouler, accompagnées de questions sur cette infrastructure",
         "name": "Pistes cyclables et routes",

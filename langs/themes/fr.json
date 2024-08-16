@@ -445,14 +445,6 @@
     },
     "cycle_highways": {
         "description": "Cette carte affiche les aménagements cyclables",
-        "layers": {
-            "0": {
-                "name": "Aménagements cyclables",
-                "title": {
-                    "render": "Aménagement cyclable"
-                }
-            }
-        },
         "title": "Aménagements cyclables"
     },
     "cycle_infra": {

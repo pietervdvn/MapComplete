@@ -66,14 +66,6 @@
         }
     },
     "cycle_highways": {
-        "layers": {
-            "0": {
-                "name": "سائیکل‌وے",
-                "title": {
-                    "render": "سائیکل‌وے"
-                }
-            }
-        },
         "title": "سائیکل‌وے"
     },
     "cycle_infra": {

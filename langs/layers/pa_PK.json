@@ -89,6 +89,12 @@
             "render": "کراسنگ"
         }
     },
+    "cycle_highways": {
+        "name": "سائیکل‌وے",
+        "title": {
+            "render": "سائیکل‌وے"
+        }
+    },
     "cycleways_and_roads": {
         "title": {
             "mappings": {

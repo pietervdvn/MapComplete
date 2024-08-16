@@ -448,14 +448,6 @@
     },
     "cycle_highways": {
         "description": "Aquest mapa mostra carrils bici",
-        "layers": {
-            "0": {
-                "name": "vies ciclistes",
-                "title": {
-                    "render": "via ciclista"
-                }
-            }
-        },
         "title": "Vies ciclistes"
     },
     "cycle_infra": {

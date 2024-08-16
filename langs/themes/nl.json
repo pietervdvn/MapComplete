@@ -406,14 +406,6 @@
     },
     "cycle_highways": {
         "description": "Deze kaart toont fietssnelwegen",
-        "layers": {
-            "0": {
-                "name": "fietssnelwegen",
-                "title": {
-                    "render": "fietssnelweg"
-                }
-            }
-        },
         "title": "Fietssnelwegen"
     },
     "cycle_infra": {
