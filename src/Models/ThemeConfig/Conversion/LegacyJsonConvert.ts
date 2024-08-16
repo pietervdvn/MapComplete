@@ -25,6 +25,10 @@ export class UpdateLegacyLayer extends DesugaringStep<
         context = context.enter(json.id)
         let config = { ...json }
 
+        if(config["credits"] === "Not logged in"){
+            delete config["credits"]
+        }
+
         if (config["overpassTags"]) {
             config.source = config.source ?? {
                 osmTags: config["overpassTags"],
@@ -142,9 +146,11 @@ export class UpdateLegacyLayer extends DesugaringStep<
         delete config["wayHandling"]
         delete config["hideUnderlayingFeaturesMinPercentage"]
         const src = config.source
-        delete src["isOsmCache"]
-        delete src["maxCacheAge"]
-        delete src["widenFactor"]
+        if(src){
+            delete src["isOsmCache"]
+            delete src["maxCacheAge"]
+            delete src["widenFactor"]
+        }
 
         for (const mapRenderingElement of config["mapRendering"] ?? []) {
             if (mapRenderingElement["iconOverlays"] !== undefined) {
