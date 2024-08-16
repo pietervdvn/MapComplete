@@ -48,8 +48,8 @@ export default class DependencyCalculator {
             preset.preciseInput?.snapToLayers?.forEach((id) => {
                 deps.push({
                     neededLayer: id,
-                    reason: "a preset snaps to this layer",
-                    context: "presets[" + i + "]",
+                    reason: `preset \`${preset.title.textFor("en")}\` snaps to this layer`,
+                    context: `${layer.id}.presets[${i}]`,
                     neededBy: layer.id,
                 })
             })
