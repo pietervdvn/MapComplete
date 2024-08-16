@@ -21,7 +21,7 @@
   "source": {
     "osmTags": "amenity=clock"
   },
-  "minzoom": 13,
+  "minzoom": 8,
   "title": {
     "render": {
       "en": "Clock",
