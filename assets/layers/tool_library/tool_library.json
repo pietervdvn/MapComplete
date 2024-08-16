@@ -1,6 +1,23 @@
 {
-  "credits": "Not logged in",
+  "id": "tool_library",
+  "name": {
+    "en": "Tool libraries",
+    "de": "Werkzeugbibliothek"
+  },
+  "description": {
+    "en": "A tool library is a place where people from the general public can borrow tools",
+    "de": "Eine Werkzeugbibliothek ist ein Ort, an dem Menschen aus der Öffentlichkeit Werkzeuge ausleihen können"
+  },
+  "source": {
+    "osmTags": "amenity=tool_library"
+  },
   "minzoom": 3,
+  "title": {
+    "render": {
+      "en": "Tool library {name}",
+      "de": "Werkzeugbibliothek {name}"
+    }
+  },
   "pointRendering": [
     {
       "location": [
@@ -29,6 +46,27 @@
         ]
       },
       "labelCssClasses": "bg-white rounded px-2"
+    }
+  ],
+  "lineRendering": [
+    {
+      "width": 1,
+      "color": "blue"
+    }
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "a tool library",
+        "de": "Eine Werkzeugbibliothek"
+      },
+      "tags": [
+        "amenity=tool_library"
+      ],
+      "description": {
+        "en": "A tool library is a place where people from the general public can borrow tools",
+        "de": "Eine Werkzeugbibliothek ist ein Ort, an dem Menschen aus der Öffentlichkeit Werkzeuge ausleihen können"
+      }
     }
   ],
   "tagRenderings": [
@@ -132,45 +170,6 @@
       "questionHint": {
         "en": "If a membership is required, we assume that the membership is already paid for.",
         "de": "Wenn eine Mitgliedschaft erforderlich ist, gehen wir davon aus, dass die Mitgliedschaft bereits bezahlt ist."
-      }
-    }
-  ],
-  "lineRendering": [
-    {
-      "width": 1,
-      "color": "blue"
-    }
-  ],
-  "id": "tool_library",
-  "name": {
-    "en": "Tool libraries",
-    "de": "Werkzeugbibliothek"
-  },
-  "description": {
-    "en": "A tool library is a place where people from the general public can borrow tools",
-    "de": "Eine Werkzeugbibliothek ist ein Ort, an dem Menschen aus der Öffentlichkeit Werkzeuge ausleihen können"
-  },
-  "source": {
-    "osmTags": "amenity=tool_library"
-  },
-  "title": {
-    "render": {
-      "en": "Tool library {name}",
-      "de": "Werkzeugbibliothek {name}"
-    }
-  },
-  "presets": [
-    {
-      "title": {
-        "en": "a tool library",
-        "de": "Eine Werkzeugbibliothek"
-      },
-      "tags": [
-        "amenity=tool_library"
-      ],
-      "description": {
-        "en": "A tool library is a place where people from the general public can borrow tools",
-        "de": "Eine Werkzeugbibliothek ist ein Ort, an dem Menschen aus der Öffentlichkeit Werkzeuge ausleihen können"
       }
     }
   ],

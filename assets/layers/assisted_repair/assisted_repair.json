@@ -1,5 +1,32 @@
 {
+  "id": "assisted_repair",
+  "name": {
+    "en": "Repair cafés and assisted repair workshops",
+    "de": "Repair-Cafés und unterstützte Reparaturwerkstätten"
+  },
+  "description": {
+    "en": "A self-assisted workshop is a location where people can come and repair their goods with help of volunteers and with the tools available at the given location.  A repair café is a type of event organized regularly along the same principles.",
+    "de": "Eine Selbsthilfewerkstatt ist ein Ort, an dem Menschen ihre Gegenstände mit Hilfe von Freiwilligen und den vor Ort verfügbaren Werkzeugen reparieren können. Ein Repair-Café ist eine Art von Veranstaltung, die regelmäßig nach denselben Prinzipien organisiert wird."
+  },
+  "source": {
+    "osmTags": "repair=assisted_self_service"
+  },
   "minzoom": 1,
+  "title": {
+    "render": {
+      "en": "Workshop for assisted repair",
+      "de": "Werkstatt für unterstützte Reparaturen"
+    },
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": {
+          "en": "{name}",
+          "de": "{name}"
+        }
+      }
+    ]
+  },
   "pointRendering": [
     {
       "location": [
@@ -28,6 +55,28 @@
           }
         }
       ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "width": 1,
+      "color": "blue"
+    }
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "an assisted repair workshop",
+        "de": "Eine unterstützte Reparaturwerkstatt"
+      },
+      "tags": [
+        "amenity=workshop",
+        "repair=assisted_self_service"
+      ],
+      "description": {
+        "en": "A location with a permanent workshop where people can come to repair items with the help of volunteers.",
+        "de": "Ein Ort mit einer festen Werkstatt, in der Menschen mit Hilfe von Freiwilligen Gegenstände reparieren können."
+      }
     }
   ],
   "tagRenderings": [
@@ -137,55 +186,6 @@
       "multiAnswer": true
     }
   ],
-  "lineRendering": [
-    {
-      "width": 1,
-      "color": "blue"
-    }
-  ],
-  "id": "assisted_repair",
-  "name": {
-    "en": "Repair cafés and assisted repair workshops",
-    "de": "Repair-Cafés und unterstützte Reparaturwerkstätten"
-  },
-  "description": {
-    "en": "A self-assisted workshop is a location where people can come and repair their goods with help of volunteers and with the tools available at the given location.  A repair café is a type of event organized regularly along the same principles.",
-    "de": "Eine Selbsthilfewerkstatt ist ein Ort, an dem Menschen ihre Gegenstände mit Hilfe von Freiwilligen und den vor Ort verfügbaren Werkzeugen reparieren können. Ein Repair-Café ist eine Art von Veranstaltung, die regelmäßig nach denselben Prinzipien organisiert wird."
-  },
-  "source": {
-    "osmTags": "repair=assisted_self_service"
-  },
-  "title": {
-    "render": {
-      "en": "Workshop for assisted repair",
-      "de": "Werkstatt für unterstützte Reparaturen"
-    },
-    "mappings": [
-      {
-        "if": "name~*",
-        "then": {
-          "en": "{name}",
-          "de": "{name}"
-        }
-      }
-    ]
-  },
   "deletion": {},
-  "allowMove": true,
-  "presets": [
-    {
-      "title": {
-        "en": "an assisted repair workshop",
-        "de": "Eine unterstützte Reparaturwerkstatt"
-      },
-      "tags": [
-        "amenity=workshop",
-        "repair=assisted_self_service"
-      ],
-      "description": {
-        "en": "A location with a permanent workshop where people can come to repair items with the help of volunteers.",
-        "de": "Ein Ort mit einer festen Werkstatt, in der Menschen mit Hilfe von Freiwilligen Gegenstände reparieren können."
-      }
-    }
-  ]
+  "allowMove": true
 }

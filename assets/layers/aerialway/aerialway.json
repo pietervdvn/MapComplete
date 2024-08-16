@@ -48,7 +48,8 @@
           "en": "{name}",
           "de": "{name}",
           "fr": "{name}",
-          "pl": "{name}"
+          "pl": "{name}",
+          "es": "{name}"
         },
         "condition": "name~*",
         "classes": "bg-white p-1 px-2 rounded"
@@ -177,13 +178,15 @@
         "en": "How long takes a single journey with this elevator?",
         "de": "Wie lange dauert eine Fahrt mit diesem Aufzug?",
         "fr": "Combien de temps dure le trajet dans cet ascenseur ?",
-        "pl": "Jak długo trwa pojedynczy przejazd tą windą?"
+        "pl": "Jak długo trwa pojedynczy przejazd tą windą?",
+        "es": "¿Cuánto dura un viaje en este ascensor?"
       },
       "questionHint": {
         "en": "This excludes the waiting time.",
         "de": "Dies schließt die Wartezeit aus.",
         "fr": "Cela n'inclut pas le temps d'attente.",
-        "pl": "To nie włącza czasu oczekiwania."
+        "pl": "To nie włącza czasu oczekiwania.",
+        "es": "Esto elimina el tiempo de espera."
       },
       "freeform": {
         "key": "duration"
@@ -192,7 +195,8 @@
         "en": "A single journey takes {duration} minutes",
         "de": "Eine Fahrt dauert {duration} Minuten",
         "fr": "Un aller simple dure {duration} minutes",
-        "pl": "Pojedynczy przejazd trwa {duration} minut"
+        "pl": "Pojedynczy przejazd trwa {duration} minut",
+        "es": "Un viaje dura {duration} minutos"
       }
     },
     {
@@ -203,7 +207,8 @@
       "question": {
         "en": "How many people fit a single carriage?",
         "de": "Wie viele Leute passen in eine Kabine?",
-        "pl": "Ile osób może pomieścić jeden wagon?"
+        "pl": "Ile osób może pomieścić jeden wagon?",
+        "es": "¿Cuál es la capacidad de la cabina?"
       },
       "render": {
         "en": "{aerialway:occupancy} people fit a single carriage",

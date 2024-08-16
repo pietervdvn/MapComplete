@@ -537,7 +537,8 @@
           "image-key": "image:menu",
           "label": {
             "en": "Add an image from the menu",
-            "nl": "Voeg een foto van het menu toe"
+            "nl": "Voeg een foto van het menu toe",
+            "de": "Ein Bild aus dem Menü hinzufügen"
           }
         }
       }
@@ -545,14 +546,16 @@
     {
       "id": "menu-website",
       "question": {
-        "en": "On what webpage is the menu published?"
+        "en": "On what webpage is the menu published?",
+        "de": "Auf welcher Webseite wird das Menü veröffentlicht?"
       },
       "render": {
         "special": {
           "type": "link",
           "href": "{website:menu}",
           "text": {
-            "en": "Consult the menu"
+            "en": "Consult the menu",
+            "de": "Das Menü einsehen"
           }
         }
       },

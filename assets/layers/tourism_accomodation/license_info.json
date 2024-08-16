@@ -1,5 +1,25 @@
 [
   {
+    "path": "apartment.svg",
+    "license": "CC0-1.0",
+    "authors": [
+      "OSM-Carto"
+    ],
+    "sources": [
+      "https://wiki.openstreetmap.org/wiki/File:Apartment.svg"
+    ]
+  },
+  {
+    "path": "guest_house.svg",
+    "license": "CC0-1.0",
+    "authors": [
+      "\tGeozeisig "
+    ],
+    "sources": [
+      "https://wiki.openstreetmap.org/wiki/File:Tourism_guest_house.svg"
+    ]
+  },
+  {
     "path": "hostel.svg",
     "license": "CC0-1.0",
     "authors": [
@@ -20,6 +40,16 @@
     ],
     "sources": [
       "https://github.com/gravitystorm/openstreetmap-carto/blob/master/symbols/tourism/hotel.svg"
+    ]
+  },
+  {
+    "path": "motel.svg",
+    "license": "CC0-1.0",
+    "authors": [
+      "gmgeo"
+    ],
+    "sources": [
+      "https://wiki.openstreetmap.org/wiki/File:Motel-16.svg"
     ]
   }
 ]

@@ -371,8 +371,8 @@
       }
     }
   ],
-  "allowMove": true,
   "deletion": {
     "neededChangesets": 0
-  }
+  },
+  "allowMove": true
 }

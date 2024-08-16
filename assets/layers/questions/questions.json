@@ -2906,10 +2906,12 @@
     {
       "id": "brand",
       "question": {
-        "en": "Is {title()} part of a bigger brand?"
+        "en": "Is {title()} part of a bigger brand?",
+        "de": "Ist {title()} Teil einer großen Marke?"
       },
       "render": {
-        "en": "Part of {brand}"
+        "en": "Part of {brand}",
+        "de": "Teil von {brand}"
       },
       "freeform": {
         "key": "brand",
@@ -2925,7 +2927,8 @@
             "brand:wikidata="
           ],
           "then": {
-            "en": "Not part of a bigger brand"
+            "en": "Not part of a bigger brand",
+            "de": "Nicht Teil einer großen Marke"
           }
         }
       ]
