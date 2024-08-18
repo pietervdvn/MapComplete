@@ -20,6 +20,7 @@
         "cancel": "Zrušit",
         "cannotBeDeleted": "Tuto funkci nelze odstranit",
         "delete": "Smazat",
+        "deletedTitle": "Smazaná funkce",
         "explanations": {
             "hardDelete": "Tato funkce bude v OpenStreetMap odstraněna. Zkušený přispěvatel ji může obnovit",
             "retagNoOtherThemes": "Tato funkce bude překlasifikována a skryta z této aplikace",
@@ -27,6 +28,7 @@
             "selectReason": "Vyberte, proč by tato funkce měla být odstraněna",
             "softDelete": "Tato funkce bude v této aplikaci aktualizována a skryta. <span class='subtle'>{reason}</span>"
         },
+        "isChanged": "Tato funkce byla změněna a již neodpovídá této vrstvě",
         "isDeleted": "Tato funkce je smazána",
         "isntAPoint": "Odstranit lze pouze uzly, vybraným prvkem je cesta, oblast nebo relace.",
         "loading": "Kontrola vlastností, zda lze tuto funkci odstranit.",
@@ -45,15 +47,55 @@
         "useSomethingElse": "Místo toho použijte jiný editor OpenStreetMap a odstraňte jej",
         "whyDelete": "Proč by měla být tato funkce odstraněna?"
     },
+    "external": {
+        "allAreApplied": "Všechny chybějící externí hodnoty byly zkopírovány do OpenStreetMap",
+        "allIncluded": "Data načtená ze {source} jsou obsažena v OpenStreetMap",
+        "apply": "Použít",
+        "applyAll": "Použít všechny chybějící hodnoty",
+        "conflicting": {
+            "intro": "U následujících hodnot má OpenStreetMap jinou hodnotu než zdrojová webová stránka.",
+            "title": "Konfliktní položky"
+        },
+        "currentInOsmIs": "V současné době má OpenStreetMap zaznamenány následující hodnoty:",
+        "done": "Hotovo",
+        "error": "Nelze načíst propojená data z webové stránky",
+        "lastModified": "Externí data byla naposledy upravena dne {date}",
+        "loadedFrom": "Následující data jsou načtena z <a href={url}>{source}</a> pomocí vloženého JSON-LD",
+        "missing": {
+            "intro": "OpenStreetMap nemá žádné informace o následujících atributech",
+            "title": "Chybějící položky"
+        },
+        "noDataLoaded": "Externí webová stránka neobsahuje žádná propojená data, která by bylo možné načíst",
+        "overwrite": "Přepsání v OpenStreetMap",
+        "title": "Strukturovaná data načtená z externí webové stránky"
+    },
     "favourite": {
         "loginNeeded": "<h3>Přihlášení</h3>Osobní rozvržení je k dispozici pouze pro uživatele OpenStreetMap",
         "panelIntro": "<h3>Vaše osobní téma</h3>Aktivujte si své oblíbené vrstvy ze všech oficiálních témat",
         "reload": "Znovu načíst data"
     },
+    "favouritePoi": {
+        "button": {
+            "isFavourite": "Toto místo je v současné době označeno jako oblíbené a bude se zobrazovat na všech tematických mapách MapComplete, které navštívíte.",
+            "isMarkedShort": "Označeno jako oblíbené místo",
+            "isNotMarkedShort": "Neoznačeno jako oblíbené",
+            "markAsFavouriteTitle": "Označit toto místo jako oblíbené",
+            "markDescription": "Přidat toto místo do osobního seznamu oblíbených",
+            "unmark": "Odebrat z osobního seznamu oblíbených",
+            "unmarkNotDeleted": "Tento bod nebude smazán a bude stále viditelný na příslušné mapě pro vás i ostatní"
+        },
+        "downloadGeojson": "Stáhněte si oblíbené položky jako geojson",
+        "downloadGpx": "Stáhnout oblíbené položky jako GPX",
+        "intro": "Označili jste {lenght} místa jako oblíbené místo.",
+        "introPrivacy": "Tento seznam je viditelný pouze pro vás",
+        "loginToSeeList": "Přihlášení pro zobrazení seznamu míst, která jste označili jako oblíbená",
+        "tab": "Vaše oblíbené položky a recenze",
+        "title": "Vaše oblíbená místa"
+    },
     "flyer": {
-        "aerial": "Tato mapa používá jiné pozadí, konkrétně letecké snímky od Agency Information Flanders",
-        "callToAction": "Vyzkoušet na mapcomplete.org",
-        "cyclofix": "Cyklistické pumpy, opravárenské stanice, prodejny pitné vody a cykloprodejny jsou na CycloFix",
+        "aerial": "Tato mapa používá jiný podklad, a to letecké snímky od Agentschap Informatie Vlaanderen",
+        "callToAction": "Otestovat na mapcomplete.org",
+        "cyclofix": "Pumpy na kola, opravny, prodejny pitné vody a cyklistické obchody jsou na webu CycloFix",
         "description": "Leták formátu A4 na propagaci MapComplete",
         "editing": {
             "ex": "Zjednodušený příklad, jak to vypadá v případě přírodní rezervace, je uveden níže.",
@@ -104,6 +146,7 @@
             "confirmLocation": "Potvrďte toto umístění",
             "confirmTitle": "Přidat {title}?",
             "confirmWarning": "Funkce, kterou zde vytvoříte, bude <b>viditelná pro všechny</b>. Prosím, přidávejte věci na mapu pouze tehdy, pokud skutečně existují. Tato data využívá mnoho aplikací.",
+            "creating": "Tvorba nového bodu...",
             "disableFilters": "Vypnout všechny filtry",
             "disableFiltersExplanation": "Některé funkce mohou být filtrem skryty",
             "enableLayer": "Povolit vrstvu {name}",
@@ -121,13 +164,13 @@
             "intro": "Klikli jste někam, kde zatím nejsou známy žádné údaje.<br/>",
             "layerNotEnabled": "Vrstva {layer} není povolena. Chcete-li přidat funkci, povolte tuto vrstvu",
             "openLayerControl": "Otevřete ovládací okno vrstvy",
-            "pleaseLogin": "Chcete-li přidat novou funkci, přihlaste se",
+            "pleaseLogin": "Chcete-li přidat novou funkci, přihlaste se prosím do aplikace OpenStreetMap",
             "presetInfo": "Nový bod zájmu bude mít {tags}",
             "stillLoading": "Data se stále načítají. Před přidáním nové funkce prosím chvíli počkejte.",
             "title": "Přidat novou funkci",
             "warnVisibleForEveryone": "Váš příspěvek bude viditelný pro všechny",
             "wrongType": "Tato funkce není uzel ani cesta a nelze ji importovat",
-            "zoomInFurther": "Další přiblížení pro přidání funkce.",
+            "zoomInFurther": "Další přiblížení a přidání funkce",
             "zoomInMore": "Pro import této funkce si ji více přibližte"
         },
         "apply_button": {
@@ -137,13 +180,14 @@
         "attribution": {
             "attributionBackgroundLayer": "Aktuální vrstva pozadí je {name}",
             "attributionBackgroundLayerWithCopyright": "Aktuální vrstva pozadí je {name}: {copyright}",
-            "attributionContent": "<p>Všechna data jsou poskytována službou <a href='https://osm.org' target='_blank'>OpenStreetMap</a>, volně opakovaně použitelná pod <a href='https://osm.org/copyright' target='_blank'>licencí Open DataBase</a>.</p>",
+            "attributionContent": "<p>Všechna data poskytuje <a href='https://www.openstreetmap.org' target='_blank'>OpenStreetMap</a>, volně znovu použitelná pod <a href='https://www.openstreetmap .org/copyright' target='_blank'>licence pro otevřenou databázi</a>.</p>",
             "attributionTitle": "Oznámení o atribuci",
             "codeContributionsBy": "MapComplete vytvořili {contributors} a <a href='https://github.com/pietervdvn/MapComplete/graphs/contributors' target='_blank'>{hiddenCount} dalších přispěvatelů</a>",
             "donate": "Podpořte MapComplete finančně",
             "editId": "Zde otevřít online editor OpenStreetMap",
             "editJosm": "Upravit zde pomocí JOSM",
             "followOnMastodon": "Sledujte MapComplete na Mastodonu",
+            "gotoSourceCode": "Zobrazit zdrojový kód",
             "iconAttribution": {
                 "title": "Použité ikony"
             },
@@ -156,24 +200,39 @@
             "openIssueTracker": "Nahlaste chybu",
             "openMapillary": "Zde otevřít Mapillary",
             "openOsmcha": "Podívejte se na nejnovější úpravy provedené v tématu {theme}",
+            "openOsmchaLastWeek": "Zobrazit úpravy za posledních 7 dní",
+            "openThemeDocumentation": "Otevřít dokumentaci k tematické mapě {name}",
+            "seeOnMapillary": "Podívejte se na tento obrázek na Mapillary",
             "themeBy": "Téma spravuje {author}",
             "title": "Autorská práva a uvedení zdroje",
             "translatedBy": "MapComplete přeložili {contributors} a <a href='https://github.com/pietervdvn/MapComplete/graphs/contributors' target='_blank'>{hiddenCount} dalších přispěvatelů</a>"
         },
         "back": "Zpět",
         "backToIndex": "Návrat na přehled všech tematických map",
+        "backToMap": "Zpět na mapu",
         "backgroundMap": "Vyberte vrstvu pozadí",
         "backgroundSwitch": "Přepnout pozadí",
         "cancel": "Zrušit",
+        "clearPendingChanges": "Vymazat nevyřízené změny",
         "confirm": "Potvrdit",
-        "customThemeIntro": "<h3>Vlastní motivy</h3>Tyto jsou dříve navštívené motivy vytvořené uživateli.",
+        "customThemeIntro": "Jedná se o dříve navštívená témata vytvořená uživateli.",
+        "customThemeTitle": "Vlastní témata",
         "download": {
+            "custom": {
+                "download": "Stáhnout PNG o {width} mm na šířku a {height} mm na výšku",
+                "downloadHelper": "Toto je určeno pro tisk",
+                "height": "Výška obrázku (v mm):",
+                "title": "Stáhněte si obrázek s vlastní šířkou a výškou",
+                "width": "Šířka obrázku (v mm): "
+            },
             "downloadAsPdf": "Stáhněte si aktuální mapu ve formátu PDF",
             "downloadAsPdfHelper": "Ideální pro tisk aktuální mapy",
             "downloadAsPng": "Stáhnout jako obrázek",
             "downloadAsPngHelper": "Ideální pro zahrnutí do zpráv",
             "downloadAsSvg": "Stáhnout SVG aktuální mapy",
-            "downloadAsSvgHelper": "Kompatibilní s Inkscape nebo Adobe Illustrator; bude nutné další zpracování",
+            "downloadAsSvgHelper": "Kompatibilní s Inkscape nebo Adobe Illustrator; bude potřebovat další zpracování",
+            "downloadAsSvgLinesOnly": "Stáhněte si SVG aktuální mapy obsahující pouze čáry",
+            "downloadAsSvgLinesOnlyHelper": "Samo se protínající čáry jsou rozděleny, lze je použít s některým 3D softwarem",
             "downloadCSV": "Stáhnout viditelná data jako CSV",
             "downloadCSVHelper": "Kompatibilní s aplikacemi LibreOffice Calc, Excel, …",
             "downloadFeatureAsGeojson": "Stáhnout jako soubor GeoJSON",
@@ -186,19 +245,39 @@
             "includeMetaData": "Zahrnout metadata (poslední editor, vypočtené hodnoty, ...)",
             "licenseInfo": "<h3>Upozornění na autorská práva</h3>Poskytovaná data jsou dostupná pod ODbL. Opětovné použití je zdarma pro jakýkoli účel, ale <ul><li>musí být uveden zdroj <b>© přispěvatelé OpenStreetMap</b><li><li>Jakákoli změna musí být publikována pod stejnou licencí</li>< /ul> Podrobnosti naleznete v úplném <a href='https://www.openstreetmap.org/copyright' target='_blank'>upozornění na autorská práva</a>.",
             "noDataLoaded": "Zatím nejsou načtena žádná data. Brzy bude k dispozici ke stažení",
+            "pdf": {
+                "current_view_generic": "Exportujte PDF aktuálního zobrazení pro {paper_size} v orientaci {orientation}"
+            },
             "title": "Stáhnout",
+            "toMuch": "Existuje mnoho funkcí, které lze stáhnout všechny",
             "uploadGpx": "Nahrajte svou trasu do OpenStreetMap"
         },
+        "enableGeolocationForSafari": "Nezobrazilo se vám vyskakovací okno s žádostí o geografické povolení?",
+        "enableGeolocationForSafariLink": "Přečtěte si, jak povolit oprávnění ke geolokaci v nastavení",
+        "eraseValue": "Vymažte tuto hodnotu",
         "error": "Něco se pokazilo",
         "example": "Příklad",
         "examples": "Příklady",
         "fewChangesBefore": "Před přidáním nové funkce prosím odpovězte na několik otázek týkajících se stávajících funkcí.",
+        "filterPanel": {
+            "disableAll": "Zakázat vše",
+            "enableAll": "Povolit vše"
+        },
         "geopermissionDenied": "Použití geolokace bylo zamítnuto",
         "getStartedLogin": "Přihlaste se pomocí OpenStreetMap a začněte",
         "getStartedNewAccount": " nebo <a href='https://www.openstreetmap.org/user/new' target='_blank'>vytvořte nový účet</a>",
         "goToInbox": "Otevřete složku Doručená pošta",
         "histogram": {
             "error_loading": "Nelze načíst histogram"
+        },
+        "labels": {
+            "background": "Změnit pozadí",
+            "filter": "Filtrovat data",
+            "jumpToLocation": "Přejděte na svou aktuální polohu",
+            "locationNotAvailable": "GPS poloha není k dispozici. Má toto zařízení polohu nebo jste v tunelu?",
+            "menu": "Menu",
+            "zoomIn": "Přiblížit",
+            "zoomOut": "Oddálit"
         },
         "layerSelection": {
             "title": "Výběr vrstev",
@@ -218,6 +297,7 @@
         "loginToStart": "Přihlaste se a odpovězte na tuto otázku",
         "loginWithOpenStreetMap": "Přihlaste se pomocí OpenStreetMap",
         "logout": "Odhlásit se",
+        "mappingsAreHidden": "Některé možnosti jsou skryté. Pomocí vyhledávání zobrazíte další možnosti.",
         "menu": {
             "aboutMapComplete": "O MapComplete",
             "filter": "Filtrování dat"
@@ -244,20 +324,35 @@
         "openStreetMapIntro": "<h3>Otevřená mapa</h3><p>Takovou, kterou může každý volně používat a upravovat. Jediné místo pro uložení všech geoinformací. Různé, malé, nekompatibilní a zastaralé mapy nejsou nikde potřeba.</p><p><b><a href='https://OpenStreetMap.org' target='_blank'>OpenStreetMap</a></b > není nepřátelská mapa. Mapová data lze volně používat (s <a href='https://osm.org/copyright' target='_blank'>přiřazením a zveřejněním změn těchto dat</a>). Každý může přidávat nová data a opravovat chyby. Tento web používá OpenStreetMap. Všechna data jsou odtud a vaše odpovědi a opravy se používají všude.</p><p>Mnoho lidí a aplikací již OpenStreetMap používá: <a href='https://organicmaps.app/' target='_blank '>Organické mapy</a>, <a href='https://osmAnd.net' target='_blank'>OsmAnd</a>, ale také mapy na Facebooku, Instagramu, Apple-maps a Bing-maps jsou (částečně) poháněny OpenStreetMap.</p>",
         "openTheMap": "Otevřít mapu",
         "openTheMapAtGeolocation": "Přiblížení k vaší poloze",
+        "openTheMapReason": "pro zobrazení, úpravu a přidání informací",
         "opening_hours": {
-            "closed_permanently": "Uzavřeno na neznámou dobu",
-            "closed_until": "Uzavřeno do {date}",
+            "all_days_from": "Otevřeno každý den {ranges}",
+            "closed_permanently": "Na neznámou dobu zavřeno",
+            "closed_until": "Otevírá v {date}",
+            "error": "Nepodařilo se analyzovat otevírací dobu",
             "error_loading": "Chyba: tyto otevírací hodiny nelze zobrazit.",
+            "friday": "V pátek {ranges}",
             "loadingCountry": "Určení země…",
+            "monday": "V pondělí {ranges}",
             "not_all_rules_parsed": "Tato otevírací doba je komplikovaná. Následující pravidla jsou ve vstupním prvku ignorována:",
+            "on_weekdays": "Otevřeno ve všední dny {ranges}",
+            "on_weekends": "Otevřeno o víkendech {ranges}",
             "openTill": "do",
             "open_24_7": "Otevřeno nepřetržitě",
-            "open_during_ph": "Během státního svátku je místo",
+            "open_during_ph": "Během státního svátku je",
             "opensAt": "od",
             "ph_closed": "zavřené",
             "ph_not_known": " ",
             "ph_open": "otevřené",
-            "ph_open_as_usual": "otevřené, jako obvykle"
+            "ph_open_as_usual": "otevřené, jako obvykle",
+            "ranges": "od {starttime} do {endtime}",
+            "rangescombined": "{range0} a {range1}",
+            "saturday": "V sobotu {ranges}",
+            "sunday": "V neděli {ranges}",
+            "thursday": "Ve čtvrtek {ranges}",
+            "tuesday": "V úterý {ranges}",
+            "unknown": "Otevírací doba není známa",
+            "wednesday": "Ve středu {ranges}"
         },
         "osmLinkTooltip": "Prohlédněte si tento objekt na OpenStreetMap pro historii a další možnosti úprav",
         "pdf": {
@@ -266,7 +361,8 @@
             "generatedWith": "Generováno pomocí mapcomplete.org/{layoutid}",
             "versionInfo": "v{version} - vygenerováno {date}"
         },
-        "pickLanguage": "Vyberte si jazyk: ",
+        "pickLanguage": "Vyberte jazyk",
+        "poweredByMapComplete": "Provozováno na MapComplete – crowdsourcované, tematické mapy s OpenStreetMap",
         "poweredByOsm": "Běží na OpenStreetMap",
         "questionBox": {
             "answeredMultiple": "Odpověděli jste na {answered} otázky",
@@ -290,9 +386,10 @@
         },
         "readYourMessages": "Před přidáním nové funkce si prosím přečtěte všechny zprávy OpenStreetMap.",
         "removeLocationHistory": "Odstranit historii polohy",
+        "retry": "Zkusit znovu",
         "returnToTheMap": "Návrat na mapu",
         "save": "Uložit",
-        "screenToSmall": "Otevřít {theme} v novém okně",
+        "screenToSmall": "Otevřít <i>{theme}</i> v novém okně",
         "search": {
             "error": "Něco se pokazilo…",
             "nothing": "Nic nenalezeno…",
@@ -300,13 +397,22 @@
             "searchShort": "Vyhledávání…",
             "searching": "Hledání…"
         },
+        "searchAnswer": "Vyhledat možnost…",
+        "seeIndex": "Podívejte se na přehled se všemi tematickými mapami",
+        "share": "Sdílet",
         "sharescreen": {
             "copiedToClipboard": "Odkaz zkopírovaný do schránky",
             "documentation": "Další informace o dostupných parametrech URL naleznete <a href='https://github.com/pietervdvn/MapComplete/blob/develop/Docs/URL_Parameters.md' target='_blank'>v dokumentaci</a>",
             "embedIntro": "<h3>Vložte mapu na své webové stránky</h3>Prosíme, vložte tuto mapu na své webové stránky. <br/>Doporučujeme vám to udělat - nemusíte ani žádat o povolení. <br/> Je a vždy to bude zdarma. Čím více lidí bude projekt používat, tím bude cennější.",
-            "fsUserbadge": "Povolit tlačítko přihlášení",
+            "fsBackground": "Povolit přepínání pozadí",
+            "fsFilter": "Povolit možnost přepínání vrstev a filtrů",
+            "fsGeolocation": "Povolit geolokaci",
+            "fsUserbadge": "Povolit přihlašovací tlačítko a tím i možnost provádět změny",
             "fsWelcomeMessage": "Zobrazit vyskakovací okno s uvítací zprávou a související karty",
             "intro": "<h3>Sdílejte tuto mapu</h3> Sdílejte tuto mapu zkopírováním níže uvedeného odkazu a jeho zasláním přátelům a rodině:",
+            "openLayers": "Otevřete nabídku vrstev a filtrů",
+            "options": "Možnosti sdílení",
+            "stateIsIncluded": "Aktuální stav vrstev a filtrů je zahrnut ve sdíleném odkazu a prvku iframe.",
             "thanksForSharing": "Díky za sdílení!",
             "title": "Sdílet tuto mapu"
         },
@@ -314,7 +420,7 @@
         "testing": "Testování - změny se neuloží",
         "uploadError": "Chyba při nahrávání změn: {error}",
         "uploadGpx": {
-            "choosePermission": "Níže vyberte, zda má být vaše stopa sdílena:",
+            "choosePermission": "Níže vyberte, jak má být vaše trasa sdílena:",
             "confirm": "Potvrdit nahrávání",
             "gpxServiceOffline": "Služba GPX je v současné době offline - nahrávání není v současné době možné. Zkuste to později.",
             "intro0": "Nahráním stopy si OpenStreetMap.org ponechá její úplnou kopii.",
@@ -343,7 +449,41 @@
         "uploadPending": "Počet nevyřízených změn: {count}",
         "uploadPendingSingle": "Čeká se na jednu změnu",
         "uploadingChanges": "Nahrávání změn…",
-        "useSearch": "Pro zobrazení předvoleb použijte vyhledávání výše",
+        "useSearch": "Pomocí vyhledávání výše zobrazíte další možnosti",
+        "visualFeedback": {
+            "closestFeaturesAre": "{n} objektů ve výřezu.",
+            "directionsAbsolute": {
+                "E": "východní",
+                "N": "severní",
+                "NE": "severovýchod",
+                "NW": "severozápadní",
+                "S": "jižní",
+                "SE": "jihovýchodní",
+                "SW": "jihozápadní",
+                "W": "západ"
+            },
+            "directionsRelative": {
+                "behind": "za vašimi zády",
+                "left": "vlevo",
+                "right": "vpravo",
+                "sharp_left": "ostře vlevo",
+                "sharp_right": "ostře doprava",
+                "slight_left": "mírně vlevo",
+                "slight_right": "mírně vpravo",
+                "straight": "přímo vpřed"
+            },
+            "fromGps": "{distance} {direction} vaší polohy",
+            "fromMapCenter": "{distance} {direction} středu mapy",
+            "in": "Přiblížení na úroveň {z}",
+            "islocked": "Pohled uzamčen na vaši polohu GPS, pohyb zakázán. Pro odemknutí stiskněte tlačítko geolokace.",
+            "locked": "Zobrazení je nyní uzamčeno na vaši polohu GPS, pohyb je zakázán.",
+            "navigation": "Pomocí kláves se šipkami posouvejte mapu, stisknutím mezerníku vyberte nejbližší objekt. Stisknutím čísla vyberte místa dále.",
+            "noCloseFeatures": "Nejsou zobrazeny žádné funkce.",
+            "oneFeatureInView": "Jedna funkce ve výřezu.",
+            "out": "Oddálení na úroveň {z}",
+            "viewportCenterCloseToGps": "Mapa je vycentrována kolem vaší polohy.",
+            "viewportCenterDetails": "Střed výřezu je vzdálen {distance} a {bearing} od vaší polohy."
+        },
         "waitingForGeopermission": "Čekáme na vaše povolení používat geolokaci…",
         "waitingForLocation": "Vyhledávání vaší aktuální polohy…",
         "weekdays": {
@@ -366,7 +506,7 @@
         },
         "welcomeBack": "Vítejte zpět!",
         "welcomeExplanation": {
-            "addNew": "Klepněte na mapu pro přidání nového bodu zájmu.",
+            "addNew": "Chybí nějaká položka? Pro přidání nového bodu zájmu použijte tlačítko vlevo dole.",
             "general": "Na této mapě si můžete zobrazit, upravovat a přidávat <i>body zájmu</i>. Přibližováním si zobrazte body zájmu a klepnutím na jeden z nich si zobrazte nebo upravte informace. Všechna data pocházejí z OpenStreetMap a jsou v ní uložena, takže je lze volně používat."
         },
         "wikipedia": {
@@ -394,7 +534,9 @@
         "geolocate": "Posune mapu na aktuální polohu nebo ji přiblíží k aktuální poloze. Vyžaduje geooprávnění",
         "intro": "MapComplete podporuje následující klávesy:",
         "key": "Kombinace kláves",
-        "openLayersPanel": "Otevře panel vrstev a filtrů",
+        "openFilterPanel": "Otevře vrstvy POI a panel filtrů",
+        "openLayersPanel": "Otevírá panel Vrstvy pozadí",
+        "queryCurrentLocation": "Zobrazte adresu, která je nejblíže středu mapy",
         "selectAerial": "Nastavte pozadí na letecké nebo satelitní snímky. Přepíná mezi dvěma nejlepšími dostupnými vrstvami",
         "selectMap": "Nastavení pozadí na mapu z externích zdrojů. Přepíná mezi dvěma nejlepšími dostupnými vrstvami",
         "selectMapnik": "Nastavení vrstvy pozadí na OpenStreetMap-carto",
