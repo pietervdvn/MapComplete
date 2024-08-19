@@ -24,7 +24,6 @@ Layer showing machines selling souvenir coins
   - [images](#images)
   - [opening_hours_24_7](#opening_hours_24_7)
   - [Opening hours](#opening-hours)
-  - [designs](#designs)
   - [payment-options-split](#payment-options-split)
   - [website](#website)
   - [charge](#charge)
@@ -64,7 +63,6 @@ Elements must match **all** of the following expressions:
 | attribute | type | values which are supported by this layer |
 -----|-----|----- |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/opening_hours#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/opening_hours/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | [24/7](https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7) |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/coin:design_count#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/coin%3Adesign_count/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [coin:design_count](https://wiki.openstreetmap.org/wiki/Key:coin:design_count) | [pnat](../SpecialInputElements.md#pnat) | [1](https://wiki.openstreetmap.org/wiki/Tag:coin:design_count%3D1) [2](https://wiki.openstreetmap.org/wiki/Tag:coin:design_count%3D2) [3](https://wiki.openstreetmap.org/wiki/Tag:coin:design_count%3D3) [4](https://wiki.openstreetmap.org/wiki/Tag:coin:design_count%3D4) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/website#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/website/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [website](https://wiki.openstreetmap.org/wiki/Key:website) | [url](../SpecialInputElements.md#url) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/charge#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/charge/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [charge](https://wiki.openstreetmap.org/wiki/Key:charge) | [string](../SpecialInputElements.md#string) | [2 EUR](https://wiki.openstreetmap.org/wiki/Tag:charge%3D2 EUR) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/payment:coins:denominations#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/payment%3Acoins%3Adenominations/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [payment:coins:denominations](https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations) | Multiple choice | [0.01 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.01 EUR) [0.02 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.02 EUR) [0.05 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.05 EUR) [0.10 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.10 EUR) [0.20 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.20 EUR) [0.50 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.50 EUR) [1 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D1 EUR) [2 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D2 EUR) [0.05 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.05 CHF) [0.10 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.10 CHF) [0.20 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.20 CHF) [0.50 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.50 CHF) [1 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D1 CHF) [2 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D2 CHF) [5 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D5 CHF) |
@@ -91,21 +89,6 @@ The question is `What are the opening hours of {title()}?`
 
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/open24_7.svg' style='width: 3rem; height: 3rem'> *24/7 opened (including holidays)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
  -  *Marked as closed for an unspecified time* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>. _This option cannot be chosen as answer_
-
-
-
-
-
-### designs
-
-The question is `How many designs are available?`
-*This machine has {coin:design_count} designs available* is shown if `coin:design_count` is set
-
-
- -  *This machine has one design available* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:coin:design_count' target='_blank'>coin:design_count</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:coin:design_count%3D1' target='_blank'>1</a>
- -  *This machine has two designs available* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:coin:design_count' target='_blank'>coin:design_count</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:coin:design_count%3D2' target='_blank'>2</a>
- -  *This machine has three designs available* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:coin:design_count' target='_blank'>coin:design_count</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:coin:design_count%3D3' target='_blank'>3</a>
- -  *This machine has four designs available* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:coin:design_count' target='_blank'>coin:design_count</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:coin:design_count%3D4' target='_blank'>4</a>
 
 
 
@@ -289,24 +272,6 @@ This tagrendering has labels
 | id | question | osmTags |
 -----|-----|----- |
 | accepts_credit_cards.0 | Accepts credit cards | payment:credit_cards=yes |
-
-
-
-
-
-
-| id | question | osmTags |
------|-----|----- |
-| accepts_cash.0 | Accepts cash | payment:cash=yes |
-
-
-
-
-
-
-| id | question | osmTags |
------|-----|----- |
-| accepts_cards.0 | Accepts payment cards | payment:cards=yes |
 
 
 

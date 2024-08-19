@@ -12,7 +12,7 @@ Layer with public clocks
 
 
 
- - This layer is shown at zoomlevel **13** and higher
+ - This layer is shown at zoomlevel **8** and higher
  - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  preset `a wall-mounted clock` snaps to this layer (clock.presets[1])
 
 

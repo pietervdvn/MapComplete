@@ -188,6 +188,7 @@
  - car_rental
  - climbing_club
  - climbing_gym
+ - cycle_highways
  - dentist
  - disaster_response
  - doctors
@@ -514,6 +515,12 @@
 
              - climbing_gym
             
+            ### all_tags
+
+             - cycle_highways
+ - fixme
+ - summary
+            
             ### seasonal
 
              - drinking_water
@@ -555,11 +562,6 @@
  - playground
  - souvenir_coin
  - souvenir_note
-            
-            ### all_tags
-
-             - fixme
- - summary
             
             ### sugar_free
 
