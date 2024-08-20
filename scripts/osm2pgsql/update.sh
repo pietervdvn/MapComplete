@@ -1,15 +1,14 @@
 #! /bin/bash
 
 # Full database update. DOwnload latest from planet.osm.org, build update script, setup and seed it
-
-npm run init
-npm run generate
-npm run refresh:layeroverview
+nvm use
+npm run init # contains a 'npm run generate, which builds the layers'
 npm run generate:buildDbScript
-mv build_db.sh ~/data/
-TIMESTAMP=$(osmium fileinfo planet-latest.osm.pbf -g header.option.timestamp)
+mv build_db.lua ~/data/
+TIMESTAMP=$(osmium fileinfo ~/data/planet-latest.osm.pbf -g header.option.timestamp)
 DATE=$(echo $TIMESTAMP | sed "s/T.*//")
-vite-node scripts/osm2pgsql/createNewDatabase.ts -- ${DATE/T.*//}
+echo $DATE
+npm run create:database -- ${DATE/T.*//}
 
 cd ~/data || exit
 rm planet-latest.osm.pbf
@@ -20,6 +19,8 @@ nohup osm2pgsql -O flex -S build_db.lua -s --flat-nodes=import-help-file -d post
 
 # To see the progress
 # tail -f seeddb.log
+
+npm run delete:database:old
 
 # Restart tileserver
 export DATABASE_URL=postgresql://user:password@localhost:5444/osm-poi.${DATE}
