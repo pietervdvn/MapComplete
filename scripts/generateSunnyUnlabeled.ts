@@ -7,13 +7,19 @@ export class GenerateSunnyUnlabeled extends Script {
         super("Generates 'sunny-unlabeled.json' based on sunny.json")
     }
 
-    async main(args: string[]): Promise<void> {
+
+    generateUnlabeled() {
         const unlabeled = { "#": "AUTOMATICALLY GENERATED! Do not edit.", ...sunny }
         unlabeled.name = unlabeled.name + "-unlabeled"
         unlabeled.layers = sunny.layers.filter(
-            (l) => l.type !== "symbol" || !l.layout["text-field"]
+            (l) => l.type !== "symbol" || !l.layout["text-field"],
         )
         writeFileSync("public/assets/sunny-unlabeled.json", JSON.stringify(unlabeled, null, "   "))
+    }
+
+
+    async main(args: string[]): Promise<void> {
+        this.generateUnlabeled()
     }
 }
 
