@@ -6,9 +6,11 @@ import { GeoOperations } from "../GeoOperations"
 
 export default class LocalElementSearch implements GeocodingProvider {
     private readonly _state: ThemeViewState
+    private readonly _limit: number
 
-    constructor(state: ThemeViewState) {
+    constructor(state: ThemeViewState, limit: number) {
         this._state = state
+        this._limit = limit
 
     }
 
@@ -30,7 +32,8 @@ export default class LocalElementSearch implements GeocodingProvider {
             center: [number, number],
             levehnsteinD: number,
             physicalDistance: number,
-            searchTerms: string[]
+            searchTerms: string[],
+            description: string
         }[] = []
         const properties = this._state.perLayer
         query = Utils.simplifyStringForSearch(query)
@@ -51,19 +54,29 @@ export default class LocalElementSearch implements GeocodingProvider {
                 }))
                 const center = GeoOperations.centerpointCoordinates(feature)
                 if (levehnsteinD <= 2) {
+
+                    let description = ""
+                    function ifDef(prefix: string, key: string){
+                        if(feature.properties[key]){
+                            description += prefix+ feature.properties[key]
+                        }
+                    }
+                    ifDef("", "addr:street")
+                    ifDef(" ", "addr:housenumber")
                     results.push({
                         feature,
                         center,
                         physicalDistance: GeoOperations.distanceBetween(centerPoint, center),
                         levehnsteinD,
-                        searchTerms
+                        searchTerms,
+                        description: description !== "" ? description : undefined
                     })
                 }
             }
         }
         results.sort((a, b) => (a.physicalDistance + a.levehnsteinD * 25) - (b.physicalDistance + b.levehnsteinD * 25))
-        if (options?.limit) {
-            results = results.slice(0, options.limit)
+        if (this._limit || options?.limit) {
+            results = results.slice(0, Math.min(this._limit ?? options?.limit, options?.limit ?? this._limit))
         }
         return results.map(entry => {
             const id = entry.feature.properties.id.split("/")
@@ -74,7 +87,9 @@ export default class LocalElementSearch implements GeocodingProvider {
                 osm_id: id[1],
                 display_name: entry.searchTerms[0],
                 source: "localElementSearch",
-                feature: entry.feature
+                feature: entry.feature,
+                importance: 1,
+                description: entry.description
             }
         })
     }

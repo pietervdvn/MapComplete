@@ -617,7 +617,7 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
     }
 
     /**
-     * Converts a promise into a UIVentsource, sets the UIEVentSource when the result is calculated.
+     * Converts a promise into a UIventsource, sets the UIeventSource when the result is calculated.
      * If the promise fails, the value will stay undefined, but 'onError' will be called
      */
     public static FromPromise<T>(

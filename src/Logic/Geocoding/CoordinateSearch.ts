@@ -44,7 +44,8 @@ export default class CoordinateSearch implements GeocodingProvider {
             lat: Number(m[1]),
             lon: Number(m[2]),
             display_name: "lon: " + m[2] + ", lat: " + m[1],
-            source: "coordinateSearch"
+            source: "coordinateSearch",
+            category: "coordinate"
         })
 
 
@@ -54,7 +55,8 @@ export default class CoordinateSearch implements GeocodingProvider {
                 lat: Number(m[2]),
                 lon: Number(m[1]),
                 display_name: "lon: " + m[1] + ", lat: " + m[2],
-                source: "coordinateSearch"
+                source: "coordinateSearch",
+                category: "coordinate"
             })
 
         return matches.concat(matchesLonLat)

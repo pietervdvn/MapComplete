@@ -327,8 +327,6 @@ class GenerateLayouts extends Script {
     ): Promise<string> {
         const apiUrls: string[] = [
             ...Constants.allServers,
-            Constants.countryCoderEndpoint,
-            Constants.nominatimEndpoint,
             "https://www.openstreetmap.org",
             "https://api.openstreetmap.org",
             "https://pietervdvn.goatcounter.com",

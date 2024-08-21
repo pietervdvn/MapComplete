@@ -898,9 +898,7 @@ export default class TagRenderingConfig {
         ].join("\n")
     }
 
-    public
-
-    usedTags(): TagsFilter[] {
+    public usedTags(): TagsFilter[] {
         const tags: TagsFilter[] = []
         tags.push(
             this.metacondition,

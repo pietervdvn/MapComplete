@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { UIEventSource } from "../../Logic/UIEventSource"
+  import { Store, UIEventSource } from "../../Logic/UIEventSource"
   import type { Feature } from "geojson"
   import Translations from "../i18n/Translations"
   import Loading from "../Base/Loading.svelte"
@@ -24,9 +24,9 @@
 
   export let geolocationState: GeoLocationState | undefined = undefined
   export let clearAfterView: boolean = true
-  export let searcher : GeocodingProvider = new NominatimGeocoding()
-  export let state : SpecialVisualizationState
-  let searchContents: string = ""
+  export let searcher: GeocodingProvider = new NominatimGeocoding()
+  export let state: SpecialVisualizationState
+  let searchContents: UIEventSource<string> = new UIEventSource<string>("")
   export let triggerSearch: UIEventSource<any> = new UIEventSource<any>(undefined)
   onDestroy(
     triggerSearch.addCallback((_) => {
@@ -39,6 +39,8 @@
   let inputElement: HTMLInputElement
 
   let feedback: string = undefined
+
+  let isFocused = new UIEventSource(false)
 
   function focusOnSearch() {
     requestAnimationFrame(() => {
@@ -54,7 +56,7 @@
 
   const dispatch = createEventDispatcher<{ searchCompleted; searchIsValid: boolean }>()
   $: {
-    if (!searchContents?.trim()) {
+    if (!$searchContents?.trim()) {
       dispatch("searchIsValid", false)
     } else {
       dispatch("searchIsValid", true)
@@ -67,12 +69,12 @@
       isRunning = true
       geolocationState?.allowMoving.setData(true)
       geolocationState?.requestMoment.setData(undefined) // If the GPS is still searching for a fix, we say that we don't want tozoom to it anymore
-      searchContents = searchContents?.trim() ?? ""
+      const searchContentsData = $searchContents?.trim() ?? ""
 
-      if (searchContents === "") {
+      if (searchContentsData === "") {
         return
       }
-      const result = await searcher.search(searchContents, { bbox: bounds.data, limit: 10 })
+      const result = await searcher.search(searchContentsData, { bbox: bounds.data, limit: 10 })
       console.log("Results are", result)
       if (result.length == 0) {
         feedback = Translations.t.general.search.nothing.txt
@@ -84,7 +86,7 @@
       bounds.set(
         new BBox([
           [lon0, lat0],
-          [lon1, lat1],
+          [lon1, lat1]
         ]).pad(0.01)
       )
       if (perLayer !== undefined) {
@@ -101,7 +103,7 @@
         }
       }
       if (clearAfterView) {
-        searchContents = ""
+        searchContents.setData("")
       }
       dispatch("searchIsValid", false)
       dispatch("searchCompleted")
@@ -114,18 +116,13 @@
     }
   }
 
-  let suggestions: GeoCodeResult[] = []
-
-  async function updateSuggestions(search){
-
-    suggestions = await searcher.suggest(search, {limit: 5})
-  }
-
-  $: updateSuggestions(searchContents)
+  let suggestions: Store<GeoCodeResult[]> = searchContents.stabilized(250).bindD(search =>
+    UIEventSource.FromPromise(searcher.suggest(search), err => console.error(err))
+  )
 
 </script>
 
-<div class="normal-background flex justify-between rounded-full pl-2">
+<div class="normal-background flex justify-between rounded-full pl-2 w-full">
   <form class="flex w-full flex-wrap">
     {#if isRunning}
       <Loading>{Translations.t.general.search.searching}</Loading>
@@ -138,7 +135,9 @@
           feedback = undefined
           return keypr.key === "Enter" ? performSearch() : undefined
         }}
-        bind:value={searchContents}
+        on:focus={() => {isFocused.setData(true)}}
+        on:blur={() => {isFocused.setData(false)}}
+        bind:value={$searchContents}
         use:placeholder={Translations.t.general.search.search}
         use:ariaLabel={Translations.t.general.search.search}
       />
@@ -153,6 +152,9 @@
   <SearchIcon aria-hidden="true" class="h-6 w-6 self-end" on:click={performSearch} />
 </div>
 
-<div class="h-2/3 ">
-  <SearchResults {state} results={suggestions}/>
+<div class="relative h-0" style="z-index: 10">
+
+<div class="absolute right-0" style="width: 25rem; max-width: 98vw">
+  <SearchResults {isFocused} {state} results={$suggestions} searchTerm={searchContents} on:select={() => {searchContents.set("")}}/>
+</div>
 </div>

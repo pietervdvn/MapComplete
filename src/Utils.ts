@@ -114,7 +114,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         "version",
         "wayHandling",
         "widenFactor",
-        "width",
+        "width"
     ]
     private static extraKeys = [
         "nl",
@@ -133,7 +133,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         "yes",
         "no",
         "true",
-        "false",
+        "false"
     ]
     private static injectedDownloads = {}
     private static _download_cache = new Map<
@@ -150,7 +150,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         if (Utils.runningFromConsole) {
             return
         }
-        DOMPurify.addHook("afterSanitizeAttributes", function (node) {
+        DOMPurify.addHook("afterSanitizeAttributes", function(node) {
             // set all elements owning target to target=_blank + add noopener noreferrer
             const target = node.getAttribute("target")
             if (target) {
@@ -163,7 +163,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
     public static purify(src: string): string {
         return DOMPurify.sanitize(src, {
             USE_PROFILES: { html: true },
-            ADD_ATTR: ["target"], // Don't remove target='_blank'. Note that Utils.initDomPurify does add a hook which automatically adds 'rel=noopener'
+            ADD_ATTR: ["target"] // Don't remove target='_blank'. Note that Utils.initDomPurify does add a hook which automatically adds 'rel=noopener'
         })
     }
 
@@ -193,7 +193,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             parsed[spec.name] = arg
         }
 
-        return <T> parsed
+        return <T>parsed
     }
 
     static EncodeXmlValue(str) {
@@ -344,7 +344,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
                     console.error("Error while calculating a lazy property", e)
                     return undefined
                 }
-            },
+            }
         })
     }
 
@@ -368,7 +368,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
                         whenDone()
                     }
                 })
-            },
+            }
         })
     }
 
@@ -651,7 +651,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
                     if (!Array.isArray(targetV)) {
                         throw new Error(
                             "Cannot concatenate: value to add is not an array: " +
-                                JSON.stringify(targetV)
+                            JSON.stringify(targetV)
                         )
                     }
                     if (Array.isArray(sourceV)) {
@@ -659,9 +659,9 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
                     } else {
                         throw new Error(
                             "Could not merge concatenate " +
-                                JSON.stringify(sourceV) +
-                                " and " +
-                                JSON.stringify(targetV)
+                            JSON.stringify(sourceV) +
+                            " and " +
+                            JSON.stringify(targetV)
                         )
                     }
                 } else {
@@ -922,7 +922,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
                 continue
             }
             const i = part.charCodeAt(0)
-            result += '"' + keys[i] + '":' + part.substring(1)
+            result += "\"" + keys[i] + "\":" + part.substring(1)
         }
 
         return result
@@ -1000,7 +1000,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
                     resolve({
                         error: "other error: " + xhr.statusText + ", " + xhr.responseText,
                         url,
-                        statuscode: xhr.status,
+                        statuscode: xhr.status
                     })
                 }
             }
@@ -1014,12 +1014,12 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             xhr.onerror = (ev: ProgressEvent<EventTarget>) =>
                 reject(
                     "Could not get " +
-                        url +
-                        ", xhr status code is " +
-                        xhr.status +
-                        " (" +
-                        xhr.statusText +
-                        ")"
+                    url +
+                    ", xhr status code is " +
+                    xhr.status +
+                    " (" +
+                    xhr.statusText +
+                    ")"
                 )
         })
     }
@@ -1077,12 +1077,13 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         }
         const promise =
             /*NO AWAIT as we work with the promise directly */ Utils.downloadJsonAdvanced<T>(
-                url,
-                headers
-            )
+            url,
+            headers
+        )
         Utils._download_cache.set(url, { promise, timestamp: new Date().getTime() })
         return await promise
     }
+
     public static async downloadJson<T = object | []>(
         url: string,
         headers?: Record<string, string>
@@ -1271,7 +1272,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
     ): T[] {
         const withDistance: [T, number][] = ts.map((t) => [
             t,
-            Utils.levenshteinDistance(getName(t), reference),
+            Utils.levenshteinDistance(getName(t), reference)
         ])
         withDistance.sort(([_, a], [__, b]) => a - b)
         return withDistance.map((n) => n[0])
@@ -1393,7 +1394,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             return {
                 r: Utils.percentageToNumber(match[1]),
                 g: Utils.percentageToNumber(match[2]),
-                b: Utils.percentageToNumber(match[3]),
+                b: Utils.percentageToNumber(match[3])
             }
         }
 
@@ -1404,14 +1405,14 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             return {
                 r: parseInt(hex.substr(1, 1), 16),
                 g: parseInt(hex.substr(2, 1), 16),
-                b: parseInt(hex.substr(3, 1), 16),
+                b: parseInt(hex.substr(3, 1), 16)
             }
         }
 
         return {
             r: parseInt(hex.substr(1, 2), 16),
             g: parseInt(hex.substr(3, 2), 16),
-            b: parseInt(hex.substr(5, 2), 16),
+            b: parseInt(hex.substr(5, 2), 16)
         }
     }
 
@@ -1586,7 +1587,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             line: Number(line),
             column: Number(column),
             markdownLocation,
-            filename: path.substring(path.lastIndexOf("/") + 1),
+            filename: path.substring(path.lastIndexOf("/") + 1)
         }
     }
 
@@ -1611,8 +1612,8 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
      * Utils.simplifyStringForSearch("abc def; ghi 564") // => "abcdefghi564"
      * Utils.simplifyStringForSearch("âbc déf; ghi 564") // => "abcdefghi564"
      */
-    public static simplifyStringForSearch(str: string): string{
-        return Utils.RemoveDiacritics(str) .toLowerCase().replace(/[^a-z0-9]/g, "")
+    public static simplifyStringForSearch(str: string): string {
+        return Utils.RemoveDiacritics(str).toLowerCase().replace(/[^a-z0-9]/g, "")
     }
 
     public static randomString(length: number): string {
@@ -1723,6 +1724,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
     }
 
     private static readonly _metrixPrefixes = ["", "k", "M", "G", "T", "P", "E"]
+
     /**
      * Converts a big number (e.g. 1000000) into a rounded postfixed verion (e.g. 1M)
      *
@@ -1735,6 +1737,34 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             index++
         }
         return n + Utils._metrixPrefixes[index]
+    }
+
+    /**
+     * Rounds to a human-number
+     * @param number
+     *
+     * Utils.roundHuman(7) // => 7
+     * Utils.roundHuman(147) // => 150
+     * Utils.roundHuman(386) // => 375
+     * Utils.roundHuman(521) // => 500
+     */
+    public static roundHuman(number: number) {
+        if (number <= 25) {
+            return number
+        }
+        if (number < 100) {
+            return 5 * Math.round(number / 5)
+        }
+        if (number < 250) {
+            return 10 * Math.round(number / 10)
+
+        }
+        if (number < 500) {
+            return 25 * Math.round(number / 25)
+
+        }
+        return 50 * Math.round(number / 50)
+
     }
 
     static NoNullInplace(layers: any[]): void {

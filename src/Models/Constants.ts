@@ -4,6 +4,7 @@ import { Utils } from "../Utils"
 import { AuthConfig } from "../Logic/Osm/AuthConfig"
 
 export type PriviligedLayerType = (typeof Constants.priviliged_layers)[number]
+export type DefaultPinIcon = (typeof Constants._defaultPinIcons)[number]
 
 export default class Constants {
     public static vNumber: string = packagefile.version
@@ -113,14 +114,18 @@ export default class Constants {
     public static countryCoderEndpoint: string = Constants.config.country_coder_host
     public static osmAuthConfig: AuthConfig = Constants.config.oauth_credentials
     public static nominatimEndpoint: string = Constants.config.nominatimEndpoint
+    public static photonEndpoint: string = Constants.config.photonEndpoint
+
     public static linkedDataProxy: string = Constants.config["jsonld-proxy"]
     /**
      * These are the values that are allowed to use as 'backdrop' icon for a map pin
      */
-    private static readonly _defaultPinIcons = [
+    public static readonly _defaultPinIcons = [
         "addSmall",
+        "airport",
         "brick_wall_round",
         "brick_wall_square",
+        "building_office_2",
         "bug",
         "checkmark",
         "checkmark",
@@ -135,12 +140,14 @@ export default class Constants {
         "desktop",
         "direction",
         "gear",
+        "globe_alt",
         "gps_arrow",
         "heart",
         "heart_outline",
         "help",
         "help",
         "home",
+        "house",
         "invalid",
         "invalid",
         "link",
@@ -160,7 +167,9 @@ export default class Constants {
         "square_rounded",
         "teardrop",
         "teardrop_with_hole_green",
+        "train",
         "triangle",
+        "user_circle",
         "wifi",
     ] as const
     public static readonly defaultPinIcons: string[] = <any>Constants._defaultPinIcons
@@ -183,6 +192,7 @@ export default class Constants {
         Constants.countryCoderEndpoint,
         Constants.osmAuthConfig.url,
         Constants.nominatimEndpoint,
+        Constants.photonEndpoint,
         Constants.linkedDataProxy,
         ...Constants.defaultOverpassUrls,
     ]

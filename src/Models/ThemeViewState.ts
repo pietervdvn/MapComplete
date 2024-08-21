@@ -79,6 +79,8 @@ import CombinedSearcher from "../Logic/Geocoding/CombinedSearcher"
 import { NominatimGeocoding } from "../Logic/Geocoding/NominatimGeocoding"
 import CoordinateSearch from "../Logic/Geocoding/CoordinateSearch"
 import LocalElementSearch from "../Logic/Geocoding/LocalElementSearch"
+import { RecentSearch } from "../Logic/Geocoding/RecentSearch"
+import PhotonSearch from "../Logic/Geocoding/PhotonSearch"
 
 /**
  *
@@ -160,6 +162,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
 
     public readonly nearbyImageSearcher: CombinedFetcher
     public readonly geosearch: GeocodingProvider
+    public readonly recentlySearched: RecentSearch
 
     constructor(layout: LayoutConfig, mvtAvailableLayers: Set<string>) {
         Utils.initDomPurify()
@@ -387,11 +390,12 @@ export default class ThemeViewState implements SpecialVisualizationState {
         this.toCacheSavers = layout.enableCache ? this.initSaveToLocalStorage() : undefined
 
         this.geosearch = new CombinedSearcher(
-            new NominatimGeocoding(),
+            new LocalElementSearch(this, 5),
+            new PhotonSearch(), // new NominatimGeocoding(),
             new CoordinateSearch(),
-            new LocalElementSearch(this)
         )
 
+        this.recentlySearched = new RecentSearch(this)
 
         this.initActors()
         this.drawSpecialLayers()

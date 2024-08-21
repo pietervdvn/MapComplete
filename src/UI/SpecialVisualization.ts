@@ -29,6 +29,7 @@ import LayoutSource from "../Logic/FeatureSource/Sources/LayoutSource"
 import { Map as MlMap } from "maplibre-gl"
 import ShowDataLayer from "./Map/ShowDataLayer"
 import { CombinedFetcher } from "../Logic/Web/NearbyImagesSearch"
+import { RecentSearch } from "../Logic/Geocoding/RecentSearch"
 
 /**
  * The state needed to render a special Visualisation.
@@ -95,6 +96,8 @@ export interface SpecialVisualizationState {
     readonly previewedImage: UIEventSource<ProvidedImage>
     readonly nearbyImageSearcher: CombinedFetcher
     readonly geolocation: GeoLocationHandler
+    readonly recentlySearched: RecentSearch
+
 
     showCurrentLocationOn(map: Store<MlMap>): ShowDataLayer
     reportError(message: string): Promise<void>

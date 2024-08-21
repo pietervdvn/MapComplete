@@ -6,7 +6,7 @@ import { Feature, Polygon } from "geojson"
 export class BBox {
     static global: BBox = new BBox([
         [-180, -90],
-        [180, 90],
+        [180, 90]
     ])
     readonly maxLat: number
     readonly maxLon: number
@@ -53,7 +53,7 @@ export class BBox {
     static fromLeafletBounds(bounds) {
         return new BBox([
             [bounds.getWest(), bounds.getNorth()],
-            [bounds.getEast(), bounds.getSouth()],
+            [bounds.getEast(), bounds.getSouth()]
         ])
     }
 
@@ -74,7 +74,7 @@ export class BBox {
             // Note: x is longitude
             f["bbox"] = new BBox([
                 [minX, minY],
-                [maxX, maxY],
+                [maxX, maxY]
             ])
         }
         return f["bbox"]
@@ -94,7 +94,7 @@ export class BBox {
         }
         return new BBox([
             [maxLon, maxLat],
-            [minLon, minLat],
+            [minLon, minLat]
         ])
     }
 
@@ -121,7 +121,7 @@ export class BBox {
     public unionWith(other: BBox) {
         return new BBox([
             [Math.max(this.maxLon, other.maxLon), Math.max(this.maxLat, other.maxLat)],
-            [Math.min(this.minLon, other.minLon), Math.min(this.minLat, other.minLat)],
+            [Math.min(this.minLon, other.minLon), Math.min(this.minLat, other.minLat)]
         ])
     }
 
@@ -174,7 +174,7 @@ export class BBox {
 
         return new BBox([
             [lon - s / 2, lat - s / 2],
-            [lon + s / 2, lat + s / 2],
+            [lon + s / 2, lat + s / 2]
         ])
     }
 
@@ -231,21 +231,21 @@ export class BBox {
         const lonDiff = Math.min(maxIncrease / 2, Math.abs(this.maxLon - this.minLon) * factor)
         return new BBox([
             [this.minLon - lonDiff, this.minLat - latDiff],
-            [this.maxLon + lonDiff, this.maxLat + latDiff],
+            [this.maxLon + lonDiff, this.maxLat + latDiff]
         ])
     }
 
     padAbsolute(degrees: number): BBox {
         return new BBox([
             [this.minLon - degrees, this.minLat - degrees],
-            [this.maxLon + degrees, this.maxLat + degrees],
+            [this.maxLon + degrees, this.maxLat + degrees]
         ])
     }
 
     toLngLat(): [[number, number], [number, number]] {
         return [
             [this.minLon, this.minLat],
-            [this.maxLon, this.maxLat],
+            [this.maxLon, this.maxLat]
         ]
     }
 
@@ -260,7 +260,7 @@ export class BBox {
         return {
             type: "Feature",
             properties: properties,
-            geometry: this.asGeometry(),
+            geometry: this.asGeometry()
         }
     }
 
@@ -273,9 +273,9 @@ export class BBox {
                     [this.maxLon, this.minLat],
                     [this.maxLon, this.maxLat],
                     [this.minLon, this.maxLat],
-                    [this.minLon, this.minLat],
-                ],
-            ],
+                    [this.minLon, this.minLat]
+                ]
+            ]
         }
     }
 
@@ -302,7 +302,7 @@ export class BBox {
             minLon,
             maxLon,
             minLat,
-            maxLat,
+            maxLat
         }
     }
 
@@ -315,5 +315,9 @@ export class BBox {
 
     public overlapsWithFeature(f: Feature) {
         return GeoOperations.calculateOverlap(this.asGeoJson({}), [f]).length > 0
+    }
+
+    center() {
+        return [(this.minLon + this.maxLon) / 2, (this.minLat + this.maxLat) / 2]
     }
 }
