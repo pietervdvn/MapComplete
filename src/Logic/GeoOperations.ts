@@ -908,9 +908,11 @@ export class GeoOperations {
     }
 
     /**
-     * GeoOperations.distanceToHuman(52.8) // => "50m"
+     * GeoOperations.distanceToHuman(52.3) // => "50m"
      * GeoOperations.distanceToHuman(2800) // => "2.8km"
      * GeoOperations.distanceToHuman(12800) // => "13km"
+     * GeoOperations.distanceToHuman(128000) // => "130km"
+     *
      *
      * @param meters
      */
@@ -924,7 +926,7 @@ export class GeoOperations {
         }
 
         if (meters >= 10000) {
-            const km =  Utils.roundHuman(meters / 1000)
+            const km =  Utils.roundHuman(Math.round(meters / 1000))
             return km + "km"
         }
 

@@ -24,18 +24,18 @@ export default class CoordinateSearch implements GeocodingProvider {
      * const ls = new CoordinateSearch()
      * const results = await ls.search("https://www.openstreetmap.org/search?query=Brugge#map=11/51.2611/3.2217")
      * results.length // => 1
-     * results[0] // => {lat: 51.2611, lon: 3.2217, display_name: "lon: 3.2217, lat: 51.2611"}
+     * results[0] // => {lat: 51.2611, lon: 3.2217, display_name: "lon: 3.2217, lat: 51.2611",  "category": "coordinate","source": "coordinateSearch"}
      *
      * const ls = new CoordinateSearch()
      * const results = await ls.search("https://www.openstreetmap.org/#map=11/51.2611/3.2217")
      * results.length // => 1
-     * results[0] // => {lat: 51.2611, lon: 3.2217, display_name: "lon: 3.2217, lat: 51.2611"}
+     * results[0] // => {lat: 51.2611, lon: 3.2217, display_name: "lon: 3.2217, lat: 51.2611",  "category": "coordinate","source": "coordinateSearch"}
      *
      * const ls = new CoordinateSearch()
      * const results = await ls.search("51.2611 3.2217")
      * results.length // => 2
-     * results[0] // => {lat: 51.2611, lon: 3.2217, display_name: "lon: 3.2217, lat: 51.2611"}
-     * results[1] // => {lon: 51.2611, lat: 3.2217, display_name: "lon: 51.2611, lat: 3.2217"}
+     * results[0] // => {lat: 51.2611, lon: 3.2217, display_name: "lon: 3.2217, lat: 51.2611",  "category": "coordinate", "source": "coordinateSearch"}
+     * results[1] // => {lon: 51.2611, lat: 3.2217, display_name: "lon: 51.2611, lat: 3.2217",  "category": "coordinate", "source": "coordinateSearch"}
      *
      */
     async search(query: string, options?: GeocodingOptions): Promise<GeoCodeResult[]> {
