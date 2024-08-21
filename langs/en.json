@@ -847,6 +847,7 @@
         },
         "tooLong": "The text is too long, at most 255 characters are allowed. You have {count} characters now.",
         "url": {
+            "aggregator": "{host} is a third-party aggregator website. If possible, search the official website.",
             "description": "link to a website",
             "feedback": "This is not a valid web address"
         },
