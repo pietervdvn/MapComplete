@@ -86,7 +86,7 @@
         },
         "downloadGeojson": "Stáhněte si oblíbené položky jako geojson",
         "downloadGpx": "Stáhnout oblíbené položky jako GPX",
-        "intro": "Označili jste {lenght} místa jako oblíbené místo.",
+        "intro": "Označili jste {length} místa jako oblíbené místo.",
         "introPrivacy": "Tento seznam je viditelný pouze pro vás",
         "loginToSeeList": "Přihlášení pro zobrazení seznamu míst, která jste označili jako oblíbená",
         "tab": "Vaše oblíbené položky a recenze",
