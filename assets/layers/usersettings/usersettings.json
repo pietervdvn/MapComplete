@@ -725,7 +725,8 @@
       },
       "mappings": [
         {
-          "if": "mapcomplete-fixate-north=",
+          "if": "mapcomplete-fixate-north=no",
+          "alsoShowIf": "mapcomplete-fixate-north=",
           "icon": "./assets/svg/compass.svg",
           "then": {
             "en": "Allow to rotate the map",
