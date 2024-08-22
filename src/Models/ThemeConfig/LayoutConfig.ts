@@ -12,7 +12,21 @@ import { RasterLayerProperties } from "../RasterLayerProperties"
 
 import { ConversionContext } from "./Conversion/ConversionContext"
 import { Translatable } from "./Json/Translatable"
+import { MinimalTagRenderingConfigJson, TagRenderingConfigJson } from "./Json/TagRenderingConfigJson"
 
+/**
+ * Minimal information about a theme
+ **/
+export class MinimalLayoutInformation {
+    id: string
+    icon: string
+    title: Translatable
+    shortDescription: Translatable
+    definition?: Translatable
+    mustHaveLanguage?: boolean
+    hideFromOverview?: boolean
+    keywords?: (Translatable | TagRenderingConfigJson)[]
+}
 /**
  * Minimal information about a theme
  **/
@@ -26,6 +40,8 @@ export class LayoutInformation {
     hideFromOverview?: boolean
     keywords?: (Translatable | Translation)[]
 }
+
+
 
 export default class LayoutConfig implements LayoutInformation {
     public static readonly defaultSocialImage = "assets/SocialImage.png"

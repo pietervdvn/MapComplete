@@ -104,7 +104,9 @@ export abstract class Store<T> implements Readable<T> {
         extraStoresToWatch: Store<any>[],
         callbackDestroyFunction: (f: () => void) => void
     ): Store<J>
+
     M
+
     public mapD<J>(
         f: (t: Exclude<T, undefined | null>) => J,
         extraStoresToWatch?: Store<any>[],
@@ -246,6 +248,7 @@ export abstract class Store<T> implements Readable<T> {
             return f(<Exclude<T, undefined | null>>t)
         })
     }
+
     public stabilized(millisToStabilize): Store<T> {
         if (Utils.runningFromConsole) {
             return this
@@ -311,12 +314,14 @@ export class ImmutableStore<T> extends Store<T> {
     public readonly data: T
     static FALSE = new ImmutableStore<boolean>(false)
     static TRUE = new ImmutableStore<boolean>(true)
+
     constructor(data: T) {
         super()
         this.data = data
     }
 
-    private static readonly pass: () => void = () => {}
+    private static readonly pass: () => void = () => {
+    }
 
     addCallback(_: (data: T) => void): () => void {
         // pass: data will never change
@@ -718,6 +723,27 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
         )
     }
 
+    static asObject<T extends object>(stringUIEventSource: UIEventSource<string>, defaultV: T): UIEventSource<T> {
+        return stringUIEventSource.sync(
+            (str) => {
+                if (str === undefined || str === null || str === "") {
+                    return defaultV
+                }
+                try {
+                    return <T> JSON.parse(str)
+                } catch (e) {
+                    console.error("Could not parse value", str,"due to",e)
+                    return defaultV
+                }
+            },
+            [],
+            (b) => {
+                console.log("Stringifying", b)
+                return JSON.stringify(b) ?? ""
+            }
+        )
+    }
+
     /**
      * Create a new UIEVentSource. Whenever 'source' changes, the returned UIEventSource will get this value as well.
      * However, this value can be overriden without affecting source
@@ -863,7 +889,7 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
 
         const newSource = new UIEventSource<J>(f(this.data), "map(" + this.tag + ")@" + callee)
 
-        const update = function () {
+        const update = function() {
             newSource.setData(f(self.data))
             return allowUnregister && newSource._callbacks.length() === 0
         }

@@ -1,19 +1,27 @@
-import { LayoutInformation } from "../../Models/ThemeConfig/LayoutConfig"
-import { ImmutableStore, Store } from "../../Logic/UIEventSource"
+import { MinimalLayoutInformation } from "../../Models/ThemeConfig/LayoutConfig"
+import { Store } from "../../Logic/UIEventSource"
 import { Utils } from "../../Utils"
 import themeOverview from "../../assets/generated/theme_overview.json"
 import Locale from "../i18n/Locale"
+import { Translatable } from "../../Models/ThemeConfig/Json/Translatable"
+import { TagRenderingConfigJson } from "../../Models/ThemeConfig/Json/TagRenderingConfigJson"
+import { OsmConnection } from "../../Logic/Osm/OsmConnection"
 
 export default class MoreScreen {
-    public static readonly officialThemes: LayoutInformation[] = themeOverview
-
+    public static readonly officialThemes: MinimalLayoutInformation[] = themeOverview
+    public static readonly officialThemesById: Map<string, MinimalLayoutInformation> = new Map<string, MinimalLayoutInformation>()
+    static {
+        for (const th of MoreScreen.officialThemes) {
+            MoreScreen.officialThemesById.set(th.id, th)
+        }
+    }
     public static applySearch(searchTerm: string) {
         searchTerm = searchTerm.toLowerCase()
         if (!searchTerm) {
             return
         }
         if (searchTerm === "personal") {
-            window.location.href = MoreScreen.createUrlFor({ id: "personal" }, false).data
+            window.location.href = MoreScreen.createUrlFor({ id: "personal" }, false)
         }
         if (searchTerm === "bugs" || searchTerm === "issues") {
             window.location.href = "https://github.com/pietervdvn/MapComplete/issues"
@@ -38,22 +46,22 @@ export default class MoreScreen {
                 MoreScreen.MatchesLayout(th, searchTerm)
         )
         if (publicTheme !== undefined) {
-            window.location.href = MoreScreen.createUrlFor(publicTheme, false).data
+            window.location.href = MoreScreen.createUrlFor(publicTheme, false)
         }
         const hiddenTheme = MoreScreen.officialThemes.find(
             (th) => th.id !== "personal" && MoreScreen.MatchesLayout(th, searchTerm)
         )
         if (hiddenTheme !== undefined) {
-            window.location.href = MoreScreen.createUrlFor(hiddenTheme, false).data
+            window.location.href = MoreScreen.createUrlFor(hiddenTheme, false)
         }
     }
 
     public static MatchesLayout(
         layout: {
             id: string
-            title: any
-            shortDescription: any
-            keywords?: any[]
+            title: Translatable
+            shortDescription: Translatable
+            keywords?: (Translatable | TagRenderingConfigJson)[]
         },
         search: string
     ): boolean {
@@ -72,7 +80,7 @@ export default class MoreScreen {
             if (entity === undefined) {
                 continue
             }
-            const term = entity["*"] ?? entity[Locale.language.data]
+            const term: string = entity["*"] ?? entity[Locale.language.data]
             if (Utils.RemoveDiacritics(term?.toLowerCase())?.indexOf(search) >= 0) {
                 return true
             }
@@ -82,10 +90,10 @@ export default class MoreScreen {
     }
 
     public static createUrlFor(
-        layout: { id: string; definition?: string },
+        layout: { id: string },
         isCustom: boolean,
         state?: { layoutToUse?: { id } }
-    ): Store<string> {
+    ): string {
         if (layout === undefined) {
             return undefined
         }
@@ -115,11 +123,22 @@ export default class MoreScreen {
             linkPrefix = `${path}/theme.html?userlayout=${layout.id}&`
         }
 
-        let hash = ""
-        if (layout.definition !== undefined) {
-            hash = "#" + btoa(JSON.stringify(layout.definition))
-        }
 
-        return new ImmutableStore<string>(`${linkPrefix}${hash}`)
+        return `${linkPrefix}`
+    }
+
+    /**
+     * Gives all the IDs of the hidden themes which were previously visited
+     * @param osmConnection
+     */
+    public static knownHiddenThemes(osmConnection: OsmConnection): Store<Set<string>> {
+        const prefix = "mapcomplete-hidden-theme-"
+        const userPreferences = osmConnection.preferencesHandler.preferences
+        return userPreferences.map((preferences) =>
+            new Set<string>(
+                Object.keys(preferences)
+                    .filter((key) => key.startsWith(prefix))
+                    .map((key) => key.substring(prefix.length, key.length - "-enabled".length))
+            ))
     }
 }

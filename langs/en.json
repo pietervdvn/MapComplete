@@ -393,6 +393,9 @@
         "search": {
             "error": "Something went wrong…",
             "nothing": "Nothing found…",
+            "nothingFor": "No results found for {term}",
+            "recentThemes": "Recently visited maps",
+            "recents": "Recent searches",
             "search": "Search a location",
             "searchShort": "Search…",
             "searching": "Searching…"

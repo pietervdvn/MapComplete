@@ -24,7 +24,7 @@ export type GeoCodeResult = {
     osm_type?: "node" | "way" | "relation"
     osm_id?: string,
     category?: GeocodingCategory,
-    importance?: number
+    payload?: object
 }
 
 export interface GeocodingOptions {

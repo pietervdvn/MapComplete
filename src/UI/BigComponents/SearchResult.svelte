@@ -12,11 +12,15 @@
   import TagRenderingAnswer from "../Popup/TagRendering/TagRenderingAnswer.svelte"
   import { UIEventSource } from "../../Logic/UIEventSource"
   import ArrowUp from "@babeard/svelte-heroicons/mini/ArrowUp"
+  import { MinimalLayoutInformation } from "../../Models/ThemeConfig/LayoutConfig"
+  import Tr from "../Base/Tr.svelte"
+  import { Translation } from "../i18n/Translation"
+  import MoreScreen from "./MoreScreen"
 
   export let entry: GeoCodeResult
   export let state: SpecialVisualizationState
   let layer: LayerConfig
-  let tags : UIEventSource<Record<string, string>>
+  let tags: UIEventSource<Record<string, string>>
   if (entry.feature?.properties?.id) {
     layer = state.layout.getMatchingLayer(entry.feature.properties)
     tags = state.featureProperties.getStore(entry.feature.properties.id)
@@ -27,6 +31,8 @@
   let bearing = state.mapProperties.location.mapD(l => GeoOperations.bearing([l.lon, l.lat], [entry.lon, entry.lat]))
   let mapRotation = state.mapProperties.rotation
   let inView = state.mapProperties.bounds.mapD(bounds => bounds.contains([entry.lon, entry.lat]))
+
+  let otherTheme: MinimalLayoutInformation | undefined = <MinimalLayoutInformation>entry.payload
 
   function select() {
     console.log("Selected search entry", entry)
@@ -41,44 +47,60 @@
     } else {
       state.mapProperties.flyTo(entry.lon, entry.lat, GeocodingUtils.categoryToZoomLevel[entry.category] ?? 17)
     }
-    if (entry.feature) {
+    if (entry.feature?.properties?.id) {
       state.selectedElement.set(entry.feature)
     }
     state.recentlySearched.addSelected(entry)
     dispatch("select")
   }
 </script>
-<button class="unstyled w-full link-no-underline" on:click={() => select() }>
-  <div class="p-2 flex items-center w-full gap-y-2 w-full">
 
-    {#if layer}
-      <ToSvelte construct={() => layer.defaultIcon(entry.feature.properties).SetClass("w-6 h-6")} />
-    {:else if entry.category}
-      <Icon icon={GeocodingUtils.categoryToIcon[entry.category]} clss="w-6 h-6 shrink-0" color="#aaa" />
-    {/if}
-    <div class="flex flex-col items-start pl-2 w-full">
-      <div class="flex flex-wrap gap-x-2 justify-between w-full">
-        <b class="nowrap">
-          {#if layer && $tags?.id}
-            <TagRenderingAnswer config={layer.title} selectedElement={entry.feature} {state} {tags} {layer} />
-          {:else}
-            {entry.display_name ?? entry.osm_id}
-          {/if}
-        </b>
-        <div class="flex gap-x-1 items-center">
-          {#if $bearing && !$inView}
-            <ArrowUp class="w-4 h-4 shrink-0" style={`transform: rotate(${$bearing - $mapRotation}deg)`} />
-          {/if}
-          {#if $distance}
-            {GeoOperations.distanceToHuman($distance)}
-          {/if}
-        </div>
-      </div>
-      {#if entry.description}
-        <div class="subtle flex justify-between w-full">
-          {entry.description}
-        </div>
-      {/if}
+{#if otherTheme}
+  <a href={ MoreScreen.createUrlFor(otherTheme, false)} class="flex items-center p-2 w-full gap-y-2 rounded-xl" >
+
+    <Icon icon={otherTheme.icon} clss="w-6 h-6 m-1" />
+    <div class="flex flex-col">
+      <b>
+        <Tr t={new Translation(otherTheme.title)} />
+      </b>
+      <!--<Tr t={new Translation(otherTheme.shortDescription)} /> -->
     </div>
-  </div>
-</button>
+  </a>
+
+{:else}
+  <button class="unstyled w-full link-no-underline" on:click={() => select() }>
+    <div class="p-2 flex items-center w-full gap-y-2">
+      {#if layer}
+        <ToSvelte construct={() => layer.defaultIcon(entry.feature.properties).SetClass("w-6 h-6")} />
+      {:else if entry.category}
+        <Icon icon={GeocodingUtils.categoryToIcon[entry.category]} clss="w-6 h-6 shrink-0" color="#aaa" />
+      {/if}
+      <div class="flex flex-col items-start pl-2 w-full">
+        <div class="flex flex-wrap gap-x-2 justify-between w-full">
+          <b class="nowrap">
+            {#if layer && $tags?.id}
+              <TagRenderingAnswer config={layer.title} selectedElement={entry.feature} {state} {tags} {layer} />
+            {:else}
+              {entry.display_name ?? entry.osm_id}
+            {/if}
+          </b>
+          <div class="flex gap-x-1 items-center">
+            {#if $bearing && !$inView}
+              <ArrowUp class="w-4 h-4 shrink-0" style={`transform: rotate(${$bearing - $mapRotation}deg)`} />
+            {/if}
+            {#if $distance}
+              {GeoOperations.distanceToHuman($distance)}
+            {/if}
+          </div>
+        </div>
+        {#if entry.description}
+          <div class="subtle flex justify-between w-full">
+            {entry.description}
+          </div>
+        {/if}
+
+      </div>
+    </div>
+  </button>
+
+{/if}

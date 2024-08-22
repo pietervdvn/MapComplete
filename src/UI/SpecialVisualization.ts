@@ -1,6 +1,6 @@
 import { Store, UIEventSource } from "../Logic/UIEventSource"
 import BaseUIElement from "./BaseUIElement"
-import LayoutConfig from "../Models/ThemeConfig/LayoutConfig"
+import LayoutConfig, { MinimalLayoutInformation } from "../Models/ThemeConfig/LayoutConfig"
 import {
     FeatureSource,
     IndexedFeatureSource,
@@ -87,6 +87,7 @@ export interface SpecialVisualizationState {
         readonly showAllQuestionsAtOnce: UIEventSource<boolean>
         readonly preferencesAsTags: UIEventSource<Record<string, string>>
         readonly language: UIEventSource<string>
+        readonly recentlyVisitedThemes: Store<string[]>
     }
 
     readonly availableLayers: Store<RasterLayerPolygon[]>

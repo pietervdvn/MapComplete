@@ -23,15 +23,16 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         "dragRotate",
         "dragPan",
         "keyboard",
-        "touchZoomRotate",
+        "touchZoomRotate"
     ]
     private static maplibre_zoom_handlers = [
         "scrollZoom",
         "boxZoom",
         "doubleClickZoom",
-        "touchZoomRotate",
+        "touchZoomRotate"
     ]
     readonly location: UIEventSource<{ lon: number; lat: number }>
+    private readonly isFlying = new UIEventSource(false)
     readonly zoom: UIEventSource<number>
     readonly bounds: UIEventSource<BBox>
     readonly rasterLayer: UIEventSource<RasterLayerPolygon | undefined>
@@ -105,6 +106,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         new RasterLayerHandler(this._maplibreMap, this.rasterLayer)
 
         const clickmodes = ["left", "middle", "right"] as const
+
         function handleClick(e: maplibregl.MapMouseEvent, mode?: "left" | "right" | "middle") {
             if (e.originalEvent["consumed"]) {
                 // Workaround, 'ShowPointLayer' sets this flag
@@ -144,7 +146,13 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
             self.SetRotation(self.rotation.data)
             self.setTerrain(self.useTerrain.data)
             this.updateStores(true)
-            map.on("moveend", () => this.updateStores())
+            map.on("movestart", () => {
+                this.isFlying.setData(true)
+            })
+            map.on("moveend", () => {
+                this.isFlying.setData(false)
+                this.updateStores()
+            })
             map.on("click", (e) => {
                 handleClick(e)
             })
@@ -228,9 +236,9 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         return {
             map: mlmap,
             ui: new SvelteUIElement(MaplibreMap, {
-                map: mlmap,
+                map: mlmap
             }),
-            mapproperties: new MapLibreAdaptor(mlmap),
+            mapproperties: new MapLibreAdaptor(mlmap)
         }
     }
 
@@ -298,7 +306,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
     ) {
         const event = {
             date: new Date(),
-            key: key,
+            key: key
         }
 
         for (let i = 0; i < this._onKeyNavigation.length; i++) {
@@ -487,7 +495,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         const bounds = map.getBounds()
         const bbox = new BBox([
             [bounds.getEast(), bounds.getNorth()],
-            [bounds.getWest(), bounds.getSouth()],
+            [bounds.getWest(), bounds.getSouth()]
         ])
         if (this.bounds.data === undefined || !isSetup) {
             this.bounds.setData(bbox)
@@ -499,6 +507,9 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
     private SetZoom(z: number): void {
         const map = this._maplibreMap.data
         if (!map || z === undefined) {
+            return
+        }
+        if (this.isFlying.data) {
             return
         }
         if (Math.abs(map.getZoom() - z) > 0.01) {
@@ -648,7 +659,20 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         if (!hasDiff) {
             return
         }
+        this.lockZoom()
         map.fitBounds(bounds.toLngLat())
+    }
+
+    /**
+     * Should be called before making an animation.
+     * First, 'isFlying' is set to true. This will disable the zoom control
+     * Then, zoom is set to '1', which is very low. This will generally disable all layers, after which this function will return
+     *
+     * Then, a zoom/pan/... animation can be made; after which a 'moveEnd'-event will trigger the 'isFlying' to be set to false and the zoom to be set correctly
+     */
+    private lockZoom() {
+        this.isFlying.setData(true)
+        this.zoom.setData(1)
     }
 
     private async setTerrain(useTerrain: boolean) {
@@ -665,14 +689,14 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
                 type: "raster-dem",
                 url:
                     "https://api.maptiler.com/tiles/terrain-rgb/tiles.json?key=" +
-                    Constants.maptilerApiKey,
+                    Constants.maptilerApiKey
             })
             try {
                 while (!map?.isStyleLoaded()) {
                     await Utils.waitFor(250)
                 }
                 map.setTerrain({
-                    source: id,
+                    source: id
                 })
             } catch (e) {
                 console.error(e)
@@ -680,10 +704,13 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         }
     }
 
-    public flyTo(lon: number, lat: number, zoom: number){
-        this._maplibreMap.data?.flyTo({
-            zoom,
-            center: [lon, lat],
+    public flyTo(lon: number, lat: number, zoom: number) {
+        this.lockZoom()
+        window.requestAnimationFrame(() => {
+            this._maplibreMap.data?.flyTo({
+                zoom,
+                center: [lon, lat]
+            })
         })
     }
 }

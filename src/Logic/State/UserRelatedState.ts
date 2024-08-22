@@ -78,6 +78,10 @@ export default class UserRelatedState {
     public readonly preferencesAsTags: UIEventSource<Record<string, string>>
     private readonly _mapProperties: MapProperties
 
+    private readonly _recentlyVisitedThemes: UIEventSource<string[]>
+    public readonly recentlyVisitedThemes: Store<string[]>
+
+
     constructor(
         osmConnection: OsmConnection,
         layout?: LayoutConfig,
@@ -109,7 +113,7 @@ export default class UserRelatedState {
         this.showAllQuestionsAtOnce = UIEventSource.asBoolean(
             this.osmConnection.GetPreference("show-all-questions", "false", {
                 documentation:
-                    "Either 'true' or 'false'. If set, all questions will be shown all at once",
+                    "Either 'true' or 'false'. If set, all questions will be shown all at once"
             })
         )
         this.language = this.osmConnection.GetPreference("language")
@@ -129,7 +133,7 @@ export default class UserRelatedState {
             undefined,
             {
                 documentation:
-                    "The ID of a layer or layer category that MapComplete uses by default",
+                    "The ID of a layer or layer category that MapComplete uses by default"
             }
         )
 
@@ -137,18 +141,42 @@ export default class UserRelatedState {
             "preferences-add-new-mode",
             "button_click_right",
             {
-                documentation: "How adding a new feature is done",
+                documentation: "How adding a new feature is done"
             }
         )
 
         this.imageLicense = this.osmConnection.GetPreference("pictures-license", "CC0", {
-            documentation: "The license under which new images are uploaded",
+            documentation: "The license under which new images are uploaded"
         })
         this.installedUserThemes = this.InitInstalledUserThemes()
 
         this.homeLocation = this.initHomeLocation()
 
         this.preferencesAsTags = this.initAmendedPrefs(layout, featureSwitches)
+
+        const prefs = this.osmConnection
+        this._recentlyVisitedThemes = UIEventSource.asObject(prefs.GetLongPreference("recently-visited-themes"), [])
+        this.recentlyVisitedThemes = this._recentlyVisitedThemes
+        if (layout) {
+            const osmConn =this.osmConnection
+            const recentlyVisited = this._recentlyVisitedThemes
+            function update() {
+                if (!osmConn.isLoggedIn.data) {
+                    return
+                }
+                const previously = recentlyVisited.data
+                if (previously[0] === layout.id) {
+                    return true
+                }
+                const newThemes = Utils.Dedup([layout.id, ...previously]).slice(0, 30)
+                recentlyVisited.set(newThemes)
+                return true
+            }
+
+
+            this._recentlyVisitedThemes.addCallbackAndRun(() => update())
+            this.osmConnection.isLoggedIn.addCallbackAndRun(() => update())
+        }
 
         this.syncLanguage()
     }
@@ -171,13 +199,13 @@ export default class UserRelatedState {
 
     public GetUnofficialTheme(id: string):
         | {
-              id: string
-              icon: string
-              title: any
-              shortDescription: any
-              definition?: any
-              isOfficial: boolean
-          }
+        id: string
+        icon: string
+        title: any
+        shortDescription: any
+        definition?: any
+        isOfficial: boolean
+    }
         | undefined {
         console.log("GETTING UNOFFICIAL THEME")
         const pref = this.osmConnection.GetLongPreference("unofficial-theme-" + id)
@@ -202,8 +230,8 @@ export default class UserRelatedState {
         } catch (e) {
             console.warn(
                 "Removing theme " +
-                    id +
-                    " as it could not be parsed from the preferences; the content is:",
+                id +
+                " as it could not be parsed from the preferences; the content is:",
                 str
             )
             pref.setData(null)
@@ -233,7 +261,7 @@ export default class UserRelatedState {
                     icon: layout.icon,
                     title: layout.title.translations,
                     shortDescription: layout.shortDescription.translations,
-                    definition: layout["definition"],
+                    definition: layout["definition"]
                 })
             )
         }
@@ -273,13 +301,13 @@ export default class UserRelatedState {
                         id: "home",
                         "user:home": "yes",
                         _lon: homeLonLat[0],
-                        _lat: homeLonLat[1],
+                        _lat: homeLonLat[1]
                     },
                     geometry: {
                         type: "Point",
-                        coordinates: homeLonLat,
-                    },
-                },
+                        coordinates: homeLonLat
+                    }
+                }
             ]
         })
         return new StaticFeatureSource(feature)
@@ -300,7 +328,7 @@ export default class UserRelatedState {
             _applicationOpened: new Date().toISOString(),
             _supports_sharing:
                 typeof window === "undefined" ? "no" : window.navigator.share ? "yes" : "no",
-            _iframe: Utils.isIframe ? "yes" : "no",
+            _iframe: Utils.isIframe ? "yes" : "no"
         })
 
         for (const key in Constants.userJourney) {
@@ -355,18 +383,18 @@ export default class UserRelatedState {
                     const zenLinks: { link: string; id: string }[] = Utils.NoNull([
                         hasMissingTheme
                             ? {
-                                  id: "theme:" + layout.id,
-                                  link: LinkToWeblate.hrefToWeblateZen(
-                                      language,
-                                      "themes",
-                                      layout.id
-                                  ),
-                              }
+                                id: "theme:" + layout.id,
+                                link: LinkToWeblate.hrefToWeblateZen(
+                                    language,
+                                    "themes",
+                                    layout.id
+                                )
+                            }
                             : undefined,
                         ...missingLayers.map((id) => ({
                             id: "layer:" + id,
-                            link: LinkToWeblate.hrefToWeblateZen(language, "layers", id),
-                        })),
+                            link: LinkToWeblate.hrefToWeblateZen(language, "layers", id)
+                        }))
                     ])
                     const untranslated_count = untranslated.length
                     amendedPrefs.data["_translation_total"] = "" + total
@@ -391,8 +419,8 @@ export default class UserRelatedState {
             for (const k in userDetails) {
                 amendedPrefs.data["_" + k] = "" + userDetails[k]
             }
-            if(userDetails.description){
-                amendedPrefs.data["_description_html"] =  Utils.purify(new Showdown.Converter()
+            if (userDetails.description) {
+                amendedPrefs.data["_description_html"] = Utils.purify(new Showdown.Converter()
                     .makeHtml(userDetails.description)
                     ?.replace(/&gt;/g, ">")
                     ?.replace(/&lt;/g, "<")

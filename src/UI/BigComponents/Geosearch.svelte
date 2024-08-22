@@ -116,8 +116,8 @@
     }
   }
 
-  let suggestions: Store<GeoCodeResult[]> = searchContents.stabilized(250).bindD(search =>
-    UIEventSource.FromPromise(searcher.suggest(search), err => console.error(err))
+  let suggestions: Store<{success: GeoCodeResult[]} | {error}> = searchContents.stabilized(250).bindD(search =>
+    UIEventSource.FromPromiseWithErr(searcher.suggest(search))
   )
 
 </script>

@@ -1,12 +1,13 @@
 import GeocodingProvider, { GeoCodeResult, GeocodingOptions } from "./GeocodingProvider"
+import { Utils } from "../../Utils"
 
 export default class CombinedSearcher implements GeocodingProvider {
     private _providers: ReadonlyArray<GeocodingProvider>
     private _providersWithSuggest: ReadonlyArray<GeocodingProvider>
 
     constructor(...providers: ReadonlyArray<GeocodingProvider>) {
-        this._providers = providers
-        this._providersWithSuggest = providers.filter(pr => pr.suggest !== undefined)
+        this._providers = Utils.NoNull(providers)
+        this._providersWithSuggest = this._providers.filter(pr => pr.suggest !== undefined)
     }
 
     /**

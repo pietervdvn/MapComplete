@@ -2558,11 +2558,6 @@ video {
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
 }
 
-.border-red-500 {
-  --tw-border-opacity: 1;
-  border-color: rgb(239 68 68 / var(--tw-border-opacity));
-}
-
 .border-gray-800 {
   --tw-border-opacity: 1;
   border-color: rgb(31 41 55 / var(--tw-border-opacity));
@@ -2656,6 +2651,11 @@ video {
 .border-green-500 {
   --tw-border-opacity: 1;
   border-color: rgb(34 197 94 / var(--tw-border-opacity));
+}
+
+.border-red-500 {
+  --tw-border-opacity: 1;
+  border-color: rgb(239 68 68 / var(--tw-border-opacity));
 }
 
 .border-gray-700 {
@@ -4379,10 +4379,10 @@ video {
 }
 
 :root {
-  /* 
-    * The main colour scheme of mapcomplete is configured here.
-    * For a custom styling, set 'customCss' in your layoutConfig and overwrite some of these.
-    */
+  /*
+      * The main colour scheme of mapcomplete is configured here.
+      * For a custom styling, set 'customCss' in your layoutConfig and overwrite some of these.
+      */
   /* No support for dark mode yet, we disable it to prevent some elements to suddenly toggle */
   color-scheme: only light;
   /* Main color of the application: the background and text colours */
@@ -4407,9 +4407,9 @@ video {
   --disabled: #B8B8B8;
   --disabled-font: #B8B8B8;
   /**
-     * Base colour of interactive elements, mainly the 'subtle button'
-     * @deprecated
-     */
+       * Base colour of interactive elements, mainly the 'subtle button'
+       * @deprecated
+       */
   --subtle-detail-color: #dbeafe;
   --subtle-detail-color-contrast: black;
   --subtle-detail-color-light-contrast: lightgrey;
@@ -4419,14 +4419,14 @@ video {
   --catch-detail-color-contrast: #fb3afb;
   --image-carousel-height: 350px;
   /** Technical value, used by icon.svelte
-     */
+       */
   --svg-color: #000000;
 }
 
-@font-face{
-  font-family:"Source Sans Pro";
+@font-face {
+  font-family: "Source Sans Pro";
 
-  src:url("/assets/source-sans-pro.regular.ttf") format("woff");
+  src: url("/assets/source-sans-pro.regular.ttf") format("woff");
 }
 
 /***********************************************************************\
@@ -4663,18 +4663,18 @@ select:hover {
 
 .neutral-label {
   /** This label styles as normal text. It's power comes from the many :not(.neutral-label) entries.
-     * Placed here for autocompletion
-     */
+       * Placed here for autocompletion
+       */
 }
 
 label:not(.neutral-label):not(.button) {
   /**
-     * Label should _contain_ the input element
-     */
+       * Label should _contain_ the input element
+       */
   padding: 0.25rem;
   padding-right: 0.5rem;
   padding-left: 0.5rem;
-  margin:0.25rem;
+  margin: 0.25rem;
   border-radius: 0.5rem;
   width: 100%;
   box-sizing: border-box;
@@ -4887,6 +4887,10 @@ a.link-underline {
   color: unset !important;
 }
 
+a:hover {
+  background-color: var(--low-interaction-background);
+}
+
 .disable-links a.must-link,
 .disable-links .must-link a {
   /* Hide links if they are disabled */
@@ -4901,7 +4905,7 @@ a.link-underline {
 
 .selected svg:not(.noselect *) path.selectable {
   /* A marker on the map gets the 'selected' class when it's properties are displayed
-    */
+      */
   stroke: white !important;
   stroke-width: 20px !important;
   overflow: visible !important;
@@ -4915,7 +4919,7 @@ a.link-underline {
 
 .selected svg {
   /* A marker on the map gets the 'selected' class when it's properties are displayed
-    */
+      */
   overflow: visible !important;
 }
 

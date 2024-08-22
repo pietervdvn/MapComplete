@@ -35,7 +35,7 @@
       "oauth_token",
       undefined,
       "Used to complete the login"
-    ),
+    )
   })
   const state = new UserRelatedState(osmConnection)
   const t = Translations.t.index
@@ -44,7 +44,7 @@
   let userLanguages = osmConnection.userDetails.map((ud) => ud.languages)
   let themeSearchText: UIEventSource<string | undefined> = new UIEventSource<string>(undefined)
 
-  document.addEventListener("keydown", function (event) {
+  document.addEventListener("keydown", function(event) {
     if (event.ctrlKey && event.code === "KeyF") {
       document.getElementById("theme-search")?.focus()
       event.preventDefault()
@@ -55,20 +55,10 @@
   const hiddenThemes: LayoutInformation[] =
     (themeOverview["default"] ?? themeOverview)?.filter((layout) => layout.hideFromOverview) ?? []
   {
-    const prefix = "mapcomplete-hidden-theme-"
-    const userPreferences = state.osmConnection.preferencesHandler.preferences
-    visitedHiddenThemes = userPreferences.map((preferences) => {
-      const knownIds = new Set<string>(
-        Object.keys(preferences)
-          .filter((key) => key.startsWith(prefix))
-          .map((key) => key.substring(prefix.length, key.length - "-enabled".length))
-      )
-      return hiddenThemes.filter(
-        (theme) =>
-          knownIds.has(theme.id) ||
-          state.osmConnection.userDetails.data.name === "Pieter Vander Vennet"
-      )
-    })
+    visitedHiddenThemes = MoreScreen.knownHiddenThemes(state.osmConnection)
+      .map((knownIds) => hiddenThemes.filter((theme) =>
+        knownIds.has(theme.id) || state.osmConnection.userDetails.data.name === "Pieter Vander Vennet"
+      ))
   }
 </script>
 
@@ -103,7 +93,7 @@
 
     <form
       class="flex justify-center"
-      on:submit|preventDefault={(_) => MoreScreen.applySearch(themeSearchText.data)}
+      on:submit|preventDefault={() => MoreScreen.applySearch(themeSearchText.data)}
     >
       <label
         class="neutral-label my-2 flex w-full items-center rounded-full border-2 border-black sm:w-1/2"

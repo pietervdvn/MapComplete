@@ -62,7 +62,7 @@
             return "offline"
         }
       }),
-      message: osmApi,
+      message: osmApi
     })
   }
 
@@ -90,7 +90,7 @@
         }
         const files: string[] = s["success"]["allFiles"]
         return "Contains " + (files.length ?? "no") + " files"
-      }),
+      })
     })
   }
   {
@@ -106,7 +106,7 @@
           return "degraded"
         }
       }),
-      message: simpleMessage(testDownload(Constants.GeoIpServer + "/ip")),
+      message: simpleMessage(testDownload(Constants.GeoIpServer + "/ip"))
     })
   }
 
@@ -125,7 +125,7 @@
         }
         return "degraded"
       }),
-      message: simpleMessage(status),
+      message: simpleMessage(status)
     })
   }
 
@@ -144,7 +144,7 @@
         }
         return "online"
       }),
-      message: simpleMessage(status),
+      message: simpleMessage(status)
     })
   }
 
@@ -183,7 +183,7 @@
 
         const json = JSON.stringify(s["success"], null, "  ")
         return "Database is " + Math.floor(timediffDays) + " days out of sync\n\n" + json
-      }),
+      })
     })
   }
 
@@ -202,7 +202,45 @@
         }
         return "degraded"
       }),
-      message: status.map((s) => JSON.stringify(s)),
+      message: status.map((s) => JSON.stringify(s))
+    })
+  }
+
+  {
+    const s = Constants.nominatimEndpoint
+    const status = testDownload(s + "/search.php?q=Brugge")
+    services.push({
+      name: s,
+      message: simpleMessage(status),
+      status: status.mapD(s => {
+        if (s["error"]) {
+          return "offline"
+        }
+        const data = s["success"]
+        if (Array.isArray(data)) {
+          return "online"
+        }
+        return "degraded"
+      })
+    })
+  }
+
+  {
+    const s = Constants.photonEndpoint
+    const status = testDownload(s + "/api/?q=Brugge")
+    services.push({
+      name: s,
+      status: status.mapD(s => {
+        if (s["error"]) {
+          return "offline"
+        }
+        const data = s["success"]
+        if (Array.isArray(data.features) && data.features.length > 0) {
+          return "online"
+        }
+        return "degraded"
+      }),
+      message: simpleMessage(status)
     })
   }
 
@@ -228,7 +266,7 @@
 
           return "online"
         }),
-        message: simpleMessage(status),
+        message: simpleMessage(status)
       })
     }
   }
@@ -241,7 +279,7 @@
           return "online"
         }
         return "offline"
-      }),
+      })
     })
   }
 

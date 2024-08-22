@@ -81,6 +81,7 @@ import CoordinateSearch from "../Logic/Geocoding/CoordinateSearch"
 import LocalElementSearch from "../Logic/Geocoding/LocalElementSearch"
 import { RecentSearch } from "../Logic/Geocoding/RecentSearch"
 import PhotonSearch from "../Logic/Geocoding/PhotonSearch"
+import ThemeSearch from "../Logic/Geocoding/ThemeSearch"
 
 /**
  *
@@ -393,6 +394,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
             new LocalElementSearch(this, 5),
             new PhotonSearch(), // new NominatimGeocoding(),
             new CoordinateSearch(),
+            this.featureSwitches.featureSwitchBackToThemeOverview.data ? new ThemeSearch(this) : undefined
         )
 
         this.recentlySearched = new RecentSearch(this)

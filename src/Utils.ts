@@ -263,14 +263,14 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return res
     }
 
-    public static NoNull<T>(array: T[] | undefined): T[] | undefined
+    public static NoNull<T>(array: ReadonlyArray<T> | undefined): T[] | undefined
     public static NoNull<T>(array: undefined): undefined
-    public static NoNull<T>(array: T[]): T[]
-    public static NoNull<T>(array: T[]): NonNullable<T>[] {
+    public static NoNull<T>(array: ReadonlyArray<T>): T[]
+    public static NoNull<T>(array: ReadonlyArray<T>): NonNullable<T>[] {
         return <any>array?.filter((o) => o !== undefined && o !== null)
     }
 
-    public static Hist(array: string[]): Map<string, number> {
+    public static Hist(array: ReadonlyArray<string>): Map<string, number> {
         const hist = new Map<string, number>()
         for (const s of array) {
             hist.set(s, 1 + (hist.get(s) ?? 0))

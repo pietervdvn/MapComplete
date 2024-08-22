@@ -71,7 +71,7 @@ export class OsmPreferences {
             }
             if (str === null) {
                 console.error("Deleting " + allStartWith)
-                let count = parseInt(length.data)
+                const count = parseInt(length.data)
                 for (let i = 0; i < count; i++) {
                     // Delete all the preferences
                     self.GetPreference(allStartWith + "-" + i, "", subOptions).setData("")
