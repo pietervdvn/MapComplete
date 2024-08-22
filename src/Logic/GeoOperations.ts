@@ -909,6 +909,7 @@ export class GeoOperations {
 
     /**
      * GeoOperations.distanceToHuman(52.3) // => "50m"
+     * GeoOperations.distanceToHuman(999) // => "1.0km"
      * GeoOperations.distanceToHuman(2800) // => "2.8km"
      * GeoOperations.distanceToHuman(12800) // => "13km"
      * GeoOperations.distanceToHuman(128000) // => "130km"
@@ -920,7 +921,7 @@ export class GeoOperations {
         if (meters === undefined) {
             return ""
         }
-        meters = Math.round(meters)
+        meters = Utils.roundHuman( Math.round(meters))
         if (meters < 1000) {
             return Utils.roundHuman(meters) + "m"
         }

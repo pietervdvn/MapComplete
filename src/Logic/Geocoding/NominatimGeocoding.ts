@@ -3,9 +3,10 @@ import { BBox } from "../BBox"
 import Constants from "../../Models/Constants"
 import { FeatureCollection } from "geojson"
 import Locale from "../../UI/i18n/Locale"
-import GeocodingProvider, { GeoCodeResult, ReverseGeocodingProvider } from "./GeocodingProvider"
+import GeocodingProvider, { GeoCodeResult } from "./GeocodingProvider"
+import { Store, UIEventSource } from "../UIEventSource"
 
-export class NominatimGeocoding implements GeocodingProvider, ReverseGeocodingProvider {
+export class NominatimGeocoding implements GeocodingProvider {
 
     private readonly _host ;
 
@@ -13,14 +14,14 @@ export class NominatimGeocoding implements GeocodingProvider, ReverseGeocodingPr
         this._host = host
     }
 
-    public async search(query: string, options?: { bbox?: BBox; limit?: number }): Promise<GeoCodeResult[]> {
+    public search(query: string, options?: { bbox?: BBox; limit?: number }): Promise<GeoCodeResult[]> {
         const b = options?.bbox ?? BBox.global
         const url = `${
             this._host
         }search?format=json&limit=${options?.limit ?? 1}&viewbox=${b.getEast()},${b.getNorth()},${b.getWest()},${b.getSouth()}&accept-language=${
             Locale.language.data
         }&q=${query}`
-        return await Utils.downloadJson(url)
+        return Utils.downloadJson(url)
     }
 
 

@@ -12,6 +12,7 @@
   export let tags: UIEventSource<Record<string, string>>
   export let state: SpecialVisualizationState
   export let layer: LayerConfig
+  export let noIcons = false
 
   /**
    * Css classes to apply
@@ -32,7 +33,7 @@
   }
 </script>
 
-{#if mapping.icon !== undefined}
+{#if mapping.icon !== undefined && !noIcons}
   <div class="inline-flex items-center">
     <Marker
       icons={mapping.icon}

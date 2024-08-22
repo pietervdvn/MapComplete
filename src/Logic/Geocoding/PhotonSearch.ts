@@ -1,6 +1,7 @@
 import Constants from "../../Models/Constants"
 import GeocodingProvider, {
-    GeoCodeResult, GeocodingCategory,
+    GeoCodeResult,
+    GeocodingCategory,
     GeocodingOptions,
     ReverseGeocodingProvider,
     ReverseGeocodingResult
@@ -9,6 +10,7 @@ import { Utils } from "../../Utils"
 import { Feature, FeatureCollection } from "geojson"
 import Locale from "../../UI/i18n/Locale"
 import { GeoOperations } from "../GeoOperations"
+import { Store, Stores } from "../UIEventSource"
 
 export default class PhotonSearch implements GeocodingProvider, ReverseGeocodingProvider {
     private _endpoint: string
@@ -52,8 +54,8 @@ export default class PhotonSearch implements GeocodingProvider, ReverseGeocoding
 
     }
 
-    search(query: string, options?: GeocodingOptions): Promise<GeoCodeResult[]> {
-        return this.suggest(query, options)
+    suggest(query: string, options?: GeocodingOptions): Store<GeoCodeResult[]> {
+        return Stores.FromPromise(this.search(query, options))
     }
 
     private buildDescription(entry: Feature) {
@@ -71,7 +73,7 @@ export default class PhotonSearch implements GeocodingProvider, ReverseGeocoding
             case "house": {
 
                 const addr = ifdef("", p.street) + ifdef(" ", p.housenumber)
-                if(!addr){
+                if (!addr) {
                     return p.city
                 }
                 return addr + ifdef(", ", p.city)
@@ -81,8 +83,8 @@ export default class PhotonSearch implements GeocodingProvider, ReverseGeocoding
                 return p.city ?? p.country
             case "city":
             case "locality":
-                if(p.state){
-                    return  p.state + ifdef(", ", p.country)
+                if (p.state) {
+                    return p.state + ifdef(", ", p.country)
                 }
                 return p.country
             case "country":
@@ -91,18 +93,18 @@ export default class PhotonSearch implements GeocodingProvider, ReverseGeocoding
 
     }
 
-    private getCategory(entry: Feature){
+    private getCategory(entry: Feature) {
         const p = entry.properties
-        if(p.osm_value === "train_station" || p.osm_key === "railway"){
+        if (p.osm_value === "train_station" || p.osm_key === "railway") {
             return "train_station"
         }
-        if(p.osm_value === "aerodrome" || p.osm_key === "aeroway"){
+        if (p.osm_value === "aerodrome" || p.osm_key === "aeroway") {
             return "airport"
         }
         return p.type
     }
 
-    async suggest?(query: string, options?: GeocodingOptions): Promise<GeoCodeResult[]> {
+    async search(query: string, options?: GeocodingOptions): Promise<GeoCodeResult[]> {
         if (query.length < 3) {
             return []
         }

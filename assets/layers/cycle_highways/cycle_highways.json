@@ -90,11 +90,11 @@
   "minzoom": 6,
   "title": {
     "render": {
-      "en": "Cycle highway",
+      "en": "cycle highway",
       "de": "Radschnellweg",
-      "ca": "Via ciclista",
+      "ca": "via ciclista",
       "fr": "Aménagement cyclable",
-      "nl": "Fietssnelweg",
+      "nl": "fietssnelweg",
       "es": "autovía ciclista",
       "nb_NO": "sykkelmotorvei",
       "da": "cykelmotorvej",

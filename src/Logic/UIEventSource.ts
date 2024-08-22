@@ -41,8 +41,26 @@ export class Stores {
         return src
     }
 
-    public static flatten<X>(source: Store<Store<X>>, possibleSources?: Store<any>[]): Store<X> {
-        return UIEventSource.flatten(source, possibleSources)
+    public static concat<T>(stores: Store<T[]>[]): Store<T[]> {
+        const newStore = new UIEventSource<T[]>([])
+        function update(){
+            if(newStore._callbacks.isDestroyed){
+                return true // unregister
+            }
+            const results: T[] = []
+            for (const store of stores) {
+                if(store.data){
+                    results.push(...store.data)
+                }
+            }
+            newStore.setData(results)
+        }
+
+        for (const store of stores) {
+            store.addCallback(() => update())
+        }
+        update()
+        return newStore
     }
 
     /**
@@ -105,8 +123,6 @@ export abstract class Store<T> implements Readable<T> {
         callbackDestroyFunction: (f: () => void) => void
     ): Store<J>
 
-    M
-
     public mapD<J>(
         f: (t: Exclude<T, undefined | null>) => J,
         extraStoresToWatch?: Store<any>[],
@@ -120,7 +136,7 @@ export abstract class Store<T> implements Readable<T> {
                 return null
             }
             return f(<Exclude<T, undefined | null>>t)
-        }, extraStoresToWatch)
+        }, extraStoresToWatch, callbackDestroyFunction)
     }
 
     /**
@@ -231,6 +247,9 @@ export abstract class Store<T> implements Readable<T> {
                 if (mapped.data === newEventSource) {
                     sink.setData(resultData)
                 }
+                if(sink._callbacks.isDestroyed){
+                    return true // unregister
+                }
             })
         })
 
@@ -308,6 +327,8 @@ export abstract class Store<T> implements Readable<T> {
             run(v)
         })
     }
+
+    public abstract destroy()
 }
 
 export class ImmutableStore<T> extends Store<T> {
@@ -361,6 +382,10 @@ export class ImmutableStore<T> extends Store<T> {
     bind<X>(f: (t: T) => Store<X>): Store<X> {
         return f(this.data)
     }
+
+    destroy() {
+        // pass
+    }
 }
 
 /**
@@ -369,7 +394,7 @@ export class ImmutableStore<T> extends Store<T> {
 class ListenerTracker<T> {
     public pingCount = 0
     private readonly _callbacks: ((t: T) => boolean | void | any)[] = []
-
+public isDestroyed = false
     /**
      * Adds a callback which can be called; a function to unregister is returned
      */
@@ -428,6 +453,11 @@ class ListenerTracker<T> {
 
     length() {
         return this._callbacks.length
+    }
+
+    public destroy(){
+        this.isDestroyed=  true
+        this._callbacks.splice(0, this._callbacks.length)
     }
 }
 
@@ -584,10 +614,14 @@ class MappedStore<TIn, T> extends Store<T> {
         this._data = newData
         this._callbacks.ping(this._data)
     }
+
+    destroy() {
+        this.unregisterFromUpstream()
+    }
 }
 
 export class UIEventSource<T> extends Store<T> implements Writable<T> {
-    private static readonly pass: () => {}
+    private static readonly pass: (() => void) = () => {};
     public data: T
     _callbacks: ListenerTracker<T> = new ListenerTracker<T>()
 
@@ -596,9 +630,13 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
         this.data = data
     }
 
+    public destroy(){
+        this._callbacks.destroy()
+    }
+
     public static flatten<X>(
         source: Store<Store<X>>,
-        possibleSources?: Store<any>[]
+        possibleSources?: Store<object>[]
     ): UIEventSource<X> {
         const sink = new UIEventSource<X>(source.data?.data)
 
@@ -627,7 +665,7 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
      */
     public static FromPromise<T>(
         promise: Promise<T>,
-        onError: (e: any) => void = undefined
+        onError: (e) => void = undefined
     ): UIEventSource<T> {
         const src = new UIEventSource<T>(undefined)
         promise?.then((d) => src.setData(d))
@@ -671,7 +709,7 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
     public static asInt(source: UIEventSource<string>): UIEventSource<number> {
         return source.sync(
             (str) => {
-                let parsed = parseInt(str)
+                const parsed = parseInt(str)
                 return isNaN(parsed) ? undefined : parsed
             },
             [],
@@ -702,7 +740,7 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
     public static asFloat(source: UIEventSource<string>): UIEventSource<number> {
         return source.sync(
             (str) => {
-                let parsed = parseFloat(str)
+                const parsed = parseFloat(str)
                 return isNaN(parsed) ? undefined : parsed
             },
             [],

@@ -1,6 +1,7 @@
 import { BBox } from "../BBox"
 import { Feature, Geometry } from "geojson"
 import { DefaultPinIcon } from "../../Models/Constants"
+import { Store } from "../UIEventSource"
 
 export type GeocodingCategory = "coordinate" | "city" | "house" | "street" | "locality" | "country" | "train_station" | "county" | "airport"
 
@@ -42,7 +43,7 @@ export default interface GeocodingProvider {
      * @param query
      * @param options
      */
-    suggest?(query: string, options?: GeocodingOptions): Promise<GeoCodeResult[]>
+    suggest?(query: string, options?: GeocodingOptions): Store<GeoCodeResult[]>
 }
 
 export type ReverseGeocodingResult = Feature<Geometry,{

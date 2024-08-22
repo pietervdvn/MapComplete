@@ -711,14 +711,6 @@ video {
   top: 2.5rem;
 }
 
-.top-2 {
-  top: 0.5rem;
-}
-
-.right-2 {
-  right: 0.5rem;
-}
-
 .left-1\/4 {
   left: 25%;
 }
@@ -785,6 +777,10 @@ video {
 
 .top-1 {
   top: 0.25rem;
+}
+
+.top-2 {
+  top: 0.5rem;
 }
 
 .top-\[calc\(100\%\+1rem\)\] {
@@ -1075,10 +1071,6 @@ video {
 
 .-ml-6 {
   margin-left: -1.5rem;
-}
-
-.mt-12 {
-  margin-top: 3rem;
 }
 
 .mb-3 {
@@ -1446,6 +1438,10 @@ video {
 
 .max-h-12 {
   max-height: 3rem;
+}
+
+.max-h-96 {
+  max-height: 24rem;
 }
 
 .max-h-24 {
@@ -5298,11 +5294,6 @@ svg.apply-fill path {
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
 }
 
-.hover\:bg-stone-200:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(231 229 228 / var(--tw-bg-opacity));
-}
-
 .hover\:bg-indigo-200:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(199 210 254 / var(--tw-bg-opacity));
@@ -7243,6 +7234,10 @@ svg.apply-fill path {
     width: 50%;
   }
 
+  .sm\:w-96 {
+    width: 24rem;
+  }
+
   .sm\:w-11 {
     width: 2.75rem;
   }
@@ -7257,10 +7252,6 @@ svg.apply-fill path {
 
   .sm\:w-6 {
     width: 1.5rem;
-  }
-
-  .sm\:w-96 {
-    width: 24rem;
   }
 
   .sm\:grid-cols-2 {

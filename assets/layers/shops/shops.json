@@ -257,6 +257,9 @@
     {
       "builtin": "id_presets.shop_types",
       "override": {
+        "labels": [
+          "description"
+        ],
         "question": {
           "en": "What kind of shop is this?",
           "nl": "Wat voor soort winkel is dit?",

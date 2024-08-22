@@ -1,5 +1,6 @@
 import GeocodingProvider, { GeoCodeResult, GeocodingOptions } from "./GeocodingProvider"
 import { Utils } from "../../Utils"
+import { Store, Stores } from "../UIEventSource"
 
 export default class CombinedSearcher implements GeocodingProvider {
     private _providers: ReadonlyArray<GeocodingProvider>
@@ -16,13 +17,13 @@ export default class CombinedSearcher implements GeocodingProvider {
      * @param geocoded
      * @private
      */
-    private merge(geocoded: GeoCodeResult[][]): GeoCodeResult[]{
-        const results : GeoCodeResult[] = []
+    private merge(geocoded: GeoCodeResult[][]): GeoCodeResult[] {
+        const results: GeoCodeResult[] = []
         const seenIds = new Set<string>()
         for (const geocodedElement of geocoded) {
             for (const entry of geocodedElement) {
-                const id = entry.osm_type+ entry.osm_id
-                if(seenIds.has(id)){
+                const id = entry.osm_type + entry.osm_id
+                if (seenIds.has(id)) {
                     continue
                 }
                 seenIds.add(id)
@@ -33,12 +34,12 @@ export default class CombinedSearcher implements GeocodingProvider {
     }
 
     async search(query: string, options?: GeocodingOptions): Promise<GeoCodeResult[]> {
-        const results = await Promise.all(this._providers.map(pr => pr.search(query, options)))
-        return this.merge(results)
+        const results = (await Promise.all(this._providers.map(pr => pr.search(query, options))))
+        return results.flatMap(x => x)
     }
 
-    async suggest(query: string, options?: GeocodingOptions): Promise<GeoCodeResult[]> {
-        const results = await Promise.all(this._providersWithSuggest.map(pr => pr.suggest(query, options)))
-        return this.merge(results)
+    suggest(query: string, options?: GeocodingOptions): Store<GeoCodeResult[]> {
+        return Stores.concat(this._providersWithSuggest.map(pr => pr.suggest(query, options)))
+
     }
 }

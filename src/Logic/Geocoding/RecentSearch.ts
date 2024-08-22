@@ -18,12 +18,15 @@ export class RecentSearch {
 
 
         state.selectedElement.addCallbackAndRunD(selected => {
+
             const [osm_type, osm_id] = selected.properties.id.split("/")
+            if(!osm_id){
+                return
+            }
             const [lon, lat] = GeoOperations.centerpointCoordinates(selected)
             const entry = <GeoCodeResult>{
                 feature: selected,
                 osm_id, osm_type,
-                description: "Viewed recently",
                 lon, lat
             }
             this.addSelected(entry)

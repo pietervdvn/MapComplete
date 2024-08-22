@@ -4,7 +4,7 @@ import { MinimalLayoutInformation } from "../../Models/ThemeConfig/LayoutConfig"
 import { SpecialVisualizationState } from "../../UI/SpecialVisualization"
 import { Utils } from "../../Utils"
 import MoreScreen from "../../UI/BigComponents/MoreScreen"
-import { Store } from "../UIEventSource"
+import { ImmutableStore, Store } from "../UIEventSource"
 
 export default class ThemeSearch implements GeocodingProvider {
 
@@ -17,11 +17,15 @@ export default class ThemeSearch implements GeocodingProvider {
         this._knownHiddenThemes = MoreScreen.knownHiddenThemes(this._state.osmConnection)
     }
 
-    search(query: string, options?: GeocodingOptions): Promise<GeoCodeResult[]> {
-        return this.suggest(query, options)
+    async search(query: string, options?: GeocodingOptions): Promise<GeoCodeResult[]> {
+        return this.searchDirect(query, options)
     }
 
-    async suggest?(query: string, options?: GeocodingOptions): Promise<GeoCodeResult[]> {
+    suggest(query: string, options?: GeocodingOptions): Store<GeoCodeResult[]> {
+        return new ImmutableStore(this.searchDirect(query, options))
+    }
+
+    private searchDirect(query: string, options?: GeocodingOptions): GeoCodeResult[] {
         if(query.length < 1){
             return []
         }
@@ -33,10 +37,10 @@ export default class ThemeSearch implements GeocodingProvider {
             .filter(th => MoreScreen.MatchesLayout(th, query))
             .slice(0, limit + 1)
 
-        return withMatch.map(match => (<GeoCodeResult> {
+        return withMatch.map(match => <GeoCodeResult> {
             payload: match,
             osm_id: match.id
-        }))
+        })
     }
 
 

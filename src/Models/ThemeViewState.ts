@@ -601,6 +601,9 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 ) {
                     return
                 }
+                if(document.activeElement.tagName === "button" || document.activeElement.tagName === "input"){
+                    return
+                }
                 this.selectClosestAtCenter(0)
             }
         )

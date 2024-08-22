@@ -12,11 +12,15 @@
   import { ariaLabel } from "../../Utils/ariaLabel"
   import { GeoLocationState } from "../../Logic/State/GeoLocationState"
   import { NominatimGeocoding } from "../../Logic/Geocoding/NominatimGeocoding"
-  import type GeocodingProvider from "../../Logic/Geocoding/GeocodingProvider"
+  import { GeocodingUtils } from "../../Logic/Geocoding/GeocodingProvider"
   import type { GeoCodeResult } from "../../Logic/Geocoding/GeocodingProvider"
+  import type GeocodingProvider from "../../Logic/Geocoding/GeocodingProvider"
 
   import SearchResults from "./SearchResults.svelte"
   import type { SpecialVisualizationState } from "../SpecialVisualization"
+  import MoreScreen from "./MoreScreen"
+  import type { MinimalLayoutInformation } from "../../Models/ThemeConfig/LayoutConfig"
+  import { focusWithArrows } from "../../Utils/focusWithArrows"
 
   export let perLayer: ReadonlyMap<string, GeoIndexedStoreForLayer> | undefined = undefined
   export let bounds: UIEventSource<BBox>
@@ -82,13 +86,27 @@
         return
       }
       const poi = result[0]
-      const [lat0, lat1, lon0, lon1] = poi.boundingbox
-      bounds.set(
-        new BBox([
-          [lon0, lat0],
-          [lon1, lat1]
-        ]).pad(0.01)
-      )
+      if (poi.payload !== undefined) {
+        // This is a theme
+        const theme = <MinimalLayoutInformation>poi.payload
+        const url = MoreScreen.createUrlFor(theme, false)
+        console.log("Found a theme, going to", url)
+        // @ts-ignore
+        window.location = url
+        return
+      }
+      if (poi.boundingbox) {
+
+        const [lat0, lat1, lon0, lon1] = poi.boundingbox
+        bounds.set(
+          new BBox([
+            [lon0, lat0],
+            [lon1, lat1]
+          ]).pad(0.01)
+        )
+      } else if (poi.lon && poi.lat) {
+        state.mapProperties.flyTo(poi.lon, poi.lat, GeocodingUtils.categoryToZoomLevel[poi.category] ?? 16)
+      }
       if (perLayer !== undefined) {
         const id = poi.osm_type + "/" + poi.osm_id
         const layers = Array.from(perLayer?.values() ?? [])
@@ -107,6 +125,7 @@
       }
       dispatch("searchIsValid", false)
       dispatch("searchCompleted")
+      isFocused.setData(false)
     } catch (e) {
       console.error(e)
       feedback = Translations.t.general.search.error.txt
@@ -116,45 +135,73 @@
     }
   }
 
-  let suggestions: Store<{success: GeoCodeResult[]} | {error}> = searchContents.stabilized(250).bindD(search =>
-    UIEventSource.FromPromiseWithErr(searcher.suggest(search))
+  let suggestions: Store<GeoCodeResult[]> = searchContents.stabilized(250).bindD(search => {
+      if (search.length === 0) {
+        return undefined
+      }
+      return searcher.suggest(search, { bbox: bounds.data })
+    }
   )
+
+  let geosearch: HTMLDivElement
+
+  function checkFocus() {
+    window.requestAnimationFrame(() => {
+      if (geosearch.contains(document.activeElement)) {
+        return
+      }
+      isFocused.setData(false)
+    })
+  }
+
+  document.addEventListener("focus",() => {
+    checkFocus()
+  }, true /* use 'capturing' instead of bubbling, needed for focus-events*/)
+
+
 
 </script>
 
-<div class="normal-background flex justify-between rounded-full pl-2 w-full">
-  <form class="flex w-full flex-wrap">
-    {#if isRunning}
-      <Loading>{Translations.t.general.search.searching}</Loading>
-    {:else}
-      <input
-        type="search"
-        class="w-full outline-none"
-        bind:this={inputElement}
-        on:keypress={(keypr) => {
+<div bind:this={geosearch} use:focusWithArrows={"searchresult"}>
+
+  <div class="normal-background flex justify-between rounded-full pl-2 w-full">
+    <form class="flex w-full flex-wrap">
+      {#if isRunning}
+        <Loading>{Translations.t.general.search.searching}</Loading>
+      {:else}
+        <input
+          type="search"
+          class="w-full outline-none"
+          bind:this={inputElement}
+          on:keypress={(keypr) => {
           feedback = undefined
-          return keypr.key === "Enter" ? performSearch() : undefined
+          if(keypr.key === "Enter"){
+            performSearch()
+            keypr.preventDefault()
+          }
+          return undefined
         }}
-        on:focus={() => {isFocused.setData(true)}}
-        on:blur={() => {isFocused.setData(false)}}
-        bind:value={$searchContents}
-        use:placeholder={Translations.t.general.search.search}
-        use:ariaLabel={Translations.t.general.search.search}
-      />
-      {#if feedback !== undefined}
-        <!-- The feedback is _always_ shown for screenreaders and to make sure that the searchfield can still be selected by tabbing-->
-        <div class="alert" role="alert" aria-live="assertive">
-          {feedback}
-        </div>
+          on:focus={() => {isFocused.setData(true)}}
+          on:blur={() => {checkFocus()}}
+          bind:value={$searchContents}
+          use:placeholder={Translations.t.general.search.search}
+          use:ariaLabel={Translations.t.general.search.search}
+        />
+        {#if feedback !== undefined}
+          <!-- The feedback is _always_ shown for screenreaders and to make sure that the searchfield can still be selected by tabbing-->
+          <div class="alert" role="alert" aria-live="assertive">
+            {feedback}
+          </div>
+        {/if}
       {/if}
-    {/if}
-  </form>
-  <SearchIcon aria-hidden="true" class="h-6 w-6 self-end" on:click={performSearch} />
-</div>
+    </form>
+    <SearchIcon aria-hidden="true" class="h-6 w-6 self-end" on:click={performSearch} />
+  </div>
 
-<div class="relative h-0" style="z-index: 10">
-
-<div class="absolute right-0" style="width: 25rem; max-width: 98vw">
-  <SearchResults {isFocused} {state} results={$suggestions} searchTerm={searchContents} on:select={() => {searchContents.set("")}}/>
-</div>
+  <div class="relative h-0" style="z-index: 10">
+    <div class="absolute right-0 w-full sm:w-96 h-fit max-h-96">
+      <SearchResults {isFocused} {state} results={$suggestions} searchTerm={searchContents}
+                     on:select={() => {searchContents.set(""); isFocused.setData(false)}} />
+    </div>
+  </div>
 </div>

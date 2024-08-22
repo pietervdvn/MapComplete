@@ -16,14 +16,17 @@
   import Tr from "../Base/Tr.svelte"
   import { Translation } from "../i18n/Translation"
   import MoreScreen from "./MoreScreen"
+  import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig"
 
   export let entry: GeoCodeResult
   export let state: SpecialVisualizationState
   let layer: LayerConfig
   let tags: UIEventSource<Record<string, string>>
+  let descriptionTr: TagRenderingConfig = undefined
   if (entry.feature?.properties?.id) {
     layer = state.layout.getMatchingLayer(entry.feature.properties)
     tags = state.featureProperties.getStore(entry.feature.properties.id)
+    descriptionTr = layer.tagRenderings.find(tr => tr.labels.indexOf("description") >= 0)
   }
 
   let dispatch = createEventDispatcher<{ select }>()
@@ -35,7 +38,6 @@
   let otherTheme: MinimalLayoutInformation | undefined = <MinimalLayoutInformation>entry.payload
 
   function select() {
-    console.log("Selected search entry", entry)
     if (entry.boundingbox) {
       const [lat0, lat1, lon0, lon1] = entry.boundingbox
       state.mapProperties.bounds.set(
@@ -56,7 +58,8 @@
 </script>
 
 {#if otherTheme}
-  <a href={ MoreScreen.createUrlFor(otherTheme, false)} class="flex items-center p-2 w-full gap-y-2 rounded-xl" >
+  <a href={ MoreScreen.createUrlFor(otherTheme, false)}
+     class="flex items-center p-2 w-full gap-y-2 rounded-xl searchresult">
 
     <Icon icon={otherTheme.icon} clss="w-6 h-6 m-1" />
     <div class="flex flex-col">
@@ -68,7 +71,7 @@
   </a>
 
 {:else}
-  <button class="unstyled w-full link-no-underline" on:click={() => select() }>
+  <button class="unstyled w-full link-no-underline searchresult" on:click={() => select() }>
     <div class="p-2 flex items-center w-full gap-y-2">
       {#if layer}
         <ToSvelte construct={() => layer.defaultIcon(entry.feature.properties).SetClass("w-6 h-6")} />
@@ -84,20 +87,32 @@
               {entry.display_name ?? entry.osm_id}
             {/if}
           </b>
-          <div class="flex gap-x-1 items-center">
-            {#if $bearing && !$inView}
-              <ArrowUp class="w-4 h-4 shrink-0" style={`transform: rotate(${$bearing - $mapRotation}deg)`} />
-            {/if}
-            {#if $distance}
-              {GeoOperations.distanceToHuman($distance)}
-            {/if}
-          </div>
+          {#if $distance > 50}
+            <div class="flex gap-x-1 items-center">
+              {#if $bearing && !$inView}
+                <ArrowUp class="w-4 h-4 shrink-0" style={`transform: rotate(${$bearing - $mapRotation}deg)`} />
+              {/if}
+              {#if $distance}
+                {GeoOperations.distanceToHuman($distance)}
+              {/if}
+            </div>
+          {/if}
         </div>
-        {#if entry.description}
-          <div class="subtle flex justify-between w-full">
-            {entry.description}
-          </div>
-        {/if}
+        <div class="flex flex-wrap gap-x-2">
+
+          {#if descriptionTr}
+            <TagRenderingAnswer defaultSize="subtle" noIcons={true} config={descriptionTr} {tags} {state}
+                                selectedElement={entry.feature} {layer} />
+          {/if}
+          {#if descriptionTr && entry.description}
+            –
+          {/if}
+          {#if entry.description}
+            <div class="subtle flex justify-between w-full">
+              {entry.description}
+            </div>
+          {/if}
+        </div>
 
       </div>
     </div>
