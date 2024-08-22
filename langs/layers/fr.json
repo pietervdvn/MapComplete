@@ -2330,6 +2330,12 @@
             "render": "Traversée"
         }
     },
+    "cycle_highways": {
+        "name": "Aménagements cyclables",
+        "title": {
+            "render": "Aménagement cyclable"
+        }
+    },
     "cycleways_and_roads": {
         "description": "Toutes les infrastructures sur lesquelles quelqu'un peut rouler, accompagnées de questions sur cette infrastructure",
         "name": "Pistes cyclables et routes",
@@ -3674,32 +3680,6 @@
                 },
                 "question": "Quel type d'itinéraire indique ce panneau ?"
             }
-        }
-    },
-    "hotel": {
-        "description": "Couche affichant les hôtels",
-        "name": "Hôtels",
-        "presets": {
-            "0": {
-                "title": "un hôtel"
-            }
-        },
-        "tagRenderings": {
-            "name": {
-                "freeform": {
-                    "placeholder": "Nom de l'hôtel"
-                },
-                "question": "Quel est le nom de cet hôtel ?",
-                "render": "Cet hôtel s'appelle {name}"
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Hôtel {name}"
-                }
-            },
-            "render": "Hôtel"
         }
     },
     "hydrant": {
@@ -6521,6 +6501,20 @@
             "wheelchair-door-width": {
                 "question": "Quelle est la largeur de la porte des toilettes accessibles aux fauteuils roulants ?",
                 "render": "La porte des toilettes accessibles aux fauteuils roulants a une large de {canonical(toilets:door:width)}"
+            }
+        }
+    },
+    "tourism_accomodation": {
+        "presets": {
+            "0": {
+                "title": "un hôtel"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Hôtel {name}"
+                }
             }
         }
     },

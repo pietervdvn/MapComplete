@@ -163,11 +163,11 @@ export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, L
                     render: "{add_image_to_note()}",
                 },
                 {
-                    id: "nearby_images",
+                    id: "nearby_images_note",
                     render: tr(t.nearbyImagesIntro),
                 },
                 {
-                    id: "all_tags",
+                    id: "all_tags_note",
                     render: "{all_tags()}",
                     metacondition: {
                         or: [

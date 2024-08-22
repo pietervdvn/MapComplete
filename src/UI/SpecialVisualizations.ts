@@ -100,6 +100,7 @@ import PendingChangesIndicator from "./BigComponents/PendingChangesIndicator.sve
 import QrCode from "./Popup/QrCode.svelte"
 import ClearCaches from "./Popup/ClearCaches.svelte"
 import GroupedView from "./Popup/GroupedView.svelte"
+import { QuestionableTagRenderingConfigJson } from "../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -119,7 +120,6 @@ class NearbyImageVis implements SpecialVisualization {
         "A component showing nearby images loaded from various online services such as Mapillary. In edit mode and when used on a feature, the user can select an image to add to the feature"
     funcName = "nearby_images"
     needsUrls = CombinedFetcher.apiUrls
-    svelteBased = true
 
     constr(
         state: SpecialVisualizationState,
@@ -251,17 +251,17 @@ class CloseNoteViz implements SpecialVisualization {
         },
     ]
 
-    public constr(state: SpecialVisualizationState, tags: UIEventSource<Record<string, string>>, args: string[], feature: Feature, layer: LayerConfig): SvelteUIElement {
-
-        const {
-            text,
-            icon,
-            idkey,
-            comment,
-            minZoom,
-            zoomButton
-        } = Utils.ParseVisArgs(this.args, args)
-
+    public constr(
+        state: SpecialVisualizationState,
+        tags: UIEventSource<Record<string, string>>,
+        args: string[],
+        feature: Feature,
+        layer: LayerConfig
+    ): SvelteUIElement {
+        const { text, icon, idkey, comment, minZoom, zoomButton } = Utils.ParseVisArgs(
+            this.args,
+            args
+        )
 
         return new SvelteUIElement(CloseNoteButton, {
             state,
@@ -271,7 +271,7 @@ class CloseNoteViz implements SpecialVisualization {
             message: comment,
             text: Translations.T(text),
             minzoom: minZoom,
-            zoomMoreMessage: zoomButton
+            zoomMoreMessage: zoomButton,
         })
     }
 }
@@ -324,6 +324,19 @@ export class QuestionViz implements SpecialVisualization {
 
 export default class SpecialVisualizations {
     public static specialVisualizations: SpecialVisualization[] = SpecialVisualizations.initList()
+    public static specialVisualisationsDict: Map<string, SpecialVisualization> = new Map<
+        string,
+        SpecialVisualization
+    >()
+
+    static {
+        for (const specialVisualization of SpecialVisualizations.specialVisualizations) {
+            SpecialVisualizations.specialVisualisationsDict.set(
+                specialVisualization.funcName,
+                specialVisualization
+            )
+        }
+    }
 
     public static DocumentationFor(viz: string | SpecialVisualization): string {
         if (typeof viz === "string") {
@@ -359,7 +372,11 @@ export default class SpecialVisualizations {
         template: string,
         extraMappings: SpecialVisualization[] = []
     ): RenderingSpecification[] {
-        return SpecialVisualisationUtils.constructSpecification(template, extraMappings)
+        return SpecialVisualisationUtils.constructSpecification(
+            template,
+            SpecialVisualizations.specialVisualisationsDict,
+            extraMappings
+        )
     }
 
     public static HelpMessage(): string {
@@ -778,8 +795,6 @@ export default class SpecialVisualizations {
                 funcName: "list_reviews",
                 docs: "Adds an overview of the mangrove-reviews of this object. Mangrove.Reviews needs - in order to identify the reviewed object - a coordinate and a name. By default, the name of the object is given, but this can be overwritten",
                 needsUrls: [MangroveReviews.ORIGINAL_API],
-                example:
-                    "`{reviews()}` for a vanilla review, `{reviews(name, play_forest)}` to review a play forest. If a name is known, the name will be used as identifier, otherwise 'play_forest' is used",
                 args: [
                     {
                         name: "subjectKey",
@@ -805,6 +820,47 @@ export default class SpecialVisualizations {
                         state.featureSwitchIsTesting
                     )
                     return new SvelteUIElement(AllReviews, { reviews, state, tags, feature, layer })
+                },
+            },
+            {
+                funcName: "reviews",
+                example:
+                    "`{reviews()}` for a vanilla review, `{reviews(name, play_forest)}` to review a play forest. If a name is known, the name will be used as identifier, otherwise 'play_forest' is used",
+                docs: "A pragmatic combination of `create_review` and `list_reviews`",
+                args: [
+                    {
+                        name: "subjectKey",
+                        defaultValue: "name",
+                        doc: "The key to use to determine the subject. If specified, the subject will be <b>tags[subjectKey]</b>",
+                    },
+                    {
+                        name: "fallback",
+                        doc: "The identifier to use, if <i>tags[subjectKey]</i> as specified above is not available. This is effectively a fallback value",
+                    },
+                ],
+                constr(
+                    state: SpecialVisualizationState,
+                    tagSource: UIEventSource<Record<string, string>>,
+                    args: string[],
+                    feature: Feature,
+                    layer: LayerConfig
+                ): BaseUIElement {
+                    return new Combine([
+                        SpecialVisualizations.specialVisualisationsDict["create_review"].constr(
+                            state,
+                            tagSource,
+                            args,
+                            feature,
+                            layer
+                        ),
+                        SpecialVisualizations.specialVisualisationsDict["list_reviews"].constr(
+                            state,
+                            tagSource,
+                            args,
+                            feature,
+                            layer
+                        ),
+                    ])
                 },
             },
             {
@@ -1300,7 +1356,7 @@ export default class SpecialVisualizations {
                     {
                         name: "icon",
                         doc: "If set, show this icon next to the link. You might want to combine this with `class: button`",
-                    }
+                    },
                 ],
 
                 constr(
@@ -1328,7 +1384,7 @@ export default class SpecialVisualizations {
                         download: tagSource.map((tags) => Utils.SubstituteKeys(download, tags)),
                         ariaLabel: tagSource.map((tags) => Utils.SubstituteKeys(ariaLabel, tags)),
                         newTab: new ImmutableStore(newTab),
-                        icon: tagSource.map((tags) => Utils.SubstituteKeys(icon, tags))
+                        icon: tagSource.map((tags) => Utils.SubstituteKeys(icon, tags)),
                     }).setSpan()
                 },
             },
@@ -1677,7 +1733,6 @@ export default class SpecialVisualizations {
             {
                 funcName: "qr_code",
                 args: [],
-
                 docs: "Generates a QR-code to share the selected object",
                 constr(
                     state: SpecialVisualizationState,
@@ -1685,8 +1740,8 @@ export default class SpecialVisualizations {
                     argument: string[],
                     feature: Feature
                 ): SvelteUIElement {
-                    return new SvelteUIElement(QrCode , {state, tags, feature}   )
-                }
+                    return new SvelteUIElement(QrCode, { state, tags, feature })
+                },
             },
             {
                 funcName: "direction_absolute",
@@ -1977,25 +2032,74 @@ export default class SpecialVisualizations {
                 },
             },
             {
-                funcName:"pending_changes",
+                funcName: "preset_type_select",
+                docs: "An editable tag rendering which allows to change the type",
+                args: [],
+                constr(
+                    state: SpecialVisualizationState,
+                    tags: UIEventSource<Record<string, string>>,
+                    argument: string[],
+                    selectedElement: Feature,
+                    layer: LayerConfig
+                ): SvelteUIElement {
+                    const t = Translations.t.preset_type
+                    const question: QuestionableTagRenderingConfigJson = {
+                        id: layer.id + "-type",
+                        question: t.question.translations,
+                        mappings: layer.presets.map((pr) => {
+                            return {
+                                if: new And(pr.tags).asJson(),
+                                then: (pr.description ? t.typeDescription : t.typeTitle).Subs({
+                                    title: pr.title,
+                                    description: pr.description,
+                                }).translations,
+                            }
+                        }),
+                    }
+                    const config = new TagRenderingConfig(question)
+                    return new SvelteUIElement(TagRenderingEditable, {
+                        config,
+                        tags,
+                        selectedElement,
+                        state,
+                        layer,
+                    })
+                },
+            },
+            {
+                funcName: "pending_changes",
                 docs: "A module showing the pending changes, with the option to clear the pending changes",
-                args:[],
-                constr(state: SpecialVisualizationState, tagSource: UIEventSource<Record<string, string>>, argument: string[], feature: Feature, layer: LayerConfig): BaseUIElement {
-                    return new SvelteUIElement(PendingChangesIndicator, {state, compact: false})
+                args: [],
+                constr(
+                    state: SpecialVisualizationState,
+                    tagSource: UIEventSource<Record<string, string>>,
+                    argument: string[],
+                    feature: Feature,
+                    layer: LayerConfig
+                ): BaseUIElement {
+                    return new SvelteUIElement(PendingChangesIndicator, { state, compact: false })
                 },
             },
             {
                 funcName: "clear_caches",
                 docs: "A button which clears the locally downloaded data and the service worker. Login status etc will be kept",
-                args:[
+                args: [
                     {
                         name: "text",
                         required: true,
-                        doc: "The text to show on the button"
-                    }
+                        doc: "The text to show on the button",
+                    },
                 ],
-                constr(state: SpecialVisualizationState, tagSource: UIEventSource<Record<string, string>>, argument: string[], feature: Feature, layer: LayerConfig): SvelteUIElement {
-                    return new SvelteUIElement<any, any, any>(ClearCaches, {msg: argument[0] ?? "Clear local caches"})
+                constr(
+                    state: SpecialVisualizationState,
+                    tagSource: UIEventSource<Record<string, string>>,
+                    argument: string[],
+                    feature: Feature,
+                    layer: LayerConfig
+                ): SvelteUIElement {
+                    return new SvelteUIElement<any, any, any>(ClearCaches, {
+                        msg: argument[0] ?? "Clear local caches",
+                    })
                 },
             },
             {
@@ -2004,37 +2108,152 @@ export default class SpecialVisualizations {
                 args: [
                     {
                         name: "header",
-                        doc: "The _identifier_ of a single tagRendering. This will be used as header"
+                        doc: "The _identifier_ of a single tagRendering. This will be used as header",
                     },
                     {
                         name: "labels",
-                        doc: "A `;`-separated list of either identifiers or label names. All tagRenderings matching this value will be shown in the accordion"
-                    }
+                        doc: "A `;`-separated list of either identifiers or label names. All tagRenderings matching this value will be shown in the accordion",
+                    },
                 ],
-                constr(state: SpecialVisualizationState, tags: UIEventSource<Record<string, string>>, argument: string[], selectedElement: Feature, layer: LayerConfig): SvelteUIElement {
+                constr(
+                    state: SpecialVisualizationState,
+                    tags: UIEventSource<Record<string, string>>,
+                    argument: string[],
+                    selectedElement: Feature,
+                    layer: LayerConfig
+                ): SvelteUIElement {
                     const [header, labelsStr] = argument
-                    const labels = labelsStr.split(";").map(x => x.trim())
+                    const labels = labelsStr.split(";").map((x) => x.trim())
                     return new SvelteUIElement<any, any, any>(GroupedView, {
-                        state, tags, selectedElement, layer, header, labels
+                        state,
+                        tags,
+                        selectedElement,
+                        layer,
+                        header,
+                        labels,
                     })
-                }
-            }
+                },
+            },
+            {
+                funcName: "preset_type_select",
+                docs: "An editable tag rendering which allows to change the type",
+                args: [],
+                constr(
+                    state: SpecialVisualizationState,
+                    tags: UIEventSource<Record<string, string>>,
+                    argument: string[],
+                    selectedElement: Feature,
+                    layer: LayerConfig
+                ): SvelteUIElement {
+                    const t = Translations.t.preset_type
+                    const question: QuestionableTagRenderingConfigJson = {
+                        id: layer.id + "-type",
+                        question: t.question.translations,
+                        mappings: layer.presets.map((pr) => {
+                            return {
+                                if: new And(pr.tags).asJson(),
+                                then: (pr.description ? t.typeDescription : t.typeTitle).Subs({
+                                    title: pr.title,
+                                    description: pr.description,
+                                }).translations,
+                            }
+                        }),
+                    }
+                    const config = new TagRenderingConfig(question)
+                    return new SvelteUIElement(TagRenderingEditable, {
+                        config,
+                        tags,
+                        selectedElement,
+                        state,
+                        layer,
+                    })
+                },
+            },
+            {
+                funcName: "pending_changes",
+                docs: "A module showing the pending changes, with the option to clear the pending changes",
+                args: [],
+                constr(
+                    state: SpecialVisualizationState,
+                    tagSource: UIEventSource<Record<string, string>>,
+                    argument: string[],
+                    feature: Feature,
+                    layer: LayerConfig
+                ): BaseUIElement {
+                    return new SvelteUIElement(PendingChangesIndicator, { state, compact: false })
+                },
+            },
+            {
+                funcName: "clear_caches",
+                docs: "A button which clears the locally downloaded data and the service worker. Login status etc will be kept",
+                args: [
+                    {
+                        name: "text",
+                        required: true,
+                        doc: "The text to show on the button",
+                    },
+                ],
+                constr(
+                    state: SpecialVisualizationState,
+                    tagSource: UIEventSource<Record<string, string>>,
+                    argument: string[],
+                    feature: Feature,
+                    layer: LayerConfig
+                ): SvelteUIElement {
+                    return new SvelteUIElement<any, any, any>(ClearCaches, {
+                        msg: argument[0] ?? "Clear local caches",
+                    })
+                },
+            },
+            {
+                funcName: "group",
+                docs: "A collapsable group (accordion)",
+                args: [
+                    {
+                        name: "header",
+                        doc: "The _identifier_ of a single tagRendering. This will be used as header",
+                    },
+                    {
+                        name: "labels",
+                        doc: "A `;`-separated list of either identifiers or label names. All tagRenderings matching this value will be shown in the accordion",
+                    },
+                ],
+                constr(
+                    state: SpecialVisualizationState,
+                    tags: UIEventSource<Record<string, string>>,
+                    argument: string[],
+                    selectedElement: Feature,
+                    layer: LayerConfig
+                ): SvelteUIElement {
+                    const [header, labelsStr] = argument
+                    const labels = labelsStr.split(";").map((x) => x.trim())
+                    return new SvelteUIElement<any, any, any>(GroupedView, {
+                        state,
+                        tags,
+                        selectedElement,
+                        layer,
+                        header,
+                        labels,
+                    })
+                },
+            },
         ]
 
         specialVisualizations.push(new AutoApplyButton(specialVisualizations))
 
+        const regex = /[a-zA-Z_]+/
         const invalid = specialVisualizations
             .map((sp, i) => ({ sp, i }))
-            .filter((sp) => sp.sp.funcName === undefined)
+            .filter((sp) => sp.sp.funcName === undefined || !sp.sp.funcName.match(regex))
         if (invalid.length > 0) {
             throw (
-                "Invalid special visualisation found: funcName is undefined for " +
+                "Invalid special visualisation found: funcName is undefined or doesn't match " +
+                regex +
                 invalid.map((sp) => sp.i).join(", ") +
                 '. Did you perhaps type \n  funcName: "funcname" // type declaration uses COLON\ninstead of:\n  funcName = "funcName" // value definition uses EQUAL'
             )
         }
 
-        SpecialVisualisationUtils.specialVisualizations = Utils.NoNull(specialVisualizations)
         return specialVisualizations
     }
 }

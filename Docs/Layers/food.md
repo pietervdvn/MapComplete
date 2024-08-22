@@ -320,7 +320,7 @@ _This tagrendering has no question and is thus read-only_
 ### menu-website
 
 The question is `On what webpage is the menu published?`
-*{link(Consult the menu,&LBRACEwebsite:menu&RBRACE,,,)}* is shown if `website:menu` is set
+*{link(Consult the menu,&LBRACEwebsite:menu&RBRACE,,,,)}* is shown if `website:menu` is set
 
 
 
@@ -730,42 +730,6 @@ This tagrendering has labels
 
 | id | question | osmTags |
 -----|-----|----- |
-| has_organic.0 | Has organic options | organic=yes | organic=only |
-
-
-
-
-
-
-| id | question | osmTags |
------|-----|----- |
-| sugar_free.0 | Has a sugar-free offering | diet:sugar_free=yes | diet:sugar_free=only | diet:sugar_free=limited |
-
-
-
-
-
-
-| id | question | osmTags |
------|-----|----- |
-| gluten_free.0 | Has a gluten free offering | diet:gluten_free=yes | diet:gluten_free=only | diet:gluten_free=limited |
-
-
-
-
-
-
-| id | question | osmTags |
------|-----|----- |
-| lactose_free.0 | Has a lactose free offering | diet:lactose_free=yes | diet:lactose_free=only | diet:lactose_free=limited |
-
-
-
-
-
-
-| id | question | osmTags |
------|-----|----- |
 | accepts_cash.0 | Accepts cash | payment:cash=yes |
 
 
@@ -787,15 +751,6 @@ This tagrendering has labels
 | dogs.0 | *No preference towards dogs* (default) |  |
 | dogs.1 | Dogs allowed | dog=unleashed | dog=yes |
 | dogs.2 | No dogs allowed | dog=no |
-
-
-
-
-
-
-| id | question | osmTags |
------|-----|----- |
-| has_internet.0 | Offers internet | internet_access=wlan | internet_access=yes | internet_access=wired |
 
 
 

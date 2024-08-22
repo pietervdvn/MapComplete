@@ -13,12 +13,12 @@ Increase the max number of connections. osm2pgsql needs connection one per table
 - Validate with `cat /var/lib/postgresql/data/postgresql.conf | grep "max_connections"`
 - `sudo docker restart <ID>`
 
+
+> The following steps are also automated in `update.sh`
+
 ## Create a database in the SQL-server
 
-
-Then, connect to this database with PGAdmin, create a database within it.
-- Activate extensions `Postgis` and `HSTore` (right click > Create > Extension):
-
+Run `vite-node scripts/osm2pgsql/createNewDatabase.ts -- YYYY-MM-DD` to create a new, appropriate, database
 
 ## Create export scripts for every layer
 

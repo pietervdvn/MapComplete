@@ -29,12 +29,12 @@
     "pl": "Na tej mapie znajdziesz hotele w Twojej okolicy",
     "it": "Su questa mappa, troverai gli hotel della tua zona"
   },
-  "icon": "./assets/layers/hotel/hotel.svg",
+  "icon": "./assets/layers/tourism_accomodation/hotel.svg",
   "startZoom": 13,
   "startLat": 50.8552,
   "startLon": 4.3755,
   "layers": [
-    "hotel",
+    "tourism_accomodation",
     {
       "builtin": [
         "love_hotel"

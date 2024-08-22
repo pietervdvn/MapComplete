@@ -1732,6 +1732,98 @@
          }
       },
       {
+         "id": "roads_footway",
+         "type": "line",
+         "source": "protomaps",
+         "source-layer": "roads",
+         "filter": [
+            "all",
+            [
+               "==",
+               "pmap:level",
+               0
+            ],
+            [
+               "in",
+               "pmap:kind",
+               "other",
+               "path"
+            ],
+            [
+               "==",
+               "pmap:kind_detail",
+               "footway"
+            ]
+         ],
+         "paint": {
+            "line-color": "#d46710",
+            "line-dasharray": [
+               3,
+               1
+            ],
+            "line-width": [
+               "interpolate",
+               [
+                  "exponential",
+                  1.6
+               ],
+               [
+                  "zoom"
+               ],
+               14,
+               0,
+               20,
+               7
+            ]
+         }
+      },
+      {
+         "id": "roads_cycleway",
+         "type": "line",
+         "source": "protomaps",
+         "source-layer": "roads",
+         "filter": [
+            "all",
+            [
+               "==",
+               "pmap:level",
+               0
+            ],
+            [
+               "in",
+               "pmap:kind",
+               "other",
+               "path"
+            ],
+            [
+               "==",
+               "pmap:kind_detail",
+               "cycleway"
+            ]
+         ],
+         "paint": {
+            "line-color": "#6099c9",
+            "line-dasharray": [
+               3,
+               1
+            ],
+            "line-width": [
+               "interpolate",
+               [
+                  "exponential",
+                  1.6
+               ],
+               [
+                  "zoom"
+               ],
+               14,
+               0,
+               20,
+               7
+            ]
+         }
+      },
+      {
          "id": "roads_other",
          "type": "line",
          "source": "protomaps",
@@ -1748,10 +1840,20 @@
                "pmap:kind",
                "other",
                "path"
+            ],
+            [
+               "!=",
+               "pmap:kind_detail",
+               "cycleway"
+            ],
+            [
+               "!=",
+               "pmap:kind_detail",
+               "footway"
             ]
          ],
          "paint": {
-            "line-color": "#ebebeb",
+            "line-color": "#cbbbab",
             "line-dasharray": [
                3,
                1
@@ -2963,6 +3065,53 @@
                3,
                18,
                13
+            ]
+         }
+      },
+      {
+         "id": "roads_bridges_cycleway_other",
+         "type": "line",
+         "source": "protomaps",
+         "source-layer": "roads",
+         "minzoom": 12,
+         "filter": [
+            "all",
+            [
+               ">",
+               "pmap:level",
+               0
+            ],
+            [
+               "in",
+               "pmap:kind",
+               "other",
+               "path"
+            ],
+            [
+               "==",
+               "pmap:kind_detail",
+               "cycleway"
+            ]
+         ],
+         "paint": {
+            "line-color": "#1069c9",
+            "line-dasharray": [
+               2,
+               1
+            ],
+            "line-width": [
+               "interpolate",
+               [
+                  "exponential",
+                  1.6
+               ],
+               [
+                  "zoom"
+               ],
+               14,
+               0,
+               20,
+               7
             ]
          }
       },

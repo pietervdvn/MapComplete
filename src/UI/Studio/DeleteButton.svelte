@@ -1,10 +1,9 @@
 <script lang="ts">
   import { EditJsonState } from "./EditLayerState"
-  import BackButton from "../Base/BackButton.svelte"
   import { TrashIcon } from "@rgossiaux/svelte-heroicons/solid"
   import NextButton from "../Base/NextButton.svelte"
+  import AccordionSingle from "../Flowbite/AccordionSingle.svelte"
 
-  let deleteState: "init" | "confirm" = "init"
   export let backToStudio: () => void
   export let state: EditJsonState
 
@@ -16,32 +15,24 @@
   }
 </script>
 
-<div class="mt-12">
-  {#if deleteState === "init"}
-    <button
-      on:click={() => {
-        deleteState = "confirm"
-      }}
-      class="small"
-    >
-      <TrashIcon class="h-6 w-6" />
-      Delete this {objectType}
-    </button>
-  {:else if deleteState === "confirm"}
-    <div class="flex">
-      <BackButton
-        on:click={() => {
-          deleteState = "init"
-        }}
-      >
-        Don't delete
-      </BackButton>
-      <NextButton clss="primary" on:click={() => deleteLayer()}>
-        <div class="alert flex p-2">
-          <TrashIcon class="h-6 w-6" />
-          Do delete this {objectType}
-        </div>
-      </NextButton>
+<AccordionSingle>
+  <div slot="header" class="flex gap-x-2">
+    <TrashIcon class="h-6 w-6" />
+    Delete this {objectType}
+  </div>
+
+  <div class="flex flex-col">
+    <div>
+      Deleting this layer will delete your version. If you clicked a layer made by someone else,
+      their version will remain. If you ever accidentally delete a layer, contact Pietervdvn. He
+      might have a backup
     </div>
-  {/if}
-</div>
+
+    <NextButton clss="primary" on:click={() => deleteLayer()}>
+      <div class="alert flex p-2">
+        <TrashIcon class="h-6 w-6" />
+        Do delete this {objectType}
+      </div>
+    </NextButton>
+  </div>
+</AccordionSingle>

@@ -9,7 +9,7 @@ The theme introduction reads:
 This theme contains the following layers:
 
 
- - [hotel](../Layers/hotel.md)
+ - [tourism_accomodation](../Layers/tourism_accomodation.md)
  - [love_hotel](../Layers/love_hotel.md)
 
 

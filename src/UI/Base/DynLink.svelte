@@ -21,7 +21,7 @@
   class={$classnames}
 >
   {#if $icon}
-    <Icon clss="w-4 h-4" icon={$icon}/>
-    {/if}
+    <Icon clss="w-4 h-4" icon={$icon} />
+  {/if}
   {@html $text}
 </a>

@@ -1494,7 +1494,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return true
     }
 
-    public static SameObject(a: any, b: any) {
+    public static SameObject<T>(a: T, b: T, ignoreKeys?: string[]): boolean {
         if (a === b) {
             return true
         }

@@ -278,6 +278,11 @@
           "icon": "party"
         },
         {
+          "if": "value=pencil",
+          "then": "pencil",
+          "icon": "pencil"
+        },
+        {
           "if": "value=pin",
           "then": "pin",
           "icon": "pin"
@@ -826,10 +831,6 @@
           "then": "<b>hospital</b> (builtin) - A layer showing hospital grounds"
         },
         {
-          "if": "value=hotel",
-          "then": "<b>hotel</b> (builtin) - Layer showing all hotels"
-        },
-        {
           "if": "value=hydrant",
           "then": "<b>hydrant</b> (builtin) - Map layer to show fire hydrants."
         },
@@ -1116,6 +1117,10 @@
         {
           "if": "value=tool_library",
           "then": "<b>tool_library</b> (builtin) - A tool library is a place where people from the general public can borrow tools"
+        },
+        {
+          "if": "value=tourism_accomodation",
+          "then": "<b>tourism_accomodation</b> (builtin) - undefined"
         },
         {
           "if": "value=trail",
@@ -1542,7 +1547,7 @@
             ]
           },
           "pointRendering": {
-            "description": "Creates points to render on the map.\nThis can render points for point-objects, lineobjects or areaobjects; use 'location' to indicate where it should be rendered\n\ngroup: pointrendering",
+            "description": "Creates points to render on the map.\nThis can render points for point-objects, lineobjects or areaobjects; use 'location' to indicate where it should be rendered.\n\nNote that all attributes - including [the calculated tags](https://github.com/pietervdvn/MapComplete/blob/develop/Docs/CalculatedTags.md) can be used to create the markers and lines\n\ngroup: pointrendering",
             "type": "array",
             "items": {
               "$ref": "#/definitions/default_4"
@@ -3863,7 +3868,7 @@
       "group": "pointrendering"
     },
     "type": "array",
-    "description": "Creates points to render on the map.\nThis can render points for point-objects, lineobjects or areaobjects; use 'location' to indicate where it should be rendered"
+    "description": "Creates points to render on the map.\nThis can render points for point-objects, lineobjects or areaobjects; use 'location' to indicate where it should be rendered.\nNote that all attributes - including [the calculated tags](https://github.com/pietervdvn/MapComplete/blob/develop/Docs/CalculatedTags.md) can be used to create the markers and lines"
   },
   {
     "path": [
@@ -4105,6 +4110,11 @@
           "if": "value=party",
           "then": "party",
           "icon": "party"
+        },
+        {
+          "if": "value=pencil",
+          "then": "pencil",
+          "icon": "pencil"
         },
         {
           "if": "value=pin",
@@ -6088,8 +6098,27 @@
     ],
     "required": false,
     "hints": {
+      "types": "Dynamic value ; string",
       "question": "What rotation should be applied on the icon?",
-      "ifunset": "Do not rotate"
+      "ifunset": "Do not rotate",
+      "suggestions": [
+        {
+          "if": "value={_direction:centerpoint}deg",
+          "then": "Point the top of the icon towards the end of the way"
+        },
+        {
+          "if": "value=calc( {_direction:centerpoint}deg + 90deg )",
+          "then": "Point the left of the icon towards the end of the way"
+        },
+        {
+          "if": "value=calc( {_direction:centerpoint}deg - 90deg )",
+          "then": "Point the right of the icon towards the end of the way"
+        },
+        {
+          "if": "value=calc( {_direction:centerpoint}deg + 180deg )",
+          "then": "Point the bottom of the icon towards the end of the way"
+        }
+      ]
     },
     "type": [
       {
@@ -6276,7 +6305,7 @@
         "type": "string"
       }
     ],
-    "description": "This is mostly useful for items that face a specific direction, such as surveillance cameras\nThis is interpreted as css property for 'rotate', thus has to end with 'deg', e.g. `90deg`, `{direction}deg`, `calc(90deg - {camera:direction}deg)``"
+    "description": "This is mostly useful for items that face a specific direction, such as surveillance cameras\nThis is interpreted as css property for 'rotate', thus has to end with 'deg', e.g. `90deg`, `{direction}deg`, `calc(90deg - {camera:direction}deg)`\nIf the icon is shown on the projected centerpoint of a way, one can also use `_direction:centerpoint`"
   },
   {
     "path": [
@@ -9707,7 +9736,7 @@
       "types": "Dynamic value ; string",
       "group": "expert",
       "question": "Which CSS-classes should be applied to the entire marker?",
-      "ifunset": "Do not apply extra CSS-classes to the label",
+      "ifunset": "Do not apply extra CSS-classes to the entire marker",
       "inline": "Apply CSS-classes <b>{value}</b> to the entire container"
     },
     "type": [
@@ -10432,6 +10461,7 @@
       "suggestions": [
         {
           "if": "value=canvas",
+          "alsoShowIf": "value=",
           "then": "The icon will stay upward and not be transformed as if it sticks to the screen"
         },
         {
@@ -13100,10 +13130,6 @@
           "then": "hospital - A layer showing hospital grounds"
         },
         {
-          "if": "value=hotel",
-          "then": "hotel - Layer showing all hotels"
-        },
-        {
           "if": "value=hydrant",
           "then": "hydrant - Map layer to show fire hydrants."
         },
@@ -13390,6 +13416,10 @@
         {
           "if": "value=tool_library",
           "then": "tool_library - A tool library is a place where people from the general public can borrow tools"
+        },
+        {
+          "if": "value=tourism_accomodation",
+          "then": "tourism_accomodation - undefined"
         },
         {
           "if": "value=trail",
@@ -24792,7 +24822,7 @@
       "group": "pointrendering"
     },
     "type": "array",
-    "description": "Creates points to render on the map.\nThis can render points for point-objects, lineobjects or areaobjects; use 'location' to indicate where it should be rendered"
+    "description": "Creates points to render on the map.\nThis can render points for point-objects, lineobjects or areaobjects; use 'location' to indicate where it should be rendered.\nNote that all attributes - including [the calculated tags](https://github.com/pietervdvn/MapComplete/blob/develop/Docs/CalculatedTags.md) can be used to create the markers and lines"
   },
   {
     "path": [
@@ -25038,6 +25068,11 @@
           "if": "value=party",
           "then": "party",
           "icon": "party"
+        },
+        {
+          "if": "value=pencil",
+          "then": "pencil",
+          "icon": "pencil"
         },
         {
           "if": "value=pin",
@@ -27082,8 +27117,27 @@
     ],
     "required": false,
     "hints": {
+      "types": "Dynamic value ; string",
       "question": "What rotation should be applied on the icon?",
-      "ifunset": "Do not rotate"
+      "ifunset": "Do not rotate",
+      "suggestions": [
+        {
+          "if": "value={_direction:centerpoint}deg",
+          "then": "Point the top of the icon towards the end of the way"
+        },
+        {
+          "if": "value=calc( {_direction:centerpoint}deg + 90deg )",
+          "then": "Point the left of the icon towards the end of the way"
+        },
+        {
+          "if": "value=calc( {_direction:centerpoint}deg - 90deg )",
+          "then": "Point the right of the icon towards the end of the way"
+        },
+        {
+          "if": "value=calc( {_direction:centerpoint}deg + 180deg )",
+          "then": "Point the bottom of the icon towards the end of the way"
+        }
+      ]
     },
     "type": [
       {
@@ -27270,7 +27324,7 @@
         "type": "string"
       }
     ],
-    "description": "This is mostly useful for items that face a specific direction, such as surveillance cameras\nThis is interpreted as css property for 'rotate', thus has to end with 'deg', e.g. `90deg`, `{direction}deg`, `calc(90deg - {camera:direction}deg)``"
+    "description": "This is mostly useful for items that face a specific direction, such as surveillance cameras\nThis is interpreted as css property for 'rotate', thus has to end with 'deg', e.g. `90deg`, `{direction}deg`, `calc(90deg - {camera:direction}deg)`\nIf the icon is shown on the projected centerpoint of a way, one can also use `_direction:centerpoint`"
   },
   {
     "path": [
@@ -30811,7 +30865,7 @@
       "types": "Dynamic value ; string",
       "group": "expert",
       "question": "Which CSS-classes should be applied to the entire marker?",
-      "ifunset": "Do not apply extra CSS-classes to the label",
+      "ifunset": "Do not apply extra CSS-classes to the entire marker",
       "inline": "Apply CSS-classes <b>{value}</b> to the entire container"
     },
     "type": [
@@ -31558,6 +31612,7 @@
       "suggestions": [
         {
           "if": "value=canvas",
+          "alsoShowIf": "value=",
           "then": "The icon will stay upward and not be transformed as if it sticks to the screen"
         },
         {
@@ -34308,10 +34363,6 @@
           "then": "hospital - A layer showing hospital grounds"
         },
         {
-          "if": "value=hotel",
-          "then": "hotel - Layer showing all hotels"
-        },
-        {
           "if": "value=hydrant",
           "then": "hydrant - Map layer to show fire hydrants."
         },
@@ -34598,6 +34649,10 @@
         {
           "if": "value=tool_library",
           "then": "tool_library - A tool library is a place where people from the general public can borrow tools"
+        },
+        {
+          "if": "value=tourism_accomodation",
+          "then": "tourism_accomodation - undefined"
         },
         {
           "if": "value=trail",
@@ -44986,7 +45041,7 @@
     "path": [
       "enableMorePrivacy"
     ],
-    "required": true,
+    "required": false,
     "hints": {
       "question": "Should this theme leak some location info when making changes?",
       "iftrue": "Do not write 'change_within_x_m' and do not indicate that this was done by survey",
@@ -44994,5 +45049,30 @@
     },
     "type": "boolean",
     "description": "When a changeset is made, a 'distance to object'-class is written to the changeset.\nFor some particular themes and layers, this might leak too much information, and we want to obfuscate this"
+  },
+  {
+    "path": [
+      "enableCache"
+    ],
+    "required": false,
+    "hints": {
+      "group": "hidden",
+      "question": "Should this theme have the cache enabled?",
+      "iffalse": "Do not cache data",
+      "ifunset": "Cache is enabled"
+    },
+    "type": "boolean",
+    "description": "Should only be dissabled in highly specific cases, such as the GRB-theme"
+  },
+  {
+    "path": [
+      "_usedImages"
+    ],
+    "required": false,
+    "hints": {
+      "group": "hidden"
+    },
+    "type": "array",
+    "description": "Set by the preprocessor"
   }
 ]

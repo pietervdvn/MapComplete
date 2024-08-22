@@ -2,11 +2,7 @@ import LayoutConfig from "./ThemeConfig/LayoutConfig"
 import { SpecialVisualizationState } from "../UI/SpecialVisualization"
 import { Changes } from "../Logic/Osm/Changes"
 import { Store, UIEventSource } from "../Logic/UIEventSource"
-import {
-    FeatureSource,
-    IndexedFeatureSource,
-    WritableFeatureSource,
-} from "../Logic/FeatureSource/FeatureSource"
+import { FeatureSource, IndexedFeatureSource, WritableFeatureSource } from "../Logic/FeatureSource/FeatureSource"
 import { OsmConnection } from "../Logic/Osm/OsmConnection"
 import { ExportableMap, MapProperties } from "./MapProperties"
 import LayerState from "../Logic/State/LayerState"
@@ -50,9 +46,7 @@ import BackgroundLayerResetter from "../Logic/Actors/BackgroundLayerResetter"
 import SaveFeatureSourceToLocalStorage from "../Logic/FeatureSource/Actors/SaveFeatureSourceToLocalStorage"
 import BBoxFeatureSource from "../Logic/FeatureSource/Sources/TouchesBboxFeatureSource"
 import ThemeViewStateHashActor from "../Logic/Web/ThemeViewStateHashActor"
-import NoElementsInViewDetector, {
-    FeatureViewState,
-} from "../Logic/Actors/NoElementsInViewDetector"
+import NoElementsInViewDetector, { FeatureViewState } from "../Logic/Actors/NoElementsInViewDetector"
 import FilteredLayer from "./FilteredLayer"
 import { PreferredRasterLayerSelector } from "../Logic/Actors/PreferredRasterLayerSelector"
 import { ImageUploadManager } from "../Logic/ImageProviders/ImageUploadManager"
@@ -64,7 +58,7 @@ import { GeolocationControlState } from "../UI/BigComponents/GeolocationControl"
 import Zoomcontrol from "../UI/Zoomcontrol"
 import {
     SummaryTileSource,
-    SummaryTileSourceRewriter,
+    SummaryTileSourceRewriter
 } from "../Logic/FeatureSource/TiledFeatureSource/SummaryTileSource"
 import summaryLayer from "../assets/generated/layers/summary.json"
 import last_click_layerconfig from "../assets/generated/layers/last_click.json"
@@ -76,7 +70,6 @@ import { GeoOperations } from "../Logic/GeoOperations"
 import { CombinedFetcher } from "../Logic/Web/NearbyImagesSearch"
 import GeocodingProvider from "../Logic/Geocoding/GeocodingProvider"
 import CombinedSearcher from "../Logic/Geocoding/CombinedSearcher"
-import { NominatimGeocoding } from "../Logic/Geocoding/NominatimGeocoding"
 import CoordinateSearch from "../Logic/Geocoding/CoordinateSearch"
 import LocalElementSearch from "../Logic/Geocoding/LocalElementSearch"
 import { RecentSearch } from "../Logic/Geocoding/RecentSearch"
@@ -130,7 +123,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
     readonly perLayer: ReadonlyMap<string, GeoIndexedStoreForLayer>
     readonly perLayerFiltered: ReadonlyMap<string, FilteringFeatureSource>
 
-    readonly availableLayers: Store<RasterLayerPolygon[]>
+    readonly availableLayers: { store: Store<RasterLayerPolygon[]> }
     readonly userRelatedState: UserRelatedState
     readonly geolocation: GeoLocationHandler
     readonly geolocationControl: GeolocationControlState
@@ -162,6 +155,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
     public readonly toCacheSavers: ReadonlyMap<string, SaveFeatureSourceToLocalStorage>
 
     public readonly nearbyImageSearcher: CombinedFetcher
+
     public readonly geosearch: GeocodingProvider
     public readonly recentlySearched: RecentSearch
 
@@ -385,9 +379,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
         longAgo.setTime(new Date().getTime() - 5 * 365 * 24 * 60 * 60 * 1000)
         this.nearbyImageSearcher = new CombinedFetcher(50, longAgo, this.indexedFeatures)
 
-        this.featureSummary = this.setupSummaryLayer(
-            new LayerConfig(<LayerConfigJson>summaryLayer, "summaryLayer", true)
-        )
+        this.featureSummary = this.setupSummaryLayer()
         this.toCacheSavers = layout.enableCache ? this.initSaveToLocalStorage() : undefined
 
         this.geosearch = new CombinedSearcher(
@@ -667,15 +659,22 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 }
             )
             const setLayerCategory = (category: EliCategory) => {
-                const available = this.availableLayers.data
-                const current = this.mapProperties.rasterLayer
-                const best = RasterLayerUtils.SelectBestLayerAccordingTo(
-                    available,
-                    category,
-                    current.data
-                )
-                console.log("Best layer for category", category, "is", best.properties.id)
-                current.setData(best)
+                const timeOfCall = new Date()
+                this.availableLayers.store.addCallbackAndRunD((available) => {
+                    const now = new Date()
+                    const timeDiff = (now.getTime() - timeOfCall.getTime()) / 1000
+                    if (timeDiff > 3) {
+                        return true // unregister
+                    }
+                    const current = this.mapProperties.rasterLayer
+                    const best = RasterLayerUtils.SelectBestLayerAccordingTo(
+                        available,
+                        category,
+                        current.data
+                    )
+                    console.log("Best layer for category", category, "is", best.properties.id)
+                    current.setData(best)
+                })
             }
 
             Hotkeys.RegisterHotkey(
@@ -716,7 +715,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
         )
     }
 
-    private setupSummaryLayer(summaryLayerConfig: LayerConfig): SummaryTileSourceRewriter {
+    private setupSummaryLayer(): SummaryTileSourceRewriter {
         /**
          * MaxZoom for the summary layer
          */
@@ -743,8 +742,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
             }
         )
 
-        const src = new SummaryTileSourceRewriter(summaryTileSource, this.layerState.filteredLayers)
-        return src
+        return new SummaryTileSourceRewriter(summaryTileSource, this.layerState.filteredLayers)
     }
 
     /**

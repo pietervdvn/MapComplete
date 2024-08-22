@@ -702,6 +702,11 @@
         "takeImages": "Take images of the tree to automatically detect the tree type",
         "tryAgain": "Select a different species"
     },
+    "preset_type": {
+        "question": "Of what type is this object?",
+        "typeDescription": "This is a {title}. {description}",
+        "typeTitle": "This is a {title}"
+    },
     "privacy": {
         "editingIntro": "When you make a change to the map, this change is recorded on OpenStreetMap and is publicly available to anyone. A changeset made with MapComplete includes the following data:",
         "editingOutro": "Please refer to <a href='https://wiki.osmfoundation.org/wiki/Privacy_Policy' target='_blank'>the privacy policy on OpenStreetMap.org</a> for detailed information. We'd like to remind you that you can use a fictional name when signing up.",

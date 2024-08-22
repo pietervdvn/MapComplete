@@ -961,7 +961,7 @@ export class TagRenderingConfigUtils {
                     tags,
                     country.split(";"),
                     center,
-                    {sortByFrequency: true}
+                    { sortByFrequency: true }
                 )
             )
         })
@@ -974,6 +974,7 @@ export class TagRenderingConfigUtils {
             const oldMappingsCloned =
                 clone.mappings?.map((m) => ({
                     ...m,
+                    addExtraTags: "nobrand=",
                     priorityIf: m.priorityIf ?? TagUtils.Tag("id~*"),
                 })) ?? []
             clone.mappings = [...oldMappingsCloned, ...extraMappings]

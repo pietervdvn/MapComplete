@@ -57,7 +57,8 @@ export class GeoLocationState {
      * If the user denies the geolocation this time, we unset this flag
      * @private
      */
-    private readonly _previousLocationGrant: UIEventSource<boolean> = LocalStorageSource.GetParsed<boolean>("geolocation-permissions", false)
+    private readonly _previousLocationGrant: UIEventSource<boolean> =
+        LocalStorageSource.GetParsed<boolean>("geolocation-permissions", false)
 
     /**
      * Used to detect a permission retraction
@@ -67,8 +68,8 @@ export class GeoLocationState {
     /**
      * A human explanation of the current gps state, to be shown on the home screen or as tooltip
      */
-    public readonly gpsStateExplanation  : Store<Translation>
-     constructor() {
+    public readonly gpsStateExplanation: Store<Translation>
+    constructor() {
         const self = this
 
         this.permission.addCallbackAndRunD(async (state) => {
@@ -103,33 +104,33 @@ export class GeoLocationState {
             this.requestPermission()
         }
 
+        this.gpsStateExplanation = this.gpsAvailable.map(
+            (available) => {
+                if (this.currentGPSLocation.data !== undefined) {
+                    if (!this.allowMoving.data) {
+                        return Translations.t.general.visualFeedback.islocked
+                    }
 
-        this.gpsStateExplanation = this.gpsAvailable.map(available => {
-            if (!available) {
-                return Translations.t.general.labels.locationNotAvailable
-            }
-            if (this.permission.data === "denied") {
-                return Translations.t.general.geopermissionDenied
-            }
-            if (this.permission.data === "prompt") {
-                return Translations.t.general.labels.jumpToLocation
-            }
-            if (this.permission.data === "requested") {
-                return Translations.t.general.waitingForGeopermission
-            }
+                    return Translations.t.general.labels.jumpToLocation
+                }
 
-
-            if (!this.allowMoving.data) {
-                return Translations.t.general.visualFeedback.islocked
-            }
-
-            if (this.currentGPSLocation.data !== undefined) {
-                return Translations.t.general.labels.jumpToLocation
-            }
-            return Translations.t.general.waitingForLocation
-        }, [this.allowMoving, this.permission, this.currentGPSLocation])
-
-     }
+                if (!available) {
+                    return Translations.t.general.labels.locationNotAvailable
+                }
+                if (this.permission.data === "denied") {
+                    return Translations.t.general.geopermissionDenied
+                }
+                if (this.permission.data === "prompt") {
+                    return Translations.t.general.labels.jumpToLocation
+                }
+                if (this.permission.data === "requested") {
+                    return Translations.t.general.waitingForGeopermission
+                }
+                return Translations.t.general.waitingForLocation
+            },
+            [this.allowMoving, this.permission, this.currentGPSLocation]
+        )
+    }
 
     /**
      * Requests the user to allow access to their position.
@@ -208,12 +209,12 @@ export class GeoLocationState {
                 self._previousLocationGrant.setData(true)
             },
             function (e) {
-                if(e.code === 2 || e.code === 3){
+                if (e.code === 2 || e.code === 3) {
                     self._gpsAvailable.set(false)
                     return
                 }
                 self._gpsAvailable.set(true) // We go back to the default assumption that the location is physically available
-                if(e.code === 1) {
+                if (e.code === 1) {
                     self.permission.set("denied")
                     self._grantedThisSession.setData(false)
                     return

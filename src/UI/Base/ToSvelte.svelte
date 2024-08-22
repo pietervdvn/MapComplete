@@ -40,10 +40,7 @@
       style={svelteElem.getStyle()}
     />
   {:else}
-    <svelte:component
-      this={svelteElem?._svelteComponent}
-      {...svelteElem._props}
-    />
+    <svelte:component this={svelteElem?._svelteComponent} {...svelteElem._props} />
   {/if}
 {:else}
   <span bind:this={elem} />

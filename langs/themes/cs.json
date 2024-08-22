@@ -445,14 +445,6 @@
     },
     "cycle_highways": {
         "description": "Tato mapa zobrazuje cyklostezky",
-        "layers": {
-            "0": {
-                "name": "cyklodálnice",
-                "title": {
-                    "render": "cyklodálnice"
-                }
-            }
-        },
         "title": "Cyklodálnice"
     },
     "cycle_infra": {
@@ -1068,47 +1060,6 @@
         "description": "Na této mapě můžete označit základní informace o obchodech, přidat otevírací dobu a telefonní čísla",
         "shortDescription": "Upravitelná mapa se základními informacemi o obchodech",
         "title": "Obchody"
-    },
-    "sidewalks": {
-        "description": "Experimentální téma",
-        "layers": {
-            "0": {
-                "description": "Vrstva zobrazující chodníky silnic",
-                "name": "Chodníky",
-                "tagRenderings": {
-                    "left-right-questions": {
-                        "renderings": {
-                            "1": {
-                                "mappings": {
-                                    "0": {
-                                        "then": "Na této straně silnice je chodník"
-                                    },
-                                    "1": {
-                                        "then": "Není tu žádný chodník"
-                                    },
-                                    "2": {
-                                        "then": "Na mapě je vyznačen samostatný chodník"
-                                    }
-                                },
-                                "question": "Je na této straně silnice chodník?"
-                            },
-                            "2": {
-                                "question": "Jaká je šířka chodníku na této straně silnice?",
-                                "render": "Tento chodník je široký {sidewalk:left|right:width}m"
-                            }
-                        }
-                    },
-                    "streetname": {
-                        "render": "Tato ulice se jmenuje {name}"
-                    }
-                },
-                "title": {
-                    "render": "{name}"
-                }
-            }
-        },
-        "shortDescription": "Mapování chodníků",
-        "title": "Chodníky"
     },
     "sport_pitches": {
         "description": "Sportovní hřiště je plocha, na které se provozují sporty",

@@ -277,17 +277,6 @@
     "shops": {
         "title": "Denda"
     },
-    "sidewalks": {
-        "layers": {
-            "0": {
-                "name": "Espaloiak",
-                "title": {
-                    "render": "{name}"
-                }
-            }
-        },
-        "title": "Espaloiak"
-    },
     "sports": {
         "title": "Kirolak"
     },

@@ -42,11 +42,13 @@
     undefined,
     "Used to complete the login"
   )
-  const fakeUser = UIEventSource.asBoolean( QueryParameters.GetQueryParameter("fake-user", "Test switch for fake login"))
+  const fakeUser = UIEventSource.asBoolean(
+    QueryParameters.GetQueryParameter("fake-user", "Test switch for fake login")
+  )
   let osmConnection = new OsmConnection({
     oauth_token,
     checkOnlineRegularly: true,
-    fakeUser: fakeUser.data
+    fakeUser: fakeUser.data,
   })
   const expertMode = UIEventSource.asBoolean(
     osmConnection.GetPreference("studio-expert-mode", "false", {

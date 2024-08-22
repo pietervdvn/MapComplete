@@ -213,6 +213,7 @@
         "backgroundMap": "Hintergrundkarte auswählen",
         "backgroundSwitch": "Hintergrund wechseln",
         "cancel": "Abbrechen",
+        "clearPendingChanges": "Ausstehende Änderungen löschen",
         "confirm": "Bestätigen",
         "customThemeIntro": "Bereits angesehene nutzergenerierte Themen.",
         "customThemeTitle": "Benutzerdefinierte Themen",
@@ -273,6 +274,7 @@
             "background": "Hintergrund ändern",
             "filter": "Daten filtern",
             "jumpToLocation": "Eigenen Standort anzeigen",
+            "locationNotAvailable": "GPS-Ortung nicht verfügbar. Verfügt das Gerät über einen Standort oder bist du in einem Tunnel?",
             "menu": "Menü",
             "zoomIn": "Hineinzoomen",
             "zoomOut": "Herauszoomen"
@@ -696,6 +698,11 @@
         "seeInfo": "Weitere Informationen über diese Art",
         "takeImages": "Machen Sie Fotos vom Baum, um die Baumart automatisch zu erkennen",
         "tryAgain": "Wähle eine andere Art"
+    },
+    "preset_type": {
+        "question": "Von welcher Art ist dieses Objekt?",
+        "typeDescription": "Diest ist ein {title}. {description}",
+        "typeTitle": "Dies ist ein {title}"
     },
     "privacy": {
         "editingIntro": "Ihre Änderungen werden auf OpenStreetMap gespeichert und sind öffentlich zugänglich. Ein mit MapComplete erstellter Änderungssatz enthält folgende Daten:",

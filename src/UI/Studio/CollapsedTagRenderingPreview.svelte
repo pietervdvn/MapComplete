@@ -1,5 +1,4 @@
 <script lang="ts">
-
   import Translations from "../i18n/Translations"
   import type { ConfigMeta } from "./configMeta"
   import Icon from "../Map/Icon.svelte"
@@ -11,9 +10,7 @@
   import QuestionPreview from "./QuestionPreview.svelte"
   import SchemaBasedMultiType from "./SchemaBasedMultiType.svelte"
   import { EditJsonState } from "./EditLayerState"
-  import type {
-    QuestionableTagRenderingConfigJson,
-  } from "../../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
+  import type { QuestionableTagRenderingConfigJson } from "../../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
   import { AccordionItem } from "flowbite-svelte"
 
   export let state: EditJsonState<any>
@@ -33,14 +30,16 @@
     .getSchemaStartingWith(schema.path)
     .filter((part) => part.path.length - 1 === schema.path.length)
 
+  let usesOverride = value["builtin"] !== undefined
+
   function schemaForMultitype() {
     const sch = { ...schema }
     sch.hints.typehint = undefined
     return sch
   }
 
-  function fusePath(i: number, subpartPath: string[]): (string | number)[] {
-    const newPath = [...path, i]
+  function fusePath(subpartPath: string[]): (string | number)[] {
+    const newPath = [...path]
     const toAdd = [...subpartPath]
     for (const part of path) {
       if (toAdd[0] === part) {
@@ -84,10 +83,10 @@
     } catch (e) {
       console.log(
         "Warning: could not translate a title for " +
-        `${singular} ${i} with function ` +
-        schema.hints.title +
-        " and value " +
-        JSON.stringify(value),
+          `${singular} ${i} with function ` +
+          schema.hints.title +
+          " and value " +
+          JSON.stringify(value)
       )
     }
     return Translations.T(`${singular} ${i}`)
@@ -109,11 +108,10 @@
   }
 </script>
 
-
-<AccordionItem open={$expanded} paddingDefault="p-0" inactiveClass="text-black m-0" >
-  <div slot="header" class="p-1 text-base w-full m-0 text-black">
+<AccordionItem open={$expanded} paddingDefault="p-0" inactiveClass="text-black m-0">
+  <div slot="header" class="m-0 w-full p-1 text-base text-black">
     {#if !isTagRenderingBlock}
-      <div class="flex items-center justify-between w-full">
+      <div class="flex w-full items-center justify-between">
         <div class="m-0 flex">
           {#if schema.hints.icon}
             <Icon clss="w-6 h-6" icon={genIcon(value)} color={genColor(value)} />
@@ -132,27 +130,30 @@
         <button
           class="h-fit w-fit rounded-full border border-black p-1"
           on:click={() => {
-                  del(i)
-                }}
+            del(i)
+          }}
         >
           <TrashIcon class="h-4 w-4" />
         </button>
       </div>
     {:else if typeof value === "string"}
       Builtin: <b>{value}</b>
-      {:else if value["builtin"]}
+    {:else if value["builtin"]}
       reused tagrendering <span class="font-bold">{JSON.stringify(value["builtin"])}</span>
     {:else}
       <Tr cls="font-bold" t={Translations.T(value?.question ?? value?.render)} />
     {/if}
   </div>
-  <div class="normal-background p-2">
-    {#if isTagRenderingBlock}
+  <div class="normal-background border border-gray-300 p-2">
+    {#if usesOverride}
+      This block uses an builtin/override construction and cannot be edited in Studio. Edit the code
+      directly
+    {:else if isTagRenderingBlock}
       <QuestionPreview {state} {path} {schema}>
         <button
           on:click={() => {
-                  del(i)
-                }}
+            del(i)
+          }}
         >
           <TrashIcon class="h-4 w-4" />
           Delete this question
@@ -161,16 +162,16 @@
         {#if i > 0}
           <button
             on:click={() => {
-                    moveTo(i, 0)
-                  }}
+              moveTo(i, 0)
+            }}
           >
             Move to front
           </button>
 
           <button
             on:click={() => {
-                    swap(i, i - 1)
-                  }}
+              swap(i, i - 1)
+            }}
           >
             Move up
           </button>
@@ -178,28 +179,25 @@
         {#if i + 1 < $currentValue.length}
           <button
             on:click={() => {
-                    swap(i, i + 1)
-                  }}
+              swap(i, i + 1)
+            }}
           >
             Move down
           </button>
           <button
             on:click={() => {
-                    moveTo(i, $currentValue.length - 1)
-                  }}
+              moveTo(i, $currentValue.length - 1)
+            }}
           >
             Move to back
           </button>
         {/if}
       </QuestionPreview>
     {:else if schema.hints.types}
-      <SchemaBasedMultiType {state} {path} schema={schemaForMultitype()} />
+      <SchemaBasedMultiType {state} path={[...path, i]} schema={schemaForMultitype()} />
     {:else}
       {#each subparts as subpart}
-        <SchemaBasedInput
-          {state}
-          {path}
-        />
+        <SchemaBasedInput {state} path={fusePath(subpart.path)} schema={subpart} />
       {/each}
     {/if}
   </div>

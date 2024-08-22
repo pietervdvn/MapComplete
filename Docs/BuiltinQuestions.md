@@ -74,6 +74,7 @@ This is a special layer - data is not sourced from OpenStreetMap
 49. [seasonal](#seasonal)
 50. [shower](#shower)
 51. [preset_description](#preset_description)
+52. [brand](#brand)
 
 ## Supported attributes
 
@@ -112,6 +113,7 @@ This is a special layer - data is not sourced from OpenStreetMap
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/diet:vegan#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/diet%3Avegan/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [diet:vegan](https://wiki.openstreetmap.org/wiki/Key:diet:vegan) | Multiple choice | [only](https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Donly) [yes](https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dlimited) [no](https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dno) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/seasonal#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/seasonal/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [seasonal](https://wiki.openstreetmap.org/wiki/Key:seasonal) | Multiple choice | [no](https://wiki.openstreetmap.org/wiki/Tag:seasonal%3Dno) [summer](https://wiki.openstreetmap.org/wiki/Tag:seasonal%3Dsummer) [spring;summer;autumn](https://wiki.openstreetmap.org/wiki/Tag:seasonal%3Dspring;summer;autumn) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/shower#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/shower/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [shower](https://wiki.openstreetmap.org/wiki/Key:shower) | Multiple choice | [hot](https://wiki.openstreetmap.org/wiki/Tag:shower%3Dhot) [cold](https://wiki.openstreetmap.org/wiki/Tag:shower%3Dcold) [yes](https://wiki.openstreetmap.org/wiki/Tag:shower%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:shower%3Dno) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/brand#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/brand/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [brand](https://wiki.openstreetmap.org/wiki/Key:brand) | [string](../SpecialInputElements.md#string) |  |
 
 
 
@@ -135,7 +137,7 @@ _This tagrendering has no question and is thus read-only_
 ### mapillary
 Shows a button to open Mapillary on this location
 _This tagrendering has no question and is thus read-only_
-*{mapillary()}*
+*{mapillary_link()}*
 
 
 
@@ -201,7 +203,7 @@ The question is `What is the Mastodon-handle of {title()}?`
 ### facebook
 Shows and asks for the facebook handle
 The question is `What is the facebook page of of {title()}?`
-*{link(Facebook page,&LBRACEcontact:facebook&RBRACE,,,)}<div class='subtle text-sm'>Facebook is known to harm mental health, manipulate public opinion and cause hate. Try to use healthier alternatives</div>* is shown if `contact:facebook` is set
+*{link(Facebook page,&LBRACEcontact:facebook&RBRACE,,,,)}<div class='subtle text-sm'>Facebook is known to harm mental health, manipulate public opinion and cause hate. Try to use healthier alternatives</div>* is shown if `contact:facebook` is set
 
 
 
@@ -724,6 +726,18 @@ The question is `Does this facility offer showers?`
 
 _This tagrendering has no question and is thus read-only_
 *{preset_description()}*
+
+
+
+
+### brand
+
+The question is `Is {title()} part of a bigger brand?`
+*Part of {brand}* is shown if `brand` is set
+
+
+ -  *Not part of a bigger brand* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:nobrand' target='_blank'>nobrand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:nobrand%3Dyes' target='_blank'>yes</a>
+
 
 
 

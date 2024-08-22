@@ -172,6 +172,13 @@ export default class ScriptUtils {
         headers?: any,
         timeoutSecs?: number
     ): Promise<{ content: string } | { redirect: string } | "timeout"> {
+        if (url.startsWith("./assets")) {
+            return Promise.resolve({ content: readFileSync("./public/" + url, "utf8") })
+        }
+        if (url.startsWith("./")) {
+            return Promise.resolve({ content: readFileSync(url, "utf8") })
+        }
+
         const requestPromise = new Promise((resolve, reject) => {
             try {
                 headers = headers ?? {}

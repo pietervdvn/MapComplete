@@ -1269,6 +1269,12 @@
             }
         }
     },
+    "cycle_highways": {
+        "name": "ścieżki rowerowe",
+        "title": {
+            "render": "ścieżka rowerowa"
+        }
+    },
     "cycleways_and_roads": {
         "tagRenderings": {
             "Maxspeed (for road)": {
@@ -1873,32 +1879,6 @@
         },
         "title": {
             "render": "Szpital"
-        }
-    },
-    "hotel": {
-        "description": "Warstwa pokazująca wszystkie hotele",
-        "name": "Hotele",
-        "presets": {
-            "0": {
-                "title": "hotel"
-            }
-        },
-        "tagRenderings": {
-            "name": {
-                "freeform": {
-                    "placeholder": "Nazwa hotelu"
-                },
-                "question": "Jak nazywa się ten hotel?",
-                "render": "Nazwa tego hotelu to {name}"
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Hotel {name}"
-                }
-            },
-            "render": "Hotel"
         }
     },
     "hydrant": {
@@ -3301,6 +3281,20 @@
             },
             "Level": {
                 "question": "Na którym piętrze znajduje się ta kamera?"
+            }
+        }
+    },
+    "tourism_accomodation": {
+        "presets": {
+            "0": {
+                "title": "hotel"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Hotel {name}"
+                }
             }
         }
     },

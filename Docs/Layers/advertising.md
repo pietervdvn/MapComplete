@@ -13,13 +13,13 @@ We will complete data from advertising features with reference, operator and lit
 
 
  - This layer is shown at zoomlevel **15** and higher
- - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  a preset snaps to this layer (presets[2])
- - This layer will automatically load  [shelter](./shelter.md)  into the layout as it depends on it:  a preset snaps to this layer (presets[3])
- - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  a preset snaps to this layer (presets[8])
- - This layer will automatically load  [shelter](./shelter.md)  into the layout as it depends on it:  a preset snaps to this layer (presets[9])
- - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  a preset snaps to this layer (presets[10])
- - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  a preset snaps to this layer (presets[12])
- - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  a preset snaps to this layer (presets[14])
+ - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  preset `a poster box mounted on a wall` snaps to this layer (advertising.presets[2])
+ - This layer will automatically load  [shelter](./shelter.md)  into the layout as it depends on it:  preset `a poster box part of a public transport shelter` snaps to this layer (advertising.presets[3])
+ - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  preset `a screen mounted on a wall` snaps to this layer (advertising.presets[8])
+ - This layer will automatically load  [shelter](./shelter.md)  into the layout as it depends on it:  preset `a screen mounted on a transit shelter` snaps to this layer (advertising.presets[9])
+ - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  preset `a tarp` snaps to this layer (advertising.presets[10])
+ - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  preset `a sign` snaps to this layer (advertising.presets[12])
+ - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  preset `a wall painting` snaps to this layer (advertising.presets[14])
 
 
 

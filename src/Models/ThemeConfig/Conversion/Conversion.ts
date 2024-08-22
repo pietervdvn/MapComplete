@@ -84,7 +84,7 @@ export class Pipe<TIn, TInter, TOut> extends Conversion<TIn, TOut> {
 
     convert(json: TIn, context: ConversionContext): TOut {
         const r0 = this._step0.convert(json, context.inOperation(this._step0.name))
-        if(context.hasErrors() && this._failfast){
+        if (context.hasErrors() && this._failfast) {
             return undefined
         }
         return this._step1.convert(r0, context.inOperation(this._step1.name))

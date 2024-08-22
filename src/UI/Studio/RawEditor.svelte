@@ -5,17 +5,22 @@
   import type * as Monaco from "monaco-editor/esm/vs/editor/editor.api"
   import layerSchemaJSON from "../../../Docs/Schemas/LayerConfigJson.schema.json"
   import layoutSchemaJSON from "../../../Docs/Schemas/LayoutConfigJson.schema.json"
+  import Loading from "../Base/Loading.svelte"
 
   export let state: EditLayerState | EditThemeState
 
-  let rawConfig = state.configuration.sync(f => JSON.stringify(f, null, "  "), [], json => {
-    try {
-      return JSON.parse(json)
-    } catch (e) {
-      console.error("Could not parse", json)
-      return undefined
+  let rawConfig = state.configuration.sync(
+    (f) => JSON.stringify(f, null, "  "),
+    [],
+    (json) => {
+      try {
+        return JSON.parse(json)
+      } catch (e) {
+        console.error("Could not parse", json)
+        return undefined
+      }
     }
-  })
+  )
 
   let container: HTMLDivElement
   let monaco: typeof Monaco
@@ -44,6 +49,7 @@
   })
 
   let useFallback = false
+  let isLoaded = false
   onMount(async () => {
     const monacoEditor = await import("monaco-editor")
     loader.config({
@@ -86,7 +92,7 @@
       model = monaco?.editor?.createModel(
         JSON.stringify(state.configuration.data, null, "  "),
         "json",
-        modelUri,
+        modelUri
       )
     } catch (e) {
       console.error("Could not create model in MOnaco Editor", e)
@@ -106,6 +112,7 @@
         save()
       }, 500)
     })
+    isLoaded = true
   })
 
   onDestroy(() => {
@@ -121,5 +128,11 @@
 {#if useFallback}
   <textarea class="w-full" rows="25" bind:value={$rawConfig} />
 {:else}
-  <div bind:this={container} class="h-full w-full" />
+  <div bind:this={container} class="h-full w-full">
+    {#if !isLoaded}
+      <div class="align-center flex h-full w-full items-center">
+        <Loading />
+      </div>
+    {/if}
+  </div>
 {/if}

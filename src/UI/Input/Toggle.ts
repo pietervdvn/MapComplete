@@ -17,7 +17,6 @@ export default class Toggle extends VariableUiElement {
         super(isEnabled?.map((isEnabled) => (isEnabled ? showEnabled : showDisabled)))
         this.isEnabled = isEnabled
     }
-
 }
 
 /**
@@ -34,5 +33,4 @@ export class ClickableToggle extends Toggle {
         super(showEnabled, showDisabled, isEnabled)
         this.isEnabled = isEnabled
     }
-
 }

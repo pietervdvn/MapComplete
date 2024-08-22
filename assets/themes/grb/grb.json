@@ -787,6 +787,6 @@
   },
   "overpassMaxZoom": 15,
   "osmApiTileSize": 17,
-  "widenFactor": 2,
-  "enableCache": false
+  "enableCache": false,
+  "widenFactor": 2
 }

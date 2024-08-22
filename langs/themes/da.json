@@ -386,14 +386,6 @@
     },
     "cycle_highways": {
         "description": "Dette kort viser cykelmotorveje",
-        "layers": {
-            "0": {
-                "name": "cykelmotorveje",
-                "title": {
-                    "render": "cykelmotorvej"
-                }
-            }
-        },
         "title": "Cykelmotorveje"
     },
     "cycle_infra": {
@@ -926,47 +918,6 @@
         "description": "På dette kort kan man markere grundlæggende informationer om butikker, tilføje åbningstider og telefonnumre",
         "shortDescription": "Et redigerbart kort med grundlæggende butiksoplysninger",
         "title": "Butikker"
-    },
-    "sidewalks": {
-        "description": "Eksperimentelt tema",
-        "layers": {
-            "0": {
-                "description": "Lag, der viser fortove på motorveje",
-                "name": "Fortove",
-                "tagRenderings": {
-                    "left-right-questions": {
-                        "renderings": {
-                            "1": {
-                                "mappings": {
-                                    "0": {
-                                        "then": "Der er et fortov på denne side af vejen"
-                                    },
-                                    "1": {
-                                        "then": "Der er ikke noget fortov at gå på"
-                                    },
-                                    "2": {
-                                        "then": "Der er et særskilt kortlagt fortov at gå på"
-                                    }
-                                },
-                                "question": "Er der et fortov på denne side af vejen?"
-                            },
-                            "2": {
-                                "question": "Hvad er bredden af fortovet på denne side af vejen?",
-                                "render": "Dette fortov er {sidewalk:left|right:width}m bredt"
-                            }
-                        }
-                    },
-                    "streetname": {
-                        "render": "Denne gade hedder {name}"
-                    }
-                },
-                "title": {
-                    "render": "{name}"
-                }
-            }
-        },
-        "shortDescription": "Kortlægning af fortov",
-        "title": "Fortove"
     },
     "ski": {
         "title": "Skiløjper og skilifte"

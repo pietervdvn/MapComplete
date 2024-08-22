@@ -2404,6 +2404,12 @@
             "render": "Encreuament"
         }
     },
+    "cycle_highways": {
+        "name": "vies ciclistes",
+        "title": {
+            "render": "via ciclista"
+        }
+    },
     "cycleways_and_roads": {
         "description": "Totes les infraestructures per les quals algú pot ciclar, acompanyades de preguntes sobre aquesta infraestructura",
         "name": "Vies ciclistes i carreteres",
@@ -4160,32 +4166,6 @@
         },
         "title": {
             "render": "Hospital"
-        }
-    },
-    "hotel": {
-        "description": "Capa que mostra tots els hotels",
-        "name": "Hotels",
-        "presets": {
-            "0": {
-                "title": "un hotel"
-            }
-        },
-        "tagRenderings": {
-            "name": {
-                "freeform": {
-                    "placeholder": "Nom de l'hotel"
-                },
-                "question": "Quin és el nom d'aquest hotel?",
-                "render": "Aquest hotel es diu {name}"
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Hotel {name}"
-                }
-            },
-            "render": "Hotel"
         }
     },
     "hydrant": {
@@ -7970,6 +7950,20 @@
                 }
             },
             "render": "Lavabo a la instal·lació"
+        }
+    },
+    "tourism_accomodation": {
+        "presets": {
+            "0": {
+                "title": "un hotel"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Hotel {name}"
+                }
+            }
         }
     },
     "trail": {

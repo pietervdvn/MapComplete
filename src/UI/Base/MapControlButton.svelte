@@ -12,14 +12,13 @@
   export let cls = "m-0.5 p-0.5 sm:p-1 md:m-1"
   export let enabled: Store<boolean> = new ImmutableStore(true)
   export let arialabel: Translation = undefined
-  export let arialabelDynamic : Store<Translation> = new ImmutableStore(arialabel)
-  let arialabelString = arialabelDynamic.bind(tr => tr?.current)
+  export let arialabelDynamic: Store<Translation> = new ImmutableStore(arialabel)
+  let arialabelString = arialabelDynamic.bind((tr) => tr?.current)
   export let htmlElem: UIEventSource<HTMLElement> = undefined
   let _htmlElem: HTMLElement
   $: {
     htmlElem?.setData(_htmlElem)
   }
-
 </script>
 
 <button

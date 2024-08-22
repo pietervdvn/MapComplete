@@ -161,7 +161,7 @@
     <Airport {color} class={clss}/>
   {:else if Utils.isEmoji(icon)}
     <span style={`font-size: ${emojiHeight}px; line-height: ${emojiHeight}px`}>
-    {icon}
+      {icon}
     </span>
 
   {:else}

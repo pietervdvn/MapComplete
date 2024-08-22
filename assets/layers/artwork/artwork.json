@@ -792,20 +792,23 @@
     {
       "id": "doubles_as_memorial",
       "question": {
-        "en": "Does this artwork serve as a memorial?"
+        "en": "Does this artwork serve as a memorial?",
+        "de": "Dient dieses Kunstwerk als Mahnmal?"
       },
       "mappings": [
         {
           "if": "historic=memorial",
           "then": {
-            "en": "This artwork also serves as a memorial"
+            "en": "This artwork also serves as a memorial",
+            "de": "Dieses Kunstwerk dient auch als Mahnmal"
           }
         },
         {
           "if": "historic=",
           "alsoShowIf": "historic!=memorial",
           "then": {
-            "en": "This artwork does not serve as a bench"
+            "en": "This artwork does not serve as a bench",
+            "de": "Dieses Kunstwerk dient nicht als Sitzbank"
           }
         }
       ]

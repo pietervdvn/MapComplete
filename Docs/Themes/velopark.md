@@ -138,7 +138,7 @@ Elements must match the expression **mr_taskId~.+**
 ### velopark-ref
 
 The question is `What is the URL of the data path within Velopark?`
-*This bicycle parking is on OpenStreetMap and is linked to Velopark:{link(&LBRACEref:velopark&RBRACE,&LBRACEref:velopark&RBRACE,,,)}* is shown if `ref:velopark` is set
+*This bicycle parking is on OpenStreetMap and is linked to Velopark:{link(&LBRACEref:velopark&RBRACE,&LBRACEref:velopark&RBRACE,,,,)}* is shown if `ref:velopark` is set
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbicycle_parking' target='_blank'>bicycle_parking</a>
 
@@ -162,7 +162,7 @@ _This tagrendering has no question and is thus read-only_
 ### is_linked
 
 _This tagrendering has no question and is thus read-only_
-*{link(Matched with bicycle parking &LBRACE_osm_parkings_with_this_velopark_ref&RBRACE,#&LBRACE_osm_parkings_with_this_velopark_ref&RBRACE,,,)}* is shown if `_osm_parkings_with_this_velopark_ref` is set
+*{link(Matched with bicycle parking &LBRACE_osm_parkings_with_this_velopark_ref&RBRACE,#&LBRACE_osm_parkings_with_this_velopark_ref&RBRACE,,,,)}* is shown if `_osm_parkings_with_this_velopark_ref` is set
 
 
 
@@ -170,7 +170,7 @@ _This tagrendering has no question and is thus read-only_
 ### velopark-link
 
 _This tagrendering has no question and is thus read-only_
-*This is data from <b>Velopark</b>. {link(See on velopark &LPARENSwebpage&RPARENS,https://www.velopark.be/static/data/&LBRACEmr_velopark_id&RBRACE,,,)}*
+*This is data from <b>Velopark</b>. {link(See on velopark &LPARENSwebpage&RPARENS,https://www.velopark.be/static/data/&LBRACEmr_velopark_id&RBRACE,,,,)}*
 
 
 
@@ -262,7 +262,7 @@ _This tagrendering has no question and is thus read-only_
 ### velopark-data-link
 
 _This tagrendering has no question and is thus read-only_
-*{link(Inspect raw data on velopark.be,&LBRACEref:velopark&RBRACE,,,)}*
+*{link(Inspect raw data on velopark.be,&LBRACEref:velopark&RBRACE,,,,)}*
 
 
 
@@ -375,7 +375,7 @@ Elements must match **all** of the following expressions:
 ### velopark-ref
 
 The question is `What is the URL of the data path within Velopark?`
-*This bicycle parking is on OpenStreetMap and is linked to Velopark:{link(&LBRACEref:velopark&RBRACE,&LBRACEref:velopark&RBRACE,,,)}* is shown if `ref:velopark` is set
+*This bicycle parking is on OpenStreetMap and is linked to Velopark:{link(&LBRACEref:velopark&RBRACE,&LBRACEref:velopark&RBRACE,,,,)}* is shown if `ref:velopark` is set
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbicycle_parking' target='_blank'>bicycle_parking</a>
 

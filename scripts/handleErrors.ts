@@ -28,7 +28,6 @@ class HandleErrors extends Script {
     constructor() {
         super("Inspects the errors made on a given day. Argument: path to errors")
     }
-
     async main(args: string[]): Promise<void> {
         const osmConnection = new OsmConnection()
         const downloader = new OsmObjectDownloader(osmConnection.Backend(), undefined)
@@ -75,7 +74,12 @@ class HandleErrors extends Script {
         }
 
         for (const parsed of all) {
-            console.log(parsed.message.username, parsed.message.layout, parsed.message.message, parsed.date)
+            console.log(
+                parsed.message.username,
+                parsed.message.layout,
+                parsed.message.message,
+                parsed.date
+            )
 
             const e = parsed.message
             const neededIds = Changes.GetNeededIds(e.pendingChanges)
@@ -113,7 +117,7 @@ class HandleErrors extends Script {
                     "Changes for " + parsed.index + ": empty changeset, not creating a file for it"
                 )*/
             } else if (createdChangesets.has(changeset)) {
-               /* console.log(
+                /* console.log(
                     "Changeset " +
                         parsed.index +
                         " is identical to previously seen changeset, not writing to file"
@@ -127,7 +131,7 @@ ${changeset}`
             }
             const refusedContent = JSON.stringify(refused)
             if (refusedFiles.has(refusedContent)) {
-               /* console.log(
+                /* console.log(
                     "Refused changes for " +
                         parsed.index +
                         " is identical to previously seen changeset, not writing to file"

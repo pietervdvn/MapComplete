@@ -1,124 +1,8 @@
-import { Client } from "pg"
 import { Tiles } from "../../src/Models/TileRange"
 import { Server } from "../server"
 import Script from "../Script"
+import { OsmPoiDatabase } from "./osmPoiDatabase"
 
-/**
- * Just the OSM2PGSL default database
- */
-interface PoiDatabaseMeta {
-    attributes
-    current_timestamp
-    db_format
-    flat_node_file
-    import_timestamp
-    output
-    prefix
-    replication_base_url
-    replication_sequence_number
-    replication_timestamp
-    style
-    updatable
-    version
-}
-
-/**
- * Connects with a Postgis database, gives back how much items there are within the given BBOX
- */
-class OsmPoiDatabase {
-    private static readonly prefixes: ReadonlyArray<string> = ["pois", "lines", "polygons"]
-    private readonly _client: Client
-    private isConnected = false
-    private supportedLayers: Set<string> = undefined
-    private supportedLayersDate: Date = undefined
-    private metaCache: PoiDatabaseMeta = undefined
-    private metaCacheDate: Date = undefined
-
-    constructor(connectionString: string) {
-        this._client = new Client(connectionString)
-    }
-
-    async getCount(
-        layer: string,
-        bbox: [[number, number], [number, number]] = undefined
-    ): Promise<{ count: number; lat: number; lon: number }> {
-        if (!this.isConnected) {
-            await this._client.connect()
-            this.isConnected = true
-        }
-
-        let total: number = 0
-        let latSum = 0
-        let lonSum = 0
-        for (const prefix of OsmPoiDatabase.prefixes) {
-            let query =
-                "SELECT COUNT(*), ST_AsText(ST_Centroid(ST_Collect(geom))) FROM " +
-                prefix +
-                "_" +
-                layer
-
-            if (bbox) {
-                query += ` WHERE ST_MakeEnvelope (${bbox[0][0]}, ${bbox[0][1]}, ${bbox[1][0]}, ${bbox[1][1]}, 4326) ~ geom`
-            }
-            const result = await this._client.query(query)
-            const count = Number(result.rows[0].count)
-            let point = result.rows[0].st_astext
-            if (count === 0) {
-                continue
-            }
-            total += count
-            if (!point) {
-                continue
-            }
-            point = point.substring(6, point.length - 1)
-            const [lon, lat] = point.split(" ")
-            latSum += lat * count
-            lonSum += lon * count
-        }
-
-        return { count: total, lat: latSum / total, lon: lonSum / total }
-    }
-
-    disconnect() {
-        this._client.end()
-    }
-
-    async getLayers(): Promise<Set<string>> {
-        if (
-            this.supportedLayers !== undefined &&
-            new Date().getTime() - this.supportedLayersDate.getTime() < 1000 * 60 * 60 * 24
-        ) {
-            return this.supportedLayers
-        }
-        const q =
-            "SELECT table_name \n" +
-            "FROM information_schema.tables \n" +
-            "WHERE table_schema = 'public' AND table_name LIKE 'lines_%';"
-        const result = await this._client.query(q)
-        const layers = result.rows.map((r) => r.table_name.substring("lines_".length))
-        this.supportedLayers = new Set(layers)
-        this.supportedLayersDate = new Date()
-        return this.supportedLayers
-    }
-
-    async getMeta(): Promise<PoiDatabaseMeta> {
-        const now = new Date()
-        if (this.metaCache !== undefined) {
-            const diffSec = (this.metaCacheDate.getTime() - now.getTime()) / 1000
-            if (diffSec < 120) {
-                return this.metaCache
-            }
-        }
-        const result = await this._client.query("SELECT * FROM public.osm2pgsql_properties")
-        const meta = {}
-        for (const { property, value } of result.rows) {
-            meta[property] = value
-        }
-        this.metaCacheDate = now
-        this.metaCache = <PoiDatabaseMeta>meta
-        return this.metaCache
-    }
-}
 
 class CachedSqlCount {
     private readonly _cache: Record<
@@ -169,7 +53,7 @@ class TileCountServer extends Script {
     }
 
     async main(args: string[]): Promise<void> {
-        const connectionString = args[0] ?? "postgresql://user:password@localhost:5444/osm-poi"
+        const connectionString = args[0] ?? "postgresql://user:password@localhost:5444"
         const port = Number(args[1] ?? 2345)
         console.log("Connecting to database", connectionString)
         const tcs = new OsmPoiDatabase(connectionString)

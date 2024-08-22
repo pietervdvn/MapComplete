@@ -16,7 +16,7 @@
   import { TranslateIcon } from "@rgossiaux/svelte-heroicons/solid"
   import Osm_logo from "../../assets/svg/Osm_logo.svelte"
   import Generic_map from "../../assets/svg/Generic_map.svelte"
-  import { UserGroupIcon} from "@babeard/svelte-heroicons/solid"
+  import { UserGroupIcon } from "@babeard/svelte-heroicons/solid"
   import Marker from "../Map/Marker.svelte"
 
   export let state: SpecialVisualizationState

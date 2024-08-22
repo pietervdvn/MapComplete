@@ -31,6 +31,8 @@ service-worker.js
 .env
 src/assets/editor-layer-index.json
 
+error_changeset_*
+
 
 .vscode/*
 !.vscode/settings.json

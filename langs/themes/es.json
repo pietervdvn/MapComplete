@@ -460,14 +460,6 @@
     },
     "cycle_highways": {
         "description": "Este mapa muestra autovías ciclistas",
-        "layers": {
-            "0": {
-                "name": "autovías ciclistas",
-                "title": {
-                    "render": "autovía ciclista"
-                }
-            }
-        },
         "title": "Autovías ciclistas"
     },
     "cycle_infra": {
@@ -1209,47 +1201,6 @@
         "description": "En este mapa, se puede marcar información básica sobre tiendas, añadir horarios y números de teléfono",
         "shortDescription": "Un mapa editable con información básica sobre tiendas",
         "title": "Tiendas"
-    },
-    "sidewalks": {
-        "description": "Tema experimental",
-        "layers": {
-            "0": {
-                "description": "Una capa que muestra las aceras de las vías",
-                "name": "Aceras",
-                "tagRenderings": {
-                    "left-right-questions": {
-                        "renderings": {
-                            "1": {
-                                "mappings": {
-                                    "0": {
-                                        "then": "Hay una acera en este lado de la calle"
-                                    },
-                                    "1": {
-                                        "then": "No hay acera por la que caminar"
-                                    },
-                                    "2": {
-                                        "then": "Hay una acera mapeada por separado por la que caminar"
-                                    }
-                                },
-                                "question": "¿Hay una acera en este lado de la calle?"
-                            },
-                            "2": {
-                                "question": "¿Cuál es la anchura de la acera en este lado de la calzada?",
-                                "render": "Esta acera tiene {sidewalk:left|right:width} m de ancho"
-                            }
-                        }
-                    },
-                    "streetname": {
-                        "render": "Esta calle se llama {name}"
-                    }
-                },
-                "title": {
-                    "render": "{name}"
-                }
-            }
-        },
-        "shortDescription": "Mapeo de aceras",
-        "title": "Aceras"
     },
     "ski": {
         "description": "Todo lo que necesitas para esquiar",

@@ -5,9 +5,7 @@
   import { ImmutableStore, Store } from "../../Logic/UIEventSource"
   import TagRenderingEditable from "../Popup/TagRendering/TagRenderingEditable.svelte"
   import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig"
-  import type {
-    QuestionableTagRenderingConfigJson,
-  } from "../../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson.js"
+  import type { QuestionableTagRenderingConfigJson } from "../../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson.js"
   import type { TagRenderingConfigJson } from "../../Models/ThemeConfig/Json/TagRenderingConfigJson"
   import FromHtml from "../Base/FromHtml.svelte"
   import ShowConversionMessage from "./ShowConversionMessage.svelte"
@@ -44,11 +42,12 @@
       if (config["builtin"]) {
         let override = ""
         if (config["override"]) {
-          override = ". Some items are changed with an override. Editing this is not yet supported with Studio."
+          override =
+            ". Some items are changed with an override. Editing this is not yet supported with Studio."
         }
         return new TagRenderingConfig({
           render: {
-            "en": "This question reuses <b>" + JSON.stringify(config["builtin"]) + "</b>" + override,
+            en: "This question reuses <b>" + JSON.stringify(config["builtin"]) + "</b>" + override,
           },
         })
       }
@@ -69,10 +68,10 @@
 
 <div class="flex">
   <div class="m-4 flex w-full flex-col">
-    {#if $configJson.some(config => config["builtin"] !== undefined)}
-      <div class="interactive p-2 rounded-2xl">
-        This question uses an advanced 'builtin'+'override' construction in the source code.
-        Editing this with Studio is not supported.
+    {#if $configJson.some((config) => config["builtin"] !== undefined)}
+      <div class="interactive rounded-2xl p-2">
+        This question uses an advanced 'builtin'+'override' construction in the source code. Editing
+        this with Studio is not supported.
       </div>
     {:else}
       <NextButton clss="primary" on:click={() => state.highlightedItem.setData({ path, schema })}>

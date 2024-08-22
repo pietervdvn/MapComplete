@@ -90,8 +90,6 @@ export interface SpecialVisualizationState {
         readonly recentlyVisitedThemes: Store<string[]>
     }
 
-    readonly availableLayers: Store<RasterLayerPolygon[]>
-
     readonly imageUploadManager: ImageUploadManager
 
     readonly previewedImage: UIEventSource<ProvidedImage>

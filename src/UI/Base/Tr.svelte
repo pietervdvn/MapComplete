@@ -21,14 +21,14 @@
 
 {#if $txt}
   {#if cls}
-  <span class={cls}>
-    <span lang={$lang}>
-      {@html Utils.purify($txt)}
+    <span class={cls}>
+      <span lang={$lang}>
+        {@html Utils.purify($txt)}
+      </span>
+      <WeblateLink context={t?.context} />
     </span>
-    <WeblateLink context={t?.context} />
-  </span>
   {:else}
-     <span lang={$lang}>
+    <span lang={$lang}>
       {@html Utils.purify($txt)}
     </span>
     <WeblateLink context={t?.context} />

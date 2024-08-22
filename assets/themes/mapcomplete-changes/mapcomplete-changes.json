@@ -291,7 +291,7 @@
                   },
                   {
                     "if": "theme=hotels",
-                    "then": "./assets/layers/hotel/hotel.svg"
+                    "then": "./assets/layers/tourism_accomodation/hotel.svg"
                   },
                   {
                     "if": "theme=icecream",
@@ -400,10 +400,6 @@
                   {
                     "if": "theme=shops",
                     "then": "./assets/themes/shops/shop.svg"
-                  },
-                  {
-                    "if": "theme=sidewalks",
-                    "then": "./assets/svg/bug.svg"
                   },
                   {
                     "if": "theme=ski",

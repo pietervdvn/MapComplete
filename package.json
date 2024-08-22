@@ -1,6 +1,6 @@
 {
   "name": "mapcomplete",
-  "version": "0.45.0",
+  "version": "0.45.3",
   "repository": "https://github.com/pietervdvn/MapComplete",
   "description": "A small website to edit OSM easily",
   "bugs": "https://github.com/pietervdvn/MapComplete/issues",
@@ -124,7 +124,10 @@
     "server:studio": "vite-node scripts/studioServer -- /root/git/MapComplete/assets",
     "server:errorreport": "vite-node scripts/serverErrorReport.ts -- /root/error_reports/",
     "generate:buildDbScript": "vite-node scripts/osm2pgsql/generateBuildDbScript.ts",
-    "generate:summaryCache": "vite-node scripts/generateSummaryTileCache.ts"
+    "generate:summaryCache": "vite-node scripts/generateSummaryTileCache.ts",
+    "create:database": "vite-node scripts/osm2pgsql/createNewDatabase.ts",
+    "delete:database:old": "vite-node scripts/osm2pgsql/deleteOldDbs.ts"
+
   },
   "keywords": [
     "OpenStreetMap",

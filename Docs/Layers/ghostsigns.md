@@ -13,7 +13,7 @@ Layer showing disused signs on buildings
 
 
  - This layer is shown at zoomlevel **10** and higher
- - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  a preset snaps to this layer (presets[0])
+ - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  preset `a ghost sign` snaps to this layer (ghostsigns.presets[0])
 
 
 

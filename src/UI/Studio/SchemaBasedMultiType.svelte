@@ -220,10 +220,7 @@
     {#if chosenOption !== undefined}
       {#each subSchemas as subschema}
         {#if $expertMode || subschema.hints?.group !== "expert"}
-          <SchemaBasedInput
-            {state}
-            path={[...subpath, subschema?.path?.at(-1) ?? "???"]}
-          />
+          <SchemaBasedInput {state} path={[...subpath, subschema?.path?.at(-1) ?? "???"]} />
         {:else if window.location.hostname === "127.0.0.1"}
           <span class="subtle">Omitted expert question {subschema.path.join(".")}</span>
         {/if}

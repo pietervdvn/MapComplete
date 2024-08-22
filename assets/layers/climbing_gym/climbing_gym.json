@@ -57,6 +57,9 @@
       }
     ]
   },
+  "titleIcons": [
+    "icons.defaults"
+  ],
   "pointRendering": [
     {
       "iconBadges": [
@@ -87,9 +90,6 @@
     }
   ],
   "lineRendering": [],
-  "titleIcons": [
-    "icons.defaults"
-  ],
   "presets": [
     {
       "title": {

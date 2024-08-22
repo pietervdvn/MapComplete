@@ -82,7 +82,7 @@
   let highlightedItem: UIEventSource<HighlightedTagRendering> = state.highlightedItem
 </script>
 
-<div class="flex h-screen flex-col">
+<div class="link-underline flex h-screen flex-col">
   <div class="my-2 flex w-full flex-wrap justify-between">
     <slot />
     {#if $title === undefined}
@@ -124,7 +124,7 @@
 
   {#if $currentlyMissing.length > 0}
     {#each requiredFields as required}
-      <SchemaBasedInput {state} schema={configForRequiredField(required)} path={[required]} />
+      <SchemaBasedInput {state} path={[required]} />
     {/each}
   {:else}
     <div class="m4 h-full overflow-y-auto">

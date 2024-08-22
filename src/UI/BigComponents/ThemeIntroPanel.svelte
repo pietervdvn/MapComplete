@@ -34,6 +34,7 @@
   let gpsAvailable = geolocation.gpsAvailable
 
   function jumpToCurrentLocation() {
+    state.geolocationControl.handleClick()
     const glstate = state.geolocation.geolocationState
     if (glstate.currentGPSLocation.data !== undefined) {
       const c: GeolocationCoordinates = glstate.currentGPSLocation.data
@@ -77,9 +78,12 @@
 
     <div class="flex w-full flex-wrap sm:flex-nowrap">
       <If condition={state.featureSwitches.featureSwitchGeolocation}>
-
-        <button disabled={!$gpsAvailable} class:disabled={!$gpsAvailable} class="flex w-full items-center gap-x-2" on:click={jumpToCurrentLocation}>
-
+        <button
+          disabled={!$gpsAvailable}
+          class:disabled={!$gpsAvailable}
+          class="flex w-full items-center gap-x-2"
+          on:click={jumpToCurrentLocation}
+        >
           <GeolocationIndicator {state} />
           <Tr t={$gpsExplanation} />
         </button>

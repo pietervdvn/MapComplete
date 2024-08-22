@@ -1205,6 +1205,12 @@
             }
         }
     },
+    "cycle_highways": {
+        "name": "cykelmotorveje",
+        "title": {
+            "render": "cykelmotorvej"
+        }
+    },
     "cycleways_and_roads": {
         "tagRenderings": {
             "is lit?": {

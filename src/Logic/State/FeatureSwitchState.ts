@@ -184,7 +184,6 @@ export default class FeatureSwitchState extends OsmConnectionFeatureSwitches {
             "Enable/disable caching from localStorage"
         )
 
-
         let testingDefaultValue = false
         if (
             !Utils.runningFromConsole &&

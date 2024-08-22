@@ -2839,6 +2839,12 @@
             "render": "Oversteekplaats"
         }
     },
+    "cycle_highways": {
+        "name": "fietssnelwegen",
+        "title": {
+            "render": "fietssnelweg"
+        }
+    },
     "cycleways_and_roads": {
         "description": "Alle infrastructuur waar je over kunt fietsen, met vragen over die infrastructuur",
         "name": "Fietspaden, straten en wegen",
@@ -4540,32 +4546,6 @@
         },
         "title": {
             "render": "Ziekenhuis"
-        }
-    },
-    "hotel": {
-        "description": "Laag die alle hotels toont",
-        "name": "Hotels",
-        "presets": {
-            "0": {
-                "title": "een hotel"
-            }
-        },
-        "tagRenderings": {
-            "name": {
-                "freeform": {
-                    "placeholder": "Naam van het hotel"
-                },
-                "question": "Wat is de naam van dit hotel?",
-                "render": "Dit hotel heet {name}"
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Hotel {name}"
-                }
-            },
-            "render": "Hotel"
         }
     },
     "hydrant": {
@@ -8365,6 +8345,20 @@
                 }
             },
             "render": "Toilet in een voorziening"
+        }
+    },
+    "tourism_accomodation": {
+        "presets": {
+            "0": {
+                "title": "een hotel"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Hotel {name}"
+                }
+            }
         }
     },
     "trail": {

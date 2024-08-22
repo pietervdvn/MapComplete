@@ -16,5 +16,15 @@
       "Robin van der Linde"
     ],
     "sources": []
+  },
+  {
+    "path": "sundial.svg",
+    "license": "CC0-1.0",
+    "authors": [
+      "OpenClipArt"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Sundial_2r.jpg "
+    ]
   }
 ]

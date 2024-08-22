@@ -31,7 +31,7 @@
       target="_blank"
       tabindex="-1"
     >
-      <LanguageIcon class="font-gray"/>
+      <LanguageIcon class="font-gray" />
     </a>
   {/if}
 {/if}

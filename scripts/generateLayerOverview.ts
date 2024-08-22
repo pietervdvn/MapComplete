@@ -9,7 +9,6 @@ import {
     DoesImageExist,
     PrevalidateTheme,
     ValidateLayer,
-    ValidateThemeAndLayers,
     ValidateThemeEnsemble,
 } from "../src/Models/ThemeConfig/Conversion/Validation"
 import { Translation } from "../src/UI/i18n/Translation"
@@ -33,6 +32,8 @@ import { GenerateFavouritesLayer } from "./generateFavouritesLayer"
 import LayoutConfig from "../src/Models/ThemeConfig/LayoutConfig"
 import Translations from "../src/UI/i18n/Translations"
 import { Translatable } from "../src/Models/ThemeConfig/Json/Translatable"
+import { ValidateThemeAndLayers } from "../src/Models/ThemeConfig/Conversion/ValidateThemeAndLayers"
+import { ExtractImages } from "../src/Models/ThemeConfig/Conversion/FixImages"
 
 // This scripts scans 'src/assets/layers/*.json' for layer definition files and 'src/assets/themes/*.json' for theme definition files.
 // It spits out an overview of those to be used to load them
@@ -80,15 +81,16 @@ class ParseLayer extends Conversion<
         }
         const fixed = this._prepareLayer.convert(parsed, context.inOperation("PrepareLayer"))
 
-        if (!fixed.source) {
-            context.enter("source").err("No source is configured")
+        if (!fixed.source && fixed.presets?.length < 1) {
+            context.enter("source").err("No source is configured. (Tags might be automatically derived if presets are given)")
             return undefined
         }
 
         if (
+            fixed.source &&
             typeof fixed.source !== "string" &&
-            fixed.source["osmTags"] &&
-            fixed.source["osmTags"]["and"] === undefined
+            fixed.source?.["osmTags"] &&
+            fixed.source?.["osmTags"]["and"] === undefined
         ) {
             fixed.source["osmTags"] = { and: [fixed.source["osmTags"]] }
         }
@@ -849,6 +851,15 @@ class LayerOverviewUtils extends Script {
                         console.error("Could not read " + themeFile.icon + " due to " + e)
                     }
                 }
+
+                const usedImages = Utils.Dedup(
+                    new ExtractImages(true, knownTagRenderings)
+                        .convertStrict(themeFile)
+                        .map((x) => x.path)
+                )
+                usedImages.sort()
+
+                themeFile["_usedImages"] = usedImages
 
                 this.writeTheme(themeFile)
                 fixed.set(themeFile.id, themeFile)

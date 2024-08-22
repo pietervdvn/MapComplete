@@ -16,6 +16,7 @@
   import Bug from "../../assets/svg/Bug.svelte"
   import ThemeViewState from "../../Models/ThemeViewState"
   import DocumentChartBar from "@babeard/svelte-heroicons/outline/DocumentChartBar"
+  import DocumentMagnifyingGlass from "@babeard/svelte-heroicons/outline/DocumentMagnifyingGlass"
 
   export let state: ThemeViewState
 
@@ -48,18 +49,27 @@
     <Tr t={Translations.t.general.attribution.openIssueTracker} />
   </a>
 
-  <a
-    class="flex"
-    href={"https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Themes/" + layout.id + ".md"}
-    target="_blank"
-  >
-    <DocumentChartBar class="h-6 w-6" />
-    <Tr
-      t={Translations.t.general.attribution.openThemeDocumentation.Subs({
-        name: layout.title,
-      })}
-    />
-  </a>
+  {#if layout.official}
+    <a
+      class="flex"
+      href={"https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Themes/" +
+        layout.id +
+        ".md"}
+      target="_blank"
+    >
+      <DocumentMagnifyingGlass class="h-6 w-6" />
+      <Tr
+        t={Translations.t.general.attribution.openThemeDocumentation.Subs({
+          name: layout.title,
+        })}
+      />
+    </a>
+
+    <a class="flex" href={Utils.OsmChaLinkFor(31, layout.id)}>
+      <DocumentChartBar class="h-6 w-6" />
+      <Tr t={Translations.t.general.attribution.openOsmcha.Subs({ theme: layout.title })} />
+    </a>
+  {/if}
 
   <a class="flex" href="https://en.osm.town/@MapComplete" target="_blank">
     <Mastodon class="h-6 w-6" />

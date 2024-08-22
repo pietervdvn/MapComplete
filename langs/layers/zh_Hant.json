@@ -486,6 +486,12 @@
             "render": "攀岩社團"
         }
     },
+    "cycle_highways": {
+        "name": "單車高速公路",
+        "title": {
+            "render": "單車高速公路"
+        }
+    },
     "extinguisher": {
         "description": "顯示消防栓的地圖圖層。"
     },
