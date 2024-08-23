@@ -69,8 +69,10 @@
   import ChevronRight from "@babeard/svelte-heroicons/solid/ChevronRight"
   import Marker from "./Map/Marker.svelte"
   import AboutMapComplete from "./BigComponents/AboutMapComplete.svelte"
-  import IfNot from "./Base/IfNot.svelte"
-  import Hotkeys from "./Base/Hotkeys"
+  import HotkeyTable from "./BigComponents/HotkeyTable.svelte"
+  import SelectedElementPanel from "./Base/SelectedElementPanel.svelte"
+  import type { LayerConfigJson } from "../Models/ThemeConfig/Json/LayerConfigJson"
+  import OverlayOverview from "./Map/OverlayOverview.svelte"
 
   export let state: ThemeViewState
   let layout = state.layout
