@@ -560,6 +560,34 @@
           mapproperties={state.mapProperties}
           userstate={state.userRelatedState}
           visible={state.guistate.backgroundLayerSelectionIsOpened}
+          menuState={state.guistate}
+        />
+      </div>
+    </FloatOver>
+  </IfHidden>
+
+  <IfHidden condition={state.guistate.overlaySelectionIsOpened}>
+    <!-- overlay selector -->
+    <FloatOver
+      on:close={() => {
+        state.guistate.overlaySelectionIsOpened.setData(false)
+      }}
+    >
+      <div class="h-full p-2">
+        <!-- <OverlayOverview
+          {availableLayers}
+          map={state.map}
+          mapproperties={state.mapProperties}
+          userstate={state.userRelatedState}
+        /> -->
+        <RasterLayerOverview
+          {availableLayers}
+          map={state.map}
+          mapproperties={state.mapProperties}
+          userstate={state.userRelatedState}
+          visible={state.guistate.backgroundLayerSelectionIsOpened}
+          menuState={state.guistate}
+          layerType="overlay"
         />
       </div>
     </FloatOver>
