@@ -346,7 +346,7 @@ export default class LayerConfig extends WithContextLoader {
         this.popupInFloatover = json.popupInFloatover ?? false
     }
 
-    public defaultIcon(): BaseUIElement | undefined {
+    public defaultIcon(properties?: Record<string, string>): BaseUIElement | undefined {
         if (this.mapRendering === undefined || this.mapRendering === null) {
             return undefined
         }
@@ -354,7 +354,7 @@ export default class LayerConfig extends WithContextLoader {
         if (mapRendering === undefined) {
             return undefined
         }
-        return mapRendering.GetBaseIcon(this.GetBaseTags())
+        return mapRendering.GetBaseIcon(properties ?? this.GetBaseTags())
     }
 
     public GetBaseTags(): Record<string, string> {

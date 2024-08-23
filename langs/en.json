@@ -701,8 +701,8 @@
     },
     "preset_type": {
         "question": "Of what type is this object?",
-        "typeDescription": "This is a {title}. {description}",
-        "typeTitle": "This is a {title}"
+        "typeDescription": "This is <b>{title}</b>. <div class='subtle'>{description}</div>",
+        "typeTitle": "This is <b>{title}</b>"
     },
     "privacy": {
         "editingIntro": "When you make a change to the map, this change is recorded on OpenStreetMap and is publicly available to anyone. A changeset made with MapComplete includes the following data:",
