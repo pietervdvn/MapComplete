@@ -61,9 +61,9 @@ export class PreferredRasterLayerSelector {
      * Returns 'true' if the target layer is set or is the current layer
      * @private
      */
-    private updateLayer() {
+    private async updateLayer() {
         // What is the ID of the layer we have to (try to) load?
-        const targetLayerId = this._queryParameter.data ?? this._preferredBackgroundLayer.data
+        const targetLayerId = (this._queryParameter.data ?? this._preferredBackgroundLayer.data)?.toLowerCase()
         if (targetLayerId === undefined || targetLayerId === "default") {
             return
         }
@@ -74,12 +74,13 @@ export class PreferredRasterLayerSelector {
             this._rasterLayerSetting.setData(global)
             return
         }
+        await AvailableRasterLayers.editorLayerIndex()
         const isCategory =
             targetLayerId === "photo" || targetLayerId === "osmbasedmap" || targetLayerId === "map"
         const available = this._availableLayers.store.data
         const foundLayer = isCategory
             ? available.find((l) => l.properties.category === targetLayerId)
-            : available.find((l) => l.properties.id === targetLayerId)
+            : available.find((l) => l.properties.id.toLowerCase() === targetLayerId)
         console.debug("Updating background layer to", foundLayer?.id, {
             targetLayerId,
             queryParam: this._queryParameter?.data,

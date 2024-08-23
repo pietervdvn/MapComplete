@@ -50,7 +50,7 @@
   export let color: string | undefined = undefined
   export let clss: string | undefined = ""
   clss ??= ""
-  export let emojiHeight = 40
+  export let emojiHeight = "40px"
 </script>
 
 {#if icon}
@@ -147,7 +147,7 @@
   {:else if icon === "user_circle"}
     <UserCircleIcon class={clss} {color} />
   {:else if Utils.isEmoji(icon)}
-    <span style={`font-size: ${emojiHeight}px; line-height: ${emojiHeight}px`}>
+    <span style=  {`font-size: ${emojiHeight}; line-height: ${emojiHeight}`}>
       {icon}
     </span>
   {:else}
