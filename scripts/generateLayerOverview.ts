@@ -422,7 +422,7 @@ class LayerOverviewUtils extends Script {
         priviliged.delete("summary")
         priviliged.delete("last_click")
 
-        if (priviliged.size > 0) {
+        if (priviliged.size > 0 && !forceReload) {
             throw (
                 "Priviliged layer " +
                 Array.from(priviliged).join(", ") +
