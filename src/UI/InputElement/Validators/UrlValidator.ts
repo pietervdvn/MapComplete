@@ -12,6 +12,7 @@ export default class UrlValidator extends Validator {
         "tripadvisor.com",
         "tripadvisor.co.uk",
         "tripadvisor.com.au",
+        "katestravelexperience.eu"
     ])
 
     constructor(name?: string, explanation?: string, forceHttps?: boolean) {
@@ -88,22 +89,24 @@ export default class UrlValidator extends Validator {
      *
      */
     getFeedback(s: string, getCountry?: () => string): Translation | undefined {
+        try{
+            const url = new URL(s)
+            let host = url.host.toLowerCase()
+            if (host.startsWith("www.")) {
+                host = host.slice(4)
+            }
+            if (UrlValidator.aggregatorWebsites.has(host)) {
+                return Translations.t.validation.url.aggregator.Subs({ host })
+            }
+        }catch (e) {
+            // pass
+        }
         const upstream = super.getFeedback(s, getCountry)
         if (upstream) {
             return upstream
         }
-        /*
-         Upstream calls 'isValid', which checks if it is an actual URL.
-         If we reach this point, we can safely assume 'new URL' will work
-        */
-        const url = new URL(s)
-        let host = url.host.toLowerCase()
-        if (host.startsWith("www.")) {
-            host = host.slice(4)
-        }
-        if (UrlValidator.aggregatorWebsites.has(host)) {
-            return Translations.t.validation.url.aggregator.Subs({ host })
-        }
+
+
         return undefined
     }
 
@@ -118,6 +121,15 @@ export default class UrlValidator extends Validator {
             }
             const url = new URL(str)
             const dotIndex = url.host.indexOf(".")
+
+            let host = url.host.toLowerCase()
+            if (host.startsWith("www.")) {
+                host = host.slice(4)
+            }
+            if (UrlValidator.aggregatorWebsites.has(host)) {
+                return false
+            }
+
             return dotIndex > 0 && url.host[url.host.length - 1] !== "."
         } catch (e) {
             return false
