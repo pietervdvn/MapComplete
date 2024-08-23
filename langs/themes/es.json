@@ -862,8 +862,49 @@
                 "title": {
                     "render": "Publicidad en una fachada"
                 }
+            },
+            "1": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "Esta es una señal fantasma"
+                                },
+                                "1": {
+                                    "then": "Esta no es una señal fantasma"
+                                }
+                            },
+                            "question": "¿Es una señal fantasma?",
+                            "questionHint": "¿Es este rótulo de un negocio que ya no existe o que ya no se mantiene?"
+                        }
+                    },
+                    "name": "Todos los murales promocionales"
+                }
+            },
+            "2": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "Esta obra de arte es un anuncio histórico"
+                                },
+                                "1": {
+                                    "then": "Esta obra de arte no es un anuncio histórico"
+                                }
+                            },
+                            "question": "¿Es esta obra de arte un anuncio histórico?"
+                        }
+                    }
+                }
             }
-        }
+        },
+        "title": "Señales fantasma"
+    },
+    "glutenfree": {
+        "description": "Un menú compartido con productos sin gluten",
+        "title": "Sin gluten"
     },
     "grb": {
         "description": "Este tema es un intento de automatizar la importación GRB.",
@@ -941,6 +982,10 @@
         "description": "En este mapa se muestran los lugares cubiertos de acceso público",
         "title": "En interiores"
     },
+    "items_with_image": {
+        "description": "Un mapa que muestra todos los objetos en OSM que tienen una imagen. Este tema no es muy adecuado para MapComplete porque no se puede agregar una imagen directamente. Sin embargo, este tema está ahí principalmente para poner todo en la base de datos, lo que permite encontrar rápidamente imágenes cercanas para otras funciones",
+        "title": "Todos los elementos con imágenes"
+    },
     "kerbs_and_crossings": {
         "description": "Un mapa que muestra bordillos y cruces.",
         "layers": {
@@ -956,6 +1001,10 @@
             }
         },
         "title": "Bordillos y cruces"
+    },
+    "lactosefree": {
+        "description": "Un mapa en que colaborar con tiendas y restaurantes con productos sin lactosa",
+        "title": "Tiendas y restaurantes con productos sin lactosa"
     },
     "maproulette": {
         "description": "Tema que muestra las tareas de MapRoulette, permitiendo buscarlas, filtrarlas y arreglarlas.",
