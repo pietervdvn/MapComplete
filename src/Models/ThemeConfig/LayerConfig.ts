@@ -83,6 +83,9 @@ export default class LayerConfig extends WithContextLoader {
 
         this.syncSelection = json.syncSelection ?? "no"
         if(!json.source){
+            if(json.presets === undefined){
+                throw "Error while parsing "+json.id+" in "+context+"; no source given"
+            }
             this.source = new SourceConfig({
                 osmTags: TagUtils.Tag({or: json.presets.map(pr => ({and:pr.tags}))})
             })
