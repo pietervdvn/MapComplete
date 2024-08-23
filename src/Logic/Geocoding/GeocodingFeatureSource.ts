@@ -7,7 +7,10 @@ export default class GeocodingFeatureSource implements FeatureSource {
     public features: Store<Feature<Geometry, Record<string, string>>[]>
 
     constructor(provider: Store<GeoCodeResult[]>) {
-        this.features = provider.mapD(geocoded => {
+        this.features = provider.map(geocoded => {
+            if(geocoded === undefined){
+                return []
+            }
             const features: Feature[] = []
 
             for (const gc of geocoded) {
