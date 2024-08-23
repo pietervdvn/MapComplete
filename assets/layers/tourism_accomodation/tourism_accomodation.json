@@ -276,5 +276,8 @@
       ]
     }
   ],
+  "deletion": {
+    "softDeletionTags":  "disused:tourism:={tourism}"
+  },
   "allowMove": true
 }
