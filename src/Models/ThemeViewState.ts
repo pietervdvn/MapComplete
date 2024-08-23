@@ -68,7 +68,7 @@ import Locale from "../UI/i18n/Locale"
 import Hash from "../Logic/Web/Hash"
 import { GeoOperations } from "../Logic/GeoOperations"
 import { CombinedFetcher } from "../Logic/Web/NearbyImagesSearch"
-import GeocodingProvider from "../Logic/Geocoding/GeocodingProvider"
+import GeocodingProvider, { GeocodingUtils } from "../Logic/Geocoding/GeocodingProvider"
 import CombinedSearcher from "../Logic/Geocoding/CombinedSearcher"
 import CoordinateSearch from "../Logic/Geocoding/CoordinateSearch"
 import LocalElementSearch from "../Logic/Geocoding/LocalElementSearch"
@@ -774,6 +774,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
             favourite: this.favourites,
             summary: this.featureSummary,
             last_click: this.lastClickObject,
+            search: undefined
         }
 
         this.closestFeatures.registerSource(specialLayers.favourite, "favourite")
@@ -908,6 +909,34 @@ export default class ThemeViewState implements SpecialVisualizationState {
     public selectCurrentView() {
         this.guistate.closeAll()
         this.selectedElement.setData(this.currentView.features?.data?.[0])
+    }
+
+    /**
+     * Searches the appropriate layer - will first try if a special layer matches; if not, a normal layer will be used by delegating to the layout
+     * @param tags
+     */
+    public getMatchingLayer(properties: Record<string, string>){
+
+        const id = properties.id
+
+        if (id.startsWith("summary_")) {
+            // We don't select 'summary'-objects
+            return undefined
+        }
+
+        if (id === "settings") {
+            return UserRelatedState.usersettingsConfig
+        }
+        if (id.startsWith(LastClickFeatureSource.newPointElementId)) {
+            return this.layout.layers.find((l) => l.id === "last_click")
+        }
+        if (id.startsWith("search_result")) {
+            return GeocodingUtils.searchLayer
+        }
+        if (id === "location_track") {
+            return this.layout.layers.find((l) => l.id === "gps_track")
+        }
+        return this.layout.getMatchingLayer(properties)
     }
 
     public async reportError(message: string | Error | XMLHttpRequest) {

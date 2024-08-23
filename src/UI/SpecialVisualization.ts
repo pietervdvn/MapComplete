@@ -4,7 +4,7 @@ import LayoutConfig, { MinimalLayoutInformation } from "../Models/ThemeConfig/La
 import {
     FeatureSource,
     IndexedFeatureSource,
-    WritableFeatureSource,
+    WritableFeatureSource
 } from "../Logic/FeatureSource/FeatureSource"
 import { OsmConnection } from "../Logic/Osm/OsmConnection"
 import { Changes } from "../Logic/Osm/Changes"
@@ -97,8 +97,10 @@ export interface SpecialVisualizationState {
     readonly geolocation: GeoLocationHandler
     readonly recentlySearched: RecentSearch
 
+    getMatchingLayer(properties: Record<string, string>);
 
     showCurrentLocationOn(map: Store<MlMap>): ShowDataLayer
+
     reportError(message: string): Promise<void>
 }
 
@@ -134,7 +136,7 @@ export interface SpecialVisualization {
 export type RenderingSpecification =
     | string
     | {
-          func: SpecialVisualization
-          args: string[]
-          style: string
-      }
+    func: SpecialVisualization
+    args: string[]
+    style: string
+}

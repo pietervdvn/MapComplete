@@ -42,6 +42,7 @@
   import BuildingOffice2 from "@babeard/svelte-heroicons/outline/BuildingOffice2"
   import Train from "../../assets/svg/Train.svelte"
   import Airport from "../../assets/svg/Airport.svelte"
+  import BuildingStorefront from "@babeard/svelte-heroicons/outline/BuildingStorefront"
 
   /**
    * Renders a single icon.
@@ -159,6 +160,8 @@
     <Train {color} class={clss}/>
   {:else if icon === "airport"}
     <Airport {color} class={clss}/>
+  {:else if icon === "building_storefront"}
+    <BuildingStorefront {color} class={clss}/>
   {:else if Utils.isEmoji(icon)}
     <span style={`font-size: ${emojiHeight}px; line-height: ${emojiHeight}px`}>
       {icon}

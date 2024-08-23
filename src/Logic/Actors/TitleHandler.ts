@@ -21,7 +21,7 @@ export default class TitleHandler {
                 if (selected === undefined) {
                     return defaultTitle
                 }
-                const layer = state.layout.getMatchingLayer(selected.properties)
+                const layer = state.getMatchingLayer(selected.properties)
                 if (layer === undefined) {
                     return defaultTitle
                 }

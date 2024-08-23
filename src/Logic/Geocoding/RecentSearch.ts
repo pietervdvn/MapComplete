@@ -12,15 +12,50 @@ export class RecentSearch {
     public readonly seenThisSession: Store<GeoCodeResult[]>
 
     constructor(state: { layout: LayoutConfig, osmConnection: OsmConnection, selectedElement: Store<Feature> }) {
-     //   const prefs = state.osmConnection.preferencesHandler.GetLongPreference("previous-searches")
+        const prefs = state.osmConnection.preferencesHandler.GetLongPreference("previous-searches")
+        prefs.addCallbackAndRunD(prev => console.trace("Previous searches are:", prev))
+        prefs.set(null)
         this._seenThisSession =  new UIEventSource<GeoCodeResult[]>([])//UIEventSource.asObject<GeoCodeResult[]>(prefs, [])
         this.seenThisSession = this._seenThisSession
 
+        prefs.addCallbackAndRunD(prefs => {
+            if(prefs === ""){
+                return
+            }
+            const simpleArr = <GeoCodeResult[]> JSON.parse(prefs)
+            if(simpleArr.length > 0){
+                this._seenThisSession.set(simpleArr)
+                return true
+            }
+        })
+
+        this.seenThisSession.stabilized(2500).addCallbackAndRunD(seen => {
+            const results=  []
+            for (let i = 0; i < Math.min(3, seen.length); i++) {
+                const gc = seen[i]
+                const simple = {
+                    category: gc.category,
+                    description: gc.description,
+                    display_name: gc.display_name,
+                    lat: gc.lat, lon: gc.lon,
+                    osm_id: gc.osm_id,
+                    osm_type: gc.osm_type
+                }
+                results.push(simple)
+            }
+            console.log("Setting", results)
+            prefs.setData(JSON.stringify(results))
+
+        })
 
         state.selectedElement.addCallbackAndRunD(selected => {
 
             const [osm_type, osm_id] = selected.properties.id.split("/")
             if(!osm_id){
+                return
+            }
+            console.log("Selected element is", selected)
+            if(["node","way","relation"].indexOf(osm_type) < 0){
                 return
             }
             const [lon, lat] = GeoOperations.centerpointCoordinates(selected)
@@ -46,6 +81,7 @@ export class RecentSearch {
                 seenIds.add(id)
             }
         }
+        console.log(">>>",arr)
         this._seenThisSession.set(arr)
     }
 }

@@ -26,6 +26,7 @@ export default class Constants {
         "last_click",
         "favourite",
         "summary",
+        "search"
     ] as const
     /**
      * Special layers which are not included in a theme by default
@@ -38,7 +39,7 @@ export default class Constants {
         "import_candidate",
         "usersettings",
         "icons",
-        "filters",
+        "filters"
     ] as const
     /**
      * Layer IDs of layers which have special properties through built-in hooks
@@ -126,6 +127,7 @@ export default class Constants {
         "brick_wall_round",
         "brick_wall_square",
         "building_office_2",
+        "building_storefront",
         "bug",
         "checkmark",
         "checkmark",

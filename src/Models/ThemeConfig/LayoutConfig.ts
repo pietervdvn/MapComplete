@@ -340,7 +340,7 @@ export default class LayoutConfig implements LayoutInformation {
                 }
             }
         }
-        console.log("Fallthrough", this, tags)
+        console.trace("Fallthrough: could not find the appropraite layer for an object with tags", tags, "within layout", this)
         return undefined
     }
 
@@ -354,7 +354,7 @@ export default class LayoutConfig implements LayoutInformation {
             ...json,
             layers: json.layers.filter((l) => l["id"] !== "favourite"),
         }
-        const usedImages = json._usedImages
+        const usedImages = jsonNoFavourites._usedImages
         usedImages.sort()
 
         this.usedImages = Utils.Dedup(usedImages)

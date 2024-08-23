@@ -95,6 +95,9 @@ export default class PhotonSearch implements GeocodingProvider, ReverseGeocoding
 
     private getCategory(entry: Feature) {
         const p = entry.properties
+        if(p.osm_key === "shop"){
+            return "shop"
+        }
         if (p.osm_value === "train_station" || p.osm_key === "railway") {
             return "train_station"
         }

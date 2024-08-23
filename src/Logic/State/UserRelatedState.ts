@@ -351,8 +351,10 @@ export default class UserRelatedState {
                     const key = k.substring(0, k.length - "length".length)
                     let combined = ""
                     for (let i = 0; i < l; i++) {
-                        combined += newPrefs[key + i]
+                        console.log("Building preference:",key,i,">>>", newPrefs[key + i], "<<<", newPrefs, )
+                        combined += (newPrefs[key + i])
                     }
+                    console.log("Combined",key,">>>",combined)
                     amendedPrefs.data[key.substring(0, key.length - "-combined-".length)] = combined
                 } else {
                     amendedPrefs.data[k] = newPrefs[k]
@@ -456,11 +458,15 @@ export default class UserRelatedState {
         amendedPrefs.addCallbackD((tags) => {
             for (const key in tags) {
                 if (key.startsWith("_") || key === "mapcomplete-language") {
-                    // Language is managed seperately
+                    // Language is managed separately
                     continue
                 }
                 if (tags[key + "-combined-0"]) {
                     // A combined value exists
+                    if(tags[key].startsWith("undefined")){
+                        // Sometimes, a long string of 'undefined' will show up, we ignore them
+                        continue
+                    }
                     this.osmConnection.GetLongPreference(key, "").setData(tags[key])
                 } else {
                     this.osmConnection

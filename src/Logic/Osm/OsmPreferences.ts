@@ -2,9 +2,7 @@ import { UIEventSource } from "../UIEventSource"
 import UserDetails, { OsmConnection } from "./OsmConnection"
 import { Utils } from "../../Utils"
 import { LocalStorageSource } from "../Web/LocalStorageSource"
-// @ts-ignore
-import { osmAuth } from "osm-auth"
-import OSMAuthInstance = OSMAuth.OSMAuthInstance
+import OSMAuthInstance = OSMAuth.osmAuth
 
 export class OsmPreferences {
     /**
@@ -53,7 +51,7 @@ export class OsmPreferences {
         const subOptions = { prefix: "" }
         // Gives the number of combined preferences
         const length = this.GetPreference(allStartWith + "-length", "", subOptions)
-
+        const preferences = this.preferences
         if ((allStartWith + "-length").length > 255) {
             throw (
                 "This preference key is too long, it has " +
@@ -64,7 +62,6 @@ export class OsmPreferences {
             )
         }
 
-        const self = this
         source.addCallback((str) => {
             if (str === undefined || str === "") {
                 return
@@ -74,9 +71,9 @@ export class OsmPreferences {
                 const count = parseInt(length.data)
                 for (let i = 0; i < count; i++) {
                     // Delete all the preferences
-                    self.GetPreference(allStartWith + "-" + i, "", subOptions).setData("")
+                    this.GetPreference(allStartWith + "-" + i, "", subOptions).setData("")
                 }
-                self.GetPreference(allStartWith + "-length", "", subOptions).setData("")
+                this.GetPreference(allStartWith + "-length", "", subOptions).setData("")
                 return
             }
 
@@ -99,7 +96,7 @@ export class OsmPreferences {
                 if (i > 100) {
                     throw "This long preference is getting very long... "
                 }
-                self.GetPreference(allStartWith + "-" + i, "", subOptions).setData(
+                this.GetPreference(allStartWith + "-" + i, "", subOptions).setData(
                     str.substr(0, 255)
                 )
                 str = str.substr(255)
@@ -108,8 +105,9 @@ export class OsmPreferences {
             length.setData("" + i) // We use I, the number of preference fields used
         })
 
+
         function updateData(l: number) {
-            if (Object.keys(self.preferences.data).length === 0) {
+            if (Object.keys(preferences.data).length === 0) {
                 // The preferences are still empty - they are not yet updated, so we delay updating for now
                 return
             }
@@ -120,15 +118,21 @@ export class OsmPreferences {
             let str = ""
             for (let i = 0; i < prefsCount; i++) {
                 const key = allStartWith + "-" + i
-                if (self.preferences.data[key] === undefined) {
+                if (preferences.data[key] === undefined) {
                     console.warn(
                         "Detected a broken combined preference:",
                         key,
                         "is undefined",
-                        self.preferences
+                        preferences
                     )
+                    continue
                 }
-                str += self.preferences.data[key] ?? ""
+                const v = preferences.data[key]
+                if(v === "undefined"){
+                    delete preferences.data[key]
+                    continue
+                }
+                str += preferences.data[key] ?? ""
             }
 
             source.setData(str)
@@ -137,7 +141,7 @@ export class OsmPreferences {
         length.addCallback((l) => {
             updateData(Number(l))
         })
-        this.preferences.addCallbackAndRun((_) => {
+        this.preferences.addCallbackAndRun(() => {
             updateData(Number(length.data))
         })
 
@@ -159,7 +163,7 @@ export class OsmPreferences {
             )
         }
         key = prefix + key
-        key = key.replace(/[:\\\/"' {}.%]/g, "")
+        key = key.replace(/[:/"' {}.%\\]/g, "")
         if (key.length >= 255) {
             throw "Preferences: key length to big"
         }
@@ -193,7 +197,6 @@ export class OsmPreferences {
 
     public ClearPreferences() {
         let isRunning = false
-        const self = this
         this.preferences.addCallback((prefs) => {
             console.log("Cleaning preferences...")
             if (Object.keys(prefs).length == 0) {
@@ -208,7 +211,7 @@ export class OsmPreferences {
                 const matches = prefixes.some((prefix) => key.startsWith(prefix))
                 if (matches) {
                     console.log("Clearing ", key)
-                    self.GetPreference(key, "", { prefix: "" }).setData("")
+                    this.GetPreference(key, "", { prefix: "" }).setData("")
                 }
             }
             isRunning = false
@@ -227,7 +230,6 @@ export class OsmPreferences {
     }
 
     private UpdatePreferences(forceUpdate?: boolean) {
-        const self = this
         if (this._fakeUser) {
             return
         }
@@ -236,7 +238,7 @@ export class OsmPreferences {
                 method: "GET",
                 path: "/api/0.6/user/preferences",
             },
-            function (error, value: XMLDocument) {
+             (error, value: XMLDocument) => {
                 if (error) {
                     console.log("Could not load preferences", error)
                     return
@@ -246,34 +248,33 @@ export class OsmPreferences {
                 for (let i = 0; i < prefs.length; i++) {
                     const pref = prefs[i]
                     const k = pref.getAttribute("k")
-                    const v = pref.getAttribute("v")
-                    self.preferences.data[k] = v
+                    this.preferences.data[k] = pref.getAttribute("v")
                     seenKeys.add(k)
                 }
                 if (forceUpdate) {
-                    for (let key in self.preferences.data) {
+                    for (const key in this.preferences.data) {
                         if (seenKeys.has(key)) {
                             continue
                         }
                         console.log("Deleting key", key, "as we didn't find it upstream")
-                        delete self.preferences.data[key]
+                        delete this.preferences.data[key]
                     }
                 }
 
                 // We merge all the preferences: new keys are uploaded
                 // For differing values, the server overrides local changes
-                self.preferenceSources.forEach((preference, key) => {
-                    const osmValue = self.preferences.data[key]
+                this.preferenceSources.forEach((preference, key) => {
+                    const osmValue = this.preferences.data[key]
                     if (osmValue === undefined && preference.data !== undefined) {
                         // OSM doesn't know this value yet
-                        self.UploadPreference(key, preference.data)
+                        this.UploadPreference(key, preference.data)
                     } else {
                         // OSM does have a value - set it
                         preference.setData(osmValue)
                     }
                 })
 
-                self.preferences.ping()
+                this.preferences.ping()
             }
         )
     }
@@ -287,7 +288,6 @@ export class OsmPreferences {
         if (this.preferences.data[k] === v) {
             return
         }
-        const self = this
         console.debug("Updating preference", k, " to ", Utils.EllipsesAfter(v, 15))
         if (this._fakeUser) {
             return
@@ -299,13 +299,13 @@ export class OsmPreferences {
                     path: "/api/0.6/user/preferences/" + encodeURIComponent(k),
                     headers: { "Content-Type": "text/plain" },
                 },
-                function (error) {
+                (error) => {
                     if (error) {
                         console.warn("Could not remove preference", error)
                         return
                     }
-                    delete self.preferences.data[k]
-                    self.preferences.ping()
+                    delete this.preferences.data[k]
+                    this.preferences.ping()
                     console.debug("Preference ", k, "removed!")
                 }
             )
@@ -319,13 +319,13 @@ export class OsmPreferences {
                 headers: { "Content-Type": "text/plain" },
                 content: v,
             },
-            function (error) {
+            (error)=>  {
                 if (error) {
                     console.warn(`Could not set preference "${k}"'`, error)
                     return
                 }
-                self.preferences.data[k] = v
-                self.preferences.ping()
+                this.preferences.data[k] = v
+                this.preferences.ping()
                 console.debug(`Preference ${k} written!`)
             }
         )

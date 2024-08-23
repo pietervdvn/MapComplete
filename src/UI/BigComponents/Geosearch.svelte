@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Store, UIEventSource } from "../../Logic/UIEventSource"
+  import { Store, Stores, UIEventSource } from "../../Logic/UIEventSource"
   import type { Feature } from "geojson"
   import Translations from "../i18n/Translations"
   import Loading from "../Base/Loading.svelte"
@@ -17,10 +17,14 @@
   import type GeocodingProvider from "../../Logic/Geocoding/GeocodingProvider"
 
   import SearchResults from "./SearchResults.svelte"
-  import type { SpecialVisualizationState } from "../SpecialVisualization"
   import MoreScreen from "./MoreScreen"
   import type { MinimalLayoutInformation } from "../../Models/ThemeConfig/LayoutConfig"
   import { focusWithArrows } from "../../Utils/focusWithArrows"
+  import ShowDataLayer from "../Map/ShowDataLayer"
+  import ThemeViewState from "../../Models/ThemeViewState"
+  import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
+  import GeocodingFeatureSource from "../../Logic/Geocoding/GeocodingFeatureSource"
+  import type { LayerConfigJson } from "../../Models/ThemeConfig/Json/LayerConfigJson.js"
 
   export let perLayer: ReadonlyMap<string, GeoIndexedStoreForLayer> | undefined = undefined
   export let bounds: UIEventSource<BBox>
@@ -29,11 +33,11 @@
   export let geolocationState: GeoLocationState | undefined = undefined
   export let clearAfterView: boolean = true
   export let searcher: GeocodingProvider = new NominatimGeocoding()
-  export let state: SpecialVisualizationState
+  export let state: ThemeViewState
   let searchContents: UIEventSource<string> = new UIEventSource<string>("")
   export let triggerSearch: UIEventSource<any> = new UIEventSource<any>(undefined)
   onDestroy(
-    triggerSearch.addCallback((_) => {
+    triggerSearch.addCallback(() => {
       performSearch()
     })
   )
@@ -139,7 +143,18 @@
       if (search.length === 0) {
         return undefined
       }
-      return searcher.suggest(search, { bbox: bounds.data })
+      return Stores.holdDefined(bounds.bindD(bbox => searcher.suggest(search, { bbox, limit: 15 })))
+    }
+  )
+  let geocededFeatures=  new GeocodingFeatureSource(suggestions.stabilized(250))
+  state.featureProperties.trackFeatureSource(geocededFeatures)
+
+  new ShowDataLayer(
+    state.map,
+    {
+      layer: GeocodingUtils.searchLayer,
+      features:  geocededFeatures,
+      selectedElement: state.selectedElement
     }
   )
 
@@ -147,17 +162,16 @@
 
   function checkFocus() {
     window.requestAnimationFrame(() => {
-      if (geosearch.contains(document.activeElement)) {
+      if (geosearch?.contains(document.activeElement)) {
         return
       }
       isFocused.setData(false)
     })
   }
 
-  document.addEventListener("focus",() => {
+  document.addEventListener("focus", () => {
     checkFocus()
   }, true /* use 'capturing' instead of bubbling, needed for focus-events*/)
-
 
 
 </script>

@@ -91,6 +91,20 @@ export class Stores {
         })
         return stable
     }
+
+    /**
+     *
+     * Constructs a new store, but tries to keep the value 'defined'
+     * If a defined value was in the stream once, a defined value will be returned
+     * @param store
+     */
+    static holdDefined<T>(store: Store<T | undefined>): Store<T | undefined> {
+        const newStore = new UIEventSource(store.data)
+        store.addCallbackD(t => {
+            newStore.setData(t)
+        })
+        return newStore
+    }
 }
 
 export abstract class Store<T> implements Readable<T> {

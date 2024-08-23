@@ -19,7 +19,7 @@
     EyeIcon,
     HeartIcon,
     MenuIcon,
-    XCircleIcon,
+    XCircleIcon
   } from "@rgossiaux/svelte-heroicons/solid"
   import Tr from "./Base/Tr.svelte"
   import CommunityIndexView from "./BigComponents/CommunityIndexView.svelte"
@@ -72,6 +72,7 @@
   import HotkeyTable from "./BigComponents/HotkeyTable.svelte"
   import SelectedElementPanel from "./Base/SelectedElementPanel.svelte"
   import type { LayerConfigJson } from "../Models/ThemeConfig/Json/LayerConfigJson"
+  import { GeocodingUtils } from "../Logic/Geocoding/GeocodingProvider"
 
   export let state: ThemeViewState
   let layout = state.layout
@@ -98,22 +99,10 @@
   })
 
   let selectedLayer: Store<LayerConfig> = state.selectedElement.mapD((element) => {
-    const id = element.properties.id
-    if (id.startsWith("current_view")) {
+    if (element.properties.id.startsWith("current_view")) {
       return currentViewLayer
     }
-    if (id.startsWith("summary_")) {
-      console.log("Not selecting a summary object. The summary object is", element)
-      return undefined
-    }
-    if (id.startsWith(LastClickFeatureSource.newPointElementId)) {
-      return layout.layers.find((l) => l.id === "last_click")
-    }
-    if (id === "location_track") {
-      return layout.layers.find((l) => l.id === "gps_track")
-    }
-
-    return state.layout.getMatchingLayer(element.properties)
+    return state.getMatchingLayer(element.properties)
   })
   let currentZoom = state.mapProperties.zoom
   let showCrosshair = state.userRelatedState.showCrosshair
@@ -144,7 +133,7 @@
     const bottomRight = mlmap.unproject([rect.right, rect.bottom])
     const bbox = new BBox([
       [topLeft.lng, topLeft.lat],
-      [bottomRight.lng, bottomRight.lat],
+      [bottomRight.lng, bottomRight.lat]
     ])
     state.visualFeedbackViewportBounds.setData(bbox)
   }

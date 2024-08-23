@@ -2,8 +2,10 @@ import { BBox } from "../BBox"
 import { Feature, Geometry } from "geojson"
 import { DefaultPinIcon } from "../../Models/Constants"
 import { Store } from "../UIEventSource"
-
-export type GeocodingCategory = "coordinate" | "city" | "house" | "street" | "locality" | "country" | "train_station" | "county" | "airport"
+import * as search from "../../assets/generated/layers/search.json"
+import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
+import { LayerConfigJson } from "../../Models/ThemeConfig/Json/LayerConfigJson"
+export type GeocodingCategory = "coordinate" | "city" | "house" | "street" | "locality" | "country" | "train_station" | "county" | "airport" | "shop"
 
 export type GeoCodeResult = {
     /**
@@ -66,6 +68,8 @@ export interface ReverseGeocodingProvider {
 
 export class GeocodingUtils {
 
+    public static searchLayer=  new LayerConfig(<LayerConfigJson> search, "search")
+
     public static categoryToZoomLevel: Record<GeocodingCategory, number> = {
         city: 12,
         county: 10,
@@ -75,7 +79,8 @@ export class GeocodingUtils {
         locality: 14,
         street: 15,
         train_station: 14,
-        airport: 13
+        airport: 13,
+        shop:16
 
     }
 
@@ -89,7 +94,8 @@ export class GeocodingUtils {
         street: "globe_alt",
         train_station: "train",
         county: "building_office_2",
-        airport: "airport"
+        airport: "airport",
+        shop: "building_storefront"
 
     }
 

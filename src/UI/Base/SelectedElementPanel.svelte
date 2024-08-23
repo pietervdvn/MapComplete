@@ -7,23 +7,17 @@
   import { LastClickFeatureSource } from "../../Logic/FeatureSource/Sources/LastClickFeatureSource"
   import Loading from "./Loading.svelte"
   import { onDestroy } from "svelte"
+  import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
+  import { GeocodingUtils } from "../../Logic/Geocoding/GeocodingProvider"
+  import ThemeViewState from "../../Models/ThemeViewState"
 
   export let state: SpecialVisualizationState
   export let selected: Feature
   let tags = state.featureProperties.getStore(selected.properties.id)
 
   export let absolute = true
-  function getLayer(properties: Record<string, string>) {
-    if (properties.id === "settings") {
-      return UserRelatedState.usersettingsConfig
-    }
-    if (properties.id.startsWith(LastClickFeatureSource.newPointElementId)) {
-      return state.layout.layers.find((l) => l.id === "last_click")
-    }
-    if (properties.id === "location_track") {
-      return state.layout.layers.find((l) => l.id === "gps_track")
-    }
-    return state.layout.getMatchingLayer(properties)
+  function getLayer(properties: Record<string, string>): LayerConfig {
+    return state.getMatchingLayer(properties)
   }
 
   let layer = getLayer(selected.properties)

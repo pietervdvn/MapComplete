@@ -1,0 +1,66 @@
+{
+  "id": "search",
+  "description": {
+    "en": "Priviliged layer showing the search results"
+  },
+  "source": "special",
+  "title": "{display_name}",
+  "tagRenderings": [
+    {
+      "id": "intro",
+      "render": {
+        "en": "Search result"
+      }
+    },
+    {
+      "id": "osm",
+      "render": {
+        "*": "<a href='https://openstreetmap.org/{osm_type}/{osm_id}'>On OpenStreetMap</a>"
+      }
+    },
+    "all_tags"
+  ],
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": {
+            "render": "globe_alt",
+            "mappings": [
+              {
+                "if": "category~city|locality|county",
+                "then": "building_office_2"
+              },
+              {
+                "if": "category=train_station",
+                "then": "train"
+              },
+              {
+                "if": "category=airport",
+                "then": "airport"
+              },
+              {
+                "if": "category=house",
+                "then": "house"
+              },
+              {
+                "if": "category=shop",
+                "then": "building_storefront"
+              }
+            ]
+          }
+        }
+      ],
+      "label": "{display_name}",
+      "labelCssClasses": "bg-white rounded p-2 no-wrap"
+    }
+  ]
+}
