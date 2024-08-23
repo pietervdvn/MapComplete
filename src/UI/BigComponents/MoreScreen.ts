@@ -75,6 +75,9 @@ export default class MoreScreen {
         if (layout.id === "personal") {
             return false
         }
+        if(Utils.simplifyStringForSearch(layout.id) === Utils.simplifyStringForSearch(search)){
+            return true
+        }
         const entitiesToSearch = [layout.shortDescription, layout.title, ...(layout.keywords ?? [])]
         for (const entity of entitiesToSearch) {
             if (entity === undefined) {

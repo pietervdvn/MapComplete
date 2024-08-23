@@ -1,4 +1,4 @@
-import GeocodingProvider, { GeoCodeResult, GeocodingOptions } from "./GeocodingProvider"
+import GeocodingProvider, { GeoCodeResult } from "./GeocodingProvider"
 import { Utils } from "../../Utils"
 import { ImmutableStore, Store } from "../UIEventSource"
 
@@ -7,14 +7,19 @@ import { ImmutableStore, Store } from "../UIEventSource"
  */
 export default class CoordinateSearch implements GeocodingProvider {
     private static readonly latLonRegexes: ReadonlyArray<RegExp> = [
-        /([0-9]+\.[0-9]+)[ ,;]+([0-9]+\.[0-9]+)/,
-        /lat:?[ ]*([0-9]+\.[0-9]+)[ ,;]+lon:?[ ]*([0-9]+\.[0-9]+)/,
-        /https:\/\/www.openstreetmap.org\/.*#map=[0-9]+\/([0-9]+\.[0-9]+)\/([0-9]+\.[0-9]+)/,
-        /https:\/\/www.google.com\/maps\/@([0-9]+.[0-9]+),([0-9]+.[0-9]+).*/
+        /(-?[0-9]+\.[0-9]+)[ ,;]+(-?[0-9]+\.[0-9]+)/,
+        /lat[:=]? *['"]?(-?[0-9]+\.[0-9]+)['"]?[ ,;&]+lon[:=]? *['"]?(-?[0-9]+\.[0-9]+)['"]?/,
+        /lat[:=]? *['"]?(-?[0-9]+\.[0-9]+)['"]?[ ,;&]+lng[:=]? *['"]?(-?[0-9]+\.[0-9]+)['"]?/,
+
+        /https:\/\/www.openstreetmap.org\/.*#map=[0-9]+\/(-?[0-9]+\.[0-9]+)\/(-?[0-9]+\.[0-9]+)/,
+        /https:\/\/www.google.com\/maps\/@(-?[0-9]+.[0-9]+),(-?[0-9]+.[0-9]+).*/
     ]
 
     private static readonly lonLatRegexes: ReadonlyArray<RegExp> = [
-        /([0-9]+\.[0-9]+)[ ,;]+([0-9]+\.[0-9]+)/
+        /(-?[0-9]+\.[0-9]+)[ ,;]+(-?[0-9]+\.[0-9]+)/,
+        /lon[:=]? *['"]?(-?[0-9]+\.[0-9]+)['"]?[ ,;&]+lat[:=]? *['"]?(-?[0-9]+\.[0-9]+)['"]?/,
+        /lng[:=]? *['"]?(-?[0-9]+\.[0-9]+)['"]?[ ,;&]+lat[:=]? *['"]?(-?[0-9]+\.[0-9]+)['"]?/,
+
     ]
 
     /**
@@ -35,6 +40,17 @@ export default class CoordinateSearch implements GeocodingProvider {
      * results[0] // => {lat: 51.2611, lon: 3.2217, display_name: "lon: 3.2217, lat: 51.2611",  "category": "coordinate", "source": "coordinateSearch"}
      * results[1] // => {lon: 51.2611, lat: 3.2217, display_name: "lon: 51.2611, lat: 3.2217",  "category": "coordinate", "source": "coordinateSearch"}
      *
+     * // test OSM-XML format
+     * const ls = new CoordinateSearch()
+     * const results = ls.directSearch('  lat="57.5802905" lon="12.7202538"')
+     * results.length // => 1
+     * results[0] // => {lat: 57.5802905, lon: 12.7202538, display_name: "lon: 12.7202538, lat: 57.5802905",  "category": "coordinate", "source": "coordinateSearch"}
+     *
+     * // should work with negative coordinates
+     * const ls = new CoordinateSearch()
+     * const results = ls.directSearch('  lat="-57.5802905" lon="-12.7202538"')
+     * results.length // => 1
+     * results[0] // => {lat: -57.5802905, lon: -12.7202538, display_name: "lon: -12.7202538, lat: -57.5802905",  "category": "coordinate", "source": "coordinateSearch"}
      */
     private directSearch(query: string): GeoCodeResult[] {
 
