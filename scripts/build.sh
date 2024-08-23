@@ -9,11 +9,21 @@ echo "Starting build"
 # sanity check
 if [[ -f "bookcases.html" ]]
 then
-  echo "Bookcases exists"
+  echo "Bookcases theme exists"
 else
   echo "Bookcases.html does not exist - aborting"
   exit 1
 fi
+
+# sanity check
+if [[ -f "waste.html" ]]
+then
+  echo "Waste theme exists"
+else
+  echo "waste.html does not exist - aborting"
+  exit 1
+fi
+
 
 export NODE_OPTIONS=--max-old-space-size=16000
 which vite

@@ -20,6 +20,19 @@ export default class DeleteAction extends OsmChangeAction {
     private readonly _id: OsmId
     private readonly _hardDelete: boolean
 
+    static metatags: {
+        readonly key?: string
+        readonly value?: string
+        readonly docs: string
+        readonly changeType: string[]
+        readonly specialMotivation?: boolean
+    }[] = [
+        {
+            docs: "Will appear if the object was deleted",
+            changeType: ["deletion"],
+            specialMotivation: true,
+        },
+    ]
     constructor(
         id: OsmId,
         softDeletionTags: TagsFilter | undefined,

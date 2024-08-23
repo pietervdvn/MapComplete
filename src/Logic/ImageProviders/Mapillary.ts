@@ -8,6 +8,8 @@ import MapillaryIcon from "./MapillaryIcon.svelte"
 
 export class Mapillary extends ImageProvider {
     public static readonly singleton = new Mapillary()
+    public readonly name = "Mapillary"
+
     private static readonly valuePrefix = "https://a.mapillary.com"
     public static readonly valuePrefixes = [
         Mapillary.valuePrefix,
@@ -133,7 +135,7 @@ export class Mapillary extends ImageProvider {
         return [this.PrepareUrlAsync(key, value)]
     }
 
-    public async DownloadAttribution(providedImage: ProvidedImage): Promise<LicenseInfo> {
+    public async DownloadAttribution(providedImage: { id: string }): Promise<LicenseInfo> {
         const mapillaryId = providedImage.id
         const metadataUrl =
             "https://graph.mapillary.com/" +

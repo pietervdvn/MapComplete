@@ -9,7 +9,7 @@ describe("TagUtils", () => {
         })
 
         it("should handle compare tag <=5", () => {
-            let compare = TagUtils.Tag("key<=5")
+            const compare = TagUtils.Tag("key<=5")
             equal(compare.matchesProperties({ key: undefined }), false)
             equal(compare.matchesProperties({ key: "6" }), false)
             equal(compare.matchesProperties({ key: "5" }), true)

@@ -23,6 +23,32 @@
       }
     ]
   },
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "./assets/themes/lighthouses/lighthouse.svg"
+        }
+      ],
+      "anchor": "bottom"
+    }
+  ],
+  "lineRendering": [],
+  "presets": [
+    {
+      "tags": [
+        "man_made=lighthouse"
+      ],
+      "title": {
+        "en": "a lighthouse",
+        "de": "ein Leuchtturm"
+      }
+    }
+  ],
   "tagRenderings": [
     "images",
     "wikipedia",
@@ -42,32 +68,6 @@
       "id": "lighthouse-height"
     }
   ],
-  "presets": [
-    {
-      "tags": [
-        "man_made=lighthouse"
-      ],
-      "title": {
-        "en": "a lighthouse",
-        "de": "ein Leuchtturm"
-      }
-    }
-  ],
-  "pointRendering": [
-    {
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "marker": [
-        {
-          "icon": "./assets/themes/lighthouses/lighthouse.svg"
-        }
-      ],
-      "anchor": "bottom"
-    }
-  ],
-  "lineRendering": [],
   "units": [
     {
       "height": {

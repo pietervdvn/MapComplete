@@ -26,9 +26,7 @@ export class Translation extends BaseUIElement {
     ) {
         super()
         this._strictLanguages = strictLanguages
-        if (strictLanguages) {
-            console.log(">>> strict:", translations)
-        }
+
         if (translations === undefined) {
             console.error("Translation without content at " + context)
             throw `Translation without content (${context})`
@@ -138,7 +136,6 @@ export class Translation extends BaseUIElement {
 
     static fromMap(transl: Map<string, string>, strictLanguages: boolean = false) {
         const translations = {}
-        console.log("Strict:", strictLanguages)
         let hasTranslation = false
         transl?.forEach((value, key) => {
             translations[key] = value
@@ -156,7 +153,11 @@ export class Translation extends BaseUIElement {
 
     Destroy() {
         super.Destroy()
-        this.onDestroy()
+        try {
+            this.onDestroy()
+        } catch (e) {
+            console.error("Could not call this.onDestroy", e)
+        }
         this.isDestroyed = true
     }
 
@@ -183,6 +184,7 @@ export class Translation extends BaseUIElement {
         console.error("Missing language ", Locale.language.data, "for", this.translations)
         return undefined
     }
+
     public textFor(language: string): string | undefined {
         return this.translations[this.actualLanguage(language)]
     }

@@ -80,6 +80,7 @@ export interface LayoutConfigJson {
      * Either a URL or a base64 encoded value (which should include 'data:image/svg+xml;base64)
      *
      * Type: icon
+     * suggestions: return Constants.defaultPinIcons.map(i => ({if: "value="+i, then: i, icon: i}))
      * group: basic
      *
      */
@@ -156,6 +157,7 @@ export interface LayoutConfigJson {
      * type: layer[]
      * types: hidden | layer | hidden
      * group: layers
+     * title: value["builtin"] ?? value["id"] ?? value
      * suggestions: return Array.from(layers.keys()).map(key => ({if: "value="+key, then: "<b>"+key+"</b> (builtin) - "+layers.get(key).description}))
      *
      * A theme must contain at least one layer.
@@ -449,5 +451,21 @@ export interface LayoutConfigJson {
      * ifunset: Write 'change_within_x_m' as usual and if GPS is enabled
      * iftrue: Do not write 'change_within_x_m' and do not indicate that this was done by survey
      */
-    enableMorePrivacy: boolean
+    enableMorePrivacy?: boolean
+    /**
+     * question: Should this theme have the cache enabled?
+     *
+     * Should only be dissabled in highly specific cases, such as the GRB-theme
+     *
+     * ifunset: Cache is enabled
+     * iffalse: Do not cache data
+     * group: hidden
+     */
+    enableCache?: true | boolean
+
+    /**
+     * Set by the preprocessor
+     * group: hidden
+     */
+    _usedImages?: string[]
 }

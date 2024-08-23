@@ -418,7 +418,7 @@
       "question": "What extra tags should be added to the object if this object is chosen?"
     },
     "type": "array",
-    "description": "If chosen as answer, these tags will be applied onto the object, together with the tags from the `if`\nNot compatible with multiAnswer.\nThis can be used e.g. to erase other keys which indicate the 'not' value:\n```json\n{\n    \"if\": \"crossing:marking=rainbow\",\n    \"then\": \"This is a rainbow crossing\",\n    \"addExtraTags\": [\"not:crossing:marking=\"]\n}\n```"
+    "description": "If chosen as answer, these tags will be applied onto the object, together with the tags from the `if`.\nNote that if the contributor picks this mapping, saves and then changes their mind and uses a different mapping,\nthe extraTags will reside.\nE.g. when picking `memorial:type=bench`, then `amenity=bench` will also be applied.\nIf someone later on changes the type to `memorial:statue`, `amenity=bench` will stay onto the object\n(which is the desired behaviour, see e.g. for https://www.openstreetmap.org/node/5620038478)\nUse 'ifNot' to explicitly remove an tag if this is important\nIf someone marks the question as 'unknown', the extra tags will not be erased\nNot compatible with multiAnswer.\nThis can be used e.g. to erase other keys which indicate the 'not' value:\n```json\n{\n    \"if\": \"crossing:marking=rainbow\",\n    \"then\": \"This is a rainbow crossing\",\n    \"addExtraTags\": [\"not:crossing:marking=\"]\n}\n```"
   },
   {
     "path": [
@@ -583,7 +583,7 @@
       "suggestions": [
         {
           "if": "value=string",
-          "then": "<b>string</b> A simple piece of text"
+          "then": "<b>string</b> A simple piece of text which is at most 255 characters long"
         },
         {
           "if": "value=text",
@@ -846,6 +846,17 @@
     },
     "type": "string",
     "description": "This option is used specifically for `charge`, where the cost is indicated with `/item`.\nFor example, a vending machine might sell `bicycle_tube`.\nSetting this value to `bicycle_tube`, then answering this question will set `charge= €XX/bicycle_tube`.\nIf charge did already contain another value, e.g. `charge= €YY/some_item; €ZZ/other_item`, then `€XX/bicycle_tube`will be added.\nNote: those values are sorted alphabetically\nNote: no need to add the `/`"
+  },
+  {
+    "path": [
+      "freeform",
+      "helperArgs"
+    ],
+    "required": true,
+    "hints": {
+      "group": "hidden"
+    },
+    "description": "Extra arguments to configure the input element"
   },
   {
     "path": [
@@ -1215,5 +1226,14 @@
     },
     "type": "string",
     "description": "A list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\nValues are split on ` `  (space)"
+  },
+  {
+    "path": [
+      "filter"
+    ],
+    "required": false,
+    "hints": {},
+    "type": "array",
+    "description": "This tagRendering can introduce this builtin filter"
   }
 ]

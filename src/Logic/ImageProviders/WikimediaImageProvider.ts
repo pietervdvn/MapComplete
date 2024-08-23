@@ -18,6 +18,7 @@ export class WikimediaImageProvider extends ImageProvider {
     public static readonly commonsPrefixes = [...WikimediaImageProvider.apiUrls, "File:"]
     private readonly commons_key = "wikimedia_commons"
     public readonly defaultKeyPrefixes = [this.commons_key, "image"]
+    public readonly name = "Wikimedia"
 
     private constructor() {
         super()
@@ -78,7 +79,14 @@ export class WikimediaImageProvider extends ImageProvider {
         return new SvelteUIElement(Wikimedia_commons_white).SetStyle("width:2em;height: 2em")
     }
 
-    public PrepUrl(value: string): ProvidedImage {
+    public PrepUrl(value: NonNullable<string>): ProvidedImage
+    public PrepUrl(value: undefined): undefined
+
+    public PrepUrl(value: string): ProvidedImage
+    public PrepUrl(value: string | undefined): ProvidedImage | undefined {
+        if (value === undefined) {
+            return undefined
+        }
         value = WikimediaImageProvider.removeCommonsPrefix(value)
 
         if (value.startsWith("File:")) {
@@ -113,7 +121,7 @@ export class WikimediaImageProvider extends ImageProvider {
         return [Promise.resolve(this.UrlForImage("File:" + value))]
     }
 
-    public async DownloadAttribution(img: ProvidedImage): Promise<LicenseInfo> {
+    public async DownloadAttribution(img: { url: string }): Promise<LicenseInfo> {
         const filename = WikimediaImageProvider.ExtractFileName(img.url)
 
         if (filename === "") {
@@ -126,9 +134,11 @@ export class WikimediaImageProvider extends ImageProvider {
             "titles=" +
             filename +
             "&format=json&origin=*"
-        const data = await Utils.downloadJsonCached(url, 365 * 24 * 60 * 60)
+        const data = await Utils.downloadJsonCached<{
+            query: { pages: { title: string; imageinfo: { extmetadata }[] }[] }
+        }>(url, 365 * 24 * 60 * 60)
         const licenseInfo = new LicenseInfo()
-        const pageInfo = data.query.pages[-1]
+        const pageInfo = data.query.pages.at(-1)
         if (pageInfo === undefined) {
             return undefined
         }

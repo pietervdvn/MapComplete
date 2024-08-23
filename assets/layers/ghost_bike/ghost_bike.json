@@ -125,16 +125,7 @@
         "ca": "una bicicleta fantasma",
         "cs": "kola duchů"
       },
-      "tags": [
-        "historic=memorial",
-        "memorial=ghost_bike"
-      ]
-    }
-  ],
-  "tagRenderings": [
-    {
-      "id": "ghost-bike-explanation",
-      "render": {
+      "description": {
         "en": "A <b>ghost bike</b> is a memorial for a cyclist who died in a traffic accident, in the form of a white bicycle placed permanently near the accident location.",
         "nl": "Een <b>Witte Fiets</b> (of Spookfiets) is een aandenken aan een fietser die bij een verkeersongeval om het leven kwam. Het gaat over een witgeschilderde fiets die geplaatst werd in de buurt van het ongeval.",
         "de": "Ein <b>Geisterrad</b> ist ein Denkmal für einen Radfahrer, der bei einem Verkehrsunfall ums Leben kam, in Form eines weißen Fahrrades, das dauerhaft in der Nähe des Unfallortes aufgestellt wird.",
@@ -142,8 +133,15 @@
         "fr": "Un <b>vélo fantôme</b> est un monument commémoratif pour un cycliste décédé dans un accident de la route, sous la forme d'un vélo blanc placé en permanence près du lieu de l'accident.",
         "ca": "Una <b>bicicleta fantasma</b> és un memorial per a un ciclista que va morir en un accident de trànsit, en forma de bicicleta blanca col·locada permanentment a prop del lloc de l'accident.",
         "cs": "<b>kolo duchů</b> je památník cyklisty, který zemřel při dopravní nehodě, v podobě bílého kola umístěného trvale v blízkosti místa nehody."
-      }
-    },
+      },
+      "tags": [
+        "historic=memorial",
+        "memorial=ghost_bike"
+      ]
+    }
+  ],
+  "tagRenderings": [
+    "preset_description",
     "images",
     {
       "question": {

@@ -111,7 +111,7 @@
             ]
           },
           "then": {
-            "render": "circle:white;./assets/layers/food/Vegetarian-mark.svg"
+            "render": "./assets/layers/food/Vegetarian-mark.svg"
           }
         },
         {
@@ -524,6 +524,47 @@
       "id": "Cuisine"
     },
     {
+      "id": "show-menu-image",
+      "render": {
+        "*": "{image_carousel(image:menu)}"
+      }
+    },
+    {
+      "id": "add-menu-image",
+      "render": {
+        "special": {
+          "type": "image_upload",
+          "image-key": "image:menu",
+          "label": {
+            "en": "Add an image from the menu",
+            "nl": "Voeg een foto van het menu toe",
+            "de": "Ein Bild aus dem Menü hinzufügen"
+          }
+        }
+      }
+    },
+    {
+      "id": "menu-website",
+      "question": {
+        "en": "On what webpage is the menu published?",
+        "de": "Auf welcher Webseite wird das Menü veröffentlicht?"
+      },
+      "render": {
+        "special": {
+          "type": "link",
+          "href": "{website:menu}",
+          "text": {
+            "en": "Consult the menu",
+            "de": "Das Menü einsehen"
+          }
+        }
+      },
+      "freeform": {
+        "key": "website:menu",
+        "type": "url"
+      }
+    },
+    {
       "id": "Reservation",
       "condition": "takeaway!=only",
       "question": {
@@ -684,6 +725,7 @@
       "mappings": [
         {
           "if": "diet:vegetarian=no",
+          "icon": "./assets/layers/food/Vegetarian-mark.svg;cross_bottom_right:red",
           "then": {
             "en": "No vegetarian options are available",
             "nl": "Geen vegetarische opties beschikbaar",
@@ -710,6 +752,7 @@
         },
         {
           "if": "diet:vegetarian=yes",
+          "icon": "./assets/layers/food/Vegetarian-mark.svg",
           "then": {
             "en": "Vegetarian options are available",
             "nl": "Vegetarische opties zijn beschikbaar",
@@ -723,6 +766,7 @@
         },
         {
           "if": "diet:vegetarian=only",
+          "icon": "./assets/layers/food/Vegetarian-mark.svg",
           "then": {
             "en": "All dishes are vegetarian",
             "nl": "Enkel vegetarische opties zijn beschikbaar",
@@ -1304,10 +1348,10 @@
         }
       ]
     },
-    "has_organic",
-    "sugar_free",
-    "gluten_free",
-    "lactose_free",
+    "filters.has_organic",
+    "filters.sugar_free",
+    "filters.gluten_free",
+    "filters.lactose_free",
     "accepts_cash",
     "accepts_cards",
     "dogs"

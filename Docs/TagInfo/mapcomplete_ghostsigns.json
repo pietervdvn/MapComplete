@@ -278,6 +278,189 @@
     {
       "key": "ref",
       "description": "Layer 'All advertentie wall paintings' shows and asks freeform values for key 'ref' (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if advertising!=sign)"
+    },
+    {
+      "key": "tourism",
+      "description": "The MapComplete theme Ghost Signs has a layer Artworks showing features with this tag",
+      "value": "artwork"
+    },
+    {
+      "key": "artwork_type",
+      "description": "The MapComplete theme Ghost Signs has a layer Artworks showing features with this tag",
+      "value": "mural"
+    },
+    {
+      "key": "artwork_type",
+      "description": "The MapComplete theme Ghost Signs has a layer Artworks showing features with this tag",
+      "value": "graffiti"
+    },
+    {
+      "key": "artwork_type",
+      "description": "The MapComplete theme Ghost Signs has a layer Artworks showing features with this tag",
+      "value": "mosaic"
+    },
+    {
+      "key": "artwork_type",
+      "description": "The MapComplete theme Ghost Signs has a layer Artworks showing features with this tag",
+      "value": "relief"
+    },
+    {
+      "key": "artwork_type",
+      "description": "The MapComplete theme Ghost Signs has a layer Artworks showing features with this tag",
+      "value": "painting"
+    },
+    {
+      "key": "artwork_type",
+      "description": "The MapComplete theme Ghost Signs has a layer Artworks showing features with this tag",
+      "value": "mural_painting"
+    },
+    {
+      "key": "historic",
+      "description": "Layer 'Artworks' shows historic=advertising with a fixed text, namely 'This artwork is a historic advertisement' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
+      "value": "advertising"
+    },
+    {
+      "key": "historic",
+      "description": "Layer 'Artworks' shows historic= with a fixed text, namely 'This artwork is not a historic advertisement' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') Picking this answer will delete the key historic.",
+      "value": ""
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Artworks' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Artworks allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Artworks allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Artworks allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Artworks allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Artworks' shows and asks freeform values for key 'artwork_type' (in the mapcomplete.org theme 'Ghost Signs')"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Artworks' shows artwork_type=architecture with a fixed text, namely 'Architecture' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
+      "value": "architecture"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Artworks' shows artwork_type=mural with a fixed text, namely 'Mural' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
+      "value": "mural"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Artworks' shows artwork_type=painting with a fixed text, namely 'Painting' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
+      "value": "painting"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Artworks' shows artwork_type=sculpture with a fixed text, namely 'Sculpture' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
+      "value": "sculpture"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Artworks' shows artwork_type=statue with a fixed text, namely 'Statue' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
+      "value": "statue"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Artworks' shows artwork_type=bust with a fixed text, namely 'Bust' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
+      "value": "bust"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Artworks' shows artwork_type=stone with a fixed text, namely 'Stone' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
+      "value": "stone"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Artworks' shows artwork_type=installation with a fixed text, namely 'Installation' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
+      "value": "installation"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Artworks' shows artwork_type=graffiti with a fixed text, namely 'Graffiti' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
+      "value": "graffiti"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Artworks' shows artwork_type=relief with a fixed text, namely 'Relief' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
+      "value": "relief"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Artworks' shows artwork_type=azulejo with a fixed text, namely 'Azulejo (Spanish decorative tilework)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
+      "value": "azulejo"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Artworks' shows artwork_type=tilework with a fixed text, namely 'Tilework' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
+      "value": "tilework"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Artworks' shows artwork_type=woodcarving with a fixed text, namely 'Woodcarving' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
+      "value": "woodcarving"
+    },
+    {
+      "key": "artist:wikidata",
+      "description": "Layer 'Artworks' shows and asks freeform values for key 'artist:wikidata' (in the mapcomplete.org theme 'Ghost Signs')"
+    },
+    {
+      "key": "artist_name",
+      "description": "Layer 'Artworks' shows and asks freeform values for key 'artist_name' (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if artist:wikidata=)"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Artworks' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'Ghost Signs')"
+    },
+    {
+      "key": "wikidata",
+      "description": "Layer 'Artworks' shows and asks freeform values for key 'wikidata' (in the mapcomplete.org theme 'Ghost Signs')"
+    },
+    {
+      "key": "wikipedia",
+      "description": "Layer 'Artworks' shows wikipedia~.+ with a fixed text, namely '{wikipedia():max-height:25rem}' (in the mapcomplete.org theme 'Ghost Signs')"
+    },
+    {
+      "key": "wikidata",
+      "description": "Layer 'Artworks' shows wikidata= with a fixed text, namely 'No Wikipedia page has been linked yet' (in the mapcomplete.org theme 'Ghost Signs') Picking this answer will delete the key wikidata.",
+      "value": ""
+    },
+    {
+      "key": "subject:wikidata",
+      "description": "Layer 'Artworks' shows and asks freeform values for key 'subject:wikidata' (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if subject:wikidata~.+)"
+    },
+    {
+      "key": "historic",
+      "description": "Layer 'Artworks' shows historic=memorial with a fixed text, namely 'This artwork also serves as a memorial' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
+      "value": "memorial"
+    },
+    {
+      "key": "historic",
+      "description": "Layer 'Artworks' shows historic= with a fixed text, namely 'This artwork does not serve as a bench' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') Picking this answer will delete the key historic.",
+      "value": ""
+    },
+    {
+      "key": "amenity",
+      "description": "Layer 'Artworks' shows amenity=bench with a fixed text, namely 'This artwork also serves as a bench' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
+      "value": "bench"
+    },
+    {
+      "key": "amenity",
+      "description": "Layer 'Artworks' shows amenity= with a fixed text, namely 'This artwork does not serve as a bench' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') Picking this answer will delete the key amenity.",
+      "value": ""
     }
   ]
 }

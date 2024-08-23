@@ -30,6 +30,7 @@
    * Class which is applied onto the individual icons
    */
   export let clss = ""
+  export let emojiHeight : string = "40px"
 
   /**
    * Class applied onto the entire element
@@ -40,8 +41,8 @@
 {#if iconsParsed !== undefined && iconsParsed.length > 0}
   <div class={twMerge("relative", size)}>
     {#each iconsParsed as icon}
-      <div class="absolute top-0 left-0 h-full w-full">
-        <Icon icon={icon.icon} color={icon.color} {clss} />
+      <div class="absolute top-0 left-0 flex h-full w-full items-center">
+        <Icon icon={icon.icon} color={icon.color} {clss} {emojiHeight} />
       </div>
     {/each}
   </div>

@@ -6,7 +6,6 @@
   import { UIEventSource } from "../../../Logic/UIEventSource"
   import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
   import { twJoin } from "tailwind-merge"
-  import Icon from "../../Map/Icon.svelte"
   import Marker from "../../Map/Marker.svelte"
 
   export let selectedElement: Feature
@@ -17,7 +16,7 @@
   /**
    * Css classes to apply
    */
-  export let clss: string = ""
+  export let clss: string = "ml-2"
   export let mapping: {
     readonly then: Translation
     readonly searchTerms?: Record<string, string[]>
@@ -31,6 +30,12 @@
       | "large-height"
       | string
   }
+
+  const emojiHeights = {
+    "small":"2rem",
+    "medium":"3rem",
+    "large":"5rem"
+  }
 </script>
 
 {#if mapping.icon !== undefined}
@@ -41,9 +46,11 @@
         `mapping-icon-${mapping.iconClass ?? "small"}-height mapping-icon-${
           mapping.iconClass ?? "small"
         }-width`,
-        "mr-2",
-        "shrink-0 mx-2"
+        "shrink-0"
       )}
+
+      emojiHeight={ emojiHeights[mapping.iconClass] ?? "2rem"}
+
       clss={`mapping-icon-${mapping.iconClass ?? "small"}`}
     />
     <SpecialTranslation t={mapping.then} {tags} {state} {layer} feature={selectedElement} {clss} />

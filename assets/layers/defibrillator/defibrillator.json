@@ -526,6 +526,12 @@
         "type": "text",
         "key": "defibrillator:location:fr"
       },
+      "condition": {
+        "or": [
+          "_country=be",
+          "defibrillator:location:fr~*"
+        ]
+      },
       "id": "defibrillator-defibrillator:location:fr"
     },
     "wheelchair-access",

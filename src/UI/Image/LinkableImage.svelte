@@ -34,7 +34,7 @@
     id: Object.values(image.osmTags)[0],
   }
 
-  function applyLink(isLinked: boolean) {
+  async function applyLink(isLinked: boolean) {
     console.log("Applying linked image", isLinked, targetValue)
     const currentTags = tags.data
     const key = Object.keys(image.osmTags)[0]
@@ -44,7 +44,7 @@
         theme: tags.data._orig_theme ?? state.layout.id,
         changeType: "link-image",
       })
-      state.changes.applyAction(action)
+      await state.changes.applyAction(action)
     } else {
       for (const k in currentTags) {
         const v = currentTags[k]

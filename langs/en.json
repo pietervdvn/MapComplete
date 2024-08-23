@@ -180,7 +180,7 @@
         "attribution": {
             "attributionBackgroundLayer": "The current background layer is {name}",
             "attributionBackgroundLayerWithCopyright": "The current background layer is {name}: {copyright}",
-            "attributionContent": "<p>All data is provided by <a href='https://osm.org' target='_blank'>OpenStreetMap</a>, freely reusable under <a href='https://osm.org/copyright' target='_blank'>the Open DataBase License</a>.</p>",
+            "attributionContent": "<p>All data is provided by <a href='https://www.openstreetmap.org' target='_blank'>OpenStreetMap</a>, freely reusable under <a href='https://www.openstreetmap.org/copyright' target='_blank'>the Open DataBase License</a>.</p>",
             "attributionTitle": "Attribution notice",
             "codeContributionsBy": "MapComplete has been built by {contributors} and <a href='https://github.com/pietervdvn/MapComplete/graphs/contributors' target='_blank'>{hiddenCount} more contributors</a>",
             "donate": "Support MapComplete financially",
@@ -213,6 +213,7 @@
         "backgroundMap": "Select a background layer",
         "backgroundSwitch": "Switch background",
         "cancel": "Cancel",
+        "clearPendingChanges": "Clear pending changes",
         "confirm": "Confirm",
         "customThemeIntro": "These are previously visited user-generated themes.",
         "customThemeTitle": "Custom themes",
@@ -245,7 +246,7 @@
             "licenseInfo": "<h3>Copyright notice</h3>The provided data is available under ODbL. Reusing it is gratis for any purpose, but <ul><li>the attribution <b>© OpenStreetMap contributors</b> must be shown<li><li>Any change must be published under the same license</li></ul> Please read the full <a href='https://www.openstreetmap.org/copyright' target='_blank'>copyright notice</a> for details.",
             "noDataLoaded": "No data is loaded yet. Download will be available soon",
             "pdf": {
-                "current_view_generic": "Export a PDF off the current view for {paper_size} in {orientation} orientation"
+                "current_view_generic": "Export a PDF of the current view for {paper_size} in {orientation} orientation"
             },
             "title": "Download",
             "toMuch": "There are to many features to download them all",
@@ -273,6 +274,7 @@
             "background": "Change background",
             "filter": "Filter data",
             "jumpToLocation": "Go to your current location",
+            "locationNotAvailable": "GPS location not available. Does this device have location or are you in a tunnel?",
             "menu": "Menu",
             "zoomIn": "Zoom in",
             "zoomOut": "Zoom out"
@@ -337,7 +339,7 @@
             "on_weekends": "Opened on weekends {ranges}",
             "openTill": "till",
             "open_24_7": "Open around the clock",
-            "open_during_ph": "During a public holiday, this is",
+            "open_during_ph": "During a public holiday, it is",
             "opensAt": "from",
             "ph_closed": "closed",
             "ph_not_known": " ",
@@ -406,7 +408,7 @@
             "fsBackground": "Enable switching backgrounds",
             "fsFilter": "Enable the possibility to toggle layers and filters",
             "fsGeolocation": "Enable geolocation",
-            "fsUserbadge": "Enable the login button",
+            "fsUserbadge": "Enable the login button and thus the possibility to make changes",
             "fsWelcomeMessage": "Show the welcome message popup and associated tabs",
             "intro": "<h3>Share this map</h3> Share this map by copying the link below and sending it to friends and family:",
             "openLayers": "Open the layers and filters menu",
@@ -563,6 +565,7 @@
         "isDeleted": "Deleted",
         "nearby": {
             "close": "Collapse panel with nearby images",
+            "failed": "Fetching images from {service} failed",
             "link": "This picture shows the object",
             "noNearbyImages": "No nearby images were found",
             "seeNearby": "Browse and link nearby pictures",
@@ -697,6 +700,11 @@
         "takeImages": "Take images of the tree to automatically detect the tree type",
         "tryAgain": "Select a different species"
     },
+    "preset_type": {
+        "question": "Of what type is this object?",
+        "typeDescription": "This is a {title}. {description}",
+        "typeTitle": "This is a {title}"
+    },
     "privacy": {
         "editingIntro": "When you make a change to the map, this change is recorded on OpenStreetMap and is publicly available to anyone. A changeset made with MapComplete includes the following data:",
         "editingOutro": "Please refer to <a href='https://wiki.osmfoundation.org/wiki/Privacy_Policy' target='_blank'>the privacy policy on OpenStreetMap.org</a> for detailed information. We'd like to remind you that you can use a fictional name when signing up.",
@@ -766,11 +774,9 @@
         "notImmediate": "Translations are not updated directly. This typically takes a few days"
     },
     "userinfo": {
-        "editDescription": "Edit your profile description",
         "gotoInbox": "Open your inbox",
         "gotoSettings": "Go to your settings on OpenStreetMap.org",
         "noDescription": "You don't have a description on your profile yet",
-        "noDescriptionCallToAction": "Add a profile description",
         "notLoggedIn": "You have logged out"
     },
     "validation": {
@@ -842,6 +848,7 @@
         },
         "tooLong": "The text is too long, at most 255 characters are allowed. You have {count} characters now.",
         "url": {
+            "aggregator": "{host} is a third-party aggregator website. If possible, search the official website.",
             "description": "link to a website",
             "feedback": "This is not a valid web address"
         },

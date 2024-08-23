@@ -59,8 +59,12 @@ class SingleBackgroundHandler {
             "map moved and not been used for",
             SingleBackgroundHandler.DEACTIVATE_AFTER
         )
-        if (map.getLayer(<string>this._targetLayer.properties.id)) {
-            map.removeLayer(<string>this._targetLayer.properties.id)
+        try {
+            if (map.getLayer(<string>this._targetLayer.properties.id)) {
+                map.removeLayer(<string>this._targetLayer.properties.id)
+            }
+        } catch (e) {
+            console.warn("Could not (try to) remove the raster layer", e)
         }
     }
 

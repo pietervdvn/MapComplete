@@ -1,0 +1,191 @@
+{
+  "id": "tool_library",
+  "name": {
+    "en": "Tool libraries",
+    "de": "Werkzeugbibliothek"
+  },
+  "description": {
+    "en": "A tool library is a place where people from the general public can borrow tools",
+    "de": "Eine Werkzeugbibliothek ist ein Ort, an dem Menschen aus der Öffentlichkeit Werkzeuge ausleihen können"
+  },
+  "source": {
+    "osmTags": "amenity=tool_library"
+  },
+  "minzoom": 3,
+  "title": {
+    "render": {
+      "en": "Tool library {name}",
+      "de": "Werkzeugbibliothek {name}"
+    }
+  },
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "pin",
+          "color": "#93E800FF"
+        },
+        {
+          "icon": "./assets/layers/bike_repair_station/repair_station.svg"
+        }
+      ],
+      "anchor": "bottom",
+      "label": {
+        "mappings": [
+          {
+            "if": "name~*",
+            "then": {
+              "en": "{name}",
+              "de": "{name}"
+            }
+          }
+        ]
+      },
+      "labelCssClasses": "bg-white rounded px-2"
+    }
+  ],
+  "lineRendering": [
+    {
+      "width": 1,
+      "color": "blue"
+    }
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "a tool library",
+        "de": "Eine Werkzeugbibliothek"
+      },
+      "tags": [
+        "amenity=tool_library"
+      ],
+      "description": {
+        "en": "A tool library is a place where people from the general public can borrow tools",
+        "de": "Eine Werkzeugbibliothek ist ein Ort, an dem Menschen aus der Öffentlichkeit Werkzeuge ausleihen können"
+      }
+    }
+  ],
+  "tagRenderings": [
+    "images",
+    "contact",
+    "facebook",
+    "opening_hours_by_appointment",
+    {
+      "question": {
+        "en": "Is a membership required to borrow tools here?",
+        "de": "Ist eine Mitgliedschaft erforderlich, um hier Werkzeuge auszuleihen?"
+      },
+      "id": "membership",
+      "mappings": [
+        {
+          "then": {
+            "en": "No membership is required to borrow tools here",
+            "de": "Keine Mitgliedschaft ist erforderlich, um hier Werkzeuge auszuleihen"
+          },
+          "if": "membership=no"
+        },
+        {
+          "if": "membership=required",
+          "then": {
+            "en": "A <b>membership is required</b> to use this tool library",
+            "de": "Eine <b>Mitgliedschaft ist erforderlich</b>, um diese Werkzeugbibliothek zu nutzen"
+          }
+        },
+        {
+          "if": "membership=optional",
+          "then": {
+            "en": "A <b>membership is possible</b> but not required to use this tool library",
+            "de": "Eine <b> Mitgliedschaft ist möglich</b> , aber nicht erforderlich, um diese Werkzeugbibliothek zu nutzen"
+          }
+        }
+      ]
+    },
+    {
+      "question": {
+        "en": "How much does a membership cost?",
+        "de": "Wie viel kostet eine Mitgliedschaft?"
+      },
+      "id": "membership_charge",
+      "questionHint": {
+        "en": "There might be many formulas. In case of doubt, pick the most common one",
+        "de": "Es gibt möglicherweise viele Modelle. Im Zweifelsfall wähle das häufigste"
+      },
+      "freeform": {
+        "key": "charge:membership",
+        "type": "currency"
+      },
+      "condition": "membership=required",
+      "render": {
+        "en": "A membership costs {charge:membership}",
+        "de": "Eine Mitgliedschaft kostet {charge:membership}"
+      }
+    },
+    {
+      "question": {
+        "en": "Is a fee asked to borrow tools?",
+        "de": "Wird eine Gebühr erhoben, um Werkzeuge auszuleihen?"
+      },
+      "id": "fee",
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "fee=no",
+              "membership=required"
+            ]
+          },
+          "then": {
+            "en": "Borrowing tools is free (if one has a membership)",
+            "de": "Werkzeuge ausleihen ist kostenlos (wenn man eine Mitgliedschaft hat)"
+          },
+          "hideInAnswer": "membership!=required"
+        },
+        {
+          "if": "fee=no",
+          "then": {
+            "en": "Borrowing tools is free",
+            "de": "Werkzeuge ausleihen ist kostenlos"
+          },
+          "hideInAnswer": "membership=required"
+        },
+        {
+          "if": "fee=yes",
+          "then": {
+            "en": "A fee is asked when borrowing tools",
+            "de": "Es wird eine Gebühr erhoben, wenn man Werkzeuge ausleiht"
+          }
+        },
+        {
+          "if": "fee=donation",
+          "then": {
+            "en": "A donation can be given when borrowing tools",
+            "de": "Eine Spende kann gegeben werden, wenn man Werkzeuge ausleiht"
+          }
+        }
+      ],
+      "questionHint": {
+        "en": "If a membership is required, we assume that the membership is already paid for.",
+        "de": "Wenn eine Mitgliedschaft erforderlich ist, gehen wir davon aus, dass die Mitgliedschaft bereits bezahlt ist."
+      }
+    }
+  ],
+  "deletion": true,
+  "allowMove": true,
+  "units": [
+    {
+      "charge:membership": {
+        "inverted": true,
+        "quantity": "duration",
+        "denominations": [
+          "years",
+          "months",
+          "weeks"
+        ]
+      }
+    }
+  ]
+}

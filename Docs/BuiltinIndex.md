@@ -12,9 +12,11 @@
  - animal_shelter
  - artwork
  - assembly_point
+ - assisted_repair
  - atm
  - bank
  - barrier
+ - bbq
  - bench
  - bench_at_pt
  - bicycle_library
@@ -23,7 +25,6 @@
  - bike_cleaning
  - bike_parking
  - bike_repair_station
- - bike_shop
  - bike_themed_object
  - binocular
  - birdhide
@@ -50,6 +51,7 @@
  - extinguisher
  - favourite
  - fire_station
+ - firepit
  - fitness_centre
  - fitness_station
  - food
@@ -59,7 +61,6 @@
  - grave
  - guidepost
  - hackerspace
- - hotel
  - hydrant
  - ice_cream
  - indoors
@@ -109,6 +110,8 @@
  - ticket_validator
  - toilet
  - toilet_at_amenity
+ - tool_library
+ - tourism_accomodation
  - trail
  - transit_stops
  - tree_node
@@ -129,7 +132,6 @@
  - bicycle_library
  - bicycle_rental
  - bike_cafe
- - bike_shop
  - bike_themed_object
  - brothel
  - cafe_pub
@@ -166,13 +168,13 @@
  - food
  - food_courts
  - hackerspace
- - hotel
  - ice_cream
  - love_hotel
  - pharmacy
  - playground
  - shops
  - stripclub
+ - tourism_accomodation
  - veterinary
             
             ### website
@@ -181,12 +183,12 @@
  - bicycle_library
  - bicycle_rental
  - bike_cafe
- - bike_shop
  - bike_themed_object
  - cafe_pub
  - car_rental
  - climbing_club
  - climbing_gym
+ - cycle_highways
  - dentist
  - disaster_response
  - doctors
@@ -197,7 +199,6 @@
  - food_courts
  - governments
  - hackerspace
- - hotel
  - kindergarten_childcare
  - nature_reserve
  - observation_tower
@@ -221,7 +222,6 @@
  - bicycle_library
  - bicycle_rental
  - bike_cafe
- - bike_shop
  - bike_themed_object
  - cafe_pub
  - car_rental
@@ -234,7 +234,6 @@
  - food_courts
  - governments
  - hackerspace
- - hotel
  - kindergarten_childcare
  - pharmacy
  - physiotherapist
@@ -252,7 +251,6 @@
  - bicycle_library
  - bicycle_rental
  - bike_cafe
- - bike_shop
  - bike_themed_object
  - cafe_pub
  - car_rental
@@ -264,7 +262,6 @@
  - food
  - governments
  - hackerspace
- - hotel
  - kindergarten_childcare
  - pharmacy
  - physiotherapist
@@ -277,8 +274,10 @@
             ### opening_hours_by_appointment
 
              - animal_shelter
+ - assisted_repair
  - doctors
  - physiotherapist
+ - tool_library
             
             ### wikipedia
 
@@ -288,10 +287,41 @@
  - nature_reserve
  - observation_tower
             
+            ### memorial.memorial-questions
+
+             - artwork
+            
             ### bench.bench-questions
 
              - artwork
  - memorial
+            
+            ### preset_description
+
+             - assisted_repair
+ - ghost_bike
+            
+            ### contact
+
+             - assisted_repair
+ - brothel
+ - cinema
+ - hospital
+ - ice_cream
+ - love_hotel
+ - stripclub
+ - tool_library
+ - tourism_accomodation
+            
+            ### mastodon
+
+             - assisted_repair
+ - hackerspace
+            
+            ### facebook
+
+             - assisted_repair
+ - tool_library
             
             ### opening_hours_24_7
 
@@ -321,9 +351,9 @@
             ### description
 
              - bicycle_library
- - bike_shop
  - bike_themed_object
  - climbing_route
+ - shops
  - toilet
  - toilet_at_amenity
             
@@ -374,22 +404,9 @@
  - toilet_at_amenity
  - vending_machine
             
-            ### bicycle_rental.*bicycle_rental
+            ### shops.*
 
              - bike_shop
-            
-            ### bike_cleaning.bike_cleaning-service:bicycle:cleaning:charge
-
-             - bike_shop
-            
-            ### contact
-
-             - brothel
- - cinema
- - hospital
- - ice_cream
- - love_hotel
- - stripclub
             
             ### wheelchair-access
 
@@ -399,12 +416,12 @@
  - food
  - food_courts
  - hackerspace
- - hotel
  - ice_cream
  - observation_tower
  - outdoor_seating
  - playground_equipment
  - sports_centre
+ - tourism_accomodation
  - transit_stops
             
             ### smoking
@@ -423,13 +440,13 @@
 
              - cafe_pub
  - food
+ - tourism_accomodation
             
             ### internet
 
              - cafe_pub
  - climbing_gym
  - food
- - hotel
  - shops
             
             ### internet-fee
@@ -437,7 +454,6 @@
              - cafe_pub
  - climbing_gym
  - food
- - hotel
  - shops
             
             ### internet-ssid
@@ -445,7 +461,6 @@
              - cafe_pub
  - climbing_gym
  - food
- - hotel
  - shops
             
             ### questions
@@ -456,7 +471,6 @@
  - hackerspace
  - play_forest
  - playground
- - shops
  - sport_pitch
             
             ### climbing.website
@@ -497,6 +511,21 @@
 
              - climbing_gym
             
+            ### shower
+
+             - climbing_gym
+            
+            ### all_tags
+
+             - cycle_highways
+ - fixme
+ - summary
+            
+            ### seasonal
+
+             - drinking_water
+ - firepit
+            
             ### multilevels
 
              - elevator
@@ -534,11 +563,6 @@
  - souvenir_coin
  - souvenir_note
             
-            ### all_tags
-
-             - fixme
- - summary
-            
             ### sugar_free
 
              - food
@@ -566,14 +590,11 @@
 
              - gps_track
             
-            ### mastodon
-
-             - hackerspace
-            
             ### internet-all
 
              - hackerspace
  - outdoor_seating
+ - tourism_accomodation
             
             ### diets
 
@@ -602,6 +623,14 @@
              - recycling
             
             ### id_presets.shop_types
+
+             - shops
+            
+            ### bicycle_rental.*bicycle_rental
+
+             - shops
+            
+            ### bike_cleaning.bike_cleaning-service_bicycle_cleaning_charge
 
              - shops
             
@@ -645,3 +674,14 @@
 
              - toilet_at_amenity
             
+            ### {preset_type_select()}
+
+             - tourism_accomodation
+            
+            ### brand
+
+             - tourism_accomodation
+            
+
+
+This document is autogenerated from [assets/layers/*.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/*.json)

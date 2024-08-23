@@ -14,20 +14,14 @@ import WithContextLoader from "./WithContextLoader"
 import LineRenderingConfig from "./LineRenderingConfig"
 import { TagRenderingConfigJson } from "./Json/TagRenderingConfigJson"
 import BaseUIElement from "../../UI/BaseUIElement"
-import Combine from "../../UI/Base/Combine"
-import Title from "../../UI/Base/Title"
-import List from "../../UI/Base/List"
 import Link from "../../UI/Base/Link"
 import { Utils } from "../../Utils"
 import { TagsFilter } from "../../Logic/Tags/TagsFilter"
-import Table from "../../UI/Base/Table"
 import FilterConfigJson from "./Json/FilterConfigJson"
 import { Overpass } from "../../Logic/Osm/Overpass"
-import { FixedUiElement } from "../../UI/Base/FixedUiElement"
-import { ImmutableStore } from "../../Logic/UIEventSource"
-import { OsmTags } from "../OsmFeature"
 import Constants from "../Constants"
 import { QuestionableTagRenderingConfigJson } from "./Json/QuestionableTagRenderingConfigJson"
+import MarkdownUtils from "../../Utils/MarkdownUtils"
 
 export default class LayerConfig extends WithContextLoader {
     public static readonly syncSelectionAllowed = ["no", "local", "theme-only", "global"] as const
@@ -69,18 +63,29 @@ export default class LayerConfig extends WithContextLoader {
     public readonly popupInFloatover: boolean | string
     public readonly enableMorePrivacy: boolean
 
+    /**
+     * If this layer is based on another layer, this might be indicated here
+     * @private
+     */
+    private readonly _basedOn: string | undefined
+
     constructor(json: LayerConfigJson, context?: string, official: boolean = true) {
-        context = context + "." + json.id
+        context = context + "." + json?.id
         const translationContext = "layers:" + json.id
         super(json, context)
         this.id = json.id
+        this._basedOn = json["_basedOn"]
 
         if (json.source === "special" || json.source === "special:library") {
             this.source = null
         }
 
         this.syncSelection = json.syncSelection ?? "no"
-        if (typeof json.source !== "string") {
+        if(!json.source){
+            this.source = new SourceConfig({
+                osmTags: TagUtils.Tag({or: json.presets.map(pr => ({and:pr.tags}))})
+            })
+        }else if (typeof json.source !== "string") {
             this.maxAgeOfCache = json.source["maxCacheAge"] ?? 24 * 60 * 60 * 30
             this.source = new SourceConfig(
                 {
@@ -92,7 +97,7 @@ export default class LayerConfig extends WithContextLoader {
                     mercatorCrs: json.source["mercatorCrs"],
                     idKey: json.source["idKey"],
                 },
-                json.id
+                json.id,
             )
         }
 
@@ -111,7 +116,7 @@ export default class LayerConfig extends WithContextLoader {
         if (json.calculatedTags !== undefined) {
             if (!official) {
                 console.warn(
-                    `Unofficial theme ${this.id} with custom javascript! This is a security risk`
+                    `Unofficial theme ${this.id} with custom javascript! This is a security risk`,
                 )
             }
             this.calculatedTags = []
@@ -181,7 +186,7 @@ export default class LayerConfig extends WithContextLoader {
                 tags: pr.tags.map((t) => TagUtils.SimpleTag(t)),
                 description: Translations.T(
                     pr.description,
-                    `${translationContext}.presets.${i}.description`
+                    `${translationContext}.presets.${i}.description`,
                 ),
                 preciseInput: preciseInput,
                 exampleImages: pr.exampleImages,
@@ -195,7 +200,7 @@ export default class LayerConfig extends WithContextLoader {
 
         if (json.lineRendering) {
             this.lineRendering = Utils.NoNull(json.lineRendering).map(
-                (r, i) => new LineRenderingConfig(r, `${context}[${i}]`)
+                (r, i) => new LineRenderingConfig(r, `${context}[${i}]`),
             )
         } else {
             this.lineRendering = []
@@ -203,7 +208,7 @@ export default class LayerConfig extends WithContextLoader {
 
         if (json.pointRendering) {
             this.mapRendering = Utils.NoNull(json.pointRendering).map(
-                (r, i) => new PointRenderingConfig(r, `${context}[${i}](${this.id})`)
+                (r, i) => new PointRenderingConfig(r, `${context}[${i}](${this.id})`),
             )
         } else {
             this.mapRendering = []
@@ -215,7 +220,7 @@ export default class LayerConfig extends WithContextLoader {
                     r.location.has("centroid") ||
                     r.location.has("projected_centerpoint") ||
                     r.location.has("start") ||
-                    r.location.has("end")
+                    r.location.has("end"),
             )
 
             if (
@@ -237,7 +242,7 @@ export default class LayerConfig extends WithContextLoader {
                 Constants.priviliged_layers.indexOf(<any>this.id) < 0 &&
                 this.source !== null /*library layer*/ &&
                 !this.source?.geojsonSource?.startsWith(
-                    "https://api.openstreetmap.org/api/0.6/notes.json"
+                    "https://api.openstreetmap.org/api/0.6/notes.json",
                 )
             ) {
                 throw (
@@ -256,7 +261,7 @@ export default class LayerConfig extends WithContextLoader {
                     typeof tr !== "string" &&
                     tr["builtin"] === undefined &&
                     tr["id"] === undefined &&
-                    tr["rewrite"] === undefined
+                    tr["rewrite"] === undefined,
             ) ?? []
         if (missingIds?.length > 0 && official) {
             console.error("Some tagRenderings of", this.id, "are missing an id:", missingIds)
@@ -267,8 +272,8 @@ export default class LayerConfig extends WithContextLoader {
             (tr, i) =>
                 new TagRenderingConfig(
                     <QuestionableTagRenderingConfigJson>tr,
-                    this.id + ".tagRenderings[" + i + "]"
-                )
+                    this.id + ".tagRenderings[" + i + "]",
+                ),
         )
         if (json.units !== undefined && !Array.isArray(json.units)) {
             throw (
@@ -278,7 +283,7 @@ export default class LayerConfig extends WithContextLoader {
             )
         }
         this.units = (json.units ?? []).flatMap((unitJson, i) =>
-            Unit.fromJson(unitJson, this.tagRenderings, `${context}.unit[${i}]`)
+            Unit.fromJson(unitJson, this.tagRenderings, `${context}.unit[${i}]`),
         )
 
         if (
@@ -289,9 +294,11 @@ export default class LayerConfig extends WithContextLoader {
             this.filterIsSameAs = json.filter["sameAs"]
             this.filters = []
         } else {
-            this.filters = (<FilterConfigJson[]>json.filter ?? []).map((option, i) => {
-                return new FilterConfig(option, `layers:${this.id}.filter.${i}`)
-            })
+            this.filters = (<FilterConfigJson[]>json.filter ?? [])
+                .filter((f) => typeof f !== "string")
+                .map((option, i) => {
+                    return new FilterConfig(option, `layers:${this.id}.filter.${i}`)
+                })
         }
 
         {
@@ -352,7 +359,7 @@ export default class LayerConfig extends WithContextLoader {
 
     public GetBaseTags(): Record<string, string> {
         return TagUtils.changeAsProperties(
-            this.source?.osmTags?.asChange({ id: "node/-1" }) ?? [{ k: "id", v: "node/-1" }]
+            this.source?.osmTags?.asChange({ id: "node/-1" }) ?? [{ k: "id", v: "node/-1" }],
         )
     }
 
@@ -365,192 +372,174 @@ export default class LayerConfig extends WithContextLoader {
             neededLayer: string
         }[] = [],
         addedByDefault = false,
-        canBeIncluded = true
-    ): BaseUIElement {
-        const extraProps: (string | BaseUIElement)[] = []
+        canBeIncluded = true,
+    ): string {
+        const extraProps: string[] = []
         extraProps.push("This layer is shown at zoomlevel **" + this.minzoom + "** and higher")
 
         if (canBeIncluded) {
             if (addedByDefault) {
                 extraProps.push(
-                    "**This layer is included automatically in every theme. This layer might contain no points**"
+                    "**This layer is included automatically in every theme. This layer might contain no points**",
                 )
             }
             if (this.shownByDefault === false) {
                 extraProps.push(
-                    "This layer is not visible by default and must be enabled in the filter by the user. "
+                    "This layer is not visible by default and must be enabled in the filter by the user. ",
                 )
             }
             if (this.title === undefined) {
                 extraProps.push(
-                    "Elements don't have a title set and cannot be toggled nor will they show up in the dashboard. If you import this layer in your theme, override `title` to make this toggleable."
+                    "Elements don't have a title set and cannot be toggled nor will they show up in the dashboard. If you import this layer in your theme, override `title` to make this toggleable.",
                 )
             }
             if (this.name === undefined && this.shownByDefault === false) {
                 extraProps.push(
-                    "This layer is not visible by default and the visibility cannot be toggled, effectively resulting in a fully hidden layer. This can be useful, e.g. to calculate some metatags. If you want to render this layer (e.g. for debugging), enable it by setting the URL-parameter layer-<id>=true"
+                    "This layer is not visible by default and the visibility cannot be toggled, effectively resulting in a fully hidden layer. This can be useful, e.g. to calculate some metatags. If you want to render this layer (e.g. for debugging), enable it by setting the URL-parameter layer-<id>=true",
                 )
             }
             if (this.name === undefined) {
                 extraProps.push(
-                    "Not visible in the layer selection by default. If you want to make this layer toggable, override `name`"
+                    "Not visible in the layer selection by default. If you want to make this layer toggable, override `name`",
                 )
             }
             if (this.mapRendering.length === 0) {
                 extraProps.push(
-                    "Not rendered on the map by default. If you want to rendering this on the map, override `mapRenderings`"
+                    "Not rendered on the map by default. If you want to rendering this on the map, override `mapRenderings`",
                 )
             }
 
             if (this.source?.geojsonSource !== undefined) {
                 extraProps.push(
-                    new Combine([
-                        Utils.runningFromConsole
-                            ? "<img src='../warning.svg' height='1rem'/>"
-                            : undefined,
+                    [
+                        "<img src='../warning.svg' height='1rem'/>",
                         "This layer is loaded from an external source, namely ",
-                        new FixedUiElement(this.source.geojsonSource).SetClass("code"),
-                    ])
+                        "`" + this.source.geojsonSource + "`",
+                    ].join("\n\n"),
                 )
             }
         } else {
             extraProps.push(
-                "This layer can **not** be included in a theme. It is solely used by [special renderings](SpecialRenderings.md) showing a minimap with custom data."
+                "This layer can **not** be included in a theme. It is solely used by [special renderings](SpecialRenderings.md) showing a minimap with custom data.",
             )
         }
 
-        let usingLayer: BaseUIElement[] = []
+        let usingLayer: string[] = []
         if (!addedByDefault) {
             if (usedInThemes?.length > 0) {
                 usingLayer = [
-                    new Title("Themes using this layer", 2),
-                    new List(
-                        (usedInThemes ?? []).map(
-                            (id) => new Link(id, "https://mapcomplete.org/" + id)
-                        )
+                    "## Themes using this layer",
+                    MarkdownUtils.list(
+                        (usedInThemes ?? []).map((id) => `[${id}](https://mapcomplete.org/${id})`),
                     ),
                 ]
             } else if (this.source !== null) {
-                usingLayer = [new FixedUiElement("No themes use this layer")]
+                usingLayer = ["No themes use this layer"]
             }
         }
 
         for (const dep of dependencies) {
             extraProps.push(
-                new Combine([
+                [
                     "This layer will automatically load ",
-                    new Link(dep.neededLayer, "./" + dep.neededLayer + ".md"),
+                    `[${dep.neededLayer}](./${dep.neededLayer}.md)`,
                     " into the layout as it depends on it: ",
                     dep.reason,
                     "(" + dep.context + ")",
-                ])
+                ].join(" "),
             )
         }
 
         for (const revDep of Utils.Dedup(layerIsNeededBy?.get(this.id) ?? [])) {
             extraProps.push(
-                new Combine([
-                    "This layer is needed as dependency for layer",
-                    new Link(revDep, "#" + revDep),
-                ])
+                ["This layer is needed as dependency for layer", `[${revDep}](#${revDep})`].join(
+                    " ",
+                ),
             )
         }
 
-        const tableRows = Utils.NoNull(
+        const tableRows: string[][] = Utils.NoNull(
             this.tagRenderings
                 .map((tr) => tr.FreeformValues())
+                .filter((values) => values !== undefined)
+                .filter((values) => values.key !== "id")
                 .map((values) => {
-                    if (values == undefined) {
-                        return undefined
-                    }
-                    const embedded: (Link | string)[] = values.values?.map((v) =>
-                        Link.OsmWiki(values.key, v, true).SetClass("mr-2")
+                    const embedded: string[] = values.values?.map((v) =>
+                        Link.OsmWiki(values.key, v, true).SetClass("mr-2").AsMarkdown(),
                     ) ?? ["_no preset options defined, or no values in them_"]
+                    const statistics = `https://taghistory.raifer.tech/?#***/${encodeURIComponent(
+                        values.key,
+                    )}/`
+                    const tagInfo = `https://taginfo.openstreetmap.org/keys/${values.key}#values`
                     return [
-                        new Combine([
-                            new Link(
-                                "<img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'>",
-                                "https://taginfo.openstreetmap.org/keys/" + values.key + "#values",
-                                true
-                            ),
-                            Link.OsmWiki(values.key),
-                        ]).SetClass("flex"),
+                        [
+                            `<a target="_blank" href='${tagInfo}'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a>`,
+                            `<a target="_blank" href='${statistics}'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a>`,
+
+                            Link.OsmWiki(values.key).AsMarkdown(),
+                        ].join(" "),
                         values.type === undefined
                             ? "Multiple choice"
-                            : new Link(values.type, "../SpecialInputElements.md#" + values.type),
-                        new Combine(embedded).SetClass("flex"),
+                            : `[${values.type}](../SpecialInputElements.md#${values.type})`,
+                        embedded.join(" "),
                     ]
-                })
+                }),
         )
 
-        let quickOverview: BaseUIElement = undefined
+        let quickOverview: string[] = []
         if (tableRows.length > 0) {
-            quickOverview = new Combine([
-                new FixedUiElement("Warning: ").SetClass("bold"),
+            quickOverview = [
+                "**Warning:**",
                 "this quick overview is incomplete",
-                new Table(
+                MarkdownUtils.table(
                     ["attribute", "type", "values which are supported by this layer"],
-                    tableRows
-                ).SetClass("zebra-table"),
-            ]).SetClass("flex-col flex")
+                    tableRows,
+                ),
+            ]
         }
 
-        let iconImg: BaseUIElement = new FixedUiElement("")
-
-        if (!Utils.runningFromConsole) {
-            iconImg = this.mapRendering
-                .filter((mr) => mr.location.has("point"))
-                .map(
-                    (mr) =>
-                        mr.RenderIcon(new ImmutableStore<OsmTags>({ id: "node/-1" }), {
-                            includeBadges: false,
-                        }).html
-                )
-                .find((i) => i !== undefined)
-        }
-
-        let overpassLink: BaseUIElement = undefined
+        let overpassLink: string = undefined
         if (this.source !== undefined) {
             try {
-                overpassLink = new Link(
-                    "Execute on overpass",
+                overpassLink =
+                    "[Execute on overpass](" +
                     Overpass.AsOverpassTurboLink(<TagsFilter>this.source.osmTags.optimize())
                         .replaceAll("(", "%28")
-                        .replaceAll(")", "%29")
-                )
+                        .replaceAll(")", "%29") +
+                    ")"
             } catch (e) {
                 console.error("Could not generate overpasslink for " + this.id)
             }
         }
 
-        const filterDocs: (string | BaseUIElement)[] = []
+        const filterDocs: string[] = []
         if (this.filters.length > 0) {
-            filterDocs.push(new Title("Filters", 4))
+            filterDocs.push("## Filters")
             filterDocs.push(...this.filters.map((filter) => filter.GenerateDocs()))
         }
 
-        const tagsDescription = []
+        const tagsDescription: string[] = []
         if (this.source !== null) {
-            tagsDescription.push(new Title("Basic tags for this layer", 2))
+            tagsDescription.push("## Basic tags for this layer")
 
             const neededTags = <TagsFilter>this.source.osmTags.optimize()
             if (neededTags["and"]) {
                 const parts = neededTags["and"]
                 tagsDescription.push(
                     "Elements must match **all** of the following expressions:",
-                    parts.map((p, i) => i + ". " + p.asHumanString(true, false, {})).join("\n")
+                    parts.map((p, i) => i + ". " + p.asHumanString(true, false, {})).join("\n"),
                 )
             } else if (neededTags["or"]) {
                 const parts = neededTags["or"]
                 tagsDescription.push(
                     "Elements must match **any** of the following expressions:",
-                    parts.map((p) => " - " + p.asHumanString(true, false, {})).join("\n")
+                    parts.map((p) => " - " + p.asHumanString(true, false, {})).join("\n"),
                 )
             } else {
                 tagsDescription.push(
                     "Elements must match the expression **" +
-                        neededTags.asHumanString(true, false, {}) +
-                        "**"
+                    neededTags.asHumanString(true, false, {}) +
+                    "**",
                 )
             }
 
@@ -559,20 +548,25 @@ export default class LayerConfig extends WithContextLoader {
             tagsDescription.push("This is a special layer - data is not sourced from OpenStreetMap")
         }
 
-        return new Combine([
-            new Combine([new Title(this.id, 1), iconImg, this.description, "\n"]).SetClass(
-                "flex flex-col"
-            ),
-            new List(extraProps),
+        return [
+            [
+                "# " + this.id + "\n",
+                this._basedOn
+                    ? `This layer is based on [${this._basedOn}](../Layers/${this._basedOn}.md)`
+                    : "",
+                this.description,
+                "\n",
+            ].join("\n\n"),
+            MarkdownUtils.list(extraProps),
             ...usingLayer,
             ...tagsDescription,
-            new Title("Supported attributes", 2),
+            "## Supported attributes",
             quickOverview,
-            ...this.tagRenderings.map((tr) => tr.GenerateDocumentation()),
+            ...this.tagRenderings
+                .filter((tr) => tr.labels.indexOf("ignore_docs") < 0)
+                .map((tr) => tr.GenerateDocumentation()),
             ...filterDocs,
-        ])
-            .SetClass("flex-col")
-            .SetClass("link-underline")
+        ].join("\n\n")
     }
 
     public CustomCodeSnippets(): string[] {

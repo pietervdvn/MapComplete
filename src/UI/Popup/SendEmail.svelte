@@ -1,7 +1,5 @@
 <script lang="ts">
   import type { OsmTags } from "../../Models/OsmFeature"
-  import Svg from "../../Svg"
-  import ToSvelte from "../Base/ToSvelte.svelte"
   import { Utils } from "../../Utils"
   import { Store } from "../../Logic/UIEventSource"
   import Envelope from "../../assets/svg/Envelope.svelte"

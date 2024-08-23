@@ -12,17 +12,6 @@
       "id": "shop_types",
       "mappings": [
         {
-          "if": "shop=vacant",
-          "then": {
-            "en": "Vacant Shop"
-          },
-          "searchTerms": {},
-          "icon": {
-            "path": "./assets/layers/id_presets/maki-shop.svg",
-            "class": "medium"
-          }
-        },
-        {
           "if": "shop=agrarian",
           "then": {
             "en": "Farm Supply Shop",
@@ -535,6 +524,14 @@
               "vell",
               "antic"
             ],
+            "cs": [
+              "starožitnost",
+              "starožitnosti",
+              "antikvář",
+              "antikvity",
+              "antikvita",
+              "antikvariát"
+            ],
             "de": [
               "antiquitätengeschäft",
               "antiquitätenhändler",
@@ -598,6 +595,10 @@
               "antigo",
               "relíquia",
               "relíquias"
+            ],
+            "ru": [
+              "антикварный магазин",
+              "лавка древностей"
             ],
             "sv": [
               "antikaffär",
@@ -2267,7 +2268,8 @@
               "cykelaffär",
               "cykel",
               "cykelreparatör",
-              "cykelförsäljning"
+              "cykelförsäljning",
+              "cykelbutik"
             ]
           },
           "icon": {
@@ -2540,6 +2542,9 @@
               "馬券売り場",
               "車券売り場",
               "舟券売り場",
+              "場外販売所",
+              "場外発売場",
+              "ブックメーカー",
               "ギャンブル",
               "アダルト"
             ],
@@ -2614,6 +2619,9 @@
             "en": [
               "hobby"
             ],
+            "cs": [
+              "koníček"
+            ],
             "da": [
               "antikvariat",
               "boglade",
@@ -2670,6 +2678,9 @@
               "livro",
               "livros",
               "livreiro"
+            ],
+            "ru": [
+              "книжный магазин"
             ],
             "sv": [
               "bokhandel",
@@ -2957,6 +2968,7 @@
             "nl": "Winkel voor camerabenodigdheden",
             "pl": "Sklep z aparatami fotograficznymi i kamerami",
             "pt": "Loja de equipamento fotográfico",
+            "ru": "Магазин фотооборудования",
             "sv": "Affär för kameratillbehör"
           },
           "searchTerms": {
@@ -3461,7 +3473,7 @@
             "da": "Bilreservedelsforhandler",
             "de": "Autoteilehandel",
             "eo": "Aŭtomobil-parta vendejo",
-            "es": "Tienda de componentes de automóvil",
+            "es": "Tienda de repuestos de automóvil",
             "fi": "Varaosamyymälä",
             "fr": "Magasin de pièces automobiles",
             "gl": "Tenda de recambios de automóbiles",
@@ -3537,7 +3549,7 @@
               "alkatrész"
             ],
             "it": [
-              "negozio autoricambi"
+              "autoricambi"
             ],
             "ja": [
               "自動車部品店",
@@ -3727,7 +3739,11 @@
               "autójavító"
             ],
             "it": [
-              "officina"
+              "officina",
+              "meccanico",
+              "elettrauto",
+              "riparazioni",
+              "revisioni"
             ],
             "ja": [
               "自動車修理工場",
@@ -5721,7 +5737,8 @@
               "stampa"
             ],
             "ja": [
-              "コピー店"
+              "コピー店",
+              "印刷"
             ],
             "nl": [
               "kopieshop",
@@ -5906,6 +5923,7 @@
             "nl": "Plattelandswinkel",
             "pl": "Sklep z artykułami wiejskimi",
             "pt": "Loja para proprietários rurais",
+            "ru": "Магазин сельских товаров",
             "sv": "Butik med landsbygdsförnödenheter"
           },
           "searchTerms": {
@@ -6415,6 +6433,7 @@
           "if": "shop=deli",
           "then": {
             "en": "Delicatessen",
+            "ca": "Delicadeses",
             "cs": "Lahůdkářství",
             "da": "Delikatesse",
             "de": "Feinkostladen",
@@ -6497,6 +6516,10 @@
               "produtos de qualidade",
               "origem protegida",
               "iguarias"
+            ],
+            "ru": [
+              "деликатесы",
+              "кулинария"
             ],
             "sv": [
               "delikatessaffär",
@@ -7754,7 +7777,8 @@
             ],
             "nl": [
               "kledij",
-              "naaien"
+              "naaien",
+              "textiel"
             ],
             "pl": [
               "sklep z tkaninami",
@@ -9151,7 +9175,6 @@
               "mortuori"
             ],
             "cs": [
-              "pohřební služba",
               "pohřebák",
               "hřbitovní služby",
               "hřbitovní služba",
@@ -10838,6 +10861,7 @@
             "nl": "Natuurvoedingswinkel",
             "pl": "Sklep ze zdrową żywnością",
             "pt": "Loja de comida saudável",
+            "ru": "Магазин здорового питания",
             "sv": "Hälsokostbutik"
           },
           "searchTerms": {
@@ -11067,7 +11091,18 @@
             ],
             "it": [
               "apparecchi acustici",
-              "negozio di apparecchi acustici"
+              "negozio di apparecchi acustici",
+              "udito",
+              "perdita dell'udito",
+              "sordo",
+              "sordità",
+              "suono",
+              "suoni",
+              "rumore",
+              "rumori",
+              "sentire",
+              "audiometrico",
+              "orecchi"
             ],
             "ja": [
               "補聴器店"
@@ -11389,17 +11424,24 @@
           "then": {
             "en": "Honey Store",
             "cs": "Obchod s medem",
+            "da": "Honningbutik",
             "de": "Honiggeschäft",
             "es": "Tienda de miel",
             "fr": "Magasin de miel",
             "he": "חנות דבש",
+            "it": "Negozio di miele",
             "ja": "蜂蜜販売店",
             "nl": "Honingwinkel",
             "pl": "Sklep z miodem",
             "pt": "Loja de mel",
+            "ru": "Магазин мёда",
             "sv": "Honungsaffär"
           },
           "searchTerms": {
+            "da": [
+              "honningbutik",
+              "honningsalg"
+            ],
             "de": [
               "honig",
               "biene",
@@ -12337,6 +12379,9 @@
               "bijuteria",
               "joalheiro",
               "joalheira"
+            ],
+            "ru": [
+              "ювелирный магазин"
             ],
             "sv": [
               "juvelerare",
@@ -13425,10 +13470,6 @@
               "köpcentrum",
               "köpcenter"
             ]
-          },
-          "icon": {
-            "path": "./assets/layers/id_presets/maki-shop.svg",
-            "class": "medium"
           }
         },
         {
@@ -13694,6 +13735,7 @@
             "en": "Military Surplus Store",
             "ca": "Botiga d'excedents militars",
             "cs": "Armádní výprodej",
+            "da": "Militær overskudslager",
             "de": "Militärkleidungsabverkauf",
             "eo": "Ne-plu-necesa-armea-ekipaĵo vendejo",
             "es": "Tienda de excedentes militares",
@@ -14908,6 +14950,12 @@
               "revista",
               "newsagent"
             ],
+            "ru": [
+              "киоск",
+              "печатная продукция",
+              "газеты",
+              "журналы"
+            ],
             "sv": [
               "tidningsaffär",
               "pressbyrå",
@@ -15063,7 +15111,9 @@
             "fi": "Pähkinäkauppa",
             "fr": "Magasin de noix",
             "he": "חנות פיצוחים",
+            "it": "Negozio di noci",
             "ja": "ナッツ店",
+            "nl": "Notenwinkel",
             "pl": "Sklep z bakaliami",
             "pt": "Loja de frutos secos",
             "ru": "Магазин орехов",
@@ -15154,6 +15204,10 @@
               "食べ物",
               "木の実",
               "ナッツ"
+            ],
+            "nl": [
+              "noten",
+              "winkel"
             ],
             "pl": [
               "sklep z bakaliami",
@@ -15537,6 +15591,7 @@
           "then": {
             "en": "Online Retailer Outpost",
             "cs": "Výdejna e-shopu",
+            "da": "Udlevering for onlineforhandlere",
             "de": "Abholstelle eines Onlinehändlers",
             "eo": "Ricevejo de aĉetaĵoj (per interreto)",
             "es": "Puesto de venta minorista online",
@@ -15563,6 +15618,11 @@
               "online",
               "vyzvednutí",
               "vyzvednout"
+            ],
+            "da": [
+              "udpost for onlineforhandlere",
+              "online",
+              "afhentning"
             ],
             "de": [
               "online",
@@ -15915,9 +15975,13 @@
             "es": "Fábrica de pastas",
             "fr": "Magasin de pâtes",
             "he": "חנות פסטה",
+            "it": "Negozio di pasta",
             "ja": "パスタショップ",
+            "nl": "Pastawinkel",
             "pl": "Sklep z makaronami",
-            "pt": "Loja de massas"
+            "pt": "Loja de massas",
+            "ru": "Магазин макаронных изделий",
+            "sv": "Pastabutik"
           },
           "searchTerms": {
             "en": [
@@ -15951,6 +16015,10 @@
               "ラビオリ",
               "スパゲティ"
             ],
+            "nl": [
+              "pasta",
+              "winkel"
+            ],
             "pl": [
               "sklep z makaronami",
               "makarony",
@@ -15975,6 +16043,15 @@
               "tagliatelle",
               "lasagnette",
               "aletria"
+            ],
+            "sv": [
+              "pasta",
+              "pastabutik",
+              "pastaaffär",
+              "färsk pasta",
+              "ravioli",
+              "spaghetti",
+              "makaroner"
             ]
           },
           "icon": {
@@ -16140,6 +16217,7 @@
             "fr": "Prêteur sur gages",
             "he": "בית משכון",
             "hu": "Zálogház",
+            "it": "Banco dei pegni",
             "ja": "質屋",
             "nl": "Pandjeshuis",
             "pl": "Lombard",
@@ -16182,6 +16260,10 @@
               "サービス",
               "質草"
             ],
+            "nl": [
+              "pandhuis",
+              "lommerd"
+            ],
             "pl": [
               "lombard"
             ],
@@ -16190,6 +16272,10 @@
               "penhores",
               "penhoras",
               "penhorar"
+            ],
+            "ru": [
+              "залоговая касса",
+              "ломбардный касса"
             ],
             "sv": [
               "pantbank",
@@ -16494,7 +16580,9 @@
             "fr": "Salon de toilettage",
             "he": "מספרת חיות",
             "hu": "Kisállatfodrász",
+            "it": "Tolettatura per animali",
             "ja": "ペット美容室",
+            "nl": "Huisdiertrimmer",
             "pl": "Salon fryzjerski dla zwierząt",
             "pt": "Salão de banhos e tosquias",
             "ru": "Парикмахерская для животных",
@@ -16556,6 +16644,11 @@
               "犬",
               "猫",
               "動物"
+            ],
+            "nl": [
+              "trimmen",
+              "knippen",
+              "huisider"
             ],
             "pl": [
               "salon fryzjerski dla zwierząt",
@@ -17792,12 +17885,20 @@
             "es": "Tienda de arroz",
             "fr": "Magasin de riz",
             "he": "חנות אורז",
+            "it": "Negozio di riso",
             "ja": "米穀店",
+            "nl": "Rijstwinkel",
             "pl": "Sklep z ryżem",
             "pt": "Loja de arroz",
+            "ru": "Магазин риса",
             "sv": "Risaffär"
           },
           "searchTerms": {
+            "cs": [
+              "prodej rýže",
+              "rýžový obchod",
+              "rýže"
+            ],
             "de": [
               "reishandel",
               "reishändler",
@@ -17814,6 +17915,10 @@
             ],
             "ja": [
               "米屋"
+            ],
+            "nl": [
+              "rijst",
+              "winkel"
             ],
             "pl": [
               "sklep z ryżem",
@@ -18213,6 +18318,10 @@
               "中古販売店",
               "リサイクルショップ"
             ],
+            "nl": [
+              "kringloopwinkel",
+              "tweedehand"
+            ],
             "pl": [
               "sklep z rzeczami używanymi",
               "second hand",
@@ -18255,7 +18364,7 @@
             "eo": "Kudrilar-vendejo",
             "es": "Tienda de suministros de costura",
             "fi": "Ompelutarvikeliike",
-            "fr": "Magasin de couture",
+            "fr": "Mercerie",
             "gl": "Tenda de artigos de costura",
             "he": "חנות ציוד תפירה",
             "hu": "Varrásfelszerelés bolt",
@@ -19542,6 +19651,7 @@
             "nl": "Winkel voor zwembadbenodigdheden",
             "pl": "Sklep z akcesoriami do basenów",
             "pt": "Loja de acessórios para piscinas",
+            "ru": "Магазин товаров для бассейна",
             "sv": "Butik för pooltillbehör"
           },
           "searchTerms": {
@@ -20330,6 +20440,14 @@
               "ceràmica",
               "paret",
               "taulell"
+            ],
+            "cs": [
+              "obklady",
+              "dlažby",
+              "kachličky",
+              "kachle",
+              "obklad",
+              "dlažba"
             ],
             "da": [
               "flise",
@@ -21891,7 +22009,7 @@
             "fi": "Kellokauppa",
             "fr": "Magasin de montres",
             "gl": "Reloxaría",
-            "he": "שען",
+            "he": "חנות שעונים",
             "hu": "Órabolt (karóra)",
             "it": "Negozio di orologi",
             "ja": "腕時計店",
@@ -23298,10 +23416,6 @@
         {
           "if": "shop=locksmith",
           "then": "./assets/layers/id_presets/fas-key.svg"
-        },
-        {
-          "if": "shop=mall",
-          "then": "./assets/layers/id_presets/maki-shop.svg"
         },
         {
           "if": "shop=massage",

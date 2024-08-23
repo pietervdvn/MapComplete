@@ -21,6 +21,7 @@ import DependencyCalculator from "../DependencyCalculator"
 import { AddContextToTranslations } from "./AddContextToTranslations"
 import ValidationUtils from "./ValidationUtils"
 import { ConversionContext } from "./ConversionContext"
+import { PrevalidateTheme } from "./Validation"
 
 class SubstituteLayer extends Conversion<string | LayerConfigJson, LayerConfigJson[]> {
     private readonly _state: DesugaringContext
@@ -71,6 +72,10 @@ class SubstituteLayer extends Conversion<string | LayerConfigJson, LayerConfigJs
 
         for (const name of names) {
             const found = Utils.Clone(state.sharedLayers.get(name))
+            if (found === undefined) {
+                context.err("Layer with name " + name + " not found")
+                continue
+            }
             found["_basedOn"] = name
             if (found === undefined) {
                 reportNotFound(name)
@@ -367,7 +372,8 @@ class AddDependencyLayersToTheme extends DesugaringStep<LayoutConfigJson> {
     private static CalculateDependencies(
         alreadyLoaded: LayerConfigJson[],
         allKnownLayers: Map<string, LayerConfigJson>,
-        themeId: string
+        themeId: string,
+        context: ConversionContext
     ): { config: LayerConfigJson; reason: string }[] {
         const dependenciesToAdd: { config: LayerConfigJson; reason: string }[] = []
         const loadedLayerIds: Set<string> = new Set<string>(alreadyLoaded.map((l) => l?.id))
@@ -396,7 +402,10 @@ class AddDependencyLayersToTheme extends DesugaringStep<LayoutConfigJson> {
                 } catch (e) {
                     console.error(e)
                     throw (
-                        "Detecting layer dependencies for " + layerConfig.id + " failed due to " + e
+                        "Detecting layer dependencies for " +
+                        layerConfig?.id +
+                        " failed due to " +
+                        e
                     )
                 }
             }
@@ -467,7 +476,8 @@ class AddDependencyLayersToTheme extends DesugaringStep<LayoutConfigJson> {
         const dependencies = AddDependencyLayersToTheme.CalculateDependencies(
             layers,
             allKnownLayers,
-            theme.id
+            theme.id,
+            context
         )
         if (dependencies.length > 0) {
             for (const dependency of dependencies) {
@@ -655,11 +665,11 @@ export class PrepareTheme extends Fuse<LayoutConfigJson> {
     ) {
         super(
             "Fully prepares and expands a theme",
-
             new AddContextToTranslationsInLayout(),
             new PreparePersonalTheme(state),
             new WarnForUnsubstitutedLayersInTheme(),
             new On("layers", new Concat(new SubstituteLayer(state))),
+
             new SetDefault("socialImage", "assets/SocialImage.png", true),
             // We expand all tagrenderings first...
             new On("layers", new Each(new PrepareLayer(state))),

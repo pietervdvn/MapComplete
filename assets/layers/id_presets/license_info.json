@@ -10,6 +10,17 @@
     ]
   },
   {
+    "path": "bicycle_rental.svg",
+    "license": "CC0-1.0",
+    "authors": [
+      "Temaki"
+    ],
+    "sources": [
+      "https://github.com/ideditor/temaki",
+      "https://ideditor.github.io/temaki/docs/"
+    ]
+  },
+  {
     "path": "fas-baby-carriage.svg",
     "license": "CC-BY-4.0",
     "authors": [

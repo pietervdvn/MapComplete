@@ -2,6 +2,7 @@
   import Locale from "../i18n/Locale"
   import LinkToWeblate from "./LinkToWeblate"
   import Translate from "../../assets/svg/Translate.svelte"
+  import { LanguageIcon } from "@babeard/svelte-heroicons/solid"
 
   /**
    * Shows a small icon which will open up weblate; a contributor can translate the item for 'context' there
@@ -26,11 +27,11 @@
   {:else if $linkToWeblate}
     <a
       href={LinkToWeblate.hrefToWeblate($language, context)}
-      class="weblate-link hidden-on-mobile mx-1"
+      class="weblate-link hidden-on-mobile"
       target="_blank"
       tabindex="-1"
     >
-      <Translate class="font-gray inline-block" />
+      <LanguageIcon class="font-gray" />
     </a>
   {/if}
 {/if}

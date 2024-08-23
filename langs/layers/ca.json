@@ -423,7 +423,7 @@
     "atm": {
         "description": "Caixers automàtics per a retirar diners",
         "filter": {
-            "1": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "Amb sortida de veu"
@@ -1128,7 +1128,7 @@
                 "question": "Molt costa utilitzar aquest servei de neteja?",
                 "render": "L'ús del servei de neteja costa {charge}"
             },
-            "bike_cleaning-service:bicycle:cleaning:charge": {
+            "bike_cleaning-service_bicycle_cleaning_charge": {
                 "mappings": {
                     "0": {
                         "then": "El servei de rentat és gratuït"
@@ -1436,14 +1436,14 @@
     "bike_shop": {
         "description": "Una botiga que ven específicament bicicletes o articles relacionats",
         "filter": {
-            "1": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "Ven bicicletes de segona mà"
                     }
                 }
             },
-            "2": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "Ofereix reparar un mateix la bici"
@@ -1457,125 +1457,10 @@
                 "title": "una botiga/reparació de bicicletes"
             }
         },
-        "tagRenderings": {
-            "bike_repair_bike-pump-service": {
-                "mappings": {
-                    "0": {
-                        "then": "Aquesta botiga ofereix una manxa per a tothom"
-                    },
-                    "1": {
-                        "then": "Aquesta botiga no ofereix una manxa per a tothom"
-                    },
-                    "2": {
-                        "then": "Hi ha una manxa, es mostra com a un punt separat"
-                    }
-                },
-                "question": "Aquesta botiga ofereix una manxa perquè la utilitzi qualsevol?"
-            },
-            "bike_repair_bike-wash": {
-                "mappings": {
-                    "0": {
-                        "then": "Aquesta botiga renta bicicletes"
-                    },
-                    "1": {
-                        "then": "Aquesta botiga té una instal·lació on un pot rentar les bicis per un mateix"
-                    },
-                    "2": {
-                        "then": "Aquesta botiga no ofereix rentat de bicis"
-                    }
-                },
-                "question": "Aquí es renten bicicletes?"
-            },
-            "bike_repair_rents-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "Aquesta botiga lloga bicis"
-                    },
-                    "1": {
-                        "then": "Aquesta botiga no lloga bicis"
-                    }
-                },
-                "question": "Aquesta botiga alquila bicicletes?"
-            },
-            "bike_repair_repairs-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "Aquesta botiga repara bicis"
-                    },
-                    "1": {
-                        "then": "Aquesta botiga no repara bicis"
-                    },
-                    "2": {
-                        "then": "Aquesta botiga sols repara bicis comprades aquí"
-                    },
-                    "3": {
-                        "then": "Aquesta tenda sols repara bicis d’una marca concreta"
-                    }
-                },
-                "question": "Aquesta botiga repara bicicletes?"
-            },
-            "bike_repair_second-hand-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "Aquesta botiga ven bicis de segona mà"
-                    },
-                    "1": {
-                        "then": "Aquesta botiga no ven bicis de segona mà"
-                    },
-                    "2": {
-                        "then": "Aquesta botiga sols ven bicis de segona mà"
-                    }
-                },
-                "question": "Aquesta botiga ven bicicletes de segona mà?"
-            },
-            "bike_repair_sells-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "Aquesta botiga ven bicis"
-                    },
-                    "1": {
-                        "then": "Aquesta botiga no ven bicis"
-                    }
-                },
-                "question": "Aquesta botiga ven bicicletes?"
-            },
-            "bike_repair_tools-service": {
-                "mappings": {
-                    "0": {
-                        "then": "Aquesta botiga ofereix ferramentes per a la reparació DIY"
-                    },
-                    "1": {
-                        "then": "Aquesta botiga no ofereix ferramentes per a la reparació DIY"
-                    },
-                    "2": {
-                        "then": "Les ferramentes per a reparacions DIY sols estan disponibles si vas comprar/llogar la bici a la botiga"
-                    }
-                },
-                "question": "Hi ha ferramentes perquè reparis la teva bici?"
-            },
-            "bike_shop-access": {
-                "render": "Només accessible per a {access}"
-            },
-            "bike_shop-is-bicycle_shop": {
-                "mappings": {
-                    "0": {
-                        "then": "Aquest negoci es centra en el lloguer"
-                    }
-                },
-                "render": "Aquesta botiga està especialitzada en vendre {shop} i fa activitats relacionades amb la bicicleta"
-            },
-            "bike_shop-name": {
-                "question": "Quin és el nom d'aquesta botiga de bicicletes?",
-                "render": "Aquesta botiga de bicicletes s'anomena {name}"
-            }
-        },
         "title": {
             "mappings": {
                 "0": {
                     "then": "Botiga d'equipament esportiu <i>{name}</i>"
-                },
-                "1": {
-                    "then": "Winkel"
                 },
                 "2": {
                     "then": "Botiga de lloguer de bicicletes <i>{name}</i>"
@@ -1587,6 +1472,9 @@
                     "then": "Botiga de bicis <i>{name}</i>"
                 },
                 "5": {
+                    "then": "Taller/botiga de bicis <i>{name}</i>"
+                },
+                "6": {
                     "then": "Taller/botiga de bicis <i>{name}</i>"
                 }
             },
@@ -2514,6 +2402,12 @@
                 }
             },
             "render": "Encreuament"
+        }
+    },
+    "cycle_highways": {
+        "name": "vies ciclistes",
+        "title": {
+            "render": "via ciclista"
         }
     },
     "cycleways_and_roads": {
@@ -4089,13 +3983,11 @@
         "name": "Bicicleta fantasma",
         "presets": {
             "0": {
+                "description": "Una <b>bicicleta fantasma</b> és un memorial per a un ciclista que va morir en un accident de trànsit, en forma de bicicleta blanca col·locada permanentment a prop del lloc de l'accident.",
                 "title": "una bicicleta fantasma"
             }
         },
         "tagRenderings": {
-            "ghost-bike-explanation": {
-                "render": "Una <b>bicicleta fantasma</b> és un memorial per a un ciclista que va morir en un accident de trànsit, en forma de bicicleta blanca col·locada permanentment a prop del lloc de l'accident."
-            },
             "ghost_bike-inscription": {
                 "question": "Quina és la inscripció d'aquesta bicicleta fantasma?",
                 "render": "<i>{inscription}</i>"
@@ -4274,32 +4166,6 @@
         },
         "title": {
             "render": "Hospital"
-        }
-    },
-    "hotel": {
-        "description": "Capa que mostra tots els hotels",
-        "name": "Hotels",
-        "presets": {
-            "0": {
-                "title": "un hotel"
-            }
-        },
-        "tagRenderings": {
-            "name": {
-                "freeform": {
-                    "placeholder": "Nom de l'hotel"
-                },
-                "question": "Quin és el nom d'aquest hotel?",
-                "render": "Aquest hotel es diu {name}"
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Hotel {name}"
-                }
-            },
-            "render": "Hotel"
         }
     },
     "hydrant": {
@@ -6234,7 +6100,7 @@
             },
             "opening_hours_by_appointment": {
                 "override": {
-                    "mappings": {
+                    "+mappings": {
                         "0": {
                             "then": "Sols amb cita prèvia"
                         },
@@ -6851,6 +6717,73 @@
             }
         },
         "tagRenderings": {
+            "bicycle_rental": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquesta botiga lloga bicis"
+                    },
+                    "1": {
+                        "then": "Aquesta botiga no lloga bicis"
+                    }
+                },
+                "question": "Aquesta botiga alquila bicicletes?"
+            },
+            "bike_pump_service": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquesta botiga ofereix una manxa per a tothom"
+                    },
+                    "1": {
+                        "then": "Aquesta botiga no ofereix una manxa per a tothom"
+                    },
+                    "2": {
+                        "then": "Hi ha una manxa, es mostra com a un punt separat"
+                    }
+                },
+                "question": "Aquesta botiga ofereix una manxa perquè la utilitzi qualsevol?"
+            },
+            "bike_repair_tools": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquesta botiga ofereix ferramentes per a la reparació DIY"
+                    },
+                    "1": {
+                        "then": "Aquesta botiga no ofereix ferramentes per a la reparació DIY"
+                    },
+                    "2": {
+                        "then": "Les ferramentes per a reparacions DIY sols estan disponibles si vas comprar/llogar la bici a la botiga"
+                    }
+                },
+                "question": "Hi ha ferramentes perquè reparis la teva bici?"
+            },
+            "bike_second_hand": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquesta botiga ven bicis de segona mà"
+                    },
+                    "1": {
+                        "then": "Aquesta botiga no ven bicis de segona mà"
+                    },
+                    "2": {
+                        "then": "Aquesta botiga sols ven bicis de segona mà"
+                    }
+                },
+                "question": "Aquesta botiga ven bicicletes de segona mà?"
+            },
+            "bike_wash": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquesta botiga renta bicicletes"
+                    },
+                    "1": {
+                        "then": "Aquesta botiga té una instal·lació on un pot rentar les bicis per un mateix"
+                    },
+                    "2": {
+                        "then": "Aquesta botiga no ofereix rentat de bicis"
+                    }
+                },
+                "question": "Aquí es renten bicicletes?"
+            },
             "copyshop-print-sizes": {
                 "mappings": {
                     "0": {
@@ -6890,6 +6823,26 @@
                     }
                 },
                 "question": "Aquesta botiga ofereix productes orgànics?"
+            },
+            "repairs_bikes": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquesta botiga repara bicis"
+                    },
+                    "1": {
+                        "then": "Aquesta botiga no repara bicis"
+                    },
+                    "2": {
+                        "then": "Aquesta botiga sols repara bicis comprades aquí"
+                    },
+                    "3": {
+                        "then": "Aquesta tenda sols repara bicis d’una marca concreta"
+                    }
+                },
+                "question": "Aquesta botiga repara bicicletes?"
+            },
+            "sells_new_bikes": {
+                "question": "Aquesta botiga ven bicicletes?"
             },
             "shops-name": {
                 "question": "Quin és el nom d'aquesta botiga?",
@@ -7999,6 +7952,20 @@
             "render": "Lavabo a la instal·lació"
         }
     },
+    "tourism_accomodation": {
+        "presets": {
+            "0": {
+                "title": "un hotel"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Hotel {name}"
+                }
+            }
+        }
+    },
     "trail": {
         "description": "Rutes marcades",
         "name": "Camins",
@@ -8495,6 +8462,13 @@
                     }
                 }
             },
+            "edit-profile": {
+                "render": {
+                    "special": {
+                        "text": "Editeu la descripció del vostre perfil"
+                    }
+                }
+            },
             "fixate-north": {
                 "mappings": {
                     "0": {
@@ -8555,6 +8529,17 @@
                     }
                 },
                 "question": "Sota quina llicència vols publicar les teves fotos?"
+            },
+            "profile-description": {
+                "mappings": {
+                    "0": {
+                        "then": {
+                            "special": {
+                                "text": "Afegeix una descripció del perfil"
+                            }
+                        }
+                    }
+                }
             },
             "settings-link": {
                 "render": {

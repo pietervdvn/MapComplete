@@ -1,4 +1,5 @@
 dist/*
+dist_*/*
 node_modules
 .cache/*
 .idea/*
@@ -29,6 +30,8 @@ index_*.ts
 service-worker.js
 .env
 src/assets/editor-layer-index.json
+
+error_changeset_*
 
 
 .vscode/*

@@ -170,10 +170,10 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
     /**
      * Parses the arguments for special visualisations
      */
-    public static ParseVisArgs(
+    public static ParseVisArgs<T extends Record<string, string>>(
         specs: { name: string; defaultValue?: string }[],
         args: string[]
-    ): Record<string, string> {
+    ): T {
         const parsed: Record<string, string> = {}
         if (args.length > specs.length) {
             throw (
@@ -193,7 +193,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             parsed[spec.name] = arg
         }
 
-        return parsed
+        return <T>parsed
     }
 
     static EncodeXmlValue(str) {
@@ -382,13 +382,15 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
 
     /**
      * Creates a new array with all elements from 'arr' in such a way that every element will be kept only once
-     * Elements are returned in the same order as they appear in the lists
-     * @param arr
-     * @constructor
+     * Elements are returned in the same order as they appear in the lists.
+     * Null/Undefined is returned as is. If an emtpy array is given, a new empty array will be returned
      */
+    public static Dedup(arr: NonNullable<string[]>): NonNullable<string[]>
+    public static Dedup(arr: undefined): undefined
+    public static Dedup(arr: string[] | undefined): string[] | undefined
     public static Dedup(arr: string[]): string[] {
-        if (arr === undefined) {
-            return undefined
+        if (arr === undefined || arr === null) {
+            return arr
         }
         const newArr = []
         for (const string of arr) {
@@ -628,7 +630,13 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
 
         for (const key in source) {
             if (key.startsWith("=")) {
-                const trimmedKey = key.substr(1)
+                const trimmedKey = key.substring(1)
+                target[trimmedKey] = source[key]
+                continue
+            }
+
+            if (key.endsWith("=")) {
+                const trimmedKey = key.substring(0, key.length - 1)
                 target[trimmedKey] = source[key]
                 continue
             }
@@ -935,10 +943,37 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return result["content"]
     }
 
+    public static async downloadAdvanced(
+        url: string,
+        headers?: Record<string, string>,
+        method: "POST" | "GET" | "PUT" | "UPDATE" | "DELETE" | "OPTIONS" = "GET",
+        content?: string,
+        maxAttempts: number = 3
+    ): Promise<
+        | { content: string }
+        | { redirect: string }
+        | { error: string; url: string; statuscode?: number }
+    > {
+        let result = undefined
+        for (let i = 0; i < maxAttempts; i++) {
+            result = await Utils.downloadAdvancedTryOnce(url, headers, method, content)
+            if (!result["error"]) {
+                return result
+            }
+            console.log(
+                `Request to ${url} failed, Trying again in a moment. Attempt ${
+                    i + 1
+                }/${maxAttempts}`
+            )
+            await Utils.waitFor((i + 1) * 500)
+        }
+        return result
+    }
+
     /**
      * Download function which also indicates advanced options, such as redirects
      */
-    public static downloadAdvanced(
+    private static downloadAdvancedTryOnce(
         url: string,
         headers?: Record<string, string>,
         method: "POST" | "GET" | "PUT" | "UPDATE" | "DELETE" | "OPTIONS" = "GET",
@@ -976,7 +1011,16 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
                 }
             }
             xhr.send(content)
-            xhr.onerror = reject
+            xhr.onerror = (ev: ProgressEvent<EventTarget>) =>
+                reject(
+                    "Could not get " +
+                        url +
+                        ", xhr status code is " +
+                        xhr.status +
+                        " (" +
+                        xhr.statusText +
+                        ")"
+                )
         })
     }
 
@@ -1069,8 +1113,8 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
     ): Promise<{ content: T } | { error: string; url: string; statuscode?: number }> {
         const injected = Utils.injectedDownloads[url]
         if (injected !== undefined) {
-            console.log("Using injected resource for test for URL", url)
-            return new Promise((resolve) => resolve({ content: injected }))
+            console.debug("Using injected resource for test for URL", url)
+            return { content: injected }
         }
         const result = await Utils.downloadAdvanced(
             url,
@@ -1256,13 +1300,19 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return track[str2.length][str1.length]
     }
 
+    public static MapToObj<V>(d: Map<string, V>): Record<string, V>
     public static MapToObj<V, T>(
         d: Map<string, V>,
         onValue: (t: V, key: string) => T
+    ): Record<string, T>
+    public static MapToObj<V, T>(
+        d: Map<string, V>,
+        onValue: (t: V, key: string) => T = undefined
     ): Record<string, T> {
         const o = {}
         const keys = Array.from(d.keys())
         keys.sort()
+        onValue ??= (v) => <any>v
         for (const key of keys) {
             o[key] = onValue(d.get(key), key)
         }
@@ -1310,11 +1360,23 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return "#" + componentToHex(c.r) + componentToHex(c.g) + componentToHex(c.b)
     }
 
+    private static percentageToNumber(v: string) {
+        v = v.trim()
+        if (v.endsWith("%")) {
+            return Math.round((parseInt(v) * 255) / 100)
+        }
+        const n = Number(v)
+        if (!isNaN(n)) {
+            return n
+        }
+    }
+
     /**
      *
      * Utils.color("#ff8000") // => {r: 255, g:128, b: 0}
      * Utils.color(" rgba  (12,34,56) ") // => {r: 12, g:34, b: 56}
      * Utils.color(" rgba  (12,34,56,0.5) ") // => {r: 12, g:34, b: 56}
+     * Utils.color("rgb(100%,100%,100%)") // => {r: 255, g: 255, b: 255}
      * Utils.color(undefined) // => undefined
      */
     public static color(hex: string): { r: number; g: number; b: number } {
@@ -1322,12 +1384,17 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             return undefined
         }
         hex = hex.replace(/[ \t]/g, "")
-        if (hex.startsWith("rgba(")) {
-            const match = hex.match(/rgba\(([0-9.]+),([0-9.]+),([0-9.]+)(,[0-9.]*)?\)/)
+        if (hex.startsWith("rgba(") || hex.startsWith("rgb(")) {
+            const match = hex.match(/rgba?\(([0-9.]+%?),([0-9.]+%?),([0-9.]+%?)(,[0-9.]+%?)?\)/)
             if (match == undefined) {
                 return undefined
             }
-            return { r: Number(match[1]), g: Number(match[2]), b: Number(match[3]) }
+
+            return {
+                r: Utils.percentageToNumber(match[1]),
+                g: Utils.percentageToNumber(match[2]),
+                b: Utils.percentageToNumber(match[3]),
+            }
         }
 
         if (!hex.startsWith("#")) {
@@ -1426,7 +1493,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return true
     }
 
-    public static SameObject(a: any, b: any) {
+    public static SameObject<T>(a: T, b: T, ignoreKeys?: string[]): boolean {
         if (a === b) {
             return true
         }
@@ -1660,11 +1727,12 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         }
     }
 
-    private static emojiRegex = /^\p{Extended_Pictographic}+$/u
+    private static emojiRegex = /[\p{Extended_Pictographic}🛰️]$/u
 
     /**
      * Returns 'true' if the given string contains at least one and only emoji characters
-     * @param string
+     *
+     * Utils.isEmoji("⛰\uFE0F") // => true
      */
     public static isEmoji(string: string) {
         return Utils.emojiRegex.test(string)

@@ -22,11 +22,16 @@
   export let mapProperties: MapProperties = undefined
 
   export let interactive: boolean = true
+  /**
+   * If many maps are shown (> ~15), Chromium will drop some because of "too Much WEBGL-contexts" (see issue #2024 or https://webglfundamentals.org/webgl/lessons/webgl-multiple-views.html)
+   * For important maps (e.g. the main map), we want to recover from this
+   */
+  export let autorecovery: boolean = false
 
   let container: HTMLElement
 
   let _map: Map
-  onMount(() => {
+  function initMap() {
     const { lon, lat } = mapProperties?.location?.data ?? { lon: 0, lat: 0 }
 
     const rasterLayer: RasterLayerProperties = mapProperties?.rasterLayer?.data?.properties
@@ -41,7 +46,7 @@
       styleUrl = defaultLayer.style ?? defaultLayer.url
     }
 
-    console.log("Initing mapLIbremap with style", styleUrl)
+    console.log("Initiating mapLIbremap with style", styleUrl)
 
     const options: MapOptions = {
       container,
@@ -56,9 +61,25 @@
     window.requestAnimationFrame(() => {
       _map.resize()
     })
+
     _map.on("load", function () {
       _map.resize()
       const canvas = _map.getCanvas()
+      canvas.addEventListener("webglcontextlost", (e) => {
+        console.warn("A MapLibreMap lost their context. Recovery is", autorecovery, e)
+        try {
+          _map?.remove()
+        } catch (e) {
+          console.debug("Could not remove map due to", e)
+        }
+        if (autorecovery) {
+          requestAnimationFrame(() => {
+            console.warn("Attempting map recovery")
+            _map = new maplibre.Map(options)
+            initMap()
+          })
+        }
+      })
       if (interactive) {
         ariaLabel(canvas, Translations.t.general.visualFeedback.navigation)
         canvas.role = "application"
@@ -69,15 +90,21 @@
       }
     })
     map.set(_map)
-  })
+  }
+
+  onMount(() => initMap())
+
   onDestroy(async () => {
-    await Utils.waitFor(250)
-    try {
-      if (_map) _map.remove()
-      map = null
-    } catch (e) {
-      console.error("Could not destroy map")
-    }
+    await Utils.waitFor(100)
+    requestAnimationFrame(() => {
+      try {
+        _map?.remove()
+        console.log("Removed map")
+        map = null
+      } catch (e) {
+        console.error("Could not destroy map")
+      }
+    })
   })
 </script>
 

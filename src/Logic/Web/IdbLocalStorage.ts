@@ -39,11 +39,14 @@ export class IdbLocalStorage {
     }
 
     public static SetDirectly(key: string, value: any): Promise<void> {
-        const copy = Utils.Clone(value)
-        return idb.set(key, copy)
+        return idb.set(key, value)
     }
 
     static GetDirectly(key: string): Promise<any> {
         return idb.get(key)
+    }
+
+    static clearAll() {
+        return idb.clear()
     }
 }

@@ -58,7 +58,7 @@ export default {
       ]
     },
     "icon": {
-      "description": "question: What icon should be used to represent this theme?\n\nUsed as logo in the more-screen and (for official themes) as favicon, webmanifest logo, ...\n\nEither a URL or a base64 encoded value (which should include 'data:image/svg+xml;base64)\n\nType: icon\ngroup: basic",
+      "description": "question: What icon should be used to represent this theme?\n\nUsed as logo in the more-screen and (for official themes) as favicon, webmanifest logo, ...\n\nEither a URL or a base64 encoded value (which should include 'data:image/svg+xml;base64)\n\nType: icon\nsuggestions: return Constants.defaultPinIcons.map(i => ({if: \"value=\"+i, then: i, icon: i}))\ngroup: basic",
       "type": "string"
     },
     "socialImage": {
@@ -104,7 +104,7 @@ export default {
       "type": "boolean"
     },
     "layers": {
-      "description": "question: What layers should this map show?\ntype: layer[]\ntypes: hidden | layer | hidden\ngroup: layers\nsuggestions: return Array.from(layers.keys()).map(key => ({if: \"value=\"+key, then: \"<b>\"+key+\"</b> (builtin) - \"+layers.get(key).description}))\n\nA theme must contain at least one layer.\n\nA layer contains all features of a single type, for example \"shops\", \"bicycle pumps\", \"benches\".\nNote that every layer contains a specification of attributes that it should match. MapComplete will fetch the relevant data from either overpass, the OSM-API or the cache server.\nIf a feature can match multiple layers, the first matching layer in the list will be used.\nThis implies that the _order_ of the layers is important.\n\n\n<div class='hidden-in-studio'>\nNote that builtin layers can be reused. Either put in the name of the layer to reuse, or use {builtin: \"layername\", override: ...}\n\nThe 'override'-object will be copied over the original values of the layer, which allows to change certain aspects of the layer\n\nFor example: If you would like to use layer nature reserves, but only from a specific operator (eg. Natuurpunt) you would use the following in your theme:\n\n```\n\"layer\": {\n \"builtin\": \"nature_reserve\",\n \"override\": {\"source\":\n {\"osmTags\": {\n \"+and\":[\"operator=Natuurpunt\"]\n   }\n  }\n }\n}\n```\n\nIt's also possible to load multiple layers at once, for example, if you would like for both drinking water and benches to start at the zoomlevel at 12, you would use the following:\n\n```\n\"layer\": {\n \"builtin\": [\"benches\", \"drinking_water\"],\n \"override\": {\"minzoom\": 12}\n}\n```\n</div>",
+      "description": "question: What layers should this map show?\ntype: layer[]\ntypes: hidden | layer | hidden\ngroup: layers\ntitle: value[\"builtin\"] ?? value[\"id\"] ?? value\nsuggestions: return Array.from(layers.keys()).map(key => ({if: \"value=\"+key, then: \"<b>\"+key+\"</b> (builtin) - \"+layers.get(key).description}))\n\nA theme must contain at least one layer.\n\nA layer contains all features of a single type, for example \"shops\", \"bicycle pumps\", \"benches\".\nNote that every layer contains a specification of attributes that it should match. MapComplete will fetch the relevant data from either overpass, the OSM-API or the cache server.\nIf a feature can match multiple layers, the first matching layer in the list will be used.\nThis implies that the _order_ of the layers is important.\n\n\n<div class='hidden-in-studio'>\nNote that builtin layers can be reused. Either put in the name of the layer to reuse, or use {builtin: \"layername\", override: ...}\n\nThe 'override'-object will be copied over the original values of the layer, which allows to change certain aspects of the layer\n\nFor example: If you would like to use layer nature reserves, but only from a specific operator (eg. Natuurpunt) you would use the following in your theme:\n\n```\n\"layer\": {\n \"builtin\": \"nature_reserve\",\n \"override\": {\"source\":\n {\"osmTags\": {\n \"+and\":[\"operator=Natuurpunt\"]\n   }\n  }\n }\n}\n```\n\nIt's also possible to load multiple layers at once, for example, if you would like for both drinking water and benches to start at the zoomlevel at 12, you would use the following:\n\n```\n\"layer\": {\n \"builtin\": [\"benches\", \"drinking_water\"],\n \"override\": {\"minzoom\": 12}\n}\n```\n</div>",
       "type": "array",
       "items": {
         "anyOf": [
@@ -301,11 +301,21 @@ export default {
     "enableMorePrivacy": {
       "description": "question: Should this theme leak some location info when making changes?\n\nWhen a changeset is made, a 'distance to object'-class is written to the changeset.\nFor some particular themes and layers, this might leak too much information, and we want to obfuscate this\n\nifunset: Write 'change_within_x_m' as usual and if GPS is enabled\niftrue: Do not write 'change_within_x_m' and do not indicate that this was done by survey",
       "type": "boolean"
+    },
+    "enableCache": {
+      "description": "question: Should this theme have the cache enabled?\n\nShould only be dissabled in highly specific cases, such as the GRB-theme\n\nifunset: Cache is enabled\niffalse: Do not cache data\ngroup: hidden",
+      "type": "boolean"
+    },
+    "_usedImages": {
+      "description": "Set by the preprocessor\ngroup: hidden",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
     }
   },
   "required": [
     "description",
-    "enableMorePrivacy",
     "icon",
     "id",
     "layers",
@@ -351,6 +361,9 @@ export default {
         "and"
       ]
     },
+    "Record<string,string>": {
+      "type": "object"
+    },
     "{or:TagConfigJson[];}": {
       "type": "object",
       "properties": {
@@ -364,9 +377,6 @@ export default {
       "required": [
         "or"
       ]
-    },
-    "Record<string,string>": {
-      "type": "object"
     },
     "Record<string,string|Record<string,string>>": {
       "type": "object"
@@ -473,7 +483,7 @@ export default {
       "type": "object",
       "properties": {
         "icon": {
-          "description": "question: What icon should be used?\ntype: icon\ntypes: Use a dynamic value ; icon\nsuggestions: return Constants.defaultPinIcons.map(i => ({if: \"value=\"+i, then: i, icon: i}))",
+          "description": "question: What icon should be used?\ntypes: <span class=\"text-lg font-bold\">Use a different icon depending on the value of some attributes</span> ; icon\nsuggestions: return Constants.defaultPinIcons.map(i => ({if: \"value=\"+i, then: i, icon: i}))",
           "anyOf": [
             {
               "$ref": "#/definitions/MinimalTagRenderingConfigJson"
@@ -497,7 +507,7 @@ export default {
           ]
         },
         "color": {
-          "description": "question: What colour should the icon be?\nThis will only work for the default icons such as `pin`,`circle`,...\ntype: color\ntypes: Use a dynamic color ; icon",
+          "description": "question: What colour should the icon be?\nThis will only work for the default icons such as `pin`,`circle`,...\ntypes: <span class=\"text-lg font-bold\">Use a different color depending on the value of some attributes</span> ; color",
           "anyOf": [
             {
               "$ref": "#/definitions/MinimalTagRenderingConfigJson"
@@ -694,6 +704,13 @@ export default {
         "classes": {
           "description": "question: What css-classes should be applied to showing this attribute?\n\nA list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\n\nValues are split on ` `  (space)",
           "type": "string"
+        },
+        "filter": {
+          "description": "This tagRendering can introduce this builtin filter",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
@@ -788,7 +805,7 @@ export default {
           ]
         },
         "addExtraTags": {
-          "description": "question: What extra tags should be added to the object if this object is chosen?\ntype: simple_tag\n\nIf chosen as answer, these tags will be applied onto the object, together with the tags from the `if`\nNot compatible with multiAnswer.\n\nThis can be used e.g. to erase other keys which indicate the 'not' value:\n```json\n{\n    \"if\": \"crossing:marking=rainbow\",\n    \"then\": \"This is a rainbow crossing\",\n    \"addExtraTags\": [\"not:crossing:marking=\"]\n}\n```",
+          "description": "question: What extra tags should be added to the object if this object is chosen?\ntype: simple_tag\n\nIf chosen as answer, these tags will be applied onto the object, together with the tags from the `if`.\nNote that if the contributor picks this mapping, saves and then changes their mind and uses a different mapping,\nthe extraTags will reside.\nE.g. when picking `memorial:type=bench`, then `amenity=bench` will also be applied.\nIf someone later on changes the type to `memorial:statue`, `amenity=bench` will stay onto the object\n(which is the desired behaviour, see e.g. for https://www.openstreetmap.org/node/5620038478)\nUse 'ifNot' to explicitly remove an tag if this is important\n\nIf someone marks the question as 'unknown', the extra tags will not be erased\n\nNot compatible with multiAnswer.\n\nThis can be used e.g. to erase other keys which indicate the 'not' value:\n```json\n{\n    \"if\": \"crossing:marking=rainbow\",\n    \"then\": \"This is a rainbow crossing\",\n    \"addExtraTags\": [\"not:crossing:marking=\"]\n}\n```",
           "type": "array",
           "items": {
             "type": "string"
@@ -894,7 +911,7 @@ export default {
           ]
         },
         "rotation": {
-          "description": "question: What rotation should be applied on the icon?\nThis is mostly useful for items that face a specific direction, such as surveillance cameras\nThis is interpreted as css property for 'rotate', thus has to end with 'deg', e.g. `90deg`, `{direction}deg`, `calc(90deg - {camera:direction}deg)``\nifunset: Do not rotate",
+          "description": "question: What rotation should be applied on the icon?\nThis is mostly useful for items that face a specific direction, such as surveillance cameras\nThis is interpreted as css property for 'rotate', thus has to end with 'deg', e.g. `90deg`, `{direction}deg`, `calc(90deg - {camera:direction}deg)`\n\nIf the icon is shown on the projected centerpoint of a way, one can also use `_direction:centerpoint`\n\ntypes: Dynamic value ; string\nsuggestions:  return [{if: \"value={_direction:centerpoint}deg\", then: \"Point the top of the icon towards the end of the way\"}, {if: \"value=calc( {_direction:centerpoint}deg + 90deg )\", then: \"Point the left of the icon towards the end of the way\"}, {if: \"value=calc( {_direction:centerpoint}deg - 90deg )\", then: \"Point the right of the icon towards the end of the way\"}, {if: \"value=calc( {_direction:centerpoint}deg + 180deg )\", then: \"Point the bottom of the icon towards the end of the way\"}]\nifunset: Do not rotate",
           "anyOf": [
             {
               "$ref": "#/definitions/TagRenderingConfigJson"
@@ -949,7 +966,7 @@ export default {
           ]
         },
         "cssClasses": {
-          "description": "question: Which CSS-classes should be applied to the entire marker?\nThis will be applied to the _container_ containing both the marker and the label\n\nThe classes should be separated by a space (` `)\nYou can use most Tailwind-css classes, see https://tailwindcss.com/ for more information\nFor example: `center bg-gray-500 mx-2 my-1 rounded-full`\ninline: Apply CSS-classes <b>{value}</b> to the entire container\nifunset: Do not apply extra CSS-classes to the label\ntypes: Dynamic value ; string\nifunset: Do not apply extra CSS-classes to the entire marker\ngroup: expert",
+          "description": "question: Which CSS-classes should be applied to the entire marker?\nThis will be applied to the _container_ containing both the marker and the label\n\nThe classes should be separated by a space (` `)\nYou can use most Tailwind-css classes, see https://tailwindcss.com/ for more information\nFor example: `center bg-gray-500 mx-2 my-1 rounded-full`\ninline: Apply CSS-classes <b>{value}</b> to the entire container\ntypes: Dynamic value ; string\nifunset: Do not apply extra CSS-classes to the entire marker\ngroup: expert",
           "anyOf": [
             {
               "$ref": "#/definitions/TagRenderingConfigJson"
@@ -960,7 +977,7 @@ export default {
           ]
         },
         "pitchAlignment": {
-          "description": "question: If the map is pitched, should the icon stay parallel to the screen or to the groundplane?\nsuggestions: return [{if: \"value=canvas\", then: \"The icon will stay upward and not be transformed as if it sticks to the screen\"}, {if: \"value=map\", then: \"The icon will be transformed as if it were painted onto the ground. (Automatically sets rotationAlignment)\"}]\ngroup: expert",
+          "description": "question: If the map is pitched, should the icon stay parallel to the screen or to the groundplane?\nsuggestions: return [{if: \"value=canvas\", alsoShowIf: \"value=\", then: \"The icon will stay upward and not be transformed as if it sticks to the screen\"}, {if: \"value=map\", then: \"The icon will be transformed as if it were painted onto the ground. (Automatically sets rotationAlignment)\"}]\ngroup: expert",
           "anyOf": [
             {
               "$ref": "#/definitions/TagRenderingConfigJson"
@@ -1162,8 +1179,14 @@ export default {
             "postfixDistinguished": {
               "description": "question: If this key shared and distinguished by a postfix, what is the postfix?\nThis option is used specifically for `charge`, where the cost is indicated with `/item`.\n\nFor example, a vending machine might sell `bicycle_tube`.\nSetting this value to `bicycle_tube`, then answering this question will set `charge= €XX/bicycle_tube`.\nIf charge did already contain another value, e.g. `charge= €YY/some_item; €ZZ/other_item`, then `€XX/bicycle_tube`will be added.\nNote: those values are sorted alphabetically\nNote: no need to add the `/`\n\nifunset: Don't distinguish by postfix\ngroup: expert",
               "type": "string"
+            },
+            "helperArgs": {
+              "description": "Extra arguments to configure the input element\ngroup: hidden"
             }
-          }
+          },
+          "required": [
+            "helperArgs"
+          ]
         },
         "question": {
           "description": "question: What question should be shown to the contributor?\n\nA question is presented ot the user if no mapping matches and the 'freeform' key is not set as well.\n\nifunset: This tagrendering will be shown if it is known, but cannot be edited by the contributor, effectively resutling in a read-only rendering",
@@ -1308,6 +1331,13 @@ export default {
         "classes": {
           "description": "question: What css-classes should be applied to showing this attribute?\n\nA list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\n\nValues are split on ` `  (space)",
           "type": "string"
+        },
+        "filter": {
+          "description": "This tagRendering can introduce this builtin filter",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       },
       "required": [
@@ -1386,8 +1416,14 @@ export default {
             "postfixDistinguished": {
               "description": "question: If this key shared and distinguished by a postfix, what is the postfix?\nThis option is used specifically for `charge`, where the cost is indicated with `/item`.\n\nFor example, a vending machine might sell `bicycle_tube`.\nSetting this value to `bicycle_tube`, then answering this question will set `charge= €XX/bicycle_tube`.\nIf charge did already contain another value, e.g. `charge= €YY/some_item; €ZZ/other_item`, then `€XX/bicycle_tube`will be added.\nNote: those values are sorted alphabetically\nNote: no need to add the `/`\n\nifunset: Don't distinguish by postfix\ngroup: expert",
               "type": "string"
+            },
+            "helperArgs": {
+              "description": "Extra arguments to configure the input element\ngroup: hidden"
             }
-          }
+          },
+          "required": [
+            "helperArgs"
+          ]
         },
         "question": {
           "description": "question: What question should be shown to the contributor?\n\nA question is presented ot the user if no mapping matches and the 'freeform' key is not set as well.\n\nifunset: This tagrendering will be shown if it is known, but cannot be edited by the contributor, effectively resutling in a read-only rendering",
@@ -1532,6 +1568,13 @@ export default {
         "classes": {
           "description": "question: What css-classes should be applied to showing this attribute?\n\nA list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\n\nValues are split on ` `  (space)",
           "type": "string"
+        },
+        "filter": {
+          "description": "This tagRendering can introduce this builtin filter",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
@@ -1737,7 +1780,15 @@ export default {
                 "description": "The tags that will be given to the object.\nThis must remove tags so that the 'source/osmTags' won't match anymore\n\nquestion: What tags should be applied to the object?"
               },
               "then": {
-                "description": "The human explanation for the options\n\nquestion: What text should be shown to the contributor for this reason?"
+                "description": "The human explanation for the options\n\nquestion: What text should be shown to the contributor for this reason?",
+                "anyOf": [
+                  {
+                    "$ref": "#/definitions/Record<string,string>"
+                  },
+                  {
+                    "type": "string"
+                  }
+                ]
               }
             },
             "required": [
@@ -2051,7 +2102,7 @@ export default {
           ]
         },
         "pointRendering": {
-          "description": "Creates points to render on the map.\nThis can render points for point-objects, lineobjects or areaobjects; use 'location' to indicate where it should be rendered\n\ngroup: pointrendering",
+          "description": "Creates points to render on the map.\nThis can render points for point-objects, lineobjects or areaobjects; use 'location' to indicate where it should be rendered.\n\nNote that all attributes - including [the calculated tags](https://github.com/pietervdvn/MapComplete/blob/develop/Docs/CalculatedTags.md) can be used to create the markers and lines\n\ngroup: pointrendering",
           "type": "array",
           "items": {
             "$ref": "#/definitions/default_4"
@@ -2473,7 +2524,7 @@ export default {
           ]
         },
         "pointRendering": {
-          "description": "Creates points to render on the map.\nThis can render points for point-objects, lineobjects or areaobjects; use 'location' to indicate where it should be rendered\n\ngroup: pointrendering",
+          "description": "Creates points to render on the map.\nThis can render points for point-objects, lineobjects or areaobjects; use 'location' to indicate where it should be rendered.\n\nNote that all attributes - including [the calculated tags](https://github.com/pietervdvn/MapComplete/blob/develop/Docs/CalculatedTags.md) can be used to create the markers and lines\n\ngroup: pointrendering",
           "type": "array",
           "items": {
             "$ref": "#/definitions/default_4"

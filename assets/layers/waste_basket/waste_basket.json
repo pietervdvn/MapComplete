@@ -254,7 +254,7 @@
         {
           "if": {
             "and": [
-              "vending=dog_excrement_bag",
+              "vending=excrement_bags",
               "not:vending="
             ]
           },
@@ -273,7 +273,7 @@
         {
           "if": {
             "and": [
-              "not:vending=dog_excrement_bag",
+              "not:vending=excrement_bags",
               "vending="
             ]
           },
@@ -321,7 +321,8 @@
             "da": "Alle typer",
             "ca": "Tots els tipus",
             "fr": "Tout type",
-            "cs": "Všechny typy"
+            "cs": "Všechny typy",
+            "zh_Hant": "所有類型"
           }
         },
         {

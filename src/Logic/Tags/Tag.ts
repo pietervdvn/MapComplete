@@ -3,6 +3,7 @@ import { TagsFilter } from "./TagsFilter"
 import { TagConfigJson } from "../../Models/ThemeConfig/Json/TagConfigJson"
 import { ExpressionSpecification } from "maplibre-gl"
 import { RegexTag } from "./RegexTag"
+import { OptimizedTag } from "./TagTypes"
 
 export class Tag extends TagsFilter {
     public key: string
@@ -136,15 +137,13 @@ export class Tag extends TagsFilter {
      * new Tag("key","value").shadows(new And([new Tag("x","y"), new RegexTag("a","b", true)]) // => false
      */
     shadows(other: TagsFilter): boolean {
-        if (other["key"] !== this.key) {
-            return false
-        }
         if (other instanceof Tag) {
-            // Other.key === this.key
-            return other.value === this.value
+            return other.key === this.key && other.value === this.value
         }
         if (other instanceof RegexTag) {
-            return other.matchesProperties({ [this.key]: this.value })
+            if (other.key === this.key || !other.invert) {
+                return other.matchesProperties({ [this.key]: this.value })
+            }
         }
         return false
     }
@@ -164,8 +163,8 @@ export class Tag extends TagsFilter {
         return [{ k: this.key, v: this.value }]
     }
 
-    optimize(): TagsFilter | boolean {
-        return this
+    optimize(): (Tag & OptimizedTag) | boolean {
+        return <any>this
     }
 
     isNegative(): boolean {

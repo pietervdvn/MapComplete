@@ -90,6 +90,11 @@
       "value": "rubber"
     },
     {
+      "key": "surface",
+      "description": "Layer 'Playgrounds' shows surface=fine_gravel with a fixed text, namely 'The surface is <b>fine gravel</b> (less then 2 cm per stone)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
+      "value": "fine_gravel"
+    },
+    {
       "key": "lit",
       "description": "Layer 'Playgrounds' shows lit=yes with a fixed text, namely 'This playground is lit at night' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "yes"
@@ -399,6 +404,16 @@
       "value": "no"
     },
     {
+      "key": "armrest",
+      "description": "Layer 'Benches' shows armrest=yes with a fixed text, namely 'This bench does have one or more armrests' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
+      "value": "yes"
+    },
+    {
+      "key": "armrest",
+      "description": "Layer 'Benches' shows armrest=no with a fixed text, namely 'This bench does <b>not</b> have any armrests' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
+      "value": "no"
+    },
+    {
       "key": "seats",
       "description": "Layer 'Benches' shows and asks freeform values for key 'seats' (in the mapcomplete.org theme 'Playgrounds')"
     },
@@ -541,91 +556,6 @@
       "key": "not:historic",
       "description": "Layer 'Benches' shows historic= & not:historic=memorial with a fixed text, namely 'This bench is a <b>not</b> a memorial for someone or something' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds') (This is only shown if (historic=memorial | inscription~.+ | memorial=bench | tourism=artwork))",
       "value": "memorial"
-    },
-    {
-      "key": "artwork_type",
-      "description": "Layer 'Benches' shows and asks freeform values for key 'artwork_type' (in the mapcomplete.org theme 'Playgrounds') (This is only shown if tourism=artwork)"
-    },
-    {
-      "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=architecture with a fixed text, namely 'Architecture' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds') (This is only shown if tourism=artwork)",
-      "value": "architecture"
-    },
-    {
-      "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=mural with a fixed text, namely 'Mural' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds') (This is only shown if tourism=artwork)",
-      "value": "mural"
-    },
-    {
-      "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=painting with a fixed text, namely 'Painting' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds') (This is only shown if tourism=artwork)",
-      "value": "painting"
-    },
-    {
-      "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=sculpture with a fixed text, namely 'Sculpture' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds') (This is only shown if tourism=artwork)",
-      "value": "sculpture"
-    },
-    {
-      "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=statue with a fixed text, namely 'Statue' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds') (This is only shown if tourism=artwork)",
-      "value": "statue"
-    },
-    {
-      "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=bust with a fixed text, namely 'Bust' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds') (This is only shown if tourism=artwork)",
-      "value": "bust"
-    },
-    {
-      "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=stone with a fixed text, namely 'Stone' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds') (This is only shown if tourism=artwork)",
-      "value": "stone"
-    },
-    {
-      "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=installation with a fixed text, namely 'Installation' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds') (This is only shown if tourism=artwork)",
-      "value": "installation"
-    },
-    {
-      "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=graffiti with a fixed text, namely 'Graffiti' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds') (This is only shown if tourism=artwork)",
-      "value": "graffiti"
-    },
-    {
-      "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=relief with a fixed text, namely 'Relief' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds') (This is only shown if tourism=artwork)",
-      "value": "relief"
-    },
-    {
-      "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=azulejo with a fixed text, namely 'Azulejo (Spanish decorative tilework)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds') (This is only shown if tourism=artwork)",
-      "value": "azulejo"
-    },
-    {
-      "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=tilework with a fixed text, namely 'Tilework' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds') (This is only shown if tourism=artwork)",
-      "value": "tilework"
-    },
-    {
-      "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=woodcarving with a fixed text, namely 'Woodcarving' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds') (This is only shown if tourism=artwork)",
-      "value": "woodcarving"
-    },
-    {
-      "key": "artist:wikidata",
-      "description": "Layer 'Benches' shows and asks freeform values for key 'artist:wikidata' (in the mapcomplete.org theme 'Playgrounds') (This is only shown if tourism=artwork)"
-    },
-    {
-      "key": "artist_name",
-      "description": "Layer 'Benches' shows and asks freeform values for key 'artist_name' (in the mapcomplete.org theme 'Playgrounds') (This is only shown if tourism=artwork)"
-    },
-    {
-      "key": "website",
-      "description": "Layer 'Benches' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'Playgrounds') (This is only shown if tourism=artwork)"
-    },
-    {
-      "key": "subject:wikidata",
-      "description": "Layer 'Benches' shows and asks freeform values for key 'subject:wikidata' (in the mapcomplete.org theme 'Playgrounds') (This is only shown if tourism=artwork)"
     },
     {
       "key": "leisure",

@@ -13,6 +13,7 @@
   import type { MapProperties } from "../Models/MapProperties"
   import Geosearch from "./BigComponents/Geosearch.svelte"
   import Translations from "./i18n/Translations"
+  import usersettings from "../assets/generated/layers/usersettings.json"
   import {
     CogIcon,
     EyeIcon,
@@ -28,11 +29,10 @@
   import UserRelatedState from "../Logic/State/UserRelatedState"
   import LoginToggle from "./Base/LoginToggle.svelte"
   import LoginButton from "./Base/LoginButton.svelte"
-  import CopyrightPanel from "./BigComponents/CopyrightPanel"
+  import CopyrightPanel from "./BigComponents/CopyrightPanel.svelte"
   import DownloadPanel from "./DownloadFlow/DownloadPanel.svelte"
   import ModalRight from "./Base/ModalRight.svelte"
   import LevelSelector from "./BigComponents/LevelSelector.svelte"
-  import SelectedElementTitle from "./BigComponents/SelectedElementTitle.svelte"
   import ThemeIntroPanel from "./BigComponents/ThemeIntroPanel.svelte"
   import type { RasterLayerPolygon } from "../Models/RasterLayers"
   import { AvailableRasterLayers } from "../Models/RasterLayers"
@@ -46,7 +46,6 @@
   import PendingChangesIndicator from "./BigComponents/PendingChangesIndicator.svelte"
   import Cross from "../assets/svg/Cross.svelte"
   import LanguagePicker from "./InputElement/LanguagePicker.svelte"
-  import Bug from "../assets/svg/Bug.svelte"
   import Min from "../assets/svg/Min.svelte"
   import Plus from "../assets/svg/Plus.svelte"
   import Filter from "../assets/svg/Filter.svelte"
@@ -55,7 +54,7 @@
   import ImageOperations from "./Image/ImageOperations.svelte"
   import VisualFeedbackPanel from "./BigComponents/VisualFeedbackPanel.svelte"
   import { Orientation } from "../Sensors/Orientation"
-  import GeolocationControl from "./BigComponents/GeolocationControl.svelte"
+  import GeolocationIndicator from "./BigComponents/GeolocationIndicator.svelte"
   import Compass_arrow from "../assets/svg/Compass_arrow.svelte"
   import ReverseGeocoding from "./BigComponents/ReverseGeocoding.svelte"
   import FilterPanel from "./BigComponents/FilterPanel.svelte"
@@ -65,16 +64,13 @@
   import ExtraLinkButton from "./BigComponents/ExtraLinkButton.svelte"
   import CloseAnimation from "./Base/CloseAnimation.svelte"
   import { LastClickFeatureSource } from "../Logic/FeatureSource/Sources/LastClickFeatureSource"
-  import Github from "../assets/svg/Github.svelte"
   import ArrowDownTray from "@babeard/svelte-heroicons/mini/ArrowDownTray"
   import Share from "@babeard/svelte-heroicons/solid/Share"
   import ChevronRight from "@babeard/svelte-heroicons/solid/ChevronRight"
-  import DocumentChartBar from "@babeard/svelte-heroicons/outline/DocumentChartBar"
   import Marker from "./Map/Marker.svelte"
   import AboutMapComplete from "./BigComponents/AboutMapComplete.svelte"
   import IfNot from "./Base/IfNot.svelte"
   import Hotkeys from "./Base/Hotkeys"
-  import OverlayOverview from "./Map/OverlayOverview.svelte"
 
   export let state: ThemeViewState
   let layout = state.layout
@@ -123,6 +119,7 @@
   let visualFeedback = state.visualFeedback
   let viewport: UIEventSource<HTMLDivElement> = new UIEventSource<HTMLDivElement>(undefined)
   let mapproperties: MapProperties = state.mapProperties
+  let usersettingslayer = new LayerConfig(<LayerConfigJson>usersettings, "usersettings", true)
   state.mapProperties.installCustomKeyboardHandler(viewport)
   let canZoomIn = mapproperties.maxzoom.map(
     (mz) => mapproperties.zoom.data < mz,
@@ -209,6 +206,9 @@
   let openFilterButton: UIEventSource<HTMLElement> = new UIEventSource<HTMLElement>(undefined)
   let openBackgroundButton: UIEventSource<HTMLElement> = new UIEventSource<HTMLElement>(undefined)
   let addNewFeatureMode = state.userRelatedState.addNewFeatureMode
+
+  let gpsAvailable = state.geolocation.geolocationState.gpsAvailable
+  let gpsButtonAriaLabel = state.geolocation.geolocationState.gpsStateExplanation
 </script>
 
 <main>
@@ -286,9 +286,9 @@
           on:keydown={forwardEventToMap}
           htmlElem={openCurrentViewLayerButton}
         >
-          <ToSvelte
-            construct={() => currentViewLayer.defaultIcon().SetClass("w-8 h-8 cursor-pointer")}
-          />
+          <div class="h-8 w-8 cursor-pointer">
+            <ToSvelte construct={() => currentViewLayer.defaultIcon()} />
+          </div>
         </MapControlButton>
       {/if}
       <ExtraLinkButton {state} />
@@ -297,6 +297,9 @@
       <If condition={state.featureSwitchIsTesting}>
         <div class="alert w-fit">Testmode</div>
       </If>
+      {#if state.osmConnection.Backend().startsWith("https://master.apis.dev.openstreetmap.org")}
+        <div class="thanks">Testserver</div>
+      {/if}
       <If condition={state.featureSwitches.featureSwitchFakeUser}>
         <div class="alert w-fit">Faking a user (Testmode)</div>
       </If>
@@ -403,11 +406,12 @@
         <If condition={featureSwitches.featureSwitchGeolocation}>
           <div class="relative m-0">
             <MapControlButton
-              arialabel={Translations.t.general.labels.jumpToLocation}
+              enabled={gpsAvailable}
+              arialabelDynamic={gpsButtonAriaLabel}
               on:click={() => state.geolocationControl.handleClick()}
               on:keydown={forwardEventToMap}
             >
-              <GeolocationControl {state} />
+              <GeolocationIndicator {state} />
               <!-- h-8 w-8 + p-0.5 sm:p-1 + 2px border => 9 sm: 10 in total-->
             </MapControlButton>
             {#if $compassLoaded}
@@ -446,46 +450,42 @@
       }}
     >
       <div slot="close-button" />
-      <div class="normal-background absolute flex h-full w-full flex-col">
-        <SelectedElementTitle {state} layer={$selectedLayer} selectedElement={$selectedElement} />
-        <SelectedElementView {state} selectedElement={$selectedElement} />
-      </div>
+      <SelectedElementPanel {state} selected={$selectedElement} />
     </ModalRight>
   {/if}
 
   {#if $selectedElement !== undefined && $selectedLayer !== undefined && $selectedLayer.popupInFloatover}
     <!-- Floatover with the selected element, if applicable -->
-    <FloatOver
-      on:close={() => {
-        state.selectedElement.setData(undefined)
-      }}
-    >
-      <div class="flex h-full w-full flex-col">
-        {#if $selectedLayer.popupInFloatover === "title"}
-          <SelectedElementTitle {state} layer={$selectedLayer} selectedElement={$selectedElement}>
-            <span slot="close-button" />
-          </SelectedElementTitle>
-        {/if}
-        <SelectedElementView {state} selectedElement={$selectedElement} />
-      </div>
-    </FloatOver>
+
+    {#if $selectedLayer.popupInFloatover === "title"}
+      <FloatOver
+        on:close={() => {
+          state.selectedElement.setData(undefined)
+        }}
+      >
+        <span slot="close-button" />
+        <SelectedElementPanel absolute={false} {state} selected={$selectedElement} />
+      </FloatOver>
+    {:else}
+      <FloatOver
+        on:close={() => {
+          state.selectedElement.setData(undefined)
+        }}
+      >
+        <SelectedElementView {state} layer={$selectedLayer} selectedElement={$selectedElement} />
+      </FloatOver>
+    {/if}
   {/if}
 
+  <!-- Image preview -->
   <If condition={state.previewedImage.map((i) => i !== undefined)}>
     <FloatOver on:close={() => state.previewedImage.setData(undefined)}>
-      <button
-        class="absolute right-4 top-4 h-8 w-8 rounded-full p-0"
-        on:click={() => previewedImage.setData(undefined)}
-        slot="close-button"
-      >
-        <XCircleIcon />
-      </button>
       <ImageOperations image={$previewedImage} />
     </FloatOver>
   </If>
 
+  <!-- big theme menu -->
   <If condition={state.guistate.themeIsOpened}>
-    <!-- Theme menu -->
     <FloatOver on:close={() => state.guistate.themeIsOpened.setData(false)}>
       <span slot="close-button"><!-- Disable the close button --></span>
       <TabbedGroup
@@ -501,7 +501,6 @@
 
         <div class="flex" slot="title0">
           <Marker icons={layout.icon} size="h-4 w-4" />
-
           <Tr t={layout.title} />
         </div>
 
@@ -538,14 +537,15 @@
     </FloatOver>
   </If>
 
+  <!-- Filterpane -->
   <If condition={state.guistate.filtersPanelIsOpened}>
     <FloatOver on:close={() => state.guistate.filtersPanelIsOpened.setData(false)}>
       <FilterPanel {state} />
     </FloatOver>
   </If>
 
+  <!-- background layer selector -->
   <IfHidden condition={state.guistate.backgroundLayerSelectionIsOpened}>
-    <!-- background layer selector -->
     <FloatOver
       on:close={() => {
         state.guistate.backgroundLayerSelectionIsOpened.setData(false)
@@ -558,41 +558,13 @@
           mapproperties={state.mapProperties}
           userstate={state.userRelatedState}
           visible={state.guistate.backgroundLayerSelectionIsOpened}
-          menuState={state.guistate}
         />
       </div>
     </FloatOver>
   </IfHidden>
 
-  <IfHidden condition={state.guistate.overlaySelectionIsOpened}>
-    <!-- overlay selector -->
-    <FloatOver
-      on:close={() => {
-        state.guistate.overlaySelectionIsOpened.setData(false)
-      }}
-    >
-      <div class="h-full p-2">
-        <!-- <OverlayOverview
-          {availableLayers}
-          map={state.map}
-          mapproperties={state.mapProperties}
-          userstate={state.userRelatedState}
-        /> -->
-        <RasterLayerOverview
-          {availableLayers}
-          map={state.map}
-          mapproperties={state.mapProperties}
-          userstate={state.userRelatedState}
-          visible={state.guistate.backgroundLayerSelectionIsOpened}
-          menuState={state.guistate}
-          layerType="overlay"
-        />
-      </div>
-    </FloatOver>
-  </IfHidden>
-
+  <!-- Menu page -->
   <If condition={state.guistate.menuIsOpened}>
-    <!-- Menu page -->
     <FloatOver on:close={() => state.guistate.menuIsOpened.setData(false)}>
       <span slot="close-button"><!-- Hide the default close button --></span>
       <TabbedGroup
@@ -613,7 +585,7 @@
         <div slot="content0" class="flex flex-col">
           <AboutMapComplete {state} />
           <div class="m-2 flex flex-col">
-            <ToSvelte construct={Hotkeys.generateDocumentationDynamic} />
+            <HotkeyTable />
           </div>
         </div>
 
@@ -622,7 +594,7 @@
           <Tr t={UserRelatedState.usersettingsConfig.title.GetRenderValue({})} />
         </div>
 
-        <div class="links-as-button" slot="content1">
+        <div class="links-as-button py-8" slot="content1">
           <!-- All shown components are set by 'usersettings.json', which happily uses some special visualisations created specifically for it -->
           <LoginToggle {state}>
             <div class="flex flex-col" slot="not-logged-in">
@@ -632,6 +604,7 @@
             </div>
             <SelectedElementView
               highlightedRendering={state.guistate.highlightedUserSetting}
+              layer={usersettingslayer}
               selectedElement={{
                 type: "Feature",
                 properties: { id: "settings" },
@@ -662,6 +635,7 @@
     </FloatOver>
   </If>
 
+  <!-- Privacy policy -->
   <If condition={state.guistate.privacyPanelIsOpened}>
     <FloatOver on:close={() => state.guistate.privacyPanelIsOpened.setData(false)}>
       <div class="flex h-full flex-col overflow-hidden">
@@ -676,8 +650,9 @@
     </FloatOver>
   </If>
 
+  <!-- Attribution, copyright and about MapComplete (no menu case) -->
   <If condition={state.guistate.copyrightPanelIsOpened}>
-    <FloatOver on:close={() => state.guistate.privacyPanelIsOpened.setData(false)}>
+    <FloatOver on:close={() => state.guistate.copyrightPanelIsOpened.setData(false)}>
       <div class="flex h-full flex-col overflow-hidden">
         <h1 class="low-interaction m-0 flex items-center p-4 drop-shadow-md">
           <Tr t={Translations.t.general.attribution.title} />
@@ -693,6 +668,7 @@
     </FloatOver>
   </If>
 
+  <!-- Community index -->
   <If condition={state.guistate.communityIndexPanelIsOpened}>
     <FloatOver on:close={() => state.guistate.communityIndexPanelIsOpened.setData(false)}>
       <div class="flex h-full flex-col overflow-hidden">

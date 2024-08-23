@@ -23,7 +23,7 @@ to `https://pietervdvn.github.io/mc/<branchname>`. You can see the deploy proces
 on [GitHub Actions](https://github.com/pietervdvn/MapComplete/actions). Don't worry about pushing too much. These
 deploys are free and totally automatic. They might fail if something is wrong, but this will hinder no one.
 
-Additionaly, some other maintainer might step in and merge the latest develop with your branch, making later pull
+Additionally, some other maintainer might step in and merge the latest develop with your branch, making later pull
 requests easier.
 
 Don't worry about bugs

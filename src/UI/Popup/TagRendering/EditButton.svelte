@@ -15,7 +15,7 @@
 
 <button
   on:click
-  class="as-link h-8 w-8 shrink-0 self-start rounded-full p-1"
+  class="as-link edit-button h-8 w-8 shrink-0 self-start rounded-full p-1"
   aria-labelledby={arialabel === undefined ? ariaLabelledBy : undefined}
   use:ariaLabel={arialabel}
 >

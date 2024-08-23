@@ -123,6 +123,9 @@
     <ThemesList search={themeSearchText} {state} themes={MoreScreen.officialThemes} />
 
     <LoginToggle {state}>
+      <LoginButton clss="primary" {osmConnection} slot="not-logged-in">
+        <Tr t={t.logIn} />
+      </LoginButton>
       <ThemesList
         hideThemes={false}
         isCustom={false}

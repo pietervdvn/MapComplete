@@ -6,23 +6,30 @@ import { RegexTag } from "./RegexTag"
 import { TagConfigJson } from "../../Models/ThemeConfig/Json/TagConfigJson"
 import { ExpressionSpecification } from "maplibre-gl"
 import ComparingTag from "./ComparingTag"
+import { FlatTag, OptimizedTag, TagsFilterClosed, TagTypes } from "./TagTypes"
 
 export class And extends TagsFilter {
-    public and: TagsFilter[]
+    public and: ReadonlyArray<TagsFilter>
 
-    constructor(and: TagsFilter[]) {
+    constructor(and: ReadonlyArray<TagsFilter>) {
         super()
         this.and = and
+        if(and.some(p => typeof p === "string")){
+            console.error("Assertion failed: invalid subtags:", and)
+            throw "Assertion failed: invalid subtags found"
+        }
     }
 
-    public static construct(and: TagsFilter[]): TagsFilter {
+    public static construct(and: ReadonlyArray<TagsFilter>): TagsFilter
+    public static construct(and: ReadonlyArray<(FlatTag | (Or & OptimizedTag))>): TagsFilterClosed & OptimizedTag
+    public static construct(and: ReadonlyArray< TagsFilter>): TagsFilter {
         if (and.length === 1) {
             return and[0]
         }
         return new And(and)
     }
 
-    private static combine(filter: string, choices: string[]): string[] {
+    private static combine(filter: string, choices: ReadonlyArray< string>): string[] {
         const values = []
         for (const or of choices) {
             values.push(filter + or)
@@ -175,6 +182,10 @@ export class And extends TagsFilter {
      * When the evaluation hits (A=B & X=Y), we know _for sure_ that X=Y does _not_ match, as it would have matched the first clause otherwise.
      * This means that the entire 'AND' is considered FALSE
      *
+     * @return only phrases that should be kept.
+     * @param knownExpression The expression which is known in the subexpression and for which calculations can be done
+     * @param value the given knownExpression is considered to have this value, namely 'true' or 'false'
+     *
      * new And([ new Tag("key","value") ,new Tag("other_key","value")]).removePhraseConsideredKnown(new Tag("key","value"), true) // => new Tag("other_key","value")
      * new And([ new Tag("key","value") ,new Tag("other_key","value")]).removePhraseConsideredKnown(new Tag("key","value"), false) // => false
      * new And([ new RegexTag("key",/^..*$/) ,new Tag("other_key","value")]).removePhraseConsideredKnown(new Tag("key","value"), true) // => new Tag("other_key","value")
@@ -187,13 +198,20 @@ export class And extends TagsFilter {
      * const expr = <And> TagUtils.Tag({and: ["sport=climbing", {or:["club~*", "office~*"]}]} )
      * expr.removePhraseConsideredKnown(new Tag("club","climbing"), false) // => expr
      */
-    removePhraseConsideredKnown(knownExpression: TagsFilter, value: boolean): TagsFilter | boolean {
+    removePhraseConsideredKnown(
+        knownExpression: TagsFilter,
+        value: boolean
+    ): (TagsFilterClosed & OptimizedTag) | boolean {
         const newAnds: TagsFilter[] = []
         for (const tag of this.and) {
             if (tag instanceof And) {
-                throw "Optimize expressions before using removePhraseConsideredKnown"
+                throw (
+                    "Optimize expressions before using removePhraseConsideredKnown. Found an AND in an AND: " +
+                    this.asHumanString()
+                )
             }
             if (tag instanceof Or) {
+                // Second try
                 const r = tag.removePhraseConsideredKnown(knownExpression, value)
                 if (r === true) {
                     continue
@@ -232,7 +250,7 @@ export class And extends TagsFilter {
         if (newAnds.length === 0) {
             return true
         }
-        return And.construct(newAnds)
+        return And.construct(newAnds).optimize()
     }
 
     /**
@@ -265,7 +283,7 @@ export class And extends TagsFilter {
      * const parsed = TagUtils.Tag(orig)
      * parsed.optimize().asJson() // => orig
      */
-    optimize(): TagsFilter | boolean {
+    optimize(): (TagsFilterClosed & OptimizedTag) | boolean {
         if (this.and.length === 0) {
             return true
         }
@@ -276,7 +294,7 @@ export class And extends TagsFilter {
             // We have an AND with a contained false: this is always 'false'
             return false
         }
-        const optimized = <TagsFilter[]>optimizedRaw
+        const optimized = <(TagsFilterClosed & OptimizedTag)[]>optimizedRaw
 
         for (let i = 0; i < optimized.length; i++) {
             for (let j = i + 1; j < optimized.length; j++) {
@@ -299,7 +317,7 @@ export class And extends TagsFilter {
         }
 
         {
-            // Conflicting keys do return false
+            // Conflicting keys do return false. We build a 'known' set and check for conflicts
             const properties: Record<string, string> = {}
             for (const opt of optimized) {
                 if (opt instanceof Tag) {
@@ -366,12 +384,12 @@ export class And extends TagsFilter {
             }
         }
 
-        const newAnds: TagsFilter[] = []
+        const newAnds: (FlatTag | (Or & OptimizedTag))[] = []
+        let containedOrs: (Or & OptimizedTag)[] = []
 
-        let containedOrs: Or[] = []
         for (const tf of optimized) {
             if (tf instanceof And) {
-                newAnds.push(...tf.and)
+                newAnds.push(...TagTypes.safeAnd(tf))
             } else if (tf instanceof Or) {
                 containedOrs.push(tf)
             } else {
@@ -382,10 +400,10 @@ export class And extends TagsFilter {
         {
             let dirty = false
             do {
-                const cleanedContainedOrs: Or[] = []
+                const cleanedContainedOrs: (Or & OptimizedTag)[] = []
                 outer: for (let containedOr of containedOrs) {
                     for (const known of newAnds) {
-                        // input for optimazation: (K=V & (X=Y | K=V))
+                        // input for optimization: (K=V & (X=Y | K=V))
                         // containedOr: (X=Y | K=V)
                         // newAnds (and thus known): (K=V) --> true
                         const cleaned = containedOr.removePhraseConsideredKnown(known, true)
@@ -401,11 +419,17 @@ export class And extends TagsFilter {
                             containedOr = cleaned
                             continue
                         }
+                        if (cleaned instanceof And) {
+                            // An optimized 'And' should not contain 'Ands', we can safely cast
+                            newAnds.push(...TagTypes.safeAnd(cleaned))
+                            continue
+                        }
                         // the 'or' dissolved into a normal tag -> it has to be added to the newAnds
                         newAnds.push(cleaned)
                         dirty = true // rerun this algo later on
                         continue outer
                     }
+
                     cleanedContainedOrs.push(containedOr)
                 }
                 containedOrs = cleanedContainedOrs
@@ -423,7 +447,7 @@ export class And extends TagsFilter {
         if (containedOrs.length === 1) {
             newAnds.push(containedOrs[0])
         } else if (containedOrs.length > 1) {
-            let commonValues: TagsFilter[] = containedOrs[0].or
+            let commonValues: TagsFilter[] = [...(containedOrs[0].or)]
             for (let i = 1; i < containedOrs.length && commonValues.length > 0; i++) {
                 const containedOr = containedOrs[i]
                 commonValues = commonValues.filter((cv) =>
@@ -433,11 +457,11 @@ export class And extends TagsFilter {
             if (commonValues.length === 0) {
                 newAnds.push(...containedOrs)
             } else {
-                const newOrs: TagsFilter[] = []
+                const newOrs: TagsFilterClosed[] = []
                 for (const containedOr of containedOrs) {
-                    const elements = containedOr.or.filter(
-                        (candidate) => !commonValues.some((cv) => cv.shadows(candidate))
-                    )
+                    const elements: (FlatTag | (And & OptimizedTag))[] = TagTypes.safeOr(
+                        containedOr
+                    ).filter((candidate) => !commonValues.some((cv) => cv.shadows(candidate)))
                     if (elements.length > 0) {
                         newOrs.push(Or.construct(elements))
                     }
@@ -450,6 +474,8 @@ export class And extends TagsFilter {
                     return false
                 } else if (result === true) {
                     // neutral element: skip
+                } else if (result instanceof And) {
+                    newAnds.push(...TagTypes.safeAnd(result))
                 } else {
                     newAnds.push(result)
                 }

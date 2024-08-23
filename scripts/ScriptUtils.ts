@@ -123,7 +123,7 @@ export default class ScriptUtils {
         return ScriptUtils.DownloadJSON(url)
     }
 
-    public static async ReadSvg(path: string): Promise<any> {
+    public static async ReadSvg(path: string): Promise<SVGElement> {
         if (!existsSync(path)) {
             throw "File not found: " + path
         }
@@ -172,6 +172,13 @@ export default class ScriptUtils {
         headers?: any,
         timeoutSecs?: number
     ): Promise<{ content: string } | { redirect: string } | "timeout"> {
+        if (url.startsWith("./assets")) {
+            return Promise.resolve({ content: readFileSync("./public/" + url, "utf8") })
+        }
+        if (url.startsWith("./")) {
+            return Promise.resolve({ content: readFileSync(url, "utf8") })
+        }
+
         const requestPromise = new Promise((resolve, reject) => {
             try {
                 headers = headers ?? {}

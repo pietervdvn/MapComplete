@@ -23,7 +23,7 @@
       "id": "mapillary",
       "description": "Shows a button to open Mapillary on this location",
       "render": {
-        "*": "{mapillary()}"
+        "*": "{mapillary_link()}"
       }
     },
     {
@@ -136,6 +136,9 @@
     },
     {
       "id": "minimap",
+      "labels": [
+        "ignore_docs"
+      ],
       "description": "Shows a small map with the feature. Added by default to every popup",
       "render": {
         "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
@@ -212,6 +215,32 @@
         "*": "{fediverse_link(contact:mastodon)}"
       },
       "icon": "./assets/svg/mastodon.svg"
+    },
+    {
+      "id": "facebook",
+      "description": "Shows and asks for the facebook handle",
+      "question": {
+        "en": "What is the facebook page of of {title()}?",
+        "de": "Was ist die Facebook-Seite von {title()}?"
+      },
+      "freeform": {
+        "key": "contact:facebook",
+        "type": "url"
+      },
+      "render": {
+        "special": {
+          "type": "link",
+          "href": "{contact:facebook}",
+          "text": {
+            "en": "Facebook page",
+            "de": "Facebook Seite"
+          }
+        },
+        "after": {
+          "en": "<div class='subtle text-sm'>Facebook is known to harm mental health, manipulate public opinion and cause hate. Try to use healthier alternatives</div>",
+          "de": "<div class='subtle text-sm'>Facebook ist bekannt dafür, die psychische Gesundheit zu beeinträchtigen, die öffentliche Meinung zu manipulieren und Hass zu verursachen. Versuche, gesündere Alternativen zu nutzen.</div>"
+        }
+      }
     },
     {
       "id": "osmlink",
@@ -629,6 +658,9 @@
             "de": "Hunde sind nur draußen erlaubt"
           }
         }
+      ],
+      "filter": [
+        "filters.dogs"
       ]
     },
     {
@@ -753,6 +785,9 @@
           },
           "hideInAnswer": true
         }
+      ],
+      "filter": [
+        "filters.open_now"
       ]
     },
     {
@@ -797,7 +832,7 @@
       "id": "opening_hours_by_appointment",
       "builtin": "opening_hours",
       "override": {
-        "mappings": [
+        "+mappings": [
           {
             "if": "opening_hours=\"by appointment\"",
             "then": {
@@ -1037,6 +1072,10 @@
             "cs": "Platba QR kódem je zde možná"
           }
         }
+      ],
+      "filter": [
+        "filters.accepts_cash",
+        "filters.accepts_cards"
       ]
     },
     {
@@ -2033,6 +2072,7 @@
       "mappings": [
         {
           "if": "internet_access=wlan",
+          "icon": "wifi",
           "then": {
             "en": "This place offers wireless internet access",
             "nl": "Deze plaats biedt draadloze internettoegang aan",
@@ -2050,6 +2090,7 @@
         },
         {
           "if": "internet_access=no",
+          "icon": "wifi;cross_bottom_right:red",
           "then": {
             "en": "This place <b>does not</b> offer internet access",
             "nl": "Deze plaats biedt <b>geen</b> internettoegang aan",
@@ -2085,6 +2126,7 @@
         },
         {
           "if": "internet_access=terminal",
+          "icon": "computer",
           "then": {
             "en": "This place offers internet access via a terminal or computer",
             "nl": "Deze plaats biedt internettoegang via een terminal of computer aan",
@@ -2117,6 +2159,9 @@
             "pl": "To miejsce oferuje przewodowy dostęp do Internetu"
           }
         }
+      ],
+      "filter": [
+        "filters.has_internet"
       ]
     },
     {
@@ -2448,6 +2493,9 @@
             "cs": "Tento obchod nemá žádnou nabídku bez cukru"
           }
         }
+      ],
+      "filter": [
+        "filters.sugar_free"
       ]
     },
     {
@@ -2467,7 +2515,8 @@
             "en": "<b>Only sells lactose free</b> products",
             "de": "<b>Ausschließlich</b> laktosefreie Produkte",
             "cs": "<b>Prodává pouze výrobky bez laktózy</b>"
-          }
+          },
+          "icon": "./assets/layers/questions/lactose_free.svg"
         },
         {
           "if": "diet:lactose_free=yes",
@@ -2475,7 +2524,8 @@
             "en": "Big lactose free offering",
             "de": "Viele laktosefreie Produkte",
             "cs": "Velká nabídka bez laktózy"
-          }
+          },
+          "icon": "./assets/layers/questions/lactose_free.svg"
         },
         {
           "if": "diet:lactose_free=limited",
@@ -2493,6 +2543,9 @@
             "cs": "Žádná nabídka bez laktózy"
           }
         }
+      ],
+      "filter": [
+        "filters.lactose_free"
       ]
     },
     {
@@ -2512,7 +2565,8 @@
             "en": "This shop <b>only sells gluten free</b> products",
             "de": "Das Geschäft verkauft <b>ausschließlich glutenfreie</b> Produkte",
             "cs": "Tento obchod <b>prodává pouze bezlepkové</b> produkty"
-          }
+          },
+          "icon": "./assets/layers/questions/glutenfree.svg"
         },
         {
           "if": "diet:gluten_free=yes",
@@ -2520,7 +2574,8 @@
             "en": "This shop has a big gluten free offering",
             "de": "Das Geschäft verkauft viele glutenfreie Produkte",
             "cs": "Tento obchod má velkou bezlepkovou nabídku"
-          }
+          },
+          "icon": "./assets/layers/questions/glutenfree.svg"
         },
         {
           "if": "diet:gluten_free=limited",
@@ -2538,6 +2593,9 @@
             "cs": "Tento obchod nemá bezlepkovou nabídku"
           }
         }
+      ],
+      "filter": [
+        "filters.gluten_free"
       ]
     },
     {
@@ -2584,7 +2642,8 @@
     {
       "id": "just_created",
       "labels": [
-        "added_by_default_top"
+        "added_by_default_top",
+        "ignore_docs"
       ],
       "description": "This element shows a 'thank you' that the contributor has recently created this element",
       "classes": "rounded-xl thanks",
@@ -2629,7 +2688,8 @@
     {
       "id": "nearby_images",
       "labels": [
-        "added_by_default_conditional"
+        "added_by_default_conditional",
+        "ignore_docs"
       ],
       "render": {
         "*": "{nearby_images()}"
@@ -2654,7 +2714,8 @@
     {
       "id": "favourite_status",
       "labels": [
-        "added_by_default"
+        "added_by_default",
+        "ignore_docs"
       ],
       "render": {
         "*": "{favourite_status()}"
@@ -2663,7 +2724,8 @@
     {
       "id": "share",
       "labels": [
-        "added_by_default"
+        "added_by_default",
+        "ignore_docs"
       ],
       "metacondition": "_supports_sharing=yes",
       "render": {
@@ -2680,7 +2742,8 @@
     {
       "id": "qr_code",
       "labels": [
-        "added_by_default"
+        "added_by_default",
+        "ignore_docs"
       ],
       "classes": "flex items-center gap-x-2",
       "render": {
@@ -2699,7 +2762,8 @@
     {
       "id": "last_edit",
       "labels": [
-        "added_by_default"
+        "added_by_default",
+        "ignore_docs"
       ],
       "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
       "condition": {
@@ -2735,7 +2799,8 @@
     {
       "id": "nothing_known",
       "labels": [
-        "added_by_default_top"
+        "added_by_default_top",
+        "ignore_docs"
       ],
       "condition": {
         "and": [
@@ -2755,6 +2820,118 @@
           "cssClasses": "subtle m-4 italic flex items-center justify-center"
         }
       }
+    },
+    {
+      "id": "seasonal",
+      "question": {
+        "en": "Is {title()} available all around the year?",
+        "nl": "Is {title()} heel het jaar beschikbaar?",
+        "de": "Ist {title()} rund um das Jahr nutzbar?"
+      },
+      "mappings": [
+        {
+          "if": "seasonal=no",
+          "then": {
+            "en": "Available all around the year",
+            "nl": "Heel het jaar door beschikbaar",
+            "de": "Ganzjährig in Betrieb"
+          }
+        },
+        {
+          "if": "seasonal=summer",
+          "then": {
+            "en": "Only available in summer",
+            "nl": "Enkel in de zomer beschikbaar",
+            "de": "Nur im Sommer in Betrieb"
+          }
+        },
+        {
+          "if": "seasonal=spring;summer;autumn",
+          "icon": "./assets/layers/drinking_water/no_winter.svg",
+          "then": {
+            "en": "Closed during the winter",
+            "nl": "Gesloten in de winter",
+            "de": "Im Winter nicht in Betrieb"
+          }
+        }
+      ]
+    },
+    {
+      "id": "shower",
+      "question": {
+        "en": "Does this facility offer showers?",
+        "de": "Gibt es in dieser Einrichtung Duschen?"
+      },
+      "mappings": [
+        {
+          "if": "shower=hot",
+          "icon": "./assets/layers/shower/shower.svg",
+          "then": {
+            "en": "This facility does have showers with warm water",
+            "de": "Diese Einrichtung verfügt über Duschen mit warmem Wasser"
+          }
+        },
+        {
+          "if": "shower=cold",
+          "icon": "./assets/layers/shower/shower.svg",
+          "then": {
+            "en": "This facility does have showers, but the water is not heated",
+            "de": "Diese Einrichtung verfügt zwar über Duschen, aber das Wasser ist nicht beheizt"
+          }
+        },
+        {
+          "if": "shower=yes",
+          "icon": "./assets/layers/shower/shower.svg",
+          "then": {
+            "en": "This facility does have showers",
+            "de": "Diese Einrichtung hat Duschen"
+          }
+        },
+        {
+          "if": "shower=no",
+          "icon": "invalid;./assets/layers/shower/shower.svg",
+          "then": {
+            "en": "This facility does not offer a shower",
+            "de": "Diese Einrichtung hat keine Duschen"
+          }
+        }
+      ]
+    },
+    {
+      "id": "preset_description",
+      "render": {
+        "*": "{preset_description()}"
+      }
+    },
+    {
+      "id": "brand",
+      "question": {
+        "en": "Is {title()} part of a bigger brand?",
+        "de": "Ist {title()} Teil einer großen Marke?"
+      },
+      "render": {
+        "en": "Part of {brand}",
+        "de": "Teil von {brand}"
+      },
+      "freeform": {
+        "key": "brand",
+        "addExtraTags": [
+          "nobrand="
+        ]
+      },
+      "mappings": [
+        {
+          "if": "nobrand=yes",
+          "addExtraTags": [
+            "brand=",
+            "brand:wikidata="
+          ],
+          "then": {
+            "en": "Not part of a bigger brand",
+            "de": "Nicht Teil einer großen Marke"
+          }
+        }
+      ]
     }
   ]
 }

@@ -86,6 +86,9 @@ export default {
         "and"
       ]
     },
+    "Record<string,string>": {
+      "type": "object"
+    },
     "{or:TagConfigJson[];}": {
       "type": "object",
       "properties": {
@@ -99,9 +102,6 @@ export default {
       "required": [
         "or"
       ]
-    },
-    "Record<string,string>": {
-      "type": "object"
     },
     "Record<string,string|Record<string,string>>": {
       "type": "object"
@@ -208,7 +208,7 @@ export default {
       "type": "object",
       "properties": {
         "icon": {
-          "description": "question: What icon should be used?\ntype: icon\ntypes: Use a dynamic value ; icon\nsuggestions: return Constants.defaultPinIcons.map(i => ({if: \"value=\"+i, then: i, icon: i}))",
+          "description": "question: What icon should be used?\ntypes: <span class=\"text-lg font-bold\">Use a different icon depending on the value of some attributes</span> ; icon\nsuggestions: return Constants.defaultPinIcons.map(i => ({if: \"value=\"+i, then: i, icon: i}))",
           "anyOf": [
             {
               "$ref": "#/definitions/MinimalTagRenderingConfigJson"
@@ -232,7 +232,7 @@ export default {
           ]
         },
         "color": {
-          "description": "question: What colour should the icon be?\nThis will only work for the default icons such as `pin`,`circle`,...\ntype: color\ntypes: Use a dynamic color ; icon",
+          "description": "question: What colour should the icon be?\nThis will only work for the default icons such as `pin`,`circle`,...\ntypes: <span class=\"text-lg font-bold\">Use a different color depending on the value of some attributes</span> ; color",
           "anyOf": [
             {
               "$ref": "#/definitions/MinimalTagRenderingConfigJson"
@@ -429,6 +429,13 @@ export default {
         "classes": {
           "description": "question: What css-classes should be applied to showing this attribute?\n\nA list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\n\nValues are split on ` `  (space)",
           "type": "string"
+        },
+        "filter": {
+          "description": "This tagRendering can introduce this builtin filter",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
@@ -523,7 +530,7 @@ export default {
           ]
         },
         "addExtraTags": {
-          "description": "question: What extra tags should be added to the object if this object is chosen?\ntype: simple_tag\n\nIf chosen as answer, these tags will be applied onto the object, together with the tags from the `if`\nNot compatible with multiAnswer.\n\nThis can be used e.g. to erase other keys which indicate the 'not' value:\n```json\n{\n    \"if\": \"crossing:marking=rainbow\",\n    \"then\": \"This is a rainbow crossing\",\n    \"addExtraTags\": [\"not:crossing:marking=\"]\n}\n```",
+          "description": "question: What extra tags should be added to the object if this object is chosen?\ntype: simple_tag\n\nIf chosen as answer, these tags will be applied onto the object, together with the tags from the `if`.\nNote that if the contributor picks this mapping, saves and then changes their mind and uses a different mapping,\nthe extraTags will reside.\nE.g. when picking `memorial:type=bench`, then `amenity=bench` will also be applied.\nIf someone later on changes the type to `memorial:statue`, `amenity=bench` will stay onto the object\n(which is the desired behaviour, see e.g. for https://www.openstreetmap.org/node/5620038478)\nUse 'ifNot' to explicitly remove an tag if this is important\n\nIf someone marks the question as 'unknown', the extra tags will not be erased\n\nNot compatible with multiAnswer.\n\nThis can be used e.g. to erase other keys which indicate the 'not' value:\n```json\n{\n    \"if\": \"crossing:marking=rainbow\",\n    \"then\": \"This is a rainbow crossing\",\n    \"addExtraTags\": [\"not:crossing:marking=\"]\n}\n```",
           "type": "array",
           "items": {
             "type": "string"

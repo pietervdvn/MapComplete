@@ -243,7 +243,7 @@ class RewriteMetaInfoTags extends SimpleMetaTagger {
         move("changeset", "_last_edit:changeset")
         move("timestamp", "_last_edit:timestamp")
         move("version", "_version_number")
-        feature.properties._backend = feature.properties._backend ?? "https://api.openstreetmap.org"
+        feature.properties._backend ??= "https://www.openstreetmap.org"
         return movedSomething
     }
 }
@@ -635,6 +635,9 @@ export default class SimpleMetaTaggers {
             isLazy: true,
         },
         (feature: Feature, layer: LayerConfig, tagsStore: UIEventSource<OsmTags>) => {
+            if (tagsStore === undefined) {
+                return
+            }
             Utils.AddLazyPropertyAsync(feature.properties, "_currency", async () => {
                 // Wait until _country is actually set
                 const tags = await tagsStore.AsPromise((tags) => !!tags._country)
@@ -766,29 +769,27 @@ export default class SimpleMetaTaggers {
         return somethingChanged
     }
 
-    public static HelpText(): BaseUIElement {
-        const subElements: (string | BaseUIElement)[] = [
-            new Combine([
+    public static HelpText(): string {
+        const subElements: string[] = [
+            [
                 "Metatags are extra tags available, in order to display more data or to give better questions.",
                 "They are calculated automatically on every feature when the data arrives in the webbrowser. This document gives an overview of the available metatags.",
                 "**Hint:** when using metatags, add the [query parameter](URL_Parameters.md) `debug=true` to the URL. This will include a box in the popup for features which shows all the properties of the object",
-            ]).SetClass("flex-col"),
+            ].join("\n"),
         ]
 
-        subElements.push(new Title("Metatags calculated by MapComplete", 2))
+        subElements.push("## Metatags calculated by MapComplete")
         subElements.push(
-            new FixedUiElement(
-                "The following values are always calculated, by default, by MapComplete and are available automatically on all elements in every theme"
-            )
+            "The following values are always calculated, by default, by MapComplete and are available automatically on all elements in every theme"
         )
         for (const metatag of SimpleMetaTaggers.metatags) {
             subElements.push(
-                new Title(metatag.keys.join(", "), 3),
+                "### " + metatag.keys.join(", "),
                 metatag.doc,
                 metatag.isLazy ? "This is a lazy metatag and is only calculated when needed" : ""
             )
         }
 
-        return new Combine(subElements).SetClass("flex-col")
+        return subElements.join("\n\n")
     }
 }

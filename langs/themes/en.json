@@ -358,6 +358,17 @@
         "shortDescription": "A worldwide map of charging stations",
         "title": "Charging stations"
     },
+    "circular_economy": {
+        "description": "Various items which help people to share, reuse or recycle.",
+        "layers": {
+            "5": {
+                "override": {
+                    "=name": "Second hand shops"
+                }
+            }
+        },
+        "title": "Circular economy"
+    },
     "climbing": {
         "description": "On this map you will find various climbing opportunities such as climbing gyms, bouldering halls and rocks in nature.",
         "descriptionTail": "The climbing map was originally made by <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Please <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>get in touch</a> if you have feedback or questions.</p><p>The project uses data of the <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a> project.</p>",
@@ -449,14 +460,6 @@
     },
     "cycle_highways": {
         "description": "This map shows cycle highways",
-        "layers": {
-            "0": {
-                "name": "cycle highways",
-                "title": {
-                    "render": "cycle highway"
-                }
-            }
-        },
         "title": "Cycle highways"
     },
     "cycle_infra": {
@@ -780,6 +783,10 @@
         "shortDescription": "This map shows facade gardens with pictures and useful info about orientation, sunshine and plant types.",
         "title": "Facade gardens"
     },
+    "fireplace": {
+        "description": "Outdoor place to make a fire or a fixed barbecue in an official place.",
+        "title": "Fireplaces and barbeques"
+    },
     "food": {
         "description": "Restaurants and fast food",
         "title": "Restaurants and fast food"
@@ -875,9 +882,30 @@
                     },
                     "name": "All advertentie wall paintings"
                 }
+            },
+            "2": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "This artwork is a historic advertisement"
+                                },
+                                "1": {
+                                    "then": "This artwork is not a historic advertisement"
+                                }
+                            },
+                            "question": "Is this artwork a historic advertisement?"
+                        }
+                    }
+                }
             }
         },
         "title": "Ghost Signs"
+    },
+    "glutenfree": {
+        "description": "A crowdsourced map with glutenfree items",
+        "title": "Glutenfree"
     },
     "grb": {
         "description": "This theme is an attempt to help automating the GRB import.",
@@ -974,6 +1002,10 @@
             }
         },
         "title": "Kerbs and crossings"
+    },
+    "lactosefree": {
+        "description": "A crowdsourced map with lactose free shops and restaurants",
+        "title": "Lactose free shops and restaurants"
     },
     "lighthouses": {
         "description": "Lighthouses are tall buildings with a light on top to guide marine traffic.",
@@ -1224,7 +1256,29 @@
                             "title": "an erotic shop"
                         }
                     },
-                    "name": "Erotic shops"
+                    "name": "Erotic shops",
+                    "tagRenderings+": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "This shop offers <b>soft BDSM-gear</b>, such as fluffy handcuffs, a 'fifty-shade-of-grey'-starterset, ..."
+                                },
+                                "1": {
+                                    "then": "This shop offers <b>specialized BDSM-gear</b>, such as spreader bars, supplies for needle play, medical bondage supplies, impact tools, shackles, metal colors, cuffs, nipple clamps, shibari accessories, ..."
+                                },
+                                "2": {
+                                    "then": "This shop offers <b>pet play</b> accessories, such as puppy masks, animal masks, pony play, tails, hoof shoes, ..."
+                                },
+                                "3": {
+                                    "then": "This shop offers <b>leather gear</b>, including pants and shirts usable in daily life up till leather harnesses"
+                                },
+                                "4": {
+                                    "then": "This shop offers <b>uniforms</b> for roleplay, such nurse uniforms, military uniforms, police, school girl, french maid, ..."
+                                }
+                            },
+                            "question": "Does this shop offer fetish gear?"
+                        }
+                    }
                 }
             },
             "4": {
@@ -1380,47 +1434,6 @@
         "description": "On this map, one can mark basic information about shops, add opening hours and phone numbers",
         "shortDescription": "An editable map with basic shop information",
         "title": "Shops"
-    },
-    "sidewalks": {
-        "description": "Experimental theme",
-        "layers": {
-            "0": {
-                "description": "Layer showing sidewalks of highways",
-                "name": "Sidewalks",
-                "tagRenderings": {
-                    "left-right-questions": {
-                        "renderings": {
-                            "1": {
-                                "mappings": {
-                                    "0": {
-                                        "then": "There is a sidewalk on this side of the road"
-                                    },
-                                    "1": {
-                                        "then": "There is no sidewalk to walk on"
-                                    },
-                                    "2": {
-                                        "then": "There is a separately mapped sidewalk to walk on"
-                                    }
-                                },
-                                "question": "Is there a sidewalk on this side of the road?"
-                            },
-                            "2": {
-                                "question": "What is the width of the sidewalk on this side of the road?",
-                                "render": "This sidewalk is {sidewalk:left|right:width}m wide"
-                            }
-                        }
-                    },
-                    "streetname": {
-                        "render": "This street is named {name}"
-                    }
-                },
-                "title": {
-                    "render": "{name}"
-                }
-            }
-        },
-        "shortDescription": "Sidewalk mapping",
-        "title": "Sidewalks"
     },
     "ski": {
         "description": "Everything you need to go skiing",

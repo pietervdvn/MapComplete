@@ -28,6 +28,7 @@ import { SummaryTileSourceRewriter } from "../Logic/FeatureSource/TiledFeatureSo
 import LayoutSource from "../Logic/FeatureSource/Sources/LayoutSource"
 import { Map as MlMap } from "maplibre-gl"
 import ShowDataLayer from "./Map/ShowDataLayer"
+import { CombinedFetcher } from "../Logic/Web/NearbyImagesSearch"
 
 /**
  * The state needed to render a special Visualisation.
@@ -87,11 +88,10 @@ export interface SpecialVisualizationState {
         readonly language: UIEventSource<string>
     }
 
-    readonly availableLayers: Store<RasterLayerPolygon[]>
-
     readonly imageUploadManager: ImageUploadManager
 
     readonly previewedImage: UIEventSource<ProvidedImage>
+    readonly nearbyImageSearcher: CombinedFetcher
     readonly geolocation: GeoLocationHandler
 
     showCurrentLocationOn(map: Store<MlMap>): ShowDataLayer

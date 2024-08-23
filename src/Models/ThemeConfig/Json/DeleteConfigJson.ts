@@ -1,4 +1,5 @@
 import { TagConfigJson } from "./TagConfigJson"
+import { Translatable } from "./Translatable"
 
 export interface DeleteConfigJson {
     /***
@@ -62,7 +63,7 @@ export interface DeleteConfigJson {
          *
          * question: What text should be shown to the contributor for this reason?
          */
-        then: string | any
+        then: Translatable
     }[]
 
     /**

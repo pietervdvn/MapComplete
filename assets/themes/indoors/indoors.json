@@ -13,7 +13,8 @@
     "es": "En interiores",
     "eu": "Barnealdean",
     "pl": "Wewnątrz",
-    "zh_Hant": "室內"
+    "zh_Hant": "室內",
+    "it": "Al chiuso"
   },
   "description": {
     "en": "On this map, publicly accessible indoor places are shown",
@@ -25,7 +26,8 @@
     "nb_NO": "Viser offentlig tilgjenglige innendørssteder",
     "es": "En este mapa se muestran los lugares cubiertos de acceso público",
     "ca": "En aquest mapa es mostren els llocs interiors accessibles al públic",
-    "pl": "Na tej mapie pokazane są publicznie dostępne miejsca w pomieszczeniach zamkniętych"
+    "pl": "Na tej mapie pokazane są publicznie dostępne miejsca w pomieszczeniach zamkniętych",
+    "it": "Su questa mappa sono indicati i luoghi al chiuso accessibili al pubblico"
   },
   "icon": "./assets/layers/entrance/entrance.svg",
   "startZoom": 14,

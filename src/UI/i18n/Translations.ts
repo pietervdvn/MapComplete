@@ -16,6 +16,9 @@ export default class Translations {
         throw "Translations is static. If you want to intitialize a new translation, use the singular form"
     }
 
+    /**
+     * @deprecated
+     */
     public static W(s: string | number | boolean | BaseUIElement): BaseUIElement {
         if (typeof s === "string") {
             return new FixedUiElement(s)
@@ -31,12 +34,6 @@ export default class Translations {
                 return s
             }
             const v = JSON.stringify(s)
-            if (v.length > 100) {
-                const shortened = v.substring(0, 100) + "..."
-                return new ClickableToggle(v, shortened)
-                    .ToggleOnClick()
-                    .SetClass("literal-code button")
-            }
             return new FixedUiElement(v).SetClass("literal-code")
         }
         return s

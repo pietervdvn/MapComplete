@@ -47,34 +47,45 @@
 
   let mappingsBuiltin: MappingConfigJson[] = []
   let perLabel: Record<string, MappingConfigJson> = {}
-  for (const tr of questions.tagRenderings) {
-    let description = tr["description"] ?? tr["question"] ?? "No description available"
-    description = description["en"] ?? description
-    if (tr["labels"]) {
-      const labels: string[] = tr["labels"]
-      for (const label of labels) {
-        let labelMapping: MappingConfigJson = perLabel[label]
+  {
+    // Build the list of options that one can choose for builtin questions
+    const forbidden = new Set(["ignore_docs", "all_tags"])
 
-        if (!labelMapping) {
-          labelMapping = {
-            if: "value=" + label,
-            then: {
-              en: "Builtin collection <b>" + label + "</b>:",
-            },
-          }
-          perLabel[label] = labelMapping
-          mappingsBuiltin.push(labelMapping)
-        }
-        labelMapping.then.en = labelMapping.then.en + "<div>" + description + "</div>"
+    for (const tr of questions.tagRenderings) {
+      if (forbidden.has(tr.id)) {
+        continue
       }
-    }
+      let description = tr["description"] ?? tr["question"] ?? "No description available"
+      description = description["en"] ?? description
+      if (tr["labels"]) {
+        const labels: string[] = tr["labels"]
+        if (labels.some((l) => forbidden.has(l))) {
+          continue
+        }
+        for (const label of labels) {
+          let labelMapping: MappingConfigJson = perLabel[label]
 
-    mappingsBuiltin.push({
-      if: "value=" + tr["id"],
-      then: {
-        en: "Builtin <b>" + tr["id"] + "</b> <div class='subtle'>" + description + "</div>",
-      },
-    })
+          if (!labelMapping) {
+            labelMapping = {
+              if: "value=" + label,
+              then: {
+                en: "Builtin collection <b>" + label + "</b>:",
+              },
+            }
+            perLabel[label] = labelMapping
+            mappingsBuiltin.push(labelMapping)
+          }
+          labelMapping.then.en = labelMapping.then.en + "<div>" + description + "</div>"
+        }
+      }
+
+      mappingsBuiltin.push({
+        if: "value=" + tr["id"],
+        then: {
+          en: "Builtin <b>" + tr["id"] + "</b> <div class='subtle'>" + description + "</div>",
+        },
+      })
+    }
   }
 
   const configBuiltin = new TagRenderingConfig(<QuestionableTagRenderingConfigJson>{
@@ -135,7 +146,14 @@
 
 {#if typeof $store === "string"}
   <div class="low-interaction flex">
-    <TagRenderingEditable config={configBuiltin} selectedElement={undefined} {state} {tags} />
+    <TagRenderingEditable
+      config={configBuiltin}
+      selectedElement={undefined}
+      {state}
+      {tags}
+      editMode={true}
+      clss="w-full"
+    />
     <slot name="upper-right" />
   </div>
 {:else}

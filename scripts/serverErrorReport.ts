@@ -1,12 +1,59 @@
 import { Handler, Server } from "./server"
 import Script from "./Script"
-import { appendFileSync, existsSync, mkdirSync, writeFileSync } from "fs"
+import { appendFileSync, existsSync, mkdirSync, readFileSync, writeFileSync } from "fs"
 import { mkdir } from "node:fs"
 import ScriptUtils from "./ScriptUtils"
+import { IncomingMessage } from "node:http"
 
 class ServerErrorReport extends Script {
+    private errorReport = 0
+
     constructor() {
         super("A server which receives and logs error reports")
+    }
+
+    private getFilename(logDirectory: string, d: Date): string {
+        return (
+            logDirectory +
+            "/" +
+            d.getUTCFullYear() +
+            "_" +
+            (d.getUTCMonth() + 1) +
+            "_" +
+            d.getUTCDate() +
+            ".lines.json"
+        )
+    }
+
+    public reportError(
+        path: string,
+        queryParams: URLSearchParams,
+        req: IncomingMessage,
+        body: string | undefined,
+        logDirectory: string
+    ): string {
+        if (!body) {
+            throw '{"error": "No body; use a post request"}'
+        }
+        console.log(body)
+        const ip = <string>req.headers["x-forwarded-for"]
+
+        try {
+            body = JSON.parse(body)
+        } catch (e) {
+            // could not parse, we'll save it as is
+        }
+        const d = new Date()
+        const file = this.getFilename(logDirectory, d)
+        const date = d.toISOString()
+        const contents = "\n" + JSON.stringify({ ip, index: this.errorReport, date, message: body })
+        if (!existsSync(file)) {
+            writeFileSync(file, contents)
+        } else {
+            appendFileSync(file, contents)
+        }
+        this.errorReport++
+        return `{"status":"ok", "nr": ${this.errorReport}}`
     }
 
     async main(args: string[]): Promise<void> {
@@ -16,42 +63,51 @@ class ServerErrorReport extends Script {
             mkdirSync(logDirectory)
             console.log("Created this directory")
         }
-        let errorReport = 0
+
+        if (!existsSync(logDirectory + "/csp")) {
+            mkdirSync(logDirectory + "/csp")
+            console.log("Created this directory")
+        }
+
         new Server(2348, {}, [
-            <Handler>{
+            {
+                mustMatch: "status",
+                mimetype: "application/json",
+                handle: async () => {
+                    const filename = this.getFilename(logDirectory, new Date())
+                    let errorsToday = 0
+                    if (existsSync(filename)) {
+                        const contents = readFileSync(filename, "utf8")
+                        errorsToday = contents.split("\n").length
+                    }
+                    return JSON.stringify({
+                        online: true,
+                        errors_today: errorsToday,
+                    })
+                },
+            },
+            {
                 mustMatch: "report",
                 mimetype: "application/json",
-                handle: async (_, queryParams, req, body) => {
-                    if (!body) {
-                        throw '{"error": "No body; use a post request"}'
-                    }
-                    console.log(body)
-                    const ip = <string>req.headers["x-forwarded-for"]
-                    const d = new Date()
-                    const date = d.toISOString()
-                    const file =
-                        logDirectory +
-                        "/" +
-                        d.getUTCFullYear() +
-                        "_" +
-                        d.getUTCMonth() +
-                        "_" +
-                        d.getUTCDay() +
-                        ".lines.json"
-                    try {
-                        body = JSON.parse(body)
-                    } catch (e) {
-                        // could not parse, we'll save it as is
-                    }
-                    const contents =
-                        "\n" + JSON.stringify({ ip, index: errorReport, date, message: body })
-                    if (!existsSync(file)) {
-                        writeFileSync(file, contents)
-                    } else {
-                        appendFileSync(file, contents)
-                    }
-                    errorReport++
-                    return `{"status":"ok", "nr": ${errorReport}}`
+                handle: async (
+                    path: string,
+                    queryParams: URLSearchParams,
+                    req: IncomingMessage,
+                    body: string | undefined
+                ) => {
+                    return this.reportError(path, queryParams, req, body, logDirectory)
+                },
+            },
+            {
+                mustMatch: "csp",
+                mimetype: "application/json",
+                handle: async (
+                    path: string,
+                    queryParams: URLSearchParams,
+                    req: IncomingMessage,
+                    body: string | undefined
+                ) => {
+                    return this.reportError(path, queryParams, req, body, logDirectory + "/csp")
                 },
             },
         ])

@@ -9,7 +9,7 @@
   /***
    * Chooses a background-layer out of available options
    */
-  export let availableLayers: Store<RasterLayerPolygon[]>
+  export let availableLayers: RasterLayerPolygon[]
   export let mapproperties: MapProperties
   export let map: Store<MlMap>
 
@@ -19,34 +19,30 @@
 
   export let favourite: UIEventSource<string> | undefined = undefined
 
-  let rasterLayer = new UIEventSource<RasterLayerPolygon>(availableLayers.data?.[0])
-  let hasLayers = true
-  onDestroy(
-    availableLayers.addCallbackAndRun((layers) => {
-      if (layers === undefined || layers.length === 0) {
-        hasLayers = false
-        return
-      }
-      hasLayers = true
-      rasterLayer.setData(layers[0])
-    })
+  let rasterLayer = new UIEventSource<RasterLayerPolygon>(availableLayers[0])
+  let rasterLayerId = rasterLayer.sync(
+    (l) => l?.properties?.id,
+    [],
+    (id) => availableLayers.find((l) => l.properties.id === id),
   )
+  rasterLayer.setData(availableLayers[0])
+  $: rasterLayer.setData(availableLayers[0])
 
   if (favourite) {
     onDestroy(
       favourite.addCallbackAndRunD((favourite) => {
-        const fav = availableLayers.data?.find((l) => l.properties.id === favourite)
+        const fav = availableLayers?.find((l) => l.properties.id === favourite)
         if (!fav) {
           return
         }
         rasterLayer.setData(fav)
-      })
+      }),
     )
 
     onDestroy(
       rasterLayer.addCallbackAndRunD((selected) => {
         favourite?.setData(selected.properties.id)
-      })
+      }),
     )
   }
 
@@ -56,13 +52,14 @@
     onDestroy(
       visible?.addCallbackAndRunD((visible) => {
         if (visible) {
-          rasterLayerOnMap.setData(rasterLayer.data ?? availableLayers.data[0])
+          rasterLayerOnMap.setData(rasterLayer.data ?? availableLayers[0])
         } else {
           rasterLayerOnMap.setData(undefined)
         }
-      })
+      }),
     )
   }
+
   function apply() {
     if (rasterLayer.data.properties.isOverlay) {
       console.log("Setting overlay" + rasterLayer.data.properties.name)
@@ -87,9 +84,13 @@
   }
 </script>
 
-{#if hasLayers}
+{#if availableLayers?.length > 0}
   <form class="flex h-full w-full flex-col" on:submit|preventDefault={() => {}}>
-    <button tabindex="-1" on:click={() => apply()} class="m-0 h-full w-full cursor-pointer p-1">
+    <button
+      tabindex="-1"
+      on:click={() => apply()}
+      class="m-0 h-full w-full cursor-pointer rounded-none border-none p-0"
+    >
       <span class="pointer-events-none relative h-full w-full">
         <OverlayMap
           interactive={false}
@@ -100,10 +101,19 @@
         />
       </span>
     </button>
-    <select bind:value={$rasterLayer} class="w-full" on:keydown={handleKeyPress}>
-      {#each $availableLayers as availableLayer}
-        <option value={availableLayer}>
+    <select bind:value={$rasterLayerId} class="w-full" on:keydown={handleKeyPress}>
+      {#each availableLayers as availableLayer}
+        <option value={availableLayer.properties.id}>
           {availableLayer.properties.name}
+          {#if availableLayer.properties.category.startsWith("historic")}
+            ⏱️
+          {/if}
+          {#if availableLayer.properties.category.endsWith("elevation")}
+            ⛰
+          {/if}
+          {#if availableLayer.properties.best}
+            ⭐
+          {/if}
         </option>
       {/each}
     </select>

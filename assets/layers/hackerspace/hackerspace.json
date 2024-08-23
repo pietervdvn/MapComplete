@@ -31,7 +31,7 @@
       ]
     }
   },
-  "minzoom": 8,
+  "minzoom": 4,
   "title": {
     "render": {
       "en": "Hackerspace",
@@ -513,6 +513,36 @@
     "internet-all",
     "questions"
   ],
-  "deletion": true,
+  "deletion": {
+    "nonDeleteMappings": [
+      {
+        "if": {
+          "and": [
+            "leisure=",
+            "hackerspace=",
+            "amenity=workshop",
+            "repair=assisted_self_service"
+          ]
+        },
+        "then": {
+          "en": "This is an workshop for assisted self service, such as a repair café",
+          "de": "Dies ist eine Werkstatt für unterstützten Selbstservice, wie ein Repair-Café"
+        }
+      },
+      {
+        "if": {
+          "and": [
+            "leisure=",
+            "hackerspace=",
+            "office=coworking"
+          ]
+        },
+        "then": {
+          "en": "This is a coworking office",
+          "de": "Dies ist ein Coworking-Büro"
+        }
+      }
+    ]
+  },
   "allowMove": true
 }

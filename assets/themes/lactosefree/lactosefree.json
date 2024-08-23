@@ -1,0 +1,130 @@
+{
+  "id": "lactosefree",
+  "title": {
+    "en": "Lactose free shops and restaurants"
+  },
+  "description": {
+    "en": "A crowdsourced map with lactose free shops and restaurants"
+  },
+  "icon": "./assets/layers/questions/lactose_free.svg",
+  "layers": [
+    {
+      "builtin": "food",
+      "hideTagRenderingsWithLabels": [
+        "lactose_free",
+        "images",
+        "reviews"
+      ],
+      "override": {
+        "source": {
+          "osmTags": {
+            "and+": [
+              "diet:lactose_free!=",
+              "diet:lactose_free!~no"
+            ]
+          }
+        },
+        "id": "food_lactosefree",
+        "minzoom": 4,
+        "presets": null
+      }
+    },
+    {
+      "builtin": "food",
+      "hideTagRenderingsWithLabels": [
+        "lactose_free",
+        "images",
+        "reviews"
+      ],
+      "override": {
+        "name": null,
+        "minzoom": 17,
+        "isCounted": false,
+        "filter": {
+          "sameAs": "food_lactosefree"
+        }
+      }
+    },
+    {
+      "builtin": "ice_cream",
+      "hideTagRenderingsWithLabels": [
+        "lactose_free",
+        "images",
+        "reviews"
+      ],
+      "override": {
+        "source": {
+          "osmTags": {
+            "and+": [
+              "diet:lactose_free!=",
+              "diet:lactose_free!~no"
+            ]
+          }
+        },
+        "id": "icecream_lactosefree",
+        "minzoom": 4,
+        "presets": null
+      }
+    },
+    {
+      "builtin": "ice_cream",
+      "hideTagRenderingsWithLabels": [
+        "lactose_free",
+        "images",
+        "reviews"
+      ],
+      "override": {
+        "name": null,
+        "minzoom": 17,
+        "isCounted": false,
+        "filter": {
+          "sameAs": "icecream_lactosefree"
+        }
+      }
+    },
+    {
+      "builtin": "shops",
+      "hideTagRenderingsWithLabels": [
+        "lactose_free",
+        "images",
+        "reviews"
+      ],
+      "override": {
+        "source": {
+          "osmTags": {
+            "and+": [
+              "diet:lactose_free!=",
+              "diet:lactose_free!~no"
+            ]
+          }
+        },
+        "id": "shops_lactosefree",
+        "minzoom": 4,
+        "presets": null
+      }
+    },
+    {
+      "builtin": "shops",
+      "hideTagRenderingsWithLabels": [
+        "lactose_free",
+        "images",
+        "reviews"
+      ],
+      "override": {
+        "name": null,
+        "minzoom": 17,
+        "isCounted": false,
+        "filter": {
+          "sameAs": "shops_lactosefree"
+        }
+      }
+    }
+  ],
+  "overrideAll": {
+    "+tagRenderings": [
+      "images",
+      "reviews",
+      "lactose_free"
+    ]
+  }
+}

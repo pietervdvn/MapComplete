@@ -406,14 +406,6 @@
     },
     "cycle_highways": {
         "description": "Deze kaart toont fietssnelwegen",
-        "layers": {
-            "0": {
-                "name": "fietssnelwegen",
-                "title": {
-                    "render": "fietssnelweg"
-                }
-            }
-        },
         "title": "Fietssnelwegen"
     },
     "cycle_infra": {
@@ -1098,47 +1090,6 @@
         "description": "Op deze kaart kan men algemene informatie over winkels toevoegen, evenals openingsuren en telefoonnummers",
         "shortDescription": "Een bewerkbare kaart met simpele informatie over winkels",
         "title": "Winkels"
-    },
-    "sidewalks": {
-        "description": "Experimenteel thema",
-        "layers": {
-            "0": {
-                "description": "Laag die voetpaden naast wegen toont",
-                "name": "Voetpaden",
-                "tagRenderings": {
-                    "left-right-questions": {
-                        "renderings": {
-                            "1": {
-                                "mappings": {
-                                    "0": {
-                                        "then": "Er is een stoep aan deze kant van de weg"
-                                    },
-                                    "1": {
-                                        "then": "Er is geen stoep om op te lopen"
-                                    },
-                                    "2": {
-                                        "then": "Er is een apart ingetekende stoep om op te lopen"
-                                    }
-                                },
-                                "question": "Is er een stoep aan deze kant van de weg?"
-                            },
-                            "2": {
-                                "question": "Hoe breed is de stoep aan deze kant van de weg?",
-                                "render": "Deze stoep is {sidewalk:left|right:width}m breed"
-                            }
-                        }
-                    },
-                    "streetname": {
-                        "render": "Deze straat heet {name}"
-                    }
-                },
-                "title": {
-                    "render": "{name}"
-                }
-            }
-        },
-        "shortDescription": "Voetpaden in kaart brengen",
-        "title": "Voetpaden"
     },
     "speelplekken": {
         "description": "<h3>Welkom bij de Groendoener!</h3>De Zuidrand dat is spelen, ravotten, chillen, wandelen,… in het groen. Meer dan <b>200 grote en kleine speelplekken</b> liggen er in parken, in bossen en op pleintjes te wachten om ontdekt te worden. De verschillende speelplekken werden getest én goedgekeurd door kinder- en jongerenreporters uit de Zuidrand. Met leuke challenges dagen de reporters jou uit om ook op ontdekking te gaan. Klik op een speelplek op de kaart, bekijk het filmpje en ga op verkenning!<br/><br/>Het project groendoener kadert binnen het strategisch project <a href='https://www.provincieantwerpen.be/aanbod/dlm/samenwerkingsverbanden/zuidrand/projecten/strategisch-project-beleefbare-open-ruimte.html' target='_blank'>Beleefbare Open Ruimte in de Antwerpse Zuidrand</a> en is een samenwerking tussen het departement Leefmilieu van provincie Antwerpen, Sportpret vzw, een OpenStreetMap-België Consultent en Createlli vzw. Het project kwam tot stand met steun van Departement Omgeving van de Vlaamse Overheid.<br/><img class='w-full md:w-1/2' src='./assets/themes/speelplekken/provincie_antwerpen.jpg'/><img class='w-full md:w-1/2' src='./assets/themes/speelplekken/Departement_Omgeving_Vlaanderen.png'/>",

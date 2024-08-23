@@ -181,6 +181,21 @@ describe("Tag optimalization", () => {
             const q = new And([new Tag("key", "value"), new RegexTag("key", /value/, true)])
             expect(q.optimize()).toBe(false)
         })
+
+        it("should optimize comparing tags", () => {
+            const spec = TagUtils.Tag({
+                and: ["x=5", "x>5"],
+            })
+            const opt = spec.optimize()
+            expect(opt).to.eq(false)
+        })
+        it("should optimize regexes in the key", () => {
+            const spec = TagUtils.Tag({
+                and: ["service:bicycle:retail=yes", "service:bicycle:.+~~yes"],
+            })
+            const tag = <TagsFilter>spec.optimize()
+            expect(tag.asJson()).to.eq("service:bicycle:retail=yes")
+        })
     })
 
     describe("Or", () => {
@@ -293,5 +308,106 @@ describe("Tag optimalization", () => {
                 ],
             })
         )
+    })
+
+    it("should optimize a complicated nested case", () => {
+        const spec = {
+            and: [
+                "service:bicycle:retail=yes",
+                {
+                    or: [
+                        {
+                            and: [
+                                {
+                                    or: [
+                                        "shop=outdoor",
+                                        "shop=sport",
+                                        "shop=diy",
+                                        "shop=doityourself",
+                                    ],
+                                },
+                                {
+                                    or: [
+                                        "service:bicycle:repair=yes",
+                                        "shop=bicycle",
+                                        {
+                                            and: [
+                                                "shop=sports",
+                                                {
+                                                    or: [
+                                                        "sport=bicycle",
+                                                        "sport=cycling",
+                                                        "sport=",
+                                                    ],
+                                                },
+                                                "service:bicycle:retail!=no",
+                                                "service:bicycle:repair!=no",
+                                            ],
+                                        },
+                                    ],
+                                },
+                            ],
+                        },
+                        {
+                            and: [
+                                {
+                                    or: [
+                                        "shop=outdoor",
+                                        "shop=sport",
+                                        "shop=diy",
+                                        "shop=doityourself",
+                                    ],
+                                },
+                                {
+                                    or: [
+                                        "service:bicycle:repair=yes",
+                                        "shop=bicycle",
+                                        {
+                                            and: [
+                                                "shop=sports",
+                                                {
+                                                    or: [
+                                                        "sport=bicycle",
+                                                        "sport=cycling",
+                                                        "sport=",
+                                                    ],
+                                                },
+                                                "service:bicycle:retail!=no",
+                                                "service:bicycle:repair!=no",
+                                            ],
+                                        },
+                                    ],
+                                },
+                            ],
+                        },
+                        {
+                            and: [
+                                {
+                                    or: ["craft=shoe_repair", "craft=key_cutter", "shop~.+"],
+                                },
+                                {
+                                    or: [
+                                        "shop=outdoor",
+                                        "shop=sport",
+                                        "shop=diy",
+                                        "shop=doityourself",
+                                    ],
+                                },
+                                "shop!=mall",
+                            ],
+                        },
+                        "service:bicycle:retail~.+",
+                        "service:bicycle:retail~.+",
+                    ],
+                },
+            ],
+        }
+
+        const tag = TagUtils.Tag(spec)
+        const opt = tag.optimize()
+        if (opt === false || opt === true) {
+            throw "Did not expect a boolean"
+        }
+        console.log(opt)
     })
 })

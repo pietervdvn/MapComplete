@@ -1,0 +1,216 @@
+{
+  "id": "cycle_highways",
+  "tagRenderings": [
+    {
+      "render": "The name is <b>{name}</b>",
+      "question": "What is the name of this cycle highway?",
+      "freeform": {
+        "key": "name"
+      },
+      "id": "cycle_highways-name"
+    },
+    {
+      "render": "Referentienummer is <b>{ref}</b>",
+      "question": "What is the reference number of this cycle highway?",
+      "freeform": {
+        "key": "ref"
+      },
+      "id": "cycle_highways-ref"
+    },
+    {
+      "render": "The current state of this link is {state}",
+      "question": "What is the state of this link?",
+      "freeform": {
+        "key": "state"
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "state=proposed",
+              "note:state="
+            ]
+          },
+          "then": "This is a proposed route which can be cycled"
+        },
+        {
+          "then": "This is a proposed route which has missing links (thus: some parts don't even have a building permit yet)",
+          "if": {
+            "and": [
+              "state=proposed",
+              "note:state=has_highway_no"
+            ]
+          }
+        },
+        {
+          "then": "This is a proposed route which has some links which are under construction",
+          "if": {
+            "and": [
+              "state=proposed",
+              "note:state=has_highway_under_construction"
+            ]
+          }
+        },
+        {
+          "if": "state=temporary",
+          "then": "This is a temporary deviation"
+        },
+        {
+          "if": "state=",
+          "then": "This link is operational and signposted"
+        }
+      ],
+      "id": "cycle_highways-state"
+    },
+    {
+      "id": "cycle-highway-length",
+      "render": "This part is {_length:km}km long"
+    },
+    "website",
+    "all_tags"
+  ],
+  "name": {
+    "en": "cycle highways",
+    "de": "Radschnellwege",
+    "ca": "vies ciclistes",
+    "fr": "Aménagements cyclables",
+    "nl": "fietssnelwegen",
+    "es": "autovías ciclistas",
+    "nb_NO": "sykkelmotorveier",
+    "da": "cykelmotorveje",
+    "pa_PK": "سائیکل‌وے",
+    "cs": "cyklodálnice",
+    "pl": "ścieżki rowerowe",
+    "it": "strade per biciclette",
+    "zh_Hant": "單車高速公路"
+  },
+  "source": {
+    "osmTags": "cycle_network=BE-VLG:cycle_highway"
+  },
+  "minzoom": 6,
+  "title": {
+    "render": {
+      "en": "cycle highway",
+      "de": "Radschnellweg",
+      "ca": "via ciclista",
+      "fr": "Aménagement cyclable",
+      "nl": "fietssnelweg",
+      "es": "autovía ciclista",
+      "nb_NO": "sykkelmotorvei",
+      "da": "cykelmotorvej",
+      "pa_PK": "سائیکل‌وے",
+      "cs": "cyklodálnice",
+      "pl": "ścieżka rowerowa",
+      "it": "strada per bicilette",
+      "zh_Hant": "單車高速公路"
+    }
+  },
+  "filter": [
+    {
+      "id": "name-alt",
+      "options": [
+        {
+          "question": "Name contains 'alt'",
+          "osmTags": "name~i~.*alt.*"
+        }
+      ]
+    },
+    {
+      "id": "name-wenslijn",
+      "options": [
+        {
+          "question": "Name contains 'wenslijn'",
+          "osmTags": "name~i~.*wenslijn.*"
+        }
+      ]
+    },
+    {
+      "id": "name-omleiding",
+      "options": [
+        {
+          "question": "Name contains 'omleiding'",
+          "osmTags": "name~i~.*omleiding.*"
+        }
+      ]
+    },
+    {
+      "id": "ref-alt",
+      "options": [
+        {
+          "question": "Reference contains 'alt'",
+          "osmTags": "ref~i~.*aAlt.*"
+        }
+      ]
+    },
+    {
+      "id": "missing_link",
+      "options": [
+        {
+          "question": "No filter"
+        },
+        {
+          "question": "Has missing links (note:state=has_highway_no)",
+          "osmTags": "note:state=has_highway_no"
+        },
+        {
+          "question": "Has links which are under construction (note:state=has_highway_under_construction)",
+          "osmTags": "note:state=has_highway_under_construction"
+        },
+        {
+          "question": "Has links which are proposed (note:state=has_highway_proposed)",
+          "osmTags": "note:state=has_highway_proposed"
+        }
+      ]
+    },
+    {
+      "id": "proposed",
+      "options": [
+        {
+          "question": "No filter"
+        },
+        {
+          "question": "state=proposed",
+          "osmTags": "state=proposed"
+        },
+        {
+          "question": "state=temporary",
+          "osmTags": "state=temporary"
+        },
+        {
+          "question": "state unset",
+          "osmTags": "state="
+        },
+        {
+          "question": "Other state",
+          "osmTags": {
+            "and": [
+              "state!=",
+              "state!=proposed",
+              "state!=temporary"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "pointRendering": null,
+  "isCounted": false,
+  "lineRendering": [
+    {
+      "color": {
+        "render": "#ff7392",
+        "mappings": [
+          {
+            "if": "state=",
+            "then": "#00acfc"
+          },
+          {
+            "if": "state=temporary",
+            "then": "#00acfc"
+          }
+        ]
+      },
+      "width": "4"
+    }
+  ]
+}

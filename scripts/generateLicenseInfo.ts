@@ -3,7 +3,9 @@ import SmallLicense from "../src/Models/smallLicense"
 import ScriptUtils from "./ScriptUtils"
 import Script from "./Script"
 import { Utils } from "../src/Utils"
+
 const prompt = require("prompt-sync")()
+
 export class GenerateLicenseInfo extends Script {
     private static readonly needsLicenseRef = new Set(
         ScriptUtils.readDirRecSync("./LICENSES")
@@ -133,6 +135,53 @@ export class GenerateLicenseInfo extends Script {
             }
         }
         return licenses
+    }
+
+    async mostlyWhite(allIcons: string[]) {
+        const whitePaths = new Set<string>()
+        for (const icon of allIcons) {
+            if (!icon.endsWith(".svg")) {
+                continue
+            }
+
+            const svg = await ScriptUtils.ReadSvg(icon)
+
+            const colours = new Set<string>()
+            Utils.WalkObject(
+                svg,
+                (leaf) => {
+                    const style = leaf["style"].split(";")
+                    for (const styleElement of style) {
+                        const [key, value] = styleElement.split(":").map((x) => x.trim())
+                        if (value === "none") {
+                            continue
+                        }
+                        if (key === "fill" || key === "stroke") {
+                            colours.add(value)
+                        }
+                        return colours
+                    }
+                },
+                (leaf) => typeof leaf["style"] === "string"
+            )
+            if (colours.size === 0) {
+                continue
+            }
+            const whiteColours = Array.from(colours).map((c) => {
+                const rgb = Utils.color(c)
+                if (!rgb) {
+                    console.log("Could not parse ", c)
+                    return false
+                }
+                const { r, g, b } = rgb
+                return r > 245 && g > 245 && b > 245
+            })
+            const hasDark = whiteColours.some((isWhite) => !isWhite)
+            if (!hasDark) {
+                whitePaths.add(icon)
+            }
+        }
+        return whitePaths
     }
 
     missingLicenseInfos(licenseInfos: SmallLicense[], allIcons: string[]) {
@@ -311,7 +360,7 @@ export class GenerateLicenseInfo extends Script {
      * Creates the humongous license_info in the generated assets, containing all licenses with a path relative to the root
      * @param licensePaths
      */
-    createFullLicenseOverview(licensePaths: string[]) {
+    createFullLicenseOverview(licensePaths: string[], mostlyWhite: string[]) {
         const allLicenses: SmallLicense[] = []
         for (const licensePath of licensePaths) {
             if (!existsSync(licensePath)) {
@@ -327,6 +376,9 @@ export class GenerateLicenseInfo extends Script {
                     licensePath.length - "license_info.json".length
                 )
                 license.path = dir + license.path
+                if (mostlyWhite.some((l) => license.path === l)) {
+                    license["mostly_white"] = true
+                }
                 allLicenses.push(license)
             }
         }
@@ -344,16 +396,17 @@ export class GenerateLicenseInfo extends Script {
             mkdirSync("./src/assets/generated")
         }
 
-        let contents = ScriptUtils.readDirRecSync("./assets").filter(
+        const contents = ScriptUtils.readDirRecSync("./assets").filter(
             (entry) => entry.indexOf("./assets/generated") != 0
         )
-        let licensePaths = contents.filter((entry) => entry.indexOf("license_info.json") >= 0)
-        let licenseInfos = this.generateLicenseInfos(licensePaths)
+        const licensePaths = contents.filter((entry) => entry.indexOf("license_info.json") >= 0)
+        const licenseInfos = this.generateLicenseInfos(licensePaths)
 
         const artwork = contents.filter(
             (pth) => pth.match(/(.svg|.png|.jpg|.ttf|.otf|.woff|.jpeg)$/i) != null
         )
         const missingLicenses = this.missingLicenseInfos(licenseInfos, artwork)
+        const mostlyWhite: Set<string> = await this.mostlyWhite(artwork)
         if (args.indexOf("--prompt") >= 0 || args.indexOf("--query") >= 0) {
             this.queryMissingLicenses(missingLicenses)
             return this.main([])
@@ -363,14 +416,12 @@ export class GenerateLicenseInfo extends Script {
             .filter((l) => (l.license ?? "") === "")
             .map((l) => `License for artwork ${l.path} is empty string or undefined`)
 
-        let invalid = 0
         for (const licenseInfo of licenseInfos) {
             const isTrivial = licenseInfo.license
                 .split(";")
                 .map((l) => l.trim().toLowerCase())
                 .some((s) => s.endsWith("trivial"))
             if (licenseInfo.sources.length + licenseInfo.authors.length == 0 && !isTrivial) {
-                invalid++
                 invalidLicenses.push(
                     "Invalid license: No sources nor authors given in the license for " +
                         JSON.stringify(licenseInfo)
@@ -414,7 +465,7 @@ export class GenerateLicenseInfo extends Script {
         }
 
         this.cleanLicenseInfo(licensePaths, licenseInfos)
-        this.createFullLicenseOverview(licensePaths)
+        this.createFullLicenseOverview(licensePaths, Array.from(mostlyWhite))
     }
 
     /**
@@ -424,7 +475,6 @@ export class GenerateLicenseInfo extends Script {
      */
     private addLicenseRef(s: string): string {
         if (GenerateLicenseInfo.needsLicenseRef.has(s)) {
-            console.log("Mapping ", s, Array.from(GenerateLicenseInfo.needsLicenseRef))
             return "LicenseRef-" + s
         }
         return s

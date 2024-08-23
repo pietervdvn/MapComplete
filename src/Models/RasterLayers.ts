@@ -1,18 +1,34 @@
 import { Feature, Polygon } from "geojson"
-import * as editorlayerindex from "../assets/editor-layer-index.json"
 import * as globallayers from "../assets/global-raster-layers.json"
+import * as bingJson from "../assets/bing.json"
+
 import { BBox } from "../Logic/BBox"
-import { Store, Stores } from "../Logic/UIEventSource"
+import { Store, Stores, UIEventSource } from "../Logic/UIEventSource"
 import { GeoOperations } from "../Logic/GeoOperations"
 import { RasterLayerProperties } from "./RasterLayerProperties"
-import Constants from "./Constants"
+import { Utils } from "../Utils"
+
+export type EditorLayerIndex = (Feature<Polygon, EditorLayerIndexProperties> & RasterLayerPolygon)[]
 
 export class AvailableRasterLayers {
-    public static EditorLayerIndex: (Feature<Polygon, EditorLayerIndexProperties> &
-        RasterLayerPolygon)[] = (<any>editorlayerindex.features).filter(
-        (l) => l.properties.id !== "Bing"
-    )
-    public static globalLayers: RasterLayerPolygon[] = globallayers.layers
+    private static _editorLayerIndex: EditorLayerIndex = undefined
+    private static _editorLayerIndexStore: UIEventSource<EditorLayerIndex> =
+        new UIEventSource<EditorLayerIndex>(undefined)
+
+    public static async editorLayerIndex(): Promise<EditorLayerIndex> {
+        if (AvailableRasterLayers._editorLayerIndex !== undefined) {
+            return AvailableRasterLayers._editorLayerIndex
+        }
+        console.debug("Downloading ELI")
+        const eli = await Utils.downloadJson<{ features: EditorLayerIndex }>(
+            "./assets/data/editor-layer-index.json"
+        )
+        this._editorLayerIndex = eli.features.filter((l) => l.properties.id !== "Bing")
+        this._editorLayerIndexStore.set(this._editorLayerIndex)
+        return this._editorLayerIndex
+    }
+
+    public static globalLayers: ReadonlyArray<RasterLayerPolygon> = globallayers.layers
         .filter(
             (properties) =>
                 properties.id !== "osm.carto" && properties.id !== "Bing" /*Added separately*/
@@ -25,9 +41,7 @@ export class AvailableRasterLayers {
                     geometry: BBox.global.asGeometry(),
                 }
         )
-    public static bing: RasterLayerPolygon = (<any>editorlayerindex.features).find(
-        (l) => l.properties.id === "Bing"
-    )
+    public static bing = <RasterLayerPolygon>bingJson
     public static readonly osmCartoProperties: RasterLayerProperties = {
         id: "osm",
         name: "OpenStreetMap",
@@ -59,14 +73,31 @@ export class AvailableRasterLayers {
     public static layersAvailableAt(
         location: Store<{ lon: number; lat: number }>,
         enableBing?: Store<boolean>
+    ): { store: Store<RasterLayerPolygon[]> } {
+        const store = { store: undefined }
+        Utils.AddLazyProperty(store, "store", () =>
+            AvailableRasterLayers._layersAvailableAt(location, enableBing)
+        )
+        return store
+    }
+
+    private static _layersAvailableAt(
+        location: Store<{ lon: number; lat: number }>,
+        enableBing?: Store<boolean>
     ): Store<RasterLayerPolygon[]> {
+        this.editorLayerIndex() // start the download
         const availableLayersBboxes = Stores.ListStabilized(
-            location.mapD((loc) => {
-                const lonlat: [number, number] = [loc.lon, loc.lat]
-                return AvailableRasterLayers.EditorLayerIndex.filter((eliPolygon) =>
-                    BBox.get(eliPolygon).contains(lonlat)
-                )
-            })
+            location.mapD(
+                (loc) => {
+                    const eli = AvailableRasterLayers._editorLayerIndexStore.data
+                    if (!eli) {
+                        return []
+                    }
+                    const lonlat: [number, number] = [loc.lon, loc.lat]
+                    return eli.filter((eliPolygon) => BBox.get(eliPolygon).contains(lonlat))
+                },
+                [AvailableRasterLayers._editorLayerIndexStore]
+            )
         )
         return Stores.ListStabilized(
             availableLayersBboxes.map(
@@ -99,15 +130,6 @@ export class AvailableRasterLayers {
             )
         )
     }
-
-    public static allIds(): Set<string> {
-        const all: string[] = []
-        all.push(...AvailableRasterLayers.globalLayers.map((l) => l.properties.id))
-        all.push(...AvailableRasterLayers.EditorLayerIndex.map((l) => l.properties.id))
-        all.push(this.osmCarto.properties.id)
-        all.push(this.defaultBackgroundLayer.properties.id)
-        return new Set<string>(all)
-    }
 }
 
 export class RasterLayerUtils {
@@ -118,28 +140,24 @@ export class RasterLayerUtils {
      * @param available
      * @param preferredCategory
      * @param ignoreLayer
+     * @param skipLayers Skip the first N layers
      */
     public static SelectBestLayerAccordingTo(
         available: RasterLayerPolygon[],
         preferredCategory: string,
-        ignoreLayer?: RasterLayerPolygon
+        ignoreLayer?: RasterLayerPolygon,
+        skipLayers: number = 0
     ): RasterLayerPolygon {
-        let secondBest: RasterLayerPolygon = undefined
-        for (const rasterLayer of available) {
-            if (rasterLayer === ignoreLayer) {
-                continue
-            }
-            const p = rasterLayer.properties
-            if (p.category === preferredCategory) {
-                if (p.best) {
-                    return rasterLayer
-                }
-                if (!secondBest) {
-                    secondBest = rasterLayer
-                }
-            }
+        const inCategory = available.filter(l => l.properties.category === preferredCategory)
+        const best : RasterLayerPolygon[] = inCategory.filter(l => l.properties.best)
+        const others : RasterLayerPolygon[] = inCategory.filter(l => !l.properties.best)
+        let all = best.concat(others)
+        console.log("Selected layers are:", all.map(l => l.properties.id))
+        if(others.length > skipLayers){
+            all = all.slice(skipLayers)
         }
-        return secondBest
+
+        return all.find(l => l !== ignoreLayer)
     }
 }
 

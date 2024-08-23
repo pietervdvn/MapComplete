@@ -1,0 +1,1122 @@
+<osmChange version='0.6' generator='Mapcomplete 0.44.11'>
+<modify>
+    <way id="17973721"   version="7">
+      <nd ref="186040915"/>
+      <nd ref="186040954"/>
+      <nd ref="186040960"/>
+      <nd ref="1875366605"/>
+      <nd ref="1875366569"/>
+      <nd ref="1875366593"/>
+      <nd ref="1875366578"/>
+      <nd ref="186040987"/>
+      <nd ref="186040915"/>
+        <tag k="addr:city" v="York"/>
+        <tag k="addr:postcode" v="YO26 6RB"/>
+        <tag k="addr:street" v="Great North Way"/>
+        <tag k="brand" v="Nissan"/>
+        <tag k="brand:wikidata" v="Q20165"/>
+        <tag k="building" v="retail"/>
+        <tag k="name" v="Nissan"/>
+        <tag k="parts" v="brand"/>
+        <tag k="repair" v="yes"/>
+        <tag k="sale" v="yes"/>
+        <tag k="shop" v="car"/>
+    </way>
+
+    <way id="17973736"   version="6">
+      <nd ref="186041024"/>
+      <nd ref="186041037"/>
+      <nd ref="186041047"/>
+      <nd ref="186041161"/>
+      <nd ref="186041024"/>
+        <tag k="addr:city" v="York"/>
+        <tag k="addr:postcode" v="YO26 6RB"/>
+        <tag k="addr:street" v="Great North Way"/>
+        <tag k="brand" v="Honda"/>
+        <tag k="brand:wikidata" v="Q9584"/>
+        <tag k="building" v="retail"/>
+        <tag k="name" v="Honda"/>
+        <tag k="opening_hours" v="Mo-Fr 08:00-18:00; Sa 08:30-17:00; Su 10:30-16:30"/>
+        <tag k="operator" v="Marshall Motor Group"/>
+        <tag k="parts" v="brand"/>
+        <tag k="phone" v="+44 1904 563237"/>
+        <tag k="repair" v="yes"/>
+        <tag k="sale" v="yes"/>
+        <tag k="second_hand" v="yes"/>
+        <tag k="shop" v="car"/>
+        <tag k="website" v="https://www.marshall.co.uk/honda/contact-us/marshall-honda-of-york"/>
+    </way>
+
+    <way id="47262315"   version="5">
+      <nd ref="602209308"/>
+      <nd ref="602209309"/>
+      <nd ref="602209266"/>
+      <nd ref="602209268"/>
+      <nd ref="602209270"/>
+      <nd ref="602209271"/>
+      <nd ref="602209272"/>
+      <nd ref="602209273"/>
+      <nd ref="602209274"/>
+      <nd ref="602209275"/>
+      <nd ref="602209276"/>
+      <nd ref="602209277"/>
+      <nd ref="602209313"/>
+      <nd ref="4152767814"/>
+      <nd ref="602209314"/>
+      <nd ref="602209338"/>
+      <nd ref="602209339"/>
+      <nd ref="602209340"/>
+      <nd ref="602209341"/>
+      <nd ref="602209348"/>
+      <nd ref="602209349"/>
+      <nd ref="602209351"/>
+      <nd ref="602209347"/>
+      <nd ref="602209304"/>
+      <nd ref="602209305"/>
+      <nd ref="602209306"/>
+      <nd ref="1282708303"/>
+      <nd ref="1282708294"/>
+      <nd ref="602209308"/>
+        <tag k="building" v="yes"/>
+        <tag k="name" v="Auto Inter Europe (Renault)"/>
+        <tag k="source" v="cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre. Mise à jour : 2009"/>
+        <tag k="garage_renault_aie:repair" v="yes"/>
+    </way>
+
+    <way id="57904643"   version="3">
+      <nd ref="718539585"/>
+      <nd ref="718559338"/>
+      <nd ref="718562075"/>
+      <nd ref="718565506"/>
+      <nd ref="718539585"/>
+        <tag k="addr:housenumber" v="63"/>
+        <tag k="addr:street" v="Bodenackerstrasse"/>
+        <tag k="brand" v="VW,Audi,Skoda,Seat"/>
+        <tag k="building" v="yes"/>
+        <tag k="name" v="AMAG Retail Dulliken"/>
+        <tag k="operator" v="AMAG"/>
+        <tag k="shop" v="car"/>
+        <tag k="vw:repair" v="yes"/>
+        <tag k="audi:repair" v="yes"/>
+        <tag k="skoda:repair" v="yes"/>
+        <tag k="seat:repair" v="yes"/>
+    </way>
+
+    <way id="86250290"   version="8">
+      <nd ref="1001107861"/>
+      <nd ref="1001108054"/>
+      <nd ref="1001107701"/>
+      <nd ref="1001107802"/>
+      <nd ref="4011156955"/>
+      <nd ref="4011156954"/>
+      <nd ref="4011156953"/>
+      <nd ref="4011156952"/>
+      <nd ref="4011156951"/>
+      <nd ref="5051998664"/>
+      <nd ref="4011156956"/>
+      <nd ref="4011156957"/>
+      <nd ref="1001107861"/>
+        <tag k="addr:city" v="Eberstalzell"/>
+        <tag k="addr:country" v="AT"/>
+        <tag k="addr:housenumber" v="7"/>
+        <tag k="addr:postcode" v="4653"/>
+        <tag k="addr:street" v="Hauptstraße"/>
+        <tag k="brand" v="Peugeot"/>
+        <tag k="building" v="yes"/>
+        <tag k="email" v="office@silbermayr-gmbh.at"/>
+        <tag k="fax" v="+43 7241 5565-4"/>
+        <tag k="level" v="0"/>
+        <tag k="name" v="Silbermayr"/>
+        <tag k="opening_hours" v="Mo-Do 07:30-12:00, 13:00-17:00, Fr. 07:30-12:00"/>
+        <tag k="operator" v="Helmut Silbermayr"/>
+        <tag k="phone" v="+43 7241 5565"/>
+        <tag k="repair" v="yes"/>
+        <tag k="sale" v="yes"/>
+        <tag k="service:vehicle:car_repair" v="yes"/>
+        <tag k="service:vehicle:new_car_sales" v="yes"/>
+        <tag k="source" v="http://www.silbermayr-gmbh.at/kontakt/"/>
+        <tag k="website" v="http://www.silbermayr-gmbh.at/kontakt/"/>
+    </way>
+
+    <way id="102403735"   version="3">
+      <nd ref="1182549968"/>
+      <nd ref="1182549993"/>
+      <nd ref="1182549979"/>
+      <nd ref="1182550012"/>
+      <nd ref="1182549975"/>
+      <nd ref="1182549960"/>
+      <nd ref="1182549991"/>
+      <nd ref="1182549971"/>
+      <nd ref="1182549968"/>
+        <tag k="addr:city" v="Neubrandenburg"/>
+        <tag k="addr:country" v="DE"/>
+        <tag k="addr:housenumber" v="75"/>
+        <tag k="addr:postcode" v="17034"/>
+        <tag k="addr:street" v="Demminer Straße"/>
+        <tag k="building" v="yes"/>
+        <tag k="name" v="Autohaus Voigt"/>
+        <tag k="repair" v="yes"/>
+        <tag k="shop" v="car"/>
+    </way>
+
+    <way id="110598443"   version="4">
+      <nd ref="1262483488"/>
+      <nd ref="1262531435"/>
+      <nd ref="1262538323"/>
+      <nd ref="1262491969"/>
+      <nd ref="1262480582"/>
+      <nd ref="1262540822"/>
+      <nd ref="1262568519"/>
+      <nd ref="1262526534"/>
+      <nd ref="1262514261"/>
+      <nd ref="1262472879"/>
+      <nd ref="1262483488"/>
+        <tag k="building" v="yes"/>
+        <tag k="source" v="cadastre-dgi-fr source : Direction Générale des Finances Publiques - Cadastre. Mise à jour : 2015"/>
+        <tag k="garage_eric_rocheteau:repair" v="yes"/>
+    </way>
+
+    <way id="110599478"   version="5">
+      <nd ref="1262526524"/>
+      <nd ref="1262557104"/>
+      <nd ref="1262508155"/>
+      <nd ref="1262493206"/>
+      <nd ref="1262554712"/>
+      <nd ref="1262478966"/>
+      <nd ref="1262539025"/>
+      <nd ref="1262527090"/>
+      <nd ref="1262481007"/>
+      <nd ref="1262510954"/>
+      <nd ref="1262570451"/>
+      <nd ref="1262541323"/>
+      <nd ref="1262496121"/>
+      <nd ref="1262476834"/>
+      <nd ref="1262536088"/>
+      <nd ref="1262562979"/>
+      <nd ref="1262526524"/>
+        <tag k="building" v="yes"/>
+        <tag k="source" v="cadastre-dgi-fr source : Direction Générale des Finances Publiques - Cadastre. Mise à jour : 2015"/>
+        <tag k="renault:repair" v="yes"/>
+        <tag k="neuveur:repair" v="yes"/>
+    </way>
+
+    <way id="112973077"   version="1">
+      <nd ref="1282708303"/>
+      <nd ref="602209307"/>
+      <nd ref="602209308"/>
+      <nd ref="1282708294"/>
+      <nd ref="1282708303"/>
+        <tag k="building" v="yes"/>
+        <tag k="source" v="cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre. Mise à jour : 2009"/>
+        <tag k="garage_renault_aie:repair" v="yes"/>
+    </way>
+
+    <way id="124107099"   version="20">
+      <nd ref="1382181561"/>
+      <nd ref="7484745984"/>
+      <nd ref="1382181565"/>
+      <nd ref="7484745983"/>
+      <nd ref="1382181556"/>
+      <nd ref="1382181547"/>
+      <nd ref="1382181561"/>
+        <tag k="addr:housenumber" v="8А"/>
+        <tag k="addr:street" v="Заводская улица"/>
+        <tag k="building" v="yes"/>
+        <tag k="name" v="АвтОмаГ/Шиномонтаж"/>
+        <tag k="shop" v="car_parts"/>
+        <tag k="tyres:repair" v="yes"/>
+    </way>
+
+    <way id="124638094"   version="7">
+      <nd ref="1386658649"/>
+      <nd ref="1386658653"/>
+      <nd ref="1386658652"/>
+      <nd ref="1386658651"/>
+      <nd ref="1386658654"/>
+      <nd ref="1386658655"/>
+      <nd ref="1386658649"/>
+        <tag k="addr:city" v="Lustenau"/>
+        <tag k="addr:country" v="AT"/>
+        <tag k="addr:housenumber" v="33"/>
+        <tag k="addr:postcode" v="6890"/>
+        <tag k="addr:street" v="Glaserweg"/>
+        <tag k="brand" v="Toyota"/>
+        <tag k="brand:wikidata" v="Q53268"/>
+        <tag k="brand:wikipedia" v="en:Toyota"/>
+        <tag k="building" v="yes"/>
+        <tag k="check_date:opening_hours" v="2024-06-17"/>
+        <tag k="name" v="Autohaus Walter GmbH"/>
+        <tag k="opening_hours:signed" v="no"/>
+        <tag k="repair" v="yes"/>
+        <tag k="sale" v="yes"/>
+        <tag k="second_hand" v="yes"/>
+        <tag k="service" v="dealer;repair;tyres;parts"/>
+        <tag k="shop" v="car"/>
+        <tag k="type" v="car"/>
+        <tag k="website" v="https://www.riewa.at/"/>
+    </way>
+
+    <way id="129411179"   version="15">
+      <nd ref="1427893097"/>
+      <nd ref="1427893096"/>
+      <nd ref="1427893094"/>
+      <nd ref="1427893095"/>
+      <nd ref="1427893097"/>
+        <tag k="building" v="kiosk"/>
+        <tag k="name" v="Ремонт обуви"/>
+        <tag k="shop" v="repair"/>
+        <tag k="shoes:repair" v="yes"/>
+    </way>
+
+    <way id="129742316"   version="6">
+      <nd ref="1430757212"/>
+      <nd ref="1430757214"/>
+      <nd ref="3985786079"/>
+      <nd ref="3985786076"/>
+      <nd ref="3985786077"/>
+      <nd ref="3985786081"/>
+      <nd ref="1430757211"/>
+      <nd ref="3985786083"/>
+      <nd ref="1430757213"/>
+      <nd ref="1430757212"/>
+        <tag k="addr:city" v="Rīga"/>
+        <tag k="addr:country" v="LV"/>
+        <tag k="addr:housenumber" v="101"/>
+        <tag k="addr:postcode" v="LV-1058"/>
+        <tag k="addr:street" v="Vienības gatve"/>
+        <tag k="building" v="commercial"/>
+        <tag k="building:levels" v="2"/>
+        <tag k="contact:email" v="info@mbbus.eunet.lv"/>
+        <tag k="contact:fax" v="+371 67805009"/>
+        <tag k="contact:phone" v="+371 67805006"/>
+        <tag k="contact:website" v="http://www.mbbus.lv/"/>
+        <tag k="name" v="MB Bus"/>
+        <tag k="opening_hours" v="Mo 09:00-20:00; Tu-Fr 08:00-20:00; Sa 09:00-18:00"/>
+        <tag k="parts" v="all"/>
+        <tag k="ref:LV:addr" v="104421065"/>
+        <tag k="repair" v="yes"/>
+        <tag k="shop" v="car_repair"/>
+    </way>
+
+    <way id="141262756"   version="4">
+      <nd ref="1546361516"/>
+      <nd ref="1546361520"/>
+      <nd ref="1546361506"/>
+      <nd ref="1546361499"/>
+      <nd ref="1546361517"/>
+      <nd ref="1546361515"/>
+      <nd ref="1546361516"/>
+        <tag k="addr:city" v="Kottingbrunn"/>
+        <tag k="addr:country" v="AT"/>
+        <tag k="addr:housenumber" v="68"/>
+        <tag k="addr:postcode" v="2542"/>
+        <tag k="addr:street" v="Wiener Neustädter Straße"/>
+        <tag k="brand" v="Mazda"/>
+        <tag k="brand:wikidata" v="Q35996"/>
+        <tag k="building" v="yes"/>
+        <tag k="name" v="Mazda Maierhofer"/>
+        <tag k="parts" v="Mazda"/>
+        <tag k="phone" v="+43 2252 75343"/>
+        <tag k="sale" v="yes"/>
+        <tag k="shop" v="car"/>
+        <tag k="website" v="https://maierhofer.mazda.at/"/>
+        <tag k="mazda:repair" v="yes"/>
+    </way>
+
+    <way id="169329892"   version="2">
+      <nd ref="1805001396"/>
+      <nd ref="1805001395"/>
+      <nd ref="1805001403"/>
+      <nd ref="1805001387"/>
+      <nd ref="1805001396"/>
+        <tag k="amenity" v="public_building"/>
+        <tag k="building" v="yes"/>
+        <tag k="tyres:repair" v="yes"/>
+    </way>
+
+    <way id="181498391"   version="5">
+      <nd ref="1919194975"/>
+      <nd ref="1919195135"/>
+      <nd ref="1919194641"/>
+      <nd ref="1919194990"/>
+      <nd ref="1919194916"/>
+      <nd ref="1919195040"/>
+      <nd ref="1919194975"/>
+        <tag k="addr:city" v="York"/>
+        <tag k="addr:postcode" v="YO26 6RN"/>
+        <tag k="addr:street" v="Great North Way"/>
+        <tag k="brand" v="Mitsubishi;Suzuki"/>
+        <tag k="building" v="retail"/>
+        <tag k="name" v="Batcherlors of York"/>
+        <tag k="operator" v="Batcherlors Motor Group"/>
+        <tag k="parts" v="brand"/>
+        <tag k="phone" v="+44 1904 520820"/>
+        <tag k="repair" v="yes"/>
+        <tag k="sale" v="yes"/>
+        <tag k="second_hand" v="no"/>
+        <tag k="shop" v="car"/>
+        <tag k="website" v="https://www.batchelorsmotorgroup.co.uk/"/>
+    </way>
+
+    <way id="188067354"   version="1">
+      <nd ref="1986929554"/>
+      <nd ref="1986929545"/>
+      <nd ref="1986929489"/>
+      <nd ref="1986929499"/>
+      <nd ref="1986929554"/>
+        <tag k="building" v="yes"/>
+        <tag k="building:levels" v="1"/>
+        <tag k="shop" v="repair"/>
+        <tag k="shoes:repair" v="yes"/>
+    </way>
+
+    <way id="221104368"   version="6">
+      <nd ref="2301642951"/>
+      <nd ref="2301642954"/>
+      <nd ref="2301642958"/>
+      <nd ref="2301642956"/>
+      <nd ref="2301642936"/>
+      <nd ref="2378937303"/>
+      <nd ref="2301642944"/>
+      <nd ref="2301642947"/>
+      <nd ref="2301642938"/>
+      <nd ref="2301642940"/>
+      <nd ref="2301642949"/>
+      <nd ref="2301642951"/>
+        <tag k="addr:city" v="Besigheim"/>
+        <tag k="addr:country" v="DE"/>
+        <tag k="addr:housenumber" v="9"/>
+        <tag k="addr:postcode" v="74354"/>
+        <tag k="addr:street" v="Max-Eyth-Straße"/>
+        <tag k="addr:suburb" v="Ottmarsheim"/>
+        <tag k="building" v="yes"/>
+        <tag k="fax" v="+49 7143 967547"/>
+        <tag k="name" v="Bayer Kfz-Technik"/>
+        <tag k="note" v="Samstags Öffnung nach Absprache"/>
+        <tag k="opening_hours" v="Mo-Fr 08:00-12:00,13:00-18:00; Su off"/>
+        <tag k="phone" v="+49 7143 967540"/>
+        <tag k="repair" v="yes"/>
+        <tag k="shop" v="car_repair"/>
+        <tag k="source" v="Bing Sat (2012) + local knowledge"/>
+        <tag k="website" v="http://www.bayer-kfz-technik.de/"/>
+    </way>
+
+    <way id="348212150"   version="1">
+      <nd ref="3543837630"/>
+      <nd ref="3543837636"/>
+      <nd ref="3543837638"/>
+      <nd ref="3543837631"/>
+      <nd ref="3543837630"/>
+        <tag k="building" v="kiosk"/>
+        <tag k="building:levels" v="1"/>
+        <tag k="description" v="Ремонт обуви"/>
+        <tag k="repair" v="yes"/>
+        <tag k="service" v="repair"/>
+        <tag k="shoes:repair" v="yes"/>
+    </way>
+
+    <way id="370749014"   version="2">
+      <nd ref="3744385226"/>
+      <nd ref="3744385020"/>
+      <nd ref="3744385021"/>
+      <nd ref="3744385015"/>
+      <nd ref="3744385016"/>
+      <nd ref="3744385022"/>
+      <nd ref="3744385023"/>
+      <nd ref="3744385227"/>
+      <nd ref="3744385226"/>
+        <tag k="building" v="yes"/>
+        <tag k="shop" v="car_repair"/>
+        <tag k="source:geometry" v="bing"/>
+        <tag k="tyres:repair" v="yes"/>
+    </way>
+
+    <way id="390448002"   version="4">
+      <nd ref="3935991824"/>
+      <nd ref="3935991823"/>
+      <nd ref="3935991822"/>
+      <nd ref="651294682"/>
+      <nd ref="3935991818"/>
+      <nd ref="3935991819"/>
+      <nd ref="3935991820"/>
+      <nd ref="3935991821"/>
+      <nd ref="3935991824"/>
+        <tag k="brand" v="Honda"/>
+        <tag k="brand:wikidata" v="Q9584"/>
+        <tag k="brand:wikipedia" v="en:Honda"/>
+        <tag k="building" v="yes"/>
+        <tag k="check_date" v="2024-02-21"/>
+        <tag k="name" v="Gatwick Honda"/>
+        <tag k="parts" v="Honda"/>
+        <tag k="shop" v="car"/>
+        <tag k="honda:repair" v="yes"/>
+    </way>
+
+    <way id="411638728"   version="2">
+      <nd ref="4132678827"/>
+      <nd ref="4132678828"/>
+      <nd ref="4132678829"/>
+      <nd ref="4132678830"/>
+      <nd ref="4132678827"/>
+        <tag k="building" v="yes"/>
+        <tag k="name" v="Шиномонтаж"/>
+        <tag k="tyres:repair" v="yes"/>
+    </way>
+
+    <way id="769703924"   version="1">
+      <nd ref="7184795261"/>
+      <nd ref="7184795262"/>
+      <nd ref="7184795263"/>
+      <nd ref="7184795264"/>
+      <nd ref="7184795261"/>
+        <tag k="addr:housenumber" v="27А"/>
+        <tag k="addr:street" v="Новая улица"/>
+        <tag k="building" v="yes"/>
+        <tag k="name" v="Ивановские дворики"/>
+        <tag k="service:vehicle:tyres" v="yes"/>
+        <tag k="shop" v="car_repair"/>
+        <tag k="tyres:repair" v="yes"/>
+    </way>
+
+    <way id="799228930"   version="1">
+      <nd ref="7474587339"/>
+      <nd ref="7474587340"/>
+      <nd ref="7474587341"/>
+      <nd ref="7474587342"/>
+      <nd ref="7474587339"/>
+        <tag k="building" v="yes"/>
+        <tag k="shop" v="tyres"/>
+        <tag k="tyres:repair" v="yes"/>
+    </way>
+
+    <way id="991428697"   version="16">
+      <nd ref="9160182151"/>
+      <nd ref="9160182152"/>
+      <nd ref="9160182153"/>
+      <nd ref="9160182154"/>
+      <nd ref="9160182151"/>
+        <tag k="building" v="yes"/>
+        <tag k="name" v="Шиномонтаж"/>
+        <tag k="shop" v="car_repair"/>
+        <tag k="tyres:repair" v="yes"/>
+    </way>
+
+    <way id="1003972773"   version="12">
+      <nd ref="9263758494"/>
+      <nd ref="9263758495"/>
+      <nd ref="9263758496"/>
+      <nd ref="9263758497"/>
+      <nd ref="9263758494"/>
+        <tag k="building" v="yes"/>
+        <tag k="name" v="Грузовой шиномонтаж"/>
+        <tag k="shop" v="car_repair"/>
+        <tag k="tyres:repair" v="yes"/>
+    </way>
+
+    <way id="1024325013"   version="1">
+      <nd ref="9445550149"/>
+      <nd ref="9445550148"/>
+      <nd ref="9445550147"/>
+      <nd ref="9445550146"/>
+      <nd ref="9445550149"/>
+        <tag k="building" v="yes"/>
+        <tag k="repair" v="yes"/>
+        <tag k="service" v="repair"/>
+        <tag k="electronics:repair" v="yes"/>
+    </way>
+
+    <way id="1160330259"   version="16">
+      <nd ref="10791389661"/>
+      <nd ref="10791389662"/>
+      <nd ref="10791389663"/>
+      <nd ref="10791389664"/>
+      <nd ref="10791389661"/>
+        <tag k="building" v="yes"/>
+        <tag k="name" v="Ремонт обуви"/>
+        <tag k="opening_hours" v="Mo-Fr 09:00-19:00"/>
+        <tag k="shop" v="shoe_repair"/>
+        <tag k="shoes:repair" v="yes"/>
+    </way>
+
+    <way id="1268418583"   version="1">
+      <nd ref="11780847275"/>
+      <nd ref="11780847286"/>
+      <nd ref="11780847274"/>
+      <nd ref="11780847273"/>
+      <nd ref="11780847272"/>
+      <nd ref="11780847275"/>
+        <tag k="access" v="permissive"/>
+        <tag k="amenity" v="workshop"/>
+        <tag k="craft" v="car_repair"/>
+        <tag k="description" v="car repair stand, allowing easy access to car underside for repairs"/>
+        <tag k="fee" v="no"/>
+        <tag k="layer" v="1"/>
+        <tag k="level" v="0.5"/>
+        <tag k="repair" v="assisted_self_repair"/>
+        <tag k="self_service" v="only"/>
+        <tag k="service:bicycle:retail" v="no"/>
+        <tag k="service:vehicle:car_repair" v="yes"/>
+        <tag k="service:vehicle:diy" v="yes"/>
+        <tag k="wikimedia_commons" v="File:Car repair stand, Papagajke, Zagreb.jpg"/>
+    </way>
+
+    <node id="180528106"  version="12" lat="48.7838093" lon="8.1932185">
+        <tag k="addr:city" v="Baden-Baden"/>
+        <tag k="alt_name" v="Auto Teile Unger"/>
+        <tag k="brand" v="A.T.U"/>
+        <tag k="brand:wikidata" v="Q784721"/>
+        <tag k="brand:wikipedia" v="de:Auto-Teile-Unger"/>
+        <tag k="check_date" v="2024-04-01"/>
+        <tag k="name" v="A.T.U"/>
+        <tag k="opening_hours" v="Mo-Fr 07:30-19:00; Sa 08:00-16:00"/>
+        <tag k="operator" v="A.T.U Auto-Teile-Unger GmbH &amp; Co. KG"/>
+        <tag k="parts" v="all"/>
+        <tag k="repair" v="yes"/>
+        <tag k="shop" v="car_repair"/>
+        <tag k="short_name" v="ATU"/>
+        <tag k="type" v="car"/>
+        <tag k="wheelchair" v="yes"/>
+    </node>
+
+    <node id="309487815"  version="3" lat="48.3447125" lon="12.1245288">
+        <tag k="brand" v="Volkswagen"/>
+        <tag k="brand:wikidata" v="Q246"/>
+        <tag k="brand:wikipedia" v="en:Volkswagen"/>
+        <tag k="name" v="Georg Hofstätter KG"/>
+        <tag k="parts" v="all"/>
+        <tag k="repair" v="yes"/>
+        <tag k="sale" v="brand"/>
+        <tag k="shop" v="car"/>
+    </node>
+
+    <node id="722127933"  version="4" lat="47.653675" lon="8.8538183">
+        <tag k="addr:city" v="Stein am Rhein"/>
+        <tag k="addr:country" v="CH"/>
+        <tag k="addr:housenumber" v="30"/>
+        <tag k="addr:postcode" v="8260"/>
+        <tag k="addr:street" v="Kaltenbacherstrasse"/>
+        <tag k="name" v="Degerfeld-Garage"/>
+        <tag k="operator" v="Lukschander"/>
+        <tag k="shop" v="car_repair"/>
+        <tag k="honda:repair" v="yes"/>
+    </node>
+
+    <node id="937529957"  version="5" lat="63.5746036" lon="27.2096246">
+        <tag k="addr:housenumber" v="1"/>
+        <tag k="addr:street" v="Pitkälahdenkatu"/>
+        <tag k="craft" v="electronics_repair"/>
+        <tag k="name" v="ATK- ja RTV-Huolto Kaarakainen"/>
+        <tag k="opening_hours" v="Mo-Fr 08:30-16:00"/>
+        <tag k="website" v="https://www.rtv-huolto.net"/>
+        <tag k="computer:repair" v="yes"/>
+    </node>
+
+    <node id="956433467"  version="36" lat="55.6876699" lon="37.5392312">
+        <tag k="name" v="Сервисный центр"/>
+        <tag k="shop" v="repair"/>
+        <tag k="mobile_phone:repair" v="yes"/>
+    </node>
+
+    <node id="999271071"  version="9" lat="59.986567" lon="30.3046885">
+        <tag k="description" v="Ремонт телефонов, ноутбуков, телевизоров"/>
+        <tag k="email" v="4925103@mail.ru"/>
+        <tag k="internet_access" v="wlan"/>
+        <tag k="opening_hours" v="Mo-Fr 11:00-20:00"/>
+        <tag k="phone" v="+7 812 4925103"/>
+        <tag k="website" v="http://rem-mob.com/"/>
+        <tag k="computer:repair" v="yes"/>
+    </node>
+
+    <node id="1455186206"  version="12" lat="59.9983138" lon="29.7684881">
+        <tag k="name" v="Ремонт мобильных телефонов"/>
+        <tag k="opening_hours" v="Tu-Sa 12:00-15:00,16:00-18:00"/>
+        <tag k="phone" v="+7 812 6121989"/>
+        <tag k="repair" v="yes"/>
+        <tag k="service" v="repair"/>
+        <tag k="mobile_phone:repair" v="yes"/>
+    </node>
+
+    <node id="1587140162"  version="4" lat="59.9102266" lon="29.0880128">
+        <tag k="name" v="&quot;Прогресс сервис&quot; авторизованный сервисный центр"/>
+        <tag k="website" v="http://www.pgs.spb.ru/"/>
+        <tag k="electronics:repair" v="yes"/>
+    </node>
+
+    <node id="1828400170"  version="1" lat="51.0471492" lon="2.3916976">
+        <tag k="name" v="Depann Info"/>
+        <tag k="repair" v="yes"/>
+        <tag k="shop" v="computer"/>
+    </node>
+
+    <node id="1969078097"  version="3" lat="54.518366" lon="36.2433268">
+        <tag k="craft" v="electronics_repair"/>
+        <tag k="name" v="Сервисный центр Бинес"/>
+        <tag k="electronics:repair" v="yes"/>
+    </node>
+
+    <node id="2025173071"  version="9" lat="48.6059997" lon="7.7524656">
+        <tag k="delivery:covid19" v="no"/>
+        <tag k="description:covid19" v="Uniquement sur rendez-vous. QPV Schiltigheim/Bisscheim : service impression gratuit et PC gratuit"/>
+        <tag k="email" v="contact@desclicks.net"/>
+        <tag k="internet_access" v="yes"/>
+        <tag k="name" v="Desclicks - L&apos;informatique Solidaire"/>
+        <tag k="office" v="association"/>
+        <tag k="opening_hours" v="Mo,We,Fr 14:00-18:00; Tu 17:00-20:00; Th 16:00-19:00; Sa 09:30-12:00"/>
+        <tag k="opening_hours:url" v="http://www.desclicks.net/contact"/>
+        <tag k="opensource" v="selling"/>
+        <tag k="phone" v="+33 3 88836410"/>
+        <tag k="repair" v="yes"/>
+        <tag k="second_hand" v="only"/>
+        <tag k="service:computer" v="yes"/>
+        <tag k="service:print" v="yes"/>
+        <tag k="service:scan" v="yes"/>
+        <tag k="shop" v="computer"/>
+        <tag k="takeaway:covid19" v="only"/>
+        <tag k="website" v="https://desclicks.net/"/>
+        <tag k="wheelchair" v="yes"/>
+    </node>
+
+    <node id="2048438563"  version="1" lat="54.5208596" lon="36.2976304">
+        <tag k="shop" v="repair"/>
+        <tag k="shoes:repair" v="yes"/>
+    </node>
+
+    <node id="2129225823"  version="4" lat="44.5004484" lon="11.3252898">
+        <tag k="name" v="Videoarts Webdesign"/>
+        <tag k="opening_hours" v="Mo-Fr 9:00-13:00,14:00-18:00"/>
+        <tag k="opensource" v="selling and support"/>
+        <tag k="repair" v="yes"/>
+        <tag k="shop" v="computer"/>
+        <tag k="website" v="https://www.videoarts.eu/"/>
+    </node>
+
+    <node id="2235176271"  version="1" lat="48.3070826" lon="12.0805574">
+        <tag k="name" v="Tremmel"/>
+        <tag k="repair" v="yes"/>
+        <tag k="shop" v="car"/>
+    </node>
+
+    <node id="2294333622"  version="2" lat="54.5145311" lon="36.2730183">
+        <tag k="craft" v="electronics_repair"/>
+        <tag k="note" v="мастерская по ремонту фотоаппаратов"/>
+        <tag k="photo:repair" v="yes"/>
+    </node>
+
+    <node id="2366206572"  version="3" lat="51.1385295" lon="6.8066446">
+        <tag k="layer" v="-1"/>
+        <tag k="name" v="Ducatiwerkstatt Drewitz"/>
+        <tag k="opening_hours" v="Mo-Fr 09:30-15:30; Sa 12:00-15:00"/>
+        <tag k="phone" v="+49 163 7710396"/>
+        <tag k="shop" v="motorcycle"/>
+        <tag k="ducati:repair" v="yes"/>
+    </node>
+
+    <node id="2539221593"  version="6" lat="50.4670078" lon="30.514505">
+        <tag k="check_date" v="2023-03-06"/>
+        <tag k="name" v="EPOS"/>
+        <tag k="name:en" v="EPOS Data Recovery"/>
+        <tag k="name:uk" v="EPOS"/>
+        <tag k="opening_hours" v="Mo-Fr 10:00-17:00; Sa,Su off"/>
+        <tag k="repair" v="yes"/>
+        <tag k="shop" v="computer"/>
+        <tag k="website" v="https://www.epos.ua/"/>
+    </node>
+
+    <node id="3172738800"  version="2" lat="54.8925193" lon="24.0034684">
+        <tag k="addr:city" v="Kaunas"/>
+        <tag k="addr:contact" v="yes"/>
+        <tag k="addr:housenumber" v="131"/>
+        <tag k="addr:street" v="R. Kalantos g."/>
+        <tag k="repair" v="yes"/>
+        <tag k="second_hand" v="yes"/>
+        <tag k="shop" v="computer"/>
+    </node>
+
+    <node id="3239849761"  version="1" lat="55.7484073" lon="37.6677701">
+        <tag k="opening_hours" v="24/7"/>
+        <tag k="shop" v="car_repair"/>
+        <tag k="tyres:repair" v="yes"/>
+    </node>
+
+    <node id="3350279489"  version="3" lat="45.7406543" lon="7.3175693">
+        <tag k="addr:city" v="Aosta"/>
+        <tag k="addr:country" v="IT"/>
+        <tag k="addr:housenumber" v="38"/>
+        <tag k="addr:postcode" v="11100"/>
+        <tag k="addr:street" v="Avenue de la Paix - Viale della Pace"/>
+        <tag k="name" v="Alchimie Mediali"/>
+        <tag k="phone" v="+39 0165 34932"/>
+        <tag k="repair" v="yes"/>
+        <tag k="shop" v="computer"/>
+        <tag k="website" v="https://www.alchimiemediali.it/"/>
+    </node>
+
+    <node id="3506867549"  version="14" lat="51.5806866" lon="36.0815814">
+        <tag k="name" v="Запчасти для грузовых иномарок"/>
+        <tag k="shop" v="car_parts;tyres"/>
+        <tag k="tyres:repair" v="yes"/>
+    </node>
+
+    <node id="3653202283"  version="6" lat="45.7077784" lon="11.3517585">
+        <tag k="addr:city" v="Schio"/>
+        <tag k="addr:housenumber" v="6"/>
+        <tag k="addr:postcode" v="36015"/>
+        <tag k="addr:street" v="Via Magrè Cristoforo"/>
+        <tag k="contact:phone" v="+39 333 1084528"/>
+        <tag k="email" v="ilprocessore@gmail.com"/>
+        <tag k="name" v="Il Processore"/>
+        <tag k="opening_hours" v="Mo 15:30-19:30, Tu-Fr 09:00-13:00,15:30-19:30"/>
+        <tag k="opensource" v="selling and support"/>
+        <tag k="operator" v="Sartori Cristiano"/>
+        <tag k="phone" v="+39 0445 522626;+393331084528"/>
+        <tag k="repair" v="yes"/>
+        <tag k="second_hand" v="yes"/>
+        <tag k="shop" v="computer"/>
+    </node>
+
+    <node id="3755572551"  version="16" lat="54.5119899" lon="36.2581676">
+        <tag k="amenity" v="repair"/>
+        <tag k="brand" v="Huskvarna;Viking;Stihl"/>
+        <tag k="craft" v="tools_repair"/>
+        <tag k="name" v="Сервисный центр бензоинструмента"/>
+        <tag k="tools:repair" v="yes"/>
+    </node>
+
+    <node id="4272358135"  version="8" lat="59.9450039" lon="30.2944591">
+        <tag k="addr:city" v="Санкт-Петербург"/>
+        <tag k="addr:housenumber" v="16"/>
+        <tag k="addr:street" v="Биржевая линия"/>
+        <tag k="name" v="Служба восстановления данных Q-lab"/>
+        <tag k="name:de" v="Datenwiederherstellung Q-lab"/>
+        <tag k="name:en" v="Q-lab data recovery service"/>
+        <tag k="name:fi" v="Tietojen palautus Q-lab"/>
+        <tag k="name:zh" v="数据恢复 Q-lab"/>
+        <tag k="opening_hours" v="Mo-Fr 12:00-19:00"/>
+        <tag k="phone" v="+7 812 3739620"/>
+        <tag k="website" v="https://q-lab.ru/"/>
+        <tag k="computer:repair" v="yes"/>
+    </node>
+
+    <node id="4362128087"  version="10" lat="50.1710387" lon="8.4514193">
+        <tag k="access" v="customers"/>
+        <tag k="addr:city" v="Königstein im Taunus"/>
+        <tag k="addr:housenumber" v="27"/>
+        <tag k="addr:postcode" v="61462"/>
+        <tag k="addr:street" v="Milcheshohl"/>
+        <tag k="check_date:opening_hours" v="2023-10-29"/>
+        <tag k="description" v="Alles rund um den Computer."/>
+        <tag k="entrance" v="main"/>
+        <tag k="name" v="Jacubowsky EDV"/>
+        <tag k="note" v="Computer, Telefon, Handy, Netzwerk, Server, Telefonanlagen, Internet, Server, Laptop"/>
+        <tag k="opening_hours" v="Mo-Fr 16:00-18:00; Sa 11:00-12:00; Su,PH off"/>
+        <tag k="payment:credit_cards" v="yes"/>
+        <tag k="payment:debit_cards" v="yes"/>
+        <tag k="phone" v="+49(6174)2557812"/>
+        <tag k="repair" v="yes"/>
+        <tag k="second_hand" v="yes"/>
+        <tag k="shop" v="computer"/>
+        <tag k="website" v="www.AJEDV.de"/>
+        <tag k="wheelchair" v="no"/>
+    </node>
+
+    <node id="4457227323"  version="1" lat="54.12258" lon="36.4943438">
+        <tag k="electronics:repair" v="yes"/>
+    </node>
+
+    <node id="5544492921"  version="13" lat="51.772518" lon="36.1154849">
+        <tag k="car:tyres" v="yes"/>
+        <tag k="name" v="Грузовой легковой шиномонтаж"/>
+        <tag k="shop" v="tyres"/>
+        <tag k="tyres:repair" v="yes"/>
+    </node>
+
+    <node id="7179015891"  version="1" lat="55.1747107" lon="37.4694223">
+        <tag k="tyres:repair" v="yes"/>
+    </node>
+
+    <node id="7180920939"  version="1" lat="55.0310291" lon="37.4269486">
+        <tag k="name" v="Шиномонтаж"/>
+        <tag k="shop" v="tyres"/>
+        <tag k="tyres:repair" v="yes"/>
+    </node>
+
+    <node id="7181625708"  version="1" lat="54.9507227" lon="37.4100768">
+        <tag k="shop" v="car_repair"/>
+        <tag k="tyres:repair" v="yes"/>
+    </node>
+
+    <node id="7194798464"  version="1" lat="54.8848179" lon="37.2006414">
+        <tag k="shop" v="tyres"/>
+        <tag k="tyres:repair" v="yes"/>
+    </node>
+
+    <node id="7232660185"  version="1" lat="55.7969482" lon="37.5499931">
+        <tag k="shop" v="repair"/>
+        <tag k="watch:repair" v="yes"/>
+        <tag k="photo:repair" v="yes"/>
+    </node>
+
+    <node id="7259141920"  version="1" lat="54.7551069" lon="32.0709072">
+        <tag k="shop" v="tyres"/>
+        <tag k="tyres:repair" v="yes"/>
+    </node>
+
+    <node id="7259198523"  version="1" lat="54.7575463" lon="32.0739029">
+        <tag k="shop" v="tyres"/>
+        <tag k="tyres:repair" v="yes"/>
+    </node>
+
+    <node id="7352516237"  version="1" lat="55.9600874" lon="37.5352861">
+        <tag k="inscription" v="автоэлектрик"/>
+        <tag k="shop" v="car_repair"/>
+        <tag k="electronics:repair" v="yes"/>
+    </node>
+
+    <node id="7439303433"  version="5" lat="64.1281083" lon="29.5224878">
+        <tag k="addr:city" v="Kuhmo"/>
+        <tag k="addr:housenumber" v="9"/>
+        <tag k="addr:postcode" v="88900"/>
+        <tag k="addr:street" v="Koulukatu"/>
+        <tag k="check_date:opening_hours" v="2023-04-02"/>
+        <tag k="name" v="Ossin Kodinkonehuolto"/>
+        <tag k="opening_hours" v="Mo-Fr 09:00-16:30"/>
+        <tag k="shop" v="repair"/>
+        <tag k="website" v="https://ossinkodinkonehuolto.com"/>
+        <tag k="appliance:repair" v="yes"/>
+    </node>
+
+    <node id="7442219099"  version="1" lat="59.6997911" lon="30.5876912">
+        <tag k="shop" v="tyres"/>
+        <tag k="tyres:repair" v="yes"/>
+    </node>
+
+    <node id="7480116270"  version="1" lat="56.0370336" lon="35.529947">
+        <tag k="shop" v="tyres"/>
+        <tag k="tyres:repair" v="yes"/>
+    </node>
+
+    <node id="7480116279"  version="1" lat="56.0366871" lon="35.525661">
+        <tag k="addr:housenumber" v="2"/>
+        <tag k="addr:street" v="Рижское шоссе"/>
+        <tag k="shop" v="tyres"/>
+        <tag k="tyres:repair" v="yes"/>
+    </node>
+
+    <node id="7507186341"  version="1" lat="55.1021378" lon="32.8973988">
+        <tag k="shop" v="car_repair"/>
+        <tag k="tyres:repair" v="yes"/>
+    </node>
+
+    <node id="7767761186"  version="1" lat="60.0190979" lon="30.3766145">
+        <tag k="shop" v="car_repair"/>
+        <tag k="tyres:repair" v="yes"/>
+    </node>
+
+    <node id="8180037784"  version="2" lat="47.0268333" lon="31.9183584">
+        <tag k="name" v="Aris"/>
+        <tag k="name:uk" v="Aris"/>
+        <tag k="shop" v="computer"/>
+        <tag k="computer:repair" v="yes"/>
+    </node>
+
+    <node id="8442089377"  version="1" lat="55.7841873" lon="37.6609149">
+        <tag k="contact:email" v="kras@middle.ru; vadim@middle.ru"/>
+        <tag k="contact:phone" v="+7-499-2645743; +7-499-2644577"/>
+        <tag k="contact:website" v="https://midl.pro/"/>
+        <tag k="description" v="Весы, кассы"/>
+        <tag k="name" v="Мидл"/>
+        <tag k="shop" v="cash_register; weighing_scale; repair"/>
+        <tag k="cash_register:repair" v="yes"/>
+        <tag k="weighing_scale:repair" v="yes"/>
+    </node>
+
+    <node id="8601148527"  version="1" lat="55.8039945" lon="37.5590694">
+        <tag k="contact:email" v="service@biocomfort.ru"/>
+        <tag k="contact:phone" v="+7-495-1057484"/>
+        <tag k="contact:website" v="https://service-biocomfort.ru/"/>
+        <tag k="craft" v="hvac"/>
+        <tag k="name" v="Биокомфорт сервис"/>
+        <tag k="opening_hours" v="Mo-Fr 10:00-18:00"/>
+        <tag k="hvac:repair" v="yes"/>
+    </node>
+
+    <node id="8864932630"  version="2" lat="55.8939751" lon="37.4514441">
+        <tag k="craft" v="electronics_repair"/>
+        <tag k="level" v="0"/>
+        <tag k="mobile_phone:repair" v="yes"/>
+    </node>
+
+    <node id="8909993994"  version="3" lat="55.5997177" lon="37.6083079">
+        <tag k="craft" v="electronics_repair"/>
+        <tag k="name:signed" v="no"/>
+        <tag k="mobile_phone:repair" v="yes"/>
+    </node>
+
+    <node id="9010216318"  version="2" lat="59.8675671" lon="30.2612493">
+        <tag k="craft" v="electronics_repair"/>
+        <tag k="description" v="Ремонт бытовой техники"/>
+        <tag k="electronics_repair" v="appliance"/>
+        <tag k="name" v="Tesla"/>
+        <tag k="opening_hours" v="Mo-Su 10:00-20:00"/>
+        <tag k="phone" v="+7 951 6659751"/>
+        <tag k="appliance:repair" v="yes"/>
+    </node>
+
+    <node id="9179807747"  version="1" lat="53.2713747" lon="34.6335933">
+        <tag k="shop" v="car_repair"/>
+        <tag k="tyres:repair" v="yes"/>
+    </node>
+
+    <node id="9260356034"  version="12" lat="51.657039" lon="35.7012932">
+        <tag k="name" v="Шиномонтаж"/>
+        <tag k="shop" v="car_repair"/>
+        <tag k="tyres:repair" v="yes"/>
+    </node>
+
+    <node id="9263458336"  version="1" lat="59.9621396" lon="30.319144">
+        <tag k="craft" v="electronics_repair"/>
+        <tag k="opening_hours" v="09:00-21:00"/>
+        <tag k="operator" v="Фотосервис"/>
+        <tag k="operator:ref:inn" v="7813288388"/>
+        <tag k="payment:cash" v="yes"/>
+        <tag k="payment:maestro" v="yes"/>
+        <tag k="payment:mastercard" v="yes"/>
+        <tag k="payment:visa" v="yes"/>
+        <tag k="payment:visa_electron" v="yes"/>
+        <tag k="phone" v="+7 812 3243309"/>
+        <tag k="website" v="https://service.foto-one.com/"/>
+        <tag k="camera:repair" v="yes"/>
+    </node>
+
+    <node id="9277255501"  version="1" lat="53.295986" lon="34.2675647">
+        <tag k="shop" v="car_repair"/>
+        <tag k="tyres:repair" v="yes"/>
+    </node>
+
+    <node id="9280075886"  version="12" lat="51.7566141" lon="36.1174368">
+        <tag k="name" v="Шиномонтаж"/>
+        <tag k="shop" v="car_repair"/>
+        <tag k="tyres:repair" v="yes"/>
+    </node>
+
+    <node id="9554049011"  version="1" lat="55.7219711" lon="37.6217172">
+        <tag k="changing_table" v="no"/>
+        <tag k="description" v="смартфоны и аксессуары к ним"/>
+        <tag k="electronics_repair" v="computer;phone"/>
+        <tag k="level" v="1"/>
+        <tag k="shop" v="electronics"/>
+        <tag k="toilets" v="no"/>
+        <tag k="computer:repair" v="yes"/>
+        <tag k="mobile_phone:repair" v="yes"/>
+    </node>
+
+    <node id="9796420106"  version="4" lat="49.5908083" lon="34.5326568">
+        <tag k="addr:housenumber" v="102"/>
+        <tag k="addr:street" v="вулиця Шевченка"/>
+        <tag k="name" v="Сервісний центр NOVO"/>
+        <tag k="name:uk" v="Сервісний центр NOVO"/>
+        <tag k="opening_hours" v="Mo-Fr 09:00-18:00"/>
+        <tag k="phone" v="+380532501066"/>
+        <tag k="phone_1" v="+380995296580"/>
+        <tag k="phone_2" v="+380672644835"/>
+        <tag k="shop" v="repair"/>
+        <tag k="website" v="https://novo.poltava.ua/"/>
+        <tag k="computer:repair" v="yes"/>
+    </node>
+
+    <node id="9978645176"  version="1" lat="43.9536243" lon="12.7343821">
+        <tag k="contact:phone" v="+39 0541 953780"/>
+        <tag k="craft" v="electronics_repair"/>
+        <tag k="description:it" v="Centro assistenza strumenti musicali"/>
+        <tag k="level" v="-1"/>
+        <tag k="name" v="Music Service"/>
+        <tag k="operator" v="Mario Leoni"/>
+        <tag k="audio_amplifier:repair" v="yes"/>
+    </node>
+
+    <node id="10029849941"  version="1" lat="52.2249704" lon="21.0121438">
+        <tag k="addr:housenumber" v="14"/>
+        <tag k="addr:street" v="Poznańska"/>
+        <tag k="check_date" v="2022-09-16"/>
+        <tag k="disused:craft" v="electronics_repair"/>
+        <tag k="wheelchair" v="no"/>
+        <tag k="car_audio:repair" v="yes"/>
+    </node>
+
+    <node id="10701186763"  version="2" lat="59.9189342" lon="30.4620667">
+        <tag k="contact:telegram" v="https://t.me/partsdirect_true"/>
+        <tag k="contact:vk" v="https://vk.com/partsdirect"/>
+        <tag k="description" v="Ремонт телефонов и ноутбуков. Запчасти для мобильной, компьютерной и бытовой техники."/>
+        <tag k="name" v="PartsDirect"/>
+        <tag k="opening_hours" v="Mo-Fr 09:00-21:00; Sa,Su 10:00-20:00"/>
+        <tag k="operator" v="ООО «Кузня»"/>
+        <tag k="phone" v="+7 812 643-42-72"/>
+        <tag k="shop" v="radiotechnics"/>
+        <tag k="website" v="https://spb.partsdirect.ru"/>
+        <tag k="mobile_phone:repair" v="yes"/>
+        <tag k="computer:repair" v="yes"/>
+    </node>
+
+    <node id="10771340806"  version="2" lat="59.8708928" lon="30.2677598">
+        <tag k="craft" v="electronics_repair"/>
+        <tag k="electronics_repair" v="computer"/>
+        <tag k="name" v="ТурбоКомп"/>
+        <tag k="phone" v="+7 951 6699505"/>
+        <tag k="computer:repair" v="yes"/>
+    </node>
+
+    <node id="10930392569"  version="1" lat="55.8100683" lon="37.5780831">
+        <tag k="contact:phone" v="+7 499 1135830"/>
+        <tag k="craft" v="electronics_repair"/>
+        <tag k="electronics_repair" v="appliance"/>
+        <tag k="name" v="Miele"/>
+        <tag k="opening_hours" v="Mo-Su 11:00-20:00"/>
+        <tag k="appliance:repair" v="yes"/>
+    </node>
+
+    <node id="11169137464"  version="1" lat="55.7597334" lon="37.6597501">
+        <tag k="name" v="Ремонт очков"/>
+        <tag k="shop" v="repair"/>
+        <tag k="glasses:repair" v="yes"/>
+    </node>
+
+    <node id="11452021580"  version="2" lat="60.0522195" lon="30.311787">
+        <tag k="addr:floor" v="1"/>
+        <tag k="level" v="0"/>
+        <tag k="name" v="Сити Сервис"/>
+        <tag k="shop" v="repair"/>
+        <tag k="clock:repair" v="yes"/>
+        <tag k="clothes:repair" v="yes"/>
+    </node>
+
+    <node id="11678165102"  version="1" lat="51.2742547" lon="15.9337964">
+        <tag k="addr:city" v="Chojnów"/>
+        <tag k="addr:housenumber" v="8"/>
+        <tag k="addr:postcode" v="59-225"/>
+        <tag k="addr:street" v="Jarosława Dąbrowskiego"/>
+        <tag k="name" v="Korba Serwis"/>
+        <tag k="repair" v="yes"/>
+        <tag k="shop" v="hardware"/>
+        <tag k="website" v="https://www.korba-serwis.pl"/>
+    </node>
+
+    <node id="11737541340"  version="1" lat="55.7983509" lon="37.6972762">
+        <tag k="contact:phone" v="+7 977 340 58 08"/>
+        <tag k="level" v="2"/>
+        <tag k="name" v="Ремонт инструментов"/>
+        <tag k="opening_hours" v="Mo-Sa 10:30-18:30"/>
+        <tag k="repair" v="yes"/>
+        <tag k="service" v="repair"/>
+        <tag k="appliance:repair" v="yes"/>
+    </node>
+
+    <node id="12045590689"  version="1" lat="59.933457" lon="30.3552513">
+        <tag k="craft" v="electronics_repair"/>
+        <tag k="name" v="Ноутбук1"/>
+        <tag k="opening_hours" v="Mo-Fr 10:00-19:00; Sa 12:00-18:00"/>
+        <tag k="phone" v="+78125091324"/>
+        <tag k="website" v="https://notebook1.ru"/>
+        <tag k="computer:repair" v="yes"/>
+    </node>
+
+</modify></osmChange>

@@ -28,7 +28,7 @@
   export let selectedTags: UploadableTag = undefined
   export let extraTags: UIEventSource<Record<string, string>> = new UIEventSource({})
 
-  export let allowDeleteOfFreeform: boolean = false
+  export let allowDeleteOfFreeform: boolean = true
 
   let dynamicConfig = TagRenderingConfigUtils.withNameSuggestionIndex(config, tags, selectedElement)
 </script>

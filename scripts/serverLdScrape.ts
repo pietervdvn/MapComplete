@@ -51,8 +51,21 @@ class ServerLdScrape extends Script {
 
     async main(args: string[]): Promise<void> {
         const port = Number(args[0] ?? 2346)
+        const start = new Date()
         const cache: Record<string, { date: Date; contents: any }> = {}
         new Server(port, {}, [
+            {
+                mustMatch: "status",
+                mimetype: "application/json",
+                handle: async () => {
+                    return JSON.stringify({
+                        online: true,
+                        cached_entries: Object.keys(cache).length,
+                        booted: start,
+                        uptime: Math.floor((new Date().getTime() - start.getTime()) / 1000),
+                    })
+                },
+            },
             {
                 mustMatch: "extractgraph",
                 mimetype: "application/ld+json",

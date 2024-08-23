@@ -36,6 +36,10 @@ export class AllKnownLayoutsLazy {
         return this.raw.get(key)
     }
 
+    public size() {
+        return this.raw.size
+    }
+
     public get(key: string): LayoutConfig {
         const cached = this.dict.get(key)
         if (cached !== undefined) {

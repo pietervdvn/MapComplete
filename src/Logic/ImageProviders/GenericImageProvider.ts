@@ -2,6 +2,7 @@ import ImageProvider, { ProvidedImage } from "./ImageProvider"
 
 export default class GenericImageProvider extends ImageProvider {
     public defaultKeyPrefixes: string[] = ["image"]
+    public readonly name = "Generic"
 
     public apiUrls(): string[] {
         return []

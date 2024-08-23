@@ -107,6 +107,8 @@ export class OsmConnection {
             ud.name = "Fake user"
             ud.totalMessages = 42
             ud.languages = ["en"]
+            ud.description =
+                "The 'fake-user' is a URL-parameter which allows to test features without needing an OSM account or even internet connection."
             this.loadingStatus.setData("logged-in")
         }
         this.UpdateCapabilities()
@@ -339,7 +341,7 @@ export class OsmConnection {
         })
     }
 
-    public async post<T extends string>(
+    public async post<T = string>(
         path: string,
         content?: string,
         header?: Record<string, string>,
@@ -488,9 +490,7 @@ export class OsmConnection {
     public addCommentToNote(id: number | string, text: string): Promise<void> {
         if (this._dryRun.data) {
             console.warn("Dryrun enabled - not actually adding comment ", text, "to  note ", id)
-            return new Promise((ok) => {
-                ok()
-            })
+            return Utils.waitFor(1000)
         }
         if ((text ?? "") === "") {
             throw "Invalid text!"
@@ -536,6 +536,7 @@ export class OsmConnection {
                 : window.location.protocol + "//" + window.location.host + "/land.html",
             singlepage: true, // We always use 'singlePage', it is the most stable - including in PWA
             auto: true,
+            apiUrl: this._oauth_config.api_url ?? this._oauth_config.url,
         })
     }
 

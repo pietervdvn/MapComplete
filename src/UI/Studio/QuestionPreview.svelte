@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { ConfigMeta } from "./configMeta"
-  import EditLayerState from "./EditLayerState"
+  import EditLayerState, { EditJsonState } from "./EditLayerState"
   import * as questions from "../../assets/generated/layers/questions.json"
   import { ImmutableStore, Store } from "../../Logic/UIEventSource"
   import TagRenderingEditable from "../Popup/TagRendering/TagRenderingEditable.svelte"
@@ -31,30 +31,32 @@
     if (typeof x === "string") {
       return perId[x]
     } else {
-      return [x]
+      return <any>[x]
     }
   })
   let configs: Store<TagRenderingConfig[]> = configJson.map((configs) => {
     if (!configs) {
       return [{ error: "No configuartions found" }]
     }
-    console.log("Regenerating configs")
     return configs.map((config) => {
+      if (config["builtin"]) {
+        let override = ""
+        if (config["override"]) {
+          override =
+            ". Some items are changed with an override. Editing this is not yet supported with Studio."
+        }
+        return new TagRenderingConfig({
+          render: {
+            en: "This question reuses <b>" + JSON.stringify(config["builtin"]) + "</b>" + override,
+          },
+        })
+      }
       try {
         return new TagRenderingConfig(config)
       } catch (e) {
         return { error: e }
       }
     })
-  })
-  let id: Store<string> = value.mapD((c) => {
-    if (c?.id) {
-      return c.id
-    }
-    if (typeof c === "string") {
-      return c
-    }
-    return undefined
   })
 
   let tags = state.testTags
@@ -66,12 +68,18 @@
 
 <div class="flex">
   <div class="m-4 flex w-full flex-col">
-
-    <NextButton clss="primary" on:click={() => state.highlightedItem.setData({ path, schema })}>
-      {#if schema.hints.question}
-        {schema.hints.question}
-      {/if}
-    </NextButton>
+    {#if $configJson.some((config) => config["builtin"] !== undefined)}
+      <div class="interactive rounded-2xl p-2">
+        This question uses an advanced 'builtin'+'override' construction in the source code. Editing
+        this with Studio is not supported.
+      </div>
+    {:else}
+      <NextButton clss="primary" on:click={() => state.highlightedItem.setData({ path, schema })}>
+        {#if schema.hints.question}
+          {schema.hints.question}
+        {/if}
+      </NextButton>
+    {/if}
     {#if description}
       <Markdown src={description} />
     {/if}
@@ -87,6 +95,7 @@
     {#each $configs as config}
       {#if config.error !== undefined}
         <div class="alert">Could not create a preview of this tagRendering: {config.error}</div>
+        {JSON.stringify($value)}
       {:else if config.condition && !config.condition.matchesProperties($tags)}
         This tagRendering is currently not shown. It will appear if the feature matches the
         condition

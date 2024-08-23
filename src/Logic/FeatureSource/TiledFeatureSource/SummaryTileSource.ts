@@ -84,60 +84,12 @@ export class SummaryTileSource extends DynamicTileSource {
             zoomRounded,
             0, // minzoom
             (tileIndex) => {
-                const [z, x, y] = Tiles.tile_from_index(tileIndex)
-                let coordinates = Tiles.centerPointOf(z, x, y)
-                const url = `${cacheserver}/${layersSummed}/${z}/${x}/${y}.json`
-                const count = UIEventSource.FromPromiseWithErr(Utils.downloadJson(url))
-                const features: Store<Feature<Point>[]> = count.mapD((count) => {
-                    if (count["error"] !== undefined) {
-                        console.error(
-                            "Could not download count for tile",
-                            z,
-                            x,
-                            y,
-                            "due to",
-                            count["error"]
-                        )
-                        return SummaryTileSource.empty
-                    }
-                    const counts = count["success"]
-                    const total = Number(counts?.["total"] ?? 0)
-                    if (total === 0) {
-                        return SummaryTileSource.empty
-                    }
-                    const lat = counts["lat"]
-                    const lon = counts["lon"]
-                    const tileBbox = new BBox(Tiles.tile_bounds_lon_lat(z, x, y))
-                    if (!tileBbox.contains([lon, lat])) {
-                        console.error(
-                            "Average coordinate is outside of bbox!?",
-                            lon,
-                            lat,
-                            tileBbox,
-                            counts,
-                            url
-                        )
-                    } else {
-                        coordinates = [lon, lat]
-                    }
-                    return [
-                        {
-                            type: "Feature",
-                            properties: {
-                                id: "summary_" + tileIndex,
-                                summary: "yes",
-                                ...counts,
-                                total,
-                                total_metric: Utils.numberWithMetricPrefix(total),
-                                layers: layersSummed,
-                            },
-                            geometry: {
-                                type: "Point",
-                                coordinates,
-                            },
-                        },
-                    ]
-                })
+                const features = SummaryTileSource.downloadTile(
+                    tileIndex,
+                    cacheserver,
+                    layersSummed
+                )
+                const [z] = Tiles.tile_from_index(tileIndex)
                 return new StaticFeatureSource(
                     features.map(
                         (f) => {
@@ -153,5 +105,66 @@ export class SummaryTileSource extends DynamicTileSource {
             mapProperties,
             { ...options, zDiff }
         )
+    }
+
+    public static downloadTile(
+        tileIndex: number,
+        cacheserver: string,
+        layersSummed: string
+    ): Store<Feature<Point>[]> {
+        const [z, x, y] = Tiles.tile_from_index(tileIndex)
+        let coordinates = Tiles.centerPointOf(z, x, y)
+        const url = `${cacheserver}/summary/${layersSummed}/${z}/${x}/${y}.json`
+        const count = UIEventSource.FromPromiseWithErr(Utils.downloadJson(url))
+        return count.mapD((count) => {
+            if (count["error"] !== undefined) {
+                console.error(
+                    "Could not download count for tile",
+                    z,
+                    x,
+                    y,
+                    "due to",
+                    count["error"]
+                )
+                return SummaryTileSource.empty
+            }
+            const counts = count["success"]
+            const total = Number(counts?.["total"] ?? 0)
+            if (total === 0) {
+                return SummaryTileSource.empty
+            }
+            const lat = counts["lat"]
+            const lon = counts["lon"]
+            const tileBbox = new BBox(Tiles.tile_bounds_lon_lat(z, x, y))
+            if (!tileBbox.contains([lon, lat])) {
+                console.error(
+                    "Average coordinate is outside of bbox!?",
+                    lon,
+                    lat,
+                    tileBbox,
+                    counts,
+                    url
+                )
+            } else {
+                coordinates = [lon, lat]
+            }
+            return [
+                {
+                    type: "Feature",
+                    properties: {
+                        id: "summary_" + tileIndex,
+                        summary: "yes",
+                        ...counts,
+                        total,
+                        total_metric: Utils.numberWithMetricPrefix(total),
+                        layers: layersSummed,
+                    },
+                    geometry: {
+                        type: "Point",
+                        coordinates,
+                    },
+                },
+            ]
+        })
     }
 }

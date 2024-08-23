@@ -4,14 +4,13 @@
    */
   import { createEventDispatcher } from "svelte"
   import type { PlantNetSpeciesMatch } from "../../Logic/Web/PlantNet"
-  import { UIEventSource } from "../../Logic/UIEventSource"
+  import { Store, UIEventSource } from "../../Logic/UIEventSource"
   import Wikidata from "../../Logic/Web/Wikidata"
   import NextButton from "../Base/NextButton.svelte"
   import Loading from "../Base/Loading.svelte"
-  import WikidataPreviewBox from "../Wikipedia/WikidataPreviewBox"
   import Tr from "../Base/Tr.svelte"
   import Translations from "../i18n/Translations"
-  import ToSvelte from "../Base/ToSvelte.svelte"
+  import WikidatapreviewWithLoading from "../Wikipedia/WikidatapreviewWithLoading.svelte"
 
   export let species: PlantNetSpeciesMatch
   let wikidata = UIEventSource.FromPromise(
@@ -46,16 +45,16 @@
       />
     </Loading>
   {:else}
-    <ToSvelte
-      construct={() =>
-        new WikidataPreviewBox(wikidataId, {
-          imageStyle: "max-width: 8rem; width: unset; height: 8rem",
-          extraItems: [
-            t.matchPercentage
-              .Subs({ match: Math.round(species.score * 100) })
-              .SetClass("thanks w-fit self-center"),
-          ],
-        }).SetClass("w-full")}
-    />
+    <WikidatapreviewWithLoading
+      {wikidataId}
+      imageStyle="max-width: 8rem; width: unset; height: 8rem"
+    >
+      <div slot="extra">
+        <Tr
+          cls="thanks w-fit self-center"
+          t={t.matchPercentage.Subs({ match: Math.round(species.score * 100) })}
+        />
+      </div>
+    </WikidatapreviewWithLoading>
   {/if}
 </NextButton>

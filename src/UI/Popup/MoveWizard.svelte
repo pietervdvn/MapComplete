@@ -3,13 +3,10 @@
   import type { MoveReason } from "./MoveWizardState"
   import { MoveWizardState } from "./MoveWizardState"
   import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
-  import ToSvelte from "../Base/ToSvelte.svelte"
   import Tr from "../Base/Tr.svelte"
   import Translations from "../i18n/Translations"
   import Move from "../../assets/svg/Move.svelte"
   import Move_not_allowed from "../../assets/svg/Move_not_allowed.svelte"
-  import type { SpecialVisualizationState } from "../SpecialVisualization"
-  import { XCircleIcon } from "@babeard/svelte-heroicons/solid"
   import type { MapProperties } from "../../Models/MapProperties"
   import type { Feature, Point } from "geojson"
   import { GeoOperations } from "../../Logic/GeoOperations"
@@ -23,6 +20,7 @@
   import BackButton from "../Base/BackButton.svelte"
   import ChevronLeft from "@babeard/svelte-heroicons/solid/ChevronLeft"
   import ThemeViewState from "../../Models/ThemeViewState"
+  import Icon from "../Map/Icon.svelte"
 
   export let state: ThemeViewState
 
@@ -73,9 +71,7 @@
       <AccordionSingle>
         <span slot="header" class="flex">
           {#if moveWizardState.reasons.length === 1}
-            <ToSvelte
-              construct={moveWizardState.reasons[0].icon.SetStyle("height: 1.5rem; width: 1.5rem;")}
-            />
+            <Icon icon={moveWizardState.reasons[0].icon} clss="w-6 h-6" />
             <Tr t={Translations.T(moveWizardState.reasons[0].invitingText)} />
           {:else}
             <Move class="h-6 w-6" />
@@ -84,7 +80,6 @@
         </span>
         <span class="flex flex-col p-2">
           {#if currentStep === "reason" && moveWizardState.reasons.length > 1}
-            <Tr cls="text-lg font-bold" t={t.whyMove} />
             {#each moveWizardState.reasons as reasonSpec}
               <button
                 on:click={() => {
@@ -92,7 +87,7 @@
                   currentStep = "pick_location"
                 }}
               >
-                <ToSvelte construct={reasonSpec.icon.SetClass("w-16 h-16 pr-2")} />
+                <Icon icon={reasonSpec.icon} clss="w-12 h-12" />
                 <Tr t={Translations.T(reasonSpec.text)} />
               </button>
             {/each}

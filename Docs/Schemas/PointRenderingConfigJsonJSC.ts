@@ -67,7 +67,7 @@ export default {
       ]
     },
     "rotation": {
-      "description": "question: What rotation should be applied on the icon?\nThis is mostly useful for items that face a specific direction, such as surveillance cameras\nThis is interpreted as css property for 'rotate', thus has to end with 'deg', e.g. `90deg`, `{direction}deg`, `calc(90deg - {camera:direction}deg)``\nifunset: Do not rotate",
+      "description": "question: What rotation should be applied on the icon?\nThis is mostly useful for items that face a specific direction, such as surveillance cameras\nThis is interpreted as css property for 'rotate', thus has to end with 'deg', e.g. `90deg`, `{direction}deg`, `calc(90deg - {camera:direction}deg)`\n\nIf the icon is shown on the projected centerpoint of a way, one can also use `_direction:centerpoint`\n\ntypes: Dynamic value ; string\nsuggestions:  return [{if: \"value={_direction:centerpoint}deg\", then: \"Point the top of the icon towards the end of the way\"}, {if: \"value=calc( {_direction:centerpoint}deg + 90deg )\", then: \"Point the left of the icon towards the end of the way\"}, {if: \"value=calc( {_direction:centerpoint}deg - 90deg )\", then: \"Point the right of the icon towards the end of the way\"}, {if: \"value=calc( {_direction:centerpoint}deg + 180deg )\", then: \"Point the bottom of the icon towards the end of the way\"}]\nifunset: Do not rotate",
       "anyOf": [
         {
           "$ref": "#/definitions/TagRenderingConfigJson"
@@ -122,7 +122,7 @@ export default {
       ]
     },
     "cssClasses": {
-      "description": "question: Which CSS-classes should be applied to the entire marker?\nThis will be applied to the _container_ containing both the marker and the label\n\nThe classes should be separated by a space (` `)\nYou can use most Tailwind-css classes, see https://tailwindcss.com/ for more information\nFor example: `center bg-gray-500 mx-2 my-1 rounded-full`\ninline: Apply CSS-classes <b>{value}</b> to the entire container\nifunset: Do not apply extra CSS-classes to the label\ntypes: Dynamic value ; string\nifunset: Do not apply extra CSS-classes to the entire marker\ngroup: expert",
+      "description": "question: Which CSS-classes should be applied to the entire marker?\nThis will be applied to the _container_ containing both the marker and the label\n\nThe classes should be separated by a space (` `)\nYou can use most Tailwind-css classes, see https://tailwindcss.com/ for more information\nFor example: `center bg-gray-500 mx-2 my-1 rounded-full`\ninline: Apply CSS-classes <b>{value}</b> to the entire container\ntypes: Dynamic value ; string\nifunset: Do not apply extra CSS-classes to the entire marker\ngroup: expert",
       "anyOf": [
         {
           "$ref": "#/definitions/TagRenderingConfigJson"
@@ -133,7 +133,7 @@ export default {
       ]
     },
     "pitchAlignment": {
-      "description": "question: If the map is pitched, should the icon stay parallel to the screen or to the groundplane?\nsuggestions: return [{if: \"value=canvas\", then: \"The icon will stay upward and not be transformed as if it sticks to the screen\"}, {if: \"value=map\", then: \"The icon will be transformed as if it were painted onto the ground. (Automatically sets rotationAlignment)\"}]\ngroup: expert",
+      "description": "question: If the map is pitched, should the icon stay parallel to the screen or to the groundplane?\nsuggestions: return [{if: \"value=canvas\", alsoShowIf: \"value=\", then: \"The icon will stay upward and not be transformed as if it sticks to the screen\"}, {if: \"value=map\", then: \"The icon will be transformed as if it were painted onto the ground. (Automatically sets rotationAlignment)\"}]\ngroup: expert",
       "anyOf": [
         {
           "$ref": "#/definitions/TagRenderingConfigJson"
@@ -206,6 +206,9 @@ export default {
         "and"
       ]
     },
+    "Record<string,string>": {
+      "type": "object"
+    },
     "{or:TagConfigJson[];}": {
       "type": "object",
       "properties": {
@@ -219,9 +222,6 @@ export default {
       "required": [
         "or"
       ]
-    },
-    "Record<string,string>": {
-      "type": "object"
     },
     "Record<string,string|Record<string,string>>": {
       "type": "object"
@@ -328,7 +328,7 @@ export default {
       "type": "object",
       "properties": {
         "icon": {
-          "description": "question: What icon should be used?\ntype: icon\ntypes: Use a dynamic value ; icon\nsuggestions: return Constants.defaultPinIcons.map(i => ({if: \"value=\"+i, then: i, icon: i}))",
+          "description": "question: What icon should be used?\ntypes: <span class=\"text-lg font-bold\">Use a different icon depending on the value of some attributes</span> ; icon\nsuggestions: return Constants.defaultPinIcons.map(i => ({if: \"value=\"+i, then: i, icon: i}))",
           "anyOf": [
             {
               "$ref": "#/definitions/MinimalTagRenderingConfigJson"
@@ -352,7 +352,7 @@ export default {
           ]
         },
         "color": {
-          "description": "question: What colour should the icon be?\nThis will only work for the default icons such as `pin`,`circle`,...\ntype: color\ntypes: Use a dynamic color ; icon",
+          "description": "question: What colour should the icon be?\nThis will only work for the default icons such as `pin`,`circle`,...\ntypes: <span class=\"text-lg font-bold\">Use a different color depending on the value of some attributes</span> ; color",
           "anyOf": [
             {
               "$ref": "#/definitions/MinimalTagRenderingConfigJson"
@@ -549,6 +549,13 @@ export default {
         "classes": {
           "description": "question: What css-classes should be applied to showing this attribute?\n\nA list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\n\nValues are split on ` `  (space)",
           "type": "string"
+        },
+        "filter": {
+          "description": "This tagRendering can introduce this builtin filter",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     }

@@ -9,7 +9,6 @@ import { IndexedFeatureSource } from "./FeatureSource/FeatureSource"
 import OsmObjectDownloader from "./Osm/OsmObjectDownloader"
 import { Utils } from "../Utils"
 import { Store, UIEventSource } from "./UIEventSource"
-import { selectDefault } from "../Utils/selectDefault"
 
 /**
  * Metatagging adds various tags to the elements, e.g. lat, lon, surface area, ...
@@ -82,10 +81,9 @@ export default class MetaTagging {
             this.updateCurrentSelectedElement()
             let lastUpdateMoment = new Date()
             const tags = state?.featureProperties?.getStore(feature.properties.id)
-            console.log("Binding an updater to", feature)
             let updateCount = 0
             tags?.addCallbackD(() => {
-                console.log(
+                console.debug(
                     "Received an update! Re-calculating the metatags, timediff:",
                     new Date().getTime() - lastUpdateMoment.getTime()
                 )
@@ -199,6 +197,9 @@ export default class MetaTagging {
         for (let i = 0; i < features.length; i++) {
             const feature = features[i]
             const tags = featurePropertiesStores?.getStore(feature.properties.id)
+            if (!tags) {
+                continue
+            }
             let somethingChanged = false
             const definedTags = new Set(Object.getOwnPropertyNames(feature.properties))
 
@@ -279,7 +280,9 @@ export default class MetaTagging {
                 atLeastOneFeatureChanged = true
             }
         }
-        console.debug("Strictly evaluated ", strictlyEvaluated, " values") // Do not remove this
+        if (strictlyEvaluated > 0) {
+            console.debug("Strictly evaluated ", strictlyEvaluated, " values") // Do not remove this
+        }
         return atLeastOneFeatureChanged
     }
 

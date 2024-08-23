@@ -27,6 +27,7 @@
             "selectReason": "Selecciona per què s'hauria d'esborrar aquest element",
             "softDelete": "Aquest element s'actualitzarà i s'amagarà d'aquesta aplicació. <span class=\"subtle\">{reason}</span>"
         },
+        "isChanged": "Aquest element ha canviat i ja no coincideix amb aquesta capa",
         "isDeleted": "Aquest element s'esborrarà",
         "isntAPoint": "Només es poden esborrar elements, l'element seleccionat és una via, àrea o relació.",
         "loading": "Inspeccionant propietats per si aquest element pot ser esborrat.",
@@ -608,11 +609,9 @@
         "notImmediate": "Les traduccions no s'actualitzen directament. Això sol trigar uns quants dies"
     },
     "userinfo": {
-        "editDescription": "Editeu la descripció del vostre perfil",
         "gotoInbox": "Obre la teva safata d'entrada",
         "gotoSettings": "Aneu a la vostra configuració a OpenStreetMap.org",
         "noDescription": "Encara no tens una descripció al teu perfil",
-        "noDescriptionCallToAction": "Afegeix una descripció del perfil",
         "notLoggedIn": "Heu tancat la sessió"
     },
     "validation": {

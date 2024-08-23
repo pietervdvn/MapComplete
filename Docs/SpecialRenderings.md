@@ -12,6 +12,7 @@ In a tagrendering, some special values are substituted by an advanced UI-element
 General usage is `{func_name()}`, `{func_name(arg, someotherarg)}` or `{func_name(args):cssClasses}`. Note that you _do not_ need to use quotes around your arguments, the comma is enough to separate them. This also implies you cannot use a comma in your args
 
 
+
 #### Table of contents
 
   - [Using expanded syntax](#using-expanded-syntax)
@@ -19,79 +20,79 @@ General usage is `{func_name()}`, `{func_name(arg, someotherarg)}` or `{func_nam
   - [Example usage of questions](#example-usage-of-questions)
 2. [add_new_point](#add_new_point)
   - [Example usage of add_new_point](#example-usage-of-add_new_point)
-3. [user_profile](#user_profile)
-  - [Example usage of user_profile](#example-usage-of-user_profile)
-4. [language_picker](#language_picker)
+3. [language_picker](#language_picker)
   - [Example usage of language_picker](#example-usage-of-language_picker)
-5. [logout](#logout)
+4. [logout](#logout)
   - [Example usage of logout](#example-usage-of-logout)
-6. [histogram](#histogram)
+5. [histogram](#histogram)
   - [Example usage of histogram](#example-usage-of-histogram)
-7. [steal](#steal)
+6. [steal](#steal)
   - [Example usage of steal](#example-usage-of-steal)
-8. [minimap](#minimap)
+7. [minimap](#minimap)
   - [Example usage of minimap](#example-usage-of-minimap)
-9. [split_button](#split_button)
+8. [split_button](#split_button)
   - [Example usage of split_button](#example-usage-of-split_button)
-10. [move_button](#move_button)
+9. [move_button](#move_button)
   - [Example usage of move_button](#example-usage-of-move_button)
-11. [delete_button](#delete_button)
+10. [delete_button](#delete_button)
   - [Example usage of delete_button](#example-usage-of-delete_button)
-12. [share_link](#share_link)
+11. [share_link](#share_link)
   - [Example usage of share_link](#example-usage-of-share_link)
-13. [export_as_gpx](#export_as_gpx)
+12. [export_as_gpx](#export_as_gpx)
   - [Example usage of export_as_gpx](#example-usage-of-export_as_gpx)
-14. [upload_to_osm](#upload_to_osm)
+13. [upload_to_osm](#upload_to_osm)
   - [Example usage of upload_to_osm](#example-usage-of-upload_to_osm)
-15. [multi_apply](#multi_apply)
+14. [multi_apply](#multi_apply)
   - [Example usage of multi_apply](#example-usage-of-multi_apply)
-16. [add_note_comment](#add_note_comment)
+15. [add_note_comment](#add_note_comment)
   - [Example usage of add_note_comment](#example-usage-of-add_note_comment)
-17. [open_note](#open_note)
+16. [open_note](#open_note)
   - [Example usage of open_note](#example-usage-of-open_note)
-18. [close_note](#close_note)
+17. [close_note](#close_note)
   - [Example usage of close_note](#example-usage-of-close_note)
-19. [plantnet_detection](#plantnet_detection)
+18. [plantnet_detection](#plantnet_detection)
   - [Example usage of plantnet_detection](#example-usage-of-plantnet_detection)
-20. [tag_apply](#tag_apply)
+19. [tag_apply](#tag_apply)
   - [Example usage of tag_apply](#example-usage-of-tag_apply)
-21. [import_button](#import_button)
+20. [import_button](#import_button)
   - [Specifying which tags to copy or add](#specifying-which-tags-to-copy-or-add)
   - [Importing a dataset into OpenStreetMap: requirements](#importing-a-dataset-into-openstreetmap-requirements)
   - [Disabled in unofficial themes](#disabled-in-unofficial-themes)
   - [Example usage of import_button](#example-usage-of-import_button)
-22. [import_way_button](#import_way_button)
+21. [import_way_button](#import_way_button)
   - [Specifying which tags to copy or add](#specifying-which-tags-to-copy-or-add)
   - [Importing a dataset into OpenStreetMap: requirements](#importing-a-dataset-into-openstreetmap-requirements)
   - [Disabled in unofficial themes](#disabled-in-unofficial-themes)
   - [Example usage of import_way_button](#example-usage-of-import_way_button)
-23. [conflate_button](#conflate_button)
+22. [conflate_button](#conflate_button)
   - [Specifying which tags to copy or add](#specifying-which-tags-to-copy-or-add)
   - [Importing a dataset into OpenStreetMap: requirements](#importing-a-dataset-into-openstreetmap-requirements)
   - [Disabled in unofficial themes](#disabled-in-unofficial-themes)
   - [Example usage of conflate_button](#example-usage-of-conflate_button)
-24. [nearby_images](#nearby_images)
+23. [nearby_images](#nearby_images)
   - [Example usage of nearby_images](#example-usage-of-nearby_images)
-25. [wikipedia](#wikipedia)
+24. [wikipedia](#wikipedia)
   - [Example usage of wikipedia](#example-usage-of-wikipedia)
-26. [wikidata_label](#wikidata_label)
+25. [wikidata_label](#wikidata_label)
   - [Example usage of wikidata_label](#example-usage-of-wikidata_label)
-27. [mapillary_link](#mapillary_link)
+26. [mapillary_link](#mapillary_link)
   - [Example usage of mapillary_link](#example-usage-of-mapillary_link)
-28. [language_chooser](#language_chooser)
+27. [language_chooser](#language_chooser)
   - [Example usage of language_chooser](#example-usage-of-language_chooser)
-29. [all_tags](#all_tags)
+28. [all_tags](#all_tags)
   - [Example usage of all_tags](#example-usage-of-all_tags)
-30. [image_carousel](#image_carousel)
+29. [image_carousel](#image_carousel)
   - [Example usage of image_carousel](#example-usage-of-image_carousel)
-31. [image_upload](#image_upload)
+30. [image_upload](#image_upload)
   - [Example usage of image_upload](#example-usage-of-image_upload)
-32. [rating](#rating)
+31. [rating](#rating)
   - [Example usage of rating](#example-usage-of-rating)
-33. [create_review](#create_review)
+32. [create_review](#create_review)
   - [Example usage of create_review](#example-usage-of-create_review)
-34. [list_reviews](#list_reviews)
+33. [list_reviews](#list_reviews)
   - [Example usage of list_reviews](#example-usage-of-list_reviews)
+34. [reviews](#reviews)
+  - [Example usage of reviews](#example-usage-of-reviews)
 35. [import_mangrove_key](#import_mangrove_key)
   - [Example usage of import_mangrove_key](#example-usage-of-import_mangrove_key)
 36. [opening_hours_table](#opening_hours_table)
@@ -180,16 +181,6 @@ An element which allows to add a new point on the 'last_click'-location. Only ma
 
 <code>`{add_new_point()}`</code>
 
-### user_profile
-
-A component showing information about the currently logged in user (username, profile description, profile picture + link to edit them). Mostly meant to be used in the 'user-settings'
-
-
-
-#### Example usage of user_profile
-
-<code>`{user_profile()}`</code>
-
 ### language_picker
 
 A component to set the language of the user interface
@@ -264,7 +255,7 @@ A small map showing the selected feature.
 
 #### Example usage of minimap
 
-<code>`{minimap(18,id)}`</code>
+<code>`{minimap()}`, `{minimap(17, id, _list_of_embedded_feature_ids_calculated_by_calculated_tag):height:10rem; border: 2px solid black}`</code>
 
 ### split_button
 
@@ -384,7 +375,7 @@ Creates a new map note on the given location. This options is placed in the 'las
 
 ### close_note
 
-Button to close a note. A predifined text can be defined to close the note with. If the note is already closed, will show a small text.
+Button to close a note. A predefined text can be defined to close the note with. If the note is already closed, will show a small text.
 
 
 
@@ -846,6 +837,24 @@ Adds an overview of the mangrove-reviews of this object. Mangrove.Reviews needs 
 
 #### Example usage of list_reviews
 
+<code>`{list_reviews(name,)}`</code>
+
+### reviews
+
+A pragmatic combination of `create_review` and `list_reviews`
+
+
+
+| name | default | description |
+-----|-----|----- |
+| subjectKey | name | The key to use to determine the subject. If specified, the subject will be <b>tags[subjectKey]</b> |
+| fallback | _undefined_ | The identifier to use, if <i>tags[subjectKey]</i> as specified above is not available. This is effectively a fallback value |
+
+
+
+
+#### Example usage of reviews
+
 <code>`{reviews()}` for a vanilla review, `{reviews(name, play_forest)}` to review a play forest. If a name is known, the name will be used as identifier, otherwise 'play_forest' is used</code>
 
 ### import_mangrove_key
@@ -1098,13 +1107,14 @@ Construct a link. By using the 'special' visualisation notation, translations sh
 | class | _undefined_ | CSS-classes to add to the element |
 | download | _undefined_ | Expects a string which denotes the filename to download the contents of `href` into. If set, this link will act as a download-button. |
 | arialabel | _undefined_ | If set, this text will be used as aria-label |
+| icon | _undefined_ | If set, show this icon next to the link. You might want to combine this with `class: button` |
 
 
 
 
 #### Example usage of link
 
-<code>`{link(,,,,)}`</code>
+<code>`{link(,,,,,)}`</code>
 
 ### multi
 
@@ -1357,6 +1367,126 @@ Shows a 'nothing is currently known-message if there is at least one unanswered 
 
 <code>`{if_nothing_known(,)}`</code>
 
+### preset_description
+
+Shows the extra description from the presets of the layer, if one matches. It will pick the most specific one (e.g. if preset `A` implies `B`, but `B` does not imply `A`, it'll pick B) or the first one if no ordering can be made. Might be empty
+
+
+
+#### Example usage of preset_description
+
+<code>`{preset_description()}`</code>
+
+### preset_type_select
+
+An editable tag rendering which allows to change the type
+
+
+
+#### Example usage of preset_type_select
+
+<code>`{preset_type_select()}`</code>
+
+### pending_changes
+
+A module showing the pending changes, with the option to clear the pending changes
+
+
+
+#### Example usage of pending_changes
+
+<code>`{pending_changes()}`</code>
+
+### clear_caches
+
+A button which clears the locally downloaded data and the service worker. Login status etc will be kept
+
+
+
+| name | default | description |
+-----|-----|----- |
+| text | _undefined_ | The text to show on the button |
+
+
+
+
+#### Example usage of clear_caches
+
+<code>`{clear_caches()}`</code>
+
+### group
+
+A collapsable group (accordion)
+
+
+
+| name | default | description |
+-----|-----|----- |
+| header | _undefined_ | The _identifier_ of a single tagRendering. This will be used as header |
+| labels | _undefined_ | A `;`-separated list of either identifiers or label names. All tagRenderings matching this value will be shown in the accordion |
+
+
+
+
+#### Example usage of group
+
+<code>`{group(,)}`</code>
+
+### preset_type_select
+
+An editable tag rendering which allows to change the type
+
+
+
+#### Example usage of preset_type_select
+
+<code>`{preset_type_select()}`</code>
+
+### pending_changes
+
+A module showing the pending changes, with the option to clear the pending changes
+
+
+
+#### Example usage of pending_changes
+
+<code>`{pending_changes()}`</code>
+
+### clear_caches
+
+A button which clears the locally downloaded data and the service worker. Login status etc will be kept
+
+
+
+| name | default | description |
+-----|-----|----- |
+| text | _undefined_ | The text to show on the button |
+
+
+
+
+#### Example usage of clear_caches
+
+<code>`{clear_caches()}`</code>
+
+### group
+
+A collapsable group (accordion)
+
+
+
+| name | default | description |
+-----|-----|----- |
+| header | _undefined_ | The _identifier_ of a single tagRendering. This will be used as header |
+| labels | _undefined_ | A `;`-separated list of either identifiers or label names. All tagRenderings matching this value will be shown in the accordion |
+
+
+
+
+#### Example usage of group
+
+<code>`{group(,)}`</code>
+
 ### auto_apply
 
 A button to run many actions for many features at once. To effectively use this button, you'll need some ingredients: 
@@ -1384,3 +1514,6 @@ A button to run many actions for many features at once. To effectively use this 
 #### Example usage of auto_apply
 
 <code>`{auto_apply(,,,,./assets/svg/robot.svg)}`</code>
+
+
+This document is autogenerated from [src/UI/SpecialVisualizations.ts](https://github.com/pietervdvn/MapComplete/blob/develop/src/UI/SpecialVisualizations.ts)

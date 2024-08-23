@@ -5,7 +5,13 @@
     "nl": "Oplaadpunten",
     "de": "Ladestationen"
   },
-  "minzoom": 10,
+  "description": {
+    "en": "A charging station",
+    "nl": "Oplaadpunten",
+    "ca": "Una estació de càrrega",
+    "de": "Eine Ladestation",
+    "fr": "Une station de recharge"
+  },
   "source": {
     "osmTags": {
       "and": [
@@ -20,6 +26,7 @@
       ]
     }
   },
+  "minzoom": 10,
   "title": {
     "render": {
       "en": "Charging station",
@@ -65,14 +72,109 @@
       }
     ]
   },
-  "description": {
-    "en": "A charging station",
-    "nl": "Oplaadpunten",
-    "ca": "Una estació de càrrega",
-    "de": "Eine Ladestation",
-    "fr": "Une station de recharge"
-  },
-  "#": "no-question-hint-check",
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "pin",
+          "color": "#fff"
+        },
+        {
+          "icon": {
+            "render": "./assets/themes/charging_stations/plug.svg",
+            "mappings": [
+              {
+                "if": "bicycle=yes",
+                "then": "./assets/themes/charging_stations/bicycle.svg"
+              },
+              {
+                "if": {
+                  "or": [
+                    "car=yes",
+                    "motorcar=yes"
+                  ]
+                },
+                "then": "./assets/themes/charging_stations/car.svg"
+              }
+            ]
+          }
+        }
+      ],
+      "iconBadges": [
+        {
+          "if": {
+            "or": [
+              "disused:amenity=charging_station",
+              "operational_status=broken"
+            ]
+          },
+          "then": "close:#c22;"
+        },
+        {
+          "if": {
+            "or": [
+              "proposed:amenity=charging_station",
+              "planned:amenity=charging_station"
+            ]
+          },
+          "then": "./assets/layers/charging_station/under_construction.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "bicycle=yes",
+              {
+                "or": [
+                  "motorcar=yes",
+                  "car=yes"
+                ]
+              }
+            ]
+          },
+          "then": "circle:#fff;./assets/themes/charging_stations/car.svg"
+        }
+      ],
+      "anchor": "bottom",
+      "iconSize": "50,50"
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "black",
+      "width": 2,
+      "fillColor": "#80808080"
+    }
+  ],
+  "presets": [
+    {
+      "tags": [
+        "amenity=charging_station",
+        "motorcar=no",
+        "bicycle=yes"
+      ],
+      "title": {
+        "en": "charging station for electrical bikes",
+        "nl": "oplaadpunt voor elektrische fietsen",
+        "de": "Ladestation für Elektrofahrräder"
+      }
+    },
+    {
+      "tags": [
+        "amenity=charging_station",
+        "motorcar=yes",
+        "bicycle=no"
+      ],
+      "title": {
+        "en": "charging station for cars",
+        "nl": "oplaadstation voor elektrische auto's",
+        "de": "Ladestation für Autos"
+      }
+    }
+  ],
   "tagRenderings": [
     "images",
     {
@@ -2293,7 +2395,8 @@
           "then": {
             "en": "Authentication by a membership card",
             "nl": "Aanmelden met een lidkaart is mogelijk",
-            "de": "Authentifizierung durch eine Mitgliedskarte"
+            "de": "Authentifizierung durch eine Mitgliedskarte",
+            "fr": "Authentification par carte de membre"
           }
         },
         {
@@ -2302,7 +2405,8 @@
           "then": {
             "en": "Authentication by an app",
             "nl": "Aanmelden via een applicatie is mogelijk",
-            "de": "Authentifizierung per App"
+            "de": "Authentifizierung per App",
+            "fr": "Authentification par une application"
           }
         },
         {
@@ -2311,7 +2415,8 @@
           "then": {
             "en": "Authentication via phone call is available",
             "nl": "Aanmelden door te bellen naar een telefoonnummer is mogelijk",
-            "de": "Authentifizierung per Anruf ist möglich"
+            "de": "Authentifizierung per Anruf ist möglich",
+            "fr": "Authentification possible par appel téléphonique"
           }
         },
         {
@@ -2320,7 +2425,8 @@
           "then": {
             "en": "Authentication via SMS is available",
             "nl": "Aanmelden via SMS is mogelijk",
-            "de": "Authentifizierung per SMS ist möglich"
+            "de": "Authentifizierung per SMS ist möglich",
+            "fr": "Authentification possible par SMS"
           }
         },
         {
@@ -2650,6 +2756,7 @@
             "nl": "Dit oplaadpunt werkt",
             "ca": "Aquesta estació de càrrega funciona",
             "de": "Die Station ist in Betrieb",
+            "fr": "Cette station de recharge fonctionne",
             "pl": "Ta stacja ładowania działa"
           }
         },
@@ -2770,109 +2877,6 @@
         "en": "<h3>Technical questions</h3>The questions below are very technical. Feel free to ignore them<br/>{questions(technical)}",
         "nl": "<h3>Technische vragen</h3>De vragen hieronder zijn erg technisch - sla deze over indien je hier geen tijd voor hebt<br/>{questions(technical)}",
         "de": "<h3>Technische Frage</h3>Die nächsten Fragen sind sehr technisch. Du kannst diese auch überspringen.<br/>{questions(technical)}"
-      }
-    }
-  ],
-  "lineRendering": [
-    {
-      "color": "black",
-      "width": 2,
-      "fillColor": "#80808080"
-    }
-  ],
-  "pointRendering": [
-    {
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "marker": [
-        {
-          "icon": "pin",
-          "color": "#fff"
-        },
-        {
-          "icon": {
-            "render": "./assets/themes/charging_stations/plug.svg",
-            "mappings": [
-              {
-                "if": "bicycle=yes",
-                "then": "./assets/themes/charging_stations/bicycle.svg"
-              },
-              {
-                "if": {
-                  "or": [
-                    "car=yes",
-                    "motorcar=yes"
-                  ]
-                },
-                "then": "./assets/themes/charging_stations/car.svg"
-              }
-            ]
-          }
-        }
-      ],
-      "iconBadges": [
-        {
-          "if": {
-            "or": [
-              "disused:amenity=charging_station",
-              "operational_status=broken"
-            ]
-          },
-          "then": "close:#c22;"
-        },
-        {
-          "if": {
-            "or": [
-              "proposed:amenity=charging_station",
-              "planned:amenity=charging_station"
-            ]
-          },
-          "then": "./assets/layers/charging_station/under_construction.svg"
-        },
-        {
-          "if": {
-            "and": [
-              "bicycle=yes",
-              {
-                "or": [
-                  "motorcar=yes",
-                  "car=yes"
-                ]
-              }
-            ]
-          },
-          "then": "circle:#fff;./assets/themes/charging_stations/car.svg"
-        }
-      ],
-      "anchor": "bottom",
-      "iconSize": "50,50"
-    }
-  ],
-  "presets": [
-    {
-      "tags": [
-        "amenity=charging_station",
-        "motorcar=no",
-        "bicycle=yes"
-      ],
-      "title": {
-        "en": "charging station for electrical bikes",
-        "nl": "oplaadpunt voor elektrische fietsen",
-        "de": "Ladestation für Elektrofahrräder"
-      }
-    },
-    {
-      "tags": [
-        "amenity=charging_station",
-        "motorcar=yes",
-        "bicycle=no"
-      ],
-      "title": {
-        "en": "charging station for cars",
-        "nl": "oplaadstation voor elektrische auto's",
-        "de": "Ladestation für Autos"
       }
     }
   ],
@@ -3123,6 +3127,19 @@
       ]
     }
   ],
+  "deletion": {
+    "softDeletionTags": {
+      "and": [
+        "amenity=",
+        "disused:amenity=charging_station"
+      ]
+    },
+    "neededChangesets": 10
+  },
+  "allowMove": {
+    "enableRelocation": false,
+    "enableImproveAccuracy": true
+  },
   "units": [
     {
       "maxstay": {
@@ -3140,8 +3157,8 @@
       "socket:schuko:output": {
         "quantity": "power",
         "denominations": [
-          "mW",
-          "kW"
+          "kW",
+          "MW"
         ]
       },
       "socket:typee:voltage": "voltage",
@@ -3149,8 +3166,8 @@
       "socket:typee:output": {
         "quantity": "power",
         "denominations": [
-          "mW",
-          "kW"
+          "kW",
+          "MW"
         ]
       },
       "socket:chademo:voltage": "voltage",
@@ -3158,8 +3175,8 @@
       "socket:chademo:output": {
         "quantity": "power",
         "denominations": [
-          "mW",
-          "kW"
+          "kW",
+          "MW"
         ]
       },
       "socket:type1_cable:voltage": "voltage",
@@ -3167,8 +3184,8 @@
       "socket:type1_cable:output": {
         "quantity": "power",
         "denominations": [
-          "mW",
-          "kW"
+          "kW",
+          "MW"
         ]
       },
       "socket:type1:voltage": "voltage",
@@ -3176,8 +3193,8 @@
       "socket:type1:output": {
         "quantity": "power",
         "denominations": [
-          "mW",
-          "kW"
+          "kW",
+          "MW"
         ]
       },
       "socket:type1_combo:voltage": "voltage",
@@ -3185,8 +3202,8 @@
       "socket:type1_combo:output": {
         "quantity": "power",
         "denominations": [
-          "mW",
-          "kW"
+          "kW",
+          "MW"
         ]
       },
       "socket:tesla_supercharger:voltage": "voltage",
@@ -3194,8 +3211,8 @@
       "socket:tesla_supercharger:output": {
         "quantity": "power",
         "denominations": [
-          "mW",
-          "kW"
+          "kW",
+          "MW"
         ]
       },
       "socket:type2:voltage": "voltage",
@@ -3203,8 +3220,8 @@
       "socket:type2:output": {
         "quantity": "power",
         "denominations": [
-          "mW",
-          "kW"
+          "kW",
+          "MW"
         ]
       },
       "socket:type2_combo:voltage": "voltage",
@@ -3212,8 +3229,8 @@
       "socket:type2_combo:output": {
         "quantity": "power",
         "denominations": [
-          "mW",
-          "kW"
+          "kW",
+          "MW"
         ]
       },
       "socket:type2_cable:voltage": "voltage",
@@ -3221,8 +3238,8 @@
       "socket:type2_cable:output": {
         "quantity": "power",
         "denominations": [
-          "mW",
-          "kW"
+          "kW",
+          "MW"
         ]
       },
       "socket:tesla_supercharger_ccs:voltage": "voltage",
@@ -3230,8 +3247,8 @@
       "socket:tesla_supercharger_ccs:output": {
         "quantity": "power",
         "denominations": [
-          "mW",
-          "kW"
+          "kW",
+          "MW"
         ]
       },
       "socket:tesla_destination:voltage": "voltage",
@@ -3239,8 +3256,8 @@
       "socket:tesla_destination:output": {
         "quantity": "power",
         "denominations": [
-          "mW",
-          "kW"
+          "kW",
+          "MW"
         ]
       },
       "socket:USB-A:voltage": "voltage",
@@ -3248,8 +3265,8 @@
       "socket:USB-A:output": {
         "quantity": "power",
         "denominations": [
-          "mW",
-          "kW"
+          "kW",
+          "MW"
         ]
       },
       "socket:bosch_3pin:voltage": "voltage",
@@ -3257,8 +3274,8 @@
       "socket:bosch_3pin:output": {
         "quantity": "power",
         "denominations": [
-          "mW",
-          "kW"
+          "kW",
+          "MW"
         ]
       },
       "socket:bosch_5pin:voltage": "voltage",
@@ -3266,8 +3283,8 @@
       "socket:bosch_5pin:output": {
         "quantity": "power",
         "denominations": [
-          "mW",
-          "kW"
+          "kW",
+          "MW"
         ]
       },
       "socket:bs1363:voltage": "voltage",
@@ -3275,8 +3292,8 @@
       "socket:bs1363:output": {
         "quantity": "power",
         "denominations": [
-          "mW",
-          "kW"
+          "kW",
+          "MW"
         ]
       },
       "socket:nema5_15:voltage": "voltage",
@@ -3284,8 +3301,8 @@
       "socket:nema5_15:output": {
         "quantity": "power",
         "denominations": [
-          "mW",
-          "kW"
+          "kW",
+          "MW"
         ]
       },
       "socket:sev1011_t23:voltage": "voltage",
@@ -3293,8 +3310,8 @@
       "socket:sev1011_t23:output": {
         "quantity": "power",
         "denominations": [
-          "mW",
-          "kW"
+          "kW",
+          "MW"
         ]
       },
       "socket:as3112:voltage": "voltage",
@@ -3302,8 +3319,8 @@
       "socket:as3112:output": {
         "quantity": "power",
         "denominations": [
-          "mW",
-          "kW"
+          "kW",
+          "MW"
         ]
       },
       "socket:nema_5_20:voltage": "voltage",
@@ -3311,23 +3328,11 @@
       "socket:nema_5_20:output": {
         "quantity": "power",
         "denominations": [
-          "mW",
-          "kW"
+          "kW",
+          "MW"
         ]
       }
     }
   ],
-  "allowMove": {
-    "enableRelocation": false,
-    "enableImproveAccuracy": true
-  },
-  "deletion": {
-    "softDeletionTags": {
-      "and": [
-        "amenity=",
-        "disused:amenity=charging_station"
-      ]
-    },
-    "neededChangesets": 10
-  }
+  "#": "no-question-hint-check"
 }

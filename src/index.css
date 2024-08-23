@@ -39,10 +39,13 @@
   --interactive-contrast: #ff00ff;
 
   --button-background: #282828;
-  --button-background-hover: #686868;
+  --button-background-hover: #484848;
+    --button-primary-background-hover: #353535;
+
   --button-foreground: white;
   --button-border-color: #F7F7F7;
-  --disabled: #DBDBDB;
+  --disabled: #B8B8B8;
+    --disabled-font: #B8B8B8;
 
   /**
      * Base colour of interactive elements, mainly the 'subtle button'
@@ -232,19 +235,20 @@ button.primary, .button.primary {
 }
 
 button.primary:hover:not(.disabled), .button.primary:hover:not(.disabled) {
-    background-color: var(--button-background-hover);
+    background-color: var(--button-primary-background-hover);
 }
 
 button.disabled {
-    border-color: var(--disabled);
-    color: var(--disabled);
+    border-color: var(--disabled-font);
+    color: var(--disabled-font);
+    cursor: unset;
 }
 button.disabled svg path {
     transition: all 200ms;
 }
 button.disabled svg path {
-    fill: var(--disabled);
-    stroke: var(--disabled);
+    fill: var(--disabled-font);
+    stroke: var(--disabled-font);
 }
 
 
@@ -266,6 +270,7 @@ button.as-link {
     border: none;
     border-radius: 0;
     text-decoration: underline;
+    -webkite-text-decoration: underline;
     box-shadow: none;
     margin: 0;
     padding: 0;
@@ -331,6 +336,17 @@ label.checked:not(.neutral-label) {
 
 textarea {
   color: black;
+}
+
+h2.group {
+    /* For flowbite accordions */
+    margin: 0;
+}
+
+.group button {
+    /* For flowbite accordions */
+
+    border-radius: 0;
 }
 
 /************************* OTHER CATEGORIES ********************************/
@@ -412,6 +428,7 @@ textarea {
 
 .link-underline .subtle a {
   text-decoration: underline 1px #7193bb88;
+  -webkit-text-decoration: underline;
   color: #7193bb;
 }
 
@@ -485,13 +502,16 @@ code {
 
 .link-underline a {
   text-decoration: underline 1px var(--foreground-color);
+  -webkit-text-decoration: underline;
+
 }
 
 a.link-underline {
   text-decoration: underline 1px var(--foreground-color);
+  -webkit-text-decoration: underline;
 }
 
-.link-no-underline a {
+.link-no-underline a, a.link-no-underline {
   text-decoration: none;
 }
 
@@ -504,6 +524,7 @@ a.link-underline {
 .enable-links a {
   pointer-events: unset;
   text-decoration: underline !important;
+  -webkit-text-decoration: underline !important;
   color: unset !important;
 }
 
@@ -528,6 +549,11 @@ a.link-underline {
   -webkit-animation: glowing-drop-shadow 1s ease-in-out infinite alternate;
   -moz-animation: glowing-drop-shadow 1s ease-in-out infinite alternate;
   animation: glowing-drop-shadow 1s ease-in-out infinite alternate;
+}
+
+.selected .light-icon svg:not(.noselect *) path.selectable {
+    stroke: #4a4a4a !important;
+    stroke-width: 10px !important;
 }
 
 .selected svg {

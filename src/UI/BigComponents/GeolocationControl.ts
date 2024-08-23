@@ -4,8 +4,8 @@ import Constants from "../../Models/Constants"
 import { MapProperties } from "../../Models/MapProperties"
 
 /**
- * Displays an icon depending on the state of the geolocation.
- * Will set the 'lock' if clicked twice
+ * Does the user interaction state with a geolocation button, such as keeping track of the last click,
+ * and lock status + moving the map when clicked
  */
 export class GeolocationControlState {
     public readonly lastClick = new UIEventSource<Date>(undefined)
@@ -81,13 +81,13 @@ export class GeolocationControlState {
             return
         }
 
-        // A location _is_ known! Let's move to this location
         const currentLocation = geolocationState.currentGPSLocation.data
         if (currentLocation === undefined) {
             // No location is known yet, not much we can do
             lastClick.setData(new Date())
             return
         }
+        // A location _is_ known! Let's move to this location
         const inBounds = state.bounds.data.contains([
             currentLocation.longitude,
             currentLocation.latitude,

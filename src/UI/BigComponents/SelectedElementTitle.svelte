@@ -73,7 +73,7 @@
   </div>
   <slot name="close-button">
     <button
-      class="mt-2 h-fit shrink-0 rounded-full border-none p-0"
+      class="mt-2 h-fit shrink-0 cursor-pointer self-center rounded-full border-none p-0"
       on:click={() => state.selectedElement.setData(undefined)}
       style="border: 0 !important; padding: 0 !important;"
       use:ariaLabel={Translations.t.general.backToMap}

@@ -152,6 +152,12 @@ class PointRenderingLayer {
         }
         const el = html.ConstructElement()
 
+        store.addCallbackAndRunD((tags) => {
+            if (tags._deleted === "yes") {
+                html.SetClass("grayscale")
+            }
+        })
+
         if (this._onClick) {
             const self = this
             el.addEventListener("click", function (ev) {

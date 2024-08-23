@@ -21,7 +21,7 @@
 </script>
 
 <a class="flex items-center" href={mapillaryLink} target="_blank">
-  <Mapillary_black class={twMerge("shrink-0", large ? "m-2 mr-4 h-12 w-12" : "h-6 w-6 pr-2")} />
+  <Mapillary_black class={twMerge("shrink-0", large ? "m-2 mr-4 h-12 w-12" : "h-5 w-5 pr-1")} />
   {#if large}
     <div class="flex flex-col">
       <Tr t={Translations.t.general.attribution.openMapillary} />

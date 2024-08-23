@@ -329,39 +329,14 @@
       ]
     },
     {
-      "id": "seasonal",
-      "question": {
-        "en": "Is this drinking water point available all year round?",
-        "nl": "Is dit drinkwaterpunt heel het jaar door beschikbaar?",
-        "de": "Ist die Trinkwasserstelle ganzjährig in Betrieb?"
-      },
-      "mappings": [
-        {
-          "if": "seasonal=no",
-          "then": {
-            "en": "This drinking water point is available all around the year",
-            "nl": "Dit drinkwaterpunt is heel het jaar door beschikbaar",
-            "de": "Die Trinkwasserstelle ist ganzjährig in Betrieb"
-          }
-        },
-        {
-          "if": "seasonal=summer",
-          "then": {
-            "en": "This drinking water point is only available in summer",
-            "nl": "Dit drinkwaterpunt is enkel in de zomer beschikbaar",
-            "de": "Die Trinkwasserstelle ist nur im Sommer in Betrieb"
-          }
-        },
-        {
-          "if": "seasonal=spring;summer;autumn",
-          "icon": "./assets/layers/drinking_water/no_winter.svg",
-          "then": {
-            "en": "This drinking water point is closed during the winter",
-            "nl": "Dit drinkwaterpunt is gesloten in de winter",
-            "de": "Die Trinkwasserstelle ist im Winter nicht in Betrieb"
-          }
+      "builtin": "seasonal",
+      "override": {
+        "question": {
+          "en": "Is this drinking water point available all year round?",
+          "nl": "Is dit drinkwaterpunt heel het jaar door beschikbaar?",
+          "de": "Ist die Trinkwasserstelle ganzjährig in Betrieb?"
         }
-      ]
+      }
     },
     {
       "builtin": "opening_hours_24_7",

@@ -104,12 +104,12 @@ export default class FilteredLayer {
             )
         } else {
             let isShown = layer.shownByDefault
-            if(enabledByDefault !== undefined && enabledByDefault.data === false){
+            if (enabledByDefault !== undefined && enabledByDefault.data === false) {
                 isShown = false
             }
             isDisplayed = QueryParameters.GetBooleanQueryParameter(
                 FilteredLayer.queryParameterKey(layer),
-                isShown ,
+                isShown,
                 "Whether or not layer " + layer.id + " is shown"
             )
         }

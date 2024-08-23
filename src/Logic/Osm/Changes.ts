@@ -13,13 +13,11 @@ import { ChangesetHandler, ChangesetTag } from "./ChangesetHandler"
 import { OsmConnection } from "./OsmConnection"
 import FeaturePropertiesStore from "../FeatureSource/Actors/FeaturePropertiesStore"
 import OsmObjectDownloader from "./OsmObjectDownloader"
-import Combine from "../../UI/Base/Combine"
-import BaseUIElement from "../../UI/BaseUIElement"
-import Title from "../../UI/Base/Title"
-import Table from "../../UI/Base/Table"
 import ChangeLocationAction from "./Actions/ChangeLocationAction"
 import ChangeTagAction from "./Actions/ChangeTagAction"
 import FeatureSwitchState from "../State/FeatureSwitchState"
+import DeleteAction from "./Actions/DeleteAction"
+import MarkdownUtils from "../../Utils/MarkdownUtils"
 
 /**
  * Handles all changes made to OSM.
@@ -42,7 +40,7 @@ export class Changes {
     private _nextId: number = -1 // Newly assigned ID's are negative
     private readonly previouslyCreated: OsmObject[] = []
     private readonly _leftRightSensitive: boolean
-    private readonly _changesetHandler: ChangesetHandler
+    public readonly _changesetHandler: ChangesetHandler
     private readonly _reportError?: (string: string | Error) => void
 
     constructor(
@@ -115,13 +113,14 @@ export class Changes {
         return changes
     }
 
-    public static getDocs(): BaseUIElement {
+    public static getDocs(): string {
         function addSource(items: any[], src: string) {
             items.forEach((i) => {
                 i["source"] = src
             })
             return items
         }
+
         const metatagsDocs: {
             key?: string
             value?: string
@@ -177,6 +176,7 @@ export class Changes {
             ),
             ...addSource(ChangeTagAction.metatags, "ChangeTag"),
             ...addSource(ChangeLocationAction.metatags, "ChangeLocation"),
+            ...addSource(DeleteAction.metatags, "DeleteAction"),
             // TODO
             /*
             ...DeleteAction.metatags,
@@ -186,27 +186,27 @@ export class Changes {
             ...ReplaceGeometryAction.metatags,
             ...SplitAction.metatags,*/
         ]
-        return new Combine([
-            new Title("Metatags on a changeset", 1),
+        return [
+            "# Metatags on a changeset",
             "You might encounter the following metatags on a changeset:",
-            new Table(
+            MarkdownUtils.table(
                 ["key", "value", "explanation", "source"],
                 metatagsDocs.map(({ key, value, docs, source, changeType, specialMotivation }) => [
                     key ?? changeType?.join(", ") ?? "",
                     value,
-                    new Combine([
+                    [
                         docs,
                         specialMotivation
                             ? "This might give a reason per modified node or way"
                             : "",
-                    ]),
+                    ].join("\n"),
                     source,
                 ])
             ),
-        ])
+        ].join("\n\n")
     }
 
-    private static GetNeededIds(changes: ChangeDescription[]) {
+    public static GetNeededIds(changes: ChangeDescription[]) {
         return Utils.Dedup(changes.filter((c) => c.id >= 0).map((c) => c.type + "/" + c.id))
     }
 
@@ -248,11 +248,13 @@ export class Changes {
 
     public async applyAction(action: OsmChangeAction): Promise<void> {
         const changeDescriptions = await action.Perform(this)
-        changeDescriptions[0].meta.distanceToObject = this.calculateDistanceToChanges(
-            action,
-            changeDescriptions
+        const remapped = ChangeDescriptionTools.rewriteAllIds(
+            changeDescriptions,
+            this._changesetHandler._remappings
         )
-        this.applyChanges(changeDescriptions)
+
+        remapped[0].meta.distanceToObject = this.calculateDistanceToChanges(action, remapped)
+        this.applyChanges(remapped)
     }
 
     public applyChanges(changes: ChangeDescription[]) {
@@ -270,8 +272,24 @@ export class Changes {
         modifiedObjects: OsmObject[]
         deletedObjects: OsmObject[]
     } {
-        const objects: Map<string, OsmObject> = new Map<string, OsmObject>()
+        /**
+         * This is a rather complicated method which does a lot of stuff.
+         *
+         * Our main important data is `state` and `objects` which will determine what is returned.
+         * First init all those states, then we actually apply the changes.
+         * At last, we sort them for easy handling, which is rather boring
+         */
+
+        // ------------------ INIT -------------------------
+
+        /**
+         * Keeps track of every object what actually happened with it
+         */
         const states: Map<string, "unchanged" | "created" | "modified" | "deleted"> = new Map()
+        /**
+         * Keeps track of the _new_ state of the objects, how they should end up on the database
+         */
+        const objects: Map<string, OsmObject> = new Map<string, OsmObject>()
 
         for (const o of downloadedOsmObjects) {
             objects.set(o.type + "/" + o.id, o)
@@ -282,6 +300,8 @@ export class Changes {
             objects.set(o.type + "/" + o.id, o)
             states.set(o.type + "/" + o.id, "unchanged")
         }
+
+        // -------------- APPLY INTERMEDIATE CHANGES -----------------
 
         for (const change of changes) {
             let changed = false
@@ -294,7 +314,7 @@ export class Changes {
                 }
                 if (change.changes === undefined) {
                     // This object is a change to a newly created object. However, we have not seen the creation changedescription yet!
-                    throw "Not a creation of the object"
+                    throw "Not a creation of the object: " + JSON.stringify(change)
                 }
                 // This is a new object that should be created
                 states.set(id, "created")
@@ -316,6 +336,8 @@ export class Changes {
                         r.members = change.changes["members"]
                         osmObj = r
                         break
+                    default:
+                        throw "Got an invalid change.type: " + change.type
                 }
                 if (osmObj === undefined) {
                     throw "Hmm? This is a bug"
@@ -398,6 +420,7 @@ export class Changes {
             }
         }
 
+        // ----------------- SORT OBJECTS -------------------
         const result = {
             newObjects: [],
             modifiedObjects: [],
@@ -417,15 +440,23 @@ export class Changes {
             }
         })
 
-        console.debug(
-            "Calculated the pending changes: ",
-            result.newObjects.length,
-            "new; ",
-            result.modifiedObjects.length,
-            "modified;",
-            result.deletedObjects,
-            "deleted"
-        )
+        if (
+            !(
+                result.newObjects.length === 0 &&
+                result.modifiedObjects.length === 0 &&
+                result.deletedObjects.length === 0
+            )
+        ) {
+            console.debug(
+                "Calculated the pending changes: ",
+                result.newObjects.length,
+                "new; ",
+                result.modifiedObjects.length,
+                "modified;",
+                result.deletedObjects.length,
+                "deleted"
+            )
+        }
         return result
     }
 
@@ -505,41 +536,92 @@ export class Changes {
     }
 
     /**
-     * Upload the selected changes to OSM.
-     * Returns 'true' if successful and if they can be removed
+     * Gets a single, fresh version of the requested osmObject with some error handling
+     */
+    private async getOsmObject(id: string, downloader: OsmObjectDownloader) {
+        try {
+            try {
+                // Important: we do **not** cache this request, we _always_ need a fresh version!
+                const osmObj = await downloader.DownloadObjectAsync(id, 0)
+                return { id, osmObj }
+            } catch (e) {
+                const msg =
+                    "Could not download OSM-object " +
+                    id +
+                    " trying again before dropping it from the changes (" +
+                    e +
+                    ")"
+                this._reportError(msg)
+                const osmObj = await downloader.DownloadObjectAsync(id, 0)
+                return { id, osmObj }
+            }
+        } catch (e) {
+            const msg =
+                "Could not download OSM-object " + id + " dropping it from the changes (" + e + ")"
+            this._reportError(msg)
+            this.errors.data.push(e)
+            this.errors.ping()
+            return undefined
+        }
+    }
+
+    public fragmentChanges(
+        pending: ChangeDescription[],
+        objects: OsmObject[]
+    ): {
+        refused: ChangeDescription[]
+        toUpload: ChangeDescription[]
+    } {
+        const refused: ChangeDescription[] = []
+        const toUpload: ChangeDescription[] = []
+
+        // All ids which have an 'update'
+        const createdIds = new Set(
+            pending.filter((cd) => cd.changes !== undefined).map((cd) => cd.id)
+        )
+        pending.forEach((c) => {
+            if (c.id < 0) {
+                if (createdIds.has(c.id)) {
+                    toUpload.push(c)
+                } else {
+                    this._reportError(
+                        `Got an orphaned change. The 'creation'-change description for ${c.type}/${c.id} got lost. Permanently dropping this change:` +
+                            JSON.stringify(c)
+                    )
+                }
+                return
+            }
+            const matchFound = !!objects.find((o) => o.id === c.id && o.type === c.type)
+            if (matchFound) {
+                toUpload.push(c)
+            } else {
+                console.log(
+                    "Refusing change about " +
+                        c.type +
+                        "/" +
+                        c.id +
+                        " as not in the objects. No internet?"
+                )
+                refused.push(c)
+            }
+        })
+
+        return { refused, toUpload }
+    }
+
+    /**
+     * Upload the selected changes to OSM. This is typically called with changes for a single theme
+     * @return pending changes which could not be uploaded for some reason; undefined or empty array if successful
      */
     private async flushSelectChanges(
         pending: ChangeDescription[],
         openChangeset: UIEventSource<number>
-    ): Promise<boolean> {
-        const self = this
+    ): Promise<ChangeDescription[]> {
         const neededIds = Changes.GetNeededIds(pending)
         // We _do not_ pass in the Changes object itself - we want the data from OSM directly in order to apply the changes
         const downloader = new OsmObjectDownloader(this.backend, undefined)
         let osmObjects = await Promise.all<{ id: string; osmObj: OsmObject | "deleted" }>(
-            neededIds.map(async (id) => {
-                try {
-                    // Important: we do **not** cache this request, we _always_ need a fresh version!
-                    const osmObj = await downloader.DownloadObjectAsync(id, 0)
-                    return { id, osmObj }
-                } catch (e) {
-                    this._reportError(
-                        "Could not download OSM-object" +
-                            id +
-                            " dropping it from the changes (" +
-                            e +
-                            ")"
-                    )
-                    console.error(
-                        "Could not download OSM-object",
-                        id,
-                        " dropping it from the changes (" + e + ")"
-                    )
-                    this.errors.data.push(e)
-                    this.errors.ping()
-                    return undefined
-                }
-            })
+            neededIds.map((id) => this.getOsmObject(id, downloader))
         )
 
         osmObjects = Utils.NoNull(osmObjects)
@@ -560,7 +642,7 @@ export class Changes {
 
         if (pending.length == 0) {
             console.log("No pending changes...")
-            return true
+            return undefined
         }
 
         const perType = Array.from(
@@ -587,7 +669,7 @@ export class Changes {
 
         const distances = Utils.NoNull(pending.map((descr) => descr.meta.distanceToObject))
         distances.sort((a, b) => a - b)
-        const perBinCount = Constants.distanceToChangeObjectBins.map((_) => 0)
+        const perBinCount = Constants.distanceToChangeObjectBins.map(() => 0)
 
         let j = 0
         const maxDistances = Constants.distanceToChangeObjectBins
@@ -639,17 +721,24 @@ export class Changes {
             ...perBinMessage,
         ]
 
+        let { toUpload, refused } = this.fragmentChanges(pending, objects)
+
+        if (toUpload.length === 0) {
+            return refused
+        }
         await this._changesetHandler.UploadChangeset(
             (csId, remappings) => {
                 if (remappings.size > 0) {
-                    pending = pending.map((ch) => ChangeDescriptionTools.rewriteIds(ch, remappings))
+                    toUpload = toUpload.map((ch) =>
+                        ChangeDescriptionTools.rewriteIds(ch, remappings)
+                    )
                 }
 
                 const changes: {
                     newObjects: OsmObject[]
                     modifiedObjects: OsmObject[]
                     deletedObjects: OsmObject[]
-                } = self.CreateChangesetObjects(pending, objects)
+                } = this.CreateChangesetObjects(toUpload, objects)
 
                 return Changes.createChangesetFor("" + csId, changes)
             },
@@ -657,8 +746,8 @@ export class Changes {
             openChangeset
         )
 
-        console.log("Upload successful!")
-        return true
+        console.log("Upload successful! Refused changes are", refused)
+        return refused
     }
 
     private async flushChangesAsync(): Promise<void> {
@@ -676,7 +765,7 @@ export class Changes {
                 pendingPerTheme.get(theme).push(changeDescription)
             }
 
-            const successes = await Promise.all(
+            const refusedChanges: ChangeDescription[][] = await Promise.all(
                 Array.from(pendingPerTheme, async ([theme, pendingChanges]) => {
                     try {
                         const openChangeset = UIEventSource.asInt(
@@ -691,25 +780,23 @@ export class Changes {
                                 openChangeset.data
                         )
 
-                        const result = await self.flushSelectChanges(pendingChanges, openChangeset)
-                        if (result) {
+                        const refused = await self.flushSelectChanges(pendingChanges, openChangeset)
+                        if (!refused) {
                             this.errors.setData([])
                         }
-                        return result
+                        return refused
                     } catch (e) {
                         this._reportError(e)
                         console.error("Could not upload some changes:", e)
                         this.errors.data.push(e)
                         this.errors.ping()
-                        return false
+                        return pendingChanges
                     }
                 })
             )
 
-            if (!successes.some((s) => s == false)) {
-                // All changes successfull, we clear the data!
-                this.pendingChanges.setData([])
-            }
+            // We keep all the refused changes to try them again
+            this.pendingChanges.setData(refusedChanges.flatMap((c) => c))
         } catch (e) {
             console.error(
                 "Could not handle changes - probably an old, pending changeset in localstorage with an invalid format; erasing those",

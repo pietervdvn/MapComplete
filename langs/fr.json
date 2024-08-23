@@ -232,6 +232,7 @@
         "openStreetMapIntro": "<h3>Une carte ouverte</h3><p>Utilisable et éditable librement. Une seule et unique plateforme regroupant toutes les informations géographiques ? Toutes ces différentes cartes isolées, incompatibles et obsolètes ne sont plus utiles.</p><p><b><a href=\"https://OpenStreetMap.org\" target=\"_blank\">OpenStreetMap</a></b> n’est pas un énième concurrent. Toutes les données de cette carte peuvent être utilisé librement (avec <a href=\"https://osm.org/copyright\" target=\"_blank\"> attribution et publication des changements de données</a>). De plus tout le monde est libre d'ajouter de nouvelles données et corriger les erreurs. Ce site utilise également OpenStreetMap. Toutes les données en proviennent et tous les ajouts et modifications y seront également ajoutés.</p><p>De nombreux individus et applications utilisent déjà OpenStreetMap : <a href=\"https://maps.me/\" target=\"_blank\">Maps.me</a>, <a href=\"https://osmAnd.net\" target=\"_blank\">OsmAnd</a>, mais aussi les cartes de Facebook, Instagram, Apple Maps et Bing Maps sont (en partie) alimentées par OpenStreetMap</p>",
         "openTheMap": "Ouvrir la carte",
         "openTheMapAtGeolocation": "Zoom sur votre position",
+        "openTheMapReason": "pour la voir, l'éditer et modifier des informations",
         "opening_hours": {
             "closed_permanently": "Fermé",
             "closed_until": "Fermé jusqu'au {date}",
@@ -368,6 +369,7 @@
         "intro": "MapComplete autorise les raccourcis clavier suivants :",
         "key": "Combinaison de touches",
         "openLayersPanel": "Ouvre le panneau fond-de-plan, couches et filtres",
+        "selectFavourites": "Ouvrir la page des favoris",
         "selectMapnik": "Appliquer le fond de carte OpenStreetMap-carto",
         "selectSearch": "Sélectionner la barre de recherche de lieux",
         "title": "Raccourcis clavier",
@@ -511,7 +513,6 @@
         "missing": "{count} segments non traduits"
     },
     "userinfo": {
-        "editDescription": "Modifier ton profil",
         "gotoInbox": "Ouvrir sa boite de réception",
         "gotoSettings": "Paramètres sur OpenStreetMap.org",
         "notLoggedIn": "Déconnecté"

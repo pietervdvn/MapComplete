@@ -4,16 +4,15 @@ import { TagConfigJson } from "./TagConfigJson"
 export interface IconConfigJson {
     /**
      * question: What icon should be used?
-     * type: icon
-     * types: Use a dynamic value ; icon
+     * types: <span class="text-lg font-bold">Use a different icon depending on the value of some attributes</span> ; icon
      * suggestions: return Constants.defaultPinIcons.map(i => ({if: "value="+i, then: i, icon: i}))
      */
     icon: string | MinimalTagRenderingConfigJson | { builtin: string; override: any }
     /**
      * question: What colour should the icon be?
      * This will only work for the default icons such as `pin`,`circle`,...
-     * type: color
-     * types: Use a dynamic color ; icon
+     * types: <span class="text-lg font-bold">Use a different color depending on the value of some attributes</span> ; color
+     *
      */
     color?: string | MinimalTagRenderingConfigJson | { builtin: string; override: any }
 }
@@ -93,7 +92,12 @@ export default interface PointRenderingConfigJson {
     /**
      * question: What rotation should be applied on the icon?
      * This is mostly useful for items that face a specific direction, such as surveillance cameras
-     * This is interpreted as css property for 'rotate', thus has to end with 'deg', e.g. `90deg`, `{direction}deg`, `calc(90deg - {camera:direction}deg)``
+     * This is interpreted as css property for 'rotate', thus has to end with 'deg', e.g. `90deg`, `{direction}deg`, `calc(90deg - {camera:direction}deg)`
+     *
+     * If the icon is shown on the projected centerpoint of a way, one can also use `_direction:centerpoint`
+     *
+     * types: Dynamic value ; string
+     * suggestions:  return [{if: "value={_direction:centerpoint}deg", then: "Point the top of the icon towards the end of the way"}, {if: "value=calc( {_direction:centerpoint}deg + 90deg )", then: "Point the left of the icon towards the end of the way"}, {if: "value=calc( {_direction:centerpoint}deg - 90deg )", then: "Point the right of the icon towards the end of the way"}, {if: "value=calc( {_direction:centerpoint}deg + 180deg )", then: "Point the bottom of the icon towards the end of the way"}]
      * ifunset: Do not rotate
      */
     rotation?: string | TagRenderingConfigJson
@@ -150,7 +154,6 @@ export default interface PointRenderingConfigJson {
      * You can use most Tailwind-css classes, see https://tailwindcss.com/ for more information
      * For example: `center bg-gray-500 mx-2 my-1 rounded-full`
      * inline: Apply CSS-classes <b>{value}</b> to the entire container
-     * ifunset: Do not apply extra CSS-classes to the label
      * types: Dynamic value ; string
      * ifunset: Do not apply extra CSS-classes to the entire marker
      * group: expert
@@ -159,7 +162,7 @@ export default interface PointRenderingConfigJson {
 
     /**
      * question: If the map is pitched, should the icon stay parallel to the screen or to the groundplane?
-     * suggestions: return [{if: "value=canvas", then: "The icon will stay upward and not be transformed as if it sticks to the screen"}, {if: "value=map", then: "The icon will be transformed as if it were painted onto the ground. (Automatically sets rotationAlignment)"}]
+     * suggestions: return [{if: "value=canvas", alsoShowIf: "value=", then: "The icon will stay upward and not be transformed as if it sticks to the screen"}, {if: "value=map", then: "The icon will be transformed as if it were painted onto the ground. (Automatically sets rotationAlignment)"}]
      * group: expert
      */
     pitchAlignment?: "canvas" | "map" | TagRenderingConfigJson

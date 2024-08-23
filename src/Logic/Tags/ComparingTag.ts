@@ -1,6 +1,7 @@
 import { TagsFilter } from "./TagsFilter"
 import { Tag } from "./Tag"
 import { ExpressionSpecification } from "maplibre-gl"
+import { OptimizedTag } from "./TagTypes"
 
 export default class ComparingTag extends TagsFilter {
     public readonly key: string
@@ -121,8 +122,8 @@ export default class ComparingTag extends TagsFilter {
         return this.key + this._representation + this._boundary
     }
 
-    optimize(): TagsFilter | boolean {
-        return this
+    optimize(): (ComparingTag & OptimizedTag) | boolean {
+        return <any>this
     }
 
     isNegative(): boolean {

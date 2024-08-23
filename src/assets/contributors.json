@@ -1,7 +1,7 @@
 {
   "contributors": [
     {
-      "commits": 7612,
+      "commits": 7956,
       "contributor": "Pieter Vander Vennet"
     },
     {
@@ -106,6 +106,10 @@
     },
     {
       "commits": 11,
+      "contributor": "Flo Edelmann"
+    },
+    {
+      "commits": 11,
       "contributor": "Thibault Molleman"
     },
     {
@@ -114,11 +118,11 @@
     },
     {
       "commits": 10,
-      "contributor": "LiamSimons"
+      "contributor": "danieldegroot2"
     },
     {
-      "commits": 9,
-      "contributor": "Flo Edelmann"
+      "commits": 10,
+      "contributor": "LiamSimons"
     },
     {
       "commits": 9,
@@ -139,10 +143,6 @@
     {
       "commits": 8,
       "contributor": "Mateusz Konieczny"
-    },
-    {
-      "commits": 7,
-      "contributor": "danieldegroot2"
     },
     {
       "commits": 7,
@@ -175,6 +175,10 @@
     {
       "commits": 3,
       "contributor": "Léo Villeveygoux"
+    },
+    {
+      "commits": 2,
+      "contributor": "Niklas Vogel"
     },
     {
       "commits": 2,
@@ -239,6 +243,10 @@
     {
       "commits": 2,
       "contributor": "Stanislas Gueniffey"
+    },
+    {
+      "commits": 1,
+      "contributor": "Bart Louwers"
     },
     {
       "commits": 1,

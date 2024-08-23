@@ -63,9 +63,11 @@ export interface LayerConfigJson {
      *
      * types: Load data with specific tags from OpenStreetMap ; Load data from an external geojson source ;
      * typesdefault: 0
+     * ifunset: Determine the tags automatically based on the presets
      * group: Basic
      */
     source:
+        | undefined
         | "special"
         | "special:library"
         | {
@@ -242,7 +244,9 @@ export interface LayerConfigJson {
 
     /**
      * Creates points to render on the map.
-     * This can render points for point-objects, lineobjects or areaobjects; use 'location' to indicate where it should be rendered
+     * This can render points for point-objects, lineobjects or areaobjects; use 'location' to indicate where it should be rendered.
+     *
+     * Note that all attributes - including [the calculated tags](https://github.com/pietervdvn/MapComplete/blob/develop/Docs/CalculatedTags.md) can be used to create the markers and lines
      *
      * group: pointrendering
      */

@@ -102,8 +102,8 @@ export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, L
                 render: trs(t.popupTitle, { title }),
             },
             calculatedTags: [
-                "_first_comment=get(feat)('comments')[0].text.toLowerCase()",
-                "_trigger_index=(() => {const lines = feat.properties['_first_comment'].split('\\n'); const matchesMapCompleteURL = lines.map(l => l.match(\".*https://mapcomplete.\\(org|osm.be\\)/\\([a-zA-Z_-]+\\)\\(.html\\)?.*#import\")); const matchedIndexes = matchesMapCompleteURL.map((doesMatch, i) => [doesMatch !== null, i]).filter(v => v[0]).map(v => v[1]); return matchedIndexes[0] })()",
+                "_first_comment=get(feat)('comments')[0]?.text?.toLowerCase() ?? ''",
+                "_trigger_index=(() => {const lines = feat.properties['_first_comment']?.split('\\n') ?? []; const matchesMapCompleteURL = lines.map(l => l.match(\".*https://mapcomplete.\\(org|osm.be\\)/\\([a-zA-Z_-]+\\)\\(.html\\)?.*#import\")); const matchedIndexes = matchesMapCompleteURL.map((doesMatch, i) => [doesMatch !== null, i]).filter(v => v[0]).map(v => v[1]); return matchedIndexes[0] })()",
                 "_comments_count=get(feat)('comments').length",
                 "_intro=(() => {const lines = get(feat)('comments')[0].text.split('\\n'); lines.splice(get(feat)('_trigger_index')-1, lines.length); return lines.filter(l => l !== '').join('<br/>');})()",
                 "_tags=(() => {let lines = get(feat)('comments')[0].text.split('\\n').map(l => l.trim()); lines.splice(0, get(feat)('_trigger_index') + 1); lines = lines.filter(l => l != ''); return lines.join(';');})()",
@@ -163,11 +163,11 @@ export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, L
                     render: "{add_image_to_note()}",
                 },
                 {
-                    id: "nearby_images",
+                    id: "nearby_images_note",
                     render: tr(t.nearbyImagesIntro),
                 },
                 {
-                    id: "all_tags",
+                    id: "all_tags_note",
                     render: "{all_tags()}",
                     metacondition: {
                         or: [

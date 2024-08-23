@@ -3,4 +3,5 @@ export interface AuthConfig {
     oauth_client_id: string
     oauth_secret: string
     url: string
+    api_url: string
 }

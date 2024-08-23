@@ -8,8 +8,8 @@
         "title": "Mappa dei defibrillatori (DAE)"
     },
     "artwork": {
-        "description": "Benvenuto/a sulla mappa libera dell’arte, una mappa delle statue, i busti, i graffiti e le altre realizzazioni artistiche di tutto il mondo",
-        "title": "Mappa libera delle opere d'arte"
+        "description": "Una mappa libera delle statue, i busti, i graffiti e le altre opere d'arte di tutto il mondo",
+        "title": "Opere d'arte"
     },
     "atm": {
         "description": "Questa mappa mostra gli sportelli Bancomat per ritirare o depositare del denaro",
@@ -35,8 +35,14 @@
         "shortDescription": "Una mappa delle panchine",
         "title": "Panchine"
     },
+    "bicycle_parkings": {
+        "description": "Una mappa che mostra tutti i tipi di parcheggi per biciclette",
+        "title": "Parcheggi per biciclette"
+    },
     "bicycle_rental": {
-        "description": "In questa mappa trovi i luoghi conosciuti da OpenStreetMap dove puoi noleggiare delle biciclette"
+        "description": "In questa mappa trovi i luoghi conosciuti da OpenStreetMap dove puoi noleggiare delle biciclette",
+        "shortDescription": "Una mappa con le stazioni e i negozi per il noleggio delle biciclette",
+        "title": "Noleggio biciclette"
     },
     "bicyclelib": {
         "description": "«Biciclette in prestito» è un luogo dove le biciclette possono essere prese in prestito, spesso in cambio di un piccolo contributo annuale. Un caso degno di nota è quello delle biciclette in prestito per bambini che permettono loro di cambiare le dimensioni della propria bici quando quella attuale diventa troppo piccola",
@@ -56,11 +62,11 @@
         "title": "Mappa libera delle microbiblioteche"
     },
     "cafes_and_pubs": {
-        "description": "Pub e bar",
+        "description": "Caffetterie, pub e bar",
         "title": "Caffè e pub"
     },
     "campersite": {
-        "description": "Questo sito raccoglie tutti i luoghi ufficiali dove sostare con il camper e aree dove è possibile scaricare acque grigie e nere. Puoi aggiungere dettagli riguardanti i servizi forniti e il loro costo. Aggiungi foto e recensioni. Questo è al contempo un sito web e una web app. I dati sono memorizzati su OpenStreetMap in modo tale che siano per sempre liberi e riutilizzabili da qualsiasi app.",
+        "description": "Questo sito raccoglie tutti i luoghi ufficiali dove sostare con il camper e aree dove è possibile scaricare acque grigie e nere. Puoi aggiungere dettagli riguardanti i servizi forniti e il loro costo. Aggiungi foto e recensioni.",
         "layers": {
             "0": {
                 "description": "Aree camper",
@@ -123,10 +129,10 @@
                     "caravansites-long-term": {
                         "mappings": {
                             "0": {
-                                "then": "Sì, ci sono spazi per il noleggio a lungo termine, ma puoi anche pagare per singola giornata"
+                                "then": "Ci sono spazi per il noleggio a lungo termine, ma puoi anche pagare per singola giornata"
                             },
                             "1": {
-                                "then": "No, non ci sono ospiti a lungo termine qui"
+                                "then": "Non ci sono ospiti a lungo termine qui"
                             },
                             "2": {
                                 "then": "Puoi soggiornare qui solo se hai un contratto a lungo termine (se selezioni questa opzione, questo luogo sarà rimosso da questa mappa)"
@@ -333,20 +339,55 @@
                         }
                     }
                 }
-            }
-        },
-        "title": "Mappa aperta per le arrampicate"
-    },
-    "cycle_highways": {
-        "description": "Questa cartina mostra le strade per velocipedi",
-        "layers": {
-            "0": {
-                "name": "strade per biciclette",
-                "title": {
-                    "render": "strada per bicilette"
+            },
+            "1": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "Questo negozio ripara scarpe da arrampicata"
+                                },
+                                "1": {
+                                    "then": "Questo negozio non ripara scarpe da arrampicata"
+                                }
+                            },
+                            "question": "Questo negozio ripara scarpe da arrampicata?"
+                        }
+                    }
+                }
+            },
+            "2": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "Questo negozio ripara scarpe da arrampicata"
+                                },
+                                "1": {
+                                    "then": "Questo negozio non ripara scarpe da arrampicata"
+                                }
+                            },
+                            "question": "Questo negozio ripara scarpe da arrampicata?"
+                        }
+                    },
+                    "=presets": {
+                        "0": {
+                            "title": "un calzolaio"
+                        }
+                    }
                 }
             }
         },
+        "title": "Palestre, club e luoghi attrezzati per l'arrampicata"
+    },
+    "clock": {
+        "description": "Mappa di tutti gli orologi pubblici",
+        "title": "Orologi"
+    },
+    "cycle_highways": {
+        "description": "Questa cartina mostra le strade per velocipedi",
         "title": "Strade per velocipedi"
     },
     "cycle_infra": {
@@ -388,6 +429,12 @@
                         "0": {
                             "then": "Questa è una strada ciclabile (e ha un limite di velocità massima di 30 km/h)"
                         },
+                        "1": {
+                            "then": "Questa strada è una strada per biciclette"
+                        },
+                        "2": {
+                            "then": "Questa strada è una strada per biciclette (ha un limite di velocità di 30 km/h e i veicoli non sono ammessi)(il segnale verrà richiesto più tardi)"
+                        },
                         "3": {
                             "then": "Questa è una strada ciclabile"
                         },
@@ -400,6 +447,22 @@
                     },
                     "question": "È <b>{name}</b> una strada ciclabile?"
                 },
+                "1": {
+                    "mappings": {
+                        "0": {
+                            "then": "Permesso l'accesso ai residenti"
+                        },
+                        "1": {
+                            "then": "Permesso l'accesso ai veicoli a motore"
+                        },
+                        "2": {
+                            "then": "Permesso l'accesso ai motocicli"
+                        },
+                        "3": {
+                            "then": "Permesso l'accesso alle auto"
+                        }
+                    }
+                },
                 "2": {
                     "question": "Questa strada diventerà una strada ciclabile quando?",
                     "render": "Questa strada diventerà una strada ciclabile dal {cyclestreet:start_date}"
@@ -411,7 +474,7 @@
     },
     "cyclofix": {
         "description": "Questa mappa offre a chi va in bici una soluzione semplice per trovare tutte le infrastrutture di cui ha bisogno.<br><br>Puoi tracciare la tua posizione esatta (solo su mobile) e selezionare i livelli che ti interessano nell'angolo in basso a sinistra. Puoi anche usare questo strumento per aggiungere o modificare punti di interesse alla mappa e aggiungere nuove informazioni rispendendo alle domande.<br><br>Tutte le modifiche che apporterai saranno automaticamente salvate nel database mondiale di OpenStreetMap e potranno essere liberamente riutilizzate da tutti e tutte.<br><br>Per maggiori informazioni sul progetto ciclofix, visita <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>.",
-        "title": "Cyclofix - una mappa libera per chi va in bici"
+        "title": "Cyclofix - una mappa per chi va in bici"
     },
     "disaster_response": {
         "description": "Questa mappa contiene elementi pensati per la preparazione e risposta ai disastri.",
@@ -420,6 +483,10 @@
     "drinking_water": {
         "description": "Questa mappa mostra tutti i luoghi in cui è disponibile acqua potabile ed è possibile aggiungerne di nuovi",
         "title": "Acqua potabile"
+    },
+    "education": {
+        "description": "In questa mappa troverai informazioni su tutti i tipi di scuole e istituti di istruzione e puoi aggiungere facilmente ulteriori informazioni",
+        "title": "Istruzione"
     },
     "etymology": {
         "description": "Su questa cartina sono visibili i nomi a cui sono riferiti gli oggetti. Le strade, gli edifici, etc. provengono da OpenStreetMap che è a sua volta collegata a Wikidata. Nel popup, se esiste, verrà mostrato l’articolo Wikipedia o l'elemento Wikidata a cui si riferisce il nome di quell’oggetto. Se l’oggetto stesso ha una pagina Wikpedia, anch’essa verrà mostrata.<br/><br/><b>Anche tu puoi contribuire!</b>Ingrandisci abbastanza e <i>tutte</i> le strade appariranno. Puoi cliccare su una e apparirà un popup con la ricerca Wikidata. Con pochi clic puoi aggiungere un collegamento etimologico. Tieni presente che per farlo, hai bisogno di un account gratuito su OpenStreetMap.",
@@ -526,6 +593,7 @@
         "title": "Giardini verticali"
     },
     "food": {
+        "description": "Ristoranti e fast food",
         "title": "Ristoranti e fast food"
     },
     "fritures": {
@@ -541,29 +609,118 @@
         "description": "Una <b>bici fantasma</b> è un monumento in ricordo di un ciclista che è morto in un incidente stradale, che ha la forma di un una bicicletta bianca installata in maniera permanente ne luogo dell’incidente.<br/><br/>In questa mappa, è possibile vedere tutte le bici fantasma che sono state aggiunte su OpenStreetMap. Ne manca una? Chiunque può aggiungere o migliorare le informazioni qui presenti (è solo richiesto un account gratuito su OpenStreetMap). <p>Esiste un <a href='https://masto.bike/@ghostbikebot' target='_blank'>account automatizzato su Mastodon da aggiornamenti mensili sulle bici fantasma del mondo</a></p>",
         "title": "Bici fantasma"
     },
+    "ghostsigns": {
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "brand": {
+                        "freeform": {
+                            "placeholder": "Nome dell'attività"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "glutenfree": {
+        "description": "Una mappa in crowdsourcing per articoli senza glutine",
+        "title": "Senza glutine"
+    },
     "hackerspaces": {
         "description": "Su questa cartina è possibile vedere gli hackerspace, aggiungerne di nuovi o aggiornare le informazioni tutto in maniera pratica",
         "shortDescription": "Una cartina degli hackerspace",
-        "title": "Hackerspace"
+        "title": "Hackerspace e makerspace"
     },
     "hailhydrant": {
         "description": "In questa cartina puoi vedere e aggiornare idranti, stazioni dei pompieri, stazioni delle ambulanze ed estintori del tuo quartiere preferito.",
         "shortDescription": "Carta che mostra gli idranti, gli estintori, le caserme dei vigili del fuoco e le stazioni delle ambulanze.",
         "title": "Idranti, estintori, caserme dei vigili del fuoco e stazioni delle ambulanze"
     },
+    "healthcare": {
+        "description": "Su questa mappa sono indicati vari elementi relativi all'assistenza sanitaria",
+        "layers": {
+            "5": {
+                "override": {
+                    "=presets": {
+                        "0": {
+                            "title": "un negozio di forniture mediche"
+                        },
+                        "1": {
+                            "title": "un negozio di apparecchi acustici"
+                        },
+                        "2": {
+                            "title": "un ottico"
+                        }
+                    }
+                }
+            }
+        },
+        "title": "Assistenza sanitaria"
+    },
+    "hotels": {
+        "description": "Su questa mappa, troverai gli hotel della tua zona",
+        "title": "Hotel"
+    },
+    "icecream": {
+        "description": "Una mappa che mostra le gelaterie e i distributori automatici di gelato",
+        "title": "Gelato"
+    },
+    "indoors": {
+        "description": "Su questa mappa sono indicati i luoghi al chiuso accessibili al pubblico",
+        "title": "Al chiuso"
+    },
+    "kerbs_and_crossings": {
+        "layers": {
+            "1": {
+                "override": {
+                    "=presets": {
+                        "0": {
+                            "description": "Attraversamenti per pedoni e/o ciclisti",
+                            "title": "un incrocio"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "lighthouses": {
+        "description": "I fari sono edifici alti con una luce in cima per guidare il traffico marittimo.",
+        "title": "Fari"
+    },
     "maps": {
         "description": "In questa carta puoi trovare tutte le mappe conosciute da OpenStreetMap (tipicamente una grossa mappa su di un pannello informativo che mostra l’area, la città o la regione, ad es. una mappa turistica dietro a un manifesto, la mappa di una riserva naturale, la mappa della rete ciclistica regionale, etc.)<br/><br/>Se manca una mappa, puoi aggiungerla facilmente a questa su OpenStreetMap.",
         "shortDescription": "Questo tema mostra tutte le mappe (turistiche) di cui OpenStreetMap dispone",
         "title": "Una mappa di mappe"
+    },
+    "nature": {
+        "description": "Su questa mappa si possono trovare informazioni interessanti per turisti e amanti della natura.",
+        "shortDescription": "Una mappa per amanti della natura con interessanti POI"
     },
     "observation_towers": {
         "description": "Torri pubblicamente accessibili per godere della vista",
         "shortDescription": "Torri pubblicamente accessibili per godere della vista",
         "title": "Torri di osservazione"
     },
+    "onwheels": {
+        "description": "Su questa mappa sono indicati i luoghi pubblici accessibili con sedia a rotelle e possono essere facilmente aggiunti",
+        "layers": {
+            "8": {
+                "override": {
+                    "name": "Parcheggi per disabili"
+                }
+            },
+            "19": {
+                "override": {
+                    "=title": {
+                        "render": "Statistiche"
+                    }
+                }
+            }
+        }
+    },
     "openwindpowermap": {
         "description": "Una cartina per la visione e la modifica delle turbine eoliche.",
-        "title": "OpenWindPowerMap"
+        "title": "Generatori di energia eolica"
     },
     "parkings": {
         "description": "Questa cartina mostra diversi posti dove parcheggiare",
@@ -574,12 +731,50 @@
         "description": "Crea un tema personale basato sui livelli disponibili per tutti i temi. Per mostrare dei dati, apri <a href='#filter'>selezione livello</a>",
         "title": "Tema personale"
     },
+    "pets": {
+        "layers": {
+            "1": {
+                "override": {
+                    "name": "Ristoranti che accettano i cani"
+                }
+            },
+            "2": {
+                "override": {
+                    "name": "Negozi che accettano i cani",
+                    "title": {
+                        "render": "Negozi che accettano i cani"
+                    }
+                }
+            }
+        },
+        "title": "Veterinari, parchi accessibili ai cani e altri servizi per animali domestici"
+    },
     "playgrounds": {
         "description": "In questa cartina vengono mostrati i parchi giochi a cui è possibile aggiungere dettagli",
         "shortDescription": "Una cartina dei parchi giochi",
         "title": "Parchi giochi"
     },
     "postal_codes": {
+        "description": "Codici postali",
+        "layers": {
+            "0": {
+                "name": "codici postali",
+                "tagRenderings": {
+                    "postal_code": {
+                        "render": "Ilcodice postale è {postal_code}"
+                    }
+                },
+                "title": {
+                    "render": "Codice postale {postal_code}"
+                }
+            },
+            "2": {
+                "name": "municipi",
+                "title": {
+                    "render": "Municipio {name}"
+                }
+            }
+        },
         "shortDescription": "Codici postali",
         "title": "Codici postali"
     },
@@ -591,52 +786,29 @@
     "shops": {
         "description": "In questa cartina è possibile aggiungere informazioni di base di un negozio, orari di apertura e numeri di telefono",
         "shortDescription": "Una cartina modificabile con informazioni di base dei negozi",
-        "title": "Mappa dei negozi"
-    },
-    "sidewalks": {
-        "layers": {
-            "0": {
-                "name": "Marciapiedi",
-                "tagRenderings": {
-                    "left-right-questions": {
-                        "renderings": {
-                            "1": {
-                                "mappings": {
-                                    "0": {
-                                        "then": "C'è un marciapiede su questo lato della strada"
-                                    },
-                                    "1": {
-                                        "then": "Non c'è un marciapiede su cui camminare"
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "streetname": {
-                        "render": "La strada si chiama {name}"
-                    }
-                },
-                "title": {
-                    "render": "{name}"
-                }
-            }
-        },
-        "shortDescription": "Mappatura del marciapiede",
-        "title": "Marciapiedi"
+        "title": "Negozi"
     },
     "sport_pitches": {
         "description": "Un campo sportivo è un'area dove vengono praticati degli sport",
         "shortDescription": "Una cartina che mostra i campi sportivi",
         "title": "Campi sportivi"
     },
+    "sports": {
+        "description": "Tutto sullo sport, trova campi sportivi, centri fitness e molto altro.",
+        "shortDescription": "Mappa che mostra gli impianti sportivi.",
+        "title": "Sport"
+    },
     "stations": {
+        "description": "Visualizza, modifica e aggiungi informazioni su una stazione ferroviaria",
         "layers": {
             "3": {
                 "name": "Stazioni ferroviarie"
             }
-        }
+        },
+        "title": "Stazioni ferroviarie"
     },
     "street_lighting": {
+        "description": "Su questa mappa puoi trovare tutto ciò che riguarda l'illuminazione stradale",
         "layers": {
             "1": {
                 "name": "Strade illuminate",
@@ -698,12 +870,16 @@
     },
     "toilets": {
         "description": "Una cartina dei servizi igienici pubblici",
-        "title": "Mappa libera delle toilet"
+        "title": "Servizi igienici pubblici"
     },
     "trees": {
         "description": "Mappa tutti gli alberi!",
         "shortDescription": "Mappa tutti gli alberi",
         "title": "Alberi"
+    },
+    "vending_machine": {
+        "description": "Trova distributori automatici per ogni cosa",
+        "title": "Distributori automatici"
     },
     "waste": {
         "description": "Mappa dei cestini per i rifiuti e i centri di raccolta e riciclo rifiuti.",

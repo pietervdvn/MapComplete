@@ -2,7 +2,6 @@ import BaseUIElement from "../BaseUIElement"
 import List from "./List"
 import { marked } from "marked"
 import { parse as parse_html } from "node-html-parser"
-import { default as turndown } from "turndown"
 import { Utils } from "../../Utils"
 
 export default class TableOfContents {
@@ -98,7 +97,7 @@ export default class TableOfContents {
         const intro = md.substring(0, firstTitleIndex)
         const splitPoint = intro.lastIndexOf("\n")
 
-        return md.substring(0, splitPoint) + toc + md.substring(splitPoint)
+        return md.substring(0, splitPoint) + "\n" + toc + md.substring(splitPoint)
     }
 
     public static generateStructure(

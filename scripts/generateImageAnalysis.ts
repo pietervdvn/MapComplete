@@ -62,6 +62,7 @@ export default class GenerateImageAnalysis extends Script {
         }
         await this.fetchImages("image", datapath, refresh)
         await this.fetchImages("image:streetsign", datapath, refresh)
+        await this.fetchImages("image:menu", datapath, refresh)
         for (let i = 0; i < GenerateImageAnalysis.maxImageIndex; i++) {
             await this.fetchImages("image:" + i, datapath, refresh)
             await this.fetchImages("image" + i, datapath, refresh)

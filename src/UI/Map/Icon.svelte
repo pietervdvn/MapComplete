@@ -22,7 +22,7 @@
   import Brick_wall_square from "../../assets/svg/Brick_wall_square.svelte"
   import Brick_wall_round from "../../assets/svg/Brick_wall_round.svelte"
   import Gps_arrow from "../../assets/svg/Gps_arrow.svelte"
-  import { HeartIcon } from "@babeard/svelte-heroicons/solid"
+  import { HeartIcon, PencilIcon, WifiIcon } from "@babeard/svelte-heroicons/solid"
   import { HeartIcon as HeartOutlineIcon } from "@babeard/svelte-heroicons/outline"
   import Confirm from "../../assets/svg/Confirm.svelte"
   import Not_found from "../../assets/svg/Not_found.svelte"
@@ -36,6 +36,9 @@
   import Bug from "../../assets/svg/Bug.svelte"
   import Cross_bottom_right from "../../assets/svg/Cross_bottom_right.svelte"
   import { Utils } from "../../Utils"
+  import Gear from "../../assets/svg/Gear.svelte"
+  import { DesktopComputerIcon, UserCircleIcon } from "@rgossiaux/svelte-heroicons/solid"
+  import Relocation from "../../assets/svg/Relocation.svelte"
 
   /**
    * Renders a single icon.
@@ -45,8 +48,9 @@
 
   export let icon: string | undefined
   export let color: string | undefined = undefined
-  export let clss: string | undefined = undefined
-  export let emojiHeight = 40
+  export let clss: string | undefined = ""
+  clss ??= ""
+  export let emojiHeight = "40px"
 </script>
 
 {#if icon}
@@ -123,15 +127,27 @@
   {:else if icon === "party"}
     <Party {color} class={clss} />
   {:else if icon === "cross_bottom_right"}
-    <Cross_bottom_right {color} class={clss} />
+    <Cross_bottom_right {color} class={"m-0 " + clss} />
   {:else if icon === "addSmall"}
     <AddSmall {color} class={clss} />
+  {:else if icon === "gear"}
+    <Gear {color} class={clss} />
   {:else if icon === "link"}
     <LinkIcon style="--svg-color: {color}" class={twMerge(clss, "apply-fill")} />
   {:else if icon === "popout"}
     <LinkIcon style="--svg-color: {color}" />
+  {:else if icon === "wifi"}
+    <WifiIcon class={"m-0 " + clss} {color} />
+  {:else if icon === "computer"}
+    <DesktopComputerIcon class={"m-0 " + clss} {color} />
+  {:else if icon === "relocation"}
+    <Relocation class={clss} {color} />
+  {:else if icon === "pencil"}
+    <PencilIcon class={clss} {color} />
+  {:else if icon === "user_circle"}
+    <UserCircleIcon class={clss} {color} />
   {:else if Utils.isEmoji(icon)}
-    <span style={`font-size: ${emojiHeight}px; line-height: ${emojiHeight}px`}>
+    <span style=  {`font-size: ${emojiHeight}; line-height: ${emojiHeight}`}>
       {icon}
     </span>
   {:else}

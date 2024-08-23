@@ -222,4 +222,9 @@ export interface TagRenderingConfigJson {
      * Values are split on ` `  (space)
      */
     classes?: string
+
+    /**
+     * This tagRendering can introduce this builtin filter
+     */
+    filter?: string[]
 }

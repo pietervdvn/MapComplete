@@ -35,6 +35,23 @@
             "1": {
                 "title": "un mupi"
             },
+            "10": {
+                "description": "Una pieza de tela impermeable con un mensaje impreso, anclada permanentemente en una pared",
+                "title": "una lona"
+            },
+            "11": {
+                "title": "un tótem"
+            },
+            "12": {
+                "description": "Se utiliza para carteles publicitarios, letreros de neón, logotipos y carteles en entradas institucionales",
+                "title": "un señal"
+            },
+            "13": {
+                "title": "una escultura"
+            },
+            "14": {
+                "title": "una pared pintada"
+            },
             "2": {
                 "title": "un mupi sobre la pared"
             },
@@ -60,23 +77,6 @@
             },
             "9": {
                 "title": "una pantalla montada en una marquesina de tránsito"
-            },
-            "10": {
-                "description": "Una pieza de tela impermeable con un mensaje impreso, anclada permanentemente en una pared",
-                "title": "una lona"
-            },
-            "11": {
-                "title": "un tótem"
-            },
-            "12": {
-                "description": "Se utiliza para carteles publicitarios, letreros de neón, logotipos y carteles en entradas institucionales",
-                "title": "un señal"
-            },
-            "13": {
-                "title": "una escultura"
-            },
-            "14": {
-                "title": "una pared pintada"
             }
         },
         "tagRenderings": {
@@ -171,6 +171,9 @@
                     "1": {
                         "then": "Esto es un tablón de anuncios"
                     },
+                    "10": {
+                        "then": "Esto es una pared pintada"
+                    },
                     "2": {
                         "then": "Esto es una columna"
                     },
@@ -194,9 +197,6 @@
                     },
                     "9": {
                         "then": "Esto es un tótem"
-                    },
-                    "10": {
-                        "then": "Esto es una pared pintada"
                     }
                 },
                 "question": "¿Qué tipo de elemento publicitario es?",
@@ -210,6 +210,9 @@
                 },
                 "1": {
                     "then": "Tablon de anuncios"
+                },
+                "10": {
+                    "then": "Pared Pintada"
                 },
                 "2": {
                     "then": "Mupi"
@@ -234,15 +237,29 @@
                 },
                 "9": {
                     "then": "Tótem"
-                },
-                "10": {
-                    "then": "Pared Pintada"
                 }
             }
         }
     },
     "aerialway": {
-        "description": "Diversas formas de transporte de pasajeros y mercancías que utilizan cables, como teleféricos, telecabinas, telesillas, telesquíes y tirolinas. "
+        "description": "Diversas formas de transporte de pasajeros y mercancías que utilizan cables, como teleféricos, telecabinas, telesillas, telesquíes y tirolinas. ",
+        "pointRendering": {
+            "1": {
+                "label": {
+                    "render": "{name}"
+                }
+            }
+        },
+        "tagRenderings": {
+            "duration": {
+                "question": "¿Cuánto dura un viaje en este ascensor?",
+                "questionHint": "Esto elimina el tiempo de espera.",
+                "render": "Un viaje dura {duration} minutos"
+            },
+            "occupancy": {
+                "question": "¿Cuál es la capacidad de la cabina?"
+            }
+        }
     },
     "ambulancestation": {
         "description": "Una estación de ambulancias es una zona para almacenar vehículos de ambulancia, equipamiento médico, equipos de protección personal y otros suministros médicos.",
@@ -358,6 +375,15 @@
                     "1": {
                         "then": "Mural"
                     },
+                    "10": {
+                        "then": "Azulejo (Baldosas decorativas Españolas y Portuguesas)"
+                    },
+                    "11": {
+                        "then": "Cerámica"
+                    },
+                    "12": {
+                        "then": "Tallado en madera"
+                    },
                     "2": {
                         "then": "Pintura"
                     },
@@ -381,15 +407,6 @@
                     },
                     "9": {
                         "then": "Relieve"
-                    },
-                    "10": {
-                        "then": "Azulejo (Baldosas decorativas Españolas y Portuguesas)"
-                    },
-                    "11": {
-                        "then": "Cerámica"
-                    },
-                    "12": {
-                        "then": "Tallado en madera"
                     }
                 },
                 "question": "¿Qué tipo de obra es esta pieza?",
@@ -434,7 +451,7 @@
     "atm": {
         "description": "Cajeros automáticos para retirar dinero",
         "filter": {
-            "1": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "Con salida de audio"
@@ -1085,7 +1102,7 @@
                 "question": "¿Cuánto cuesta utilizar el servicio de limpieza?",
                 "render": "Utilizar el servicio de limpieza cuesta {charge}"
             },
-            "bike_cleaning-service:bicycle:cleaning:charge": {
+            "bike_cleaning-service_bicycle_cleaning_charge": {
                 "mappings": {
                     "0": {
                         "then": "El servicio de limpieza es gratuito"
@@ -1378,14 +1395,14 @@
     "bike_shop": {
         "description": "Una tiene que vende específicamente bicis u objetos relacionados",
         "filter": {
-            "1": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "Vende bicicletas de segunda mano"
                     }
                 }
             },
-            "2": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "Ofrece herramientas para autorreparación de bicis"
@@ -1399,125 +1416,10 @@
                 "title": "un taller/tienda de bicis"
             }
         },
-        "tagRenderings": {
-            "bike_repair_bike-pump-service": {
-                "mappings": {
-                    "0": {
-                        "then": "Esta tienda ofrece una bomba para cualquiera"
-                    },
-                    "1": {
-                        "then": "Esta tienda no ofrece una bomba para cualquiera"
-                    },
-                    "2": {
-                        "then": "Hay una bomba para bicicletas, se muestra como un punto separado"
-                    }
-                },
-                "question": "¿Esta tienda ofrece una bomba para que la utilice cualquiera?"
-            },
-            "bike_repair_bike-wash": {
-                "mappings": {
-                    "0": {
-                        "then": "Esta tienda limpia bicicletas"
-                    },
-                    "1": {
-                        "then": "Esta tienda tiene una instalación donde uno puede limpiar bicicletas por si mismo"
-                    },
-                    "2": {
-                        "then": "Esta tienda no ofrece limpieza de bicicletas"
-                    }
-                },
-                "question": "¿Aquí se lavan bicicletas?"
-            },
-            "bike_repair_rents-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "Esta tienda alquila bicis"
-                    },
-                    "1": {
-                        "then": "Esta tienda no alquila bicis"
-                    }
-                },
-                "question": "¿Alquila bicicis esta tienda?"
-            },
-            "bike_repair_repairs-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "Esta tienda repara bicis"
-                    },
-                    "1": {
-                        "then": "Esta tienda no repara bicis"
-                    },
-                    "2": {
-                        "then": "Esta tienda solo repara bicis compradas aquí"
-                    },
-                    "3": {
-                        "then": "Esta tienda solo repara bicis de una cierta marca"
-                    }
-                },
-                "question": "¿Repara bicis esta tienda?"
-            },
-            "bike_repair_second-hand-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "Esta tienda vende bicis de segunda mano"
-                    },
-                    "1": {
-                        "then": "Esta tienda no vende bicis de segunda mano"
-                    },
-                    "2": {
-                        "then": "Esta tienda solo vende bicis de segunda mano"
-                    }
-                },
-                "question": "¿Vende bicis de segunda mano esta tienda?"
-            },
-            "bike_repair_sells-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "Esta tienda vende bicis"
-                    },
-                    "1": {
-                        "then": "Esta tienda no vende bicis"
-                    }
-                },
-                "question": "¿Vende bicis esta tienda?"
-            },
-            "bike_repair_tools-service": {
-                "mappings": {
-                    "0": {
-                        "then": "Esta tienda ofrece herramientas para la reparación DIY"
-                    },
-                    "1": {
-                        "then": "Esta tienda no ofrece herramientas para la reparación DIY"
-                    },
-                    "2": {
-                        "then": "Las herramientas para reparaciones DIT solo están disponibles si compraste/alquilaste la bicicleta en la tienda"
-                    }
-                },
-                "question": "¿Hay herramientas para reparar tu propia bici?"
-            },
-            "bike_shop-access": {
-                "render": "Solo accesible a {access}"
-            },
-            "bike_shop-is-bicycle_shop": {
-                "mappings": {
-                    "0": {
-                        "then": "Este negocio se centra en el alquiler"
-                    }
-                },
-                "render": "Esta tienda está especializada en vender {shop} y hace actividades relacionadas con bicicletas"
-            },
-            "bike_shop-name": {
-                "question": "¿Cual es el nombre de esta tienda de bicicletas?",
-                "render": "Esta tienda de bicicletas se llama {name}"
-            }
-        },
         "title": {
             "mappings": {
                 "0": {
                     "then": "Tienda de material deportivo <i>{name}</i>"
-                },
-                "1": {
-                    "then": "Winkel"
                 },
                 "2": {
                     "then": "Tienda de alquiler de bicicletas <i>{name}</i>"
@@ -1529,6 +1431,9 @@
                     "then": "Tienda de bicis <i>{name}</i>"
                 },
                 "5": {
+                    "then": "Taller/tienda de bicis <i>{name}</i>"
+                },
+                "6": {
                     "then": "Taller/tienda de bicis <i>{name}</i>"
                 }
             },
@@ -1834,6 +1739,12 @@
             "render": "Cruce"
         }
     },
+    "cycle_highways": {
+        "name": "autovías ciclistas",
+        "title": {
+            "render": "autovía ciclista"
+        }
+    },
     "cycleways_and_roads": {
         "description": "Todas las infraestructuras sobre las que se puede circular en bicicleta, acompañadas de preguntas sobre las mismas",
         "name": "Carriles bici y carreteras",
@@ -1877,6 +1788,12 @@
                     "1": {
                         "then": "Este carril bici está pavimentado"
                     },
+                    "10": {
+                        "then": "Este carril bici está hecho de gravilla"
+                    },
+                    "12": {
+                        "then": "Este carril bici está hecho de tierra natural"
+                    },
                     "2": {
                         "then": "Este carril bici está hecho de asfalto"
                     },
@@ -1891,12 +1808,6 @@
                     },
                     "9": {
                         "then": "Este carril bici está hecho de grava"
-                    },
-                    "10": {
-                        "then": "Este carril bici está hecho de gravilla"
-                    },
-                    "12": {
-                        "then": "Este carril bici está hecho de tierra natural"
                     }
                 },
                 "question": "¿De qué superficie está hecho este carril bici?",
@@ -1942,6 +1853,9 @@
                     "1": {
                         "then": "Este carril bici está pavimentado"
                     },
+                    "10": {
+                        "then": "Este carril bici está hecho de gravilla"
+                    },
                     "2": {
                         "then": "Este carril bici está hecho de asfalto"
                     },
@@ -1953,9 +1867,6 @@
                     },
                     "9": {
                         "then": "Este carril bici está hecho de grava"
-                    },
-                    "10": {
-                        "then": "Este carril bici está hecho de gravilla"
                     }
                 },
                 "question": "¿De qué esta hecha la superficie de esta calle?",
@@ -2597,6 +2508,18 @@
                     "0": {
                         "then": "Esto es una pizzería"
                     },
+                    "10": {
+                        "then": "Aquí se sirven platos Chinos"
+                    },
+                    "11": {
+                        "then": "Aquí se sirven platos Griegos"
+                    },
+                    "12": {
+                        "then": "Aquí se sirven platos Indios"
+                    },
+                    "13": {
+                        "then": "Aquí se sirven platos Turcos"
+                    },
                     "2": {
                         "then": "Principalmente sirve pasta"
                     },
@@ -2617,18 +2540,6 @@
                     },
                     "9": {
                         "then": "Aquí se sirven platos Franceses"
-                    },
-                    "10": {
-                        "then": "Aquí se sirven platos Chinos"
-                    },
-                    "11": {
-                        "then": "Aquí se sirven platos Griegos"
-                    },
-                    "12": {
-                        "then": "Aquí se sirven platos Indios"
-                    },
-                    "13": {
-                        "then": "Aquí se sirven platos Turcos"
                     }
                 },
                 "question": "¿Qué tipo de comida sirven aquí?",
@@ -2939,11 +2850,11 @@
         "tagRenderings": {
             "memorial-type": {
                 "mappings": {
-                    "9": {
-                        "then": "Es un obelisco"
-                    },
                     "10": {
                         "then": "Es una cruz"
+                    },
+                    "9": {
+                        "then": "Es un obelisco"
                     }
                 }
             }
@@ -3034,6 +2945,19 @@
                     }
                 }
             },
+            "10": {
+                "options": {
+                    "0": {
+                        "question": "Todas las notas"
+                    },
+                    "1": {
+                        "question": "Ocultar las notas de importación"
+                    },
+                    "2": {
+                        "question": "Solo mostrar las notas de importación"
+                    }
+                }
+            },
             "2": {
                 "options": {
                     "0": {
@@ -3087,19 +3011,6 @@
                 "options": {
                     "0": {
                         "question": "Solo mostrar las notas abiertas"
-                    }
-                }
-            },
-            "10": {
-                "options": {
-                    "0": {
-                        "question": "Todas las notas"
-                    },
-                    "1": {
-                        "question": "Ocultar las notas de importación"
-                    },
-                    "2": {
-                        "question": "Solo mostrar las notas de importación"
                     }
                 }
             }
@@ -3548,7 +3459,7 @@
             },
             "opening_hours_by_appointment": {
                 "override": {
-                    "mappings": {
+                    "+mappings": {
                         "0": {
                             "then": "Sólo con cita previa"
                         },
@@ -3704,24 +3615,6 @@
                     "1": {
                         "question": "Reciclaje de baterías"
                     },
-                    "3": {
-                        "question": "Reciclaje de latas"
-                    },
-                    "4": {
-                        "question": "Reciclaje de ropa"
-                    },
-                    "5": {
-                        "question": "Reciclaje de aceite de cocina"
-                    },
-                    "6": {
-                        "question": "Reciclaje de aceite de motor"
-                    },
-                    "8": {
-                        "question": "Reciclaje de residuos orgánicos"
-                    },
-                    "9": {
-                        "question": "Reciclaje de botellas de cristal"
-                    },
                     "10": {
                         "question": "Reciclaje de cristal"
                     },
@@ -3748,6 +3641,24 @@
                     },
                     "18": {
                         "question": "Reciclaje de pequeños electrodomésticos"
+                    },
+                    "3": {
+                        "question": "Reciclaje de latas"
+                    },
+                    "4": {
+                        "question": "Reciclaje de ropa"
+                    },
+                    "5": {
+                        "question": "Reciclaje de aceite de cocina"
+                    },
+                    "6": {
+                        "question": "Reciclaje de aceite de motor"
+                    },
+                    "8": {
+                        "question": "Reciclaje de residuos orgánicos"
+                    },
+                    "9": {
+                        "question": "Reciclaje de botellas de cristal"
                     }
                 }
             }
@@ -3790,27 +3701,6 @@
                     "0": {
                         "then": "Aquí se pueden reciclar baterías"
                     },
-                    "2": {
-                        "then": "Aquí se pueden reciclar latas"
-                    },
-                    "3": {
-                        "then": "Aquí se puede reciclar ropa"
-                    },
-                    "4": {
-                        "then": "Aquí se puede reciclar aceite de cocina"
-                    },
-                    "5": {
-                        "then": "Aquí se puede reciclar aceite de motor"
-                    },
-                    "7": {
-                        "then": "Los residuos orgánicos pueden reciclarse aquí"
-                    },
-                    "8": {
-                        "then": "Aquí se pueden reciclar residuos orgánicos"
-                    },
-                    "9": {
-                        "then": "Aquí se pueden reciclar botellas de cristal"
-                    },
                     "10": {
                         "then": "Aquí se puede reciclar cristal"
                     },
@@ -3835,8 +3725,29 @@
                     "19": {
                         "then": "Aquí se puede reciclar chatarra"
                     },
+                    "2": {
+                        "then": "Aquí se pueden reciclar latas"
+                    },
                     "20": {
                         "then": "El calzado se puede reciclar aquí"
+                    },
+                    "3": {
+                        "then": "Aquí se puede reciclar ropa"
+                    },
+                    "4": {
+                        "then": "Aquí se puede reciclar aceite de cocina"
+                    },
+                    "5": {
+                        "then": "Aquí se puede reciclar aceite de motor"
+                    },
+                    "7": {
+                        "then": "Los residuos orgánicos pueden reciclarse aquí"
+                    },
+                    "8": {
+                        "then": "Aquí se pueden reciclar residuos orgánicos"
+                    },
+                    "9": {
+                        "then": "Aquí se pueden reciclar botellas de cristal"
                     }
                 },
                 "question": "¿Qué se puede reciclar aquí?"
@@ -3909,6 +3820,93 @@
             }
         },
         "tagRenderings": {
+            "bicycle_rental": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta tienda alquila bicis"
+                    },
+                    "1": {
+                        "then": "Esta tienda no alquila bicis"
+                    }
+                },
+                "question": "¿Alquila bicicis esta tienda?"
+            },
+            "bike_pump_service": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta tienda ofrece una bomba para cualquiera"
+                    },
+                    "1": {
+                        "then": "Esta tienda no ofrece una bomba para cualquiera"
+                    },
+                    "2": {
+                        "then": "Hay una bomba para bicicletas, se muestra como un punto separado"
+                    }
+                },
+                "question": "¿Esta tienda ofrece una bomba para que la utilice cualquiera?"
+            },
+            "bike_repair_tools": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta tienda ofrece herramientas para la reparación DIY"
+                    },
+                    "1": {
+                        "then": "Esta tienda no ofrece herramientas para la reparación DIY"
+                    },
+                    "2": {
+                        "then": "Las herramientas para reparaciones DIT solo están disponibles si compraste/alquilaste la bicicleta en la tienda"
+                    }
+                },
+                "question": "¿Hay herramientas para reparar tu propia bici?"
+            },
+            "bike_second_hand": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta tienda vende bicis de segunda mano"
+                    },
+                    "1": {
+                        "then": "Esta tienda no vende bicis de segunda mano"
+                    },
+                    "2": {
+                        "then": "Esta tienda solo vende bicis de segunda mano"
+                    }
+                },
+                "question": "¿Vende bicis de segunda mano esta tienda?"
+            },
+            "bike_wash": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta tienda limpia bicicletas"
+                    },
+                    "1": {
+                        "then": "Esta tienda tiene una instalación donde uno puede limpiar bicicletas por si mismo"
+                    },
+                    "2": {
+                        "then": "Esta tienda no ofrece limpieza de bicicletas"
+                    }
+                },
+                "question": "¿Aquí se lavan bicicletas?"
+            },
+            "repairs_bikes": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta tienda repara bicis"
+                    },
+                    "1": {
+                        "then": "Esta tienda no repara bicis"
+                    },
+                    "2": {
+                        "then": "Esta tienda solo repara bicis compradas aquí"
+                    },
+                    "3": {
+                        "then": "Esta tienda solo repara bicis de una cierta marca"
+                    }
+                },
+                "question": "¿Repara bicis esta tienda?"
+            },
+            "sells_new_bikes": {
+                "question": "¿Vende bicis esta tienda?"
+            },
             "shops-name": {
                 "question": "¿Cual es el nombre de esta tienda?"
             }
@@ -4170,6 +4168,12 @@
                     "1": {
                         "then": "Esta lámpara utiliza LEDs"
                     },
+                    "10": {
+                        "then": "Esta lámpara utiliza lámparas de sodio de alta presión (naranja con blanco)"
+                    },
+                    "11": {
+                        "then": "Esta lampara se ilumina con gas"
+                    },
                     "2": {
                         "then": "Esta lámpara utiliza iluminación incandescente"
                     },
@@ -4190,12 +4194,6 @@
                     },
                     "9": {
                         "then": "Esta lámpara utiliza lámparas de sodio de baja presión (naranja monocromo)"
-                    },
-                    "10": {
-                        "then": "Esta lámpara utiliza lámparas de sodio de alta presión (naranja con blanco)"
-                    },
-                    "11": {
-                        "then": "Esta lampara se ilumina con gas"
                     }
                 },
                 "question": "¿Qué tipo de iluminación utiliza esta lámpara?"
@@ -4776,9 +4774,6 @@
             },
             "vending": {
                 "mappings": {
-                    "8": {
-                        "then": "Aquí se venden cámaras de aire para bicicletas"
-                    },
                     "22": {
                         "then": "Las luces para bicicletas se venden aquí"
                     },
@@ -4793,6 +4788,9 @@
                     },
                     "26": {
                         "then": "Aquí se venden candados para bicicletas"
+                    },
+                    "8": {
+                        "then": "Aquí se venden cámaras de aire para bicicletas"
                     }
                 }
             }

@@ -9,7 +9,6 @@ import {
     DoesImageExist,
     PrevalidateTheme,
     ValidateLayer,
-    ValidateThemeAndLayers,
     ValidateThemeEnsemble,
 } from "../src/Models/ThemeConfig/Conversion/Validation"
 import { Translation } from "../src/UI/i18n/Translation"
@@ -31,6 +30,10 @@ import PointRenderingConfig from "../src/Models/ThemeConfig/PointRenderingConfig
 import { ConversionContext } from "../src/Models/ThemeConfig/Conversion/ConversionContext"
 import { GenerateFavouritesLayer } from "./generateFavouritesLayer"
 import LayoutConfig from "../src/Models/ThemeConfig/LayoutConfig"
+import Translations from "../src/UI/i18n/Translations"
+import { Translatable } from "../src/Models/ThemeConfig/Json/Translatable"
+import { ValidateThemeAndLayers } from "../src/Models/ThemeConfig/Conversion/ValidateThemeAndLayers"
+import { ExtractImages } from "../src/Models/ThemeConfig/Conversion/FixImages"
 
 // This scripts scans 'src/assets/layers/*.json' for layer definition files and 'src/assets/themes/*.json' for theme definition files.
 // It spits out an overview of those to be used to load them
@@ -78,15 +81,16 @@ class ParseLayer extends Conversion<
         }
         const fixed = this._prepareLayer.convert(parsed, context.inOperation("PrepareLayer"))
 
-        if (!fixed.source) {
-            context.enter("source").err("No source is configured")
+        if (!fixed.source && fixed.presets?.length < 1) {
+            context.enter("source").err("No source is configured. (Tags might be automatically derived if presets are given)")
             return undefined
         }
 
         if (
+            fixed.source &&
             typeof fixed.source !== "string" &&
-            fixed.source["osmTags"] &&
-            fixed.source["osmTags"]["and"] === undefined
+            fixed.source?.["osmTags"] &&
+            fixed.source?.["osmTags"]["and"] === undefined
         ) {
             fixed.source["osmTags"] = { and: [fixed.source["osmTags"]] }
         }
@@ -177,6 +181,10 @@ class LayerOverviewUtils extends Script {
         return publicLayerIds
     }
 
+    public static cleanTranslation(t: Record<string, string> | Translation): Translatable {
+        return Translations.T(t).OnEveryLanguage((s) => parse_html(s).textContent).translations
+    }
+
     shouldBeUpdated(sourcefile: string | string[], targetfile: string): boolean {
         if (!existsSync(targetfile)) {
             return true
@@ -226,7 +234,7 @@ class LayerOverviewUtils extends Script {
             const data = {
                 id: theme.id,
                 title: theme.title,
-                shortDescription: theme.shortDescription,
+                shortDescription: LayerOverviewUtils.cleanTranslation(theme.shortDescription),
                 icon: theme.icon,
                 hideFromOverview: theme.hideFromOverview,
                 mustHaveLanguage: theme.mustHaveLanguage,
@@ -409,6 +417,11 @@ class LayerOverviewUtils extends Script {
         sharedLayers.forEach((_, key) => {
             priviliged.delete(key)
         })
+
+        // These two get a free pass
+        priviliged.delete("summary")
+        priviliged.delete("last_click")
+
         if (priviliged.size > 0) {
             throw (
                 "Priviliged layer " +
@@ -799,6 +812,13 @@ class LayerOverviewUtils extends Script {
                     try {
                         ScriptUtils.ReadSvgSync(themeFile.icon, (svg) => {
                             const width: string = svg["$"].width
+                            if (width === undefined) {
+                                throw (
+                                    "The logo at " +
+                                    themeFile.icon +
+                                    " does not have a defined width"
+                                )
+                            }
                             const height: string = svg["$"].height
                             const err = themeFile.hideFromOverview ? console.warn : console.error
                             if (width !== height) {
@@ -806,6 +826,14 @@ class LayerOverviewUtils extends Script {
                                     `the icon for theme ${themeFile.id} is not square. Please square the icon at ${themeFile.icon}` +
                                     ` Width = ${width} height = ${height}`
                                 err(e)
+                            }
+
+                            if (width?.endsWith("%")) {
+                                throw (
+                                    "The logo at " +
+                                    themeFile.icon +
+                                    " has a relative width; this is not supported"
+                                )
                             }
 
                             const w = parseInt(width)
@@ -824,6 +852,15 @@ class LayerOverviewUtils extends Script {
                     }
                 }
 
+                const usedImages = Utils.Dedup(
+                    new ExtractImages(true, knownTagRenderings)
+                        .convertStrict(themeFile)
+                        .map((x) => x.path)
+                )
+                usedImages.sort()
+
+                themeFile["_usedImages"] = usedImages
+
                 this.writeTheme(themeFile)
                 fixed.set(themeFile.id, themeFile)
 
@@ -841,10 +878,7 @@ class LayerOverviewUtils extends Script {
                         ...t,
                         hideFromOverview: t.hideFromOverview ?? false,
                         shortDescription:
-                            t.shortDescription ??
-                            new Translation(t.description)
-                                .FirstSentence()
-                                .OnEveryLanguage((s) => parse_html(s).textContent).translations,
+                            t.shortDescription ?? new Translation(t.description).FirstSentence(),
                         mustHaveLanguage: t.mustHaveLanguage?.length > 0,
                     }
                 })

@@ -1,0 +1,191 @@
+{
+  "id": "assisted_repair",
+  "name": {
+    "en": "Repair cafés and assisted repair workshops",
+    "de": "Repair-Cafés und unterstützte Reparaturwerkstätten"
+  },
+  "description": {
+    "en": "A self-assisted workshop is a location where people can come and repair their goods with help of volunteers and with the tools available at the given location.  A repair café is a type of event organized regularly along the same principles.",
+    "de": "Eine Selbsthilfewerkstatt ist ein Ort, an dem Menschen ihre Gegenstände mit Hilfe von Freiwilligen und den vor Ort verfügbaren Werkzeugen reparieren können. Ein Repair-Café ist eine Art von Veranstaltung, die regelmäßig nach denselben Prinzipien organisiert wird."
+  },
+  "source": {
+    "osmTags": "repair=assisted_self_service"
+  },
+  "minzoom": 1,
+  "title": {
+    "render": {
+      "en": "Workshop for assisted repair",
+      "de": "Werkstatt für unterstützte Reparaturen"
+    },
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": {
+          "en": "{name}",
+          "de": "{name}"
+        }
+      }
+    ]
+  },
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": {
+            "render": "gear",
+            "mappings": [
+              {
+                "if": {
+                  "or": [
+                    "bicycle:repair=yes",
+                    "service:bicycle:repair=yes"
+                  ]
+                },
+                "then": "./assets/layers/hackerspace/bicycle.svg"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "width": 1,
+      "color": "blue"
+    }
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "an assisted repair workshop",
+        "de": "Eine unterstützte Reparaturwerkstatt"
+      },
+      "tags": [
+        "amenity=workshop",
+        "repair=assisted_self_service"
+      ],
+      "description": {
+        "en": "A location with a permanent workshop where people can come to repair items with the help of volunteers.",
+        "de": "Ein Ort mit einer festen Werkstatt, in der Menschen mit Hilfe von Freiwilligen Gegenstände reparieren können."
+      }
+    }
+  ],
+  "tagRenderings": [
+    "images",
+    "preset_description",
+    {
+      "question": {
+        "en": "What is the name of this repair workshop?",
+        "de": "Wie heißt diese Reparaturwerkstatt?"
+      },
+      "id": "name",
+      "render": {
+        "en": "This workshop is called <b>{name}</b>",
+        "de": "Diese Werkstatt heißt <b>{name}</b>"
+      },
+      "freeform": {
+        "key": "name"
+      }
+    },
+    "opening_hours_by_appointment",
+    "contact",
+    "mastodon",
+    "facebook",
+    {
+      "question": {
+        "en": "What type of items are repaired here?",
+        "de": "Welche Art von Gegenständen wird hier repariert?"
+      },
+      "id": "item:repair",
+      "mappings": [
+        {
+          "if": "service:mobile_phone:repair=yes",
+          "alsoShowIf": "mobile_phone:repair=yes",
+          "addExtraTags": [
+            "mobile_phone:repair="
+          ],
+          "then": {
+            "en": "Mobile phones are repaired here",
+            "de": "Mobiltelefone werden hier repariert"
+          },
+          "ifnot": "service:mobile_phone:repair=no"
+        },
+        {
+          "if": "service:computer:repair=yes",
+          "alsoShowIf": "computer:repair=yes",
+          "addExtraTags": [
+            "computer:repair="
+          ],
+          "then": {
+            "en": "Computers are repaired here",
+            "de": "Computer werden hier repariert"
+          },
+          "ifnot": "service:computer:repair=no"
+        },
+        {
+          "if": "service:bicycle:repair=yes",
+          "alsoShowIf": "bicycle:repair=yes",
+          "addExtraTags": [
+            "bicycle:repair="
+          ],
+          "then": {
+            "en": "Bicycles are repaired here",
+            "de": "Fahrräder werden hier repariert"
+          },
+          "ifnot": "service:bicycle:repair=no"
+        },
+        {
+          "if": "service:electronics:repair=yes",
+          "alsoShowIf": "bicycle:repair=yes",
+          "addExtraTags": [
+            "bicycle:repair="
+          ],
+          "then": {
+            "en": "Electronic devices are repaired here",
+            "de": "Elektronische Geräte werden hier repariert"
+          },
+          "ifnot": "service:electronics:repair=no",
+          "icon": "./assets/layers/recycling/small_electrical_appliances.svg"
+        },
+        {
+          "if": "service:furniture:repair=yes",
+          "alsoShowIf": "furniture:repair=yes",
+          "addExtraTags": [
+            "furniture:repair="
+          ],
+          "then": {
+            "en": "Furniture is repaired here",
+            "de": "Möbel werden hier repariert"
+          },
+          "ifnot": "service:furniture:repair=no",
+          "icon": "./assets/layers/recycling/furniture.svg"
+        },
+        {
+          "if": "service:clothes:repair=yes",
+          "alsoShowIf": "clothes:repair=yes",
+          "addExtraTags": [
+            "clothes:repair="
+          ],
+          "then": {
+            "en": "Clothes are repaired here",
+            "de": "Kleidung wird hier repariert"
+          },
+          "ifnot": "service:clothes:repair=no",
+          "icon": "./assets/layers/recycling/clothes.svg"
+        }
+      ],
+      "multiAnswer": true
+    }
+  ],
+  "deletion": {},
+  "allowMove": true
+}

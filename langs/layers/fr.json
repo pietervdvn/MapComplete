@@ -300,6 +300,36 @@
             "render": "Station d’ambulances"
         }
     },
+    "animal_shelter": {
+        "name": "Abri pour animaux",
+        "presets": {
+            "0": {
+                "title": "refuge animalier"
+            }
+        },
+        "tagRenderings": {
+            "2": {
+                "question": "Quel est le nom de ce refuge animalier ?",
+                "render": "Ce refuge s'appelle <b>{name}</b>"
+            },
+            "6": {
+                "mappings": {
+                    "0": {
+                        "then": "Les animaux sont gardés jusqu'à ce qu'ils soient adoptés par un nouveau maître"
+                    },
+                    "1": {
+                        "then": "Les animaux sont recueillis pour le reste de leur vie"
+                    },
+                    "2": {
+                        "then": "Les animaux blessés sont soignés jusqu'à ce qu'ils soient en état d'être relâchés dans la nature "
+                    }
+                }
+            }
+        },
+        "title": {
+            "render": "Un refuge animalier"
+        }
+    },
     "artwork": {
         "description": "Une carte ouverte de statues, bustes, graffitis et autres œuvres d'art de par le monde",
         "name": "Œuvres d'art",
@@ -1034,7 +1064,7 @@
                 "question": "Combien cela coûte-t-il d'utiliser le service de nettoyage ?",
                 "render": "L’utilisation du service de nettoyage coûte {charge}"
             },
-            "bike_cleaning-service:bicycle:cleaning:charge": {
+            "bike_cleaning-service_bicycle_cleaning_charge": {
                 "mappings": {
                     "0": {
                         "then": "Le service de nettoyage est gratuit"
@@ -1355,14 +1385,14 @@
     "bike_shop": {
         "description": "Un magasin vendant spécifiquement des vélos ou des objets en lien",
         "filter": {
-            "1": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "Vend des vélos usagés"
                     }
                 }
             },
-            "2": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "Offre des services DIY"
@@ -1376,125 +1406,10 @@
                 "title": "une magasin et réparateur de vélo"
             }
         },
-        "tagRenderings": {
-            "bike_repair_bike-pump-service": {
-                "mappings": {
-                    "0": {
-                        "then": "Ce magasin offre une pompe en acces libre"
-                    },
-                    "1": {
-                        "then": "Ce magasin n'offre pas de pompe en libre accès"
-                    },
-                    "2": {
-                        "then": "Il y a une pompe à vélo, c'est indiqué comme un point séparé"
-                    }
-                },
-                "question": "Est-ce que ce magasin offre une pompe en accès libre ?"
-            },
-            "bike_repair_bike-wash": {
-                "mappings": {
-                    "0": {
-                        "then": "Ce magasin lave les vélos"
-                    },
-                    "1": {
-                        "then": "Ce magasin a une installation pour laver soi même des vélos"
-                    },
-                    "2": {
-                        "then": "Ce magasin ne fait pas le nettoyage de vélo"
-                    }
-                },
-                "question": "Lave-t-on les vélos ici ?"
-            },
-            "bike_repair_rents-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "Ce magasin loue des vélos"
-                    },
-                    "1": {
-                        "then": "Ce magasin ne loue pas de vélos"
-                    }
-                },
-                "question": "Est-ce ce magasin loue des vélos ?"
-            },
-            "bike_repair_repairs-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "Ce magasin répare des vélos"
-                    },
-                    "1": {
-                        "then": "Ce magasin ne répare pas les vélos"
-                    },
-                    "2": {
-                        "then": "Ce magasin ne répare seulement les vélos achetés là-bas"
-                    },
-                    "3": {
-                        "then": "Ce magasin ne répare seulement des marques spécifiques"
-                    }
-                },
-                "question": "Est-ce que ce magasin répare des vélos ?"
-            },
-            "bike_repair_second-hand-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "Ce magasin vend des vélos d'occasion"
-                    },
-                    "1": {
-                        "then": "Ce magasin ne vend pas de vélos d'occasion"
-                    },
-                    "2": {
-                        "then": "Ce magasin vend seulement des vélos d'occasion"
-                    }
-                },
-                "question": "Est-ce ce magasin vend des vélos d'occasion ?"
-            },
-            "bike_repair_sells-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "Ce magasin vend des vélos"
-                    },
-                    "1": {
-                        "then": "Ce magasin ne vend pas de vélo"
-                    }
-                },
-                "question": "Est-ce que ce magasin vend des vélos ?"
-            },
-            "bike_repair_tools-service": {
-                "mappings": {
-                    "0": {
-                        "then": "Ce magasin offre des outils pour réparer son vélo soi-même"
-                    },
-                    "1": {
-                        "then": "Ce magasin n'offre pas des outils pour réparer son vélo soi-même"
-                    },
-                    "2": {
-                        "then": "Des outils d'auto-réparation sont disponibles uniquement si vous avez acheté ou loué le vélo dans ce magasin"
-                    }
-                },
-                "question": "Est-ce qu'il y a des outils pour réparer son vélo dans ce magasin ?"
-            },
-            "bike_shop-access": {
-                "render": "Seulement accessible à {access}"
-            },
-            "bike_shop-is-bicycle_shop": {
-                "mappings": {
-                    "0": {
-                        "then": "Ce commerce est spécialisé dans la location"
-                    }
-                },
-                "render": "Ce magasin est spécialisé dans la vente de {shop} et a des activités liées au vélo"
-            },
-            "bike_shop-name": {
-                "question": "Quel est le nom du magasin de vélos ?",
-                "render": "Ce magasin s'appelle {name}"
-            }
-        },
         "title": {
             "mappings": {
                 "0": {
                     "then": "Magasin d'équipements de sport <i>{name}</i>"
-                },
-                "1": {
-                    "then": "Magasin"
                 },
                 "2": {
                     "then": "Magasin de location de vélo <i>{name}</i>"
@@ -1506,6 +1421,9 @@
                     "then": "Magasin de vélo <i>{name}</i>"
                 },
                 "5": {
+                    "then": "Magasin ou réparateur de vélo <i>{name}</i>"
+                },
+                "6": {
                     "then": "Magasin ou réparateur de vélo <i>{name}</i>"
                 }
             },
@@ -1754,6 +1672,31 @@
                 "options": {
                     "0": {
                         "question": "Seulement les stations de recharge qui fonctionnent"
+                    }
+                }
+            }
+        },
+        "tagRenderings": {
+            "Authentication": {
+                "mappings": {
+                    "0": {
+                        "then": "Authentification par carte de membre"
+                    },
+                    "1": {
+                        "then": "Authentification par une application"
+                    },
+                    "2": {
+                        "then": "Authentification possible par appel téléphonique"
+                    },
+                    "3": {
+                        "then": "Authentification possible par SMS"
+                    }
+                }
+            },
+            "Operational status": {
+                "mappings": {
+                    "0": {
+                        "then": "Cette station de recharge fonctionne"
                     }
                 }
             }
@@ -2385,6 +2328,12 @@
                 }
             },
             "render": "Traversée"
+        }
+    },
+    "cycle_highways": {
+        "name": "Aménagements cyclables",
+        "title": {
+            "render": "Aménagement cyclable"
         }
     },
     "cycleways_and_roads": {
@@ -3651,13 +3600,11 @@
         "name": "Vélos fantômes",
         "presets": {
             "0": {
+                "description": "Un <b>vélo fantôme</b> est un monument commémoratif pour un cycliste décédé dans un accident de la route, sous la forme d'un vélo blanc placé en permanence près du lieu de l'accident.",
                 "title": "une vélo fantôme"
             }
         },
         "tagRenderings": {
-            "ghost-bike-explanation": {
-                "render": "Un <b>vélo fantôme</b> est un monument commémoratif pour un cycliste décédé dans un accident de la route, sous la forme d'un vélo blanc placé en permanence près du lieu de l'accident."
-            },
             "ghost_bike-inscription": {
                 "question": "Quelle est l'inscription sur ce vélo fantôme ?",
                 "render": "<i>{inscription}</i>"
@@ -3733,32 +3680,6 @@
                 },
                 "question": "Quel type d'itinéraire indique ce panneau ?"
             }
-        }
-    },
-    "hotel": {
-        "description": "Couche affichant les hôtels",
-        "name": "Hôtels",
-        "presets": {
-            "0": {
-                "title": "un hôtel"
-            }
-        },
-        "tagRenderings": {
-            "name": {
-                "freeform": {
-                    "placeholder": "Nom de l'hôtel"
-                },
-                "question": "Quel est le nom de cet hôtel ?",
-                "render": "Cet hôtel s'appelle {name}"
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Hôtel {name}"
-                }
-            },
-            "render": "Hôtel"
         }
     },
     "hydrant": {
@@ -4306,6 +4227,89 @@
                         "question": "Ouverte par {search}"
                     }
                 }
+            },
+            "3": {
+                "options": {
+                    "0": {
+                        "question": "<b>Exclure</b>les notes ouvertes par {search}"
+                    }
+                }
+            },
+            "4": {
+                "options": {
+                    "0": {
+                        "question": "Dernière modification par {search}"
+                    }
+                }
+            },
+            "5": {
+                "options": {
+                    "0": {
+                        "question": "Ouverte après le {search}"
+                    }
+                }
+            },
+            "6": {
+                "options": {
+                    "0": {
+                        "question": "Créée avant le {search}"
+                    }
+                }
+            },
+            "7": {
+                "options": {
+                    "0": {
+                        "question": "Créée après le {search}"
+                    }
+                }
+            },
+            "8": {
+                "options": {
+                    "0": {
+                        "question": "Montrer uniquement les notes ouvertes par un contributeur anonyme"
+                    }
+                }
+            },
+            "9": {
+                "options": {
+                    "0": {
+                        "question": "Montrer uniquement les notes ouvertes"
+                    }
+                }
+            },
+            "10": {
+                "options": {
+                    "0": {
+                        "question": "Toutes les notes"
+                    }
+                }
+            }
+        },
+        "name": "Notes OpenStreetMap",
+        "tagRenderings": {
+            "nearby-images": {
+                "render": {
+                    "before": "<h3>Images à proximité</h3>Les images suivantes sont dans les environs de cette note et pourraient aider à sa résolution."
+                }
+            },
+            "report-contributor": {
+                "render": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle'>Signaler {_first_user} pour du spam ou des messages inapropriés</a>"
+            },
+            "report-note": {
+                "render": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Signaler cette note comme spam ou contenu inapproprié</a>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Note fermée"
+                }
+            },
+            "render": "Note"
+        },
+        "titleIcons": {
+            "0": {
+                "ariaLabel": "Voir sur OpenStreetMap.org"
             }
         }
     },
@@ -5035,7 +5039,7 @@
             },
             "opening_hours_by_appointment": {
                 "override": {
-                    "mappings": {
+                    "+mappings": {
                         "0": {
                             "then": "Uniquement sur rendez-vous"
                         },
@@ -5638,6 +5642,73 @@
             }
         },
         "tagRenderings": {
+            "bicycle_rental": {
+                "mappings": {
+                    "0": {
+                        "then": "Ce magasin loue des vélos"
+                    },
+                    "1": {
+                        "then": "Ce magasin ne loue pas de vélos"
+                    }
+                },
+                "question": "Est-ce ce magasin loue des vélos ?"
+            },
+            "bike_pump_service": {
+                "mappings": {
+                    "0": {
+                        "then": "Ce magasin offre une pompe en acces libre"
+                    },
+                    "1": {
+                        "then": "Ce magasin n'offre pas de pompe en libre accès"
+                    },
+                    "2": {
+                        "then": "Il y a une pompe à vélo, c'est indiqué comme un point séparé"
+                    }
+                },
+                "question": "Est-ce que ce magasin offre une pompe en accès libre ?"
+            },
+            "bike_repair_tools": {
+                "mappings": {
+                    "0": {
+                        "then": "Ce magasin offre des outils pour réparer son vélo soi-même"
+                    },
+                    "1": {
+                        "then": "Ce magasin n'offre pas des outils pour réparer son vélo soi-même"
+                    },
+                    "2": {
+                        "then": "Des outils d'auto-réparation sont disponibles uniquement si vous avez acheté ou loué le vélo dans ce magasin"
+                    }
+                },
+                "question": "Est-ce qu'il y a des outils pour réparer son vélo dans ce magasin ?"
+            },
+            "bike_second_hand": {
+                "mappings": {
+                    "0": {
+                        "then": "Ce magasin vend des vélos d'occasion"
+                    },
+                    "1": {
+                        "then": "Ce magasin ne vend pas de vélos d'occasion"
+                    },
+                    "2": {
+                        "then": "Ce magasin vend seulement des vélos d'occasion"
+                    }
+                },
+                "question": "Est-ce ce magasin vend des vélos d'occasion ?"
+            },
+            "bike_wash": {
+                "mappings": {
+                    "0": {
+                        "then": "Ce magasin lave les vélos"
+                    },
+                    "1": {
+                        "then": "Ce magasin a une installation pour laver soi même des vélos"
+                    },
+                    "2": {
+                        "then": "Ce magasin ne fait pas le nettoyage de vélo"
+                    }
+                },
+                "question": "Lave-t-on les vélos ici ?"
+            },
             "copyshop-print-sizes": {
                 "mappings": {
                     "0": {
@@ -5677,6 +5748,34 @@
                     }
                 },
                 "question": "Ce commerce propose-t-il des produits bio ?"
+            },
+            "repairs_bikes": {
+                "mappings": {
+                    "0": {
+                        "then": "Ce magasin répare des vélos"
+                    },
+                    "1": {
+                        "then": "Ce magasin ne répare pas les vélos"
+                    },
+                    "2": {
+                        "then": "Ce magasin ne répare seulement les vélos achetés là-bas"
+                    },
+                    "3": {
+                        "then": "Ce magasin ne répare seulement des marques spécifiques"
+                    }
+                },
+                "question": "Est-ce que ce magasin répare des vélos ?"
+            },
+            "sells_new_bikes": {
+                "mappings": {
+                    "0": {
+                        "then": "Ce magasin vend des vélos nouveaux"
+                    },
+                    "1": {
+                        "then": "Ce magasin ne vend pas de vélo nouveaux"
+                    }
+                },
+                "question": "Est-ce que ce magasin vend des vélos ?"
             },
             "shops-name": {
                 "question": "Qu'est-ce que le nom de ce magasin ?",
@@ -6405,6 +6504,20 @@
             }
         }
     },
+    "tourism_accomodation": {
+        "presets": {
+            "0": {
+                "title": "un hôtel"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Hôtel {name}"
+                }
+            }
+        }
+    },
     "trail": {
         "name": "Sentiers",
         "tagRenderings": {
@@ -6803,6 +6916,13 @@
                 "mappings": {
                     "0": {
                         "then": "Vous avez fait {_csCount} modifications ! C'est génial !"
+                    }
+                }
+            },
+            "edit-profile": {
+                "render": {
+                    "special": {
+                        "text": "Modifier ton profil"
                     }
                 }
             },

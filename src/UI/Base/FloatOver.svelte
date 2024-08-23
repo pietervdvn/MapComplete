@@ -1,8 +1,8 @@
 <script lang="ts">
   import { createEventDispatcher } from "svelte"
-  import { XCircleIcon } from "@rgossiaux/svelte-heroicons/solid"
   import { ariaLabel } from "../../Utils/ariaLabel"
   import Translations from "../i18n/Translations"
+  import { XCircleIcon } from "@babeard/svelte-heroicons/solid"
 
   /**
    * The slotted element will be shown on top, with a lower-opacity border
@@ -37,13 +37,14 @@
     </div>
     <slot name="close-button">
       <!-- The close button is placed _after_ the default slot in order to always paint it on top -->
-      <button
-        class="absolute right-10 top-10 h-8 w-8 cursor-pointer rounded-full border-none bg-white p-0"
+      <div
+        class="absolute right-10 top-10 m-0 cursor-pointer rounded-full border-0 border-none bg-white p-0"
+        style="margin: -0.25rem"
         on:click={() => dispatch("close")}
         use:ariaLabel={Translations.t.general.backToMap}
       >
-        <XCircleIcon />
-      </button>
+        <XCircleIcon class="h-8 w-8" />
+      </div>
     </slot>
   </div>
 </div>

@@ -63,30 +63,6 @@
       "value": "doctorate"
     },
     {
-      "key": "capacity",
-      "description": "Layer 'Colleges and universities' shows and asks freeform values for key 'capacity' (in the mapcomplete.org theme 'Education')"
-    },
-    {
-      "key": "school:gender",
-      "description": "Layer 'Colleges and universities' shows school:gender=mixed with a fixed text, namely 'Both boys and girls can enroll here and have classes together' and allows to pick this as a default answer (in the mapcomplete.org theme 'Education')",
-      "value": "mixed"
-    },
-    {
-      "key": "school:gender",
-      "description": "Layer 'Colleges and universities' shows school:gender=separated with a fixed text, namely 'Both boys and girls can enroll here but they are separated (e.g. they have lessons in different classrooms or at different times)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Education')",
-      "value": "separated"
-    },
-    {
-      "key": "school:gender",
-      "description": "Layer 'Colleges and universities' shows school:gender=male with a fixed text, namely 'This is a boys only-school' and allows to pick this as a default answer (in the mapcomplete.org theme 'Education')",
-      "value": "male"
-    },
-    {
-      "key": "school:gender",
-      "description": "Layer 'Colleges and universities' shows school:gender=female with a fixed text, namely 'This is a girls-only school' and allows to pick this as a default answer (in the mapcomplete.org theme 'Education')",
-      "value": "female"
-    },
-    {
       "key": "website",
       "description": "Layer 'Colleges and universities' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'Education')"
     },
@@ -185,6 +161,55 @@
       "key": "school:gender",
       "description": "Layer 'Primary and secondary schools' shows school:gender=female with a fixed text, namely 'This is a girls-only school' and allows to pick this as a default answer (in the mapcomplete.org theme 'Education')",
       "value": "female"
+    },
+    {
+      "key": "pedagogy",
+      "description": "Layer 'Primary and secondary schools' shows and asks freeform values for key 'pedagogy' (in the mapcomplete.org theme 'Education')"
+    },
+    {
+      "key": "pedagogy",
+      "description": "Layer 'Primary and secondary schools' shows pedagogy=mainstream with a fixed text, namely 'This school does not use a specific pedagogy' and allows to pick this as a default answer (in the mapcomplete.org theme 'Education')",
+      "value": "mainstream"
+    },
+    {
+      "key": "pedagogy",
+      "description": "Layer 'Primary and secondary schools' shows pedagogy=montessori with a fixed text, namely 'This school uses the Montessori method of education' and allows to pick this as a default answer (in the mapcomplete.org theme 'Education')",
+      "value": "montessori"
+    },
+    {
+      "key": "pedagogy",
+      "description": "Layer 'Primary and secondary schools' shows pedagogy=freinet with a fixed text, namely 'This school is associated with the Freinet Modern School Movement' and allows to pick this as a default answer (in the mapcomplete.org theme 'Education')",
+      "value": "freinet"
+    },
+    {
+      "key": "pedagogy",
+      "description": "Layer 'Primary and secondary schools' shows pedagogy=jenaplan with a fixed text, namely 'This school uses the Jenaplan teaching concept' and allows to pick this as a default answer (in the mapcomplete.org theme 'Education')",
+      "value": "jenaplan"
+    },
+    {
+      "key": "pedagogy",
+      "description": "Layer 'Primary and secondary schools' shows pedagogy=waldorf with a fixed text, namely 'This school uses the Steiner/Waldorf educational philosophy' and allows to pick this as a default answer (in the mapcomplete.org theme 'Education')",
+      "value": "waldorf"
+    },
+    {
+      "key": "pedagogy",
+      "description": "Layer 'Primary and secondary schools' shows pedagogy=dalton with a fixed text, namely 'This school uses the Dalton plan teaching concept' and allows to pick this as a default answer (in the mapcomplete.org theme 'Education')",
+      "value": "dalton"
+    },
+    {
+      "key": "pedagogy",
+      "description": "Layer 'Primary and secondary schools' shows pedagogy=outdoor with a fixed text, namely 'This school uses outdoor learning' and allows to pick this as a default answer (in the mapcomplete.org theme 'Education')",
+      "value": "outdoor"
+    },
+    {
+      "key": "pedagogy",
+      "description": "Layer 'Primary and secondary schools' shows pedagogy=reggio_emilia with a fixed text, namely 'This school uses the Reggio Emilia approach' and allows to pick this as a default answer (in the mapcomplete.org theme 'Education')",
+      "value": "reggio_emilia"
+    },
+    {
+      "key": "pedagogy",
+      "description": "Layer 'Primary and secondary schools' shows pedagogy=sudbury with a fixed text, namely 'This school uses the Sudbury system' and allows to pick this as a default answer (in the mapcomplete.org theme 'Education')",
+      "value": "sudbury"
     },
     {
       "key": "school:for",

@@ -1,118 +1,9 @@
 import * as fs from "fs"
+import Script from "./Script"
 
 function genImages(dryrun = false) {
     console.log("Generating images")
-    // These images are not referenced via 'Svg.ts' anymore and can be ignored
-    const blacklist: string[] = [
-        "add",
-        "addSmall",
-        "back",
-        "circle",
-        "blocked",
-        "brick_wall",
-        "brick_wall_raw",
-        "brick_wall_round",
-        "brick_wall_square",
-        "bug",
-        "center",
-        "checkmark",
-        "clock",
-        "close",
-        "community",
-        "compass",
-        "compass_arrow",
-        "confirm",
-        "copyright",
-        "cross",
-        "cross_bottom_right",
-        "crosshair",
-        "crosshair_locked",
-        "crosshair-locked",
-        "delete_not_allowed",
-        "direction_gradient",
-        "direction_stroke",
-        "duplicate",
-        "elevator",
-        "elevator_wheelchair",
-        "envelope",
-        "eye",
-        "filter",
-        "filter_disable",
-        "floppy",
-        "gear",
-        "gender_bi",
-        "gender_inter",
-        "gender_female",
-        "gender_male",
-        "gender_trans",
-        "gender_queer",
-        "generic_map",
-        "gps_arrow",
-        "hand",
-        "help",
-        "home",
-        "length_crosshair",
-        "length-crosshair",
-        "liberapay",
-        "location",
-        "location_empty",
-        "location_locked",
-        "location_refused",
-        "location-refused",
-        "location_unlocked",
-        "logo",
-        "logout",
-        "mapcomplete_logo",
-        "mapillary",
-        "mapillary_black",
-        "mastodon",
-        "min",
-        "move",
-        "move-arrows",
-        "move_confirm",
-        "move_not_allowed",
-        "not_found",
-        "osm_logo_us",
-        "osm-logo-us",
-        "party",
-        "pencil",
-        "person",
-        "pin",
-        "plantnet_logo",
-        "plus",
-        "reload",
-        "resolved",
-        "ring",
-        "robot",
-        "scissors",
-        "search",
-        "search_disable",
-        "share",
-        "SocialImageForeground",
-        "speech_bubble",
-        "speech_bubble_black_outline",
-        "square",
-        "square_rounded",
-        "star",
-        "star_half",
-        "star_outline",
-        "teardrop",
-        "teardrop_with_hole_green",
-        "statistics",
-        "translate",
-        "triangle",
-        "up",
-        "Upload",
-        "wikidata",
-        "wikimedia-commons-white",
-        "wikimedia_commons_white",
-        "wikipedia",
-        "github",
-    ].map((s) => s.toLowerCase())
     const dir = fs.readdirSync("./assets/svg")
-
-    let module =
-        'import Img from "./UI/Base/Img";\n\n/* @deprecated */\nexport default class Svg {\n\n\n'
     for (const path of dir) {
         if (path.endsWith("license_info.json")) {
             continue
@@ -151,31 +42,22 @@ function genImages(dryrun = false) {
             svg
                 .replace(
                     "<svg ",
-                    "<svg {...$$$$restProps} on:click on:mouseover on:mouseenter on:mouseleave on:keydown "
+                    "<svg {...$$$$restProps} on:click on:mouseover on:mouseenter on:mouseleave on:keydown on:focus "
                 )
                 .replace(/\\"/g, '"')
                 .replace(/(rgb\(0%,0%,0%\)|#000000|#000)/g, "{color}")
         fs.writeFileSync("./src/assets/svg/" + nameUC + ".svelte", svelteCode, "utf8")
-
-        if (blacklist.some((item) => path.toLowerCase().endsWith(item + ".svg"))) {
-            continue
-        }
-        if (dryrun) {
-            svg = "<omitting svg - dryrun>"
-        }
-
-        let rawName = name
-
-        module += `    public static ${name} = "${svg}"\n`
-        if (!dryrun) {
-            module += `    public static ${name}_svg() { return new Img(Svg.${rawName}, true);}\n`
-        } else {
-            module += `    public static ${name}_svg() { return new Img("", true);}\n`
-        }
     }
-    module += "}\n"
-    fs.writeFileSync("src/Svg.ts", module)
-    console.log("Done")
 }
 
-genImages()
+class GenerateIncludedImages extends Script {
+    constructor() {
+        super("Converts all images from assets/svg into svelte-classes.")
+    }
+
+    async main(args: string[]): Promise<void> {
+        genImages()
+    }
+}
+
+new GenerateIncludedImages().run()

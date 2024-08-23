@@ -8,6 +8,7 @@ import { ImageUploader } from "./ImageUploader"
 export class Imgur extends ImageProvider implements ImageUploader {
     public static readonly defaultValuePrefix = ["https://i.imgur.com"]
     public static readonly singleton = new Imgur()
+    public readonly name = "Imgur"
     public readonly defaultKeyPrefixes: string[] = ["image"]
     public readonly maxFileSizeInMegabytes = 10
     public static readonly apiUrl = "https://api.imgur.com/3/image"
@@ -97,11 +98,13 @@ export class Imgur extends ImageProvider implements ImageUploader {
         const hash = url.substr("https://i.imgur.com/".length).split(/\.jpe?g/i)[0]
 
         const apiUrl = "https://api.imgur.com/3/image/" + hash
-        const response = await Utils.downloadJsonCached(apiUrl, 365 * 24 * 60 * 60, {
+        const response = await Utils.downloadJsonCached<{
+            data: { description: string; datetime: string; views: number }
+        }>(apiUrl, 365 * 24 * 60 * 60, {
             Authorization: "Client-ID " + Constants.ImgurApiKey,
         })
 
-        const descr: string = response.data.description ?? ""
+        const descr = response.data.description ?? ""
         const data: any = {}
         const imgurData = response.data
 

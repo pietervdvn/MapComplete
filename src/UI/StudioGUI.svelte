@@ -42,9 +42,13 @@
     undefined,
     "Used to complete the login"
   )
+  const fakeUser = UIEventSource.asBoolean(
+    QueryParameters.GetQueryParameter("fake-user", "Test switch for fake login")
+  )
   let osmConnection = new OsmConnection({
     oauth_token,
     checkOnlineRegularly: true,
+    fakeUser: fakeUser.data,
   })
   const expertMode = UIEventSource.asBoolean(
     osmConnection.GetPreference("studio-expert-mode", "false", {
@@ -129,7 +133,7 @@
   let showIntro = editLayerState.showIntro
 
   const layoutSchema: ConfigMeta[] = <any>layoutSchemaRaw
-  let editThemeState = new EditThemeState(layoutSchema, studio, { expertMode })
+  let editThemeState = new EditThemeState(layoutSchema, studio, osmConnection, { expertMode })
 
   const version = meta.version
 
@@ -203,9 +207,7 @@
     state.selectedTab.setData(Number(tab))
   }
 
-  uid.AsPromise().then(
-    uid => selectStateBasedOnHash(uid)
-  )
+  uid.AsPromise().then((uid) => selectStateBasedOnHash(uid))
 
   function backToStudio() {
     console.log("Back to studio")
@@ -280,9 +282,10 @@
             <Tr t={Translations.t.general.backToIndex} />
           </a>
         </div>
-        <div>
+        <div class="flex justify-between">
           <Checkbox selected={expertMode}>Enable more options (expert mode)</Checkbox>
           <span class="subtle">MapComplete version {version}</span>
+          <div>{$uid}</div>
         </div>
       </div>
     {:else if state === "edit_layer"}
@@ -309,6 +312,7 @@
 
         <ChooseLayerToEdit {osmConnection} layerIds={$selfLayers} on:layerSelected={editLayer}>
           <h3 slot="title">Your layers</h3>
+          <div class="subtle">Your id is {$uid}</div>
         </ChooseLayerToEdit>
         <h3>Layers by other contributors</h3>
         <div>
@@ -369,7 +373,7 @@
     {:else if state === "editing_layer"}
       <EditLayer state={editLayerState} {backToStudio}>
         <BackButton clss="small p-1" imageClass="w-8 h-8" on:click={() => backToStudio()}>
-          MapComplete Studio
+          Studio
         </BackButton>
       </EditLayer>
     {:else if state === "editing_theme"}

@@ -548,6 +548,13 @@
           "classes": {
             "description": "question: What css-classes should be applied to showing this attribute?\n\nA list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\n\nValues are split on ` `  (space)",
             "type": "string"
+          },
+          "filter": {
+            "description": "This tagRendering can introduce this builtin filter",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         },
         "additionalProperties": false
@@ -1027,6 +1034,16 @@
     },
     "type": "string",
     "description": "A list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\nValues are split on ` `  (space)"
+  },
+  {
+    "path": [
+      "title",
+      "filter"
+    ],
+    "required": false,
+    "hints": {},
+    "type": "array",
+    "description": "This tagRendering can introduce this builtin filter"
   },
   {
     "path": [
@@ -1584,6 +1601,16 @@
   },
   {
     "path": [
+      "titleIcons",
+      "filter"
+    ],
+    "required": false,
+    "hints": {},
+    "type": "array",
+    "description": "This tagRendering can introduce this builtin filter"
+  },
+  {
+    "path": [
       "pointRendering"
     ],
     "required": true,
@@ -1591,7 +1618,7 @@
       "group": "pointrendering"
     },
     "type": "array",
-    "description": "Creates points to render on the map.\nThis can render points for point-objects, lineobjects or areaobjects; use 'location' to indicate where it should be rendered"
+    "description": "Creates points to render on the map.\nThis can render points for point-objects, lineobjects or areaobjects; use 'location' to indicate where it should be rendered.\nNote that all attributes - including [the calculated tags](https://github.com/pietervdvn/MapComplete/blob/develop/Docs/CalculatedTags.md) can be used to create the markers and lines"
   },
   {
     "path": [
@@ -1662,14 +1689,23 @@
     ],
     "required": true,
     "hints": {
-      "typehint": "icon",
-      "types": "Use a dynamic value ; icon",
+      "types": "<span class=\"text-lg font-bold\">Use a different icon depending on the value of some attributes</span> ; icon",
       "question": "What icon should be used?",
       "suggestions": [
         {
-          "if": "value=pin",
-          "then": "pin",
-          "icon": "pin"
+          "if": "value=addSmall",
+          "then": "addSmall",
+          "icon": "addSmall"
+        },
+        {
+          "if": "value=brick_wall_round",
+          "then": "brick_wall_round",
+          "icon": "brick_wall_round"
+        },
+        {
+          "if": "value=brick_wall_square",
+          "then": "brick_wall_square",
+          "icon": "brick_wall_square"
         },
         {
           "if": "value=bug",
@@ -1677,24 +1713,19 @@
           "icon": "bug"
         },
         {
-          "if": "value=square",
-          "then": "square",
-          "icon": "square"
-        },
-        {
-          "if": "value=square_rounded",
-          "then": "square_rounded",
-          "icon": "square_rounded"
-        },
-        {
-          "if": "value=circle",
-          "then": "circle",
-          "icon": "circle"
+          "if": "value=checkmark",
+          "then": "checkmark",
+          "icon": "checkmark"
         },
         {
           "if": "value=checkmark",
           "then": "checkmark",
           "icon": "checkmark"
+        },
+        {
+          "if": "value=circle",
+          "then": "circle",
+          "icon": "circle"
         },
         {
           "if": "value=clock",
@@ -1707,9 +1738,64 @@
           "icon": "close"
         },
         {
+          "if": "value=close",
+          "then": "close",
+          "icon": "close"
+        },
+        {
+          "if": "value=confirm",
+          "then": "confirm",
+          "icon": "confirm"
+        },
+        {
+          "if": "value=computer",
+          "then": "computer",
+          "icon": "computer"
+        },
+        {
+          "if": "value=cross_bottom_right",
+          "then": "cross_bottom_right",
+          "icon": "cross_bottom_right"
+        },
+        {
           "if": "value=crosshair",
           "then": "crosshair",
           "icon": "crosshair"
+        },
+        {
+          "if": "value=desktop",
+          "then": "desktop",
+          "icon": "desktop"
+        },
+        {
+          "if": "value=direction",
+          "then": "direction",
+          "icon": "direction"
+        },
+        {
+          "if": "value=gear",
+          "then": "gear",
+          "icon": "gear"
+        },
+        {
+          "if": "value=gps_arrow",
+          "then": "gps_arrow",
+          "icon": "gps_arrow"
+        },
+        {
+          "if": "value=heart",
+          "then": "heart",
+          "icon": "heart"
+        },
+        {
+          "if": "value=heart_outline",
+          "then": "heart_outline",
+          "icon": "heart_outline"
+        },
+        {
+          "if": "value=help",
+          "then": "help",
+          "icon": "help"
         },
         {
           "if": "value=help",
@@ -1727,6 +1813,16 @@
           "icon": "invalid"
         },
         {
+          "if": "value=invalid",
+          "then": "invalid",
+          "icon": "invalid"
+        },
+        {
+          "if": "value=link",
+          "then": "link",
+          "icon": "link"
+        },
+        {
           "if": "value=location",
           "then": "location",
           "icon": "location"
@@ -1742,9 +1838,34 @@
           "icon": "location_locked"
         },
         {
+          "if": "value=mastodon",
+          "then": "mastodon",
+          "icon": "mastodon"
+        },
+        {
+          "if": "value=not_found",
+          "then": "not_found",
+          "icon": "not_found"
+        },
+        {
           "if": "value=note",
           "then": "note",
           "icon": "note"
+        },
+        {
+          "if": "value=party",
+          "then": "party",
+          "icon": "party"
+        },
+        {
+          "if": "value=pencil",
+          "then": "pencil",
+          "icon": "pencil"
+        },
+        {
+          "if": "value=pin",
+          "then": "pin",
+          "icon": "pin"
         },
         {
           "if": "value=resolved",
@@ -1762,6 +1883,16 @@
           "icon": "scissors"
         },
         {
+          "if": "value=square",
+          "then": "square",
+          "icon": "square"
+        },
+        {
+          "if": "value=square_rounded",
+          "then": "square_rounded",
+          "icon": "square_rounded"
+        },
+        {
           "if": "value=teardrop",
           "then": "teardrop",
           "icon": "teardrop"
@@ -1777,84 +1908,9 @@
           "icon": "triangle"
         },
         {
-          "if": "value=brick_wall_square",
-          "then": "brick_wall_square",
-          "icon": "brick_wall_square"
-        },
-        {
-          "if": "value=brick_wall_round",
-          "then": "brick_wall_round",
-          "icon": "brick_wall_round"
-        },
-        {
-          "if": "value=gps_arrow",
-          "then": "gps_arrow",
-          "icon": "gps_arrow"
-        },
-        {
-          "if": "value=checkmark",
-          "then": "checkmark",
-          "icon": "checkmark"
-        },
-        {
-          "if": "value=help",
-          "then": "help",
-          "icon": "help"
-        },
-        {
-          "if": "value=close",
-          "then": "close",
-          "icon": "close"
-        },
-        {
-          "if": "value=invalid",
-          "then": "invalid",
-          "icon": "invalid"
-        },
-        {
-          "if": "value=heart",
-          "then": "heart",
-          "icon": "heart"
-        },
-        {
-          "if": "value=heart_outline",
-          "then": "heart_outline",
-          "icon": "heart_outline"
-        },
-        {
-          "if": "value=link",
-          "then": "link",
-          "icon": "link"
-        },
-        {
-          "if": "value=confirm",
-          "then": "confirm",
-          "icon": "confirm"
-        },
-        {
-          "if": "value=direction",
-          "then": "direction",
-          "icon": "direction"
-        },
-        {
-          "if": "value=not_found",
-          "then": "not_found",
-          "icon": "not_found"
-        },
-        {
-          "if": "value=mastodon",
-          "then": "mastodon",
-          "icon": "mastodon"
-        },
-        {
-          "if": "value=party",
-          "then": "party",
-          "icon": "party"
-        },
-        {
-          "if": "value=addSmall",
-          "then": "addSmall",
-          "icon": "addSmall"
+          "if": "value=wifi",
+          "then": "wifi",
+          "icon": "wifi"
         }
       ]
     },
@@ -1996,8 +2052,7 @@
     ],
     "required": false,
     "hints": {
-      "typehint": "color",
-      "types": "Use a dynamic color ; icon",
+      "types": "<span class=\"text-lg font-bold\">Use a different color depending on the value of some attributes</span> ; color",
       "question": "What colour should the icon be?"
     },
     "type": [
@@ -2483,6 +2538,13 @@
           "classes": {
             "description": "question: What css-classes should be applied to showing this attribute?\n\nA list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\n\nValues are split on ` `  (space)",
             "type": "string"
+          },
+          "filter": {
+            "description": "This tagRendering can introduce this builtin filter",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         },
         "additionalProperties": false
@@ -2986,6 +3048,17 @@
   {
     "path": [
       "pointRendering",
+      "iconSize",
+      "filter"
+    ],
+    "required": false,
+    "hints": {},
+    "type": "array",
+    "description": "This tagRendering can introduce this builtin filter"
+  },
+  {
+    "path": [
+      "pointRendering",
       "anchor"
     ],
     "required": false,
@@ -3185,6 +3258,13 @@
           "classes": {
             "description": "question: What css-classes should be applied to showing this attribute?\n\nA list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\n\nValues are split on ` `  (space)",
             "type": "string"
+          },
+          "filter": {
+            "description": "This tagRendering can introduce this builtin filter",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         },
         "additionalProperties": false
@@ -3688,12 +3768,42 @@
   {
     "path": [
       "pointRendering",
+      "anchor",
+      "filter"
+    ],
+    "required": false,
+    "hints": {},
+    "type": "array",
+    "description": "This tagRendering can introduce this builtin filter"
+  },
+  {
+    "path": [
+      "pointRendering",
       "rotation"
     ],
     "required": false,
     "hints": {
+      "types": "Dynamic value ; string",
       "question": "What rotation should be applied on the icon?",
-      "ifunset": "Do not rotate"
+      "ifunset": "Do not rotate",
+      "suggestions": [
+        {
+          "if": "value={_direction:centerpoint}deg",
+          "then": "Point the top of the icon towards the end of the way"
+        },
+        {
+          "if": "value=calc( {_direction:centerpoint}deg + 90deg )",
+          "then": "Point the left of the icon towards the end of the way"
+        },
+        {
+          "if": "value=calc( {_direction:centerpoint}deg - 90deg )",
+          "then": "Point the right of the icon towards the end of the way"
+        },
+        {
+          "if": "value=calc( {_direction:centerpoint}deg + 180deg )",
+          "then": "Point the bottom of the icon towards the end of the way"
+        }
+      ]
     },
     "type": [
       {
@@ -3865,6 +3975,13 @@
           "classes": {
             "description": "question: What css-classes should be applied to showing this attribute?\n\nA list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\n\nValues are split on ` `  (space)",
             "type": "string"
+          },
+          "filter": {
+            "description": "This tagRendering can introduce this builtin filter",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         },
         "additionalProperties": false
@@ -3873,7 +3990,7 @@
         "type": "string"
       }
     ],
-    "description": "This is mostly useful for items that face a specific direction, such as surveillance cameras\nThis is interpreted as css property for 'rotate', thus has to end with 'deg', e.g. `90deg`, `{direction}deg`, `calc(90deg - {camera:direction}deg)``"
+    "description": "This is mostly useful for items that face a specific direction, such as surveillance cameras\nThis is interpreted as css property for 'rotate', thus has to end with 'deg', e.g. `90deg`, `{direction}deg`, `calc(90deg - {camera:direction}deg)`\nIf the icon is shown on the projected centerpoint of a way, one can also use `_direction:centerpoint`"
   },
   {
     "path": [
@@ -4368,6 +4485,17 @@
   {
     "path": [
       "pointRendering",
+      "rotation",
+      "filter"
+    ],
+    "required": false,
+    "hints": {},
+    "type": "array",
+    "description": "This tagRendering can introduce this builtin filter"
+  },
+  {
+    "path": [
+      "pointRendering",
       "label"
     ],
     "required": false,
@@ -4547,6 +4675,13 @@
           "classes": {
             "description": "question: What css-classes should be applied to showing this attribute?\n\nA list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\n\nValues are split on ` `  (space)",
             "type": "string"
+          },
+          "filter": {
+            "description": "This tagRendering can introduce this builtin filter",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         },
         "additionalProperties": false
@@ -5050,6 +5185,17 @@
   {
     "path": [
       "pointRendering",
+      "label",
+      "filter"
+    ],
+    "required": false,
+    "hints": {},
+    "type": "array",
+    "description": "This tagRendering can introduce this builtin filter"
+  },
+  {
+    "path": [
+      "pointRendering",
       "labelCss"
     ],
     "required": false,
@@ -5230,6 +5376,13 @@
           "classes": {
             "description": "question: What css-classes should be applied to showing this attribute?\n\nA list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\n\nValues are split on ` `  (space)",
             "type": "string"
+          },
+          "filter": {
+            "description": "This tagRendering can introduce this builtin filter",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         },
         "additionalProperties": false
@@ -5733,6 +5886,17 @@
   {
     "path": [
       "pointRendering",
+      "labelCss",
+      "filter"
+    ],
+    "required": false,
+    "hints": {},
+    "type": "array",
+    "description": "This tagRendering can introduce this builtin filter"
+  },
+  {
+    "path": [
+      "pointRendering",
       "labelCssClasses"
     ],
     "required": false,
@@ -5918,6 +6082,13 @@
           "classes": {
             "description": "question: What css-classes should be applied to showing this attribute?\n\nA list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\n\nValues are split on ` `  (space)",
             "type": "string"
+          },
+          "filter": {
+            "description": "This tagRendering can introduce this builtin filter",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         },
         "additionalProperties": false
@@ -6421,6 +6592,17 @@
   {
     "path": [
       "pointRendering",
+      "labelCssClasses",
+      "filter"
+    ],
+    "required": false,
+    "hints": {},
+    "type": "array",
+    "description": "This tagRendering can introduce this builtin filter"
+  },
+  {
+    "path": [
+      "pointRendering",
       "css"
     ],
     "required": false,
@@ -6601,6 +6783,13 @@
           "classes": {
             "description": "question: What css-classes should be applied to showing this attribute?\n\nA list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\n\nValues are split on ` `  (space)",
             "type": "string"
+          },
+          "filter": {
+            "description": "This tagRendering can introduce this builtin filter",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         },
         "additionalProperties": false
@@ -7104,6 +7293,17 @@
   {
     "path": [
       "pointRendering",
+      "css",
+      "filter"
+    ],
+    "required": false,
+    "hints": {},
+    "type": "array",
+    "description": "This tagRendering can introduce this builtin filter"
+  },
+  {
+    "path": [
+      "pointRendering",
       "cssClasses"
     ],
     "required": false,
@@ -7111,7 +7311,7 @@
       "types": "Dynamic value ; string",
       "group": "expert",
       "question": "Which CSS-classes should be applied to the entire marker?",
-      "ifunset": "Do not apply extra CSS-classes to the label",
+      "ifunset": "Do not apply extra CSS-classes to the entire marker",
       "inline": "Apply CSS-classes <b>{value}</b> to the entire container"
     },
     "type": [
@@ -7284,6 +7484,13 @@
           "classes": {
             "description": "question: What css-classes should be applied to showing this attribute?\n\nA list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\n\nValues are split on ` `  (space)",
             "type": "string"
+          },
+          "filter": {
+            "description": "This tagRendering can introduce this builtin filter",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         },
         "additionalProperties": false
@@ -7787,6 +7994,17 @@
   {
     "path": [
       "pointRendering",
+      "cssClasses",
+      "filter"
+    ],
+    "required": false,
+    "hints": {},
+    "type": "array",
+    "description": "This tagRendering can introduce this builtin filter"
+  },
+  {
+    "path": [
+      "pointRendering",
       "pitchAlignment"
     ],
     "required": false,
@@ -7796,6 +8014,7 @@
       "suggestions": [
         {
           "if": "value=canvas",
+          "alsoShowIf": "value=",
           "then": "The icon will stay upward and not be transformed as if it sticks to the screen"
         },
         {
@@ -7974,6 +8193,13 @@
           "classes": {
             "description": "question: What css-classes should be applied to showing this attribute?\n\nA list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\n\nValues are split on ` `  (space)",
             "type": "string"
+          },
+          "filter": {
+            "description": "This tagRendering can introduce this builtin filter",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         },
         "additionalProperties": false
@@ -8477,6 +8703,17 @@
     },
     "type": "string",
     "description": "A list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\nValues are split on ` `  (space)"
+  },
+  {
+    "path": [
+      "pointRendering",
+      "pitchAlignment",
+      "filter"
+    ],
+    "required": false,
+    "hints": {},
+    "type": "array",
+    "description": "This tagRendering can introduce this builtin filter"
   },
   {
     "path": [
@@ -8669,6 +8906,13 @@
           "classes": {
             "description": "question: What css-classes should be applied to showing this attribute?\n\nA list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\n\nValues are split on ` `  (space)",
             "type": "string"
+          },
+          "filter": {
+            "description": "This tagRendering can introduce this builtin filter",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         },
         "additionalProperties": false
@@ -9172,6 +9416,17 @@
     },
     "type": "string",
     "description": "A list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\nValues are split on ` `  (space)"
+  },
+  {
+    "path": [
+      "pointRendering",
+      "rotationAlignment",
+      "filter"
+    ],
+    "required": false,
+    "hints": {},
+    "type": "array",
+    "description": "This tagRendering can introduce this builtin filter"
   },
   {
     "path": [
@@ -10090,6 +10345,10 @@
           "then": "assembly_point - This layer contains assembly points and waiting areas where all employees, passengers or a large crowd assemble in case of an emergency."
         },
         {
+          "if": "value=assisted_repair",
+          "then": "assisted_repair - A self-assisted workshop is a location where people can come and repair their goods with help of volunteers and with the tools available at the given location.  A repair café is a type of event organized regularly along the same principles."
+        },
+        {
           "if": "value=atm",
           "then": "atm - ATMs to withdraw money"
         },
@@ -10100,6 +10359,10 @@
         {
           "if": "value=barrier",
           "then": "barrier - Obstacles while cycling, such as bollards and cycle barriers"
+        },
+        {
+          "if": "value=bbq",
+          "then": "bbq - A permanently installed barbecue, typically accessible to the public."
         },
         {
           "if": "value=bench",
@@ -10274,6 +10537,10 @@
           "then": "fire_station - Map layer to show fire stations."
         },
         {
+          "if": "value=firepit",
+          "then": "firepit - An outdoor place to make a fire, typically open to the public."
+        },
+        {
           "if": "value=fitness_centre",
           "then": "fitness_centre - Layer showing fitness centres"
         },
@@ -10332,10 +10599,6 @@
         {
           "if": "value=hospital",
           "then": "hospital - A layer showing hospital grounds"
-        },
-        {
-          "if": "value=hotel",
-          "then": "hotel - Layer showing all hotels"
         },
         {
           "if": "value=hydrant",
@@ -10595,7 +10858,7 @@
         },
         {
           "if": "value=summary",
-          "then": "summary - Special layer which shows `count`"
+          "then": "summary - Special layer which shows `count`, probably provided by the clustering server or some clustering algorithm"
         },
         {
           "if": "value=surveillance_camera",
@@ -10620,6 +10883,14 @@
         {
           "if": "value=toilet_at_amenity",
           "then": "toilet_at_amenity - A layer showing (public) toilets located at different places."
+        },
+        {
+          "if": "value=tool_library",
+          "then": "tool_library - A tool library is a place where people from the general public can borrow tools"
+        },
+        {
+          "if": "value=tourism_accomodation",
+          "then": "tourism_accomodation - undefined"
         },
         {
           "if": "value=trail",
@@ -10788,8 +11059,14 @@
               "postfixDistinguished": {
                 "description": "question: If this key shared and distinguished by a postfix, what is the postfix?\nThis option is used specifically for `charge`, where the cost is indicated with `/item`.\n\nFor example, a vending machine might sell `bicycle_tube`.\nSetting this value to `bicycle_tube`, then answering this question will set `charge= €XX/bicycle_tube`.\nIf charge did already contain another value, e.g. `charge= €YY/some_item; €ZZ/other_item`, then `€XX/bicycle_tube`will be added.\nNote: those values are sorted alphabetically\nNote: no need to add the `/`\n\nifunset: Don't distinguish by postfix\ngroup: expert",
                 "type": "string"
+              },
+              "helperArgs": {
+                "description": "Extra arguments to configure the input element\ngroup: hidden"
               }
-            }
+            },
+            "required": [
+              "helperArgs"
+            ]
           },
           "question": {
             "description": "question: What question should be shown to the contributor?\n\nA question is presented ot the user if no mapping matches and the 'freeform' key is not set as well.\n\nifunset: This tagrendering will be shown if it is known, but cannot be edited by the contributor, effectively resutling in a read-only rendering",
@@ -10934,6 +11211,13 @@
           "classes": {
             "description": "question: What css-classes should be applied to showing this attribute?\n\nA list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\n\nValues are split on ` `  (space)",
             "type": "string"
+          },
+          "filter": {
+            "description": "This tagRendering can introduce this builtin filter",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         },
         "required": [
@@ -11421,7 +11705,7 @@
       "question": "What extra tags should be added to the object if this object is chosen?"
     },
     "type": "array",
-    "description": "If chosen as answer, these tags will be applied onto the object, together with the tags from the `if`\nNot compatible with multiAnswer.\nThis can be used e.g. to erase other keys which indicate the 'not' value:\n```json\n{\n    \"if\": \"crossing:marking=rainbow\",\n    \"then\": \"This is a rainbow crossing\",\n    \"addExtraTags\": [\"not:crossing:marking=\"]\n}\n```"
+    "description": "If chosen as answer, these tags will be applied onto the object, together with the tags from the `if`.\nNote that if the contributor picks this mapping, saves and then changes their mind and uses a different mapping,\nthe extraTags will reside.\nE.g. when picking `memorial:type=bench`, then `amenity=bench` will also be applied.\nIf someone later on changes the type to `memorial:statue`, `amenity=bench` will stay onto the object\n(which is the desired behaviour, see e.g. for https://www.openstreetmap.org/node/5620038478)\nUse 'ifNot' to explicitly remove an tag if this is important\nIf someone marks the question as 'unknown', the extra tags will not be erased\nNot compatible with multiAnswer.\nThis can be used e.g. to erase other keys which indicate the 'not' value:\n```json\n{\n    \"if\": \"crossing:marking=rainbow\",\n    \"then\": \"This is a rainbow crossing\",\n    \"addExtraTags\": [\"not:crossing:marking=\"]\n}\n```"
   },
   {
     "path": [
@@ -11595,7 +11879,7 @@
       "suggestions": [
         {
           "if": "value=string",
-          "then": "<b>string</b> A simple piece of text"
+          "then": "<b>string</b> A simple piece of text which is at most 255 characters long"
         },
         {
           "if": "value=text",
@@ -11866,6 +12150,18 @@
     },
     "type": "string",
     "description": "This option is used specifically for `charge`, where the cost is indicated with `/item`.\nFor example, a vending machine might sell `bicycle_tube`.\nSetting this value to `bicycle_tube`, then answering this question will set `charge= €XX/bicycle_tube`.\nIf charge did already contain another value, e.g. `charge= €YY/some_item; €ZZ/other_item`, then `€XX/bicycle_tube`will be added.\nNote: those values are sorted alphabetically\nNote: no need to add the `/`"
+  },
+  {
+    "path": [
+      "tagRenderings",
+      "freeform",
+      "helperArgs"
+    ],
+    "required": true,
+    "hints": {
+      "group": "hidden"
+    },
+    "description": "Extra arguments to configure the input element"
   },
   {
     "path": [
@@ -12251,6 +12547,16 @@
     },
     "type": "string",
     "description": "A list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\nValues are split on ` `  (space)"
+  },
+  {
+    "path": [
+      "tagRenderings",
+      "filter"
+    ],
+    "required": false,
+    "hints": {},
+    "type": "array",
+    "description": "This tagRendering can introduce this builtin filter"
   },
   {
     "path": [
@@ -12696,7 +13002,7 @@
       "question": "What extra tags should be added to the object if this object is chosen?"
     },
     "type": "array",
-    "description": "If chosen as answer, these tags will be applied onto the object, together with the tags from the `if`\nNot compatible with multiAnswer.\nThis can be used e.g. to erase other keys which indicate the 'not' value:\n```json\n{\n    \"if\": \"crossing:marking=rainbow\",\n    \"then\": \"This is a rainbow crossing\",\n    \"addExtraTags\": [\"not:crossing:marking=\"]\n}\n```"
+    "description": "If chosen as answer, these tags will be applied onto the object, together with the tags from the `if`.\nNote that if the contributor picks this mapping, saves and then changes their mind and uses a different mapping,\nthe extraTags will reside.\nE.g. when picking `memorial:type=bench`, then `amenity=bench` will also be applied.\nIf someone later on changes the type to `memorial:statue`, `amenity=bench` will stay onto the object\n(which is the desired behaviour, see e.g. for https://www.openstreetmap.org/node/5620038478)\nUse 'ifNot' to explicitly remove an tag if this is important\nIf someone marks the question as 'unknown', the extra tags will not be erased\nNot compatible with multiAnswer.\nThis can be used e.g. to erase other keys which indicate the 'not' value:\n```json\n{\n    \"if\": \"crossing:marking=rainbow\",\n    \"then\": \"This is a rainbow crossing\",\n    \"addExtraTags\": [\"not:crossing:marking=\"]\n}\n```"
   },
   {
     "path": [
@@ -12879,7 +13185,7 @@
       "suggestions": [
         {
           "if": "value=string",
-          "then": "<b>string</b> A simple piece of text"
+          "then": "<b>string</b> A simple piece of text which is at most 255 characters long"
         },
         {
           "if": "value=text",
@@ -13158,6 +13464,19 @@
     },
     "type": "string",
     "description": "This option is used specifically for `charge`, where the cost is indicated with `/item`.\nFor example, a vending machine might sell `bicycle_tube`.\nSetting this value to `bicycle_tube`, then answering this question will set `charge= €XX/bicycle_tube`.\nIf charge did already contain another value, e.g. `charge= €YY/some_item; €ZZ/other_item`, then `€XX/bicycle_tube`will be added.\nNote: those values are sorted alphabetically\nNote: no need to add the `/`"
+  },
+  {
+    "path": [
+      "tagRenderings",
+      "override",
+      "freeform",
+      "helperArgs"
+    ],
+    "required": true,
+    "hints": {
+      "group": "hidden"
+    },
+    "description": "Extra arguments to configure the input element"
   },
   {
     "path": [
@@ -13559,6 +13878,17 @@
     },
     "type": "string",
     "description": "A list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\nValues are split on ` `  (space)"
+  },
+  {
+    "path": [
+      "tagRenderings",
+      "override",
+      "filter"
+    ],
+    "required": false,
+    "hints": {},
+    "type": "array",
+    "description": "This tagRendering can introduce this builtin filter"
   },
   {
     "path": [
@@ -14025,7 +14355,7 @@
       "question": "What extra tags should be added to the object if this object is chosen?"
     },
     "type": "array",
-    "description": "If chosen as answer, these tags will be applied onto the object, together with the tags from the `if`\nNot compatible with multiAnswer.\nThis can be used e.g. to erase other keys which indicate the 'not' value:\n```json\n{\n    \"if\": \"crossing:marking=rainbow\",\n    \"then\": \"This is a rainbow crossing\",\n    \"addExtraTags\": [\"not:crossing:marking=\"]\n}\n```"
+    "description": "If chosen as answer, these tags will be applied onto the object, together with the tags from the `if`.\nNote that if the contributor picks this mapping, saves and then changes their mind and uses a different mapping,\nthe extraTags will reside.\nE.g. when picking `memorial:type=bench`, then `amenity=bench` will also be applied.\nIf someone later on changes the type to `memorial:statue`, `amenity=bench` will stay onto the object\n(which is the desired behaviour, see e.g. for https://www.openstreetmap.org/node/5620038478)\nUse 'ifNot' to explicitly remove an tag if this is important\nIf someone marks the question as 'unknown', the extra tags will not be erased\nNot compatible with multiAnswer.\nThis can be used e.g. to erase other keys which indicate the 'not' value:\n```json\n{\n    \"if\": \"crossing:marking=rainbow\",\n    \"then\": \"This is a rainbow crossing\",\n    \"addExtraTags\": [\"not:crossing:marking=\"]\n}\n```"
   },
   {
     "path": [
@@ -14208,7 +14538,7 @@
       "suggestions": [
         {
           "if": "value=string",
-          "then": "<b>string</b> A simple piece of text"
+          "then": "<b>string</b> A simple piece of text which is at most 255 characters long"
         },
         {
           "if": "value=text",
@@ -14487,6 +14817,19 @@
     },
     "type": "string",
     "description": "This option is used specifically for `charge`, where the cost is indicated with `/item`.\nFor example, a vending machine might sell `bicycle_tube`.\nSetting this value to `bicycle_tube`, then answering this question will set `charge= €XX/bicycle_tube`.\nIf charge did already contain another value, e.g. `charge= €YY/some_item; €ZZ/other_item`, then `€XX/bicycle_tube`will be added.\nNote: those values are sorted alphabetically\nNote: no need to add the `/`"
+  },
+  {
+    "path": [
+      "tagRenderings",
+      "renderings",
+      "freeform",
+      "helperArgs"
+    ],
+    "required": true,
+    "hints": {
+      "group": "hidden"
+    },
+    "description": "Extra arguments to configure the input element"
   },
   {
     "path": [
@@ -14888,6 +15231,17 @@
     },
     "type": "string",
     "description": "A list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\nValues are split on ` `  (space)"
+  },
+  {
+    "path": [
+      "tagRenderings",
+      "renderings",
+      "filter"
+    ],
+    "required": false,
+    "hints": {},
+    "type": "array",
+    "description": "This tagRendering can introduce this builtin filter"
   },
   {
     "path": [
@@ -15349,7 +15703,7 @@
       "question": "What extra tags should be added to the object if this object is chosen?"
     },
     "type": "array",
-    "description": "If chosen as answer, these tags will be applied onto the object, together with the tags from the `if`\nNot compatible with multiAnswer.\nThis can be used e.g. to erase other keys which indicate the 'not' value:\n```json\n{\n    \"if\": \"crossing:marking=rainbow\",\n    \"then\": \"This is a rainbow crossing\",\n    \"addExtraTags\": [\"not:crossing:marking=\"]\n}\n```"
+    "description": "If chosen as answer, these tags will be applied onto the object, together with the tags from the `if`.\nNote that if the contributor picks this mapping, saves and then changes their mind and uses a different mapping,\nthe extraTags will reside.\nE.g. when picking `memorial:type=bench`, then `amenity=bench` will also be applied.\nIf someone later on changes the type to `memorial:statue`, `amenity=bench` will stay onto the object\n(which is the desired behaviour, see e.g. for https://www.openstreetmap.org/node/5620038478)\nUse 'ifNot' to explicitly remove an tag if this is important\nIf someone marks the question as 'unknown', the extra tags will not be erased\nNot compatible with multiAnswer.\nThis can be used e.g. to erase other keys which indicate the 'not' value:\n```json\n{\n    \"if\": \"crossing:marking=rainbow\",\n    \"then\": \"This is a rainbow crossing\",\n    \"addExtraTags\": [\"not:crossing:marking=\"]\n}\n```"
   },
   {
     "path": [
@@ -15541,7 +15895,7 @@
       "suggestions": [
         {
           "if": "value=string",
-          "then": "<b>string</b> A simple piece of text"
+          "then": "<b>string</b> A simple piece of text which is at most 255 characters long"
         },
         {
           "if": "value=text",
@@ -15828,6 +16182,20 @@
     },
     "type": "string",
     "description": "This option is used specifically for `charge`, where the cost is indicated with `/item`.\nFor example, a vending machine might sell `bicycle_tube`.\nSetting this value to `bicycle_tube`, then answering this question will set `charge= €XX/bicycle_tube`.\nIf charge did already contain another value, e.g. `charge= €YY/some_item; €ZZ/other_item`, then `€XX/bicycle_tube`will be added.\nNote: those values are sorted alphabetically\nNote: no need to add the `/`"
+  },
+  {
+    "path": [
+      "tagRenderings",
+      "renderings",
+      "override",
+      "freeform",
+      "helperArgs"
+    ],
+    "required": true,
+    "hints": {
+      "group": "hidden"
+    },
+    "description": "Extra arguments to configure the input element"
   },
   {
     "path": [
@@ -16245,6 +16613,18 @@
     },
     "type": "string",
     "description": "A list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\nValues are split on ` `  (space)"
+  },
+  {
+    "path": [
+      "tagRenderings",
+      "renderings",
+      "override",
+      "filter"
+    ],
+    "required": false,
+    "hints": {},
+    "type": "array",
+    "description": "This tagRendering can introduce this builtin filter"
   },
   {
     "path": [
@@ -16690,7 +17070,7 @@
       "question": "What extra tags should be added to the object if this object is chosen?"
     },
     "type": "array",
-    "description": "If chosen as answer, these tags will be applied onto the object, together with the tags from the `if`\nNot compatible with multiAnswer.\nThis can be used e.g. to erase other keys which indicate the 'not' value:\n```json\n{\n    \"if\": \"crossing:marking=rainbow\",\n    \"then\": \"This is a rainbow crossing\",\n    \"addExtraTags\": [\"not:crossing:marking=\"]\n}\n```"
+    "description": "If chosen as answer, these tags will be applied onto the object, together with the tags from the `if`.\nNote that if the contributor picks this mapping, saves and then changes their mind and uses a different mapping,\nthe extraTags will reside.\nE.g. when picking `memorial:type=bench`, then `amenity=bench` will also be applied.\nIf someone later on changes the type to `memorial:statue`, `amenity=bench` will stay onto the object\n(which is the desired behaviour, see e.g. for https://www.openstreetmap.org/node/5620038478)\nUse 'ifNot' to explicitly remove an tag if this is important\nIf someone marks the question as 'unknown', the extra tags will not be erased\nNot compatible with multiAnswer.\nThis can be used e.g. to erase other keys which indicate the 'not' value:\n```json\n{\n    \"if\": \"crossing:marking=rainbow\",\n    \"then\": \"This is a rainbow crossing\",\n    \"addExtraTags\": [\"not:crossing:marking=\"]\n}\n```"
   },
   {
     "path": [
@@ -16873,7 +17253,7 @@
       "suggestions": [
         {
           "if": "value=string",
-          "then": "<b>string</b> A simple piece of text"
+          "then": "<b>string</b> A simple piece of text which is at most 255 characters long"
         },
         {
           "if": "value=text",
@@ -17152,6 +17532,19 @@
     },
     "type": "string",
     "description": "This option is used specifically for `charge`, where the cost is indicated with `/item`.\nFor example, a vending machine might sell `bicycle_tube`.\nSetting this value to `bicycle_tube`, then answering this question will set `charge= €XX/bicycle_tube`.\nIf charge did already contain another value, e.g. `charge= €YY/some_item; €ZZ/other_item`, then `€XX/bicycle_tube`will be added.\nNote: those values are sorted alphabetically\nNote: no need to add the `/`"
+  },
+  {
+    "path": [
+      "tagRenderings",
+      "renderings",
+      "freeform",
+      "helperArgs"
+    ],
+    "required": true,
+    "hints": {
+      "group": "hidden"
+    },
+    "description": "Extra arguments to configure the input element"
   },
   {
     "path": [
@@ -17553,6 +17946,17 @@
     },
     "type": "string",
     "description": "A list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\nValues are split on ` `  (space)"
+  },
+  {
+    "path": [
+      "tagRenderings",
+      "renderings",
+      "filter"
+    ],
+    "required": false,
+    "hints": {},
+    "type": "array",
+    "description": "This tagRendering can introduce this builtin filter"
   },
   {
     "path": [
@@ -18014,7 +18418,7 @@
       "question": "What extra tags should be added to the object if this object is chosen?"
     },
     "type": "array",
-    "description": "If chosen as answer, these tags will be applied onto the object, together with the tags from the `if`\nNot compatible with multiAnswer.\nThis can be used e.g. to erase other keys which indicate the 'not' value:\n```json\n{\n    \"if\": \"crossing:marking=rainbow\",\n    \"then\": \"This is a rainbow crossing\",\n    \"addExtraTags\": [\"not:crossing:marking=\"]\n}\n```"
+    "description": "If chosen as answer, these tags will be applied onto the object, together with the tags from the `if`.\nNote that if the contributor picks this mapping, saves and then changes their mind and uses a different mapping,\nthe extraTags will reside.\nE.g. when picking `memorial:type=bench`, then `amenity=bench` will also be applied.\nIf someone later on changes the type to `memorial:statue`, `amenity=bench` will stay onto the object\n(which is the desired behaviour, see e.g. for https://www.openstreetmap.org/node/5620038478)\nUse 'ifNot' to explicitly remove an tag if this is important\nIf someone marks the question as 'unknown', the extra tags will not be erased\nNot compatible with multiAnswer.\nThis can be used e.g. to erase other keys which indicate the 'not' value:\n```json\n{\n    \"if\": \"crossing:marking=rainbow\",\n    \"then\": \"This is a rainbow crossing\",\n    \"addExtraTags\": [\"not:crossing:marking=\"]\n}\n```"
   },
   {
     "path": [
@@ -18206,7 +18610,7 @@
       "suggestions": [
         {
           "if": "value=string",
-          "then": "<b>string</b> A simple piece of text"
+          "then": "<b>string</b> A simple piece of text which is at most 255 characters long"
         },
         {
           "if": "value=text",
@@ -18493,6 +18897,20 @@
     },
     "type": "string",
     "description": "This option is used specifically for `charge`, where the cost is indicated with `/item`.\nFor example, a vending machine might sell `bicycle_tube`.\nSetting this value to `bicycle_tube`, then answering this question will set `charge= €XX/bicycle_tube`.\nIf charge did already contain another value, e.g. `charge= €YY/some_item; €ZZ/other_item`, then `€XX/bicycle_tube`will be added.\nNote: those values are sorted alphabetically\nNote: no need to add the `/`"
+  },
+  {
+    "path": [
+      "tagRenderings",
+      "renderings",
+      "override",
+      "freeform",
+      "helperArgs"
+    ],
+    "required": true,
+    "hints": {
+      "group": "hidden"
+    },
+    "description": "Extra arguments to configure the input element"
   },
   {
     "path": [
@@ -18910,6 +19328,18 @@
     },
     "type": "string",
     "description": "A list of css-classes to apply to the entire tagRendering.\nThese classes are applied in 'answer'-mode, not in question mode\nThis is only for advanced users.\nValues are split on ` `  (space)"
+  },
+  {
+    "path": [
+      "tagRenderings",
+      "renderings",
+      "override",
+      "filter"
+    ],
+    "required": false,
+    "hints": {},
+    "type": "array",
+    "description": "This tagRendering can introduce this builtin filter"
   },
   {
     "path": [
@@ -19133,7 +19563,15 @@
                   "description": "The tags that will be given to the object.\nThis must remove tags so that the 'source/osmTags' won't match anymore\n\nquestion: What tags should be applied to the object?"
                 },
                 "then": {
-                  "description": "The human explanation for the options\n\nquestion: What text should be shown to the contributor for this reason?"
+                  "description": "The human explanation for the options\n\nquestion: What text should be shown to the contributor for this reason?",
+                  "anyOf": [
+                    {
+                      "$ref": "#/definitions/Record<string,string>"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
                 }
               },
               "required": [
@@ -19282,6 +19720,14 @@
     "hints": {
       "question": "What text should be shown to the contributor for this reason?"
     },
+    "type": [
+      {
+        "$ref": "#/definitions/Record<string,string>"
+      },
+      {
+        "type": "string"
+      }
+    ],
     "description": "The human explanation for the options"
   },
   {

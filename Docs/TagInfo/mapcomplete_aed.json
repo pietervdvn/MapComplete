@@ -117,7 +117,7 @@
     },
     {
       "key": "defibrillator:location:fr",
-      "description": "Layer 'Defibrillators' shows and asks freeform values for key 'defibrillator:location:fr' (in the mapcomplete.org theme 'Defibrillators')"
+      "description": "Layer 'Defibrillators' shows and asks freeform values for key 'defibrillator:location:fr' (in the mapcomplete.org theme 'Defibrillators') (This is only shown if _country=be | defibrillator:location:fr~.+)"
     },
     {
       "key": "wheelchair",

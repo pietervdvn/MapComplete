@@ -1,0 +1,69 @@
+{
+  "id": "circular_economy",
+  "title": {
+    "en": "Circular economy",
+    "es": "Economía circular"
+  },
+  "description": {
+    "en": "Various items which help people to share, reuse or recycle.",
+    "es": "Varios elementos que ayudan a la gente a compartir, reutilizar o reciclar."
+  },
+  "icon": "./assets/themes/circular_economy/circular.svg",
+  "layers": [
+    {
+      "builtin": "public_bookcase",
+      "override": {
+        "minzoom": 14
+      }
+    },
+    {
+      "builtin": [
+        "bicycle_library"
+      ],
+      "override": {
+        "minzoom": 10
+      }
+    },
+    "bike_repair_station",
+    "tool_library",
+    "assisted_repair",
+    {
+      "builtin": "shops",
+      "override": {
+        "minzoom": 10,
+        "id": "shops_second_hand",
+        "=name": {
+          "en": "Second hand shops",
+          "es": "Tiendas de segunda mano"
+        },
+        "filter": null,
+        "source": {
+          "=osmTags": {
+            "or": [
+              "shop=second_hand",
+              "shop=charity",
+              {
+                "and": [
+                  "shop~*",
+                  "second_hand=yes",
+                  "second_hand=only"
+                ]
+              }
+            ]
+          }
+        },
+        "presets": null
+      }
+    },
+    {
+      "builtin": "shops",
+      "override": {
+        "minzoom": 17,
+        "name": null,
+        "filter": {
+          "sameAs": "shops_second_hand"
+        }
+      }
+    }
+  ]
+}

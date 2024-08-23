@@ -10,9 +10,10 @@ import Combine from "../Base/Combine"
 import { FixedUiElement } from "../Base/FixedUiElement"
 import { OH, OpeningHour } from "./OpeningHours"
 import { InputElement } from "../Input/InputElement"
-import PublicHolidayInput from "./PublicHolidayInput"
 import Translations from "../i18n/Translations"
 import BaseUIElement from "../BaseUIElement"
+import SvelteUIElement from "../Base/SvelteUIElement"
+import PublicHolidaySelector from "./PublicHolidaySelector.svelte"
 
 export default class OpeningHoursInput extends InputElement<string> {
     private readonly _value: UIEventSource<string>
@@ -87,19 +88,19 @@ export default class OpeningHoursInput extends InputElement<string> {
                 break
             }
         }
-        const phSelector = new PublicHolidayInput(new UIEventSource<string>(ph))
+        const phSelectorValue = new UIEventSource<string>(ph ?? "")
 
         // Note: MUST be bound AFTER the leftover rules!
         const rulesFromOhPicker: UIEventSource<OpeningHour[]> = valueWithoutPrefix.sync(
             (str) => {
                 return OH.Parse(str)
             },
-            [leftoverRules, phSelector.GetValue()],
+            [leftoverRules, phSelectorValue],
             (rules, oldString) => {
                 // We always add a ';', to easily add new rules. We remove the ';' again at the end of the function
                 // Important: spaces are _not_ allowed after a ';' as it'll destabilize the parsing!
                 let str = OH.ToString(rules) + ";"
-                const ph = phSelector.GetValue().data
+                const ph = phSelectorValue.data
                 if (ph) {
                     str += ph + ";"
                 }
@@ -138,7 +139,11 @@ export default class OpeningHoursInput extends InputElement<string> {
 
         const ohPicker = new OpeningHoursPicker(rulesFromOhPicker)
 
-        this._element = new Combine([leftoverWarning, ohPicker, phSelector])
+        this._element = new Combine([
+            leftoverWarning,
+            ohPicker,
+            new SvelteUIElement(PublicHolidaySelector, { value: phSelectorValue }),
+        ])
     }
 
     GetValue(): UIEventSource<string> {

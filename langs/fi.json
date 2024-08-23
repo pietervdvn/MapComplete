@@ -642,10 +642,8 @@
         "missing": "{count} kääntämätöntä viestiä"
     },
     "userinfo": {
-        "editDescription": "Muokkaa profiilin kuvausta",
         "gotoInbox": "Avaa Saapuneet-laatikkosi",
         "gotoSettings": "Siirry asetuksiin OpenStreetMap.org-sivustolla",
-        "noDescriptionCallToAction": "Lisää profiilin kuvaus",
         "notLoggedIn": "Olet kirjautunut ulos"
     },
     "validation": {

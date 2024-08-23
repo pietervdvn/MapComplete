@@ -1,14 +1,8 @@
 # Setting up a synced OSM-server for quick layer access
 
-## Setting up the SQL-server:
+## Setting up the SQL-server (only once):
 
 `sudo docker run --name some-postgis -e POSTGRES_PASSWORD=password -e POSTGRES_USER=user -d -p 5444:5432 -v /home/pietervdvn/data/pgsql/:/var/lib/postgresql/data postgis/postgis`
-
-Then, connect to this databank with PGAdmin, create a database within it.
-Then activate following extensions for this database (right click > Create > Extension):
-
-- Postgis activeren (rechtsklikken > Create > extension)
-- HStore activeren
 
 Increase the max number of connections. osm2pgsql needs connection one per table (and a few more), and since we are making one table per layer in MapComplete, this amounts to a lot.
 
@@ -19,9 +13,16 @@ Increase the max number of connections. osm2pgsql needs connection one per table
 - Validate with `cat /var/lib/postgresql/data/postgresql.conf | grep "max_connections"`
 - `sudo docker restart <ID>`
 
+
+> The following steps are also automated in `update.sh`
+
+## Create a database in the SQL-server
+
+Run `vite-node scripts/osm2pgsql/createNewDatabase.ts -- YYYY-MM-DD` to create a new, appropriate, database
+
 ## Create export scripts for every layer
 
-Use `vite-node ./scripts/osm2pgsql/generateBuildDbScript.ts`
+Use `npm run build:dbscript`
 
 ## Importing data
 
@@ -33,7 +34,10 @@ which will download the data to `~/Downloads`
 
 To seed the database:
 ````
-osm2pgsql -O flex -S build_db.lua -s --flat-nodes=import-help-file -d postgresql://user:password@localhost:5444/osm-poi <file>.osm.pbf 
+nohup osm2pgsql -O flex -S build_db.lua -s --flat-nodes=import-help-file -d postgresql://user:password@localhost:5444/osm-poi <file>.osm.pbf >> seeddb.log
+
+# To see the progress
+tail -f seeddb.log
 ````
 Storing properties to table '"public"."osm2pgsql_properties" takes about 25 minutes with planet.osm
 
@@ -65,7 +69,7 @@ In the directory where it is downloaded (e.g. `~/data`), run
 
 ````
 export DATABASE_URL=postgresql://user:password@localhost:5444/osm-poi
-nohup ./pg_tileserv > pg_tileserv.log &
+nohup ./pg_tileserv >> pg_tileserv.log &
 ````
 
 Tiles are available at: 

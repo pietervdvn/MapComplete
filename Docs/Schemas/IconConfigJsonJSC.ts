@@ -2,7 +2,7 @@ export default {
   "type": "object",
   "properties": {
     "icon": {
-      "description": "question: What icon should be used?\ntype: icon\ntypes: Use a dynamic value ; icon\nsuggestions: return Constants.defaultPinIcons.map(i => ({if: \"value=\"+i, then: i, icon: i}))",
+      "description": "question: What icon should be used?\ntypes: <span class=\"text-lg font-bold\">Use a different icon depending on the value of some attributes</span> ; icon\nsuggestions: return Constants.defaultPinIcons.map(i => ({if: \"value=\"+i, then: i, icon: i}))",
       "anyOf": [
         {
           "$ref": "#/definitions/MinimalTagRenderingConfigJson"
@@ -26,7 +26,7 @@ export default {
       ]
     },
     "color": {
-      "description": "question: What colour should the icon be?\nThis will only work for the default icons such as `pin`,`circle`,...\ntype: color\ntypes: Use a dynamic color ; icon",
+      "description": "question: What colour should the icon be?\nThis will only work for the default icons such as `pin`,`circle`,...\ntypes: <span class=\"text-lg font-bold\">Use a different color depending on the value of some attributes</span> ; color",
       "anyOf": [
         {
           "$ref": "#/definitions/MinimalTagRenderingConfigJson"
@@ -93,6 +93,9 @@ export default {
         "and"
       ]
     },
+    "Record<string,string>": {
+      "type": "object"
+    },
     "{or:TagConfigJson[];}": {
       "type": "object",
       "properties": {
@@ -106,9 +109,6 @@ export default {
       "required": [
         "or"
       ]
-    },
-    "Record<string,string>": {
-      "type": "object"
     },
     "Record<string,string|Record<string,string>>": {
       "type": "object"

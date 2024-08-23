@@ -54,6 +54,19 @@ export class ExtractImages extends Conversion<
         )
     }
 
+    static isImageType(metapath: any): boolean {
+        if (metapath.hints.typehint === "icon" || metapath.hints.typehint === "image") {
+            return true
+        }
+
+        const types = metapath.hints.types?.split(";").map((x) => x.trim())
+        if (types?.some((t) => t === "icon" || t === "image")) {
+            return true
+        }
+
+        return false
+    }
+
     /**
      *  const images = new ExtractImages(true, new Set<string>()).convert(<any>{
      *     "layers": [
@@ -102,9 +115,14 @@ export class ExtractImages extends Conversion<
         const allFoundImages: { path: string; context: string }[] = []
         for (const metapath of ExtractImages.layoutMetaPaths) {
             const mightBeTr = ExtractImages.mightBeTagRendering(<any>metapath)
-            const allRenderedValuesAreImages =
-                metapath.hints.typehint === "icon" || metapath.hints.typehint === "image"
+
+            const allRenderedValuesAreImages = ExtractImages.isImageType(metapath)
+
             const found = Utils.CollectPath(metapath.path, json)
+            if (found.length === 0) {
+                continue
+            }
+
             if (mightBeTr) {
                 // We might have tagRenderingConfigs containing icons here
                 for (const el of found) {
@@ -134,9 +152,9 @@ export class ExtractImages extends Conversion<
                             // Inspect all the rendered values
                             const fromPath = Utils.CollectPath(trpath.path, foundImage)
                             const isRendered = trpath.hints.typehint === "rendered"
-                            const isImage =
-                                trpath.hints.typehint === "icon" ||
-                                trpath.hints.typehint === "image"
+
+                            const isImage = ExtractImages.isImageType(trpath)
+
                             for (const img of fromPath) {
                                 if (allRenderedValuesAreImages && isRendered) {
                                     // What we found is an image
@@ -283,7 +301,6 @@ export class FixImages extends DesugaringStep<LayoutConfigJson> {
         const absolute = url.protocol + "//" + url.host
         let relative = url.protocol + "//" + url.host + url.pathname
         relative = relative.substring(0, relative.lastIndexOf("/"))
-        const self = this
 
         if (relative.endsWith("assets/generated/themes")) {
             context.warn(
@@ -292,8 +309,10 @@ export class FixImages extends DesugaringStep<LayoutConfigJson> {
             relative = absolute
         }
 
+        const knownImages = this._knownImages
+
         function replaceString(leaf: string) {
-            if (self._knownImages.has(leaf)) {
+            if (knownImages.has(leaf)) {
                 return leaf
             }
 
@@ -316,7 +335,7 @@ export class FixImages extends DesugaringStep<LayoutConfigJson> {
         json = Utils.Clone(json)
 
         for (const metapath of metapaths) {
-            if (metapath.hints.typehint !== "image" && metapath.hints.typehint !== "icon") {
+            if (!ExtractImages.isImageType(metapath)) {
                 continue
             }
             const mightBeTr = ExtractImages.mightBeTagRendering(<any>metapath)

@@ -11,7 +11,7 @@ export default class SvelteUIElement<
     Events extends Record<string, any> = any,
     Slots extends Record<string, any> = any
 > extends BaseUIElement {
-    private readonly _svelteComponent: {
+    public readonly _svelteComponent: {
         new (args: {
             target: HTMLElement
             props: Props
@@ -19,14 +19,15 @@ export default class SvelteUIElement<
             slots?: Slots
         }): SvelteComponentTyped<Props, Events, Slots>
     }
-    private readonly _props: Props
-    private readonly _events: Events
-    private readonly _slots: Slots
+    public readonly _props: Props
+    public readonly _events: Events
+    public readonly _slots: Slots
     private tag: "div" | "span" = "div"
+    public readonly isSvelte = true
 
     constructor(svelteElement, props?: Props, events?: Events, slots?: Slots) {
         super()
-        this._svelteComponent = svelteElement
+        this._svelteComponent = <any>svelteElement
         this._props = props ?? <Props>{}
         this._events = events
         this._slots = slots
@@ -46,5 +47,19 @@ export default class SvelteUIElement<
             slots: this._slots,
         })
         return el
+    }
+
+    public getClass() {
+        if (this.clss.size === 0) {
+            return undefined
+        }
+        return this.clss
+    }
+
+    public getStyle() {
+        if (this.style === "") {
+            return undefined
+        }
+        return this.style
     }
 }

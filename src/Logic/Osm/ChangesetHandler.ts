@@ -25,7 +25,7 @@ export class ChangesetHandler {
      * Contains previously rewritten IDs
      * @private
      */
-    private readonly _remappings = new Map<string, string>()
+    public readonly _remappings = new Map<string, string>()
     private readonly _reportError: (e: string | Error) => void
 
     constructor(
@@ -154,7 +154,15 @@ export class ChangesetHandler {
                 if (this._reportError) {
                     this._reportError(e)
                 }
-                console.warn("Could not open/upload changeset due to ", e, "trying t")
+                if ((<XMLHttpRequest>e).status === 400) {
+                    // This request is invalid. We simply drop the changes and hope that someone will analyze what went wrong with it in the upload; we pretend everything went fine
+                    return
+                }
+                console.warn(
+                    "Could not open/upload changeset due to ",
+                    e,
+                    "trying again with a another fresh changeset "
+                )
                 openChangeset.setData(undefined)
 
                 throw e
@@ -187,7 +195,12 @@ export class ChangesetHandler {
                 await this.UpdateTags(csId, rewrittenTags)
             } catch (e) {
                 if (this._reportError) {
-                    this._reportError(e)
+                    this._reportError(
+                        "Could not reuse changeset " +
+                            csId +
+                            ", might be closed: " +
+                            (e.stacktrace ?? e.status ?? "" + e)
+                    )
                 }
                 console.warn("Could not upload, changeset is probably closed: ", e)
                 openChangeset.setData(undefined)
@@ -409,7 +422,7 @@ export class ChangesetHandler {
         changesetId: number,
         changesetXML: string
     ): Promise<Map<string, string>> {
-        const response = await this.osmConnection.post(
+        const response = await this.osmConnection.post<XMLDocument>(
             "changeset/" + changesetId + "/upload",
             changesetXML,
             { "Content-Type": "text/xml" }

@@ -2,12 +2,12 @@ import ChangeTagAction from "./ChangeTagAction"
 import { Tag } from "../../Tags/Tag"
 import OsmChangeAction from "./OsmChangeAction"
 import { ChangeDescription } from "./ChangeDescription"
-import { Store } from "../../UIEventSource"
+import { Store, UIEventSource } from "../../UIEventSource"
 
 export default class LinkImageAction extends OsmChangeAction {
     private readonly _proposedKey: "image" | "mapillary" | "wiki_commons" | string
     public readonly _url: string
-    private readonly _currentTags: Store<Record<string, string>>
+    private readonly _currentTags: UIEventSource<Record<string, string>>
     private readonly _meta: { theme: string; changeType: "add-image" | "link-image" }
 
     /**
@@ -23,7 +23,7 @@ export default class LinkImageAction extends OsmChangeAction {
         elementId: string,
         proposedKey: "image" | "mapillary" | "wiki_commons" | string,
         url: string,
-        currentTags: Store<Record<string, string>>,
+        currentTags: UIEventSource<Record<string, string>>,
         meta: {
             theme: string
             changeType: "add-image" | "link-image"
@@ -51,6 +51,8 @@ export default class LinkImageAction extends OsmChangeAction {
             currentTags,
             this._meta
         )
+        this._currentTags.data[key] = url
+        this._currentTags.ping()
         return tagChangeAction.CreateChangeDescriptions()
     }
 }

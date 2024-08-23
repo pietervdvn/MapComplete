@@ -9,6 +9,8 @@
   import Resolved from "../../../assets/svg/Resolved.svelte"
   import Note from "../../../assets/svg/Note.svelte"
   import LoginToggle from "../../Base/LoginToggle.svelte"
+  import { writable } from "svelte/store"
+  import Loading from "../../Base/Loading.svelte"
 
   export let state: SpecialVisualizationState
   export let tags: UIEventSource<Record<string, string>>
@@ -29,10 +31,13 @@
 
   let isClosed: Store<boolean> = tags.map((tags) => (tags?.["closed_at"] ?? "") !== "")
 
+  let isProcessing = writable(false)
   async function addComment() {
     if ((txt.data ?? "") == "") {
       return
     }
+
+    isProcessing.set(true)
 
     if (isClosed.data) {
       await state.osmConnection.reopenNote(id, txt.data)
@@ -42,20 +47,25 @@
     }
     NoteCommentElement.addCommentTo(txt.data, tags, state)
     txt.setData("")
+    isProcessing.set(false)
   }
 
   async function closeNote() {
+    isProcessing.set(true)
     await state.osmConnection.closeNote(id, txt.data)
+    isProcessing.set(false)
     tags.data["closed_at"] = new Date().toISOString()
     NoteCommentElement.addCommentTo(txt.data, tags, state)
     tags.ping()
   }
 
   async function reopenNote() {
+    isProcessing.set(true)
     await state.osmConnection.reopenNote(id, txt.data)
     tags.data["closed_at"] = undefined
     NoteCommentElement.addCommentTo(txt.data, tags, state)
     tags.ping()
+    isProcessing.set(false)
   }
 </script>
 
@@ -76,40 +86,44 @@
       />
     </label>
 
-    <div class="flex flex-col">
-      {#if $txt?.length > 0}
-        <button class="primary flex" on:click|preventDefault={() => addComment()}>
-          <!-- Add a comment -->
-          <Speech_bubble class="h-7 w-7 pr-2" />
-          <Tr t={t.addCommentPlaceholder} />
-        </button>
-      {:else}
-        <div class="alert w-full">
-          <Tr t={t.typeText} />
-        </div>
-      {/if}
+    {#if $isProcessing}
+      <Loading />
+    {:else}
+      <div class="flex flex-col">
+        {#if $txt?.length > 0}
+          <button class="primary flex" on:click|preventDefault={() => addComment()}>
+            <!-- Add a comment -->
+            <Speech_bubble class="h-7 w-7 pr-2" />
+            <Tr t={t.addCommentPlaceholder} />
+          </button>
+        {:else}
+          <div class="alert w-full">
+            <Tr t={t.typeText} />
+          </div>
+        {/if}
 
-      {#if !$isClosed}
-        <button class="flex items-center" on:click|preventDefault={() => closeNote()}>
-          <Resolved class="h-8 w-8 pr-2" />
-          <!-- Close note -->
-          {#if $txt === undefined || $txt === ""}
-            <Tr t={t.closeNote} />
-          {:else}
-            <Tr t={t.addCommentAndClose} />
-          {/if}
-        </button>
-      {:else}
-        <button class="flex items-center" on:click|preventDefault={() => reopenNote()}>
-          <!-- Reopen -->
-          <Note class="h-7 w-7 pr-2" />
-          {#if $txt === undefined || $txt === ""}
-            <Tr t={t.reopenNote} />
-          {:else}
-            <Tr t={t.reopenNoteAndComment} />
-          {/if}
-        </button>
-      {/if}
-    </div>
+        {#if !$isClosed}
+          <button class="flex items-center" on:click|preventDefault={() => closeNote()}>
+            <Resolved class="h-8 w-8 pr-2" />
+            <!-- Close note -->
+            {#if $txt === undefined || $txt === ""}
+              <Tr t={t.closeNote} />
+            {:else}
+              <Tr t={t.addCommentAndClose} />
+            {/if}
+          </button>
+        {:else}
+          <button class="flex items-center" on:click|preventDefault={() => reopenNote()}>
+            <!-- Reopen -->
+            <Note class="h-7 w-7 pr-2" />
+            {#if $txt === undefined || $txt === ""}
+              <Tr t={t.reopenNote} />
+            {:else}
+              <Tr t={t.reopenNoteAndComment} />
+            {/if}
+          </button>
+        {/if}
+      </div>
+    {/if}
   </form>
 </LoginToggle>

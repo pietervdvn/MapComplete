@@ -3,10 +3,11 @@ import polygon_features from "../../assets/polygon-features.json"
 import { OsmFeature, OsmId, OsmTags, WayId } from "../../Models/OsmFeature"
 import OsmToGeoJson from "osmtogeojson"
 import { Feature, LineString, Polygon } from "geojson"
+import Constants from "../../Models/Constants"
 
 export abstract class OsmObject {
     private static defaultBackend = "https://api.openstreetmap.org/"
-    protected static backendURL = OsmObject.defaultBackend
+    private static backendURL = Constants.osmAuthConfig.url ?? OsmObject.defaultBackend
     public static polygonFeatures = OsmObject.constructPolygonFeatures()
     type: "node" | "way" | "relation"
     id: number
@@ -36,22 +37,23 @@ export abstract class OsmObject {
             const idN = element.id
             let osmObject: OsmObject = null
             switch (type) {
-                case "node":
+                case "node": {
                     const node = new OsmNode(idN)
                     allNodes.set(idN, node)
                     osmObject = node
                     node.SaveExtraData(element)
                     break
-                case "way":
+                }
+                case "way": {
                     osmObject = new OsmWay(idN)
                     const nodes = element.nodes.map((i) => allNodes.get(i))
                     osmObject.SaveExtraData(element, nodes)
                     break
-                case "relation":
+                }
+                case "relation": {
                     osmObject = new OsmRelation(idN)
                     const allGeojsons = OsmToGeoJson(
                         { elements },
-                        // @ts-ignore
                         {
                             flatProperties: true,
                         }
@@ -61,9 +63,10 @@ export abstract class OsmObject {
                     )
                     osmObject.SaveExtraData(element, feature)
                     break
+                }
             }
 
-            if (osmObject !== undefined && OsmObject.backendURL !== OsmObject.defaultBackend) {
+            if (osmObject !== undefined) {
                 osmObject.tags["_backend"] = OsmObject.backendURL
             }
 
@@ -81,9 +84,6 @@ export abstract class OsmObject {
      * */
     protected static isPolygon(tags: any): boolean {
         for (const tagsKey in tags) {
-            if (!tags.hasOwnProperty(tagsKey)) {
-                continue
-            }
             const polyGuide: { values: Set<string>; blacklist: boolean } =
                 OsmObject.polygonFeatures.get(tagsKey)
             if (polyGuide === undefined) {
@@ -151,23 +151,22 @@ export abstract class OsmObject {
             }
             const v = this.tags[key]
             if (v !== "" && v !== undefined) {
-                tags +=
-                    '        <tag k="' +
-                    Utils.EncodeXmlValue(key) +
-                    '" v="' +
-                    Utils.EncodeXmlValue(this.tags[key]) +
-                    '"/>\n'
+                tags += `        <tag k="${Utils.EncodeXmlValue(key)}" v="${Utils.EncodeXmlValue(
+                    this.tags[key]
+                )}"/>
+`
             }
         }
         return tags
     }
+
     abstract ChangesetXML(changesetId: string, header?: string): string
 
     protected VersionXML() {
         if (this.version === undefined) {
             return ""
         }
-        return 'version="' + this.version + '"'
+        return `version="${this.version}"`
     }
 
     protected LoadData(element: any): void {
@@ -213,7 +212,7 @@ export class OsmNode extends OsmObject {
      * @constructor
      */
     ChangesetXML(changesetId: string, header?: string): string {
-        let tags = this.TagsXML()
+        const tags = this.TagsXML()
         return `    <node id="${this.id}" ${header ?? ""} ${
             changesetId ? ' changeset="' + changesetId + '" ' : ""
         }${this.VersionXML()} lat="${this.lat}" lon="${this.lon}">
@@ -264,7 +263,7 @@ export class OsmWay extends OsmObject {
      * obj.ChangesetXML("123").trim() // => '<way id="1234"  changeset="123"  >\n        <tag k="key" v="value"/>\n    </way>'
      */
     ChangesetXML(changesetId: string, header?: string): string {
-        let tags = this.TagsXML()
+        const tags = this.TagsXML()
         let nds = ""
         for (const node in this.nodes) {
             nds += '      <nd ref="' + this.nodes[node] + '"/>\n'
@@ -301,14 +300,14 @@ ${nds}${tags}    </way>
             latSum += node.lat
             lonSum += node.lon
         }
-        let count = this.coordinates.length
+        const count = this.coordinates.length
         this.lat = latSum / count
         this.lon = lonSum / count
         this.nodes = element.nodes
     }
 
     public asGeoJson(): Feature<Polygon | LineString> & { properties: { id: WayId } } {
-        let coordinates: [number, number][] | [number, number][][] = this.coordinates.map(
+        const coordinates: [number, number][] | [number, number][][] = this.coordinates.map(
             ([lat, lon]) => [lon, lat]
         )
         let geometry: LineString | Polygon
@@ -364,19 +363,13 @@ export class OsmRelation extends OsmObject {
     ChangesetXML(changesetId: string, header?: string): string {
         let members = ""
         for (const member of this.members) {
-            members +=
-                '      <member type="' +
-                member.type +
-                '" ref="' +
-                member.ref +
-                '" role="' +
-                member.role +
-                '"/>\n'
+            members += `      <member type="${member.type}" ref="${member.ref}" role="${member.role}"/>
+`
         }
 
-        let tags = this.TagsXML()
+        const tags = this.TagsXML()
         let cs = ""
-        if (changesetId !== undefined) {
+        if (changesetId) {
             cs = `changeset="${changesetId}"`
         }
         return `    <relation id="${this.id}" ${header ?? ""} ${cs} ${this.VersionXML()}>

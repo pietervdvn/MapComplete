@@ -9,7 +9,6 @@
 </script>
 
 <button
-  class="as-link"
   on:click={() => {
     osmConnection.LogOut()
   }}

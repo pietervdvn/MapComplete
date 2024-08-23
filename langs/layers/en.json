@@ -515,6 +515,17 @@
                     }
                 },
                 "question": "Does this artwork serve as a bench?"
+            },
+            "doubles_as_memorial": {
+                "mappings": {
+                    "0": {
+                        "then": "This artwork also serves as a memorial"
+                    },
+                    "1": {
+                        "then": "This artwork does not serve as a bench"
+                    }
+                },
+                "question": "Does this artwork serve as a memorial?"
             }
         },
         "title": {
@@ -565,10 +576,57 @@
             "render": "Assembly point during emergencies"
         }
     },
+    "assisted_repair": {
+        "description": "A self-assisted workshop is a location where people can come and repair their goods with help of volunteers and with the tools available at the given location.  A repair café is a type of event organized regularly along the same principles.",
+        "name": "Repair cafés and assisted repair workshops",
+        "presets": {
+            "0": {
+                "description": "A location with a permanent workshop where people can come to repair items with the help of volunteers.",
+                "title": "an assisted repair workshop"
+            }
+        },
+        "tagRenderings": {
+            "item:repair": {
+                "mappings": {
+                    "0": {
+                        "then": "Mobile phones are repaired here"
+                    },
+                    "1": {
+                        "then": "Computers are repaired here"
+                    },
+                    "2": {
+                        "then": "Bicycles are repaired here"
+                    },
+                    "3": {
+                        "then": "Electronic devices are repaired here"
+                    },
+                    "4": {
+                        "then": "Furniture is repaired here"
+                    },
+                    "5": {
+                        "then": "Clothes are repaired here"
+                    }
+                },
+                "question": "What type of items are repaired here?"
+            },
+            "name": {
+                "question": "What is the name of this repair workshop?",
+                "render": "This workshop is called <b>{name}</b>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
+            "render": "Workshop for assisted repair"
+        }
+    },
     "atm": {
         "description": "ATMs to withdraw money",
         "filter": {
-            "1": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "With speech output"
@@ -814,6 +872,72 @@
             "render": "Barrier"
         }
     },
+    "bbq": {
+        "description": "A permanently installed barbecue, typically accessible to the public.",
+        "name": "BBQ",
+        "presets": {
+            "0": {
+                "description": "A permanently installed barbecue, typically accessible to the public.",
+                "title": "BBQ"
+            }
+        },
+        "tagRenderings": {
+            "access": {
+                "mappings": {
+                    "0": {
+                        "then": "Public"
+                    },
+                    "1": {
+                        "then": "No access"
+                    },
+                    "2": {
+                        "then": "Private"
+                    },
+                    "3": {
+                        "then": "Access until revoked"
+                    },
+                    "4": {
+                        "then": "Access only for customers"
+                    },
+                    "5": {
+                        "then": "Access only for authorized persons"
+                    }
+                },
+                "question": "What is the permitted access?"
+            },
+            "covered": {
+                "mappings": {
+                    "0": {
+                        "then": "The grill is not covered"
+                    },
+                    "1": {
+                        "then": "The grill is covered"
+                    }
+                },
+                "question": "Is the grill covered?"
+            },
+            "fuel": {
+                "mappings": {
+                    "0": {
+                        "then": "Wood"
+                    },
+                    "1": {
+                        "then": "Charcoal"
+                    },
+                    "2": {
+                        "then": "Electric"
+                    },
+                    "3": {
+                        "then": "Gas"
+                    }
+                },
+                "question": "How ist the grill fueled?"
+            }
+        },
+        "title": {
+            "render": "BBQ"
+        }
+    },
     "bench": {
         "description": "A bench is a wooden, metal, stone, … surface where a human can sit. This layers visualises them and asks a few questions about them.",
         "filter": {
@@ -845,6 +969,17 @@
             }
         },
         "tagRenderings": {
+            "bench-armrest": {
+                "mappings": {
+                    "0": {
+                        "then": "This bench does have one or more armrests"
+                    },
+                    "1": {
+                        "then": "This bench does <b>not</b> have any armrests"
+                    }
+                },
+                "question": "Does this bench have one or more armrests?"
+            },
             "bench-artwork": {
                 "mappings": {
                     "0": {
@@ -1120,6 +1255,9 @@
                     },
                     "7": {
                         "then": "Bike helmets can be rented here"
+                    },
+                    "8": {
+                        "then": "Cargo bikes can be rented here"
                     }
                 },
                 "question": "What kind of bicycles and accessories are rented here?",
@@ -1273,7 +1411,7 @@
                 "question": "How much does it cost to use the cleaning service?",
                 "render": "Using the cleaning service costs {charge}"
             },
-            "bike_cleaning-service:bicycle:cleaning:charge": {
+            "bike_cleaning-service_bicycle_cleaning_charge": {
                 "mappings": {
                     "0": {
                         "then": "The cleaning service is free to use"
@@ -1625,14 +1763,14 @@
     "bike_shop": {
         "description": "A shop specifically selling bicycles or related items",
         "filter": {
-            "1": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "Sells second-hand bicycles"
                     }
                 }
             },
-            "2": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "Offers DIY bike repair"
@@ -1646,125 +1784,10 @@
                 "title": "a bike repair/shop"
             }
         },
-        "tagRenderings": {
-            "bike_repair_bike-pump-service": {
-                "mappings": {
-                    "0": {
-                        "then": "This shop offers a bike pump for anyone"
-                    },
-                    "1": {
-                        "then": "This shop doesn't offer a bike pump for anyone"
-                    },
-                    "2": {
-                        "then": "There is bicycle pump, it is shown as a separate point"
-                    }
-                },
-                "question": "Does this shop offer a bike pump for use by anyone?"
-            },
-            "bike_repair_bike-wash": {
-                "mappings": {
-                    "0": {
-                        "then": "This shop cleans bicycles"
-                    },
-                    "1": {
-                        "then": "This shop has an installation where one can clean bicycles themselves"
-                    },
-                    "2": {
-                        "then": "This shop doesn't offer bicycle cleaning"
-                    }
-                },
-                "question": "Are bicycles washed here?"
-            },
-            "bike_repair_rents-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "This shop rents out bikes"
-                    },
-                    "1": {
-                        "then": "This shop doesn't rent out bikes"
-                    }
-                },
-                "question": "Does this shop rent out bikes?"
-            },
-            "bike_repair_repairs-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "This shop repairs bikes"
-                    },
-                    "1": {
-                        "then": "This shop doesn't repair bikes"
-                    },
-                    "2": {
-                        "then": "This shop only repairs bikes bought here"
-                    },
-                    "3": {
-                        "then": "This shop only repairs bikes of a certain brand"
-                    }
-                },
-                "question": "Does this shop repair bikes?"
-            },
-            "bike_repair_second-hand-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "This shop sells second-hand bikes"
-                    },
-                    "1": {
-                        "then": "This shop doesn't sell second-hand bikes"
-                    },
-                    "2": {
-                        "then": "This shop only sells second-hand bikes"
-                    }
-                },
-                "question": "Does this shop sell second-hand bikes?"
-            },
-            "bike_repair_sells-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "This shop sells bikes"
-                    },
-                    "1": {
-                        "then": "This shop doesn't sell bikes"
-                    }
-                },
-                "question": "Does this shop sell bikes?"
-            },
-            "bike_repair_tools-service": {
-                "mappings": {
-                    "0": {
-                        "then": "This shop offers tools for DIY repair"
-                    },
-                    "1": {
-                        "then": "This shop doesn't offer tools for DIY repair"
-                    },
-                    "2": {
-                        "then": "Tools for DIY repair are only available if you bought/hire the bike in the shop"
-                    }
-                },
-                "question": "Are there tools here to repair your own bike?"
-            },
-            "bike_shop-access": {
-                "render": "Only accessible to {access}"
-            },
-            "bike_shop-is-bicycle_shop": {
-                "mappings": {
-                    "0": {
-                        "then": "This business focuses on rental"
-                    }
-                },
-                "render": "This shop is specialized in selling {shop} and does bicycle related activities"
-            },
-            "bike_shop-name": {
-                "question": "What is the name of this bicycle shop?",
-                "render": "This bicycle shop is called {name}"
-            }
-        },
         "title": {
             "mappings": {
                 "0": {
                     "then": "Sports gear shop <i>{name}</i>"
-                },
-                "1": {
-                    "then": "Winkel"
                 },
                 "2": {
                     "then": "Bicycle rental shop <i>{name}</i>"
@@ -1776,6 +1799,9 @@
                     "then": "Bike shop <i>{name}</i>"
                 },
                 "5": {
+                    "then": "Bike repair/shop <i>{name}</i>"
+                },
+                "6": {
                     "then": "Bike repair/shop <i>{name}</i>"
                 }
             },
@@ -3277,6 +3303,12 @@
             "render": "Crossing"
         }
     },
+    "cycle_highways": {
+        "name": "cycle highways",
+        "title": {
+            "render": "cycle highway"
+        }
+    },
     "cycleways_and_roads": {
         "description": "All infrastructure that someone can cycle over, accompanied with questions about this infrastructure",
         "name": "Cycleways and roads",
@@ -3798,6 +3830,17 @@
     "dentist": {
         "description": "This layer shows dentist offices",
         "name": "Dentist",
+        "pointRendering": {
+            "0": {
+                "label": {
+                    "mappings": {
+                        "0": {
+                            "then": "{name}"
+                        }
+                    }
+                }
+            }
+        },
         "presets": {
             "0": {
                 "title": "a dentists office"
@@ -4003,18 +4046,9 @@
                 "render": "<a href='#{_closest_other_drinking_water_id}'>There is another drinking water fountain at {_closest_other_drinking_water_distance} meters</a>"
             },
             "seasonal": {
-                "mappings": {
-                    "0": {
-                        "then": "This drinking water point is available all around the year"
-                    },
-                    "1": {
-                        "then": "This drinking water point is only available in summer"
-                    },
-                    "2": {
-                        "then": "This drinking water point is closed during the winter"
-                    }
-                },
-                "question": "Is this drinking water point available all year round?"
+                "override": {
+                    "question": "Is this drinking water point available all year round?"
+                }
             },
             "type": {
                 "mappings": {
@@ -4615,6 +4649,49 @@
             "render": "Fire Station"
         }
     },
+    "firepit": {
+        "description": "An outdoor place to make a fire, typically open to the public.",
+        "name": "Firepit",
+        "presets": {
+            "0": {
+                "description": "An outdoor place to make a fire, typically open to the public.",
+                "title": "Firepit"
+            }
+        },
+        "tagRenderings": {
+            "access": {
+                "mappings": {
+                    "0": {
+                        "then": "Public"
+                    },
+                    "1": {
+                        "then": "No access"
+                    },
+                    "2": {
+                        "then": "Private"
+                    },
+                    "3": {
+                        "then": "Access until revoked"
+                    },
+                    "4": {
+                        "then": "Access only for customers"
+                    },
+                    "5": {
+                        "then": "Access only for authorized"
+                    }
+                },
+                "question": "What is the permitted access?"
+            },
+            "seasonal": {
+                "override": {
+                    "question": "Is the firepit available all around the year?"
+                }
+            }
+        },
+        "title": {
+            "render": "Firepit"
+        }
+    },
     "fitness_centre": {
         "description": "Layer showing fitness centres",
         "name": "Fitness Centres",
@@ -4993,6 +5070,13 @@
                 },
                 "question": "Does this restaurant have a vegetarian option?"
             },
+            "add-menu-image": {
+                "render": {
+                    "special": {
+                        "label": "Add an image from the menu"
+                    }
+                }
+            },
             "delivery": {
                 "mappings": {
                     "0": {
@@ -5088,6 +5172,14 @@
                 },
                 "question": "Does this restaurant offer a halal menu?"
             },
+            "menu-website": {
+                "question": "On what webpage is the menu published?",
+                "render": {
+                    "special": {
+                        "text": "Consult the menu"
+                    }
+                }
+            },
             "organic (no friture)": {
                 "mappings": {
                     "0": {
@@ -5139,13 +5231,11 @@
         "name": "Ghost bikes",
         "presets": {
             "0": {
+                "description": "A <b>ghost bike</b> is a memorial for a cyclist who died in a traffic accident, in the form of a white bicycle placed permanently near the accident location.",
                 "title": "a ghost bike"
             }
         },
         "tagRenderings": {
-            "ghost-bike-explanation": {
-                "render": "A <b>ghost bike</b> is a memorial for a cyclist who died in a traffic accident, in the form of a white bicycle placed permanently near the accident location."
-            },
             "ghost_bike-inscription": {
                 "question": "What is the inscription on this Ghost bike?",
                 "render": "<i>{inscription}</i>"
@@ -5294,6 +5384,16 @@
         "title": "Guideposts"
     },
     "hackerspace": {
+        "deletion": {
+            "nonDeleteMappings": {
+                "0": {
+                    "then": "This is an workshop for assisted self service, such as a repair café"
+                },
+                "1": {
+                    "then": "This is a coworking office"
+                }
+            }
+        },
         "description": "Hackerspace",
         "name": "Hackerspace",
         "presets": {
@@ -5438,32 +5538,6 @@
         },
         "title": {
             "render": "Hospital"
-        }
-    },
-    "hotel": {
-        "description": "Layer showing all hotels",
-        "name": "Hotels",
-        "presets": {
-            "0": {
-                "title": "a hotel"
-            }
-        },
-        "tagRenderings": {
-            "name": {
-                "freeform": {
-                    "placeholder": "Name of the hotel"
-                },
-                "question": "What is the name of this hotel?",
-                "render": "This hotel is called {name}"
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Hotel {name}"
-                }
-            },
-            "render": "Hotel"
         }
     },
     "hydrant": {
@@ -7245,6 +7319,9 @@
                     },
                     "9": {
                         "then": "The surface is made from rubber, such as rubber tiles, rubber mulch or a big rubber area"
+                    },
+                    "10": {
+                        "then": "The surface is <b>fine gravel</b> (less then 2 cm per stone)"
                     }
                 },
                 "question": "Which is the surface of this playground?",
@@ -7691,6 +7768,15 @@
     },
     "questions": {
         "tagRenderings": {
+            "brand": {
+                "mappings": {
+                    "0": {
+                        "then": "Not part of a bigger brand"
+                    }
+                },
+                "question": "Is {title()} part of a bigger brand?",
+                "render": "Part of {brand}"
+            },
             "check_date": {
                 "mappings": {
                     "0": {
@@ -7821,6 +7907,15 @@
             "email": {
                 "editButtonAriaLabel": "Edit email address",
                 "question": "What is the email address of {title()}?"
+            },
+            "facebook": {
+                "question": "What is the facebook page of of {title()}?",
+                "render": {
+                    "after": "<div class='subtle text-sm'>Facebook is known to harm mental health, manipulate public opinion and cause hate. Try to use healthier alternatives</div>",
+                    "special": {
+                        "text": "Facebook page"
+                    }
+                }
             },
             "gluten_free": {
                 "mappings": {
@@ -7975,7 +8070,7 @@
             },
             "opening_hours_by_appointment": {
                 "override": {
-                    "mappings": {
+                    "+mappings": {
                         "0": {
                             "then": "Only by appointment"
                         },
@@ -8041,6 +8136,20 @@
             "repeated": {
                 "render": "Multiple, identical objects can be found on floors {repeat_on}."
             },
+            "seasonal": {
+                "mappings": {
+                    "0": {
+                        "then": "Available all around the year"
+                    },
+                    "1": {
+                        "then": "Only available in summer"
+                    },
+                    "2": {
+                        "then": "Closed during the winter"
+                    }
+                },
+                "question": "Is {title()} available all around the year?"
+            },
             "service:electricity": {
                 "mappings": {
                     "0": {
@@ -8064,6 +8173,23 @@
                         "text": "Share this location"
                     }
                 }
+            },
+            "shower": {
+                "mappings": {
+                    "0": {
+                        "then": "This facility does have showers with warm water"
+                    },
+                    "1": {
+                        "then": "This facility does have showers, but the water is not heated"
+                    },
+                    "2": {
+                        "then": "This facility does have showers"
+                    },
+                    "3": {
+                        "then": "This facility does not offer a shower"
+                    }
+                },
+                "question": "Does this facility offer showers?"
             },
             "single_level": {
                 "mappings": {
@@ -8597,6 +8723,39 @@
                 },
                 "question": "Which genders can enroll at this school?"
             },
+            "pedagogy": {
+                "mappings": {
+                    "0": {
+                        "then": "This school does not use a specific pedagogy"
+                    },
+                    "1": {
+                        "then": "This school uses the Montessori method of education"
+                    },
+                    "2": {
+                        "then": "This school is associated with the Freinet Modern School Movement"
+                    },
+                    "3": {
+                        "then": "This school uses the Jenaplan teaching concept"
+                    },
+                    "4": {
+                        "then": "This school uses the Steiner/Waldorf educational philosophy"
+                    },
+                    "5": {
+                        "then": "This school uses the Dalton plan teaching concept"
+                    },
+                    "6": {
+                        "then": "This school uses outdoor learning"
+                    },
+                    "7": {
+                        "then": "This school uses the Reggio Emilia approach"
+                    },
+                    "8": {
+                        "then": "This school uses the Sudbury system"
+                    }
+                },
+                "question": "What educational theory is applied on this school?",
+                "render": "This school uses {pedagogy}"
+            },
             "school-language": {
                 "render": {
                     "special": {
@@ -8710,7 +8869,7 @@
                     }
                 }
             },
-            "6": {
+            "3": {
                 "options": {
                     "0": {
                         "question": "Only show shops selling second-hand items"
@@ -8726,6 +8885,74 @@
             }
         },
         "tagRenderings": {
+            "bicycle_rental": {
+                "mappings": {
+                    "0": {
+                        "then": "This shop rents out bikes"
+                    },
+                    "1": {
+                        "then": "This shop doesn't rent out bikes"
+                    }
+                },
+                "question": "Does this shop rent out bikes?",
+                "questionHint": "This is about rental for e.g. tourists who need a bike. Some bicycle repair shops offer a bicycle to use while your bicycle is being repaired but this is not considered rental for this question."
+            },
+            "bike_pump_service": {
+                "mappings": {
+                    "0": {
+                        "then": "This shop offers a bike pump for anyone"
+                    },
+                    "1": {
+                        "then": "This shop doesn't offer a bike pump for anyone"
+                    },
+                    "2": {
+                        "then": "There is bicycle pump, it is shown as a separate point"
+                    }
+                },
+                "question": "Does this shop offer a bike pump for use by anyone?"
+            },
+            "bike_repair_tools": {
+                "mappings": {
+                    "0": {
+                        "then": "This shop offers tools for DIY bicycle repair"
+                    },
+                    "1": {
+                        "then": "This shop doesn't offer tools for DIY bicycle repair"
+                    },
+                    "2": {
+                        "then": "Tools for DIY bicycle repair are only available if you bought/hire the bike in the shop"
+                    }
+                },
+                "question": "Are there tools here to repair your own bike?"
+            },
+            "bike_second_hand": {
+                "mappings": {
+                    "0": {
+                        "then": "This shop sells second-hand bikes"
+                    },
+                    "1": {
+                        "then": "This shop doesn't sell second-hand bikes"
+                    },
+                    "2": {
+                        "then": "This shop only sells second-hand bikes"
+                    }
+                },
+                "question": "Does this shop sell second-hand bikes?"
+            },
+            "bike_wash": {
+                "mappings": {
+                    "0": {
+                        "then": "This shop cleans bicycles"
+                    },
+                    "1": {
+                        "then": "This shop has an installation where one can clean bicycles themselves"
+                    },
+                    "2": {
+                        "then": "This shop doesn't offer bicycle cleaning"
+                    }
+                },
+                "question": "Are bicycles washed here?"
+            },
             "brand": {
                 "mappings": {
                     "0": {
@@ -8769,6 +8996,11 @@
             },
             "id_presets.shop_types": {
                 "override": {
+                    "+mappings": {
+                        "0": {
+                            "then": "Bicycle rental shop"
+                        }
+                    },
                     "question": "What kind of shop is this?",
                     "render": "This is a {shop}"
                 }
@@ -8801,8 +9033,36 @@
                 },
                 "question": "Does this shop offer organic products?"
             },
+            "repairs_bikes": {
+                "mappings": {
+                    "0": {
+                        "then": "This shop repairs bikes"
+                    },
+                    "1": {
+                        "then": "This shop doesn't repair bikes"
+                    },
+                    "2": {
+                        "then": "This shop only repairs bikes bought here"
+                    },
+                    "3": {
+                        "then": "This shop only repairs bikes of a certain brand"
+                    }
+                },
+                "question": "Does this shop repair bikes?"
+            },
             "second_hand": {
                 "question": "Does this shop sell second-hand items?"
+            },
+            "sells_new_bikes": {
+                "mappings": {
+                    "0": {
+                        "then": "This shop sells new bikes"
+                    },
+                    "1": {
+                        "then": "This shop doesn't sell new bikes"
+                    }
+                },
+                "question": "Does this shop sell bikes?"
             },
             "shops-name": {
                 "question": "What is the name of this shop?",
@@ -10198,6 +10458,161 @@
             "render": "Toilet at amenity"
         }
     },
+    "tool_library": {
+        "description": "A tool library is a place where people from the general public can borrow tools",
+        "name": "Tool libraries",
+        "pointRendering": {
+            "0": {
+                "label": {
+                    "mappings": {
+                        "0": {
+                            "then": "{name}"
+                        }
+                    }
+                }
+            }
+        },
+        "presets": {
+            "0": {
+                "description": "A tool library is a place where people from the general public can borrow tools",
+                "title": "a tool library"
+            }
+        },
+        "tagRenderings": {
+            "fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Borrowing tools is free (if one has a membership)"
+                    },
+                    "1": {
+                        "then": "Borrowing tools is free"
+                    },
+                    "2": {
+                        "then": "A fee is asked when borrowing tools"
+                    },
+                    "3": {
+                        "then": "A donation can be given when borrowing tools"
+                    }
+                },
+                "question": "Is a fee asked to borrow tools?",
+                "questionHint": "If a membership is required, we assume that the membership is already paid for."
+            },
+            "membership": {
+                "mappings": {
+                    "0": {
+                        "then": "No membership is required to borrow tools here"
+                    },
+                    "1": {
+                        "then": "A <b>membership is required</b> to use this tool library"
+                    },
+                    "2": {
+                        "then": "A <b>membership is possible</b> but not required to use this tool library"
+                    }
+                },
+                "question": "Is a membership required to borrow tools here?"
+            },
+            "membership_charge": {
+                "question": "How much does a membership cost?",
+                "questionHint": "There might be many formulas. In case of doubt, pick the most common one",
+                "render": "A membership costs {charge:membership}"
+            }
+        },
+        "title": {
+            "render": "Tool library {name}"
+        }
+    },
+    "tourism_accomodation": {
+        "description": "Various types of lodging facilities",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "All types"
+                    },
+                    "1": {
+                        "question": "Hotels"
+                    },
+                    "2": {
+                        "question": "Hostels"
+                    },
+                    "3": {
+                        "question": "Guest houses and Bed&Breakfasts"
+                    },
+                    "4": {
+                        "question": "Motels"
+                    },
+                    "5": {
+                        "question": "Vacation home"
+                    },
+                    "6": {
+                        "question": "Vacation apartment"
+                    }
+                }
+            }
+        },
+        "name": "Tourism accomodation",
+        "presets": {
+            "0": {
+                "description": "A  hotel is an establishment that provides paid lodging, usually on a short-term basis. Rooms are not shared with strangers.",
+                "title": "a hotel"
+            },
+            "1": {
+                "description": "A hostel is a type of tourist accommodation where people can sleep in a room shared with strangers",
+                "title": "a hostel"
+            },
+            "2": {
+                "description": "A furnished apartment or flat with cooking and bathroom facilities in a shared building that can be rented for vacations, typically without breakfast or reception desk",
+                "title": "a vacation apartment"
+            },
+            "3": {
+                "description": "A holiday cottage or vacation home with cooking and bathroom facilities that can be rented for holiday vacations, typically without breakfast or reception desk",
+                "title": "a vacation chalet"
+            },
+            "4": {
+                "description": "A motel is an establishment that provides paid lodging, usually on a short-term basis, with convenient parking for motor cars at or close to the room. They are typically cheaper then a hotel",
+                "title": "a motel"
+            },
+            "5": {
+                "description": "A bed-and-breakfast in a guesthouse is a small lodging establishment. These are often a few rooms within a private family home where the owners also accommodate the guests. There is no reception desk, nor is there staff at all times. In some cases, check-in happens remotely by sharing a code to get in.",
+                "title": "a bed-and-breakfast"
+            },
+            "6": {
+                "title": "a small-scale lodging facility, typically operated by the owner"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "question": "What is the name of this {title()}?",
+                "render": "{name}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Hotel {name}"
+                },
+                "1": {
+                    "then": "Hostel {name}"
+                },
+                "2": {
+                    "then": "B&B {name}"
+                },
+                "3": {
+                    "then": "Guest house {name}"
+                },
+                "4": {
+                    "then": "Motel {name}"
+                },
+                "5": {
+                    "then": "Apartment {name}"
+                },
+                "6": {
+                    "then": "Vacation home {name}"
+                }
+            },
+            "render": "Tourist accomodation {name}"
+        }
+    },
     "trail": {
         "description": "Waymarked trails",
         "name": "Trails",
@@ -10811,6 +11226,14 @@
             "background-layer-readonly": {
                 "render": "This thematic map has a predefined background layer set. Your default theme setting does not apply"
             },
+            "clear_cache": {
+                "render": {
+                    "after": "Clearing the caches will delete locally downloaded data and code. You will remain logged in and your settings will be preserved. No data should be lost",
+                    "special": {
+                        "text": "Clear caches"
+                    }
+                }
+            },
             "contributor-thanks": {
                 "mappings": {
                     "0": {
@@ -10822,6 +11245,16 @@
                 "mappings": {
                     "0": {
                         "then": "You have made changes on {_csCount} different occasions! That is awesome!"
+                    }
+                }
+            },
+            "debug-title": {
+                "render": "<h3>Debugging options</h3>"
+            },
+            "edit-profile": {
+                "render": {
+                    "special": {
+                        "text": "Edit your profile description"
                     }
                 }
             },
@@ -10912,6 +11345,17 @@
                     }
                 },
                 "question": "Under what license do you want to publish your pictures?"
+            },
+            "profile-description": {
+                "mappings": {
+                    "0": {
+                        "then": {
+                            "special": {
+                                "text": "Add a profile description"
+                            }
+                        }
+                    }
+                }
             },
             "settings-link": {
                 "render": {

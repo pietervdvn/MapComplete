@@ -810,7 +810,7 @@
             }
         },
         "tagRenderings": {
-            "bike_cleaning-service:bicycle:cleaning:charge": {
+            "bike_cleaning-service_bicycle_cleaning_charge": {
                 "mappings": {
                     "1": {
                         "then": "Darmowa"
@@ -954,13 +954,6 @@
                 "4": {
                     "then": "Pompka do rowerów"
                 }
-            }
-        }
-    },
-    "bike_shop": {
-        "tagRenderings": {
-            "bike_shop-access": {
-                "render": "Dostępne tylko dla {access}"
             }
         }
     },
@@ -1274,6 +1267,12 @@
             "crossing-is-zebra": {
                 "question": "Czy to jest przejście dla pieszych typu \"zebra\"?"
             }
+        }
+    },
+    "cycle_highways": {
+        "name": "ścieżki rowerowe",
+        "title": {
+            "render": "ścieżka rowerowa"
         }
     },
     "cycleways_and_roads": {
@@ -1880,32 +1879,6 @@
         },
         "title": {
             "render": "Szpital"
-        }
-    },
-    "hotel": {
-        "description": "Warstwa pokazująca wszystkie hotele",
-        "name": "Hotele",
-        "presets": {
-            "0": {
-                "title": "hotel"
-            }
-        },
-        "tagRenderings": {
-            "name": {
-                "freeform": {
-                    "placeholder": "Nazwa hotelu"
-                },
-                "question": "Jak nazywa się ten hotel?",
-                "render": "Nazwa tego hotelu to {name}"
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Hotel {name}"
-                }
-            },
-            "render": "Hotel"
         }
     },
     "hydrant": {
@@ -3076,7 +3049,7 @@
             },
             "opening_hours_by_appointment": {
                 "override": {
-                    "mappings": {
+                    "+mappings": {
                         "0": {
                             "then": "Tylko po wcześniejszym umówieniu się"
                         },
@@ -3311,6 +3284,20 @@
             }
         }
     },
+    "tourism_accomodation": {
+        "presets": {
+            "0": {
+                "title": "hotel"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Hotel {name}"
+                }
+            }
+        }
+    },
     "trolley_bay": {
         "tagRenderings": {
             "denominations": {
@@ -3340,6 +3327,28 @@
                     },
                     "3": {
                         "human": "{quantity} stopy"
+                    }
+                }
+            }
+        }
+    },
+    "usersettings": {
+        "tagRenderings": {
+            "edit-profile": {
+                "render": {
+                    "special": {
+                        "text": "Edytuj opis swojego profilu"
+                    }
+                }
+            },
+            "profile-description": {
+                "mappings": {
+                    "0": {
+                        "then": {
+                            "special": {
+                                "text": "Dodaj opis profilu"
+                            }
+                        }
                     }
                 }
             }

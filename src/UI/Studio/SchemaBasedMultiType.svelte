@@ -204,9 +204,10 @@
 </script>
 
 <div class="m-1 flex flex-col gap-y-2 border-2 border-dashed border-gray-300 p-2">
-  {#if schema.hints.title !== undefined}
+  {#if schema.hints.title !== undefined && typeof path.at(-1) !== "number"}
     <h3>{schema.hints.title}</h3>
     <div>{schema.description}</div>
+    {path.join(".")}
   {/if}
   {#if hasOverride}
     This object refers to {existingValue.builtin} and overrides some properties. This cannot be edited
@@ -219,11 +220,7 @@
     {#if chosenOption !== undefined}
       {#each subSchemas as subschema}
         {#if $expertMode || subschema.hints?.group !== "expert"}
-          <SchemaBasedInput
-            {state}
-            schema={subschema}
-            path={[...subpath, subschema?.path?.at(-1) ?? "???"]}
-          />
+          <SchemaBasedInput {state} path={[...subpath, subschema?.path?.at(-1) ?? "???"]} />
         {:else if window.location.hostname === "127.0.0.1"}
           <span class="subtle">Omitted expert question {subschema.path.join(".")}</span>
         {/if}

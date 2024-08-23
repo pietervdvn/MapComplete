@@ -1,6 +1,6 @@
-import { Validator } from "../Validator"
+import StringValidator from "./StringValidator"
 
-export default class TextValidator extends Validator {
+export default class TextValidator extends StringValidator {
     constructor() {
         super(
             "text",

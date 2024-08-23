@@ -59,7 +59,8 @@
               "es": "un cruce",
               "eu": "bidegurutze bat",
               "cs": "křížení",
-              "pl": "przejście"
+              "pl": "przejście",
+              "it": "un incrocio"
             },
             "tags": [
               "highway=crossing"
@@ -73,7 +74,8 @@
               "es": "Cruce para peatones y/o ciclistas",
               "ca": "Creuament per vianants i/o ciclistes",
               "pl": "Przejście dla pieszych i/lub przejazd dla rowerów",
-              "cs": "Přechod pro chodce a/nebo cyklisty"
+              "cs": "Přechod pro chodce a/nebo cyklisty",
+              "it": "Attraversamenti per pedoni e/o ciclisti"
             },
             "snapToLayer": [
               "cycleways_and_roads"

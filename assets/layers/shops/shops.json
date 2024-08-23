@@ -228,6 +228,7 @@
   ],
   "tagRenderings": [
     "images",
+    "reviews",
     {
       "question": {
         "en": "What is the name of this shop?",
@@ -278,6 +279,30 @@
             "fixme=freeform shop key used, to be reviewed"
           ]
         },
+        "+mappings": [
+          {
+            "if": "shop=bicycle_rental",
+            "addExtraTags": [
+              "amenity=bicycle_rental"
+            ],
+            "icon": "./assets/layers/id_presets/bicycle_rental.svg",
+            "alsoShowIf": {
+              "or": [
+                {
+                  "and": [
+                    "shop=rental",
+                    "amenity=bicycle_rental"
+                  ]
+                }
+              ]
+            },
+            "then": {
+              "en": "Bicycle rental shop",
+              "nl": "Fietsverhuurzaak",
+              "de": "Fahrradverleih"
+            }
+          }
+        ],
         "condition": "craft=",
         "invalidValues": "shop=yes"
       }
@@ -329,13 +354,9 @@
       "condition": {
         "or": [
           "shop=clothes",
-          "shop=car",
           "shop=books",
           "shop=charity",
-          "shop=car_repair",
           "shop=furniture",
-          "shop=bicycle",
-          "shop=bicycle",
           "shop=mobile_phone",
           "shop=computer",
           "shop=toys"
@@ -488,7 +509,8 @@
           "icon": "./assets/layers/id_presets/fas-key.svg",
           "then": {
             "en": "This shop offers key cutting as a service",
-            "de": "Dieser Laden bietet Schlüsselschneiden als Dienstleistung an"
+            "de": "Dieser Laden bietet Schlüsselschneiden als Dienstleistung an",
+            "nl": "Deze winkel kopieert sleutels"
           }
         },
         {
@@ -517,6 +539,538 @@
           "shop=repair"
         ]
       }
+    },
+    {
+      "id": "sells_new_bikes",
+      "question": {
+        "en": "Does this shop sell bikes?",
+        "nl": "Verkoopt deze fietszaak fietsen?",
+        "fr": "Est-ce que ce magasin vend des vélos ?",
+        "gl": "Esta tenda vende bicicletas?",
+        "de": "Verkauft dieses Geschäft Fahrräder?",
+        "it": "Questo negozio vende bici?",
+        "ru": "Продаются ли велосипеды в этом магазине?",
+        "pt_BR": "Esta loja vende bicicletas?",
+        "pt": "Esta loja vende bicicletas?",
+        "es": "¿Vende bicis esta tienda?",
+        "da": "Sælger denne butik cykler?",
+        "ca": "Aquesta botiga ven bicicletes?",
+        "cs": "Prodává tento obchod jízdní kola?"
+      },
+      "condition": {
+        "#": "Yes, DIY-stores sometimes sell bikes! E.g.: https://www.hubo.be/nl/zoekresultaten/?q=fiets",
+        "or": [
+          "service:bicycle:retail~*",
+          "shop=outdoor",
+          "shop=sport",
+          "shop=diy",
+          "shop=doityourself"
+        ]
+      },
+      "mappings": [
+        {
+          "if": "service:bicycle:retail=yes",
+          "then": {
+            "en": "This shop sells new bikes",
+            "nl": "Deze winkel verkoopt nieuwe fietsen",
+            "fr": "Ce magasin vend des vélos nouveaux",
+            "de": "Dieses Geschäft verkauft neue Fahrräder"
+          }
+        },
+        {
+          "if": "service:bicycle:retail=no",
+          "then": {
+            "en": "This shop doesn't sell new bikes",
+            "nl": "Deze winkel verkoopt geen nieuwe fietsen",
+            "fr": "Ce magasin ne vend pas de vélo nouveaux",
+            "de": "Dieses Geschäft verkauft keine neuen Fahrräder"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bike_second_hand",
+      "condition": {
+        "or": [
+          "service:bicycle:second_hand~*",
+          "shop=bicycle",
+          "shop=charity",
+          "shop=second_hand",
+          "shop=bicycle_repair"
+        ]
+      },
+      "question": {
+        "en": "Does this shop sell second-hand bikes?",
+        "nl": "Verkoopt deze winkel tweedehands fietsen?",
+        "fr": "Est-ce ce magasin vend des vélos d'occasion ?",
+        "gl": "Esta tenda vende bicicletas de segunda man?",
+        "de": "Verkauft dieses Geschäft gebrauchte Fahrräder?",
+        "it": "Questo negozio vende bici usate?",
+        "ru": "В этом магазине продаются подержанные велосипеды?",
+        "es": "¿Vende bicis de segunda mano esta tienda?",
+        "da": "Sælger denne butik brugte cykler?",
+        "ca": "Aquesta botiga ven bicicletes de segona mà?",
+        "cs": "Prodává tento obchod použitá jízdní kola?"
+      },
+      "mappings": [
+        {
+          "if": "service:bicycle:second_hand=yes",
+          "alsoShowIf": "second_hand=yes",
+          "then": {
+            "en": "This shop sells second-hand bikes",
+            "nl": "Deze winkel verkoopt tweedehands fietsen",
+            "fr": "Ce magasin vend des vélos d'occasion",
+            "gl": "Esta tenda vende bicicletas de segunda man",
+            "de": "Das Geschäft verkauft auch gebrauchte Fahrräder",
+            "it": "Questo negozio vende bici usate",
+            "ru": "В этом магазине продаются подержанные велосипеды",
+            "es": "Esta tienda vende bicis de segunda mano",
+            "da": "Denne butik sælger brugte cykler",
+            "ca": "Aquesta botiga ven bicis de segona mà",
+            "cs": "Tento obchod prodává použitá jízdní kola"
+          }
+        },
+        {
+          "if": "service:bicycle:second_hand=no",
+          "alsoShowIf": "second_hand=no",
+          "then": {
+            "en": "This shop doesn't sell second-hand bikes",
+            "nl": "Deze winkel verkoopt geen tweedehands fietsen",
+            "fr": "Ce magasin ne vend pas de vélos d'occasion",
+            "gl": "Esta tenda non vende bicicletas de segunda man",
+            "de": "Das Geschäft verkauft keine gebrauchten Fahrräder",
+            "it": "Questo negozio non vende bici usate",
+            "ru": "В этом магазине не продаются подержанные велосипеды",
+            "es": "Esta tienda no vende bicis de segunda mano",
+            "da": "Denne butik sælger ikke brugte cykler",
+            "ca": "Aquesta botiga no ven bicis de segona mà",
+            "cs": "Tento obchod neprodává kola z druhé ruky"
+          }
+        },
+        {
+          "if": "service:bicycle:second_hand=only",
+          "alsoShowIf": "second_hand=only",
+          "then": {
+            "en": "This shop only sells second-hand bikes",
+            "nl": "Deze winkel verkoopt enkel tweedehands fietsen",
+            "fr": "Ce magasin vend seulement des vélos d'occasion",
+            "gl": "Esta tenda só vende bicicletas de segunda man",
+            "de": "Das Geschäft verkauft ausschließlich gebrauchte Fahrräder",
+            "it": "Questo negozio vende solamente bici usate",
+            "ru": "В этом магазине продаются только подержанные велосипеды",
+            "es": "Esta tienda solo vende bicis de segunda mano",
+            "da": "Denne butik sælger kun brugte cykler",
+            "ca": "Aquesta botiga sols ven bicis de segona mà",
+            "cs": "Tento obchod prodává pouze kola z druhé ruky"
+          }
+        }
+      ]
+    },
+    {
+      "id": "repairs_bikes",
+      "condition": {
+        "#": "We don't check for shop=bicycle_repair as they imply whether or not bikes are sold",
+        "or": [
+          "service:bicycle:repair~*",
+          "shop=sport",
+          "shop=outdoor",
+          "shop=bicycle",
+          "service:bicycle:retail=yes",
+          "service:bicycle:second_hand=yes",
+          "service:bicycle:second_hand=only"
+        ]
+      },
+      "question": {
+        "en": "Does this shop repair bikes?",
+        "nl": "Herstelt deze winkel fietsen?",
+        "fr": "Est-ce que ce magasin répare des vélos ?",
+        "gl": "Esta tenda arranxa bicicletas?",
+        "de": "Repariert dieses Geschäft Fahrräder?",
+        "it": "Questo negozio ripara bici?",
+        "ru": "В этом магазине ремонтируют велосипеды?",
+        "pt_BR": "Esta loja conserta bicicletas?",
+        "pt": "Esta loja conserta bicicletas?",
+        "es": "¿Repara bicis esta tienda?",
+        "da": "Reparerer denne butik cykler?",
+        "ca": "Aquesta botiga repara bicicletes?",
+        "cs": "Opravuje tento obchod jízdní kola?"
+      },
+      "mappings": [
+        {
+          "if": "service:bicycle:repair=yes",
+          "then": {
+            "en": "This shop repairs bikes",
+            "nl": "Deze winkel herstelt fietsen",
+            "fr": "Ce magasin répare des vélos",
+            "gl": "Esta tenda arranxa bicicletas",
+            "de": "Das Geschäft repariert Fahrräder",
+            "it": "Questo negozio ripara bici",
+            "ru": "Этот магазин ремонтирует велосипеды",
+            "pt_BR": "Esta loja conserta bicicletas",
+            "pt": "Esta loja conserta bicicletas",
+            "es": "Esta tienda repara bicis",
+            "da": "Denne butik reparerer cykler",
+            "ca": "Aquesta botiga repara bicis",
+            "cs": "Tento obchod opravuje jízdní kola"
+          }
+        },
+        {
+          "if": "service:bicycle:repair=no",
+          "then": {
+            "en": "This shop doesn't repair bikes",
+            "nl": "Deze winkel herstelt geen fietsen",
+            "fr": "Ce magasin ne répare pas les vélos",
+            "gl": "Esta tenda non arranxa bicicletas",
+            "de": "Das Geschäft repariert keine Fahrräder",
+            "it": "Questo negozio non ripara bici",
+            "ru": "Этот магазин не ремонтирует велосипеды",
+            "pt_BR": "Esta loja não conserta bicicletas",
+            "pt": "Esta loja não conserta bicicletas",
+            "es": "Esta tienda no repara bicis",
+            "da": "Denne butik reparerer ikke cykler",
+            "ca": "Aquesta botiga no repara bicis",
+            "cs": "Tento obchod neopravuje jízdní kola"
+          }
+        },
+        {
+          "if": "service:bicycle:repair=only_sold",
+          "then": {
+            "en": "This shop only repairs bikes bought here",
+            "nl": "Deze winkel herstelt enkel fietsen die hier werden gekocht",
+            "fr": "Ce magasin ne répare seulement les vélos achetés là-bas",
+            "gl": "Esta tenda só arranxa bicicletas mercadas aquí",
+            "de": "Das Geschäft repariert nur hier gekaufte Fahrräder",
+            "it": "Questo negozio ripara solo le bici che sono state acquistate qua",
+            "ru": "Этот магазин ремонтирует только велосипеды, купленные здесь",
+            "pt_BR": "Esta loja conserta bicicletas compradas aqui",
+            "pt": "Esta loja conserta bicicletas compradas aqui",
+            "es": "Esta tienda solo repara bicis compradas aquí",
+            "da": "Denne butik reparerer kun cykler købt her",
+            "ca": "Aquesta botiga sols repara bicis comprades aquí",
+            "cs": "Tento obchod opravuje pouze zde zakoupená kola"
+          }
+        },
+        {
+          "if": "service:bicycle:repair=brand",
+          "then": {
+            "en": "This shop only repairs bikes of a certain brand",
+            "nl": "Deze winkel herstelt enkel fietsen van een bepaald merk",
+            "fr": "Ce magasin ne répare seulement des marques spécifiques",
+            "gl": "Esta tenda só arranxa bicicletas dunha certa marca",
+            "de": "Das Geschäft repariert nur Fahrräder einer bestimmten Marke",
+            "it": "Questo negozio ripara solo le biciclette di una certa marca",
+            "ru": "В этом магазине обслуживают велосипеды определённого бренда",
+            "pt_BR": "Esta loja conserta bicicletas de uma certa marca",
+            "pt": "Esta loja conserta bicicletas de uma certa marca",
+            "es": "Esta tienda solo repara bicis de una cierta marca",
+            "da": "Dette værksted reparerer kun cykler af et bestemt mærke",
+            "ca": "Aquesta tenda sols repara bicis d’una marca concreta",
+            "cs": "Tento obchod opravuje pouze kola určité značky"
+          }
+        }
+      ]
+    },
+    {
+      "#": "Remark: we steal the 'bicycle_rental' questions from the other layer. They'll get the condition of their source automatically!",
+      "id": "bicycle_rental",
+      "condition": {
+        "or": [
+          "service:bicycle:rental~*",
+          "shop=bicycle",
+          "shop=sport",
+          "shop=bicycle_repair",
+          "shop=outdoor",
+          "shop=rental"
+        ]
+      },
+      "question": {
+        "en": "Does this shop rent out bikes?",
+        "nl": "Verhuurt deze winkel fietsen?",
+        "fr": "Est-ce ce magasin loue des vélos ?",
+        "gl": "Esta tenda aluga bicicletas?",
+        "de": "Vermietet dieses Geschäft Fahrräder?",
+        "it": "Questo negozio noleggia le bici?",
+        "ru": "Этот магазин сдает велосипеды в аренду?",
+        "pt_BR": "Esta loja aluga bicicletas?",
+        "pt": "Esta loja aluga bicicletas?",
+        "es": "¿Alquila bicicis esta tienda?",
+        "da": "Udlejer denne butik cykler?",
+        "ca": "Aquesta botiga alquila bicicletes?",
+        "cs": "Pronajímá tento obchod kola?"
+      },
+      "questionHint": {
+        "en": "This is about rental for e.g. tourists who need a bike. Some bicycle repair shops offer a bicycle to use while your bicycle is being repaired but this is not considered rental for this question.",
+        "de": "Es geht um die Vermietung, z.B. an Touristen, die ein Fahrrad benötigen. Einige Fahrradwerkstätten bieten ein Fahrrad an, das man benutzen kann, während das eigene Fahrrad repariert wird, aber dies wird für diese Frage nicht als Vermietung betrachtet."
+      },
+      "mappings": [
+        {
+          "if": "service:bicycle:rental=yes",
+          "then": {
+            "en": "This shop rents out bikes",
+            "nl": "Deze winkel verhuurt fietsen",
+            "fr": "Ce magasin loue des vélos",
+            "gl": "Esta tenda aluga bicicletas",
+            "de": "Das Geschäft vermietet Fahrräder",
+            "it": "Questo negozio noleggia le bici",
+            "ru": "Этот магазин сдает велосипеды в аренду",
+            "pt_BR": "Esta loja aluga bicicletas",
+            "pt": "Esta loja aluga bicicletas",
+            "es": "Esta tienda alquila bicis",
+            "da": "Denne butik udlejer cykler",
+            "ca": "Aquesta botiga lloga bicis",
+            "cs": "Tento obchod pronajímá jízdní kola"
+          }
+        },
+        {
+          "if": "service:bicycle:rental=no",
+          "then": {
+            "en": "This shop doesn't rent out bikes",
+            "nl": "Deze winkel verhuurt geen fietsen",
+            "fr": "Ce magasin ne loue pas de vélos",
+            "gl": "Esta tenda non aluga bicicletas",
+            "de": "Das Geschäft vermietet keine Fahrräder",
+            "it": "Questo negozio non noleggia le bici",
+            "ru": "Этот магазин не сдает велосипеды напрокат",
+            "pt_BR": "Esta loja não aluga bicicletas",
+            "pt": "Esta loja não aluga bicicletas",
+            "es": "Esta tienda no alquila bicis",
+            "da": "Denne butik udlejer ikke cykler",
+            "ca": "Aquesta botiga no lloga bicis",
+            "cs": "Tento obchod nepronajímá kola"
+          }
+        }
+      ]
+    },
+    {
+      "builtin": "bicycle_rental.*bicycle_rental",
+      "override": {
+        "condition": {
+          "and+": [
+            {
+              "or": [
+                "service:bicycle:rental=yes",
+                "bicycle_rental~*"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "bike_pump_service",
+      "question": {
+        "en": "Does this shop offer a bike pump for use by anyone?",
+        "nl": "Biedt deze winkel een fietspomp aan voor iedereen?",
+        "fr": "Est-ce que ce magasin offre une pompe en accès libre ?",
+        "gl": "Esta tenda ofrece unha bomba de ar para uso de calquera persoa?",
+        "de": "Gibt es in diesem Geschäft eine öffentlich nutzbare Luftpumpe?",
+        "it": "Questo negozio offre l’uso a chiunque di una pompa per bici?",
+        "ru": "Предлагается ли в этом магазине велосипедный насос для всеобщего пользования?",
+        "es": "¿Esta tienda ofrece una bomba para que la utilice cualquiera?",
+        "da": "Tilbyder denne butik en cykelpumpe til brug for alle?",
+        "ca": "Aquesta botiga ofereix una manxa perquè la utilitzi qualsevol?",
+        "cs": "Nabízí tento obchod pumpu na kolo k použití pro kohokoli?"
+      },
+      "condition": {
+        "or": [
+          "service:bicycle:pump~*",
+          "shop=bicycle",
+          "shop=bicycle_repair",
+          "service:bicycle:retail=yes",
+          "service:bicycle:.+~~yes"
+        ]
+      },
+      "mappings": [
+        {
+          "if": "service:bicycle:pump=yes",
+          "then": {
+            "en": "This shop offers a bike pump for anyone",
+            "nl": "Deze winkel biedt een fietspomp aan voor iedereen",
+            "fr": "Ce magasin offre une pompe en acces libre",
+            "gl": "Esta tenda ofrece unha bomba de ar para uso de calquera persoa",
+            "de": "Im Geschäft gibt es eine öffentlich nutzbare Luftpumpe",
+            "it": "Questo negozio offre l’uso pubblico di una pompa per bici",
+            "ru": "В этом магазине есть велосипедный насос для всеобщего пользования",
+            "es": "Esta tienda ofrece una bomba para cualquiera",
+            "da": "Denne butik tilbyder en cykelpumpe til alle",
+            "ca": "Aquesta botiga ofereix una manxa per a tothom",
+            "cs": "Tento obchod nabízí pumpu na kolo pro každého"
+          }
+        },
+        {
+          "if": "service:bicycle:pump=no",
+          "then": {
+            "en": "This shop doesn't offer a bike pump for anyone",
+            "nl": "Deze winkel biedt geen fietspomp aan voor eender wie",
+            "fr": "Ce magasin n'offre pas de pompe en libre accès",
+            "gl": "Esta tenda non ofrece unha bomba de ar para uso de calquera persoa",
+            "de": "Im Geschäft gibt es keine öffentlich nutzbare Luftpumpe",
+            "it": "Questo negozio non offre l’uso pubblico di una pompa per bici",
+            "ru": "В этом магазине нет велосипедного насоса для всеобщего пользования",
+            "es": "Esta tienda no ofrece una bomba para cualquiera",
+            "da": "Denne butik tilbyder ikke en cykelpumpe til nogen",
+            "ca": "Aquesta botiga no ofereix una manxa per a tothom",
+            "cs": "Tento obchod nenabízí pumpičku na kolo pro každého"
+          }
+        },
+        {
+          "if": "service:bicycle:pump=separate",
+          "then": {
+            "en": "There is bicycle pump, it is shown as a separate point",
+            "nl": "Er is een fietspomp, deze is apart aangeduid",
+            "fr": "Il y a une pompe à vélo, c'est indiqué comme un point séparé",
+            "it": "C’è una pompa per bici, è mostrata come punto separato",
+            "de": "Es gibt eine Luftpumpe, sie ist als separater Punkt eingetragen",
+            "es": "Hay una bomba para bicicletas, se muestra como un punto separado",
+            "da": "Der er cykelpumpe, den er vist som et separat punkt",
+            "ca": "Hi ha una manxa, es mostra com a un punt separat",
+            "cs": "K dispozici je pumpa na jízdní kola, je zobrazena jako samostatný bod"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bike_repair_tools",
+      "condition": {
+        "or": [
+          "service:bicycle:diy~*",
+          "shop=bicycle",
+          "shop=bicycle_repair",
+          "service:bicycle:repair~yes|only"
+        ]
+      },
+      "question": {
+        "en": "Are there tools here to repair your own bike?",
+        "nl": "Biedt deze winkel gereedschap aan om je fiets zelf te herstellen?",
+        "fr": "Est-ce qu'il y a des outils pour réparer son vélo dans ce magasin ?",
+        "gl": "Hai ferramentas aquí para arranxar a túa propia bicicleta?",
+        "de": "Gibt es hier Werkzeug, um das eigene Fahrrad zu reparieren?",
+        "it": "Sono presenti degli attrezzi per riparare la propria bici?",
+        "ru": "Есть ли здесь инструменты для починки собственного велосипеда?",
+        "es": "¿Hay herramientas para reparar tu propia bici?",
+        "da": "Er der værktøj her til at reparere din egen cykel?",
+        "ca": "Hi ha ferramentes perquè reparis la teva bici?",
+        "cs": "Jsou zde nástroje na opravu vlastního kola?"
+      },
+      "mappings": [
+        {
+          "if": "service:bicycle:diy=yes",
+          "then": {
+            "en": "This shop offers tools for DIY bicycle repair",
+            "nl": "Deze winkel biedt gereedschap aan om je fiets zelf te herstellen",
+            "fr": "Ce magasin offre des outils pour réparer son vélo soi-même",
+            "gl": "Hai ferramentas aquí para arranxar a túa propia bicicleta",
+            "de": "Das Geschäft bietet Werkzeug an, um das eigene Fahrrad zu reparieren",
+            "it": "Questo negozio offre degli attrezzi per la riparazione fai da te",
+            "da": "Denne butik tilbyder værktøj til gør-det-selv-reparation",
+            "es": "Esta tienda ofrece herramientas para la reparación DIY",
+            "ca": "Aquesta botiga ofereix ferramentes per a la reparació DIY",
+            "cs": "Tento obchod nabízí nářadí pro kutilské opravy"
+          }
+        },
+        {
+          "if": "service:bicycle:diy=no",
+          "then": {
+            "en": "This shop doesn't offer tools for DIY bicycle repair",
+            "nl": "Deze winkel biedt geen gereedschap aan om je fiets zelf te herstellen",
+            "fr": "Ce magasin n'offre pas des outils pour réparer son vélo soi-même",
+            "gl": "Non hai ferramentas aquí para arranxar a túa propia bicicleta",
+            "de": "Das Geschäft bietet kein Werkzeug an, um das eigene Fahrrad zu reparieren",
+            "it": "Questo negozio non offre degli attrezzi per la riparazione fai da te",
+            "da": "Denne butik tilbyder ikke værktøj til gør-det-selv reparation",
+            "es": "Esta tienda no ofrece herramientas para la reparación DIY",
+            "ca": "Aquesta botiga no ofereix ferramentes per a la reparació DIY",
+            "cs": "Tento obchod nenabízí nářadí pro opravy svépomocí"
+          }
+        },
+        {
+          "if": "service:bicycle:diy=only_sold",
+          "then": {
+            "en": "Tools for DIY bicycle repair are only available if you bought/hire the bike in the shop",
+            "nl": "Het gereedschap aan om je fiets zelf te herstellen is enkel voor als je de fiets er kocht of huurt",
+            "fr": "Des outils d'auto-réparation sont disponibles uniquement si vous avez acheté ou loué le vélo dans ce magasin",
+            "it": "Gli attrezzi per la riparazione fai da te sono disponibili solamente se hai acquistato/noleggiato la bici nel negozio",
+            "de": "Das Geschäft bietet nur Werkzeug an, um das eigene Fahrrad zu reparieren, wenn es dort gekauft/gemietet wurde",
+            "ru": "Инструменты для починки доступны только при покупке/аренде велосипеда в магазине",
+            "es": "Las herramientas para reparaciones DIT solo están disponibles si compraste/alquilaste la bicicleta en la tienda",
+            "da": "Værktøj til gør-det-selv-reparation er kun tilgængeligt, hvis du har købt/lejet cyklen i butikken",
+            "ca": "Les ferramentes per a reparacions DIY sols estan disponibles si vas comprar/llogar la bici a la botiga",
+            "cs": "Nářadí pro opravy svépomocí je k dispozici pouze v případě, že jste si kolo koupili/pronajali v prodejně"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bike_wash",
+      "condition": {
+        "or": [
+          "service:bicycle:cleaning~*",
+          "shop=bicycle",
+          "shop=bicycle_repair",
+          "service:bicycle:.*~~yes|only"
+        ]
+      },
+      "question": {
+        "en": "Are bicycles washed here?",
+        "nl": "Biedt deze winkel een fietsschoonmaak aan?",
+        "fr": "Lave-t-on les vélos ici ?",
+        "it": "Vengono lavate le bici qua?",
+        "ru": "Здесь моют велосипеды?",
+        "de": "Bietet dieses Geschäft Fahrradreinigungen an?",
+        "es": "¿Aquí se lavan bicicletas?",
+        "da": "Vaskes cykler her?",
+        "ca": "Aquí es renten bicicletes?",
+        "cs": "Myjí se zde jízdní kola?"
+      },
+      "mappings": [
+        {
+          "if": "service:bicycle:cleaning=yes",
+          "then": {
+            "en": "This shop cleans bicycles",
+            "nl": "Deze winkel biedt fietsschoonmaak aan",
+            "fr": "Ce magasin lave les vélos",
+            "it": "Questo negozio lava le biciclette",
+            "de": "Das Geschäft bietet Fahrradreinigungen an",
+            "ru": "В этом магазине оказываются услуги мойки/чистки велосипедов",
+            "es": "Esta tienda limpia bicicletas",
+            "da": "Denne butik rengør cykler",
+            "ca": "Aquesta botiga renta bicicletes",
+            "cs": "Tento obchod čistí jízdní kola"
+          }
+        },
+        {
+          "if": "service:bicycle:cleaning=diy",
+          "then": {
+            "en": "This shop has an installation where one can clean bicycles themselves",
+            "nl": "Deze winkel biedt een installatie aan om zelf je fiets schoon te maken",
+            "fr": "Ce magasin a une installation pour laver soi même des vélos",
+            "it": "Questo negozio ha una struttura dove è possibile pulire la propria bici",
+            "de": "Im Geschäft können Fahrräder selbst gereinigt werden",
+            "es": "Esta tienda tiene una instalación donde uno puede limpiar bicicletas por si mismo",
+            "da": "Denne butik har et anlæg, hvor man selv kan rengøre cykler",
+            "ca": "Aquesta botiga té una instal·lació on un pot rentar les bicis per un mateix",
+            "cs": "Tento obchod má zařízení, kde si můžete sami vyčistit jízdní kola"
+          }
+        },
+        {
+          "if": "service:bicycle:cleaning=no",
+          "then": {
+            "en": "This shop doesn't offer bicycle cleaning",
+            "nl": "Deze winkel biedt geen fietsschoonmaak aan",
+            "fr": "Ce magasin ne fait pas le nettoyage de vélo",
+            "it": "Questo negozio non offre la pulizia della bicicletta",
+            "de": "Das Geschäft bietet keine Fahrradreinigungen an",
+            "ru": "В этом магазине нет услуг мойки/чистки велосипедов",
+            "es": "Esta tienda no ofrece limpieza de bicicletas",
+            "da": "Denne butik tilbyder ikke rengøring af cykler",
+            "ca": "Aquesta botiga no ofereix rentat de bicis",
+            "cs": "Tento obchod nenabízí čištění jízdních kol"
+          }
+        }
+      ]
+    },
+    {
+      "builtin": "bike_cleaning.bike_cleaning-service_bicycle_cleaning_charge"
     },
     "internet",
     "internet-fee",
@@ -613,8 +1167,7 @@
         }
       }
     },
-    "questions",
-    "reviews"
+    "description"
   ],
   "filter": [
     "open_now",
@@ -663,9 +1216,6 @@
         }
       ]
     },
-    "accepts_cash",
-    "accepts_cards",
-    "has_organic",
     {
       "id": "second_hand",
       "options": [
@@ -680,15 +1230,14 @@
               "shop=second_hand",
               "shop=charity",
               "second_hand=yes",
-              "second_hand=only"
+              "second_hand=only",
+              "service:bicycle:second_hand~i~yes|only"
             ]
           }
         }
       ]
     },
-    "sugar_free",
-    "gluten_free",
-    "lactose_free"
+    "filters.has_organic"
   ],
   "deletion": {
     "softDeletionTags": {

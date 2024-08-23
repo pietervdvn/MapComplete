@@ -215,7 +215,7 @@ export default class Wikipedia {
     }
 
     private async GetArticleUncachedAsync(pageName: string): Promise<string> {
-        const response = await Utils.downloadJson(this.getDataUrl(pageName))
+        const response = await Utils.downloadJson<any>(this.getDataUrl(pageName))
         if (response?.parse?.text === undefined) {
             return undefined
         }

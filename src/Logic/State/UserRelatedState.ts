@@ -18,6 +18,7 @@ import Constants from "../../Models/Constants"
 import { QueryParameters } from "../Web/QueryParameters"
 import { ThemeMetaTagging } from "./UserSettingsMetaTagging"
 import { MapProperties } from "../../Models/MapProperties"
+import Showdown from "showdown"
 
 /**
  * The part of the state which keeps track of user-related stuff, e.g. the OSM-connection,
@@ -389,6 +390,15 @@ export default class UserRelatedState {
         osmConnection.userDetails.addCallback((userDetails) => {
             for (const k in userDetails) {
                 amendedPrefs.data["_" + k] = "" + userDetails[k]
+            }
+            if (userDetails.description) {
+                amendedPrefs.data["_description_html"] = Utils.purify(
+                    new Showdown.Converter()
+                        .makeHtml(userDetails.description)
+                        ?.replace(/&gt;/g, ">")
+                        ?.replace(/&lt;/g, "<")
+                        ?.replace(/\n/g, "")
+                )
             }
 
             usersettingMetaTagging.metaTaggging_for_usersettings({ properties: amendedPrefs.data })

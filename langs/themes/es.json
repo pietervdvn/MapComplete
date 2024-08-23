@@ -96,6 +96,10 @@
         "shortDescription": "Un mapa de bancos",
         "title": "Bancos"
     },
+    "bicycle_parkings": {
+        "description": "Un mapa que muestra todos los tipos de aparcamientos de bicicletas",
+        "title": "Aparcamiento de bicicletas"
+    },
     "bicycle_rental": {
         "description": "En este mapa, encontrará las numerosas estaciones de alquiler de bicicletas tal y como las conoce OpenStreetMap",
         "shortDescription": "Un mapa con estaciones de alquiler de bicicletas y tiendas de alquiler de bicicletas",
@@ -354,6 +358,17 @@
         "shortDescription": "Un mapa mundial de estaciones de carga",
         "title": "Estaciones de carga"
     },
+    "circular_economy": {
+        "description": "Varios elementos que ayudan a la gente a compartir, reutilizar o reciclar.",
+        "layers": {
+            "5": {
+                "override": {
+                    "=name": "Tiendas de segunda mano"
+                }
+            }
+        },
+        "title": "Economía circular"
+    },
     "climbing": {
         "description": "En este mapa encontrará diversas posibilidades de escalada, como rocódromos, salas de búlder y rocas en la naturaleza.",
         "descriptionTail": "El mapa de escalada fue realizado originalmente por <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Por favor, <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>ponte en contacto</a> si tienes comentarios o preguntas.</p><p>El proyecto utiliza datos del proyecto <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a>.</p>",
@@ -440,19 +455,11 @@
         "title": "Gimnasios de escalada, clubes y lugares"
     },
     "clock": {
-        "description": "Mapa con todos los relojes públicos",
+        "description": "Mapa mostrando todos los relojes públicos",
         "title": "Relojes"
     },
     "cycle_highways": {
         "description": "Este mapa muestra autovías ciclistas",
-        "layers": {
-            "0": {
-                "name": "autovías ciclistas",
-                "title": {
-                    "render": "autovía ciclista"
-                }
-            }
-        },
         "title": "Autovías ciclistas"
     },
     "cycle_infra": {
@@ -687,7 +694,7 @@
             }
         },
         "shortDescription": "¿Cual es el origen de un topónimo?",
-        "title": "Etimología - a qué se debe el nombre de una calle?"
+        "title": "Etimología: ¿De qué recibe el nombre un lugar?"
     },
     "facadegardens": {
         "description": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>Los jardines de fachada</a>, las fachadas verdes y los árboles en la ciudad no sólo aportan paz y tranquilidad, sino también una ciudad más bella, una mayor biodiversidad, un efecto refrescante y una mejor calidad del aire. <br/> Klimaan VZW y Mechelen Klimaatneutraal quieren trazar un mapa de los jardines de fachada existentes y nuevos como ejemplo para las personas que quieran construir su propio jardín o para los paseantes urbanos amantes de la naturaleza. <br/>Más información sobre el proyecto en <a href='https://klimaan.be/' target=_blank>klimaan.be</a>.",
@@ -776,6 +783,9 @@
         "shortDescription": "Este mapa muestra jardines de fachada con fotografías e información útil sobre la orientación, la luz del sol y los tipos de plantas.",
         "title": "Jardines de fachada"
     },
+    "fireplace": {
+        "title": "Chimenea y barbacoas"
+    },
     "food": {
         "description": "Restaurantes y Comida rápida",
         "title": "Restaurantes y comida rápida"
@@ -828,7 +838,29 @@
                         },
                         "question": "¿Para qué negocio se hizo este cartel?",
                         "render": "Este cartel se hizo para: {brand}"
+                    },
+                    "historic": {
+                        "mappings": {
+                            "0": {
+                                "then": "Esta es una señal fantasma"
+                            },
+                            "1": {
+                                "then": "Esta no es una señal fantasma, al responder esto se ocultará la señal del mapa"
+                            }
+                        },
+                        "question": "¿Es esto una señal fantasma?",
+                        "questionHint": "¿Este cartel es para una empresa que ya no existe o que ya no recibe mantenimiento?"
+                    },
+                    "inscription": {
+                        "freeform": {
+                            "placeholder": "Texto en el cartel"
+                        },
+                        "question": "¿Cuál es el texto del cartel?",
+                        "render": "El texto del cartel es: {inscription}"
                     }
+                },
+                "title": {
+                    "render": "Publicidad en una fachada"
                 }
             }
         }
@@ -1169,47 +1201,6 @@
         "description": "En este mapa, se puede marcar información básica sobre tiendas, añadir horarios y números de teléfono",
         "shortDescription": "Un mapa editable con información básica sobre tiendas",
         "title": "Tiendas"
-    },
-    "sidewalks": {
-        "description": "Tema experimental",
-        "layers": {
-            "0": {
-                "description": "Una capa que muestra las aceras de las vías",
-                "name": "Aceras",
-                "tagRenderings": {
-                    "left-right-questions": {
-                        "renderings": {
-                            "1": {
-                                "mappings": {
-                                    "0": {
-                                        "then": "Hay una acera en este lado de la calle"
-                                    },
-                                    "1": {
-                                        "then": "No hay acera por la que caminar"
-                                    },
-                                    "2": {
-                                        "then": "Hay una acera mapeada por separado por la que caminar"
-                                    }
-                                },
-                                "question": "¿Hay una acera en este lado de la calle?"
-                            },
-                            "2": {
-                                "question": "¿Cuál es la anchura de la acera en este lado de la calzada?",
-                                "render": "Esta acera tiene {sidewalk:left|right:width} m de ancho"
-                            }
-                        }
-                    },
-                    "streetname": {
-                        "render": "Esta calle se llama {name}"
-                    }
-                },
-                "title": {
-                    "render": "{name}"
-                }
-            }
-        },
-        "shortDescription": "Mapeo de aceras",
-        "title": "Aceras"
     },
     "ski": {
         "description": "Todo lo que necesitas para esquiar",

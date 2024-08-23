@@ -435,7 +435,6 @@
     "check_date"
   ],
   "filter": [
-    "open_now",
     "accepts_debit_cards",
     "accepts_credit_cards"
   ],

@@ -2,7 +2,7 @@
   import { createEventDispatcher } from "svelte"
   import { twJoin } from "tailwind-merge"
   import { Translation } from "../i18n/Translation"
-  import { ariaLabel } from "../../Utils/ariaLabel"
+  import { ariaLabel, ariaLabelStore } from "../../Utils/ariaLabel"
   import { ImmutableStore, Store, UIEventSource } from "../../Logic/UIEventSource"
 
   /**
@@ -12,6 +12,8 @@
   export let cls = "m-0.5 p-0.5 sm:p-1 md:m-1"
   export let enabled: Store<boolean> = new ImmutableStore(true)
   export let arialabel: Translation = undefined
+  export let arialabelDynamic: Store<Translation> = new ImmutableStore(arialabel)
+  let arialabelString = arialabelDynamic.bind((tr) => tr?.current)
   export let htmlElem: UIEventSource<HTMLElement> = undefined
   let _htmlElem: HTMLElement
   $: {
@@ -23,7 +25,8 @@
   bind:this={_htmlElem}
   on:click={(e) => dispatch("click", e)}
   on:keydown
-  use:ariaLabel={arialabel}
+  use:ariaLabelStore={arialabelString}
+  disabled={!$enabled}
   class={twJoin(
     "pointer-events-auto relative h-fit w-fit rounded-full",
     cls,

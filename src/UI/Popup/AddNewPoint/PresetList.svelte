@@ -13,6 +13,7 @@
   import ToSvelte from "../../Base/ToSvelte.svelte"
   import BaseUIElement from "../../BaseUIElement"
   import Combine from "../../Base/Combine"
+  import TitledPanel from "../../Base/TitledPanel.svelte"
 
   /**
    * This component lists all the presets and allows the user to select one
@@ -96,11 +97,8 @@
   }>()
 </script>
 
-<div class="flex w-full flex-col">
-  <h2 class="mr-12">
-    <!-- The title gets a big right margin to give place to the 'close'-button, see https://github.com/pietervdvn/MapComplete/issues/1445 -->
-    <Tr t={Translations.t.general.add.intro} />
-  </h2>
+<TitledPanel>
+  <Tr slot="title" t={Translations.t.general.add.intro} />
 
   {#each presets as preset}
     <NextButton on:click={() => dispatch("select", preset)}>
@@ -115,4 +113,4 @@
       </div>
     </NextButton>
   {/each}
-</div>
+</TitledPanel>

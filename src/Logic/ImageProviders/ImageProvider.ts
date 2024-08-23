@@ -15,6 +15,8 @@ export interface ProvidedImage {
 export default abstract class ImageProvider {
     public abstract readonly defaultKeyPrefixes: string[]
 
+    public abstract readonly name: string
+
     public abstract SourceIcon(id?: string, location?: { lon: number; lat: number }): BaseUIElement
 
     /**
@@ -68,7 +70,10 @@ export default abstract class ImageProvider {
 
     public abstract ExtractUrls(key: string, value: string): Promise<Promise<ProvidedImage>[]>
 
-    public abstract DownloadAttribution(providedImage: ProvidedImage): Promise<LicenseInfo>
+    public abstract DownloadAttribution(providedImage: {
+        url: string
+        id: string
+    }): Promise<LicenseInfo>
 
     public abstract apiUrls(): string[]
 }

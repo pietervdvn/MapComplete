@@ -13,7 +13,7 @@
         "title": "藝術品"
     },
     "atm": {
-        "description": "此地圖顯示了提款或存款的 ATM",
+        "description": "此地圖顯示了提款或存款的自動櫃員機",
         "layers": {
             "3": {
                 "override": {
@@ -286,14 +286,6 @@
         "title": "攀岩館、俱樂部和場所"
     },
     "cycle_highways": {
-        "layers": {
-            "0": {
-                "name": "單車高速公路",
-                "title": {
-                    "render": "單車高速公路"
-                }
-            }
-        },
         "title": "單車高速公路"
     },
     "cycle_infra": {
@@ -420,13 +412,6 @@
     },
     "indoors": {
         "title": "室內"
-    },
-    "mapcomplete-changes": {
-        "layers": {
-            "0": {
-                "name": "變更集中心"
-            }
-        }
     },
     "maproulette": {
         "title": "MapRoulette 任務"
@@ -561,19 +546,6 @@
         "description": "這份地圖上，你可以標記商家基本資訊，新增營業時間以及聯絡電話",
         "shortDescription": "有基本商家資訊的可編輯性的地圖",
         "title": "商店"
-    },
-    "sidewalks": {
-        "description": "實驗性的主題",
-        "layers": {
-            "0": {
-                "description": "顯示道路的人行穿越道的圖層",
-                "name": "人行道",
-                "title": {
-                    "render": "{name}"
-                }
-            }
-        },
-        "title": "人行道"
     },
     "sport_pitches": {
         "description": "運動場地是進行運動的地方",

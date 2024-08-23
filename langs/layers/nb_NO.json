@@ -444,6 +444,12 @@
             "render": "Klatrerute"
         }
     },
+    "cycle_highways": {
+        "name": "sykkelmotorveier",
+        "title": {
+            "render": "sykkelmotorvei"
+        }
+    },
     "extinguisher": {
         "description": "Kartlag for å vise brannslokkere.",
         "name": "Kart over brannhydranter",
@@ -663,7 +669,7 @@
             },
             "opening_hours_by_appointment": {
                 "override": {
-                    "mappings": {
+                    "+mappings": {
                         "0": {
                             "then": "Kun ved avtale"
                         },
@@ -842,6 +848,17 @@
     },
     "usersettings": {
         "tagRenderings": {
+            "profile-description": {
+                "mappings": {
+                    "0": {
+                        "then": {
+                            "special": {
+                                "text": "Legg til profilbeskrivelse"
+                            }
+                        }
+                    }
+                }
+            },
             "translation-completeness": {
                 "render": "Oversettelsen for {_theme} i {_language} har {_translation_percentage}% dekning: {_translation_translated_count} strenger av {_translation_total} har blitt oversatt"
             }

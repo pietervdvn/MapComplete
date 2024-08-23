@@ -388,7 +388,7 @@
     "atm": {
         "description": "Bankomaty pro výběr peněz",
         "filter": {
-            "1": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "S hlasovým výstupem"
@@ -1093,7 +1093,7 @@
                 "question": "Kolik stojí využívání služby mytí?",
                 "render": "Využití služby mytí stojí {charge}"
             },
-            "bike_cleaning-service:bicycle:cleaning:charge": {
+            "bike_cleaning-service_bicycle_cleaning_charge": {
                 "mappings": {
                     "0": {
                         "then": "Služba mytí je k dispozici zdarma"
@@ -1401,14 +1401,14 @@
     "bike_shop": {
         "description": "Obchod zaměřený na prodej jízdních kol nebo souvisejících předmětů",
         "filter": {
-            "1": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "Prodává použitá jízdní kola"
                     }
                 }
             },
-            "2": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "Nabízí opravy kol \"Udělej si sám\""
@@ -1422,125 +1422,10 @@
                 "title": "opravna/obchod s jízdními koly"
             }
         },
-        "tagRenderings": {
-            "bike_repair_bike-pump-service": {
-                "mappings": {
-                    "0": {
-                        "then": "Tento obchod nabízí pumpu na kolo pro každého"
-                    },
-                    "1": {
-                        "then": "Tento obchod nenabízí pumpičku na kolo pro každého"
-                    },
-                    "2": {
-                        "then": "K dispozici je pumpa na jízdní kola, je zobrazena jako samostatný bod"
-                    }
-                },
-                "question": "Nabízí tento obchod pumpu na kolo k použití pro kohokoli?"
-            },
-            "bike_repair_bike-wash": {
-                "mappings": {
-                    "0": {
-                        "then": "Tento obchod čistí jízdní kola"
-                    },
-                    "1": {
-                        "then": "Tento obchod má zařízení, kde si můžete sami vyčistit jízdní kola"
-                    },
-                    "2": {
-                        "then": "Tento obchod nenabízí čištění jízdních kol"
-                    }
-                },
-                "question": "Myjí se zde jízdní kola?"
-            },
-            "bike_repair_rents-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "Tento obchod pronajímá jízdní kola"
-                    },
-                    "1": {
-                        "then": "Tento obchod nepronajímá kola"
-                    }
-                },
-                "question": "Pronajímá tento obchod kola?"
-            },
-            "bike_repair_repairs-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "Tento obchod opravuje jízdní kola"
-                    },
-                    "1": {
-                        "then": "Tento obchod neopravuje jízdní kola"
-                    },
-                    "2": {
-                        "then": "Tento obchod opravuje pouze zde zakoupená kola"
-                    },
-                    "3": {
-                        "then": "Tento obchod opravuje pouze kola určité značky"
-                    }
-                },
-                "question": "Opravuje tento obchod jízdní kola?"
-            },
-            "bike_repair_second-hand-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "Tento obchod prodává použitá jízdní kola"
-                    },
-                    "1": {
-                        "then": "Tento obchod neprodává kola z druhé ruky"
-                    },
-                    "2": {
-                        "then": "Tento obchod prodává pouze kola z druhé ruky"
-                    }
-                },
-                "question": "Prodává tento obchod použitá jízdní kola?"
-            },
-            "bike_repair_sells-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "Tento obchod prodává jízdní kola"
-                    },
-                    "1": {
-                        "then": "Tento obchod neprodává jízdní kola"
-                    }
-                },
-                "question": "Prodává tento obchod jízdní kola?"
-            },
-            "bike_repair_tools-service": {
-                "mappings": {
-                    "0": {
-                        "then": "Tento obchod nabízí nářadí pro kutilské opravy"
-                    },
-                    "1": {
-                        "then": "Tento obchod nenabízí nářadí pro opravy svépomocí"
-                    },
-                    "2": {
-                        "then": "Nářadí pro opravy svépomocí je k dispozici pouze v případě, že jste si kolo koupili/pronajali v prodejně"
-                    }
-                },
-                "question": "Jsou zde nástroje na opravu vlastního kola?"
-            },
-            "bike_shop-access": {
-                "render": "Přístupné pouze pro {access}"
-            },
-            "bike_shop-is-bicycle_shop": {
-                "mappings": {
-                    "0": {
-                        "then": "Tato firma se zaměřuje na pronájem"
-                    }
-                },
-                "render": "Tento obchod se specializuje na prodej {shop} a provádí činnosti související s jízdními koly"
-            },
-            "bike_shop-name": {
-                "question": "Jak se jmenuje tento obchod s jízdními koly?",
-                "render": "Tento obchod s jízdními koly se jmenuje {name}"
-            }
-        },
         "title": {
             "mappings": {
                 "0": {
                     "then": "Obchod se sportovním vybavením <i>{name}</i>"
-                },
-                "1": {
-                    "then": "Winkel"
                 },
                 "2": {
                     "then": "Půjčovna kol <i>{name}</i>"
@@ -1552,6 +1437,9 @@
                     "then": "Prodejna kol <i>{name}</i>"
                 },
                 "5": {
+                    "then": "Oprava kol/obchod <i>{name}</i>"
+                },
+                "6": {
                     "then": "Oprava kol/obchod <i>{name}</i>"
                 }
             },
@@ -2484,6 +2372,12 @@
                 }
             },
             "render": "Přechod"
+        }
+    },
+    "cycle_highways": {
+        "name": "cyklodálnice",
+        "title": {
+            "render": "cyklodálnice"
         }
     },
     "cycleways_and_roads": {
@@ -4207,13 +4101,11 @@
         "name": "Kola duchů",
         "presets": {
             "0": {
+                "description": "<b>kolo duchů</b> je památník cyklisty, který zemřel při dopravní nehodě, v podobě bílého kola umístěného trvale v blízkosti místa nehody.",
                 "title": "kola duchů"
             }
         },
         "tagRenderings": {
-            "ghost-bike-explanation": {
-                "render": "<b>kolo duchů</b> je památník cyklisty, který zemřel při dopravní nehodě, v podobě bílého kola umístěného trvale v blízkosti místa nehody."
-            },
             "ghost_bike-inscription": {
                 "question": "Jaký je nápis na tomto kole duchů?",
                 "render": "<i>{inscription}</i>"
@@ -4413,32 +4305,6 @@
         },
         "title": {
             "render": "Nemocnice"
-        }
-    },
-    "hotel": {
-        "description": "Vrstva zobrazující všechny hotely",
-        "name": "Hotely",
-        "presets": {
-            "0": {
-                "title": "hotel"
-            }
-        },
-        "tagRenderings": {
-            "name": {
-                "freeform": {
-                    "placeholder": "Název hotelu"
-                },
-                "question": "Jak se tento hotel jmenuje?",
-                "render": "Tento hotel se jmenuje {name}"
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Hotel {name}"
-                }
-            },
-            "render": "Hotel"
         }
     },
     "hydrant": {
@@ -6464,7 +6330,7 @@
             },
             "opening_hours_by_appointment": {
                 "override": {
-                    "mappings": {
+                    "+mappings": {
                         "0": {
                             "then": "Pouze po domluvě"
                         },
@@ -7127,7 +6993,7 @@
                     }
                 }
             },
-            "6": {
+            "3": {
                 "options": {
                     "0": {
                         "question": "Zobrazit pouze obchody prodávající použité zboží"
@@ -7143,6 +7009,73 @@
             }
         },
         "tagRenderings": {
+            "bicycle_rental": {
+                "mappings": {
+                    "0": {
+                        "then": "Tento obchod pronajímá jízdní kola"
+                    },
+                    "1": {
+                        "then": "Tento obchod nepronajímá kola"
+                    }
+                },
+                "question": "Pronajímá tento obchod kola?"
+            },
+            "bike_pump_service": {
+                "mappings": {
+                    "0": {
+                        "then": "Tento obchod nabízí pumpu na kolo pro každého"
+                    },
+                    "1": {
+                        "then": "Tento obchod nenabízí pumpičku na kolo pro každého"
+                    },
+                    "2": {
+                        "then": "K dispozici je pumpa na jízdní kola, je zobrazena jako samostatný bod"
+                    }
+                },
+                "question": "Nabízí tento obchod pumpu na kolo k použití pro kohokoli?"
+            },
+            "bike_repair_tools": {
+                "mappings": {
+                    "0": {
+                        "then": "Tento obchod nabízí nářadí pro kutilské opravy"
+                    },
+                    "1": {
+                        "then": "Tento obchod nenabízí nářadí pro opravy svépomocí"
+                    },
+                    "2": {
+                        "then": "Nářadí pro opravy svépomocí je k dispozici pouze v případě, že jste si kolo koupili/pronajali v prodejně"
+                    }
+                },
+                "question": "Jsou zde nástroje na opravu vlastního kola?"
+            },
+            "bike_second_hand": {
+                "mappings": {
+                    "0": {
+                        "then": "Tento obchod prodává použitá jízdní kola"
+                    },
+                    "1": {
+                        "then": "Tento obchod neprodává kola z druhé ruky"
+                    },
+                    "2": {
+                        "then": "Tento obchod prodává pouze kola z druhé ruky"
+                    }
+                },
+                "question": "Prodává tento obchod použitá jízdní kola?"
+            },
+            "bike_wash": {
+                "mappings": {
+                    "0": {
+                        "then": "Tento obchod čistí jízdní kola"
+                    },
+                    "1": {
+                        "then": "Tento obchod má zařízení, kde si můžete sami vyčistit jízdní kola"
+                    },
+                    "2": {
+                        "then": "Tento obchod nenabízí čištění jízdních kol"
+                    }
+                },
+                "question": "Myjí se zde jízdní kola?"
+            },
             "copyshop-print-sizes": {
                 "mappings": {
                     "0": {
@@ -7183,8 +7116,28 @@
                 },
                 "question": "Nabízí tento obchod bio produkty?"
             },
+            "repairs_bikes": {
+                "mappings": {
+                    "0": {
+                        "then": "Tento obchod opravuje jízdní kola"
+                    },
+                    "1": {
+                        "then": "Tento obchod neopravuje jízdní kola"
+                    },
+                    "2": {
+                        "then": "Tento obchod opravuje pouze zde zakoupená kola"
+                    },
+                    "3": {
+                        "then": "Tento obchod opravuje pouze kola určité značky"
+                    }
+                },
+                "question": "Opravuje tento obchod jízdní kola?"
+            },
             "second_hand": {
                 "question": "Prodává tento obchod použité zboží?"
+            },
+            "sells_new_bikes": {
+                "question": "Prodává tento obchod jízdní kola?"
             },
             "shops-name": {
                 "question": "Jak se jmenuje tento obchod?",
@@ -8299,6 +8252,20 @@
             "render": "Toaleta v objektu"
         }
     },
+    "tourism_accomodation": {
+        "presets": {
+            "0": {
+                "title": "hotel"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Hotel {name}"
+                }
+            }
+        }
+    },
     "trail": {
         "name": "Stezky",
         "tagRenderings": {
@@ -8750,6 +8717,13 @@
                     }
                 }
             },
+            "edit-profile": {
+                "render": {
+                    "special": {
+                        "text": "Úprava popisu vašeho profilu"
+                    }
+                }
+            },
             "fixate-north": {
                 "mappings": {
                     "0": {
@@ -8810,6 +8784,17 @@
                     }
                 },
                 "question": "Pod jakou licencí chcete své fotografie zveřejnit?"
+            },
+            "profile-description": {
+                "mappings": {
+                    "0": {
+                        "then": {
+                            "special": {
+                                "text": "Přidat popis profilu"
+                            }
+                        }
+                    }
+                }
             },
             "settings-link": {
                 "render": {

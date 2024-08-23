@@ -28,11 +28,11 @@
     return true
   })
 
-  $: title = new Translation(
+  $: title = Translations.T(
     theme.title,
     !isCustom && !theme.mustHaveLanguage ? "themes:" + theme.id + ".title" : undefined
   )
-  $: description = new Translation(theme.shortDescription)
+  $: description = Translations.T(theme.shortDescription)
 
   // TODO: Improve this function
   function createUrl(
@@ -86,7 +86,7 @@
 </script>
 
 {#if theme.id !== personal.id || $unlockedPersonal}
-  <a class="my-1 flex w-full items-center text-ellipsis rounded low-interaction p-1" href={$href}>
+  <a class="low-interaction my-1 flex w-full items-center text-ellipsis rounded p-1" href={$href}>
     <Marker icons={theme.icon} size="block h-8 w-8 sm:h-11 sm:w-11 m-1 sm:mx-2 md:mx-4 shrink-0" />
 
     <span class="flex flex-col overflow-hidden text-ellipsis text-xl font-bold">

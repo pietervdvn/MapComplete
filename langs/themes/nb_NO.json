@@ -252,14 +252,6 @@
     },
     "cycle_highways": {
         "description": "Kart som viser sykkelmotorveier",
-        "layers": {
-            "0": {
-                "name": "sykkelmotorveier",
-                "title": {
-                    "render": "sykkelmotorvei"
-                }
-            }
-        },
         "title": "Sykkelmotorveier"
     },
     "cycle_infra": {
@@ -609,20 +601,6 @@
     },
     "shops": {
         "title": "Kart over åpne butikker"
-    },
-    "sidewalks": {
-        "description": "Eksperimentelt tema",
-        "layers": {
-            "0": {
-                "name": "Fortau",
-                "tagRenderings": {
-                    "streetname": {
-                        "render": "Denne gaten heter {name}"
-                    }
-                }
-            }
-        },
-        "title": "Fortau"
     },
     "stations": {
         "layers": {

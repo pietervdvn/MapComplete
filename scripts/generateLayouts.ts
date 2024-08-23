@@ -12,7 +12,7 @@ import SpecialVisualizations from "../src/UI/SpecialVisualizations"
 import Constants from "../src/Models/Constants"
 import { AvailableRasterLayers, RasterLayerPolygon } from "../src/Models/RasterLayers"
 import { ImmutableStore } from "../src/Logic/UIEventSource"
-import * as eli from "../src/assets/editor-layer-index.json"
+import * as eli from "../public/assets/data/editor-layer-index.json"
 import * as eli_global from "../src/assets/global-raster-layers.json"
 import ValidationUtils from "../src/Models/ThemeConfig/Conversion/ValidationUtils"
 import { LayerConfigJson } from "../src/Models/ThemeConfig/Json/LayerConfigJson"
@@ -89,8 +89,8 @@ class GenerateLayouts extends Script {
 
         try {
             // We already read to file, in order to crash here if the file is not found
-            let img = await sharp(iconPath)
-            let resized = await img.resize(size)
+            const img = await sharp(iconPath)
+            const resized = await img.resize(size)
             await resized.toFile(targetpath)
             console.log("Created png version at ", newname)
         } catch (e) {
@@ -368,7 +368,7 @@ class GenerateLayouts extends Script {
         hosts.add("https://schema.org")
         const eliLayers: RasterLayerPolygon[] = AvailableRasterLayers.layersAvailableAt(
             new ImmutableStore({ lon: 0, lat: 0 })
-        ).data
+        ).store.data
         {
             const vectorLayers = eliLayers.filter((l) => l.properties.type === "vector")
             const vectorSources = vectorLayers.map((l) => l.properties.url)
@@ -457,16 +457,28 @@ class GenerateLayouts extends Script {
         let ogImage = layout.socialImage
         let twitterImage = ogImage
         if (ogImage === LayoutConfig.defaultSocialImage && layout.official) {
-            ogImage = (await this.createSocialImage(layout, "")) ?? layout.socialImage
-            twitterImage = (await this.createSocialImage(layout, "Wide")) ?? layout.socialImage
+            try {
+                ogImage = (await this.createSocialImage(layout, "")) ?? layout.socialImage
+                twitterImage = (await this.createSocialImage(layout, "Wide")) ?? layout.socialImage
+            } catch (e) {
+                console.error("Could not generate image:", e)
+            }
         }
         if (twitterImage.endsWith(".svg")) {
-            // svgs are badly supported as social image, we use a generated svg instead
-            twitterImage = await this.createIcon(twitterImage, 512, alreadyWritten)
+            try {
+                // svgs are badly supported as social image, we use a generated svg instead
+                twitterImage = await this.createIcon(twitterImage, 512, alreadyWritten)
+            } catch (e) {
+                console.error("Could not generate image:", e)
+            }
         }
 
         if (ogImage.endsWith(".svg")) {
-            ogImage = await this.createIcon(ogImage, 512, alreadyWritten)
+            try {
+                ogImage = await this.createIcon(ogImage, 512, alreadyWritten)
+            } catch (e) {
+                console.error("Could not generate image:", e)
+            }
         }
 
         let customCss = ""
@@ -506,7 +518,7 @@ class GenerateLayouts extends Script {
             apple_icons.push(`<link rel="apple-touch-icon" sizes="${size}x${size}" href="${icon}">`)
         }
 
-        let themeSpecific = [
+        const themeSpecific = [
             `<title>${ogTitle}</title>`,
             `<link rel="manifest" href="${this.enc(layout.id)}.webmanifest">`,
             og,
@@ -630,7 +642,7 @@ class GenerateLayouts extends Script {
             const layout = new LayoutConfig(layoutConfigJson, true)
             const layoutName = layout.id
             if (blacklist.indexOf(layoutName.toLowerCase()) >= 0) {
-                console.log(`Skipping a layout with name${layoutName}, it is on the blacklist`)
+                console.log(`Skipping a layout with name ${layoutName}, it is on the blacklist`)
                 continue
             }
             const err = (err) => {

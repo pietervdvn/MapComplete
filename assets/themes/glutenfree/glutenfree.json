@@ -1,0 +1,134 @@
+{
+  "id": "glutenfree",
+  "title": {
+    "en": "Glutenfree",
+    "de": "Glutenfrei",
+    "it": "Senza glutine"
+  },
+  "description": {
+    "en": "A crowdsourced map with glutenfree items",
+    "de": "Eine gemeinschaftliche Karte mit glutenfreien Produkten",
+    "it": "Una mappa in crowdsourcing per articoli senza glutine"
+  },
+  "icon": "./assets/layers/questions/glutenfree.svg",
+  "layers": [
+    {
+      "builtin": "food",
+      "hideTagRenderingsWithLabels": [
+        "gluten_free",
+        "images",
+        "reviews"
+      ],
+      "override": {
+        "source": {
+          "osmTags": {
+            "and+": [
+              "diet:gluten_free!=",
+              "diet:gluten_free!~no"
+            ]
+          }
+        },
+        "id": "food_glutenfree",
+        "minzoom": 4,
+        "presets": null
+      }
+    },
+    {
+      "builtin": "food",
+      "hideTagRenderingsWithLabels": [
+        "gluten_free",
+        "images",
+        "reviews"
+      ],
+      "override": {
+        "name": null,
+        "minzoom": 17,
+        "isCounted": false,
+        "filter": {
+          "sameAs": "food_glutenfree"
+        }
+      }
+    },
+    {
+      "builtin": "ice_cream",
+      "hideTagRenderingsWithLabels": [
+        "gluten_free",
+        "images",
+        "reviews"
+      ],
+      "override": {
+        "source": {
+          "osmTags": {
+            "and+": [
+              "diet:gluten_free!=",
+              "diet:gluten_free!~no"
+            ]
+          }
+        },
+        "id": "icecream_glutenfree",
+        "minzoom": 4,
+        "presets": null
+      }
+    },
+    {
+      "builtin": "ice_cream",
+      "hideTagRenderingsWithLabels": [
+        "gluten_free",
+        "images",
+        "reviews"
+      ],
+      "override": {
+        "name": null,
+        "minzoom": 17,
+        "isCounted": false,
+        "filter": {
+          "sameAs": "icecream_glutenfree"
+        }
+      }
+    },
+    {
+      "builtin": "shops",
+      "hideTagRenderingsWithLabels": [
+        "gluten_free",
+        "images",
+        "reviews"
+      ],
+      "override": {
+        "source": {
+          "osmTags": {
+            "and+": [
+              "diet:gluten_free!=",
+              "diet:gluten_free!~no"
+            ]
+          }
+        },
+        "id": "shops_glutenfree",
+        "minzoom": 4,
+        "presets": null
+      }
+    },
+    {
+      "builtin": "shops",
+      "hideTagRenderingsWithLabels": [
+        "gluten_free",
+        "images",
+        "reviews"
+      ],
+      "override": {
+        "name": null,
+        "minzoom": 17,
+        "isCounted": false,
+        "filter": {
+          "sameAs": "shops_glutenfree"
+        }
+      }
+    }
+  ],
+  "overrideAll": {
+    "+tagRenderings": [
+      "images",
+      "reviews",
+      "gluten_free"
+    ]
+  }
+}

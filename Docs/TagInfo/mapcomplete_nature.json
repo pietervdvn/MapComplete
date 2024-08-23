@@ -101,17 +101,17 @@
     },
     {
       "key": "seasonal",
-      "description": "Layer 'Drinking water' shows seasonal=no with a fixed text, namely 'This drinking water point is available all around the year' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "description": "Layer 'Drinking water' shows seasonal=no with a fixed text, namely 'Available all around the year' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
       "value": "no"
     },
     {
       "key": "seasonal",
-      "description": "Layer 'Drinking water' shows seasonal=summer with a fixed text, namely 'This drinking water point is only available in summer' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "description": "Layer 'Drinking water' shows seasonal=summer with a fixed text, namely 'Only available in summer' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
       "value": "summer"
     },
     {
       "key": "seasonal",
-      "description": "Layer 'Drinking water' shows seasonal=spring;summer;autumn with a fixed text, namely 'This drinking water point is closed during the winter' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "description": "Layer 'Drinking water' shows seasonal=spring;summer;autumn with a fixed text, namely 'Closed during the winter' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
       "value": "spring;summer;autumn"
     },
     {
@@ -146,91 +146,6 @@
       "key": "tourism",
       "description": "Layer 'Drinking water' shows tourism= with a fixed text, namely 'This drinking water point <span class=\"subtle\">probably</span> doesn't have an integrated artwork' (in the mapcomplete.org theme 'Into nature') Picking this answer will delete the key tourism.",
       "value": ""
-    },
-    {
-      "key": "artwork_type",
-      "description": "Layer 'Drinking water' shows and asks freeform values for key 'artwork_type' (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)"
-    },
-    {
-      "key": "artwork_type",
-      "description": "Layer 'Drinking water' shows artwork_type=architecture with a fixed text, namely 'Architecture' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
-      "value": "architecture"
-    },
-    {
-      "key": "artwork_type",
-      "description": "Layer 'Drinking water' shows artwork_type=mural with a fixed text, namely 'Mural' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
-      "value": "mural"
-    },
-    {
-      "key": "artwork_type",
-      "description": "Layer 'Drinking water' shows artwork_type=painting with a fixed text, namely 'Painting' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
-      "value": "painting"
-    },
-    {
-      "key": "artwork_type",
-      "description": "Layer 'Drinking water' shows artwork_type=sculpture with a fixed text, namely 'Sculpture' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
-      "value": "sculpture"
-    },
-    {
-      "key": "artwork_type",
-      "description": "Layer 'Drinking water' shows artwork_type=statue with a fixed text, namely 'Statue' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
-      "value": "statue"
-    },
-    {
-      "key": "artwork_type",
-      "description": "Layer 'Drinking water' shows artwork_type=bust with a fixed text, namely 'Bust' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
-      "value": "bust"
-    },
-    {
-      "key": "artwork_type",
-      "description": "Layer 'Drinking water' shows artwork_type=stone with a fixed text, namely 'Stone' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
-      "value": "stone"
-    },
-    {
-      "key": "artwork_type",
-      "description": "Layer 'Drinking water' shows artwork_type=installation with a fixed text, namely 'Installation' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
-      "value": "installation"
-    },
-    {
-      "key": "artwork_type",
-      "description": "Layer 'Drinking water' shows artwork_type=graffiti with a fixed text, namely 'Graffiti' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
-      "value": "graffiti"
-    },
-    {
-      "key": "artwork_type",
-      "description": "Layer 'Drinking water' shows artwork_type=relief with a fixed text, namely 'Relief' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
-      "value": "relief"
-    },
-    {
-      "key": "artwork_type",
-      "description": "Layer 'Drinking water' shows artwork_type=azulejo with a fixed text, namely 'Azulejo (Spanish decorative tilework)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
-      "value": "azulejo"
-    },
-    {
-      "key": "artwork_type",
-      "description": "Layer 'Drinking water' shows artwork_type=tilework with a fixed text, namely 'Tilework' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
-      "value": "tilework"
-    },
-    {
-      "key": "artwork_type",
-      "description": "Layer 'Drinking water' shows artwork_type=woodcarving with a fixed text, namely 'Woodcarving' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
-      "value": "woodcarving"
-    },
-    {
-      "key": "artist:wikidata",
-      "description": "Layer 'Drinking water' shows and asks freeform values for key 'artist:wikidata' (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)"
-    },
-    {
-      "key": "artist_name",
-      "description": "Layer 'Drinking water' shows and asks freeform values for key 'artist_name' (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)"
-    },
-    {
-      "key": "website",
-      "description": "Layer 'Drinking water' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)"
-    },
-    {
-      "key": "subject:wikidata",
-      "description": "Layer 'Drinking water' shows and asks freeform values for key 'subject:wikidata' (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)"
     },
     {
       "key": "leisure",
@@ -713,6 +628,16 @@
       "value": "no"
     },
     {
+      "key": "armrest",
+      "description": "Layer 'Benches' shows armrest=yes with a fixed text, namely 'This bench does have one or more armrests' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "value": "yes"
+    },
+    {
+      "key": "armrest",
+      "description": "Layer 'Benches' shows armrest=no with a fixed text, namely 'This bench does <b>not</b> have any armrests' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "value": "no"
+    },
+    {
       "key": "seats",
       "description": "Layer 'Benches' shows and asks freeform values for key 'seats' (in the mapcomplete.org theme 'Into nature')"
     },
@@ -855,91 +780,6 @@
       "key": "not:historic",
       "description": "Layer 'Benches' shows historic= & not:historic=memorial with a fixed text, namely 'This bench is a <b>not</b> a memorial for someone or something' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if (historic=memorial | inscription~.+ | memorial=bench | tourism=artwork))",
       "value": "memorial"
-    },
-    {
-      "key": "artwork_type",
-      "description": "Layer 'Benches' shows and asks freeform values for key 'artwork_type' (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)"
-    },
-    {
-      "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=architecture with a fixed text, namely 'Architecture' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
-      "value": "architecture"
-    },
-    {
-      "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=mural with a fixed text, namely 'Mural' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
-      "value": "mural"
-    },
-    {
-      "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=painting with a fixed text, namely 'Painting' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
-      "value": "painting"
-    },
-    {
-      "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=sculpture with a fixed text, namely 'Sculpture' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
-      "value": "sculpture"
-    },
-    {
-      "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=statue with a fixed text, namely 'Statue' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
-      "value": "statue"
-    },
-    {
-      "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=bust with a fixed text, namely 'Bust' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
-      "value": "bust"
-    },
-    {
-      "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=stone with a fixed text, namely 'Stone' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
-      "value": "stone"
-    },
-    {
-      "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=installation with a fixed text, namely 'Installation' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
-      "value": "installation"
-    },
-    {
-      "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=graffiti with a fixed text, namely 'Graffiti' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
-      "value": "graffiti"
-    },
-    {
-      "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=relief with a fixed text, namely 'Relief' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
-      "value": "relief"
-    },
-    {
-      "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=azulejo with a fixed text, namely 'Azulejo (Spanish decorative tilework)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
-      "value": "azulejo"
-    },
-    {
-      "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=tilework with a fixed text, namely 'Tilework' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
-      "value": "tilework"
-    },
-    {
-      "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=woodcarving with a fixed text, namely 'Woodcarving' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
-      "value": "woodcarving"
-    },
-    {
-      "key": "artist:wikidata",
-      "description": "Layer 'Benches' shows and asks freeform values for key 'artist:wikidata' (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)"
-    },
-    {
-      "key": "artist_name",
-      "description": "Layer 'Benches' shows and asks freeform values for key 'artist_name' (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)"
-    },
-    {
-      "key": "website",
-      "description": "Layer 'Benches' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)"
-    },
-    {
-      "key": "subject:wikidata",
-      "description": "Layer 'Benches' shows and asks freeform values for key 'subject:wikidata' (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)"
     },
     {
       "key": "leisure",
@@ -1414,6 +1254,161 @@
       "key": "shelter_type",
       "description": "Layer 'Shelter' shows shelter_type=basic_hut with a fixed text, namely 'This is a basic hut, providing basic shelter and sleeping facilities.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
       "value": "basic_hut"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Into nature has a layer BBQ showing features with this tag",
+      "value": "bbq"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'BBQ' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Into nature') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'BBQ allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'BBQ allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'BBQ allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'BBQ allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'BBQ' shows access=yes with a fixed text, namely 'Public' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "value": "yes"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'BBQ' shows access=no with a fixed text, namely 'No access' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "value": "no"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'BBQ' shows access=private with a fixed text, namely 'Private' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "value": "private"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'BBQ' shows access=permissive with a fixed text, namely 'Access until revoked' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "value": "permissive"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'BBQ' shows access=customers with a fixed text, namely 'Access only for customers' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "value": "customers"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'BBQ' shows access=permit with a fixed text, namely 'Access only for authorized persons' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "value": "permit"
+    },
+    {
+      "key": "covered",
+      "description": "Layer 'BBQ' shows covered=no with a fixed text, namely 'The grill is not covered' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "value": "no"
+    },
+    {
+      "key": "covered",
+      "description": "Layer 'BBQ' shows covered=yes with a fixed text, namely 'The grill is covered' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "value": "yes"
+    },
+    {
+      "key": "fuel",
+      "description": "Layer 'BBQ' shows fuel=wood with a fixed text, namely 'Wood' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "value": "wood"
+    },
+    {
+      "key": "fuel",
+      "description": "Layer 'BBQ' shows fuel=charcoal with a fixed text, namely 'Charcoal' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "value": "charcoal"
+    },
+    {
+      "key": "fuel",
+      "description": "Layer 'BBQ' shows fuel=electric with a fixed text, namely 'Electric' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "value": "electric"
+    },
+    {
+      "key": "fuel",
+      "description": "Layer 'BBQ' shows fuel=gas with a fixed text, namely 'Gas' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "value": "gas"
+    },
+    {
+      "key": "leisure",
+      "description": "The MapComplete theme Into nature has a layer Firepit showing features with this tag",
+      "value": "firepit"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Firepit' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Into nature') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Firepit allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Firepit allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Firepit allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Firepit allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Firepit' shows access=yes with a fixed text, namely 'Public' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "value": "yes"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Firepit' shows access=no with a fixed text, namely 'No access' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "value": "no"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Firepit' shows access=private with a fixed text, namely 'Private' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "value": "private"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Firepit' shows access=permissive with a fixed text, namely 'Access until revoked' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "value": "permissive"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Firepit' shows access=customers with a fixed text, namely 'Access only for customers' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "value": "customers"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Firepit' shows access=permit with a fixed text, namely 'Access only for authorized' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "value": "permit"
+    },
+    {
+      "key": "seasonal",
+      "description": "Layer 'Firepit' shows seasonal=no with a fixed text, namely 'Available all around the year' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "value": "no"
+    },
+    {
+      "key": "seasonal",
+      "description": "Layer 'Firepit' shows seasonal=summer with a fixed text, namely 'Only available in summer' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "value": "summer"
+    },
+    {
+      "key": "seasonal",
+      "description": "Layer 'Firepit' shows seasonal=spring;summer;autumn with a fixed text, namely 'Closed during the winter' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "value": "spring;summer;autumn"
     }
   ]
 }

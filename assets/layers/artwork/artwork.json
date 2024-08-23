@@ -29,7 +29,7 @@
     "nl": "Een vrije kaart met standbeelden, bustes, graffiti en andere kunstwerken van over de hele wereld",
     "fr": "Une carte ouverte de statues, bustes, graffitis et autres œuvres d'art de par le monde",
     "de": "Eine freie Karte mit Statuen, Büsten, Graffitis und anderen Kunstwerken auf der ganzen Welt",
-    "it": "Diverse opere d’arte",
+    "it": "Una mappa libera delle statue, i busti, i graffiti e le altre opere d'arte di tutto il mondo",
     "ru": "Разнообразные произведения искусства",
     "es": "Un mapa abierto de Estatuas, bustos, Graffitis y otras Obras de Arte en todo el mundo",
     "ja": "多様な作品",
@@ -790,6 +790,40 @@
       ]
     },
     {
+      "id": "doubles_as_memorial",
+      "question": {
+        "en": "Does this artwork serve as a memorial?",
+        "de": "Dient dieses Kunstwerk als Mahnmal?"
+      },
+      "mappings": [
+        {
+          "if": "historic=memorial",
+          "then": {
+            "en": "This artwork also serves as a memorial",
+            "de": "Dieses Kunstwerk dient auch als Mahnmal"
+          }
+        },
+        {
+          "if": "historic=",
+          "alsoShowIf": "historic!=memorial",
+          "then": {
+            "en": "This artwork does not serve as a bench",
+            "de": "Dieses Kunstwerk dient nicht als Sitzbank"
+          }
+        }
+      ]
+    },
+    {
+      "builtin": "memorial.memorial-questions",
+      "override": {
+        "condition": {
+          "and+": [
+            "historic=memorial"
+          ]
+        }
+      }
+    },
+    {
       "id": "doubles_as_bench",
       "question": {
         "en": "Does this artwork serve as a bench?",
@@ -867,7 +901,7 @@
       "builtin": "bench.bench-questions",
       "override": {
         "condition": {
-          "and": [
+          "and+": [
             "amenity=bench"
           ]
         }

@@ -4,6 +4,8 @@ import { ImmutableStore, Store } from "../UIEventSource"
 import { BBox } from "../BBox"
 import osmtogeojson from "osmtogeojson"
 import { FeatureCollection } from "@turf/turf"
+import { Geometry } from "geojson"
+import { OsmTags } from "../../Models/OsmFeature"
 
 /**
  * Interfaces overpass to get all the latest data
@@ -33,7 +35,7 @@ export class Overpass {
         this._includeMeta = includeMeta
     }
 
-    public async queryGeoJson(bounds: BBox): Promise<[FeatureCollection, Date]> {
+    public async queryGeoJson(bounds: BBox): Promise<[FeatureCollection<Geometry, OsmTags>, Date]> {
         const bbox =
             "[bbox:" +
             bounds.getSouth() +
@@ -52,8 +54,14 @@ export class Overpass {
         return `${this._interpreterUrl}?data=${encodeURIComponent(query)}`
     }
 
-    private async ExecuteQuery(query: string): Promise<[FeatureCollection, Date]> {
-        const json = await Utils.downloadJson(this.buildUrl(query))
+    private async ExecuteQuery(
+        query: string
+    ): Promise<[FeatureCollection<Geometry, OsmTags>, Date]> {
+        const json = await Utils.downloadJson<{
+            elements: []
+            remark
+            osm3s: { timestamp_osm_base: string }
+        }>(this.buildUrl(query))
 
         if (json.elements.length === 0 && json.remark !== undefined) {
             console.warn("Timeout or other runtime error while querying overpass", json.remark)

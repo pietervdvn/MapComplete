@@ -2,6 +2,7 @@ import { Utils } from "../../Utils"
 import { BBox } from "../BBox"
 import Constants from "../../Models/Constants"
 import { FeatureCollection } from "geojson"
+import Locale from "../../UI/i18n/Locale"
 
 export interface GeoCodeResult {
     display_name: string
@@ -23,7 +24,9 @@ export class Geocoding {
         const b = bbox ?? BBox.global
         const url = `${
             Geocoding.host
-        }search?format=json&limit=1&viewbox=${b.getEast()},${b.getNorth()},${b.getWest()},${b.getSouth()}&accept-language=nl&q=${query}`
+        }search?format=json&limit=1&viewbox=${b.getEast()},${b.getNorth()},${b.getWest()},${b.getSouth()}&accept-language=${
+            Locale.language.data
+        }&q=${query}`
         return Utils.downloadJson(url)
     }
 

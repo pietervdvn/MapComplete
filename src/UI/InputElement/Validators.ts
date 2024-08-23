@@ -99,15 +99,16 @@ export default class Validators {
 
     private static _byType = Validators._byTypeConstructor()
 
-    public static HelpText(): BaseUIElement {
-        const explanations: BaseUIElement[] = Validators.AllValidators.map((type) =>
-            new Combine([new Title(type.name, 3), type.explanation]).SetClass("flex flex-col")
-        )
-        return new Combine([
-            new Title("Available types for text fields", 1),
+    public static HelpText(): string {
+        const explanations: string[] = Validators.AllValidators.flatMap((type) => [
+            "### " + type.name,
+            type.explanation,
+        ])
+        return [
+            "# Available types for text fields",
             "The listed types here trigger a special input element. Use them in `tagrendering.freeform.type` of your tagrendering to activate them",
             ...explanations,
-        ]).SetClass("flex flex-col")
+        ].join("\n")
     }
 
     private static _byTypeConstructor(): Map<ValidatorType, Validator> {

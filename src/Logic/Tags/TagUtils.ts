@@ -10,9 +10,9 @@ import { TagConfigJson } from "../../Models/ThemeConfig/Json/TagConfigJson"
 import key_counts from "../../assets/key_totals.json"
 
 import { ConversionContext } from "../../Models/ThemeConfig/Conversion/ConversionContext"
+import { TagsFilterClosed, UploadableTag } from "./TagTypes"
 
 type Tags = Record<string, string>
-export type UploadableTag = Tag | SubstitutingTag | And
 
 export class TagUtils {
     public static readonly comparators: ReadonlyArray<
@@ -218,10 +218,18 @@ export class TagUtils {
      *
      * TagUtils.KVtoProperties([new Tag("a","b"), new Tag("c","d")] // => {a: "b", c: "d"}
      */
-    static KVtoProperties(tags: Tag[]): Record<string, string> {
+    static KVtoProperties(tags: { key: string; value: string }[]): Record<string, string> {
         const properties: Record<string, string> = {}
         for (const tag of tags) {
             properties[tag.key] = tag.value
+        }
+        return properties
+    }
+
+    static KVObjtoProperties(tags: { k: string; v: string }[]): Record<string, string> {
+        const properties: Record<string, string> = {}
+        for (const tag of tags) {
+            properties[tag.k] = tag.v
         }
         return properties
     }
@@ -476,7 +484,10 @@ export class TagUtils {
      * regex.matchesProperties({maxspeed: "50 mph"}) // => true
      */
 
-    public static Tag(json: TagConfigJson, context: string | ConversionContext = ""): TagsFilter {
+    public static Tag(
+        json: TagConfigJson,
+        context: string | ConversionContext = ""
+    ): TagsFilterClosed {
         try {
             const ctx = typeof context === "string" ? context : context.path.join(".")
             return this.ParseTagUnsafe(json, ctx)
@@ -664,7 +675,7 @@ export class TagUtils {
      * TagUtils.containsEquivalents([new Tag("key","value")],  [ new Tag("other_key","value")]) // => false
      * TagUtils.containsEquivalents([new Tag("key","value")],  [ new Tag("key","other_value")]) // => false
      */
-    public static containsEquivalents(guards: TagsFilter[], listToFilter: TagsFilter[]): boolean {
+    public static containsEquivalents(guards: ReadonlyArray<TagsFilter>, listToFilter: ReadonlyArray<TagsFilter>): boolean {
         return listToFilter.some((tf) => guards.some((guard) => guard.shadows(tf)))
     }
 
@@ -712,7 +723,7 @@ export class TagUtils {
         return Utils.NoNull(spec)
     }
 
-    private static ParseTagUnsafe(json: TagConfigJson, context: string = ""): TagsFilter {
+    private static ParseTagUnsafe(json: TagConfigJson, context: string = ""): TagsFilterClosed {
         if (json === undefined) {
             throw new Error(
                 `Error while parsing a tag: 'json' is undefined in ${context}. Make sure all the tags are defined and at least one tag is present in a complex expression`
@@ -720,7 +731,7 @@ export class TagUtils {
         }
         if (typeof json != "string") {
             if (json["and"] !== undefined && json["or"] !== undefined) {
-                throw `${context}: Error while parsing a TagConfig: got an object where both 'and' and 'or' are defined. Did you override a value? Perhaps use \`"=parent": { ... }\` instead of \"parent": {...}\` to trigger a replacement and not a fuse of values. The value is ${JSON.stringify(
+                throw `${context}: Error while parsing a TagConfig: got an object where both 'and' and 'or' are defined. Did you override a value? Perhaps use \`"=parent": { ... }\` instead of "parent": {...}\` to trigger a replacement and not a fuse of values. The value is ${JSON.stringify(
                     json
                 )}`
             }
@@ -914,7 +925,7 @@ export class TagUtils {
         return 0
     }
 
-    private static joinL(tfs: TagsFilter[], seperator: string, toplevel: boolean) {
+    private static joinL(tfs: ReadonlyArray<TagsFilter>, seperator: string, toplevel: boolean) {
         const joined = tfs.map((e) => TagUtils.toString(e, false)).join(seperator)
         if (toplevel) {
             return joined

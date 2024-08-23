@@ -1,11 +1,11 @@
 {
   "contributors": [
     {
-      "commits": 378,
+      "commits": 388,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 351,
+      "commits": 356,
       "contributor": "kjon"
     },
     {
@@ -21,11 +21,11 @@
       "contributor": "Robin van der Linde"
     },
     {
-      "commits": 69,
+      "commits": 76,
       "contributor": "mcliquid"
     },
     {
-      "commits": 61,
+      "commits": 63,
       "contributor": "danieldegroot2"
     },
     {
@@ -69,8 +69,12 @@
       "contributor": "Marco"
     },
     {
-      "commits": 18,
+      "commits": 22,
       "contributor": "gallegonovato"
+    },
+    {
+      "commits": 18,
+      "contributor": "Patchanka64"
     },
     {
       "commits": 18,
@@ -114,7 +118,7 @@
     },
     {
       "commits": 12,
-      "contributor": "Patchanka64"
+      "contributor": "hugoalh"
     },
     {
       "commits": 12,
@@ -126,11 +130,19 @@
     },
     {
       "commits": 11,
+      "contributor": "Manuel Tassi"
+    },
+    {
+      "commits": 11,
       "contributor": "Jaime Marquínez Ferrándiz"
     },
     {
       "commits": 11,
       "contributor": "Túllio Franca"
+    },
+    {
+      "commits": 10,
+      "contributor": "Jeff Huang"
     },
     {
       "commits": 10,
@@ -158,10 +170,6 @@
     },
     {
       "commits": 9,
-      "contributor": "Manuel Tassi"
-    },
-    {
-      "commits": 9,
       "contributor": "Lasse Liehu"
     },
     {
@@ -186,7 +194,7 @@
     },
     {
       "commits": 8,
-      "contributor": "Jeff Huang"
+      "contributor": "nilocram"
     },
     {
       "commits": 8,
@@ -195,6 +203,10 @@
     {
       "commits": 8,
       "contributor": "Vinicius"
+    },
+    {
+      "commits": 7,
+      "contributor": "Franco"
     },
     {
       "commits": 7,
@@ -211,10 +223,6 @@
     {
       "commits": 7,
       "contributor": "Niels Elgaard Larsen"
-    },
-    {
-      "commits": 6,
-      "contributor": "hugoalh"
     },
     {
       "commits": 6,
@@ -263,10 +271,6 @@
     {
       "commits": 5,
       "contributor": "Emory Shaw"
-    },
-    {
-      "commits": 5,
-      "contributor": "nilocram"
     },
     {
       "commits": 5,
@@ -327,10 +331,6 @@
     {
       "commits": 3,
       "contributor": "Paolo Mauri"
-    },
-    {
-      "commits": 3,
-      "contributor": "Franco"
     },
     {
       "commits": 3,
@@ -399,6 +399,10 @@
     {
       "commits": 3,
       "contributor": "SiegbjornSitumeang"
+    },
+    {
+      "commits": 2,
+      "contributor": "Beardhatcode"
     },
     {
       "commits": 2,
@@ -515,6 +519,18 @@
     {
       "commits": 2,
       "contributor": "Leo Alcaraz"
+    },
+    {
+      "commits": 1,
+      "contributor": "aTarom"
+    },
+    {
+      "commits": 1,
+      "contributor": "Martien Sch"
+    },
+    {
+      "commits": 1,
+      "contributor": "Onnar Rick"
     },
     {
       "commits": 1,
@@ -635,10 +651,6 @@
     {
       "commits": 1,
       "contributor": "Iváns"
-    },
-    {
-      "commits": 1,
-      "contributor": "Beardhatcode"
     },
     {
       "commits": 1,

@@ -66,14 +66,6 @@
         }
     },
     "cycle_highways": {
-        "layers": {
-            "0": {
-                "name": "سائیکل‌وے",
-                "title": {
-                    "render": "سائیکل‌وے"
-                }
-            }
-        },
         "title": "سائیکل‌وے"
     },
     "cycle_infra": {
@@ -218,16 +210,6 @@
         },
         "shortDescription": "ڈاک کوڈ",
         "title": "ڈاک کوڈ"
-    },
-    "sidewalks": {
-        "description": "آزمائش تھیم",
-        "layers": {
-            "0": {
-                "name": "فُٹ‌پاتھ"
-            }
-        },
-        "shortDescription": "فُت‌پیتھ دا نقشہ بݨاؤݨ",
-        "title": "فُٹ‌پاتھ"
     },
     "sports": {
         "title": "کھیڈاں"

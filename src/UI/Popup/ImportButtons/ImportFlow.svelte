@@ -16,11 +16,10 @@
   import TagHint from "../TagHint.svelte"
   import { TagsFilter } from "../../../Logic/Tags/TagsFilter"
   import { Store } from "../../../Logic/UIEventSource"
-  import Svg from "../../../Svg"
-  import ToSvelte from "../../Base/ToSvelte.svelte"
   import { EyeIcon, EyeOffIcon } from "@rgossiaux/svelte-heroicons/solid"
   import FilteredLayer from "../../../Models/FilteredLayer"
   import Confirm from "../../../assets/svg/Confirm.svelte"
+  import Layers from "../../../assets/svg/Layers.svelte"
 
   export let importFlow: ImportFlow<ImportFlowArguments>
   let state = importFlow.state
@@ -77,7 +76,7 @@
           state.guistate.openFilterView(filteredLayer.layerDef)
         }}
       >
-        <ToSvelte construct={Svg.layers_svg().SetClass("w-12")} />
+        <Layers class="w-12" />
         <Tr t={Translations.t.general.add.openLayerControl} />
       </button>
 
@@ -120,7 +119,7 @@
           state.guistate.openFilterView(filteredLayer.layerDef)
         }}
       >
-        <ToSvelte construct={Svg.layers_svg().SetClass("w-12")} />
+        <Layers class="w-12" />
         <Tr t={Translations.t.general.add.openLayerControl} />
       </button>
     </div>

@@ -1,6 +1,8 @@
-import { UIEventSource } from "../UIEventSource"
+import { Store, UIEventSource } from "../UIEventSource"
 import { LocalStorageSource } from "../Web/LocalStorageSource"
 import { QueryParameters } from "../Web/QueryParameters"
+import { Translation } from "../../UI/i18n/Translation"
+import Translations from "../../UI/i18n/Translations"
 
 export type GeolocationPermissionState = "prompt" | "requested" | "granted" | "denied"
 
@@ -26,6 +28,13 @@ export class GeoLocationState {
     )
 
     /**
+     * If an error occurs with a code indicating "gps unavailable", this will be set to "false".
+     * This is about the physical availability of the GPS-signal; this might e.g. become false if the user is in a tunnel
+     */
+    private readonly _gpsAvailable: UIEventSource<boolean> = new UIEventSource<boolean>(true)
+    public readonly gpsAvailable: Store<boolean> = this._gpsAvailable
+
+    /**
      * Important to determine e.g. if we move automatically on fix or not
      */
     public readonly requestMoment: UIEventSource<Date | undefined> = new UIEventSource(undefined)
@@ -48,41 +57,44 @@ export class GeoLocationState {
      * If the user denies the geolocation this time, we unset this flag
      * @private
      */
-    private readonly _previousLocationGrant: UIEventSource<"true" | "false"> = <any>(
-        LocalStorageSource.Get("geolocation-permissions")
-    )
+    private readonly _previousLocationGrant: UIEventSource<boolean> =
+        LocalStorageSource.GetParsed<boolean>("geolocation-permissions", false)
 
     /**
      * Used to detect a permission retraction
      */
     private readonly _grantedThisSession: UIEventSource<boolean> = new UIEventSource<boolean>(false)
 
+    /**
+     * A human explanation of the current gps state, to be shown on the home screen or as tooltip
+     */
+    public readonly gpsStateExplanation: Store<Translation>
     constructor() {
         const self = this
 
         this.permission.addCallbackAndRunD(async (state) => {
             if (state === "granted") {
-                self._previousLocationGrant.setData("true")
+                self._previousLocationGrant.setData(true)
                 self._grantedThisSession.setData(true)
             }
             if (state === "prompt" && self._grantedThisSession.data) {
                 // This is _really_ weird: we had a grant earlier, but it's 'prompt' now?
                 // This means that the rights have been revoked again!
-                self._previousLocationGrant.setData("false")
+                self._previousLocationGrant.setData(false)
                 self.permission.setData("denied")
                 self.currentGPSLocation.setData(undefined)
                 console.warn("Detected a downgrade in permissions!")
             }
             if (state === "denied") {
-                self._previousLocationGrant.setData("false")
+                self._previousLocationGrant.setData(false)
             }
         })
         console.log("Previous location grant:", this._previousLocationGrant.data)
-        if (this._previousLocationGrant.data === "true") {
+        if (this._previousLocationGrant.data) {
             // A previous visit successfully granted permission. Chance is high that we are allowed to use it again!
 
             // We set the flag to false again. If the user only wanted to share their location once, we are not gonna keep bothering them
-            this._previousLocationGrant.setData("false")
+            this._previousLocationGrant.setData(false)
             console.log("Requesting access to GPS as this was previously granted")
             const latLonGivenViaUrl =
                 QueryParameters.wasInitialized("lat") || QueryParameters.wasInitialized("lon")
@@ -91,6 +103,33 @@ export class GeoLocationState {
             }
             this.requestPermission()
         }
+
+        this.gpsStateExplanation = this.gpsAvailable.map(
+            (available) => {
+                if (this.currentGPSLocation.data !== undefined) {
+                    if (!this.allowMoving.data) {
+                        return Translations.t.general.visualFeedback.islocked
+                    }
+
+                    return Translations.t.general.labels.jumpToLocation
+                }
+
+                if (!available) {
+                    return Translations.t.general.labels.locationNotAvailable
+                }
+                if (this.permission.data === "denied") {
+                    return Translations.t.general.geopermissionDenied
+                }
+                if (this.permission.data === "prompt") {
+                    return Translations.t.general.labels.jumpToLocation
+                }
+                if (this.permission.data === "requested") {
+                    return Translations.t.general.waitingForGeopermission
+                }
+                return Translations.t.general.waitingForLocation
+            },
+            [this.allowMoving, this.permission, this.currentGPSLocation]
+        )
     }
 
     /**
@@ -124,9 +163,11 @@ export class GeoLocationState {
         }
 
         if (GeoLocationState.isSafari()) {
-            // This is probably safari
-            // Safari does not support the 'permissions'-API for geolocation,
-            // so we just start watching right away
+            /*
+             This is probably safari
+             Safari does not support the 'permissions'-API for geolocation,
+             so we just start watching right away
+            */
 
             this.permission.setData("requested")
             this.startWatching()
@@ -143,7 +184,7 @@ export class GeoLocationState {
                 self.startWatching()
                 return
             }
-            status.addEventListener("change", (e) => {
+            status.addEventListener("change", () => {
                 self.permission.setData(status.state)
             })
             // The code above might have reset it to 'prompt', but we _did_ request permission!
@@ -163,10 +204,21 @@ export class GeoLocationState {
         const self = this
         navigator.geolocation.watchPosition(
             function (position) {
+                self._gpsAvailable.set(true)
                 self.currentGPSLocation.setData(position.coords)
-                self._previousLocationGrant.setData("true")
+                self._previousLocationGrant.setData(true)
             },
             function (e) {
+                if (e.code === 2 || e.code === 3) {
+                    self._gpsAvailable.set(false)
+                    return
+                }
+                self._gpsAvailable.set(true) // We go back to the default assumption that the location is physically available
+                if (e.code === 1) {
+                    self.permission.set("denied")
+                    self._grantedThisSession.setData(false)
+                    return
+                }
                 console.warn("Could not get location with navigator.geolocation due to", e)
             },
             {

@@ -1,11 +1,10 @@
 import { Translation, TypedTranslation } from "../../UI/i18n/Translation"
 import { TagsFilter } from "../../Logic/Tags/TagsFilter"
 import Translations from "../../UI/i18n/Translations"
-import { TagUtils, UploadableTag } from "../../Logic/Tags/TagUtils"
+import { TagUtils } from "../../Logic/Tags/TagUtils"
 import { And } from "../../Logic/Tags/And"
 import { Utils } from "../../Utils"
 import { Tag } from "../../Logic/Tags/Tag"
-import Link from "../../UI/Base/Link"
 import {
     MappingConfigJson,
     QuestionableTagRenderingConfigJson,
@@ -18,6 +17,7 @@ import NameSuggestionIndex from "../../Logic/Web/NameSuggestionIndex"
 import { GeoOperations } from "../../Logic/GeoOperations"
 import { Feature } from "geojson"
 import MarkdownUtils from "../../Utils/MarkdownUtils"
+import { UploadableTag } from "../../Logic/Tags/TagTypes"
 
 export interface Mapping {
     readonly if: UploadableTag
@@ -69,6 +69,7 @@ export default class TagRenderingConfig {
         readonly inline: boolean
         readonly default?: string
         readonly postfixDistinguished?: string
+        readonly args?: any
     }
 
     public readonly multiAnswer: boolean
@@ -87,7 +88,7 @@ export default class TagRenderingConfig {
     ) {
         let json = <string | QuestionableTagRenderingConfigJson>config
         if (json === undefined) {
-            throw "Initing a TagRenderingConfig with undefined in " + context
+            throw "Initiating a TagRenderingConfig with undefined in " + context
         }
 
         if (typeof json === "number") {
@@ -203,6 +204,7 @@ export default class TagRenderingConfig {
                 inline: json.freeform.inline ?? false,
                 default: json.freeform.default,
                 postfixDistinguished: json.freeform.postfixDistinguished?.trim(),
+                args: json.freeform.helperArgs,
             }
             if (json.freeform["extraTags"] !== undefined) {
                 throw `Freeform.extraTags is defined. This should probably be 'freeform.addExtraTag' (at ${context})`
@@ -364,8 +366,14 @@ export default class TagRenderingConfig {
             throw `${ctx}: Invalid mapping: "if" is defined as an array. Use {"and": <your conditions>} or {"or": <your conditions>} instead`
         }
 
+        if (mapping.addExtraTags !== undefined && !Array.isArray(mapping.addExtraTags)) {
+            throw `${ctx}.addExtraTags: expected a list, but got a ${typeof mapping.addExtraTags}`
+        }
         if (mapping.addExtraTags !== undefined && multiAnswer) {
-            throw `${ctx}: Invalid mapping: got a multi-Answer with addExtraTags; this is not allowed`
+            const usedKeys = mapping.addExtraTags?.flatMap((et) => TagUtils.Tag(et).usedKeys())
+            if (usedKeys.some((key) => TagUtils.Tag(mapping.if).usedKeys().indexOf(key) > 0)) {
+                throw `${ctx}: Invalid mapping: got a multi-Answer with addExtraTags which also modifies one of the keys; this is not allowed`
+            }
         }
 
         let hideInAnswer: boolean | TagsFilter = false
@@ -813,20 +821,20 @@ export default class TagRenderingConfig {
         }
     }
 
-    GenerateDocumentation(): string {
-        let withRender: string[] = []
-        if (this.freeform?.key !== undefined) {
-            withRender = [
-                `This rendering asks information about the property `,
-                Link.OsmWiki(this.freeform.key).AsMarkdown(),
-                "This is rendered with `" + this.render.txt + "`",
-            ]
+    GenerateDocumentation(lang: string = "en"): string {
+        let freeform: string = undefined
+        if (this.render) {
+            freeform = "*" + this.render.textFor(lang) + "*"
+            if (this.freeform?.key) {
+                freeform += " is shown if `" + this.freeform.key + "` is set"
+            }
         }
 
         let mappings: string = undefined
+
         if (this.mappings !== undefined) {
             mappings = MarkdownUtils.list(
-                this.mappings.flatMap((m) => {
+                this.mappings.map((m) => {
                     let icon = ""
                     if (m.icon?.indexOf(";") < 0) {
                         icon =
@@ -838,8 +846,8 @@ export default class TagRenderingConfig {
                         icon +
                             " " +
                             "*" +
-                            m.then.txt +
-                            "* corresponds with " +
+                            m.then.textFor(lang) +
+                            "* is shown if with " +
                             m.if.asHumanString(true, false, {}),
                     ]
 
@@ -852,7 +860,7 @@ export default class TagRenderingConfig {
                                 m.ifnot.asHumanString(true, false, {})
                         )
                     }
-                    return msgs
+                    return msgs.join(". ")
                 })
             )
         }
@@ -883,14 +891,16 @@ export default class TagRenderingConfig {
             this.question !== undefined
                 ? "The question is `" + this.question.txt + "`"
                 : "_This tagrendering has no question and is thus read-only_",
-            withRender.join("\n"),
+            freeform,
             mappings,
             condition,
             labels,
         ].join("\n")
     }
 
-    public usedTags(): TagsFilter[] {
+    public
+
+    usedTags(): TagsFilter[] {
         const tags: TagsFilter[] = []
         tags.push(
             this.metacondition,
@@ -910,6 +920,24 @@ export default class TagRenderingConfig {
         }
 
         return Utils.NoNull(tags)
+    }
+
+    /**
+     * The keys that should be erased if one has to revert to 'unknown'.
+     * Might give undefined
+     */
+    public settableKeys(): string[] | undefined {
+        const toDelete = new Set<string>()
+        if (this.freeform) {
+            toDelete.add(this.freeform.key)
+        }
+        for (const mapping of this.mappings) {
+            for (const usedKey of mapping.if.usedKeys()) {
+                toDelete.add(usedKey)
+            }
+        }
+
+        return Array.from(toDelete)
     }
 }
 
@@ -934,7 +962,8 @@ export class TagRenderingConfigUtils {
                     config.freeform.key,
                     tags,
                     country.split(";"),
-                    center
+                    center,
+                    { sortByFrequency: true }
                 )
             )
         })
@@ -943,11 +972,12 @@ export class TagRenderingConfigUtils {
                 return config
             }
             const clone: TagRenderingConfig = Object.create(config)
-            const oldMappingsCloned =
-                clone.mappings?.map((m) => ({
-                    ...m,
-                    priorityIf: m.priorityIf ?? TagUtils.Tag("id~*"),
-                })) ?? []
+            // The original mappings get "priorityIf" set
+            const oldMappingsCloned = clone.mappings?.map((m) => (<Mapping> {
+                ...m,
+                addExtraTags: [new Tag("nobrand","")],
+                priorityIf: m.priorityIf ?? TagUtils.Tag("id~*"),
+            })) ?? [];
             clone.mappings = [...oldMappingsCloned, ...extraMappings]
             return clone
         })

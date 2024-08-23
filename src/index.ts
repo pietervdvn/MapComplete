@@ -41,7 +41,6 @@ async function getAvailableLayers(): Promise<Set<string>> {
 }
 
 async function main() {
-    // @ts-ignore
     try {
         if (!webgl_support()) {
             throw "WebGL is not supported or not enabled. This is essential for MapComplete to function, please enable this."
@@ -50,6 +49,7 @@ async function main() {
             DetermineLayout.GetLayout(),
             await getAvailableLayers(),
         ])
+        availableLayers?.delete("cycle_highways") // TODO remove after next cache.mapcomplete.org update
         console.log("The available layers on server are", Array.from(availableLayers))
         const state = new ThemeViewState(layout, availableLayers)
         const target = document.getElementById("maindiv")

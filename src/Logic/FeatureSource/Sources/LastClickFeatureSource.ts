@@ -18,6 +18,7 @@ export class LastClickFeatureSource implements FeatureSource {
     private readonly hasNoteLayer: boolean
     public static readonly newPointElementId = "new_point_dialog"
     public readonly features: Store<Feature[]>
+    private readonly _features: UIEventSource<Feature[]>
     private _usermode: UIEventSource<string>
     private _enabledAddMorePoints: UIEventSource<boolean>
     constructor(
@@ -53,9 +54,11 @@ export class LastClickFeatureSource implements FeatureSource {
             )
         )
 
-        this.features = clickSource.mapD(({ lon, lat, mode }) => [
-            this.createFeature(lon, lat, mode),
-        ])
+        this._features = new UIEventSource<Feature[]>([])
+        this.features = this._features
+        clickSource.addCallbackAndRunD(({ lon, lat, mode }) => {
+            this._features.setData([this.createFeature(lon, lat, mode)])
+        })
     }
 
     public createFeature(
@@ -84,5 +87,9 @@ export class LastClickFeatureSource implements FeatureSource {
                 coordinates: [lon, lat],
             },
         }
+    }
+
+    clear() {
+        this._features.setData([])
     }
 }

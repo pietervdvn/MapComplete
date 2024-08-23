@@ -14,16 +14,13 @@ import licenses from "../assets/generated/license_info.json"
 import TagRenderingConfig from "../Models/ThemeConfig/TagRenderingConfig"
 import { FixImages } from "../Models/ThemeConfig/Conversion/FixImages"
 import questions from "../assets/generated/layers/questions.json"
-import {
-    DoesImageExist,
-    PrevalidateTheme,
-    ValidateThemeAndLayers,
-} from "../Models/ThemeConfig/Conversion/Validation"
+import { DoesImageExist, PrevalidateTheme } from "../Models/ThemeConfig/Conversion/Validation"
 import { DesugaringContext } from "../Models/ThemeConfig/Conversion/Conversion"
 import { TagRenderingConfigJson } from "../Models/ThemeConfig/Json/TagRenderingConfigJson"
 import Hash from "./Web/Hash"
 import { QuestionableTagRenderingConfigJson } from "../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
 import { LayoutConfigJson } from "../Models/ThemeConfig/Json/LayoutConfigJson"
+import { ValidateThemeAndLayers } from "../Models/ThemeConfig/Conversion/ValidateThemeAndLayers"
 
 export default class DetermineLayout {
     private static readonly _knownImages = new Set(Array.from(licenses).map((l) => l.path))
@@ -109,11 +106,23 @@ export default class DetermineLayout {
             layoutId,
             "The layout to load into MapComplete"
         ).data
-        const layout = AllKnownLayouts.allKnownLayouts.get(layoutId?.toLowerCase())
-        if (layout === undefined) {
-            throw "No builtin map theme with name " + layoutId + " exists"
+        const id = layoutId?.toLowerCase()
+        const layouts = AllKnownLayouts.allKnownLayouts
+        if (layouts.size() == 0) {
+            throw "Build failed or running, no layouts are known at all"
         }
-        return layout
+        if (layouts.getConfig(id) === undefined) {
+            const alternatives = Utils.sortedByLevenshteinDistance(
+                id,
+                Array.from(layouts.keys()),
+                (i) => i
+            ).slice(0, 3)
+            const msg = `No builtin map theme with name ${layoutId} exists. Perhaps you meant one of ${alternatives.join(
+                ", "
+            )}`
+            throw msg
+        }
+        return layouts.get(id)
     }
 
     public static async LoadLayoutFromHash(
@@ -162,6 +171,7 @@ export default class DetermineLayout {
 
         return dict
     }
+
     private static getSharedTagRenderingOrder(): string[] {
         return questions.tagRenderings.map((tr) => tr.id)
     }

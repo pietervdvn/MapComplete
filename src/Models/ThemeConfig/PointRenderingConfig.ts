@@ -228,7 +228,7 @@ export default class PointRenderingConfig extends WithContextLoader {
         const css = this.cssDef?.GetRenderValue(tags.data)?.txt
         const cssClasses = this.cssClasses?.GetRenderValue(tags.data)?.txt
 
-        let label = this.GetLabel(tags, icon === undefined)
+        const label = this.GetLabel(tags, icon === undefined)
 
         let htmlEl: BaseUIElement
         if (icon === undefined && label === undefined) {

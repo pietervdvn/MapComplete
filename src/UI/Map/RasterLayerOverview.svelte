@@ -13,12 +13,15 @@
   import Tr from "../Base/Tr.svelte"
   import { MenuState } from "../../Models/MenuState"
   import OverlayOverview from "./OverlayOverview.svelte"
+  import TitledPanel from "../Base/TitledPanel.svelte"
+  import Loading from "../Base/Loading.svelte"
 
-  export let availableLayers: Store<RasterLayerPolygon[]>
+  export let availableLayers: { store: Store<RasterLayerPolygon[]> }
   export let mapproperties: MapProperties
   export let userstate: UserRelatedState
   export let map: Store<MlMap>
   export let menuState: MenuState
+  let _availableLayers = availableLayers.store
   /**
    * Used to toggle the background layers on/off
    */
@@ -38,7 +41,7 @@
 
   function availableForCategory(type: CategoryType): Store<RasterLayerPolygon[]> {
     const keywords = categories[type]
-    return availableLayers.mapD((available) => {
+    return _availableLayers.mapD((available) => {
       let output = available.filter(
         (layer) => keywords.indexOf(<EliCategory>layer.properties.category) >= 0
       )
@@ -72,62 +75,61 @@
   }
 </script>
 
-<div class="flex h-full flex-col">
-  <slot name="title">
-    <h2>
-      {#if layerType == "background"}
-        <Tr t={Translations.t.general.backgroundMap} />
-      {:else}
-        <Tr t={Translations.t.general.overlayMap} />
-      {/if}
-    </h2>
-  </slot>
-
+<TitledPanel>
   {#if layerType == "background"}
-    // TODO: Handle enter keypress
-    <button
-      on:click={() => {
-        openOverlaySelector()
-      }}
-    >
-      <Tr t={Translations.t.general.overlayMap} />
-    </button>
+    <Tr t={Translations.t.general.backgroundMap} slot="title" />
   {:else}
-    <OverlayOverview {mapproperties} />
+    <Tr t={Translations.t.general.overlayMap} slot="title" />
   {/if}
+  {#if $_availableLayers?.length < 1}
+    <Loading />
+  {:else}
+    {#if layerType == "background"}
+      // TODO: Handle enter keypress
+      <button
+        on:click={() => {
+          openOverlaySelector()
+        }}
+      >
+        <Tr t={Translations.t.general.overlayMap} />
+      </button>
+    {:else}
+      <OverlayOverview {mapproperties} />
+    {/if}
 
-  <div class="grid h-full w-full grid-cols-1 gap-2 md:grid-cols-2">
-    <RasterLayerPicker
-      availableLayers={photoLayers}
-      favourite={getPref("photo")}
-      {map}
-      {mapproperties}
-      on:appliedLayer={onApply}
-      {visible}
-    />
-    <RasterLayerPicker
-      availableLayers={mapLayers}
-      favourite={getPref("map")}
-      {map}
-      {mapproperties}
-      on:appliedLayer={onApply}
-      {visible}
-    />
-    <RasterLayerPicker
-      availableLayers={osmbasedmapLayers}
-      favourite={getPref("osmbasedmap")}
-      {map}
-      {mapproperties}
-      on:appliedLayer={onApply}
-      {visible}
-    />
-    <RasterLayerPicker
-      availableLayers={otherLayers}
-      favourite={getPref("other")}
-      {map}
-      {mapproperties}
-      on:appliedLayer={onApply}
-      {visible}
-    />
-  </div>
-</div>
+    <div class="grid h-full w-full grid-cols-1 gap-2 md:grid-cols-2">
+      <RasterLayerPicker
+        availableLayers={$photoLayers}
+        favourite={getPref("photo")}
+        {map}
+        {mapproperties}
+        on:appliedLayer={onApply}
+        {visible}
+      />
+      <RasterLayerPicker
+        availableLayers={$mapLayers}
+        favourite={getPref("map")}
+        {map}
+        {mapproperties}
+        on:appliedLayer={onApply}
+        {visible}
+      />
+      <RasterLayerPicker
+        availableLayers={$osmbasedmapLayers}
+        favourite={getPref("osmbasedmap")}
+        {map}
+        {mapproperties}
+        on:appliedLayer={onApply}
+        {visible}
+      />
+      <RasterLayerPicker
+        availableLayers={$otherLayers}
+        favourite={getPref("other")}
+        {map}
+        {mapproperties}
+        on:appliedLayer={onApply}
+        {visible}
+      />
+    </div>
+  {/if}
+</TitledPanel>

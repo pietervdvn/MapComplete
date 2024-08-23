@@ -30,7 +30,7 @@
   /**
    * The start coordinate
    */
-  export let coordinate: { lon: number; lat: number }
+  export let coordinate: { lon: number; lat: number } = undefined
 
   /**
    * The center of the map at all times
@@ -43,8 +43,8 @@
   if (coordinate === undefined) {
     coordinate = value.data
   }
-  export let snapToLayers: string[] | undefined
-  export let targetLayer: LayerConfig | undefined
+  export let snapToLayers: string[] | undefined = undefined
+  export let targetLayer: LayerConfig | undefined = undefined
   export let maxSnapDistance: number = undefined
   export let presetProperties: Tag[] = []
   let presetPropertiesUnpacked = TagUtils.KVtoProperties(presetProperties)

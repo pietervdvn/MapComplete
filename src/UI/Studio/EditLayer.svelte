@@ -17,10 +17,9 @@
   import QuestionPreview from "./QuestionPreview.svelte"
   import ShowConversionMessages from "./ShowConversionMessages.svelte"
   import RawEditor from "./RawEditor.svelte"
-  import NextButton from "../Base/NextButton.svelte"
-  import BackButton from "../Base/BackButton.svelte"
   import DeleteButton from "./DeleteButton.svelte"
   import StudioHashSetter from "./StudioHashSetter"
+  import TitledPanel from "../Base/TitledPanel.svelte"
 
   const layerSchema: ConfigMeta[] = <any>layerSchemaRaw
 
@@ -83,8 +82,8 @@
   let highlightedItem: UIEventSource<HighlightedTagRendering> = state.highlightedItem
 </script>
 
-<div class="flex h-screen flex-col">
-  <div class="my-2 flex w-full justify-between">
+<div class="link-underline flex h-screen flex-col">
+  <div class="my-2 flex w-full flex-wrap justify-between">
     <slot />
     {#if $title === undefined}
       <h3>Creating a new layer</h3>
@@ -125,7 +124,7 @@
 
   {#if $currentlyMissing.length > 0}
     {#each requiredFields as required}
-      <SchemaBasedInput {state} schema={configForRequiredField(required)} path={[required]} />
+      <SchemaBasedInput {state} path={[required]} />
     {/each}
   {:else}
     <div class="m4 h-full overflow-y-auto">
@@ -205,9 +204,11 @@
     </div>
     {#if $highlightedItem !== undefined}
       <FloatOver on:close={() => highlightedItem.setData(undefined)}>
-        <div>
+        <TitledPanel>
+          <h3 slot="title">Select a builtin question below</h3>
+
           <TagRenderingInput path={$highlightedItem.path} {state} />
-        </div>
+        </TitledPanel>
       </FloatOver>
     {/if}
   {/if}

@@ -8,14 +8,13 @@ import {
     SpecialVisualizationState,
 } from "./SpecialVisualization"
 import { HistogramViz } from "./Popup/HistogramViz"
-import { MinimapViz } from "./Popup/MinimapViz"
+import MinimapViz from "./Popup/MinimapViz.svelte"
 import { ShareLinkViz } from "./Popup/ShareLinkViz"
 import { UploadToOsmViz } from "./Popup/UploadToOsmViz"
 import { MultiApplyViz } from "./Popup/MultiApplyViz"
 import { AddNoteCommentViz } from "./Popup/Notes/AddNoteCommentViz"
 import { PlantNetDetectionViz } from "./Popup/PlantNetDetectionViz"
 import TagApplyButton from "./Popup/TagApplyButton"
-import { CloseNoteButton } from "./Popup/Notes/CloseNoteButton"
 import { MapillaryLinkVis } from "./Popup/MapillaryLinkVis"
 import { ImmutableStore, Store, Stores, UIEventSource } from "../Logic/UIEventSource"
 import AllTagsPanel from "./Popup/AllTagsPanel.svelte"
@@ -41,7 +40,6 @@ import { Feature, GeoJsonProperties } from "geojson"
 import { GeoOperations } from "../Logic/GeoOperations"
 import CreateNewNote from "./Popup/Notes/CreateNewNote.svelte"
 import AddNewPoint from "./Popup/AddNewPoint/AddNewPoint.svelte"
-import UserProfile from "./BigComponents/UserProfile.svelte"
 import LayerConfig from "../Models/ThemeConfig/LayerConfig"
 import TagRenderingConfig from "../Models/ThemeConfig/TagRenderingConfig"
 import { ExportAsGpxViz } from "./Popup/ExportAsGpxViz"
@@ -59,7 +57,6 @@ import { Imgur } from "../Logic/ImageProviders/Imgur"
 import Constants from "../Models/Constants"
 import { MangroveReviews } from "mangrove-reviews-typescript"
 import Wikipedia from "../Logic/Web/Wikipedia"
-import NearbyImagesSearch from "../Logic/Web/NearbyImagesSearch"
 import AllReviews from "./Reviews/AllReviews.svelte"
 import StarsBarIcon from "./Reviews/StarsBarIcon.svelte"
 import ReviewForm from "./Reviews/ReviewForm.svelte"
@@ -81,8 +78,6 @@ import Link from "./Base/Link.svelte"
 import OrientationDebugPanel from "./Debug/OrientationDebugPanel.svelte"
 import MaprouletteSetStatus from "./MapRoulette/MaprouletteSetStatus.svelte"
 import DirectionIndicator from "./Base/DirectionIndicator.svelte"
-import Img from "./Base/Img"
-import Qr from "../Utils/Qr"
 import ComparisonTool from "./Comparison/ComparisonTool.svelte"
 import SpecialTranslation from "./Popup/TagRendering/SpecialTranslation.svelte"
 import SpecialVisualisationUtils from "./SpecialVisualisationUtils"
@@ -98,6 +93,14 @@ import MarkdownUtils from "../Utils/MarkdownUtils"
 import ArrowDownTray from "@babeard/svelte-heroicons/mini/ArrowDownTray"
 import Trash from "@babeard/svelte-heroicons/mini/Trash"
 import NothingKnown from "./Popup/NothingKnown.svelte"
+import { CombinedFetcher } from "../Logic/Web/NearbyImagesSearch"
+import { And } from "../Logic/Tags/And"
+import CloseNoteButton from "./Popup/Notes/CloseNoteButton.svelte"
+import PendingChangesIndicator from "./BigComponents/PendingChangesIndicator.svelte"
+import QrCode from "./Popup/QrCode.svelte"
+import ClearCaches from "./Popup/ClearCaches.svelte"
+import GroupedView from "./Popup/GroupedView.svelte"
+import { QuestionableTagRenderingConfigJson } from "../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -116,8 +119,7 @@ class NearbyImageVis implements SpecialVisualization {
     docs =
         "A component showing nearby images loaded from various online services such as Mapillary. In edit mode and when used on a feature, the user can select an image to add to the feature"
     funcName = "nearby_images"
-    needsUrls = NearbyImagesSearch.apiUrls
-    svelteBased = true
+    needsUrls = CombinedFetcher.apiUrls
 
     constr(
         state: SpecialVisualizationState,
@@ -125,7 +127,7 @@ class NearbyImageVis implements SpecialVisualization {
         args: string[],
         feature: Feature,
         layer: LayerConfig
-    ): BaseUIElement {
+    ): SvelteUIElement {
         const isOpen = args[0] === "open"
         const readonly = args[1] === "readonly"
         const [lon, lat] = GeoOperations.centerpointCoordinates(feature)
@@ -214,6 +216,66 @@ class StealViz implements SpecialVisualization {
     }
 }
 
+class CloseNoteViz implements SpecialVisualization {
+    public readonly funcName = "close_note"
+    public readonly needsUrls = [Constants.osmAuthConfig.url]
+    public readonly docs =
+        "Button to close a note. A predefined text can be defined to close the note with. If the note is already closed, will show a small text."
+    public readonly args = [
+        {
+            name: "text",
+            doc: "Text to show on this button",
+            required: true,
+        },
+        {
+            name: "icon",
+            doc: "Icon to show",
+            defaultValue: "checkmark.svg",
+        },
+        {
+            name: "idkey",
+            doc: "The property name where the ID of the note to close can be found",
+            defaultValue: "id",
+        },
+        {
+            name: "comment",
+            doc: "Text to add onto the note when closing",
+        },
+        {
+            name: "minZoom",
+            doc: "If set, only show the closenote button if zoomed in enough",
+        },
+        {
+            name: "zoomButton",
+            doc: "Text to show if not zoomed in enough",
+        },
+    ]
+
+    public constr(
+        state: SpecialVisualizationState,
+        tags: UIEventSource<Record<string, string>>,
+        args: string[],
+        feature: Feature,
+        layer: LayerConfig
+    ): SvelteUIElement {
+        const { text, icon, idkey, comment, minZoom, zoomButton } = Utils.ParseVisArgs(
+            this.args,
+            args
+        )
+
+        return new SvelteUIElement(CloseNoteButton, {
+            state,
+            tags,
+            icon,
+            idkey,
+            message: comment,
+            text: Translations.T(text),
+            minzoom: minZoom,
+            zoomMoreMessage: zoomButton,
+        })
+    }
+}
+
 /**
  * Thin wrapper around QuestionBox.svelte to include it into the special Visualisations
  */
@@ -240,7 +302,7 @@ export class QuestionViz implements SpecialVisualization {
         args: string[],
         feature: Feature,
         layer: LayerConfig
-    ): BaseUIElement {
+    ): SvelteUIElement {
         const labels = args[0]
             ?.split(";")
             ?.map((s) => s.trim())
@@ -262,6 +324,19 @@ export class QuestionViz implements SpecialVisualization {
 
 export default class SpecialVisualizations {
     public static specialVisualizations: SpecialVisualization[] = SpecialVisualizations.initList()
+    public static specialVisualisationsDict: Map<string, SpecialVisualization> = new Map<
+        string,
+        SpecialVisualization
+    >()
+
+    static {
+        for (const specialVisualization of SpecialVisualizations.specialVisualizations) {
+            SpecialVisualizations.specialVisualisationsDict.set(
+                specialVisualization.funcName,
+                specialVisualization
+            )
+        }
+    }
 
     public static DocumentationFor(viz: string | SpecialVisualization): string {
         if (typeof viz === "string") {
@@ -297,7 +372,11 @@ export default class SpecialVisualizations {
         template: string,
         extraMappings: SpecialVisualization[] = []
     ): RenderingSpecification[] {
-        return SpecialVisualisationUtils.constructSpecification(template, extraMappings)
+        return SpecialVisualisationUtils.constructSpecification(
+            template,
+            SpecialVisualizations.specialVisualisationsDict,
+            extraMappings
+        )
     }
 
     public static HelpMessage(): string {
@@ -346,26 +425,6 @@ export default class SpecialVisualizations {
         return firstPart + "\n\n" + helpTexts.join("\n\n")
     }
 
-    // noinspection JSUnusedGlobalSymbols
-    public static renderExampleOfSpecial(
-        state: SpecialVisualizationState,
-        s: SpecialVisualization
-    ): BaseUIElement {
-        const examples =
-            s.structuredExamples === undefined
-                ? []
-                : s.structuredExamples().map((e) => {
-                      return s.constr(
-                          state,
-                          new UIEventSource<Record<string, string>>(e.feature.properties),
-                          e.args,
-                          e.feature,
-                          undefined
-                      )
-                  })
-        return new Combine([new Title(s.funcName), s.docs, ...examples])
-    }
-
     private static initList(): SpecialVisualization[] {
         const specialVisualizations: SpecialVisualization[] = [
             new QuestionViz(),
@@ -380,17 +439,6 @@ export default class SpecialVisualizations {
                         state,
                         coordinate: { lon, lat },
                     }).SetClass("w-full h-full overflow-auto")
-                },
-            },
-            {
-                funcName: "user_profile",
-                args: [],
-
-                docs: "A component showing information about the currently logged in user (username, profile description, profile picture + link to edit them). Mostly meant to be used in the 'user-settings'",
-                constr(state: SpecialVisualizationState): BaseUIElement {
-                    return new SvelteUIElement(UserProfile, {
-                        osmConnection: state.osmConnection,
-                    })
                 },
             },
             {
@@ -426,7 +474,34 @@ export default class SpecialVisualizations {
             },
             new HistogramViz(),
             new StealViz(),
-            new MinimapViz(),
+            {
+                funcName: "minimap",
+                docs: "A small map showing the selected feature.",
+                needsUrls: [],
+                args: [
+                    {
+                        doc: "The (maximum) zoomlevel: the target zoomlevel after fitting the entire feature. The minimap will fit the entire feature, then zoom out to this zoom level. The higher, the more zoomed in with 1 being the entire world and 19 being really close",
+                        name: "zoomlevel",
+                        defaultValue: "18",
+                    },
+                    {
+                        doc: "(Matches all resting arguments) This argument should be the key of a property of the feature. The corresponding value is interpreted as either the id or the a list of ID's. The features with these ID's will be shown on this minimap. (Note: if the key is 'id', list interpration is disabled)",
+                        name: "idKey",
+                        defaultValue: "id",
+                    },
+                ],
+                example:
+                    "`{minimap()}`, `{minimap(17, id, _list_of_embedded_feature_ids_calculated_by_calculated_tag):height:10rem; border: 2px solid black}`",
+
+                constr(
+                    state: SpecialVisualizationState,
+                    tagSource: UIEventSource<Record<string, string>>,
+                    args: string[],
+                    feature: Feature
+                ): SvelteUIElement {
+                    return new SvelteUIElement(MinimapViz, { state, args, feature, tagSource })
+                },
+            },
             {
                 funcName: "split_button",
                 docs: "Adds a button which allows to split a way",
@@ -518,7 +593,7 @@ export default class SpecialVisualizations {
                     })
                 },
             },
-            new CloseNoteButton(),
+            new CloseNoteViz(),
             new PlantNetDetectionViz(),
 
             new TagApplyButton(),
@@ -526,7 +601,6 @@ export default class SpecialVisualizations {
             new PointImportButtonViz(),
             new WayImportButtonViz(),
             new ConflateImportButtonViz(),
-
             new NearbyImageVis(),
 
             {
@@ -721,8 +795,6 @@ export default class SpecialVisualizations {
                 funcName: "list_reviews",
                 docs: "Adds an overview of the mangrove-reviews of this object. Mangrove.Reviews needs - in order to identify the reviewed object - a coordinate and a name. By default, the name of the object is given, but this can be overwritten",
                 needsUrls: [MangroveReviews.ORIGINAL_API],
-                example:
-                    "`{reviews()}` for a vanilla review, `{reviews(name, play_forest)}` to review a play forest. If a name is known, the name will be used as identifier, otherwise 'play_forest' is used",
                 args: [
                     {
                         name: "subjectKey",
@@ -748,6 +820,47 @@ export default class SpecialVisualizations {
                         state.featureSwitchIsTesting
                     )
                     return new SvelteUIElement(AllReviews, { reviews, state, tags, feature, layer })
+                },
+            },
+            {
+                funcName: "reviews",
+                example:
+                    "`{reviews()}` for a vanilla review, `{reviews(name, play_forest)}` to review a play forest. If a name is known, the name will be used as identifier, otherwise 'play_forest' is used",
+                docs: "A pragmatic combination of `create_review` and `list_reviews`",
+                args: [
+                    {
+                        name: "subjectKey",
+                        defaultValue: "name",
+                        doc: "The key to use to determine the subject. If specified, the subject will be <b>tags[subjectKey]</b>",
+                    },
+                    {
+                        name: "fallback",
+                        doc: "The identifier to use, if <i>tags[subjectKey]</i> as specified above is not available. This is effectively a fallback value",
+                    },
+                ],
+                constr(
+                    state: SpecialVisualizationState,
+                    tagSource: UIEventSource<Record<string, string>>,
+                    args: string[],
+                    feature: Feature,
+                    layer: LayerConfig
+                ): BaseUIElement {
+                    return new Combine([
+                        SpecialVisualizations.specialVisualisationsDict["create_review"].constr(
+                            state,
+                            tagSource,
+                            args,
+                            feature,
+                            layer
+                        ),
+                        SpecialVisualizations.specialVisualisationsDict["list_reviews"].constr(
+                            state,
+                            tagSource,
+                            args,
+                            feature,
+                            layer
+                        ),
+                    ])
                 },
             },
             {
@@ -1240,6 +1353,10 @@ export default class SpecialVisualizations {
                         name: "arialabel",
                         doc: "If set, this text will be used as aria-label",
                     },
+                    {
+                        name: "icon",
+                        doc: "If set, show this icon next to the link. You might want to combine this with `class: button`",
+                    },
                 ],
 
                 constr(
@@ -1247,7 +1364,7 @@ export default class SpecialVisualizations {
                     tagSource: UIEventSource<Record<string, string>>,
                     args: string[]
                 ): BaseUIElement {
-                    let [text, href, classnames, download, ariaLabel] = args
+                    let [text, href, classnames, download, ariaLabel, icon] = args
                     if (download === "") {
                         download = undefined
                     }
@@ -1267,6 +1384,7 @@ export default class SpecialVisualizations {
                         download: tagSource.map((tags) => Utils.SubstituteKeys(download, tags)),
                         ariaLabel: tagSource.map((tags) => Utils.SubstituteKeys(ariaLabel, tags)),
                         newTab: new ImmutableStore(newTab),
+                        icon: tagSource.map((tags) => Utils.SubstituteKeys(icon, tags)),
                     }).setSpan()
                 },
             },
@@ -1615,50 +1733,14 @@ export default class SpecialVisualizations {
             {
                 funcName: "qr_code",
                 args: [],
-
                 docs: "Generates a QR-code to share the selected object",
                 constr(
                     state: SpecialVisualizationState,
-                    tagSource: UIEventSource<Record<string, string>>,
+                    tags: UIEventSource<Record<string, string>>,
                     argument: string[],
                     feature: Feature
-                ): BaseUIElement {
-                    const smallSize = 100
-                    const bigSize = 200
-                    const size = new UIEventSource(smallSize)
-                    return new VariableUiElement(
-                        tagSource
-                            .map((tags) => tags.id)
-                            .map(
-                                (id) => {
-                                    if (id.startsWith("node/-")) {
-                                        // Not yet uploaded
-                                        return undefined
-                                    }
-                                    const [lon, lat] = GeoOperations.centerpointCoordinates(feature)
-                                    const includeLayout = window.location.pathname
-                                        .split("/")
-                                        .at(-1)
-                                        .startsWith("theme")
-                                    const layout = includeLayout
-                                        ? "layout=" + state.layout.id + "&"
-                                        : ""
-                                    const url =
-                                        `${window.location.protocol}//${window.location.host}${window.location.pathname}?${layout}lat=${lat}&lon=${lon}&z=15` +
-                                        `#${id}`
-                                    return new Img(new Qr(url).toImageElement(size.data)).SetStyle(
-                                        `width: ${size.data}px`
-                                    )
-                                },
-                                [size]
-                            )
-                    ).onClick(() => {
-                        if (size.data !== bigSize) {
-                            size.setData(bigSize)
-                        } else {
-                            size.setData(smallSize)
-                        }
-                    })
+                ): SvelteUIElement {
+                    return new SvelteUIElement(QrCode, { state, tags, feature })
                 },
             },
             {
@@ -1907,22 +1989,271 @@ export default class SpecialVisualizations {
                     })
                 },
             },
+            {
+                funcName: "preset_description",
+                docs: "Shows the extra description from the presets of the layer, if one matches. It will pick the most specific one (e.g. if preset `A` implies `B`, but `B` does not imply `A`, it'll pick B) or the first one if no ordering can be made. Might be empty",
+                args: [],
+                constr(
+                    state: SpecialVisualizationState,
+                    tagSource: UIEventSource<Record<string, string>>,
+                    argument: string[],
+                    feature: Feature,
+                    layer: LayerConfig
+                ): BaseUIElement {
+                    const translation = tagSource.map((tags) => {
+                        const presets = state.layout.getMatchingLayer(tags)?.presets
+                        const matchingPresets = presets
+                            .filter((pr) => pr.description !== undefined)
+                            .filter((pr) => new And(pr.tags).matchesProperties(tags))
+                        let mostShadowed = matchingPresets[0]
+                        let mostShadowedTags = new And(mostShadowed.tags)
+                        for (let i = 1; i < matchingPresets.length; i++) {
+                            const pr = matchingPresets[i]
+                            const prTags = new And(pr.tags)
+                            if (mostShadowedTags.shadows(prTags)) {
+                                if (!prTags.shadows(mostShadowedTags)) {
+                                    // We have a new most shadowed item
+                                    mostShadowed = pr
+                                    mostShadowedTags = prTags
+                                } else {
+                                    // Both shadow each other: abort
+                                    mostShadowed = undefined
+                                    break
+                                }
+                            } else if (!prTags.shadows(mostShadowedTags)) {
+                                // The new contender does not win, but it might defeat the current contender
+                                mostShadowed = undefined
+                                break
+                            }
+                        }
+                        return mostShadowed?.description ?? matchingPresets[0]?.description
+                    })
+                    return new VariableUiElement(translation)
+                },
+            },
+            {
+                funcName: "preset_type_select",
+                docs: "An editable tag rendering which allows to change the type",
+                args: [],
+                constr(
+                    state: SpecialVisualizationState,
+                    tags: UIEventSource<Record<string, string>>,
+                    argument: string[],
+                    selectedElement: Feature,
+                    layer: LayerConfig
+                ): SvelteUIElement {
+                    const t = Translations.t.preset_type
+                    const question: QuestionableTagRenderingConfigJson = {
+                        id: layer.id + "-type",
+                        question: t.question.translations,
+                        mappings: layer.presets.map((pr) => {
+                            return {
+                                if: new And(pr.tags).asJson(),
+                                then: (pr.description ? t.typeDescription : t.typeTitle).Subs({
+                                    title: pr.title,
+                                    description: pr.description,
+                                }).translations,
+                            }
+                        }),
+                    }
+                    const config = new TagRenderingConfig(question)
+                    return new SvelteUIElement(TagRenderingEditable, {
+                        config,
+                        tags,
+                        selectedElement,
+                        state,
+                        layer,
+                    })
+                },
+            },
+            {
+                funcName: "pending_changes",
+                docs: "A module showing the pending changes, with the option to clear the pending changes",
+                args: [],
+                constr(
+                    state: SpecialVisualizationState,
+                    tagSource: UIEventSource<Record<string, string>>,
+                    argument: string[],
+                    feature: Feature,
+                    layer: LayerConfig
+                ): BaseUIElement {
+                    return new SvelteUIElement(PendingChangesIndicator, { state, compact: false })
+                },
+            },
+            {
+                funcName: "clear_caches",
+                docs: "A button which clears the locally downloaded data and the service worker. Login status etc will be kept",
+                args: [
+                    {
+                        name: "text",
+                        required: true,
+                        doc: "The text to show on the button",
+                    },
+                ],
+                constr(
+                    state: SpecialVisualizationState,
+                    tagSource: UIEventSource<Record<string, string>>,
+                    argument: string[],
+                    feature: Feature,
+                    layer: LayerConfig
+                ): SvelteUIElement {
+                    return new SvelteUIElement<any, any, any>(ClearCaches, {
+                        msg: argument[0] ?? "Clear local caches",
+                    })
+                },
+            },
+            {
+                funcName: "group",
+                docs: "A collapsable group (accordion)",
+                args: [
+                    {
+                        name: "header",
+                        doc: "The _identifier_ of a single tagRendering. This will be used as header",
+                    },
+                    {
+                        name: "labels",
+                        doc: "A `;`-separated list of either identifiers or label names. All tagRenderings matching this value will be shown in the accordion",
+                    },
+                ],
+                constr(
+                    state: SpecialVisualizationState,
+                    tags: UIEventSource<Record<string, string>>,
+                    argument: string[],
+                    selectedElement: Feature,
+                    layer: LayerConfig
+                ): SvelteUIElement {
+                    const [header, labelsStr] = argument
+                    const labels = labelsStr.split(";").map((x) => x.trim())
+                    return new SvelteUIElement<any, any, any>(GroupedView, {
+                        state,
+                        tags,
+                        selectedElement,
+                        layer,
+                        header,
+                        labels,
+                    })
+                },
+            },
+            {
+                funcName: "preset_type_select",
+                docs: "An editable tag rendering which allows to change the type",
+                args: [],
+                constr(
+                    state: SpecialVisualizationState,
+                    tags: UIEventSource<Record<string, string>>,
+                    argument: string[],
+                    selectedElement: Feature,
+                    layer: LayerConfig
+                ): SvelteUIElement {
+                    const t = Translations.t.preset_type
+                    const question: QuestionableTagRenderingConfigJson = {
+                        id: layer.id + "-type",
+                        question: t.question.translations,
+                        mappings: layer.presets.map((pr) => {
+                            return {
+                                if: new And(pr.tags).asJson(),
+                                then: (pr.description ? t.typeDescription : t.typeTitle).Subs({
+                                    title: pr.title,
+                                    description: pr.description,
+                                }).translations,
+                            }
+                        }),
+                    }
+                    const config = new TagRenderingConfig(question)
+                    return new SvelteUIElement(TagRenderingEditable, {
+                        config,
+                        tags,
+                        selectedElement,
+                        state,
+                        layer,
+                    })
+                },
+            },
+            {
+                funcName: "pending_changes",
+                docs: "A module showing the pending changes, with the option to clear the pending changes",
+                args: [],
+                constr(
+                    state: SpecialVisualizationState,
+                    tagSource: UIEventSource<Record<string, string>>,
+                    argument: string[],
+                    feature: Feature,
+                    layer: LayerConfig
+                ): BaseUIElement {
+                    return new SvelteUIElement(PendingChangesIndicator, { state, compact: false })
+                },
+            },
+            {
+                funcName: "clear_caches",
+                docs: "A button which clears the locally downloaded data and the service worker. Login status etc will be kept",
+                args: [
+                    {
+                        name: "text",
+                        required: true,
+                        doc: "The text to show on the button",
+                    },
+                ],
+                constr(
+                    state: SpecialVisualizationState,
+                    tagSource: UIEventSource<Record<string, string>>,
+                    argument: string[],
+                    feature: Feature,
+                    layer: LayerConfig
+                ): SvelteUIElement {
+                    return new SvelteUIElement<any, any, any>(ClearCaches, {
+                        msg: argument[0] ?? "Clear local caches",
+                    })
+                },
+            },
+            {
+                funcName: "group",
+                docs: "A collapsable group (accordion)",
+                args: [
+                    {
+                        name: "header",
+                        doc: "The _identifier_ of a single tagRendering. This will be used as header",
+                    },
+                    {
+                        name: "labels",
+                        doc: "A `;`-separated list of either identifiers or label names. All tagRenderings matching this value will be shown in the accordion",
+                    },
+                ],
+                constr(
+                    state: SpecialVisualizationState,
+                    tags: UIEventSource<Record<string, string>>,
+                    argument: string[],
+                    selectedElement: Feature,
+                    layer: LayerConfig
+                ): SvelteUIElement {
+                    const [header, labelsStr] = argument
+                    const labels = labelsStr.split(";").map((x) => x.trim())
+                    return new SvelteUIElement<any, any, any>(GroupedView, {
+                        state,
+                        tags,
+                        selectedElement,
+                        layer,
+                        header,
+                        labels,
+                    })
+                },
+            },
         ]
 
         specialVisualizations.push(new AutoApplyButton(specialVisualizations))
 
+        const regex = /[a-zA-Z_]+/
         const invalid = specialVisualizations
             .map((sp, i) => ({ sp, i }))
-            .filter((sp) => sp.sp.funcName === undefined)
+            .filter((sp) => sp.sp.funcName === undefined || !sp.sp.funcName.match(regex))
         if (invalid.length > 0) {
             throw (
-                "Invalid special visualisation found: funcName is undefined for " +
+                "Invalid special visualisation found: funcName is undefined or doesn't match " +
+                regex +
                 invalid.map((sp) => sp.i).join(", ") +
                 '. Did you perhaps type \n  funcName: "funcname" // type declaration uses COLON\ninstead of:\n  funcName = "funcName" // value definition uses EQUAL'
             )
         }
 
-        SpecialVisualisationUtils.specialVisualizations = Utils.NoNull(specialVisualizations)
         return specialVisualizations
     }
 }
