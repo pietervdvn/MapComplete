@@ -68,7 +68,14 @@ export interface ReverseGeocodingProvider {
 
 export class GeocodingUtils {
 
-    public static searchLayer=  new LayerConfig(<LayerConfigJson> search, "search")
+    public static searchLayer =  GeocodingUtils.initSearchLayer()
+    private static initSearchLayer():LayerConfig{
+        if(search["id"] === undefined){
+            // We are resetting the layeroverview; trying to parse is useless
+            return undefined
+        }
+        return new LayerConfig(<LayerConfigJson> search, "search")
+    }
 
     public static categoryToZoomLevel: Record<GeocodingCategory, number> = {
         city: 12,
