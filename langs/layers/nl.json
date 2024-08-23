@@ -8890,7 +8890,7 @@
                         "then": "Gebruik luchtfoto's als standaard achtergrondlaag"
                     },
                     "3": {
-                        "then": "Gebruik altijd een kaart di niet op OpenStreetMap gebaseerd is als achtergrond"
+                        "then": "Gebruik altijd een kaart die niet op OpenStreetMap gebaseerd is als achtergrond"
                     },
                     "4": {
                         "then": "Gebruik altijd <span class='code'>{__current_background}</span> als achtergrondlaag. Dit is de huidige achtergrond."
