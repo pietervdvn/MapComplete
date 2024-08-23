@@ -30,6 +30,12 @@
       | "large-height"
       | string
   }
+
+  const emojiHeights = {
+    "small":"2rem",
+    "medium":"3rem",
+    "large":"5rem"
+  }
 </script>
 
 {#if mapping.icon !== undefined}
@@ -42,6 +48,9 @@
         }-width`,
         "shrink-0"
       )}
+
+      emojiHeight={ emojiHeights[mapping.iconClass] ?? "2rem"}
+
       clss={`mapping-icon-${mapping.iconClass ?? "small"}`}
     />
     <SpecialTranslation t={mapping.then} {tags} {state} {layer} feature={selectedElement} {clss} />

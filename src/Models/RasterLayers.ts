@@ -28,7 +28,7 @@ export class AvailableRasterLayers {
         return this._editorLayerIndex
     }
 
-    public static globalLayers: RasterLayerPolygon[] = globallayers.layers
+    public static globalLayers: ReadonlyArray<RasterLayerPolygon> = globallayers.layers
         .filter(
             (properties) =>
                 properties.id !== "osm.carto" && properties.id !== "Bing" /*Added separately*/
@@ -140,28 +140,24 @@ export class RasterLayerUtils {
      * @param available
      * @param preferredCategory
      * @param ignoreLayer
+     * @param skipLayers Skip the first N layers
      */
     public static SelectBestLayerAccordingTo(
         available: RasterLayerPolygon[],
         preferredCategory: string,
-        ignoreLayer?: RasterLayerPolygon
+        ignoreLayer?: RasterLayerPolygon,
+        skipLayers: number = 0
     ): RasterLayerPolygon {
-        let secondBest: RasterLayerPolygon = undefined
-        for (const rasterLayer of available) {
-            if (rasterLayer === ignoreLayer) {
-                continue
-            }
-            const p = rasterLayer.properties
-            if (p.category === preferredCategory) {
-                if (p.best) {
-                    return rasterLayer
-                }
-                if (!secondBest) {
-                    secondBest = rasterLayer
-                }
-            }
+        const inCategory = available.filter(l => l.properties.category === preferredCategory)
+        const best : RasterLayerPolygon[] = inCategory.filter(l => l.properties.best)
+        const others : RasterLayerPolygon[] = inCategory.filter(l => !l.properties.best)
+        let all = best.concat(others)
+        console.log("Selected layers are:", all.map(l => l.properties.id))
+        if(others.length > skipLayers){
+            all = all.slice(skipLayers)
         }
-        return secondBest
+
+        return all.find(l => l !== ignoreLayer)
     }
 }
 

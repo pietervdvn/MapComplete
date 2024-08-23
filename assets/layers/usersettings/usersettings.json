@@ -374,11 +374,15 @@
         "fr": "Quel fond souhaitez-vous utiliser par défaut ?",
         "da": "Hvilket baggrundslag skal vises som standard?"
       },
+      "questionHint":{
+        "en": "To set a specific background as default, select it in the background menu first after which it will appear here."
+      },
       "condition": "_theme:backgroundLayer=",
       "mappings": [
         {
           "if": "mapcomplete-preferred-background-layer=default",
           "alsoShowIf": "mapcomplete-preferred-background-layer=",
+          "icon": "./assets/svg/generic_map.svg",
           "then": {
             "en": "Use the default background layer",
             "ca": "Utilitzeu la capa de fons predeterminada",
@@ -391,6 +395,9 @@
         },
         {
           "if": "mapcomplete-preferred-background-layer=osm",
+          "icon": {
+            "path":"./assets/svg/osm-logo.svg"
+          },
           "then": {
             "en": "Use OpenStreetMap-carto as default layer",
             "ca": "Utilitzeu OpenStreetMap-carto com a capa predeterminada",
@@ -403,6 +410,7 @@
         },
         {
           "if": "mapcomplete-preferred-background-layer=photo",
+          "icon": "\uD83D\uDEF0\uFE0F",
           "then": {
             "en": "Use aerial imagery as default background",
             "ca": "Utilitzeu imatges aèries com a fons predeterminat",
@@ -415,6 +423,7 @@
         },
         {
           "if": "mapcomplete-preferred-background-layer=map",
+          "icon": "./assets/svg/generic_map.svg",
           "then": {
             "en": "Use a non-openstreetmap based map as default background",
             "ca": "Utilitzeu un mapa que no sigui openstreetmap com a fons predeterminat",
