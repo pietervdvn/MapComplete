@@ -421,6 +421,7 @@ class LayerOverviewUtils extends Script {
         // These two get a free pass
         priviliged.delete("summary")
         priviliged.delete("last_click")
+        priviliged.delete("search")
 
         if (priviliged.size > 0 && !forceReload) {
             throw (
