@@ -74,6 +74,7 @@
   import AboutMapComplete from "./BigComponents/AboutMapComplete.svelte"
   import IfNot from "./Base/IfNot.svelte"
   import Hotkeys from "./Base/Hotkeys"
+  import OverlayOverview from "./Map/OverlayOverview.svelte"
 
   export let state: ThemeViewState
   let layout = state.layout
@@ -104,7 +105,7 @@
     if (id.startsWith("current_view")) {
       return currentViewLayer
     }
-    if(id.startsWith("summary_")){
+    if (id.startsWith("summary_")) {
       console.log("Not selecting a summary object. The summary object is", element)
       return undefined
     }
@@ -125,11 +126,11 @@
   state.mapProperties.installCustomKeyboardHandler(viewport)
   let canZoomIn = mapproperties.maxzoom.map(
     (mz) => mapproperties.zoom.data < mz,
-    [mapproperties.zoom],
+    [mapproperties.zoom]
   )
   let canZoomOut = mapproperties.minzoom.map(
     (mz) => mapproperties.zoom.data > mz,
-    [mapproperties.zoom],
+    [mapproperties.zoom]
   )
 
   function updateViewport() {
@@ -166,7 +167,7 @@
   onDestroy(
     rasterLayer.addCallbackAndRunD((l) => {
       rasterLayerName = l.properties.name
-    }),
+    })
   )
   let previewedImage = state.previewedImage
 
@@ -197,7 +198,7 @@
   let openMapButton: UIEventSource<HTMLElement> = new UIEventSource<HTMLElement>(undefined)
   let openMenuButton: UIEventSource<HTMLElement> = new UIEventSource<HTMLElement>(undefined)
   let openCurrentViewLayerButton: UIEventSource<HTMLElement> = new UIEventSource<HTMLElement>(
-    undefined,
+    undefined
   )
   let _openNewElementButton: HTMLButtonElement
   let openNewElementButton: UIEventSource<HTMLElement> = new UIEventSource<HTMLElement>(undefined)
@@ -211,13 +212,13 @@
 </script>
 
 <main>
-  <div class="absolute top-0 left-0 h-screen w-screen overflow-hidden">
+  <div class="absolute left-0 top-0 h-screen w-screen overflow-hidden">
     <MaplibreMap map={maplibremap} mapProperties={mapproperties} />
   </div>
 
   {#if $visualFeedback}
     <div
-      class="pointer-events-none absolute top-0 left-0 flex h-screen w-screen items-center justify-center overflow-hidden"
+      class="pointer-events-none absolute left-0 top-0 flex h-screen w-screen items-center justify-center overflow-hidden"
     >
       <div
         bind:this={$viewport}
@@ -227,7 +228,7 @@
     </div>
   {/if}
 
-  <div class="pointer-events-none absolute top-0 left-0 w-full">
+  <div class="pointer-events-none absolute left-0 top-0 w-full">
     <!-- Top components -->
 
     <div class="pointer-events-auto float-right mt-1 flex flex-col px-1 max-[480px]:w-full sm:m-2">
@@ -257,7 +258,9 @@
           on:keydown={forwardEventToMap}
           htmlElem={openMapButton}
         >
-          <div class="m-0.5 mx-1 flex cursor-pointer items-center max-[480px]:w-full sm:mx-1 md:mx-2">
+          <div
+            class="m-0.5 mx-1 flex cursor-pointer items-center max-[480px]:w-full sm:mx-1 md:mx-2"
+          >
             <Marker icons={layout.icon} size="h-4 w-4 md:h-8 md:w-8 mr-0.5 sm:mr-1 md:mr-2" />
             <b class="mr-1">
               <Tr t={layout.title} />
@@ -354,10 +357,10 @@
           <a
             class="bg-black-transparent pointer-events-auto ml-1 h-fit max-h-12 cursor-pointer self-end self-center overflow-hidden rounded-2xl px-1 text-white opacity-50 hover:opacity-100"
             on:click={() => {
-              if(featureSwitches.featureSwitchWelcomeMessage.data){
-              state.guistate.themeViewTab.setData("copyright")
-              state.guistate.themeIsOpened.setData(true)
-              }else{
+              if (featureSwitches.featureSwitchWelcomeMessage.data) {
+                state.guistate.themeViewTab.setData("copyright")
+                state.guistate.themeIsOpened.setData(true)
+              } else {
                 state.guistate.copyrightPanelIsOpened.setData(true)
               }
             }}
@@ -408,7 +411,7 @@
               <!-- h-8 w-8 + p-0.5 sm:p-1 + 2px border => 9 sm: 10 in total-->
             </MapControlButton>
             {#if $compassLoaded}
-              <div class="absolute top-0 left-0 m-0.5 h-0 w-0 sm:m-1">
+              <div class="absolute left-0 top-0 m-0.5 h-0 w-0 sm:m-1">
                 <Compass_arrow
                   class="compass_arrow"
                   style={`rotate: calc(${-$compass}deg + 45deg); transform-origin: 50% 50%;`}
@@ -425,7 +428,7 @@
     {#if ($showCrosshair === "yes" && $currentZoom >= 17) || $showCrosshair === "always" || $visualFeedback}
       <!-- Don't use h-full: h-full does _not_ include the area under the URL-bar, which offsets the crosshair a bit -->
       <div
-        class="pointer-events-none absolute top-0 left-0 flex w-full items-center justify-center"
+        class="pointer-events-none absolute left-0 top-0 flex w-full items-center justify-center"
         style="height: 100vh"
       >
         <Cross class="h-4 w-4" />
@@ -520,10 +523,9 @@
           <Tr t={Translations.t.general.attribution.title} />
         </div>
 
-        <div slot="content2" class="flex flex-col m-2">
+        <div slot="content2" class="m-2 flex flex-col">
           <ToSvelte construct={() => new CopyrightPanel(state)} />
         </div>
-
 
         <div class="flex" slot="title3">
           <Share class="h-4 w-4" />
@@ -556,6 +558,34 @@
           mapproperties={state.mapProperties}
           userstate={state.userRelatedState}
           visible={state.guistate.backgroundLayerSelectionIsOpened}
+          menuState={state.guistate}
+        />
+      </div>
+    </FloatOver>
+  </IfHidden>
+
+  <IfHidden condition={state.guistate.overlaySelectionIsOpened}>
+    <!-- overlay selector -->
+    <FloatOver
+      on:close={() => {
+        state.guistate.overlaySelectionIsOpened.setData(false)
+      }}
+    >
+      <div class="h-full p-2">
+        <!-- <OverlayOverview
+          {availableLayers}
+          map={state.map}
+          mapproperties={state.mapProperties}
+          userstate={state.userRelatedState}
+        /> -->
+        <RasterLayerOverview
+          {availableLayers}
+          map={state.map}
+          mapproperties={state.mapProperties}
+          userstate={state.userRelatedState}
+          visible={state.guistate.backgroundLayerSelectionIsOpened}
+          menuState={state.guistate}
+          layerType="overlay"
         />
       </div>
     </FloatOver>
@@ -650,15 +680,14 @@
     <FloatOver on:close={() => state.guistate.privacyPanelIsOpened.setData(false)}>
       <div class="flex h-full flex-col overflow-hidden">
         <h1 class="low-interaction m-0 flex items-center p-4 drop-shadow-md">
-         <Tr t= {Translations.t.general.attribution.title}/>
+          <Tr t={Translations.t.general.attribution.title} />
         </h1>
         <div class="overflow-auto p-4">
           <h2>
-
-          <Tr t={Translations.t.general.menu.aboutMapComplete} />
+            <Tr t={Translations.t.general.menu.aboutMapComplete} />
           </h2>
-        <AboutMapComplete {state} />
-        <ToSvelte construct={() => new CopyrightPanel(state)} />
+          <AboutMapComplete {state} />
+          <ToSvelte construct={() => new CopyrightPanel(state)} />
         </div>
       </div>
     </FloatOver>

@@ -34,7 +34,8 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
     readonly location: UIEventSource<{ lon: number; lat: number }>
     readonly zoom: UIEventSource<number>
     readonly bounds: UIEventSource<BBox>
-    readonly rasterLayer: UIEventSource<RasterLayerPolygon | undefined>
+    readonly rasterLayer: UIEventSource<RasterLayerPolygon>
+    readonly overlays: UIEventSource<RasterLayerPolygon[]>
     readonly maxbounds: UIEventSource<BBox | undefined>
     readonly allowMoving: UIEventSource<true | boolean | undefined>
     readonly allowRotating: UIEventSource<true | boolean | undefined>
@@ -94,6 +95,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         this.rasterLayer =
             state?.rasterLayer ?? new UIEventSource<RasterLayerPolygon | undefined>(undefined)
 
+        this.overlays = new UIEventSource<RasterLayerPolygon[]>([])
         const lastClickLocation = new UIEventSource<{
             lat: number
             lon: number

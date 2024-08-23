@@ -11,15 +11,22 @@
   import UserRelatedState from "../../Logic/State/UserRelatedState"
   import Translations from "../i18n/Translations"
   import Tr from "../Base/Tr.svelte"
+  import { MenuState } from "../../Models/MenuState"
+  import OverlayOverview from "./OverlayOverview.svelte"
 
   export let availableLayers: Store<RasterLayerPolygon[]>
   export let mapproperties: MapProperties
   export let userstate: UserRelatedState
   export let map: Store<MlMap>
+  export let menuState: MenuState
   /**
    * Used to toggle the background layers on/off
    */
   export let visible: UIEventSource<boolean> = undefined
+  /**
+   * This can be either "background" or "overlay"
+   */
+  export let layerType: "background" | "overlay" = "background"
 
   type CategoryType = "photo" | "map" | "other" | "osmbasedmap"
   const categories: Record<CategoryType, EliCategory[]> = {
@@ -31,9 +38,19 @@
 
   function availableForCategory(type: CategoryType): Store<RasterLayerPolygon[]> {
     const keywords = categories[type]
-    return availableLayers.mapD((available) =>
-      available.filter((layer) => keywords.indexOf(<EliCategory>layer.properties.category) >= 0)
-    )
+    return availableLayers.mapD((available) => {
+      let output = available.filter(
+        (layer) => keywords.indexOf(<EliCategory>layer.properties.category) >= 0
+      )
+
+      if (layerType === "background") {
+        output = output.filter((layer) => layer.properties.isOverlay != true)
+      } else {
+        output = output.filter((layer) => layer.properties.isOverlay == true)
+      }
+
+      return output
+    })
   }
 
   const mapLayers = availableForCategory("map")
@@ -48,14 +65,36 @@
   function getPref(type: CategoryType): undefined | UIEventSource<string> {
     return userstate?.osmConnection?.GetPreference("preferred-layer-" + type)
   }
+
+  function openOverlaySelector() {
+    menuState.backgroundLayerSelectionIsOpened.setData(false)
+    menuState.overlaySelectionIsOpened.setData(true)
+  }
 </script>
 
 <div class="flex h-full flex-col">
   <slot name="title">
     <h2>
-      <Tr t={Translations.t.general.backgroundMap} />
+      {#if layerType == "background"}
+        <Tr t={Translations.t.general.backgroundMap} />
+      {:else}
+        <Tr t={Translations.t.general.overlayMap} />
+      {/if}
     </h2>
   </slot>
+
+  {#if layerType == "background"}
+    // TODO: Handle enter keypress
+    <button
+      on:click={() => {
+        openOverlaySelector()
+      }}
+    >
+      <Tr t={Translations.t.general.overlayMap} />
+    </button>
+  {:else}
+    <OverlayOverview {mapproperties} />
+  {/if}
 
   <div class="grid h-full w-full grid-cols-1 gap-2 md:grid-cols-2">
     <RasterLayerPicker

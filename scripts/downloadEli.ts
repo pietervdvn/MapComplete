@@ -16,6 +16,16 @@ class DownloadEli extends Script {
 
         const eli: Eli = await Utils.downloadJson(url)
         const keptLayers: EliEntry[] = []
+        const droppedLayerCount: { [reason: string]: number } = {}
+
+        function addDropReason(reason: string): void {
+            if (droppedLayerCount[reason] === undefined) {
+                droppedLayerCount[reason] = 1
+            } else {
+                droppedLayerCount[reason] += 1
+            }
+        }
+
         console.log("Got", eli.features.length, "ELI-entries")
         for (let layer of eli.features) {
             const props = layer.properties
@@ -25,6 +35,7 @@ class DownloadEli extends Script {
                 try {
                     const bing = await BingRasterLayer.get()
                     if (bing === "error") {
+                        addDropReason("bingError")
                         continue
                     }
                     delete props.default
@@ -32,18 +43,21 @@ class DownloadEli extends Script {
                     props.url = bing.properties.url.replace("%7Bquadkey%7D", "{quadkey}")
                 } catch (e) {
                     console.error("Could not fetch URL for bing", e)
+                    addDropReason("bingUrlError")
                     continue
                 }
             }
 
             if (props.id === "MAPNIK") {
                 // Already added by default
+                addDropReason("default")
                 continue
             }
 
-            if (props.overlay) {
-                continue
-            }
+            // if (props.overlay) {
+            //     addDropReason("overlay")
+            //     continue
+            // }
 
             if (props.id === "Mapbox") {
                 /**
@@ -55,26 +69,31 @@ class DownloadEli extends Script {
             }
 
             if (props.url.toLowerCase().indexOf("apikey") > 0) {
+                addDropReason("needsApiKey")
                 continue
             }
 
             if (props.permission_osm === "no") {
+                addDropReason("noOsmPermission")
                 continue
             }
 
             if (props.max_zoom && props.max_zoom < 19) {
                 // We want users to zoom to level 19 when adding a point
                 // If they are on a layer which hasn't enough precision, they can not zoom far enough. This is confusing, so we don't use this layer
+                addDropReason("tooLowZoom")
                 continue
             }
 
             if (props.name === undefined) {
                 console.warn("Editor layer index: name not defined on ", props)
+                addDropReason("nameMissing")
                 continue
             }
 
             if (props.url.startsWith("http://")) {
                 // Mixed content will not work properly, so we don't use this layer
+                addDropReason("unsecureContent")
                 continue
             }
 
@@ -91,6 +110,8 @@ class DownloadEli extends Script {
                 best: props.best ? true : undefined,
                 default: props.default ? true : undefined,
                 "tile-size": props["tile-size"],
+                //@ts-ignore - For compatibility with MC, we rename 'overlay' to 'isOverlay'
+                isOverlay: props.overlay ? true : undefined,
             }
 
             layer = { properties: layer.properties, type: layer.type, geometry: layer.geometry }
@@ -103,6 +124,14 @@ class DownloadEli extends Script {
             "\n]}"
         fs.writeFileSync(target, contents, { encoding: "utf8" })
         console.log("Written", keptLayers.length + ", entries to the ELI")
+        const dropCount = Object.values(droppedLayerCount).reduce(
+            (total, count) => total + count,
+            0
+        )
+        console.log("Dropped " + dropCount + " entries: ")
+        for (const reason in droppedLayerCount) {
+            console.log(reason + ": " + droppedLayerCount[reason])
+        }
     }
 }
 

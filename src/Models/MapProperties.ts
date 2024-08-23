@@ -14,6 +14,7 @@ export interface MapProperties {
     readonly maxzoom: UIEventSource<number>
     readonly bounds: UIEventSource<BBox>
     readonly rasterLayer: UIEventSource<RasterLayerPolygon | undefined>
+    readonly overlays: UIEventSource<RasterLayerPolygon[]>
     readonly maxbounds: UIEventSource<undefined | BBox>
     readonly allowMoving: UIEventSource<true | boolean>
     readonly allowRotating: UIEventSource<true | boolean>

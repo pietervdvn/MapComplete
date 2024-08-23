@@ -353,6 +353,7 @@
             "wednesday": "On wednesday {ranges}"
         },
         "osmLinkTooltip": "Browse this object on OpenStreetMap for history and more editing options",
+        "overlayMap": "Select map overlays",
         "pdf": {
             "attr": "Map data © OpenStreetMap Contributors, reusable under ODbL",
             "attrBackground": "Background layer: {background}",

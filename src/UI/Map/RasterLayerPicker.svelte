@@ -64,7 +64,19 @@
     )
   }
   function apply() {
-    mapproperties.rasterLayer.setData(rasterLayer.data)
+    if (rasterLayer.data.properties.isOverlay) {
+      console.log("Setting overlay" + rasterLayer.data.properties.name)
+      // Check if it is already in the list
+      if (
+        mapproperties.overlays.data.find((o) => o.properties.id === rasterLayer.data.properties.id)
+      ) {
+        return
+      } else {
+        mapproperties.overlays.setData([...mapproperties.overlays.data, rasterLayer.data])
+      }
+    } else {
+      mapproperties.rasterLayer.setData(rasterLayer.data)
+    }
     dispatch("appliedLayer")
   }
 

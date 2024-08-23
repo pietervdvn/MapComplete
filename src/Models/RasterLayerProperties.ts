@@ -6,6 +6,7 @@ export type EliCategory =
     | "historicphoto"
     | "qa"
     | "elevation"
+    | "overlay"
     | "other"
 
 /**

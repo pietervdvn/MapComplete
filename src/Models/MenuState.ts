@@ -33,13 +33,18 @@ export class MenuState {
 
     public readonly backgroundLayerSelectionIsOpened: UIEventSource<boolean> =
         new UIEventSource<boolean>(false)
+    public readonly overlaySelectionIsOpened: UIEventSource<boolean> = new UIEventSource<boolean>(
+        false
+    )
 
     public readonly filtersPanelIsOpened: UIEventSource<boolean> = new UIEventSource<boolean>(false)
     public readonly privacyPanelIsOpened: UIEventSource<boolean> = new UIEventSource<boolean>(false)
     /**
      * Standalone copyright panel
      */
-    public readonly copyrightPanelIsOpened: UIEventSource<boolean> = new UIEventSource<boolean>(false)
+    public readonly copyrightPanelIsOpened: UIEventSource<boolean> = new UIEventSource<boolean>(
+        false
+    )
 
     public readonly communityIndexPanelIsOpened: UIEventSource<boolean> = new UIEventSource(false)
     public readonly allToggles: {
@@ -140,7 +145,6 @@ export class MenuState {
                 name: "background",
                 showOverOthers: true,
             },
-
         ]
         for (const toggle of this.allToggles) {
             toggle.toggle.addCallback((isOpen) => {
