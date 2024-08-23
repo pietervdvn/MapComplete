@@ -11221,7 +11221,8 @@
                         "then": "Use background layer <span class='code'>{mapcomplete-preferred-background-layer}</span> as default background"
                     }
                 },
-                "question": "What background layer should be shown by default?"
+                "question": "What background layer should be shown by default?",
+                "questionHint": "To set a specific background as default, select it in the background menu first after which it will appear here."
             },
             "background-layer-readonly": {
                 "render": "This thematic map has a predefined background layer set. Your default theme setting does not apply"

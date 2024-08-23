@@ -27,7 +27,8 @@
       "ca": "Configuració",
       "cs": "Nastavení",
       "fi": "Asetukset",
-      "zh_Hant": "設定"
+      "zh_Hant": "設定",
+      "sl": "Nastavitve"
     }
   },
   "pointRendering": null,
@@ -374,7 +375,7 @@
         "fr": "Quel fond souhaitez-vous utiliser par défaut ?",
         "da": "Hvilket baggrundslag skal vises som standard?"
       },
-      "questionHint":{
+      "questionHint": {
         "en": "To set a specific background as default, select it in the background menu first after which it will appear here."
       },
       "condition": "_theme:backgroundLayer=",
@@ -396,7 +397,7 @@
         {
           "if": "mapcomplete-preferred-background-layer=osm",
           "icon": {
-            "path":"./assets/svg/osm-logo.svg"
+            "path": "./assets/svg/osm-logo.svg"
           },
           "then": {
             "en": "Use OpenStreetMap-carto as default layer",
@@ -410,7 +411,7 @@
         },
         {
           "if": "mapcomplete-preferred-background-layer=photo",
-          "icon": "\uD83D\uDEF0\uFE0F",
+          "icon": "🛰️",
           "then": {
             "en": "Use aerial imagery as default background",
             "ca": "Utilitzeu imatges aèries com a fons predeterminat",
@@ -429,7 +430,7 @@
             "ca": "Utilitzeu un mapa que no sigui openstreetmap com a fons predeterminat",
             "de": "Eine eigene Karte als Standardhintergrund verwenden",
             "cs": "Použití mapy, která není založena na mapě openstreetmap, jako výchozího pozadí",
-            "nl": "Gebruik altijd een kaart di niet op OpenStreetMap gebaseerd is als achtergrond",
+            "nl": "Gebruik altijd een kaart die niet op OpenStreetMap gebaseerd is als achtergrond",
             "fr": "Utiliser un fond non basé sur OpenStreetMap par défaut",
             "da": "Brug et ikke-OpenSreetMap-baseret kort som standardbaggrund"
           }

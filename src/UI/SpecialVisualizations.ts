@@ -2132,7 +2132,7 @@ export default class SpecialVisualizations {
                         layer,
                     })
                 },
-            }
+            },
         ]
 
         specialVisualizations.push(new AutoApplyButton(specialVisualizations))
@@ -2151,12 +2151,12 @@ export default class SpecialVisualizations {
             )
         }
 
-        const allNames = specialVisualizations.map(f => f.funcName)
+        const allNames = specialVisualizations.map((f) => f.funcName)
         const seen = new Set<string>()
         for (let name of allNames) {
             name = name.toLowerCase()
-            if(seen.has(name)){
-                throw "Invalid special visualisations: detected a duplicate name: "+name
+            if (seen.has(name)) {
+                throw "Invalid special visualisations: detected a duplicate name: " + name
             }
             seen.add(name)
         }

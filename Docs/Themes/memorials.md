@@ -25,6 +25,7 @@ Available languages:
  - fr
  - nl
  - da
+ - sl
 
 
 # Layers defined in this theme configuration file

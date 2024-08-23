@@ -23,7 +23,7 @@
   let rasterLayerId = rasterLayer.sync(
     (l) => l?.properties?.id,
     [],
-    (id) => availableLayers.find((l) => l.properties.id === id),
+    (id) => availableLayers.find((l) => l.properties.id === id)
   )
   rasterLayer.setData(availableLayers[0])
   $: rasterLayer.setData(availableLayers[0])
@@ -36,13 +36,13 @@
           return
         }
         rasterLayer.setData(fav)
-      }),
+      })
     )
 
     onDestroy(
       rasterLayer.addCallbackAndRunD((selected) => {
         favourite?.setData(selected.properties.id)
-      }),
+      })
     )
   }
 
@@ -56,7 +56,7 @@
         } else {
           rasterLayerOnMap.setData(undefined)
         }
-      }),
+      })
     )
   }
 

@@ -234,8 +234,11 @@ export class TagUtils {
         return properties
     }
 
-    static asProperties(tags: TagsFilter | TagsFilter[], baseproperties: Record<string, string>= {}) {
-        if(Array.isArray(tags)){
+    static asProperties(
+        tags: TagsFilter | TagsFilter[],
+        baseproperties: Record<string, string> = {}
+    ) {
+        if (Array.isArray(tags)) {
             tags = new And(tags)
         }
         return TagUtils.changeAsProperties(tags.asChange(baseproperties))

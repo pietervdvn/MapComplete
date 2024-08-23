@@ -7,16 +7,19 @@ export default class UrlValidator extends Validator {
 
     private static readonly aggregatorWebsites = new Set<string>([
         "booking.com",
-        "hotel-details-guide.com", "tripingguide.com",
-        "tripadvisor.com", "tripadvisor.co.uk", "tripadvisor.com.au",
+        "hotel-details-guide.com",
+        "tripingguide.com",
+        "tripadvisor.com",
+        "tripadvisor.co.uk",
+        "tripadvisor.com.au",
     ])
 
     constructor(name?: string, explanation?: string, forceHttps?: boolean) {
         super(
             name ?? "url",
             explanation ??
-            "The validatedTextField will format URLs to always be valid and have a https://-header (even though the 'https'-part will be hidden from the user. Furthermore, some tracking parameters will be removed",
-            "url",
+                "The validatedTextField will format URLs to always be valid and have a https://-header (even though the 'https'-part will be hidden from the user. Furthermore, some tracking parameters will be removed",
+            "url"
         )
         this._forceHttps = forceHttps ?? false
     }

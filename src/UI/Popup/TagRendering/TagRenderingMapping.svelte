@@ -40,38 +40,39 @@
   }
 
   const emojiHeights = {
-    "small": "2rem",
-    "medium": "3rem",
-    "large": "5rem",
+    small: "2rem",
+    medium: "3rem",
+    large: "5rem",
   }
 
-  function getAutoIcon(mapping: {if?: TagsFilter }): BaseUIElement {
+  function getAutoIcon(mapping: { if?: TagsFilter }): BaseUIElement {
     for (const preset of layer.presets) {
       if (!new And(preset.tags).shadows(mapping.if)) {
         continue
       }
 
       return layer.defaultIcon(TagUtils.asProperties(preset.tags))
-
     }
     return undefined
   }
-
 </script>
+
 {#if mapping.icon !== undefined}
   <div class="inline-flex items-center">
     {#if mapping.icon === "auto"}
-      <div class="w-8 h-8 shrink-0 mr-2">
+      <div class="mr-2 h-8 w-8 shrink-0">
         <ToSvelte construct={() => getAutoIcon(mapping)} />
       </div>
     {:else}
       <Marker
         icons={mapping.icon}
-        size={twJoin("shrink-0",
-        `mapping-icon-${mapping.iconClass ?? "small"}-height mapping-icon-${
-          mapping.iconClass ?? "small"
-        }-width`)}
-        emojiHeight={ emojiHeights[mapping.iconClass] ?? "2rem"}
+        size={twJoin(
+          "shrink-0",
+          `mapping-icon-${mapping.iconClass ?? "small"}-height mapping-icon-${
+            mapping.iconClass ?? "small"
+          }-width`
+        )}
+        emojiHeight={emojiHeights[mapping.iconClass] ?? "2rem"}
         clss={`mapping-icon-${mapping.iconClass ?? "small"}`}
       />
     {/if}

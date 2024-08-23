@@ -25,7 +25,7 @@ export class UpdateLegacyLayer extends DesugaringStep<
         context = context.enter(json.id)
         let config = { ...json }
 
-        if(config["credits"] === "Not logged in"){
+        if (config["credits"] === "Not logged in") {
             delete config["credits"]
         }
 
@@ -146,7 +146,7 @@ export class UpdateLegacyLayer extends DesugaringStep<
         delete config["wayHandling"]
         delete config["hideUnderlayingFeaturesMinPercentage"]
         const src = config.source
-        if(src){
+        if (src) {
             delete src["isOsmCache"]
             delete src["maxCacheAge"]
             delete src["widenFactor"]

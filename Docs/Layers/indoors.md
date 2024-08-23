@@ -29,6 +29,21 @@ Basic indoor mapping: shows room outlines
   - [name](#name)
   - [room-type](#room-type)
   - [room-capacity](#room-capacity)
+  - [wikipedia-etymology](#wikipedia-etymology)
+  - [Wikipedia article of the name giver](#wikipedia-article-of-the-name-giver)
+  - [toilet-access](#toilet-access)
+  - [toilets-fee](#toilets-fee)
+  - [toilet-charge](#toilet-charge)
+  - [payment-options-split](#payment-options-split)
+  - [opening_hours_24_7](#opening_hours_24_7)
+  - [Opening hours](#opening-hours)
+  - [toilets-wheelchair](#toilets-wheelchair)
+  - [wheelchair-door-width](#wheelchair-door-width)
+  - [toilets-type](#toilets-type)
+  - [toilets-changing-table](#toilets-changing-table)
+  - [toilet-changing_table:location](#toilet-changing_tablelocation)
+  - [toilet-handwashing](#toilet-handwashing)
+  - [toilet-has-paper](#toilet-has-paper)
   - [leftover-questions](#leftover-questions)
   - [lod](#lod)
 
@@ -67,6 +82,18 @@ Elements must match **any** of the following expressions:
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/name#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/name/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [name](https://wiki.openstreetmap.org/wiki/Key:name) | [string](../SpecialInputElements.md#string) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/room#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/room/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [room](https://wiki.openstreetmap.org/wiki/Key:room) | Multiple choice | [administration](https://wiki.openstreetmap.org/wiki/Tag:room%3Dadministration) [auditorium](https://wiki.openstreetmap.org/wiki/Tag:room%3Dauditorium) [bedroom](https://wiki.openstreetmap.org/wiki/Tag:room%3Dbedroom) [chapel](https://wiki.openstreetmap.org/wiki/Tag:room%3Dchapel) [class](https://wiki.openstreetmap.org/wiki/Tag:room%3Dclass) [computer](https://wiki.openstreetmap.org/wiki/Tag:room%3Dcomputer) [conference](https://wiki.openstreetmap.org/wiki/Tag:room%3Dconference) [crypt](https://wiki.openstreetmap.org/wiki/Tag:room%3Dcrypt) [kitchen](https://wiki.openstreetmap.org/wiki/Tag:room%3Dkitchen) [laboratory](https://wiki.openstreetmap.org/wiki/Tag:room%3Dlaboratory) [library](https://wiki.openstreetmap.org/wiki/Tag:room%3Dlibrary) [locker](https://wiki.openstreetmap.org/wiki/Tag:room%3Dlocker) [nursery](https://wiki.openstreetmap.org/wiki/Tag:room%3Dnursery) [office](https://wiki.openstreetmap.org/wiki/Tag:room%3Doffice) [prison_cell](https://wiki.openstreetmap.org/wiki/Tag:room%3Dprison_cell) [restaurant](https://wiki.openstreetmap.org/wiki/Tag:room%3Drestaurant) [security_check](https://wiki.openstreetmap.org/wiki/Tag:room%3Dsecurity_check) [sport](https://wiki.openstreetmap.org/wiki/Tag:room%3Dsport) [storage](https://wiki.openstreetmap.org/wiki/Tag:room%3Dstorage) [technical](https://wiki.openstreetmap.org/wiki/Tag:room%3Dtechnical) [toilets](https://wiki.openstreetmap.org/wiki/Tag:room%3Dtoilets) [waiting](https://wiki.openstreetmap.org/wiki/Tag:room%3Dwaiting) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/capacity#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/capacity/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [capacity](https://wiki.openstreetmap.org/wiki/Key:capacity) | [pnat](../SpecialInputElements.md#pnat) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/name:etymology:wikidata#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/name%3Aetymology%3Awikidata/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [name:etymology:wikidata](https://wiki.openstreetmap.org/wiki/Key:name:etymology:wikidata) | [wikidata](../SpecialInputElements.md#wikidata) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/access#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/access/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [access](https://wiki.openstreetmap.org/wiki/Key:access) | [string](../SpecialInputElements.md#string) | [yes](https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes) [customers](https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers) [no](https://wiki.openstreetmap.org/wiki/Tag:access%3Dno) [key](https://wiki.openstreetmap.org/wiki/Tag:access%3Dkey) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/fee#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/fee/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [fee](https://wiki.openstreetmap.org/wiki/Key:fee) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/charge#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/charge/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [charge](https://wiki.openstreetmap.org/wiki/Key:charge) | [string](../SpecialInputElements.md#string) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/opening_hours#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/opening_hours/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | [24/7](https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/wheelchair#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/wheelchair/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [wheelchair](https://wiki.openstreetmap.org/wiki/Key:wheelchair) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dno) [designated](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Ddesignated) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/door:width#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/door%3Awidth/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [door:width](https://wiki.openstreetmap.org/wiki/Key:door:width) | [pfloat](../SpecialInputElements.md#pfloat) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/toilets:position#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/toilets%3Aposition/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [toilets:position](https://wiki.openstreetmap.org/wiki/Key:toilets:position) | Multiple choice | [seated](https://wiki.openstreetmap.org/wiki/Tag:toilets:position%3Dseated) [urinal](https://wiki.openstreetmap.org/wiki/Tag:toilets:position%3Durinal) [squat](https://wiki.openstreetmap.org/wiki/Tag:toilets:position%3Dsquat) [seated;urinal](https://wiki.openstreetmap.org/wiki/Tag:toilets:position%3Dseated;urinal) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/changing_table#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/changing_table/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [changing_table](https://wiki.openstreetmap.org/wiki/Key:changing_table) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:changing_table%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:changing_table%3Dno) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/changing_table:location#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/changing_table%3Alocation/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [changing_table:location](https://wiki.openstreetmap.org/wiki/Key:changing_table:location) | [string](../SpecialInputElements.md#string) | [female_toilet](https://wiki.openstreetmap.org/wiki/Tag:changing_table:location%3Dfemale_toilet) [male_toilet](https://wiki.openstreetmap.org/wiki/Tag:changing_table:location%3Dmale_toilet) [wheelchair_toilet](https://wiki.openstreetmap.org/wiki/Tag:changing_table:location%3Dwheelchair_toilet) [dedicated_room](https://wiki.openstreetmap.org/wiki/Tag:changing_table:location%3Ddedicated_room) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/toilets:handwashing#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/toilets%3Ahandwashing/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [toilets:handwashing](https://wiki.openstreetmap.org/wiki/Key:toilets:handwashing) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:toilets:handwashing%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:toilets:handwashing%3Dno) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/toilets:paper_supplied#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/toilets%3Apaper_supplied/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [toilets:paper_supplied](https://wiki.openstreetmap.org/wiki/Key:toilets:paper_supplied) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:toilets:paper_supplied%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:toilets:paper_supplied%3Dno) |
 
 
 
@@ -162,6 +189,185 @@ The question is `How much people can at most fit in this room?`
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:room' target='_blank'>room</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:room%3Dwaiting' target='_blank'>waiting</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:room' target='_blank'>room</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:room%3Drestaurant' target='_blank'>restaurant</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:room' target='_blank'>room</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:room%3Doffice' target='_blank'>office</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:room' target='_blank'>room</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:room%3Dnursery' target='_blank'>nursery</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:room' target='_blank'>room</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:room%3Dconference' target='_blank'>conference</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:room' target='_blank'>room</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:room%3Dauditorium' target='_blank'>auditorium</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:room' target='_blank'>room</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:room%3Dchapel' target='_blank'>chapel</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:room' target='_blank'>room</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:room%3Dbedroom' target='_blank'>bedroom</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:room' target='_blank'>room</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:room%3Dclassroom' target='_blank'>classroom</a>
 
+
+### wikipedia-etymology
+
+The question is `What is the Wikidata-item that this object is named after?`
+*<h3>Wikipedia article of the name giver</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}* is shown if `name:etymology:wikidata` is set
+
+This tagrendering is only visible in the popup if the following condition is met: name:etymology!=unknown & name~.+
+
+
+### toilet-access
+
+The question is `Are these toilets publicly accessible?`
+*Access is {access}* is shown if `access` is set
+
+
+ -  *Public access* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>
+ -  *Only access to customers* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers' target='_blank'>customers</a>
+ -  *Not accessible* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dno' target='_blank'>no</a>
+ -  *Accessible, but one has to ask a key to enter* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dkey' target='_blank'>key</a>
+ -  *Public access* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dpublic' target='_blank'>public</a>. _This option cannot be chosen as answer_
+
+
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dtoilets' target='_blank'>toilets</a>
+This tagrendering has labels 
+`relevant-questions`
+
+### toilets-fee
+
+The question is `Are these toilets free to use?`
+
+
+
+ -  *These are paid toilets* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>
+ -  *Free to use* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno' target='_blank'>no</a>
+
+
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dtoilets' target='_blank'>toilets</a> & access!=no
+This tagrendering has labels 
+`relevant-questions`
+
+### toilet-charge
+
+The question is `How much does one have to pay for these toilets?`
+*The fee is {charge}* is shown if `charge` is set
+
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dtoilets' target='_blank'>toilets</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>
+This tagrendering has labels 
+`relevant-questions`
+
+### payment-options-split
+
+The question is `Which methods of payment are accepted here?`
+
+
+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/cash.svg' style='width: 3rem; height: 3rem'> *Cash is accepted here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dyes' target='_blank'>yes</a>. _This option cannot be chosen as answer_. Unselecting this answer will add payment:cash=
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/payment_card.svg' style='width: 3rem; height: 3rem'> *Payment cards are accepted here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dyes' target='_blank'>yes</a>. _This option cannot be chosen as answer_. Unselecting this answer will add payment:cards=
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/qrcode.svg' style='width: 3rem; height: 3rem'> *Payment by QR-code is possible here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dno' target='_blank'>no</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/coins.svg' style='width: 3rem; height: 3rem'> *Coins are accepted here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins' target='_blank'>payment:coins</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins' target='_blank'>payment:coins</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins%3Dno' target='_blank'>no</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/notes.svg' style='width: 3rem; height: 3rem'> *Bank notes are accepted here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:notes' target='_blank'>payment:notes</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:notes%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:notes' target='_blank'>payment:notes</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:notes%3Dno' target='_blank'>no</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/payment_card.svg' style='width: 3rem; height: 3rem'> *Debit cards are accepted here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:debit_cards' target='_blank'>payment:debit_cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:debit_cards%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:debit_cards' target='_blank'>payment:debit_cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:debit_cards%3Dno' target='_blank'>no</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/payment_card.svg' style='width: 3rem; height: 3rem'> *Credit cards are accepted here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:credit_cards' target='_blank'>payment:credit_cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:credit_cards%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:credit_cards' target='_blank'>payment:credit_cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:credit_cards%3Dno' target='_blank'>no</a>
+
+
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dtoilets' target='_blank'>toilets</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>
+This tagrendering has labels 
+`relevant-questions`
+
+### opening_hours_24_7
+
+The question is `When are these toilets opened?`
+*<h3>Opening hours</h3>{opening_hours_table(opening_hours)}* is shown if `opening_hours` is set
+
+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/open24_7.svg' style='width: 3rem; height: 3rem'> *24/7 opened (including holidays)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
+ -  *Marked as closed for an unspecified time* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>. _This option cannot be chosen as answer_
+
+
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dtoilets' target='_blank'>toilets</a> & access!=no
+This tagrendering has labels 
+`relevant-questions`
+
+### toilets-wheelchair
+
+The question is `Is there a dedicated toilet for wheelchair users?`
+
+
+
+ -  *There is a dedicated toilet for wheelchair users* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes' target='_blank'>yes</a>
+ -  *No wheelchair access* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dno' target='_blank'>no</a>
+ -  *There is only a dedicated toilet for wheelchair users* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Ddesignated' target='_blank'>designated</a>
+
+
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dtoilets' target='_blank'>toilets</a>
+This tagrendering has labels 
+`relevant-questions`
+
+### wheelchair-door-width
+
+The question is `What is the width of the door to the wheelchair accessible toilet?`
+*The door to the wheelchair-accessible toilet is {canonical(door:width)} wide* is shown if `door:width` is set
+
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dtoilets' target='_blank'>toilets</a> & (<a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Ddesignated' target='_blank'>designated</a>)
+This tagrendering has labels 
+`relevant-questions`
+
+### toilets-type
+
+The question is `Which kind of toilets are these?`
+
+
+
+ -  *There are only seated toilets* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:position' target='_blank'>toilets:position</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:position%3Dseated' target='_blank'>seated</a>
+ -  *There are only urinals here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:position' target='_blank'>toilets:position</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:position%3Durinal' target='_blank'>urinal</a>
+ -  *There are only squat toilets here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:position' target='_blank'>toilets:position</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:position%3Dsquat' target='_blank'>squat</a>
+ -  *Both seated toilets and urinals are available here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:position' target='_blank'>toilets:position</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:position%3Dseated;urinal' target='_blank'>seated;urinal</a>
+
+
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dtoilets' target='_blank'>toilets</a>
+This tagrendering has labels 
+`relevant-questions`
+
+### toilets-changing-table
+
+The question is `Is a changing table (to change diapers) available?`
+
+
+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/toilet/baby.svg' style='width: 3rem; height: 3rem'> *A changing table is available* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:changing_table' target='_blank'>changing_table</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:changing_table%3Dyes' target='_blank'>yes</a>
+ -  *No changing table is available* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:changing_table' target='_blank'>changing_table</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:changing_table%3Dno' target='_blank'>no</a>
+
+
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dtoilets' target='_blank'>toilets</a>
+This tagrendering has labels 
+`relevant-questions`
+
+### toilet-changing_table:location
+
+The question is `Where is the changing table located?`
+*A changing table is located at {changing_table:location}* is shown if `changing_table:location` is set
+
+
+ -  *A changing table is in the toilet for women* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:changing_table:location' target='_blank'>changing_table:location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:changing_table:location%3Dfemale_toilet' target='_blank'>female_toilet</a>
+ -  *A changing table is in the toilet for men* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:changing_table:location' target='_blank'>changing_table:location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:changing_table:location%3Dmale_toilet' target='_blank'>male_toilet</a>
+ -  *A changing table is in the toilet for wheelchair users* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:changing_table:location' target='_blank'>changing_table:location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:changing_table:location%3Dwheelchair_toilet' target='_blank'>wheelchair_toilet</a>
+ -  *A changing table is in a dedicated room* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:changing_table:location' target='_blank'>changing_table:location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:changing_table:location%3Ddedicated_room' target='_blank'>dedicated_room</a>
+
+
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dtoilets' target='_blank'>toilets</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:changing_table' target='_blank'>changing_table</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:changing_table%3Dyes' target='_blank'>yes</a>
+This tagrendering has labels 
+`relevant-questions`
+
+### toilet-handwashing
+
+The question is `Do these toilets have a sink to wash your hands?`
+
+
+
+ -  *These toilets have a sink to wash your hands* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:handwashing' target='_blank'>toilets:handwashing</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:handwashing%3Dyes' target='_blank'>yes</a>
+ -  *These toilets <b>don't</b> have a sink to wash your hands* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:handwashing' target='_blank'>toilets:handwashing</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:handwashing%3Dno' target='_blank'>no</a>
+
+
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dtoilets' target='_blank'>toilets</a>
+This tagrendering has labels 
+`relevant-questions`
+
+### toilet-has-paper
+
+The question is `Does one have to bring their own toilet paper to this toilet?`
+
+
+
+ -  *This toilet is equipped with toilet paper* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:paper_supplied' target='_blank'>toilets:paper_supplied</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:paper_supplied%3Dyes' target='_blank'>yes</a>
+ -  *You have to bring your own toilet paper to this toilet* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:paper_supplied' target='_blank'>toilets:paper_supplied</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:paper_supplied%3Dno' target='_blank'>no</a>
+
+
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dtoilets' target='_blank'>toilets</a> & toilets:position!=urinal
+This tagrendering has labels 
+`relevant-questions`
 
 ### leftover-questions
 
