@@ -291,10 +291,15 @@
             "mappings": [
               {
                 "if": {
-                  "or": [
+                  "and": [
+                    "_referencing_ways~*",
                     "advertising=billboard"
                   ]
                 },
+                "then": "./assets/themes/advertising/billboard_wall.svg"
+              },
+              {
+                "if": "advertising=billboard",
                 "then": "./assets/themes/advertising/billboard.svg"
               },
               {
@@ -452,6 +457,23 @@
         "./assets/themes/advertising/KFC_Billboard.jpg",
         "./assets/themes/advertising/LIDL_Billboard.jpg",
         "./assets/themes/advertising/Repsol_Billboard.jpg"
+      ]
+    },
+    {
+      "tags": [
+        "advertising=billboard"
+      ],
+      "snapToLayer": [
+        "walls_and_buildings"
+      ],
+      "title": {
+        "en": "a billboard mounted to a wall"
+      },
+      "description": {
+        "en": "A large outdoor advertising structure, typically found in high-traffic areas such as alongside busy roads mounted on a wall"
+      },
+      "exampleImages": [
+        "./assets/themes/advertising/billboard_wall.jpg"
       ]
     },
     {
