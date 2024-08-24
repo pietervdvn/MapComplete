@@ -1,6 +1,6 @@
 {
   "name": "mapcomplete",
-  "version": "0.45.3",
+  "version": "0.45.5",
   "repository": "https://github.com/pietervdvn/MapComplete",
   "description": "A small website to edit OSM easily",
   "bugs": "https://github.com/pietervdvn/MapComplete/issues",
@@ -15,14 +15,14 @@
       "Use `https://<your domain name>/<path to mapcomplete>/land.html` as redirect URIs. You can add `http://127.0.0.1:1234/land.html` too for local development.",
       "Alternatively, you can override the `osm` credentials using the environment variables `VITE_OSM_OAUTH_CLIENT_ID` and `VITE_OSM_OAUTH_SECRET`"
     ],
-    "oauth_credentials": {
+    "production:oauth_credentials": {
       "#": "This client-id is registered by 'MapComplete' on OpenStreetMap.org",
       "oauth_client_id": "K93H1d8ve7p-tVLE1ZwsQ4lAFLQk8INx5vfTLMu5DWk",
       "oauth_secret": "NBWGhWDrD3QDB35xtVuxv4aExnmIt4FA_WgeLtwxasg",
       "url": "https://www.openstreetmap.org",
       "api_url": "https://api.openstreetmap.org"
     },
-    "disabled:oauth_credentials": {
+    "oauth_credentials": {
       "##": "DEV",
       "#": "This client-id is registered by 'MapComplete' on https://master.apis.dev.openstreetmap.org/",
       "oauth_client_id": "BAPPMRuojjFsY__0APmScr1hbebYj1GlDbV6S5TsUbo",
