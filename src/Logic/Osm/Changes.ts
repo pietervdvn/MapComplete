@@ -37,7 +37,7 @@ export class Changes {
     public readonly isUploading = new UIEventSource(false)
     public readonly errors = new UIEventSource<string[]>([], "upload-errors")
     private readonly historicalUserLocations?: FeatureSource
-    private _nextId: number = -1 // Newly assigned ID's are negative
+    private _nextId: number = 0 // Newly assigned ID's are negative
     private readonly previouslyCreated: OsmObject[] = []
     private readonly _leftRightSensitive: boolean
     public readonly _changesetHandler: ChangesetHandler
@@ -53,7 +53,7 @@ export class Changes {
             featureSwitches?: FeatureSwitchState
         },
         leftRightSensitive: boolean = false,
-        reportError?: (string: string | Error, extramessage?: string) => void
+        reportError?: (string: string | Error, extramessage?: string) => void,
     ) {
         this._leftRightSensitive = leftRightSensitive
         // We keep track of all changes just as well
@@ -68,7 +68,7 @@ export class Changes {
             state.osmConnection,
             state.featurePropertiesStore,
             this,
-            (e, extramessage: string) => this._reportError(e, extramessage)
+            (e, extramessage: string) => this._reportError(e, extramessage),
         )
         this.historicalUserLocations = state.historicalUserLocations
 
@@ -82,7 +82,7 @@ export class Changes {
             modifiedObjects: OsmObject[]
             newObjects: OsmObject[]
             deletedObjects: OsmObject[]
-        }
+        },
     ): string {
         const changedElements = allChanges.modifiedObjects ?? []
         const newElements = allChanges.newObjects ?? []
@@ -172,7 +172,7 @@ export class Changes {
                         docs: "The identifier of the used background layer, this will probably be an identifier from the [editor layer index](https://github.com/osmlab/editor-layer-index)",
                     },
                 ],
-                "default"
+                "default",
             ),
             ...addSource(ChangeTagAction.metatags, "ChangeTag"),
             ...addSource(ChangeLocationAction.metatags, "ChangeLocation"),
@@ -201,7 +201,7 @@ export class Changes {
                             : "",
                     ].join("\n"),
                     source,
-                ])
+                ]),
             ),
         ].join("\n\n")
     }
@@ -214,7 +214,11 @@ export class Changes {
      * Returns a new ID and updates the value for the next ID
      */
     public getNewID() {
-        return this._nextId--
+        // See #2082. We check for previous rewritings, as a remapping might be from a previous session
+        do {
+            this._nextId--
+        } while (this._changesetHandler._remappings.has("node/" + this._nextId) || this._changesetHandler._remappings.has("way/" + this._nextId) || this._changesetHandler._remappings.has("relation/" + this._nextId))
+        return this._nextId
     }
 
     /**
@@ -250,7 +254,7 @@ export class Changes {
         const changeDescriptions = await action.Perform(this)
         const remapped = ChangeDescriptionTools.rewriteAllIds(
             changeDescriptions,
-            this._changesetHandler._remappings
+            this._changesetHandler._remappings,
         )
 
         remapped[0].meta.distanceToObject = this.calculateDistanceToChanges(action, remapped)
@@ -266,7 +270,7 @@ export class Changes {
 
     public CreateChangesetObjects(
         changes: ChangeDescription[],
-        downloadedOsmObjects: OsmObject[]
+        downloadedOsmObjects: OsmObject[],
     ): {
         newObjects: OsmObject[]
         modifiedObjects: OsmObject[]
@@ -454,7 +458,7 @@ export class Changes {
                 result.modifiedObjects.length,
                 "modified;",
                 result.deletedObjects.length,
-                "deleted"
+                "deleted",
             )
         }
         return result
@@ -462,7 +466,7 @@ export class Changes {
 
     private calculateDistanceToChanges(
         change: OsmChangeAction,
-        changeDescriptions: ChangeDescription[]
+        changeDescriptions: ChangeDescription[],
     ) {
         const locations = this.historicalUserLocations?.features?.data
         if (locations === undefined) {
@@ -482,7 +486,7 @@ export class Changes {
             .filter((feat) => feat.geometry.type === "Point")
             .filter((feat) => {
                 const visitTime = new Date(
-                    (<GeoLocationPointProperties>(<any>feat.properties)).date
+                    (<GeoLocationPointProperties>(<any>feat.properties)).date,
                 )
                 // In seconds
                 const diff = (now.getTime() - visitTime.getTime()) / 1000
@@ -529,9 +533,9 @@ export class Changes {
                     ...recentLocationPoints.map((gpsPoint) => {
                         const otherCoor = GeoOperations.centerpointCoordinates(gpsPoint)
                         return GeoOperations.distanceBetween(coor, otherCoor)
-                    })
-                )
-            )
+                    }),
+                ),
+            ),
         )
     }
 
@@ -567,7 +571,7 @@ export class Changes {
 
     public fragmentChanges(
         pending: ChangeDescription[],
-        objects: OsmObject[]
+        objects: OsmObject[],
     ): {
         refused: ChangeDescription[]
         toUpload: ChangeDescription[]
@@ -577,7 +581,7 @@ export class Changes {
 
         // All ids which have an 'update'
         const createdIds = new Set(
-            pending.filter((cd) => cd.changes !== undefined).map((cd) => cd.id)
+            pending.filter((cd) => cd.changes !== undefined).map((cd) => cd.id),
         )
         pending.forEach((c) => {
             if (c.id < 0) {
@@ -586,7 +590,7 @@ export class Changes {
                 } else {
                     this._reportError(
                         `Got an orphaned change. The 'creation'-change description for ${c.type}/${c.id} got lost. Permanently dropping this change:` +
-                            JSON.stringify(c)
+                        JSON.stringify(c),
                     )
                 }
                 return
@@ -597,10 +601,10 @@ export class Changes {
             } else {
                 console.log(
                     "Refusing change about " +
-                        c.type +
-                        "/" +
-                        c.id +
-                        " as not in the objects. No internet?"
+                    c.type +
+                    "/" +
+                    c.id +
+                    " as not in the objects. No internet?",
                 )
                 refused.push(c)
             }
@@ -615,7 +619,7 @@ export class Changes {
      */
     private async flushSelectChanges(
         pending: ChangeDescription[],
-        openChangeset: UIEventSource<number>
+        openChangeset: UIEventSource<number>,
     ): Promise<ChangeDescription[]> {
         const neededIds = Changes.GetNeededIds(pending)
         /* Download the latest version of the OSM-objects
@@ -623,7 +627,7 @@ export class Changes {
         */
         const downloader = new OsmObjectDownloader(this.backend, undefined)
         const osmObjects = Utils.NoNull(await Promise.all<{ id: string; osmObj: OsmObject | "deleted" }>(
-            neededIds.map((id) => this.getOsmObject(id, downloader))
+            neededIds.map((id) => this.getOsmObject(id, downloader)),
         ))
 
         // Drop changes to deleted items
@@ -657,7 +661,7 @@ export class Changes {
             (csId, remappings) => {
                 if (remappings.size > 0) {
                     toUpload = toUpload.map((ch) =>
-                        ChangeDescriptionTools.rewriteIds(ch, remappings)
+                        ChangeDescriptionTools.rewriteIds(ch, remappings),
                     )
                 }
 
@@ -670,7 +674,7 @@ export class Changes {
                 return Changes.buildChangesetXML("" + csId, changes)
             },
             metatags,
-            openChangeset
+            openChangeset,
         )
 
         console.log("Upload successful! Refused changes are", refused)
@@ -780,14 +784,14 @@ export class Changes {
                     try {
                         const openChangeset = UIEventSource.asInt(
                             this.state.osmConnection.GetPreference(
-                                "current-open-changeset-" + theme
-                            )
+                                "current-open-changeset-" + theme,
+                            ),
                         )
                         console.log(
                             "Using current-open-changeset-" +
-                                theme +
-                                " from the preferences, got " +
-                                openChangeset.data
+                            theme +
+                            " from the preferences, got " +
+                            openChangeset.data,
                         )
 
                         const refused = await self.flushSelectChanges(pendingChanges, openChangeset)
@@ -802,7 +806,7 @@ export class Changes {
                         this.errors.ping()
                         return pendingChanges
                     }
-                })
+                }),
             )
 
             // We keep all the refused changes to try them again
@@ -810,7 +814,7 @@ export class Changes {
         } catch (e) {
             console.error(
                 "Could not handle changes - probably an old, pending changeset in localstorage with an invalid format; erasing those",
-                e
+                e,
             )
             this.errors.data.push(e)
             this.errors.ping()
