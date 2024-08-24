@@ -104,15 +104,11 @@ export default class ThemeViewStateHashActor {
         if (found.properties.id === "last_click") {
             return true
         }
-        const layer = this._state.layout.getMatchingLayer(found.properties)
         console.log(
             "Setting selected element based on hash",
             hash,
             "; found",
-            found,
-            "got matching layer",
-            layer.id,
-            ""
+            found
         )
         selectedElement.setData(found)
         return true
