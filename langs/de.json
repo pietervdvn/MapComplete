@@ -847,9 +847,10 @@
         },
         "tooLong": "Der Text ist zu lang, es sind maximal 255 Zeichen erlaubt. Sie haben bereits {count} Zeichen.",
         "url": {
-            "aggregator": "{host} ist eine Aggregator-Website eines Drittanbieters. Wenn möglich, suche auf der offiziellen Website.",
+            "aggregator": "{host} ist die Website eines Drittanbieters. Wenn möglich, suche auf der offiziellen Website.",
             "description": "Link zu einer Website",
-            "feedback": "Webadresse ungültig"
+            "feedback": "Webadresse ungültig",
+            "spamSite": "{host} ist eine Website von geringer Qualität. Die Nutzung dieser Website ist nicht zulässig."
         },
         "wikidata": {
             "description": "Eine Wikidata-Kennung",
