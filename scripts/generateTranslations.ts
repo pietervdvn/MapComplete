@@ -6,6 +6,7 @@ import Script from "./Script"
 
 const knownLanguages = ["en", "nl", "de", "fr", "es", "gl", "ca"]
 const ignoreTerms = ["searchTerms"]
+
 class TranslationPart {
     contents: Map<string, TranslationPart | string> = new Map<string, TranslationPart | string>()
 
@@ -54,10 +55,10 @@ class TranslationPart {
             if (typeof v != "string") {
                 console.error(
                     `Non-string object at ${context} in translation while trying to add the translation ` +
-                        JSON.stringify(v) +
-                        ` to '` +
-                        translationsKey +
-                        "'. The offending object which _should_ be a translation is: ",
+                    JSON.stringify(v) +
+                    ` to '` +
+                    translationsKey +
+                    "'. The offending object which _should_ be a translation is: ",
                     v,
                     "\n\nThe current object is (only showing en):",
                     this.toJson(),
@@ -96,9 +97,9 @@ class TranslationPart {
             if (noTranslate !== undefined) {
                 console.log(
                     "Ignoring some translations for " +
-                        context +
-                        ": " +
-                        dontTranslateKeys.join(", ")
+                    context +
+                    ": " +
+                    dontTranslateKeys.join(", ")
                 )
             }
         }
@@ -184,7 +185,7 @@ class TranslationPart {
             let value = this.contents.get(key)
 
             if (typeof value === "string") {
-                value = value.replace(/"/g, '\\"').replace(/\n/g, "\\n")
+                value = value.replace(/"/g, "\\\"").replace(/\n/g, "\\n")
                 if (neededLanguage === undefined) {
                     parts.push(`\"${key}\": \"${value}\"`)
                 } else if (key === neededLanguage) {
@@ -234,7 +235,7 @@ class TranslationPart {
             } else if (!isLeaf) {
                 errors.push({
                     error: "Mixed node: non-leaf node has translation strings",
-                    path: path,
+                    path: path
                 })
             }
 
@@ -285,7 +286,7 @@ class TranslationPart {
                                 value +
                                 "\n" +
                                 fixLink,
-                            path: path,
+                            path: path
                         })
                     }
                     return
@@ -297,7 +298,7 @@ class TranslationPart {
                             error: `The translation for ${key} does not have the required subpart ${part} (in ${usedByLanguage}).
     \tThe full translation is ${value}
     \t${fixLink}`,
-                            path: path,
+                            path: path
                         })
                     }
                 }
@@ -426,22 +427,49 @@ function transformTranslation(
 
 /**
  *
- * const result = sortKeys({"b": 43, "a": 42})
- * JSON.stringify(result) // => '{"a":42,"b":43}'
+ * const result = stringifySorted({"b": 43, "a": 42})
+ * result // => '{"a": 42,"b": 43}'
+ *
+ * // Should have correct newlines
+ * const result = stringifySorted({"b": {"x": "y"}, "a": 42}, "  ")
+ * result // => '{\n  "a": 42,\n  "b": {\n    "x": "y"\n  }\n}'
+ *
+ * // Should sort like weblate does
+ * const result = stringifySorted({"1": "abc", "2": "def", "9": "ghi", "10": "xyz", "11": "uvw"})
+ * result // => '{"1": "abc","10": "xyz","11": "uvw","2": "def","9", "ghi"}'
  */
-function sortKeys(o: object): object {
+function stringifySorted(o: object, space: string = undefined, depth = 0): string {
     const keys = Object.keys(o)
-    keys.sort((a, b) => ("" + a < "" + b ? -1 : 1))
-    const nw = {}
-    for (const key of keys) {
+    let obj = "{"
+
+    obj += keys.sort().map(key => {
         const v = o[key]
+        let r = ""
+        if (space !== undefined) {
+            r += "\n"
+            for (let i = 0; i <= depth; i++) {
+                r += space
+            }
+        }
+
+        r += JSON.stringify("" + key) + ": "
         if (typeof v === "object") {
-            nw[key] = sortKeys(v)
+            r += stringifySorted(v, space, depth + 1)
+        } else if (Array.isArray(v)) {
+            r += "[" + v.map(v_ => stringifySorted(v_, space, depth + 1)).join(",") + "]"
         } else {
-            nw[key] = v
+            r += JSON.stringify(v)
+        }
+        return r
+    }).join(",")
+    if (space !== undefined) {
+        obj += "\n"
+        for (let i = 0; i < depth; i++) {
+            obj += space
         }
     }
-    return nw
+    obj += "}"
+    return obj
 }
 
 function removeEmptyString(object: object) {
@@ -464,9 +492,8 @@ function formatFile(path) {
     const original = readFileSync(path, "utf8")
     let contents = JSON.parse(original)
     contents = removeEmptyString(contents)
-    contents = sortKeys(contents)
-    const endsWithNewline = original.endsWith("\n")
-    writeFileSync(path, JSON.stringify(contents, null, "    ") + (endsWithNewline ? "\n" : ""))
+    contents = stringifySorted(contents, "    ")
+    writeFileSync(path, contents)
 }
 
 /**
