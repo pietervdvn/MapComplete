@@ -271,6 +271,7 @@ export class Changes {
     public CreateChangesetObjects(
         changes: ChangeDescription[],
         downloadedOsmObjects: OsmObject[],
+        ignoreNoCreate: boolean = false
     ): {
         newObjects: OsmObject[]
         modifiedObjects: OsmObject[]
@@ -318,6 +319,9 @@ export class Changes {
                 }
                 if (change.changes === undefined) {
                     // This object is a change to a newly created object. However, we have not seen the creation changedescription yet!
+                    if(ignoreNoCreate){
+                        continue
+                    }
                     throw "Not a creation of the object: " + JSON.stringify(change)
                 }
                 // This is a new object that should be created

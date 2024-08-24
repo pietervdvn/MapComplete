@@ -1,7 +1,7 @@
 {
   "contributors": [
     {
-      "commits": 388,
+      "commits": 391,
       "contributor": "Pieter Vander Vennet"
     },
     {
@@ -17,12 +17,12 @@
       "contributor": "Allan Nordhøy"
     },
     {
-      "commits": 83,
-      "contributor": "Robin van der Linde"
+      "commits": 84,
+      "contributor": "mcliquid"
     },
     {
-      "commits": 76,
-      "contributor": "mcliquid"
+      "commits": 83,
+      "contributor": "Robin van der Linde"
     },
     {
       "commits": 63,
@@ -45,7 +45,7 @@
       "contributor": "Iago"
     },
     {
-      "commits": 33,
+      "commits": 34,
       "contributor": "Jiří Podhorecký"
     },
     {
@@ -65,12 +65,16 @@
       "contributor": "SC"
     },
     {
+      "commits": 24,
+      "contributor": "gallegonovato"
+    },
+    {
       "commits": 23,
       "contributor": "Marco"
     },
     {
-      "commits": 22,
-      "contributor": "gallegonovato"
+      "commits": 21,
+      "contributor": "Štefan Baebler"
     },
     {
       "commits": 18,
@@ -79,10 +83,6 @@
     {
       "commits": 18,
       "contributor": "Max Spicer"
-    },
-    {
-      "commits": 18,
-      "contributor": "Štefan Baebler"
     },
     {
       "commits": 18,

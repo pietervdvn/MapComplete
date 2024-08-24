@@ -34,6 +34,9 @@ An area where climbing is possible, e.g. a crag, site, boulder, … Contains agg
   - [Type](#type)
   - [Rock type (crag/rock/cliff only)](#rock-type-(cragrock/cliff-only))
   - [reviews](#reviews)
+  - [website](#website)
+  - [fee](#fee)
+  - [bouldering](#bouldering)
   - [leftover-questions](#leftover-questions)
   - [lod](#lod)
 
@@ -67,6 +70,9 @@ Elements must match **all** of the following expressions:
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/name#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/name/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [name](https://wiki.openstreetmap.org/wiki/Key:name) | [string](../SpecialInputElements.md#string) | [](https://wiki.openstreetmap.org/wiki/Tag:name%3D) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/climbing#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/climbing/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [climbing](https://wiki.openstreetmap.org/wiki/Key:climbing) | Multiple choice | [boulder](https://wiki.openstreetmap.org/wiki/Tag:climbing%3Dboulder) [crag](https://wiki.openstreetmap.org/wiki/Tag:climbing%3Dcrag) [area](https://wiki.openstreetmap.org/wiki/Tag:climbing%3Darea) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/rock#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/rock/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [rock](https://wiki.openstreetmap.org/wiki/Key:rock) | [string](../SpecialInputElements.md#string) | [limestone](https://wiki.openstreetmap.org/wiki/Tag:rock%3Dlimestone) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/url#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/url/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [url](https://wiki.openstreetmap.org/wiki/Key:url) | [url](../SpecialInputElements.md#url) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/charge#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/charge/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [charge](https://wiki.openstreetmap.org/wiki/Key:charge) | [string](../SpecialInputElements.md#string) | [](https://wiki.openstreetmap.org/wiki/Tag:charge%3D) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/climbing:boulder#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/climbing%3Aboulder/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [climbing:boulder](https://wiki.openstreetmap.org/wiki/Key:climbing:boulder) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dno) [limited](https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dlimited) |
 
 
 
@@ -153,6 +159,42 @@ This tagrendering is only visible in the popup if the following condition is met
 Shows the reviews module (including the possibility to leave a review)
 _This tagrendering has no question and is thus read-only_
 *{create_review()}{list_reviews()}*
+
+
+
+
+### website
+
+The question is `Is there a (unofficial) website with more informations (e.g. topos)?`
+*<a href='{url}' target='_blank' rel='noopener'>{url}</a>* is shown if `url` is set
+
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dclimbing' target='_blank'>climbing</a> & club= & office= & leisure!~^(sports_centre)$
+
+
+### fee
+
+The question is `Is a fee required to climb here?`
+*A fee of {charge} should be paid for climbing here* is shown if `charge` is set
+
+
+ -  *Climbing here is free of charge* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno' target='_blank'>no</a>
+ -  *Paying a fee is required to climb here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a> & charge=
+
+
+
+
+
+### bouldering
+
+The question is `Is bouldering possible here?`
+
+
+
+ -  *Bouldering is possible here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:boulder' target='_blank'>climbing:boulder</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dyes' target='_blank'>yes</a>
+ -  *Bouldering is not possible here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:boulder' target='_blank'>climbing:boulder</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dno' target='_blank'>no</a>
+ -  *Bouldering is possible, although there are only a few problems* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:boulder' target='_blank'>climbing:boulder</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dlimited' target='_blank'>limited</a>
+ -  *There are {climbing:boulder} boulder problems* is shown if with climbing:boulder~.+. _This option cannot be chosen as answer_
+
 
 
 

@@ -1377,16 +1377,6 @@ Shows the extra description from the presets of the layer, if one matches. It wi
 
 <code>`{preset_description()}`</code>
 
-### preset_type_select
-
-An editable tag rendering which allows to change the type
-
-
-
-#### Example usage of preset_type_select
-
-<code>`{preset_type_select()}`</code>
-
 ### pending_changes
 
 A module showing the pending changes, with the option to clear the pending changes
@@ -1441,51 +1431,6 @@ An editable tag rendering which allows to change the type
 #### Example usage of preset_type_select
 
 <code>`{preset_type_select()}`</code>
-
-### pending_changes
-
-A module showing the pending changes, with the option to clear the pending changes
-
-
-
-#### Example usage of pending_changes
-
-<code>`{pending_changes()}`</code>
-
-### clear_caches
-
-A button which clears the locally downloaded data and the service worker. Login status etc will be kept
-
-
-
-| name | default | description |
------|-----|----- |
-| text | _undefined_ | The text to show on the button |
-
-
-
-
-#### Example usage of clear_caches
-
-<code>`{clear_caches()}`</code>
-
-### group
-
-A collapsable group (accordion)
-
-
-
-| name | default | description |
------|-----|----- |
-| header | _undefined_ | The _identifier_ of a single tagRendering. This will be used as header |
-| labels | _undefined_ | A `;`-separated list of either identifiers or label names. All tagRenderings matching this value will be shown in the accordion |
-
-
-
-
-#### Example usage of group
-
-<code>`{group(,)}`</code>
 
 ### auto_apply
 

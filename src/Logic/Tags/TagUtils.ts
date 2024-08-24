@@ -234,6 +234,16 @@ export class TagUtils {
         return properties
     }
 
+    static asProperties(
+        tags: TagsFilter | TagsFilter[],
+        baseproperties: Record<string, string> = {}
+    ) {
+        if (Array.isArray(tags)) {
+            tags = new And(tags)
+        }
+        return TagUtils.changeAsProperties(tags.asChange(baseproperties))
+    }
+
     static changeAsProperties(kvs: { k: string; v: string }[]): Record<string, string> {
         const tags: Record<string, string> = {}
         for (const kv of kvs) {

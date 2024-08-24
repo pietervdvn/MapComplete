@@ -63,7 +63,9 @@ export class PreferredRasterLayerSelector {
      */
     private async updateLayer() {
         // What is the ID of the layer we have to (try to) load?
-        const targetLayerId = (this._queryParameter.data ?? this._preferredBackgroundLayer.data)?.toLowerCase()
+        const targetLayerId = (
+            this._queryParameter.data ?? this._preferredBackgroundLayer.data
+        )?.toLowerCase()
         if (targetLayerId === undefined || targetLayerId === "default") {
             return
         }

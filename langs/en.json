@@ -701,8 +701,8 @@
     },
     "preset_type": {
         "question": "Of what type is this object?",
-        "typeDescription": "This is a {title}. {description}",
-        "typeTitle": "This is a {title}"
+        "typeDescription": "This is <b>{title}</b>. <div class='subtle'>{description}</div>",
+        "typeTitle": "This is <b>{title}</b>"
     },
     "privacy": {
         "editingIntro": "When you make a change to the map, this change is recorded on OpenStreetMap and is publicly available to anyone. A changeset made with MapComplete includes the following data:",
@@ -847,9 +847,10 @@
         },
         "tooLong": "The text is too long, at most 255 characters are allowed. You have {count} characters now.",
         "url": {
-            "aggregator": "{host} is a third-party aggregator website. If possible, search the official website.",
+            "aggregator": "{host} is a third-party website. If possible, search the official website.",
             "description": "link to a website",
-            "feedback": "This is not a valid web address"
+            "feedback": "This is not a valid web address",
+            "spamSite": "{host} is considered a low-quality website. Using this website is not allowed."
         },
         "wikidata": {
             "description": "A Wikidata identifier",

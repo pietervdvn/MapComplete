@@ -53,8 +53,6 @@ export class ShareLinkViz implements SpecialVisualization {
             }
         }
 
-        return new SvelteUIElement(ShareButton, { generateShareData, text }).SetClass(
-            "w-full h-full"
-        )
+        return new SvelteUIElement(ShareButton, { generateShareData, text })
     }
 }

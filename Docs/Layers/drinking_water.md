@@ -32,6 +32,11 @@ A layer showing drinking water fountains
   - [opening_hours_24_7](#opening_hours_24_7)
   - [Opening hours](#opening-hours)
   - [bench-artwork](#bench-artwork)
+  - [artwork-artwork_type](#artwork-artwork_type)
+  - [artwork-artist-wikidata](#artwork-artist-wikidata)
+  - [artwork-artist_name](#artwork-artist_name)
+  - [artwork-website](#artwork-website)
+  - [artwork_subject](#artwork_subject)
   - [render-closest-drinking-water](#render-closest-drinking-water)
   - [leftover-questions](#leftover-questions)
   - [move-button](#move-button)
@@ -74,6 +79,11 @@ Elements must match **all** of the following expressions:
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/fee#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/fee/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [fee](https://wiki.openstreetmap.org/wiki/Key:fee) | Multiple choice | [no](https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno) [yes](https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/seasonal#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/seasonal/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [seasonal](https://wiki.openstreetmap.org/wiki/Key:seasonal) | Multiple choice | [no](https://wiki.openstreetmap.org/wiki/Tag:seasonal%3Dno) [summer](https://wiki.openstreetmap.org/wiki/Tag:seasonal%3Dsummer) [spring;summer;autumn](https://wiki.openstreetmap.org/wiki/Tag:seasonal%3Dspring;summer;autumn) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/opening_hours#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/opening_hours/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | [24/7](https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/artwork_type#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/artwork_type/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [artwork_type](https://wiki.openstreetmap.org/wiki/Key:artwork_type) | [string](../SpecialInputElements.md#string) | [architecture](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Darchitecture) [mural](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dmural) [painting](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dpainting) [sculpture](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dsculpture) [statue](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dstatue) [bust](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dbust) [stone](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dstone) [installation](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dinstallation) [graffiti](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dgraffiti) [relief](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Drelief) [azulejo](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dazulejo) [tilework](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dtilework) [woodcarving](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dwoodcarving) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/artist:wikidata#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/artist%3Awikidata/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [artist:wikidata](https://wiki.openstreetmap.org/wiki/Key:artist:wikidata) | [wikidata](../SpecialInputElements.md#wikidata) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/artist_name#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/artist_name/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [artist_name](https://wiki.openstreetmap.org/wiki/Key:artist_name) | [string](../SpecialInputElements.md#string) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/website#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/website/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [website](https://wiki.openstreetmap.org/wiki/Key:website) | [url](../SpecialInputElements.md#url) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/subject:wikidata#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/subject%3Awikidata/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [subject:wikidata](https://wiki.openstreetmap.org/wiki/Key:subject:wikidata) | [wikidata](../SpecialInputElements.md#wikidata) |  |
 
 
 
@@ -181,6 +191,67 @@ The question is `Does this drinking water fountain have an artistic element?`
 
 
 
+
+### artwork-artwork_type
+
+The question is `What is the type of this artwork?`
+*This is a {artwork_type}* is shown if `artwork_type` is set
+
+
+ -  *Architecture* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:artwork_type' target='_blank'>artwork_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Darchitecture' target='_blank'>architecture</a>
+ -  *Mural* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:artwork_type' target='_blank'>artwork_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dmural' target='_blank'>mural</a>
+ -  *Painting* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:artwork_type' target='_blank'>artwork_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dpainting' target='_blank'>painting</a>
+ -  *Sculpture* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:artwork_type' target='_blank'>artwork_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dsculpture' target='_blank'>sculpture</a>
+ -  *Statue* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:artwork_type' target='_blank'>artwork_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dstatue' target='_blank'>statue</a>
+ -  *Bust* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:artwork_type' target='_blank'>artwork_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dbust' target='_blank'>bust</a>
+ -  *Stone* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:artwork_type' target='_blank'>artwork_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dstone' target='_blank'>stone</a>
+ -  *Installation* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:artwork_type' target='_blank'>artwork_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dinstallation' target='_blank'>installation</a>
+ -  *Graffiti* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:artwork_type' target='_blank'>artwork_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dgraffiti' target='_blank'>graffiti</a>
+ -  *Relief* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:artwork_type' target='_blank'>artwork_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Drelief' target='_blank'>relief</a>
+ -  *Azulejo (Spanish decorative tilework)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:artwork_type' target='_blank'>artwork_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dazulejo' target='_blank'>azulejo</a>
+ -  *Tilework* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:artwork_type' target='_blank'>artwork_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dtilework' target='_blank'>tilework</a>
+ -  *Woodcarving* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:artwork_type' target='_blank'>artwork_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dwoodcarving' target='_blank'>woodcarving</a>
+
+
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:tourism' target='_blank'>tourism</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tourism%3Dartwork' target='_blank'>artwork</a>
+This tagrendering has labels 
+`artwork-question`
+
+### artwork-artist-wikidata
+
+The question is `Who made this artwork?`
+*This artwork was made by {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}* is shown if `artist:wikidata` is set
+
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:tourism' target='_blank'>tourism</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tourism%3Dartwork' target='_blank'>artwork</a>
+This tagrendering has labels 
+`artwork-question`
+
+### artwork-artist_name
+
+The question is `Which artist created this?`
+*Created by {artist_name}* is shown if `artist_name` is set
+
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:tourism' target='_blank'>tourism</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tourism%3Dartwork' target='_blank'>artwork</a>
+This tagrendering has labels 
+`artwork-question`
+
+### artwork-website
+
+The question is `Is there a website with more information about this artwork?`
+*{link(More information on this website,&LBRACEwebsite&RBRACE,,,,)}* is shown if `website` is set
+
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:tourism' target='_blank'>tourism</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tourism%3Dartwork' target='_blank'>artwork</a>
+This tagrendering has labels 
+`artwork-question`
+
+### artwork_subject
+
+The question is `What does this artwork depict?`
+*This artwork depicts {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}* is shown if `subject:wikidata` is set
+
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:tourism' target='_blank'>tourism</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tourism%3Dartwork' target='_blank'>artwork</a>
+This tagrendering has labels 
+`artwork-question`
 
 ### render-closest-drinking-water
 

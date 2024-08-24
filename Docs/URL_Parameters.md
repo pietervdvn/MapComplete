@@ -453,7 +453,7 @@ The default value is _true_
 
 The mode the application starts in, e.g. 'map', 'dashboard' or 'statistics'
 
-This documentation is defined in the source code at [generateDocs.ts](ervdvn/git2/MapComplete/scripts/generateDocs.ts#L415)
+This documentation is defined in the source code at [generateDocs.ts](ervdvn/git/MapComplete/scripts/generateDocs.ts#L415)
 
 
 

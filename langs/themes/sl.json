@@ -3,6 +3,9 @@
         "description": "Na tem zemljevidu lahko poiščete in označite bližnje defibrilatorje",
         "title": "Defibrilatorji"
     },
+    "memorials": {
+        "title": "Spomeniki"
+    },
     "surveillance": {
         "title": "Nadzor nadzora"
     }

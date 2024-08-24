@@ -14,7 +14,7 @@ export class And extends TagsFilter {
     constructor(and: ReadonlyArray<TagsFilter>) {
         super()
         this.and = and
-        if(and.some(p => typeof p === "string")){
+        if (and.some((p) => typeof p === "string")) {
             console.error("Assertion failed: invalid subtags:", and)
             throw "Assertion failed: invalid subtags found"
         }

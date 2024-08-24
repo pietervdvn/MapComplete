@@ -62,12 +62,13 @@
     "path": [
       "source"
     ],
-    "required": true,
+    "required": false,
     "hints": {
       "types": "Load data with specific tags from OpenStreetMap ; Load data from an external geojson source ;",
       "typesdefault": "0",
       "group": "Basic",
       "question": "Where should the data be fetched from?",
+      "ifunset": "Determine the tags automatically based on the presets",
       "title": "Data Source"
     },
     "type": [
@@ -10477,6 +10478,10 @@
           "then": "current_view - A meta-layer which contains one single feature, namely the bounding box of the current map view. This can be used to trigger special actions. If a popup is defined for this layer, this popup will be accessible via an extra button on screen.\n\nThe icon on the button is the default icon of the layer, but can be customized by detecting 'button=yes'."
         },
         {
+          "if": "value=cycle_highways",
+          "then": "cycle_highways - undefined"
+        },
+        {
           "if": "value=cycleways_and_roads",
           "then": "cycleways_and_roads - All infrastructure that someone can cycle over, accompanied with questions about this infrastructure"
         },
@@ -10890,7 +10895,7 @@
         },
         {
           "if": "value=tourism_accomodation",
-          "then": "tourism_accomodation - undefined"
+          "then": "tourism_accomodation - Various types of lodging facilities"
         },
         {
           "if": "value=trail",

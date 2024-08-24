@@ -147,7 +147,7 @@
   {:else if icon === "user_circle"}
     <UserCircleIcon class={clss} {color} />
   {:else if Utils.isEmoji(icon)}
-    <span style=  {`font-size: ${emojiHeight}; line-height: ${emojiHeight}`}>
+    <span style={`font-size: ${emojiHeight}; line-height: ${emojiHeight}`}>
       {icon}
     </span>
   {:else}

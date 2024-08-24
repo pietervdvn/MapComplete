@@ -36,6 +36,7 @@ Various types of lodging facilities
   - [dog-access](#dog-access)
   - [leftover-questions](#leftover-questions)
   - [move-button](#move-button)
+  - [delete-button](#delete-button)
   - [lod](#lod)
 4. [Filters](#filters)
 
@@ -259,6 +260,14 @@ _This tagrendering has no question and is thus read-only_
 
 
 
+### delete-button
+
+_This tagrendering has no question and is thus read-only_
+*{delete_button()}*
+
+
+
+
 ### lod
 
 _This tagrendering has no question and is thus read-only_
@@ -281,6 +290,26 @@ This tagrendering has labels
 | type.4 | Motels | tourism=motel |
 | type.5 | Vacation home | tourism=chalet |
 | type.6 | Vacation apartment | tourism=apartment |
+
+
+
+
+
+
+| id | question | osmTags |
+-----|-----|----- |
+| has_internet.0 | Offers internet | internet_access=wlan | internet_access=yes | internet_access=wired |
+
+
+
+
+
+
+| id | question | osmTags |
+-----|-----|----- |
+| dogs.0 | *No preference towards dogs* (default) |  |
+| dogs.1 | Dogs allowed | dog=unleashed | dog=yes |
+| dogs.2 | No dogs allowed | dog=no |
 
 
 

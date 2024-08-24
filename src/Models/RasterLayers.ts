@@ -148,16 +148,19 @@ export class RasterLayerUtils {
         ignoreLayer?: RasterLayerPolygon,
         skipLayers: number = 0
     ): RasterLayerPolygon {
-        const inCategory = available.filter(l => l.properties.category === preferredCategory)
-        const best : RasterLayerPolygon[] = inCategory.filter(l => l.properties.best)
-        const others : RasterLayerPolygon[] = inCategory.filter(l => !l.properties.best)
+        const inCategory = available.filter((l) => l.properties.category === preferredCategory)
+        const best: RasterLayerPolygon[] = inCategory.filter((l) => l.properties.best)
+        const others: RasterLayerPolygon[] = inCategory.filter((l) => !l.properties.best)
         let all = best.concat(others)
-        console.log("Selected layers are:", all.map(l => l.properties.id))
-        if(others.length > skipLayers){
+        console.log(
+            "Selected layers are:",
+            all.map((l) => l.properties.id)
+        )
+        if (others.length > skipLayers) {
             all = all.slice(skipLayers)
         }
 
-        return all.find(l => l !== ignoreLayer)
+        return all.find((l) => l !== ignoreLayer)
     }
 }
 
