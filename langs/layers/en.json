@@ -33,49 +33,53 @@
                 "title": "a billboard"
             },
             "1": {
-                "title": "a freestanding poster box"
+                "description": "A large outdoor advertising structure, typically found in high-traffic areas such as alongside busy roads mounted on a wall",
+                "title": "a billboard mounted to a wall"
             },
             "2": {
-                "title": "a poster box mounted on a wall"
+                "title": "a freestanding poster box"
             },
             "3": {
-                "title": "a poster box part of a public transport shelter"
+                "title": "a poster box mounted on a wall"
             },
             "4": {
+                "title": "a poster box part of a public transport shelter"
+            },
+            "5": {
                 "description": "Small billboard for neighbourhood advertising, generally intended for pedestrians",
                 "title": "a board"
             },
-            "5": {
+            "6": {
                 "description": "A cylindrical outdoor structure which shows advertisements",
                 "title": "a column"
             },
-            "6": {
+            "7": {
                 "title": "a flag"
             },
-            "7": {
+            "8": {
                 "title": "a screen"
             },
-            "8": {
+            "9": {
                 "title": "a screen mounted on a wall"
             },
-            "9": {
+            "10": {
                 "title": "a screen mounted on a transit shelter"
             },
-            "10": {
+            "11": {
                 "description": "A piece of waterproof textile with a printed message, permanently anchored on a wall",
                 "title": "a tarp"
             },
-            "11": {
+            "12": {
                 "title": "a totem"
             },
-            "12": {
+            "13": {
                 "description": "Used for advertising signs, neon signs, logos & institutional entrance signs",
                 "title": "a sign"
             },
-            "13": {
+            "14": {
                 "title": "a sculpture"
             },
-            "14": {
+            "15": {
                 "title": "a wall painting"
             }
         },

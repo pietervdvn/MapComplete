@@ -32,44 +32,44 @@
                 "description": "Velká venkovní reklamní konstrukce, která se obvykle nachází na místech s velkým provozem, například podél frekventovaných silnic",
                 "title": "billboard"
             },
-            "1": {
+            "2": {
                 "title": "volně stojící plakátovací skříň"
             },
-            "2": {
+            "3": {
                 "title": "plakátovací skříň připevněná na stěnu"
             },
-            "4": {
+            "5": {
                 "description": "Malý billboard pro sousedskou reklamu, zpravidla určený pro chodce",
                 "title": "billboard"
             },
-            "5": {
+            "6": {
                 "description": "Válcová venkovní konstrukce, která zobrazuje reklamy",
                 "title": "sloup"
             },
-            "6": {
+            "7": {
                 "title": "vlajka"
             },
-            "7": {
+            "8": {
                 "title": "obrazovka"
             },
-            "8": {
+            "9": {
                 "title": "obrazovka připevněná na stěnu"
             },
-            "10": {
+            "11": {
                 "description": "Kus nepromokavého textilu s natištěným vzkazem, trvale připevněný na stěnu",
                 "title": "plachta"
             },
-            "11": {
+            "12": {
                 "title": "totem"
             },
-            "12": {
+            "13": {
                 "description": "Používá se pro reklamní nápisy, neonové nápisy, loga a vstupní nápisy institucí",
                 "title": "cedule"
             },
-            "13": {
+            "14": {
                 "title": "socha"
             },
-            "14": {
+            "15": {
                 "title": "nástěnná malba"
             }
         },

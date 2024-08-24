@@ -32,50 +32,50 @@
                 "description": "Una estructura publicitaria grande al aire libre, que normalmente se encuentra en áreas transitadas como carreteras con mucha intensidad",
                 "title": "una valla publicitària"
             },
-            "1": {
+            "2": {
                 "title": "un mupi"
             },
-            "2": {
+            "3": {
                 "title": "un mupi sobre la pared"
             },
-            "3": {
+            "4": {
                 "title": "una caja de carteles que forma parte de una marquesina de transporte público"
             },
-            "4": {
+            "5": {
                 "description": "Un pequeño tablón de anuncios para anuncios del vecindario, normalmente destinado a peatones",
                 "title": "un tablón de anuncios"
             },
-            "5": {
+            "6": {
                 "description": "Una estructura cilíndrica exterior que muestra publicidad",
                 "title": "una columna"
             },
-            "6": {
+            "7": {
                 "title": "una bandera"
             },
-            "7": {
+            "8": {
                 "title": "una pantalla"
             },
-            "8": {
+            "9": {
                 "title": "una pantalla sobre una pared"
             },
-            "9": {
+            "10": {
                 "title": "una pantalla montada en una marquesina de tránsito"
             },
-            "10": {
+            "11": {
                 "description": "Una pieza de tela impermeable con un mensaje impreso, anclada permanentemente en una pared",
                 "title": "una lona"
             },
-            "11": {
+            "12": {
                 "title": "un tótem"
             },
-            "12": {
+            "13": {
                 "description": "Se utiliza para carteles publicitarios, letreros de neón, logotipos y carteles en entradas institucionales",
                 "title": "un señal"
             },
-            "13": {
+            "14": {
                 "title": "una escultura"
             },
-            "14": {
+            "15": {
                 "title": "una pared pintada"
             }
         },

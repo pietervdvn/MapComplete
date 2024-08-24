@@ -32,44 +32,44 @@
                 "description": "Duża struktura reklamowa na dworze, zwykle znajdująca się w obszarach z dużym ruchem, np. w pobliżu ruchliwych dróg",
                 "title": "bilbord"
             },
-            "1": {
+            "2": {
                 "title": "wolnostojąca skrzynka plakatowa"
             },
-            "2": {
+            "3": {
                 "title": "skrzynka plakatowa montowana na ścianie"
             },
-            "4": {
+            "5": {
                 "description": "Mały bilbord dla reklam lokalnych, przeznaczony głównie dla pieszych",
                 "title": "tablica"
             },
-            "5": {
+            "6": {
                 "description": "Cylindryczna konstrukcja zewnętrzna, na której pokazywane są reklamy",
                 "title": "kolumna"
             },
-            "6": {
+            "7": {
                 "title": "flaga"
             },
-            "7": {
+            "8": {
                 "title": "ekran"
             },
-            "8": {
+            "9": {
                 "title": "ekran zamontowany na ścianie"
             },
-            "10": {
+            "11": {
                 "description": "Kawałek wodoodpornej tkaniny z nadrukowanym przesłaniem, trwale przymocowany do ściany",
                 "title": "plandeka"
             },
-            "11": {
+            "12": {
                 "title": "totem"
             },
-            "12": {
+            "13": {
                 "description": "Używany do znaków reklamowych, neonów, logo i znaków wejściowych do instytucji",
                 "title": "znak"
             },
-            "13": {
+            "14": {
                 "title": "rzeźba"
             },
-            "14": {
+            "15": {
                 "title": "mural ścienny"
             }
         },

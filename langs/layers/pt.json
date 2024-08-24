@@ -32,44 +32,44 @@
                 "description": "Uma grande estrutura de publicidade ao ar livre, normalmente encontrada em áreas de alto tráfego, como ao longo de estradas movimentadas",
                 "title": "um outdoor"
             },
-            "1": {
+            "2": {
                 "title": "uma caixa de pôster independente"
             },
-            "2": {
+            "3": {
                 "title": "uma caixa de pôster montada em uma parede"
             },
-            "4": {
+            "5": {
                 "description": "Pequeno outdoor para publicidade de bairro, geralmente destinado a pedestres",
                 "title": "a bordo"
             },
-            "5": {
+            "6": {
                 "description": "Uma estrutura exterior cilíndrica que mostra anúncios",
                 "title": "uma coluna"
             },
-            "6": {
+            "7": {
                 "title": "uma bandeira"
             },
-            "7": {
+            "8": {
                 "title": "uma tela"
             },
-            "8": {
+            "9": {
                 "title": "uma tela montada em uma parede"
             },
-            "10": {
+            "11": {
                 "description": "Uma peça de tecido impermeável com uma mensagem impressa, permanentemente ancorada na parede",
                 "title": "uma lona"
             },
-            "11": {
+            "12": {
                 "title": "um totem"
             },
-            "12": {
+            "13": {
                 "description": "Usado para sinais publicitários, sinais de néon, logotipos e sinais de entrada institucionais",
                 "title": "um sinal"
             },
-            "13": {
+            "14": {
                 "title": "uma escultura"
             },
-            "14": {
+            "15": {
                 "title": "uma pintura de parede"
             }
         },
