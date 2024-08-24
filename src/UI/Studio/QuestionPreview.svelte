@@ -28,6 +28,10 @@
   }
 
   let configJson: Store<QuestionableTagRenderingConfigJson[]> = value.map((x) => {
+    if(x === undefined){
+      console.log("No config found for ",path)
+      return []
+    }
     if (typeof x === "string") {
       return perId[x]
     } else {
@@ -38,6 +42,7 @@
     if (!configs) {
       return [{ error: "No configuartions found" }]
     }
+    console.log("Configs are", configs)
     return configs.map((config) => {
       if (config["builtin"]) {
         let override = ""
