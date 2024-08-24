@@ -32,6 +32,26 @@
                 "description": "Eine große Außenwerbung, die typischerweise in stark befahrenen Gebieten, z. B. entlang stark befahrener Straßen, zu finden ist",
                 "title": "eine Werbetafel"
             },
+            "10": {
+                "title": "ein Bildschirm, der an einem Wartehäuschen angebracht ist"
+            },
+            "11": {
+                "description": "Ein wasserfestes Textil mit einer aufgedruckten Botschaft, das dauerhaft an einer Wand verankert ist",
+                "title": "eine Plane"
+            },
+            "12": {
+                "title": "ein Totem"
+            },
+            "13": {
+                "description": "Verwendet für Werbeschilder, Leuchtreklamen, Logos und institutionelle Eingangsschilder",
+                "title": "ein Schild"
+            },
+            "14": {
+                "title": "eine Skulptur"
+            },
+            "15": {
+                "title": "eine Wandmalerei"
+            },
             "2": {
                 "title": "eine freistehende Posterbox"
             },
@@ -57,26 +77,6 @@
             },
             "9": {
                 "title": "ein wandmontierter Bildschirm"
-            },
-            "10": {
-                "title": "ein Bildschirm, der an einem Wartehäuschen angebracht ist"
-            },
-            "11": {
-                "description": "Ein wasserfestes Textil mit einer aufgedruckten Botschaft, das dauerhaft an einer Wand verankert ist",
-                "title": "eine Plane"
-            },
-            "12": {
-                "title": "ein Totem"
-            },
-            "13": {
-                "description": "Verwendet für Werbeschilder, Leuchtreklamen, Logos und institutionelle Eingangsschilder",
-                "title": "ein Schild"
-            },
-            "14": {
-                "title": "eine Skulptur"
-            },
-            "15": {
-                "title": "eine Wandmalerei"
             }
         },
         "tagRenderings": {
@@ -170,6 +170,9 @@
                     },
                     "1": {
                         "then": "Dies ist ein Brett"
+                    },
+                    "10": {
+                        "then": "Dies ist eine Wandmalerei"
                     },
                     "2": {
                         "then": "Dies ist eine Litfaßsäule"

@@ -486,19 +486,6 @@
     },
     "onwheels": {
         "layers": {
-            "4": {
-                "override": {
-                    "filter": {
-                        "0": {
-                            "options": {
-                                "1": {
-                                    "question": "Uten breddeinfo"
-                                }
-                            }
-                        }
-                    }
-                }
-            },
             "19": {
                 "override": {
                     "=title": {
@@ -520,6 +507,19 @@
                             "render": {
                                 "special": {
                                     "message": "Legg til alle foreslåtte"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "4": {
+                "override": {
+                    "filter": {
+                        "0": {
+                            "options": {
+                                "1": {
+                                    "question": "Uten breddeinfo"
                                 }
                             }
                         }
@@ -604,10 +604,6 @@
     },
     "stations": {
         "layers": {
-            "3": {
-                "description": "Lag som viser togstasjoner",
-                "name": "Togstasjoner"
-            },
             "16": {
                 "tagRenderings": {
                     "type": {
@@ -618,6 +614,10 @@
                         }
                     }
                 }
+            },
+            "3": {
+                "description": "Lag som viser togstasjoner",
+                "name": "Togstasjoner"
             }
         },
         "title": "Togstasjoner"

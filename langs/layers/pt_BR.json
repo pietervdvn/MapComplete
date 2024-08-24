@@ -32,6 +32,23 @@
                 "description": "Uma grande estrutura de publicidade outdoor, geralmente encontrada em áreas com alto tráfego, como ao longo de estradas movimentadas",
                 "title": "um outdoor"
             },
+            "11": {
+                "description": "Um pedaço de tecido impermeável com uma mensagem impressa, permanentemente fixado a uma parede",
+                "title": "uma lona"
+            },
+            "12": {
+                "title": "um totem"
+            },
+            "13": {
+                "description": "Usado para placas de publicidade, letreiros de neon, logotipos e placas de entrada institucionais",
+                "title": "uma placa"
+            },
+            "14": {
+                "title": "uma escultura"
+            },
+            "15": {
+                "title": "uma pintura mural"
+            },
             "2": {
                 "title": "uma caixa expositora independente"
             },
@@ -54,23 +71,6 @@
             },
             "9": {
                 "title": "uma tela montada em uma parede"
-            },
-            "11": {
-                "description": "Um pedaço de tecido impermeável com uma mensagem impressa, permanentemente fixado a uma parede",
-                "title": "uma lona"
-            },
-            "12": {
-                "title": "um totem"
-            },
-            "13": {
-                "description": "Usado para placas de publicidade, letreiros de neon, logotipos e placas de entrada institucionais",
-                "title": "uma placa"
-            },
-            "14": {
-                "title": "uma escultura"
-            },
-            "15": {
-                "title": "uma pintura mural"
             }
         },
         "tagRenderings": {
@@ -165,6 +165,9 @@
                     "1": {
                         "then": "Isso é uma placa"
                     },
+                    "10": {
+                        "then": "Isso é uma pintura mural"
+                    },
                     "2": {
                         "then": "Isto é uma coluna"
                     },
@@ -188,9 +191,6 @@
                     },
                     "9": {
                         "then": "Isso é um totem"
-                    },
-                    "10": {
-                        "then": "Isso é uma pintura mural"
                     }
                 },
                 "question": "Que tipo de recurso de publicitário é este?",
@@ -204,6 +204,9 @@
                 },
                 "1": {
                     "then": "Quadro"
+                },
+                "10": {
+                    "then": "Pintura mural"
                 },
                 "2": {
                     "then": "Caixa de pôster"
@@ -228,9 +231,6 @@
                 },
                 "9": {
                     "then": "Totem"
-                },
-                "10": {
-                    "then": "Pintura mural"
                 }
             }
         }
@@ -312,6 +312,15 @@
                     "1": {
                         "then": "Mural"
                     },
+                    "10": {
+                        "then": "Azulejo (Revestimento de azulejos decorativos espanhóis)"
+                    },
+                    "11": {
+                        "then": "Azulejaria"
+                    },
+                    "12": {
+                        "then": "Entalhe"
+                    },
                     "2": {
                         "then": "Pintura"
                     },
@@ -335,15 +344,6 @@
                     },
                     "9": {
                         "then": "Relevo"
-                    },
-                    "10": {
-                        "then": "Azulejo (Revestimento de azulejos decorativos espanhóis)"
-                    },
-                    "11": {
-                        "then": "Azulejaria"
-                    },
-                    "12": {
-                        "then": "Entalhe"
                     }
                 },
                 "question": "Qual é o tipo dessa obra de arte?",
@@ -1543,9 +1543,6 @@
             },
             "vending": {
                 "mappings": {
-                    "8": {
-                        "then": "Câmaras de ar para bicicletas são vendidas aqui"
-                    },
                     "22": {
                         "then": "Luzes para bicicleta são vendidas aqui"
                     },
@@ -1560,6 +1557,9 @@
                     },
                     "26": {
                         "then": "Cadeados para bicicleta são vendidos aqui"
+                    },
+                    "8": {
+                        "then": "Câmaras de ar para bicicletas são vendidas aqui"
                     }
                 }
             }
