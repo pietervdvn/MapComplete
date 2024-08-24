@@ -90,7 +90,8 @@ export default class UrlValidator extends Validator {
      *
      * const v = new UrlValidator()
      * v.getFeedback("example.").textFor("en") // => "This is not a valid web address"
-     * v.getFeedback("https://booking.com/some-hotel.html").textFor("en").indexOf("search the official website") > 0 // => true
+     * v.isValid("https://booking.com/some-hotel.html") // => false
+     * v.getFeedback("https://booking.com/some-hotel.html").textFor("en").indexOf("low-quality") > 0 // => true
      *
      */
     getFeedback(s: string, getCountry?: () => string): Translation | undefined {
