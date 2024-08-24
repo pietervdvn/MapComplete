@@ -32,50 +32,50 @@
                 "description": "Eine große Außenwerbung, die typischerweise in stark befahrenen Gebieten, z. B. entlang stark befahrener Straßen, zu finden ist",
                 "title": "eine Werbetafel"
             },
-            "1": {
+            "2": {
                 "title": "eine freistehende Posterbox"
             },
-            "2": {
+            "3": {
                 "title": "eine wandmontierte Posterbox"
             },
-            "3": {
+            "4": {
                 "title": "ein Plakatkasten, der zu einem Unterstand für öffentliche Verkehrsmittel gehört"
             },
-            "4": {
+            "5": {
                 "description": "Kleines Anschlagbrett für Nachbarschaftswerbung, normalerweise an Fußgänger gerichtet",
                 "title": "ein Anschlagbrett"
             },
-            "5": {
+            "6": {
                 "description": "Eine zylindrische Struktur im Freien, die Werbung zeigt",
                 "title": "eine Litfaßsäule"
             },
-            "6": {
+            "7": {
                 "title": "eine Flagge"
             },
-            "7": {
+            "8": {
                 "title": "einen Bildschirm"
             },
-            "8": {
+            "9": {
                 "title": "ein wandmontierter Bildschirm"
             },
-            "9": {
+            "10": {
                 "title": "ein Bildschirm, der an einem Wartehäuschen angebracht ist"
             },
-            "10": {
+            "11": {
                 "description": "Ein wasserfestes Textil mit einer aufgedruckten Botschaft, das dauerhaft an einer Wand verankert ist",
                 "title": "eine Plane"
             },
-            "11": {
+            "12": {
                 "title": "ein Totem"
             },
-            "12": {
+            "13": {
                 "description": "Verwendet für Werbeschilder, Leuchtreklamen, Logos und institutionelle Eingangsschilder",
                 "title": "ein Schild"
             },
-            "13": {
+            "14": {
                 "title": "eine Skulptur"
             },
-            "14": {
+            "15": {
                 "title": "eine Wandmalerei"
             }
         },

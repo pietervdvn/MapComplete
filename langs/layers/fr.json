@@ -32,50 +32,50 @@
                 "description": "Un grand équipement extérieur, principalement disposé dans les zones à fort trafic comme une route",
                 "title": "un grand panneau"
             },
-            "1": {
+            "2": {
                 "title": "un panneau à affiches scellé au sol"
             },
-            "2": {
+            "3": {
                 "title": "un panneau à affiches monté sur un mur"
             },
-            "3": {
+            "4": {
                 "title": "Un affichage sur un abribus"
             },
-            "4": {
+            "5": {
                 "description": "Petit panneau pour l’affichage de proximité, généralement à destination des piétons",
                 "title": "un petit panneau"
             },
-            "5": {
+            "6": {
                 "description": "Une structure extérieure cylindrique qui affiche de la publicité",
                 "title": "une colonne"
             },
-            "6": {
+            "7": {
                 "title": "un drapeau"
             },
-            "7": {
+            "8": {
                 "title": "un écran"
             },
-            "8": {
+            "9": {
                 "title": "un écran fixé au mur"
             },
-            "9": {
+            "10": {
                 "title": "un écran fixé sur un abri de transport"
             },
-            "10": {
+            "11": {
                 "description": "Une pièce de textile imperméable avec un message imprimé, ancrée de façon permanente sur un mur.",
                 "title": "une bâche"
             },
-            "11": {
+            "12": {
                 "title": "un totem"
             },
-            "12": {
+            "13": {
                 "description": "Désigne une enseigne publicitaire, une enseigne néon, les logos ou des indications d'entrées",
                 "title": "une enseigne"
             },
-            "13": {
+            "14": {
                 "title": "une sculpture"
             },
-            "14": {
+            "15": {
                 "title": "une peinture murale"
             }
         },
