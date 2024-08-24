@@ -152,18 +152,6 @@
                     "1": {
                         "then": "To je plošča"
                     },
-                    "6": {
-                        "then": "To je spominski kamen"
-                    },
-                    "7": {
-                        "then": "To je doprsni kip"
-                    },
-                    "8": {
-                        "then": "To je skulptura"
-                    },
-                    "9": {
-                        "then": "To je obelisk"
-                    },
                     "10": {
                         "then": "To je križ"
                     },
@@ -175,6 +163,18 @@
                     },
                     "14": {
                         "then": "To je nagrobni kamen; oseba je pokopana tu"
+                    },
+                    "6": {
+                        "then": "To je spominski kamen"
+                    },
+                    "7": {
+                        "then": "To je doprsni kip"
+                    },
+                    "8": {
+                        "then": "To je skulptura"
+                    },
+                    "9": {
+                        "then": "To je obelisk"
                     }
                 },
                 "question": "Kakšne vrste spomenik je to?",
