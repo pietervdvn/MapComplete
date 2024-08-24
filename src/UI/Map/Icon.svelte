@@ -39,6 +39,8 @@
   import Gear from "../../assets/svg/Gear.svelte"
   import { DesktopComputerIcon, UserCircleIcon } from "@rgossiaux/svelte-heroicons/solid"
   import Relocation from "../../assets/svg/Relocation.svelte"
+  import LockClosed from "@babeard/svelte-heroicons/solid/LockClosed"
+  import Key from "@babeard/svelte-heroicons/solid/Key"
 
   /**
    * Renders a single icon.
@@ -146,6 +148,10 @@
     <PencilIcon class={clss} {color} />
   {:else if icon === "user_circle"}
     <UserCircleIcon class={clss} {color} />
+  {:else if icon === "lock"}
+    <LockClosed class={clss} {color} />
+  {:else if icon === "key"}
+    <Key class={clss} {color} />
   {:else if Utils.isEmoji(icon)}
     <span style={`font-size: ${emojiHeight}; line-height: ${emojiHeight}`}>
       {icon}
