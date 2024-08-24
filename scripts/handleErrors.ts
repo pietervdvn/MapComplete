@@ -106,7 +106,7 @@ class HandleErrors extends Script {
                 deletedObjects: OsmObject[]
             } = changesObj.CreateChangesetObjects(toUpload, objects)
 
-            const changeset = Changes.createChangesetFor("", changes)
+            const changeset = Changes.buildChangesetXML("", changes)
             const path =
                 "error_changeset_" + parsed.index + "_" + e.layout + "_" + e.username + ".osc"
             if (

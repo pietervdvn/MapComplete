@@ -41,7 +41,7 @@ export class Changes {
     private readonly previouslyCreated: OsmObject[] = []
     private readonly _leftRightSensitive: boolean
     public readonly _changesetHandler: ChangesetHandler
-    private readonly _reportError?: (string: string | Error) => void
+    private readonly _reportError?: (string: string | Error, extramessage?: string) => void
 
     constructor(
         state: {
@@ -53,7 +53,7 @@ export class Changes {
             featureSwitches?: FeatureSwitchState
         },
         leftRightSensitive: boolean = false,
-        reportError?: (string: string | Error) => void
+        reportError?: (string: string | Error, extramessage?: string) => void
     ) {
         this._leftRightSensitive = leftRightSensitive
         // We keep track of all changes just as well
@@ -68,7 +68,7 @@ export class Changes {
             state.osmConnection,
             state.featurePropertiesStore,
             this,
-            (e) => this._reportError(e)
+            (e, extramessage: string) => this._reportError(e, extramessage)
         )
         this.historicalUserLocations = state.historicalUserLocations
 
@@ -76,7 +76,7 @@ export class Changes {
         // This doesn't matter however, as the '-1' is per piecewise upload, not global per changeset
     }
 
-    static createChangesetFor(
+    static buildChangesetXML(
         csId: string,
         allChanges: {
             modifiedObjects: OsmObject[]
@@ -618,14 +618,15 @@ export class Changes {
         openChangeset: UIEventSource<number>
     ): Promise<ChangeDescription[]> {
         const neededIds = Changes.GetNeededIds(pending)
-        // We _do not_ pass in the Changes object itself - we want the data from OSM directly in order to apply the changes
+        /* Download the latest version of the OSM-objects
+        *  We _do not_ pass in the Changes object itself - we want the data from OSM directly in order to apply the changes
+        */
         const downloader = new OsmObjectDownloader(this.backend, undefined)
-        let osmObjects = await Promise.all<{ id: string; osmObj: OsmObject | "deleted" }>(
+        const osmObjects = Utils.NoNull(await Promise.all<{ id: string; osmObj: OsmObject | "deleted" }>(
             neededIds.map((id) => this.getOsmObject(id, downloader))
-        )
+        ))
 
-        osmObjects = Utils.NoNull(osmObjects)
-
+        // Drop changes to deleted items
         for (const { osmObj, id } of osmObjects) {
             if (osmObj === "deleted") {
                 pending = pending.filter((ch) => ch.type + "/" + ch.id !== id)
@@ -645,20 +646,56 @@ export class Changes {
             return undefined
         }
 
+        const metatags = this.buildChangesetTags(pending)
+
+        let { toUpload, refused } = this.fragmentChanges(pending, objects)
+
+        if (toUpload.length === 0) {
+            return refused
+        }
+        await this._changesetHandler.UploadChangeset(
+            (csId, remappings) => {
+                if (remappings.size > 0) {
+                    toUpload = toUpload.map((ch) =>
+                        ChangeDescriptionTools.rewriteIds(ch, remappings)
+                    )
+                }
+
+                const changes: {
+                    newObjects: OsmObject[]
+                    modifiedObjects: OsmObject[]
+                    deletedObjects: OsmObject[]
+                } = this.CreateChangesetObjects(toUpload, objects)
+
+                return Changes.buildChangesetXML("" + csId, changes)
+            },
+            metatags,
+            openChangeset
+        )
+
+        console.log("Upload successful! Refused changes are", refused)
+        return refused
+    }
+
+    /**
+     * Builds all the changeset tags, such as `theme=cyclofix; answer=42; add-image: 5`, ...
+     */
+    private buildChangesetTags(pending: ChangeDescription[]) {
+        // Build statistics for the changeset tags
         const perType = Array.from(
             Utils.Hist(
                 pending
                     .filter(
                         (descr) =>
-                            descr.meta.changeType !== undefined && descr.meta.changeType !== null
+                            descr.meta.changeType !== undefined && descr.meta.changeType !== null,
                     )
-                    .map((descr) => descr.meta.changeType)
+                    .map((descr) => descr.meta.changeType),
             ),
             ([key, count]) => ({
                 key: key,
                 value: count,
                 aggregate: true,
-            })
+            }),
         )
         const motivations = pending
             .filter((descr) => descr.meta.specialMotivation !== undefined)
@@ -697,7 +734,7 @@ export class Changes {
                     value: count,
                     aggregate: true,
                 }
-            })
+            }),
         )
 
         // This method is only called with changedescriptions for this theme
@@ -720,34 +757,7 @@ export class Changes {
             ...motivations,
             ...perBinMessage,
         ]
-
-        let { toUpload, refused } = this.fragmentChanges(pending, objects)
-
-        if (toUpload.length === 0) {
-            return refused
-        }
-        await this._changesetHandler.UploadChangeset(
-            (csId, remappings) => {
-                if (remappings.size > 0) {
-                    toUpload = toUpload.map((ch) =>
-                        ChangeDescriptionTools.rewriteIds(ch, remappings)
-                    )
-                }
-
-                const changes: {
-                    newObjects: OsmObject[]
-                    modifiedObjects: OsmObject[]
-                    deletedObjects: OsmObject[]
-                } = this.CreateChangesetObjects(toUpload, objects)
-
-                return Changes.createChangesetFor("" + csId, changes)
-            },
-            metatags,
-            openChangeset
-        )
-
-        console.log("Upload successful! Refused changes are", refused)
-        return refused
+        return metatags
     }
 
     private async flushChangesAsync(): Promise<void> {
