@@ -2,19 +2,9 @@
 
 # caravansites
 
-
-
-
 camper sites
 
-
-
-
-
-
  - This layer is shown at zoomlevel **7** and higher
-
-
 
 ## Table of contents
 
@@ -41,11 +31,7 @@ camper sites
 
 ## Themes using this layer
 
-
-
  - [campersite](https://mapcomplete.org/campersite)
-
-
 
 ## Basic tags for this layer
 
@@ -76,37 +62,22 @@ Elements must match **all** of the following expressions:
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/operator#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/operator/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [operator](https://wiki.openstreetmap.org/wiki/Key:operator) | [string](../SpecialInputElements.md#string) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/power_supply#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/power_supply/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [power_supply](https://wiki.openstreetmap.org/wiki/Key:power_supply) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:power_supply%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:power_supply%3Dno) |
 
-
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
-
-
-
 
 ### caravansites-name
 
 The question is `What is this place called?`
 *This place is called {name}* is shown if `name` is set
 
-
-
-
 ### caravansites-fee
 
 The question is `Does this place charge a fee?`
 
-
-
  -  *You need to pay for use* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>
  -  *Can be used for free* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno' target='_blank'>no</a>
-
-
-
-
 
 ### caravansites-charge
 
@@ -115,119 +86,74 @@ The question is `How much does this place charge?`
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>
 
-
 ### caravansites-sanitary-dump
 
 The question is `Does this place have a sanitary dump station?`
 
-
-
  -  *This place has a sanitary dump station* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:sanitary_dump_station' target='_blank'>sanitary_dump_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sanitary_dump_station%3Dyes' target='_blank'>yes</a>
  -  *This place does not have a sanitary dump station* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:sanitary_dump_station' target='_blank'>sanitary_dump_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sanitary_dump_station%3Dno' target='_blank'>no</a>
-
-
-
-
 
 ### caravansites-capacity
 
 The question is `How many campers can stay here? (skip if there is no obvious number of spaces or allowed vehicles)`
 *{capacity} campers can use this place at the same time* is shown if `capacity` is set
 
-
-
-
 ### caravansites-internet
 
 The question is `Does this place provide internet access?`
-
-
 
  -  *There is internet access* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dyes' target='_blank'>yes</a>
  -  *There is internet access* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwifi' target='_blank'>wifi</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwlan' target='_blank'>wlan</a>. _This option cannot be chosen as answer_
  -  *There is no internet access* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dno' target='_blank'>no</a>
 
-
-
-
-
 ### caravansites-internet-fee
 
 The question is `Do you have to pay for the internet access?`
 
-
-
  -  *You need to pay extra for internet access* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:fee' target='_blank'>internet_access:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dyes' target='_blank'>yes</a>
  -  *You do not need to pay extra for internet access* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:fee' target='_blank'>internet_access:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dno' target='_blank'>no</a>
 
-
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dyes' target='_blank'>yes</a>
-
 
 ### caravansites-toilets
 
 The question is `Does this place have toilets?`
 
-
-
  -  *This place has toilets* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:toilets' target='_blank'>toilets</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets%3Dyes' target='_blank'>yes</a>
  -  *This place does not have toilets* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:toilets' target='_blank'>toilets</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets%3Dno' target='_blank'>no</a>
-
-
-
-
 
 ### caravansites-website
 
 The question is `Does this place have a website?`
 *Official website: <a href='{website}'>{website}</a>* is shown if `website` is set
 
-
-
-
 ### caravansites-long-term
 
 The question is `Does this place offer spots for long term rental?`
 
-
-
  -  *There are some spots for long term rental, but you can also stay on a daily basis* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:permanent_camping' target='_blank'>permanent_camping</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:permanent_camping%3Dyes' target='_blank'>yes</a>
  -  *There are no permanent guests here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:permanent_camping' target='_blank'>permanent_camping</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:permanent_camping%3Dno' target='_blank'>no</a>
  -  *It is only possible to stay here if you have a long term contract (this place disappears from this map if you choose this)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:permanent_camping' target='_blank'>permanent_camping</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:permanent_camping%3Donly' target='_blank'>only</a>
-
-
-
-
 
 ### caravansites-description
 
 The question is `Would you like to add a general description of this place? (Do not repeat information previously asked or shown above. Please keep it objective - opinions go into the reviews)`
 *More details about this place: {description}* is shown if `description` is set
 
-
-
-
 ### questions
 Show the questions block at this location
 _This tagrendering has no question and is thus read-only_
 *{questions()}*
-
-
-
 
 ### reviews
 Shows the reviews module (including the possibility to leave a review)
 _This tagrendering has no question and is thus read-only_
 *{create_review()}{list_reviews()}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`
@@ -237,19 +163,12 @@ This tagrendering has labels
 The question is `Who operates this place?`
 *This place is operated by {operator}* is shown if `operator` is set
 
-
-
-
 ### power_supply
 
 The question is `Does this place have a power supply?`
 
-
-
  -  *This place has a power supply* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:power_supply' target='_blank'>power_supply</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:power_supply%3Dyes' target='_blank'>yes</a>
  -  *This place does not have power supply* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:power_supply' target='_blank'>power_supply</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:power_supply%3Dno' target='_blank'>no</a>
-
-
 
 
 

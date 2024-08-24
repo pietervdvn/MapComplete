@@ -2,19 +2,9 @@
 
 # fixme
 
-
-
-
 OSM objects that likely need to be fixed, based on a FIXME tag.
 
-
-
-
-
-
  - This layer is shown at zoomlevel **16** and higher
-
-
 
 ## Table of contents
 
@@ -29,12 +19,8 @@ OSM objects that likely need to be fixed, based on a FIXME tag.
 
 ## Themes using this layer
 
-
-
  - [notes](https://mapcomplete.org/notes)
  - [personal](https://mapcomplete.org/personal)
-
-
 
 ## Basic tags for this layer
 
@@ -53,20 +39,12 @@ Elements must match **any** of the following expressions:
 -----|-----|----- |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/fixme#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/fixme/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [fixme](https://wiki.openstreetmap.org/wiki/Key:fixme) | [text](../SpecialInputElements.md#text) | [](https://wiki.openstreetmap.org/wiki/Tag:fixme%3D) |
 
-
-
-
 ### fixme
 
 The question is `What is wrong with this feature?`
 *Fixme Text: {fixme}* is shown if `fixme` is set
 
-
  -  *This issue has been resolved* is shown if with fixme=
-
-
-
-
 
 ### note
 
@@ -75,28 +53,20 @@ _This tagrendering has no question and is thus read-only_
 
 This tagrendering is only visible in the popup if the following condition is met: note~.+
 
-
 ### all_tags
 Shows a table with all the tags of the feature
 _This tagrendering has no question and is thus read-only_
 *{all_tags()}*
-
-
-
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

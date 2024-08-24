@@ -2,20 +2,10 @@
 
 # transit_routes
 
-
-
-
 Layer showing bus lines
-
-
-
-
-
 
  - This layer is shown at zoomlevel **15** and higher
  - Not rendered on the map by default. If you want to rendering this on the map, override `mapRenderings`
-
-
 
 ## Table of contents
 
@@ -34,12 +24,8 @@ Layer showing bus lines
 
 ## Themes using this layer
 
-
-
  - [personal](https://mapcomplete.org/personal)
  - [transit](https://mapcomplete.org/transit)
-
-
 
 ## Basic tags for this layer
 
@@ -64,78 +50,50 @@ Elements must match **all** of the following expressions:
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/network#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/network/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [network](https://wiki.openstreetmap.org/wiki/Key:network) | [string](../SpecialInputElements.md#string) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/operator#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/operator/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [operator](https://wiki.openstreetmap.org/wiki/Key:operator) | [string](../SpecialInputElements.md#string) |  |
 
-
-
-
 ### name
 
 The question is `What is the name for this bus line? (i.e. Bus XX: From => Via => To)`
 *{name}* is shown if `name` is set
-
-
-
 
 ### from
 
 The question is `What is the starting point for this bus line?`
 *This bus line begins at {from}* is shown if `from` is set
 
-
-
-
 ### via
 
 The question is `What is the via point for this bus line?`
 *This bus line goes via {via}* is shown if `via` is set
-
-
-
 
 ### to
 
 The question is `What is the ending point for this bus line?`
 *This bus line ends at {to}* is shown if `to` is set
 
-
-
-
 ### colour
 
 The question is `What is the colour for this bus line?`
 *This bus line has the color {colour}* is shown if `colour` is set
-
-
-
 
 ### network
 
 The question is `What network does this bus line belong to?`
 *This bus line is part of the {network} network* is shown if `network` is set
 
-
-
-
 ### operator
 
 The question is `What company operates this bus line?`
 *This bus line is operated by {operator}* is shown if `operator` is set
-
-
-
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

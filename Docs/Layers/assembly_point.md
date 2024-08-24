@@ -2,19 +2,9 @@
 
 # assembly_point
 
-
-
-
 This layer contains assembly points and waiting areas where all employees, passengers or a large crowd assemble in case of an emergency.
 
-
-
-
-
-
  - This layer is shown at zoomlevel **10** and higher
-
-
 
 ## Table of contents
 
@@ -31,12 +21,8 @@ This layer contains assembly points and waiting areas where all employees, passe
 
 ## Themes using this layer
 
-
-
  - [disaster_response](https://mapcomplete.org/disaster_response)
  - [personal](https://mapcomplete.org/personal)
-
-
 
 ## Basic tags for this layer
 
@@ -53,69 +39,44 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/name#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/name/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [name](https://wiki.openstreetmap.org/wiki/Key:name) | [string](../SpecialInputElements.md#string) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/operator#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/operator/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [operator](https://wiki.openstreetmap.org/wiki/Key:operator) | [string](../SpecialInputElements.md#string) |  |
 
-
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
-
-
-
 
 ### assembly_point_name
 
 The question is `What is the name of this assembly point?`
 *This assembly point is named <b>{name}</b>* is shown if `name` is set
 
-
-
-
 ### assembly_point_operator
 
 The question is `What organization operates this assembly point?`
 *This assembly point is operated by <b>{operator}</b>* is shown if `operator` is set
 
-
-
-
 ### disaster_type
 
 The question is `For which disaster type is this assembly point meant?`
-
-
 
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/assembly_point/earthquake.svg' style='width: 3rem; height: 3rem'> *Earthquake* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:assembly_point:earthquake' target='_blank'>assembly_point:earthquake</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:assembly_point:earthquake%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add assembly_point:earthquake=
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/assembly_point/flood.svg' style='width: 3rem; height: 3rem'> *Flood* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:assembly_point:flood' target='_blank'>assembly_point:flood</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:assembly_point:flood%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add assembly_point:flood=
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/assembly_point/fire.svg' style='width: 3rem; height: 3rem'> *Fire* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:assembly_point:fire' target='_blank'>assembly_point:fire</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:assembly_point:fire%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add assembly_point:fire=
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/assembly_point/landslide.svg' style='width: 3rem; height: 3rem'> *Landslide* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:assembly_point:landslide' target='_blank'>assembly_point:landslide</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:assembly_point:landslide%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add assembly_point:landslide=
 
-
-
-
-
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
-
-
-
 
 ### move-button
 
 _This tagrendering has no question and is thus read-only_
 *{move_button()}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

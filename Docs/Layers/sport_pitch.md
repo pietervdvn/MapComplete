@@ -2,19 +2,9 @@
 
 # sport_pitch
 
-
-
-
 A sport pitch
 
-
-
-
-
-
  - This layer is shown at zoomlevel **12** and higher
-
-
 
 ## Table of contents
 
@@ -37,14 +27,10 @@ A sport pitch
 
 ## Themes using this layer
 
-
-
  - [personal](https://mapcomplete.org/personal)
  - [speelplekken](https://mapcomplete.org/speelplekken)
  - [sport_pitches](https://mapcomplete.org/sport_pitches)
  - [sports](https://mapcomplete.org/sports)
-
-
 
 ## Basic tags for this layer
 
@@ -67,22 +53,15 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/email#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/email/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [email](https://wiki.openstreetmap.org/wiki/Key:email) | [email](../SpecialInputElements.md#email) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/opening_hours#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/opening_hours/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | [24/7](https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7) |
 
-
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
 
-
-
-
 ### sport_pitch-sport
 
 The question is `Which sport can be played here?`
 *{sport} is played here* is shown if `sport` is set
-
 
  -  *Basketball is played here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dbasketball' target='_blank'>basketball</a>
  -  *Soccer is played here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dsoccer' target='_blank'>soccer</a>
@@ -92,30 +71,21 @@ The question is `Which sport can be played here?`
  -  *Basketball is played here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dbasket' target='_blank'>basket</a>. _This option cannot be chosen as answer_
  -  *This is a skatepark* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dskateboard' target='_blank'>skateboard</a>
 
-
-
-
-
 ### basketball-hoops
 
 The question is `How much basketball hoops does this pitch have?`
-
-
 
  -  *This basketball pitch has a single hoop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:hoops' target='_blank'>hoops</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hoops%3D1' target='_blank'>1</a>
  -  *This basketball pitch has two hoops* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:hoops' target='_blank'>hoops</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hoops%3D2' target='_blank'>2</a>
  -  *This basketball pitch has four hoops* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:hoops' target='_blank'>hoops</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hoops%3D4' target='_blank'>4</a>
  -  *This basketball pitch has {hoops} hoops* is shown if with hoops~.+. _This option cannot be chosen as answer_
 
-
 This tagrendering is only visible in the popup if the following condition is met: sport~^((^|.*;)basketball(;.*|$))$
-
 
 ### sport_pitch-surface
 
 The question is `Which is the surface of this sport pitch?`
 *The surface is <b>{surface}</b>* is shown if `surface` is set
-
 
  -  *The surface is <b>grass</b>* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dgrass' target='_blank'>grass</a>
  -  *The surface is <b>sand</b>* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dsand' target='_blank'>sand</a>
@@ -125,15 +95,9 @@ The question is `Which is the surface of this sport pitch?`
  -  *The surface is <b>fine gravel</b>* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dfine_gravel' target='_blank'>fine_gravel</a>
  -  *The surface of this track is Tartan, a synthetic, slightly springy, porous surface* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dtartan' target='_blank'>tartan</a>
 
-
-
-
-
 ### sport-pitch-access
 
 The question is `Is this sport pitch publicly accessible?`
-
-
 
  -  *Public access* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>
  -  *Limited access (e.g. only with an appointment, during certain hours, …)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dlimited' target='_blank'>limited</a>
@@ -141,91 +105,58 @@ The question is `Is this sport pitch publicly accessible?`
  -  *Private - not accessible to the public* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate' target='_blank'>private</a>
  -  *Public access* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dpublic' target='_blank'>public</a>. _This option cannot be chosen as answer_
 
-
-
-
-
 ### sport-pitch-reservation
 
 The question is `Does one have to make an appointment to use this sport pitch?`
-
-
 
  -  *Making an appointment is obligatory to use this sport pitch* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:reservation' target='_blank'>reservation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:reservation%3Drequired' target='_blank'>required</a>
  -  *Making an appointment is recommended when using this sport pitch* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:reservation' target='_blank'>reservation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:reservation%3Drecommended' target='_blank'>recommended</a>
  -  *Making an appointment is possible, but not necessary to use this sport pitch* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:reservation' target='_blank'>reservation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:reservation%3Dyes' target='_blank'>yes</a>
  -  *Making an appointment is not possible* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:reservation' target='_blank'>reservation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:reservation%3Dno' target='_blank'>no</a>
 
-
-
-
-
 ### sport_pitch-phone
 
 The question is `What is the phone number of the operator?`
 *<a href='tel:{phone}'>{phone}</a>* is shown if `phone` is set
-
-
-
 
 ### sport_pitch-email
 
 The question is `What is the email address of the operator?`
 *<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>* is shown if `email` is set
 
-
-
-
 ### sport_pitch-opening_hours
 
 The question is `When is this pitch accessible?`
 *Openingsuren: {opening_hours_table()}* is shown if `opening_hours` is set
 
-
  -  *Always accessible* is shown if with opening_hours=. _This option cannot be chosen as answer_
  -  *Always accessible* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
 
-
 This tagrendering is only visible in the popup if the following condition is met: access~.+
-
 
 ### questions
 Show the questions block at this location
 _This tagrendering has no question and is thus read-only_
 *{questions()}*
 
-
-
-
 ### sport-pitch-reviews
 
 _This tagrendering has no question and is thus read-only_
 *{reviews(name, sportpitch)}*
-
-
-
 
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
 
-
 This tagrendering has labels 
 `added_by_default`
 
 ## Filters
 
-
-
 | id | question | osmTags |
 -----|-----|----- |
 | accessibility.0 | Publicly accessible | access=yes | access=public | access= |
-
-
-
-
-
 
 | id | question | osmTags |
 -----|-----|----- |
@@ -236,15 +167,9 @@ This tagrendering has labels
 | available_sports.4 | Tennis fields | sport=tennis |
 | available_sports.5 | Badminton fields | sport=badminton |
 
-
-
-
-
-
 | id | question | osmTags |
 -----|-----|----- |
 | open_now.0 | Open now | _isOpen=yes |
-
 
 
 

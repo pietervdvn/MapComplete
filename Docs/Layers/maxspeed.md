@@ -2,19 +2,9 @@
 
 # maxspeed
 
-
-
-
 Shows the allowed speed for every road
 
-
-
-
-
-
  - This layer is shown at zoomlevel **16** and higher
-
-
 
 ## Table of contents
 
@@ -28,12 +18,8 @@ Shows the allowed speed for every road
 
 ## Themes using this layer
 
-
-
  - [maxspeed](https://mapcomplete.org/maxspeed)
  - [personal](https://mapcomplete.org/personal)
-
-
 
 ## Basic tags for this layer
 
@@ -53,42 +39,27 @@ Elements must match **all** of the following expressions:
 -----|-----|----- |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/maxspeed#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/maxspeed/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [maxspeed](https://wiki.openstreetmap.org/wiki/Key:maxspeed) | [pnat](../SpecialInputElements.md#pnat) |  |
 
-
-
-
 ### maxspeed-maxspeed
 
 The question is `What is the legal maximum speed one is allowed to drive on this road?`
 *The maximum allowed speed on this road is {canonical(maxspeed)}* is shown if `maxspeed` is set
 
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/maxspeed/living_street_be.svg' style='width: 3rem; height: 3rem'> *This is a living street, which has a maxspeed of 20km/h* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dliving_street' target='_blank'>living_street</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:_country' target='_blank'>_country</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_country%3Dbe' target='_blank'>be</a>
-
-
-
-
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### split_button
 
 _This tagrendering has no question and is thus read-only_
 *{split_button()}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

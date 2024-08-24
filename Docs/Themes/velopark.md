@@ -8,7 +8,6 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [velopark_maproulette (defined in this theme)](#velopark_maproulette)
  - [bike_parking_with_velopark_ref (defined in this theme)](#bike_parking_with_velopark_ref)
  - [bike_parking](../Layers/bike_parking.md)
@@ -17,13 +16,10 @@ This theme contains the following layers:
  - [bicycle_rental](../Layers/bicycle_rental.md)
  - [current_view](../Layers/current_view.md)
 
-
 Available languages:
-
 
  - nl
  - en
-
 
 # Table of contents
 
@@ -95,15 +91,7 @@ Available languages:
 These layers can not be reused in different themes.
 # velopark_maproulette
 
-
-
-
 Maproulette challenge containing velopark data
-
-
-
-
-
 
  - This layer is shown at zoomlevel **0** and higher
  - <img src='../warning.svg' height='1rem'/>
@@ -111,8 +99,6 @@ Maproulette challenge containing velopark data
 This layer is loaded from an external source, namely 
 
 `https://maproulette.org/api/v2/challenge/view/43282`
-
-
 
 No themes use this layer
 
@@ -132,16 +118,12 @@ Elements must match the expression **mr_taskId~.+**
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/_osm_parkings_with_this_velopark_ref#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/_osm_parkings_with_this_velopark_ref/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [_osm_parkings_with_this_velopark_ref](https://wiki.openstreetmap.org/wiki/Key:_osm_parkings_with_this_velopark_ref) | [string](../SpecialInputElements.md#string) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/_nearby_bicycle_parkings:count#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/_nearby_bicycle_parkings%3Acount/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [_nearby_bicycle_parkings:count](https://wiki.openstreetmap.org/wiki/Key:_nearby_bicycle_parkings:count) | Multiple choice | [0](https://wiki.openstreetmap.org/wiki/Tag:_nearby_bicycle_parkings:count%3D0) |
 
-
-
-
 ### velopark-ref
 
 The question is `What is the URL of the data path within Velopark?`
 *This bicycle parking is on OpenStreetMap and is linked to Velopark:{link(&LBRACEref:velopark&RBRACE,&LBRACEref:velopark&RBRACE,,,,)}* is shown if `ref:velopark` is set
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbicycle_parking' target='_blank'>bicycle_parking</a>
-
 
 ### comparison_tool
 
@@ -150,50 +132,32 @@ _This tagrendering has no question and is thus read-only_
 
 This tagrendering is only visible in the popup if the following condition is met: mr_taskId= & ref:velopark~^(https:\/\/data.velopark.be\/data\/.*)$
 
-
 ### login
 
 _This tagrendering has no question and is thus read-only_
 *{login_button()}*
-
-
-
 
 ### is_linked
 
 _This tagrendering has no question and is thus read-only_
 *{link(Matched with bicycle parking &LBRACE_osm_parkings_with_this_velopark_ref&RBRACE,#&LBRACE_osm_parkings_with_this_velopark_ref&RBRACE,,,,)}* is shown if `_osm_parkings_with_this_velopark_ref` is set
 
-
-
-
 ### velopark-link
 
 _This tagrendering has no question and is thus read-only_
 *This is data from <b>Velopark</b>. {link(See on velopark &LPARENSwebpage&RPARENS,https://www.velopark.be/static/data/&LBRACEmr_velopark_id&RBRACE,,,,)}*
-
-
-
 
 ### show-data-velopark
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website(ref:velopark,no,https://data.velopark.be,readonly,no)}*
 
-
-
-
 ### closest_parkings
 
 _This tagrendering has no question and is thus read-only_
 *<h3>Nearby parkings</h3>There are {_nearby_bicycle_parkings:count} bicycle parkings within {_distance_cutoff}m known in OpenStreetMap.*
 
-
  -  *<h3>No nearby parkings</h3>There are no bicycle parkings in OpenStreetMap known within {_distance_cutoff}m* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:_nearby_bicycle_parkings:count' target='_blank'>_nearby_bicycle_parkings:count</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_nearby_bicycle_parkings:count%3D0' target='_blank'>0</a>
-
-
-
-
 
 ### list_nearby_bike_parkings
 
@@ -202,14 +166,12 @@ _This tagrendering has no question and is thus read-only_
 
 This tagrendering is only visible in the popup if the following condition is met: _nearby_bicycle_parkings:count>0 & <a href='https://wiki.openstreetmap.org/wiki/Key:mr_taskStatus' target='_blank'>mr_taskStatus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DCreated' target='_blank'>Created</a>
 
-
 ### title_create_new
 
 _This tagrendering has no question and is thus read-only_
 *<h3>Add a parking to OpenStreetMap</h3>Use this if the bicycle parking is missing in OpenStreetMap (there is no blue or green pin)*
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:mr_taskStatus' target='_blank'>mr_taskStatus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DCreated' target='_blank'>Created</a>
-
 
 ### import_point
 
@@ -218,14 +180,12 @@ _This tagrendering has no question and is thus read-only_
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:mr_taskStatus' target='_blank'>mr_taskStatus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DCreated' target='_blank'>Created</a>
 
-
 ### title_manually_copy
 
 _This tagrendering has no question and is thus read-only_
 *<h3>Manually link</h3>Does the bicycle parking exist in OpenStreetMap but is it further then 25m away? Then: <ol><li>Copy the following URL: <span class='literal-code'>{ref:velopark}</span></li><li>Select the correct bicycle parking on the map</li><li>Paste the URL into the question <i>What is the URL of the data path in Velopark?</i></li><li>Mark this item as handled with the button below:</li></ul>*
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:mr_taskStatus' target='_blank'>mr_taskStatus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DCreated' target='_blank'>Created</a>
-
 
 ### close_mr
 
@@ -234,14 +194,12 @@ _This tagrendering has no question and is thus read-only_
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:mr_taskStatus' target='_blank'>mr_taskStatus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DCreated' target='_blank'>Created</a>
 
-
 ### title_error
 
 _This tagrendering has no question and is thus read-only_
 *<h3>Closing without importing or linking</h3>*
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:mr_taskStatus' target='_blank'>mr_taskStatus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DCreated' target='_blank'>Created</a>
-
 
 ### close_mr_incorrect
 
@@ -250,30 +208,20 @@ _This tagrendering has no question and is thus read-only_
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:mr_taskStatus' target='_blank'>mr_taskStatus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DCreated' target='_blank'>Created</a>
 
-
 ### title_debug
 
 _This tagrendering has no question and is thus read-only_
 *<h3>Extra information</h3>*
-
-
-
 
 ### velopark-data-link
 
 _This tagrendering has no question and is thus read-only_
 *{link(Inspect raw data on velopark.be,&LBRACEref:velopark&RBRACE,,,,)}*
 
-
-
-
 ### nearby_images
 
 _This tagrendering has no question and is thus read-only_
 *{nearby_images(open,readonly)}*
-
-
-
 
 ### no_save_needed
 
@@ -282,58 +230,36 @@ _This tagrendering has no question and is thus read-only_
 
 This tagrendering is only visible in the popup if the following condition is met: id~^(node\/*)$ | id~^(way\/*)$ | id~^(relation\/*)$
 
-
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
-
-
-
 
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
 
-
 This tagrendering has labels 
 `added_by_default`
 
 ## Filters
 
-
-
 | id | question | osmTags |
 -----|-----|----- |
 | created-only.0 | Only unfinished tasks | mr_taskStatus=Created |
-
-
-
-
-
 
 | id | question | osmTags |
 -----|-----|----- |
 | too-hard-only.0 | Only too-hard tasks | mr_taskStatus=Too_hard |
 
-
-
 # bike_parking_with_velopark_ref
-
 
 This layer is based on [bike_parking](../Layers/bike_parking.md)
 
 A layer showing where you can park your bike
 
-
-
-
-
-
  - This layer is shown at zoomlevel **8** and higher
-
-
 
 No themes use this layer
 
@@ -369,16 +295,12 @@ Elements must match **all** of the following expressions:
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/capacity:cargo_bike#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/capacity%3Acargo_bike/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [capacity:cargo_bike](https://wiki.openstreetmap.org/wiki/Key:capacity:cargo_bike) | [nat](../SpecialInputElements.md#nat) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/maxstay#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/maxstay/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [maxstay](https://wiki.openstreetmap.org/wiki/Key:maxstay) | [pnat](../SpecialInputElements.md#pnat) |  |
 
-
-
-
 ### velopark-ref
 
 The question is `What is the URL of the data path within Velopark?`
 *This bicycle parking is on OpenStreetMap and is linked to Velopark:{link(&LBRACEref:velopark&RBRACE,&LBRACEref:velopark&RBRACE,,,,)}* is shown if `ref:velopark` is set
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbicycle_parking' target='_blank'>bicycle_parking</a>
-
 
 ### comparison_tool
 
@@ -387,36 +309,25 @@ _This tagrendering has no question and is thus read-only_
 
 This tagrendering is only visible in the popup if the following condition is met: mr_taskId= & ref:velopark~^(https:\/\/data.velopark.be\/data\/.*)$
 
-
 ### questions-intro
 
 _This tagrendering has no question and is thus read-only_
 *The question(s) below inquiry about attributes that are not yet known in OpenStreetMap*
-
-
-
 
 ### questions
 Show the questions block at this location
 _This tagrendering has no question and is thus read-only_
 *{questions()}*
 
-
-
-
 ### osm-block-title
 
 _This tagrendering has no question and is thus read-only_
 *<h3>Attributes from OpenStreetMap</h3>Editing below will make changes directly in OpenStreetMap*
 
-
-
-
 ### Bicycle parking type
 
 The question is `What is the type of this bicycle parking?`
 *This is a bicycle parking of the type: {bicycle_parking}* is shown if `bicycle_parking` is set
-
 
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/bike_parking/staple.svg' style='width: 3rem; height: 3rem'> *Stands* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_parking' target='_blank'>bicycle_parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dstands' target='_blank'>stands</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/bike_parking/wall_loops.svg' style='width: 3rem; height: 3rem'> *Wheelbenders / rack* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_parking' target='_blank'>bicycle_parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dwall_loops' target='_blank'>wall_loops</a>
@@ -428,73 +339,43 @@ The question is `What is the type of this bicycle parking?`
  -  *An area on the floor which is marked for bicycle parking* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_parking' target='_blank'>bicycle_parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dfloor' target='_blank'>floor</a>
  -  *A locker - the bicycles are enclosed completely individually or with a few bicycles together. The locker is too small to fit a person standing..* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_parking' target='_blank'>bicycle_parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dlockers' target='_blank'>lockers</a>
 
-
-
-
-
 ### Underground?
 
 The question is `What is the relative location of this bicycle parking?`
-
-
 
  -  *Underground parking* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground' target='_blank'>underground</a>
  -  *Surface level parking* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dsurface' target='_blank'>surface</a>
  -  *Rooftop parking* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Drooftop' target='_blank'>rooftop</a>
  -  *Surface level parking* is shown if with location=. _This option cannot be chosen as answer_
 
-
-
-
-
 ### Is covered?
 
 The question is `Is this parking covered? Also select "covered" for indoor parkings.`
 
-
-
  -  *This parking is covered (it has a roof)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:covered' target='_blank'>covered</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:covered%3Dyes' target='_blank'>yes</a>
  -  *This parking is not covered* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:covered' target='_blank'>covered</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:covered%3Dno' target='_blank'>no</a>
-
-
-
-
 
 ### Capacity
 
 The question is `How many bicycles fit in this bicycle parking?`
 *Place for {capacity} bikes* is shown if `capacity` is set
 
-
-
-
 ### Access
 
 The question is `Who can use this bicycle parking?`
 *{access}* is shown if `access` is set
-
 
  -  *Publicly accessible* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>
  -  *Access is primarily for visitors to a business* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers' target='_blank'>customers</a>
  -  *Access is limited to members of a school, company or organisation* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dmembers' target='_blank'>members</a>
  -  *Access is limited to members of a school, company or organisation* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate' target='_blank'>private</a>
 
-
-
-
-
 ### fee
 
 The question is `Are these bicycle parkings free to use?`
 
-
-
  -  *One has to <b>pay</b> to use this bicycle parking* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>
  -  *Free to use* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno' target='_blank'>no</a>
-
-
-
-
 
 ### charge
 
@@ -503,125 +384,81 @@ The question is `How much does it cost to park your bike here?`
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>
 
-
 ### opening_hours_24_7_default
 
 The question is `What are the opening hours of {title()}?`
 *<h3>Opening hours</h3>{opening_hours_table(opening_hours)}* is shown if `opening_hours` is set
 
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/open24_7.svg' style='width: 3rem; height: 3rem'> *24/7 opened (including holidays)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
  -  *Marked as closed for an unspecified time* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>. _This option cannot be chosen as answer_
-
-
-
-
 
 ### operator
 
 The question is `Who maintains this bicycle parking?`
 *This bicycle parking is maintained by {operator}* is shown if `operator` is set
 
-
-
-
 ### operator_phone
 
 The question is `What is the phone number of the operator of this bicycle parking?`
 *<a href='tel:{operator:phone}'>{operator:phone}</a>* is shown if `operator:phone` is set
 
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/phone.svg' style='width: 3rem; height: 3rem'> *<a href='tel:{phone}'>{phone}</a>* is shown if with phone~.+. _This option cannot be chosen as answer_
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/phone.svg' style='width: 3rem; height: 3rem'> *<a href='tel:{contact:phone}'>{contact:phone}</a>* is shown if with contact:phone~.+. _This option cannot be chosen as answer_
-
-
-
-
 
 ### operator_website
 
 The question is `What is the website number of the operator of this bicycle parking?`
 *<a href='{operator:website}'>{operator:website}</a>* is shown if `operator:website` is set
 
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/icons/website.svg' style='width: 3rem; height: 3rem'> *<a href='{website}'>{website}</a>* is shown if with website~.+. _This option cannot be chosen as answer_
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/icons/website.svg' style='width: 3rem; height: 3rem'> *<a href='{contact:website}'>{contact:website}</a>* is shown if with contact:website~.+. _This option cannot be chosen as answer_
-
-
-
-
 
 ### operator_email
 
 The question is `What is the email address of the operator of this bicycle parking?`
 *<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>* is shown if `operator:email` is set
 
-
-
-
 ### Cargo bike spaces?
 
 The question is `Does this bicycle parking have spots for cargo bikes?`
 
-
-
  -  *This parking has room for cargo bikes* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:cargo_bike' target='_blank'>cargo_bike</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cargo_bike%3Dyes' target='_blank'>yes</a>
  -  *This parking has designated (official) spots for cargo bikes.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:cargo_bike' target='_blank'>cargo_bike</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cargo_bike%3Ddesignated' target='_blank'>designated</a>
  -  *You're not allowed to park cargo bikes or there are no places provided for cargo bikes* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:cargo_bike' target='_blank'>cargo_bike</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cargo_bike%3Dno' target='_blank'>no</a>
-
-
-
-
 
 ### Cargo bike capacity?
 
 The question is `How many cargo bicycles fit in this bicycle parking?`
 *This parking fits {capacity:cargo_bike} cargo bikes* is shown if `capacity:cargo_bike` is set
 
-
  -  *There are no dedicated spaces for cargo bikes here or parking cargo bikes here is not allowed* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:cargo_bike' target='_blank'>cargo_bike</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cargo_bike%3Dno' target='_blank'>no</a>
 
-
 This tagrendering is only visible in the popup if the following condition is met: capacity:cargo_bike~.+ | cargo_bike~^(designated|yes)$
-
 
 ### maxstay
 
 The question is `What is the maximum allowed parking duration?`
 *A bike can be parked here for at most {canonical(maxstay)}* is shown if `maxstay` is set
 
-
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
-
-
-
 
 ### move-button
 
 _This tagrendering has no question and is thus read-only_
 *{move_button()}*
 
-
-
-
 ### delete-button
 
 _This tagrendering has no question and is thus read-only_
 *{delete_button()}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`
@@ -633,24 +470,15 @@ _This tagrendering has no question and is thus read-only_
 
 This tagrendering is only visible in the popup if the following condition is met: id~^(node\/*)$ | id~^(way\/*)$ | id~^(relation\/*)$
 
-
 ## Filters
-
-
 
 | id | question | osmTags | fields |
 -----|-----|-----|----- |
 | last_edited_before.0 | Last edit was before {date} |  | date (date) |
 
-
-
-
-
-
 | id | question | osmTags |
 -----|-----|----- |
 | open_now.0 | Open now | _isOpen=yes |
-
 
 
 

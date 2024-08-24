@@ -8,19 +8,15 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [raw_inspire_polygons (defined in this theme)](#raw_inspire_polygons)
  - [to_import (defined in this theme)](#to_import)
  - [uk_address (defined in this theme)](#uk_address)
  - [named_streets](../Layers/named_streets.md)
  - [address](../Layers/address.md)
 
-
 Available languages:
 
-
  - en
-
 
 # Table of contents
 
@@ -58,15 +54,7 @@ Available languages:
 These layers can not be reused in different themes.
 # raw_inspire_polygons
 
-
-
-
 External dataset: inspire polygon
-
-
-
-
-
 
  - This layer is shown at zoomlevel **18** and higher
  - This layer is not visible by default and must be enabled in the filter by the user. 
@@ -78,8 +66,6 @@ This layer is loaded from an external source, namely
 
 `https://osm-uk-addresses.russss.dev/inspire/{z}/{x}/{y}.json`
 
-
-
 No themes use this layer
 
 ## Basic tags for this layer
@@ -90,18 +76,9 @@ Elements must match the expression **inspireid~.+**
 
 ## Supported attributes
 
-
 # to_import
 
-
-
-
 Alamat
-
-
-
-
-
 
  - This layer is shown at zoomlevel **18** and higher
  - <img src='../warning.svg' height='1rem'/>
@@ -109,8 +86,6 @@ Alamat
 This layer is loaded from an external source, namely 
 
 `https://osm-uk-addresses.russss.dev/addresses/{z}/{x}/{y}.json`
-
-
 
 No themes use this layer
 
@@ -131,80 +106,50 @@ Elements must match **all** of the following expressions:
 -----|-----|----- |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/_embedding_object:id#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/_embedding_object%3Aid/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [_embedding_object:id](https://wiki.openstreetmap.org/wiki/Key:_embedding_object:id) | Multiple choice | [true](https://wiki.openstreetmap.org/wiki/Tag:_embedding_object:id%3Dtrue) [false](https://wiki.openstreetmap.org/wiki/Tag:_embedding_object:id%3Dfalse) |
 
-
-
-
 ### uk_addresses_explanation
 
 _This tagrendering has no question and is thus read-only_
 *We think there should be an address here. Please click below to add it.*
-
-
-
 
 ### uk_addresses_embedding_outline
 
 _This tagrendering has no question and is thus read-only_
 *<b>Warning: </b>This point lies within a building or area for which we already have an address. You should only add this address if it is different. <br>The number and street name we have for the <a href='#{_embedding_object:id}'>existing address</a> is <b>{_embedding_object:addr:housenumber} {_embedding_object:addr:street}</b>*
 
-
  -  *<b>Warning: </b>The property boundary containing this point already contains at least one recorded address. You should only add this address if it is different.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:_embedding_object:id' target='_blank'>_embedding_object:id</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_embedding_object:id%3Dtrue' target='_blank'>true</a>
  -  *We checked our data and found no other address within the same property boundary. If you know the details for this address, please add it.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:_embedding_object:id' target='_blank'>_embedding_object:id</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_embedding_object:id%3Dfalse' target='_blank'>false</a>
 
-
 This tagrendering is only visible in the popup if the following condition is met: _embedding_object:id~.+
-
 
 ### uk_addresses_import_button
 
 _This tagrendering has no question and is thus read-only_
 *{import_button(address,urpn_count=$urpn_count;ref:GB:uprn=$ref:GB:uprn$,Add this address,./assets/themes/uk_addresses/housenumber_add.svg,,,,)}*
 
-
-
-
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
-
-
-
 
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
 
-
 This tagrendering has labels 
 `added_by_default`
 
 ## Filters
 
-
-
 | id | question | osmTags |
 -----|-----|----- |
 | to_handle.0 | Only show non-matched objects | _imported= & (_embedding_object:id= | _embedding_object:id=false) |
 
-
-
 # uk_address
-
-
-
 
 Addresses
 
-
-
-
-
-
  - This layer is shown at zoomlevel **18** and higher
-
-
 
 No themes use this layer
 
@@ -244,103 +189,70 @@ Elements must match **any** of the following expressions:
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/addr:parentstreet#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/addr%3Aparentstreet/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [addr:parentstreet](https://wiki.openstreetmap.org/wiki/Key:addr:parentstreet) | [string](../SpecialInputElements.md#string) | [](https://wiki.openstreetmap.org/wiki/Tag:addr:parentstreet%3D) [](https://wiki.openstreetmap.org/wiki/Tag:addr:parentstreet%3D) [](https://wiki.openstreetmap.org/wiki/Tag:addr:parentstreet%3D) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/fixme:addr#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/fixme%3Aaddr/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [fixme:addr](https://wiki.openstreetmap.org/wiki/Key:fixme:addr) | [string](../SpecialInputElements.md#string) |  |
 
-
-
-
 ### questions
 Show the questions block at this location
 _This tagrendering has no question and is thus read-only_
 *{questions()}*
-
-
-
 
 ### preview
 
 _This tagrendering has no question and is thus read-only_
 *<div>The envelope below shows the address that we have recorded. You can change this by answering any remaining questions above, or by clicking the pencil icons below. We do not need you to provide a recipient's name or any of the parts shown in <span style='color: #4e7ce8'>[blue]</span>.</div><div style='background: #f1d592; min-height: 270px; border-radius: 2px; padding: 1rem 1rem 2rem 7rem; margin: 1rem; box-shadow: 0 2px 5px 0px rgba(0,0,0,.6)' class='flex flex-col'><img src='./assets/themes/uk_addresses/stamp-outline.png' class='self-end w-16'/><div>{addr:unit} {addr:housename}</div><div>{addr:housenumber} {addr:street}</div><div>{addr:parentstreet}</div><div style='color: #4e7ce8'>[Suburb]</div><div  style='color: #4e7ce8'>[Town]</div><div style='color: #4e7ce8'>[Postal code]</div></div>*
 
-
  -  *<div>The envelope below shows the address that we have recorded. You can change this by answering any remaining questions above, or by clicking the pencil icons below. We do not need you to provide a recipient's name or any of the parts shown in <span style='color: #4e7ce8'>[blue]</span>.</div><div style='background: #f1d592; min-height: 270px; border-radius: 2px; padding: 1rem 1rem 2rem 7rem; margin: 1rem; box-shadow: 0 2px 5px 0px rgba(0,0,0,.6)' class='flex flex-col'><img src='./assets/themes/uk_addresses/stamp-outline.png' class='self-end w-16'/><div>{addr:unit} {addr:housename}</div><div>{addr:housenumber} {addr:substreet}</div><div>{addr:street}</div><div>{addr:parentstreet}</div><div style='color: #4e7ce8'>[Suburb]</div><div style='color: #4e7ce8'>[Town]</div><div style='color: #4e7ce8'>[Postal code]</div></div>* is shown if with addr:substreet~.+
-
-
-
-
 
 ### uk_addresses_unit
 
 The question is `What is the sub-unit for this address? `
 *<div class='subtle'>Sub-unit (e.g. 1, Flat 2, Unit C)</div><div><b>{addr:unit}</b></div>* is shown if `addr:unit` is set
 
-
  -  *<div class='subtle'>Sub-unit (e.g. 1, Flat 2, Unit C)</div><div>There is no sub-unit within this address</div>* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:not:addr:unit' target='_blank'>not:addr:unit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:not:addr:unit%3Dyes' target='_blank'>yes</a>. _This option cannot be chosen as answer_
  -  *There is no sub-unit within this address* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:not:addr:unit' target='_blank'>not:addr:unit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:not:addr:unit%3Dyes' target='_blank'>yes</a>
  -  *<div class='subtle'>Sub-unit (e.g. 1, Flat 2, Unit C)</div>* is shown if with addr:unit=. _This option cannot be chosen as answer_
 
-
 This tagrendering is only visible in the popup if the following condition is met: addr:housename~.+ | addr:housenumber~.+ | addr:substreet~.+
-
 
 ### uk_addresses_housename
 
 The question is `What is the house or building name for this address?`
 *<div class='subtle'>House or building name</div><div><b>{addr:housename}</b></div>* is shown if `addr:housename` is set
 
-
  -  *<div class='subtle'>House or building name</div><div>This building has no housename</div>* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:nohousename' target='_blank'>nohousename</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:nohousename%3Dyes' target='_blank'>yes</a> & addr:housename=. _This option cannot be chosen as answer_
  -  *This building has no housename* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:nohousename' target='_blank'>nohousename</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:nohousename%3Dyes' target='_blank'>yes</a> & addr:housename=
  -  *<div class='subtle'>House or building name</div>* is shown if with addr:housename= & nohousenumber!=yes. _This option cannot be chosen as answer_
-
-
-
-
 
 ### uk_addresses_housenumber
 
 The question is `What is the house or building number for this address?`
 *<div class='subtle'>Number (e.g. 1, 1A, 2)</div><div><b>{addr:housenumber}</b></div>* is shown if `addr:housenumber` is set
 
-
  -  *<div class='subtle'>Number (e.g. 1, 1A, 2)</div><div>This building has no house number</div>* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:nohousenumber' target='_blank'>nohousenumber</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:nohousenumber%3Dyes' target='_blank'>yes</a>. _This option cannot be chosen as answer_
  -  *This building has no house number* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:nohousenumber' target='_blank'>nohousenumber</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:nohousenumber%3Dyes' target='_blank'>yes</a>
-
-
-
-
 
 ### uk_addresses_placename
 
 The question is `What is the place or locality for this address?`
 *<div class='subtle'>Place (e.g. Castle Mews, West Business Park)</div><div><b>{addr:substreet}</b></div>* is shown if `addr:substreet` is set
 
-
  -  *<div class='subtle'>Place (e.g. Castle Mews, West Business Park)</div><div>No extra place name is given or needed</div>* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:not:addr:substreet' target='_blank'>not:addr:substreet</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:not:addr:substreet%3Dyes' target='_blank'>yes</a>. _This option cannot be chosen as answer_
  -  *No extra place name is given or needed* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:not:addr:substreet' target='_blank'>not:addr:substreet</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:not:addr:substreet%3Dyes' target='_blank'>yes</a>
  -  *<div class='subtle'>Place (e.g. Castle Mews, West Business Park)</div>* is shown if with addr:substreet=. _This option cannot be chosen as answer_
-
-
-
-
 
 ### uk_addresses_placename_with_parent
 
 The question is `What is the place or locality for this address?`
 *<div class='subtle'>Place (e.g. Castle Mews, West Business Park)</div><div><b>{addr:substreet}</b></div>* is shown if `addr:substreet` is set
 
-
  -  *<div class='subtle'>Place (e.g. Castle Mews, West Business Park)</div><div>No extra place name is given or needed</div>* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:not:addr:substreet' target='_blank'>not:addr:substreet</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:not:addr:substreet%3Dyes' target='_blank'>yes</a>. _This option cannot be chosen as answer_
  -  *No extra place name is given or needed* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:not:addr:substreet' target='_blank'>not:addr:substreet</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:not:addr:substreet%3Dyes' target='_blank'>yes</a>
  -  *<div class='subtle'>Place (e.g. Castle Mews, West Business Park)</div>* is shown if with addr:substreet=. _This option cannot be chosen as answer_
 
-
 This tagrendering is only visible in the popup if the following condition is met: (addr:street= | (addr:street~.+ & addr:substreet~.+)) & addr:parentstreet~.+
-
 
 ### uk_addresses_street
 
 The question is `What is the street name for this address?`
 *<div class='subtle'>Street name</div><div><b>{addr:street}</b></div>* is shown if `addr:street` is set
-
 
  -  *<div class='subtle'>Street name</div><div><b>{_closest_street:0:name}</b></div>* is shown if with addr:street=. _This option cannot be chosen as answer_
  -  *<div class='subtle'>Street name</div><div><b>{_closest_street:1:name}</b></div>* is shown if with addr:street=. _This option cannot be chosen as answer_
@@ -349,15 +261,10 @@ The question is `What is the street name for this address?`
  -  *<b>{_closest_street:1:name}</b>* is shown if with addr:street=
  -  *<b>{_closest_street:2:name}</b>* is shown if with addr:street=
 
-
-
-
-
 ### uk_addresses_parentstreet
 
 The question is `What is the parent street name for this address?`
 *<div class='subtle'>Parent street name</div><div><b>{addr:parentstreet}</b></div>* is shown if `addr:parentstreet` is set
-
 
  -  *<div class='subtle'>Parent street name</div><div>No parent street name is needed within this address</div>* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:not:addr:parentstreet' target='_blank'>not:addr:parentstreet</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:not:addr:parentstreet%3Dyes' target='_blank'>yes</a>. _This option cannot be chosen as answer_
  -  *No parent street name is needed within this address* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:not:addr:parentstreet' target='_blank'>not:addr:parentstreet</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:not:addr:parentstreet%3Dyes' target='_blank'>yes</a>
@@ -369,35 +276,24 @@ The question is `What is the parent street name for this address?`
  -  *<b>{_closest_street:2:name}</b>* is shown if with addr:parentstreet=
  -  *<div class='subtle'>Parent street name</div>* is shown if with addr:parentstreet=. _This option cannot be chosen as answer_
 
-
 This tagrendering is only visible in the popup if the following condition is met: addr:parentstreet~.+ | addr:substreet~.+
-
 
 ### fixme
 
 The question is `Please explain what the address is so that someone else can look at it`
 *This address is complicated. We have recorded the following description: {fixme:addr}* is shown if `fixme:addr` is set
 
-
  -  *Complicated address? Please click the pencil and write some text to describe the situation. You can also add a photo below if that helps* is shown if with fixme:addr=. _This option cannot be chosen as answer_
-
-
-
-
 
 ### address-sign-image
 
 _This tagrendering has no question and is thus read-only_
 *{image_carousel(image:address)}<br/>{image_upload(image:address, Too complex? Add a photo of the address)}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

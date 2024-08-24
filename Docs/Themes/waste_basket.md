@@ -8,12 +8,9 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [waste_basket](../Layers/waste_basket.md)
 
-
 Available languages:
-
 
  - en
  - nl
@@ -30,7 +27,6 @@ Available languages:
  - es
  - cs
  - pl
-
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

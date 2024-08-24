@@ -2,19 +2,9 @@
 
 # information_board
 
-
-
-
 A layer showing touristical, road side information boards (e.g. giving information about the landscape, a building, a feature, a map, …)
 
-
-
-
-
-
  - This layer is shown at zoomlevel **12** and higher
-
-
 
 ## Table of contents
 
@@ -29,13 +19,9 @@ A layer showing touristical, road side information boards (e.g. giving informati
 
 ## Themes using this layer
 
-
-
  - [nature](https://mapcomplete.org/nature)
  - [personal](https://mapcomplete.org/personal)
  - [ski](https://mapcomplete.org/ski)
-
-
 
 ## Basic tags for this layer
 
@@ -45,45 +31,30 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 
 ## Supported attributes
 
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
-
-
-
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### move-button
 
 _This tagrendering has no question and is thus read-only_
 *{move_button()}*
-
-
-
 
 ### delete-button
 
 _This tagrendering has no question and is thus read-only_
 *{delete_button()}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

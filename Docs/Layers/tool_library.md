@@ -2,19 +2,9 @@
 
 # tool_library
 
-
-
-
 A tool library is a place where people from the general public can borrow tools
 
-
-
-
-
-
  - This layer is shown at zoomlevel **3** and higher
-
-
 
 ## Table of contents
 
@@ -38,12 +28,8 @@ A tool library is a place where people from the general public can borrow tools
 
 ## Themes using this layer
 
-
-
  - [circular_economy](https://mapcomplete.org/circular_economy)
  - [personal](https://mapcomplete.org/personal)
-
-
 
 ## Basic tags for this layer
 
@@ -66,26 +52,17 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/charge:membership#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/charge%3Amembership/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [charge:membership](https://wiki.openstreetmap.org/wiki/Key:charge:membership) | [currency](../SpecialInputElements.md#currency) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/fee#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/fee/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [fee](https://wiki.openstreetmap.org/wiki/Key:fee) | Multiple choice | [no](https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno) [no](https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno) [yes](https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes) [donation](https://wiki.openstreetmap.org/wiki/Tag:fee%3Ddonation) |
 
-
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
-
-
-
 
 ### phone
 
 The question is `What is the phone number of {title()}?`
 *<a href='tel:{phone}'>{phone}</a>* is shown if `phone` is set
 
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/phone.svg' style='width: 3rem; height: 3rem'> *<a href='tel:{contact:phone}'>{contact:phone}</a>* is shown if with contact:phone~.+. _This option cannot be chosen as answer_
-
-
 
 This tagrendering has labels 
 `contact`
@@ -95,11 +72,8 @@ This tagrendering has labels
 The question is `What is the email address of {title()}?`
 *<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>* is shown if `email` is set
 
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/envelope.svg' style='width: 3rem; height: 3rem'> *<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>* is shown if with contact:email~.+. _This option cannot be chosen as answer_
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/envelope.svg' style='width: 3rem; height: 3rem'> *<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>* is shown if with operator:email~.+. _This option cannot be chosen as answer_
-
-
 
 This tagrendering has labels 
 `contact`
@@ -109,10 +83,7 @@ This tagrendering has labels
 The question is `What is the website of {title()}?`
 *<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>* is shown if `website` is set
 
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/icons/website.svg' style='width: 3rem; height: 3rem'> *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>* is shown if with contact:website~.+. _This option cannot be chosen as answer_
-
-
 
 This tagrendering has labels 
 `contact`
@@ -122,36 +93,22 @@ Shows and asks for the facebook handle
 The question is `What is the facebook page of of {title()}?`
 *{link(Facebook page,&LBRACEcontact:facebook&RBRACE,,,,)}<div class='subtle text-sm'>Facebook is known to harm mental health, manipulate public opinion and cause hate. Try to use healthier alternatives</div>* is shown if `contact:facebook` is set
 
-
-
-
 ### opening_hours_by_appointment
 
 The question is `What are the opening hours of {title()}?`
 *<h3>Opening hours</h3>{opening_hours_table(opening_hours)}* is shown if `opening_hours` is set
 
-
  -  *Only by appointment* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D"by appointment"' target='_blank'>"by appointment"</a>
  -  *Only by appointment* is shown if with opening_hours~^("by appointment"|by appointment)$. _This option cannot be chosen as answer_
  -  *Marked as closed for an unspecified time* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>. _This option cannot be chosen as answer_
-
-
-
-
 
 ### membership
 
 The question is `Is a membership required to borrow tools here?`
 
-
-
  -  *No membership is required to borrow tools here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:membership' target='_blank'>membership</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:membership%3Dno' target='_blank'>no</a>
  -  *A <b>membership is required</b> to use this tool library* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:membership' target='_blank'>membership</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:membership%3Drequired' target='_blank'>required</a>
  -  *A <b>membership is possible</b> but not required to use this tool library* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:membership' target='_blank'>membership</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:membership%3Doptional' target='_blank'>optional</a>
-
-
-
-
 
 ### membership_charge
 
@@ -160,51 +117,34 @@ The question is `How much does a membership cost?`
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:membership' target='_blank'>membership</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:membership%3Drequired' target='_blank'>required</a>
 
-
 ### fee
 
 The question is `Is a fee asked to borrow tools?`
-
-
 
  -  *Borrowing tools is free (if one has a membership)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno' target='_blank'>no</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:membership' target='_blank'>membership</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:membership%3Drequired' target='_blank'>required</a>
  -  *Borrowing tools is free* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno' target='_blank'>no</a>
  -  *A fee is asked when borrowing tools* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>
  -  *A donation can be given when borrowing tools* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Ddonation' target='_blank'>donation</a>
 
-
-
-
-
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
-
-
-
 
 ### move-button
 
 _This tagrendering has no question and is thus read-only_
 *{move_button()}*
 
-
-
-
 ### delete-button
 
 _This tagrendering has no question and is thus read-only_
 *{delete_button()}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

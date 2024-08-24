@@ -2,19 +2,9 @@
 
 # dumpstations
 
-
-
-
 Sanitary dump stations
 
-
-
-
-
-
  - This layer is shown at zoomlevel **7** and higher
-
-
 
 ## Table of contents
 
@@ -36,11 +26,7 @@ Sanitary dump stations
 
 ## Themes using this layer
 
-
-
  - [campersite](https://mapcomplete.org/campersite)
-
-
 
 ## Basic tags for this layer
 
@@ -67,29 +53,17 @@ Elements must match **all** of the following expressions:
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/operator#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/operator/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [operator](https://wiki.openstreetmap.org/wiki/Key:operator) | [string](../SpecialInputElements.md#string) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/power_supply#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/power_supply/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [power_supply](https://wiki.openstreetmap.org/wiki/Key:power_supply) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:power_supply%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:power_supply%3Dno) |
 
-
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
 
-
-
-
 ### dumpstations-fee
 
 The question is `Does this place charge a fee?`
 
-
-
  -  *You need to pay for use* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>
  -  *Can be used for free* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno' target='_blank'>no</a>
-
-
-
-
 
 ### dumpstations-charge
 
@@ -98,103 +72,62 @@ The question is `How much does this place charge?`
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>
 
-
 ### dumpstations-waterpoint
 
 The question is `Does this place have a water point?`
 
-
-
  -  *This place has a water point* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:water_point' target='_blank'>water_point</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:water_point%3Dyes' target='_blank'>yes</a>
  -  *This place does not have a water point* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:water_point' target='_blank'>water_point</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:water_point%3Dno' target='_blank'>no</a>
-
-
-
-
 
 ### dumpstations-grey-water
 
 The question is `Can you dispose of grey water here?`
 
-
-
  -  *You can dispose of grey water here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:sanitary_dump_station:grey_water' target='_blank'>sanitary_dump_station:grey_water</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sanitary_dump_station:grey_water%3Dyes' target='_blank'>yes</a>
  -  *You cannot dispose of gray water here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:sanitary_dump_station:grey_water' target='_blank'>sanitary_dump_station:grey_water</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sanitary_dump_station:grey_water%3Dno' target='_blank'>no</a>
-
-
-
-
 
 ### dumpstations-chemical-waste
 
 The question is `Can you dispose of chemical toilet waste here?`
 
-
-
  -  *You can dispose of chemical toilet waste here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:sanitary_dump_station:chemical_toilet' target='_blank'>sanitary_dump_station:chemical_toilet</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sanitary_dump_station:chemical_toilet%3Dyes' target='_blank'>yes</a>
  -  *You cannot dispose of chemical toilet waste here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:sanitary_dump_station:chemical_toilet' target='_blank'>sanitary_dump_station:chemical_toilet</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sanitary_dump_station:chemical_toilet%3Dno' target='_blank'>no</a>
-
-
-
-
 
 ### dumpstations-access
 
 The question is `Who can use this dump station?`
-
-
 
  -  *You need a network key/code to use this* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dnetwork' target='_blank'>network</a>
  -  *You need to be a customer of camping/campersite to use this place* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers' target='_blank'>customers</a>
  -  *Anyone can use this dump station* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dpublic' target='_blank'>public</a>. _This option cannot be chosen as answer_
  -  *Anyone can use this dump station* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>
 
-
-
-
-
 ### dumpstations-network
 
 The question is `What network is this place a part of? (skip if none)`
 *This station is part of network {network}* is shown if `network` is set
-
-
-
 
 ### operator
 
 The question is `Who operates this place?`
 *This place is operated by {operator}* is shown if `operator` is set
 
-
-
-
 ### power_supply
 
 The question is `Does this place have a power supply?`
 
-
-
  -  *This place has a power supply* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:power_supply' target='_blank'>power_supply</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:power_supply%3Dyes' target='_blank'>yes</a>
  -  *This place does not have power supply* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:power_supply' target='_blank'>power_supply</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:power_supply%3Dno' target='_blank'>no</a>
-
-
-
-
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

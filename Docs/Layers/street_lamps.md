@@ -2,19 +2,9 @@
 
 # street_lamps
 
-
-
-
 A layer showing street lights
 
-
-
-
-
-
  - This layer is shown at zoomlevel **16** and higher
-
-
 
 ## Table of contents
 
@@ -37,13 +27,9 @@ A layer showing street lights
 
 ## Themes using this layer
 
-
-
  - [personal](https://mapcomplete.org/personal)
  - [street_lighting](https://mapcomplete.org/street_lighting)
  - [street_lighting_assen](https://mapcomplete.org/street_lighting_assen)
-
-
 
 ## Basic tags for this layer
 
@@ -66,30 +52,19 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/light:lit#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/light%3Alit/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [light:lit](https://wiki.openstreetmap.org/wiki/Key:light:lit) | Multiple choice | [dusk-dawn](https://wiki.openstreetmap.org/wiki/Tag:light:lit%3Ddusk-dawn) [24/7](https://wiki.openstreetmap.org/wiki/Tag:light:lit%3D24/7) [motion](https://wiki.openstreetmap.org/wiki/Tag:light:lit%3Dmotion) [demand](https://wiki.openstreetmap.org/wiki/Tag:light:lit%3Ddemand) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/light:direction#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/light%3Adirection/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [light:direction](https://wiki.openstreetmap.org/wiki/Key:light:direction) | [direction](../SpecialInputElements.md#direction) |  |
 
-
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
-
-
-
 
 ### ref
 
 The question is `What is the reference number of this street lamp?`
 *This street lamp has the reference number {ref}* is shown if `ref` is set
 
-
-
-
 ### support
 
 The question is `How is this street lamp mounted?`
-
-
 
  -  *This lamp is suspended using cables* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:support' target='_blank'>support</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:support%3Dcatenary' target='_blank'>catenary</a>
  -  *This lamp is mounted on a ceiling* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:support' target='_blank'>support</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:support%3Dceiling' target='_blank'>ceiling</a>
@@ -99,28 +74,18 @@ The question is `How is this street lamp mounted?`
  -  *This lamp is mounted directly to the wall* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:support' target='_blank'>support</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:support%3Dwall' target='_blank'>wall</a>
  -  *This lamp is mounted to the wall using a metal bar* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:support' target='_blank'>support</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:support%3Dwall_mount' target='_blank'>wall_mount</a>
 
-
-
-
-
 ### lamp_mount
 
 The question is `How is this lamp mounted to the pole?`
 
-
-
  -  *This lamp sits atop of a straight mast* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:lamp_mount' target='_blank'>lamp_mount</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:lamp_mount%3Dstraight_mast' target='_blank'>straight_mast</a>
  -  *This lamp sits at the end of a bent mast* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:lamp_mount' target='_blank'>lamp_mount</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:lamp_mount%3Dbent_mast' target='_blank'>bent_mast</a>
 
-
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:support' target='_blank'>support</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:support%3Dpole' target='_blank'>pole</a>
-
 
 ### method
 
 The question is `What kind of lighting does this lamp use?`
-
-
 
  -  *This lamp is lit electrically* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:light:method' target='_blank'>light:method</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:light:method%3Delectric' target='_blank'>electric</a>. _This option cannot be chosen as answer_
  -  *This lamp uses LEDs* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:light:method' target='_blank'>light:method</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:light:method%3DLED' target='_blank'>LED</a>
@@ -135,51 +100,33 @@ The question is `What kind of lighting does this lamp use?`
  -  *This lamp uses high pressure sodium lamps (orange with white)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:light:method' target='_blank'>light:method</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:light:method%3Dhigh_pressure_sodium' target='_blank'>high_pressure_sodium</a>
  -  *This lamp is lit using gas* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:light:method' target='_blank'>light:method</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:light:method%3Dgas' target='_blank'>gas</a>
 
-
-
-
-
 ### colour
 
 The question is `What colour light does this lamp emit?`
 *This lamp emits {light:colour} light* is shown if `light:colour` is set
 
-
  -  *This lamp emits white light* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:light:colour' target='_blank'>light:colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:light:colour%3Dwhite' target='_blank'>white</a>
  -  *This lamp emits green light* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:light:colour' target='_blank'>light:colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:light:colour%3Dgreen' target='_blank'>green</a>
  -  *This lamp emits orange light* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:light:colour' target='_blank'>light:colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:light:colour%3Dorange' target='_blank'>orange</a>
-
-
-
-
 
 ### count
 
 The question is `How many fixtures does this light have?`
 *This lamp has {light:count} fixtures* is shown if `light:count` is set
 
-
  -  *This lamp has 1 fixture* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:light:count' target='_blank'>light:count</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:light:count%3D1' target='_blank'>1</a>
  -  *This lamp has 2 fixtures* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:light:count' target='_blank'>light:count</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:light:count%3D2' target='_blank'>2</a>
 
-
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:support' target='_blank'>support</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:support%3Dpole' target='_blank'>pole</a>
-
 
 ### lit
 
 The question is `When is this lamp lit?`
 
-
-
  -  *This lamp is lit at night* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:light:lit' target='_blank'>light:lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:light:lit%3Ddusk-dawn' target='_blank'>dusk-dawn</a>
  -  *This lamp is lit 24/7* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:light:lit' target='_blank'>light:lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:light:lit%3D24/7' target='_blank'>24/7</a>
  -  *This lamp is lit based on motion* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:light:lit' target='_blank'>light:lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:light:lit%3Dmotion' target='_blank'>motion</a>
  -  *This lamp is lit based on demand (e.g. with a pushbutton)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:light:lit' target='_blank'>light:lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:light:lit%3Ddemand' target='_blank'>demand</a>
-
-
-
-
 
 ### direction
 
@@ -188,36 +135,25 @@ The question is `Where does this lamp point to?`
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:light:count' target='_blank'>light:count</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:light:count%3D1' target='_blank'>1</a>
 
-
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
-
-
-
 
 ### move-button
 
 _This tagrendering has no question and is thus read-only_
 *{move_button()}*
 
-
-
-
 ### delete-button
 
 _This tagrendering has no question and is thus read-only_
 *{delete_button()}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

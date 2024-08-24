@@ -2,19 +2,9 @@
 
 # toilet_at_amenity
 
-
-
-
 A layer showing (public) toilets located at different places.
 
-
-
-
-
-
  - This layer is shown at zoomlevel **12** and higher
-
-
 
 ## Table of contents
 
@@ -46,12 +36,8 @@ A layer showing (public) toilets located at different places.
 
 ## Themes using this layer
 
-
-
  - [personal](https://mapcomplete.org/personal)
  - [toilets](https://mapcomplete.org/toilets)
-
-
 
 ## Basic tags for this layer
 
@@ -84,16 +70,10 @@ Elements must match **all** of the following expressions:
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/toilets:menstrual_products:location#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/toilets%3Amenstrual_products%3Alocation/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [toilets:menstrual_products:location](https://wiki.openstreetmap.org/wiki/Key:toilets:menstrual_products:location) | [string](../SpecialInputElements.md#string) | [female_toilet](https://wiki.openstreetmap.org/wiki/Tag:toilets:menstrual_products:location%3Dfemale_toilet) [male_toilet](https://wiki.openstreetmap.org/wiki/Tag:toilets:menstrual_products:location%3Dmale_toilet) [wheelchair_toilet](https://wiki.openstreetmap.org/wiki/Tag:toilets:menstrual_products:location%3Dwheelchair_toilet) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/toilets:description#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/toilets%3Adescription/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [toilets:description](https://wiki.openstreetmap.org/wiki/Key:toilets:description) | [string](../SpecialInputElements.md#string) |  |
 
-
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
-
-
-
 
 ### repeated
 
@@ -109,14 +89,11 @@ This tagrendering has labels
 The question is `On what level is this feature located?`
 *Located on the {level}th floor* is shown if `level` is set
 
-
  -  *Located underground* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground' target='_blank'>underground</a>. _This option cannot be chosen as answer_
  -  *Located on the ground floor* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D0' target='_blank'>0</a>
  -  *Located on the ground floor* is shown if with level=. _This option cannot be chosen as answer_
  -  *Located on the first floor* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D1' target='_blank'>1</a>
  -  *Located on the first basement level* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D-1' target='_blank'>-1</a>
-
-
 
 This tagrendering has labels 
 `level`
@@ -126,29 +103,18 @@ This tagrendering has labels
 The question is `Are these toilets publicly accessible?`
 *Access is {toilets:access}* is shown if `toilets:access` is set
 
-
  -  *Public access* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:access' target='_blank'>toilets:access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:access%3Dyes' target='_blank'>yes</a>
  -  *Only access to customers of the amenity* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:access' target='_blank'>toilets:access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:access%3Dcustomers' target='_blank'>customers</a>
  -  *Not accessible, even for customers of the amenity* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:access' target='_blank'>toilets:access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:access%3Dno' target='_blank'>no</a>
  -  *Accessible, but one has to ask a key to enter* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:access' target='_blank'>toilets:access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:access%3Dkey' target='_blank'>key</a>
  -  *Public access* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:access' target='_blank'>toilets:access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:access%3Dpublic' target='_blank'>public</a>. _This option cannot be chosen as answer_
 
-
-
-
-
 ### toilets-fee
 
 The question is `Are these toilets free to use?`
 
-
-
  -  *These are paid toilets* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:fee' target='_blank'>toilets:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:fee%3Dyes' target='_blank'>yes</a>
  -  *Free to use* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:fee' target='_blank'>toilets:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:fee%3Dno' target='_blank'>no</a>
-
-
-
-
 
 ### toilet-charge
 
@@ -157,32 +123,20 @@ The question is `How much does one have to pay for these toilets?`
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:fee' target='_blank'>toilets:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:fee%3Dyes' target='_blank'>yes</a>
 
-
 ### opening_hours
 
 The question is `When is the amenity where these toilets are located open?`
 *<h3>Opening hours</h3>{opening_hours_table(opening_hours)}* is shown if `opening_hours` is set
 
-
  -  *Marked as closed for an unspecified time* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>. _This option cannot be chosen as answer_
-
-
-
-
 
 ### toilets-wheelchair
 
 The question is `Is there a dedicated toilet for wheelchair users?`
 
-
-
  -  *There is a dedicated toilet for wheelchair users* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:wheelchair' target='_blank'>toilets:wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:wheelchair%3Dyes' target='_blank'>yes</a>
  -  *No wheelchair access* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:wheelchair' target='_blank'>toilets:wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:wheelchair%3Dno' target='_blank'>no</a>
  -  *There is only a dedicated toilet for wheelchair users* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:wheelchair' target='_blank'>toilets:wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:wheelchair%3Ddesignated' target='_blank'>designated</a>
-
-
-
-
 
 ### wheelchair-door-width
 
@@ -191,19 +145,14 @@ The question is `What is the width of the door to the wheelchair accessible toil
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:wheelchair' target='_blank'>toilets:wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:wheelchair%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:wheelchair' target='_blank'>toilets:wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:wheelchair%3Ddesignated' target='_blank'>designated</a>
 
-
 ### toilets-type
 
 The question is `Which kind of toilets are these?`
-
-
 
  -  *There are only seated toilets* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:position' target='_blank'>toilets:position</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:position%3Dseated' target='_blank'>seated</a>
  -  *There are only urinals here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:position' target='_blank'>toilets:position</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:position%3Durinal' target='_blank'>urinal</a>
  -  *There are only squat toilets here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:position' target='_blank'>toilets:position</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:position%3Dsquat' target='_blank'>squat</a>
  -  *Both seated toilets and urinals are available here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:position' target='_blank'>toilets:position</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:position%3Dseated;urinal' target='_blank'>seated;urinal</a>
-
-
 
 This tagrendering has labels 
 `relevant-questions`
@@ -212,12 +161,8 @@ This tagrendering has labels
 
 The question is `Is a changing table (to change diapers) available?`
 
-
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/toilet/baby.svg' style='width: 3rem; height: 3rem'> *A changing table is available* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:changing_table' target='_blank'>changing_table</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:changing_table%3Dyes' target='_blank'>yes</a>
  -  *No changing table is available* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:changing_table' target='_blank'>changing_table</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:changing_table%3Dno' target='_blank'>no</a>
-
-
 
 This tagrendering has labels 
 `relevant-questions`
@@ -227,12 +172,10 @@ This tagrendering has labels
 The question is `Where is the changing table located?`
 *A changing table is located at {changing_table:location}* is shown if `changing_table:location` is set
 
-
  -  *A changing table is in the toilet for women* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:changing_table:location' target='_blank'>changing_table:location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:changing_table:location%3Dfemale_toilet' target='_blank'>female_toilet</a>
  -  *A changing table is in the toilet for men* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:changing_table:location' target='_blank'>changing_table:location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:changing_table:location%3Dmale_toilet' target='_blank'>male_toilet</a>
  -  *A changing table is in the toilet for wheelchair users* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:changing_table:location' target='_blank'>changing_table:location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:changing_table:location%3Dwheelchair_toilet' target='_blank'>wheelchair_toilet</a>
  -  *A changing table is in a dedicated room* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:changing_table:location' target='_blank'>changing_table:location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:changing_table:location%3Ddedicated_room' target='_blank'>dedicated_room</a>
-
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:changing_table' target='_blank'>changing_table</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:changing_table%3Dyes' target='_blank'>yes</a>
 This tagrendering has labels 
@@ -242,12 +185,8 @@ This tagrendering has labels
 
 The question is `Do these toilets have a sink to wash your hands?`
 
-
-
  -  *These toilets have a sink to wash your hands* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:handwashing' target='_blank'>toilets:handwashing</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:handwashing%3Dyes' target='_blank'>yes</a>
  -  *These toilets <b>don't</b> have a sink to wash your hands* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:handwashing' target='_blank'>toilets:handwashing</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:handwashing%3Dno' target='_blank'>no</a>
-
-
 
 This tagrendering has labels 
 `relevant-questions`
@@ -256,12 +195,8 @@ This tagrendering has labels
 
 The question is `Does one have to bring their own toilet paper to this toilet?`
 
-
-
  -  *This toilet is equipped with toilet paper* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:paper_supplied' target='_blank'>toilets:paper_supplied</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:paper_supplied%3Dyes' target='_blank'>yes</a>
  -  *You have to bring your own toilet paper to this toilet* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:paper_supplied' target='_blank'>toilets:paper_supplied</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:paper_supplied%3Dno' target='_blank'>no</a>
-
-
 
 This tagrendering has labels 
 `relevant-questions`
@@ -270,98 +205,61 @@ This tagrendering has labels
 
 The question is `Are free, menstrual products distributed here?`
 
-
-
  -  *Free menstrual products are available to all visitors of these toilets* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:menstrual_products' target='_blank'>toilets:menstrual_products</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:menstrual_products%3Dyes' target='_blank'>yes</a>
  -  *Free menstrual products are available to some visitors of these toilets* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:menstrual_products' target='_blank'>toilets:menstrual_products</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:menstrual_products%3Dlimited' target='_blank'>limited</a>
  -  *No free menstrual products are available here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:menstrual_products' target='_blank'>toilets:menstrual_products</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:menstrual_products%3Dno' target='_blank'>no</a>
-
-
-
-
 
 ### menstrual_products_location
 
 The question is `Where are the free menstrual products located?`
 *The menstrual products are located in {toilets:menstrual_products:location}* is shown if `toilets:menstrual_products:location` is set
 
-
  -  *The free, menstrual products are located in the toilet for women* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:menstrual_products:location' target='_blank'>toilets:menstrual_products:location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:menstrual_products:location%3Dfemale_toilet' target='_blank'>female_toilet</a>
  -  *The free, menstrual products are located in the toilet for men* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:menstrual_products:location' target='_blank'>toilets:menstrual_products:location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:menstrual_products:location%3Dmale_toilet' target='_blank'>male_toilet</a>
  -  *The free, menstrual products are located in the toilet for wheelchair users* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:menstrual_products:location' target='_blank'>toilets:menstrual_products:location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:menstrual_products:location%3Dwheelchair_toilet' target='_blank'>wheelchair_toilet</a>
 
-
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:toilets:menstrual_products' target='_blank'>toilets:menstrual_products</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets:menstrual_products%3Dlimited' target='_blank'>limited</a> | toilets:menstrual_products:location~.+
-
 
 ### description
 
 The question is `Is there still some relevant info that the previous questions did not cover? Feel free to add it here.`
 *{toilets:description}* is shown if `toilets:description` is set
 
-
-
-
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
-
-
-
 
 ### delete-button
 
 _This tagrendering has no question and is thus read-only_
 *{delete_button()}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`
 
 ## Filters
 
-
-
 | id | question | osmTags |
 -----|-----|----- |
 | wheelchair.0 | Wheelchair accessible | toilets:wheelchair=yes | toilets:wheelchair=designated |
-
-
-
-
-
 
 | id | question | osmTags |
 -----|-----|----- |
 | changing_table.0 | Has a changing table | changing_table=yes |
 
-
-
-
-
-
 | id | question | osmTags |
 -----|-----|----- |
 | free.0 | Free to use | toilets:fee=no | toilets:fee=0 | toilets:charge=0 |
 
-
-
-
-
-
 | id | question | osmTags |
 -----|-----|----- |
 | open_now.0 | Open now | _isOpen=yes |
-
 
 
 

@@ -2,21 +2,13 @@
 
 # parking_spaces_disabled
 
-
 This layer is based on [parking_spaces](../Layers/parking_spaces.md)
 
 Layer showing individual parking spaces.
 
-
-
-
-
-
  - This layer is shown at zoomlevel **18** and higher
  - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  a tagrendering needs this layer (_stolen_entrances)
  - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  a calculated tag loads features from this layer (calculatedTag[0] which calculates the value for _enclosing_building)
-
-
 
 ## Table of contents
 
@@ -30,11 +22,7 @@ Layer showing individual parking spaces.
 
 ## Themes using this layer
 
-
-
  - [onwheels](https://mapcomplete.org/onwheels)
-
-
 
 ## Basic tags for this layer
 
@@ -44,37 +32,25 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 
 ## Supported attributes
 
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
-
-
-
 
 ### _stolen_entrances
 
 _This tagrendering has no question and is thus read-only_
 *{steal(_enclosing_building,walls_and_buildings.entrance_info; walls_and_buildings.biggest_width)}*
 
-
-
-
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

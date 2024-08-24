@@ -8,12 +8,9 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [osm_community_index](../Layers/osm_community_index.md)
 
-
 Available languages:
-
 
  - en
  - de
@@ -23,7 +20,6 @@ Available languages:
  - ca
  - cs
  - pl
-
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

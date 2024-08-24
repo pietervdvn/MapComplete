@@ -8,14 +8,11 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [maxspeed](../Layers/maxspeed.md)
  - [speed_camera](../Layers/speed_camera.md)
  - [speed_display](../Layers/speed_display.md)
 
-
 Available languages:
-
 
  - en
  - es
@@ -30,7 +27,6 @@ Available languages:
  - zh_Hant
  - eu
  - pl
-
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

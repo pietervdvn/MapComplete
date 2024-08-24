@@ -8,7 +8,6 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [ghost_bike](../Layers/ghost_bike.md)
  - [memorial](../Layers/memorial.md)
  - [grave](../Layers/grave.md)
@@ -16,9 +15,7 @@ This theme contains the following layers:
  - [artwork](../Layers/artwork.md)
  - [walls_and_buildings](../Layers/walls_and_buildings.md)
 
-
 Available languages:
-
 
  - en
  - de
@@ -26,7 +23,6 @@ Available languages:
  - nl
  - da
  - sl
-
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

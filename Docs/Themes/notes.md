@@ -8,13 +8,10 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [note](../Layers/note.md)
  - [fixme](../Layers/fixme.md)
 
-
 Available languages:
-
 
  - en
  - hu
@@ -28,7 +25,6 @@ Available languages:
  - cs
  - zh_Hant
  - pl
-
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

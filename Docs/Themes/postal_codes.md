@@ -8,14 +8,11 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [postal_code_boundary (defined in this theme)](#postal_code_boundary)
  - [wrong_postal_code (defined in this theme)](#wrong_postal_code)
  - [town_hall (defined in this theme)](#town_hall)
 
-
 Available languages:
-
 
  - en
  - id
@@ -32,7 +29,6 @@ Available languages:
  - zh_Hant
  - it
  - pl
-
 
 # Table of contents
 
@@ -59,19 +55,7 @@ Available languages:
 These layers can not be reused in different themes.
 # postal_code_boundary
 
-
-
-
-
-
-
-
-
-
-
  - This layer is shown at zoomlevel **8** and higher
-
-
 
 No themes use this layer
 
@@ -86,49 +70,28 @@ Elements must match **any** of the following expressions:
 
 ## Supported attributes
 
-
-
 ### postal_code
 
 _This tagrendering has no question and is thus read-only_
 *The postal code is {postal_code}*
-
-
-
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
 
-
 This tagrendering has labels 
 `added_by_default`
 # wrong_postal_code
 
-
-
-
-
-
-
-
-
-
-
  - This layer is shown at zoomlevel **0** and higher
  - Not visible in the layer selection by default. If you want to make this layer toggable, override `name`
  - Not rendered on the map by default. If you want to rendering this on the map, override `mapRenderings`
-
-
 
 No themes use this layer
 
@@ -143,13 +106,10 @@ Elements must match **all** of the following expressions:
 
 ## Supported attributes
 
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`
@@ -159,23 +119,9 @@ This tagrendering has labels
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
 # town_hall
 
-
-
-
-
-
-
-
-
-
-
  - This layer is shown at zoomlevel **12** and higher
-
-
 
 No themes use this layer
 
@@ -190,21 +136,15 @@ Elements must match **any** of the following expressions:
 
 ## Supported attributes
 
-
-
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

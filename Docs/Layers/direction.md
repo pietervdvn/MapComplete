@@ -2,20 +2,10 @@
 
 # direction
 
-
-
-
 This layer visualizes directions
-
-
-
-
-
 
  - This layer is shown at zoomlevel **16** and higher
  - Elements don't have a title set and cannot be toggled nor will they show up in the dashboard. If you import this layer in your theme, override `title` to make this toggleable.
-
-
 
 No themes use this layer
 
@@ -37,21 +27,15 @@ Elements must match **any** of the following expressions:
 
 ## Supported attributes
 
-
-
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

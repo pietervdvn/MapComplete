@@ -4,8 +4,6 @@
 
 This table gives a summary of ids, names and other metainformation. [See the online, interactive map here](https://osmlab.github.io/editor-layer-index/) or [visit the repository](https://github.com/osmlab/editor-layer-index)
 
-
-
 | id | name | category | Best | attribution |
 -----|-----|-----|-----|----- |
 | South_Africa-CD_NGI-Aerial | South Africa CD:NGI Aerial | photo | ⭐ |  |
@@ -884,7 +882,6 @@ This table gives a summary of ids, names and other metainformation. [See the onl
 | osmfr | OpenStreetMap (French Style) | osmbasedmap |  | Tiles © cquest@Openstreetmap France, data © OpenStreetMap contributors, ODBL |
 | HDM_HOT | OpenStreetMap (HOT Style) | osmbasedmap |  | © OpenStreetMap contributors, tiles courtesy of Humanitarian OpenStreetMap Team |
 | osmfr-occitan | OpenStreetMap (Occitan Style) | osmbasedmap |  | Tiles © OpenStreetMap France, data © OpenStreetMap contributors, ODbL |
-
 
 
 

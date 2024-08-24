@@ -8,12 +8,9 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [bicycle_library](../Layers/bicycle_library.md)
 
-
 Available languages:
-
 
  - en
  - nl
@@ -36,7 +33,6 @@ Available languages:
  - eu
  - pt
  - zh_Hans
-
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

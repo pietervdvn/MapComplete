@@ -8,19 +8,15 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [waste_basket](../Layers/waste_basket.md)
  - [waste_basket_assen (defined in this theme)](#waste_basket_assen)
  - [recycling](../Layers/recycling.md)
  - [recycling_assen (defined in this theme)](#recycling_assen)
  - [waste_disposal](../Layers/waste_disposal.md)
 
-
 Available languages:
 
-
  - nl
-
 
 # Table of contents
 
@@ -43,15 +39,7 @@ Available languages:
 These layers can not be reused in different themes.
 # waste_basket_assen
 
-
-
-
 Laag op basis van externe data
-
-
-
-
-
 
  - This layer is shown at zoomlevel **0** and higher
  - <img src='../warning.svg' height='1rem'/>
@@ -60,8 +48,6 @@ This layer is loaded from an external source, namely
 
 `https://opendata.arcgis.com/datasets/5b6953ac5a9d4616a7dc75ab0beeac2f_0.geojson`
 
-
-
 No themes use this layer
 
 ## Basic tags for this layer
@@ -72,43 +58,26 @@ Elements must match the expression **OBJECTID~.+**
 
 ## Supported attributes
 
-
-
 ### all_tags
 Shows a table with all the tags of the feature
 _This tagrendering has no question and is thus read-only_
 *{all_tags()}*
-
-
-
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
 
-
 This tagrendering has labels 
 `added_by_default`
 # recycling_assen
 
-
-
-
 Laag op basis van externe data
-
-
-
-
-
 
  - This layer is shown at zoomlevel **0** and higher
  - <img src='../warning.svg' height='1rem'/>
@@ -117,8 +86,6 @@ This layer is loaded from an external source, namely
 
 `https://opendata.arcgis.com/datasets/edb893998e27461b8ed82aad9854d27d_0.geojson`
 
-
-
 No themes use this layer
 
 ## Basic tags for this layer
@@ -129,29 +96,20 @@ Elements must match the expression **OBJECTID~.+**
 
 ## Supported attributes
 
-
-
 ### all_tags
 Shows a table with all the tags of the feature
 _This tagrendering has no question and is thus read-only_
 *{all_tags()}*
-
-
-
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

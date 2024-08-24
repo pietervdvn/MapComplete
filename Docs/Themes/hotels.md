@@ -8,13 +8,10 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [tourism_accomodation](../Layers/tourism_accomodation.md)
  - [love_hotel](../Layers/love_hotel.md)
 
-
 Available languages:
-
 
  - en
  - de
@@ -30,7 +27,6 @@ Available languages:
  - pl
  - zh_Hant
  - it
-
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

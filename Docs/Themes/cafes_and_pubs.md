@@ -8,14 +8,11 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [cafe_pub](../Layers/cafe_pub.md)
  - [outdoor_seating](../Layers/outdoor_seating.md)
  - [food_courts](../Layers/food_courts.md)
 
-
 Available languages:
-
 
  - en
  - nl
@@ -35,7 +32,6 @@ Available languages:
  - eu
  - pl
  - zh_Hans
-
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

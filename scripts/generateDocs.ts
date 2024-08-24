@@ -231,7 +231,7 @@ export class GenerateDocs extends Script {
             md = TableOfContents.insertTocIntoMd(md)
         }
 
-        md.replace(/\n\n\n+/g, "\n\n")
+        md = md.replace(/\n\n\n+/g, "\n\n")
 
         if (!md.endsWith("\n")) {
             md += "\n"

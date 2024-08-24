@@ -2,19 +2,9 @@
 
 # bike_parking
 
-
-
-
 A layer showing where you can park your bike
 
-
-
-
-
-
  - This layer is shown at zoomlevel **17** and higher
-
-
 
 ## Table of contents
 
@@ -45,16 +35,12 @@ A layer showing where you can park your bike
 
 ## Themes using this layer
 
-
-
  - [bicycle_parkings](https://mapcomplete.org/bicycle_parkings)
  - [cyclofix](https://mapcomplete.org/cyclofix)
  - [personal](https://mapcomplete.org/personal)
  - [stations](https://mapcomplete.org/stations)
  - [transit](https://mapcomplete.org/transit)
  - [velopark](https://mapcomplete.org/velopark)
-
-
 
 ## Basic tags for this layer
 
@@ -84,22 +70,15 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/capacity:cargo_bike#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/capacity%3Acargo_bike/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [capacity:cargo_bike](https://wiki.openstreetmap.org/wiki/Key:capacity:cargo_bike) | [nat](../SpecialInputElements.md#nat) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/maxstay#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/maxstay/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [maxstay](https://wiki.openstreetmap.org/wiki/Key:maxstay) | [pnat](../SpecialInputElements.md#pnat) |  |
 
-
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
 
-
-
-
 ### Bicycle parking type
 
 The question is `What is the type of this bicycle parking?`
 *This is a bicycle parking of the type: {bicycle_parking}* is shown if `bicycle_parking` is set
-
 
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/bike_parking/staple.svg' style='width: 3rem; height: 3rem'> *Stands* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_parking' target='_blank'>bicycle_parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dstands' target='_blank'>stands</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/bike_parking/wall_loops.svg' style='width: 3rem; height: 3rem'> *Wheelbenders / rack* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_parking' target='_blank'>bicycle_parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dwall_loops' target='_blank'>wall_loops</a>
@@ -111,73 +90,43 @@ The question is `What is the type of this bicycle parking?`
  -  *An area on the floor which is marked for bicycle parking* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_parking' target='_blank'>bicycle_parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dfloor' target='_blank'>floor</a>
  -  *A locker - the bicycles are enclosed completely individually or with a few bicycles together. The locker is too small to fit a person standing..* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_parking' target='_blank'>bicycle_parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dlockers' target='_blank'>lockers</a>
 
-
-
-
-
 ### Underground?
 
 The question is `What is the relative location of this bicycle parking?`
-
-
 
  -  *Underground parking* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground' target='_blank'>underground</a>
  -  *Surface level parking* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dsurface' target='_blank'>surface</a>
  -  *Rooftop parking* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Drooftop' target='_blank'>rooftop</a>
  -  *Surface level parking* is shown if with location=. _This option cannot be chosen as answer_
 
-
-
-
-
 ### Is covered?
 
 The question is `Is this parking covered? Also select "covered" for indoor parkings.`
 
-
-
  -  *This parking is covered (it has a roof)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:covered' target='_blank'>covered</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:covered%3Dyes' target='_blank'>yes</a>
  -  *This parking is not covered* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:covered' target='_blank'>covered</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:covered%3Dno' target='_blank'>no</a>
-
-
-
-
 
 ### Capacity
 
 The question is `How many bicycles fit in this bicycle parking?`
 *Place for {capacity} bikes* is shown if `capacity` is set
 
-
-
-
 ### Access
 
 The question is `Who can use this bicycle parking?`
 *{access}* is shown if `access` is set
-
 
  -  *Publicly accessible* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>
  -  *Access is primarily for visitors to a business* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers' target='_blank'>customers</a>
  -  *Access is limited to members of a school, company or organisation* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dmembers' target='_blank'>members</a>
  -  *Access is limited to members of a school, company or organisation* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate' target='_blank'>private</a>
 
-
-
-
-
 ### fee
 
 The question is `Are these bicycle parkings free to use?`
 
-
-
  -  *One has to <b>pay</b> to use this bicycle parking* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>
  -  *Free to use* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno' target='_blank'>no</a>
-
-
-
-
 
 ### charge
 
@@ -186,125 +135,81 @@ The question is `How much does it cost to park your bike here?`
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>
 
-
 ### opening_hours_24_7_default
 
 The question is `What are the opening hours of {title()}?`
 *<h3>Opening hours</h3>{opening_hours_table(opening_hours)}* is shown if `opening_hours` is set
 
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/open24_7.svg' style='width: 3rem; height: 3rem'> *24/7 opened (including holidays)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
  -  *Marked as closed for an unspecified time* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>. _This option cannot be chosen as answer_
-
-
-
-
 
 ### operator
 
 The question is `Who maintains this bicycle parking?`
 *This bicycle parking is maintained by {operator}* is shown if `operator` is set
 
-
-
-
 ### operator_phone
 
 The question is `What is the phone number of the operator of this bicycle parking?`
 *<a href='tel:{operator:phone}'>{operator:phone}</a>* is shown if `operator:phone` is set
 
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/phone.svg' style='width: 3rem; height: 3rem'> *<a href='tel:{phone}'>{phone}</a>* is shown if with phone~.+. _This option cannot be chosen as answer_
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/phone.svg' style='width: 3rem; height: 3rem'> *<a href='tel:{contact:phone}'>{contact:phone}</a>* is shown if with contact:phone~.+. _This option cannot be chosen as answer_
-
-
-
-
 
 ### operator_website
 
 The question is `What is the website number of the operator of this bicycle parking?`
 *<a href='{operator:website}'>{operator:website}</a>* is shown if `operator:website` is set
 
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/icons/website.svg' style='width: 3rem; height: 3rem'> *<a href='{website}'>{website}</a>* is shown if with website~.+. _This option cannot be chosen as answer_
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/icons/website.svg' style='width: 3rem; height: 3rem'> *<a href='{contact:website}'>{contact:website}</a>* is shown if with contact:website~.+. _This option cannot be chosen as answer_
-
-
-
-
 
 ### operator_email
 
 The question is `What is the email address of the operator of this bicycle parking?`
 *<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>* is shown if `operator:email` is set
 
-
-
-
 ### Cargo bike spaces?
 
 The question is `Does this bicycle parking have spots for cargo bikes?`
 
-
-
  -  *This parking has room for cargo bikes* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:cargo_bike' target='_blank'>cargo_bike</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cargo_bike%3Dyes' target='_blank'>yes</a>
  -  *This parking has designated (official) spots for cargo bikes.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:cargo_bike' target='_blank'>cargo_bike</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cargo_bike%3Ddesignated' target='_blank'>designated</a>
  -  *You're not allowed to park cargo bikes or there are no places provided for cargo bikes* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:cargo_bike' target='_blank'>cargo_bike</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cargo_bike%3Dno' target='_blank'>no</a>
-
-
-
-
 
 ### Cargo bike capacity?
 
 The question is `How many cargo bicycles fit in this bicycle parking?`
 *This parking fits {capacity:cargo_bike} cargo bikes* is shown if `capacity:cargo_bike` is set
 
-
  -  *There are no dedicated spaces for cargo bikes here or parking cargo bikes here is not allowed* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:cargo_bike' target='_blank'>cargo_bike</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cargo_bike%3Dno' target='_blank'>no</a>
 
-
 This tagrendering is only visible in the popup if the following condition is met: capacity:cargo_bike~.+ | cargo_bike~^(designated|yes)$
-
 
 ### maxstay
 
 The question is `What is the maximum allowed parking duration?`
 *A bike can be parked here for at most {canonical(maxstay)}* is shown if `maxstay` is set
 
-
-
-
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
-
-
-
 
 ### move-button
 
 _This tagrendering has no question and is thus read-only_
 *{move_button()}*
 
-
-
-
 ### delete-button
 
 _This tagrendering has no question and is thus read-only_
 *{delete_button()}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

@@ -8,18 +8,14 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [lighthouse](../Layers/lighthouse.md)
 
-
 Available languages:
-
 
  - en
  - de
  - da
  - it
-
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

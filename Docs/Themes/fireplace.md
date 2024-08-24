@@ -8,18 +8,14 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [firepit](../Layers/firepit.md)
  - [bbq](../Layers/bbq.md)
 
-
 Available languages:
-
 
  - en
  - de
  - es
-
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

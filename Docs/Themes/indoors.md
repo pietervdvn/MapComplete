@@ -8,16 +8,13 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [indoors](../Layers/indoors.md)
  - [walls_and_buildings](../Layers/walls_and_buildings.md)
  - [pedestrian_path](../Layers/pedestrian_path.md)
  - [elevator](../Layers/elevator.md)
  - [entrance](../Layers/entrance.md)
 
-
 Available languages:
-
 
  - en
  - de
@@ -33,7 +30,6 @@ Available languages:
  - pl
  - zh_Hant
  - it
-
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

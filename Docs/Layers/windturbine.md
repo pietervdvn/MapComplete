@@ -2,19 +2,9 @@
 
 # windturbine
 
-
-
-
 Modern windmills generating electricity
 
-
-
-
-
-
  - This layer is shown at zoomlevel **10** and higher
-
-
 
 ## Table of contents
 
@@ -33,12 +23,8 @@ Modern windmills generating electricity
 
 ## Themes using this layer
 
-
-
  - [openwindpowermap](https://mapcomplete.org/openwindpowermap)
  - [personal](https://mapcomplete.org/personal)
-
-
 
 ## Basic tags for this layer
 
@@ -59,78 +45,50 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/start_date#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/start_date/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [start_date](https://wiki.openstreetmap.org/wiki/Key:start_date) | [date](../SpecialInputElements.md#date) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/fixme#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/fixme/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [fixme](https://wiki.openstreetmap.org/wiki/Key:fixme) | [text](../SpecialInputElements.md#text) |  |
 
-
-
-
 ### turbine-output
 
 The question is `What is the power output of this wind turbine? (e.g. 2.3 MW)`
 *The power output of this wind turbine is {generator:output:electricity}.* is shown if `generator:output:electricity` is set
-
-
-
 
 ### turbine-operator
 
 The question is `Who operates this wind turbine?`
 *This wind turbine is operated by {operator}.* is shown if `operator` is set
 
-
-
-
 ### turbine-height
 
 The question is `What is the total height of this wind turbine (including rotor radius), in metres?`
 *The total height (including rotor radius) of this wind turbine is {height} metres.* is shown if `height` is set
-
-
-
 
 ### turbine-diameter
 
 The question is `What is the rotor diameter of this wind turbine, in metres?`
 *The rotor diameter of this wind turbine is {rotor:diameter} metres.* is shown if `rotor:diameter` is set
 
-
-
-
 ### turbine-start-date
 
 The question is `When did this wind turbine go into operation?`
 *This wind turbine went into operation on/in {start_date}.* is shown if `start_date` is set
-
-
-
 
 ### windturbine-fixme
 
 The question is `Is there something wrong with how this is mapped, that you weren't able to fix here? (leave a note to OpenStreetMap experts)`
 *Extra information for OpenStreetMap experts: {fixme}* is shown if `fixme` is set
 
-
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
-
-
-
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

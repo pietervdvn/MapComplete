@@ -8,12 +8,9 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [tree_node](../Layers/tree_node.md)
 
-
 Available languages:
-
 
  - en
  - nl
@@ -35,7 +32,6 @@ Available languages:
  - pt_BR
  - eu
  - pt
-
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

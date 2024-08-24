@@ -3,7 +3,6 @@
 # Hotkeys
 MapComplete supports the following keys:
 
-
 | Key combination | Action |
 -----|----- |
 | `1` | Select the POI which is closest to the map center (crosshair). Only when in keyboard navigation is used |
@@ -27,7 +26,6 @@ MapComplete supports the following keys:
 | `shift+O` | Set the background layer to on OpenStreetMap-based map (or disable the background raster layer) |
 | `shift+P` | Set the background to aerial or satellite imagery. Toggles between the two best, available layers |
 | `shift+T` | Toggle translation mode on or off |
-
 
 
 

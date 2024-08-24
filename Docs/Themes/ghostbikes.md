@@ -8,12 +8,9 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [ghost_bike](../Layers/ghost_bike.md)
 
-
 Available languages:
-
 
  - en
  - nl
@@ -36,7 +33,6 @@ Available languages:
  - ca
  - cs
  - pt
-
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

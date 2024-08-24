@@ -8,12 +8,9 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [windturbine](../Layers/windturbine.md)
 
-
 Available languages:
-
 
  - en
  - fr
@@ -31,7 +28,6 @@ Available languages:
  - cs
  - pl
  - da
-
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.
