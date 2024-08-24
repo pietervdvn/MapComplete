@@ -7,6 +7,9 @@ import { QueryParameters } from "../Web/QueryParameters"
 import Constants from "../../Models/Constants"
 import { Utils } from "../../Utils"
 import { Query } from "pg"
+import { eliCategory } from "../../Models/RasterLayerProperties"
+import { AvailableRasterLayers } from "../../Models/RasterLayers"
+import MarkdownUtils from "../../Utils/MarkdownUtils"
 
 class FeatureSwitchUtils {
     /** Helper function to initialize feature switches
@@ -78,7 +81,7 @@ export default class FeatureSwitchState extends OsmConnectionFeatureSwitches {
 
         const legacyRewrite: Record<string, string | string[]> = {
             "fs-userbadge": "fs-enable-login",
-            "fs-layers": ["fs-filter", "fs-background"],
+            "fs-layers": ["fs-filter", "fs-background"]
         }
 
         for (const key in legacyRewrite) {
@@ -248,7 +251,18 @@ export default class FeatureSwitchState extends OsmConnectionFeatureSwitches {
         this.backgroundLayerId = QueryParameters.GetQueryParameter(
             "background",
             layoutToUse?.defaultBackgroundId,
-            "The id of the background layer to start with"
+            ["When set, load this raster layer (or a layer of this category) as background layer instead of using the default background. This is as if the user opened the background selection menu and selected the layer with the given id or category.",
+                "Most raster layers are based on the [editor layer index](https://github.com/osmlab/editor-layer-index)",
+
+                "#### Selecting a category",
+                "If one of the following values is used, this parameter will be interpreted as a _category_ instead of the id of a specific layer. The best layer of this category will be used. Supported categories are those from the editor layer index and are:",
+                eliCategory.map(c => "- " + c).join("\n"),
+                "#### Selecting a specific layer",
+                "One can use the [ID of an ELI-layer](./ELI-overview.md) or use one of the global, builtin layers:",
+                MarkdownUtils.list(AvailableRasterLayers.globalLayers.map(global =>
+                    global.properties.id+(global.properties.best ? " ⭐" : "")
+                ))
+            ].join("\n\n")
         )
     }
 }
