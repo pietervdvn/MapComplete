@@ -5,13 +5,9 @@
  Special tag renderings 
 ========================
 
-
-
 In a tagrendering, some special values are substituted by an advanced UI-element. This allows advanced features and visualizations to be reused by custom themes or even to query third-party API's.
 
 General usage is `{func_name()}`, `{func_name(arg, someotherarg)}` or `{func_name(args):cssClasses}`. Note that you _do not_ need to use quotes around your arguments, the comma is enough to separate them. This also implies you cannot use a comma in your args
-
-
 
 #### Table of contents
 
@@ -122,10 +118,7 @@ General usage is `{func_name()}`, `{func_name(arg, someotherarg)}` or `{func_nam
 
 #### Using expanded syntax 
 
-
-
 Instead of using `{"render": {"en": "{some_special_visualisation(some_arg, some other really long message, more args)} , "nl": "{some_special_visualisation(some_arg, een boodschap in een andere taal, more args)}}`, one can also write
-
 
 ```
 {
@@ -150,22 +143,16 @@ Instead of using `{"render": {"en": "{some_special_visualisation(some_arg, some 
 }
 ```
 
-
 In other words: use `{ "before": ..., "after": ..., "special": {"type": ..., "argname": ...argvalue...}`. The args are in the `special` block; an argvalue can be a string, a translation or another value. (Refer to class `RewriteSpecial` in case of problems)
 
 ### questions
 
 The special element which shows the questions which are unkown. Added by default if not yet there
 
-
-
 | name | default | description |
 -----|-----|----- |
 | labels | _undefined_ | One or more ';'-separated labels. If these are given, only questions with these labels will be given. Use `unlabeled` for all questions that don't have an explicit label. If none given, all questions will be shown |
 | blacklisted-labels | _undefined_ | One or more ';'-separated labels of questions which should _not_ be included |
-
-
-
 
 #### Example usage of questions
 
@@ -175,8 +162,6 @@ The special element which shows the questions which are unkown. Added by default
 
 An element which allows to add a new point on the 'last_click'-location. Only makes sense in the layer `last_click`
 
-
-
 #### Example usage of add_new_point
 
 <code>`{add_new_point()}`</code>
@@ -184,8 +169,6 @@ An element which allows to add a new point on the 'last_click'-location. Only ma
 ### language_picker
 
 A component to set the language of the user interface
-
-
 
 #### Example usage of language_picker
 
@@ -195,8 +178,6 @@ A component to set the language of the user interface
 
 Shows a button where the user can log out
 
-
-
 #### Example usage of logout
 
 <code>`{logout()}`</code>
@@ -205,17 +186,12 @@ Shows a button where the user can log out
 
 Create a histogram for a list of given values, read from the properties.
 
-
-
 | name | default | description |
 -----|-----|----- |
 | key | _undefined_ | The key to be read and to generate a histogram from |
 | title | _empty string_ | This text will be placed above the texts (in the first column of the visulasition) |
 | countHeader | _empty string_ | This text will be placed above the bars |
 | colors* | _undefined_ | (Matches all resting arguments - optional) Matches a regex onto a color value, e.g. `3[a-zA-Z+-]*:#33cc33` |
-
-
-
 
 #### Example usage of histogram
 
@@ -225,15 +201,10 @@ Create a histogram for a list of given values, read from the properties.
 
 Shows a tagRendering from a different object as if this was the object itself
 
-
-
 | name | default | description |
 -----|-----|----- |
 | featureId | _undefined_ | The key of the attribute which contains the id of the feature from which to use the tags |
 | tagRenderingId | _undefined_ | The layer-id and tagRenderingId to render. Can be multiple value if ';'-separated (in which case every value must also contain the layerId, e.g. `layerId.tagRendering0; layerId.tagRendering1`). Note: this can cause layer injection |
-
-
-
 
 #### Example usage of steal
 
@@ -243,15 +214,10 @@ Shows a tagRendering from a different object as if this was the object itself
 
 A small map showing the selected feature.
 
-
-
 | name | default | description |
 -----|-----|----- |
 | zoomlevel | 18 | The (maximum) zoomlevel: the target zoomlevel after fitting the entire feature. The minimap will fit the entire feature, then zoom out to this zoom level. The higher, the more zoomed in with 1 being the entire world and 19 being really close |
 | idKey | id | (Matches all resting arguments) This argument should be the key of a property of the feature. The corresponding value is interpreted as either the id or the a list of ID's. The features with these ID's will be shown on this minimap. (Note: if the key is 'id', list interpration is disabled) |
-
-
-
 
 #### Example usage of minimap
 
@@ -261,8 +227,6 @@ A small map showing the selected feature.
 
 Adds a button which allows to split a way
 
-
-
 #### Example usage of split_button
 
 <code>`{split_button()}`</code>
@@ -270,8 +234,6 @@ Adds a button which allows to split a way
 ### move_button
 
 Adds a button which allows to move the object to another location. The config will be read from the layer config
-
-
 
 #### Example usage of move_button
 
@@ -281,8 +243,6 @@ Adds a button which allows to move the object to another location. The config wi
 
 Adds a button which allows to delete the object at this location. The config will be read from the layer config
 
-
-
 #### Example usage of delete_button
 
 <code>`{delete_button()}`</code>
@@ -291,15 +251,10 @@ Adds a button which allows to delete the object at this location. The config wil
 
 Creates a link that (attempts to) open the native 'share'-screen
 
-
-
 | name | default | description |
 -----|-----|----- |
 | url | _undefined_ | The url to share (default: current URL) |
 | text | _undefined_ | The text to show on the button. If none is given, will act as a titleIcon |
-
-
-
 
 #### Example usage of share_link
 
@@ -309,8 +264,6 @@ Creates a link that (attempts to) open the native 'share'-screen
 
 Exports the selected feature as GPX-file
 
-
-
 #### Example usage of export_as_gpx
 
 <code>`{export_as_gpx()}`</code>
@@ -318,8 +271,6 @@ Exports the selected feature as GPX-file
 ### upload_to_osm
 
 Uploads the GPS-history as GPX to OpenStreetMap.org; clears the history afterwards. The actual feature is ignored.
-
-
 
 #### Example usage of upload_to_osm
 
@@ -329,8 +280,6 @@ Uploads the GPS-history as GPX to OpenStreetMap.org; clears the history afterwar
 
 A button to apply the tagging of this object onto a list of other features. This is an advanced feature for which you'll need calculatedTags
 
-
-
 | name | default | description |
 -----|-----|----- |
 | feature_ids | _undefined_ | A JSON-serialized list of IDs of features to apply the tagging on |
@@ -338,9 +287,6 @@ A button to apply the tagging of this object onto a list of other features. This
 | text | _undefined_ | The text to show on the button |
 | autoapply | _undefined_ | A boolean indicating wether this tagging should be applied automatically if the relevant tags on this object are changed. A visual element indicating the multi_apply is still shown |
 | overwrite | _undefined_ | If set to 'true', the tags on the other objects will always be overwritten. The default behaviour will be to only change the tags on other objects if they are either undefined or had the same value before the change |
-
-
-
 
 #### Example usage of multi_apply
 
@@ -350,14 +296,9 @@ A button to apply the tagging of this object onto a list of other features. This
 
 A textfield to add a comment to a node (with the option to close the note).
 
-
-
 | name | default | description |
 -----|-----|----- |
 | Id-key | id | The property name where the ID of the note to close can be found |
-
-
-
 
 #### Example usage of add_note_comment
 
@@ -367,8 +308,6 @@ A textfield to add a comment to a node (with the option to close the note).
 
 Creates a new map note on the given location. This options is placed in the 'last_click'-popup automatically if the 'notes'-layer is enabled
 
-
-
 #### Example usage of open_note
 
 <code>`{open_note()}`</code>
@@ -376,8 +315,6 @@ Creates a new map note on the given location. This options is placed in the 'las
 ### close_note
 
 Button to close a note. A predefined text can be defined to close the note with. If the note is already closed, will show a small text.
-
-
 
 | name | default | description |
 -----|-----|----- |
@@ -388,9 +325,6 @@ Button to close a note. A predefined text can be defined to close the note with.
 | minZoom | _undefined_ | If set, only show the closenote button if zoomed in enough |
 | zoomButton | _undefined_ | Text to show if not zoomed in enough |
 
-
-
-
 #### Example usage of close_note
 
 <code>`{close_note(,checkmark.svg,id,,,)}`</code>
@@ -399,14 +333,9 @@ Button to close a note. A predefined text can be defined to close the note with.
 
 Sends the images linked to the current object to plantnet.org and asks it what plant species is shown on it. The user can then select the correct species; the corresponding wikidata-identifier will then be added to the object (together with `source:species:wikidata=plantnet.org AI`). 
 
-
-
 | name | default | description |
 -----|-----|----- |
 | image_key | image,mapillary,image,wikidata,wikimedia_commons,image,image | The keys given to the images, e.g. if <span class='literal-code'>image</span> is given, the first picture URL will be added as <span class='literal-code'>image</span>, the second as <span class='literal-code'>image:0</span>, the third as <span class='literal-code'>image:1</span>, etc... Multiple values are allowed if ';'-separated  |
-
-
-
 
 #### Example usage of plantnet_detection
 
@@ -429,8 +358,6 @@ Remark that the syntax is slightly different then expected; it uses '$' to note 
 Note that these values can be prepare with javascript in the theme by using a [calculatedTag](calculatedTags.md#calculating-tags-with-javascript)
  
 
-
-
 | name | default | description |
 -----|-----|----- |
 | tags_to_apply | _undefined_ | A specification of the tags to apply. This is either hardcoded in the layer or the `$name` of a property containing the tags to apply. If redirected and the value of the linked property starts with `{`, the other property will be interpreted as a json object |
@@ -439,9 +366,6 @@ Note that these values can be prepare with javascript in the theme by using a [c
 | id_of_object_to_apply_this_one | _undefined_ | If specified, applies the the tags onto _another_ object. The id will be read from properties[id_of_object_to_apply_this_one] of the selected object. The tags are still calculated based on the tags of the _selected_ element |
 | maproulette_id | _undefined_ | If specified, this maproulette-challenge will be closed when the tags are applied. This should be the ID of the task, _not_ the task_id. |
 
-
-
-
 #### Example usage of tag_apply
 
 <code>`{tag_apply(survey_date=$_now:date, Surveyed today!)}`, `{tag_apply(addr:street=$addr:street, Apply the address, apply_icon.svg, _closest_osm_id)</code>
@@ -449,7 +373,6 @@ Note that these values can be prepare with javascript in the theme by using a [c
 ### import_button
 
 This button will copy the point from an external dataset into OpenStreetMap
-
 
 Note that the contributor must zoom to at least zoomlevel 18 to be able to use this functionality.
     It is only functional in official themes, but can be tested in unoffical themes.
@@ -492,9 +415,6 @@ There are also some technicalities in your theme to keep in mind:
 The import button can be tested in an unofficial theme by adding `test=true` or `backend=osm-test` as [URL-paramter](URL_Parameters.md).
 The import button will show up then. If in testmode, you can read the changeset-XML directly in the web console.
 In the case that MapComplete is pointed to the testing grounds, the edit will be made on https://master.apis.dev.openstreetmap.org
-
-
-
 
 | name | default | description |
 -----|-----|----- |
@@ -507,9 +427,6 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
 | note_id | _undefined_ | If given, this key will be read. The corresponding note on OSM will be closed, stating 'imported' |
 | maproulette_id | _undefined_ | The property name of the maproulette_id - this is probably `mr_taskId`. If given, the maproulette challenge will be marked as fixed. Only use this if part of a maproulette-layer. |
 
-
-
-
 #### Example usage of import_button
 
 <code>`{import_button(,,Import this data into OpenStreetMap,./assets/svg/addSmall.svg,,5,,)}`</code>
@@ -517,7 +434,6 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
 ### import_way_button
 
 This button will copy the data from an external dataset into OpenStreetMap, copying the geometry and adding it as a 'line'
-
 
 Note that the contributor must zoom to at least zoomlevel 18 to be able to use this functionality.
     It is only functional in official themes, but can be tested in unoffical themes.
@@ -560,9 +476,6 @@ There are also some technicalities in your theme to keep in mind:
 The import button can be tested in an unofficial theme by adding `test=true` or `backend=osm-test` as [URL-paramter](URL_Parameters.md).
 The import button will show up then. If in testmode, you can read the changeset-XML directly in the web console.
 In the case that MapComplete is pointed to the testing grounds, the edit will be made on https://master.apis.dev.openstreetmap.org
-
-
-
 
 | name | default | description |
 -----|-----|----- |
@@ -577,9 +490,6 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
 | snap_onto_layers | _undefined_ | If no existing nearby point exists, but a line of a specified layer is closeby, snap to this layer instead |
 | snap_to_layer_max_distance | 0.1 | Distance to distort the geometry to snap to this layer |
 
-
-
-
 #### Example usage of import_way_button
 
 <code>`{import_way_button(,,Import this data into OpenStreetMap,./assets/svg/addSmall.svg,,0.05,,0.05,,0.1)}`</code>
@@ -587,7 +497,6 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
 ### conflate_button
 
 This button will modify the geometry of an existing OSM way to match the specified geometry. This can conflate OSM-ways with LineStrings and Polygons (only simple polygons with one single ring). An attempt is made to move points with special values to a decent new location (e.g. entrances)
-
 
 Note that the contributor must zoom to at least zoomlevel 18 to be able to use this functionality.
     It is only functional in official themes, but can be tested in unoffical themes.
@@ -631,9 +540,6 @@ The import button can be tested in an unofficial theme by adding `test=true` or 
 The import button will show up then. If in testmode, you can read the changeset-XML directly in the web console.
 In the case that MapComplete is pointed to the testing grounds, the edit will be made on https://master.apis.dev.openstreetmap.org
 
-
-
-
 | name | default | description |
 -----|-----|----- |
 | targetLayer | _undefined_ | The id of the layer where this point should end up. This is not very strict, it will simply result in checking that this layer is shown preventing possible duplicate elements |
@@ -641,9 +547,6 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
 | text | Import this data into OpenStreetMap | The text to show on the button |
 | icon | ./assets/svg/addSmall.svg | A nice icon to show in the button |
 | way_to_conflate | _undefined_ | The key, of which the corresponding value is the id of the OSM-way that must be conflated; typically a calculatedTag |
-
-
-
 
 #### Example usage of conflate_button
 
@@ -653,15 +556,10 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
 
 A component showing nearby images loaded from various online services such as Mapillary. In edit mode and when used on a feature, the user can select an image to add to the feature
 
-
-
 | name | default | description |
 -----|-----|----- |
 | mode | closed | Either `open` or `closed`. If `open`, then the image carousel will always be shown |
 | readonly | _undefined_ | If 'readonly', will not show the 'link'-button |
-
-
-
 
 #### Example usage of nearby_images
 
@@ -671,14 +569,9 @@ A component showing nearby images loaded from various online services such as Ma
 
 A box showing the corresponding wikipedia article(s) - based on the **wikidata** tag.
 
-
-
 | name | default | description |
 -----|-----|----- |
 | keyToShowWikipediaFor | wikidata;wikipedia | Use the wikidata entry from this key to show the wikipedia article for. Multiple keys can be given (separated by ';'), in which case the first matching value is used |
-
-
-
 
 #### Example usage of wikipedia
 
@@ -688,14 +581,9 @@ A box showing the corresponding wikipedia article(s) - based on the **wikidata**
 
 Shows the label of the corresponding wikidata-item
 
-
-
 | name | default | description |
 -----|-----|----- |
 | keyToShowWikidataFor | wikidata | Use the wikidata entry from this key to show the label |
-
-
-
 
 #### Example usage of wikidata_label
 
@@ -705,14 +593,9 @@ Shows the label of the corresponding wikidata-item
 
 Adds a button to open mapillary on the specified location
 
-
-
 | name | default | description |
 -----|-----|----- |
 | zoom | 18 | The startzoom of mapillary |
-
-
-
 
 #### Example usage of mapillary_link
 
@@ -721,8 +604,6 @@ Adds a button to open mapillary on the specified location
 ### language_chooser
 
 The language element allows to show and pick all known (modern) languages. The key can be set
-
-
 
 | name | default | description |
 -----|-----|----- |
@@ -733,9 +614,6 @@ The language element allows to show and pick all known (modern) languages. The k
 | render_all | {list()} | The full rendering. Use `{list}` to show where the list of languages must come. Optional if mode=single |
 | no_known_languages | _undefined_ | The text that is shown if no languages are known for this key. If this text is omitted, the languages will be prompted instead |
 
-
-
-
 #### Example usage of language_chooser
 
 <code>`{language_chooser(,,{language()},,{list()},)}`</code>
@@ -743,8 +621,6 @@ The language element allows to show and pick all known (modern) languages. The k
 ### all_tags
 
 Prints all key-value pairs of the object - used for debugging
-
-
 
 #### Example usage of all_tags
 
@@ -754,14 +630,9 @@ Prints all key-value pairs of the object - used for debugging
 
 Creates an image carousel for the given sources. An attempt will be made to guess what source is used. Supported: Wikidata identifiers, Wikipedia pages, Wikimedia categories, IMGUR (with attribution, direct links)
 
-
-
 | name | default | description |
 -----|-----|----- |
 | image_key | image,mapillary,image,wikidata,wikimedia_commons,image,image | The keys given to the images, e.g. if <span class='literal-code'>image</span> is given, the first picture URL will be added as <span class='literal-code'>image</span>, the second as <span class='literal-code'>image:0</span>, the third as <span class='literal-code'>image:1</span>, etc... Multiple values are allowed if ';'-separated  |
-
-
-
 
 #### Example usage of image_carousel
 
@@ -771,15 +642,10 @@ Creates an image carousel for the given sources. An attempt will be made to gues
 
 Creates a button where a user can upload an image to IMGUR
 
-
-
 | name | default | description |
 -----|-----|----- |
 | image-key | _undefined_ | Image tag to add the URL to (or image-tag:0, image-tag:1 when multiple images are added) |
 | label | _undefined_ | The text to show on the button |
-
-
-
 
 #### Example usage of image_upload
 
@@ -789,15 +655,10 @@ Creates a button where a user can upload an image to IMGUR
 
 Shows stars which represent the average rating on mangrove.
 
-
-
 | name | default | description |
 -----|-----|----- |
 | subjectKey | name | The key to use to determine the subject. If the value is specified, the subject will be <b>tags[subjectKey]</b> and will use this to filter the reviews. |
 | fallback | _undefined_ | The identifier to use, if <i>tags[subjectKey]</i> as specified above is not available. This is effectively a fallback value |
-
-
-
 
 #### Example usage of rating
 
@@ -807,15 +668,10 @@ Shows stars which represent the average rating on mangrove.
 
 Invites the contributor to leave a review. Somewhat small UI-element until interacted
 
-
-
 | name | default | description |
 -----|-----|----- |
 | subjectKey | name | The key to use to determine the subject. If specified, the subject will be <b>tags[subjectKey]</b> |
 | fallback | _undefined_ | The identifier to use, if <i>tags[subjectKey]</i> as specified above is not available. This is effectively a fallback value |
-
-
-
 
 #### Example usage of create_review
 
@@ -825,15 +681,10 @@ Invites the contributor to leave a review. Somewhat small UI-element until inter
 
 Adds an overview of the mangrove-reviews of this object. Mangrove.Reviews needs - in order to identify the reviewed object - a coordinate and a name. By default, the name of the object is given, but this can be overwritten
 
-
-
 | name | default | description |
 -----|-----|----- |
 | subjectKey | name | The key to use to determine the subject. If specified, the subject will be <b>tags[subjectKey]</b> |
 | fallback | _undefined_ | The identifier to use, if <i>tags[subjectKey]</i> as specified above is not available. This is effectively a fallback value |
-
-
-
 
 #### Example usage of list_reviews
 
@@ -843,15 +694,10 @@ Adds an overview of the mangrove-reviews of this object. Mangrove.Reviews needs 
 
 A pragmatic combination of `create_review` and `list_reviews`
 
-
-
 | name | default | description |
 -----|-----|----- |
 | subjectKey | name | The key to use to determine the subject. If specified, the subject will be <b>tags[subjectKey]</b> |
 | fallback | _undefined_ | The identifier to use, if <i>tags[subjectKey]</i> as specified above is not available. This is effectively a fallback value |
-
-
-
 
 #### Example usage of reviews
 
@@ -861,14 +707,9 @@ A pragmatic combination of `create_review` and `list_reviews`
 
 Only makes sense in the usersettings. Allows to import a mangrove public key and to use this to make reviews
 
-
-
 | name | default | description |
 -----|-----|----- |
 | text | _undefined_ | The text that is shown on the button |
-
-
-
 
 #### Example usage of import_mangrove_key
 
@@ -878,16 +719,11 @@ Only makes sense in the usersettings. Allows to import a mangrove public key and
 
 Creates an opening-hours table. Usage: {opening_hours_table(opening_hours)} to create a table of the tag 'opening_hours'.
 
-
-
 | name | default | description |
 -----|-----|----- |
 | key | opening_hours | The tagkey from which the table is constructed. |
 | prefix | _empty string_ | Remove this string from the start of the value before parsing. __Note: use `&LPARENs` to indicate `(` if needed__ |
 | postfix | _empty string_ | Remove this string from the end of the value before parsing. __Note: use `&RPARENs` to indicate `)` if needed__ |
-
-
-
 
 #### Example usage of opening_hours_table
 
@@ -897,16 +733,11 @@ Creates an opening-hours table. Usage: {opening_hours_table(opening_hours)} to c
 
 A small element, showing if the POI is currently open and when the next change is
 
-
-
 | name | default | description |
 -----|-----|----- |
 | key | opening_hours | The tagkey from which the opening hours are read. |
 | prefix | _empty string_ | Remove this string from the start of the value before parsing. __Note: use `&LPARENs` to indicate `(` if needed__ |
 | postfix | _empty string_ | Remove this string from the end of the value before parsing. __Note: use `&RPARENs` to indicate `)` if needed__ |
-
-
-
 
 #### Example usage of opening_hours_state
 
@@ -916,14 +747,9 @@ A small element, showing if the POI is currently open and when the next change i
 
 Converts a short, canonical value into the long, translated text including the unit. This only works if a `unit` is defined for the corresponding value. The unit specification will be included in the text. 
 
-
-
 | name | default | description |
 -----|-----|----- |
 | key | _undefined_ | The key of the tag to give the canonical text for |
-
-
-
 
 #### Example usage of canonical
 
@@ -933,8 +759,6 @@ Converts a short, canonical value into the long, translated text including the u
 
 Exports the selected feature as GeoJson-file
 
-
-
 #### Example usage of export_as_geojson
 
 <code>`{export_as_geojson()}`</code>
@@ -942,8 +766,6 @@ Exports the selected feature as GeoJson-file
 ### open_in_iD
 
 Opens the current view in the iD-editor
-
-
 
 #### Example usage of open_in_iD
 
@@ -953,8 +775,6 @@ Opens the current view in the iD-editor
 
 Opens the current view in the JOSM-editor
 
-
-
 #### Example usage of open_in_josm
 
 <code>`{open_in_josm()}`</code>
@@ -962,8 +782,6 @@ Opens the current view in the JOSM-editor
 ### clear_location_history
 
 A button to remove the travelled track information from the device
-
-
 
 #### Example usage of clear_location_history
 
@@ -973,15 +791,10 @@ A button to remove the travelled track information from the device
 
 Visualises the comments for notes
 
-
-
 | name | default | description |
 -----|-----|----- |
 | commentsKey | comments | The property name of the comments, which should be stringified json |
 | start | 0 | Drop the first 'start' comments |
-
-
-
 
 #### Example usage of visualize_note_comments
 
@@ -991,14 +804,9 @@ Visualises the comments for notes
 
 Adds an image to a node
 
-
-
 | name | default | description |
 -----|-----|----- |
 | Id-key | id | The property name where the ID of the note to close can be found |
-
-
-
 
 #### Example usage of add_image_to_note
 
@@ -1007,8 +815,6 @@ Adds an image to a node
 ### title
 
 Shows the title of the popup. Useful for some cases, e.g. 'What is phone number of {title()}?'
-
-
 
 #### Example usage of title
 
@@ -1020,8 +826,6 @@ Fetches the metadata of MapRoulette campaign that this task is part of and shows
 
 This reads the property `mr_challengeId` to detect the parent campaign.
 
-
-
 #### Example usage of maproulette_task
 
 <code>`{maproulette_task()}`</code>
@@ -1029,8 +833,6 @@ This reads the property `mr_challengeId` to detect the parent campaign.
 ### maproulette_set_status
 
 Change the status of the given MapRoulette task
-
-
 
 | name | default | description |
 -----|-----|----- |
@@ -1040,9 +842,6 @@ Change the status of the given MapRoulette task
 | status | 1 | A statuscode to apply when the button is clicked. 1 = `close`, 2 = `false_positive`, 3 = `skip`, 4 = `deleted`, 5 = `already fixed` (on the map, e.g. for duplicates), 6 = `too hard` |
 | maproulette_id | mr_taskId | The property name containing the maproulette id |
 | ask_feedback | _empty string_ | If not an empty string, this will be used as question to ask some additional feedback. A text field will be added |
-
-
-
 
 #### Example usage of maproulette_set_status
 
@@ -1068,8 +867,6 @@ Change the status of the given MapRoulette task
 
 Show general statistics about the elements currently in view. Intended to use on the `current_view`-layer
 
-
-
 #### Example usage of statistics
 
 <code>`{statistics()}`</code>
@@ -1078,17 +875,12 @@ Show general statistics about the elements currently in view. Intended to use on
 
 Creates a `mailto`-link where some fields are already set and correctly escaped. The user will be promted to send the email
 
-
-
 | name | default | description |
 -----|-----|----- |
 | to | _undefined_ | Who to send the email to? |
 | subject | _undefined_ | The subject of the email |
 | body | _undefined_ | The text in the email |
 | button_text | _undefined_ | The text shown on the button in the UI |
-
-
-
 
 #### Example usage of send_email
 
@@ -1097,8 +889,6 @@ Creates a `mailto`-link where some fields are already set and correctly escaped.
 ### link
 
 Construct a link. By using the 'special' visualisation notation, translations should be easier
-
-
 
 | name | default | description |
 -----|-----|----- |
@@ -1109,9 +899,6 @@ Construct a link. By using the 'special' visualisation notation, translations sh
 | arialabel | _undefined_ | If set, this text will be used as aria-label |
 | icon | _undefined_ | If set, show this icon next to the link. You might want to combine this with `class: button` |
 
-
-
-
 #### Example usage of link
 
 <code>`{link(,,,,,)}`</code>
@@ -1120,16 +907,11 @@ Construct a link. By using the 'special' visualisation notation, translations sh
 
 Given an embedded tagRendering (read only) and a key, will read the keyname as a JSON-list. Every element of this list will be considered as tags and rendered with the tagRendering
 
-
-
 | name | default | description |
 -----|-----|----- |
 | key | _undefined_ | The property to read and to interpret as a list of properties |
 | tagrendering | _undefined_ | An entire tagRenderingConfig |
 | classes | _undefined_ | CSS-classes to apply on every individual item. Seperated by `space` |
-
-
-
 
 #### Example usage of multi
 
@@ -1151,14 +933,9 @@ Given an embedded tagRendering (read only) and a key, will read the keyname as a
 
 If the given key can be interpreted as a JSON, only show the key containing the current language (or 'en'). This specialRendering is meant to be used by MapComplete studio and is not useful in map themes
 
-
-
 | name | default | description |
 -----|-----|----- |
 | key | value | The attribute to interpret as json |
-
-
-
 
 #### Example usage of translated
 
@@ -1168,14 +945,9 @@ If the given key can be interpreted as a JSON, only show the key containing the 
 
 Converts a fediverse username or link into a clickable link
 
-
-
 | name | default | description |
 -----|-----|----- |
 | key | _undefined_ | The attribute-name containing the link |
-
-
-
 
 #### Example usage of fediverse_link
 
@@ -1185,14 +957,9 @@ Converts a fediverse username or link into a clickable link
 
 Show a literal text within braces
 
-
-
 | name | default | description |
 -----|-----|----- |
 | text | _undefined_ | The value to show |
-
-
-
 
 #### Example usage of braced
 
@@ -1202,14 +969,9 @@ Show a literal text within braces
 
 Shows a (json of) tags in a human-readable way + links to the wiki
 
-
-
 | name | default | description |
 -----|-----|----- |
 | key | value | The key to look for the tags |
-
-
-
 
 #### Example usage of tags
 
@@ -1219,14 +981,9 @@ Shows a (json of) tags in a human-readable way + links to the wiki
 
 Shows events that are happening based on a Giggity URL
 
-
-
 | name | default | description |
 -----|-----|----- |
 | giggityUrl | _undefined_ | The URL of the giggity-XML |
-
-
-
 
 #### Example usage of giggity
 
@@ -1236,8 +993,6 @@ Shows events that are happening based on a Giggity URL
 
 Shows the current tags of the GPS-representing object, used for debugging
 
-
-
 #### Example usage of gps_all_tags
 
 <code>`{gps_all_tags()}`</code>
@@ -1245,8 +1000,6 @@ Shows the current tags of the GPS-representing object, used for debugging
 ### favourite_status
 
 A button that allows a (logged in) contributor to mark a location as a favourite location
-
-
 
 #### Example usage of favourite_status
 
@@ -1256,8 +1009,6 @@ A button that allows a (logged in) contributor to mark a location as a favourite
 
 A small button that allows a (logged in) contributor to mark a location as a favourite location, sized to fit a title-icon
 
-
-
 #### Example usage of favourite_icon
 
 <code>`{favourite_icon()}`</code>
@@ -1265,8 +1016,6 @@ A small button that allows a (logged in) contributor to mark a location as a fav
 ### direction_indicator
 
 Gives a distance indicator and a compass pointing towards the location from your GPS-location. If clicked, centers the map on the object
-
-
 
 #### Example usage of direction_indicator
 
@@ -1276,8 +1025,6 @@ Gives a distance indicator and a compass pointing towards the location from your
 
 Generates a QR-code to share the selected object
 
-
-
 #### Example usage of qr_code
 
 <code>`{qr_code()}`</code>
@@ -1286,14 +1033,9 @@ Generates a QR-code to share the selected object
 
 Converts compass degrees (with 0° being north, 90° being east, ...) into a human readable, translated direction such as 'north', 'northeast'
 
-
-
 | name | default | description |
 -----|-----|----- |
 | key | _direction:centerpoint | The attribute containing the degrees |
-
-
-
 
 #### Example usage of direction_absolute
 
@@ -1303,16 +1045,11 @@ Converts compass degrees (with 0° being north, 90° being east, ...) into a hum
 
 Gives an interactive element which shows a tag comparison between the OSM-object and the upstream object. This allows to copy some or all tags into OSM
 
-
-
 | name | default | description |
 -----|-----|----- |
 | url | _undefined_ | The attribute containing the url where to fetch more data |
 | host | _undefined_ | The domain name(s) where data might be fetched from - this is needed to set the CSP. A domain must include 'https', e.g. 'https://example.com'. For multiple domains, separate them with ';'. If you don't know the possible domains, use '*'.  |
 | readonly | _undefined_ | If 'yes', will not show 'apply'-buttons |
-
-
-
 
 #### Example usage of compare_data
 
@@ -1322,8 +1059,6 @@ Gives an interactive element which shows a tag comparison between the OSM-object
 
 Show a login button
 
-
-
 #### Example usage of login_button
 
 <code>`{login_button()}`</code>
@@ -1331,8 +1066,6 @@ Show a login button
 ### linked_data_from_website
 
 Attempts to load (via a proxy) the specified website and parsed ld+json from there. Suitable data will be offered to import into OSM
-
-
 
 | name | default | description |
 -----|-----|----- |
@@ -1342,9 +1075,6 @@ Attempts to load (via a proxy) the specified website and parsed ld+json from the
 | mode | _undefined_ | If `display`, only show the data in tabular and readonly form, ignoring already existing tags. This is used to explicitly show all the tags. If unset or anything else, allow to apply/import on OSM |
 | collapsed | yes | If the containing accordion should be closed |
 
-
-
-
 #### Example usage of linked_data_from_website
 
 <code>`{linked_data_from_website(website,yes,,,yes)}`</code>
@@ -1353,15 +1083,10 @@ Attempts to load (via a proxy) the specified website and parsed ld+json from the
 
 Shows a 'nothing is currently known-message if there is at least one unanswered question and no known (answerable) question
 
-
-
 | name | default | description |
 -----|-----|----- |
 | text | _undefined_ | Text to show |
 | cssClasses | _undefined_ | Classes to apply onto the text |
-
-
-
 
 #### Example usage of if_nothing_known
 
@@ -1371,8 +1096,6 @@ Shows a 'nothing is currently known-message if there is at least one unanswered 
 
 Shows the extra description from the presets of the layer, if one matches. It will pick the most specific one (e.g. if preset `A` implies `B`, but `B` does not imply `A`, it'll pick B) or the first one if no ordering can be made. Might be empty
 
-
-
 #### Example usage of preset_description
 
 <code>`{preset_description()}`</code>
@@ -1380,8 +1103,6 @@ Shows the extra description from the presets of the layer, if one matches. It wi
 ### pending_changes
 
 A module showing the pending changes, with the option to clear the pending changes
-
-
 
 #### Example usage of pending_changes
 
@@ -1391,14 +1112,9 @@ A module showing the pending changes, with the option to clear the pending chang
 
 A button which clears the locally downloaded data and the service worker. Login status etc will be kept
 
-
-
 | name | default | description |
 -----|-----|----- |
 | text | _undefined_ | The text to show on the button |
-
-
-
 
 #### Example usage of clear_caches
 
@@ -1408,15 +1124,10 @@ A button which clears the locally downloaded data and the service worker. Login 
 
 A collapsable group (accordion)
 
-
-
 | name | default | description |
 -----|-----|----- |
 | header | _undefined_ | The _identifier_ of a single tagRendering. This will be used as header |
 | labels | _undefined_ | A `;`-separated list of either identifiers or label names. All tagRenderings matching this value will be shown in the accordion |
-
-
-
 
 #### Example usage of group
 
@@ -1425,8 +1136,6 @@ A collapsable group (accordion)
 ### preset_type_select
 
 An editable tag rendering which allows to change the type
-
-
 
 #### Example usage of preset_type_select
 
@@ -1442,9 +1151,6 @@ A button to run many actions for many features at once. To effectively use this 
   - Then, use a calculated tag on the host feature to determine the overlapping object ids
   - At last, add this component
 
-
-
-
 | name | default | description |
 -----|-----|----- |
 | target_layer | _undefined_ | The layer that the target features will reside in |
@@ -1452,9 +1158,6 @@ A button to run many actions for many features at once. To effectively use this 
 | tag_rendering_id | _undefined_ | The ID of the tagRendering containing the autoAction. This tagrendering will be calculated. The embedded actions will be executed |
 | text | _undefined_ | The text to show on the button |
 | icon | ./assets/svg/robot.svg | The icon to show on the button |
-
-
-
 
 #### Example usage of auto_apply
 

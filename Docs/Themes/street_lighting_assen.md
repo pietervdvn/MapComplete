@@ -8,17 +8,13 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [street_lamps](../Layers/street_lamps.md)
  - [assen (defined in this theme)](#assen)
  - [maproulette_challenge](../Layers/maproulette_challenge.md)
 
-
 Available languages:
 
-
  - nl
-
 
 # Table of contents
 
@@ -35,24 +31,12 @@ Available languages:
 These layers can not be reused in different themes.
 # assen
 
-
-
-
-
-
-
-
-
-
-
  - This layer is shown at zoomlevel **0** and higher
  - <img src='../warning.svg' height='1rem'/>
 
 This layer is loaded from an external source, namely 
 
 `https://robinlinde.github.io/tiles/assen_street_lighting/{z}/{x}/{y}.json`
-
-
 
 No themes use this layer
 
@@ -64,29 +48,20 @@ Elements must match the expression **Lichtmastnummer~.+**
 
 ## Supported attributes
 
-
-
 ### all_tags
 Shows a table with all the tags of the feature
 _This tagrendering has no question and is thus read-only_
 *{all_tags()}*
-
-
-
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

@@ -8,7 +8,6 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [indoors](../Layers/indoors.md)
  - [pedestrian_path](../Layers/pedestrian_path.md)
  - [cycleways_and_roads](../Layers/cycleways_and_roads.md)
@@ -31,9 +30,7 @@ This theme contains the following layers:
  - [current_view](../Layers/current_view.md)
  - [maproulette_challenge](../Layers/maproulette_challenge.md)
 
-
 Available languages:
-
 
  - en
  - de
@@ -46,7 +43,6 @@ Available languages:
  - cs
  - eu
  - pl
-
 
 # Table of contents
 
@@ -64,19 +60,11 @@ Available languages:
 These layers can not be reused in different themes.
 # parking_spaces_disabled
 
-
 This layer is based on [parking_spaces](../Layers/parking_spaces.md)
 
 Layer showing individual parking spaces.
 
-
-
-
-
-
  - This layer is shown at zoomlevel **18** and higher
-
-
 
 No themes use this layer
 
@@ -88,37 +76,25 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 
 ## Supported attributes
 
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
-
-
-
 
 ### _stolen_entrances
 
 _This tagrendering has no question and is thus read-only_
 *{steal(_enclosing_building,walls_and_buildings.entrance_info; walls_and_buildings.biggest_width)}*
 
-
-
-
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

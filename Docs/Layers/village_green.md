@@ -2,19 +2,9 @@
 
 # village_green
 
-
-
-
 A layer showing village-green (which are communal green areas, but not quite parks)
 
-
-
-
-
-
  - This layer is shown at zoomlevel **0** and higher
-
-
 
 ## Table of contents
 
@@ -29,11 +19,7 @@ A layer showing village-green (which are communal green areas, but not quite par
 
 ## Themes using this layer
 
-
-
  - [speelplekken](https://mapcomplete.org/speelplekken)
-
-
 
 ## Basic tags for this layer
 
@@ -43,45 +29,30 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 
 ## Supported attributes
 
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
-
-
-
 
 ### village_green-explanation
 
 _This tagrendering has no question and is thus read-only_
 *Dit is een klein stukje openbaar groen waar je mag spelen, picnicken, zitten, ...*
 
-
-
-
 ### village_green-reviews
 
 _This tagrendering has no question and is thus read-only_
 *{reviews(name, landuse=village_green )}*
-
-
-
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

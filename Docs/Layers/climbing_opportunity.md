@@ -2,20 +2,10 @@
 
 # climbing_opportunity
 
-
-
-
 Fallback layer with items on which climbing _might_ be possible. It is loaded when zoomed in a lot, to prevent duplicate items to be added
-
-
-
-
-
 
  - This layer is shown at zoomlevel **18** and higher
  - This layer is needed as dependency for layer [climbing_route](#climbing_route)
-
-
 
 ## Table of contents
 
@@ -29,12 +19,8 @@ Fallback layer with items on which climbing _might_ be possible. It is loaded wh
 
 ## Themes using this layer
 
-
-
  - [climbing](https://mapcomplete.org/climbing)
  - [personal](https://mapcomplete.org/personal)
-
-
 
 ## Basic tags for this layer
 
@@ -48,8 +34,6 @@ Elements must match **all** of the following expressions:
 
 ## Supported attributes
 
-
-
 ### climbing-opportunity-name
 
 _This tagrendering has no question and is thus read-only_
@@ -57,34 +41,23 @@ _This tagrendering has no question and is thus read-only_
 
 This tagrendering is only visible in the popup if the following condition is met: name~.+
 
-
 ### climbing-possible
 
 The question is `Is climbing possible here?`
 
-
-
  -  *Climbing is possible here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dclimbing' target='_blank'>climbing</a>
  -  *Climbing is not possible here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing' target='_blank'>climbing</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing%3Dno' target='_blank'>no</a>
  -  *Climbing is not possible here* is shown if with sport!~^(climbing)$. _This option cannot be chosen as answer_
-
-
-
-
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

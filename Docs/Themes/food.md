@@ -8,15 +8,12 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [food](../Layers/food.md)
  - [ice_cream](../Layers/ice_cream.md)
  - [outdoor_seating](../Layers/outdoor_seating.md)
  - [food_courts](../Layers/food_courts.md)
 
-
 Available languages:
-
 
  - en
  - nl
@@ -32,7 +29,6 @@ Available languages:
  - cs
  - ru
  - pl
-
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

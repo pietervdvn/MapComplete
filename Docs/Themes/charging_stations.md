@@ -8,12 +8,9 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [charging_station](../Layers/charging_station.md)
 
-
 Available languages:
-
 
  - en
  - id
@@ -32,7 +29,6 @@ Available languages:
  - pa_PK
  - cs
  - pl
-
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

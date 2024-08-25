@@ -8,12 +8,9 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [bike_parking](../Layers/bike_parking.md)
 
-
 Available languages:
-
 
  - en
  - de
@@ -24,7 +21,6 @@ Available languages:
  - es
  - zh_Hans
  - it
-
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

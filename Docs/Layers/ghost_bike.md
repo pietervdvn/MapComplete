@@ -2,19 +2,9 @@
 
 # ghost_bike
 
-
-
-
 A layer showing memorials for cyclists, killed in road accidents
 
-
-
-
-
-
  - This layer is shown at zoomlevel **0** and higher
-
-
 
 ## Table of contents
 
@@ -36,13 +26,9 @@ A layer showing memorials for cyclists, killed in road accidents
 
 ## Themes using this layer
 
-
-
  - [ghostbikes](https://mapcomplete.org/ghostbikes)
  - [memorials](https://mapcomplete.org/memorials)
  - [personal](https://mapcomplete.org/personal)
-
-
 
 ## Basic tags for this layer
 
@@ -61,61 +47,38 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/inscription#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/inscription/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [inscription](https://wiki.openstreetmap.org/wiki/Key:inscription) | [string](../SpecialInputElements.md#string) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/start_date#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/start_date/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [start_date](https://wiki.openstreetmap.org/wiki/Key:start_date) | [date](../SpecialInputElements.md#date) |  |
 
-
-
-
 ### preset_description
 
 _This tagrendering has no question and is thus read-only_
 *{preset_description()}*
-
-
-
 
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
 
-
-
-
 ### ghost_bike-name
 
 The question is `Whom is remembered by this ghost bike?`
 *In remembrance of {subject}* is shown if `subject` is set
 
-
  -  *In remembrance of {name}* is shown if with name~.+. _This option cannot be chosen as answer_
  -  *No name is marked on the bike* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:noname' target='_blank'>noname</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:noname%3Dyes' target='_blank'>yes</a>
-
-
-
-
 
 ### ghost_bike-source
 
 The question is `On what webpage can one find more info about the ghost bike or the accident?`
 *{link(More info available,&LBRACEsource&RBRACE,,,,)}* is shown if `source` is set
 
-
-
-
 ### ghost_bike-inscription
 
 The question is `What is the inscription on this Ghost bike?`
 *<i>{inscription}</i>* is shown if `inscription` is set
 
-
-
-
 ### ghost_bike-start_date
 
 The question is `When was this Ghost bike installed?`
 *Placed on {start_date}* is shown if `start_date` is set
-
-
-
 
 ### wikidata
 
@@ -124,36 +87,25 @@ _This tagrendering has no question and is thus read-only_
 
 This tagrendering is only visible in the popup if the following condition is met: subject:wikidata~.+
 
-
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
-
-
-
 
 ### move-button
 
 _This tagrendering has no question and is thus read-only_
 *{move_button()}*
 
-
-
-
 ### delete-button
 
 _This tagrendering has no question and is thus read-only_
 *{delete_button()}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

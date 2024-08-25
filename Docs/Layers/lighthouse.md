@@ -2,19 +2,7 @@
 
 # lighthouse
 
-
-
-
-
-
-
-
-
-
-
  - This layer is shown at zoomlevel **5** and higher
-
-
 
 ## Table of contents
 
@@ -29,12 +17,8 @@
 
 ## Themes using this layer
 
-
-
  - [lighthouses](https://mapcomplete.org/lighthouses)
  - [personal](https://mapcomplete.org/personal)
-
-
 
 ## Basic tags for this layer
 
@@ -51,51 +35,33 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/wikidata#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/wikidata/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [wikidata](https://wiki.openstreetmap.org/wiki/Key:wikidata) | [wikidata](../SpecialInputElements.md#wikidata) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/height#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/height/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [height](https://wiki.openstreetmap.org/wiki/Key:height) | [pfloat](../SpecialInputElements.md#pfloat) |  |
 
-
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
-
-
-
 
 ### wikipedia
 Shows a wikipedia box with the corresponding wikipedia article; the wikidata-item link can be changed by a contributor
 The question is `What is the corresponding Wikidata entity?`
 *{wikipedia():max-height:25rem}* is shown if `wikidata` is set
 
-
  -  *{wikipedia():max-height:25rem}* is shown if with wikipedia~.+. _This option cannot be chosen as answer_
  -  *No Wikipedia page has been linked yet* is shown if with wikidata=. _This option cannot be chosen as answer_
-
-
-
-
 
 ### lighthouse-height
 
 The question is `What is the height of this lighthouse, in metres?`
 *The height of this lighthouse is {height} metres.* is shown if `height` is set
 
-
-
-
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

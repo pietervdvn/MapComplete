@@ -90,9 +90,7 @@ export default class UrlValidator extends Validator {
      *
      * const v = new UrlValidator()
      * v.getFeedback("example.").textFor("en") // => "This is not a valid web address"
-     * v.isValid("https://booking.com/some-hotel.html") // => false
-     * v.getFeedback("https://booking.com/some-hotel.html").textFor("en").indexOf("low-quality") > 0 // => true
-     *
+     * v.getFeedback("https://booking.com/some-hotel.html").textFor("en") // => Translations.t.validation.url.spamSite.Subs({host: "booking.com"}).textFor("en")
      */
     getFeedback(s: string, getCountry?: () => string): Translation | undefined {
         if (
@@ -128,6 +126,10 @@ export default class UrlValidator extends Validator {
         return undefined
     }
 
+    /**
+     * const v = new UrlValidator()
+     * v.isValid("https://booking.com/some-hotel.html") // => false
+     */
     isValid(str: string): boolean {
 
         try {

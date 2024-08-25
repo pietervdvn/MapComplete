@@ -76,7 +76,7 @@ class HandleErrors extends Script {
             deletedObjects: OsmObject[]
         } = changesObj.CreateChangesetObjects(toUpload, objects, true)
 
-        const changeset = Changes.createChangesetFor("", changes)
+        const changeset = Changes.buildChangesetXML("", changes)
         const path =
             "error_changeset_" + parsed.index + "_" + e.layout + "_" + e.username + ".osc"
         if (
@@ -163,7 +163,6 @@ ${changeset}`
 
         for (const parsed of all) {
             try {
-
                 await this.handleError(parsed, changesObj, downloader, createdChangesets, refusedFiles)
             } catch (e) {
                 console.error("ERROR: could not handle ", parsed, " due to", e)

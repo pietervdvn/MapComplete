@@ -2,20 +2,10 @@
 
 # rainbow_crossings
 
-
-
-
 A layer showing pedestrian crossings with rainbow paintings
-
-
-
-
-
 
  - This layer is shown at zoomlevel **17** and higher
  - This layer will automatically load  [cycleways_and_roads](./cycleways_and_roads.md)  into the layout as it depends on it:  preset `a crossing` snaps to this layer (rainbow_crossings.presets[0])
-
-
 
 ## Table of contents
 
@@ -29,12 +19,8 @@ A layer showing pedestrian crossings with rainbow paintings
 
 ## Themes using this layer
 
-
-
  - [personal](https://mapcomplete.org/personal)
  - [rainbow_crossings](https://mapcomplete.org/rainbow_crossings)
-
-
 
 ## Basic tags for this layer
 
@@ -48,43 +34,28 @@ Elements must match **any** of the following expressions:
 
 ## Supported attributes
 
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
 
-
-
-
 ### crossing-with-rainbow
 
 The question is `Does this crossing has rainbow paintings?`
 
-
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/themes/rainbow_crossings/logo.svg' style='width: 3rem; height: 3rem'> *This crossing has rainbow paintings* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:surface:colour' target='_blank'>surface:colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface:colour%3Drainbow' target='_blank'>rainbow</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/themes/rainbow_crossings/crossing.svg' style='width: 3rem; height: 3rem'> *No rainbow paintings here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:not:surface:colour' target='_blank'>not:surface:colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:not:surface:colour%3Drainbow' target='_blank'>rainbow</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/themes/rainbow_crossings/crossing.svg' style='width: 3rem; height: 3rem'> *No rainbow paintings here* is shown if with surface:colour!=rainbow. _This option cannot be chosen as answer_
-
-
-
-
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

@@ -8,15 +8,12 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [hydrant](../Layers/hydrant.md)
  - [extinguisher](../Layers/extinguisher.md)
  - [fire_station](../Layers/fire_station.md)
  - [ambulancestation](../Layers/ambulancestation.md)
 
-
 Available languages:
-
 
  - en
  - ja
@@ -33,7 +30,6 @@ Available languages:
  - da
  - cs
  - pl
-
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

@@ -51,6 +51,23 @@
         {
           "if": "opening_hours~*",
           "then": "icons.isOpen"
+        },
+        {
+          "if": {
+            "or": [
+              "access=no",
+              "access=private"
+            ]
+          },
+          "then": "lock"
+        },
+        {
+          "if": "access=key",
+          "then": "key"
+        },
+        {
+          "if": "access=customers",
+          "then": "key:gray"
         }
       ],
       "location": [
@@ -203,6 +220,7 @@
         },
         {
           "if": "access=no",
+          "alsoShowIf": "access=private",
           "then": {
             "en": "Not accessible",
             "de": "Der Zugang ist nicht erlaubt oder nicht möglich",

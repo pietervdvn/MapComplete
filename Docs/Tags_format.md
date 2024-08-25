@@ -54,9 +54,6 @@ This example shows the most common options on how to specify tags:
 }
 ```
 
-
-
-
 ## `=` strict equality
 
 Strict equality is denoted by `key=value`. This key matches __only if__ the keypair is present exactly as stated.
@@ -75,8 +72,6 @@ if `key` is missing or if `key` is a literal empty value.
 If a key should be deleted in the OpenStreetMap-database, specify `key=` as well. This can be used e.g. to remove a
 fixme or value from another mapping if another field is filled out.
 
-
-
 ## `!=` strict not equals
 
 To check if a key does _not_ equal a certain value, use `key!=value`. This is converted behind the scenes
@@ -89,8 +84,6 @@ If `key` is not present or empty, this will match too.
 This implies that, to check if a key is present, `key!=` can be used. This will only match if the key is present and not
 empty.
 
-
-
 ## `~` Value matches regex
 
 A tag can also be tested against a regex with `key~regex`. Note that this regex __must match__ the entire value. If the
@@ -100,13 +93,9 @@ The regex is put within braces as to prevent runaway values.
 Use `key~*` to indicate that any value is allowed. This is effectively the check that the attribute is present (defined _and_ not empty).
 Regexes will match the newline character with `.` too - the `s`-flag is enabled by default.
 
-
-
 ## `~i~` Value matches case-invariant regex
 
 A tag can also be tested against a regex with `key~i~regex`, where the case of the value will be ignored. The regex is still matched against the _entire_ value
-
-
 
 ## `!~` Value should _not_ match regex
 
@@ -115,20 +104,13 @@ A tag can also be tested against a regex with `key!~regex`. This filter will mat
 value is allowed to appear anywhere as substring, use `key~.*regex.*`.
 The regex is put within braces as to prevent runaway values.
 
-
-
-
 ## `!~i~` Value does *not* match case-invariant regex
 
 A tag can also be tested against a regex with `key~i~regex`, where the case of the value will be ignored. The regex is still matched against the _entire_ value. This filter returns true if the value does *not* match
 
-
-
 ## `~~` Key and value should match given regex
 
 Both the `key` and `value` part of this specification are interpreted as regexes, both the key and value musth completely match their respective regexes
-
-
 
 ## `:=` Substitute `... {some_key} ...` and match `key`
 
@@ -164,12 +146,9 @@ To mitigate this, use:
 One can use `key!:=prefix-{other_key}-postfix` as well, to match if `key` is _not_ the same
 as `prefix-{other_key}-postfix` (with `other_key` substituted by the value)
 
-
-
 ## `!:=` Substitute `{some_key}` should not match `key`
 
 See `:=`, except that this filter is inverted
-
 
 ## `<=` `>=` `<` `>` Logical comparators
 If the value of a tag is a number (e.g. `key=42`), one can use a filter `key<=42`, `key>=35`, `key>40` or `key<50` to

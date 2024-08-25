@@ -2,19 +2,9 @@
 
 # atm
 
-
-
-
 ATMs to withdraw money
 
-
-
-
-
-
  - This layer is shown at zoomlevel **13** and higher
-
-
 
 ## Table of contents
 
@@ -40,13 +30,9 @@ ATMs to withdraw money
 
 ## Themes using this layer
 
-
-
  - [atm](https://mapcomplete.org/atm)
  - [personal](https://mapcomplete.org/personal)
  - [stations](https://mapcomplete.org/stations)
-
-
 
 ## Basic tags for this layer
 
@@ -68,16 +54,10 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/cash_out:notes:denominations#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/cash_out%3Anotes%3Adenominations/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [cash_out:notes:denominations](https://wiki.openstreetmap.org/wiki/Key:cash_out:notes:denominations) | Multiple choice | [5 EUR](https://wiki.openstreetmap.org/wiki/Tag:cash_out:notes:denominations%3D5 EUR) [10 EUR](https://wiki.openstreetmap.org/wiki/Tag:cash_out:notes:denominations%3D10 EUR) [20 EUR](https://wiki.openstreetmap.org/wiki/Tag:cash_out:notes:denominations%3D20 EUR) [50 EUR](https://wiki.openstreetmap.org/wiki/Tag:cash_out:notes:denominations%3D50 EUR) [100 EUR](https://wiki.openstreetmap.org/wiki/Tag:cash_out:notes:denominations%3D100 EUR) [200 EUR](https://wiki.openstreetmap.org/wiki/Tag:cash_out:notes:denominations%3D200 EUR) [500 EUR](https://wiki.openstreetmap.org/wiki/Tag:cash_out:notes:denominations%3D500 EUR) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/speech_output#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/speech_output/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [speech_output](https://wiki.openstreetmap.org/wiki/Key:speech_output) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:speech_output%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:speech_output%3Dno) |
 
-
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
-
-
-
 
 ### name
 
@@ -86,69 +66,43 @@ _This tagrendering has no question and is thus read-only_
 
 This tagrendering is only visible in the popup if the following condition is met: name~.+
 
-
 ### brand
 
 The question is `What brand is this ATM?`
 *The brand of this ATM is {brand}* is shown if `brand` is set
-
-
-
 
 ### operator
 
 The question is `What company operates this ATM?`
 *The ATM is operated by {operator}* is shown if `operator` is set
 
-
-
-
 ### opening_hours_24_7
 
 The question is `What are the opening hours of {title()}?`
 *<h3>Opening hours</h3>{opening_hours_table(opening_hours)}* is shown if `opening_hours` is set
 
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/open24_7.svg' style='width: 3rem; height: 3rem'> *24/7 opened (including holidays)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
  -  *Marked as closed for an unspecified time* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>. _This option cannot be chosen as answer_
-
-
-
-
 
 ### cash_out
 
 The question is `Can you withdraw cash from this ATM?`
 
-
-
  -  *You can withdraw cash from this ATM* is shown if with cash_out=. _This option cannot be chosen as answer_
  -  *You can withdraw cash from this ATM* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:cash_out' target='_blank'>cash_out</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cash_out%3Dyes' target='_blank'>yes</a>
  -  *You cannot withdraw cash from this ATM* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:cash_out' target='_blank'>cash_out</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cash_out%3Dno' target='_blank'>no</a>
-
-
-
-
 
 ### cash_in
 
 The question is `Can you deposit cash into this ATM?`
 
-
-
  -  *You probably cannot deposit cash into this ATM* is shown if with cash_in=. _This option cannot be chosen as answer_
  -  *You can deposit cash into this ATM* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:cash_in' target='_blank'>cash_in</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cash_in%3Dyes' target='_blank'>yes</a>
  -  *You cannot deposit cash into this ATM* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:cash_in' target='_blank'>cash_in</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cash_in%3Dno' target='_blank'>no</a>
 
-
-
-
-
 ### cash_out-denominations-notes
 
 The question is `What notes can you withdraw here?`
-
-
 
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/denominations/eur/5euro.svg' style='width: 3rem; height: 3rem'> *5 euro notes can be withdrawn* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:cash_out:notes:denominations' target='_blank'>cash_out:notes:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cash_out:notes:denominations%3D5 EUR' target='_blank'>5 EUR</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/denominations/eur/10euro.svg' style='width: 3rem; height: 3rem'> *10 euro notes can be withdrawn* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:cash_out:notes:denominations' target='_blank'>cash_out:notes:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cash_out:notes:denominations%3D10 EUR' target='_blank'>10 EUR</a>
@@ -158,22 +112,12 @@ The question is `What notes can you withdraw here?`
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/denominations/eur/200euro.svg' style='width: 3rem; height: 3rem'> *200 euro notes can be withdrawn* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:cash_out:notes:denominations' target='_blank'>cash_out:notes:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cash_out:notes:denominations%3D200 EUR' target='_blank'>200 EUR</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/denominations/eur/500euro.svg' style='width: 3rem; height: 3rem'> *500 euro notes can be withdrawn* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:cash_out:notes:denominations' target='_blank'>cash_out:notes:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cash_out:notes:denominations%3D500 EUR' target='_blank'>500 EUR</a>
 
-
-
-
-
 ### speech_output
 
 The question is `Does this ATM have speech output for visually impaired users?`
 
-
-
  -  *This ATM has speech output, usually available through a headphone jack* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:speech_output' target='_blank'>speech_output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:speech_output%3Dyes' target='_blank'>yes</a>
  -  *This ATM does not have speech output* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:speech_output' target='_blank'>speech_output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:speech_output%3Dno' target='_blank'>no</a>
-
-
-
-
 
 ### speech_output_language
 
@@ -182,57 +126,38 @@ _This tagrendering has no question and is thus read-only_
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:speech_output' target='_blank'>speech_output</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:speech_output%3Dyes' target='_blank'>yes</a>
 
-
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
-
-
-
 
 ### move-button
 
 _This tagrendering has no question and is thus read-only_
 *{move_button()}*
 
-
-
-
 ### delete-button
 
 _This tagrendering has no question and is thus read-only_
 *{delete_button()}*
-
-
-
 
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
 
-
 This tagrendering has labels 
 `added_by_default`
 
 ## Filters
 
-
-
 | id | question | osmTags |
 -----|-----|----- |
 | speech_output.0 | With speech output | speech_output=yes |
 
-
-
-
-
-
 | id | question | osmTags |
 -----|-----|----- |
 | open_now.0 | Open now | _isOpen=yes |
-
 
 
 

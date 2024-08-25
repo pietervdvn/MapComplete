@@ -2,19 +2,9 @@
 
 # route_marker
 
-
-
-
 Route markers are small markers often found along official hiking/cycling/riding/skiing routes to indicate the direction of the route.
 
-
-
-
-
-
  - This layer is shown at zoomlevel **14** and higher
-
-
 
 ## Table of contents
 
@@ -30,12 +20,8 @@ Route markers are small markers often found along official hiking/cycling/riding
 
 ## Themes using this layer
 
-
-
  - [cyclenodes](https://mapcomplete.org/cyclenodes)
  - [walkingnodes](https://mapcomplete.org/walkingnodes)
-
-
 
 ## Basic tags for this layer
 
@@ -45,21 +31,14 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 
 ## Supported attributes
 
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
 
-
-
-
 ### type
 
 The question is `For what kind of route is this marker?`
-
-
 
  -  *This is a route marker for a bicycle route.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle' target='_blank'>bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add biycle=
  -  *This is a route marker for a hiking route.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:hiking' target='_blank'>hiking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hiking%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add hiking=
@@ -67,39 +46,25 @@ The question is `For what kind of route is this marker?`
  -  *This is a route marker for a horse riding route.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:horse' target='_blank'>horse</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:horse%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add horse=
  -  *This is a route marker for a ski route.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:ski' target='_blank'>ski</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:ski%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add ski=
 
-
-
-
-
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
-
-
-
 
 ### move-button
 
 _This tagrendering has no question and is thus read-only_
 *{move_button()}*
 
-
-
-
 ### delete-button
 
 _This tagrendering has no question and is thus read-only_
 *{delete_button()}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

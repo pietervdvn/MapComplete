@@ -2,15 +2,7 @@
 
 # crab_address
 
-
-
-
 Address data for Flanders by the governement, suited for import into OpenStreetMap. Datadump from 2021-10-26. This layer contains only visualisation logic. Import buttons should be added via an override. Note that HNRLABEL contains the original value, whereas _HNRLABEL contains a slightly cleaned version
-
-
-
-
-
 
  - This layer is shown at zoomlevel **0** and higher
  - <img src='../warning.svg' height='1rem'/>
@@ -18,8 +10,6 @@ Address data for Flanders by the governement, suited for import into OpenStreetM
 This layer is loaded from an external source, namely 
 
 `https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/CRAB_2021_10_26/tile_{z}_{x}_{y}.geojson`
-
-
 
 ## Table of contents
 
@@ -32,11 +22,7 @@ This layer is loaded from an external source, namely
 
 ## Themes using this layer
 
-
-
  - [grb](https://mapcomplete.org/grb)
-
-
 
 ## Basic tags for this layer
 
@@ -46,29 +32,20 @@ Elements must match the expression **HUISNR~.+**
 
 ## Supported attributes
 
-
-
 ### render_crab
 
 _This tagrendering has no question and is thus read-only_
 *Volgens het CRAB ligt hier <b>{STRAATNM}</b> {HUISNR} (label: {HNRLABEL})*
-
-
-
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

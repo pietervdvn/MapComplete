@@ -2,19 +2,9 @@
 
 # fitness_station
 
-
-
-
 Find a fitness station near you, and add missing ones.
 
-
-
-
-
-
  - This layer is shown at zoomlevel **12** and higher
-
-
 
 ## Table of contents
 
@@ -34,12 +24,8 @@ Find a fitness station near you, and add missing ones.
 
 ## Themes using this layer
 
-
-
  - [personal](https://mapcomplete.org/personal)
  - [sports](https://mapcomplete.org/sports)
-
-
 
 ## Basic tags for this layer
 
@@ -58,34 +44,21 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/operator#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/operator/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [operator](https://wiki.openstreetmap.org/wiki/Key:operator) | [string](../SpecialInputElements.md#string) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/opening_hours#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/opening_hours/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | [24/7](https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7) |
 
-
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
-
-
-
 
 ### name
 
 The question is `What is the name of this fitness station?`
 *This fitness station is called {name}* is shown if `name` is set
 
-
  -  *This fitness station doesn't have a name* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:noname' target='_blank'>noname</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:noname%3Dyes' target='_blank'>yes</a>
-
-
-
-
 
 ### type
 
 The question is `What kind of equipment does this fitness station have?`
-
-
 
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/fitness_station/Trimm-Dich-Pfad_Grünwalder_Forst_Klimmzüge.jpg' style='width: 3rem; height: 3rem'> *This fitness station has a horizontal bar, high enough for pull-ups.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dhorizontal_bar' target='_blank'>horizontal_bar</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/fitness_station/Outdoor_fitness_station_sign.jpg' style='width: 3rem; height: 3rem'> *This fitness station has a sign with instructions for a specific exercise.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dsign' target='_blank'>sign</a>
@@ -113,64 +86,42 @@ The question is `What kind of equipment does this fitness station have?`
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/fitness_station/Annecy_-_rower.jpg' style='width: 3rem; height: 3rem'> *This fitness station has a rower.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Drower' target='_blank'>rower</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/fitness_station/Slacklineanlage_im_Dietenbachpark.jpg' style='width: 3rem; height: 3rem'> *This fitness station has a slackline.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fitness_station' target='_blank'>fitness_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dslackline' target='_blank'>slackline</a>
 
-
-
-
-
 ### operator
 
 The question is `Who maintains this fitness station?`
 *The fitness station is maintained by {operator}.* is shown if `operator` is set
-
-
-
 
 ### opening_hours_24_7
 
 The question is `What are the opening hours of {title()}?`
 *<h3>Opening hours</h3>{opening_hours_table(opening_hours)}* is shown if `opening_hours` is set
 
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/open24_7.svg' style='width: 3rem; height: 3rem'> *24/7 opened (including holidays)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
  -  *Marked as closed for an unspecified time* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>. _This option cannot be chosen as answer_
-
-
-
-
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### move-button
 
 _This tagrendering has no question and is thus read-only_
 *{move_button()}*
-
-
-
 
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
 
-
 This tagrendering has labels 
 `added_by_default`
 
 ## Filters
 
-
-
 | id | question | osmTags |
 -----|-----|----- |
 | open_now.0 | Open now | _isOpen=yes |
-
 
 
 

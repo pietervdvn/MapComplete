@@ -8,15 +8,11 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [street_with_width (defined in this theme)](#street_with_width)
-
 
 Available languages:
 
-
  - nl
-
 
 # Table of contents
 
@@ -40,19 +36,9 @@ Available languages:
 These layers can not be reused in different themes.
 # street_with_width
 
-
-
-
 A layer showing street with corresponding widths + an analysis of what this width is used for
 
-
-
-
-
-
  - This layer is shown at zoomlevel **12** and higher
-
-
 
 No themes use this layer
 
@@ -74,112 +60,72 @@ Elements must match the expression **width:carriageway~.+**
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/sidewalk#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/sidewalk/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [sidewalk](https://wiki.openstreetmap.org/wiki/Key:sidewalk) | Multiple choice | [none](https://wiki.openstreetmap.org/wiki/Tag:sidewalk%3Dnone) [left](https://wiki.openstreetmap.org/wiki/Tag:sidewalk%3Dleft) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/sidewalk#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/sidewalk/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [sidewalk](https://wiki.openstreetmap.org/wiki/Key:sidewalk) | Multiple choice | [both](https://wiki.openstreetmap.org/wiki/Tag:sidewalk%3Dboth) [none](https://wiki.openstreetmap.org/wiki/Tag:sidewalk%3Dnone) [left](https://wiki.openstreetmap.org/wiki/Tag:sidewalk%3Dleft) [right](https://wiki.openstreetmap.org/wiki/Tag:sidewalk%3Dright) |
 
-
-
-
 ### carriageway_width
 
 The question is `Hoe breed is deze straat?`
 *Deze straat is <b>{width:carriageway}m</b> breed* is shown if `width:carriageway` is set
-
-
-
 
 ### too_little_width
 
 _This tagrendering has no question and is thus read-only_
 *Deze straat heeft <span class='alert'>{_width:difference}m</span> te weinig. De ruimte die nodig zou zijn is:*
 
-
  -  *Deze straat is breed genoeg:* is shown if with _width:difference~^(-.*)$ | <a href='https://wiki.openstreetmap.org/wiki/Key:_width:difference' target='_blank'>_width:difference</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_width:difference%3D0' target='_blank'>0</a>
-
-
-
-
 
 ### needed_for_cars
 
 _This tagrendering has no question and is thus read-only_
 *<b>{_width:needed:cars}m</b> voor het autoverkeer*
 
-
  -  *<b>{_width:needed:cars}m</b> voor het éénrichtings-autoverkeer* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:oneway' target='_blank'>oneway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:oneway%3Dyes' target='_blank'>yes</a>
  -  *<b>{_width:needed:cars}m</b> voor het tweerichtings-autoverkeer* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:oneway' target='_blank'>oneway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:oneway%3Dno' target='_blank'>no</a>
-
-
-
-
 
 ### needed_for_parking
 
 _This tagrendering has no question and is thus read-only_
 *<b>{_width:needed:parking}m</b> voor het geparkeerde wagens*
 
-
-
-
 ### needed_for_cyclists
 
 _This tagrendering has no question and is thus read-only_
 *<b>{_width:needed:cyclists}m</b> voor fietsers*
 
-
  -  *Fietsers hebben hier een vrijliggend fietspad en worden dus niet meegerekend* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle' target='_blank'>bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle%3Duse_sidepath' target='_blank'>use_sidepath</a>
  -  *<b>{_width:needed:cyclists}m</b> voor fietsers die met de rijrichting mee moeten* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:oneway:bicycle' target='_blank'>oneway:bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:oneway:bicycle%3Dyes' target='_blank'>yes</a>
-
-
-
-
 
 ### needed_for_pedestrians
 
 _This tagrendering has no question and is thus read-only_
 *<b>{_width:needed:pedestrians}m</b> voor voetgangers*
 
-
  -  *<b>{_width:needed:pedestrians}m</b> voor voetgangers: er zijn hier geen voetpaden* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:sidewalk' target='_blank'>sidewalk</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sidewalk%3Dnone' target='_blank'>none</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:sidewalk' target='_blank'>sidewalk</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sidewalk%3Dno' target='_blank'>no</a>
  -  *<b>{_width:needed:pedestrians}m</b> voor voetgangers: er is slechts aan één kant een voetpad* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:sidewalk' target='_blank'>sidewalk</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sidewalk%3Dleft' target='_blank'>left</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:sidewalk' target='_blank'>sidewalk</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sidewalk%3Dright' target='_blank'>right</a>
-
-
-
-
 
 ### total_width_needed
 
 _This tagrendering has no question and is thus read-only_
 *<span style='border: 1px solid black; border-radius: 0.5em; padding: 0.25em;'><b>{_width:needed:total}m</b> nodig in het totaal</span>*
 
-
-
-
 ### has_sidewalks
 
 The question is `Heeft deze straat voetpaden?`
-
-
 
  -  *Voetpad aan beide zijden* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:sidewalk' target='_blank'>sidewalk</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sidewalk%3Dboth' target='_blank'>both</a>
  -  *Heeft géén voetpaden* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:sidewalk' target='_blank'>sidewalk</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sidewalk%3Dnone' target='_blank'>none</a>
  -  *Voetpad aan de linkerkant* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:sidewalk' target='_blank'>sidewalk</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sidewalk%3Dleft' target='_blank'>left</a>
  -  *Voetpad aan de rechterzijde* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:sidewalk' target='_blank'>sidewalk</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sidewalk%3Dright' target='_blank'>right</a>
 
-
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:id' target='_blank'>id</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:id%3Ddisabled' target='_blank'>disabled</a>
-
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

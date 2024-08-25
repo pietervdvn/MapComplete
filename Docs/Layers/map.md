@@ -2,19 +2,9 @@
 
 # map
 
-
-
-
 A map, meant for tourists which is permanently installed in the public space
 
-
-
-
-
-
  - This layer is shown at zoomlevel **12** and higher
-
-
 
 ## Table of contents
 
@@ -33,14 +23,10 @@ A map, meant for tourists which is permanently installed in the public space
 
 ## Themes using this layer
 
-
-
  - [maps](https://mapcomplete.org/maps)
  - [nature](https://mapcomplete.org/nature)
  - [personal](https://mapcomplete.org/personal)
  - [ski](https://mapcomplete.org/ski)
-
-
 
 ## Basic tags for this layer
 
@@ -62,37 +48,23 @@ Elements must match **any** of the following expressions:
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/map_source#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/map_source/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [map_source](https://wiki.openstreetmap.org/wiki/Key:map_source) | [string](../SpecialInputElements.md#string) | [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:map_source%3DOpenStreetMap) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/map_source:attribution#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/map_source%3Aattribution/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [map_source:attribution](https://wiki.openstreetmap.org/wiki/Key:map_source:attribution) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:map_source:attribution%3Dyes) [incomplete](https://wiki.openstreetmap.org/wiki/Tag:map_source:attribution%3Dincomplete) [sticker](https://wiki.openstreetmap.org/wiki/Tag:map_source:attribution%3Dsticker) [none](https://wiki.openstreetmap.org/wiki/Tag:map_source:attribution%3Dnone) |
 
-
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
 
-
-
-
 ### map_type
 
 The question is `What type of map is shown?`
-
-
 
  -  *Topographical map <p class='subtle'>The map contains contour lines. </p>* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:map_type' target='_blank'>map_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_type%3Dtopo' target='_blank'>topo</a>
  -  *A map with all streets or ways of an area. <p class='subtle'>The streets are mostly named; the angles, distances etc. are accurate</p>* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:map_type' target='_blank'>map_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_type%3Dstreet' target='_blank'>street</a>
  -  *This is a schematic map. <p class='subtle'>A sketched map with only important ways and POIs. The angles, distances etc. are merely illustrative, not accurate.</p> * is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:map_type' target='_blank'>map_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_type%3Dscheme' target='_blank'>scheme</a>
  -  *This is a toposcope. <p class='subtle'>A marker erected on high places which indicates the direction to notable landscape features which can be seen from that point<p>* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:map_type' target='_blank'>map_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_type%3Dtoposcope' target='_blank'>toposcope</a>
 
-
-
-
-
 ### map_size
 
 The question is `What is the size of the shown area on the map?`
-
-
 
  -  *A map of the rooms within a building* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:map_size' target='_blank'>map_size</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_size%3Dbuilding' target='_blank'>building</a>
  -  *A map of special site, like of a historical castle, a park, a campus, a forest, ....* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:map_size' target='_blank'>map_size</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_size%3Dsite' target='_blank'>site</a>
@@ -100,19 +72,12 @@ The question is `What is the size of the shown area on the map?`
  -  * A map of a city* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:map_size' target='_blank'>map_size</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_size%3Dcity' target='_blank'>city</a>
  -  *The map of an entire region, showing multiple cities and villages* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:map_size' target='_blank'>map_size</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_size%3Dregion' target='_blank'>region</a>
 
-
-
-
-
 ### map-map_source
 
 The question is `On which data is this map based?`
 *This map is based on {map_source}* is shown if `map_source` is set
 
-
  -  *This map is based on OpenStreetMap* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:map_source' target='_blank'>map_source</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_source%3DOpenStreetMap' target='_blank'>OpenStreetMap</a> & not:map_source=
-
-
 
 This tagrendering has labels 
 `map`
@@ -121,14 +86,11 @@ This tagrendering has labels
 
 The question is `Is the OpenStreetMap-attribution given?`
 
-
-
  -  *OpenStreetMap is clearly attributed, including the ODBL-license* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:map_source:attribution' target='_blank'>map_source:attribution</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_source:attribution%3Dyes' target='_blank'>yes</a>
  -  *OpenStreetMap is clearly attributed, but the license is not mentioned* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:map_source:attribution' target='_blank'>map_source:attribution</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_source:attribution%3Dincomplete' target='_blank'>incomplete</a>
  -  *OpenStreetMap wasn't mentioned, but someone put an OpenStreetMap-sticker on it* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:map_source:attribution' target='_blank'>map_source:attribution</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_source:attribution%3Dsticker' target='_blank'>sticker</a>
  -  *There is no attribution at all* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:map_source:attribution' target='_blank'>map_source:attribution</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_source:attribution%3Dnone' target='_blank'>none</a>
  -  *There is no attribution at all* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:map_source:attribution' target='_blank'>map_source:attribution</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_source:attribution%3Dno' target='_blank'>no</a>. _This option cannot be chosen as answer_
-
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:map_source' target='_blank'>map_source</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_source%3Dosm' target='_blank'>osm</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:map_source' target='_blank'>map_source</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_source%3DOSM' target='_blank'>OSM</a> | map_source~^((O|)pen(S|s)treet(M|m)ap)$
 This tagrendering has labels 
@@ -139,30 +101,20 @@ This tagrendering has labels
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### move-button
 
 _This tagrendering has no question and is thus read-only_
 *{move_button()}*
-
-
-
 
 ### delete-button
 
 _This tagrendering has no question and is thus read-only_
 *{delete_button()}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

@@ -10,17 +10,17 @@ import ComparingTag from "./ComparingTag"
 import { FlatTag, OptimizedTag, TagsFilterClosed, TagTypes } from "./TagTypes"
 
 export class Or extends TagsFilter {
-    public or: TagsFilter[]
+    public or: ReadonlyArray<TagsFilter>
 
-    constructor(or: TagsFilter[]) {
+    constructor(or: ReadonlyArray<TagsFilter>) {
         super()
         this.or = or
     }
 
-    public static construct(or: TagsFilter[]): TagsFilter
+    public static construct(or: ReadonlyArray<TagsFilter>): TagsFilter
     public static construct<T extends TagsFilter>(or: [T]): T
     public static construct(or: ((And & OptimizedTag) | FlatTag)[]): TagsFilterClosed & OptimizedTag
-    public static construct(or: TagsFilter[]): TagsFilter {
+    public static construct(or: ReadonlyArray<TagsFilter>): TagsFilter {
         if (or.length === 1) {
             return or[0]
         }
@@ -264,7 +264,7 @@ export class Or extends TagsFilter {
         if (containedAnds.length === 1) {
             newOrs.push(containedAnds[0])
         } else if (containedAnds.length > 1) {
-            let commonValues: TagsFilter[] = containedAnds[0].and
+            let commonValues: TagsFilter[] = [...(containedAnds[0].and)]
             for (let i = 1; i < containedAnds.length && commonValues.length > 0; i++) {
                 const containedAnd = containedAnds[i]
                 commonValues = commonValues.filter((cv) =>

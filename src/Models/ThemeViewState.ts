@@ -278,7 +278,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
                     featureSwitches: this.featureSwitches,
                 },
                 layout?.isLeftRightSensitive() ?? false,
-                (e) => this.reportError(e)
+                (e, extraMsg) => this.reportError(e, extraMsg),
             )
             this.historicalUserLocations = this.geolocation.historicalUserLocations
             this.newFeatures = new NewGeometryFromChangesFeatureSource(
@@ -650,7 +650,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
                         available,
                         category,
                         current.data,
-                        skipLayers
+                        skipLayers,
                     )
                     if (!best) {
                         return
@@ -907,7 +907,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
         this.selectedElement.setData(this.currentView.features?.data?.[0])
     }
 
-    public async reportError(message: string | Error | XMLHttpRequest) {
+    public async reportError(message: string | Error | XMLHttpRequest, extramessage: string = "") {
         const isTesting = this.featureSwitchIsTesting.data
         console.log(
             isTesting
@@ -922,7 +922,17 @@ export default class ThemeViewState implements SpecialVisualizationState {
 
         if ("" + message === "[object XMLHttpRequest]") {
             const req = <XMLHttpRequest>message
-            message = "XMLHttpRequest with status code " + req.status + ", " + req.statusText
+            let body = ""
+            try {
+                body = req.responseText
+            } catch (e) {
+                // pass
+            }
+            message = "XMLHttpRequest with status code " + req.status + ", " + req.statusText + ", received: " + body
+        }
+
+        if (extramessage) {
+            message += "(" + extramessage + ")"
         }
 
         const stacktrace: string = new Error().stack

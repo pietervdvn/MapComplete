@@ -8,16 +8,12 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [item_with_image](../Layers/item_with_image.md)
-
 
 Available languages:
 
-
  - en
  - de
-
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

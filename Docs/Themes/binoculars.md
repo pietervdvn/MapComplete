@@ -8,12 +8,9 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [binocular](../Layers/binocular.md)
 
-
 Available languages:
-
 
  - en
  - nl
@@ -31,7 +28,6 @@ Available languages:
  - eu
  - pl
  - zh_Hans
-
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

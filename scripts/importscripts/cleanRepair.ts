@@ -313,7 +313,7 @@ export default class CleanRepair extends Script {
 
         const changedObjects = changes.CreateChangesetObjects(changesToMake, objects)
 
-        const osc = Changes.createChangesetFor("", changedObjects)
+        const osc = Changes.buildChangesetXML("", changedObjects)
 
         writeFileSync("Cleanup.osc", osc, "utf8")
     }

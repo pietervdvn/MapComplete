@@ -2,26 +2,17 @@
 
 # advertising
 
-
-
-
 We will complete data from advertising features with reference, operator and lit
 
-
-
-
-
-
  - This layer is shown at zoomlevel **15** and higher
- - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  preset `a poster box mounted on a wall` snaps to this layer (advertising.presets[2])
- - This layer will automatically load  [shelter](./shelter.md)  into the layout as it depends on it:  preset `a poster box part of a public transport shelter` snaps to this layer (advertising.presets[3])
- - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  preset `a screen mounted on a wall` snaps to this layer (advertising.presets[8])
- - This layer will automatically load  [shelter](./shelter.md)  into the layout as it depends on it:  preset `a screen mounted on a transit shelter` snaps to this layer (advertising.presets[9])
- - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  preset `a tarp` snaps to this layer (advertising.presets[10])
- - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  preset `a sign` snaps to this layer (advertising.presets[12])
- - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  preset `a wall painting` snaps to this layer (advertising.presets[14])
-
-
+ - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  preset `a billboard mounted to a wall` snaps to this layer (advertising.presets[1])
+ - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  preset `a poster box mounted on a wall` snaps to this layer (advertising.presets[3])
+ - This layer will automatically load  [shelter](./shelter.md)  into the layout as it depends on it:  preset `a poster box part of a public transport shelter` snaps to this layer (advertising.presets[4])
+ - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  preset `a screen mounted on a wall` snaps to this layer (advertising.presets[9])
+ - This layer will automatically load  [shelter](./shelter.md)  into the layout as it depends on it:  preset `a screen mounted on a transit shelter` snaps to this layer (advertising.presets[10])
+ - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  preset `a tarp` snaps to this layer (advertising.presets[11])
+ - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  preset `a sign` snaps to this layer (advertising.presets[13])
+ - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  preset `a wall painting` snaps to this layer (advertising.presets[15])
 
 ## Table of contents
 
@@ -43,12 +34,8 @@ We will complete data from advertising features with reference, operator and lit
 
 ## Themes using this layer
 
-
-
  - [advertising](https://mapcomplete.org/advertising)
  - [personal](https://mapcomplete.org/personal)
-
-
 
 ## Basic tags for this layer
 
@@ -71,22 +58,15 @@ Elements must match **all** of the following expressions:
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/sides#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/sides/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [sides](https://wiki.openstreetmap.org/wiki/Key:sides) | Multiple choice | [1](https://wiki.openstreetmap.org/wiki/Tag:sides%3D1) [2](https://wiki.openstreetmap.org/wiki/Tag:sides%3D2) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/ref#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/ref/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [ref](https://wiki.openstreetmap.org/wiki/Key:ref) | [string](../SpecialInputElements.md#string) |  |
 
-
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
 
-
-
-
 ### type
 
 The question is `Which type of advertising feature is this?`
 *This is a {advertising}* is shown if `advertising` is set
-
 
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/themes/advertising/billboard.svg' style='width: 3rem; height: 3rem'> *This is a billboard* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dbillboard' target='_blank'>billboard</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/themes/advertising/board.svg' style='width: 3rem; height: 3rem'> *This is a board* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dboard' target='_blank'>board</a>
@@ -100,15 +80,9 @@ The question is `Which type of advertising feature is this?`
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/themes/advertising/totem.svg' style='width: 3rem; height: 3rem'> *This is a totem* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dtotem' target='_blank'>totem</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/themes/advertising/wall_painting.svg' style='width: 3rem; height: 3rem'> *This is a wall painting* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dwall_painting' target='_blank'>wall_painting</a>
 
-
-
-
-
 ### animated
 
 The question is `Does this advertisement cycle through multiple messages?`
-
-
 
  -  *<b>Static</b>, always shows the same message* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:animated' target='_blank'>animated</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:animated%3Dno' target='_blank'>no</a>
  -  *This object has a built-in <b>digital display</b> to show prices or some other message* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:animated' target='_blank'>animated</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:animated%3Ddigital_display' target='_blank'>digital_display</a>
@@ -116,15 +90,9 @@ The question is `Does this advertisement cycle through multiple messages?`
  -  *<b>Scrolling</b> posters* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:animated' target='_blank'>animated</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:animated%3Dwinding_posters' target='_blank'>winding_posters</a>
  -  *<b>Rotates</b> on itself* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:animated' target='_blank'>animated</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:animated%3Drevolving' target='_blank'>revolving</a>
 
-
-
-
-
 ### luminous_or_lit_advertising
 
 The question is `Is this object lit or does it emit light?`
-
-
 
  -  *This is a neon-tube light* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:luminous' target='_blank'>luminous</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:luminous%3Dneon' target='_blank'>neon</a>
  -  *This object both emits light and is lighted by an external light source* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:lit' target='_blank'>lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:lit%3Dyes' target='_blank'>yes</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:luminous' target='_blank'>luminous</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:luminous%3Dyes' target='_blank'>yes</a>
@@ -132,23 +100,14 @@ The question is `Is this object lit or does it emit light?`
  -  *This object is lit externally, e.g. by a spotlight or other lights* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:lit' target='_blank'>lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:lit%3Dyes' target='_blank'>yes</a>
  -  *This object does not emit light and is not lighted by externally* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:lit' target='_blank'>lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:lit%3Dno' target='_blank'>no</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:luminous' target='_blank'>luminous</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:luminous%3Dno' target='_blank'>no</a>
 
-
-
-
-
 ### operator
 
 The question is `Who operates this feature?`
 *Operated by {operator}* is shown if `operator` is set
 
-
-
-
 ### message_type
 
 The question is `What kind of message is shown?`
-
-
 
  -  *Commercial message* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:message' target='_blank'>message</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:message%3Dcommercial' target='_blank'>commercial</a>. Unselecting this answer will add message=
  -  *Local information* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:message' target='_blank'>message</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:message%3Dlocal' target='_blank'>local</a>. Unselecting this answer will add message=
@@ -161,60 +120,39 @@ The question is `What kind of message is shown?`
  -  *Funding sign* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:message' target='_blank'>message</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:message%3Dfunding' target='_blank'>funding</a>. Unselecting this answer will add message=
  -  *A map* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:information' target='_blank'>information</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:information%3Dmap' target='_blank'>map</a>. Unselecting this answer will add information=
 
-
-
-
-
 ### Sides
 
 The question is `From how many sides you can watch advertisments?`
 
-
-
  -  *This object has advertisements on a single side* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:sides' target='_blank'>sides</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sides%3D1' target='_blank'>1</a>
  -  *This object has advertisements on both sides* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:sides' target='_blank'>sides</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sides%3D2' target='_blank'>2</a>
 
-
 This tagrendering is only visible in the popup if the following condition is met: _referencing_ways= & (<a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dposter_box' target='_blank'>poster_box</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dscreen' target='_blank'>screen</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dbillboard' target='_blank'>billboard</a>)
-
 
 ### ref
 
 The question is `Wich is the reference number?`
 *Reference number is {ref}* is shown if `ref` is set
 
-
-
-
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
-
-
-
 
 ### move-button
 
 _This tagrendering has no question and is thus read-only_
 *{move_button()}*
 
-
-
-
 ### delete-button
 
 _This tagrendering has no question and is thus read-only_
 *{delete_button()}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`
