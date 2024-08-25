@@ -32,6 +32,10 @@
                 "description": "Eine große Außenwerbung, die typischerweise in stark befahrenen Gebieten, z. B. entlang stark befahrener Straßen, zu finden ist",
                 "title": "eine Werbetafel"
             },
+            "1": {
+                "description": "Eine große Außenwerbestruktur, die typischerweise in stark frequentierten Bereichen wie an vielbefahrenen Straßen auf einer Wand montiert zu finden ist",
+                "title": "Eine an einer Wand montierte Werbetafel"
+            },
             "10": {
                 "title": "ein Bildschirm, der an einem Wartehäuschen angebracht ist"
             },
