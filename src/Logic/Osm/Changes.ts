@@ -237,9 +237,9 @@ export class Changes {
         console.log("Uploading changes due to: ", flushreason)
         this.isUploading.setData(true)
         try {
-            const csNumber = await this.flushChangesAsync()
+            await this.flushChangesAsync()
             this.isUploading.setData(false)
-            console.log("Changes flushed. Your changeset is " + csNumber)
+            console.log("Changes flushed")
             this.errors.setData([])
         } catch (e) {
             this._reportError(e)

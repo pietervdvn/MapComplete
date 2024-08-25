@@ -14,10 +14,10 @@ export interface ChangesetTag {
 }
 
 export type ChangesetMetadata = {
-    type: "changeset"
     id: number
     created_at: string
     open: boolean
+    closed_at?: string
     uid: number
     user: string
     changes_count: number
@@ -164,10 +164,12 @@ export class ChangesetHandler {
             return
         }
 
+        console.log("Trying to reuse changeset", openChangeset.data)
         if (openChangeset.data) {
             try {
                 const csId = openChangeset.data
                 const oldChangesetMeta = await this.GetChangesetMeta(csId)
+                console.log("Got metadata:", oldChangesetMeta, "isopen", oldChangesetMeta?.open)
                 if (oldChangesetMeta.open) {
                     // We can hopefully reuse the changeset
 
@@ -357,8 +359,8 @@ export class ChangesetHandler {
 
     private async GetChangesetMeta(csId: number): Promise<ChangesetMetadata> {
         const url = `${this.backend}/api/0.6/changeset/${csId}`
-        const csData = await Utils.downloadJson<{ elements: ChangesetMetadata[] }>(url)
-        return csData.elements[0]
+        const csData = await Utils.downloadJson<{ changeset: ChangesetMetadata }>(url)
+        return csData.changeset
     }
 
     /**
