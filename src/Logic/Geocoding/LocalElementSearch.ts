@@ -4,6 +4,7 @@ import { Utils } from "../../Utils"
 import { Feature } from "geojson"
 import { GeoOperations } from "../GeoOperations"
 import { ImmutableStore, Store, Stores } from "../UIEventSource"
+import OpenStreetMapIdSearch from "./OpenStreetMapIdSearch"
 
 type IntermediateResult = {
     feature: Feature,
@@ -30,7 +31,7 @@ export default class LocalElementSearch implements GeocodingProvider {
         return this.searchEntries(query, options, false).data
     }
 
-    private getPartialResult(query: string, matchStart: boolean, centerpoint: [number, number], features: Feature[]): IntermediateResult[] {
+    private getPartialResult(query: string, candidateId: string | undefined, matchStart: boolean, centerpoint: [number, number], features: Feature[]): IntermediateResult[] {
         const results: IntermediateResult [] = []
 
         for (const feature of features) {
@@ -39,14 +40,19 @@ export default class LocalElementSearch implements GeocodingProvider {
                 (props["addr:street"] && props["addr:number"]) ?
                     props["addr:street"] + props["addr:number"] : undefined])
 
-
-            const levehnsteinD = Math.min(...searchTerms.flatMap(entry => entry.split(/ /)).map(entry => {
-                let simplified = Utils.simplifyStringForSearch(entry)
-                if (matchStart) {
-                    simplified = simplified.slice(0, query.length)
-                }
-                return Utils.levenshteinDistance(query, simplified)
-            }))
+            let levehnsteinD: number
+            console.log("Comparing nearby:", candidateId, props.id)
+            if (candidateId === props.id) {
+                levehnsteinD = 0
+            } else {
+                levehnsteinD = Math.min(...searchTerms.flatMap(entry => entry.split(/ /)).map(entry => {
+                    let simplified = Utils.simplifyStringForSearch(entry)
+                    if (matchStart) {
+                        simplified = simplified.slice(0, query.length)
+                    }
+                    return Utils.levenshteinDistance(query, simplified)
+                }))
+            }
             const center = GeoOperations.centerpointCoordinates(feature)
             if (levehnsteinD <= 2) {
 
@@ -63,7 +69,7 @@ export default class LocalElementSearch implements GeocodingProvider {
                     physicalDistance: GeoOperations.distanceBetween(centerpoint, center),
                     levehnsteinD,
                     searchTerms,
-                    description: description !== "" ? description : undefined
+                    description: description !== "" ? description : undefined,
                 })
             }
         }
@@ -77,33 +83,34 @@ export default class LocalElementSearch implements GeocodingProvider {
         const center: { lon: number; lat: number } = this._state.mapProperties.location.data
         const centerPoint: [number, number] = [center.lon, center.lat]
         const properties = this._state.perLayer
+        const candidateId = OpenStreetMapIdSearch.extractId(query)
         query = Utils.simplifyStringForSearch(query)
 
         const partials: Store<IntermediateResult[]>[] = []
 
         for (const [_, geoIndexedStore] of properties) {
-            const partialResult = geoIndexedStore.features.map(features => this.getPartialResult(query, matchStart, centerPoint, features))
+            const partialResult = geoIndexedStore.features.map(features => this.getPartialResult(query, candidateId, matchStart, centerPoint, features))
             partials.push(partialResult)
         }
 
-        const listed: Store<IntermediateResult[]> = Stores.concat(partials)
+        const listed: Store<IntermediateResult[]> = Stores.concat(partials).map(l => l.flatMap(x => x))
         return listed.mapD(results => {
             results.sort((a, b) => (a.physicalDistance + a.levehnsteinD * 25) - (b.physicalDistance + b.levehnsteinD * 25))
             if (this._limit || options?.limit) {
                 results = results.slice(0, Math.min(this._limit ?? options?.limit, options?.limit ?? this._limit))
             }
             return results.map(entry => {
-                const id = entry.feature.properties.id.split("/")
+                const [osm_type, osm_id] = entry.feature.properties.id.split("/")
                 return <GeoCodeResult>{
                     lon: entry.center[0],
                     lat: entry.center[1],
-                    osm_type: id[0],
-                    osm_id: id[1],
+                    osm_type,
+                    osm_id,
                     display_name: entry.searchTerms[0],
                     source: "localElementSearch",
                     feature: entry.feature,
                     importance: 1,
-                    description: entry.description
+                    description: entry.description,
                 }
             })
         })

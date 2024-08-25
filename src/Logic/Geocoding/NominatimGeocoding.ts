@@ -4,7 +4,6 @@ import Constants from "../../Models/Constants"
 import { FeatureCollection } from "geojson"
 import Locale from "../../UI/i18n/Locale"
 import GeocodingProvider, { GeoCodeResult } from "./GeocodingProvider"
-import { Store, UIEventSource } from "../UIEventSource"
 
 export class NominatimGeocoding implements GeocodingProvider {
 

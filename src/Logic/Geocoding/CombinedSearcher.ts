@@ -40,6 +40,7 @@ export default class CombinedSearcher implements GeocodingProvider {
 
     suggest(query: string, options?: GeocodingOptions): Store<GeoCodeResult[]> {
         return Stores.concat(this._providersWithSuggest.map(pr => pr.suggest(query, options)))
+            .map(gcrss => this.merge(gcrss))
 
     }
 }

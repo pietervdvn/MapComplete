@@ -27,30 +27,30 @@ export default class CoordinateSearch implements GeocodingProvider {
      * const ls = new CoordinateSearch()
      * const results = ls.directSearch("https://www.openstreetmap.org/search?query=Brugge#map=11/51.2611/3.2217")
      * results.length // => 1
-     * results[0] // => {lat: 51.2611, lon: 3.2217, display_name: "lon: 3.2217, lat: 51.2611",  "category": "coordinate","source": "coordinateSearch"}
+     * results[0] // => {lat: 51.2611, lon: 3.2217, display_name: "lon: 3.2217, lat: 51.2611",  "category": "coordinate","source": "coordinate:latlon"}
      *
      * const ls = new CoordinateSearch()
      * const results = ls.directSearch("https://www.openstreetmap.org/#map=11/51.2611/3.2217")
      * results.length // => 1
-     * results[0] // => {lat: 51.2611, lon: 3.2217, display_name: "lon: 3.2217, lat: 51.2611",  "category": "coordinate","source": "coordinateSearch"}
+     * results[0] // => {lat: 51.2611, lon: 3.2217, display_name: "lon: 3.2217, lat: 51.2611",  "category": "coordinate","source": "coordinate:latlon"}
      *
      * const ls = new CoordinateSearch()
      * const results = ls.directSearch("51.2611 3.2217")
      * results.length // => 2
-     * results[0] // => {lat: 51.2611, lon: 3.2217, display_name: "lon: 3.2217, lat: 51.2611",  "category": "coordinate", "source": "coordinateSearch"}
-     * results[1] // => {lon: 51.2611, lat: 3.2217, display_name: "lon: 51.2611, lat: 3.2217",  "category": "coordinate", "source": "coordinateSearch"}
+     * results[0] // => {lat: 51.2611, lon: 3.2217, display_name: "lon: 3.2217, lat: 51.2611",  "category": "coordinate", "source": "coordinate:latlon"}
+     * results[1] // => {lon: 51.2611, lat: 3.2217, display_name: "lon: 51.2611, lat: 3.2217",  "category": "coordinate", "source": "coordinate:lonlat"}
      *
      * // test OSM-XML format
      * const ls = new CoordinateSearch()
      * const results = ls.directSearch('  lat="57.5802905" lon="12.7202538"')
      * results.length // => 1
-     * results[0] // => {lat: 57.5802905, lon: 12.7202538, display_name: "lon: 12.7202538, lat: 57.5802905",  "category": "coordinate", "source": "coordinateSearch"}
+     * results[0] // => {lat: 57.5802905, lon: 12.7202538, display_name: "lon: 12.7202538, lat: 57.5802905",  "category": "coordinate", "source": "coordinate:latlon"}
      *
      * // should work with negative coordinates
      * const ls = new CoordinateSearch()
      * const results = ls.directSearch('  lat="-57.5802905" lon="-12.7202538"')
      * results.length // => 1
-     * results[0] // => {lat: -57.5802905, lon: -12.7202538, display_name: "lon: -12.7202538, lat: -57.5802905",  "category": "coordinate", "source": "coordinateSearch"}
+     * results[0] // => {lat: -57.5802905, lon: -12.7202538, display_name: "lon: -12.7202538, lat: -57.5802905",  "category": "coordinate", "source": "coordinate:latlon"}
      */
     private directSearch(query: string): GeoCodeResult[] {
 
@@ -58,7 +58,7 @@ export default class CoordinateSearch implements GeocodingProvider {
             lat: Number(m[1]),
             lon: Number(m[2]),
             display_name: "lon: " + m[2] + ", lat: " + m[1],
-            source: "coordinateSearch",
+            source: "coordinate:latlon",
             category: "coordinate"
         })
 
@@ -68,8 +68,8 @@ export default class CoordinateSearch implements GeocodingProvider {
                 lat: Number(m[2]),
                 lon: Number(m[1]),
                 display_name: "lon: " + m[1] + ", lat: " + m[2],
-                source: "coordinateSearch",
-                category: "coordinate"
+                category: "coordinate",
+                source: "coordinate:lonlat"
             })
         return matches.concat(matchesLonLat)
     }

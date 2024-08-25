@@ -960,6 +960,11 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             if (!result["error"]) {
                 return result
             }
+            console.log(result)
+            if(result["error"]?.statuscode === 410){
+                // Gone permanently is not recoverable
+                return result
+            }
             console.log(
                 `Request to ${url} failed, Trying again in a moment. Attempt ${
                     i + 1

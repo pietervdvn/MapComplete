@@ -134,7 +134,8 @@ export default class PhotonSearch implements GeocodingProvider, ReverseGeocoding
                 osm_type: PhotonSearch.types[f.properties.osm_type],
                 category: this.getCategory(f),
                 boundingbox,
-                lon, lat
+                lon, lat,
+                source: this._endpoint
             }
         })
     }

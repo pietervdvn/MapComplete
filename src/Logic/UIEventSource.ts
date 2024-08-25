@@ -41,16 +41,16 @@ export class Stores {
         return src
     }
 
-    public static concat<T>(stores: Store<T[]>[]): Store<T[]> {
-        const newStore = new UIEventSource<T[]>([])
+    public static concat<T>(stores: Store<T[]>[]): Store<T[][]> {
+        const newStore = new UIEventSource<T[][]>([])
         function update(){
             if(newStore._callbacks.isDestroyed){
                 return true // unregister
             }
-            const results: T[] = []
+            const results: T[][] = []
             for (const store of stores) {
                 if(store.data){
-                    results.push(...store.data)
+                    results.push(store.data)
                 }
             }
             newStore.setData(results)

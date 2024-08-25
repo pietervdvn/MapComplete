@@ -27,7 +27,8 @@ export default class GeocodingFeatureSource implements FeatureSource {
                         display_name: gc.display_name,
                         osm_id: gc.osm_type + "/" + gc.osm_id,
                         osm_key: gc.feature?.properties?.osm_key,
-                        osm_value: gc.feature?.properties?.osm_value
+                        osm_value: gc.feature?.properties?.osm_value,
+                        source: gc.source
                     },
                     geometry: {
                         type: "Point",
