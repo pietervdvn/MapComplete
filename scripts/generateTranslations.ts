@@ -417,7 +417,7 @@ function transformTranslation(
  *
  * // Should sort like weblate does
  * const result = stringifySorted({"1": "abc", "2": "def", "9": "ghi", "10": "xyz", "11": "uvw"})
- * result // => '{"1": "abc","10": "xyz","11": "uvw","2": "def","9", "ghi"}'
+ * result // => '{"1": "abc","10": "xyz","11": "uvw","2": "def","9": "ghi"}'
  */
 function stringifySorted(o: object, space: string = undefined, depth = 0): string {
     const keys = Object.keys(o)
