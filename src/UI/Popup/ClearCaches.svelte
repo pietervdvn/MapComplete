@@ -5,6 +5,7 @@
   function clearCaches() {
     IdbLocalStorage.clearAll()
     Utils.download("./service-worker-clear")
+    window.location.reload()
   }
   export let msg: string
 </script>
